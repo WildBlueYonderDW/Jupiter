@@ -6,7 +6,7 @@
 
 // Namespace soldier_conversation / namespace_a01fc1e44854f961
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf5
+// Checksum 0x0, Offset: 0xc3
 // Size: 0x3f
 function getfunction(funcid) {
     switch (funcid) {
@@ -20,7 +20,7 @@ function getfunction(funcid) {
 
 // Namespace soldier_conversation / namespace_a01fc1e44854f961
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d
+// Checksum 0x0, Offset: 0x10b
 // Size: 0x10f
 function function_8190fffc19bdbc2a(interactionid) {
     if (!isalive(self)) {
@@ -43,7 +43,7 @@ function function_8190fffc19bdbc2a(interactionid) {
 
 // Namespace soldier_conversation / namespace_a01fc1e44854f961
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x254
+// Checksum 0x0, Offset: 0x222
 // Size: 0x1c
 function startcap(statename, params) {
     namespace_f901a4f9d899be59::startcap(statename, params);

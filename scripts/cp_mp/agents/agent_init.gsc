@@ -11,7 +11,7 @@
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x196
+// Checksum 0x0, Offset: 0x15b
 // Size: 0x6f
 function agent_init() {
     if (isdefined(anim.notfirsttime)) {
@@ -34,7 +34,7 @@ function agent_init() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d
+// Checksum 0x0, Offset: 0x1d2
 // Size: 0x2c
 function setupgrenades() {
     function_b4ebe6632d7e8efe(undefined, "lethal", randomintrange(0, 20000));
@@ -43,7 +43,7 @@ function setupgrenades() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x241
+// Checksum 0x0, Offset: 0x206
 // Size: 0x2e
 function initanimcallbacks() {
     if (!isdefined(anim.callbacks)) {
@@ -54,7 +54,7 @@ function initanimcallbacks() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x277
+// Checksum 0x0, Offset: 0x23c
 // Size: 0x70
 function function_5fa77e68e934eda2() {
     registersharedfunc("ai", "onHumanoidAgentKilledCommon_SharedFunc", &scripts\mp\mp_agent::on_humanoid_agent_killed_common);
@@ -66,7 +66,7 @@ function function_5fa77e68e934eda2() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ef
+// Checksum 0x0, Offset: 0x2b4
 // Size: 0x7
 function private function_2df8a33395b87f() {
     return getfreeagentcount();
@@ -74,7 +74,7 @@ function private function_2df8a33395b87f() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff
+// Checksum 0x0, Offset: 0x2c4
 // Size: 0x47
 function play_sound_at_viewheightmp(aliasname, notification_string, var_a68adbd3eefe9282) {
     if (!isdefined(aliasname)) {
@@ -92,7 +92,7 @@ function play_sound_at_viewheightmp(aliasname, notification_string, var_a68adbd3
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34e
+// Checksum 0x0, Offset: 0x313
 // Size: 0x10
 function initstealthfuncsmp() {
     level.stealthinit = &initstealthmp;
@@ -100,7 +100,7 @@ function initstealthfuncsmp() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x366
+// Checksum 0x0, Offset: 0x32b
 // Size: 0x3
 function getcorpsearraymp() {
     return [];
@@ -108,7 +108,7 @@ function getcorpsearraymp() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x372
+// Checksum 0x0, Offset: 0x337
 // Size: 0x2
 function setcorpseremovetimerfuncmp() {
     
@@ -116,7 +116,7 @@ function setcorpseremovetimerfuncmp() {
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37c
+// Checksum 0x0, Offset: 0x341
 // Size: 0x1e
 function initstealthmp() {
     level.fngetcorpsearrayfunc = &getcorpsearraymp;

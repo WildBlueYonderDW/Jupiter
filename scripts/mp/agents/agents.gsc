@@ -31,14 +31,14 @@
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b7
-// Size: 0x9e
+// Checksum 0x0, Offset: 0x406
+// Size: 0x9b
 function main() {
     if (isdefined(level.createfx_enabled) && level.createfx_enabled) {
         return;
     }
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        if (!istrue(level.gametypebundle.var_e77038812bc72875) && !istrue(level.brenableagents)) {
+        if (getdvarint(@"hash_daa8c29d1af4ab6", 0) < 1 && !istrue(level.brenableagents)) {
             return;
         }
     } else if (scripts\cp_mp\utility\game_utility::function_ba5574c7f287c587() && scripts\mp\utility\game::getsubgametype() != "champion") {
@@ -55,7 +55,7 @@ function main() {
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45d
+// Checksum 0x0, Offset: 0x4a9
 // Size: 0xc7
 function setup_callbacks() {
     if (!isdefined(level.agent_funcs)) {
@@ -72,7 +72,7 @@ function setup_callbacks() {
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x52c
+// Checksum 0x0, Offset: 0x578
 // Size: 0x18
 function wait_till_agent_funcs_defined() {
     while (!isdefined(level.agent_funcs)) {
@@ -84,12 +84,12 @@ function wait_till_agent_funcs_defined() {
 
     // Namespace agents / scripts\mp\agents\agents
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x54c
-    // Size: 0x116
+    // Checksum 0x0, Offset: 0x598
+    // Size: 0x114
     function function_1903f7dc32253cb8() {
         teamcounts = [];
         teamcounts["<dev string:x1c>"] = 0;
-        teamcounts["<dev string:x26>"] = 0;
+        teamcounts["<dev string:x23>"] = 0;
         minteam = undefined;
         foreach (player in level.participants) {
             if (!isdefined(teamcounts[player.team])) {
@@ -100,7 +100,7 @@ function wait_till_agent_funcs_defined() {
             }
         }
         foreach (team, count in teamcounts) {
-            if (team != "<dev string:x2e>" && (!isdefined(minteam) || teamcounts[minteam] > count)) {
+            if (team != "<dev string:x28>" && (!isdefined(minteam) || teamcounts[minteam] > count)) {
                 minteam = team;
             }
         }
@@ -109,11 +109,11 @@ function wait_till_agent_funcs_defined() {
 
     // Namespace agents / scripts\mp\agents\agents
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x66a
+    // Checksum 0x0, Offset: 0x6b4
     // Size: 0x192
     function function_8a38b0ab8ed5310d() {
-        setdevdvarifuninitialized(@"hash_b725de514a5e641", "<dev string:x3b>");
-        setdevdvarifuninitialized(@"hash_35fa3411ab03151f", "<dev string:x3b>");
+        setdevdvarifuninitialized(@"hash_b725de514a5e641", "<dev string:x32>");
+        setdevdvarifuninitialized(@"hash_35fa3411ab03151f", "<dev string:x32>");
         while (level.players.size == 0) {
             wait 0.05;
         }
@@ -128,7 +128,7 @@ function wait_till_agent_funcs_defined() {
                 setdevdvar(@"hash_35fa3411ab03151f", 0);
             }
             for (i = 0; i < var_61c0d85a0968950b; i++) {
-                agent = add_humanoid_agent("<dev string:x40>", function_1903f7dc32253cb8(), undefined, undefined, undefined, undefined, 1, 1);
+                agent = add_humanoid_agent("<dev string:x34>", function_1903f7dc32253cb8(), undefined, undefined, undefined, undefined, 1, 1);
                 if (isdefined(agent)) {
                     agent game_utility::function_1802112b9d0b0ff1();
                 }
@@ -137,7 +137,7 @@ function wait_till_agent_funcs_defined() {
                 if (!istrue(agent.isactive)) {
                     continue;
                 }
-                if (isdefined(agent.isactive) && agent.isactive && agent.agent_type == "<dev string:x40>") {
+                if (isdefined(agent.isactive) && agent.isactive && agent.agent_type == "<dev string:x34>") {
                     if (var_8c00c85e23270f7b > 0) {
                         agent scripts\mp\agents\agent_utility::deactivateagent();
                         agent suicide();
@@ -152,12 +152,12 @@ function wait_till_agent_funcs_defined() {
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0x804
-// Size: 0xe1
+// Checksum 0x0, Offset: 0x84e
+// Size: 0xe0
 function add_humanoid_agent(agent_type, team, class, optional_spawnorigin, optional_spawnangles, optional_owner, var_9fee3fe2e8ddd1f3, respawn_on_death, difficulty, classcallback, disableloadout, var_b72e32b38f8041c6, disablehealthregen, disablebattlechatter) {
     agent = scripts\mp\agents\agent_common::connectnewagent(agent_type, team, class);
     if (isdefined(classcallback)) {
-        assertex(isdefined(class) && class == "<dev string:x4a>", "<dev string:x56>");
+        assertex(isdefined(class) && class == "callback", "add_humanoid_agent() passed class callback function when class variable not set to \"callback\"");
         agent.classcallback = classcallback;
     }
     if (isdefined(agent)) {
@@ -168,8 +168,8 @@ function add_humanoid_agent(agent_type, team, class, optional_spawnorigin, optio
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ee
-// Size: 0x30b
+// Checksum 0x0, Offset: 0x937
+// Size: 0x30f
 function spawn_agent_player(optional_spawnorigin, optional_spawnangles, optional_owner, var_9fee3fe2e8ddd1f3, respawn_on_death, difficulty, disableloadout, var_b72e32b38f8041c6, disablehealthregen, disablebattlechatter) {
     self endon("disconnect");
     while (!isdefined(level.getspawnpoint)) {
@@ -200,7 +200,7 @@ function spawn_agent_player(optional_spawnorigin, optional_spawnangles, optional
     if (distancesquared(newspawnorigin, var_95e3f96ca970054) > 1) {
         spawnorigin = newspawnorigin;
     }
-    assertmsg("<dev string:xb7>");
+    assertmsg("SpawnAgent function is no longer supported, please update spawn_agent_player to use SpawnBotAgent if this spawn function is still needed");
     if (isdefined(var_9fee3fe2e8ddd1f3) && var_9fee3fe2e8ddd1f3) {
         /#
             scripts\mp\bots\bots::function_70008d3ab47d171d();
@@ -254,7 +254,7 @@ function spawn_agent_player(optional_spawnorigin, optional_spawnangles, optional
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc01
+// Checksum 0x0, Offset: 0xc4e
 // Size: 0x3c
 function destroyonownerdisconnect(owner) {
     self endon("death");
@@ -265,7 +265,7 @@ function destroyonownerdisconnect(owner) {
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc45
+// Checksum 0x0, Offset: 0xc92
 // Size: 0x35
 function watchownerstatus(notifymsg, owner) {
     owner waittill(notifymsg);
@@ -278,7 +278,7 @@ function watchownerstatus(notifymsg, owner) {
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0xc82
+// Checksum 0x0, Offset: 0xccf
 // Size: 0x193
 function agent_damage_finished(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname) {
     if (isalive(self)) {
@@ -312,8 +312,8 @@ function agent_damage_finished(einflictor, eattacker, idamage, idflags, smeansof
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1d
-// Size: 0x2b2
+// Checksum 0x0, Offset: 0xe6a
+// Size: 0x2b3
 function on_agent_generic_damaged(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname) {
     var_b404412d0857ae99 = isdefined(eattacker) && isdefined(self.owner) && self.owner == eattacker;
     var_fe3b391623ac9612 = attackerishittingteam(self.owner, eattacker) || var_b404412d0857ae99;
@@ -362,7 +362,7 @@ function on_agent_generic_damaged(einflictor, eattacker, idamage, idflags, smean
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d8
+// Checksum 0x0, Offset: 0x1126
 // Size: 0x10d
 function on_agent_player_damaged(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     var_b404412d0857ae99 = isdefined(eattacker) && isdefined(self.owner) && self.owner == eattacker;
@@ -383,7 +383,7 @@ function on_agent_player_damaged(einflictor, eattacker, idamage, idflags, smeans
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ed
+// Checksum 0x0, Offset: 0x123b
 // Size: 0x102
 function on_agent_player_killed(einflictor, eattacker, idamage, smeansofdeath, sweapon, vdir, shitloc, timeoffset, deathanimduration) {
     on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeansofdeath, sweapon, vdir, shitloc, timeoffset, deathanimduration, 1);
@@ -403,8 +403,8 @@ function on_agent_player_killed(einflictor, eattacker, idamage, smeansofdeath, s
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f7
-// Size: 0x195
+// Checksum 0x0, Offset: 0x1345
+// Size: 0x177
 function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeansofdeath, sweapon, vdir, shitloc, timeoffset, deathanimduration, dropweapons) {
     if (isdefined(self.hasriotshieldequipped) && self.hasriotshieldequipped) {
         launchshield(idamage, smeansofdeath);
@@ -426,7 +426,6 @@ function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeanso
         return;
     }
     self.body = self cloneagent(deathanimduration);
-    self.body.aicategory = self.aicategory;
     if (namespace_46e942396566f2da::function_bbee2e46ab15a720(eattacker, sweapon, smeansofdeath, shitloc, einflictor)) {
         return;
     }
@@ -440,7 +439,7 @@ function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeanso
 
 // Namespace agents / scripts\mp\agents\agents
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1494
+// Checksum 0x0, Offset: 0x14c4
 // Size: 0x4c
 function initplayerclass() {
     if (isdefined(self.class_override)) {

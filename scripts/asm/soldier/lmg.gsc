@@ -9,7 +9,7 @@
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b
+// Checksum 0x0, Offset: 0xfa
 // Size: 0x6f
 function playcovercrouchlmg(asmname, statename, params) {
     self._blackboard.droppedlmg = 0;
@@ -21,8 +21,8 @@ function playcovercrouchlmg(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b2
-// Size: 0x124
+// Checksum 0x0, Offset: 0x171
+// Size: 0x123
 function coverturretterminate(asmname, statename, params) {
     self setdefaultaimlimits();
     currentturret = self getturret();
@@ -40,7 +40,7 @@ function coverturretterminate(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2de
+// Checksum 0x0, Offset: 0x29c
 // Size: 0x22
 function coverlmgterminate(asmname, statename, params) {
     self setdefaultaimlimits();
@@ -48,7 +48,7 @@ function coverlmgterminate(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x308
+// Checksum 0x0, Offset: 0x2c6
 // Size: 0xb2
 function playanim_droplmg(asmname, statename, params) {
     namespace_223959d3e5206cfb::dropaiweapon();
@@ -66,7 +66,7 @@ function playanim_droplmg(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c2
+// Checksum 0x0, Offset: 0x380
 // Size: 0x2a
 function turretrequested(asmname, statename, tostatename, params) {
     return isdefined(scripts\asm\asm_bb::bb_getrequestedturret());
@@ -74,7 +74,7 @@ function turretrequested(asmname, statename, tostatename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f5
+// Checksum 0x0, Offset: 0x3b3
 // Size: 0x71
 function chooseanim_deploylmg(asmname, statename, params) {
     if (istrue(self._blackboard.droppedlmg)) {
@@ -86,8 +86,8 @@ function chooseanim_deploylmg(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x46f
-// Size: 0xf7
+// Checksum 0x0, Offset: 0x42d
+// Size: 0xf6
 function playanim_deployturret(asmname, statename, params) {
     self._blackboard.usingaturret = 1;
     assert(isdefined(scripts\asm\asm_bb::bb_getrequestedturret()));
@@ -103,8 +103,8 @@ function playanim_deployturret(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x56e
-// Size: 0xed
+// Checksum 0x0, Offset: 0x52b
+// Size: 0xec
 function noanim_deployturret(asmname, statename, params) {
     self._blackboard.usingaturret = 1;
     assert(isdefined(scripts\asm\asm_bb::bb_getrequestedturret()));
@@ -119,7 +119,7 @@ function noanim_deployturret(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x663
+// Checksum 0x0, Offset: 0x61f
 // Size: 0x3a
 function playanim_dismountturret(asmname, statename, params) {
     self._blackboard.usingaturret = 0;
@@ -128,8 +128,8 @@ function playanim_dismountturret(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a5
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x661
+// Size: 0xbc
 function shoulddismountlmg(asmname, statename, tostatename, params) {
     if (self._blackboard.usingaturret) {
         turret = self getturret();
@@ -145,8 +145,8 @@ function shoulddismountlmg(asmname, statename, tostatename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x765
-// Size: 0x1a5
+// Checksum 0x0, Offset: 0x725
+// Size: 0x1a7
 function playanim_deploylmg(asmname, statename, params) {
     if (isdefined(self.node)) {
         self._blackboard.deployedlmgnode = self.node;
@@ -177,7 +177,7 @@ function playanim_deploylmg(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x912
+// Checksum 0x0, Offset: 0x8d4
 // Size: 0x25
 function terminate_deploylmg(asmname, statename, params) {
     self.customnotetrackhandler = undefined;
@@ -185,7 +185,7 @@ function terminate_deploylmg(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x93f
+// Checksum 0x0, Offset: 0x901
 // Size: 0x4c
 function playanim_dismountlmg(asmname, statename, params) {
     self._blackboard.deployedlmgnode = undefined;
@@ -195,7 +195,7 @@ function playanim_dismountlmg(asmname, statename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x993
+// Checksum 0x0, Offset: 0x955
 // Size: 0xda
 function notehandler_deploylmg(note, flagname, customfunction, customparams) {
     switch (note) {
@@ -206,7 +206,7 @@ function notehandler_deploylmg(note, flagname, customfunction, customparams) {
         assert(isdefined(self._blackboard.leftweaponent));
         self._blackboard.leftweaponent delete();
         self._blackboard.leftweaponent = undefined;
-        assert(weaponclass(self.primaryweapon) == "<dev string:x1c>");
+        assert(weaponclass(self.primaryweapon) == "mg");
         namespace_223959d3e5206cfb::placeweaponon(self.primaryweapon, "right");
         break;
     }
@@ -214,7 +214,7 @@ function notehandler_deploylmg(note, flagname, customfunction, customparams) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa75
+// Checksum 0x0, Offset: 0xa37
 // Size: 0x63
 function lowestcoverstanddeployposeis(asmname, statename, tostatename, params) {
     assert(isdefined(params));
@@ -229,7 +229,7 @@ function lowestcoverstanddeployposeis(asmname, statename, tostatename, params) {
 
 // Namespace lmg / scripts\asm\soldier\lmg
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xae1
+// Checksum 0x0, Offset: 0xaa3
 // Size: 0x5c
 function desiredturretposeis(asmname, statename, tostatename, params) {
     assert(isdefined(params));

@@ -6,7 +6,7 @@
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26d
+// Checksum 0x0, Offset: 0x21a
 // Size: 0x2e
 function function_94461e6fd9196c6a(playsoundfunc) {
     level.heartbeat = spawnstruct();
@@ -15,7 +15,7 @@ function function_94461e6fd9196c6a(playsoundfunc) {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a3
+// Checksum 0x0, Offset: 0x250
 // Size: 0x2d
 function function_a9c6f7587066ce13() {
     self.heartbeat = spawnstruct();
@@ -25,7 +25,7 @@ function function_a9c6f7587066ce13() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d8
+// Checksum 0x0, Offset: 0x285
 // Size: 0x76
 function function_6c37d427b68ff9c7() {
     return [["mvmt_heartbeat_plr_superfast", 1.3], ["mvmt_heartbeat_plr_fast", 1.721], ["mvmt_heartbeat_plr_med", 1.973], ["mvmt_heartbeat_plr_slow", 2.321], ["mvmt_heartbeat_plr_superslow", 2.86]];
@@ -33,7 +33,7 @@ function function_6c37d427b68ff9c7() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x357
+// Checksum 0x0, Offset: 0x304
 // Size: 0x76
 function function_fa062c79f577073c() {
     return [["mvmt_swim_heartbeat_plr_superfast", 1.3], ["mvmt_swim_heartbeat_plr_fast", 1.721], ["mvmt_swim_heartbeat_plr_med", 1.973], ["mvmt_swim_heartbeat_plr_slow", 2.321], ["mvmt_swim_heartbeat_plr_superslow", 2.86]];
@@ -41,8 +41,8 @@ function function_fa062c79f577073c() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d6
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x383
+// Size: 0xc3
 function heartBeatTimer() {
     self notify("heartBeatTimer");
     self endon("heartBeatTimer");
@@ -72,8 +72,8 @@ function heartBeatTimer() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x49d
-// Size: 0x58
+// Checksum 0x0, Offset: 0x44e
+// Size: 0x57
 function function_70dd1e8302bb7a82(time, pulsestarttime, pulsedurationms) {
     pulsenormalized = (time - pulsestarttime) / pulsedurationms;
     pulsenormalized = math::normalized_offset(pulsenormalized, 0.65);
@@ -82,8 +82,8 @@ function function_70dd1e8302bb7a82(time, pulsestarttime, pulsedurationms) {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fd
-// Size: 0x4f
+// Checksum 0x0, Offset: 0x4ad
+// Size: 0x4e
 function pulse_rumble(pulsedurationms) {
     if (function_ea8199f09c110522() || !function_afb9ed6354e03dfa() || !function_7b09a3e02e70b0d2()) {
         return;
@@ -95,7 +95,7 @@ function pulse_rumble(pulsedurationms) {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x554
+// Checksum 0x0, Offset: 0x503
 // Size: 0xd
 function function_afb9ed6354e03dfa() {
     return !isdefined(self.usingremote);
@@ -103,7 +103,7 @@ function function_afb9ed6354e03dfa() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56a
+// Checksum 0x0, Offset: 0x519
 // Size: 0x2f
 function function_b7c36a804415225b(heartbeat) {
     self setscriptablepartstate("heartbeat", heartbeat);
@@ -113,7 +113,7 @@ function function_b7c36a804415225b(heartbeat) {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a1
+// Checksum 0x0, Offset: 0x550
 // Size: 0x25
 function function_8c8ff6fc7b5b3d67() {
     if (function_7b09a3e02e70b0d2()) {
@@ -126,8 +126,8 @@ function function_8c8ff6fc7b5b3d67() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ce
-// Size: 0xae
+// Checksum 0x0, Offset: 0x57d
+// Size: 0xad
 function function_1078275b178db870() {
     if (!isdefined(self.currentregendelay) && !istrue(self.healing)) {
         return undefined;
@@ -147,8 +147,8 @@ function function_1078275b178db870() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x684
-// Size: 0x10d
+// Checksum 0x0, Offset: 0x632
+// Size: 0x111
 function function_14f4cbd1901f7812() {
     if (!function_3776bacc92b445d3()) {
         return undefined;
@@ -188,8 +188,8 @@ function function_14f4cbd1901f7812() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79a
-// Size: 0x18
+// Checksum 0x0, Offset: 0x74c
+// Size: 0x17
 function function_2fb10e0f50e2d6c1() {
     var_b10ff79982c0153b = function_6c37d427b68ff9c7();
     return var_b10ff79982c0153b[5];
@@ -197,7 +197,7 @@ function function_2fb10e0f50e2d6c1() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bb
+// Checksum 0x0, Offset: 0x76c
 // Size: 0x19
 function function_7b09a3e02e70b0d2() {
     return isdefined(self.deathsdoor) && self.deathsdoor;
@@ -205,7 +205,7 @@ function function_7b09a3e02e70b0d2() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7dd
+// Checksum 0x0, Offset: 0x78e
 // Size: 0x19
 function isfocus() {
     return isdefined(self.focus) && self.focus;
@@ -213,7 +213,7 @@ function isfocus() {
 
 // Namespace heartbeat / scripts\common\heartbeat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ff
+// Checksum 0x0, Offset: 0x7b0
 // Size: 0x2d
 function function_7c867ea17d64a37c(plrsfx) {
     if (!function_c2be12529b0f0ad2()) {

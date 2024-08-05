@@ -10,7 +10,7 @@
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x29e
+// Checksum 0x0, Offset: 0x263
 // Size: 0x13
 function autoexec main() {
     function_c0b3ddc9a6bdcc46("veh_jup_jltv_mg", &function_36f3aa21fcac5b21);
@@ -18,8 +18,8 @@ function autoexec main() {
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b9
-// Size: 0x35
+// Checksum 0x0, Offset: 0x27e
+// Size: 0x34
 function function_41840e7c1272c050(veh_spawner) {
     veh_spawner.spawnmethod = "airdrop_at_position_unsafe";
     vehicle = scripts\cp_mp\vehicles\vehicle::vehicle_spawn("veh_jup_jltv_mg", veh_spawner);
@@ -28,8 +28,8 @@ function function_41840e7c1272c050(veh_spawner) {
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f7
-// Size: 0x73
+// Checksum 0x0, Offset: 0x2bb
+// Size: 0x72
 function private function_36f3aa21fcac5b21() {
     if (!function_9697379150687859("veh_jup_jltv_mg")) {
         return;
@@ -46,8 +46,8 @@ function private function_36f3aa21fcac5b21() {
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x372
-// Size: 0x19a
+// Checksum 0x0, Offset: 0x335
+// Size: 0x19d
 function private function_d2a84209a50b34d2(spawndata, faildata) {
     spawnposition = undefined;
     spawnangles = undefined;
@@ -58,7 +58,7 @@ function private function_d2a84209a50b34d2(spawndata, faildata) {
         spawndata.spawnmethod = "place_at_position_unsafe";
     }
     isairdrop = issubstr(spawndata.spawnmethod, "airdrop_");
-    assertex(isdefined(spawndata) && (isdefined(spawndata.origin) || spawndata.spawnmethod == "<dev string:x1c>"), "<dev string:x33>");
+    assertex(isdefined(spawndata) && (isdefined(spawndata.origin) || spawndata.spawnmethod == "airdrop_from_player"), "spawnData.origin must be defined.");
     spawnposition = spawndata.origin;
     spawnangles = spawndata.angles;
     if (isdefined(spawndata.owner) && istrue(spawndata.faceawayfromowner)) {
@@ -85,8 +85,8 @@ function private function_d2a84209a50b34d2(spawndata, faildata) {
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x515
-// Size: 0x57
+// Checksum 0x0, Offset: 0x4db
+// Size: 0x56
 function private function_4c41d739b1eb8cd0(position, angles, spawndata, faildata) {
     spawndata.origin = position;
     spawndata.angles = angles;
@@ -96,8 +96,8 @@ function private function_4c41d739b1eb8cd0(position, angles, spawndata, faildata
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x575
-// Size: 0x9e
+// Checksum 0x0, Offset: 0x53a
+// Size: 0x9f
 function private function_62204f70106947a6(spawnposition, spawnangles, spawndata, faildata) {
     oldorigin = spawndata.origin;
     oldangles = spawndata.angles;
@@ -114,8 +114,8 @@ function private function_62204f70106947a6(spawnposition, spawnangles, spawndata
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x61c
-// Size: 0x98
+// Checksum 0x0, Offset: 0x5e2
+// Size: 0x99
 function private function_83972c0fabc82c9f(spawndata, faildata) {
     vehicle = function_bba34cf920370ff4("veh_jup_jltv_mg", spawndata, faildata);
     turret_weapon = function_edcae4b27a6f7abe();
@@ -131,20 +131,21 @@ function private function_83972c0fabc82c9f(spawndata, faildata) {
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6bd
-// Size: 0x70
+// Checksum 0x0, Offset: 0x684
+// Size: 0x7d
 function private function_f2a24ca61d1563a() {
     var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle("veh_jup_jltv_mg", 1);
     var_e2818ad39a3341b4.rotationids[0] = 0;
     var_e2818ad39a3341b4.rotationids[1] = 1;
     var_e2818ad39a3341b4.rotationrefsbyseatandweapon["driver"][function_edcae4b27a6f7abe()] = 0;
     var_e2818ad39a3341b4.rotationrefsbyseatandweapon["gunner"][function_edcae4b27a6f7abe()] = 1;
+    var_e2818ad39a3341b4.var_bd169af9b46727ef = 1;
 }
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x735
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x709
+// Size: 0x59
 function private function_edcae4b27a6f7abe() {
     mapname = getdvar(@"hash_687fb8f9b7a23245");
     if (utility::iscp()) {
@@ -159,8 +160,8 @@ function private function_edcae4b27a6f7abe() {
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x798
-// Size: 0x94
+// Checksum 0x0, Offset: 0x76b
+// Size: 0x93
 function private function_7abe06772f227330(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (istrue(data.success)) {
         thread function_2aa52f506944ea71(vehicle, seatid, var_fc7c7a874b43a31a, player, data);
@@ -176,8 +177,8 @@ function private function_7abe06772f227330(vehicle, seatid, var_fc7c7a874b43a31a
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x834
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x806
+// Size: 0x8d
 function private function_2aa52f506944ea71(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (seatid == "gunner") {
         level thread vehicle_occupancy_disablefirefortime(player, ter_op(istrue(vehicle.var_ecc491f42aaceaf4), 850, 2200));
@@ -190,7 +191,7 @@ function private function_2aa52f506944ea71(vehicle, seatid, var_fc7c7a874b43a31a
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x8ca
+// Checksum 0x0, Offset: 0x89b
 // Size: 0x46
 function private function_2fdd0e40db525024(vehicle, seatid, var_7558f98f3236963d, player, data) {
     if (istrue(data.success)) {
@@ -200,8 +201,8 @@ function private function_2fdd0e40db525024(vehicle, seatid, var_7558f98f3236963d
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x918
-// Size: 0x136
+// Checksum 0x0, Offset: 0x8e9
+// Size: 0x137
 function private function_3d7fcd7f8aa45e0d(vehicle, seatid, var_7558f98f3236963d, player, data) {
     if (seatid == "gunner") {
         turret_weapon = function_edcae4b27a6f7abe();
@@ -234,8 +235,8 @@ function private function_3d7fcd7f8aa45e0d(vehicle, seatid, var_7558f98f3236963d
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xa56
-// Size: 0x5b
+// Checksum 0x0, Offset: 0xa28
+// Size: 0x5a
 function private function_4b1ad3b1d7810658(vehicle, var_9de41f2ee77c33ba, var_3f68c37bafd38606, player, data) {
     if (isdefined(var_3f68c37bafd38606) && var_3f68c37bafd38606 == "gunner") {
         turret_weapon = function_edcae4b27a6f7abe();
@@ -245,8 +246,8 @@ function private function_4b1ad3b1d7810658(vehicle, var_9de41f2ee77c33ba, var_3f
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xab9
-// Size: 0x126
+// Checksum 0x0, Offset: 0xa8a
+// Size: 0x128
 function private function_9e1cb0f4ea79f09e(vehicle, spawndata, turretweapon) {
     turret = spawnturret("misc_turret", vehicle gettagorigin("tag_turret"), turretweapon, 0);
     turret linkto(vehicle, "tag_turret", (0, 0, 0), (0, 0, 0));
@@ -270,7 +271,7 @@ function private function_9e1cb0f4ea79f09e(vehicle, spawndata, turretweapon) {
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xbe8
+// Checksum 0x0, Offset: 0xbbb
 // Size: 0x91
 function private function_d09b279cd811f266(vehicle, var_7558f98f3236963d, player, data) {
     if (istrue(vehicle.door_open)) {
@@ -287,7 +288,7 @@ function private function_d09b279cd811f266(vehicle, var_7558f98f3236963d, player
 
 // Namespace namespace_1f456ca67a596eec / namespace_706b2d22847d9775
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xc81
+// Checksum 0x0, Offset: 0xc54
 // Size: 0x48
 function private function_e1f107025762fca4(vehicle, var_7558f98f3236963d, player, data) {
     if (!istrue(data.playerdisconnect)) {

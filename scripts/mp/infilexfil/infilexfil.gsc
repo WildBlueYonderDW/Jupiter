@@ -24,7 +24,7 @@
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x83a
 // Size: 0x268
-function infil_add(type, subtype, seat_count, var_aa0773494f0d374d, fill_order, spawn_func, var_1fc48c4b6e73e047, player_func) {
+function infil_add(type, subtype, seat_count, required_seats, fill_order, spawn_func, get_length_func, player_func) {
     if (!issharedfuncdefined("infil", "get_all_infils")) {
         scripts\engine\utility::registersharedfunc("infil", "get_all_infils", &get_all_infils);
     }
@@ -56,9 +56,9 @@ function infil_add(type, subtype, seat_count, var_aa0773494f0d374d, fill_order, 
     game["infil"][0][type][subtype] = [];
     game["infil"][0][type][subtype][0] = spawn_func;
     game["infil"][0][type][subtype][1] = player_func;
-    game["infil"][0][type][subtype][2] = var_1fc48c4b6e73e047;
+    game["infil"][0][type][subtype][2] = get_length_func;
     game["infil"][0][type][subtype][3] = seat_count;
-    game["infil"][0][type][subtype][4] = var_aa0773494f0d374d;
+    game["infil"][0][type][subtype][4] = required_seats;
     game["infil"][0][type][subtype][5] = fill_order;
 }
 

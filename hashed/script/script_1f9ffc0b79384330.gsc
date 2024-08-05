@@ -8,11 +8,11 @@
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x564
-// Size: 0x226
+// Checksum 0x0, Offset: 0x500
+// Size: 0x223
 function function_306c305b8c51b11c(options, duration, active, positions, var_6b9a984d61c9ff12, player) {
-    assert(options.size > 0, "<dev string:x1c>");
-    assert(options.size <= 4, "<dev string:x47>");
+    assert(options.size > 0, "Need at least one dialogue wheel option");
+    assert(options.size <= 4, "Cannot have more than 4 dialogue wheel options");
     if (!isdefined(player.dialogue_wheel)) {
         player function_1d914778ed5e4032();
     }
@@ -60,10 +60,10 @@ function function_306c305b8c51b11c(options, duration, active, positions, var_6b9
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x792
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x72b
+// Size: 0x69
 function function_e61ab3e2bde6b663(options, position) {
-    assert(position >= 0 && position <= 3, "<dev string:x79>");
+    assert(position >= 0 && position <= 3, "Position must be 0-3");
     omnvar = function_27cb1968e9f31a97(position);
     setomnvar(omnvar, options[position]);
     self.dialogue_wheel.inputs[position].bypass = 0;
@@ -71,8 +71,8 @@ function function_e61ab3e2bde6b663(options, position) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x804
-// Size: 0x86
+// Checksum 0x0, Offset: 0x79c
+// Size: 0x85
 function function_27cb1968e9f31a97(position) {
     omnvar = "ui_dialogue_prompts_option_";
     switch (position) {
@@ -94,8 +94,8 @@ function function_27cb1968e9f31a97(position) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x893
-// Size: 0x66
+// Checksum 0x0, Offset: 0x82a
+// Size: 0x63
 function function_544db35a3301834f() {
     foreach (input in self.dialogue_wheel.inputs) {
         input.bypass = 1;
@@ -104,7 +104,7 @@ function function_544db35a3301834f() {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x901
+// Checksum 0x0, Offset: 0x895
 // Size: 0x46
 function function_20245cecf244d934(player) {
     if (!isdefined(player.dialogue_wheel)) {
@@ -118,7 +118,7 @@ function function_20245cecf244d934(player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x94f
+// Checksum 0x0, Offset: 0x8e3
 // Size: 0x24
 function function_ffdce2654ea23d5a() {
     if (!isdefined(self.dialogue_wheel)) {
@@ -129,8 +129,8 @@ function function_ffdce2654ea23d5a() {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97c
-// Size: 0x13a
+// Checksum 0x0, Offset: 0x910
+// Size: 0x137
 function function_ba24ddb136cbab67(player) {
     thread function_8d81c892708a5d8e(player);
     player setclientomnvar("ui_dialogue_prompts_active", 1);
@@ -154,7 +154,7 @@ function function_ba24ddb136cbab67(player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xabe
+// Checksum 0x0, Offset: 0xa4f
 // Size: 0x530
 function private function_8d81c892708a5d8e(player) {
     playerusinggamepad = undefined;
@@ -252,7 +252,7 @@ function private function_8d81c892708a5d8e(player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xff6
+// Checksum 0x0, Offset: 0xf87
 // Size: 0x40
 function function_861dc23c52d31c41(var_5c76167572fce9c1, var_8c791b0ce2679fba) {
     if (!isdefined(var_5c76167572fce9c1) || !isdefined(var_8c791b0ce2679fba)) {
@@ -263,7 +263,7 @@ function function_861dc23c52d31c41(var_5c76167572fce9c1, var_8c791b0ce2679fba) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x103f
+// Checksum 0x0, Offset: 0xfd0
 // Size: 0xbd
 function function_6f846e9519b4cff2(player) {
     if (scripts\common\utility::issp()) {
@@ -283,7 +283,7 @@ function function_6f846e9519b4cff2(player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1104
+// Checksum 0x0, Offset: 0x1095
 // Size: 0x15
 function function_3d548a32743df49b(duration) {
     self.var_9837358c0745f890 = duration;
@@ -291,7 +291,7 @@ function function_3d548a32743df49b(duration) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1121
+// Checksum 0x0, Offset: 0x10b2
 // Size: 0x20
 function function_64c637dd115ff678(duration) {
     self.dialogue_wheel.var_6b9a984d61c9ff12 = duration;
@@ -299,7 +299,7 @@ function function_64c637dd115ff678(duration) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1149
+// Checksum 0x0, Offset: 0x10da
 // Size: 0x70
 function function_d92b8b076e34f82b(options, duration, positions, player) {
     if (scripts\common\utility::issp()) {
@@ -314,8 +314,8 @@ function function_d92b8b076e34f82b(options, duration, positions, player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c2
-// Size: 0xef
+// Checksum 0x0, Offset: 0x1153
+// Size: 0xee
 function function_dad8b67b4a097168(options, funcs, duration, positions, player) {
     if (scripts\common\utility::issp()) {
         player = level.player;
@@ -339,7 +339,7 @@ function function_dad8b67b4a097168(options, funcs, duration, positions, player) 
             }
             break;
         default: 
-            assert(funcs.size >= response, "<dev string:x91>" + response);
+            assert(funcs.size >= response, "No associated function for response " + response);
             return [[ funcs[response - 1] ]]();
         }
         waitframe();
@@ -348,8 +348,8 @@ function function_dad8b67b4a097168(options, funcs, duration, positions, player) 
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b9
-// Size: 0x11b
+// Checksum 0x0, Offset: 0x1249
+// Size: 0x11a
 function function_e6acdf1a7626587e(options, nodes, duration, player) {
     if (scripts\common\utility::issp()) {
         player = level.player;
@@ -371,7 +371,7 @@ function function_e6acdf1a7626587e(options, nodes, duration, player) {
             response = undefined;
             break;
         default: 
-            assert(options.size >= response, "<dev string:xb9>" + response);
+            assert(options.size >= response, "No associated node for response " + response);
             return nodes[response - 1];
         }
         waitframe();
@@ -380,7 +380,7 @@ function function_e6acdf1a7626587e(options, nodes, duration, player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13dc
+// Checksum 0x0, Offset: 0x136b
 // Size: 0xd
 function function_b7d7a703c13eb1df(binding) {
     return true;
@@ -388,7 +388,7 @@ function function_b7d7a703c13eb1df(binding) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f2
+// Checksum 0x0, Offset: 0x1381
 // Size: 0x17c
 function play_dialogue(aliases, stringfile, var_85aedcd1aaf0a83, var_ae7efd102fc19bb5, var_bb81dd63c26df58d) {
     var_5c76167572fce9c1 = [];
@@ -424,7 +424,7 @@ function play_dialogue(aliases, stringfile, var_85aedcd1aaf0a83, var_ae7efd102fc
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1577
+// Checksum 0x0, Offset: 0x1506
 // Size: 0xc4
 function function_1d914778ed5e4032() {
     if (isdefined(self.dialogue_wheel)) {
@@ -437,8 +437,8 @@ function function_1d914778ed5e4032() {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1643
-// Size: 0x80
+// Checksum 0x0, Offset: 0x15d2
+// Size: 0x7f
 function function_53e4805c5404e4bb(buttons, result) {
     struct = spawnstruct();
     struct.buttons = buttons;
@@ -453,8 +453,8 @@ function function_53e4805c5404e4bb(buttons, result) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16cc
-// Size: 0x21e
+// Checksum 0x0, Offset: 0x165a
+// Size: 0x220
 function function_98936c4e24c0d9fa(player) {
     if (scripts\common\utility::issp()) {
         player = level.player;
@@ -510,8 +510,8 @@ function function_98936c4e24c0d9fa(player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18f2
-// Size: 0x2fe
+// Checksum 0x0, Offset: 0x1882
+// Size: 0x2fc
 function function_afeae0424199f820(player) {
     if (self.running) {
         return;
@@ -580,8 +580,8 @@ function function_afeae0424199f820(player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf8
-// Size: 0x90
+// Checksum 0x0, Offset: 0x1b86
+// Size: 0x8d
 function function_98a2a3001f683ec5(result) {
     foreach (input in self.dialogue_wheel.inputs) {
         if (input.result == result) {
@@ -595,8 +595,8 @@ function function_98a2a3001f683ec5(result) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c90
-// Size: 0x80
+// Checksum 0x0, Offset: 0x1c1b
+// Size: 0x7d
 function function_dc4eb1cb90de68ed() {
     foreach (input in self.dialogue_wheel.inputs) {
         input.reset = 1;
@@ -607,8 +607,8 @@ function function_dc4eb1cb90de68ed() {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d18
-// Size: 0x16c
+// Checksum 0x0, Offset: 0x1ca0
+// Size: 0x16d
 function function_cfe381f310a0f174(player) {
     end_time = undefined;
     if (player.dialogue_wheel.duration > 0) {
@@ -647,7 +647,7 @@ function function_cfe381f310a0f174(player) {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e8c
+// Checksum 0x0, Offset: 0x1e15
 // Size: 0x47
 function function_aba526840f970cda() {
     while (self.dialogue_wheel.active && !isdefined(self.dialogue_wheel.result)) {
@@ -658,7 +658,7 @@ function function_aba526840f970cda() {
 
 // Namespace dialogue_wheel / namespace_7248e2483812ac3c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1edc
+// Checksum 0x0, Offset: 0x1e65
 // Size: 0x2e
 function function_279fb9d5f4a3d7b2() {
     if (isdefined(self.dialogue_wheel) && isdefined(self.dialogue_wheel.inputs)) {

@@ -6,8 +6,8 @@
 
 // Namespace cash / namespace_14f37777effc564d
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1
-// Size: 0x175
+// Checksum 0x0, Offset: 0xb8
+// Size: 0x174
 function playersetplunderomnvar(value) {
     assert(isdefined(value));
     if (!isdefined(value)) {
@@ -34,8 +34,8 @@ function playersetplunderomnvar(value) {
 
 // Namespace cash / namespace_14f37777effc564d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x25e
-// Size: 0x1e7
+// Checksum 0x0, Offset: 0x234
+// Size: 0x1df
 function function_52bea99a5c38fbe5(value, var_10aaaaa566515888) {
     if (!isdefined(var_10aaaaa566515888)) {
         var_10aaaaa566515888 = 0;
@@ -57,9 +57,6 @@ function function_52bea99a5c38fbe5(value, var_10aaaaa566515888) {
     if (!isdefined(level.var_5f92f1f4d7faf5a0) && isdefined(level.maxsquadsize) && squadmemberindex >= level.maxsquadsize) {
         return;
     }
-    if (squadmemberindex < 0) {
-        return;
-    }
     if (scripts\cp_mp\utility\game_utility::function_9cdaadfddeda4d7a()) {
         self setclientomnvar("ui_zm_essence_squad_index_" + squadmemberindex, value);
     } else {
@@ -76,8 +73,8 @@ function function_52bea99a5c38fbe5(value, var_10aaaaa566515888) {
 
 // Namespace cash / namespace_14f37777effc564d
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44d
-// Size: 0x175
+// Checksum 0x0, Offset: 0x41b
+// Size: 0x176
 function function_6da8b65579348d0b() {
     if (!isdefined(self.plundercount)) {
         self.plundercount = 0;

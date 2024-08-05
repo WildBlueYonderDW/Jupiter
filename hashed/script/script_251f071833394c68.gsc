@@ -4,7 +4,7 @@
 
 // Namespace namespace_7c0e88f32463912b / namespace_8b5a0cf52cbe3e30
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x156
+// Checksum 0x0, Offset: 0x113
 // Size: 0x33
 function function_2fce2f81588a2462() {
     if (!isdefined(level.var_bf8aa3f39f981625)) {
@@ -15,7 +15,7 @@ function function_2fce2f81588a2462() {
 
 // Namespace namespace_7c0e88f32463912b / namespace_8b5a0cf52cbe3e30
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x191
+// Checksum 0x0, Offset: 0x14e
 // Size: 0xcc
 function init_juggernaut_damage_states() {
     self endon("death");
@@ -36,7 +36,7 @@ function init_juggernaut_damage_states() {
 
 // Namespace namespace_7c0e88f32463912b / namespace_8b5a0cf52cbe3e30
 // Params 13, eflags: 0x4
-// Checksum 0x0, Offset: 0x265
+// Checksum 0x0, Offset: 0x222
 // Size: 0x7d
 function private function_8b750ca7ecac8f1f(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname) {
     apply_juggernaut_part_damage(self.damagelocation, idamage);
@@ -44,8 +44,8 @@ function private function_8b750ca7ecac8f1f(einflictor, eattacker, idamage, idfla
 
 // Namespace namespace_7c0e88f32463912b / namespace_8b5a0cf52cbe3e30
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ea
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x2a7
+// Size: 0xd0
 function private create_juggernaut_damagedata(name, health, parts) {
     data = spawnstruct();
     data.health = health;
@@ -64,7 +64,7 @@ function private create_juggernaut_damagedata(name, health, parts) {
 
 // Namespace namespace_7c0e88f32463912b / namespace_8b5a0cf52cbe3e30
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c4
+// Checksum 0x0, Offset: 0x37f
 // Size: 0xa5
 function private apply_juggernaut_part_damage(location, dmg) {
     if (!isdefined(self.damagedatalookup[location])) {

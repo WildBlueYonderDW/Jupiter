@@ -5,7 +5,7 @@
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e6
+// Checksum 0x0, Offset: 0x248
 // Size: 0x24
 function init() {
     setdvarifuninitialized(@"hash_89dce574801028ad", 0);
@@ -14,8 +14,8 @@ function init() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x312
-// Size: 0x2e8
+// Checksum 0x0, Offset: 0x274
+// Size: 0x2e7
 function rockable_cars_init() {
     level.rockablecars = spawnstruct();
     level.rockablecars.cars = [];
@@ -69,7 +69,7 @@ function rockable_cars_init() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x602
+// Checksum 0x0, Offset: 0x563
 // Size: 0x59
 function valid_rockable_vehicle() {
     if (isdefined(self.script_noteworthy) && self.script_noteworthy == "not_rockable") {
@@ -83,8 +83,8 @@ function valid_rockable_vehicle() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x663
-// Size: 0x138
+// Checksum 0x0, Offset: 0x5c4
+// Size: 0x144
 function rockable_car_watch_damage() {
     self endon("death");
     self endon("rocked");
@@ -102,8 +102,8 @@ function rockable_car_watch_damage() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a3
-// Size: 0x2a4
+// Checksum 0x0, Offset: 0x710
+// Size: 0x2a7
 function rockable_car_watch_death() {
     self endon("death");
     self waittillmatch("scriptableNotification", "anim_explosion");
@@ -135,8 +135,8 @@ function rockable_car_watch_death() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4f
-// Size: 0x160
+// Checksum 0x0, Offset: 0x9bf
+// Size: 0x16c
 function rockable_car_watch_dead() {
     self endon("death");
     while (true) {
@@ -152,7 +152,7 @@ function rockable_car_watch_dead() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb7
+// Checksum 0x0, Offset: 0xb33
 // Size: 0x58
 function rockable_car_debug() {
     self endon("death");
@@ -167,8 +167,8 @@ function rockable_car_debug() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc17
-// Size: 0x118
+// Checksum 0x0, Offset: 0xb93
+// Size: 0x116
 function alarm_cars_init() {
     level.alarmcars = spawnstruct();
     level.alarmcars.cars = level.rockablecars.cars;
@@ -189,8 +189,8 @@ function alarm_cars_init() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd37
-// Size: 0x166
+// Checksum 0x0, Offset: 0xcb1
+// Size: 0x172
 function alarm_car_watch_damage() {
     self endon("death");
     self endon("rocked");
@@ -214,7 +214,7 @@ function alarm_car_watch_damage() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xea5
+// Checksum 0x0, Offset: 0xe2b
 // Size: 0x62
 function alarm_car_debug() {
     self endon("death");
@@ -229,7 +229,7 @@ function alarm_car_debug() {
 
 // Namespace namespace_94944d677b7174c / scripts\common\rockable_vehicles
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0f
+// Checksum 0x0, Offset: 0xe95
 // Size: 0x53
 function print3d_debug(origin, text, color, alpha, scale, duration) {
     if (getdvarint(@"hash_89dce574801028ad")) {

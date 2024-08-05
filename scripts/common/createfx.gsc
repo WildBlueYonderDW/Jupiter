@@ -8,8 +8,8 @@
 
 // Namespace createfx / scripts\common\createfx
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd2
-// Size: 0xf4
+// Checksum 0x0, Offset: 0xab8
+// Size: 0xf3
 function createeffect(type, fxid, var_265e032b267abf38) {
     ent = spawnstruct();
     if (!isdefined(level.createfxent)) {
@@ -34,7 +34,7 @@ function createeffect(type, fxid, var_265e032b267abf38) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdcf
+// Checksum 0x0, Offset: 0xbb4
 // Size: 0x7
 function getloopeffectdelaydefault() {
     return 0.5;
@@ -42,7 +42,7 @@ function getloopeffectdelaydefault() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xddf
+// Checksum 0x0, Offset: 0xbc4
 // Size: 0x4
 function getoneshoteffectdelaydefault() {
     return -4;
@@ -50,7 +50,7 @@ function getoneshoteffectdelaydefault() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdec
+// Checksum 0x0, Offset: 0xbd1
 // Size: 0x3
 function getexploderdelaydefault() {
     return false;
@@ -58,7 +58,7 @@ function getexploderdelaydefault() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf8
+// Checksum 0x0, Offset: 0xbdd
 // Size: 0x7
 function getintervalsounddelaymindefault() {
     return 0.75;
@@ -66,7 +66,7 @@ function getintervalsounddelaymindefault() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe08
+// Checksum 0x0, Offset: 0xbed
 // Size: 0x4
 function getintervalsounddelaymaxdefault() {
     return 2;
@@ -74,8 +74,8 @@ function getintervalsounddelaymaxdefault() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe15
-// Size: 0x133
+// Checksum 0x0, Offset: 0xbfa
+// Size: 0x132
 function createloopsound() {
     ent = spawnstruct();
     if (!isdefined(level.createfxent)) {
@@ -103,8 +103,8 @@ function createloopsound() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf51
-// Size: 0x5c
+// Checksum 0x0, Offset: 0xd35
+// Size: 0x5b
 function createintervalsound() {
     ent = createloopsound();
     ent.v["type"] = "soundfx_interval";
@@ -115,8 +115,8 @@ function createintervalsound() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb6
-// Size: 0x42
+// Checksum 0x0, Offset: 0xd99
+// Size: 0x41
 function createnewexploder() {
     if (!isdefined(level.createfxent)) {
         level.createfxent = [];
@@ -128,8 +128,8 @@ function createnewexploder() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1001
-// Size: 0x4f
+// Checksum 0x0, Offset: 0xde3
+// Size: 0x4e
 function add_exploder(exploderid, ent) {
     array = [];
     if (isdefined(level.createfxexploders[exploderid])) {
@@ -141,7 +141,7 @@ function add_exploder(exploderid, ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1058
+// Checksum 0x0, Offset: 0xe39
 // Size: 0x1fd
 function createnewexploder_internal(ent) {
     if (!isdefined(ent)) {
@@ -185,8 +185,8 @@ function createnewexploder_internal(ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x125e
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x103f
+// Size: 0x39
 function createexploderex(fxid, exploderid) {
     ent = createexploder(fxid);
     ent.v["exploder"] = exploderid;
@@ -195,8 +195,8 @@ function createexploderex(fxid, exploderid) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12a1
-// Size: 0xeb
+// Checksum 0x0, Offset: 0x1081
+// Size: 0xea
 function createreactiveent(fxid) {
     ent = spawnstruct();
     if (!isdefined(level.createfxent)) {
@@ -218,7 +218,7 @@ function createreactiveent(fxid) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1395
+// Checksum 0x0, Offset: 0x1174
 // Size: 0x4f
 function set_origin_and_angles(origin, angles) {
     if (isdefined(level.createfx_offset)) {
@@ -230,7 +230,7 @@ function set_origin_and_angles(origin, angles) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ec
+// Checksum 0x0, Offset: 0x11cb
 // Size: 0x4a
 function set_forward_and_up_vectors() {
     self.v["up"] = anglestoup(self.v["angles"]);
@@ -239,7 +239,7 @@ function set_forward_and_up_vectors() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x143e
+// Checksum 0x0, Offset: 0x121d
 // Size: 0x10a
 function createfx_common() {
     precacheshader("black");
@@ -262,7 +262,7 @@ function createfx_common() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1550
+// Checksum 0x0, Offset: 0x132f
 // Size: 0x17f
 function init_level_variables() {
     level._createfx.selectedmove_up = 0;
@@ -286,7 +286,7 @@ function init_level_variables() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16d7
+// Checksum 0x0, Offset: 0x14b6
 // Size: 0xbf
 function init_locked_list() {
     level._createfx.lockedlist = [];
@@ -300,8 +300,8 @@ function init_locked_list() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x179e
-// Size: 0x25b
+// Checksum 0x0, Offset: 0x157d
+// Size: 0x25a
 function init_colors() {
     colors = [];
     colors["loopfx"]["selected"] = (1, 1, 0.2);
@@ -330,8 +330,8 @@ function init_colors() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a01
-// Size: 0x775
+// Checksum 0x0, Offset: 0x17df
+// Size: 0x784
 function createfxlogic() {
     waittillframeend();
     waitframe();
@@ -355,16 +355,16 @@ function createfxlogic() {
     level.player setclientomnvar("ui_hide_hud", 1);
     /#
         setdevdvar(@"hash_88d99aa177a27680", "<dev string:x1c>");
-        setdevdvar(@"hash_4200f2db2e550f3e", "<dev string:x23>");
+        setdevdvar(@"hash_4200f2db2e550f3e", "<dev string:x20>");
     #/
     setdvarifuninitialized(@"hash_319e665538ddb37f", "");
     setdvarifuninitialized(@"hash_8eac3f47ca6c0729", "0");
     /#
-        if (getdvar(@"hash_1b7eec3c3206970b") == "<dev string:x23>") {
-            setdevdvar(@"hash_1b7eec3c3206970b", "<dev string:x27>");
+        if (getdvar(@"hash_1b7eec3c3206970b") == "<dev string:x20>") {
+            setdevdvar(@"hash_1b7eec3c3206970b", "<dev string:x21>");
         }
-        if (getdvar(@"hash_cbfe648b557aa861") == "<dev string:x23>") {
-            setdevdvar(@"hash_cbfe648b557aa861", "<dev string:x27>");
+        if (getdvar(@"hash_cbfe648b557aa861") == "<dev string:x20>") {
+            setdevdvar(@"hash_cbfe648b557aa861", "<dev string:x21>");
         }
     #/
     level.createfx_draw_enabled = 1;
@@ -522,7 +522,7 @@ function createfxlogic() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x217e
+// Checksum 0x0, Offset: 0x1f6b
 // Size: 0x1b2
 function modify_player_speed() {
     modify_speed = 0;
@@ -559,7 +559,7 @@ function modify_player_speed() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2338
+// Checksum 0x0, Offset: 0x2125
 // Size: 0x16b
 function set_player_speed_hud() {
     if (level.mp_createfx) {
@@ -574,7 +574,7 @@ function set_player_speed_hud() {
         hud.x = 320;
         hud.y = 420;
         /#
-            hud setdevtext("<dev string:x2c>");
+            hud setdevtext("<dev string:x23>");
         #/
         hud_value = newhudelem();
         hud_value.alignx = "left";
@@ -591,7 +591,7 @@ function set_player_speed_hud() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24ab
+// Checksum 0x0, Offset: 0x2298
 // Size: 0x15
 function toggle_createfx_drawing() {
     level.createfx_draw_enabled = !level.createfx_draw_enabled;
@@ -599,7 +599,7 @@ function toggle_createfx_drawing() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24c8
+// Checksum 0x0, Offset: 0x22b5
 // Size: 0xca
 function insert_effect() {
     setmenu("creation");
@@ -625,7 +625,7 @@ function insert_effect() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x259a
+// Checksum 0x0, Offset: 0x2387
 // Size: 0xbd
 function is_ent_filtered_out(ent, filter) {
     if (filter != "") {
@@ -643,8 +643,8 @@ function is_ent_filtered_out(ent, filter) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2660
-// Size: 0x1e5
+// Checksum 0x0, Offset: 0x244d
+// Size: 0x1e9
 function manipulate_createfx_ents(highlightedent, var_24762ec425490dd4, leftheld, ctrlheld, right) {
     if (!level.createfx_draw_enabled) {
         return;
@@ -702,8 +702,8 @@ function manipulate_createfx_ents(highlightedent, var_24762ec425490dd4, leftheld
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x284d
-// Size: 0x2e1
+// Checksum 0x0, Offset: 0x263e
+// Size: 0x2f0
 function draw_origin(scale, colorindex) {
     view_origin = level.player getvieworigin();
     view_angles = level.player getplayerangles();
@@ -722,22 +722,22 @@ function draw_origin(scale, colorindex) {
         angles_offset = offset_right + offset_up;
     }
     /#
-        print3d(self.v["<dev string:x37>"] + angles_offset, "<dev string:x41>", color, var_27ee0289d942057b, scale);
+        print3d(self.v["<dev string:x2b>"] + angles_offset, "<dev string:x32>", color, var_27ee0289d942057b, scale);
         if (var_94d86565c4d2c660 > 0) {
-            iswithinfov = within_fov(view_origin, view_angles, self.v["<dev string:x37>"], 0.422618);
+            iswithinfov = within_fov(view_origin, view_angles, self.v["<dev string:x2b>"], 0.422618);
             if (iswithinfov) {
                 ssize = 2;
                 lsize = 4;
-                sphere(self.v["<dev string:x37>"], ssize * scale, color);
-                forward = anglestoforward(self.v["<dev string:x46>"]);
+                sphere(self.v["<dev string:x2b>"], ssize * scale, color);
+                forward = anglestoforward(self.v["<dev string:x34>"]);
                 forward *= lsize * scale;
-                right = anglestoright(self.v["<dev string:x46>"]) * -1;
+                right = anglestoright(self.v["<dev string:x34>"]) * -1;
                 right *= lsize * scale;
-                up = anglestoup(self.v["<dev string:x46>"]);
+                up = anglestoup(self.v["<dev string:x34>"]);
                 up *= lsize * scale;
-                line(self.v["<dev string:x37>"] - forward, self.v["<dev string:x37>"] + forward, color, var_94d86565c4d2c660);
-                line(self.v["<dev string:x37>"] - right, self.v["<dev string:x37>"] + right, color, var_94d86565c4d2c660);
-                line(self.v["<dev string:x37>"] - up, self.v["<dev string:x37>"] + up, color, var_94d86565c4d2c660);
+                line(self.v["<dev string:x2b>"] - forward, self.v["<dev string:x2b>"] + forward, color, var_94d86565c4d2c660);
+                line(self.v["<dev string:x2b>"] - right, self.v["<dev string:x2b>"] + right, color, var_94d86565c4d2c660);
+                line(self.v["<dev string:x2b>"] - up, self.v["<dev string:x2b>"] + up, color, var_94d86565c4d2c660);
             }
         }
     #/
@@ -745,8 +745,8 @@ function draw_origin(scale, colorindex) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b36
-// Size: 0x18f
+// Checksum 0x0, Offset: 0x2936
+// Size: 0x190
 function createfx_print3d(colorindex, scale, right) {
     draw_origin(scale, colorindex);
     if (self.textalpha > 0) {
@@ -759,14 +759,14 @@ function createfx_print3d(colorindex, scale, right) {
         height = 15;
         foreach (text in texts) {
             /#
-                print3d(self.v["<dev string:x37>"] + printright + (0, 0, height), text, color, self.textalpha, scale);
+                print3d(self.v["<dev string:x2b>"] + printright + (0, 0, height), text, color, self.textalpha, scale);
             #/
             height -= 13;
         }
         /#
-            if (isdefined(self.v["<dev string:x50>"])) {
-                if (self.v["<dev string:x63>"] == "<dev string:x6b>" && !getdvarint(@"hash_8eac3f47ca6c0729")) {
-                    sphere(self.v["<dev string:x37>"], self.v["<dev string:x50>"], color);
+            if (isdefined(self.v["<dev string:x3b>"])) {
+                if (self.v["<dev string:x4b>"] == "<dev string:x50>" && !getdvarint(@"hash_8eac3f47ca6c0729")) {
+                    sphere(self.v["<dev string:x2b>"], self.v["<dev string:x3b>"], color);
                 }
             }
         #/
@@ -775,8 +775,8 @@ function createfx_print3d(colorindex, scale, right) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ccd
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x2ace
+// Size: 0xbd
 function get_print3d_text() {
     switch (self.v["type"]) {
     case #"hash_46a741fcf24ab59": 
@@ -795,7 +795,7 @@ function get_print3d_text() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d93
+// Checksum 0x0, Offset: 0x2b93
 // Size: 0x26
 function select_by_name_list() {
     level.effect_list_offset = 0;
@@ -806,8 +806,8 @@ function select_by_name_list() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dc1
-// Size: 0x295
+// Checksum 0x0, Offset: 0x2bc1
+// Size: 0x296
 function handle_selected_ents(var_c42084c511513568) {
     if (level._createfx.selected_fx_ents.size > 0) {
         var_c42084c511513568 = selected_ent_buttons(var_c42084c511513568);
@@ -857,7 +857,7 @@ function handle_selected_ents(var_c42084c511513568) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x305f
+// Checksum 0x0, Offset: 0x2e60
 // Size: 0xb1
 function selected_ent_buttons(var_c42084c511513568) {
     if (button_is_clicked("lshift", "rshift", "BUTTON_X")) {
@@ -887,7 +887,7 @@ function selected_ent_buttons(var_c42084c511513568) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3119
+// Checksum 0x0, Offset: 0x2f1a
 // Size: 0x21a
 function modify_rate() {
     shift_held = button_is_held("lshift", "rshift");
@@ -923,7 +923,7 @@ function modify_rate() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x333b
+// Checksum 0x0, Offset: 0x313c
 // Size: 0x2a
 function toggle_axismode() {
     level._createfx.axismode = !level._createfx.axismode;
@@ -931,7 +931,7 @@ function toggle_axismode() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x336d
+// Checksum 0x0, Offset: 0x316e
 // Size: 0x49
 function toggle_snap2normal() {
     level._createfx.snap2normal = !level._createfx.snap2normal;
@@ -940,7 +940,7 @@ function toggle_snap2normal() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33be
+// Checksum 0x0, Offset: 0x31bf
 // Size: 0x9f
 function toggle_snap2angle() {
     level._createfx.snap2angle += 1;
@@ -952,7 +952,7 @@ function toggle_snap2angle() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3465
+// Checksum 0x0, Offset: 0x3266
 // Size: 0xb1
 function copy_angles_of_selected_ents() {
     level notify("new_ent_selection");
@@ -966,7 +966,7 @@ function copy_angles_of_selected_ents() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x351e
+// Checksum 0x0, Offset: 0x331f
 // Size: 0x83
 function reset_axis_of_selected_ents() {
     level notify("new_ent_selection");
@@ -980,7 +980,7 @@ function reset_axis_of_selected_ents() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35a9
+// Checksum 0x0, Offset: 0x33aa
 // Size: 0x53
 function last_selected_entity_has_changed(lastselectentity) {
     if (isdefined(lastselectentity)) {
@@ -995,8 +995,8 @@ function last_selected_entity_has_changed(lastselectentity) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3605
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x3406
+// Size: 0xa9
 function drop_selection_to_ground() {
     for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
         ent = level._createfx.selected_fx_ents[i];
@@ -1007,8 +1007,8 @@ function drop_selection_to_ground() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36b5
-// Size: 0xe1
+// Checksum 0x0, Offset: 0x34b7
+// Size: 0xde
 function set_off_exploders() {
     level notify("createfx_exploder_reset");
     exploders = [];
@@ -1017,20 +1017,20 @@ function set_off_exploders() {
             exploders[ent.v["exploder"]] = 1;
         }
     }
-    foreach (key, _ in exploders) {
+    foreach (_ in exploders) {
         exploder(key);
     }
 }
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x379e
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x359d
+// Size: 0xe5
 function draw_distance() {
     count = 0;
     /#
         if (getdvarint(@"hash_8ba61355a9c9b4fb") == 0) {
-            setdevdvar(@"hash_8ba61355a9c9b4fb", "<dev string:x74>");
+            setdevdvar(@"hash_8ba61355a9c9b4fb", "<dev string:x56>");
         }
     #/
     for (;;) {
@@ -1053,7 +1053,7 @@ function draw_distance() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3889
+// Checksum 0x0, Offset: 0x368a
 // Size: 0x51
 function createfx_autosave() {
     setdvarifuninitialized(@"hash_9dbf8e4641a6231d", "300");
@@ -1069,8 +1069,8 @@ function createfx_autosave() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x38e2
-// Size: 0x139
+// Checksum 0x0, Offset: 0x36e3
+// Size: 0x13b
 function rotate_over_time(org, rotater) {
     level endon("new_ent_selection");
     timer = 0.1;
@@ -1097,7 +1097,7 @@ function rotate_over_time(org, rotater) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a23
+// Checksum 0x0, Offset: 0x3826
 // Size: 0x1d
 function delete_pressed() {
     if (level.createfx_inputlocked) {
@@ -1109,8 +1109,8 @@ function delete_pressed() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a48
-// Size: 0xac
+// Checksum 0x0, Offset: 0x384b
+// Size: 0xad
 function remove_selected_option() {
     if (!isdefined(level._createfx.selected_fx_option_index)) {
         return;
@@ -1129,7 +1129,7 @@ function remove_selected_option() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3afc
+// Checksum 0x0, Offset: 0x3900
 // Size: 0x16
 function remove_option(name) {
     self.v[name] = undefined;
@@ -1137,8 +1137,8 @@ function remove_option(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b1a
-// Size: 0xf2
+// Checksum 0x0, Offset: 0x391e
+// Size: 0xf3
 function delete_selection() {
     newarray = [];
     for (i = 0; i < level.createfxent.size; i++) {
@@ -1165,8 +1165,8 @@ function delete_selection() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c14
-// Size: 0x136
+// Checksum 0x0, Offset: 0x3a19
+// Size: 0x139
 function move_selection_to_cursor() {
     origin = level.createfxcursor["position"];
     if (level._createfx.selected_fx_ents.size <= 0) {
@@ -1190,8 +1190,8 @@ function move_selection_to_cursor() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d52
-// Size: 0xfc
+// Checksum 0x0, Offset: 0x3b5a
+// Size: 0xfa
 function convert_selection_to_exploder() {
     if (level._createfx.selected_fx_ents.size < 1) {
         return;
@@ -1203,7 +1203,7 @@ function convert_selection_to_exploder() {
             createnewexploder_internal(ent);
             continue;
         }
-        println("<dev string:x7b>" + ent.v["<dev string:xae>"] + "<dev string:xb6>" + ent.v["<dev string:x37>"]);
+        println("<dev string:x5a>" + ent.v["<dev string:x8a>"] + "<dev string:x8f>" + ent.v["<dev string:x2b>"]);
     }
     if (converted) {
         setmenu("none");
@@ -1213,7 +1213,7 @@ function convert_selection_to_exploder() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e56
+// Checksum 0x0, Offset: 0x3c5c
 // Size: 0x2d
 function select_last_entity() {
     select_entity(level.createfxent.size - 1, level.createfxent[level.createfxent.size - 1]);
@@ -1221,8 +1221,8 @@ function select_last_entity() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e8b
-// Size: 0x165
+// Checksum 0x0, Offset: 0x3c91
+// Size: 0x160
 function select_all_exploders_of_currently_selected(key) {
     selected_exploders = [];
     foreach (ent in level._createfx.selected_fx_ents) {
@@ -1251,8 +1251,8 @@ function select_all_exploders_of_currently_selected(key) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff8
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x3df9
+// Size: 0xb2
 function copy_ents() {
     if (level._createfx.selected_fx_ents.size <= 0) {
         return;
@@ -1270,7 +1270,7 @@ function copy_ents() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x40b0
+// Checksum 0x0, Offset: 0x3eb3
 // Size: 0x17
 function post_entity_creation_function() {
     self.textalpha = 0;
@@ -1279,8 +1279,8 @@ function post_entity_creation_function() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x40cf
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x3ed2
+// Size: 0x69
 function paste_ents() {
     if (!isdefined(level.stored_ents)) {
         return;
@@ -1297,7 +1297,7 @@ function paste_ents() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4141
+// Checksum 0x0, Offset: 0x3f43
 // Size: 0x28
 function add_and_select_entity(ent) {
     level.createfxent[level.createfxent.size] = ent;
@@ -1306,7 +1306,7 @@ function add_and_select_entity(ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4171
+// Checksum 0x0, Offset: 0x3f73
 // Size: 0xa3
 function get_center_of_array(array) {
     center = (0, 0, 0);
@@ -1318,8 +1318,8 @@ function get_center_of_array(array) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x421d
-// Size: 0xf0
+// Checksum 0x0, Offset: 0x401f
+// Size: 0xf1
 function goto_selected() {
     origin = undefined;
     if (level._createfx.selected_fx_ents.size > 0) {
@@ -1328,7 +1328,7 @@ function goto_selected() {
         origin = level.fx_highlightedent.v["origin"];
     }
     if (!isdefined(origin)) {
-        println("<dev string:xbe>");
+        println("<dev string:x94>");
         return;
     }
     angles = vectortoangles(level.player.origin - origin);
@@ -1339,7 +1339,7 @@ function goto_selected() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4315
+// Checksum 0x0, Offset: 0x4118
 // Size: 0x14
 function ent_draw_axis() {
     self endon("death");
@@ -1351,7 +1351,7 @@ function ent_draw_axis() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4331
+// Checksum 0x0, Offset: 0x4134
 // Size: 0x2f
 function rotation_is_occuring() {
     if (level.selectedrotate_roll != 0) {
@@ -1365,8 +1365,8 @@ function rotation_is_occuring() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4369
-// Size: 0x20f
+// Checksum 0x0, Offset: 0x416c
+// Size: 0x212
 function print_fx_options(ent, tab, autosave) {
     for (i = 0; i < level._createfx.options.size; i++) {
         option = level._createfx.options[i];
@@ -1395,19 +1395,19 @@ function print_fx_options(ent, tab, autosave) {
                 continue;
             }
             /#
-                cfxprintln(tab + "<dev string:xf9>" + optionname + "<dev string:x105>" + ent.v[optionname] + "<dev string:x110>");
+                cfxprintln(tab + "<dev string:xcc>" + optionname + "<dev string:xd5>" + ent.v[optionname] + "<dev string:xdd>");
             #/
             continue;
         }
         /#
-            cfxprintln(tab + "<dev string:xf9>" + optionname + "<dev string:x116>" + ent.v[optionname] + "<dev string:x120>");
+            cfxprintln(tab + "<dev string:xcc>" + optionname + "<dev string:xe0>" + ent.v[optionname] + "<dev string:xe7>");
         #/
     }
 }
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4580
+// Checksum 0x0, Offset: 0x4386
 // Size: 0x65
 function entity_highlight_disable() {
     self notify("highlight change");
@@ -1425,7 +1425,7 @@ function entity_highlight_disable() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45ed
+// Checksum 0x0, Offset: 0x43f3
 // Size: 0x62
 function entity_highlight_enable() {
     self notify("highlight change");
@@ -1443,7 +1443,7 @@ function entity_highlight_enable() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4657
+// Checksum 0x0, Offset: 0x445d
 // Size: 0x3d
 function clear_settable_fx() {
     level.createfx_inputlocked = 0;
@@ -1456,8 +1456,8 @@ function clear_settable_fx() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x469c
-// Size: 0x5c
+// Checksum 0x0, Offset: 0x44a2
+// Size: 0x5b
 function reset_fx_hud_colors() {
     for (i = 0; i < level._createfx.hudelem_count; i++) {
         level._createfx.hudelems[i][0].color = (1, 1, 1);
@@ -1466,7 +1466,7 @@ function reset_fx_hud_colors() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4700
+// Checksum 0x0, Offset: 0x4505
 // Size: 0x41
 function toggle_entity_selection(index, ent) {
     if (isdefined(level._createfx.selected_fx[index])) {
@@ -1478,7 +1478,7 @@ function toggle_entity_selection(index, ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4749
+// Checksum 0x0, Offset: 0x454e
 // Size: 0x87
 function select_entity(index, ent) {
     if (isdefined(level._createfx.selected_fx[index])) {
@@ -1493,7 +1493,7 @@ function select_entity(index, ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47d8
+// Checksum 0x0, Offset: 0x45dd
 // Size: 0x25
 function ent_is_highlighted(ent) {
     if (!isdefined(level.fx_highlightedent)) {
@@ -1504,7 +1504,7 @@ function ent_is_highlighted(ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4806
+// Checksum 0x0, Offset: 0x460b
 // Size: 0xe4
 function deselect_entity(index, ent) {
     if (!isdefined(level._createfx.selected_fx[index])) {
@@ -1527,7 +1527,7 @@ function deselect_entity(index, ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48f2
+// Checksum 0x0, Offset: 0x46f7
 // Size: 0x21
 function index_is_selected(index) {
     return isdefined(level._createfx.selected_fx[index]);
@@ -1535,8 +1535,8 @@ function index_is_selected(index) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x491c
-// Size: 0x55
+// Checksum 0x0, Offset: 0x4721
+// Size: 0x54
 function ent_is_selected(ent) {
     for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
         if (level._createfx.selected_fx_ents[i] == ent) {
@@ -1548,8 +1548,8 @@ function ent_is_selected(ent) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x497a
-// Size: 0x93
+// Checksum 0x0, Offset: 0x477e
+// Size: 0x92
 function clear_entity_selection() {
     for (i = 0; i < level._createfx.selected_fx_ents.size; i++) {
         if (!ent_is_highlighted(level._createfx.selected_fx_ents[i])) {
@@ -1562,35 +1562,35 @@ function clear_entity_selection() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a15
-// Size: 0x21d
+// Checksum 0x0, Offset: 0x4818
+// Size: 0x21f
 function draw_axis() {
     /#
         if (level._createfx.drawaxis == 1) {
-            set_axis_model("<dev string:x125>");
-            level._createfx.axis.origin = self.v["<dev string:x37>"];
-            level._createfx.axis.angles = self.v["<dev string:x46>"];
+            set_axis_model("<dev string:xe9>");
+            level._createfx.axis.origin = self.v["<dev string:x2b>"];
+            level._createfx.axis.angles = self.v["<dev string:x34>"];
         } else if (level._createfx.drawaxis == 2) {
             range = 25 * getdvarfloat(@"hash_af4eccdbca5a551c");
-            forward = anglestoforward(self.v["<dev string:x46>"]);
+            forward = anglestoforward(self.v["<dev string:x34>"]);
             forward *= range;
-            right = anglestoright(self.v["<dev string:x46>"]) * -1;
+            right = anglestoright(self.v["<dev string:x34>"]) * -1;
             right *= range;
-            up = anglestoup(self.v["<dev string:x46>"]);
+            up = anglestoup(self.v["<dev string:x34>"]);
             up *= range;
-            line(self.v["<dev string:x37>"], self.v["<dev string:x37>"] + forward, (1, 0, 0), 1);
-            line(self.v["<dev string:x37>"], self.v["<dev string:x37>"] + up, (0, 1, 0), 1);
-            line(self.v["<dev string:x37>"], self.v["<dev string:x37>"] + right, (0, 0, 1), 1);
+            line(self.v["<dev string:x2b>"], self.v["<dev string:x2b>"] + forward, (1, 0, 0), 1);
+            line(self.v["<dev string:x2b>"], self.v["<dev string:x2b>"] + up, (0, 1, 0), 1);
+            line(self.v["<dev string:x2b>"], self.v["<dev string:x2b>"] + right, (0, 0, 1), 1);
         }
-        if (isdefined(self.v["<dev string:x140>"])) {
-            drawsoundshape(self.v["<dev string:x37>"], self.v["<dev string:x46>"], self.v["<dev string:x140>"], (1, 0, 1), 1);
+        if (isdefined(self.v["<dev string:x101>"])) {
+            drawsoundshape(self.v["<dev string:x2b>"], self.v["<dev string:x34>"], self.v["<dev string:x101>"], (1, 0, 1), 1);
         }
     #/
 }
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c3a
+// Checksum 0x0, Offset: 0x4a3f
 // Size: 0x8c
 function set_axis_model(model) {
     if (!isdefined(level._createfx.axis)) {
@@ -1604,7 +1604,7 @@ function set_axis_model(model) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cce
+// Checksum 0x0, Offset: 0x4ad3
 // Size: 0x33
 function remove_axis_model() {
     if (!isdefined(level._createfx.axis)) {
@@ -1615,28 +1615,28 @@ function remove_axis_model() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d09
-// Size: 0x138
+// Checksum 0x0, Offset: 0x4b0e
+// Size: 0x137
 function draw_cross() {
     /#
         if (level._createfx.drawaxis == 1) {
-            set_axis_model("<dev string:x14e>");
-            level._createfx.axis.origin = self.v["<dev string:x37>"];
-            level._createfx.axis.angles = self.v["<dev string:x46>"];
+            set_axis_model("<dev string:x10c>");
+            level._createfx.axis.origin = self.v["<dev string:x2b>"];
+            level._createfx.axis.angles = self.v["<dev string:x34>"];
             return;
         }
         if (level._createfx.drawaxis == 2) {
             range = 4;
-            line(self.v["<dev string:x37>"] - (0, 0, range), self.v["<dev string:x37>"] + (0, 0, range));
-            line(self.v["<dev string:x37>"] - (0, range, 0), self.v["<dev string:x37>"] + (0, range, 0));
-            line(self.v["<dev string:x37>"] - (range, 0, 0), self.v["<dev string:x37>"] + (range, 0, 0));
+            line(self.v["<dev string:x2b>"] - (0, 0, range), self.v["<dev string:x2b>"] + (0, 0, range));
+            line(self.v["<dev string:x2b>"] - (0, range, 0), self.v["<dev string:x2b>"] + (0, range, 0));
+            line(self.v["<dev string:x2b>"] - (range, 0, 0), self.v["<dev string:x2b>"] + (range, 0, 0));
         }
     #/
 }
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e49
+// Checksum 0x0, Offset: 0x4c4d
 // Size: 0x64
 function toggle_createfx_axis() {
     level._createfx.drawaxis++;
@@ -1650,7 +1650,7 @@ function toggle_createfx_axis() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb5
+// Checksum 0x0, Offset: 0x4cb9
 // Size: 0x14
 function createfx_centerprint(text) {
     thread createfx_centerprint_thread(text);
@@ -1658,7 +1658,7 @@ function createfx_centerprint(text) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ed1
+// Checksum 0x0, Offset: 0x4cd5
 // Size: 0x47
 function createfx_centerprint_thread(text) {
     level notify("new_createfx_centerprint");
@@ -1666,14 +1666,14 @@ function createfx_centerprint_thread(text) {
     /#
         level.createfx_centerprint setdevtext(text);
         wait 4.5;
-        level.createfx_centerprint setdevtext("<dev string:x23>");
+        level.createfx_centerprint setdevtext("<dev string:x20>");
     #/
 }
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f20
-// Size: 0x26e
+// Checksum 0x0, Offset: 0x4d24
+// Size: 0x274
 function get_selected_move_vector() {
     yaw = level.player getplayerangles()[1];
     angles = (0, yaw, 0);
@@ -1730,7 +1730,7 @@ function get_selected_move_vector() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5197
+// Checksum 0x0, Offset: 0x4fa1
 // Size: 0x207
 function set_anglemod_move_vector() {
     rate = level._createfx.rate;
@@ -1783,8 +1783,8 @@ function set_anglemod_move_vector() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x53a6
-// Size: 0x99
+// Checksum 0x0, Offset: 0x51b0
+// Size: 0x97
 function update_selected_entities() {
     var_dfbf17dfa0d31efe = 0;
     foreach (ent in level._createfx.selected_fx_ents) {
@@ -1800,7 +1800,7 @@ function update_selected_entities() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5447
+// Checksum 0x0, Offset: 0x524f
 // Size: 0x25
 function stop_fx_looper() {
     if (isdefined(self.looper)) {
@@ -1811,7 +1811,7 @@ function stop_fx_looper() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5474
+// Checksum 0x0, Offset: 0x527c
 // Size: 0xa
 function stop_loopsound() {
     self notify("stop_loop");
@@ -1819,10 +1819,10 @@ function stop_loopsound() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5486
-// Size: 0x90
+// Checksum 0x0, Offset: 0x528e
+// Size: 0x8f
 function func_get_level_fx() {
-    assertex(isdefined(level._effect), "<dev string:x165>");
+    assertex(isdefined(level._effect), "No effect aliases defined!");
     if (!isdefined(level._effect_keys)) {
         keys = getarraykeys(level._effect);
     } else {
@@ -1831,7 +1831,7 @@ function func_get_level_fx() {
             return level._effect_keys;
         }
     }
-    println("<dev string:x183>");
+    println("<dev string:x120>");
     keys = alphabetize(keys);
     level._effect_keys = keys;
     return keys;
@@ -1839,7 +1839,7 @@ function func_get_level_fx() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x551f
+// Checksum 0x0, Offset: 0x5326
 // Size: 0x7f
 function restart_fx_looper() {
     stop_fx_looper();
@@ -1862,8 +1862,8 @@ function restart_fx_looper() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x55a6
-// Size: 0x8b
+// Checksum 0x0, Offset: 0x53ad
+// Size: 0x88
 function refresh_reactive_fx_ents() {
     level._fx.reactive_fx_ents = undefined;
     foreach (ent in level.createfxent) {
@@ -1876,8 +1876,8 @@ function refresh_reactive_fx_ents() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5639
-// Size: 0x28a
+// Checksum 0x0, Offset: 0x543d
+// Size: 0x28d
 function process_fx_rotater() {
     if (level.fx_rotating) {
         return;
@@ -1923,7 +1923,7 @@ function process_fx_rotater() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x58cb
+// Checksum 0x0, Offset: 0x56d2
 // Size: 0xdb
 function spawn_grenade() {
     playfx(level._createfx.grenade.fx, level.createfxcursor["position"]);
@@ -1934,7 +1934,7 @@ function spawn_grenade() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x59ae
+// Checksum 0x0, Offset: 0x57b5
 // Size: 0x14d
 function show_help() {
     clear_fx_hudelements();
@@ -1969,33 +1969,33 @@ function show_help() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b03
-// Size: 0x15e
+// Checksum 0x0, Offset: 0x590a
+// Size: 0x160
 function generate_fx_log(autosave) {
     /#
         check_createfx_limit();
-        flag_waitopen("<dev string:x197>");
-        flag_set("<dev string:x197>");
+        flag_waitopen("<dev string:x131>");
+        flag_set("<dev string:x131>");
         autosave = isdefined(autosave);
-        tab = "<dev string:x1aa>";
-        var_331d6624ff42ad58 = "<dev string:x23>";
+        tab = "<dev string:x141>";
+        var_331d6624ff42ad58 = "<dev string:x20>";
         if (getdvarint(@"hash_85b139dc623fa880")) {
-            var_331d6624ff42ad58 = "<dev string:x1af>";
+            var_331d6624ff42ad58 = "<dev string:x143>";
         }
         createfx_filter_types();
         createfx_adjust_array();
         level._createfx.defaults = [];
-        level._createfx.defaults["<dev string:x1c5>"] = getexploderdelaydefault();
-        level._createfx.defaults["<dev string:x1d7>"] = getoneshoteffectdelaydefault();
-        level._createfx.defaults["<dev string:x1ea>"] = getintervalsounddelaymindefault();
-        level._createfx.defaults["<dev string:x208>"] = getintervalsounddelaymaxdefault();
-        type = "<dev string:x226>";
+        level._createfx.defaults["<dev string:x156>"] = getexploderdelaydefault();
+        level._createfx.defaults["<dev string:x165>"] = getoneshoteffectdelaydefault();
+        level._createfx.defaults["<dev string:x175>"] = getintervalsounddelaymindefault();
+        level._createfx.defaults["<dev string:x190>"] = getintervalsounddelaymaxdefault();
+        type = "<dev string:x1ab>";
         array = get_createfx_array(type);
         write_log(array, type, autosave, var_331d6624ff42ad58);
-        type = "<dev string:x22c>";
+        type = "<dev string:x1ae>";
         array = get_createfx_array(type);
         write_log(array, type, autosave, var_331d6624ff42ad58);
-        flag_clear("<dev string:x197>");
+        flag_clear("<dev string:x131>");
     #/
 }
 
@@ -2003,26 +2003,26 @@ function generate_fx_log(autosave) {
 
     // Namespace createfx / scripts\common\createfx
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5c69
-    // Size: 0x423
+    // Checksum 0x0, Offset: 0x5a72
+    // Size: 0x421
     function write_log(array, type, autosave, var_331d6624ff42ad58) {
-        tab = "<dev string:x1aa>";
+        tab = "<dev string:x141>";
         cfxprintlnstart();
-        cfxprintln("<dev string:x235>");
-        cfxprintln("<dev string:x25e>");
-        cfxprintln("<dev string:x282>");
-        cfxprintln("<dev string:x2a6>");
-        cfxprintln("<dev string:x23>");
-        cfxprintln("<dev string:x2cc>");
-        cfxprintln("<dev string:x2d6>");
-        cfxprintln(tab + "<dev string:x2db>" + type + "<dev string:x2eb>" + array.size);
+        cfxprintln("<dev string:x1b4>");
+        cfxprintln("<dev string:x1da>");
+        cfxprintln("<dev string:x1fb>");
+        cfxprintln("<dev string:x21c>");
+        cfxprintln("<dev string:x20>");
+        cfxprintln("<dev string:x23f>");
+        cfxprintln("<dev string:x246>");
+        cfxprintln(tab + "<dev string:x248>" + type + "<dev string:x255>" + array.size);
         foreach (e in array) {
             if (level.createfx_loopcounter > 16) {
                 level.createfx_loopcounter = 0;
                 wait 0.1;
             }
             level.createfx_loopcounter++;
-            assertex(isdefined(e.v["<dev string:xae>"]), "<dev string:x301>" + e.v["<dev string:x37>"] + "<dev string:x316>");
+            assertex(isdefined(e.v["<dev string:x8a>"]), "<dev string:x268>" + e.v["<dev string:x2b>"] + "<dev string:x27a>");
             if (getdvarint(@"hash_85b139dc623fa880")) {
                 if (!isdefined(e.model)) {
                     continue;
@@ -2030,40 +2030,40 @@ function generate_fx_log(autosave) {
             } else if (isdefined(e.model)) {
                 continue;
             }
-            if (e.v["<dev string:xae>"] == "<dev string:x326>") {
-                cfxprintln(tab + "<dev string:x333>" + e.v["<dev string:x63>"] + "<dev string:x353>");
+            if (e.v["<dev string:x8a>"] == "<dev string:x287>") {
+                cfxprintln(tab + "<dev string:x291>" + e.v["<dev string:x4b>"] + "<dev string:x2ae>");
             }
-            if (e.v["<dev string:xae>"] == "<dev string:x35b>") {
-                cfxprintln(tab + "<dev string:x365>" + e.v["<dev string:x63>"] + "<dev string:x353>");
+            if (e.v["<dev string:x8a>"] == "<dev string:x2b3>") {
+                cfxprintln(tab + "<dev string:x2ba>" + e.v["<dev string:x4b>"] + "<dev string:x2ae>");
             }
-            if (e.v["<dev string:xae>"] == "<dev string:x382>") {
-                if (isdefined(e.v["<dev string:x382>"]) && !level.mp_createfx) {
-                    cfxprintln(tab + "<dev string:x38e>" + e.v["<dev string:x63>"] + "<dev string:x3ab>" + e.v["<dev string:x382>"] + "<dev string:x353>");
+            if (e.v["<dev string:x8a>"] == "<dev string:x2d4>") {
+                if (isdefined(e.v["<dev string:x2d4>"]) && !level.mp_createfx) {
+                    cfxprintln(tab + "<dev string:x2dd>" + e.v["<dev string:x4b>"] + "<dev string:x2f7>" + e.v["<dev string:x2d4>"] + "<dev string:x2ae>");
                 } else {
-                    cfxprintln(tab + "<dev string:x3b3>" + e.v["<dev string:x63>"] + "<dev string:x353>");
+                    cfxprintln(tab + "<dev string:x2fc>" + e.v["<dev string:x4b>"] + "<dev string:x2ae>");
                 }
             }
-            if (e.v["<dev string:xae>"] == "<dev string:x3ce>") {
-                cfxprintln(tab + "<dev string:x3d9>");
+            if (e.v["<dev string:x8a>"] == "<dev string:x314>") {
+                cfxprintln(tab + "<dev string:x31c>");
             }
-            if (e.v["<dev string:xae>"] == "<dev string:x3f5>") {
-                cfxprintln(tab + "<dev string:x409>");
+            if (e.v["<dev string:x8a>"] == "<dev string:x335>") {
+                cfxprintln(tab + "<dev string:x346>");
             }
-            if (e.v["<dev string:xae>"] == "<dev string:x429>") {
-                if (type == "<dev string:x226>" && e.v["<dev string:x63>"] != "<dev string:x6b>" && !level.mp_createfx) {
-                    cfxprintln(tab + "<dev string:x438>" + e.v["<dev string:x63>"] + "<dev string:x353>");
-                } else if (type == "<dev string:x22c>" && e.v["<dev string:x63>"] == "<dev string:x6b>") {
-                    cfxprintln(tab + "<dev string:x456>");
+            if (e.v["<dev string:x8a>"] == "<dev string:x363>") {
+                if (type == "<dev string:x1ab>" && e.v["<dev string:x4b>"] != "<dev string:x50>" && !level.mp_createfx) {
+                    cfxprintln(tab + "<dev string:x36f>" + e.v["<dev string:x4b>"] + "<dev string:x2ae>");
+                } else if (type == "<dev string:x1ae>" && e.v["<dev string:x4b>"] == "<dev string:x50>") {
+                    cfxprintln(tab + "<dev string:x38a>");
                 } else {
                     continue;
                 }
             }
-            cfxprintln(tab + "<dev string:x474>" + e.v["<dev string:x37>"] + "<dev string:x493>" + e.v["<dev string:x46>"] + "<dev string:x499>");
+            cfxprintln(tab + "<dev string:x3a5>" + e.v["<dev string:x2b>"] + "<dev string:x3c1>" + e.v["<dev string:x34>"] + "<dev string:x3c4>");
             print_fx_options(e, tab, autosave);
-            cfxprintln("<dev string:x23>");
+            cfxprintln("<dev string:x20>");
         }
-        cfxprintln("<dev string:x4a0>");
-        cfxprintln("<dev string:x4a5>");
+        cfxprintln("<dev string:x3c8>");
+        cfxprintln("<dev string:x3ca>");
         cfxprintlnend(autosave, var_331d6624ff42ad58, type);
     }
 
@@ -2071,8 +2071,8 @@ function generate_fx_log(autosave) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6094
-// Size: 0x12b
+// Checksum 0x0, Offset: 0x5e9b
+// Size: 0x12c
 function createfx_adjust_array() {
     limit = 0.1;
     foreach (ent in level.createfxent) {
@@ -2095,8 +2095,8 @@ function createfx_adjust_array() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61c7
-// Size: 0x191
+// Checksum 0x0, Offset: 0x5fcf
+// Size: 0x18d
 function get_createfx_array(type) {
     types = get_createfx_types(type);
     array = [];
@@ -2125,8 +2125,8 @@ function get_createfx_array(type) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6361
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x6165
+// Size: 0x69
 function get_createfx_types(type) {
     types = [];
     if (type == "fx") {
@@ -2144,7 +2144,7 @@ function get_createfx_types(type) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x63d4
+// Checksum 0x0, Offset: 0x61d7
 // Size: 0x64
 function check_reactive_fx_type(ent, type) {
     if (ent.v["fxid"] != "No FX" && type == "fx") {
@@ -2158,8 +2158,8 @@ function check_reactive_fx_type(ent, type) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6441
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x6244
+// Size: 0xad
 function is_createfx_type(ent, type) {
     types = get_createfx_types(type);
     if (ent.v["type"] == "reactive_fx") {
@@ -2179,8 +2179,8 @@ function is_createfx_type(ent, type) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64f9
-// Size: 0x201
+// Checksum 0x0, Offset: 0x62fa
+// Size: 0x1fe
 function createfx_filter_types() {
     types = [];
     types[types.size] = "soundfx";
@@ -2205,7 +2205,7 @@ function createfx_filter_types() {
             array[index][array[index].size] = ent;
             break;
         }
-        assertex(found_type, "<dev string:x4aa>" + ent.v["<dev string:xae>"]);
+        assertex(found_type, "Unsupported CreateFX Type: " + ent.v["type"]);
     }
     new_array = [];
     for (i = 0; i < types.size; i++) {
@@ -2220,7 +2220,7 @@ function createfx_filter_types() {
 
     // Namespace createfx / scripts\common\createfx
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6702
+    // Checksum 0x0, Offset: 0x6500
     // Size: 0xc
     function cfxprintlnstart() {
         fileprint_launcher_start_file();
@@ -2228,7 +2228,7 @@ function createfx_filter_types() {
 
     // Namespace createfx / scripts\common\createfx
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6716
+    // Checksum 0x0, Offset: 0x6514
     // Size: 0x16
     function cfxprintln(string) {
         fileprint_launcher(string);
@@ -2236,34 +2236,34 @@ function createfx_filter_types() {
 
     // Namespace createfx / scripts\common\createfx
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6734
-    // Size: 0xfe
+    // Checksum 0x0, Offset: 0x6532
+    // Size: 0x100
     function cfxprintlnend(autosave, var_331d6624ff42ad58, type) {
         var_ae8d497ae110b85c = 1;
-        if (var_331d6624ff42ad58 != "<dev string:x23>" || autosave) {
+        if (var_331d6624ff42ad58 != "<dev string:x20>" || autosave) {
             var_ae8d497ae110b85c = 0;
         }
         if (utility::issp()) {
-            scriptname = level.script + var_331d6624ff42ad58 + "<dev string:x4c9>" + type + "<dev string:x4ce>";
+            scriptname = level.script + var_331d6624ff42ad58 + "<dev string:x3cc>" + type + "<dev string:x3ce>";
             if (autosave) {
-                scriptname = "<dev string:x4d6>" + "<dev string:x4c9>" + type + "<dev string:x4ce>";
+                scriptname = "<dev string:x3d3>" + "<dev string:x3cc>" + type + "<dev string:x3ce>";
             }
         } else {
-            scriptname = level.script + var_331d6624ff42ad58 + "<dev string:x4c9>" + type + "<dev string:x4ce>";
+            scriptname = level.script + var_331d6624ff42ad58 + "<dev string:x3cc>" + type + "<dev string:x3ce>";
             if (autosave) {
-                scriptname = "<dev string:x4e0>";
+                scriptname = "<dev string:x3da>";
             }
         }
         var_51ce59302dc1069d = get_raw_or_devraw_subdir();
         var_e47cf6f2fc269250 = get_gamemode_subdir();
-        fileprint_launcher_end_file("<dev string:x4ee>" + var_51ce59302dc1069d + "<dev string:x4f9>" + var_e47cf6f2fc269250 + "<dev string:x506>" + level.script + "<dev string:x510>" + scriptname, var_ae8d497ae110b85c);
+        fileprint_launcher_end_file("<dev string:x3e5>" + var_51ce59302dc1069d + "<dev string:x3ed>" + var_e47cf6f2fc269250 + "<dev string:x3f7>" + level.script + "<dev string:x3fe>" + scriptname, var_ae8d497ae110b85c);
     }
 
 #/
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x683a
+// Checksum 0x0, Offset: 0x663a
 // Size: 0x2b
 function get_raw_or_devraw_subdir() {
     if (isdefined(level.createfx_devraw_map) && level.createfx_devraw_map) {
@@ -2274,7 +2274,7 @@ function get_raw_or_devraw_subdir() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x686d
+// Checksum 0x0, Offset: 0x666d
 // Size: 0x2c
 function get_gamemode_subdir() {
     if (utility::iscp()) {
@@ -2288,7 +2288,7 @@ function get_gamemode_subdir() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68a1
+// Checksum 0x0, Offset: 0x66a1
 // Size: 0x30e
 function process_button_held_and_clicked() {
     add_button("mouse1");
@@ -2360,7 +2360,7 @@ function process_button_held_and_clicked() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bb7
+// Checksum 0x0, Offset: 0x69b7
 // Size: 0x2d
 function locked(name) {
     if (isdefined(level._createfx.lockedlist[name])) {
@@ -2371,7 +2371,7 @@ function locked(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bed
+// Checksum 0x0, Offset: 0x69ed
 // Size: 0x24
 function kb_locked(name) {
     return level.createfx_inputlocked && isdefined(level.button_is_kb[name]);
@@ -2379,7 +2379,7 @@ function kb_locked(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c1a
+// Checksum 0x0, Offset: 0x6a1a
 // Size: 0x73
 function add_button(name) {
     if (locked(name)) {
@@ -2399,7 +2399,7 @@ function add_button(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c95
+// Checksum 0x0, Offset: 0x6a95
 // Size: 0x21
 function add_kb_button(name) {
     level.button_is_kb[name] = 1;
@@ -2408,7 +2408,7 @@ function add_kb_button(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cbe
+// Checksum 0x0, Offset: 0x6abe
 // Size: 0x25
 function buttondown(button, button2) {
     return buttonpressed_internal(button) || buttonpressed_internal(button2);
@@ -2416,7 +2416,7 @@ function buttondown(button, button2) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cec
+// Checksum 0x0, Offset: 0x6aec
 // Size: 0x2d
 function buttonpressed_internal(button) {
     if (!isdefined(button)) {
@@ -2430,7 +2430,7 @@ function buttonpressed_internal(button) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d22
+// Checksum 0x0, Offset: 0x6b22
 // Size: 0x55
 function button_is_held(name, name2, name3) {
     if (isdefined(name3)) {
@@ -2448,7 +2448,7 @@ function button_is_held(name, name2, name3) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d80
+// Checksum 0x0, Offset: 0x6b80
 // Size: 0x55
 function button_is_clicked(name, name2, name3) {
     if (isdefined(name3)) {
@@ -2466,8 +2466,8 @@ function button_is_clicked(name, name2, name3) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6dde
-// Size: 0x2bb
+// Checksum 0x0, Offset: 0x6bde
+// Size: 0x2c0
 function init_huds() {
     level._createfx.hudelems = [];
     level._createfx.hudelem_count = 30;
@@ -2490,7 +2490,7 @@ function init_huds() {
     level.cleartextmarker.alpha = 0;
     level.cleartextmarker.archived = 0;
     /#
-        level.cleartextmarker setdevtext("<dev string:x519>");
+        level.cleartextmarker setdevtext("<dev string:x404>");
     #/
     for (i = 0; i < level._createfx.hudelem_count; i++) {
         var_9af634fe97c006f5 = [];
@@ -2527,8 +2527,8 @@ function init_huds() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x70a1
-// Size: 0xb3
+// Checksum 0x0, Offset: 0x6ea6
+// Size: 0xb2
 function init_crosshair() {
     crosshair = newhudelem();
     crosshair.archived = 0;
@@ -2542,20 +2542,20 @@ function init_crosshair() {
     crosshair.x = 320;
     crosshair.y = 233;
     /#
-        crosshair setdevtext("<dev string:x41>");
+        crosshair setdevtext("<dev string:x32>");
     #/
 }
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x715c
+// Checksum 0x0, Offset: 0x6f60
 // Size: 0x83
 function clear_fx_hudelements() {
     level.cleartextmarker clearalltextafterhudelem();
     /#
         for (i = 0; i < level._createfx.hudelem_count; i++) {
             for (p = 0; p < 1; p++) {
-                level._createfx.hudelems[i][p] setdevtext("<dev string:x23>");
+                level._createfx.hudelems[i][p] setdevtext("<dev string:x20>");
             }
         }
     #/
@@ -2564,8 +2564,8 @@ function clear_fx_hudelements() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x71e7
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x6feb
+// Size: 0x7d
 function set_fx_hudelement(text) {
     /#
         for (p = 0; p < 1; p++) {
@@ -2578,7 +2578,7 @@ function set_fx_hudelement(text) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x726d
+// Checksum 0x0, Offset: 0x7070
 // Size: 0x8b
 function init_tool_hud() {
     if (!isdefined(level._createfx.tool_hudelems)) {
@@ -2594,10 +2594,10 @@ function init_tool_hud() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7300
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x7103
+// Size: 0xaf
 function new_tool_hud(name) {
-    foreach (idx, hud in level._createfx.tool_hudelems) {
+    foreach (hud in level._createfx.tool_hudelems) {
         if (isdefined(hud.value_hudelem)) {
             hud.value_hudelem destroy();
         }
@@ -2609,7 +2609,7 @@ function new_tool_hud(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73ba
+// Checksum 0x0, Offset: 0x71ba
 // Size: 0x20
 function current_mode_hud(name) {
     return level._createfx.tool_hud == name;
@@ -2617,7 +2617,7 @@ function current_mode_hud(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x73e3
+// Checksum 0x0, Offset: 0x71e3
 // Size: 0xe
 function clear_tool_hud() {
     new_tool_hud("");
@@ -2625,8 +2625,8 @@ function clear_tool_hud() {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73f9
-// Size: 0x96
+// Checksum 0x0, Offset: 0x71f9
+// Size: 0x95
 function new_tool_hudelem(n) {
     hud = newhudelem();
     hud.archived = 0;
@@ -2642,7 +2642,7 @@ function new_tool_hudelem(n) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7498
+// Checksum 0x0, Offset: 0x7297
 // Size: 0x3b
 function get_tool_hudelem(name) {
     if (isdefined(level._createfx.tool_hudelems[name])) {
@@ -2653,7 +2653,7 @@ function get_tool_hudelem(name) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x74dc
+// Checksum 0x0, Offset: 0x72db
 // Size: 0x142
 function set_tool_hudelem(var, value) {
     if (level.mp_createfx) {
@@ -2689,8 +2689,8 @@ function set_tool_hudelem(var, value) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7626
-// Size: 0x161
+// Checksum 0x0, Offset: 0x7425
+// Size: 0x15f
 function select_by_substring() {
     substring = getdvar(@"hash_4200f2db2e550f3e");
     if (substring == "") {
@@ -2698,13 +2698,13 @@ function select_by_substring() {
     }
     setdvar(@"hash_4200f2db2e550f3e", "");
     index_array = [];
-    foreach (i, ent in level.createfxent) {
+    foreach (ent in level.createfxent) {
         if (issubstr(ent.v["fxid"], substring)) {
             index_array[index_array.size] = i;
         }
     }
     if (index_array.size == 0) {
-        println("<dev string:x523>" + substring + "<dev string:x54d>");
+        println("<dev string:x40b>" + substring + "<dev string:x432>");
         return false;
     }
     deselect_all_ents();
@@ -2713,14 +2713,14 @@ function select_by_substring() {
         ent = level.createfxent[index];
         select_entity(index, ent);
     }
-    println("<dev string:x552>" + substring + "<dev string:x571>" + index_array.size + "<dev string:x578>");
+    println("<dev string:x434>" + substring + "<dev string:x450>" + index_array.size + "<dev string:x454>");
     return true;
 }
 
 // Namespace createfx / scripts\common\createfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7790
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x758d
+// Size: 0x6b
 function select_index_array(index_array) {
     foreach (index in index_array) {
         ent = level.createfxent[index];
@@ -2730,10 +2730,10 @@ function select_index_array(index_array) {
 
 // Namespace createfx / scripts\common\createfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7805
-// Size: 0x61
+// Checksum 0x0, Offset: 0x7600
+// Size: 0x5e
 function deselect_all_ents() {
-    foreach (i, ent in level._createfx.selected_fx_ents) {
+    foreach (ent in level._createfx.selected_fx_ents) {
         deselect_entity(i, ent);
     }
 }

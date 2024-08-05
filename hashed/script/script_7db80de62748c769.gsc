@@ -2,13 +2,12 @@
 #using scripts\common\utility.gsc;
 #using scripts\common\callbacks.gsc;
 #using script_48ca7f64463ff6dc;
-#using scripts\common\vehicle.gsc;
 
 #namespace namespace_753b428633ceb556;
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5
+// Checksum 0x0, Offset: 0x1e4
 // Size: 0x19
 function init() {
     if (!isdefined(level.var_865c7977a3a308a)) {
@@ -18,7 +17,7 @@ function init() {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f6
+// Checksum 0x0, Offset: 0x205
 // Size: 0x99
 function function_5921dc142b08795b(patrolname, formationtype) {
     if (!isdefined(level.var_865c7977a3a308a)) {
@@ -27,7 +26,7 @@ function function_5921dc142b08795b(patrolname, formationtype) {
     if (isdefined(level.var_865c7977a3a308a[patrolname])) {
         return level.var_865c7977a3a308a[patrolname];
     }
-    assertex(formationtype >= 0 && formationtype < 4, "<dev string:x1c>" + formationtype);
+    assertex(formationtype >= 0 && formationtype < 4, "Invalid formation type of " + formationtype);
     level.var_865c7977a3a308a[patrolname] = spawnstruct();
     level.var_865c7977a3a308a[patrolname].array = [];
     ai_formation::function_a18d80bcfacb9e00(patrolname, formationtype);
@@ -36,8 +35,8 @@ function function_5921dc142b08795b(patrolname, formationtype) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x298
-// Size: 0x61
+// Checksum 0x0, Offset: 0x2a7
+// Size: 0x60
 function delete_patrol(patrolname) {
     if (!isdefined(level.var_865c7977a3a308a[patrolname])) {
         return;
@@ -51,8 +50,8 @@ function delete_patrol(patrolname) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x301
-// Size: 0xba
+// Checksum 0x0, Offset: 0x30f
+// Size: 0xc6
 function function_b41baf16d62d21d8(patrolname, var_129f5d1ec2e3fec5, formationtype) {
     if (!isdefined(formationtype)) {
         formationtype = 3;
@@ -63,21 +62,22 @@ function function_b41baf16d62d21d8(patrolname, var_129f5d1ec2e3fec5, formationty
     if (!isdefined(level.var_865c7977a3a308a[patrolname])) {
         function_5921dc142b08795b(patrolname, formationtype);
     }
-    if (!isarray(var_129f5d1ec2e3fec5)) {
-        var_129f5d1ec2e3fec5 = [var_129f5d1ec2e3fec5];
+    if (isarray(var_129f5d1ec2e3fec5)) {
+        foreach (ai in var_129f5d1ec2e3fec5) {
+            function_801b4f42c4aec0ff(patrolname, ai, formationtype);
+            ai thread function_585606ec5af81775(patrolname);
+        }
+        return;
     }
-    foreach (ai in var_129f5d1ec2e3fec5) {
-        function_801b4f42c4aec0ff(patrolname, ai, formationtype);
-        ai thread function_585606ec5af81775(patrolname);
-    }
+    function_801b4f42c4aec0ff(patrolname, var_129f5d1ec2e3fec5, formationtype);
+    var_129f5d1ec2e3fec5 thread function_585606ec5af81775(patrolname);
 }
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c3
-// Size: 0x94
+// Checksum 0x0, Offset: 0x3dd
+// Size: 0x8d
 function private function_ef66f73bdae69270(formationtype) {
-    level endon("game_ended");
     var_5f4b84705795db7d = self.var_5f4b84705795db7d;
     thread function_ca2000d72aa808e8();
     waittill_any_3("enemy", "leave_group_patrol", "death");
@@ -97,7 +97,7 @@ function private function_ef66f73bdae69270(formationtype) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x45f
+// Checksum 0x0, Offset: 0x472
 // Size: 0x61
 function private function_ca2000d72aa808e8() {
     self endon("death");
@@ -117,7 +117,7 @@ function private function_ca2000d72aa808e8() {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4c8
+// Checksum 0x0, Offset: 0x4db
 // Size: 0x65
 function private function_84cd8295dbc3496d(formationtype) {
     self endon("death");
@@ -132,7 +132,7 @@ function private function_84cd8295dbc3496d(formationtype) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x535
+// Checksum 0x0, Offset: 0x548
 // Size: 0x12
 function private function_8e9e859313e267e2(patrolname) {
     return patrolname + "_kill_update";
@@ -140,7 +140,7 @@ function private function_8e9e859313e267e2(patrolname) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x550
+// Checksum 0x0, Offset: 0x563
 // Size: 0xacc
 function private function_585606ec5af81775(patrolname) {
     self endon("death");
@@ -257,8 +257,6 @@ function private function_585606ec5af81775(patrolname) {
                 } else if (isdefined(level.var_865c7977a3a308a[patrolname].var_aed4cacc8d6a6a0c)) {
                     patrolgoal = level.var_865c7977a3a308a[patrolname].var_aed4cacc8d6a6a0c.origin;
                 }
-                leader clearbtgoal(3);
-                leader setgoalpos(patrolgoal, goal_radius);
             }
             if (isdefined(patrolgoal) && distance(leader.origin, patrolgoal) < var_bfc2d8f5ab869cac) {
                 patrolgoal = undefined;
@@ -359,7 +357,7 @@ function private function_585606ec5af81775(patrolname) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1024
+// Checksum 0x0, Offset: 0x1037
 // Size: 0x37
 function function_8b93290be06b5b7f(node) {
     if (!isdefined(node)) {
@@ -376,10 +374,10 @@ function function_8b93290be06b5b7f(node) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1064
-// Size: 0x74
+// Checksum 0x0, Offset: 0x1077
+// Size: 0x73
 function function_7a82c6e82e83e7d2(patrolname) {
-    assertex(isdefined(level.var_865c7977a3a308a[patrolname]), "<dev string:x3a>");
+    assertex(isdefined(level.var_865c7977a3a308a[patrolname]), "Patrol was not found");
     leader = ai_formation::get_leader(patrolname);
     if (!isdefined(leader) && level.var_865c7977a3a308a[patrolname].array.size > 0) {
         leader = level.var_865c7977a3a308a[patrolname].array[0];
@@ -389,7 +387,7 @@ function function_7a82c6e82e83e7d2(patrolname) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x10e1
+// Checksum 0x0, Offset: 0x10f3
 // Size: 0x134
 function private function_6d2707dbb5228999(node, leader) {
     interactionid = self function_92435c7a6ae85c3c();
@@ -425,8 +423,8 @@ function private function_6d2707dbb5228999(node, leader) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x121d
-// Size: 0x77
+// Checksum 0x0, Offset: 0x122f
+// Size: 0x76
 function private function_801b4f42c4aec0ff(patrolname, var_129f5d1ec2e3fec5, formationtype) {
     index = level.var_865c7977a3a308a[patrolname].array.size;
     level.var_865c7977a3a308a[patrolname].array[index] = var_129f5d1ec2e3fec5;
@@ -437,7 +435,7 @@ function private function_801b4f42c4aec0ff(patrolname, var_129f5d1ec2e3fec5, for
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x129c
+// Checksum 0x0, Offset: 0x12ad
 // Size: 0x2c
 function function_e780688c49cc9549(patrolname, var_93e0bc97a6d45499) {
     if (!isdefined(level.var_865c7977a3a308a[patrolname])) {
@@ -448,7 +446,7 @@ function function_e780688c49cc9549(patrolname, var_93e0bc97a6d45499) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12d0
+// Checksum 0x0, Offset: 0x12e1
 // Size: 0x35
 function function_bc785df299663d60(patrolname, formationslot, customoffset) {
     if (!isdefined(level.var_865c7977a3a308a[patrolname])) {
@@ -459,7 +457,7 @@ function function_bc785df299663d60(patrolname, formationslot, customoffset) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x130d
+// Checksum 0x0, Offset: 0x131e
 // Size: 0x2c
 function set_goal(patrolname, goalposition) {
     if (!isdefined(level.var_865c7977a3a308a[patrolname])) {
@@ -470,8 +468,8 @@ function set_goal(patrolname, goalposition) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1341
-// Size: 0x10a
+// Checksum 0x0, Offset: 0x1352
+// Size: 0x108
 function leave_patrol(patrolname, var_cc408e19cc4792d2) {
     if (!isdefined(level.var_865c7977a3a308a[patrolname])) {
         return;
@@ -494,10 +492,10 @@ function leave_patrol(patrolname, var_cc408e19cc4792d2) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1453
+// Checksum 0x0, Offset: 0x1462
 // Size: 0xc7
 function function_cc7045b3f96482ce() {
-    assertex(isdefined(self.var_5f4b84705795db7d) && self.var_5f4b84705795db7d != "<dev string:x52>", "<dev string:x56>");
+    assertex(isdefined(self.var_5f4b84705795db7d) && self.var_5f4b84705795db7d != "", "Group patrol has not been defined for agent.");
     ai_formation::function_679b2830741a1384(self.var_5f4b84705795db7d);
     if (isdefined(self.patroltarget)) {
         level.var_865c7977a3a308a[self.var_5f4b84705795db7d].var_aed4cacc8d6a6a0c = self.patroltarget;
@@ -510,14 +508,14 @@ function function_cc7045b3f96482ce() {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1522
+// Checksum 0x0, Offset: 0x1531
 // Size: 0x91
 function function_147af37cda62f235(patrolname, ent, followdistance, timestep, usegoalentity) {
     if (!isdefined(usegoalentity)) {
         usegoalentity = 0;
     }
-    assertex(isdefined(patrolname) && isdefined(level.var_865c7977a3a308a) && isdefined(level.var_865c7977a3a308a[patrolname]), "<dev string:x86>");
-    assertex(isdefined(ent), "<dev string:xa1>");
+    assertex(isdefined(patrolname) && isdefined(level.var_865c7977a3a308a) && isdefined(level.var_865c7977a3a308a[patrolname]), "Group patrol not found.");
+    assertex(isdefined(ent), "Specified entity is not defined");
     if (usegoalentity) {
         thread function_67255c72f20ef2f3(patrolname, ent, followdistance, timestep);
         return;
@@ -527,11 +525,9 @@ function function_147af37cda62f235(patrolname, ent, followdistance, timestep, us
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x15bb
-// Size: 0xc3
+// Checksum 0x0, Offset: 0x15ca
+// Size: 0xaf
 function private function_67255c72f20ef2f3(patrolname, ent, followdistance, timestep) {
-    level endon("game_ended");
-    self endon("stop_following_" + patrolname);
     if (ai_formation::follow_entity(patrolname, ent, followdistance, timestep)) {
         foreach (agent in level.var_865c7977a3a308a[patrolname].array) {
             agent notify("following_entity");
@@ -543,8 +539,8 @@ function private function_67255c72f20ef2f3(patrolname, ent, followdistance, time
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x1686
-// Size: 0xec
+// Checksum 0x0, Offset: 0x1681
+// Size: 0xc5
 function private function_7bcb65e6db709f70(patrolname, ent, followdistance, timestep) {
     if (!isdefined(followdistance)) {
         followdistance = 100;
@@ -552,12 +548,9 @@ function private function_7bcb65e6db709f70(patrolname, ent, followdistance, time
     if (!isdefined(timestep)) {
         timestep = 2.5;
     }
-    level endon("game_ended");
-    self endon("stop_following_" + patrolname);
     foreach (agent in level.var_865c7977a3a308a[patrolname].array) {
         agent notify("following_entity");
     }
-    function_34c06b9933952e67(level.formationlist[patrolname], followdistance);
     thread function_abf1531c14702dc8(patrolname, ent, followdistance, timestep);
     ent waittill_any_3("death", "crashing", "entitydeleted");
     function_fded050d740c3e04(patrolname);
@@ -565,34 +558,23 @@ function private function_7bcb65e6db709f70(patrolname, ent, followdistance, time
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x177a
-// Size: 0x195
+// Checksum 0x0, Offset: 0x174e
+// Size: 0xf7
 function private function_abf1531c14702dc8(patrolname, ent, followdistance, timestep) {
     ent endon("death");
     ent endon("crashing");
     ent endon("entitydeleted");
     level endon("game_ended");
-    self endon("stop_following_" + patrolname);
     notifyname = function_8e9e859313e267e2(patrolname);
     level endon(notifyname);
-    self notify("formation_follow_ent_manual");
-    self endon("formation_follow_ent_manual");
-    while (isdefined(level.var_865c7977a3a308a) && isdefined(level.var_865c7977a3a308a[patrolname])) {
-        enthalfsize = ent getboundshalfsize();
+    while (isdefined(level.var_865c7977a3a308a[patrolname])) {
         entforward = anglestoforward(ent.angles);
-        offset = -1 * (followdistance + enthalfsize[0]) * entforward;
+        offset = -1 * followdistance * entforward;
         newgoal = ent.origin + offset;
         newgoal = getclosestpointonnavmesh(newgoal);
         if (level.var_865c7977a3a308a[patrolname].array.size > 0) {
             leader = function_7a82c6e82e83e7d2(patrolname);
-            leader setbtgoalpos(3, newgoal);
-            if (isagent(ent)) {
-                leader aisetdesiredspeed(length(ent getvelocity()));
-            } else if (ent scripts\common\vehicle::isvehicle()) {
-                leader aisetdesiredspeed(length(ent vehicle_getvelocity()));
-            } else if (isdefined(ent.speed)) {
-                leader aisetdesiredspeed(ent.speed);
-            }
+            leader setgoalpos(newgoal);
         } else {
             break;
         }
@@ -602,14 +584,10 @@ function private function_abf1531c14702dc8(patrolname, ent, followdistance, time
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1917
-// Size: 0xab
+// Checksum 0x0, Offset: 0x184d
+// Size: 0x74
 function function_fded050d740c3e04(patrolname) {
     if (ai_formation::function_5e8d7d93ecffa23f(patrolname)) {
-        self notify("stop_following_" + patrolname);
-        function_34c06b9933952e67(level.formationlist[patrolname], 0);
-        leader = function_7a82c6e82e83e7d2(patrolname);
-        leader aiclearscriptdesiredspeed();
         foreach (agent in level.var_865c7977a3a308a[patrolname].array) {
             agent thread function_585606ec5af81775(patrolname);
         }
@@ -618,19 +596,13 @@ function function_fded050d740c3e04(patrolname) {
 
 // Namespace namespace_753b428633ceb556 / namespace_6faf037a3568d157
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ca
-// Size: 0x16b
+// Checksum 0x0, Offset: 0x18c9
+// Size: 0x153
 function function_e1f50b1f60aa1b25(patrolname, var_3f4d3640a452a225, var_b4060a330731f1bd, var_1b9a7d48f06da667, var_9af84e76946ada66) {
     if (!isdefined(var_9af84e76946ada66)) {
         var_9af84e76946ada66 = 0;
     }
-    if (!isdefined(level.var_865c7977a3a308a[patrolname])) {
-        return;
-    }
     numai = level.var_865c7977a3a308a[patrolname].array.size;
-    if (numai == 0) {
-        return;
-    }
     var_9af84e76946ada66 = var_9af84e76946ada66 || var_3f4d3640a452a225 == 1;
     level.var_865c7977a3a308a[patrolname].formationwidth = function_cf3f27c3c5266ee2(patrolname, var_3f4d3640a452a225, numai, var_b4060a330731f1bd, var_1b9a7d48f06da667, var_9af84e76946ada66);
     level.var_865c7977a3a308a[patrolname].var_b4060a330731f1bd = var_b4060a330731f1bd;

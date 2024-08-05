@@ -5,7 +5,7 @@
 
 // Namespace hostmigration / scripts\cp_mp\hostmigration
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6
+// Checksum 0x0, Offset: 0xbd
 // Size: 0x37
 function hostmigration_waitlongdurationwithpause(duration) {
     if (issharedfuncdefined("hostmigration", "waitLongDurationWithPause")) {
@@ -17,7 +17,7 @@ function hostmigration_waitlongdurationwithpause(duration) {
 
 // Namespace hostmigration / scripts\cp_mp\hostmigration
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x125
+// Checksum 0x0, Offset: 0xfc
 // Size: 0x47
 function hostmigration_waittillnotifyortimeoutpause(msg, duration) {
     if (issharedfuncdefined("hostmigration", "waittillNotifyOrTimeoutPause")) {

@@ -1831,15 +1831,15 @@ function setupobjectiveicons() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x63a4
 // Size: 0x64
-function setUpNewCaptureBot(CaptureBot) {
+function setUpNewCaptureBot(var_e0d7784e906d506) {
     if (!isdefined(self.var_90e6c2c6f0b8bca9)) {
         self.var_90e6c2c6f0b8bca9 = [];
         self.var_3d9bcb6fd43a0b71 = 1;
-        self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = CaptureBot;
+        self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = var_e0d7784e906d506;
         thread scripts\mp\gametypes\robj::function_e6fb1b719f5866f4();
         return;
     }
-    self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = CaptureBot;
+    self.var_90e6c2c6f0b8bca9[self.var_90e6c2c6f0b8bca9.size] = var_e0d7784e906d506;
 }
 
 // Namespace robj / scripts\mp\gametypes\robj
@@ -1878,17 +1878,17 @@ function function_e6fb1b719f5866f4() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x65f8
 // Size: 0x27d
-function function_5b561a0406f5e84d(CaptureBot) {
+function function_5b561a0406f5e84d(var_e0d7784e906d506) {
     self notify("successful_use_occurred");
-    self.hackingbot = CaptureBot;
+    self.hackingbot = var_e0d7784e906d506;
     self.var_21aaad3fb9690b37 = 1;
-    updateobjectivelights(CaptureBot.owner.team, self.trigger.script_noteworthy);
-    function_9897b5b4ecf74ef3("interaction", CaptureBot.owner.team);
-    if (!is_equal(self.ownerteam, "neutral") && !is_equal(CaptureBot.owner.team, self.ownerteam)) {
+    updateobjectivelights(var_e0d7784e906d506.owner.team, self.trigger.script_noteworthy);
+    function_9897b5b4ecf74ef3("interaction", var_e0d7784e906d506.owner.team);
+    if (!is_equal(self.ownerteam, "neutral") && !is_equal(var_e0d7784e906d506.owner.team, self.ownerteam)) {
         self.var_ec7886a87e5a6866 = 1;
         namespace_cb9ef225b7a59984::function_f83e9201f5f2aa6a();
     }
-    CaptureBot.owner setclientomnvar("ui_dmz_uav_tower_screen", 1);
+    var_e0d7784e906d506.owner setclientomnvar("ui_dmz_uav_tower_screen", 1);
     self.cancel = 0;
     msg = waittill_any_timeout_2(level.var_2550904ae7eb2a1c * level.towerusetime, "captureBot_hackCanceled", "captureBot_hackCanceled_playerHack");
     self.cancel = 1;
@@ -1896,10 +1896,10 @@ function function_5b561a0406f5e84d(CaptureBot) {
         self.hackingbot = undefined;
         self.var_21aaad3fb9690b37 = 0;
     } else {
-        level thread scripts\mp\hud_message::notifyteam("jup_robj_securing", "jup_robj_securing_enemy", CaptureBot.owner.pers["team"], [CaptureBot.owner]);
-        CaptureBot.owner thread scripts\mp\hud_message::showsplash("jup_robj_securing", scripts\mp\rank::getscoreinfovalue(#"plant"));
+        level thread scripts\mp\hud_message::notifyteam("jup_robj_securing", "jup_robj_securing_enemy", var_e0d7784e906d506.owner.pers["team"], [var_e0d7784e906d506.owner]);
+        var_e0d7784e906d506.owner thread scripts\mp\hud_message::showsplash("jup_robj_securing", scripts\mp\rank::getscoreinfovalue(#"plant"));
         if (isdefined(self.var_21aaad3fb9690b37) && self.var_21aaad3fb9690b37) {
-            onenduse(CaptureBot.owner.team, CaptureBot.owner, 1, 1, 1);
+            onenduse(var_e0d7784e906d506.owner.team, var_e0d7784e906d506.owner, 1, 1, 1);
         }
     }
     if (istrue(self.var_ec7886a87e5a6866) && msg != "captureBot_hackCanceled_playerHack") {
@@ -1918,7 +1918,7 @@ function function_5b561a0406f5e84d(CaptureBot) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x687d
 // Size: 0xa3
-function removeExistingCaptureBot(CaptureBot) {
+function removeExistingCaptureBot(var_e0d7784e906d506) {
     if (isdefined(self.var_90e6c2c6f0b8bca9) && self.var_90e6c2c6f0b8bca9.size > 0) {
         if (self.var_90e6c2c6f0b8bca9.size == 1) {
             if (isdefined(self.var_3d9bcb6fd43a0b71)) {
@@ -1927,10 +1927,10 @@ function removeExistingCaptureBot(CaptureBot) {
             self.var_90e6c2c6f0b8bca9 = undefined;
             self.var_56bb845d40871824 = undefined;
         } else {
-            self.var_90e6c2c6f0b8bca9 = array_remove(self.var_90e6c2c6f0b8bca9, CaptureBot);
+            self.var_90e6c2c6f0b8bca9 = array_remove(self.var_90e6c2c6f0b8bca9, var_e0d7784e906d506);
         }
     }
-    if (isdefined(self.hackingbot) && self.hackingbot == CaptureBot) {
+    if (isdefined(self.hackingbot) && self.hackingbot == var_e0d7784e906d506) {
         self notify("captureBot_hackCanceled");
     }
 }

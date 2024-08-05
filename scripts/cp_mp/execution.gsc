@@ -1,27 +1,19 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_600b944a95c3a7bf;
 #using script_6775ad452d13858;
 
 #namespace execution;
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x579
-// Size: 0x47
+// Checksum 0x0, Offset: 0x28a
+// Size: 0x2f
 function function_1ea3e44fd8a18d1() {
-    if (!isdefined(self)) {
-        return false;
-    }
     if (isbot(self) && getdvarint(@"hash_eb038ca43332e718", 0) == 0) {
         return false;
     }
     if (istestclient(self)) {
-        return false;
-    }
-    if (scripts\cp_mp\utility\game_utility::getgametype() == "warrior") {
         return false;
     }
     return true;
@@ -29,14 +21,11 @@ function function_1ea3e44fd8a18d1() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c9
-// Size: 0x1a7
+// Checksum 0x0, Offset: 0x2c2
+// Size: 0x127
 function _giveexecution(ref, isfirstperson) {
     if (!function_1ea3e44fd8a18d1()) {
         return;
-    }
-    if (istrue(getdvarint(@"hash_576703ba86051da6", 0)) && namespace_38b993c4618e76cd::function_8c610908c0e9c6e4(ref)) {
-        ref = namespace_465d40bb08a5337a::function_a9722d35258230d2(self.operatorcustomization.operatorref);
     }
     thread execution_monitor();
     if (function_3b6961b424a382f()) {
@@ -47,9 +36,6 @@ function _giveexecution(ref, isfirstperson) {
     }
     _clearexecution(istrue(isfirstperson));
     propweapon = execution_getpropweaponbyref(ref);
-    if (ref == "execution_062" && self.operatorcustomization.operatorref == "inarius_western") {
-        propweapon = level.execution.table[ref].propweapon2;
-    }
     execution = execution_getexecutionbyref(ref);
     assertex(isdefined(execution), "<dev string:x1c>" + ref);
     if (!isdefined(execution)) {
@@ -72,15 +58,12 @@ function _giveexecution(ref, isfirstperson) {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x778
-// Size: 0x94
+// Checksum 0x0, Offset: 0x3f1
+// Size: 0x5d
 function _clearexecution(isfirstperson) {
     if (isdefined(self.executionref)) {
         self clearexecution(istrue(isfirstperson));
         propweapon = execution_getpropweaponbyref(self.executionref);
-        if (self.executionref == "execution_062" && self.operatorcustomization.operatorref == "inarius_western") {
-            propweapon = "iw9_execution_spear_wings";
-        }
         if (isdefined(propweapon) && self hasweapon(propweapon)) {
             self takeweapon(propweapon);
         }
@@ -90,7 +73,7 @@ function _clearexecution(isfirstperson) {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x814
+// Checksum 0x0, Offset: 0x456
 // Size: 0xc
 function hasexecution() {
     return isdefined(self.executionref);
@@ -98,18 +81,14 @@ function hasexecution() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x829
-// Size: 0xf1
+// Checksum 0x0, Offset: 0x46b
+// Size: 0xc7
 function execution_monitor() {
     self notify("exec_monitor_request");
     self endon("exec_monitor_request");
     while (true) {
         victiment = self waittill("execution_begin");
-        if (isdefined(victiment) && (isplayer(victiment) || isagent(victiment))) {
-            victiment notify("execution_begin_victim");
-        }
         if (isdefined(self.executionref) && isdefined(self.suit)) {
-            thread function_e4ea09e7e5e2d5f1(victiment);
             aliasstring = "mus_" + self.suit + "_" + self.executionref;
             if (soundexists(aliasstring)) {
                 self playlocalsound(aliasstring);
@@ -126,266 +105,11 @@ function execution_monitor() {
 }
 
 // Namespace execution / scripts\cp_mp\execution
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x922
-// Size: 0x764
-function function_e4ea09e7e5e2d5f1(victiment) {
-    self endon("death_or_disconnect");
-    self endon("execution_stopped");
-    victiment endon("disconnect");
-    var_ff5b782e4a5bcc05 = victiment getstance();
-    switch (self.executionref) {
-    case #"hash_272e44a6335fe57": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 0.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce04", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 0.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce04", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1.6;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce06", self);
-                break;
-            } else {
-                wait 2;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce05", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_982264d83dbf6f8d": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 0.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce04", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 0.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce04", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1.6;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce06", self);
-                break;
-            } else {
-                wait 2;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce05", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_a12a71571e6da63": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce12", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce12", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1.5;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce11", self);
-                break;
-            } else {
-                wait 1.6;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce10", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_84b68933c178cd09": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce12", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce12", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1.5;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce11", self);
-                break;
-            } else {
-                wait 1.6;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce10", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_108f7f3680e4cb4a": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 2.3;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce03", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 2.3;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce03", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 0.2;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce02", self);
-                break;
-            } else {
-                wait 2.5;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce01", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_35045a42d684bc52": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 2.3;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce03", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 2.3;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce03", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 0.2;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce02", self);
-                break;
-            } else {
-                wait 2.5;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce01", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_279ef6d5b4d7862a": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 1.7;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce15", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 1.7;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce15", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce14", self);
-                break;
-            } else {
-                wait 1.5;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce13", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_17f631e350a58072": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 1.7;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce15", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 1.7;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce15", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce14", self);
-                break;
-            } else {
-                wait 1.5;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce13", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_8d44865c9e264f78": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce07", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce07", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1.3;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce09", self);
-                break;
-            } else {
-                wait 2.8;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce08", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    case #"hash_f4ad44ebf245e754": 
-        switch (var_ff5b782e4a5bcc05) {
-        case #"hash_c6775c88e38f7803": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce07", self);
-            break;
-        case #"hash_3fed0cbd303639eb": 
-            wait 2.9;
-            self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce07", self);
-            break;
-        case #"hash_d91940431ed7c605": 
-            if (istrue(victiment.inlaststand)) {
-                wait 1.3;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce09", self);
-                break;
-            } else {
-                wait 2.8;
-                self playsoundtoplayer("dx_mp_mpce_cste_ctrd_ce08", self);
-                break;
-            }
-        default: 
-            break;
-        }
-        break;
-    default: 
-        break;
-    }
-}
-
-// Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x108e
+// Checksum 0x0, Offset: 0x53a
 // Size: 0x8e
 function execution_init() {
-    assertex(!isdefined(level.execution), "<dev string:x3c>");
+    assertex(!isdefined(level.execution), "execution_init was called more than once.");
     level.execution = spawnstruct();
     level.enableexecutionattackfunc = &enableexecutionattackwrapper;
     level.disableexecutionattackfunc = &disableexecutionattackwrapper;
@@ -399,7 +123,7 @@ function execution_init() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1124
+// Checksum 0x0, Offset: 0x5d0
 // Size: 0x9
 function enableexecutionattackwrapper() {
     self enableexecutionattack();
@@ -407,7 +131,7 @@ function enableexecutionattackwrapper() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1135
+// Checksum 0x0, Offset: 0x5e1
 // Size: 0x9
 function disableexecutionattackwrapper() {
     self disableexecutionattack();
@@ -415,7 +139,7 @@ function disableexecutionattackwrapper() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1146
+// Checksum 0x0, Offset: 0x5f2
 // Size: 0x9
 function enableexecutionvictimwrapper() {
     self enableexecutionvictim();
@@ -423,7 +147,7 @@ function enableexecutionvictimwrapper() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1157
+// Checksum 0x0, Offset: 0x603
 // Size: 0x9
 function disableexecutionvictimwrapper() {
     self disableexecutionvictim();
@@ -431,28 +155,25 @@ function disableexecutionvictimwrapper() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1168
-// Size: 0x1a2
+// Checksum 0x0, Offset: 0x614
+// Size: 0x188
 function execution_loadtable() {
     level.execution.table = [];
     foreach (executionref in namespace_465d40bb08a5337a::function_232a4826a2bd2bfd()) {
         struct = spawnstruct();
         struct.ref = executionref;
         id = namespace_465d40bb08a5337a::function_3daf6bb451cf826e(executionref);
-        assertex(isdefined(id), "<dev string:x69>" + executionref + "<dev string:x82>");
+        assertex(isdefined(id), "Executions error -  \"" + executionref + "\" has no id.");
         struct.id = int(id);
         execution = namespace_465d40bb08a5337a::function_75322d3c8f9c9ccb(executionref);
-        assertex(isdefined(execution) && execution != "<dev string:x92>", "<dev string:x69>" + executionref + "<dev string:x96>");
+        assertex(isdefined(execution) && execution != "", "Executions error -  \"" + executionref + "\" has no execution.");
         if (execution != "none") {
             struct.execution = execution;
         }
         propweapon = namespace_465d40bb08a5337a::function_3bd82b573b8f64f3(executionref);
-        assertex(isdefined(propweapon) && propweapon != "<dev string:x92>", "<dev string:x69>" + executionref + "<dev string:xad>");
+        assertex(isdefined(propweapon) && propweapon != "", "Executions error -  \"" + executionref + "\" has no prop weapon.");
         if (propweapon != "none") {
             struct.propweapon = makeweapon(propweapon);
-            if (execution == "execution_062") {
-                struct.propweapon2 = "iw9_execution_spear_wings";
-            }
             if (isnullweapon(struct.propweapon)) {
                 continue;
             }
@@ -463,10 +184,10 @@ function execution_loadtable() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1312
-// Size: 0x56
+// Checksum 0x0, Offset: 0x7a4
+// Size: 0x55
 function execution_getexecutionbyref(ref) {
-    assertex(isdefined(level.execution), "<dev string:xc6>");
+    assertex(isdefined(level.execution), "execution_getExecutionByRef called before execution_init.");
     struct = level.execution.table[ref];
     if (isdefined(struct)) {
         return struct.execution;
@@ -476,10 +197,10 @@ function execution_getexecutionbyref(ref) {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1371
-// Size: 0x56
+// Checksum 0x0, Offset: 0x802
+// Size: 0x55
 function execution_getpropweaponbyref(ref) {
-    assertex(isdefined(level.execution), "<dev string:x103>");
+    assertex(isdefined(level.execution), "execution_getPropWeaponByRef called before execution_init.");
     struct = level.execution.table[ref];
     if (isdefined(struct)) {
         return struct.propweapon;
@@ -489,7 +210,7 @@ function execution_getpropweaponbyref(ref) {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d0
+// Checksum 0x0, Offset: 0x860
 // Size: 0x16
 function execution_getrefbyplayer(player) {
     return player.executionref;
@@ -497,10 +218,10 @@ function execution_getrefbyplayer(player) {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ef
-// Size: 0x55
+// Checksum 0x0, Offset: 0x87f
+// Size: 0x54
 function execution_getidbyref(ref) {
-    assertex(isdefined(level.execution), "<dev string:x141>");
+    assertex(isdefined(level.execution), "execution_getIDByRef called before execution_init.");
     struct = level.execution.table[ref];
     if (isdefined(struct)) {
         return struct.id;
@@ -509,22 +230,19 @@ function execution_getidbyref(ref) {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x144c
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x8db
+// Size: 0x54
 function function_700277400dcb7857(ref) {
-    assertex(isdefined(level.execution), "<dev string:x141>");
-    if (!isdefined(ref)) {
-        return 0;
-    }
+    assertex(isdefined(level.execution), "execution_getIDByRef called before execution_init.");
     struct = level.execution.table[ref];
     if (isdefined(struct)) {
-        return istrue(struct.petenabled);
+        return struct.petenabled;
     }
 }
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b1
+// Checksum 0x0, Offset: 0x937
 // Size: 0x15
 function function_43a90e553f84c31c() {
     scripts\common\values::set("pet_execution", "hide_operator_backpack", 1);
@@ -532,7 +250,7 @@ function function_43a90e553f84c31c() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ce
+// Checksum 0x0, Offset: 0x954
 // Size: 0x6d
 function execution_blockladders() {
     if (self isonladder()) {
@@ -551,8 +269,8 @@ function execution_blockladders() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1543
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x9c9
+// Size: 0x82
 function watchinexecution() {
     self endon("disconnect");
     self notify("watchInExecution");
@@ -566,7 +284,6 @@ function watchinexecution() {
                 self setphysicaldepthoffield(2.5, 60, 20, 20);
             } else {
                 self disablephysicaldepthoffieldscripting();
-                self notify("execution_stopped");
             }
         }
         var_a9ee87cc06bd6b39 = inexecution;
@@ -576,7 +293,7 @@ function watchinexecution() {
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d5
+// Checksum 0x0, Offset: 0xa53
 // Size: 0x12
 function is_in_takedown() {
     return self isinexecutionvictim() || self isinexecutionattack();

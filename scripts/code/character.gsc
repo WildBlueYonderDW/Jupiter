@@ -4,8 +4,8 @@
 
 // Namespace character / scripts\code\character
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2
-// Size: 0xba
+// Checksum 0x0, Offset: 0xe0
+// Size: 0xbd
 function get_least_used_model(array) {
     lowest_indices = [];
     lowest_use = 999999;
@@ -24,15 +24,15 @@ function get_least_used_model(array) {
         }
         lowest_indices[lowest_indices.size] = i;
     }
-    assertex(lowest_indices.size, "<dev string:x1c>");
+    assertex(lowest_indices.size, "Tried to set a model but the lowest indices didn't exist");
     rnd = random(lowest_indices);
     return array[rnd];
 }
 
 // Namespace character / scripts\code\character
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a5
-// Size: 0x2e
+// Checksum 0x0, Offset: 0x1a6
+// Size: 0x2d
 function precachemodelarray(a) {
     for (i = 0; i < a.size; i++) {
         precachemodel(a[i]);
@@ -42,7 +42,7 @@ function precachemodelarray(a) {
 // Namespace character / scripts\code\character
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1db
-// Size: 0x11a
+// Size: 0x119
 function attachhead(var_e1b8a2cda2a36f9, var_7556f3e1bb0846bc) {
     /#
         if (isdefined(level.var_ccf5af826b36fa06)) {
@@ -71,8 +71,8 @@ function attachhead(var_e1b8a2cda2a36f9, var_7556f3e1bb0846bc) {
 
 // Namespace character / scripts\code\character
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fd
-// Size: 0xa3
+// Checksum 0x0, Offset: 0x2fc
+// Size: 0xa2
 function attachhat(var_cb1b71997ebf2a1a, var_827c5e69d673ce17) {
     if (!isdefined(level.character_hat_index)) {
         level.character_hat_index = [];
@@ -89,8 +89,8 @@ function attachhat(var_cb1b71997ebf2a1a, var_827c5e69d673ce17) {
 
 // Namespace character / scripts\code\character
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a8
-// Size: 0x40
+// Checksum 0x0, Offset: 0x3a6
+// Size: 0x3f
 function new() {
     self detachall();
     oldgunhand = self.anim_gunhand;
@@ -103,8 +103,8 @@ function new() {
 
 // Namespace character / scripts\code\character
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f0
-// Size: 0xec
+// Checksum 0x0, Offset: 0x3ed
+// Size: 0xed
 function save() {
     info["gunHand"] = self.anim_gunhand;
     info["gunInHand"] = self.anim_guninhand;
@@ -112,9 +112,9 @@ function save() {
     info["hatModel"] = self.hatmodel;
     if (isdefined(self.name)) {
         info["name"] = self.name;
-        println("<dev string:x58>", self.name);
+        println("<dev string:x1c>", self.name);
     } else {
-        println("<dev string:x6f>");
+        println("<dev string:x30>");
     }
     attachsize = self getattachsize();
     for (i = 0; i < attachsize; i++) {
@@ -126,8 +126,8 @@ function save() {
 
 // Namespace character / scripts\code\character
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e5
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x4e3
+// Size: 0xe3
 function load(info) {
     self detachall();
     self.anim_gunhand = info["gunHand"];
@@ -136,9 +136,9 @@ function load(info) {
     self.hatmodel = info["hatModel"];
     if (isdefined(info["name"])) {
         self.name = info["name"];
-        println("<dev string:x89>", self.name);
+        println("<dev string:x47>", self.name);
     } else {
-        println("<dev string:xa0>");
+        println("<dev string:x5b>");
     }
     attachinfo = info["attach"];
     attachsize = attachinfo.size;
@@ -149,13 +149,13 @@ function load(info) {
 
 // Namespace character / scripts\code\character
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cf
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x5ce
+// Size: 0x8f
 function precache(info) {
     if (isdefined(info["name"])) {
-        println("<dev string:xba>", info["<dev string:xd5>"]);
+        println("<dev string:x72>", info["<dev string:x8a>"]);
     } else {
-        println("<dev string:xdd>");
+        println("<dev string:x8f>");
     }
     precachemodel(info["model"]);
     attachinfo = info["attach"];
@@ -168,7 +168,7 @@ function precache(info) {
 // Namespace character / scripts\code\character
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x665
-// Size: 0x45
+// Size: 0x44
 function initialize_character_group(prefix, group, amount) {
     for (i = 0; i < amount; i++) {
         level.character_index_cache[prefix][group][i] = 0;
@@ -177,7 +177,7 @@ function initialize_character_group(prefix, group, amount) {
 
 // Namespace character / scripts\code\character
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b2
+// Checksum 0x0, Offset: 0x6b1
 // Size: 0x11
 function get_random_weapon(amount) {
     return randomint(amount);
@@ -185,7 +185,7 @@ function get_random_weapon(amount) {
 
 // Namespace character / scripts\code\character
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cc
+// Checksum 0x0, Offset: 0x6cb
 // Size: 0x14
 function random(array) {
     return array[randomint(array.size)];

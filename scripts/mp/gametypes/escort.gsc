@@ -1225,9 +1225,9 @@ function function_50b1e7d653deac05(team) {
     if (issharedfuncdefined("super_capture_bot", "captureBot_getAllCaptureBotsForTeam")) {
         var_21c4f8a0ffd605ce = function_f3bb4f4911a1beb2("super_capture_bot", "captureBot_getAllCaptureBotsForTeam", team, 1);
         var_21c4f8a0ffd605ce = sortbydistancecullbyradius(var_21c4f8a0ffd605ce, tankorigin, nearbyrange);
-        foreach (CaptureBot in var_21c4f8a0ffd605ce) {
-            if (isdefined(CaptureBot.owner) && isdefined(CaptureBot.owner.team)) {
-                scripts\mp\gameobjects::function_f1e265068d2e3fc5(CaptureBot.owner, CaptureBot.owner.team);
+        foreach (var_e0d7784e906d506 in var_21c4f8a0ffd605ce) {
+            if (isdefined(var_e0d7784e906d506.owner) && isdefined(var_e0d7784e906d506.owner.team)) {
+                scripts\mp\gameobjects::function_f1e265068d2e3fc5(var_e0d7784e906d506.owner, var_e0d7784e906d506.owner.team);
             }
         }
     }

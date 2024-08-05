@@ -7,7 +7,7 @@
 
 // Namespace namespace_4c0bc0cafd66edf2 / namespace_9be32bbbe37779ab
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0xc2
+// Checksum 0x0, Offset: 0x9c
 // Size: 0x1e
 function autoexec main() {
     level.var_7bf42d565645a485 = 1;
@@ -16,8 +16,8 @@ function autoexec main() {
 
 // Namespace namespace_4c0bc0cafd66edf2 / namespace_9be32bbbe37779ab
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xe8
-// Size: 0x29
+// Checksum 0x0, Offset: 0xc2
+// Size: 0x28
 function private function_99154a866980515f() {
     callbacks = [];
     callbacks["spawn"] = &function_cbf697bfc601a8bc;
@@ -26,8 +26,8 @@ function private function_99154a866980515f() {
 
 // Namespace namespace_4c0bc0cafd66edf2 / namespace_9be32bbbe37779ab
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x119
-// Size: 0xbd
+// Checksum 0x0, Offset: 0xf2
+// Size: 0xbc
 function private function_cbf697bfc601a8bc(spawndata, faildata) {
     vehicle = function_bba34cf920370ff4("veh_jup_blima", spawndata, faildata);
     if (!isdefined(vehicle)) {

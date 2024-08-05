@@ -10,7 +10,7 @@
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc
+// Checksum 0x0, Offset: 0xb6
 // Size: 0x99
 function initweaponarray() {
     self.weapons = [];
@@ -27,8 +27,8 @@ function initweaponarray() {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17d
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x157
+// Size: 0xc5
 function choosebestweapon() {
     if (istrue(self.forcesidearm)) {
         return "pistol";
@@ -51,8 +51,8 @@ function choosebestweapon() {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24a
-// Size: 0x46
+// Checksum 0x0, Offset: 0x225
+// Size: 0x47
 function getsidearmdist() {
     var_8465f7779f8a19a = isusingsidearm();
     sidearmdist = 409;
@@ -68,7 +68,7 @@ function getsidearmdist() {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x299
+// Checksum 0x0, Offset: 0x275
 // Size: 0x81
 function withinswitchtopistoldist() {
     if (isdefined(self.enemy) && isdefined(self.sidearm) && !isnullweapon(self.sidearm) && !istrue(self.disablepistol)) {
@@ -81,8 +81,8 @@ function withinswitchtopistoldist() {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x323
-// Size: 0x16d
+// Checksum 0x0, Offset: 0x2ff
+// Size: 0x16f
 function evalweaponscore(weapclass, weapon) {
     if (weapclass == "pistol") {
         if (weaponclass(self.weapon) == "rocketlauncher" && self.rocketammo <= 0) {
@@ -128,7 +128,7 @@ function evalweaponscore(weapclass, weapon) {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x499
+// Checksum 0x0, Offset: 0x477
 // Size: 0x27
 function issniper(task) {
     if (self function_e8ca4080d02a0bb4()) {
@@ -139,7 +139,7 @@ function issniper(task) {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c9
+// Checksum 0x0, Offset: 0x4a7
 // Size: 0x46
 function usingsidearm(task) {
     if (self.weapon == self.sidearm && !isnullweapon(self.weapon)) {
@@ -150,7 +150,7 @@ function usingsidearm(task) {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x518
+// Checksum 0x0, Offset: 0x4f6
 // Size: 0x85
 function shouldswitchtosidearm(task) {
     if (usingsidearm(task) == anim.success) {
@@ -170,7 +170,7 @@ function shouldswitchtosidearm(task) {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a6
+// Checksum 0x0, Offset: 0x584
 // Size: 0x77
 function canswitchtosidearm(task) {
     if (istrue(self.disablepistol)) {
@@ -187,8 +187,8 @@ function canswitchtosidearm(task) {
 
 // Namespace weapon / scripts\aitypes\weapon
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x626
-// Size: 0x55
+// Checksum 0x0, Offset: 0x604
+// Size: 0x54
 function checkcoverforsidearm(task) {
     covernode = scripts\asm\asm_bb::bb_getcovernode();
     if (isdefined(covernode) && distance(self.origin, covernode.origin) < 16) {

@@ -4,7 +4,7 @@
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x133
+// Checksum 0x0, Offset: 0x344
 // Size: 0x5e
 function snd_init() {
     if (!isdefined(level.snd)) {
@@ -17,19 +17,19 @@ function snd_init() {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x199
+// Checksum 0x0, Offset: 0x3aa
 // Size: 0x6d
 function function_b3e5599c9f6a8895(obj) {
     assert(obj == level || isstruct(obj) || isent(obj));
     if (!isstruct(obj.snd)) {
         obj.snd = spawnstruct();
     }
-    assertex(isstruct(obj.snd), "<dev string:x1c>");
+    assertex(isstruct(obj.snd), "snd_init_obj obj.snd is not a struct");
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20e
+// Checksum 0x0, Offset: 0x41f
 // Size: 0x17
 function function_f0b5522ee5ce0cb1() {
     if (isstruct(level.snd)) {
@@ -40,7 +40,7 @@ function function_f0b5522ee5ce0cb1() {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e
+// Checksum 0x0, Offset: 0x43f
 // Size: 0x11
 function function_40a17693396019a7() {
     while (function_f0b5522ee5ce0cb1() == 0) {
@@ -50,8 +50,8 @@ function function_40a17693396019a7() {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x247
-// Size: 0x6b
+// Checksum 0x0, Offset: 0x458
+// Size: 0x6a
 function private function_55f5473e977f265f(team_name) {
     players = [];
     if (isarray(level.teamdata) && isarray(level.teamdata[team_name]) && isarray(level.teamdata[team_name]["players"])) {
@@ -62,7 +62,7 @@ function private function_55f5473e977f265f(team_name) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bb
+// Checksum 0x0, Offset: 0x4cb
 // Size: 0x13b
 function function_d6fe092bc83da45b(var_6e077719c0efcb61, radius, team_name) {
     origin = undefined;
@@ -85,24 +85,24 @@ function function_d6fe092bc83da45b(var_6e077719c0efcb61, radius, team_name) {
         }
         return players;
     } else {
-        assertmsg("<dev string:x44>");
+        assertmsg("snd_get_players_in_radius: unknown ent_or_origin parameter");
     }
     return players;
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff
+// Checksum 0x0, Offset: 0x60f
 // Size: 0x4a
 function function_ad9f5152bfdebcfe(gamekey, statekey, value) {
-    assertex(isstring(gamekey), "<dev string:x82>");
-    assertex(isstring(statekey), "<dev string:xae>");
+    assertex(isstring(gamekey), "setGameStateData: gameKey must be string");
+    assertex(isstring(statekey), "setGameStateData: stateKey must be string");
     game[gamekey][statekey] = value;
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x451
+// Checksum 0x0, Offset: 0x661
 // Size: 0x1d
 function function_d05e164d112ab01(gamekey, statekey) {
     function_ad9f5152bfdebcfe(gamekey, statekey, undefined);
@@ -110,18 +110,18 @@ function function_d05e164d112ab01(gamekey, statekey) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x476
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x686
+// Size: 0x4c
 function function_9a0f23d8adcd6392(gamekey, statekey) {
-    assertex(isstring(gamekey), "<dev string:xdb>");
-    assertex(isstring(statekey), "<dev string:x107>");
+    assertex(isstring(gamekey), "getGameStateData: gameKey must be string");
+    assertex(isstring(statekey), "getGameStateData: stateKey must be string");
     data = game[gamekey][statekey];
     return data;
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cc
+// Checksum 0x0, Offset: 0x6db
 // Size: 0x6e
 function function_5cb73579174212fd(gamekey, statekey) {
     value = function_9a0f23d8adcd6392(gamekey, statekey);
@@ -129,7 +129,7 @@ function function_5cb73579174212fd(gamekey, statekey) {
         index = 0;
         if (value.size > 1) {
             index = randomintrange(0, value.size);
-            assertex(index >= 0 && index < value.size, "<dev string:x134>" + index);
+            assertex(index >= 0 && index < value.size, "getGameStateDataRandom: invalid random index " + index);
         }
         value = value[index];
     }
@@ -138,8 +138,8 @@ function function_5cb73579174212fd(gamekey, statekey) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x543
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x752
+// Size: 0xa1
 function function_7acde5feb50c98f2(players, soundalias) {
     players = default_to(players, []);
     soundalias = default_to(soundalias, "");
@@ -151,13 +151,13 @@ function function_7acde5feb50c98f2(players, soundalias) {
         }
         return;
     }
-    assertmsg("<dev string:x165>");
+    assertmsg("playLocalSoundToPlayers: players was not an array");
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ef
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x7fb
+// Size: 0xa1
 function function_66f41f0823bd279c(players, soundalias) {
     players = default_to(players, []);
     soundalias = default_to(soundalias, "");
@@ -169,52 +169,12 @@ function function_66f41f0823bd279c(players, soundalias) {
         }
         return;
     }
-    assertmsg("<dev string:x19a>");
-}
-
-// Namespace audio_utility / namespace_e688cd9db0404268
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x69b
-// Size: 0xe3
-function function_a408e30ca85e03a9(players, zonename, fadetime) {
-    players = default_to(players, []);
-    zonename = default_to(zonename, "");
-    fadetime = default_to(fadetime, 1);
-    if (isarray(players)) {
-        assertex(isstring(zonename), "<dev string:x1cf>");
-        assertex(isnumber(fadetime), "<dev string:x20c>");
-        foreach (player in players) {
-            if (isplayer(player) && !isagent(player)) {
-                player setclienttriggeraudiozone(zonename, fadetime);
-            }
-        }
-        return;
-    }
-    assertmsg("<dev string:x249>");
+    assertmsg("stopLocalSoundToPlayers: players was not an array");
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x786
-// Size: 0xb8
-function function_326e5ed05234a4f0(players, fadetime) {
-    players = default_to(players, []);
-    fadetime = default_to(fadetime, 1);
-    if (isarray(players)) {
-        assertex(isnumber(fadetime), "<dev string:x286>");
-        foreach (player in players) {
-            if (isplayer(player) && !isagent(player)) {
-                player clearclienttriggeraudiozone(fadetime);
-            }
-        }
-        return;
-    }
-    assertmsg("<dev string:x2c5>");
-}
-
-// Namespace audio_utility / namespace_e688cd9db0404268
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x846
+// Checksum 0x0, Offset: 0x8a4
 // Size: 0x21
 function setmusicset(musicset, value) {
     function_ad9f5152bfdebcfe("music", musicset, value);
@@ -222,8 +182,8 @@ function setmusicset(musicset, value) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x86f
-// Size: 0x59
+// Checksum 0x0, Offset: 0x8cd
+// Size: 0x58
 function getmusicset(musicset) {
     state = function_9a0f23d8adcd6392("music", musicset);
     if (isarray(state)) {
@@ -243,8 +203,8 @@ function getmusicset(musicset) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d1
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x92e
+// Size: 0x39
 function function_17ee301cf0b5ba85(musicset) {
     state = function_5cb73579174212fd("music", musicset);
     if (!isdefined(state) || !isstring(state)) {
@@ -255,7 +215,7 @@ function function_17ee301cf0b5ba85(musicset) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x914
+// Checksum 0x0, Offset: 0x970
 // Size: 0x47
 function function_5df2f278f44a6ffd(style) {
     if (isstring(style) && isdefined(level.music_style) && isstring(level.music_style) && level.music_style == style) {
@@ -266,8 +226,8 @@ function function_5df2f278f44a6ffd(style) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x964
-// Size: 0x14e
+// Checksum 0x0, Offset: 0x9c0
+// Size: 0x146
 function function_fe75a89529dd0fd0(players, var_9adc1bcdce9cf8b0, var_c342527a25f10cc5, except, var_206c8dfdb8c43d68) {
     players = default_to(players, []);
     var_9adc1bcdce9cf8b0 = default_to(var_9adc1bcdce9cf8b0, "");
@@ -287,7 +247,7 @@ function function_fe75a89529dd0fd0(players, var_9adc1bcdce9cf8b0, var_c342527a25
                     player setplayermusicstate(var_9adc1bcdce9cf8b0, var_c342527a25f10cc5);
                     continue;
                 }
-                if (isdefined(player.musicpack) && player.musicpack == 1) {
+                if (getdvarint(@"hash_61e9133b2e499a6c") && var_206c8dfdb8c43d68 != "") {
                     player setplayermusicstate(var_206c8dfdb8c43d68);
                     continue;
                 }
@@ -296,13 +256,13 @@ function function_fe75a89529dd0fd0(players, var_9adc1bcdce9cf8b0, var_c342527a25
         }
         return;
     }
-    assertmsg("<dev string:x304>");
+    assertmsg("setMusicStateForPlayers: players was not an array");
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xaba
-// Size: 0x6c
+// Checksum 0x0, Offset: 0xb0e
+// Size: 0x6b
 function function_46979d2fd81a6d4b(team_name, var_9adc1bcdce9cf8b0, var_c342527a25f10cc5, var_206c8dfdb8c43d68) {
     team_name = default_to(team_name, "");
     var_9adc1bcdce9cf8b0 = default_to(var_9adc1bcdce9cf8b0, "");
@@ -313,8 +273,8 @@ function function_46979d2fd81a6d4b(team_name, var_9adc1bcdce9cf8b0, var_c342527a
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2e
-// Size: 0x71
+// Checksum 0x0, Offset: 0xb81
+// Size: 0x70
 function function_fdd0934f1a32f70d(var_6e077719c0efcb61, radius, var_9adc1bcdce9cf8b0, team_name, var_c342527a25f10cc5, var_206c8dfdb8c43d68) {
     var_9adc1bcdce9cf8b0 = default_to(var_9adc1bcdce9cf8b0, "");
     var_206c8dfdb8c43d68 = default_to(var_206c8dfdb8c43d68, "");
@@ -324,8 +284,8 @@ function function_fdd0934f1a32f70d(var_6e077719c0efcb61, radius, var_9adc1bcdce9
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xba7
-// Size: 0xd2
+// Checksum 0x0, Offset: 0xbf9
+// Size: 0xcf
 function function_4e8ba327eb12540c(players, var_220cfd744ed0ba55, fadetime, scale) {
     players = default_to(players, []);
     var_220cfd744ed0ba55 = default_to(var_220cfd744ed0ba55, "");
@@ -339,13 +299,13 @@ function function_4e8ba327eb12540c(players, var_220cfd744ed0ba55, fadetime, scal
         }
         return;
     }
-    assertmsg("<dev string:x339>");
+    assertmsg("setSubmixForPlayers: players was not an array");
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc81
-// Size: 0x5d
+// Checksum 0x0, Offset: 0xcd0
+// Size: 0x5c
 function function_c7f38d0611aa82e7(team_name, var_220cfd744ed0ba55, fadetime, scale) {
     var_220cfd744ed0ba55 = default_to(var_220cfd744ed0ba55, "");
     team_name = default_to(team_name, "");
@@ -355,8 +315,8 @@ function function_c7f38d0611aa82e7(team_name, var_220cfd744ed0ba55, fadetime, sc
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xce6
-// Size: 0xa5
+// Checksum 0x0, Offset: 0xd34
+// Size: 0xa2
 function function_c79f9300ee85f805(players, var_220cfd744ed0ba55, fadetime) {
     players = default_to(players, []);
     var_220cfd744ed0ba55 = default_to(var_220cfd744ed0ba55, "");
@@ -367,13 +327,13 @@ function function_c79f9300ee85f805(players, var_220cfd744ed0ba55, fadetime) {
         }
         return;
     }
-    assertmsg("<dev string:x339>");
+    assertmsg("setSubmixForPlayers: players was not an array");
 }
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd93
-// Size: 0x5c
+// Checksum 0x0, Offset: 0xdde
+// Size: 0x5b
 function function_e3a3a924d8604018(team_name, var_220cfd744ed0ba55, fadetime, scale) {
     var_220cfd744ed0ba55 = default_to(var_220cfd744ed0ba55, "");
     team_name = default_to(team_name, "");
@@ -383,7 +343,7 @@ function function_e3a3a924d8604018(team_name, var_220cfd744ed0ba55, fadetime, sc
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf7
+// Checksum 0x0, Offset: 0xe41
 // Size: 0x23
 function function_110d3ab280057f5b(condition, alerttext) {
     /#
@@ -396,7 +356,7 @@ function function_110d3ab280057f5b(condition, alerttext) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xe23
+// Checksum 0x0, Offset: 0xe6d
 // Size: 0x7f
 function private function_5b159f140bd186df() {
     function_40a17693396019a7();
@@ -410,7 +370,7 @@ function private function_5b159f140bd186df() {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeaa
+// Checksum 0x0, Offset: 0xef4
 // Size: 0x52
 function function_1186ca4e2e51afea(name) {
     if (isstruct(level.snd) && isdefined(level.snd.var_828ab610e771905) && isdefined(level.snd.var_828ab610e771905[name])) {
@@ -421,8 +381,8 @@ function function_1186ca4e2e51afea(name) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf05
-// Size: 0x119
+// Checksum 0x0, Offset: 0xf4f
+// Size: 0x118
 function function_f1aed36ab4598ea(name) {
     if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"hash_add5b80d30e0737a") != 0) {
         return;
@@ -431,7 +391,7 @@ function function_f1aed36ab4598ea(name) {
     assert(function_f0b5522ee5ce0cb1());
     assert(isent(level.snd.var_4388174fd6467686));
     assert(isarray(level.snd.var_828ab610e771905));
-    assertex(isstring(name), "<dev string:x36a>");
+    assertex(isstring(name), "snd_transient_load requires a name argument");
     isloaded = function_1186ca4e2e51afea(name);
     if (function_110d3ab280057f5b(isloaded, "snd_transient_load loaded '" + name + "'")) {
         return;
@@ -442,8 +402,8 @@ function function_f1aed36ab4598ea(name) {
 
 // Namespace audio_utility / namespace_e688cd9db0404268
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1026
-// Size: 0x101
+// Checksum 0x0, Offset: 0x106f
+// Size: 0x100
 function function_f4e0ff5cb899686d(name) {
     if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"hash_add5b80d30e0737a") != 0) {
         return;
@@ -452,7 +412,7 @@ function function_f4e0ff5cb899686d(name) {
     assert(function_f0b5522ee5ce0cb1());
     assert(isent(level.snd.var_4388174fd6467686));
     assert(isarray(level.snd.var_828ab610e771905));
-    assertex(isstring(name), "<dev string:x399>");
+    assertex(isstring(name), "snd_transient_unload requires a name argument");
     isloaded = function_1186ca4e2e51afea(name);
     if (function_110d3ab280057f5b(!isloaded, "snd_transient_unload '" + name + "' not loaded")) {
         return;

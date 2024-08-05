@@ -2,29 +2,29 @@
 #using scripts\common\utility.gsc;
 #using script_247745a526421ba7;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\cp_mp\challenges.gsc;
+#using scripts\cp_mp\utility\game_utility.gsc;
+#using script_ec0f9ad939b29e0;
 #using script_2669878cf5a1b6bc;
 
 #namespace hb_sensor;
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x2b5
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x1fb
+// Size: 0x86
 function autoexec main() {
     registersharedfunc("super_hb_sensor", "init", &function_37a2a151863e0c71);
     registersharedfunc("super_hb_sensor", "hb_sensor_used", &hb_sensor_used);
     registersharedfunc("super_hb_sensor", "onSuperButtonHold", &function_6e9e734982349368);
     registersharedfunc("super_hb_sensor", "given", &function_24b7c11c9ad5e1f8);
-    registersharedfunc("super_hb_sensor", "getPurchasedCount", &function_e95421aa59998a04);
     registersharedfunc("super_hb_sensor", "getAmmo", &function_29dadceefda852ce);
     registersharedfunc("super_hb_sensor", "setAmmo", &function_cb98101eefdedaa);
 }
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x359
+// Checksum 0x0, Offset: 0x289
 // Size: 0x2
 function function_37a2a151863e0c71() {
     
@@ -32,7 +32,7 @@ function function_37a2a151863e0c71() {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x363
+// Checksum 0x0, Offset: 0x293
 // Size: 0x11d
 function hb_sensor_used(grenade) {
     flag_init("equipment_interact");
@@ -62,28 +62,24 @@ function hb_sensor_used(grenade) {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x488
-// Size: 0x30
+// Checksum 0x0, Offset: 0x3b8
+// Size: 0x1a
 function function_24b7c11c9ad5e1f8(objweapon) {
-    if (!scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        function_1581e97f79a91d04();
-    }
-    if (!istrue(self.var_6f91e923fd82a0a8)) {
-        thread function_323286bf3aa11fbb();
-    }
+    function_3f703abc99c1bb80();
+    thread function_323286bf3aa11fbb();
 }
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c0
-// Size: 0x12c
+// Checksum 0x0, Offset: 0x3da
+// Size: 0x145
 function function_6e9e734982349368(objweapon) {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self endon("hb_sensor_take");
     self notify("hb_sensor_end_recharge");
     flag_set("equipment_interact");
-    if (!issubstr(objweapon.basename, "hb_sensor") || !self superbuttonpressed()) {
+    if (!issubstr(objweapon, "hb_sensor") || !self superbuttonpressed()) {
         return;
     }
     percentageremaining = 100;
@@ -104,15 +100,16 @@ function function_6e9e734982349368(objweapon) {
     self function_95f24fbb015ee513(0);
     self setclientomnvar("ui_hb_sensor_battery_percentage", percentageremaining);
     wait 0.533;
+    scripts\cp_mp\challenges::function_d997435895422ecc("super_hb_sensor", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
     if (!scripts\cp_mp\utility\game_utility::function_ba5574c7f287c587()) {
-        thread function_fc7e5d7d7f99703a();
+        function_fc7e5d7d7f99703a();
     }
 }
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f4
-// Size: 0x57
+// Checksum 0x0, Offset: 0x527
+// Size: 0x56
 function function_7be962f484c73a3() {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -128,7 +125,7 @@ function function_7be962f484c73a3() {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x653
+// Checksum 0x0, Offset: 0x585
 // Size: 0x13
 function function_6a05d3f5b90ab3b2(isjammed) {
     self function_9b28bd480aaad85f(isjammed);
@@ -136,7 +133,7 @@ function function_6a05d3f5b90ab3b2(isjammed) {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x66e
+// Checksum 0x0, Offset: 0x5a0
 // Size: 0x23
 function function_7f948b7f43448ea9(equipmentref, slot) {
     self notify("hb_sensor_take");
@@ -145,20 +142,18 @@ function function_7f948b7f43448ea9(equipmentref, slot) {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x699
-// Size: 0x35
+// Checksum 0x0, Offset: 0x5cb
+// Size: 0x20
 function function_323286bf3aa11fbb() {
     level endon("game_ended");
     self endon("disconnect");
-    self.var_6f91e923fd82a0a8 = 1;
     self waittill("death");
-    self.var_6f91e923fd82a0a8 = undefined;
     thread function_3f703abc99c1bb80();
 }
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d6
+// Checksum 0x0, Offset: 0x5f3
 // Size: 0x38
 function function_3f703abc99c1bb80() {
     self.var_d07d8acb673cb5c7 = undefined;
@@ -170,23 +165,11 @@ function function_3f703abc99c1bb80() {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x716
-// Size: 0x20
-function function_1581e97f79a91d04() {
-    self.var_d07d8acb673cb5c7 = undefined;
-    flag_clear("equipment_interact");
-    self function_3ac2d6250a4c3f42(0);
-}
-
-// Namespace hb_sensor / namespace_ed750c697ef69724
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x73e
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x633
+// Size: 0x3e
 function function_c34b7f440bc57526() {
     if (utility::iscp()) {
         batteryduration = getdvarint(@"hash_952c250389735fd7", 1200);
-    } else if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        batteryduration = getdvarint(@"hash_9566359f0d260f0b", 60);
     } else {
         batteryduration = getdvarint(@"hash_3d0928eec520c586", 600);
     }
@@ -195,44 +178,30 @@ function function_c34b7f440bc57526() {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a4
-// Size: 0x41
+// Checksum 0x0, Offset: 0x67a
+// Size: 0x8
 function function_29dadceefda852ce() {
-    batteryduration = function_c34b7f440bc57526();
-    secondsused = self.var_7653bd4be7dd5fdb;
-    if (!isdefined(secondsused)) {
-        secondsused = 0;
-    }
-    return int(ceil((batteryduration - secondsused) * 100 / batteryduration));
+    return namespace_8a392daf295e43f8::function_db61876aca4e4cd3();
 }
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ee
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x68b
+// Size: 0x12
 function function_cb98101eefdedaa(percentage) {
-    self.var_3dd6d94c7b926688 = percentage;
-    batteryduration = function_c34b7f440bc57526();
-    self.var_7653bd4be7dd5fdb = percentage * -1 * batteryduration / 100 + batteryduration;
-    return true;
+    return namespace_8a392daf295e43f8::function_30cd943d877dc29f(percentage);
 }
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x834
-// Size: 0x130
+// Checksum 0x0, Offset: 0x6a6
+// Size: 0xea
 function function_fc7e5d7d7f99703a() {
     level endon("game_ended");
     self endon("death_or_disconnect");
-    self endon("player_isHaywire");
-    self notify("hb_sensor_decay");
-    self endon("hb_sensor_decay");
     self.var_d07d8acb673cb5c7 = 1;
     if (!isdefined(self.var_7653bd4be7dd5fdb)) {
         self.var_7653bd4be7dd5fdb = 0;
-    }
-    if (self.var_7653bd4be7dd5fdb == 0) {
-        scripts\cp_mp\challenges::function_d997435895422ecc("super_hb_sensor", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
     }
     counter = 0;
     batteryduration = function_c34b7f440bc57526();
@@ -258,16 +227,8 @@ function function_fc7e5d7d7f99703a() {
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x96c
-// Size: 0x4
-function function_e95421aa59998a04() {
-    return 100;
-}
-
-// Namespace hb_sensor / namespace_ed750c697ef69724
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x979
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x798
+// Size: 0x5e
 function function_83ef0926b5392999() {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -279,14 +240,11 @@ function function_83ef0926b5392999() {
             self releaseoffhand();
         }
     }
-    if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        self [[ utility::getsharedfunc("player", "resetSuper") ]]();
-    }
 }
 
 // Namespace hb_sensor / namespace_ed750c697ef69724
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fc
+// Checksum 0x0, Offset: 0x7fe
 // Size: 0x34
 function checkperk(perk) {
     if (issharedfuncdefined("perk", "hasPerk")) {

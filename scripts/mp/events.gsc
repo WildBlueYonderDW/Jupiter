@@ -766,7 +766,7 @@ function function_b7f154368abbe463(victim, objweapon, meansofdeath, inflictor, d
                     }
                 } else {
                     self.modifiers["hipfire"] = 1;
-                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"Hipfire"));
+                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hipfire"));
                 }
             }
             if (victim issprinting()) {
@@ -800,7 +800,7 @@ function function_b7f154368abbe463(victim, objweapon, meansofdeath, inflictor, d
                     self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"ads"));
                 } else {
                     self.modifiers["hipfire"] = 1;
-                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"Hipfire"));
+                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hipfire"));
                 }
             }
         }

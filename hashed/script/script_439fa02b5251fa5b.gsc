@@ -2,7 +2,7 @@
 
 // Namespace damage_tuning / namespace_87e70a4c0468fd81
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x88
+// Checksum 0x0, Offset: 0x15b
 // Size: 0x81
 function init() {
     level.var_be6a42242be00b66 = isdefined(level.gametypebundle) && istrue(level.gametypebundle.var_53fc2c66905a7332);
@@ -22,8 +22,8 @@ function init() {
 
 // Namespace damage_tuning / namespace_87e70a4c0468fd81
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x111
-// Size: 0x16a
+// Checksum 0x0, Offset: 0x1e4
+// Size: 0x16b
 function function_4a2ecb33b6adeb85(damagedata, var_e913079a5ffda56d) {
     if (!level.var_be6a42242be00b66) {
         return 0;
@@ -32,7 +32,7 @@ function function_4a2ecb33b6adeb85(damagedata, var_e913079a5ffda56d) {
     meansofdeath = damagedata.meansofdeath;
     var_b66e269a387db351 = var_e913079a5ffda56d.var_b66e269a387db351;
     if (!isdefined(var_b66e269a387db351)) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("Must provide disablesToKill.");
         return;
     }
     if (isstring(meansofdeath)) {
@@ -58,17 +58,17 @@ function function_4a2ecb33b6adeb85(damagedata, var_e913079a5ffda56d) {
 
 // Namespace damage_tuning / namespace_87e70a4c0468fd81
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x283
-// Size: 0x2c2
+// Checksum 0x0, Offset: 0x357
+// Size: 0x2c4
 function getmodifieddamageusingdamagetuning(attacker, objweapon, mod, amount, maxhealth, damage_tuning) {
     multipliers = damage_tuning.damagemultipliers;
     hitstokill = damage_tuning.var_aaf772ef14275e0b;
     if (!isdefined(multipliers)) {
-        assertmsg("<dev string:x3c>");
+        assertmsg("Must provide multipliers when calculating modified anti-killstreak damage.");
         return amount;
     }
     if (!isdefined(hitstokill)) {
-        assertmsg("<dev string:x8a>");
+        assertmsg("Must provide hits to kill matrix when calculating modified anti-killstreak damage.");
         return amount;
     }
     if (isstring(mod)) {
@@ -91,7 +91,7 @@ function getmodifieddamageusingdamagetuning(attacker, objweapon, mod, amount, ma
         }
         var_b41d21142ce58d82 = var_a5c813dce206559b.hitstokill;
         if (var_b41d21142ce58d82 <= 0) {
-            assertmsg("<dev string:xe0>" + var_b41d21142ce58d82 + "<dev string:xf0>");
+            assertmsg("Cannot have " + var_b41d21142ce58d82 + " hits to kill. Must use a positive number.");
             continue;
         }
         damageamount = int(ceil(float(self.maxhealth) / var_b41d21142ce58d82));
@@ -116,7 +116,7 @@ function getmodifieddamageusingdamagetuning(attacker, objweapon, mod, amount, ma
 
 // Namespace damage_tuning / namespace_87e70a4c0468fd81
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54e
+// Checksum 0x0, Offset: 0x624
 // Size: 0x35
 function setupdamagetuning(var_e913079a5ffda56d, maxhealth) {
     if (!istrue(level.var_be6a42242be00b66)) {

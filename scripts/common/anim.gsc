@@ -9,10 +9,10 @@
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x764
-// Size: 0x7e
+// Checksum 0x0, Offset: 0xada
+// Size: 0x7f
 function anim_first_frame(guys, anime, tag) {
-    assertex(isarray(guys), "<dev string:x1c>");
+    assertex(isarray(guys), "guys needs to be an array");
     array = get_anim_position(tag);
     org = array["origin"];
     angles = array["angles"];
@@ -22,8 +22,8 @@ function anim_first_frame(guys, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ea
-// Size: 0x61
+// Checksum 0x0, Offset: 0xb61
+// Size: 0x62
 function anim_generic_first_frame(guy, anime, tag) {
     array = get_anim_position(tag);
     org = array["origin"];
@@ -33,8 +33,8 @@ function anim_generic_first_frame(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x853
-// Size: 0x3d
+// Checksum 0x0, Offset: 0xbcb
+// Size: 0x3c
 function anim_generic(guy, anime, tag) {
     guys = [];
     guys[0] = guy;
@@ -43,8 +43,8 @@ function anim_generic(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x898
-// Size: 0x41
+// Checksum 0x0, Offset: 0xc0f
+// Size: 0x40
 function anim_generic_run(guy, anime, tag) {
     guys = [];
     guys[0] = guy;
@@ -53,8 +53,8 @@ function anim_generic_run(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e1
-// Size: 0x40
+// Checksum 0x0, Offset: 0xc57
+// Size: 0x3f
 function anim_single_solo_run(guy, anime, tag) {
     self endon("death");
     newguy[0] = guy;
@@ -63,8 +63,8 @@ function anim_single_solo_run(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x929
-// Size: 0x37
+// Checksum 0x0, Offset: 0xc9e
+// Size: 0x36
 function anim_first_frame_solo(guy, anime, tag) {
     guys = [];
     guys[0] = guy;
@@ -73,8 +73,8 @@ function anim_first_frame_solo(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x968
-// Size: 0x1fa
+// Checksum 0x0, Offset: 0xcdc
+// Size: 0x1fb
 function anim_first_frame_on_guy(guy, anime, org, angles, animname_override) {
     guy.first_frame_time = gettime();
     animname = undefined;
@@ -97,7 +97,7 @@ function anim_first_frame_on_guy(guy, anime, org, angles, animname_override) {
     #/
     guy set_start_pos(anime, org, angles, animname, isloop, animation);
     if (isai(guy)) {
-        assertex(isdefined(anim.callbacks["<dev string:x39>"]), "<dev string:x4d>");
+        assertex(isdefined(anim.callbacks["AIAnimFirstFrame"]), "You must define anim.callbacks[ AIAnimFirstFrame ] if you are first frame animating an AI");
         guy [[ anim.callbacks["AIAnimFirstFrame"] ]](animation, animname);
         return;
     }
@@ -116,10 +116,9 @@ function anim_first_frame_on_guy(guy, anime, org, angles, animname_override) {
 
 // Namespace animation / scripts\common\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6a
-// Size: 0xfc
+// Checksum 0x0, Offset: 0xedf
+// Size: 0xe5
 function set_start_pos(anime, org, angles, animname_override, anim_array, animation) {
-    assertex(isdefined(org) && isdefined(angles), "<dev string:xaa>");
     animname = undefined;
     if (isdefined(animname_override)) {
         animname = animname_override;
@@ -142,8 +141,8 @@ function set_start_pos(anime, org, angles, animname_override, anim_array, animat
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6e
-// Size: 0x60
+// Checksum 0x0, Offset: 0xfcc
+// Size: 0x61
 function anim_start_pos(var_76ca61ead2153a39, anime, tag) {
     pos = get_anim_position(tag);
     org = pos["origin"];
@@ -153,8 +152,8 @@ function anim_start_pos(var_76ca61ead2153a39, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd6
-// Size: 0x34
+// Checksum 0x0, Offset: 0x1035
+// Size: 0x33
 function anim_start_pos_solo(guy, anime, tag) {
     newguy[0] = guy;
     anim_start_pos(newguy, anime, tag);
@@ -162,8 +161,8 @@ function anim_start_pos_solo(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd12
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x1070
+// Size: 0xe7
 function anim_last_frame_solo(guy, anime, tag) {
     guys = [];
     guys[0] = guy;
@@ -180,8 +179,8 @@ function anim_last_frame_solo(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfc
-// Size: 0x55
+// Checksum 0x0, Offset: 0x115f
+// Size: 0x54
 function anim_single_solo(guy, anime, tag, var_9e8a16d47a03007a, animname_override) {
     self endon("death");
     newguy[0] = guy;
@@ -193,8 +192,8 @@ function anim_single_solo(guy, anime, tag, var_9e8a16d47a03007a, animname_overri
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xe59
-// Size: 0x7a3
+// Checksum 0x0, Offset: 0x11bb
+// Size: 0x795
 function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, animname_override) {
     entity = self;
     /#
@@ -280,13 +279,13 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, animname_o
             }
         #/
         if (DoAnimation) {
-            var_43e50904d011917e = undefined;
+            scripted_node_ent = undefined;
             if (function_6bc36c81fc28a22e()) {
-                var_43e50904d011917e = self;
+                scripted_node_ent = self;
             }
-            assertex(isdefined(guy.model) && guy.model != "<dev string:xd0>", "<dev string:xd4>" + function_a2eaafb222316a2(guy) + "<dev string:xf8>" + animname + "<dev string:x10c>" + anime + "<dev string:x129>");
+            assertex(isdefined(guy.model) && guy.model != "<dev string:x1c>", "<dev string:x1d>" + function_a2eaafb222316a2(guy) + "<dev string:x3e>" + animname + "<dev string:x4f>" + anime + "<dev string:x69>");
             guy namespace_c5f7e08ad7ea4280::function_d5f76e611c78509a();
-            animtime = guy [[ anim.callbacks["DoAnimation"] ]](org, angles, animname, anime, anim_string, undefined, var_43e50904d011917e);
+            animtime = guy [[ anim.callbacks["DoAnimation"] ]](org, angles, animname, anime, anim_string, undefined, scripted_node_ent);
             if (animtime < var_2afd32f7cad8af86) {
                 var_2afd32f7cad8af86 = animtime;
                 var_c89cf41205d8055d = i;
@@ -299,19 +298,19 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, animname_o
             var_7d006c3a8c8ff60a = i;
         }
         if (isai(guy)) {
-            assertex(!(DoAnimation && guy doinglongdeath()), "<dev string:x143>");
+            assertex(!(DoAnimation && guy doinglongdeath()), "AI is doing a long death, you cannot call animscripted on ai in long death");
         }
-        assertex(DoAnimation || DoFacialAnim || var_9ac73a1996d2dae || dotext, "<dev string:x191>" + anime + "<dev string:x1ac>" + animname + "<dev string:x1c6>");
+        assertex(DoAnimation || DoFacialAnim || var_9ac73a1996d2dae || dotext, "Tried to do anim scene " + anime + " on guy with animname " + animname + ", but he didn't have that anim scene.");
         if (var_ae4f6e4d11bb5adb) {
             guy thread play_addtive_head_anim(guy, var_910e49245fadfc70);
         }
         /#
             if (dotext && !var_9ac73a1996d2dae) {
-                guy thread [[ anim.callbacks["<dev string:x1ef>"] ]](level.scr_text[animname][anime]);
+                guy thread [[ anim.callbacks["<dev string:x80>"] ]](level.scr_text[animname][anime]);
             }
         #/
         if (!issp()) {
-            if (!isplayer(guy) && !isagent(guy) && !(guy isvehicle() || isdefined(guy.var_be4ead373697180b) || istrue(guy.var_dfecb928163c6c6)) && isdefined(level.scr_anim[animname]) && isdefined(level.scr_anim[animname][anime])) {
+            if (!isplayer(guy) && !isagent(guy) && !guy isvehicle() && isdefined(level.scr_anim[animname]) && isdefined(level.scr_anim[animname][anime])) {
                 blendtype = function_4a2dd4b9088bd637(animname, anime);
                 if (isdefined(level.var_96c8e55e70edd512)) {
                     blendtype = [[ level.var_96c8e55e70edd512 ]](animname);
@@ -355,8 +354,8 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, animname_o
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1604
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x1958
+// Size: 0x5e
 function function_4a2dd4b9088bd637(animname, anime) {
     blendtype = undefined;
     if (isdefined(level.scr_goaltime[animname]) && isdefined(level.scr_goaltime[animname][anime])) {
@@ -369,7 +368,7 @@ function function_4a2dd4b9088bd637(animname, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x166c
+// Checksum 0x0, Offset: 0x19bf
 // Size: 0x3f
 function anim_single(guys, anime, tag, var_9e8a16d47a03007a, animname_override) {
     if (!isdefined(var_9e8a16d47a03007a)) {
@@ -380,8 +379,8 @@ function anim_single(guys, anime, tag, var_9e8a16d47a03007a, animname_override) 
 
 // Namespace animation / scripts\common\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b3
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x1a06
+// Size: 0x5e
 function anim_loop_solo(guy, anime, ender, tag, var_656e3d548572faf6, animname_override) {
     self endon("death");
     guy endon("death");
@@ -391,19 +390,19 @@ function anim_loop_solo(guy, anime, ender, tag, var_656e3d548572faf6, animname_o
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x171a
-// Size: 0x79
+// Checksum 0x0, Offset: 0x1a6c
+// Size: 0x78
 function anim_loop_solo_with_nags(guy, anime, ender, tag) {
     self endon("death");
     guy endon("death");
-    assertex(isdefined(level.scr_anim[guy.animname][anime + "<dev string:x1fc>"]), "<dev string:x205>" + anime);
+    assertex(isdefined(level.scr_anim[guy.animname][anime + "_nags"]), "No nag anims registered for anime scene " + anime);
     newguy[0] = guy;
     anim_loop(newguy, anime, ender, tag);
 }
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x179b
+// Checksum 0x0, Offset: 0x1aec
 // Size: 0x67
 function anim_generic_loop(guy, anime, ender, tag) {
     packet = [];
@@ -416,8 +415,8 @@ function anim_generic_loop(guy, anime, ender, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x180a
-// Size: 0xc7
+// Checksum 0x0, Offset: 0x1b5b
+// Size: 0xc6
 function anim_loop(guys, anime, ender, tag, var_656e3d548572faf6, animname_override) {
     var_3d308e5cd595225d = [];
     foreach (guy in guys) {
@@ -433,8 +432,8 @@ function anim_loop(guys, anime, ender, tag, var_656e3d548572faf6, animname_overr
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d9
-// Size: 0x40
+// Checksum 0x0, Offset: 0x1c29
+// Size: 0x3f
 function anim_loop_packet_solo(var_6fab270f71d41318, anime, ender, animname_override) {
     looppacket = [];
     looppacket[0] = var_6fab270f71d41318;
@@ -443,8 +442,8 @@ function anim_loop_packet_solo(var_6fab270f71d41318, anime, ender, animname_over
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1921
-// Size: 0x98
+// Checksum 0x0, Offset: 0x1c70
+// Size: 0x97
 function pick_nag_anim(datastruct) {
     naganim = undefined;
     if (datastruct.nag_anims.size == 1) {
@@ -462,10 +461,10 @@ function pick_nag_anim(datastruct) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c2
-// Size: 0x8a0
+// Checksum 0x0, Offset: 0x1d10
+// Size: 0x8b9
 function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override) {
-    assertex(!isdefined(level.scr_xcam[anime]), "<dev string:x231>");
+    assertex(!isdefined(level.scr_xcam[anime]), "Xcams shouldn't be used in looping animations.");
     foreach (var_f2811089f0eb595c in var_3d308e5cd595225d) {
         guy = var_f2811089f0eb595c["guy"];
         if (!isdefined(guy)) {
@@ -512,7 +511,7 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
                 ai++;
             }
         }
-        assertex(ai == 1, "<dev string:x263>");
+        assertex(ai == 1, "Loop anims with _nags should only be done with one AI");
         if (isdefined(level.scr_anim[var_f9909a84715a4ddf][anime + "_nags_timer"])) {
             naginterval = level.scr_anim[var_f9909a84715a4ddf][anime + "_nags_timer"];
         } else {
@@ -601,7 +600,7 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
                     dotext = 1;
                 }
                 if (!DoFacialAnim && !var_9ac73a1996d2dae && !DoAnimation && !dotext) {
-                    assertmsg("<dev string:x29c>" + guy getentitynumber() + "<dev string:x2ab>" + anime + "<dev string:x2cc>");
+                    assertmsg("<dev string:x8a>" + guy getentitynumber() + "<dev string:x96>" + anime + "<dev string:xb4>");
                     var_405d3683254d21e8 = 1;
                     break;
                 }
@@ -625,7 +624,7 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
             }
             /#
                 if (dotext && !var_9ac73a1996d2dae) {
-                    guy thread [[ anim.callbacks["<dev string:x1ef>"] ]](level.scr_text[animname][anime]);
+                    guy thread [[ anim.callbacks["<dev string:x80>"] ]](level.scr_text[animname][anime]);
                 }
             #/
         }
@@ -651,7 +650,7 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x226a
+// Checksum 0x0, Offset: 0x25d1
 // Size: 0x34
 function waittill_animend(guy, animstring, var_6beb6c37769023f8) {
     if (istrue(var_6beb6c37769023f8)) {
@@ -663,7 +662,7 @@ function waittill_animend(guy, animstring, var_6beb6c37769023f8) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x22a7
+// Checksum 0x0, Offset: 0x260e
 // Size: 0xa7
 function nag_timer(timer, guy) {
     self endon("death");
@@ -672,7 +671,7 @@ function nag_timer(timer, guy) {
     while (currenttime + timer * 1000 > gettime()) {
         /#
             if (getdvarint(@"hash_e35578a601bcd680")) {
-                print3d(guy.origin + (0, 0, 70), temp + "<dev string:x2e3>", (1, 1, 0.5), 1, 0.6, 20);
+                print3d(guy.origin + (0, 0, 70), temp + "<dev string:xc8>", (1, 1, 0.5), 1, 0.6, 20);
                 temp--;
             }
         #/
@@ -683,8 +682,8 @@ function nag_timer(timer, guy) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2356
-// Size: 0x3b
+// Checksum 0x0, Offset: 0x26bd
+// Size: 0x3a
 function anim_set_time_solo(guy, anime, time) {
     self endon("death");
     newguy[0] = guy;
@@ -693,7 +692,7 @@ function anim_set_time_solo(guy, anime, time) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2399
+// Checksum 0x0, Offset: 0x26ff
 // Size: 0x2a
 function anim_set_time(guys, anime, time) {
     array_thread(guys, &anim_self_set_time, anime, time);
@@ -701,8 +700,8 @@ function anim_set_time(guys, anime, time) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23cb
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x2731
+// Size: 0x3c
 function anim_self_set_time(anime, time) {
     animation = getanim(anime);
     if (isarray(animation)) {
@@ -713,8 +712,8 @@ function anim_self_set_time(anime, time) {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2410
-// Size: 0x54
+// Checksum 0x0, Offset: 0x2775
+// Size: 0x53
 function last_anim_time_check() {
     if (!isdefined(self.last_anim_time)) {
         self.last_anim_time = gettime();
@@ -730,8 +729,8 @@ function last_anim_time_check() {
 
 // Namespace animation / scripts\common\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x246c
-// Size: 0x136
+// Checksum 0x0, Offset: 0x27d0
+// Size: 0x138
 function anim_moveto(guys, anime, tag, time, acceleration_time, var_efe93c754f5124e6) {
     pos = get_anim_position(tag);
     org = pos["origin"];
@@ -740,7 +739,7 @@ function anim_moveto(guys, anime, tag, time, acceleration_time, var_efe93c754f51
         startorg = getstartorigin(org, angles, level.scr_anim[guy.animname][anime]);
         startang = getstartangles(org, angles, level.scr_anim[guy.animname][anime]);
         if (isai(guy)) {
-            assertmsg("<dev string:x2f6>");
+            assertmsg("ai not supported by anim_moveto");
             continue;
         }
         guy moveto(startorg, time, acceleration_time, var_efe93c754f5124e6);
@@ -750,8 +749,8 @@ function anim_moveto(guys, anime, tag, time, acceleration_time, var_efe93c754f51
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25aa
-// Size: 0x3b
+// Checksum 0x0, Offset: 0x2910
+// Size: 0x3a
 function anim_teleport_solo(guy, anime, tag) {
     self endon("death");
     newguy[0] = guy;
@@ -760,8 +759,8 @@ function anim_teleport_solo(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25ed
-// Size: 0xfd
+// Checksum 0x0, Offset: 0x2952
+// Size: 0xff
 function anim_teleport(guys, anime, tag) {
     pos = get_anim_position(tag);
     org = pos["origin"];
@@ -775,8 +774,8 @@ function anim_teleport(guys, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26f2
-// Size: 0xac
+// Checksum 0x0, Offset: 0x2a59
+// Size: 0xaf
 function anim_generic_teleport(guy, anime, tag) {
     pos = get_anim_position(tag);
     org = pos["origin"];
@@ -788,7 +787,7 @@ function anim_generic_teleport(guy, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a6
+// Checksum 0x0, Offset: 0x2b10
 // Size: 0x29
 function anim_spawn_generic_model(model, anime, tag) {
     return anim_spawn_model(model, "generic", anime, tag);
@@ -796,8 +795,8 @@ function anim_spawn_generic_model(model, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x27d8
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x2b42
+// Size: 0xc9
 function anim_spawn_model(model, animname, anime, tag) {
     pos = get_anim_position(tag);
     org = pos["origin"];
@@ -812,7 +811,7 @@ function anim_spawn_model(model, animname, anime, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x28a6
+// Checksum 0x0, Offset: 0x2c14
 // Size: 0x1c
 function anim_spawn_tag_model(model, tag) {
     self attach(model, tag);
@@ -820,7 +819,7 @@ function anim_spawn_tag_model(model, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x28ca
+// Checksum 0x0, Offset: 0x2c38
 // Size: 0x67
 function anim_link_tag_model(model, tag) {
     org = self gettagorigin(tag);
@@ -832,8 +831,8 @@ function anim_link_tag_model(model, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x293a
-// Size: 0xea
+// Checksum 0x0, Offset: 0x2ca8
+// Size: 0xeb
 function removenotetrack(animname, notetrack, anime, notetype, ent) {
     notetrack = tolower(notetrack);
     array = level.scr_notetrack[animname][anime][notetrack];
@@ -863,7 +862,7 @@ function removenotetrack(animname, notetrack, anime, notetype, ent) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2c
+// Checksum 0x0, Offset: 0x2d9b
 // Size: 0x9f
 function addnotetrack_flag(animname, notetrack, theflag, anime) {
     notetrack = tolower(notetrack);
@@ -881,7 +880,7 @@ function addnotetrack_flag(animname, notetrack, theflag, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ad3
+// Checksum 0x0, Offset: 0x2e42
 // Size: 0x96
 function addnotetrack_flag_clear(animname, notetrack, theflag, anime) {
     notetrack = tolower(notetrack);
@@ -897,8 +896,8 @@ function addnotetrack_flag_clear(animname, notetrack, theflag, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b71
-// Size: 0x75
+// Checksum 0x0, Offset: 0x2ee0
+// Size: 0x74
 function addnotetrack_dialogue(animname, notetrack, anime, soundalias) {
     notetrack = tolower(notetrack);
     anime = get_generic_anime(anime);
@@ -909,7 +908,7 @@ function addnotetrack_dialogue(animname, notetrack, anime, soundalias) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bee
+// Checksum 0x0, Offset: 0x2f5c
 // Size: 0x3d
 function add_notetrack_and_get_index(animname, notetrack, anime) {
     notetrack = tolower(notetrack);
@@ -919,7 +918,7 @@ function add_notetrack_and_get_index(animname, notetrack, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c34
+// Checksum 0x0, Offset: 0x2fa2
 // Size: 0x9a
 function add_notetrack_array(animname, notetrack, anime) {
     notetrack = tolower(notetrack);
@@ -939,8 +938,8 @@ function add_notetrack_array(animname, notetrack, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cd6
-// Size: 0xc7
+// Checksum 0x0, Offset: 0x3044
+// Size: 0xc6
 function addnotetrack_sound(animname, notetrack, anime, soundalias, sound_stays_death, tag) {
     notetrack = tolower(notetrack);
     anime = get_generic_anime(anime);
@@ -957,8 +956,8 @@ function addnotetrack_sound(animname, notetrack, anime, soundalias, sound_stays_
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2da5
-// Size: 0x56
+// Checksum 0x0, Offset: 0x3112
+// Size: 0x55
 function note_track_start_sound(notetrack, soundalias, sound_stays_death, tag) {
     scenedata = get_datascene();
     addnotetrack_sound(scenedata.animname, notetrack, scenedata.anim_sequence, soundalias, sound_stays_death, tag);
@@ -966,8 +965,8 @@ function note_track_start_sound(notetrack, soundalias, sound_stays_death, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e03
-// Size: 0x75
+// Checksum 0x0, Offset: 0x316f
+// Size: 0x74
 function addnotetrack_playersound(animname, notetrack, anime, soundalias) {
     notetrack = tolower(notetrack);
     anime = get_generic_anime(anime);
@@ -978,7 +977,7 @@ function addnotetrack_playersound(animname, notetrack, anime, soundalias) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e80
+// Checksum 0x0, Offset: 0x31eb
 // Size: 0x17
 function get_generic_anime(anime) {
     if (!isdefined(anime)) {
@@ -989,7 +988,7 @@ function get_generic_anime(anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ea0
+// Checksum 0x0, Offset: 0x320b
 // Size: 0x46
 function addonstart_animsound(animname, anime, soundalias) {
     if (!isdefined(level.scr_animsound[animname])) {
@@ -1000,8 +999,8 @@ function addonstart_animsound(animname, anime, soundalias) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eee
-// Size: 0x75
+// Checksum 0x0, Offset: 0x3259
+// Size: 0x74
 function addnotetrack_playerdialogue(animname, notetrack, anime, soundalias) {
     notetrack = tolower(notetrack);
     anime = get_generic_anime(anime);
@@ -1012,7 +1011,7 @@ function addnotetrack_playerdialogue(animname, notetrack, anime, soundalias) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f6b
+// Checksum 0x0, Offset: 0x32d5
 // Size: 0x7a
 function addnotetrack_animsound(animname, anime, notetrack, soundalias) {
     notetrack = tolower(notetrack);
@@ -1026,7 +1025,7 @@ function addnotetrack_animsound(animname, anime, notetrack, soundalias) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fed
+// Checksum 0x0, Offset: 0x3357
 // Size: 0x83
 function addnotetrack_attach(animname, notetrack, model, tag, anime) {
     notetrack = tolower(notetrack);
@@ -1040,7 +1039,7 @@ function addnotetrack_attach(animname, notetrack, model, tag, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3078
+// Checksum 0x0, Offset: 0x33e2
 // Size: 0x83
 function addnotetrack_detach(animname, notetrack, model, tag, anime) {
     notetrack = tolower(notetrack);
@@ -1054,7 +1053,7 @@ function addnotetrack_detach(animname, notetrack, model, tag, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3103
+// Checksum 0x0, Offset: 0x346d
 // Size: 0x8c
 function addnotetrack_detach_gun(animname, notetrack, anime, suspend) {
     notetrack = tolower(notetrack);
@@ -1071,7 +1070,7 @@ function addnotetrack_detach_gun(animname, notetrack, anime, suspend) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3197
+// Checksum 0x0, Offset: 0x3501
 // Size: 0x85
 function addnotetrack_attach_gun(animname, notetrack, anime, weapplacement) {
     notetrack = tolower(notetrack);
@@ -1088,7 +1087,7 @@ function addnotetrack_attach_gun(animname, notetrack, anime, weapplacement) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3224
+// Checksum 0x0, Offset: 0x358e
 // Size: 0x70
 function addnotetrack_customfunction(animname, notetrack, function, anime) {
     notetrack = tolower(notetrack);
@@ -1101,7 +1100,7 @@ function addnotetrack_customfunction(animname, notetrack, function, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x329c
+// Checksum 0x0, Offset: 0x3606
 // Size: 0xa4
 function addnotetrack_startfxontag(animname, notetrack, anime, effect_name, tagname, moreThanThreeHack) {
     getfx(effect_name);
@@ -1119,7 +1118,7 @@ function addnotetrack_startfxontag(animname, notetrack, anime, effect_name, tagn
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3348
+// Checksum 0x0, Offset: 0x36b2
 // Size: 0x8b
 function addnotetrack_stopfxontag(animname, notetrack, anime, effect_name, tagname) {
     getfx(effect_name);
@@ -1134,7 +1133,7 @@ function addnotetrack_stopfxontag(animname, notetrack, anime, effect_name, tagna
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x33db
+// Checksum 0x0, Offset: 0x3745
 // Size: 0x83
 function addnotetrack_mayhemstart(animname, notetrack, animation, anime, usehatmodel) {
     notetrack = tolower(notetrack);
@@ -1148,7 +1147,7 @@ function addnotetrack_mayhemstart(animname, notetrack, animation, anime, usehatm
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3466
+// Checksum 0x0, Offset: 0x37d0
 // Size: 0x83
 function addnotetrack_mayhemend(animname, notetrack, animation, anime, usehatmodel) {
     notetrack = tolower(notetrack);
@@ -1162,8 +1161,8 @@ function addnotetrack_mayhemend(animname, notetrack, animation, anime, usehatmod
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x34f1
-// Size: 0x56
+// Checksum 0x0, Offset: 0x385b
+// Size: 0x55
 function note_track_swap_to_efx(notetrack, effect_path, tagname) {
     scenedata = get_datascene();
     add_fx(effect_path, effect_path);
@@ -1172,8 +1171,8 @@ function note_track_swap_to_efx(notetrack, effect_path, tagname) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x354f
-// Size: 0x56
+// Checksum 0x0, Offset: 0x38b8
+// Size: 0x55
 function note_track_stop_efx_on_tag(notetrack, effect_path, tagname) {
     scenedata = get_datascene();
     add_fx(effect_path, effect_path);
@@ -1182,7 +1181,7 @@ function note_track_stop_efx_on_tag(notetrack, effect_path, tagname) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x35ad
+// Checksum 0x0, Offset: 0x3915
 // Size: 0x8b
 function addnotetrack_swapparttoefx(animname, notetrack, anime, effect_name, tagname) {
     getfx(effect_name);
@@ -1197,12 +1196,12 @@ function addnotetrack_swapparttoefx(animname, notetrack, anime, effect_name, tag
 
 // Namespace animation / scripts\common\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3640
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x39a8
+// Size: 0xcb
 function note_track_trace_to_efx(notetrack, canceltrack, tagname, effect_path, var_56aef90205769a90, delete_depth) {
     scenedata = get_datascene();
     if (notetrack != "start" && !animhasnotetrack(scenedata getanim(scenedata.anim_sequence), notetrack)) {
-        println("<dev string:x319>" + scenedata.anim_sequence + "<dev string:x338>" + notetrack);
+        println("<dev string:xd8>" + scenedata.anim_sequence + "<dev string:xf4>" + notetrack);
         return;
     }
     add_fx(effect_path, effect_path);
@@ -1214,12 +1213,12 @@ function note_track_trace_to_efx(notetrack, canceltrack, tagname, effect_path, v
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3714
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x3a7b
+// Size: 0xa0
 function note_track_start_fx_on_tag(notetrack, tagname, effect_path) {
     scenedata = get_datascene();
     if (notetrack != "start" && !animhasnotetrack(scenedata getanim(scenedata.anim_sequence), notetrack)) {
-        println("<dev string:x356>" + scenedata.anim_sequence + "<dev string:x338>" + notetrack);
+        println("<dev string:x10f>" + scenedata.anim_sequence + "<dev string:xf4>" + notetrack);
         return;
     }
     add_fx(effect_path, effect_path);
@@ -1228,18 +1227,18 @@ function note_track_start_fx_on_tag(notetrack, tagname, effect_path) {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37bd
-// Size: 0x45
+// Checksum 0x0, Offset: 0x3b23
+// Size: 0x44
 function get_datascene() {
     assertex(isdefined(level.current_anim_data_scene));
     scenedata = level.current_anim_data_scene;
-    assertex(isdefined(scenedata.animtree), "<dev string:x36f>");
+    assertex(isdefined(scenedata.animtree), "Missing calling scene, Must use create_anim_scene() ");
     return scenedata;
 }
 
 // Namespace animation / scripts\common\anim
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x380b
+// Checksum 0x0, Offset: 0x3b70
 // Size: 0x105
 function addnotetrack_tracepartforefx(animname, notetrack, canceltrack, anime, tagname, effect_name, var_6c3cb0b533910c44, delete_depth) {
     getfx(effect_name);
@@ -1264,7 +1263,7 @@ function addnotetrack_tracepartforefx(animname, notetrack, canceltrack, anime, t
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3918
+// Checksum 0x0, Offset: 0x3c7d
 // Size: 0x70
 function addnotetrack_notify(animname, notetrack, thenotify, anime) {
     notetrack = tolower(notetrack);
@@ -1277,16 +1276,15 @@ function addnotetrack_notify(animname, notetrack, thenotify, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3990
-// Size: 0x28
+// Checksum 0x0, Offset: 0x3cf5
+// Size: 0x1c
 function setanimtree() {
-    id = self useanimtree(level.scr_animtree[self.animname]);
-    return id;
+    self useanimtree(level.scr_animtree[self.animname]);
 }
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39c1
+// Checksum 0x0, Offset: 0x3d19
 // Size: 0x1b7
 function initanim() {
     if (!isdefined(level.scr_notetrack)) {
@@ -1349,8 +1347,8 @@ function initanim() {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b80
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x3ed8
+// Size: 0xa8
 function precache_script_models_thread() {
     waittillframeend();
     if (!isdefined(level.scr_model)) {
@@ -1370,8 +1368,8 @@ function precache_script_models_thread() {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c2f
-// Size: 0xd6
+// Checksum 0x0, Offset: 0x3f88
+// Size: 0xd7
 function precache_weapon_models_thread() {
     waittillframeend();
     if (!isdefined(level.scr_weapon)) {
@@ -1379,10 +1377,10 @@ function precache_weapon_models_thread() {
     }
     weapons = getarraykeys(level.scr_weapon);
     for (i = 0; i < weapons.size; i++) {
-        assertex(isarray(level.scr_weapon[weapons[i]]), weapons[i] + "<dev string:x3a7>");
+        assertex(isarray(level.scr_weapon[weapons[i]]), weapons[i] + ": scr_weapon needs to be defined as an array!");
         attachments = [];
         if (isdefined(level.scr_weapon[weapons[i]][1])) {
-            assertex(isarray(level.scr_weapon[weapons[i]][1]), "<dev string:x3d8>");
+            assertex(isarray(level.scr_weapon[weapons[i]][1]), "scr_weapon attachments need to be defined as an array!");
             attachments = level.scr_weapon[weapons[i]][1];
         }
         utility::make_weapon_model(level.scr_weapon[weapons[i]][0], attachments, 1, 1);
@@ -1391,7 +1389,7 @@ function precache_weapon_models_thread() {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d0d
+// Checksum 0x0, Offset: 0x4067
 // Size: 0x7c
 function init_animsounds() {
     level.animsounds = [];
@@ -1408,8 +1406,8 @@ function init_animsounds() {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d91
-// Size: 0x9e
+// Checksum 0x0, Offset: 0x40eb
+// Size: 0xa0
 function init_animsounds_for_animname(animname) {
     animes = getarraykeys(level.scr_animsound[animname]);
     for (i = 0; i < animes.size; i++) {
@@ -1422,8 +1420,8 @@ function init_animsounds_for_animname(animname) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e37
-// Size: 0x138
+// Checksum 0x0, Offset: 0x4193
+// Size: 0x134
 function init_notetracks_for_animname(animname) {
     foreach (anime, var_72e7f473bbab5d91 in level.scr_notetrack[animname]) {
         foreach (notetrack, var_39b955b6ea2a96e in var_72e7f473bbab5d91) {
@@ -1443,8 +1441,8 @@ function init_notetracks_for_animname(animname) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f77
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x42cf
+// Size: 0xad
 function endonremoveanimactive(endonstring, var_3d308e5cd595225d) {
     self waittill(endonstring);
     foreach (var_f2811089f0eb595c in var_3d308e5cd595225d) {
@@ -1461,7 +1459,7 @@ function endonremoveanimactive(endonstring, var_3d308e5cd595225d) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x402e
+// Checksum 0x0, Offset: 0x4384
 // Size: 0x41
 function anim_deathnotify(guy, anime) {
     self endon(anime);
@@ -1474,8 +1472,8 @@ function anim_deathnotify(guy, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4077
-// Size: 0x36
+// Checksum 0x0, Offset: 0x43cd
+// Size: 0x35
 function anim_facialendnotify(guy, anime, scriptedfaceanim) {
     self endon(anime);
     time = getanimlength(scriptedfaceanim);
@@ -1485,7 +1483,7 @@ function anim_facialendnotify(guy, anime, scriptedfaceanim) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x40b5
+// Checksum 0x0, Offset: 0x440a
 // Size: 0x22
 function anim_dialogueendnotify(guy, anime) {
     self endon(anime);
@@ -1495,7 +1493,7 @@ function anim_dialogueendnotify(guy, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x40df
+// Checksum 0x0, Offset: 0x4434
 // Size: 0x6f
 function anim_animationendnotify(guy, anime, var_2afd32f7cad8af86, var_9e8a16d47a03007a) {
     self endon(anime);
@@ -1512,11 +1510,11 @@ function anim_animationendnotify(guy, anime, var_2afd32f7cad8af86, var_9e8a16d47
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4156
+// Checksum 0x0, Offset: 0x44ab
 // Size: 0xb6
 function anim_weight(animname, anime) {
-    assertex(isdefined(level.scr_anim[animname][anime]), "<dev string:x412>" + anime + "<dev string:x433>" + animname);
-    assertex(isarray(level.scr_anim[animname][anime]), "<dev string:x446>" + animname + "<dev string:x472>" + anime + "<dev string:x47a>");
+    assertex(isdefined(level.scr_anim[animname][anime]), "There is no animation scene \"" + anime + "\" for animname " + animname);
+    assertex(isarray(level.scr_anim[animname][anime]), "the animation entry for level.scr_anim[ " + animname + " ][ " + anime + " ] needs to be an array of looping animations, not a single animation");
     total_anims = level.scr_anim[animname][anime].size;
     idleanim = randomint(total_anims);
     if (isdefined(level.scr_anim[animname][anime + "weight"])) {
@@ -1527,8 +1525,8 @@ function anim_weight(animname, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4215
-// Size: 0xfe
+// Checksum 0x0, Offset: 0x456a
+// Size: 0x101
 function get_weighted_anim(animname, anime, total_anims) {
     idleanim = undefined;
     if (total_anims > 1) {
@@ -1559,7 +1557,7 @@ function get_weighted_anim(animname, anime, total_anims) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x431c
+// Checksum 0x0, Offset: 0x4674
 // Size: 0x68
 function play_addtive_head_anim(guy, animation) {
     guy setanimlimited(generic_human%addtive_head_anims, 1, 0.2);
@@ -1571,8 +1569,8 @@ function play_addtive_head_anim(guy, animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x438c
-// Size: 0x85
+// Checksum 0x0, Offset: 0x46e4
+// Size: 0x86
 function get_anim_position(tag) {
     org = undefined;
     angles = undefined;
@@ -1594,8 +1592,8 @@ function get_anim_position(tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x441a
-// Size: 0x71
+// Checksum 0x0, Offset: 0x4773
+// Size: 0x70
 function function_d2e8597ff01310ed(xanim, tag, time, baseorigin, baseangles) {
     result = self function_bbf5cb43caa911b7(xanim, tag, time);
     if (isdefined(result)) {
@@ -1607,8 +1605,8 @@ function function_d2e8597ff01310ed(xanim, tag, time, baseorigin, baseangles) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4494
-// Size: 0x33
+// Checksum 0x0, Offset: 0x47ec
+// Size: 0x32
 function anim_at_self(entity, tag) {
     packet = [];
     packet["guy"] = self;
@@ -1618,8 +1616,8 @@ function anim_at_self(entity, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x44d0
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x4827
+// Size: 0x3b
 function anim_at_entity(entity, tag) {
     packet = [];
     packet["guy"] = self;
@@ -1630,8 +1628,8 @@ function anim_at_entity(entity, tag) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4515
-// Size: 0x337
+// Checksum 0x0, Offset: 0x486b
+// Size: 0x334
 function assert_existance_of_anim(anime, animname, animation) {
     if (!isdefined(self)) {
         return;
@@ -1643,7 +1641,7 @@ function assert_existance_of_anim(anime, animname, animation) {
         animname = self.animname;
     }
     if (!isdefined(animname)) {
-        assertmsg("<dev string:x4c3>" + self.classname + "<dev string:x4e3>");
+        assertmsg("Animating character of type " + self.classname + " has no animname.");
         return;
     }
     has_anim = 0;
@@ -1671,7 +1669,7 @@ function assert_existance_of_anim(anime, animname, animation) {
         if (has_anim) {
             array = getarraykeys(level.scr_anim[animname]);
             /#
-                println("<dev string:x4f8>" + animname + "<dev string:x513>");
+                println("<dev string:x125>" + animname + "<dev string:x13d>");
                 foreach (member in array) {
                     println(member);
                 }
@@ -1680,7 +1678,7 @@ function assert_existance_of_anim(anime, animname, animation) {
         if (has_sound) {
             array = getarraykeys(level.scr_sound[animname]);
             /#
-                println("<dev string:x518>" + animname + "<dev string:x513>");
+                println("<dev string:x13f>" + animname + "<dev string:x13d>");
                 foreach (member in array) {
                     println(member);
                 }
@@ -1689,13 +1687,13 @@ function assert_existance_of_anim(anime, animname, animation) {
         if (has_face) {
             array = getarraykeys(level.scr_face[animname]);
             /#
-                println("<dev string:x537>" + animname + "<dev string:x513>");
+                println("<dev string:x15b>" + animname + "<dev string:x13d>");
                 foreach (member in array) {
                     println(member);
                 }
             #/
         }
-        assertmsg("<dev string:x555>" + function_a2eaafb222316a2(self) + "<dev string:xf8>" + animname + "<dev string:x10c>" + anime + "<dev string:x55b>");
+        assertmsg("<dev string:x176>" + function_a2eaafb222316a2(self) + "<dev string:x3e>" + animname + "<dev string:x4f>" + anime + "<dev string:x179>");
         return;
     }
     keys = getarraykeys(level.scr_anim);
@@ -1703,40 +1701,40 @@ function assert_existance_of_anim(anime, animname, animation) {
     foreach (key in keys) {
         println(key);
     }
-    assertmsg("<dev string:x59e>" + animname + "<dev string:x5ab>");
+    assertmsg("Animname " + animname + " is not setup to do animations. See above for list of legal animnames.");
 }
 
 /#
 
     // Namespace animation / scripts\common\anim
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4854
-    // Size: 0xe5
+    // Checksum 0x0, Offset: 0x4ba7
+    // Size: 0xe4
     function printloops(guy, anime) {
         if (!isdefined(guy)) {
             return;
         }
-        guy endon("<dev string:x5f5>");
+        guy endon("<dev string:x1b9>");
         waittillframeend();
         guy.loops++;
         if (guy.loops > 0) {
             guy.loopanims[guy.loopanims.size] = anime;
         }
         if (guy.loops > 1) {
-            println("<dev string:x5fe>" + guy.animname + "<dev string:x612>" + guy.loops + "<dev string:x61b>");
+            println("<dev string:x1bf>" + guy.animname + "<dev string:x1d0>" + guy.loops + "<dev string:x1d6>");
             for (i = 0; i < guy.loopanims.size; i++) {
-                println("<dev string:x63b>" + guy.loopanims[i]);
+                println("<dev string:x1f3>" + guy.loopanims[i]);
             }
-            assertmsg("<dev string:x647>");
+            assertmsg("<dev string:x1fc>");
         }
     }
 
     // Namespace animation / scripts\common\anim
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4941
+    // Checksum 0x0, Offset: 0x4c93
     // Size: 0x53
     function function_1d3c30084bbec96a(guy, ender, anime) {
-        guy endon("<dev string:x5f5>");
+        guy endon("<dev string:x1b9>");
         self waittill(ender);
         guy.loopanims = array_remove(guy.loopanims, anime);
         guy.loops--;
@@ -1746,29 +1744,29 @@ function assert_existance_of_anim(anime, animname, animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x499c
+// Checksum 0x0, Offset: 0x4cee
 // Size: 0x94
 function anim_single_failsafeonguy(owner, anime) {
     /#
-        if (getdvar(@"hash_27494f1d75fc0809") != "<dev string:x68a>") {
+        if (getdvar(@"hash_27494f1d75fc0809") != "<dev string:x23c>") {
             return;
         }
         owner endon(anime);
-        owner endon("<dev string:x5f5>");
-        self endon("<dev string:x5f5>");
+        owner endon("<dev string:x1b9>");
+        self endon("<dev string:x1b9>");
         name = self.classname;
         num = self getentitynumber();
         wait 60;
-        println("<dev string:x690>" + name + "<dev string:x6a8>" + num);
+        println("<dev string:x23f>" + name + "<dev string:x254>" + num);
         waittillframeend();
-        assertex(0, "<dev string:x6b8>" + anime + "<dev string:x6c7>");
+        assertex(0, "<dev string:x261>" + anime + "<dev string:x26d>");
     #/
 }
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a38
-// Size: 0x62
+// Checksum 0x0, Offset: 0x4d8a
+// Size: 0x5f
 function anim_single_failsafe(guys, anime) {
     foreach (guy in guys) {
         guy thread anim_single_failsafeonguy(self, anime);
@@ -1777,7 +1775,7 @@ function anim_single_failsafe(guys, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4aa2
+// Checksum 0x0, Offset: 0x4df1
 // Size: 0x4b
 function anim_get_goal_time(animname, anime) {
     if (isdefined(level.scr_goaltime[animname]) && isdefined(level.scr_goaltime[animname][anime])) {
@@ -1788,7 +1786,7 @@ function anim_get_goal_time(animname, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4af5
+// Checksum 0x0, Offset: 0x4e44
 // Size: 0x1b
 function function_89b3eabd606fcda3(animation) {
     if (utility::issp()) {
@@ -1799,7 +1797,7 @@ function function_89b3eabd606fcda3(animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b19
+// Checksum 0x0, Offset: 0x4e68
 // Size: 0x36
 function function_f1e7ee8ddeece062(anime) {
     if (utility::issp() && isdefined(level.var_df7711b84d224bcf) && istrue(level.var_df7711b84d224bcf[anime])) {
@@ -1810,8 +1808,8 @@ function function_f1e7ee8ddeece062(anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b58
-// Size: 0xbc
+// Checksum 0x0, Offset: 0x4ea7
+// Size: 0xb9
 function function_1eba925251530689(guys, anime) {
     if (function_f1e7ee8ddeece062(anime) && guys.size > 1) {
         foreach (guy in guys) {
@@ -1826,8 +1824,8 @@ function function_1eba925251530689(guys, anime) {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c1d
-// Size: 0x3e
+// Checksum 0x0, Offset: 0x4f69
+// Size: 0x3d
 function function_56bd620e57a834af(anime, animname, animation) {
     var_4f51ef0bd97a4707 = anime + "_entrance";
     level.scr_anim[animname][var_4f51ef0bd97a4707] = animation;
@@ -1836,7 +1834,7 @@ function function_56bd620e57a834af(anime, animname, animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c64
+// Checksum 0x0, Offset: 0x4faf
 // Size: 0xd8
 function function_c099f6fd9c19f5a6(anime, org, angles, animname) {
     /#
@@ -1851,7 +1849,7 @@ function function_c099f6fd9c19f5a6(anime, org, angles, animname) {
         level.var_ac0205cb091a126e = 0;
         /#
             if (getdvarint(@"hash_4140c00f3efa94c6", 0)) {
-                iprintln("<dev string:x6fc>");
+                iprintln("<dev string:x29f>");
             }
         #/
     }
@@ -1863,8 +1861,8 @@ function function_c099f6fd9c19f5a6(anime, org, angles, animname) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d44
-// Size: 0x21f
+// Checksum 0x0, Offset: 0x508f
+// Size: 0x220
 function function_96b3d74019cd30a(anime, org, angles, animname) {
     if (isdefined(level.var_ac0205cb091a126e) && istrue(level.var_99364109f9f9b3f4) && level.var_99364109f9f9b3f4 == gettime()) {
         return level.scr_anim[animname][anime][level.var_ac0205cb091a126e];
@@ -1872,13 +1870,13 @@ function function_96b3d74019cd30a(anime, org, angles, animname) {
     var_48c468c35e48fd78 = 0;
     closest_dist = undefined;
     level.var_ac0205cb091a126e = undefined;
-    foreach (i, animation in level.scr_anim[animname][anime]) {
+    foreach (animation in level.scr_anim[animname][anime]) {
         neworg = getstartorigin(org, angles, animation);
         /#
             if (getdvarint(@"hash_4140c00f3efa94c6", 0)) {
                 line(self.origin, neworg, (1, 1, 1), 1, 0, 1000);
                 print3d(neworg + (0, 0, 2), animation, (1, 1, 1), 1, 0.075, 1000, 1);
-                print3d(neworg, "<dev string:x724>", (1, 1, 1), 1, 0.2, 1000, 1);
+                print3d(neworg, "<dev string:x2c4>", (1, 1, 1), 1, 0.2, 1000, 1);
             }
         #/
         if (!isdefined(closest_dist)) {
@@ -1894,7 +1892,7 @@ function function_96b3d74019cd30a(anime, org, angles, animname) {
     animation = level.scr_anim[animname][anime][var_48c468c35e48fd78];
     /#
         if (getdvarint(@"hash_4140c00f3efa94c6", 0)) {
-            iprintln("<dev string:x729>" + animation);
+            iprintln("<dev string:x2c6>" + animation);
         }
     #/
     level.var_99364109f9f9b3f4 = gettime();
@@ -1904,8 +1902,8 @@ function function_96b3d74019cd30a(anime, org, angles, animname) {
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f6c
-// Size: 0x53
+// Checksum 0x0, Offset: 0x52b8
+// Size: 0x52
 function function_1ed6444c29da9045(anime, org, angles, animname) {
     level.var_ac0205cb091a126e = undefined;
     animation = level.scr_anim[animname][anime][0];
@@ -1915,7 +1913,7 @@ function function_1ed6444c29da9045(anime, org, angles, animname) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fc8
+// Checksum 0x0, Offset: 0x5313
 // Size: 0x30
 function function_84a46f10a88351cd(animname) {
     if (isdefined(level.scr_animtree[animname]) && level.scr_animtree[animname] == %generic_human) {
@@ -1926,7 +1924,7 @@ function function_84a46f10a88351cd(animname) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5001
+// Checksum 0x0, Offset: 0x534c
 // Size: 0x1d
 function function_9c6a9b923786f602(animname) {
     return [[ anim.callbacks["CheckPlayerAnimtree"] ]](animname);
@@ -1934,7 +1932,7 @@ function function_9c6a9b923786f602(animname) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5027
+// Checksum 0x0, Offset: 0x5372
 // Size: 0x27
 function function_2c88f6e05af61090(animation) {
     if (!animhasnotetrack(animation, "blend_into")) {
@@ -1945,7 +1943,7 @@ function function_2c88f6e05af61090(animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5057
+// Checksum 0x0, Offset: 0x53a2
 // Size: 0x27
 function function_f92de130e8613662(animation) {
     if (!animhasnotetrack(animation, "blend_out")) {
@@ -1956,8 +1954,8 @@ function function_f92de130e8613662(animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5087
-// Size: 0x47
+// Checksum 0x0, Offset: 0x53d2
+// Size: 0x46
 function function_70b77e26541e095(animation) {
     speed = 128;
     if (animhasnotetrack(animation, "blend_speed = walk")) {
@@ -1970,8 +1968,8 @@ function function_70b77e26541e095(animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50d7
-// Size: 0xef
+// Checksum 0x0, Offset: 0x5421
+// Size: 0xee
 function function_48af09f152896047(animation) {
     stances = [];
     if (animhasnotetrack(animation, "start_stance = stand")) {
@@ -1997,13 +1995,13 @@ function function_48af09f152896047(animation) {
 
 // Namespace animation / scripts\common\anim
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x51cf
-// Size: 0x201
-function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
+// Checksum 0x0, Offset: 0x5518
+// Size: 0x205
+function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
     var_ec165a067af34f8f = ter_op(isdefined(var_ec165a067af34f8f), var_ec165a067af34f8f, 1);
     var_8831fc7320076829 = ter_op(isdefined(var_8831fc7320076829), var_8831fc7320076829, 0);
-    Simultaneous = ter_op(isdefined(Simultaneous), Simultaneous, 0);
-    assertex(!(var_ec165a067af34f8f && var_8831fc7320076829), "<dev string:x743>");
+    simultaneous = ter_op(isdefined(simultaneous), simultaneous, 0);
+    assertex(!(var_ec165a067af34f8f && var_8831fc7320076829), "dropWeaponWithGesture and dropWeaponWithAnim can not both be true.");
     if (istrue(var_ec165a067af34f8f)) {
         weaponDropTime = level.player getgestureanimlength("proto_vm_gesture_gun_drop");
     } else if (istrue(var_8831fc7320076829)) {
@@ -2012,7 +2010,7 @@ function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendInt
         weaponDropTime = 0;
     }
     weaponDropQuick = 0;
-    if (istrue(Simultaneous)) {
+    if (istrue(simultaneous)) {
         weaponDropQuick = 1;
         weaponDropTime = 0;
     } else if (level.player getdemeanorviewmodel() == "relaxed") {
@@ -2023,7 +2021,7 @@ function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendInt
     idealblendtime = blendIntoTime + weaponDropTime;
     /#
         if (getdvarint(@"hash_398da46238160a6", 0)) {
-            iprintln("<dev string:x789>" + blendtimecalc);
+            iprintln("<dev string:x2dd>" + blendtimecalc);
         }
     #/
     if (blendIntoTime > 0) {
@@ -2043,7 +2041,7 @@ function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendInt
     if (blendtime > idealblendtime) {
         /#
             if (getdvarint(@"hash_398da46238160a6", 0)) {
-                iprintln("<dev string:x7a3>");
+                iprintln("<dev string:x2f4>");
             }
         #/
         weaponDropTime = blendtime - blendIntoTime;
@@ -2055,12 +2053,12 @@ function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendInt
 
 // Namespace animation / scripts\common\anim
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x53d9
-// Size: 0x222
-function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
+// Checksum 0x0, Offset: 0x5726
+// Size: 0x227
+function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
     var_ec165a067af34f8f = ter_op(isdefined(var_ec165a067af34f8f), var_ec165a067af34f8f, 1);
     var_8831fc7320076829 = ter_op(isdefined(var_8831fc7320076829), var_8831fc7320076829, 0);
-    Simultaneous = ter_op(isdefined(Simultaneous), Simultaneous, 0);
+    simultaneous = ter_op(isdefined(simultaneous), simultaneous, 0);
     if (!var_8831fc7320076829) {
         quickdroptime = 0;
         normaldroptime = 0;
@@ -2075,7 +2073,7 @@ function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendInt
     blendtime = distance2d(playerpos, animstartpos) / blendspeed;
     /#
         if (getdvarint(@"hash_398da46238160a6", 0)) {
-            iprintln("<dev string:x789>" + blendtime);
+            iprintln("<dev string:x2dd>" + blendtime);
         }
     #/
     idealblendtime = blendIntoTime + normaldroptime;
@@ -2102,12 +2100,12 @@ function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendInt
     } else if (blendtime > idealblendtime) {
         /#
             if (getdvarint(@"hash_398da46238160a6", 0)) {
-                iprintln("<dev string:x7a3>");
+                iprintln("<dev string:x2f4>");
             }
         #/
         weaponDropTime = blendtime - blendIntoTime;
     }
-    if (istrue(Simultaneous)) {
+    if (istrue(simultaneous)) {
         weaponDropQuick = 1;
         weaponDropTime = 0;
     }
@@ -2118,28 +2116,28 @@ function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendInt
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5604
-// Size: 0x78
-function function_dba8ec1939d3f1a(anime, animname, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
+// Checksum 0x0, Offset: 0x5956
+// Size: 0x77
+function function_dba8ec1939d3f1a(anime, animname, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
     if (function_f1e7ee8ddeece062(anime)) {
         animation = function_c099f6fd9c19f5a6(anime, self.origin, self.angles, animname);
     } else {
         animation = level.scr_anim[animname][anime];
     }
-    function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous);
+    function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous);
 }
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5684
-// Size: 0x1ad
-function function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
+// Checksum 0x0, Offset: 0x59d5
+// Size: 0x1b1
+function function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
     animpos = getstartorigin(self.origin, self.angles, animation);
     level.blendinfo = [];
     blendIntoTime = function_2c88f6e05af61090(animation);
     blendouttime = function_f92de130e8613662(animation);
     blendspeed = function_70b77e26541e095(animation);
-    blendtime = function_d0fafbacba98a40f(level.player.origin, animpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous);
+    blendtime = function_d0fafbacba98a40f(level.player.origin, animpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous);
     stances = function_48af09f152896047(animation);
     level.blendinfo["blendIntoTime"] = blendIntoTime;
     level.blendinfo["blendOutTime"] = blendouttime;
@@ -2148,23 +2146,23 @@ function function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc73
     level.blendinfo["stances"] = stances;
     /#
         if (getdvarint(@"hash_398da46238160a6", 0)) {
-            iprintln("<dev string:x7f7>" + blendtime);
-            iprintln("<dev string:x806>" + blendIntoTime);
+            iprintln("<dev string:x345>" + blendtime);
+            iprintln("<dev string:x351>" + blendIntoTime);
             if (isdefined(blendouttime)) {
-                iprintln("<dev string:x819>" + blendouttime);
+                iprintln("<dev string:x361>" + blendouttime);
             }
-            iprintln("<dev string:x82b>" + level.blendinfo["<dev string:x83f>"]);
-            iprintln("<dev string:x851>" + level.blendinfo["<dev string:x85e>"][0] + "<dev string:x869>" + level.blendinfo["<dev string:x85e>"][1]);
+            iprintln("<dev string:x370>" + level.blendinfo["<dev string:x381>"]);
+            iprintln("<dev string:x390>" + level.blendinfo["<dev string:x39a>"][0] + "<dev string:x3a2>" + level.blendinfo["<dev string:x39a>"][1]);
         }
     #/
 }
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5839
+// Checksum 0x0, Offset: 0x5b8e
 // Size: 0x38
 function function_5cffe82f5e70231b(bool) {
-    assertex(isdefined(bool), "<dev string:x86f>");
+    assertex(isdefined(bool), "Must pass a bool!");
     if (istrue(bool)) {
         self.animscripted_collision = 1;
         return;
@@ -2174,7 +2172,7 @@ function function_5cffe82f5e70231b(bool) {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5879
+// Checksum 0x0, Offset: 0x5bce
 // Size: 0x13
 function function_6bc36c81fc28a22e() {
     if (istrue(self.animscripted_collision)) {
@@ -2185,12 +2183,12 @@ function function_6bc36c81fc28a22e() {
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5895
+// Checksum 0x0, Offset: 0x5bea
 // Size: 0x9b
 function function_1cb661b457551a3(bool, velocityent, blendtime) {
-    assertex(isdefined(bool), "<dev string:x86f>");
+    assertex(isdefined(bool), "Must pass a bool!");
     if (istrue(bool)) {
-        assertex(isdefined(velocityent), "<dev string:x884>");
+        assertex(isdefined(velocityent), "Must pass an ent for velocity!");
         self.var_a986b9d4a1be703b = 1;
         self.var_f1a075b476ca91f1 = velocityent getvelocity();
         if (isdefined(blendtime)) {
@@ -2207,7 +2205,7 @@ function function_1cb661b457551a3(bool, velocityent, blendtime) {
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5938
+// Checksum 0x0, Offset: 0x5c8d
 // Size: 0x2f
 function function_e42b762e098c8f9e() {
     if (istrue(self.var_a986b9d4a1be703b) && isdefined(self.var_f1a075b476ca91f1) && isdefined(self.var_37b96012304143d7)) {
@@ -2218,17 +2216,17 @@ function function_e42b762e098c8f9e() {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5970
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x5cc5
+// Size: 0xd1
 function function_52351c3338da63f4(animcategory, animindex) {
-    assertex(isdefined(animcategory) && isdefined(animindex), "<dev string:x8a6>");
+    assertex(isdefined(animcategory) && isdefined(animindex), "<dev string:x3a5>");
     animlength = 0;
     if (isdefined(level.var_539e9dc23256f26d) && isdefined(level.var_539e9dc23256f26d[animcategory]) && isdefined(level.var_539e9dc23256f26d[animcategory][animindex])) {
         animlength = level.var_539e9dc23256f26d[animcategory][animindex];
     } else if (isdefined(level.scr_anim) && isdefined(level.scr_anim[animcategory]) && isdefined(level.scr_anim[animcategory][animindex])) {
         animlength = getanimlength(level.scr_anim[animcategory][animindex]);
     } else {
-        assertmsg("<dev string:x8df>");
+        assertmsg("<dev string:x3db>");
     }
     return animlength;
 }
@@ -2237,8 +2235,8 @@ function function_52351c3338da63f4(animcategory, animindex) {
 
     // Namespace animation / scripts\common\anim
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5a4b
-    // Size: 0x160
+    // Checksum 0x0, Offset: 0x5d9f
+    // Size: 0x164
     function function_65e9f4b64110bb5c() {
         while (true) {
             requestflag = getdvarint(@"hash_300079a74221ae45", 0);
@@ -2247,7 +2245,7 @@ function function_52351c3338da63f4(animcategory, animindex) {
                 angles = (0, 0, 0);
                 align_target = getdvar(@"hash_43022f85e8f590a5");
                 align_tag = getdvar(@"hash_9dfd128a6efc97b4");
-                aligntarget = getent_or_struct(align_target, "<dev string:x96b>");
+                aligntarget = getent_or_struct(align_target, "<dev string:x464>");
                 if (isdefined(aligntarget)) {
                     if (isdefined(aligntarget.origin)) {
                         origin = aligntarget.origin;
@@ -2272,7 +2270,7 @@ function function_52351c3338da63f4(animcategory, animindex) {
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bb3
+// Checksum 0x0, Offset: 0x5f0b
 // Size: 0x2f
 function function_dca1a3a29d2ee467(var_54e516bef4218c8f, var_4bc185af207d5706) {
     thread anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706);
@@ -2281,8 +2279,8 @@ function function_dca1a3a29d2ee467(var_54e516bef4218c8f, var_4bc185af207d5706) {
 
 // Namespace animation / scripts\common\anim
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bea
-// Size: 0x170
+// Checksum 0x0, Offset: 0x5f42
+// Size: 0x172
 function anim_reach_with_funcs(guys, anime, tag, animname_override, start_func, end_func, arrival_type) {
     array = get_anim_position(tag);
     alignmentinfo = spawnstruct();
@@ -2310,13 +2308,13 @@ function anim_reach_with_funcs(guys, anime, tag, animname_override, start_func, 
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d62
-// Size: 0x326
+// Checksum 0x0, Offset: 0x60bc
+// Size: 0x32e
 function function_9dbe1a78b03782f2(var_54e516bef4218c8f, start_func, end_func, arrival_type) {
     ent = spawnstruct();
     debugstartpos = 0;
     /#
-        debugstartpos = getdvar(@"hash_34dab4f8f3a04f4a") == "<dev string:x68a>";
+        debugstartpos = getdvar(@"hash_34dab4f8f3a04f4a") == "<dev string:x23c>";
     #/
     threads = 0;
     guys = [];
@@ -2366,7 +2364,7 @@ function function_9dbe1a78b03782f2(var_54e516bef4218c8f, start_func, end_func, a
     }
     /#
         if (debugstartpos) {
-            level notify("<dev string:x979>" + "<dev string:x97e>");
+            level notify("<dev string:x46f>" + "<dev string:x471>");
         }
     #/
     foreach (var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
@@ -2385,7 +2383,7 @@ function function_9dbe1a78b03782f2(var_54e516bef4218c8f, start_func, end_func, a
 
 // Namespace animation / scripts\common\anim
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6090
+// Checksum 0x0, Offset: 0x63f2
 // Size: 0x43
 function private reach_death_notify(ent) {
     waittill_either("death", "goal");
@@ -2397,8 +2395,8 @@ function private reach_death_notify(ent) {
 
 // Namespace animation / scripts\common\anim
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x60db
-// Size: 0x119
+// Checksum 0x0, Offset: 0x643d
+// Size: 0x11a
 function private begin_anim_reach(ent, startorg, startangles, start_func, end_func) {
     self endon("death");
     self endon("new_anim_reach");
@@ -2425,8 +2423,8 @@ function private begin_anim_reach(ent, startorg, startangles, start_func, end_fu
 
 // Namespace animation / scripts\common\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x61fc
-// Size: 0x5e7
+// Checksum 0x0, Offset: 0x655f
+// Size: 0x5e8
 function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, var_ad86b98c8c9def3d) {
     waittillframeend();
     var_4bc185af207d5706 = default_to(var_4bc185af207d5706, 140);
@@ -2506,16 +2504,16 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
             /#
                 if (getdvarint(@"hash_d3e33f1288718b9e")) {
                     if (furthestguy == guy) {
-                        print3d(guy.origin + (0, 0, 36), "<dev string:x990>", (0, 1, 0), 1, 0.3, 1, 1);
+                        print3d(guy.origin + (0, 0, 36), "<dev string:x480>", (0, 1, 0), 1, 0.3, 1, 1);
                     }
                     line(guy.origin, guy.goalpos, (1, 1, 1), 1, 0, 1);
-                    print3d(guy.origin, "<dev string:xd0>" + int(var_4bc185af207d5706), (0, 1, 0), 1, 0.3, 1, 1);
-                    print3d(guy.origin + (0, 0, 10), "<dev string:xd0>" + int(desiredspeed), (1, 1, 1), 1, 0.3, 1, 1);
+                    print3d(guy.origin, "<dev string:x1c>" + int(var_4bc185af207d5706), (0, 1, 0), 1, 0.3, 1, 1);
+                    print3d(guy.origin + (0, 0, 10), "<dev string:x1c>" + int(desiredspeed), (1, 1, 1), 1, 0.3, 1, 1);
                     if (isdefined(guy.reachspeed)) {
-                        print3d(guy.origin + (0, 0, 20), "<dev string:xd0>" + int(guy.reachspeed.var_e2b417b32dbed0f7), (0, 1, 1), 1, 0.3, 1, 1);
+                        print3d(guy.origin + (0, 0, 20), "<dev string:x1c>" + int(guy.reachspeed.var_e2b417b32dbed0f7), (0, 1, 1), 1, 0.3, 1, 1);
                     }
-                    print3d(guy.origin + (0, 0, 80), "<dev string:xd0>" + speedscale, (0, 0, 1), 1, 0.3, 1, 1);
-                    print3d(guy.goalpos + (0, 0, 12), "<dev string:xd0>" + int(dist[index]), (0, 0, 1), 1, 1, 1, 1);
+                    print3d(guy.origin + (0, 0, 80), "<dev string:x1c>" + speedscale, (0, 0, 1), 1, 0.3, 1, 1);
+                    print3d(guy.goalpos + (0, 0, 12), "<dev string:x1c>" + int(dist[index]), (0, 0, 1), 1, 1, 1, 1);
                     sphere(guy.goalpos, 16);
                 }
             #/
@@ -2537,8 +2535,8 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x67eb
-// Size: 0x137
+// Checksum 0x0, Offset: 0x6b4f
+// Size: 0x138
 function anim_reach_speed_control_avg(var_ad86b98c8c9def3d, var_4bc185af207d5706) {
     self endon("death");
     self notify("anim_reach_speed_control_avg");
@@ -2564,19 +2562,19 @@ function anim_reach_speed_control_avg(var_ad86b98c8c9def3d, var_4bc185af207d5706
 
 // Namespace animation / scripts\common\anim
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x692a
+// Checksum 0x0, Offset: 0x6c8f
 // Size: 0x45
 function private reach_with_standard_adjustments_begin(startorg, startangles) {
-    assertex(isdefined(anim.callbacks["<dev string:x99c>"]), "<dev string:x9c5>");
+    assertex(isdefined(anim.callbacks["reach_with_standard_adjustments_begin"]), "You must define anim.callbacks[ reach_with_standard_adjustments_begin ] if you are first frame animating an AI");
     return self [[ anim.callbacks["reach_with_standard_adjustments_begin"] ]](startorg, startangles);
 }
 
 // Namespace animation / scripts\common\anim
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6978
+// Checksum 0x0, Offset: 0x6cdd
 // Size: 0x33
 function private reach_with_standard_adjustments_end() {
-    assertex(isdefined(anim.callbacks["<dev string:xa37>"]), "<dev string:xa5e>");
+    assertex(isdefined(anim.callbacks["reach_with_standard_adjustments_end"]), "You must define anim.callbacks[ reach_with_standard_adjustments_end ] if you are first frame animating an AI");
     self [[ anim.callbacks["reach_with_standard_adjustments_end"] ]]();
 }
 

@@ -12,7 +12,7 @@
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf
+// Checksum 0x0, Offset: 0x174
 // Size: 0x2aa
 function juggernaut_init(taskid) {
     self.spec = "juggernaut";
@@ -77,8 +77,8 @@ function juggernaut_init(taskid) {
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x481
-// Size: 0x125
+// Checksum 0x0, Offset: 0x426
+// Size: 0x128
 function juggernaut_shouldexecute(taskid) {
     var_dc17de3aad9b4859 = 10000;
     var_fd17b339e3ecf73c = 1;
@@ -107,8 +107,8 @@ function juggernaut_shouldexecute(taskid) {
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5af
-// Size: 0x188
+// Checksum 0x0, Offset: 0x557
+// Size: 0x190
 function juggernaut_setupexecute(taskid) {
     self.timeoflastexecute = gettime();
     assert(isdefined(self.enemy));
@@ -146,7 +146,7 @@ function juggernaut_setupexecute(taskid) {
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x740
+// Checksum 0x0, Offset: 0x6f0
 // Size: 0x68
 function function_aad2563e98827b23(taskid) {
     self.var_f8c080be8d680a2e = 1;
@@ -160,7 +160,7 @@ function function_aad2563e98827b23(taskid) {
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b0
+// Checksum 0x0, Offset: 0x760
 // Size: 0x2b
 function function_c082b9efbf242464(taskid) {
     if (isdefined(self.var_f8c080be8d680a2e)) {
@@ -171,7 +171,7 @@ function function_c082b9efbf242464(taskid) {
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e4
+// Checksum 0x0, Offset: 0x794
 // Size: 0x52
 function function_e1138cce8b2f28d4(taskid) {
     if (isdefined(self.var_f8c080be8d680a2e)) {
@@ -184,7 +184,7 @@ function function_e1138cce8b2f28d4(taskid) {
 
 // Namespace behaviors / scripts\aitypes\juggernaut\behaviors
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x83e
+// Checksum 0x0, Offset: 0x7ee
 // Size: 0x1b
 function function_9db78f7b52b4ad06() {
     self endon("death");

@@ -5,8 +5,8 @@
 
 // Namespace namespace_26be03d9c56f9498 / scripts\mp\sentientpoolmanager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a
-// Size: 0x1f4
+// Checksum 0x0, Offset: 0x18d
+// Size: 0x1f3
 function init() {
     flag_init("sentientpoolmanager_initialized");
     createthreatbiasgroup("Tactical_Static");
@@ -41,8 +41,8 @@ function init() {
 
 // Namespace namespace_26be03d9c56f9498 / scripts\mp\sentientpoolmanager
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x396
-// Size: 0x1b2
+// Checksum 0x0, Offset: 0x388
+// Size: 0x1b7
 function registersentient(threatbiasgroup, var_5c00772332ce642c, islethal, var_5f6534ad3a0a1fa2, var_719c179eabb70b31, var_8928fdf873929e88) {
     var_ee6f4af9861df2ab = -1;
     for (i = 0; i < level.sentientpools.size; i++) {
@@ -52,7 +52,7 @@ function registersentient(threatbiasgroup, var_5c00772332ce642c, islethal, var_5
         }
     }
     if (var_ee6f4af9861df2ab == -1) {
-        assertex(var_ee6f4af9861df2ab, "<dev string:x1c>" + threatbiasgroup);
+        assertex(var_ee6f4af9861df2ab, "Attemping to call addSentient with an invalid threatBiasGroup: " + threatbiasgroup);
         return;
     }
     if (isdefined(self.sentientpool)) {
@@ -91,7 +91,7 @@ function registersentient(threatbiasgroup, var_5c00772332ce642c, islethal, var_5
 
 // Namespace namespace_26be03d9c56f9498 / scripts\mp\sentientpoolmanager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x550
+// Checksum 0x0, Offset: 0x547
 // Size: 0x6e
 function monitorsentient(var_5f6534ad3a0a1fa2) {
     level endon("game_ended");
@@ -107,7 +107,7 @@ function monitorsentient(var_5f6534ad3a0a1fa2) {
 
 // Namespace namespace_26be03d9c56f9498 / scripts\mp\sentientpoolmanager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c6
+// Checksum 0x0, Offset: 0x5bd
 // Size: 0xa2
 function removebestsentient(var_6f03d6ebff31de00) {
     assert(var_6f03d6ebff31de00 >= 0 && var_6f03d6ebff31de00 < level.sentientpools.size);
@@ -128,8 +128,8 @@ function removebestsentient(var_6f03d6ebff31de00) {
 
 // Namespace namespace_26be03d9c56f9498 / scripts\mp\sentientpoolmanager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x671
-// Size: 0x97
+// Checksum 0x0, Offset: 0x668
+// Size: 0x96
 function getbestsentientfrompool(pooltype) {
     bestsentient = undefined;
     oldesttime = undefined;
@@ -144,7 +144,7 @@ function getbestsentientfrompool(pooltype) {
 
 // Namespace namespace_26be03d9c56f9498 / scripts\mp\sentientpoolmanager
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x711
+// Checksum 0x0, Offset: 0x707
 // Size: 0x56
 function unregistersentient(poolid, keyid) {
     if (!isdefined(poolid) || !isdefined(keyid)) {

@@ -4,7 +4,7 @@
 
 // Namespace namespace_b1fe9349d25d66b8 / scripts\cp_mp\utility\scriptable_door_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0
+// Checksum 0x0, Offset: 0xb1
 // Size: 0xca
 function scriptable_door_get_in_radius(position, radius, maxheightdiff) {
     doors = getentitylessscriptablearray(undefined, undefined, position, radius, "door");
@@ -27,8 +27,8 @@ function scriptable_door_get_in_radius(position, radius, maxheightdiff) {
 
 // Namespace namespace_b1fe9349d25d66b8 / scripts\cp_mp\utility\scriptable_door_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b3
-// Size: 0xd6
+// Checksum 0x0, Offset: 0x184
+// Size: 0xd7
 function scriptable_door_freeze_open(var_da2d1a382c620732) {
     self notify("scriptable_door_freeze_open");
     self endon("scriptable_door_freeze_open");
@@ -54,8 +54,8 @@ function scriptable_door_freeze_open(var_da2d1a382c620732) {
 
 // Namespace namespace_b1fe9349d25d66b8 / scripts\cp_mp\utility\scriptable_door_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x291
-// Size: 0x77
+// Checksum 0x0, Offset: 0x263
+// Size: 0x78
 function scriptable_door_is_double_door_pair(otherdoor) {
     if (self == otherdoor) {
         return false;
@@ -71,8 +71,8 @@ function scriptable_door_is_double_door_pair(otherdoor) {
 
 // Namespace namespace_b1fe9349d25d66b8 / scripts\cp_mp\utility\scriptable_door_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x311
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x2e4
+// Size: 0xdd
 function function_8a84bf34f556872d(otherdoor) {
     if (self == otherdoor) {
         return false;

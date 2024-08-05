@@ -13,23 +13,15 @@
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5a8
+// Checksum 0x0, Offset: 0x44d
 // Size: 0x17
 function private onplayerdeath(params) {
     ent_flag_clear("player_smoke_active");
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5c7
-// Size: 0x1b
-function private screenshot(text) {
-    log_msg(4, "screenshot:" + text);
-}
-
-// Namespace smoke / namespace_1676ee684fdab294
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ea
+// Checksum 0x0, Offset: 0x46c
 // Size: 0x193
 function function_d63760cb7c36587(smoke_level) {
     level notify("smoke_test_monitor_singleton");
@@ -38,7 +30,7 @@ function function_d63760cb7c36587(smoke_level) {
     while (!function_464c7c47f88f997f()) {
         wait 0.1;
     }
-    println("<dev string:x38>");
+    println("<dev string:x35>");
     callback::add("player_death", &onplayerdeath);
     callback::add("player_disconnect", &onplayerdeath);
     while (true) {
@@ -72,46 +64,8 @@ function function_d63760cb7c36587(smoke_level) {
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x785
-// Size: 0x170
-function autotestCommandMonitor() {
-    level notify("autotestCommandMonitor");
-    level endon("autotestCommandMonitor");
-    while (true) {
-        var_80d3515e2ec40900 = getdvar(@"hash_202ccc98d6479637", "");
-        if (var_80d3515e2ec40900 != "") {
-            wait 0.5;
-            switch (var_80d3515e2ec40900) {
-            case #"hash_8ebad878ab002e3f": 
-                playerteam = get_player().team;
-                function_a0a53a7922de9fb5(isdefined(playerteam) ? playerteam : "None");
-                break;
-            case #"hash_b2a35bc466c32557": 
-                if (!isdefined(level.mapname)) {
-                    level.mapname = getdvar(@"hash_687fb8f9b7a23245");
-                }
-                function_a0a53a7922de9fb5(isdefined(level.mapname) ? level.mapname : "None");
-                break;
-            case #"hash_7ec851a874a319f5": 
-                if (!isdefined(level.gametype)) {
-                    level.gametype = getdvar(@"g_gametype");
-                }
-                function_a0a53a7922de9fb5(isdefined(level.gametype) ? level.gametype : "None");
-                break;
-            default: 
-                function_a0a53a7922de9fb5("None");
-                break;
-            }
-            setdvar(@"hash_202ccc98d6479637", "");
-        }
-        wait 1;
-    }
-}
-
-// Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8fd
+// Checksum 0x0, Offset: 0x607
 // Size: 0x41
 function private function_ee2a48ffc8fda458() {
     level.smoke_started = 1;
@@ -123,7 +77,7 @@ function private function_ee2a48ffc8fda458() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x946
+// Checksum 0x0, Offset: 0x650
 // Size: 0x24
 function private function_464c7c47f88f997f() {
     return isdefined(level.maxplayercount) && scripts\mp\utility\game::gamehasstarted() && isdefined(level.players);
@@ -131,7 +85,7 @@ function private function_464c7c47f88f997f() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x973
+// Checksum 0x0, Offset: 0x67d
 // Size: 0x24
 function private smoke_getpersstat(stat) {
     if (isdefined(self.pers)) {
@@ -141,7 +95,7 @@ function private smoke_getpersstat(stat) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x99f
+// Checksum 0x0, Offset: 0x6a9
 // Size: 0x33
 function private function_63406a3b87272a0f(stat, value) {
     if (isdefined(self.pers) && isdefined(value)) {
@@ -151,8 +105,8 @@ function private function_63406a3b87272a0f(stat, value) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x9da
-// Size: 0x51
+// Checksum 0x0, Offset: 0x6e4
+// Size: 0x50
 function private function_aadecbc412d792b5() {
     kills = smoke_getpersstat("kills");
     if (kills >= 3) {
@@ -166,7 +120,7 @@ function private function_aadecbc412d792b5() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa34
+// Checksum 0x0, Offset: 0x73d
 // Size: 0x19b
 function private function_3ef591377c2b6fd1(testname) {
     if (isdefined(level.testparams) && isdefined(testname)) {
@@ -185,7 +139,7 @@ function private function_3ef591377c2b6fd1(testname) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xbd7
+// Checksum 0x0, Offset: 0x8e0
 // Size: 0x160
 function private function_a48370b9ea15e2f0(status) {
     if (isdefined(level.testparams)) {
@@ -200,8 +154,8 @@ function private function_a48370b9ea15e2f0(status) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd3f
-// Size: 0x122
+// Checksum 0x0, Offset: 0xa48
+// Size: 0x121
 function private function_4cafad2d016399da() {
     if (isdefined(level.testparams)) {
         teststr = string_join(level.testparams.dt, "_") + "|" + level.testparams.event + "|" + level.testparams.testname + "|" + level.testparams.result + "|" + "Error:" + level.var_6492adee56d19067.messages[0] + "|" + "Warn:" + level.var_6492adee56d19067.messages[1] + "|" + level.testparams.build_id + "|" + level.testparams.test_session_id + "|" + level.testparams.duration + "s";
@@ -211,7 +165,7 @@ function private function_4cafad2d016399da() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe69
+// Checksum 0x0, Offset: 0xb71
 // Size: 0x9a
 function function_243de27a2b9ecbbe(origin, angles, dist) {
     if (!function_464c7c47f88f997f()) {
@@ -231,36 +185,34 @@ function function_243de27a2b9ecbbe(origin, angles, dist) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0c
-// Size: 0x5b
+// Checksum 0x0, Offset: 0xc14
+// Size: 0x53
 function function_e8bd86d0c0f85749(var_6c3200050ed240a2, wait_time) {
     if (isdefined(self) && isdefined(var_6c3200050ed240a2)) {
         wait_time = default_to(wait_time, 1);
         log_msg(4, "plr: " + self.clientid + " " + var_6c3200050ed240a2);
         self botpressbutton(var_6c3200050ed240a2);
-        screenshot(var_6c3200050ed240a2);
         wait wait_time;
     }
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf6f
-// Size: 0x5b
+// Checksum 0x0, Offset: 0xc6f
+// Size: 0x53
 function function_852d53e299c34e9c(stance, wait_time) {
     if (isdefined(self) && isdefined(stance)) {
         wait_time = default_to(wait_time, 1);
         log_msg(4, "plr: " + self.clientid + " " + stance);
         self botsetstance(stance);
-        screenshot(stance);
         wait wait_time;
     }
 }
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xfd2
-// Size: 0x156
+// Checksum 0x0, Offset: 0xcca
+// Size: 0x152
 function private SMOKE_LEVEL_1() {
     level notify("smoke_singleton");
     level endon("smoke_singleton");
@@ -291,8 +243,8 @@ function private SMOKE_LEVEL_1() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1130
-// Size: 0x237
+// Checksum 0x0, Offset: 0xe24
+// Size: 0x230
 function private function_c7aeb5253e41a015() {
     self notify("player_smoke_loop_singleton");
     self endon("player_smoke_loop_singleton");
@@ -313,9 +265,9 @@ function private function_c7aeb5253e41a015() {
     if (!isdefined(bot)) {
         players = getentarray("player", "classname");
         for (index = 0; index < players.size; index++) {
-            plr = players[index];
-            if (isbot(plr) && isalive(plr)) {
-                bot = plr;
+            player = players[index];
+            if (isbot(player) && isalive(player)) {
+                bot = player;
                 break;
             }
         }
@@ -343,8 +295,8 @@ function private function_c7aeb5253e41a015() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x136f
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x105c
+// Size: 0xfa
 function private SMOKE_LEVEL_2() {
     self endon("disconnect");
     self endon("death");
@@ -359,11 +311,9 @@ function private SMOKE_LEVEL_2() {
         log_msg(4, "StartForcedFire");
         player startforcedfire();
         wait 0.5;
-        screenshot("StartForcedFire");
         player stopforcedfire();
-        wait 1;
+        wait 0.5;
         log_msg(4, "StopForcedFire");
-        screenshot("StopForcedFire");
         playerkills = player smoke_getpersstat("kills");
         log_msg(4, "Kill Count:" + playerkills);
     }
@@ -374,7 +324,7 @@ function private SMOKE_LEVEL_2() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1486
+// Checksum 0x0, Offset: 0x115e
 // Size: 0x26
 function private function_7d933ec423d9d4f5() {
     if (function_1c00590758e63257()) {
@@ -385,7 +335,7 @@ function private function_7d933ec423d9d4f5() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x14b4
+// Checksum 0x0, Offset: 0x118c
 // Size: 0x8
 function private function_1c00590758e63257() {
     return function_59399abfaa25ec21();
@@ -393,7 +343,7 @@ function private function_1c00590758e63257() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x14c5
+// Checksum 0x0, Offset: 0x119d
 // Size: 0xe
 function private function_59399abfaa25ec21() {
     return level.var_88a8efeaa91fabba == 1;
@@ -401,7 +351,7 @@ function private function_59399abfaa25ec21() {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x14dc
+// Checksum 0x0, Offset: 0x11b4
 // Size: 0x124
 function private function_9fc451f8cce8fc98(var_b7891bdcdcda7208, botteam, spawndata) {
     self endon("disconnect");
@@ -435,7 +385,7 @@ function private function_9fc451f8cce8fc98(var_b7891bdcdcda7208, botteam, spawnd
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1608
+// Checksum 0x0, Offset: 0x12e0
 // Size: 0x40
 function private function_deadcc8fc572657d(duration) {
     self endon("disconnect");
@@ -454,8 +404,8 @@ function private function_deadcc8fc572657d(duration) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x1650
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x1328
+// Size: 0x69
 function private function_3819840818a6b8b6(start_angle, end_angle, step_angle, duration) {
     self endon("disconnect");
     while (!function_464c7c47f88f997f()) {
@@ -475,8 +425,8 @@ function private function_3819840818a6b8b6(start_angle, end_angle, step_angle, d
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x16c2
-// Size: 0x1ad
+// Checksum 0x0, Offset: 0x1399
+// Size: 0x1ac
 function private function_6e02da7fde448d84(toorigin) {
     while (!function_464c7c47f88f997f()) {
         wait 0.05;
@@ -505,8 +455,8 @@ function private function_6e02da7fde448d84(toorigin) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1877
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x154d
+// Size: 0xc0
 function private function_afc83012117903d9(player, spawndist) {
     if (!isdefined(player)) {
         player = getentarray("player", "classname")[0];
@@ -526,7 +476,7 @@ function private function_afc83012117903d9(player, spawndist) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x193d
+// Checksum 0x0, Offset: 0x1616
 // Size: 0xbc
 function function_b6dccdc08d6a79cf(enabled, logdestination) {
     logger = spawnstruct();
@@ -542,39 +492,27 @@ function function_b6dccdc08d6a79cf(enabled, logdestination) {
 
 // Namespace smoke / namespace_1676ee684fdab294
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1a02
+// Checksum 0x0, Offset: 0x16db
 // Size: 0x123
 function private log_msg(loglevel, thetext) {
     if (loglevel < 5 && isdefined(thetext)) {
         /#
             if (isarray(thetext)) {
-                thetext = string_join(thetext, "<dev string:x6c>");
+                thetext = string_join(thetext, "<dev string:x66>");
             }
             switch (level.var_6492adee56d19067.logdestination) {
             case 0: 
-                println(level.var_6492adee56d19067.prefixes[loglevel] + "<dev string:x6c>" + thetext);
+                println(level.var_6492adee56d19067.prefixes[loglevel] + "<dev string:x66>" + thetext);
                 break;
             case 1: 
-                iprintln(level.var_6492adee56d19067.prefixes[loglevel] + "<dev string:x6c>" + thetext);
+                iprintln(level.var_6492adee56d19067.prefixes[loglevel] + "<dev string:x66>" + thetext);
                 break;
             default: 
-                assertmsg("<dev string:x71>" + default_to(level.var_6492adee56d19067.logdestination, "<dev string:x95>"));
+                assertmsg("<dev string:x68>" + default_to(level.var_6492adee56d19067.logdestination, "<dev string:x89>"));
                 break;
             }
         #/
         level.var_6492adee56d19067.messages[loglevel] = level.var_6492adee56d19067.messages[loglevel] + 1;
     }
-}
-
-// Namespace smoke / namespace_1676ee684fdab294
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b2d
-// Size: 0x2a
-function get_player() {
-    player = level.player;
-    if (!isdefined(player)) {
-        player = level.players[0];
-    }
-    return player;
 }
 

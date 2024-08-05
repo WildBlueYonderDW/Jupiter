@@ -11,7 +11,7 @@
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b
+// Checksum 0x0, Offset: 0x438
 // Size: 0x2d
 function notshouldstartarrival(asmname, statename, tostatename, params) {
     return !shouldstartarrival(asmname, statename, params);
@@ -19,7 +19,7 @@ function notshouldstartarrival(asmname, statename, tostatename, params) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x341
+// Checksum 0x0, Offset: 0x46e
 // Size: 0x10
 function getmaxarrivaldistfornodetype(nodetype) {
     return 256;
@@ -27,8 +27,8 @@ function getmaxarrivaldistfornodetype(nodetype) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x35a
-// Size: 0x210
+// Checksum 0x0, Offset: 0x487
+// Size: 0x218
 function shouldstartarrival(asmname, statename, tostatename, params) {
     if (!self shoulddoarrival()) {
         return false;
@@ -87,7 +87,7 @@ function shouldstartarrival(asmname, statename, tostatename, params) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x573
+// Checksum 0x0, Offset: 0x6a8
 // Size: 0x3e
 function shouldstartcasualarrivalaftercodemove(asmname, statename, tostatename, params) {
     if (!asm_eventfired(asmname, "code_move")) {
@@ -98,8 +98,8 @@ function shouldstartcasualarrivalaftercodemove(asmname, statename, tostatename, 
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ba
-// Size: 0x51
+// Checksum 0x0, Offset: 0x6ef
+// Size: 0x50
 function shouldstartcasualarrival(asmname, statename, tostatename, params) {
     demeanor = asm_getdemeanor();
     if (!isdefined(params) || demeanor != params[2]) {
@@ -110,7 +110,7 @@ function shouldstartcasualarrival(asmname, statename, tostatename, params) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x614
+// Checksum 0x0, Offset: 0x748
 // Size: 0x3e
 function shouldstartcasualarrivalwithgunaftercodemove(asmname, statename, tostatename, params) {
     if (!asm_eventfired(asmname, "code_move")) {
@@ -121,8 +121,8 @@ function shouldstartcasualarrivalwithgunaftercodemove(asmname, statename, tostat
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x65b
-// Size: 0x51
+// Checksum 0x0, Offset: 0x78f
+// Size: 0x50
 function shouldstartcasualarrivalwithgun(asmname, statename, tostatename, params) {
     demeanor = asm_getdemeanor();
     if (!isdefined(params) || demeanor != params[2]) {
@@ -133,7 +133,7 @@ function shouldstartcasualarrivalwithgun(asmname, statename, tostatename, params
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b5
+// Checksum 0x0, Offset: 0x7e8
 // Size: 0x4b
 function chooseanim_arrival(asmname, statename, params) {
     assert(isdefined(self.asm.stopdata));
@@ -142,7 +142,7 @@ function chooseanim_arrival(asmname, statename, params) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x709
+// Checksum 0x0, Offset: 0x83c
 // Size: 0x249
 function function_cf21d79464e005d2(node) {
     nodepos = node.origin;
@@ -170,14 +170,14 @@ function function_cf21d79464e005d2(node) {
             break;
         case #"hash_78b110033ccb68b0":
         case #"hash_c3b74422dec48736": 
-            assert(self._blackboard.var_4f2c03980416a4a9 == "<dev string:x1c>");
+            assert(self._blackboard.var_4f2c03980416a4a9 == "full_exposed");
             offset = (-8, 0, 0);
             nodepos += rotatevector(offset, node.angles);
             break;
         case #"hash_961a09cded5ffc80": 
             break;
         default: 
-            assertmsg("<dev string:x2c>" + node.type);
+            assertmsg("arrive to cover exposed stepout requested to an unimplemented/unexpected node type " + node.type);
             break;
         }
     }
@@ -186,8 +186,8 @@ function function_cf21d79464e005d2(node) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x95b
-// Size: 0x40d
+// Checksum 0x0, Offset: 0xa8e
+// Size: 0x416
 function calculatestopdata(asmname, statename, tostatename, nodetype, var_5217df91f13c7c48, var_6164202739d4a0fb, optionalprefix, var_a9d2a260c9698ff4, var_4795faf7dae203d5, startnotetrack, endnotetrack, speedstring) {
     node = getarrivalnode();
     var_cd19c4c27c506f73 = undefined;
@@ -196,7 +196,7 @@ function calculatestopdata(asmname, statename, tostatename, nodetype, var_5217df
             if (!isdefined(self.scriptedarrivalent.calculatestopdatawarningtime) || self.scriptedarrivalent.calculatestopdatawarningtime < gettime() - level.frameduration) {
                 self.scriptedarrivalent.calculatestopdatawarningtime = gettime();
             } else {
-                assertmsg("<dev string:x83>");
+                assertmsg("actor has self.scriptedarrivalent that is nowhere near his goalpos. is it leftover from an interrupted anim_reach? you may need to call anim_reach_cleanup_solo().");
                 self.scriptedarrivalent delete();
                 self.scriptedarrivalent = undefined;
                 node = getarrivalnode();
@@ -273,7 +273,7 @@ function calculatestopdata(asmname, statename, tostatename, nodetype, var_5217df
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd71
+// Checksum 0x0, Offset: 0xead
 // Size: 0x38
 function playanim_waitforpathset(asmname, statename) {
     self endon("runto_arrived");
@@ -284,7 +284,7 @@ function playanim_waitforpathset(asmname, statename) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb1
+// Checksum 0x0, Offset: 0xeed
 // Size: 0x4e
 function playanim_waitforpathclear(asmname, statename) {
     self endon("runto_arrived");
@@ -300,7 +300,7 @@ function playanim_waitforpathclear(asmname, statename) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe07
+// Checksum 0x0, Offset: 0xf43
 // Size: 0x44
 function arrivalterminatewait(statename) {
     self endon("death");
@@ -311,8 +311,8 @@ function arrivalterminatewait(statename) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xe53
-// Size: 0xfa
+// Checksum 0x0, Offset: 0xf8f
+// Size: 0xfe
 function playanim_arrival_handlestandevent(asmname, statename, xanim, finalrate) {
     self endon(statename + "_finished");
     self.asm.arrivalstopfired = 0;
@@ -334,7 +334,7 @@ function playanim_arrival_handlestandevent(asmname, statename, xanim, finalrate)
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf55
+// Checksum 0x0, Offset: 0x1095
 // Size: 0x18
 function returnoncorner(note) {
     if (note == "corner") {
@@ -344,7 +344,7 @@ function returnoncorner(note) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf75
+// Checksum 0x0, Offset: 0x10b5
 // Size: 0x18
 function returnonwarpstart(note) {
     if (note == "warp_arrival_start") {
@@ -354,8 +354,8 @@ function returnonwarpstart(note) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf95
-// Size: 0x67
+// Checksum 0x0, Offset: 0x10d5
+// Size: 0x69
 function calculateadjustedspeedforshortpath(desiredspeed, pathdist) {
     var_87e7a006522a7fa3 = 64;
     var_a0bbb0351fa8ec9d = 110;
@@ -369,8 +369,8 @@ function calculateadjustedspeedforshortpath(desiredspeed, pathdist) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1005
-// Size: 0x7d3
+// Checksum 0x0, Offset: 0x1147
+// Size: 0x7f4
 function playanim_arrival(asmname, statename, params) {
     self endon(statename + "_finished");
     arrival_rate = 1;
@@ -381,7 +381,7 @@ function playanim_arrival(asmname, statename, params) {
     self.a.arrivalasmstatename = statename;
     thread arrivalterminatewait(statename);
     stopdata = asm_getanim(asmname, statename);
-    assertex(isdefined(stopdata), "<dev string:x129>");
+    assertex(isdefined(stopdata), "Arrival forced to abort");
     if (!isdefined(stopdata)) {
         self orientmode("face motion");
         asm_fireevent(asmname, "abort", undefined);
@@ -399,7 +399,7 @@ function playanim_arrival(asmname, statename, params) {
         invangles = invertangles(stopdata.parentangles);
         localangles = combineangles(facingyaw, invangles);
         parentent = self getnavspaceent();
-        assertex(isdefined(parentent), "<dev string:x144>");
+        assertex(isdefined(parentent), "Started arrival on a moving platform, is no longer on a moving platform. Path clear should have aborted this process.");
         localdelta = rotatevector(localdelta, parentent.angles);
         var_55644d08241b1a7b = localdelta + parentent.origin;
         newangles = combineangles(localangles, parentent.angles);
@@ -467,7 +467,7 @@ function playanim_arrival(asmname, statename, params) {
     self aisetanim(arrivalstatename, stopanim, finalrate);
     end_time = 1;
     if (animhasnotetrack(stopxanim, "warp_arrival_start")) {
-        assert(animhasnotetrack(stopxanim, "<dev string:x1bd>"));
+        assert(animhasnotetrack(stopxanim, "warp_arrival_end"));
         startnote = getnotetracktimes(stopxanim, "warp_arrival_start");
         endnote = getnotetracktimes(stopxanim, "warp_arrival_end");
         if (startnote[0] > 0) {
@@ -511,7 +511,7 @@ function playanim_arrival(asmname, statename, params) {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e0
+// Checksum 0x0, Offset: 0x1943
 // Size: 0x1a
 function getcustomarrivalangles() {
     if (isdefined(self.var_a41edf45bb0ff97)) {
@@ -522,11 +522,11 @@ function getcustomarrivalangles() {
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1803
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x1966
+// Size: 0xf3
 function getstopanims(asmname, statename, approachtype, var_5217df91f13c7c48, optionalprefix) {
-    assert(!asm_hasalias(statename, "<dev string:x1d1>"));
-    assert(!asm_hasalias(statename, "<dev string:x1d6>"));
+    assert(!asm_hasalias(statename, "0"));
+    assert(!asm_hasalias(statename, "5"));
     stopanims = [];
     stopanims[5] = asm_lookupdirectionalfootanim(1, asmname, statename, var_5217df91f13c7c48, optionalprefix);
     stopanims[4] = asm_lookupdirectionalfootanim(2, asmname, statename, var_5217df91f13c7c48, optionalprefix);
@@ -544,8 +544,8 @@ function getstopanims(asmname, statename, approachtype, var_5217df91f13c7c48, op
 
     // Namespace arrival / scripts\asm\soldier\arrival
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1900
-    // Size: 0xa6
+    // Checksum 0x0, Offset: 0x1a62
+    // Size: 0xa5
     function function_a6a36944d51a88a0(var_8e5cf88282523d3f, tracestartpos, finalpos, fraction, color, frames) {
         if (!scripts\asm\asm::function_3271c00e44d9636b()) {
             return;
@@ -558,8 +558,8 @@ function getstopanims(asmname, statename, approachtype, var_5217df91f13c7c48, op
 
     // Namespace arrival / scripts\asm\soldier\arrival
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19ae
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x1b0f
+    // Size: 0x7a
     function function_51eac561da90b300(goal_origin, var_2f464ef8d2b3735b) {
         if (scripts\asm\asm::function_3271c00e44d9636b()) {
             forward = anglestoforward(var_2f464ef8d2b3735b);
@@ -572,10 +572,10 @@ function getstopanims(asmname, statename, approachtype, var_5217df91f13c7c48, op
 
 // Namespace arrival / scripts\asm\soldier\arrival
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a31
+// Checksum 0x0, Offset: 0x1b91
 // Size: 0x32
 function shouldstartarrivalpassthrough(asmname, statename, tostatename, params) {
-    assertmsg("<dev string:x1db>");
+    assertmsg("Function is only used by C6s at this point. Should not use again.");
     return false;
 }
 

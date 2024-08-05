@@ -2,7 +2,6 @@
 #using scripts\engine\utility.gsc;
 #using script_7ab5b649fa408138;
 #using scripts\cp_mp\utility\debug_utility.gsc;
-#using script_16ea1b94f0f381b3;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
@@ -12,8 +11,8 @@
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x48c
-// Size: 0x3d2
+// Checksum 0x0, Offset: 0x44e
+// Size: 0x3b9
 function initparachutedvars() {
     setdvarifuninitialized(@"hash_df1a64ca42c9a254", 256);
     setdvarifuninitialized(@"hash_a6cbd1a7783679d3", 0);
@@ -32,7 +31,6 @@ function initparachutedvars() {
     setdvarifuninitialized(@"hash_df7bfdbd61db3ed7", -2);
     level.parachutecancutautodeploy = getdvarint(@"hash_ff604c5295c4e36c", 1);
     level.parachutecancutparachute = getdvarint(@"hash_5f25fd4c8fc1a759", 1);
-    level.var_492c3dce9458c51e = getdvarint(@"hash_b99e3b3c6154ced8", 1);
     level.parachuteinitfinished = 1;
     level.activeparachuters = [];
     if (!isdefined(level.dontshootwhileparachuting)) {
@@ -71,8 +69,8 @@ function initparachutedvars() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x866
-// Size: 0x251
+// Checksum 0x0, Offset: 0x80f
+// Size: 0x355
 function startfreefall(falltime, popinstant, var_32dcb143b4eb723a, startingvelocity, var_f9eb100d9c645f51, takeweapons) {
     self.haslanded = 0;
     if (getdvarint(@"hash_915273f1933ae779", 0)) {
@@ -132,9 +130,8 @@ function startfreefall(falltime, popinstant, var_32dcb143b4eb723a, startingveloc
     if (getdvarint(@"hash_1173d2bfe5fb201c", 1) != 2) {
         self skydive_setforcethirdpersonstatus(1);
     }
-    var_19bf98acee238bc1 = namespace_53fc9ddbb516e6e1::function_9d18a22123e54d05("infilParachuteVfx");
-    if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && (!istrue(var_f9eb100d9c645f51) || var_19bf98acee238bc1) && istrue(level.var_492c3dce9458c51e)) {
-        thread infilparachutevfx(getdvarint(@"hash_96e4167dd77b8cee", 1) == 1 && var_19bf98acee238bc1);
+    if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && (!istrue(var_f9eb100d9c645f51) || getdvar(@"hash_7611a2790a0bf7fe", "") == "dmz" || getdvar(@"hash_7611a2790a0bf7fe", "") == "exgm" || getdvar(@"hash_7611a2790a0bf7fe", "") == "plunder" || getdvar(@"hash_7611a2790a0bf7fe", "") == "risk" || getdvar(@"hash_7611a2790a0bf7fe", "") == "resurgence") && getdvarint(@"hash_b99e3b3c6154ced8", 1)) {
+        thread infilparachutevfx(getdvarint(@"hash_96e4167dd77b8cee", 1) == 1 && (getdvar(@"hash_7611a2790a0bf7fe", "") == "dmz" || getdvar(@"hash_7611a2790a0bf7fe", "") == "exgm" || getdvar(@"hash_7611a2790a0bf7fe", "") == "plunder" || getdvar(@"hash_7611a2790a0bf7fe", "") == "risk" || getdvar(@"hash_7611a2790a0bf7fe", "") == "resurgence"));
     }
     if (!istrue(popinstant)) {
         wait falltime;
@@ -144,16 +141,16 @@ function startfreefall(falltime, popinstant, var_32dcb143b4eb723a, startingveloc
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xabf
-// Size: 0x1be
+// Checksum 0x0, Offset: 0xb6c
+// Size: 0x1c4
 function infilparachutevfx(endonground) {
     player = self;
     level endon("game_ended");
     player endon("disconnect");
     player = self;
     wait 1;
-    if (scripts\engine\utility::issharedfuncdefined("ftue", "player_action")) {
-        player [[ scripts\engine\utility::getsharedfunc("ftue", "player_action") ]]("br_ftue_parachute");
+    if (scripts\engine\utility::issharedfuncdefined("hud", "ftue_triggerTip")) {
+        player [[ scripts\engine\utility::getsharedfunc("hud", "ftue_triggerTip") ]]("br_ftue_parachute");
     }
     targetstate = "enabled";
     if (isdefined(self.operatorcustomization) && isdefined(self.operatorcustomization.brinfilsmokesuffix)) {
@@ -185,16 +182,16 @@ function infilparachutevfx(endonground) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc85
-// Size: 0x93
+// Checksum 0x0, Offset: 0xd38
+// Size: 0x92
 function riotshield_attach_parachute(onarm, modelshield) {
     tagattach = undefined;
     if (onarm) {
-        assertex(!isdefined(self.riotshieldmodel), "<dev string:x1c>");
+        assertex(!isdefined(self.riotshieldmodel), "riotShield_attach_parachute() called on player with no riot shield model on the arm");
         self.riotshieldmodel = modelshield;
         tagattach = "tag_weapon_right";
     } else {
-        assertex(!isdefined(self.riotshieldmodelstowed), "<dev string:x73>");
+        assertex(!isdefined(self.riotshieldmodelstowed), "riotShield_attach_parachute() called on player with no riot shield model stowed");
         self.riotshieldmodelstowed = modelshield;
         tagattach = "tag_shield_back";
     }
@@ -204,7 +201,7 @@ function riotshield_attach_parachute(onarm, modelshield) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd20
+// Checksum 0x0, Offset: 0xdd2
 // Size: 0x7
 function riotshield_getmodel_parachute() {
     return "weapon_wm_riotshield";
@@ -212,8 +209,8 @@ function riotshield_getmodel_parachute() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd30
-// Size: 0x73
+// Checksum 0x0, Offset: 0xde2
+// Size: 0x72
 function riotshield_hasweapon_parachute() {
     result = 0;
     weaponlist = self getweaponslistprimaries();
@@ -228,7 +225,7 @@ function riotshield_hasweapon_parachute() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdac
+// Checksum 0x0, Offset: 0xe5d
 // Size: 0x42
 function isriotshield_parachute(weapon) {
     if (isweapon(weapon) && isnullweapon(weapon)) {
@@ -242,21 +239,15 @@ function isriotshield_parachute(weapon) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf7
-// Size: 0x11b
+// Checksum 0x0, Offset: 0xea8
+// Size: 0xfa
 function isparachutegametype() {
-    if (!isdefined(level.gametype)) {
-        return false;
-    }
-    if (!isdefined(level.isparachutegametype)) {
-        level.isparachutegametype = level.gametype == "arm" || level.gametype == "bigctf" || level.gametype == "conflict" || level.gametype == "risk" || level.gametype == "war" || level.gametype == "war_mgl" || level.gametype == "war_mgl" || level.gametype == "missions" || level.gametype == "trial" || level.gametype == "brtdm" || level.gametype == "brtdm_mgl" || level.gametype == "wm";
-    }
-    return scripts\cp_mp\utility\game_utility::isbrstylegametype() || istrue(level.isparachutegametype);
+    return isdefined(level.gametype) && (scripts\cp_mp\utility\game_utility::isbrstylegametype() || level.gametype == "arm" || level.gametype == "bigctf" || level.gametype == "conflict" || level.gametype == "risk" || level.gametype == "war" || level.gametype == "war_mgl" || level.gametype == "war_mgl" || level.gametype == "missions" || level.gametype == "trial" || level.gametype == "brtdm" || level.gametype == "brtdm_mgl" || level.gametype == "wm");
 }
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1b
+// Checksum 0x0, Offset: 0xfab
 // Size: 0x3e
 function getc130height() {
     if (isdefined(level.br_level) && isdefined(level.br_level.c130_heightoverride)) {
@@ -267,7 +258,7 @@ function getc130height() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf62
+// Checksum 0x0, Offset: 0xff2
 // Size: 0x1c
 function getc130airdropheight() {
     if (isdefined(level.c130airdrop_heightoverride)) {
@@ -278,7 +269,7 @@ function getc130airdropheight() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf87
+// Checksum 0x0, Offset: 0x1017
 // Size: 0x3e
 function getc130sealevel() {
     if (isdefined(level.br_level) && isdefined(level.br_level.c130_sealeveloverride)) {
@@ -289,8 +280,8 @@ function getc130sealevel() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfce
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x105e
+// Size: 0x6e
 function steerfalling(var_d051bb0593db1e4) {
     controlentity = spawn("script_model", self.origin);
     controlentity.angles = self.angles;
@@ -303,8 +294,8 @@ function steerfalling(var_d051bb0593db1e4) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1045
-// Size: 0x38a
+// Checksum 0x0, Offset: 0x10d4
+// Size: 0x39f
 function steerfallinginternal(controlentity, var_d051bb0593db1e4) {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -363,8 +354,8 @@ function steerfallinginternal(controlentity, var_d051bb0593db1e4) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d7
-// Size: 0x1f
+// Checksum 0x0, Offset: 0x147b
+// Size: 0x1e
 function veltomph(v) {
     mph = v * 0.05682;
     return mph;
@@ -372,8 +363,8 @@ function veltomph(v) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ff
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x14a2
+// Size: 0x6e
 function steerparachuting(var_d051bb0593db1e4) {
     controlentity = spawn("script_model", self.origin);
     controlentity.angles = self.angles;
@@ -386,8 +377,8 @@ function steerparachuting(var_d051bb0593db1e4) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1476
-// Size: 0x4af
+// Checksum 0x0, Offset: 0x1518
+// Size: 0x4cf
 function steerparachutinginternal(controlentity, var_d051bb0593db1e4) {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -467,7 +458,7 @@ function steerparachutinginternal(controlentity, var_d051bb0593db1e4) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x192d
+// Checksum 0x0, Offset: 0x19ef
 // Size: 0x2c
 function isskydivestatedisabled() {
     return isdefined(self.ffsm_state) && (self.ffsm_state == 5 || self.ffsm_state == 6);
@@ -475,13 +466,10 @@ function isskydivestatedisabled() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1962
-// Size: 0x66
+// Checksum 0x0, Offset: 0x1a24
+// Size: 0x51
 function enablemanualpullchute(waitsec) {
     self endon("death_or_disconnect");
-    if (function_f3bb4f4911a1beb2("game", "isManualPullChuteDisable", self)) {
-        return;
-    }
     if (isdefined(waitsec) && waitsec > 0) {
         self skydive_setdeploymentstatus(0);
         self skydive_setbasejumpingstatus(0);
@@ -498,7 +486,7 @@ function enablemanualpullchute(waitsec) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19d0
+// Checksum 0x0, Offset: 0x1a7d
 // Size: 0x7d
 function pullchute(var_32dcb143b4eb723a, popinstant, autoopen) {
     self endon("death_or_disconnect");
@@ -517,8 +505,8 @@ function pullchute(var_32dcb143b4eb723a, popinstant, autoopen) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a55
-// Size: 0x11b
+// Checksum 0x0, Offset: 0x1b02
+// Size: 0x127
 function parachutedamagemonitor(parachute) {
     self endon("death_or_disconnect");
     self endon("parachute_complete");
@@ -550,8 +538,8 @@ function parachutedamagemonitor(parachute) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b78
-// Size: 0xd1
+// Checksum 0x0, Offset: 0x1c31
+// Size: 0xda
 function startparachute() {
     self endon("death_or_disconnect");
     if (getdvarint(@"hash_1173d2bfe5fb201c", 1) == 1) {
@@ -573,6 +561,8 @@ function startparachute() {
     self animscriptsetinputparamreplicationstatus(0);
     if (isparachutegametype()) {
         self setclientomnvar("ui_br_altimeter_state", 0);
+    }
+    if (isparachutegametype()) {
         if (isdefined(level.onfirstlandcallback)) {
             self [[ level.onfirstlandcallback ]](self);
         }
@@ -581,7 +571,7 @@ function startparachute() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c51
+// Checksum 0x0, Offset: 0x1d13
 // Size: 0x27
 function parachutemidairdeathwatcher() {
     self endon("parachute_complete");
@@ -593,7 +583,7 @@ function parachutemidairdeathwatcher() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c80
+// Checksum 0x0, Offset: 0x1d42
 // Size: 0x9
 function freefallstartdefault() {
     self disableusability();
@@ -601,7 +591,7 @@ function freefallstartdefault() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c91
+// Checksum 0x0, Offset: 0x1d53
 // Size: 0x2
 function parachuteopendefault() {
     
@@ -609,7 +599,7 @@ function parachuteopendefault() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9b
+// Checksum 0x0, Offset: 0x1d5d
 // Size: 0x2d
 function parachutecompletedefault() {
     self enableusability();
@@ -621,7 +611,7 @@ function parachutecompletedefault() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cd0
+// Checksum 0x0, Offset: 0x1d92
 // Size: 0x7
 function getautodeploynorm() {
     return 0.25;
@@ -629,7 +619,7 @@ function getautodeploynorm() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce0
+// Checksum 0x0, Offset: 0x1da2
 // Size: 0xe
 function spawnorbitcamera() {
     self cameraset("camera_custom_orbit_0_noremote");
@@ -637,7 +627,7 @@ function spawnorbitcamera() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf6
+// Checksum 0x0, Offset: 0x1db8
 // Size: 0x9
 function removeorbitcamera() {
     self cameradefault();
@@ -645,7 +635,7 @@ function removeorbitcamera() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d07
+// Checksum 0x0, Offset: 0x1dc9
 // Size: 0x2
 function leaveweaponsdefaultfunc() {
     
@@ -653,7 +643,7 @@ function leaveweaponsdefaultfunc() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d11
+// Checksum 0x0, Offset: 0x1dd3
 // Size: 0x2
 function norestoreweaponsdefaultfunc() {
     
@@ -661,8 +651,8 @@ function norestoreweaponsdefaultfunc() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d1b
-// Size: 0x137
+// Checksum 0x0, Offset: 0x1ddd
+// Size: 0x139
 function takeweaponsdefaultfunc() {
     if (isdefined(self.primaryweaponobj)) {
         self.primaryweaponclipammo = self getweaponammoclip(self.primaryweaponobj);
@@ -690,7 +680,7 @@ function takeweaponsdefaultfunc() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5a
+// Checksum 0x0, Offset: 0x1f1e
 // Size: 0x16e
 function restoreweaponsdefaultfunc() {
     self takeweapon(self.weaponlist[0]);
@@ -723,8 +713,8 @@ function restoreweaponsdefaultfunc() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fd0
-// Size: 0x1e7
+// Checksum 0x0, Offset: 0x2094
+// Size: 0x1ea
 function playerwatchforredeploy() {
     level endon("game_ended");
     self endon("disconnect");
@@ -786,7 +776,7 @@ function playerwatchforredeploy() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21bf
+// Checksum 0x0, Offset: 0x2286
 // Size: 0xec
 function watchfordoublejump() {
     level endon("game_ended");
@@ -836,18 +826,18 @@ function watchfordoublejump() {
 
     // Namespace parachute / scripts\cp_mp\parachute
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x22b3
+    // Checksum 0x0, Offset: 0x237a
     // Size: 0xdd
     function function_3c9c50a97447b483() {
-        self endon("<dev string:xc6>");
-        self endon("<dev string:xdd>");
+        self endon("<dev string:x1c>");
+        self endon("<dev string:x30>");
         while (true) {
             thread drawangles(self.origin, self.angles, 0.05, 5);
             velocity = self getvelocity();
             mag = length(velocity);
             thread drawline(self.origin, self.origin + vectornormalize(velocity) * mag, 0.05, (1, 0, 1));
-            printtoscreen2d(750, 800, "<dev string:xf3>" + vectornormalize(velocity), (1, 0, 1), 2);
-            printtoscreen2d(750, 825, "<dev string:x101>" + mag, (1, 0, 1), 2);
+            printtoscreen2d(750, 800, "<dev string:x43>" + vectornormalize(velocity), (1, 0, 1), 2);
+            printtoscreen2d(750, 825, "<dev string:x4e>" + mag, (1, 0, 1), 2);
             waitframe();
         }
     }
@@ -856,8 +846,8 @@ function watchfordoublejump() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2398
-// Size: 0x84
+// Checksum 0x0, Offset: 0x245f
+// Size: 0x83
 function parachuteprelaststandfunction() {
     player = self;
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
@@ -875,8 +865,8 @@ function parachuteprelaststandfunction() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2424
-// Size: 0x1f2
+// Checksum 0x0, Offset: 0x24ea
+// Size: 0x1fa
 function updateparachutestreamhint() {
     player = self;
     velocity = player getvelocity();
@@ -903,8 +893,8 @@ function updateparachutestreamhint() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x261e
-// Size: 0x35c
+// Checksum 0x0, Offset: 0x26ec
+// Size: 0x362
 function freefallfromplanestatemachine(falltime, popinstant, var_32dcb143b4eb723a, startingvelocity, var_f9eb100d9c645f51, takeweapons) {
     self endon("disconnect");
     level endon("game_ended");
@@ -970,8 +960,8 @@ function freefallfromplanestatemachine(falltime, popinstant, var_32dcb143b4eb723
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2982
-// Size: 0x17e
+// Checksum 0x0, Offset: 0x2a56
+// Size: 0x271
 function ffsm_introsetup(falltime, popinstant, var_32dcb143b4eb723a, startingvelocity, takeweapons) {
     /#
         if (getdvarint(@"hash_efd5d9204cedd02", 0) == 1) {
@@ -1003,9 +993,8 @@ function ffsm_introsetup(falltime, popinstant, var_32dcb143b4eb723a, startingvel
     if (getdvarint(@"hash_1173d2bfe5fb201c", 1) != 2) {
         self skydive_setforcethirdpersonstatus(1);
     }
-    var_19bf98acee238bc1 = namespace_53fc9ddbb516e6e1::function_9d18a22123e54d05("infilParachuteVfx");
-    if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && (!istrue(self.ffsm_isgulagrespawn) || var_19bf98acee238bc1) && istrue(level.var_492c3dce9458c51e)) {
-        thread infilparachutevfx(getdvarint(@"hash_96e4167dd77b8cee", 1) == 1 && var_19bf98acee238bc1);
+    if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && (!istrue(self.ffsm_isgulagrespawn) || getdvar(@"hash_7611a2790a0bf7fe", "") == "dmz" || getdvar(@"hash_7611a2790a0bf7fe", "") == "exgm") || getdvar(@"hash_7611a2790a0bf7fe", "") == "plunder" || getdvar(@"hash_7611a2790a0bf7fe", "") == "risk" || getdvar(@"hash_7611a2790a0bf7fe", "") == "resurgence") {
+        thread infilparachutevfx(getdvarint(@"hash_96e4167dd77b8cee", 1) == 1 && (getdvar(@"hash_7611a2790a0bf7fe", "") == "dmz" || getdvar(@"hash_7611a2790a0bf7fe", "") == "exgm" || getdvar(@"hash_7611a2790a0bf7fe", "") == "plunder" || getdvar(@"hash_7611a2790a0bf7fe", "") == "risk" || getdvar(@"hash_7611a2790a0bf7fe", "") == "resurgence"));
     }
     if (istrue(popinstant)) {
         thread enablemanualpullchute(0);
@@ -1017,8 +1006,8 @@ function ffsm_introsetup(falltime, popinstant, var_32dcb143b4eb723a, startingvel
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b08
-// Size: 0x84
+// Checksum 0x0, Offset: 0x2ccf
+// Size: 0x83
 function ffsm_skydive_stateenter() {
     if (isparachutegametype()) {
         self setclientomnvar("ui_br_altimeter_state", 1);
@@ -1034,8 +1023,8 @@ function ffsm_skydive_stateenter() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b94
-// Size: 0x93
+// Checksum 0x0, Offset: 0x2d5a
+// Size: 0x92
 function ffsm_parachuteopen_stateenter() {
     self notify("freefall_complete");
     if (isdefined(self.jump_music) && self.jump_music == 1) {
@@ -1054,7 +1043,7 @@ function ffsm_parachuteopen_stateenter() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c2f
+// Checksum 0x0, Offset: 0x2df4
 // Size: 0xc0
 function ffsm_landed_stateenter(var_83e33c8931d52d73) {
     self.ignorefalldamagetime = gettime() + 5000;
@@ -1080,7 +1069,7 @@ function ffsm_landed_stateenter(var_83e33c8931d52d73) {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cf7
+// Checksum 0x0, Offset: 0x2ebc
 // Size: 0x73
 function ffsm_onground_stateenter() {
     self.haslanded = 1;
@@ -1099,7 +1088,7 @@ function ffsm_onground_stateenter() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d72
+// Checksum 0x0, Offset: 0x2f37
 // Size: 0x51
 function playlandingbreath() {
     self endon("death_or_disconnect");
@@ -1114,8 +1103,8 @@ function playlandingbreath() {
 
 // Namespace parachute / scripts\cp_mp\parachute
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dcb
-// Size: 0x36
+// Checksum 0x0, Offset: 0x2f90
+// Size: 0x35
 function parachutecleanup() {
     player = self;
     player skydive_interrupt();

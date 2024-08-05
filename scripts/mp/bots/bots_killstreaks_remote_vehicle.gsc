@@ -14,8 +14,8 @@
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x55d
-// Size: 0x63d
+// Checksum 0x0, Offset: 0x511
+// Size: 0x63b
 function remote_vehicle_setup() {
     while (!isdefined(level.bot_variables_initialized)) {
         wait 0.05;
@@ -104,8 +104,8 @@ function remote_vehicle_setup() {
 
     // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xba2
-    // Size: 0x119
+    // Checksum 0x0, Offset: 0xb54
+    // Size: 0x11b
     function function_afae965b7274c594(nodes) {
         wait 5;
         bot_waittill_bots_enabled(1);
@@ -116,7 +116,7 @@ function remote_vehicle_setup() {
             tracestart = heli_node.origin + var_9da54672706d7f6 + var_1a5872d69399180a;
             traceend = heli_node.origin + var_9da54672706d7f6 - var_1a5872d69399180a;
             traceresult = scripts\engine\trace::_bullet_trace(tracestart, traceend, 0, undefined, 0, 0, 1);
-            assertex(isdefined(traceresult["<dev string:x42>"]), "<dev string:x4c>" + heli_node.origin);
+            assertex(isdefined(traceresult["<dev string:x3f>"]), "<dev string:x46>" + heli_node.origin);
             wait 0.05;
         }
         thread function_394a8d2890e007c4(nodes);
@@ -124,15 +124,15 @@ function remote_vehicle_setup() {
 
     // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xcc3
-    // Size: 0x320
+    // Checksum 0x0, Offset: 0xc77
+    // Size: 0x323
     function function_394a8d2890e007c4(nodes) {
-        self notify("<dev string:x85>");
-        self endon("<dev string:x85>");
-        level endon("<dev string:xa2>");
+        self notify("<dev string:x7c>");
+        self endon("<dev string:x7c>");
+        level endon("<dev string:x96>");
         while (true) {
-            var_a36233594d4132b2 = getdvar(@"hash_2113a3b9387cd9f0") == "<dev string:xb6>";
-            var_524cf965d318bd67 = getdvar(@"hash_2113a3b9387cd9f0") == "<dev string:xc4>";
+            var_a36233594d4132b2 = getdvar(@"hash_2113a3b9387cd9f0") == "<dev string:xa7>";
+            var_524cf965d318bd67 = getdvar(@"hash_2113a3b9387cd9f0") == "<dev string:xb2>";
             if (var_a36233594d4132b2 || var_524cf965d318bd67) {
                 current_nodes = nodes;
                 for (i = 0; i < current_nodes.size; i++) {
@@ -176,8 +176,8 @@ function remote_vehicle_setup() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xfeb
-// Size: 0x404
+// Checksum 0x0, Offset: 0xfa2
+// Size: 0x40a
 function bot_killstreak_remote_control(killstreak_info, killstreaks_array, canusefunc, controlfunc, var_b66780ccc01efb67) {
     if (!isdefined(controlfunc)) {
         return false;
@@ -274,7 +274,7 @@ function bot_killstreak_remote_control(killstreak_info, killstreaks_array, canus
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f8
+// Checksum 0x0, Offset: 0x13b5
 // Size: 0x27
 function bot_end_control_on_respawn() {
     self endon("disconnect");
@@ -286,7 +286,7 @@ function bot_end_control_on_respawn() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1427
+// Checksum 0x0, Offset: 0x13e4
 // Size: 0x5b
 function bot_end_control_watcher(hidenode) {
     self endon("disconnect");
@@ -301,7 +301,7 @@ function bot_end_control_watcher(hidenode) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x148a
+// Checksum 0x0, Offset: 0x1447
 // Size: 0x38
 function try_clear_hide_goal(hidenode) {
     if (isdefined(hidenode) && self bothasscriptgoal() && isdefined(self botgetscriptgoalnode()) && self botgetscriptgoalnode() == hidenode) {
@@ -311,7 +311,7 @@ function try_clear_hide_goal(hidenode) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ca
+// Checksum 0x0, Offset: 0x1487
 // Size: 0x1b
 function bot_end_control_on_vehicle_death(vehicle) {
     vehicle waittill("death");
@@ -320,8 +320,8 @@ function bot_end_control_on_vehicle_death(vehicle) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ed
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x14aa
+// Size: 0x4d
 function bot_waittill_using_vehicle(type) {
     time_started = gettime();
     while (!self [[ level.bot_ks_funcs["isUsing"][type] ]]()) {
@@ -335,8 +335,8 @@ function bot_waittill_using_vehicle(type) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1544
-// Size: 0x7f3
+// Checksum 0x0, Offset: 0x1500
+// Size: 0x80d
 function bot_control_switchblade_cluster() {
     self endon("spawned_player");
     self endon("disconnect");
@@ -514,7 +514,7 @@ function bot_control_switchblade_cluster() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d3f
+// Checksum 0x0, Offset: 0x1d15
 // Size: 0x42
 function missile_get_desired_angles_to_target(missile, target_origin) {
     current_target = missile_find_ground_target(missile, target_origin[2]);
@@ -524,8 +524,8 @@ function missile_get_desired_angles_to_target(missile, target_origin) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d8a
-// Size: 0x31
+// Checksum 0x0, Offset: 0x1d60
+// Size: 0x30
 function missile_get_distance_to_target(missile, target_origin) {
     current_target = missile_find_ground_target(missile, target_origin[2]);
     return distance(current_target, target_origin);
@@ -533,7 +533,7 @@ function missile_get_distance_to_target(missile, target_origin) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc4
+// Checksum 0x0, Offset: 0x1d99
 // Size: 0x40
 function handle_disable_rotation() {
     self botsetflag("disable_rotation", 1);
@@ -545,7 +545,7 @@ function handle_disable_rotation() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e0c
+// Checksum 0x0, Offset: 0x1de1
 // Size: 0x29
 function switchblade_handle_awareness() {
     self endon("disconnect");
@@ -556,8 +556,8 @@ function switchblade_handle_awareness() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e3d
-// Size: 0x68
+// Checksum 0x0, Offset: 0x1e12
+// Size: 0x69
 function missile_find_ground_target(missile, var_8099cdf91fa07077) {
     missile_dir = anglestoforward(missile.angles);
     var_ab276aabf08e332d = (var_8099cdf91fa07077 - missile.origin[2]) / missile_dir[2];
@@ -567,7 +567,7 @@ function missile_find_ground_target(missile, var_8099cdf91fa07077) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1eae
+// Checksum 0x0, Offset: 0x1e84
 // Size: 0x23
 function watch_end_switchblade() {
     self endon("disconnect");
@@ -577,8 +577,8 @@ function watch_end_switchblade() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ed9
-// Size: 0x7d
+// Checksum 0x0, Offset: 0x1eaf
+// Size: 0x7a
 function find_cluster_rocket_for_bot(bot) {
     while (true) {
         foreach (rocket in level.rockets) {
@@ -592,7 +592,7 @@ function find_cluster_rocket_for_bot(bot) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f5e
+// Checksum 0x0, Offset: 0x1f31
 // Size: 0xf
 function vanguard_allowed() {
     if (!aerial_vehicle_allowed()) {
@@ -603,7 +603,7 @@ function vanguard_allowed() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f76
+// Checksum 0x0, Offset: 0x1f49
 // Size: 0x30
 function bot_killstreak_vanguard_start(killstreak_info, killstreaks_array, canusefunc, controlfunc) {
     bot_killstreak_remote_control(killstreak_info, killstreaks_array, canusefunc, controlfunc, 1);
@@ -611,7 +611,7 @@ function bot_killstreak_vanguard_start(killstreak_info, killstreaks_array, canus
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fae
+// Checksum 0x0, Offset: 0x1f81
 // Size: 0x29
 function isusingvanguard() {
     return isusingremote() && self.usingremote == "vanguard" && isdefined(self.remoteuav);
@@ -619,8 +619,8 @@ function isusingvanguard() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fe0
-// Size: 0x8a0
+// Checksum 0x0, Offset: 0x1fb3
+// Size: 0x8b4
 function bot_control_vanguard() {
     self endon("spawned_player");
     self endon("disconnect");
@@ -659,7 +659,7 @@ function bot_control_vanguard() {
             wait 1 - var_eeb18c09526831f4;
         }
         if (!isdefined(outside_target)) {
-            assertmsg("<dev string:xe0>" + self.origin + "<dev string:x10c>");
+            assertmsg("Bot tried to use Vanguard from location " + self.origin + " but couldn't find an outside node within a 1024 unit radius");
             self botpressbutton("use", 4);
             wait 4;
         }
@@ -791,12 +791,12 @@ function bot_control_vanguard() {
 
     // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2888
-    // Size: 0x4b
+    // Checksum 0x0, Offset: 0x286f
+    // Size: 0x4a
     function function_dd40097206fb80bc(vehicle) {
-        reason = vehicle waittill("<dev string:x14c>");
+        reason = vehicle waittill("<dev string:xcb>");
         if (isdefined(reason)) {
-            assertex(reason != "<dev string:x155>", "<dev string:x164>" + getdvar(@"hash_687fb8f9b7a23245"));
+            assertex(reason != "<dev string:xd1>", "<dev string:xdd>" + getdvar(@"hash_687fb8f9b7a23245"));
         }
     }
 
@@ -804,8 +804,8 @@ function bot_control_vanguard() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28db
-// Size: 0x2b
+// Checksum 0x0, Offset: 0x28c1
+// Size: 0x2a
 function pos_is_valid_outside_for_vanguard(pos) {
     nearest_node = getclosestnodeinsight(pos);
     if (isdefined(nearest_node)) {
@@ -816,7 +816,7 @@ function pos_is_valid_outside_for_vanguard(pos) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x290f
+// Checksum 0x0, Offset: 0x28f4
 // Size: 0x27
 function node_is_valid_outside_for_vanguard(node) {
     if (nodeexposedtosky(node)) {
@@ -827,8 +827,8 @@ function node_is_valid_outside_for_vanguard(node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x293f
-// Size: 0x53
+// Checksum 0x0, Offset: 0x2924
+// Size: 0x54
 function pos_passes_sky_trace(pos) {
     start = pos;
     end = pos + (0, 0, level.bot_vanguard_height_trace_size);
@@ -841,8 +841,8 @@ function pos_passes_sky_trace(pos) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x299b
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x2981
+// Size: 0xce
 function vanguard_is_outside() {
     nearest_node = getclosestnodeinsight(self.origin);
     if (isdefined(nearest_node) && !nodeexposedtosky(nearest_node)) {
@@ -869,8 +869,8 @@ function vanguard_is_outside() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a73
-// Size: 0x3e9
+// Checksum 0x0, Offset: 0x2a58
+// Size: 0x3f4
 function vanguard_control_aiming() {
     self notify("vanguard_control_aiming");
     self endon("vanguard_control_aiming");
@@ -953,7 +953,7 @@ function vanguard_control_aiming() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e64
+// Checksum 0x0, Offset: 0x2e54
 // Size: 0x1cb
 function vanguard_pick_node(current_node) {
     current_node.bot_visited_times[self.entity_number]++;
@@ -985,7 +985,7 @@ function vanguard_pick_node(current_node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3038
+// Checksum 0x0, Offset: 0x3028
 // Size: 0xce
 function bot_vanguard_find_unvisited_nodes(current_node) {
     var_dfb97cdfd9440698 = 99;
@@ -1009,7 +1009,7 @@ function bot_vanguard_find_unvisited_nodes(current_node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x310f
+// Checksum 0x0, Offset: 0x30ff
 // Size: 0x16
 function vanguard_get_node_origin(node) {
     return node.vanguard_origin;
@@ -1017,7 +1017,7 @@ function vanguard_get_node_origin(node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x312e
+// Checksum 0x0, Offset: 0x311e
 // Size: 0x3e
 function origin_is_valid_for_vanguard(origin) {
     result = 1;
@@ -1029,7 +1029,7 @@ function origin_is_valid_for_vanguard(origin) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3175
+// Checksum 0x0, Offset: 0x3165
 // Size: 0xf
 function heli_sniper_allowed() {
     if (!aerial_vehicle_allowed()) {
@@ -1040,7 +1040,7 @@ function heli_sniper_allowed() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x318d
+// Checksum 0x0, Offset: 0x317d
 // Size: 0x12
 function heli_sniper_waittill_initial_goal() {
     self.vehicle_controlling waittill("near_goal");
@@ -1048,7 +1048,7 @@ function heli_sniper_waittill_initial_goal() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a7
+// Checksum 0x0, Offset: 0x3197
 // Size: 0x16
 function bot_control_heli_sniper() {
     thread heli_sniper_clear_script_goal_on_ride();
@@ -1057,7 +1057,7 @@ function bot_control_heli_sniper() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31c5
+// Checksum 0x0, Offset: 0x31b5
 // Size: 0x25
 function heli_sniper_clear_script_goal_on_ride() {
     self endon("spawned_player");
@@ -1069,8 +1069,8 @@ function heli_sniper_clear_script_goal_on_ride() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31f2
-// Size: 0x40
+// Checksum 0x0, Offset: 0x31e2
+// Size: 0x3f
 function heli_sniper_pick_node(current_node) {
     current_node.bot_visited_times[self.entity_number]++;
     best_nodes = bot_heli_find_unvisited_nodes(current_node);
@@ -1079,7 +1079,7 @@ function heli_sniper_pick_node(current_node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x323b
+// Checksum 0x0, Offset: 0x322a
 // Size: 0x23
 function heli_pilot_allowed() {
     if (!aerial_vehicle_allowed()) {
@@ -1093,7 +1093,7 @@ function heli_pilot_allowed() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3267
+// Checksum 0x0, Offset: 0x3256
 // Size: 0x12
 function heli_pilot_waittill_initial_goal() {
     self.vehicle_controlling waittill("goal_reached");
@@ -1101,7 +1101,7 @@ function heli_pilot_waittill_initial_goal() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3281
+// Checksum 0x0, Offset: 0x3270
 // Size: 0xe
 function bot_control_heli_pilot() {
     bot_control_heli("heli_pilot");
@@ -1109,7 +1109,7 @@ function bot_control_heli_pilot() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3297
+// Checksum 0x0, Offset: 0x3286
 // Size: 0x46
 function heli_pilot_pick_node(current_node) {
     current_node.bot_visited_times[self.entity_number]++;
@@ -1120,8 +1120,8 @@ function heli_pilot_pick_node(current_node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e6
-// Size: 0x12e
+// Checksum 0x0, Offset: 0x32d5
+// Size: 0x12f
 function heli_pilot_monitor_flares() {
     self notify("heli_pilot_monitor_flares");
     self endon("heli_pilot_monitor_flares");
@@ -1151,8 +1151,8 @@ function heli_pilot_monitor_flares() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x341c
-// Size: 0x44d
+// Checksum 0x0, Offset: 0x340c
+// Size: 0x463
 function heli_pilot_control_heli_aiming() {
     self notify("heli_pilot_control_heli_aiming");
     self endon("heli_pilot_control_heli_aiming");
@@ -1239,7 +1239,7 @@ function heli_pilot_control_heli_aiming() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3871
+// Checksum 0x0, Offset: 0x3877
 // Size: 0xe
 function bot_control_odin_assault() {
     bot_control_odin("odin_assault");
@@ -1247,7 +1247,7 @@ function bot_control_odin_assault() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3887
+// Checksum 0x0, Offset: 0x388d
 // Size: 0x27
 function odin_assault_perform_action() {
     if (bot_odin_try_spawn_juggernaut()) {
@@ -1264,7 +1264,7 @@ function odin_assault_perform_action() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38b7
+// Checksum 0x0, Offset: 0x38bd
 // Size: 0x8
 function odin_assault_get_target() {
     return bot_odin_find_target_for_rods();
@@ -1272,8 +1272,8 @@ function odin_assault_get_target() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38c8
-// Size: 0x4c
+// Checksum 0x0, Offset: 0x38ce
+// Size: 0x4b
 function bot_odin_find_target_for_rods() {
     var_d91860896d0a8573 = undefined;
     if (isdefined(self.last_large_rod_target) && gettime() - self.last_large_rod_time < 5000) {
@@ -1284,8 +1284,8 @@ function bot_odin_find_target_for_rods() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x391d
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x3922
+// Size: 0x3e
 function bot_odin_try_rods() {
     var_e74293c1e1d5f3e3 = bot_odin_should_fire_rod_at_marker();
     if (var_e74293c1e1d5f3e3 == "large") {
@@ -1301,8 +1301,8 @@ function bot_odin_try_rods() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3965
-// Size: 0x204
+// Checksum 0x0, Offset: 0x3969
+// Size: 0x209
 function bot_odin_should_fire_rod_at_marker() {
     var_c42a5a5477738232 = gettime() >= self.odin.odin_largerodusetime;
     var_6757435ad2fcad1a = gettime() >= self.odin.odin_smallrodusetime;
@@ -1345,7 +1345,7 @@ function bot_odin_should_fire_rod_at_marker() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b72
+// Checksum 0x0, Offset: 0x3b7b
 // Size: 0xe
 function bot_control_odin_support() {
     bot_control_odin("odin_support");
@@ -1353,7 +1353,7 @@ function bot_control_odin_support() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b88
+// Checksum 0x0, Offset: 0x3b91
 // Size: 0x33
 function odin_support_perform_action() {
     if (bot_odin_try_spawn_juggernaut()) {
@@ -1373,7 +1373,7 @@ function odin_support_perform_action() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bc4
+// Checksum 0x0, Offset: 0x3bcd
 // Size: 0x17
 function bot_odin_try_flash() {
     if (bot_odin_should_fire_flash_at_marker()) {
@@ -1385,8 +1385,8 @@ function bot_odin_try_flash() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3be4
-// Size: 0xb1
+// Checksum 0x0, Offset: 0x3bed
+// Size: 0xb3
 function bot_odin_should_fire_flash_at_marker() {
     if (gettime() < self.odin.odin_markingusetime) {
         return false;
@@ -1405,7 +1405,7 @@ function bot_odin_should_fire_flash_at_marker() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c9e
+// Checksum 0x0, Offset: 0x3ca9
 // Size: 0x17
 function bot_odin_try_smoke() {
     if (bot_odin_should_drop_smoke_at_marker()) {
@@ -1417,8 +1417,8 @@ function bot_odin_try_smoke() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cbe
-// Size: 0x124
+// Checksum 0x0, Offset: 0x3cc9
+// Size: 0x125
 function bot_odin_should_drop_smoke_at_marker() {
     if (gettime() < self.odin.odin_smokeusetime) {
         return false;
@@ -1446,7 +1446,7 @@ function bot_odin_should_drop_smoke_at_marker() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3deb
+// Checksum 0x0, Offset: 0x3df7
 // Size: 0x16f
 function bot_odin_get_high_priority_smoke_locations() {
     desired_locations = [];
@@ -1473,8 +1473,8 @@ function bot_odin_get_high_priority_smoke_locations() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f63
-// Size: 0x2c
+// Checksum 0x0, Offset: 0x3f6f
+// Size: 0x2b
 function odin_support_get_target() {
     var_7f1ac86a3f1bbef6 = bot_odin_get_high_priority_smoke_locations();
     if (var_7f1ac86a3f1bbef6.size > 0) {
@@ -1485,7 +1485,7 @@ function odin_support_get_target() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f98
+// Checksum 0x0, Offset: 0x3fa3
 // Size: 0xd3
 function monitor_odin_marker() {
     while (true) {
@@ -1501,8 +1501,8 @@ function monitor_odin_marker() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4073
-// Size: 0x341
+// Checksum 0x0, Offset: 0x407e
+// Size: 0x34c
 function bot_control_odin(type) {
     self endon("spawned_player");
     self endon("disconnect");
@@ -1577,7 +1577,7 @@ function bot_control_odin(type) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43bc
+// Checksum 0x0, Offset: 0x43d2
 // Size: 0x44
 function bot_end_odin_watcher(hidenode) {
     self endon("disconnect");
@@ -1590,8 +1590,8 @@ function bot_end_odin_watcher(hidenode) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4408
-// Size: 0x176
+// Checksum 0x0, Offset: 0x441e
+// Size: 0x179
 function bot_odin_get_player_target_point(player) {
     if (level.teambased && self.team == player.team) {
         return player.origin;
@@ -1628,7 +1628,7 @@ function bot_odin_get_player_target_point(player) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4586
+// Checksum 0x0, Offset: 0x459f
 // Size: 0x78
 function bot_odin_get_closest_visible_outside_player(type, only_players, var_d91860896d0a8573) {
     visible_players = bot_odin_get_visible_outside_players(type, only_players);
@@ -1644,7 +1644,7 @@ function bot_odin_get_closest_visible_outside_player(type, only_players, var_d91
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4607
+// Checksum 0x0, Offset: 0x4620
 // Size: 0x42
 function bot_odin_try_spawn_juggernaut() {
     if (gettime() >= self.odin.odin_juggernautusetime) {
@@ -1657,7 +1657,7 @@ function bot_odin_try_spawn_juggernaut() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4652
+// Checksum 0x0, Offset: 0x466b
 // Size: 0xe
 function bot_odin_find_target_for_airdrop() {
     return bot_odin_get_closest_visible_outside_player("ally", 0);
@@ -1665,7 +1665,7 @@ function bot_odin_find_target_for_airdrop() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4669
+// Checksum 0x0, Offset: 0x4682
 // Size: 0x1f
 function bot_odin_try_airdrop() {
     if (bot_odin_should_airdrop_at_marker()) {
@@ -1678,8 +1678,8 @@ function bot_odin_try_airdrop() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4691
-// Size: 0x28d
+// Checksum 0x0, Offset: 0x46aa
+// Size: 0x295
 function bot_odin_should_airdrop_at_marker() {
     if (gettime() < self.odin.odin_airdropusetime) {
         return false;
@@ -1730,8 +1730,8 @@ function bot_odin_should_airdrop_at_marker() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4927
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x4948
+// Size: 0x6b
 function bot_odin_get_num_valid_care_packages() {
     count = 0;
     foreach (package in level.carepackages) {
@@ -1744,8 +1744,8 @@ function bot_odin_get_num_valid_care_packages() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x499d
-// Size: 0x10c
+// Checksum 0x0, Offset: 0x49bc
+// Size: 0x10e
 function bot_odin_get_visible_outside_players(type, only_players, var_885e7a840bdd3128) {
     outside_players = bot_killstreak_get_outside_players(self.team, type, only_players);
     var_3a7e2e5eb062a1d0 = self botgetfovdot();
@@ -1767,7 +1767,7 @@ function bot_odin_get_visible_outside_players(type, only_players, var_885e7a840b
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ab2
+// Checksum 0x0, Offset: 0x4ad3
 // Size: 0x11
 function is_indoor_map() {
     return level.script == "mp_sovereign";
@@ -1775,7 +1775,7 @@ function is_indoor_map() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4acc
+// Checksum 0x0, Offset: 0x4aed
 // Size: 0x19
 function bot_body_is_dead() {
     return isdefined(self.fauxdead) && self.fauxdead;
@@ -1783,7 +1783,7 @@ function bot_body_is_dead() {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4aee
+// Checksum 0x0, Offset: 0x4b0f
 // Size: 0xba
 function heli_pick_node_furthest_from_center(nodes, type) {
     farthest_node = undefined;
@@ -1803,7 +1803,7 @@ function heli_pick_node_furthest_from_center(nodes, type) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bb0
+// Checksum 0x0, Offset: 0x4bd1
 // Size: 0x16
 function heli_get_node_origin(node) {
     return node.origin;
@@ -1811,7 +1811,7 @@ function heli_get_node_origin(node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bcf
+// Checksum 0x0, Offset: 0x4bf0
 // Size: 0xac
 function find_closest_heli_node_2d(origin, type) {
     var_21d0b4a644efa190 = undefined;
@@ -1828,8 +1828,8 @@ function find_closest_heli_node_2d(origin, type) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c84
-// Size: 0xc6
+// Checksum 0x0, Offset: 0x4ca5
+// Size: 0xc8
 function bot_killstreak_get_zone_allies_outside(only_players) {
     var_e63dcb8377800007 = bot_killstreak_get_all_outside_allies(only_players);
     zone_allies = [];
@@ -1848,8 +1848,8 @@ function bot_killstreak_get_zone_allies_outside(only_players) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d53
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x4d76
+// Size: 0xc3
 function bot_killstreak_get_zone_enemies_outside(only_players) {
     outside_enemies = bot_killstreak_get_all_outside_enemies(only_players);
     zone_enemies = [];
@@ -1866,7 +1866,7 @@ function bot_killstreak_get_zone_enemies_outside(only_players) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e1d
+// Checksum 0x0, Offset: 0x4e42
 // Size: 0x20
 function bot_killstreak_get_all_outside_enemies(only_players) {
     return bot_killstreak_get_outside_players(self.team, "enemy", only_players);
@@ -1874,7 +1874,7 @@ function bot_killstreak_get_all_outside_enemies(only_players) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e46
+// Checksum 0x0, Offset: 0x4e6b
 // Size: 0x20
 function bot_killstreak_get_all_outside_allies(only_players) {
     return bot_killstreak_get_outside_players(self.team, "ally", only_players);
@@ -1882,8 +1882,8 @@ function bot_killstreak_get_all_outside_allies(only_players) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e6f
-// Size: 0x141
+// Checksum 0x0, Offset: 0x4e94
+// Size: 0x142
 function bot_killstreak_get_outside_players(team, type, only_players) {
     outside_players = [];
     all_players = level.participants;
@@ -1913,7 +1913,7 @@ function bot_killstreak_get_outside_players(team, type, only_players) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fb9
+// Checksum 0x0, Offset: 0x4fdf
 // Size: 0xbf
 function bot_heli_find_unvisited_nodes(current_node) {
     var_dfb97cdfd9440698 = 99;
@@ -1937,8 +1937,8 @@ function bot_heli_find_unvisited_nodes(current_node) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5081
-// Size: 0x145
+// Checksum 0x0, Offset: 0x50a7
+// Size: 0x143
 function bot_control_heli(type) {
     self endon("spawned_player");
     self endon("disconnect");
@@ -1967,7 +1967,7 @@ function bot_control_heli(type) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51ce
+// Checksum 0x0, Offset: 0x51f2
 // Size: 0x22
 function bot_get_heli_goal_dist_sq(var_c3edbf19a4808cd4) {
     if (var_c3edbf19a4808cd4) {
@@ -1978,7 +1978,7 @@ function bot_get_heli_goal_dist_sq(var_c3edbf19a4808cd4) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51f8
+// Checksum 0x0, Offset: 0x521c
 // Size: 0x23
 function bot_get_heli_slowdown_dist_sq(var_c3edbf19a4808cd4) {
     if (var_c3edbf19a4808cd4) {
@@ -1989,8 +1989,8 @@ function bot_get_heli_slowdown_dist_sq(var_c3edbf19a4808cd4) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5223
-// Size: 0x4a3
+// Checksum 0x0, Offset: 0x5247
+// Size: 0x4b0
 function bot_control_heli_main_move_loop(type, var_c3edbf19a4808cd4) {
     foreach (node in level.bot_heli_nodes) {
         node.bot_visited_times[self.entity_number] = 0;
@@ -2014,7 +2014,7 @@ function bot_control_heli_main_move_loop(type, var_c3edbf19a4808cd4) {
                     tracestart = current_node.origin + gethelipilotmeshoffset() + level.bot_heli_pilot_traceoffset;
                     traceend = current_node.origin + gethelipilotmeshoffset() - level.bot_heli_pilot_traceoffset;
                     traceresult = scripts\engine\trace::_bullet_trace(tracestart, traceend, 0, undefined, 0, 0, 1);
-                    assertex(isdefined(traceresult["<dev string:x42>"]), "<dev string:x4c>" + var_fcec43ee4c57ab6e);
+                    assertex(isdefined(traceresult["entity"]), "Unable to find heli mesh above or below heli_node at " + var_fcec43ee4c57ab6e);
                     current_target = traceresult["position"] - gethelipilotmeshoffset() + level.bot_ks_heli_offset[type];
                 } else {
                     current_target = var_fcec43ee4c57ab6e;
@@ -2082,8 +2082,8 @@ function bot_control_heli_main_move_loop(type, var_c3edbf19a4808cd4) {
 
 // Namespace namespace_cc7250329787f909 / scripts\mp\bots\bots_killstreaks_remote_vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x56ce
-// Size: 0x1a7
+// Checksum 0x0, Offset: 0x56ff
+// Size: 0x1ad
 function get_random_outside_target() {
     possible_zones = [];
     foreach (z in level.outside_zones) {

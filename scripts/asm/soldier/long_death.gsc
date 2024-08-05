@@ -10,7 +10,7 @@
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30d
+// Checksum 0x0, Offset: 0x2a1
 // Size: 0x163
 function preventpainforashorttime() {
     self endon("kill_long_death");
@@ -43,8 +43,8 @@ function preventpainforashorttime() {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x478
-// Size: 0x1a4
+// Checksum 0x0, Offset: 0x40c
+// Size: 0x1aa
 function dyingcrawlbackaim(statename) {
     self endon("death");
     self notify("end_dying_crawl_back_aim");
@@ -89,8 +89,8 @@ function dyingcrawlbackaim(statename) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x624
-// Size: 0x67
+// Checksum 0x0, Offset: 0x5be
+// Size: 0x66
 function setupaiming(statename) {
     clearknob = asm_lookupanimfromalias(statename, "clear_knob");
     self aiclearanim(clearknob, 0.2);
@@ -103,8 +103,8 @@ function setupaiming(statename) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x693
-// Size: 0x113
+// Checksum 0x0, Offset: 0x62c
+// Size: 0x119
 function dodyingcrawlbloodsmear() {
     self endon("death");
     origintag = "J_SpineLower";
@@ -129,7 +129,7 @@ function dodyingcrawlbloodsmear() {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ae
+// Checksum 0x0, Offset: 0x74d
 // Size: 0x23
 function iscrawldeltaallowed(thexanim) {
     if (self.force_num_crawls > 0) {
@@ -140,7 +140,7 @@ function iscrawldeltaallowed(thexanim) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7da
+// Checksum 0x0, Offset: 0x779
 // Size: 0x51
 function startdyingcrawlbackaimsoon(statename) {
     self endon(statename + "_finished");
@@ -154,8 +154,8 @@ function startdyingcrawlbackaimsoon(statename) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x833
-// Size: 0xbc
+// Checksum 0x0, Offset: 0x7d2
+// Size: 0xbb
 function handlebackcrawlnotetracks(statename, note, params) {
     return_value = 0;
     if (!isdefined(self.bdoingbloodsmear) && issubstr(note, "bodyfall")) {
@@ -183,8 +183,8 @@ function handlebackcrawlnotetracks(statename, note, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f8
-// Size: 0x136
+// Checksum 0x0, Offset: 0x896
+// Size: 0x139
 function playdyingcrawl(asmname, statename, params) {
     self endon(statename + "_finished");
     if (self.force_num_crawls > 0) {
@@ -194,7 +194,7 @@ function playdyingcrawl(asmname, statename, params) {
     }
     animid = asm_getanim(asmname, statename);
     xanim = asm_getxanim(statename, animid);
-    assertex(animhasnotetrack(xanim, "<dev string:x1c>"), "<dev string:x29>" + xanim + "<dev string:x32>");
+    assertex(animhasnotetrack(xanim, "code_move"), "Anim " + xanim + " is missing code move notetrack");
     self aisetanim(statename, animid);
     asm_playfacialanim(asmname, statename, xanim);
     for (i = 0; i < numcrawls; i++) {
@@ -216,8 +216,8 @@ function playdyingcrawl(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa36
-// Size: 0x154
+// Checksum 0x0, Offset: 0x9d7
+// Size: 0x157
 function playdyingcrawlback(asmname, statename, params) {
     self endon(statename + "_finished");
     if (isdefined(self.enemy)) {
@@ -231,7 +231,7 @@ function playdyingcrawlback(asmname, statename, params) {
     setupaiming(statename);
     crawlanim = asm_getanim(asmname, statename);
     crawlxanim = asm_getxanim(statename, crawlanim);
-    assert(animhasnotetrack(crawlxanim, "<dev string:x1c>"));
+    assert(animhasnotetrack(crawlxanim, "code_move"));
     asm_playfacialanim(asmname, statename, crawlxanim);
     self aisetanim(statename, crawlanim);
     for (i = 0; i < numcrawls; i++) {
@@ -253,7 +253,7 @@ function playdyingcrawlback(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb92
+// Checksum 0x0, Offset: 0xb36
 // Size: 0x30
 function playcrawlflipover(asmname, statename, params) {
     utility::lookatentity();
@@ -262,7 +262,7 @@ function playcrawlflipover(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbca
+// Checksum 0x0, Offset: 0xb6e
 // Size: 0x69
 function playcrawlingpaintransition(asmname, statename, params) {
     setearlyfinishtime();
@@ -279,7 +279,7 @@ function playcrawlingpaintransition(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3b
+// Checksum 0x0, Offset: 0xbdf
 // Size: 0x44
 function setearlyfinishtime() {
     if (!isdefined(self.asm.longdeathanims)) {
@@ -290,8 +290,8 @@ function setearlyfinishtime() {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc87
-// Size: 0xaa
+// Checksum 0x0, Offset: 0xc2b
+// Size: 0xab
 function playdyingbackshoot(asmname, statename, params) {
     self endon(statename + "_finished");
     setupaiming(statename);
@@ -311,7 +311,7 @@ function playdyingbackshoot(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd39
+// Checksum 0x0, Offset: 0xcde
 // Size: 0x3e
 function choosedyingbackidle(asmname, statename, params) {
     if (istrue(self.longdeathnoncombat)) {
@@ -322,8 +322,8 @@ function choosedyingbackidle(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd80
-// Size: 0xc4
+// Checksum 0x0, Offset: 0xd25
+// Size: 0xc5
 function playdyingbackidle(asmname, statename, params) {
     self endon(statename + "_finished");
     if (!istrue(self.longdeathnoncombat)) {
@@ -346,7 +346,7 @@ function playdyingbackidle(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4c
+// Checksum 0x0, Offset: 0xdf2
 // Size: 0x3a
 function playstumblingpaintransition(asmname, statename, params) {
     thread preventpainforashorttime();
@@ -357,8 +357,8 @@ function playstumblingpaintransition(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8e
-// Size: 0x154
+// Checksum 0x0, Offset: 0xe34
+// Size: 0x15b
 function playstumblingwander(asmname, statename, params) {
     self endon(statename + "_finished");
     animid = asm_getanim(asmname, statename);
@@ -393,15 +393,18 @@ function playstumblingwander(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xfea
-// Size: 0x2d
+// Checksum 0x0, Offset: 0xf97
+// Size: 0x41
 function hasbeenhitwithemp(asmname, statename, tostatename, params) {
-    return istrue(self.isempd);
+    if (isdefined(self.isempd) && self.isempd) {
+        return true;
+    }
+    return false;
 }
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1020
+// Checksum 0x0, Offset: 0xfe1
 // Size: 0xed
 function shoulddodyingcrawl(asmname, statename, tostatename, params) {
     if (self.forcelongdeath == 4) {
@@ -431,7 +434,7 @@ function shoulddodyingcrawl(asmname, statename, tostatename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1116
+// Checksum 0x0, Offset: 0x10d7
 // Size: 0x8e
 function playlongdeathintro(asmname, statename, params) {
     thread preventpainforashorttime();
@@ -452,7 +455,7 @@ function playlongdeathintro(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ac
+// Checksum 0x0, Offset: 0x116d
 // Size: 0x5c
 function function_c19267f99ab2ffe4(asmname, statename, params) {
     if (istrue(self.var_f4cd424dd91129f3)) {
@@ -464,7 +467,7 @@ function function_c19267f99ab2ffe4(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1210
+// Checksum 0x0, Offset: 0x11d1
 // Size: 0x25
 function playlongdeathmercy(asmname, statename, params) {
     playlongdeathanim(asmname, statename, 0);
@@ -472,8 +475,8 @@ function playlongdeathmercy(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x123d
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x11fe
+// Size: 0xa7
 function playlongdeathidle(asmname, statename, params) {
     if (istrue(self.var_78e092f48b4948ba)) {
         self.var_10d76540f58c6628 = gettime() + self.var_961a07dc03c517ee;
@@ -492,8 +495,8 @@ function playlongdeathidle(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12ed
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x12ad
+// Size: 0xb4
 function playshootinglongdeathidle(asmname, statename, params) {
     if (!isdefined(self.desiredtimeofdeath)) {
         self.desiredtimeofdeath = gettime() + randomintrange(4000, 20000);
@@ -512,7 +515,7 @@ function playshootinglongdeathidle(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13aa
+// Checksum 0x0, Offset: 0x1369
 // Size: 0x24
 function longdeathidlesingleloop(asmname, statename, params) {
     return playlongdeathanim(asmname, statename, 0);
@@ -520,7 +523,7 @@ function longdeathidlesingleloop(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d7
+// Checksum 0x0, Offset: 0x1396
 // Size: 0x4c
 function playlongdeathgrenade(asmname, statename, params) {
     self.var_9be065771308fab4 = gettime() + int(randomfloatrange(1.5, 1.9) * 1000);
@@ -529,7 +532,7 @@ function playlongdeathgrenade(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x142b
+// Checksum 0x0, Offset: 0x13ea
 // Size: 0x48
 function playlongdeathgrenadepull(asmname, statename, params) {
     self.asm.longdeathanims.onfinaldeathcallback = &onfinaldeathdropgrenade;
@@ -538,7 +541,7 @@ function playlongdeathgrenadepull(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x147b
+// Checksum 0x0, Offset: 0x143a
 // Size: 0x8a
 function playlongdeathanim(asmname, statename, var_9d93fc2c06b1754f) {
     deathanim = asm_getanim(asmname, statename);
@@ -555,8 +558,8 @@ function playlongdeathanim(asmname, statename, var_9d93fc2c06b1754f) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x150e
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x14cd
+// Size: 0x8d
 function isanimdeltaallowed(thexanim) {
     if (istrue(self.var_4b6c55151a620061)) {
         return 1;
@@ -575,7 +578,7 @@ function isanimdeltaallowed(thexanim) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15a1
+// Checksum 0x0, Offset: 0x1563
 // Size: 0x12
 function checkstairsoffsetpoint(endpoint) {
     return self isatvalidlongdeathspot(endpoint);
@@ -583,7 +586,7 @@ function checkstairsoffsetpoint(endpoint) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15bc
+// Checksum 0x0, Offset: 0x157e
 // Size: 0x66
 function playlongdeathfinaldeath(asmname, statename, params) {
     if (isdefined(self.asm.longdeathanims.onfinaldeathcallback)) {
@@ -594,8 +597,8 @@ function playlongdeathfinaldeath(asmname, statename, params) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x162a
-// Size: 0x141
+// Checksum 0x0, Offset: 0x15ec
+// Size: 0x145
 function onfinaldeathdropgrenade() {
     if (!isdefined(self.var_c17bc31f4ef0a002)) {
         return;
@@ -622,7 +625,7 @@ function onfinaldeathdropgrenade() {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1773
+// Checksum 0x0, Offset: 0x1739
 // Size: 0x79
 function longdeathgrenadepullnotetrackhandler(note) {
     if (note == "grenade_left") {
@@ -636,8 +639,8 @@ function longdeathgrenadepullnotetrackhandler(note) {
 
 // Namespace long_death / scripts\asm\soldier\long_death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f4
-// Size: 0x9d
+// Checksum 0x0, Offset: 0x17ba
+// Size: 0x9c
 function function_633f7da4f34bba83(asmname, statename, tostatename, params) {
     if (!isdefined(self.grenadeweapon) || isnullweapon(self.grenadeweapon) || !isdefined(self.grenadeweapon.basename)) {
         return false;

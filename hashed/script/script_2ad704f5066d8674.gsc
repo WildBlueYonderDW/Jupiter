@@ -9,7 +9,7 @@
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f7
+// Checksum 0x0, Offset: 0x189
 // Size: 0x44
 function main() {
     level.dialogue_playing = 0;
@@ -21,7 +21,7 @@ function main() {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x243
+// Checksum 0x0, Offset: 0x1d5
 // Size: 0x65
 function function_e174f6ae044c693e(origin, radius, desiredteam, excludeents) {
     if (isdefined(excludeents) && !isarray(excludeents)) {
@@ -35,7 +35,7 @@ function function_e174f6ae044c693e(origin, radius, desiredteam, excludeents) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b1
+// Checksum 0x0, Offset: 0x243
 // Size: 0x8b
 function function_46d1642a9a982a8a(origin, radius, desiredteam, excludeents) {
     if (isdefined(excludeents) && !isarray(excludeents)) {
@@ -55,8 +55,8 @@ function function_46d1642a9a982a8a(origin, radius, desiredteam, excludeents) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x345
-// Size: 0xf3
+// Checksum 0x0, Offset: 0x2d7
+// Size: 0xf5
 function function_7bdde7f2158ec720(alias, audience) {
     speaker = self;
     if (isstruct(self) && isdefined(self.vo_parent)) {
@@ -81,8 +81,8 @@ function function_7bdde7f2158ec720(alias, audience) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x441
-// Size: 0x31
+// Checksum 0x0, Offset: 0x3d5
+// Size: 0x30
 function function_ea5c0accfc20ea48(alias) {
     self endon("death");
     self endon("stop_dialogue");
@@ -92,7 +92,7 @@ function function_ea5c0accfc20ea48(alias) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47a
+// Checksum 0x0, Offset: 0x40d
 // Size: 0x6d
 function get_intensity(alias) {
     if (isdefined(self.var_9af882a4ef5986c0)) {
@@ -105,8 +105,8 @@ function get_intensity(alias) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f0
-// Size: 0xf7
+// Checksum 0x0, Offset: 0x483
+// Size: 0xf4
 function function_63a29fee1a93c0a8(alias, context, audience) {
     self stopsounds(1);
     self stopsoundchannel("voice_bchatter_1_3d", 1);
@@ -141,8 +141,8 @@ function function_63a29fee1a93c0a8(alias, context, audience) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ef
-// Size: 0x25e
+// Checksum 0x0, Offset: 0x57f
+// Size: 0x260
 function anim_facialfiller(msg, looktarget, force, msg_ent, intensity) {
     intensity = default_to(intensity, "sm");
     self endon("death");
@@ -204,7 +204,7 @@ function anim_facialfiller(msg, looktarget, force, msg_ent, intensity) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x855
+// Checksum 0x0, Offset: 0x7e7
 // Size: 0xc0
 function anim_facialanim(guy, anime, faceanim) {
     guy endon("death");
@@ -225,8 +225,8 @@ function anim_facialanim(guy, anime, faceanim) {
 
 // Namespace namespace_f83311618817dbe7 / namespace_e60d0883fe817ff2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x91d
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x8af
+// Size: 0x69
 function clearfaceanimonanimdone(guy, animflag, anime) {
     guy endon("death");
     guy endon("newFacialAnim");

@@ -6,7 +6,7 @@
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa
+// Checksum 0x0, Offset: 0xcc
 // Size: 0x2f
 function get_skill_from_index(index) {
     if (utility::issp() || utility::iscp()) {
@@ -17,7 +17,7 @@ function get_skill_from_index(index) {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x132
+// Checksum 0x0, Offset: 0x104
 // Size: 0x55
 function apply_difficulty_settings_shared(current_frac) {
     assert(isplayer(self));
@@ -28,7 +28,7 @@ function apply_difficulty_settings_shared(current_frac) {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18f
+// Checksum 0x0, Offset: 0x161
 // Size: 0x1c
 function get_difficultysetting_frac(setting, frac) {
     return get_difficultysetting(setting) * frac;
@@ -36,7 +36,7 @@ function get_difficultysetting_frac(setting, frac) {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b4
+// Checksum 0x0, Offset: 0x186
 // Size: 0x36
 function get_difficultysetting(setting, gameskill) {
     if (!isdefined(gameskill)) {
@@ -47,7 +47,7 @@ function get_difficultysetting(setting, gameskill) {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f3
+// Checksum 0x0, Offset: 0x1c5
 // Size: 0x26
 function get_difficultysetting_global(setting) {
     return level.difficultysettings[setting][get_skill_from_index(level.gameskill)];
@@ -55,7 +55,7 @@ function get_difficultysetting_global(setting) {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x222
+// Checksum 0x0, Offset: 0x1f4
 // Size: 0x3
 function always_pain() {
     return false;
@@ -63,7 +63,7 @@ function always_pain() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e
+// Checksum 0x0, Offset: 0x200
 // Size: 0x17
 function pain_protection() {
     if (!pain_protection_check()) {
@@ -74,8 +74,8 @@ function pain_protection() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24e
-// Size: 0xa3
+// Checksum 0x0, Offset: 0x220
+// Size: 0xa2
 function pain_protection_check() {
     if (!isalive(self.enemy)) {
         return false;
@@ -98,7 +98,7 @@ function pain_protection_check() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fa
+// Checksum 0x0, Offset: 0x2cb
 // Size: 0xa3
 function set_accuracy_based_on_situation() {
     if (self function_e8ca4080d02a0bb4() && isalive(self.enemy)) {
@@ -120,7 +120,7 @@ function set_accuracy_based_on_situation() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a5
+// Checksum 0x0, Offset: 0x376
 // Size: 0xc
 function didsomethingotherthanshooting() {
     self.misstimedebounce = 0;
@@ -128,7 +128,7 @@ function didsomethingotherthanshooting() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b9
+// Checksum 0x0, Offset: 0x38a
 // Size: 0x14
 function resetmissdebouncetime() {
     self.misstimedebounce = gettime() + 3000;
@@ -136,7 +136,7 @@ function resetmissdebouncetime() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d5
+// Checksum 0x0, Offset: 0x3a6
 // Size: 0x59
 function default_door_node_flashbang_frequency() {
     if (self.team == "allies") {
@@ -153,7 +153,7 @@ function default_door_node_flashbang_frequency() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x436
+// Checksum 0x0, Offset: 0x407
 // Size: 0x53
 function grenadeawareness() {
     if (self.team == "allies") {
@@ -169,7 +169,7 @@ function grenadeawareness() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x491
+// Checksum 0x0, Offset: 0x462
 // Size: 0x4c
 function map_is_early_in_the_game() {
     if (!isdefined(level.early_level)) {
@@ -186,7 +186,7 @@ function map_is_early_in_the_game() {
 
 // Namespace gameskill / scripts\common\gameskill
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e6
+// Checksum 0x0, Offset: 0x4b7
 // Size: 0xc
 function set_early_level() {
     level.early_level = [];

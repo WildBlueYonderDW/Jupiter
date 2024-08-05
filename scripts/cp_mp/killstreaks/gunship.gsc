@@ -24,8 +24,8 @@
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5a
-// Size: 0x142
+// Checksum 0x0, Offset: 0x19c0
+// Size: 0x141
 function init() {
     bundle = level.streakglobals.streakbundles["gunship"];
     if (!isdefined(bundle)) {
@@ -58,7 +58,7 @@ function init() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa4
+// Checksum 0x0, Offset: 0x1b09
 // Size: 0xd
 function weapongivengunship(streakinfo) {
     return true;
@@ -66,7 +66,7 @@ function weapongivengunship(streakinfo) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fba
+// Checksum 0x0, Offset: 0x1b1f
 // Size: 0x4d
 function function_7ab42d42f465952f() {
     level endon("game_ended");
@@ -80,8 +80,8 @@ function function_7ab42d42f465952f() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x200f
-// Size: 0x194
+// Checksum 0x0, Offset: 0x1b74
+// Size: 0x193
 function function_8e8513a8b071336c() {
     bundle = level.streakglobals.streakbundles["gunship"];
     level.gunship_speed["move"] = 250;
@@ -103,7 +103,7 @@ function function_8e8513a8b071336c() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21ab
+// Checksum 0x0, Offset: 0x1d0f
 // Size: 0xb5
 function function_77e6149ef483d24a() {
     val::group_register("gunshipIntro", ["allow_jump", "usability", "killstreaks", "supers", "gesture", "fire", "weapon_switch", "allow_movement", "offhand_weapons", "shellshock"]);
@@ -112,8 +112,8 @@ function function_77e6149ef483d24a() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2268
-// Size: 0x576
+// Checksum 0x0, Offset: 0x1dcc
+// Size: 0x574
 function function_b0280ee1765554d1() {
     level.scr_animtree["gunship"] = %script_model;
     animindex = "intro_gunship";
@@ -193,7 +193,7 @@ function function_b0280ee1765554d1() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27e6
+// Checksum 0x0, Offset: 0x2348
 // Size: 0x211
 function init_gunship_vo() {
     game["dialog"]["gunship" + "_use"] = "killstreak_remote_operator" + "_request_response";
@@ -217,7 +217,7 @@ function init_gunship_vo() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29ff
+// Checksum 0x0, Offset: 0x2561
 // Size: 0x50
 function function_6fcb27d917ef709b() {
     level._effect["clouds"] = loadfx("vfx/iw8_mp/killstreak/vfx_ac130_view_clouds.vfx");
@@ -227,8 +227,8 @@ function function_6fcb27d917ef709b() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a57
-// Size: 0xcb
+// Checksum 0x0, Offset: 0x25b9
+// Size: 0xca
 function function_ea9e0f077f0d655c() {
     if (isdefined(level.gunshipvisionset)) {
         function_c0b0a582ff9e4d57(level.gunshipvisionset);
@@ -243,8 +243,8 @@ function function_ea9e0f077f0d655c() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b2a
-// Size: 0x21
+// Checksum 0x0, Offset: 0x268b
+// Size: 0x20
 function tryusegunship() {
     streakinfo = createstreakinfo("gunship", self);
     return tryusegunshipfromstruct(streakinfo);
@@ -252,12 +252,11 @@ function tryusegunship() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b54
-// Size: 0xea
+// Checksum 0x0, Offset: 0x26b4
+// Size: 0xe2
 function tryusegunshipfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
-    self notify("using_remote");
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
             return 0;
@@ -290,7 +289,7 @@ function tryusegunshipfromstruct(streakinfo) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c47
+// Checksum 0x0, Offset: 0x279f
 // Size: 0x67
 function gunship_monitormanualplayerexit(owner) {
     level endon("game_ended");
@@ -307,8 +306,8 @@ function gunship_monitormanualplayerexit(owner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cb6
-// Size: 0x628
+// Checksum 0x0, Offset: 0x280e
+// Size: 0x624
 function gunship_startuse(player, streakinfo) {
     level endon("game_ended");
     if (issharedfuncdefined("game", "disable_backpack_inventory")) {
@@ -413,7 +412,6 @@ function gunship_startuse(player, streakinfo) {
     gunship thread gunship_watchownerexitaction(player, "joined_team");
     gunship thread gunship_watchownerexitaction(player, "joined_spectators");
     gunship thread gunship_watchownerexitaction(player, "team_kill_punish");
-    gunship thread gunship_watchownerexitaction(player, "player_fatal_death");
     gunship thread gunship_watchendgame(player);
     gunship thread gunship_playpilotfx(player);
     gunship thread gunship_linklightfxent();
@@ -441,8 +439,8 @@ function gunship_startuse(player, streakinfo) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e7
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x2e3b
+// Size: 0xd7
 function function_25233a050a5e41f0(owner, launchorigin) {
     gunshiprig = undefined;
     if (!islargemap()) {
@@ -468,7 +466,7 @@ function function_25233a050a5e41f0(owner, launchorigin) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c8
+// Checksum 0x0, Offset: 0x2f1b
 // Size: 0x3b
 function gunship_lockedoncallback() {
     playkillstreakoperatordialog("gunship", "gunship" + "_lockedon", 1, undefined, "pilot");
@@ -477,7 +475,7 @@ function gunship_lockedoncallback() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x340b
+// Checksum 0x0, Offset: 0x2f5e
 // Size: 0x1c
 function gunship_lockedonremovedcallback() {
     scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_hidewarning("missileLocking", self.owner, "killstreak");
@@ -485,8 +483,8 @@ function gunship_lockedonremovedcallback() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x342f
-// Size: 0x8fb
+// Checksum 0x0, Offset: 0x2f82
+// Size: 0x8e3
 function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b63785ee0579) {
     player endon("disconnect");
     level endon("game_ended");
@@ -537,7 +535,6 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
         gunshipIntro thread gunship_watchintrodisown("disconnect", streakinfo);
         gunshipIntro thread gunship_watchintrodisown("joined_team", streakinfo);
         gunshipIntro thread gunship_watchintrodisown("joined_spectators", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("player_fatal_death", streakinfo);
         waitframe();
         if (!isdefined(gunshipIntro)) {
             return undefined;
@@ -586,7 +583,6 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
         gunshipIntro thread gunship_watchintrodisown("disconnect", streakinfo);
         gunshipIntro thread gunship_watchintrodisown("joined_team", streakinfo);
         gunshipIntro thread gunship_watchintrodisown("joined_spectators", streakinfo);
-        gunshipIntro thread gunship_watchintrodisown("player_fatal_death", streakinfo);
         var_e618f33d2594b25b = undefined;
         foreach (modelindex, animmodel in level.var_9c7d2f4c2fc66b1f) {
             var_4d4d74b2657628ee = var_ba27aac5a0f799e0.origin;
@@ -647,8 +643,8 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d33
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x386e
+// Size: 0x5d
 function gunship_watchintrodisown(action, streakinfo) {
     self endon("death");
     self endon("gunship_end_intro");
@@ -663,8 +659,8 @@ function gunship_watchintrodisown(action, streakinfo) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d99
-// Size: 0xcd
+// Checksum 0x0, Offset: 0x38d3
+// Size: 0xcc
 function gunship_detachplayerfromintro(gunshipowner, streakinfo) {
     thirdpersoncam = 0;
     /#
@@ -690,8 +686,8 @@ function gunship_detachplayerfromintro(gunshipowner, streakinfo) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e6e
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x39a7
+// Size: 0x3c
 function gunship_hideintromodelonplayerconnect(owner) {
     self endon("death");
     owner endon("disconnect");
@@ -703,7 +699,7 @@ function gunship_hideintromodelonplayerconnect(owner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eb3
+// Checksum 0x0, Offset: 0x39eb
 // Size: 0x139
 function function_c285675bee6618a3(animlength, owner, introsequence) {
     self endon("death");
@@ -735,7 +731,7 @@ function function_c285675bee6618a3(animlength, owner, introsequence) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff4
+// Checksum 0x0, Offset: 0x3b2c
 // Size: 0x55
 function function_37b61f53bc7c8643(owner, delaytime, fstop, focusdistance, focusspeed, var_5587778bb9d6e798) {
     self endon("death");
@@ -747,8 +743,8 @@ function function_37b61f53bc7c8643(owner, delaytime, fstop, focusdistance, focus
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4051
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x3b89
+// Size: 0xe4
 function gunship_startintroshake(animlength, owner, introsequence) {
     self endon("death");
     owner endon("disconnect");
@@ -784,7 +780,7 @@ function gunship_startintroshake(animlength, owner, introsequence) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x413c
+// Checksum 0x0, Offset: 0x3c75
 // Size: 0x60
 function gunship_queuecamerazoom(animlength, owner) {
     self endon("death");
@@ -798,7 +794,7 @@ function gunship_queuecamerazoom(animlength, owner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a4
+// Checksum 0x0, Offset: 0x3cdd
 // Size: 0x57
 function function_2be9ae7928984f8(animlength, owner) {
     owner endon("disconnect");
@@ -812,8 +808,8 @@ function function_2be9ae7928984f8(animlength, owner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4203
-// Size: 0x2d4
+// Checksum 0x0, Offset: 0x3d3c
+// Size: 0x2c1
 function gunship_returnplayer(player, crashing) {
     level callback::callback("killstreak_finish_use", {#streakinfo:self.streakinfo});
     if (isdefined(player)) {
@@ -838,7 +834,6 @@ function gunship_returnplayer(player, crashing) {
         if (issharedfuncdefined("game", "disable_backpack_inventory")) {
             player [[ getsharedfunc("game", "disable_backpack_inventory") ]](0);
         }
-        player val::reset("gunship_weap_swap_safety", "weapon_switch");
         player notify("returning_killstreak_player");
         player.usinggunship = undefined;
         if (getdvarint(@"camera_thirdPerson")) {
@@ -889,7 +884,7 @@ function gunship_returnplayer(player, crashing) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44df
+// Checksum 0x0, Offset: 0x4005
 // Size: 0x124
 function gunship_restoreplayerweapon(streakinfo) {
     self endon("disconnect");
@@ -915,8 +910,8 @@ function gunship_restoreplayerweapon(streakinfo) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x460b
-// Size: 0x4ca
+// Checksum 0x0, Offset: 0x4131
+// Size: 0x4de
 function gunship_watchdamage(gunner) {
     self endon("death");
     self endon("crashing");
@@ -997,8 +992,8 @@ function gunship_watchdamage(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4add
-// Size: 0x71
+// Checksum 0x0, Offset: 0x4617
+// Size: 0x70
 function function_fd00f7fcdbcd8972() {
     self setscriptablepartstate("body_damage_light", "on");
     gunner = self.owner;
@@ -1010,8 +1005,8 @@ function function_fd00f7fcdbcd8972() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b56
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x468f
+// Size: 0x9b
 function function_ab0ec37ba0afd257() {
     self setscriptablepartstate("body_damage_light", "off");
     self setscriptablepartstate("body_damage_medium", "on");
@@ -1026,8 +1021,8 @@ function function_ab0ec37ba0afd257() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bfa
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x4732
+// Size: 0x89
 function function_cf130118900c4c47() {
     self setscriptablepartstate("body_damage_medium", "off");
     self setscriptablepartstate("contrails", "off");
@@ -1041,8 +1036,8 @@ function function_cf130118900c4c47() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c8c
-// Size: 0x8d
+// Checksum 0x0, Offset: 0x47c3
+// Size: 0x8c
 function gunship_startengineblowoutfx() {
     level endon("game_ended");
     self.leftwingfxent setscriptablepartstate("engine_blowout", "on");
@@ -1055,7 +1050,7 @@ function gunship_startengineblowoutfx() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d21
+// Checksum 0x0, Offset: 0x4857
 // Size: 0x40
 function gunship_watchtimeout(gunner) {
     self endon("death");
@@ -1068,7 +1063,7 @@ function gunship_watchtimeout(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d69
+// Checksum 0x0, Offset: 0x489f
 // Size: 0x3b
 function gunship_watchgameend(gunner) {
     self endon("death");
@@ -1080,7 +1075,7 @@ function gunship_watchgameend(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dac
+// Checksum 0x0, Offset: 0x48e2
 // Size: 0xd5
 function gunship_leave(gunner) {
     self endon("death");
@@ -1102,7 +1097,7 @@ function gunship_leave(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e89
+// Checksum 0x0, Offset: 0x49bf
 // Size: 0x23
 function gunship_waittilldestination(destination) {
     while (isdefined(self) && self.origin != destination) {
@@ -1112,24 +1107,20 @@ function gunship_waittilldestination(destination) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb4
-// Size: 0x52
+// Checksum 0x0, Offset: 0x49ea
+// Size: 0x3c
 function gunship_watchownerexitaction(gunner, var_304d14a0f176d5c3) {
     self endon("death");
     self endon("crashing");
     self endon("leaving");
     level endon("game_ended");
     gunner waittill(var_304d14a0f176d5c3);
-    if (var_304d14a0f176d5c3 == "player_fatal_death") {
-        thread gunship_leave(gunner);
-        return;
-    }
     thread gunship_crash(gunner);
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f0e
+// Checksum 0x0, Offset: 0x4a2e
 // Size: 0x5c
 function gunship_watchendgame(gunner) {
     self endon("death");
@@ -1143,7 +1134,7 @@ function gunship_watchendgame(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f72
+// Checksum 0x0, Offset: 0x4a92
 // Size: 0x87
 function gunship_trackvelocity(gunner) {
     self endon("death");
@@ -1160,8 +1151,8 @@ function gunship_trackvelocity(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5001
-// Size: 0x346
+// Checksum 0x0, Offset: 0x4b21
+// Size: 0x34a
 function gunship_spawn(owner, streakinfo, angle, anglevector, gunshipIntro, var_2136b63785ee0579) {
     bundle = level.streakglobals.streakbundles["gunship"];
     gunship = spawn("script_model", var_2136b63785ee0579.origin);
@@ -1218,7 +1209,7 @@ function gunship_spawn(owner, streakinfo, angle, anglevector, gunshipIntro, var_
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5350
+// Checksum 0x0, Offset: 0x4e74
 // Size: 0x4f
 function gunship_updateoverlaycoords(plane) {
     plane endon("death");
@@ -1234,7 +1225,7 @@ function gunship_updateoverlaycoords(plane) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53a7
+// Checksum 0x0, Offset: 0x4ecb
 // Size: 0x98
 function gunship_updateplanemodelcoords(plane) {
     plane endon("death");
@@ -1252,7 +1243,7 @@ function gunship_updateplanemodelcoords(plane) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5447
+// Checksum 0x0, Offset: 0x4f6b
 // Size: 0x85
 function gunship_updateplayerpositioncoords(plane) {
     plane endon("death");
@@ -1268,8 +1259,8 @@ function gunship_updateplayerpositioncoords(plane) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54d4
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x4ff8
+// Size: 0xb9
 function gunship_updateaimingcoords(plane) {
     plane endon("death");
     plane endon("crashing");
@@ -1289,8 +1280,8 @@ function gunship_updateaimingcoords(plane) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5594
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x50b9
+// Size: 0xbd
 function gunship_rotaterig() {
     self endon("death");
     var_25bb708a7d591131 = 10;
@@ -1307,8 +1298,8 @@ function gunship_rotaterig() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5657
-// Size: 0x4c8
+// Checksum 0x0, Offset: 0x517e
+// Size: 0x4b6
 function gunship_attachgunner(gunner) {
     self endon("death");
     self endon("crashing");
@@ -1332,12 +1323,11 @@ function gunship_attachgunner(gunner) {
     gunner _giveweapon(bundle.var_2cb6918da56b085b);
     gunner _giveweapon(bundle.var_2b83894fc24a37fc);
     gunner _switchtoweaponimmediate(bundle.var_b702d1aa92e3f7dc);
-    gunner val::set("gunship_weap_swap_safety", "weapon_switch", 0);
     if (isdefined(level.gunshipvisionset)) {
         self.currentvisionset = level.gunshipvisionset;
     } else {
         self.currentvisionset = bundle.var_7a35928e082dd9b7;
-        if (isdefined(level.mapname) && (issubstr(level.mapname, "_shipment") || issubstr(level.mapname, "mp_skerries"))) {
+        if (isdefined(level.mapname) && (issubstr(level.mapname, "mp_shipment") || issubstr(level.mapname, "mp_skerries"))) {
             self.currentvisionset = bundle.var_6070115b879adfc9;
         }
     }
@@ -1388,8 +1378,8 @@ function gunship_attachgunner(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b27
-// Size: 0x1cd
+// Checksum 0x0, Offset: 0x563c
+// Size: 0x1ce
 function function_58415bfdad59562c(bundle) {
     rightarcclamp = 100;
     leftarcclamp = 100;
@@ -1431,7 +1421,7 @@ function function_58415bfdad59562c(bundle) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cfd
+// Checksum 0x0, Offset: 0x5813
 // Size: 0xc2
 function function_623a9b1b10d1db2e(gunner) {
     gunner endon("disconnect");
@@ -1461,8 +1451,8 @@ function function_623a9b1b10d1db2e(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dc7
-// Size: 0x93
+// Checksum 0x0, Offset: 0x58dd
+// Size: 0x92
 function function_7f87e01d436c03cc(gunner) {
     gunner endon("disconnect");
     level endon("game_ended");
@@ -1481,8 +1471,8 @@ function function_7f87e01d436c03cc(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e62
-// Size: 0x2e3
+// Checksum 0x0, Offset: 0x5977
+// Size: 0x2e5
 function function_dceaa78f8d315302(gunner, var_cc706c96147ed540) {
     gunner endon("disconnect");
     level endon("game_ended");
@@ -1568,8 +1558,8 @@ function function_dceaa78f8d315302(gunner, var_cc706c96147ed540) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x614d
-// Size: 0x93
+// Checksum 0x0, Offset: 0x5c64
+// Size: 0x92
 function function_2b613e06060d8b55(gunner) {
     gunner endon("disconnect");
     self endon("death");
@@ -1588,8 +1578,8 @@ function function_2b613e06060d8b55(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61e8
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x5cfe
+// Size: 0x8b
 function function_75eee29aa3795a05(gunner) {
     gunner endon("disconnect");
     self endon("death");
@@ -1607,8 +1597,8 @@ function function_75eee29aa3795a05(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x627c
-// Size: 0x1ba
+// Checksum 0x0, Offset: 0x5d91
+// Size: 0x1bb
 function function_a3ec651ef5989fb9(gunner, targetoverride) {
     var_e688b198aa9a4b3f = 0;
     /#
@@ -1660,8 +1650,8 @@ function function_a3ec651ef5989fb9(gunner, targetoverride) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x643f
-// Size: 0x2f6
+// Checksum 0x0, Offset: 0x5f55
+// Size: 0x2da
 function gunship_watchchangeweapons(gunner) {
     gunner endon("disconnect");
     self endon("death");
@@ -1684,7 +1674,6 @@ function gunship_watchchangeweapons(gunner) {
         gunner notifyonplayercommand("gunship_switch_weapon_prev", "selectweapon1");
         gunner setclientomnvar("ui_killstreak_weapon", currentweaponindex);
     }
-    gunner val::set("gunship_weap_swap_safety", "weapon_switch", 1);
     while (true) {
         cmd = gunner waittill_any_return_2("gunship_switch_weapon_prev", "gunship_switch_weapon_next");
         if (!isdefined(cmd)) {
@@ -1692,7 +1681,7 @@ function gunship_watchchangeweapons(gunner) {
         }
         gunner playlocalsound("iw8_ks_ac130_weaponswitch");
         currentweapon = gunner getcurrentweapon();
-        newweapon = undefined;
+        newweapon = currentweapon;
         foreach (index, weapon in weaponlistorder) {
             if (currentweapon.basename == weapon) {
                 if (cmd == "gunship_switch_weapon_prev") {
@@ -1710,6 +1699,10 @@ function gunship_watchchangeweapons(gunner) {
                 break;
             }
         }
+        if (newweapon != bundle.var_b702d1aa92e3f7dc) {
+            gunner notify("gunship_hellfire_disable_tracking");
+        }
+        gunner _switchtoweaponimmediate(newweapon);
         if (self.currentvisionset == function_44e0bd95b98288ab()) {
             dofinfo = gunship_getdofinfobyweapon(newweapon);
             gunner setphysicaldepthoffield(dofinfo.fstop, dofinfo.focusdistance, 20, 20);
@@ -1725,13 +1718,6 @@ function gunship_watchchangeweapons(gunner) {
                 currentweaponindex = weaponlistorder.size;
             }
         }
-        if (!isdefined(newweapon)) {
-            newweapon = weaponlistorder[currentweaponindex - 1];
-        }
-        if (newweapon != bundle.var_b702d1aa92e3f7dc) {
-            gunner notify("gunship_hellfire_disable_tracking");
-        }
-        gunner _switchtoweaponimmediate(newweapon);
         gunner setclientomnvar("ui_killstreak_weapon", currentweaponindex);
         gunner function_58707ddfdd9744fa("killstreak_weapon_change_shutter");
         thread function_9214536761e6be23(newweapon);
@@ -1741,8 +1727,8 @@ function gunship_watchchangeweapons(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x673d
-// Size: 0x1bf
+// Checksum 0x0, Offset: 0x6237
+// Size: 0x1c3
 function gunship_watchweaponfired(gunner) {
     self endon("death");
     self endon("crashing");
@@ -1781,7 +1767,7 @@ function gunship_watchweaponfired(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6904
+// Checksum 0x0, Offset: 0x6402
 // Size: 0x71
 function getmissileexplscale(weaponname) {
     scale = 1;
@@ -1796,7 +1782,7 @@ function getmissileexplscale(weaponname) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x697e
+// Checksum 0x0, Offset: 0x647c
 // Size: 0x85
 function getmissileexplradius(weaponname) {
     radius = 1;
@@ -1813,8 +1799,8 @@ function getmissileexplradius(weaponname) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a0c
-// Size: 0xaa
+// Checksum 0x0, Offset: 0x650a
+// Size: 0xa9
 function function_3f087cf63f4156fa(gunship, gunner) {
     gunship endon("death");
     gunship endon("leaving");
@@ -1833,7 +1819,7 @@ function function_3f087cf63f4156fa(gunship, gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6abe
+// Checksum 0x0, Offset: 0x65bb
 // Size: 0x3c
 function gunship_watchthermaltoggle(gunner) {
     if (!isai(gunner)) {
@@ -1847,8 +1833,8 @@ function gunship_watchthermaltoggle(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b02
-// Size: 0x363
+// Checksum 0x0, Offset: 0x65ff
+// Size: 0x36b
 function gunship_watchthermaltoggleinternal(gunner) {
     self endon("death");
     self endon("leaving");
@@ -1901,7 +1887,7 @@ function gunship_watchthermaltoggleinternal(gunner) {
             continue;
         }
         defaultvisionset = bundle.var_7a35928e082dd9b7;
-        if (isdefined(level.mapname) && (issubstr(level.mapname, "_shipment") || issubstr(level.mapname, "mp_skerries") || getdvarint(@"hash_ef7e2418dc2fe517", 0))) {
+        if (isdefined(level.mapname) && (issubstr(level.mapname, "mp_shipment") || issubstr(level.mapname, "mp_skerries") || getdvarint(@"hash_ef7e2418dc2fe517", 0))) {
             defaultvisionset = bundle.var_6070115b879adfc9;
         }
         if (isdefined(level.gunshipvisionset)) {
@@ -1920,7 +1906,7 @@ function gunship_watchthermaltoggleinternal(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e6d
+// Checksum 0x0, Offset: 0x6972
 // Size: 0xcd
 function gunship_getdofinfobyweapon(weaponbasename) {
     dofinfo = spawnstruct();
@@ -1940,7 +1926,7 @@ function gunship_getdofinfobyweapon(weaponbasename) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f43
+// Checksum 0x0, Offset: 0x6a48
 // Size: 0x9a
 function gunship_watchthermalflashlightpos(gunship, gunner) {
     self endon("death");
@@ -1966,7 +1952,7 @@ function gunship_watchthermalflashlightpos(gunship, gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fe5
+// Checksum 0x0, Offset: 0x6aea
 // Size: 0x71
 function gunship_showflashlight() {
     self endon("death");
@@ -1982,8 +1968,8 @@ function gunship_showflashlight() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x705e
-// Size: 0x1fc
+// Checksum 0x0, Offset: 0x6b63
+// Size: 0x203
 function gunship_weaponreload(weapon, gunship) {
     gunship endon("death");
     gunship endon("crashing");
@@ -2034,7 +2020,7 @@ function gunship_weaponreload(weapon, gunship) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7262
+// Checksum 0x0, Offset: 0x6d6e
 // Size: 0xc2
 function gunship_waitforweaponreloadtime(weapon, var_49e6ef3edadd524e) {
     reloadtime = level.weaponreloadtime[weapon.basename];
@@ -2062,8 +2048,8 @@ function gunship_waitforweaponreloadtime(weapon, var_49e6ef3edadd524e) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x732c
-// Size: 0x52
+// Checksum 0x0, Offset: 0x6e38
+// Size: 0x53
 function getgunshipweaponrootname(weapon) {
     index = 0;
     weaponname = weapon.basename;
@@ -2073,8 +2059,8 @@ function getgunshipweaponrootname(weapon) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7387
-// Size: 0xb6
+// Checksum 0x0, Offset: 0x6e94
+// Size: 0xb5
 function gunship_playpilotfx(pilot) {
     self endon("death");
     self endon("leaving");
@@ -2095,7 +2081,7 @@ function gunship_playpilotfx(pilot) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7445
+// Checksum 0x0, Offset: 0x6f51
 // Size: 0x21
 function deleteaftertime(delay) {
     self endon("death");
@@ -2105,7 +2091,7 @@ function deleteaftertime(delay) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x746e
+// Checksum 0x0, Offset: 0x6f7a
 // Size: 0x2f
 function gunship_crash(gunner) {
     self notify("crashing");
@@ -2116,8 +2102,8 @@ function gunship_crash(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x74a5
-// Size: 0xfe
+// Checksum 0x0, Offset: 0x6fb1
+// Size: 0xfd
 function function_43c36396180ee798(gunner) {
     if (!isdefined(gunner)) {
         return;
@@ -2140,8 +2126,8 @@ function function_43c36396180ee798(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x75ab
-// Size: 0x2f7
+// Checksum 0x0, Offset: 0x70b6
+// Size: 0x2fb
 function gunship_movetocrashpos() {
     level endon("game_ended");
     self.leftwingfxent setscriptablepartstate("engine_blowout", "off");
@@ -2187,7 +2173,7 @@ function gunship_movetocrashpos() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x78aa
+// Checksum 0x0, Offset: 0x73b9
 // Size: 0x16
 function gunship_delayhide() {
     level endon("game_ended");
@@ -2197,8 +2183,8 @@ function gunship_delayhide() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78c8
-// Size: 0x98
+// Checksum 0x0, Offset: 0x73d7
+// Size: 0x96
 function gunship_crashexplosionscreenshake(delaytime) {
     level endon("game_ended");
     var_14b1d0692795af2f = delaytime - 2;
@@ -2212,7 +2198,7 @@ function gunship_crashexplosionscreenshake(delaytime) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7968
+// Checksum 0x0, Offset: 0x7475
 // Size: 0x2b
 function gunship_crashexplosionradiostatic(delaytime) {
     level endon("game_ended");
@@ -2222,7 +2208,7 @@ function gunship_crashexplosionradiostatic(delaytime) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x799b
+// Checksum 0x0, Offset: 0x74a8
 // Size: 0x53
 function gunship_crash_audio() {
     waitframe();
@@ -2234,7 +2220,7 @@ function gunship_crash_audio() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x79f6
+// Checksum 0x0, Offset: 0x7503
 // Size: 0x13c
 function gunship_removeplane(wasdestroyed) {
     if (isdefined(self.flashlight)) {
@@ -2270,8 +2256,8 @@ function gunship_removeplane(wasdestroyed) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b3a
-// Size: 0xd0
+// Checksum 0x0, Offset: 0x7647
+// Size: 0xcd
 function function_3856d3338b2c7ebf(gunshipIntro) {
     if (isdefined(gunshipIntro)) {
         if (isdefined(gunshipIntro.var_ba27aac5a0f799e0)) {
@@ -2295,8 +2281,8 @@ function function_3856d3338b2c7ebf(gunshipIntro) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c12
-// Size: 0x84
+// Checksum 0x0, Offset: 0x771c
+// Size: 0x81
 function function_5efa20e5c624be8f(gunshipIntro) {
     if (isdefined(gunshipIntro)) {
         if (isdefined(gunshipIntro.var_5cb1f0f95e16878e)) {
@@ -2311,8 +2297,8 @@ function function_5efa20e5c624be8f(gunshipIntro) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c9e
-// Size: 0x2d5
+// Checksum 0x0, Offset: 0x77a5
+// Size: 0x2d7
 function function_fa9987de43a6169b(gunshipIntro, sequence) {
     self endon("disconnect");
     thirdpersoncam = 0;
@@ -2376,24 +2362,24 @@ function function_fa9987de43a6169b(gunshipIntro, sequence) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7b
-// Size: 0x245
+// Checksum 0x0, Offset: 0x7a84
+// Size: 0x246
 function function_d176c031e49a9127(var_5e0676140eecdf2d, brush_name) {
     init_succeed = 1;
     lighting_info = spawnstruct();
     probe = getent(var_5e0676140eecdf2d, "script_noteworthy");
     if (!isdefined(probe)) {
         /#
-            assertex(0, "<dev string:x46>");
-            self iprintln("<dev string:x46>");
+            assertex(0, "<dev string:x43>");
+            self iprintln("<dev string:x43>");
         #/
         return undefined;
     }
     shadow_brushes = getentarray(brush_name, "targetname");
     if (!isdefined(shadow_brushes)) {
         /#
-            assertex(0, "<dev string:x46>");
-            self iprintln("<dev string:x46>");
+            assertex(0, "<dev string:x43>");
+            self iprintln("<dev string:x43>");
         #/
         return undefined;
     }
@@ -2404,7 +2390,7 @@ function function_d176c031e49a9127(var_5e0676140eecdf2d, brush_name) {
     var_ad02eaa051593bff["pos"] = probe.origin;
     var_ad02eaa051593bff["rot"] = probe.angles;
     lighting_info.var_af2c99167339224 = var_ad02eaa051593bff;
-    foreach (index, brush in shadow_brushes) {
+    foreach (brush in shadow_brushes) {
         brush_t = [];
         brush_t["pos"] = brush.origin;
         brush_t["rot"] = brush.angles;
@@ -2424,8 +2410,8 @@ function function_d176c031e49a9127(var_5e0676140eecdf2d, brush_name) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x81c9
-// Size: 0xed
+// Checksum 0x0, Offset: 0x7cd3
+// Size: 0xe8
 function function_4293b1250d8a40ec(owner, lighting_info, showlighting) {
     if (istrue(showlighting)) {
         lighting_info.probe showtoplayer(owner);
@@ -2442,7 +2428,7 @@ function function_4293b1250d8a40ec(owner, lighting_info, showlighting) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x82be
+// Checksum 0x0, Offset: 0x7dc3
 // Size: 0x42
 function function_4d00f78750774093(lighting_info) {
     if (!isdefined(lighting_info)) {
@@ -2453,8 +2439,8 @@ function function_4d00f78750774093(lighting_info) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8308
-// Size: 0x86
+// Checksum 0x0, Offset: 0x7e0d
+// Size: 0x83
 function function_bbfa3bca65cb8e4c(lighting_info) {
     if (!isdefined(lighting_info)) {
         return;
@@ -2466,7 +2452,7 @@ function function_bbfa3bca65cb8e4c(lighting_info) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8396
+// Checksum 0x0, Offset: 0x7e98
 // Size: 0x70
 function function_38101db6ed950f17(lighting_info) {
     if (!isdefined(lighting_info)) {
@@ -2479,8 +2465,8 @@ function function_38101db6ed950f17(lighting_info) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x840e
-// Size: 0x79
+// Checksum 0x0, Offset: 0x7f10
+// Size: 0x77
 function function_fff560b330fd842d() {
     if (getdvarint(@"hash_e6afce2cf5cf7515") == 0) {
         capture_model = getentarray("ks_gunship_light_only", "script_noteworthy");
@@ -2492,8 +2478,8 @@ function function_fff560b330fd842d() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x848f
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x7f8f
+// Size: 0xa1
 function unlink_brushes(lighting_info) {
     if (!isdefined(lighting_info)) {
         return;
@@ -2507,8 +2493,8 @@ function unlink_brushes(lighting_info) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x853b
-// Size: 0x138
+// Checksum 0x0, Offset: 0x8038
+// Size: 0x137
 function function_7eb343dd6a3f639(player, var_8a46c62f0a756dd3, state, visionset_name, time) {
     thirdpersoncam = undefined;
     /#
@@ -2541,13 +2527,13 @@ function function_7eb343dd6a3f639(player, var_8a46c62f0a756dd3, state, visionset
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x867b
+    // Checksum 0x0, Offset: 0x8177
     // Size: 0x5b
     function function_eb2299f7c29ac70c(gunshipIntro, animent, var_465db5572e637fb7) {
-        animent endon("<dev string:xb1>");
-        self notifyonplayercommand("<dev string:xba>", "<dev string:xcd>");
+        animent endon("<dev string:xab>");
+        self notifyonplayercommand("<dev string:xb1>", "<dev string:xc1>");
         while (true) {
-            self waittill("<dev string:xba>");
+            self waittill("<dev string:xb1>");
             gunshipIntro.var_ba27aac5a0f799e0 thread scripts\common\anim::anim_single_solo(animent, var_465db5572e637fb7);
         }
     }
@@ -2556,8 +2542,8 @@ function function_7eb343dd6a3f639(player, var_8a46c62f0a756dd3, state, visionset
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x86de
-// Size: 0x325
+// Checksum 0x0, Offset: 0x81da
+// Size: 0x333
 function gunship_control_bot_aiming() {
     var_4ac4b608421ecbbb = undefined;
     var_4d571df5f3a8befc = undefined;
@@ -2621,8 +2607,8 @@ function gunship_control_bot_aiming() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a0b
-// Size: 0x1de
+// Checksum 0x0, Offset: 0x8515
+// Size: 0x1c6
 function gunship_handlemissiledetection(player, missileteam, missiletarget, fxtagoverride) {
     self endon("death");
     while (true) {
@@ -2649,8 +2635,7 @@ function gunship_handlemissiledetection(player, missileteam, missiletarget, fxta
             return;
         } else if (curdist < 300 && missiletarget.flaresreservecount <= 0) {
             missiletarget thread gunship_playfakebodyexplosion();
-            weapon = makeweapon(self.weapon_name);
-            missiledamage = weapon getmaxdamage(0);
+            missiledamage = weapongetdamagemax(self.weapon_name);
             if (isdefined(self.owner)) {
                 missiletarget dodamage(missiledamage, self.owner.origin, self.owner, self, "MOD_EXPLOSIVE", self.weapon_name);
             }
@@ -2662,7 +2647,7 @@ function gunship_handlemissiledetection(player, missileteam, missiletarget, fxta
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bf1
+// Checksum 0x0, Offset: 0x86e3
 // Size: 0x83
 function gunship_playfakebodyexplosion() {
     if (!isdefined(self.missileexplcounter)) {
@@ -2680,7 +2665,7 @@ function gunship_playfakebodyexplosion() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c7c
+// Checksum 0x0, Offset: 0x876e
 // Size: 0x73
 function gunship_playflaresfx(fxtagoverride) {
     flarestag = "tag_origin";
@@ -2695,7 +2680,7 @@ function gunship_playflaresfx(fxtagoverride) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cf7
+// Checksum 0x0, Offset: 0x87e9
 // Size: 0xc
 function isusinggunship() {
     return isdefined(self.usinggunship);
@@ -2703,8 +2688,8 @@ function isusinggunship() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d0c
-// Size: 0x41
+// Checksum 0x0, Offset: 0x87fe
+// Size: 0x40
 function gunship_linklightfxent() {
     self endon("death");
     level endon("game_ended");
@@ -2715,7 +2700,7 @@ function gunship_linklightfxent() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d55
+// Checksum 0x0, Offset: 0x8846
 // Size: 0x16b
 function gunship_linkwingfxents() {
     self endon("death");
@@ -2740,11 +2725,11 @@ function gunship_linkwingfxents() {
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8ec8
+    // Checksum 0x0, Offset: 0x89b9
     // Size: 0x4d
     function function_9a76988758d4b96d(wingfxent) {
-        self endon("<dev string:xb1>");
-        level endon("<dev string:xd9>");
+        self endon("<dev string:xab>");
+        level endon("<dev string:xca>");
         while (true) {
             sphere(wingfxent.origin, 100, (1, 0, 0), 0, 1);
             wait 0.05;
@@ -2755,8 +2740,8 @@ function gunship_linkwingfxents() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f1d
-// Size: 0x1ca
+// Checksum 0x0, Offset: 0x8a0e
+// Size: 0x1c8
 function gunship_watchtargets(gunner) {
     self endon("death");
     self endon("leaving");
@@ -2801,8 +2786,8 @@ function gunship_watchtargets(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x90ef
-// Size: 0xc8
+// Checksum 0x0, Offset: 0x8bde
+// Size: 0xc7
 function gunship_getnearbytargets(maintarget) {
     var_69338ca0bf9d8d91 = utility::playersinsphere(maintarget.origin, 300);
     nearbytargets = [];
@@ -2820,7 +2805,7 @@ function gunship_getnearbytargets(maintarget) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x91c0
+// Checksum 0x0, Offset: 0x8cae
 // Size: 0xbd
 function function_39464052869b655d(gunner) {
     self endon("death");
@@ -2848,7 +2833,7 @@ function function_39464052869b655d(gunner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9285
+// Checksum 0x0, Offset: 0x8d73
 // Size: 0x3f
 function gunship_watchkills() {
     while (true) {
@@ -2861,7 +2846,7 @@ function gunship_watchkills() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92cc
+// Checksum 0x0, Offset: 0x8dba
 // Size: 0x3f
 function function_c8437bfb873fd165() {
     while (true) {
@@ -2874,8 +2859,8 @@ function function_c8437bfb873fd165() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9313
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x8e01
+// Size: 0x6d
 function gunship_iskillstreakweapon(weaponname) {
     bundle = level.streakglobals.streakbundles["gunship"];
     return ter_op(isdefined(weaponname) && (weaponname == bundle.var_b702d1aa92e3f7dc || weaponname == bundle.var_2cb6918da56b085b || weaponname == bundle.var_2b83894fc24a37fc), 1, 0);
@@ -2883,7 +2868,7 @@ function gunship_iskillstreakweapon(weaponname) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x938a
+// Checksum 0x0, Offset: 0x8e77
 // Size: 0x39
 function gunship_islargemap() {
     largemap = islargemap();
@@ -2898,8 +2883,8 @@ function gunship_islargemap() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x93cc
-// Size: 0xe7
+// Checksum 0x0, Offset: 0x8eb9
+// Size: 0xe6
 function gunship_allowstances(boolean) {
     if (!istrue(boolean)) {
         self.gunship_disabledstances = [];
@@ -2924,7 +2909,7 @@ function gunship_allowstances(boolean) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x94bb
+// Checksum 0x0, Offset: 0x8fa7
 // Size: 0x31
 function function_486b043f227fca86() {
     self endon("death");
@@ -2935,7 +2920,7 @@ function function_486b043f227fca86() {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x94f4
+// Checksum 0x0, Offset: 0x8fe0
 // Size: 0x44
 function function_f14aa90c4ef905d2(ent) {
     self endon("death");
@@ -2946,8 +2931,8 @@ function function_f14aa90c4ef905d2(ent) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9540
-// Size: 0x64
+// Checksum 0x0, Offset: 0x902c
+// Size: 0x63
 function function_aafc33d685563aa4(owner) {
     self endon("death");
     self endon("crashing");
@@ -2965,8 +2950,8 @@ function function_aafc33d685563aa4(owner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x95ac
-// Size: 0x13e
+// Checksum 0x0, Offset: 0x9097
+// Size: 0x143
 function function_5fbd9704078207ad(owner) {
     self endon("death");
     self endon("crashing");
@@ -3015,8 +3000,8 @@ function function_5fbd9704078207ad(owner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96f2
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x91e2
+// Size: 0xae
 function function_cdf6e1bdfe5b42b5(owner) {
     content = ["physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicleclip"];
     contentoverride = physics_createcontents(content);
@@ -3030,8 +3015,8 @@ function function_cdf6e1bdfe5b42b5(owner) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97a4
-// Size: 0x74
+// Checksum 0x0, Offset: 0x9299
+// Size: 0x73
 function function_9214536761e6be23(targetweapon) {
     self endon("death");
     self notify("gunhip_storing_fov");
@@ -3048,7 +3033,7 @@ function function_9214536761e6be23(targetweapon) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9820
+// Checksum 0x0, Offset: 0x9314
 // Size: 0xce
 function function_ccaa72b347c823bb(gunship, gunner, weaponbasename) {
     gunship endon("death");
@@ -3070,7 +3055,7 @@ function function_ccaa72b347c823bb(gunship, gunner, weaponbasename) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98f6
+// Checksum 0x0, Offset: 0x93ea
 // Size: 0x20
 function function_aaedf89b93495d4f(data) {
     if (isdefined(self)) {
@@ -3080,15 +3065,19 @@ function function_aaedf89b93495d4f(data) {
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x991e
-// Size: 0x226
+// Checksum 0x0, Offset: 0x9412
+// Size: 0x28a
 function function_377ab89187436937(data) {
     self endon("death");
     self notify("gunship_mini_emp_hit");
     self endon("gunship_mini_emp_hit");
-    self.owner endon("detach_gunship_intro");
-    self.owner endon("returning_killstreak_player");
-    thread function_f4b2a9371b53b7ab();
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
+    wait 0.1;
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
+    wait 0.05;
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
+    wait 0.25;
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
     if (!isdefined(self.var_e8d88b601e41fba5) && self.flaresreservecount > 0) {
         self.var_e8d88b601e41fba5 = gettime();
         if (issharedfuncdefined("flares", "reduceReserves")) {
@@ -3124,54 +3113,31 @@ function function_377ab89187436937(data) {
     }
 }
 
-// Namespace gunship / scripts\cp_mp\killstreaks\gunship
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b4c
-// Size: 0x177
-function function_f4b2a9371b53b7ab() {
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
-    result = waittill_any_ents_or_timeout_return(0.1, self.owner, "detach_gunship_intro", self.owner, "returning_killstreak_player", self, "death");
-    if (!isdefined(result) || result != "timeout" || !isdefined(self) || !isalive(self)) {
-        return;
-    }
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
-    result = waittill_any_ents_or_timeout_return(0.05, self.owner, "detach_gunship_intro", self.owner, "returning_killstreak_player", self, "death");
-    if (!isdefined(result) || result != "timeout" || !isdefined(self) || !isalive(self)) {
-        return;
-    }
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
-    result = waittill_any_ents_or_timeout_return(0.25, self.owner, "detach_gunship_intro", self.owner, "returning_killstreak_player", self, "death");
-    if (!isdefined(result) || result != "timeout" || !isdefined(self) || !isalive(self)) {
-        return;
-    }
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
-}
-
 /#
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9ccb
-    // Size: 0xe4
+    // Checksum 0x0, Offset: 0x96a4
+    // Size: 0xe3
     function function_ae468fe5beababc0(var_2136b63785ee0579) {
-        self endon("<dev string:xb1>");
-        self.owner endon("<dev string:xe7>");
-        self.owner endon("<dev string:x106>");
+        self endon("<dev string:xab>");
+        self.owner endon("<dev string:xd5>");
+        self.owner endon("<dev string:xf1>");
         while (true) {
             trace = scripts\engine\trace::ray_trace(self.origin, self.origin - (0, 0, 40000), self);
-            line(self.origin, trace["<dev string:x126>"], (1, 1, 1), 1, 0, 1);
+            line(self.origin, trace["<dev string:x10e>"], (1, 1, 1), 1, 0, 1);
             sphere(var_2136b63785ee0579.origin, 50, (1, 1, 0), 0, 1);
-            self.owner iprintlnbold("<dev string:x132>" + distance(self.origin, trace["<dev string:x126>"]));
+            self.owner iprintlnbold("<dev string:x117>" + distance(self.origin, trace["<dev string:x10e>"]));
             waitframe();
         }
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9db7
-    // Size: 0x114
+    // Checksum 0x0, Offset: 0x978f
+    // Size: 0x116
     function function_9d69dd8c1ff1265c(tagname, var_22c53c353885fe59) {
-        self endon("<dev string:xb1>");
+        self endon("<dev string:xab>");
         while (true) {
             debuglocation = self.origin;
             if (isdefined(tagname)) {
@@ -3192,33 +3158,33 @@ function function_f4b2a9371b53b7ab() {
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9ed3
-    // Size: 0x176
+    // Checksum 0x0, Offset: 0x98ad
+    // Size: 0x17a
     function function_45ad456c933cbb32() {
-        self endon("<dev string:xb1>");
-        self endon("<dev string:x140>");
-        self endon("<dev string:x14b>");
-        self.owner notifyonplayercommand("<dev string:xe7>", "<dev string:x157>");
-        self.owner notifyonplayercommand("<dev string:x106>", "<dev string:x164>");
-        self.owner notifyonplayercommand("<dev string:x106>", "<dev string:x171>");
-        self.flashlight notify("<dev string:x17f>");
-        bundle = level.streakglobals.streakbundles["<dev string:x190>"];
+        self endon("<dev string:xab>");
+        self endon("<dev string:x122>");
+        self endon("<dev string:x12a>");
+        self.owner notifyonplayercommand("<dev string:xd5>", "<dev string:x133>");
+        self.owner notifyonplayercommand("<dev string:xf1>", "<dev string:x13d>");
+        self.owner notifyonplayercommand("<dev string:xf1>", "<dev string:x147>");
+        self.flashlight notify("<dev string:x152>");
+        bundle = level.streakglobals.streakbundles["<dev string:x160>"];
         weaponstocycle = [bundle.var_b702d1aa92e3f7dc, bundle.var_2cb6918da56b085b, bundle.var_2b83894fc24a37fc];
         currentdebugweaponindex = 0;
         currentdebugweapon = weaponstocycle[0];
         while (true) {
-            result = self.owner waittill_any_return_2("<dev string:xe7>", "<dev string:x106>");
+            result = self.owner waittill_any_return_2("<dev string:xd5>", "<dev string:xf1>");
             if (!isdefined(result)) {
                 waitframe();
                 continue;
             }
-            if (result == "<dev string:xe7>") {
+            if (result == "<dev string:xd5>") {
                 currentdebugweaponindex++;
                 if (currentdebugweaponindex > 2) {
                     currentdebugweaponindex = 0;
                 }
                 currentdebugweapon = weaponstocycle[currentdebugweaponindex];
-                self.owner iprintlnbold("<dev string:x19b>" + currentdebugweapon);
+                self.owner iprintlnbold("<dev string:x168>" + currentdebugweapon);
                 continue;
             }
             shotgoal = function_120feaa7e2f0658b(self.owner);
@@ -3228,7 +3194,7 @@ function function_f4b2a9371b53b7ab() {
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa051
+    // Checksum 0x0, Offset: 0x9a2f
     // Size: 0x15
     function function_ce1591d034df25ad(weapon) {
         return weaponfiretime(weapon);
@@ -3236,37 +3202,37 @@ function function_f4b2a9371b53b7ab() {
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa06e
-    // Size: 0xa2
+    // Checksum 0x0, Offset: 0x9a4c
+    // Size: 0xa6
     function function_120feaa7e2f0658b(owner) {
-        content = ["<dev string:x1b9>", "<dev string:x1d5>", "<dev string:x1f4>"];
+        content = ["<dev string:x183>", "<dev string:x19c>", "<dev string:x1b8>"];
         contentoverride = physics_createcontents(content);
         starttrace = owner getvieworigin();
         endtrace = starttrace + anglestoforward(owner getplayerangles()) * 50000;
         trace = scripts\engine\trace::ray_trace(starttrace, endtrace, level.characters, contentoverride);
-        endpos = trace["<dev string:x126>"];
+        endpos = trace["<dev string:x10e>"];
         return endpos;
     }
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa118
-    // Size: 0x165
+    // Checksum 0x0, Offset: 0x9afa
+    // Size: 0x167
     function function_4f101b253c661e40(shotgoal, currentdebugweapon) {
-        self endon("<dev string:xb1>");
-        self endon("<dev string:x140>");
-        self endon("<dev string:x14b>");
-        self.owner endon("<dev string:xe7>");
-        self.owner endon("<dev string:x106>");
+        self endon("<dev string:xab>");
+        self endon("<dev string:x122>");
+        self endon("<dev string:x12a>");
+        self.owner endon("<dev string:xd5>");
+        self.owner endon("<dev string:xf1>");
         while (true) {
             sphere(shotgoal, 10, (1, 1, 0), 0, 60);
-            self.owner iprintlnbold("<dev string:x20f>" + currentdebugweapon + "<dev string:x21a>" + shotgoal + "<dev string:x222>" + getweaponexplosionradius(currentdebugweapon));
+            self.owner iprintlnbold("<dev string:x1d0>" + currentdebugweapon + "<dev string:x1d8>" + shotgoal + "<dev string:x1dd>" + getweaponexplosionradius(currentdebugweapon));
             ammoleft = weaponmaxammo(currentdebugweapon);
             thread function_5d02a3b580b4d80e(shotgoal);
             while (ammoleft > 0) {
                 var_e84b952249e4abe = undefined;
-                if (issharedfuncdefined("<dev string:x190>", "<dev string:x237>")) {
-                    var_e84b952249e4abe = [[ getsharedfunc("<dev string:x190>", "<dev string:x237>") ]](shotgoal, 100);
+                if (issharedfuncdefined("<dev string:x160>", "<dev string:x1ef>")) {
+                    var_e84b952249e4abe = [[ getsharedfunc("<dev string:x160>", "<dev string:x1ef>") ]](shotgoal, 100);
                 }
                 projectile = _magicbullet(makeweapon(currentdebugweapon), self.origin, var_e84b952249e4abe, self.owner);
                 ammoleft--;
@@ -3274,7 +3240,7 @@ function function_f4b2a9371b53b7ab() {
                     wait 1;
                     reloadtimer = level.weaponreloadtime[currentdebugweapon];
                     while (reloadtimer > 0) {
-                        self.owner iprintlnbold("<dev string:x24a>" + currentdebugweapon);
+                        self.owner iprintlnbold("<dev string:x1ff>" + currentdebugweapon);
                         reloadtimer--;
                         wait 1;
                     }
@@ -3286,14 +3252,14 @@ function function_f4b2a9371b53b7ab() {
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa285
+    // Checksum 0x0, Offset: 0x9c69
     // Size: 0x90
     function function_5d02a3b580b4d80e(shotgoal) {
-        self endon("<dev string:xb1>");
-        self endon("<dev string:x140>");
-        self endon("<dev string:x14b>");
-        self.owner endon("<dev string:xe7>");
-        self.owner endon("<dev string:x106>");
+        self endon("<dev string:xab>");
+        self endon("<dev string:x122>");
+        self endon("<dev string:x12a>");
+        self.owner endon("<dev string:xd5>");
+        self.owner endon("<dev string:xf1>");
         while (true) {
             self.flashlight.angles = vectortoangles(shotgoal - self.origin);
             line(self.origin, shotgoal, (1, 1, 1), 1, 0, 1);
@@ -3303,12 +3269,12 @@ function function_f4b2a9371b53b7ab() {
 
     // Namespace gunship / scripts\cp_mp\killstreaks\gunship
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa31d
-    // Size: 0x55
+    // Checksum 0x0, Offset: 0x9d01
+    // Size: 0x54
     function function_66f838db99a91aa3() {
-        self endon("<dev string:xb1>");
+        self endon("<dev string:xab>");
         wait 10;
-        data = scripts\cp_mp\utility\damage_utility::packdamagedata(self.owner, self, 1, self.currentprimaryweapon, "<dev string:x258>", self);
+        data = scripts\cp_mp\utility\damage_utility::packdamagedata(self.owner, self, 1, self.currentprimaryweapon, "<dev string:x20a>", self);
         function_377ab89187436937(data);
         wait 10;
         function_377ab89187436937(data);

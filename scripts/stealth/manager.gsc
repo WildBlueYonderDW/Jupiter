@@ -17,7 +17,7 @@
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46d
+// Checksum 0x0, Offset: 0x551
 // Size: 0x2b
 function main() {
     if (isdefined(level.stealth)) {
@@ -32,7 +32,7 @@ function main() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a0
+// Checksum 0x0, Offset: 0x584
 // Size: 0x2e6
 function init() {
     flag_set("stealth_enabled");
@@ -82,8 +82,8 @@ function init() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78e
-// Size: 0x75
+// Checksum 0x0, Offset: 0x872
+// Size: 0x74
 function function_cadea9f6440479c0(stealthbundlename) {
     /#
         if (getdvarint(@"hash_e6afce2cf5cf7515")) {
@@ -98,12 +98,12 @@ function function_cadea9f6440479c0(stealthbundlename) {
         thread set_stealth_bundle_internal(stealthbundle);
         return;
     }
-    assertmsg("<dev string:x1c>" + stealthbundlename + "<dev string:x30>");
+    assertmsg("stealthbundle: '" + stealthbundlename + "' not found.\n");
 }
 
 // Namespace manager / scripts\stealth\manager
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x80b
+// Checksum 0x0, Offset: 0x8ee
 // Size: 0x40d
 function private set_stealth_bundle_internal(stealthbundle) {
     self notify("set_stealth_bundle_internal");
@@ -175,8 +175,8 @@ function private set_stealth_bundle_internal(stealthbundle) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc20
-// Size: 0xeb
+// Checksum 0x0, Offset: 0xd03
+// Size: 0xea
 function function_dc19ea08106ca928(state) {
     if (!isdefined(self.stealth)) {
         return;
@@ -197,7 +197,7 @@ function function_dc19ea08106ca928(state) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd14
+// Checksum 0x0, Offset: 0xdf6
 // Size: 0x64
 function function_ef72c03cbcb43194(state, var_b8f2440e43198535) {
     if (!isdefined(self.stealth)) {
@@ -211,7 +211,7 @@ function function_ef72c03cbcb43194(state, var_b8f2440e43198535) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd80
+// Checksum 0x0, Offset: 0xe62
 // Size: 0x60
 function setup_stealth_funcs() {
     level scripts\stealth\utility::set_stealth_func("do_stealth", &scripts\stealth\utility::do_stealth);
@@ -223,8 +223,8 @@ function setup_stealth_funcs() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xde8
-// Size: 0x47e
+// Checksum 0x0, Offset: 0xeca
+// Size: 0x482
 function set_default_settings() {
     stealth_hidden = [];
     stealth_hidden["prone"] = 1000;
@@ -282,8 +282,8 @@ function set_default_settings() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x126e
-// Size: 0x1f3
+// Checksum 0x0, Offset: 0x1354
+// Size: 0x1f2
 function init_event_distances() {
     array["spotted"]["death"] = function_9d30fd63965bafa9("death");
     array["hidden"]["death"] = 512;
@@ -314,11 +314,11 @@ function init_event_distances() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1469
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x154e
+// Size: 0xd1
 function set_event_distances(array) {
     foreach (state, var_aecf66bdcfdcc264 in array) {
-        assertex(state == "<dev string:x41>" || state == "<dev string:x4b>", "<dev string:x56>");
+        assertex(state == "hidden" || state == "spotted", "set_event_distances expects the first array key to be hidden or spotted.");
         foreach (event, value in var_aecf66bdcfdcc264) {
             function_20d5809a5332448f(state, event, value);
             if (function_eac0cd99c9c6d8ee() == state) {
@@ -331,7 +331,7 @@ function set_event_distances(array) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1546
+// Checksum 0x0, Offset: 0x1627
 // Size: 0x13
 function set_custom_distances(array) {
     set_event_distances(array);
@@ -339,8 +339,8 @@ function set_custom_distances(array) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1561
-// Size: 0x172
+// Checksum 0x0, Offset: 0x1642
+// Size: 0x171
 function set_detect_ranges_internal(hidden, spotted, var_8f3f480583606401) {
     var_4beaf1e22c2142f6 = 0.25;
     if (isdefined(hidden)) {
@@ -376,7 +376,7 @@ function set_detect_ranges_internal(hidden, spotted, var_8f3f480583606401) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16db
+// Checksum 0x0, Offset: 0x17bb
 // Size: 0xe1
 function manager_thread() {
     while (true) {
@@ -404,8 +404,8 @@ function manager_thread() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c4
-// Size: 0xae
+// Checksum 0x0, Offset: 0x18a4
+// Size: 0xac
 function anyone_in_combat() {
     if (!isdefined(level.stealth)) {
         return false;
@@ -424,8 +424,8 @@ function anyone_in_combat() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x187b
-// Size: 0x91
+// Checksum 0x0, Offset: 0x1959
+// Size: 0x8e
 function function_6c78f7f002b9d507() {
     if (isdefined(level.stealth.groupdata)) {
         foreach (group in level.stealth.groupdata.groups) {
@@ -439,7 +439,7 @@ function function_6c78f7f002b9d507() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1915
+// Checksum 0x0, Offset: 0x19f0
 // Size: 0x3
 function anyone_in_hunt() {
     return false;
@@ -447,8 +447,8 @@ function anyone_in_hunt() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1921
-// Size: 0x10e
+// Checksum 0x0, Offset: 0x19fc
+// Size: 0x10f
 function update_stealth_spotted_thread() {
     waitframe();
     wasspotted = 0;
@@ -483,7 +483,7 @@ function update_stealth_spotted_thread() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a37
+// Checksum 0x0, Offset: 0x1b13
 // Size: 0x99
 function teams_thread() {
     level.stealth.enemies["axis"] = [];
@@ -498,12 +498,12 @@ function teams_thread() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad8
-// Size: 0xc0
+// Checksum 0x0, Offset: 0x1bb4
+// Size: 0xbd
 function event_change(name) {
     function_ab26892d96278702(name);
     ai_event = function_373416b9ec7dd155();
-    foreach (state, var_aecf66bdcfdcc264 in ai_event) {
+    foreach (var_aecf66bdcfdcc264 in ai_event) {
         if (state == name) {
             foreach (key, event in var_aecf66bdcfdcc264) {
                 function_7afb89fc511bf315(key, event);
@@ -515,7 +515,7 @@ function event_change(name) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ba0
+// Checksum 0x0, Offset: 0x1c79
 // Size: 0x4c
 function init_save() {
     flag_init("stealth_player_nade");
@@ -528,8 +528,8 @@ function init_save() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf4
-// Size: 0x3b
+// Checksum 0x0, Offset: 0x1ccd
+// Size: 0x3a
 function player_grenade_check() {
     while (true) {
         self waittill("grenade_pullback");
@@ -541,7 +541,7 @@ function player_grenade_check() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c37
+// Checksum 0x0, Offset: 0x1d0f
 // Size: 0x83
 function player_grenade_check_dieout(grenade) {
     level.stealth.save.player_nades++;
@@ -555,8 +555,8 @@ function player_grenade_check_dieout(grenade) {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cc2
-// Size: 0x60d
+// Checksum 0x0, Offset: 0x1d9a
+// Size: 0x604
 function init_stealth_volumes() {
     level.stealth.combat_volumes = [];
     level.stealth.hunt_volumes = [];
@@ -567,16 +567,16 @@ function init_stealth_volumes() {
     if (isdefined(volumes)) {
         foreach (vol in volumes) {
             if (isdefined(vol.script_stealthgroup) && vol.script_stealthgroup != "-1") {
-                assertex(isdefined(vol.script_stealthgroup), "<dev string:xa2>" + vol.origin);
-                assertex(vol.script_stealthgroup != "<dev string:xd2>" && vol.script_stealthgroup != "<dev string:xd8>", "<dev string:xdc>" + vol.origin);
+                assertex(isdefined(vol.script_stealthgroup), "combat volume missing .script_stealthgroup: " + vol.origin);
+                assertex(vol.script_stealthgroup != "-1" && vol.script_stealthgroup != "", "combat volume does not define any groups in .script_stealthgroup: " + vol.origin);
                 groups = strtok(vol.script_stealthgroup, " ");
                 foreach (group in groups) {
                     /#
-                        if (istrue(level.var_eb4bce9b222e36ac) && (group == "<dev string:x122>" || group == "<dev string:x145>")) {
+                        if (istrue(level.var_eb4bce9b222e36ac) && (group == "<dev string:x1c>" || group == "<dev string:x3c>")) {
                             vol.var_8f311e6e8157487c = 1;
                         }
                         if (isdefined(level.stealth.combat_volumes[group]) && !istrue(vol.var_8f311e6e8157487c)) {
-                            assertmsg("<dev string:x168>" + group + "<dev string:x17a>" + vol.origin + "<dev string:x1a7>" + level.stealth.combat_volumes[group].origin);
+                            assertmsg("<dev string:x5c>" + group + "<dev string:x6b>" + vol.origin + "<dev string:x95>" + level.stealth.combat_volumes[group].origin);
                         }
                     #/
                     level.stealth.combat_volumes[group] = vol;
@@ -589,13 +589,13 @@ function init_stealth_volumes() {
     if (isdefined(volumes)) {
         foreach (vol in volumes) {
             if (isdefined(vol.script_stealthgroup) && vol.script_stealthgroup != "-1") {
-                assertex(isdefined(vol.script_stealthgroup), "<dev string:x1ac>" + vol.origin);
-                assertex(vol.script_stealthgroup != "<dev string:xd2>" && vol.script_stealthgroup != "<dev string:xd8>", "<dev string:x1da>" + vol.origin);
+                assertex(isdefined(vol.script_stealthgroup), "hunt volume missing .script_stealthgroup: " + vol.origin);
+                assertex(vol.script_stealthgroup != "-1" && vol.script_stealthgroup != "", "hunt volume does not define any groups in .script_stealthgroup: " + vol.origin);
                 groups = strtok(vol.script_stealthgroup, " ");
                 foreach (group in groups) {
                     /#
                         if (isdefined(level.stealth.hunt_volumes[group]) && !istrue(vol.var_8f311e6e8157487c)) {
-                            assertmsg("<dev string:x168>" + group + "<dev string:x21e>" + vol.origin + "<dev string:x1a7>" + level.stealth.hunt_volumes[group].origin);
+                            assertmsg("<dev string:x5c>" + group + "<dev string:x97>" + vol.origin + "<dev string:x95>" + level.stealth.hunt_volumes[group].origin);
                         }
                     #/
                     level.stealth.hunt_volumes[group] = vol;
@@ -608,13 +608,13 @@ function init_stealth_volumes() {
     if (isdefined(volumes)) {
         foreach (vol in volumes) {
             if (isdefined(vol.script_stealthgroup) && vol.script_stealthgroup != "-1") {
-                assertex(isdefined(vol.script_stealthgroup), "<dev string:x249>" + vol.origin);
-                assertex(vol.script_stealthgroup != "<dev string:xd2>" && vol.script_stealthgroup != "<dev string:xd8>", "<dev string:x27e>" + vol.origin);
+                assertex(isdefined(vol.script_stealthgroup), "investigate volume missing .script_stealthgroup: " + vol.origin);
+                assertex(vol.script_stealthgroup != "-1" && vol.script_stealthgroup != "", "investigate volume does not define any groups in .script_stealthgroup: " + vol.origin);
                 groups = strtok(vol.script_stealthgroup, " ");
                 foreach (group in groups) {
                     /#
                         if (isdefined(level.stealth.investigate_volumes[group]) && !istrue(vol.var_8f311e6e8157487c)) {
-                            assertmsg("<dev string:x168>" + group + "<dev string:x2c9>" + vol.origin + "<dev string:x1a7>" + level.stealth.investigate_volumes[group].origin);
+                            assertmsg("<dev string:x5c>" + group + "<dev string:xbf>" + vol.origin + "<dev string:x95>" + level.stealth.investigate_volumes[group].origin);
                         }
                     #/
                     level.stealth.investigate_volumes[group] = vol;
@@ -626,7 +626,7 @@ function init_stealth_volumes() {
 
 // Namespace manager / scripts\stealth\manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22d7
+// Checksum 0x0, Offset: 0x23a6
 // Size: 0x3e
 function playerlootenabled() {
     if (isdefined(level.stealth) && isdefined(level.stealth.fnplayerlootenabled)) {

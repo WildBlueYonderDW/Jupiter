@@ -7,7 +7,7 @@
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d5
+// Checksum 0x0, Offset: 0x44c
 // Size: 0x179
 function init() {
     level._effect["melee_spray"] = loadfx("vfx/core/screen/vfx_melee_blood_spray");
@@ -34,15 +34,15 @@ function init() {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x556
-// Size: 0x1f6
+// Checksum 0x0, Offset: 0x5cd
+// Size: 0x1b5
 function _shellshock(name, category, duration, animationresponse, interruptdelayms) {
-    assertex(isdefined(level.shockpriorities), "<dev string:x1c>");
-    assertex(array_contains(getarraykeys(level.shockpriorities), category), "<dev string:x54>");
+    assertex(isdefined(level.shockpriorities), "_shellShock called before shellshock_utility::init()");
+    assertex(array_contains(getarraykeys(level.shockpriorities), category), "_shellShock called with an invalid category.  Valid categories are top, flash, stun, gas, explosion, damage, and bottom.");
     if (!isdefined(interruptdelayms)) {
-        assertex(isdefined(level.shockinterruptdelayfuncs[category]), "<dev string:xd0>" + category + "<dev string:x109>");
+        assertex(isdefined(level.shockinterruptdelayfuncs[category]), "could not find an interrupt delay func for category: " + category + ".");
         interruptdelayms = [[ level.shockinterruptdelayfuncs[category] ]](name, duration);
-        assertex(isdefined(interruptdelayms), "<dev string:x10e>" + name + "<dev string:x131>" + category + "<dev string:x144>");
+        assertex(isdefined(interruptdelayms), "Interrupt delay func for name: " + name + " and cagetory: " + category + " returned undefined.");
     }
     var_e1b45ec24abdbe91 = gettime() + interruptdelayms;
     if (category != "top") {
@@ -66,14 +66,10 @@ function _shellshock(name, category, duration, animationresponse, interruptdelay
     self.shockname = name;
     self.shockcategory = category;
     self.shockinterrupttime = var_e1b45ec24abdbe91;
-    var_5cd5209e58a2b1c8 = 0;
-    if (function_f3bb4f4911a1beb2("perk", "hasPerk", "specialty_dauntless") || function_f3bb4f4911a1beb2("game", "isSpawnProtected")) {
-        var_5cd5209e58a2b1c8 = 1;
-    }
     if (isdefined(animationresponse)) {
-        self shellshock(name, duration, animationresponse, var_5cd5209e58a2b1c8);
+        self shellshock(name, duration, animationresponse);
     } else {
-        self shellshock(name, duration, undefined, var_5cd5209e58a2b1c8);
+        self shellshock(name, duration);
     }
     self notify("_shellshock_cleanup");
     thread shellshock_cleanup(duration);
@@ -81,7 +77,7 @@ function _shellshock(name, category, duration, animationresponse, interruptdelay
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x754
+// Checksum 0x0, Offset: 0x78a
 // Size: 0x40
 function shellshock_cleanup(duration) {
     self endon("disconnect");
@@ -95,7 +91,7 @@ function shellshock_cleanup(duration) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x79c
+// Checksum 0x0, Offset: 0x7d2
 // Size: 0x3d
 function _stopshellshock(fromdeath) {
     self notify("_stopShellShock");
@@ -109,7 +105,7 @@ function _stopshellshock(fromdeath) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e1
+// Checksum 0x0, Offset: 0x817
 // Size: 0x2
 function enableshellshockfunc() {
     
@@ -117,7 +113,7 @@ function enableshellshockfunc() {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7eb
+// Checksum 0x0, Offset: 0x821
 // Size: 0xf
 function disableshellshockfunc() {
     _stopshellshock(function_287a1854579369f5());
@@ -125,7 +121,7 @@ function disableshellshockfunc() {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x802
+// Checksum 0x0, Offset: 0x838
 // Size: 0x18
 function shellshock_interruptdelayfunc(name, duration) {
     return 250;
@@ -133,8 +129,8 @@ function shellshock_interruptdelayfunc(name, duration) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x823
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x859
+// Size: 0x7a
 function shellshock_flashinterruptdelayfunc(name, duration) {
     interruptdelay = undefined;
     switch (name) {
@@ -144,7 +140,7 @@ function shellshock_flashinterruptdelayfunc(name, duration) {
         }
         break;
     default: 
-        assertmsg("<dev string:x15c>");
+        assertmsg("shellshock_flashInterruptDelayFunc called with an invalid name.");
         break;
     }
     return interruptdelay;
@@ -152,8 +148,8 @@ function shellshock_flashinterruptdelayfunc(name, duration) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a7
-// Size: 0xfa
+// Checksum 0x0, Offset: 0x8dc
+// Size: 0xed
 function shellshock_stuninterruptdelayfunc(name, duration) {
     interruptdelay = undefined;
     switch (name) {
@@ -162,8 +158,7 @@ function shellshock_stuninterruptdelayfunc(name, duration) {
     case #"hash_34e7a4cd11aed6bc":
     case #"hash_4084fa47c230dc38":
     case #"hash_986a886b26c9ea90":
-    case #"hash_ed469a6bfff6b265":
-    case #"hash_f64bad791b444c94": 
+    case #"hash_ed469a6bfff6b265": 
         if (issharedfuncdefined("shellshock", "concussionInterruptDelayFunc")) {
             interruptdelay = [[ getsharedfunc("shellshock", "concussionInterruptDelayFunc") ]](duration);
         }
@@ -174,7 +169,7 @@ function shellshock_stuninterruptdelayfunc(name, duration) {
         }
         break;
     default: 
-        assertmsg("<dev string:x19f>");
+        assertmsg("shellshock_stunInterruptDelayFunc called with an invalid name.");
         break;
     }
     return interruptdelay;
@@ -182,8 +177,8 @@ function shellshock_stuninterruptdelayfunc(name, duration) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9aa
-// Size: 0x82
+// Checksum 0x0, Offset: 0x9d2
+// Size: 0x81
 function shellshock_gasinterruptdelayfunc(name, duration) {
     interruptdelay = undefined;
     switch (name) {
@@ -202,8 +197,8 @@ function shellshock_gasinterruptdelayfunc(name, duration) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa35
-// Size: 0x76
+// Checksum 0x0, Offset: 0xa5c
+// Size: 0x75
 function shellshock_damageinterruptdelayfunc(name, duration) {
     interruptdelay = undefined;
     switch (name) {
@@ -221,7 +216,7 @@ function shellshock_damageinterruptdelayfunc(name, duration) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xab4
+// Checksum 0x0, Offset: 0xada
 // Size: 0x14
 function shellshock_nointerruptdelayfunc(name, duration) {
     return false;
@@ -229,7 +224,7 @@ function shellshock_nointerruptdelayfunc(name, duration) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad1
+// Checksum 0x0, Offset: 0xaf7
 // Size: 0x70
 function bloodmeleeeffect(objweapon) {
     self endon("disconnect");
@@ -247,17 +242,11 @@ function bloodmeleeeffect(objweapon) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb49
-// Size: 0x62
+// Checksum 0x0, Offset: 0xb6f
+// Size: 0x42
 function usescriptablemeleeblood(objweapon) {
     if (!isdefined(objweapon) || !isdefined(objweapon.receiver)) {
         return undefined;
-    }
-    if (function_bb839bb513295f10(objweapon)) {
-        return "bloodFXNova";
-    }
-    if (function_55d5c766b382551e(objweapon)) {
-        return "bloodFXDoom";
     }
     if (objweapon.receiver == "iw9_me_sword01") {
         return "bloodFX";
@@ -267,50 +256,19 @@ function usescriptablemeleeblood(objweapon) {
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb3
-// Size: 0x5e
-function function_bb839bb513295f10(weapon) {
-    if (!isdefined(weapon)) {
-        return false;
-    }
-    if (!isdefined(weapon.basename) || !isdefined(weapon.variantid)) {
-        return false;
-    }
-    if (weapon.basename == "iw9_me_sword01_mp" && weapon.variantid == 2) {
-        return true;
-    }
-    return false;
-}
-
-// Namespace shellshock_utility / namespace_1ce798d596a27341
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1a
-// Size: 0x4a
-function function_55d5c766b382551e(weapon) {
-    if (isdefined(weapon) && isdefined(weapon.receiver)) {
-        if (weapon.receiver == "rec_pickaxe" && weapon.receivervarindex == 2) {
-            return true;
-        }
-    }
-    return false;
-}
-
-// Namespace shellshock_utility / namespace_1ce798d596a27341
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6d
-// Size: 0x32
+// Checksum 0x0, Offset: 0xbb9
+// Size: 0x36
 function activatemeleeblood(state) {
     self endon("disconnect");
     self setscriptablepartstate("meleeBlood", state);
-    waitframe();
-    waitframe();
+    wait 0.05;
     self setscriptablepartstate("meleeBlood", "neutral");
 }
 
 // Namespace shellshock_utility / namespace_1ce798d596a27341
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xca7
-// Size: 0x5b
+// Checksum 0x0, Offset: 0xbf7
+// Size: 0x5a
 function play_fx_with_entity(fx, string_array, timeout) {
     self endon("disconnect");
     var_22f48fd7df6c56fb = function_1f9d1f30f6845dd(fx, self geteye(), self);

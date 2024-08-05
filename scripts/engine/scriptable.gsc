@@ -4,7 +4,7 @@
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8
+// Checksum 0x0, Offset: 0x86
 // Size: 0x3b
 function scriptable_setinitcallback(initcallback) {
     if (!isdefined(level.scriptable_init)) {
@@ -15,8 +15,8 @@ function scriptable_setinitcallback(initcallback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb
-// Size: 0x5f
+// Checksum 0x0, Offset: 0xc9
+// Size: 0x5c
 function scriptable_engineinitialize() {
     if (isdefined(level.scriptable_init)) {
         foreach (init_func in level.scriptable_init) {
@@ -27,7 +27,7 @@ function scriptable_engineinitialize() {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x152
+// Checksum 0x0, Offset: 0x12d
 // Size: 0x3b
 function scriptable_addpostinitcallback(callback) {
     if (!isdefined(level.scriptable_postinit)) {
@@ -38,8 +38,8 @@ function scriptable_addpostinitcallback(callback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x195
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x170
+// Size: 0x5c
 function scriptable_enginepostinitialize() {
     if (isdefined(level.scriptable_postinit)) {
         foreach (func in level.scriptable_postinit) {
@@ -50,7 +50,7 @@ function scriptable_enginepostinitialize() {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc
+// Checksum 0x0, Offset: 0x1d4
 // Size: 0x3b
 function scriptable_addusedcallback(usedcallback) {
     if (!isdefined(level.scriptable_used_funcs)) {
@@ -61,7 +61,7 @@ function scriptable_addusedcallback(usedcallback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f
+// Checksum 0x0, Offset: 0x217
 // Size: 0x60
 function scriptable_addusedcallbackbypart(part, usedcallback) {
     if (!isdefined(level.scriptable_used_by_part_funcs)) {
@@ -75,7 +75,7 @@ function scriptable_addusedcallbackbypart(part, usedcallback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a7
+// Checksum 0x0, Offset: 0x27f
 // Size: 0x3b
 function scriptable_addautousecallback(usecallback) {
     if (!isdefined(level.scriptable_autouse_funcs)) {
@@ -86,8 +86,8 @@ function scriptable_addautousecallback(usecallback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ea
-// Size: 0x179
+// Checksum 0x0, Offset: 0x2c2
+// Size: 0x172
 function scriptable_engineused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     if (istrue(var_a5b2c541413aa895)) {
         if (isdefined(level.scriptable_autouse_funcs)) {
@@ -111,8 +111,8 @@ function scriptable_engineused(instance, part, state, player, var_a5b2c541413aa8
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x46b
-// Size: 0x101
+// Checksum 0x0, Offset: 0x43c
+// Size: 0xfc
 function function_2cdeacfad7141a8d(instance, part, state, player, useduration) {
     if (isdefined(level.var_b80c82a60480a43c)) {
         foreach (func in level.var_b80c82a60480a43c) {
@@ -128,7 +128,7 @@ function function_2cdeacfad7141a8d(instance, part, state, player, useduration) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x574
+// Checksum 0x0, Offset: 0x540
 // Size: 0x64
 function function_9a0a13a69553c5a5(part, usedcallback) {
     if (!isdefined(level.var_5aa42233dc7bddcc)) {
@@ -142,7 +142,7 @@ function function_9a0a13a69553c5a5(part, usedcallback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e0
+// Checksum 0x0, Offset: 0x5ac
 // Size: 0x3b
 function function_8daea885ec058271(callback) {
     if (!isdefined(level.var_b80c82a60480a43c)) {
@@ -153,8 +153,8 @@ function function_8daea885ec058271(callback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x623
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x5ef
+// Size: 0x3c
 function function_43f2de646836802d(instance, player) {
     result = 0;
     if (isdefined(level.var_b8e67f48a1d47883)) {
@@ -165,7 +165,7 @@ function function_43f2de646836802d(instance, player) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x669
+// Checksum 0x0, Offset: 0x634
 // Size: 0x3b
 function scriptable_addtouchedcallback(touchedcallback) {
     if (!isdefined(level.scriptable_touched_funcs)) {
@@ -176,8 +176,8 @@ function scriptable_addtouchedcallback(touchedcallback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ac
-// Size: 0x85
+// Checksum 0x0, Offset: 0x677
+// Size: 0x82
 function scriptable_enginetouched(instance, part, state, player) {
     if (isdefined(level.scriptable_touched_funcs)) {
         foreach (touched_func in level.scriptable_touched_funcs) {
@@ -188,7 +188,7 @@ function scriptable_enginetouched(instance, part, state, player) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x739
+// Checksum 0x0, Offset: 0x701
 // Size: 0x3b
 function scriptable_adddamagedcallback(damagedcallback) {
     if (!isdefined(level.scriptable_damaged_funcs)) {
@@ -199,8 +199,8 @@ function scriptable_adddamagedcallback(damagedcallback) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x77c
-// Size: 0xcb
+// Checksum 0x0, Offset: 0x744
+// Size: 0xc8
 function scriptable_enginedamaged(einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname) {
     if (isdefined(level.scriptable_damaged_funcs)) {
         foreach (used_func in level.scriptable_damaged_funcs) {
@@ -211,7 +211,7 @@ function scriptable_enginedamaged(einflictor, eattacker, instance, idamage, idfl
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x84f
+// Checksum 0x0, Offset: 0x814
 // Size: 0x60
 function scriptable_addnotifycallback(funckey, func) {
     if (!isdefined(level.scriptable_notify_callback_funcs)) {
@@ -225,8 +225,8 @@ function scriptable_addnotifycallback(funckey, func) {
 
 // Namespace scriptable / scripts\engine\scriptable
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b7
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x87c
+// Size: 0xce
 function scriptable_enginenotifycallback(instance, note, param, ent, var_535d9c3fdddab5a9) {
     funckey = note;
     if (!isdefined(level.scriptable_notify_callback_funcs)) {

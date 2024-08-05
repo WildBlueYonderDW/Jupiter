@@ -11,7 +11,7 @@
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff
+// Checksum 0x0, Offset: 0x282
 // Size: 0x133
 function init() {
     initanim();
@@ -37,7 +37,7 @@ function init() {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x43a
+// Checksum 0x0, Offset: 0x3bd
 // Size: 0x23
 function play_sound_at_viewheight(aliasname, notification_string, var_a68adbd3eefe9282) {
     self playsound(aliasname);
@@ -45,7 +45,7 @@ function play_sound_at_viewheight(aliasname, notification_string, var_a68adbd3ee
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x465
+// Checksum 0x0, Offset: 0x3e8
 // Size: 0x4
 function should_do_anim() {
     return true;
@@ -53,7 +53,7 @@ function should_do_anim() {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x472
+// Checksum 0x0, Offset: 0x3f5
 // Size: 0x96
 function teleport_entity(origin, angles) {
     if (self.code_classname == "script_vehicle") {
@@ -79,8 +79,8 @@ function teleport_entity(origin, angles) {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x510
-// Size: 0x56
+// Checksum 0x0, Offset: 0x493
+// Size: 0x55
 function function_c606ca98a77e09ca() {
     canteleport = 1;
     if (isdefined(self.vehiclename)) {
@@ -97,7 +97,7 @@ function function_c606ca98a77e09ca() {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x56f
+// Checksum 0x0, Offset: 0x4f1
 // Size: 0x34
 function do_facial_anim(DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, animname, dialogue) {
     return false;
@@ -105,9 +105,9 @@ function do_facial_anim(DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, a
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ac
-// Size: 0x20b
-function do_animation(org, angles, animname, anime, anim_string, idleanim, var_43e50904d011917e) {
+// Checksum 0x0, Offset: 0x52e
+// Size: 0x211
+function do_animation(org, angles, animname, anime, anim_string, idleanim, scripted_node_ent) {
     var_173bdb8ba434651d = 0;
     animation = undefined;
     if (isdefined(idleanim) && !isagent(self)) {
@@ -158,7 +158,7 @@ function do_animation(org, angles, animname, anime, anim_string, idleanim, var_4
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c0
+// Checksum 0x0, Offset: 0x748
 // Size: 0x114
 function mp_anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_owner) {
     anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_owner);
@@ -189,7 +189,7 @@ function mp_anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8dc
+// Checksum 0x0, Offset: 0x864
 // Size: 0x1f
 function mp_entity_handle_notetrack(guy, notetrack) {
     if (guy scripts\anim\notetracks_mp::function_6d9ff7d18e45dc9c(notetrack)) {
@@ -199,7 +199,7 @@ function mp_entity_handle_notetrack(guy, notetrack) {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x903
+// Checksum 0x0, Offset: 0x88b
 // Size: 0x6d
 function anim_player_solo(player, player_rig, anime, tag, var_9e8a16d47a03007a, animname_override) {
     self endon("death");
@@ -213,7 +213,7 @@ function anim_player_solo(player, player_rig, anime, tag, var_9e8a16d47a03007a, 
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x978
+// Checksum 0x0, Offset: 0x900
 // Size: 0x48
 function anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override) {
     if (!isdefined(var_9e8a16d47a03007a)) {
@@ -224,8 +224,8 @@ function anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, ani
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c8
-// Size: 0x140
+// Checksum 0x0, Offset: 0x950
+// Size: 0x13f
 function anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override) {
     duration = 0;
     foreach (player in players) {
@@ -249,8 +249,8 @@ function anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb10
-// Size: 0x90
+// Checksum 0x0, Offset: 0xa97
+// Size: 0x8e
 function play_xcam(xcamasset, origin, angles) {
     camnum = undefined;
     camnum = default_to(camnum, 0);
@@ -262,12 +262,12 @@ function play_xcam(xcamasset, origin, angles) {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba8
-// Size: 0x41
+// Checksum 0x0, Offset: 0xb2d
+// Size: 0x40
 function function_3c8f0102ea5254f3(framecount) {
     frametime = 0.0333333 * framecount;
     if (frametime <= 0) {
-        println("<dev string:x1c>" + frametime + "<dev string:x36>");
+        println("<dev string:x1c>" + frametime + "<dev string:x33>");
         return;
     }
     wait frametime;
@@ -275,7 +275,7 @@ function function_3c8f0102ea5254f3(framecount) {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf1
+// Checksum 0x0, Offset: 0xb75
 // Size: 0x121
 function function_b9c0db166bfa05de(startorg, startangles) {
     self.oldgoalradius = self.goalradius;
@@ -304,7 +304,7 @@ function function_b9c0db166bfa05de(startorg, startangles) {
 
 // Namespace anim_mp / scripts\mp\anim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd1b
+// Checksum 0x0, Offset: 0xc9f
 // Size: 0xa4
 function function_4e8646c3e9f9ec0a() {
     self pushplayer(0);

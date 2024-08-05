@@ -10,7 +10,7 @@
 
 // Namespace player / scripts\stealth\player
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x343
+// Checksum 0x0, Offset: 0x31e
 // Size: 0xea
 function main() {
     if (isdefined(self.stealth)) {
@@ -44,7 +44,7 @@ function main() {
 
 // Namespace player / scripts\stealth\player
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x435
+// Checksum 0x0, Offset: 0x410
 // Size: 0x1d
 function function_e403865f115834a8(message) {
     function_31a67e5538887627(self, message, 1);
@@ -53,7 +53,7 @@ function function_e403865f115834a8(message) {
 
 // Namespace player / scripts\stealth\player
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x45a
+// Checksum 0x0, Offset: 0x435
 // Size: 0x1c
 function function_3718fc282393305(message) {
     function_31a67e5538887627(self, message, 0);
@@ -62,8 +62,8 @@ function function_3718fc282393305(message) {
 
 // Namespace player / scripts\stealth\player
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47e
-// Size: 0x4e2
+// Checksum 0x0, Offset: 0x459
+// Size: 0x4ea
 function combatstate_thread(enabled) {
     if (!isdefined(enabled)) {
         enabled = 1;
@@ -183,8 +183,8 @@ function combatstate_thread(enabled) {
 
 // Namespace player / scripts\stealth\player
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x968
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x94b
+// Size: 0x8d
 function combatstate_updatethread() {
     while (true) {
         name, type = self waittill("player_combat_state_updated");
@@ -196,33 +196,33 @@ function combatstate_updatethread() {
 
 // Namespace player / scripts\stealth\player
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fe
+// Checksum 0x0, Offset: 0x9e0
 // Size: 0xbe
 function combatstate_addupdatefunc(key, func) {
     assert(isplayer(self));
     assert(isdefined(self.stealth));
     assert(isdefined(self.stealth.combatstate));
-    assert(isdefined(key), "<dev string:x1c>");
-    assert(!array_contains_key(self.stealth.combatstate.updatefuncs, key), "<dev string:x49>" + key + "<dev string:x6d>");
+    assert(isdefined(key), "Must have a key to identify the function!");
+    assert(!array_contains_key(self.stealth.combatstate.updatefuncs, key), "CombatState updateFunc with key " + key + " already exists!");
     self.stealth.combatstate.updatefuncs[key] = func;
 }
 
 // Namespace player / scripts\stealth\player
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac4
+// Checksum 0x0, Offset: 0xaa6
 // Size: 0xd6
 function combatstate_removeupdatefunc(key) {
     assert(isplayer(self));
     assert(isdefined(self.stealth));
     assert(isdefined(self.stealth.combatstate));
-    assert(isdefined(key), "<dev string:x1c>");
-    assert(array_contains_key(self.stealth.combatstate.updatefuncs, key), "<dev string:x49>" + key + "<dev string:x81>");
+    assert(isdefined(key), "Must have a key to identify the function!");
+    assert(array_contains_key(self.stealth.combatstate.updatefuncs, key), "CombatState updateFunc with key " + key + " doesn't exist!");
     self.stealth.combatstate.updatefuncs = array_remove_key(self.stealth.combatstate.updatefuncs, key);
 }
 
 // Namespace player / scripts\stealth\player
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xba2
+// Checksum 0x0, Offset: 0xb84
 // Size: 0x2a
 function playerattackedmonitor() {
     while (true) {
@@ -233,7 +233,7 @@ function playerattackedmonitor() {
 
 // Namespace player / scripts\stealth\player
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd4
+// Checksum 0x0, Offset: 0xbb6
 // Size: 0x15a
 function stealthhints_thread() {
     self endon("stealth_disabled");
@@ -253,8 +253,8 @@ function stealthhints_thread() {
 
 // Namespace player / scripts\stealth\player
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd36
-// Size: 0x266
+// Checksum 0x0, Offset: 0xd18
+// Size: 0x267
 function stealthhints_eventmonitor() {
     self endon("death");
     while (isalive(self)) {
@@ -311,7 +311,7 @@ function stealthhints_eventmonitor() {
 
 // Namespace player / scripts\stealth\player
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa4
+// Checksum 0x0, Offset: 0xf87
 // Size: 0x16b
 function stealthhints_aimonitor(ai, eventtype) {
     self endon("combat_started");
@@ -334,7 +334,7 @@ function stealthhints_aimonitor(ai, eventtype) {
 
 // Namespace player / scripts\stealth\player
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1117
+// Checksum 0x0, Offset: 0x10fa
 // Size: 0xa0
 function stealthhints_deathmonitor() {
     self waittill("death");
@@ -355,7 +355,7 @@ function stealthhints_deathmonitor() {
 
 // Namespace player / scripts\stealth\player
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11bf
+// Checksum 0x0, Offset: 0x11a2
 // Size: 0x84
 function stealthhints_combatmonitor() {
     self endon("death");

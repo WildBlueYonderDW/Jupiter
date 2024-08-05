@@ -6,8 +6,8 @@
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a
-// Size: 0x50
+// Checksum 0x0, Offset: 0xdd
+// Size: 0x45
 function init() {
     if (getdvarint(@"hash_1a92c8ba1b57a968", 0) == 0) {
         return;
@@ -16,14 +16,13 @@ function init() {
         setdevdvar(@"hash_81644941d60ec323", 1);
         setdevdvar(@"hash_ac6f58a6e20ed4c2", 1);
     #/
-    createthreatbiasgroup("Bots");
     level thread function_2366683817cdb090();
 }
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x172
-// Size: 0x2a0
+// Checksum 0x0, Offset: 0x12a
+// Size: 0x29e
 function function_2366683817cdb090() {
     if (game["roundsPlayed"] > 0) {
         return;
@@ -72,7 +71,7 @@ function function_2366683817cdb090() {
                 level.var_69def5c06e03559 = scripts\engine\utility::array_remove(level.var_69def5c06e03559, level.player.pers["<dev string:x1c>"]);
                 level.var_69def5c06e03559 = scripts\engine\utility::array_combine([level.player.pers["<dev string:x1c>"]], level.var_69def5c06e03559);
             } else {
-                level.var_69def5c06e03559 = ["<dev string:x24>", "<dev string:x2e>"];
+                level.var_69def5c06e03559 = ["<dev string:x21>", "<dev string:x28>"];
             }
         }
     #/
@@ -92,8 +91,8 @@ function function_2366683817cdb090() {
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x3d0
+// Size: 0xd5
 function outline_players() {
     if (!getdvarint(@"hash_e40a51d94d1570ea", 0)) {
         return;
@@ -114,7 +113,7 @@ function outline_players() {
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fa
+// Checksum 0x0, Offset: 0x4ad
 // Size: 0xd
 function pause() {
     level.var_ce2396e9ae4bc1a0 = 1;
@@ -122,7 +121,7 @@ function pause() {
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50f
+// Checksum 0x0, Offset: 0x4c2
 // Size: 0xc
 function run() {
     level.var_ce2396e9ae4bc1a0 = 0;
@@ -130,7 +129,7 @@ function run() {
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x523
+// Checksum 0x0, Offset: 0x4d6
 // Size: 0x15
 function function_6cce72ce8bb6af87(teams) {
     level.var_69def5c06e03559 = teams;
@@ -138,7 +137,7 @@ function function_6cce72ce8bb6af87(teams) {
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x540
+// Checksum 0x0, Offset: 0x4f3
 // Size: 0x15
 function function_4a18dd73a966821e(count) {
     level.var_737572a27a1ca724 = count;
@@ -146,7 +145,7 @@ function function_4a18dd73a966821e(count) {
 
 // Namespace namespace_438781effce634d4 / namespace_2c19af30dc7a566c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x55d
+// Checksum 0x0, Offset: 0x510
 // Size: 0x2a
 function modegetforceoperatorcustomization(player, operatorref, operatorSkinRef) {
     return ["jup_mp_delta", 0];

@@ -17,7 +17,7 @@
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x307
+// Checksum 0x0, Offset: 0x281
 // Size: 0x8e
 function initstealthfunctions() {
     self.fnsetstealthstate = &scripts\aitypes\stealth::function_20bf793de5175709;
@@ -34,7 +34,7 @@ function initstealthfunctions() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39d
+// Checksum 0x0, Offset: 0x317
 // Size: 0x32
 function isidlescriptedanim() {
     return isdefined(self.stealth) && self.var_fe5ebefa740c7106 == 0 && self._blackboard.var_6ff150891bb0c47;
@@ -42,7 +42,7 @@ function isidlescriptedanim() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d8
+// Checksum 0x0, Offset: 0x352
 // Size: 0x1b
 function isidle() {
     return isdefined(self.stealth) && self.var_fe5ebefa740c7106 == 0;
@@ -50,7 +50,7 @@ function isidle() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fc
+// Checksum 0x0, Offset: 0x376
 // Size: 0x1c
 function isinvestigating() {
     return isdefined(self.stealth) && self.var_fe5ebefa740c7106 == 1;
@@ -58,7 +58,7 @@ function isinvestigating() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x421
+// Checksum 0x0, Offset: 0x39b
 // Size: 0x1c
 function ishunting() {
     return isdefined(self.stealth) && self.var_fe5ebefa740c7106 == 2;
@@ -66,7 +66,7 @@ function ishunting() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x446
+// Checksum 0x0, Offset: 0x3c0
 // Size: 0x1c
 function iscombating() {
     return isdefined(self.stealth) && self.var_fe5ebefa740c7106 == 3;
@@ -74,7 +74,7 @@ function iscombating() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46b
+// Checksum 0x0, Offset: 0x3e5
 // Size: 0x1b
 function stealth_initfriendly(taskid) {
     scripts\stealth\friendly::main();
@@ -83,7 +83,7 @@ function stealth_initfriendly(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48f
+// Checksum 0x0, Offset: 0x409
 // Size: 0x1f
 function stealth_terminatefriendly(taskid) {
     self.stealth = undefined;
@@ -92,7 +92,7 @@ function stealth_terminatefriendly(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b6
+// Checksum 0x0, Offset: 0x430
 // Size: 0x1b
 function stealth_initneutral(taskid) {
     scripts\stealth\neutral::main();
@@ -101,7 +101,7 @@ function stealth_initneutral(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4da
+// Checksum 0x0, Offset: 0x454
 // Size: 0x23
 function isinlight(lightvalue) {
     if (!isdefined(lightvalue)) {
@@ -112,7 +112,7 @@ function isinlight(lightvalue) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x506
+// Checksum 0x0, Offset: 0x480
 // Size: 0x2
 function updatevisionforlighting() {
     
@@ -120,8 +120,8 @@ function updatevisionforlighting() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x510
-// Size: 0x132
+// Checksum 0x0, Offset: 0x48a
+// Size: 0x130
 function forceflashlightplayercanseeifnecessary() {
     if (isdefined(self.flashlight) && self.flashlight) {
         var_4f9b0be341b4c88d = 0.1;
@@ -137,8 +137,8 @@ function forceflashlightplayercanseeifnecessary() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64a
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x5c2
+// Size: 0xbe
 function function_e75ff8b7f46a7761(taskid) {
     var_cb489a1a37e61b8e = ent_flag_exist("react_to_dynolights") && ent_flag("react_to_dynolights");
     if (var_cb489a1a37e61b8e && !isdefined(self.lightmeter)) {
@@ -160,7 +160,7 @@ function function_e75ff8b7f46a7761(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x710
+// Checksum 0x0, Offset: 0x689
 // Size: 0x37
 function function_fe4155eb92b02f4a() {
     if (!self isinscriptedstate()) {
@@ -174,8 +174,8 @@ function function_fe4155eb92b02f4a() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x74f
-// Size: 0x220
+// Checksum 0x0, Offset: 0x6c8
+// Size: 0x221
 function updatelightbasedflashlight(state, var_45af66a61bdb7b50) {
     if (self isinscriptedstate()) {
         return;
@@ -226,7 +226,7 @@ function updatelightbasedflashlight(state, var_45af66a61bdb7b50) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x977
+// Checksum 0x0, Offset: 0x8f1
 // Size: 0xb
 function isidlecurious() {
     return self.var_d17737f2fb2cea58;
@@ -234,8 +234,8 @@ function isidlecurious() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98b
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x905
+// Size: 0xa0
 function idle_init(taskid) {
     self function_ae41fbf799ba43f(1, "bt");
     scripts\stealth\event::event_escalation_clear();
@@ -254,7 +254,7 @@ function idle_init(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa35
+// Checksum 0x0, Offset: 0x9ae
 // Size: 0x4f
 function idle_terminate(taskid) {
     self notify("stop_going_to_node");
@@ -268,7 +268,7 @@ function idle_terminate(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8d
+// Checksum 0x0, Offset: 0xa06
 // Size: 0x2d
 function stealth_shouldinvestigate(taskid) {
     if (self.var_fe5ebefa740c7106 == 1) {
@@ -279,7 +279,7 @@ function stealth_shouldinvestigate(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xac3
+// Checksum 0x0, Offset: 0xa3c
 // Size: 0xd
 function investigate_shouldfacedecentdirectionwhenidle() {
     return !istrue(self.limitstealthturning);
@@ -287,8 +287,8 @@ function investigate_shouldfacedecentdirectionwhenidle() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad9
-// Size: 0xb5
+// Checksum 0x0, Offset: 0xa52
+// Size: 0xb4
 function investigate_setreaction(event) {
     var_25a7f9b7f59cc41e = "small";
     if (event.typeorig == "bulletwhizby" || event.typeorig == "grenade danger") {
@@ -303,7 +303,7 @@ function investigate_setreaction(event) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb96
+// Checksum 0x0, Offset: 0xb0e
 // Size: 0x2d
 function stealth_shouldhunt(taskid) {
     if (self.var_fe5ebefa740c7106 == 2) {
@@ -314,7 +314,7 @@ function stealth_shouldhunt(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbcc
+// Checksum 0x0, Offset: 0xb44
 // Size: 0x9
 function hunt_clearroomdata() {
     self function_ca38a887735b9b48();
@@ -322,7 +322,7 @@ function hunt_clearroomdata() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdd
+// Checksum 0x0, Offset: 0xb55
 // Size: 0xde
 function function_6057074fd95d3e65() {
     var_8b8967d098e7c16e = 147456;
@@ -349,7 +349,7 @@ function function_6057074fd95d3e65() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc4
+// Checksum 0x0, Offset: 0xc3c
 // Size: 0x14
 function hunt_updateeveryframe(taskid) {
     return anim.success;
@@ -357,7 +357,7 @@ function hunt_updateeveryframe(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xce1
+// Checksum 0x0, Offset: 0xc59
 // Size: 0x5b
 function hunt_custom_init(taskid) {
     scripts\stealth\utility::set_patrol_style("cqb");
@@ -369,8 +369,8 @@ function hunt_custom_init(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd45
-// Size: 0x8f
+// Checksum 0x0, Offset: 0xcbd
+// Size: 0x8e
 function hunt_custom_update(taskid) {
     if (!self.var_f843fbbada4e59b2) {
         return anim.failure;
@@ -390,7 +390,7 @@ function hunt_custom_update(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xddd
+// Checksum 0x0, Offset: 0xd54
 // Size: 0x4f
 function hunt_custom_terminate(taskid) {
     if (isdefined(self.stealth.funcs["hunt_custom_terminate"])) {
@@ -401,7 +401,7 @@ function hunt_custom_terminate(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe35
+// Checksum 0x0, Offset: 0xdac
 // Size: 0x32
 function hunt_initialdelay_init(taskid) {
     self.bt.instancedata[taskid] = gettime() + randomintrange(500, 1500);
@@ -409,7 +409,7 @@ function hunt_initialdelay_init(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6f
+// Checksum 0x0, Offset: 0xde6
 // Size: 0x56
 function hunt_initialdelay(taskid) {
     if (!isdefined(self.var_7dee6dfdb05ecaf9) || isdefined(bb_getcovernode()) || gettime() >= self.bt.instancedata[taskid]) {
@@ -420,7 +420,7 @@ function hunt_initialdelay(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xece
+// Checksum 0x0, Offset: 0xe45
 // Size: 0x20
 function hunt_initialdelay_terminate(taskid) {
     self.bt.instancedata[taskid] = undefined;
@@ -428,8 +428,8 @@ function hunt_initialdelay_terminate(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xef6
-// Size: 0x144
+// Checksum 0x0, Offset: 0xe6d
+// Size: 0x145
 function hunt_cqbtargetupdate(instancedata) {
     pod = function_bc5df124338cefea(self);
     assert(isdefined(pod));
@@ -451,7 +451,7 @@ function hunt_cqbtargetupdate(instancedata) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1043
+// Checksum 0x0, Offset: 0xfbb
 // Size: 0x14
 function hunt_shouldhunker(taskid) {
     return anim.failure;
@@ -459,8 +459,8 @@ function hunt_shouldhunker(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1060
-// Size: 0xf2
+// Checksum 0x0, Offset: 0xfd8
+// Size: 0xf4
 function hunt_hunker_init(taskid) {
     curtime = gettime();
     instancedata = spawnstruct();
@@ -482,8 +482,8 @@ function hunt_hunker_init(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x115a
-// Size: 0x18d
+// Checksum 0x0, Offset: 0x10d4
+// Size: 0x190
 function hunt_hunker(taskid) {
     curtime = gettime();
     if (curtime > self.bt.instancedata[taskid].nextcoverchecktime) {
@@ -513,7 +513,7 @@ function hunt_hunker(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f0
+// Checksum 0x0, Offset: 0x126d
 // Size: 0x20
 function hunt_hunker_terminate(taskid) {
     self.bt.instancedata[taskid] = undefined;
@@ -521,8 +521,8 @@ function hunt_hunker_terminate(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1318
-// Size: 0x7f
+// Checksum 0x0, Offset: 0x1295
+// Size: 0x7e
 function hunt_hunker_shouldexpose(taskid) {
     var_129825f5ea14c1e4 = 5000;
     if (!isinlight(self.lightmeter)) {
@@ -537,8 +537,8 @@ function hunt_hunker_shouldexpose(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a0
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x131c
+// Size: 0xd7
 function hunt_hunker_expose_init(taskid) {
     instancedata = spawnstruct();
     instancedata.endtime = gettime() + 4000;
@@ -557,7 +557,7 @@ function hunt_hunker_expose_init(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1480
+// Checksum 0x0, Offset: 0x13fb
 // Size: 0x5e
 function hunt_hunker_expose(taskid) {
     curtime = gettime();
@@ -570,7 +570,7 @@ function hunt_hunker_expose(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e7
+// Checksum 0x0, Offset: 0x1462
 // Size: 0x64
 function hunt_hunker_expose_terminate(taskid) {
     self.var_abc30858a62a19a = undefined;
@@ -582,8 +582,8 @@ function hunt_hunker_expose_terminate(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1553
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x14ce
+// Size: 0xb6
 function hunt_isincover(taskid) {
     if (!isdefined(self.node)) {
         return anim.failure;
@@ -606,7 +606,7 @@ function hunt_isincover(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1613
+// Checksum 0x0, Offset: 0x158d
 // Size: 0x21
 function hunt_active_terminate(taskid) {
     scripts\smartobjects\utility::clearsmartobject(bb_getrequestedsmartobject());
@@ -615,7 +615,7 @@ function hunt_active_terminate(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x163c
+// Checksum 0x0, Offset: 0x15b6
 // Size: 0x14
 function function_6771d1c0abc4da9c(taskid) {
     return anim.failure;
@@ -623,8 +623,8 @@ function function_6771d1c0abc4da9c(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1659
-// Size: 0x10e
+// Checksum 0x0, Offset: 0x15d3
+// Size: 0x112
 function function_b647c0d07e4a3078(taskid) {
     pod = function_bc5df124338cefea(self);
     assert(isdefined(pod));
@@ -646,7 +646,7 @@ function function_b647c0d07e4a3078(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x176f
+// Checksum 0x0, Offset: 0x16ed
 // Size: 0xd2
 function function_5ba0240304e46139(taskid) {
     if (self.pathpending) {
@@ -667,7 +667,7 @@ function function_5ba0240304e46139(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x184a
+// Checksum 0x0, Offset: 0x17c8
 // Size: 0x2a
 function function_8f3c5de8d0839565(taskid) {
     self.var_a41edf45bb0ff97 = undefined;
@@ -676,8 +676,8 @@ function function_8f3c5de8d0839565(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x187c
-// Size: 0x97
+// Checksum 0x0, Offset: 0x17fa
+// Size: 0x98
 function function_90ed2a34d9f66902(taskid) {
     pod = function_bc5df124338cefea(self);
     assert(isdefined(pod));
@@ -699,8 +699,8 @@ function function_90ed2a34d9f66902(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x191b
-// Size: 0x139
+// Checksum 0x0, Offset: 0x189a
+// Size: 0x13b
 function function_7e3b6c64f2c2c6be(taskid) {
     pod = function_bc5df124338cefea(self);
     assert(isdefined(pod));
@@ -728,7 +728,7 @@ function function_7e3b6c64f2c2c6be(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a5d
+// Checksum 0x0, Offset: 0x19de
 // Size: 0xb
 function function_1baa3d287f64fa3(taskid) {
     
@@ -736,7 +736,7 @@ function function_1baa3d287f64fa3(taskid) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a70
+// Checksum 0x0, Offset: 0x19f1
 // Size: 0x20
 function function_9b6fd81057ede5ce() {
     self.var_587d8840dea10869 = 0;
@@ -746,7 +746,7 @@ function function_9b6fd81057ede5ce() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a98
+// Checksum 0x0, Offset: 0x1a19
 // Size: 0x61
 function clearstealthvolume() {
     if (isdefined(level.stealth.combat_volumes[self.script_stealthgroup]) && iscombating() || isdefined(level.stealth.hunt_volumes[self.script_stealthgroup]) && ishunting()) {
@@ -756,7 +756,7 @@ function clearstealthvolume() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b01
+// Checksum 0x0, Offset: 0x1a82
 // Size: 0xf8
 function function_6bdcfa57946930c7(event) {
     assert(isdefined(event.typeorig));
@@ -779,7 +779,7 @@ function function_6bdcfa57946930c7(event) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c01
+// Checksum 0x0, Offset: 0x1b82
 // Size: 0x14e
 function function_9c4a08f7dcd2796b() {
     if (!isdefined(self.var_bb3bab49c9a764a4) || !isdefined(self.stealth.investigateevent)) {
@@ -797,7 +797,7 @@ function function_9c4a08f7dcd2796b() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d58
+// Checksum 0x0, Offset: 0x1cd9
 // Size: 0x1f
 function function_de475c37aeeaf6c() {
     self.stealth.investigateevent = undefined;
@@ -806,8 +806,8 @@ function function_de475c37aeeaf6c() {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d7f
-// Size: 0x22f
+// Checksum 0x0, Offset: 0x1d00
+// Size: 0x233
 function function_9499f9e2b35b85c8(event, podstate) {
     if (isplayer(self.var_da668f8de95278e9) && !isplayer(event.entity) && event.typeorig != "saw_corpse") {
         return;
@@ -845,7 +845,7 @@ function function_9499f9e2b35b85c8(event, podstate) {
 
 // Namespace stealth / scripts\aitypes\stealth
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fb6
+// Checksum 0x0, Offset: 0x1f3b
 // Size: 0x52
 function function_20bf793de5175709(statename, e) {
     if (!flag("stealth_enabled") || !isdefined(self.stealth) || !istrue(self.stealth_enabled)) {

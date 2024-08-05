@@ -6,7 +6,7 @@
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d3
+// Checksum 0x0, Offset: 0x18a
 // Size: 0x2
 function function_1bdc76359002a87d() {
     
@@ -14,7 +14,7 @@ function function_1bdc76359002a87d() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd
+// Checksum 0x0, Offset: 0x194
 // Size: 0x2f
 function function_6c1e0eb333fee7fe() {
     thread function_d2c67316e3340d42();
@@ -27,7 +27,7 @@ function function_6c1e0eb333fee7fe() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x214
+// Checksum 0x0, Offset: 0x1cb
 // Size: 0x67
 function function_6a4d394e7f9fc34e() {
     while (true) {
@@ -45,7 +45,7 @@ function function_6a4d394e7f9fc34e() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x283
+// Checksum 0x0, Offset: 0x23a
 // Size: 0x3e
 function function_a48875a04bede9a6(weaponobj) {
     if (isdefined(weaponobj) && isdefined(weaponobj.scope) && string_starts_with(weaponobj.scope, "snscope_drop")) {
@@ -56,8 +56,8 @@ function function_a48875a04bede9a6(weaponobj) {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ca
-// Size: 0xac
+// Checksum 0x0, Offset: 0x281
+// Size: 0xae
 function function_48c1bb804931bb07() {
     self endon("weapon_change");
     contents = create_contents(1, 1, 1, 0, 0, 1, 0, 0, 0, 0);
@@ -75,8 +75,8 @@ function function_48c1bb804931bb07() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37e
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x337
+// Size: 0x6c
 function function_844dc249ef1b3a5e() {
     self endon("weapon_change");
     thread function_46d948b40cc362dc();
@@ -96,8 +96,8 @@ function function_844dc249ef1b3a5e() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f3
-// Size: 0x97
+// Checksum 0x0, Offset: 0x3ab
+// Size: 0x98
 function function_3e83a8605613947c(contents) {
     level endon("target_sighted");
     while (true) {
@@ -114,8 +114,8 @@ function function_3e83a8605613947c(contents) {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x492
-// Size: 0x92
+// Checksum 0x0, Offset: 0x44b
+// Size: 0x93
 function function_46d948b40cc362dc() {
     lastenemy = undefined;
     thread function_86dae4285c17eba2();
@@ -143,7 +143,7 @@ function function_46d948b40cc362dc() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x52c
+// Checksum 0x0, Offset: 0x4e6
 // Size: 0x6a
 function function_86dae4285c17eba2() {
     for (startingenemies = undefined; !isdefined(startingenemies); startingenemies = getaiarray("axis")) {
@@ -168,7 +168,7 @@ function function_86dae4285c17eba2() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59e
+// Checksum 0x0, Offset: 0x558
 // Size: 0x74
 function targetenemy(enemy) {
     enemy endon("death");
@@ -186,7 +186,7 @@ function targetenemy(enemy) {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x61a
+// Checksum 0x0, Offset: 0x5d4
 // Size: 0xa2
 function function_808cd37a5a40862d() {
     self endon("weapon_change");
@@ -211,7 +211,7 @@ function function_808cd37a5a40862d() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c4
+// Checksum 0x0, Offset: 0x67e
 // Size: 0x74
 function function_e8ca271588171c26() {
     range = self getclientomnvar("ui_scope_range_finder_distance");
@@ -228,7 +228,7 @@ function function_e8ca271588171c26() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x740
+// Checksum 0x0, Offset: 0x6fa
 // Size: 0x59
 function function_621629aca9bfb262(range) {
     drop = math::normalize_value(0, 2000, range);
@@ -243,7 +243,7 @@ function function_621629aca9bfb262(range) {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a2
+// Checksum 0x0, Offset: 0x75c
 // Size: 0x18
 function function_d2c67316e3340d42() {
     waittill_any_3("death", "disconnect", "showing_final_killcam");
@@ -251,7 +251,7 @@ function function_d2c67316e3340d42() {
 
 // Namespace namespace_359eabeed0aa16a9 / namespace_6215040ccc256734
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c2
+// Checksum 0x0, Offset: 0x77c
 // Size: 0x1a
 function deathcleanup() {
     self endon("disconnect");

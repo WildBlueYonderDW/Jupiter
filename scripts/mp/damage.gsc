@@ -442,7 +442,7 @@ function callback_playerdamage_internal(einflictor, eattacker, victim, idamage, 
     if (isdefined(eattacker) && eattacker _hasperk("specialty_super_strength") && smeansofdeath == "MOD_MELEE") {
         idamage = victim.maxhealth;
     }
-    if (isJuggerMoshGameMode() && isdefined(objweapon) && is_equal(objweapon.basename, "jup_jp23_me_swhiskey_mp")) {
+    if (function_a305f5d1be837817() && isdefined(objweapon) && is_equal(objweapon.basename, "jup_jp23_me_swhiskey_mp")) {
         idamage = victim.maxhealth;
     }
     if (isdefined(objweapon)) {
@@ -2752,7 +2752,7 @@ function handledamagefeedback(einflictor, eattacker, victim, idamage, smeansofde
             typehit = "hitlaststand";
         } else if (!isagent(victim) && victim function_f1dcadc8f7c3477c()) {
             typehit = "hitlaststand";
-        } else if (istrue(victim.isjuggernaut) && !isJuggerMoshGameMode()) {
+        } else if (istrue(victim.isjuggernaut) && !function_a305f5d1be837817()) {
             if (istrue(victim.isjuggernautrecon)) {
                 typehit = "hitjuggernautrecon";
             } else {
@@ -2814,7 +2814,7 @@ function handledamagefeedback(einflictor, eattacker, victim, idamage, smeansofde
         } else if (getdvarint(@"hash_1db87c3b655b5645", 0) == 1) {
             typehit = "hithealth";
         }
-        eattacker game_utility::clearSpawnProtection();
+        eattacker game_utility::function_e3301eb009262dfa();
         bulletdamage = utility::isbulletdamage(smeansofdeath);
         hitmarkertype = utility::ter_op(bulletdamage && weapon::isprimaryweapon(objweapon), "standardspread", "standard");
         if (istrue(level.var_3ff7c73209fcf59d)) {
@@ -6283,7 +6283,7 @@ function monitordamageoneshot(damage, attacker, direction_vec, point, meansofdea
         if (isplayer(attacker)) {
             attacker damagefeedback::updatedamagefeedback(damagefeedback);
             if (isreallyalive(attacker)) {
-                attacker scripts\mp\utility\game::clearSpawnProtection();
+                attacker scripts\mp\utility\game::function_e3301eb009262dfa();
             }
         }
     }

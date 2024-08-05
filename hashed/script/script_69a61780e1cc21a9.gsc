@@ -21,7 +21,7 @@
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31c
+// Checksum 0x0, Offset: 0x2a2
 // Size: 0x13
 function main() {
     function_c0b3ddc9a6bdcc46("little_bird", &little_bird_init);
@@ -29,15 +29,18 @@ function main() {
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x337
-// Size: 0x1bd
+// Checksum 0x0, Offset: 0x2bd
+// Size: 0x210
 function private little_bird_init() {
     if (!function_9697379150687859("little_bird")) {
         return;
     }
-    level.lb_dmg_factor_driverless_collision = getdvarfloat(@"hash_e85cda72d3c3c14b", 4);
-    level.var_78575fd6a5acb7d3 = getdvarfloat(@"hash_270ecb2b6990667f", 0.25);
-    level.var_18cd46c9f47ec9fe = getdvarfloat(@"hash_b452f0068f4e43da", 0.75);
+    level.lb_dmg_factor_fuselage = getdvarfloat(@"hash_caaf89c827ec21", 1);
+    level.lb_dmg_factor_tail_stabilizer = getdvarfloat(@"hash_b169f648e4e1b87f", 1);
+    level.lb_dmg_factor_main_rotor = getdvarfloat(@"hash_78352418b2460f21", 1.2);
+    level.lb_dmg_factor_tail_rotor = getdvarfloat(@"hash_b522e174ec772a4a", 1);
+    level.lb_dmg_factor_landing_gear = getdvarfloat(@"hash_c2dc6a2c32c62f18", 0.5);
+    level.lb_dmg_factor_driverless_collision = getdvarfloat(@"hash_e85cda72d3c3c14b", 3);
     level.lb_impulse_dmg_threshold_top = getdvarfloat(@"hash_3d4b0c0e7008d889", 0.9);
     level.lb_impulse_dmg_threshold_mid = getdvarfloat(@"hash_eeaced8fd62d7d31", 0.5);
     level.lb_impulse_dmg_threshold_low = getdvarfloat(@"hash_fada138fde409535", 0.2);
@@ -59,8 +62,8 @@ function private little_bird_init() {
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4fc
-// Size: 0x2d
+// Checksum 0x0, Offset: 0x4d5
+// Size: 0x2c
 function private little_bird_initomnvars() {
     var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle("little_bird");
     var_e2818ad39a3341b4.ammoids["flares"] = 1;
@@ -68,8 +71,8 @@ function private little_bird_initomnvars() {
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x531
-// Size: 0x42
+// Checksum 0x0, Offset: 0x509
+// Size: 0x41
 function private little_bird_initdamage() {
     var_d2e455d494f8d46e = vehicle_damage_getleveldatafordamagestate("little_bird", "heavy", 1);
     var_d2e455d494f8d46e.onentercallback = &little_bird_onenterheavydamagestate;
@@ -78,7 +81,7 @@ function private little_bird_initdamage() {
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x57b
+// Checksum 0x0, Offset: 0x552
 // Size: 0x151
 function private little_bird_create(spawndata, faildata) {
     spawndata.cannotbesuspended = 1;
@@ -111,89 +114,46 @@ function private little_bird_create(spawndata, faildata) {
 }
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
-// Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x6d5
-// Size: 0x9b
-function private function_403e79a58ca142a3(damageinfo, damagefactor) {
-    if (!isdefined(damageinfo.damagefactor)) {
-        damageinfo.damagefactor = damagefactor;
-        /#
-            damageinfo.debugstring = "<dev string:x1c>";
-        #/
-    } else {
-        damageinfo.damagefactor *= damagefactor;
-        /#
-            damageinfo.debugstring += "<dev string:x20>";
-        #/
-    }
-    /#
-        damageinfo.debugstring += damagefactor;
-    #/
-}
-
-// Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x778
-// Size: 0x40a
+// Checksum 0x0, Offset: 0x6ac
+// Size: 0x2e0
 function private collision_damage_watcher() {
     self endon("death");
     self vehphys_enablecollisioncallback(1);
     while (true) {
         body0, body1, flag0, flag1, position, normal, normalspeed, ent, partenum = self waittill("collision");
         if (gettime() - self.borntime < 5000) {
-            /#
-                collision_debug(position, normal, normalspeed, 0, "<dev string:x25>");
-            #/
             continue;
         }
         if (isdefined(ent) && istrue(ent.iscrossbowbolt)) {
-            /#
-                collision_debug(position, normal, normalspeed, 0, "<dev string:x31>");
-            #/
             continue;
         }
         if (isdefined(ent) && isdefined(ent.helperdronetype) && ent.helperdronetype == "radar_drone_recon") {
-            /#
-                collision_debug(position, normal, normalspeed, 0, "<dev string:x43>");
-            #/
             continue;
         }
         if (istrue(self.var_a1a5d39c25c6d70b)) {
-            /#
-                collision_debug(position, normal, normalspeed, 0, "<dev string:x58>");
-            #/
             continue;
         }
-        damageinfo = spawnstruct();
-        function_403e79a58ca142a3(damageinfo, normalspeed);
-        if (isdefined(self.var_70ec04f736523dd0)) {
-            function_403e79a58ca142a3(damageinfo, self vehicle_gettopspeedforward() / self.var_70ec04f736523dd0);
-        }
+        damagefactor = normalspeed;
         driver = vehicle_occupancy_getdriver(self);
         if (!isdefined(driver)) {
-            function_403e79a58ca142a3(damageinfo, level.lb_dmg_factor_driverless_collision);
+            damagefactor *= level.lb_dmg_factor_driverless_collision;
         }
         pitch = self.angles[0];
         if (pitch > 180) {
             pitch -= 360;
         }
-        if (abs(pitch) > level.lb_pitch_roll_dmg_threshold) {
-            function_403e79a58ca142a3(damageinfo, level.lb_pitch_roll_dmg_factor);
+        if (abs(pitch > level.lb_pitch_roll_dmg_threshold)) {
+            damagefactor *= level.lb_pitch_roll_dmg_factor;
         }
         roll = self.angles[2];
         if (roll > 180) {
             roll -= 360;
         }
-        if (abs(roll) > level.lb_pitch_roll_dmg_threshold) {
-            function_403e79a58ca142a3(damageinfo, level.lb_pitch_roll_dmg_factor);
-        }
-        down = anglestoup(self.angles) * -1;
-        toposition = vectornormalize(position - self.origin);
-        if (vectordot(toposition, down) > level.var_18cd46c9f47ec9fe) {
-            function_403e79a58ca142a3(damageinfo, level.var_78575fd6a5acb7d3);
+        if (abs(roll > level.lb_pitch_roll_dmg_threshold)) {
+            damagefactor *= level.lb_pitch_roll_dmg_factor;
         }
         dmgval = 0;
-        damagefactor = damageinfo.damagefactor;
         if (damagefactor > level.lb_impulse_dmg_threshold_top) {
             dmgval = self.maxhealth;
         } else if (damagefactor > level.lb_impulse_dmg_threshold_mid) {
@@ -213,16 +173,13 @@ function private collision_damage_watcher() {
             self dodamage(dmgval, position, undefined, undefined, "MOD_CRUSH");
             vehicle_damage_disablestatedamagefloor(0);
         }
-        /#
-            collision_debug(position, normal, normalspeed, dmgval, "<dev string:x6f>" + damagefactor + "<dev string:x74>" + damageinfo.debugstring + "<dev string:x79>");
-        #/
         wait 0.5;
     }
 }
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xb8a
+// Checksum 0x0, Offset: 0x994
 // Size: 0x1c
 function private little_bird_onenterheavydamagestate(oldstateref, data) {
     scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_onenterstateheavy(oldstateref, data);
@@ -230,7 +187,7 @@ function private little_bird_onenterheavydamagestate(oldstateref, data) {
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xbae
+// Checksum 0x0, Offset: 0x9b8
 // Size: 0x1c
 function private little_bird_onexitheavydamagestate(oldstateref, data) {
     scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_onexitstateheavy(oldstateref, data);
@@ -238,8 +195,8 @@ function private little_bird_onexitheavydamagestate(oldstateref, data) {
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xbd2
-// Size: 0x159
+// Checksum 0x0, Offset: 0x9dc
+// Size: 0x155
 function private little_bird_enterstart(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (istrue(vehicle.israllypointvehicle)) {
         foreach (plr in level.players) {
@@ -256,7 +213,7 @@ function private little_bird_enterstart(vehicle, seatid, var_fc7c7a874b43a31a, p
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xd33
+// Checksum 0x0, Offset: 0xb39
 // Size: 0x4e
 function private little_bird_enterend(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (istrue(data.success)) {
@@ -267,7 +224,7 @@ function private little_bird_enterend(vehicle, seatid, var_fc7c7a874b43a31a, pla
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xd89
+// Checksum 0x0, Offset: 0xb8f
 // Size: 0x93
 function private little_bird_enterendinternal(vehicle, seatid, var_fc7c7a874b43a31a, player, data) {
     if (seatid == "driver") {
@@ -284,7 +241,7 @@ function private little_bird_enterendinternal(vehicle, seatid, var_fc7c7a874b43a
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xe24
+// Checksum 0x0, Offset: 0xc2a
 // Size: 0x46
 function private little_bird_exitend(vehicle, seatid, var_7558f98f3236963d, player, data) {
     if (istrue(data.success)) {
@@ -294,8 +251,8 @@ function private little_bird_exitend(vehicle, seatid, var_7558f98f3236963d, play
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xe72
-// Size: 0xd2
+// Checksum 0x0, Offset: 0xc78
+// Size: 0xd1
 function private little_bird_exitendinternal(vehicle, seatid, var_7558f98f3236963d, player, data) {
     if (seatid == "driver") {
         vehicle notify("little_bird_driver_exit");
@@ -317,8 +274,8 @@ function private little_bird_exitendinternal(vehicle, seatid, var_7558f98f323696
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xf4c
-// Size: 0xdf
+// Checksum 0x0, Offset: 0xd51
+// Size: 0xe0
 function private vehicle_handleflarerecharge() {
     var_e9227a816ed1d671 = 1.05;
     self endon("death");
@@ -350,8 +307,8 @@ function private vehicle_handleflarerecharge() {
 
 // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1033
-// Size: 0x205
+// Checksum 0x0, Offset: 0xe39
+// Size: 0x204
 function private vehicle_handleflarefire(player) {
     self endon("death");
     self endon("little_bird_driver_exit");
@@ -394,53 +351,3 @@ function private vehicle_handleflarefire(player) {
     }
 }
 
-/#
-
-    // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
-    // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1240
-    // Size: 0x65
-    function collision_debug(position, normal, normalspeed, damage, debugstring) {
-        if (!getdvarint(@"hash_e1b0993f344fdd75", 0)) {
-            return;
-        }
-        if (!isdefined(level.var_569260d6901267c4)) {
-            level.var_569260d6901267c4 = 0;
-        }
-        thread function_6ae603e37e7a394f(position, normal, normalspeed, damage, debugstring);
-    }
-
-    // Namespace namespace_e5887d7e575ef250 / namespace_d8c2d739478db8bb
-    // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12ad
-    // Size: 0x1a8
-    function function_6ae603e37e7a394f(position, normal, normalspeed, damage, debugstring) {
-        self endon("<dev string:x7e>");
-        self notify("<dev string:x87>" + level.var_569260d6901267c4);
-        self endon("<dev string:x87>" + level.var_569260d6901267c4 + 10);
-        level.var_569260d6901267c4++;
-        minradius = 3;
-        maxradius = 30;
-        size = minradius + normalspeed * maxradius;
-        org = self.origin;
-        up = anglestoup(self.angles);
-        org = self.origin;
-        ang = self.angles;
-        while (true) {
-            if (damage > 0) {
-                color = (1, 0, 0);
-            } else {
-                color = (1, 1, 1);
-            }
-            result = transformmove(self.origin, self.angles, org, ang, position, (0, 0, 0));
-            newpos = result["<dev string:x9a>"];
-            sphere(newpos, size, color, 1, 1);
-            print3d(newpos, "<dev string:x1c>" + damage, color, 1, 0.5, 1, 1);
-            if (isdefined(debugstring)) {
-                print3d(newpos - (0, 0, 10), debugstring, color, 1, 0.25, 1, 1);
-            }
-            waitframe();
-        }
-    }
-
-#/

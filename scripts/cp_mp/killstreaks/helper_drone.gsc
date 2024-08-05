@@ -30,8 +30,8 @@
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1586
-// Size: 0xb55
+// Checksum 0x0, Offset: 0x131a
+// Size: 0xb7e
 function init() {
     level.helperdronesettings = [];
     namespace_893ac0cf28c5af44::init();
@@ -98,6 +98,9 @@ function init() {
     }
     isbr = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
     if (isbr || gametype == "cp_survival") {
+        if (level.helperdronesettings["radar_drone_recon"].repeatuse == 0) {
+            level.helperdronesettings["radar_drone_recon"].diewithowner = 1;
+        }
         level.helperdronesettings["radar_drone_recon"].diewithowner = 1;
         level.helperdronesettings["scrambler_drone_guard"].diewithowner = 1;
         level.helperdronesettings["radar_drone_overwatch"].diewithowner = 1;
@@ -130,7 +133,6 @@ function init() {
     level.helperdronesettings["ammo_drop"].postmoddamagefunc = &function_caf721cb23374e2b;
     level.helperdronesettings["ammo_drop"].deathfunc = &function_ba1c5496f8fc5f67;
     level.helperdronesettings["ammo_drop"].deployweaponname = "ks_gesture_generic_mp";
-    level.helperdronesettings["shouldIgnoreImmediateDamage"] = [];
     if (issharedfuncdefined("helper_drone", "init")) {
         [[ getsharedfunc("helper_drone", "init") ]]();
     }
@@ -152,7 +154,7 @@ function init() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20e3
+// Checksum 0x0, Offset: 0x1ea0
 // Size: 0x4d
 function init_helper_drone_vo() {
     game["dialog"]["scrambler_drone_guard_use"] = "killstreak_remote_operator" + "_request_response";
@@ -162,16 +164,16 @@ function init_helper_drone_vo() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2138
-// Size: 0x33
+// Checksum 0x0, Offset: 0x1ef5
+// Size: 0x38
 function init_helper_drone_anim() {
     level.scr_animtree["scrambler_drone_guard"] = %script_model;
-    level.scr_anim["scrambler_drone_guard"]["rotor_spin"] = script_model%mp_cuniform_rotor_spin;
+    level.scr_anim["scrambler_drone_guard"]["rotor_spin"] = [script_model%mp_cuniform_rotor_spin];
 }
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2173
+// Checksum 0x0, Offset: 0x1f35
 // Size: 0x1a
 function function_82d9de71444f6e33() {
     function_c0b0a582ff9e4d57("recon_drone_color_mp");
@@ -180,7 +182,7 @@ function function_82d9de71444f6e33() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2195
+// Checksum 0x0, Offset: 0x1f57
 // Size: 0xd
 function weapongivenhelperdrone(streakinfo) {
     return true;
@@ -188,7 +190,7 @@ function weapongivenhelperdrone(streakinfo) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21ab
+// Checksum 0x0, Offset: 0x1f6d
 // Size: 0xa0
 function function_29eacadfa638edc1(streakinfo) {
     level.incominghelperdrones[level.incominghelperdrones.size] = spawnstruct();
@@ -199,8 +201,8 @@ function function_29eacadfa638edc1(streakinfo) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2253
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x2015
+// Size: 0xae
 function function_c3786c4fba09c2f2(streakinfo) {
     if (level.incominghelperdrones.size == 0) {
         return;
@@ -217,7 +219,7 @@ function function_c3786c4fba09c2f2(streakinfo) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x230b
+// Checksum 0x0, Offset: 0x20cb
 // Size: 0x32
 function function_e4ea3048d91b5eb1(streakinfo, showerror) {
     function_29eacadfa638edc1(streakinfo);
@@ -230,7 +232,7 @@ function function_e4ea3048d91b5eb1(streakinfo, showerror) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2346
+// Checksum 0x0, Offset: 0x2106
 // Size: 0xe2
 function function_4acd3de63e55eb6c(streakinfo, showerror) {
     if (issharedfuncdefined("killstreak", "currentActiveVehicleCount") && issharedfuncdefined("killstreak", "maxVehiclesAllowed")) {
@@ -251,8 +253,8 @@ function function_4acd3de63e55eb6c(streakinfo, showerror) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2431
-// Size: 0x46
+// Checksum 0x0, Offset: 0x21f1
+// Size: 0x45
 function tryusehelperdrone(streakname, abilityrange) {
     if (!isdefined(abilityrange)) {
         abilityrange = 1000;
@@ -264,8 +266,8 @@ function tryusehelperdrone(streakname, abilityrange) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2480
-// Size: 0x82e
+// Checksum 0x0, Offset: 0x223f
+// Size: 0x834
 function tryusehelperdronefromstruct(streakinfo) {
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
@@ -274,7 +276,7 @@ function tryusehelperdronefromstruct(streakinfo) {
     }
     helperdronetype = streakinfo.streakname;
     startpos = function_34280b807c23a453(helperdronetype);
-    if (!isdefined(startpos) && helperdronetype != "scrambler_drone_guard") {
+    if (!isdefined(startpos)) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/NOT_ENOUGH_SPACE");
         }
@@ -311,7 +313,7 @@ function tryusehelperdronefromstruct(streakinfo) {
                 deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_doweapontabletdeploy(streakinfo);
             } else {
                 deployresult = 0;
-                assertmsg("<dev string:x1c>");
+                assertmsg("Error: Helper Drone using an unsupported deploy weapon");
             }
         } else {
             deployresult = 1;
@@ -485,8 +487,8 @@ function tryusehelperdronefromstruct(streakinfo) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cb7
-// Size: 0x74
+// Checksum 0x0, Offset: 0x2a7c
+// Size: 0x73
 function helperdronecreationfailedfx(helperdronetype, failposition) {
     if (!isdefined(failposition)) {
         failposition = self geteye() + (0, 0, 80);
@@ -499,8 +501,8 @@ function helperdronecreationfailedfx(helperdronetype, failposition) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d33
-// Size: 0x11f
+// Checksum 0x0, Offset: 0x2af7
+// Size: 0x120
 function tryusehelperdroneearlyout(streakinfo, showerror) {
     if (isusingremote()) {
         return true;
@@ -538,7 +540,7 @@ function tryusehelperdroneearlyout(streakinfo, showerror) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e5b
+// Checksum 0x0, Offset: 0x2c20
 // Size: 0x19
 function delay_deletescriptable() {
     level endon("game_ended");
@@ -548,8 +550,8 @@ function delay_deletescriptable() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e7c
-// Size: 0x6ab
+// Checksum 0x0, Offset: 0x2c41
+// Size: 0x698
 function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonvehicle, vehiclereserved) {
     clearvehiclereservation = !istrue(nonvehicle) && istrue(vehiclereserved);
     if (!isdefined(startpos)) {
@@ -573,7 +575,7 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
         /#
             var_aded1f99ce13821a = getdvarint(@"hash_b23e7bb60bbe76a6", 0);
             if (var_aded1f99ce13821a) {
-                drone setscriptablepartstate("<dev string:x56>", "<dev string:x63>", 0);
+                drone setscriptablepartstate("<dev string:x1c>", "<dev string:x26>", 0);
             }
         #/
     }
@@ -600,9 +602,6 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
     drone.var_52c3b4bc88132aee = config.var_52c3b4bc88132aee;
     drone.timeout = config.timeout;
     drone function_49197cd063a740ea(&function_ba1c5496f8fc5f67);
-    if (drone function_37a87ac65f6e2ba9()) {
-        drone thread function_e79c922944cf250(0.1);
-    }
     if (issharedfuncdefined("emp", "setEMP_Applied_Callback")) {
         drone [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&helperdrone_empapplied);
     }
@@ -689,47 +688,8 @@ function createhelperdrone(startpos, startang, helperdronetype, streakinfo, nonv
 }
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3530
-// Size: 0x2d
-function function_e37c92161450ed45(func) {
-    level.helperdronesettings["shouldIgnoreImmediateDamage"][level.helperdronesettings["shouldIgnoreImmediateDamage"].size] = func;
-}
-
-// Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3565
-// Size: 0x5f
-function function_37a87ac65f6e2ba9() {
-    foreach (func in level.helperdronesettings["shouldIgnoreImmediateDamage"]) {
-        if (self [[ func ]]()) {
-            return true;
-        }
-    }
-    return false;
-}
-
-// Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35cd
-// Size: 0x25
-function function_e79c922944cf250(time) {
-    self.nullownerdamagefunc = &function_e3b9d3583a2aeda0;
-    wait time;
-    self.nullownerdamagefunc = undefined;
-}
-
-// Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35fa
-// Size: 0xd
-function function_e3b9d3583a2aeda0(attacker) {
-    return true;
-}
-
-// Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3610
+// Checksum 0x0, Offset: 0x32e2
 // Size: 0x4d
 function function_7c5c7844eb8db8bb() {
     self endon("death");
@@ -744,7 +704,7 @@ function function_7c5c7844eb8db8bb() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3665
+// Checksum 0x0, Offset: 0x3337
 // Size: 0x30
 function function_c76228a77a70c9ea() {
     switch (self.helperdronetype) {
@@ -757,7 +717,7 @@ function function_c76228a77a70c9ea() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x369d
+// Checksum 0x0, Offset: 0x336f
 // Size: 0x36
 function function_4dcb82341876e985(delaysentient, drone) {
     drone endon("death");
@@ -770,8 +730,8 @@ function function_4dcb82341876e985(delaysentient, drone) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x36db
-// Size: 0x395
+// Checksum 0x0, Offset: 0x33ad
+// Size: 0x399
 function function_99e1189114e8419a(startpos, startang, helperdronetype, streakinfo, dronevel, dronehealth) {
     config = level.helperdronesettings[helperdronetype];
     if (getdvarint(@"hash_1253e99612575321", 0) && isdefined(config.var_f69f6bdde236401a)) {
@@ -847,8 +807,8 @@ function function_99e1189114e8419a(startpos, startang, helperdronetype, streakin
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a79
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x374f
+// Size: 0xa6
 function function_c36d4585d380430f(superref) {
     self endon("death");
     self endon("explode");
@@ -870,8 +830,8 @@ function function_c36d4585d380430f(superref) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b28
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x37fd
+// Size: 0xc1
 function helperdrone_notifyenemyplayersinrange(helperdronetype) {
     var_b43d19b33263e16f = level.teamdata[self.team]["players"];
     enemyplayersinrange = utility::playersincylinder(self.origin, 3000, var_b43d19b33263e16f);
@@ -884,8 +844,8 @@ function helperdrone_notifyenemyplayersinrange(helperdronetype) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bf2
-// Size: 0xab
+// Checksum 0x0, Offset: 0x38c6
+// Size: 0xa8
 function helperdrone_handleteamvisibility() {
     foreach (player in level.players) {
         if (level.teambased && player.team == self.team || !level.teambased && player == self.owner) {
@@ -900,8 +860,8 @@ function helperdrone_handleteamvisibility() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ca5
-// Size: 0x72
+// Checksum 0x0, Offset: 0x3976
+// Size: 0x71
 function helperdrone_managevisibilityonteamjoin() {
     self endon("death");
     self endon("leaving");
@@ -919,8 +879,8 @@ function helperdrone_managevisibilityonteamjoin() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d1f
-// Size: 0x188
+// Checksum 0x0, Offset: 0x39ef
+// Size: 0x190
 function function_cc4dd1078cf1b365(streakname) {
     config = level.helperdronesettings[self.helperdronetype];
     if (!istrue(self.nonvehicle)) {
@@ -944,7 +904,7 @@ function function_cc4dd1078cf1b365(streakname) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eaf
+// Checksum 0x0, Offset: 0x3b87
 // Size: 0x3a
 function function_1a4b3b6063ec7390(dronevictim, impulse) {
     if (!isdefined(dronevictim)) {
@@ -962,17 +922,17 @@ function function_1a4b3b6063ec7390(dronevictim, impulse) {
 
     // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3ef1
-    // Size: 0x1d1
+    // Checksum 0x0, Offset: 0x3bc9
+    // Size: 0x1cd
     function function_9d01452d8baca7a0() {
-        self endon("<dev string:x69>");
-        self endon("<dev string:x72>");
-        self endon("<dev string:x7d>");
-        self endon("<dev string:x88>");
+        self endon("<dev string:x29>");
+        self endon("<dev string:x2f>");
+        self endon("<dev string:x37>");
+        self endon("<dev string:x3f>");
         self.togglevisibility = 0;
         while (true) {
             togglevisibility = getdvarint(@"hash_4ec1877ac00842c0", 0);
-            if (self.helperdronetype == "<dev string:x90>") {
+            if (self.helperdronetype == "<dev string:x44>") {
                 togglevisibility = getdvarint(@"hash_ac7f6a636682c52f", 0);
             }
             if (togglevisibility) {
@@ -981,9 +941,9 @@ function function_1a4b3b6063ec7390(dronevictim, impulse) {
                     foreach (player in level.players) {
                         if (player.team == self.team) {
                             self showtoplayer(player);
-                            if (self.helperdronetype == "<dev string:x90>") {
+                            if (self.helperdronetype == "<dev string:x44>") {
                                 self.owner.var_f39d717b31ec5af9 = 1;
-                                level notify("<dev string:xa9>");
+                                level notify("<dev string:x5a>");
                             }
                         }
                     }
@@ -993,9 +953,9 @@ function function_1a4b3b6063ec7390(dronevictim, impulse) {
                 foreach (player in level.players) {
                     if (player.team == self.team) {
                         self hidefromplayer(player);
-                        if (self.helperdronetype == "<dev string:x90>") {
+                        if (self.helperdronetype == "<dev string:x44>") {
                             self.owner.var_f39d717b31ec5af9 = undefined;
-                            level notify("<dev string:xa9>");
+                            level notify("<dev string:x5a>");
                         }
                     }
                 }
@@ -1008,7 +968,7 @@ function function_1a4b3b6063ec7390(dronevictim, impulse) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x40ca
+// Checksum 0x0, Offset: 0x3d9e
 // Size: 0x3b
 function function_988c532b8c5a4ec0(enemyent) {
     if (isdefined(enemyent)) {
@@ -1021,8 +981,8 @@ function function_988c532b8c5a4ec0(enemyent) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x410d
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x3de1
+// Size: 0xf2
 function helperdrone_endscramblereffect() {
     self notify("scramble_super_finished");
     if (isdefined(self.var_88f72d2c0421f8b1) && self.var_88f72d2c0421f8b1.size > 0) {
@@ -1041,8 +1001,8 @@ function helperdrone_endscramblereffect() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x420b
-// Size: 0x28b
+// Checksum 0x0, Offset: 0x3edb
+// Size: 0x292
 function helperdrone_watchscramblereffectdist(owner) {
     self endon("death");
     self endon("leaving");
@@ -1096,7 +1056,7 @@ function helperdrone_watchscramblereffectdist(owner) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x449e
+// Checksum 0x0, Offset: 0x4175
 // Size: 0x104
 function helperdrone_setscramblerplayerbuffs(buff, buffent) {
     if (helperdrone_entaffectedbyscramble(buffent) && istrue(buff)) {
@@ -1125,7 +1085,7 @@ function helperdrone_setscramblerplayerbuffs(buff, buffent) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x45aa
+// Checksum 0x0, Offset: 0x4281
 // Size: 0x2c
 function helperdrone_managescramblerplayerbuff(buffent) {
     waittill_any_2("death_or_disconnect", "scramble_off" + buffent getentitynumber());
@@ -1134,7 +1094,7 @@ function helperdrone_managescramblerplayerbuff(buffent) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x45de
+// Checksum 0x0, Offset: 0x42b5
 // Size: 0x166
 function helperdrone_setscramblerjammed(jam, jammerent, skipteamcheck, var_699323575339379a) {
     var_682bf17fa458886c = self;
@@ -1165,7 +1125,7 @@ function helperdrone_setscramblerjammed(jam, jammerent, skipteamcheck, var_69932
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x474c
+// Checksum 0x0, Offset: 0x4423
 // Size: 0xb2
 function helperdrone_managescramblereffect(jammerent, skipteamcheck, var_699323575339379a) {
     level endon("game_ended");
@@ -1184,7 +1144,7 @@ function helperdrone_managescramblereffect(jammerent, skipteamcheck, var_6993235
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4806
+// Checksum 0x0, Offset: 0x44dd
 // Size: 0x5d
 function helperdrone_watchremotescrambledent(jammerent, skipteamcheck) {
     jammerent endon("death");
@@ -1199,8 +1159,8 @@ function helperdrone_watchremotescrambledent(jammerent, skipteamcheck) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x486b
-// Size: 0x1ac
+// Checksum 0x0, Offset: 0x4542
+// Size: 0x1b0
 function helperdrone_watchscramblestrength(jammerent, var_699323575339379a) {
     self endon("death");
     self endon("scramble_off" + self getentitynumber());
@@ -1247,8 +1207,8 @@ function helperdrone_watchscramblestrength(jammerent, var_699323575339379a) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a1f
-// Size: 0x1b7
+// Checksum 0x0, Offset: 0x46fa
+// Size: 0x1b5
 function helperdrone_entaffectedbyscramble(scramblerent, skipteamcheck) {
     scrambled = 0;
     var_be77424d6ef051c = undefined;
@@ -1289,8 +1249,8 @@ function helperdrone_entaffectedbyscramble(scramblerent, skipteamcheck) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bdf
-// Size: 0xc3
+// Checksum 0x0, Offset: 0x48b8
+// Size: 0xc2
 function helperdrone_enableradar(radartype) {
     radar = spawn("script_model", self.origin);
     radar.owner = self.owner;
@@ -1308,7 +1268,7 @@ function helperdrone_enableradar(radartype) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4caa
+// Checksum 0x0, Offset: 0x4982
 // Size: 0x1e
 function helperdrone_disableradar() {
     if (isdefined(self.radar)) {
@@ -1318,7 +1278,7 @@ function helperdrone_disableradar() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cd0
+// Checksum 0x0, Offset: 0x49a8
 // Size: 0xc1
 function helperdrone_spawnnewscrambler(scramblersize, spawnoverridepos, link) {
     scrambler = spawn("script_model", self.origin);
@@ -1335,7 +1295,7 @@ function helperdrone_spawnnewscrambler(scramblersize, spawnoverridepos, link) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d9a
+// Checksum 0x0, Offset: 0x4a72
 // Size: 0x46
 function helperdrone_moving_platform_death(data) {
     if (!isdefined(data.lasttouchedplatform.destroydroneoncollision) || data.lasttouchedplatform.destroydroneoncollision) {
@@ -1345,8 +1305,8 @@ function helperdrone_moving_platform_death(data) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4de8
-// Size: 0x48
+// Checksum 0x0, Offset: 0x4ac0
+// Size: 0x47
 function helperdrone_play_lightfx() {
     settings = level.helperdronesettings[self.helperdronetype];
     if (isent(self)) {
@@ -1358,7 +1318,7 @@ function helperdrone_play_lightfx() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e38
+// Checksum 0x0, Offset: 0x4b0f
 // Size: 0x92
 function function_56966b077270a18e() {
     self setscriptablepartstate("lights", "on", 0);
@@ -1376,8 +1336,8 @@ function function_56966b077270a18e() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ed2
-// Size: 0x219
+// Checksum 0x0, Offset: 0x4ba9
+// Size: 0x1e2
 function starthelperdrone(helperdrone, var_72c27359aaac97f4) {
     level endon("game_ended");
     helperdrone endon("death");
@@ -1416,17 +1376,12 @@ function starthelperdrone(helperdrone, var_72c27359aaac97f4) {
         helperdrone thread scripts\cp_mp\killstreaks\helper_drone::function_b25ced7f149be057();
     }
     helperdrone thread [[ config.primarymodefunc ]](config);
-    if (iscp() && isdefined(self.oob) && istrue(self.oob)) {
-        helperdrone notify("owner_gone");
-        waitframe();
-        helperdrone thread helperdrone_leave();
-    }
 }
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50f3
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x4d93
+// Size: 0xde
 function helperdrone_followplayer(offsetoverride) {
     level endon("game_ended");
     self endon("death");
@@ -1454,8 +1409,8 @@ function helperdrone_followplayer(offsetoverride) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x51da
-// Size: 0x200
+// Checksum 0x0, Offset: 0x4e79
+// Size: 0x206
 function helperdrone_overwatchplayer() {
     self endon("death");
     self endon("leaving");
@@ -1498,8 +1453,8 @@ function helperdrone_overwatchplayer() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x53e2
-// Size: 0x76
+// Checksum 0x0, Offset: 0x5087
+// Size: 0x78
 function getcorrectheight(x, y, rand) {
     var_dc8bb6300463cf1e = 1500;
     /#
@@ -1514,8 +1469,8 @@ function getcorrectheight(x, y, rand) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5461
-// Size: 0xbc
+// Checksum 0x0, Offset: 0x5108
+// Size: 0xc0
 function tracegroundpoint(x, y) {
     self endon("death");
     self endon("leaving");
@@ -1534,7 +1489,7 @@ function tracegroundpoint(x, y) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5526
+// Checksum 0x0, Offset: 0x51d1
 // Size: 0x1a5
 function helperdrone_pingnearbyenemies() {
     self endon("death");
@@ -1578,7 +1533,7 @@ function helperdrone_pingnearbyenemies() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x56d3
+// Checksum 0x0, Offset: 0x537e
 // Size: 0x78
 function helperdrone_watchpingedstatus(var_77380882ccbfe2f5, var_2d1828e3f6df9c24) {
     self endon("death");
@@ -1594,8 +1549,8 @@ function helperdrone_watchpingedstatus(var_77380882ccbfe2f5, var_2d1828e3f6df9c2
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5753
-// Size: 0x78
+// Checksum 0x0, Offset: 0x53fe
+// Size: 0x76
 function helperdrone_isbeingpingedbydrone(drone) {
     var_5000bb58f1128c5c = 0;
     foreach (enemy in drone.pingedenemies) {
@@ -1609,7 +1564,7 @@ function helperdrone_isbeingpingedbydrone(drone) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x57d4
+// Checksum 0x0, Offset: 0x547d
 // Size: 0x98
 function helperdrone_getheightoffset(config) {
     heightoffset = config.standupoffset;
@@ -1630,8 +1585,8 @@ function helperdrone_getheightoffset(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5875
-// Size: 0x12c
+// Checksum 0x0, Offset: 0x551e
+// Size: 0x12d
 function helperdrone_guardlocation() {
     self.stoppedatlocation = 1;
     newzoffset = int(self.origin[2] * 0.65);
@@ -1653,8 +1608,8 @@ function helperdrone_guardlocation() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59a9
-// Size: 0x108
+// Checksum 0x0, Offset: 0x5653
+// Size: 0x10c
 function helperdrone_moveintoplace(var_1becbc015340bf8d) {
     self endon("death");
     level endon("game_ended");
@@ -1678,7 +1633,7 @@ function helperdrone_moveintoplace(var_1becbc015340bf8d) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ab9
+// Checksum 0x0, Offset: 0x5767
 // Size: 0x56
 function helperdrone_watchradarpulse() {
     self endon("death");
@@ -1693,8 +1648,8 @@ function helperdrone_watchradarpulse() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b17
-// Size: 0x57
+// Checksum 0x0, Offset: 0x57c5
+// Size: 0x56
 function helperdrone_movetoplayer(player, offsetoverride) {
     self setlookatent(player);
     targetoffset = helperdrone_gettargetoffset(self, player);
@@ -1708,8 +1663,8 @@ function helperdrone_movetoplayer(player, offsetoverride) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b76
-// Size: 0x2b7
+// Checksum 0x0, Offset: 0x5823
+// Size: 0x2bc
 function helperdrone_watchmodeswitch() {
     level endon("game_ended");
     self endon("death");
@@ -1745,7 +1700,7 @@ function helperdrone_watchmodeswitch() {
                 self notify("switch_modes");
                 newmode = getothermode(self.combatmode, self.streakinfo);
                 newstring = "Empty String";
-                assertex(isdefined(config.primarymode) && isdefined(config.secondarymode), "<dev string:xb7>");
+                assertex(isdefined(config.primarymode) && isdefined(config.secondarymode), "Switching modes requires that the drone has a primary and secondary settings in its config");
                 if (newmode == config.primarymode) {
                     result = [[ config.primarymodefunc ]](config);
                     newstring = config.secondarymodestring;
@@ -1773,8 +1728,8 @@ function helperdrone_watchmodeswitch() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e35
-// Size: 0x60
+// Checksum 0x0, Offset: 0x5ae7
+// Size: 0x5f
 function getothermode(mode, streakinfo) {
     config = level.helperdronesettings[self.helperdronetype];
     if (mode == config.primarymode) {
@@ -1787,7 +1742,7 @@ function getothermode(mode, streakinfo) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e9e
+// Checksum 0x0, Offset: 0x5b4f
 // Size: 0xb7
 function setescortmodesettings(config) {
     self vehicle_setspeed(self.speed, self.accel);
@@ -1807,8 +1762,8 @@ function setescortmodesettings(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f5e
-// Size: 0xca
+// Checksum 0x0, Offset: 0x5c0f
+// Size: 0xcb
 function function_207c13cdc424e93b() {
     self endon("death");
     self endon("leaving");
@@ -1833,7 +1788,7 @@ function function_207c13cdc424e93b() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6030
+// Checksum 0x0, Offset: 0x5ce2
 // Size: 0x1c
 function helperdrone_lockedoncallback() {
     scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_showwarning("missileLocking", self.owner, "killstreak");
@@ -1841,7 +1796,7 @@ function helperdrone_lockedoncallback() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6054
+// Checksum 0x0, Offset: 0x5d06
 // Size: 0x1c
 function helperdrone_lockedonremovedcallback() {
     scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_hidewarning("missileLocking", self.owner, "killstreak");
@@ -1849,7 +1804,7 @@ function helperdrone_lockedonremovedcallback() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6078
+// Checksum 0x0, Offset: 0x5d2a
 // Size: 0x24
 function setoverwatchmodesettings(config) {
     thread helperdrone_overwatchplayer();
@@ -1860,7 +1815,7 @@ function setoverwatchmodesettings(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x60a5
+// Checksum 0x0, Offset: 0x5d57
 // Size: 0x15
 function setfollowmode(config) {
     thread helperdrone_followplayer();
@@ -1869,7 +1824,7 @@ function setfollowmode(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x60c3
+// Checksum 0x0, Offset: 0x5d75
 // Size: 0x4e
 function setguardmode(config) {
     if (isent(self)) {
@@ -1884,7 +1839,7 @@ function setguardmode(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x611a
+// Checksum 0x0, Offset: 0x5dcc
 // Size: 0x26
 function function_1532eae4fc92c4d3() {
     self setscriptablepartstate("looping_wave", "on", 0);
@@ -1893,7 +1848,7 @@ function function_1532eae4fc92c4d3() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6148
+// Checksum 0x0, Offset: 0x5dfa
 // Size: 0x16
 function setdeliverymodesettings(config) {
     thread helperdrone_deliver(config);
@@ -1902,8 +1857,8 @@ function setdeliverymodesettings(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6167
-// Size: 0x1eb
+// Checksum 0x0, Offset: 0x5e19
+// Size: 0x1f3
 function helperdrone_deliver(config) {
     self endon("death");
     self endon("leaving");
@@ -1936,7 +1891,7 @@ function helperdrone_deliver(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x635a
+// Checksum 0x0, Offset: 0x6014
 // Size: 0xd6
 function helperdrone_watchearlyexit(config, var_72c27359aaac97f4) {
     self.owner endon("disconnect");
@@ -1965,8 +1920,8 @@ function helperdrone_watchearlyexit(config, var_72c27359aaac97f4) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6438
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x60f2
+// Size: 0x6b
 function function_1d24e8f818e18244() {
     level endon("game_ended");
     droneowner = self.owner;
@@ -1986,7 +1941,7 @@ function function_1d24e8f818e18244() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64aa
+// Checksum 0x0, Offset: 0x6165
 // Size: 0x106
 function helperdrone_handlethermalswitchinternal() {
     droneowner = self.owner;
@@ -2023,8 +1978,8 @@ function helperdrone_handlethermalswitchinternal() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x65b8
-// Size: 0x82
+// Checksum 0x0, Offset: 0x6273
+// Size: 0x81
 function function_6a275656141ac8d6(drone) {
     var_143ba8c547269a07 = level.helperdronesettings[drone.helperdronetype];
     if (level.mapname == "mp_hideout") {
@@ -2039,8 +1994,8 @@ function function_6a275656141ac8d6(drone) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6642
-// Size: 0x124
+// Checksum 0x0, Offset: 0x62fc
+// Size: 0x127
 function helperdrone_monitorcollision(config) {
     self.owner endon("disconnect");
     self endon("death");
@@ -2077,8 +2032,8 @@ function helperdrone_monitorcollision(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x676e
-// Size: 0x147
+// Checksum 0x0, Offset: 0x642b
+// Size: 0x14a
 function function_109f8639aebf2da9(config) {
     self.owner endon("disconnect");
     self endon("death");
@@ -2110,8 +2065,8 @@ function function_109f8639aebf2da9(config) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68bd
-// Size: 0x87
+// Checksum 0x0, Offset: 0x657d
+// Size: 0x86
 function helperdrone_watchforgoal() {
     level endon("game_ended");
     self endon("death");
@@ -2130,8 +2085,8 @@ function helperdrone_watchforgoal() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x694c
-// Size: 0x35d
+// Checksum 0x0, Offset: 0x660b
+// Size: 0x370
 function helperdrone_watchdamage(var_292694740d43f466) {
     level endon("game_ended");
     self endon("death");
@@ -2191,8 +2146,8 @@ function helperdrone_watchdamage(var_292694740d43f466) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cb1
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x6983
+// Size: 0x10e
 function helperdrone_watchtimeout() {
     level endon("game_ended");
     self endon("death");
@@ -2219,8 +2174,8 @@ function helperdrone_watchtimeout() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6dc8
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x6a99
+// Size: 0x59
 function helperdrone_watchownerloss() {
     level endon("game_ended");
     self endon("death");
@@ -2231,26 +2186,21 @@ function helperdrone_watchownerloss() {
     childthread helperdrone_watchownerstatus("joined_team");
     childthread helperdrone_watchownerstatus("joined_spectators");
     childthread helperdrone_watchownerstatus("last_stand_start");
-    if (iscp()) {
-        childthread helperdrone_watchownerstatus("oob_last_stand");
-    }
 }
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e3f
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x6afa
+// Size: 0x27
 function helperdrone_watchownerstatus(notifymsg) {
     self.owner waittill(notifymsg);
-    if (!iscp() || iscp() && self.owner isusingremote()) {
-        self notify("owner_gone");
-        thread helperdrone_leave();
-    }
+    self notify("owner_gone");
+    thread helperdrone_leave();
 }
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e95
+// Checksum 0x0, Offset: 0x6b29
 // Size: 0x51
 function helperdrone_watchownerdeath() {
     level endon("game_ended");
@@ -2267,23 +2217,17 @@ function helperdrone_watchownerdeath() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6eee
-// Size: 0xae
+// Checksum 0x0, Offset: 0x6b82
+// Size: 0x9e
 function function_7ac8fccbfd39d8b9() {
     config = level.helperdronesettings[self.helperdronetype];
     if (istrue(config.diewithowner)) {
         return true;
     }
-    if (function_6ae03efb52c52c29(self.owner) || getdvarint(@"hash_896b182fbfa8d9de", 0)) {
-        if (istrue(self.ispiloted)) {
-            switch (self.helperdronetype) {
-            case #"hash_e40585107590f016": 
-                if (!istrue(config.repeatuse)) {
-                    return true;
-                }
-                self notify("killstreakExit");
-                return false;
-            default: 
+    if (issharedfuncdefined("game", "getGametypeNumLives")) {
+        gametypenumlives = [[ getsharedfunc("game", "getGametypeNumLives") ]]();
+        if (isdefined(gametypenumlives) && gametypenumlives > 0 && self.owner.pers["deaths"] >= gametypenumlives) {
+            if (!istrue(self.ispiloted)) {
                 return true;
             }
         }
@@ -2293,7 +2237,7 @@ function function_7ac8fccbfd39d8b9() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fa5
+// Checksum 0x0, Offset: 0x6c29
 // Size: 0x53
 function helperdrone_watchroundend() {
     self endon("death");
@@ -2308,8 +2252,8 @@ function helperdrone_watchroundend() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7000
-// Size: 0x153
+// Checksum 0x0, Offset: 0x6c84
+// Size: 0x154
 function helperdrone_leave(timeout) {
     self endon("death");
     self endon("explode");
@@ -2342,8 +2286,8 @@ function helperdrone_leave(timeout) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x715b
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x6de0
+// Size: 0x61
 function helperdrone_getpathend() {
     pathrandomness = 150;
     halfdistance = 15000;
@@ -2355,8 +2299,8 @@ function helperdrone_getpathend() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x71c2
-// Size: 0x125
+// Checksum 0x0, Offset: 0x6e4a
+// Size: 0x116
 function perkengineer_manageminimap() {
     enemyicon = "hud_icon_minimap_killstreak_cuav";
     createfunc = undefined;
@@ -2372,7 +2316,7 @@ function perkengineer_manageminimap() {
         }
         if (issharedfuncdefined("perk", "hasPerk")) {
             if (player [[ getsharedfunc("perk", "hasPerk") ]]("specialty_engineer") && player.team != self.team) {
-                if (isdefined(self.enemyobjid) && self.enemyobjid != -1) {
+                if (self.enemyobjid != -1) {
                     scripts\mp\objidpoolmanager::objective_playermask_addshowplayer(self.enemyobjid, player);
                 }
             }
@@ -2382,7 +2326,7 @@ function perkengineer_manageminimap() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x72ef
+// Checksum 0x0, Offset: 0x6f68
 // Size: 0x100
 function function_caf721cb23374e2b(data) {
     type = data.meansofdeath;
@@ -2405,7 +2349,7 @@ function function_caf721cb23374e2b(data) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73f8
+// Checksum 0x0, Offset: 0x7071
 // Size: 0xf6
 function helperdrone_stunned(duration) {
     self notify("helperDrone_stunned");
@@ -2431,8 +2375,8 @@ function helperdrone_stunned(duration) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x74f6
-// Size: 0x307
+// Checksum 0x0, Offset: 0x716f
+// Size: 0x312
 function function_7017058e21ac030f(data) {
     self.isdestroyed = 1;
     self.var_d31453e33d3e34ca = 1;
@@ -2482,7 +2426,7 @@ function function_7017058e21ac030f(data) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7805
+// Checksum 0x0, Offset: 0x7489
 // Size: 0x85
 function function_566780fd588dd54a(data) {
     if (isdefined(data.inflictor) && isdefined(data.inflictor.stuckto)) {
@@ -2498,8 +2442,8 @@ function function_566780fd588dd54a(data) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7892
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x7516
+// Size: 0x69
 function function_9bfdff1ee5a47652() {
     level endon("game_ended");
     self endon("explode");
@@ -2515,7 +2459,7 @@ function function_9bfdff1ee5a47652() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7904
+// Checksum 0x0, Offset: 0x7587
 // Size: 0xa4
 function function_ba1c5496f8fc5f67(data) {
     if (!isdefined(self) || istrue(self.isdestroyed)) {
@@ -2531,7 +2475,7 @@ function function_ba1c5496f8fc5f67(data) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79b1
+// Checksum 0x0, Offset: 0x7634
 // Size: 0x13
 function function_f6914d06b20aee20() {
     self setscriptablepartstate("body_damage_light", "on");
@@ -2539,7 +2483,7 @@ function function_f6914d06b20aee20() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79cc
+// Checksum 0x0, Offset: 0x764f
 // Size: 0x13
 function function_3ad98c4f7524b525() {
     self setscriptablepartstate("body_damage_medium", "on");
@@ -2547,7 +2491,7 @@ function function_3ad98c4f7524b525() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79e7
+// Checksum 0x0, Offset: 0x766a
 // Size: 0x13
 function function_e68a206899cafbe5() {
     self setscriptablepartstate("body_damage_heavy", "on");
@@ -2555,8 +2499,8 @@ function function_e68a206899cafbe5() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a02
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x7685
+// Size: 0xe3
 function function_cc7fd8dc48c88e9e(cameraorigin) {
     tag_origin = spawn("script_model", cameraorigin);
     tag_origin setmodel("tag_origin");
@@ -2572,7 +2516,7 @@ function function_cc7fd8dc48c88e9e(cameraorigin) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7aea
+// Checksum 0x0, Offset: 0x7770
 // Size: 0x24
 function function_886c327598c568db(traceresult) {
     return isdefined(traceresult["hittype"]) && traceresult["hittype"] != "hittype_none";
@@ -2580,8 +2524,8 @@ function function_886c327598c568db(traceresult) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b17
-// Size: 0xdc
+// Checksum 0x0, Offset: 0x779d
+// Size: 0xdd
 function function_e3f077b1c512f372(testangles, isback, upangles) {
     traceorigin = self gettagorigin("tag_undercam") - (0, 0, 15);
     if (istrue(isback)) {
@@ -2600,8 +2544,8 @@ function function_e3f077b1c512f372(testangles, isback, upangles) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bfc
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x7883
+// Size: 0xa9
 function function_8c9a4bc6b72b3356(traceangles, isback) {
     traceorigin = self gettagorigin("tag_undercam") - (0, 0, 15);
     traceupangles = anglestoup(self.angles) * 125;
@@ -2621,8 +2565,8 @@ function function_8c9a4bc6b72b3356(traceangles, isback) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cac
-// Size: 0x90
+// Checksum 0x0, Offset: 0x7935
+// Size: 0x91
 function function_229259da45e71937() {
     traceorigin = self gettagorigin("tag_undercam") - (0, 0, 15);
     traceupangles = anglestoup(self.angles) * 125 * 3;
@@ -2637,8 +2581,8 @@ function function_229259da45e71937() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d45
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x79cf
+// Size: 0xaa
 function function_901f4a4041610043() {
     var_881a65df3a7787df = anglestoforward(self.angles) * 350;
     var_4fa29d6999cafd60 = anglestoright(self.angles) * 350;
@@ -2659,15 +2603,15 @@ function function_901f4a4041610043() {
         return true;
     }
     /#
-        announcement("<dev string:x115>");
+        announcement("<dev string:x65>");
     #/
     return false;
 }
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x7df7
-// Size: 0x3ed
+// Checksum 0x0, Offset: 0x7a82
+// Size: 0x3ee
 function function_6edfda4764129e3(wasdestroyed, wasexited, wastimedout, wasdetonated) {
     self.owner stopwatchingthermalinputchange();
     self.isdestroyed = 1;
@@ -2739,7 +2683,7 @@ function function_6edfda4764129e3(wasdestroyed, wasexited, wastimedout, wasdeton
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x81ec
+// Checksum 0x0, Offset: 0x7e78
 // Size: 0xb8
 function function_ffbc19e1aef5943c(ison) {
     if (ison) {
@@ -2757,8 +2701,8 @@ function function_ffbc19e1aef5943c(ison) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x82ac
-// Size: 0x36c
+// Checksum 0x0, Offset: 0x7f38
+// Size: 0x36e
 function function_dd2172321d232563(wasdestroyed, wasexited, timedout) {
     dronehealth = self.currenthealth;
     dronevel = undefined;
@@ -2819,8 +2763,8 @@ function function_dd2172321d232563(wasdestroyed, wasexited, timedout) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8620
-// Size: 0x51
+// Checksum 0x0, Offset: 0x82ae
+// Size: 0x50
 function function_9fe87b841a44448f() {
     if (isent(self)) {
         explodestate = "on";
@@ -2835,8 +2779,8 @@ function function_9fe87b841a44448f() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8679
-// Size: 0x51
+// Checksum 0x0, Offset: 0x8306
+// Size: 0x50
 function function_24085a0230958938() {
     if (isent(self)) {
         exitstate = "on";
@@ -2851,7 +2795,7 @@ function function_24085a0230958938() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x86d2
+// Checksum 0x0, Offset: 0x835e
 // Size: 0x1d
 function function_1a4f935ba283ab0f() {
     if (isent(self)) {
@@ -2861,8 +2805,8 @@ function function_1a4f935ba283ab0f() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x86f7
-// Size: 0x35d
+// Checksum 0x0, Offset: 0x8383
+// Size: 0x35b
 function function_608250000fbfc89a(dronetype, config, wasdestroyed, dronevel, dronehealth) {
     helperdrone_disableradar();
     self.ispiloted = undefined;
@@ -2926,7 +2870,7 @@ function function_608250000fbfc89a(dronetype, config, wasdestroyed, dronevel, dr
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a5c
+// Checksum 0x0, Offset: 0x86e6
 // Size: 0x4d
 function function_f23d90f7483d67e4() {
     level endon("game_ended");
@@ -2942,10 +2886,10 @@ function function_f23d90f7483d67e4() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ab1
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x873b
+// Size: 0x6e
 function function_89af506d89aad6ed(state, drone) {
-    assertex(0 <= state && state <= 4, "<dev string:x13e>");
+    assertex(0 <= state && state <= 4, "RCD Controls state must be in the range [0-4].");
     isassault = 0;
     if (isdefined(drone)) {
         isassault = drone.helperdronetype == "assault_drone";
@@ -2958,7 +2902,7 @@ function function_89af506d89aad6ed(state, drone) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b28
+// Checksum 0x0, Offset: 0x87b1
 // Size: 0x56
 function function_28368a23c20ff3e6(markergroup, target, state) {
     firstbit = (state >> 0) % 2 == 1;
@@ -2969,8 +2913,8 @@ function function_28368a23c20ff3e6(markergroup, target, state) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b86
-// Size: 0x6f2
+// Checksum 0x0, Offset: 0x880f
+// Size: 0x6ed
 function function_289ddd64ec5b3010(streakinfo, owner) {
     if (!isdefined(level.supportdrones)) {
         return false;
@@ -3106,8 +3050,8 @@ function function_289ddd64ec5b3010(streakinfo, owner) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9281
-// Size: 0x112
+// Checksum 0x0, Offset: 0x8f05
+// Size: 0x110
 function helperdrone_getnumdrones(dronetype, var_ee9e55b40b28d806, var_bace6387b1d799ad) {
     var_dc1a0178a2c53770 = 0;
     foreach (drone in var_ee9e55b40b28d806) {
@@ -3131,7 +3075,7 @@ function helperdrone_getnumdrones(dronetype, var_ee9e55b40b28d806, var_bace6387b
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x939c
+// Checksum 0x0, Offset: 0x901e
 // Size: 0x30
 function helperdrone_destroyongameend() {
     self endon("death");
@@ -3143,8 +3087,8 @@ function helperdrone_destroyongameend() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x93d4
-// Size: 0x106
+// Checksum 0x0, Offset: 0x9056
+// Size: 0x109
 function helperdrone_watchaltitude(player) {
     self endon("game_ended");
     self endon("death");
@@ -3176,8 +3120,8 @@ function helperdrone_watchaltitude(player) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x94e2
-// Size: 0x9e
+// Checksum 0x0, Offset: 0x9167
+// Size: 0xa1
 function helperdrone_gettargetoffset(helperdrone, player) {
     config = level.helperdronesettings[helperdrone.helperdronetype];
     backoffset = config.backoffset;
@@ -3192,8 +3136,8 @@ function helperdrone_gettargetoffset(helperdrone, player) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9589
-// Size: 0x5a1
+// Checksum 0x0, Offset: 0x9211
+// Size: 0x5bb
 function function_34280b807c23a453(helperdronetype) {
     startang = self.angles;
     zoffset = (0, 0, 80);
@@ -3292,8 +3236,8 @@ function function_34280b807c23a453(helperdronetype) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b33
-// Size: 0xad
+// Checksum 0x0, Offset: 0x97d5
+// Size: 0xac
 function helperdrone_showminimaponspawn(drone) {
     self endon("disconnect");
     drone endon("death");
@@ -3318,8 +3262,8 @@ function helperdrone_showminimaponspawn(drone) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9be8
-// Size: 0x175
+// Checksum 0x0, Offset: 0x9889
+// Size: 0x176
 function deliverydrone_delivertopoint(targetpos, ondelivercallback) {
     self endon("death_or_disconnect");
     self endon("reconDroneEnded");
@@ -3350,7 +3294,7 @@ function deliverydrone_delivertopoint(targetpos, ondelivercallback) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d66
+// Checksum 0x0, Offset: 0x9a08
 // Size: 0x11
 function scramblerdrone_counteruavmodeon() {
     scripts\cp_mp\killstreaks\uav::function_24d8b56676d4d3d1();
@@ -3359,7 +3303,7 @@ function scramblerdrone_counteruavmodeon() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d7f
+// Checksum 0x0, Offset: 0x9a21
 // Size: 0x27
 function scramblerdrone_counteruavmodeoff() {
     scripts\cp_mp\killstreaks\uav::uav_removeactivecounteruav();
@@ -3371,7 +3315,7 @@ function scramblerdrone_counteruavmodeoff() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9dae
+// Checksum 0x0, Offset: 0x9a50
 // Size: 0x1fc
 function function_b25ced7f149be057() {
     self.owner endon("disconnect");
@@ -3424,8 +3368,8 @@ function function_b25ced7f149be057() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fb2
-// Size: 0x41
+// Checksum 0x0, Offset: 0x9c54
+// Size: 0x40
 function function_de3c015e3c7130e7(helperdronetype) {
     isremotecontrolhelper = 0;
     switch (helperdronetype) {
@@ -3439,7 +3383,7 @@ function function_de3c015e3c7130e7(helperdronetype) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ffc
+// Checksum 0x0, Offset: 0x9c9d
 // Size: 0x24
 function helperdrone_giveplayerfauxremote(streakinfo) {
     self endon("disconnect");
@@ -3448,8 +3392,8 @@ function helperdrone_giveplayerfauxremote(streakinfo) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa028
-// Size: 0x45
+// Checksum 0x0, Offset: 0x9cc9
+// Size: 0x44
 function helperdrone_takeplayerfauxremote(streakinfo) {
     clearusingremote(1);
     streakinfo notify("killstreak_finished_with_deploy_weapon");
@@ -3461,8 +3405,8 @@ function helperdrone_takeplayerfauxremote(streakinfo) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa075
-// Size: 0x27c
+// Checksum 0x0, Offset: 0x9d15
+// Size: 0x284
 function function_f9c33df98457a9a2(target, var_b2cc25676b34bf9) {
     icansee = 0;
     useorigin = self.owner getvieworigin();
@@ -3513,7 +3457,7 @@ function function_f9c33df98457a9a2(target, var_b2cc25676b34bf9) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2fa
+// Checksum 0x0, Offset: 0x9fa2
 // Size: 0x3a
 function function_e89890de385d2d9e(config, wasdestroyed, wasexited, wastimedout, wasdetonated, thirdperson) {
     function_9fe87b841a44448f();
@@ -3521,7 +3465,7 @@ function function_e89890de385d2d9e(config, wasdestroyed, wasexited, wastimedout,
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa33c
+// Checksum 0x0, Offset: 0x9fe4
 // Size: 0x40
 function ishelperdrone() {
     if (isdefined(level.helperdronesettings)) {
@@ -3534,7 +3478,7 @@ function ishelperdrone() {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa385
+// Checksum 0x0, Offset: 0xa02d
 // Size: 0x46
 function function_8c4ab0a7799e7ab8(weapon) {
     return weapon.basename == "ks_remote_drone_mp" || weapon.basename == "ks_assault_drone_mp" || weapon.basename == "ks_assault_drone_cp";
@@ -3542,7 +3486,7 @@ function function_8c4ab0a7799e7ab8(weapon) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3d4
+// Checksum 0x0, Offset: 0xa07c
 // Size: 0x15
 function function_49197cd063a740ea(callbackfunction) {
     self.var_d1659ed0a33bf98f = callbackfunction;
@@ -3550,10 +3494,11 @@ function function_49197cd063a740ea(callbackfunction) {
 
 // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3f1
-// Size: 0x27
+// Checksum 0x0, Offset: 0xa099
+// Size: 0x2e
 function helperdrone_empapplied(data) {
     if (self.helperdronetype == "scrambler_drone_guard") {
+        scramblerdrone_counteruavmodeoff();
         thread function_6edfda4764129e3(1);
     }
 }
@@ -3562,13 +3507,13 @@ function helperdrone_empapplied(data) {
 
     // Namespace helper_drone / scripts\cp_mp\killstreaks\helper_drone
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa420
+    // Checksum 0x0, Offset: 0xa0cf
     // Size: 0xcb
     function function_5fbdbc50f271cfdf() {
-        self endon("<dev string:x69>");
-        self endon("<dev string:x170>");
-        self notify("<dev string:x17c>");
-        self endon("<dev string:x17c>");
+        self endon("<dev string:x29>");
+        self endon("<dev string:x8b>");
+        self notify("<dev string:x94>");
+        self endon("<dev string:x94>");
         while (true) {
             nodepath = getnodesonpath(self.owner.origin, self.origin);
             if (isdefined(nodepath)) {

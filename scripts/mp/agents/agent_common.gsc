@@ -7,8 +7,8 @@
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x129
-// Size: 0x76
+// Checksum 0x0, Offset: 0x136
+// Size: 0x75
 function codecallback_agentadded() {
     self [[ level.initagentscriptvariables ]]();
     agentteam = "axis";
@@ -23,7 +23,7 @@ function codecallback_agentadded() {
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a7
+// Checksum 0x0, Offset: 0x1b3
 // Size: 0xd8
 function codecallback_agentdamaged(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname) {
     sweapon = objweapon;
@@ -38,29 +38,19 @@ function codecallback_agentdamaged(einflictor, eattacker, idamage, idflags, smea
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x287
-// Size: 0x7c
-function codecallback_agentimpaled(eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b) {
+// Params 8, eflags: 0x0
+// Checksum 0x0, Offset: 0x293
+// Size: 0x66
+function codecallback_agentimpaled(eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34) {
     if (isdefined(level.callbackplayerimpaled)) {
-        [[ level.callbackplayerimpaled ]](eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b, 1);
-    }
-}
-
-// Namespace agent_common / scripts\mp\agents\agent_common
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b
-// Size: 0x4b
-function function_237dd076563be41f(eattacker, objweapon, vdir, magnitude, shitloc) {
-    if (isdefined(level.var_189d24c2bbeed3f5)) {
-        [[ level.var_189d24c2bbeed3f5 ]](eattacker, objweapon, vdir, magnitude, shitloc, 1);
+        [[ level.callbackplayerimpaled ]](eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34);
     }
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x35e
-// Size: 0xb4
+// Checksum 0x0, Offset: 0x301
+// Size: 0xb3
 function codecallback_agentkilled(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration) {
     if (isdefined(level.weaponmapfunc)) {
         objweapon = [[ level.weaponmapfunc ]](objweapon, einflictor);
@@ -74,7 +64,7 @@ function codecallback_agentkilled(einflictor, eattacker, idamage, idflags, smean
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a
+// Checksum 0x0, Offset: 0x3bc
 // Size: 0x13
 function codecallback_agentfinishweaponchange(objoldweapon, objnewweapon) {
     
@@ -82,7 +72,7 @@ function codecallback_agentfinishweaponchange(objoldweapon, objnewweapon) {
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x435
+// Checksum 0x0, Offset: 0x3d7
 // Size: 0x22
 function init() {
     initagentlevelvariables();
@@ -93,8 +83,8 @@ function init() {
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x45f
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x401
+// Size: 0xdf
 function connectnewagent(agent_type, team, class) {
     agent = [[ level.getfreeagent ]](agent_type);
     if (isdefined(agent)) {
@@ -111,14 +101,14 @@ function connectnewagent(agent_type, team, class) {
             agent [[ agent [[ level.agentfunc ]]("onAIConnect") ]]();
         }
         agent [[ level.addtocharactersarray ]]();
-        assertex(agent.connecttime == gettime(), "<dev string:x1c>");
+        assertex(agent.connecttime == gettime(), "Agent spawn took too long - there should be no waits in connectNewAgent");
     }
     return agent;
 }
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x548
+// Checksum 0x0, Offset: 0x4e9
 // Size: 0x2d
 function initagentlevelvariables() {
     level.agentarray = [];
@@ -130,13 +120,13 @@ function initagentlevelvariables() {
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57d
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x51e
+// Size: 0xbd
 function add_agents_to_game() {
     level endon("game_ended");
     player = level waittill("connected");
     maxagents = getmaxagents();
-    println("<dev string:x67>" + maxagents + "<dev string:x88>");
+    println("<dev string:x1c>" + maxagents + "<dev string:x3a>");
     var_48a1bbbf94f76091 = getdvarint(@"hash_3c453eaf21ea4a86", -1);
     while (level.agentarray.size < maxagents) {
         if (var_48a1bbbf94f76091 != -1 && level.agentarray.size != 0 && level.agentarray.size % var_48a1bbbf94f76091 == 0) {
@@ -153,7 +143,7 @@ function add_agents_to_game() {
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x640
+// Checksum 0x0, Offset: 0x5e3
 // Size: 0x1f
 function set_agent_health(health) {
     self.health = health;
@@ -162,7 +152,7 @@ function set_agent_health(health) {
 
 // Namespace agent_common / scripts\mp\agents\agent_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x667
+// Checksum 0x0, Offset: 0x60a
 // Size: 0x12
 function ondeactivate() {
     self notify("killanimscript");

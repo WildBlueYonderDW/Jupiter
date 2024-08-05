@@ -8,7 +8,7 @@
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x270
+// Checksum 0x0, Offset: 0x248
 // Size: 0x34
 function function_a414fbf48ae645f4() {
     level.var_a4123e1a53dea557 = getdvarint(@"hash_86c85cfc843c0b68", 1);
@@ -17,8 +17,8 @@ function function_a414fbf48ae645f4() {
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ac
-// Size: 0x176
+// Checksum 0x0, Offset: 0x284
+// Size: 0x175
 function function_93288f91f5aabd02() {
     juggcontext = spawnstruct();
     juggcontext.partshealth = [];
@@ -46,7 +46,7 @@ function function_93288f91f5aabd02() {
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x42a
+// Checksum 0x0, Offset: 0x401
 // Size: 0xd7
 function function_f75bc5c067f4015(part, damage) {
     if (isdefined(part) && part == "head_health" && !isdefined(self.juggcontext.partshealth[part])) {
@@ -62,8 +62,8 @@ function function_f75bc5c067f4015(part, damage) {
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x509
-// Size: 0xcb
+// Checksum 0x0, Offset: 0x4e0
+// Size: 0xc9
 function function_fd38d13ec4cf6449(parts, state) {
     if (istrue(self.var_8081d864dc563057)) {
         return;
@@ -81,14 +81,14 @@ function function_fd38d13ec4cf6449(parts, state) {
     foreach (part in partstoset) {
         self setscriptablepartstate(part, state, 0);
         /#
-            iprintln("<dev string:x44>" + part + "<dev string:x50>" + state + "<dev string:x5f>");
+            iprintln("<dev string:x41>" + part + "<dev string:x4a>" + state + "<dev string:x56>");
         #/
     }
 }
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dc
+// Checksum 0x0, Offset: 0x5b1
 // Size: 0x156
 function function_1cbb19fc0caeab00(subtype) {
     weapon = undefined;
@@ -111,9 +111,12 @@ function function_1cbb19fc0caeab00(subtype) {
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x73a
-// Size: 0x29e
+// Checksum 0x0, Offset: 0x70f
+// Size: 0x286
 function function_1ab798a528080db2(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
+    if (isdefined(self.var_970170ffd4b081ac)) {
+        idamage = self [[ self.var_970170ffd4b081ac ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon);
+    }
     if (isdefined(level.var_d49c99ad85354bd6)) {
         if (isdefined(level.var_a4123e1a53dea557) && level.var_a4123e1a53dea557 == 1) {
             overflow = idamage - level.var_d49c99ad85354bd6;
@@ -124,16 +127,13 @@ function function_1ab798a528080db2(einflictor, eattacker, idamage, idflags, smea
             idamage = int(min(idamage, level.var_d49c99ad85354bd6));
         }
     }
-    if (isdefined(self.var_970170ffd4b081ac)) {
-        idamage = self [[ self.var_970170ffd4b081ac ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon);
-    }
     remaininghealth = self.health - idamage;
     if (remaininghealth <= 0) {
         if (isdefined(self.var_68c43b3ffee58999)) {
             self notify(self.var_68c43b3ffee58999);
         }
     }
-    if (isdefined(self.juggcontext) && !istrue(self.juggcontext.ignorepain)) {
+    if (isdefined(self.juggcontext)) {
         self.juggcontext.lastdamagedtime = gettime();
         if (self.juggcontext.lastpaintime < gettime()) {
             if (self.allowpain == 0) {
@@ -154,7 +154,7 @@ function function_1ab798a528080db2(einflictor, eattacker, idamage, idflags, smea
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e0
+// Checksum 0x0, Offset: 0x99d
 // Size: 0x96
 function function_ca2d7204b750d78b() {
     self endon("death");
@@ -168,16 +168,14 @@ function function_ca2d7204b750d78b() {
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7e
-// Size: 0x6d
+// Checksum 0x0, Offset: 0xa3b
+// Size: 0x69
 function function_fa4f1a412ab12028(damage, shitloc, smeansofdeath, attacker) {
     var_1f48003b8e69560c = function_c0aa811f7b45687c(shitloc, smeansofdeath, attacker);
     if (!isdefined(var_1f48003b8e69560c)) {
-        /#
-            if (isdefined(attacker) && isdefined(shitloc) && isplayer(attacker)) {
-                attacker iprintln("<dev string:x64>" + shitloc);
-            }
-        #/
+        if (isdefined(attacker) && isdefined(shitloc) && isplayer(attacker)) {
+            attacker iprintln("jugg_damageArmorParts: There are no valid parts to damage for hitloc " + shitloc);
+        }
         return;
     }
     function_94b7ecf1273ba3c0(var_1f48003b8e69560c, damage);
@@ -185,8 +183,8 @@ function function_fa4f1a412ab12028(damage, shitloc, smeansofdeath, attacker) {
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf3
-// Size: 0x112
+// Checksum 0x0, Offset: 0xaac
+// Size: 0x111
 function function_c0aa811f7b45687c(shitloc, smeansofdeath, attacker) {
     var_1f48003b8e69560c = undefined;
     if (isheadshot(shitloc, smeansofdeath, attacker)) {
@@ -210,7 +208,7 @@ function function_c0aa811f7b45687c(shitloc, smeansofdeath, attacker) {
     }
     /#
         if (isdefined(shitloc) && isdefined(attacker) && isplayer(attacker)) {
-            attacker iprintlnbold("<dev string:xad>" + shitloc);
+            attacker iprintlnbold("<dev string:x58>" + shitloc);
         }
     #/
     return var_1f48003b8e69560c;
@@ -218,7 +216,7 @@ function function_c0aa811f7b45687c(shitloc, smeansofdeath, attacker) {
 
 // Namespace agent_juggernaut / namespace_1f8384d33bfd1e13
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0e
+// Checksum 0x0, Offset: 0xbc6
 // Size: 0x212
 function function_94b7ecf1273ba3c0(part, damage) {
     if (isdefined(self.juggcontext.var_5f03cad2b199e1bc)) {

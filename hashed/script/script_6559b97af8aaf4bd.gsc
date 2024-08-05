@@ -9,7 +9,7 @@
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x371
+// Checksum 0x0, Offset: 0x2ee
 // Size: 0x10e
 function getfunction(funcid) {
     switch (funcid) {
@@ -40,12 +40,12 @@ function getfunction(funcid) {
     case #"hash_18372b0f69e4b08c": 
         return &waitforreviver;
     }
-    assertmsg("<dev string:x1c>" + funcid);
+    assertmsg("Missing function pointer for " + funcid);
 }
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x487
+// Checksum 0x0, Offset: 0x404
 // Size: 0xb
 function function_3dbd361f74b442f9(interactionid) {
     
@@ -53,12 +53,12 @@ function function_3dbd361f74b442f9(interactionid) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49a
-// Size: 0x136
+// Checksum 0x0, Offset: 0x417
+// Size: 0x135
 function function_a157fbbc31d9eb1a(interactionid) {
     /#
         if (isagent(self)) {
-            assertex(self isscriptable(), "<dev string:x3d>" + self.agent_type + "<dev string:x4d>");
+            assertex(self isscriptable(), "<dev string:x1c>" + self.agent_type + "<dev string:x29>");
         }
     #/
     var_8a46c62f0a756dd3 = "revival_helper_stim";
@@ -90,7 +90,7 @@ function function_a157fbbc31d9eb1a(interactionid) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d8
+// Checksum 0x0, Offset: 0x554
 // Size: 0x8c
 function oneventreceived(receiver, info, origin) {
     if (info == "focused_on" && !doinglongdeath()) {
@@ -106,8 +106,8 @@ function oneventreceived(receiver, info, origin) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x66d
-// Size: 0x3b6
+// Checksum 0x0, Offset: 0x5e9
+// Size: 0x3c5
 function function_13c5106712ee80f6(statename, params) {
     self endon("death");
     self endon("end_revival");
@@ -188,8 +188,8 @@ function function_13c5106712ee80f6(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2b
-// Size: 0x7a
+// Checksum 0x0, Offset: 0x9b6
+// Size: 0x79
 function reviving(statename, params) {
     self endon("death");
     self endon("end_revival");
@@ -207,8 +207,8 @@ function reviving(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaad
-// Size: 0x96
+// Checksum 0x0, Offset: 0xa37
+// Size: 0x95
 function function_7436e5b9117c6fab(statename, params) {
     self endon("death");
     self endon("end_revival");
@@ -226,7 +226,7 @@ function function_7436e5b9117c6fab(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4b
+// Checksum 0x0, Offset: 0xad4
 // Size: 0x67
 function earlyrevivedsuccess(statename, params) {
     self endon("death");
@@ -242,8 +242,8 @@ function earlyrevivedsuccess(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbba
-// Size: 0x11c
+// Checksum 0x0, Offset: 0xb43
+// Size: 0x11e
 function function_3f662d6595827e55(statename, params) {
     self endon("death");
     self endon("end_revival");
@@ -268,7 +268,7 @@ function function_3f662d6595827e55(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcde
+// Checksum 0x0, Offset: 0xc69
 // Size: 0x3a
 function remoterevive(statename, params) {
     self endon("death");
@@ -279,7 +279,7 @@ function remoterevive(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd20
+// Checksum 0x0, Offset: 0xcab
 // Size: 0x95
 function function_44b26bbd70e007bd(statename, params) {
     self endon("death");
@@ -297,7 +297,7 @@ function function_44b26bbd70e007bd(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbd
+// Checksum 0x0, Offset: 0xd48
 // Size: 0x29
 function waitforreviver(statename, params) {
     self endon("death");
@@ -307,7 +307,7 @@ function waitforreviver(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdee
+// Checksum 0x0, Offset: 0xd79
 // Size: 0x56
 function function_8cfa9efbcd45c5b1(statename, params) {
     self endon("death");
@@ -320,7 +320,7 @@ function function_8cfa9efbcd45c5b1(statename, params) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xe4c
+// Checksum 0x0, Offset: 0xdd7
 // Size: 0x4a
 function private function_ddf0d739daa1d97c() {
     if (!isdefined(self.var_f3827976dc178720)) {
@@ -335,7 +335,7 @@ function private function_ddf0d739daa1d97c() {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xe9e
+// Checksum 0x0, Offset: 0xe29
 // Size: 0x3d
 function private function_4c1d28fa0f0bbba8() {
     self.ignoreall = 0;
@@ -347,8 +347,8 @@ function private function_4c1d28fa0f0bbba8() {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xee3
-// Size: 0x20
+// Checksum 0x0, Offset: 0xe6e
+// Size: 0x1f
 function private function_db717d5877caf11d() {
     helper = function_5669cb34cd563512();
     if (isdefined(helper)) {
@@ -358,8 +358,8 @@ function private function_db717d5877caf11d() {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xf0b
-// Size: 0xf8
+// Checksum 0x0, Offset: 0xe95
+// Size: 0xff
 function private adjustpos() {
     startpos = self.origin;
     startangles = self.angles;
@@ -380,7 +380,7 @@ function private adjustpos() {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x100b
+// Checksum 0x0, Offset: 0xf9c
 // Size: 0x43
 function private function_9d6585cc199439cb(dyingguy) {
     var_3b3c2e088b48d1e2 = 6;
@@ -394,7 +394,7 @@ function private function_9d6585cc199439cb(dyingguy) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1057
+// Checksum 0x0, Offset: 0xfe8
 // Size: 0x38
 function private function_be5400e991ae040a(alias) {
     if (alias[0] == "4") {
@@ -405,7 +405,7 @@ function private function_be5400e991ae040a(alias) {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1097
+// Checksum 0x0, Offset: 0x1028
 // Size: 0x1c
 function private function_2d7fa1f11c70ad04() {
     function_ae368fad1a1dc337(self function_92435c7a6ae85c3c(), "death", 1);
@@ -414,7 +414,7 @@ function private function_2d7fa1f11c70ad04() {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x10bb
+// Checksum 0x0, Offset: 0x104c
 // Size: 0x2c
 function private function_fa0aae45ce9c1727() {
     id = self function_92435c7a6ae85c3c();
@@ -424,7 +424,7 @@ function private function_fa0aae45ce9c1727() {
 
 // Namespace ai_revival / namespace_35286fc8500a0a07
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x10f0
+// Checksum 0x0, Offset: 0x1081
 // Size: 0x2c
 function private function_5669cb34cd563512() {
     id = self function_92435c7a6ae85c3c();

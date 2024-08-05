@@ -11,8 +11,8 @@
 
 // Namespace traverse / scripts\asm\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x404
-// Size: 0x360
+// Checksum 0x0, Offset: 0xa2c
+// Size: 0x363
 function playtraversearrivalanim(asmname, statename, params) {
     self endon("death");
     self endon("terminate_ai_threads");
@@ -53,7 +53,7 @@ function playtraversearrivalanim(asmname, statename, params) {
     self.traversexanim = traversexanim;
     self.traverseanimroot = asm_getbodyknob();
     if (isanimation(traverseanim)) {
-        assertex(self.var_e2b4fc394eef5c0f == "<dev string:x60>", "<dev string:x7a>");
+        assertex(self.var_e2b4fc394eef5c0f == "traverse_warp_external", "result of choose anim can only be an xanim in the case of a custom traverse");
         assert(utility::issp());
         self aisetanim(statename, 0);
         self clearanim(asm_getinnerrootknob(), 0.2);
@@ -81,7 +81,7 @@ function playtraversearrivalanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x76c
+// Checksum 0x0, Offset: 0xd97
 // Size: 0x25
 function function_e9cc41df0c7dfd7b(asmname, statename, params) {
     playtraversearrivalanim(asmname, statename, params);
@@ -89,7 +89,7 @@ function function_e9cc41df0c7dfd7b(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x799
+// Checksum 0x0, Offset: 0xdc4
 // Size: 0xa7
 function function_eadd4123f9b2da38(asmname, statename, params) {
     assert(isdefined(level.var_bb5f04e5a0a5c13));
@@ -101,8 +101,8 @@ function function_eadd4123f9b2da38(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x849
-// Size: 0xae0
+// Checksum 0x0, Offset: 0xe74
+// Size: 0xacf
 function playtraverseanim_scaled(asmname, statename, params) {
     self endon("death");
     self endon("terminate_ai_threads");
@@ -110,7 +110,7 @@ function playtraverseanim_scaled(asmname, statename, params) {
     checktraverse(statename);
     var_ddbf32a121351dd = 1;
     var_a1567247b6c748b3 = 0;
-    if (self.var_32a34987ee1b3095 == "not_set" || self.var_32a34987ee1b3095 == "node_based" && !isdefined(self getnegotiationstartnode())) {
+    if (self.var_32a34987ee1b3095 == "not_set") {
         var_ddbf32a121351dd = self setuptraversaltransitioncheck(120);
     }
     if (var_ddbf32a121351dd) {
@@ -170,9 +170,9 @@ function playtraverseanim_scaled(asmname, statename, params) {
     scripts\asm\asm_bb::bb_requeststance("stand");
     if (!isdefined(traverseanim) || !isdefined(traversexanim) || !animisleaf(traversexanim)) {
         if (isdefined(traversexanim)) {
-            assertmsg("<dev string:xc9>" + traversexanim + "<dev string:xe4>");
+            assertmsg("Invalid traverse anim: " + traversexanim + ".  Anim is not leaf");
         } else {
-            assertmsg("<dev string:xfb>" + asmname + "<dev string:x125>" + statename);
+            assertmsg("Failed to find traversal anim in asm: " + asmname + " for state: " + statename);
         }
         endpos = undefined;
         if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
@@ -214,14 +214,14 @@ function playtraverseanim_scaled(asmname, statename, params) {
         notetrackhandle = &handletraversewarpnotetracks;
     } else {
         notetrackhandle = &handletraverselegacynotetracks;
-        println("<dev string:x135>", traversexanim, "<dev string:x14e>", statename, "<dev string:x15c>");
+        println("<dev string:x5d>", traversexanim, "<dev string:x73>", statename, "<dev string:x7e>");
         if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
             self orientmode("face angle", self.var_64b933af90edc53c.angles[1]);
         } else {
             self orientmode("face angle", self.traversestartnode.angles[1]);
         }
         if (!animhasnotetrack(traversexanim, "traverse_align")) {
-            println("<dev string:x135>", traversexanim, "<dev string:x14e>", statename, "<dev string:x19e>");
+            println("<dev string:x5d>", traversexanim, "<dev string:x73>", statename, "<dev string:xbd>");
             handletraversealignment();
         }
     }
@@ -237,7 +237,7 @@ function playtraverseanim_scaled(asmname, statename, params) {
         self aisetanim(statename, traverseanim, self.animplaybackratedefault, default_to(self.var_d74f2d1e6f517141, 0));
     }
     if (shouldusewarparrival && !isagent(self) && (!self.var_20a0e88052918576 || !istrue(self.var_c4ef68fe2a3931e5))) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x1c2>"));
+        assert(animhasnotetrack(traversexanim, "warp_arrival_end"));
         arrivalendtime = getnotetracktimes(traversexanim, "warp_arrival_end")[0];
         self setanimtime(traversexanim, arrivalendtime);
     }
@@ -252,14 +252,14 @@ function playtraverseanim_scaled(asmname, statename, params) {
         var_13a9ca0e75f2fef4.angles = self.var_64b933af90edc53c.angles;
         var_13a9ca0e75f2fef4.across_delta = self.var_64b933af90edc53c.across_delta;
     } else {
-        assertex(isdefined(self.traversestartnode) && isdefined(self.traversestartnode.apex_delta), "<dev string:x1d6>");
+        assertex(isdefined(self.traversestartnode) && isdefined(self.traversestartnode.apex_delta), "Data for node-based traversal has not been calculated. This should have happened during traverseThink() or traverseProceduralThink()");
         var_13a9ca0e75f2fef4.startpos = self.traversestartnode.origin;
         var_13a9ca0e75f2fef4.apex_delta = self.traversestartnode.apex_delta;
         var_13a9ca0e75f2fef4.angles = self.traversestartnode.angles;
         if (isdefined(self.traverseendnode)) {
             var_13a9ca0e75f2fef4.endpos = self.traverseendnode.origin;
         } else {
-            assertmsg("<dev string:x25e>" + var_13a9ca0e75f2fef4.startpos);
+            assertmsg("invalid end node for node based traversal starting at: " + var_13a9ca0e75f2fef4.startpos);
             terminatetraverse(asmname, statename);
             return;
         }
@@ -268,7 +268,7 @@ function playtraverseanim_scaled(asmname, statename, params) {
     self function_742e699e544869c2(var_13a9ca0e75f2fef4.startpos, var_13a9ca0e75f2fef4.endpos, var_13a9ca0e75f2fef4.angles, var_13a9ca0e75f2fef4.apex_delta, var_13a9ca0e75f2fef4.across_delta);
     return_note = asm_donotetracks(asmname, statename, notetrackhandle, undefined, undefined, 0);
     if (return_note == "code_move") {
-        assertex(var_370a8c08be55a7a5.size > 0, "<dev string:x299>" + function_3c8848a3a11b2553(getanimname(traversexanim)));
+        assertex(var_370a8c08be55a7a5.size > 0, "Animation requires code_move: " + function_3c8848a3a11b2553(getanimname(traversexanim)));
         if (isdefined(self.pathgoalpos)) {
             self motionwarpcancel();
             self animmode("normal");
@@ -293,7 +293,7 @@ function playtraverseanim_scaled(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1331
+// Checksum 0x0, Offset: 0x194b
 // Size: 0x74
 function terminatetraverse(asmname, statename) {
     self.useanimgoalweight = 0;
@@ -310,7 +310,7 @@ function terminatetraverse(asmname, statename) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ad
+// Checksum 0x0, Offset: 0x19c7
 // Size: 0xa8
 function handletraversealignment() {
     self animmode("noclip");
@@ -328,7 +328,7 @@ function handletraversealignment() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x145d
+// Checksum 0x0, Offset: 0x1a77
 // Size: 0x44
 function handletraverselegacynotetracks(note) {
     if (note == "traverse_death") {
@@ -344,8 +344,8 @@ function handletraverselegacynotetracks(note) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a9
-// Size: 0x30d
+// Checksum 0x0, Offset: 0x1ac3
+// Size: 0x31a
 function handletraversedrop() {
     self animmode("noclip");
     endnode = self.traverseendnode;
@@ -369,12 +369,12 @@ function handletraversedrop() {
     var_2ed406669fbe4377 = 512;
     tracestart = (self.origin[0] + animdelta[0], self.origin[1] + animdelta[1], self.origin[2]);
     targetpos = getgroundposition(tracestart, 10, var_2ed406669fbe4377, 12);
-    assertex(tracestart[2] - targetpos[2] < var_2ed406669fbe4377, "<dev string:x2bb>" + var_2ed406669fbe4377 + "<dev string:x2e0>" + tracestart);
+    assertex(tracestart[2] - targetpos[2] < var_2ed406669fbe4377, "Unable to find ground pos within " + var_2ed406669fbe4377 + " of traverse end " + tracestart);
     var_49601ab0e39bf185 = 0.05;
     var_cc2baf1e6d41c416 = 30;
     zdelta = abs(targetpos[2] - self.origin[2]);
     if (zdelta < var_49601ab0e39bf185 * abs(animdelta[2]) || zdelta > var_cc2baf1e6d41c416) {
-        println("<dev string:x2f5>" + self.traversestartnode.origin + "<dev string:x32a>");
+        println("<dev string:xde>" + self.traversestartnode.origin + "<dev string:x110>");
         targetpos = (targetpos[0], targetpos[1], endnode.origin[2]);
     }
     nextcorner = self getpointafternegotiation();
@@ -394,7 +394,7 @@ function handletraversedrop() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17be
+// Checksum 0x0, Offset: 0x1de5
 // Size: 0x46
 function finishtraversedrop(finalz) {
     self endon("killanimscript");
@@ -411,8 +411,8 @@ function finishtraversedrop(finalz) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x180c
-// Size: 0x69
+// Checksum 0x0, Offset: 0x1e33
+// Size: 0x6a
 function teleportthread(verticaloffset) {
     self endon("killanimscript");
     self notify("endTeleportThread");
@@ -427,7 +427,7 @@ function teleportthread(verticaloffset) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x187d
+// Checksum 0x0, Offset: 0x1ea5
 // Size: 0xd8
 function teleportthreadex(verticaloffset, delay, frames, animrate) {
     self endon("killanimscript");
@@ -455,31 +455,31 @@ function teleportthreadex(verticaloffset, delay, frames, animrate) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x195d
+// Checksum 0x0, Offset: 0x1f85
 // Size: 0xea
 function shouldusewarpnotetracks(traversexanim) {
     if (animhasnotetrack(traversexanim, "warp_up_start")) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x3b5>"));
+        assert(animhasnotetrack(traversexanim, "warp_up_end"));
         return true;
     }
     if (animhasnotetrack(traversexanim, "warp_across_start")) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x3c4>"));
+        assert(animhasnotetrack(traversexanim, "warp_across_end"));
         return true;
     }
     if (animhasnotetrack(traversexanim, "warp_down_start")) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x3d7>"));
+        assert(animhasnotetrack(traversexanim, "warp_down_end"));
         return true;
     }
     if (animhasnotetrack(traversexanim, "warp_up_start_new")) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x3e8>"));
+        assert(animhasnotetrack(traversexanim, "warp_up_end_new"));
         return true;
     }
     if (animhasnotetrack(traversexanim, "warp_down_start_new")) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x3fb>"));
+        assert(animhasnotetrack(traversexanim, "warp_down_end_new"));
         return true;
     }
     if (animhasnotetrack(traversexanim, "MotionWarpNoteStart")) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x410>"));
+        assert(animhasnotetrack(traversexanim, "MotionWarpNoteStart"));
         return true;
     }
     return false;
@@ -487,11 +487,11 @@ function shouldusewarpnotetracks(traversexanim) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a50
+// Checksum 0x0, Offset: 0x2078
 // Size: 0x31
 function shouldusewarparrival(traversexanim) {
     if (animhasnotetrack(traversexanim, "warp_arrival_start")) {
-        assert(animhasnotetrack(traversexanim, "<dev string:x1c2>"));
+        assert(animhasnotetrack(traversexanim, "warp_arrival_end"));
         return true;
     }
     return false;
@@ -499,8 +499,8 @@ function shouldusewarparrival(traversexanim) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a8a
-// Size: 0xdd
+// Checksum 0x0, Offset: 0x20b2
+// Size: 0xde
 function function_bff8ca6cd5006152(asmname, statename, tostatename, params) {
     if (self.var_32a34987ee1b3095 == "not_set") {
         return false;
@@ -508,7 +508,7 @@ function function_bff8ca6cd5006152(asmname, statename, tostatename, params) {
     if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
         start_pos = self.var_c97cd7821467b22c;
     } else {
-        assert(self.var_32a34987ee1b3095 == "<dev string:x427>");
+        assert(self.var_32a34987ee1b3095 == "normal");
         start_pos = self.traversal_start_node.origin;
     }
     disttonode = distance2d(self.origin, start_pos);
@@ -524,7 +524,7 @@ function function_bff8ca6cd5006152(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b70
+// Checksum 0x0, Offset: 0x2199
 // Size: 0x35
 function shoulddotraditionaltraverse(asmname, statename, tostatename, params) {
     if (self.var_e2b4fc394eef5c0f != params) {
@@ -535,7 +535,7 @@ function shoulddotraditionaltraverse(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bae
+// Checksum 0x0, Offset: 0x21d7
 // Size: 0x33
 function traverse_cleanup(asmname, statename, params) {
     self motionwarpcancel();
@@ -547,42 +547,42 @@ function traverse_cleanup(asmname, statename, params) {
 
     // Namespace traverse / scripts\asm\traverse
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1be9
-    // Size: 0x512
+    // Checksum 0x0, Offset: 0x2212
+    // Size: 0x516
     function function_ceba701c6c68b2ee(var_e9db8fc3741a7e52, alias, var_9beb646264506c87, translationstartfrac) {
         no_recorder = getdvarint(@"hash_a83f59607205c9c0", 0) <= 0;
         textheight = 70;
         if (no_recorder) {
-            print3d(self.origin + (0, 0, textheight), "<dev string:x431>" + self.var_e2b4fc394eef5c0f + "<dev string:x43b>", (1, 0, 1), 1, 0.5, 80);
+            print3d(self.origin + (0, 0, textheight), "<dev string:x198>" + self.var_e2b4fc394eef5c0f + "<dev string:x19f>", (1, 0, 1), 1, 0.5, 80);
         }
-        record3dtext("<dev string:x431>" + self.var_e2b4fc394eef5c0f + "<dev string:x43b>", self.origin + (0, 0, textheight), (1, 0, 1));
+        record3dtext("<dev string:x198>" + self.var_e2b4fc394eef5c0f + "<dev string:x19f>", self.origin + (0, 0, textheight), (1, 0, 1));
         foreach (key, value in var_e9db8fc3741a7e52) {
             textheight -= 10;
             if (no_recorder) {
-                print3d(self.origin + (0, 0, textheight), key + "<dev string:x440>" + value + "<dev string:x43b>", (1, 0, 1), 1, 0.5, 80);
+                print3d(self.origin + (0, 0, textheight), key + "<dev string:x1a1>" + value + "<dev string:x19f>", (1, 0, 1), 1, 0.5, 80);
             }
-            record3dtext(key + "<dev string:x440>" + value + "<dev string:x43b>", self.origin + (0, 0, textheight), (1, 0, 1));
+            record3dtext(key + "<dev string:x1a1>" + value + "<dev string:x19f>", self.origin + (0, 0, textheight), (1, 0, 1));
         }
         if (isdefined(alias)) {
             textheight -= 10;
             if (no_recorder) {
-                print3d(self.origin + (0, 0, textheight), "<dev string:x446>" + alias + "<dev string:x43b>", (1, 0, 1), 1, 0.5, 80);
+                print3d(self.origin + (0, 0, textheight), "<dev string:x1a4>" + alias + "<dev string:x19f>", (1, 0, 1), 1, 0.5, 80);
             }
-            record3dtext("<dev string:x446>" + alias + "<dev string:x43b>", self.origin + (0, 0, textheight), (1, 0, 1));
+            record3dtext("<dev string:x1a4>" + alias + "<dev string:x19f>", self.origin + (0, 0, textheight), (1, 0, 1));
         }
         if (isdefined(var_9beb646264506c87)) {
             textheight -= 10;
             if (no_recorder) {
-                print3d(self.origin + (0, 0, textheight), "<dev string:x45a>" + var_9beb646264506c87, (1, 0, 1), 1, 0.5, 80);
+                print3d(self.origin + (0, 0, textheight), "<dev string:x1b5>" + var_9beb646264506c87, (1, 0, 1), 1, 0.5, 80);
             }
-            record3dtext("<dev string:x45a>" + var_9beb646264506c87, self.origin + (0, 0, textheight), (1, 0, 1));
+            record3dtext("<dev string:x1b5>" + var_9beb646264506c87, self.origin + (0, 0, textheight), (1, 0, 1));
         }
         if (translationstartfrac > 0) {
             textheight -= 10;
             if (no_recorder) {
-                print3d(self.origin + (0, 0, textheight), "<dev string:x474>" + translationstartfrac, (1, 0, 1), 1, 0.5, 80);
+                print3d(self.origin + (0, 0, textheight), "<dev string:x1cc>" + translationstartfrac, (1, 0, 1), 1, 0.5, 80);
             }
-            record3dtext("<dev string:x474>" + translationstartfrac, self.origin + (0, 0, textheight), (1, 0, 1));
+            record3dtext("<dev string:x1cc>" + translationstartfrac, self.origin + (0, 0, textheight), (1, 0, 1));
         }
         startnode = default_to(self.traversal_start_node, self.var_64b933af90edc53c);
         debugstart = startnode.origin;
@@ -621,8 +621,8 @@ function traverse_cleanup(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2103
-// Size: 0xee
+// Checksum 0x0, Offset: 0x2730
+// Size: 0xf0
 function function_3bb347b40346528a() {
     var_73ba1b0a68c224f5 = self.var_c97cd7821467b22c;
     var_ef78260982b9116c = self.var_e341ef38b14d5cd3;
@@ -644,8 +644,8 @@ function function_3bb347b40346528a() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x21fa
-// Size: 0xd2e
+// Checksum 0x0, Offset: 0x2829
+// Size: 0xd5f
 function calctraversetype(asmname, statename, params) {
     var_e8885693728fd806 = undefined;
     var_a8354f77f1ab9157 = self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless";
@@ -655,7 +655,7 @@ function calctraversetype(asmname, statename, params) {
         } else if (isdefined(self.var_bb9dc4a1372891c6)) {
             var_e8885693728fd806 = self.var_bb9dc4a1372891c6;
         }
-        assertex(isdefined(var_e8885693728fd806), "<dev string:x494>");
+        assertex(isdefined(var_e8885693728fd806), "<dev string:x1e9>");
         self.var_64b933af90edc53c = self [[ var_e8885693728fd806 ]]();
     }
     self.var_20a0e88052918576 = 1;
@@ -674,26 +674,22 @@ function calctraversetype(asmname, statename, params) {
         function_beef4a855ca0ca3c();
         return;
     } else if (self.var_e2b4fc394eef5c0f == "traverse_warp_external") {
-        assertex(self.var_32a34987ee1b3095 == "<dev string:x4e5>", "<dev string:x4f3>");
-        assertex(isdefined(self.traversal_start_node), "<dev string:x521>" + self.var_32a34987ee1b3095 + "<dev string:x547>" + self.var_ad4d9f5a34656396 + "<dev string:x54d>");
+        assertex(self.var_32a34987ee1b3095 == "node_based", "traverse_warp_external must be node-based.");
+        assertex(isdefined(self.traversal_start_node), "Missing traversal start node for '" + self.var_32a34987ee1b3095 + "' " + self.var_ad4d9f5a34656396 + "' traversal");
         assert(isdefined(self.traversal_start_node.animscript));
         customname = self.traversal_start_node.animscript;
-        assertex(isdefined(level.var_bb5f04e5a0a5c13), "<dev string:x55c>" + customname);
-        assert(isdefined(level.var_bb5f04e5a0a5c13[customname]), "<dev string:x5d8>" + customname + "<dev string:x64f>");
+        assertex(isdefined(level.var_bb5f04e5a0a5c13), "cannot use traverse warp external without setting custom choose arrival function in level.scr_traverse_choosearrivalfn: " + customname);
+        assert(isdefined(level.var_bb5f04e5a0a5c13[customname]), "cannot use traverse external without setting custom choose arrival function in level.scr_traverse_choosearrivalfn[ " + customname + " ].");
         self.traversalhasarrival = 1;
         self.var_c4ef68fe2a3931e5 = 1;
-        if (isdefined(level.var_bb5f04e5a0a5c13[customname])) {
-            traverseanim = self [[ level.var_bb5f04e5a0a5c13[customname] ]](asmname, statename, params);
-            assert(isdefined(traverseanim));
-            assert(isanimation(traverseanim));
-            self.var_64759b639d9fb8d6 = getmovedelta(traverseanim, 0, 1);
-            return;
-        }
-        function_beef4a855ca0ca3c();
+        traverseanim = self [[ level.var_bb5f04e5a0a5c13[customname] ]](asmname, statename, params);
+        assert(isdefined(traverseanim));
+        assert(isanimation(traverseanim));
+        self.var_64759b639d9fb8d6 = getmovedelta(traverseanim, 0, 1);
         return;
     }
     if (var_a8354f77f1ab9157) {
-        assertex(isdefined(self.var_64b933af90edc53c), "<dev string:x656>" + self.var_32a34987ee1b3095 + "<dev string:x547>" + self.var_ad4d9f5a34656396 + "<dev string:x54d>");
+        assertex(isdefined(self.var_64b933af90edc53c), "Missing traversal nodeless data for '" + self.var_32a34987ee1b3095 + "' " + self.var_ad4d9f5a34656396 + "' traversal");
         var_e9db8fc3741a7e52 = [];
         var_e9db8fc3741a7e52["height"] = self.var_64b933af90edc53c.traverse_height_delta;
         var_e9db8fc3741a7e52["drop_height"] = self.var_64b933af90edc53c.traverse_drop_height_delta;
@@ -703,13 +699,10 @@ function calctraversetype(asmname, statename, params) {
             var_e9db8fc3741a7e52["length"] = length2d(self.var_64b933af90edc53c.across_delta);
         }
     } else if (self.var_32a34987ee1b3095 == "node_based") {
-        assertex(isdefined(self.traversal_start_node), "<dev string:x521>" + self.var_32a34987ee1b3095 + "<dev string:x547>" + self.var_ad4d9f5a34656396 + "<dev string:x54d>");
-        assertex(isdefined(self.traversal_start_node.type), "<dev string:x67f>" + self.traversal_start_node.origin);
-        assertex(self.traversal_start_node.type == "<dev string:x6c5>", "<dev string:x6ce>" + self.traversal_start_node.type + "<dev string:x6f6>" + self.traversal_start_node.origin);
-        if (!isdefined(self.traversal_start_node.traverse_height)) {
-            self.traversal_start_node asm::traversethink();
-        }
-        assertex(isdefined(self.traversal_start_node.traverse_height), "<dev string:x711>" + self.var_32a34987ee1b3095 + "<dev string:x547>" + self.var_ad4d9f5a34656396 + "<dev string:x73a>" + self.traversal_start_node.origin);
+        assertex(isdefined(self.traversal_start_node), "Missing traversal start node for '" + self.var_32a34987ee1b3095 + "' " + self.var_ad4d9f5a34656396 + "' traversal");
+        assertex(isdefined(self.traversal_start_node.type), "Invalid traversal start node - missing type. Start node location: " + self.traversal_start_node.origin);
+        assertex(self.traversal_start_node.type == "Begin", "Invalid traversal start node type: '" + self.traversal_start_node.type + "' Start node location: " + self.traversal_start_node.origin);
+        assertex(isdefined(self.traversal_start_node.traverse_height), "Missing computed traversal data for '" + self.var_32a34987ee1b3095 + "' " + self.var_ad4d9f5a34656396 + "' traversal. Start node location: " + self.traversal_start_node.origin);
         var_e9db8fc3741a7e52 = [];
         var_e9db8fc3741a7e52["height"] = self.traversal_start_node.traverse_height_delta;
         var_e9db8fc3741a7e52["drop_height"] = self.traversal_start_node.traverse_drop_height_delta;
@@ -719,7 +712,7 @@ function calctraversetype(asmname, statename, params) {
             var_e9db8fc3741a7e52["length"] = length2d(self.traversal_start_node.across_delta);
         }
     } else {
-        assertmsg("<dev string:x760>" + self.var_32a34987ee1b3095 + "<dev string:x77f>" + self.var_ad4d9f5a34656396);
+        assertmsg("Invalid traverse_navtype: '" + self.var_32a34987ee1b3095 + "', traverse_traverseType: " + self.var_ad4d9f5a34656396);
         return;
     }
     if (isdefined(self.var_12a6a7d538790f6e)) {
@@ -739,9 +732,9 @@ function calctraversetype(asmname, statename, params) {
         var_1b240bbf89180b65 = gettraverserindex();
         if (var_1b240bbf89180b65 < 0) {
             /#
-                assertstring = "<dev string:x79d>" + default_to(self.var_e2b4fc394eef5c0f, "<dev string:x7e3>") + "<dev string:x7e8>" + self.origin + "<dev string:x7fa>" + self getbasearchetype() + "<dev string:x80e>";
-                foreach (key, value in var_e9db8fc3741a7e52) {
-                    assertstring += key + "<dev string:x823>" + value + "<dev string:x828>";
+                assertstring = "<dev string:x237>" + default_to(self.var_e2b4fc394eef5c0f, "<dev string:x27a>") + "<dev string:x27c>" + self.origin + "<dev string:x28b>" + self getbasearchetype() + "<dev string:x29c>";
+                foreach (value in var_e9db8fc3741a7e52) {
+                    assertstring += key + "<dev string:x2ae>" + value + "<dev string:x2b0>";
                 }
                 assertmsg(assertstring);
             #/
@@ -749,7 +742,7 @@ function calctraversetype(asmname, statename, params) {
         }
         alias = selectanim(self.var_e2b4fc394eef5c0f, var_e9db8fc3741a7e52, var_1b240bbf89180b65);
     }
-    assertex(asm_hasalias(self.var_e2b4fc394eef5c0f, alias), "<dev string:x82e>" + self.var_e2b4fc394eef5c0f + "<dev string:x83c>" + alias);
+    assertex(asm_hasalias(self.var_e2b4fc394eef5c0f, alias), "ASM state " + self.var_e2b4fc394eef5c0f + " has no anims with selected alias " + alias);
     traverseanim = asm_lookupanimfromalias(self.var_e2b4fc394eef5c0f, alias);
     xanim = asm_getxanim(self.var_e2b4fc394eef5c0f, traverseanim);
     self.var_2078d7b4461a7a13 = alias;
@@ -759,8 +752,8 @@ function calctraversetype(asmname, statename, params) {
     var_940bd08d958ac599 = asm_lookupanimfromaliasifexists(arrivalstate, alias);
     if (isdefined(var_940bd08d958ac599)) {
         arrivalxanim = asm_getxanim(arrivalstate, var_940bd08d958ac599);
-        assertex(animhasnotetrack(arrivalxanim, "<dev string:x862>") && animhasnotetrack(arrivalxanim, "<dev string:x1c2>"), "<dev string:x878>" + alias + "<dev string:x14e>" + self.var_e2b4fc394eef5c0f + "<dev string:x887>");
-        assertex(!animhasnotetrack(xanim, "<dev string:x862>") && !animhasnotetrack(xanim, "<dev string:x1c2>"), "<dev string:x878>" + alias + "<dev string:x14e>" + self.var_e2b4fc394eef5c0f + "<dev string:x8bd>");
+        assertex(animhasnotetrack(arrivalxanim, "warp_arrival_start") && animhasnotetrack(arrivalxanim, "warp_arrival_end"), "Anim alias " + alias + " in state " + self.var_e2b4fc394eef5c0f + " arrival missing required warp_arrival notetracks.");
+        assertex(!animhasnotetrack(xanim, "warp_arrival_start") && !animhasnotetrack(xanim, "warp_arrival_end"), "Anim alias " + alias + " in state " + self.var_e2b4fc394eef5c0f + " traverse with arrival animation contains warp_arrival notetracks.");
         self.traversalhasarrival = 1;
         self.var_c4ef68fe2a3931e5 = 1;
     }
@@ -790,22 +783,22 @@ function calctraversetype(asmname, statename, params) {
         var_cc3113f81e554ed4 = vectornormalize2(apex_delta);
         var_3f7d96abff6aba8f = flat_origin(self.origin - start_pos);
         var_9beb646264506c87 = vectordot(var_cc3113f81e554ed4, var_3f7d96abff6aba8f);
-        if (var_9beb646264506c87 <= 0) {
-            var_9beb646264506c87 = 0;
-            var_3f7d96abff6aba8f = (0, 0, 0);
-        }
+        var_4deeaf3c904db7f4 = abs(vectordot((var_3f7d96abff6aba8f[1] * -1, var_3f7d96abff6aba8f[0], 0), var_cc3113f81e554ed4));
         var_25e60fb59cc599b0 = length2d(apex_delta);
-        if (var_25e60fb59cc599b0 >= 0) {
+        if (var_25e60fb59cc599b0 > 0) {
             var_7f49d8e116150fc4 = undefined;
             apexstartfrac = function_c60db10715908b8d(xanim);
             if (isdefined(apexstartfrac)) {
                 var_f5d1f0df5f0f9b9f = getmovedelta(xanim, default_to(var_8407bdeaf8ce633, 0), apexstartfrac);
-                var_5c06589420922de2 = max(var_25e60fb59cc599b0 - var_9beb646264506c87, 0);
+                var_5c06589420922de2 = var_25e60fb59cc599b0 - var_9beb646264506c87;
                 var_38372b31f3a04497 = length2d(var_f5d1f0df5f0f9b9f);
-                if (var_5c06589420922de2 < var_38372b31f3a04497 && var_5c06589420922de2 >= 0) {
+                if (var_5c06589420922de2 < var_38372b31f3a04497 && var_5c06589420922de2 > 0) {
                     var_7f49d8e116150fc4 = 1 - var_5c06589420922de2 / var_38372b31f3a04497;
                 }
-                if (isdefined(var_7f49d8e116150fc4)) {
+                var_a2dde6ba8dda0eb1 = vectordot(anglestoforward(self.angles), var_cc3113f81e554ed4);
+                var_4361923c279dfbbf = 0.5;
+                var_6462f9ecbc36b984 = 15;
+                if (isdefined(var_7f49d8e116150fc4) && var_4deeaf3c904db7f4 < var_6462f9ecbc36b984 && (var_a2dde6ba8dda0eb1 > var_4361923c279dfbbf || length2dsquared(var_3f7d96abff6aba8f) < squared(var_6462f9ecbc36b984))) {
                     trace_dist = 60;
                     x = trace_dist * cos(start_angles[1]);
                     y = trace_dist * sin(start_angles[1]);
@@ -839,19 +832,15 @@ function calctraversetype(asmname, statename, params) {
     self.var_d74f2d1e6f517141 = translationstartfrac;
     if (isdefined(arrivalstartfrac) && isdefined(var_8407bdeaf8ce633) && isdefined(finishfrac)) {
         var_5d7268f5f03b60c3 = ter_op(isdefined(arrivalxanim), finishfrac, var_8407bdeaf8ce633);
-        if (translationstartfrac < var_5d7268f5f03b60c3) {
-            translationdelta = getmovedelta(arrival, translationstartfrac, var_5d7268f5f03b60c3);
-        } else {
-            translationdelta = (0, 0, 0);
-        }
+        translationdelta = getmovedelta(arrival, translationstartfrac, var_5d7268f5f03b60c3);
     }
     self.var_64759b639d9fb8d6 = translationdelta;
 }
 
 // Namespace traverse / scripts\asm\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f30
-// Size: 0x159
+// Checksum 0x0, Offset: 0x3590
+// Size: 0x15a
 function traversechooseanim(asmname, statename, params) {
     alias = undefined;
     if (self.var_20a0e88052918576 && isdefined(self.var_e2b4fc394eef5c0f) && isdefined(self.var_2078d7b4461a7a13)) {
@@ -859,7 +848,7 @@ function traversechooseanim(asmname, statename, params) {
         alias = self.var_2078d7b4461a7a13;
     } else {
         setupsuccess = self setuptraversaltransitioncheck(120);
-        assertex(setupsuccess, "<dev string:x903>" + self getentitynumber() + "<dev string:x929>" + statename + "<dev string:x938>" + self.origin);
+        assertex(setupsuccess, "Traversal setup failed for entity " + self getentitynumber() + " for state " + statename + " around location " + self.origin);
         calctraversetype(asmname, statename, params);
         if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
             nodedist = distance2d(self.var_64b933af90edc53c.origin, self.origin);
@@ -877,7 +866,7 @@ function traversechooseanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3092
+// Checksum 0x0, Offset: 0x36f3
 // Size: 0x1c
 function handletraversearrivalwarpnotetracks(note) {
     if (note == "warp_arrival_start") {
@@ -887,7 +876,7 @@ function handletraversearrivalwarpnotetracks(note) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b6
+// Checksum 0x0, Offset: 0x3717
 // Size: 0x9a
 function handletraversewarpnotetracks(note) {
     if (isdefined(self.var_acb02d417fdecc8f)) {
@@ -915,8 +904,8 @@ function handletraversewarpnotetracks(note) {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3158
-// Size: 0x48
+// Checksum 0x0, Offset: 0x37b9
+// Size: 0x47
 function handletraversedeathnotetrack() {
     if (isdefined(self.traversedeathanim)) {
         var_d2565459c0e88749 = self.traversedeathanim[self.traversedeathindex];
@@ -927,20 +916,20 @@ function handletraversedeathnotetrack() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a8
+// Checksum 0x0, Offset: 0x3808
 // Size: 0x110
 function handlewarparrivalnotetrack() {
     self animmode("noclip");
     if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
         if (!isdefined(self.var_64b933af90edc53c)) {
-            println("<dev string:x94d>" + self.var_32a34987ee1b3095 + "<dev string:x98a>");
+            println("<dev string:x2b3>" + self.var_32a34987ee1b3095 + "<dev string:x2ed>");
             return;
         }
         targetpos = self.var_64b933af90edc53c.origin;
         targetangles = self.var_64b933af90edc53c.angles;
     } else {
         if (!isdefined(self.traversestartnode)) {
-            println("<dev string:x9a6>" + self.var_32a34987ee1b3095 + "<dev string:x9dd>");
+            println("<dev string:x306>" + self.var_32a34987ee1b3095 + "<dev string:x33a>");
             return;
         }
         targetpos = self.traversestartnode.origin;
@@ -951,26 +940,26 @@ function handlewarparrivalnotetrack() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32c0
-// Size: 0x297
+// Checksum 0x0, Offset: 0x3920
+// Size: 0x29b
 function handlewarpupnotetrack() {
     self animmode("noclip");
     if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
         if (!isdefined(self.var_64b933af90edc53c)) {
-            println("<dev string:x94d>" + self.var_32a34987ee1b3095 + "<dev string:x9f8>");
+            println("<dev string:x2b3>" + self.var_32a34987ee1b3095 + "<dev string:x352>");
             return;
         }
-        assertex(isdefined(self.var_64b933af90edc53c.origin), "<dev string:xa0f>" + self.var_32a34987ee1b3095 + "<dev string:xa31>");
-        assertex(isdefined(self.var_64b933af90edc53c.apex_delta), "<dev string:xa0f>" + self.var_32a34987ee1b3095 + "<dev string:xa53>");
+        assertex(isdefined(self.var_64b933af90edc53c.origin), "Undefined traversal nav type [" + self.var_32a34987ee1b3095 + "] origin in warp up notetrack.");
+        assertex(isdefined(self.var_64b933af90edc53c.apex_delta), "Undefined traversal nav type [" + self.var_32a34987ee1b3095 + "] apex delta in warp up notetrack.");
         targetpos = self.var_64b933af90edc53c.origin + self.var_64b933af90edc53c.apex_delta;
         targetangles = self.var_64b933af90edc53c.angles;
     } else {
         if (!isdefined(self.traversestartnode)) {
-            println("<dev string:x9a6>" + self.var_32a34987ee1b3095 + "<dev string:xa79>");
+            println("<dev string:x306>" + self.var_32a34987ee1b3095 + "<dev string:x366>");
             return;
         }
-        assertex(isdefined(self.traversestartnode.origin), "<dev string:xa8f>");
-        assertex(isdefined(self.traversestartnode.apex_delta), "<dev string:xacd>");
+        assertex(isdefined(self.traversestartnode.origin), "Undefined traverse start node origin in warp up notetrack.");
+        assertex(isdefined(self.traversestartnode.apex_delta), "Undefined traverse start node apex delta in warp up notetrack.");
         targetpos = self.traversestartnode.origin + self.traversestartnode.apex_delta;
         targetangles = self.traversestartnode.angles;
     }
@@ -978,7 +967,7 @@ function handlewarpupnotetrack() {
         animstartfrac = getnotetracktimes(self.traversexanim, "warp_up_start")[0];
         var_47b4bdc915cff70d = getnotetracktimes(self.traversexanim, "warp_up_end")[0];
         animlength = getanimlength(self.traversexanim);
-        assertex(var_47b4bdc915cff70d - animstartfrac >= 0, "<dev string:xb0f>");
+        assertex(var_47b4bdc915cff70d - animstartfrac >= 0, "Invalid warp up traverse anim start and/or end fraction.");
         duration = int((var_47b4bdc915cff70d - animstartfrac) * animlength * 1000);
         motionwarpwithnotetracks(self.traversexanim, targetpos, targetangles, "warp_up_start", "warp_up_apex", duration);
         return;
@@ -988,8 +977,8 @@ function handlewarpupnotetrack() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x355f
-// Size: 0x28c
+// Checksum 0x0, Offset: 0x3bc3
+// Size: 0x28f
 function handlewarpacrossnotetrack() {
     self animmode("noclip");
     endnode = self.traverseendnode;
@@ -997,14 +986,13 @@ function handlewarpacrossnotetrack() {
         endnode = spawnstruct();
         if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
             if (!isdefined(self.var_64b933af90edc53c)) {
-                println("<dev string:x94d>" + self.var_32a34987ee1b3095 + "<dev string:xb4b>");
+                println("<dev string:x2b3>" + self.var_32a34987ee1b3095 + "<dev string:x379>");
                 return;
             }
             endnode.angles = self.var_64b933af90edc53c.angles;
         } else {
             if (!isdefined(self.traversestartnode)) {
-                println("<dev string:x9a6>" + self.var_32a34987ee1b3095 + "<dev string:xb66>");
-                return;
+                println("<dev string:x306>" + self.var_32a34987ee1b3095 + "<dev string:x391>");
             }
             endnode.angles = self.traversestartnode.angles;
         }
@@ -1019,12 +1007,12 @@ function handlewarpacrossnotetrack() {
         }
     }
     /#
-        assertex(isdefined(startnode.apex_delta), "<dev string:xb80>" + startnode.origin);
-        assertex(isdefined(startnode.across_delta), "<dev string:xbc7>" + startnode.origin);
+        assertex(isdefined(startnode.apex_delta), "<dev string:x3a8>" + startnode.origin);
+        assertex(isdefined(startnode.across_delta), "<dev string:x3ec>" + startnode.origin);
     #/
     apex_delta = default_to(startnode.apex_delta, (0, 0, 0));
     across_delta = default_to(startnode.across_delta, (0, 0, 0));
-    assertex(isdefined(self function_ad3c975cb94e4736()), "<dev string:xc10>");
+    assertex(isdefined(self function_ad3c975cb94e4736()), " undefined GetNegotiationStartPos in handleWarpAcrossNotetrack. ");
     targetpos = startnode.origin + apex_delta + across_delta;
     targetangles = endnode.angles;
     motionwarpwithnotetracks(self.traversexanim, targetpos, targetangles, "warp_across_start", "warp_across_end");
@@ -1032,8 +1020,8 @@ function handlewarpacrossnotetrack() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37f3
-// Size: 0x4b8
+// Checksum 0x0, Offset: 0x3e5a
+// Size: 0x4c6
 function handlewarpdownstartnotetrack() {
     self animmode("noclip");
     endnode = self.traverseendnode;
@@ -1041,14 +1029,14 @@ function handlewarpdownstartnotetrack() {
         endnode = spawnstruct();
         if (self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless") {
             if (!isdefined(self.var_64b933af90edc53c)) {
-                println("<dev string:xc54>" + self.var_32a34987ee1b3095 + "<dev string:xc88>");
+                println("<dev string:x432>" + self.var_32a34987ee1b3095 + "<dev string:x463>");
                 return;
             }
             endnode.angles = self.var_64b933af90edc53c.angles;
             endnode.origin = self.var_e341ef38b14d5cd3;
         } else {
             if (!isdefined(self.traversestartnode)) {
-                println("<dev string:xc54>" + self.var_32a34987ee1b3095 + "<dev string:xc88>");
+                println("<dev string:x432>" + self.var_32a34987ee1b3095 + "<dev string:x463>");
                 return;
             }
             endnode.angles = self.traversestartnode.angles;
@@ -1062,7 +1050,7 @@ function handlewarpdownstartnotetrack() {
     var_47b4bdc915cff70d = getnotetracktimes(self.traversexanim, "warp_down_end")[0];
     animdelta = getmovedelta(self.traversexanim, animstartfrac, var_47b4bdc915cff70d);
     animdelta = rotatevector(animdelta, endnode.angles);
-    assertex(var_47b4bdc915cff70d - animstartfrac >= 0, "<dev string:xca6>");
+    assertex(var_47b4bdc915cff70d - animstartfrac >= 0, "Invalid warp down traverse anim start and/or end fraction.");
     var_2ed406669fbe4377 = 512;
     tracestart = (self.origin[0] + animdelta[0], self.origin[1] + animdelta[1], self.origin[2]);
     targetpos = undefined;
@@ -1075,12 +1063,12 @@ function handlewarpdownstartnotetrack() {
     /#
         if (tracestart[2] - targetpos[2] > var_2ed406669fbe4377) {
             traversestartpos = (0, 0, 0);
-            if (self.var_32a34987ee1b3095 == "<dev string:xce4>" || self.var_32a34987ee1b3095 == "<dev string:xcf0>") {
+            if (self.var_32a34987ee1b3095 == "<dev string:x47e>" || self.var_32a34987ee1b3095 == "<dev string:x487>") {
                 traversestartpos = self.var_c97cd7821467b22c;
-            } else if (self.var_32a34987ee1b3095 == "<dev string:x4e5>") {
+            } else if (self.var_32a34987ee1b3095 == "<dev string:x490>") {
                 traversestartpos = self function_ad3c975cb94e4736();
             }
-            assertmsg("<dev string:x2bb>" + var_2ed406669fbe4377 + "<dev string:x2e0>" + tracestart + "<dev string:xcfc>" + traversestartpos);
+            assertmsg("<dev string:x49b>" + var_2ed406669fbe4377 + "<dev string:x4bd>" + tracestart + "<dev string:x4cf>" + traversestartpos);
         }
     #/
     /#
@@ -1097,7 +1085,7 @@ function handlewarpdownstartnotetrack() {
         } else {
             startpos = self.traversestartnode.origin;
         }
-        println("<dev string:x2f5>" + startpos + "<dev string:x32a>");
+        println("<dev string:xde>" + startpos + "<dev string:x110>");
         if (isdefined(endnode.origin)) {
             targetpos = endnode.origin;
         }
@@ -1115,7 +1103,7 @@ function handlewarpdownstartnotetrack() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cb3
+// Checksum 0x0, Offset: 0x4328
 // Size: 0x29
 function handlewarpdownendnotetrack() {
     if (!isagent(self)) {
@@ -1126,8 +1114,8 @@ function handlewarpdownendnotetrack() {
 
 // Namespace traverse / scripts\asm\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ce4
-// Size: 0x176
+// Checksum 0x0, Offset: 0x4359
+// Size: 0x179
 function function_beef4a855ca0ca3c() {
     var_a8354f77f1ab9157 = self.var_32a34987ee1b3095 == "nodeless" || self.var_32a34987ee1b3095 == "linkless";
     endpos = undefined;
@@ -1160,79 +1148,79 @@ function function_beef4a855ca0ca3c() {
                 }
             }
         }
-        println("<dev string:xd19>" + startpos);
-        record3dtext("<dev string:xd77>", self.origin + (0, 0, 70), (1, 0, 1));
+        println("<dev string:x4e9>" + startpos);
+        record3dtext("<dev string:x544>", self.origin + (0, 0, 70), (1, 0, 1));
     #/
 }
 
 // Namespace traverse / scripts\asm\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e62
-// Size: 0x22e
+// Checksum 0x0, Offset: 0x44da
+// Size: 0x22d
 function checktraverse(statename) {
     /#
-        new_state = "<dev string:xd9a>";
+        new_state = "<dev string:x564>";
         switch (statename) {
         case #"hash_13f1836afb769794": 
-            new_state = "<dev string:xdb2>";
+            new_state = "<dev string:x576>";
             break;
         case #"hash_6304cbcba2e946b0":
         case #"hash_d82745219ff3c265": 
-            new_state = "<dev string:xde5>";
+            new_state = "<dev string:x5a0>";
             break;
         case #"hash_866c4635f52e9798": 
-            new_state = "<dev string:xe02>";
+            new_state = "<dev string:x5b7>";
             break;
         case #"hash_866fce35f531ac47":
         case #"hash_9f0dc66f883f25c3": 
-            new_state = "<dev string:xe2e>";
+            new_state = "<dev string:x5da>";
             break;
         case #"hash_1d12ff1ecb04aba4":
         case #"hash_b447ff4d4a51e9fb": 
-            new_state = "<dev string:xe5a>";
+            new_state = "<dev string:x5fd>";
             break;
         case #"hash_db11de90ac6688ff": 
-            new_state = "<dev string:xe77>";
+            new_state = "<dev string:x614>";
             break;
         case #"hash_3ea04fbb868d6bb3": 
-            new_state = "<dev string:xe99>";
+            new_state = "<dev string:x630>";
             break;
         case #"hash_3ebccfbb86a3fb82": 
-            new_state = "<dev string:xeca>";
+            new_state = "<dev string:x65b>";
             break;
         case #"hash_3ec2dbbb86a88b94":
         case #"hash_898e0c97630ee383": 
-            new_state = "<dev string:xefb>";
+            new_state = "<dev string:x683>";
             break;
         case #"hash_3ec5dfbb86aad077":
         case #"hash_898b0e97630ca812": 
-            new_state = "<dev string:xf3b>";
+            new_state = "<dev string:x6ba>";
             break;
         case #"hash_b6f5a750ffd1a966": 
-            new_state = "<dev string:xf5a>";
+            new_state = "<dev string:x6d3>";
             break;
         case #"hash_79b045449d1f54ab": 
-            new_state = "<dev string:xf7e>";
+            new_state = "<dev string:x6f1>";
             break;
         case #"hash_79ad39449d1d0330": 
-            new_state = "<dev string:xfa6>";
+            new_state = "<dev string:x713>";
             break;
         case #"hash_79d645449d3d69bf": 
-            new_state = "<dev string:xfe2>";
+            new_state = "<dev string:x749>";
             break;
         case #"hash_2807abfb86a05ec9":
         case #"hash_33ca12afe07d839a":
         case #"hash_525a0d9590c85cfc": 
-            new_state = "<dev string:xd9a>";
+            new_state = "<dev string:x564>";
             break;
         default: 
             return;
         }
-        if (new_state == "<dev string:xd9a>") {
-            iprintlnbold("<dev string:x1032>" + statename + "<dev string:x1041>" + self.origin + "<dev string:x104b>");
+        if (new_state == "<dev string:x564>") {
+            iprintlnbold("<dev string:x78d>" + statename + "<dev string:x799>" + self.origin + "<dev string:x7a0>");
             return;
         }
-        iprintlnbold("<dev string:x1032>" + statename + "<dev string:x1041>" + self.origin + "<dev string:x1079>" + new_state + "<dev string:x10a0>");
+        iprintlnbold("<dev string:x78d>" + statename + "<dev string:x799>" + self.origin + "<dev string:x7cb>" + new_state + "<dev string:x7ef>");
     #/
 }
 

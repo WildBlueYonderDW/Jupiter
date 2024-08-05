@@ -4,7 +4,7 @@
 
 // Namespace patch_new / scripts\unittest\patch_new
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6
+// Checksum 0x0, Offset: 0x9b
 // Size: 0xe
 function patch_new() {
     test_print("patch_new");
@@ -12,7 +12,7 @@ function patch_new() {
 
 // Namespace patch_new / scripts\unittest\patch_new
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc
+// Checksum 0x0, Offset: 0xb1
 // Size: 0x15
 function patch_new2() {
     test_print("patch_new2");
@@ -21,7 +21,7 @@ function patch_new2() {
 
 // Namespace patch_new / scripts\unittest\patch_new
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9
+// Checksum 0x0, Offset: 0xce
 // Size: 0xe
 function patch_new3() {
     test_print("patch_new3");
@@ -29,7 +29,7 @@ function patch_new3() {
 
 // Namespace patch_new / scripts\unittest\patch_new
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f
+// Checksum 0x0, Offset: 0xe4
 // Size: 0xe
 function patch_new4() {
     test_print("patch_new4");

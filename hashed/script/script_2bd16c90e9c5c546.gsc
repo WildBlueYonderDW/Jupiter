@@ -5,14 +5,14 @@
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd
-// Size: 0x132
+// Checksum 0x0, Offset: 0x5c6
+// Size: 0x131
 function function_786c10d84c135d5c(noteworthy) {
     if (!isdefined(level.var_9283d76b0bfabcca)) {
         level.var_9283d76b0bfabcca = [];
     }
     if (isdefined(level.var_9283d76b0bfabcca[noteworthy])) {
-        assertmsg("<dev string:x1c>" + noteworthy + "<dev string:x45>");
+        assertmsg("Tried to call init on choreographer '" + noteworthy + "' twice. Did you mean to shut it down first?");
         return;
     }
     setsaveddvar(@"hash_3b4b03b3aaed756b", 1);
@@ -33,8 +33,8 @@ function function_786c10d84c135d5c(noteworthy) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f8
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x700
+// Size: 0xb9
 function function_f3c3a2122b0fe598(noteworthy) {
     if (isdefined(level.var_9283d76b0bfabcca) && isdefined(level.var_9283d76b0bfabcca[noteworthy])) {
         var_84aefd6110ab6f2 = level.var_9283d76b0bfabcca[noteworthy];
@@ -49,7 +49,7 @@ function function_f3c3a2122b0fe598(noteworthy) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bb
+// Checksum 0x0, Offset: 0x7c1
 // Size: 0x1b
 function function_95515c853e90472c(noteworthy, ai) {
     function_37605fb617b75716(noteworthy, ai);
@@ -57,12 +57,12 @@ function function_95515c853e90472c(noteworthy, ai) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3de
-// Size: 0xcd
+// Checksum 0x0, Offset: 0x7e4
+// Size: 0xcf
 function function_9cb60ba3067949a3(volumetargetname) {
     volumeent = getent(volumetargetname, "targetname");
-    assertex(isdefined(volumeent), "<dev string:x75>" + volumetargetname + "<dev string:x9c>");
-    assertex(isdefined(volumeent) && volumeent.classname == "<dev string:xcf>", "<dev string:x75>" + volumetargetname + "<dev string:xec>");
+    assertex(isdefined(volumeent), "^1[AI Choreographer]: volume name '" + volumetargetname + "' could not be found. Cannot initialize volume.");
+    assertex(isdefined(volumeent) && volumeent.classname == "info_volume_choreographer", "^1[AI Choreographer]: volume name '" + volumetargetname + "' is not of class type 'info_volume_choreographer'.");
     if (isdefined(volumeent) && volumeent.classname == "info_volume_choreographer") {
         var_9452f76b176ae883 = function_31e1b184571df76e(volumeent);
         for (i = 0; i < 8; i++) {
@@ -75,7 +75,7 @@ function function_9cb60ba3067949a3(volumetargetname) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b3
+// Checksum 0x0, Offset: 0x8bb
 // Size: 0x14
 function function_a7442d9986f00210(volumetargetname) {
     function_9d60ca3450653ce1(volumetargetname, 1);
@@ -83,7 +83,7 @@ function function_a7442d9986f00210(volumetargetname) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cf
+// Checksum 0x0, Offset: 0x8d7
 // Size: 0x13
 function function_dfc307bd256d27d(volumetargetname) {
     function_9d60ca3450653ce1(volumetargetname, 0);
@@ -91,10 +91,10 @@ function function_dfc307bd256d27d(volumetargetname) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ea
+// Checksum 0x0, Offset: 0x8f2
 // Size: 0x8c
 function function_34181ec2298dac40(var_1b1b54049e5e0079, volumeentity, volumetargetname, staticpriority) {
-    assertex(array_contains_key(level.var_9283d76b0bfabcca, var_1b1b54049e5e0079), "<dev string:x123>" + volumetargetname + "<dev string:x13c>" + var_1b1b54049e5e0079 + "<dev string:x154>");
+    assertex(array_contains_key(level.var_9283d76b0bfabcca, var_1b1b54049e5e0079), "Tried to add volume '" + volumetargetname + "' to choreographer '" + var_1b1b54049e5e0079 + "' but the choreographer doesn't exist. Did you call init?");
     level.var_9283d76b0bfabcca[var_1b1b54049e5e0079].volumes[volumetargetname] = volumeentity;
     volumeentity.targetname = volumetargetname;
     volumeentity.script_priority = staticpriority;
@@ -103,8 +103,8 @@ function function_34181ec2298dac40(var_1b1b54049e5e0079, volumeentity, volumetar
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57e
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x986
+// Size: 0xde
 function function_33a0071b309ada3a() {
     struct = spawnstruct();
     struct.stagename = "";
@@ -127,11 +127,11 @@ function function_33a0071b309ada3a() {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x666
+// Checksum 0x0, Offset: 0xa6d
 // Size: 0x185
 function private function_2a64555627bef58f(struct) {
     if (!isdefined(struct.stagename) || !isdefined(struct.priority) || !isdefined(struct.var_d86443bb4dc09f55) || !isdefined(struct.maxai)) {
-        assertmsg("<dev string:x191>");
+        assertmsg("Tried to add stage without required parameters: stageName, priority, minAI, maxAI.");
         return;
     }
     if (istrue(struct.hasdefaultvalues)) {
@@ -171,7 +171,7 @@ function private function_2a64555627bef58f(struct) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f3
+// Checksum 0x0, Offset: 0xbfa
 // Size: 0xbc
 function function_522de4e0b6e1fe88(volumetargetname, stagestruct) {
     function_2a64555627bef58f(stagestruct);
@@ -180,7 +180,7 @@ function function_522de4e0b6e1fe88(volumetargetname, stagestruct) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b7
+// Checksum 0x0, Offset: 0xcbe
 // Size: 0x5e
 function function_e1a2c1380886b277(volume) {
     volume.var_3e74f4416e413e01 = [];
@@ -195,23 +195,23 @@ function function_e1a2c1380886b277(volume) {
 
     // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x91d
-    // Size: 0xa1
+    // Checksum 0x0, Offset: 0xd24
+    // Size: 0xa0
     function function_9da53e82db41950b(debuglevel, noteworthy, volumetargetname) {
         if (!isdefined(debuglevel) && !isdefined(noteworthy) && !isdefined(volumetargetname)) {
             return;
         }
-        debugcommand = "<dev string:x1e7>";
+        debugcommand = "<dev string:x1c>";
         if (isdefined(debuglevel)) {
-            debugcommand += "<dev string:x1eb>" + debuglevel;
+            debugcommand += "<dev string:x1d>" + debuglevel;
         }
         if (isdefined(noteworthy)) {
-            debugcommand = ter_op(debugcommand.size > 0, debugcommand + "<dev string:x205>", debugcommand);
-            debugcommand += "<dev string:x20b>" + noteworthy;
+            debugcommand = ter_op(debugcommand.size > 0, debugcommand + "<dev string:x34>", debugcommand);
+            debugcommand += "<dev string:x37>" + noteworthy;
         }
         if (isdefined(volumetargetname)) {
-            debugcommand = ter_op(debugcommand.size > 0, debugcommand + "<dev string:x205>", debugcommand);
-            debugcommand += "<dev string:x229>" + volumetargetname;
+            debugcommand = ter_op(debugcommand.size > 0, debugcommand + "<dev string:x34>", debugcommand);
+            debugcommand += "<dev string:x52>" + volumetargetname;
         }
         adddebugcommand(debugcommand);
     }
@@ -220,15 +220,15 @@ function function_e1a2c1380886b277(volume) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c6
+// Checksum 0x0, Offset: 0xdcc
 // Size: 0x7f
 function function_c627f4f5ad3d65c1(type, function) {
     if (!isdefined(self.var_3e74f4416e413e01)) {
-        assertmsg("<dev string:x249>" + self + "<dev string:x266>");
+        assertmsg("Tried to add callback to " + self + ", but callbacks have not been initialised.");
         return;
     }
     if (!array_contains_key(self.var_3e74f4416e413e01, type)) {
-        assertmsg("<dev string:x294>" + type + "<dev string:x2bd>");
+        assertmsg("Invalid choreographer callback type '" + type + "'");
         return;
     }
     self.var_3e74f4416e413e01[type] = array_add(self.var_3e74f4416e413e01[type], function);
@@ -236,8 +236,8 @@ function function_c627f4f5ad3d65c1(type, function) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa4d
-// Size: 0x763
+// Checksum 0x0, Offset: 0xe53
+// Size: 0x762
 function private function_31e1b184571df76e(volumeent) {
     var_9452f76b176ae883 = spawnstruct();
     var_9452f76b176ae883.priority = [volumeent.var_bf0b0b944c5705c6, volumeent.var_40ab8ca5e6a9d851, volumeent.var_75c00ebf560f54c, volumeent.var_a6a83d4cfa022f1f, volumeent.var_5020aa3fd7320d52, volumeent.var_33a7b5d723c21d8d, volumeent.var_c6fe2f9f38346bb8, volumeent.var_5f1a066d7e6988db];
@@ -259,8 +259,8 @@ function private function_31e1b184571df76e(volumeent) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x11b9
-// Size: 0x316
+// Checksum 0x0, Offset: 0x15be
+// Size: 0x315
 function private function_a612e00addaa15c6(var_9452f76b176ae883, stageindex) {
     stagestruct = spawnstruct();
     stagestruct.index = stageindex + 1;
@@ -298,13 +298,13 @@ function private function_a612e00addaa15c6(var_9452f76b176ae883, stageindex) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x14d8
+// Checksum 0x0, Offset: 0x18dc
 // Size: 0x1e8
 function private add_stage(volumeent, stagestruct) {
-    assertex(stagestruct.var_582685fd005f7229, "<dev string:x2c2>" + volumeent.targetname + "<dev string:x2dc>" + stagestruct.index + "<dev string:x30f>");
-    assertex(!(stagestruct.var_9dc417101f3fb9f3 && !stagestruct.isnamed), "<dev string:x2c2>" + volumeent.targetname + "<dev string:x3a6>" + stagestruct.index + "<dev string:x3b9>");
-    assertex(stagestruct.var_d86443bb4dc09f55 <= stagestruct.maxai, "<dev string:x2c2>" + volumeent.targetname + "<dev string:x3a6>" + stagestruct.index + "<dev string:x44a>");
-    assertex(stagestruct.var_74d506aaf66c3d49 <= stagestruct.var_4325de95304a1d6b, "<dev string:x2c2>" + volumeent.targetname + "<dev string:x3a6>" + stagestruct.index + "<dev string:x471>");
+    assertex(stagestruct.var_582685fd005f7229, "^1[AI Choreographer]: " + volumeent.targetname + "' contains invalid stage data for stage index '" + stagestruct.index + "'. Some values are undefined. Radiant should be providing default values for these - see coredev.def.json ('classname': 'info_volume_choreographer)");
+    assertex(!(stagestruct.var_9dc417101f3fb9f3 && !stagestruct.isnamed), "^1[AI Choreographer]: " + volumeent.targetname + "' stage index '" + stagestruct.index + "' has non default data BUT does not have a stage name and will therefore not be added. Add a stage name if this stage is intended to be used.");
+    assertex(stagestruct.var_d86443bb4dc09f55 <= stagestruct.maxai, "^1[AI Choreographer]: " + volumeent.targetname + "' stage index '" + stagestruct.index + "'s MinAI value is larger than MaxAI");
+    assertex(stagestruct.var_74d506aaf66c3d49 <= stagestruct.var_4325de95304a1d6b, "^1[AI Choreographer]: " + volumeent.targetname + "' stage index '" + stagestruct.index + "'s MinReinforcementCooldown value is larger than MaxReinforcementCooldown");
     if (stagestruct.isnamed) {
         function_3766773616a64eac(volumeent.targetname, stagestruct.name, stagestruct.priority, stagestruct.var_d86443bb4dc09f55, stagestruct.maxai, stagestruct.priorityperplayer, stagestruct.var_b895bca3d7f637f8, stagestruct.var_8bd784bab1c5be5, stagestruct.stealthgroup, stagestruct.var_74d506aaf66c3d49, stagestruct.var_4325de95304a1d6b, stagestruct.var_56e4a813e857bd7d, stagestruct.reinforcementlimit, stagestruct.var_36911c475270c536, stagestruct.var_36b40e475296ee24);
     }
@@ -312,7 +312,7 @@ function private add_stage(volumeent, stagestruct) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x16c8
+// Checksum 0x0, Offset: 0x1acc
 // Size: 0x8
 function private function_b6c9e72cac5377c5() {
     return isstruct(self);
@@ -320,8 +320,8 @@ function private function_b6c9e72cac5377c5() {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x16d9
-// Size: 0x198
+// Checksum 0x0, Offset: 0x1add
+// Size: 0x199
 function private function_49e7a298cd8821cc(notifymessage) {
     callon = ter_op(function_b6c9e72cac5377c5(), level, self);
     self.var_3e74f4416e413e01[notifymessage] = [];
@@ -342,15 +342,15 @@ function private function_49e7a298cd8821cc(notifymessage) {
         }
         /#
             foreach (assignment in assignmentlist) {
-                sourcestring = "<dev string:x4be>";
+                sourcestring = "<dev string:x6f>";
                 if (isdefined(assignment.source_volume)) {
                     sourcestring = assignment.source_volume.targetname;
                 }
-                disabledstring = "<dev string:x1e7>";
+                disabledstring = "<dev string:x1c>";
                 if (istrue(assignment.var_a56835088f2e30f9)) {
-                    disabledstring = "<dev string:x4ce>";
+                    disabledstring = "<dev string:x7c>";
                 }
-                println("<dev string:x4ee>" + sourcestring + "<dev string:x519>" + disabledstring);
+                println("<dev string:x99>" + sourcestring + "<dev string:xc1>" + disabledstring);
             }
         #/
     }
@@ -358,8 +358,8 @@ function private function_49e7a298cd8821cc(notifymessage) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1879
-// Size: 0x32
+// Checksum 0x0, Offset: 0x1c7e
+// Size: 0x31
 function private test() {
     stagestruct = function_33a0071b309ada3a();
     stagestruct.stagename = "test";
@@ -368,7 +368,7 @@ function private test() {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x18b3
+// Checksum 0x0, Offset: 0x1cb7
 // Size: 0xf8
 function private function_91250540a257b285(notifymessage) {
     callon = ter_op(function_b6c9e72cac5377c5(), level, self);
@@ -388,14 +388,14 @@ function private function_91250540a257b285(notifymessage) {
         foreach (func in self.var_3e74f4416e413e01[notifymessage]) {
             self [[ func ]](entitylist);
         }
-        println("<dev string:x51e>" + entitylist.size + "<dev string:x538>" + notifymessage);
+        println("<dev string:xc3>" + entitylist.size + "<dev string:xda>" + notifymessage);
     }
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x19b3
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x1db7
+// Size: 0xd1
 function private function_2125e0704a40354b(notifymessage) {
     callon = ter_op(function_b6c9e72cac5377c5(), level, self);
     self endon("shutdown");
@@ -413,17 +413,17 @@ function private function_2125e0704a40354b(notifymessage) {
         foreach (func in self.var_3e74f4416e413e01[notifymessage]) {
             self [[ func ]]();
         }
-        println("<dev string:x51e>" + notifymessage);
+        println("<dev string:xc3>" + notifymessage);
     }
 }
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a8d
+// Checksum 0x0, Offset: 0x1e90
 // Size: 0x60
 function function_dadf0846a19b2d4b(flagname, oneoff, mode, value) {
     if (ent_flag_exist(flagname)) {
-        assertmsg("<dev string:x541>" + flagname + "<dev string:x57d>" + self.targetname + "<dev string:x2bd>");
+        assertmsg("Tried to reinitialize choreographer reinforcement flag '" + flagname + "' on volume '" + self.targetname + "'");
         return;
     }
     thread function_284da564a2225c39(flagname, oneoff, mode, value);
@@ -431,8 +431,8 @@ function function_dadf0846a19b2d4b(flagname, oneoff, mode, value) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1af5
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x1ef8
+// Size: 0x3b
 function private function_67bd9b51a7445ace() {
     assert(isdefined(self));
     var_e1f25aa8ee4db062 = isstruct(self);
@@ -444,7 +444,7 @@ function private function_67bd9b51a7445ace() {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b39
+// Checksum 0x0, Offset: 0x1f3b
 // Size: 0x109
 function private function_284da564a2225c39(flagname, oneoff, mode, value) {
     self endon("shutdown");
@@ -470,7 +470,7 @@ function private function_284da564a2225c39(flagname, oneoff, mode, value) {
             }
             break;
         default: 
-            assertmsg("<dev string:x58e>" + mode + "<dev string:x2bd>");
+            assertmsg("Unknown choreographer reinforcement flag mode: '" + mode + "'");
             return;
         }
         ent_flag_set(flagname);
@@ -485,8 +485,8 @@ function private function_284da564a2225c39(flagname, oneoff, mode, value) {
 
 // Namespace namespace_e1447aac8628ea7d / namespace_69c1af081dd41f16
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1c4a
-// Size: 0x32
+// Checksum 0x0, Offset: 0x204c
+// Size: 0x31
 function private function_46408ccc4843afe5(value) {
     while (true) {
         wait 0.5;

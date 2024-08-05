@@ -13,7 +13,7 @@
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x565
+// Checksum 0x0, Offset: 0x46b
 // Size: 0xe5
 function callbacksoldieragentdamaged(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     if (isdefined(self.var_970170ffd4b081ac)) {
@@ -28,7 +28,7 @@ function callbacksoldieragentdamaged(einflictor, eattacker, idamage, idflags, sm
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x652
+// Checksum 0x0, Offset: 0x558
 // Size: 0x65
 function function_34672e1ee2e90cf8(objweapon, idamage) {
     if (!isdefined(objweapon)) {
@@ -44,8 +44,8 @@ function function_34672e1ee2e90cf8(objweapon, idamage) {
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c0
-// Size: 0xea6
+// Checksum 0x0, Offset: 0x5c6
+// Size: 0xe36
 function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     evictim = self;
     initial_damage = idamage;
@@ -139,7 +139,7 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
             idamage += [[ getsharedfunc("thermobaric_grenade", "thermobaric_additional_explosive_damage") ]](evictim, eattacker, idamage);
         }
     }
-    if (!headshot && isdefined(self.armorhealth) && self.armorhealth > 0 && smeansofdeath != "MOD_CRUSH" && (!isdefined(self.var_f8ecc64162438d76) || !(isdefined(einflictor) && array_contains(self.var_f8ecc64162438d76, einflictor)))) {
+    if (!headshot && isdefined(self.armorhealth) && self.armorhealth > 0 && smeansofdeath != "MOD_CRUSH" && (!isdefined(self.var_f8ecc64162438d76) || !array_contains(self.var_f8ecc64162438d76, einflictor))) {
         var_57accdc40b2f50e = namespace_f8d3520d3483c1::function_90ce8eb3ddaa4943(eattacker, einflictor, evictim, idamage, objweapon, smeansofdeath, shitloc, idflags, initial_damage, unmodifieddamage);
         var_1da1a66b5c6a06a7 = var_57accdc40b2f50e[1];
         idamage = var_57accdc40b2f50e[0];
@@ -151,7 +151,7 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
                 self notify("flashbang", (0, 0, 0), 1, 1, eattacker);
             }
         }
-        if (idamage <= 0 && armordelta > 0) {
+        if (idamage <= 0) {
             idamage = 1;
             self.health += 1;
         }
@@ -191,9 +191,7 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
         }
     }
     if (armordelta == 0 && helmetdelta == 0 && isbulletdamage(smeansofdeath) && scripts\cp_mp\utility\damage_utility::isheadshot(shitloc, smeansofdeath, eattacker)) {
-        if (!istrue(self.var_f6275396cb3aa512)) {
-            idamage = int(max(idamage, self.health));
-        }
+        idamage = int(max(idamage, self.health));
     }
     if (shouldoneshot) {
         idamage = self.health;
@@ -219,7 +217,7 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
         scripts\cp_mp\utility\weapon_utility::function_c9e5c511b923a42f(idamage, eattacker, evictim, smeansofdeath, shitloc, einflictor, vpoint, armordelta, undefined, helmetdelta);
     #/
     idamage = int(idamage);
-    if (utility::getdamagetype(smeansofdeath) == "splash" || isdefined(sweapon.basename) && issubstr(sweapon.basename, "thermite_bolt")) {
+    if (utility::getdamagetype(smeansofdeath) == "splash") {
         idamage *= 2;
     }
     if (istrue(evictim.gulagjailer)) {
@@ -277,16 +275,16 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
         }
         if (getdvarint(@"hash_81d89e4abec64203", 0) != 0) {
             dmg_data = [];
-            dmg_data["<dev string:x33>"] = einflictor;
-            dmg_data["<dev string:x41>"] = eattacker;
-            dmg_data["<dev string:x4e>"] = idamage;
-            dmg_data["<dev string:x59>"] = smeansofdeath;
-            dmg_data["<dev string:x6a>"] = sweapon;
-            dmg_data["<dev string:x75>"] = vpoint;
-            dmg_data["<dev string:x7f>"] = vdir;
-            dmg_data["<dev string:x87>"] = shitloc;
-            dmg_data["<dev string:x92>"] = objweapon;
-            dmg_data["<dev string:x9f>"] = partname;
+            dmg_data["<dev string:x30>"] = einflictor;
+            dmg_data["<dev string:x3b>"] = eattacker;
+            dmg_data["<dev string:x45>"] = idamage;
+            dmg_data["<dev string:x4d>"] = smeansofdeath;
+            dmg_data["<dev string:x5b>"] = sweapon;
+            dmg_data["<dev string:x63>"] = vpoint;
+            dmg_data["<dev string:x6a>"] = vdir;
+            dmg_data["<dev string:x6f>"] = shitloc;
+            dmg_data["<dev string:x77>"] = objweapon;
+            dmg_data["<dev string:x81>"] = partname;
             scripts\common\debug::function_8245dce28f1f395c(dmg_data, initial_damage, 1);
         }
     #/
@@ -294,20 +292,13 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
         evictim [[ level.agent_funcs[evictim.unittype]["on_damaged_finished"] ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname, armorhit);
         return;
     }
-    if (!isdefined(evictim.agent_type)) {
-        assertmsg("<dev string:xab>" + evictim + "<dev string:xcd>" + evictim.classname);
-        return;
-    }
-    if (!isdefined(level.agent_funcs[evictim.agent_type]["on_damaged_finished"])) {
-        assertmsg("<dev string:xe1>" + evictim.agent_type);
-        return;
-    }
+    assert(isdefined(level.agent_funcs[evictim.agent_type]["on_damaged_finished"]));
     evictim [[ level.agent_funcs[evictim.agent_type]["on_damaged_finished"] ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname, armorhit);
 }
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x156e
+// Checksum 0x0, Offset: 0x1404
 // Size: 0x68
 function damage_isexplosive(smeansofdeath) {
     if (!isdefined(smeansofdeath)) {
@@ -327,7 +318,7 @@ function damage_isexplosive(smeansofdeath) {
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x15de
+// Checksum 0x0, Offset: 0x1474
 // Size: 0x250
 function function_62213f6e7b9da1e7(agent, attacker, inflictor, meansofdeath) {
     if (isdefined(attacker) && istrue(attacker.var_eb504fc7e1cfeb4c)) {
@@ -366,17 +357,10 @@ function function_62213f6e7b9da1e7(agent, attacker, inflictor, meansofdeath) {
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x1837
-// Size: 0x1cc
+// Checksum 0x0, Offset: 0x16cd
+// Size: 0x1a1
 function function_84a1aec445b03580(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
-    var_86c7c655ad6283d7 = isdefined(smeansofdeath) && smeansofdeath == "MOD_CRUSH" && isdefined(einflictor) && isent(einflictor) && einflictor scripts\cp_mp\vehicles\vehicle::isvehicle();
-    if (var_86c7c655ad6283d7) {
-        minvehiclespeed = 3;
-        if (istrue(self.var_b222000b9e5e8ce) && isdefined(einflictor.owner)) {
-            minvehiclespeed = 0;
-        }
-        var_86c7c655ad6283d7 = scripts\cp_mp\vehicles\vehicle_collision::function_6eb1fba746b72f46(einflictor) <= minvehiclespeed;
-    }
+    var_86c7c655ad6283d7 = isdefined(smeansofdeath) && smeansofdeath == "MOD_CRUSH" && isdefined(einflictor) && isent(einflictor) && einflictor scripts\cp_mp\vehicles\vehicle::isvehicle() && scripts\cp_mp\vehicles\vehicle_collision::function_6eb1fba746b72f46(einflictor) < 3;
     var_663299b134fb78d = isdefined(self.origin) && isdefined(level.var_f0872e42daf6d4d5) && distancesquared(level.var_f0872e42daf6d4d5, self.origin) < 250000;
     var_abb16a8745308d16 = isplayer(eattacker) && isdefined(sweapon.basename) && sweapon.basename == "iw9_pi_stimpistol_mp" && isbulletdamage(smeansofdeath);
     var_10effa490054d61e = isdefined(self.var_d9134148f9bb887) && isdefined(self.var_f39c6b01b1d95542) && gettime() >= self.var_f39c6b01b1d95542 && gettime() < self.var_d9134148f9bb887;
@@ -385,7 +369,7 @@ function function_84a1aec445b03580(einflictor, eattacker, idamage, idflags, smea
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a0c
+// Checksum 0x0, Offset: 0x1877
 // Size: 0x1c
 function function_7d0d24665d72f13c(agent, attacker) {
     function_1920867ddf76810c(agent, 0);
@@ -393,8 +377,8 @@ function function_7d0d24665d72f13c(agent, attacker) {
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a30
-// Size: 0x144
+// Checksum 0x0, Offset: 0x189b
+// Size: 0x13f
 function function_59ea6b2f800cb082(agent, attacker) {
     hidebone = "j_helmet_hide";
     function_1920867ddf76810c(agent, 0);
@@ -403,9 +387,7 @@ function function_59ea6b2f800cb082(agent, attacker) {
     } else {
         fx = getfx("vfx_gameplay_tier3_helmet_pop");
     }
-    if (isdefined(fx)) {
-        playfx(fx, agent gettagorigin("j_helmet"));
-    }
+    playfx(fx, agent gettagorigin("j_helmet"));
     if (!istrue(agent.var_668b72f41e87c75a)) {
         if (istrue(agent.var_895dae193cfaac3a) && !issubstr(agent.agent_type, "merc")) {
             agent setscriptablepartstate("helmet", "off");
@@ -424,8 +406,8 @@ function function_59ea6b2f800cb082(agent, attacker) {
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b7c
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x19e2
+// Size: 0xb7
 function function_b8c245105cc37f9e(objweapon) {
     shouldoneshot = 0;
     overrideoneshot = getdvarint(@"hash_a5eac9a0f544c3cf", 1);
@@ -447,16 +429,14 @@ function function_b8c245105cc37f9e(objweapon) {
 
 // Namespace namespace_965527752cbd4cca / namespace_daa149ca485fd50a
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c3a
-// Size: 0x4f2
+// Checksum 0x0, Offset: 0x1aa2
+// Size: 0x4ed
 function handleriotshielddamage(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     if (!istrue(self.bhasriotshieldattached)) {
         return false;
     }
     if (isdefined(sweapon) && sweapon.basename == "super_laser_charge_mp") {
         self.forcehitlocation = "none";
-        return false;
-    } else if (isdefined(self.forcehitlocation)) {
         return false;
     }
     weaponbasename = objweapon.basename;
@@ -500,7 +480,7 @@ function handleriotshielddamage(einflictor, eattacker, idamage, idflags, smeanso
         if (bthermite) {
             /#
                 if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                    println("<dev string:x134>");
+                    println("<dev string:x8a>");
                 }
             #/
             return true;
@@ -516,7 +496,7 @@ function handleriotshielddamage(einflictor, eattacker, idamage, idflags, smeanso
             assert(isdefined(self.thermitestuckpains));
             /#
                 if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                    println("<dev string:x150>");
+                    println("<dev string:xa3>");
                 }
             #/
             self.thermitestuckpains++;
@@ -528,7 +508,7 @@ function handleriotshielddamage(einflictor, eattacker, idamage, idflags, smeanso
             if (vectordot(anglestoforward(self.angles), var_8b5b7d7c1e6793de) > 0.5 && -0.98 < var_289cb9fcbd6aa7c8[2] && var_289cb9fcbd6aa7c8[2] < 0.98) {
                 /#
                     if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                        println("<dev string:x170>");
+                        println("<dev string:xc0>");
                     }
                 #/
                 return true;
@@ -545,7 +525,7 @@ function handleriotshielddamage(einflictor, eattacker, idamage, idflags, smeanso
         if (vectordot(meforward, var_392a20ab0d4853fb) > 0.5) {
             /#
                 if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                    println("<dev string:x194>");
+                    println("<dev string:xe1>");
                 }
             #/
             return true;

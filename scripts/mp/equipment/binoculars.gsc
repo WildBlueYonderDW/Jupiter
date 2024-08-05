@@ -1161,7 +1161,7 @@ function binoculars_addmarkpoints(targetent) {
     lifeindex = ter_op(isdefined(self.matchdatalifeindex), self.matchdatalifeindex, 0);
     if (!isdefined(self.markedentitieslifeindices[entitynum]) || self.markedentitieslifeindices[entitynum] > lifeindex) {
         self.markedentitieslifeindices[entitynum] = lifeindex;
-        thread doScoreEvent(#"hash_6ebe4fc013b04480");
+        thread doScoreEvent(#"binoculars_marked");
         scripts\mp\playerlogic::playerhasmoved();
     }
 }
@@ -1198,7 +1198,7 @@ function binoculars_giveassistpoints(attacker, victim) {
             continue;
         }
         if (teammate binoculars_targetismarked(victim)) {
-            teammate thread scripts\mp\utility\points::doScoreEvent(#"hash_1928d4dc8bb8669f");
+            teammate thread scripts\mp\utility\points::doScoreEvent(#"binoculars_assist");
         }
     }
 }

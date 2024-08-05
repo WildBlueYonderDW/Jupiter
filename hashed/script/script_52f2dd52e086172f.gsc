@@ -5,7 +5,7 @@
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x283
+// Checksum 0x0, Offset: 0x221
 // Size: 0xb0
 function function_af629bfd2cc31d67() {
     if (isdefined(level.var_9c6bcabc08e74a5e)) {
@@ -22,7 +22,7 @@ function function_af629bfd2cc31d67() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x33b
+// Checksum 0x0, Offset: 0x2d9
 // Size: 0x52
 function function_2ee478f031f97735(equipmentref, equipmentslot) {
     if (equipmentref != "equip_aethercounter") {
@@ -37,7 +37,7 @@ function function_2ee478f031f97735(equipmentref, equipmentslot) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x395
+// Checksum 0x0, Offset: 0x333
 // Size: 0x43
 function function_3bf23e1e0eccb4a7(equipmentref, equipmentslot) {
     if (equipmentref != "equip_aethercounter") {
@@ -50,7 +50,7 @@ function function_3bf23e1e0eccb4a7(equipmentref, equipmentslot) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e0
+// Checksum 0x0, Offset: 0x37e
 // Size: 0x27
 function function_88108e9a7fefa45c(grenade) {
     waitframe();
@@ -63,8 +63,8 @@ function function_88108e9a7fefa45c(grenade) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x40f
-// Size: 0x185
+// Checksum 0x0, Offset: 0x3ad
+// Size: 0x189
 function aethercounter_watchForDevicePullout() {
     self endon("disconnect");
     level endon("game_ended");
@@ -110,8 +110,8 @@ function aethercounter_watchForDevicePullout() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x59c
-// Size: 0x91
+// Checksum 0x0, Offset: 0x53e
+// Size: 0x90
 function function_92d0e5b2f76e0fe5() {
     if (issharedfuncdefined("radiation", "radiation_isInit") && issharedfuncdefined("radiation", "radiation_signedDistanceFromRadiationCircle")) {
         if ([[ scripts\engine\utility::getsharedfunc("radiation", "radiation_isInit") ]]()) {
@@ -127,7 +127,7 @@ function function_92d0e5b2f76e0fe5() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x636
+// Checksum 0x0, Offset: 0x5d7
 // Size: 0x148
 function function_8031a35aa804e254(dist) {
     if (getweaponbasename(self getheldoffhand()) == "aether_counter_mp") {
@@ -149,7 +149,7 @@ function function_8031a35aa804e254(dist) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x786
+// Checksum 0x0, Offset: 0x727
 // Size: 0x1a
 function function_5a5133a5c98f4851() {
     if (getweaponbasename(self getheldoffhand()) == "aether_counter_mp") {
@@ -160,7 +160,7 @@ function function_5a5133a5c98f4851() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a9
+// Checksum 0x0, Offset: 0x74a
 // Size: 0x30
 function function_f7c4dd82fc32c7b9(raceresult) {
     self endon("aethercounter_watchRaceEnd");
@@ -171,7 +171,7 @@ function function_f7c4dd82fc32c7b9(raceresult) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e1
+// Checksum 0x0, Offset: 0x782
 // Size: 0x30
 function function_9df43daca6fc5bc2(raceresult) {
     self endon("aethercounter_watchRaceEnd");
@@ -182,8 +182,8 @@ function function_9df43daca6fc5bc2(raceresult) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x819
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x7ba
+// Size: 0x5a
 function function_5aab43e8311b7e7f(raceresult) {
     self endon("aethercounter_watchRaceEnd");
     weapon = self waittill("pullout_gc");
@@ -198,7 +198,7 @@ function function_5aab43e8311b7e7f(raceresult) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x87c
+// Checksum 0x0, Offset: 0x81c
 // Size: 0x47
 function function_824860a3ff9ea883(raceresult) {
     self endon("aethercounter_watchRaceEnd");
@@ -213,7 +213,7 @@ function function_824860a3ff9ea883(raceresult) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cb
+// Checksum 0x0, Offset: 0x86b
 // Size: 0x42
 function function_b914dca03eb66c0d() {
     self notify("aethercounter_putaway");
@@ -227,7 +227,7 @@ function function_b914dca03eb66c0d() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x915
+// Checksum 0x0, Offset: 0x8b5
 // Size: 0x24
 function function_1cfcd2b63bc91c2d() {
     return isdefined(self.var_b38bd8b30b329ecd) && istrue(self.var_b38bd8b30b329ecd.pulledout);
@@ -235,7 +235,7 @@ function function_1cfcd2b63bc91c2d() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x942
+// Checksum 0x0, Offset: 0x8e2
 // Size: 0xf
 function function_7812e187185aef80() {
     self setclientomnvar("ui_geigercounter_meter", 0);
@@ -243,7 +243,7 @@ function function_7812e187185aef80() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x959
+// Checksum 0x0, Offset: 0x8f9
 // Size: 0x18
 function function_90f4a7cf8aae35c5(data) {
     self setclientomnvar("ui_geigercounter_meter", data);
@@ -251,7 +251,7 @@ function function_90f4a7cf8aae35c5(data) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x979
+// Checksum 0x0, Offset: 0x919
 // Size: 0xe
 function function_8f4759d455d12f06() {
     self playlocalsound("iw9_geiger_counter_tick");
@@ -259,7 +259,7 @@ function function_8f4759d455d12f06() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98f
+// Checksum 0x0, Offset: 0x92f
 // Size: 0xe
 function function_e9db195fe373a520() {
     self stoplocalsound("iw9_geiger_counter_tick");
@@ -267,7 +267,7 @@ function function_e9db195fe373a520() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a5
+// Checksum 0x0, Offset: 0x945
 // Size: 0x35
 function function_b725c6b75eac64a(overridevalue) {
     if (isdefined(overridevalue)) {
@@ -279,7 +279,7 @@ function function_b725c6b75eac64a(overridevalue) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e2
+// Checksum 0x0, Offset: 0x982
 // Size: 0x26
 function function_81e4d8ae8de025ab(object) {
     level.var_b38bd8b30b329ecd.partition function_24bbefb4beda630d(object);
@@ -287,7 +287,7 @@ function function_81e4d8ae8de025ab(object) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa10
+// Checksum 0x0, Offset: 0x9b0
 // Size: 0x26
 function function_2e0a6a72e3e7388d(object) {
     level.var_b38bd8b30b329ecd.partition function_9cd3f5f067afea37(object);
@@ -295,7 +295,7 @@ function function_2e0a6a72e3e7388d(object) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3e
+// Checksum 0x0, Offset: 0x9de
 // Size: 0x24
 function function_c621b72b61c253ef() {
     return level.var_b38bd8b30b329ecd.partition function_60dbe20f8385f1b0(self.origin);
@@ -303,7 +303,7 @@ function function_c621b72b61c253ef() {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6b
+// Checksum 0x0, Offset: 0xa0b
 // Size: 0x3c
 function function_2588ffec6fe5bd6d(var_476ba0cad41d3b92) {
     radiationpos = var_476ba0cad41d3b92.origin;
@@ -313,8 +313,8 @@ function function_2588ffec6fe5bd6d(var_476ba0cad41d3b92) {
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xab0
-// Size: 0x36
+// Checksum 0x0, Offset: 0xa50
+// Size: 0x35
 function function_2d56da6c95356759(player, var_1e331291fa3bd60, var_98a5e37618751295) {
     detectionradius = default_to(var_98a5e37618751295, 4000);
     return var_1e331291fa3bd60 < detectionradius * detectionradius;
@@ -322,8 +322,8 @@ function function_2d56da6c95356759(player, var_1e331291fa3bd60, var_98a5e3761875
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaef
-// Size: 0x2a3
+// Checksum 0x0, Offset: 0xa8e
+// Size: 0x2b3
 function _aethercounter_calculateaetherCounterPulseRate(var_1e331291fa3bd60, object) {
     self notify("_aethercounter_calculateaetherCounterPulseRate");
     self endon("_aethercounter_calculateaetherCounterPulseRate");
@@ -368,7 +368,7 @@ function _aethercounter_calculateaetherCounterPulseRate(var_1e331291fa3bd60, obj
 
 // Namespace aether_counter / namespace_4a644dfa913c019
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9b
+// Checksum 0x0, Offset: 0xd4a
 // Size: 0x3a
 function function_f2aa833e16733c5e() {
     if (function_1cfcd2b63bc91c2d()) {

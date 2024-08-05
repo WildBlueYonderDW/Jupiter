@@ -4,8 +4,8 @@
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x286
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x1d2
+// Size: 0x39
 function plus(x, y) {
     z = x + y;
     test_print(x + " + " + y + " = " + z);
@@ -13,8 +13,8 @@ function plus(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c8
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x213
+// Size: 0x39
 function minus(x, y) {
     z = x - y;
     test_print(x + " - " + y + " = " + z);
@@ -22,8 +22,8 @@ function minus(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30a
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x254
+// Size: 0x39
 function mul(x, y) {
     z = x * y;
     test_print(x + " * " + y + " = " + z);
@@ -31,8 +31,8 @@ function mul(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34c
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x295
+// Size: 0x39
 function div(x, y) {
     z = x / y;
     test_print(x + " / " + y + " = " + z);
@@ -40,8 +40,8 @@ function div(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x38e
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x2d6
+// Size: 0x39
 function mod(x, y) {
     z = x % y;
     test_print(x + " % " + y + " = " + z);
@@ -49,8 +49,8 @@ function mod(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d0
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x317
+// Size: 0x59
 function eq(x, y, xstr, ystr) {
     z = x == y;
     if (!isdefined(xstr)) {
@@ -64,8 +64,8 @@ function eq(x, y, xstr, ystr) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x432
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x378
+// Size: 0x59
 function ne(x, y, xstr, ystr) {
     z = x != y;
     if (!isdefined(xstr)) {
@@ -79,8 +79,8 @@ function ne(x, y, xstr, ystr) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x494
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x3d9
+// Size: 0x39
 function lt(x, y) {
     z = x < y;
     test_print(x + " < " + y + ": " + z);
@@ -88,8 +88,8 @@ function lt(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d6
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x41a
+// Size: 0x39
 function le(x, y) {
     z = x <= y;
     test_print(x + " <= " + y + ": " + z);
@@ -97,8 +97,8 @@ function le(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x518
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x45b
+// Size: 0x39
 function gt(x, y) {
     z = x > y;
     test_print(x + " > " + y + ": " + z);
@@ -106,8 +106,8 @@ function gt(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x55a
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x49c
+// Size: 0x39
 function ge(x, y) {
     z = x >= y;
     test_print(x + " >= " + y + ": " + z);
@@ -115,8 +115,8 @@ function ge(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x59c
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x4dd
+// Size: 0x39
 function sl(x, y) {
     z = x << y;
     test_print(x + " << " + y + " = " + z);
@@ -124,8 +124,8 @@ function sl(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5de
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x51e
+// Size: 0x39
 function sr(x, y) {
     z = x >> y;
     test_print(x + " >> " + y + " = " + z);
@@ -133,7 +133,7 @@ function sr(x, y) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x620
+// Checksum 0x0, Offset: 0x55f
 // Size: 0x23
 function limit(i, str) {
     test_print(i + " == " + str);
@@ -141,7 +141,7 @@ function limit(i, str) {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64b
+// Checksum 0x0, Offset: 0x58a
 // Size: 0x77b
 function binary() {
     plus(0, 1);
@@ -272,8 +272,8 @@ function binary() {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdce
-// Size: 0xb6
+// Checksum 0x0, Offset: 0xd0d
+// Size: 0xbb
 function types() {
     x = 1;
     y = 2;
@@ -291,7 +291,7 @@ function types() {
 
 // Namespace unittest_ops / scripts\unittest\ops
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8c
+// Checksum 0x0, Offset: 0xdd0
 // Size: 0x28
 function main() {
     test_begin("ops");

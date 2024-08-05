@@ -6,7 +6,6 @@
 #using scripts\common\vehicle_code.gsc;
 #using scripts\vehicle\vehicle_common.gsc;
 #using scripts\common\notetrack.gsc;
-#using scripts\common\vehicle_aianim.gsc;
 #using scripts\asm\asm.gsc;
 #using scripts\common\vehicle_paths.gsc;
 #using scripts\asm\asm_bb.gsc;
@@ -15,12 +14,12 @@
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x665
-// Size: 0x5f4
+// Checksum 0x0, Offset: 0x783
+// Size: 0x5f9
 function guy_enter(guy, var_5b0cab0a9420da60) {
     guy endon("death_or_disconnect");
-    assertex(!isspawner(self), "<dev string:x1c>");
-    assertex(!isdefined(guy.ridingvehicle), "<dev string:x42>");
+    assertex(!isspawner(self), "Tried to make guys enter a spawner");
+    assertex(!isdefined(guy.ridingvehicle), "ai can't ride two vehicles at the same time");
     if (!isdefined(self) || !isalive(self)) {
         return;
     }
@@ -132,7 +131,7 @@ function guy_enter(guy, var_5b0cab0a9420da60) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc61
+// Checksum 0x0, Offset: 0xd84
 // Size: 0x1a
 function vehicle_allows_driver_death() {
     if (!isdefined(self.script_allow_driver_death)) {
@@ -143,7 +142,7 @@ function vehicle_allows_driver_death() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc84
+// Checksum 0x0, Offset: 0xda7
 // Size: 0x1b
 function vehicle_allows_rider_death() {
     if (!isdefined(self.script_allow_rider_deaths)) {
@@ -154,7 +153,7 @@ function vehicle_allows_rider_death() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xca8
+// Checksum 0x0, Offset: 0xdcb
 // Size: 0x36
 function guy_should_man_turret(animpos) {
     if (!isdefined(animpos.mgturret)) {
@@ -168,8 +167,8 @@ function guy_should_man_turret(animpos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce7
-// Size: 0x177
+// Checksum 0x0, Offset: 0xe0a
+// Size: 0x179
 function handle_attached_guys() {
     classname = get_vehicle_classname();
     self.attachedguys = [];
@@ -195,7 +194,7 @@ function handle_attached_guys() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe66
+// Checksum 0x0, Offset: 0xf8b
 // Size: 0x15
 function load_ai_goddriver(array) {
     load_ai(array, 1);
@@ -203,7 +202,7 @@ function load_ai_goddriver(array) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe83
+// Checksum 0x0, Offset: 0xfa8
 // Size: 0xf5
 function guy_death(guy, animpos) {
     waittillframeend();
@@ -229,8 +228,8 @@ function guy_death(guy, animpos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf80
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x10a5
+// Size: 0x110
 function guy_deathimate_me(guy, animpos) {
     animtimer = gettime() + getanimlength(animpos.death) * 1000;
     angles = guy.angles;
@@ -259,11 +258,11 @@ function guy_deathimate_me(guy, animpos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1097
+// Checksum 0x0, Offset: 0x11bd
 // Size: 0x87
 function load_ai(array, var_2d4646dcbb00a733, group) {
     self endon("death");
-    assert(self.code_classname == "<dev string:x71>");
+    assert(self.code_classname == "script_vehicle");
     if (array.size) {
         if (!isdefined(var_2d4646dcbb00a733)) {
             var_2d4646dcbb00a733 = 0;
@@ -278,8 +277,8 @@ function load_ai(array, var_2d4646dcbb00a733, group) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1126
-// Size: 0x41
+// Checksum 0x0, Offset: 0x124c
+// Size: 0x40
 function is_rider(guy) {
     for (i = 0; i < self.riders.size; i++) {
         if (self.riders[i] == guy) {
@@ -291,7 +290,7 @@ function is_rider(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1170
+// Checksum 0x0, Offset: 0x1295
 // Size: 0x4f
 function get_in_vehicle(guy, var_2d4646dcbb00a733, group) {
     if (is_rider(guy)) {
@@ -300,14 +299,14 @@ function get_in_vehicle(guy, var_2d4646dcbb00a733, group) {
     if (!handle_detached_guys_check()) {
         return;
     }
-    assertex(isalive(guy), "<dev string:x83>");
+    assertex(isalive(guy), "tried to load a vehicle with dead guy, check your AI count to assure spawnability of ai's");
     guy_runtovehicle(guy, self, var_2d4646dcbb00a733, group);
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c7
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x12ec
+// Size: 0x6e
 function handle_detached_guys_check() {
     if (vehicle_hasavailablespots()) {
         return 1;
@@ -317,12 +316,12 @@ function handle_detached_guys_check() {
     } else {
         classname = self.class;
     }
-    assertmsg("<dev string:xe0>" + level.vehicle.templates.aianims[classname].size + "<dev string:x110>");
+    assertmsg("script sent too many ai to vehicle( max is: " + level.vehicle.templates.aianims[classname].size + " )");
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x123e
+// Checksum 0x0, Offset: 0x1362
 // Size: 0x3d
 function vehicle_hasavailablespots() {
     if (level.vehicle.templates.aianims[get_vehicle_classname()].size - self.runningtovehicle.size) {
@@ -333,8 +332,8 @@ function vehicle_hasavailablespots() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1283
-// Size: 0xe4
+// Checksum 0x0, Offset: 0x13a7
+// Size: 0xe3
 function guy_runtovehicle_loaded(guy, vehicle) {
     vehicle endon("death");
     vehicle endon("stop_loading");
@@ -352,7 +351,7 @@ function guy_runtovehicle_loaded(guy, vehicle) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x136f
+// Checksum 0x0, Offset: 0x1492
 // Size: 0xaf
 function vehicle_loaded_if_full(vehicle) {
     if (isdefined(vehicle.vehicletype) && isdefined(vehicle.vehicle_loaded_notify_size)) {
@@ -374,8 +373,8 @@ function vehicle_loaded_if_full(vehicle) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1426
-// Size: 0x4f
+// Checksum 0x0, Offset: 0x1549
+// Size: 0x4e
 function vehicle_reload() {
     assert(self.riders.size);
     riders = self.riders;
@@ -387,7 +386,7 @@ function vehicle_reload() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x147d
+// Checksum 0x0, Offset: 0x159f
 // Size: 0x24
 function remove_magic_bullet_shield_from_guy_on_unload_or_death(guy) {
     waittill_any_2("unload", "death");
@@ -396,7 +395,7 @@ function remove_magic_bullet_shield_from_guy_on_unload_or_death(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a9
+// Checksum 0x0, Offset: 0x15cb
 // Size: 0xed
 function choose_vehicle_position(guy, vehiclepositions, var_2d4646dcbb00a733) {
     guy endon("stop_loading");
@@ -411,7 +410,7 @@ function choose_vehicle_position(guy, vehiclepositions, var_2d4646dcbb00a733) {
     } else if (!self.usedpositions[0]) {
         var_d0d2bb8c350e1f6b = vehicle_getinstart(0);
         if (var_2d4646dcbb00a733) {
-            assertex(!isdefined(guy.magic_bullet_shield), "<dev string:x116>");
+            assertex(!isdefined(guy.magic_bullet_shield), "magic_bullet_shield guy told to god mode drive a vehicle, you should simply load_ai without the god function for this guy");
             guy thread magic_bullet_shield();
             thread remove_magic_bullet_shield_from_guy_on_unload_or_death(guy);
         }
@@ -425,8 +424,8 @@ function choose_vehicle_position(guy, vehiclepositions, var_2d4646dcbb00a733) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x159f
-// Size: 0x689
+// Checksum 0x0, Offset: 0x16c1
+// Size: 0x694
 function guy_runtovehicle(guy, vehicle, var_2d4646dcbb00a733, group) {
     guy endon("stop_loading");
     vehicle endon("stop_loading");
@@ -561,7 +560,7 @@ function guy_runtovehicle(guy, vehicle, var_2d4646dcbb00a733, group) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c30
+// Checksum 0x0, Offset: 0x1d5d
 // Size: 0xa
 function entered_vehicle_notify() {
     self notify("enteredvehicle");
@@ -569,7 +568,7 @@ function entered_vehicle_notify() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c42
+// Checksum 0x0, Offset: 0x1d6f
 // Size: 0xb6
 function driverdead(guy) {
     if (scripts\common\vehicle::ishelicopter()) {
@@ -599,8 +598,8 @@ function driverdead(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d00
-// Size: 0x110
+// Checksum 0x0, Offset: 0x1e2d
+// Size: 0x111
 function guy_becomes_real_ai(guy, pos) {
     if (isai(guy)) {
         return guy;
@@ -627,7 +626,7 @@ function guy_becomes_real_ai(guy, pos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e19
+// Checksum 0x0, Offset: 0x1f47
 // Size: 0x87
 function link_to_sittag(guy, tag, origin_offset, angles_offset, linktoblend) {
     if (!isdefined(origin_offset)) {
@@ -648,19 +647,15 @@ function link_to_sittag(guy, tag, origin_offset, angles_offset, linktoblend) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ea8
-// Size: 0x63
+// Checksum 0x0, Offset: 0x1fd6
+// Size: 0x3a
 function anim_pos(vehicle, pos) {
-    assertex(isdefined(pos), "<dev string:x193>" + vehicle get_vehicle_classname() + "<dev string:x1a7>");
-    if (!isdefined(pos)) {
-        return spawnstruct();
-    }
     return level.vehicle.templates.aianims[vehicle get_vehicle_classname()][pos];
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f14
+// Checksum 0x0, Offset: 0x2019
 // Size: 0x47
 function guy_deathhandle(guy, pos) {
     guy waittill("death");
@@ -673,7 +668,7 @@ function guy_deathhandle(guy, pos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f63
+// Checksum 0x0, Offset: 0x2068
 // Size: 0x98
 function setup_aianimthreads() {
     if (!isdefined(level.vehicle.aianimthread)) {
@@ -688,7 +683,7 @@ function setup_aianimthreads() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2003
+// Checksum 0x0, Offset: 0x2108
 // Size: 0x2b
 function guy_handle(guy, pos) {
     guy.vehicle_idling = 1;
@@ -697,8 +692,8 @@ function guy_handle(guy, pos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2036
-// Size: 0x86
+// Checksum 0x0, Offset: 0x213b
+// Size: 0x85
 function driver_idle_speed(driver, pos) {
     driver endon("newanim");
     self endon("death");
@@ -716,8 +711,8 @@ function driver_idle_speed(driver, pos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c4
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x21c8
+// Size: 0xc0
 function guy_idle(guy, pos, ignoredeath) {
     guy endon("newanim");
     if (!isdefined(ignoredeath)) {
@@ -744,8 +739,8 @@ function guy_idle(guy, pos, ignoredeath) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x218d
-// Size: 0x171
+// Checksum 0x0, Offset: 0x2290
+// Size: 0x170
 function play_new_idle(guy, animpos) {
     if (isdefined(guy.vehicle_idle_override)) {
         animontag(guy, animpos.sittag, guy.vehicle_idle_override, undefined, undefined, undefined, animpos.sittag_origin_offset, animpos.sittag_angles_offset);
@@ -768,8 +763,8 @@ function play_new_idle(guy, animpos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2306
-// Size: 0x79
+// Checksum 0x0, Offset: 0x2408
+// Size: 0x7b
 function randomoccurrance(guy, occurrences) {
     range = [];
     var_c32808289f6a7cc0 = 0;
@@ -787,7 +782,7 @@ function randomoccurrance(guy, occurrences) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2387
+// Checksum 0x0, Offset: 0x248b
 // Size: 0x7d
 function function_b4600df9b9f46f3d(guy) {
     self endon("death");
@@ -805,7 +800,7 @@ function function_b4600df9b9f46f3d(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x240c
+// Checksum 0x0, Offset: 0x2510
 // Size: 0x84
 function guy_unload_que(guy) {
     self endon("death");
@@ -821,8 +816,8 @@ function guy_unload_que(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2498
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x259c
+// Size: 0xba
 function riders_unloadable(unload_group) {
     if (!isdefined(self.riders)) {
         return false;
@@ -846,7 +841,7 @@ function riders_unloadable(unload_group) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x255c
+// Checksum 0x0, Offset: 0x265f
 // Size: 0xe2
 function get_unload_group() {
     group = [];
@@ -867,8 +862,8 @@ function get_unload_group() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2647
-// Size: 0x110
+// Checksum 0x0, Offset: 0x274a
+// Size: 0x111
 function check_unloadgroup(pos, unload_group) {
     if (!isdefined(unload_group)) {
         unload_group = self.unload_group;
@@ -878,8 +873,8 @@ function check_unloadgroup(pos, unload_group) {
         return true;
     }
     if (!isdefined(level.vehicle.templates.unloadgroups[classname][unload_group])) {
-        println("<dev string:x1c3>" + self.currentnode.origin + "<dev string:x1ef>" + unload_group + "<dev string:x202>");
-        println("<dev string:x209>");
+        println("<dev string:x1c>" + self.currentnode.origin + "<dev string:x45>" + unload_group + "<dev string:x55>");
+        println("<dev string:x59>");
         return true;
     }
     group = level.vehicle.templates.unloadgroups[classname][unload_group];
@@ -893,7 +888,7 @@ function check_unloadgroup(pos, unload_group) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2760
+// Checksum 0x0, Offset: 0x2864
 // Size: 0x34
 function getoutrig_model_idle(model, tag, animation) {
     self endon("unloading");
@@ -904,8 +899,8 @@ function getoutrig_model_idle(model, tag, animation) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x279c
-// Size: 0x133
+// Checksum 0x0, Offset: 0x28a0
+// Size: 0x132
 function getoutrig_model(animpos, model, tag, animation, var_ec8a68bde7ac6a73) {
     classname = get_vehicle_classname();
     if (var_ec8a68bde7ac6a73) {
@@ -934,8 +929,8 @@ function getoutrig_model(animpos, model, tag, animation, var_ec8a68bde7ac6a73) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x28d7
-// Size: 0x3cc
+// Checksum 0x0, Offset: 0x29da
+// Size: 0x3bb
 function getoutrig_model_new(animpos, model, tag, animation, var_ec8a68bde7ac6a73) {
     self endon("death");
     classname = get_vehicle_classname();
@@ -960,15 +955,13 @@ function getoutrig_model_new(animpos, model, tag, animation, var_ec8a68bde7ac6a7
     origin = self gettagorigin(tag);
     angles = self gettagangles(tag);
     if (istrue(self.animintro)) {
-        if (scripts\common\vehicle_aianim::riders_unloadable(self.currentnode.script_unload)) {
-            ropeorigin = origin;
-            thread getoutrig_abort(model, undefined, animation, ropeorigin);
-            if (!scripts\common\vehicle_code::vehicle_iscrashing()) {
-                model unlink();
-                model.origin = origin;
-                model.angles = angles;
-                thread script_func("fastrope_anim", model, animation, "getoutrigfall");
-            }
+        ropeorigin = origin;
+        thread getoutrig_abort(model, undefined, animation, ropeorigin);
+        if (!scripts\common\vehicle_code::vehicle_iscrashing()) {
+            model unlink();
+            model.origin = origin;
+            model.angles = angles;
+            thread script_func("fastrope_anim", model, animation, "getoutrigfall");
         }
     } else {
         moveangles = self.angles - startangles;
@@ -1006,7 +999,7 @@ function getoutrig_model_new(animpos, model, tag, animation, var_ec8a68bde7ac6a7
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cab
+// Checksum 0x0, Offset: 0x2d9d
 // Size: 0x48
 function getoutrig_disable_abort_notify_after_riders_out() {
     wait 0.05;
@@ -1021,8 +1014,8 @@ function getoutrig_disable_abort_notify_after_riders_out() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cfb
-// Size: 0x97
+// Checksum 0x0, Offset: 0x2ded
+// Size: 0x95
 function getoutrig_abort_while_deploying() {
     self endon("end_getoutrig_abort_while_deploying");
     while (!scripts\common\vehicle_code::vehicle_iscrashing()) {
@@ -1041,8 +1034,8 @@ function getoutrig_abort_while_deploying() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d9a
-// Size: 0x2f0
+// Checksum 0x0, Offset: 0x2e8a
+// Size: 0x2f7
 function getoutrig_abort(model, tag, animation, ropeorigin) {
     var_1b711d7d9977b93d = getanimlength(animation);
     var_ec4312f917fcfbf3 = var_1b711d7d9977b93d - 1;
@@ -1113,8 +1106,8 @@ function getoutrig_abort(model, tag, animation, ropeorigin) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3092
-// Size: 0x6b
+// Checksum 0x0, Offset: 0x3189
+// Size: 0x6a
 function setanimrestart_once(vehicle_anim, bclearanim) {
     self endon("death");
     self endon("dont_clear_anim");
@@ -1132,8 +1125,8 @@ function setanimrestart_once(vehicle_anim, bclearanim) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3105
-// Size: 0x30d
+// Checksum 0x0, Offset: 0x31fb
+// Size: 0x310
 function getout_rigspawn(animatemodel, animpos, var_ec8a68bde7ac6a73) {
     if (!isdefined(var_ec8a68bde7ac6a73)) {
         var_ec8a68bde7ac6a73 = 1;
@@ -1167,8 +1160,8 @@ function getout_rigspawn(animatemodel, animpos, var_ec8a68bde7ac6a73) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x341b
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x3514
+// Size: 0x5c
 function check_sound_tag_dupe(soundtag) {
     if (!isdefined(self.sound_tag_dupe)) {
         self.sound_tag_dupe = [];
@@ -1185,7 +1178,7 @@ function check_sound_tag_dupe(soundtag) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3481
+// Checksum 0x0, Offset: 0x3579
 // Size: 0x71
 function check_sound_tag_dupe_reset(soundtag) {
     wait 0.05;
@@ -1204,8 +1197,8 @@ function check_sound_tag_dupe_reset(soundtag) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x34fa
-// Size: 0x110
+// Checksum 0x0, Offset: 0x35f2
+// Size: 0x112
 function vehicle_play_exit_anim(animpos, vehicle_getoutanim, vehicle_getoutanim_clear) {
     vehicleanim = level.vehicle.templates.aianims[get_vehicle_classname()];
     animatemodel = getanimatemodel();
@@ -1233,8 +1226,8 @@ function vehicle_play_exit_anim(animpos, vehicle_getoutanim, vehicle_getoutanim_
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3612
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x370c
+// Size: 0xce
 function vehicle_end_loop_sounds(guy, pos) {
     animpos = anim_pos(self, pos);
     if (isdefined(guy.playerpiggyback) && isdefined(animpos.player_getout_sound_loop)) {
@@ -1250,8 +1243,8 @@ function vehicle_end_loop_sounds(guy, pos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e9
-// Size: 0xaa
+// Checksum 0x0, Offset: 0x37e2
+// Size: 0xab
 function prepdoorsforunload() {
     if (self function_8fa29bf693c94b27()) {
         return;
@@ -1267,8 +1260,8 @@ function prepdoorsforunload() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x379b
-// Size: 0x192
+// Checksum 0x0, Offset: 0x3895
+// Size: 0x195
 function wait_for_open_door(guy, animpos) {
     guy endon("jumpedout");
     guy endon("death");
@@ -1303,7 +1296,7 @@ function wait_for_open_door(guy, animpos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3935
+// Checksum 0x0, Offset: 0x3a32
 // Size: 0x45
 function guy_setup_rope(guy, animpos) {
     if (isdefined(animpos.fastroperig)) {
@@ -1311,13 +1304,13 @@ function guy_setup_rope(guy, animpos) {
         guy setuprope();
         return;
     }
-    assertmsg("<dev string:x220>");
+    assertmsg("Guy is assigned to setup helicopter exit rope, but is missing a fastroperig.");
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3982
-// Size: 0xb65
+// Checksum 0x0, Offset: 0x3a7f
+// Size: 0xb71
 function guy_unload(guy, pos) {
     isvehicle = 0;
     if (isdefined(guy.isvehicle)) {
@@ -1569,8 +1562,8 @@ function guy_unload(guy, pos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x44ef
-// Size: 0x2e2
+// Checksum 0x0, Offset: 0x45f8
+// Size: 0x2f0
 function guy_unload_land(guy, exittag, jumpanim, loopanim, landanim) {
     jumporigin = self gettagorigin(exittag);
     var_c1d6ed48ac403e55 = self gettagangles(exittag);
@@ -1623,7 +1616,7 @@ function guy_unload_land(guy, exittag, jumpanim, loopanim, landanim) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47d9
+// Checksum 0x0, Offset: 0x48f0
 // Size: 0x7e
 function guy_fall_loop() {
     if (isai(self)) {
@@ -1641,7 +1634,7 @@ function guy_fall_loop() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x485f
+// Checksum 0x0, Offset: 0x4976
 // Size: 0x2
 function guy_fall_loop_end() {
     
@@ -1649,8 +1642,8 @@ function guy_fall_loop_end() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4869
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x4980
+// Size: 0xe1
 function guy_resets_goalpos(guy) {
     if (isdefined(guy.script_delayed_playerseek)) {
         return false;
@@ -1678,8 +1671,8 @@ function guy_resets_goalpos(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x4952
-// Size: 0x317
+// Checksum 0x0, Offset: 0x4a6a
+// Size: 0x320
 function animontag(guy, tag, animation, notetracks, sthreads, flag, origin_offset, angles_offset) {
     guy notify("animontag_thread");
     guy endon("animontag_thread");
@@ -1753,7 +1746,7 @@ function animontag(guy, tag, animation, notetracks, sthreads, flag, origin_offse
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c71
+// Checksum 0x0, Offset: 0x4d92
 // Size: 0x25
 function recover_interval() {
     self endon("death");
@@ -1765,8 +1758,8 @@ function recover_interval() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c9e
-// Size: 0xfa
+// Checksum 0x0, Offset: 0x4dbf
+// Size: 0xfb
 function animontag_ragdoll_death(guy, vehicle) {
     if (isdefined(guy.magic_bullet_shield) && guy.magic_bullet_shield) {
         return;
@@ -1807,8 +1800,8 @@ function animontag_ragdoll_death(guy, vehicle) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4da0
-// Size: 0x298
+// Checksum 0x0, Offset: 0x4ec2
+// Size: 0x29d
 function animontag_ragdoll_death_fall(guy, vehicle, attacker) {
     guy.deathanim = undefined;
     guy.deathfunction = undefined;
@@ -1854,7 +1847,7 @@ function animontag_ragdoll_death_fall(guy, vehicle, attacker) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5040
+// Checksum 0x0, Offset: 0x5167
 // Size: 0x45
 function donotetracks(guy, vehicle, flag) {
     guy endon("idle");
@@ -1866,7 +1859,7 @@ function donotetracks(guy, vehicle, flag) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x508d
+// Checksum 0x0, Offset: 0x51b4
 // Size: 0x41
 function animatemoveintoplace(guy, org, angles, var_4e90bf2523360f6c) {
     guy animscripted("movetospot", org, angles, var_4e90bf2523360f6c);
@@ -1875,7 +1868,7 @@ function animatemoveintoplace(guy, org, angles, var_4e90bf2523360f6c) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x50d6
+// Checksum 0x0, Offset: 0x51fd
 // Size: 0x1b0
 function guy_vehicle_death(guy, attacker) {
     assert(!getdvarint(@"hash_9403d7d31fc1d981"));
@@ -1910,14 +1903,14 @@ function guy_vehicle_death(guy, attacker) {
         if (isdefined(guy.ragdoll_getout_death)) {
             return;
         }
-        assertex(!isdefined(guy.magic_bullet_shield), "<dev string:x270>" + guy getentitynumber());
+        assertex(!isdefined(guy.magic_bullet_shield), "<dev string:x6d>" + guy getentitynumber());
         guy delete();
     }
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x528e
+// Checksum 0x0, Offset: 0x53b5
 // Size: 0x19
 function ai_wait_go() {
     self endon("death");
@@ -1927,13 +1920,13 @@ function ai_wait_go() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x52af
+// Checksum 0x0, Offset: 0x53d6
 // Size: 0x13e
 function set_pos(guy, vehicleanim) {
     pos = guy.script_startingposition;
     /#
         if (isdefined(pos)) {
-            assertex(pos < vehicleanim.size && pos >= 0, "<dev string:x2af>" + vehicleanim.size - 1);
+            assertex(pos < vehicleanim.size && pos >= 0, "<dev string:xa9>" + vehicleanim.size - 1);
         }
     #/
     if (isdefined(guy.forced_startingposition)) {
@@ -1942,7 +1935,7 @@ function set_pos(guy, vehicleanim) {
     if (isdefined(pos)) {
         return pos;
     }
-    assertex(!isdefined(pos), "<dev string:x2f4>");
+    assertex(!isdefined(pos), "Illegal starting position");
     for (j = 0; j < self.usedpositions.size; j++) {
         if (self.usedpositions[j]) {
             continue;
@@ -1956,16 +1949,16 @@ function set_pos(guy, vehicleanim) {
         return j;
     }
     if (isdefined(guy.isvehicle) && guy.isvehicle) {
-        assertmsg("<dev string:x311>");
+        assertmsg("No vehicle (linked vehicles like cargo) positions were found.");
         return;
     }
-    assertmsg("<dev string:x352>");
+    assertmsg("All spots on this vehicle were used up, too many AI trying to ride.");
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x53f5
-// Size: 0x102
+// Checksum 0x0, Offset: 0x551c
+// Size: 0x103
 function guy_man_turret(guy, pos, var_5b0cab0a9420da60) {
     animpos = anim_pos(self, pos);
     turret = self.mgturret[animpos.mgturret];
@@ -1992,7 +1985,7 @@ function guy_man_turret(guy, pos, var_5b0cab0a9420da60) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54ff
+// Checksum 0x0, Offset: 0x5627
 // Size: 0x26
 function guy_unlink_on_death(guy) {
     guy endon("jumpedout");
@@ -2004,8 +1997,8 @@ function guy_unlink_on_death(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x552d
-// Size: 0x2d0
+// Checksum 0x0, Offset: 0x5655
+// Size: 0x2d8
 function guy_blowup(guy) {
     if (!isdefined(guy.vehicle_position)) {
         return;
@@ -2071,8 +2064,8 @@ function guy_blowup(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5805
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x5935
+// Size: 0xea
 function convert_guy_to_drone(guy, var_5d30c43be498cbaf) {
     if (!isdefined(var_5d30c43be498cbaf)) {
         var_5d30c43be498cbaf = 0;
@@ -2097,7 +2090,7 @@ function convert_guy_to_drone(guy, var_5d30c43be498cbaf) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x58f7
+// Checksum 0x0, Offset: 0x5a28
 // Size: 0x23
 function vehicle_animate(animation, animtree) {
     self useanimtree(animtree);
@@ -2106,8 +2099,8 @@ function vehicle_animate(animation, animtree) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5922
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x5a53
+// Size: 0x8d
 function vehicle_getinstart(pos) {
     animpos = anim_pos(self, pos);
     assert(isdefined(animpos));
@@ -2118,8 +2111,8 @@ function vehicle_getinstart(pos) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x59b9
-// Size: 0xfa
+// Checksum 0x0, Offset: 0x5ae9
+// Size: 0xfd
 function vehicle_getanimstart(animation, tag, pos, canshootinvehicle) {
     struct = spawnstruct();
     origin = undefined;
@@ -2143,8 +2136,8 @@ function vehicle_getanimstart(animation, tag, pos, canshootinvehicle) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5abc
-// Size: 0xda
+// Checksum 0x0, Offset: 0x5bef
+// Size: 0xd9
 function is_position_in_group(vehicle, pos, group) {
     if (!isdefined(group)) {
         return true;
@@ -2162,8 +2155,8 @@ function is_position_in_group(vehicle, pos, group) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b9f
-// Size: 0xf1
+// Checksum 0x0, Offset: 0x5cd1
+// Size: 0xf4
 function get_availablepositions(group) {
     vehicleanim = level.vehicle.templates.aianims[get_vehicle_classname()];
     availablepositions = [];
@@ -2186,7 +2179,7 @@ function get_availablepositions(group) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c99
+// Checksum 0x0, Offset: 0x5dce
 // Size: 0x1e
 function getanimatemodel() {
     if (isdefined(self.modeldummy)) {
@@ -2197,8 +2190,8 @@ function getanimatemodel() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cbf
-// Size: 0xb6
+// Checksum 0x0, Offset: 0x5df4
+// Size: 0xbb
 function detach_models_with_substr(guy, substr) {
     size = guy getattachsize();
     var_895aea96c7debffd = [];
@@ -2219,7 +2212,7 @@ function detach_models_with_substr(guy, substr) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d7d
+// Checksum 0x0, Offset: 0x5eb7
 // Size: 0x27
 function should_give_orghealth() {
     if (!isai(self)) {
@@ -2233,7 +2226,7 @@ function should_give_orghealth() {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dad
+// Checksum 0x0, Offset: 0x5ee7
 // Size: 0x23
 function stable_unlink(guy) {
     self waittill("stable_for_unlink");
@@ -2244,8 +2237,8 @@ function stable_unlink(guy) {
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dd8
-// Size: 0x11a
+// Checksum 0x0, Offset: 0x5f12
+// Size: 0x118
 function animate_guys(other) {
     return_guys = [];
     foreach (guy in self.riders) {
@@ -2261,14 +2254,14 @@ function animate_guys(other) {
             return_guys[return_guys.size] = guy;
             continue;
         }
-        println("<dev string:x399>", other);
+        println("<dev string:xeb>", other);
     }
     return return_guys;
 }
 
 // Namespace vehicle_aianim / scripts\common\vehicle_aianim
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5efb
+// Checksum 0x0, Offset: 0x6033
 // Size: 0x2a
 function guy_cleanup_vehiclevars() {
     self.vehicle_idling = undefined;

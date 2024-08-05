@@ -6,13 +6,13 @@
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ac
+// Checksum 0x0, Offset: 0x839
 // Size: 0x216
 function say(alias, priority, timeout, overlap, delay, scope) {
-    assertex(isstring(alias), "<dev string:x1c>");
+    assertex(isstring(alias), "Alias must be a defined string.");
     if (!soundexists(alias) && !function_c0af485270de3fbf(alias)) {
         /#
-            iprintlnbold("<dev string:x3f>" + alias + "<dev string:x4c>");
+            iprintlnbold("<dev string:x1c>" + alias + "<dev string:x26>");
         #/
         return 0;
     }
@@ -20,7 +20,7 @@ function say(alias, priority, timeout, overlap, delay, scope) {
     priority = default_to(priority, 0);
     overlap = default_to(overlap, priority > 0);
     scope = default_to(scope, "self");
-    assertex(scope == "<dev string:x5d>" || scope == "<dev string:x65>" || scope == "<dev string:x6d>", "<dev string:x77>");
+    assertex(scope == "self" || scope == "team" || scope == "global", "^1Invalid scope:^7 Must be \"self\", \"team\", or \"global\"");
     speaker = self;
     if (self == level) {
         speaker = function_f5eb5b4d0e6714aa();
@@ -29,7 +29,7 @@ function say(alias, priority, timeout, overlap, delay, scope) {
     if (is_dead_or_dying(speaker) || istrue(speaker.vo_disabled) || istrue(level.vo_disabled)) {
         return 0;
     }
-    assertex(scope != "<dev string:x65>" || isdefined(speaker.team), "<dev string:xb1>");
+    assertex(scope != "team" || isdefined(speaker.team), "Scope cannot be \"team\" if team is not assigned.");
     if (isdefined(level.var_32ed4c64de33eaa6)) {
         function_4495922f7faaffe7(level.var_32ed4c64de33eaa6, alias);
         level.var_32ed4c64de33eaa6 = undefined;
@@ -51,10 +51,10 @@ function say(alias, priority, timeout, overlap, delay, scope) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cb
+// Checksum 0x0, Offset: 0xa58
 // Size: 0x65
 function function_4495922f7faaffe7(radio_dist, alias) {
-    assertex(isfloat(radio_dist) || isint(radio_dist), "<dev string:xe4>");
+    assertex(isfloat(radio_dist) || isint(radio_dist), "radio_dist must be a number");
     if (!isdefined(alias)) {
         level.var_32ed4c64de33eaa6 = radio_dist;
         return;
@@ -67,8 +67,8 @@ function function_4495922f7faaffe7(radio_dist, alias) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x738
-// Size: 0x64
+// Checksum 0x0, Offset: 0xac5
+// Size: 0x63
 function say_sequence(sequence, priority, timeout, overlap, delay, scope, endons) {
     vo_data = create_vo_data(sequence, priority, timeout, default_to(overlap, 0), delay, scope, endons);
     return function_e80002fd834a68b3(vo_data);
@@ -76,7 +76,7 @@ function say_sequence(sequence, priority, timeout, overlap, delay, scope, endons
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a5
+// Checksum 0x0, Offset: 0xb31
 // Size: 0x49
 function function_b0c2a659a5c2761f(endons, sequence, priority, timeout, overlap, delay, scope) {
     return say_sequence(sequence, priority, timeout, overlap, delay, scope, endons);
@@ -84,7 +84,7 @@ function function_b0c2a659a5c2761f(endons, sequence, priority, timeout, overlap,
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7
+// Checksum 0x0, Offset: 0xb83
 // Size: 0x49
 function function_c9a09b3ba9c68f8d(delay, sequence, priority, timeout, overlap, scope, endons) {
     return say_sequence(sequence, priority, timeout, overlap, delay, scope, endons);
@@ -92,7 +92,7 @@ function function_c9a09b3ba9c68f8d(delay, sequence, priority, timeout, overlap, 
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x849
+// Checksum 0x0, Offset: 0xbd5
 // Size: 0x44
 function function_72b26ba6d062726(sequence, priority, timeout, overlap, delay, endons) {
     return say_sequence(sequence, priority, timeout, overlap, delay, "global", endons);
@@ -100,8 +100,8 @@ function function_72b26ba6d062726(sequence, priority, timeout, overlap, delay, e
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x896
-// Size: 0xc8
+// Checksum 0x0, Offset: 0xc22
+// Size: 0xc7
 function stop_dialogue(cancel_queued_vo, cancel_delayed_vo) {
     if (!isdefined(cancel_queued_vo) || cancel_queued_vo) {
         self notify("cancel_queued_vo");
@@ -125,8 +125,8 @@ function stop_dialogue(cancel_queued_vo, cancel_delayed_vo) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x966
-// Size: 0x52
+// Checksum 0x0, Offset: 0xcf1
+// Size: 0x51
 function function_bb9f95455e7b6dfe(include_chatter) {
     speaker = self;
     if (level == self) {
@@ -142,8 +142,8 @@ function function_bb9f95455e7b6dfe(include_chatter) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c0
-// Size: 0x43
+// Checksum 0x0, Offset: 0xd4a
+// Size: 0x42
 function function_49ce27ac35596e2d(include_chatter) {
     speaker = self;
     if (level == self) {
@@ -157,8 +157,8 @@ function function_49ce27ac35596e2d(include_chatter) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0b
-// Size: 0xbe
+// Checksum 0x0, Offset: 0xd94
+// Size: 0xbb
 function function_a583984eb78c6c32(include_chatter) {
     level.vo_disabled = 1;
     if (istrue(include_chatter)) {
@@ -175,7 +175,7 @@ function function_a583984eb78c6c32(include_chatter) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad1
+// Checksum 0x0, Offset: 0xe57
 // Size: 0x24
 function function_4adf4f4524e8c0fd(include_chatter) {
     level.vo_disabled = 0;
@@ -186,7 +186,7 @@ function function_4adf4f4524e8c0fd(include_chatter) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xafd
+// Checksum 0x0, Offset: 0xe83
 // Size: 0x3b
 function say_self(alias, priority, timeout, overlap, delay) {
     return namespace_71a239de73c38174::say(alias, priority, timeout, overlap, delay, "self");
@@ -194,7 +194,7 @@ function say_self(alias, priority, timeout, overlap, delay) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb41
+// Checksum 0x0, Offset: 0xec7
 // Size: 0x3b
 function say_team(alias, priority, timeout, overlap, delay) {
     return namespace_71a239de73c38174::say(alias, priority, timeout, overlap, delay, "team");
@@ -202,7 +202,7 @@ function say_team(alias, priority, timeout, overlap, delay) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb85
+// Checksum 0x0, Offset: 0xf0b
 // Size: 0x3b
 function say_global(alias, priority, timeout, overlap, delay) {
     return namespace_71a239de73c38174::say(alias, priority, timeout, overlap, delay, "global");
@@ -210,7 +210,7 @@ function say_global(alias, priority, timeout, overlap, delay) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc9
+// Checksum 0x0, Offset: 0xf4f
 // Size: 0x3f
 function say_delayed(delay, alias, priority, timeout, overlap, scope) {
     return namespace_71a239de73c38174::say(alias, priority, timeout, overlap, delay, scope);
@@ -218,7 +218,7 @@ function say_delayed(delay, alias, priority, timeout, overlap, scope) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xc11
+// Checksum 0x0, Offset: 0xf97
 // Size: 0x3b
 function function_8c1bbaeb5d3fe61a(delay, alias, priority, timeout, overlap) {
     return namespace_71a239de73c38174::say(alias, priority, timeout, overlap, delay, "self");
@@ -226,7 +226,7 @@ function function_8c1bbaeb5d3fe61a(delay, alias, priority, timeout, overlap) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xc55
+// Checksum 0x0, Offset: 0xfdb
 // Size: 0x3b
 function function_fc0eb6b81c66c661(delay, alias, priority, timeout, overlap) {
     return namespace_71a239de73c38174::say(alias, priority, timeout, overlap, delay, "team");
@@ -234,7 +234,7 @@ function function_fc0eb6b81c66c661(delay, alias, priority, timeout, overlap) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xc99
+// Checksum 0x0, Offset: 0x101f
 // Size: 0x3b
 function function_8c12d3c7fd8bc4ff(delay, alias, priority, timeout, overlap) {
     return namespace_71a239de73c38174::say(alias, priority, timeout, overlap, delay, "global");
@@ -242,10 +242,10 @@ function function_8c12d3c7fd8bc4ff(delay, alias, priority, timeout, overlap) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdd
-// Size: 0xb6
+// Checksum 0x0, Offset: 0x1063
+// Size: 0xb3
 function function_cb329cf8896edeaa(team, cancel_queued_vo, cancel_delayed_vo) {
-    assertex(isdefined(team), "<dev string:x103>");
+    assertex(isdefined(team), "Team must be defined to stop team speaking.");
     if (!isdefined(level.vo_teams) || !isdefined(level.vo_teams[team])) {
         return;
     }
@@ -256,8 +256,8 @@ function function_cb329cf8896edeaa(team, cancel_queued_vo, cancel_delayed_vo) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9b
-// Size: 0x81
+// Checksum 0x0, Offset: 0x111e
+// Size: 0x7e
 function function_54d3bd59bff7e908(cancel_queued_vo, cancel_delayed_vo) {
     if (!isdefined(level.var_261aaf24a09d231d)) {
         return;
@@ -269,7 +269,7 @@ function function_54d3bd59bff7e908(cancel_queued_vo, cancel_delayed_vo) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe24
+// Checksum 0x0, Offset: 0x11a4
 // Size: 0xc4
 function is_speaking() {
     speaker = self;
@@ -292,8 +292,8 @@ function is_speaking() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xef1
-// Size: 0x34
+// Checksum 0x0, Offset: 0x1271
+// Size: 0x33
 function function_8951f1a8a6f683c9() {
     speaker = self;
     if (self == level) {
@@ -304,8 +304,8 @@ function function_8951f1a8a6f683c9() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf2e
-// Size: 0x34
+// Checksum 0x0, Offset: 0x12ad
+// Size: 0x33
 function function_754c9897f3b89964() {
     speaker = self;
     if (self == level) {
@@ -316,8 +316,8 @@ function function_754c9897f3b89964() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf6b
-// Size: 0x44
+// Checksum 0x0, Offset: 0x12e9
+// Size: 0x43
 function function_ed8a0ba27b9104c5() {
     speaker = self;
     if (self == level) {
@@ -328,11 +328,11 @@ function function_ed8a0ba27b9104c5() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb8
+// Checksum 0x0, Offset: 0x1335
 // Size: 0x65
 function function_d871f93553913276(team) {
     team = default_to(team, self.team);
-    assertex(isdefined(team), "<dev string:x132>");
+    assertex(isdefined(team), "Must provide team to check if speaking.");
     if (!isdefined(level.vo_teams) || !isdefined(level.vo_teams[team])) {
         return false;
     }
@@ -341,12 +341,12 @@ function function_d871f93553913276(team) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1026
-// Size: 0xb4
+// Checksum 0x0, Offset: 0x13a3
+// Size: 0xb2
 function function_6c31b0b0edd184ed(var_6f9b6fae768b41e0, cooldown) {
     cooldown = default_to(cooldown, 15);
-    assertex(isdefined(var_6f9b6fae768b41e0), "<dev string:x15d>");
-    assertex(isarray(var_6f9b6fae768b41e0), "<dev string:x182>");
+    assertex(isdefined(var_6f9b6fae768b41e0), "Must provide an array of speakers");
+    assertex(isarray(var_6f9b6fae768b41e0), "Speakers must be in an array");
     foreach (speaker in var_6f9b6fae768b41e0) {
         if (speaker function_754c9897f3b89964()) {
             return true;
@@ -361,7 +361,7 @@ function function_6c31b0b0edd184ed(var_6f9b6fae768b41e0, cooldown) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e3
+// Checksum 0x0, Offset: 0x145e
 // Size: 0x1d
 function function_e9e38931019c791f() {
     if (!isdefined(level.var_261aaf24a09d231d)) {
@@ -372,8 +372,8 @@ function function_e9e38931019c791f() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1109
-// Size: 0x102
+// Checksum 0x0, Offset: 0x1484
+// Size: 0x105
 function function_5731e26b3ff6304d(timeout) {
     speaker = self;
     if (isdefined(timeout)) {
@@ -405,8 +405,8 @@ function function_5731e26b3ff6304d(timeout) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1214
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x1592
+// Size: 0x5d
 function wait_finish_speaking() {
     speaker = self;
     if (self == level) {
@@ -425,7 +425,7 @@ function wait_finish_speaking() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x127b
+// Checksum 0x0, Offset: 0x15f8
 // Size: 0x7c
 function function_bce20c074033e937() {
     speaker = self;
@@ -444,8 +444,8 @@ function function_bce20c074033e937() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1300
-// Size: 0xdc
+// Checksum 0x0, Offset: 0x167d
+// Size: 0xdd
 function function_2e6c500b83dc82f5() {
     speaker = self;
     if (self == level) {
@@ -468,19 +468,19 @@ function function_2e6c500b83dc82f5() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e5
+// Checksum 0x0, Offset: 0x1763
 // Size: 0x54
 function function_53037a6cae32fb97(var, value) {
     if (!isdefined(self.var_a36de4031e866ce5)) {
         function_746d94ac5ed3ee5c();
     }
-    assertex(isdefined(var) && isdefined(self.nagvars[var]), "<dev string:x1a2>");
+    assertex(isdefined(var) && isdefined(self.nagvars[var]), "Invalid nagvar");
     self.var_a36de4031e866ce5[var] = value;
 }
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1441
+// Checksum 0x0, Offset: 0x17bf
 // Size: 0xef
 function function_c3a221031a1ff66c(priority, timeout, overlap, scope) {
     if (!isdefined(self.var_a36de4031e866ce5)) {
@@ -494,7 +494,7 @@ function function_c3a221031a1ff66c(priority, timeout, overlap, scope) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1538
+// Checksum 0x0, Offset: 0x18b6
 // Size: 0xe9
 function function_746d94ac5ed3ee5c() {
     if (self != level && !isdefined(level.var_a36de4031e866ce5)) {
@@ -509,8 +509,8 @@ function function_746d94ac5ed3ee5c() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1629
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x19a7
+// Size: 0xa4
 function nag_wait(flag_msg, nags, repeat_delay, initial_delay, loop_limit, invert_flag) {
     self endon("finished_nag_loop");
     if (ter_op(istrue(invert_flag), !flag(flag_msg), flag(flag_msg))) {
@@ -528,7 +528,7 @@ function nag_wait(flag_msg, nags, repeat_delay, initial_delay, loop_limit, inver
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x16d6
+// Checksum 0x0, Offset: 0x1a53
 // Size: 0x39
 function function_bace8af56ef0688b(flag_msg, nags, repeat_delay, initial_delay, loop_limit) {
     nag_wait(flag_msg, nags, repeat_delay, initial_delay, loop_limit, 1);
@@ -536,8 +536,8 @@ function function_bace8af56ef0688b(flag_msg, nags, repeat_delay, initial_delay, 
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1717
-// Size: 0x139
+// Checksum 0x0, Offset: 0x1a94
+// Size: 0x135
 function function_91c23782840cf632(var_eb053d490b6594d2, nags, repeat_delay, initial_delay, loop_limit, invert_flag) {
     self endon("finished_nag_loop");
     foreach (flag_msg in var_eb053d490b6594d2) {
@@ -560,8 +560,8 @@ function function_91c23782840cf632(var_eb053d490b6594d2, nags, repeat_delay, ini
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1858
-// Size: 0x156
+// Checksum 0x0, Offset: 0x1bd1
+// Size: 0x153
 function function_91cb20828416e24b(var_eb053d490b6594d2, nags, repeat_delay, initial_delay, loop_limit, invert_flag) {
     self endon("finished_nag_loop");
     foreach (flag_msg in var_eb053d490b6594d2) {
@@ -588,15 +588,15 @@ function function_91cb20828416e24b(var_eb053d490b6594d2, nags, repeat_delay, ini
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b6
+// Checksum 0x0, Offset: 0x1d2c
 // Size: 0xb7
 function nagtill(endon_data, nags, repeat_delay, initial_delay, loop_limit) {
     self endon("finished_nag_loop");
-    assertex(isdefined(repeat_delay), "<dev string:x1b4>");
+    assertex(isdefined(repeat_delay), "Nag must have defined repeat delay.");
     endon_ent = self;
     endon_msg = endon_data;
     if (isarray(endon_data)) {
-        assertex(endon_data.size == 2 && (isent(endon_data[0]) || isstruct(endon_data[0])) && isstring(endon_data[1]), "<dev string:x1db>");
+        assertex(endon_data.size == 2 && (isent(endon_data[0]) || isstruct(endon_data[0])) && isstring(endon_data[1]), "Endon data array must be array of ent-string pair.");
         endon_ent = endon_data[0];
         endon_msg = endon_data[1];
     }
@@ -606,8 +606,8 @@ function nagtill(endon_data, nags, repeat_delay, initial_delay, loop_limit) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a75
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x1deb
+// Size: 0xbc
 function function_a60fea4f51763a4f(endon_data, nags, repeat_delay, initial_delay, loop_limit) {
     endon_ent = self;
     foreach (endon_item in endon_data) {
@@ -619,15 +619,15 @@ function function_a60fea4f51763a4f(endon_data, nags, repeat_delay, initial_delay
             endon_ent endon(endon_item);
             continue;
         }
-        assertmsg("<dev string:x211>");
+        assertmsg("endon_data array contains invalid endon data type");
     }
     nag_loop(nags, repeat_delay, initial_delay, loop_limit);
 }
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b3b
-// Size: 0x58
+// Checksum 0x0, Offset: 0x1eaf
+// Size: 0x57
 function growing_delay(start, end, count) {
     delay = spawnstruct();
     delay.current = start;
@@ -638,10 +638,10 @@ function growing_delay(start, end, count) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b9c
-// Size: 0x224
+// Checksum 0x0, Offset: 0x1f0f
+// Size: 0x223
 function waitfor(delay, params) {
-    assertex(isdefined(delay), "<dev string:x246>");
+    assertex(isdefined(delay), "Cannot wait for an undefined delay.");
     if (isarray(delay)) {
         if (delay.size == 1 && isnumber(delay[0])) {
             delay = (delay[0] - gettime()) / 1000;
@@ -651,7 +651,7 @@ function waitfor(delay, params) {
             value = delay[0] waittill(delay[1]);
             return value;
         } else if (delay.size == 2 && isnumber(delay[0]) && isnumber(delay[1])) {
-            assertex(delay[0] >= 0 && delay[1] >= delay[1], "<dev string:x26d>");
+            assertex(delay[0] >= 0 && delay[1] >= delay[1], "Number range must be two positive numbers, with the second greater or equal to the first.");
             wait randomfloatrange(delay[0], delay[1]);
             return 1;
         } else {
@@ -683,13 +683,13 @@ function waitfor(delay, params) {
     if (isfunction(delay) || isbuiltinmethod(delay) || isbuiltinfunction(delay)) {
         return call_with_params(delay, params);
     }
-    assertmsg("<dev string:x2ca>");
+    assertmsg("Invalid delay type.");
 }
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc8
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x213a
+// Size: 0xc0
 function waitfor_any(delays, params) {
     if (!isarray(delays)) {
         waitfor(delays, params);
@@ -707,8 +707,8 @@ function waitfor_any(delays, params) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e92
-// Size: 0x46
+// Checksum 0x0, Offset: 0x2203
+// Size: 0x45
 function function_d74571b48c6d763b(delay, msg, notify_ent, params) {
     if (!isdefined(notify_ent)) {
         notify_ent = self;
@@ -719,8 +719,8 @@ function function_d74571b48c6d763b(delay, msg, notify_ent, params) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ee0
-// Size: 0x45
+// Checksum 0x0, Offset: 0x2250
+// Size: 0x44
 function function_5cf2ff53d6a7c938(delays, msg, notify_ent, params) {
     if (!isdefined(notify_ent)) {
         notify_ent = self;
@@ -731,8 +731,8 @@ function function_5cf2ff53d6a7c938(delays, msg, notify_ent, params) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f2d
-// Size: 0x44
+// Checksum 0x0, Offset: 0x229c
+// Size: 0x43
 function waitfor_ent(delay, params, msg) {
     struct = spawnstruct();
     thread function_d74571b48c6d763b(delay, default_to(msg, "finish"), struct, params);
@@ -741,7 +741,7 @@ function waitfor_ent(delay, params, msg) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f7a
+// Checksum 0x0, Offset: 0x22e8
 // Size: 0x60
 function call_with_params(func, params) {
     if (isfunction(func)) {
@@ -753,15 +753,15 @@ function call_with_params(func, params) {
     if (isbuiltinfunction(func)) {
         return function_8093ac75aa6abb73(func, params);
     }
-    assertmsg("<dev string:x2e1>");
+    assertmsg("Func must be a function: either a script function or a builtin function/method.");
 }
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fe2
+// Checksum 0x0, Offset: 0x2350
 // Size: 0x1bc
 function call_with_params_script(func, params) {
-    assertex(isfunction(func), "<dev string:x334>");
+    assertex(isfunction(func), "Func must be a script function.");
     if (!isdefined(params)) {
         return self [[ func ]]();
     }
@@ -790,17 +790,17 @@ function call_with_params_script(func, params) {
     case 9: 
         return self [[ func ]](params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8]);
     default: 
-        assertmsg("<dev string:x357>");
+        assertmsg("Params array is too large: cannot have more than 9 params");
         break;
     }
 }
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x21a6
+// Checksum 0x0, Offset: 0x2514
 // Size: 0x1c7
 function call_with_params_builtin(func, params) {
-    assertex(isbuiltinmethod(func), "<dev string:x394>");
+    assertex(isbuiltinmethod(func), "Func must be a builtin method ( a function that is called on an ent ).");
     if (!isdefined(params)) {
         return self [[ func ]]();
     }
@@ -829,17 +829,17 @@ function call_with_params_builtin(func, params) {
     case 9: 
         return self builtin [[ func ]](params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8]);
     default: 
-        assertmsg("<dev string:x357>");
+        assertmsg("Params array is too large: cannot have more than 9 params");
         break;
     }
 }
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2375
+// Checksum 0x0, Offset: 0x26e3
 // Size: 0x1bc
 function function_8093ac75aa6abb73(func, params) {
-    assertex(isbuiltinfunction(func), "<dev string:x3de>");
+    assertex(isbuiltinfunction(func), "Func must be a builtin function ( a function NOT called on an ent ).");
     if (!isdefined(params)) {
         return builtin [[ func ]]();
     }
@@ -868,15 +868,15 @@ function function_8093ac75aa6abb73(func, params) {
     case 9: 
         return builtin [[ func ]](params[0], params[1], params[2], params[3], params[4], params[5], params[6], params[7], params[8]);
     default: 
-        assertmsg("<dev string:x357>");
+        assertmsg("Params array is too large: cannot have more than 9 params");
         break;
     }
 }
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2539
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x28a7
+// Size: 0x4d
 function function_ea6f404468959fd2(timeout, func, params) {
     ent = spawnstruct();
     ent delaythread(timeout, &send_notify, "kill");
@@ -886,10 +886,10 @@ function function_ea6f404468959fd2(timeout, func, params) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x2590
-// Size: 0x21f
+// Checksum 0x0, Offset: 0x28fd
+// Size: 0x220
 function create_vo_data(sequence, priority, timeout, overlap, delay, scope, endons) {
-    assertex(isdefined(sequence), "<dev string:x426>");
+    assertex(isdefined(sequence), "Sequence must be defined.");
     speaker = self;
     if (self == level) {
         speaker = function_f5eb5b4d0e6714aa();
@@ -899,8 +899,8 @@ function create_vo_data(sequence, priority, timeout, overlap, delay, scope, endo
     }
     default_scope = ter_op(isdefined(speaker.team), "team", "global");
     scope = default_to(scope, default_scope);
-    assertex(scope == "<dev string:x5d>" || scope == "<dev string:x65>" || scope == "<dev string:x6d>", "<dev string:x77>");
-    assertex(scope != "<dev string:x65>" || isdefined(speaker.team), "<dev string:xb1>");
+    assertex(scope == "self" || scope == "team" || scope == "global", "^1Invalid scope:^7 Must be \"self\", \"team\", or \"global\"");
+    assertex(scope != "team" || isdefined(speaker.team), "Scope cannot be \"team\" if team is not assigned.");
     vo_data = spawnstruct();
     vo_data.owner = self;
     vo_data.speaker = speaker;
@@ -925,7 +925,7 @@ function create_vo_data(sequence, priority, timeout, overlap, delay, scope, endo
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27b8
+// Checksum 0x0, Offset: 0x2b26
 // Size: 0x3d
 function function_e80002fd834a68b3(vo_data) {
     if (!isdefined(vo_data)) {
@@ -940,8 +940,8 @@ function function_e80002fd834a68b3(vo_data) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x27fe
-// Size: 0x245
+// Checksum 0x0, Offset: 0x2b6c
+// Size: 0x241
 function queue_say(speaker, alias, priority, timeout, overlap, delay) {
     self.finished = 0;
     speaker.var_44e1869b50a57309 = self.scope;
@@ -979,7 +979,7 @@ function queue_say(speaker, alias, priority, timeout, overlap, delay) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a4b
+// Checksum 0x0, Offset: 0x2db5
 // Size: 0xfb
 function check_interrupt(overlap, scope_ent) {
     if (!istrue(overlap)) {
@@ -999,8 +999,8 @@ function check_interrupt(overlap, scope_ent) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b4e
-// Size: 0x195
+// Checksum 0x0, Offset: 0x2eb8
+// Size: 0x194
 function queue_sequence() {
     self.finished = 0;
     self.finished_or_cancelled = 0;
@@ -1034,8 +1034,8 @@ function queue_sequence() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cec
-// Size: 0x1de
+// Checksum 0x0, Offset: 0x3055
+// Size: 0x1da
 function execute_sequence() {
     level notify("vo_sequence_started", self);
     self.speaker.var_ec9f57e7698baffb = self.priority;
@@ -1071,8 +1071,8 @@ function execute_sequence() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ed2
-// Size: 0x3b0
+// Checksum 0x0, Offset: 0x3237
+// Size: 0x3b2
 function function_2f5f29da6f0f73e6() {
     if (self.index >= self.sequence.size) {
         return 1;
@@ -1109,7 +1109,7 @@ function function_2f5f29da6f0f73e6() {
         self.alias = segment;
         if (!soundexists(self.alias) && !function_c0af485270de3fbf(self.alias)) {
             /#
-                iprintlnbold("<dev string:x3f>" + self.alias + "<dev string:x4c>");
+                iprintlnbold("<dev string:x1c>" + self.alias + "<dev string:x26>");
             #/
             return function_139ccec48e7e3539("MISSING ALIAS");
         }
@@ -1157,14 +1157,14 @@ function function_2f5f29da6f0f73e6() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x328b
+// Checksum 0x0, Offset: 0x35f2
 // Size: 0x48
 function function_139ccec48e7e3539(reason) {
     /#
         if (!getdvarint(@"hash_62a9dffcf730f69")) {
             return;
         }
-        iprintlnbold("<dev string:x443>" + reason + "<dev string:x449>" + default_to(self.name, "<dev string:x451>"));
+        iprintlnbold("<dev string:x34>" + reason + "<dev string:x37>" + default_to(self.name, "<dev string:x3c>"));
     #/
 }
 
@@ -1172,10 +1172,10 @@ function function_139ccec48e7e3539(reason) {
 
     // Namespace dialogue / namespace_71a239de73c38174
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x32db
-    // Size: 0x2b1
+    // Checksum 0x0, Offset: 0x3642
+    // Size: 0x2bc
     function function_ac754fead4684fbc() {
-        self endon("<dev string:x462>");
+        self endon("<dev string:x4a>");
         for (;;) {
             sequence = self.sequence;
             ln_height = 0;
@@ -1183,14 +1183,14 @@ function function_139ccec48e7e3539(reason) {
                 display_ln = undefined;
                 segment = sequence[i];
                 if (isstring(segment)) {
-                    display_ln = "<dev string:x47e>" + segment;
+                    display_ln = "<dev string:x63>" + segment;
                 } else if (isnumber(segment)) {
-                    display_ln = "<dev string:x487>" + segment + "<dev string:x491>";
+                    display_ln = "<dev string:x69>" + segment + "<dev string:x70>";
                 } else if (isent(segment)) {
-                    ent_num = "<dev string:x499>" + segment getentitynumber();
-                    display_ln = "<dev string:x49e>";
+                    ent_num = "<dev string:x75>" + segment getentitynumber();
+                    display_ln = "<dev string:x77>";
                     if (isdefined(segment.animname)) {
-                        display_ln += segment.animname + "<dev string:x4b5>" + ent_num + "<dev string:x4bb>";
+                        display_ln += segment.animname + "<dev string:x8b>" + ent_num + "<dev string:x8e>";
                     } else {
                         display_ln += ent_num;
                     }
@@ -1202,7 +1202,7 @@ function function_139ccec48e7e3539(reason) {
                     base_x = getdvarint(@"hash_91d2bfdbf8875369");
                     base_y = getdvarint(@"hash_91d2bedbf8875136");
                     if (isdefined(self.name)) {
-                        event_info = "<dev string:x4c0>" + self.speaker getentitynumber() + "<dev string:x4c9>" + self.name + "<dev string:x4cf>";
+                        event_info = "<dev string:x90>" + self.speaker getentitynumber() + "<dev string:x96>" + self.name + "<dev string:x99>";
                         printtoscreen2d(base_x, base_y + 22, event_info, (0, 0, 0), 1.75);
                         printtoscreen2d(base_x - 2, base_y + 20, event_info, (1, 1, 0), 1.75);
                     }
@@ -1223,8 +1223,8 @@ function function_139ccec48e7e3539(reason) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3594
-// Size: 0x10b
+// Checksum 0x0, Offset: 0x3906
+// Size: 0x106
 function switch_speaker(new_speaker) {
     foreach (ent in self.scope_ents) {
         ent remove_vo_data(self);
@@ -1243,8 +1243,8 @@ function switch_speaker(new_speaker) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36a7
-// Size: 0x9b
+// Checksum 0x0, Offset: 0x3a14
+// Size: 0x9a
 function function_19e262da812ccbef(delay, var_30356ee6394ecf19) {
     if (!isdefined(delay)) {
         return false;
@@ -1266,8 +1266,8 @@ function function_19e262da812ccbef(delay, var_30356ee6394ecf19) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x374b
-// Size: 0x98
+// Checksum 0x0, Offset: 0x3ab7
+// Size: 0x97
 function function_7b52f05da542c2ff(alias, overlap, scope_ent, receivers) {
     if (is_dead_or_dying(self)) {
         return 0;
@@ -1289,7 +1289,7 @@ function function_7b52f05da542c2ff(alias, overlap, scope_ent, receivers) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x37ec
+// Checksum 0x0, Offset: 0x3b57
 // Size: 0x62
 function function_e7c1c9dee13137aa(alias, receivers) {
     self endon("death");
@@ -1304,8 +1304,8 @@ function function_e7c1c9dee13137aa(alias, receivers) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3857
-// Size: 0xac
+// Checksum 0x0, Offset: 0x3bc2
+// Size: 0xab
 function function_f2a79001721945a(vo_data, timeout, endons) {
     vo_data endon("proceed");
     if (self.var_261aaf24a09d231d.size == 0 || !istrue(vo_data.ischatter) && vo_data.priority >= 0 && function_623d7aa584b346ac()) {
@@ -1322,8 +1322,8 @@ function function_f2a79001721945a(vo_data, timeout, endons) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x390c
-// Size: 0x61
+// Checksum 0x0, Offset: 0x3c76
+// Size: 0x5e
 function private function_623d7aa584b346ac() {
     foreach (vo_data in self.var_261aaf24a09d231d) {
         if (!istrue(vo_data.ischatter)) {
@@ -1335,8 +1335,8 @@ function private function_623d7aa584b346ac() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3976
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x3cdd
+// Size: 0xc0
 function function_ab8711048f02259d(scope_ents) {
     foreach (scope_ent in scope_ents) {
         if (!isdefined(scope_ent.vo_queue) || scope_ent.vo_queue.size == 0) {
@@ -1354,8 +1354,8 @@ function function_ab8711048f02259d(scope_ents) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x3a40
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x3da5
+// Size: 0xd7
 function private function_f983ce9b3755f759(timeout, endons) {
     self endon("death");
     if (isdefined(endons)) {
@@ -1383,7 +1383,7 @@ function private function_f983ce9b3755f759(timeout, endons) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3b20
+// Checksum 0x0, Offset: 0x3e84
 // Size: 0xc
 function private function_ca829a8ed4c9efbe(scope_ent) {
     return false;
@@ -1391,8 +1391,8 @@ function private function_ca829a8ed4c9efbe(scope_ent) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b35
-// Size: 0x1db
+// Checksum 0x0, Offset: 0x3e99
+// Size: 0x1d9
 function has_priority(var_372fac4e460e7107, allow_equal) {
     if (isstruct(var_372fac4e460e7107)) {
         var_372fac4e460e7107 = var_372fac4e460e7107.var_261aaf24a09d231d;
@@ -1425,8 +1425,8 @@ function has_priority(var_372fac4e460e7107, allow_equal) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3d18
-// Size: 0xc8
+// Checksum 0x0, Offset: 0x407a
+// Size: 0xc7
 function private function_5ee32a2da994afab(struct) {
     if (!isdefined(struct.speaker.var_3968de209a1c2b97)) {
         struct.speaker.var_3968de209a1c2b97 = 0;
@@ -1443,7 +1443,7 @@ function private function_5ee32a2da994afab(struct) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3de8
+// Checksum 0x0, Offset: 0x4149
 // Size: 0xc7
 function private function_4866daf9001cdb5f(struct) {
     found = 0;
@@ -1466,8 +1466,8 @@ function private function_4866daf9001cdb5f(struct) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3eb7
-// Size: 0xc0
+// Checksum 0x0, Offset: 0x4218
+// Size: 0xbf
 function function_797820cad48747ef(vo_data) {
     for (i = self.var_261aaf24a09d231d.size; true; i--) {
         if (i == 0 || isalive(self.var_261aaf24a09d231d[i - 1].speaker) && isdefined(self.var_261aaf24a09d231d[i - 1].priority) && self.var_261aaf24a09d231d[i - 1].priority >= vo_data.priority) {
@@ -1480,7 +1480,7 @@ function function_797820cad48747ef(vo_data) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f7f
+// Checksum 0x0, Offset: 0x42df
 // Size: 0x9d
 function remove_vo_data(vo_data) {
     if (!isdefined(self) || !isdefined(self.var_261aaf24a09d231d)) {
@@ -1503,8 +1503,8 @@ function remove_vo_data(vo_data) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4024
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x4384
+// Size: 0xaf
 function function_28e38eefd3cc4ab() {
     if (!isdefined(level.vo_teams)) {
         level.vo_teams = [];
@@ -1523,7 +1523,7 @@ function function_28e38eefd3cc4ab() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x40dd
+// Checksum 0x0, Offset: 0x443c
 // Size: 0x31
 function private function_a940efae252424c5() {
     if (!isdefined(self.var_261aaf24a09d231d)) {
@@ -1537,7 +1537,7 @@ function private function_a940efae252424c5() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4117
+// Checksum 0x0, Offset: 0x4476
 // Size: 0x17
 function function_4fba9e11ee207d7c(alias) {
     return lookupsoundlength(alias, 1) / 1000;
@@ -1545,8 +1545,8 @@ function function_4fba9e11ee207d7c(alias) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4137
-// Size: 0x73
+// Checksum 0x0, Offset: 0x4496
+// Size: 0x72
 function function_6d4c7d2bd5969057(dialogue) {
     animname = ter_op(isdefined(self.animname), self.animname, "generic");
     if (!isdefined(level.scr_face) || !isdefined(level.scr_face[animname])) {
@@ -1559,8 +1559,8 @@ function function_6d4c7d2bd5969057(dialogue) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x41b2
-// Size: 0x94
+// Checksum 0x0, Offset: 0x4510
+// Size: 0x91
 function function_5baebd9837531e1f(alias, receivers) {
     if (!isarray(receivers)) {
         receivers = [receivers];
@@ -1576,7 +1576,7 @@ function function_5baebd9837531e1f(alias, receivers) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x424e
+// Checksum 0x0, Offset: 0x45a9
 // Size: 0x4c
 function function_f5eb5b4d0e6714aa(tag, originoffset, anglesoffset, istemp) {
     if (!isdefined(self.vo_emitter)) {
@@ -1587,8 +1587,8 @@ function function_f5eb5b4d0e6714aa(tag, originoffset, anglesoffset, istemp) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x42a3
-// Size: 0x17b
+// Checksum 0x0, Offset: 0x45fe
+// Size: 0x17a
 function function_3a8815118a9b0d69(tag, originoffset, anglesoffset, istemp) {
     if (isent(self)) {
         if (self tagexists("j_head")) {
@@ -1623,7 +1623,7 @@ function function_3a8815118a9b0d69(tag, originoffset, anglesoffset, istemp) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4427
+// Checksum 0x0, Offset: 0x4781
 // Size: 0x29
 function function_d45390dc3a16d16(parent) {
     self endon("entitydeleted");
@@ -1635,8 +1635,8 @@ function function_d45390dc3a16d16(parent) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4458
-// Size: 0x1a5
+// Checksum 0x0, Offset: 0x47b2
+// Size: 0x1a4
 function function_52846cd9b5efeafe(tag, originoffset, anglesoffset, istemp) {
     if (!isdefined(self.var_4413114d1d17278b)) {
         origin = default_to(self.origin, originoffset);
@@ -1667,7 +1667,7 @@ function function_52846cd9b5efeafe(tag, originoffset, anglesoffset, istemp) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4606
+// Checksum 0x0, Offset: 0x495f
 // Size: 0xc
 function get_radio_alias(alias) {
     return alias;
@@ -1675,7 +1675,7 @@ function get_radio_alias(alias) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x461b
+// Checksum 0x0, Offset: 0x4974
 // Size: 0x34
 function function_3e5d12eb11d543a2(emitter) {
     if (!isdefined(emitter)) {
@@ -1690,7 +1690,7 @@ function function_3e5d12eb11d543a2(emitter) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4657
+// Checksum 0x0, Offset: 0x49b0
 // Size: 0x55
 function function_690ccae4e694f51e(emitter) {
     if (!isdefined(emitter) || emitter == self || !istrue(emitter.var_87d26ab52f61fa8b)) {
@@ -1706,7 +1706,7 @@ function function_690ccae4e694f51e(emitter) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46b4
+// Checksum 0x0, Offset: 0x4a0d
 // Size: 0x52
 function function_c0af485270de3fbf(text) {
     setdvarifuninitialized(@"hash_ce3d6e5d48671653", 1);
@@ -1715,8 +1715,8 @@ function function_c0af485270de3fbf(text) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4711
-// Size: 0xde
+// Checksum 0x0, Offset: 0x4a6a
+// Size: 0xdc
 function function_fb381a52cc8f3784(var_bcabc3998e6c48bf, var_bca6d5998e66477e) {
     var_bcabc3998e6c48bf = default_to(var_bcabc3998e6c48bf, 1);
     var_bca6d5998e66477e = default_to(var_bca6d5998e66477e, 0);
@@ -1743,7 +1743,7 @@ function function_fb381a52cc8f3784(var_bcabc3998e6c48bf, var_bca6d5998e66477e) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x47f7
+// Checksum 0x0, Offset: 0x4b4e
 // Size: 0xed
 function function_1b22b2d53ba5b092(text, duration) {
     self endon("death");
@@ -1772,8 +1772,8 @@ function function_1b22b2d53ba5b092(text, duration) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48ec
-// Size: 0x34
+// Checksum 0x0, Offset: 0x4c43
+// Size: 0x33
 function function_f9e725c7fd059300(text) {
     word_count = strtok(text, " ").size;
     return max(1.5, word_count * 0.4);
@@ -1781,13 +1781,13 @@ function function_f9e725c7fd059300(text) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4929
-// Size: 0x4cd
+// Checksum 0x0, Offset: 0x4c7f
+// Size: 0x4dd
 function function_932c63c904570806(text) {
     self notify("stop_dialogue");
     self endon("death");
     self endon("stop_dialogue");
-    assertex(isent(self), "<dev string:x4d6>");
+    assertex(isent(self), "Dialogue text must be displayed on an entity.");
     emitter = self;
     player = undefined;
     if (isplayer(self)) {
@@ -1836,7 +1836,7 @@ function function_932c63c904570806(text) {
         hud_elem.y -= height - 2;
     }
     hud_elems = [];
-    foreach (i, text_line in lines) {
+    foreach (text_line in lines) {
         text_elem = newhudelem();
         text_elem.speaker = self;
         text_elem.alpha = 0;
@@ -1877,7 +1877,7 @@ function function_932c63c904570806(text) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dff
+// Checksum 0x0, Offset: 0x5165
 // Size: 0x8a
 function get_team_color(team) {
     team = default_to(team, self.team);
@@ -1898,8 +1898,8 @@ function get_team_color(team) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e91
-// Size: 0xe6
+// Checksum 0x0, Offset: 0x51f7
+// Size: 0xe5
 function get_name() {
     if (isdefined(self.name)) {
         return self.name;
@@ -1928,7 +1928,7 @@ function get_name() {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f7f
+// Checksum 0x0, Offset: 0x52e4
 // Size: 0xf3
 function function_866a3b95a50aa7c2(height, endy, lineheight, var_7794fdd4649e6d7f) {
     self.alignx = "center";
@@ -1951,8 +1951,8 @@ function function_866a3b95a50aa7c2(height, endy, lineheight, var_7794fdd4649e6d7
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x507a
-// Size: 0x10b
+// Checksum 0x0, Offset: 0x53df
+// Size: 0x107
 function function_f149afdd57e23278(hud_elems, holdtime) {
     finished = function_c0f47bf696bd27ac(0.2 + holdtime);
     self notify("text_display_done", finished);
@@ -1972,7 +1972,7 @@ function function_f149afdd57e23278(hud_elems, holdtime) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x518d
+// Checksum 0x0, Offset: 0x54ee
 // Size: 0x2b
 function function_c0f47bf696bd27ac(holdtime) {
     self endon("death");
@@ -1982,8 +1982,8 @@ function function_c0f47bf696bd27ac(holdtime) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x51c1
-// Size: 0x132
+// Checksum 0x0, Offset: 0x5522
+// Size: 0x131
 function nag_loop(nags, repeat_delay, initial_delay, loop_limit) {
     self notify("stop_nag_loop");
     self endon("death");
@@ -1992,10 +1992,10 @@ function nag_loop(nags, repeat_delay, initial_delay, loop_limit) {
     if (!isdefined(level.var_a36de4031e866ce5)) {
         level function_746d94ac5ed3ee5c();
     }
-    assertex(isdefined(nags), "<dev string:x507>");
-    assertex(isstruct(nags) && isdefined(nags.items) && isdefined(nags.index) || isarray(nags) || isfunction(nags), "<dev string:x520>");
+    assertex(isdefined(nags), "Nags must be defined.");
+    assertex(isstruct(nags) && isdefined(nags.items) && isdefined(nags.index) || isarray(nags) || isfunction(nags), "Nags must be a deck, array, or function.");
     if (isarray(nags) && (nags.size == 0 || !isfunction(nags[0]))) {
-        assertex(nags.size, "<dev string:x54c>");
+        assertex(nags.size, "Nags deck/array must contain at least one nag.");
         nags = create_deck(nags, 1, 0);
     }
     do_nag(nags, initial_delay);
@@ -2008,18 +2008,18 @@ function nag_loop(nags, repeat_delay, initial_delay, loop_limit) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x52fb
-// Size: 0x25d
+// Checksum 0x0, Offset: 0x565b
+// Size: 0x261
 function do_nag(nags, delay) {
     speaker = self;
     did_nag = 0;
     current = undefined;
     if (isarray(nags) && nags.size > 0 && isfunction(nags[0])) {
         nags = speaker call_with_params(nags[0], array_remove_index(nags, 0));
-        assertex(isstruct(nags) && isdefined(nags.items) && isdefined(nags.index) || isarray(nags) || isstring(nags), "<dev string:x57e>");
+        assertex(isstruct(nags) && isdefined(nags.items) && isdefined(nags.index) || isarray(nags) || isstring(nags), "Nags returned by function must be a deck, array, or string");
     } else if (isfunction(nags)) {
         nags = speaker call_with_params(nags);
-        assertex(isstruct(nags) && isdefined(nags.items) && isdefined(nags.index) || isarray(nags) || isstring(nags), "<dev string:x57e>");
+        assertex(isstruct(nags) && isdefined(nags.items) && isdefined(nags.index) || isarray(nags) || isstring(nags), "Nags returned by function must be a deck, array, or string");
     }
     if (isstruct(nags)) {
         nag = nags deck_draw();
@@ -2060,7 +2060,7 @@ function do_nag(nags, delay) {
 
 // Namespace dialogue / namespace_71a239de73c38174
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5560
+// Checksum 0x0, Offset: 0x58c4
 // Size: 0x49
 function started_nag() {
     self notify("started_nag", self.var_88502eb1e08dfc4d);

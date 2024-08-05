@@ -9,12 +9,12 @@
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x75f
-// Size: 0xd6
+// Checksum 0x0, Offset: 0x60b
+// Size: 0xd4
 function getinfilpath(targetname) {
     paths = getstructarray(targetname, "targetname");
     if (!isdefined(paths)) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("No infil paths were found.");
         return;
     }
     foreach (path in paths) {
@@ -32,8 +32,8 @@ function getinfilpath(targetname) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x83d
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x6e7
+// Size: 0x4c
 function player_unlink(guy) {
     if (!isdefined(guy)) {
         return;
@@ -50,8 +50,8 @@ function player_unlink(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x892
-// Size: 0x58
+// Checksum 0x0, Offset: 0x73b
+// Size: 0x57
 function player_free_look(guy) {
     if (!isdefined(guy)) {
         return;
@@ -68,8 +68,8 @@ function player_free_look(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f2
-// Size: 0x49
+// Checksum 0x0, Offset: 0x79a
+// Size: 0x48
 function player_fov_80_instant(guy) {
     if (!isdefined(guy)) {
         return;
@@ -84,8 +84,8 @@ function player_fov_80_instant(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x943
-// Size: 0x49
+// Checksum 0x0, Offset: 0x7ea
+// Size: 0x48
 function player_fov_default_1(guy) {
     if (!isdefined(guy)) {
         return;
@@ -100,8 +100,8 @@ function player_fov_default_1(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x994
-// Size: 0x5c
+// Checksum 0x0, Offset: 0x83a
+// Size: 0x48
 function player_fov_default_2(guy) {
     if (!isdefined(guy)) {
         return;
@@ -111,15 +111,13 @@ function player_fov_default_2(guy) {
     } else {
         player = guy;
     }
-    if (isplayer(player) || isagent(player)) {
-        player lerpfovbypreset("default_2seconds");
-    }
+    player lerpfovbypreset("default_2seconds");
 }
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f8
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x88a
+// Size: 0x5c
 function player_lock_look_1_second(guy) {
     if (!isdefined(guy)) {
         return;
@@ -136,8 +134,8 @@ function player_lock_look_1_second(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5d
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x8ee
+// Size: 0x5c
 function player_lock_look_2_second(guy) {
     if (!isdefined(guy)) {
         return;
@@ -154,8 +152,8 @@ function player_lock_look_2_second(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac2
-// Size: 0x54
+// Checksum 0x0, Offset: 0x952
+// Size: 0x53
 function player_lock_look_instant(guy) {
     if (!isdefined(guy)) {
         return;
@@ -172,8 +170,8 @@ function player_lock_look_instant(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1e
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x9ad
+// Size: 0x59
 function rumble_low(guy) {
     if (!isdefined(guy)) {
         return;
@@ -188,8 +186,8 @@ function rumble_low(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb80
-// Size: 0x6f
+// Checksum 0x0, Offset: 0xa0e
+// Size: 0x6e
 function cam_shake_low(guy) {
     if (!isdefined(guy)) {
         return;
@@ -204,8 +202,8 @@ function cam_shake_low(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf7
-// Size: 0x6b
+// Checksum 0x0, Offset: 0xa84
+// Size: 0x6a
 function cam_shake_running(guy) {
     if (!isdefined(guy)) {
         return;
@@ -220,8 +218,8 @@ function cam_shake_running(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6a
-// Size: 0x6e
+// Checksum 0x0, Offset: 0xaf6
+// Size: 0x6d
 function cam_shake_parked(guy) {
     if (!isdefined(guy)) {
         return;
@@ -236,8 +234,8 @@ function cam_shake_parked(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xce0
-// Size: 0x45
+// Checksum 0x0, Offset: 0xb6b
+// Size: 0x44
 function cam_shake_off(guy) {
     if (!isdefined(guy)) {
         return;
@@ -252,7 +250,7 @@ function cam_shake_off(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2d
+// Checksum 0x0, Offset: 0xbb7
 // Size: 0xc9
 function updateshakeonplayer(var_7ac5f1f9205ac776, var_7ae8e3f92080f064, var_fa5a6ef8c302a935, var_5c7fa8f909b33748, var_19067c8c80afb50, rumblename, waitmin, waitmax) {
     if (istrue(level.interactiveinfil) && istrue(self.interactivecombat)) {
@@ -276,8 +274,8 @@ function updateshakeonplayer(var_7ac5f1f9205ac776, var_7ae8e3f92080f064, var_fa5
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfe
-// Size: 0x63
+// Checksum 0x0, Offset: 0xc88
+// Size: 0x60
 function hideactors() {
     if (!isdefined(self.actors)) {
         return;
@@ -289,8 +287,8 @@ function hideactors() {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe69
-// Size: 0x63
+// Checksum 0x0, Offset: 0xcf0
+// Size: 0x60
 function showactors() {
     if (!isdefined(self.actors)) {
         return;
@@ -302,8 +300,8 @@ function showactors() {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xed4
-// Size: 0x49
+// Checksum 0x0, Offset: 0xd58
+// Size: 0x48
 function setcinematicmotion_heli(guy) {
     if (!isdefined(guy)) {
         return;
@@ -318,8 +316,8 @@ function setcinematicmotion_heli(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf25
-// Size: 0x49
+// Checksum 0x0, Offset: 0xda8
+// Size: 0x48
 function setcinematicmotion_playermotion(guy) {
     if (!isdefined(guy)) {
         return;
@@ -334,8 +332,8 @@ function setcinematicmotion_playermotion(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf76
-// Size: 0x49
+// Checksum 0x0, Offset: 0xdf8
+// Size: 0x48
 function setcinematicmotion_disabled(guy) {
     if (!isdefined(guy)) {
         return;
@@ -350,7 +348,7 @@ function setcinematicmotion_disabled(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc7
+// Checksum 0x0, Offset: 0xe48
 // Size: 0x3f
 function set_cinematicmotionomnvaroverrides(value) {
     self setclientomnvar("handheld_camera_rotation_move_mod_override", value);
@@ -361,8 +359,8 @@ function set_cinematicmotionomnvaroverrides(value) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x100e
-// Size: 0xca
+// Checksum 0x0, Offset: 0xe8f
+// Size: 0xcd
 function set_cinematicmotionomnvarovertime(startval, endval, duration) {
     self endon("death_or_disconnect");
     currenttime = gettime();
@@ -383,8 +381,8 @@ function set_cinematicmotionomnvarovertime(startval, endval, duration) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e0
-// Size: 0x4a
+// Checksum 0x0, Offset: 0xf64
+// Size: 0x49
 function setcinematicmotion_omnvaroverride_max_instant(guy) {
     if (!isdefined(guy)) {
         return;
@@ -399,8 +397,8 @@ function setcinematicmotion_omnvaroverride_max_instant(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1132
-// Size: 0x55
+// Checksum 0x0, Offset: 0xfb5
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_max_1(guy) {
     if (!isdefined(guy)) {
         return;
@@ -415,8 +413,8 @@ function setcinematicmotion_omnvaroverride_max_1(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x118f
-// Size: 0x55
+// Checksum 0x0, Offset: 0x1011
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_max_2(guy) {
     if (!isdefined(guy)) {
         return;
@@ -431,8 +429,8 @@ function setcinematicmotion_omnvaroverride_max_2(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ec
-// Size: 0x55
+// Checksum 0x0, Offset: 0x106d
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_max_3(guy) {
     if (!isdefined(guy)) {
         return;
@@ -447,8 +445,8 @@ function setcinematicmotion_omnvaroverride_max_3(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1249
-// Size: 0x55
+// Checksum 0x0, Offset: 0x10c9
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_max_4(guy) {
     if (!isdefined(guy)) {
         return;
@@ -463,8 +461,8 @@ function setcinematicmotion_omnvaroverride_max_4(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12a6
-// Size: 0x55
+// Checksum 0x0, Offset: 0x1125
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_max_5(guy) {
     if (!isdefined(guy)) {
         return;
@@ -479,8 +477,8 @@ function setcinematicmotion_omnvaroverride_max_5(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1303
-// Size: 0x4a
+// Checksum 0x0, Offset: 0x1181
+// Size: 0x49
 function setcinematicmotion_omnvaroverride_min_instant(guy) {
     if (!isdefined(guy)) {
         return;
@@ -495,8 +493,8 @@ function setcinematicmotion_omnvaroverride_min_instant(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1355
-// Size: 0x55
+// Checksum 0x0, Offset: 0x11d2
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_min_1(guy) {
     if (!isdefined(guy)) {
         return;
@@ -511,8 +509,8 @@ function setcinematicmotion_omnvaroverride_min_1(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b2
-// Size: 0x55
+// Checksum 0x0, Offset: 0x122e
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_min_2(guy) {
     if (!isdefined(guy)) {
         return;
@@ -527,8 +525,8 @@ function setcinematicmotion_omnvaroverride_min_2(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x140f
-// Size: 0x55
+// Checksum 0x0, Offset: 0x128a
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_min_3(guy) {
     if (!isdefined(guy)) {
         return;
@@ -543,8 +541,8 @@ function setcinematicmotion_omnvaroverride_min_3(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x146c
-// Size: 0x55
+// Checksum 0x0, Offset: 0x12e6
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_min_4(guy) {
     if (!isdefined(guy)) {
         return;
@@ -559,8 +557,8 @@ function setcinematicmotion_omnvaroverride_min_4(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c9
-// Size: 0x55
+// Checksum 0x0, Offset: 0x1342
+// Size: 0x54
 function setcinematicmotion_omnvaroverride_min_5(guy) {
     if (!isdefined(guy)) {
         return;
@@ -575,8 +573,8 @@ function setcinematicmotion_omnvaroverride_min_5(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1526
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x139e
+// Size: 0x4d
 function player_equip_nvg(guy) {
     if (!scripts\cp_mp\utility\game_utility::function_d2d2b803a7b741a4()) {
         return;
@@ -594,8 +592,8 @@ function player_equip_nvg(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x157c
-// Size: 0x116
+// Checksum 0x0, Offset: 0x13f3
+// Size: 0x11b
 function getgroundcompensationheight(guy) {
     if (!isdefined(guy)) {
         return;
@@ -616,7 +614,7 @@ function getgroundcompensationheight(guy) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x169a
+// Checksum 0x0, Offset: 0x1516
 // Size: 0xea
 function compensatetoground() {
     level endon("prematch_over");
@@ -636,7 +634,7 @@ function compensatetoground() {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x178c
+// Checksum 0x0, Offset: 0x1608
 // Size: 0x26b
 function infil_player_rig_updated(animname, spawnpos, spawnang) {
     self.animname = animname;
@@ -664,14 +662,14 @@ function infil_player_rig_updated(animname, spawnpos, spawnang) {
     }
     self setplayerangles(var_4b9d74e8e109d11e);
     self playerlinktodelta(self.player_rig, "tag_player", 1, 0, 0, 0, 0, 1);
-    println("<dev string:x3a>" + self.name + "<dev string:x6f>" + animname + "<dev string:x7f>" + isdefined(self.player_rig));
+    println("<dev string:x1c>" + self.name + "<dev string:x4e>" + animname + "<dev string:x5b>" + isdefined(self.player_rig));
     self notify("rig_created");
     waittill_any_2("remove_rig", "player_free_spot");
     if (istrue(level.gameended)) {
         return;
     }
     if (isdefined(self)) {
-        println("<dev string:x8a>" + self.name + "<dev string:x6f>" + animname + "<dev string:x7f>" + isdefined(self.player_rig));
+        println("<dev string:x63>" + self.name + "<dev string:x4e>" + animname + "<dev string:x5b>" + isdefined(self.player_rig));
         self unlink();
         thread scripts\cp_mp\utility\inventory_utility::function_9897d143c3feee05();
     }
@@ -688,7 +686,7 @@ function infil_player_rig_updated(animname, spawnpos, spawnang) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ff
+// Checksum 0x0, Offset: 0x187b
 // Size: 0xb1a
 function handledofnotetrack(type) {
     if (!isdefined(self) || !isdefined(self.player)) {
@@ -914,7 +912,7 @@ function handledofnotetrack(type) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2521
+// Checksum 0x0, Offset: 0x239d
 // Size: 0x17f
 function handlecinematicmotionnotetrack(var_d8958445ed7ab829) {
     if (!isdefined(self) || !isdefined(self.player)) {
@@ -968,7 +966,7 @@ function handlecinematicmotionnotetrack(var_d8958445ed7ab829) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26a8
+// Checksum 0x0, Offset: 0x2524
 // Size: 0x5d0
 function handleweaponstatenotetrack(state) {
     if (!isdefined(self) || !isdefined(self.player)) {
@@ -1076,7 +1074,7 @@ function handleweaponstatenotetrack(state) {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c80
+// Checksum 0x0, Offset: 0x2afc
 // Size: 0x46
 function cleanupswaploadoutflags() {
     self endon("disconnect");
@@ -1088,7 +1086,7 @@ function cleanupswaploadoutflags() {
 
 // Namespace infilexfil / scripts\mp\utility\infilexfil
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cce
+// Checksum 0x0, Offset: 0x2b4a
 // Size: 0xe8
 function function_c96464f39952b78a(vehicle) {
     if (isdefined(vehicle.infil.type)) {

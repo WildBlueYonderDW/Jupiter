@@ -8,7 +8,7 @@
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d
+// Checksum 0x0, Offset: 0x15a
 // Size: 0xc
 function bb_getprefixstring(category) {
     return undefined;
@@ -16,7 +16,7 @@ function bb_getprefixstring(category) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x172
+// Checksum 0x0, Offset: 0x16f
 // Size: 0x5f
 function bb_wantstostrafe() {
     if (isdefined(self._blackboard.meleerequested) && self._blackboard.meleerequested) {
@@ -30,7 +30,7 @@ function bb_wantstostrafe() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1da
+// Checksum 0x0, Offset: 0x1d7
 // Size: 0x20
 function bb_requeststance(stance) {
     self._blackboard.desiredstance = stance;
@@ -38,7 +38,7 @@ function bb_requeststance(stance) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x202
+// Checksum 0x0, Offset: 0x1ff
 // Size: 0x15
 function bb_getrequestedstance() {
     return self._blackboard.desiredstance;
@@ -46,8 +46,8 @@ function bb_getrequestedstance() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x220
-// Size: 0x38
+// Checksum 0x0, Offset: 0x21d
+// Size: 0x37
 function bb_isrequestedstance_refresh(asmname, statename, tostatename, params) {
     requestedstance = determinerequestedstance();
     return requestedstance == params;
@@ -55,7 +55,7 @@ function bb_isrequestedstance_refresh(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x261
+// Checksum 0x0, Offset: 0x25d
 // Size: 0x5d
 function bb_isrequestedstanceanddemeanor(asmname, statename, tostatename, params) {
     assert(isdefined(params) && params.size == 2);
@@ -64,7 +64,7 @@ function bb_isrequestedstanceanddemeanor(asmname, statename, tostatename, params
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c7
+// Checksum 0x0, Offset: 0x2c3
 // Size: 0x1c
 function bb_setisincombat(bincombat) {
     self.bisincombat = !isdefined(bincombat) || bincombat;
@@ -72,7 +72,7 @@ function bb_setisincombat(bincombat) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb
+// Checksum 0x0, Offset: 0x2e7
 // Size: 0xb
 function bb_isincombat() {
     return self.bisincombat;
@@ -80,7 +80,7 @@ function bb_isincombat() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff
+// Checksum 0x0, Offset: 0x2fb
 // Size: 0x33
 function bb_isweaponclass(asmname, statename, tostatename, params) {
     return weaponclass(self.weapon) == params;
@@ -88,8 +88,8 @@ function bb_isweaponclass(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x33b
-// Size: 0x5c
+// Checksum 0x0, Offset: 0x337
+// Size: 0x5b
 function bb_shoulddroprocketlauncher(asmname, statename, tostatename, params) {
     if (weaponclass(self.weapon) != "rocketlauncher") {
         return false;
@@ -103,7 +103,7 @@ function bb_shoulddroprocketlauncher(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a0
+// Checksum 0x0, Offset: 0x39b
 // Size: 0x2
 function bb_requestmove() {
     
@@ -111,7 +111,7 @@ function bb_requestmove() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3aa
+// Checksum 0x0, Offset: 0x3a5
 // Size: 0x2
 function bb_clearmoverequest() {
     
@@ -119,7 +119,7 @@ function bb_clearmoverequest() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b4
+// Checksum 0x0, Offset: 0x3af
 // Size: 0x8
 function bb_moverequested() {
     return self codemoverequested();
@@ -127,7 +127,7 @@ function bb_moverequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c5
+// Checksum 0x0, Offset: 0x3c0
 // Size: 0x20
 function bb_movetyperequested(movetype) {
     return self._blackboard.movetype == movetype;
@@ -135,7 +135,7 @@ function bb_movetyperequested(movetype) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ee
+// Checksum 0x0, Offset: 0x3e9
 // Size: 0x20
 function bb_requestmovetype(movetype) {
     self._blackboard.movetype = movetype;
@@ -143,7 +143,7 @@ function bb_requestmovetype(movetype) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x416
+// Checksum 0x0, Offset: 0x411
 // Size: 0x20
 function bb_requestweapon(weapon) {
     self._blackboard.weaponrequest = weapon;
@@ -151,7 +151,7 @@ function bb_requestweapon(weapon) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43e
+// Checksum 0x0, Offset: 0x439
 // Size: 0x1b
 function bb_clearweaponrequest() {
     self._blackboard.weaponrequest = "none";
@@ -159,7 +159,7 @@ function bb_clearweaponrequest() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x461
+// Checksum 0x0, Offset: 0x45c
 // Size: 0x4b
 function bb_getrequestedweapon() {
     if (isdefined(self._blackboard.weaponrequest) && self._blackboard.weaponrequest == "none") {
@@ -170,7 +170,7 @@ function bb_getrequestedweapon() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b5
+// Checksum 0x0, Offset: 0x4b0
 // Size: 0x3e
 function bb_requestreload(breload) {
     if (!isdefined(breload)) {
@@ -182,7 +182,7 @@ function bb_requestreload(breload) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fb
+// Checksum 0x0, Offset: 0x4f6
 // Size: 0x15
 function bb_reloadrequested() {
     return self._blackboard.breload;
@@ -190,7 +190,7 @@ function bb_reloadrequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x519
+// Checksum 0x0, Offset: 0x514
 // Size: 0x46
 function bb_throwgrenaderequested() {
     if (isdefined(self._blackboard.bthrowgrenade)) {
@@ -201,7 +201,7 @@ function bb_throwgrenaderequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x568
+// Checksum 0x0, Offset: 0x563
 // Size: 0x15
 function bb_getthrowgrenadetarget() {
     return self._blackboard.throwgrenadetarget;
@@ -209,7 +209,7 @@ function bb_getthrowgrenadetarget() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x586
+// Checksum 0x0, Offset: 0x581
 // Size: 0x3e
 function bb_requestfire(bfire) {
     if (!isdefined(bfire)) {
@@ -221,7 +221,7 @@ function bb_requestfire(bfire) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cc
+// Checksum 0x0, Offset: 0x5c7
 // Size: 0x16
 function bb_firerequested() {
     return istrue(self._blackboard.bfire);
@@ -229,7 +229,7 @@ function bb_firerequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5eb
+// Checksum 0x0, Offset: 0x5e6
 // Size: 0x20
 function bb_claimshootparams(taskid) {
     self._blackboard.shootparams_taskid = taskid;
@@ -237,7 +237,7 @@ function bb_claimshootparams(taskid) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x613
+// Checksum 0x0, Offset: 0x60e
 // Size: 0x5b
 function bb_shootparams_idsmatch() {
     if (!istrue(self._blackboard.shootparams_valid)) {
@@ -251,7 +251,7 @@ function bb_shootparams_idsmatch() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x677
+// Checksum 0x0, Offset: 0x672
 // Size: 0x3d
 function bb_updateshootparams_pos(pos) {
     assert(istrue(self._blackboard.shootparams_valid));
@@ -260,7 +260,7 @@ function bb_updateshootparams_pos(pos) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bc
+// Checksum 0x0, Offset: 0x6b7
 // Size: 0x2a
 function bb_clearshootparams() {
     self._blackboard.shootparams_ent = undefined;
@@ -271,17 +271,17 @@ function bb_clearshootparams() {
 
     // Namespace asm_bb / scripts\asm\asm_bb
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6ee
+    // Checksum 0x0, Offset: 0x6e9
     // Size: 0x21
     function bb_setshootparams(shootparams, target) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("should only be used by obsolete things now.");
     }
 
 #/
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x717
+// Checksum 0x0, Offset: 0x712
 // Size: 0x1c
 function bb_requestcoverstate(state, var_55b1b4a8c2ba7aa2) {
     self setcoverstate(state, var_55b1b4a8c2ba7aa2);
@@ -289,7 +289,7 @@ function bb_requestcoverstate(state, var_55b1b4a8c2ba7aa2) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x73b
+// Checksum 0x0, Offset: 0x736
 // Size: 0x32
 function bb_getrequestedcoverstate() {
     if (!isdefined(self._blackboard.coverstate)) {
@@ -300,7 +300,7 @@ function bb_getrequestedcoverstate() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x776
+// Checksum 0x0, Offset: 0x771
 // Size: 0x20
 function bb_requestcoverexposetype(var_270393d6fb596021) {
     self._blackboard.coverexposetype = var_270393d6fb596021;
@@ -308,7 +308,7 @@ function bb_requestcoverexposetype(var_270393d6fb596021) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79e
+// Checksum 0x0, Offset: 0x799
 // Size: 0x15
 function bb_getrequestedcoverexposetype() {
     return self._blackboard.coverexposetype;
@@ -316,7 +316,7 @@ function bb_getrequestedcoverexposetype() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bc
+// Checksum 0x0, Offset: 0x7b7
 // Size: 0x20
 function bb_requestcoverblindfire(var_690e06db214b7bec) {
     self._blackboard.blindfire = var_690e06db214b7bec;
@@ -324,7 +324,7 @@ function bb_requestcoverblindfire(var_690e06db214b7bec) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e4
+// Checksum 0x0, Offset: 0x7df
 // Size: 0x15
 function bb_setcovernode(node) {
     self.covernode = node;
@@ -332,7 +332,7 @@ function bb_setcovernode(node) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x801
+// Checksum 0x0, Offset: 0x7fc
 // Size: 0x2d
 function bb_hadcovernode(asmname, statename, tostatename, params) {
     return isdefined(self.covernode);
@@ -340,7 +340,7 @@ function bb_hadcovernode(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x837
+// Checksum 0x0, Offset: 0x832
 // Size: 0xb
 function bb_getcovernode() {
     return self.covernode;
@@ -348,7 +348,7 @@ function bb_getcovernode() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84b
+// Checksum 0x0, Offset: 0x846
 // Size: 0x2e
 function bb_getrequestedturret() {
     if (isdefined(self._blackboard.requestedturret)) {
@@ -359,7 +359,7 @@ function bb_getrequestedturret() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x882
+// Checksum 0x0, Offset: 0x87d
 // Size: 0x66
 function bb_requestturret(turret) {
     self._blackboard.requestedturret = turret;
@@ -373,16 +373,16 @@ function bb_requestturret(turret) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f0
+// Checksum 0x0, Offset: 0x8eb
 // Size: 0x58
 function bb_requestturretpose(pose) {
-    assert(!isdefined(pose) || pose == "<dev string:x4b>" || pose == "<dev string:x54>" || pose == "<dev string:x5e>" || pose == "<dev string:x67>");
+    assert(!isdefined(pose) || pose == "prone" || pose == "crouch" || pose == "stand" || pose == "exposed");
     self._blackboard.requestedturretpose = pose;
 }
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x950
+// Checksum 0x0, Offset: 0x94b
 // Size: 0x8e
 function bb_hasshufflenode(asmname, statename, tostatename, params) {
     return isdefined(self._blackboard.shufflenode) && isdefined(self.node) && self._blackboard.shufflenode == self.node && distancesquared(self.node.origin, self.origin) > 16;
@@ -390,7 +390,7 @@ function bb_hasshufflenode(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e7
+// Checksum 0x0, Offset: 0x9e2
 // Size: 0x18
 function bb_setanimscripted() {
     self._blackboard.animscriptedactive = 1;
@@ -398,7 +398,7 @@ function bb_setanimscripted() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa07
+// Checksum 0x0, Offset: 0xa02
 // Size: 0x17
 function bb_clearanimscripted() {
     self._blackboard.animscriptedactive = 0;
@@ -406,7 +406,7 @@ function bb_clearanimscripted() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa26
+// Checksum 0x0, Offset: 0xa21
 // Size: 0x4b
 function bb_isanimscripted() {
     if (isdefined(self.script)) {
@@ -419,7 +419,7 @@ function bb_isanimscripted() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7a
+// Checksum 0x0, Offset: 0xa75
 // Size: 0x4b
 function bb_requestmelee(target) {
     self._blackboard.meleerequested = 1;
@@ -429,7 +429,7 @@ function bb_requestmelee(target) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xacd
+// Checksum 0x0, Offset: 0xac8
 // Size: 0x2d
 function bb_getmeleetarget() {
     if (!self._blackboard.meleerequested) {
@@ -440,7 +440,7 @@ function bb_getmeleetarget() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb03
+// Checksum 0x0, Offset: 0xafe
 // Size: 0x2a
 function bb_clearmeleerequest() {
     self._blackboard.meleerequested = 0;
@@ -449,7 +449,7 @@ function bb_clearmeleerequest() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb35
+// Checksum 0x0, Offset: 0xb30
 // Size: 0x15
 function bb_clearmeleerequestcomplete() {
     self._blackboard.meleerequestedcomplete = undefined;
@@ -457,7 +457,7 @@ function bb_clearmeleerequestcomplete() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb52
+// Checksum 0x0, Offset: 0xb4d
 // Size: 0x37
 function bb_meleeinprogress(asmname, statename, tostatename, params) {
     return isdefined(self._blackboard.meleerequestedcomplete);
@@ -465,7 +465,7 @@ function bb_meleeinprogress(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb92
+// Checksum 0x0, Offset: 0xb8d
 // Size: 0x4e
 function bb_meleecomplete(asmname, statename, tostatename, params) {
     return isdefined(self._blackboard.meleerequestedcomplete) && self._blackboard.meleerequestedcomplete;
@@ -473,7 +473,7 @@ function bb_meleecomplete(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe9
+// Checksum 0x0, Offset: 0xbe4
 // Size: 0x15
 function bb_meleerequested() {
     return self._blackboard.meleerequested;
@@ -481,7 +481,7 @@ function bb_meleerequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc07
+// Checksum 0x0, Offset: 0xc02
 // Size: 0x43
 function bb_meleerequestinvalid(asmname, statename, tostatename, params) {
     if (!self.in_melee) {
@@ -495,7 +495,7 @@ function bb_meleerequestinvalid(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc53
+// Checksum 0x0, Offset: 0xc4e
 // Size: 0x5e
 function bb_requestmeleecharge(target, targetpos) {
     assert(isdefined(targetpos));
@@ -506,7 +506,7 @@ function bb_requestmeleecharge(target, targetpos) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb9
+// Checksum 0x0, Offset: 0xcb4
 // Size: 0x3d
 function bb_clearmeleechargerequest() {
     self._blackboard.meleerequestedcharge = 0;
@@ -516,7 +516,7 @@ function bb_clearmeleechargerequest() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcfe
+// Checksum 0x0, Offset: 0xcf9
 // Size: 0x3b
 function bb_meleechargerequested() {
     return isdefined(self._blackboard.meleerequestedcharge) && self._blackboard.meleerequestedcharge && isdefined(self.pathgoalpos);
@@ -524,7 +524,7 @@ function bb_meleechargerequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd42
+// Checksum 0x0, Offset: 0xd3d
 // Size: 0x30
 function bb_meleechargeaborted(asmname, statename, tostatename, params) {
     if (bb_meleechargerequested()) {
@@ -535,7 +535,7 @@ function bb_meleechargeaborted(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7b
+// Checksum 0x0, Offset: 0xd76
 // Size: 0x46
 function bb_getmeleechargetarget() {
     if (!isdefined(self._blackboard.meleerequestedcharge) || !self._blackboard.meleerequestedcharge) {
@@ -546,7 +546,7 @@ function bb_getmeleechargetarget() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdca
+// Checksum 0x0, Offset: 0xdc5
 // Size: 0x49
 function bb_getmeleechargetargetpos() {
     assert(isdefined(self._blackboard.meleerequestedcharge) && self._blackboard.meleerequestedcharge);
@@ -555,7 +555,7 @@ function bb_getmeleechargetargetpos() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1c
+// Checksum 0x0, Offset: 0xe17
 // Size: 0x20
 function bb_requestgrenadereturnthrow(bthrow) {
     self._blackboard.bgrenadereturnthrow = bthrow;
@@ -563,7 +563,7 @@ function bb_requestgrenadereturnthrow(bthrow) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe44
+// Checksum 0x0, Offset: 0xe3f
 // Size: 0x16
 function bb_iswhizbyrequested() {
     return isdefined(self._blackboard.var_9f7c458052d2c805);
@@ -571,7 +571,7 @@ function bb_iswhizbyrequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe63
+// Checksum 0x0, Offset: 0xe5e
 // Size: 0x78
 function bb_isfrantic() {
     covernode = bb_getcovernode();
@@ -584,8 +584,8 @@ function bb_isfrantic() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee4
-// Size: 0x1d
+// Checksum 0x0, Offset: 0xedf
+// Size: 0x1c
 function bb_ismissingaleg() {
     missing = bb_getmissingleg();
     if (isdefined(missing)) {
@@ -596,7 +596,7 @@ function bb_ismissingaleg() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0a
+// Checksum 0x0, Offset: 0xf04
 // Size: 0x90
 function bb_getmissingleg() {
     count = 0;
@@ -620,7 +620,7 @@ function bb_getmissingleg() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa3
+// Checksum 0x0, Offset: 0xf9d
 // Size: 0xa1
 function ispartdismembered(part) {
     if (!isdefined(self._blackboard)) {
@@ -640,7 +640,7 @@ function ispartdismembered(part) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x104d
+// Checksum 0x0, Offset: 0x1047
 // Size: 0x2a
 function bb_ispartdismembered(asmname, statename, tostatename, params) {
     return ispartdismembered(params);
@@ -648,7 +648,7 @@ function bb_ispartdismembered(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1080
+// Checksum 0x0, Offset: 0x107a
 // Size: 0xdc
 function waspartjustdismembered(part) {
     if (isdefined(self._blackboard.scriptableparts)) {
@@ -671,7 +671,7 @@ function waspartjustdismembered(part) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1165
+// Checksum 0x0, Offset: 0x115f
 // Size: 0x2a
 function bb_waspartjustdismembered(asmname, statename, tostatename, params) {
     return waspartjustdismembered(params);
@@ -679,7 +679,7 @@ function bb_waspartjustdismembered(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1198
+// Checksum 0x0, Offset: 0x1192
 // Size: 0x3a
 function bb_werepartsdismemberedinorder(asm, statename, tostatename, params) {
     return ispartdismembered(params[0]) && waspartjustdismembered(params[1]);
@@ -687,7 +687,7 @@ function bb_werepartsdismemberedinorder(asm, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11db
+// Checksum 0x0, Offset: 0x11d5
 // Size: 0x26
 function bb_dismemberedpart(part) {
     self._blackboard.dismemberedparts[part] = gettime();
@@ -695,7 +695,7 @@ function bb_dismemberedpart(part) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1209
+// Checksum 0x0, Offset: 0x1203
 // Size: 0x20
 function bb_setselfdestruct(val) {
     self._blackboard.selfdestruct = val;
@@ -703,7 +703,7 @@ function bb_setselfdestruct(val) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1231
+// Checksum 0x0, Offset: 0x122b
 // Size: 0x77
 function bb_isselfdestruct() {
     if (!isdefined(self._blackboard.selfdestruct)) {
@@ -716,7 +716,7 @@ function bb_isselfdestruct() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b1
+// Checksum 0x0, Offset: 0x12ab
 // Size: 0x18
 function bb_selfdestructnow() {
     self._blackboard.selfdestructnow = 1;
@@ -724,7 +724,7 @@ function bb_selfdestructnow() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12d1
+// Checksum 0x0, Offset: 0x12cb
 // Size: 0x16
 function bb_shouldselfdestructnow() {
     return isdefined(self._blackboard.selfdestructnow);
@@ -732,7 +732,7 @@ function bb_shouldselfdestructnow() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f0
+// Checksum 0x0, Offset: 0x12ea
 // Size: 0x20
 function bb_setheadless(val) {
     self._blackboard.isheadless = val;
@@ -740,7 +740,7 @@ function bb_setheadless(val) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1318
+// Checksum 0x0, Offset: 0x1312
 // Size: 0x2f
 function bb_isheadless() {
     if (isdefined(self.bt.crawlmeleegrab)) {
@@ -751,8 +751,8 @@ function bb_isheadless() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1350
-// Size: 0xb1
+// Checksum 0x0, Offset: 0x134a
+// Size: 0xb0
 function bb_setcanrodeo(side, var_e7096ce45cda4606) {
     if (!isdefined(var_e7096ce45cda4606)) {
         var_e7096ce45cda4606 = 1;
@@ -771,7 +771,7 @@ function bb_setcanrodeo(side, var_e7096ce45cda4606) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1409
+// Checksum 0x0, Offset: 0x1402
 // Size: 0x5b
 function bb_canrodeo(side) {
     if (!isdefined(self._blackboard.rodeo)) {
@@ -788,7 +788,7 @@ function bb_canrodeo(side) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x146d
+// Checksum 0x0, Offset: 0x1466
 // Size: 0x20
 function bb_setrodeorequest(val) {
     self._blackboard.rodeorequest = val;
@@ -796,7 +796,7 @@ function bb_setrodeorequest(val) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1495
+// Checksum 0x0, Offset: 0x148e
 // Size: 0x1e
 function bb_clearrodeorequest(val) {
     self._blackboard.rodeorequested = undefined;
@@ -804,7 +804,7 @@ function bb_clearrodeorequest(val) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x14bb
+// Checksum 0x0, Offset: 0x14b4
 // Size: 0x3e
 function bb_isrodeorequested(asmname, statename, tostatename, params) {
     if (!isdefined(self._blackboard.rodeorequest)) {
@@ -815,7 +815,7 @@ function bb_isrodeorequested(asmname, statename, tostatename, params) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1502
+// Checksum 0x0, Offset: 0x14fb
 // Size: 0x9
 function bb_clearmeleetarget() {
     self function_bdcb37a9431e654();
@@ -823,7 +823,7 @@ function bb_clearmeleetarget() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1513
+// Checksum 0x0, Offset: 0x150c
 // Size: 0x20
 function bb_setcrawlmelee(val) {
     self._blackboard.crawlmelee = val;
@@ -831,7 +831,7 @@ function bb_setcrawlmelee(val) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x153b
+// Checksum 0x0, Offset: 0x1534
 // Size: 0x16
 function bb_iscrawlmelee() {
     return isdefined(self._blackboard.crawlmelee);
@@ -839,7 +839,7 @@ function bb_iscrawlmelee() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x155a
+// Checksum 0x0, Offset: 0x1553
 // Size: 0x20
 function bb_sethaywire(val) {
     self._blackboard.haywire = val;
@@ -847,7 +847,7 @@ function bb_sethaywire(val) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1582
+// Checksum 0x0, Offset: 0x157b
 // Size: 0x16
 function bb_ishaywire() {
     return isdefined(self._blackboard.haywire);
@@ -855,7 +855,7 @@ function bb_ishaywire() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15a1
+// Checksum 0x0, Offset: 0x159a
 // Size: 0x15
 function bb_gethaywire() {
     return self._blackboard.haywire;
@@ -863,7 +863,7 @@ function bb_gethaywire() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15bf
+// Checksum 0x0, Offset: 0x15b8
 // Size: 0x20
 function bb_setisinbadcrouchspot(bbadcrouchspot) {
     self._blackboard.bbadcrouchspot = bbadcrouchspot;
@@ -871,7 +871,7 @@ function bb_setisinbadcrouchspot(bbadcrouchspot) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e7
+// Checksum 0x0, Offset: 0x15e0
 // Size: 0x16
 function bb_isinbadcrouchspot() {
     return istrue(self._blackboard.bbadcrouchspot);
@@ -879,7 +879,7 @@ function bb_isinbadcrouchspot() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1606
+// Checksum 0x0, Offset: 0x15ff
 // Size: 0xb
 function bb_setcivilianstate(state) {
     
@@ -887,7 +887,7 @@ function bb_setcivilianstate(state) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1619
+// Checksum 0x0, Offset: 0x1612
 // Size: 0x7
 function bb_getcivilianstate() {
     return "deprecated";
@@ -895,7 +895,7 @@ function bb_getcivilianstate() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1629
+// Checksum 0x0, Offset: 0x1622
 // Size: 0x15
 function bb_getcivilianstatetime() {
     return self._blackboard.civstatetime;
@@ -903,7 +903,7 @@ function bb_getcivilianstatetime() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1647
+// Checksum 0x0, Offset: 0x1640
 // Size: 0x13
 function bb_civilianrequestspeed(speed) {
     self aisetdesiredspeed(speed);
@@ -911,7 +911,7 @@ function bb_civilianrequestspeed(speed) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1662
+// Checksum 0x0, Offset: 0x165b
 // Size: 0x16
 function bb_isshort() {
     return istrue(self._blackboard.bshort);
@@ -919,7 +919,7 @@ function bb_isshort() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1681
+// Checksum 0x0, Offset: 0x167a
 // Size: 0x20
 function bb_setshort(value) {
     self._blackboard.bshort = value;
@@ -927,7 +927,7 @@ function bb_setshort(value) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a9
+// Checksum 0x0, Offset: 0x16a2
 // Size: 0x16
 function bb_smartobjectrequested() {
     return isdefined(self._blackboard.smartobject);
@@ -935,7 +935,7 @@ function bb_smartobjectrequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16c8
+// Checksum 0x0, Offset: 0x16c1
 // Size: 0xa0
 function bb_requestsmartobject(value) {
     self._blackboard.smartobject = value;
@@ -947,7 +947,7 @@ function bb_requestsmartobject(value) {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1770
+// Checksum 0x0, Offset: 0x1769
 // Size: 0x15
 function bb_getrequestedsmartobject() {
     return self._blackboard.smartobject;
@@ -955,7 +955,7 @@ function bb_getrequestedsmartobject() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x178e
+// Checksum 0x0, Offset: 0x1787
 // Size: 0x31
 function bb_clearsmartobject() {
     self._blackboard.smartobject = undefined;
@@ -965,7 +965,7 @@ function bb_clearsmartobject() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c7
+// Checksum 0x0, Offset: 0x17c0
 // Size: 0x35
 function bb_requestplaysmartobject() {
     assert(isdefined(self._blackboard.smartobject));
@@ -974,7 +974,7 @@ function bb_requestplaysmartobject() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1804
+// Checksum 0x0, Offset: 0x17fd
 // Size: 0x17
 function bb_clearplaysmartobject() {
     self._blackboard.bplaysmartobject = 0;
@@ -982,7 +982,7 @@ function bb_clearplaysmartobject() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1823
+// Checksum 0x0, Offset: 0x181c
 // Size: 0x16
 function bb_playsmartobjectrequested() {
     return istrue(self._blackboard.bplaysmartobject);
@@ -990,7 +990,7 @@ function bb_playsmartobjectrequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1842
+// Checksum 0x0, Offset: 0x183b
 // Size: 0x32
 function bb_getrequestedcovermultiswitchnodetype() {
     assert(isdefined(self._blackboard.docovermultiswitchnodetype));
@@ -999,7 +999,7 @@ function bb_getrequestedcovermultiswitchnodetype() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x187d
+// Checksum 0x0, Offset: 0x1876
 // Size: 0x16
 function bb_iscovermultiswitchrequested() {
     return isdefined(self._blackboard.docovermultiswitchnodetype);
@@ -1007,8 +1007,8 @@ function bb_iscovermultiswitchrequested() {
 
 // Namespace asm_bb / scripts\asm\asm_bb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x189c
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x1895
+// Size: 0xe8
 function bb_canplaygesture(asmname, statename, tostatename, gesture) {
     if (!isdefined(self._blackboard.gesturerequest)) {
         return false;

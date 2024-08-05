@@ -5,13 +5,12 @@
 #using script_4a6760982b403bad;
 #using scripts\asm\asm.gsc;
 #using scripts\common\string.gsc;
-#using scripts\common\vehicle.gsc;
 
 #namespace val;
 
 // Namespace val / scripts\common\values
 // Params 0, eflags: 0x5
-// Checksum 0x0, Offset: 0xb09
+// Checksum 0x0, Offset: 0x9e6
 // Size: 0x19
 function private autoexec __init__system__() {
     system::register(#"val", undefined, &pre_main, undefined);
@@ -19,8 +18,8 @@ function private autoexec __init__system__() {
 
 // Namespace val / scripts\common\values
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2a
-// Size: 0xed6
+// Checksum 0x0, Offset: 0xa07
+// Size: 0xe8b
 function pre_main() {
     if (isdefined(level.var_750a82cea28f2f13)) {
         return;
@@ -75,7 +74,6 @@ function pre_main() {
     register("lean", 1, 0, "$self", &function_1e949110ce628e51, "$value");
     register("allow_melee_victim", 1, 0, "$self", &allow_melee_victim, "$value");
     register("mantle", 1, 0, "$self", &function_b3870b9ec763d70a, "$value");
-    register("ledgehang", 1, 0, "$self", &function_97182ebc175cd93a, "$value");
     register("mount_top", 1, 0, "$self", &function_9b5befbb13ad7651, "$value");
     register("mount_side", 1, 0, "$self", &function_aac726af48296365, "$value");
     register("sprint", 1, 0, "$self", &function_f7c69559dbf71a1, "$value");
@@ -138,7 +136,6 @@ function pre_main() {
     register("stunned", 1, 0);
     register("stick_kill", 1, 0);
     register("unresolved_collisions", 1, 0);
-    register("third_person_toggle", 1, 0);
     register("equipment_wheel", 1, 0, "$self", &function_1bc52d1afc4d1b95, ["equipment_wheel", "$value"]);
     register("disallow_knockdown", 0, 1, "$self", &function_4c8f023af26b4a8a, "$value");
     register("disallow_stun", 0, 1, "$self", &function_db2848cc88d5a336, "$value");
@@ -155,18 +152,17 @@ function pre_main() {
     register("default_time_to_drop_threat_sight", 10000, 10000, "$self", &function_f1e27a27436441b4, "$value");
     register("global_esc_total_combat_time", -1, -1, "$self", &function_48cd47326fc3f73b, "$value");
     register("global_esc_percent_threshold", 0.8, 0.8, "$self", &function_dbb2149dbfbea743, "$value");
-    register("vehicle_disallow_lockon", 0, 1, "$self", &function_69bc203e1b8c4e63, "$value");
     /#
         level thread debug_values();
-        validate("<dev string:x1c>", "<dev string:x26>", &function_1d19c0b0f63836bf);
-        validate("<dev string:x2f>", "<dev string:x26>", &function_c4d1d331dd972e60);
-        validate("<dev string:x38>", "<dev string:x26>", &function_b07da66c065f9ef7);
+        validate("<dev string:x1c>", "<dev string:x23>", &function_1d19c0b0f63836bf);
+        validate("<dev string:x29>", "<dev string:x23>", &function_c4d1d331dd972e60);
+        validate("<dev string:x2f>", "<dev string:x23>", &function_b07da66c065f9ef7);
     #/
 }
 
 // Namespace val / scripts\common\values
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a08
+// Checksum 0x0, Offset: 0x189a
 // Size: 0xe4
 function register(str_name, default_value, var_8f2a3de49e1f0527, call_on, func, args) {
     assert(isstring(str_name));
@@ -174,7 +170,7 @@ function register(str_name, default_value, var_8f2a3de49e1f0527, call_on, func, 
         level.values = [];
     }
     if (isdefined(level.values[str_name])) {
-        assertmsg("<dev string:x48>" + str_name + "<dev string:x53>");
+        assertmsg("Value '" + str_name + "' already registered.");
         return;
     }
     if (isdefined(args)) {
@@ -189,7 +185,7 @@ function register(str_name, default_value, var_8f2a3de49e1f0527, call_on, func, 
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1af4
+// Checksum 0x0, Offset: 0x1986
 // Size: 0x23
 function unregister(str_name) {
     if (isdefined(level.values)) {
@@ -199,7 +195,7 @@ function unregister(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b1f
+// Checksum 0x0, Offset: 0x19b1
 // Size: 0x43
 function group_register(group_name, value_names) {
     /#
@@ -215,8 +211,8 @@ function group_register(group_name, value_names) {
 
     // Namespace val / scripts\common\values
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1b6a
-    // Size: 0x5b
+    // Checksum 0x0, Offset: 0x19fc
+    // Size: 0x58
     function private function_15421e5286d72ec3(value_names) {
         waitframe();
         foreach (val_name in value_names) {
@@ -228,18 +224,18 @@ function group_register(group_name, value_names) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bcd
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x1a5c
+// Size: 0x5e
 function group_set(group_name, value) {
-    assertex(isdefined(level.value_groups[group_name]), "<dev string:x6c>" + group_name + "<dev string:x9c>");
+    assertex(isdefined(level.value_groups[group_name]), "<dev string:x3c>" + group_name + "<dev string:x69>");
     str_id = "_group_" + group_name;
     set_array(str_id, level.value_groups[group_name], value);
 }
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c34
-// Size: 0x26
+// Checksum 0x0, Offset: 0x1ac2
+// Size: 0x25
 function group_reset(group_name) {
     str_id = "_group_" + group_name;
     reset_all(str_id);
@@ -247,12 +243,12 @@ function group_reset(group_name) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1c62
+// Checksum 0x0, Offset: 0x1aef
 // Size: 0x37
 function private assert_registered(str_name) {
     /#
         if (!isdefined(level.values[str_name])) {
-            assertmsg("<dev string:x48>" + str_name + "<dev string:xa1>");
+            assertmsg("<dev string:x6b>" + str_name + "<dev string:x73>");
             return false;
         }
     #/
@@ -261,8 +257,8 @@ function private assert_registered(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ca2
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x1b2f
+// Size: 0x89
 function default_func(str_name, call_on, value, args) {
     if (assert_registered(str_name)) {
         if (isdefined(args) && !isarray(args)) {
@@ -280,7 +276,7 @@ function default_func(str_name, call_on, value, args) {
 
 // Namespace val / scripts\common\values
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d34
+// Checksum 0x0, Offset: 0x1bc0
 // Size: 0x94
 function link(str_name, var_4d81048fd967e05, func) {
     if (assert_registered(str_name)) {
@@ -297,7 +293,7 @@ function link(str_name, var_4d81048fd967e05, func) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1dd0
+// Checksum 0x0, Offset: 0x1c5c
 // Size: 0xc
 function private simple_link(b_value) {
     return b_value;
@@ -305,8 +301,8 @@ function private simple_link(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de5
-// Size: 0xea
+// Checksum 0x0, Offset: 0x1c71
+// Size: 0xe7
 function set(str_id, str_name, value) {
     if (assert_registered(str_name)) {
         if (!isdefined(value)) {
@@ -324,8 +320,8 @@ function set(str_id, str_name, value) {
 
 // Namespace val / scripts\common\values
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ed7
-// Size: 0x69
+// Checksum 0x0, Offset: 0x1d60
+// Size: 0x66
 function set_array(str_id, var_d1450ef5ee023044, value) {
     foreach (str_name in var_d1450ef5ee023044) {
         set(str_id, str_name, value);
@@ -334,8 +330,8 @@ function set_array(str_id, var_d1450ef5ee023044, value) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f48
-// Size: 0x60
+// Checksum 0x0, Offset: 0x1dce
+// Size: 0x5d
 function function_38f73441260ce622(str_id, var_d1450ef5ee023044) {
     foreach (str_name in var_d1450ef5ee023044) {
         reset(str_id, str_name);
@@ -344,8 +340,8 @@ function function_38f73441260ce622(str_id, var_d1450ef5ee023044) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fb0
-// Size: 0x8f
+// Checksum 0x0, Offset: 0x1e33
+// Size: 0x8e
 function get(str_name) {
     if (assert_registered(str_name)) {
         if (isdefined(self.values) && isdefined(self.values[str_name])) {
@@ -360,8 +356,8 @@ function get(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2047
-// Size: 0x7a
+// Checksum 0x0, Offset: 0x1ec9
+// Size: 0x79
 function get_last(str_name) {
     if (assert_registered(str_name)) {
         if (isdefined(self.values) && isdefined(self.values[str_name])) {
@@ -376,7 +372,7 @@ function get_last(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c9
+// Checksum 0x0, Offset: 0x1f4a
 // Size: 0x21
 function set_radiant(str_name, value) {
     set("radiant", str_name, value);
@@ -384,7 +380,7 @@ function set_radiant(str_name, value) {
 
 // Namespace val / scripts\common\values
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x20f2
+// Checksum 0x0, Offset: 0x1f73
 // Size: 0x3f
 function set_for_time(n_time, str_id, str_name, value) {
     self endon("death");
@@ -395,8 +391,8 @@ function set_for_time(n_time, str_id, str_name, value) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2139
-// Size: 0x10a
+// Checksum 0x0, Offset: 0x1fba
+// Size: 0x108
 function reset(str_id, str_name) {
     n_index = remove_value(str_id, str_name);
     if (!n_index) {
@@ -415,14 +411,14 @@ function reset(str_id, str_name) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x224b
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x20ca
+// Size: 0xe0
 function reset_all(str_id) {
     if (!isdefined(self.values)) {
         return;
     }
     valuescopy = arraycopy(self.values);
-    foreach (valuekey, valuestates in valuescopy) {
+    foreach (valuestates in valuescopy) {
         foreach (state in valuestates) {
             if (isdefined(state.str_id) && state.str_id == str_id) {
                 reset(str_id, valuekey);
@@ -433,7 +429,7 @@ function reset_all(str_id) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2336
+// Checksum 0x0, Offset: 0x21b2
 // Size: 0x18
 function reset_radiant(str_name) {
     reset("radiant", str_name);
@@ -441,7 +437,7 @@ function reset_radiant(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2356
+// Checksum 0x0, Offset: 0x21d2
 // Size: 0x20
 function nuke(str_name) {
     self.values[str_name] = [];
@@ -450,8 +446,8 @@ function nuke(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x237e
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x21fa
+// Size: 0xab
 function nuke_all() {
     if (!isdefined(self.values)) {
         return;
@@ -467,8 +463,8 @@ function nuke_all() {
 
 // Namespace val / scripts\common\values
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2435
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x22ad
+// Size: 0xaf
 function private push_value(str_id, str_name, value) {
     assert(isstring(str_id));
     remove_value(str_id, str_name);
@@ -486,8 +482,8 @@ function private push_value(str_id, str_name, value) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x24ed
-// Size: 0xdb
+// Checksum 0x0, Offset: 0x2364
+// Size: 0xda
 function private remove_value(str_id, str_name) {
     if (!isdefined(self)) {
         return -1;
@@ -512,7 +508,7 @@ function private remove_value(str_id, str_name) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x25d1
+// Checksum 0x0, Offset: 0x2447
 // Size: 0xb1
 function private set_value(str_name, value) {
     s_value = level.values[str_name];
@@ -527,8 +523,8 @@ function private set_value(str_name, value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x268a
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x2500
+// Size: 0xcd
 function private get_default(str_name) {
     default_value = undefined;
     s_value = level.values[str_name];
@@ -545,8 +541,8 @@ function private get_default(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x275f
-// Size: 0x2c
+// Checksum 0x0, Offset: 0x25d6
+// Size: 0x2b
 function private set_default(str_name) {
     default_value = get_default(str_name);
     if (isdefined(default_value)) {
@@ -556,10 +552,10 @@ function private set_default(str_name) {
 
 // Namespace val / scripts\common\values
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2793
-// Size: 0x75
+// Checksum 0x0, Offset: 0x2609
+// Size: 0x72
 function private function_32efb357c319abf0(array, str_value, replacement) {
-    foreach (i, val in array) {
+    foreach (val in array) {
         if (isstring(val) && val == str_value) {
             array[i] = replacement;
         }
@@ -569,7 +565,7 @@ function private function_32efb357c319abf0(array, str_value, replacement) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2811
+// Checksum 0x0, Offset: 0x2684
 // Size: 0x37
 function private replace_values(a_args, value) {
     if (isdefined(a_args)) {
@@ -581,7 +577,7 @@ function private replace_values(a_args, value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2851
+// Checksum 0x0, Offset: 0x26c4
 // Size: 0x71
 function private function_a49123f94edb0267(b_value) {
     if (!isdefined(b_value)) {
@@ -598,7 +594,7 @@ function private function_a49123f94edb0267(b_value) {
             self.takedamage = b_value;
         } else {
             /#
-                iprintln("<dev string:xb6>");
+                iprintln("<dev string:x85>");
             #/
         }
         return;
@@ -608,7 +604,7 @@ function private function_a49123f94edb0267(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x28ca
+// Checksum 0x0, Offset: 0x273d
 // Size: 0x1d
 function private function_1d19c0b0f63836bf() {
     if (isplayer(self)) {
@@ -619,7 +615,7 @@ function private function_1d19c0b0f63836bf() {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x28ef
+// Checksum 0x0, Offset: 0x2762
 // Size: 0x3a
 function private function_613f82ecdf9b56b8(b_value) {
     if (!isdefined(b_value)) {
@@ -633,7 +629,7 @@ function private function_613f82ecdf9b56b8(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2931
+// Checksum 0x0, Offset: 0x27a4
 // Size: 0xb
 function private function_c4d1d331dd972e60() {
     return self.allowdeath;
@@ -641,7 +637,7 @@ function private function_c4d1d331dd972e60() {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2945
+// Checksum 0x0, Offset: 0x27b8
 // Size: 0x1f
 function private function_8aba0b6af3dcb0ef(b_value) {
     if (!isdefined(b_value)) {
@@ -652,7 +648,7 @@ function private function_8aba0b6af3dcb0ef(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x296c
+// Checksum 0x0, Offset: 0x27df
 // Size: 0xb
 function private function_b07da66c065f9ef7() {
     return self.damageshield;
@@ -660,7 +656,7 @@ function private function_b07da66c065f9ef7() {
 
 // Namespace val / scripts\common\values
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2980
+// Checksum 0x0, Offset: 0x27f3
 // Size: 0x8
 function private function_564dce69848aceaa() {
     return self function_3d73b8f9ddb1a76e();
@@ -668,7 +664,7 @@ function private function_564dce69848aceaa() {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2991
+// Checksum 0x0, Offset: 0x2804
 // Size: 0x1e
 function private function_9e8589036c3fd37e(b_value) {
     if (!isdefined(b_value)) {
@@ -679,49 +675,14 @@ function private function_9e8589036c3fd37e(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x29b7
-// Size: 0x16e
-function private set_takeweapons_thread(b_value) {
-    self notify("set_takeweapons_thread");
-    self endon("set_takeweapons_thread");
-    self endon("death_or_disconnect");
-    wait level.framedurationseconds * 3;
-    if (b_value) {
-        if (!isdefined(self.val_takeweapons)) {
-            self.val_takeweapons = spawnstruct();
-            self.val_takeweapons.weapons = self getweaponslistall();
-            self.val_takeweapons.current = self getcurrentweapon();
-        }
-        self takeallweapons();
-        return;
-    }
-    if (isdefined(self.val_takeweapons)) {
-        weaponselect = self.val_takeweapons.current;
-        fallbackprimary = undefined;
-        foreach (weapon in self.val_takeweapons.weapons) {
-            self giveweapon(weapon);
-            if (!isdefined(fallbackprimary) && weapon.type == "bullet") {
-                fallbackprimary = weapon;
-            }
-        }
-        if (isdefined(fallbackprimary) && weaponselect.basename == "none") {
-            weaponselect = fallbackprimary;
-        }
-        self switchtoweaponimmediate(weaponselect);
-        self.val_takeweapons = undefined;
-    }
-}
-
-// Namespace val / scripts\common\values
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b2d
-// Size: 0x71
+// Checksum 0x0, Offset: 0x282a
+// Size: 0x76
 function private set_takeweapons(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
     if (isplayer(self)) {
-        thread set_takeweapons_thread(b_value);
+        assertmsg("set_takeweapons not implemented for players");
         return;
     }
     if (b_value) {
@@ -739,7 +700,7 @@ function private set_takeweapons(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ba6
+// Checksum 0x0, Offset: 0x28a8
 // Size: 0x7a
 function private function_945a9012be94d89b(value) {
     if (!isdefined(value)) {
@@ -760,7 +721,7 @@ function private function_945a9012be94d89b(value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c28
+// Checksum 0x0, Offset: 0x292a
 // Size: 0x29
 function private function_271781b97a830b8f(b_value) {
     if (!isdefined(b_value)) {
@@ -775,7 +736,7 @@ function private function_271781b97a830b8f(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c59
+// Checksum 0x0, Offset: 0x295b
 // Size: 0x2c
 function private function_cbbbe022b06a2d09(b_value) {
     if (!isdefined(b_value)) {
@@ -790,7 +751,7 @@ function private function_cbbbe022b06a2d09(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c8d
+// Checksum 0x0, Offset: 0x298f
 // Size: 0x2c
 function private function_cda8ef3bebb4e3ee(b_value) {
     if (!isdefined(b_value)) {
@@ -805,8 +766,8 @@ function private function_cda8ef3bebb4e3ee(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2cc1
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x29c3
+// Size: 0x89
 function private function_6a7974bc3033866f(b_value) {
     if (!isdefined(b_value)) {
         b_value = 0;
@@ -828,7 +789,7 @@ function private function_6a7974bc3033866f(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2d53
+// Checksum 0x0, Offset: 0x2a54
 // Size: 0x29
 function private function_ac139cd4bd7d232e(b_value) {
     if (!isdefined(b_value)) {
@@ -843,7 +804,7 @@ function private function_ac139cd4bd7d232e(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2d84
+// Checksum 0x0, Offset: 0x2a85
 // Size: 0x29
 function private function_1155b13235411eec(b_value) {
     if (!isdefined(b_value)) {
@@ -858,7 +819,7 @@ function private function_1155b13235411eec(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2db5
+// Checksum 0x0, Offset: 0x2ab6
 // Size: 0x29
 function private function_8fdf6df702996fa7(b_value) {
     if (!isdefined(b_value)) {
@@ -873,7 +834,7 @@ function private function_8fdf6df702996fa7(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2de6
+// Checksum 0x0, Offset: 0x2ae7
 // Size: 0x29
 function private function_47279b5d7e2bcef3(b_value) {
     if (!isdefined(b_value)) {
@@ -888,7 +849,7 @@ function private function_47279b5d7e2bcef3(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e17
+// Checksum 0x0, Offset: 0x2b18
 // Size: 0x29
 function private function_c8f662a90251117(b_value) {
     if (!isdefined(b_value)) {
@@ -903,7 +864,7 @@ function private function_c8f662a90251117(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e48
+// Checksum 0x0, Offset: 0x2b49
 // Size: 0x1c
 function private function_f61d010ff82a69da(b_value) {
     if (!isdefined(b_value)) {
@@ -914,7 +875,7 @@ function private function_f61d010ff82a69da(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e6c
+// Checksum 0x0, Offset: 0x2b6d
 // Size: 0x2a
 function private function_54a3481116d62f02(b_value) {
     if (!isdefined(b_value)) {
@@ -929,15 +890,15 @@ function private function_54a3481116d62f02(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e9e
+// Checksum 0x0, Offset: 0x2b9f
 // Size: 0x19
 function private function_8493479decad7dea(b_value) {
-    assertmsg("<dev string:x12d>");
+    assertmsg("set_allow_offhand_special not implemented");
 }
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ebf
+// Checksum 0x0, Offset: 0x2bc0
 // Size: 0x48
 function private function_4e24d3eb9687a667(b_value) {
     if (!isdefined(b_value)) {
@@ -949,7 +910,7 @@ function private function_4e24d3eb9687a667(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f0f
+// Checksum 0x0, Offset: 0x2c10
 // Size: 0x29
 function private function_586996315a6703b0(b_value) {
     if (!isdefined(b_value)) {
@@ -964,7 +925,7 @@ function private function_586996315a6703b0(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f40
+// Checksum 0x0, Offset: 0x2c41
 // Size: 0x1f
 function private function_2553e8f1e80d32a9(b_value) {
     if (!isdefined(b_value)) {
@@ -975,7 +936,7 @@ function private function_2553e8f1e80d32a9(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f67
+// Checksum 0x0, Offset: 0x2c68
 // Size: 0x1f
 function private function_d3eeff01d5db508a(b_value) {
     if (!isdefined(b_value)) {
@@ -986,7 +947,7 @@ function private function_d3eeff01d5db508a(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f8e
+// Checksum 0x0, Offset: 0x2c8f
 // Size: 0x40
 function private function_ae5bbceb3d29efe6(b_value) {
     if (!isdefined(b_value)) {
@@ -1002,7 +963,7 @@ function private function_ae5bbceb3d29efe6(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2fd6
+// Checksum 0x0, Offset: 0x2cd7
 // Size: 0x3b
 function private set_hide(b_value) {
     if (!isdefined(b_value)) {
@@ -1021,7 +982,7 @@ function private set_hide(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3019
+// Checksum 0x0, Offset: 0x2d1a
 // Size: 0x31
 function private set_health_regen(b_value) {
     if (!isdefined(b_value)) {
@@ -1036,7 +997,7 @@ function private set_health_regen(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3052
+// Checksum 0x0, Offset: 0x2d53
 // Size: 0x30
 function private function_1140c973aa64c8d6(b_value) {
     if (!isdefined(b_value)) {
@@ -1051,7 +1012,7 @@ function private function_1140c973aa64c8d6(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x308a
+// Checksum 0x0, Offset: 0x2d8b
 // Size: 0x31
 function private set_ignore_health_regen_delay(b_value) {
     if (!isdefined(b_value)) {
@@ -1066,7 +1027,7 @@ function private set_ignore_health_regen_delay(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x30c3
+// Checksum 0x0, Offset: 0x2dc4
 // Size: 0x8b
 function private function_a93b95cf50f8c3c9(val) {
     if (isdefined(val)) {
@@ -1086,7 +1047,7 @@ function private function_a93b95cf50f8c3c9(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3156
+// Checksum 0x0, Offset: 0x2e57
 // Size: 0x28
 function private function_397bdae9676d99b2(b_value) {
     if (!isdefined(b_value)) {
@@ -1097,7 +1058,7 @@ function private function_397bdae9676d99b2(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3186
+// Checksum 0x0, Offset: 0x2e87
 // Size: 0x28
 function private function_c7cacbe604c9200d(b_value) {
     if (!isdefined(b_value)) {
@@ -1108,7 +1069,7 @@ function private function_c7cacbe604c9200d(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x31b6
+// Checksum 0x0, Offset: 0x2eb7
 // Size: 0x13
 function private function_ff6d5864f8680d5e(b_allow) {
     self enableplayerbreathsystem(b_allow);
@@ -1116,7 +1077,7 @@ function private function_ff6d5864f8680d5e(b_allow) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x31d1
+// Checksum 0x0, Offset: 0x2ed2
 // Size: 0x13
 function private function_15cc9bfda3c4adee(b_freeze) {
     self freezecontrols(b_freeze);
@@ -1124,7 +1085,7 @@ function private function_15cc9bfda3c4adee(b_freeze) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x31ec
+// Checksum 0x0, Offset: 0x2eed
 // Size: 0x13
 function private function_9a6ef6fcc3e3c652(b_freeze) {
     self freezelookcontrols(b_freeze);
@@ -1132,7 +1093,7 @@ function private function_9a6ef6fcc3e3c652(b_freeze) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3207
+// Checksum 0x0, Offset: 0x2f08
 // Size: 0x4e
 function private function_d4513b1bc21601(b_value) {
     if (!isdefined(b_value)) {
@@ -1150,7 +1111,7 @@ function private function_d4513b1bc21601(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x325d
+// Checksum 0x0, Offset: 0x2f5e
 // Size: 0x26
 function private function_688748c7477e93dc(b_value) {
     if (b_value) {
@@ -1163,7 +1124,7 @@ function private function_688748c7477e93dc(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x328b
+// Checksum 0x0, Offset: 0x2f8c
 // Size: 0x26
 function private function_8b2fc23241e6448b(b_value) {
     if (b_value) {
@@ -1176,7 +1137,7 @@ function private function_8b2fc23241e6448b(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x32b9
+// Checksum 0x0, Offset: 0x2fba
 // Size: 0x26
 function private function_147fe8bda5949cf2(b_value) {
     if (b_value) {
@@ -1189,7 +1150,7 @@ function private function_147fe8bda5949cf2(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x32e7
+// Checksum 0x0, Offset: 0x2fe8
 // Size: 0x28
 function private allow_melee_victim(b_value) {
     if (!isdefined(b_value)) {
@@ -1200,7 +1161,7 @@ function private allow_melee_victim(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3317
+// Checksum 0x0, Offset: 0x3018
 // Size: 0x1d
 function private function_c10182e05a99f789(b_value) {
     if (!isdefined(b_value)) {
@@ -1211,7 +1172,7 @@ function private function_c10182e05a99f789(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x333c
+// Checksum 0x0, Offset: 0x303d
 // Size: 0x1d
 function private function_5d8c973a5b6b05d8(b_value) {
     if (!isdefined(b_value)) {
@@ -1222,7 +1183,7 @@ function private function_5d8c973a5b6b05d8(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3361
+// Checksum 0x0, Offset: 0x3062
 // Size: 0x1d
 function private function_4dd00f1be6c69677(b_value) {
     if (!isdefined(b_value)) {
@@ -1233,20 +1194,19 @@ function private function_4dd00f1be6c69677(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3386
-// Size: 0x27
+// Checksum 0x0, Offset: 0x3087
+// Size: 0x1d
 function private function_d4a512c33a86e3d1(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
-    self.var_6900f3419d3c4dd0 = b_value;
     self allowprone(b_value);
 }
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x33b5
-// Size: 0xfa
+// Checksum 0x0, Offset: 0x30ac
+// Size: 0xf8
 function private function_c8e47b79550e4319(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
@@ -1275,7 +1235,7 @@ function private function_c8e47b79550e4319(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x34b7
+// Checksum 0x0, Offset: 0x31ac
 // Size: 0x1d
 function private function_ebf228fbb0a74d57(b_value) {
     if (!isdefined(b_value)) {
@@ -1286,7 +1246,7 @@ function private function_ebf228fbb0a74d57(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x34dc
+// Checksum 0x0, Offset: 0x31d1
 // Size: 0x1c
 function private function_1e949110ce628e51(b_value) {
     if (!isdefined(b_value)) {
@@ -1297,7 +1257,7 @@ function private function_1e949110ce628e51(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3500
+// Checksum 0x0, Offset: 0x31f5
 // Size: 0x1d
 function private function_b3870b9ec763d70a(b_value) {
     if (!isdefined(b_value)) {
@@ -1308,18 +1268,7 @@ function private function_b3870b9ec763d70a(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3525
-// Size: 0x1d
-function private function_97182ebc175cd93a(b_value) {
-    if (!isdefined(b_value)) {
-        b_value = 1;
-    }
-    self function_217a2afa4a512d2b(b_value);
-}
-
-// Namespace val / scripts\common\values
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x354a
+// Checksum 0x0, Offset: 0x321a
 // Size: 0x1c
 function private function_9b5befbb13ad7651(b_value) {
     if (!isdefined(b_value)) {
@@ -1330,7 +1279,7 @@ function private function_9b5befbb13ad7651(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x356e
+// Checksum 0x0, Offset: 0x323e
 // Size: 0x1c
 function private function_aac726af48296365(b_value) {
     if (!isdefined(b_value)) {
@@ -1341,7 +1290,7 @@ function private function_aac726af48296365(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3592
+// Checksum 0x0, Offset: 0x3262
 // Size: 0x1d
 function private function_f7c69559dbf71a1(b_value) {
     if (!isdefined(b_value)) {
@@ -1352,7 +1301,7 @@ function private function_f7c69559dbf71a1(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x35b7
+// Checksum 0x0, Offset: 0x3287
 // Size: 0x1d
 function private function_2a827539b0ee61b7(b_value) {
     if (!isdefined(b_value)) {
@@ -1363,7 +1312,7 @@ function private function_2a827539b0ee61b7(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x35dc
+// Checksum 0x0, Offset: 0x32ac
 // Size: 0x1d
 function private function_503f80a21c85a0ff(b_value) {
     if (!isdefined(b_value)) {
@@ -1374,7 +1323,7 @@ function private function_503f80a21c85a0ff(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3601
+// Checksum 0x0, Offset: 0x32d1
 // Size: 0x1d
 function private function_1b400b9f81972824(b_value) {
     if (!isdefined(b_value)) {
@@ -1385,7 +1334,7 @@ function private function_1b400b9f81972824(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3626
+// Checksum 0x0, Offset: 0x32f6
 // Size: 0x1d
 function private function_f3b4bc17c87adba5(b_value) {
     if (!isdefined(b_value)) {
@@ -1396,7 +1345,7 @@ function private function_f3b4bc17c87adba5(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x364b
+// Checksum 0x0, Offset: 0x331b
 // Size: 0x1d
 function private function_880120db350a6425(b_value) {
     if (!isdefined(b_value)) {
@@ -1407,7 +1356,7 @@ function private function_880120db350a6425(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3670
+// Checksum 0x0, Offset: 0x3340
 // Size: 0x1d
 function private function_d13b7a396eab0463(b_value) {
     if (!isdefined(b_value)) {
@@ -1418,7 +1367,7 @@ function private function_d13b7a396eab0463(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3695
+// Checksum 0x0, Offset: 0x3365
 // Size: 0x3a
 function private function_46eda303c0fa6322(val) {
     if (!isdefined(val)) {
@@ -1435,14 +1384,14 @@ function private function_46eda303c0fa6322(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x36d7
+// Checksum 0x0, Offset: 0x33a7
 // Size: 0x45
 function private set_desiredspeed(val) {
     if (!isdefined(val)) {
         val = 0;
     }
     if (!isai(self)) {
-        assertmsg("<dev string:x15a>");
+        assertmsg("VAL_DESIRED_SPEED can only be used on AI entities");
         return;
     }
     if (val > 0) {
@@ -1454,7 +1403,7 @@ function private set_desiredspeed(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3724
+// Checksum 0x0, Offset: 0x33f4
 // Size: 0x1d
 function private set_pushplayer(b_value) {
     if (!isdefined(b_value)) {
@@ -1465,7 +1414,7 @@ function private set_pushplayer(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3749
+// Checksum 0x0, Offset: 0x3419
 // Size: 0x31
 function private function_ee3a42d7c6b37fe(b_value) {
     if (!isdefined(b_value)) {
@@ -1483,7 +1432,7 @@ function private function_ee3a42d7c6b37fe(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3782
+// Checksum 0x0, Offset: 0x3452
 // Size: 0x91
 function private function_cfb80f3b8aad230(b_value) {
     if (!isdefined(b_value)) {
@@ -1504,7 +1453,7 @@ function private function_cfb80f3b8aad230(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x381b
+// Checksum 0x0, Offset: 0x34eb
 // Size: 0x1d
 function private function_9c9b518e967a4514(b_value) {
     if (!isdefined(b_value)) {
@@ -1515,7 +1464,7 @@ function private function_9c9b518e967a4514(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3840
+// Checksum 0x0, Offset: 0x3510
 // Size: 0x1c
 function private function_98e071a6cc904543(b_value) {
     if (!isdefined(b_value)) {
@@ -1526,7 +1475,7 @@ function private function_98e071a6cc904543(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3864
+// Checksum 0x0, Offset: 0x3534
 // Size: 0x94
 function private function_156a6ef9e8bb6f63(b_value) {
     if (!isdefined(b_value)) {
@@ -1549,7 +1498,7 @@ function private function_156a6ef9e8bb6f63(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3900
+// Checksum 0x0, Offset: 0x35d0
 // Size: 0x1c
 function private function_60e7c22bac17f22f(b_value) {
     if (!isdefined(b_value)) {
@@ -1560,7 +1509,7 @@ function private function_60e7c22bac17f22f(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3924
+// Checksum 0x0, Offset: 0x35f4
 // Size: 0x35
 function private function_5e4e727a591c079d(b_value) {
     if (!isdefined(b_value)) {
@@ -1575,7 +1524,7 @@ function private function_5e4e727a591c079d(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3961
+// Checksum 0x0, Offset: 0x3631
 // Size: 0x35
 function private function_eb0398e7c2c3c055(b_value) {
     if (!isdefined(b_value)) {
@@ -1590,7 +1539,7 @@ function private function_eb0398e7c2c3c055(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x399e
+// Checksum 0x0, Offset: 0x366e
 // Size: 0x1c
 function private function_e62e9efd7d1bf0da(b_value) {
     if (!isdefined(b_value)) {
@@ -1601,7 +1550,7 @@ function private function_e62e9efd7d1bf0da(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x39c2
+// Checksum 0x0, Offset: 0x3692
 // Size: 0x1c
 function private function_798a407672c35e3c(b_value) {
     if (!isdefined(b_value)) {
@@ -1612,7 +1561,7 @@ function private function_798a407672c35e3c(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x39e6
+// Checksum 0x0, Offset: 0x36b6
 // Size: 0x27
 function private function_2a5481b1da502117(b_value) {
     if (!isdefined(b_value)) {
@@ -1623,8 +1572,8 @@ function private function_2a5481b1da502117(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3a15
-// Size: 0xa2
+// Checksum 0x0, Offset: 0x36e5
+// Size: 0xa1
 function private function_7edde3ba90d9a36(b_value) {
     if (!isdefined(b_value)) {
         b_value = 0;
@@ -1652,7 +1601,7 @@ function private function_7edde3ba90d9a36(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3abf
+// Checksum 0x0, Offset: 0x378e
 // Size: 0x42
 function private function_2a4de4fe3103d24c(b_value) {
     if (!isdefined(b_value)) {
@@ -1671,7 +1620,7 @@ function private function_2a4de4fe3103d24c(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3b09
+// Checksum 0x0, Offset: 0x37d8
 // Size: 0x1c
 function private function_65fb0f9b12a90f29(b_value) {
     if (!isdefined(b_value)) {
@@ -1682,7 +1631,7 @@ function private function_65fb0f9b12a90f29(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3b2d
+// Checksum 0x0, Offset: 0x37fc
 // Size: 0x4f
 function private function_3368e1d4052b1596(b_value) {
     if (!isdefined(b_value)) {
@@ -1701,7 +1650,7 @@ function private function_3368e1d4052b1596(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3b84
+// Checksum 0x0, Offset: 0x3853
 // Size: 0x4e
 function private function_ea01b65c909b99d2(b_value) {
     if (!isdefined(b_value)) {
@@ -1720,7 +1669,7 @@ function private function_ea01b65c909b99d2(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3bda
+// Checksum 0x0, Offset: 0x38a9
 // Size: 0x51
 function private function_293669b3b38c7221(b_value) {
     if (!isdefined(b_value)) {
@@ -1733,18 +1682,18 @@ function private function_293669b3b38c7221(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c33
+// Checksum 0x0, Offset: 0x3902
 // Size: 0x55
 function private getequipmenttableinfo(ref) {
     if (isdefined(ref) && !isdefined(level.equipment.table[ref])) {
-        assertmsg("<dev string:x18f>" + ref + "<dev string:x1e5>");
+        assertmsg("getEquipmentTableInfo was called fo equipment with a ref that wasn't initialized: " + ref + "!");
     }
     return level.equipment.table[ref];
 }
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c91
+// Checksum 0x0, Offset: 0x3960
 // Size: 0x25
 function private getcurrentequipment(slot) {
     if (!isdefined(self.equipment)) {
@@ -1755,7 +1704,7 @@ function private getcurrentequipment(slot) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3cbf
+// Checksum 0x0, Offset: 0x398e
 // Size: 0x44
 function private disableslotinternal(slot) {
     if (slot == "primary") {
@@ -1773,8 +1722,8 @@ function private disableslotinternal(slot) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3d0b
-// Size: 0x2ef
+// Checksum 0x0, Offset: 0x39da
+// Size: 0x2f2
 function private enableslotinternal(slot) {
     ref = getcurrentequipment(slot);
     equipmentlist = self getweaponslistoffhands();
@@ -1803,7 +1752,7 @@ function private enableslotinternal(slot) {
                     weapon = makeweapon(equip.basename, [], undefined, undefined, variantid);
                     var_1092bc40c58c1c9a = equip.basename + "|" + string(variantid);
                     attachments = level.equipmentblueprints[var_1092bc40c58c1c9a];
-                    foreach (attachment, variant in attachments) {
+                    foreach (variant in attachments) {
                         weapon = weapon withattachment(attachment, variant);
                     }
                 } else {
@@ -1839,7 +1788,7 @@ function private enableslotinternal(slot) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4002
+// Checksum 0x0, Offset: 0x3cd4
 // Size: 0x33
 function private function_dd8e7fdce5f0dcff(b_value) {
     if (!isdefined(b_value)) {
@@ -1854,7 +1803,7 @@ function private function_dd8e7fdce5f0dcff(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x403d
+// Checksum 0x0, Offset: 0x3d0f
 // Size: 0x33
 function private function_2b70e9743c9a71b(b_value) {
     if (!isdefined(b_value)) {
@@ -1869,7 +1818,7 @@ function private function_2b70e9743c9a71b(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4078
+// Checksum 0x0, Offset: 0x3d4a
 // Size: 0x25
 function private function_782c9cfc7f78e416(b_value) {
     if (!isdefined(b_value)) {
@@ -1880,7 +1829,7 @@ function private function_782c9cfc7f78e416(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x40a5
+// Checksum 0x0, Offset: 0x3d77
 // Size: 0x1d
 function private function_2937a757c6689fb3(b_value) {
     if (!isdefined(b_value)) {
@@ -1891,7 +1840,7 @@ function private function_2937a757c6689fb3(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x40ca
+// Checksum 0x0, Offset: 0x3d9c
 // Size: 0x30
 function private function_cbdfe6762b367d1b(b_value) {
     if (!isdefined(b_value)) {
@@ -1906,7 +1855,7 @@ function private function_cbdfe6762b367d1b(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4102
+// Checksum 0x0, Offset: 0x3dd4
 // Size: 0x3f
 function private function_4a0c36c985cc4a03(b_value) {
     if (!isdefined(b_value)) {
@@ -1923,7 +1872,7 @@ function private function_4a0c36c985cc4a03(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4149
+// Checksum 0x0, Offset: 0x3e1b
 // Size: 0x42
 function private function_d093a1b1e1c340a3(b_value) {
     if (!isdefined(b_value)) {
@@ -1940,7 +1889,7 @@ function private function_d093a1b1e1c340a3(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4193
+// Checksum 0x0, Offset: 0x3e65
 // Size: 0x33
 function private function_4e80f7e4ffe334e0(b_value) {
     if (!isdefined(b_value)) {
@@ -1955,7 +1904,7 @@ function private function_4e80f7e4ffe334e0(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x41ce
+// Checksum 0x0, Offset: 0x3ea0
 // Size: 0x4e
 function private function_dc9ce02e5a3bd6da(b_value) {
     if (!isdefined(b_value)) {
@@ -1970,7 +1919,7 @@ function private function_dc9ce02e5a3bd6da(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4224
+// Checksum 0x0, Offset: 0x3ef6
 // Size: 0x37
 function private set_demeanor(str_value) {
     if (isai(self)) {
@@ -1984,7 +1933,7 @@ function private set_demeanor(str_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4263
+// Checksum 0x0, Offset: 0x3f35
 // Size: 0x1e
 function private function_e839d0e33e07c756(b_value) {
     if (isai(self)) {
@@ -1994,21 +1943,21 @@ function private function_e839d0e33e07c756(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4289
+// Checksum 0x0, Offset: 0x3f5b
 // Size: 0x3f
 function private function_15b077dbaf3b063f(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
     if (!isplayer(self) && !isagent(self)) {
-        assertmsg("<dev string:x1ea>");
+        assertmsg("VAL_INFINITE_AMMO can only be applied to players and MP agents");
     }
     self function_ae3021dcebd28be1(b_value);
 }
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x42d0
+// Checksum 0x0, Offset: 0x3fa2
 // Size: 0x26
 function private function_f8b197beec8e9945(val) {
     if (isdefined(level.var_60fc087bc7deaadc)) {
@@ -2018,7 +1967,7 @@ function private function_f8b197beec8e9945(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x42fe
+// Checksum 0x0, Offset: 0x3fd0
 // Size: 0x1f
 function private function_7f308a0cfa036a48(b_value) {
     if (isai(self)) {
@@ -2028,7 +1977,7 @@ function private function_7f308a0cfa036a48(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4325
+// Checksum 0x0, Offset: 0x3ff7
 // Size: 0x3b
 function private function_fc93ada8ce1701fe(b_value) {
     if (isplayer(self) || isai(self)) {
@@ -2042,7 +1991,7 @@ function private function_fc93ada8ce1701fe(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4368
+// Checksum 0x0, Offset: 0x403a
 // Size: 0x16
 function private function_3718505d535c6113(b_value) {
     self.var_f62adc4cc32e37c7 = istrue(b_value);
@@ -2050,7 +1999,7 @@ function private function_3718505d535c6113(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4386
+// Checksum 0x0, Offset: 0x4058
 // Size: 0xde
 function function_bee64cea73f1992b(str_id, value) {
     if (value) {
@@ -2074,7 +2023,7 @@ function function_bee64cea73f1992b(str_id, value) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x446c
+// Checksum 0x0, Offset: 0x413e
 // Size: 0xa6
 function function_91558560b423d58e(str_id, value) {
     if (value) {
@@ -2094,7 +2043,7 @@ function function_91558560b423d58e(str_id, value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x451a
+// Checksum 0x0, Offset: 0x41ec
 // Size: 0x1d
 function private function_888bc6393955267d(b_value) {
     if (!isdefined(b_value)) {
@@ -2105,7 +2054,7 @@ function private function_888bc6393955267d(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x453f
+// Checksum 0x0, Offset: 0x4211
 // Size: 0x18
 function private function_1bc52d1afc4d1b95(s_notify, b_value) {
     self notify(s_notify, b_value);
@@ -2113,7 +2062,7 @@ function private function_1bc52d1afc4d1b95(s_notify, b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x455f
+// Checksum 0x0, Offset: 0x4231
 // Size: 0x1e
 function private function_4c8f023af26b4a8a(b_value) {
     if (isai(self)) {
@@ -2123,7 +2072,7 @@ function private function_4c8f023af26b4a8a(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4585
+// Checksum 0x0, Offset: 0x4257
 // Size: 0x1e
 function private function_db2848cc88d5a336(b_value) {
     if (isai(self)) {
@@ -2133,7 +2082,7 @@ function private function_db2848cc88d5a336(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x45ab
+// Checksum 0x0, Offset: 0x427d
 // Size: 0x28
 function private function_b0146ba0c8f08192(b_value) {
     if (isai(self)) {
@@ -2144,7 +2093,7 @@ function private function_b0146ba0c8f08192(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x45db
+// Checksum 0x0, Offset: 0x42ad
 // Size: 0x1e
 function private function_d549cfeb2ed5d5e2(b_value) {
     if (isai(self)) {
@@ -2154,7 +2103,7 @@ function private function_d549cfeb2ed5d5e2(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4601
+// Checksum 0x0, Offset: 0x42d3
 // Size: 0x1d
 function private function_10613d0755b1655(b_value) {
     if (!isdefined(b_value)) {
@@ -2165,7 +2114,7 @@ function private function_10613d0755b1655(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4626
+// Checksum 0x0, Offset: 0x42f8
 // Size: 0x15
 function private function_ff795a8bf33046c1(b_value) {
     self.attackeraccuracy = b_value;
@@ -2173,7 +2122,7 @@ function private function_ff795a8bf33046c1(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4643
+// Checksum 0x0, Offset: 0x4315
 // Size: 0x44
 function private function_b010672d21d0fdb1(b_value) {
     if (!utility::ent_flag_exist("allow_dismember")) {
@@ -2188,7 +2137,7 @@ function private function_b010672d21d0fdb1(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x468f
+// Checksum 0x0, Offset: 0x4361
 // Size: 0x14
 function private function_83f16f4f6bc886b2(b_value) {
     self function_3671ec427c125cb(istrue(b_value));
@@ -2196,7 +2145,7 @@ function private function_83f16f4f6bc886b2(b_value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x46ab
+// Checksum 0x0, Offset: 0x437d
 // Size: 0x54
 function private function_a93741c78d1d215b(var_cf8b5ceaf91df155) {
     if (!isdefined(var_cf8b5ceaf91df155) || var_cf8b5ceaf91df155 == "") {
@@ -2211,18 +2160,8 @@ function private function_a93741c78d1d215b(var_cf8b5ceaf91df155) {
 }
 
 // Namespace val / scripts\common\values
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4707
-// Size: 0x1e
-function private function_69bc203e1b8c4e63(var_ce1774b1e0c60661) {
-    if (scripts\common\vehicle::isvehicle()) {
-        self.disablelockon = var_ce1774b1e0c60661;
-    }
-}
-
-// Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x472d
+// Checksum 0x0, Offset: 0x43d9
 // Size: 0x1e
 function function_13da7718a3ccfc98(value) {
     if (!isdefined(value)) {
@@ -2233,7 +2172,7 @@ function function_13da7718a3ccfc98(value) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4753
+// Checksum 0x0, Offset: 0x43ff
 // Size: 0x2a
 function function_fd241a7be9d82fa5(eventlist) {
     if (is_equal(eventlist, "")) {
@@ -2245,7 +2184,7 @@ function function_fd241a7be9d82fa5(eventlist) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4785
+// Checksum 0x0, Offset: 0x4431
 // Size: 0x12
 function function_f185596cc8242d28(val) {
     function_a1c249d52179826c(val);
@@ -2253,7 +2192,7 @@ function function_f185596cc8242d28(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x479f
+// Checksum 0x0, Offset: 0x444b
 // Size: 0x12
 function function_4ef8b4df5173b05a(val) {
     function_e280f14a391474ef(val);
@@ -2261,7 +2200,7 @@ function function_4ef8b4df5173b05a(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47b9
+// Checksum 0x0, Offset: 0x4465
 // Size: 0x12
 function function_f1e27a27436441b4(val) {
     function_129c37cc2498c0d5(val);
@@ -2269,7 +2208,7 @@ function function_f1e27a27436441b4(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47d3
+// Checksum 0x0, Offset: 0x447f
 // Size: 0x12
 function function_48cd47326fc3f73b(val) {
     function_412d0fae58ba3904(val);
@@ -2277,7 +2216,7 @@ function function_48cd47326fc3f73b(val) {
 
 // Namespace val / scripts\common\values
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47ed
+// Checksum 0x0, Offset: 0x4499
 // Size: 0x12
 function function_dbb2149dbfbea743(val) {
     function_dde84eabe77d9e18(val);
@@ -2287,11 +2226,11 @@ function function_dbb2149dbfbea743(val) {
 
     // Namespace val / scripts\common\values
     // Params 3, eflags: 0x4
-    // Checksum 0x0, Offset: 0x4807
-    // Size: 0x83
+    // Checksum 0x0, Offset: 0x44b3
+    // Size: 0x82
     function private validate(str_name, call_on, func) {
         if (!isdefined(level.values[str_name])) {
-            assertmsg("<dev string:x48>" + str_name + "<dev string:xa1>");
+            assertmsg("<dev string:x6b>" + str_name + "<dev string:x73>");
             return;
         }
         s_value = level.values[str_name];
@@ -2302,8 +2241,8 @@ function function_dbb2149dbfbea743(val) {
 
     // Namespace val / scripts\common\values
     // Params 3, eflags: 0x4
-    // Checksum 0x0, Offset: 0x4892
-    // Size: 0x12d
+    // Checksum 0x0, Offset: 0x453d
+    // Size: 0x12f
     function private validate_value(str_name, value, b_assert) {
         if (!isdefined(b_assert)) {
             b_assert = 0;
@@ -2311,7 +2250,7 @@ function function_dbb2149dbfbea743(val) {
         s_value = level.values[str_name];
         current_value = undefined;
         if (isdefined(s_value.func_validate)) {
-            call_on = utility::ter_op(isstring(s_value.validate_call_on) && s_value.validate_call_on == "<dev string:x26>", self, s_value.validate_call_on);
+            call_on = utility::ter_op(isstring(s_value.validate_call_on) && s_value.validate_call_on == "<dev string:x23>", self, s_value.validate_call_on);
             if (isdefined(s_value.validate_args)) {
                 current_value = utility::single_func_argarray(call_on, s_value.func_validate, replace_values(s_value.validate_args));
             } else {
@@ -2322,15 +2261,15 @@ function function_dbb2149dbfbea743(val) {
         }
         b_match = isdefined(current_value) && current_value == value;
         if (b_assert) {
-            assert(b_match, "<dev string:x22c>" + str_name + "<dev string:x242>" + current_value + "<dev string:x24c>" + value + "<dev string:x261>");
+            assert(b_match, "<dev string:xf9>" + str_name + "<dev string:x10c>" + current_value + "<dev string:x113>" + value + "<dev string:x125>");
         }
         return b_match;
     }
 
     // Namespace val / scripts\common\values
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x49c7
-    // Size: 0x2d2
+    // Checksum 0x0, Offset: 0x4674
+    // Size: 0x2db
     function private debug_values() {
         setdvarifuninitialized(@"hash_2bc65f5389e9ee5", 0);
         waitframe();
@@ -2345,8 +2284,8 @@ function function_dbb2149dbfbea743(val) {
                 waitframe();
                 continue;
             }
-            str_debug_values_entity = string::to_string(getdvar(@"hash_9a21303d5beb8eed", "<dev string:x267>"));
-            if (str_debug_values_entity == "<dev string:x267>" || str_debug_values_entity == "<dev string:x26b>" || str_debug_values_entity == "<dev string:x271>") {
+            str_debug_values_entity = string::to_string(getdvar(@"hash_9a21303d5beb8eed", "<dev string:x128>"));
+            if (str_debug_values_entity == "<dev string:x128>" || str_debug_values_entity == "<dev string:x129>" || str_debug_values_entity == "<dev string:x12c>") {
                 hud_ent = level.host;
                 if (!isdefined(hud_ent)) {
                     hud_ent = level.player;
@@ -2354,17 +2293,17 @@ function function_dbb2149dbfbea743(val) {
                 if (!isdefined(hud_ent)) {
                     hud_ent = level.players[0];
                 }
-                str_label = "<dev string:x279>";
+                str_label = "<dev string:x131>";
             } else {
                 str_value = str_debug_values_entity;
-                str_key = "<dev string:x288>";
-                if (issubstr(str_value, "<dev string:x296>")) {
-                    a_toks = strtok(str_value, "<dev string:x296>");
+                str_key = "<dev string:x13d>";
+                if (issubstr(str_value, "<dev string:x148>")) {
+                    a_toks = strtok(str_value, "<dev string:x148>");
                     str_value = a_toks[0];
                     str_key = a_toks[1];
                 }
                 hud_ent = getent(str_value, str_key, 1);
-                str_label = str_value + "<dev string:x296>" + str_key;
+                str_label = str_value + "<dev string:x148>" + str_key;
             }
             printtoscreen2d(200, 100, str_label, (1, 1, 1), 2);
             a_all_ents = getentarray();
@@ -2391,19 +2330,19 @@ function function_dbb2149dbfbea743(val) {
 
     // Namespace val / scripts\common\values
     // Params 6, eflags: 0x4
-    // Checksum 0x0, Offset: 0x4ca1
+    // Checksum 0x0, Offset: 0x4957
     // Size: 0x101
     function private display_value(index, str_name, str_id, value, b_valid, on_hud) {
         if (!isdefined(on_hud)) {
             on_hud = 0;
         }
-        str_value = "<dev string:x267>";
-        if (string::to_string(str_name) != "<dev string:x267>") {
+        str_value = "<dev string:x128>";
+        if (string::to_string(str_name) != "<dev string:x128>") {
             str_value = string::rjust(str_name, 20);
             if (isdefined(value)) {
-                str_value += "<dev string:x29b>" + value;
+                str_value += "<dev string:x14a>" + value;
             }
-            str_value += "<dev string:x2a2>" + string::ljust("<dev string:x267>" + str_id + "<dev string:x2a8>", 30);
+            str_value += "<dev string:x14e>" + string::ljust("<dev string:x128>" + str_id + "<dev string:x151>", 30);
         }
         color = utility::ter_op(b_valid, (1, 1, 1), (1, 0, 0));
         if (on_hud) {

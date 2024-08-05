@@ -1,13 +1,12 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 
 #namespace namespace_8894a0caa4c34dc6;
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c7
+// Checksum 0x0, Offset: 0x254
 // Size: 0x4b
 function function_9469d528dd1ee44d(streakname, scorepopup, vodestroyed, destroyedsplash) {
     self.streakname = streakname;
@@ -18,8 +17,8 @@ function function_9469d528dd1ee44d(streakname, scorepopup, vodestroyed, destroye
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a
-// Size: 0x17d
+// Checksum 0x0, Offset: 0x2a7
+// Size: 0x11b
 function function_66a7440055d386c3(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -29,9 +28,6 @@ function function_66a7440055d386c3(data) {
     var_3737240cefe2c793 = 0;
     if (issharedfuncdefined("damage", "onKillstreakKilled") && isdefined(self.streakname)) {
         var_3737240cefe2c793 = self [[ getsharedfunc("damage", "onKillstreakKilled") ]](self.streakname, attacker, objweapon, meansofdeath, damage, self.scorepopup, self.vodestroyed, self.destroyedsplash);
-    } else if (issharedfuncdefined("equipment", "giveScoreForEquipment") && isdefined(self.equipmentref) && isdefined(self.owner) && isdefined(attacker) && self.owner isenemy(attacker)) {
-        attacker function_f3bb4f4911a1beb2("equipment", "giveScoreForEquipment", self, objweapon);
-        var_3737240cefe2c793 = 1;
     }
     if (var_3737240cefe2c793) {
         attacker notify("destroyed_equipment");
@@ -43,8 +39,8 @@ function function_66a7440055d386c3(data) {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49f
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x3ca
+// Size: 0xd2
 function function_7bdb3610d602438d(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -62,14 +58,14 @@ function function_7bdb3610d602438d(data) {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x577
-// Size: 0x211
+// Checksum 0x0, Offset: 0x4a5
+// Size: 0x1de
 function function_90663ca0d2564cb(data, var_b2c38c8cc8672f83, var_8097775071dc6820, meleehitcount) {
     attacker = data.attacker;
     objweapon = data.objweapon;
     type = data.meansofdeath;
     damage = data.damage;
-    if (type == "MOD_IMPACT" && !(objweapon.classname == "throwingknife" && istrue(self.bundle.var_9fad1cca12275e17))) {
+    if (type == "MOD_IMPACT") {
         return 0;
     }
     if (!istrue(self.bundle.var_b66f1c97537f8793)) {
@@ -89,7 +85,7 @@ function function_90663ca0d2564cb(data, var_b2c38c8cc8672f83, var_8097775071dc68
         hits = function_f9dbf2d9862d62ab(data, isenemydamage);
     } else if (isbulletdamage(type) && istrue(self.bundle.var_15f28f93cf57d00f)) {
         hits = function_d2c1bb18b26d0a9c(data, isenemydamage);
-    } else if (type == "MOD_MELEE" || type == "MOD_IMPACT") {
+    } else if (type == "MOD_MELEE") {
         if (isdefined(meleehitcount) && meleehitcount < 0) {
             return damage;
         } else if (meleehitcount > 0) {
@@ -109,16 +105,16 @@ function function_90663ca0d2564cb(data, var_b2c38c8cc8672f83, var_8097775071dc68
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x791
+// Checksum 0x0, Offset: 0x68c
 // Size: 0x63
 function function_79a97ee01dc267d3(data) {
-    assertex(isdefined(self.bundle), "<dev string:x1c>");
+    assertex(isdefined(self.bundle), "The super entity must have the .bundle variable defined.");
     return function_90663ca0d2564cb(data, self.bundle.var_a59b12cf4b995b32, self.bundle.var_67246a26271ee81, self.bundle.meleehitcount);
 }
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x7fd
+// Checksum 0x0, Offset: 0x6f8
 // Size: 0xc3
 function private function_d2c1bb18b26d0a9c(data, isenemydamage) {
     isfmjdamage = 0;
@@ -140,7 +136,7 @@ function private function_d2c1bb18b26d0a9c(data, isenemydamage) {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x8c8
+// Checksum 0x0, Offset: 0x7c3
 // Size: 0x58
 function private function_f9dbf2d9862d62ab(data, isenemydamage) {
     if (data.damage > 200) {
@@ -157,8 +153,8 @@ function private function_f9dbf2d9862d62ab(data, isenemydamage) {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x928
-// Size: 0x1be
+// Checksum 0x0, Offset: 0x823
+// Size: 0x1c8
 function function_62c1c6833c19817c(maxrolldegrees, maxyawdiff) {
     self notify("stop_adjust_tilt_thread");
     self endon("death");
@@ -196,8 +192,8 @@ function function_62c1c6833c19817c(maxrolldegrees, maxyawdiff) {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xaee
-// Size: 0x2cb
+// Checksum 0x0, Offset: 0x9f3
+// Size: 0x2dd
 function function_74f5ba869b257143(var_38a541b4d6af30a9, var_9d60d851a7af2d4e, var_2a86c82583ac927b) {
     self notify("stop_functionals_step_thread");
     self endon("death");
@@ -250,8 +246,8 @@ function function_74f5ba869b257143(var_38a541b4d6af30a9, var_9d60d851a7af2d4e, v
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc1
-// Size: 0x65
+// Checksum 0x0, Offset: 0xcd8
+// Size: 0x64
 function function_63d1a11f8b22244(streakinfo, var_c09f3239d7caa490, destroyfunc) {
     params = spawnstruct();
     params.streakinfo = streakinfo;
@@ -262,8 +258,8 @@ function function_63d1a11f8b22244(streakinfo, var_c09f3239d7caa490, destroyfunc)
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2e
-// Size: 0xb5
+// Checksum 0x0, Offset: 0xd44
+// Size: 0xb6
 function onfunctionaldeath(callbackparams, initparams) {
     streakinfo = initparams.streakinfo;
     var_c09f3239d7caa490 = initparams.var_c09f3239d7caa490;
@@ -289,7 +285,7 @@ function onfunctionaldeath(callbackparams, initparams) {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeeb
+// Checksum 0x0, Offset: 0xe02
 // Size: 0x48
 function function_2eff4cd94c3243e8() {
     if (isdefined(self.minimapid)) {
@@ -302,8 +298,8 @@ function function_2eff4cd94c3243e8() {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3b
-// Size: 0x150
+// Checksum 0x0, Offset: 0xe52
+// Size: 0x153
 function function_47b5394a301d8c5(maxlifetime, var_bb3f35f040f4f38b, var_70a1d6b89907db6b, var_b0dfff7cb4b7be34) {
     level endon("game_ended");
     self endon("death");
@@ -321,8 +317,8 @@ function function_47b5394a301d8c5(maxlifetime, var_bb3f35f040f4f38b, var_70a1d6b
         /#
             debugactive = getdvarint(var_bb3f35f040f4f38b);
             if (debugactive > 0) {
-                var_f09362cfe2d75614 = ter_op(isdefined(self.weapon_name), self.weapon_name, "<dev string:x58>");
-                print3d(self.origin, var_f09362cfe2d75614 + "<dev string:x5c>" + self.lifetime + "<dev string:x6b>", (0, 0, 1), 1, 0.5, 1);
+                var_f09362cfe2d75614 = ter_op(isdefined(self.weapon_name), self.weapon_name, "<dev string:x1c>");
+                print3d(self.origin, var_f09362cfe2d75614 + "<dev string:x1d>" + self.lifetime + "<dev string:x29>", (0, 0, 1), 1, 0.5, 1);
             }
         #/
         waitframe();
@@ -335,8 +331,8 @@ function function_47b5394a301d8c5(maxlifetime, var_bb3f35f040f4f38b, var_70a1d6b
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1093
-// Size: 0x8f
+// Checksum 0x0, Offset: 0xfad
+// Size: 0x90
 function function_708fc89de0e3cd1(direction, velocity) {
     self endon("death");
     self endon("timeout");
@@ -355,7 +351,7 @@ function function_708fc89de0e3cd1(direction, velocity) {
 
 // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x112a
+// Checksum 0x0, Offset: 0x1045
 // Size: 0x14b
 function function_888f3a0124b03ddc(newowner, challengeeventid, var_4430b08d5a2d47bf, onhackedcallback) {
     self.ishacked = 1;
@@ -392,13 +388,13 @@ function function_888f3a0124b03ddc(newowner, challengeeventid, var_4430b08d5a2d4
 
     // Namespace namespace_8894a0caa4c34dc6 / namespace_37987c2865e1a627
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x127d
-    // Size: 0x148
+    // Checksum 0x0, Offset: 0x1198
+    // Size: 0x14a
     function function_36c55ae71072bd03(aabbmin, aabbmax, duration) {
-        self notify("<dev string:x71>");
-        level endon("<dev string:x8a>");
-        self endon("<dev string:x98>");
-        self endon("<dev string:x71>");
+        self notify("<dev string:x2c>");
+        level endon("<dev string:x42>");
+        self endon("<dev string:x4d>");
+        self endon("<dev string:x2c>");
         drawcolor = (0, 255, 0);
         var_eb404bf9ac5040f0 = (aabbmax[0] - aabbmin[0], 0, 0);
         var_a6c378e90c169b15 = (0, aabbmax[1] - aabbmin[1], 0);

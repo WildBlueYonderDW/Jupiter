@@ -5,7 +5,7 @@
 
 // Namespace rat / scripts\common\rat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x250
+// Checksum 0x0, Offset: 0x1e5
 // Size: 0x169
 function init() {
     if (isdefined(level.var_6392befa93ae3cc6)) {
@@ -32,8 +32,8 @@ function init() {
 
 // Namespace rat / scripts\common\rat
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1
-// Size: 0x47
+// Checksum 0x0, Offset: 0x356
+// Size: 0x46
 function function_7a2df9055cb22721(function_name, function_ref, return_type) {
     key = tolower(function_name);
     level.var_6392befa93ae3cc6[key] = function_ref;
@@ -42,8 +42,8 @@ function function_7a2df9055cb22721(function_name, function_ref, return_type) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x410
-// Size: 0x44
+// Checksum 0x0, Offset: 0x3a4
+// Size: 0x43
 function function_70cf605d288ebae(function_name) {
     init();
     key = tolower(function_name);
@@ -55,7 +55,7 @@ function function_70cf605d288ebae(function_name) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x45d
+// Checksum 0x0, Offset: 0x3f0
 // Size: 0x6a
 function function_b596c6ff2e019c61(params) {
     assert(isdefined(params._cmd));
@@ -67,8 +67,8 @@ function function_b596c6ff2e019c61(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d0
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x463
+// Size: 0xe1
 function getplayer(params) {
     if (isdefined(params.xuid)) {
         xuid = int(params.xuid);
@@ -91,8 +91,8 @@ function getplayer(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b8
-// Size: 0x37
+// Checksum 0x0, Offset: 0x54d
+// Size: 0x36
 function RatGetPlayerPosition(params) {
     player = getplayer(params);
     return player.origin + (0, 0, 60);
@@ -100,7 +100,7 @@ function RatGetPlayerPosition(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f8
+// Checksum 0x0, Offset: 0x58c
 // Size: 0x4a
 function RatGetPlayerAngles(params) {
     player = getplayer(params);
@@ -110,8 +110,8 @@ function RatGetPlayerAngles(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64b
-// Size: 0x24
+// Checksum 0x0, Offset: 0x5df
+// Size: 0x23
 function RatGetPlayerIsSwitchingWeapon(params) {
     player = getplayer(params);
     return player isswitchingweapon();
@@ -119,8 +119,8 @@ function RatGetPlayerIsSwitchingWeapon(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x678
-// Size: 0x24
+// Checksum 0x0, Offset: 0x60b
+// Size: 0x23
 function RatGetPlayerIsReloading(params) {
     player = getplayer(params);
     return player isreloading();
@@ -128,8 +128,8 @@ function RatGetPlayerIsReloading(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a5
-// Size: 0x24
+// Checksum 0x0, Offset: 0x637
+// Size: 0x23
 function RatGetPlayerIsMeleeing(params) {
     player = getplayer(params);
     return player ismeleeing();
@@ -137,8 +137,8 @@ function RatGetPlayerIsMeleeing(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d2
-// Size: 0x24
+// Checksum 0x0, Offset: 0x663
+// Size: 0x23
 function RatGetPlayerADS(params) {
     player = getplayer(params);
     return player playerads();
@@ -146,8 +146,8 @@ function RatGetPlayerADS(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ff
-// Size: 0x24
+// Checksum 0x0, Offset: 0x68f
+// Size: 0x23
 function RatGetPlayerStance(params) {
     player = getplayer(params);
     return player getstance();
@@ -155,8 +155,8 @@ function RatGetPlayerStance(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x72c
-// Size: 0x29
+// Checksum 0x0, Offset: 0x6bb
+// Size: 0x28
 function RatGetPlayerHealth(params) {
     player = getplayer(params);
     return player.health;
@@ -164,7 +164,7 @@ function RatGetPlayerHealth(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x75e
+// Checksum 0x0, Offset: 0x6ec
 // Size: 0x4b
 function RatSetPlayerHealth(params) {
     amount = intvalue(params.amount, 1);
@@ -174,8 +174,8 @@ function RatSetPlayerHealth(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b1
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x73f
+// Size: 0xcf
 function RatDoDamage(params) {
     amount = floatvalue(params.amount, 1);
     force_damage = boolvalue(params.force_damage, 0);
@@ -193,8 +193,8 @@ function RatDoDamage(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x886
-// Size: 0x24
+// Checksum 0x0, Offset: 0x817
+// Size: 0x23
 function RatGetClipAmmoCount(params) {
     player = getplayer(params);
     return player getcurrentweaponclipammo();
@@ -202,7 +202,7 @@ function RatGetClipAmmoCount(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b3
+// Checksum 0x0, Offset: 0x843
 // Size: 0x35
 function RatGetTotalAmmoCount(params) {
     player = getplayer(params);
@@ -212,8 +212,8 @@ function RatGetTotalAmmoCount(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f1
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x881
+// Size: 0x40
 function RatGetCompleteWeaponName(params) {
     player = getplayer(params);
     currentweapon = player getcurrentweapon();
@@ -223,8 +223,8 @@ function RatGetCompleteWeaponName(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x939
-// Size: 0x29
+// Checksum 0x0, Offset: 0x8ca
+// Size: 0x28
 function RatGetPlayerKills(params) {
     player = getplayer(params);
     return player.kills;
@@ -232,8 +232,8 @@ function RatGetPlayerKills(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x96b
-// Size: 0x29
+// Checksum 0x0, Offset: 0x8fb
+// Size: 0x28
 function RatGetPlayerDeaths(params) {
     player = getplayer(params);
     return player.deaths;
@@ -241,7 +241,7 @@ function RatGetPlayerDeaths(params) {
 
 // Namespace rat / scripts\common\rat
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x99d
+// Checksum 0x0, Offset: 0x92c
 // Size: 0x20
 function intvalue(param, default_val) {
     if (!isdefined(param)) {
@@ -252,7 +252,7 @@ function intvalue(param, default_val) {
 
 // Namespace rat / scripts\common\rat
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c6
+// Checksum 0x0, Offset: 0x955
 // Size: 0x20
 function floatvalue(param, default_val) {
     if (!isdefined(param)) {
@@ -263,8 +263,8 @@ function floatvalue(param, default_val) {
 
 // Namespace rat / scripts\common\rat
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ef
-// Size: 0x45
+// Checksum 0x0, Offset: 0x97e
+// Size: 0x44
 function boolvalue(param, default_val) {
     if (!isdefined(param)) {
         return default_val;

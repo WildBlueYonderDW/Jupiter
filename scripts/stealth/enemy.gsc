@@ -18,7 +18,7 @@
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5da
+// Checksum 0x0, Offset: 0x597
 // Size: 0x261
 function main() {
     init_settings();
@@ -67,7 +67,7 @@ function main() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x843
+// Checksum 0x0, Offset: 0x800
 // Size: 0x26
 function init_flags() {
     ent_flag_init("stealth_enabled");
@@ -77,7 +77,7 @@ function init_flags() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x871
+// Checksum 0x0, Offset: 0x82e
 // Size: 0x6c
 function stealth_init_goal_radius() {
     if (isdefined(self.goalradius)) {
@@ -98,8 +98,8 @@ function stealth_init_goal_radius() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e5
-// Size: 0x14b
+// Checksum 0x0, Offset: 0x8a2
+// Size: 0x14a
 function init_settings() {
     self.stealth = spawnstruct();
     self.stealth_enabled = 1;
@@ -126,7 +126,7 @@ function init_settings() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa38
+// Checksum 0x0, Offset: 0x9f4
 // Size: 0x31
 function death_cleanup() {
     if (isdefined(self)) {
@@ -139,7 +139,7 @@ function death_cleanup() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa71
+// Checksum 0x0, Offset: 0xa2d
 // Size: 0x11
 function death_vo_cleanup() {
     self stopsounds();
@@ -149,10 +149,10 @@ function death_vo_cleanup() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8a
+// Checksum 0x0, Offset: 0xa46
 // Size: 0x90
 function add_active_sense_function(function) {
-    assertex(isdefined(self.stealth), "<dev string:x20>" + self getentitynumber() + "<dev string:x43>" + self.origin);
+    assertex(isdefined(self.stealth), "Stealth is not initiated on ai " + self getentitynumber() + " at pos " + self.origin);
     if (!isdefined(self.stealth.active_sense_funcs)) {
         self.stealth.active_sense_funcs = [];
     }
@@ -161,8 +161,8 @@ function add_active_sense_function(function) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb22
-// Size: 0xe2
+// Checksum 0x0, Offset: 0xade
+// Size: 0xe3
 function set_blind(blind, force) {
     if (!isdefined(self.stealth)) {
         return;
@@ -188,7 +188,7 @@ function set_blind(blind, force) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0c
+// Checksum 0x0, Offset: 0xbc9
 // Size: 0x41
 function alertlevel_normal(param) {
     thread scripts\stealth\utility::addeventplaybcs("stealth", "announce5", "alertreset");
@@ -199,7 +199,7 @@ function alertlevel_normal(param) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc55
+// Checksum 0x0, Offset: 0xc12
 // Size: 0xc8
 function set_default_stealth_funcs() {
     level scripts\stealth\utility::set_stealth_func("go_to_node_wait", &go_to_node_wait);
@@ -217,8 +217,8 @@ function set_default_stealth_funcs() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd25
-// Size: 0x268
+// Checksum 0x0, Offset: 0xce2
+// Size: 0x25f
 function monitor_damage_thread(rangeauto, rangesight) {
     team = self.team;
     while (isalive(self)) {
@@ -252,7 +252,7 @@ function monitor_damage_thread(rangeauto, rangesight) {
                 }
             }
         }
-        if (!isdefined(self) || !isdefined(self.stealth)) {
+        if (!isdefined(self)) {
             return;
         }
         if (isdefined(self.stealth.override_damage_auto_range)) {
@@ -275,8 +275,8 @@ function monitor_damage_thread(rangeauto, rangesight) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf95
-// Size: 0xcb
+// Checksum 0x0, Offset: 0xf49
+// Size: 0xca
 function check_kill_damage(damage, attacker, origin) {
     if (isdefined(self.disableeasystealthheadshot)) {
         return;
@@ -292,7 +292,7 @@ function check_kill_damage(damage, attacker, origin) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1068
+// Checksum 0x0, Offset: 0x101b
 // Size: 0x17a
 function shotisreasonablysafe(target) {
     guys = getaiunittypearray("bad_guys", "all");
@@ -327,7 +327,7 @@ function shotisreasonablysafe(target) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11eb
+// Checksum 0x0, Offset: 0x119e
 // Size: 0x17c
 function shotisbadidea(target) {
     guys = getaiunittypearray("bad_guys", "all");
@@ -364,7 +364,7 @@ function shotisbadidea(target) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1370
+// Checksum 0x0, Offset: 0x1323
 // Size: 0xce
 function headtrack_player_toggle(bool) {
     if (bool) {
@@ -387,7 +387,7 @@ function headtrack_player_toggle(bool) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1446
+// Checksum 0x0, Offset: 0x13f9
 // Size: 0x31
 function lock_player_headtracking_off(duration) {
     self endon("death");
@@ -400,7 +400,7 @@ function lock_player_headtracking_off(duration) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x147f
+// Checksum 0x0, Offset: 0x1432
 // Size: 0x1f
 function disable_player_headtracking() {
     self.stealth.allowplayerheadtracking = 0;
@@ -409,7 +409,7 @@ function disable_player_headtracking() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a6
+// Checksum 0x0, Offset: 0x1459
 // Size: 0x18
 function enable_player_headtracking() {
     self.stealth.allowplayerheadtracking = 1;
@@ -417,7 +417,7 @@ function enable_player_headtracking() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c6
+// Checksum 0x0, Offset: 0x1479
 // Size: 0x1fe
 function event_handler_should_ignore(event) {
     event_severity_min = self.stealth.event_severity_min;
@@ -460,8 +460,8 @@ function event_handler_should_ignore(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16cd
-// Size: 0xfd
+// Checksum 0x0, Offset: 0x1680
+// Size: 0xff
 function function_d83f0e5272e07d8c(event) {
     if (istrue(stealth_call("event_should_ignore", event))) {
         return 1;
@@ -474,7 +474,7 @@ function function_d83f0e5272e07d8c(event) {
         if (isdefined(event.typeorig)) {
             function_6eb2235636d28921(event.typeorig, event.entity, self, event.type, event.origin, event.investigate_pos);
         } else {
-            assertmsg("<dev string:x4f>" + originaleventtype + "<dev string:xc4>" + originaleventname);
+            assertmsg("We tried modifying the event but somehow emptied the event string. Please fix your stealth function. Event Type: " + originaleventtype + " Event Name: " + originaleventname);
         }
         return bignore;
     }
@@ -483,7 +483,7 @@ function function_d83f0e5272e07d8c(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17d3
+// Checksum 0x0, Offset: 0x1788
 // Size: 0x3e
 function function_44f457c9d6a9d038(event) {
     if (!isplayer(event.entity)) {
@@ -497,8 +497,8 @@ function function_44f457c9d6a9d038(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x181a
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x17cf
+// Size: 0x121
 function should_ignore_sprint_footstep(event) {
     if (isplayer(event.entity)) {
         dist_sq = distancesquared(self.origin, event.origin);
@@ -525,7 +525,7 @@ function should_ignore_sprint_footstep(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1940
+// Checksum 0x0, Offset: 0x18f9
 // Size: 0x7d
 function event_override_disguise(event) {
     if (issentient(event.entity)) {
@@ -543,7 +543,7 @@ function event_override_disguise(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c6
+// Checksum 0x0, Offset: 0x197f
 // Size: 0xcb
 function event_override_controlling_robot(event) {
     if (issentient(event.entity)) {
@@ -570,8 +570,8 @@ function event_override_controlling_robot(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a9a
-// Size: 0x98
+// Checksum 0x0, Offset: 0x1a53
+// Size: 0x97
 function event_anyone_within_radius(eventorigin, dist) {
     distsq = dist * dist;
     ais = getaiunittypearray("bad_guys", "all");
@@ -585,8 +585,8 @@ function event_anyone_within_radius(eventorigin, dist) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b3b
-// Size: 0x2f6
+// Checksum 0x0, Offset: 0x1af3
+// Size: 0x2f7
 function event_handler_translate_severity(event) {
     if (!isdefined(event) || !isdefined(event.typeorig)) {
         return;
@@ -647,7 +647,7 @@ function event_handler_translate_severity(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e39
+// Checksum 0x0, Offset: 0x1df2
 // Size: 0x24
 function trigger_cover_blown(event) {
     if (!isdefined(self.stealth)) {
@@ -658,31 +658,31 @@ function trigger_cover_blown(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e65
-// Size: 0x171
+// Checksum 0x0, Offset: 0x1e1e
+// Size: 0x170
 function react_announce(event) {
     self endon("death");
     delaytime = randomfloatrange(0.5, 1.1);
     switch (event.type) {
     case #"hash_e21b072df2b47f94": 
         thread scripts\stealth\utility::addeventplaybcs("stealth", "announce5", "investigate", delaytime, event);
-        println("<dev string:xd5>" + self getentitynumber() + "<dev string:xf0>" + event.typeorig + "<dev string:x124>");
+        println("<dev string:x1d>" + self getentitynumber() + "<dev string:x35>" + event.typeorig + "<dev string:x66>");
         /#
-            scripts\stealth\debug::function_ec780a18fdfb4982(self, "<dev string:x147>");
+            scripts\stealth\debug::function_ec780a18fdfb4982(self, "<dev string:x86>");
         #/
         return true;
     case #"hash_f796130a9b9cec5": 
         thread scripts\stealth\utility::addeventplaybcs("stealth", "announce5", "coverblown", delaytime, event);
-        println("<dev string:xd5>" + self getentitynumber() + "<dev string:x14f>" + event.typeorig + "<dev string:x124>");
+        println("<dev string:x1d>" + self getentitynumber() + "<dev string:x8b>" + event.typeorig + "<dev string:x66>");
         /#
-            scripts\stealth\debug::function_ec780a18fdfb4982(self, "<dev string:x183>");
+            scripts\stealth\debug::function_ec780a18fdfb4982(self, "<dev string:xbc>");
         #/
         return true;
     case #"hash_9e02cd4a0f3ca981": 
         thread scripts\stealth\utility::addeventplaybcs("stealth", "announce2", "combat", 1, event);
-        println("<dev string:xd5>" + self getentitynumber() + "<dev string:x194>" + event.typeorig + "<dev string:x124>");
+        println("<dev string:x1d>" + self getentitynumber() + "<dev string:xca>" + event.typeorig + "<dev string:x66>");
         /#
-            scripts\stealth\debug::function_ec780a18fdfb4982(self, "<dev string:x1c3>");
+            scripts\stealth\debug::function_ec780a18fdfb4982(self, "<dev string:xf6>");
         #/
         return true;
     }
@@ -691,8 +691,8 @@ function react_announce(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fdf
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x1f97
+// Size: 0x5e
 function react_announce_specific(event) {
     self endon("death");
     if (isdefined(event.typeorig)) {
@@ -705,8 +705,8 @@ function react_announce_specific(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2047
-// Size: 0x52
+// Checksum 0x0, Offset: 0x1ffe
+// Size: 0x51
 function go_to_node_wait_investigate(goto_func, node, var_5297224e2a5333e6) {
     self endon("death");
     if (!isdefined(var_5297224e2a5333e6)) {
@@ -722,7 +722,7 @@ function go_to_node_wait_investigate(goto_func, node, var_5297224e2a5333e6) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x20a1
+// Checksum 0x0, Offset: 0x2057
 // Size: 0x4a
 function go_to_node_wait(goto_func, node) {
     self endon("death");
@@ -737,7 +737,7 @@ function go_to_node_wait(goto_func, node) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x20f3
+// Checksum 0x0, Offset: 0x20a9
 // Size: 0x41
 function function_b6a081f78a507c7a(goto_func, node) {
     self endon("death");
@@ -750,8 +750,8 @@ function function_b6a081f78a507c7a(goto_func, node) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x213c
-// Size: 0x7d
+// Checksum 0x0, Offset: 0x20f2
+// Size: 0x7c
 function go_to_node_post_wait(goto_func, node) {
     self endon("death");
     self notify("gotonode_post_wait");
@@ -768,7 +768,7 @@ function go_to_node_post_wait(goto_func, node) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x21c1
+// Checksum 0x0, Offset: 0x2176
 // Size: 0x205
 function go_to_node_arrived(goto_func, node) {
     go_to_node_wait_investigate(goto_func, node, 0);
@@ -806,7 +806,7 @@ function go_to_node_arrived(goto_func, node) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23ce
+// Checksum 0x0, Offset: 0x2383
 // Size: 0x35
 function bt_set_stealth_state(statename, event) {
     assert(isdefined(self.fnsetstealthstate));
@@ -815,7 +815,7 @@ function bt_set_stealth_state(statename, event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x240b
+// Checksum 0x0, Offset: 0x23c0
 // Size: 0x20b
 function bt_event_handler_severity(event) {
     var_a16e3d3c7cafcd0e = undefined;
@@ -849,8 +849,8 @@ function bt_event_handler_severity(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x261f
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x25d4
+// Size: 0xc0
 function function_dfdec2ff9ba6b863(event) {
     if (!scripts\stealth\utility::bcisincombat()) {
         if (!react_announce_specific(event)) {
@@ -878,7 +878,7 @@ function function_dfdec2ff9ba6b863(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e9
+// Checksum 0x0, Offset: 0x269d
 // Size: 0x34
 function bt_event_investigate(event) {
     if (self [[ self.fnisinstealthcombat ]]()) {
@@ -890,7 +890,7 @@ function bt_event_investigate(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2725
+// Checksum 0x0, Offset: 0x26d9
 // Size: 0x12f
 function bt_event_cover_blown(event) {
     if (!isdefined(self.fnisinstealthcombat) || self [[ self.fnisinstealthcombat ]]()) {
@@ -922,7 +922,7 @@ function bt_event_cover_blown(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x285c
+// Checksum 0x0, Offset: 0x2810
 // Size: 0x4d
 function bt_event_combat(event) {
     self notify("stop_going_to_node");
@@ -936,7 +936,7 @@ function bt_event_combat(event) {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28b1
+// Checksum 0x0, Offset: 0x2865
 // Size: 0x36
 function set_provide_cover_fire() {
     self.providecoveringfire = 1;
@@ -950,8 +950,8 @@ function set_provide_cover_fire() {
 
 // Namespace enemy / scripts\stealth\enemy
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x28ef
-// Size: 0x2a0
+// Checksum 0x0, Offset: 0x28a3
+// Size: 0x2a2
 function onstatechange(fromstate, tostate, var_d24e406e7deefabc) {
     switch (tostate) {
     case 0: 
@@ -1012,7 +1012,7 @@ function onstatechange(fromstate, tostate, var_d24e406e7deefabc) {
         }
         break;
     default: 
-        assertmsg("<dev string:x1cf>" + tostate);
+        assertmsg("unsupported state from code " + tostate);
         break;
     }
 }

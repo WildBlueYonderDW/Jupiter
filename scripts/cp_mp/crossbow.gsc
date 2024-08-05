@@ -4,7 +4,6 @@
 #using script_16ea1b94f0f381b3;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_2669878cf5a1b6bc;
 #using scripts\common\ai.gsc;
 #using scripts\cp_mp\utility\damage_utility.gsc;
 
@@ -12,8 +11,8 @@
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x91a
-// Size: 0xe1
+// Checksum 0x0, Offset: 0x743
+// Size: 0x7d
 function initcrossbowusage(weapon) {
     if (!isdefined(level.crossbowbolts)) {
         level.crossbowbolts = [];
@@ -24,19 +23,12 @@ function initcrossbowusage(weapon) {
         self.crossbow.boltsinflight = [];
     }
     self.crossbow.active = 1;
-    if (!isdefined(weapon::function_23defc57f8da7fbc("thermite_bolt_mp"))) {
-        weapon::function_eac07882d12979d8("iw9_dm_crossbow", "thermite_bolt_mp");
-        weapon::function_eac07882d12979d8("iw9_dm_crossbow", "thermite_bolt_radius_mp");
-        weapon::function_eac07882d12979d8("iw9_dm_crossbow", "semtex_bolt_mp");
-        weapon::function_eac07882d12979d8("iw9_dm_crossbow", "semtex_bolt_splash_mp");
-        weapon::function_eac07882d12979d8("iw9_dm_crossbow", "molotov_bolt_mp");
-    }
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa03
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x7c8
+// Size: 0x3c
 function crossbowusageloop(weapon) {
     self endon("death_or_disconnect");
     self endon("faux_spawn");
@@ -47,7 +39,7 @@ function crossbowusageloop(weapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa48
+// Checksum 0x0, Offset: 0x80c
 // Size: 0x1c
 function cleanupafterweaponswitch() {
     self waittill("end_launcher");
@@ -58,7 +50,7 @@ function cleanupafterweaponswitch() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6c
+// Checksum 0x0, Offset: 0x830
 // Size: 0x4e
 function crossbowimpactwatcher(watcherweapon, ammotype) {
     self notify("cleanupImpactWatcher");
@@ -72,8 +64,8 @@ function crossbowimpactwatcher(watcherweapon, ammotype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xac2
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x886
+// Size: 0xce
 function watchforimpact(watcherweapon, ammotype) {
     var_74231e1029ef65b5 = getcrossbowimpactfunc(ammotype);
     while (true) {
@@ -88,8 +80,8 @@ function watchforimpact(watcherweapon, ammotype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8f
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x95c
+// Size: 0x7e
 function function_f16d37d0028d5de3(watcherweapon, ammotype) {
     var_a0dfb992760d09e3 = function_f7e93e7794bb696d(ammotype);
     while (true) {
@@ -104,17 +96,17 @@ function function_f16d37d0028d5de3(watcherweapon, ammotype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0xc12
+// Checksum 0x0, Offset: 0x9e2
 // Size: 0xce
 function handleimpact(bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype, weapon, bulletdir, impactpos, var_74231e1029ef65b5) {
-    if (shouldreflect(surfacetype, bolt, hitent, hitentpart, weapon)) {
+    if (shouldreflect(surfacetype, bolt, hitent, hitentpart)) {
         reflectbolt(bolt, surfacenormal, bulletdir, impactpos);
     } else if (shoulddeleteimmediately(hitent)) {
         bolt delete();
         return;
     } else if (shoulddrop(hitent, hitloc)) {
         dropbolt(bolt);
-    } else if (shouldlink(hitent)) {
+    } else if (shouldlink(hitent, weapon)) {
         function_5478d81cf5ea8d4(bolt, hitent, hitentpart);
     }
     if (isdefined(var_74231e1029ef65b5)) {
@@ -124,7 +116,7 @@ function handleimpact(bolt, hitent, hitentpart, hitloc, surfacenormal, surfacety
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xce8
+// Checksum 0x0, Offset: 0xab8
 // Size: 0x1d
 function function_5c14133d6577bef(bolt, var_a0dfb992760d09e3) {
     if (isdefined(var_a0dfb992760d09e3)) {
@@ -134,8 +126,8 @@ function function_5c14133d6577bef(bolt, var_a0dfb992760d09e3) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0d
-// Size: 0x11c
+// Checksum 0x0, Offset: 0xadd
+// Size: 0x11b
 function impactfunc_explo(bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype) {
     bolt setscriptablepartstate("effects", "impact");
     if (isdefined(hitent) && (isplayer(hitent) || isagent(hitent))) {
@@ -154,7 +146,7 @@ function impactfunc_explo(bolt, hitent, hitentpart, hitloc, surfacenormal, surfa
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xe31
+// Checksum 0x0, Offset: 0xc00
 // Size: 0x3f
 function impactfunc_fire(bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype) {
     thread function_9bda31fd01a8cb74(bolt, hitent, hitentpart, hitloc);
@@ -162,7 +154,7 @@ function impactfunc_fire(bolt, hitent, hitentpart, hitloc, surfacenormal, surfac
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xe78
+// Checksum 0x0, Offset: 0xc47
 // Size: 0x6a
 function impactfunc_stun(bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype) {
     if (!stunshoulddetonate(hitent, surfacetype)) {
@@ -178,7 +170,7 @@ function impactfunc_stun(bolt, hitent, hitentpart, hitloc, surfacenormal, surfac
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xeea
+// Checksum 0x0, Offset: 0xcb9
 // Size: 0x3f
 function function_b086ad2ca32b8b08(bolt, hitent, hitentpart, hitloc, surfacenormal, surfacetype) {
     thread function_704dd2c09ad39716(bolt, hitent, hitentpart, hitloc);
@@ -186,7 +178,7 @@ function function_b086ad2ca32b8b08(bolt, hitent, hitentpart, hitloc, surfacenorm
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf31
+// Checksum 0x0, Offset: 0xd00
 // Size: 0xb
 function function_a73c5b03989d6eda(bolt) {
     
@@ -194,7 +186,7 @@ function function_a73c5b03989d6eda(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf44
+// Checksum 0x0, Offset: 0xd13
 // Size: 0xb
 function function_1cc12bdc257818cc(bolt) {
     
@@ -202,7 +194,7 @@ function function_1cc12bdc257818cc(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf57
+// Checksum 0x0, Offset: 0xd26
 // Size: 0xb
 function function_3088a41a2ae98710(bolt) {
     
@@ -210,8 +202,8 @@ function function_3088a41a2ae98710(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf6a
-// Size: 0x171
+// Checksum 0x0, Offset: 0xd39
+// Size: 0x167
 function exploboltexplode(bolt, fusetime, surfacenormal) {
     self endon("disconnect");
     bolt endon("entitydeleted");
@@ -224,7 +216,7 @@ function exploboltexplode(bolt, fusetime, surfacenormal) {
     function_49967318fbd12317(splashweapon, bolt.weapon);
     if (isdefined(bolt.stuckenemyentity) && isalive(bolt.stuckenemyentity)) {
         bolt.stuckenemyentity scripts\cp_mp\utility\damage_utility::forcestuckdamage();
-        bolt.stuckenemyentity dodamage(110, bolt.origin, self, bolt.grenade, "MOD_EXPLOSIVE", stuckweapon, "none");
+        bolt.stuckenemyentity dodamage(110, bolt.origin, self, undefined, "MOD_EXPLOSIVE", stuckweapon, "none");
         bolt.stuckenemyentity scripts\cp_mp\utility\damage_utility::forcestuckdamageclear();
         bolt.stuckenemyentity thread function_a8a4ce8f3b02b96(self);
     }
@@ -238,7 +230,7 @@ function exploboltexplode(bolt, fusetime, surfacenormal) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e3
+// Checksum 0x0, Offset: 0xea8
 // Size: 0x59
 function function_a8a4ce8f3b02b96(inflictor) {
     self endon("disconnect");
@@ -254,7 +246,7 @@ function function_a8a4ce8f3b02b96(inflictor) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1144
+// Checksum 0x0, Offset: 0xf09
 // Size: 0x67
 function function_9bda31fd01a8cb74(bolt, hitent, hitentpart, hitloc) {
     self endon("disconnect");
@@ -268,8 +260,8 @@ function function_9bda31fd01a8cb74(bolt, hitent, hitentpart, hitloc) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b3
-// Size: 0x16a
+// Checksum 0x0, Offset: 0xf78
+// Size: 0x16b
 function thermiteboltstuckto(bolt, hitent, hitentpart, hitloc) {
     self endon("disconnect");
     bolt endon("entitydeleted");
@@ -298,8 +290,8 @@ function thermiteboltstuckto(bolt, hitent, hitentpart, hitloc) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1325
-// Size: 0x32
+// Checksum 0x0, Offset: 0x10eb
+// Size: 0x33
 function function_28832848cd860d4e(hitent) {
     hitent endon("disconnect");
     self endon("entitydeleted");
@@ -307,13 +299,13 @@ function function_28832848cd860d4e(hitent) {
     if (!validateboltent()) {
         return;
     }
-    boltunlink();
+    hitent notify("unlinkBolt");
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x135f
-// Size: 0x14e
+// Checksum 0x0, Offset: 0x1126
+// Size: 0x122
 function thermiteboltradiusdamage(bolt, hitent) {
     self endon("disconnect");
     bolt endon("entitydeleted");
@@ -321,9 +313,6 @@ function thermiteboltradiusdamage(bolt, hitent) {
     radiusweapon = makeweapon("thermite_bolt_radius_mp");
     function_49967318fbd12317(radiusweapon, bolt.weapon);
     bolt.thermiteradiusweaponref = radiusweapon.basename;
-    if (!isdefined(bolt.stuckenemyentity)) {
-        bolt.badplace = thermitebadplace(bolt.origin);
-    }
     while (ticks > 0) {
         if (isdefined(bolt.stuckenemyentity) && isalive(bolt.stuckenemyentity)) {
             bolt.stuckenemyentity scripts\cp_mp\utility\damage_utility::adddamagemodifier("thermiteBoltStuck", 0, 0, &thermite_damagemodifierignorefunc);
@@ -338,17 +327,8 @@ function thermiteboltradiusdamage(bolt, hitent) {
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b5
-// Size: 0x38
-function thermitebadplace(impactpoint) {
-    badplace = createnavbadplacebybounds(impactpoint, (50, 50, 50), (0, 0, 0));
-    return badplace;
-}
-
-// Namespace crossbow / scripts\cp_mp\crossbow
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f6
+// Checksum 0x0, Offset: 0x1250
 // Size: 0x91
 function thermite_damagemodifierignorefunc(inflictor, attacker, victim, damage, meansofdeath, objweapon, hitloc) {
     if (!isdefined(inflictor)) {
@@ -365,8 +345,8 @@ function thermite_damagemodifierignorefunc(inflictor, attacker, victim, damage, 
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1590
-// Size: 0x78
+// Checksum 0x0, Offset: 0x12ea
+// Size: 0x58
 function thermiteboltburnout(bolt) {
     bolt endon("entitydeleted");
     wait 4.5;
@@ -375,17 +355,14 @@ function thermiteboltburnout(bolt) {
     }
     bolt setscriptablepartstate("effects", "burnEnd");
     wait randomfloatrange(0.3, 2);
-    if (isdefined(bolt.badplace)) {
-        destroynavobstacle(bolt.badplace);
-    }
     bolt boltunlink();
     bolt setmodel("weapon_wm_sn_crossbow_bolt_fire_static_dst");
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1610
-// Size: 0xd3
+// Checksum 0x0, Offset: 0x134a
+// Size: 0xd2
 function function_2a6ac0fc60af6c16(bolt, surfacenormal) {
     self endon("disconnect");
     bolt endon("entitydeleted");
@@ -404,7 +381,7 @@ function function_2a6ac0fc60af6c16(bolt, surfacenormal) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16eb
+// Checksum 0x0, Offset: 0x1424
 // Size: 0x30
 function function_8fd268f7be208047(bolt) {
     self endon("disconnect");
@@ -415,7 +392,7 @@ function function_8fd268f7be208047(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1723
+// Checksum 0x0, Offset: 0x145c
 // Size: 0x30
 function function_397bf021cc9037f8(bolt) {
     self endon("disconnect");
@@ -426,7 +403,7 @@ function function_397bf021cc9037f8(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x175b
+// Checksum 0x0, Offset: 0x1494
 // Size: 0x2a
 function stunboltdelete(bolt) {
     bolt endon("entitydeleted");
@@ -439,8 +416,8 @@ function stunboltdelete(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x178d
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x14c6
+// Size: 0xd8
 function function_704dd2c09ad39716(bolt, hitent, hitentpart, hitloc) {
     self endon("disconnect");
     bolt endon("entitydeleted");
@@ -458,8 +435,8 @@ function function_704dd2c09ad39716(bolt, hitent, hitentpart, hitloc) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x186a
-// Size: 0x1c0
+// Checksum 0x0, Offset: 0x15a6
+// Size: 0x1ca
 function function_8add0b9e806fa2fb(bolt, hitent, var_6951cf1f43bc8ebe, impactvelocity) {
     if (issharedfuncdefined("molotov", "molotov_burn_for_time")) {
         hitent thread [[ getsharedfunc("molotov", "molotov_burn_for_time") ]](6, self, bolt, bolt);
@@ -489,8 +466,8 @@ function function_8add0b9e806fa2fb(bolt, hitent, var_6951cf1f43bc8ebe, impactvel
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a32
-// Size: 0xc7
+// Checksum 0x0, Offset: 0x1778
+// Size: 0xc9
 function function_a61b7128bcea5142(bolt, stuckto, var_6951cf1f43bc8ebe, impactvelocity) {
     angles = undefined;
     forward = vectornormalize(impactvelocity);
@@ -506,7 +483,7 @@ function function_a61b7128bcea5142(bolt, stuckto, var_6951cf1f43bc8ebe, impactve
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b01
+// Checksum 0x0, Offset: 0x1849
 // Size: 0x5c
 function function_8b65648a30994e16(bolt, castend, var_4b65413211af7033, casthitent, impactvelocity, impacttime) {
     bolt setscriptablepartstate("effects", "explode", 0);
@@ -515,7 +492,7 @@ function function_8b65648a30994e16(bolt, castend, var_4b65413211af7033, casthite
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b65
+// Checksum 0x0, Offset: 0x18ad
 // Size: 0x2a
 function function_8d43b846ff1837f1(bolt) {
     bolt endon("entitydeleted");
@@ -528,7 +505,7 @@ function function_8d43b846ff1837f1(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b97
+// Checksum 0x0, Offset: 0x18df
 // Size: 0x83
 function stunshoulddetonate(hitent, surfacetype) {
     if (!isdefined(hitent)) {
@@ -554,7 +531,7 @@ function stunshoulddetonate(hitent, surfacetype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c23
+// Checksum 0x0, Offset: 0x196b
 // Size: 0x31
 function stununderwater(bolt) {
     if (function_6c71c72547bb931(bolt.origin + (0, 0, 10))) {
@@ -565,7 +542,7 @@ function stununderwater(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c5d
+// Checksum 0x0, Offset: 0x19a5
 // Size: 0x112
 function spawncrossbowbolt(impactpos, bulletdir, ammotype, weapon) {
     model = getboltmodel(ammotype);
@@ -594,7 +571,7 @@ function spawncrossbowbolt(impactpos, bulletdir, ammotype, weapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d78
+// Checksum 0x0, Offset: 0x1ac0
 // Size: 0x2f
 function shouldpickup(ammotype) {
     if (ammotype == "bolt_default" || ammotype == "bolt_stun" || ammotype == "bolt_stun_vday") {
@@ -605,8 +582,8 @@ function shouldpickup(ammotype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1db0
-// Size: 0xd3
+// Checksum 0x0, Offset: 0x1af8
+// Size: 0xd4
 function makepickup(bolt) {
     triggerorg = bolt.origin + anglestoforward(bolt.angles) * 15;
     var_a712eb05ee38eab9 = axistoangles(anglestoup(bolt.angles), anglestoright(bolt.angles), anglestoforward(bolt.angles));
@@ -622,7 +599,7 @@ function makepickup(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e8c
+// Checksum 0x0, Offset: 0x1bd5
 // Size: 0x33
 function removepickup(bolt) {
     bolt notify("removePickup");
@@ -633,8 +610,8 @@ function removepickup(bolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec7
-// Size: 0xb9
+// Checksum 0x0, Offset: 0x1c10
+// Size: 0xa1
 function bolt_watchpickup() {
     self endon("entitydeleted");
     self endon("removePickup");
@@ -647,7 +624,7 @@ function bolt_watchpickup() {
         if (!isalive(player)) {
             continue;
         }
-        if (isdefined(self.stuckenemyentity) && isalive(self.stuckenemyentity) && !isdefined(self.stuckenemyentity.vehiclename)) {
+        if (isdefined(self.stuckenemyentity) && isalive(self.stuckenemyentity)) {
             continue;
         }
         var_6fba2b63d1fb95e1 = get_weapon_ammo_matched(player getweaponslistprimaries());
@@ -662,8 +639,8 @@ function bolt_watchpickup() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f88
-// Size: 0x156
+// Checksum 0x0, Offset: 0x1cb9
+// Size: 0xf6
 function get_weapon_ammo_matched(weapons) {
     foreach (weapon in weapons) {
         if (isdefined(weapon.basename) && weapon.basename == "iw9_dm_crossbow_mp") {
@@ -674,19 +651,14 @@ function get_weapon_ammo_matched(weapons) {
                 return weapon;
             }
         }
-        if (isdefined(weapon.basename) && weapon.basename == "jup_jp31_dm_compound_mp") {
-            if (isdefined(weapon.modifier) && weapon.modifier == "jup_ammo_arrow_std" && self.ammotype == "bolt_default") {
-                return weapon;
-            }
-        }
     }
     return undefined;
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20e7
-// Size: 0x86
+// Checksum 0x0, Offset: 0x1db8
+// Size: 0x87
 function bolt_trytopickup(weapon) {
     maxammo = weaponmaxammo(weapon);
     var_ea34e536b58878dd = self getweaponammostock(weapon);
@@ -703,7 +675,7 @@ function bolt_trytopickup(weapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2176
+// Checksum 0x0, Offset: 0x1e48
 // Size: 0x99
 function setdeleteable(ammotype) {
     switch (ammotype) {
@@ -727,7 +699,7 @@ function setdeleteable(ammotype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2217
+// Checksum 0x0, Offset: 0x1ee9
 // Size: 0x26
 function setdeleteabletimer(time) {
     self endon("entitydeleted");
@@ -738,8 +710,8 @@ function setdeleteabletimer(time) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2245
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x1f17
+// Size: 0xae
 function manageworldspawnedbolts(newbolt) {
     if (isdefined(newbolt)) {
         temparr = [newbolt];
@@ -763,18 +735,15 @@ function manageworldspawnedbolts(newbolt) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x22fd
-// Size: 0xb6
+// Checksum 0x0, Offset: 0x1fcd
+// Size: 0x92
 function getcrossbowammotype(weapon) {
     switch (weapon.modifier) {
-    case #"hash_1384dc17fea40a53":
-    case #"hash_54394a972b4ae6e1": 
+    case #"hash_1384dc17fea40a53": 
         return "bolt_explo";
-    case #"hash_135ed917fe85f086":
-    case #"hash_542d33972b41c850": 
+    case #"hash_135ed917fe85f086": 
         return "bolt_fire";
-    case #"hash_19baf8c5b7e79ee1":
-    case #"hash_bb2800f912ce65eb": 
+    case #"hash_19baf8c5b7e79ee1": 
         if (weapon.modifiervarindex == 1) {
             return "bolt_stun_vday";
         } else {
@@ -789,7 +758,7 @@ function getcrossbowammotype(weapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23bb
+// Checksum 0x0, Offset: 0x2067
 // Size: 0x75
 function getcrossbowimpactfunc(ammotype) {
     switch (ammotype) {
@@ -809,7 +778,7 @@ function getcrossbowimpactfunc(ammotype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2438
+// Checksum 0x0, Offset: 0x20e4
 // Size: 0x69
 function function_f7e93e7794bb696d(ammotype) {
     switch (ammotype) {
@@ -828,7 +797,7 @@ function function_f7e93e7794bb696d(ammotype) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24a9
+// Checksum 0x0, Offset: 0x2155
 // Size: 0x80
 function getboltmodel(ammotype) {
     switch (ammotype) {
@@ -848,10 +817,10 @@ function getboltmodel(ammotype) {
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2531
-// Size: 0x1fd
-function shouldreflect(surfacetype, bolt, hitent, hitentpart, weapon) {
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x21dd
+// Size: 0x1b6
+function shouldreflect(surfacetype, bolt, hitent, hitentpart) {
     if (!isdefined(hitent) && isdefined(hitentpart) && hitentpart == function_3db00f01cdba4538("tag_origin")) {
         return 1;
     }
@@ -875,9 +844,6 @@ function shouldreflect(surfacetype, bolt, hitent, hitentpart, weapon) {
     case #"hash_8c9d4c67dcde81f2": 
         return 1;
     }
-    if (function_1cef76b86c23032b(hitent, hitentpart)) {
-        return 1;
-    }
     if (bolt.ammotype == "bolt_explo") {
         return 0;
     }
@@ -885,9 +851,6 @@ function shouldreflect(surfacetype, bolt, hitent, hitentpart, weapon) {
         return 1;
     }
     if (issameteamagent(hitent)) {
-        return 1;
-    }
-    if (getcrossbowammotype(weapon) == "bolt_stun_vday" && (isplayer(hitent) || isagent(hitent)) && !isalive(hitent)) {
         return 1;
     }
     switch (surfacetype) {
@@ -915,8 +878,8 @@ function shouldreflect(surfacetype, bolt, hitent, hitentpart, weapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2736
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x239b
+// Size: 0x7c
 function reflectbolt(bolt, surfacenormal, bulletdir, impactpos) {
     vec = math::vector_reflect(bulletdir, surfacenormal);
     dot = abs(vectordot(bulletdir, surfacenormal));
@@ -928,7 +891,7 @@ function reflectbolt(bolt, surfacenormal, bulletdir, impactpos) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27b9
+// Checksum 0x0, Offset: 0x241f
 // Size: 0x57
 function shoulddeleteimmediately(hitent) {
     if (!isdefined(hitent)) {
@@ -945,7 +908,7 @@ function shoulddeleteimmediately(hitent) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2819
+// Checksum 0x0, Offset: 0x247f
 // Size: 0x95
 function shoulddrop(hitent, hitloc) {
     if (!isdefined(hitent)) {
@@ -967,7 +930,7 @@ function shoulddrop(hitent, hitloc) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28b7
+// Checksum 0x0, Offset: 0x251d
 // Size: 0x19
 function dropbolt(bolt) {
     bolt solid();
@@ -975,11 +938,14 @@ function dropbolt(bolt) {
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x28d8
-// Size: 0x24
-function shouldlink(hitent, hitentpart, weapon) {
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x253e
+// Size: 0x4c
+function shouldlink(hitent, weapon) {
     if (!isdefined(hitent)) {
+        return false;
+    }
+    if (getcrossbowammotype(weapon) == "bolt_stun_vday" && (isplayer(hitent) || isagent(hitent)) && !isalive(hitent)) {
         return false;
     }
     return true;
@@ -987,7 +953,7 @@ function shouldlink(hitent, hitentpart, weapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2905
+// Checksum 0x0, Offset: 0x2593
 // Size: 0x20
 function is_suicidebomber() {
     return istrue(isdefined(self.unittype) && self.unittype == "suicidebomber");
@@ -995,8 +961,8 @@ function is_suicidebomber() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x292e
-// Size: 0x169
+// Checksum 0x0, Offset: 0x25bc
+// Size: 0x15e
 function function_5478d81cf5ea8d4(bolt, hitent, hitentpart) {
     if ((isplayer(hitent) || isagent(hitent)) && !isalive(hitent)) {
         corpse = hitent getcorpseentity();
@@ -1015,7 +981,6 @@ function function_5478d81cf5ea8d4(bolt, hitent, hitentpart) {
     }
     if (isdefined(hitentpart) && hitent tagexists(hitentpart)) {
         bolt linkto(hitent, hitentpart);
-        bolt function_4510118c9d9ee7b2(hitent, hitentpart);
     } else {
         bolt linkto(hitent);
     }
@@ -1035,18 +1000,18 @@ function function_5478d81cf5ea8d4(bolt, hitent, hitentpart) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a9f
+// Checksum 0x0, Offset: 0x2722
 // Size: 0x29
 function validateboltent() {
     if (isdefined(self) && istrue(self.iscrossbowbolt)) {
         return 1;
     }
-    assertmsg("<dev string:x1c>");
+    assertmsg("Ent expects to be a crossbow bolt, but no longer is.");
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ad0
+// Checksum 0x0, Offset: 0x2753
 // Size: 0x60
 function removestuckenemyondeathordisconnect(hitent) {
     self endon("entitydeleted");
@@ -1063,7 +1028,7 @@ function removestuckenemyondeathordisconnect(hitent) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b38
+// Checksum 0x0, Offset: 0x27bb
 // Size: 0x37
 function isenemycorpse(hitent) {
     if (isdefined(hitent.targetname) && hitent.targetname == "player_corpse") {
@@ -1074,7 +1039,7 @@ function isenemycorpse(hitent) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b77
+// Checksum 0x0, Offset: 0x27fa
 // Size: 0x1d
 function function_a4930163e0971504() {
     self endon("entitydeleted");
@@ -1087,17 +1052,17 @@ function function_a4930163e0971504() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b9c
-// Size: 0x2b
+// Checksum 0x0, Offset: 0x281f
+// Size: 0x30
 function boltunlinkonnote(hitent) {
     self endon("entitydeleted");
-    hitent waittill_any_3("entitydeleted", "disconnect");
+    hitent waittill_any_3("entitydeleted", "disconnect", "unlinkBolt");
     boltunlink();
 }
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bcf
+// Checksum 0x0, Offset: 0x2857
 // Size: 0xad
 function boltunlink(launchvec) {
     if (!validateboltent()) {
@@ -1125,7 +1090,7 @@ function boltunlink(launchvec) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c84
+// Checksum 0x0, Offset: 0x290c
 // Size: 0x2f
 function boltdeleteonnote(hitent, note) {
     self endon("entitydeleted");
@@ -1138,7 +1103,7 @@ function boltdeleteonnote(hitent, note) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cbb
+// Checksum 0x0, Offset: 0x2943
 // Size: 0x42
 function boltdeletethread() {
     self waittill("entitydeleted");
@@ -1152,7 +1117,7 @@ function boltdeletethread() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d05
+// Checksum 0x0, Offset: 0x298d
 // Size: 0x29
 function function_acd8433c3043c4f2(surfacenormal) {
     if (isdefined(surfacenormal)) {
@@ -1163,7 +1128,7 @@ function function_acd8433c3043c4f2(surfacenormal) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d36
+// Checksum 0x0, Offset: 0x29be
 // Size: 0x28
 function issameteamplayer(hitent) {
     if (!isplayer(hitent)) {
@@ -1177,7 +1142,7 @@ function issameteamplayer(hitent) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d66
+// Checksum 0x0, Offset: 0x29ee
 // Size: 0x42
 function issameteamagent(hitent) {
     if (!isagent(hitent)) {
@@ -1191,7 +1156,7 @@ function issameteamagent(hitent) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2db1
+// Checksum 0x0, Offset: 0x2a39
 // Size: 0x131
 function cansticktoent(hitent) {
     if (isai(hitent)) {
@@ -1226,7 +1191,7 @@ function cansticktoent(hitent) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eeb
+// Checksum 0x0, Offset: 0x2b73
 // Size: 0x2d
 function function_fc87aff67fb01e6f(objweapon) {
     if (isdefined(objweapon.modifier)) {
@@ -1237,7 +1202,7 @@ function function_fc87aff67fb01e6f(objweapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f21
+// Checksum 0x0, Offset: 0x2ba9
 // Size: 0x7
 function function_42b0dfeb350f6ea5() {
     return 4.5;
@@ -1245,7 +1210,7 @@ function function_42b0dfeb350f6ea5() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f31
+// Checksum 0x0, Offset: 0x2bb9
 // Size: 0x53
 function function_5d09c8fae400afb2(watcherweapon) {
     if (!function_f023a978eea742d3(watcherweapon)) {
@@ -1264,7 +1229,7 @@ function function_5d09c8fae400afb2(watcherweapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f8c
+// Checksum 0x0, Offset: 0x2c14
 // Size: 0x49
 function function_f023a978eea742d3(objweapon) {
     if (isdefined(objweapon.scope) && objweapon.scope == "fourx04" && objweapon.scopevarindex == 4) {
@@ -1275,8 +1240,8 @@ function function_f023a978eea742d3(objweapon) {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fdd
-// Size: 0x91
+// Checksum 0x0, Offset: 0x2c65
+// Size: 0x98
 function function_e27041f5372c53f1() {
     self endon("bullet_terminated");
     self endon("reload");
@@ -1290,7 +1255,7 @@ function function_e27041f5372c53f1() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3076
+// Checksum 0x0, Offset: 0x2d05
 // Size: 0x1f
 function function_e26f4be6d803c186() {
     self endon("bullet_first_impact");
@@ -1301,7 +1266,7 @@ function function_e26f4be6d803c186() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x309d
+// Checksum 0x0, Offset: 0x2d2c
 // Size: 0xf
 function function_c0ab8a070e986732() {
     self setclientomnvar("ui_reticle_mtx_action", 0);
@@ -1309,7 +1274,7 @@ function function_c0ab8a070e986732() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b4
+// Checksum 0x0, Offset: 0x2d43
 // Size: 0x10
 function function_a2e0841b4f6a8c5f() {
     self setclientomnvar("ui_reticle_mtx_action", 1);
@@ -1317,7 +1282,7 @@ function function_a2e0841b4f6a8c5f() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30cc
+// Checksum 0x0, Offset: 0x2d5b
 // Size: 0x10
 function function_32dd4ab63407230e() {
     self setclientomnvar("ui_reticle_mtx_action", 2);
@@ -1325,7 +1290,7 @@ function function_32dd4ab63407230e() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e4
+// Checksum 0x0, Offset: 0x2d73
 // Size: 0x10
 function function_4d540620ce852f82() {
     self setclientomnvar("ui_reticle_mtx_action", 3);
@@ -1333,7 +1298,7 @@ function function_4d540620ce852f82() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30fc
+// Checksum 0x0, Offset: 0x2d8b
 // Size: 0x10
 function function_182a5b792f5c615a() {
     self setclientomnvar("ui_reticle_mtx_action", 4);
@@ -1341,8 +1306,8 @@ function function_182a5b792f5c615a() {
 
 // Namespace crossbow / scripts\cp_mp\crossbow
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3114
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x2da3
+// Size: 0x7d
 function function_163ded397285c41e() {
     var_63c7f7bafd29c6cf = spawn("script_origin", self.origin);
     var_63c7f7bafd29c6cf linkto(self);
@@ -1353,68 +1318,5 @@ function function_163ded397285c41e() {
     var_63c7f7bafd29c6cf stoploopsound("thermite_bomb_crossbow_fire_lp");
     wait 5;
     var_63c7f7bafd29c6cf delete();
-}
-
-// Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x319a
-// Size: 0xb3
-function function_1cef76b86c23032b(hitent, hitentpart) {
-    if (!isdefined(hitent)) {
-        return false;
-    }
-    if (!isdefined(hitentpart)) {
-        return false;
-    }
-    var_cc077650ade11117 = function_8ed0ffa3f8be7c75(hitentpart);
-    if (!function_6efe6c06514615(var_cc077650ade11117)) {
-        return false;
-    }
-    if (isdefined(hitent.damageableparts) && var_cc077650ade11117 != "" && isdefined(hitent.damageableparts[var_cc077650ade11117]) && isdefined(hitent.damageableparts[var_cc077650ade11117].healthvalue)) {
-        part = hitent.damageableparts[var_cc077650ade11117];
-        if (part.healthvalue == 0) {
-            return true;
-        }
-    }
-    return false;
-}
-
-// Namespace crossbow / scripts\cp_mp\crossbow
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3256
-// Size: 0xc7
-function function_4510118c9d9ee7b2(hitent, hitentpart) {
-    var_cc077650ade11117 = function_8ed0ffa3f8be7c75(hitentpart);
-    if (!function_6efe6c06514615(var_cc077650ade11117)) {
-        return;
-    }
-    if (isdefined(hitent.damageableparts) && var_cc077650ade11117 != "" && isdefined(hitent.damageableparts[var_cc077650ade11117])) {
-        if (!isdefined(hitent.damageableparts[var_cc077650ade11117].var_673c6895d1418e1c)) {
-            hitent.damageableparts[var_cc077650ade11117].var_673c6895d1418e1c = [];
-        }
-        hitent.damageableparts[var_cc077650ade11117].var_673c6895d1418e1c = array_add(hitent.damageableparts[var_cc077650ade11117].var_673c6895d1418e1c, self);
-    }
-}
-
-// Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3325
-// Size: 0x34
-function function_8ed0ffa3f8be7c75(xhash) {
-    if (!isdefined(level.var_d43e78e513933216)) {
-        return "";
-    }
-    return default_to(level.var_d43e78e513933216[xhash], "");
-}
-
-// Namespace crossbow / scripts\cp_mp\crossbow
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3362
-// Size: 0x30
-function function_6efe6c06514615(partstring) {
-    if (issubstr(partstring, "tag_wheel") || issubstr(partstring, "tag_door")) {
-        return 1;
-    }
-    return 0;
 }
 

@@ -8,7 +8,7 @@
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33a
+// Checksum 0x0, Offset: 0x30d
 // Size: 0x50
 function init_cap() {
     if (isdefined(level.cap)) {
@@ -21,8 +21,8 @@ function init_cap() {
 
 // Namespace cap / scripts\common\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x392
-// Size: 0x148
+// Checksum 0x0, Offset: 0x365
+// Size: 0x149
 function cap_start(capname, animset, animscripted) {
     if (isai(self) && self isinscriptedstate()) {
         msg1 = "AI $e" + self getentitynumber() + " attempting to start CAP '" + capname + "' with Arc '" + animset + "' ";
@@ -53,7 +53,7 @@ function cap_start(capname, animset, animscripted) {
 
 // Namespace cap / scripts\common\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e2
+// Checksum 0x0, Offset: 0x4b6
 // Size: 0x116
 function function_b69db84955df12e5(var_b5da6777bfe1ace8, archetypename) {
     if (archetypename == "hero_salter" || archetypename == "farah" || archetypename == "soldier_female") {
@@ -83,7 +83,7 @@ function function_b69db84955df12e5(var_b5da6777bfe1ace8, archetypename) {
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x600
+// Checksum 0x0, Offset: 0x5d4
 // Size: 0x57
 function function_896667bf7f3ed3dc() {
     while (true) {
@@ -99,7 +99,7 @@ function function_896667bf7f3ed3dc() {
 
 // Namespace cap / scripts\common\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x65f
+// Checksum 0x0, Offset: 0x633
 // Size: 0x50
 function function_fb2e421e36c177a0(var_f48b8938602f359b, var_388552599bfcb74) {
     self asmterminate();
@@ -113,7 +113,7 @@ function function_fb2e421e36c177a0(var_f48b8938602f359b, var_388552599bfcb74) {
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b7
+// Checksum 0x0, Offset: 0x68b
 // Size: 0xf8
 function cap_exit() {
     if (!isai(self)) {
@@ -126,7 +126,7 @@ function cap_exit() {
         }
         return;
     }
-    assert(self.asmname != self.var_a942dd31d55102c9, "<dev string:x1c>" + self.var_a942dd31d55102c9);
+    assert(self.asmname != self.var_a942dd31d55102c9, "Calling cap_exit when in default asm: " + self.var_a942dd31d55102c9);
     if (self.asmname == self.var_a942dd31d55102c9) {
         return;
     }
@@ -145,7 +145,7 @@ function cap_exit() {
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b7
+// Checksum 0x0, Offset: 0x78b
 // Size: 0x9d
 function function_a996f137b4ef05ed() {
     self endon("entitydeleted");
@@ -171,7 +171,7 @@ function function_a996f137b4ef05ed() {
 
 // Namespace cap / scripts\common\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x85c
+// Checksum 0x0, Offset: 0x830
 // Size: 0xb5
 function function_b58f0a57adf2948e(origin, capname, animset, var_9e6dcf179d658229) {
     self endon("death");
@@ -192,8 +192,8 @@ function function_b58f0a57adf2948e(origin, capname, animset, var_9e6dcf179d65822
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x919
-// Size: 0x92
+// Checksum 0x0, Offset: 0x8ed
+// Size: 0x91
 function function_3a8bc84c604f9755() {
     msg = waittill_any_return_2("cap_reach_and_arrive", "bseq_user_deleted");
     if (isdefined(self.scriptedarrivalent)) {
@@ -215,8 +215,8 @@ function function_3a8bc84c604f9755() {
 
 // Namespace cap / scripts\common\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b3
-// Size: 0x2d5
+// Checksum 0x0, Offset: 0x986
+// Size: 0x2d8
 function cap_reach_and_arrive(scriptednode, capname, animset, var_26b7b68bee5a2349) {
     assert(isdefined(scriptednode.origin));
     self notify("cap_reach_and_arrive");
@@ -247,7 +247,7 @@ function cap_reach_and_arrive(scriptednode, capname, animset, var_26b7b68bee5a23
         self setbtgoalpos(1, goalpos);
     }
     asm_fireephemeralevent("path_chosen", "end");
-    assertex(archetypehasstate(animset, arrival_state), "<dev string:x46>" + animset + "<dev string:x53>" + arrival_state + "<dev string:x6f>");
+    assertex(archetypehasstate(animset, arrival_state), "Cap Arc (" + animset + ") has no arrival state (" + arrival_state + ")!");
     self.var_a57082fdf62bc898 = arrival_state;
     self.var_33b4c07d1f388776 = animset;
     self.var_a41edf45bb0ff97 = scriptednode.angles;
@@ -273,7 +273,7 @@ function cap_reach_and_arrive(scriptednode, capname, animset, var_26b7b68bee5a23
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc90
+// Checksum 0x0, Offset: 0xc66
 // Size: 0x11d
 function private function_e1c21b37d95134a() {
     self endon("death");
@@ -296,8 +296,8 @@ function private function_e1c21b37d95134a() {
 
 // Namespace cap / scripts\common\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb5
-// Size: 0xa3
+// Checksum 0x0, Offset: 0xd8b
+// Size: 0xa1
 function function_a1ed6ae80ed92596(group) {
     assert(isarray(group));
     if (!isdefined(level.capgroups)) {
@@ -312,7 +312,7 @@ function function_a1ed6ae80ed92596(group) {
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe60
+// Checksum 0x0, Offset: 0xe34
 // Size: 0x9b
 function function_5a9987f1e5bbd641() {
     assert(isdefined(self.capgroup) && isdefined(level.capgroups) && isdefined(level.capgroups[self.capgroup]));
@@ -324,7 +324,7 @@ function function_5a9987f1e5bbd641() {
 
 // Namespace cap / scripts\common\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf03
+// Checksum 0x0, Offset: 0xed7
 // Size: 0xda
 function function_3327078daa3ecd38() {
     if (isdefined(level.var_ba6be00a0c2658cc) && function_a6025442a4e1c649(level.var_ba6be00a0c2658cc, self)) {
@@ -349,7 +349,7 @@ function function_3327078daa3ecd38() {
 
 // Namespace cap / scripts\common\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe5
+// Checksum 0x0, Offset: 0xfb9
 // Size: 0x61
 function cap_prop(capname, animset) {
     self.asmname = capname;
@@ -363,8 +363,8 @@ function cap_prop(capname, animset) {
 
 // Namespace cap / scripts\common\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x104e
-// Size: 0x92
+// Checksum 0x0, Offset: 0x1022
+// Size: 0x8f
 function function_882c76a8f1f5f9a6(states, var_b4c3697a9d2ed329) {
     self.resumestatetime = [];
     if (!isarray(states)) {
@@ -380,7 +380,7 @@ function function_882c76a8f1f5f9a6(states, var_b4c3697a9d2ed329) {
 
 // Namespace cap / scripts\common\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e8
+// Checksum 0x0, Offset: 0x10b9
 // Size: 0x26
 function function_a05f4d85f33e9eea(states) {
     if (!isarray(states)) {

@@ -12,7 +12,7 @@
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f6
+// Checksum 0x0, Offset: 0x2dc
 // Size: 0xbc
 function bot_killstreak_setup() {
     if (!isdefined(level.killstreak_botfunc)) {
@@ -44,11 +44,11 @@ function bot_killstreak_setup() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ba
+// Checksum 0x0, Offset: 0x3a0
 // Size: 0x90
 function bot_register_killstreak_func(name, func, can_use, optionalparam) {
     if (!isdefined(level.streakglobals.streakbundles[name])) {
-        println("<dev string:x1c>" + name + "<dev string:x5d>");
+        println("<dev string:x1c>" + name + "<dev string:x5a>");
         return;
     }
     level.killstreak_botfunc[name] = func;
@@ -61,34 +61,34 @@ function bot_register_killstreak_func(name, func, can_use, optionalparam) {
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x452
+    // Checksum 0x0, Offset: 0x438
     // Size: 0x2e
     function function_41a8ca2dae1a1343(streak) {
         if (!function_d66de7b5a877b42c(streak)) {
-            assertmsg("<dev string:x8e>" + streak + "<dev string:xb2>");
+            assertmsg("<dev string:x88>" + streak + "<dev string:xa9>");
         }
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x488
+    // Checksum 0x0, Offset: 0x46e
     // Size: 0x49
     function function_26244da889a0235a(streak, bot) {
         if (!function_49c1e963fb43ee47(streak, bot)) {
-            assertmsg("<dev string:xb7>" + bot.name + "<dev string:xc0>" + streak + "<dev string:xb2>");
+            assertmsg("<dev string:xab>" + bot.name + "<dev string:xb1>" + streak + "<dev string:xa9>");
         }
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4d9
-    // Size: 0xfc
+    // Checksum 0x0, Offset: 0x4bf
+    // Size: 0xf9
     function function_227b3e3c529f9d0() {
         wait 1;
         errors = [];
         foreach (streakname in level.bot_supported_killstreaks) {
             if (!function_c8ae136cc2c20507(streakname)) {
-                error("<dev string:xe3>" + streakname);
+                error("<dev string:xd1>" + streakname);
                 errors[errors.size] = streakname;
             }
             wait 0.05;
@@ -106,47 +106,47 @@ function bot_register_killstreak_func(name, func, can_use, optionalparam) {
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5dd
+    // Checksum 0x0, Offset: 0x5c0
     // Size: 0x1b
     function function_c8ae136cc2c20507(streakname) {
-        return bot_killstreak_is_valid_internal(streakname, "<dev string:x11b>");
+        return bot_killstreak_is_valid_internal(streakname, "<dev string:x106>");
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x600
+    // Checksum 0x0, Offset: 0x5e3
     // Size: 0x1b
     function function_d66de7b5a877b42c(streakname) {
-        return bot_killstreak_is_valid_internal(streakname, "<dev string:x125>");
+        return bot_killstreak_is_valid_internal(streakname, "<dev string:x10d>");
     }
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x623
+    // Checksum 0x0, Offset: 0x606
     // Size: 0x24
     function function_49c1e963fb43ee47(streakname, bot) {
-        return bot_killstreak_is_valid_internal(streakname, "<dev string:x125>", bot);
+        return bot_killstreak_is_valid_internal(streakname, "<dev string:x10d>", bot);
     }
 
 #/
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x64f
+// Checksum 0x0, Offset: 0x632
 // Size: 0x55
 function bot_killstreak_valid_for_specific_streaktype(streakname, streaktype, assertit) {
     if (bot_killstreak_is_valid_internal(streakname, "bots", undefined, streaktype)) {
         return true;
     } else if (assertit) {
-        assertmsg("<dev string:x12d>" + streaktype + "<dev string:x147>" + streakname + "<dev string:xb2>");
+        assertmsg("Bots with streakType <" + streaktype + "> do not support killstreak <" + streakname + ">");
     }
     return false;
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ad
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x690
+// Size: 0xb4
 function bot_killstreak_is_valid_internal(streakname, var_ca854a77f264bed6, optional_bot, var_1c9ca7dbe4790741) {
     var_c61cd683f3a90cc2 = undefined;
     if (streakname == "specialist") {
@@ -180,7 +180,7 @@ function bot_killstreak_is_valid_internal(streakname, var_ca854a77f264bed6, opti
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x76b
+// Checksum 0x0, Offset: 0x74d
 // Size: 0x60
 function bot_killstreak_is_valid_single(streakname, var_ca854a77f264bed6) {
     if (var_ca854a77f264bed6 == "humans") {
@@ -188,12 +188,12 @@ function bot_killstreak_is_valid_single(streakname, var_ca854a77f264bed6) {
     } else if (var_ca854a77f264bed6 == "bots") {
         return isdefined(level.killstreak_botfunc[streakname]);
     }
-    assertmsg("<dev string:x168>");
+    assertmsg("Unreachable");
 }
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d3
+// Checksum 0x0, Offset: 0x7b5
 // Size: 0x3b
 function bot_watch_for_killstreak_use() {
     self notify("bot_watch_for_killstreak_use");
@@ -208,7 +208,7 @@ function bot_watch_for_killstreak_use() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x816
+// Checksum 0x0, Offset: 0x7f8
 // Size: 0x25
 function bot_is_killstreak_supported(name) {
     if (!isdefined(name)) {
@@ -222,8 +222,8 @@ function bot_is_killstreak_supported(name) {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x844
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x826
+// Size: 0x39
 function bot_can_use_killstreak(name) {
     var_f40f83e224a240f1 = level.killstreak_botcanuse[name];
     if (!isdefined(var_f40f83e224a240f1)) {
@@ -237,7 +237,7 @@ function bot_can_use_killstreak(name) {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x887
+// Checksum 0x0, Offset: 0x868
 // Size: 0x2
 function bot_think_killstreak() {
     
@@ -245,7 +245,7 @@ function bot_think_killstreak() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x891
+// Checksum 0x0, Offset: 0x872
 // Size: 0x3
 function bot_can_use_aa_launcher() {
     return false;
@@ -253,7 +253,7 @@ function bot_can_use_aa_launcher() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x89d
+// Checksum 0x0, Offset: 0x87e
 // Size: 0x2
 function bot_start_aa_launcher_tracking() {
     
@@ -263,17 +263,17 @@ function bot_start_aa_launcher_tracking() {
 
     // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8a7
+    // Checksum 0x0, Offset: 0x888
     // Size: 0x10
     function bot_killstreak_never_use() {
-        assertmsg("<dev string:x177>");
+        assertmsg("bot_killstreak_never_use() was somehow called");
     }
 
 #/
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bf
+// Checksum 0x0, Offset: 0x8a0
 // Size: 0x3
 function bot_can_use_air_superiority() {
     return false;
@@ -281,7 +281,7 @@ function bot_can_use_air_superiority() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cb
+// Checksum 0x0, Offset: 0x8ac
 // Size: 0x1a
 function aerial_vehicle_allowed() {
     if (isairdenied()) {
@@ -295,7 +295,7 @@ function aerial_vehicle_allowed() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ee
+// Checksum 0x0, Offset: 0x8cf
 // Size: 0x26
 function vehicle_would_exceed_limit() {
     return currentactivevehiclecount() >= maxvehiclesallowed() || level.fauxvehiclecount + 1 >= maxvehiclesallowed();
@@ -303,8 +303,8 @@ function vehicle_would_exceed_limit() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91d
-// Size: 0x99
+// Checksum 0x0, Offset: 0x8fe
+// Size: 0x97
 function bot_can_use_emp() {
     if (isdefined(level.empplayer)) {
         return false;
@@ -320,7 +320,7 @@ function bot_can_use_emp() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bf
+// Checksum 0x0, Offset: 0x99e
 // Size: 0x3
 function bot_can_use_ball_drone() {
     return false;
@@ -328,7 +328,7 @@ function bot_can_use_ball_drone() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9cb
+// Checksum 0x0, Offset: 0x9aa
 // Size: 0x6c
 function bot_killstreak_simple_use(killstreak_info, killstreaks_array, canusefunc, optional_param) {
     self endon("death_or_disconnect");
@@ -346,7 +346,7 @@ function bot_killstreak_simple_use(killstreak_info, killstreaks_array, canusefun
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa40
+// Checksum 0x0, Offset: 0xa1f
 // Size: 0x33
 function bot_killstreak_drop_anywhere(killstreak_info, killstreaks_array, canusefunc, optional_param) {
     bot_killstreak_drop(killstreak_info, killstreaks_array, canusefunc, optional_param, "anywhere");
@@ -354,7 +354,7 @@ function bot_killstreak_drop_anywhere(killstreak_info, killstreaks_array, canuse
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7b
+// Checksum 0x0, Offset: 0xa5a
 // Size: 0x33
 function bot_killstreak_drop_outside(killstreak_info, killstreaks_array, canusefunc, optional_param) {
     bot_killstreak_drop(killstreak_info, killstreaks_array, canusefunc, optional_param, "outside");
@@ -362,7 +362,7 @@ function bot_killstreak_drop_outside(killstreak_info, killstreaks_array, canusef
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xab6
+// Checksum 0x0, Offset: 0xa95
 // Size: 0x33
 function bot_killstreak_drop_hidden(killstreak_info, killstreaks_array, canusefunc, optional_param) {
     bot_killstreak_drop(killstreak_info, killstreaks_array, canusefunc, optional_param, "hidden");
@@ -370,8 +370,8 @@ function bot_killstreak_drop_hidden(killstreak_info, killstreaks_array, canusefu
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf1
-// Size: 0x337
+// Checksum 0x0, Offset: 0xad0
+// Size: 0x339
 function bot_killstreak_drop(killstreak_info, killstreaks_array, canusefunc, optional_param, drop_where) {
     wait randomintrange(2, 4);
     if (!isdefined(drop_where)) {
@@ -439,7 +439,7 @@ function bot_killstreak_drop(killstreak_info, killstreaks_array, canusefunc, opt
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe31
+// Checksum 0x0, Offset: 0xe12
 // Size: 0x24
 function bot_switch_to_killstreak_weapon(killstreak_info, killstreaks_array, weapon_name) {
     bot_notify_streak_used(killstreak_info, killstreaks_array);
@@ -447,7 +447,7 @@ function bot_switch_to_killstreak_weapon(killstreak_info, killstreaks_array, wea
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe5d
+// Checksum 0x0, Offset: 0xe3e
 // Size: 0xa2
 function bot_notify_streak_used(killstreak_info, killstreaks_array) {
     if (isdefined(killstreak_info.isgimme) && killstreak_info.isgimme) {
@@ -469,8 +469,8 @@ function bot_notify_streak_used(killstreak_info, killstreaks_array) {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xf07
-// Size: 0x1db
+// Checksum 0x0, Offset: 0xee8
+// Size: 0x1e4
 function bot_killstreak_choose_loc_enemies(killstreak_info, killstreaks_array, canusefunc, optional_param) {
     wait randomintrange(3, 5);
     if (!bot_allowed_to_use_killstreaks()) {
@@ -518,8 +518,8 @@ function bot_killstreak_choose_loc_enemies(killstreak_info, killstreaks_array, c
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ea
-// Size: 0x2d7
+// Checksum 0x0, Offset: 0x10d4
+// Size: 0x2da
 function bot_think_watch_aerial_killstreak() {
     self notify("bot_think_watch_aerial_killstreak");
     self endon("bot_think_watch_aerial_killstreak");
@@ -591,7 +591,7 @@ function bot_think_watch_aerial_killstreak() {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13c9
+// Checksum 0x0, Offset: 0x13b6
 // Size: 0x87
 function try_place_global_badplace(var_205d69eb70594bb7, var_c5a29305adbe9b8b) {
     if (!isdefined(level.killstreak_global_bp_exists_for[self.team][var_205d69eb70594bb7])) {
@@ -605,8 +605,8 @@ function try_place_global_badplace(var_205d69eb70594bb7, var_c5a29305adbe9b8b) {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1458
-// Size: 0x8b
+// Checksum 0x0, Offset: 0x1445
+// Size: 0x8a
 function monitor_enemy_dangerous_killstreak(my_team, var_205d69eb70594bb7, var_c5a29305adbe9b8b) {
     assert(5 > 4);
     wait_time = (5 - 4) * 0.5;
@@ -621,7 +621,7 @@ function monitor_enemy_dangerous_killstreak(my_team, var_205d69eb70594bb7, var_c
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14eb
+// Checksum 0x0, Offset: 0x14d7
 // Size: 0x37
 function enemy_mortar_strike_exists(my_team) {
     if (isdefined(level.air_raid_active) && level.air_raid_active) {
@@ -634,8 +634,8 @@ function enemy_mortar_strike_exists(my_team) {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x152b
-// Size: 0x9d
+// Checksum 0x0, Offset: 0x1517
+// Size: 0x9a
 function enemy_switchblade_exists(my_team) {
     if (isdefined(level.remotemissileinprogress)) {
         foreach (rocket in level.rockets) {
@@ -649,8 +649,8 @@ function enemy_switchblade_exists(my_team) {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d1
-// Size: 0xda
+// Checksum 0x0, Offset: 0x15ba
+// Size: 0xd7
 function enemy_odin_assault_exists(my_team) {
     foreach (player in level.players) {
         if (!level.teambased || isdefined(player.team) && my_team != player.team) {
@@ -664,8 +664,8 @@ function enemy_odin_assault_exists(my_team) {
 
 // Namespace bots_killstreaks / scripts\mp\bots\bots_killstreaks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b4
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x169a
+// Size: 0xbc
 function get_enemy_vanguard() {
     foreach (player in level.players) {
         if (!level.teambased || isdefined(player.team) && self.team != player.team) {

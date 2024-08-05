@@ -7,7 +7,7 @@
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x59e
+// Checksum 0x0, Offset: 0x503
 // Size: 0x136
 function init() {
     if (!isdefined(level.scripted_melee)) {
@@ -31,8 +31,8 @@ function init() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6dc
-// Size: 0x17c
+// Checksum 0x0, Offset: 0x641
+// Size: 0x17a
 function function_78748799de25da5f() {
     function_b0c99390cdb7edd5();
     anims = [];
@@ -58,7 +58,7 @@ function function_78748799de25da5f() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x860
+// Checksum 0x0, Offset: 0x7c3
 // Size: 0x2c7
 function function_b0c99390cdb7edd5() {
     level.scr_animtree["scripted_melee_player_rig"] = %script_model;
@@ -93,8 +93,8 @@ function function_b0c99390cdb7edd5() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2f
-// Size: 0x8b
+// Checksum 0x0, Offset: 0xa92
+// Size: 0x8a
 function spawn_anim_model(animname, origin, angles) {
     if (!isdefined(origin)) {
         origin = (0, 0, 0);
@@ -111,7 +111,7 @@ function spawn_anim_model(animname, origin, angles) {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc3
+// Checksum 0x0, Offset: 0xb25
 // Size: 0x40
 function function_65bbb083561fa648() {
     self.scripted_melee_player_rig = spawn_anim_model("scripted_melee_player_rig", self.origin, self.angles);
@@ -120,8 +120,8 @@ function function_65bbb083561fa648() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0b
-// Size: 0x34
+// Checksum 0x0, Offset: 0xb6d
+// Size: 0x33
 function enable_victims() {
     possible_victims = getaiarray("axis");
     scripts\engine\utility::array_call(possible_victims, &function_f23f106f8976771d);
@@ -132,7 +132,7 @@ function enable_victims() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc47
+// Checksum 0x0, Offset: 0xba8
 // Size: 0x2
 function function_b3cab4bbbd2f27bf() {
     
@@ -140,7 +140,7 @@ function function_b3cab4bbbd2f27bf() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc51
+// Checksum 0x0, Offset: 0xbb2
 // Size: 0x2
 function function_53bc249de0d47b05() {
     
@@ -148,7 +148,7 @@ function function_53bc249de0d47b05() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5b
+// Checksum 0x0, Offset: 0xbbc
 // Size: 0xb
 function function_91c24157247ef2fc(guy) {
     
@@ -156,7 +156,7 @@ function function_91c24157247ef2fc(guy) {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6e
+// Checksum 0x0, Offset: 0xbcf
 // Size: 0x8
 function function_63cac0421acbe53c() {
     return rules_default();
@@ -164,7 +164,7 @@ function function_63cac0421acbe53c() {
 
 // Namespace namespace_73353db38b27e9b2 / namespace_54765065ecffdfad
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7f
+// Checksum 0x0, Offset: 0xbe0
 // Size: 0xb
 function function_5e2b19fd9204a302(bool) {
     

@@ -5,13 +5,13 @@
 
 // Namespace outofrange / scripts\cp_mp\outofrange
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc
+// Checksum 0x0, Offset: 0x180
 // Size: 0xdd
 function setupoutofrangewatcher(var_616ea41542b3d45a, var_96408b0d60660b1, var_363c1035ed04723a, var_d9ffca69374e542, minrangesq, maxrangesq, inverserange) {
-    assertex(isdefined(self.owner), "<dev string:x1c>");
+    assertex(isdefined(self.owner), "setupOutofRangeWatcher(): There is no valid owner for this ent");
     self.owner setclientomnvar("ui_out_of_range", 0);
     if (isdefined(inverserange) && inverserange == 1) {
-        assertex(isdefined(var_96408b0d60660b1) || isdefined(var_363c1035ed04723a), "<dev string:x5e>");
+        assertex(isdefined(var_96408b0d60660b1) || isdefined(var_363c1035ed04723a), "A tether point or tether ent must be defined");
     } else if (!isdefined(var_96408b0d60660b1)) {
         var_96408b0d60660b1 = var_616ea41542b3d45a.origin;
     }
@@ -30,8 +30,8 @@ function setupoutofrangewatcher(var_616ea41542b3d45a, var_96408b0d60660b1, var_3
 
 // Namespace outofrange / scripts\cp_mp\outofrange
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e1
-// Size: 0x10a
+// Checksum 0x0, Offset: 0x265
+// Size: 0x10c
 function watchdistancefromentity(var_363c1035ed04723a, var_d9ffca69374e542, minrangesq, maxrangesq, inverserange) {
     self endon("death");
     inverted = isdefined(inverserange) && inverserange == 1;
@@ -60,8 +60,8 @@ function watchdistancefromentity(var_363c1035ed04723a, var_d9ffca69374e542, minr
 
 // Namespace outofrange / scripts\cp_mp\outofrange
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f3
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x379
+// Size: 0xc3
 function watchdistancefromstaticpoint(var_96408b0d60660b1, minrangesq, maxrangesq, inverserange) {
     self endon("death");
     inverted = isdefined(inverserange) && inverserange == 1;
@@ -82,8 +82,8 @@ function watchdistancefromstaticpoint(var_96408b0d60660b1, minrangesq, maxranges
 
 // Namespace outofrange / scripts\cp_mp\outofrange
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bd
-// Size: 0x1ee
+// Checksum 0x0, Offset: 0x444
+// Size: 0x1f1
 function watchoutofrangestrength(var_96408b0d60660b1, minrangesq, maxrangesq, var_363c1035ed04723a, var_d9ffca69374e542, inverserange) {
     inverted = isdefined(inverserange) && inverserange == 1;
     while (true) {
@@ -98,7 +98,7 @@ function watchoutofrangestrength(var_96408b0d60660b1, minrangesq, maxrangesq, va
         } else {
             signalscale = minrangesq / currentdistancevalue;
         }
-        assertex(isdefined(self.owner), "<dev string:x8e>");
+        assertex(isdefined(self.owner), "watchOutOfRangeStrength(): Owner is not defined for the our of range ent");
         self.owner setclientomnvar("ui_out_of_range", signalscale);
         if (utility::iscp() && !inverted) {
             self.owner setclientomnvar("ui_out_of_range_meter", sqrt(signalscale));

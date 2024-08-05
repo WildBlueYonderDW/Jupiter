@@ -4,8 +4,8 @@
 
 // Namespace namespace_39c30f9ee41932c7 / namespace_7eb5c3a922f62367
 // Params 0, eflags: 0x5
-// Checksum 0x0, Offset: 0xad
-// Size: 0x9b
+// Checksum 0x0, Offset: 0x87
+// Size: 0x9a
 function private autoexec init() {
     character = #"hash_2a22a52b71db8b8b";
     if (!isdefined(level.fncharacter)) {
@@ -27,7 +27,7 @@ function private autoexec init() {
 
 // Namespace namespace_39c30f9ee41932c7 / namespace_7eb5c3a922f62367
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x150
+// Checksum 0x0, Offset: 0x129
 // Size: 0x99
 function main() {
     level.var_7d97144daa7995cd = undefined;
@@ -46,7 +46,7 @@ function main() {
 
 // Namespace namespace_39c30f9ee41932c7 / namespace_7eb5c3a922f62367
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f1
+// Checksum 0x0, Offset: 0x1ca
 // Size: 0x2
 function precache() {
     
@@ -54,7 +54,7 @@ function precache() {
 
 // Namespace namespace_39c30f9ee41932c7 / namespace_7eb5c3a922f62367
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fb
+// Checksum 0x0, Offset: 0x1d4
 // Size: 0x14
 function precache_sp() {
     precache();
@@ -63,7 +63,7 @@ function precache_sp() {
 
 // Namespace namespace_39c30f9ee41932c7 / namespace_7eb5c3a922f62367
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x217
+// Checksum 0x0, Offset: 0x1f0
 // Size: 0x9
 function function_8168fbf6282d398b() {
     precache();

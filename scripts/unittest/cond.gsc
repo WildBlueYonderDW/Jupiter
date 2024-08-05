@@ -4,8 +4,8 @@
 
 // Namespace unittest_cond / scripts\unittest\cond
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x867
-// Size: 0x4d1
+// Checksum 0x0, Offset: 0x6e3
+// Size: 0x4d2
 function vars() {
     x = 0;
     y = 1;
@@ -115,7 +115,7 @@ function vars() {
 
 // Namespace unittest_cond / scripts\unittest\cond
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd40
+// Checksum 0x0, Offset: 0xbbd
 // Size: 0x511
 function iftest() {
     x = 0;
@@ -304,7 +304,7 @@ function iftest() {
 
 // Namespace unittest_cond / scripts\unittest\cond
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1259
+// Checksum 0x0, Offset: 0x10d6
 // Size: 0x28
 function main() {
     test_begin("Cond");

@@ -6,10 +6,10 @@
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x113
-// Size: 0xfc
+// Checksum 0x0, Offset: 0x2bb
+// Size: 0xfb
 function createsquad(squadname, var_5346a21915702367) {
-    assertex(!isdefined(anim.squads[squadname]), "<dev string:x1c>");
+    assertex(!isdefined(anim.squads[squadname]), "createSquad attempted to create a squad with the same name as an existing squad");
     squad = spawnstruct();
     squad.squadname = squadname;
     anim.squads[squadname] = squad;
@@ -32,13 +32,13 @@ function createsquad(squadname, var_5346a21915702367) {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x218
+// Checksum 0x0, Offset: 0x3bf
 // Size: 0xf5
 function deletesquad(squadname) {
     if (squadname == "axis" || squadname == "team3" || squadname == "allies" || squadname == "neutral") {
         return;
     }
-    assertex(isdefined(anim.squads[squadname]), "<dev string:x6f>" + squadname + "<dev string:x9c>");
+    assertex(isdefined(anim.squads[squadname]), "deleteSquad attempted to delete a squad '" + squadname + "' that does not exist");
     squadid = anim.squads[squadname].squadid;
     squad = anim.squads[squadname];
     anim.squadindex[squadid] = anim.squadindex[anim.squadindex.size - 1];
@@ -50,8 +50,8 @@ function deletesquad(squadname) {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x315
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x4bc
+// Size: 0x3b
 function getsquadteam(var_5346a21915702367) {
     if (isdefined(var_5346a21915702367.team)) {
         squadteam = var_5346a21915702367.team;
@@ -63,10 +63,10 @@ function getsquadteam(var_5346a21915702367) {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35a
+// Checksum 0x0, Offset: 0x500
 // Size: 0x148
 function addtosquad(squadname) {
-    assertex(issentient(self), "<dev string:xb5>");
+    assertex(issentient(self), "Attempted to add a non-sentient member to a squad");
     if (!isdefined(squadname)) {
         if (isdefined(self.script_squadname)) {
             squadname = self.script_squadname;
@@ -100,18 +100,18 @@ function addtosquad(squadname) {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4aa
+// Checksum 0x0, Offset: 0x650
 // Size: 0xd2
 function removefromsquad(squad, squadid) {
     if (!isdefined(squad)) {
         return;
     }
-    assertex(isdefined(squadid), "<dev string:xea>");
+    assertex(isdefined(squadid), "entity squadID is undefined - cannot remove from squad");
     if (isdefined(self)) {
-        assertex(squad.members.size != 0, "<dev string:x124>");
-        assertex(squad.members[squadid] == self, "<dev string:x156>");
+        assertex(squad.members.size != 0, "Trying to remove a member from an empty squad!");
+        assertex(squad.members[squadid] == self, "Trying to remove a member from a squad but the entity doesn't match the member at this squadID!");
     } else {
-        assertex(!isdefined(squad.members[squadid]), "<dev string:x1b9>");
+        assertex(!isdefined(squad.members[squadid]), "Trying to remove a removed entity member from a squad but the index has an entity defined!");
     }
     squad.members[squadid] = undefined;
     if (isdefined(self)) {
@@ -127,7 +127,7 @@ function removefromsquad(squad, squadid) {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x584
+// Checksum 0x0, Offset: 0x72a
 // Size: 0x43
 function function_a5c82b8ba8a0c279(var_9cb951de1a571d32, true_value, false_value) {
     if (var_9cb951de1a571d32) {
@@ -145,8 +145,8 @@ function function_a5c82b8ba8a0c279(var_9cb951de1a571d32, true_value, false_value
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cf
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x775
+// Size: 0xa3
 function function_1cb4f2ef6b07869c() {
     start_index = randomint(self.members.size);
     for (i = 0; i < self.members.size; i++) {
@@ -160,8 +160,8 @@ function function_1cb4f2ef6b07869c() {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x679
-// Size: 0x78
+// Checksum 0x0, Offset: 0x821
+// Size: 0x76
 function getenemyarray() {
     array = [];
     foreach (ai in getaiarray()) {
@@ -174,7 +174,7 @@ function getenemyarray() {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fa
+// Checksum 0x0, Offset: 0x8a0
 // Size: 0x3c
 function function_48706811c593324b() {
     return isdefined(self.enemy) && isdefined(self.enemy.node) && isdefined(self.enemy.covernode);
@@ -182,7 +182,7 @@ function function_48706811c593324b() {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x73f
+// Checksum 0x0, Offset: 0x8e5
 // Size: 0x13
 function squadtracker() {
     anim endon("squad deleted " + self.squadname);
@@ -190,8 +190,8 @@ function squadtracker() {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x75a
-// Size: 0x46
+// Checksum 0x0, Offset: 0x900
+// Size: 0x45
 function memberdeathwaiter(squad, squadid) {
     self endon("removed from squad");
     attacker = self waittill("death");
@@ -203,8 +203,8 @@ function memberdeathwaiter(squad, squadid) {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a8
-// Size: 0x20f
+// Checksum 0x0, Offset: 0x94d
+// Size: 0x212
 function updateall() {
     neworigin = (0, 0, 0);
     newheading = (0, 0, 0);
@@ -254,7 +254,7 @@ function updateall() {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bf
+// Checksum 0x0, Offset: 0xb67
 // Size: 0x13
 function updatememberstates() {
     anim endon("squad deleted " + self.squadname);
@@ -262,7 +262,7 @@ function updatememberstates() {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9da
+// Checksum 0x0, Offset: 0xb82
 // Size: 0xf2
 function aiupdatecombat(timeslice) {
     if (!isdefined(self.combattime)) {
@@ -289,7 +289,7 @@ function aiupdatecombat(timeslice) {
 
 // Namespace squadmanager / namespace_fe5fbd2b56f035f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad4
+// Checksum 0x0, Offset: 0xc7c
 // Size: 0xbf
 function aiupdatesuppressed(timeslice) {
     if (!isdefined(self.suppressedtime)) {
@@ -314,13 +314,13 @@ function aiupdatesuppressed(timeslice) {
 
     // Namespace squadmanager / namespace_fe5fbd2b56f035f
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb9b
-    // Size: 0xd1
+    // Checksum 0x0, Offset: 0xd43
+    // Size: 0xce
     function function_1e0a52e0fce5e432() {
         if (getdvarint(@"hash_664a823c04104c0b") < 1) {
             return;
         }
-        anim endon("<dev string:x217>" + self.squadname);
+        anim endon("<dev string:x1c>" + self.squadname);
         while (true) {
             wait 0.05;
             function_11287c170b69b7f2(self.origin, self.forward);
@@ -335,8 +335,8 @@ function aiupdatesuppressed(timeslice) {
 
     // Namespace squadmanager / namespace_fe5fbd2b56f035f
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc74
-    // Size: 0xaa
+    // Checksum 0x0, Offset: 0xe19
+    // Size: 0xac
     function function_11287c170b69b7f2(pos, forward) {
         angles = vectortoangles(forward);
         range = 100;
@@ -350,8 +350,8 @@ function aiupdatesuppressed(timeslice) {
 
     // Namespace squadmanager / namespace_fe5fbd2b56f035f
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd26
-    // Size: 0x105
+    // Checksum 0x0, Offset: 0xecd
+    // Size: 0x10c
     function _draw_arrow(start, end, color) {
         angle = vectortoangles(end - start);
         dist = length(end - start);

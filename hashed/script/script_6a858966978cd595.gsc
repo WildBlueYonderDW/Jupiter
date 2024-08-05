@@ -7,8 +7,8 @@
 
 // Namespace bottle / namespace_97bfc19addb080f3
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x14d
+// Size: 0xcb
 function bottle_init() {
     if (scripts\engine\utility::issharedfuncdefined("bottle", "init")) {
         [[ scripts\engine\utility::getsharedfunc("bottle", "init") ]]();
@@ -27,7 +27,7 @@ function bottle_init() {
 
 // Namespace bottle / namespace_97bfc19addb080f3
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e
+// Checksum 0x0, Offset: 0x220
 // Size: 0x45
 function function_946f58c7e13e4fde(equipmentref, equipmentslot, variantid) {
     if (scripts\engine\utility::issharedfuncdefined("bottle", "onGive")) {
@@ -37,7 +37,7 @@ function function_946f58c7e13e4fde(equipmentref, equipmentslot, variantid) {
 
 // Namespace bottle / namespace_97bfc19addb080f3
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bb
+// Checksum 0x0, Offset: 0x26d
 // Size: 0x3c
 function function_6c5ffe7c9b0c2fdc(equipmentref, equipmentslot) {
     if (scripts\engine\utility::issharedfuncdefined("bottle", "onTake")) {
@@ -47,8 +47,8 @@ function function_6c5ffe7c9b0c2fdc(equipmentref, equipmentslot) {
 
 // Namespace bottle / namespace_97bfc19addb080f3
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff
-// Size: 0x157
+// Checksum 0x0, Offset: 0x2b1
+// Size: 0x15c
 function bottle_used(grenade) {
     stuckto, hitpart, null, hitvelocity, position, hitnormal = grenade waittill("missile_stuck");
     /#
@@ -78,7 +78,7 @@ function bottle_used(grenade) {
 
 // Namespace bottle / namespace_97bfc19addb080f3
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x45e
+// Checksum 0x0, Offset: 0x415
 // Size: 0x70
 function function_a32bb7bb61372225(ai, position, hitpart, hitvelocity) {
     if (isdefined(ai.var_879faed8e3a3276f)) {
@@ -94,7 +94,7 @@ function function_a32bb7bb61372225(ai, position, hitpart, hitvelocity) {
 
     // Namespace bottle / namespace_97bfc19addb080f3
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4d6
+    // Checksum 0x0, Offset: 0x48d
     // Size: 0x14
     function function_402e63d965a03b3c() {
         return getdvarint(@"hash_600f7a3322505cf2");

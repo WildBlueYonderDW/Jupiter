@@ -17,7 +17,7 @@
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x226
+// Checksum 0x0, Offset: 0x1b2
 // Size: 0x34
 function soldier_init_common() {
     scripts\common\cap::init_cap();
@@ -28,8 +28,8 @@ function soldier_init_common() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x262
-// Size: 0x199
+// Checksum 0x0, Offset: 0x1ee
+// Size: 0x1a5
 function function_33ef051afbf024e2(guy) {
     points = [];
     forward = anglestoforward(self.angles);
@@ -59,8 +59,8 @@ function function_33ef051afbf024e2(guy) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x404
-// Size: 0x5c7
+// Checksum 0x0, Offset: 0x39c
+// Size: 0x5d9
 function vehiclejump(taskid) {
     if (!getdvarint(@"hash_18f07c17515921ea")) {
         return anim.failure;
@@ -128,7 +128,7 @@ function vehiclejump(taskid) {
     jumpdata.prevvehicle = vehicle;
     points = player_vehicle function_33ef051afbf024e2(self);
     var_195256e3fcc08d9a = 99999999;
-    foreach (index, point in points) {
+    foreach (point in points) {
         var_c5675affb3e31d81 = distancesquared(point, self.origin);
         if (var_c5675affb3e31d81 <= 57600) {
             jumpdata.index = index;
@@ -167,8 +167,8 @@ function vehiclejump(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d4
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x97e
+// Size: 0x8b
 function function_a38ad5564fcafc54(taskid) {
     vehicle = self._blackboard.currentvehicle;
     if (!isdefined(vehicle)) {
@@ -184,8 +184,8 @@ function function_a38ad5564fcafc54(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa67
-// Size: 0x11e
+// Checksum 0x0, Offset: 0xa12
+// Size: 0x120
 function updateeveryframe_noncombat(taskid) {
     bb_requestweapon(weaponclass(self.primaryweapon));
     whizbyevent = asm_getephemeraleventdata("ai_notify", "bulletwhizby");
@@ -209,7 +209,7 @@ function updateeveryframe_noncombat(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8e
+// Checksum 0x0, Offset: 0xb3b
 // Size: 0x1a
 function shouldbefrantic() {
     if (isdefined(self.frantic)) {
@@ -220,8 +220,8 @@ function shouldbefrantic() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb1
-// Size: 0x4b
+// Checksum 0x0, Offset: 0xb5e
+// Size: 0x4a
 function hasammoinclip() {
     turret = getusedturret();
     if (isdefined(turret)) {
@@ -238,7 +238,7 @@ function hasammoinclip() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc05
+// Checksum 0x0, Offset: 0xbb1
 // Size: 0x30
 function islowonammo(task, params) {
     if (scripts\anim\utility_common::needtoreload(params)) {
@@ -249,7 +249,7 @@ function islowonammo(task, params) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3e
+// Checksum 0x0, Offset: 0xbea
 // Size: 0x65
 function withindistancetoenemy(task, params) {
     if (!isdefined(self.enemy)) {
@@ -263,8 +263,8 @@ function withindistancetoenemy(task, params) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcac
-// Size: 0x64
+// Checksum 0x0, Offset: 0xc58
+// Size: 0x63
 function mayshoot(task) {
     if (!isdefined(self.weapon)) {
         return anim.failure;
@@ -283,7 +283,7 @@ function mayshoot(task) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd19
+// Checksum 0x0, Offset: 0xcc4
 // Size: 0x4b
 function updatelooktarget(taskid) {
     if (!isdefined(self.looktarget) || self.looktarget != self.enemy) {
@@ -294,7 +294,7 @@ function updatelooktarget(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd6d
+// Checksum 0x0, Offset: 0xd18
 // Size: 0x17
 function shoot_clearconvergence() {
     self._blackboard.shootparams_bconvergeontarget = 0;
@@ -302,7 +302,7 @@ function shoot_clearconvergence() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8c
+// Checksum 0x0, Offset: 0xd37
 // Size: 0x18
 function shoot_enableconvergence() {
     self._blackboard.shootparams_bconvergeontarget = 1;
@@ -310,7 +310,7 @@ function shoot_enableconvergence() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdac
+// Checksum 0x0, Offset: 0xd57
 // Size: 0x16
 function isaimedataimtarget() {
     return isdefined(self.var_a709fbd9fea148f6) && self aimedataimtarget();
@@ -318,7 +318,7 @@ function isaimedataimtarget() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdcb
+// Checksum 0x0, Offset: 0xd76
 // Size: 0x38
 function hasatleastammo(threshold) {
     if (isnullweapon(self.weapon)) {
@@ -329,8 +329,8 @@ function hasatleastammo(threshold) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0c
-// Size: 0x4f
+// Checksum 0x0, Offset: 0xdb7
+// Size: 0x4e
 function reload_cheatammo() {
     clipsize = weaponclipsize(self.weapon);
     self.bulletsinclip = int(clipsize * 0.5);
@@ -339,7 +339,7 @@ function reload_cheatammo() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe63
+// Checksum 0x0, Offset: 0xe0d
 // Size: 0x2f
 function shouldbeajerk() {
     if (!isdefined(level.gameskill)) {
@@ -350,7 +350,7 @@ function shouldbeajerk() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9b
+// Checksum 0x0, Offset: 0xe45
 // Size: 0x32
 function shoulddosemiforvariety(distancesq) {
     choice = randomfloat(1);
@@ -360,7 +360,7 @@ function shoulddosemiforvariety(distancesq) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xed6
+// Checksum 0x0, Offset: 0xe80
 // Size: 0x3d
 function shoulddosemiprobabilityline(distancetotarget) {
     if (distancetotarget < 2.56e+06) {
@@ -371,7 +371,7 @@ function shoulddosemiprobabilityline(distancetotarget) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1c
+// Checksum 0x0, Offset: 0xec6
 // Size: 0x1b
 function getusedturret() {
     if (isdefined(self.fngetusedturret)) {
@@ -381,7 +381,7 @@ function getusedturret() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3f
+// Checksum 0x0, Offset: 0xee9
 // Size: 0xc9
 function shouldshoot() {
     if (!self aimayshoot()) {
@@ -398,7 +398,7 @@ function shouldshoot() {
     if (self function_53fb16fcb6043bbc()) {
         /#
             if (getdvarint(@"hash_3493aa8adc34457e", 0)) {
-                print3d(self.origin - (0, 0, 12), "<dev string:x29>", (1, 0, 0), 1, 0.75);
+                print3d(self.origin - (0, 0, 12), "<dev string:x26>", (1, 0, 0), 1, 0.75);
             }
         #/
         return false;
@@ -408,8 +408,8 @@ function shouldshoot() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1011
-// Size: 0x9b
+// Checksum 0x0, Offset: 0xfbb
+// Size: 0x9a
 function calcgoodshootpos() {
     if (self cansee(self.enemy)) {
         if (self canshootenemy()) {
@@ -420,7 +420,7 @@ function calcgoodshootpos() {
     var_9578a7ed2d4e36ed = cansuppressenemy();
     /#
         if (!var_9578a7ed2d4e36ed && getdvarint(@"hash_3493aa8adc34457e", 0)) {
-            print3d(self.origin - (0, 0, 12), "<dev string:x42>", (1, 0, 0), 1, 0.75);
+            print3d(self.origin - (0, 0, 12), "<dev string:x3c>", (1, 0, 0), 1, 0.75);
         }
     #/
     return var_9578a7ed2d4e36ed;
@@ -428,8 +428,8 @@ function calcgoodshootpos() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b5
-// Size: 0x285
+// Checksum 0x0, Offset: 0x105e
+// Size: 0x288
 function isenemyinlowcover(taskid) {
     if (!isdefined(self.enemy) || !issentient(self.enemy)) {
         return anim.failure;
@@ -487,7 +487,7 @@ function isenemyinlowcover(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1343
+// Checksum 0x0, Offset: 0x12ef
 // Size: 0x9c
 function valid_reaction_sound(npcid) {
     switch (npcid) {
@@ -509,7 +509,7 @@ function valid_reaction_sound(npcid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e8
+// Checksum 0x0, Offset: 0x1394
 // Size: 0x28
 function turretrequested(task) {
     if (isdefined(bb_getrequestedturret())) {
@@ -520,7 +520,7 @@ function turretrequested(task) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1419
+// Checksum 0x0, Offset: 0x13c5
 // Size: 0xae
 function ifshoulddosmartobject(taskid) {
     smartobj = bb_getrequestedsmartobject();
@@ -542,7 +542,7 @@ function ifshoulddosmartobject(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d0
+// Checksum 0x0, Offset: 0x147c
 // Size: 0x53
 function dosmartobject_init(taskid) {
     bb_requestplaysmartobject();
@@ -555,8 +555,8 @@ function dosmartobject_init(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x152b
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x14d7
+// Size: 0x4a
 function dosmartobject(taskid) {
     if (self asmephemeraleventfired("smartobject", "finished")) {
         smartobj = bb_getrequestedsmartobject();
@@ -568,7 +568,7 @@ function dosmartobject(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x157f
+// Checksum 0x0, Offset: 0x152a
 // Size: 0x4b
 function dosmartobjectterminate(taskid) {
     scripts\smartobjects\utility::clearsmartobject(bb_getrequestedsmartobject());
@@ -578,8 +578,8 @@ function dosmartobjectterminate(taskid) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d2
-// Size: 0x19d
+// Checksum 0x0, Offset: 0x157d
+// Size: 0x19b
 function low_cover_combat_areas() {
     if (istrue(level.low_cover_combat_setup)) {
         return;
@@ -617,8 +617,8 @@ function low_cover_combat_areas() {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1777
-// Size: 0x112
+// Checksum 0x0, Offset: 0x1720
+// Size: 0x111
 function player_under_low_cover_monitor(vol) {
     self endon("left_low_cover");
     self endon("death");
@@ -645,8 +645,8 @@ function player_under_low_cover_monitor(vol) {
 
 // Namespace combat / scripts\aitypes\combat
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1891
-// Size: 0x182
+// Checksum 0x0, Offset: 0x1839
+// Size: 0x18e
 function transfer_damage_to_player(vol) {
     self endon("left_low_cover");
     self endon("death");

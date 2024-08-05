@@ -5,7 +5,7 @@
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x602
+// Checksum 0x0, Offset: 0x519
 // Size: 0xe
 function add() {
     test_print("add");
@@ -13,7 +13,7 @@ function add() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x618
+// Checksum 0x0, Offset: 0x52f
 // Size: 0x2
 function patch_self_check() {
     
@@ -21,7 +21,7 @@ function patch_self_check() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x622
+// Checksum 0x0, Offset: 0x539
 // Size: 0xd
 function meth_patch() {
     self.value = 1;
@@ -29,8 +29,8 @@ function meth_patch() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x637
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x54e
+// Size: 0x39
 function meth() {
     s = spawnstruct();
     s meth_patch();
@@ -40,7 +40,7 @@ function meth() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x679
+// Checksum 0x0, Offset: 0x58f
 // Size: 0x3
 function func_patch() {
     return false;
@@ -48,8 +48,8 @@ function func_patch() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x685
-// Size: 0x22
+// Checksum 0x0, Offset: 0x59b
+// Size: 0x21
 function func() {
     x = func_patch();
     test_print("func: " + x);
@@ -57,7 +57,7 @@ function func() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6af
+// Checksum 0x0, Offset: 0x5c4
 // Size: 0x3b
 function vars_print(s) {
     test_print("s.active: " + s.active);
@@ -66,7 +66,7 @@ function vars_print(s) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f2
+// Checksum 0x0, Offset: 0x607
 // Size: 0x2b
 function vars_update(s) {
     test_print("vars_update");
@@ -76,8 +76,8 @@ function vars_update(s) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x725
-// Size: 0x62
+// Checksum 0x0, Offset: 0x63a
+// Size: 0x61
 function vars() {
     s = spawnstruct();
     s.active = 1;
@@ -91,7 +91,7 @@ function vars() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x78f
+// Checksum 0x0, Offset: 0x6a3
 // Size: 0xe
 function func_thread() {
     test_print("func_thread");
@@ -99,8 +99,8 @@ function func_thread() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a5
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x6b9
+// Size: 0x6c
 function thread_wait_patch(deep) {
     x = 0;
     test_print("thread_wait_patch:(" + x + "): " + deep);
@@ -116,7 +116,7 @@ function thread_wait_patch(deep) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x81a
+// Checksum 0x0, Offset: 0x72d
 // Size: 0x2f
 function thread_wait_native(deep) {
     test_print("thread_wait_native: " + deep);
@@ -126,8 +126,8 @@ function thread_wait_native(deep) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x851
-// Size: 0x30
+// Checksum 0x0, Offset: 0x764
+// Size: 0x2f
 function thread_wait_local() {
     x = 0;
     test_print("thread_wait_local");
@@ -137,7 +137,7 @@ function thread_wait_local() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x889
+// Checksum 0x0, Offset: 0x79b
 // Size: 0x68
 function thread_wait(ignorelocal) {
     test_print("thread_wait");
@@ -159,7 +159,7 @@ function thread_wait(ignorelocal) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f9
+// Checksum 0x0, Offset: 0x80b
 // Size: 0xf
 function native_wait() {
     test_print("native_wait");
@@ -168,7 +168,7 @@ function native_wait() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x910
+// Checksum 0x0, Offset: 0x822
 // Size: 0x3
 function patch_wait_frameend() {
     waittillframeend();
@@ -176,7 +176,7 @@ function patch_wait_frameend() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91b
+// Checksum 0x0, Offset: 0x82d
 // Size: 0x22
 function patch_wait() {
     test_print("patch_wait: start");
@@ -187,7 +187,7 @@ function patch_wait() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x945
+// Checksum 0x0, Offset: 0x857
 // Size: 0x1d
 function define() {
     test_print("define: int: " + 1 + " float: " + 2.2);
@@ -195,7 +195,7 @@ function define() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x96a
+// Checksum 0x0, Offset: 0x87c
 // Size: 0xe
 function f1() {
     test_print("fp1");
@@ -203,7 +203,7 @@ function f1() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x980
+// Checksum 0x0, Offset: 0x892
 // Size: 0x14
 function f2(tp) {
     [[ tp ]]("fp2");
@@ -211,7 +211,7 @@ function f2(tp) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x99c
+// Checksum 0x0, Offset: 0x8ae
 // Size: 0x2e
 function func_pointer() {
     fp1 = &f1;
@@ -222,7 +222,7 @@ function func_pointer() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d2
+// Checksum 0x0, Offset: 0x8e4
 // Size: 0x9
 function far() {
     scripts\unittest\patch_far::patch_far();
@@ -230,8 +230,8 @@ function far() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e3
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x8f5
+// Size: 0x3c
 function e5(t, n) {
     test_print("e5 start: " + t);
     f = 6;
@@ -240,8 +240,8 @@ function e5(t, n) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa28
-// Size: 0x46
+// Checksum 0x0, Offset: 0x939
+// Size: 0x45
 function e4(t, n) {
     test_print("e4 start: " + t);
     e = 5;
@@ -251,8 +251,8 @@ function e4(t, n) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa76
-// Size: 0x46
+// Checksum 0x0, Offset: 0x986
+// Size: 0x45
 function e3(t, n) {
     test_print("e3 start: " + t);
     d = 4;
@@ -262,8 +262,8 @@ function e3(t, n) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xac4
-// Size: 0x46
+// Checksum 0x0, Offset: 0x9d3
+// Size: 0x45
 function e2(t, n) {
     test_print("e2 start: " + t);
     c = 3;
@@ -273,8 +273,8 @@ function e2(t, n) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb12
-// Size: 0x46
+// Checksum 0x0, Offset: 0xa20
+// Size: 0x45
 function e1(t, n) {
     test_print("e1 start: " + t);
     b = 2;
@@ -284,8 +284,8 @@ function e1(t, n) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb60
-// Size: 0x52
+// Checksum 0x0, Offset: 0xa6d
+// Size: 0x51
 function endontest_endon(t, n) {
     test = "endontest_" + t;
     test_print(test + "_start: " + n);
@@ -296,7 +296,7 @@ function endontest_endon(t, n) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbba
+// Checksum 0x0, Offset: 0xac6
 // Size: 0x2
 function endontest() {
     
@@ -304,7 +304,7 @@ function endontest() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc4
+// Checksum 0x0, Offset: 0xad0
 // Size: 0x2a
 function anim_test() {
     foo = multiplayer%mp_stand_reload;
@@ -313,7 +313,7 @@ function anim_test() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf6
+// Checksum 0x0, Offset: 0xb02
 // Size: 0xe
 function stack_patch_waittill_leaf() {
     test_print("stack_patch_waittill_leaf");
@@ -321,7 +321,7 @@ function stack_patch_waittill_leaf() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0c
+// Checksum 0x0, Offset: 0xb18
 // Size: 0x15
 function stack_patch_waittill_node() {
     test_print("stack_patch_waittill_node");
@@ -330,7 +330,7 @@ function stack_patch_waittill_node() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc29
+// Checksum 0x0, Offset: 0xb35
 // Size: 0x15
 function stack_patch_waittill_stack() {
     test_print("stack_patch_waittill_stack");
@@ -339,7 +339,7 @@ function stack_patch_waittill_stack() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc46
+// Checksum 0x0, Offset: 0xb52
 // Size: 0x1c
 function stack_patch_waittill_root() {
     test_print("stack_patch_waittill_root");
@@ -349,7 +349,7 @@ function stack_patch_waittill_root() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6a
+// Checksum 0x0, Offset: 0xb76
 // Size: 0x1a
 function stack_patch_waittill_context_patch() {
     test_print("stack_patch_waittill_context_patch");
@@ -358,7 +358,7 @@ function stack_patch_waittill_context_patch() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8c
+// Checksum 0x0, Offset: 0xb98
 // Size: 0x4f
 function stack_patch_waittill_context(s) {
     test_print("stack_patch_waittill_context: start: " + s.value);
@@ -370,7 +370,7 @@ function stack_patch_waittill_context(s) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce3
+// Checksum 0x0, Offset: 0xbef
 // Size: 0x1a
 function stack_patch_waittill_context_far_patch() {
     test_print("stack_patch_waittill_context_far_patch");
@@ -379,7 +379,7 @@ function stack_patch_waittill_context_far_patch() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd05
+// Checksum 0x0, Offset: 0xc11
 // Size: 0x4f
 function stack_patch_waittill_context_far(s) {
     test_print("stack_patch_waittill_context_far: start: " + s.value);
@@ -391,7 +391,7 @@ function stack_patch_waittill_context_far(s) {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5c
+// Checksum 0x0, Offset: 0xc68
 // Size: 0x22
 function stack_patch_thread() {
     test_print("stack_patch_thread");
@@ -401,7 +401,7 @@ function stack_patch_thread() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd86
+// Checksum 0x0, Offset: 0xc92
 // Size: 0x21
 function stack_patch_thread_leaf() {
     test_print("stack_patch_thread_leaf");
@@ -411,7 +411,7 @@ function stack_patch_thread_leaf() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdaf
+// Checksum 0x0, Offset: 0xcbb
 // Size: 0x1a
 function stack_patch_thread_node() {
     test_print("stack_patch_thread_node");
@@ -420,7 +420,7 @@ function stack_patch_thread_node() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd1
+// Checksum 0x0, Offset: 0xcdd
 // Size: 0x21
 function stack_patch_thread_root() {
     test_print("stack_patch_thread_root");
@@ -430,8 +430,8 @@ function stack_patch_thread_root() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfa
-// Size: 0x62
+// Checksum 0x0, Offset: 0xd06
+// Size: 0x61
 function stack_patch() {
     test_print("stack_patch");
     thread stack_patch_waittill_root();
@@ -447,8 +447,8 @@ function stack_patch() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe64
-// Size: 0x2c
+// Checksum 0x0, Offset: 0xd6f
+// Size: 0x2b
 function builtin_patch() {
     x = getdvarint(@"hash_f66df8c14aff0548", 1);
     test_print("builtin_patch: " + x);
@@ -456,7 +456,7 @@ function builtin_patch() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe98
+// Checksum 0x0, Offset: 0xda2
 // Size: 0x2
 function sre() {
     
@@ -464,8 +464,8 @@ function sre() {
 
 // Namespace unittest_patch / scripts\unittest\patch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xea2
-// Size: 0x96
+// Checksum 0x0, Offset: 0xdac
+// Size: 0x95
 function main() {
     test_begin("Patch");
     s = spawnstruct();

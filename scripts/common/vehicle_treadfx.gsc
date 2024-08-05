@@ -5,7 +5,7 @@
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa16
+// Checksum 0x0, Offset: 0x8e8
 // Size: 0x4ec
 function main(classname) {
     if (!issp()) {
@@ -14,7 +14,7 @@ function main(classname) {
     if (!isdefined(classname)) {
         return;
     }
-    println("<dev string:x1c>" + classname + "<dev string:x24>");
+    println("<dev string:x1c>" + classname + "<dev string:x21>");
     switch (classname) {
     case #"hash_71008a9338b0673b":
     case #"hash_3f2c0e6c7a64af09": 
@@ -115,7 +115,7 @@ function main(classname) {
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0a
+// Checksum 0x0, Offset: 0xddc
 // Size: 0x25
 function setvehiclefx(classname, material, fx) {
     scripts\common\vehicle_build::set_vehicle_effect(classname, material, fx);
@@ -123,8 +123,8 @@ function setvehiclefx(classname, material, fx) {
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf37
-// Size: 0x7e
+// Checksum 0x0, Offset: 0xe09
+// Size: 0x7c
 function setallvehiclefx(classname, fx) {
     types = get_trace_types();
     setvehiclefx(classname, "none");
@@ -135,8 +135,8 @@ function setallvehiclefx(classname, fx) {
 
 // Namespace vehicle_treadfx / scripts\common\vehicle_treadfx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbd
-// Size: 0x146
+// Checksum 0x0, Offset: 0xe8d
+// Size: 0x145
 function get_trace_types() {
     types = [];
     types[types.size] = "brick";

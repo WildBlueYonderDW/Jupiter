@@ -6,7 +6,7 @@
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x226
+// Checksum 0x0, Offset: 0x1bb
 // Size: 0xf3
 function getfunction(funcid) {
     switch (funcid) {
@@ -40,7 +40,7 @@ function getfunction(funcid) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x322
+// Checksum 0x0, Offset: 0x2b7
 // Size: 0x23
 function function_3dbd361f74b442f9(interactionid) {
     self.var_509c25e93045428d = 0;
@@ -49,7 +49,7 @@ function function_3dbd361f74b442f9(interactionid) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34d
+// Checksum 0x0, Offset: 0x2e2
 // Size: 0x84
 function function_a157fbbc31d9eb1a(interactionid) {
     self.var_7916f201efb9963f = undefined;
@@ -64,7 +64,7 @@ function function_a157fbbc31d9eb1a(interactionid) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d9
+// Checksum 0x0, Offset: 0x36e
 // Size: 0x1c
 function function_b8a54ef5dc160380(receiver, info, origin) {
     return false;
@@ -72,7 +72,7 @@ function function_b8a54ef5dc160380(receiver, info, origin) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fe
+// Checksum 0x0, Offset: 0x393
 // Size: 0x79
 function function_85df049e80f30a6f(statename, params) {
     role = "guy";
@@ -89,8 +89,8 @@ function function_85df049e80f30a6f(statename, params) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x47f
-// Size: 0x145
+// Checksum 0x0, Offset: 0x414
+// Size: 0x14d
 function calcstartorigin(statename, role) {
     capinfo = function_a0cccf0b4c466b2c(self, role);
     animset = capinfo.animation;
@@ -115,7 +115,7 @@ function calcstartorigin(statename, role) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cd
+// Checksum 0x0, Offset: 0x56a
 // Size: 0x82
 function function_3c2bc94b2abf6fad(asmname, statename, params) {
     animid = asm_getanim(asmname, statename);
@@ -130,7 +130,7 @@ function function_3c2bc94b2abf6fad(asmname, statename, params) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x657
+// Checksum 0x0, Offset: 0x5f4
 // Size: 0x15
 function filtershouldreact(params) {
     return isdefined(self.var_fd01ad49b4e38ae8);
@@ -138,8 +138,8 @@ function filtershouldreact(params) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x675
-// Size: 0xac
+// Checksum 0x0, Offset: 0x612
+// Size: 0xab
 function function_d8786f820807c4f(statename, params) {
     newstate = "custom_patrol_lookaround_passthrough";
     if (!isdefined(params[0])) {
@@ -160,7 +160,7 @@ function function_d8786f820807c4f(statename, params) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x729
+// Checksum 0x0, Offset: 0x6c5
 // Size: 0x39
 function function_e28c16df7b2f92e0(statename, params) {
     return self.bisincombat || isdefined(self.stealth) && self.var_fe5ebefa740c7106 != 0;
@@ -168,8 +168,8 @@ function function_e28c16df7b2f92e0(statename, params) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x76b
-// Size: 0x18c
+// Checksum 0x0, Offset: 0x707
+// Size: 0x18e
 function function_a8367856a2c4316f() {
     if (!isdefined(self._blackboard.idlenode)) {
         return (self.var_509c25e93045428d * 1000 + gettime());
@@ -194,8 +194,8 @@ function function_a8367856a2c4316f() {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x900
-// Size: 0xec
+// Checksum 0x0, Offset: 0x89e
+// Size: 0xeb
 function function_e73bcb6e8160c464(asmname, statename, params) {
     if (isdefined(self._blackboard.idlenode) && isdefined(self._blackboard.idlenode.repeat_interaction)) {
         if (istrue(int(self._blackboard.idlenode.repeat_interaction))) {
@@ -219,7 +219,7 @@ function function_e73bcb6e8160c464(asmname, statename, params) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f4
+// Checksum 0x0, Offset: 0x991
 // Size: 0x44
 function function_d77b520cefcefa50(statename, params) {
     return isdefined(self._blackboard.var_7460b96395361857) && self._blackboard.var_7460b96395361857 == "looping";
@@ -227,8 +227,8 @@ function function_d77b520cefcefa50(statename, params) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa41
-// Size: 0x50
+// Checksum 0x0, Offset: 0x9de
+// Size: 0x51
 function function_8f98221d71dafe6e(param) {
     statename = "react";
     alias = function_6d173209b1c25616();
@@ -241,8 +241,8 @@ function function_8f98221d71dafe6e(param) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9a
-// Size: 0xb1
+// Checksum 0x0, Offset: 0xa38
+// Size: 0xb4
 function function_6d173209b1c25616() {
     reactyaw = 0;
     if (isdefined(self.var_1c9ed4a46d13edc9)) {
@@ -263,8 +263,8 @@ function function_6d173209b1c25616() {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb54
-// Size: 0x54
+// Checksum 0x0, Offset: 0xaf5
+// Size: 0x53
 function function_de2aa7eb339a432c(angle) {
     angle = angleclamp180(angle);
     if (angle > 120 || angle < -120) {
@@ -281,8 +281,8 @@ function function_de2aa7eb339a432c(angle) {
 
 // Namespace solo_interaction / namespace_f8f0d25399aa59e9
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb1
-// Size: 0x40
+// Checksum 0x0, Offset: 0xb51
+// Size: 0x3f
 function function_ee80e8684c598cae(asmname, statename, tostatename, params) {
     aliases = archetypegetaliases(self.animsetname, tostatename);
     return isdefined(aliases);

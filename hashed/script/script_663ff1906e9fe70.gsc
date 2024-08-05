@@ -6,8 +6,8 @@
 
 // Namespace hud_util / namespace_b8228ec48134f64
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x9a
+// Size: 0xd1
 function create_client_overlay(shader_name, start_alpha, player) {
     if (isdefined(player)) {
         overlay = newclienthudelem(player);
@@ -29,8 +29,8 @@ function create_client_overlay(shader_name, start_alpha, player) {
 
 // Namespace hud_util / namespace_b8228ec48134f64
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a1
-// Size: 0x63
+// Checksum 0x0, Offset: 0x174
+// Size: 0x62
 function fade_in(time, shader) {
     if (istrue(level.missionfailed)) {
         return;
@@ -50,7 +50,7 @@ function fade_in(time, shader) {
 
 // Namespace hud_util / namespace_b8228ec48134f64
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c
+// Checksum 0x0, Offset: 0x1de
 // Size: 0x1e
 function get_optional_overlay(shader) {
     if (!isdefined(shader)) {
@@ -61,8 +61,8 @@ function get_optional_overlay(shader) {
 
 // Namespace hud_util / namespace_b8228ec48134f64
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x233
-// Size: 0x56
+// Checksum 0x0, Offset: 0x205
+// Size: 0x55
 function fade_out(time, shader) {
     if (!isdefined(time)) {
         time = 0.3;
@@ -79,8 +79,8 @@ function fade_out(time, shader) {
 
 // Namespace hud_util / namespace_b8228ec48134f64
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x291
-// Size: 0xb3
+// Checksum 0x0, Offset: 0x262
+// Size: 0xb2
 function get_overlay(shader) {
     if (isplayer(self)) {
         guy = self;

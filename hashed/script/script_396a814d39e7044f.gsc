@@ -4,8 +4,8 @@
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xe4
-// Size: 0x4b
+// Checksum 0x0, Offset: 0xb2
+// Size: 0x4a
 function private waitfornotify(waitobject, promptid) {
     waitobject endon("end_wait");
     result = undefined;
@@ -17,7 +17,7 @@ function private waitfornotify(waitobject, promptid) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x137
+// Checksum 0x0, Offset: 0x104
 // Size: 0x25
 function private waitfortimeout(waitobject, timeout) {
     waitobject endon("end_wait");
@@ -27,7 +27,7 @@ function private waitfortimeout(waitobject, timeout) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x164
+// Checksum 0x0, Offset: 0x131
 // Size: 0x4b
 function private waitforconfirmation(promptid, timeout) {
     waitobject = spawnstruct();
@@ -39,7 +39,7 @@ function private waitforconfirmation(promptid, timeout) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b8
+// Checksum 0x0, Offset: 0x185
 // Size: 0x4a
 function private function_cf06da592218629(soundtype) {
     assert(isdefined(self) && isplayer(self));
@@ -50,8 +50,8 @@ function private function_cf06da592218629(soundtype) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x20a
-// Size: 0x44
+// Checksum 0x0, Offset: 0x1d7
+// Size: 0x43
 function private function_3fc6bd204b38a2f5() {
     if (!isdefined(level.var_a7073b092595736e)) {
         level.var_a7073b092595736e = 0;
@@ -63,7 +63,7 @@ function private function_3fc6bd204b38a2f5() {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x257
+// Checksum 0x0, Offset: 0x223
 // Size: 0x13
 function private function_b8da10afdee4ecb6() {
     return getdvarint(@"hash_923b34c4661bf18d", 500);
@@ -71,7 +71,7 @@ function private function_b8da10afdee4ecb6() {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x273
+// Checksum 0x0, Offset: 0x23f
 // Size: 0x35
 function private getservertimeout(clienttimeout) {
     var_bd28f5a584bf2110 = 1000;
@@ -81,8 +81,8 @@ function private getservertimeout(clienttimeout) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b1
-// Size: 0x36
+// Checksum 0x0, Offset: 0x27d
+// Size: 0x35
 function private function_81e08a62a6b5c2fc(timeout) {
     defaulttimeout = 5000;
     if (isdefined(timeout)) {
@@ -93,7 +93,7 @@ function private function_81e08a62a6b5c2fc(timeout) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f0
+// Checksum 0x0, Offset: 0x2bb
 // Size: 0x22
 function private function_48c352e46a0677d1(prompttype) {
     if (prompttype == 5 || prompttype == 6) {
@@ -104,7 +104,7 @@ function private function_48c352e46a0677d1(prompttype) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x31a
+// Checksum 0x0, Offset: 0x2e5
 // Size: 0x16
 function private function_5fe394c76f3bb67e(prompttype) {
     if (prompttype == 2) {
@@ -115,7 +115,7 @@ function private function_5fe394c76f3bb67e(prompttype) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x339
+// Checksum 0x0, Offset: 0x304
 // Size: 0x13
 function function_7ba31cb6b21c346f() {
     return istrue(getdvarint(@"hash_7023569777f7f76d", 1));
@@ -123,7 +123,7 @@ function function_7ba31cb6b21c346f() {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x355
+// Checksum 0x0, Offset: 0x320
 // Size: 0x21
 function function_9e4834f9ae737884() {
     assert(isdefined(self) && isplayer(self));
@@ -132,7 +132,7 @@ function function_9e4834f9ae737884() {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37f
+// Checksum 0x0, Offset: 0x34a
 // Size: 0x44
 function function_74c8eb2aaf9f5d14(prompttype) {
     assert(isdefined(self) && isplayer(self));
@@ -144,8 +144,8 @@ function function_74c8eb2aaf9f5d14(prompttype) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cc
-// Size: 0x20c
+// Checksum 0x0, Offset: 0x397
+// Size: 0x210
 function function_36edf91561322753(prompttype, timeout, callback) {
     assert(isdefined(self) && isplayer(self));
     if (!function_7ba31cb6b21c346f()) {
@@ -188,7 +188,7 @@ function function_36edf91561322753(prompttype, timeout, callback) {
 
 // Namespace quickprompt / namespace_314d49cda6272573
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e0
+// Checksum 0x0, Offset: 0x5af
 // Size: 0x63
 function function_24a08f8a03be8244(var_8f23c9dc9608a79f) {
     if (isdefined(self.quickprompt)) {

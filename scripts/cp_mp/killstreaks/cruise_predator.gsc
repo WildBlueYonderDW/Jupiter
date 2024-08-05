@@ -18,7 +18,7 @@
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f9
+// Checksum 0x0, Offset: 0x8b5
 // Size: 0x58
 function init() {
     if (issharedfuncdefined("cruise_predator", "init")) {
@@ -34,7 +34,7 @@ function init() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa59
+// Checksum 0x0, Offset: 0x915
 // Size: 0x28
 function function_eb11a8dfbd2505a0() {
     registervisibilityomnvarforkillstreak("cruise_predator", "invisible", 7);
@@ -43,7 +43,7 @@ function function_eb11a8dfbd2505a0() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa89
+// Checksum 0x0, Offset: 0x945
 // Size: 0x60
 function function_10865a43b7b1243e() {
     val::group_register("cruisePredator", ["allow_movement", "allow_jump", "fire", "weapon_switch", "melee", "usability", "shellshock", "offhand_weapons", "killstreaks"]);
@@ -51,7 +51,7 @@ function function_10865a43b7b1243e() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf1
+// Checksum 0x0, Offset: 0x9ad
 // Size: 0x2
 function function_ce236b9143b76125() {
     
@@ -59,7 +59,7 @@ function function_ce236b9143b76125() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xafb
+// Checksum 0x0, Offset: 0x9b7
 // Size: 0x28
 function function_f0b48909aba12866() {
     if (issharedfuncdefined("cruise_predator", "registerVO")) {
@@ -69,7 +69,7 @@ function function_f0b48909aba12866() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2b
+// Checksum 0x0, Offset: 0x9e7
 // Size: 0x1c
 function function_f06e9c09ab54c2bf() {
     level._effect["predator_pod_break"] = loadfx("vfx/iw8_mp/killstreak/vfx_cruise_predator_explosion.vfx");
@@ -77,7 +77,7 @@ function function_f06e9c09ab54c2bf() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4f
+// Checksum 0x0, Offset: 0xa0b
 // Size: 0x59
 function function_328fd4c30cafcce0() {
     if (isdefined(level.var_638c653eda9d1cd3)) {
@@ -91,7 +91,7 @@ function function_328fd4c30cafcce0() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb0
+// Checksum 0x0, Offset: 0xa6c
 // Size: 0xd
 function weapongivencruisepredator(streakinfo) {
     return true;
@@ -99,8 +99,8 @@ function weapongivencruisepredator(streakinfo) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc6
-// Size: 0x21
+// Checksum 0x0, Offset: 0xa82
+// Size: 0x20
 function tryusecruisepredator() {
     streakinfo = createstreakinfo("cruise_predator", self);
     return tryusecruisepredatorfromstruct(streakinfo);
@@ -108,10 +108,9 @@ function tryusecruisepredator() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf0
-// Size: 0xfd
+// Checksum 0x0, Offset: 0xaab
+// Size: 0xf6
 function tryusecruisepredatorfromstruct(streakinfo) {
-    self notify("using_remote");
     if (!scripts\cp_mp\vehicles\vehicle_tracking::reservevehicle()) {
         return false;
     }
@@ -152,8 +151,8 @@ function tryusecruisepredatorfromstruct(streakinfo) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf6
-// Size: 0x512
+// Checksum 0x0, Offset: 0xbaa
+// Size: 0x468
 function runcruisepredator(streakname, streakinfo, thirdperson) {
     if (isdefined(level.var_b67b5f9dfe488c2f)) {
         thread [[ level.var_b67b5f9dfe488c2f ]](streakinfo);
@@ -164,16 +163,6 @@ function runcruisepredator(streakname, streakinfo, thirdperson) {
     heightoffset = bundle.var_3d67ec8c5eb61306;
     if (isdefined(heightent)) {
         heightoffset = heightent.origin[2] + bundle.var_c96b6fecdc57b792;
-    }
-    if (istrue(bundle.var_3f8af9d5a84e4c0e) && isdefined(bundle.var_a7001372d634906d) && bundle.var_a7001372d634906d.size > 0) {
-        foreach (map in bundle.var_a7001372d634906d) {
-            if (issubstr(level.mapname, map.name)) {
-                if (isdefined(map.var_2c4f4f03fe08619b)) {
-                    heightoffset = heightent.origin[2] + map.var_2c4f4f03fe08619b;
-                }
-                break;
-            }
-        }
     }
     spawncenterpos = level.mapcenter;
     var_82a6786725452f17 = getdvarint(@"hash_a2e7d8fdf5d91dd9", bundle.var_8e37beb3647ea7d9);
@@ -235,12 +224,15 @@ function runcruisepredator(streakname, streakinfo, thirdperson) {
         [[ getsharedfunc("hud", "teamPlayerCardSplash") ]]("used_cruise_predator", self);
     }
     result = cruisepredator_followmissilepod(missilepod, targetpos, thirdperson, streakinfo, bundle);
+    if (isdefined(result) && !result) {
+        function_8b676f496920e2ab();
+    }
     return result;
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1211
+// Checksum 0x0, Offset: 0x101b
 // Size: 0x47
 function cruisepredator_watchintropoddisown(streakinfo, enemytargetmarkergroup, friendlytargetmarkergroup) {
     self endon("death");
@@ -254,8 +246,8 @@ function cruisepredator_watchintropoddisown(streakinfo, enemytargetmarkergroup, 
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1260
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x106a
+// Size: 0xcf
 function cruisepredator_detachplayerfromintro(streakinfo, enemytargetmarkergroup, friendlytargetmarkergroup) {
     missileowner = self.owner;
     if (isdefined(missileowner)) {
@@ -268,7 +260,6 @@ function cruisepredator_detachplayerfromintro(streakinfo, enemytargetmarkergroup
         missileowner painvisionon();
         missileowner killstreak_restorenvgstate();
         missileowner killstreak_setMainVision("");
-        missileowner function_8b676f496920e2ab();
         level thread scripts\cp_mp\utility\game_utility::fadetoblackforplayer(missileowner, 0, 0);
     }
     streakinfo notify("killstreak_finished_with_deploy_weapon");
@@ -282,8 +273,8 @@ function cruisepredator_detachplayerfromintro(streakinfo, enemytargetmarkergroup
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1340
-// Size: 0x421
+// Checksum 0x0, Offset: 0x1141
+// Size: 0x411
 function cruisepredator_followmissilepod(pod, breakpos, thirdperson, streakinfo, bundle) {
     var_7b7bc27e7e8b05e2 = get_notetrack_time(script_model%mp_cruise_missile_move_intro, "wingtrails");
     var_2cf1418bd3474069 = get_notetrack_time(script_model%mp_cruise_missile_move_intro, "shell_break");
@@ -315,7 +306,7 @@ function cruisepredator_followmissilepod(pod, breakpos, thirdperson, streakinfo,
         enemytargetmarkergroup = scripts\cp_mp\targetmarkergroups::targetmarkergroup_on("overlaytargetmarkerenemy", self, var_2cd52bbc2a67b7cf, self, 0, 1, 1);
         friendlytargetmarkergroup = scripts\cp_mp\targetmarkergroups::targetmarkergroup_on("overlaytargetmarkerfriendly", self, var_ff93381949523976, self, 1, 1);
         thread function_d13d2a81214fbfb8("80_instant_noscale", 1);
-        if (isdefined(level.mapname) && issubstr(level.mapname, "_shipment")) {
+        if (isdefined(level.mapname) && issubstr(level.mapname, "mp_shipment")) {
             self visionsetnakedforplayer("cruise_intro_shipment", 0);
         }
         if (function_b039d607d9f90f1a(level.mapname + "_cruise_intro")) {
@@ -325,12 +316,10 @@ function cruisepredator_followmissilepod(pod, breakpos, thirdperson, streakinfo,
         pod thread cruisepredator_playdofsequence(var_9e0fa77c44b24bf9);
         self painvisionoff();
         killstreak_savenvgstate();
-        self.var_18d1f1d6ac1d9527 = 1;
         pod thread cruisepredator_watchintropoddisown(streakinfo, enemytargetmarkergroup, friendlytargetmarkergroup);
         pod thread cruisepredator_watchownerdisownaction("disconnect");
         pod thread cruisepredator_watchownerdisownaction("joined_team");
         pod thread cruisepredator_watchownerdisownaction("joined_spectators");
-        pod thread cruisepredator_watchownerdisownaction("player_fatal_death");
     }
     podmoveanim = "mp_cruise_missile_move_intro";
     pod scriptmodelplayanimdeltamotion(podmoveanim);
@@ -360,7 +349,7 @@ function cruisepredator_followmissilepod(pod, breakpos, thirdperson, streakinfo,
     if (!isdefined(pod) || !isdefined(self)) {
         return false;
     }
-    thread cruisepredator_delayplayslamzoom(pod, stage4delay - 0.15, thirdperson);
+    thread cruisepredator_delayplayslamzoom(stage4delay - 0.15, thirdperson);
     scripts\cp_mp\hostmigration::hostmigration_waitlongdurationwithpause(stage4delay - 0.05);
     if (!isdefined(pod) || !isdefined(self)) {
         return false;
@@ -371,7 +360,7 @@ function cruisepredator_followmissilepod(pod, breakpos, thirdperson, streakinfo,
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x176a
+// Checksum 0x0, Offset: 0x155b
 // Size: 0x7c
 function cruisepredator_playdofsequence(var_c21a2b0040f7613c) {
     self endon("death");
@@ -386,8 +375,8 @@ function cruisepredator_playdofsequence(var_c21a2b0040f7613c) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ee
-// Size: 0x704
+// Checksum 0x0, Offset: 0x15df
+// Size: 0x6fc
 function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmarkergroup, friendlytargetmarkergroup, bundle) {
     pod endon("death");
     self endon("disconnect");
@@ -411,7 +400,7 @@ function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmar
     missile = scripts\cp_mp\vehicles\vehicle_tracking::_spawnvehicle(spawndata, faildata);
     if (!isdefined(missile)) {
         /#
-            thread scripts\engine\utility::error("<dev string:x46>");
+            thread scripts\engine\utility::error("<dev string:x43>");
         #/
         return;
     }
@@ -455,7 +444,6 @@ function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmar
     fxent setscriptablepartstate("fake_trail", "on", 0);
     fxent setotherent(self);
     fxent thread cruisepredator_watchgameend(missile, thirdperson, streakinfo);
-    fxent thread function_50f690a71c5fae2(missile, thirdperson, streakinfo);
     fxent thread cruisepredator_watchmissileinfo(missile);
     fxent thread cruisepredator_watchmissileexplosion(missile, self, missile.killcament, thirdperson, enemytargetmarkergroup, friendlytargetmarkergroup, bundle);
     missile thread cruisepredator_watchownerdisownaction("disconnect");
@@ -473,7 +461,7 @@ function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmar
         self cameralinkto(missile, "tag_player", 1);
         self usevehicle(missile, 0);
         missilevisionset = "cruise_color_mp";
-        if (isdefined(level.mapname) && (issubstr(level.mapname, "_shipment") || issubstr(level.mapname, "mp_skerries"))) {
+        if (isdefined(level.mapname) && (issubstr(level.mapname, "mp_shipment") || issubstr(level.mapname, "mp_skerries"))) {
             missilevisionset = "cruise_color_fog_mp";
         }
         killstreak_setMainVision(missilevisionset);
@@ -513,12 +501,12 @@ function cruisepredator_takecontrol(pod, streakinfo, thirdperson, enemytargetmar
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1efa
+// Checksum 0x0, Offset: 0x1ce3
 // Size: 0x5b
 function cruisepredator_watchkillborder() {
     if (!isdefined(level.kill_border_triggers)) {
         /#
-            self.owner iprintln("<dev string:x9b>");
+            self.owner iprintln("<dev string:x95>");
         #/
         return;
     }
@@ -535,8 +523,8 @@ function cruisepredator_watchkillborder() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f5d
-// Size: 0x6c
+// Checksum 0x0, Offset: 0x1d46
+// Size: 0x6a
 function cruisepredator_istouchingkillborder(triggerlist) {
     touchingtrigger = 0;
     foreach (trigger in triggerlist) {
@@ -550,7 +538,7 @@ function cruisepredator_istouchingkillborder(triggerlist) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fd2
+// Checksum 0x0, Offset: 0x1db9
 // Size: 0x39
 function cruisepredator_delaymissilecollision() {
     self endon("death");
@@ -563,49 +551,8 @@ function cruisepredator_delaymissilecollision() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2013
-// Size: 0x189
-function function_50f690a71c5fae2(missile, thirdperson, streakinfo) {
-    level endon("game_ended");
-    missile endon("death");
-    missile endon("disowned");
-    missile endon("cruise_missile_explode");
-    self endon("death");
-    self.owner waittill("death_or_disconnect");
-    rider = self.owner;
-    if (isdefined(missile.enemytargetmarkergroup)) {
-        scripts\cp_mp\targetmarkergroups::targetmarkergroup_off(missile.enemytargetmarkergroup);
-    }
-    if (isdefined(missile.friendlytargetmarkergroup)) {
-        scripts\cp_mp\targetmarkergroups::targetmarkergroup_off(missile.friendlytargetmarkergroup);
-    }
-    if (issharedfuncdefined("cruise_predator", "CPUnMarkEnemies")) {
-        [[ getsharedfunc("cruise_predator", "CPUnMarkEnemies") ]](rider);
-    }
-    if (isdefined(rider)) {
-        if (!istrue(thirdperson)) {
-            rider cameraunlink();
-            if (istrue(rider.var_18d1f1d6ac1d9527) && rider function_793f941d7dff15ed()) {
-                rider leavevehicle();
-            }
-            if (isdefined(rider.soundent)) {
-                rider.soundent stoploopsound("iw9_cruise_missile_plr");
-                rider.soundent delete();
-            }
-        }
-        rider _setvisibiilityomnvarforkillstreak(streakinfo.streakname, "off");
-        rider setclientomnvar("ui_predator_missile", 0);
-        rider thread cruisepredator_returnplayer(streakinfo);
-        if (issharedfuncdefined("cruise_predator", "removeItemFromSlot")) {
-            [[ getsharedfunc("cruise_predator", "removeItemFromSlot") ]](rider);
-        }
-    }
-}
-
-// Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x21a4
-// Size: 0x19a
+// Checksum 0x0, Offset: 0x1dfa
+// Size: 0x18a
 function cruisepredator_watchgameend(missile, thirdperson, streakinfo) {
     missile endon("death");
     missile endon("cruise_missile_explode");
@@ -626,9 +573,7 @@ function cruisepredator_watchgameend(missile, thirdperson, streakinfo) {
     if (isdefined(rider)) {
         if (!istrue(thirdperson)) {
             rider cameraunlink();
-            if (istrue(rider.var_18d1f1d6ac1d9527)) {
-                rider leavevehicle();
-            }
+            rider leavevehicle();
             if (isdefined(rider.soundent)) {
                 rider.soundent stoploopsound("iw9_cruise_missile_plr");
                 rider.soundent delete();
@@ -647,7 +592,7 @@ function cruisepredator_watchgameend(missile, thirdperson, streakinfo) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2346
+// Checksum 0x0, Offset: 0x1f8c
 // Size: 0x43
 function cruisepredator_watchmissileinfo(missile) {
     self endon("death");
@@ -660,8 +605,8 @@ function cruisepredator_watchmissileinfo(missile) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x2391
-// Size: 0x5b1
+// Checksum 0x0, Offset: 0x1fd7
+// Size: 0x588
 function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdperson, enemytargetmarkergroup, friendlytargetmarkergroup, bundle) {
     missile endon("cruise_missile_force_eject");
     missilekillcament = killcament;
@@ -677,7 +622,7 @@ function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdp
             collisiondebug = getdvarint(@"hash_c2491ce0fa8bc62", 0);
             /#
                 if (collisiondebug) {
-                    iprintln("<dev string:xc1>" + surfacetype);
+                    iprintln("<dev string:xb8>" + surfacetype);
                     continue;
                 }
             #/
@@ -691,13 +636,11 @@ function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdp
         missile setscriptablepartstate("warhead_thruster", "off", 0);
         missile notify("cruise_missile_explode");
     }
-    if (isdefined(rider) && istrue(rider.var_18d1f1d6ac1d9527)) {
-        if (isdefined(enemytargetmarkergroup)) {
-            scripts\cp_mp\targetmarkergroups::targetmarkergroup_off(enemytargetmarkergroup);
-        }
-        if (isdefined(friendlytargetmarkergroup)) {
-            scripts\cp_mp\targetmarkergroups::targetmarkergroup_off(friendlytargetmarkergroup);
-        }
+    if (isdefined(enemytargetmarkergroup)) {
+        scripts\cp_mp\targetmarkergroups::targetmarkergroup_off(enemytargetmarkergroup);
+    }
+    if (isdefined(friendlytargetmarkergroup)) {
+        scripts\cp_mp\targetmarkergroups::targetmarkergroup_off(friendlytargetmarkergroup);
     }
     if (issharedfuncdefined("cruise_predator", "CPUnMarkEnemies")) {
         [[ getsharedfunc("cruise_predator", "CPUnMarkEnemies") ]](rider);
@@ -709,9 +652,7 @@ function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdp
         var_d0b12377bc0ec26f = self.missilelastangle;
         if (isdefined(rider) && !istrue(thirdperson)) {
             rider cameraunlink();
-            if (istrue(rider.var_18d1f1d6ac1d9527)) {
-                rider leavevehicle();
-            }
+            rider leavevehicle();
         }
         if (isdefined(missile)) {
             scripts\cp_mp\vehicles\vehicle_tracking::vehicle_tracking_deregisterinstance(missile);
@@ -750,7 +691,7 @@ function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdp
     if (isdefined(rider)) {
         rider thread cruisepredator_watchkills(explodeinfo);
         if (!istrue(thirdperson)) {
-            assertex(isdefined(explodepos) && isdefined(var_d0b12377bc0ec26f), "<dev string:xef>");
+            assertex(isdefined(explodepos) && isdefined(var_d0b12377bc0ec26f), "cruisePredator_watchMissileExplosion: Either the explodePos or missileAngles are undefined.  This shouldn't be possible.");
             if (isdefined(rider.soundent)) {
                 rider.soundent stoploopsound("iw9_cruise_missile_plr");
                 rider.soundent delete();
@@ -764,14 +705,12 @@ function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdp
                 thread [[ level.var_f56a88761038798b ]](streakinfo);
             }
             visionset = "killstreak_static";
-            if (istrue(rider.var_18d1f1d6ac1d9527)) {
-                rider thread cruisepredator_startfadecamtransition(0.4, 0.6, 0.05, visionset);
-                rider playlocalsound("iw9_cruise_missile_exp_static");
-                rider earthquakeforplayer(0.3, 3.5, rider.origin, 100);
-                rider setclientomnvar("ui_hud_shake", 1);
-                rider playrumbleonpositionforclient("artillery_rumble", rider.origin);
-                rider thread cruisepredator_returnplayer(streakinfo, 1);
-            }
+            rider thread cruisepredator_startfadecamtransition(0.4, 0.6, 0.05, visionset);
+            rider playlocalsound("iw9_cruise_missile_exp_static");
+            rider earthquakeforplayer(0.3, 3.5, rider.origin, 100);
+            rider setclientomnvar("ui_hud_shake", 1);
+            rider playrumbleonpositionforclient("artillery_rumble", rider.origin);
+            rider thread cruisepredator_returnplayer(streakinfo, 1);
         }
     }
     if (issharedfuncdefined("cruise_predator", "removeItemFromSlot")) {
@@ -782,8 +721,8 @@ function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdp
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x294a
-// Size: 0x7f
+// Checksum 0x0, Offset: 0x2567
+// Size: 0x7e
 function function_1a20d385b2f41e0e() {
     level endon("game_ended");
     minimapid = undefined;
@@ -798,7 +737,7 @@ function function_1a20d385b2f41e0e() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x29d1
+// Checksum 0x0, Offset: 0x25ed
 // Size: 0x42
 function cruisepredator_cameramove(targetpos, startpos) {
     self moveto(targetpos, 0.2, 0, 0.05);
@@ -808,8 +747,8 @@ function cruisepredator_cameramove(targetpos, startpos) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a1b
-// Size: 0xde
+// Checksum 0x0, Offset: 0x2637
+// Size: 0xd4
 function cruisepredator_returnplayer(streakinfo, exploded) {
     self endon("disconnect");
     level callback::callback("killstreak_finish_use", {#streakinfo:streakinfo});
@@ -829,14 +768,13 @@ function cruisepredator_returnplayer(streakinfo, exploded) {
     killstreak_restorenvgstate();
     val::group_reset("cruisePredator");
     val::reset_all("cruisePredatorUse");
-    self.var_18d1f1d6ac1d9527 = undefined;
     streakinfo notify("killstreak_finished_with_deploy_weapon");
     scripts\cp_mp\utility\killstreak_utility::recordkillstreakendstats(streakinfo);
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b01
+// Checksum 0x0, Offset: 0x2713
 // Size: 0x33
 function cruisepredator_watchtimer(rider, lifetime) {
     self endon("death");
@@ -846,8 +784,8 @@ function cruisepredator_watchtimer(rider, lifetime) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b3c
-// Size: 0x41
+// Checksum 0x0, Offset: 0x274e
+// Size: 0x40
 function cruisepredator_watchownerdisownaction(action) {
     self endon("death");
     self endon("disowned");
@@ -859,7 +797,7 @@ function cruisepredator_watchownerdisownaction(action) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b85
+// Checksum 0x0, Offset: 0x2796
 // Size: 0x20
 function cruisepredator_startexplodecamtransition() {
     killstreak_setMainVision("killstreak_slamzoom");
@@ -869,7 +807,7 @@ function cruisepredator_startexplodecamtransition() {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bad
+// Checksum 0x0, Offset: 0x27be
 // Size: 0x87
 function cruisepredator_startfadecamtransition(fadeintime, fadedelay, fadeouttime, var_2007ede6118d6b9f) {
     self endon("disconnect");
@@ -895,8 +833,8 @@ function cruisepredator_startfadecamtransition(fadeintime, fadedelay, fadeouttim
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3c
-// Size: 0x4c
+// Checksum 0x0, Offset: 0x284d
+// Size: 0x4b
 function cruisepredator_shakerider(shaketime) {
     self endon("disconnect");
     counter = 0;
@@ -909,8 +847,8 @@ function cruisepredator_shakerider(shaketime) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c90
-// Size: 0x127
+// Checksum 0x0, Offset: 0x28a0
+// Size: 0x128
 function cruisepredator_handlevfxstates(explodeinfo) {
     self endon("death");
     self unlink();
@@ -934,7 +872,7 @@ function cruisepredator_handlevfxstates(explodeinfo) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dbf
+// Checksum 0x0, Offset: 0x29d0
 // Size: 0x72
 function cruisepredator_watchkills(explodeinfo) {
     self endon("disconnect");
@@ -949,12 +887,11 @@ function cruisepredator_watchkills(explodeinfo) {
 }
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e39
-// Size: 0x65
-function cruisepredator_delayplayslamzoom(pod, delaytime, thirdperson) {
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x2a4a
+// Size: 0x56
+function cruisepredator_delayplayslamzoom(delaytime, thirdperson) {
     self endon("disconnect");
-    pod endon("disowned");
     scripts\cp_mp\hostmigration::hostmigration_waitlongdurationwithpause(delaytime);
     if (!istrue(thirdperson)) {
         killstreak_setMainVision("killstreak_slamzoom");
@@ -966,7 +903,7 @@ function cruisepredator_delayplayslamzoom(pod, delaytime, thirdperson) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ea6
+// Checksum 0x0, Offset: 0x2aa8
 // Size: 0x18
 function cruisepredator_empapplied(data) {
     if (isdefined(self)) {
@@ -976,7 +913,7 @@ function cruisepredator_empapplied(data) {
 
 // Namespace cruise_predator / scripts\cp_mp\killstreaks\cruise_predator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ec6
+// Checksum 0x0, Offset: 0x2ac8
 // Size: 0x1b
 function function_ecc973ad47944e1e() {
     return isnightmap() || level.mapname == "mp_jup_grandprix_pm_2";

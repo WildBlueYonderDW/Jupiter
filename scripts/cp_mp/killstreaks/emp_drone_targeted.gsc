@@ -15,7 +15,7 @@
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ea
+// Checksum 0x0, Offset: 0x5f8
 // Size: 0x4b
 function init() {
     if (issharedfuncdefined("emp_drone_targeted", "init")) {
@@ -29,7 +29,7 @@ function init() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x73d
+// Checksum 0x0, Offset: 0x64b
 // Size: 0x21
 function empdrone_beginsuper() {
     self endon("death_or_disconnect");
@@ -41,7 +41,7 @@ function empdrone_beginsuper() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x767
+// Checksum 0x0, Offset: 0x675
 // Size: 0xc6
 function empdrone_superusethink() {
     level endon("game_ended");
@@ -65,7 +65,7 @@ function empdrone_superusethink() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x835
+// Checksum 0x0, Offset: 0x743
 // Size: 0xb
 function empdrone_tryuse(streakinfo) {
     
@@ -73,7 +73,7 @@ function empdrone_tryuse(streakinfo) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x848
+// Checksum 0x0, Offset: 0x756
 // Size: 0x9d
 function empdrone_equipment_wrapper(ref, slot, objweapon) {
     if (issharedfuncdefined("equipment", "takeEquipment")) {
@@ -90,7 +90,7 @@ function empdrone_equipment_wrapper(ref, slot, objweapon) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ed
+// Checksum 0x0, Offset: 0x7fb
 // Size: 0x3e
 function empdrone_weapongiven(streakinfo) {
     if (issharedfuncdefined("empDroneTargeted", "startMapSelectSequence")) {
@@ -103,7 +103,7 @@ function empdrone_weapongiven(streakinfo) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x934
+// Checksum 0x0, Offset: 0x842
 // Size: 0x268
 function empdrone_createdrone(streakinfo, targetpos) {
     self endon("disconnect");
@@ -149,8 +149,8 @@ function empdrone_createdrone(streakinfo, targetpos) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba5
-// Size: 0x217
+// Checksum 0x0, Offset: 0xab3
+// Size: 0x223
 function empdrone_calculatepositions(targetpos) {
     heightent = scripts\cp_mp\utility\killstreak_utility::getkillstreakairstrikeheightent();
     heightoffset = (0, 0, 1500);
@@ -201,7 +201,7 @@ function empdrone_calculatepositions(targetpos) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc5
+// Checksum 0x0, Offset: 0xcdf
 // Size: 0x54
 function empdrone_timeoutthink() {
     level endon("game_ended");
@@ -215,7 +215,7 @@ function empdrone_timeoutthink() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe21
+// Checksum 0x0, Offset: 0xd3b
 // Size: 0x32
 function empdrone_gameendedthink() {
     self.owner endon("disconnect");
@@ -226,7 +226,7 @@ function empdrone_gameendedthink() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe5b
+// Checksum 0x0, Offset: 0xd75
 // Size: 0x68
 function empdrone_collidethink() {
     level endon("game_ended");
@@ -243,8 +243,8 @@ function empdrone_collidethink() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xecb
-// Size: 0x139
+// Checksum 0x0, Offset: 0xde5
+// Size: 0x13f
 function empdrone_divebombthink(posstruct) {
     level endon("game_ended");
     self.owner endon("disconnect");
@@ -271,7 +271,7 @@ function empdrone_divebombthink(posstruct) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x100c
+// Checksum 0x0, Offset: 0xf2c
 // Size: 0xb
 function empdrone_killstreaktargetthink(posstruct) {
     
@@ -279,7 +279,7 @@ function empdrone_killstreaktargetthink(posstruct) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x101f
+// Checksum 0x0, Offset: 0xf3f
 // Size: 0x2a
 function empdrone_handledeathdamage(attacker, weapon, damagetype) {
     empdrone_givepointsfordeath(attacker);
@@ -288,8 +288,8 @@ function empdrone_handledeathdamage(attacker, weapon, damagetype) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1051
-// Size: 0x51
+// Checksum 0x0, Offset: 0xf71
+// Size: 0x50
 function empdrone_explode() {
     self playsound("iw8_rc_plane_engine_exp");
     forward = anglestoforward(self.angles);
@@ -300,8 +300,8 @@ function empdrone_explode() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10aa
-// Size: 0x4a
+// Checksum 0x0, Offset: 0xfc9
+// Size: 0x49
 function empdrone_destroy() {
     self playsound("recondrone_damaged");
     forward = anglestoforward(self.angles);
@@ -311,7 +311,7 @@ function empdrone_destroy() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10fc
+// Checksum 0x0, Offset: 0x101a
 // Size: 0x96
 function empdrone_delete() {
     self stoploopsound("iw8_rc_plane_engine");
@@ -326,8 +326,8 @@ function empdrone_delete() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x119a
-// Size: 0x31
+// Checksum 0x0, Offset: 0x10b8
+// Size: 0x30
 function empdrone_empapplied(data) {
     attacker = data.attacker;
     empdrone_givepointsfordeath(attacker);
@@ -336,7 +336,7 @@ function empdrone_empapplied(data) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d3
+// Checksum 0x0, Offset: 0x10f0
 // Size: 0x54
 function empdrone_givepointsfordeath(attacker) {
     if (istrue(scripts\cp_mp\utility\player_utility::playersareenemies(self.owner, attacker))) {
@@ -349,8 +349,8 @@ function empdrone_givepointsfordeath(attacker) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x122f
-// Size: 0x44e
+// Checksum 0x0, Offset: 0x114c
+// Size: 0x455
 function empdrone_explodeemp() {
     indirectweapon = makeweapon("emp_drone_non_player_mp");
     directhitweapon = makeweapon("emp_drone_non_player_direct_mp");
@@ -418,8 +418,8 @@ function empdrone_explodeemp() {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1685
-// Size: 0x220
+// Checksum 0x0, Offset: 0x15a9
+// Size: 0x21f
 function empdrone_applyemp(data) {
     apply_emp_struct(data);
     duration = 8;
@@ -456,8 +456,8 @@ function empdrone_applyemp(data) {
 
 // Namespace emp_drone_targeted / scripts\cp_mp\killstreaks\emp_drone_targeted
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ad
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x17d0
+// Size: 0x5a
 function empdrone_empendearly(data, duration) {
     data.victim endon("death_or_disconnect");
     level endon("game_ended");

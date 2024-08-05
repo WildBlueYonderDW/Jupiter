@@ -9,8 +9,8 @@
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d7
-// Size: 0x1cb
+// Checksum 0x0, Offset: 0x37e
+// Size: 0x1cc
 function civilian_init(asmname, statename, params) {
     if (asmname == "civilian") {
         var_41f38bcfbf1fa589 = "Using an aitype with the old 'civilian.asm'. ";
@@ -48,7 +48,7 @@ function civilian_init(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aa
+// Checksum 0x0, Offset: 0x552
 // Size: 0x27
 function initscriptable() {
     self endon("death");
@@ -58,8 +58,8 @@ function initscriptable() {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d9
-// Size: 0xff
+// Checksum 0x0, Offset: 0x581
+// Size: 0xfe
 function initanimspeedthresholds_civilian(animsetname) {
     thresholdlabel = self getbasearchetype();
     if (!isdefined(thresholdlabel)) {
@@ -91,8 +91,8 @@ function initanimspeedthresholds_civilian(animsetname) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e0
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x687
+// Size: 0xa0
 function chooseciviliantransitiontoidleanim(asmname, statename, params) {
     if (isdefined(self.asm.transtoidlealias)) {
         var_b6648a33085e43a = self.asm.transtoidlealias;
@@ -108,8 +108,8 @@ function chooseciviliantransitiontoidleanim(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x789
-// Size: 0x113
+// Checksum 0x0, Offset: 0x72f
+// Size: 0x114
 function choosecivilianreactidleanim(asmname, statename, params) {
     if (isdefined(self.asm.civilianreactionalias)) {
         var_d4f0250c8d7f6f7c = self.asm.civilianreactionalias;
@@ -118,22 +118,22 @@ function choosecivilianreactidleanim(asmname, statename, params) {
         }
         return asm_lookupanimfromalias(statename, var_d4f0250c8d7f6f7c);
     }
-    assertex(isdefined(self.asm.transtoidlealias), "<dev string:x1c>");
+    assertex(isdefined(self.asm.transtoidlealias), "Anim alias does not exist.");
     var_bd670c1e0f4290da = self.asm.transtoidlealias;
     if (scripts\engine\utility::cointoss()) {
         alias = var_bd670c1e0f4290da + "_a";
     } else {
         alias = var_bd670c1e0f4290da + "_b";
     }
-    assertex(asm_hasalias(statename, alias), "<dev string:x1c>");
+    assertex(asm_hasalias(statename, alias), "Anim alias does not exist.");
     self.asm.civilianreactionalias = alias;
     return asm_lookupanimfromalias(statename, alias);
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a4
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x84b
+// Size: 0x6c
 function civilian_playexposedloop(asmname, statename, params) {
     self function_62004d7561fd321e();
     var_4fbb46e48f524506 = self asmgetstatetransitioningfrom(asmname);
@@ -145,7 +145,7 @@ function civilian_playexposedloop(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x919
+// Checksum 0x0, Offset: 0x8bf
 // Size: 0x3a
 function civilian_exit_cleanup(asmname, statename, params) {
     self._blackboard.var_9fbdce5fa10f8964 = 0;
@@ -154,7 +154,7 @@ function civilian_exit_cleanup(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x95b
+// Checksum 0x0, Offset: 0x901
 // Size: 0x2e
 function civilian_playmoveloop(asmname, statename, params) {
     thread civilian_watchspeed(statename);
@@ -163,8 +163,8 @@ function civilian_playmoveloop(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x991
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x937
+// Size: 0xb4
 function function_f2343b622bbbac5c() {
     self endon("death");
     stumbletimer = gettime() + randomint(1000);
@@ -190,8 +190,8 @@ function function_f2343b622bbbac5c() {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4e
-// Size: 0x79
+// Checksum 0x0, Offset: 0x9f3
+// Size: 0x7a
 function function_d87b251f84ebc50d(asmname, statename, params) {
     archetype = self getbasearchetype();
     speed = length(self.velocity);
@@ -207,7 +207,7 @@ function function_d87b251f84ebc50d(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xad0
+// Checksum 0x0, Offset: 0xa76
 // Size: 0xe3
 function civilian_playmoveloopblendspace(asmname, statename, param) {
     self endon(statename + "_finished");
@@ -232,7 +232,7 @@ function civilian_playmoveloopblendspace(asmname, statename, param) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbb
+// Checksum 0x0, Offset: 0xb61
 // Size: 0xc5
 function civilian_watchspeed(statename) {
     self endon(statename + "_finished");
@@ -252,8 +252,8 @@ function civilian_watchspeed(statename) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc88
-// Size: 0x12a
+// Checksum 0x0, Offset: 0xc2e
+// Size: 0x12d
 function civilian_playsharpturnanim(asmname, statename, params) {
     self endon(statename + "_finished");
     turnanim = asm_getanim(asmname, statename);
@@ -280,8 +280,8 @@ function civilian_playsharpturnanim(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdba
-// Size: 0xc3
+// Checksum 0x0, Offset: 0xd63
+// Size: 0xc8
 function function_f350cd100563acaf(turnxanim, turnrate) {
     waitframe();
     cornernotes = getnotetracktimes(turnxanim, "corner");
@@ -301,8 +301,8 @@ function function_f350cd100563acaf(turnxanim, turnrate) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe85
-// Size: 0x1ad
+// Checksum 0x0, Offset: 0xe33
+// Size: 0x1b7
 function function_acfe95f0c8655298(note, params) {
     if (note == "corner") {
         self motionwarpcancel();
@@ -342,7 +342,7 @@ function function_acfe95f0c8655298(note, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x103a
+// Checksum 0x0, Offset: 0xff2
 // Size: 0x22
 function civilian_move_cleanup(asmname, statename, params) {
     self motionwarpcancel();
@@ -350,7 +350,7 @@ function civilian_move_cleanup(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1064
+// Checksum 0x0, Offset: 0x101c
 // Size: 0x29
 function iswhizbydetected(asmname, statename, tostatename, params) {
     return bb_iswhizbyrequested();
@@ -358,7 +358,7 @@ function iswhizbydetected(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1096
+// Checksum 0x0, Offset: 0x104e
 // Size: 0x2d
 function function_49eab317ab73356(asmname, statename, tostatename, params) {
     return istrue(self.disableexits);
@@ -366,8 +366,8 @@ function function_49eab317ab73356(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cc
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x1084
+// Size: 0x89
 function shoulddirectlytransition(asmname, statename, tostatename, params) {
     if (iswhizbydetected() || bb_getcivilianstate() == "combat") {
         alias = self.asm.transtoidlealias;
@@ -380,8 +380,8 @@ function shoulddirectlytransition(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x115f
-// Size: 0x80
+// Checksum 0x0, Offset: 0x1116
+// Size: 0x7f
 function shouldcustomtransition(asmname, statename, tostatename, params) {
     if (bb_getcivilianstate() == "noncombat") {
         alias = self.asm.transtoidlealias;
@@ -394,7 +394,7 @@ function shouldcustomtransition(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e8
+// Checksum 0x0, Offset: 0x119e
 // Size: 0x2e
 function cleanupcivilianreactionalias(asmname, statename, params) {
     self.asm.civilianreactionalias = undefined;
@@ -402,7 +402,7 @@ function cleanupcivilianreactionalias(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x121e
+// Checksum 0x0, Offset: 0x11d4
 // Size: 0x8b
 function shouldsnaptocover(asmname, statename, tostatename, params) {
     if (bb_moverequested()) {
@@ -425,7 +425,7 @@ function shouldsnaptocover(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b2
+// Checksum 0x0, Offset: 0x1268
 // Size: 0x89
 function enableciviliantargetfocus(ent, direction) {
     if (!isdefined(ent)) {
@@ -444,7 +444,7 @@ function enableciviliantargetfocus(ent, direction) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1343
+// Checksum 0x0, Offset: 0x12f9
 // Size: 0x2b
 function disableciviliantargetfocus() {
     self._blackboard.civilianfocustargetentity = undefined;
@@ -453,7 +453,7 @@ function disableciviliantargetfocus() {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1376
+// Checksum 0x0, Offset: 0x132c
 // Size: 0x66
 function civilianfocusstartthread() {
     if (isdefined(self._blackboard.civilianfocusthreadrunning)) {
@@ -467,7 +467,7 @@ function civilianfocusstartthread() {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e4
+// Checksum 0x0, Offset: 0x139a
 // Size: 0x6a
 function civilianfocuscomputeyawtotarget() {
     var_a5106610ad76d39b = self._blackboard.civilianfocustargetentity.origin - self.origin;
@@ -478,8 +478,8 @@ function civilianfocuscomputeyawtotarget() {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1457
-// Size: 0x12a
+// Checksum 0x0, Offset: 0x140d
+// Size: 0x130
 function civilianfocusupdatecurrentfocus(targetvalue) {
     var_b1dbabba77c6a3f1 = 0.5;
     var_128b23694d81a9b7 = 1 / var_b1dbabba77c6a3f1;
@@ -501,8 +501,8 @@ function civilianfocusupdatecurrentfocus(targetvalue) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x158a
-// Size: 0x51
+// Checksum 0x0, Offset: 0x1546
+// Size: 0x50
 function civilianfocusapproachingarrival() {
     target_speed = self aigettargetspeed();
     if (!self codemoverequested() || self pathdisttogoal() < target_speed * 1.3) {
@@ -515,7 +515,7 @@ function civilianfocusapproachingarrival() {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e4
+// Checksum 0x0, Offset: 0x159f
 // Size: 0x13
 function civilianfocusupdateanimparameter(paramvalue) {
     self setcivilianfocus(paramvalue);
@@ -523,8 +523,8 @@ function civilianfocusupdateanimparameter(paramvalue) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ff
-// Size: 0x4b1
+// Checksum 0x0, Offset: 0x15ba
+// Size: 0x4b9
 function civilianfocusupdatethread() {
     self endon("death");
     assert(isdefined(self._blackboard.civilianfocusstate));
@@ -616,7 +616,7 @@ function civilianfocusupdatethread() {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab8
+// Checksum 0x0, Offset: 0x1a7b
 // Size: 0x41
 function civmoverequested(asmname, statename, tostatename, params) {
     return bb_moverequested() && !istrue(self._blackboard.partialgestureplaying);
@@ -624,7 +624,7 @@ function civmoverequested(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b02
+// Checksum 0x0, Offset: 0x1ac5
 // Size: 0x41
 function civilian_chooseanim_demeanor(asmname, statename, params) {
     if (isdefined(params)) {
@@ -635,8 +635,8 @@ function civilian_chooseanim_demeanor(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b4b
-// Size: 0xae
+// Checksum 0x0, Offset: 0x1b0e
+// Size: 0xb3
 function civilian_chooseanim_playerpushed(asmname, statename, params) {
     movedir = asm_getephemeraleventdata("player_pushed", "player_pushed");
     movedirnormalized = vectornormalize(movedir);
@@ -650,7 +650,7 @@ function civilian_chooseanim_playerpushed(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c02
+// Checksum 0x0, Offset: 0x1bca
 // Size: 0x3e
 function function_b1bbe0dc316f2efa(asmname, statename, tostatename, params) {
     if (!isdefined(self.var_c4242158adaeadd2)) {
@@ -661,8 +661,8 @@ function function_b1bbe0dc316f2efa(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c49
-// Size: 0xef
+// Checksum 0x0, Offset: 0x1c11
+// Size: 0xf1
 function function_c41de664204e9824(asmname, statename, tostatename, params) {
     toplayer = level.player.origin - self.origin;
     setdvarifuninitialized(@"hash_e423c827ca27e5c4", 120);
@@ -684,8 +684,8 @@ function function_c41de664204e9824(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d41
-// Size: 0x187
+// Checksum 0x0, Offset: 0x1d0b
+// Size: 0x191
 function function_7bd81efb0abdbc44(asmname, statename, tostatename, params) {
     var_db51c3e732a073b4 = 100;
     closeai = getaiarrayinradius(self.origin, var_db51c3e732a073b4);
@@ -728,8 +728,8 @@ function function_7bd81efb0abdbc44(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ed1
-// Size: 0xd7
+// Checksum 0x0, Offset: 0x1ea5
+// Size: 0xd9
 function function_e481d310d5cb87c(asmname, statename, tostatename, params) {
     assert(isdefined(self.var_ae59f0b817468ed7));
     assert(isai(self.var_ae59f0b817468ed7));
@@ -746,8 +746,8 @@ function function_e481d310d5cb87c(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fb1
-// Size: 0x64
+// Checksum 0x0, Offset: 0x1f87
+// Size: 0x63
 function function_ae83a6295a6675c8(asmname, statename, params) {
     if (isdefined(self.var_b5780490703ab4d1)) {
         idx = self.var_b5780490703ab4d1;
@@ -760,8 +760,8 @@ function function_ae83a6295a6675c8(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x201e
-// Size: 0xd3
+// Checksum 0x0, Offset: 0x1ff3
+// Size: 0xd6
 function function_d13115c5f7b949e6(asmname, statename, params) {
     toplayer = level.player.origin - self.origin;
     forward = anglestoforward(self.angles);
@@ -781,8 +781,8 @@ function function_d13115c5f7b949e6(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x20fa
-// Size: 0x11f
+// Checksum 0x0, Offset: 0x20d2
+// Size: 0x123
 function function_d98f49aeb63edce4(asmname, statename, params) {
     assert(isdefined(self.var_ae59f0b817468ed7));
     assert(isai(self.var_ae59f0b817468ed7));
@@ -806,7 +806,7 @@ function function_d98f49aeb63edce4(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2222
+// Checksum 0x0, Offset: 0x21fe
 // Size: 0x25
 function function_c4d5a733f656507f(asmname, statename, params) {
     self.var_ae59f0b817468ed7 = undefined;
@@ -814,7 +814,7 @@ function function_c4d5a733f656507f(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x224f
+// Checksum 0x0, Offset: 0x222b
 // Size: 0x2d
 function function_7490810d9786cc51(asmname, statename, tostatename, params) {
     return isdefined(self.var_a57082fdf62bc898);
@@ -822,8 +822,8 @@ function function_7490810d9786cc51(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2285
-// Size: 0x156
+// Checksum 0x0, Offset: 0x2261
+// Size: 0x15b
 function function_28d7e9d4c9615969(asmname, statename, tostatename, params) {
     self endon(statename + "_finished");
     turnanim = asm_getanim(asmname, statename);
@@ -851,8 +851,8 @@ function function_28d7e9d4c9615969(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x23e3
-// Size: 0x20f
+// Checksum 0x0, Offset: 0x23c4
+// Size: 0x219
 function function_44224a1150c6d2c9(turnxanim, statename) {
     self endon("death");
     self endon(statename + "_finished");
@@ -896,8 +896,8 @@ function function_44224a1150c6d2c9(turnxanim, statename) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25fa
-// Size: 0x202
+// Checksum 0x0, Offset: 0x25e5
+// Size: 0x207
 function function_8582e56563261e62(asmname, statename, params) {
     target = function_75996a8dac6970f2(1024);
     if (isdefined(params) & isstring(params) && params == "return" && isdefined(self.interaction_origin)) {
@@ -917,28 +917,28 @@ function function_8582e56563261e62(asmname, statename, params) {
             animindex = "4";
         }
         turnanim = asm_lookupanimfromalias(statename, animindex);
-        assertex(isdefined(turnanim), "<dev string:x3a>" + animindex + "<dev string:x57>" + self.animsetname);
+        assertex(isdefined(turnanim), "Cardinal turn anim index " + animindex + "is missing in animset " + self.animsetname);
     } else {
         animmap = ["2", "3", "6", "9", "8", "7", "4", "1", "2"];
         animindex = getangleindex(anglediff, 22.5);
         turnanim = asm_lookupanimfromalias(statename, animmap[animindex]);
-        assertex(isdefined(turnanim), "<dev string:x71>" + animmap[animindex] + "<dev string:x57>" + self.animsetname);
+        assertex(isdefined(turnanim), "Turn anim index " + animmap[animindex] + "is missing in animset " + self.animsetname);
     }
     return turnanim;
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2805
+// Checksum 0x0, Offset: 0x27f5
 // Size: 0x4e
 function function_4be295e4306dc70c(asmname, statename, tostatename, params) {
-    assertex(isdefined(params), "<dev string:x85>");
+    assertex(isdefined(params), "CivNearGoalCheck must have a radius param");
     return distancesquared(self.goalpos, self.origin) < params * params;
 }
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x285c
+// Checksum 0x0, Offset: 0x284c
 // Size: 0x24
 function function_89007ae298fb4b15(asmname, statename, params) {
     set_movement_speed(52);
@@ -946,7 +946,7 @@ function function_89007ae298fb4b15(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2888
+// Checksum 0x0, Offset: 0x2878
 // Size: 0x24
 function function_e7fc2fe7dda8fc2c(asmname, statename, params) {
     set_movement_speed(127);
@@ -954,7 +954,7 @@ function function_e7fc2fe7dda8fc2c(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x28b4
+// Checksum 0x0, Offset: 0x28a4
 // Size: 0x24
 function function_94ec448629b086c8(asmname, statename, params) {
     set_movement_speed(153);
@@ -962,7 +962,7 @@ function function_94ec448629b086c8(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x28e0
+// Checksum 0x0, Offset: 0x28d0
 // Size: 0x24
 function function_d45457463f7a8eab(asmname, statename, params) {
     set_movement_speed(220);
@@ -970,7 +970,7 @@ function function_d45457463f7a8eab(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\civilian\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x290c
+// Checksum 0x0, Offset: 0x28fc
 // Size: 0x55
 function function_92c056ec351f2f6e(asmname, statename, param) {
     if (isdefined(self._blackboard.requestedspeed) && self._blackboard.requestedspeed < 70) {

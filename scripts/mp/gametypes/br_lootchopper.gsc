@@ -473,7 +473,7 @@ function lootchopper_spawn(patrolzone, overridevehicletype, overridemodel, overr
     chopper.cleanupfunc = &lootchopper_cleanup;
     chopper lootchopper_createobjective();
     chopper thread scripts\cp_mp\killstreaks\chopper_support::choppersupport_neargoalsettings();
-    chopper thread scripts\cp_mp\killstreaks\chopper_support::chopperSupport_watchDestroyed();
+    chopper thread scripts\cp_mp\killstreaks\chopper_support::function_e933ed4203802fc6();
     if (issharedfuncdefined("flares", "handleIncomingStinger")) {
         chopper thread [[ getsharedfunc("flares", "handleIncomingStinger") ]](&scripts\cp_mp\killstreaks\chopper_support::choppersupport_handlemissiledetection);
     }

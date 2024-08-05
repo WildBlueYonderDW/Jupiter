@@ -6,13 +6,13 @@
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf7
-// Size: 0x107
+// Checksum 0x0, Offset: 0x115
+// Size: 0xf7
 function function_8df651a1b2728b15(blueprintname, weaponkey) {
     var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
     if (!isdefined(var_5a0f9e1af605f0f5)) {
         /#
-            errortext = "<dev string:x1c>" + function_3c8848a3a11b2553(blueprintname) + "<dev string:x45>";
+            errortext = "<dev string:x1c>" + blueprintname + "<dev string:x42>";
             iprintln(errortext);
         #/
         return undefined;
@@ -26,7 +26,7 @@ function function_8df651a1b2728b15(blueprintname, weaponkey) {
         }
     }
     /#
-        errortext = "<dev string:x4a>" + function_3c8848a3a11b2553(weaponkey) + "<dev string:x6d>" + function_3c8848a3a11b2553(blueprintname) + "<dev string:x45>";
+        errortext = "<dev string:x44>" + weaponkey + "<dev string:x64>" + blueprintname + "<dev string:x42>";
         iprintln(errortext);
     #/
     return undefined;
@@ -34,13 +34,13 @@ function function_8df651a1b2728b15(blueprintname, weaponkey) {
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x207
-// Size: 0x107
+// Checksum 0x0, Offset: 0x215
+// Size: 0xf7
 function function_b9ff4b6230995332(blueprintname, weaponkey) {
     var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
     if (!isdefined(var_5a0f9e1af605f0f5)) {
         /#
-            errortext = "<dev string:x1c>" + function_3c8848a3a11b2553(blueprintname) + "<dev string:x45>";
+            errortext = "<dev string:x1c>" + blueprintname + "<dev string:x42>";
             iprintln(errortext);
         #/
         return undefined;
@@ -54,7 +54,7 @@ function function_b9ff4b6230995332(blueprintname, weaponkey) {
         }
     }
     /#
-        errortext = "<dev string:x4a>" + function_3c8848a3a11b2553(weaponkey) + "<dev string:x6d>" + function_3c8848a3a11b2553(blueprintname) + "<dev string:x45>";
+        errortext = "<dev string:x44>" + weaponkey + "<dev string:x64>" + blueprintname + "<dev string:x42>";
         iprintln(errortext);
     #/
     return undefined;
@@ -62,23 +62,21 @@ function function_b9ff4b6230995332(blueprintname, weaponkey) {
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x317
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x315
+// Size: 0xa4
 function getassetlist(bundle, assettype) {
     switch (assettype) {
-    case #"xmodel": 
+    case #"hash_769eb8a21188fc4": 
         return bundle.xmodellist;
-    case #"vfx": 
-        return bundle.var_3e8ea9dd090a091b;
-    case #"string": 
+    case #"hash_2ac140ce3b5ea398": 
         return bundle.stringlist;
-    case #"suit": 
+    case #"hash_2b36138a33884fe0": 
         return bundle.suitlist;
-    case #"execution": 
+    case #"hash_bfc3667f5f819e35": 
         return bundle.executionlist;
     default: 
         /#
-            errortext = "<dev string:x8d>";
+            errortext = "<dev string:x81>";
             iprintln(errortext);
         #/
         return undefined;
@@ -87,13 +85,13 @@ function getassetlist(bundle, assettype) {
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dc
-// Size: 0x123
+// Checksum 0x0, Offset: 0x3c1
+// Size: 0x114
 function function_29e16a88682086b2(blueprintname, assettype, key) {
     var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
     if (!isdefined(var_5a0f9e1af605f0f5)) {
         /#
-            errortext = "<dev string:x1c>" + function_3c8848a3a11b2553(blueprintname) + "<dev string:x45>";
+            errortext = "<dev string:x1c>" + blueprintname + "<dev string:x42>";
             iprintln(errortext);
         #/
         return undefined;
@@ -108,7 +106,7 @@ function function_29e16a88682086b2(blueprintname, assettype, key) {
         }
     }
     /#
-        errortext = "<dev string:xb1>" + assettype + "<dev string:xd4>" + function_3c8848a3a11b2553(key) + "<dev string:xe8>" + function_3c8848a3a11b2553(blueprintname) + "<dev string:x45>";
+        errortext = "<dev string:xa2>" + assettype + "<dev string:xc2>" + key + "<dev string:xd3>" + blueprintname + "<dev string:x42>";
         iprintln(errortext);
     #/
     return undefined;
@@ -116,8 +114,8 @@ function function_29e16a88682086b2(blueprintname, assettype, key) {
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x508
-// Size: 0x13e
+// Checksum 0x0, Offset: 0x4de
+// Size: 0x13d
 function function_b9bd0a3d37510bfd(weaponname, var_85b2a5343fc91ccb, attachmentname, var_1fe8655c442492dc) {
     var_9be202c49cdf67ec = undefined;
     if (isdefined(var_85b2a5343fc91ccb)) {
@@ -137,7 +135,7 @@ function function_b9bd0a3d37510bfd(weaponname, var_85b2a5343fc91ccb, attachmentn
     if (isdefined(attachmentname) && isdefined(var_1fe8655c442492dc) && isdefined(var_85b2a5343fc91ccb)) {
         var_e658498427cc5a29 = [0];
         var_349c4e254a2c12df = function_3211981142ec5aee(weaponname, var_85b2a5343fc91ccb);
-        foreach (name, index in var_349c4e254a2c12df) {
+        foreach (index in var_349c4e254a2c12df) {
             if (name == attachmentname) {
                 var_e658498427cc5a29 = [index];
                 break;
@@ -149,22 +147,8 @@ function function_b9bd0a3d37510bfd(weaponname, var_85b2a5343fc91ccb, attachmentn
 
 // Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x64f
-// Size: 0xb6
-function function_71efed8bf57f1d39(bundle, blueprintindex) {
-    var_9b32d1936831f5aa = undefined;
-    if (isdefined(bundle.var_d96d3e6ceed581fd.blueprints) && bundle.var_d96d3e6ceed581fd.blueprints.size > 0 && blueprintindex > 0) {
-        var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.blueprints[blueprintindex - 1].genericblueprint;
-    } else if (isdefined(bundle.var_d96d3e6ceed581fd.blueprint_default)) {
-        var_9b32d1936831f5aa = bundle.var_d96d3e6ceed581fd.blueprint_default;
-    }
-    return var_9b32d1936831f5aa;
-}
-
-// Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x70e
-// Size: 0x1ad
+// Checksum 0x0, Offset: 0x624
+// Size: 0x1a8
 function function_dd2a4fb3522f314(blueprintname, weaponkey) {
     if (isdefined(blueprintname) && isdefined(weaponkey)) {
         var_5a0f9e1af605f0f5 = function_98442f5bef361b2b("genericblueprint", blueprintname);
@@ -176,9 +160,7 @@ function function_dd2a4fb3522f314(blueprintname, weaponkey) {
             }
         }
         if (!isdefined(weaponentry)) {
-            /#
-                error("<dev string:x105>" + function_3c8848a3a11b2553(blueprintname));
-            #/
+            error("could not find weaponIndex for generic blueprint " + blueprintname);
             return;
         }
         weaponname = ter_op(weaponentry.weapon != "", weaponentry.weapon, undefined);
@@ -194,47 +176,5 @@ function function_dd2a4fb3522f314(blueprintname, weaponkey) {
         error("weaponKey not specified");
     }
     return undefined;
-}
-
-// Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c3
-// Size: 0x9d
-function function_a03b57f924bf9a77(var_9b32d1936831f5aa) {
-    genericblueprint = function_98442f5bef361b2b("genericblueprint", var_9b32d1936831f5aa);
-    foreach (vfx in getassetlist(genericblueprint, #"vfx")) {
-        utility::add_fx(function_f28fd66285fa2c9(var_9b32d1936831f5aa) + ":" + vfx.key, vfx.value);
-    }
-}
-
-// Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x968
-// Size: 0x9c
-function function_b68fa1978a63823a(bundle) {
-    var_c7cb5929a169886 = bundle.var_d96d3e6ceed581fd.blueprint_default;
-    function_a03b57f924bf9a77(var_c7cb5929a169886);
-    foreach (blueprint in bundle.var_d96d3e6ceed581fd.blueprints) {
-        function_a03b57f924bf9a77(blueprint.genericblueprint);
-    }
-}
-
-// Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0c
-// Size: 0x52
-function function_1792d9f5ade0ae4a(bundle, blueprintindex, var_43942779fa79c40a, position) {
-    var_9b32d1936831f5aa = function_71efed8bf57f1d39(bundle, blueprintindex);
-    playfx(utility::getfx(function_f28fd66285fa2c9(var_9b32d1936831f5aa) + ":" + var_43942779fa79c40a), position);
-}
-
-// Namespace namespace_4f3742cd39063b9 / namespace_eb369ce7be7f0198
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa66
-// Size: 0x38
-function function_696473ef4d75f1d3(bundle, blueprintindex) {
-    var_9b32d1936831f5aa = function_71efed8bf57f1d39(bundle, blueprintindex);
-    var_810c15bb2f4abd89 = function_3948a353eff6c51a(var_9b32d1936831f5aa);
-    return var_810c15bb2f4abd89;
 }
 

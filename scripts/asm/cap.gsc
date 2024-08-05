@@ -12,8 +12,8 @@
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb18
-// Size: 0x133
+// Checksum 0x0, Offset: 0xb3d
+// Size: 0x13b
 function function_11bc1c4cee238a68(asmname, statename, params) {
     var_7e44a7a72aab416a = 0;
     aliasprefix = "";
@@ -48,7 +48,7 @@ function function_11bc1c4cee238a68(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc54
+// Checksum 0x0, Offset: 0xc81
 // Size: 0x64
 function function_64d568ec73ec23f9(asmname, statename, params) {
     self.lasttimepushed = gettime();
@@ -59,8 +59,8 @@ function function_64d568ec73ec23f9(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc0
-// Size: 0x1b5
+// Checksum 0x0, Offset: 0xced
+// Size: 0x1ba
 function function_286c69ed2c750e6c(asmname, sourceciv) {
     self endon("death");
     player = namespace_2b520709cc9e7442::getclosestplayer(sourceciv.origin);
@@ -95,7 +95,7 @@ function function_286c69ed2c750e6c(asmname, sourceciv) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe7d
+// Checksum 0x0, Offset: 0xeaf
 // Size: 0x4b
 function function_c72398c24fe24b5b(asmname, statename, params) {
     thread function_286c69ed2c750e6c(asmname, self);
@@ -106,8 +106,8 @@ function function_c72398c24fe24b5b(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xed0
-// Size: 0x12a
+// Checksum 0x0, Offset: 0xf02
+// Size: 0x131
 function function_f16999f33ef5381d(statename) {
     self notify("lerp_arrive_finished");
     self endon("death");
@@ -135,7 +135,7 @@ function function_f16999f33ef5381d(statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1002
+// Checksum 0x0, Offset: 0x103b
 // Size: 0x3f
 function function_59308d53cabcdfdb(asmname, statename, params) {
     self.var_44c80d2697dce15b = asm_getanim(asmname, statename);
@@ -144,8 +144,8 @@ function function_59308d53cabcdfdb(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1049
-// Size: 0x14a
+// Checksum 0x0, Offset: 0x1082
+// Size: 0x14c
 function function_fb8afeabd23a5ef5(asmname, statename, params, animid) {
     self endon(statename + "_finished");
     xanim = asm_getxanim(statename, animid);
@@ -174,7 +174,7 @@ function function_fb8afeabd23a5ef5(asmname, statename, params, animid) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x119b
+// Checksum 0x0, Offset: 0x11d6
 // Size: 0x3d
 function function_e7652690c4fbe131(asmname, statename, params) {
     function_59308d53cabcdfdb(asmname, statename, params);
@@ -185,7 +185,7 @@ function function_e7652690c4fbe131(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e0
+// Checksum 0x0, Offset: 0x121b
 // Size: 0x25
 function function_ae21268aec38d315(asmname, statename, params) {
     self.keepclaimednodeifvalid = 0;
@@ -193,8 +193,8 @@ function function_ae21268aec38d315(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x120d
-// Size: 0xef
+// Checksum 0x0, Offset: 0x1248
+// Size: 0xf2
 function function_38adb9f7ae99df6a(statename, xanim, animtime) {
     if (isdefined(self.relativestates) && array_contains(self.relativestates, statename)) {
         return;
@@ -220,7 +220,7 @@ function function_38adb9f7ae99df6a(statename, xanim, animtime) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1304
+// Checksum 0x0, Offset: 0x1342
 // Size: 0x6e
 function function_76b0413f0e5d4dd2() {
     if (isdefined(self.var_e0676499119d450b)) {
@@ -243,7 +243,7 @@ function function_76b0413f0e5d4dd2() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x137b
+// Checksum 0x0, Offset: 0x13b9
 // Size: 0xa7
 function function_7d6e619c3450bef3(statename, xanim) {
     if (!isdefined(self.resumestatetime) || !array_contains_key(self.resumestatetime, statename)) {
@@ -254,7 +254,7 @@ function function_7d6e619c3450bef3(statename, xanim) {
         var_dcf5e86549620338 = self.var_dcf5e86549620338;
     }
     resumetime = var_dcf5e86549620338.resumestatetime[statename];
-    assert(isdefined(resumetime), "<dev string:x1c>" + statename + "<dev string:x48>");
+    assert(isdefined(resumetime), "cap_tryResumeState: Cannot resume state " + statename + " on an ent with no .resumeStateTime");
     function_38adb9f7ae99df6a(statename, xanim, resumetime);
     self setanimtime(xanim, resumetime);
     thread function_c886dae06eba7d4a(statename, xanim);
@@ -262,7 +262,7 @@ function function_7d6e619c3450bef3(statename, xanim) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x142a
+// Checksum 0x0, Offset: 0x1468
 // Size: 0x38
 function function_c886dae06eba7d4a(statename, xanim) {
     self endon(statename + "_finished");
@@ -274,8 +274,8 @@ function function_c886dae06eba7d4a(statename, xanim) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x146a
-// Size: 0x240
+// Checksum 0x0, Offset: 0x14a8
+// Size: 0x24d
 function function_f498a27eb642642c() {
     while (true) {
         player = namespace_2b520709cc9e7442::getclosestplayer(self.origin);
@@ -320,8 +320,8 @@ function function_f498a27eb642642c() {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b2
-// Size: 0x224
+// Checksum 0x0, Offset: 0x16fd
+// Size: 0x230
 function function_46602711ed8e40d6() {
     rotationspeed = 70;
     while (true) {
@@ -361,7 +361,7 @@ function function_46602711ed8e40d6() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18de
+// Checksum 0x0, Offset: 0x1935
 // Size: 0x13
 function function_2944e6470a84b96d(xanim, tracktime) {
     
@@ -369,7 +369,7 @@ function function_2944e6470a84b96d(xanim, tracktime) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18f9
+// Checksum 0x0, Offset: 0x1950
 // Size: 0x13
 function function_f9d6133768491200(xanim, tracktime) {
     
@@ -377,7 +377,7 @@ function function_f9d6133768491200(xanim, tracktime) {
 
 // Namespace cap / scripts\asm\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1914
+// Checksum 0x0, Offset: 0x196b
 // Size: 0xb
 function function_7495a975f79b957(player) {
     
@@ -385,8 +385,8 @@ function function_7495a975f79b957(player) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1927
-// Size: 0xda
+// Checksum 0x0, Offset: 0x197e
+// Size: 0xdc
 function function_c6f62de5c6e04207(asmname, statename, params) {
     self endon(statename + "_finished");
     while (true) {
@@ -408,7 +408,7 @@ function function_c6f62de5c6e04207(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a09
+// Checksum 0x0, Offset: 0x1a62
 // Size: 0x5c
 function cap_donotetracks(asmname, statename) {
     notehandler = asm_getnotehandler(asmname, statename);
@@ -419,7 +419,7 @@ function cap_donotetracks(asmname, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a6e
+// Checksum 0x0, Offset: 0x1ac7
 // Size: 0x14
 function cap_notetrackhandler(notetrack) {
     scripts\anim\notetracks::notetrack_prefix_handler(notetrack);
@@ -428,8 +428,8 @@ function cap_notetrackhandler(notetrack) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a8b
-// Size: 0x83
+// Checksum 0x0, Offset: 0x1ae4
+// Size: 0x84
 function function_a0dfeea159aa7f64(asmname, statename, params) {
     if (!isdefined(params)) {
         var_b6648a33085e43a = function_976d6ccb0a2807f3(statename);
@@ -448,8 +448,8 @@ function function_a0dfeea159aa7f64(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b16
-// Size: 0x32
+// Checksum 0x0, Offset: 0x1b70
+// Size: 0x31
 function function_f179ede0989e6734(statename, alias) {
     animresult = archetypegetrandomalias(self.animsetname, statename, alias, 0);
     return isdefined(animresult);
@@ -457,8 +457,8 @@ function function_f179ede0989e6734(statename, alias) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b51
-// Size: 0x1ce
+// Checksum 0x0, Offset: 0x1baa
+// Size: 0x1d8
 function function_b6050fd3b28e7aef(asmname, statename, params) {
     neardistthreshold = 450;
     var_cba2d21a29a6d238 = neardistthreshold * neardistthreshold;
@@ -502,8 +502,8 @@ function function_b6050fd3b28e7aef(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d28
-// Size: 0x83
+// Checksum 0x0, Offset: 0x1d8b
+// Size: 0x84
 function function_7c6b7c2cd3357729(asmname, statename, params) {
     if (!isdefined(params)) {
         var_b6648a33085e43a = function_976d6ccb0a2807f3(statename);
@@ -522,20 +522,20 @@ function function_7c6b7c2cd3357729(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1db3
+// Checksum 0x0, Offset: 0x1e17
 // Size: 0x83
 function function_18e6c36c02a94dbd(statename, alias) {
     arcname = self.animsetname;
-    assertex(isdefined(arcname), "<dev string:x6f>");
+    assertex(isdefined(arcname), "AI does not have archetype defined.");
     animresult = archetypegetrandomalias(arcname, statename, alias, asm_isfrantic());
-    assertex(isdefined(animresult), "<dev string:x96>" + alias + "<dev string:xaf>" + arcname + "<dev string:xc1>" + statename + "<dev string:xcc>" + self.classname);
+    assertex(isdefined(animresult), "Unable to find alias " + alias + " in archetype " + arcname + " state " + statename + " for " + self.classname);
     return animresult;
 }
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e3f
-// Size: 0xd7
+// Checksum 0x0, Offset: 0x1ea3
+// Size: 0xd8
 function function_658df657ca37f542(statename, alias) {
     arcname = self.animsetname;
     if (!isdefined(self.var_30452ad282afcd76)) {
@@ -558,8 +558,8 @@ function function_658df657ca37f542(statename, alias) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f1f
-// Size: 0x184
+// Checksum 0x0, Offset: 0x1f84
+// Size: 0x188
 function function_976d6ccb0a2807f3(statename, optionalprefix, allownone) {
     archetype = self.animsetname;
     aliases = archetypegetaliases(archetype, statename);
@@ -572,9 +572,9 @@ function function_976d6ccb0a2807f3(statename, optionalprefix, allownone) {
     if (!isdefined(aliases)) {
         /#
             if (!istrue(allownone)) {
-                msg = "<dev string:xd5>" + statename + "<dev string:xaf>" + archetype;
+                msg = "<dev string:x1c>" + statename + "<dev string:x41>" + archetype;
                 if (isdefined(optionalprefix)) {
-                    msg += "<dev string:xfd>" + optionalprefix;
+                    msg += "<dev string:x50>" + optionalprefix;
                 }
                 assertmsg(msg);
             }
@@ -592,9 +592,9 @@ function function_976d6ccb0a2807f3(statename, optionalprefix, allownone) {
     }
     /#
         if (!istrue(allownone) && !isdefined(chosen)) {
-            msg = "<dev string:xd5>" + statename + "<dev string:xaf>" + archetype;
+            msg = "<dev string:x1c>" + statename + "<dev string:x41>" + archetype;
             if (isdefined(optionalprefix)) {
-                msg += "<dev string:xfd>" + optionalprefix;
+                msg += "<dev string:x50>" + optionalprefix;
             }
             assertmsg(msg);
         }
@@ -604,7 +604,7 @@ function function_976d6ccb0a2807f3(statename, optionalprefix, allownone) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ac
+// Checksum 0x0, Offset: 0x2115
 // Size: 0x24
 function cap_event(asmname, statename, tostatename, params) {
     return false;
@@ -612,7 +612,7 @@ function cap_event(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d9
+// Checksum 0x0, Offset: 0x2142
 // Size: 0x24
 function function_2d6b1385ffc3f5ca(asmname, statename, tostatename, params) {
     return false;
@@ -620,7 +620,7 @@ function function_2d6b1385ffc3f5ca(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2106
+// Checksum 0x0, Offset: 0x216f
 // Size: 0x34
 function function_85eca0a1310a70c(asmname, statename, tostatename, params) {
     if (isai(self)) {
@@ -631,7 +631,7 @@ function function_85eca0a1310a70c(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2143
+// Checksum 0x0, Offset: 0x21ac
 // Size: 0xb3
 function function_304541cf33d2193c(asmname, statename, params) {
     if (isdefined(params)) {
@@ -653,8 +653,8 @@ function function_304541cf33d2193c(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x21fe
-// Size: 0x178
+// Checksum 0x0, Offset: 0x2267
+// Size: 0x17c
 function function_c779dc23caccb19c(asmname, statename, params) {
     if (!isdefined(self.animprops)) {
         return;
@@ -681,7 +681,7 @@ function function_c779dc23caccb19c(asmname, statename, params) {
             propxanim = random(propxanim);
         }
         scriptednode = function_76b0413f0e5d4dd2();
-        assert(isdefined(scriptednode), "<dev string:x10e>");
+        assert(isdefined(scriptednode), "cap_propAnim: must have a scripted node to animate a prop.");
         origin = scriptednode.origin;
         angles = default_to(scriptednode.angles, (0, 0, 0));
         prop animscripted(aliasname, origin, angles, propxanim);
@@ -690,7 +690,7 @@ function function_c779dc23caccb19c(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x237e
+// Checksum 0x0, Offset: 0x23eb
 // Size: 0x2c
 function cap_exit(asmname, statename, params) {
     if (!isalive(self)) {
@@ -701,7 +701,7 @@ function cap_exit(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x23b2
+// Checksum 0x0, Offset: 0x241f
 // Size: 0x2e
 function function_a646f2b30e1f417(asmname, statename, params) {
     scripts\common\cap::cap_exit();
@@ -710,7 +710,7 @@ function function_a646f2b30e1f417(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x23e8
+// Checksum 0x0, Offset: 0x2455
 // Size: 0x2e
 function function_c348991ddd3c9ce5(asmname, statename, params) {
     scripts\common\cap::cap_exit();
@@ -719,7 +719,7 @@ function function_c348991ddd3c9ce5(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x241e
+// Checksum 0x0, Offset: 0x248b
 // Size: 0x4f
 function function_db8201ba3a4a894d(asmname, statename, params) {
     scripts\common\cap::cap_exit();
@@ -732,8 +732,8 @@ function function_db8201ba3a4a894d(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2475
-// Size: 0x58
+// Checksum 0x0, Offset: 0x24e2
+// Size: 0x57
 function function_71fe3f0b4ea06ff1(asmname, statename, params) {
     scripts\common\cap::cap_exit();
     cache = self.forcelongdeathskipintroanim;
@@ -744,7 +744,7 @@ function function_71fe3f0b4ea06ff1(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x24d5
+// Checksum 0x0, Offset: 0x2541
 // Size: 0x1b
 function cap_donothing(asmname, statename, params) {
     
@@ -752,7 +752,7 @@ function cap_donothing(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x24f8
+// Checksum 0x0, Offset: 0x2564
 // Size: 0x31
 function cap_init(asmname, fromstate, tostate, params) {
     self.attitude = "relaxed";
@@ -760,7 +760,7 @@ function cap_init(asmname, fromstate, tostate, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2531
+// Checksum 0x0, Offset: 0x259d
 // Size: 0x51
 function function_ebd0a826ac49da1e(asmname, fromstate, tostate, params) {
     assert(isdefined(params) && !isarray(params));
@@ -769,7 +769,7 @@ function function_ebd0a826ac49da1e(asmname, fromstate, tostate, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x258b
+// Checksum 0x0, Offset: 0x25f7
 // Size: 0x32
 function cap_shouldreact(asmname, statename, tostatename, params) {
     return self.attitude != "relaxed";
@@ -777,7 +777,7 @@ function cap_shouldreact(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x25c6
+// Checksum 0x0, Offset: 0x2632
 // Size: 0x51
 function function_e44a6892e1d2ec(asmname, statename, tostatename, params) {
     switch (self.attitude) {
@@ -790,7 +790,7 @@ function function_e44a6892e1d2ec(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x261f
+// Checksum 0x0, Offset: 0x268b
 // Size: 0x5d
 function function_11df7068a03bb818(asmname, statename, tostatename, params) {
     switch (self.attitude) {
@@ -804,7 +804,7 @@ function function_11df7068a03bb818(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2684
+// Checksum 0x0, Offset: 0x26f0
 // Size: 0x5d
 function function_9cfcf25e2674ea46(asmname, statename, tostatename, params) {
     switch (self.attitude) {
@@ -818,10 +818,10 @@ function function_9cfcf25e2674ea46(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e9
+// Checksum 0x0, Offset: 0x2755
 // Size: 0x46
 function function_fbaf3f50df29a0ca(asmname, statename, tostatename, params) {
-    assert(isdefined(params), "<dev string:x14c>");
+    assert(isdefined(params), "cap_isFlagSet: must specify a flag to check via the params field");
     if (!flag_exist(params)) {
         return 0;
     }
@@ -830,10 +830,10 @@ function function_fbaf3f50df29a0ca(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2738
-// Size: 0xad
+// Checksum 0x0, Offset: 0x27a4
+// Size: 0xaa
 function function_84e2d261814f426(asmname, statename, tostatename, params) {
-    assert(isdefined(params) && isnumber(params), "<dev string:x190>");
+    assert(isdefined(params) && isnumber(params), "cap_isPlayerWithinDist: must specify a numeric distance via the params field");
     foreach (player in level.players) {
         if (distancesquared(self.origin, player.origin) <= params * params) {
             return true;
@@ -844,7 +844,7 @@ function function_84e2d261814f426(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x27ee
+// Checksum 0x0, Offset: 0x2857
 // Size: 0x2c
 function function_d87741ac656cc282(asmname, statename, tostatename, params) {
     return function_9f458b5f165cfd34(params, 1);
@@ -852,7 +852,7 @@ function function_d87741ac656cc282(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2823
+// Checksum 0x0, Offset: 0x288c
 // Size: 0x2b
 function function_cd7b18478f9925a2(asmname, statename, tostatename, params) {
     return function_9f458b5f165cfd34(params, 0);
@@ -860,8 +860,8 @@ function function_cd7b18478f9925a2(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2857
-// Size: 0x101
+// Checksum 0x0, Offset: 0x28c0
+// Size: 0x102
 function private function_9f458b5f165cfd34(params, dosighttrace) {
     if (isai(self)) {
         lookatorigin = self geteye();
@@ -891,7 +891,7 @@ function private function_9f458b5f165cfd34(params, dosighttrace) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2961
+// Checksum 0x0, Offset: 0x29cb
 // Size: 0x3e
 function function_eef8d65ad14bc7d(asmname, statename, tostatename, params) {
     if (!isdefined(self.stealth)) {
@@ -902,7 +902,7 @@ function function_eef8d65ad14bc7d(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x29a8
+// Checksum 0x0, Offset: 0x2a12
 // Size: 0x3e
 function function_2c8145ed8b6c8504(asmname, statename, tostatename, params) {
     if (!isdefined(self.stealth)) {
@@ -913,7 +913,7 @@ function function_2c8145ed8b6c8504(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x29ef
+// Checksum 0x0, Offset: 0x2a59
 // Size: 0x3e
 function function_9bfddb0e0134923b(asmname, statename, tostatename, params) {
     if (!isdefined(self.stealth)) {
@@ -924,7 +924,7 @@ function function_9bfddb0e0134923b(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a36
+// Checksum 0x0, Offset: 0x2aa0
 // Size: 0x3f
 function function_df51607ee78d1190(asmname, statename, tostatename, params) {
     if (!isdefined(self.stealth)) {
@@ -935,16 +935,16 @@ function function_df51607ee78d1190(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a7e
+// Checksum 0x0, Offset: 0x2ae8
 // Size: 0x40
 function function_276b2832ae7c7cf7(asmname, statename, tostatename, params) {
-    assert(isdefined(params), "<dev string:x1e0>");
+    assert(isdefined(params), "Must specify a single param for isOverrideArchetype");
     return self findoverridearchetype("default") == params;
 }
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ac7
+// Checksum 0x0, Offset: 0x2b31
 // Size: 0xa4
 function function_8439b78c94685919(asmname, statename, tostatename, params) {
     if (istrue(self.var_36023fdce648d2ea)) {
@@ -963,8 +963,8 @@ function function_8439b78c94685919(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b74
-// Size: 0x20e
+// Checksum 0x0, Offset: 0x2bde
+// Size: 0x20d
 function function_2bd39480ae487049(note, params) {
     statename = self asmgetcurrentstate(self.asmname);
     if (isstartstr(note, "cigarette")) {
@@ -1015,7 +1015,7 @@ function function_2bd39480ae487049(note, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d8a
+// Checksum 0x0, Offset: 0x2df3
 // Size: 0x1a4
 function function_245f3c9cf9fb2ed4(note, statename) {
     switch (self.animsetname) {
@@ -1065,8 +1065,8 @@ function function_245f3c9cf9fb2ed4(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f36
-// Size: 0xcb
+// Checksum 0x0, Offset: 0x2f9f
+// Size: 0xca
 function function_c2c313a844d139b9() {
     self endon("death");
     ai = self getlinkedparent();
@@ -1090,7 +1090,7 @@ function function_c2c313a844d139b9() {
 
 // Namespace cap / scripts\asm\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3009
+// Checksum 0x0, Offset: 0x3071
 // Size: 0x51
 function function_591bd29f12b13862(note) {
     handtag = "tag_accessory_right";
@@ -1103,8 +1103,8 @@ function function_591bd29f12b13862(note) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3063
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x30cb
+// Size: 0xa8
 function function_c1cbf486f2593c18(note, statename) {
     self endon(statename + "_finished");
     handtag = function_591bd29f12b13862(note);
@@ -1126,8 +1126,8 @@ function function_c1cbf486f2593c18(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3114
-// Size: 0x46
+// Checksum 0x0, Offset: 0x317b
+// Size: 0x45
 function function_640494db1d9ed4a4() {
     modelname = "offhand_wm_smartphone_on";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_cellphone"])) {
@@ -1138,8 +1138,8 @@ function function_640494db1d9ed4a4() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3163
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x31c9
+// Size: 0xa8
 function function_f0a5a6335f173f80(note, statename) {
     self endon(statename + "_finished");
     handtag = function_591bd29f12b13862(note);
@@ -1161,8 +1161,8 @@ function function_f0a5a6335f173f80(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3214
-// Size: 0x46
+// Checksum 0x0, Offset: 0x3279
+// Size: 0x45
 function function_4c8b20626e0c2f54() {
     modelname = "offhand2h_wm_tablet_v0";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_tablet"])) {
@@ -1173,8 +1173,8 @@ function function_4c8b20626e0c2f54() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3263
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x32c7
+// Size: 0xa8
 function function_2e7191a29c3331b3(note, statename) {
     self endon(statename + "_finished");
     handtag = function_591bd29f12b13862(note);
@@ -1196,8 +1196,8 @@ function function_2e7191a29c3331b3(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3314
-// Size: 0x46
+// Checksum 0x0, Offset: 0x3377
+// Size: 0x45
 function function_cc9b64be81cb46ef() {
     modelname = "electronics_walkie_talkie_01";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_radio"])) {
@@ -1208,8 +1208,8 @@ function function_cc9b64be81cb46ef() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3363
-// Size: 0x9a
+// Checksum 0x0, Offset: 0x33c5
+// Size: 0x99
 function function_fb2c788fbeb2ed0e(note, statename) {
     self endon(statename + "_finished");
     handtag = function_591bd29f12b13862(note);
@@ -1228,8 +1228,8 @@ function function_fb2c788fbeb2ed0e(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3405
-// Size: 0x9a
+// Checksum 0x0, Offset: 0x3466
+// Size: 0x99
 function function_2059f541bb4ec92b(note, statename) {
     self endon(statename + "_finished");
     handtag = function_591bd29f12b13862(note);
@@ -1248,8 +1248,8 @@ function function_2059f541bb4ec92b(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a7
-// Size: 0x1e6
+// Checksum 0x0, Offset: 0x3507
+// Size: 0x1e5
 function function_8248dd35588eba2a(note, statename) {
     handtag = function_591bd29f12b13862(note);
     if (isstartstr(note, "attach")) {
@@ -1289,8 +1289,8 @@ function function_8248dd35588eba2a(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3695
-// Size: 0x46
+// Checksum 0x0, Offset: 0x36f4
+// Size: 0x45
 function function_f7b213561a5c3b4c() {
     modelname = "misc_cigarette_01_centered";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_cigarette"])) {
@@ -1301,8 +1301,8 @@ function function_f7b213561a5c3b4c() {
 
 // Namespace cap / scripts\asm\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e4
-// Size: 0x81
+// Checksum 0x0, Offset: 0x3742
+// Size: 0x80
 function smoking_blowsmoke(statename) {
     self endon("smoking_end");
     self endon("death");
@@ -1319,7 +1319,7 @@ function smoking_blowsmoke(statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x376d
+// Checksum 0x0, Offset: 0x37ca
 // Size: 0x94
 function smoking_cleanup(asmname, statename, params) {
     self notify("smoking_end");
@@ -1337,7 +1337,7 @@ function smoking_cleanup(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3809
+// Checksum 0x0, Offset: 0x3866
 // Size: 0xbb
 function function_78fc852578a2d6a9(note, statename) {
     action = getsubstr(note, 0, 6);
@@ -1361,8 +1361,8 @@ function function_78fc852578a2d6a9(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38cc
-// Size: 0x46
+// Checksum 0x0, Offset: 0x3929
+// Size: 0x45
 function function_34554aaf056d23d() {
     modelname = "misc_cigarette_pack_01";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_cigarettepack"])) {
@@ -1373,8 +1373,8 @@ function function_34554aaf056d23d() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x391b
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x3977
+// Size: 0xa7
 function function_65bcde73638156e(note, statename) {
     handtag = function_591bd29f12b13862(note);
     if (isstartstr(note, "attach")) {
@@ -1396,8 +1396,8 @@ function function_65bcde73638156e(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39cb
-// Size: 0x46
+// Checksum 0x0, Offset: 0x3a26
+// Size: 0x45
 function idle_focusflashlight() {
     modelname = "jup_tool_flashlight_01";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_focus_flashlight"])) {
@@ -1408,8 +1408,8 @@ function idle_focusflashlight() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a1a
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x3a74
+// Size: 0x9f
 function function_103f712f2029bde6(note, statename) {
     handtag = function_591bd29f12b13862(note);
     if (isstartstr(note, "attach")) {
@@ -1430,8 +1430,8 @@ function function_103f712f2029bde6(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ac2
-// Size: 0x46
+// Checksum 0x0, Offset: 0x3b1b
+// Size: 0x45
 function function_6d9a6be03f41b2c() {
     modelname = "p7_bottle_plastic_16oz_water";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_bottle"])) {
@@ -1442,8 +1442,8 @@ function function_6d9a6be03f41b2c() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b11
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x3b69
+// Size: 0x9f
 function function_75ab18574236de38(note, statename) {
     handtag = function_591bd29f12b13862(note);
     if (isstartstr(note, "attach")) {
@@ -1464,8 +1464,8 @@ function function_75ab18574236de38(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bb9
-// Size: 0x46
+// Checksum 0x0, Offset: 0x3c10
+// Size: 0x45
 function function_ccfa6fb9cdc07744() {
     modelname = "parts_jup_misc_crowbar";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_crowbar"])) {
@@ -1476,7 +1476,7 @@ function function_ccfa6fb9cdc07744() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c08
+// Checksum 0x0, Offset: 0x3c5e
 // Size: 0x24
 function function_2e7f07f6090ddeb5(note, statename) {
     if (isdefined(self function_92435c7a6ae85c3c())) {
@@ -1486,8 +1486,8 @@ function function_2e7f07f6090ddeb5(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c34
-// Size: 0x147
+// Checksum 0x0, Offset: 0x3c8a
+// Size: 0x149
 function function_9e1b3a33e6a8c117(note, statename) {
     handtag = "tag_accessory_right";
     gun = "weapon_wm_pi_mike1911_phys";
@@ -1512,8 +1512,8 @@ function function_9e1b3a33e6a8c117(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d83
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x3ddb
+// Size: 0x7d
 function function_ad085c5f946742f4(note, statename) {
     if (isdefined(self function_92435c7a6ae85c3c())) {
         if (!isdefined(self.idle_table)) {
@@ -1525,8 +1525,8 @@ function function_ad085c5f946742f4(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e09
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x3e60
+// Size: 0xf5
 function function_8b7e11da82242584(note, statename) {
     handtag = "tag_accessory_right";
     if (isdefined(self function_92435c7a6ae85c3c())) {
@@ -1545,8 +1545,8 @@ function function_8b7e11da82242584(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f05
-// Size: 0x46
+// Checksum 0x0, Offset: 0x3f5d
+// Size: 0x45
 function function_1ee6622550f2a5d0() {
     modelname = "misc_wm_blackbox_laptop";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_laptop"])) {
@@ -1557,8 +1557,8 @@ function function_1ee6622550f2a5d0() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f54
-// Size: 0x93
+// Checksum 0x0, Offset: 0x3fab
+// Size: 0x92
 function function_425680112c205848(note, statename) {
     handtag = "tag_accessory_right";
     if (isdefined(self function_92435c7a6ae85c3c())) {
@@ -1578,8 +1578,8 @@ function function_425680112c205848(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fef
-// Size: 0x1e7
+// Checksum 0x0, Offset: 0x4045
+// Size: 0x1e8
 function function_18f4224c27507c56(note, statename) {
     modelname = "container_fertilizer_bag_01_open";
     offset = (0, 0, -13);
@@ -1607,7 +1607,7 @@ function function_18f4224c27507c56(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x41de
+// Checksum 0x0, Offset: 0x4235
 // Size: 0x2a
 function function_cbde85a808114924() {
     self endon("death");
@@ -1619,7 +1619,7 @@ function function_cbde85a808114924() {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4210
+// Checksum 0x0, Offset: 0x4267
 // Size: 0x3f
 function function_399c8ad9434488e8() {
     self endon("death");
@@ -1633,8 +1633,8 @@ function function_399c8ad9434488e8() {
 
 // Namespace cap / scripts\asm\cap
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4257
-// Size: 0x211
+// Checksum 0x0, Offset: 0x42ae
+// Size: 0x213
 function function_ad40b641674a572d(note, statename) {
     if (isstartstr(note, "spawn")) {
         spawnchair();
@@ -1674,8 +1674,8 @@ function function_ad40b641674a572d(note, statename) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4470
-// Size: 0x87
+// Checksum 0x0, Offset: 0x44c9
+// Size: 0x86
 function spawnchair() {
     modelname = "cp_disco_folding_chair_lod0";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_chair"])) {
@@ -1689,8 +1689,8 @@ function spawnchair() {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4500
-// Size: 0x46
+// Checksum 0x0, Offset: 0x4558
+// Size: 0x45
 function function_fe4813e6b6140728() {
     modelname = "furniture_kitchen_end_table_01";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_table"])) {
@@ -1701,7 +1701,7 @@ function function_fe4813e6b6140728() {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x454f
+// Checksum 0x0, Offset: 0x45a6
 // Size: 0x2f
 function cappropcleanup(asmname, statename, params) {
     smoking_cleanup(asmname, statename, params);
@@ -1710,8 +1710,8 @@ function cappropcleanup(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4586
-// Size: 0xda
+// Checksum 0x0, Offset: 0x45dd
+// Size: 0xd8
 function prop_drop(asmname, statename, params) {
     props = [];
     if (isdefined(self.idle_prop)) {
@@ -1736,8 +1736,8 @@ function prop_drop(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4668
-// Size: 0xb3
+// Checksum 0x0, Offset: 0x46bd
+// Size: 0xb5
 function launchprop(prop) {
     if (!isdefined(prop) || !isent(prop) || !isdefined(prop.model) || prop.model == "") {
         return;
@@ -1753,8 +1753,8 @@ function launchprop(prop) {
 
 // Namespace cap / scripts\asm\cap
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4723
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x477a
+// Size: 0xa1
 function prop_delete() {
     interval = 10000;
     starttime = gettime();
@@ -1772,7 +1772,7 @@ function prop_delete() {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x47cb
+// Checksum 0x0, Offset: 0x4823
 // Size: 0x5e
 function idle_cleanup(asmname, statename, params) {
     self.newenemyreactiondistsq = 262144;
@@ -1786,7 +1786,7 @@ function idle_cleanup(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4831
+// Checksum 0x0, Offset: 0x4889
 // Size: 0x57
 function function_eaf18f0250abb7e7(asmname, statename, params) {
     statename = "death_custom";
@@ -1800,7 +1800,7 @@ function function_eaf18f0250abb7e7(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4891
+// Checksum 0x0, Offset: 0x48e9
 // Size: 0x22
 function ininteraction(asmname, statename, params) {
     return isdefined(self function_92435c7a6ae85c3c());
@@ -1808,7 +1808,7 @@ function ininteraction(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x48bc
+// Checksum 0x0, Offset: 0x4914
 // Size: 0x38
 function incap(asmname, statename, params) {
     return self.asmname != "civilian_react" || isdefined(self.var_33b4c07d1f388776);
@@ -1816,7 +1816,7 @@ function incap(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x48fd
+// Checksum 0x0, Offset: 0x4955
 // Size: 0x9c
 function function_8c68332a9a43f4ea(asmname, statename, params) {
     if (!isdefined(self._blackboard.var_60b33cf695f1d6ed)) {
@@ -1832,7 +1832,7 @@ function function_8c68332a9a43f4ea(asmname, statename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x49a2
+// Checksum 0x0, Offset: 0x49fa
 // Size: 0x37
 function function_741a8c95a0ba229a(asmname, statename, tostatename, params) {
     return istrue(self._blackboard.skiptransition);
@@ -1840,8 +1840,8 @@ function function_741a8c95a0ba229a(asmname, statename, tostatename, params) {
 
 // Namespace cap / scripts\asm\cap
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x49e2
-// Size: 0x1bb
+// Checksum 0x0, Offset: 0x4a3a
+// Size: 0x1c0
 function function_85c5a3c3c6f345c4(asmname, statename, params) {
     var_935ce979bb3ef270 = vectortoyaw(self.turntarget.origin - self.origin);
     anglediff = angleclamp180(var_935ce979bb3ef270 - self.angles[1]);
@@ -1857,20 +1857,20 @@ function function_85c5a3c3c6f345c4(asmname, statename, params) {
             animindex = "4";
         }
         turnanim = asm_lookupanimfromalias(statename, animindex);
-        assertex(isdefined(turnanim), "<dev string:x217>" + animindex + "<dev string:x234>" + self.animsetname);
+        assertex(isdefined(turnanim), "Cardinal turn anim index " + animindex + "is missing in animset " + self.animsetname);
     } else {
         animmap = ["2", "3", "6", "9", "8", "7", "4", "1", "2"];
         animindex = getangleindex(anglediff, 22.5);
         animalias = animmap[animindex];
         turnanim = asm_lookupanimfromalias(statename, animmap[animindex]);
-        assertex(isdefined(turnanim), "<dev string:x24e>" + animmap[animindex] + "<dev string:x234>" + self.animsetname);
+        assertex(isdefined(turnanim), "Turn anim index " + animmap[animindex] + "is missing in animset " + self.animsetname);
     }
     return turnanim;
 }
 
 // Namespace cap / scripts\asm\cap
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ba6
+// Checksum 0x0, Offset: 0x4c03
 // Size: 0x2d
 function function_b98734875ecb0d81(asmname, statename, tostatename, params) {
     return isdefined(self.turntarget);

@@ -13,8 +13,8 @@
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81e
-// Size: 0x101
+// Checksum 0x0, Offset: 0x74c
+// Size: 0x103
 function init() {
     level.gestureinfo = [];
     level.gestureinfobyindex = [];
@@ -39,7 +39,7 @@ function init() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x927
+// Checksum 0x0, Offset: 0x857
 // Size: 0x31
 function getgesturedata(ref) {
     if (isbot(self) && ref == "devilhorns_mp") {
@@ -50,7 +50,7 @@ function getgesturedata(ref) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x961
+// Checksum 0x0, Offset: 0x891
 // Size: 0x16
 function getgesturedatabyindex(index) {
     return level.gestureinfobyindex[index];
@@ -58,7 +58,7 @@ function getgesturedatabyindex(index) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x980
+// Checksum 0x0, Offset: 0x8b0
 // Size: 0x6a
 function private function_9e06fa9c92578f0d(b_value) {
     if (!isdefined(b_value)) {
@@ -81,7 +81,7 @@ function private function_9e06fa9c92578f0d(b_value) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f2
+// Checksum 0x0, Offset: 0x922
 // Size: 0x82
 function cleargesture() {
     self notify("clearGesture");
@@ -100,11 +100,11 @@ function cleargesture() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7c
-// Size: 0x134
+// Checksum 0x0, Offset: 0x9ac
+// Size: 0x133
 function givegesture(gestureweapon) {
-    assertex(gestureweapon != "<dev string:x1c>", "<dev string:x24>");
-    assertex(!isdefined(self.gestureweapon) || self.gestureweapon == "<dev string:x1c>", "<dev string:x54>");
+    assertex(gestureweapon != "none", "giveGesture() passed gestureWeapon of \"none\"");
+    assertex(!isdefined(self.gestureweapon) || self.gestureweapon == "none", "giveGesture() called on player with already set gesture");
     if (is_player_gamepad_enabled()) {
         self setactionslot(1, "taunt");
     } else {
@@ -136,7 +136,7 @@ function givegesture(gestureweapon) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb8
+// Checksum 0x0, Offset: 0xae7
 // Size: 0xa3
 function monitorgamepadswitch() {
     self endon("clearGesture");
@@ -164,8 +164,8 @@ function monitorgamepadswitch() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc63
-// Size: 0x25
+// Checksum 0x0, Offset: 0xb92
+// Size: 0x24
 function gesture_manage3rdperson() {
     self endon("disconnect");
     while (true) {
@@ -175,7 +175,7 @@ function gesture_manage3rdperson() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc90
+// Checksum 0x0, Offset: 0xbbe
 // Size: 0x1c
 function gesture_pickrockpaperscissors() {
     return level.rockpaperscissors[randomintrange(0, level.rockpaperscissors.size)];
@@ -183,8 +183,8 @@ function gesture_pickrockpaperscissors() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb5
-// Size: 0xb8
+// Checksum 0x0, Offset: 0xbe3
+// Size: 0xb7
 function gesture_rockpaperscissorsthink() {
     self endon("clearGesture");
     self endon("death_or_disconnect");
@@ -212,7 +212,7 @@ function gesture_rockpaperscissorsthink() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd75
+// Checksum 0x0, Offset: 0xca2
 // Size: 0x15
 function gesture_resetrockpaperscissorsgesture() {
     cleargesture();
@@ -221,8 +221,8 @@ function gesture_resetrockpaperscissorsgesture() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd92
-// Size: 0x10e
+// Checksum 0x0, Offset: 0xcbf
+// Size: 0x10f
 function gesture_playrockpaperscissors() {
     self endon("death_or_disconnect");
     level endon("game_ended");
@@ -252,8 +252,8 @@ function gesture_playrockpaperscissors() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xea8
-// Size: 0x127
+// Checksum 0x0, Offset: 0xdd6
+// Size: 0x12b
 function gesture_getrockpaperscissorsplayers() {
     forward = anglestoforward(self getplayerangles());
     nearplayers = utility::playersinsphere(self.origin, 500);
@@ -282,7 +282,7 @@ function gesture_getrockpaperscissorsplayers() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd7
+// Checksum 0x0, Offset: 0xf09
 // Size: 0x88
 function gesture_determinerockpaperscissorswinner(player1, player1choice, player2, player2choice) {
     if (player1choice == player2choice) {
@@ -300,7 +300,7 @@ function gesture_determinerockpaperscissorswinner(player1, player1choice, player
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1067
+// Checksum 0x0, Offset: 0xf99
 // Size: 0x5d
 function gesture_coinflipthink(gesture) {
     self endon("clearGesture");
@@ -322,7 +322,7 @@ function gesture_coinflipthink(gesture) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cc
+// Checksum 0x0, Offset: 0xffe
 // Size: 0x15
 function gesture_resetcoinflipgesture() {
     cleargesture();
@@ -331,7 +331,7 @@ function gesture_resetcoinflipgesture() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e9
+// Checksum 0x0, Offset: 0x101b
 // Size: 0x39
 function haschangedarchetype() {
     if (isdefined(self.changedarchetypeinfo)) {
@@ -347,7 +347,7 @@ function haschangedarchetype() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x112b
+// Checksum 0x0, Offset: 0x105d
 // Size: 0x7d
 function monitorcontextualcallout() {
     if (isai(self)) {
@@ -373,8 +373,8 @@ function monitorcontextualcallout() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b0
-// Size: 0x2fe
+// Checksum 0x0, Offset: 0x10e2
+// Size: 0x301
 function processcontext() {
     startpos = self geteye();
     viewangles = self getplayerangles();
@@ -426,8 +426,8 @@ function processcontext() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b6
-// Size: 0x12b
+// Checksum 0x0, Offset: 0x13eb
+// Size: 0x12a
 function markworldposition(org) {
     self.worldmarkerpos = org;
     if (!isdefined(self.worldmarkerid)) {
@@ -459,8 +459,8 @@ function markworldposition(org) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e9
-// Size: 0x232
+// Checksum 0x0, Offset: 0x151d
+// Size: 0x234
 function applyoutlinecalloutsource(ent) {
     if (!isdefined(ent.outlinecalloutsource)) {
         ent.outlinecalloutsource = [];
@@ -507,8 +507,8 @@ function applyoutlinecalloutsource(ent) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1823
-// Size: 0xdb
+// Checksum 0x0, Offset: 0x1759
+// Size: 0xda
 function processtimeout(attacker, outlines) {
     attacker endon("disconnect");
     self endon("death");
@@ -519,7 +519,7 @@ function processtimeout(attacker, outlines) {
             self.outlinecalloutsource[i] = undefined;
         }
     }
-    foreach (id, ent in outlines) {
+    foreach (ent in outlines) {
         if (issharedfuncdefined("outline", "outlineDisable")) {
             [[ getsharedfunc("outline", "outlineDisable") ]](id, ent);
         }
@@ -528,8 +528,8 @@ function processtimeout(attacker, outlines) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1906
-// Size: 0x1dd
+// Checksum 0x0, Offset: 0x183b
+// Size: 0x1dc
 function processcalloutdeath(ent, attacker) {
     if (!isdefined(ent) || !isdefined(attacker)) {
         return;
@@ -576,8 +576,8 @@ function processcalloutdeath(ent, attacker) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aeb
-// Size: 0x285
+// Checksum 0x0, Offset: 0x1a1f
+// Size: 0x286
 function applygamemodecallout(ent, msg, event) {
     self endon("disconnect");
     if (isdefined(self.gamemodecalloutent)) {
@@ -631,8 +631,8 @@ function applygamemodecallout(ent, msg, event) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d78
-// Size: 0x217
+// Checksum 0x0, Offset: 0x1cad
+// Size: 0x21a
 function waittillobjectiveevent(id, ent, event) {
     self endon("callout_timeout_" + event);
     self endon("gamemode_callout_replaced");
@@ -682,7 +682,7 @@ function waittillobjectiveevent(id, ent, event) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f97
+// Checksum 0x0, Offset: 0x1ecf
 // Size: 0x7d
 function waittillobjectivereplaced(id, ent, event) {
     self endon("callout_timeout_" + event);
@@ -698,7 +698,7 @@ function waittillobjectivereplaced(id, ent, event) {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x201c
+// Checksum 0x0, Offset: 0x1f54
 // Size: 0x8d
 function startholowatchvfx() {
     if (level.mapname == "mp_hackney_yard" || level.mapname == "mp_spear_pm" || level.mapname == "mp_runner_pm" || level.mapname == "mp_cave") {
@@ -712,7 +712,7 @@ function startholowatchvfx() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20b1
+// Checksum 0x0, Offset: 0x1fe9
 // Size: 0x4e
 function startbluntwatchvfx() {
     if (istrue(self.var_74e82e1456d96cad)) {
@@ -727,7 +727,7 @@ function startbluntwatchvfx() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2107
+// Checksum 0x0, Offset: 0x203f
 // Size: 0x45
 function function_a4f0da4979f60824() {
     self endon("disconnect");
@@ -742,7 +742,7 @@ function function_a4f0da4979f60824() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2154
+// Checksum 0x0, Offset: 0x208c
 // Size: 0x8e
 function tryreenablescriptablevfx() {
     self endon("death_or_disconnect");
@@ -761,7 +761,7 @@ function tryreenablescriptablevfx() {
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x21ea
+// Checksum 0x0, Offset: 0x2122
 // Size: 0x205
 function watchradialgestureactivation(gesturenotify, gestureindex) {
     if ((scripts\cp_mp\utility\game_utility::isbrstylegametype() || level.gametype == "dmz" || level.gametype == "exgm" || level.gametype == "plunder") && self hasweapon("iw9_armor_plate_deploy_mp")) {
@@ -811,14 +811,14 @@ function watchradialgestureactivation(gesturenotify, gestureindex) {
             watchradialgesture(objweapon);
             return;
         }
-        println("<dev string:x8f>" + "<dev string:xb0>" + "<dev string:xc6>");
+        println("<dev string:x1c>" + "<dev string:x3a>" + "<dev string:x4d>");
     }
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f7
-// Size: 0x76
+// Checksum 0x0, Offset: 0x232f
+// Size: 0x75
 function watchspraygesturedosprayevent(sprayindex) {
     self endon("death");
     self endon("disconnect");
@@ -833,13 +833,13 @@ function watchspraygesturedosprayevent(sprayindex) {
             return;
         }
     }
-    println("<dev string:xdc>");
+    println("<dev string:x60>");
 }
 
 // Namespace gestures / scripts\cp_mp\gestures
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2475
-// Size: 0x71
+// Checksum 0x0, Offset: 0x23ac
+// Size: 0x70
 function watchradialgesture(objweapon) {
     self giveandfireoffhand(objweapon);
     endtime = gettime() + 5000;
@@ -861,12 +861,12 @@ function watchradialgesture(objweapon) {
 
     // Namespace gestures / scripts\cp_mp\gestures
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x24ee
+    // Checksum 0x0, Offset: 0x2424
     // Size: 0x23
     function function_199e645a5bbf82a7() {
         wait 2;
-        self iprintlnbold("<dev string:x10b>");
-        self notify("<dev string:x121>", "<dev string:x134>", 3);
+        self iprintlnbold("<dev string:x8c>");
+        self notify("<dev string:x9f>", "<dev string:xaf>", 3);
     }
 
 #/

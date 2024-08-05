@@ -9,7 +9,7 @@
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a
+// Checksum 0x0, Offset: 0x136
 // Size: 0x2
 function shootuntilshootbehaviorchange() {
     
@@ -17,7 +17,7 @@ function shootuntilshootbehaviorchange() {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x184
+// Checksum 0x0, Offset: 0x140
 // Size: 0x2
 function initgrenadethrowanims() {
     
@@ -25,8 +25,8 @@ function initgrenadethrowanims() {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x14a
+// Size: 0xc0
 function throwgrenadeatplayerasap_combat_utility() {
     assert(self isbadguy());
     for (i = 0; i < level.players.size; i++) {
@@ -46,7 +46,7 @@ function throwgrenadeatplayerasap_combat_utility() {
                 return;
             }
         }
-        println("<dev string:x28>");
+        println("<dev string:x25>");
     #/
 }
 
@@ -54,8 +54,8 @@ function throwgrenadeatplayerasap_combat_utility() {
 
     // Namespace combat_utility / namespace_ba1fcf33692e2fad
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x255
-    // Size: 0xa1
+    // Checksum 0x0, Offset: 0x212
+    // Size: 0xa0
     function function_96d556dea441d1dc(grenadetimer) {
         if (grenadetimer.isplayertimer) {
             for (i = 0; i < level.players.size; i++) {
@@ -63,16 +63,16 @@ function throwgrenadeatplayerasap_combat_utility() {
                     break;
                 }
             }
-            return ("<dev string:x7c>" + i + 1 + "<dev string:x87>" + grenadetimer.weapon.basename);
+            return ("<dev string:x76>" + i + 1 + "<dev string:x7e>" + grenadetimer.weapon.basename);
         }
-        return "<dev string:x8c>" + grenadetimer.weapon.basename;
+        return "<dev string:x80>" + grenadetimer.weapon.basename;
     }
 
 #/
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fe
+// Checksum 0x0, Offset: 0x2ba
 // Size: 0x3b
 function trygrenadethrow(throwingat, destination, var_4ed24c46c4f57095, armoffset, fastthrow, withbounce, var_973c51e9fd66d178) {
     
@@ -80,8 +80,8 @@ function trygrenadethrow(throwingat, destination, var_4ed24c46c4f57095, armoffse
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x341
-// Size: 0x95
+// Checksum 0x0, Offset: 0x2fd
+// Size: 0x9b
 function getgrenadedropvelocity() {
     yaw = randomfloat(360);
     pitch = randomfloatrange(30, 75);
@@ -96,7 +96,7 @@ function getgrenadedropvelocity() {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3df
+// Checksum 0x0, Offset: 0x3a1
 // Size: 0x42
 function dropgrenade() {
     if (isdefined(self.nodropgrenade)) {
@@ -109,7 +109,7 @@ function dropgrenade() {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x429
+// Checksum 0x0, Offset: 0x3eb
 // Size: 0x46
 function getpitchtoshootspot(spot) {
     if (!isdefined(spot)) {
@@ -123,7 +123,7 @@ function getpitchtoshootspot(spot) {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x478
+// Checksum 0x0, Offset: 0x43a
 // Size: 0x5e
 function watchreloading() {
     self.isreloading = 0;
@@ -140,8 +140,8 @@ function watchreloading() {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4de
-// Size: 0x68
+// Checksum 0x0, Offset: 0x4a0
+// Size: 0x67
 function waittillreloadfinished() {
     thread timednotify(4, "reloadtimeout");
     self endon("reloadtimeout");
@@ -161,7 +161,7 @@ function waittillreloadfinished() {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54e
+// Checksum 0x0, Offset: 0x50f
 // Size: 0x1c
 function timednotify(time, msg) {
     self endon(msg);
@@ -171,8 +171,8 @@ function timednotify(time, msg) {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x572
-// Size: 0x178
+// Checksum 0x0, Offset: 0x533
+// Size: 0x17d
 function monitorflash() {
     self endon("death");
     if (!isdefined(level.neverstopmonitoringflash)) {
@@ -224,8 +224,8 @@ function monitorflash() {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f2
-// Size: 0xed
+// Checksum 0x0, Offset: 0x6b8
+// Size: 0xec
 function flashbangstart(duration) {
     assert(isdefined(self));
     assert(isdefined(duration));
@@ -255,7 +255,7 @@ function flashbangstart(duration) {
 
 // Namespace combat_utility / namespace_ba1fcf33692e2fad
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e7
+// Checksum 0x0, Offset: 0x7ac
 // Size: 0x7
 function fasteranimspeed() {
     return 1.5;
@@ -265,10 +265,10 @@ function fasteranimspeed() {
 
     // Namespace combat_utility / namespace_ba1fcf33692e2fad
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7f7
-    // Size: 0x18d
+    // Checksum 0x0, Offset: 0x7bc
+    // Size: 0x18a
     function showgrenadetimers() {
-        setdvarifuninitialized(@"hash_b4fd9ea4f6486d24", "<dev string:x93>");
+        setdvarifuninitialized(@"hash_b4fd9ea4f6486d24", "<dev string:x84>");
         huds = undefined;
         playerhuds = undefined;
         while (true) {
@@ -292,7 +292,7 @@ function fasteranimspeed() {
                 }
                 hud setvalue(hud.value);
             }
-            foreach (key, hud in playerhuds) {
+            foreach (hud in playerhuds) {
                 hud.value = anim.meleechargeplayertimers[key] - gettime();
                 if (hud.value < 0) {
                     continue;
@@ -305,8 +305,8 @@ function fasteranimspeed() {
 
     // Namespace combat_utility / namespace_ba1fcf33692e2fad
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x98c
-    // Size: 0x182
+    // Checksum 0x0, Offset: 0x94e
+    // Size: 0x180
     function function_96de23075e92ba2() {
         huds = [];
         count = 0;
@@ -314,7 +314,7 @@ function fasteranimspeed() {
             hud = newhudelem();
             hud.x = 80;
             hud.y = 20 + count * 15;
-            hud.label = "<dev string:x98>" + key + "<dev string:xa7>";
+            hud.label = "<dev string:x86>" + key + "<dev string:x92>";
             hud setvalue(0);
             hud.value = 0;
             huds[key] = hud;
@@ -326,7 +326,7 @@ function fasteranimspeed() {
             hud = newhudelem();
             hud.x = 80;
             hud.y = 20 + count * 15;
-            hud.label = "<dev string:xad>" + key + "<dev string:xa7>";
+            hud.label = "<dev string:x95>" + key + "<dev string:x92>";
             hud setvalue(0);
             hud.value = 0;
             playerhuds[key] = hud;
@@ -337,8 +337,8 @@ function fasteranimspeed() {
 
     // Namespace combat_utility / namespace_ba1fcf33692e2fad
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb16
-    // Size: 0x5f
+    // Checksum 0x0, Offset: 0xad6
+    // Size: 0x5c
     function function_c0d677eae75ed3ea(huds) {
         if (!isdefined(huds)) {
             return;

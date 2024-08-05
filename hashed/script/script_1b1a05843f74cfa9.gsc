@@ -6,7 +6,7 @@
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x412
+// Checksum 0x0, Offset: 0x39e
 // Size: 0x2d
 function setkillcamkilledbyitemomnvars(type, itemid) {
     self setclientomnvar("ui_killcam_killedby_item_type", type);
@@ -15,7 +15,7 @@ function setkillcamkilledbyitemomnvars(type, itemid) {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x447
+// Checksum 0x0, Offset: 0x3d3
 // Size: 0x1e
 function clearlootweaponomnvars() {
     self setclientomnvar("ui_killcam_killedby_loot_variant_id", -1);
@@ -24,8 +24,8 @@ function clearlootweaponomnvars() {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x46d
-// Size: 0x2f
+// Checksum 0x0, Offset: 0x3f9
+// Size: 0x2e
 function clearkillcamattachmentomnvars() {
     for (attachindex = 0; attachindex < 8; attachindex++) {
         self setclientomnvar("ui_killcam_killedby_attachment" + attachindex + 1, -1);
@@ -34,7 +34,7 @@ function clearkillcamattachmentomnvars() {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a4
+// Checksum 0x0, Offset: 0x42f
 // Size: 0x27
 function setkillcamuitimer(killcamlengthsec) {
     self setclientomnvar("ui_killcam_end_milliseconds", int(killcamlengthsec * 1000) + gettime());
@@ -42,7 +42,7 @@ function setkillcamuitimer(killcamlengthsec) {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d3
+// Checksum 0x0, Offset: 0x45e
 // Size: 0xb7
 function setkillcamkillstreaktypeomnvars(objweapon) {
     killstreakindex = scripts\cp_mp\utility\killstreak_utility::getkillstreakindex(level.killstreakweaponmap[objweapon.basename]);
@@ -61,8 +61,8 @@ function setkillcamkillstreaktypeomnvars(objweapon) {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x592
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x51d
+// Size: 0x6e
 function function_ee36210863ca9f2c(objweapon) {
     var_bf8545f1fc7059d3 = 0;
     switch (objweapon.basename) {
@@ -79,8 +79,8 @@ function function_ee36210863ca9f2c(objweapon) {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x60a
-// Size: 0x1cf
+// Checksum 0x0, Offset: 0x594
+// Size: 0x1d4
 function trimkillcamtime(inflictoragentinfo, attacker, camtime, postdelay, predelay, maxtime) {
     killcamlength = camtime + postdelay;
     if (isdefined(maxtime) && killcamlength > maxtime) {
@@ -135,7 +135,7 @@ function trimkillcamtime(inflictoragentinfo, attacker, camtime, postdelay, prede
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e2
+// Checksum 0x0, Offset: 0x771
 // Size: 0x18
 function function_e35f3dda3b0ea636() {
     wait 0.1;
@@ -144,7 +144,7 @@ function function_e35f3dda3b0ea636() {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x802
+// Checksum 0x0, Offset: 0x791
 // Size: 0x42
 function setcinematiccamerastyle(camerastyle, var_226f86d3a2d6da77, var_b41e4c5eb0094058) {
     self setclientomnvar("cam_scene_name", camerastyle);
@@ -154,7 +154,7 @@ function setcinematiccamerastyle(camerastyle, var_226f86d3a2d6da77, var_b41e4c5e
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84c
+// Checksum 0x0, Offset: 0x7db
 // Size: 0x1e
 function clearkillcamkilledbyitemomnvars() {
     self setclientomnvar("ui_killcam_killedby_item_type", -1);
@@ -163,8 +163,8 @@ function clearkillcamkilledbyitemomnvars() {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x872
-// Size: 0x82
+// Checksum 0x0, Offset: 0x801
+// Size: 0x81
 function clearkillcamomnvars() {
     clearkillcamkilledbyitemomnvars();
     self setclientomnvar("ui_killcam_end_milliseconds", 0);
@@ -180,8 +180,8 @@ function clearkillcamomnvars() {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fc
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x88a
+// Size: 0xdd
 function beginarchiveplayback(var_79fe9d21e7286c23, rewindtime, playbackduration, psoffsettime) {
     scripts\cp_mp\utility\player_utility::updatesessionstate("spectator");
     self.spectatekillcam = 1;
@@ -199,8 +199,8 @@ function beginarchiveplayback(var_79fe9d21e7286c23, rewindtime, playbackduration
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e4
-// Size: 0x167
+// Checksum 0x0, Offset: 0x96f
+// Size: 0x152
 function setkillcamerastyle(einflictor, inflictoragentinfo, attackernum, evictim, killcamentityindex, killcaminfo, objweapon) {
     killcaminfo.camerastyle = "unknown";
     if (isdefined(inflictoragentinfo) && isdefined(inflictoragentinfo.agent_type)) {
@@ -214,7 +214,7 @@ function setkillcamerastyle(einflictor, inflictoragentinfo, attackernum, evictim
             return true;
         }
     } else if (isdefined(objweapon) && isdefined(objweapon.basename)) {
-        if (objweapon.basename == "manual_turret_mp" || objweapon.basename == "manual_turret_jup_mp") {
+        if (objweapon.basename == "manual_turret_mp") {
             return true;
         }
     } else if (killcamentityindex > 0) {
@@ -229,8 +229,8 @@ function setkillcamerastyle(einflictor, inflictoragentinfo, attackernum, evictim
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb54
-// Size: 0xa3
+// Checksum 0x0, Offset: 0xaca
+// Size: 0xa2
 function setkillcamentity(killcamentityindex, killcamoffset, starttime, killcamlookatentityindex, killcamentstickstolookatent) {
     self endon("disconnect");
     self endon("killcam_ended");
@@ -254,23 +254,23 @@ function setkillcamentity(killcamentityindex, killcamoffset, starttime, killcaml
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbff
-// Size: 0xd9
+// Checksum 0x0, Offset: 0xb74
+// Size: 0xd8
 function checkkillcamtruncation(killcamoffset) {
     if (!isdefined(killcamoffset)) {
         return;
     }
-    assertex(self.archivetime <= killcamoffset + 0.0001, "<dev string:x1c>" + self.archivetime + "<dev string:x2d>" + killcamoffset);
+    assertex(self.archivetime <= killcamoffset + 0.0001, "archivetime: " + self.archivetime + ", killcamTimes.killcamoffset: " + killcamoffset);
     if (self.archivetime + 0.015 < killcamoffset) {
         var_5b71064e47c6b27b = killcamoffset - self.archivetime;
         if (game["truncated_killcams"] < 32) {
-            println("<dev string:x4f>" + game["<dev string:x80>"]);
+            println("<dev string:x1c>" + game["<dev string:x4a>"]);
             game["truncated_killcams"]++;
         }
         /#
-            println("<dev string:x96>" + var_5b71064e47c6b27b + "<dev string:xc0>");
+            println("<dev string:x5d>" + var_5b71064e47c6b27b + "<dev string:x84>");
             if (getdvarint(@"hash_d82edd92078136c7", 0) == 1) {
-                assertmsg("<dev string:xff>" + var_5b71064e47c6b27b + "<dev string:x11c>");
+                assertmsg("<dev string:xc0>" + var_5b71064e47c6b27b + "<dev string:xda>");
             }
         #/
     }
@@ -278,7 +278,7 @@ function checkkillcamtruncation(killcamoffset) {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xce0
+// Checksum 0x0, Offset: 0xc54
 // Size: 0xb6
 function dokillcamslowmo(camtime) {
     self endon("killcam_ended");
@@ -305,7 +305,7 @@ function dokillcamslowmo(camtime) {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9e
+// Checksum 0x0, Offset: 0xd12
 // Size: 0x3e
 function endkillcamifnothingtoshow() {
     self endon("disconnect");
@@ -322,7 +322,7 @@ function endkillcamifnothingtoshow() {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xde4
+// Checksum 0x0, Offset: 0xd58
 // Size: 0x3b
 function waittillkillcamover() {
     self endon("abort_killcam");
@@ -333,7 +333,7 @@ function waittillkillcamover() {
 
 // Namespace namespace_e3e994302f5316d8 / namespace_54fe482119c59b2f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe27
+// Checksum 0x0, Offset: 0xd9b
 // Size: 0x64
 function function_7a8a04d15ad052d5() {
     level endon("game_ended");

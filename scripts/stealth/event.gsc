@@ -9,7 +9,7 @@
 
 // Namespace event / scripts\stealth\event
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d0
+// Checksum 0x0, Offset: 0x17b
 // Size: 0x13
 function event_init_entity() {
     thread event_listener_thread();
@@ -18,7 +18,7 @@ function event_init_entity() {
 
 // Namespace event / scripts\stealth\event
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1eb
+// Checksum 0x0, Offset: 0x196
 // Size: 0x93
 function event_init_level() {
     if (!isdefined(level.stealth.event_priority)) {
@@ -32,8 +32,8 @@ function event_init_level() {
 
 // Namespace event / scripts\stealth\event
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x286
-// Size: 0xb9
+// Checksum 0x0, Offset: 0x231
+// Size: 0xb8
 function event_severity_compare(var_e1b6af8308ee295d, var_e1b6ac8308ee22c4) {
     assert(isdefined(level.stealth));
     assert(isdefined(level.stealth.event_priority));
@@ -45,14 +45,14 @@ function event_severity_compare(var_e1b6af8308ee295d, var_e1b6ac8308ee22c4) {
 
 // Namespace event / scripts\stealth\event
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x348
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x2f2
+// Size: 0xe0
 function event_severity_shift(severity, direction) {
     assert(isdefined(level.stealth));
     assert(isdefined(level.stealth.event_priority));
     assert(isdefined(level.stealth.event_priority[severity]));
     priority = level.stealth.event_priority[severity] + direction;
-    foreach (var_9339b42bbf1c7735, priorityval in level.stealth.event_priority) {
+    foreach (priorityval in level.stealth.event_priority) {
         if (priorityval == priority) {
             return var_9339b42bbf1c7735;
         }
@@ -62,11 +62,11 @@ function event_severity_shift(severity, direction) {
 
 // Namespace event / scripts\stealth\event
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x433
+// Checksum 0x0, Offset: 0x3db
 // Size: 0x179
 function event_severity_set(severity, eventname, escalation, var_6e7a5f49fca478a9, var_691d20c978d21cd1) {
-    assert(!(severity == "<dev string:x1c>" && isdefined(var_691d20c978d21cd1)));
-    assert(!(severity == "<dev string:x2b>" && isdefined(escalation)));
+    assert(!(severity == "cover_blown" && isdefined(var_691d20c978d21cd1)));
+    assert(!(severity == "combat" && isdefined(escalation)));
     if (!isdefined(escalation)) {
         escalation = 0;
     }
@@ -93,7 +93,7 @@ function event_severity_set(severity, eventname, escalation, var_6e7a5f49fca478a
 
 // Namespace event / scripts\stealth\event
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b4
+// Checksum 0x0, Offset: 0x55c
 // Size: 0x11
 function event_severity_get(eventname) {
     return function_df4360488e5c458e(eventname);
@@ -101,7 +101,7 @@ function event_severity_get(eventname) {
 
 // Namespace event / scripts\stealth\event
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ce
+// Checksum 0x0, Offset: 0x576
 // Size: 0x1a
 function event_escalation_get(eventname, aient) {
     return function_9846f68b2edd52d5(eventname, aient);
@@ -109,7 +109,7 @@ function event_escalation_get(eventname, aient) {
 
 // Namespace event / scripts\stealth\event
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f1
+// Checksum 0x0, Offset: 0x599
 // Size: 0x1a
 function event_escalation_scalar_get(eventname, aient) {
     return function_1473e5c0181c7ad0(eventname, aient);
@@ -117,7 +117,7 @@ function event_escalation_scalar_get(eventname, aient) {
 
 // Namespace event / scripts\stealth\event
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x614
+// Checksum 0x0, Offset: 0x5bc
 // Size: 0x1a
 function event_escalation_to_combat_get(eventname, aient) {
     return function_67fee9f22662295c(eventname, aient);
@@ -125,7 +125,7 @@ function event_escalation_to_combat_get(eventname, aient) {
 
 // Namespace event / scripts\stealth\event
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x637
+// Checksum 0x0, Offset: 0x5df
 // Size: 0x1a
 function function_ce9fdd8d28d5d8dd(eventname, aient) {
     return function_63c101c16f5f40be(eventname, aient);
@@ -133,7 +133,7 @@ function function_ce9fdd8d28d5d8dd(eventname, aient) {
 
 // Namespace event / scripts\stealth\event
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65a
+// Checksum 0x0, Offset: 0x602
 // Size: 0x23
 function event_escalation_clear() {
     self.stealth.event_escalation_count = undefined;
@@ -142,7 +142,7 @@ function event_escalation_clear() {
 
 // Namespace event / scripts\stealth\event
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x685
+// Checksum 0x0, Offset: 0x62d
 // Size: 0x102
 function function_1f4d13d0f711ba69(event, eventhandled) {
     if (isdefined(level.var_1a6c1600565c49a)) {
@@ -152,11 +152,11 @@ function function_1f4d13d0f711ba69(event, eventhandled) {
         if (function_1d0abf2c82b32237() == -1 || function_1d0abf2c82b32237() == self getentitynumber()) {
             if (isdefined(eventhandled) && eventhandled) {
                 if (debug_enabled()) {
-                    typeorig = "<dev string:x35>";
+                    typeorig = "<dev string:x1c>";
                     if (isdefined(event.typeorig)) {
-                        typeorig = "<dev string:x39>" + event.typeorig + "<dev string:x3f>";
+                        typeorig = "<dev string:x1d>" + event.typeorig + "<dev string:x20>";
                     }
-                    event_str = "<dev string:x44>" + event.type + typeorig;
+                    event_str = "<dev string:x22>" + event.type + typeorig;
                     thread function_55f9cd7d60a115bb(event_str, (1, 1, 1), 1, 0.5, (0, 0, 40), 4);
                 }
                 self.stealth.ai_event = event.type;
@@ -167,7 +167,7 @@ function function_1f4d13d0f711ba69(event, eventhandled) {
 
 // Namespace event / scripts\stealth\event
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x78f
+// Checksum 0x0, Offset: 0x737
 // Size: 0x12f
 function event_listener_thread() {
     self notify("event_listener_thread");
@@ -197,7 +197,7 @@ function event_listener_thread() {
 
 // Namespace event / scripts\stealth\event
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c6
+// Checksum 0x0, Offset: 0x86e
 // Size: 0x3b
 function entity_is_approved(entity) {
     switch (entity.classname) {
@@ -210,8 +210,8 @@ function entity_is_approved(entity) {
 
 // Namespace event / scripts\stealth\event
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x909
-// Size: 0x1f2
+// Checksum 0x0, Offset: 0x8b1
+// Size: 0x1f6
 function event_broadcast_axis(eventtype, eventtypeperipheral, enemy, rangeauto, rangesight) {
     ais = getaiunittypearray("bad_guys", "all");
     var_b2e38cd9c1e056a5 = squared(rangeauto);
@@ -263,8 +263,8 @@ function event_broadcast_axis(eventtype, eventtypeperipheral, enemy, rangeauto, 
 
 // Namespace event / scripts\stealth\event
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xb03
-// Size: 0x102
+// Checksum 0x0, Offset: 0xaaf
+// Size: 0x101
 function event_broadcast_generic(eventtype, eventposition, eventradius, evententity, teamsoverride) {
     ais = [];
     if (isarray(teamsoverride)) {
@@ -291,8 +291,8 @@ function event_broadcast_generic(eventtype, eventposition, eventradius, eventent
 
 // Namespace event / scripts\stealth\event
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0d
-// Size: 0x155
+// Checksum 0x0, Offset: 0xbb8
+// Size: 0x157
 function event_broadcast_axis_by_tacsight(eventtype, enemy, eventposition, eventradius, var_be714c91530ba6ca, tacposition, var_81a2fb4f638bbce8) {
     ais = getaiunittypearray("bad_guys", "all");
     cradiussq = eventradius * eventradius;
@@ -330,7 +330,7 @@ function event_broadcast_axis_by_tacsight(eventtype, enemy, eventposition, event
 
 // Namespace event / scripts\stealth\event
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xd6a
+// Checksum 0x0, Offset: 0xd17
 // Size: 0x4b
 function event_broadcast_axis_by_sight(eventtype, enemy, eventposition, eventradius, var_be714c91530ba6ca, tacposition, autorange) {
     thread event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, eventradius, var_be714c91530ba6ca, tacposition, autorange);
@@ -338,8 +338,8 @@ function event_broadcast_axis_by_sight(eventtype, enemy, eventposition, eventrad
 
 // Namespace event / scripts\stealth\event
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbd
-// Size: 0x195
+// Checksum 0x0, Offset: 0xd6a
+// Size: 0x197
 function event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, eventradius, var_be714c91530ba6ca, tacposition, autorange) {
     ais = getaiunittypearray("bad_guys", "all");
     cradiussq = eventradius * eventradius;
@@ -388,7 +388,7 @@ function event_broadcast_axis_by_sight_thread(eventtype, enemy, eventposition, e
 
 // Namespace event / scripts\stealth\event
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf5a
+// Checksum 0x0, Offset: 0xf09
 // Size: 0x10
 function function_1d0abf2c82b32237() {
     return getdvarint(@"ai_debugEntIndex");

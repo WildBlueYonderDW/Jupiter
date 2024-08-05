@@ -12,7 +12,7 @@
 
 // Namespace melee / scripts\aitypes\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x176
+// Checksum 0x0, Offset: 0x164
 // Size: 0x60
 function initmeleefunctions(taskid) {
     self.meleerangesq = 6724;
@@ -26,7 +26,7 @@ function initmeleefunctions(taskid) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1df
+// Checksum 0x0, Offset: 0x1cd
 // Size: 0x1e
 function canmovefrompointtopoint(start, end) {
     return self maymovefrompointtopoint(start, end, 0, 1);
@@ -34,7 +34,7 @@ function canmovefrompointtopoint(start, end) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x206
+// Checksum 0x0, Offset: 0x1f4
 // Size: 0x21
 function meleedeathhandler(enemy) {
     self endon("melee_finished");
@@ -44,7 +44,7 @@ function meleedeathhandler(enemy) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22f
+// Checksum 0x0, Offset: 0x21d
 // Size: 0x12
 function melee_destroy() {
     self clearbtgoal(3);
@@ -53,7 +53,7 @@ function melee_destroy() {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x249
+// Checksum 0x0, Offset: 0x237
 // Size: 0x59
 function getmeleechargerange(target) {
     if (isplayer(target)) {
@@ -70,8 +70,8 @@ function getmeleechargerange(target) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ab
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x299
+// Size: 0xd2
 function gettargetchargepos(target) {
     assert(isdefined(target));
     targetpos = target.origin;
@@ -92,7 +92,7 @@ function gettargetchargepos(target) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x383
+// Checksum 0x0, Offset: 0x374
 // Size: 0x67
 function canmeleeduringstealth() {
     if (isdefined(self.ent_flag) && isdefined(self.ent_flag["_stealth_enabled"]) && self.ent_flag["_stealth_enabled"]) {
@@ -105,8 +105,8 @@ function canmeleeduringstealth() {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f3
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x3e4
+// Size: 0xb1
 function iseitherofusalreadyinmelee(var_e37bb2c17a470a0) {
     meleetarget = self.enemy;
     if (isdefined(var_e37bb2c17a470a0)) {
@@ -120,7 +120,7 @@ function iseitherofusalreadyinmelee(var_e37bb2c17a470a0) {
             if (isplayer(meleetarget)) {
                 meleetarget function_bdcb37a9431e654();
             } else {
-                assert(isdefined(meleetarget.var_42c47bf5f8a7fdf6) || meleetarget.var_4ecd594ae357f55b || istrue(meleetarget.var_9aedaf1da799bd67), "<dev string:x1c>");
+                assert(isdefined(meleetarget.var_42c47bf5f8a7fdf6) || meleetarget.var_4ecd594ae357f55b || istrue(meleetarget.var_9aedaf1da799bd67), "MeleeTarget has an invalid melee partner defined!");
             }
         }
         if (meleetarget.in_melee) {
@@ -132,8 +132,8 @@ function iseitherofusalreadyinmelee(var_e37bb2c17a470a0) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ae
-// Size: 0x93
+// Checksum 0x0, Offset: 0x49e
+// Size: 0x94
 function ismeleerangevalid(target) {
     assert(isdefined(self.meleemaxzdiff));
     if (abs(target.origin[2] - self.origin[2]) > self.meleemaxzdiff) {
@@ -147,7 +147,7 @@ function ismeleerangevalid(target) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54a
+// Checksum 0x0, Offset: 0x53b
 // Size: 0x52
 function ismeleevalid_common(target, var_92493ae5a92d3699) {
     if (istrue(self.dontmelee)) {
@@ -170,8 +170,8 @@ function ismeleevalid_common(target, var_92493ae5a92d3699) {
 
 // Namespace melee / scripts\aitypes\melee
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a5
-// Size: 0x3c4
+// Checksum 0x0, Offset: 0x596
+// Size: 0x3c8
 function ismeleevalid(target, var_92493ae5a92d3699) {
     if (!ismeleevalid_common(target, var_92493ae5a92d3699)) {
         return false;

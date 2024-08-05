@@ -31,7 +31,7 @@
 
 // Namespace init / scripts\cp_mp\killstreaks\init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x216
+// Checksum 0x0, Offset: 0x1d8
 // Size: 0x154
 function init() {
     if (getdvarint(@"hash_e6afce2cf5cf7515", 0) == 1) {
@@ -41,7 +41,7 @@ function init() {
         return;
     }
     /#
-        scripts\engine\utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x2a>", 1);
+        scripts\engine\utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x27>", 1);
     #/
     [[ scripts\engine\utility::getsharedfunc("killstreak", "init") ]]();
     function_dc7912ca19ed8fff();
@@ -78,8 +78,8 @@ function init() {
 
 // Namespace init / scripts\cp_mp\killstreaks\init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x372
-// Size: 0x43
+// Checksum 0x0, Offset: 0x334
+// Size: 0x42
 function function_dc7912ca19ed8fff() {
     var_e2818ad39a3341b4 = scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_clearleveldataforvehicle("killstreak", 1);
     var_e2818ad39a3341b4.warningbits["missileLocking"] = 2;
@@ -88,7 +88,7 @@ function function_dc7912ca19ed8fff() {
 
 // Namespace init / scripts\cp_mp\killstreaks\init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bd
+// Checksum 0x0, Offset: 0x37e
 // Size: 0x57
 function function_12bbd0259ce8831f() {
     if (isdefined(level.scripted_spawner_func)) {

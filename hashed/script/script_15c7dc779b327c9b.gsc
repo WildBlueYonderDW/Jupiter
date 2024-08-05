@@ -6,7 +6,7 @@
 
 // Namespace namespace_17ca84825c926284 / namespace_fc31f517a806b2d3
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0
+// Checksum 0x0, Offset: 0x80
 // Size: 0xe
 function init() {
     scripts\mp\utility\spawn_event_aggregator::registeronplayerspawncallback(&namespace_d6e7a6955029e9b9::function_9ff225017ef5ce19);

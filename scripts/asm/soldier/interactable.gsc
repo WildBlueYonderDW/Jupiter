@@ -9,7 +9,7 @@
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d
+// Checksum 0x0, Offset: 0x100
 // Size: 0x13
 function onlevelload() {
     registerinteractable("example", &run_example_interactable);
@@ -17,8 +17,8 @@ function onlevelload() {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x128
-// Size: 0x75
+// Checksum 0x0, Offset: 0x11b
+// Size: 0x74
 function run_example_interactable(asmname, statename, animationdata) {
     iprintlnbold("Example Interactable is Running.");
     covernode = scripts\asm\asm_bb::bb_getcovernode();
@@ -30,7 +30,7 @@ function run_example_interactable(asmname, statename, animationdata) {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a5
+// Checksum 0x0, Offset: 0x197
 // Size: 0x37
 function registerinteractable(interactable, func) {
     if (!isdefined(level.interactables)) {
@@ -41,7 +41,7 @@ function registerinteractable(interactable, func) {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e4
+// Checksum 0x0, Offset: 0x1d6
 // Size: 0x29
 function disableinteractable() {
     assert(isnode(self));
@@ -52,8 +52,8 @@ function disableinteractable() {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x215
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x207
+// Size: 0x5d
 function shouldplayinteractable(asmname, statename, tostatename, params) {
     covernode = scripts\asm\asm_bb::bb_getcovernode();
     if (isdefined(covernode) && isdefined(covernode.interactable) && !isdefined(covernode.disableinteraction)) {
@@ -64,7 +64,7 @@ function shouldplayinteractable(asmname, statename, tostatename, params) {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x27c
+// Checksum 0x0, Offset: 0x26d
 // Size: 0x2f
 function interactablefinished(asmname, statename, tostatename, params) {
     return asm_eventfired(asmname, "interactable_finished");
@@ -72,8 +72,8 @@ function interactablefinished(asmname, statename, tostatename, params) {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b4
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x2a5
+// Size: 0x5e
 function chooseaniminteractable(asmname, statename, params) {
     covernode = scripts\asm\asm_bb::bb_getcovernode();
     assert(isdefined(covernode));
@@ -83,7 +83,7 @@ function chooseaniminteractable(asmname, statename, params) {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x31c
+// Checksum 0x0, Offset: 0x30c
 // Size: 0xd4
 function playinteractable(asmname, statename, params) {
     self endon(statename + "_finished");
@@ -91,7 +91,7 @@ function playinteractable(asmname, statename, params) {
     covernode = scripts\asm\asm_bb::bb_getcovernode();
     assert(isdefined(covernode));
     assert(isdefined(covernode.interactable));
-    assertex(isdefined(level.interactables[covernode.interactable]), "<dev string:x1c>" + covernode.interactable + "<dev string:x2d>");
+    assertex(isdefined(level.interactables[covernode.interactable]), "Interactable " + covernode.interactable + " not registered!");
     covernode.disableinteraction = 1;
     [[ level.interactables[covernode.interactable] ]](asmname, statename, animations);
     asm_fireevent(asmname, "interactable_finished");
@@ -99,7 +99,7 @@ function playinteractable(asmname, statename, params) {
 
 // Namespace interactable / scripts\asm\soldier\interactable
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f8
+// Checksum 0x0, Offset: 0x3e8
 // Size: 0x1b
 function interactableterminate(asmname, statename, params) {
     

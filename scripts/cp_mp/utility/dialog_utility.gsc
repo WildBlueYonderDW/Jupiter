@@ -5,8 +5,8 @@
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d3
-// Size: 0x243
+// Checksum 0x0, Offset: 0x425
+// Size: 0x233
 function function_39dc350193dd4bc4() {
     level.dialogmap = [];
     var_d4ee35db6dbb7975 = tablelookupgetnumrows("sound/tables/s6/dialog/gamedef_ref_table.csv");
@@ -25,8 +25,6 @@ function function_39dc350193dd4bc4() {
         }
         if (longname == "remote_turret") {
             longname = "sentry_gun";
-        } else if (longname == "Kortac EMP Plane Pilot") {
-            longname = "KorTac EMP Plane Pilot";
         }
         if (!isdefined(level.dialogmap[deftype])) {
             level.dialogmap[deftype] = [];
@@ -68,8 +66,8 @@ function function_39dc350193dd4bc4() {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x81e
-// Size: 0xcd
+// Checksum 0x0, Offset: 0x660
+// Size: 0xcb
 function private function_6b50082c54e1a0d3(deftype, longname) {
     if (deftype != "Character") {
         return false;
@@ -85,8 +83,8 @@ function private function_6b50082c54e1a0d3(deftype, longname) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f4
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x734
+// Size: 0xb6
 function function_5b0451cdda5803e8(longname) {
     streaklist = ["uav", "airdrop", "airdrop_escort", "airdrop_multiple", "assault_drone", "auto_drone", "chopper_gunner", "gunship", "cruise_predator", "directional_uav", "fuel_airstrike", "hover_jet", "scrambler_drone_guard", "toma_strike", "precision_airstrike", "juggernaut"];
     if (array_contains(streaklist, longname)) {
@@ -97,7 +95,7 @@ function function_5b0451cdda5803e8(longname) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9b4
+// Checksum 0x0, Offset: 0x7f3
 // Size: 0x5b
 function private function_7b8ed176d07a4820(deftype) {
     if (!isdefined(deftype)) {
@@ -116,8 +114,8 @@ function private function_7b8ed176d07a4820(deftype) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xa18
-// Size: 0x60
+// Checksum 0x0, Offset: 0x857
+// Size: 0x5f
 function private function_1d467e88533267f6(parentref, deftype) {
     if (!isdefined(parentref) || parentref == "" && deftype != "Character") {
         return false;
@@ -131,8 +129,8 @@ function private function_1d467e88533267f6(parentref, deftype) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xa81
-// Size: 0x1f7
+// Checksum 0x0, Offset: 0x8bf
+// Size: 0x195
 function private function_13bccd41285b29fc(longname, deftype, parentref) {
     if (!isdefined(longname) || longname == "") {
         return false;
@@ -140,15 +138,11 @@ function private function_13bccd41285b29fc(longname, deftype, parentref) {
     switch (deftype) {
     case #"hash_174c0a6c9c845cf1": 
         tokens = strtok(longname, "_");
-        if (tokens.size > 0 && isdefined(tokens[1]) && (tokens[1] == "killstreak" || tokens[1] == "fieldupgrade" || tokens[1] == "equipment" || tokens[1] == "core")) {
+        if (tokens.size > 0 && isdefined(tokens[1]) && (tokens[1] == "killstreak" || tokens[1] == "fieldupgrade" || tokens[1] == "equipment")) {
             return true;
         }
         break;
     case #"hash_c75355ed41b5bc53": 
-        tokens = strtok(longname, "_");
-        if (isdefined(tokens[0]) && tokens[0] == "announcer" && parentref == "mp_core") {
-            return true;
-        }
         if (isdefined(parentref)) {
             tokens = strtok(parentref, "_");
             if (tokens.size > 0 && isdefined(tokens[1]) && (tokens[1] == "killstreak" || tokens[1] == "fieldupgrade" || tokens[1] == "equipment")) {
@@ -166,8 +160,6 @@ function private function_13bccd41285b29fc(longname, deftype, parentref) {
         tokens = strtok(longname, "_");
         if (tokens.size > 0 && isdefined(tokens[2]) && (tokens[2] == "leader" || tokens[2] == "operator")) {
             return true;
-        } else if (tokens.size > 0 && isdefined(tokens[1]) && tokens[1] == "ims") {
-            return true;
         }
         break;
     }
@@ -176,8 +168,8 @@ function private function_13bccd41285b29fc(longname, deftype, parentref) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc81
-// Size: 0xcd
+// Checksum 0x0, Offset: 0xa5d
+// Size: 0xb5
 function function_3f64deb57a4966b2(ref) {
     switch (ref) {
     case #"hash_1f2f530b7da0d4ba":
@@ -187,10 +179,8 @@ function function_3f64deb57a4966b2(ref) {
     case #"hash_3a46650ad52c6c11":
     case #"hash_3b16a09f5f1b3166":
     case #"hash_3c2a798e47904879":
-    case #"hash_5cf7a3d66f350a91":
     case #"hash_61d85e6b18faf229":
     case #"hash_6e4683d5f1bfa231":
-    case #"hash_9915ff80cffdfc33":
     case #"hash_9b5058cbb64f5c19":
     case #"hash_ced4765484d765a9":
     case #"hash_f88271914675e646": 
@@ -202,14 +192,14 @@ function function_3f64deb57a4966b2(ref) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd56
-// Size: 0xeb
+// Checksum 0x0, Offset: 0xb1a
+// Size: 0xea
 function function_309f1876dda94360(typeref, var_f8853606de474ae1, parentref) {
-    assertex(isdefined(level.dialogmap), "<dev string:x1c>");
+    assertex(isdefined(level.dialogmap), "getDialogShortName: There is no valid dialog map defined.  Please make sure you are calling into initDialogMap().");
     var_f69d15d42339af79 = level.dialogmap[typeref];
     if (!isdefined(var_f69d15d42339af79)) {
         /#
-            iprintln("<dev string:x91>" + typeref);
+            iprintln("<dev string:x1c>" + typeref);
         #/
     }
     aliascode = undefined;
@@ -230,14 +220,14 @@ function function_309f1876dda94360(typeref, var_f8853606de474ae1, parentref) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4a
-// Size: 0xeb
+// Checksum 0x0, Offset: 0xc0d
+// Size: 0xea
 function function_c23431e49ed43c57(typeref, var_f8853606de474ae1, parentref) {
-    assertex(isdefined(level.var_bb06a7f803299c8c), "<dev string:x1c>");
+    assertex(isdefined(level.var_bb06a7f803299c8c), "getDialogShortName: There is no valid dialog map defined.  Please make sure you are calling into initDialogMap().");
     var_f69d15d42339af79 = level.var_bb06a7f803299c8c[typeref];
     if (!isdefined(var_f69d15d42339af79)) {
         /#
-            iprintln("<dev string:x91>" + typeref);
+            iprintln("<dev string:x1c>" + typeref);
         #/
     }
     aliascode = undefined;
@@ -258,8 +248,8 @@ function function_c23431e49ed43c57(typeref, var_f8853606de474ae1, parentref) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3e
-// Size: 0x209
+// Checksum 0x0, Offset: 0xd00
+// Size: 0x19e
 function createdialogalias(moderef, mapref, sceneref, characterref, eventref) {
     prefix = "dx";
     mode = moderef;
@@ -281,20 +271,6 @@ function createdialogalias(moderef, mapref, sceneref, characterref, eventref) {
         dialogalias = dialogalias + "_" + character;
     }
     if (isdefined(event)) {
-        if (eventref == "killstreak_team_leader_enemy_callout") {
-            if (sceneref == "lrad" || sceneref == "sentry_gun" || sceneref == "switchblade_drone") {
-                event = "euse";
-            } else {
-                event = "ktle";
-            }
-        }
-        if (eventref == "killstreak_remote_operator_request_response") {
-            if (sceneref == "emp_plane") {
-                event = "empd";
-            } else if (sceneref == "drone_swarm") {
-                event = "dsdp";
-            }
-        }
         dialogalias = dialogalias + "_" + event;
     }
     if (sceneref == "lrad" || sceneref == "switchblade_drone") {
@@ -320,8 +296,8 @@ function createdialogalias(moderef, mapref, sceneref, characterref, eventref) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1150
-// Size: 0x107
+// Checksum 0x0, Offset: 0xea7
+// Size: 0x10c
 function function_cb073025f309906a(moderef, mapref, sceneref, characterref, eventref) {
     prefix = "dx";
     mode = moderef;
@@ -350,8 +326,8 @@ function function_cb073025f309906a(moderef, mapref, sceneref, characterref, even
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1260
-// Size: 0x25
+// Checksum 0x0, Offset: 0xfbc
+// Size: 0x24
 function function_d3c62d251d2af8e6(team) {
     teamref = function_592c1f6b3e44ac25(team);
     if (!isdefined(teamref)) {
@@ -362,13 +338,13 @@ function function_d3c62d251d2af8e6(team) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x128e
+// Checksum 0x0, Offset: 0xfe9
 // Size: 0x1a0
 function function_592c1f6b3e44ac25(team) {
     validteam = isdefined(team) && array_contains(level.teamnamelist, team);
     if (!istrue(validteam)) {
         /#
-            iprintln("<dev string:xce>");
+            iprintln("<dev string:x56>");
         #/
         return;
     }
@@ -412,7 +388,7 @@ function function_592c1f6b3e44ac25(team) {
         break;
     default: 
         /#
-            iprintln("<dev string:xf9>");
+            iprintln("<dev string:x7e>");
         #/
         teamfaction = "UK";
         break;
@@ -422,11 +398,11 @@ function function_592c1f6b3e44ac25(team) {
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1437
-// Size: 0xab
+// Checksum 0x0, Offset: 0x1192
+// Size: 0xa8
 function function_13c4ff9b1a423445(dialog, group, excludelist, var_61acbeb6cccd6bd, forceplay) {
     if (!isdefined(game["dialog"][dialog])) {
-        println("<dev string:x139>" + dialog + "<dev string:x14f>");
+        println("<dev string:xbb>" + dialog + "<dev string:xce>");
         return;
     }
     foreach (player in level.players) {
@@ -436,15 +412,15 @@ function function_13c4ff9b1a423445(dialog, group, excludelist, var_61acbeb6cccd6
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ea
-// Size: 0x138
+// Checksum 0x0, Offset: 0x1242
+// Size: 0x136
 function function_3b08be23bf113fcf(dialog, team, group, excludelist, var_61acbeb6cccd6bd, forceplay) {
     if (!isdefined(game["dialog"][dialog])) {
-        println("<dev string:x17c>" + dialog + "<dev string:x14f>");
+        println("<dev string:xf8>" + dialog + "<dev string:xce>");
         return;
     }
     if (!isdefined(team)) {
-        println("<dev string:x193>");
+        println("<dev string:x10c>");
         return;
     }
     playerlist = undefined;
@@ -468,15 +444,15 @@ function function_3b08be23bf113fcf(dialog, team, group, excludelist, var_61acbeb
 
 // Namespace dialog_utility / scripts\cp_mp\utility\dialog_utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x162a
-// Size: 0x17b
+// Checksum 0x0, Offset: 0x1380
+// Size: 0x180
 function function_e71772de3d54144f(dialog, player, group, var_61acbeb6cccd6bd, forceplay) {
     if (!isdefined(game["dialog"][dialog])) {
-        println("<dev string:x212>" + dialog + "<dev string:x14f>");
+        println("<dev string:x188>" + dialog + "<dev string:xce>");
         return;
     }
     if (!isdefined(player)) {
-        println("<dev string:x22b>");
+        println("<dev string:x19e>");
         return;
     }
     if (!istrue(forceplay)) {

@@ -5,8 +5,8 @@
 
 // Namespace animatedmodels / scripts\mp\animatedmodels
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9
-// Size: 0x127
+// Checksum 0x0, Offset: 0xa1
+// Size: 0x126
 function main() {
     if (!isdefined(level.anim_prop_models)) {
         level.anim_prop_models = [];
@@ -27,8 +27,8 @@ function main() {
 
 // Namespace animatedmodels / scripts\mp\animatedmodels
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f8
-// Size: 0x82
+// Checksum 0x0, Offset: 0x1cf
+// Size: 0x83
 function animatemodel() {
     if (isdefined(self.animation)) {
         animation = self.animation;

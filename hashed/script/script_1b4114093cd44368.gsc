@@ -13,7 +13,7 @@
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x411
+// Checksum 0x0, Offset: 0x361
 // Size: 0x65
 function function_234851f94416f178() {
     level.var_f6bad8618358a031 = spawnstruct();
@@ -26,7 +26,7 @@ function function_234851f94416f178() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47e
+// Checksum 0x0, Offset: 0x3ce
 // Size: 0x25
 function give_oxygenmask() {
     if (istrue(self.var_23a6763562820c70) && iscp()) {
@@ -38,7 +38,7 @@ function give_oxygenmask() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ac
+// Checksum 0x0, Offset: 0x3fc
 // Size: 0xc
 function function_23a6763562820c70() {
     return istrue(self.var_23a6763562820c70);
@@ -46,8 +46,8 @@ function function_23a6763562820c70() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c1
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x411
+// Size: 0xe1
 function oxygenmask_tryShowHint() {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -74,7 +74,7 @@ function oxygenmask_tryShowHint() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a9
+// Checksum 0x0, Offset: 0x4fa
 // Size: 0x66
 function function_8fc85383e9f1b6e6() {
     if (istrue(self.var_23a6763562820c70)) {
@@ -95,8 +95,8 @@ function function_8fc85383e9f1b6e6() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x618
-// Size: 0x1a0
+// Checksum 0x0, Offset: 0x569
+// Size: 0x19f
 function private function_80143a61b671bdd3() {
     self endon("disconnect");
     self endon("game_ended");
@@ -142,8 +142,8 @@ function private function_80143a61b671bdd3() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c0
-// Size: 0x166
+// Checksum 0x0, Offset: 0x710
+// Size: 0x168
 function function_7823f77f978a3360() {
     self endon("disconnect");
     self endon("game_ended");
@@ -186,7 +186,7 @@ function function_7823f77f978a3360() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92e
+// Checksum 0x0, Offset: 0x880
 // Size: 0x8
 function function_2e4cd4d627c30c24() {
     return give_oxygenmask();
@@ -194,7 +194,7 @@ function function_2e4cd4d627c30c24() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x93f
+// Checksum 0x0, Offset: 0x891
 // Size: 0x2
 function private function_2c9c3bc278844056() {
     
@@ -202,7 +202,7 @@ function private function_2c9c3bc278844056() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x949
+// Checksum 0x0, Offset: 0x89b
 // Size: 0x58
 function private function_44524a0826f0975a(toggle) {
     if (isdefined(self.var_9c26d9c1ec7fdc65) && self.var_9c26d9c1ec7fdc65 == toggle) {
@@ -218,7 +218,7 @@ function private function_44524a0826f0975a(toggle) {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x9a9
+// Checksum 0x0, Offset: 0x8fb
 // Size: 0x58
 function private function_2f21b35828315a0(toggle) {
     if (isdefined(self.var_58a1bd2c2c9338ad) && self.var_58a1bd2c2c9338ad == toggle) {
@@ -234,8 +234,8 @@ function private function_2f21b35828315a0(toggle) {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa09
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x95b
+// Size: 0x3b
 function private function_c2ee77402d52be9(holdweapon) {
     self.var_9a46747153a02d2f = self getcurrentweapon();
     var_4c31d0690f7e6d1d = makeweapon(holdweapon);
@@ -245,7 +245,7 @@ function private function_c2ee77402d52be9(holdweapon) {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa4d
+// Checksum 0x0, Offset: 0x99e
 // Size: 0x56
 function private function_581a506815c94633(deployweaponname) {
     self endon("death_or_disconnect");
@@ -262,7 +262,7 @@ function private function_581a506815c94633(deployweaponname) {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaac
+// Checksum 0x0, Offset: 0x9fd
 // Size: 0x2b
 function function_8b61dac63b58c6ce(state) {
     if (self.var_fe2b9ee0479ad3cf != state) {
@@ -273,7 +273,7 @@ function function_8b61dac63b58c6ce(state) {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xadf
+// Checksum 0x0, Offset: 0xa30
 // Size: 0x1e
 function function_ddd53cc3c592bd02() {
     if (!isdefined(self.var_fe2b9ee0479ad3cf)) {
@@ -284,7 +284,7 @@ function function_ddd53cc3c592bd02() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb06
+// Checksum 0x0, Offset: 0xa57
 // Size: 0x60
 function private oxygenmask_handle_death() {
     self endon("disconnect");
@@ -305,8 +305,8 @@ function private oxygenmask_handle_death() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6e
-// Size: 0xd8
+// Checksum 0x0, Offset: 0xabf
+// Size: 0xd7
 function function_a51cb31233eacf9e() {
     self notify("drop_oxygenmask");
     scripts\common\values::reset_all("oxygenmask");
@@ -333,7 +333,7 @@ function function_a51cb31233eacf9e() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc4e
+// Checksum 0x0, Offset: 0xb9e
 // Size: 0x36
 function private function_27e7b88ea18125f() {
     if (self attackbuttonpressed() || self buttonpressed("MOUSE1") || istrue(self.var_af23415abf13e8fa) && isswimmingunderwater()) {
@@ -344,8 +344,8 @@ function private function_27e7b88ea18125f() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc8d
-// Size: 0xd2
+// Checksum 0x0, Offset: 0xbdd
+// Size: 0xd1
 function private function_67506c2318ca4da2() {
     if (!_isalive()) {
         return false;
@@ -391,7 +391,7 @@ function private function_67506c2318ca4da2() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd68
+// Checksum 0x0, Offset: 0xcb7
 // Size: 0x15
 function private function_bc75520a8c4707ba() {
     return getdvarfloat(@"hash_c5320528e750d996", 0.75);
@@ -399,8 +399,8 @@ function private function_bc75520a8c4707ba() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd86
-// Size: 0x124
+// Checksum 0x0, Offset: 0xcd5
+// Size: 0x123
 function private function_eae1981ab021806b() {
     self endon("death");
     self endon("oxygenmask_fail");
@@ -436,7 +436,7 @@ function private function_eae1981ab021806b() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb2
+// Checksum 0x0, Offset: 0xe00
 // Size: 0x2d
 function function_1ab4e7e73ad0c18e() {
     self endon("oxygenmask_fail");
@@ -449,7 +449,7 @@ function function_1ab4e7e73ad0c18e() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee7
+// Checksum 0x0, Offset: 0xe35
 // Size: 0x14
 function function_9ac10cec8e7b9d40() {
     self.var_a3bde3b734d04764 = 0;
@@ -458,8 +458,8 @@ function function_9ac10cec8e7b9d40() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xf03
-// Size: 0x3f
+// Checksum 0x0, Offset: 0xe51
+// Size: 0x3e
 function private function_87a62a5519055b00() {
     self endon("death");
     delay = 1;
@@ -473,8 +473,8 @@ function private function_87a62a5519055b00() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xf4a
-// Size: 0xa5
+// Checksum 0x0, Offset: 0xe97
+// Size: 0xa8
 function private enable_headicon() {
     icon = "hud_icon_equipment_oxygen";
     offset = 16;
@@ -493,7 +493,7 @@ function private enable_headicon() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xff7
+// Checksum 0x0, Offset: 0xf47
 // Size: 0x29
 function private disable_headicon() {
     if (isdefined(self.var_afd8a16fcba5b91)) {
@@ -504,8 +504,8 @@ function private disable_headicon() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1028
-// Size: 0x7c
+// Checksum 0x0, Offset: 0xf78
+// Size: 0x7b
 function private debug_allow_shoot_while_ufoing() {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -525,8 +525,8 @@ function private debug_allow_shoot_while_ufoing() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x10ac
-// Size: 0x51
+// Checksum 0x0, Offset: 0xffb
+// Size: 0x50
 function private function_95812dcc553470bd() {
     self endon("disconnect");
     level endon("game_ended");
@@ -537,7 +537,7 @@ function private function_95812dcc553470bd() {
 
 // Namespace oxygenmask / namespace_86d0d418da518a0e
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1105
+// Checksum 0x0, Offset: 0x1053
 // Size: 0x43
 function private function_5ec8d8473d72b73() {
     self endon("disconnect");

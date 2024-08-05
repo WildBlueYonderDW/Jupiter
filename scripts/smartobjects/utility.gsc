@@ -4,7 +4,7 @@
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e
+// Checksum 0x0, Offset: 0x17b
 // Size: 0x1a
 function init_smartobjects() {
     if (isdefined(anim.smartobjects)) {
@@ -15,21 +15,21 @@ function init_smartobjects() {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x150
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x19d
+// Size: 0xa1
 function validate() {
     if (!isdefined(anim.smartobjectpoints)) {
         return;
     }
     foreach (point in anim.smartobjectpoints) {
-        assertex(isdefined(anim.smartobjects[point.script_smartobject]), "<dev string:x1c>" + point.script_smartobject + "<dev string:x2d>" + point.origin + "<dev string:x36>");
+        assertex(isdefined(anim.smartobjects[point.script_smartobject]), "SmartObject \"" + point.script_smartobject + "\" at " + point.origin + " is not precached");
     }
 }
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc
-// Size: 0x70
+// Checksum 0x0, Offset: 0x246
+// Size: 0x6f
 function add_smartobject_type(name, fngetinfo, fnusecondition) {
     init_smartobjects();
     assert(!isdefined(anim.smartobjects[name]));
@@ -41,8 +41,8 @@ function add_smartobject_type(name, fngetinfo, fnusecondition) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x274
-// Size: 0x21
+// Checksum 0x0, Offset: 0x2bd
+// Size: 0x20
 function createsmartobjectinfo() {
     info = spawnstruct();
     info.animlist = [];
@@ -51,7 +51,7 @@ function createsmartobjectinfo() {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x29e
+// Checksum 0x0, Offset: 0x2e6
 // Size: 0x3c
 function addsmartobjectanim_internal(statename, alias) {
     if (!isdefined(self.animlist[statename])) {
@@ -62,7 +62,7 @@ function addsmartobjectanim_internal(statename, alias) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e2
+// Checksum 0x0, Offset: 0x32a
 // Size: 0x23
 function addsmartobjectintroanim(alias) {
     addsmartobjectanim_internal("smartobject_intro", alias);
@@ -71,7 +71,7 @@ function addsmartobjectintroanim(alias) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30d
+// Checksum 0x0, Offset: 0x355
 // Size: 0x18
 function addsmartobjectanim(alias) {
     addsmartobjectanim_internal("smartobject_logic", alias);
@@ -79,7 +79,7 @@ function addsmartobjectanim(alias) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32d
+// Checksum 0x0, Offset: 0x375
 // Size: 0x28
 function addsmartobjectreactanim(alias) {
     if (isdefined(alias)) {
@@ -90,7 +90,7 @@ function addsmartobjectreactanim(alias) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35d
+// Checksum 0x0, Offset: 0x3a5
 // Size: 0x23
 function addsmartobjectoutroanim(alias) {
     addsmartobjectanim_internal("smartobject_outro", alias);
@@ -99,7 +99,7 @@ function addsmartobjectoutroanim(alias) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x388
+// Checksum 0x0, Offset: 0x3d0
 // Size: 0xd
 function addsmartobjectarrivalanims() {
     self.hasarrivals = 1;
@@ -107,7 +107,7 @@ function addsmartobjectarrivalanims() {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39d
+// Checksum 0x0, Offset: 0x3e5
 // Size: 0xd
 function addsmartobjectexitanims() {
     self.hasexits = 1;
@@ -115,7 +115,7 @@ function addsmartobjectexitanims() {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b2
+// Checksum 0x0, Offset: 0x3fa
 // Size: 0x28
 function addsmartobjectpainanim(alias) {
     if (isdefined(alias)) {
@@ -126,7 +126,7 @@ function addsmartobjectpainanim(alias) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e2
+// Checksum 0x0, Offset: 0x42a
 // Size: 0x28
 function addsmartobjectdeathanim(alias) {
     if (isdefined(alias)) {
@@ -137,7 +137,7 @@ function addsmartobjectdeathanim(alias) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x412
+// Checksum 0x0, Offset: 0x45a
 // Size: 0x16
 function getsmartobjecttype(name) {
     return anim.smartobjects[name];
@@ -145,7 +145,7 @@ function getsmartobjecttype(name) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x431
+// Checksum 0x0, Offset: 0x479
 // Size: 0x10c
 function smartobject_setnextuse() {
     objtype = getsmartobjecttype(self.script_smartobject);
@@ -169,25 +169,25 @@ function smartobject_setnextuse() {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x545
+// Checksum 0x0, Offset: 0x58d
 // Size: 0x44
 function claimsmartobject(obj) {
-    assertex(!isdefined(obj.claimer) || obj.claimer == self, "<dev string:x4b>");
+    assertex(!isdefined(obj.claimer) || obj.claimer == self, "smartobject already claimed by someone else.");
     obj.claimer = self;
 }
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x591
+// Checksum 0x0, Offset: 0x5d9
 // Size: 0x42
 function unclaimsmartobject(obj) {
-    assertex(!isdefined(obj.claimer) || obj.claimer == self, "<dev string:x7b>");
+    assertex(!isdefined(obj.claimer) || obj.claimer == self, "cannot clear claim on someone else's smartobject.");
     obj.claimer = undefined;
 }
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5db
+// Checksum 0x0, Offset: 0x623
 // Size: 0x18
 function canclaimsmartobject(obj) {
     return !isdefined(obj.claimer);
@@ -195,7 +195,7 @@ function canclaimsmartobject(obj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fc
+// Checksum 0x0, Offset: 0x644
 // Size: 0x89
 function canusesmartobject(obj) {
     if (istrue(obj.donotuse)) {
@@ -214,8 +214,8 @@ function canusesmartobject(obj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x68e
-// Size: 0xf9
+// Checksum 0x0, Offset: 0x6d6
+// Size: 0xfd
 function getbestsmartobject(desiredpos, volume, var_f34327e65116baaa) {
     if (!isdefined(anim.smartobjectpoints)) {
         return undefined;
@@ -247,7 +247,7 @@ function getbestsmartobject(desiredpos, volume, var_f34327e65116baaa) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x790
+// Checksum 0x0, Offset: 0x7dc
 // Size: 0x103
 function isplayernearsmartobject(obj) {
     radiussq = 1600;
@@ -265,8 +265,8 @@ function isplayernearsmartobject(obj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x89c
-// Size: 0x9cb
+// Checksum 0x0, Offset: 0x8e8
+// Size: 0x9e7
 function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c8823e405a381f, var_7975c128a04cff8c, var_188936ff4f82c5c) {
     if (!isdefined(anim.smartobjectpoints)) {
         return;
@@ -308,7 +308,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xb0>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x1c>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -317,7 +317,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xb7>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x20>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -326,7 +326,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xbe>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x24>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -337,7 +337,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xc6>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x29>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -346,7 +346,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xcd>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x2d>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -357,7 +357,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xd4>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x31>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -370,7 +370,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xd9>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x33>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -379,7 +379,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             /#
                 if (var_e4bb5ea6b1ad286) {
                     orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.9, 0.4, 0), 0, drawtime);
-                    print3d(obj.origin + (0, 0, 24), "<dev string:xe0>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 24), "<dev string:x37>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
             continue;
@@ -403,7 +403,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
             score *= var_259bd6e47136a920;
             /#
                 if (var_e4bb5ea6b1ad286) {
-                    print3d(obj.origin + (0, 0, 20), "<dev string:xe8>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                    print3d(obj.origin + (0, 0, 20), "<dev string:x3c>", (0.5, 0.5, 0.5), 1, 0.2, drawtime);
                 }
             #/
         }
@@ -425,7 +425,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
         /#
             if (var_e4bb5ea6b1ad286) {
                 orientedbox(obj.origin + (0, 0, 32), (12, 12, 12), obj.angles, (0.8, 0.8, 0), 0, drawtime);
-                print3d(obj.origin + (0, 0, 24), "<dev string:xed>" + score, (0.5, 0.5, 0.5), 1, 0.2, drawtime);
+                print3d(obj.origin + (0, 0, 24), "<dev string:x3e>" + score, (0.5, 0.5, 0.5), 1, 0.2, drawtime);
             }
         #/
     }
@@ -434,7 +434,7 @@ function getbestsmartobjectalongline(startpos, endpos, region, volume, var_a0c88
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1270
+// Checksum 0x0, Offset: 0x12d8
 // Size: 0xb1
 function getsmartobjectradiussq(obj) {
     if (isdefined(obj.radius)) {
@@ -451,8 +451,8 @@ function getsmartobjectradiussq(obj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x132a
-// Size: 0xe5
+// Checksum 0x0, Offset: 0x1392
+// Size: 0xe7
 function issmartobjectwithinrange(object, optorigin, volume) {
     if (isdefined(optorigin)) {
         pos = optorigin;
@@ -479,7 +479,7 @@ function issmartobjectwithinrange(object, optorigin, volume) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1418
+// Checksum 0x0, Offset: 0x1482
 // Size: 0x90
 function setcustomsmartobjectarrivaldata(obj) {
     objbp = getsmartobjecttype(obj.script_smartobject);
@@ -495,8 +495,8 @@ function setcustomsmartobjectarrivaldata(obj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b0
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x151a
+// Size: 0x39
 function setsmartobject(smartobj) {
     var_47b56f47cd0464ca = scripts\asm\asm_bb::bb_getrequestedsmartobject();
     if (isdefined(var_47b56f47cd0464ca)) {
@@ -508,7 +508,7 @@ function setsmartobject(smartobj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f2
+// Checksum 0x0, Offset: 0x155b
 // Size: 0x1f
 function clearsmartobject(smartobj) {
     if (isdefined(smartobj)) {
@@ -519,7 +519,7 @@ function clearsmartobject(smartobj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1519
+// Checksum 0x0, Offset: 0x1582
 // Size: 0x4b
 function canusesmartobject_stealth(smartobj) {
     if (!isdefined(self.script_stealthgroup)) {
@@ -536,8 +536,8 @@ function canusesmartobject_stealth(smartobj) {
 
 // Namespace utility / scripts\smartobjects\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x156d
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x15d6
+// Size: 0xb9
 function canusesmartobject_nostrafenoturn(smartobj) {
     forward = anglestoforward(self.angles);
     normal = vectornormalize(smartobj.origin - self.origin);

@@ -27,7 +27,7 @@
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xea2
+// Checksum 0x0, Offset: 0xcb7
 // Size: 0x81
 function init() {
     function_bc37093624170142();
@@ -47,7 +47,7 @@ function init() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf2b
+// Checksum 0x0, Offset: 0xd40
 // Size: 0x46b
 function function_bc37093624170142() {
     level.helperdronesettings["radar_drone_recon"] = spawnstruct();
@@ -91,22 +91,17 @@ function function_bc37093624170142() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x139e
-// Size: 0x150
+// Checksum 0x0, Offset: 0x11b3
+// Size: 0xb9
 function function_23f0d567614a93f0() {
     val::group_register("reconDrone_switch", ["allow_movement", "allow_jump", "supers", "killstreaks", "vehicle_use", "offhand_weapons"]);
     val::group_register("reconDrone_deploy", ["usability", "melee", "offhand_weapons", "weapon_switch", "vehicle_use"]);
-    val::group_register("reconDrone_use", ["fire", "shellshock", "melee", "vehicle_use", "nvg"]);
-    if (issharedfuncdefined("equipment", "areNVGTogglableForPlayer") && ![[ getsharedfunc("equipment", "areNVGTogglableForPlayer") ]]()) {
-        val::group_register("reconDrone_use", ["fire", "shellshock", "melee", "vehicle_use"]);
-        return;
-    }
     val::group_register("reconDrone_use", ["fire", "shellshock", "melee", "vehicle_use", "nvg"]);
 }
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f6
+// Checksum 0x0, Offset: 0x1274
 // Size: 0x7e
 function function_202017c74349f68c() {
     game["dialog"]["radar_drone_recon" + "_teamleader_friendly_inbound"] = "fieldupgrade_team_leader" + "_ally_callout";
@@ -117,7 +112,7 @@ function function_202017c74349f68c() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x157c
+// Checksum 0x0, Offset: 0x12fa
 // Size: 0x2
 function function_9283d83a13859206() {
     
@@ -125,7 +120,7 @@ function function_9283d83a13859206() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1586
+// Checksum 0x0, Offset: 0x1304
 // Size: 0x1a
 function function_1bc16ffbb7c1131e() {
     function_c0b0a582ff9e4d57("recon_drone_color_mp");
@@ -134,8 +129,8 @@ function function_1bc16ffbb7c1131e() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15a8
-// Size: 0x21
+// Checksum 0x0, Offset: 0x1326
+// Size: 0x20
 function function_57fd8a7006975cd6() {
     streakinfo = createstreakinfo("radar_drone_recon", self);
     return function_ab931b44a2efddf7(streakinfo);
@@ -143,8 +138,8 @@ function function_57fd8a7006975cd6() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d2
-// Size: 0x242
+// Checksum 0x0, Offset: 0x134f
+// Size: 0x249
 function function_ab931b44a2efddf7(streakinfo) {
     if (!scripts\cp_mp\vehicles\vehicle_tracking::reservevehicle()) {
         return false;
@@ -211,8 +206,8 @@ function function_ab931b44a2efddf7(streakinfo) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x181d
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x15a1
+// Size: 0xae
 function recondrone_create(startpos, startang, helperdronetype, streakinfo) {
     reconDrone = scripts\cp_mp\killstreaks\helper_drone::createhelperdrone(startpos, startang, helperdronetype, streakinfo, 0, 1);
     if (!isdefined(reconDrone)) {
@@ -232,8 +227,8 @@ function recondrone_create(startpos, startang, helperdronetype, streakinfo) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d5
-// Size: 0x54
+// Checksum 0x0, Offset: 0x1658
+// Size: 0x53
 function function_b576092fd50996bf(streakname) {
     hitstokill = level.helperdronesettings[streakname].hitstokill;
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageData")) {
@@ -243,8 +238,8 @@ function function_b576092fd50996bf(streakname) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1931
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x16b3
+// Size: 0x7d
 function function_cbd53bead95f8409(streakname) {
     hitstokill = level.helperdronesettings[streakname].hitstokill;
     weaponname = "emp_grenade_mp";
@@ -257,7 +252,7 @@ function function_cbd53bead95f8409(streakname) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b4
+// Checksum 0x0, Offset: 0x1738
 // Size: 0x56
 function function_9dfca5c7ac12fc2(config) {
     self.repeatuse = config.repeatuse;
@@ -272,8 +267,8 @@ function function_9dfca5c7ac12fc2(config) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a12
-// Size: 0x413
+// Checksum 0x0, Offset: 0x1796
+// Size: 0x3ff
 function function_622c97b11177264a(config) {
     if (isdefined(level.var_b67b5f9dfe488c2f)) {
         thread [[ level.var_b67b5f9dfe488c2f ]](self.streakinfo);
@@ -343,16 +338,13 @@ function function_622c97b11177264a(config) {
         thread function_435b4dc89b40e60a(config);
         thread function_148a87125a1ece3e();
     }
-    if (istrue(self.oob)) {
-        function_a91ebb0263d086f3();
-    }
     return true;
 }
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e2e
-// Size: 0x195
+// Checksum 0x0, Offset: 0x1b9e
+// Size: 0x197
 function function_439e22ca27f68ce3() {
     if (!isdefined(self.recondronesuper)) {
         return false;
@@ -409,8 +401,8 @@ function function_439e22ca27f68ce3() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fcc
-// Size: 0x11a
+// Checksum 0x0, Offset: 0x1d3e
+// Size: 0x11e
 function function_148a87125a1ece3e() {
     droneowner = self.owner;
     droneowner endon("disconnect");
@@ -442,8 +434,8 @@ function function_148a87125a1ece3e() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ee
-// Size: 0x315
+// Checksum 0x0, Offset: 0x1e64
+// Size: 0x319
 function function_85b4e9e74b613d68(config) {
     droneowner = self.owner;
     droneowner endon("disconnect");
@@ -539,8 +531,8 @@ function function_85b4e9e74b613d68(config) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x240b
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x2185
+// Size: 0xa3
 function function_dfc402ef72eff688(config) {
     self endon("death");
     self endon("leaving");
@@ -561,7 +553,7 @@ function function_dfc402ef72eff688(config) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24b7
+// Checksum 0x0, Offset: 0x2230
 // Size: 0xbf
 function function_7730b66241ef6e46(config) {
     self endon("death");
@@ -584,8 +576,8 @@ function function_7730b66241ef6e46(config) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x257e
-// Size: 0x1fa
+// Checksum 0x0, Offset: 0x22f7
+// Size: 0x1f9
 function function_86e1c4f92c53ccfb(config) {
     self endon("death");
     self endon("leaving");
@@ -634,7 +626,7 @@ function function_86e1c4f92c53ccfb(config) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2780
+// Checksum 0x0, Offset: 0x24f8
 // Size: 0x1c7
 function function_7b0782113e604198(target) {
     droneowner = self.owner;
@@ -683,8 +675,8 @@ function function_7b0782113e604198(target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x294f
-// Size: 0x204
+// Checksum 0x0, Offset: 0x26c7
+// Size: 0x20b
 function function_435b4dc89b40e60a(config) {
     self endon("death");
     self endon("explode");
@@ -729,7 +721,7 @@ function function_435b4dc89b40e60a(config) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b5b
+// Checksum 0x0, Offset: 0x28da
 // Size: 0xd8
 function function_772ede0cce4020ec(drone) {
     drone.owner endon("disconnect");
@@ -761,8 +753,8 @@ function function_772ede0cce4020ec(drone) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3b
-// Size: 0x3f3
+// Checksum 0x0, Offset: 0x29ba
+// Size: 0x3f6
 function function_2fd033ded40b93a9(target, targettype, automarker) {
     droneowner = self.owner;
     droneowner endon("disconnect");
@@ -849,7 +841,7 @@ function function_2fd033ded40b93a9(target, targettype, automarker) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3036
+// Checksum 0x0, Offset: 0x2db8
 // Size: 0x91
 function function_4f43ed745364f234(target, targettype) {
     if (issharedfuncdefined("player", "doScoreEvent")) {
@@ -862,8 +854,8 @@ function function_4f43ed745364f234(target, targettype) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30cf
-// Size: 0x4f
+// Checksum 0x0, Offset: 0x2e51
+// Size: 0x4e
 function function_4ae03252b19b76b9(markdata, timeout) {
     level endon("game_ended");
     target = markdata.target;
@@ -874,8 +866,8 @@ function function_4ae03252b19b76b9(markdata, timeout) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3126
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x2ea7
+// Size: 0xca
 function function_c437a23c3ca84a5c(markdata, timeout) {
     droneowner = self.owner;
     droneowner endon("disconnect");
@@ -892,7 +884,7 @@ function function_c437a23c3ca84a5c(markdata, timeout) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x31f7
+// Checksum 0x0, Offset: 0x2f79
 // Size: 0x25
 function function_1083bf4d55c69e99(markingdrone, target) {
     return array_contains(markingdrone.targetsinouterradius, target);
@@ -900,8 +892,8 @@ function function_1083bf4d55c69e99(markingdrone, target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3225
-// Size: 0xf8
+// Checksum 0x0, Offset: 0x2fa7
+// Size: 0xfa
 function function_26d9d0c6ca7a5a8c(target) {
     config = level.helperdronesettings[self.helperdronetype];
     var_df1a93029c5dd1e1 = islargemap();
@@ -922,8 +914,8 @@ function function_26d9d0c6ca7a5a8c(target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3326
-// Size: 0x49
+// Checksum 0x0, Offset: 0x30aa
+// Size: 0x48
 function function_c26586725702ec8c(target) {
     detectrange = 25000000;
     if (istrue(target isswimmingunderwater())) {
@@ -934,8 +926,8 @@ function function_c26586725702ec8c(target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3378
-// Size: 0x48
+// Checksum 0x0, Offset: 0x30fb
+// Size: 0x47
 function function_a4c00a4b64fcb2fa(target) {
     detectrange = 3062500;
     if (target isswimmingunderwater()) {
@@ -946,8 +938,8 @@ function function_a4c00a4b64fcb2fa(target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c9
-// Size: 0x49
+// Checksum 0x0, Offset: 0x314b
+// Size: 0x48
 function function_119a97bfb70a99d6(target) {
     if (!isdefined(self.enemiesmarked)) {
         return false;
@@ -961,8 +953,8 @@ function function_119a97bfb70a99d6(target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x341b
-// Size: 0x49
+// Checksum 0x0, Offset: 0x319c
+// Size: 0x48
 function function_5e38c3c0ae63e8af(target) {
     if (!isdefined(self.enemiesmarked)) {
         return false;
@@ -976,7 +968,7 @@ function function_5e38c3c0ae63e8af(target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x346d
+// Checksum 0x0, Offset: 0x31ed
 // Size: 0x1c
 function function_dc5a1ea5eef68f83() {
     return ter_op(istrue(self.ispiloted), 0.75, 1);
@@ -984,8 +976,8 @@ function function_dc5a1ea5eef68f83() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3492
-// Size: 0x1b2
+// Checksum 0x0, Offset: 0x3212
+// Size: 0x1b3
 function function_50dfdf2d06587791(target, markpos, drone, timeout) {
     markdata = spawnstruct();
     markdata.target = target;
@@ -1010,11 +1002,11 @@ function function_50dfdf2d06587791(target, markpos, drone, timeout) {
         showto = self.owner;
     }
     if (!isdefined(showto)) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("showTo for markLocation is undefined! Headicon not created.");
         return;
     }
     if (isarray(showto) && showto.size == 0) {
-        assertmsg("<dev string:x5b>");
+        assertmsg("showTo array for markLocation has no valid entries! Headicon not created.");
         return;
     }
     if (true) {
@@ -1029,7 +1021,7 @@ function function_50dfdf2d06587791(target, markpos, drone, timeout) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x364c
+// Checksum 0x0, Offset: 0x33cd
 // Size: 0x9a
 function function_720d2d338e9a63ca(markdata, var_d99ed5531d1fdc1f, timeout) {
     level endon("game_ended");
@@ -1048,8 +1040,8 @@ function function_720d2d338e9a63ca(markdata, var_d99ed5531d1fdc1f, timeout) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36ee
-// Size: 0x268
+// Checksum 0x0, Offset: 0x346f
+// Size: 0x26a
 function function_1be8cc141c0b49cf(markdata, timeout) {
     target = markdata.target;
     self.enemiesmarked[markdata.targetnum] = markdata;
@@ -1095,8 +1087,8 @@ function function_1be8cc141c0b49cf(markdata, timeout) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x395e
-// Size: 0x63
+// Checksum 0x0, Offset: 0x36e1
+// Size: 0x62
 function function_d16011cedf620dc6() {
     self endon("disconnect");
     if (istrue(isusingremote())) {
@@ -1113,7 +1105,7 @@ function function_d16011cedf620dc6() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39c9
+// Checksum 0x0, Offset: 0x374b
 // Size: 0x77
 function function_fa08d1d78cf5cb01() {
     if (!isdefined(self.markedomnvar)) {
@@ -1132,7 +1124,7 @@ function function_fa08d1d78cf5cb01() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a48
+// Checksum 0x0, Offset: 0x37ca
 // Size: 0x4d
 function function_dfa102c1a8648b75() {
     self endon("disconnect");
@@ -1148,7 +1140,7 @@ function function_dfa102c1a8648b75() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a9d
+// Checksum 0x0, Offset: 0x381f
 // Size: 0x21
 function function_a867654273504370() {
     self notify("markedUIUpdate");
@@ -1158,8 +1150,8 @@ function function_a867654273504370() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ac6
-// Size: 0x1c2
+// Checksum 0x0, Offset: 0x3848
+// Size: 0x1c7
 function function_c938e22803fb2efc(defaulticon, defaultoffset, target) {
     weaponicon = defaulticon;
     weaponoffset = defaultoffset;
@@ -1195,8 +1187,8 @@ function function_c938e22803fb2efc(defaulticon, defaultoffset, target) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c91
-// Size: 0x66
+// Checksum 0x0, Offset: 0x3a18
+// Size: 0x63
 function function_200b632d8b4ab566(markdata) {
     foreach (player in level.players) {
         if (!isdefined(player)) {
@@ -1208,8 +1200,8 @@ function function_200b632d8b4ab566(markdata) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cff
-// Size: 0x13f
+// Checksum 0x0, Offset: 0x3a83
+// Size: 0x141
 function function_f1d272b5fc3a575c(markdata, player) {
     isfriendly = 0;
     if (scripts\engine\utility::issharedfuncdefined("player", "isFriendly")) {
@@ -1234,7 +1226,7 @@ function function_f1d272b5fc3a575c(markdata, player) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e46
+// Checksum 0x0, Offset: 0x3bcc
 // Size: 0x163
 function function_8bf0338c7a157c29(markdata) {
     scripts\cp_mp\entityheadicons::setheadicon_deleteicon(markdata.headicon);
@@ -1266,7 +1258,7 @@ function function_8bf0338c7a157c29(markdata) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fb1
+// Checksum 0x0, Offset: 0x3d37
 // Size: 0x177
 function recondrone_exit() {
     if (istrue(self.repeatuse)) {
@@ -1296,8 +1288,8 @@ function recondrone_exit() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4130
-// Size: 0x136
+// Checksum 0x0, Offset: 0x3eb6
+// Size: 0x13c
 function function_fcd08c370fe30d2c(var_b01459d2cac1c01f) {
     level endon("game_ended");
     self endon("death");
@@ -1327,7 +1319,7 @@ function function_fcd08c370fe30d2c(var_b01459d2cac1c01f) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x426e
+// Checksum 0x0, Offset: 0x3ffa
 // Size: 0x17
 function recondrone_leave(timeout) {
     thread scripts\cp_mp\killstreaks\helper_drone::function_6edfda4764129e3(0, 1, timeout);
@@ -1335,7 +1327,7 @@ function recondrone_leave(timeout) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x428d
+// Checksum 0x0, Offset: 0x4019
 // Size: 0xe6
 function recondrone_explode(config, wasdestroyed, wasexited, wastimedout, wasdetonated, thirdperson) {
     if (issharedfuncdefined("game", "clearOOB")) {
@@ -1354,7 +1346,7 @@ function recondrone_explode(config, wasdestroyed, wasexited, wastimedout, wasdet
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x437b
+// Checksum 0x0, Offset: 0x4107
 // Size: 0x283
 function function_8321764da9dead70(player) {
     if (!isdefined(player)) {
@@ -1412,8 +1404,8 @@ function function_8321764da9dead70(player) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4606
-// Size: 0x1b9
+// Checksum 0x0, Offset: 0x4392
+// Size: 0x1b8
 function recondrone_beginsuper() {
     self endon("death_or_disconnect");
     self endon("reconDroneEnded");
@@ -1455,8 +1447,8 @@ function recondrone_beginsuper() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47c8
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x4553
+// Size: 0xdf
 function recondrone_endsuper(fromdeath) {
     self notify("reconDroneEnded");
     self.recondronesafespawn = undefined;
@@ -1480,8 +1472,8 @@ function recondrone_endsuper(fromdeath) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48b0
-// Size: 0xc6
+// Checksum 0x0, Offset: 0x463a
+// Size: 0xc5
 function recondrone_watchsuper(streakinfo) {
     self endon("disconnect");
     result = recondrone_watchsuperinternal(streakinfo);
@@ -1501,8 +1493,8 @@ function recondrone_watchsuper(streakinfo) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x497e
-// Size: 0x277
+// Checksum 0x0, Offset: 0x4707
+// Size: 0x278
 function recondrone_watchsuperinternal(streakinfo) {
     self endon("death");
     self endon("reconDroneEnded");
@@ -1561,8 +1553,8 @@ function recondrone_watchsuperinternal(streakinfo) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bfe
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x4988
+// Size: 0x4a
 function recondrone_watchsuperendfromswitch() {
     self endon("death_or_disconnect");
     self endon("reconDroneEnded");
@@ -1579,8 +1571,8 @@ function recondrone_watchsuperendfromswitch() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c51
-// Size: 0x52
+// Checksum 0x0, Offset: 0x49da
+// Size: 0x51
 function recondrone_unsetsuper(fromdeath) {
     self notify("reconDroneUnset");
     if (true) {
@@ -1596,12 +1588,11 @@ function recondrone_unsetsuper(fromdeath) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cab
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x4a33
+// Size: 0xc2
 function recondrone_givedeployweapon(deployweaponname, existingdrone) {
     self endon("death_or_disconnect");
     self endon("reconDroneWeaponTaken");
-    self endon("redeploy_drone_use");
     self notify("reconDroneWeaponGiven");
     self endon("reconDroneWeaponGiven");
     objweapon = makeweapon(deployweaponname);
@@ -1621,7 +1612,7 @@ function recondrone_givedeployweapon(deployweaponname, existingdrone) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d7d
+// Checksum 0x0, Offset: 0x4afe
 // Size: 0x4d
 function function_7c3dc10c6270b3c8(actionnotify, deployweapon) {
     self endon("death_or_disconnect");
@@ -1637,7 +1628,7 @@ function function_7c3dc10c6270b3c8(actionnotify, deployweapon) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dd2
+// Checksum 0x0, Offset: 0x4b53
 // Size: 0x71
 function function_31cc8545b41badca(drone, deployweapon) {
     self endon("death_or_disconnect");
@@ -1655,8 +1646,8 @@ function function_31cc8545b41badca(drone, deployweapon) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e4b
-// Size: 0x7a
+// Checksum 0x0, Offset: 0x4bcc
+// Size: 0x6d
 function recondrone_takedeployweapon(forceremove, deployweaponname) {
     self endon("death_or_disconnect");
     self endon("reconDroneWeaponGiven");
@@ -1675,12 +1666,11 @@ function recondrone_takedeployweapon(forceremove, deployweaponname) {
     if (istrue(forceremove)) {
         getridofweapon(objweapon);
     }
-    scripts\common\values::group_reset("reconDrone_switch");
 }
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ecd
+// Checksum 0x0, Offset: 0x4c41
 // Size: 0x34
 function recondrone_watchcleanupreserved(streakinfo, vehiclereserved) {
     self notify("reconDrone_cleanupReserved");
@@ -1691,7 +1681,7 @@ function recondrone_watchcleanupreserved(streakinfo, vehiclereserved) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f09
+// Checksum 0x0, Offset: 0x4c7d
 // Size: 0x6e
 function recondrone_cleanupreserved(streakinfo, vehiclereserved) {
     self notify("reconDrone_cleanupReserved");
@@ -1709,8 +1699,8 @@ function recondrone_cleanupreserved(streakinfo, vehiclereserved) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f7f
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x4cf3
+// Size: 0x6e
 function recondrone_addtolists(drone, owner) {
     owner.recondronesuper = drone;
     owner.pausesuperpointsovertime = 1;
@@ -1724,7 +1714,7 @@ function recondrone_addtolists(drone, owner) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ff6
+// Checksum 0x0, Offset: 0x4d69
 // Size: 0x65
 function recondrone_removefromlists(drone, owner, id) {
     if (isdefined(drone)) {
@@ -1742,7 +1732,7 @@ function recondrone_removefromlists(drone, owner, id) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5063
+// Checksum 0x0, Offset: 0x4dd6
 // Size: 0x35
 function recondrone_removefromlistsondeath(drone, owner, id) {
     drone endon("reconDrone_removeFromLists");
@@ -1752,8 +1742,8 @@ function recondrone_removefromlistsondeath(drone, owner, id) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50a0
-// Size: 0xab
+// Checksum 0x0, Offset: 0x4e13
+// Size: 0xa8
 function function_39cba2c62062f32e() {
     if (isdefined(level.supportdrones) && level.supportdrones.size > 0) {
         foreach (drone in level.supportdrones) {
@@ -1769,8 +1759,8 @@ function function_39cba2c62062f32e() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5154
-// Size: 0x12b
+// Checksum 0x0, Offset: 0x4ec4
+// Size: 0x12d
 function function_cccbd62549b4440b(scantarget, scanfov, var_5e43b44751d01b1a) {
     inreticle = 0;
     defaultorigin = scantarget.origin;
@@ -1796,8 +1786,8 @@ function function_cccbd62549b4440b(scantarget, scanfov, var_5e43b44751d01b1a) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5288
-// Size: 0x19f
+// Checksum 0x0, Offset: 0x4ffa
+// Size: 0x19e
 function function_2f23cbe83e1e57df(potentialtarget) {
     config = level.helperdronesettings[self.helperdronetype];
     if (scripts\cp_mp\emp_debuff::is_empd()) {
@@ -1852,8 +1842,8 @@ function function_2f23cbe83e1e57df(potentialtarget) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5430
-// Size: 0xf3
+// Checksum 0x0, Offset: 0x51a1
+// Size: 0xf2
 function function_80226370b4c80b06(potentialtarget) {
     config = level.helperdronesettings[self.helperdronetype];
     if (scripts\cp_mp\emp_debuff::is_empd()) {
@@ -1890,7 +1880,7 @@ function function_80226370b4c80b06(potentialtarget) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x552c
+// Checksum 0x0, Offset: 0x529c
 // Size: 0x38
 function function_46e2d014d3dbf29b() {
     self endon("death");
@@ -1902,7 +1892,7 @@ function function_46e2d014d3dbf29b() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x556c
+// Checksum 0x0, Offset: 0x52dc
 // Size: 0x93
 function function_85f0fd88983d1893(data) {
     self endon("death");
@@ -1918,7 +1908,7 @@ function function_85f0fd88983d1893(data) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5607
+// Checksum 0x0, Offset: 0x5377
 // Size: 0x66
 function function_31b413d9b6abe7f8(data) {
     self setscriptablepartstate("ddos", "disabled", 0);
@@ -1934,22 +1924,22 @@ function function_31b413d9b6abe7f8(data) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5675
-// Size: 0x69
+// Checksum 0x0, Offset: 0x53e5
+// Size: 0x5f
 function function_41f3461c40e5a87c(data) {
     if (!isdefined(self.owner)) {
         return;
     }
     if (isdefined(data.attacker)) {
         if (scripts\engine\utility::issharedfuncdefined("player", "doScoreEvent")) {
-            data.attacker thread [[ scripts\engine\utility::getsharedfunc("player", "doScoreEvent") ]]("disabled_recon_drone", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
+            data.attacker thread [[ scripts\engine\utility::getsharedfunc("player", "doScoreEvent") ]]("disabled_recon_drone");
         }
     }
 }
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x56e6
+// Checksum 0x0, Offset: 0x544c
 // Size: 0x51
 function function_6a90d81d42854ecd(isdeath) {
     self setscriptablepartstate("ddos", "neutral", 0);
@@ -1964,8 +1954,8 @@ function function_6a90d81d42854ecd(isdeath) {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x573f
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x54a5
+// Size: 0xfa
 function function_7d0db4b7f46e7dc0() {
     targetarray = [];
     contentoverride = create_world_contents();
@@ -1988,8 +1978,8 @@ function function_7d0db4b7f46e7dc0() {
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x583e
-// Size: 0x29
+// Checksum 0x0, Offset: 0x55a8
+// Size: 0x28
 function function_157c2bcd50ca6207() {
     reconDrone = self.recondronesuper;
     return isdefined(reconDrone) && !istrue(reconDrone.isdestroyed);
@@ -1999,21 +1989,21 @@ function function_157c2bcd50ca6207() {
 
     // Namespace recon_drone / namespace_893ac0cf28c5af44
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5870
-    // Size: 0x93
+    // Checksum 0x0, Offset: 0x55d9
+    // Size: 0x92
     function function_e08e7ed0591c3438() {
         setdevdvar(@"hash_60a091e2e6da3352", 0);
         while (true) {
             if (getdvarint(@"hash_60a091e2e6da3352") != 0) {
                 setdevdvar(@"hash_60a091e2e6da3352", 0);
                 if (level.players.size < 1) {
-                    iprintlnbold("<dev string:xa8>");
+                    iprintlnbold("<dev string:x1c>");
                     continue;
                 }
                 firstplayer = level.players[0];
                 firstplayer thread function_d16011cedf620dc6();
                 firstplayer function_fa08d1d78cf5cb01();
-                firstplayer playlocalsound("<dev string:xe6>");
+                firstplayer playlocalsound("<dev string:x57>");
             }
             waitframe();
         }

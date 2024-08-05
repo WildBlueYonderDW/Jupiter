@@ -10,7 +10,7 @@
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x28d
+// Checksum 0x0, Offset: 0x239
 // Size: 0x60
 function function_12889d5fe2ea906e(asmname, statename, params) {
     self.fnasm_playfacialanim = utility::getsharedfunc("anim", "ASM_PlayFacialAnim");
@@ -22,7 +22,7 @@ function function_12889d5fe2ea906e(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f5
+// Checksum 0x0, Offset: 0x2a1
 // Size: 0x6d
 function function_86880dd17dc8bc39(asmname, statename, tostatename, params) {
     if (!isdefined(self.lasttimepushed)) {
@@ -35,8 +35,8 @@ function function_86880dd17dc8bc39(asmname, statename, tostatename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x36b
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x317
+// Size: 0x115
 function function_d8ca3630d10c6e62(asmname, statename, params) {
     player = namespace_2b520709cc9e7442::getclosestplayer(self.origin);
     if (!isdefined(player)) {
@@ -57,7 +57,7 @@ function function_d8ca3630d10c6e62(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x483
+// Checksum 0x0, Offset: 0x435
 // Size: 0x230
 function function_3a53b7d4f8a6ab4f(asmname, statename, params) {
     self.capeventdata = spawnstruct();
@@ -100,8 +100,8 @@ function function_3a53b7d4f8a6ab4f(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bb
-// Size: 0x18c
+// Checksum 0x0, Offset: 0x66d
+// Size: 0x194
 function proximity_bump() {
     self endon("death");
     self.script_pushable = 0;
@@ -142,7 +142,7 @@ function proximity_bump() {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84f
+// Checksum 0x0, Offset: 0x809
 // Size: 0x71
 function function_8410016cf6ab1371() {
     while (true) {
@@ -158,7 +158,7 @@ function function_8410016cf6ab1371() {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c8
+// Checksum 0x0, Offset: 0x882
 // Size: 0x1b
 function capcivreact(asmname) {
     thread function_8410016cf6ab1371();
@@ -167,8 +167,8 @@ function capcivreact(asmname) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8eb
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x8a5
+// Size: 0xe3
 function CapCivReact_HandleBulletFired(originator) {
     var_c70400922bccce61 = distance(originator.origin, self.origin);
     waittimems = var_c70400922bccce61 / level.var_f62b6e59c0e00d48.var_ffc29105fd388648 + randomfloat(0, 0.5) * 1000;
@@ -186,7 +186,7 @@ function CapCivReact_HandleBulletFired(originator) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d5
+// Checksum 0x0, Offset: 0x990
 // Size: 0x45
 function function_d338069f6a281787() {
     while (true) {
@@ -201,8 +201,8 @@ function function_d338069f6a281787() {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa22
-// Size: 0x22
+// Checksum 0x0, Offset: 0x9dd
+// Size: 0x21
 function function_b92973cdb6dc3f38() {
     target = self._blackboard.var_610cb18ecc1af719;
     return target;
@@ -210,8 +210,8 @@ function function_b92973cdb6dc3f38() {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4d
-// Size: 0x248
+// Checksum 0x0, Offset: 0xa07
+// Size: 0x252
 function function_20efa2e633463448(asmname, statename, params) {
     selfent = self;
     if (isdefined(self.capgroup)) {
@@ -244,20 +244,20 @@ function function_20efa2e633463448(asmname, statename, params) {
             animindex = "4";
         }
         turnanim = scripts\asm\cap::function_18e6c36c02a94dbd(statename, animindex);
-        assertex(isdefined(turnanim), "<dev string:x1c>" + animindex + "<dev string:x39>" + self.animsetname);
+        assertex(isdefined(turnanim), "Cardinal turn anim index " + animindex + "is missing in cap animset " + self.animsetname);
     } else {
         animmap = ["2", "3", "6", "9", "8", "7", "4", "1", "2"];
         animindex = getangleindex(anglediff, 22.5);
         turnanim = scripts\asm\cap::function_18e6c36c02a94dbd(statename, animmap[animindex]);
-        assertex(isdefined(turnanim), "<dev string:x57>" + animmap[animindex] + "<dev string:x39>" + self.animsetname);
+        assertex(isdefined(turnanim), "Turn anim index " + animmap[animindex] + "is missing in cap animset " + self.animsetname);
     }
     return turnanim;
 }
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9e
-// Size: 0x19e
+// Checksum 0x0, Offset: 0xc62
+// Size: 0x1a4
 function function_14d651e2254bb00d(asmname, fromstate, tostate, params) {
     if (isdefined(params) && params == "return") {
         angles = self.var_a70672e669ca7f00;
@@ -291,7 +291,7 @@ function function_14d651e2254bb00d(asmname, fromstate, tostate, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe45
+// Checksum 0x0, Offset: 0xe0f
 // Size: 0x65
 function function_6e1cbd20dcaecf31(asmname, statename, params) {
     if (isdefined(params) && isstring(params) && params == "return") {
@@ -302,8 +302,8 @@ function function_6e1cbd20dcaecf31(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb2
-// Size: 0x163
+// Checksum 0x0, Offset: 0xe7c
+// Size: 0x168
 function function_99f3112f53606865(asmname, statename, params) {
     self endon(statename + "_finished");
     turnanim = asm_getanim(asmname, statename);
@@ -338,8 +338,8 @@ function function_99f3112f53606865(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x101d
-// Size: 0x94
+// Checksum 0x0, Offset: 0xfec
+// Size: 0x97
 function function_5c8ff3350d31ccf2(turnxanim, statename) {
     self endon("death");
     animlength = getanimlength(turnxanim);
@@ -354,8 +354,8 @@ function function_5c8ff3350d31ccf2(turnxanim, statename) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b9
-// Size: 0x228
+// Checksum 0x0, Offset: 0x108b
+// Size: 0x231
 function function_737c17a2f5f59183(turnxanim, statename) {
     self endon("death");
     self endon(statename + "_finished");
@@ -404,7 +404,7 @@ function function_737c17a2f5f59183(turnxanim, statename) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e9
+// Checksum 0x0, Offset: 0x12c4
 // Size: 0x25
 function playturnanim_cleanup(asmname, statename, params) {
     self.useanimgoalweight = 0;
@@ -412,7 +412,7 @@ function playturnanim_cleanup(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1316
+// Checksum 0x0, Offset: 0x12f1
 // Size: 0x89
 function function_25d4ebb35db59893(asmname, statename, tostatename, params) {
     if (istrue(self._blackboard.var_b9fe3860c557e5d6)) {
@@ -429,7 +429,7 @@ function function_25d4ebb35db59893(asmname, statename, tostatename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a8
+// Checksum 0x0, Offset: 0x1383
 // Size: 0x57
 function function_94ea0ca02f4d957(asmname, statename, params) {
     if (randomint(100) < 30) {
@@ -440,7 +440,7 @@ function function_94ea0ca02f4d957(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1407
+// Checksum 0x0, Offset: 0x13e2
 // Size: 0x2e
 function function_8c45fec62914f2e3(asmname, statename, params) {
     self._blackboard.var_41830459efdaf2aa = undefined;
@@ -448,7 +448,7 @@ function function_8c45fec62914f2e3(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x143d
+// Checksum 0x0, Offset: 0x1418
 // Size: 0x4a
 function function_c8421bb477a45b8a(note) {
     if (!isai(self)) {
@@ -465,8 +465,8 @@ function function_c8421bb477a45b8a(note) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x148f
-// Size: 0x57
+// Checksum 0x0, Offset: 0x146a
+// Size: 0x56
 function function_15330ee53a46289d(asmname, fromstatename, tostatename, params) {
     shouldpanic = istrue(self._blackboard.retriggerpanic);
     self._blackboard.retriggerpanic = undefined;
@@ -475,7 +475,7 @@ function function_15330ee53a46289d(asmname, fromstatename, tostatename, params) 
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ef
+// Checksum 0x0, Offset: 0x14c9
 // Size: 0x73
 function function_fbbcd3a4d551644c(asmname, statename, params) {
     assert(isdefined(self._blackboard.var_40a41c70824fa4c4));
@@ -487,7 +487,7 @@ function function_fbbcd3a4d551644c(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x156a
+// Checksum 0x0, Offset: 0x1544
 // Size: 0x7f
 function function_10e9a7601aef9c43(asmname, statename, params) {
     if (function_f179ede0989e6734(statename, "a")) {
@@ -501,8 +501,8 @@ function function_10e9a7601aef9c43(asmname, statename, params) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f2
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x15cc
+// Size: 0xbc
 function function_f914d9aba63ded76(asmname, fromstatename, tostatename, params) {
     if (!function_15330ee53a46289d(asmname, fromstatename, tostatename, params)) {
         return 0;
@@ -521,7 +521,7 @@ function function_f914d9aba63ded76(asmname, fromstatename, tostatename, params) 
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b8
+// Checksum 0x0, Offset: 0x1691
 // Size: 0x2d
 function function_d609e4ea4f9848a4(asmname, fromstatename, tostatename, params) {
     return istrue(self.var_c492eecad94293be);
@@ -529,8 +529,8 @@ function function_d609e4ea4f9848a4(asmname, fromstatename, tostatename, params) 
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ee
-// Size: 0x42
+// Checksum 0x0, Offset: 0x16c7
+// Size: 0x41
 function withingoaldist(asmname, statename, tostatename, param) {
     disttogoal = 320;
     if (isdefined(param)) {
@@ -541,7 +541,7 @@ function withingoaldist(asmname, statename, tostatename, param) {
 
 // Namespace cap_civ_react / namespace_603b0d6e06be2dbe
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1739
+// Checksum 0x0, Offset: 0x1711
 // Size: 0x44
 function function_1bb354204eb3d271(asmname, statename, tostatename, param) {
     if (!isdefined(self.var_6fca5c68cc5f9550)) {

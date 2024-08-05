@@ -8,7 +8,7 @@
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5
+// Checksum 0x0, Offset: 0x9f
 // Size: 0x33
 function setupcqbpointsofinterest() {
     level.cqbpointsofinterest = [];
@@ -21,8 +21,8 @@ function setupcqbpointsofinterest() {
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x100
-// Size: 0x82
+// Checksum 0x0, Offset: 0xda
+// Size: 0x81
 function gatherdynamiccqbstructs() {
     waittillframeend();
     targetname = "poi";
@@ -34,7 +34,7 @@ function gatherdynamiccqbstructs() {
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18a
+// Checksum 0x0, Offset: 0x163
 // Size: 0x9b
 function function_50fb5efa67518b10(poi) {
     if (!isdefined(poi)) {
@@ -53,8 +53,8 @@ function function_50fb5efa67518b10(poi) {
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22d
-// Size: 0x132
+// Checksum 0x0, Offset: 0x206
+// Size: 0x130
 function findcqbpointsofinterest() {
     if (isdefined(anim.findingcqbpointsofinterest)) {
         return;
@@ -92,8 +92,8 @@ function findcqbpointsofinterest() {
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x367
-// Size: 0x85
+// Checksum 0x0, Offset: 0x33e
+// Size: 0x87
 function findbestpoi() {
     var_52690d5d67a35644 = 5000;
     ismoving = isdefined(self.pathgoalpos);
@@ -109,8 +109,8 @@ function findbestpoi() {
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f4
-// Size: 0x91
+// Checksum 0x0, Offset: 0x3cd
+// Size: 0x90
 function findfirstpoiinlink() {
     assert(isdefined(self.poi_firstpoint));
     if (sighttracepassed(self geteye(), self.poi_firstpoint.origin, 0, undefined)) {
@@ -130,7 +130,7 @@ function findfirstpoiinlink() {
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48d
+// Checksum 0x0, Offset: 0x465
 // Size: 0x1c6
 function findnextpoiinlink(haspoi) {
     min_time = undefined;
@@ -178,7 +178,7 @@ function findnextpoiinlink(haspoi) {
 
 // Namespace cqb / namespace_9b37831a42423308
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x65b
+// Checksum 0x0, Offset: 0x633
 // Size: 0x89
 function iswithinfov(poi) {
     if (istrue(self.poi_disablefov)) {
@@ -194,27 +194,27 @@ function iswithinfov(poi) {
 
     // Namespace cqb / namespace_9b37831a42423308
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6ed
+    // Checksum 0x0, Offset: 0x6c5
     // Size: 0x24
     function cqbdebug() {
         self notify("<dev string:x1c>");
         self endon("<dev string:x1c>");
-        self endon("<dev string:x2d>");
+        self endon("<dev string:x2a>");
         level thread function_2cbce60ec0b41d2f();
     }
 
     // Namespace cqb / namespace_9b37831a42423308
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x719
-    // Size: 0x172
+    // Checksum 0x0, Offset: 0x6f1
+    // Size: 0x170
     function function_2cbce60ec0b41d2f() {
-        setdvarifuninitialized(@"hash_e37c013185c9347c", "<dev string:x36>");
+        setdvarifuninitialized(@"hash_e37c013185c9347c", "<dev string:x30>");
         if (isdefined(level.var_2cbce60ec0b41d2f)) {
             return;
         }
         level.var_2cbce60ec0b41d2f = 1;
         while (true) {
-            if (getdvar(@"hash_e37c013185c9347c") != "<dev string:x3b>") {
+            if (getdvar(@"hash_e37c013185c9347c") != "<dev string:x32>") {
                 wait 1;
                 continue;
             }

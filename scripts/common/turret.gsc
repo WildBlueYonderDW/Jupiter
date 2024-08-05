@@ -5,7 +5,7 @@
 
 // Namespace turret / scripts\common\turret
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6
+// Checksum 0x0, Offset: 0x90
 // Size: 0xb0
 function turret_vm_playeranims_think() {
     self endon("death");

@@ -6,7 +6,7 @@
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x244
+// Checksum 0x0, Offset: 0x634
 // Size: 0x63
 function init() {
     level.activetargetmarkergroups = [];
@@ -19,23 +19,23 @@ function init() {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x2af
-// Size: 0xd1
+// Checksum 0x0, Offset: 0x69f
+// Size: 0xd0
 function targetmarkergroup_on(var_21323aee11762c98, showto, tomark, groupowner, friendlymarker, markonspawn, var_262f4b55aa151de1) {
     if (level.activetargetmarkergroups.size >= 50) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("targetMarkerGroup_on: There are too many active target marker groups.  Please remove some before adding more.");
         return;
     }
     if (targetmarkergroup_getownedgroups(groupowner) >= 2) {
-        assertmsg("<dev string:x8d>");
+        assertmsg("targetMarkerGroup_on: Owner already has too many active groups.  Please turn off a group before adding a new one.");
         return;
     }
     var_6d7ef76a3761f0f8 = createtargetmarkergroup(var_21323aee11762c98);
     if (!isdefined(var_6d7ef76a3761f0f8)) {
-        assertmsg("<dev string:x102>");
+        assertmsg("targetMarkerGroup_on: Can't create target marker group.  Marker Group ID invalid!");
         return;
     } else if (targetmarkergroupexists(var_6d7ef76a3761f0f8)) {
-        assertmsg("<dev string:x157>" + var_6d7ef76a3761f0f8 + "<dev string:x1a5>");
+        assertmsg("targetMarkerGroup_on: Can't create target marker group.  Marker Group ID: " + var_6d7ef76a3761f0f8 + " already exists!");
         return;
     }
     addtargetmarkergroup(var_6d7ef76a3761f0f8, showto, tomark, groupowner, friendlymarker, markonspawn, var_262f4b55aa151de1);
@@ -44,11 +44,11 @@ function targetmarkergroup_on(var_21323aee11762c98, showto, tomark, groupowner, 
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x389
+// Checksum 0x0, Offset: 0x778
 // Size: 0x3b
 function targetmarkergroup_off(var_4226c12910d867d4) {
     if (!targetmarkergroupexists(var_4226c12910d867d4)) {
-        assertmsg("<dev string:x1b9>" + var_4226c12910d867d4 + "<dev string:x1ee>");
+        assertmsg("Trying to remove invalid target marker group ID: " + var_4226c12910d867d4 + " ");
         return;
     }
     removetargetmarkergroup(var_4226c12910d867d4);
@@ -57,8 +57,8 @@ function targetmarkergroup_off(var_4226c12910d867d4) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cc
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x7bb
+// Size: 0x79
 function function_32fdc90fc744999f(ent) {
     var_729ee1cfdbe2c06e = 0;
     foreach (markergroup in level.activetargetmarkergroups) {
@@ -71,18 +71,18 @@ function function_32fdc90fc744999f(ent) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x450
-// Size: 0x98
+// Checksum 0x0, Offset: 0x83d
+// Size: 0x97
 function function_b76f204edb67efc7(var_4226c12910d867d4, showto) {
     markergroup = gettargetmarkergroup(var_4226c12910d867d4);
-    assertex(isdefined(markergroup), "<dev string:x1f3>");
+    assertex(isdefined(markergroup), "Tried to add clients to TargetMarkerGroup but the TMG did not exist");
     if (isdefined(showto)) {
         if (isplayer(showto)) {
             if (array_contains(markergroup.showntoents, showto)) {
                 return;
             }
             if (function_32fdc90fc744999f(showto) >= 2) {
-                assertmsg("<dev string:x23a>");
+                assertmsg("addTargetMarkerGroup: Show to Entity already has too many active groups.  Please turn off a group before adding a new one.");
                 return;
             }
             markergroup.showntoents[markergroup.showntoents.size] = showto;
@@ -93,20 +93,20 @@ function function_b76f204edb67efc7(var_4226c12910d867d4, showto) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f0
-// Size: 0xfd
+// Checksum 0x0, Offset: 0x8dc
+// Size: 0xfb
 function function_9f84e910425d033(var_4226c12910d867d4, showto) {
     markergroup = gettargetmarkergroup(var_4226c12910d867d4);
-    assertex(isdefined(markergroup), "<dev string:x1f3>");
-    assertex(isdefined(showto), "<dev string:x2b8>");
-    assertex(isarray(showto), "<dev string:x2fc>");
+    assertex(isdefined(markergroup), "Tried to add clients to TargetMarkerGroup but the TMG did not exist");
+    assertex(isdefined(showto), "Tried to add clients to TargetMarkerGroup but list is undefined.");
+    assertex(isarray(showto), "ShowTo is not an array of clients. Please adjust this before using this function.");
     foreach (var_ebcded206506e726 in showto) {
         if (isplayer(var_ebcded206506e726)) {
             if (array_contains(markergroup.showntoents, var_ebcded206506e726)) {
                 continue;
             }
             if (function_32fdc90fc744999f(var_ebcded206506e726) >= 2) {
-                assertmsg("<dev string:x23a>");
+                assertmsg("addTargetMarkerGroup: Show to Entity already has too many active groups.  Please turn off a group before adding a new one.");
                 continue;
             }
             markergroup.showntoents[markergroup.showntoents.size] = var_ebcded206506e726;
@@ -117,11 +117,11 @@ function function_9f84e910425d033(var_4226c12910d867d4, showto) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f5
-// Size: 0xf8
+// Checksum 0x0, Offset: 0x9df
+// Size: 0xf7
 function function_adb80c80f10281f9(var_4226c12910d867d4, showto) {
     markergroup = gettargetmarkergroup(var_4226c12910d867d4);
-    assertex(isdefined(markergroup), "<dev string:x1f3>");
+    assertex(isdefined(markergroup), "Tried to add clients to TargetMarkerGroup but the TMG did not exist");
     if (isdefined(showto)) {
         if (isteam(showto)) {
             if (array_contains(markergroup.showntoteams, showto)) {
@@ -130,7 +130,7 @@ function function_adb80c80f10281f9(var_4226c12910d867d4, showto) {
             teaments = level.teamdata[showto]["players"];
             foreach (player in teaments) {
                 if (function_32fdc90fc744999f(player) >= 2) {
-                    assertmsg("<dev string:x23a>");
+                    assertmsg("addTargetMarkerGroup: Show to Entity already has too many active groups.  Please turn off a group before adding a new one.");
                     return;
                 }
             }
@@ -142,13 +142,13 @@ function function_adb80c80f10281f9(var_4226c12910d867d4, showto) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f5
-// Size: 0x166
+// Checksum 0x0, Offset: 0xade
+// Size: 0x164
 function function_aafa0ed4a3d69b91(var_4226c12910d867d4, showto) {
     markergroup = gettargetmarkergroup(var_4226c12910d867d4);
-    assertex(isdefined(markergroup), "<dev string:x1f3>");
-    assertex(isdefined(showto), "<dev string:x351>");
-    assertex(isarray(showto), "<dev string:x399>");
+    assertex(isdefined(markergroup), "Tried to add clients to TargetMarkerGroup but the TMG did not exist");
+    assertex(isdefined(showto), "Tried to add team list to TargetMarkerGroup but ShowTo is undefined.");
+    assertex(isarray(showto), "ShowTo is not an array. Please adjust this before using this function.");
     foreach (var_ebcded206506e726 in showto) {
         if (isteam(var_ebcded206506e726)) {
             if (array_contains(markergroup.showntoteams, var_ebcded206506e726)) {
@@ -157,7 +157,7 @@ function function_aafa0ed4a3d69b91(var_4226c12910d867d4, showto) {
             teaments = level.teamdata[var_ebcded206506e726]["players"];
             foreach (player in teaments) {
                 if (function_32fdc90fc744999f(player) >= 2) {
-                    assertmsg("<dev string:x23a>");
+                    assertmsg("addTargetMarkerGroup: Show to Entity already has too many active groups.  Please turn off a group before adding a new one.");
                     break;
                 }
             }
@@ -169,11 +169,11 @@ function function_aafa0ed4a3d69b91(var_4226c12910d867d4, showto) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x863
-// Size: 0x1a1
+// Checksum 0x0, Offset: 0xc4a
+// Size: 0x19f
 function function_fd770a1099036688(var_4226c12910d867d4, var_65f5a4e57b38d87) {
     markergroup = gettargetmarkergroup(var_4226c12910d867d4);
-    assertex(isdefined(markergroup), "<dev string:x1f3>");
+    assertex(isdefined(markergroup), "Tried to add clients to TargetMarkerGroup but the TMG did not exist");
     if (isdefined(var_65f5a4e57b38d87)) {
         if (isarray(var_65f5a4e57b38d87)) {
             foreach (remove in var_65f5a4e57b38d87) {
@@ -211,8 +211,8 @@ function function_fd770a1099036688(var_4226c12910d867d4, var_65f5a4e57b38d87) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0c
-// Size: 0x2b0
+// Checksum 0x0, Offset: 0xdf1
+// Size: 0x2ad
 function addtargetmarkergroup(var_4226c12910d867d4, showto, tomark, groupowner, friendlymarker, markonspawn, var_262f4b55aa151de1) {
     markergroup = spawnstruct();
     markergroup.markerid = var_4226c12910d867d4;
@@ -228,7 +228,7 @@ function addtargetmarkergroup(var_4226c12910d867d4, showto, tomark, groupowner, 
         if (isarray(showto)) {
             foreach (var_ebcded206506e726 in showto) {
                 if (function_32fdc90fc744999f(var_ebcded206506e726) >= 2) {
-                    assertmsg("<dev string:x23a>");
+                    assertmsg("addTargetMarkerGroup: Show to Entity already has too many active groups.  Please turn off a group before adding a new one.");
                     continue;
                 }
                 if (isplayer(var_ebcded206506e726)) {
@@ -272,8 +272,8 @@ function addtargetmarkergroup(var_4226c12910d867d4, showto, tomark, groupowner, 
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc4
-// Size: 0xce
+// Checksum 0x0, Offset: 0x10a6
+// Size: 0xcd
 function function_78264e044be08e4d(var_4226c12910d867d4) {
     level endon("game_ended");
     level endon("removed_targetMarkerGroup_" + var_4226c12910d867d4);
@@ -296,8 +296,8 @@ function function_78264e044be08e4d(var_4226c12910d867d4) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9a
-// Size: 0x33
+// Checksum 0x0, Offset: 0x117b
+// Size: 0x32
 function setnewowner(var_4226c12910d867d4, newowner) {
     tmg = gettargetmarkergroup(var_4226c12910d867d4);
     tmg.markerowner = newowner;
@@ -305,8 +305,8 @@ function setnewowner(var_4226c12910d867d4, newowner) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd5
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x11b5
+// Size: 0xa4
 function removetargetmarkergroup(var_4226c12910d867d4) {
     var_1bb39b6537c2fd51 = undefined;
     var_1af30f69ef1607bf = [];
@@ -326,12 +326,12 @@ function removetargetmarkergroup(var_4226c12910d867d4) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe82
-// Size: 0x8f
+// Checksum 0x0, Offset: 0x1261
+// Size: 0x8d
 function targetmarkergroupexists(var_4226c12910d867d4) {
     groupexists = 0;
     if (!isdefined(var_4226c12910d867d4)) {
-        assertmsg("<dev string:x3e3>");
+        assertmsg("targetMarkerGroupExists: Invalid target marker group id");
         return groupexists;
     }
     foreach (markergroup in level.activetargetmarkergroups) {
@@ -345,12 +345,12 @@ function targetmarkergroupexists(var_4226c12910d867d4) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1a
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x12f7
+// Size: 0x8c
 function gettargetmarkergroup(var_4226c12910d867d4) {
     targetmarkergroup = undefined;
     if (!isdefined(var_4226c12910d867d4)) {
-        assertmsg("<dev string:x41e>");
+        assertmsg("getTargetMarkerGroup: Invalid target marker group id");
         return targetmarkergroup;
     }
     foreach (markergroup in level.activetargetmarkergroups) {
@@ -364,8 +364,8 @@ function gettargetmarkergroup(var_4226c12910d867d4) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb1
-// Size: 0x54
+// Checksum 0x0, Offset: 0x138c
+// Size: 0x53
 function targetmarkergroup_watchmarkonspawn(var_4226c12910d867d4, var_262f4b55aa151de1) {
     level endon("game_ended ");
     level endon("removed_targetMarkerGroup_" + var_4226c12910d867d4);
@@ -379,8 +379,8 @@ function targetmarkergroup_watchmarkonspawn(var_4226c12910d867d4, var_262f4b55aa
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x100d
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x13e7
+// Size: 0x4a
 function targetmarkergroup_watchfornoscopeoutlineperkunset(var_4226c12910d867d4) {
     level endon("game_ended ");
     level endon("removed_targetMarkerGroup_" + var_4226c12910d867d4);
@@ -394,8 +394,8 @@ function targetmarkergroup_watchfornoscopeoutlineperkunset(var_4226c12910d867d4)
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1060
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x1439
+// Size: 0x4a
 function targetmarkergroup_watchfornoscopeoutlineperkset(var_4226c12910d867d4) {
     level endon("game_ended ");
     level endon("removed_targetMarkerGroup_" + var_4226c12910d867d4);
@@ -409,8 +409,8 @@ function targetmarkergroup_watchfornoscopeoutlineperkset(var_4226c12910d867d4) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x10b3
-// Size: 0x89
+// Checksum 0x0, Offset: 0x148b
+// Size: 0x88
 function private function_74348e91568973f8() {
     outxuid = undefined;
     if (isdefined(self) && isent(self)) {
@@ -427,12 +427,12 @@ function private function_74348e91568973f8() {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1145
-// Size: 0x1da
+// Checksum 0x0, Offset: 0x151c
+// Size: 0x1dd
 function targetmarkergroup_markentity(ent, var_4226c12910d867d4, var_262f4b55aa151de1) {
     markergroup = gettargetmarkergroup(var_4226c12910d867d4);
     if (!isdefined(markergroup)) {
-        assertmsg("<dev string:x456>");
+        assertmsg("<dev string:x1c>");
         return;
     }
     entnum = ent function_74348e91568973f8();
@@ -482,8 +482,8 @@ function targetmarkergroup_markentity(ent, var_4226c12910d867d4, var_262f4b55aa1
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1327
-// Size: 0x55
+// Checksum 0x0, Offset: 0x1701
+// Size: 0x54
 function function_61a64c527b1e0c5f(markergroup) {
     entnum = function_74348e91568973f8();
     markergroup endon("ent_removed_" + entnum);
@@ -494,8 +494,8 @@ function function_61a64c527b1e0c5f(markergroup) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1384
-// Size: 0x59
+// Checksum 0x0, Offset: 0x175d
+// Size: 0x58
 function targetmarkergroup_removefromgroupaction(action, markergroup) {
     entnum = function_74348e91568973f8();
     markergroup endon("ent_removed_" + entnum);
@@ -506,7 +506,7 @@ function targetmarkergroup_removefromgroupaction(action, markergroup) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e5
+// Checksum 0x0, Offset: 0x17bd
 // Size: 0x68
 function targetmarkergroup_addtomarkingqueue(markergroup) {
     if (isdefined(self) && !array_contains(markergroup.markedentsinqueue, self)) {
@@ -521,7 +521,7 @@ function targetmarkergroup_addtomarkingqueue(markergroup) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1455
+// Checksum 0x0, Offset: 0x182d
 // Size: 0x39
 function function_38a987baf2b61673(removenotify, markergroup) {
     level endon("game_ended");
@@ -532,11 +532,11 @@ function function_38a987baf2b61673(removenotify, markergroup) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1496
-// Size: 0x6b
+// Checksum 0x0, Offset: 0x186e
+// Size: 0x6a
 function targetmarkergroup_removefrommarkingqueue(markergroup) {
     if (!isdefined(markergroup)) {
-        assertmsg("<dev string:x493>");
+        assertmsg("<dev string:x56>");
         return;
     }
     newlist = [];
@@ -550,8 +550,8 @@ function targetmarkergroup_removefrommarkingqueue(markergroup) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1509
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x18e0
+// Size: 0xbe
 function targetmarkergroup_handlemarkingfromqueue(markergroupid) {
     level endon("game_ended");
     level endon("removed_targetMarkerGroup_" + markergroupid);
@@ -559,7 +559,7 @@ function targetmarkergroup_handlemarkingfromqueue(markergroupid) {
         var_568640efc573fcce = level waittill("ent_removed_from_marker_group");
         markergroup = gettargetmarkergroup(markergroupid);
         if (!isdefined(markergroup)) {
-            assertmsg("<dev string:x4de>");
+            assertmsg("targetMarkerGroup_handleMarkingFromQueue: Marker group doesn't exist");
             break;
         }
         if (var_568640efc573fcce != markergroup) {
@@ -579,7 +579,7 @@ function targetmarkergroup_handlemarkingfromqueue(markergroupid) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ce
+// Checksum 0x0, Offset: 0x19a6
 // Size: 0x9a
 function targetmarkergroup_unmarkentity(ent, var_4226c12910d867d4, entnumoverride) {
     entnum = ent function_74348e91568973f8();
@@ -599,11 +599,11 @@ function targetmarkergroup_unmarkentity(ent, var_4226c12910d867d4, entnumoverrid
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1670
-// Size: 0x7f
+// Checksum 0x0, Offset: 0x1a48
+// Size: 0x7d
 function function_6c752e44b5090154(markedents, var_a1dcb36aa55a847) {
     newarray = [];
-    foreach (entnumindex, ent in markedents) {
+    foreach (ent in markedents) {
         if (!isdefined(ent)) {
             continue;
         }
@@ -617,7 +617,7 @@ function function_6c752e44b5090154(markedents, var_a1dcb36aa55a847) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f8
+// Checksum 0x0, Offset: 0x1ace
 // Size: 0x61
 function function_7c253e3d43e44097(target, var_4226c12910d867d4) {
     entnum = target function_74348e91568973f8();
@@ -627,8 +627,8 @@ function function_7c253e3d43e44097(target, var_4226c12910d867d4) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1762
-// Size: 0x76
+// Checksum 0x0, Offset: 0x1b38
+// Size: 0x74
 function targetmarkergroup_getownedgroups(groupowner) {
     groupcount = 0;
     foreach (markergroup in level.activetargetmarkergroups) {
@@ -641,7 +641,7 @@ function targetmarkergroup_getownedgroups(groupowner) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e1
+// Checksum 0x0, Offset: 0x1bb5
 // Size: 0x13
 function targetmarkergroup_clearcacheonspawn() {
     self setclientomnvar("ui_clear_target_markers", gettime());
@@ -649,8 +649,8 @@ function targetmarkergroup_clearcacheonspawn() {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17fc
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x1bd0
+// Size: 0x6b
 function isteam(showto) {
     if (showto == "spectator") {
         return true;
@@ -665,8 +665,8 @@ function isteam(showto) {
 
 // Namespace namespace_81810d22a17382b6 / scripts\cp_mp\targetmarkergroups
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1873
-// Size: 0xde
+// Checksum 0x0, Offset: 0x1c44
+// Size: 0xe1
 function canbemarkedingroup(var_4226c12910d867d4, ent) {
     canbemarked = 0;
     markergroup = gettargetmarkergroup(var_4226c12910d867d4);

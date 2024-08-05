@@ -12,8 +12,8 @@
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x374
-// Size: 0xcd
+// Checksum 0x0, Offset: 0x4fd
+// Size: 0xcc
 function vehicle_spawn_getleveldataforvehicle(vehicleref, create) {
     if (istrue(create) && (!function_89dc39dc11f3988c(vehicleref) || !isdefined(function_29b4292c92443328(vehicleref).spawn))) {
         data = undefined;
@@ -34,7 +34,7 @@ function vehicle_spawn_getleveldataforvehicle(vehicleref, create) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x449
+// Checksum 0x0, Offset: 0x5d1
 // Size: 0x1b2
 function function_37480e9c9c701cf2(vehicleref, spawndata) {
     if (!isdefined(spawndata.angles)) {
@@ -70,7 +70,7 @@ function function_37480e9c9c701cf2(vehicleref, spawndata) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x604
+// Checksum 0x0, Offset: 0x78c
 // Size: 0x1c0
 function function_1cc780d5cac1e7cd(vehicleref, spawndata, fallbackvehicletype) {
     if (!isdefined(spawndata.angles)) {
@@ -103,7 +103,7 @@ function function_1cc780d5cac1e7cd(vehicleref, spawndata, fallbackvehicletype) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cd
+// Checksum 0x0, Offset: 0x955
 // Size: 0x183
 function function_75ce57f81b582b38(vehicle, vehicleref) {
     var_e2818ad39a3341b4 = vehicle_getleveldataforvehicle(vehicleref);
@@ -127,8 +127,8 @@ function function_75ce57f81b582b38(vehicle, vehicleref) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x959
-// Size: 0x1e1
+// Checksum 0x0, Offset: 0xae1
+// Size: 0x1e0
 function vehicle_spawn_canspawnvehicle(vehicleref, owner, team, spawntype) {
     /#
         if (istrue(level.var_4e89ea3291f12198)) {
@@ -137,7 +137,7 @@ function vehicle_spawn_canspawnvehicle(vehicleref, owner, team, spawntype) {
     #/
     if (canspawnvehicle()) {
         /#
-            issharedfuncdefined("<dev string:x4f>", "<dev string:x60>", 1);
+            issharedfuncdefined("<dev string:x4c>", "<dev string:x5a>", 1);
         #/
         if ([[ getsharedfunc("vehicle_spawn", "canSpawnVehicle") ]](vehicleref)) {
             if (isdefined(vehicleref)) {
@@ -153,42 +153,42 @@ function vehicle_spawn_canspawnvehicle(vehicleref, owner, team, spawntype) {
                         } else {
                             /#
                                 if (istrue(level.var_4e89ea3291f12198)) {
-                                    println("<dev string:x73>" + vehicleref);
+                                    println("<dev string:x6a>" + vehicleref);
                                 }
                             #/
                         }
                     } else {
                         /#
                             if (istrue(level.var_4e89ea3291f12198)) {
-                                println("<dev string:xad>" + vehicleref);
+                                println("<dev string:xa1>" + vehicleref);
                             }
                         #/
                     }
                 } else {
                     /#
                         if (istrue(level.var_4e89ea3291f12198)) {
-                            println("<dev string:xe2>" + vehicleref);
+                            println("<dev string:xd3>" + vehicleref);
                         }
                     #/
                 }
             } else {
                 /#
                     if (istrue(level.var_4e89ea3291f12198)) {
-                        println("<dev string:x11d>");
+                        println("<dev string:x10b>");
                     }
                 #/
             }
         } else {
             /#
                 if (istrue(level.var_4e89ea3291f12198)) {
-                    println("<dev string:x14f>" + vehicleref);
+                    println("<dev string:x13a>" + vehicleref);
                 }
             #/
         }
     } else {
         /#
             if (istrue(level.var_4e89ea3291f12198)) {
-                println("<dev string:x1a2>" + vehicleref + "<dev string:x1e2>" + getvehiclecount() + "<dev string:x1e7>" + level.maxvehiclecount);
+                println("<dev string:x18a>" + vehicleref + "<dev string:x1c7>" + getvehiclecount() + "<dev string:x1c9>" + level.maxvehiclecount);
             }
         #/
     }
@@ -197,8 +197,8 @@ function vehicle_spawn_canspawnvehicle(vehicleref, owner, team, spawntype) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb43
-// Size: 0x247
+// Checksum 0x0, Offset: 0xcca
+// Size: 0x245
 function function_25d4b673539659a1() {
     while (!level.var_54c8acfd634a416c) {
         waitframe();
@@ -212,7 +212,7 @@ function function_25d4b673539659a1() {
     }
     points = [];
     structs = [];
-    foreach (targetname, data in var_c9ed6663f76bec8a) {
+    foreach (data in var_c9ed6663f76bec8a) {
         structs = array_combine(structs, getstructarray(targetname, "targetname"));
     }
     foreach (struct in structs) {
@@ -247,11 +247,11 @@ function function_25d4b673539659a1() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xd93
-// Size: 0xeb
+// Checksum 0x0, Offset: 0xf18
+// Size: 0xea
 function function_9f3ee4972dec5b57(vehicleref, origin, angles, targetname, vehicletype, script_noteworthy) {
     if (!isdefined(vehicleref) || !isdefined(origin)) {
-        assertmsg("<dev string:x1ee>");
+        assertmsg("Attempted to create a vehicle spawn struct with an undefined vehicle ref or origin");
         return;
     }
     if (!isdefined(targetname)) {
@@ -261,7 +261,7 @@ function function_9f3ee4972dec5b57(vehicleref, origin, angles, targetname, vehic
         vehicletype = function_8fb5b3da3ad4d628(vehicleref);
     }
     if (!isdefined(targetname) || !isdefined(vehicletype)) {
-        assertmsg("<dev string:x244>" + vehicleref + "<dev string:x277>");
+        assertmsg("Attempted to create a vehicle spawn struct for " + vehicleref + " but we didn't find a targetname / vehicle type. It's probably not loaded");
         return;
     }
     struct = spawnstruct();
@@ -275,7 +275,7 @@ function function_9f3ee4972dec5b57(vehicleref, origin, angles, targetname, vehic
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe86
+// Checksum 0x0, Offset: 0x100a
 // Size: 0x5d
 function function_b08e7e3a0b14f76f(vehicleref) {
     targetname = function_348b69ec4082ceba(vehicleref);
@@ -294,24 +294,8 @@ function function_b08e7e3a0b14f76f(vehicleref) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeec
-// Size: 0x4c
-function function_5a6b4f3358f3e3cc(vehicleref) {
-    targetname = function_348b69ec4082ceba(vehicleref);
-    if (!isdefined(targetname)) {
-        return [];
-    }
-    structs = getstructarray(targetname, "targetname");
-    if (structs.size > 0) {
-        structs = vehicle_spawn_removespawnstructswithflag(structs);
-    }
-    return structs;
-}
-
-// Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf41
-// Size: 0x76
+// Checksum 0x0, Offset: 0x1070
+// Size: 0x75
 function function_348b69ec4082ceba(vehicleref) {
     if (!function_38f50decb5603d7(vehicleref)) {
         return undefined;
@@ -327,8 +311,8 @@ function function_348b69ec4082ceba(vehicleref) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbf
-// Size: 0x76
+// Checksum 0x0, Offset: 0x10ed
+// Size: 0x75
 function function_8fb5b3da3ad4d628(vehicleref) {
     if (!function_38f50decb5603d7(vehicleref)) {
         return undefined;
@@ -344,8 +328,8 @@ function function_8fb5b3da3ad4d628(vehicleref) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x103d
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x116a
+// Size: 0xa8
 function vehicle_spawn_removespawnstructswithflag(spawnstructs) {
     if (getdvarint(@"hash_d451d5012c6af909", 0) == 1) {
         return spawnstructs;
@@ -362,26 +346,33 @@ function vehicle_spawn_removespawnstructswithflag(spawnstructs) {
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ef
-// Size: 0x7a
-function vehicle_spawn_gamemodesupportsrespawn(vehicleref) {
-    defaultvalue = utility::iscp() ? 0 : 1;
-    var_13a977502a245310 = getdvarint(@"hash_bd25469fa7e9f44f", defaultvalue);
-    if (var_13a977502a245310 && istrue(level.br_prematchstarted) && isdefined(vehicleref)) {
-        dvarname = hashcat(@"hash_6ad21ac4436249d9", vehicleref);
-        var_13a977502a245310 = getdvarint(dvarname, defaultvalue);
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x121b
+// Size: 0x73
+function vehicle_spawn_gamemodesupportsrespawn() {
+    if (utility::iscp()) {
+        defaultvalue = 0;
+    } else {
+        defaultvalue = 1;
+        if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
+            var_b55edc994348913 = getdvar(@"hash_7611a2790a0bf7fe", "");
+            if (var_b55edc994348913 == "plunder" || var_b55edc994348913 == "risk") {
+                defaultvalue = 1;
+            } else {
+                defaultvalue = 0;
+            }
+        }
     }
-    return var_13a977502a245310;
+    return getdvarint(@"hash_bd25469fa7e9f44f", defaultvalue);
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1172
-// Size: 0x1c3
+// Checksum 0x0, Offset: 0x1297
+// Size: 0x1c2
 function vehicle_spawn_init() {
-    assertex(isdefined(level.vehicle), "<dev string:x2c4>");
-    assertex(!isdefined(level.vehicle.spawn), "<dev string:x2fa>");
+    assertex(isdefined(level.vehicle), "vehicle_spawn_init() called before vehicle_init().");
+    assertex(!isdefined(level.vehicle.spawn), "vehicle_spawn_init() should only be called once.");
     leveldata = spawnstruct();
     level.vehicle.spawn = leveldata;
     leveldata.databyref = [];
@@ -402,7 +393,7 @@ function vehicle_spawn_init() {
     #/
     vehicle_spawn_initspawnclearance();
     /#
-        issharedfuncdefined("<dev string:x4f>", "<dev string:x32e>", 1);
+        issharedfuncdefined("<dev string:x4c>", "<dev string:x1cd>", 1);
     #/
     [[ getsharedfunc("vehicle_spawn", "init") ]]();
     vehicle_spawn_initlate();
@@ -411,7 +402,7 @@ function vehicle_spawn_init() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x133d
+// Checksum 0x0, Offset: 0x1461
 // Size: 0x28
 function vehicle_spawn_initlate() {
     if (issharedfuncdefined("vehicle_spawn", "initLate")) {
@@ -421,7 +412,7 @@ function vehicle_spawn_initlate() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x136d
+// Checksum 0x0, Offset: 0x1491
 // Size: 0x2a
 function vehicle_spawn_spawnfromstructscomparefunc(var_336fd2a2db40c0ee, var_336fd1a2db40bebb) {
     return var_336fd2a2db40c0ee.priority >= var_336fd1a2db40bebb.priority;
@@ -429,18 +420,18 @@ function vehicle_spawn_spawnfromstructscomparefunc(var_336fd2a2db40c0ee, var_336
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a0
+// Checksum 0x0, Offset: 0x14c4
 // Size: 0x4f
 function vehicle_spawn_getleveldata() {
-    assertex(isdefined(level.vehicle), "<dev string:x336>");
-    assertex(isdefined(level.vehicle.spawn), "<dev string:x374>");
+    assertex(isdefined(level.vehicle), "vehicle_spawn_getLevelData() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.spawn), "vehicle_spawn_getLevelData() called before vehicle_spawn_init().");
     return level.vehicle.spawn;
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f8
-// Size: 0xeb
+// Checksum 0x0, Offset: 0x151c
+// Size: 0xea
 function vehicle_spawn_isvehiclespawnstruct() {
     targetname = self.targetname;
     if (isdefined(targetname)) {
@@ -470,8 +461,8 @@ function vehicle_spawn_isvehiclespawnstruct() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ec
-// Size: 0x21
+// Checksum 0x0, Offset: 0x160f
+// Size: 0x20
 function vehicle_spawn_initspawnclearance() {
     leveldata = vehicle_spawn_getleveldata();
     leveldata.clearancecheckminradii = [];
@@ -479,19 +470,19 @@ function vehicle_spawn_initspawnclearance() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1515
-// Size: 0x2c3
+// Checksum 0x0, Offset: 0x1637
+// Size: 0x2ce
 function vehicle_spawn_checkspawnclearance(position, vehicleref, contentsoverride, var_4aaf9f2ce5798f37, positionoffsetz) {
     leveldata = vehicle_spawn_getleveldata();
     checkradius = 200;
     checkheight = 200;
     var_e2818ad39a3341b4 = vehicle_spawn_getleveldataforvehicle(vehicleref);
-    assertex(isdefined(var_e2818ad39a3341b4), "<dev string:x3b8>");
+    assertex(isdefined(var_e2818ad39a3341b4), "vehicle_spawn_checkSpawnClearance called with an invalid vehicle ref.");
     minradius = var_e2818ad39a3341b4.clearancecheckradius;
     if (!isdefined(minradius)) {
         minradius = leveldata.clearancecheckminradii[vehicleref];
     }
-    assertex(isdefined(minradius), "<dev string:x401>" + vehicleref + "<dev string:x432>");
+    assertex(isdefined(minradius), "Could not find a clearanceCheckMinRadius for " + vehicleref + ".");
     if (isdefined(var_e2818ad39a3341b4.clearancecheckradius)) {
         checkradius = var_e2818ad39a3341b4.clearancecheckradius;
     }
@@ -546,7 +537,7 @@ function vehicle_spawn_checkspawnclearance(position, vehicleref, contentsoverrid
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e1
+// Checksum 0x0, Offset: 0x190e
 // Size: 0x58
 function vehicle_spawn_setclearancecheckminradius(ref, minradius) {
     leveldata = vehicle_spawn_getleveldata();
@@ -560,7 +551,7 @@ function vehicle_spawn_setclearancecheckminradius(ref, minradius) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1841
+// Checksum 0x0, Offset: 0x196e
 // Size: 0x13
 function function_b09e91c2e808dbcd(spawndata, faildata) {
     
@@ -568,7 +559,7 @@ function function_b09e91c2e808dbcd(spawndata, faildata) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x185d
+// Checksum 0x0, Offset: 0x198a
 // Size: 0xa
 function function_fa044e2304e9e1a4() {
     thread function_fc6ead687e73f25f();
@@ -576,8 +567,8 @@ function function_fa044e2304e9e1a4() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x186f
-// Size: 0x50
+// Checksum 0x0, Offset: 0x199c
+// Size: 0x51
 function function_fc6ead687e73f25f() {
     spawndata = spawnstruct();
     copyvehiclespawndata(self.var_6dc04302da1a9d03, spawndata);
@@ -587,7 +578,7 @@ function function_fc6ead687e73f25f() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18c7
+// Checksum 0x0, Offset: 0x19f5
 // Size: 0xa
 function function_284795e4a9e3762c() {
     thread function_9a5d0431afaf5b80();
@@ -595,8 +586,8 @@ function function_284795e4a9e3762c() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d9
-// Size: 0x73
+// Checksum 0x0, Offset: 0x1a07
+// Size: 0x75
 function function_9a5d0431afaf5b80() {
     oldspawndata = getvehiclespawndata(self);
     if (isdefined(oldspawndata.var_6dc04302da1a9d03)) {
@@ -610,8 +601,8 @@ function function_9a5d0431afaf5b80() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1954
-// Size: 0x165
+// Checksum 0x0, Offset: 0x1a84
+// Size: 0x168
 function vehicle_spawn_waitandrespawn(ref, spawndata, faildata) {
     level endon("game_ended");
     level endon("cancel_pending_vehicle_respawns");
@@ -656,7 +647,7 @@ function vehicle_spawn_waitandrespawn(ref, spawndata, faildata) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac1
+// Checksum 0x0, Offset: 0x1bf4
 // Size: 0x19
 function vehicle_spawn_preventrespawn(vehicle) {
     vehicle.preventrespawn = 1;
@@ -664,7 +655,7 @@ function vehicle_spawn_preventrespawn(vehicle) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ae2
+// Checksum 0x0, Offset: 0x1c15
 // Size: 0xa
 function vehicle_spawn_cancelpendingrespawns() {
     level notify("cancel_pending_vehicle_respawns");
@@ -672,8 +663,8 @@ function vehicle_spawn_cancelpendingrespawns() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1af4
-// Size: 0x95
+// Checksum 0x0, Offset: 0x1c27
+// Size: 0x82
 function function_6c65df1f40e10037() {
     if (istrue(self.donotwatchabandoned)) {
         return;
@@ -693,15 +684,12 @@ function function_6c65df1f40e10037() {
     self endon("death");
     self endon("stop_watching_abandoned");
     wait 60;
-    if (scripts\cp_mp\utility\game_utility::getgametype() == "wm") {
-        return;
-    }
     scripts\cp_mp\vehicles\vehicle_occupancy::function_887b4e2cbe3ab92c();
 }
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b91
+// Checksum 0x0, Offset: 0x1cb1
 // Size: 0x8e
 function vehicle_spawn_gamemodesupportsabandonedtimeout(ishusk) {
     defaultvalue = 1;
@@ -720,8 +708,8 @@ function vehicle_spawn_gamemodesupportsabandonedtimeout(ishusk) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c28
-// Size: 0x1ad
+// Checksum 0x0, Offset: 0x1d48
+// Size: 0x1af
 function vehicle_spawn_watchabandoned() {
     ishusk = isvehiclehusk();
     if (!scripts\cp_mp\vehicles\vehicle_spawn::vehicle_spawn_gamemodesupportsabandonedtimeout(ishusk)) {
@@ -782,7 +770,7 @@ function vehicle_spawn_watchabandoned() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ddd
+// Checksum 0x0, Offset: 0x1eff
 // Size: 0x14
 function vehicle_spawn_stopwatchingabandoned() {
     self notify("stop_watching_abandoned");
@@ -791,8 +779,8 @@ function vehicle_spawn_stopwatchingabandoned() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1df9
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x1f1b
+// Size: 0x3b
 function vehicle_spawn_abandonedtimeout() {
     vehicle_spawn_stopwatchingabandoned();
     self.donotwatchabandoned = 1;
@@ -802,7 +790,7 @@ function vehicle_spawn_abandonedtimeout() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e3d
+// Checksum 0x0, Offset: 0x1f5e
 // Size: 0x1c
 function function_357783d7c1d96273() {
     vehicle_spawn_stopwatchingabandoned();
@@ -812,7 +800,7 @@ function function_357783d7c1d96273() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e61
+// Checksum 0x0, Offset: 0x1f82
 // Size: 0x66
 function vehicle_spawn_abandonedtimeoutcallback() {
     damagestate = scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_getstate();
@@ -828,7 +816,7 @@ function vehicle_spawn_abandonedtimeoutcallback() {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ecf
+// Checksum 0x0, Offset: 0x1ff0
 // Size: 0x1c
 function function_17bb29fece7da497(vehicleref) {
     return vehicle_spawn_getleveldataforvehicle(vehicleref).timeoutonabandoneddelay;
@@ -836,8 +824,8 @@ function function_17bb29fece7da497(vehicleref) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef4
-// Size: 0x63
+// Checksum 0x0, Offset: 0x2015
+// Size: 0x62
 function function_aade62c6cf163888(vehicleref) {
     data = function_29b4292c92443328(vehicleref);
     if (isdefined(data.husk) && istrue(data.husk.hashusk)) {
@@ -847,7 +835,7 @@ function function_aade62c6cf163888(vehicleref) {
 
 // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f5f
+// Checksum 0x0, Offset: 0x207f
 // Size: 0x1c
 function function_89cda5ba9bfc8d56(vehicleref) {
     return function_29b4292c92443328(vehicleref).transitionparts;
@@ -857,15 +845,14 @@ function function_89cda5ba9bfc8d56(vehicleref) {
 
     // Namespace vehicle_spawn / scripts\cp_mp\vehicles\vehicle_spawn
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f84
-    // Size: 0xbb
+    // Checksum 0x0, Offset: 0x20a4
+    // Size: 0xa7
     function vehicle_spawn_initdev() {
         setdevdvarifuninitialized(@"hash_d451d5012c6af909", 0);
-        setdevdvarifuninitialized(@"hash_36aaf7d3b773c77a", "<dev string:x437>");
-        setdevdvarifuninitialized(@"hash_29ad65e1f5a10c7d", "<dev string:x437>");
-        setdevdvarifuninitialized(@"hash_37b6962333b896f9", "<dev string:x437>");
-        setdevdvarifuninitialized(@"hash_c6bdc7ccd09be1d9", "<dev string:x437>");
-        setdevdvarifuninitialized(@"hash_9ec4150c7e03e3ee", "<dev string:x437>");
+        setdevdvarifuninitialized(@"hash_36aaf7d3b773c77a", "<dev string:x1d2>");
+        setdevdvarifuninitialized(@"hash_37b6962333b896f9", "<dev string:x1d2>");
+        setdevdvarifuninitialized(@"hash_c6bdc7ccd09be1d9", "<dev string:x1d2>");
+        setdevdvarifuninitialized(@"hash_9ec4150c7e03e3ee", "<dev string:x1d2>");
         setdevdvarifuninitialized(@"hash_1f347fd0c3d771a2", 0);
         setdevdvarifuninitialized(@"hash_8fdbbb498db9480a", 60);
         setdevdvarifuninitialized(@"hash_e547fe8dfe1679f6", 0);

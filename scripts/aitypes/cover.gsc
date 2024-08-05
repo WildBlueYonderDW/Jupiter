@@ -13,7 +13,7 @@
 
 // Namespace cover / scripts\aitypes\cover
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e
+// Checksum 0x0, Offset: 0x114
 // Size: 0x15
 function getcoverstate() {
     return self._blackboard.coverstate;
@@ -21,7 +21,7 @@ function getcoverstate() {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16c
+// Checksum 0x0, Offset: 0x132
 // Size: 0x2f
 function shouldlookforinitialcover(taskid) {
     if (isdefined(self.fnshouldlookforcover)) {
@@ -32,7 +32,7 @@ function shouldlookforinitialcover(taskid) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a4
+// Checksum 0x0, Offset: 0x16a
 // Size: 0x2f
 function lookforinitialcover(taskid) {
     if (isdefined(self.fnlookforcover)) {
@@ -43,8 +43,8 @@ function lookforinitialcover(taskid) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc
-// Size: 0xed
+// Checksum 0x0, Offset: 0x1a2
+// Size: 0xec
 function lookforbettercover_internal(var_1fe63b952fe3ee08, var_30b84a9cb603754f, coverselector) {
     if (self.arriving) {
         return false;
@@ -82,8 +82,8 @@ function lookforbettercover_internal(var_1fe63b952fe3ee08, var_30b84a9cb603754f,
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d2
-// Size: 0x34
+// Checksum 0x0, Offset: 0x297
+// Size: 0x33
 function update(task) {
     covernode = self.covernode;
     assert(isdefined(covernode));
@@ -92,7 +92,7 @@ function update(task) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30f
+// Checksum 0x0, Offset: 0x2d3
 // Size: 0x14
 function isdoingambush(task) {
     return self.doingambush;
@@ -100,7 +100,7 @@ function isdoingambush(task) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32c
+// Checksum 0x0, Offset: 0x2f0
 // Size: 0x22
 function updatehide(task) {
     self setcoverstate("hide", 1);
@@ -111,7 +111,7 @@ function updatehide(task) {
 
     // Namespace cover / scripts\aitypes\cover
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x357
+    // Checksum 0x0, Offset: 0x31b
     // Size: 0x51
     function function_a7f24f5dd4325ccf() {
         var_8a31cf5f87747a = getdvarint(@"hash_cc4c9095ab9f206f", 0);
@@ -121,7 +121,7 @@ function updatehide(task) {
 
     // Namespace cover / scripts\aitypes\cover
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3b0
+    // Checksum 0x0, Offset: 0x374
     // Size: 0x21
     function function_1155b804efae0b2a(reason) {
         if (function_a7f24f5dd4325ccf()) {
@@ -133,7 +133,7 @@ function updatehide(task) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d9
+// Checksum 0x0, Offset: 0x39d
 // Size: 0x4e
 function shouldreload(task, params) {
     assert(isdefined(params));
@@ -145,7 +145,7 @@ function shouldreload(task, params) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x430
+// Checksum 0x0, Offset: 0x3f4
 // Size: 0xb
 function terminatehide(task) {
     
@@ -153,7 +153,7 @@ function terminatehide(task) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x443
+// Checksum 0x0, Offset: 0x407
 // Size: 0x14a
 function shouldchangestanceforfun(task) {
     if (!isdefined(self.enemy)) {
@@ -185,7 +185,7 @@ function shouldchangestanceforfun(task) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x596
+// Checksum 0x0, Offset: 0x55a
 // Size: 0x1c
 function setcoverchangestanceforfuntime() {
     self.var_58b37dad6411f81 = gettime() + randomintrange(5000, 20000);
@@ -193,7 +193,7 @@ function setcoverchangestanceforfuntime() {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ba
+// Checksum 0x0, Offset: 0x57e
 // Size: 0xb2
 function hasroomtofullexposecorner(node) {
     var_16f58e6bcebc24ca = 36;
@@ -217,7 +217,7 @@ function hasroomtofullexposecorner(node) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x675
+// Checksum 0x0, Offset: 0x639
 // Size: 0x85
 function updatealwayscoverexposed(taskid) {
     if (self.balwayscoverexposed) {
@@ -232,7 +232,7 @@ function updatealwayscoverexposed(taskid) {
 
 // Namespace cover / scripts\aitypes\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x703
+// Checksum 0x0, Offset: 0x6c7
 // Size: 0x172
 function updatecovercroucharrivaltype(taskid) {
     if (!isdefined(self.node) || self.node.type != "Cover Crouch") {

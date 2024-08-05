@@ -7,7 +7,7 @@
 
 // Namespace namespace_30101e0cca498f6 / namespace_8a8c1d3ffd176d9c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x176
+// Checksum 0x0, Offset: 0x12f
 // Size: 0x3b
 function init() {
     assert(flag("<dev string:x1c>"));
@@ -17,8 +17,8 @@ function init() {
 
 // Namespace namespace_30101e0cca498f6 / namespace_8a8c1d3ffd176d9c
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1b9
-// Size: 0x57
+// Checksum 0x0, Offset: 0x172
+// Size: 0x58
 function private on_ai_spawn(params) {
     ent = params.agent;
     if (!isdefined(ent)) {
@@ -31,8 +31,8 @@ function private on_ai_spawn(params) {
 
 // Namespace namespace_30101e0cca498f6 / namespace_8a8c1d3ffd176d9c
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x218
-// Size: 0x14e
+// Checksum 0x0, Offset: 0x1d2
+// Size: 0x151
 function private on_ai_killed(params) {
     ent = self;
     if (!isdefined(ent)) {

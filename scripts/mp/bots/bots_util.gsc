@@ -11,8 +11,8 @@
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x690
-// Size: 0x141
+// Checksum 0x0, Offset: 0x8be
+// Size: 0x145
 function bot_get_nodes_in_cone(min_dist, max_dist, vector_dot, var_50900c536441af50) {
     var_685b8946e5eac800 = getnodesinradius(self.origin, max_dist, min_dist);
     var_6f3d9ec6437c14f2 = [];
@@ -33,7 +33,7 @@ function bot_get_nodes_in_cone(min_dist, max_dist, vector_dot, var_50900c536441a
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7da
+// Checksum 0x0, Offset: 0xa0c
 // Size: 0x106
 function bot_goal_can_override(var_bdbea41b82da516b, var_bdbea51b82da539e) {
     if (var_bdbea41b82da516b == "none") {
@@ -49,12 +49,12 @@ function bot_goal_can_override(var_bdbea41b82da516b, var_bdbea51b82da539e) {
     } else if (var_bdbea41b82da516b == "tactical") {
         return 1;
     }
-    assertex(0, "<dev string:x1c>");
+    assertex(0, "Unsupported parameter <goal_type_1> passed in to bot_goal_can_override()");
 }
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e8
+// Checksum 0x0, Offset: 0xb1a
 // Size: 0x21
 function bot_set_personality(personality) {
     self botsetpersonality(personality);
@@ -64,14 +64,14 @@ function bot_set_personality(personality) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x911
+// Checksum 0x0, Offset: 0xb43
 // Size: 0xb8
 function bot_set_difficulty(difficulty, var_89ed03dbd38cd74c) {
     assert(isai(self));
     /#
         if (isteamparticipant(self) || isdefined(var_89ed03dbd38cd74c) && var_89ed03dbd38cd74c) {
             debugdifficulty = getdvar(@"hash_1e4fccc9687134e6");
-            if (debugdifficulty != "<dev string:x68>") {
+            if (debugdifficulty != "<dev string:x1c>") {
                 difficulty = debugdifficulty;
             }
         }
@@ -89,8 +89,8 @@ function bot_set_difficulty(difficulty, var_89ed03dbd38cd74c) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d1
-// Size: 0x243
+// Checksum 0x0, Offset: 0xc03
+// Size: 0x244
 function bot_choose_difficulty_for_default() {
     if (!isdefined(level.bot_difficulty_defaults)) {
         level.bot_difficulty_defaults = [];
@@ -143,7 +143,7 @@ function bot_choose_difficulty_for_default() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1d
+// Checksum 0x0, Offset: 0xe50
 // Size: 0x66
 function get_difficulty_for_difficulty_type(difficulty_type) {
     if (difficulty_type == "easy") {
@@ -155,12 +155,12 @@ function get_difficulty_for_difficulty_type(difficulty_type) {
     if (difficulty_type == "hard") {
         return random(["hardened", "veteran"]);
     }
-    assertmsg("<dev string:x73>");
+    assertmsg("unreachable");
 }
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8b
+// Checksum 0x0, Offset: 0xebe
 // Size: 0x34
 function bot_is_capturing() {
     if (bot_is_defending()) {
@@ -173,7 +173,7 @@ function bot_is_capturing() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc8
+// Checksum 0x0, Offset: 0xefb
 // Size: 0x21
 function bot_is_patrolling() {
     if (bot_is_defending()) {
@@ -186,7 +186,7 @@ function bot_is_patrolling() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf2
+// Checksum 0x0, Offset: 0xf25
 // Size: 0x34
 function bot_is_protecting() {
     if (bot_is_defending()) {
@@ -199,7 +199,7 @@ function bot_is_protecting() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2f
+// Checksum 0x0, Offset: 0xf62
 // Size: 0x21
 function bot_is_bodyguarding() {
     if (bot_is_defending()) {
@@ -212,7 +212,7 @@ function bot_is_bodyguarding() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd59
+// Checksum 0x0, Offset: 0xf8c
 // Size: 0xc
 function bot_is_defending() {
     return isdefined(self.bot_defending);
@@ -220,7 +220,7 @@ function bot_is_defending() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd6e
+// Checksum 0x0, Offset: 0xfa1
 // Size: 0x2b
 function bot_is_defending_point(point) {
     if (bot_is_defending()) {
@@ -233,7 +233,7 @@ function bot_is_defending_point(point) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xda2
+// Checksum 0x0, Offset: 0xfd5
 // Size: 0x27
 function bot_is_guarding_player(player) {
     if (bot_is_bodyguarding() && self.bot_defend_player_guarding == player) {
@@ -244,10 +244,10 @@ function bot_is_guarding_player(player) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd2
-// Size: 0xb6
+// Checksum 0x0, Offset: 0x1005
+// Size: 0xb7
 function entrance_visible_from(entrance_origin, from_origin, stance) {
-    assert(stance == "<dev string:x82>" || stance == "<dev string:x8b>" || stance == "<dev string:x95>");
+    assert(stance == "stand" || stance == "crouch" || stance == "prone");
     prone_offset = (0, 0, 11);
     crouch_offset = (0, 0, 40);
     offset = undefined;
@@ -263,8 +263,8 @@ function entrance_visible_from(entrance_origin, from_origin, stance) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe91
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x10c5
+// Size: 0x3e
 function get_extended_path(start, end) {
     path = func_get_nodes_on_path(start, end);
     if (isdefined(path)) {
@@ -276,7 +276,7 @@ function get_extended_path(start, end) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xed9
+// Checksum 0x0, Offset: 0x110c
 // Size: 0x1a
 function func_get_path_dist(start, end) {
     return getpathdist(start, end);
@@ -284,7 +284,7 @@ function func_get_path_dist(start, end) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xefc
+// Checksum 0x0, Offset: 0x112f
 // Size: 0x1a
 function func_get_nodes_on_path(start, end) {
     return getnodesonpath(start, end);
@@ -292,7 +292,7 @@ function func_get_nodes_on_path(start, end) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1f
+// Checksum 0x0, Offset: 0x1152
 // Size: 0x23
 function func_bot_get_closest_navigable_point(origin, radius, entity) {
     return botgetclosestnavigablepoint(origin, radius, entity);
@@ -300,7 +300,7 @@ function func_bot_get_closest_navigable_point(origin, radius, entity) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4b
+// Checksum 0x0, Offset: 0x117e
 // Size: 0x8d
 function node_is_on_path_from_labels(label1, label2) {
     if (!isdefined(self.on_path_from)) {
@@ -317,8 +317,8 @@ function node_is_on_path_from_labels(label1, label2) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe1
-// Size: 0x74
+// Checksum 0x0, Offset: 0x1214
+// Size: 0x76
 function get_all_connected_nodes(nodes) {
     all_nodes = nodes;
     for (i = 0; i < nodes.size; i++) {
@@ -334,8 +334,8 @@ function get_all_connected_nodes(nodes) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x105e
-// Size: 0x79
+// Checksum 0x0, Offset: 0x1293
+// Size: 0x77
 function get_visible_nodes_array(nodes, node_from) {
     visible_nodes = [];
     foreach (node in nodes) {
@@ -348,7 +348,7 @@ function get_visible_nodes_array(nodes, node_from) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e0
+// Checksum 0x0, Offset: 0x1313
 // Size: 0x1e
 function remove_ends_from_path(path) {
     path[path.size - 1] = undefined;
@@ -358,7 +358,7 @@ function remove_ends_from_path(path) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1107
+// Checksum 0x0, Offset: 0x133a
 // Size: 0x1e
 function bot_waittill_bots_enabled(var_9472ff28ddf7b38) {
     while (!bot_bots_enabled_or_added(var_9472ff28ddf7b38)) {
@@ -368,7 +368,7 @@ function bot_waittill_bots_enabled(var_9472ff28ddf7b38) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x112d
+// Checksum 0x0, Offset: 0x1360
 // Size: 0x19
 function bot_bots_enabled_or_added(var_9472ff28ddf7b38) {
     if (bots_exist(var_9472ff28ddf7b38)) {
@@ -379,8 +379,8 @@ function bot_bots_enabled_or_added(var_9472ff28ddf7b38) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x114f
-// Size: 0x57
+// Checksum 0x0, Offset: 0x1382
+// Size: 0x56
 function bot_waittill_out_of_combat_or_time(time) {
     start_time = gettime();
     while (true) {
@@ -400,17 +400,14 @@ function bot_waittill_out_of_combat_or_time(time) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ae
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x13e0
+// Size: 0x54
 function bot_in_combat(optional_time) {
     if (self.last_enemy_sight_time == 0) {
         return false;
     }
     var_934322fa5ff595cb = gettime() - self.last_enemy_sight_time;
     check_time = level.bot_out_of_combat_time;
-    if (!isdefined(check_time)) {
-        return false;
-    }
     if (isdefined(optional_time)) {
         check_time = optional_time;
     }
@@ -419,14 +416,14 @@ function bot_in_combat(optional_time) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1212
+// Checksum 0x0, Offset: 0x143d
 // Size: 0xde
 function bot_waittill_goal_or_fail(optional_time, var_9c8bae256226db8b, var_9c8baf256226ddbe, var_9c8bb0256226dff1) {
     if (!isdefined(var_9c8bae256226db8b) && isdefined(var_9c8baf256226ddbe)) {
-        assertex(0, "<dev string:x9e>");
+        assertex(0, "Error: Calling bot_waittill_goal_or_fail needs to define param 1 if using param 2");
     }
     if ((!isdefined(var_9c8bae256226db8b) || !isdefined(var_9c8baf256226ddbe)) && isdefined(var_9c8bb0256226dff1)) {
-        assertex(0, "<dev string:xf3>");
+        assertex(0, "Error: Calling bot_waittill_goal_or_fail needs to define param 1 and param 2 if using param 3");
     }
     wait_array = ["goal", "bad_path", "no_path", "node_relinquished", "script_goal_changed"];
     if (isdefined(var_9c8bae256226db8b)) {
@@ -448,8 +445,8 @@ function bot_waittill_goal_or_fail(optional_time, var_9c8bae256226db8b, var_9c8b
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f9
-// Size: 0x52
+// Checksum 0x0, Offset: 0x1524
+// Size: 0x51
 function bot_usebutton_wait(time, var_6ea12445eb7b72dd, var_6ea12145eb7b6c44) {
     level endon("game_ended");
     childthread use_button_stopped_notify();
@@ -460,7 +457,7 @@ function bot_usebutton_wait(time, var_6ea12445eb7b72dd, var_6ea12145eb7b6c44) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1354
+// Checksum 0x0, Offset: 0x157e
 // Size: 0x3a
 function use_button_stopped_notify(var_6ea12445eb7b72dd, var_6ea12145eb7b6c44) {
     self endon("stop_usebutton_watcher");
@@ -473,8 +470,8 @@ function use_button_stopped_notify(var_6ea12445eb7b72dd, var_6ea12145eb7b6c44) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1396
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x15c0
+// Size: 0x78
 function bots_exist(var_9472ff28ddf7b38) {
     foreach (player in level.participants) {
         if (isai(player)) {
@@ -491,10 +488,10 @@ function bots_exist(var_9472ff28ddf7b38) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x141a
-// Size: 0x28e
+// Checksum 0x0, Offset: 0x1641
+// Size: 0x28f
 function bot_get_entrances_for_stance_and_index(stance, index, var_fecd5903478d0482) {
-    assert(!isdefined(stance) || stance == "<dev string:x82>" || stance == "<dev string:x8b>" || stance == "<dev string:x95>");
+    assert(!isdefined(stance) || stance == "stand" || stance == "crouch" || stance == "prone");
     if (!isdefined(level.entrance_points_finished_caching)) {
         return undefined;
     }
@@ -545,8 +542,8 @@ function bot_get_entrances_for_stance_and_index(stance, index, var_fecd5903478d0
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b1
-// Size: 0x334
+// Checksum 0x0, Offset: 0x18d9
+// Size: 0x33f
 function bot_find_node_to_guard_player(var_3968c766141f9301, radius, var_6b1ca44bc56af3d6) {
     result = undefined;
     var_20d851954eae02c4 = self.bot_defend_player_guarding getvelocity();
@@ -611,7 +608,7 @@ function bot_find_node_to_guard_player(var_3968c766141f9301, radius, var_6b1ca44
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ee
+// Checksum 0x0, Offset: 0x1c21
 // Size: 0x66
 function bot_find_node_to_capture_point(var_3968c766141f9301, radius, var_949cb180a69b5ead) {
     result = undefined;
@@ -624,8 +621,8 @@ function bot_find_node_to_capture_point(var_3968c766141f9301, radius, var_949cb1
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a5d
-// Size: 0x49
+// Checksum 0x0, Offset: 0x1c90
+// Size: 0x48
 function bot_find_node_to_capture_zone(nodes, var_949cb180a69b5ead) {
     result = undefined;
     if (nodes.size > 0) {
@@ -636,8 +633,8 @@ function bot_find_node_to_capture_zone(nodes, var_949cb180a69b5ead) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aaf
-// Size: 0x49
+// Checksum 0x0, Offset: 0x1ce1
+// Size: 0x48
 function bot_find_node_to_protect_zone(nodes, var_3968c766141f9301) {
     result = undefined;
     if (nodes.size > 0) {
@@ -648,7 +645,7 @@ function bot_find_node_to_protect_zone(nodes, var_3968c766141f9301) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b01
+// Checksum 0x0, Offset: 0x1d32
 // Size: 0x5d
 function bot_find_node_that_protects_point(var_3968c766141f9301, radius) {
     result = undefined;
@@ -661,8 +658,8 @@ function bot_find_node_that_protects_point(var_3968c766141f9301, radius) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b67
-// Size: 0xc6
+// Checksum 0x0, Offset: 0x1d98
+// Size: 0xc8
 function bot_pick_random_point_in_radius(center_point, node_radius, var_fc3bc2e3860d44f9, close_dist, far_dist) {
     point_picked = undefined;
     nodes = getnodesinradius(center_point, node_radius, 0, 500);
@@ -685,8 +682,8 @@ function bot_pick_random_point_in_radius(center_point, node_radius, var_fc3bc2e3
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c36
-// Size: 0x84
+// Checksum 0x0, Offset: 0x1e69
+// Size: 0x85
 function bot_pick_random_point_from_set(center_point, node_set, var_fc3bc2e3860d44f9) {
     point_picked = undefined;
     if (node_set.size >= 2) {
@@ -702,8 +699,8 @@ function bot_pick_random_point_from_set(center_point, node_set, var_fc3bc2e3860d
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cc3
-// Size: 0x10b
+// Checksum 0x0, Offset: 0x1ef7
+// Size: 0x10f
 function bot_find_random_midpoint(nodes, var_fc3bc2e3860d44f9) {
     point_picked = undefined;
     nodes_randomized = array_randomize(nodes);
@@ -724,7 +721,7 @@ function bot_find_random_midpoint(nodes, var_fc3bc2e3860d44f9) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd7
+// Checksum 0x0, Offset: 0x200f
 // Size: 0x3e
 function defend_valid_center() {
     if (isdefined(self.bot_defending_override_origin_node)) {
@@ -737,8 +734,8 @@ function defend_valid_center() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e1e
-// Size: 0x178
+// Checksum 0x0, Offset: 0x2056
+// Size: 0x176
 function bot_allowed_to_use_killstreaks() {
     assert(isalive(self));
     if (!istrue(level.allowkillstreaks)) {
@@ -795,8 +792,8 @@ function bot_allowed_to_use_killstreaks() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f9f
-// Size: 0x1b8
+// Checksum 0x0, Offset: 0x21d5
+// Size: 0x1c0
 function bot_recent_point_of_interest() {
     result = undefined;
     var_fc96bf0db6540b44 = botmemoryflags("investigated", "killer_died");
@@ -838,7 +835,7 @@ function bot_recent_point_of_interest() {
 
     // Namespace bots_util / scripts\mp\bots\bots_util
     // Params 9, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2160
+    // Checksum 0x0, Offset: 0x239e
     // Size: 0x6b
     function bot_draw_cylinder(pos, rad, height, duration, stop_notify, color, depthtest, sides, alpha) {
         if (!isdefined(duration)) {
@@ -849,8 +846,8 @@ function bot_recent_point_of_interest() {
 
     // Namespace bots_util / scripts\mp\bots\bots_util
     // Params 9, eflags: 0x0
-    // Checksum 0x0, Offset: 0x21d3
-    // Size: 0x1ba
+    // Checksum 0x0, Offset: 0x2411
+    // Size: 0x1be
     function bot_draw_cylinder_think(pos, rad, height, seconds, stop_notify, color, depthtest, sides, alpha) {
         if (isdefined(stop_notify)) {
             level endon(stop_notify);
@@ -887,8 +884,8 @@ function bot_recent_point_of_interest() {
 
     // Namespace bots_util / scripts\mp\bots\bots_util
     // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2395
-    // Size: 0x133
+    // Checksum 0x0, Offset: 0x25d7
+    // Size: 0x13c
     function bot_draw_circle(center, radius, color, depthtest, segments) {
         if (!isdefined(segments)) {
             segments = 16;
@@ -919,8 +916,8 @@ function bot_recent_point_of_interest() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24d0
-// Size: 0xba
+// Checksum 0x0, Offset: 0x271b
+// Size: 0xb9
 function function_2bbb7ddf0bb3449e() {
     weapon_list = undefined;
     if (isdefined(self.weaponlist) && self.weaponlist.size > 0) {
@@ -939,8 +936,8 @@ function function_2bbb7ddf0bb3449e() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2593
-// Size: 0x78
+// Checksum 0x0, Offset: 0x27dd
+// Size: 0x77
 function bot_get_total_gun_ammo() {
     total_ammo = 0;
     weapon_list = function_2bbb7ddf0bb3449e();
@@ -953,8 +950,8 @@ function bot_get_total_gun_ammo() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2614
-// Size: 0x1c
+// Checksum 0x0, Offset: 0x285d
+// Size: 0x1b
 function bot_out_of_ammo() {
     weapon_list = function_2bbb7ddf0bb3449e();
     return bot_get_total_gun_ammo() <= 0;
@@ -962,7 +959,7 @@ function bot_out_of_ammo() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2639
+// Checksum 0x0, Offset: 0x2881
 // Size: 0x9a
 function bot_get_low_on_ammo(minfrac) {
     weapon_list = function_2bbb7ddf0bb3449e();
@@ -981,8 +978,8 @@ function bot_get_low_on_ammo(minfrac) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26dc
-// Size: 0xbc
+// Checksum 0x0, Offset: 0x2924
+// Size: 0xbe
 function bot_get_low_on_all_ammo(minfrac) {
     weapon_list = function_2bbb7ddf0bb3449e();
     var_539b3076cb018cea = 0;
@@ -1002,8 +999,8 @@ function bot_get_low_on_all_ammo(minfrac) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a1
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x29eb
+// Size: 0x6c
 function bot_get_grenade_ammo() {
     total_grenades = 0;
     offhand_list = self getweaponslistoffhands();
@@ -1015,7 +1012,7 @@ function bot_get_grenade_ammo() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2817
+// Checksum 0x0, Offset: 0x2a60
 // Size: 0x14d
 function bot_item_matches_purpose(purpose, weaponitem) {
     assert(isdefined(weaponitem));
@@ -1060,8 +1057,8 @@ function bot_item_matches_purpose(purpose, weaponitem) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x296d
-// Size: 0x99b
+// Checksum 0x0, Offset: 0x2bb6
+// Size: 0x9be
 function bot_watch_nodes(nodes, yaw, yaw_fov, end_time, end1, end2, end3, end4) {
     self notify("bot_watch_nodes");
     self endon("bot_watch_nodes");
@@ -1112,7 +1109,7 @@ function bot_watch_nodes(nodes, yaw, yaw_fov, end_time, end1, end2, end3, end4) 
             var_1c72e15f82bc237d = vectordot((0, 0, 1), vectornormalize(node.origin + var_9cf909ca02aec20d - self_eye));
             if (abs(var_1c72e15f82bc237d) > 0.92) {
                 node_invalid = 1;
-                assertex(abs(node.origin[2] - self_eye[2]) < 1000, "<dev string:x154>" + self_eye + "<dev string:x18c>" + node.origin);
+                assertex(abs(node.origin[2] - self_eye[2]) < 1000, "bot_watch_nodes() error - Bot with eyes at location " + self_eye + " trying to watch invalid point " + node.origin);
             }
             if (!node_invalid) {
                 self.watch_nodes[self.watch_nodes.size] = node;
@@ -1284,8 +1281,8 @@ function bot_watch_nodes(nodes, yaw, yaw_fov, end_time, end1, end2, end3, end4) 
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3310
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x357c
+// Size: 0xce
 function bot_handle_stance_for_look(var_bb7b3933b08e813) {
     if (isdefined(self.cur_defend_stance)) {
         stance_desired = self.cur_defend_stance;
@@ -1315,7 +1312,7 @@ function bot_handle_stance_for_look(var_bb7b3933b08e813) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x33e7
+// Checksum 0x0, Offset: 0x3652
 // Size: 0xa6
 function watch_nodes_visible_prone(nodefrom, nodeto) {
     var_9da7b4b28da70b98 = nodeto getnodenumber();
@@ -1328,7 +1325,7 @@ function watch_nodes_visible_prone(nodefrom, nodeto) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3496
+// Checksum 0x0, Offset: 0x3701
 // Size: 0xa6
 function watch_nodes_visible_crouch(nodefrom, nodeto) {
     var_9da7b4b28da70b98 = nodeto getnodenumber();
@@ -1341,8 +1338,8 @@ function watch_nodes_visible_crouch(nodefrom, nodeto) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3545
-// Size: 0x75
+// Checksum 0x0, Offset: 0x37b0
+// Size: 0x72
 function watch_nodes_stop() {
     self notify("bot_watch_nodes_stop");
     if (isdefined(self.watch_nodes)) {
@@ -1355,7 +1352,7 @@ function watch_nodes_stop() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35c2
+// Checksum 0x0, Offset: 0x382a
 // Size: 0x35
 function watch_node_clear_data(node) {
     node.watch_node_chance[self.entity_number] = undefined;
@@ -1364,8 +1361,8 @@ function watch_node_clear_data(node) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35ff
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x3867
+// Size: 0x5c
 function watch_nodes_aborted() {
     self notify("watch_nodes_aborted");
     self endon("watch_nodes_aborted");
@@ -1382,8 +1379,8 @@ function watch_nodes_aborted() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3664
-// Size: 0xae
+// Checksum 0x0, Offset: 0x38cb
+// Size: 0xad
 function bot_leader_dialog(dialog, location) {
     if (isdefined(location) && location != (0, 0, 0)) {
         assert(isdefined(self));
@@ -1400,29 +1397,29 @@ function bot_leader_dialog(dialog, location) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x371a
+// Checksum 0x0, Offset: 0x3980
 // Size: 0x220
 function bot_get_known_attacker(attacker, inflictor) {
     if (isdefined(inflictor) && isdefined(inflictor.classname)) {
         if (inflictor.classname == "grenade") {
             /#
                 if (isdefined(attacker) && !isdefined(attacker.classname)) {
-                    println("<dev string:x1af>");
+                    println("<dev string:x24>");
                     if (isdefined(attacker.code_classname)) {
-                        println("<dev string:x1e0>" + attacker.code_classname);
+                        println("<dev string:x52>" + attacker.code_classname);
                     }
                     if (isdefined(attacker.name)) {
-                        println("<dev string:x1fd>" + attacker.name);
+                        println("<dev string:x6c>" + attacker.name);
                     }
                     if (isdefined(attacker.model)) {
-                        println("<dev string:x210>" + attacker.model);
+                        println("<dev string:x7c>" + attacker.model);
                     }
                     if (isdefined(attacker.owner)) {
                         if (isdefined(attacker.owner.classname)) {
-                            println("<dev string:x224>" + attacker.owner.classname);
+                            println("<dev string:x8d>" + attacker.owner.classname);
                         }
                         if (isdefined(attacker.owner.name)) {
-                            println("<dev string:x239>" + attacker.owner.name);
+                            println("<dev string:x9f>" + attacker.owner.name);
                         }
                     }
                 }
@@ -1453,8 +1450,8 @@ function bot_get_known_attacker(attacker, inflictor) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3943
-// Size: 0x80
+// Checksum 0x0, Offset: 0x3ba9
+// Size: 0x7f
 function bot_ent_is_anonymous_mine(ent) {
     weap_name = ent.weapon_name;
     if (!isdefined(weap_name)) {
@@ -1480,7 +1477,7 @@ function bot_ent_is_anonymous_mine(ent) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x39cc
+// Checksum 0x0, Offset: 0x3c31
 // Size: 0x34
 function bot_vectors_are_equal(vec1, vec2) {
     return vec1[0] == vec2[0] && vec1[1] == vec2[1] && vec1[2] == vec2[2];
@@ -1488,7 +1485,7 @@ function bot_vectors_are_equal(vec1, vec2) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a09
+// Checksum 0x0, Offset: 0x3c6e
 // Size: 0x64
 function bot_add_to_bot_level_targets(var_ae802f9c07f6fdac) {
     var_ae802f9c07f6fdac.high_priority_for = [];
@@ -1500,12 +1497,12 @@ function bot_add_to_bot_level_targets(var_ae802f9c07f6fdac) {
         bot_add_to_bot_damage_targets(var_ae802f9c07f6fdac);
         return;
     }
-    assertmsg("<dev string:x249>");
+    assertmsg("bot_add_to_bot_level_targets needs a trigger with bot_interaction_type set");
 }
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a75
+// Checksum 0x0, Offset: 0x3cda
 // Size: 0x32
 function bot_remove_from_bot_level_targets(var_a7044cc8abac7165) {
     var_a7044cc8abac7165.already_used = 1;
@@ -1514,28 +1511,28 @@ function bot_remove_from_bot_level_targets(var_a7044cc8abac7165) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3aaf
-// Size: 0x103
+// Checksum 0x0, Offset: 0x3d14
+// Size: 0x102
 function bot_add_to_bot_use_targets(var_1fffa800ea7104b) {
     if (!issubstr(var_1fffa800ea7104b.code_classname, "trigger_use")) {
-        assertmsg("<dev string:x297>");
+        assertmsg("bot_add_to_bot_use_targets can only be used with a trigger_use");
         return;
     }
     if (!isdefined(var_1fffa800ea7104b.target)) {
-        assertmsg("<dev string:x2d9>");
+        assertmsg("bot_add_to_bot_use_targets needs a trigger with a target");
         return;
     }
     if (isdefined(var_1fffa800ea7104b.bot_target)) {
-        assertmsg("<dev string:x315>");
+        assertmsg("bot_add_to_bot_use_targets has already been processed for this trigger");
         return;
     }
     if (!isdefined(var_1fffa800ea7104b.use_time)) {
-        assertmsg("<dev string:x35f>");
+        assertmsg("bot_add_to_bot_use_targets needs .use_time set");
         return;
     }
     var_75c1b28ca39fd98a = getnodearray(var_1fffa800ea7104b.target, "targetname");
     if (var_75c1b28ca39fd98a.size != 1) {
-        assertmsg("<dev string:x391>");
+        assertmsg("bot_add_to_bot_use_targets needs to target exactly one node");
         return;
     }
     var_1fffa800ea7104b.bot_target = var_75c1b28ca39fd98a[0];
@@ -1547,16 +1544,16 @@ function bot_add_to_bot_use_targets(var_1fffa800ea7104b) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bba
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x3e1e
+// Size: 0xa6
 function bot_add_to_bot_damage_targets(var_5cf83a761f7a3ebd) {
     if (!issubstr(var_5cf83a761f7a3ebd.code_classname, "trigger_damage")) {
-        assertmsg("<dev string:x3d0>");
+        assertmsg("bot_add_to_bot_damage_targets can only be used with a trigger_damage");
         return;
     }
     var_304cfbe931e87eae = getnodearray(var_5cf83a761f7a3ebd.target, "targetname");
     if (var_304cfbe931e87eae.size != 2) {
-        assertmsg("<dev string:x418>");
+        assertmsg("bot_add_to_bot_use_targets needs to target exactly two nodes");
         return;
     }
     var_5cf83a761f7a3ebd.bot_targets = var_304cfbe931e87eae;
@@ -1568,11 +1565,11 @@ function bot_add_to_bot_damage_targets(var_5cf83a761f7a3ebd) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c69
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x3ecc
+// Size: 0x6c
 function bot_get_string_index_for_integer(array, var_c991a2934117c74e) {
     current_index = 0;
-    foreach (string_index, array_value in array) {
+    foreach (array_value in array) {
         if (current_index == var_c991a2934117c74e) {
             return string_index;
         }
@@ -1583,8 +1580,8 @@ function bot_get_string_index_for_integer(array, var_c991a2934117c74e) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ce0
-// Size: 0x69
+// Checksum 0x0, Offset: 0x3f41
+// Size: 0x6a
 function bot_get_zones_within_dist(var_11ca93f1e27b92b8, max_dist) {
     for (z = 0; z < level.zonecount; z++) {
         zone_node = getzonenodeforindex(z);
@@ -1596,8 +1593,8 @@ function bot_get_zones_within_dist(var_11ca93f1e27b92b8, max_dist) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d52
-// Size: 0xe8
+// Checksum 0x0, Offset: 0x3fb4
+// Size: 0xe9
 function bot_get_zones_within_dist_recurs(var_78e4201c31443b38, max_dist) {
     all_zones = [];
     all_zones[0] = getnodezone(var_78e4201c31443b38);
@@ -1617,7 +1614,7 @@ function bot_get_zones_within_dist_recurs(var_78e4201c31443b38, max_dist) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e43
+// Checksum 0x0, Offset: 0x40a6
 // Size: 0x29
 function bot_get_max_players_on_team(team) {
     assert(istrue(level.var_e6628286205f2ea7));
@@ -1626,7 +1623,7 @@ function bot_get_max_players_on_team(team) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e75
+// Checksum 0x0, Offset: 0x40d8
 // Size: 0x10
 function bot_get_team_limit() {
     return int(bot_get_client_limit() / 2);
@@ -1634,8 +1631,8 @@ function bot_get_team_limit() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e8e
-// Size: 0x36
+// Checksum 0x0, Offset: 0x40f1
+// Size: 0x35
 function bot_get_client_limit() {
     maxplayers = getdvarint(@"party_maxplayers", 0);
     if (maxplayers > level.maxclients) {
@@ -1646,8 +1643,8 @@ function bot_get_client_limit() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ecd
-// Size: 0x227
+// Checksum 0x0, Offset: 0x412f
+// Size: 0x229
 function bot_queued_process_level_thread() {
     self notify("bot_queued_process_level_thread");
     self endon("bot_queued_process_level_thread");
@@ -1683,13 +1680,13 @@ function bot_queued_process_level_thread() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x40fc
-// Size: 0x1a4
+// Checksum 0x0, Offset: 0x4360
+// Size: 0x1a2
 function bot_queued_process(process_name, process_func, optional_parm1, optional_parm2, var_1f2eb41d96061015, var_1f2ead1d960600b0) {
     if (!isdefined(level.bot_queued_process_queue)) {
         level.bot_queued_process_queue = [];
     }
-    foreach (index, process in level.bot_queued_process_queue) {
+    foreach (process in level.bot_queued_process_queue) {
         if (process.owner == self && process.name == process_name) {
             self notify(process.name);
             level.bot_queued_process_queue[index] = undefined;
@@ -1715,7 +1712,7 @@ function bot_queued_process(process_name, process_func, optional_parm1, optional
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x42a9
+// Checksum 0x0, Offset: 0x450b
 // Size: 0x12
 function bot_is_remote_or_linked() {
     return isusingremote() || self islinked();
@@ -1723,7 +1720,7 @@ function bot_is_remote_or_linked() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x42c4
+// Checksum 0x0, Offset: 0x4526
 // Size: 0x6e
 function bot_point_is_on_pathgrid(point, radius, height) {
     if (!isdefined(radius)) {
@@ -1745,8 +1742,8 @@ function bot_point_is_on_pathgrid(point, radius, height) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x433b
-// Size: 0x29c
+// Checksum 0x0, Offset: 0x459d
+// Size: 0x29a
 function bot_monitor_enemy_camp_spots(validatefunc) {
     level endon("game_ended");
     self notify("bot_monitor_enemy_camp_spots");
@@ -1795,7 +1792,7 @@ function bot_monitor_enemy_camp_spots(validatefunc) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45df
+// Checksum 0x0, Offset: 0x483f
 // Size: 0x73
 function bot_valid_camp_assassin() {
     if (!isdefined(self)) {
@@ -1824,7 +1821,7 @@ function bot_valid_camp_assassin() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x465b
+// Checksum 0x0, Offset: 0x48bb
 // Size: 0x73
 function bot_update_camp_assassin() {
     if (!isdefined(level.enemy_camp_assassin)) {
@@ -1842,7 +1839,7 @@ function bot_update_camp_assassin() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x46d6
+// Checksum 0x0, Offset: 0x4936
 // Size: 0x46
 function bot_force_stance_for_time(stance, seconds) {
     self notify("bot_force_stance_for_time");
@@ -1856,7 +1853,7 @@ function bot_force_stance_for_time(stance, seconds) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4724
+// Checksum 0x0, Offset: 0x4984
 // Size: 0x60
 function set_high_priority_target_for_bot(bot) {
     assert(isdefined(self.bot_interaction_type));
@@ -1868,7 +1865,7 @@ function set_high_priority_target_for_bot(bot) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x478c
+// Checksum 0x0, Offset: 0x49ec
 // Size: 0x65
 function add_to_bot_use_targets(var_1fffa800ea7104b, use_time) {
     if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["bots_add_to_level_targets"])) {
@@ -1880,7 +1877,7 @@ function add_to_bot_use_targets(var_1fffa800ea7104b, use_time) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47f9
+// Checksum 0x0, Offset: 0x4a59
 // Size: 0x3f
 function remove_from_bot_use_targets(var_86d13c63af450e1) {
     if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["bots_remove_from_level_targets"])) {
@@ -1890,7 +1887,7 @@ function remove_from_bot_use_targets(var_86d13c63af450e1) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4840
+// Checksum 0x0, Offset: 0x4aa0
 // Size: 0x50
 function add_to_bot_damage_targets(var_5cf83a761f7a3ebd) {
     if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["bots_add_to_level_targets"])) {
@@ -1901,7 +1898,7 @@ function add_to_bot_damage_targets(var_5cf83a761f7a3ebd) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4898
+// Checksum 0x0, Offset: 0x4af8
 // Size: 0x3f
 function remove_from_bot_damage_targets(var_7ea60499d879295d) {
     if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["bots_remove_from_level_targets"])) {
@@ -1911,7 +1908,7 @@ function remove_from_bot_damage_targets(var_7ea60499d879295d) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x48df
+// Checksum 0x0, Offset: 0x4b3f
 // Size: 0x40
 function notify_enemy_bots_bomb_used(type) {
     if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["notify_enemy_bots_bomb_used"])) {
@@ -1921,7 +1918,7 @@ function notify_enemy_bots_bomb_used(type) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4927
+// Checksum 0x0, Offset: 0x4b87
 // Size: 0x36
 function get_rank_xp_for_bot() {
     if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["bot_get_rank_xp"])) {
@@ -1931,7 +1928,7 @@ function get_rank_xp_for_bot() {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4965
+// Checksum 0x0, Offset: 0x4bc5
 // Size: 0x45
 function bot_disable_movement_for_time(time) {
     self notify("bot_disable_movement_for_time");
@@ -1945,8 +1942,8 @@ function bot_disable_movement_for_time(time) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49b2
-// Size: 0x1bb
+// Checksum 0x0, Offset: 0x4c12
+// Size: 0x1c1
 function func_load_difficulty_table(table) {
     numrows = tablelookupgetnumrows(table);
     difficultystruct = spawnstruct();
@@ -1975,13 +1972,13 @@ function func_load_difficulty_table(table) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b76
+// Checksum 0x0, Offset: 0x4ddc
 // Size: 0xe8
 function bot_update_difficultysetttings(difficulty, difficultystruct) {
     if (!isdefined(difficultystruct)) {
         difficultystruct = level.difficultytabledata;
     }
-    assertex(isdefined(difficultystruct), "<dev string:x458>");
+    assertex(isdefined(difficultystruct), "No difficulty settings found");
     values = difficultystruct.settings[difficulty];
     keys = getarraykeys(values);
     foreach (key in keys) {
@@ -1996,7 +1993,7 @@ function bot_update_difficultysetttings(difficulty, difficultystruct) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c66
+// Checksum 0x0, Offset: 0x4ecc
 // Size: 0xea
 function bot_set_difficultysetting(difficulty, setting, difficultystruct) {
     if (!isdefined(difficultystruct)) {
@@ -2020,7 +2017,7 @@ function bot_set_difficultysetting(difficulty, setting, difficultystruct) {
 
 // Namespace bots_util / scripts\mp\bots\bots_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d58
+// Checksum 0x0, Offset: 0x4fbe
 // Size: 0x19
 function function_f8350ab882cc2439(pos) {
     return getclosestpointonnavmesh(pos, undefined, 0, 0, 1, 0, 1);

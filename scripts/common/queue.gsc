@@ -4,8 +4,8 @@
 
 // Namespace queue / scripts\common\queue
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0xef
-// Size: 0xf9
+// Checksum 0x0, Offset: 0xf9
+// Size: 0xf8
 function function_e6d5d1b10a962759(queue, ref, init_func, break_func, interrupt_func, finish_func, func_params, priority, duration, break_notify) {
     item = spawnstruct();
     item.ref = default_to(ref, "default");
@@ -22,8 +22,8 @@ function function_e6d5d1b10a962759(queue, ref, init_func, break_func, interrupt_
 
 // Namespace queue / scripts\common\queue
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f0
-// Size: 0x295
+// Checksum 0x0, Offset: 0x1f9
+// Size: 0x294
 function function_ffbf82197897dac9(queue, item) {
     if (!isdefined(self.var_fd776bf3ffd9d44e)) {
         self.var_fd776bf3ffd9d44e = [];
@@ -44,7 +44,7 @@ function function_ffbf82197897dac9(queue, item) {
     foreach (idx, data in self.var_fd776bf3ffd9d44e[queue].items) {
         if (item.ref != "default" && item.ref == data.ref) {
             if (idx == 0) {
-                assert("<dev string:x1c>" + item.ref + "<dev string:x29>" + queue + "<dev string:x37>");
+                assert("Updating " + item.ref + " in queue " + queue + " while it is the currently active queue item");
                 return;
             }
             self.var_fd776bf3ffd9d44e[queue].items[idx] = item;
@@ -65,8 +65,8 @@ function function_ffbf82197897dac9(queue, item) {
 
 // Namespace queue / scripts\common\queue
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x48d
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x495
+// Size: 0xc8
 function function_46d80f020560ce6(queue, ref) {
     if (isdefined(self.var_fd776bf3ffd9d44e) && isdefined(self.var_fd776bf3ffd9d44e[queue])) {
         for (i = self.var_fd776bf3ffd9d44e[queue].items.size - 1; i >= 0; i--) {
@@ -82,7 +82,7 @@ function function_46d80f020560ce6(queue, ref) {
 
 // Namespace queue / scripts\common\queue
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55e
+// Checksum 0x0, Offset: 0x565
 // Size: 0x58
 function function_5bf3778b0956a0ab(queue) {
     if (isdefined(self.var_fd776bf3ffd9d44e) && isdefined(self.var_fd776bf3ffd9d44e[queue])) {
@@ -95,7 +95,7 @@ function function_5bf3778b0956a0ab(queue) {
 
 // Namespace queue / scripts\common\queue
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5be
+// Checksum 0x0, Offset: 0x5c5
 // Size: 0x293
 function private function_a21a0cb1935daf63(queue) {
     self endon("death");
@@ -137,7 +137,7 @@ function private function_a21a0cb1935daf63(queue) {
 
 // Namespace queue / scripts\common\queue
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x859
+// Checksum 0x0, Offset: 0x860
 // Size: 0x63
 function private function_83c2eeef11738a5d(queue, item) {
     self endon(queue + "_done");
@@ -151,7 +151,7 @@ function private function_83c2eeef11738a5d(queue, item) {
 
 // Namespace queue / scripts\common\queue
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x8c4
+// Checksum 0x0, Offset: 0x8cb
 // Size: 0x52
 function private function_b4f70eec2b62bbc5(queue, item) {
     if (isdefined(item.interrupt_func)) {
@@ -162,7 +162,7 @@ function private function_b4f70eec2b62bbc5(queue, item) {
 
 // Namespace queue / scripts\common\queue
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x91e
+// Checksum 0x0, Offset: 0x925
 // Size: 0x84
 function private function_e4f3902eebc8816d(queue, item) {
     if (isdefined(item.finish_func)) {

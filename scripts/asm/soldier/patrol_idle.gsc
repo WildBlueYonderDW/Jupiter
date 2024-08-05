@@ -11,8 +11,8 @@
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31f
-// Size: 0x46
+// Checksum 0x0, Offset: 0x37c
+// Size: 0x45
 function patrol_idle_getcellphone() {
     modelname = "offhand_wm_smartphone_on";
     if (isdefined(level.scr_model) && isdefined(level.scr_model["idle_cellphone"])) {
@@ -23,7 +23,7 @@ function patrol_idle_getcellphone() {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e
+// Checksum 0x0, Offset: 0x3ca
 // Size: 0x2d
 function patrol_idle_init(asmname, statename, params) {
     self.newenemyreactiondistsq = 0;
@@ -32,7 +32,7 @@ function patrol_idle_init(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a3
+// Checksum 0x0, Offset: 0x3ff
 // Size: 0x5e
 function patrol_idle_cleanup(asmname, statename, params) {
     self.newenemyreactiondistsq = 262144;
@@ -46,7 +46,7 @@ function patrol_idle_cleanup(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x409
+// Checksum 0x0, Offset: 0x465
 // Size: 0x7c
 function patrol_idle_istype(asmname, statename, tostatename, params) {
     assert(isdefined(params));
@@ -57,7 +57,7 @@ function patrol_idle_istype(asmname, statename, tostatename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x48e
+// Checksum 0x0, Offset: 0x4ea
 // Size: 0x3f
 function patrol_getcustomfunc(scenename, funcname) {
     if (isdefined(level.idle_funcs) && isdefined(level.idle_funcs[scenename])) {
@@ -68,8 +68,8 @@ function patrol_getcustomfunc(scenename, funcname) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d6
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x532
+// Size: 0x6c
 function patrol_idle_getnotehandler(asmname, statename, params) {
     if (isdefined(self._blackboard.customidlenode)) {
         notehandler = patrol_getcustomfunc(self._blackboard.customidlenode, params + "_note");
@@ -82,8 +82,8 @@ function patrol_idle_getnotehandler(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x54c
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x5a7
+// Size: 0xd3
 function patrol_playanim(asmname, statename, params, notehandler, animrate) {
     self endon(statename + "_finished");
     var_b3795e278e36ba46 = asm_getanim(asmname, statename);
@@ -91,7 +91,7 @@ function patrol_playanim(asmname, statename, params, notehandler, animrate) {
     if (isnumber(var_b3795e278e36ba46)) {
         self aisetanim(statename, var_b3795e278e36ba46, animrate);
     } else {
-        assertex(utility::issp(), "<dev string:x1c>");
+        assertex(utility::issp(), "Only supporting custom patrol idles in SP.");
         blankindex = asm_lookupanimfromalias(statename, "blank");
         self aisetanim(statename, blankindex, animrate);
         self setflaggedanimrestart(statename, var_b3795e278e36ba46, 1, animrate);
@@ -102,7 +102,7 @@ function patrol_playanim(asmname, statename, params, notehandler, animrate) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x626
+// Checksum 0x0, Offset: 0x682
 // Size: 0xbc
 function patrol_playidleintro(asmname, statename, params) {
     self animmode("zonly_physics", 0);
@@ -121,8 +121,8 @@ function patrol_playidleintro(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ea
-// Size: 0x105
+// Checksum 0x0, Offset: 0x746
+// Size: 0x109
 function patrol_playidleloop(asmname, statename, params) {
     self endon(statename + "_finished");
     bodyknob = asm_getbodyknob();
@@ -133,7 +133,7 @@ function patrol_playidleloop(asmname, statename, params) {
         if (isnumber(loopanim)) {
             self aisetanim(statename, loopanim);
         } else {
-            assertex(utility::issp(), "<dev string:x4a>");
+            assertex(utility::issp(), "Only supporting custom patrol loops in SP.");
             blankindex = asm_lookupanimfromalias(statename, "blank");
             self aisetanim(statename, blankindex);
             self setflaggedanimrestart(statename, loopanim, 1, 0.2, 1);
@@ -147,8 +147,8 @@ function patrol_playidleloop(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x857
+// Size: 0x5e
 function patrol_chooseidlereact(asmname, statename, params) {
     reactyaw = 0;
     alias = scripts\asm\soldier\patrol::function_a23a26adcf97fdd0();
@@ -161,8 +161,8 @@ function patrol_chooseidlereact(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x85d
-// Size: 0x158
+// Checksum 0x0, Offset: 0x8be
+// Size: 0x15d
 function patrol_playidlereact(asmname, statename, params) {
     self endon(statename + "_finished");
     self function_f7cff9f6dafb297();
@@ -183,7 +183,7 @@ function patrol_playidlereact(asmname, statename, params) {
     if (isnumber(var_b3795e278e36ba46)) {
         self aisetanim(statename, var_b3795e278e36ba46, animrate);
     } else {
-        assertex(utility::issp(), "<dev string:x78>");
+        assertex(utility::issp(), "Only supporting custom patrol reactions in SP.");
         blankindex = asm_lookupanimfromalias(statename, "blank");
         self aisetanim(statename, blankindex, animrate);
         self setflaggedanimrestart(statename, var_b3795e278e36ba46, 1, 0.2, animrate);
@@ -195,8 +195,8 @@ function patrol_playidlereact(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bd
-// Size: 0x49
+// Checksum 0x0, Offset: 0xa23
+// Size: 0x48
 function patrol_playidleend(asmname, statename, params) {
     notehandler = patrol_idle_getnotehandler(asmname, statename, "end");
     self notify("smoking_end");
@@ -205,7 +205,7 @@ function patrol_playidleend(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0e
+// Checksum 0x0, Offset: 0xa73
 // Size: 0x15b
 function patrol_notehandler_smoking(note, statename) {
     note = getsubstr(note, 10);
@@ -235,8 +235,8 @@ function patrol_notehandler_smoking(note, statename) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb71
-// Size: 0x81
+// Checksum 0x0, Offset: 0xbd6
+// Size: 0x80
 function patrol_smoking_blowsmoke(statename) {
     self endon("smoking_end");
     self endon("death");
@@ -253,7 +253,7 @@ function patrol_smoking_blowsmoke(statename) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbfa
+// Checksum 0x0, Offset: 0xc5e
 // Size: 0x7f
 function patrol_smoking_cleanup(asmname, statename, params) {
     self notify("smoking_end");
@@ -270,7 +270,7 @@ function patrol_smoking_cleanup(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc81
+// Checksum 0x0, Offset: 0xce5
 // Size: 0xcf
 function patrol_notehandler_cellphone(note, statename) {
     self endon(statename + "_finished");
@@ -296,8 +296,8 @@ function patrol_notehandler_cellphone(note, statename) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd58
-// Size: 0x110
+// Checksum 0x0, Offset: 0xdbc
+// Size: 0x112
 function patrol_prop_cleanup(asmname, statename, params) {
     if (isdefined(self.idle_prop)) {
         if (![[ self.fnisinstealthidle ]]() || !isalive(self)) {
@@ -321,7 +321,7 @@ function patrol_prop_cleanup(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe70
+// Checksum 0x0, Offset: 0xed6
 // Size: 0x4e
 function patrol_prop_delete() {
     wait 5;
@@ -333,7 +333,7 @@ function patrol_prop_delete() {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xec6
+// Checksum 0x0, Offset: 0xf2c
 // Size: 0x92
 function patrol_notehandler_drinking(note, statename) {
     switch (note) {
@@ -354,8 +354,8 @@ function patrol_notehandler_drinking(note, statename) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf60
-// Size: 0x1c1
+// Checksum 0x0, Offset: 0xfc6
+// Size: 0x1c7
 function patrol_playidlesittingloop(asmname, statename, params) {
     self endon(statename + "_finished");
     self animmode("noclip");
@@ -388,7 +388,7 @@ function patrol_playidlesittingloop(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1129
+// Checksum 0x0, Offset: 0x1195
 // Size: 0x44
 function patrol_idlesitting_checkforcoverarrivalcomplete(statename, endpos) {
     self endon(statename + "_finished");
@@ -403,7 +403,7 @@ function patrol_idlesitting_checkforcoverarrivalcomplete(statename, endpos) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1175
+// Checksum 0x0, Offset: 0x11e1
 // Size: 0x22
 function patrol_playidlesittingloop_cleanup(asmname, statename, params) {
     self finishcoverarrival();
@@ -411,7 +411,7 @@ function patrol_playidlesittingloop_cleanup(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x119f
+// Checksum 0x0, Offset: 0x120b
 // Size: 0x2f
 function patrol_playidlesittingloop_prop_cleanup(asmname, statename, params) {
     patrol_prop_cleanup(asmname, statename, params);
@@ -420,7 +420,7 @@ function patrol_playidlesittingloop_prop_cleanup(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d6
+// Checksum 0x0, Offset: 0x1242
 // Size: 0x25
 function patrol_playidlesittingloop_sleeping(asmname, statename, params) {
     patrol_playidlesittingloop(asmname, statename, params);
@@ -428,7 +428,7 @@ function patrol_playidlesittingloop_sleeping(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1203
+// Checksum 0x0, Offset: 0x126f
 // Size: 0x25
 function patrol_playidlesittingloop_sleeping_cleanup(asmname, statename, params) {
     patrol_playidlesittingloop_cleanup(asmname, statename, params);
@@ -436,7 +436,7 @@ function patrol_playidlesittingloop_sleeping_cleanup(asmname, statename, params)
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1230
+// Checksum 0x0, Offset: 0x129c
 // Size: 0x62
 function patrol_playidlesittingloop_cellphone(asmname, statename, params) {
     self.idle_prop = scripts\common\anim::anim_link_tag_model(patrol_idle_getcellphone(), "tag_accessory_right");
@@ -446,7 +446,7 @@ function patrol_playidlesittingloop_cellphone(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x129a
+// Checksum 0x0, Offset: 0x1306
 // Size: 0x25
 function patrol_playidlesittingloop_laptop(asmname, statename, params) {
     patrol_playidlesittingloop(asmname, statename, params);
@@ -454,7 +454,7 @@ function patrol_playidlesittingloop_laptop(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c7
+// Checksum 0x0, Offset: 0x1333
 // Size: 0x3e
 function patrol_playidlesittingloop_pistolclean(asmname, statename, params) {
     self.idle_prop = scripts\common\anim::anim_link_tag_model("weapon_wm_pi_mike1911_phys", "tag_accessory_right");
@@ -463,7 +463,7 @@ function patrol_playidlesittingloop_pistolclean(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x130d
+// Checksum 0x0, Offset: 0x1379
 // Size: 0x57
 function patrol_playdeathanim_sitting(asmname, statename, params) {
     if (isdefined(self.animated_prop)) {
@@ -475,7 +475,7 @@ function patrol_playdeathanim_sitting(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x136c
+// Checksum 0x0, Offset: 0x13d8
 // Size: 0x48
 function patrol_playidlesittingreact(asmname, statename, params) {
     self animmode("noclip");
@@ -487,8 +487,8 @@ function patrol_playidlesittingreact(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x13bc
-// Size: 0xba
+// Checksum 0x0, Offset: 0x1428
+// Size: 0xb9
 function patrol_hascustomanim(asmname, statename, tostatename, params) {
     if (isdefined(self._blackboard.customidlenode)) {
         scenename = self._blackboard.customidlenode;
@@ -501,8 +501,8 @@ function patrol_hascustomanim(asmname, statename, tostatename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x147f
-// Size: 0xdb
+// Checksum 0x0, Offset: 0x14ea
+// Size: 0xda
 function patrol_iscustomanimdefaultvalue(asmname, statename, tostatename, params) {
     if (isdefined(self._blackboard.customidlenode)) {
         scenename = self._blackboard.customidlenode;
@@ -510,23 +510,23 @@ function patrol_iscustomanimdefaultvalue(asmname, statename, tostatename, params
         scenename = self._blackboard.var_fe458d6a41146a8c;
     }
     assert(isdefined(scenename));
-    assert(isdefined(level.scr_anim["<dev string:xaa>"]) && isdefined(level.scr_anim["<dev string:xaa>"][scenename]) && isdefined(level.scr_anim["<dev string:xaa>"][scenename][params]));
+    assert(isdefined(level.scr_anim["patrol_idle"]) && isdefined(level.scr_anim["patrol_idle"][scenename]) && isdefined(level.scr_anim["patrol_idle"][scenename][params]));
     return isnumber(level.scr_anim["patrol_idle"][scenename][params]);
 }
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1563
-// Size: 0x206
+// Checksum 0x0, Offset: 0x15cd
+// Size: 0x207
 function patrol_chooseanim_custom(asmname, statename, params) {
     assert(isdefined(self._blackboard.customidlenode));
     scenename = self._blackboard.customidlenode;
     state = params;
     assert(isdefined(scenename));
     assert(isdefined(level.scr_anim));
-    assert(isdefined(level.scr_anim["<dev string:xaa>"]), "<dev string:xb9>" + scenename + "<dev string:xe7>" + "<dev string:xaa>" + "<dev string:xff>");
-    assert(isdefined(level.scr_anim["<dev string:xaa>"][scenename]), "<dev string:xb9>" + scenename + "<dev string:xe7>" + "<dev string:xaa>" + "<dev string:xff>");
-    assert(isdefined(level.scr_anim["<dev string:xaa>"][scenename][state]), "<dev string:x10c>" + state + "<dev string:xe7>" + "<dev string:xaa>" + "<dev string:x12f>" + scenename + "<dev string:xff>");
+    assert(isdefined(level.scr_anim["patrol_idle"]), "Unable to find entry for patrol idle anim " + scenename + " in level.scr_anim[ " + "patrol_idle" + " ] array.");
+    assert(isdefined(level.scr_anim["patrol_idle"][scenename]), "Unable to find entry for patrol idle anim " + scenename + " in level.scr_anim[ " + "patrol_idle" + " ] array.");
+    assert(isdefined(level.scr_anim["patrol_idle"][scenename][state]), "Unable to find entry for state " + state + " in level.scr_anim[ " + "patrol_idle" + " ][ " + scenename + " ] array.");
     if (isarray(level.scr_anim["patrol_idle"][scenename][state])) {
         var_ab337a614ac67fef = level.scr_anim["patrol_idle"][scenename][state].size;
         assert(var_ab337a614ac67fef > 0);
@@ -549,7 +549,7 @@ function patrol_chooseanim_custom(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1771
+// Checksum 0x0, Offset: 0x17dc
 // Size: 0x85
 function patrol_idle_custom_init(asmname, statename, params) {
     assert(self._blackboard.var_6ff150891bb0c47);
@@ -560,7 +560,7 @@ function patrol_idle_custom_init(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17fe
+// Checksum 0x0, Offset: 0x1869
 // Size: 0x4d
 function patrol_idle_custom_cleanup(asmname, statename, params) {
     patrol_idle_cleanup(asmname, statename, params);
@@ -572,8 +572,8 @@ function patrol_idle_custom_cleanup(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1853
-// Size: 0x87
+// Checksum 0x0, Offset: 0x18be
+// Size: 0x86
 function patrol_idle_callcustomcallback(funcname) {
     if (isdefined(level.idle_funcs)) {
         assert(isdefined(self._blackboard.customidlenode));
@@ -586,7 +586,7 @@ function patrol_idle_callcustomcallback(funcname) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e2
+// Checksum 0x0, Offset: 0x194c
 // Size: 0x31
 function patrol_playidleintro_custom(asmname, statename, params) {
     patrol_idle_callcustomcallback("intro_begin");
@@ -595,7 +595,7 @@ function patrol_playidleintro_custom(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x191b
+// Checksum 0x0, Offset: 0x1985
 // Size: 0x31
 function patrol_playidleloop_custom(asmname, statename, params) {
     patrol_idle_callcustomcallback("loop_begin");
@@ -604,7 +604,7 @@ function patrol_playidleloop_custom(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1954
+// Checksum 0x0, Offset: 0x19be
 // Size: 0x31
 function patrol_playidlereact_custom(asmname, statename, params) {
     patrol_idle_callcustomcallback("react_begin");
@@ -613,7 +613,7 @@ function patrol_playidlereact_custom(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x198d
+// Checksum 0x0, Offset: 0x19f7
 // Size: 0x31
 function patrol_playidleend_custom(asmname, statename, params) {
     patrol_idle_callcustomcallback("exit_begin");
@@ -622,7 +622,7 @@ function patrol_playidleend_custom(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c6
+// Checksum 0x0, Offset: 0x1a30
 // Size: 0x51
 function patrol_playidle_custom_terminate(asmname, statename, params) {
     assert(isdefined(self._blackboard.customidlenode));
@@ -632,7 +632,7 @@ function patrol_playidle_custom_terminate(asmname, statename, params) {
 
 // Namespace patrol_idle / scripts\asm\soldier\patrol_idle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a1f
+// Checksum 0x0, Offset: 0x1a89
 // Size: 0x2d
 function patrol_prop_waitfordelete() {
     self endon("patrol_idle_complete");

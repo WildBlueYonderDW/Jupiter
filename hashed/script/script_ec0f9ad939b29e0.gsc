@@ -8,7 +8,7 @@
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x202
+// Checksum 0x0, Offset: 0x1ac
 // Size: 0x14e
 function hb_sensor_used(grenade) {
     if (isdefined(self.equipment["secondary"]) && self.equipment["secondary"] != "equip_hb_sensor") {
@@ -44,8 +44,8 @@ function hb_sensor_used(grenade) {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x358
-// Size: 0x158
+// Checksum 0x0, Offset: 0x302
+// Size: 0x159
 function function_78ce4bfda3e762b3(equipmentref, slot, variantid) {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -82,7 +82,7 @@ function function_78ce4bfda3e762b3(equipmentref, slot, variantid) {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b8
+// Checksum 0x0, Offset: 0x463
 // Size: 0x22
 function function_7f948b7f43448ea9(equipmentref, slot) {
     self notify("hb_sensor_take");
@@ -91,7 +91,7 @@ function function_7f948b7f43448ea9(equipmentref, slot) {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e2
+// Checksum 0x0, Offset: 0x48d
 // Size: 0x1f
 function function_323286bf3aa11fbb() {
     level endon("game_ended");
@@ -102,7 +102,7 @@ function function_323286bf3aa11fbb() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x509
+// Checksum 0x0, Offset: 0x4b4
 // Size: 0x8d
 function function_db61876aca4e4cd3() {
     if (utility::iscp()) {
@@ -121,8 +121,8 @@ function function_db61876aca4e4cd3() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59f
-// Size: 0x89
+// Checksum 0x0, Offset: 0x54a
+// Size: 0x88
 function function_30cd943d877dc29f(quantity) {
     self.var_3dd6d94c7b926688 = quantity;
     if (utility::iscp()) {
@@ -138,7 +138,7 @@ function function_30cd943d877dc29f(quantity) {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x631
+// Checksum 0x0, Offset: 0x5db
 // Size: 0x42
 function function_3f703abc99c1bb80() {
     self.var_d07d8acb673cb5c7 = undefined;
@@ -151,8 +151,8 @@ function function_3f703abc99c1bb80() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67b
-// Size: 0x13e
+// Checksum 0x0, Offset: 0x625
+// Size: 0x13f
 function function_fc7e5d7d7f99703a() {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -190,8 +190,8 @@ function function_fc7e5d7d7f99703a() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c1
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x76c
+// Size: 0xa9
 function function_83ef0926b5392999() {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -214,7 +214,7 @@ function function_83ef0926b5392999() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x871
+// Checksum 0x0, Offset: 0x81d
 // Size: 0x106
 function function_83ed70de721aee0f() {
     if (!isdefined(level.var_aebbd8276f721d86)) {
@@ -243,7 +243,7 @@ function function_83ed70de721aee0f() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x97f
+// Checksum 0x0, Offset: 0x92b
 // Size: 0x43
 function function_8803b12c07518865() {
     if (!isdefined(self.var_7653bd4be7dd5fdb) || self.var_7653bd4be7dd5fdb <= 0) {
@@ -257,7 +257,7 @@ function function_8803b12c07518865() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9cb
+// Checksum 0x0, Offset: 0x977
 // Size: 0x1f
 function function_e27c4d2340d9d56b() {
     if (!istrue(self.var_d07d8acb673cb5c7)) {
@@ -268,7 +268,7 @@ function function_e27c4d2340d9d56b() {
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f2
+// Checksum 0x0, Offset: 0x99e
 // Size: 0x34
 function checkperk(perk) {
     if (issharedfuncdefined("perk", "hasPerk")) {
@@ -278,10 +278,10 @@ function checkperk(perk) {
 }
 
 // Namespace hb_sensor / namespace_8a392daf295e43f8
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2f
-// Size: 0x1c
-function function_3efd622905908041(ref, var_3dbc3b058135cbfb) {
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x9db
+// Size: 0xb
+function function_3efd622905908041() {
     function_30cd943d877dc29f(100);
 }
 

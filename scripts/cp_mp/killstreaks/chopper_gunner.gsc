@@ -24,7 +24,7 @@
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1462
+// Checksum 0x0, Offset: 0x111c
 // Size: 0xbd
 function init() {
     if (issharedfuncdefined("chopper_gunner", "init")) {
@@ -48,8 +48,8 @@ function init() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1527
-// Size: 0xec
+// Checksum 0x0, Offset: 0x11e1
+// Size: 0xe9
 function function_b380d510fa08cdec() {
     level.choppergunners = [];
     level.heli_pilot_mesh = scripts\cp_mp\utility\game_utility::getlocaleent("heli_pilot_mesh");
@@ -68,7 +68,7 @@ function function_b380d510fa08cdec() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x161b
+// Checksum 0x0, Offset: 0x12d2
 // Size: 0x60
 function function_402d391c1c0e8ca() {
     val::group_register("chopperGunnerUse", ["killstreaks", "allow_movement", "fire", "weapon_switch", "melee", "usability", "shellshock", "allow_jump", "offhand_weapons"]);
@@ -76,7 +76,7 @@ function function_402d391c1c0e8ca() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1683
+// Checksum 0x0, Offset: 0x133a
 // Size: 0x12
 function function_e4d2385d5eee2c51() {
     level choppergunner_pilotanims();
@@ -85,7 +85,7 @@ function function_e4d2385d5eee2c51() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x169d
+// Checksum 0x0, Offset: 0x1354
 // Size: 0x1f2
 function function_5d9a912bab9622da() {
     game["dialog"]["chopper_gunner" + "_use"] = "killstreak_remote_operator" + "_request_response";
@@ -108,7 +108,7 @@ function function_5d9a912bab9622da() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1897
+// Checksum 0x0, Offset: 0x154e
 // Size: 0x1c
 function function_5de17c2babe4b71b() {
     level._effect["chopper_gunner_friendly_strobe"] = loadfx("vfx/iw8_mp/killstreak/vfx_apache_friendly_strobe.vfx");
@@ -116,8 +116,8 @@ function function_5de17c2babe4b71b() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18bb
-// Size: 0x48
+// Checksum 0x0, Offset: 0x1572
+// Size: 0x47
 function function_76bacdfa4c4a7bdc() {
     if (isdefined(level.choppervisionset)) {
         function_c0b0a582ff9e4d57(level.choppervisionset);
@@ -131,7 +131,7 @@ function function_76bacdfa4c4a7bdc() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x190b
+// Checksum 0x0, Offset: 0x15c1
 // Size: 0x71
 function choppergunner_pilotanims() {
     level.scr_animtree["ks_chopper_gunner_pilot"] = %script_model;
@@ -142,7 +142,7 @@ function choppergunner_pilotanims() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1984
+// Checksum 0x0, Offset: 0x163a
 // Size: 0x33
 function choppergunner_vehicleanims() {
     level.scr_animtree["ks_chopper_gunner_vehicle_camera"] = %mp_vehicles_always_loaded;
@@ -151,7 +151,7 @@ function choppergunner_vehicleanims() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19bf
+// Checksum 0x0, Offset: 0x1675
 // Size: 0xd
 function weapongivenchoppergunner(streakinfo) {
     return true;
@@ -159,8 +159,8 @@ function weapongivenchoppergunner(streakinfo) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19d5
-// Size: 0x21
+// Checksum 0x0, Offset: 0x168b
+// Size: 0x20
 function tryusechoppergunner() {
     streakinfo = createstreakinfo("chopper_gunner", self);
     return tryusechoppergunnerfromstruct(streakinfo);
@@ -168,12 +168,11 @@ function tryusechoppergunner() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ff
-// Size: 0x291
+// Checksum 0x0, Offset: 0x16b4
+// Size: 0x28b
 function tryusechoppergunnerfromstruct(streakinfo) {
     self endon("disconnect");
     level endon("game_ended");
-    self notify("using_remote");
     var_75d0da8e536bc6e1 = function_b96cc2f80fa02ac2(streakinfo);
     if (!istrue(var_75d0da8e536bc6e1)) {
         if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
@@ -238,7 +237,7 @@ function tryusechoppergunnerfromstruct(streakinfo) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c99
+// Checksum 0x0, Offset: 0x1948
 // Size: 0x82
 function function_98c857a1612a19d() {
     self endon("death");
@@ -256,8 +255,8 @@ function function_98c857a1612a19d() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d23
-// Size: 0x258
+// Checksum 0x0, Offset: 0x19d2
+// Size: 0x259
 function function_b96cc2f80fa02ac2(streakinfo) {
     if (issharedfuncdefined("vehicle", "incrementFauxVehicleCount")) {
         [[ getsharedfunc("vehicle", "incrementFauxVehicleCount") ]]();
@@ -309,7 +308,7 @@ function function_b96cc2f80fa02ac2(streakinfo) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f84
+// Checksum 0x0, Offset: 0x1c34
 // Size: 0x8d
 function function_e708b248bc646ecb(streakinfo) {
     if (isdefined(level.killstreaktriggeredfunc)) {
@@ -334,8 +333,8 @@ function function_e708b248bc646ecb(streakinfo) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x201a
-// Size: 0xe3b
+// Checksum 0x0, Offset: 0x1cca
+// Size: 0xe0f
 function startchoppergunnerintro(owner, streakinfo, thirdperson) {
     owner disablephysicaldepthoffieldscripting();
     heightent = scripts\cp_mp\utility\killstreak_utility::getkillstreakairstrikeheightent();
@@ -386,7 +385,7 @@ function startchoppergunnerintro(owner, streakinfo, thirdperson) {
                 #/
             } else {
                 /#
-                    owner iprintlnbold("<dev string:x46>" + entrancestruct.script_linkto + "<dev string:x59>");
+                    owner iprintlnbold("<dev string:x43>" + entrancestruct.script_linkto + "<dev string:x53>");
                 #/
             }
         }
@@ -412,8 +411,6 @@ function startchoppergunnerintro(owner, streakinfo, thirdperson) {
         angles = entranceinfo.angles;
     } else {
         owner iprintlnbold("Level is missing heli structs, please set them up!");
-        heightoffset = function_2b1f56257b43a133(heightoffset);
-        pathgoal = pathgoal * (1, 1, 0) + heightoffset;
     }
     var_d166c9b268e88725 = "veh_apache_mp_phys";
     var_1f17b37a437d607c = "veh9_mil_air_heli_ahotel64_mp";
@@ -462,7 +459,6 @@ function startchoppergunnerintro(owner, streakinfo, thirdperson) {
     choppergunner thread choppergunner_watchintrodisown("disconnect", streakinfo);
     choppergunner thread choppergunner_watchintrodisown("joined_team", streakinfo);
     choppergunner thread choppergunner_watchintrodisown("joined_spectator", streakinfo);
-    choppergunner thread choppergunner_watchintrodisown("player_fatal_death", streakinfo);
     maxhealth = 2000;
     if (istrue(level.istacops)) {
         maxhealth = 1000;
@@ -556,17 +552,14 @@ function startchoppergunnerintro(owner, streakinfo, thirdperson) {
     choppergunner function_546c923a292bab24(choppergunner.interiorlighting);
     choppergunner choppergunner_startfadetransition(var_75ff6c760340b2dc, thirdperson, 0.1);
     choppergunner function_38101db6ed950f17(choppergunner.interiorlighting);
-    if (!isdefined(choppergunner) || istrue(choppergunner.isexploding)) {
-        return undefined;
-    }
     choppergunner notify("start_chopper_use");
     return choppergunner;
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e5e
-// Size: 0xfe
+// Checksum 0x0, Offset: 0x2ae2
+// Size: 0x105
 function function_8de91f51bc626d93(streakname) {
     killstreakvehicle = self;
     scorepopup = "destroyed_" + streakname;
@@ -586,7 +579,7 @@ function function_8de91f51bc626d93(streakname) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f64
+// Checksum 0x0, Offset: 0x2bef
 // Size: 0x34
 function function_c668cff4b2ddaed0(streakname) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageData")) {
@@ -596,8 +589,8 @@ function function_c668cff4b2ddaed0(streakname) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fa0
-// Size: 0x109
+// Checksum 0x0, Offset: 0x2c2b
+// Size: 0x10a
 function function_42807e45e47344c(streakname) {
     weaponname = "thermite_bolt_mp";
     weaponhitsperattack = 1;
@@ -627,8 +620,8 @@ function function_42807e45e47344c(streakname) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b1
-// Size: 0x117
+// Checksum 0x0, Offset: 0x2d3d
+// Size: 0x10e
 function choppergunner_watchintrodisown(var_304d14a0f176d5c3, streakinfo) {
     chopperowner = self.owner;
     self endon("death");
@@ -652,7 +645,6 @@ function choppergunner_watchintrodisown(var_304d14a0f176d5c3, streakinfo) {
         chopperowner painvisionon();
         chopperowner killstreak_restorenvgstate();
         chopperowner killstreak_setMainVision("");
-        chopperowner function_8b676f496920e2ab();
         level thread scripts\cp_mp\utility\game_utility::fadetoblackforplayer(chopperowner, 0);
     }
     thread choppergunner_explode();
@@ -661,7 +653,7 @@ function choppergunner_watchintrodisown(var_304d14a0f176d5c3, streakinfo) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31d0
+// Checksum 0x0, Offset: 0x2e53
 // Size: 0x2a
 function choppergunner_waitintroanimtime(time) {
     self endon("death");
@@ -673,7 +665,7 @@ function choppergunner_waitintroanimtime(time) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3203
+// Checksum 0x0, Offset: 0x2e86
 // Size: 0x7d
 function choppergunner_playdofintroeffects() {
     self endon("death");
@@ -689,7 +681,7 @@ function choppergunner_playdofintroeffects() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3288
+// Checksum 0x0, Offset: 0x2f0b
 // Size: 0x6e
 function choppergunner_camerashake(choppergunner) {
     choppergunner endon("death");
@@ -707,8 +699,8 @@ function choppergunner_camerashake(choppergunner) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32fe
-// Size: 0x490
+// Checksum 0x0, Offset: 0x2f81
+// Size: 0x47b
 function function_fc02c5717861131a(gunner, thirdperson) {
     self endon("death");
     self endon("explode");
@@ -744,7 +736,6 @@ function function_fc02c5717861131a(gunner, thirdperson) {
     setlockedoncallback(self, &choppergunner_lockedoncallback);
     setlockedonremovedcallback(self, &choppergunner_lockedonremovedcallback);
     self setcandamage(1);
-    thread choppergunner_handledangerzone(thirdperson);
     thread choppergunner_handlethermalswitch(thirdperson);
     thread choppergunner_handlemissilefire(thirdperson);
     thread choppergunner_watchturretfire(thirdperson);
@@ -754,7 +745,6 @@ function function_fc02c5717861131a(gunner, thirdperson) {
     thread choppergunner_watchownerexitaction("joined_team");
     thread choppergunner_watchownerexitaction("joined_spectator");
     thread choppergunner_watchownerexitaction("team_kill_punish");
-    thread choppergunner_watchownerexitaction("player_fatal_death");
     thread function_f6a755e207671291();
     if (!istrue(self.infinite_chopper)) {
         thread choppergunner_watchlifetime(thirdperson);
@@ -815,8 +805,8 @@ function function_fc02c5717861131a(gunner, thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3796
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x3404
+// Size: 0xde
 function function_dfc7af47240a8c18() {
     speedsettings = spawnstruct();
     speedsettings.speed = 40;
@@ -842,8 +832,8 @@ function function_dfc7af47240a8c18() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x387e
-// Size: 0x82
+// Checksum 0x0, Offset: 0x34eb
+// Size: 0x61
 function function_2b1f56257b43a133(var_bad97bf0dd8846f4) {
     newheightoffset = var_bad97bf0dd8846f4;
     switch (level.mapname) {
@@ -852,16 +842,13 @@ function function_2b1f56257b43a133(var_bad97bf0dd8846f4) {
     case #"hash_c23b803a5c7be5f3": 
         newheightoffset += (0, 0, 300);
         break;
-    case #"hash_4c82fa7758456cd5": 
-        newheightoffset += (0, 0, 3000);
-        break;
     }
     return newheightoffset;
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3909
+// Checksum 0x0, Offset: 0x3555
 // Size: 0x3a
 function choppergunner_lockedoncallback() {
     playkillstreakoperatordialog("chopper_gunner", "chopper_gunner" + "_lockedon", undefined, undefined, "pilot");
@@ -870,7 +857,7 @@ function choppergunner_lockedoncallback() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x394b
+// Checksum 0x0, Offset: 0x3597
 // Size: 0x1c
 function choppergunner_lockedonremovedcallback() {
     scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_hidewarning("missileLocking", self.owner, "killstreak");
@@ -878,7 +865,7 @@ function choppergunner_lockedonremovedcallback() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x396f
+// Checksum 0x0, Offset: 0x35bb
 // Size: 0x96
 function choppergunner_updatetargetmarkergroups(togglestate) {
     if (istrue(togglestate)) {
@@ -902,7 +889,7 @@ function choppergunner_updatetargetmarkergroups(togglestate) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a0d
+// Checksum 0x0, Offset: 0x3659
 // Size: 0x32
 function choppergunner_watchendstrobefx(choppergunner) {
     self endon("death");
@@ -913,7 +900,7 @@ function choppergunner_watchendstrobefx(choppergunner) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a47
+// Checksum 0x0, Offset: 0x3693
 // Size: 0x6c
 function choppergunner_startfadetransition(timedelay, thirdperson, var_1e1134ff29f6168c) {
     self endon("death");
@@ -932,42 +919,42 @@ function choppergunner_startfadetransition(timedelay, thirdperson, var_1e1134ff2
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3abb
-    // Size: 0xbe
+    // Checksum 0x0, Offset: 0x3707
+    // Size: 0xbf
     function function_f67cf34c214a0189() {
-        self endon("<dev string:x6b>");
-        self endon("<dev string:x74>");
+        self endon("<dev string:x62>");
+        self endon("<dev string:x68>");
         turret_ref = function_2926a76719559d56();
         self.currentdebugweapon = turret_ref;
         var_a95a67a21665324a = self.owner;
-        var_a95a67a21665324a notifyonplayercommand("<dev string:x7f>", "<dev string:x9e>");
-        missile_ref = ter_op(utility::iscp(), "<dev string:xab>", "<dev string:xc5>");
+        var_a95a67a21665324a notifyonplayercommand("<dev string:x70>", "<dev string:x8c>");
+        missile_ref = ter_op(utility::iscp(), "<dev string:x96>", "<dev string:xad>");
         while (true) {
-            var_a95a67a21665324a waittill("<dev string:x7f>");
+            var_a95a67a21665324a waittill("<dev string:x70>");
             if (self.currentdebugweapon == turret_ref) {
                 self.currentdebugweapon = missile_ref;
             } else {
                 self.currentdebugweapon = turret_ref;
             }
-            var_a95a67a21665324a iprintlnbold("<dev string:xdf>" + self.currentdebugweapon);
+            var_a95a67a21665324a iprintlnbold("<dev string:xc4>" + self.currentdebugweapon);
         }
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3b81
-    // Size: 0xce
+    // Checksum 0x0, Offset: 0x37ce
+    // Size: 0xcd
     function function_38b07fa35df09c85() {
-        self endon("<dev string:x6b>");
-        self endon("<dev string:x74>");
+        self endon("<dev string:x62>");
+        self endon("<dev string:x68>");
         var_a95a67a21665324a = self.owner;
-        var_a95a67a21665324a notifyonplayercommand("<dev string:xfd>", "<dev string:x11d>");
-        var_a95a67a21665324a notifyonplayercommand("<dev string:xfd>", "<dev string:x12b>");
-        self.var_36d522b9b4678ef1 = spawn("<dev string:x138>", self.origin);
-        self.var_36d522b9b4678ef1 setmodel("<dev string:x148>");
+        var_a95a67a21665324a notifyonplayercommand("<dev string:xdf>", "<dev string:xfc>");
+        var_a95a67a21665324a notifyonplayercommand("<dev string:xdf>", "<dev string:x107>");
+        self.var_36d522b9b4678ef1 = spawn("<dev string:x111>", self.origin);
+        self.var_36d522b9b4678ef1 setmodel("<dev string:x11e>");
         self.var_36d522b9b4678ef1 dontinterpolate();
         while (true) {
-            var_a95a67a21665324a waittill("<dev string:xfd>");
+            var_a95a67a21665324a waittill("<dev string:xdf>");
             if (isdefined(self.testtargetent)) {
                 self clearlookatent();
                 self.testtargetent delete();
@@ -978,21 +965,21 @@ function choppergunner_startfadetransition(timedelay, thirdperson, var_1e1134ff2
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3c57
-    // Size: 0x192
+    // Checksum 0x0, Offset: 0x38a3
+    // Size: 0x196
     function function_c31fd561d72092a5(var_a95a67a21665324a, weaponname) {
-        self endon("<dev string:x6b>");
-        self endon("<dev string:x74>");
-        var_a95a67a21665324a endon("<dev string:x156>");
-        var_a95a67a21665324a endon("<dev string:xfd>");
-        var_a95a67a21665324a endon("<dev string:x7f>");
+        self endon("<dev string:x62>");
+        self endon("<dev string:x68>");
+        var_a95a67a21665324a endon("<dev string:x129>");
+        var_a95a67a21665324a endon("<dev string:xdf>");
+        var_a95a67a21665324a endon("<dev string:x70>");
         var_5f8d47facd99fabf = weaponfiretime(weaponname);
         targettracestart = var_a95a67a21665324a getvieworigin();
         targettraceend = targettracestart + anglestoforward(var_a95a67a21665324a getplayerangles()) * 50000;
         targettrace = scripts\engine\trace::ray_trace(targettracestart, targettraceend, self, scripts\engine\trace::create_contents(1, 1, 0, 1, 0, 1, 0, 1, 1));
         fireposition = undefined;
-        if (targettrace["<dev string:x164>"] != "<dev string:x16f>") {
-            fireposition = targettrace["<dev string:x17f>"];
+        if (targettrace["<dev string:x134>"] != "<dev string:x13c>") {
+            fireposition = targettrace["<dev string:x149>"];
         }
         if (!isdefined(fireposition)) {
             return;
@@ -1002,13 +989,13 @@ function choppergunner_startfadetransition(timedelay, thirdperson, var_1e1134ff2
         if (weaponname == turret_ref) {
             self.turret snaptotargetentity(self.var_36d522b9b4678ef1);
         }
-        self.testtargetent = spawn("<dev string:x138>", fireposition);
+        self.testtargetent = spawn("<dev string:x111>", fireposition);
         self setlookatent(self.testtargetent);
         while (true) {
             if (weaponname == turret_ref) {
                 self.turret shootturret();
             } else {
-                var_a95a67a21665324a notify("<dev string:x18b>", fireposition);
+                var_a95a67a21665324a notify("<dev string:x152>", fireposition);
             }
             sphere(self.var_36d522b9b4678ef1.origin, 50, (1, 1, 0), 0, int(var_5f8d47facd99fabf));
             wait var_5f8d47facd99fabf;
@@ -1017,25 +1004,25 @@ function choppergunner_startfadetransition(timedelay, thirdperson, var_1e1134ff2
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3df1
-    // Size: 0xd2
+    // Checksum 0x0, Offset: 0x3a41
+    // Size: 0xd1
     function function_fe8987efca006a06() {
-        self endon("<dev string:x6b>");
-        self endon("<dev string:x74>");
+        self endon("<dev string:x62>");
+        self endon("<dev string:x68>");
         var_a95a67a21665324a = self.owner;
-        var_a95a67a21665324a notifyonplayercommand("<dev string:x19c>", "<dev string:x1bc>");
-        var_a95a67a21665324a notifyonplayercommand("<dev string:x19c>", "<dev string:x1c7>");
+        var_a95a67a21665324a notifyonplayercommand("<dev string:x160>", "<dev string:x17d>");
+        var_a95a67a21665324a notifyonplayercommand("<dev string:x160>", "<dev string:x185>");
         self vehicle_setspeed(40, 45);
         self.debugpathing = 0;
         while (true) {
-            var_a95a67a21665324a waittill("<dev string:x19c>");
+            var_a95a67a21665324a waittill("<dev string:x160>");
             if (!istrue(self.debugpathing)) {
                 self.debugpathing = 1;
-                var_a95a67a21665324a iprintlnbold("<dev string:x1d8>");
+                var_a95a67a21665324a iprintlnbold("<dev string:x193>");
             } else {
                 self.debugpathing = 0;
-                var_a95a67a21665324a iprintlnbold("<dev string:x1f2>");
-                var_a95a67a21665324a notify("<dev string:x20c>");
+                var_a95a67a21665324a iprintlnbold("<dev string:x1aa>");
+                var_a95a67a21665324a notify("<dev string:x1c1>");
                 self setvehgoalpos(self.pathgoal, 1);
                 continue;
             }
@@ -1045,13 +1032,13 @@ function choppergunner_startfadetransition(timedelay, thirdperson, var_1e1134ff2
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3ecb
+    // Checksum 0x0, Offset: 0x3b1a
     // Size: 0x99
     function function_19ead4526ebc7004(var_a95a67a21665324a) {
-        self endon("<dev string:x6b>");
-        self endon("<dev string:x74>");
-        self endon("<dev string:x21c>");
-        var_a95a67a21665324a endon("<dev string:x20c>");
+        self endon("<dev string:x62>");
+        self endon("<dev string:x68>");
+        self endon("<dev string:x1ce>");
+        var_a95a67a21665324a endon("<dev string:x1c1>");
         var_b9a46106a6a99ee8 = 0;
         while (true) {
             newgoal = self.origin + anglestoforward((0, var_b9a46106a6a99ee8, 0)) * 2000;
@@ -1069,8 +1056,8 @@ function choppergunner_startfadetransition(timedelay, thirdperson, var_1e1134ff2
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f6c
-// Size: 0x18d
+// Checksum 0x0, Offset: 0x3bbb
+// Size: 0x197
 function choppergunner_handledangerzone(thirdperson) {
     self endon("leaving");
     self endon("crashing");
@@ -1103,8 +1090,8 @@ function choppergunner_handledangerzone(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4101
-// Size: 0x42
+// Checksum 0x0, Offset: 0x3d5a
+// Size: 0x41
 function choppergunner_handlethermalswitch(thirdperson) {
     if (!istrue(thirdperson)) {
         var_a95a67a21665324a = self.owner;
@@ -1118,8 +1105,8 @@ function choppergunner_handlethermalswitch(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x414b
-// Size: 0x1af
+// Checksum 0x0, Offset: 0x3da3
+// Size: 0x1b2
 function choppergunner_handlethermalswitchinternal() {
     self endon("death");
     self endon("leaving");
@@ -1167,8 +1154,8 @@ function choppergunner_handlethermalswitchinternal() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4302
-// Size: 0x4e3
+// Checksum 0x0, Offset: 0x3f5d
+// Size: 0x4f6
 function choppergunner_handlemissilefire(thirdperson) {
     self endon("death");
     self endon("leaving");
@@ -1243,7 +1230,7 @@ function choppergunner_handlemissilefire(thirdperson) {
                 if (istrue(thirdperson)) {
                     missilecounter = 0;
                     self.missilesleft = getdvarint(@"hash_52bf6045193decbf", 8);
-                    var_a95a67a21665324a setclientomnvar("<dev string:x228>", self.missilesleft);
+                    var_a95a67a21665324a setclientomnvar("<dev string:x1d7>", self.missilesleft);
                     continue;
                 }
             #/
@@ -1258,8 +1245,8 @@ function choppergunner_handlemissilefire(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47ed
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x445b
+// Size: 0x6d
 function choppergunner_refillmissiles() {
     self endon("missiles_refilled");
     reload_duration = getdvarfloat(@"hash_2f91da9928400cbd", 8);
@@ -1271,7 +1258,7 @@ function choppergunner_refillmissiles() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4863
+// Checksum 0x0, Offset: 0x44d0
 // Size: 0x16b
 function choppergunner_watchturretfire(thirdperson) {
     self endon("death");
@@ -1307,7 +1294,7 @@ function choppergunner_watchturretfire(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49d6
+// Checksum 0x0, Offset: 0x4643
 // Size: 0x44
 function choppergunner_firemissilefx(missileindex) {
     self endon("death");
@@ -1319,7 +1306,7 @@ function choppergunner_firemissilefx(missileindex) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a22
+// Checksum 0x0, Offset: 0x468f
 // Size: 0x2b
 function choppergunner_watchmissilestate(missiletargetpos) {
     level endon("game_ended");
@@ -1331,8 +1318,8 @@ function choppergunner_watchmissilestate(missiletargetpos) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a55
-// Size: 0x73
+// Checksum 0x0, Offset: 0x46c2
+// Size: 0x72
 function choppergunner_watchlifetime(thirdperson) {
     self endon("death");
     self endon("explode");
@@ -1347,7 +1334,7 @@ function choppergunner_watchlifetime(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ad0
+// Checksum 0x0, Offset: 0x473c
 // Size: 0x75
 function choppergunner_watchgameendleave(thirdperson) {
     self.owner endon("disconnect");
@@ -1363,8 +1350,8 @@ function choppergunner_watchgameendleave(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b4d
-// Size: 0x14d
+// Checksum 0x0, Offset: 0x47b9
+// Size: 0x152
 function function_c7c48aed42b53d29(thirdperson) {
     self endon("death");
     self endon("crashing");
@@ -1411,8 +1398,8 @@ function function_c7c48aed42b53d29(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ca2
-// Size: 0x61
+// Checksum 0x0, Offset: 0x4913
+// Size: 0x4c
 function choppergunner_watchownerexitaction(var_304d14a0f176d5c3) {
     self endon("death");
     self endon("explode");
@@ -1420,18 +1407,14 @@ function choppergunner_watchownerexitaction(var_304d14a0f176d5c3) {
     self endon("crashing");
     level endon("game_ended");
     self.owner waittill(var_304d14a0f176d5c3);
-    if (var_304d14a0f176d5c3 == "player_fatal_death") {
-        thread choppergunner_leave();
-        return;
-    }
     thread choppergunner_returnplayer(0, 0);
     thread choppergunner_explode();
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d0b
-// Size: 0x1e2
+// Checksum 0x0, Offset: 0x4967
+// Size: 0x1e1
 function choppergunner_watchtargets() {
     self endon("death");
     self endon("leaving");
@@ -1473,8 +1456,8 @@ function choppergunner_watchtargets() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ef5
-// Size: 0xc8
+// Checksum 0x0, Offset: 0x4b50
+// Size: 0xc7
 function choppergunner_getnearbytargets(maintarget) {
     nearplayers = utility::playersincylinder(maintarget.origin, 300);
     nearbytargets = [];
@@ -1492,8 +1475,8 @@ function choppergunner_getnearbytargets(maintarget) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fc6
-// Size: 0x140
+// Checksum 0x0, Offset: 0x4c20
+// Size: 0x13f
 function function_f6a755e207671291() {
     self endon("death");
     self endon("leaving");
@@ -1525,7 +1508,7 @@ function function_f6a755e207671291() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x510e
+// Checksum 0x0, Offset: 0x4d67
 // Size: 0x49
 function choppergunner_watchkills() {
     while (true) {
@@ -1539,7 +1522,7 @@ function choppergunner_watchkills() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x515f
+// Checksum 0x0, Offset: 0x4db8
 // Size: 0x49
 function function_708f19cf8e854691() {
     while (true) {
@@ -1553,8 +1536,8 @@ function function_708f19cf8e854691() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x51b0
-// Size: 0x23e
+// Checksum 0x0, Offset: 0x4e09
+// Size: 0x249
 function choppergunner_leave(thirdperson) {
     self endon("death");
     self endon("crashing");
@@ -1614,8 +1597,8 @@ function choppergunner_leave(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x53f6
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x505a
+// Size: 0x61
 function choppergunner_getpathend() {
     pathrandomness = 150;
     halfdistance = 15000;
@@ -1627,7 +1610,7 @@ function choppergunner_getpathend() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x545d
+// Checksum 0x0, Offset: 0x50c4
 // Size: 0x39
 function function_623713927a33cb76(data) {
     damage = data.damage;
@@ -1637,8 +1620,8 @@ function function_623713927a33cb76(data) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x549f
-// Size: 0x195
+// Checksum 0x0, Offset: 0x5106
+// Size: 0x199
 function function_ade353d9afc0d191(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -1666,7 +1649,7 @@ function function_ade353d9afc0d191(data) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x563d
+// Checksum 0x0, Offset: 0x52a8
 // Size: 0x3a
 function function_30e33dc1b5a3d096() {
     self setscriptablepartstate("body_damage_light", "on");
@@ -1675,7 +1658,7 @@ function function_30e33dc1b5a3d096() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x567f
+// Checksum 0x0, Offset: 0x52ea
 // Size: 0x3a
 function function_9a86620d2c95b213() {
     self setscriptablepartstate("body_damage_medium", "on");
@@ -1684,7 +1667,7 @@ function function_9a86620d2c95b213() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x56c1
+// Checksum 0x0, Offset: 0x532c
 // Size: 0x3a
 function function_5df4204110a49163() {
     self setscriptablepartstate("body_damage_heavy", "on");
@@ -1693,7 +1676,7 @@ function function_5df4204110a49163() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5703
+// Checksum 0x0, Offset: 0x536e
 // Size: 0x3f
 function choppergunner_handledeathdamage(data) {
     self.killedbyweapon = data.objweapon;
@@ -1703,8 +1686,8 @@ function choppergunner_handledeathdamage(data) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x574b
-// Size: 0xce
+// Checksum 0x0, Offset: 0x53b6
+// Size: 0xcf
 function function_2b17aa319c193951(attacker, killedbyweapon) {
     self endon("explode");
     thirdperson = 0;
@@ -1726,8 +1709,8 @@ function function_2b17aa319c193951(attacker, killedbyweapon) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5821
-// Size: 0x184
+// Checksum 0x0, Offset: 0x548d
+// Size: 0x185
 function choppergunner_crash(speed, weaponkilledby, var_c5adb13be635c61a) {
     self endon("explode");
     self.iscrashing = 1;
@@ -1766,7 +1749,7 @@ function choppergunner_crash(speed, weaponkilledby, var_c5adb13be635c61a) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59ad
+// Checksum 0x0, Offset: 0x561a
 // Size: 0x4c
 function choppergunner_spinout(speed) {
     self endon("death");
@@ -1779,14 +1762,11 @@ function choppergunner_spinout(speed) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a01
-// Size: 0x1be
+// Checksum 0x0, Offset: 0x566e
+// Size: 0x1ad
 function choppergunner_findcrashposition(crashdist) {
     crashstart = self.origin;
     crashoffset = 1000;
-    if (level.mapname == "mp_jup_greece") {
-        crashoffset = 150;
-    }
     crashpos = undefined;
     jetforward = anglestoforward(self.angles);
     jetright = anglestoright(self.angles);
@@ -1836,7 +1816,7 @@ function choppergunner_findcrashposition(crashdist) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bc8
+// Checksum 0x0, Offset: 0x5824
 // Size: 0x8e
 function choppergunner_explode() {
     if (istrue(self.isexploding)) {
@@ -1855,7 +1835,7 @@ function choppergunner_explode() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c5e
+// Checksum 0x0, Offset: 0x58ba
 // Size: 0x180
 function choppergunner_delete(wasdestroyed) {
     if (istrue(self.var_bf178f6894d17b96)) {
@@ -1895,8 +1875,8 @@ function choppergunner_delete(wasdestroyed) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5de6
-// Size: 0x287
+// Checksum 0x0, Offset: 0x5a42
+// Size: 0x286
 function choppergunner_returnplayer(crashing, thirdperson) {
     choppergunner_updatetargetmarkergroups(0);
     if (isdefined(level.var_f56a88761038798b)) {
@@ -1940,7 +1920,7 @@ function choppergunner_returnplayer(crashing, thirdperson) {
                 var_a95a67a21665324a thread function_d13d2a81214fbfb8("80_instant_noscale");
                 var_a95a67a21665324a cameralinkto(self.pilot, "tag_camera", 1, 1);
                 var_a95a67a21665324a playlocalsound("mp_killstreak_apache_death_plr");
-                if (!istrue(self.isexploding)) {
+                if (!self.isexploding) {
                     self waittill("explode");
                 }
                 var_a95a67a21665324a killstreak_setMainVision("killstreak_static");
@@ -1964,7 +1944,7 @@ function choppergunner_returnplayer(crashing, thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6075
+// Checksum 0x0, Offset: 0x5cd0
 // Size: 0xc2
 function function_70ff764379be5089(owner, crashing, thirdperson, streakinfo) {
     if (!istrue(crashing)) {
@@ -1976,7 +1956,7 @@ function function_70ff764379be5089(owner, crashing, thirdperson, streakinfo) {
     level endon("game_ended");
     self waittill("death");
     /#
-        iprintln("<dev string:x247>");
+        iprintln("<dev string:x1f3>");
     #/
     if (!istrue(thirdperson)) {
         owner killstreak_setMainVision("killstreak_static");
@@ -1994,7 +1974,7 @@ function function_70ff764379be5089(owner, crashing, thirdperson, streakinfo) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x613f
+// Checksum 0x0, Offset: 0x5d9a
 // Size: 0x5e
 function choppergunner_watchearlyexit(thirdperson) {
     self endon("death");
@@ -2009,8 +1989,8 @@ function choppergunner_watchearlyexit(thirdperson) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x61a5
-// Size: 0x15f
+// Checksum 0x0, Offset: 0x5e00
+// Size: 0x160
 function choppergunner_handlemissiledetection(player, missileteam, missiletarget, fxtagoverride) {
     self endon("death");
     while (true) {
@@ -2044,7 +2024,7 @@ function choppergunner_handlemissiledetection(player, missileteam, missiletarget
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x630c
+// Checksum 0x0, Offset: 0x5f68
 // Size: 0xc
 function isusingchoppergunner() {
     return isdefined(self.usingchoppergunner);
@@ -2052,8 +2032,8 @@ function isusingchoppergunner() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6321
-// Size: 0x86
+// Checksum 0x0, Offset: 0x5f7d
+// Size: 0x85
 function choppergunner_watchexplosioninfluencepoint(owner, lifetime, radius, height) {
     owner endon("disconnect");
     level endon("game_ended");
@@ -2066,7 +2046,7 @@ function choppergunner_watchexplosioninfluencepoint(owner, lifetime, radius, hei
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63af
+// Checksum 0x0, Offset: 0x600a
 // Size: 0x18
 function function_20b002475b7af53b(data) {
     if (isdefined(self)) {
@@ -2076,8 +2056,8 @@ function function_20b002475b7af53b(data) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63cf
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x602a
+// Size: 0xa6
 function function_c77d8b1c3a992f19(var_5e0676140eecdf2d) {
     lighting_info = spawnstruct();
     if (isdefined(var_5e0676140eecdf2d) && isent(var_5e0676140eecdf2d)) {
@@ -2085,7 +2065,7 @@ function function_c77d8b1c3a992f19(var_5e0676140eecdf2d) {
     } else {
         probe = spawnstruct();
         /#
-            self iprintln("<dev string:x295>");
+            self iprintln("<dev string:x23e>");
         #/
     }
     lighting_info.probe = probe;
@@ -2098,28 +2078,28 @@ function function_c77d8b1c3a992f19(var_5e0676140eecdf2d) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x647d
+// Checksum 0x0, Offset: 0x60d9
 // Size: 0x64
 function function_546c923a292bab24(lighting_info) {
     if (!isdefined(lighting_info) || !isent(lighting_info)) {
         return;
     }
     /#
-        self.owner iprintln("<dev string:x300>");
+        self.owner iprintln("<dev string:x2a6>");
     #/
     lighting_info.probe linkto(self, "tag_origin", (109, 0, -62), (0, 0, 0));
 }
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64e9
+// Checksum 0x0, Offset: 0x6145
 // Size: 0x92
 function function_38101db6ed950f17(lighting_info) {
     if (!isdefined(lighting_info) || !isent(lighting_info)) {
         return;
     }
     /#
-        self.owner iprintln("<dev string:x328>");
+        self.owner iprintln("<dev string:x2cb>");
     #/
     lighting_info.probe unlink();
     lighting_info.probe.origin = lighting_info.var_af2c99167339224["pos"];
@@ -2128,11 +2108,10 @@ function function_38101db6ed950f17(lighting_info) {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6583
-// Size: 0x64
+// Checksum 0x0, Offset: 0x61df
+// Size: 0x23
 function function_2926a76719559d56() {
-    bundle = level.streakglobals.streakbundles["chopper_gunner"];
-    turretweapon = isdefined(bundle.var_a66f27522220d83a) ? bundle.var_a66f27522220d83a : "chopper_gunner_turret_ballistics_mp";
+    turretweapon = "chopper_gunner_turret_ballistics_mp";
     if (utility::iscp()) {
         turretweapon = "chopper_gunner_turret_cp";
     }
@@ -2141,15 +2120,19 @@ function function_2926a76719559d56() {
 
 // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x65f0
-// Size: 0x268
+// Checksum 0x0, Offset: 0x620b
+// Size: 0x2cc
 function function_d33b650337c6008b(data) {
     self endon("death");
     self notify("chopperGunner_mini_emp_hit");
     self endon("chopperGunner_mini_emp_hit");
-    self.owner endon("chopperGunner_finished_crash_anim");
-    self.owner endon("exit_chopper_intro");
-    thread function_5d7ccdfe51a3807();
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
+    wait 0.1;
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
+    wait 0.05;
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
+    wait 0.25;
+    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
     if (!isdefined(self.var_e8d88b601e41fba5) && self.flaresreservecount > 0) {
         self.var_e8d88b601e41fba5 = gettime();
         if (issharedfuncdefined("flares", "reduceReserves")) {
@@ -2189,78 +2172,55 @@ function function_d33b650337c6008b(data) {
     }
 }
 
-// Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6860
-// Size: 0x177
-function function_5d7ccdfe51a3807() {
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
-    result = waittill_any_ents_or_timeout_return(0.1, self.owner, "chopperGunner_finished_crash_anim", self.owner, "exit_chopper_intro", self, "death");
-    if (!isdefined(result) || result != "timeout" || !isdefined(self) || !isalive(self)) {
-        return;
-    }
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
-    result = waittill_any_ents_or_timeout_return(0.05, self.owner, "chopperGunner_finished_crash_anim", self.owner, "exit_chopper_intro", self, "death");
-    if (!isdefined(result) || result != "timeout" || !isdefined(self) || !isalive(self)) {
-        return;
-    }
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "off");
-    result = waittill_any_ents_or_timeout_return(0.25, self.owner, "chopperGunner_finished_crash_anim", self.owner, "exit_chopper_intro", self, "death");
-    if (!isdefined(result) || result != "timeout" || !isdefined(self) || !isalive(self)) {
-        return;
-    }
-    self.owner _setvisibiilityomnvarforkillstreak(self.streakname, "on");
-}
-
 /#
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x69df
-    // Size: 0x4a
+    // Checksum 0x0, Offset: 0x64df
+    // Size: 0x49
     function function_750ac5d7f30cbbf8(choppergunner) {
-        choppergunner endon("<dev string:x6b>");
-        choppergunner endon("<dev string:x352>");
+        choppergunner endon("<dev string:x62>");
+        choppergunner endon("<dev string:x2f2>");
         while (true) {
             vehiclespeed = choppergunner vehicle_getspeed();
-            self iprintln("<dev string:x35f>" + vehiclespeed);
+            self iprintln("<dev string:x2fc>" + vehiclespeed);
             wait 0.5;
         }
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6a31
+    // Checksum 0x0, Offset: 0x6530
     // Size: 0xa8
     function function_dc4cb73de48ec3d6() {
-        self endon("<dev string:x6b>");
-        self.owner endon("<dev string:x156>");
-        self.owner notifyonplayercommand("<dev string:x373>", "<dev string:x389>");
-        state = "<dev string:x395>";
+        self endon("<dev string:x62>");
+        self.owner endon("<dev string:x129>");
+        self.owner notifyonplayercommand("<dev string:x30d>", "<dev string:x320>");
+        state = "<dev string:x329>";
         while (true) {
             var_ae20b84817daf1 = getdvarint(@"hash_6dcbef72bd1fd758", 0);
             if (!istrue(var_ae20b84817daf1)) {
                 waitframe();
                 continue;
             }
-            self.owner waittill("<dev string:x373>");
-            if (state == "<dev string:x395>") {
-                state = "<dev string:x39b>";
+            self.owner waittill("<dev string:x30d>");
+            if (state == "<dev string:x329>") {
+                state = "<dev string:x32c>";
             } else {
-                state = "<dev string:x395>";
+                state = "<dev string:x329>";
             }
-            self setscriptablepartstate("<dev string:x3a2>", state, 0);
+            self setscriptablepartstate("<dev string:x330>", state, 0);
         }
     }
 
     // Namespace chopper_gunner / scripts\cp_mp\killstreaks\chopper_gunner
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6ae1
-    // Size: 0x55
+    // Checksum 0x0, Offset: 0x65e0
+    // Size: 0x54
     function function_8ad708731e47d367() {
-        self endon("<dev string:x6b>");
+        self endon("<dev string:x62>");
         wait 10;
-        data = scripts\cp_mp\utility\damage_utility::packdamagedata(self.owner, self, 1, self.currentprimaryweapon, "<dev string:x3ac>", self);
+        data = scripts\cp_mp\utility\damage_utility::packdamagedata(self.owner, self, 1, self.currentprimaryweapon, "<dev string:x337>", self);
         function_d33b650337c6008b(data);
         wait 10;
         function_d33b650337c6008b(data);

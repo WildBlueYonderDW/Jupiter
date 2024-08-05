@@ -14,7 +14,7 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd0
+    // Checksum 0x0, Offset: 0xb0
     // Size: 0xee
     function function_6cd499378aadcad8() {
         setdvarifuninitialized(@"hash_559926a6436db818", "<dev string:x1c>");
@@ -34,8 +34,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1c6
-    // Size: 0xdb
+    // Checksum 0x0, Offset: 0x1a6
+    // Size: 0xda
     function private function_475cdb01202582a1() {
         if (!getdvarint(@"hash_7dda2ca8e979b1b2", 0)) {
             return;
@@ -52,8 +52,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2a9
-    // Size: 0x106
+    // Checksum 0x0, Offset: 0x288
+    // Size: 0x105
     function private function_86051e11e7b7a98e() {
         if (!getdvarint(@"hash_7dda2ca8e979b1b2", 0)) {
             return;
@@ -72,7 +72,7 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3b7
+    // Checksum 0x0, Offset: 0x395
     // Size: 0x124
     function private debug_scenes() {
         while (!isdefined(level.player) || !isdefined(level.scene)) {
@@ -80,23 +80,23 @@
         }
         wait 0.5;
         level.scene.debug_player = level.player;
-        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x20>");
-        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x2b>");
-        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x38>");
-        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x43>");
+        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x1d>");
+        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x25>");
+        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x2f>");
+        level.scene.debug_player thread function_5759a29120b54c79("<dev string:x37>");
         function_35eda8020e32f5c0();
         function_1191a68610545006();
-        function_6e7290c8ee4f558b("<dev string:x50>");
-        function_b23a59dfb4ca49a1("<dev string:x61>", "<dev string:x74>", &function_259e5f65a65e7a4a, 0, 1);
-        function_a9a864379a098ad6("<dev string:x87>", "<dev string:x95>", &scene_menu, 0, 2);
+        function_6e7290c8ee4f558b("<dev string:x41>");
+        function_b23a59dfb4ca49a1("<dev string:x4f>", "<dev string:x5f>", &function_259e5f65a65e7a4a, 0, 1);
+        function_a9a864379a098ad6("<dev string:x6f>", "<dev string:x7a>", &scene_menu, 0, 2);
         function_fe953f000498048f();
         level thread function_7c896b815539ac80();
     }
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x4e3
-    // Size: 0xcb
+    // Checksum 0x0, Offset: 0x4c1
+    // Size: 0xc9
     function private function_1191a68610545006() {
         var_82701a2a9f269ecf = [];
         foreach (s_scene in level.var_a0b4eb1703be349a) {
@@ -113,8 +113,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x5b6
-    // Size: 0x89
+    // Checksum 0x0, Offset: 0x592
+    // Size: 0x87
     function private function_bb946c981c3bc3e9(str_scene_name) {
         n_count = 0;
         foreach (s_scene in level.var_a0b4eb1703be349a) {
@@ -130,7 +130,7 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x647
+    // Checksum 0x0, Offset: 0x621
     // Size: 0x3e
     function private function_7c896b815539ac80() {
         while (true) {
@@ -144,8 +144,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x68d
-    // Size: 0x2fd
+    // Checksum 0x0, Offset: 0x667
+    // Size: 0x306
     function private function_b0f35d29939ca41d() {
         countscene = 0;
         countobject = 0;
@@ -177,18 +177,18 @@
             roots = array_sort_with_func(roots, &function_a726872ed3f8991c);
             foreach (root in roots) {
                 state = root.sceneroot get_state();
-                strorigin = "<dev string:xa3>" + int(root.sceneroot.origin[0]) + "<dev string:xa9>" + int(root.sceneroot.origin[1]) + "<dev string:xa9>" + int(root.sceneroot.origin[2]) + "<dev string:xaf>";
-                strstate = isdefined(state) ? state : "<dev string:xb5>";
-                print(root.sceneroot.var_8ac77218f7a34e3e + "<dev string:xc6>" + strstate + "<dev string:xce>" + strorigin + "<dev string:xd3>" + root.sceneshots + "<dev string:xde>" + root.sceneobjects);
+                strorigin = "<dev string:x85>" + int(root.sceneroot.origin[0]) + "<dev string:x88>" + int(root.sceneroot.origin[1]) + "<dev string:x88>" + int(root.sceneroot.origin[2]) + "<dev string:x8b>";
+                strstate = isdefined(state) ? state : "<dev string:x8e>";
+                print(root.sceneroot.var_8ac77218f7a34e3e + "<dev string:x9c>" + strstate + "<dev string:xa1>" + strorigin + "<dev string:xa3>" + root.sceneshots + "<dev string:xab>" + root.sceneobjects);
             }
         }
         setdvar(@"hash_7dda2ca8e979b1b2", 0);
-        printtoscreen2d(50, 60, "<dev string:xeb>" + countscene + "<dev string:xf7>" + countshot + "<dev string:x103>" + countobject + "<dev string:x111>" + countbundle, (1, 1, 1), 1);
+        printtoscreen2d(50, 60, "<dev string:xb5>" + countscene + "<dev string:xbe>" + countshot + "<dev string:xc7>" + countobject + "<dev string:xd2>" + countbundle, (1, 1, 1), 1);
     }
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x992
+    // Checksum 0x0, Offset: 0x975
     // Size: 0x48
     function private function_a726872ed3f8991c(a, b) {
         return stricmp(a.sceneroot.var_8ac77218f7a34e3e, b.sceneroot.var_8ac77218f7a34e3e) < 0;
@@ -196,17 +196,14 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x9e2
-    // Size: 0x137
+    // Checksum 0x0, Offset: 0x9c5
+    // Size: 0x130
     function private function_35eda8020e32f5c0() {
-        var_20fee085e968ff25 = getscriptbundlenames("<dev string:x11f>");
+        var_20fee085e968ff25 = getscriptbundlenames("<dev string:xdd>");
         foreach (var_3032d30b52922730 in var_20fee085e968ff25) {
             s_scenedef = getscriptbundle(var_3032d30b52922730);
-            str_scene_name = strtok(function_3c8848a3a11b2553(var_3032d30b52922730), "<dev string:x134>");
+            str_scene_name = strtok(function_3c8848a3a11b2553(var_3032d30b52922730), "<dev string:xef>");
             str_scene_name = str_scene_name[1];
-            if (!isdefined(str_scene_name)) {
-                continue;
-            }
             if (!array_contains(level.var_f99b1d319e65854c, str_scene_name)) {
                 level.var_f99b1d319e65854c = function_6d6af8144a5131f1(level.var_f99b1d319e65854c, str_scene_name);
                 s_scene = spawnstruct();
@@ -221,33 +218,33 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0xb21
+    // Checksum 0x0, Offset: 0xafd
     // Size: 0x55
     function private function_259e5f65a65e7a4a(params) {
-        if (isdefined(params[0]) && params[0] == "<dev string:x139>" || !flag("<dev string:x143>")) {
-            flag_set("<dev string:x143>");
+        if (isdefined(params[0]) && params[0] == "<dev string:xf1>" || !flag("<dev string:xf8>")) {
+            flag_set("<dev string:xf8>");
             level thread function_1a6063b0e34ec373();
             return;
         }
-        flag_clear("<dev string:x143>");
+        flag_clear("<dev string:xf8>");
     }
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0xb7e
-    // Size: 0x538
+    // Checksum 0x0, Offset: 0xb5a
+    // Size: 0x547
     function private function_1a6063b0e34ec373(params) {
-        level notify("<dev string:x15d>");
-        level endon("<dev string:x15d>");
+        level notify("<dev string:x10f>");
+        level endon("<dev string:x10f>");
         var_a16d4962e4996f7 = (0.8, 0.8, 0);
         var_d67003533dc77764 = (0.8, 0, 0.8);
-        while (flag("<dev string:x143>")) {
+        while (flag("<dev string:xf8>")) {
             foreach (s_scene in level.var_a0b4eb1703be349a) {
                 var_97e88c04cc05cbbd = s_scene get_state();
                 a_ents = s_scene get_entities();
-                str_scene_name = isdefined(s_scene.var_39852edf15442735) ? s_scene.var_8ac77218f7a34e3e + "<dev string:x178>" + s_scene.var_39852edf15442735 : s_scene.var_8ac77218f7a34e3e;
-                print3d(s_scene.origin, "<dev string:x17d>" + str_scene_name, (0.8, 0, 0.8), 0.8, 0.3);
-                print3d(s_scene.origin + (0, 0, -5), "<dev string:x188>" + var_97e88c04cc05cbbd, (0.8, 0, 0.8), 0.8, 0.3);
+                str_scene_name = isdefined(s_scene.var_39852edf15442735) ? s_scene.var_8ac77218f7a34e3e + "<dev string:x127>" + s_scene.var_39852edf15442735 : s_scene.var_8ac77218f7a34e3e;
+                print3d(s_scene.origin, "<dev string:x129>" + str_scene_name, (0.8, 0, 0.8), 0.8, 0.3);
+                print3d(s_scene.origin + (0, 0, -5), "<dev string:x131>" + var_97e88c04cc05cbbd, (0.8, 0, 0.8), 0.8, 0.3);
                 foreach (ent in a_ents) {
                     if (!isdefined(ent)) {
                         continue;
@@ -277,7 +274,7 @@
                             }
                         } else if (ent scripts\common\vehicle::isvehicle() || isai(ent) || utility::issp()) {
                             if (isagent(ent) && isdefined(ent.var_b65a7211c663d3ed)) {
-                                var_8f5cd7d0a9d1ed15 = ent aigetanimtime("<dev string:x193>", ent.var_b65a7211c663d3ed);
+                                var_8f5cd7d0a9d1ed15 = ent aigetanimtime("<dev string:x139>", ent.var_b65a7211c663d3ed);
                             } else {
                                 var_8f5cd7d0a9d1ed15 = default_to(ent getanimtime(str_anim), 0);
                             }
@@ -288,28 +285,28 @@
                         }
                         var_335e78b3a74cad37 = var_b8016ad28a74c8ba * 30;
                         var_2e13d0ea5f29252f = int(var_8f5cd7d0a9d1ed15 * var_335e78b3a74cad37);
-                        str_extra_info = "<dev string:x1a3>" + var_a7ffb7e10e570a37 + "<dev string:x1b2>" + var_b8016ad28a74c8ba + "<dev string:x1b7>" + var_2e13d0ea5f29252f + "<dev string:x1b2>" + var_335e78b3a74cad37 + "<dev string:x1cb>";
+                        str_extra_info = "<dev string:x146>" + var_a7ffb7e10e570a37 + "<dev string:x152>" + var_b8016ad28a74c8ba + "<dev string:x154>" + var_2e13d0ea5f29252f + "<dev string:x152>" + var_335e78b3a74cad37 + "<dev string:x165>";
                         var_3fbeadb96e8ca187 = getanimname(str_anim);
                         if (function_73e183e02834309d(var_3fbeadb96e8ca187)) {
                             var_3fbeadb96e8ca187 = function_3c8848a3a11b2553(var_3fbeadb96e8ca187);
                         }
                         if (function_8581f011ce975a6(str_anim)) {
-                            var_fef94c1af0da7262 = "<dev string:x1d0>" + var_3fbeadb96e8ca187;
+                            var_fef94c1af0da7262 = "<dev string:x167>" + var_3fbeadb96e8ca187;
                         } else {
-                            var_fef94c1af0da7262 = "<dev string:x1df>" + var_3fbeadb96e8ca187;
+                            var_fef94c1af0da7262 = "<dev string:x173>" + var_3fbeadb96e8ca187;
                         }
                         var_b6e6ba17ec8331f4 = ent.origin - (0, 0, 15);
-                        print3d(var_b6e6ba17ec8331f4, "<dev string:x1e9>" + ent getentitynumber() + str_type + "<dev string:x1f6>" + (isdefined(str_name) ? str_name : "<dev string:x202>" + ent getentitynumber()), (0.8, 0.8, 0), 0.8, 0.3);
+                        print3d(var_b6e6ba17ec8331f4, "<dev string:x17a>" + ent getentitynumber() + str_type + "<dev string:x184>" + (isdefined(str_name) ? str_name : "<dev string:x18d>" + ent getentitynumber()), (0.8, 0.8, 0), 0.8, 0.3);
                         print3d(var_b6e6ba17ec8331f4 - (0, 0, 5), var_fef94c1af0da7262, (0.8, 0.8, 0), 0.8, 0.3);
                         print3d(var_b6e6ba17ec8331f4 - (0, 0, 11), str_extra_info, (0.8, 0.8, 0), 0.8, 0.3);
-                        ent render_tag("<dev string:x20d>");
-                        ent render_tag("<dev string:x221>");
-                        ent render_tag("<dev string:x234>");
-                        ent render_tag("<dev string:x24a>");
-                        ent render_tag("<dev string:x258>");
-                        ent render_tag("<dev string:x266>");
-                        ent render_tag("<dev string:x273>");
-                        ent render_tag("<dev string:x27e>", "<dev string:x28c>");
+                        ent render_tag("<dev string:x195>");
+                        ent render_tag("<dev string:x1a6>");
+                        ent render_tag("<dev string:x1b6>");
+                        ent render_tag("<dev string:x1c9>");
+                        ent render_tag("<dev string:x1d4>");
+                        ent render_tag("<dev string:x1df>");
+                        ent render_tag("<dev string:x1e9>");
+                        ent render_tag("<dev string:x1f1>", "<dev string:x1fc>");
                     }
                 }
             }
@@ -319,8 +316,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 3, eflags: 0x4
-    // Checksum 0x0, Offset: 0x10be
-    // Size: 0x8b
+    // Checksum 0x0, Offset: 0x10a9
+    // Size: 0x8c
     function private render_tag(str_tag, str_label, b_recorder_only) {
         str_label = default_to(str_label, str_tag);
         v_centroid = self getcentroid();
@@ -334,8 +331,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 4, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1151
-    // Size: 0xe8
+    // Checksum 0x0, Offset: 0x113d
+    // Size: 0xe9
     function private anim_origin_render(org, angles, line_length, str_label) {
         if (isdefined(org) && isdefined(angles)) {
             line_length = default_to(line_length, 6);
@@ -353,30 +350,30 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1241
-    // Size: 0x76
+    // Checksum 0x0, Offset: 0x122e
+    // Size: 0x75
     function private function_e61fb9c68ca391c0() {
         str_text = "<dev string:x1c>";
         if (isactor(self) || isagent(self)) {
-            str_text = "<dev string:x294>";
+            str_text = "<dev string:x201>";
         } else if (isplayer(self)) {
-            str_text = "<dev string:x29c>";
+            str_text = "<dev string:x206>";
         } else if (isdefined(self.vehiclename)) {
-            str_text = "<dev string:x2a8>";
+            str_text = "<dev string:x20f>";
         } else {
-            str_text = "<dev string:x2b5>" + self.classname + "<dev string:x2ba>";
+            str_text = "<dev string:x219>" + self.classname + "<dev string:x21b>";
         }
         return str_text;
     }
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x12bf
-    // Size: 0xc12
+    // Checksum 0x0, Offset: 0x12ab
+    // Size: 0xc21
     function display_scene_menu(var_8e2d937d4bb36011) {
-        str_type = "<dev string:x2bf>";
-        level notify("<dev string:x2c8>");
-        level endon("<dev string:x2c8>");
+        str_type = "<dev string:x21d>";
+        level notify("<dev string:x223>");
+        level endon("<dev string:x223>");
         waittillframeend();
         names = [];
         b_shot_menu = 0;
@@ -385,48 +382,48 @@
             s_scene = function_58e23a3be918ec3f(var_8e2d937d4bb36011);
             names = array_combine(names, s_scene function_8a37fe423de2b9db());
             names[names.size] = "<dev string:x1c>";
-            names[names.size] = "<dev string:x2de>";
-            names[names.size] = "<dev string:x2e6>";
+            names[names.size] = "<dev string:x236>";
+            names[names.size] = "<dev string:x23b>";
             names[names.size] = "<dev string:x1c>";
-            names[names.size] = "<dev string:x2ef>";
-            str_title = var_8e2d937d4bb36011 + "<dev string:x2f7>";
+            names[names.size] = "<dev string:x241>";
+            str_title = var_8e2d937d4bb36011 + "<dev string:x246>";
             b_shot_menu = 1;
             selected = default_to(level.scene_menu_shot_index, 0);
         } else {
-            if (flag("<dev string:x301>")) {
-                println("<dev string:x31b>" + str_type + "<dev string:x330>");
+            if (flag("<dev string:x24d>")) {
+                println("<dev string:x264>" + str_type + "<dev string:x276>");
             }
             var_4ba13583548f921e = 1;
             foreach (s_scene in level.var_a0b4eb1703be349a) {
                 str_scenedef = s_scene.var_8ac77218f7a34e3e;
-                s_scenedef = getscriptbundle("<dev string:x342>" + str_scenedef);
-                var_642a2c2acddcda83 = isdefined(s_scene.var_39852edf15442735) ? str_scenedef + "<dev string:x178>" + s_scene.var_39852edf15442735 : str_scenedef;
-                if (flag("<dev string:x301>")) {
-                    if (s_scene get_state() == "<dev string:x358>") {
+                s_scenedef = getscriptbundle("<dev string:x285>" + str_scenedef);
+                var_642a2c2acddcda83 = isdefined(s_scene.var_39852edf15442735) ? str_scenedef + "<dev string:x127>" + s_scene.var_39852edf15442735 : str_scenedef;
+                if (flag("<dev string:x24d>")) {
+                    if (s_scene get_state() == "<dev string:x298>") {
                         names[names.size] = var_642a2c2acddcda83;
-                        println("<dev string:x31b>" + str_type + "<dev string:xce>" + var_4ba13583548f921e + "<dev string:x363>" + str_scenedef);
+                        println("<dev string:x264>" + str_type + "<dev string:xa1>" + var_4ba13583548f921e + "<dev string:x2a0>" + str_scenedef);
                         var_4ba13583548f921e++;
                     }
                     continue;
                 }
                 names[names.size] = var_642a2c2acddcda83;
             }
-            if (flag("<dev string:x301>")) {
-                println("<dev string:x31b>" + str_type + "<dev string:x36d>");
+            if (flag("<dev string:x24d>")) {
+                println("<dev string:x264>" + str_type + "<dev string:x2a7>");
             }
             names = utility::alphabetize(names);
             foreach (str_scene_name in names) {
                 str_prefix = getsubstr(str_scene_name, 0, 4);
-                if (str_prefix == "<dev string:x37d>") {
+                if (str_prefix == "<dev string:x2b4>") {
                     names = array_remove(names, str_scene_name);
                     names = array_insert(names, str_scene_name, 0);
                 }
             }
             names[names.size] = "<dev string:x1c>";
-            names[names.size] = "<dev string:x385>";
+            names[names.size] = "<dev string:x2b9>";
             names = array_insert(names, "<dev string:x1c>", 0);
-            names = array_insert(names, "<dev string:x38d>", 0);
-            str_title = str_type + "<dev string:x3af>";
+            names = array_insert(names, "<dev string:x2be>", 0);
+            str_title = str_type + "<dev string:x2dd>";
             selected = default_to(level.scene_menu_index, 0);
         }
         if (selected > names.size - 1) {
@@ -436,7 +433,7 @@
         down_pressed = 0;
         held = 0;
         var_f98bd61d8515551 = gettime();
-        while (flag("<dev string:x3b4>")) {
+        while (flag("<dev string:x2df>")) {
             if (!isdefined(level.scene.debug_player)) {
                 level.scene.debug_player = level.players[0];
                 waitframe();
@@ -444,7 +441,7 @@
             }
             if (b_shot_menu) {
                 if (isdefined(level.last_scene_state) && isdefined(level.last_scene_state[var_8e2d937d4bb36011])) {
-                    str_title = var_8e2d937d4bb36011 + "<dev string:x3c9>" + level.last_scene_state[var_8e2d937d4bb36011] + "<dev string:x3cf>";
+                    str_title = var_8e2d937d4bb36011 + "<dev string:x2f1>" + level.last_scene_state[var_8e2d937d4bb36011] + "<dev string:x2f4>";
                 }
             }
             scene_list_settext(names, selected, str_title, b_shot_menu, 1);
@@ -454,7 +451,7 @@
                 pagecount = 0;
             }
             if (!up_pressed) {
-                if (level.scene.debug_player buttonpressed("<dev string:x20>") || level.scene.debug_player buttonpressed("<dev string:x38>")) {
+                if (level.scene.debug_player buttonpressed("<dev string:x1d>") || level.scene.debug_player buttonpressed("<dev string:x2f>")) {
                     up_pressed = 1;
                     selected--;
                     while (!isdefined(names[selected]) || names[selected] == "<dev string:x1c>") {
@@ -468,15 +465,15 @@
                         }
                     }
                 }
-            } else if (level.scene.debug_player function_ed160eec4d1b0619("<dev string:x20>") || level.scene.debug_player function_ed160eec4d1b0619("<dev string:x38>")) {
+            } else if (level.scene.debug_player function_ed160eec4d1b0619("<dev string:x1d>") || level.scene.debug_player function_ed160eec4d1b0619("<dev string:x2f>")) {
                 held = 1;
                 selected -= pagecount;
-            } else if (!level.scene.debug_player buttonpressed("<dev string:x20>") && !level.scene.debug_player buttonpressed("<dev string:x38>")) {
+            } else if (!level.scene.debug_player buttonpressed("<dev string:x1d>") && !level.scene.debug_player buttonpressed("<dev string:x2f>")) {
                 held = 0;
                 up_pressed = 0;
             }
             if (!down_pressed) {
-                if (level.scene.debug_player buttonpressed("<dev string:x2b>") || level.scene.debug_player buttonpressed("<dev string:x43>")) {
+                if (level.scene.debug_player buttonpressed("<dev string:x25>") || level.scene.debug_player buttonpressed("<dev string:x37>")) {
                     down_pressed = 1;
                     selected++;
                     while (!isdefined(names[selected]) || names[selected] == "<dev string:x1c>") {
@@ -490,10 +487,10 @@
                         }
                     }
                 }
-            } else if (level.scene.debug_player function_ed160eec4d1b0619("<dev string:x2b>") || level.scene.debug_player function_ed160eec4d1b0619("<dev string:x43>")) {
+            } else if (level.scene.debug_player function_ed160eec4d1b0619("<dev string:x25>") || level.scene.debug_player function_ed160eec4d1b0619("<dev string:x37>")) {
                 held = 1;
                 selected += pagecount;
-            } else if (!level.scene.debug_player buttonpressed("<dev string:x2b>") && !level.scene.debug_player buttonpressed("<dev string:x43>")) {
+            } else if (!level.scene.debug_player buttonpressed("<dev string:x25>") && !level.scene.debug_player buttonpressed("<dev string:x37>")) {
                 held = 0;
                 down_pressed = 0;
             }
@@ -511,32 +508,32 @@
             if (held && pagecount == 10) {
                 var_f98bd61d8515551 = gettime() + 500;
             }
-            if (names[selected] != "<dev string:x38d>" && names[selected] != "<dev string:x385>" && !b_shot_menu) {
+            if (names[selected] != "<dev string:x2be>" && names[selected] != "<dev string:x2b9>" && !b_shot_menu) {
                 s_scene = function_58e23a3be918ec3f(names[selected]);
             }
-            if (level.scene.debug_player buttonpressed("<dev string:x3d4>") || level.scene.debug_player buttonpressed("<dev string:x3e0>")) {
+            if (level.scene.debug_player buttonpressed("<dev string:x2f6>") || level.scene.debug_player buttonpressed("<dev string:x2ff>")) {
                 if (b_shot_menu) {
-                    while (level.scene.debug_player buttonpressed("<dev string:x3d4>") || level.scene.debug_player buttonpressed("<dev string:x3e0>")) {
+                    while (level.scene.debug_player buttonpressed("<dev string:x2f6>") || level.scene.debug_player buttonpressed("<dev string:x2ff>")) {
                         waitframe();
                     }
                     level.scene_menu_shot_index = selected;
                     level thread display_scene_menu();
                 } else {
                     level.scene_menu_index = selected;
-                    var_6a0645b23db85dcf = "<dev string:x3ea>" + function_f28fd66285fa2c9(@"hash_559926a6436db818") + "<dev string:x3f2>";
+                    var_6a0645b23db85dcf = "<dev string:x306>" + function_f28fd66285fa2c9(@"hash_559926a6436db818") + "<dev string:x30b>";
                     adddebugcommand(var_6a0645b23db85dcf);
                     return;
                 }
             }
-            if (names[selected] != "<dev string:x385>" && names[selected] != "<dev string:x38d>" && !b_shot_menu && isdefined(s_scene)) {
-                if (level.scene.debug_player buttonpressed("<dev string:x401>") || level.scene.debug_player buttonpressed("<dev string:x40f>")) {
+            if (names[selected] != "<dev string:x2b9>" && names[selected] != "<dev string:x2be>" && !b_shot_menu && isdefined(s_scene)) {
+                if (level.scene.debug_player buttonpressed("<dev string:x317>") || level.scene.debug_player buttonpressed("<dev string:x322>")) {
                     level.scene.debug_player setorigin(s_scene.origin);
-                    while (level.scene.debug_player buttonpressed("<dev string:x401>") || level.scene.debug_player buttonpressed("<dev string:x40f>")) {
+                    while (level.scene.debug_player buttonpressed("<dev string:x317>") || level.scene.debug_player buttonpressed("<dev string:x322>")) {
                         waitframe();
                     }
-                } else if (level.scene.debug_player buttonpressed("<dev string:x41d>") || level.scene.debug_player buttonpressed("<dev string:x42a>")) {
+                } else if (level.scene.debug_player buttonpressed("<dev string:x32d>") || level.scene.debug_player buttonpressed("<dev string:x337>")) {
                     level.scene.debug_player setorigin(s_scene.origin);
-                    while (level.scene.debug_player buttonpressed("<dev string:x41d>") || level.scene.debug_player buttonpressed("<dev string:x42a>")) {
+                    while (level.scene.debug_player buttonpressed("<dev string:x32d>") || level.scene.debug_player buttonpressed("<dev string:x337>")) {
                         waitframe();
                     }
                 }
@@ -561,19 +558,19 @@
                     waitframe();
                 }
             } else if (function_e4ca8661daaa7f0e() && isdefined(names[selected])) {
-                if (!b_shot_menu && names[selected] == "<dev string:x38d>") {
-                    if (flag("<dev string:x301>")) {
-                        flag_clear("<dev string:x301>");
+                if (!b_shot_menu && names[selected] == "<dev string:x2be>") {
+                    if (flag("<dev string:x24d>")) {
+                        flag_clear("<dev string:x24d>");
                     } else {
-                        flag_set("<dev string:x301>");
+                        flag_set("<dev string:x24d>");
                     }
                     while (function_e4ca8661daaa7f0e()) {
                         waitframe();
                     }
                     level thread display_scene_menu();
                 } else if (!b_shot_menu) {
-                    if (names[selected] == "<dev string:x385>") {
-                        var_6a0645b23db85dcf = "<dev string:x3ea>" + function_f28fd66285fa2c9(@"hash_559926a6436db818") + "<dev string:x3f2>";
+                    if (names[selected] == "<dev string:x2b9>") {
+                        var_6a0645b23db85dcf = "<dev string:x306>" + function_f28fd66285fa2c9(@"hash_559926a6436db818") + "<dev string:x30b>";
                         adddebugcommand(var_6a0645b23db85dcf);
                         return;
                     }
@@ -582,19 +579,19 @@
                         s_scene.origin = getdvarvector(@"hash_373ad6363da1c230");
                         s_scene.angles = getdvarvector(@"hash_eab41865eb0e96ea");
                     }
-                    if (names[selected] == "<dev string:x2ef>") {
+                    if (names[selected] == "<dev string:x241>") {
                         level.scene_menu_shot_index = selected;
                         while (function_e4ca8661daaa7f0e()) {
                             waitframe();
                         }
                         level thread display_scene_menu();
-                    } else if (names[selected] == "<dev string:x2de>") {
+                    } else if (names[selected] == "<dev string:x236>") {
                         s_scene thread stop();
-                    } else if (names[selected] == "<dev string:x2e6>") {
+                    } else if (names[selected] == "<dev string:x23b>") {
                         s_scene thread cleanup(1);
-                    } else if (names[selected] == "<dev string:x437>") {
+                    } else if (names[selected] == "<dev string:x341>") {
                         s_scene thread init();
-                    } else if (names[selected] == "<dev string:x43f>") {
+                    } else if (names[selected] == "<dev string:x346>") {
                         s_scene thread play();
                     } else if (names[selected] != "<dev string:x1c>") {
                         s_scene thread play(undefined, names[selected]);
@@ -614,10 +611,10 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1ed9
-    // Size: 0xd3
+    // Checksum 0x0, Offset: 0x1ed4
+    // Size: 0xd2
     function private function_58e23a3be918ec3f(var_8e2d937d4bb36011) {
-        var_80831c1ace77d57b = strtok(var_8e2d937d4bb36011, "<dev string:x178>");
+        var_80831c1ace77d57b = strtok(var_8e2d937d4bb36011, "<dev string:x127>");
         var_8e2d937d4bb36011 = var_80831c1ace77d57b[0];
         var_39852edf15442735 = var_80831c1ace77d57b[1];
         if (isdefined(var_39852edf15442735)) {
@@ -634,48 +631,48 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1fb4
+    // Checksum 0x0, Offset: 0x1fae
     // Size: 0x122
     function private scene_menu(params) {
-        if (!flag("<dev string:x3b4>")) {
-            flag_set("<dev string:x3b4>");
-            level.scene.debug_player val::set("<dev string:x447>", "<dev string:x456>", 0);
-            level.scene.debug_player val::set("<dev string:x447>", "<dev string:x464>", 0);
-            level.scene.debug_player val::set("<dev string:x447>", "<dev string:x46e>", 0);
+        if (!flag("<dev string:x2df>")) {
+            flag_set("<dev string:x2df>");
+            level.scene.debug_player val::set("<dev string:x34b>", "<dev string:x357>", 0);
+            level.scene.debug_player val::set("<dev string:x34b>", "<dev string:x362>", 0);
+            level.scene.debug_player val::set("<dev string:x34b>", "<dev string:x369>", 0);
             level thread display_scene_menu();
             return;
         }
-        flag_clear("<dev string:x3b4>");
-        level.scene.debug_player val::reset("<dev string:x447>", "<dev string:x456>");
-        level.scene.debug_player val::reset("<dev string:x447>", "<dev string:x464>");
-        level.scene.debug_player val::reset("<dev string:x447>", "<dev string:x46e>");
+        flag_clear("<dev string:x2df>");
+        level.scene.debug_player val::reset("<dev string:x34b>", "<dev string:x357>");
+        level.scene.debug_player val::reset("<dev string:x34b>", "<dev string:x362>");
+        level.scene.debug_player val::reset("<dev string:x34b>", "<dev string:x369>");
         function_b7d145bff0acb42();
     }
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 5, eflags: 0x4
-    // Checksum 0x0, Offset: 0x20de
+    // Checksum 0x0, Offset: 0x20d8
     // Size: 0x49
     function private scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_9a294debc8b593a8) {
-        if (!flag("<dev string:x477>")) {
+        if (!flag("<dev string:x36f>")) {
             thread _scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_9a294debc8b593a8);
         }
     }
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 5, eflags: 0x4
-    // Checksum 0x0, Offset: 0x212f
-    // Size: 0x35e
+    // Checksum 0x0, Offset: 0x2129
+    // Size: 0x363
     function private _scene_list_settext(strings, n_selected, str_title, b_shot_menu, var_9a294debc8b593a8) {
         if (!isdefined(var_9a294debc8b593a8)) {
             var_9a294debc8b593a8 = 1;
         }
         for (i = 0; i < var_9a294debc8b593a8; i++) {
             printtoscreen2d(150, 310, str_title, (1, 1, 1), 2.5);
-            str_mode = "<dev string:x48d>";
+            str_mode = "<dev string:x382>";
             switch (str_mode) {
             case #"hash_7038dec66d8275be": 
-                printtoscreen2d(150, 325, "<dev string:x498>", (1, 1, 1), 2.5);
+                printtoscreen2d(150, 325, "<dev string:x38a>", (1, 1, 1), 2.5);
                 break;
             case #"hash_7da50739ef480ecb": 
                 break;
@@ -693,10 +690,10 @@
                 }
                 str_scene = text;
                 if (isdefined(level.last_scene_state) && isdefined(level.last_scene_state[text])) {
-                    text += "<dev string:x3c9>" + level.last_scene_state[text] + "<dev string:x3cf>";
+                    text += "<dev string:x2f1>" + level.last_scene_state[text] + "<dev string:x2f4>";
                 }
                 if (i == 5) {
-                    text = "<dev string:x4d5>" + text + "<dev string:x4db>";
+                    text = "<dev string:x3bb>" + text + "<dev string:x3be>";
                     str_color = (0.8, 0.4, 0);
                 } else if (str_scene != "<dev string:x1c>") {
                     str_color = (0, 1, 0);
@@ -709,21 +706,21 @@
                 if (!isdefined(level.scene.var_49da744408f4f28b)) {
                     level.scene.var_49da744408f4f28b = newhudelem();
                 }
-                level.scene.var_49da744408f4f28b.alignx = "<dev string:x4e0>";
+                level.scene.var_49da744408f4f28b.alignx = "<dev string:x3c0>";
                 level.scene.var_49da744408f4f28b.x = 50;
                 level.scene.var_49da744408f4f28b.y = 250;
                 level.scene.var_49da744408f4f28b.fontscale = 1;
                 level.scene.var_49da744408f4f28b.color = (1, 1, 1);
                 var_86a3f727eee2600c = "<dev string:x1c>";
                 if (level.scene.debug_player usinggamepad()) {
-                    var_86a3f727eee2600c = "<dev string:x4e8>";
+                    var_86a3f727eee2600c = "<dev string:x3c5>";
                 } else {
-                    var_86a3f727eee2600c = "<dev string:x54e>";
+                    var_86a3f727eee2600c = "<dev string:x428>";
                 }
                 level.scene.var_49da744408f4f28b setdevtext(var_86a3f727eee2600c);
             } else {
                 function_b7d145bff0acb42();
-                printtoscreen2d(150, 410 + 480, "<dev string:x597>", (1, 1, 1), 2.5);
+                printtoscreen2d(150, 410 + 480, "<dev string:x46e>", (1, 1, 1), 2.5);
             }
             waitframe();
         }
@@ -731,7 +728,7 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2495
+    // Checksum 0x0, Offset: 0x2494
     // Size: 0x35
     function private function_b7d145bff0acb42() {
         if (isdefined(level.scene.var_49da744408f4f28b)) {
@@ -741,10 +738,10 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x24d2
+    // Checksum 0x0, Offset: 0x24d1
     // Size: 0x6c
     function private function_e4ca8661daaa7f0e() {
-        if (level.scene.debug_player buttonpressed("<dev string:x5bc>") || level.scene.debug_player buttonpressed("<dev string:x5c8>") || level.scene.debug_player buttonpressed("<dev string:x5d4>")) {
+        if (level.scene.debug_player buttonpressed("<dev string:x490>") || level.scene.debug_player buttonpressed("<dev string:x499>") || level.scene.debug_player buttonpressed("<dev string:x4a2>")) {
             return 1;
         }
         return 0;
@@ -752,10 +749,10 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2546
+    // Checksum 0x0, Offset: 0x2545
     // Size: 0x4b
     function private function_90157e16d9b18a9d() {
-        if (level.scene.debug_player buttonpressed("<dev string:x5dd>") || level.scene.debug_player buttonpressed("<dev string:x5e9>")) {
+        if (level.scene.debug_player buttonpressed("<dev string:x4a8>") || level.scene.debug_player buttonpressed("<dev string:x4b1>")) {
             return 1;
         }
         return 0;
@@ -763,10 +760,10 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2599
+    // Checksum 0x0, Offset: 0x2598
     // Size: 0x4b
     function private function_6a0b118cb67914b8() {
-        if (level.scene.debug_player buttonpressed("<dev string:x5ee>") || level.scene.debug_player buttonpressed("<dev string:x5fa>")) {
+        if (level.scene.debug_player buttonpressed("<dev string:x4b3>") || level.scene.debug_player buttonpressed("<dev string:x4bc>")) {
             return 1;
         }
         return 0;
@@ -774,7 +771,7 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x25ec
+    // Checksum 0x0, Offset: 0x25eb
     // Size: 0x2e
     function private function_ed160eec4d1b0619(str_button) {
         if (getdvarint(@"hash_66d7268f08facc81", 0)) {
@@ -785,10 +782,10 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x2622
+    // Checksum 0x0, Offset: 0x2621
     // Size: 0xc8
     function private function_5759a29120b54c79(str_button) {
-        self endon("<dev string:x602>");
+        self endon("<dev string:x4c1>");
         self._holding_button = default_to(self._holding_button, []);
         self._holding_button[str_button] = 0;
         time_started = 0;
@@ -817,12 +814,12 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x26f2
-    // Size: 0x39f
+    // Checksum 0x0, Offset: 0x26f1
+    // Size: 0x3a3
     function function_c623b8e6e4b0a90(tag, size, duration, blendtimesec) {
-        self endon("<dev string:x610>");
-        self notify("<dev string:x627>" + tag);
-        self endon("<dev string:x627>" + tag);
+        self endon("<dev string:x4cc>");
+        self notify("<dev string:x4d2>" + tag);
+        self endon("<dev string:x4d2>" + tag);
         starttime = gettime();
         if (!isdefined(level.var_545cde3d65ac0cc)) {
             level.var_545cde3d65ac0cc = [];
@@ -858,7 +855,7 @@
                 origin = self geteye();
                 angles = self getplayerangles();
             } else {
-                print3d(origin + (0, 0, 1), "<dev string:x63c>", (1, 1, 1), 1, 0.15, 1, 1);
+                print3d(origin + (0, 0, 1), "<dev string:x4e4>", (1, 1, 1), 1, 0.15, 1, 1);
             }
             line(origin, origin + anglestoforward(angles) * size, color, 1, 0, duration);
             line(origin, origin + anglestoright(angles) * size, color * 0.75, 1, 0, duration);
@@ -870,8 +867,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2a99
-    // Size: 0xcf
+    // Checksum 0x0, Offset: 0x2a9c
+    // Size: 0xce
     function function_ce4b6d4d859ede39(var_214d924f4e137244, event, origin, angles) {
         if (!getdvarint(@"hash_143b0dff4afbd1d3", 0)) {
             return;
@@ -885,15 +882,15 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2b70
-    // Size: 0x63e
+    // Checksum 0x0, Offset: 0x2b72
+    // Size: 0x648
     function function_baa34fb5707b7466(var_214d924f4e137244, event, origin, angles) {
         assert(isdefined(var_214d924f4e137244));
         assert(isdefined(event));
         assert(isdefined(origin));
         assert(isdefined(angles));
-        level notify("<dev string:x64d>");
-        level endon("<dev string:x64d>");
+        level notify("<dev string:x4f2>");
+        level endon("<dev string:x4f2>");
         if (!isdefined(level.var_fb96551e5ea54b9)) {
             level.var_fb96551e5ea54b9 = [];
         }
@@ -938,9 +935,9 @@
                     drawnorigin = event.origin;
                     var_1b36f968431506c3 = event.angles;
                     axis = anglestoaxis(event.angles);
-                    line(event.origin, event.origin + axis["<dev string:x663>"] * 10, (1, 0, 0), 1, 0, duration);
-                    line(event.origin, event.origin + axis["<dev string:x66e>"] * 10, (0, 1, 0), 1, 0, duration);
-                    line(event.origin, event.origin + axis["<dev string:x677>"] * 10, (0, 0, 1), 1, 0, duration);
+                    line(event.origin, event.origin + axis["<dev string:x505>"] * 10, (1, 0, 0), 1, 0, duration);
+                    line(event.origin, event.origin + axis["<dev string:x50d>"] * 10, (0, 1, 0), 1, 0, duration);
+                    line(event.origin, event.origin + axis["<dev string:x513>"] * 10, (0, 0, 1), 1, 0, duration);
                 }
                 if (!isdefined(lastscene) || lastscene != event.scenename) {
                     lastscene = event.scenename;
@@ -953,9 +950,9 @@
                     print3d(eventlist.origin + offset, lastobject, (0, 1, 1), 1, scale, duration);
                     offset += (0, 0, step);
                 }
-                print3d(eventlist.origin + offset, event.event + "<dev string:x3c9>" + event.time + "<dev string:x3cf>", (1, 1, 1), 1, scale, duration);
+                print3d(eventlist.origin + offset, event.event + "<dev string:x2f1>" + event.time + "<dev string:x2f4>", (1, 1, 1), 1, scale, duration);
                 offset += (0, 0, step);
-                print3d(eventlist.origin + offset, "<dev string:x1c>" + int(event.origin[0]) + "<dev string:xa9>" + int(event.origin[1]) + "<dev string:xa9>" + int(event.origin[2]), (1, 1, 1), 1, scale, duration);
+                print3d(eventlist.origin + offset, "<dev string:x1c>" + int(event.origin[0]) + "<dev string:x88>" + int(event.origin[1]) + "<dev string:x88>" + int(event.origin[2]), (1, 1, 1), 1, scale, duration);
                 offset += (0, 0, step);
                 var_77c99123aefe423b = "<dev string:x1c>";
                 objectname = "<dev string:x1c>";
@@ -965,7 +962,7 @@
                 if (isdefined(event.objectname)) {
                     objectname = event.objectname;
                 }
-                println("<dev string:x67d>" + event.time + "<dev string:x68e>" + event.event + "<dev string:x694>" + objectname);
+                println("<dev string:x516>" + event.time + "<dev string:x524>" + event.event + "<dev string:x527>" + objectname);
             }
         }
         level.var_fb96551e5ea54b9 = undefined;
@@ -973,16 +970,13 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x31b6
-    // Size: 0xc5
+    // Checksum 0x0, Offset: 0x31c2
+    // Size: 0xbf
     function function_eeff9ce6b23bb906() {
         sceneplay = self;
         sceneroot = sceneplay.sceneroot;
         scenedata = sceneroot.scenedata;
-        if (!isdefined(scenedata)) {
-            return undefined;
-        }
-        foreach (var_56f4af8746a2d458, var_19a1a40cf0ff83b9 in sceneplay.var_7038c2a13f1f5db8) {
+        foreach (var_19a1a40cf0ff83b9 in sceneplay.var_7038c2a13f1f5db8) {
             var_214d924f4e137244 = scenedata.var_214d924f4e137244[var_56f4af8746a2d458];
             if (isplayer(var_214d924f4e137244.entity)) {
                 return var_214d924f4e137244.entity;
@@ -992,8 +986,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3283
-    // Size: 0x388
+    // Checksum 0x0, Offset: 0x3289
+    // Size: 0x38d
     function function_d4cfde3fa9af7e5a(shotindex) {
         sceneplay = self;
         if (getdvarint(@"hash_f98fc73c88850645", 0)) {
@@ -1008,29 +1002,29 @@
             player.var_43996b501c46de7f[1] = newhudelem();
             str_scene_name = default_to(sceneroot.var_8ac77218f7a34e3e, "<dev string:x1c>");
             str_shot_name = default_to(sceneroot.scenedata.scenescriptbundle.shots[shotindex].variant_object.name, "<dev string:x1c>");
-            player.var_43996b501c46de7f[0].alignx = "<dev string:x66e>";
-            player.var_43996b501c46de7f[0].aligny = "<dev string:x69b>";
-            player.var_43996b501c46de7f[0].vertalign = "<dev string:x69b>";
-            player.var_43996b501c46de7f[0].horzalign = "<dev string:x66e>";
-            player.var_43996b501c46de7f[0].font = "<dev string:x6a5>";
+            player.var_43996b501c46de7f[0].alignx = "<dev string:x50d>";
+            player.var_43996b501c46de7f[0].aligny = "<dev string:x52b>";
+            player.var_43996b501c46de7f[0].vertalign = "<dev string:x52b>";
+            player.var_43996b501c46de7f[0].horzalign = "<dev string:x50d>";
+            player.var_43996b501c46de7f[0].font = "<dev string:x532>";
             player.var_43996b501c46de7f[0].x = -20;
             player.var_43996b501c46de7f[0].y = -90;
             player.var_43996b501c46de7f[0].fontscale = 1;
             player.var_43996b501c46de7f[0].color = (0.6, 0.6, 0.6);
-            player.var_43996b501c46de7f[1].alignx = "<dev string:x66e>";
-            player.var_43996b501c46de7f[1].aligny = "<dev string:x69b>";
-            player.var_43996b501c46de7f[1].vertalign = "<dev string:x69b>";
-            player.var_43996b501c46de7f[1].horzalign = "<dev string:x66e>";
-            player.var_43996b501c46de7f[1].font = "<dev string:x6a5>";
+            player.var_43996b501c46de7f[1].alignx = "<dev string:x50d>";
+            player.var_43996b501c46de7f[1].aligny = "<dev string:x52b>";
+            player.var_43996b501c46de7f[1].vertalign = "<dev string:x52b>";
+            player.var_43996b501c46de7f[1].horzalign = "<dev string:x50d>";
+            player.var_43996b501c46de7f[1].font = "<dev string:x532>";
             player.var_43996b501c46de7f[1].x = -20;
             player.var_43996b501c46de7f[1].y = -70;
             player.var_43996b501c46de7f[1].fontscale = 1;
             player.var_43996b501c46de7f[1].color = (0.6, 0.6, 0.6);
-            player.var_43996b501c46de7f[0] setdevtext("<dev string:x17d>" + str_scene_name);
+            player.var_43996b501c46de7f[0] setdevtext("<dev string:x129>" + str_scene_name);
             if (isdefined(sceneroot.var_2f23edb971f368a6)) {
-                shottext = "<dev string:x6b3>" + str_shot_name + "<dev string:x6bd>" + sceneroot.var_2f23edb971f368a6;
+                shottext = "<dev string:x53d>" + str_shot_name + "<dev string:x544>" + sceneroot.var_2f23edb971f368a6;
             } else {
-                shottext = "<dev string:x6b3>" + str_shot_name;
+                shottext = "<dev string:x53d>" + str_shot_name;
             }
             player.var_43996b501c46de7f[1] setdevtext(shottext);
         }
@@ -1038,8 +1032,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3613
-    // Size: 0xee
+    // Checksum 0x0, Offset: 0x361e
+    // Size: 0xef
     function function_6b2bc344ea55f120() {
         sceneplay = self;
         if (getdvarint(@"hash_f98fc73c88850645", 0)) {
@@ -1062,8 +1056,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3709
-    // Size: 0x2c5
+    // Checksum 0x0, Offset: 0x3715
+    // Size: 0x2cc
     function function_ffae6ec92028ce08(shotindexes, duration, cameras) {
         if (!isdefined(duration)) {
             duration = 5;
@@ -1084,11 +1078,11 @@
             foreach (arrayindex, shotindex in shotindexes) {
                 hudelem = newhudelem();
                 str_shot_name = default_to(sceneroot.scenedata.scenescriptbundle.shots[shotindex].variant_object.name, "<dev string:x1c>");
-                hudelem.alignx = "<dev string:x66e>";
-                hudelem.aligny = "<dev string:x69b>";
-                hudelem.vertalign = "<dev string:x69b>";
-                hudelem.horzalign = "<dev string:x66e>";
-                hudelem.font = "<dev string:x6a5>";
+                hudelem.alignx = "<dev string:x50d>";
+                hudelem.aligny = "<dev string:x52b>";
+                hudelem.vertalign = "<dev string:x52b>";
+                hudelem.horzalign = "<dev string:x50d>";
+                hudelem.font = "<dev string:x532>";
                 hudelem.x = -25;
                 hudelem.y = y;
                 hudelem.fontscale = 1;
@@ -1096,24 +1090,24 @@
                 cameratext = "<dev string:x1c>";
                 if (isdefined(cameras) && isdefined(cameras[arrayindex])) {
                     camerapos = cameras[arrayindex];
-                    cameratext = "<dev string:x6c8>" + int(camerapos[0]) + "<dev string:xa9>" + int(camerapos[1]) + "<dev string:xa9>" + int(camerapos[2]) + "<dev string:x6ce>";
+                    cameratext = "<dev string:x54c>" + int(camerapos[0]) + "<dev string:x88>" + int(camerapos[1]) + "<dev string:x88>" + int(camerapos[2]) + "<dev string:x54f>";
                 }
-                hudelem setdevtext(cameratext + "<dev string:x6d4>" + str_scene_name + "<dev string:x6e4>" + str_shot_name);
+                hudelem setdevtext(cameratext + "<dev string:x552>" + str_scene_name + "<dev string:x55f>" + str_shot_name);
                 y -= 20;
                 player.var_7c8fce4c59afb3ae[player.var_7c8fce4c59afb3ae.size] = hudelem;
             }
         }
         if (duration >= 0 && isdefined(player)) {
-            player function_f9a207358d70923c(duration, "<dev string:x6eb>", &function_7fb7bdf37cd47759);
+            player function_f9a207358d70923c(duration, "<dev string:x563>", &function_7fb7bdf37cd47759);
         }
     }
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x39d6
-    // Size: 0x86
+    // Checksum 0x0, Offset: 0x39e9
+    // Size: 0x83
     function function_7fb7bdf37cd47759() {
-        self notify("<dev string:x6eb>");
+        self notify("<dev string:x563>");
         if (!isdefined(self)) {
             return;
         }
@@ -1129,8 +1123,8 @@
 
     // Namespace scene / namespace_6068faad90cf91ee
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3a64
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x3a74
+    // Size: 0x7a
     function function_2fbba7f29e8d78ce(var_56f4af8746a2d458, var_36ca2785f01c660c) {
         var_fdc8fd88a88422e5 = getdvarint(@"hash_3bc9bc279e3f772", 0);
         if (isdefined(var_36ca2785f01c660c)) {

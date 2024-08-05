@@ -1656,15 +1656,15 @@ function getmatchrulesdatawithteamandindex(category, team, index, field, arg1, a
 // Checksum 0x0, Offset: 0x4c24
 // Size: 0x50
 function isspawnprotected() {
-    return !function_483cc81bff18273b(self) && isdefined(self.spawntime) && isdefined(level.killstreakspawnshielddelayms) && gettime() < self.spawntime + level.killstreakspawnshielddelayms && !istrue(self.clearSpawnProtection);
+    return !function_483cc81bff18273b(self) && isdefined(self.spawntime) && isdefined(level.killstreakspawnshielddelayms) && gettime() < self.spawntime + level.killstreakspawnshielddelayms && !istrue(self.var_e3301eb009262dfa);
 }
 
 // Namespace game_utility / scripts\mp\utility\game
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c7d
 // Size: 0xd
-function clearSpawnProtection() {
-    self.clearSpawnProtection = 1;
+function function_e3301eb009262dfa() {
+    self.var_e3301eb009262dfa = 1;
 }
 
 // Namespace game_utility / scripts\mp\utility\game

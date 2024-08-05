@@ -13,8 +13,8 @@
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cc
-// Size: 0x14a
+// Checksum 0x0, Offset: 0x450
+// Size: 0x14d
 function playanim_exit(asmname, statename, params) {
     self endon(statename + "_finished");
     startanim = asm_getanim(asmname, statename);
@@ -50,8 +50,8 @@ function playanim_exit(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x61e
-// Size: 0x9b
+// Checksum 0x0, Offset: 0x5a5
+// Size: 0x9c
 function chooseanim_exit(asmname, statename, params) {
     var_ee2a14cc5b990a1b = 0;
     if (isdefined(params)) {
@@ -78,7 +78,7 @@ function chooseanim_exit(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c2
+// Checksum 0x0, Offset: 0x64a
 // Size: 0x35
 function determinedesiredexitspeed() {
     var_a7d951a8f516dc41 = 70;
@@ -91,8 +91,8 @@ function determinedesiredexitspeed() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x700
-// Size: 0xd1
+// Checksum 0x0, Offset: 0x688
+// Size: 0xd4
 function chooseanim_exitsoldier(asmname, statename, params) {
     suffix = "";
     if (isentasoldier() && demeanorhasblendspace()) {
@@ -117,14 +117,14 @@ function chooseanim_exitsoldier(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x7da
-// Size: 0xf0
+// Checksum 0x0, Offset: 0x765
+// Size: 0xf1
 function getstartanim(statename, optionalsuffix, idx, var_72c986bd4a45a6c1) {
     if (!isdefined(optionalsuffix)) {
         optionalsuffix = "";
     }
-    assert(!asm_hasalias(statename, "<dev string:x1c>" + optionalsuffix));
-    assert(!asm_hasalias(statename, "<dev string:x21>" + optionalsuffix));
+    assert(!asm_hasalias(statename, "0" + optionalsuffix));
+    assert(!asm_hasalias(statename, "5" + optionalsuffix));
     var_f9129a56a004cdb7 = [2, 3, 6, 9, 8, 7, 4, 1, 2];
     keypadidx = var_f9129a56a004cdb7[idx];
     if (keypadidx == 8) {
@@ -141,8 +141,8 @@ function getstartanim(statename, optionalsuffix, idx, var_72c986bd4a45a6c1) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d3
-// Size: 0x41
+// Checksum 0x0, Offset: 0x85f
+// Size: 0x40
 function getstartmindist() {
     demeanor = asm_getdemeanor();
     if (demeanor == "casual" || demeanor == "casual_gun" || self aigetdesiredspeed() <= 60) {
@@ -153,7 +153,7 @@ function getstartmindist() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91d
+// Checksum 0x0, Offset: 0x8a8
 // Size: 0x106
 function getexitnode() {
     exitnode = undefined;
@@ -178,8 +178,8 @@ function getexitnode() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2c
-// Size: 0x569
+// Checksum 0x0, Offset: 0x9b7
+// Size: 0x58b
 function determinestartanim(statename, var_8a1b6d26fbf96ea9, optionalsuffix) {
     negstartnode = self getnegotiationstartnode();
     if (isdefined(negstartnode)) {
@@ -286,7 +286,7 @@ function determinestartanim(statename, var_8a1b6d26fbf96ea9, optionalsuffix) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9e
+// Checksum 0x0, Offset: 0xf4b
 // Size: 0x1b
 function movebattlechatter_helper(var_2e5e380655d9414) {
     self endon("death");
@@ -298,30 +298,30 @@ function movebattlechatter_helper(var_2e5e380655d9414) {
 
     // Namespace move / scripts\asm\soldier\move
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xfc1
+    // Checksum 0x0, Offset: 0xf6e
     // Size: 0x84
     function function_c0771b0b4a16ebde(statename) {
         if (getdvarint(@"hash_79e471363d9c6b91", 0) == 0) {
             return;
         }
-        self notify("<dev string:x26>");
-        self endon("<dev string:x3b>");
-        self endon(statename + "<dev string:x50>");
+        self notify("<dev string:x1c>");
+        self endon("<dev string:x2e>");
+        self endon(statename + "<dev string:x40>");
         while (true) {
-            print3d(self.origin + (0, 0, 72), "<dev string:x5d>", (1, 0.25, 0.25), 1, 2, 1);
+            print3d(self.origin + (0, 0, 72), "<dev string:x4a>", (1, 0.25, 0.25), 1, 2, 1);
             wait 0.05;
         }
     }
 
     // Namespace move / scripts\asm\soldier\move
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x104d
+    // Checksum 0x0, Offset: 0xffa
     // Size: 0x5a
     function function_ac721a17dab10e87(suffix, statename, node) {
-        if (isdefined(suffix) && suffix != "<dev string:x62>") {
+        if (isdefined(suffix) && suffix != "<dev string:x4c>") {
             thread function_c0771b0b4a16ebde(statename);
         }
-        if (isdefined(node) && node.type != "<dev string:x6e>") {
+        if (isdefined(node) && node.type != "<dev string:x55>") {
             thread function_c0771b0b4a16ebde(statename);
         }
     }
@@ -330,8 +330,8 @@ function movebattlechatter_helper(var_2e5e380655d9414) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10af
-// Size: 0x4c7
+// Checksum 0x0, Offset: 0x105c
+// Size: 0x4df
 function playstartanim(asmname, statename, startanim, var_bef3b4b769e8abe4) {
     self endon(statename + "_finished");
     lookaheadpos = self getposonpath(128);
@@ -390,7 +390,7 @@ function playstartanim(asmname, statename, startanim, var_bef3b4b769e8abe4) {
             motionwarpwithnotetracks(startxanim, var_583b1c0039d7eba0, (0, var_364f8dea82c92744, 0), undefined, "corner", undefined, 0);
         }
     } else if (warpstarttimes.size == 0 || warpstarttimes[0] == 0) {
-        assertex(var_370a8c08be55a7a5.size > 0, "<dev string:x79>" + function_3c8848a3a11b2553(getanimname(startxanim)));
+        assertex(var_370a8c08be55a7a5.size > 0, "Animation requires code_move for motion warp: " + function_3c8848a3a11b2553(getanimname(startxanim)));
         duration = undefined;
         if (warpstarttimes.size > 0 && var_d9a20f501851b31e.size > 0 && var_d9a20f501851b31e[0] < var_370a8c08be55a7a5[0]) {
             duration = int((var_d9a20f501851b31e[0] - warpstarttimes[0]) * getanimlength(startxanim) * 1000);
@@ -420,8 +420,8 @@ function playstartanim(asmname, statename, startanim, var_bef3b4b769e8abe4) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x157e
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x1543
+// Size: 0x9d
 function motionwarp_localizedata(animdata, groundent) {
     var_d352089b1ad84c9f = invertangles(groundent.angles);
     var_ae6b4de373bb5886 = animdata.posalongpath - groundent.origin;
@@ -434,8 +434,8 @@ function motionwarp_localizedata(animdata, groundent) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1623
-// Size: 0xd6
+// Checksum 0x0, Offset: 0x15e9
+// Size: 0xda
 function motionwarp_getworldifydata(animdata) {
     posalongpath = undefined;
     anglealongpath = undefined;
@@ -453,8 +453,8 @@ function motionwarp_getworldifydata(animdata) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1701
-// Size: 0x11a
+// Checksum 0x0, Offset: 0x16cb
+// Size: 0x11d
 function handlewarpexitstart(note, params) {
     posalongpath = undefined;
     anglealongpath = undefined;
@@ -478,30 +478,30 @@ function handlewarpexitstart(note, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1823
+// Checksum 0x0, Offset: 0x17f0
 // Size: 0x15d
 function checktransitionpreconditions() {
     if (!isdefined(self.pathgoalpos)) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:xc6>");
+            function_57bc598a3c0d7a1e("<dev string:x5d>" + self getentitynumber() + "<dev string:x75>");
         #/
         return false;
     }
     if (!self.facemotion) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:xea>");
+            function_57bc598a3c0d7a1e("<dev string:x5d>" + self getentitynumber() + "<dev string:x96>");
         #/
         return false;
     }
     if (isdefined(self.disableexits) && self.disableexits) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:x109>");
+            function_57bc598a3c0d7a1e("<dev string:x5d>" + self getentitynumber() + "<dev string:xb2>");
         #/
         return false;
     }
     if (self.stairsstate != "none") {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:x129>");
+            function_57bc598a3c0d7a1e("<dev string:x5d>" + self getentitynumber() + "<dev string:xcf>");
         #/
         return false;
     }
@@ -517,7 +517,7 @@ function checktransitionpreconditions() {
     }
     if (self pathdisttogoal() < mindist) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:x139>");
+            function_57bc598a3c0d7a1e("<dev string:x5d>" + self getentitynumber() + "<dev string:xdc>");
         #/
         return false;
     }
@@ -526,11 +526,11 @@ function checktransitionpreconditions() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1989
-// Size: 0x161
+// Checksum 0x0, Offset: 0x1956
+// Size: 0x167
 function function_b2fce9f29bd45cc3(asmname, statename, params) {
     self.runngun = 1;
-    assertex(isdefined(self.enemy), "<dev string:x151>");
+    assertex(isdefined(self.enemy), "No enemy?! This should be guaranteed via check in ai_asm_builtin.cpp::ShouldRunNGun");
     var_63a5b32b096323be = self getshootfrompos();
     targetposstruct = self getshootpos(var_63a5b32b096323be);
     if (isdefined(targetposstruct)) {
@@ -560,7 +560,7 @@ function function_b2fce9f29bd45cc3(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1af3
+// Checksum 0x0, Offset: 0x1ac6
 // Size: 0x39
 function stoprunngun(asmname, statename, params) {
     self.runngun = 0;
@@ -570,8 +570,8 @@ function stoprunngun(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b34
-// Size: 0x488
+// Checksum 0x0, Offset: 0x1b07
+// Size: 0x499
 function shouldstrafeaimchange(asmname, statename, tostatename, params) {
     var_c7662529da3a7f64 = 1;
     if (var_c7662529da3a7f64) {
@@ -680,7 +680,7 @@ function shouldstrafeaimchange(asmname, statename, tostatename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc5
+// Checksum 0x0, Offset: 0x1fa9
 // Size: 0x44
 function shouldrestartaimchange(asmname, statename, tostatename, params) {
     if (asm_eventfired(asmname, "code_move") && shouldstrafeaimchange(asmname, statename, tostatename, params)) {
@@ -691,8 +691,8 @@ function shouldrestartaimchange(asmname, statename, tostatename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2012
-// Size: 0x1ee
+// Checksum 0x0, Offset: 0x1ff6
+// Size: 0x1f9
 function aimchangeorientation(turnxanim, rate, endtime, var_da53c72859d22ed6, var_f5704b6af9b1e950) {
     self endon("end_aim_change_orient");
     self.aimchange_oldturnrate = self.turnrate;
@@ -729,8 +729,8 @@ function aimchangeorientation(turnxanim, rate, endtime, var_da53c72859d22ed6, va
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2208
-// Size: 0x32c
+// Checksum 0x0, Offset: 0x21f7
+// Size: 0x33d
 function playanim_strafeaimchange(asmname, statename, params) {
     self endon(statename + "_finished");
     animindex = asm_getanim(asmname, statename);
@@ -849,7 +849,7 @@ function handlestrafenotetracks(note) {
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2715
-// Size: 0xac
+// Size: 0xad
 function playanim_strafereverse(asmname, statename, params) {
     self endon(statename + "_finished");
     zonlytime = 0.4;
@@ -867,7 +867,7 @@ function playanim_strafereverse(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x27c9
+// Checksum 0x0, Offset: 0x27ca
 // Size: 0x23
 function strafereverse_cleanup(asmname, statename, params) {
     self setstrafereverse(0);
@@ -875,7 +875,7 @@ function strafereverse_cleanup(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x27f4
+// Checksum 0x0, Offset: 0x27f5
 // Size: 0x4b
 function chooseanim_strafearrive(asmname, statename, params) {
     assert(isdefined(self.asm.strafearrival_animindex));
@@ -884,7 +884,7 @@ function chooseanim_strafearrive(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2848
+// Checksum 0x0, Offset: 0x2849
 // Size: 0x8f
 function choosewalkandtalkanims(asmname, statename, params) {
     animstruct = spawnstruct();
@@ -899,7 +899,7 @@ function choosewalkandtalkanims(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28e0
+// Checksum 0x0, Offset: 0x28e1
 // Size: 0x37
 function shouldwalkandtalk() {
     return bb_moverequested() && isdefined(self._blackboard.walk_and_talk_requested) && self._blackboard.walk_and_talk_requested;
@@ -907,7 +907,7 @@ function shouldwalkandtalk() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2920
+// Checksum 0x0, Offset: 0x2921
 // Size: 0x2d
 function walkandtalkdonotetracks(asmname, statename) {
     self endon(statename + "_finished");
@@ -918,8 +918,8 @@ function walkandtalkdonotetracks(asmname, statename) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2955
-// Size: 0x3c9
+// Checksum 0x0, Offset: 0x2956
+// Size: 0x3de
 function movewalkandtalk(asmname, statename, params) {
     self endon(statename + "_finished");
     self.requestarrivalnotify = 1;
@@ -1026,8 +1026,8 @@ function movewalkandtalk(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d26
-// Size: 0x13a
+// Checksum 0x0, Offset: 0x2d3c
+// Size: 0x142
 function anglediffwalkandtalk() {
     targetpos = self.walk_and_talk_target.origin;
     actorpos = self.origin;
@@ -1068,8 +1068,8 @@ function anglediffwalkandtalk() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e68
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x2e86
+// Size: 0xe7
 function getwalkandtalkanimweights(yaw) {
     animweights = [];
     for (index = 0; index < 3; index++) {
@@ -1092,8 +1092,8 @@ function getwalkandtalkanimweights(yaw) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f53
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x2f76
+// Size: 0x4a
 function movestartbattlechatter(var_2e5e380655d9414) {
     movetype = scripts\asm\asm::asm_getdemeanor();
     if (movetype == "frantic" || movetype == "combat" || movetype == "sprint") {
@@ -1103,8 +1103,8 @@ function movestartbattlechatter(var_2e5e380655d9414) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fa6
-// Size: 0x77
+// Checksum 0x0, Offset: 0x2fc8
+// Size: 0x78
 function shouldreloadwhilemoving(asmname, statename, tostatename, params) {
     if (!scripts\asm\asm_bb::bb_reloadrequested()) {
         return false;
@@ -1121,7 +1121,7 @@ function shouldreloadwhilemoving(asmname, statename, tostatename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3026
+// Checksum 0x0, Offset: 0x3049
 // Size: 0x5a
 function choosereloadwhilemoving(asmname, statename, params) {
     alias = "reload";
@@ -1134,8 +1134,8 @@ function choosereloadwhilemoving(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3089
-// Size: 0x66
+// Checksum 0x0, Offset: 0x30ac
+// Size: 0x65
 function playreloadwhilemoving(asmname, statename, params) {
     self endon(statename + "_finished");
     self.requestarrivalnotify = 1;
@@ -1147,7 +1147,7 @@ function playreloadwhilemoving(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x30f7
+// Checksum 0x0, Offset: 0x3119
 // Size: 0x3b
 function terminatereloadwhilemoving(asmname, statename, params) {
     if (!scripts\asm\asm::asm_eventfired(asmname, "reload done")) {
@@ -1158,7 +1158,7 @@ function terminatereloadwhilemoving(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x313a
+// Checksum 0x0, Offset: 0x315c
 // Size: 0x1f
 function isonanystairs() {
     return isdefined(self.pathgoalpos) && self.stairsstate != "none";
@@ -1166,7 +1166,7 @@ function isonanystairs() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3162
+// Checksum 0x0, Offset: 0x3184
 // Size: 0x36
 function getgroundangle() {
     slope = self actorgetgroundslope();
@@ -1179,8 +1179,8 @@ function getgroundangle() {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a1
-// Size: 0xd4
+// Checksum 0x0, Offset: 0x31c3
+// Size: 0xd6
 function chooseanim_stairs(asmname, statename, params) {
     assert(isdefined(self.asm.footsteps.foot));
     if (self.asm.footsteps.foot == "left") {
@@ -1201,8 +1201,8 @@ function chooseanim_stairs(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x327e
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x32a2
+// Size: 0xec
 function chooseanim_stairs_rise_run(asmname, statename, params) {
     alias = "8x10";
     angle = getgroundangle();
@@ -1231,8 +1231,8 @@ function chooseanim_stairs_rise_run(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3370
-// Size: 0x2e5
+// Checksum 0x0, Offset: 0x3397
+// Size: 0x2f2
 function slopeupdate(asmname, statename, params) {
     if (isagent(self)) {
         return;
@@ -1268,7 +1268,7 @@ function slopeupdate(asmname, statename, params) {
                 line(self.origin, self.origin + 300 * anglesforward, (1, 0, 0), 4);
                 line(self.origin, self.origin + 300 * raynormal, (0, 1, 0), 4);
                 line(self.origin, self.origin + 300 * normproj, (0, 0, 1), 4);
-                print3d(self.origin + (24, 0, 66), "<dev string:x1a8>" + var_873556140ea95085 + "<dev string:x1b3>" + var_d3ee4b860b00683f, (0.5, 0.5, 0.75), 1, 0.45, 1);
+                print3d(self.origin + (24, 0, 66), "<dev string:xf1>" + var_873556140ea95085 + "<dev string:xf9>" + var_d3ee4b860b00683f, (0.5, 0.5, 0.75), 1, 0.45, 1);
             #/
             waitframe();
         }
@@ -1277,8 +1277,8 @@ function slopeupdate(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x365d
-// Size: 0x58
+// Checksum 0x0, Offset: 0x3691
+// Size: 0x57
 function slopecleanup(asmname, statename, params) {
     if (isagent(self)) {
         return;
@@ -1289,8 +1289,8 @@ function slopecleanup(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x36bd
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x36f0
+// Size: 0xb2
 function stumblechooseanim(asmname, statename, params) {
     archetype = self getbasearchetype();
     runthreshold = getanimspeedthreshold(archetype, "run");
@@ -1308,7 +1308,7 @@ function stumblechooseanim(asmname, statename, params) {
 
 // Namespace move / scripts\asm\soldier\move
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3775
+// Checksum 0x0, Offset: 0x37ab
 // Size: 0x45
 function playanim_stumble(asmname, statename, params) {
     self.requestarrivalnotify = 1;

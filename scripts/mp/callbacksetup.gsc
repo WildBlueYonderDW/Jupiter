@@ -7,7 +7,7 @@
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac
+// Checksum 0x0, Offset: 0x160
 // Size: 0x53
 function codecallback_startgametype() {
     if (getdvar(@"hash_e6afce2cf5cf7515") == "1") {
@@ -21,7 +21,7 @@ function codecallback_startgametype() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x207
+// Checksum 0x0, Offset: 0x1bb
 // Size: 0x41
 function codecallback_playeractive() {
     if (getdvar(@"hash_e6afce2cf5cf7515") == "1") {
@@ -35,7 +35,7 @@ function codecallback_playeractive() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x250
+// Checksum 0x0, Offset: 0x204
 // Size: 0x40
 function codecallback_playerconnect() {
     if (getdvar(@"hash_e6afce2cf5cf7515") == "1") {
@@ -48,8 +48,8 @@ function codecallback_playerconnect() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x298
-// Size: 0xb4
+// Checksum 0x0, Offset: 0x24c
+// Size: 0xb5
 function codecallback_playerdisconnect(reason) {
     self notify("disconnect");
     self notify("death_or_disconnect");
@@ -71,7 +71,7 @@ function codecallback_playerdisconnect(reason) {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 15, eflags: 0x0
-// Checksum 0x0, Offset: 0x354
+// Checksum 0x0, Offset: 0x309
 // Size: 0xc4
 function codecallback_playerdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1) {
     self endon("disconnect");
@@ -83,7 +83,7 @@ function codecallback_playerdamage(einflictor, eattacker, idamage, idflags, smea
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x420
+// Checksum 0x0, Offset: 0x3d5
 // Size: 0x72
 function codecallback_playerfinishweaponchange(objoldweapon, objnewweapon) {
     self endon("disconnect");
@@ -97,32 +97,20 @@ function codecallback_playerfinishweaponchange(objoldweapon, objnewweapon) {
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x49a
-// Size: 0x8f
-function codecallback_playerimpaled(eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b) {
+// Params 8, eflags: 0x0
+// Checksum 0x0, Offset: 0x44f
+// Size: 0x7b
+function codecallback_playerimpaled(eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34) {
     self endon("disconnect");
     if (isdefined(level.weaponmapfunc)) {
         [[ level.weaponmapfunc ]](objweapon);
     }
-    [[ level.callbackplayerimpaled ]](eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34, var_d3564b2364cb59e6, var_a4d8eb0a63f60f6b);
-}
-
-// Namespace callbacksetup / scripts\mp\callbacksetup
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x531
-// Size: 0x5e
-function function_352bf03b62b5e7d3(eattacker, objweapon, vdir, magnitude, shitloc) {
-    self endon("disconnect");
-    if (isdefined(level.weaponmapfunc)) {
-        [[ level.weaponmapfunc ]](objweapon);
-    }
-    [[ level.var_189d24c2bbeed3f5 ]](eattacker, objweapon, vdir, magnitude, shitloc, 0);
+    [[ level.callbackplayerimpaled ]](eattacker, objweapon, vpointclient, vpoint, vdir, shitloc, spartname, var_19f6f25777706f34);
 }
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x597
+// Checksum 0x0, Offset: 0x4d2
 // Size: 0x90
 function codecallback_playerkilled(einflictor, eattacker, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration) {
     self endon("disconnect");
@@ -134,8 +122,8 @@ function codecallback_playerkilled(einflictor, eattacker, idamage, idflags, smea
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0x62f
-// Size: 0x1b8
+// Checksum 0x0, Offset: 0x56a
+// Size: 0x1b7
 function codecallback_vehicledamage(inflictor, attacker, damage, dflags, meansofdeath, objweapon, point, dir, hitloc, timeoffset, modelindex, attachtagname, partname, eventid) {
     partname = scripts\common\vehicle::function_8ed0ffa3f8be7c75(partname);
     attachtagname = scripts\common\vehicle::function_8ed0ffa3f8be7c75(attachtagname);
@@ -164,7 +152,7 @@ function codecallback_vehicledamage(inflictor, attacker, damage, dflags, meansof
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ef
+// Checksum 0x0, Offset: 0x729
 // Size: 0xed
 function codecallback_playerlaststand(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration) {
     self endon("disconnect");
@@ -182,7 +170,7 @@ function codecallback_playerlaststand(einflictor, eattacker, idamage, smeansofde
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e4
+// Checksum 0x0, Offset: 0x81e
 // Size: 0x25
 function codecallback_spawnpointsprecalc(team) {
     if (isdefined(level.callbackspawnpointprecalc)) {
@@ -192,7 +180,7 @@ function codecallback_spawnpointsprecalc(team) {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x911
+// Checksum 0x0, Offset: 0x84b
 // Size: 0x3c
 function codecallback_spawnpointscore(player, spawnpoint, team) {
     if (isdefined(level.callbackspawnpointscore)) {
@@ -203,8 +191,8 @@ function codecallback_spawnpointscore(player, spawnpoint, team) {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x956
-// Size: 0x71
+// Checksum 0x0, Offset: 0x890
+// Size: 0x70
 function codecallback_spawnpointcritscore(player, spawnpoint, team) {
     result = "primary";
     if (isdefined(level.callbackspawnpointcritscore)) {
@@ -220,7 +208,7 @@ function codecallback_spawnpointcritscore(player, spawnpoint, team) {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d0
+// Checksum 0x0, Offset: 0x909
 // Size: 0x15
 function codecallback_playermigrated() {
     self endon("disconnect");
@@ -229,7 +217,7 @@ function codecallback_playermigrated() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ed
+// Checksum 0x0, Offset: 0x926
 // Size: 0xe
 function codecallback_hostmigration() {
     [[ level.callbackhostmigration ]]();
@@ -237,7 +225,7 @@ function codecallback_hostmigration() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa03
+// Checksum 0x0, Offset: 0x93c
 // Size: 0x34
 function function_99f3c84cf3b7ceb8() {
     if (getdvar(@"hash_e6afce2cf5cf7515") == "1") {
@@ -249,7 +237,7 @@ function function_99f3c84cf3b7ceb8() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3f
+// Checksum 0x0, Offset: 0x978
 // Size: 0x20
 function function_dbf77b841cfb8d59(reason) {
     self notify("disconnectmayrejoin");
@@ -258,7 +246,7 @@ function function_dbf77b841cfb8d59(reason) {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa67
+// Checksum 0x0, Offset: 0x9a0
 // Size: 0x21
 function function_c305fc8bed32b81e(achievementid, progressdata) {
     [[ level.var_cda3af1f73639c7c ]](achievementid, progressdata);
@@ -266,7 +254,7 @@ function function_c305fc8bed32b81e(achievementid, progressdata) {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa90
+// Checksum 0x0, Offset: 0x9c9
 // Size: 0x43
 function function_493bb22764bc865() {
     if (!isdefined(level.autopilot)) {
@@ -278,7 +266,7 @@ function function_493bb22764bc865() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xadc
+// Checksum 0x0, Offset: 0xa15
 // Size: 0x18
 function function_216b4c739c8bf413() {
     [[ level.autopilot.var_c214b782db6525f ]]();
@@ -286,7 +274,7 @@ function function_216b4c739c8bf413() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xafc
+// Checksum 0x0, Offset: 0xa35
 // Size: 0x18
 function function_c45c947888c3a913() {
     [[ level.autopilot.var_205cb63b80da5b ]]();
@@ -294,8 +282,8 @@ function function_c45c947888c3a913() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1c
-// Size: 0xe1
+// Checksum 0x0, Offset: 0xa55
+// Size: 0xd3
 function abortlevel() {
     println("<dev string:x1c>");
     level.callbackstartgametype = &callbackvoid;
@@ -304,7 +292,6 @@ function abortlevel() {
     level.callbackplayerdisconnect = &callbackvoid;
     level.callbackplayerdamage = &callbackvoid;
     level.callbackplayerimpaled = &callbackvoid;
-    level.var_189d24c2bbeed3f5 = &callbackvoid;
     level.callbackplayerkilled = &callbackvoid;
     level.callbackplayerlaststand = &callbackvoid;
     level.callbackplayermigrated = &callbackvoid;
@@ -317,7 +304,7 @@ function abortlevel() {
 
 // Namespace callbacksetup / scripts\mp\callbacksetup
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc05
+// Checksum 0x0, Offset: 0xb30
 // Size: 0x2
 function callbackvoid() {
     

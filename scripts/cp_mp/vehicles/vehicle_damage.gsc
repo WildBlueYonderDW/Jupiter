@@ -10,9 +10,6 @@
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\crossbow.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using scripts\engine\scriptable.gsc;
 #using scripts\cp_mp\vehicles\vehicle_damage.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
@@ -23,8 +20,8 @@
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa3
-// Size: 0xb3
+// Checksum 0x0, Offset: 0xf76
+// Size: 0xb1
 function vehicle_damage_setcandamage(bool) {
     linkedents = self getlinkedchildren(1);
     if (isdefined(linkedents)) {
@@ -44,8 +41,8 @@ function vehicle_damage_setcandamage(bool) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x105e
-// Size: 0x14c
+// Checksum 0x0, Offset: 0x102f
+// Size: 0x14b
 function vehicle_damage_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667) {
     if (istrue(create) && (!function_89dc39dc11f3988c(vehicleref) || !isdefined(function_29b4292c92443328(vehicleref).damage) || !isdefined(function_29b4292c92443328(vehicleref).damage.class))) {
         data = undefined;
@@ -71,8 +68,8 @@ function vehicle_damage_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b2
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x1182
+// Size: 0xbe
 function vehicle_damage_getinstancedataforvehicle(vehicle, create, var_6ecb77fd1f27c667) {
     var_72141eab56fb408f = vehicle.damagedata;
     if (!isdefined(var_72141eab56fb408f)) {
@@ -88,7 +85,7 @@ function vehicle_damage_getinstancedataforvehicle(vehicle, create, var_6ecb77fd1
             var_72141eab56fb408f.heavydamageaward = undefined;
             var_72141eab56fb408f.heavydamageawardlaunchonly = undefined;
         } else if (!istrue(var_6ecb77fd1f27c667)) {
-            assertmsg("<dev string:x1c>");
+            assertmsg("vehicle_damage_getInstanceDataForVehicle called on a vehicle without damage instance data.");
         }
     }
     return var_72141eab56fb408f;
@@ -96,7 +93,7 @@ function vehicle_damage_getinstancedataforvehicle(vehicle, create, var_6ecb77fd1
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x127a
+// Checksum 0x0, Offset: 0x1249
 // Size: 0x16
 function vehicle_damage_deregisterinstance(vehicle) {
     vehicle.damagedata = undefined;
@@ -104,7 +101,7 @@ function vehicle_damage_deregisterinstance(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1298
+// Checksum 0x0, Offset: 0x1267
 // Size: 0xa7
 function vehicle_damage_getleveldatafordamagestate(vehicleref, stateref, create, var_6ecb77fd1f27c667) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, create, var_6ecb77fd1f27c667);
@@ -117,7 +114,7 @@ function vehicle_damage_getleveldatafordamagestate(vehicleref, stateref, create,
             var_d2e455d494f8d46e.onentercallback = undefined;
             var_d2e455d494f8d46e.onexitcallback = undefined;
         } else if (!istrue(var_6ecb77fd1f27c667)) {
-            assertmsg("<dev string:x7a>");
+            assertmsg("vehicle_damage_getLevelDataForDamageState called with an invalid stateRef.");
         }
     }
     return var_d2e455d494f8d46e;
@@ -125,8 +122,8 @@ function vehicle_damage_getleveldatafordamagestate(vehicleref, stateref, create,
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1348
-// Size: 0x91
+// Checksum 0x0, Offset: 0x1317
+// Size: 0x8f
 function vehicle_damage_clearvisuals(data, changed, fromdeath) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(function_d93ec4635290febd(), 0, 1);
     if (isdefined(var_e2818ad39a3341b4)) {
@@ -138,7 +135,7 @@ function vehicle_damage_clearvisuals(data, changed, fromdeath) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e1
+// Checksum 0x0, Offset: 0x13ae
 // Size: 0x12
 function function_b0662e99fcc0b8e0() {
     function_653b96ce8310763e(self.maxhealth);
@@ -146,8 +143,8 @@ function function_b0662e99fcc0b8e0() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13fb
-// Size: 0x66
+// Checksum 0x0, Offset: 0x13c8
+// Size: 0x65
 function function_653b96ce8310763e(var_ca12ff65fd9d113e) {
     self.health = int(min(self.health + var_ca12ff65fd9d113e, self.maxhealth));
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(function_d93ec4635290febd(), undefined, 1);
@@ -160,8 +157,8 @@ function function_653b96ce8310763e(var_ca12ff65fd9d113e) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1469
-// Size: 0x16a
+// Checksum 0x0, Offset: 0x1435
+// Size: 0x16b
 function function_9cac3af67ee6b40a(vehicle, player, idamage, idflags, shitloc, smeansofdeath, eattacker, objweapon) {
     seatid = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getoccupantseat(vehicle, player);
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicle function_d93ec4635290febd());
@@ -182,8 +179,8 @@ function function_9cac3af67ee6b40a(vehicle, player, idamage, idflags, shitloc, s
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15dc
-// Size: 0x4d5
+// Checksum 0x0, Offset: 0x15a9
+// Size: 0x4d8
 function function_f7123f6d38d50909() {
     self endon("death");
     function_a913d098054d5bce();
@@ -272,8 +269,8 @@ function function_f7123f6d38d50909() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab9
-// Size: 0x18f
+// Checksum 0x0, Offset: 0x1a89
+// Size: 0x190
 function function_577bb0f5a3fcc2bc(target) {
     target setcandamage(0);
     target.exploding = 1;
@@ -307,8 +304,8 @@ function function_577bb0f5a3fcc2bc(target) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c50
-// Size: 0x42
+// Checksum 0x0, Offset: 0x1c21
+// Size: 0x41
 function function_a913d098054d5bce() {
     explosion = spawn("script_model", self.origin);
     explosion setmodel("trophy_system_mp_explode");
@@ -318,7 +315,7 @@ function function_a913d098054d5bce() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9a
+// Checksum 0x0, Offset: 0x1c6a
 // Size: 0x1c
 function function_870cbf6ca47076b6(vehicleref) {
     return vehicle_damage_getleveldataforvehicle(vehicleref).var_9d70f02394c136da;
@@ -326,7 +323,7 @@ function function_870cbf6ca47076b6(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cbf
+// Checksum 0x0, Offset: 0x1c8f
 // Size: 0x1c
 function function_32b9b5d07bb56c31(vehicleref) {
     return vehicle_damage_getleveldataforvehicle(vehicleref).var_ccfde1208ef2964b;
@@ -334,8 +331,8 @@ function function_32b9b5d07bb56c31(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce4
-// Size: 0x72
+// Checksum 0x0, Offset: 0x1cb4
+// Size: 0x71
 function function_bc320cf9a1b27cb5(vehicleref, tagname, var_b4fccc158c681073, var_1c60586652067d4c) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     if (isdefined(var_b4fccc158c681073)) {
@@ -348,8 +345,8 @@ function function_bc320cf9a1b27cb5(vehicleref, tagname, var_b4fccc158c681073, va
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5e
-// Size: 0x33
+// Checksum 0x0, Offset: 0x1d2d
+// Size: 0x32
 function function_1f39191797c711b6(vehicleref, var_8490f7216313a83) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     var_e2818ad39a3341b4.var_8490f7216313a83 = var_8490f7216313a83;
@@ -357,8 +354,8 @@ function function_1f39191797c711b6(vehicleref, var_8490f7216313a83) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d99
-// Size: 0x197
+// Checksum 0x0, Offset: 0x1d67
+// Size: 0x198
 function function_268e0e5863858dcf(vehicle, spawndata) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicle function_d93ec4635290febd(), 0, 1);
     ishusk = vehicle isvehiclehusk();
@@ -394,45 +391,9 @@ function function_268e0e5863858dcf(vehicle, spawndata) {
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f38
-// Size: 0x200
-function function_9b27177ad97bb8d8(vehicle) {
-    if (!isdefined(vehicle) || !vehicle isvehicle() || vehicle isvehiclehusk()) {
-        return;
-    }
-    data = function_29b4292c92443328(vehicle function_d93ec4635290febd());
-    tags = data.damage.var_9d70f02394c136da;
-    if (!isdefined(data) || !isdefined(data.interact) || !isdefined(data.interact.lights) || !isdefined(vehicle.damageableparts) || !isdefined(tags)) {
-        return;
-    }
-    foreach (tag, light in data.interact.lights) {
-        if (!isdefined(vehicle.damageableparts[tag]) || !function_853c0063f08b55e1(vehicle.damageableparts[tag])) {
-            continue;
-        }
-        if (!isdefined(tags[tag])) {
-            return;
-        }
-        vehicle.damageableparts[tag] = spawnstruct();
-        vehicle.damageableparts[tag].healthvalue = tags[tag].healthvalue;
-        vehicle.damageableparts[tag].var_92894ef28e2b8800 = tags[tag].var_92894ef28e2b8800;
-        state = "off";
-        if (istrue(vehicle.var_6a73f11d95750b87)) {
-            if (light.type == "engine_is_on_day_and_night") {
-                state = "on";
-            } else if (scripts\cp_mp\vehicles\vehicle_interact::function_5519f4e75a7e2d2b() && light.type == "engine_is_on_at_night") {
-                state = "on";
-            }
-        }
-        vehicle setscriptablepartstate(tag, state);
-        break;
-    }
-}
-
-// Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2140
-// Size: 0xee
+// Checksum 0x0, Offset: 0x1f07
+// Size: 0xef
 function function_963f1cb109b9c186(vehicle, tag) {
     if (!isdefined(vehicle) || !isdefined(tag)) {
         return 0;
@@ -459,8 +420,8 @@ function function_963f1cb109b9c186(vehicle, tag) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2236
-// Size: 0x308
+// Checksum 0x0, Offset: 0x1ffe
+// Size: 0x2bd
 function function_152437480e61a8a2(vehicle, damagedata, unmodifieddamage) {
     damagemultiplier = 1;
     tagnames = function_786c7ec25aad5005(vehicle, damagedata);
@@ -468,11 +429,11 @@ function function_152437480e61a8a2(vehicle, damagedata, unmodifieddamage) {
     vehicledata = vehicle_damage_getleveldataforvehicle(ref);
     /#
         if (getdvarint(@"hash_d6a84652bcb25596", 0) == 1 && tagnames.size > 0) {
-            string = "<dev string:xc8>";
+            string = "<dev string:x1c>";
             foreach (tag in tagnames) {
-                string += tag + "<dev string:xd1>";
+                string += tag + "<dev string:x22>";
             }
-            string += "<dev string:xd7>" + unmodifieddamage;
+            string += "<dev string:x25>" + unmodifieddamage;
             iprintlnbold(string);
         }
     #/
@@ -484,11 +445,6 @@ function function_152437480e61a8a2(vehicle, damagedata, unmodifieddamage) {
         damage = max(0, unmodifieddamage - function_c9f618f05861c2c5(ref, tagname));
         var_f943483e687a2247 = max(0, var_fc00c9efa9cebdbc - damage);
         vehicle.damageableparts[tagname].healthvalue = var_f943483e687a2247;
-        if (isdefined(damagedata) && isdefined(damagedata.objweapon) && iscrossbowdamage(damagedata.objweapon)) {
-            if (function_ee1ff9eed64d1e5d(vehicle, tagname)) {
-                vehicle.damageableparts[tagname].healthvalue = 0;
-            }
-        }
         if (isexplosivedamagemod(damagedata.meansofdeath)) {
             var_858e06144ffaaf87 = vehicle.damageableparts[tagname].var_92894ef28e2b8800;
             var_9824258c4e398daa = var_858e06144ffaaf87 - unmodifieddamage;
@@ -513,8 +469,8 @@ function function_152437480e61a8a2(vehicle, damagedata, unmodifieddamage) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2547
-// Size: 0x289
+// Checksum 0x0, Offset: 0x22c4
+// Size: 0x28e
 function function_9b1b715feb24f29f(vehicle, damagedata) {
     ref = vehicle function_d93ec4635290febd();
     if (!isdefined(ref)) {
@@ -531,9 +487,9 @@ function function_9b1b715feb24f29f(vehicle, damagedata) {
     tagnames = function_786c7ec25aad5005(vehicle, damagedata);
     /#
         if (getdvarint(@"hash_d6a84652bcb25596", 0) == 1 && tagnames.size > 0) {
-            string = "<dev string:xc8>";
+            string = "<dev string:x1c>";
             foreach (tag in tagnames) {
-                string += tag + "<dev string:xd1>";
+                string += tag + "<dev string:x22>";
             }
             iprintlnbold(string);
         }
@@ -565,8 +521,8 @@ function function_9b1b715feb24f29f(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x27d8
-// Size: 0x28f
+// Checksum 0x0, Offset: 0x255a
+// Size: 0x1fb
 function function_77db32aa48a42a76(vehicle, tagname, damagedata, reactivearmorexplosion) {
     deathstatename = function_82cad97b4499e421(vehicle, tagname, reactivearmorexplosion);
     vehicle setscriptablepartstate(tagname, deathstatename);
@@ -598,13 +554,6 @@ function function_77db32aa48a42a76(vehicle, tagname, damagedata, reactivearmorex
     if (isdefined(var_bafa22fcdefff511) && istrue(var_bafa22fcdefff511.var_ea596cae0d362d35) && isdefined(vehicle.reactivearmor)) {
         vehicle.reactivearmor[tagname] = undefined;
     }
-    if (isdefined(vehicle.damageableparts[tagname].var_673c6895d1418e1c)) {
-        foreach (bolt in vehicle.damageableparts[tagname].var_673c6895d1418e1c) {
-            if (isdefined(bolt) && istrue(bolt.iscrossbowbolt)) {
-                bolt scripts\cp_mp\crossbow::boltunlink();
-            }
-        }
-    }
     if (isdefined(var_b4fccc158c681073)) {
         vehicle thread [[ var_b4fccc158c681073 ]](vehicle, damagedata);
     }
@@ -612,19 +561,19 @@ function function_77db32aa48a42a76(vehicle, tagname, damagedata, reactivearmorex
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a6f
-// Size: 0x2b
-function function_6c49fb45260b8c4c(seatref) {
-    return isdefined(self) && isdefined(self.var_41e6777f1fa66044) && istrue(self.var_41e6777f1fa66044[seatref]);
+// Checksum 0x0, Offset: 0x275d
+// Size: 0x2c
+function function_b9d5a379eb1aefc7(seatref) {
+    return !isdefined(self) || !isdefined(self.var_41e6777f1fa66044) || !istrue(self.var_41e6777f1fa66044[seatref]);
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2aa3
-// Size: 0x84
+// Checksum 0x0, Offset: 0x2792
+// Size: 0x81
 function function_ec4b6f058d183338(vehicle, damagedata) {
     if (isdefined(vehicle.damageableparts)) {
-        foreach (tagname, data in vehicle.damageableparts) {
+        foreach (data in vehicle.damageableparts) {
             if (!function_853c0063f08b55e1(data)) {
                 function_77db32aa48a42a76(vehicle, tagname, damagedata);
             }
@@ -634,8 +583,8 @@ function function_ec4b6f058d183338(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b2f
-// Size: 0x99
+// Checksum 0x0, Offset: 0x281b
+// Size: 0x97
 function function_19953ff235374847(vehicle) {
     data = vehicle_damage_getleveldataforvehicle(vehicle function_d93ec4635290febd());
     tags = undefined;
@@ -644,15 +593,15 @@ function function_19953ff235374847(vehicle) {
     } else {
         tags = data.var_9d70f02394c136da;
     }
-    foreach (tag, data in tags) {
+    foreach (data in tags) {
         function_963f1cb109b9c186(vehicle, tag);
     }
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bd0
-// Size: 0x161
+// Checksum 0x0, Offset: 0x28ba
+// Size: 0x15d
 function function_9542eac6997b9060(vehicle) {
     if (isdefined(vehicle.damageableparts)) {
         var_bafa22fcdefff511 = function_2265b277a0dad0f1(vehicle function_d93ec4635290febd());
@@ -681,7 +630,7 @@ function function_9542eac6997b9060(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d39
+// Checksum 0x0, Offset: 0x2a1f
 // Size: 0x67
 function function_66ac97eba6b35b4a(vehicle, tagname, damagedata) {
     var_da9f4cd603f44758 = function_f7df41d3ad15dca8(vehicle function_d93ec4635290febd(), tagname);
@@ -694,7 +643,7 @@ function function_66ac97eba6b35b4a(vehicle, tagname, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2da8
+// Checksum 0x0, Offset: 0x2a8e
 // Size: 0x1d
 function function_4b3ef3d76f7e39b6(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 0, damagedata);
@@ -702,7 +651,7 @@ function function_4b3ef3d76f7e39b6(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dcd
+// Checksum 0x0, Offset: 0x2ab3
 // Size: 0x1e
 function function_d4c899afe6cbf533(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 1, damagedata);
@@ -710,7 +659,7 @@ function function_d4c899afe6cbf533(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2df3
+// Checksum 0x0, Offset: 0x2ad9
 // Size: 0x1e
 function function_1c35d2bee2c14d7b(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 2, damagedata);
@@ -718,7 +667,7 @@ function function_1c35d2bee2c14d7b(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e19
+// Checksum 0x0, Offset: 0x2aff
 // Size: 0x1e
 function function_2e20b5a5d4f70228(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 3, damagedata);
@@ -726,7 +675,7 @@ function function_2e20b5a5d4f70228(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e3f
+// Checksum 0x0, Offset: 0x2b25
 // Size: 0x1e
 function function_79b9f63570444468(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 4, damagedata);
@@ -734,7 +683,7 @@ function function_79b9f63570444468(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e65
+// Checksum 0x0, Offset: 0x2b4b
 // Size: 0x1e
 function function_4c7a8d0b6c6c16cd(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 5, damagedata);
@@ -742,7 +691,7 @@ function function_4c7a8d0b6c6c16cd(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e8b
+// Checksum 0x0, Offset: 0x2b71
 // Size: 0x1e
 function function_1cbe55c0515820b5(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 6, damagedata);
@@ -750,7 +699,7 @@ function function_1cbe55c0515820b5(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb1
+// Checksum 0x0, Offset: 0x2b97
 // Size: 0x1e
 function function_6469ea91038491e2(vehicle, damagedata) {
     function_7143b00f866ef1ec(vehicle, 7, damagedata);
@@ -758,12 +707,10 @@ function function_6469ea91038491e2(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ed7
-// Size: 0x2ff
+// Checksum 0x0, Offset: 0x2bbd
+// Size: 0x2e3
 function private function_7143b00f866ef1ec(vehicle, tireindex, damagedata) {
-    if (vehicle vehicle_isphysveh() && vehicle function_76fa53e72547ff02()) {
-        vehicle blowuptire(tireindex);
-    }
+    vehicle blowuptire(tireindex);
     if (!isdefined(vehicle.var_58053eabd77a8c48)) {
         vehicle.var_58053eabd77a8c48 = 0;
     }
@@ -795,12 +742,11 @@ function private function_7143b00f866ef1ec(vehicle, tireindex, damagedata) {
         damagedata.attacker vehicle_damage_givescoreandxpatframeend(#"hash_5db50bf1147f0f52", undefined, damagedata, vehicle);
         vehicle function_f3bb4f4911a1beb2("pmc_missions", "onPopTire", damagedata.attacker, isenemy);
     }
-    scripts\cp_mp\challenges::function_bd4827ad81a943a(vehicle, damagedata);
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x31de
+// Checksum 0x0, Offset: 0x2ea8
 // Size: 0xe
 function private function_79a4d42ef833438a() {
     scripts\engine\scriptable::scriptable_addusedcallback(&function_4b8d35d7af7fd960);
@@ -808,7 +754,7 @@ function private function_79a4d42ef833438a() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x31f4
+// Checksum 0x0, Offset: 0x2ebe
 // Size: 0xd3
 function function_4b8d35d7af7fd960(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     if (!isdefined(usestring) || !isdefined(instance) || !isdefined(instance.entity) || !instance.entity isvehicle()) {
@@ -820,13 +766,13 @@ function function_4b8d35d7af7fd960(instance, part, state, player, var_a5b2c54141
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32cf
-// Size: 0x8a
-function function_e6f68a61bffc259a(vehicle, var_c0d0511fe3faf573) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x2f99
+// Size: 0x80
+function function_e6f68a61bffc259a(vehicle) {
     if (isdefined(vehicle.deadwheels)) {
-        foreach (part, data in vehicle.deadwheels) {
-            function_770f9f7300665(vehicle, vehicle, part, data.wheelref, undefined, var_c0d0511fe3faf573);
+        foreach (data in vehicle.deadwheels) {
+            function_770f9f7300665(vehicle, vehicle, part, data.wheelref, undefined, 1);
             break;
         }
     }
@@ -834,11 +780,11 @@ function function_e6f68a61bffc259a(vehicle, var_c0d0511fe3faf573) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3361
-// Size: 0x82
+// Checksum 0x0, Offset: 0x3021
+// Size: 0x7f
 function function_9ae605ed3dc3bd1(vehicle) {
     if (isdefined(vehicle.deadwheels)) {
-        foreach (part, data in vehicle.deadwheels) {
+        foreach (data in vehicle.deadwheels) {
             vehicle thread function_770f9f7300665(vehicle, vehicle, part, data.wheelref, undefined, 1);
         }
     }
@@ -846,9 +792,9 @@ function function_9ae605ed3dc3bd1(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x33eb
-// Size: 0x1fe
-function private function_770f9f7300665(vehicle, scriptable, part, tirename, player, var_c0d0511fe3faf573) {
+// Checksum 0x0, Offset: 0x30a8
+// Size: 0x1ee
+function private function_770f9f7300665(vehicle, scriptable, part, tirename, player, var_2b5043846177fbc9) {
     vehicle endon("death");
     if (isdefined(player)) {
         player thread function_3bde2944d834b090();
@@ -873,19 +819,17 @@ function private function_770f9f7300665(vehicle, scriptable, part, tirename, pla
             occupant callback::callback("on_vehicle_tire_repaired");
         }
     }
-    if (isdefined(vehicle.deadwheels)) {
-        vehicle.deadwheels[part] = undefined;
-        if (vehicle.deadwheels.size == 0) {
-            vehicle.deadwheels = undefined;
-        }
+    vehicle.deadwheels[part] = undefined;
+    if (vehicle.deadwheels.size == 0) {
+        vehicle.deadwheels = undefined;
     }
-    function_c3da7bb5f5499152(vehicle, part, var_c0d0511fe3faf573);
+    function_c3da7bb5f5499152(vehicle, part, var_2b5043846177fbc9);
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x35f1
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x329e
+// Size: 0x3e
 function private function_3bde2944d834b090() {
     self endon("death_or_disconnect");
     weapobj = makeweapon("iw8_ges_plyr_loot_pickup");
@@ -898,12 +842,12 @@ function private function_3bde2944d834b090() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x3638
+// Checksum 0x0, Offset: 0x32e4
 // Size: 0x50
-function private function_c3da7bb5f5499152(vehicle, part, var_c0d0511fe3faf573) {
+function private function_c3da7bb5f5499152(vehicle, part, var_2b5043846177fbc9) {
     var_5e2e7ec5e4fd55a0 = vehicle gettagorigin(part);
     repairsound = "veh_repair_tire";
-    if (var_c0d0511fe3faf573) {
+    if (var_2b5043846177fbc9) {
         repairsound = "veh_repair_tire_at_station";
     }
     playsoundatpos(var_5e2e7ec5e4fd55a0, repairsound);
@@ -911,7 +855,7 @@ function private function_c3da7bb5f5499152(vehicle, part, var_c0d0511fe3faf573) 
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3690
+// Checksum 0x0, Offset: 0x333c
 // Size: 0xa5
 function private function_948c6c379e1a9b52(tirename) {
     switch (tirename) {
@@ -932,14 +876,14 @@ function private function_948c6c379e1a9b52(tirename) {
     case #"hash_6ade103971ce6e2c": 
         return 7;
     default: 
-        assert("<dev string:xe4>");
+        assert("vehicle_damage_tireNameToIndex Not given a valid tire name");
         break;
     }
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x373d
+// Checksum 0x0, Offset: 0x33e9
 // Size: 0x46
 function function_eae2223216b7712c(vehicle, player) {
     if (!isdefined(vehicle.var_58053eabd77a8c48)) {
@@ -950,58 +894,27 @@ function function_eae2223216b7712c(vehicle, player) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x378b
-// Size: 0x184
+// Checksum 0x0, Offset: 0x3437
+// Size: 0xd8
 function function_b9d933a7b78a67ad(data) {
-    modifieddamage = data.damage;
-    modifieddamage = function_1faeb1a037b3b515(data.inflictor, modifieddamage);
-    if (issharedfuncdefined("vehicle_damage", "modifyVehicleDamage")) {
-        modifieddamage = self [[ getsharedfunc("vehicle_damage", "modifyVehicleDamage") ]](data.inflictor, data.objweapon, modifieddamage);
-    }
-    if (isdefined(self.streakname)) {
-        bundle = level.streakglobals.streakbundles[self.streakname];
-        var_cc8913d1b2828045 = 0;
-        switch (self.streakname) {
-        case #"hash_349713b5ad494dda": 
-            var_cc8913d1b2828045 = isdefined(bundle) && istrue(bundle.var_afd5757c4e4fa4cc);
-            break;
-        case #"hash_bf2f9adbd2b41d5": 
-            var_cc8913d1b2828045 = isdefined(bundle) && istrue(bundle.var_280b2a9ef1f95ac1);
-            break;
-        case #"hash_887ad77192b9c4fb": 
-            var_cc8913d1b2828045 = isdefined(bundle) && istrue(bundle.var_8f5f5a121030bb97);
-            break;
-        }
-        if (var_cc8913d1b2828045 && isdefined(bundle)) {
-            modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedDamageUsingDamageTuning") ]](data.attacker, data.objweapon, data.meansofdeath, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
-        }
-    }
-    return modifieddamage;
-}
-
-// Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3918
-// Size: 0xa4
-function function_1faeb1a037b3b515(inflictor, damage) {
-    if (!isdefined(inflictor) || !isagent(inflictor)) {
-        return damage;
+    if (!isdefined(data.inflictor) || !isagent(data.inflictor)) {
+        return data.damage;
     }
     ref = function_d93ec4635290febd();
     if (!isdefined(ref) || !function_89dc39dc11f3988c(ref)) {
-        return damage;
+        return data.damage;
     }
     vehicledata = function_29b4292c92443328(ref);
     if (!isdefined(vehicledata) || !isdefined(vehicledata.damage) || !isdefined(vehicledata.damage.agentdamagemultiplier)) {
-        return damage;
+        return data.damage;
     }
-    return damage * vehicledata.damage.agentdamagemultiplier;
+    return data.damage * vehicledata.damage.agentdamagemultiplier;
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39c5
-// Size: 0x1a3
+// Checksum 0x0, Offset: 0x3518
+// Size: 0x1a6
 function function_c5a55810ed63c87d(data) {
     if (!isdefined(data.point) || !isdefined(data.objweapon) || !isdefined(data.objweapon.damageradius)) {
         return true;
@@ -1022,11 +935,11 @@ function function_c5a55810ed63c87d(data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b71
-// Size: 0x225
+// Checksum 0x0, Offset: 0x36c7
+// Size: 0x224
 function vehicle_damage_init() {
-    assertex(isdefined(level.vehicle), "<dev string:x122>");
-    assertex(!isdefined(level.vehicle.damage), "<dev string:x159>");
+    assertex(isdefined(level.vehicle), "vehicle_damage_init() called before vehicle_init().");
+    assertex(!isdefined(level.vehicle.damage), "vehicle_damage_init() should only be called once.");
     leveldata = spawnstruct();
     level.vehicle.damage = leveldata;
     level.var_ec75ca2494d74dab = getdvarint(@"hash_4421544b585f6be5", utility::ismp()) == 1;
@@ -1041,31 +954,31 @@ function vehicle_damage_init() {
         [[ getsharedfunc("vehicle_damage", "init") ]]();
     }
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x1a0>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:x3e>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x1c5>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:x60>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x1d9>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:x71>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x1f3>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:x88>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x217>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:xa9>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x232>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:xc1>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x256>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:xe2>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x271>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:xfa>", 1);
     #/
     /#
-        issharedfuncdefined("<dev string:x18e>", "<dev string:x28d>", 1);
+        issharedfuncdefined("<dev string:x2f>", "<dev string:x113>", 1);
     #/
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
         vehicle_damage_inithitdamage_br();
@@ -1078,8 +991,8 @@ function vehicle_damage_init() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d9e
-// Size: 0x344
+// Checksum 0x0, Offset: 0x38f3
+// Size: 0x347
 function vehicle_damage_loadtable() {
     leveldata = vehicle_damage_getleveldata();
     table = spawnstruct();
@@ -1147,8 +1060,8 @@ function vehicle_damage_loadtable() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x40ea
-// Size: 0x206
+// Checksum 0x0, Offset: 0x3c42
+// Size: 0x207
 function vehicle_damage_loadtablecell(cellstr, rowstr, rowcategory, colstr, colcategory) {
     leveldata = vehicle_damage_getleveldata();
     table = leveldata.table;
@@ -1200,8 +1113,8 @@ function vehicle_damage_loadtablecell(cellstr, rowstr, rowcategory, colstr, colc
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x42f8
-// Size: 0x219
+// Checksum 0x0, Offset: 0x3e51
+// Size: 0x213
 function vehicle_damage_applytabletovehicle(vehicleref, var_6ecb77fd1f27c667) {
     leveldata = vehicle_damage_getleveldata();
     table = leveldata.table;
@@ -1216,7 +1129,7 @@ function vehicle_damage_applytabletovehicle(vehicleref, var_6ecb77fd1f27c667) {
         }
     }
     if (isdefined(table.modsforvehicle[vehicleref])) {
-        foreach (weaponclass, mod in table.modsforvehicle[vehicleref]) {
+        foreach (mod in table.modsforvehicle[vehicleref]) {
             vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, 0, vehicleref);
         }
     }
@@ -1236,7 +1149,7 @@ function vehicle_damage_applytabletovehicle(vehicleref, var_6ecb77fd1f27c667) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4519
+// Checksum 0x0, Offset: 0x406c
 // Size: 0x26d
 function vehicle_damage_inithitdamage() {
     vehicle_damage_setweaponhitdamagedata("iw8_la_gromeo_mp", 5);
@@ -1287,7 +1200,7 @@ function vehicle_damage_inithitdamage() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x478e
+// Checksum 0x0, Offset: 0x42e1
 // Size: 0x243
 function vehicle_damage_inithitdamage_br() {
     vehicle_damage_setweaponhitdamagedata("iw8_la_gromeo_mp", 10);
@@ -1335,7 +1248,7 @@ function vehicle_damage_inithitdamage_br() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x49d9
+// Checksum 0x0, Offset: 0x452c
 // Size: 0x4a
 function vehicle_damage_initmoddamage() {
     vehicle_damage_setperkmoddamage("specialty_armorpiercing", 0.25, 0);
@@ -1346,17 +1259,17 @@ function vehicle_damage_initmoddamage() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a2b
+// Checksum 0x0, Offset: 0x457e
 // Size: 0x37
 function vehicle_damage_getleveldata() {
-    assertex(isdefined(level.vehicle.damage), "<dev string:x2a1>");
+    assertex(isdefined(level.vehicle.damage), "vehicle_damage_getLevelData() called before vehicle_damage_init().");
     return level.vehicle.damage;
 }
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a6b
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x45be
+// Size: 0xf2
 function vehicle_damage_isselfdamage(vehicle, data) {
     if (isdefined(data.inflictor)) {
         if (data.inflictor == vehicle) {
@@ -1377,7 +1290,7 @@ function vehicle_damage_isselfdamage(vehicle, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b68
+// Checksum 0x0, Offset: 0x46b9
 // Size: 0x19
 function vehicle_damage_enableownerdamage(vehicle) {
     vehicle.ownerdamageenabled = 1;
@@ -1385,7 +1298,7 @@ function vehicle_damage_enableownerdamage(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b89
+// Checksum 0x0, Offset: 0x46da
 // Size: 0x17
 function vehicle_damage_isownerdamageenabled(vehicle) {
     return istrue(vehicle.ownerdamageenabled);
@@ -1393,7 +1306,7 @@ function vehicle_damage_isownerdamageenabled(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ba9
+// Checksum 0x0, Offset: 0x46fa
 // Size: 0x11c
 function vehicle_damage_logevent(vehicle, data) {
     if (!isdefined(vehicle.damageevents)) {
@@ -1412,7 +1325,7 @@ function vehicle_damage_logevent(vehicle, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ccd
+// Checksum 0x0, Offset: 0x481e
 // Size: 0x1e
 function vehicle_damage_cleareventlog(vehicle) {
     vehicle notify("vehicle_damage_clearEventLog");
@@ -1421,7 +1334,7 @@ function vehicle_damage_cleareventlog(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cf3
+// Checksum 0x0, Offset: 0x4844
 // Size: 0x32
 function vehicle_damage_cleareventlogatframeend(vehicle) {
     vehicle endon("death");
@@ -1434,8 +1347,8 @@ function vehicle_damage_cleareventlogatframeend(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d2d
-// Size: 0x150
+// Checksum 0x0, Offset: 0x487e
+// Size: 0x14d
 function vehicle_damage_referevent(vehicle, turret, data) {
     if (!isdefined(data.meansofdeath)) {
         return 0;
@@ -1464,8 +1377,8 @@ function vehicle_damage_referevent(vehicle, turret, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e85
-// Size: 0x110
+// Checksum 0x0, Offset: 0x49d3
+// Size: 0x11e
 function vehicle_damage_keepturretalive(vehicle) {
     self endon("death");
     self endon("vehicle_damage_keepTurretAliveEnd");
@@ -1479,7 +1392,7 @@ function vehicle_damage_keepturretalive(vehicle) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f9d
+// Checksum 0x0, Offset: 0x4af9
 // Size: 0x1b
 function vehicle_damage_keepturretaliveend(turret) {
     self notify("vehicle_damage_keepTurretAliveEnd");
@@ -1488,8 +1401,8 @@ function vehicle_damage_keepturretaliveend(turret) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fc0
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x4b1c
+// Size: 0xe5
 function vehicle_damage_visualwatchspeedchange(stateref, data) {
     self notify("vehicle_damage_visualStopWatchingSpeedChange");
     self endon("vehicle_damage_visualStopWatchingSpeedChange");
@@ -1519,7 +1432,7 @@ function vehicle_damage_visualwatchspeedchange(stateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50aa
+// Checksum 0x0, Offset: 0x4c09
 // Size: 0xa
 function vehicle_damage_visualstopwatchingspeedchange() {
     self notify("vehicle_damage_visualStopWatchingSpeedChange");
@@ -1527,7 +1440,7 @@ function vehicle_damage_visualstopwatchingspeedchange() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x50bc
+// Checksum 0x0, Offset: 0x4c1b
 // Size: 0xc0
 function vehicle_damage_lightvisualcallback(data, changed) {
     speed = int(self vehicle_getspeed());
@@ -1546,8 +1459,8 @@ function vehicle_damage_lightvisualcallback(data, changed) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5184
-// Size: 0x181
+// Checksum 0x0, Offset: 0x4ce3
+// Size: 0x182
 function vehicle_damage_lightvisualclearcallback(data, changed, fromdeath) {
     vehicle_damage_visualstopwatchingspeedchange();
     if (!self isscriptable()) {
@@ -1597,7 +1510,7 @@ function vehicle_damage_lightvisualclearcallback(data, changed, fromdeath) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x530d
+// Checksum 0x0, Offset: 0x4e6d
 // Size: 0xc0
 function vehicle_damage_mediumvisualcallback(data, changed) {
     speed = int(self vehicle_getspeed());
@@ -1616,7 +1529,7 @@ function vehicle_damage_mediumvisualcallback(data, changed) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x53d5
+// Checksum 0x0, Offset: 0x4f35
 // Size: 0x35
 function vehicle_damage_mediumvisualclearcallback(data, changed, fromdeath) {
     vehicle_damage_visualstopwatchingspeedchange();
@@ -1625,7 +1538,7 @@ function vehicle_damage_mediumvisualclearcallback(data, changed, fromdeath) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5412
+// Checksum 0x0, Offset: 0x4f72
 // Size: 0xc0
 function vehicle_damage_heavyvisualcallback(data, changed) {
     speed = int(self vehicle_getspeed());
@@ -1644,7 +1557,7 @@ function vehicle_damage_heavyvisualcallback(data, changed) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x54da
+// Checksum 0x0, Offset: 0x503a
 // Size: 0x35
 function vehicle_damage_heavyvisualclearcallback(data, changed, fromdeath) {
     vehicle_damage_visualstopwatchingspeedchange();
@@ -1653,7 +1566,7 @@ function vehicle_damage_heavyvisualclearcallback(data, changed, fromdeath) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5517
+// Checksum 0x0, Offset: 0x5077
 // Size: 0x37
 function vehicle_damage_enginevisualcallback(data, changed) {
     self setscriptablepartstate("damageEngine", "explode", 1);
@@ -1664,7 +1577,7 @@ function vehicle_damage_enginevisualcallback(data, changed) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5556
+// Checksum 0x0, Offset: 0x50b6
 // Size: 0x2e
 function vehicle_damage_enginevisualclearcallback(data, changed, fromdeath) {
     self setscriptablepartstate("damageEngine", "off", 1);
@@ -1672,7 +1585,7 @@ function vehicle_damage_enginevisualclearcallback(data, changed, fromdeath) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x558c
+// Checksum 0x0, Offset: 0x50ec
 // Size: 0x1e
 function vehicle_damage_getstate() {
     if (!isdefined(self.damagestateref)) {
@@ -1683,7 +1596,7 @@ function vehicle_damage_getstate() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x55b3
+// Checksum 0x0, Offset: 0x5113
 // Size: 0xc9
 function vehicle_damage_setstate(stateref, oldstateref, data) {
     assert(isdefined(stateref) && isdefined(oldstateref) && stateref != oldstateref);
@@ -1706,8 +1619,8 @@ function vehicle_damage_setstate(stateref, oldstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5684
-// Size: 0x53
+// Checksum 0x0, Offset: 0x51e4
+// Size: 0x52
 function vehicle_damage_updatestate(data, var_fa10797979c24226, var_6ecb77fd1f27c667) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(function_d93ec4635290febd(), undefined, var_6ecb77fd1f27c667);
     if (!isdefined(var_e2818ad39a3341b4)) {
@@ -1719,8 +1632,8 @@ function vehicle_damage_updatestate(data, var_fa10797979c24226, var_6ecb77fd1f27
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x56df
-// Size: 0x252
+// Checksum 0x0, Offset: 0x523e
+// Size: 0x256
 function function_e1d544cb065687f0(data, var_fa10797979c24226, var_6ecb77fd1f27c667) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(function_d93ec4635290febd(), undefined, var_6ecb77fd1f27c667);
     vehiclehealth = self.health;
@@ -1731,8 +1644,8 @@ function function_e1d544cb065687f0(data, var_fa10797979c24226, var_6ecb77fd1f27c
     var_47073cf5d0921b2c = undefined;
     var_ad8ec7e8a1d06338 = undefined;
     foreach (stateref, statedata in var_e2818ad39a3341b4.damagestatedata) {
-        assertex(istrue(var_6ecb77fd1f27c667) || stateref != "<dev string:x2e7>", "<dev string:x2f3>" + "<dev string:x2e7>" + "<dev string:x321>");
-        assertex(istrue(var_6ecb77fd1f27c667) || isdefined(statedata.maxhealth), "<dev string:x326>" + stateref + "<dev string:x33e>");
+        assertex(istrue(var_6ecb77fd1f27c667) || stateref != "pristine", "damageStateData cannot have a stateRef of " + "pristine" + ".");
+        assertex(istrue(var_6ecb77fd1f27c667) || isdefined(statedata.maxhealth), "damageStateData for " + stateref + " must define maxHealth.");
         if ((!isdefined(var_ad8ec7e8a1d06338) || statedata.maxhealth < var_ad8ec7e8a1d06338) && vehiclehealth <= statedata.maxhealth && (!isvehiclehusk() || stateref != "light" && stateref != "medium")) {
             var_416adca164c6f319 = stateref;
             var_47073cf5d0921b2c = statedata;
@@ -1759,7 +1672,7 @@ function function_e1d544cb065687f0(data, var_fa10797979c24226, var_6ecb77fd1f27c
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5939
+// Checksum 0x0, Offset: 0x549c
 // Size: 0x27
 function vehicle_damage_disablestatedamagefloor(bool) {
     if (bool) {
@@ -1771,7 +1684,7 @@ function vehicle_damage_disablestatedamagefloor(bool) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5968
+// Checksum 0x0, Offset: 0x54cb
 // Size: 0x1d
 function vehicle_damage_onenterstatelight(oldstateref, data) {
     vehicle_damage_lightvisualcallback(data, 1);
@@ -1779,7 +1692,7 @@ function vehicle_damage_onenterstatelight(oldstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x598d
+// Checksum 0x0, Offset: 0x54f0
 // Size: 0x1d
 function vehicle_damage_onexitstatelight(newstateref, data) {
     vehicle_damage_lightvisualclearcallback(data, 1);
@@ -1787,7 +1700,7 @@ function vehicle_damage_onexitstatelight(newstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x59b2
+// Checksum 0x0, Offset: 0x5515
 // Size: 0x1d
 function vehicle_damage_onenterstatemedium(oldstateref, data) {
     vehicle_damage_mediumvisualcallback(data, 1);
@@ -1795,7 +1708,7 @@ function vehicle_damage_onenterstatemedium(oldstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x59d7
+// Checksum 0x0, Offset: 0x553a
 // Size: 0x1d
 function vehicle_damage_onexitstatemedium(newstateref, data) {
     vehicle_damage_mediumvisualclearcallback(data, 1);
@@ -1803,7 +1716,7 @@ function vehicle_damage_onexitstatemedium(newstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x59fc
+// Checksum 0x0, Offset: 0x555f
 // Size: 0x7a
 function vehicle_damage_onenterstateheavy(oldstateref, data) {
     if (scripts\cp_mp\vehicles\vehicle::isvehiclehusk()) {
@@ -1825,7 +1738,7 @@ function vehicle_damage_onenterstateheavy(oldstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a7e
+// Checksum 0x0, Offset: 0x55e1
 // Size: 0x66
 function vehicle_damage_onexitstateheavy(newstateref, data) {
     if (isvehiclehusk()) {
@@ -1844,7 +1757,7 @@ function vehicle_damage_onexitstateheavy(newstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aec
+// Checksum 0x0, Offset: 0x564f
 // Size: 0xc6
 function vehicle_damage_registerdefaultstates(vehicleref) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
@@ -1862,7 +1775,7 @@ function vehicle_damage_registerdefaultstates(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bba
+// Checksum 0x0, Offset: 0x571d
 // Size: 0x1e
 function function_d06474f0bc53709d(data) {
     self setscriptablepartstate("damageHeavy", "on", 1);
@@ -1870,8 +1783,8 @@ function function_d06474f0bc53709d(data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5be0
-// Size: 0x99
+// Checksum 0x0, Offset: 0x5743
+// Size: 0x97
 function function_27ec7be8325efa3c(data) {
     self setscriptablepartstate("damageHeavy", "off", 1);
     var_78ebf58592491d35 = scripts\cp_mp\vehicles\vehicle_spawn::function_89cda5ba9bfc8d56(self.pristineref);
@@ -1884,8 +1797,8 @@ function function_27ec7be8325efa3c(data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c81
-// Size: 0xb6
+// Checksum 0x0, Offset: 0x57e2
+// Size: 0xb8
 function vehicle_damage_getmaxhealth(vehicle, vehicleref) {
     if (!isdefined(vehicleref)) {
         vehicleref = vehicle function_d93ec4635290febd();
@@ -1914,8 +1827,8 @@ function vehicle_damage_getmaxhealth(vehicle, vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d40
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x58a3
+// Size: 0xab
 function vehicle_damage_getpristinestateminhealth(vehicle, vehicleref) {
     if (!isdefined(vehicleref)) {
         vehicleref = vehicle function_d93ec4635290febd();
@@ -1941,8 +1854,8 @@ function vehicle_damage_getpristinestateminhealth(vehicle, vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5df2
-// Size: 0x82
+// Checksum 0x0, Offset: 0x5957
+// Size: 0x83
 function vehicle_damage_getheavystatemaxhealth(vehicle, vehicleref) {
     if (!isdefined(vehicleref)) {
         vehicleref = vehicle function_d93ec4635290febd();
@@ -1964,11 +1877,11 @@ function vehicle_damage_getheavystatemaxhealth(vehicle, vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e7d
-// Size: 0x14a
+// Checksum 0x0, Offset: 0x59e3
+// Size: 0x14b
 function vehicle_damage_updatestatemaxhealthvalues(vehicleref) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
-    assertex(isdefined(var_e2818ad39a3341b4.health), "<dev string:x359>");
+    assertex(isdefined(var_e2818ad39a3341b4.health), "vehicle_damage_updateStateMaxHealthValues called on a vehicle whose level data has not assigned .health.");
     minhealth = undefined;
     maxhealth = undefined;
     foreach (stateref, statedata in var_e2818ad39a3341b4.damagestatedata) {
@@ -1995,8 +1908,8 @@ function vehicle_damage_updatestatemaxhealthvalues(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fcf
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x5b36
+// Size: 0x6b
 function vehicle_damage_getheavystatehealthadd(vehicleref) {
     leveldata = vehicle_damage_getleveldata();
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
@@ -2012,8 +1925,8 @@ function vehicle_damage_getheavystatehealthadd(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6042
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x5baa
+// Size: 0x6e
 function vehicle_damage_getmediumstatehealthratio(vehicleref) {
     leveldata = vehicle_damage_getleveldata();
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
@@ -2029,7 +1942,7 @@ function vehicle_damage_getmediumstatehealthratio(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x60b8
+// Checksum 0x0, Offset: 0x5c21
 // Size: 0x1dd
 function function_1989bd346c21b68a(data) {
     if (isdefined(data.inflictor) && isdefined(data.inflictor.weapon_name) && data.inflictor.weapon_name == "gl") {
@@ -2059,8 +1972,8 @@ function function_1989bd346c21b68a(data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x629e
-// Size: 0x24b
+// Checksum 0x0, Offset: 0x5e07
+// Size: 0x1ee
 function function_6e87d9e8601d9029(vehicle, tagname, damagedata) {
     if (!isdefined(vehicle.damageableparts)) {
         return 0;
@@ -2091,12 +2004,6 @@ function function_6e87d9e8601d9029(vehicle, tagname, damagedata) {
             return 0;
         }
     }
-    if (isdefined(damagedata) && isdefined(damagedata.objweapon) && iscrossbowdamage(damagedata.objweapon)) {
-        if (function_6065fce6cdcad(damagedata.objweapon) || function_d49206e61ac4f6de(damagedata.objweapon)) {
-            return 0;
-        }
-        return function_ee1ff9eed64d1e5d(vehicle, tagname);
-    }
     state = vehicle getscriptablepartstate(tagname, 1);
     if (isdefined(state) && state == "start_hidden") {
         return 0;
@@ -2110,8 +2017,8 @@ function function_6e87d9e8601d9029(vehicle, tagname, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64f2
-// Size: 0xac
+// Checksum 0x0, Offset: 0x5ffe
+// Size: 0xab
 function function_452936099dcd1b94(seatid) {
     data = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(function_d93ec4635290febd());
     return isdefined(data.seatdata[seatid]) && isdefined(data.seatdata[seatid].var_9a3db3c861da8d62) && isdefined(self.damageableparts) && isdefined(self.damageableparts[data.seatdata[seatid].var_9a3db3c861da8d62]) && !function_853c0063f08b55e1(self.damageableparts[data.seatdata[seatid].var_9a3db3c861da8d62]);
@@ -2119,8 +2026,8 @@ function function_452936099dcd1b94(seatid) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x65a7
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x60b2
+// Size: 0x9b
 function function_14219d4c7d83499f(seatid) {
     data = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(function_d93ec4635290febd());
     if (isdefined(data.seatdata[seatid]) && isdefined(data.seatdata[seatid].var_9a3db3c861da8d62)) {
@@ -2131,7 +2038,7 @@ function function_14219d4c7d83499f(seatid) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x664b
+// Checksum 0x0, Offset: 0x6155
 // Size: 0x46
 function function_e6ec777562579771(vehicle, seatid) {
     self endon("death_or_disconnect");
@@ -2144,7 +2051,7 @@ function function_e6ec777562579771(vehicle, seatid) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6699
+// Checksum 0x0, Offset: 0x61a3
 // Size: 0x68
 function function_14cc373f72a021a8(vehicleref, tagname) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
@@ -2160,8 +2067,8 @@ function function_14cc373f72a021a8(vehicleref, tagname) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x670a
-// Size: 0x29
+// Checksum 0x0, Offset: 0x6214
+// Size: 0x28
 function function_2265b277a0dad0f1(vehicleref) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.damageableparts;
@@ -2169,8 +2076,8 @@ function function_2265b277a0dad0f1(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x673c
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x6245
+// Size: 0x3c
 function function_f7df41d3ad15dca8(vehicleref, tagname) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.damageableparts[tagname].var_da9f4cd603f44758;
@@ -2178,8 +2085,8 @@ function function_f7df41d3ad15dca8(vehicleref, tagname) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6782
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x628a
+// Size: 0x3c
 function function_bad6c0e32ff1e092(vehicleref, tagname) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.damageableparts[tagname].var_b4fccc158c681073;
@@ -2187,8 +2094,8 @@ function function_bad6c0e32ff1e092(vehicleref, tagname) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x67c8
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x62cf
+// Size: 0x3c
 function function_dde06c2157ec8895(vehicleref, tagname) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.damageableparts[tagname].var_1c60586652067d4c;
@@ -2196,8 +2103,8 @@ function function_dde06c2157ec8895(vehicleref, tagname) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x680e
-// Size: 0x45
+// Checksum 0x0, Offset: 0x6314
+// Size: 0x44
 function function_8a0e1b95abc01e56(vehicleref, tagname) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return default_to(var_e2818ad39a3341b4.damageableparts[tagname].var_f0b290e6673ef286, 30);
@@ -2205,8 +2112,8 @@ function function_8a0e1b95abc01e56(vehicleref, tagname) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x685c
-// Size: 0x3e
+// Checksum 0x0, Offset: 0x6361
+// Size: 0x3d
 function function_3df56ded0597eb6e(vehicleref, tagname) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return istrue(var_e2818ad39a3341b4.damageableparts[tagname].var_9983055e997835be);
@@ -2214,7 +2121,7 @@ function function_3df56ded0597eb6e(vehicleref, tagname) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x68a3
+// Checksum 0x0, Offset: 0x63a7
 // Size: 0x50
 function function_c9f618f05861c2c5(vehicleref, tagname) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
@@ -2227,41 +2134,7 @@ function function_c9f618f05861c2c5(vehicleref, tagname) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x68fc
-// Size: 0xbc
-function function_ee1ff9eed64d1e5d(vehicle, tagname, var_e691c80ba12c3da1) {
-    if (!isdefined(var_e691c80ba12c3da1)) {
-        var_e691c80ba12c3da1 = 1;
-    }
-    if (!isdefined(tagname)) {
-        return false;
-    }
-    if (!isdefined(vehicle.damageableparts)) {
-        return false;
-    }
-    if (!isdefined(vehicle.damageableparts[tagname])) {
-        return false;
-    }
-    var_bafa22fcdefff511 = function_2265b277a0dad0f1(vehicle function_d93ec4635290febd());
-    iswindow = isdefined(var_bafa22fcdefff511[tagname].windowref);
-    istire = isdefined(var_bafa22fcdefff511[tagname].wheelref);
-    if (istire) {
-        return true;
-    }
-    if (var_e691c80ba12c3da1) {
-        if (iswindow) {
-            return true;
-        }
-        if (issubstr(tagname, "tag_light")) {
-            return true;
-        }
-    }
-    return false;
-}
-
-// Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x69c1
+// Checksum 0x0, Offset: 0x6400
 // Size: 0xb0
 function function_82cad97b4499e421(vehicle, tagname, reactivearmorexplosion) {
     data = function_29b4292c92443328(vehicle function_d93ec4635290febd());
@@ -2277,8 +2150,8 @@ function function_82cad97b4499e421(vehicle, tagname, reactivearmorexplosion) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a79
-// Size: 0x1a3
+// Checksum 0x0, Offset: 0x64b8
+// Size: 0x1a8
 function function_9c23735bf7534afa(vehicle, damage, point, radius) {
     if (!isdefined(vehicle) || !isdefined(vehicle.damageableparts) || vehicle.damageableparts.size == 0) {
         return;
@@ -2310,7 +2183,7 @@ function function_9c23735bf7534afa(vehicle, damage, point, radius) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c24
+// Checksum 0x0, Offset: 0x6668
 // Size: 0x224
 function function_ecdf1217e332c7d7(vehicle, damage, point, var_5d5f540ec81c82a9) {
     if (!isdefined(vehicle) || !isdefined(vehicle.damageableparts) || vehicle.damageableparts.size == 0 || var_5d5f540ec81c82a9 == 0) {
@@ -2346,8 +2219,8 @@ function function_ecdf1217e332c7d7(vehicle, damage, point, var_5d5f540ec81c82a9)
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e50
-// Size: 0x326
+// Checksum 0x0, Offset: 0x6894
+// Size: 0x32a
 function function_786c7ec25aad5005(vehicle, damagedata) {
     tagnames = [];
     tagdistances = [];
@@ -2399,7 +2272,7 @@ function function_786c7ec25aad5005(vehicle, damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x717f
+// Checksum 0x0, Offset: 0x6bc7
 // Size: 0xda
 function function_7a5070220fc8ce9e(vehicleref, damageableparts) {
     var_3102ea0dd30bbf11 = function_32b9b5d07bb56c31(vehicleref);
@@ -2422,8 +2295,8 @@ function function_7a5070220fc8ce9e(vehicleref, damageableparts) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7262
-// Size: 0xa6
+// Checksum 0x0, Offset: 0x6caa
+// Size: 0xa3
 function function_cf63db12f07abf78(vehicleref, damageableparts) {
     if (!isdefined(damageableparts)) {
         return;
@@ -2443,8 +2316,8 @@ function function_cf63db12f07abf78(vehicleref, damageableparts) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7310
-// Size: 0x38
+// Checksum 0x0, Offset: 0x6d55
+// Size: 0x37
 function function_e531ad775dcbca22(vehicleref, parttag, healthvalues) {
     destructionchance = function_8a0e1b95abc01e56(vehicleref, parttag);
     return randomint(100) < destructionchance;
@@ -2452,7 +2325,7 @@ function function_e531ad775dcbca22(vehicleref, parttag, healthvalues) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7351
+// Checksum 0x0, Offset: 0x6d95
 // Size: 0x2e
 function function_600ff5df9dbf294(vehicleref, parttag, healthvalues) {
     return function_3df56ded0597eb6e(vehicleref, parttag) || function_853c0063f08b55e1(healthvalues);
@@ -2460,7 +2333,7 @@ function function_600ff5df9dbf294(vehicleref, parttag, healthvalues) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7388
+// Checksum 0x0, Offset: 0x6dcc
 // Size: 0x29
 function function_853c0063f08b55e1(var_1c09c3e40955f379) {
     return var_1c09c3e40955f379.healthvalue == 0 || var_1c09c3e40955f379.var_92894ef28e2b8800 == 0;
@@ -2468,8 +2341,8 @@ function function_853c0063f08b55e1(var_1c09c3e40955f379) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73ba
-// Size: 0x29
+// Checksum 0x0, Offset: 0x6dfe
+// Size: 0x28
 function function_90b374d856d14373(vehicleref) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref);
     return var_e2818ad39a3341b4.var_8490f7216313a83;
@@ -2477,7 +2350,7 @@ function function_90b374d856d14373(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x73ec
+// Checksum 0x0, Offset: 0x6e2f
 // Size: 0x1b
 function function_43c057baaca777a5(damagedata) {
     return isexplosivedamagemod(damagedata.meansofdeath);
@@ -2485,8 +2358,8 @@ function function_43c057baaca777a5(damagedata) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7410
-// Size: 0x19a
+// Checksum 0x0, Offset: 0x6e53
+// Size: 0x19c
 function vehicle_damage_beginburndown(data) {
     self endon("death");
     self endon("end_burn_down");
@@ -2509,8 +2382,8 @@ function vehicle_damage_beginburndown(data) {
                 }
                 /#
                     if (isdefined(data.attacker)) {
-                        assertex(isdefined(data.objweapon), "<dev string:x3c5>");
-                        assertex(isdefined(data.objweapon) && isdefined(data.objweapon.basename), "<dev string:x420>");
+                        assertex(isdefined(data.objweapon), "<dev string:x124>");
+                        assertex(isdefined(data.objweapon) && isdefined(data.objweapon.basename), "<dev string:x17c>");
                     }
                 #/
             }
@@ -2533,8 +2406,8 @@ function vehicle_damage_beginburndown(data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x75b2
-// Size: 0xbc
+// Checksum 0x0, Offset: 0x6ff7
+// Size: 0xbe
 function function_43536e2e28cc20c0(data, burndowntime) {
     remaininghealth = self.health;
     if (isdefined(data) && isdefined(data.damage)) {
@@ -2551,8 +2424,8 @@ function function_43536e2e28cc20c0(data, burndowntime) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7676
-// Size: 0x63
+// Checksum 0x0, Offset: 0x70bd
+// Size: 0x62
 function vehicle_damage_endburndown(fromdeath) {
     if (!istrue(self.burningdown)) {
         return;
@@ -2570,7 +2443,7 @@ function vehicle_damage_endburndown(fromdeath) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x76e1
+// Checksum 0x0, Offset: 0x7127
 // Size: 0xc
 function vehicle_damage_isburningdown() {
     return istrue(self.burningdown);
@@ -2578,8 +2451,8 @@ function vehicle_damage_isburningdown() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x76f6
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x713c
+// Size: 0x7d
 function vehicle_damage_getburndowntime(vehicleref) {
     if (isdefined(self.burndowntime)) {
         return self.burndowntime;
@@ -2598,13 +2471,13 @@ function vehicle_damage_getburndowntime(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x777b
-// Size: 0x1e1
+// Checksum 0x0, Offset: 0x71c2
+// Size: 0x1db
 function vehicle_damage_shouldskipburndown(data) {
     vehiclename = function_d93ec4635290febd();
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehiclename, undefined, 1);
     if (isdefined(var_e2818ad39a3341b4)) {
-        if (!isvehiclehusk() && istrue(var_e2818ad39a3341b4.skipburndown)) {
+        if (istrue(var_e2818ad39a3341b4.skipburndown)) {
             return 1;
         }
     }
@@ -2652,7 +2525,7 @@ function vehicle_damage_shouldskipburndown(data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7965
+// Checksum 0x0, Offset: 0x73a6
 // Size: 0x1c
 function function_7aaa7ae503292f43(vehicleref) {
     return vehicle_getleveldataforvehicle(vehicleref).weapon;
@@ -2660,8 +2533,8 @@ function function_7aaa7ae503292f43(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x798a
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x73cb
+// Size: 0x59
 function function_6c17abf5c5d88ca(vehicleref) {
     data = vehicle_getleveldataforvehicle(vehicleref);
     return ter_op(isdefined(data.husk.weapon), data.husk.weapon, data.weapon);
@@ -2669,8 +2542,8 @@ function function_6c17abf5c5d88ca(vehicleref) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79ed
-// Size: 0x368
+// Checksum 0x0, Offset: 0x742d
+// Size: 0x371
 function function_d0df49de517ded03() {
     ref = function_d93ec4635290febd();
     data = function_29b4292c92443328(ref);
@@ -2679,7 +2552,7 @@ function function_d0df49de517ded03() {
     weaponstring = ter_op(ishusk, function_6c17abf5c5d88ca(ref), function_7aaa7ae503292f43(ref));
     mtx = self.mtx;
     waittillframeend();
-    assertex(isdefined(explosiondata), "<dev string:x499>");
+    assertex(isdefined(explosiondata), "vehicle_damage_explode: Didn't find explosion data. Either vehicle_damage_initVehicle wasn't called or there's no data for this vehicle in vehicleexplosion.csv");
     explosionposition = self gettagorigin(explosiondata.tag);
     damageposition = explosionposition;
     if (isdefined(explosiondata.damageoffset)) {
@@ -2715,7 +2588,7 @@ function function_d0df49de517ded03() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d5d
+// Checksum 0x0, Offset: 0x77a6
 // Size: 0xc
 function function_7d040e8b44f42b5f() {
     wait 7;
@@ -2724,7 +2597,7 @@ function function_7d040e8b44f42b5f() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d71
+// Checksum 0x0, Offset: 0x77ba
 // Size: 0x13
 function function_734926fcdbad1fd4() {
     if (scripts\cp_mp\vehicles\vehicle::isvehiclehusk()) {
@@ -2735,8 +2608,8 @@ function function_734926fcdbad1fd4() {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d8c
-// Size: 0x249
+// Checksum 0x0, Offset: 0x77d5
+// Size: 0x24d
 function vehicle_damage_onenterstateheavyscore(oldstateref, data) {
     if (isdefined(data) && isdefined(data.attacker)) {
         var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(function_d93ec4635290febd(), undefined, 1);
@@ -2797,8 +2670,8 @@ function vehicle_damage_onenterstateheavyscore(oldstateref, data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fdd
-// Size: 0x32b
+// Checksum 0x0, Offset: 0x7a2a
+// Size: 0x32f
 function vehicle_damage_ondeathscore(data) {
     if (isdefined(data) && isdefined(data.attacker)) {
         var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(function_d93ec4635290febd(), undefined, 1);
@@ -2873,8 +2746,8 @@ function vehicle_damage_ondeathscore(data) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8310
-// Size: 0x52
+// Checksum 0x0, Offset: 0x7d61
+// Size: 0x51
 function vehicle_damage_givescoreandxpatframeend(scoreevent, award, data, vehicle) {
     vehentnum = vehicle getentitynumber();
     self endon("disconnect");
@@ -2885,8 +2758,8 @@ function vehicle_damage_givescoreandxpatframeend(scoreevent, award, data, vehicl
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x836a
-// Size: 0xef
+// Checksum 0x0, Offset: 0x7dba
+// Size: 0xee
 function vehicle_damage_givescoreandxp(scoreevent, award, data, vehentnum) {
     self notify("vehicle_damage_giveScoreAndXP" + vehentnum);
     if (isdefined(scoreevent) && issharedfuncdefined("vehicle_damage", "giveScore")) {
@@ -2901,7 +2774,7 @@ function vehicle_damage_givescoreandxp(scoreevent, award, data, vehentnum) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8461
+// Checksum 0x0, Offset: 0x7eb0
 // Size: 0x4d
 function vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, var_21e99fcec7e19345, vehicleref) {
     if (issharedfuncdefined("vehicle_damage", "setWeaponClassModDamageForVehicle")) {
@@ -2911,7 +2784,7 @@ function vehicle_damage_setweaponclassmoddamageforvehicle(weaponclass, mod, var_
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x84b6
+// Checksum 0x0, Offset: 0x7f05
 // Size: 0x44
 function vehicle_damage_setperkmoddamage(ref, mod, var_21e99fcec7e19345) {
     if (issharedfuncdefined("vehicle_damage", "setPerkModDamage")) {
@@ -2921,7 +2794,7 @@ function vehicle_damage_setperkmoddamage(ref, mod, var_21e99fcec7e19345) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8502
+// Checksum 0x0, Offset: 0x7f51
 // Size: 0x3b
 function vehicle_damage_setweaponhitdamagedata(weaponref, hitsperattack) {
     if (issharedfuncdefined("vehicle_damage", "setWeaponHitDamageData")) {
@@ -2931,7 +2804,7 @@ function vehicle_damage_setweaponhitdamagedata(weaponref, hitsperattack) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8545
+// Checksum 0x0, Offset: 0x7f94
 // Size: 0x3b
 function vehicle_damage_setvehiclehitdamagedata(vehicleref, hitstokill) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageData")) {
@@ -2941,7 +2814,7 @@ function vehicle_damage_setvehiclehitdamagedata(vehicleref, hitstokill) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8588
+// Checksum 0x0, Offset: 0x7fd7
 // Size: 0x44
 function vehicle_damage_setvehiclehitdamagedataforweapon(vehicleref, hitstokill, weaponref) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageDataForWeapon")) {
@@ -2951,7 +2824,7 @@ function vehicle_damage_setvehiclehitdamagedataforweapon(vehicleref, hitstokill,
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x85d4
+// Checksum 0x0, Offset: 0x8023
 // Size: 0x44
 function vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattack, vehicleref) {
     if (issharedfuncdefined("vehicle_damage", "setWeaponHitDamageDataForVehicle")) {
@@ -2961,7 +2834,7 @@ function vehicle_damage_setweaponhitdamagedataforvehicle(weaponref, hitsperattac
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8620
+// Checksum 0x0, Offset: 0x806f
 // Size: 0x3b
 function vehicle_damage_setpremoddamagecallback(vehicleref, callback) {
     if (issharedfuncdefined("vehicle_damage", "setPreModDamageCallback")) {
@@ -2971,7 +2844,7 @@ function vehicle_damage_setpremoddamagecallback(vehicleref, callback) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8663
+// Checksum 0x0, Offset: 0x80b2
 // Size: 0x3b
 function vehicle_damage_setpostmoddamagecallback(vehicleref, callback) {
     if (issharedfuncdefined("vehicle_damage", "setPostModDamageCallback")) {
@@ -2981,7 +2854,7 @@ function vehicle_damage_setpostmoddamagecallback(vehicleref, callback) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x86a6
+// Checksum 0x0, Offset: 0x80f5
 // Size: 0x3b
 function vehicle_damage_setdeathcallback(vehicleref, callback) {
     if (issharedfuncdefined("vehicle_damage", "setDeathCallback")) {
@@ -2991,8 +2864,8 @@ function vehicle_damage_setdeathcallback(vehicleref, callback) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x86e9
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x8138
+// Size: 0x5a
 function function_e5cde837844c6112(vehicleref, seatid, damagescale) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
     if (!isdefined(var_e2818ad39a3341b4.occupantdamagescale)) {
@@ -3003,8 +2876,8 @@ function function_e5cde837844c6112(vehicleref, seatid, damagescale) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x874c
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x819a
+// Size: 0x5a
 function function_42b7542e79da627f(vehicleref, seatid, damageclamp) {
     var_e2818ad39a3341b4 = vehicle_damage_getleveldataforvehicle(vehicleref, 1);
     if (!isdefined(var_e2818ad39a3341b4.var_8f793c5830904e92)) {
@@ -3015,7 +2888,7 @@ function function_42b7542e79da627f(vehicleref, seatid, damageclamp) {
 
 // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87af
+// Checksum 0x0, Offset: 0x81fc
 // Size: 0x2d
 function vehicle_damage_initdebug() {
     setdvarifuninitialized(@"hash_32ee2ef39806b3b9", 0);
@@ -3029,7 +2902,7 @@ function vehicle_damage_initdebug() {
 
     // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x87e4
+    // Checksum 0x0, Offset: 0x8231
     // Size: 0x12e
     function function_cc07937f89e8a007() {
         level.vehiclegod = getdvarint(@"hash_32ee2ef39806b3b9", 0) > 0;
@@ -3038,7 +2911,7 @@ function vehicle_damage_initdebug() {
             if (simulatedamagepercent > 0) {
                 vehicles = scripts\cp_mp\vehicles\vehicle_tracking::vehicle_tracking_getgameinstancesforall();
                 if (vehicles.size > 0) {
-                    iprintln("<dev string:x53c>" + simulatedamagepercent + "<dev string:x541>");
+                    iprintln("<dev string:x1f2>" + simulatedamagepercent + "<dev string:x1f4>");
                 }
                 foreach (vehicle in vehicles) {
                     if (isdefined(vehicle) && !vehicle scripts\cp_mp\vehicles\vehicle::isvehicledestroyed()) {
@@ -3050,9 +2923,9 @@ function vehicle_damage_initdebug() {
             vehiclegod = getdvarint(@"hash_32ee2ef39806b3b9", 0) > 0;
             if (level.vehiclegod != vehiclegod) {
                 if (vehiclegod) {
-                    iprintln("<dev string:x55b>");
+                    iprintln("<dev string:x20b>");
                 } else {
-                    iprintln("<dev string:x56d>");
+                    iprintln("<dev string:x21a>");
                 }
                 level.vehiclegod = vehiclegod;
             }
@@ -3062,25 +2935,25 @@ function vehicle_damage_initdebug() {
 
     // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x891a
-    // Size: 0xa4
+    // Checksum 0x0, Offset: 0x8367
+    // Size: 0xa5
     function function_a4e5dc47d7128f1d(vehicle, percent) {
         damagedata = spawnstruct();
         attacker = level.players[0];
         percent = min(percent, 100) / 100;
         damage = int(min(vehicle.health, ceil(vehicle.maxhealth * percent)));
         thread function_28c5e9f1993854aa();
-        vehicle dodamage(damage, vehicle.origin, attacker, undefined, "<dev string:x580>");
+        vehicle dodamage(damage, vehicle.origin, attacker, undefined, "<dev string:x22a>");
         thread function_a6106f4cf6a1233();
     }
 
     // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x89c6
+    // Checksum 0x0, Offset: 0x8414
     // Size: 0x48
     function function_28c5e9f1993854aa() {
-        level notify("<dev string:x591>");
-        level endon("<dev string:x591>");
+        level notify("<dev string:x238>");
+        level endon("<dev string:x238>");
         if (!isdefined(level.var_b33ac1e06f0e735a)) {
             level.var_b33ac1e06f0e735a = istrue(level.vehiclefriendlydamage);
             level.vehiclefriendlydamage = 1;
@@ -3091,10 +2964,10 @@ function vehicle_damage_initdebug() {
 
     // Namespace vehicle_damage / scripts\cp_mp\vehicles\vehicle_damage
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8a16
+    // Checksum 0x0, Offset: 0x8464
     // Size: 0x36
     function function_a6106f4cf6a1233() {
-        level notify("<dev string:x591>");
+        level notify("<dev string:x238>");
         if (isdefined(level.var_b33ac1e06f0e735a)) {
             level.vehiclefriendlydamage = level.var_b33ac1e06f0e735a;
             level.var_b33ac1e06f0e735a = undefined;

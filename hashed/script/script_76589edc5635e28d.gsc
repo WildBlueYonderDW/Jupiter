@@ -9,9 +9,9 @@
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\mp\outofbounds.gsc;
 
-#namespace mp_jup_greece;
+#namespace namespace_643a34b3ee64b3ae;
 
-// Namespace mp_jup_greece / namespace_e42a2311c54e8ae9
+// Namespace namespace_643a34b3ee64b3ae / namespace_e42a2311c54e8ae9
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a3
 // Size: 0xa6
@@ -31,7 +31,7 @@ function main() {
     game["axis_outfit"] = "woodland";
 }
 
-// Namespace mp_jup_greece / namespace_e42a2311c54e8ae9
+// Namespace namespace_643a34b3ee64b3ae / namespace_e42a2311c54e8ae9
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x251
 // Size: 0xb1

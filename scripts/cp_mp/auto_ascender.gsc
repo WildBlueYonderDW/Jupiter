@@ -14,8 +14,8 @@
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ee
-// Size: 0x133
+// Checksum 0x0, Offset: 0x6de
+// Size: 0x12e
 function init() {
     setdvarifuninitialized(@"hash_1726c98446555f2", 360);
     setdvarifuninitialized(@"hash_89e4c06f52246b50", 460);
@@ -35,7 +35,7 @@ function init() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x929
+// Checksum 0x0, Offset: 0x814
 // Size: 0x7
 function function_68fe08d119bbd54f() {
     return 360;
@@ -43,7 +43,7 @@ function function_68fe08d119bbd54f() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x939
+// Checksum 0x0, Offset: 0x824
 // Size: 0x7
 function function_9412c45e2bc1218b() {
     return 460;
@@ -51,7 +51,7 @@ function function_9412c45e2bc1218b() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x949
+// Checksum 0x0, Offset: 0x834
 // Size: 0x7
 function function_f3c35aacfbe68158() {
     return 540;
@@ -59,7 +59,7 @@ function function_f3c35aacfbe68158() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x959
+// Checksum 0x0, Offset: 0x844
 // Size: 0x7
 function function_99e7d00e9d903c57() {
     return 0.4;
@@ -67,7 +67,7 @@ function function_99e7d00e9d903c57() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x969
+// Checksum 0x0, Offset: 0x854
 // Size: 0x7
 function function_ca18084bdcc82ea8() {
     return 0.15;
@@ -75,7 +75,7 @@ function function_ca18084bdcc82ea8() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x979
+// Checksum 0x0, Offset: 0x864
 // Size: 0x5
 function function_211b63898ba23e96() {
     return 12100;
@@ -83,7 +83,7 @@ function function_211b63898ba23e96() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x987
+// Checksum 0x0, Offset: 0x872
 // Size: 0x4
 function function_9bb960f8f80f543f() {
     return 72;
@@ -91,7 +91,7 @@ function function_9bb960f8f80f543f() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x994
+// Checksum 0x0, Offset: 0x87f
 // Size: 0x494
 function initanimtree() {
     level.scr_animtree["player"] = %script_model;
@@ -137,8 +137,8 @@ function initanimtree() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe30
-// Size: 0x1d9
+// Checksum 0x0, Offset: 0xd1b
+// Size: 0x1da
 function markupascenderstruct(struct, dir) {
     if (!isdefined(struct.targetname)) {
         msg = "auto_ascender.gsc::markupAscenderStruct() passed struct with no targetname at pos " + " x:" + struct.origin[0] + " y:" + struct.origin[1] + " z:" + struct.origin[2];
@@ -163,10 +163,10 @@ function markupascenderstruct(struct, dir) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1011
+// Checksum 0x0, Offset: 0xefd
 // Size: 0x67
 function ascenderscriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
-    assert(part == "<dev string:x1c>");
+    assert(part == "ascender");
     if (state == "on") {
         if (istrue(player.usingascender)) {
             return;
@@ -177,7 +177,7 @@ function ascenderscriptableused(instance, part, state, player, var_a5b2c541413aa
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1080
+// Checksum 0x0, Offset: 0xf6c
 // Size: 0x6b
 function function_3af132aed5f667c5() {
     level endon("game_ended");
@@ -196,7 +196,7 @@ function function_3af132aed5f667c5() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f3
+// Checksum 0x0, Offset: 0xfdf
 // Size: 0x6b
 function denyascendmessagelaststand() {
     level endon("game_ended");
@@ -215,7 +215,7 @@ function denyascendmessagelaststand() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1166
+// Checksum 0x0, Offset: 0x1052
 // Size: 0x6b
 function denyascendmessage() {
     level endon("game_ended");
@@ -234,7 +234,7 @@ function denyascendmessage() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d9
+// Checksum 0x0, Offset: 0x10c5
 // Size: 0x4d
 function ascenddeathlistener(ascendstart) {
     level endon("game_ended");
@@ -250,8 +250,8 @@ function ascenddeathlistener(ascendstart) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x122e
-// Size: 0x74
+// Checksum 0x0, Offset: 0x111a
+// Size: 0x73
 function endascenderanim(player, dir, ascendermodelview, ascendermodelworld) {
     player endon("death_or_disconnect");
     player endon("ascender_cancel");
@@ -266,8 +266,8 @@ function endascenderanim(player, dir, ascendermodelview, ascendermodelworld) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12aa
-// Size: 0x2fb
+// Checksum 0x0, Offset: 0x1195
+// Size: 0x303
 function startascenderanim(player, dir, ascendermodelview, ascendermodelworld) {
     player endon("death_or_disconnect");
     player endon("ascender_cancel");
@@ -312,7 +312,7 @@ function startascenderanim(player, dir, ascendermodelview, ascendermodelworld) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ad
+// Checksum 0x0, Offset: 0x14a0
 // Size: 0xbd
 function loopwaitanim(scenenode, ascendermodelview, ascendermodelworld, dir) {
     self endon("death_or_disconnect");
@@ -339,8 +339,8 @@ function loopwaitanim(scenenode, ascendermodelview, ascendermodelworld, dir) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1672
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x1565
+// Size: 0x11c
 function function_3070aab95202a0e6(instance, player) {
     if (player isswitchingweapon()) {
         player thread function_3af132aed5f667c5();
@@ -385,8 +385,8 @@ function function_3070aab95202a0e6(instance, player) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1798
-// Size: 0x4a3
+// Checksum 0x0, Offset: 0x168a
+// Size: 0x4ac
 function ascenderuse(instance, player) {
     level endon("game_ended");
     player endon("death_or_disconnect");
@@ -468,7 +468,7 @@ function ascenderuse(instance, player) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c43
+// Checksum 0x0, Offset: 0x1b3e
 // Size: 0x1e3
 function cleanupascenduse(player) {
     self.inuse = 0;
@@ -515,12 +515,12 @@ function cleanupascenduse(player) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e2e
-// Size: 0xbc
+// Checksum 0x0, Offset: 0x1d29
+// Size: 0xbd
 function ascenderinstantstop() {
     player = self;
     if (!istrue(player.usingascender)) {
-        assertmsg("<dev string:x28>");
+        assertmsg("<dev string:x1c>");
         return;
     }
     startorigin = player.ascenderstart.ascendstructout.origin;
@@ -535,7 +535,7 @@ function ascenderinstantstop() {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef2
+// Checksum 0x0, Offset: 0x1dee
 // Size: 0x42
 function vectortoanglessafe(forward, up) {
     right = vectorcross(forward, up);
@@ -546,8 +546,8 @@ function vectortoanglessafe(forward, up) {
 
 // Namespace auto_ascender / scripts\cp_mp\auto_ascender
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f3d
-// Size: 0x98
+// Checksum 0x0, Offset: 0x1e39
+// Size: 0x95
 function function_ff57f9acf27bbc3c(point) {
     foreach (a in level.ascendstructs) {
         if (distance2dsquared(a.origin, point) < function_211b63898ba23e96()) {

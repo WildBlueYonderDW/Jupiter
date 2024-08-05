@@ -9,8 +9,8 @@
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d
-// Size: 0x157
+// Checksum 0x0, Offset: 0x25a
+// Size: 0x156
 function anim_scene_create_actor(entity, animname, is_player, player_rig_visible, disable_weapons, maintain_swimming) {
     actor = spawnstruct();
     actor.entity = entity;
@@ -46,7 +46,7 @@ function anim_scene_create_actor(entity, animname, is_player, player_rig_visible
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ed
+// Checksum 0x0, Offset: 0x3b9
 // Size: 0x50
 function anim_scene_set_actor_interruptable(var_9c5feb9c7ef9892d, interrupt_anime, first_frame) {
     self.interruptable = var_9c5feb9c7ef9892d;
@@ -62,8 +62,8 @@ function anim_scene_set_actor_interruptable(var_9c5feb9c7ef9892d, interrupt_anim
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x345
-// Size: 0xd3
+// Checksum 0x0, Offset: 0x411
+// Size: 0xd1
 function anim_scene(actors, anime, start_scene, end_scene, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
     foreach (actor in actors) {
         actor.interrupted = 0;
@@ -78,8 +78,8 @@ function anim_scene(actors, anime, start_scene, end_scene, tag, blend_in_time, v
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x420
-// Size: 0x117
+// Checksum 0x0, Offset: 0x4ea
+// Size: 0x113
 function anim_scene_loop(actors, anime, start_scene, end_scene, tag, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
     foreach (actor in actors) {
         actor.interrupted = 0;
@@ -98,7 +98,7 @@ function anim_scene_loop(actors, anime, start_scene, end_scene, tag, blend_in_ti
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x540
+// Checksum 0x0, Offset: 0x606
 // Size: 0x28
 function anim_scene_stop(var_ec951e7a56c0f445) {
     if (isdefined(var_ec951e7a56c0f445) && var_ec951e7a56c0f445) {
@@ -110,7 +110,7 @@ function anim_scene_stop(var_ec951e7a56c0f445) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x570
+// Checksum 0x0, Offset: 0x636
 // Size: 0x19
 function anim_scene_stop_actor(actor) {
     actor.endscene = 1;
@@ -118,8 +118,8 @@ function anim_scene_stop_actor(actor) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x591
-// Size: 0x2bc
+// Checksum 0x0, Offset: 0x657
+// Size: 0x2b6
 function _anim_scene_internal(actors, anime, looping, tag, start_scene, end_scene, blend_in_time, var_aa3247c3c61f5e1c, var_e1c732b6f63f3e8b) {
     self endon("anim_scene_interrupted");
     if (!isdefined(start_scene)) {
@@ -132,8 +132,8 @@ function _anim_scene_internal(actors, anime, looping, tag, start_scene, end_scen
         assert(isarray(actors));
         foreach (actor in actors) {
             assertex(isstruct(actor), "<dev string:x1c>");
-            assertex(isdefined(actor.entity), "<dev string:x81>");
-            assertex(!actor.is_player || isalive(actor.entity) && !isdefined(actor.entity.fauxdead), "<dev string:xb3>");
+            assertex(isdefined(actor.entity), "<dev string:x7e>");
+            assertex(!actor.is_player || isalive(actor.entity) && !isdefined(actor.entity.fauxdead), "<dev string:xad>");
         }
         if (!end_scene && !looping) {
             function_a3ec83bacb1ebf0f(actors, anime);
@@ -182,8 +182,8 @@ function _anim_scene_internal(actors, anime, looping, tag, start_scene, end_scen
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x856
-// Size: 0x241
+// Checksum 0x0, Offset: 0x916
+// Size: 0x23f
 function _anim_scene_internal_blend_in(actors, anime, tag, blend_in_time, var_e1c732b6f63f3e8b) {
     foreach (actor in actors) {
         if (actor.is_player) {
@@ -213,7 +213,7 @@ function _anim_scene_internal_blend_in(actors, anime, tag, blend_in_time, var_e1
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9f
+// Checksum 0x0, Offset: 0xb5d
 // Size: 0x3f
 function get_actor_stance(actor) {
     if (isdefined(actor.entity.anim_scene_stance_override)) {
@@ -224,8 +224,8 @@ function get_actor_stance(actor) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xae7
-// Size: 0x1cf
+// Checksum 0x0, Offset: 0xba5
+// Size: 0x1c9
 function _anim_scene_internal_finish_blend(actors, blend_in_time, var_aa3247c3c61f5e1c) {
     waitdiff = var_aa3247c3c61f5e1c - blend_in_time;
     if (waitdiff > 0) {
@@ -261,7 +261,7 @@ function _anim_scene_internal_finish_blend(actors, blend_in_time, var_aa3247c3c6
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbe
+// Checksum 0x0, Offset: 0xd76
 // Size: 0x96
 function _anim_scene_internal_get_anim_duration(actor, anime) {
     scene_duration = 0;
@@ -281,8 +281,8 @@ function _anim_scene_internal_get_anim_duration(actor, anime) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5d
-// Size: 0x39f
+// Checksum 0x0, Offset: 0xe15
+// Size: 0x39c
 function _anim_scene_internal_start_anims(actors, anime, looping, tag) {
     foreach (actor in actors) {
         if (actor.interrupted) {
@@ -290,18 +290,18 @@ function _anim_scene_internal_start_anims(actors, anime, looping, tag) {
         }
         if (actor.is_player) {
             if (looping) {
-                assertex(isarray(level.scr_eventanim[actor.animname][anime]) && level.scr_eventanim[actor.animname][anime].size == 1, "<dev string:xe0>" + actor.animname + "<dev string:x11f>" + anime + "<dev string:x127>");
+                assertex(isarray(level.scr_eventanim[actor.animname][anime]) && level.scr_eventanim[actor.animname][anime].size == 1, "anim_scene -- the animation entry for level.scr_eventAnim[ " + actor.animname + " ][ " + anime + " ] needs to be an array of size 1 for looping anims. This is to keep parity with common anim scripts.");
                 actor.entity playanimscriptsceneevent("scripted_scene", level.scr_eventanim[actor.animname][anime][0]);
             } else {
-                assertex(!isarray(level.scr_eventanim[actor.animname][anime]), "<dev string:xe0>" + actor.animname + "<dev string:x11f>" + anime + "<dev string:x190>");
+                assertex(!isarray(level.scr_eventanim[actor.animname][anime]), "anim_scene -- the animation entry for level.scr_eventAnim[ " + actor.animname + " ][ " + anime + " ] cannot be an array for non-looping anims.");
                 actor.entity playanimscriptsceneevent("scripted_scene", level.scr_eventanim[actor.animname][anime]);
             }
             if (isdefined(level.scr_viewmodelanim[actor.animname]) && isdefined(level.scr_viewmodelanim[actor.animname][anime]) && !istrue(actor.entity.blockviewmodelanim)) {
                 if (looping) {
-                    assertex(isarray(level.scr_viewmodelanim[actor.animname][anime]) && level.scr_viewmodelanim[actor.animname][anime].size == 1, "<dev string:x1c0>" + actor.animname + "<dev string:x11f>" + anime + "<dev string:x127>");
+                    assertex(isarray(level.scr_viewmodelanim[actor.animname][anime]) && level.scr_viewmodelanim[actor.animname][anime].size == 1, "anim_scene -- the animation entry for level.scr_viewmodelAnim[ " + actor.animname + " ][ " + anime + " ] needs to be an array of size 1 for looping anims. This is to keep parity with common anim scripts.");
                     actor.entity playviewmodelanim(level.scr_viewmodelanim[actor.animname][anime][0]);
                 } else {
-                    assertex(!isarray(level.scr_viewmodelanim[actor.animname][anime]), "<dev string:x1c0>" + actor.animname + "<dev string:x11f>" + anime + "<dev string:x190>");
+                    assertex(!isarray(level.scr_viewmodelanim[actor.animname][anime]), "anim_scene -- the animation entry for level.scr_viewmodelAnim[ " + actor.animname + " ][ " + anime + " ] cannot be an array for non-looping anims.");
                     actor.entity playviewmodelanim(level.scr_viewmodelanim[actor.animname][anime]);
                 }
             }
@@ -325,8 +325,8 @@ function _anim_scene_internal_start_anims(actors, anime, looping, tag) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1104
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x11b9
+// Size: 0xaf
 function _anim_scene_internal_end(actors) {
     foreach (actor in actors) {
         if (actor.interrupted) {
@@ -343,8 +343,8 @@ function _anim_scene_internal_end(actors) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11be
-// Size: 0x73
+// Checksum 0x0, Offset: 0x1270
+// Size: 0x70
 function _anim_scene_ender_think(actors) {
     self endon("anim_scene_success");
     self endon("anim_scene_interrupted");
@@ -356,8 +356,8 @@ function _anim_scene_ender_think(actors) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1239
-// Size: 0x73
+// Checksum 0x0, Offset: 0x12e8
+// Size: 0x70
 function _anim_scene_force_end_think(actors) {
     self endon("anim_scene_success");
     self endon("anim_scene_interrupted");
@@ -369,7 +369,7 @@ function _anim_scene_force_end_think(actors) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b4
+// Checksum 0x0, Offset: 0x1360
 // Size: 0x41
 function _anim_scene_actor_end_interrupt_think(actor) {
     self endon("anim_scene_success");
@@ -382,8 +382,8 @@ function _anim_scene_actor_end_interrupt_think(actor) {
 
 // Namespace anim_scene / scripts\cp_mp\anim_scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12fd
-// Size: 0x3fc
+// Checksum 0x0, Offset: 0x13a9
+// Size: 0x3fa
 function _anim_scene_interrupt_think(actors, tag, end_scene) {
     self endon("anim_scene_success");
     self endon("anim_scene_interrupted");
@@ -457,8 +457,8 @@ function _anim_scene_interrupt_think(actors, tag, end_scene) {
 
     // Namespace anim_scene / scripts\cp_mp\anim_scene
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1701
-    // Size: 0x8b
+    // Checksum 0x0, Offset: 0x17ab
+    // Size: 0x8d
     function function_a3ec83bacb1ebf0f(actors, anime) {
         scenelength = 0;
         for (i = 0; i < actors.size; i++) {
@@ -469,7 +469,7 @@ function _anim_scene_interrupt_think(actors, tag, end_scene) {
                 continue;
             }
             if (thisduration != scenelength) {
-                iprintlnbold("<dev string:x203>");
+                iprintlnbold("<dev string:xd7>");
             }
         }
     }

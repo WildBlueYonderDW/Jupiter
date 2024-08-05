@@ -2,7 +2,7 @@
 
 // Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5
+// Checksum 0x0, Offset: 0x8c
 // Size: 0x22
 function init() {
     if (!isdefined(level.onplayerspawncallbacks)) {
@@ -13,8 +13,8 @@ function init() {
 
 // Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf
-// Size: 0x22
+// Checksum 0x0, Offset: 0xb6
+// Size: 0x21
 function onplayerconnect() {
     for (;;) {
         player = level waittill("connected");
@@ -24,7 +24,7 @@ function onplayerconnect() {
 
 // Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x109
+// Checksum 0x0, Offset: 0xdf
 // Size: 0x38
 function registeronplayerspawncallback(callback) {
     if (!isdefined(level.onplayerspawncallbacks)) {
@@ -35,8 +35,8 @@ function registeronplayerspawncallback(callback) {
 
 // Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x149
-// Size: 0x78
+// Checksum 0x0, Offset: 0x11f
+// Size: 0x76
 function function_de35280460ae9411(remove_callback) {
     temp_array = [];
     foreach (callback in level.onplayerspawncallbacks) {
@@ -49,8 +49,8 @@ function function_de35280460ae9411(remove_callback) {
 
 // Namespace namespace_b8f8e2f86acf53ed / namespace_d56a43a0cbd2ac83
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9
-// Size: 0x65
+// Checksum 0x0, Offset: 0x19d
+// Size: 0x62
 function onplayerspawned() {
     self endon("disconnect");
     for (;;) {

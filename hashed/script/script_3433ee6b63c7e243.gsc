@@ -16,8 +16,8 @@
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x61c
-// Size: 0x1c9
+// Checksum 0x0, Offset: 0x74d
+// Size: 0x1ca
 function placeweaponon(weapon, position, activeweapon) {
     assert(isdefined(weapon));
     var_9843089f949dca89 = undefined;
@@ -32,7 +32,7 @@ function placeweaponon(weapon, position, activeweapon) {
     assert(aihasweapon(var_9843089f949dca89));
     self notify("weapon_position_change");
     curposition = self.weaponinfo[placeweaponname].position;
-    assert(curposition == "<dev string:x1c>" || isdefined(self.a.weaponpos[curposition]) && self.a.weaponpos[curposition] == var_9843089f949dca89);
+    assert(curposition == "none" || isdefined(self.a.weaponpos[curposition]) && self.a.weaponpos[curposition] == var_9843089f949dca89);
     if (position != "none" && isdefined(self.a.weaponpos[position]) && self.a.weaponpos[position] == var_9843089f949dca89) {
         return;
     }
@@ -61,8 +61,8 @@ function placeweaponon(weapon, position, activeweapon) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ed
-// Size: 0x70
+// Checksum 0x0, Offset: 0x91f
+// Size: 0x6f
 function detachweapon(objweapon) {
     assert(isweapon(objweapon));
     weaponname = getcompleteweaponname(objweapon);
@@ -72,8 +72,8 @@ function detachweapon(objweapon) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x865
-// Size: 0x9e
+// Checksum 0x0, Offset: 0x996
+// Size: 0x9d
 function attachweapon(objweapon, position) {
     assert(isweapon(objweapon));
     weaponname = getcompleteweaponname(objweapon);
@@ -87,8 +87,8 @@ function attachweapon(objweapon, position) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x90b
-// Size: 0x97
+// Checksum 0x0, Offset: 0xa3b
+// Size: 0x96
 function getweaponforpos(position) {
     if (!isdefined(self.a)) {
         return undefined;
@@ -106,8 +106,8 @@ function getweaponforpos(position) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ab
-// Size: 0x110
+// Checksum 0x0, Offset: 0xada
+// Size: 0x10f
 function detachallweaponmodels() {
     positions = [];
     positions[positions.size] = "right";
@@ -134,8 +134,8 @@ function detachallweaponmodels() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xac3
-// Size: 0x1df
+// Checksum 0x0, Offset: 0xbf1
+// Size: 0x1e3
 function updateattachedweaponmodels() {
     positions = [];
     weapons = [];
@@ -172,7 +172,7 @@ function updateattachedweaponmodels() {
     }
     /#
         if (weapons.size > 4) {
-            assertmsg("<dev string:x24>");
+            assertmsg("<dev string:x1c>");
         }
     #/
     self updateentitywithweapons(weapons[0], tags[0], weapons[1], tags[1], weapons[2], tags[2], weapons[3], tags[3]);
@@ -181,7 +181,7 @@ function updateattachedweaponmodels() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcaa
+// Checksum 0x0, Offset: 0xddc
 // Size: 0xb1
 function gettagforpos(position) {
     switch (position) {
@@ -200,14 +200,14 @@ function gettagforpos(position) {
     case #"hash_40f6fb4e52241d83": 
         return "tag_inhand";
     default: 
-        assertmsg("<dev string:x52>" + position);
+        assertmsg("unknown weapon placement position: " + position);
         break;
     }
 }
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd63
+// Checksum 0x0, Offset: 0xe95
 // Size: 0x13b
 function dropaiweaponinternal(weapon) {
     if (function_335d7d001eb868f()) {
@@ -242,7 +242,7 @@ function dropaiweaponinternal(weapon) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xea6
+// Checksum 0x0, Offset: 0xfd8
 // Size: 0xfc
 function dropaiweapon(weapon) {
     if (!isdefined(weapon)) {
@@ -274,7 +274,7 @@ function dropaiweapon(weapon) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfaa
+// Checksum 0x0, Offset: 0x10dc
 // Size: 0x190
 function dropallaiweapons() {
     if (isdefined(self.nodrop)) {
@@ -314,8 +314,8 @@ function dropallaiweapons() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1142
-// Size: 0x37e
+// Checksum 0x0, Offset: 0x1274
+// Size: 0x38f
 function dropweaponwrapper(weapon, position) {
     if (self isragdoll()) {
         return "none";
@@ -327,7 +327,7 @@ function dropweaponwrapper(weapon, position) {
     if (issubstr(tolower(baseweaponname), "_ai")) {
         baseweaponname = getsubstr(baseweaponname, 0, baseweaponname.size - 3);
         actualdroppedweapon = makeweapon(baseweaponname, weapon.attachments);
-        assertex(actualdroppedweapon.basename != "<dev string:x1c>", "<dev string:x79>" + weapon.basename + "<dev string:x98>");
+        assertex(actualdroppedweapon.basename != "none", "Dropped weapon is null. Is " + weapon.basename + " an _AI weapon and the non _AI version isn't loaded?");
     }
     thread setdroppedweaponammo(actualdroppedweapon);
     if (isagent(self)) {
@@ -397,7 +397,7 @@ function dropweaponwrapper(weapon, position) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c8
+// Checksum 0x0, Offset: 0x160b
 // Size: 0x13
 function function_335d7d001eb868f() {
     if (isdefined(self.var_e0675e48962c6d55)) {
@@ -408,7 +408,7 @@ function function_335d7d001eb868f() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e4
+// Checksum 0x0, Offset: 0x1627
 // Size: 0x54
 function canaiflingweapon(ai) {
     if (!issp()) {
@@ -428,7 +428,7 @@ function canaiflingweapon(ai) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1541
+// Checksum 0x0, Offset: 0x1684
 // Size: 0x7e
 function setdroppedweaponammo(actualdroppedweapon) {
     droppedweapon = self waittill("weapon_dropped");
@@ -445,7 +445,7 @@ function setdroppedweaponammo(actualdroppedweapon) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15c7
+// Checksum 0x0, Offset: 0x170a
 // Size: 0x1d
 function isvaliddroppedweapon(weapon) {
     if (weapon.ismelee) {
@@ -456,8 +456,8 @@ function isvaliddroppedweapon(weapon) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ed
-// Size: 0xd4
+// Checksum 0x0, Offset: 0x1730
+// Size: 0xdc
 function weapondrop_physics_callback_monitor(droppedent) {
     self endon("death");
     self endon("timeout");
@@ -475,7 +475,7 @@ function weapondrop_physics_callback_monitor(droppedent) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16c9
+// Checksum 0x0, Offset: 0x1814
 // Size: 0x15
 function weapondrop_physics_timeout(time) {
     wait time;
@@ -484,7 +484,7 @@ function weapondrop_physics_timeout(time) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16e6
+// Checksum 0x0, Offset: 0x1831
 // Size: 0x42
 function getaimyawtoshootentorpos() {
     if (!isdefined(self.shootent)) {
@@ -498,8 +498,8 @@ function getaimyawtoshootentorpos() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1731
-// Size: 0x69
+// Checksum 0x0, Offset: 0x187c
+// Size: 0x68
 function getaimpitchtoshootentorpos() {
     pitch = getpitchtoshootentorpos();
     if (self.script == "cover_crouch" && isdefined(self.a.covermode) && self.a.covermode == "lean") {
@@ -510,7 +510,7 @@ function getaimpitchtoshootentorpos() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a3
+// Checksum 0x0, Offset: 0x18ed
 // Size: 0x42
 function getpitchtoshootentorpos() {
     if (!isdefined(self.shootent)) {
@@ -524,7 +524,7 @@ function getpitchtoshootentorpos() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ee
+// Checksum 0x0, Offset: 0x1938
 // Size: 0x1a
 function ramboaim(baseyaw) {
     self endon("killanimscript");
@@ -533,7 +533,7 @@ function ramboaim(baseyaw) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1810
+// Checksum 0x0, Offset: 0x195a
 // Size: 0xb
 function ramboaiminternal(baseyaw) {
     
@@ -541,7 +541,7 @@ function ramboaiminternal(baseyaw) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1823
+// Checksum 0x0, Offset: 0x196d
 // Size: 0xe4
 function decidenumshotsforburst() {
     numshots = 0;
@@ -567,7 +567,7 @@ function decidenumshotsforburst() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1910
+// Checksum 0x0, Offset: 0x1a5a
 // Size: 0x75
 function decidenumshotsforfull() {
     numshots = self.bulletsinclip;
@@ -586,7 +586,7 @@ function decidenumshotsforfull() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x198e
+// Checksum 0x0, Offset: 0x1ad8
 // Size: 0x29
 function hideweaponmagattachment(weaponname) {
     self.weaponinfo[weaponname].hasclip = 0;
@@ -595,7 +595,7 @@ function hideweaponmagattachment(weaponname) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19bf
+// Checksum 0x0, Offset: 0x1b09
 // Size: 0x2a
 function showweaponmagattachment(weaponname) {
     self.weaponinfo[weaponname].hasclip = 1;
@@ -604,8 +604,8 @@ function showweaponmagattachment(weaponname) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19f1
-// Size: 0x2ef
+// Checksum 0x0, Offset: 0x1b3b
+// Size: 0x2f1
 function handledropclip(flagname) {
     self endon("abort_reload");
     self endon(flagname + "_finished");
@@ -692,7 +692,7 @@ function handledropclip(flagname) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce8
+// Checksum 0x0, Offset: 0x1e34
 // Size: 0x13
 function dropclipmodel(clipmodel, tagname) {
     
@@ -702,26 +702,26 @@ function dropclipmodel(clipmodel, tagname) {
 
     // Namespace shared / namespace_223959d3e5206cfb
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d03
-    // Size: 0xd6
+    // Checksum 0x0, Offset: 0x1e4f
+    // Size: 0xd8
     function function_f50e9da2dab043f5(waittime, statename, clipmodel) {
-        self endon("<dev string:xd0>");
-        self endon("<dev string:xd9>");
-        self endon("<dev string:xe9>");
+        self endon("<dev string:x47>");
+        self endon("<dev string:x4d>");
+        self endon("<dev string:x5a>");
         wait waittime;
-        msg1 = "<dev string:xfa>" + self getentitynumber() + "<dev string:x101>" + waittime + "<dev string:x13a>";
-        msg2 = "<dev string:x147>" + statename + "<dev string:x156>" + clipmodel + "<dev string:x169>" + self.weapon.basename + "<dev string:x17d>";
-        msg3 = "<dev string:x182>";
-        msg4 = "<dev string:x1d3>";
-        assertmsg(msg1 + "<dev string:x22a>" + msg2 + "<dev string:x22a>" + msg3 + "<dev string:x22a>" + msg4);
+        msg1 = "<dev string:x68>" + self getentitynumber() + "<dev string:x6c>" + waittime + "<dev string:xa2>";
+        msg2 = "<dev string:xac>" + statename + "<dev string:xb8>" + clipmodel + "<dev string:xc8>" + self.weapon.basename + "<dev string:xd9>";
+        msg3 = "<dev string:xdb>";
+        msg4 = "<dev string:x129>";
+        assertmsg(msg1 + "<dev string:x17d>" + msg2 + "<dev string:x17d>" + msg3 + "<dev string:x17d>" + msg4);
     }
 
 #/
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de1
-// Size: 0x14b
+// Checksum 0x0, Offset: 0x1f2f
+// Size: 0x151
 function movetonodeovertime(node, time) {
     self endon("killanimscript");
     nodeorigin = node.origin;
@@ -731,7 +731,7 @@ function movetonodeovertime(node, time) {
         return;
     }
     if (distsq > 256 && !self maymovetopoint(nodeorigin, !actor_is3d())) {
-        println("<dev string:x22f>" + nodeorigin + "<dev string:x25f>");
+        println("<dev string:x17f>" + nodeorigin + "<dev string:x1ac>");
         return;
     }
     self.keepclaimednodeifvalid = 1;
@@ -751,7 +751,7 @@ function movetonodeovertime(node, time) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f34
+// Checksum 0x0, Offset: 0x2088
 // Size: 0x4
 function returntrue() {
     return true;
@@ -759,8 +759,8 @@ function returntrue() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f41
-// Size: 0x94
+// Checksum 0x0, Offset: 0x2095
+// Size: 0x93
 function playlookanimation(lookanim, looktime, var_3eda4dd47f961142) {
     if (!isdefined(var_3eda4dd47f961142)) {
         var_3eda4dd47f961142 = &returntrue;
@@ -781,7 +781,7 @@ function playlookanimation(lookanim, looktime, var_3eda4dd47f961142) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fdd
+// Checksum 0x0, Offset: 0x2130
 // Size: 0x2e
 function throwdownweapon(var_f449515cc6577bbb) {
     self endon("killanimscript");
@@ -791,8 +791,8 @@ function throwdownweapon(var_f449515cc6577bbb) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2013
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x2166
+// Size: 0x6e
 function rpgplayerrepulsor() {
     misses_remaining = rpgplayerrepulsor_getnummisses();
     if (misses_remaining == 0) {
@@ -817,7 +817,7 @@ function rpgplayerrepulsor() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x208a
+// Checksum 0x0, Offset: 0x21dc
 // Size: 0x41
 function function_a560b5ed33bedc96() {
     if (isdefined(level.createrpgrepulsors) && !level.createrpgrepulsors) {
@@ -831,8 +831,8 @@ function function_a560b5ed33bedc96() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d4
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x2226
+// Size: 0x6e
 function rpgplayerrepulsor_getnummisses() {
     skill = utility::getdifficulty();
     switch (skill) {
@@ -851,8 +851,8 @@ function rpgplayerrepulsor_getnummisses() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x214c
-// Size: 0x79
+// Checksum 0x0, Offset: 0x229d
+// Size: 0x78
 function rpgplayerrepulsor_create(ent) {
     ent notify("stop_prev_repulsor");
     ent endon("stop_prev_repulsor");
@@ -867,8 +867,8 @@ function rpgplayerrepulsor_create(ent) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21cd
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x231d
+// Size: 0xf5
 function pickandsetforceweapon() {
     if (isdefined(self.weaponoverride) && self.weaponoverride) {
         return;
@@ -891,18 +891,18 @@ function pickandsetforceweapon() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x22cb
-// Size: 0x228
+// Checksum 0x0, Offset: 0x241a
+// Size: 0x22c
 function forceuseweapon(newweapon, targetslot) {
     assert(isdefined(newweapon));
     assert(isdefined(targetslot));
-    assertex(targetslot == "<dev string:x285>" || targetslot == "<dev string:x290>" || targetslot == "<dev string:x29d>", "<dev string:x2a8>");
+    assertex(targetslot == "primary" || targetslot == "secondary" || targetslot == "sidearm", "Target slot is either primary, secondary or sidearm.");
     newweaponobj = undefined;
     if (isweapon(newweapon)) {
         assert(!isnullweapon(newweapon));
         newweaponobj = newweapon;
     } else {
-        assert(newweapon != "<dev string:x1c>");
+        assert(newweapon != "none");
         newweaponobj = [[ level.fnbuildweapon ]](newweapon);
     }
     if (istrue(self.script_fakeactor) || istrue(self.script_drone)) {
@@ -947,8 +947,8 @@ function forceuseweapon(newweapon, targetslot) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24fb
-// Size: 0x148
+// Checksum 0x0, Offset: 0x264e
+// Size: 0x147
 function updateweaponarchetype(weapclass) {
     if (!isdefined(self._blackboard) || scripts\asm\asm_bb::bb_isanimscripted() || !isdefined(self.asm) || !isdefined(self.animsetname)) {
         return;
@@ -978,7 +978,7 @@ function updateweaponarchetype(weapclass) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x264b
+// Checksum 0x0, Offset: 0x279d
 // Size: 0x32
 function everusessecondaryweapon() {
     if (isshotgun(self.secondaryweapon)) {
@@ -992,7 +992,7 @@ function everusessecondaryweapon() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2686
+// Checksum 0x0, Offset: 0x27d8
 // Size: 0x3a9
 function default_weaponsetup(var_4fa6c3f27e072cb6) {
     if (!isdefined(self.stowsidearmposition)) {
@@ -1070,26 +1070,26 @@ function default_weaponsetup(var_4fa6c3f27e072cb6) {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a37
+// Checksum 0x0, Offset: 0x2b89
 // Size: 0x157
 function validatesidearm() {
     /#
         if (self.primaryweapon == self.sidearm && !isnullweapon(self.primaryweapon)) {
-            exportstring = ter_op(isdefined(self.export), self.export, "<dev string:x2e0>");
+            exportstring = ter_op(isdefined(self.export), self.export, "<dev string:x1cf>");
             classnamestring = ter_op(isagent(self), self.agent_type, self.classname);
-            assertmsg("<dev string:x2e4>" + classnamestring + "<dev string:x2ec>" + exportstring + "<dev string:x2ff>" + getcompleteweaponname(self.primaryweapon) + "<dev string:x32e>");
+            assertmsg("<dev string:x1d0>" + classnamestring + "<dev string:x1d5>" + exportstring + "<dev string:x1e5>" + getcompleteweaponname(self.primaryweapon) + "<dev string:x211>");
         }
         if (self.secondaryweapon == self.sidearm && !isnullweapon(self.secondaryweapon) && everusessecondaryweapon()) {
-            exportstring = ter_op(isdefined(self.export), self.export, "<dev string:x2e0>");
+            exportstring = ter_op(isdefined(self.export), self.export, "<dev string:x1cf>");
             classnamestring = ter_op(isagent(self), self.agent_type, self.classname);
-            assertmsg("<dev string:x2e4>" + classnamestring + "<dev string:x2ec>" + exportstring + "<dev string:x334>" + getcompleteweaponname(self.primaryweapon) + "<dev string:x32e>");
+            assertmsg("<dev string:x1d0>" + classnamestring + "<dev string:x1d5>" + exportstring + "<dev string:x214>" + getcompleteweaponname(self.primaryweapon) + "<dev string:x211>");
         }
     #/
 }
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b96
+// Checksum 0x0, Offset: 0x2ce8
 // Size: 0x9d
 function initmeleecharges() {
     anim.meleechargetimers["c6"] = 0;
@@ -1107,7 +1107,7 @@ function initmeleecharges() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3b
+// Checksum 0x0, Offset: 0x2d8d
 // Size: 0x5a
 function init_squadmanager() {
     if (isdefined(anim.squadinitialized) && anim.squadinitialized) {
@@ -1123,7 +1123,7 @@ function init_squadmanager() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c9d
+// Checksum 0x0, Offset: 0x2def
 // Size: 0x275
 function initanimvars() {
     anim.animflagnameindex = 0;
@@ -1175,8 +1175,8 @@ function initanimvars() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f1a
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x306c
+// Size: 0xa4
 function initgestures() {
     gestures = [];
     gestures[gestures.size] = "point_casual";
@@ -1198,7 +1198,7 @@ function initgestures() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc7
+// Checksum 0x0, Offset: 0x3118
 // Size: 0x8a
 function setglobalaimsettings() {
     anim.covercrouchleanpitch = 55;
@@ -1216,7 +1216,7 @@ function setglobalaimsettings() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3059
+// Checksum 0x0, Offset: 0x31aa
 // Size: 0x24
 function c12_getweapontypeforweapon() {
     if (scripts\anim\utility_common::usingrocketlauncher()) {
@@ -1229,7 +1229,7 @@ function c12_getweapontypeforweapon() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3086
+// Checksum 0x0, Offset: 0x31d7
 // Size: 0x97
 function c12_weaponsetup() {
     self.weapons = [];
@@ -1247,7 +1247,7 @@ function c12_weaponsetup() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3125
+// Checksum 0x0, Offset: 0x3276
 // Size: 0xd9
 function initwindowtraverse() {
     level.window_down_height[0] = -36.8552;
@@ -1266,8 +1266,8 @@ function initwindowtraverse() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3206
-// Size: 0xad
+// Checksum 0x0, Offset: 0x3357
+// Size: 0xae
 function setuprandomtable() {
     anim.randominttablesize = 60;
     anim.randominttable = [];
@@ -1284,7 +1284,7 @@ function setuprandomtable() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32bb
+// Checksum 0x0, Offset: 0x340d
 // Size: 0x5b
 function setupweapons() {
     self endon("death");
@@ -1298,25 +1298,25 @@ function setupweapons() {
 
 // Namespace shared / namespace_223959d3e5206cfb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x331e
+// Checksum 0x0, Offset: 0x3470
 // Size: 0x20a
 function setscriptammo(weaponname, inherit_from, placedub) {
     if (isdefined(inherit_from.script_ammo_clip)) {
-        assertex(isdefined(inherit_from.script_ammo_clip), "<dev string:x365>");
-        assertex(isdefined(inherit_from.script_ammo_extra), "<dev string:x391>");
+        assertex(isdefined(inherit_from.script_ammo_clip), "Need to set a value for script_ammo_clip");
+        assertex(isdefined(inherit_from.script_ammo_extra), "Must also set, 'script_ammo_extra' when setting script_ammo_clip.");
         self itemweaponsetammo(inherit_from.script_ammo_clip, inherit_from.script_ammo_extra);
     } else if (isdefined(inherit_from.script_ammo_extra)) {
-        assertex(isdefined(inherit_from.script_ammo_extra), "<dev string:x3d6>");
-        assertex(isdefined(inherit_from.script_ammo_clip), "<dev string:x403>");
+        assertex(isdefined(inherit_from.script_ammo_extra), "Need to set a value for script_ammo_extra");
+        assertex(isdefined(inherit_from.script_ammo_clip), "Must also set, 'script_ammo_clip' when setting script_ammo_extra.");
         self itemweaponsetammo(inherit_from.script_ammo_clip, inherit_from.script_ammo_extra);
     }
     if (isdefined(inherit_from.script_ammo_alt_clip)) {
-        assertex(isdefined(inherit_from.script_ammo_alt_clip), "<dev string:x448>");
-        assertex(isdefined(inherit_from.script_ammo_extra), "<dev string:x478>");
+        assertex(isdefined(inherit_from.script_ammo_alt_clip), "Need to set a value for script_ammo_alt_clip");
+        assertex(isdefined(inherit_from.script_ammo_extra), "Must also set, 'script_ammo_extra' when setting script_ammo_alt_clip.");
         self itemweaponsetammo(inherit_from.script_ammo_alt_clip, inherit_from.script_ammo_alt_extra, undefined, 1);
     } else if (isdefined(inherit_from.script_ammo_alt_extra)) {
-        assertex(isdefined(inherit_from.script_ammo_alt_extra), "<dev string:x4c1>");
-        assertex(isdefined(inherit_from.script_ammo_clip), "<dev string:x4f2>");
+        assertex(isdefined(inherit_from.script_ammo_alt_extra), "Need to set a value for script_ammo_alt_extra");
+        assertex(isdefined(inherit_from.script_ammo_clip), "Must also set, 'script_ammo_clip' when setting script_ammo_alt_extra.");
         self itemweaponsetammo(inherit_from.script_ammo_alt_clip, inherit_from.script_ammo_alt_extra, undefined, 1);
     }
     if (isdefined(inherit_from.script_ammo_max)) {

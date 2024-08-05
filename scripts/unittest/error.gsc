@@ -4,7 +4,7 @@
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x771
+// Checksum 0x0, Offset: 0x4b7
 // Size: 0x37
 function error_print(msg, var) {
     if (isdefined(var)) {
@@ -16,7 +16,7 @@ function error_print(msg, var) {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b0
+// Checksum 0x0, Offset: 0x4f6
 // Size: 0x1b
 function func(a, b, c) {
     
@@ -24,7 +24,7 @@ function func(a, b, c) {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d3
+// Checksum 0x0, Offset: 0x519
 // Size: 0x10
 function cond_func() {
     test_print("cond func");
@@ -33,7 +33,7 @@ function cond_func() {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ec
+// Checksum 0x0, Offset: 0x532
 // Size: 0xc5
 function params() {
     s = spawnstruct();
@@ -54,8 +54,8 @@ function params() {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b9
-// Size: 0x3b8
+// Checksum 0x0, Offset: 0x5ff
+// Size: 0x3be
 function types() {
     x = 1;
     s = spawnstruct();
@@ -144,12 +144,11 @@ function types() {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc79
-// Size: 0x55
+// Checksum 0x0, Offset: 0x9c5
+// Size: 0x52
 function wait_notify() {
     s = spawnstruct();
     x = 1;
-    wait -1;
     wait -1;
     wait 16777216;
     wait s;
@@ -163,7 +162,7 @@ function wait_notify() {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd6
+// Checksum 0x0, Offset: 0xa1f
 // Size: 0x83
 function switch_func(msg, var) {
     test_print(msg);
@@ -183,7 +182,7 @@ function switch_func(msg, var) {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd61
+// Checksum 0x0, Offset: 0xaaa
 // Size: 0x54
 function switch_test() {
     switch_func("switch float", 1);
@@ -194,8 +193,8 @@ function switch_test() {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbd
-// Size: 0x2f7
+// Checksum 0x0, Offset: 0xb06
+// Size: 0x29b
 function cond() {
     s = spawnstruct();
     if (s) {
@@ -289,23 +288,11 @@ function cond() {
         }
         s++;
     }
-    b = s ? 1 : 0;
-    if (b) {
-        test_print("struct ternary if");
-    } else {
-        test_print("struct ternary else");
-    }
-    b = s ? 0 : 1;
-    if (b) {
-        test_print("struct ternary not if");
-        return;
-    }
-    test_print("struct ternary not else");
 }
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10bc
+// Checksum 0x0, Offset: 0xda9
 // Size: 0x57
 function is_true_print(val, name) {
     b = istrue(val);
@@ -318,7 +305,7 @@ function is_true_print(val, name) {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x111b
+// Checksum 0x0, Offset: 0xe08
 // Size: 0x38
 function is_true() {
     a = [];
@@ -329,141 +316,8 @@ function is_true() {
 
 // Namespace unittest_error / scripts\unittest\error
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x115b
-// Size: 0xba
-function builtin() {
-    key = getarraykey(undefined, -1);
-    test_print("builtin");
-    p = &getarraykey;
-    key = builtin [[ p ]](undefined, -1);
-    test_print("builtin pointer");
-    p = undefined;
-    builtin [[ p ]](1, 2, 3);
-    test_print("builtin pointer invalid");
-    m = undefined;
-    m moveto(1, 2, 3);
-    test_print("builtin method");
-    p = &moveto;
-    m builtin [[ p ]](1, 2, 3);
-    test_print("builtin method pointer");
-    p = undefined;
-    m builtin [[ p ]](1, 2, 3);
-    test_print("builtin method pointer invalid");
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x121d
-// Size: 0xa
-function n3() {
-    return 1 + spawnstruct();
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1230
-// Size: 0x9
-function n2() {
-    n3();
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1241
-// Size: 0x26
-function n1(index) {
-    if (index <= 0) {
-        n2();
-        return;
-    }
-    n1(index - 1);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x126f
-// Size: 0x17
-function nested() {
-    n1(3);
-    test_print("nested");
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x128e
-// Size: 0x60
-function function_b5410a15d3ff2e84(count) {
-    level endon("vm_execute_error_context");
-    new_count = count - 1;
-    test_print("vm_execute_error_context: " + count);
-    if (count <= 0) {
-        x = new_count + spawnstruct();
-        test_print("vm_execute_error_context: done");
-        return;
-    }
-    function_79d19ed5ae591fb5(&vm_execute_error_context, new_count);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f6
-// Size: 0x13
-function function_b5410d15d3ff351d(count) {
-    function_b5410a15d3ff2e84(count);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1311
-// Size: 0x13
-function vm_execute_error_context(count) {
-    function_b5410d15d3ff351d(count);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x132c
-// Size: 0x59
-function function_c1262a8e708035d7(count) {
-    new_count = count - 1;
-    test_print("vm_execute_error_stack: " + count);
-    if (count <= 0) {
-        x = new_count + spawnstruct();
-        test_print("vm_execute_error_stack: done");
-        return;
-    }
-    function_79d19ed5ae591fb5(&function_84bd830f4916d5a, new_count);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x138d
-// Size: 0x13
-function function_c1262b8e7080380a(count) {
-    function_c1262a8e708035d7(count);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a8
-// Size: 0x13
-function function_84bd830f4916d5a(count) {
-    function_c1262b8e7080380a(count);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13c3
-// Size: 0x14
-function function_6f617c533b22e78b() {
-    vm_execute_error_context(3);
-    function_84bd830f4916d5a(3);
-}
-
-// Namespace unittest_error / scripts\unittest\error
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13df
-// Size: 0x59
+// Checksum 0x0, Offset: 0xe48
+// Size: 0x44
 function main() {
     test_begin("Error");
     params();
@@ -472,9 +326,6 @@ function main() {
     switch_test();
     cond();
     is_true();
-    builtin();
-    nested();
-    function_6f617c533b22e78b();
     test_end("Error");
 }
 

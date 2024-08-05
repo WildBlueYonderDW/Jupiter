@@ -1033,7 +1033,7 @@ function init_track_settings(name, parent) {
 // Checksum 0x0, Offset: 0x94e6
 // Size: 0x81
 function init_tracks() {
-    rt = level.brattractions["rt"];
+    RT = level.brattractions["rt"];
     tracks = getstructarray("attraction_racetrack", "targetname");
     foreach (track in tracks) {
         init_track(track);
@@ -1045,7 +1045,7 @@ function init_tracks() {
 // Checksum 0x0, Offset: 0x956f
 // Size: 0x368
 function init_track(track) {
-    rt = level.brattractions["rt"];
+    RT = level.brattractions["rt"];
     if (!isdefined(track.index) || track.index < 0) {
         track.index = get_next_track_index();
     }
@@ -1056,7 +1056,7 @@ function init_track(track) {
     if (filter & 1 << track.index) {
         return;
     }
-    rt.tracks[track.index] = track;
+    RT.tracks[track.index] = track;
     track.record = spawnstruct();
     if (!isdefined(track.name)) {
         track.name = track.script_noteworthy;
@@ -1162,16 +1162,16 @@ function delete_track(track) {
 // Checksum 0x0, Offset: 0x9a9d
 // Size: 0xa6
 function get_track_setting(track, setting_name) {
-    rt = level.brattractions["rt"];
+    RT = level.brattractions["rt"];
     value = undefined;
     settings_group = track.settings_group;
     while (true) {
-        setting = rt.track_settings[settings_group].values[setting_name];
+        setting = RT.track_settings[settings_group].values[setting_name];
         if (isdefined(setting)) {
             value = setting;
             break;
         }
-        settings_group = rt.track_settings[settings_group].parent;
+        settings_group = RT.track_settings[settings_group].parent;
         if (!isdefined(settings_group)) {
             break;
         }
@@ -2392,17 +2392,17 @@ function dist_to_line_seg(point, start, stop) {
     // Checksum 0x0, Offset: 0xcc04
     // Size: 0xba
     function function_1d97ac4a5afd1642() {
-        rt = level.brattractions["<dev string:xb3>"];
-        if (istrue(rt.var_45d5625806911f2c)) {
-            rt.var_45d5625806911f2c = 0;
-            rt notify("<dev string:xb9>");
+        RT = level.brattractions["<dev string:xb3>"];
+        if (istrue(RT.var_45d5625806911f2c)) {
+            RT.var_45d5625806911f2c = 0;
+            RT notify("<dev string:xb9>");
             return;
         } else {
-            rt endon("<dev string:xb9>");
-            rt.var_45d5625806911f2c = 1;
+            RT endon("<dev string:xb9>");
+            RT.var_45d5625806911f2c = 1;
         }
         while (true) {
-            foreach (track in rt.tracks) {
+            foreach (track in RT.tracks) {
                 function_2a28c6ef9173079f(track);
             }
             waitframe();
@@ -2483,9 +2483,9 @@ function dist_to_line_seg(point, start, stop) {
     // Checksum 0x0, Offset: 0xd2ba
     // Size: 0x4e
     function function_d08fe5f270307ab8(index) {
-        rt = level.brattractions["<dev string:xb3>"];
-        if (isdefined(rt.tracks[index])) {
-            delete_track(rt.tracks[index]);
+        RT = level.brattractions["<dev string:xb3>"];
+        if (isdefined(RT.tracks[index])) {
+            delete_track(RT.tracks[index]);
         }
     }
 
@@ -2494,13 +2494,13 @@ function dist_to_line_seg(point, start, stop) {
     // Checksum 0x0, Offset: 0xd310
     // Size: 0x71
     function function_7a092a5fc6e9c24b(index) {
-        rt = level.brattractions["<dev string:xb3>"];
-        if (isdefined(rt.var_f99815461b25f1eb)) {
+        RT = level.brattractions["<dev string:xb3>"];
+        if (isdefined(RT.var_f99815461b25f1eb)) {
             iprintlnbold("<dev string:x16c>");
             return;
         }
-        rt.var_f99815461b25f1eb = rt.tracks[index];
-        delete_track(rt.tracks[index]);
+        RT.var_f99815461b25f1eb = RT.tracks[index];
+        delete_track(RT.tracks[index]);
     }
 
     // Namespace br_attraction_racetrack / scripts\mp\gametypes\br_attraction_racetrack
@@ -2543,13 +2543,13 @@ function dist_to_line_seg(point, start, stop) {
     // Checksum 0x0, Offset: 0xd4e4
     // Size: 0x620
     function function_53ca8617fcc31a47() {
-        rt = level.brattractions["<dev string:xb3>"];
-        rt.var_f99815461b25f1eb = undefined;
+        RT = level.brattractions["<dev string:xb3>"];
+        RT.var_f99815461b25f1eb = undefined;
         setdvarifuninitialized(@"hash_324951f72e619f36", "<dev string:xd0>");
         while (true) {
             waitframe();
-            if (isdefined(rt.var_f99815461b25f1eb)) {
-                function_2a28c6ef9173079f(rt.var_f99815461b25f1eb);
+            if (isdefined(RT.var_f99815461b25f1eb)) {
+                function_2a28c6ef9173079f(RT.var_f99815461b25f1eb);
             }
             current = getdvar(@"hash_324951f72e619f36");
             if (current == "<dev string:xd0>") {
@@ -2559,7 +2559,7 @@ function dist_to_line_seg(point, start, stop) {
             current = toks[0];
             arg = ter_op(toks.size > 1, toks[1], undefined);
             setdvar(@"hash_324951f72e619f36", "<dev string:xd0>");
-            if (isdefined(rt.var_f99815461b25f1eb)) {
+            if (isdefined(RT.var_f99815461b25f1eb)) {
                 if (current == "<dev string:x1a9>") {
                     function_5ec615ca5f0e291b();
                     continue;
@@ -2568,7 +2568,7 @@ function dist_to_line_seg(point, start, stop) {
                     mapformat = current == "<dev string:x1d1>" || current == "<dev string:x1dd>";
                     file = undefined;
                     if (tofile) {
-                        filename = "<dev string:x1f1>" + rt.var_f99815461b25f1eb.name;
+                        filename = "<dev string:x1f1>" + RT.var_f99815461b25f1eb.name;
                         if (mapformat) {
                             filename += "<dev string:x206>";
                         } else {
@@ -2584,24 +2584,24 @@ function dist_to_line_seg(point, start, stop) {
                         }
                     }
                     if (mapformat) {
-                        function_28c49f6d47613d0e(rt.var_f99815461b25f1eb, file);
+                        function_28c49f6d47613d0e(RT.var_f99815461b25f1eb, file);
                     } else {
-                        function_ba2c486db215737b(rt.var_f99815461b25f1eb, file);
+                        function_ba2c486db215737b(RT.var_f99815461b25f1eb, file);
                     }
                     if (tofile) {
                         closefile(file);
                     }
                     continue;
                 } else if (current == "<dev string:x26e>") {
-                    rt.var_f99815461b25f1eb.loop = 1;
-                    if (rt.var_f99815461b25f1eb.settings_group == "<dev string:x276>") {
-                        apply_track_settings(rt.var_f99815461b25f1eb, "<dev string:x281>");
+                    RT.var_f99815461b25f1eb.loop = 1;
+                    if (RT.var_f99815461b25f1eb.settings_group == "<dev string:x276>") {
+                        apply_track_settings(RT.var_f99815461b25f1eb, "<dev string:x281>");
                     }
                     continue;
                 } else if (current == "<dev string:x291>") {
-                    rt.var_f99815461b25f1eb.loop = 0;
-                    if (rt.var_f99815461b25f1eb.settings_group == "<dev string:x281>") {
-                        apply_track_settings(rt.var_f99815461b25f1eb, "<dev string:x276>");
+                    RT.var_f99815461b25f1eb.loop = 0;
+                    if (RT.var_f99815461b25f1eb.settings_group == "<dev string:x281>") {
+                        apply_track_settings(RT.var_f99815461b25f1eb, "<dev string:x276>");
                     }
                     continue;
                 } else if (current == "<dev string:x29d>") {
@@ -2614,22 +2614,22 @@ function dist_to_line_seg(point, start, stop) {
                     level notify("<dev string:x2ed>");
                     continue;
                 } else if (current == "<dev string:x303>") {
-                    if (rt.var_f99815461b25f1eb.points.size) {
-                        rt.var_f99815461b25f1eb.points[rt.var_f99815461b25f1eb.points.size - 1] = undefined;
+                    if (RT.var_f99815461b25f1eb.points.size) {
+                        RT.var_f99815461b25f1eb.points[RT.var_f99815461b25f1eb.points.size - 1] = undefined;
                     }
                     continue;
                 } else if (current == "<dev string:x30d>") {
-                    init_track(rt.var_f99815461b25f1eb);
+                    init_track(RT.var_f99815461b25f1eb);
                     function_5ec615ca5f0e291b();
                     continue;
                 } else if (current == "<dev string:x315>") {
                     if (isdefined(arg)) {
-                        rt.var_f99815461b25f1eb.name = arg;
+                        RT.var_f99815461b25f1eb.name = arg;
                     }
                     continue;
                 } else if (current == "<dev string:x31d>") {
                     if (isdefined(arg)) {
-                        apply_track_settings(rt.var_f99815461b25f1eb, arg);
+                        apply_track_settings(RT.var_f99815461b25f1eb, arg);
                     }
                     continue;
                 } else if (current == "<dev string:x2ad>" || current == "<dev string:x2cd>") {
@@ -2645,22 +2645,22 @@ function dist_to_line_seg(point, start, stop) {
                         angles = (0, angles[1], 0);
                     }
                     point struct_set_fields(origin, angles);
-                    rt.var_f99815461b25f1eb.points[rt.var_f99815461b25f1eb.points.size] = point;
+                    RT.var_f99815461b25f1eb.points[RT.var_f99815461b25f1eb.points.size] = point;
                     continue;
                 }
             }
-            if (isdefined(rt.var_f99815461b25f1eb)) {
+            if (isdefined(RT.var_f99815461b25f1eb)) {
                 iprintlnbold("<dev string:x329>");
                 continue;
             }
-            rt.var_f99815461b25f1eb = spawnstruct();
-            rt.var_f99815461b25f1eb.origin = level.player.origin;
-            rt.var_f99815461b25f1eb.angles = level.player.angles;
-            rt.var_f99815461b25f1eb.loop = 0;
-            rt.var_f99815461b25f1eb.points = [];
-            rt.var_f99815461b25f1eb.index = -1;
-            rt.var_f99815461b25f1eb.name = current;
-            apply_track_settings(rt.var_f99815461b25f1eb);
+            RT.var_f99815461b25f1eb = spawnstruct();
+            RT.var_f99815461b25f1eb.origin = level.player.origin;
+            RT.var_f99815461b25f1eb.angles = level.player.angles;
+            RT.var_f99815461b25f1eb.loop = 0;
+            RT.var_f99815461b25f1eb.points = [];
+            RT.var_f99815461b25f1eb.index = -1;
+            RT.var_f99815461b25f1eb.name = current;
+            apply_track_settings(RT.var_f99815461b25f1eb);
         }
     }
 
@@ -2669,8 +2669,8 @@ function dist_to_line_seg(point, start, stop) {
     // Checksum 0x0, Offset: 0xdb0c
     // Size: 0x33
     function function_5ec615ca5f0e291b() {
-        rt = level.brattractions["<dev string:xb3>"];
-        rt.var_f99815461b25f1eb = undefined;
+        RT = level.brattractions["<dev string:xb3>"];
+        RT.var_f99815461b25f1eb = undefined;
         level notify("<dev string:x2ed>");
     }
 

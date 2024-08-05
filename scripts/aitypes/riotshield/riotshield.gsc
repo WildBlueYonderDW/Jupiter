@@ -8,15 +8,14 @@
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x183
-// Size: 0x13a
+// Checksum 0x0, Offset: 0x1c1
+// Size: 0x123
 function riotshield_init_cp(taskid) {
     if (istrue(self.briotshieldinitialized)) {
         return anim.success;
     }
-    attachments = function_6527364c1ecca6c6("iw9_me_riotshield_mp");
-    self.secondaryweapon = makeweapon("iw9_me_riotshield_mp", attachments);
-    assertex(self.secondaryweapon.basename != "<dev string:x1c>", "<dev string:x24>");
+    self.secondaryweapon = makeweapon("iw9_me_riotshield_mp");
+    assertex(self.secondaryweapon.basename != "none", "Unable to make weapon iw9_me_riotshield_mp. Check csv");
     if (self.secondaryweapon.basename != "none") {
         utility::initweapon(self.secondaryweapon);
         self.riotshieldmodel = getweaponmodel(self.secondaryweapon);
@@ -35,15 +34,14 @@ function riotshield_init_cp(taskid) {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c5
-// Size: 0x148
+// Checksum 0x0, Offset: 0x2ec
+// Size: 0x131
 function function_8cddb6d105408617(taskid) {
     if (istrue(self.briotshieldinitialized)) {
         return anim.success;
     }
-    attachments = function_6527364c1ecca6c6("iw9_me_riotshield_mp");
-    self.secondaryweapon = makeweapon("iw9_me_riotshield_mp", attachments);
-    assertex(self.secondaryweapon.basename != "<dev string:x1c>", "<dev string:x24>");
+    self.secondaryweapon = makeweapon("iw9_me_riotshield_mp");
+    assertex(self.secondaryweapon.basename != "none", "Unable to make weapon iw9_me_riotshield_mp. Check csv");
     if (self.secondaryweapon.basename != "none") {
         utility::initweapon(self.secondaryweapon);
         self.riotshieldmodel = getweaponmodel(self.secondaryweapon);
@@ -63,13 +61,13 @@ function function_8cddb6d105408617(taskid) {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x415
+// Checksum 0x0, Offset: 0x425
 // Size: 0x130
 function riotshield_init_sp(taskid) {
     if (istrue(self.briotshieldinitialized)) {
         return anim.success;
     }
-    assertex(self.secondaryweapon.basename != "<dev string:x1c>", "<dev string:x5d>");
+    assertex(self.secondaryweapon.basename != "none", "Unable to make weapon iw9_me_riotshield_sp. Check if the aitype GDT has a secondaryweapon");
     self function_9f82c74eb1b7caf9(0, "entity");
     self.script_goalheight = 80;
     if (self.secondaryweapon.basename != "none") {
@@ -90,7 +88,7 @@ function riotshield_init_sp(taskid) {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x54d
+// Checksum 0x0, Offset: 0x55d
 // Size: 0xca
 function function_d4b82c6f5cae75ee() {
     if (!istrue(self.dropweapon) || istrue(self.bdroppingshield) || istrue(self.script_noloot) || istrue(self.script_nodrop)) {
@@ -108,7 +106,7 @@ function function_d4b82c6f5cae75ee() {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x620
+// Checksum 0x0, Offset: 0x630
 // Size: 0x200
 function riotshield_common() {
     self allowedstances("stand");
@@ -160,7 +158,7 @@ function riotshield_common() {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x828
+// Checksum 0x0, Offset: 0x838
 // Size: 0xb2
 function terminateriotshield() {
     self allowedstances("stand", "crouch", "prone");
@@ -183,7 +181,7 @@ function terminateriotshield() {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e2
+// Checksum 0x0, Offset: 0x8f2
 // Size: 0x20
 function resetstuckthermite() {
     self.bhasthermitestucktoshield = 0;
@@ -193,7 +191,7 @@ function resetstuckthermite() {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x90a
+// Checksum 0x0, Offset: 0x91a
 // Size: 0x6b
 function removeriotshield() {
     if (istrue(self.bhasriotshieldattached)) {
@@ -210,7 +208,7 @@ function removeriotshield() {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97d
+// Checksum 0x0, Offset: 0x98d
 // Size: 0x1f
 function function_a43626a85e6614f0(taskid) {
     if (!self.bdroppingshield) {
@@ -220,11 +218,11 @@ function function_a43626a85e6614f0(taskid) {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a4
+// Checksum 0x0, Offset: 0x9b4
 // Size: 0x80
 function function_97dbc630c790bfb3(taskid) {
     if (self.bdroppingshield) {
-        assert(isdefined(self.weapon) && weaponclass(self.weapon) != "<dev string:xba>");
+        assert(isdefined(self.weapon) && weaponclass(self.weapon) != "mg");
         self._blackboard.weaponrequest = "mg";
         self setbtgoalpos(4, self.origin);
         return anim.running;
@@ -234,8 +232,8 @@ function function_97dbc630c790bfb3(taskid) {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2d
-// Size: 0x2dd
+// Checksum 0x0, Offset: 0xa3d
+// Size: 0x2e3
 function dropshield() {
     self endon("death");
     self.bdroppingshield = 1;
@@ -291,7 +289,7 @@ function dropshield() {
 
 // Namespace riotshield / scripts\aitypes\riotshield\riotshield
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd12
+// Checksum 0x0, Offset: 0xd28
 // Size: 0x1b
 function deleteaftertime(t) {
     self endon("death");

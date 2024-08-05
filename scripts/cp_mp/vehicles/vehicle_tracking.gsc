@@ -5,8 +5,8 @@
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a8
-// Size: 0x1bc
+// Checksum 0x0, Offset: 0x710
+// Size: 0x159
 function _spawnvehicle(spawndata, faildata) {
     /#
         function_3a040ff591c32b5c(spawndata);
@@ -18,28 +18,22 @@ function _spawnvehicle(spawndata, faildata) {
             }
             /#
                 if (istrue(level.var_4e89ea3291f12198)) {
-                    println("<dev string:x1c>" + spawndata.modelname + "<dev string:x49>" + level.vehiclecount + "<dev string:x63>" + level.maxvehiclecount);
+                    println("<dev string:x1c>" + spawndata.modelname + "<dev string:x46>" + level.vehiclecount + "<dev string:x5d>" + level.maxvehiclecount);
                 }
             #/
-            if (level.var_6fc6b49b8704877f) {
-                logprint("[VEHICLE_TRACKING] Failed to spawn the vehicle [" + spawndata.targetname + "] because the spawn limit [" + level.maxvehiclecount + "] has been reached.");
-            }
             return undefined;
         }
     }
     vehicle = spawnvehicle(spawndata.modelname, spawndata.targetname, spawndata.vehicletype, spawndata.origin, spawndata.angles, spawndata.owner, spawndata.initialvelocity, spawndata.var_131ea86b569e731);
     if (!isdefined(vehicle)) {
         if (isdefined(faildata)) {
-            faildata.fail = "code";
+            faildata.fail = "total_limit_exceeded";
         }
         /#
             if (istrue(level.var_4e89ea3291f12198)) {
-                println("<dev string:x80>" + spawndata.modelname);
+                println("<dev string:x77>" + spawndata.modelname);
             }
         #/
-        if (level.var_6fc6b49b8704877f) {
-            logprint("[VEHICLE_TRACKING] Failed to spawn the vehicle [" + spawndata.targetname + "] because of a code error.");
-        }
         return undefined;
     }
     vehicle.spawndata = spawndata;
@@ -49,8 +43,8 @@ function _spawnvehicle(spawndata, faildata) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x36d
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x872
+// Size: 0x11e
 function _spawnhelicopter(owner, origin, angles, type, modelname) {
     faildata = spawnstruct();
     spawndata = spawnstruct();
@@ -78,7 +72,7 @@ function _spawnhelicopter(owner, origin, angles, type, modelname) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x493
+// Checksum 0x0, Offset: 0x999
 // Size: 0xa2
 function _deletevehicle(vehicle) {
     if (!isdefined(vehicle)) {
@@ -96,8 +90,8 @@ function _deletevehicle(vehicle) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53e
-// Size: 0x10e
+// Checksum 0x0, Offset: 0xa44
+// Size: 0x10c
 function function_d21abb198361e610(vehicle) {
     if (!isdefined(vehicle.linkedchildren)) {
         return;
@@ -124,7 +118,7 @@ function function_d21abb198361e610(vehicle) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x654
+// Checksum 0x0, Offset: 0xb58
 // Size: 0x15
 function canspawnvehicle() {
     return level.vehiclecount < level.maxvehiclecount;
@@ -132,7 +126,7 @@ function canspawnvehicle() {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x672
+// Checksum 0x0, Offset: 0xb76
 // Size: 0xb
 function getvehiclecount() {
     return level.vehiclecount;
@@ -140,8 +134,8 @@ function getvehiclecount() {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x686
-// Size: 0x63
+// Checksum 0x0, Offset: 0xb8a
+// Size: 0x62
 function reservevehicle(count) {
     if (canspawnvehicle()) {
         if (!isdefined(count)) {
@@ -159,7 +153,7 @@ function reservevehicle(count) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f2
+// Checksum 0x0, Offset: 0xbf5
 // Size: 0x62
 function clearvehiclereservation(count) {
     if (!isdefined(count)) {
@@ -168,7 +162,7 @@ function clearvehiclereservation(count) {
     level.vehiclecount -= count;
     /#
         if (level.vehiclecount < 0) {
-            scripts\engine\utility::error("<dev string:xba>");
+            scripts\engine\utility::error("<dev string:xae>");
         }
     #/
     level.vehiclecount = int(max(0, level.vehiclecount));
@@ -176,7 +170,7 @@ function clearvehiclereservation(count) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x75c
+// Checksum 0x0, Offset: 0xc5f
 // Size: 0x16
 function getvehiclespawndata(vehicle) {
     return vehicle.spawndata;
@@ -184,7 +178,7 @@ function getvehiclespawndata(vehicle) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x77b
+// Checksum 0x0, Offset: 0xc7e
 // Size: 0x16c
 function copyvehiclespawndata(from, to) {
     to.modelname = from.modelname;
@@ -205,29 +199,25 @@ function copyvehiclespawndata(from, to) {
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ef
-// Size: 0xef
-function vehicle_tracking_registerinstance(vehicle, owner, team, var_699ac4a9c9e9f0ec) {
-    assertex(isdefined(level.vehicle), "<dev string:x100>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x145>");
-    assertex(isdefined(vehicle.vehiclename), "<dev string:x193>");
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0xdf2
+// Size: 0xb9
+function vehicle_tracking_registerinstance(vehicle, owner, team) {
+    assertex(isdefined(level.vehicle), "vehicle_tracking_registerInstance() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_registerInstance() called before vehicle_tracking_init().");
+    assertex(isdefined(vehicle.vehiclename), "vehicle_tracking_registerInstance() called with an invalid vehicle.");
     vehicle_tracking_deregisterinstance(vehicle);
     level.vehicle.instances[vehicle.vehiclename][vehicle getentitynumber()] = vehicle;
     vehicle.vehicleowner = owner;
     vehicle.vehicleteam = team;
-    vehicle.var_699ac4a9c9e9f0ec = var_699ac4a9c9e9f0ec;
-    if (!istrue(var_699ac4a9c9e9f0ec)) {
-        level.vehicle.var_3af6263662b92655[vehicle getentitynumber()] = vehicle;
-    }
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e6
-// Size: 0x114
+// Checksum 0x0, Offset: 0xeb3
+// Size: 0xef
 function vehicle_tracking_deregisterinstance(vehicle) {
-    assertex(isdefined(vehicle.vehiclename), "<dev string:x1da>");
+    assertex(isdefined(vehicle.vehiclename), "vehicle_tracking_deregisterInstance() called with an invalid vehicle.");
     if (!isdefined(level.vehicle)) {
         return;
     }
@@ -238,33 +228,31 @@ function vehicle_tracking_deregisterinstance(vehicle) {
         return;
     }
     level.vehicle.instances[vehicle.vehiclename][vehicle getentitynumber()] = undefined;
-    level.vehicle.var_3af6263662b92655[vehicle getentitynumber()] = undefined;
     if (level.vehicle.instances[vehicle.vehiclename].size <= 0) {
         level.vehicle.instances[vehicle.vehiclename] = undefined;
     }
     vehicle.vehicleowner = undefined;
     vehicle.vehicleteam = undefined;
-    vehicle.var_699ac4a9c9e9f0ec = undefined;
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb02
+// Checksum 0x0, Offset: 0xfaa
 // Size: 0x83
 function vehicle_tracking_limitgameinstances(vehiclename, limit, message) {
-    assertex(isdefined(level.vehicle), "<dev string:x223>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x26a>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_limitGameInstances() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_limitGameInstances() called before vehicle_tracking_init().");
     level.vehicle.instancelimits[vehiclename] = limit;
     level.vehicle.instancelimitmessages[vehiclename] = message;
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8d
+// Checksum 0x0, Offset: 0x1035
 // Size: 0x9e
 function function_5c8408cb68649308(vehiclename, spawntype, limit) {
-    assertex(isdefined(level.vehicle), "<dev string:x223>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x26a>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_limitGameInstances() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_limitGameInstances() called before vehicle_tracking_init().");
     if (!isdefined(level.vehicle.var_eb26b962268635b[vehiclename])) {
         level.vehicle.var_eb26b962268635b[vehiclename] = [];
     }
@@ -273,33 +261,33 @@ function function_5c8408cb68649308(vehiclename, spawntype, limit) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc33
+// Checksum 0x0, Offset: 0x10db
 // Size: 0x83
 function vehicle_tracking_limitownerinstances(vehiclename, limit, message) {
-    assertex(isdefined(level.vehicle), "<dev string:x2ba>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x302>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_limitOwnerInstances() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_limitOwnerInstances() called before vehicle_tracking_init().");
     level.vehicle.ownerinstancelimits[vehiclename] = limit;
     level.vehicle.ownerinstancelimitmessages[vehiclename] = message;
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbe
+// Checksum 0x0, Offset: 0x1166
 // Size: 0x83
 function vehicle_tracking_limitteaminstances(vehiclename, limit, message) {
-    assertex(isdefined(level.vehicle), "<dev string:x353>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x39a>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_limitTeamInstances() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_limitTeamInstances() called before vehicle_tracking_init().");
     level.vehicle.teaminstancelimits[vehiclename] = limit;
     level.vehicle.teaminstancelimitmessages[vehiclename] = message;
 }
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xd49
-// Size: 0x30d
+// Checksum 0x0, Offset: 0x11f1
+// Size: 0x311
 function vehicle_tracking_atinstancelimit(vehiclename, owner, team, spawntype, sendmessage) {
-    assertex(isdefined(level.vehicle), "<dev string:x3ea>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x42e>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_atInstanceLimit() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_atInstanceLimit() called before vehicle_tracking_init().");
     if (!isdefined(level.vehicle.instances[vehiclename])) {
         return false;
     }
@@ -355,11 +343,11 @@ function vehicle_tracking_atinstancelimit(vehiclename, owner, team, spawntype, s
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x105f
+// Checksum 0x0, Offset: 0x150b
 // Size: 0x75
 function vehicle_tracking_getgameinstances(vehiclename) {
-    assertex(isdefined(level.vehicle), "<dev string:x47b>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x4c0>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_getGameInstances() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_getGameInstances() called before vehicle_tracking_init().");
     if (!isdefined(level.vehicle.instances[vehiclename])) {
         return [];
     }
@@ -368,11 +356,11 @@ function vehicle_tracking_getgameinstances(vehiclename) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dd
-// Size: 0xf2
+// Checksum 0x0, Offset: 0x1589
+// Size: 0xf0
 function vehicle_tracking_getownerinstances(vehiclename, owner) {
-    assertex(isdefined(level.vehicle), "<dev string:x50e>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x554>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_getOwnerInstances() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_getOwnerInstances() called before vehicle_tracking_init().");
     if (!isdefined(level.vehicle.instances[vehiclename])) {
         return [];
     }
@@ -387,11 +375,11 @@ function vehicle_tracking_getownerinstances(vehiclename, owner) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d8
-// Size: 0xf2
+// Checksum 0x0, Offset: 0x1682
+// Size: 0xf0
 function vehicle_tracking_getteaminstances(vehiclename, team) {
-    assertex(isdefined(level.vehicle), "<dev string:x5a3>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x5e8>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_getTeamInstances() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_getTeamInstances() called before vehicle_tracking_init().");
     if (!isdefined(level.vehicle.instances[vehiclename])) {
         return [];
     }
@@ -406,10 +394,10 @@ function vehicle_tracking_getteaminstances(vehiclename, team) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12d3
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x177b
+// Size: 0xdc
 function vehicle_tracking_getgameinstancesforall() {
-    assertex(isdefined(level.vehicle), "<dev string:x636>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_getGameInstancesForAll() called before vehicle_init().");
     if (!isdefined(level.vehicle.instances)) {
         return [];
     }
@@ -424,11 +412,11 @@ function vehicle_tracking_getgameinstancesforall() {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13bb
+// Checksum 0x0, Offset: 0x1860
 // Size: 0xb6
 function vehicle_tracking_instancesarelimited(vehiclename) {
-    assertex(isdefined(level.vehicle), "<dev string:x681>");
-    assertex(isdefined(level.vehicle.instances), "<dev string:x6c9>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_instancesAreLimited() called before vehicle_init().");
+    assertex(isdefined(level.vehicle.instances), "vehicle_tracking_instancesAreLimited() called before vehicle_tracking_init().");
     if (isdefined(level.vehicle.instancelimits[vehiclename])) {
         return true;
     }
@@ -446,23 +434,12 @@ function vehicle_tracking_instancesarelimited(vehiclename) {
 
 // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x147a
-// Size: 0x4f
-function function_59e95ab1ae37120a() {
-    assertex(isdefined(level.vehicle), "<dev string:x71a>");
-    assertex(isdefined(level.vehicle.var_3af6263662b92655), "<dev string:x755>");
-    return level.vehicle.var_3af6263662b92655;
-}
-
-// Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d2
-// Size: 0x142
+// Checksum 0x0, Offset: 0x191f
+// Size: 0x108
 function vehicle_tracking_init() {
-    assertex(isdefined(level.vehicle), "<dev string:x799>");
-    assertex(!isdefined(level.vehicle.instances), "<dev string:x7d2>");
+    assertex(isdefined(level.vehicle), "vehicle_tracking_init() called before vehicle_init().");
+    assertex(!isdefined(level.vehicle.instances), "vehicle_tracking_init() should only be called once.");
     level.vehicle.instances = [];
-    level.vehicle.var_3af6263662b92655 = [];
     level.vehicle.instancelimits = [];
     level.vehicle.ownerinstancelimits = [];
     level.vehicle.teaminstancelimits = [];
@@ -472,27 +449,25 @@ function vehicle_tracking_init() {
     level.vehicle.teaminstancelimitmessages = [];
     level.vehiclecount = 0;
     level.maxvehiclecount = getdvarint(@"hash_a473574b4e4333d0", 128);
-    level.var_6fc6b49b8704877f = getdvarint(@"hash_c9b6891700ca109", 0);
-    level utility::flag_set("vehicle_tracking_initialized");
 }
 
 /#
 
     // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x161c
+    // Checksum 0x0, Offset: 0x1a2f
     // Size: 0x61
     function validatespawndata(spawndata) {
         if (!isdefined(spawndata)) {
-            thread error("<dev string:x809>");
+            thread error("<dev string:xf1>");
             return 0;
         }
         if (!isdefined(spawndata.origin)) {
-            thread error("<dev string:x827>");
+            thread error("<dev string:x10c>");
             return 0;
         }
         if (!isdefined(spawndata.angles)) {
-            thread error("<dev string:x84c>");
+            thread error("<dev string:x12e>");
             return 0;
         }
         return 1;
@@ -500,18 +475,18 @@ function vehicle_tracking_init() {
 
     // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1685
+    // Checksum 0x0, Offset: 0x1a98
     // Size: 0x59
     function function_3a040ff591c32b5c(spawndata) {
         if (!validatespawndata(spawndata)) {
             return 0;
         }
         if (!isdefined(spawndata.vehicletype)) {
-            thread error("<dev string:x871>");
+            thread error("<dev string:x150>");
             return 0;
         }
         if (!isdefined(spawndata.targetname)) {
-            thread error("<dev string:x89b>");
+            thread error("<dev string:x177>");
             return 0;
         }
         return 1;
@@ -519,22 +494,22 @@ function vehicle_tracking_init() {
 
     // Namespace vehicle_tracking / scripts\cp_mp\vehicles\vehicle_tracking
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x16e6
+    // Checksum 0x0, Offset: 0x1af9
     // Size: 0x77
     function function_298430b99bada795(spawndata) {
         if (!validatespawndata(spawndata)) {
             return 0;
         }
         if (!isdefined(spawndata.owner)) {
-            thread error("<dev string:x8c4>");
+            thread error("<dev string:x19d>");
             return 0;
         }
         if (!isdefined(spawndata.vehicletype)) {
-            thread error("<dev string:x871>");
+            thread error("<dev string:x150>");
             return 0;
         }
         if (!isdefined(spawndata.modelname)) {
-            thread error("<dev string:x8e8>");
+            thread error("<dev string:x1be>");
             return 0;
         }
         return 1;

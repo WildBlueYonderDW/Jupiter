@@ -5,7 +5,7 @@
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff
+// Checksum 0x0, Offset: 0x1ea
 // Size: 0x73
 function print3dtime(timer, org, msg, color, alpha, scale) {
     newtime = timer / 0.05;
@@ -19,8 +19,8 @@ function print3dtime(timer, org, msg, color, alpha, scale) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a
-// Size: 0x8f
+// Checksum 0x0, Offset: 0x265
+// Size: 0x90
 function print3drise(org, msg, color, alpha, scale) {
     newtime = 100;
     up = 0;
@@ -36,7 +36,7 @@ function print3drise(org, msg, color, alpha, scale) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x311
+// Checksum 0x0, Offset: 0x2fd
 // Size: 0x26
 function crossproduct(vec1, vec2) {
     return vec1[0] * vec2[1] - vec1[1] * vec2[0] > 0;
@@ -44,8 +44,8 @@ function crossproduct(vec1, vec2) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x340
-// Size: 0x2f
+// Checksum 0x0, Offset: 0x32c
+// Size: 0x2e
 function safemod(a, b) {
     result = int(a) % b;
     result += b;
@@ -54,8 +54,8 @@ function safemod(a, b) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x378
-// Size: 0xff
+// Checksum 0x0, Offset: 0x363
+// Size: 0x101
 function quadrantanimweights(yaw) {
     forwardweight = cos(yaw);
     leftweight = sin(yaw);
@@ -91,8 +91,8 @@ function quadrantanimweights(yaw) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x480
-// Size: 0x61
+// Checksum 0x0, Offset: 0x46d
+// Size: 0x60
 function getquadrant(angle) {
     angle = angleclamp(angle);
     if (angle < 45 || angle > 315) {
@@ -109,8 +109,8 @@ function getquadrant(angle) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ea
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x4d6
+// Size: 0x3b
 function isinset(input, set) {
     for (i = set.size - 1; i >= 0; i--) {
         if (input == set[i]) {
@@ -122,7 +122,7 @@ function isinset(input, set) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x52f
+// Checksum 0x0, Offset: 0x51a
 // Size: 0x29
 function weapon_genade_launcher() {
     return !isnullweapon(self.weapon) && weaponclass(self.weapon) == "grenade";
@@ -130,7 +130,7 @@ function weapon_genade_launcher() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x561
+// Checksum 0x0, Offset: 0x54c
 // Size: 0x3b
 function weapon_pump_action_shotgun() {
     return !isnullweapon(self.weapon) && weaponisboltaction(self.weapon) && weaponclass(self.weapon) == "spread";
@@ -138,7 +138,7 @@ function weapon_pump_action_shotgun() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a5
+// Checksum 0x0, Offset: 0x590
 // Size: 0x17
 function islmg(weapon) {
     return weaponclass(weapon) == "mg";
@@ -146,7 +146,7 @@ function islmg(weapon) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c5
+// Checksum 0x0, Offset: 0x5b0
 // Size: 0x17
 function isshotgun(weapon) {
     return weaponclass(weapon) == "spread";
@@ -154,7 +154,7 @@ function isshotgun(weapon) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e5
+// Checksum 0x0, Offset: 0x5d0
 // Size: 0x17
 function issniperrifle(weapon) {
     return weaponclass(weapon) == "sniper";
@@ -162,7 +162,7 @@ function issniperrifle(weapon) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x605
+// Checksum 0x0, Offset: 0x5f0
 // Size: 0x11
 function isshotgunai() {
     return isshotgun(self.primaryweapon);
@@ -170,7 +170,7 @@ function isshotgunai() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x61f
+// Checksum 0x0, Offset: 0x60a
 // Size: 0x12
 function islongrangeai() {
     return self function_e8ca4080d02a0bb4() || usingrocketlauncher();
@@ -178,7 +178,7 @@ function islongrangeai() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x63a
+// Checksum 0x0, Offset: 0x625
 // Size: 0x16
 function usingpistol() {
     return weaponclass(self.weapon) == "pistol";
@@ -186,7 +186,7 @@ function usingpistol() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x659
+// Checksum 0x0, Offset: 0x644
 // Size: 0x16
 function usingrocketlauncher() {
     return weaponclass(self.weapon) == "rocketlauncher";
@@ -194,7 +194,7 @@ function usingrocketlauncher() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x678
+// Checksum 0x0, Offset: 0x663
 // Size: 0x16
 function usingmg() {
     return weaponclass(self.weapon) == "mg";
@@ -202,7 +202,7 @@ function usingmg() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x697
+// Checksum 0x0, Offset: 0x682
 // Size: 0x16
 function isusingshotgun() {
     return weaponclass(self.weapon) == "spread";
@@ -210,8 +210,8 @@ function isusingshotgun() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b6
-// Size: 0x65
+// Checksum 0x0, Offset: 0x6a1
+// Size: 0x64
 function usingriflelikeweapon() {
     class = weaponclass(self.weapon);
     switch (class) {
@@ -227,8 +227,8 @@ function usingriflelikeweapon() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x724
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x70e
+// Size: 0xf9
 function repeater_headshot_ammo_passive(objweapon, attacker, victim) {
     if (!isdefined(objweapon) || !isdefined(attacker) || !isdefined(victim)) {
         return;
@@ -255,7 +255,7 @@ function repeater_headshot_ammo_passive(objweapon, attacker, victim) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x822
+// Checksum 0x0, Offset: 0x80f
 // Size: 0xba
 function needtoreload(thresholdfraction) {
     if (isnullweapon(self.weapon)) {
@@ -283,7 +283,7 @@ function needtoreload(thresholdfraction) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e5
+// Checksum 0x0, Offset: 0x8d2
 // Size: 0x11d
 function cheatammoifnecessary() {
     assert(!self.bulletsinclip);
@@ -314,7 +314,7 @@ function cheatammoifnecessary() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0b
+// Checksum 0x0, Offset: 0x9f8
 // Size: 0x27
 function isusingprimary() {
     return self.weapon == self.primaryweapon && !isnullweapon(self.weapon);
@@ -322,7 +322,7 @@ function isusingprimary() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3b
+// Checksum 0x0, Offset: 0xa28
 // Size: 0x27
 function isusingsecondary() {
     return self.weapon == self.secondaryweapon && !isnullweapon(self.weapon);
@@ -330,7 +330,7 @@ function isusingsecondary() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6b
+// Checksum 0x0, Offset: 0xa58
 // Size: 0x27
 function isusingsidearm() {
     return self.weapon == self.sidearm && !isnullweapon(self.weapon);
@@ -338,7 +338,7 @@ function isusingsidearm() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9b
+// Checksum 0x0, Offset: 0xa88
 // Size: 0xb
 function getclaimednode() {
     return self.node;
@@ -346,7 +346,7 @@ function getclaimednode() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaaf
+// Checksum 0x0, Offset: 0xa9c
 // Size: 0x21
 function shootenemywrapper(var_9bc9d0ee2a8a46f5) {
     if (!isdefined(var_9bc9d0ee2a8a46f5)) {
@@ -357,8 +357,8 @@ function shootenemywrapper(var_9bc9d0ee2a8a46f5) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad8
-// Size: 0x74
+// Checksum 0x0, Offset: 0xac5
+// Size: 0x73
 function getnodeyawtoorigin(pos) {
     assert(!actor_is3d());
     if (isdefined(self.node)) {
@@ -372,8 +372,8 @@ function getnodeyawtoorigin(pos) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb55
-// Size: 0xf0
+// Checksum 0x0, Offset: 0xb41
+// Size: 0xf1
 function getnodeyawtoenemy() {
     assert(!actor_is3d());
     pos = undefined;
@@ -399,8 +399,8 @@ function getnodeyawtoenemy() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4e
-// Size: 0x96
+// Checksum 0x0, Offset: 0xc3b
+// Size: 0x97
 function getyawtoenemy() {
     assert(!actor_is3d());
     pos = undefined;
@@ -418,8 +418,8 @@ function getyawtoenemy() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xced
-// Size: 0x53
+// Checksum 0x0, Offset: 0xcdb
+// Size: 0x52
 function getyaw2d(org) {
     assert(!actor_is3d());
     angles = vectortoangles((org[0], org[1], 0) - (self.origin[0], self.origin[1], 0));
@@ -428,8 +428,8 @@ function getyaw2d(org) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd49
-// Size: 0x6c
+// Checksum 0x0, Offset: 0xd36
+// Size: 0x6b
 function absyawtoenemy() {
     assert(!actor_is3d());
     assert(isdefined(self.enemy));
@@ -443,8 +443,8 @@ function absyawtoenemy() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdbe
-// Size: 0x6c
+// Checksum 0x0, Offset: 0xdaa
+// Size: 0x6b
 function absyawtoenemy2d() {
     assert(!actor_is3d());
     assert(isdefined(self.enemy));
@@ -458,8 +458,8 @@ function absyawtoenemy2d() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe33
-// Size: 0x50
+// Checksum 0x0, Offset: 0xe1e
+// Size: 0x4f
 function absyawtoorigin(org) {
     assert(!actor_is3d());
     yaw = self.angles[1] - getyaw(org);
@@ -472,8 +472,8 @@ function absyawtoorigin(org) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8c
-// Size: 0x4a
+// Checksum 0x0, Offset: 0xe76
+// Size: 0x49
 function absyawtoangles(angles) {
     assert(!actor_is3d());
     yaw = self.angles[1] - angles;
@@ -486,8 +486,8 @@ function absyawtoangles(angles) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xedf
-// Size: 0x3b
+// Checksum 0x0, Offset: 0xec8
+// Size: 0x3a
 function getyawfromorigin(org, start) {
     assert(!actor_is3d());
     angles = vectortoangles(org - start);
@@ -496,7 +496,7 @@ function getyawfromorigin(org, start) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf23
+// Checksum 0x0, Offset: 0xf0b
 // Size: 0x10
 function getgrenademodel() {
     return getweaponmodel(self.grenadeweapon);
@@ -504,8 +504,8 @@ function getgrenademodel() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3c
-// Size: 0xf5
+// Checksum 0x0, Offset: 0xf24
+// Size: 0xf4
 function getenemyeyepos(enemy) {
     if (!isdefined(enemy)) {
         enemy = self.enemy;
@@ -525,8 +525,8 @@ function getenemyeyepos(enemy) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1039
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x1020
+// Size: 0xa6
 function gettruenodeangles(node) {
     if (!isdefined(node)) {
         return (0, 0, 0);
@@ -543,8 +543,8 @@ function gettruenodeangles(node) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10e6
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x10cf
+// Size: 0xc6
 function getyawtoorigin(org) {
     assert(!actor_is3d());
     if (isdefined(self.type) && isnode3d(self)) {
@@ -563,8 +563,8 @@ function getyawtoorigin(org) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b3
-// Size: 0x62
+// Checksum 0x0, Offset: 0x119e
+// Size: 0x61
 function canseepointfromexposedatcorner(point, node) {
     yaw = node getyawtoorigin(point);
     if (yaw > 60 || yaw < -60) {
@@ -581,8 +581,8 @@ function canseepointfromexposedatcorner(point, node) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x121e
-// Size: 0x2ac
+// Checksum 0x0, Offset: 0x1208
+// Size: 0x2b9
 function getnodeoffset(node) {
     if (isdefined(node.offset)) {
         return node.offset;
@@ -642,10 +642,10 @@ function getnodeoffset(node) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d3
-// Size: 0x115
+// Checksum 0x0, Offset: 0x14ca
+// Size: 0x11a
 function getcover3dnodeoffset(node, leandir) {
-    assert(isdefined(node) && node.type == "<dev string:x1c>");
+    assert(isdefined(node) && node.type == "Cover 3D");
     var_d9091e7beb7128e8 = (2, -10, 35);
     var_6314194b648994a8 = (-19, -10, 32);
     var_4ca040109b9f8c1d = (16, -10, 32);
@@ -659,7 +659,7 @@ function getcover3dnodeoffset(node, leandir) {
         } else if (leandir == "right") {
             offset = var_4ca040109b9f8c1d;
         } else {
-            assertmsg("<dev string:x28>");
+            assertmsg("unreachable");
         }
     }
     return calculatenodeoffset(right, forward, up, offset);
@@ -667,7 +667,7 @@ function getcover3dnodeoffset(node, leandir) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f1
+// Checksum 0x0, Offset: 0x15ed
 // Size: 0x36
 function calculatenodeoffset(right, forward, up, baseoffset) {
     return right * baseoffset[0] + forward * baseoffset[1] + up * baseoffset[2];
@@ -677,12 +677,12 @@ function calculatenodeoffset(right, forward, up, baseoffset) {
 
     // Namespace utility_common / scripts\anim\utility_common
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1630
+    // Checksum 0x0, Offset: 0x162c
     // Size: 0x4c
     function persistentdebugline(start, end) {
-        self endon("<dev string:x37>");
-        level notify("<dev string:x40>");
-        level endon("<dev string:x40>");
+        self endon("<dev string:x1c>");
+        level notify("<dev string:x22>");
+        level endon("<dev string:x22>");
         for (;;) {
             line(start, end, (0.3, 1, 0), 1);
             wait 0.05;
@@ -693,8 +693,8 @@ function calculatenodeoffset(right, forward, up, baseoffset) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1684
-// Size: 0x110
+// Checksum 0x0, Offset: 0x1680
+// Size: 0x113
 function canseeenemyfromexposed() {
     now = gettime();
     node = self.node;
@@ -719,7 +719,7 @@ function canseeenemyfromexposed() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x179d
+// Checksum 0x0, Offset: 0x179c
 // Size: 0xac
 function function_e28d706f2d3f4c65(enemy, node) {
     if (!isdefined(enemy)) {
@@ -749,7 +749,7 @@ function function_e28d706f2d3f4c65(enemy, node) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1852
+// Checksum 0x0, Offset: 0x1851
 // Size: 0xb4
 function function_a76836ca0f1172ab(enemy, point, node) {
     if (isnodecoverleft(node) || isnodecoverright(node)) {
@@ -774,8 +774,8 @@ function function_a76836ca0f1172ab(enemy, point, node) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x190f
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x190e
+// Size: 0xf7
 function checkpitchvisibility(frompoint, topoint, atnode) {
     minpitch = self.upaimlimit - anim.aimpitchdifftolerance;
     maxpitch = self.downaimlimit + anim.aimpitchdifftolerance;
@@ -807,17 +807,17 @@ function checkpitchvisibility(frompoint, topoint, atnode) {
 
     // Namespace utility_common / scripts\anim\utility_common
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a0c
+    // Checksum 0x0, Offset: 0x1a0e
     // Size: 0x10
     function dontgiveuponsuppressionyet() {
-        assertmsg("<dev string:x50>");
+        assertmsg("obsolete function. do not use. keeping around for script compile backward compatibility.");
     }
 
 #/
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a24
+// Checksum 0x0, Offset: 0x1a26
 // Size: 0x9c
 function cansuppressenemy() {
     if (!hassuppressableenemy() || self.doingambush) {
@@ -842,7 +842,7 @@ function cansuppressenemy() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac9
+// Checksum 0x0, Offset: 0x1acb
 // Size: 0x47
 function hassuppressableenemy() {
     if (!isdefined(self.enemy)) {
@@ -862,7 +862,7 @@ function hassuppressableenemy() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b19
+// Checksum 0x0, Offset: 0x1b1b
 // Size: 0xbe
 function aisuppressai() {
     if (!self canattackenemynode() && !istrue(self.forcesuppressai)) {
@@ -884,8 +884,8 @@ function aisuppressai() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1be0
-// Size: 0x74
+// Checksum 0x0, Offset: 0x1be2
+// Size: 0x73
 function canseeandshootpoint(point) {
     if (isdefined(self.a.weaponpos) && isundefinedweapon(self.a.weaponpos["right"])) {
         return 0;
@@ -899,7 +899,7 @@ function canseeandshootpoint(point) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c5d
+// Checksum 0x0, Offset: 0x1c5e
 // Size: 0x6e
 function needrecalculatesuppressspot() {
     if (isdefined(self.goodshootpos) && !canseeandshootpoint(self.goodshootpos)) {
@@ -910,7 +910,7 @@ function needrecalculatesuppressspot() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cd4
+// Checksum 0x0, Offset: 0x1cd5
 // Size: 0x152
 function findgoodsuppressspot(startoffset) {
     var_bc4d272afc4e79e6 = min(self.enemy.maxvisibledist, 1024);
@@ -936,7 +936,7 @@ function findgoodsuppressspot(startoffset) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e2f
+// Checksum 0x0, Offset: 0x1e30
 // Size: 0x69
 function canseeenemy(cacheduration) {
     if (!isdefined(self.enemy)) {
@@ -953,7 +953,7 @@ function canseeenemy(cacheduration) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ea1
+// Checksum 0x0, Offset: 0x1ea2
 // Size: 0x36
 function recentlysawenemy(time) {
     if (!isdefined(time)) {
@@ -964,7 +964,7 @@ function recentlysawenemy(time) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ee0
+// Checksum 0x0, Offset: 0x1ee1
 // Size: 0x2f
 function issuppressedwrapper() {
     if (self.forcesuppression) {
@@ -978,7 +978,7 @@ function issuppressedwrapper() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f18
+// Checksum 0x0, Offset: 0x1f19
 // Size: 0xd8
 function enemyishiding() {
     if (!isdefined(self.enemy)) {
@@ -1002,7 +1002,7 @@ function enemyishiding() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff9
+// Checksum 0x0, Offset: 0x1ffa
 // Size: 0x25
 function shouldshootenemyent() {
     assert(isdefined(self));
@@ -1017,7 +1017,7 @@ function shouldshootenemyent() {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2027
+// Checksum 0x0, Offset: 0x2028
 // Size: 0xcd
 function sortandcullanimstructarray(var_d4876c861b3d6be) {
     var_28656d665cf2b0fa = [];
@@ -1040,8 +1040,8 @@ function sortandcullanimstructarray(var_d4876c861b3d6be) {
 
 // Namespace utility_common / scripts\anim\utility_common
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x20fd
-// Size: 0x17d
+// Checksum 0x0, Offset: 0x20fe
+// Size: 0x180
 function player_can_see_ai(player, ai, latency) {
     currenttime = gettime();
     if (!isdefined(latency)) {

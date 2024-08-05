@@ -6,14 +6,13 @@
 #using script_784c8c4f3e5f8686;
 #using scripts\common\values.gsc;
 #using script_663ff1906e9fe70;
-#using script_16ea1b94f0f381b3;
 
 #namespace scene;
 
 // Namespace scene / scripts\common\scene
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x243
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x234
+// Size: 0x3b
 function play(existingentities, shotnames, scriptbundlename, var_f7ab585bff4b110) {
     sceneroot = self;
     sceneroot function_7e5354b44c829c9e(existingentities, shotnames, scriptbundlename, var_f7ab585bff4b110);
@@ -21,8 +20,8 @@ function play(existingentities, shotnames, scriptbundlename, var_f7ab585bff4b110
 
 // Namespace scene / scripts\common\scene
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x287
-// Size: 0x5c
+// Checksum 0x0, Offset: 0x277
+// Size: 0x5b
 function function_24e44cdb807b87ba(var_198fc279325346db, existingentities, shotnames, scriptbundlename, var_f7ab585bff4b110) {
     if (!isdefined(var_198fc279325346db)) {
         var_198fc279325346db = 1;
@@ -35,8 +34,8 @@ function function_24e44cdb807b87ba(var_198fc279325346db, existingentities, shotn
 
 // Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb
-// Size: 0x37
+// Checksum 0x0, Offset: 0x2da
+// Size: 0x36
 function init(existingentities, shotnames, scriptbundlename) {
     sceneroot = self;
     return sceneroot function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbundlename, "scene_init_user");
@@ -44,8 +43,8 @@ function init(existingentities, shotnames, scriptbundlename) {
 
 // Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x32b
-// Size: 0x160
+// Checksum 0x0, Offset: 0x319
+// Size: 0x162
 function skip(shotnames, var_870ed163bd3036dd, var_f77f80bf8f02d9f9) {
     if (!isdefined(var_870ed163bd3036dd)) {
         var_870ed163bd3036dd = 0.5;
@@ -84,8 +83,8 @@ function skip(shotnames, var_870ed163bd3036dd, var_f77f80bf8f02d9f9) {
 
 // Namespace scene / scripts\common\scene
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x493
-// Size: 0x9d
+// Checksum 0x0, Offset: 0x483
+// Size: 0x9b
 function stop() {
     sceneroot = self;
     sceneroot function_bd09568f76dd40ca();
@@ -102,7 +101,7 @@ function stop() {
 
 // Namespace scene / scripts\common\scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x538
+// Checksum 0x0, Offset: 0x526
 // Size: 0x215
 function cleanup(forcedeleteall) {
     sceneroot = self;
@@ -151,8 +150,8 @@ function cleanup(forcedeleteall) {
 
 // Namespace scene / scripts\common\scene
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x755
-// Size: 0x66d
+// Checksum 0x0, Offset: 0x743
+// Size: 0x65d
 function pre_stream(existingentities, shotnames, duration, scriptbundlename, predicttime) {
     if (!isdefined(duration)) {
         duration = 5;
@@ -183,7 +182,7 @@ function pre_stream(existingentities, shotnames, duration, scriptbundlename, pre
         shotnames = [shotnames];
     }
     foreach (shotname in shotnames) {
-        shotindex = scenescriptbundle function_eed2bf36a4defb90(shotname);
+        shotindex = scenescriptbundle function_e1e718bbc3eb9fd2(shotname);
         shotindexes[shotindex] = shotindex;
     }
     foreach (var_370294f3b91920df in scenedata.sceneplay) {
@@ -207,7 +206,7 @@ function pre_stream(existingentities, shotnames, duration, scriptbundlename, pre
         #/
         foreach (shotindex in shotindexes) {
             sceneplay function_218d0124f21f73b1(shotindex);
-            foreach (var_56f4af8746a2d458, var_19a1a40cf0ff83b9 in sceneplay.objectorder) {
+            foreach (var_19a1a40cf0ff83b9 in sceneplay.objectorder) {
                 if (isdefined(var_19a1a40cf0ff83b9[shotindex])) {
                     var_214d924f4e137244 = scenedata.var_214d924f4e137244[var_56f4af8746a2d458];
                     var_214d924f4e137244 thread function_b62972e8f5541b26(sceneplay, shotindex);
@@ -233,9 +232,6 @@ function pre_stream(existingentities, shotnames, duration, scriptbundlename, pre
             foreach (cameraorigin in playerinfo.cameraorigins) {
                 closestobjects = sortbydistance(sceneplay.prestream.objects, cameraorigin);
                 foreach (objectinfo in closestobjects) {
-                    if (!isent(objectinfo.entity)) {
-                        continue;
-                    }
                     entnum = objectinfo.entity getentitynumber();
                     dist = distance(cameraorigin, objectinfo.origin);
                     if (!isdefined(entities[entnum])) {
@@ -248,7 +244,7 @@ function pre_stream(existingentities, shotnames, duration, scriptbundlename, pre
             }
             /#
                 if (playerinfo.cameraorigins.size > 2) {
-                    iprintlnbold("<dev string:x44>");
+                    iprintlnbold("<dev string:x41>");
                 }
             #/
             streamentities = [];
@@ -256,7 +252,7 @@ function pre_stream(existingentities, shotnames, duration, scriptbundlename, pre
             foreach (entnum, entity in entities) {
                 if (streamentities.size >= 16) {
                     /#
-                        iprintlnbold("<dev string:x6a>" + 16);
+                        iprintlnbold("<dev string:x64>" + 16);
                     #/
                     break;
                 }
@@ -283,8 +279,8 @@ function pre_stream(existingentities, shotnames, duration, scriptbundlename, pre
 
 // Namespace scene / scripts\common\scene
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdca
-// Size: 0x71
+// Checksum 0x0, Offset: 0xda8
+// Size: 0x75
 function function_8a37fe423de2b9db() {
     sceneroot = self;
     scenescriptbundle = sceneroot scene_scriptbundle();
@@ -299,8 +295,8 @@ function function_8a37fe423de2b9db() {
 
 // Namespace scene / scripts\common\scene
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe44
-// Size: 0x108
+// Checksum 0x0, Offset: 0xe26
+// Size: 0x10c
 function get_entities(var_2a29e57c1c105d52, filter) {
     if (!isdefined(filter)) {
         filter = "all";
@@ -331,7 +327,7 @@ function get_entities(var_2a29e57c1c105d52, filter) {
 
 // Namespace scene / scripts\common\scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf55
+// Checksum 0x0, Offset: 0xf3b
 // Size: 0x3c
 function get_entity(var_9f7e823a4cdab21d) {
     sceneroot = self;
@@ -344,8 +340,8 @@ function get_entity(var_9f7e823a4cdab21d) {
 
 // Namespace scene / scripts\common\scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9a
-// Size: 0xd6
+// Checksum 0x0, Offset: 0xf80
+// Size: 0xda
 function get_object(var_8a2a5f9c6428c06c) {
     sceneroot = self;
     if (!isdefined(sceneroot.scenedata)) {
@@ -375,8 +371,8 @@ function get_object(var_8a2a5f9c6428c06c) {
 
 // Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1079
-// Size: 0x103
+// Checksum 0x0, Offset: 0x1063
+// Size: 0x106
 function function_6cb938788c210309(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, scriptbundlename) {
     sceneroot = self;
     sceneroot set_scriptbundle(scriptbundlename);
@@ -408,8 +404,8 @@ function function_6cb938788c210309(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, s
 
 // Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1185
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x1172
+// Size: 0xe5
 function function_10a1cbb13da3a4fe(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, scriptbundlename) {
     sceneroot = self;
     sceneroot set_scriptbundle(scriptbundlename);
@@ -439,8 +435,8 @@ function function_10a1cbb13da3a4fe(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, s
 
 // Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1271
-// Size: 0xef
+// Checksum 0x0, Offset: 0x1260
+// Size: 0xf3
 function function_77751080050d2cb1(objecttype, var_2a29e57c1c105d52, scriptbundlename) {
     sceneroot = self;
     assert(isstring(objecttype));
@@ -466,8 +462,8 @@ function function_77751080050d2cb1(objecttype, var_2a29e57c1c105d52, scriptbundl
 
 // Namespace scene / scripts\common\scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1369
-// Size: 0x3e
+// Checksum 0x0, Offset: 0x135c
+// Size: 0x3d
 function function_bc521bee52fde214(rate) {
     sceneroot = self;
     sceneroot function_6a66a98742866fed();
@@ -476,24 +472,9 @@ function function_bc521bee52fde214(rate) {
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13af
-// Size: 0x88
-function function_b0b8f796886a9c81(var_96ae84e32c080c4) {
-    sceneroot = self;
-    scenedata = sceneroot.scenedata;
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
-        var_214d924f4e137244 = scenedata.var_214d924f4e137244[var_56f4af8746a2d458];
-        if (isdefined(var_214d924f4e137244.entity)) {
-            var_214d924f4e137244.entity namespace_53fc9ddbb516e6e1::function_cea710f9d017694a(var_96ae84e32c080c4);
-        }
-    }
-}
-
-// Namespace scene / scripts\common\scene
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x143f
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x13a1
+// Size: 0xeb
 function function_ddebd5f650117455(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, overridetype, overridevalue, scriptbundlename) {
     sceneroot = self;
     sceneroot set_scriptbundle(scriptbundlename);
@@ -523,8 +504,8 @@ function function_ddebd5f650117455(var_8a2a5f9c6428c06c, var_7c76f3de91f4cf3d, o
 
 // Namespace scene / scripts\common\scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1530
-// Size: 0x54
+// Checksum 0x0, Offset: 0x1494
+// Size: 0x53
 function set_scriptbundle(scriptbundlename) {
     sceneroot = self;
     if (isdefined(scriptbundlename)) {
@@ -537,7 +518,7 @@ function set_scriptbundle(scriptbundlename) {
 
 // Namespace scene / scripts\common\scene
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x158c
+// Checksum 0x0, Offset: 0x14ef
 // Size: 0xa4
 function add_spawn_function(spawnfunc, var_6bff09752f736d14) {
     if (!isdefined(var_6bff09752f736d14)) {
@@ -557,8 +538,8 @@ function add_spawn_function(spawnfunc, var_6bff09752f736d14) {
 
 // Namespace scene / scripts\common\scene
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1638
-// Size: 0xd9
+// Checksum 0x0, Offset: 0x159b
+// Size: 0xd7
 function get_state() {
     sceneroot = self;
     if (!isdefined(sceneroot.scenedata)) {
@@ -578,8 +559,8 @@ function get_state() {
 
 // Namespace scene / scripts\common\scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1719
-// Size: 0x55
+// Checksum 0x0, Offset: 0x167a
+// Size: 0x54
 function function_263e37fc44b91d4f(exclude_players) {
     sceneroot = self;
     sceneroot function_6a66a98742866fed();
@@ -592,8 +573,8 @@ function function_263e37fc44b91d4f(exclude_players) {
 
 // Namespace scene / scripts\common\scene
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1776
-// Size: 0x55
+// Checksum 0x0, Offset: 0x16d6
+// Size: 0x54
 function function_595670eb4c1bdf59(var_8d59d732cf917fb2) {
     sceneroot = self;
     sceneroot function_6a66a98742866fed();
@@ -605,22 +586,8 @@ function function_595670eb4c1bdf59(var_8d59d732cf917fb2) {
 }
 
 // Namespace scene / scripts\common\scene
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17d3
-// Size: 0x55
-function function_2136d6e5467c6caf(var_da75af8d8c3a50e4) {
-    sceneroot = self;
-    sceneroot function_6a66a98742866fed();
-    if (var_da75af8d8c3a50e4 >= 0) {
-        sceneroot.scenestatic.var_ce9c0a8610712c8d = var_da75af8d8c3a50e4;
-        return;
-    }
-    sceneroot.scenestatic.var_ce9c0a8610712c8d = undefined;
-}
-
-// Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1830
+// Checksum 0x0, Offset: 0x1732
 // Size: 0x10e
 function add_scene_func(scene_ref, func, var_8338711a0d65673b) {
     structdest = undefined;
@@ -632,7 +599,7 @@ function add_scene_func(scene_ref, func, var_8338711a0d65673b) {
         structdest = sceneroot.scenestatic;
         scene_ref = sceneroot function_6c0e3626ebce826f();
     } else {
-        assertmsg("<dev string:x90>");
+        assertmsg("must be called on the level where scene_ref is either a scene bundle name or a scene root object");
     }
     structdest.funcs = utility::default_to(structdest.funcs, []);
     structdest.funcs[scene_ref] = utility::default_to(structdest.funcs[scene_ref], []);
@@ -642,7 +609,7 @@ function add_scene_func(scene_ref, func, var_8338711a0d65673b) {
 
 // Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1946
+// Checksum 0x0, Offset: 0x1848
 // Size: 0xfe
 function remove_scene_func(scene_ref, func, var_8338711a0d65673b) {
     structdest = undefined;
@@ -654,7 +621,7 @@ function remove_scene_func(scene_ref, func, var_8338711a0d65673b) {
         scene_ref = sceneroot function_6c0e3626ebce826f();
         structdest = sceneroot.scenedata;
     } else {
-        assertmsg("<dev string:x90>");
+        assertmsg("must be called on the level where scene_ref is either a scene bundle name or a scene root object");
     }
     if (!isdefined(structdest.funcs)) {
         return false;
@@ -674,8 +641,8 @@ function remove_scene_func(scene_ref, func, var_8338711a0d65673b) {
 
 // Namespace scene / scripts\common\scene
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a4d
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x194f
+// Size: 0xa6
 function function_a07af33558d3050f(notifytarget, eventmessage, statematch) {
     sceneroot = self;
     sceneroot function_6a66a98742866fed();
@@ -683,8 +650,8 @@ function function_a07af33558d3050f(notifytarget, eventmessage, statematch) {
         statematch = "Stopped";
     }
     /#
-        if (statematch != "<dev string:xf4>" && statematch != "<dev string:xff>") {
-            assertmsg("<dev string:x10a>");
+        if (statematch != "<dev string:x87>" && statematch != "<dev string:x8f>") {
+            assertmsg("<dev string:x97>");
         }
     #/
     sceneroot.scenestatic.notifyobject = notifytarget;
@@ -694,8 +661,8 @@ function function_a07af33558d3050f(notifytarget, eventmessage, statematch) {
 
 // Namespace scene / scripts\common\scene
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1afc
-// Size: 0x1c9
+// Checksum 0x0, Offset: 0x19fd
+// Size: 0x1cc
 function function_8207074e79f22926(notifytarget, note, var_6bff09752f736d14, repeat) {
     sceneroot = self;
     sceneroot function_6a66a98742866fed();
@@ -730,8 +697,8 @@ function function_8207074e79f22926(notifytarget, note, var_6bff09752f736d14, rep
 
 // Namespace scene / scripts\common\scene
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1ccd
-// Size: 0xcb
+// Checksum 0x0, Offset: 0x1bd1
+// Size: 0xc8
 function private function_85b2629a7bbafad9(notifies, newnotify) {
     if (!isdefined(notifies)) {
         return false;
@@ -747,8 +714,8 @@ function private function_85b2629a7bbafad9(notifies, newnotify) {
 
 // Namespace scene / scripts\common\scene
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1da1
-// Size: 0x205
+// Checksum 0x0, Offset: 0x1ca2
+// Size: 0x20f
 function function_d9be975d8d1c9db3(var_7c76f3de91f4cf3d, var_c5b4f177c96bcce1) {
     sceneroot = self;
     if (!sceneroot function_bd09568f76dd40ca()) {
@@ -796,8 +763,8 @@ function function_d9be975d8d1c9db3(var_7c76f3de91f4cf3d, var_c5b4f177c96bcce1) {
 
 // Namespace scene / scripts\common\scene
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x1faf
-// Size: 0x7b3
+// Checksum 0x0, Offset: 0x1eba
+// Size: 0x6a7
 function private function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbundlename, inittype) {
     sceneroot = self;
     sceneroot set_scriptbundle(scriptbundlename);
@@ -827,9 +794,6 @@ function private function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbu
             }
         }
     }
-    if (istrue(scenedata.var_a416d1b334ed6b37)) {
-        sceneroot function_9030d05e9f5301ff();
-    }
     sceneplay.var_7038c2a13f1f5db8 = [];
     var_a55c41e47aa5aeb5 = [];
     for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
@@ -856,12 +820,6 @@ function private function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbu
         }
     }
     playerindex = 0;
-    var_2218e47de6541d57 = 0;
-    var_48e25d3373e9b4b0 = 0;
-    maxplayers = -1;
-    if (isdefined(sceneroot.scenestatic) && isdefined(sceneroot.scenestatic.var_ce9c0a8610712c8d)) {
-        maxplayers = sceneroot.scenestatic.var_ce9c0a8610712c8d;
-    }
     for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
         var_214d924f4e137244 = scenedata.var_214d924f4e137244[var_56f4af8746a2d458];
         if (!isdefined(sceneplay.var_7038c2a13f1f5db8[var_56f4af8746a2d458])) {
@@ -881,28 +839,16 @@ function private function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbu
             var_fdc8fd88a88422e5 = getdvarint(@"hash_3bc9bc279e3f772", 0);
         #/
         if (!isdefined(entity)) {
-            var_d05ef3f217cebd10 = 1;
-            if (isplayerobject && maxplayers >= 0) {
-                playernumber = var_2218e47de6541d57;
-                if (var_214d924f4e137244 function_3e13497ed7044cbd()) {
-                    playernumber = var_48e25d3373e9b4b0;
-                }
-                if (playernumber >= maxplayers) {
-                    var_d05ef3f217cebd10 = 0;
-                }
-            }
-            if (var_d05ef3f217cebd10 && (!var_214d924f4e137244.sceneobject function_9be5ff9b4bc5843a(sceneplay.shotinit) || var_fdc8fd88a88422e5 && isplayerobject)) {
+            if (!var_214d924f4e137244.sceneobject function_9be5ff9b4bc5843a(sceneplay.shotinit) || var_fdc8fd88a88422e5 && isplayerobject) {
                 var_214d924f4e137244.alignmentinfo = scenedata.scenescriptbundle function_ab3ec43370c405d2(sceneroot, sceneplay.shotinit, var_56f4af8746a2d458);
                 function_e4fc30ccdca08b9d(var_214d924f4e137244.alignmentinfo);
                 if (isplayerobject) {
-                    if (!var_214d924f4e137244 function_7c447098301ac4a3()) {
-                        if (playerindex < level.players.size) {
-                            playerentity = level.players[playerindex];
-                            if (!function_ac04e049ff623301(playerentity, var_214d924f4e137244)) {
-                                playerentity = undefined;
-                            }
-                            entity = playerentity;
+                    if (playerindex < level.players.size) {
+                        playerentity = level.players[playerindex];
+                        if (!function_ac04e049ff623301(playerentity, var_214d924f4e137244)) {
+                            playerentity = undefined;
                         }
+                        entity = playerentity;
                     }
                     /#
                         if (var_fdc8fd88a88422e5) {
@@ -914,7 +860,9 @@ function private function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbu
                         }
                     #/
                 } else {
-                    var_214d924f4e137244.spawner = function_9b40ea5276506411(var_982109bda19f3517, 0);
+                    if (isdefined(level.struct_class_names)) {
+                        var_214d924f4e137244.spawner = function_9b40ea5276506411(var_982109bda19f3517, 0);
+                    }
                     entity = var_214d924f4e137244 object_spawn(var_214d924f4e137244.alignmentinfo, sceneplay.shotinit);
                 }
             } else {
@@ -924,17 +872,11 @@ function private function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbu
         if (isdefined(entity)) {
             var_214d924f4e137244 function_6acd8ab4606e2a09(sceneroot, sceneplay, entity, undefined, inittype);
         }
-        issetup = istrue(var_214d924f4e137244.issetup) || isdefined(entity) && isdefined(entity.var_214d924f4e137244) && istrue(entity.var_214d924f4e137244.issetup);
-        if (isdefined(sceneplay.var_7038c2a13f1f5db8[var_56f4af8746a2d458]) && !(issetup && inittype == "scene_init_prestream")) {
+        if (isdefined(sceneplay.var_7038c2a13f1f5db8[var_56f4af8746a2d458]) && !(istrue(var_214d924f4e137244.issetup) && inittype == "scene_init_prestream")) {
             var_214d924f4e137244 object_setup(sceneplay);
         }
         if (isplayerobject) {
             playerindex++;
-            if (var_214d924f4e137244 function_3e13497ed7044cbd()) {
-                var_48e25d3373e9b4b0++;
-                continue;
-            }
-            var_2218e47de6541d57++;
         }
     }
     sceneplay function_218d0124f21f73b1(sceneplay.shotinit);
@@ -956,13 +898,13 @@ function private function_a9fc7e7dfd78e15e(existingentities, shotnames, scriptbu
 
 // Namespace scene / scripts\common\scene
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x276b
-// Size: 0x605
+// Checksum 0x0, Offset: 0x256a
+// Size: 0x560
 function private function_7e5354b44c829c9e(existingentities, shotnames, scriptbundlename, var_f7ab585bff4b110, var_4f20498ef1bfe199) {
     sceneroot = self;
     /#
         if (getdvarint(@"hash_1aa832f211c5245e")) {
-            level waittill("<dev string:x14e>");
+            level waittill("<dev string:xd8>");
             return;
         }
         if (!utility::array_contains(level.var_a0b4eb1703be349a, sceneroot)) {
@@ -985,42 +927,27 @@ function private function_7e5354b44c829c9e(existingentities, shotnames, scriptbu
         if (isdefined(sceneplay) && sceneplay.state == "Playing") {
             sceneplay function_28f230671b0b9a1f(0);
         }
-        shotindices = undefined;
-        foreach (var_370294f3b91920df in scenedata.sceneplay) {
-            if (isdefined(var_370294f3b91920df.var_2b0ae4dffc850db2)) {
-                var_6e70dd21d9147b17 = is_equal(var_370294f3b91920df, sceneplay);
-                if (!var_6e70dd21d9147b17) {
-                    if (!isdefined(shotindices)) {
-                        shotindices = sceneroot function_14d02a749939e837(shotnames);
-                    }
-                    var_a1709fdb12562ef0 = utility::array_intersection(var_370294f3b91920df.var_df5db7bd235f2729, shotindices);
-                    if (var_a1709fdb12562ef0.size > 0) {
-                        var_6e70dd21d9147b17 = 1;
-                    }
-                }
-                if (var_6e70dd21d9147b17) {
-                    if (var_370294f3b91920df.var_2b0ae4dffc850db2 < 0 || gettime() > var_370294f3b91920df.var_2b0ae4dffc850db2) {
-                        sceneroot pre_stream(existingentities, var_370294f3b91920df.var_df5db7bd235f2729, level.framedurationseconds * 2);
-                    }
-                    var_370294f3b91920df.var_2b0ae4dffc850db2 = undefined;
-                }
+        if (isdefined(sceneplay) && isdefined(sceneplay.var_2b0ae4dffc850db2)) {
+            if (sceneplay.var_2b0ae4dffc850db2 < 0 || gettime() > sceneplay.var_2b0ae4dffc850db2) {
+                sceneroot pre_stream(existingentities, shotnames, level.framedurationseconds * 2);
             }
+            sceneplay.var_2b0ae4dffc850db2 = undefined;
         }
     }
     sceneplay = sceneroot function_a9fc7e7dfd78e15e(existingentities, shotnames, undefined, "scene_init_play");
     if (sceneplay.var_df5db7bd235f2729.size == 0) {
         /#
-            shotsstr = "<dev string:x159>";
+            shotsstr = "<dev string:xe0>";
             if (isdefined(shotnames)) {
-                shotsstr = "<dev string:x15d>";
+                shotsstr = "<dev string:xe1>";
                 if (!isarray(shotnames)) {
                     shotnames = [shotnames];
                 }
                 foreach (shot in shotnames) {
-                    shotsstr = shotsstr + "<dev string:x162>" + shot;
+                    shotsstr = shotsstr + "<dev string:xe3>" + shot;
                 }
             }
-            iprintlnbold("<dev string:x167>" + sceneroot.var_8ac77218f7a34e3e + "<dev string:x173>" + shotsstr);
+            iprintlnbold("<dev string:xe5>" + sceneroot.var_8ac77218f7a34e3e + "<dev string:xee>" + shotsstr);
         #/
         return;
     }
@@ -1078,7 +1005,7 @@ function private function_7e5354b44c829c9e(existingentities, shotnames, scriptbu
 
 // Namespace scene / scripts\common\scene
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2d78
+// Checksum 0x0, Offset: 0x2ad2
 // Size: 0xbb
 function private function_8accfbca6fff9e0() {
     sceneplay = self;
@@ -1099,33 +1026,5 @@ function private function_8accfbca6fff9e0() {
         sceneroot function_bb980ac4246f5baa("callback_done");
     }
     sceneroot thread function_798498fd6521b8f0();
-}
-
-// Namespace scene / scripts\common\scene
-// Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2e3b
-// Size: 0x116
-function private function_9030d05e9f5301ff() {
-    sceneroot = self;
-    scenedata = sceneroot.scenedata;
-    maleindices = [];
-    femaleindices = [];
-    for (var_56f4af8746a2d458 = 0; var_56f4af8746a2d458 < scenedata.var_214d924f4e137244.size; var_56f4af8746a2d458++) {
-        var_214d924f4e137244 = scenedata.var_214d924f4e137244[var_56f4af8746a2d458];
-        if (var_214d924f4e137244 object_get_type() == "Types_Player") {
-            if (var_214d924f4e137244 function_3e13497ed7044cbd()) {
-                femaleindices[femaleindices.size] = var_56f4af8746a2d458;
-                continue;
-            }
-            maleindices[maleindices.size] = var_56f4af8746a2d458;
-        }
-    }
-    maxcount = min(maleindices.size, femaleindices.size);
-    for (i = 0; i < maxcount; i++) {
-        maleplayerindex = maleindices[i];
-        femaleplayerindex = femaleindices[i];
-        scenedata.var_214d924f4e137244[maleplayerindex].var_9668be326e00024b = femaleplayerindex;
-        scenedata.var_214d924f4e137244[femaleplayerindex].var_17f5321d96d1bf24 = maleplayerindex;
-    }
 }
 

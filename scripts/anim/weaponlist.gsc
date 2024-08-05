@@ -54,7 +54,7 @@ function waitaftershot() {
 // Namespace weaponlist / scripts\anim\weaponlist
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b6
-// Size: 0x5f
+// Size: 0x5e
 function shootanimtime(semiautofire) {
     if (!usingautomaticweapon() || isdefined(semiautofire) && semiautofire == 1) {
         rand = 0.5 + randomfloat(1);
@@ -65,10 +65,10 @@ function shootanimtime(semiautofire) {
 
 // Namespace weaponlist / scripts\anim\weaponlist
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21d
+// Checksum 0x0, Offset: 0x21c
 // Size: 0x97
 function refillclip() {
-    assertex(isdefined(self.weapon), "<dev string:x1c>" + self.model);
+    assertex(isdefined(self.weapon), "self.weapon is not defined for " + self.model);
     if (isnullweapon(self.weapon)) {
         self.bulletsinclip = 0;
         return 0;
@@ -78,12 +78,12 @@ function refillclip() {
     } else {
         self.bulletsinclip = weaponclipsize(self.weapon);
     }
-    assertex(isdefined(self.bulletsinclip), "<dev string:x3f>");
+    assertex(isdefined(self.bulletsinclip), "RefillClip failed");
 }
 
 // Namespace weaponlist / scripts\anim\weaponlist
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bc
+// Checksum 0x0, Offset: 0x2bb
 // Size: 0xb6
 function add_weapon(name, type, time, clipsize, anims) {
     assert(isdefined(name));
@@ -106,7 +106,7 @@ function add_weapon(name, type, time, clipsize, anims) {
 
 // Namespace weaponlist / scripts\anim\weaponlist
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37a
+// Checksum 0x0, Offset: 0x379
 // Size: 0x27
 function addturret(turret) {
     anim.aiweapon[tolower(turret)]["type"] = "turret";

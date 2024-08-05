@@ -2,8 +2,8 @@
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x143
-// Size: 0x27
+// Checksum 0x0, Offset: 0x10e
+// Size: 0x26
 function player_standing_on_train() {
     potential_train = self getmovingplatformparent();
     if (isdefined(potential_train)) {
@@ -16,7 +16,7 @@ function player_standing_on_train() {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x173
+// Checksum 0x0, Offset: 0x13d
 // Size: 0x3d
 function function_d6b0a591ac99bd() {
     if (isdefined(level.wztrain_info) && isdefined(level.wztrain_info.train_array)) {
@@ -26,8 +26,8 @@ function function_d6b0a591ac99bd() {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b8
-// Size: 0xa6
+// Checksum 0x0, Offset: 0x182
+// Size: 0xa3
 function is_train_ent(hitent) {
     if (isdefined(level.wztrain_info)) {
         foreach (ent in level.wztrain_info.train_array) {
@@ -47,8 +47,8 @@ function is_train_ent(hitent) {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x267
-// Size: 0x2a
+// Checksum 0x0, Offset: 0x22e
+// Size: 0x29
 function function_31156831afc882ad() {
     if (!isdefined(level.wztrain_info)) {
         return undefined;
@@ -59,8 +59,8 @@ function function_31156831afc882ad() {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29a
-// Size: 0x103
+// Checksum 0x0, Offset: 0x260
+// Size: 0xff
 function function_e58b746157089c68(hitent) {
     if (!isdefined(level.wztrain_info)) {
         return undefined;
@@ -86,8 +86,8 @@ function function_e58b746157089c68(hitent) {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a6
-// Size: 0x54
+// Checksum 0x0, Offset: 0x368
+// Size: 0x53
 function function_d699841d5e241043() {
     content = ["physicscontents_missileclip", "physicscontents_item", "physicscontents_vehicle", "physicscontents_solid", "physicscontents_glass", "physicscontents_water", "physicscontents_playerclip"];
     return physics_createcontents(content);
@@ -95,8 +95,8 @@ function function_d699841d5e241043() {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x403
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x3c4
+// Size: 0xa2
 function is_moving_platform_train(movingplatforment) {
     if (!isdefined(movingplatforment)) {
         return false;
@@ -116,8 +116,8 @@ function is_moving_platform_train(movingplatforment) {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b1
-// Size: 0x71
+// Checksum 0x0, Offset: 0x46f
+// Size: 0x70
 function isplayerinsiderectangularzonebasedonent(player, referenceent, var_f5e80a9c637f1716, var_1575b6a2d72eab66, var_dff51823f3f6bcdd, var_98029591bfd2abae, zonelength, zonewidth, zoneheight) {
     rectangularzone = createrectangularzonebasedonent(referenceent, var_f5e80a9c637f1716, var_1575b6a2d72eab66, var_dff51823f3f6bcdd, var_98029591bfd2abae, zonelength, zonewidth, zoneheight);
     return isplayerinsiderectangularzone(player, rectangularzone);
@@ -125,8 +125,8 @@ function isplayerinsiderectangularzonebasedonent(player, referenceent, var_f5e80
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x52b
-// Size: 0xca
+// Checksum 0x0, Offset: 0x4e8
+// Size: 0xcb
 function isplayerinsiderectangularzone(player, rectangularzone) {
     player_x = player.origin[0];
     player_y = player.origin[1];
@@ -154,8 +154,8 @@ function isplayerinsiderectangularzone(player, rectangularzone) {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fe
-// Size: 0x276
+// Checksum 0x0, Offset: 0x5bc
+// Size: 0x27f
 function createrectangularzonebasedonent(referenceent, var_f5e80a9c637f1716, var_1575b6a2d72eab66, var_dff51823f3f6bcdd, var_98029591bfd2abae, zonelength, zonewidth, zoneheight) {
     rectangularzone = createdefaultrectangularzone();
     referenceforward = anglestoforward(referenceent.angles);
@@ -193,8 +193,8 @@ function createrectangularzonebasedonent(referenceent, var_f5e80a9c637f1716, var
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x87d
-// Size: 0xec
+// Checksum 0x0, Offset: 0x844
+// Size: 0xed
 function updaterectangularzone(var_1b5afbedd7e1ee0c, rectangularzone) {
     var_b068011c5df691c = var_1b5afbedd7e1ee0c[0];
     var_b068111c5df6b4f = var_1b5afbedd7e1ee0c[1];
@@ -221,8 +221,8 @@ function updaterectangularzone(var_1b5afbedd7e1ee0c, rectangularzone) {
 
 // Namespace train_utility / scripts\cp_mp\utility\train_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x971
-// Size: 0x7a
+// Checksum 0x0, Offset: 0x939
+// Size: 0x79
 function createdefaultrectangularzone() {
     rectangularzone = spawnstruct();
     rectangularzone.max_x = -999999;
@@ -238,7 +238,7 @@ function createdefaultrectangularzone() {
 
     // Namespace train_utility / scripts\cp_mp\utility\train_utility
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9f4
+    // Checksum 0x0, Offset: 0x9bb
     // Size: 0x31
     function function_6c75bb7dbb04ead5(zonecenter) {
         if (!function_4237fc6e024c0cc1()) {
@@ -249,7 +249,7 @@ function createdefaultrectangularzone() {
 
     // Namespace train_utility / scripts\cp_mp\utility\train_utility
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa2d
+    // Checksum 0x0, Offset: 0x9f4
     // Size: 0x31
     function function_e3aeb62332441401(var_1b5afbedd7e1ee0c) {
         if (!function_4237fc6e024c0cc1()) {
@@ -260,8 +260,8 @@ function createdefaultrectangularzone() {
 
     // Namespace train_utility / scripts\cp_mp\utility\train_utility
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa66
-    // Size: 0xd0
+    // Checksum 0x0, Offset: 0xa2d
+    // Size: 0xcd
     function function_e80ba1fe0db513dc(var_b068b11c5df814d) {
         if (!function_4237fc6e024c0cc1()) {
             return;
@@ -279,7 +279,7 @@ function createdefaultrectangularzone() {
 
     // Namespace train_utility / scripts\cp_mp\utility\train_utility
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb3e
+    // Checksum 0x0, Offset: 0xb02
     // Size: 0x17
     function function_4237fc6e024c0cc1() {
         return getdvarint(@"hash_aaddf2135ab39ed5", 0) != 0;

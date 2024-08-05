@@ -5,7 +5,7 @@
 
 // Namespace battlechatter_table / namespace_d1fa53aa5515f8aa
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8
+// Checksum 0x0, Offset: 0x7f
 // Size: 0xd5
 function bctable_setfiles(category, filename1, filename2, filename3, filename4, filename5, filename6) {
     anim.bctable[category] = [];
@@ -37,8 +37,8 @@ function bctable_setfiles(category, filename1, filename2, filename3, filename4, 
 
 // Namespace battlechatter_table / namespace_d1fa53aa5515f8aa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x185
-// Size: 0x142
+// Checksum 0x0, Offset: 0x15c
+// Size: 0x147
 function bctable_addfile(category, filename) {
     for (row = 0; true; row++) {
         tbltype = tolower(tablelookupbyrow(filename, row, 0));
@@ -71,8 +71,8 @@ function bctable_addfile(category, filename) {
 
 // Namespace battlechatter_table / namespace_d1fa53aa5515f8aa
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cf
-// Size: 0x279
+// Checksum 0x0, Offset: 0x2ab
+// Size: 0x27e
 function bctable_pickaliasset(category, type, modifier) {
     key = bctable_categorykey(type, modifier);
     if (!bctable_exists(category, type, modifier)) {
@@ -113,8 +113,8 @@ function bctable_pickaliasset(category, type, modifier) {
 
 // Namespace battlechatter_table / namespace_d1fa53aa5515f8aa
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x551
-// Size: 0x79
+// Checksum 0x0, Offset: 0x532
+// Size: 0x78
 function bctable_exists(category, type, modifier) {
     if (!isdefined(anim.bctable) || !isdefined(anim.bctable[category])) {
         return false;
@@ -131,7 +131,7 @@ function bctable_exists(category, type, modifier) {
 
 // Namespace battlechatter_table / namespace_d1fa53aa5515f8aa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d3
+// Checksum 0x0, Offset: 0x5b3
 // Size: 0x3e
 function bctable_categorykey(type, modifier) {
     if (!isdefined(type)) {

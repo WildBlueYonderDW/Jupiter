@@ -5948,7 +5948,7 @@ function onusecompleted(pickupent, var_43fb3d97abb79854, var_a5b2c541413aa895, f
         } else {
             pickupremains = takeequipmentpickup(pickupent, fromkiosk, var_db943473454f6ea6, backpackequip);
         }
-        namespace_3169ff42d7051988::function_1976438a8865ac27("br_ftue_armor");
+        namespace_3169ff42d7051988::ftue_triggerTip("br_ftue_armor");
         thread armor::function_ef6d8b8c2ed89e8a(pickupent.count);
     } else if (br_public::function_4aa12e0ed3f6b745(pickupent.scriptablename)) {
         if (istrue(backpackequip) && isdefined(var_db943473454f6ea6)) {
@@ -6126,7 +6126,7 @@ function onusecompleted(pickupent, var_43fb3d97abb79854, var_a5b2c541413aa895, f
     }
     function_b96bd81b0107ad4c(pickupent);
     br_analytics::branalytics_lootpickup(self, pickupent.scriptablename, amount);
-    namespace_3169ff42d7051988::function_1976438a8865ac27("br_ftue_inventory");
+    namespace_3169ff42d7051988::ftue_triggerTip("br_ftue_inventory");
     if (!istrue(var_43fb3d97abb79854) && !istrue(delayfeedback)) {
         if (pickupremains) {
             pickupent.count -= pickupremains;

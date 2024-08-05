@@ -15,7 +15,7 @@
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x193
+// Checksum 0x0, Offset: 0x1fc
 // Size: 0x70
 function smartobjectinit(asmname, startname, params) {
     assert(!isdefined(self.asm.smartobject));
@@ -25,7 +25,7 @@ function smartobjectinit(asmname, startname, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x20b
+// Checksum 0x0, Offset: 0x274
 // Size: 0x83
 function smartobjectcomplete(asmname, statename, params) {
     self.asm.smartobject.lastusetime = gettime();
@@ -37,8 +37,8 @@ function smartobjectcomplete(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x296
-// Size: 0x3e
+// Checksum 0x0, Offset: 0x2ff
+// Size: 0x3d
 function getsmartobjectinfo() {
     type = getsmartobjecttype(self.asm.smartobject.script_smartobject);
     return [[ type.fngetinfo ]]();
@@ -46,8 +46,8 @@ function getsmartobjectinfo() {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dd
-// Size: 0x48
+// Checksum 0x0, Offset: 0x345
+// Size: 0x47
 function smartobjecthasintro(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     if (!isdefined(info.hasintro)) {
@@ -58,7 +58,7 @@ function smartobjecthasintro(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e
+// Checksum 0x0, Offset: 0x395
 // Size: 0x25
 function smartobjecthaslogic(asmname, statename, tostatename, params) {
     return true;
@@ -66,8 +66,8 @@ function smartobjecthaslogic(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x35c
-// Size: 0x48
+// Checksum 0x0, Offset: 0x3c3
+// Size: 0x47
 function smartobjecthasoutro(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     if (!isdefined(info.hasoutro)) {
@@ -78,8 +78,8 @@ function smartobjecthasoutro(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ad
-// Size: 0x41
+// Checksum 0x0, Offset: 0x413
+// Size: 0x40
 function smartobjecthasexits(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.hasexits);
@@ -87,8 +87,8 @@ function smartobjecthasexits(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f7
-// Size: 0x41
+// Checksum 0x0, Offset: 0x45c
+// Size: 0x40
 function shouldplaysmartobjectpain(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.haspain);
@@ -96,8 +96,8 @@ function shouldplaysmartobjectpain(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x441
-// Size: 0x41
+// Checksum 0x0, Offset: 0x4a5
+// Size: 0x40
 function shouldplaysmartobjectdeath(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.hasdeath);
@@ -105,8 +105,8 @@ function shouldplaysmartobjectdeath(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x48b
-// Size: 0x41
+// Checksum 0x0, Offset: 0x4ee
+// Size: 0x40
 function shouldplaysmartobjectreact(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     return istrue(info.hasreact);
@@ -114,8 +114,8 @@ function shouldplaysmartobjectreact(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d5
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x537
+// Size: 0x9f
 function shouldsmartobjectreact(asmname, statename, tostatename, params) {
     info = getsmartobjectinfo();
     if (istrue(info.bdonotreact)) {
@@ -136,8 +136,8 @@ function shouldsmartobjectreact(asmname, statename, tostatename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x57e
-// Size: 0x6c
+// Checksum 0x0, Offset: 0x5df
+// Size: 0x6b
 function playsmartobjectintro(asmname, statename, params) {
     smartobject = self.asm.smartobject;
     if (isdefined(smartobject.angles)) {
@@ -148,7 +148,7 @@ function playsmartobjectintro(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f2
+// Checksum 0x0, Offset: 0x652
 // Size: 0xbb
 function playsmartobjectlogic(asmname, statename, params) {
     self endon(statename + "_finished");
@@ -166,8 +166,8 @@ function playsmartobjectlogic(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b5
-// Size: 0x9a
+// Checksum 0x0, Offset: 0x715
+// Size: 0x9b
 function choosesmartobjectanim(asmname, statename, params) {
     info = getsmartobjectinfo();
     if (istrue(info.var_d0fc6475ed819558)) {
@@ -182,8 +182,8 @@ function choosesmartobjectanim(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x758
-// Size: 0x137
+// Checksum 0x0, Offset: 0x7b9
+// Size: 0x139
 function playsmartobjectanim(asmname, statename, earlytime, earlynotify) {
     self endon(statename + "_finished");
     animdata = asm_getanim(asmname, statename);
@@ -205,7 +205,7 @@ function playsmartobjectanim(asmname, statename, earlytime, earlynotify) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x897
+// Checksum 0x0, Offset: 0x8fa
 // Size: 0x22
 function smartobject_earlynotifier(waittime, earlynotify) {
     wait waittime;
@@ -214,8 +214,8 @@ function smartobject_earlynotifier(waittime, earlynotify) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c1
-// Size: 0x47
+// Checksum 0x0, Offset: 0x924
+// Size: 0x46
 function smartobject_notetrackhandler(note) {
     if (scripts\anim\notetracks::notetrack_prefix_handler(note)) {
         return;
@@ -228,7 +228,7 @@ function smartobject_notetrackhandler(note) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x910
+// Checksum 0x0, Offset: 0x972
 // Size: 0x42
 function smartobject_shouldexitintomove(asmname, statename, tostatename, params) {
     return isdefined(self.pathgoalpos) && length2dsquared(self.velocity) > 1;
@@ -236,7 +236,7 @@ function smartobject_shouldexitintomove(asmname, statename, tostatename, params)
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x95b
+// Checksum 0x0, Offset: 0x9bd
 // Size: 0x67
 function playsmartobjectexit(asmname, statename, params) {
     info = getsmartobjectinfo();
@@ -250,8 +250,8 @@ function playsmartobjectexit(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ca
-// Size: 0x40
+// Checksum 0x0, Offset: 0xa2c
+// Size: 0x3f
 function choosesmartobjectexitanim(asmname, statename, params) {
     info = getsmartobjectinfo();
     return scripts\asm\soldier\move::chooseanim_exit(asmname, info.animstatename, params);
@@ -259,8 +259,8 @@ function choosesmartobjectexitanim(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa13
-// Size: 0x41
+// Checksum 0x0, Offset: 0xa74
+// Size: 0x40
 function playsmartobjectreactanim(asmname, statename, params) {
     info = getsmartobjectinfo();
     scripts\asm\soldier\patrol::playanim_patrolreact_internal(asmname, statename, info.animstatename);
@@ -268,8 +268,8 @@ function playsmartobjectreactanim(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5c
-// Size: 0xfb
+// Checksum 0x0, Offset: 0xabc
+// Size: 0xfc
 function choosesmartobjectreactanim(asmname, statename, params) {
     info = getsmartobjectinfo();
     if (isdefined(info.animlist) && isdefined(info.animlist[statename])) {
@@ -278,14 +278,14 @@ function choosesmartobjectreactanim(asmname, statename, params) {
     }
     directionindex = scripts\asm\soldier\patrol::getpatrolreactdirindex();
     alias = "react_med_" + directionindex;
-    assertex(asm_hasalias(info.animstatename, alias), "<dev string:x1c>" + info.animstatename + "<dev string:x42>" + alias);
+    assertex(asm_hasalias(info.animstatename, alias), "Smart object reaction aliases for " + info.animstatename + " set up incorrectly.  Unable to find alias " + alias);
     return asm_lookupanimfromalias(info.animstatename, alias);
 }
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb60
-// Size: 0x45
+// Checksum 0x0, Offset: 0xbc1
+// Size: 0x44
 function playsmartobjectpainanim(asmname, statename, params) {
     info = getsmartobjectinfo();
     scripts\asm\soldier\pain::playpainaniminternal(asmname, statename, params, 0, 1, info.animstatename);
@@ -293,8 +293,8 @@ function playsmartobjectpainanim(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbad
-// Size: 0x5a
+// Checksum 0x0, Offset: 0xc0d
+// Size: 0x59
 function playsmartobjectdeathanim(asmname, statename, params) {
     info = getsmartobjectinfo();
     self.deathstate = info.animstatename;
@@ -304,7 +304,7 @@ function playsmartobjectdeathanim(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0f
+// Checksum 0x0, Offset: 0xc6e
 // Size: 0xf0
 function choosesmartobjectpainanim(asmname, statename, params) {
     info = getsmartobjectinfo();
@@ -313,14 +313,14 @@ function choosesmartobjectpainanim(asmname, statename, params) {
         return asm_lookupanimfromalias(info.animstatename, info.animlist[statename]);
     }
     var_7b9fb896860064ab = "pain_" + smtobjgetdamagedir();
-    assertex(asm_hasalias(info.animstatename, var_7b9fb896860064ab), "<dev string:x71>" + info.animstatename + "<dev string:x42>" + var_7b9fb896860064ab);
+    assertex(asm_hasalias(info.animstatename, var_7b9fb896860064ab), "Smart object pain aliases for " + info.animstatename + " set up incorrectly.  Unable to find alias " + var_7b9fb896860064ab);
     return asm_lookupanimfromalias(info.animstatename, var_7b9fb896860064ab);
 }
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd08
-// Size: 0x6f
+// Checksum 0x0, Offset: 0xd67
+// Size: 0x6e
 function smtobjgetdamagedir() {
     anglediff = angleclamp180(self.damageyaw - self.angles[1]);
     if (anglediff < -135) {
@@ -340,7 +340,7 @@ function smtobjgetdamagedir() {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7f
+// Checksum 0x0, Offset: 0xddd
 // Size: 0x50
 function choosesmartobjectdeathanim(asmname, statename, params) {
     info = getsmartobjectinfo();
@@ -350,7 +350,7 @@ function choosesmartobjectdeathanim(asmname, statename, params) {
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd8
+// Checksum 0x0, Offset: 0xe36
 // Size: 0xbe
 function choosesmartobjectdeathalias(statename) {
     info = getsmartobjectinfo();
@@ -359,13 +359,13 @@ function choosesmartobjectdeathalias(statename) {
         return info.animlist[statename];
     }
     deathalias = "death_" + smtobjgetdamagedir();
-    assertex(asm_hasalias(info.animstatename, deathalias), "<dev string:x93>" + info.animstatename + "<dev string:xb6>" + deathalias);
+    assertex(asm_hasalias(info.animstatename, deathalias), "Smart object death aliases for " + info.animstatename + " set up incorrectly. Unable to find alias " + deathalias);
     return deathalias;
 }
 
 // Namespace smartobject / scripts\asm\soldier\smartobject
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9f
+// Checksum 0x0, Offset: 0xefd
 // Size: 0x8c
 function needtoturntosmartobject(asmname, statename, params) {
     smartobj = bb_getrequestedsmartobject();

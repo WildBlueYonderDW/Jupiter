@@ -1,12 +1,11 @@
 #using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 
 #namespace namespace_c45ac99c4997e722;
 
 // Namespace namespace_c45ac99c4997e722 / namespace_7349d2dcd492da87
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x376
-// Size: 0x4f5
+// Checksum 0x0, Offset: 0x291
+// Size: 0x504
 function function_1c355f42faf7f4bb() {
     deathmodifiers = [];
     teamhasuav = undefined;
@@ -122,28 +121,5 @@ function function_1c355f42faf7f4bb() {
         }
     }
     return deathmodifiers;
-}
-
-// Namespace namespace_c45ac99c4997e722 / namespace_7349d2dcd492da87
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x874
-// Size: 0xba
-function function_45d01d27e99f49d7() {
-    game_type = getgametype();
-    if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19()) {
-        game_type += " hc";
-    }
-    var_32ae710bd6009c5d = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5();
-    playlist_id = 0;
-    playlist_name = "";
-    if (istrue(level.matchmakingmatch)) {
-        playlist_id = getplaylistid();
-        playlist_name = getplaylistname();
-    }
-    var_65f62e5d09e2cd00 = -1;
-    if (utility::function_f3bb4f4911a1beb2("game", "isRoundBased")) {
-        var_65f62e5d09e2cd00 = game["roundsPlayed"];
-    }
-    return [level.script, game_type, var_32ae710bd6009c5d, playlist_id, playlist_name, var_65f62e5d09e2cd00];
 }
 

@@ -12,7 +12,7 @@
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3de
+// Checksum 0x0, Offset: 0x357
 // Size: 0x47
 function equipmentinteract_init() {
     level.useobjs = [];
@@ -24,16 +24,16 @@ function equipmentinteract_init() {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x42d
+// Checksum 0x0, Offset: 0x3a6
 // Size: 0x56
 function equipmentscriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
-    assert(part == "<dev string:x1c>");
+    assert(part == "hack_usable");
     equipmentuse(instance.entity, player);
 }
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x48b
+// Checksum 0x0, Offset: 0x404
 // Size: 0xaf
 function equipmentuse(instance, player) {
     equipment = instance;
@@ -55,8 +55,8 @@ function equipmentuse(instance, player) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x542
-// Size: 0x15b
+// Checksum 0x0, Offset: 0x4bb
+// Size: 0x158
 function _updateuseobjs() {
     level endon("game_ended");
     while (true) {
@@ -79,7 +79,7 @@ function _updateuseobjs() {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a5
+// Checksum 0x0, Offset: 0x61b
 // Size: 0x2e
 function remoteinteractsetup(var_3012ab4936b3fdec, allowdefuse, allowhack) {
     if (isdefined(allowhack) || allowhack) {
@@ -89,8 +89,8 @@ function remoteinteractsetup(var_3012ab4936b3fdec, allowdefuse, allowhack) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6db
-// Size: 0x82
+// Checksum 0x0, Offset: 0x651
+// Size: 0x7f
 function _hacksetup(remotedefusecallback) {
     level.useobjs[self getentitynumber()] = self;
     self setscriptablepartstate("hack_usable", "on");
@@ -101,8 +101,8 @@ function _hacksetup(remotedefusecallback) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x765
-// Size: 0x13b
+// Checksum 0x0, Offset: 0x6d8
+// Size: 0x13d
 function _processusethink(equipment) {
     level endon("game_ended");
     if (isdefined(equipment)) {
@@ -141,8 +141,8 @@ function _processusethink(equipment) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a9
-// Size: 0x136
+// Checksum 0x0, Offset: 0x81e
+// Size: 0x135
 function _startusethink(equipment, streakinfo) {
     if (isdefined(equipment)) {
         equipment.isbeingused = 1;
@@ -185,8 +185,8 @@ function _startusethink(equipment, streakinfo) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e7
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x95b
+// Size: 0xe1
 function function_be0c3a067da1e72d(equipment) {
     index = -1;
     if (isdefined(equipment.equipmentref)) {
@@ -204,14 +204,14 @@ function function_be0c3a067da1e72d(equipment) {
     if (isdefined(equipment.var_1f6c1f17ced6df4b)) {
         index = equipment.var_1f6c1f17ced6df4b;
     }
-    assert(index != -1, "<dev string:x2b>");
+    assert(index != -1, "Piece of hacked equipment");
     return index;
 }
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xad2
-// Size: 0x1b4
+// Checksum 0x0, Offset: 0xa45
+// Size: 0x1b8
 function deployHackTablet(index, equipment, streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -258,7 +258,7 @@ function deployHackTablet(index, equipment, streakinfo) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8e
+// Checksum 0x0, Offset: 0xc05
 // Size: 0x33
 function function_60fbd6e6fc195e7b(equipment) {
     self endon("interact_cancelled");
@@ -269,7 +269,7 @@ function function_60fbd6e6fc195e7b(equipment) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc9
+// Checksum 0x0, Offset: 0xc40
 // Size: 0x89
 function function_c9ada01dc3eac7f3(hackindex, var_c9f381a81d2b42ed, var_58dec9951efefbed, var_28801f64e1d308be) {
     level endon("game_ended");
@@ -288,8 +288,8 @@ function function_c9ada01dc3eac7f3(hackindex, var_c9f381a81d2b42ed, var_58dec995
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5a
-// Size: 0x12b
+// Checksum 0x0, Offset: 0xcd1
+// Size: 0x131
 function _updatehackprogressomnvar(var_c9f381a81d2b42ed, var_58dec9951efefbed) {
     self endon("interact_cancelled");
     self notify("update_hack_omnvar");
@@ -321,7 +321,7 @@ function _updatehackprogressomnvar(var_c9f381a81d2b42ed, var_58dec9951efefbed) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8d
+// Checksum 0x0, Offset: 0xe0a
 // Size: 0x26
 function _ontabletgiven(streakinfo, switchresult) {
     _toggletabletallows(1);
@@ -331,7 +331,7 @@ function _ontabletgiven(streakinfo, switchresult) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xebc
+// Checksum 0x0, Offset: 0xe39
 // Size: 0x3d
 function _cancelputawayonuseend(streakinfo) {
     level endon("game_ended");
@@ -348,7 +348,7 @@ function _cancelputawayonuseend(streakinfo) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf01
+// Checksum 0x0, Offset: 0xe7e
 // Size: 0x1f
 function _ontabletputaway(streakinfo) {
     self notify("tabletPutAway");
@@ -357,8 +357,8 @@ function _ontabletputaway(streakinfo) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf28
-// Size: 0x77
+// Checksum 0x0, Offset: 0xea5
+// Size: 0x76
 function _waituntilinteractfinished(streakinfo) {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -376,7 +376,7 @@ function _waituntilinteractfinished(streakinfo) {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa7
+// Checksum 0x0, Offset: 0xf23
 // Size: 0x2e
 function _cleanuptabletallows() {
     level endon("game_ended");
@@ -387,7 +387,7 @@ function _cleanuptabletallows() {
 
 // Namespace equipment_interact / namespace_eff8aaa83987a595
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdd
+// Checksum 0x0, Offset: 0xf59
 // Size: 0xa6
 function _toggletabletallows(var_da3010af8f6be463) {
     if (isalive(self)) {

@@ -5,7 +5,7 @@
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25fc
+// Checksum 0x0, Offset: 0x21bc
 // Size: 0x5b
 function bcs_location_trigs_init() {
     assert(!isdefined(level.bcs_location_mappings));
@@ -21,8 +21,8 @@ function bcs_location_trigs_init() {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x265f
-// Size: 0x206
+// Checksum 0x0, Offset: 0x221f
+// Size: 0x207
 function bcs_trigs_assign_aliases() {
     assert(!isdefined(anim.bcs_locations));
     anim.bcs_locations = [];
@@ -37,14 +37,14 @@ function bcs_trigs_assign_aliases() {
         }
         location_triggers[location_triggers.size] = trig;
         if (!isdefined(level.bcs_location_mappings[trig.classname])) {
-            println("<dev string:x1c>" + trig.classname + "<dev string:x4e>" + trig.origin);
+            println("<dev string:x1c>" + trig.classname + "<dev string:x4b>" + trig.origin);
             continue;
         }
         if (trig.classname == "trigger_multiple_bcs_kvp") {
-            assertex(isdefined(trig.script_location), "<dev string:x56>");
+            assertex(isdefined(trig.script_location), "KVP volumes need to set their location/soundalias using the 'script_location' KVP.");
             locationstr = trig.script_location;
         } else {
-            assertex(!isdefined(trig.script_location), "<dev string:xac>" + trig.classname);
+            assertex(!isdefined(trig.script_location), "script_location is only supported on 'KVP' location volumes not, " + trig.classname);
             locationstr = level.bcs_location_mappings[trig.classname];
         }
         aliases = parselocationaliases(locationstr);
@@ -61,8 +61,8 @@ function bcs_trigs_assign_aliases() {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x286d
-// Size: 0x23
+// Checksum 0x0, Offset: 0x242e
+// Size: 0x22
 function parselocationaliases(locationstr) {
     locationaliases = strtok(locationstr, " ");
     return locationaliases;
@@ -70,8 +70,8 @@ function parselocationaliases(locationstr) {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2899
-// Size: 0x11a
+// Checksum 0x0, Offset: 0x2459
+// Size: 0x119
 function add_bcs_location_mapping(classname, alias) {
     if (isdefined(level.bcs_location_mappings[classname])) {
         existing = level.bcs_location_mappings[classname];
@@ -93,7 +93,7 @@ function add_bcs_location_mapping(classname, alias) {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29bb
+// Checksum 0x0, Offset: 0x257a
 // Size: 0x3b
 function bcs_location_trigger_mapping() {
     add_bcs_location_mapping("trigger_multiple_bcs_kvp", "");
@@ -108,7 +108,7 @@ function bcs_location_trigger_mapping() {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29fe
+// Checksum 0x0, Offset: 0x25bd
 // Size: 0x8a4
 function sp() {
     add_bcs_location_mapping("trigger_multiple_bcs_sp_1stfloor", "1stfloor");
@@ -245,7 +245,7 @@ function sp() {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32aa
+// Checksum 0x0, Offset: 0x2e69
 // Size: 0x68
 function sp_embassy() {
     add_bcs_location_mapping("trigger_multiple_bcs_sp_embassy_compound", "compound");
@@ -258,7 +258,7 @@ function sp_embassy() {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x331a
+// Checksum 0x0, Offset: 0x2ed9
 // Size: 0x35
 function sp_lab() {
     add_bcs_location_mapping("trigger_multiple_bcs_sp_lab_object_turbine", "turbine");
@@ -268,7 +268,7 @@ function sp_lab() {
 
 // Namespace namespace_5ed1b2403729301b / scripts\common\bcs_location_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3357
+// Checksum 0x0, Offset: 0x2f16
 // Size: 0x475
 function mp_callouts() {
     add_bcs_location_mapping("trigger_multiple_bcs_backalley", "backalley");

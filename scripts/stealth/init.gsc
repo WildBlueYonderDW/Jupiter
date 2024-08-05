@@ -7,7 +7,7 @@
 
 // Namespace init / scripts\stealth\init
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7
+// Checksum 0x0, Offset: 0x88
 // Size: 0x9
 function main() {
     scripts\stealth\manager::main();
@@ -15,8 +15,8 @@ function main() {
 
 // Namespace init / scripts\stealth\init
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8
-// Size: 0xdd
+// Checksum 0x0, Offset: 0x99
+// Size: 0xda
 function set_stealth_mode(enabled, musichidden, musicspotted) {
     if (enabled) {
         if (isdefined(musichidden) && isdefined(musicspotted)) {

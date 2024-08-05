@@ -14,8 +14,8 @@
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x424
-// Size: 0x1cf
+// Checksum 0x0, Offset: 0x40c
+// Size: 0x1d5
 function playtraverseanim_deprecated(asmname, statename, params) {
     self endon("death");
     self endon("terminate_ai_threads");
@@ -56,7 +56,7 @@ function playtraverseanim_deprecated(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fb
+// Checksum 0x0, Offset: 0x5e9
 // Size: 0x93
 function playtraverseanim(asmname, statename, params) {
     traverseanim = asm_getanim(asmname, statename);
@@ -72,8 +72,8 @@ function playtraverseanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x696
-// Size: 0x2f4
+// Checksum 0x0, Offset: 0x684
+// Size: 0x2fc
 function playtraverseanim_doublejump(asmname, statename, params) {
     self endon("death");
     self endon("terminate_ai_threads");
@@ -130,7 +130,7 @@ function playtraverseanim_doublejump(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x992
+// Checksum 0x0, Offset: 0x988
 // Size: 0x2c
 function traverse_doublejump_cleanup(asmname, statename, params) {
     self unlink();
@@ -139,7 +139,7 @@ function traverse_doublejump_cleanup(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c6
+// Checksum 0x0, Offset: 0x9bc
 // Size: 0x3a
 function traverse_donotetracks(asmname, statename) {
     self endon("death");
@@ -151,30 +151,27 @@ function traverse_donotetracks(asmname, statename) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa08
-// Size: 0x73
+// Checksum 0x0, Offset: 0x9fe
+// Size: 0x50
 function getexternaltraverseinfo(traversename) {
-    assertex(isdefined(level.scr_traverse), "<dev string:x1c>");
-    assertex(isdefined(level.scr_traverse[traversename]), "<dev string:x61>" + traversename + "<dev string:x79>");
-    if (isdefined(level.scr_traverse) && isdefined(level.scr_traverse[traversename])) {
-        return level.scr_traverse[traversename];
-    }
-    return undefined;
+    assertex(isdefined(level.scr_traverse), "level.scr_traverse must be setup properly to use custom traverses");
+    assertex(isdefined(level.scr_traverse[traversename]), "level.scr_traverse[ " + traversename + " ] entry not defined.");
+    return level.scr_traverse[traversename];
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa83
+// Checksum 0x0, Offset: 0xa57
 // Size: 0x48
 function playtraverseanim_external(asmname, statename, params) {
-    assertex(utility::issp(), "<dev string:x92>" + asmname + "<dev string:xb6>" + statename + "<dev string:xc4>");
+    assertex(utility::issp(), "Unable to find traverse in asm: " + asmname + " -- state:" + statename + ". Custom traversals not supported in non-SP");
     playtraverseanim_scaled(asmname, statename);
 }
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xad3
-// Size: 0xb7
+// Checksum 0x0, Offset: 0xaa7
+// Size: 0xb9
 function choosetraverseanim_external(asmname, statename, params) {
     startnode = self getnegotiationstartnode();
     assert(isdefined(startnode));
@@ -191,7 +188,7 @@ function choosetraverseanim_external(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb93
+// Checksum 0x0, Offset: 0xb69
 // Size: 0x9f
 function playdoublejumpfinishanim(asmname, statename, params) {
     self endon(statename + "_finished");
@@ -208,8 +205,8 @@ function playdoublejumpfinishanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3a
-// Size: 0xc3
+// Checksum 0x0, Offset: 0xc10
+// Size: 0xc7
 function getdoublejumpoffsetposition(asmname, var_223efa34c2b82dc8, endpos, endangles, notetrackname) {
     animid = asm_chooseanim(asmname, var_223efa34c2b82dc8);
     assert(isdefined(animid));
@@ -224,8 +221,8 @@ function getdoublejumpoffsetposition(asmname, var_223efa34c2b82dc8, endpos, enda
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd06
-// Size: 0x1a3
+// Checksum 0x0, Offset: 0xce0
+// Size: 0x1aa
 function doublejumpneedsfinishanim(asmname, nextstatename, startnode, endpos) {
     assert(isdefined(startnode));
     assert(isdefined(endpos));
@@ -264,7 +261,7 @@ function doublejumpneedsfinishanim(asmname, nextstatename, startnode, endpos) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb2
+// Checksum 0x0, Offset: 0xe93
 // Size: 0x84
 function checkdoublejumpfinish(asmname, statename, tostatename, params) {
     startnode = gettraversalstartnode();
@@ -283,7 +280,7 @@ function checkdoublejumpfinish(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3f
+// Checksum 0x0, Offset: 0xf20
 // Size: 0x1f
 function gettraversalstartnode() {
     if (isdefined(self.traversal_start_node)) {
@@ -294,8 +291,8 @@ function gettraversalstartnode() {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf67
-// Size: 0x111
+// Checksum 0x0, Offset: 0xf48
+// Size: 0x116
 function playdoublejumpmantleorvault(asmname, statename, zoffset) {
     self endon(statename + "_finished");
     startnode = gettraversalstartnode();
@@ -317,7 +314,7 @@ function playdoublejumpmantleorvault(asmname, statename, zoffset) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1080
+// Checksum 0x0, Offset: 0x1066
 // Size: 0x26
 function playdoublejumpmantle(asmname, statename, params) {
     playdoublejumpmantleorvault(asmname, statename, -8);
@@ -325,7 +322,7 @@ function playdoublejumpmantle(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ae
+// Checksum 0x0, Offset: 0x1094
 // Size: 0x26
 function playdoublejumpvault(asmname, statename, params) {
     playdoublejumpmantleorvault(asmname, statename, -42);
@@ -333,7 +330,7 @@ function playdoublejumpvault(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10dc
+// Checksum 0x0, Offset: 0x10c2
 // Size: 0x39
 function doublejumpterminate(asmname, statename, params) {
     self.useanimgoalweight = 0;
@@ -343,7 +340,7 @@ function doublejumpterminate(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x111d
+// Checksum 0x0, Offset: 0x1103
 // Size: 0x34
 function doublejumpearlyterminate(asmname, statename, params) {
     if (!asm_eventfired(asmname, "end")) {
@@ -353,7 +350,7 @@ function doublejumpearlyterminate(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1159
+// Checksum 0x0, Offset: 0x113f
 // Size: 0x49
 function isdoublejumpanimdone(asmname, statename, tostatename, params) {
     /#
@@ -366,13 +363,13 @@ function isdoublejumpanimdone(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ab
-// Size: 0x3bd
+// Checksum 0x0, Offset: 0x1191
+// Size: 0x3cc
 function playdoublejumptraversal(asmname, statename, params) {
     self endon(statename + "_finished");
     /#
         if (getdvarint(@"hash_db3bdaface7c82ec", 0) == 4) {
-            playtraverseanim_doublejump(asmname, "<dev string:xf3>", params);
+            playtraverseanim_doublejump(asmname, "<dev string:x1c>", params);
             return;
         }
         if (getdvarint(@"hash_db3bdaface7c82ec", 0) == 3) {
@@ -450,14 +447,14 @@ function playdoublejumptraversal(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1570
-// Size: 0xe5
+// Checksum 0x0, Offset: 0x1565
+// Size: 0xe7
 function choosedoublejumpanim(asmname, statename, params) {
     endpos = self getnegotiationendpos();
     assert(isdefined(endpos));
     alias = "double_jump_up";
     if (isdefined(params)) {
-        assert(params == "<dev string:x107>" || params == "<dev string:x10d>");
+        assert(params == "up" || params == "down");
         alias = "double_jump_" + params;
     } else if (endpos[2] < self.origin[2]) {
         alias = "double_jump_down";
@@ -474,8 +471,8 @@ function choosedoublejumpanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x165e
-// Size: 0x125
+// Checksum 0x0, Offset: 0x1655
+// Size: 0x126
 function getwallnodeposition(startnode, index) {
     assert(index >= 0);
     assert(isdefined(startnode));
@@ -494,8 +491,8 @@ function getwallnodeposition(startnode, index) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x178c
-// Size: 0x15a
+// Checksum 0x0, Offset: 0x1784
+// Size: 0x15f
 function shouldwallrunshoot(asmname, statename, tostatename, params) {
     if (!isdefined(self.enemy)) {
         return false;
@@ -521,8 +518,8 @@ function shouldwallrunshoot(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ef
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x18ec
+// Size: 0x4a
 function choosewallrunanim(asmname, statename, params) {
     assert(isdefined(self.wall_run_direction));
     jumpanim = asm_lookupanimfromalias(statename, self.wall_run_direction);
@@ -531,7 +528,7 @@ function choosewallrunanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1943
+// Checksum 0x0, Offset: 0x193f
 // Size: 0x42
 function getsmoothstep(delta) {
     /#
@@ -544,8 +541,8 @@ function getsmoothstep(delta) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x198e
-// Size: 0x16e
+// Checksum 0x0, Offset: 0x198a
+// Size: 0x177
 function teleportdeltaovernumframes(statename, waittime, delta, numframes, animname, playbackrate) {
     self endon(statename + "_finished");
     if (waittime > 0) {
@@ -584,12 +581,12 @@ function teleportdeltaovernumframes(statename, waittime, delta, numframes, animn
 
     // Namespace traverse / scripts\asm\soldier\traverse
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b04
+    // Checksum 0x0, Offset: 0x1b09
     // Size: 0x54
     function debugdest(dest, statename) {
-        self notify("<dev string:x115>");
-        self endon("<dev string:x115>");
-        self endon(statename + "<dev string:x127>");
+        self notify("<dev string:x2d>");
+        self endon("<dev string:x2d>");
+        self endon(statename + "<dev string:x3c>");
         while (true) {
             line(self.origin, dest, (0, 255, 0));
             waitframe();
@@ -600,7 +597,7 @@ function teleportdeltaovernumframes(statename, waittime, delta, numframes, animn
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b60
+// Checksum 0x0, Offset: 0x1b65
 // Size: 0x3f
 function wallrunnotehandler(note, params) {
     if (note == "start_jump") {
@@ -614,8 +611,8 @@ function wallrunnotehandler(note, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ba7
-// Size: 0x376
+// Checksum 0x0, Offset: 0x1bac
+// Size: 0x38b
 function handlejumpteleports(params, animtime, playbackrate) {
     assert(isarray(params));
     assert(params.size == 7);
@@ -654,8 +651,8 @@ function handlejumpteleports(params, animtime, playbackrate) {
             var_3d5c613a9500564 = distance(self.origin, desiredendpos);
             var_e37286be71cbc5cd = var_3d5c613a9500564 / var_44a93f09b80b3ae;
             if (var_e37286be71cbc5cd < 0.8 || var_e37286be71cbc5cd > 1.2) {
-                println("<dev string:x134>" + self.traversal_start_node.origin + "<dev string:x160>" + animname + "<dev string:x178>" + var_e37286be71cbc5cd);
-                println("<dev string:x180>" + var_44a93f09b80b3ae + "<dev string:x191>" + var_3d5c613a9500564);
+                println("<dev string:x46>" + self.traversal_start_node.origin + "<dev string:x6f>" + animname + "<dev string:x84>" + var_e37286be71cbc5cd);
+                println("<dev string:x89>" + var_44a93f09b80b3ae + "<dev string:x97>" + var_3d5c613a9500564);
             }
         }
     #/
@@ -691,7 +688,7 @@ function handlejumpteleports(params, animtime, playbackrate) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f25
+// Checksum 0x0, Offset: 0x1f3f
 // Size: 0x74
 function getwallrunyawfromstartnode(startnode) {
     assert(isdefined(startnode.wall_info));
@@ -703,8 +700,8 @@ function getwallrunyawfromstartnode(startnode) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa2
-// Size: 0xf9
+// Checksum 0x0, Offset: 0x1fbc
+// Size: 0xfd
 function getwallrundirectionfromstartnode(startnode) {
     assert(isdefined(startnode));
     assert(isdefined(startnode.wall_info));
@@ -725,8 +722,8 @@ function getwallrundirectionfromstartnode(startnode) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20a4
-// Size: 0x64
+// Checksum 0x0, Offset: 0x20c2
+// Size: 0x63
 function setupwallrunifneeded() {
     if (isdefined(self.wall_run_direction)) {
         return;
@@ -741,7 +738,7 @@ function setupwallrunifneeded() {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2110
+// Checksum 0x0, Offset: 0x212d
 // Size: 0x12
 function getwallrundirection() {
     setupwallrunifneeded();
@@ -750,7 +747,7 @@ function getwallrundirection() {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x212b
+// Checksum 0x0, Offset: 0x2148
 // Size: 0x72
 function wallrunterminate(asmname, statename, params) {
     self.wall_run_current_node_index = undefined;
@@ -766,7 +763,7 @@ function wallrunterminate(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x21a5
+// Checksum 0x0, Offset: 0x21c2
 // Size: 0x4f
 function traversalorientearlyterminate(asmname, statename, params) {
     if (!asm_eventfired(asmname, "end") && !asm_eventfired(asmname, "code_move")) {
@@ -777,8 +774,8 @@ function traversalorientearlyterminate(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x21fc
-// Size: 0x140
+// Checksum 0x0, Offset: 0x2219
+// Size: 0x146
 function playwallrunattach(asmname, statename, params) {
     self animmode("noclip");
     self orientmode("face angle", self.angles[1]);
@@ -802,8 +799,8 @@ function playwallrunattach(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2344
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x2367
+// Size: 0xab
 function getwallattachoffsetposition(asmname) {
     animname = choosewallattachanim(asmname, "wall_run_attach");
     assert(isdefined(animname));
@@ -817,8 +814,8 @@ function getwallattachoffsetposition(asmname) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f5
-// Size: 0x1af
+// Checksum 0x0, Offset: 0x241b
+// Size: 0x1b6
 function playwallrunenter(asmname, statename, params) {
     self endon(statename + "_finished");
     animid = asm_getanim(asmname, statename);
@@ -851,7 +848,7 @@ function playwallrunenter(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x25ac
+// Checksum 0x0, Offset: 0x25d9
 // Size: 0x110
 function playscaledjump(asmname, statename, animid, desiredposition, desiredangles, var_8c2c7ea3bd382df4, var_4c4c6c6d3c2b086b, var_87ef9fdeb401c595) {
     self endon(statename + "_finished");
@@ -877,7 +874,7 @@ function playscaledjump(asmname, statename, animid, desiredposition, desiredangl
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26c4
+// Checksum 0x0, Offset: 0x26f1
 // Size: 0xb7
 function choosewallattachanim(asmname, statename, params) {
     if (isdefined(self.wall_run_attach_anim)) {
@@ -899,8 +896,8 @@ function choosewallattachanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2784
-// Size: 0x1a2
+// Checksum 0x0, Offset: 0x27b1
+// Size: 0x1a8
 function choosewallrunenteranim(asmname, statename, params) {
     setupwallrunifneeded();
     assert(isdefined(self.wall_run_direction));
@@ -941,7 +938,7 @@ function choosewallrunenteranim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x292f
+// Checksum 0x0, Offset: 0x2962
 // Size: 0x47
 function senddelayedevent(asmname, statename, time, event, var_775aaa9fdd143162) {
     self endon(statename + "_finished");
@@ -954,7 +951,7 @@ function senddelayedevent(asmname, statename, time, event, var_775aaa9fdd143162)
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x297e
+// Checksum 0x0, Offset: 0x29b1
 // Size: 0xbc
 function hasanotherwallrun(asmname, statename, tostatename, params) {
     if (!isdefined(self.wall_run_current_node_index)) {
@@ -975,8 +972,8 @@ function hasanotherwallrun(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a43
-// Size: 0x10a
+// Checksum 0x0, Offset: 0x2a76
+// Size: 0x10c
 function playwallruncontinue(asmname, statename, params) {
     self endon(statename + "_finished");
     startnode = self.traversal_start_node;
@@ -997,7 +994,7 @@ function playwallruncontinue(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b55
+// Checksum 0x0, Offset: 0x2b8a
 // Size: 0xdd
 function getwallrunmantleposition(startnode) {
     assert(isdefined(startnode));
@@ -1013,8 +1010,8 @@ function getwallrunmantleposition(startnode) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3b
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x2c70
+// Size: 0xb6
 function getwallrunmantleangles(startnode) {
     assert(isdefined(startnode));
     assert(isdefined(startnode.wall_info));
@@ -1030,7 +1027,7 @@ function getwallrunmantleangles(startnode) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cfb
+// Checksum 0x0, Offset: 0x2d2f
 // Size: 0x71
 function getwallruntomantletype() {
     startnode = self.traversal_start_node;
@@ -1047,8 +1044,8 @@ function getwallruntomantletype() {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d75
-// Size: 0x73
+// Checksum 0x0, Offset: 0x2da9
+// Size: 0x72
 function shouldwallruntovault(asmname, statename, tostatename, params) {
     startnode = self.traversal_start_node;
     assert(isdefined(startnode));
@@ -1060,8 +1057,8 @@ function shouldwallruntovault(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2df1
-// Size: 0x2b1
+// Checksum 0x0, Offset: 0x2e24
+// Size: 0x2c0
 function playwallrunloop(asmname, statename, params) {
     self endon(statename + "_finished");
     startnode = self.traversal_start_node;
@@ -1108,7 +1105,7 @@ function playwallrunloop(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30aa
+// Checksum 0x0, Offset: 0x30ec
 // Size: 0x33
 function playwallrunendsound(statename) {
     self endon("death");
@@ -1120,8 +1117,8 @@ function playwallrunendsound(statename) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e5
-// Size: 0x1d6
+// Checksum 0x0, Offset: 0x3127
+// Size: 0x1de
 function choosewallrunexitanim(asmname, statename, params) {
     alias = self.wall_run_direction;
     endpos = self getnegotiationendpos();
@@ -1165,8 +1162,8 @@ function choosewallrunexitanim(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x32c4
-// Size: 0x168
+// Checksum 0x0, Offset: 0x330e
+// Size: 0x16e
 function playwallrunexit(asmname, statename, params) {
     self endon(statename + "_finished");
     startnode = self.traversal_start_node;
@@ -1201,7 +1198,7 @@ function playwallrunexit(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3434
+// Checksum 0x0, Offset: 0x3484
 // Size: 0xc1
 function isnotdoingwallruntransition(asmname, statename, tostatename, params) {
     if (isdefined(self.traversal_start_node)) {
@@ -1223,7 +1220,7 @@ function isnotdoingwallruntransition(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34fe
+// Checksum 0x0, Offset: 0x354e
 // Size: 0x55
 function terminatewallruntraverse(asmname, statename) {
     self.wall_run_current_node_index = undefined;
@@ -1237,8 +1234,8 @@ function terminatewallruntraverse(asmname, statename) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x355b
-// Size: 0x241
+// Checksum 0x0, Offset: 0x35ab
+// Size: 0x24e
 function playwallruntomantle(asmname, statename, params) {
     self endon(statename + "_finished");
     startnode = self.traversal_start_node;
@@ -1283,8 +1280,8 @@ function playwallruntomantle(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x37a4
-// Size: 0x2f8
+// Checksum 0x0, Offset: 0x3801
+// Size: 0x306
 function playtraversaltransition(asmname, statename, params) {
     self endon(statename + "_finished");
     animid = asm_getanim(asmname, statename);
@@ -1309,7 +1306,7 @@ function playtraversaltransition(asmname, statename, params) {
     negotiationnode = self.traversal_start_node;
     assert(isdefined(negotiationnode));
     /#
-        if (getdvarint(@"hash_df899f2d04257001", 0) != 0 && self.traversal_start_node.animscript == "<dev string:x1a3>") {
+        if (getdvarint(@"hash_df899f2d04257001", 0) != 0 && self.traversal_start_node.animscript == "<dev string:xa6>") {
             thread draworigin();
             thread drawdebugline(negotiationnode.origin, (0, 0, 1), (1, 0, 0));
             thread debugwallrun(statename, self.traversal_start_node, self getnegotiationendpos());
@@ -1339,8 +1336,8 @@ function playtraversaltransition(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3aa4
-// Size: 0x120
+// Checksum 0x0, Offset: 0x3b0f
+// Size: 0x126
 function choosetraversaltransition(asmname, statename, params) {
     approachdir = anglestoforward(self.angles);
     var_98309fe48684a69 = vectortoangles(approachdir);
@@ -1363,8 +1360,8 @@ function choosetraversaltransition(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bcd
-// Size: 0x59
+// Checksum 0x0, Offset: 0x3c3e
+// Size: 0x58
 function shouldabortwallrunattach(asmname, statename, tostatename, params) {
     distsq = distance2dsquared(self.origin, getwallnodeposition(self.traversal_start_node, 1));
     if (distsq < 144) {
@@ -1375,7 +1372,7 @@ function shouldabortwallrunattach(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c2f
+// Checksum 0x0, Offset: 0x3c9f
 // Size: 0x3f
 function shouldtraversetransitionto(asmname, statename, tostatename, params) {
     if (tostatename == self.traversal_start_node.animscript) {
@@ -1386,7 +1383,7 @@ function shouldtraversetransitionto(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c77
+// Checksum 0x0, Offset: 0x3ce7
 // Size: 0x54
 function istraversaltransitionsupported(animscript) {
     switch (animscript) {
@@ -1402,8 +1399,8 @@ function istraversaltransitionsupported(animscript) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cd4
-// Size: 0x301
+// Checksum 0x0, Offset: 0x3d44
+// Size: 0x312
 function shoulddotraversaltransition(asmname, statename, tostatename, params) {
     if (!isdefined(self.traversal_start_node)) {
         return false;
@@ -1472,7 +1469,7 @@ function shoulddotraversaltransition(asmname, statename, tostatename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fde
+// Checksum 0x0, Offset: 0x405f
 // Size: 0x2e
 function handlewallrunattachnotetrack(note) {
     if (note == "wall_contact") {
@@ -1484,7 +1481,7 @@ function handlewallrunattachnotetrack(note) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4014
+// Checksum 0x0, Offset: 0x4095
 // Size: 0x2e
 function setupwallrunaimlimits() {
     self.upaimlimit = -89;
@@ -1497,14 +1494,14 @@ function setupwallrunaimlimits() {
 
     // Namespace traverse / scripts\asm\soldier\traverse
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x404a
-    // Size: 0x71
+    // Checksum 0x0, Offset: 0x40cb
+    // Size: 0x70
     function drawdebugline(pos, normal, color) {
-        self notify("<dev string:x1af>");
-        level endon("<dev string:x1c5>");
-        self endon("<dev string:x1d3>");
-        level endon("<dev string:x1dc>");
-        self endon("<dev string:x1af>");
+        self notify("<dev string:xaf>");
+        level endon("<dev string:xc2>");
+        self endon("<dev string:xcd>");
+        level endon("<dev string:xd3>");
+        self endon("<dev string:xaf>");
         lineend = pos + normal * 100;
         while (true) {
             line(pos, lineend, color, 1, 1, 1);
@@ -1514,7 +1511,7 @@ function setupwallrunaimlimits() {
 
     // Namespace traverse / scripts\asm\soldier\traverse
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x40c3
+    // Checksum 0x0, Offset: 0x4143
     // Size: 0x3d
     function function_52e0db833127ec95(from, to, color, duration) {
         if (!isdefined(duration)) {
@@ -1525,14 +1522,14 @@ function setupwallrunaimlimits() {
 
     // Namespace traverse / scripts\asm\soldier\traverse
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4108
-    // Size: 0x99
+    // Checksum 0x0, Offset: 0x4188
+    // Size: 0x9b
     function draworigin() {
-        self notify("<dev string:x1ec>");
-        level endon("<dev string:x1c5>");
-        self endon("<dev string:x1d3>");
-        level endon("<dev string:x1dc>");
-        self endon("<dev string:x1ec>");
+        self notify("<dev string:xe0>");
+        level endon("<dev string:xc2>");
+        self endon("<dev string:xcd>");
+        level endon("<dev string:xd3>");
+        self endon("<dev string:xe0>");
         color = (0, 0, 1);
         normal = (0, 0, 1);
         while (true) {
@@ -1545,8 +1542,8 @@ function setupwallrunaimlimits() {
 
     // Namespace traverse / scripts\asm\soldier\traverse
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x41a9
-    // Size: 0x127
+    // Checksum 0x0, Offset: 0x422b
+    // Size: 0x12a
     function debugwallrun(statename, startnode, endpos) {
         color1 = (0, 1, 0);
         color2 = (0, 0, 1);
@@ -1575,8 +1572,8 @@ function setupwallrunaimlimits() {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x42d8
-// Size: 0x429
+// Checksum 0x0, Offset: 0x435d
+// Size: 0x43d
 function playtraverseanim_ladder(asmname, statename, params) {
     self endon(statename + "_finished");
     self aisetisonladder(1);
@@ -1646,7 +1643,7 @@ function playtraverseanim_ladder(asmname, statename, params) {
         if (!isdefined(climbxanim) || !isdefined(var_4badba7b39f1758e) || !isdefined(var_2f9556e4b32808e) || !isdefined(climbtime)) {
             arcname = function_2285421dfc79c4d5();
             var_6af018c22f5f179f = self.basearchetype;
-            println("<dev string:x202>" + var_451f10c8ea3f02b7 + "<dev string:x229>" + arcname + "<dev string:x23d>" + statename + "<dev string:x24b>" + var_6af018c22f5f179f + "<dev string:x26e>");
+            println("<dev string:xf3>" + var_451f10c8ea3f02b7 + "<dev string:x117>" + arcname + "<dev string:x128>" + statename + "<dev string:x133>" + var_6af018c22f5f179f + "<dev string:x153>");
         }
         self aisetanim(statename, var_451f10c8ea3f02b7, rate);
         asm_donotetracksfortime(asmname, statename, climbtime);
@@ -1667,8 +1664,8 @@ function playtraverseanim_ladder(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4709
-// Size: 0x58
+// Checksum 0x0, Offset: 0x47a2
+// Size: 0x57
 function terminate_ladder(asmname, statename, params) {
     var_b48e997e59346e83 = !isalive(self);
     self.nogravityragdoll = var_b48e997e59346e83;
@@ -1681,7 +1678,7 @@ function terminate_ladder(asmname, statename, params) {
 
 // Namespace traverse / scripts\asm\soldier\traverse
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4769
+// Checksum 0x0, Offset: 0x4801
 // Size: 0x92
 function traverse_basic(asmname, statename, params) {
     self endon(statename + "_finished");

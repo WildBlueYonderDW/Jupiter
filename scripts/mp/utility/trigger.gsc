@@ -6,8 +6,8 @@
 
 // Namespace trigger / scripts\mp\utility\trigger
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d
-// Size: 0x67
+// Checksum 0x0, Offset: 0x11d
+// Size: 0x65
 function triggerutilityinit() {
     var_559b1c2dc581f10c = getentarray("trigger_multiple_mp_enterexit", "classname");
     foreach (trigger in var_559b1c2dc581f10c) {
@@ -17,7 +17,7 @@ function triggerutilityinit() {
 
 // Namespace trigger / scripts\mp\utility\trigger
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cc
+// Checksum 0x0, Offset: 0x18a
 // Size: 0x41
 function makeenterexittrigger(trigger, enterfunc, exitfunc, var_1fa4e076aba70ab9, var_768b0479668f27b, filterfunc) {
     trigger thread triggerenterthink(enterfunc, exitfunc, var_1fa4e076aba70ab9, var_768b0479668f27b, filterfunc);
@@ -25,7 +25,7 @@ function makeenterexittrigger(trigger, enterfunc, exitfunc, var_1fa4e076aba70ab9
 
 // Namespace trigger / scripts\mp\utility\trigger
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x215
+// Checksum 0x0, Offset: 0x1d3
 // Size: 0x115
 function triggerenterthink(enterfunc, exitfunc, var_1fa4e076aba70ab9, var_768b0479668f27b, filterfunc) {
     level endon("game_ended");
@@ -58,8 +58,8 @@ function triggerenterthink(enterfunc, exitfunc, var_1fa4e076aba70ab9, var_768b04
 
 // Namespace trigger / scripts\mp\utility\trigger
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x332
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x2f0
+// Size: 0x11b
 function triggerexitthink(exitfunc, var_768b0479668f27b) {
     level endon("game_ended");
     self endon("death");
@@ -92,8 +92,8 @@ function triggerexitthink(exitfunc, var_768b0479668f27b) {
 
 // Namespace trigger / scripts\mp\utility\trigger
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x457
-// Size: 0x81
+// Checksum 0x0, Offset: 0x413
+// Size: 0x7f
 function function_d7f524cd920e0c79() {
     flag_wait("StartGameTypeCallbackFinished");
     waitframe();
@@ -108,7 +108,7 @@ function function_d7f524cd920e0c79() {
 
 // Namespace trigger / scripts\mp\utility\trigger
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e0
+// Checksum 0x0, Offset: 0x49a
 // Size: 0x1e
 function function_643debdd070d5477(var_6001320cbfd4d138) {
     if (!isdefined(var_6001320cbfd4d138)) {
@@ -119,8 +119,8 @@ function function_643debdd070d5477(var_6001320cbfd4d138) {
 
 // Namespace trigger / scripts\mp\utility\trigger
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x506
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x4c0
+// Size: 0x3c
 function function_81b4c641c1611463(player) {
     grenadename = "";
     if (isdefined(self.targetname)) {

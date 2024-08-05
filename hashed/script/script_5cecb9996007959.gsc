@@ -6,7 +6,7 @@
 
 // Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9
+// Checksum 0x0, Offset: 0x199
 // Size: 0x7e
 function getfunction(funcid) {
     switch (funcid) {
@@ -21,12 +21,12 @@ function getfunction(funcid) {
     case #"hash_6279e013ab5c4fdd": 
         return &usearmorplate;
     }
-    assertmsg("<dev string:x1c>" + funcid);
+    assertmsg("Missing function pointer for " + funcid);
 }
 
 // Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24f
+// Checksum 0x0, Offset: 0x21f
 // Size: 0xb
 function function_3dbd361f74b442f9(interactionid) {
     
@@ -34,14 +34,14 @@ function function_3dbd361f74b442f9(interactionid) {
 
 // Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x262
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x232
+// Size: 0xa0
 function function_a157fbbc31d9eb1a(interactionid) {
     self clearbtgoal(1);
     self notify("endusearmorplate");
     /#
         if (isagent(self)) {
-            assertex(self isscriptable(), "<dev string:x3d>" + self.agent_type + "<dev string:x4d>");
+            assertex(self isscriptable(), "<dev string:x1c>" + self.agent_type + "<dev string:x29>");
         }
     #/
     var_8a46c62f0a756dd3 = "armor_plate";
@@ -55,7 +55,7 @@ function function_a157fbbc31d9eb1a(interactionid) {
 
 // Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b
+// Checksum 0x0, Offset: 0x2da
 // Size: 0x65
 function oneventreceived(receiver, info, origin) {
     if (info == "focused_on") {
@@ -72,7 +72,7 @@ function oneventreceived(receiver, info, origin) {
 
 // Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x379
+// Checksum 0x0, Offset: 0x348
 // Size: 0x28
 function setstationary(statename, params) {
     self function_e64ea2b4e79c4b74(1);
@@ -81,8 +81,8 @@ function setstationary(statename, params) {
 
 // Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a9
-// Size: 0x72
+// Checksum 0x0, Offset: 0x378
+// Size: 0x71
 function usearmorplate(statename, params) {
     self endon("death");
     self endon("endusearmorplate");
@@ -97,8 +97,8 @@ function usearmorplate(statename, params) {
 
 // Namespace namespace_ee40130089e5429f / namespace_6930af0ec0bf4a3f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x423
-// Size: 0x64
+// Checksum 0x0, Offset: 0x3f1
+// Size: 0x63
 function function_30b70873a0937989(var_22e9090a351646e9) {
     debug = getdvarint(@"hash_3e267ec6e066e2b", 0);
     if (istrue(debug)) {

@@ -4,8 +4,8 @@
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f4
-// Size: 0xed
+// Checksum 0x0, Offset: 0x7f0
+// Size: 0xf0
 function load_wind(direction, intensity) {
     var_3c853a3642aa7b74 = ["n", "ne", "e", "se", "s", "sw", "w", "nw"];
     var_3b9baea9b07eccef = ["weak", "medium", "strong"];
@@ -17,7 +17,7 @@ function load_wind(direction, intensity) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e9
+// Checksum 0x0, Offset: 0x8e8
 // Size: 0x1c
 function load_debug_particles() {
     level.g_effect["wind_debug"] = loadfx("vfx/iw8/wind/basic_directions/vfx_basic_wind_debug.vfx");
@@ -25,7 +25,7 @@ function load_debug_particles() {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0d
+// Checksum 0x0, Offset: 0x90c
 // Size: 0x28c
 function load_all_wind() {
     level.g_effect["wind_debug"] = loadfx("vfx/iw8/wind/basic_directions/vfx_basic_wind_debug.vfx");
@@ -57,8 +57,8 @@ function load_all_wind() {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xca1
-// Size: 0xe1
+// Checksum 0x0, Offset: 0xba0
+// Size: 0xe5
 function init_wind(direction, strength, permanent) {
     var_3fc0004a989a8351 = get_wind_index(direction);
     var_3f1906ee22df833e = wind_index(var_3fc0004a989a8351, strength);
@@ -79,8 +79,8 @@ function init_wind(direction, strength, permanent) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8a
-// Size: 0xec
+// Checksum 0x0, Offset: 0xc8d
+// Size: 0xf0
 function init_wind_at_point(direction, strength, location, permanent) {
     var_3fc0004a989a8351 = get_wind_index(direction);
     var_3f1906ee22df833e = wind_index(var_3fc0004a989a8351, strength);
@@ -102,8 +102,8 @@ function init_wind_at_point(direction, strength, location, permanent) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xe7e
-// Size: 0xa4
+// Checksum 0x0, Offset: 0xd85
+// Size: 0xa3
 function function_7c798f6cb0754110(min_value, max_value, pause_time, var_5d90785217baaeff, var_a7ecb3b97542154e) {
     if (!flag_exist("pause_ambient_wind_change")) {
         flag_init("pause_ambient_wind_change");
@@ -120,7 +120,7 @@ function function_7c798f6cb0754110(min_value, max_value, pause_time, var_5d90785
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xf2a
+// Checksum 0x0, Offset: 0xe30
 // Size: 0x8a
 function function_3bf9ed80166e5b45(dvar, min_value, max_value, pause_time, var_5d90785217baaeff) {
     level notify("stop_ambient_wind_change");
@@ -142,8 +142,8 @@ function function_3bf9ed80166e5b45(dvar, min_value, max_value, pause_time, var_5
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbc
-// Size: 0xb3
+// Checksum 0x0, Offset: 0xec2
+// Size: 0xb6
 function function_a334760f5ed07966(name, value, time) {
     curr = getdvarfloat(name);
     level notify(function_f28fd66285fa2c9(name) + "_lerp_savedDvar");
@@ -165,7 +165,7 @@ function function_a334760f5ed07966(name, value, time) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1077
+// Checksum 0x0, Offset: 0xf80
 // Size: 0x48
 function stop_wind(var_776c17b6fb9755d0) {
     if (isdefined(var_776c17b6fb9755d0)) {
@@ -177,7 +177,7 @@ function stop_wind(var_776c17b6fb9755d0) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c7
+// Checksum 0x0, Offset: 0xfd0
 // Size: 0x1b
 function set_wind_amplitude(amplitude) {
     setsaveddvar(@"cg_defaultWindAmplitudeScale", amplitude);
@@ -185,7 +185,7 @@ function set_wind_amplitude(amplitude) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ea
+// Checksum 0x0, Offset: 0xff3
 // Size: 0x1b
 function set_wind_frequency(frequency) {
     setsaveddvar(@"cg_defaultWindFrequencyScale", frequency);
@@ -193,7 +193,7 @@ function set_wind_frequency(frequency) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x110d
+// Checksum 0x0, Offset: 0x1016
 // Size: 0x1b
 function set_wind_area_scale(var_4353af4a5fbba84a) {
     setsaveddvar(@"cg_defaultWindAreaScale", var_4353af4a5fbba84a);
@@ -201,7 +201,7 @@ function set_wind_area_scale(var_4353af4a5fbba84a) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1130
+// Checksum 0x0, Offset: 0x1039
 // Size: 0x45
 function spawn_debug_particles(location) {
     fxid = level.g_effect["wind_debug"];
@@ -212,7 +212,7 @@ function spawn_debug_particles(location) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x117e
+// Checksum 0x0, Offset: 0x1087
 // Size: 0xaa
 function get_wind_index(var_3f1906ee22df833e) {
     switch (var_3f1906ee22df833e) {
@@ -234,7 +234,7 @@ function get_wind_index(var_3f1906ee22df833e) {
         return 7;
     default: 
         /#
-            iprintlnbold("<dev string:x50>" + var_3f1906ee22df833e);
+            iprintlnbold("<dev string:x4d>" + var_3f1906ee22df833e);
         #/
         return -1;
     }
@@ -242,8 +242,8 @@ function get_wind_index(var_3f1906ee22df833e) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1230
-// Size: 0x63
+// Checksum 0x0, Offset: 0x1139
+// Size: 0x62
 function get_wind_string(var_e9461a3fd79a8f91) {
     var_2b3b2a05d27b9ed0 = ["north", "northeast", "east", "southeast", "south", "southwest", "west", "northwest"];
     return var_2b3b2a05d27b9ed0[var_e9461a3fd79a8f91];
@@ -251,8 +251,8 @@ function get_wind_string(var_e9461a3fd79a8f91) {
 
 // Namespace namespace_174f0f5e981648b8 / scripts\common\basic_wind
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x129c
-// Size: 0x12c
+// Checksum 0x0, Offset: 0x11a4
+// Size: 0x12b
 function wind_index(direction, strength) {
     var_838d5caf05198f43 = [];
     var_838d5caf05198f43[0] = ["n_w", "n_m", "n_s"];

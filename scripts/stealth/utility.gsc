@@ -17,7 +17,7 @@
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x261
+// Checksum 0x0, Offset: 0x335
 // Size: 0x59
 function get_group(name) {
     if (!isdefined(level.stealth.groupdata.groups[name])) {
@@ -28,7 +28,7 @@ function get_group(name) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3
+// Checksum 0x0, Offset: 0x397
 // Size: 0xe3
 function group_flag_clear(f, group) {
     name = get_group_flagname(f, group);
@@ -48,10 +48,10 @@ function group_flag_clear(f, group) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ae
-// Size: 0x58
+// Checksum 0x0, Offset: 0x482
+// Size: 0x57
 function group_flag_set(f) {
-    assertex(issentient(self), "<dev string:x1c>");
+    assertex(issentient(self), "an AI must call this function");
     name = get_group_flagname(f);
     if (!flag(name) && self != level) {
         self notify(f);
@@ -62,21 +62,21 @@ function group_flag_set(f) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x40e
-// Size: 0x39
+// Checksum 0x0, Offset: 0x4e1
+// Size: 0x38
 function group_flag(f) {
-    assertex(issentient(self), "<dev string:x1c>");
+    assertex(issentient(self), "an AI must call this function");
     name = get_group_flagname(f);
     return flag(name);
 }
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x450
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x522
+// Size: 0x4c
 function get_group_flagname(f, group) {
     if (!isdefined(group)) {
-        assertex(issentient(self), "<dev string:x1c>");
+        assertex(issentient(self), "an AI must call this function");
         group = self.script_stealthgroup;
     }
     name = f + "-Group:" + group;
@@ -85,8 +85,8 @@ function get_group_flagname(f, group) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a6
-// Size: 0x26
+// Checksum 0x0, Offset: 0x577
+// Size: 0x25
 function group_flag_wait(f) {
     name = get_group_flagname(f);
     flag_wait(name);
@@ -94,8 +94,8 @@ function group_flag_wait(f) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d4
-// Size: 0x26
+// Checksum 0x0, Offset: 0x5a4
+// Size: 0x25
 function group_flag_waitopen(f) {
     name = get_group_flagname(f);
     flag_waitopen(name);
@@ -103,8 +103,8 @@ function group_flag_waitopen(f) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x502
-// Size: 0x2f
+// Checksum 0x0, Offset: 0x5d1
+// Size: 0x2e
 function group_flag_wait_or_timeout(f, timer) {
     name = get_group_flagname(f);
     flag_wait_or_timeout(name, timer);
@@ -112,8 +112,8 @@ function group_flag_wait_or_timeout(f, timer) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x539
-// Size: 0x2f
+// Checksum 0x0, Offset: 0x607
+// Size: 0x2e
 function group_flag_waitopen_or_timeout(f, timer) {
     name = get_group_flagname(f);
     flag_waitopen_or_timeout(name, timer);
@@ -121,10 +121,10 @@ function group_flag_waitopen_or_timeout(f, timer) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x570
-// Size: 0x147
+// Checksum 0x0, Offset: 0x63d
+// Size: 0x146
 function group_flag_init(f) {
-    assertex(issentient(self), "<dev string:x1c>");
+    assertex(issentient(self), "an AI must call this function");
     if (isdefined(self.script_stealthgroup)) {
         self.script_stealthgroup = string(self.script_stealthgroup);
     } else {
@@ -148,7 +148,7 @@ function group_flag_init(f) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bf
+// Checksum 0x0, Offset: 0x78b
 // Size: 0x69
 function group_setcombatgoalradius(group, goalradius) {
     assert(isdefined(level.stealth));
@@ -160,10 +160,10 @@ function group_setcombatgoalradius(group, goalradius) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x730
+// Checksum 0x0, Offset: 0x7fc
 // Size: 0xda
 function group_add() {
-    assertex(issentient(self), "<dev string:x1c>");
+    assertex(issentient(self), "an AI must call this function");
     if (!isdefined(level.stealth.group.groups[self.script_stealthgroup])) {
         level.stealth.group.groups[self.script_stealthgroup] = [];
         level.stealth.group notify(self.script_stealthgroup);
@@ -173,11 +173,11 @@ function group_add() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x812
-// Size: 0x46
+// Checksum 0x0, Offset: 0x8de
+// Size: 0x45
 function group_spotted_flag() {
     if (!ismp()) {
-        assert(self.team != "<dev string:x3d>", "<dev string:x45>");
+        assert(self.team != "axis", "group flag no longer supported on enemy teams.");
     }
     name = get_group_flagname("stealth_spotted");
     return flag(name);
@@ -185,7 +185,7 @@ function group_spotted_flag() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x861
+// Checksum 0x0, Offset: 0x92c
 // Size: 0x17
 function any_groups_in_combat() {
     if (!flag("stealth_enabled")) {
@@ -198,32 +198,32 @@ function any_groups_in_combat() {
 
     // Namespace utility / scripts\stealth\utility
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x881
+    // Checksum 0x0, Offset: 0x94c
     // Size: 0x24
     function check_stealth() {
-        assertex(isdefined(self.stealth), "<dev string:x77>" + self.origin);
+        assertex(isdefined(self.stealth), "stealth is not enabled on this AI at location: " + self.origin);
     }
 
 #/
 
 // Namespace utility / scripts\stealth\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ad
+// Checksum 0x0, Offset: 0x978
 // Size: 0x3f
 function set_detect_ranges(hidden, spotted, var_8f3f480583606401) {
     if (!isdefined(hidden) && !isdefined(spotted)) {
-        assertmsg("<dev string:xaa>");
+        assertmsg("Please define at least one array!");
     }
     scripts\stealth\manager::set_detect_ranges_internal(hidden, spotted, var_8f3f480583606401);
 }
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f4
+// Checksum 0x0, Offset: 0x9bf
 // Size: 0xc1
 function set_min_detect_range_darkness(hidden, spotted) {
     if (!isdefined(hidden) && !isdefined(spotted)) {
-        assertmsg("<dev string:xcf>");
+        assertmsg("Please define at least one value!");
     }
     if (isdefined(hidden)) {
         function_f53f47c5e7e21548("hidden", "prone", hidden["prone"]);
@@ -239,11 +239,11 @@ function set_min_detect_range_darkness(hidden, spotted) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bd
+// Checksum 0x0, Offset: 0xa88
 // Size: 0xc1
 function function_f3883fe06a11269(hidden, spotted) {
     if (!isdefined(hidden) && !isdefined(spotted)) {
-        assertmsg("<dev string:xcf>");
+        assertmsg("Please define at least one value!");
     }
     if (isdefined(hidden)) {
         function_9c8f4ad66661c757("hidden", "prone", hidden["prone"]);
@@ -259,7 +259,7 @@ function function_f3883fe06a11269(hidden, spotted) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa86
+// Checksum 0x0, Offset: 0xb51
 // Size: 0x84
 function do_stealth() {
     if (!isdefined(level.player.stealth)) {
@@ -281,8 +281,8 @@ function do_stealth() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb12
-// Size: 0x10f
+// Checksum 0x0, Offset: 0xbdd
+// Size: 0x10e
 function save_last_goal() {
     if (isdefined(self.stealth.last_goal)) {
         return;
@@ -311,17 +311,17 @@ function save_last_goal() {
 
     // Namespace utility / scripts\stealth\utility
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc29
+    // Checksum 0x0, Offset: 0xcf3
     // Size: 0x19
     function set_patrol_move_loop_anim(animoverride) {
-        assertmsg("<dev string:xf4>");
+        assertmsg("really?  not currently supported.");
     }
 
 #/
 
 // Namespace utility / scripts\stealth\utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4a
+// Checksum 0x0, Offset: 0xd14
 // Size: 0x51
 function set_patrol_style(style, allowreact, reactposition, magnitude) {
     switch (style) {
@@ -334,7 +334,7 @@ function set_patrol_style(style, allowreact, reactposition, magnitude) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xca3
+// Checksum 0x0, Offset: 0xd6d
 // Size: 0x1b
 function get_patrol_style() {
     assert(isdefined(self.stealth));
@@ -343,7 +343,7 @@ function get_patrol_style() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc7
+// Checksum 0x0, Offset: 0xd91
 // Size: 0x1c
 function set_patrol_react(position, magnitude) {
     self function_68f50ada6e19d8f4(position, magnitude);
@@ -351,7 +351,7 @@ function set_patrol_react(position, magnitude) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xceb
+// Checksum 0x0, Offset: 0xdb5
 // Size: 0xb0
 function function_783cf2a7aaab23c() {
     if (isdefined(self.fnstealthgotonode) && isdefined(self.stealth.last_goal)) {
@@ -369,7 +369,7 @@ function function_783cf2a7aaab23c() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xda4
+// Checksum 0x0, Offset: 0xe6e
 // Size: 0x32
 function set_path_dist(ent) {
     ent.distsqrd = get_path_dist_sq(self.origin, ent.origin, self);
@@ -377,8 +377,8 @@ function set_path_dist(ent) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xdde
-// Size: 0x78
+// Checksum 0x0, Offset: 0xea8
+// Size: 0x79
 function get_path_dist_sq(from, to, var_320b468dc1d97042) {
     path = self findpath(from, to);
     if (isdefined(var_320b468dc1d97042)) {
@@ -393,7 +393,7 @@ function get_path_dist_sq(from, to, var_320b468dc1d97042) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe5f
+// Checksum 0x0, Offset: 0xf2a
 // Size: 0x16
 function remove_path_dist() {
     self.path = undefined;
@@ -402,7 +402,7 @@ function remove_path_dist() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe7d
+// Checksum 0x0, Offset: 0xf48
 // Size: 0xad
 function is_visible(other) {
     if (isplayer(self)) {
@@ -424,7 +424,7 @@ function is_visible(other) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf33
+// Checksum 0x0, Offset: 0xffe
 // Size: 0x3b
 function tagging_shield() {
     return isdefined(self.offhandshield) && isdefined(self.offhandshield.active) && self.offhandshield.active;
@@ -432,7 +432,7 @@ function tagging_shield() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf77
+// Checksum 0x0, Offset: 0x1042
 // Size: 0x47
 function setbattlechatter(state) {
     if (isdefined(level.stealth) && isdefined(level.stealth.fnsetbattlechatter)) {
@@ -442,7 +442,7 @@ function setbattlechatter(state) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc6
+// Checksum 0x0, Offset: 0x1091
 // Size: 0x74
 function addeventplaybcs(eventaction, eventtype, modifier, delay, eventstruct, force) {
     if (isdefined(level.stealth) && isdefined(level.stealth.fnaddeventplaybcs)) {
@@ -452,18 +452,18 @@ function addeventplaybcs(eventaction, eventtype, modifier, delay, eventstruct, f
 
 // Namespace utility / scripts\stealth\utility
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1042
+// Checksum 0x0, Offset: 0x110d
 // Size: 0x74
-function animgenericcustomanimmode(guy, var_9481a070a25eb0bd, anime, tag, thread_func, var_212b748f7df888b0) {
+function animgenericcustomanimmode(guy, custom_animmode, anime, tag, thread_func, var_212b748f7df888b0) {
     if (isdefined(level.stealth) && isdefined(level.stealth.fnanimgenericcustomanimmode)) {
-        return [[ level.stealth.fnanimgenericcustomanimmode ]](guy, var_9481a070a25eb0bd, anime, tag, thread_func, var_212b748f7df888b0);
+        return [[ level.stealth.fnanimgenericcustomanimmode ]](guy, custom_animmode, anime, tag, thread_func, var_212b748f7df888b0);
     }
 }
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10be
-// Size: 0x11f
+// Checksum 0x0, Offset: 0x1189
+// Size: 0x11a
 function stealth_music(musichidden, musicspotted) {
     self notify("stealth_music");
     self endon("stealth_music");
@@ -487,7 +487,7 @@ function stealth_music(musichidden, musicspotted) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e5
+// Checksum 0x0, Offset: 0x12ab
 // Size: 0x3d
 function function_4efc63abff5f42d3() {
     if (isdefined(level.var_667495cce3974c46)) {
@@ -500,7 +500,7 @@ function function_4efc63abff5f42d3() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x122a
+// Checksum 0x0, Offset: 0x12f0
 // Size: 0x3d
 function function_f81d9864f1fc95a6() {
     if (isdefined(level.var_e588ee33138024c3)) {
@@ -513,8 +513,8 @@ function function_f81d9864f1fc95a6() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x126f
-// Size: 0x68
+// Checksum 0x0, Offset: 0x1335
+// Size: 0x65
 function stealth_music_stop() {
     self notify("stealth_music");
     self notify("stealth_music_pause_monitor");
@@ -525,8 +525,8 @@ function stealth_music_stop() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12df
-// Size: 0x146
+// Checksum 0x0, Offset: 0x13a2
+// Size: 0x13f
 function stealth_music_pause_monitor(musichidden, musicspotted) {
     self notify("stealth_music_pause_monitor");
     self endon("stealth_music_pause_monitor");
@@ -550,7 +550,7 @@ function stealth_music_pause_monitor(musichidden, musicspotted) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x142d
+// Checksum 0x0, Offset: 0x14e9
 // Size: 0x25
 function stealth_music_transition(aliasto) {
     if (isdefined(self.fnstealthmusictransition)) {
@@ -560,7 +560,7 @@ function stealth_music_transition(aliasto) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x145a
+// Checksum 0x0, Offset: 0x1516
 // Size: 0x1b
 function update_light_meter() {
     if (isdefined(self.fnupdatelightmeter)) {
@@ -570,8 +570,8 @@ function update_light_meter() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x147d
-// Size: 0x124
+// Checksum 0x0, Offset: 0x1539
+// Size: 0x123
 function enable_stealth_for_ai(enabled) {
     if (!enabled) {
         self.maxvisibledist = 8192;
@@ -598,10 +598,10 @@ function enable_stealth_for_ai(enabled) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15a9
+// Checksum 0x0, Offset: 0x1664
 // Size: 0x68
 function custom_state_functions(array) {
-    assertex(!isdefined(self.stealth), "<dev string:x119>");
+    assertex(!isdefined(self.stealth), "Stealth system is already active, your custom stealth state functions are not going to be called.");
     if (isdefined(array["spotted"])) {
         self.stealth_state_func["spotted"] = array["spotted"];
     }
@@ -612,7 +612,7 @@ function custom_state_functions(array) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1619
+// Checksum 0x0, Offset: 0x16d4
 // Size: 0x3c
 function set_stealth_func(type, func) {
     self.stealth.funcs[type] = func;
@@ -623,7 +623,7 @@ function set_stealth_func(type, func) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x165d
+// Checksum 0x0, Offset: 0x1718
 // Size: 0x5b
 function set_event_override(eventtype, funcoverride) {
     if (isdefined(eventtype) && isdefined(self.stealth) && isdefined(self.stealth.funcs)) {
@@ -633,7 +633,7 @@ function set_event_override(eventtype, funcoverride) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16c0
+// Checksum 0x0, Offset: 0x177b
 // Size: 0x3a
 function bcisincombat() {
     self endon("death");
@@ -648,7 +648,7 @@ function bcisincombat() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1703
+// Checksum 0x0, Offset: 0x17be
 // Size: 0x4
 function _autosave_stealthcheck() {
     return true;
@@ -656,7 +656,7 @@ function _autosave_stealthcheck() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1710
+// Checksum 0x0, Offset: 0x17cb
 // Size: 0x30
 function get_player_drone() {
     if (isdefined(level.stealth.fngetplayerdrone)) {
@@ -666,7 +666,7 @@ function get_player_drone() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1748
+// Checksum 0x0, Offset: 0x1803
 // Size: 0x1d
 function is_idling() {
     if (!isdefined(self.stealth)) {
@@ -677,7 +677,7 @@ function is_idling() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x176e
+// Checksum 0x0, Offset: 0x1829
 // Size: 0x1d
 function function_c9f8c83eb3de1b32() {
     if (!isdefined(self.stealth)) {
@@ -688,7 +688,7 @@ function function_c9f8c83eb3de1b32() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1794
+// Checksum 0x0, Offset: 0x184f
 // Size: 0x1d
 function function_cdca96a984fdb85() {
     if (!isdefined(self.stealth)) {
@@ -699,7 +699,7 @@ function function_cdca96a984fdb85() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ba
+// Checksum 0x0, Offset: 0x1875
 // Size: 0x1e
 function function_6a86dd83c01f8faa() {
     if (!isdefined(self.stealth)) {
@@ -710,7 +710,7 @@ function function_6a86dd83c01f8faa() {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e1
+// Checksum 0x0, Offset: 0x189c
 // Size: 0x30
 function function_c14048638b343b7f(state, event) {
     if (!isdefined(self.stealth)) {
@@ -721,8 +721,8 @@ function function_c14048638b343b7f(state, event) {
 
 // Namespace utility / scripts\stealth\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1819
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x18d4
+// Size: 0xba
 function function_6516755416a6584b(filter_func, severity) {
     all_states = 0;
     if (!isdefined(severity)) {

@@ -2,7 +2,7 @@
 
 // Namespace ai / scripts\code\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x587
+// Checksum 0x0, Offset: 0x4b7
 // Size: 0x1e8
 function free_expendable() {
     if (!isdefined(self.spawner) || !isdefined(self.script_suspend)) {
@@ -45,8 +45,8 @@ function free_expendable() {
 
 // Namespace ai / scripts\code\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x777
-// Size: 0x10b
+// Checksum 0x0, Offset: 0x6a7
+// Size: 0x109
 function free_groupname(groupname) {
     if (!isdefined(level.processfreegroupname)) {
         level.processfreegroupname = [];
@@ -68,7 +68,7 @@ function free_groupname(groupname) {
         }
         ai.script_free = 1;
         ai free_expendable();
-        println("<dev string:x1c>" + groupname + "<dev string:x31>" + ai.origin);
+        println("<dev string:x1c>" + groupname + "<dev string:x2e>" + ai.origin);
         ai delete();
     }
     level.processfreegroupname[groupname] = undefined;
@@ -78,14 +78,14 @@ function free_groupname(groupname) {
 
     // Namespace ai / scripts\code\ai
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x88a
+    // Checksum 0x0, Offset: 0x7b8
     // Size: 0xa9
     function function_1ef621491ffaeede(spawner) {
-        self endon("<dev string:x3e>");
+        self endon("<dev string:x38>");
         if (!isdefined(level.func)) {
             return;
         }
-        if (!isdefined(level.func["<dev string:x47>"])) {
+        if (!isdefined(level.func["<dev string:x3e>"])) {
             return;
         }
         while (true) {
@@ -96,7 +96,7 @@ function free_groupname(groupname) {
             if (getdvarint(@"hash_6efeeea168f0a561") == 0) {
                 continue;
             }
-            [[ level.func["<dev string:x47>"] ]](self.suspended_ai.origin, self.suspended_ai.angles, (1, 0.5, 0.25));
+            [[ level.func["<dev string:x3e>"] ]](self.suspended_ai.origin, self.suspended_ai.angles, (1, 0.5, 0.25));
         }
     }
 
@@ -104,8 +104,8 @@ function free_groupname(groupname) {
 
 // Namespace ai / scripts\code\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x93b
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x869
+// Size: 0xf5
 function create_weapon_in_script(weaponarray, weaponposition) {
     if (!isdefined(level.fnscriptedweaponassignment)) {
         self.usescriptedweapon = undefined;
@@ -126,7 +126,7 @@ function create_weapon_in_script(weaponarray, weaponposition) {
                 self.scriptedweaponfailed_primaryarray = weaponarray;
             }
         }
-        println("<dev string:x57>" + self getentitynumber() + "<dev string:x91>" + getweaponbasename(weapon));
+        println("<dev string:x4b>" + self getentitynumber() + "<dev string:x82>" + getweaponbasename(weapon));
         return weapon;
     }
     return [[ level.fnscriptedweaponassignment ]](weaponarray, weaponposition);
@@ -134,8 +134,8 @@ function create_weapon_in_script(weaponarray, weaponposition) {
 
 // Namespace ai / scripts\code\ai
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xa39
-// Size: 0x77
+// Checksum 0x0, Offset: 0x966
+// Size: 0x76
 function stealth_callback(callbackname, ai, param1, param2, param3, param4) {
     result = undefined;
     if (isdefined(level.stealth.var_e376d807bb8ce93b)) {
@@ -146,7 +146,7 @@ function stealth_callback(callbackname, ai, param1, param2, param3, param4) {
 
 // Namespace ai / scripts\code\ai
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xab9
+// Checksum 0x0, Offset: 0x9e5
 // Size: 0x37
 function function_9aead378ca03cb28(charactertype, position, dormantindex) {
     if (isdefined(level.var_74e9c02b56e4ba52)) {
@@ -156,7 +156,7 @@ function function_9aead378ca03cb28(charactertype, position, dormantindex) {
 
 // Namespace ai / scripts\code\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf8
+// Checksum 0x0, Offset: 0xa24
 // Size: 0x2e
 function dormant_callback(ent, dormantindex) {
     if (isdefined(level.var_8a42b71f799936ad)) {
@@ -166,7 +166,7 @@ function dormant_callback(ent, dormantindex) {
 
 // Namespace ai / scripts\code\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2e
+// Checksum 0x0, Offset: 0xa5a
 // Size: 0x27
 function function_d5ee270afc41e925(dormantindex) {
     if (isdefined(level.var_19ef4572543c12c1)) {
@@ -177,7 +177,7 @@ function function_d5ee270afc41e925(dormantindex) {
 
 // Namespace ai / scripts\code\ai
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5e
+// Checksum 0x0, Offset: 0xa8a
 // Size: 0x37
 function function_8ff6b395c2615881(callbackname, requestid, data) {
     if (isdefined(level.var_3ae5f7de11d142f)) {
@@ -187,7 +187,7 @@ function function_8ff6b395c2615881(callbackname, requestid, data) {
 
 // Namespace ai / scripts\code\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb9d
+// Checksum 0x0, Offset: 0xac9
 // Size: 0x33
 function function_2c18f4deacb75a6d(ent, state) {
     if (isdefined(ent.var_82420c8df7f30a5b)) {
@@ -197,7 +197,7 @@ function function_2c18f4deacb75a6d(ent, state) {
 
 // Namespace ai / scripts\code\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd8
+// Checksum 0x0, Offset: 0xb04
 // Size: 0x2
 function function_2392636ed67e9fed() {
     
@@ -205,7 +205,7 @@ function function_2392636ed67e9fed() {
 
 // Namespace ai / scripts\code\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe2
+// Checksum 0x0, Offset: 0xb0e
 // Size: 0x7
 function function_56543479237033c3() {
     return &function_2392636ed67e9fed;
@@ -213,7 +213,7 @@ function function_56543479237033c3() {
 
 // Namespace ai / scripts\code\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf2
+// Checksum 0x0, Offset: 0xb1e
 // Size: 0x9
 function function_74939cb3d7c3057b() {
     function_87dc2db63d1cfe13();
@@ -221,8 +221,8 @@ function function_74939cb3d7c3057b() {
 
 // Namespace ai / scripts\code\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc03
-// Size: 0x2099
+// Checksum 0x0, Offset: 0xb2f
+// Size: 0x20a2
 function function_87dc2db63d1cfe13() {
     if (true) {
         var_5960b342a6ef48d = spawnstruct();

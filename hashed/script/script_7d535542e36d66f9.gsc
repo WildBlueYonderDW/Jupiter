@@ -5,7 +5,7 @@
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xde
+// Checksum 0x0, Offset: 0xb3
 // Size: 0x2b
 function enablelookatplayer(enabletime, percent) {
     enablelookatentity(level.player, utility::function_b88f4e5baff057a9(enabletime), percent);
@@ -13,7 +13,7 @@ function enablelookatplayer(enabletime, percent) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x111
+// Checksum 0x0, Offset: 0xe6
 // Size: 0x12
 function disablelookatplayer() {
     disablelookatentity(level.player);
@@ -21,7 +21,7 @@ function disablelookatplayer() {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b
+// Checksum 0x0, Offset: 0x100
 // Size: 0xc1
 function enablelookatentity(ent, speed, percent, offset) {
     if (!isdefined(self.lookatentities)) {
@@ -51,8 +51,8 @@ function enablelookatentity(ent, speed, percent, offset) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f4
-// Size: 0x133
+// Checksum 0x0, Offset: 0x1c9
+// Size: 0x134
 function disablelookatentity(ent) {
     if (!isdefined(self.lookatentities) || !array_contains(self.lookatentities, ent)) {
         return;
@@ -85,7 +85,7 @@ function disablelookatentity(ent) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32f
+// Checksum 0x0, Offset: 0x305
 // Size: 0x11
 function islookingatplayer() {
     return islookingatentity(level.player);
@@ -93,7 +93,7 @@ function islookingatplayer() {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x349
+// Checksum 0x0, Offset: 0x31f
 // Size: 0x18
 function islookingatentity(ent) {
     return is_equal(ent, getlookatentity());
@@ -101,7 +101,7 @@ function islookingatentity(ent) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36a
+// Checksum 0x0, Offset: 0x340
 // Size: 0x2f
 function getlookatentity() {
     if (!isdefined(self.lookatentities) || !self.lookatentities.size) {
@@ -112,8 +112,8 @@ function getlookatentity() {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a2
-// Size: 0x94c
+// Checksum 0x0, Offset: 0x378
+// Size: 0x963
 function function_11e84eac72368d4e(var_47a2d19079a1a2b, var_f53e74a2c8fc7b96, var_9324afcbaa32c0b5, var_4a3993c83b6c63e4, innerradius, outerradius, var_d67ae0707347001, var_412a2db1704efae0, percentclose, percentfar, fovcos, var_1ff7cb08338acf70) {
     self endon("death");
     self endon("stop_idle_lookat");
@@ -156,37 +156,37 @@ function function_11e84eac72368d4e(var_47a2d19079a1a2b, var_f53e74a2c8fc7b96, va
                 statestr = "<dev string:x1c>";
                 switch (state) {
                 case 0: 
-                    statestr = "<dev string:x20>";
+                    statestr = "<dev string:x1d>";
                     break;
                 case 1: 
-                    statestr = "<dev string:x29>";
+                    statestr = "<dev string:x23>";
                     break;
                 case 2: 
-                    statestr = "<dev string:x35>";
+                    statestr = "<dev string:x2c>";
                     break;
                 case 3: 
-                    statestr = "<dev string:x46>";
+                    statestr = "<dev string:x3a>";
                     break;
                 case 4: 
-                    statestr = "<dev string:x54>";
+                    statestr = "<dev string:x45>";
                     break;
                 case 5: 
-                    statestr = "<dev string:x70>";
+                    statestr = "<dev string:x5e>";
                     break;
                 case 6: 
-                    statestr = "<dev string:x8b>";
+                    statestr = "<dev string:x76>";
                     break;
                 case 7: 
-                    statestr = "<dev string:x9a>";
+                    statestr = "<dev string:x82>";
                     break;
                 case 8: 
-                    statestr = "<dev string:xb2>";
+                    statestr = "<dev string:x97>";
                     break;
                 case 9: 
-                    statestr = "<dev string:xc0>";
+                    statestr = "<dev string:xa2>";
                     break;
                 default: 
-                    statestr = "<dev string:xd7>";
+                    statestr = "<dev string:xb6>";
                     break;
                 }
                 debugpos = (self.origin[0], self.origin[1], self.origin[2] + 80);
@@ -371,8 +371,8 @@ function function_11e84eac72368d4e(var_47a2d19079a1a2b, var_f53e74a2c8fc7b96, va
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf6
-// Size: 0x3cc
+// Checksum 0x0, Offset: 0xce3
+// Size: 0x3da
 function function_51c52cb24acd5706(ontime, offtime, radius, enabletime, percent, fovcos, var_1ff7cb08338acf70) {
     self endon("death");
     self endon("stop_idle_lookat");
@@ -402,19 +402,19 @@ function function_51c52cb24acd5706(ontime, offtime, radius, enabletime, percent,
                 statestr = "<dev string:x1c>";
                 switch (state) {
                 case 0: 
-                    statestr = "<dev string:x29>";
+                    statestr = "<dev string:x23>";
                     break;
                 case 1: 
-                    statestr = "<dev string:x35>";
+                    statestr = "<dev string:x2c>";
                     break;
                 case 2: 
-                    statestr = "<dev string:xe2>";
+                    statestr = "<dev string:xbe>";
                     break;
                 case 3: 
-                    statestr = "<dev string:xec>";
+                    statestr = "<dev string:xc5>";
                     break;
                 default: 
-                    statestr = "<dev string:xd7>";
+                    statestr = "<dev string:xb6>";
                     break;
                 }
                 debugpos = (self.origin[0], self.origin[1], self.origin[2] + 80);
@@ -475,7 +475,7 @@ function function_51c52cb24acd5706(ontime, offtime, radius, enabletime, percent,
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ca
+// Checksum 0x0, Offset: 0x10c5
 // Size: 0x3f
 function function_a72247099f0414e7(enable, playerradius, airadius) {
     level.var_ee5dcc2cb0e28ecc = enable;
@@ -488,8 +488,8 @@ function function_a72247099f0414e7(enable, playerradius, airadius) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1111
-// Size: 0xd7
+// Checksum 0x0, Offset: 0x110c
+// Size: 0xd5
 function function_347c218f281719e4(playerradius, airadius) {
     level endon("end_levellookatteam");
     if (!isdefined(playerradius)) {
@@ -515,7 +515,7 @@ function function_347c218f281719e4(playerradius, airadius) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f0
+// Checksum 0x0, Offset: 0x11e9
 // Size: 0x4e
 function function_51a6f1734f850aec(ai, maxdist, maxtargets) {
     self endon("death");
@@ -528,7 +528,7 @@ function function_51a6f1734f850aec(ai, maxdist, maxtargets) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1246
+// Checksum 0x0, Offset: 0x123f
 // Size: 0x93
 function function_1961ba599803679a(guys, maxdist, maxtargets) {
     if (!isdefined(self) || !isent(self)) {
@@ -553,7 +553,7 @@ function function_1961ba599803679a(guys, maxdist, maxtargets) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12e1
+// Checksum 0x0, Offset: 0x12da
 // Size: 0x29
 function function_80a9352cf824e995(enable) {
     self function_1c339daaba3f71db(enable);
@@ -565,8 +565,8 @@ function function_80a9352cf824e995(enable) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1312
-// Size: 0x118
+// Checksum 0x0, Offset: 0x130b
+// Size: 0x117
 function function_2c49add797a42aab(guys, maxdist) {
     if (!isdefined(self.var_c15ac68fc63fc9a8) || !self.var_c15ac68fc63fc9a8) {
         return;
@@ -595,14 +595,14 @@ function function_2c49add797a42aab(guys, maxdist) {
     }
     self.var_85f04bf47bf39ff6 = guy;
     /#
-        self.lookatstate = "<dev string:xff>";
+        self.lookatstate = "<dev string:xd5>";
     #/
     stare(guy);
 }
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1432
+// Checksum 0x0, Offset: 0x142a
 // Size: 0x15e
 function function_ff0bb38cfb102c11(guys, maxdist, maxtargets) {
     assert(self != level.player);
@@ -612,7 +612,7 @@ function function_ff0bb38cfb102c11(guys, maxdist, maxtargets) {
         return;
     }
     /#
-        self.lookatstate = "<dev string:x109>";
+        self.lookatstate = "<dev string:xdc>";
     #/
     for (var_f005387b5006ade6 = 0; var_f005387b5006ade6 < guys.size; var_f005387b5006ade6++) {
         guy = guys[var_f005387b5006ade6];
@@ -649,7 +649,7 @@ function function_ff0bb38cfb102c11(guys, maxdist, maxtargets) {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1598
+// Checksum 0x0, Offset: 0x1590
 // Size: 0x57
 function function_c38d71f632b89906() {
     if (!isdefined(self) || !isent(self)) {
@@ -658,7 +658,7 @@ function function_c38d71f632b89906() {
     minidletime = 2;
     maxidletime = 4;
     /#
-        self.lookatstate = "<dev string:x114>";
+        self.lookatstate = "<dev string:xe4>";
     #/
     self function_1c339daaba3f71db(0);
     wait randomfloatrange(minidletime, maxidletime);
@@ -667,8 +667,8 @@ function function_c38d71f632b89906() {
 
 // Namespace ai_lookat / namespace_17a0e830dd8fa113
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f7
-// Size: 0x94
+// Checksum 0x0, Offset: 0x15ef
+// Size: 0x96
 function stare(other) {
     percent = 0.8;
     speed = 1;
@@ -691,11 +691,11 @@ function stare(other) {
 
     // Namespace ai_lookat / namespace_17a0e830dd8fa113
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1693
-    // Size: 0x92
+    // Checksum 0x0, Offset: 0x168d
+    // Size: 0x91
     function function_ca76b97da22f081b() {
-        self endon("<dev string:x11c>");
-        self endon("<dev string:x125>");
+        self endon("<dev string:xe9>");
+        self endon("<dev string:xef>");
         setdvarifuninitialized(@"hash_4e640bf30799c32f", 0);
         while (true) {
             waitframe();

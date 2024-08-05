@@ -1,5 +1,4 @@
 #using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\common\callbacks.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
@@ -7,7 +6,6 @@
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using script_509a782dd5b89cf1;
 #using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using scripts\cp_mp\hostmigration.gsc;
 #using script_16ea1b94f0f381b3;
 #using scripts\mp\objidpoolmanager.gsc;
@@ -17,7 +15,7 @@
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e7
+// Checksum 0x0, Offset: 0x826
 // Size: 0x7e
 function init() {
     if (issharedfuncdefined("uav", "init")) {
@@ -36,7 +34,7 @@ function init() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6d
+// Checksum 0x0, Offset: 0x8ac
 // Size: 0x4d
 function function_83bbd4aad5a34b6b() {
     level endon("game_ended");
@@ -50,8 +48,8 @@ function function_83bbd4aad5a34b6b() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xac2
-// Size: 0x17d
+// Checksum 0x0, Offset: 0x901
+// Size: 0x17c
 function function_ac005e67449bfdf8() {
     level.uavworstid = getuavstrengthmin();
     level.uavbestid = getuavstrengthmax();
@@ -87,12 +85,10 @@ function function_ac005e67449bfdf8() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc47
-// Size: 0xa5
+// Checksum 0x0, Offset: 0xa85
+// Size: 0x7f
 function function_d4fc9b64ffec9e4e() {
     game["dialog"]["uav_use"] = "killstreak_remote_operator" + "_request_response";
-    game["dialog"]["uav_use_friendly_br"] = "frns_grav_uav1";
-    game["dialog"]["uav_use_enemy_br"] = "nmys_grav_uav1";
     game["dialog"]["uav_leave"] = "killstreak_remote_operator" + "_leave";
     game["dialog"]["uav_destroyed"] = "killstreak_remote_operator" + "_crash";
     game["dialog"]["directional_uav_use"] = "killstreak_remote_operator" + "_request_response";
@@ -101,7 +97,7 @@ function function_d4fc9b64ffec9e4e() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf4
+// Checksum 0x0, Offset: 0xb0c
 // Size: 0xa0
 function onplayerconnect() {
     var_f0d1eb8b608ecb81 = getuavstrengthlevelneutral();
@@ -117,7 +113,7 @@ function onplayerconnect() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9c
+// Checksum 0x0, Offset: 0xbb4
 // Size: 0xa
 function onplayerspawned() {
     level notify("uav_update");
@@ -125,27 +121,16 @@ function onplayerspawned() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdae
-// Size: 0x8a
-function function_3166f86d25686055() {
-    level endon("uav_update");
-    uav_throttle = throttle::function_af33edfaf05fc572("uav", getdvarint(@"hash_533830ccd327d251", 16));
-    foreach (entry in level.teamnamelist) {
-        throttle::function_6f7b33660ae155ef(uav_throttle);
-        uav_updateteamstatus(entry);
-    }
-}
-
-// Namespace uav / scripts\cp_mp\killstreaks\uav
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe40
-// Size: 0x38
+// Checksum 0x0, Offset: 0xbc6
+// Size: 0x80
 function uav_tracker() {
     level endon("game_ended");
     while (true) {
         level waittill("uav_update");
         if (level.teambased) {
-            level thread function_3166f86d25686055();
+            foreach (entry in level.teamnamelist) {
+                uav_updateteamstatus(entry);
+            }
             continue;
         }
         function_f9caa46aa98b7c6b();
@@ -154,8 +139,8 @@ function uav_tracker() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe80
-// Size: 0x26
+// Checksum 0x0, Offset: 0xc4e
+// Size: 0x25
 function tryuseuav(streakname) {
     streakinfo = createstreakinfo(streakname, self);
     return tryuseuavfromstruct(streakinfo);
@@ -163,8 +148,8 @@ function tryuseuav(streakname) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeaf
-// Size: 0x2a6
+// Checksum 0x0, Offset: 0xc7c
+// Size: 0x288
 function tryuseuavfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -191,7 +176,7 @@ function tryuseuavfromstruct(streakinfo) {
     bundle = level.streakglobals.streakbundles["uav"];
     id = function_2336488258354fbc(#"scriptbundle_killstreak", bundle.var_19fb085453713468);
     self setclientomnvar("uav_radar_ping", id);
-    subgametype = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5();
+    subgametype = getdvar(@"hash_7611a2790a0bf7fe", "br");
     if (isdefined(bundle) && isdefined(bundle.deployweaponname)) {
         var_dd21567fdd9a3a6a = bundle.deployweaponname;
     } else if (subgametype == "vanilla" || subgametype == "mini_mgl") {
@@ -203,11 +188,9 @@ function tryuseuavfromstruct(streakinfo) {
     if (isdefined(streakinfo.var_32cd77f7f836e8e4)) {
         var_32cd77f7f836e8e4 = streakinfo.var_32cd77f7f836e8e4;
     }
-    if (var_32cd77f7f836e8e4) {
-        deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_dogesturedeploy(streakinfo, makeweapon(var_dd21567fdd9a3a6a));
-        if (!istrue(deployresult)) {
-            return 0;
-        }
+    deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_dogesturedeploy(streakinfo, makeweapon(var_dd21567fdd9a3a6a));
+    if (!istrue(deployresult) && var_32cd77f7f836e8e4) {
+        return 0;
     }
     if (isdefined(level.killstreakbeginusefunc)) {
         if (!level [[ level.killstreakbeginusefunc ]](streakinfo)) {
@@ -215,16 +198,13 @@ function tryuseuavfromstruct(streakinfo) {
         }
     }
     useresult = uav_use(streakinfo.streakname, streakinfo);
-    if (useresult && streakinfo.streakname == "directional_uav" && isbrstylegametype()) {
-        namespace_2c99f682179581bf::function_88ddbfdd01726127(self.team);
-    }
     return istrue(useresult);
 }
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x115e
-// Size: 0x252
+// Checksum 0x0, Offset: 0xf0d
+// Size: 0x257
 function uav_use(uavtype, streakinfo) {
     if (issharedfuncdefined("killstreak", "logKillstreakEvent")) {
         self [[ getsharedfunc("killstreak", "logKillstreakEvent") ]](uavtype, self.origin);
@@ -275,8 +255,8 @@ function uav_use(uavtype, streakinfo) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b9
-// Size: 0xbc
+// Checksum 0x0, Offset: 0x116d
+// Size: 0xe1
 function function_8e9a430c17ddcd55(uavtype) {
     if (!scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
         return false;
@@ -287,6 +267,9 @@ function function_8e9a430c17ddcd55(uavtype) {
     index = undefined;
     if (level.teambased) {
         index = self.team;
+        if (istrue(level.var_7c5a2787ed20ac77)) {
+            index = self.team + self.squadindex;
+        }
     } else {
         index = self.guid;
     }
@@ -303,8 +286,8 @@ function function_8e9a430c17ddcd55(uavtype) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x147e
-// Size: 0x161
+// Checksum 0x0, Offset: 0x1257
+// Size: 0x137
 function uav_launch(owner, uavtype, streakinfo, var_da662696203dc431) {
     team = owner.team;
     launchorigin = level.uavrotationorigin;
@@ -317,11 +300,7 @@ function uav_launch(owner, uavtype, streakinfo, var_da662696203dc431) {
             launchorigin = owner.origin;
         }
     }
-    if (isdefined(streakinfo.overridetime)) {
-        uavmodel = uav_create(launchorigin, owner, uavtype, streakinfo, var_da662696203dc431, streakinfo.overridetime);
-    } else {
-        uavmodel = uav_create(launchorigin, owner, uavtype, streakinfo, var_da662696203dc431);
-    }
+    uavmodel = uav_create(launchorigin, owner, uavtype, streakinfo, var_da662696203dc431);
     if (!isdefined(uavmodel)) {
         return false;
     }
@@ -337,8 +316,8 @@ function uav_launch(owner, uavtype, streakinfo, var_da662696203dc431) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e8
-// Size: 0x863
+// Checksum 0x0, Offset: 0x1397
+// Size: 0x83d
 function uav_create(launchorigin, owner, uavtype, streakinfo, var_da662696203dc431, lifetimeOverride) {
     uavmodel = undefined;
     var_88d3d00bf003f331 = undefined;
@@ -380,6 +359,7 @@ function uav_create(launchorigin, owner, uavtype, streakinfo, var_da662696203dc4
     uavmodel thread function_d45f5cf5bfce96df();
     uavmodel thread function_e58c525d5d3a7482();
     uavmodel thread function_225e3594843d2ac(uavtype, lifetimeOverride, owner);
+    uavmodel thread function_709bafcc745fa088();
     if (isent(uavmodel)) {
         uavmodel setotherent(owner);
         uavmodel scriptmoveroutline();
@@ -461,19 +441,14 @@ function uav_create(launchorigin, owner, uavtype, streakinfo, var_da662696203dc4
     vostreakname = streakinfo.streakname;
     if (owner function_8e9a430c17ddcd55(uavtype)) {
         vostreakname = "directional_uav";
-        scripts\cp_mp\challenges::function_8359cadd253f9604(owner, "br_three_uav", 1);
     }
     var_52a5be2e2f91d710 = undefined;
     if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
         [[ getsharedfunc("sound", "playKillstreakDeployDialog") ]](owner, vostreakname);
         var_52a5be2e2f91d710 = 2;
     }
-    isbr = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
-    if (isbr) {
-        killstreak_dangernotifyplayersinrange(owner, uavmodel.team, 15000, vostreakname);
-    } else {
-        owner thread playkillstreakoperatordialog(vostreakname, vostreakname + "_use", 1, var_52a5be2e2f91d710);
-    }
+    killstreak_dangernotifyplayersinrange(owner, uavmodel.team, 15000, vostreakname);
+    owner thread playkillstreakoperatordialog(vostreakname, vostreakname + "_use", 1, var_52a5be2e2f91d710);
     if (issharedfuncdefined("hud", "teamPlayerCardSplash")) {
         level thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]](calloutsplash, owner);
     }
@@ -484,8 +459,8 @@ function uav_create(launchorigin, owner, uavtype, streakinfo, var_da662696203dc4
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e54
-// Size: 0x4d4
+// Checksum 0x0, Offset: 0x1bdd
+// Size: 0x4de
 function function_fd8473db50408aa8(worldspawned) {
     level endon("game_ended");
     uavtype = self.uavtype;
@@ -573,7 +548,7 @@ function function_fd8473db50408aa8(worldspawned) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2330
+// Checksum 0x0, Offset: 0x20c3
 // Size: 0x18
 function function_e2fce5a833321770() {
     level endon("game_ended");
@@ -585,7 +560,7 @@ function function_e2fce5a833321770() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2350
+// Checksum 0x0, Offset: 0x20e3
 // Size: 0xa6
 function function_c926982ff07fdea5() {
     self endon("death");
@@ -604,8 +579,8 @@ function function_c926982ff07fdea5() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23fe
-// Size: 0x92
+// Checksum 0x0, Offset: 0x2191
+// Size: 0x90
 function function_d45f5cf5bfce96df() {
     self endon("death");
     self endon("explode");
@@ -622,8 +597,8 @@ function function_d45f5cf5bfce96df() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2498
-// Size: 0xf5
+// Checksum 0x0, Offset: 0x2229
+// Size: 0xf2
 function function_48e2105afd534b62() {
     self endon("death");
     self endon("explode");
@@ -653,8 +628,8 @@ function function_48e2105afd534b62() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2595
-// Size: 0x5db
+// Checksum 0x0, Offset: 0x2323
+// Size: 0x5f1
 function uav_watchdamage() {
     self endon("death");
     self endon("explode");
@@ -729,7 +704,7 @@ function uav_watchdamage() {
         self.damagetaken += modifieddamage;
         /#
             if (isdefined(self) && getdvarint(@"hash_f42eefd3e1b79376")) {
-                println("<dev string:x1c>" + self getentitynumber() + "<dev string:x24>" + self.health - self.damagetaken + "<dev string:x30>" + attacker.clientid + "<dev string:x3e>" + isplayer(attacker) + "<dev string:x57>" + modifieddamage + "<dev string:x63>" + distance(attacker.origin, self.origin));
+                println("<dev string:x1c>" + self getentitynumber() + "<dev string:x21>" + self.health - self.damagetaken + "<dev string:x2a>" + attacker.clientid + "<dev string:x35>" + isplayer(attacker) + "<dev string:x4b>" + modifieddamage + "<dev string:x54>" + distance(attacker.origin, self.origin));
             }
         #/
         self.currenthealth -= modifieddamage;
@@ -760,7 +735,7 @@ function uav_watchdamage() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b78
+// Checksum 0x0, Offset: 0x291c
 // Size: 0x9d
 function uav_destroy() {
     var_75b67453a730bb0d = level.uavsettings[self.uavtype].calloutdestroyed;
@@ -775,7 +750,7 @@ function uav_destroy() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c1d
+// Checksum 0x0, Offset: 0x29c1
 // Size: 0x13
 function function_1c832b851ca3a96a() {
     self setscriptablepartstate("body_damage_light", "on");
@@ -783,7 +758,7 @@ function function_1c832b851ca3a96a() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c38
+// Checksum 0x0, Offset: 0x29dc
 // Size: 0x13
 function function_4db3b85258da27bf() {
     self setscriptablepartstate("body_damage_medium", "on");
@@ -791,7 +766,7 @@ function function_4db3b85258da27bf() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c53
+// Checksum 0x0, Offset: 0x29f7
 // Size: 0x13
 function function_aece0522af7087ef() {
     self setscriptablepartstate("body_damage_heavy", "on");
@@ -799,8 +774,8 @@ function function_aece0522af7087ef() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c6e
-// Size: 0xd7
+// Checksum 0x0, Offset: 0x2a12
+// Size: 0xd4
 function function_709bafcc745fa088() {
     foreach (player in level.players) {
         if (isdefined(self.streakname) && (self.streakname == "directional_uav" || self.streakname == "counter_uav")) {
@@ -820,7 +795,7 @@ function function_709bafcc745fa088() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d4d
+// Checksum 0x0, Offset: 0x2aee
 // Size: 0x2f
 function function_dc407442aceae01e(enemyaffected) {
     level endon("game_ended");
@@ -832,8 +807,8 @@ function function_dc407442aceae01e(enemyaffected) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d84
-// Size: 0x82
+// Checksum 0x0, Offset: 0x2b25
+// Size: 0x84
 function function_5ec24d236512fd7a(team) {
     forcedradar = getdvarint(@"scr_game_forceuav", 0);
     if (forcedradar) {
@@ -847,8 +822,8 @@ function function_5ec24d236512fd7a(team) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e0e
-// Size: 0x157
+// Checksum 0x0, Offset: 0x2bb1
+// Size: 0x158
 function function_933df49e9a291165(activeuavs, var_6f923ce59f2dba50, activecounteruavs) {
     /#
         uavowner = undefined;
@@ -886,7 +861,7 @@ function function_933df49e9a291165(activeuavs, var_6f923ce59f2dba50, activecount
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f6e
+// Checksum 0x0, Offset: 0x2d12
 // Size: 0x1c
 function function_484d86ce003c2526(team, override) {
     uav_updateteamstatus(team, override);
@@ -894,8 +869,8 @@ function function_484d86ce003c2526(team, override) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f92
-// Size: 0x12a
+// Checksum 0x0, Offset: 0x2d36
+// Size: 0x12e
 function function_8abf717874ce81d4(radarstrength, var_70d48b6b51ff2964) {
     isradarblocked = radarstrength == level.uavworstid;
     hasradar = !isradarblocked;
@@ -917,8 +892,8 @@ function function_8abf717874ce81d4(radarstrength, var_70d48b6b51ff2964) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30c5
-// Size: 0x63
+// Checksum 0x0, Offset: 0x2e6d
+// Size: 0x64
 function function_ddcbf96c5ef69597(team, override) {
     if (isdefined(override)) {
         radarstrength = override;
@@ -932,8 +907,8 @@ function function_ddcbf96c5ef69597(team, override) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3131
-// Size: 0x168
+// Checksum 0x0, Offset: 0x2eda
+// Size: 0x169
 function function_13b8682b55619852(player, radardata) {
     if (player function_a237aba99cf26050() && getdvarint(@"hash_c06ce4e11c644c9b", 0) == 1) {
         strengthmin = getuavstrengthmin();
@@ -959,8 +934,8 @@ function function_13b8682b55619852(player, radardata) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a1
-// Size: 0xf2
+// Checksum 0x0, Offset: 0x304b
+// Size: 0xf1
 function uav_updateteamstatus(team, override) {
     radardata = function_ddcbf96c5ef69597(team, override);
     players = level.players;
@@ -986,8 +961,8 @@ function uav_updateteamstatus(team, override) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x339b
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x3144
+// Size: 0xb0
 function function_1cd3cd7ad2b1a683(team, override) {
     teamplayers = level.players;
     if (issharedfuncdefined("game", "getTeamData")) {
@@ -1001,8 +976,8 @@ function function_1cd3cd7ad2b1a683(team, override) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3455
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x31fc
+// Size: 0xb0
 function function_96d4526d5886ee74(team, override) {
     teamplayers = level.players;
     if (issharedfuncdefined("game", "getTeamData")) {
@@ -1016,7 +991,7 @@ function function_96d4526d5886ee74(team, override) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x350f
+// Checksum 0x0, Offset: 0x32b4
 // Size: 0x13
 function function_b9f0ee21053d4057(data) {
     thread uav_destroy();
@@ -1024,7 +999,7 @@ function function_b9f0ee21053d4057(data) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x352a
+// Checksum 0x0, Offset: 0x32cf
 // Size: 0xb
 function function_669abde8621d826e(data) {
     
@@ -1032,7 +1007,7 @@ function function_669abde8621d826e(data) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x353d
+// Checksum 0x0, Offset: 0x32e2
 // Size: 0x2b4
 function function_f9caa46aa98b7c6b() {
     foreach (player in level.players) {
@@ -1082,8 +1057,8 @@ function function_f9caa46aa98b7c6b() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37f9
-// Size: 0x62
+// Checksum 0x0, Offset: 0x359e
+// Size: 0x63
 function function_f53de0e99cb013e8() {
     level endon("game_ended");
     self endon("death");
@@ -1099,7 +1074,7 @@ function function_f53de0e99cb013e8() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3863
+// Checksum 0x0, Offset: 0x3609
 // Size: 0x6f
 function uav_trackvelocity() {
     level endon("game_ended");
@@ -1115,7 +1090,7 @@ function uav_trackvelocity() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38da
+// Checksum 0x0, Offset: 0x3680
 // Size: 0x4b
 function function_e58c525d5d3a7482() {
     self endon("death");
@@ -1128,7 +1103,7 @@ function function_e58c525d5d3a7482() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x392d
+// Checksum 0x0, Offset: 0x36d3
 // Size: 0xb8
 function function_225e3594843d2ac(uavtype, lifetimeOverride, owner) {
     duration = level.uavsettings[uavtype].timeout;
@@ -1151,8 +1126,8 @@ function function_225e3594843d2ac(uavtype, lifetimeOverride, owner) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x39ed
-// Size: 0xed
+// Checksum 0x0, Offset: 0x3793
+// Size: 0xef
 function function_247294e52128e3e7(targetent, player) {
     self endon("death");
     mindist = distance(self.origin, targetent getpointinbounds(0, 0, 0));
@@ -1185,7 +1160,7 @@ function function_247294e52128e3e7(targetent, player) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ae2
+// Checksum 0x0, Offset: 0x388a
 // Size: 0x1e6
 function function_a4d3120487c90203() {
     level.totalactiveuavs++;
@@ -1219,7 +1194,7 @@ function function_a4d3120487c90203() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cd0
+// Checksum 0x0, Offset: 0x3a78
 // Size: 0xb9
 function function_24d8b56676d4d3d1() {
     if (level.teambased) {
@@ -1238,7 +1213,7 @@ function function_24d8b56676d4d3d1() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d91
+// Checksum 0x0, Offset: 0x3b39
 // Size: 0x188
 function uav_removeactiveuav() {
     if (level.teambased) {
@@ -1270,7 +1245,7 @@ function uav_removeactiveuav() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f21
+// Checksum 0x0, Offset: 0x3cc9
 // Size: 0x5a
 function uav_removeactivecounteruav() {
     if (level.teambased) {
@@ -1283,7 +1258,7 @@ function uav_removeactivecounteruav() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f83
+// Checksum 0x0, Offset: 0x3d2b
 // Size: 0x65
 function function_456cd43a5602eaab() {
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && isdefined(self.owner) && isplayer(self.owner)) {
@@ -1298,7 +1273,7 @@ function function_456cd43a5602eaab() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ff1
+// Checksum 0x0, Offset: 0x3d99
 // Size: 0x1c7
 function function_972967e0c0a0fa8(uavtype, launchorigin) {
     uavrig = undefined;
@@ -1343,7 +1318,7 @@ function function_972967e0c0a0fa8(uavtype, launchorigin) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c1
+// Checksum 0x0, Offset: 0x3f69
 // Size: 0x27
 function uav_rotaterig(rotatetime) {
     self endon("death");
@@ -1355,7 +1330,7 @@ function uav_rotaterig(rotatetime) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41f0
+// Checksum 0x0, Offset: 0x3f98
 // Size: 0x49
 function function_f30469aca36707f(ent) {
     self endon("death");
@@ -1366,7 +1341,7 @@ function function_f30469aca36707f(ent) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4241
+// Checksum 0x0, Offset: 0x3fe9
 // Size: 0x31
 function function_6d00913d6f8c862e() {
     self endon("death");
@@ -1377,8 +1352,8 @@ function function_6d00913d6f8c862e() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x427a
-// Size: 0x1bf
+// Checksum 0x0, Offset: 0x4022
+// Size: 0x1c3
 function function_f54b6539dc6a4a1c() {
     self.owner endon("disconnect");
     self endon("uav_deleteObjective");
@@ -1432,10 +1407,10 @@ function function_f54b6539dc6a4a1c() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4441
-// Size: 0x157
+// Checksum 0x0, Offset: 0x41ed
+// Size: 0x155
 function function_172c4412dde1696(reveal) {
-    assertex(isdefined(reveal), "<dev string:x6e>");
+    assertex(isdefined(reveal), "Missing bool to toggle minimap in revealMiniMapForAll()");
     index = undefined;
     if (level.teambased) {
         index = self.team;
@@ -1469,8 +1444,8 @@ function function_172c4412dde1696(reveal) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45a0
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x434a
+// Size: 0xd7
 function function_e9a20f47c6b49bd7() {
     self.owner endon("disconnect");
     self endon("death");
@@ -1499,8 +1474,8 @@ function function_e9a20f47c6b49bd7() {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4680
-// Size: 0x1e8
+// Checksum 0x0, Offset: 0x4429
+// Size: 0x1e9
 function function_c11936b9c6c3a076(player, waittime) {
     if (isdefined(waittime)) {
         wait waittime;
@@ -1548,8 +1523,8 @@ function function_c11936b9c6c3a076(player, waittime) {
 
 // Namespace uav / scripts\cp_mp\killstreaks\uav
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4870
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x461a
+// Size: 0x79
 function function_6394127938ed8257(sweeptime) {
     level endon("game_ended");
     while (true) {
@@ -1566,34 +1541,34 @@ function function_6394127938ed8257(sweeptime) {
 
     // Namespace uav / scripts\cp_mp\killstreaks\uav
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x48f4
+    // Checksum 0x0, Offset: 0x469b
     // Size: 0x24e
     function function_6467f4a6c5a005d4() {
-        self endon("<dev string:xa9>");
+        self endon("<dev string:x5c>");
         while (true) {
-            print3d(self.origin, "<dev string:xb2>", (1, 0, 0));
-            print3d(self.origin, "<dev string:xb9>" + self.origin[0] + "<dev string:xc9>" + self.origin[1] + "<dev string:xc9>" + self.origin[2], (1, 0, 0));
-            print3d(level.uavrig.origin, "<dev string:xcf>", (1, 0, 0));
-            print3d(level.uavrig.origin, "<dev string:xda>" + level.uavrig.origin[0] + "<dev string:xc9>" + level.uavrig.origin[1] + "<dev string:xc9>" + level.uavrig.origin[2], (1, 0, 0));
-            print3d(level.uavrig.origin - (0, 0, 50), "<dev string:xee>" + distance(level.uavrig.origin, self.origin), (1, 0, 0));
+            print3d(self.origin, "<dev string:x62>", (1, 0, 0));
+            print3d(self.origin, "<dev string:x66>" + self.origin[0] + "<dev string:x73>" + self.origin[1] + "<dev string:x73>" + self.origin[2], (1, 0, 0));
+            print3d(level.uavrig.origin, "<dev string:x76>", (1, 0, 0));
+            print3d(level.uavrig.origin, "<dev string:x7e>" + level.uavrig.origin[0] + "<dev string:x73>" + level.uavrig.origin[1] + "<dev string:x73>" + level.uavrig.origin[2], (1, 0, 0));
+            print3d(level.uavrig.origin - (0, 0, 50), "<dev string:x8f>" + distance(level.uavrig.origin, self.origin), (1, 0, 0));
             line(level.uavrig.origin, self.origin, (0, 0, 1));
             anglesforward = anglestoforward(level.players[0].angles);
             scalar = (anglesforward[0] * 200, anglesforward[1] * 200, anglesforward[2]);
-            print3d(level.players[0].origin + scalar, "<dev string:xee>" + distance(level.players[0].origin, self.origin), (1, 0, 0));
+            print3d(level.players[0].origin + scalar, "<dev string:x8f>" + distance(level.players[0].origin, self.origin), (1, 0, 0));
             waitframe();
         }
     }
 
     // Namespace uav / scripts\cp_mp\killstreaks\uav
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4b4a
-    // Size: 0x70
+    // Checksum 0x0, Offset: 0x48f1
+    // Size: 0x6f
     function function_e6d0ffaec6506528() {
-        self endon("<dev string:xa9>");
+        self endon("<dev string:x5c>");
         while (true) {
             result = scripts\engine\trace::_bullet_trace(level.players[0].origin, self.origin, 0, undefined);
-            if (isdefined(result) && isdefined(result["<dev string:xfc>"])) {
-                println("<dev string:x10b>" + result["<dev string:xfc>"]);
+            if (isdefined(result) && isdefined(result["<dev string:x9a>"])) {
+                println("<dev string:xa6>" + result["<dev string:x9a>"]);
             }
             wait 1;
         }

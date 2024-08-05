@@ -9,8 +9,8 @@
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x162
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x1a6
+// Size: 0x6f
 function teleportthread(verticaloffset) {
     self endon("killanimscript");
     self notify("endTeleportThread");
@@ -25,7 +25,7 @@ function teleportthread(verticaloffset) {
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d8
+// Checksum 0x0, Offset: 0x21d
 // Size: 0x100
 function teleportthreadex(verticaloffset, delay, frames, animrate) {
     self endon("killanimscript");
@@ -54,17 +54,17 @@ function teleportthreadex(verticaloffset, delay, frames, animrate) {
 
     // Namespace shared / namespace_80c14191b262bb30
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2e0
+    // Checksum 0x0, Offset: 0x325
     // Size: 0x19
     function dotraverse(traversedata) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("if you are hitting this, you are doing something dreadfully wrong.");
     }
 
 #/
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x301
+// Checksum 0x0, Offset: 0x346
 // Size: 0x44
 function handletraversenotetracks(note) {
     if (note == "traverse_death") {
@@ -80,8 +80,8 @@ function handletraversenotetracks(note) {
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34d
-// Size: 0x48
+// Checksum 0x0, Offset: 0x392
+// Size: 0x47
 function handletraversedeathnotetrack() {
     if (isdefined(self.traversedeathanim)) {
         var_d2565459c0e88749 = self.traversedeathanim[self.traversedeathindex];
@@ -92,7 +92,7 @@ function handletraversedeathnotetrack() {
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39d
+// Checksum 0x0, Offset: 0x3e1
 // Size: 0xa8
 function handletraversealignment() {
     self animmode("noclip");
@@ -110,8 +110,8 @@ function handletraversealignment() {
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44d
-// Size: 0x19a
+// Checksum 0x0, Offset: 0x491
+// Size: 0x1a4
 function handletraversedrop() {
     startpos = self.origin + (0, 0, 32);
     endpos = physicstrace(startpos, self.origin + (0, 0, -512));
@@ -126,7 +126,7 @@ function handletraversedrop() {
     /#
         if (getdvarint(@"hash_60bc1b675216e3d")) {
             thread namespace_f87a4b6569ce73b2::debugline(startpos, endpos, (1, 1, 1), 40);
-            thread namespace_f87a4b6569ce73b2::drawstringtime("<dev string:x62>" + dropoffset, endpos, (1, 1, 1), 2);
+            thread namespace_f87a4b6569ce73b2::drawstringtime("<dev string:x1c>" + dropoffset, endpos, (1, 1, 1), 2);
         }
     #/
     if (var_fb6f770a5d1925e < var_e365c44cbf1472ab) {
@@ -142,7 +142,7 @@ function handletraversedrop() {
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ef
+// Checksum 0x0, Offset: 0x63d
 // Size: 0x49
 function finishtraversedrop(finalz) {
     self endon("killanimscript");
@@ -158,7 +158,7 @@ function finishtraversedrop(finalz) {
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x640
+// Checksum 0x0, Offset: 0x68e
 // Size: 0x16
 function donothingfunc() {
     self animmode("zonly_physics");
@@ -169,17 +169,17 @@ function donothingfunc() {
 
     // Namespace shared / namespace_80c14191b262bb30
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x65e
+    // Checksum 0x0, Offset: 0x6ac
     // Size: 0x31
     function dog_jump_down(frames, rate, var_d0527d58bb610197, var_5a11f5d9304a0c83) {
-        assertmsg("<dev string:x73>");
+        assertmsg("if this is being called, something dreadfully wrong is happening.");
     }
 
 #/
 
 // Namespace shared / namespace_80c14191b262bb30
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x697
+// Checksum 0x0, Offset: 0x6e5
 // Size: 0xa
 function seeker_traversal() {
     self waittill("killanimscript");

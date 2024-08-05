@@ -7,7 +7,7 @@
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a4
+// Checksum 0x0, Offset: 0x310
 // Size: 0x5a
 function getfunction(funcid) {
     switch (funcid) {
@@ -18,12 +18,12 @@ function getfunction(funcid) {
     case #"hash_256644959193a6c7": 
         return &callreinforcements;
     }
-    assertmsg("<dev string:x1c>" + funcid);
+    assertmsg("Missing function pointer for " + funcid);
 }
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x306
+// Checksum 0x0, Offset: 0x372
 // Size: 0xb
 function function_3dbd361f74b442f9(interactionid) {
     
@@ -31,7 +31,7 @@ function function_3dbd361f74b442f9(interactionid) {
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x319
+// Checksum 0x0, Offset: 0x385
 // Size: 0x1c
 function function_a157fbbc31d9eb1a(interactionid) {
     self clearbtgoal(1);
@@ -40,14 +40,14 @@ function function_a157fbbc31d9eb1a(interactionid) {
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x33d
+// Checksum 0x0, Offset: 0x3a9
 // Size: 0xb0
 function callreinforcements(statename, params) {
     self endon("death");
     self endon("endcallreinforcements");
     var_2f67a016c007b82b = getscriptbundle("ai_behavior_call_reinforcements:ai_behavior_call_reinforcements_default");
     if (!isdefined(var_2f67a016c007b82b)) {
-        assertmsg("<dev string:x3d>");
+        assertmsg("An AI is using the call reinforcements behavior but can't find the ai_behavior_call_reinforcements script bundle!");
         return;
     }
     self function_e64ea2b4e79c4b74(1);
@@ -63,8 +63,8 @@ function callreinforcements(statename, params) {
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f5
-// Size: 0x6d
+// Checksum 0x0, Offset: 0x461
+// Size: 0x6c
 function function_6cdcfd04e3704a8a(calllength) {
     self endon("death");
     self endon("endcallreinforcements");
@@ -80,12 +80,12 @@ function function_6cdcfd04e3704a8a(calllength) {
 
 // Namespace call_reinforcements / namespace_271f346b8e0c52cc
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x46a
-// Size: 0x12e
+// Checksum 0x0, Offset: 0x4d5
+// Size: 0x133
 function function_73c90b8dc4dbc607(asmname, statename, params) {
     sectionname = params;
     if (!isdefined(sectionname)) {
-        assertmsg("<dev string:xb2>");
+        assertmsg("Missing Reinforcements Anim section name ie start, loop, finish ");
         return;
     }
     stance = scripts\asm\asm_bb::bb_getrequestedstance();

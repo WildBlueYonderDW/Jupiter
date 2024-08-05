@@ -53,7 +53,7 @@ function main() {
     } else {
         allowed[0] = getgametype();
     }
-    if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19() || issubstr(getgametype(), "snipers") || isJuggerMoshGameMode()) {
+    if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19() || issubstr(getgametype(), "snipers") || function_a305f5d1be837817()) {
         allowed[0] = scripts\mp\utility\game::getbasegametype();
     }
     scripts\mp\gameobjects::main(allowed);

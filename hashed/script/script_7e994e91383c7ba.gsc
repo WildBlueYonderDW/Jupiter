@@ -22,10 +22,10 @@
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b8
+// Checksum 0x0, Offset: 0x7bf
 // Size: 0x58
 function function_f383491974a17b9a() {
-    assertex(isdefined(level.cratedropdata), "<dev string:x1c>");
+    assertex(isdefined(level.cratedropdata), "airdrop_escort_init() called before scriptscp_mpkillstreaksairdrop::initCrateDropData().");
     if (issharedfuncdefined("airdrop_escort", "init")) {
         [[ getsharedfunc("airdrop_escort", "init") ]]();
     }
@@ -36,8 +36,8 @@ function function_f383491974a17b9a() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x918
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x81f
+// Size: 0xbe
 function function_e407a860bff9c632() {
     level.var_346499147c1f5c1f = 0;
     foreach (teamname in level.teamnamelist) {
@@ -48,13 +48,13 @@ function function_e407a860bff9c632() {
         setdevdvarifuninitialized(@"hash_f8c88d9bcfa63da3", 0);
         setdevdvarifuninitialized(@"hash_e9159b47fbb642af", 0);
         setdevdvarifuninitialized(@"hash_94edbe8b5c5b8dd0", 0);
-        setdevdvarifuninitialized(@"hash_4f4829715aa2fd22", "<dev string:x78>");
+        setdevdvarifuninitialized(@"hash_4f4829715aa2fd22", "<dev string:x1c>");
     #/
 }
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e1
+// Checksum 0x0, Offset: 0x8e5
 // Size: 0x10
 function function_a852f44527c9d61f() {
     function_1f93185f55e71c3();
@@ -63,7 +63,7 @@ function function_a852f44527c9d61f() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f9
+// Checksum 0x0, Offset: 0x8fd
 // Size: 0x52
 function function_1f93185f55e71c3() {
     level.scr_animtree["ks_airdrop_escort_crate"] = %script_model;
@@ -73,7 +73,7 @@ function function_1f93185f55e71c3() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa53
+// Checksum 0x0, Offset: 0x957
 // Size: 0x33
 function function_29c55da256bfa6ba() {
     level.scr_animtree["ks_airdrop_escort_heli"] = %mp_vehicles_always_loaded;
@@ -82,7 +82,7 @@ function function_29c55da256bfa6ba() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8e
+// Checksum 0x0, Offset: 0x992
 // Size: 0x7e
 function function_9302fd2bfe5c663c() {
     game["dialog"]["airdrop_escort" + "_use"] = "killstreak_remote_operator" + "_request_response";
@@ -93,8 +93,8 @@ function function_9302fd2bfe5c663c() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb14
-// Size: 0x21
+// Checksum 0x0, Offset: 0xa18
+// Size: 0x20
 function function_e24bffeb9974833e() {
     streakinfo = createstreakinfo("airdrop_escort", self);
     return function_45378f51950e7d1f(streakinfo);
@@ -102,8 +102,8 @@ function function_e24bffeb9974833e() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3e
-// Size: 0x33f
+// Checksum 0x0, Offset: 0xa41
+// Size: 0x342
 function function_45378f51950e7d1f(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -180,8 +180,8 @@ function function_45378f51950e7d1f(streakinfo) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xe86
-// Size: 0x57
+// Checksum 0x0, Offset: 0xd8c
+// Size: 0x56
 function function_5867a72a727ced43(owner, position, escorttype, streakinfo) {
     escortheli = function_e384066b8cc15be4(owner, owner.team, position, escorttype, streakinfo);
     if (!isdefined(escortheli)) {
@@ -193,8 +193,8 @@ function function_5867a72a727ced43(owner, position, escorttype, streakinfo) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xee6
-// Size: 0x857
+// Checksum 0x0, Offset: 0xdeb
+// Size: 0x864
 function function_e384066b8cc15be4(owner, team, position, escorttype, streakinfo) {
     scripts\cp_mp\vehicles\vehicle_tracking::clearvehiclereservation();
     if (issharedfuncdefined("vehicle", "decrementFauxVehicleCount")) {
@@ -220,7 +220,7 @@ function function_e384066b8cc15be4(owner, team, position, escorttype, streakinfo
                 var_98309fe48684a69 = vectortoangles(entranceforward);
             } else {
                 /#
-                    owner iprintlnbold("<dev string:x85>" + entrancestruct.script_linkto + "<dev string:x98>");
+                    owner iprintlnbold("<dev string:x26>" + entrancestruct.script_linkto + "<dev string:x36>");
                 #/
             }
         }
@@ -323,8 +323,8 @@ function function_e384066b8cc15be4(owner, team, position, escorttype, streakinfo
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1746
-// Size: 0x108
+// Checksum 0x0, Offset: 0x1658
+// Size: 0x10f
 function function_923b24178e709fbb(streakname) {
     killstreakvehicle = self;
     scorepopup = "destroyed_" + streakname;
@@ -344,7 +344,7 @@ function function_923b24178e709fbb(streakname) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1856
+// Checksum 0x0, Offset: 0x176f
 // Size: 0x34
 function function_a4b7038df66c4b58(streakname) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageData")) {
@@ -354,7 +354,7 @@ function function_a4b7038df66c4b58(streakname) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1892
+// Checksum 0x0, Offset: 0x17ab
 // Size: 0xb
 function function_350eb9923f9e2a74(streakname) {
     
@@ -362,7 +362,7 @@ function function_350eb9923f9e2a74(streakname) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18a5
+// Checksum 0x0, Offset: 0x17be
 // Size: 0x39
 function function_3e6225ef4efc799e(data) {
     damage = data.damage;
@@ -372,8 +372,8 @@ function function_3e6225ef4efc799e(data) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e7
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x1800
+// Size: 0x9f
 function function_e687e809e9570d59(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -387,7 +387,7 @@ function function_e687e809e9570d59(data) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x198c
+// Checksum 0x0, Offset: 0x18a8
 // Size: 0x13
 function function_6e785f240ca1205e() {
     self setscriptablepartstate("body_damage_light", "on");
@@ -395,7 +395,7 @@ function function_6e785f240ca1205e() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a7
+// Checksum 0x0, Offset: 0x18c3
 // Size: 0x13
 function function_71b13dc22e6c70cb() {
     self setscriptablepartstate("body_damage_medium", "on");
@@ -403,7 +403,7 @@ function function_71b13dc22e6c70cb() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c2
+// Checksum 0x0, Offset: 0x18de
 // Size: 0x13
 function function_a58186566a85e2db() {
     self setscriptablepartstate("body_damage_heavy", "on");
@@ -411,7 +411,7 @@ function function_a58186566a85e2db() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19dd
+// Checksum 0x0, Offset: 0x18f9
 // Size: 0x32
 function function_1fe4e6fd1f673f2d(data) {
     self.killedbyweapon = data.objweapon;
@@ -421,7 +421,7 @@ function function_1fe4e6fd1f673f2d(data) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a18
+// Checksum 0x0, Offset: 0x1934
 // Size: 0x4d
 function function_46088aa13d962f89(weaponkilledby) {
     self endon("explode");
@@ -435,8 +435,8 @@ function function_46088aa13d962f89(weaponkilledby) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a6d
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x1989
+// Size: 0xe2
 function function_51beb9374f4650ab(speed, weaponkilledby, var_c5adb13be635c61a) {
     self endon("explode");
     self clearlookatent();
@@ -462,7 +462,7 @@ function function_51beb9374f4650ab(speed, weaponkilledby, var_c5adb13be635c61a) 
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b58
+// Checksum 0x0, Offset: 0x1a73
 // Size: 0xc
 function function_962725f71407f96f(position) {
     return position;
@@ -470,7 +470,7 @@ function function_962725f71407f96f(position) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b6d
+// Checksum 0x0, Offset: 0x1a88
 // Size: 0x11c
 function function_429ba1c88d63319c(escorttype) {
     level endon("game_ended");
@@ -502,24 +502,24 @@ function function_429ba1c88d63319c(escorttype) {
 }
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c91
-// Size: 0x21
-function function_5555ccc5b8ca52d3(data) {
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x1bac
+// Size: 0x18
+function function_5555ccc5b8ca52d3() {
     self.turret.disabled = 1;
 }
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cba
-// Size: 0x20
-function function_8fc896d80a52b782(fromdeath) {
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x1bcc
+// Size: 0x17
+function function_8fc896d80a52b782() {
     self.turret.disabled = 0;
 }
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce2
+// Checksum 0x0, Offset: 0x1beb
 // Size: 0x18
 function function_3439dfab92e219d1(data) {
     if (isdefined(self)) {
@@ -529,7 +529,7 @@ function function_3439dfab92e219d1(data) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d02
+// Checksum 0x0, Offset: 0x1c0b
 // Size: 0x73
 function function_dbfa95f808879295(data, time) {
     self endon("death");
@@ -548,7 +548,7 @@ function function_dbfa95f808879295(data, time) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d7d
+// Checksum 0x0, Offset: 0x1c86
 // Size: 0x30
 function function_acdc6c19714b6bb8() {
     self endon("death");
@@ -561,7 +561,7 @@ function function_acdc6c19714b6bb8() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1db5
+// Checksum 0x0, Offset: 0x1cbe
 // Size: 0x78
 function function_35c660a3f2bc49e() {
     self endon("death");
@@ -578,7 +578,7 @@ function function_35c660a3f2bc49e() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e35
+// Checksum 0x0, Offset: 0x1d3e
 // Size: 0x5f
 function function_7fc680f960d38005() {
     self endon("death");
@@ -595,8 +595,8 @@ function function_7fc680f960d38005() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e9c
-// Size: 0x235
+// Checksum 0x0, Offset: 0x1da5
+// Size: 0x248
 function function_ba7e24ee1aaf05e3() {
     self endon("death");
     self endon("explode");
@@ -647,7 +647,7 @@ function function_ba7e24ee1aaf05e3() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d9
+// Checksum 0x0, Offset: 0x1ff5
 // Size: 0x57
 function function_96e5dfe9c1aa7de0(crate, animname, animtag) {
     self endon("death");
@@ -662,7 +662,7 @@ function function_96e5dfe9c1aa7de0(crate, animname, animtag) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2138
+// Checksum 0x0, Offset: 0x2054
 // Size: 0x2a
 function function_e44ce535d38f95a(startingpos, currenttarget) {
     return distance2dsquared(startingpos, currenttarget.origin) <= 25000000;
@@ -670,7 +670,7 @@ function function_e44ce535d38f95a(startingpos, currenttarget) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x216b
+// Checksum 0x0, Offset: 0x2087
 // Size: 0x2a
 function function_ff7aba975a027d9b(startingpos, currenttarget) {
     return distance2dsquared(startingpos, currenttarget.origin) <= 16000000;
@@ -678,8 +678,8 @@ function function_ff7aba975a027d9b(startingpos, currenttarget) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x219e
-// Size: 0xf9
+// Checksum 0x0, Offset: 0x20ba
+// Size: 0xfa
 function function_6af592b35966f02a() {
     self endon("death");
     self endon("explode");
@@ -713,7 +713,7 @@ function function_6af592b35966f02a() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x229f
+// Checksum 0x0, Offset: 0x21bc
 // Size: 0x74
 function function_365529b3985c87d4() {
     self endon("death");
@@ -734,8 +734,8 @@ function function_365529b3985c87d4() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x231b
-// Size: 0x18e
+// Checksum 0x0, Offset: 0x2238
+// Size: 0x197
 function function_112064acba6603c3(target, forcestopatgoal) {
     self endon("death");
     self endon("leaving");
@@ -778,8 +778,8 @@ function function_112064acba6603c3(target, forcestopatgoal) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24b1
-// Size: 0x237
+// Checksum 0x0, Offset: 0x23d7
+// Size: 0x242
 function function_94ca0444f2efd147() {
     self endon("death");
     self endon("explode");
@@ -838,7 +838,7 @@ function function_94ca0444f2efd147() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26f0
+// Checksum 0x0, Offset: 0x2621
 // Size: 0x44
 function function_c91a4a524a2d461d() {
     if (istrue(self.isexploding)) {
@@ -853,7 +853,7 @@ function function_c91a4a524a2d461d() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x273c
+// Checksum 0x0, Offset: 0x266d
 // Size: 0x16d
 function function_334e82bd0e14dcf4(wasdestroyed) {
     if (istrue(self.var_bf178f6894d17b96)) {
@@ -888,7 +888,7 @@ function function_334e82bd0e14dcf4(wasdestroyed) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28b1
+// Checksum 0x0, Offset: 0x27e2
 // Size: 0x10c
 function function_e46fb5b1144140e(turret) {
     self endon("death");
@@ -926,8 +926,8 @@ function function_e46fb5b1144140e(turret) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29c5
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x28f6
+// Size: 0x5d
 function function_5a040540bee50d81() {
     self endon("death");
     level endon("game_ended");
@@ -940,8 +940,8 @@ function function_5a040540bee50d81() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2b
-// Size: 0x1f9
+// Checksum 0x0, Offset: 0x295b
+// Size: 0x1fc
 function function_cade8c61df282de5(targetdata) {
     level endon("game_ended");
     self endon("death");
@@ -978,7 +978,7 @@ function function_cade8c61df282de5(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c2d
+// Checksum 0x0, Offset: 0x2b60
 // Size: 0x4d
 function function_7fa1ed261ae2f5e3(var_35d198c823443318) {
     self endon("death");
@@ -994,8 +994,8 @@ function function_7fa1ed261ae2f5e3(var_35d198c823443318) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c82
-// Size: 0xe1
+// Checksum 0x0, Offset: 0x2bb5
+// Size: 0xe3
 function function_aa86f3f7fe0f419b(targetdata) {
     level endon("game_ended");
     self endon("death");
@@ -1024,8 +1024,8 @@ function function_aa86f3f7fe0f419b(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d6b
-// Size: 0x169
+// Checksum 0x0, Offset: 0x2ca0
+// Size: 0x170
 function function_8e4e16bbbfa26efc(targetdata) {
     level endon("game_ended");
     self endon("death");
@@ -1067,7 +1067,7 @@ function function_8e4e16bbbfa26efc(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2edc
+// Checksum 0x0, Offset: 0x2e18
 // Size: 0x9b
 function function_2e5b122bd53f3e85(targetdata) {
     turret = self.turret;
@@ -1085,8 +1085,8 @@ function function_2e5b122bd53f3e85(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f7f
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x2ebb
+// Size: 0x5d
 function function_a4da6e59481303f(ent, actionnotify) {
     self endon("leaving");
     self endon("explode");
@@ -1101,8 +1101,8 @@ function function_a4da6e59481303f(ent, actionnotify) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fe5
-// Size: 0x53
+// Checksum 0x0, Offset: 0x2f20
+// Size: 0x54
 function function_b42ad7e3bd84c2a7() {
     turret = self.turret;
     hastarget = function_20e6f4d27c8040bd(turret);
@@ -1112,8 +1112,8 @@ function function_b42ad7e3bd84c2a7() {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3041
-// Size: 0x12f
+// Checksum 0x0, Offset: 0x2f7d
+// Size: 0x136
 function function_36694823ba9ec40a(attackpoint, attackradius) {
     point = attackpoint;
     turret = self.turret;
@@ -1140,8 +1140,8 @@ function function_36694823ba9ec40a(attackpoint, attackradius) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3178
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x30bb
+// Size: 0x70
 function function_46ba72dfa1f04939(targetorigin) {
     turret = self.turret;
     turretforward = anglestoforward(turret gettagangles("tag_flash"));
@@ -1155,8 +1155,8 @@ function function_46ba72dfa1f04939(targetorigin) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31ef
-// Size: 0xca
+// Checksum 0x0, Offset: 0x3134
+// Size: 0xce
 function function_d8910badec564fa0(targetdata) {
     self endon("leaving");
     self endon("explode");
@@ -1186,8 +1186,8 @@ function function_d8910badec564fa0(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32c1
-// Size: 0xca
+// Checksum 0x0, Offset: 0x320a
+// Size: 0xcb
 function function_3e4e3769f386a9a3(targetdata) {
     self endon("leaving");
     self endon("explode");
@@ -1215,8 +1215,8 @@ function function_3e4e3769f386a9a3(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3393
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x32dd
+// Size: 0x4a
 function function_a39bc57828127be1(targetdata) {
     self endon("leaving");
     self endon("explode");
@@ -1229,8 +1229,8 @@ function function_a39bc57828127be1(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33e6
-// Size: 0x78
+// Checksum 0x0, Offset: 0x332f
+// Size: 0x79
 function function_cc44cc73f134622e(targetdata) {
     self endon("leaving");
     self endon("explode");
@@ -1248,8 +1248,8 @@ function function_cc44cc73f134622e(targetdata) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3466
-// Size: 0x2d
+// Checksum 0x0, Offset: 0x33b0
+// Size: 0x2c
 function function_82d3da0197ef0362(targetstate) {
     turret = self.turret;
     function_46c1ea4a69ad33d6(turret, targetstate);
@@ -1258,7 +1258,7 @@ function function_82d3da0197ef0362(targetstate) {
 
 // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x349b
+// Checksum 0x0, Offset: 0x33e4
 // Size: 0x98
 function function_7303808c08dbaae1() {
     turret = self.turret;
@@ -1274,13 +1274,13 @@ function function_7303808c08dbaae1() {
 
     // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x353b
+    // Checksum 0x0, Offset: 0x3484
     // Size: 0x97
     function function_12e7f2f1edff81ed() {
-        level endon("<dev string:xaa>");
-        self endon("<dev string:xb8>");
-        self endon("<dev string:xc1>");
-        self endon("<dev string:xcc>");
+        level endon("<dev string:x45>");
+        self endon("<dev string:x50>");
+        self endon("<dev string:x56>");
+        self endon("<dev string:x5e>");
         turret = self.turret;
         while (true) {
             debugtarget = getdvarint(@"hash_e9159b47fbb642af", 0);
@@ -1295,16 +1295,16 @@ function function_7303808c08dbaae1() {
 
     // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x35da
+    // Checksum 0x0, Offset: 0x3523
     // Size: 0xa2
     function function_8e6abc3776d35863(var_3609de6106cc37a6) {
-        level endon("<dev string:xaa>");
-        self endon("<dev string:xb8>");
-        self endon("<dev string:xc1>");
-        self endon("<dev string:xcc>");
-        self.owner endon("<dev string:xd7>");
+        level endon("<dev string:x45>");
+        self endon("<dev string:x50>");
+        self endon("<dev string:x56>");
+        self endon("<dev string:x5e>");
+        self.owner endon("<dev string:x66>");
         turret = self.turret;
-        turret endon("<dev string:xef>");
+        turret endon("<dev string:x7b>");
         while (true) {
             debugtarget = getdvarint(@"hash_e9159b47fbb642af", 0);
             if (!debugtarget) {
@@ -1318,30 +1318,30 @@ function function_7303808c08dbaae1() {
 
     // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3684
-    // Size: 0xec
+    // Checksum 0x0, Offset: 0x35cd
+    // Size: 0xed
     function function_1a2daa72951eb0a4() {
-        level endon("<dev string:xaa>");
-        self endon("<dev string:xb8>");
-        self endon("<dev string:xc1>");
-        self endon("<dev string:xcc>");
+        level endon("<dev string:x45>");
+        self endon("<dev string:x50>");
+        self endon("<dev string:x56>");
+        self endon("<dev string:x5e>");
         turret = self.turret;
         escortowner = self.owner;
-        escortowner notifyonplayercommand("<dev string:xd7>", "<dev string:xfe>");
-        escortowner notifyonplayercommand("<dev string:xd7>", "<dev string:x10b>");
+        escortowner notifyonplayercommand("<dev string:x66>", "<dev string:x87>");
+        escortowner notifyonplayercommand("<dev string:x66>", "<dev string:x91>");
         while (true) {
             debugtarget = getdvarint(@"hash_94edbe8b5c5b8dd0", 0);
             if (!debugtarget) {
                 waitframe();
                 continue;
             }
-            escortowner waittill("<dev string:xd7>");
+            escortowner waittill("<dev string:x66>");
             if (!function_20e6f4d27c8040bd(turret)) {
                 childthread function_190c881f4cd38bf2();
                 continue;
             }
             function_7303808c08dbaae1();
-            self.owner iprintlnbold("<dev string:x119>" + self.defaultaction);
+            self.owner iprintlnbold("<dev string:x9c>" + self.defaultaction);
             turret_cleartarget(turret);
             self thread [[ self.defaultactionfunc ]]();
         }
@@ -1349,29 +1349,29 @@ function function_7303808c08dbaae1() {
 
     // Namespace airdrop_escort / namespace_33ee5ceeb5f1d380
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3778
-    // Size: 0x245
+    // Checksum 0x0, Offset: 0x36c2
+    // Size: 0x24d
     function function_190c881f4cd38bf2() {
-        self notify("<dev string:x12e>");
-        self endon("<dev string:x12e>");
-        self endon("<dev string:x147>");
-        self notify("<dev string:x156>");
-        self.currentaction = "<dev string:x156>";
-        turretfiretime = weaponfiretime("<dev string:x165>");
+        self notify("<dev string:xae>");
+        self endon("<dev string:xae>");
+        self endon("<dev string:xc4>");
+        self notify("<dev string:xd0>");
+        self.currentaction = "<dev string:xd0>";
+        turretfiretime = weaponfiretime("<dev string:xdc>");
         var_de95d26a97999b92 = undefined;
         attackradius = 80;
         targettracestart = self.owner getvieworigin();
         targettraceend = targettracestart + anglestoforward(self.owner getplayerangles()) * 50000;
         targettrace = scripts\engine\trace::ray_trace(targettracestart, targettraceend, self, scripts\engine\trace::create_contents(1, 1, 0, 1, 0, 1, 0, 1, 1));
-        if (targettrace["<dev string:x18c>"] != "<dev string:x197>") {
-            var_de95d26a97999b92 = targettrace["<dev string:x1a7>"];
+        if (targettrace["<dev string:x100>"] != "<dev string:x108>") {
+            var_de95d26a97999b92 = targettrace["<dev string:x115>"];
         } else {
             return;
         }
         testtarget = undefined;
         if (!isdefined(self.testtarget)) {
-            testtarget = spawn("<dev string:x1b3>", var_de95d26a97999b92);
-            testtarget setmodel("<dev string:x1c3>");
+            testtarget = spawn("<dev string:x11e>", var_de95d26a97999b92);
+            testtarget setmodel("<dev string:x12b>");
             testtarget dontinterpolate();
             testtarget.angles = self.owner.angles;
             self.testtarget = testtarget;
@@ -1387,7 +1387,7 @@ function function_7303808c08dbaae1() {
         targetdata.attackparachute = 0;
         turret = self.turret;
         var_35d198c823443318 = function_70b8756e9fc03c44(targetdata);
-        self.owner iprintlnbold("<dev string:x1d1>");
+        self.owner iprintlnbold("<dev string:x136>");
         turret_settarget(turret, targetdata);
         self setlookatent(testtarget);
         self setvehgoalpos(self.origin + anglestoforward(self.angles) * 500, 1);

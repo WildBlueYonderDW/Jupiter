@@ -5,8 +5,8 @@
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x238
-// Size: 0x1a6
+// Checksum 0x0, Offset: 0x1e3
+// Size: 0x1a5
 function powershud_init() {
     power_hud_info = spawnstruct();
     level.power_hud_info = power_hud_info;
@@ -29,8 +29,8 @@ function powershud_init() {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e6
-// Size: 0x90
+// Checksum 0x0, Offset: 0x390
+// Size: 0x8f
 function powershud_assignpower(slot, power_id, fill_meter, charges) {
     if (slot == "scripted") {
         return;
@@ -47,7 +47,7 @@ function powershud_assignpower(slot, power_id, fill_meter, charges) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47e
+// Checksum 0x0, Offset: 0x427
 // Size: 0x5c
 function powershud_clearpower(slot) {
     if (slot == "scripted") {
@@ -61,7 +61,7 @@ function powershud_clearpower(slot) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e2
+// Checksum 0x0, Offset: 0x48b
 // Size: 0x28
 function powershud_updatepowercharges(slot, charges) {
     self setclientomnvar(powershud_getslotomnvar(slot, 0), int(charges));
@@ -69,7 +69,7 @@ function powershud_updatepowercharges(slot, charges) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x512
+// Checksum 0x0, Offset: 0x4bb
 // Size: 0x29
 function powershud_updatepowermaxcharges(slot, maxcharges) {
     self setclientomnvar(powershud_getslotomnvar(slot, 1), int(maxcharges));
@@ -77,7 +77,7 @@ function powershud_updatepowermaxcharges(slot, maxcharges) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x543
+// Checksum 0x0, Offset: 0x4ec
 // Size: 0x24
 function powershud_updatepowerdrain(slot, var_bc08c87c9773ae0) {
     self setclientomnvar(powershud_getslotomnvar(slot, 4), var_bc08c87c9773ae0);
@@ -85,7 +85,7 @@ function powershud_updatepowerdrain(slot, var_bc08c87c9773ae0) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x56f
+// Checksum 0x0, Offset: 0x518
 // Size: 0x29
 function powershud_updatepowermeter(slot, meter_value) {
     self setclientomnvar(powershud_getslotomnvar(slot, 2), int(meter_value));
@@ -93,7 +93,7 @@ function powershud_updatepowermeter(slot, meter_value) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a0
+// Checksum 0x0, Offset: 0x549
 // Size: 0x24
 function powershud_updatepowerdisabled(slot, disabled) {
     self setclientomnvar(powershud_getslotomnvar(slot, 5), disabled);
@@ -101,8 +101,8 @@ function powershud_updatepowerdisabled(slot, disabled) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cc
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x575
+// Size: 0x39
 function powershud_updatepoweroffcooldown(slot, oncooldown) {
     var_cabc886d846dd979 = ter_op(oncooldown, 1, 0);
     self setclientomnvar(powershud_getslotomnvar(slot, 6), var_cabc886d846dd979);
@@ -110,7 +110,7 @@ function powershud_updatepoweroffcooldown(slot, oncooldown) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x60e
+// Checksum 0x0, Offset: 0x5b6
 // Size: 0x24
 function powershud_updatepowerstate(slot, state) {
     self setclientomnvar(powershud_getslotomnvar(slot, 6), state);
@@ -118,7 +118,7 @@ function powershud_updatepowerstate(slot, state) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63a
+// Checksum 0x0, Offset: 0x5e2
 // Size: 0x15
 function powershud_beginpowerdrain(slot) {
     powershud_updatepowerdrain(slot, 1);
@@ -126,7 +126,7 @@ function powershud_beginpowerdrain(slot) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x657
+// Checksum 0x0, Offset: 0x5ff
 // Size: 0x14
 function powershud_endpowerdrain(slot) {
     powershud_updatepowerdrain(slot, 0);
@@ -134,7 +134,7 @@ function powershud_endpowerdrain(slot) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x673
+// Checksum 0x0, Offset: 0x61b
 // Size: 0x3a
 function powershud_beginpowercooldown(slot, var_df05da7990d6888f) {
     powershud_updatepowermeter(slot, 0);
@@ -146,7 +146,7 @@ function powershud_beginpowercooldown(slot, var_df05da7990d6888f) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b5
+// Checksum 0x0, Offset: 0x65d
 // Size: 0x5f
 function powershud_finishpowercooldown(slot, var_df05da7990d6888f) {
     powershud_updatepowermeter(slot, 1000);
@@ -163,7 +163,7 @@ function powershud_finishpowercooldown(slot, var_df05da7990d6888f) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x71c
+// Checksum 0x0, Offset: 0x6c4
 // Size: 0x20
 function powershud_updatepowercooldown(slot, percent) {
     powershud_updatepowermeter(slot, 1000 * percent);
@@ -171,7 +171,7 @@ function powershud_updatepowercooldown(slot, percent) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x744
+// Checksum 0x0, Offset: 0x6ec
 // Size: 0x20
 function powershud_updatepowerdrainprogress(slot, percent) {
     powershud_updatepowermeter(slot, 1000 * percent);
@@ -179,7 +179,7 @@ function powershud_updatepowerdrainprogress(slot, percent) {
 
 // Namespace powershud / scripts\cp_mp\powershud
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x76c
+// Checksum 0x0, Offset: 0x714
 // Size: 0x84
 function powershud_getslotomnvar(slot, var_b09f732395c5d400) {
     if (slot == "scripted") {

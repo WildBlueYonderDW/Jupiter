@@ -17,7 +17,7 @@
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x99e
+// Checksum 0x0, Offset: 0x8ca
 // Size: 0x3b
 function init() {
     if (issharedfuncdefined("manual_turret", "init")) {
@@ -28,7 +28,7 @@ function init() {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e1
+// Checksum 0x0, Offset: 0x90d
 // Size: 0x28
 function weaponcleanupmanualturret(streakinfo, switchresult, weaponobj) {
     if (!istrue(switchresult)) {
@@ -38,8 +38,8 @@ function weaponcleanupmanualturret(streakinfo, switchresult, weaponobj) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa11
-// Size: 0x26
+// Checksum 0x0, Offset: 0x93d
+// Size: 0x25
 function tryusemanualturret(streakname) {
     streakinfo = createstreakinfo(streakname, self);
     return tryusemanualturretfromstruct(streakinfo);
@@ -47,8 +47,8 @@ function tryusemanualturret(streakname) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa40
-// Size: 0x123
+// Checksum 0x0, Offset: 0x96b
+// Size: 0x124
 function tryusemanualturretfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -89,7 +89,7 @@ function tryusemanualturretfromstruct(streakinfo) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6c
+// Checksum 0x0, Offset: 0xa98
 // Size: 0x121
 function manualturret_watchplacement(turret, streakinfo, ignorecancel, var_290b1442271ab369) {
     thread manualturret_delayplacementinstructions(var_290b1442271ab369);
@@ -120,7 +120,7 @@ function manualturret_watchplacement(turret, streakinfo, ignorecancel, var_290b1
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc96
+// Checksum 0x0, Offset: 0xbc2
 // Size: 0x50
 function manualturret_delayplacementinstructions(delaytime) {
     self endon("death_or_disconnect");
@@ -134,7 +134,7 @@ function manualturret_delayplacementinstructions(delaytime) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcee
+// Checksum 0x0, Offset: 0xc1a
 // Size: 0x39
 function manualturret_clearplacementinstructions(var_c1948d1eedabf26c) {
     self endon("cleared_placement");
@@ -147,8 +147,8 @@ function manualturret_clearplacementinstructions(var_c1948d1eedabf26c) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2f
-// Size: 0x2cf
+// Checksum 0x0, Offset: 0xc5b
+// Size: 0x2d3
 function manualturret_create(turrettype, streakinfo) {
     config = level.sentrysettings[turrettype];
     turret = spawnturret("misc_turret", self.origin, level.sentrysettings[turrettype].weaponinfo);
@@ -195,8 +195,8 @@ function manualturret_create(turrettype, streakinfo) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1007
-// Size: 0x774
+// Checksum 0x0, Offset: 0xf37
+// Size: 0x781
 function manualturret_setplaced(turret, marker) {
     config = level.sentrysettings[turret.turrettype];
     turret manualturret_setturretmodel("placed");
@@ -316,8 +316,8 @@ function manualturret_setplaced(turret, marker) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1783
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x16c0
+// Size: 0x7d
 function function_2a4ebbd9d0e941a2(data) {
     engine = scripts\cp_mp\utility\train_utility::function_d6b0a591ac99bd();
     assert(isdefined(engine));
@@ -335,8 +335,8 @@ function function_2a4ebbd9d0e941a2(data) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1809
-// Size: 0x1ed
+// Checksum 0x0, Offset: 0x1745
+// Size: 0x1ec
 function manualturret_setcarried(owner) {
     self endon("kill_turret");
     owner endon("death_or_disconnect");
@@ -387,7 +387,7 @@ function manualturret_setcarried(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19fe
+// Checksum 0x0, Offset: 0x1939
 // Size: 0x64
 function manualturret_setinactive(turret) {
     turret setmode(level.sentrysettings[turret.turrettype].sentrymodeoff);
@@ -399,7 +399,7 @@ function manualturret_setinactive(turret) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a6a
+// Checksum 0x0, Offset: 0x19a5
 // Size: 0x47
 function manualturret_delaydeletemarker(owner, marker) {
     self endon("kill_turret");
@@ -412,8 +412,8 @@ function manualturret_delaydeletemarker(owner, marker) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab9
-// Size: 0x46c
+// Checksum 0x0, Offset: 0x19f4
+// Size: 0x450
 function manualturret_watchuse(owner, triggerobj) {
     self endon("kill_turret");
     self endon("carried_turret");
@@ -493,8 +493,7 @@ function manualturret_watchuse(owner, triggerobj) {
             if (isdefined(player)) {
                 if (player _isalive()) {
                     player manualturret_toggleallowuseactions(1);
-                    var_cf06a44e7221edbb = getdvarint(@"hash_dba4a054e67dd255", 0) == 1;
-                    lastweaponobj = player scripts\cp_mp\utility\weapon_utility::restoreweaponstates(player.lastdroppableweaponobj, var_cf06a44e7221edbb);
+                    lastweaponobj = player scripts\cp_mp\utility\weapon_utility::restoreweaponstates(player.lastdroppableweaponobj);
                     player switchtoweaponimmediate(lastweaponobj);
                 }
                 player clearhighpriorityweapon(player.useweapon);
@@ -523,8 +522,8 @@ function manualturret_watchuse(owner, triggerobj) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f2d
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x1e4c
+// Size: 0x5a
 function manualturret_domonitoredweaponswitch(var_7f214a58689204e8, turretuseweapon) {
     self endon("kill_turret");
     self endon("turret_switch_weapon_timeout");
@@ -538,7 +537,7 @@ function manualturret_domonitoredweaponswitch(var_7f214a58689204e8, turretusewea
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f91
+// Checksum 0x0, Offset: 0x1eaf
 // Size: 0x30
 function manualturret_watchturretusetimeout(timeout) {
     self endon("kill_turret");
@@ -550,8 +549,8 @@ function manualturret_watchturretusetimeout(timeout) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc9
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x1ee7
+// Size: 0xf3
 function manualturret_watchdismantle(owner, dismantleobj) {
     self endon("kill_turret");
     self endon("carried_turret");
@@ -578,7 +577,7 @@ function manualturret_watchdismantle(owner, dismantleobj) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c7
+// Checksum 0x0, Offset: 0x1fe2
 // Size: 0x4e
 function manualturret_applyoverlay(user) {
     user _setvisibiilityomnvarforkillstreak(self.streakinfo.streakname, "on");
@@ -588,7 +587,7 @@ function manualturret_applyoverlay(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x211d
+// Checksum 0x0, Offset: 0x2038
 // Size: 0x38
 function manualturret_removeoverlay(user) {
     user _setvisibiilityomnvarforkillstreak(self.streakinfo.streakname, "off");
@@ -599,26 +598,26 @@ function manualturret_removeoverlay(user) {
 
     // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x215d
+    // Checksum 0x0, Offset: 0x2078
     // Size: 0xbf
     function function_7af27da684141f1e(user) {
         self endon("<dev string:x1c>");
-        self endon("<dev string:x2b>");
-        user endon("<dev string:x3d>");
-        user endon("<dev string:x4f>");
-        level endon("<dev string:x5d>");
-        user notifyonplayercommand("<dev string:x6b>", "<dev string:x7d>");
+        self endon("<dev string:x28>");
+        user endon("<dev string:x37>");
+        user endon("<dev string:x46>");
+        level endon("<dev string:x51>");
+        user notifyonplayercommand("<dev string:x5c>", "<dev string:x6b>");
         while (true) {
-            user waittill("<dev string:x6b>");
-            if (self.reticlestate == "<dev string:x8a>") {
-                user iprintlnbold("<dev string:x98>");
-                self setscriptablepartstate("<dev string:xb1>", "<dev string:xc1>", 0);
-                self.reticlestate = "<dev string:xc7>";
+            user waittill("<dev string:x5c>");
+            if (self.reticlestate == "<dev string:x75>") {
+                user iprintlnbold("<dev string:x80>");
+                self setscriptablepartstate("<dev string:x96>", "<dev string:xa3>", 0);
+                self.reticlestate = "<dev string:xa6>";
                 continue;
             }
-            user iprintlnbold("<dev string:xd6>");
-            self setscriptablepartstate("<dev string:xb1>", "<dev string:xee>", 0);
-            self.reticlestate = "<dev string:x8a>";
+            user iprintlnbold("<dev string:xb2>");
+            self setscriptablepartstate("<dev string:x96>", "<dev string:xc7>", 0);
+            self.reticlestate = "<dev string:x75>";
         }
     }
 
@@ -626,7 +625,7 @@ function manualturret_removeoverlay(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2224
+// Checksum 0x0, Offset: 0x213f
 // Size: 0x73
 function manualturret_disablefire(user, disabletime, enableendons) {
     if (istrue(enableendons)) {
@@ -651,8 +650,8 @@ function manualturret_disablefire(user, disabletime, enableendons) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x229f
-// Size: 0x11b
+// Checksum 0x0, Offset: 0x21ba
+// Size: 0x118
 function manualturret_enableenemyoutlines(user) {
     if (!isdefined(self.enemyoutlineinfos)) {
         self.enemyoutlineinfos = [];
@@ -677,8 +676,8 @@ function manualturret_enableenemyoutlines(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23c2
-// Size: 0x41
+// Checksum 0x0, Offset: 0x22da
+// Size: 0x40
 function manualturret_enableenemyoutlinesonconnect(user) {
     self endon("kill_turret");
     user endon("end_turret_use");
@@ -690,7 +689,7 @@ function manualturret_enableenemyoutlinesonconnect(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x240b
+// Checksum 0x0, Offset: 0x2322
 // Size: 0x49
 function manualturret_removeoutlineondeath(user, var_990e778233dc8cf4, outlineid) {
     self endon("kill_turret");
@@ -704,8 +703,8 @@ function manualturret_removeoutlineondeath(user, var_990e778233dc8cf4, outlineid
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x245c
-// Size: 0x57
+// Checksum 0x0, Offset: 0x2373
+// Size: 0x56
 function manualturret_restoreoutlineonspawn(user, var_990e778233dc8cf4) {
     self endon("kill_turret");
     user endon("end_turret_use");
@@ -721,7 +720,7 @@ function manualturret_restoreoutlineonspawn(user, var_990e778233dc8cf4) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x24bb
+// Checksum 0x0, Offset: 0x23d1
 // Size: 0xbe
 function manualturret_enableenemyoutlineafterprotection(user, var_990e778233dc8cf4, waitforspawn) {
     self endon("kill_turret");
@@ -745,8 +744,8 @@ function manualturret_enableenemyoutlineafterprotection(user, var_990e778233dc8c
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2581
-// Size: 0x9a
+// Checksum 0x0, Offset: 0x2497
+// Size: 0x99
 function manualturret_addtooutlinelist(var_c9a4579b227233f3, playertoadd) {
     outlineinfo = spawnstruct();
     outlineinfo.ent = playertoadd;
@@ -760,8 +759,8 @@ function manualturret_addtooutlinelist(var_c9a4579b227233f3, playertoadd) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2624
-// Size: 0xc3
+// Checksum 0x0, Offset: 0x2539
+// Size: 0xc1
 function manualturret_removefromoutlinelist(var_9d90c26327e3eacd, outlineid) {
     if (!isdefined(self.enemyoutlineinfos)) {
         return;
@@ -781,8 +780,8 @@ function manualturret_removefromoutlinelist(var_9d90c26327e3eacd, outlineid) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ef
-// Size: 0xab
+// Checksum 0x0, Offset: 0x2602
+// Size: 0xa8
 function manualturret_disableenemyoutlines(user) {
     if (!isdefined(self.enemyoutlineinfos)) {
         return;
@@ -797,8 +796,8 @@ function manualturret_disableenemyoutlines(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a2
-// Size: 0x174
+// Checksum 0x0, Offset: 0x26b2
+// Size: 0x156
 function manualturret_endplayeruse(turret) {
     if (isdefined(turret)) {
         turret.inuse = undefined;
@@ -825,8 +824,7 @@ function manualturret_endplayeruse(turret) {
             val::reset_all("nightmap_check");
         }
         if (!scripts\cp_mp\utility\game_utility::isbrstylegametype() || scripts\cp_mp\utility\game_utility::isbrstylegametype() && !istrue(self.inlaststand)) {
-            var_cf06a44e7221edbb = getdvarint(@"hash_dba4a054e67dd255", 0) == 1;
-            lastweaponobj = scripts\cp_mp\utility\weapon_utility::restoreweaponstates(self.lastdroppableweaponobj, var_cf06a44e7221edbb);
+            lastweaponobj = scripts\cp_mp\utility\weapon_utility::restoreweaponstates(self.lastdroppableweaponobj);
             self switchtoweaponimmediate(lastweaponobj);
         }
         _takeweapon(self.useweapon);
@@ -841,7 +839,7 @@ function manualturret_endplayeruse(turret) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x291e
+// Checksum 0x0, Offset: 0x2810
 // Size: 0x54
 function manualturret_disablecrouchpronemantle() {
     self endon("death_or_disconnect");
@@ -854,8 +852,8 @@ function manualturret_disablecrouchpronemantle() {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x297a
-// Size: 0x58
+// Checksum 0x0, Offset: 0x286c
+// Size: 0x57
 function manualturret_disableplayeruseonconnect(owner, useobj) {
     if (isdefined(self)) {
         self endon("kill_turret");
@@ -871,7 +869,7 @@ function manualturret_disableplayeruseonconnect(owner, useobj) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29da
+// Checksum 0x0, Offset: 0x28cb
 // Size: 0x4c
 function manualturret_endturretuseonexecution(user) {
     self endon("kill_turret");
@@ -890,8 +888,8 @@ function manualturret_endturretuseonexecution(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2e
-// Size: 0x82
+// Checksum 0x0, Offset: 0x291f
+// Size: 0x81
 function manualturret_endturretuseonpush(user) {
     self endon("kill_turret");
     self endon("carried_turret");
@@ -913,7 +911,7 @@ function manualturret_endturretuseonpush(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ab8
+// Checksum 0x0, Offset: 0x29a8
 // Size: 0x59
 function manualturret_endturretusewatch(user) {
     self endon("kill_turret");
@@ -935,7 +933,7 @@ function manualturret_endturretusewatch(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b19
+// Checksum 0x0, Offset: 0x2a09
 // Size: 0x34
 function manualturret_endturretonplayer(user) {
     user endon("end_turret_use");
@@ -946,7 +944,7 @@ function manualturret_endturretonplayer(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b55
+// Checksum 0x0, Offset: 0x2a45
 // Size: 0x53
 function manualturret_watchplayerangles(user) {
     self endon("kill_turret");
@@ -962,7 +960,7 @@ function manualturret_watchplayerangles(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bb0
+// Checksum 0x0, Offset: 0x2aa0
 // Size: 0x1b8
 function manualturret_watchpickup(owner) {
     if (!isdefined(owner)) {
@@ -1010,7 +1008,7 @@ function manualturret_watchpickup(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d70
+// Checksum 0x0, Offset: 0x2c60
 // Size: 0x35
 function manualturret_watchdelayedpickup(owner) {
     self endon("kill_turret");
@@ -1022,8 +1020,8 @@ function manualturret_watchdelayedpickup(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dad
-// Size: 0x55
+// Checksum 0x0, Offset: 0x2c9d
+// Size: 0x54
 function manualturret_disableplayerpickuponconnect(turret) {
     turret endon("kill_turret");
     turret endon("carried_turret");
@@ -1037,7 +1035,7 @@ function manualturret_disableplayerpickuponconnect(turret) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e0a
+// Checksum 0x0, Offset: 0x2cf9
 // Size: 0x4c
 function manualturret_watchdamage(owner) {
     if (scripts\engine\utility::issharedfuncdefined("manual_turret", "monitorDamage")) {
@@ -1047,8 +1045,8 @@ function manualturret_watchdamage(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e5e
-// Size: 0x149
+// Checksum 0x0, Offset: 0x2d4d
+// Size: 0x14f
 function manualturret_handledeathdamage(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -1072,8 +1070,8 @@ function manualturret_handledeathdamage(data) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2faf
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x2ea4
+// Size: 0xc5
 function manualturret_modifydamage(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -1089,8 +1087,8 @@ function manualturret_modifydamage(data) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3079
-// Size: 0x84
+// Checksum 0x0, Offset: 0x2f72
+// Size: 0x83
 function manualturret_disableplayerdismantleonconnect(owner) {
     self endon("kill_turret");
     self endon("carried_turret");
@@ -1110,7 +1108,7 @@ function manualturret_disableplayerdismantleonconnect(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3105
+// Checksum 0x0, Offset: 0x2ffd
 // Size: 0x234
 function manualturret_watchdeath(owner) {
     self endon("carried_turret");
@@ -1163,7 +1161,7 @@ function manualturret_watchdeath(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3341
+// Checksum 0x0, Offset: 0x3239
 // Size: 0x22
 function manualturret_watchdeathongameend() {
     self endon("kill_turret");
@@ -1174,7 +1172,7 @@ function manualturret_watchdeathongameend() {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x336b
+// Checksum 0x0, Offset: 0x3263
 // Size: 0x19
 function manualturret_delayscriptabledelete() {
     level endon("game_ended");
@@ -1184,7 +1182,7 @@ function manualturret_delayscriptabledelete() {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x338c
+// Checksum 0x0, Offset: 0x3284
 // Size: 0x136
 function manualturret_watchtimeout(owner) {
     self endon("kill_turret");
@@ -1213,7 +1211,7 @@ function manualturret_watchtimeout(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34ca
+// Checksum 0x0, Offset: 0x33c2
 // Size: 0x192
 function manualturret_watchammotracker(user) {
     self endon("kill_turret");
@@ -1226,7 +1224,7 @@ function manualturret_watchammotracker(user) {
     if (!isdefined(self.hideammoindex)) {
         self.hideammoindex = 1;
     }
-    assertex(isdefined(var_83fb464c27e79a0e) && var_83fb464c27e79a0e > 0, "<dev string:xf5>");
+    assertex(isdefined(var_83fb464c27e79a0e) && var_83fb464c27e79a0e > 0, "turretFireDelay is either not defined or less than 0, make sure your turret weapon has a valid fire time");
     while (user isusingturret()) {
         while (user attackbuttonpressed()) {
             self.streakinfo.shots_fired++;
@@ -1251,7 +1249,7 @@ function manualturret_watchammotracker(user) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3664
+// Checksum 0x0, Offset: 0x355c
 // Size: 0x46
 function manualturret_watchdisown(owner) {
     self endon("kill_turret");
@@ -1263,7 +1261,7 @@ function manualturret_watchdisown(owner) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36b2
+// Checksum 0x0, Offset: 0x35aa
 // Size: 0x45
 function manualturret_disownonaction(turret, action) {
     turret endon("kill_turret");
@@ -1277,8 +1275,8 @@ function manualturret_disownonaction(turret, action) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36ff
-// Size: 0x7b
+// Checksum 0x0, Offset: 0x35f7
+// Size: 0x7a
 function manualturret_setturretmodel(type) {
     turretmodel = undefined;
     if (type == "placed") {
@@ -1286,13 +1284,13 @@ function manualturret_setturretmodel(type) {
     } else {
         turretmodel = level.sentrysettings[self.turrettype].modeldestroyedground;
     }
-    assertex(isdefined(turretmodel), "<dev string:x161>");
+    assertex(isdefined(turretmodel), "For some reason turretModel is not defined, this should never happen");
     self setmodel(turretmodel);
 }
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3782
+// Checksum 0x0, Offset: 0x3679
 // Size: 0x55
 function manualturret_makealltriggersusable(bool) {
     if (!istrue(bool)) {
@@ -1306,7 +1304,7 @@ function manualturret_makealltriggersusable(bool) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37df
+// Checksum 0x0, Offset: 0x36d6
 // Size: 0x93
 function manualturret_toggleallowplacementactions(bool) {
     if (scripts\cp_mp\utility\player_utility::_isalive()) {
@@ -1325,7 +1323,7 @@ function manualturret_toggleallowplacementactions(bool) {
 
 // Namespace manual_turret / scripts\cp_mp\killstreaks\manual_turret
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x387a
+// Checksum 0x0, Offset: 0x3771
 // Size: 0x6f
 function manualturret_toggleallowuseactions(bool) {
     if (scripts\cp_mp\utility\player_utility::_isalive()) {

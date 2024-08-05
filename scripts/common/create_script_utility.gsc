@@ -5,7 +5,7 @@
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44c
+// Checksum 0x0, Offset: 0x378
 // Size: 0x9
 function initialize_create_script() {
     init_create_script_for_level();
@@ -13,7 +13,7 @@ function initialize_create_script() {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x45d
+// Checksum 0x0, Offset: 0x389
 // Size: 0x9c
 function init_create_script_for_level(var_d118031db9b990aa) {
     if (isdefined(level.scripted_spawner_func)) {
@@ -36,8 +36,8 @@ function init_create_script_for_level(var_d118031db9b990aa) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x501
-// Size: 0x90
+// Checksum 0x0, Offset: 0x42d
+// Size: 0x8f
 function initialize_registered_create_script_files() {
     if (isdefined(level.scripted_spawner_func)) {
         level.cs_creation_counter = 0;
@@ -57,7 +57,7 @@ function initialize_registered_create_script_files() {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x599
+// Checksum 0x0, Offset: 0x4c4
 // Size: 0x8c
 function register_create_script_arrays(script, map, index, func) {
     if (isdefined(func)) {
@@ -76,7 +76,7 @@ function register_create_script_arrays(script, map, index, func) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62d
+// Checksum 0x0, Offset: 0x558
 // Size: 0x42
 function initialize_create_script_file(file_name) {
     if (flag_exist(file_name)) {
@@ -90,7 +90,7 @@ function initialize_create_script_file(file_name) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x677
+// Checksum 0x0, Offset: 0x5a2
 // Size: 0x3b
 function register_valid_gametypes_for_create_script(allowed_gametype) {
     if (!isdefined(level.allowed_gametypes)) {
@@ -101,7 +101,7 @@ function register_valid_gametypes_for_create_script(allowed_gametype) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ba
+// Checksum 0x0, Offset: 0x5e5
 // Size: 0x3b
 function register_valid_objectives_for_create_script(allowed_objective) {
     if (!isdefined(level.allowed_objectives)) {
@@ -112,8 +112,8 @@ function register_valid_objectives_for_create_script(allowed_objective) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fd
-// Size: 0x1cc
+// Checksum 0x0, Offset: 0x628
+// Size: 0x1cb
 function strike_setup_arrays(index, cs_file) {
     if (!isdefined(level.scripted_spawners)) {
         level.scripted_spawners = [];
@@ -165,8 +165,8 @@ function strike_setup_arrays(index, cs_file) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d1
-// Size: 0x1cc
+// Checksum 0x0, Offset: 0x7fb
+// Size: 0x1cb
 function cs_setup_arrays(index, cs_file) {
     if (!isdefined(level.scripted_spawners)) {
         level.scripted_spawners = [];
@@ -218,8 +218,8 @@ function cs_setup_arrays(index, cs_file) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 16, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa5
-// Size: 0x41f
+// Checksum 0x0, Offset: 0x9ce
+// Size: 0x41e
 function strike_additem(struct, index, cs_file, origin, angles, targetname, target, script_noteworthy, script_linkto, script_linkname, var_a1306ee53c20150f, var_e3c2f7a7f3d4cce6, radius, speed, spawnflags, script_unload) {
     level endon("game_ended");
     if (!struct object_is_valid()) {
@@ -337,8 +337,8 @@ function strike_additem(struct, index, cs_file, origin, angles, targetname, targ
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xecc
-// Size: 0x149
+// Checksum 0x0, Offset: 0xdf4
+// Size: 0x14b
 function object_is_valid() {
     gametype_allowed = 0;
     objective_allowed = 0;
@@ -385,7 +385,7 @@ function object_is_valid() {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x101e
+// Checksum 0x0, Offset: 0xf48
 // Size: 0x3e
 function is_object_allowed_in_gametype(stringlist, gametype) {
     if (!isdefined(stringlist) || stringlist == "" || !isdefined(gametype) || gametype == "") {
@@ -396,8 +396,8 @@ function is_object_allowed_in_gametype(stringlist, gametype) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1065
-// Size: 0xf1
+// Checksum 0x0, Offset: 0xf8f
+// Size: 0xf2
 function translate_position_with_offset_data(cs_file, struct, var_5f0a2cdf1e857bac, var_82b752b102f67a72) {
     translate_and_rotate_from_level_overrides(cs_file, struct);
     if (isdefined(var_5f0a2cdf1e857bac)) {
@@ -420,8 +420,8 @@ function translate_position_with_offset_data(cs_file, struct, var_5f0a2cdf1e857b
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x115e
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x1089
+// Size: 0x112
 function translate_and_rotate_from_level_overrides(cs_file, struct) {
     if (isdefined(cs_file) && isdefined(level.cs_origin_offset) && isdefined(level.cs_angle_offset[cs_file])) {
         var_82b752b102f67a72 = level.cs_angle_offset[cs_file];
@@ -442,7 +442,7 @@ function translate_and_rotate_from_level_overrides(cs_file, struct) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1275
+// Checksum 0x0, Offset: 0x11a3
 // Size: 0x115
 function strike_add_to_cs_arrays(var_3215b787c2be06c8, struct, index) {
     if (!getdvarint(@"hash_ad6e2fed4a549f49", 0)) {
@@ -460,11 +460,11 @@ function strike_add_to_cs_arrays(var_3215b787c2be06c8, struct, index) {
             level.cs_scripted_spawners[index][level.cs_scripted_spawners[index].size] = struct;
             return;
         }
-        if (var_3215b787c2be06c8 == "<dev string:x26>") {
+        if (var_3215b787c2be06c8 == "<dev string:x23>") {
             level.cs_scripted_spawners_triggers[index][level.cs_scripted_spawners_triggers[index].size] = struct;
             return;
         }
-        if (var_3215b787c2be06c8 == "<dev string:x31>") {
+        if (var_3215b787c2be06c8 == "<dev string:x2b>") {
             level.cs_scripted_spawners_models[index][level.cs_scripted_spawners_models[index].size] = struct;
         }
     #/
@@ -472,7 +472,7 @@ function strike_add_to_cs_arrays(var_3215b787c2be06c8, struct, index) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1392
+// Checksum 0x0, Offset: 0x12c0
 // Size: 0x1b
 function strike_interactioncreate(struct, index) {
     addstruct(struct);
@@ -480,8 +480,8 @@ function strike_interactioncreate(struct, index) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b5
-// Size: 0x185
+// Checksum 0x0, Offset: 0x12e3
+// Size: 0x184
 function strike_scriptorigincreate(struct, index) {
     model = spawn("script_origin", struct.origin);
     if (!isdefined(struct.angles)) {
@@ -515,8 +515,8 @@ function strike_scriptorigincreate(struct, index) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1542
-// Size: 0x1bd
+// Checksum 0x0, Offset: 0x146f
+// Size: 0x1bc
 function strike_modelcreate(struct, index) {
     strike_add_to_cs_arrays("model", struct, index);
     if (!isdefined(struct.angles)) {
@@ -553,7 +553,7 @@ function strike_modelcreate(struct, index) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1707
+// Checksum 0x0, Offset: 0x1633
 // Size: 0x20c
 function strike_triggercreate(struct, index, var_edb06d254fff788c, noent_volume) {
     strike_add_to_cs_arrays("trigger", struct, index);
@@ -589,7 +589,7 @@ function strike_triggercreate(struct, index, var_edb06d254fff788c, noent_volume)
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x191b
+// Checksum 0x0, Offset: 0x1847
 // Size: 0x254
 function strike_triggerassignvalues(struct) {
     if (!isdefined(struct.angles)) {
@@ -645,8 +645,8 @@ function strike_triggerassignvalues(struct) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b77
-// Size: 0x186
+// Checksum 0x0, Offset: 0x1aa3
+// Size: 0x185
 function strike_fixautokvps(struct, index) {
     if (isdefined(struct.target) && issubstr(struct.target, "auto")) {
         struct.target = "CS|" + index + struct.target;
@@ -657,7 +657,7 @@ function strike_fixautokvps(struct, index) {
     if (isdefined(struct.script_linkto)) {
         new_linkto = "";
         str_toks = strtok(struct.script_linkto, " ");
-        foreach (new_index, tok in str_toks) {
+        foreach (tok in str_toks) {
             if (new_index != 0) {
                 new_linkto = new_linkto + " " + "CS|" + index + tok;
                 continue;
@@ -673,8 +673,8 @@ function strike_fixautokvps(struct, index) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d05
-// Size: 0xb3c
+// Checksum 0x0, Offset: 0x1c30
+// Size: 0xb11
 function typecast_kvps(struct) {
     if (scripts\engine\utility::issharedfuncdefined("createScript", "typeCast")) {
         if (istrue(struct scripts\engine\utility::function_f3bb4f4911a1beb2("createScript", "typeCast"))) {
@@ -864,9 +864,6 @@ function typecast_kvps(struct) {
     if (isdefined(struct.count)) {
         struct.count = int(struct.count);
     }
-    if (isdefined(struct.script_index)) {
-        struct.script_index = int(struct.script_index);
-    }
     if (isdefined(struct.script_faceangles)) {
         if (isstring(struct.script_faceangles) && (struct.script_faceangles == "true" || struct.script_faceangles == "1")) {
             struct.script_faceangles = 1;
@@ -888,7 +885,7 @@ function typecast_kvps(struct) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2849
+// Checksum 0x0, Offset: 0x2749
 // Size: 0x34
 function cs_is_starttime() {
     if (utility::iscp()) {
@@ -899,7 +896,7 @@ function cs_is_starttime() {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2885
+// Checksum 0x0, Offset: 0x2785
 // Size: 0x73
 function cs_init_flags(newitem) {
     if (!flag_exist("strike_init_done")) {
@@ -916,7 +913,7 @@ function cs_init_flags(newitem) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2900
+// Checksum 0x0, Offset: 0x2800
 // Size: 0x59
 function cs_flags_init(newitem) {
     if (!flag_exist("strike_init_done")) {
@@ -931,7 +928,7 @@ function cs_flags_init(newitem) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2961
+// Checksum 0x0, Offset: 0x2861
 // Size: 0x86
 function wait_for_flags(newitem, complete_flag) {
     if (newitem ent_flag_exist("cs_structs_complete")) {
@@ -951,7 +948,7 @@ function wait_for_flags(newitem, complete_flag) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29ef
+// Checksum 0x0, Offset: 0x28ef
 // Size: 0x6c
 function endcreatescript(newitem) {
     if (isdefined(level.createscriptfilesinitialized)) {
@@ -968,7 +965,7 @@ function endcreatescript(newitem) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a63
+// Checksum 0x0, Offset: 0x2963
 // Size: 0x39
 function wait_for_cs_flag(waittill_flag) {
     level endon("game_ended");
@@ -981,8 +978,8 @@ function wait_for_cs_flag(waittill_flag) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2aa4
-// Size: 0x8d
+// Checksum 0x0, Offset: 0x29a4
+// Size: 0x8e
 function should_wait_for_cs_flag(waittill_flag) {
     toks = strtok(getdvar(@"hash_db88b998734440cc", ""), " ");
     toks = array_combine(toks, level.active_cs_files);
@@ -1003,7 +1000,7 @@ function should_wait_for_cs_flag(waittill_flag) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b3a
+// Checksum 0x0, Offset: 0x2a3b
 // Size: 0x3f
 function register_cs_offsets(cs_file, origin_offset, angle_offset) {
     if (isdefined(origin_offset)) {
@@ -1016,7 +1013,7 @@ function register_cs_offsets(cs_file, origin_offset, angle_offset) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b81
+// Checksum 0x0, Offset: 0x2a82
 // Size: 0x21
 function set_cs_file_dvar(file_name) {
     level.active_cs_files[level.active_cs_files.size] = file_name;
@@ -1024,8 +1021,8 @@ function set_cs_file_dvar(file_name) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2baa
-// Size: 0xc8
+// Checksum 0x0, Offset: 0x2aab
+// Size: 0xc9
 function cleanup_cs_file_objects(cs_file) {
     flag_clear(cs_file + "_completed");
     flag_clear(cs_file);
@@ -1046,8 +1043,8 @@ function cleanup_cs_file_objects(cs_file) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2c7a
-// Size: 0x182
+// Checksum 0x0, Offset: 0x2b7c
+// Size: 0x189
 function private clean_cs_file_structs_array(type, cs_file) {
     if (!flag_exist("clean_cs_file_structs_array")) {
         level.var_f21943413f226f76 = 0;
@@ -1087,8 +1084,8 @@ function private clean_cs_file_structs_array(type, cs_file) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e05
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x2d0e
+// Size: 0x9f
 function function_71a564b3bc009618(cs_file) {
     types = ["targetname", "target", "script_noteworthy", "script_linkname", "variantname"];
     var_5f8f62a5487a6e5d = 0;
@@ -1101,7 +1098,7 @@ function function_71a564b3bc009618(cs_file) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eae
+// Checksum 0x0, Offset: 0x2db6
 // Size: 0x7
 function s() {
     return spawnstruct();
@@ -1109,8 +1106,8 @@ function s() {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ebe
-// Size: 0x2aa
+// Checksum 0x0, Offset: 0x2dc6
+// Size: 0x2ab
 function spawn_cover_nodes(struct_targetname) {
     node_structs = getstructarray(struct_targetname, "targetname");
     foreach (struct in node_structs) {
@@ -1167,8 +1164,8 @@ function spawn_cover_nodes(struct_targetname) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3171
-// Size: 0x90
+// Checksum 0x0, Offset: 0x307a
+// Size: 0x8e
 function delete_covernodes(struct_targetname) {
     node_structs = getstructarray(struct_targetname, "targetname");
     foreach (struct in node_structs) {
@@ -1181,8 +1178,8 @@ function delete_covernodes(struct_targetname) {
 
 // Namespace namespace_1eca03131f47ef0e / scripts\common\create_script_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3209
-// Size: 0x28
+// Checksum 0x0, Offset: 0x3110
+// Size: 0x27
 function function_b055d49370405173() {
     return_value = level.var_fd1365ce671037db;
     level.var_fd1365ce671037db++;

@@ -4,7 +4,6 @@
 #using scripts\common\values.gsc;
 #using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_13865ca76df87ea;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
@@ -23,8 +22,8 @@
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x699
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x56a
+// Size: 0xce
 function init() {
     if (issharedfuncdefined("cluster_spike", "init")) {
         [[ getsharedfunc("cluster_spike", "init") ]]();
@@ -43,13 +42,12 @@ function init() {
     level function_b7b736eb11aac7df();
     function_a41e3a211a9e37a4("cluster_spike", bundle.deployweapon, #"medium");
     function_a41e3a211a9e37a4("cluster_spike", bundle.spawnweapon, #"medium");
-    function_a41e3a211a9e37a4("cluster_spike", "cluster_spike_mp_v2063", #"medium");
 }
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78a
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x640
+// Size: 0xb5
 function function_ddb866cc574674c0(bundle) {
     level.clusterspikes = [];
     level.var_c255eb9109a38f9f = 0;
@@ -63,7 +61,7 @@ function function_ddb866cc574674c0(bundle) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x849
+// Checksum 0x0, Offset: 0x6fd
 // Size: 0x69
 function function_1ceb81f4abe9cc5e() {
     level.var_ff6ea90ecf04638b = "clusterSpike_placement";
@@ -72,7 +70,7 @@ function function_1ceb81f4abe9cc5e() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ba
+// Checksum 0x0, Offset: 0x76e
 // Size: 0x2
 function function_9d6b4ec9f5809bc5() {
     
@@ -80,7 +78,7 @@ function function_9d6b4ec9f5809bc5() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c4
+// Checksum 0x0, Offset: 0x778
 // Size: 0x2
 function function_b7fe23eb11f96086() {
     
@@ -88,7 +86,7 @@ function function_b7fe23eb11f96086() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ce
+// Checksum 0x0, Offset: 0x782
 // Size: 0x2
 function function_b7b736eb11aac7df() {
     
@@ -96,7 +94,7 @@ function function_b7b736eb11aac7df() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d8
+// Checksum 0x0, Offset: 0x78c
 // Size: 0x21
 function function_bde7fd6853600da4(streakinfo, switchresult) {
     if (istrue(switchresult)) {
@@ -106,8 +104,8 @@ function function_bde7fd6853600da4(streakinfo, switchresult) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x901
-// Size: 0x80
+// Checksum 0x0, Offset: 0x7b5
+// Size: 0x7f
 function function_736a390857671cae(streakinfo) {
     self endon("disconnect");
     self notifyonplayercommand("cancel_deploy", "+actionslot 3");
@@ -123,7 +121,7 @@ function function_736a390857671cae(streakinfo) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x989
+// Checksum 0x0, Offset: 0x83c
 // Size: 0x32
 function function_ee88b06e55dd9ca3(streakinfo) {
     if (istrue(streakinfo.var_96eb72336f27bc9e)) {
@@ -133,7 +131,7 @@ function function_ee88b06e55dd9ca3(streakinfo) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c3
+// Checksum 0x0, Offset: 0x876
 // Size: 0x7d
 function function_baff78978772ecec(streakinfo, weaponobj, projectile) {
     projectile thread function_ae64d36f507aca45(self, streakinfo, weaponobj);
@@ -147,8 +145,8 @@ function function_baff78978772ecec(streakinfo, weaponobj, projectile) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa49
-// Size: 0x21
+// Checksum 0x0, Offset: 0x8fc
+// Size: 0x20
 function function_43fcf054875c96c5() {
     streakinfo = createstreakinfo("cluster_spike", self);
     return function_4d4dfa5c57455df0(streakinfo);
@@ -156,8 +154,8 @@ function function_43fcf054875c96c5() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa73
-// Size: 0x1ea
+// Checksum 0x0, Offset: 0x925
+// Size: 0x1ba
 function function_4d4dfa5c57455df0(streakinfo) {
     bundle = level.streakglobals.streakbundles["cluster_spike"];
     level endon("game_ended");
@@ -170,9 +168,7 @@ function function_4d4dfa5c57455df0(streakinfo) {
     if (isdefined(level.var_ff6ea90ecf04638b)) {
         streakinfo.var_fb58a31c756db4cc = level.var_ff6ea90ecf04638b;
     }
-    var_9b32d1936831f5aa = function_71efed8bf57f1d39(bundle, streakinfo.mpstreaksysteminfo.blueprintindex);
-    deployweapon = function_dd2a4fb3522f314(var_9b32d1936831f5aa, #"deployweapon");
-    deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_doweaponfireddeploy(streakinfo, deployweapon, "grenade_fire", undefined, &function_bde7fd6853600da4, &function_baff78978772ecec, undefined, &function_ee88b06e55dd9ca3);
+    deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_doweaponfireddeploy(streakinfo, makeweapon(bundle.deployweapon), "grenade_fire", undefined, &function_bde7fd6853600da4, &function_baff78978772ecec, undefined, &function_ee88b06e55dd9ca3);
     if (!istrue(deployresult)) {
         return false;
     }
@@ -203,8 +199,8 @@ function function_4d4dfa5c57455df0(streakinfo) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc66
-// Size: 0x29d
+// Checksum 0x0, Offset: 0xae8
+// Size: 0x272
 function function_ae64d36f507aca45(player, streakinfo, weaponobj) {
     level endon("game_ended");
     ownedmines = function_a868fa9dc357d535(player);
@@ -228,7 +224,6 @@ function function_ae64d36f507aca45(player, streakinfo, weaponobj) {
     level endon("removed_" + self.clusterid);
     self waittill("missile_stuck");
     killstreak_dangernotifyplayersinrange(self.owner, self.team, 1200, "cluster_spike", self.origin);
-    function_ae53424c3a02628d(bundle, self.origin, self.owner, self.team, self.lifetime);
     if (isdefined(level.var_ca4e08767cbdae12)) {
         canplant = self [[ level.var_ca4e08767cbdae12 ]]();
         if (!canplant) {
@@ -250,13 +245,13 @@ function function_ae64d36f507aca45(player, streakinfo, weaponobj) {
         }
     #/
     thread function_31be5250a8292b48();
-    thread function_bdde9fcc527c241b(immediaterelease, streakinfo);
+    thread function_bdde9fcc527c241b(immediaterelease);
 }
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xf0b
-// Size: 0x3a9
+// Checksum 0x0, Offset: 0xd62
+// Size: 0x395
 function function_cc8b9ef243e90347(clusterspike, weaponobj, streakinfo, bundle, owner, lifetimeOverride, maindevice) {
     level.var_c255eb9109a38f9f++;
     clusterspike.bundle = bundle;
@@ -266,7 +261,7 @@ function function_cc8b9ef243e90347(clusterspike, weaponobj, streakinfo, bundle, 
     clusterspike.clusterid = clusterspike.ownerid + "_" + level.var_c255eb9109a38f9f;
     clusterspike.maindevice = istrue(maindevice);
     clusterspike.weapon_name = weaponobj.basename;
-    clusterspike.killstreakref = "cluster_spike";
+    clusterspike.equipmentref = "cluster_spike";
     clusterspike.weapon_object = weaponobj;
     clusterspike.health = 99999;
     clusterspike.maxhealth = bundle.maxhealth;
@@ -292,7 +287,6 @@ function function_cc8b9ef243e90347(clusterspike, weaponobj, streakinfo, bundle, 
     if (issharedfuncdefined("emp", "setEMP_Cleared_Callback")) {
         clusterspike [[ getsharedfunc("emp", "setEMP_Cleared_Callback") ]](&function_1d0735b9c8b14634);
     }
-    clusterspike.deletefunc = &function_af4dc22e59f3b17;
     clusterspike namespace_b6b4a3ac458ab6e2::function_172d848d58051fdf(&function_7558c2019a377bd9);
     clusterspike scripts\cp_mp\emp_debuff::set_start_emp_callback(&function_4d7b7570ddab816d);
     clusterspike scripts\cp_mp\emp_debuff::set_apply_emp_callback(&function_cae5c83763020435);
@@ -312,7 +306,7 @@ function function_cc8b9ef243e90347(clusterspike, weaponobj, streakinfo, bundle, 
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12bc
+// Checksum 0x0, Offset: 0x10ff
 // Size: 0x4e
 function function_4d7b7570ddab816d(data) {
     if (isdefined(self) && !istrue(self.isexploding) || getdvarint(@"hash_58254c61de76bffe", 0)) {
@@ -323,7 +317,7 @@ function function_4d7b7570ddab816d(data) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1312
+// Checksum 0x0, Offset: 0x1155
 // Size: 0x4d
 function function_cae5c83763020435(data) {
     if (isdefined(self) && !istrue(self.isexploding) || getdvarint(@"hash_58254c61de76bffe", 0)) {
@@ -333,7 +327,7 @@ function function_cae5c83763020435(data) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1367
+// Checksum 0x0, Offset: 0x11aa
 // Size: 0x3a
 function function_1d0735b9c8b14634(data) {
     if (isdefined(self) || !istrue(self.isexploding)) {
@@ -344,7 +338,7 @@ function function_1d0735b9c8b14634(data) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a9
+// Checksum 0x0, Offset: 0x11ec
 // Size: 0x48
 function function_7558c2019a377bd9(data) {
     if (istrue(self.isexploding)) {
@@ -358,23 +352,15 @@ function function_7558c2019a377bd9(data) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f9
+// Checksum 0x0, Offset: 0x123c
 // Size: 0xf
 function function_b89726dbbc1c74f6() {
     thread clusterspike_explode("destroy");
 }
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1410
-// Size: 0xf
-function function_af4dc22e59f3b17() {
-    thread clusterspike_explode("destroy");
-}
-
-// Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1427
+// Checksum 0x0, Offset: 0x1253
 // Size: 0xdb
 function clusterspike_explode(explodestate) {
     if (istrue(self.isexploding)) {
@@ -401,7 +387,7 @@ function clusterspike_explode(explodestate) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x150a
+// Checksum 0x0, Offset: 0x1336
 // Size: 0xf0
 function function_b53e15638ce719b2(wasdestroyed) {
     level endon("game_ended");
@@ -428,8 +414,8 @@ function function_b53e15638ce719b2(wasdestroyed) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1602
-// Size: 0x14b
+// Checksum 0x0, Offset: 0x142e
+// Size: 0x14c
 function function_723aa6329b751bc7(victim, inflictor, objweapon, meansofdeath, damage) {
     bundle = level.streakglobals.streakbundles["cluster_spike"];
     if (isdefined(inflictor) && isdefined(inflictor.damageoverwrite)) {
@@ -470,7 +456,7 @@ function function_723aa6329b751bc7(victim, inflictor, objweapon, meansofdeath, d
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1756
+// Checksum 0x0, Offset: 0x1583
 // Size: 0x5d
 function function_a868fa9dc357d535(owner) {
     if (isagent(owner)) {
@@ -481,7 +467,7 @@ function function_a868fa9dc357d535(owner) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17bb
+// Checksum 0x0, Offset: 0x15e8
 // Size: 0x46
 function function_31be5250a8292b48() {
     self endon("explode_cluster_spike");
@@ -493,8 +479,8 @@ function function_31be5250a8292b48() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1809
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x1636
+// Size: 0x59
 function function_76424b83e8eccb98() {
     self endon("explode_cluster_spike");
     level endon("game_ended");
@@ -506,7 +492,7 @@ function function_76424b83e8eccb98() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x186b
+// Checksum 0x0, Offset: 0x1697
 // Size: 0x38
 function function_61ad64f233f8040a() {
     self endon("explode_cluster_spike");
@@ -518,8 +504,8 @@ function function_61ad64f233f8040a() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ab
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x16d7
+// Size: 0xc1
 function function_fd6a27936d8258f4() {
     self endon("explode_cluster_spike");
     level endon("game_ended");
@@ -539,7 +525,7 @@ function function_fd6a27936d8258f4() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1971
+// Checksum 0x0, Offset: 0x17a0
 // Size: 0x3d
 function function_2f8d16ebd367c6e7(clusterid) {
     self endon("explode_cluster_spike");
@@ -556,8 +542,8 @@ function function_2f8d16ebd367c6e7(clusterid) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b6
-// Size: 0x334
+// Checksum 0x0, Offset: 0x17e5
+// Size: 0x33e
 function function_fb3d88b9443dd19c() {
     self endon("explode_cluster_spike");
     level endon("game_ended");
@@ -612,8 +598,8 @@ function function_fb3d88b9443dd19c() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf2
-// Size: 0x1fb
+// Checksum 0x0, Offset: 0x1b2b
+// Size: 0x1bf
 function function_31edd36326bada17(var_632c2d9d36540b99) {
     self endon("explode_cluster_spike");
     level endon("game_ended");
@@ -661,9 +647,6 @@ function function_31edd36326bada17(var_632c2d9d36540b99) {
                 if (!ent _isalive()) {
                     continue;
                 }
-                if (istrue(ent.var_8eaa5f2e840b1665) && isdefined(ent.minedelayseconds) && ent.minedelayseconds > 0) {
-                    wait ent.minedelayseconds;
-                }
                 function_94d34a6ffa8cd741();
                 break;
             }
@@ -672,10 +655,10 @@ function function_31edd36326bada17(var_632c2d9d36540b99) {
 }
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef5
-// Size: 0x156
-function function_6360197cfe54c18e(immediaterelease, streakinfo) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x1cf2
+// Size: 0x10d
+function function_6360197cfe54c18e(immediaterelease) {
     clusterowner = self.owner;
     clusterowner endon("disconnect");
     level endon("game_ended");
@@ -689,38 +672,35 @@ function function_6360197cfe54c18e(immediaterelease, streakinfo) {
         if (!istrue(immediaterelease)) {
             lifetimeOverride = self.bundle.var_11bd502e73321e11;
         }
-        var_9b32d1936831f5aa = function_71efed8bf57f1d39(bundle, streakinfo.mpstreaksysteminfo.blueprintindex);
-        spawnweapon = function_dd2a4fb3522f314(var_9b32d1936831f5aa, #"spawnweapon");
-        function_cc8b9ef243e90347(grenade, spawnweapon, self.streakinfo, bundle, self.owner, lifetimeOverride);
-        grenade thread function_daff421c657d09ca(immediaterelease, bundle);
+        function_cc8b9ef243e90347(grenade, objweapon, self.streakinfo, bundle, self.owner, lifetimeOverride);
+        grenade thread function_daff421c657d09ca(immediaterelease);
         break;
     }
 }
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2053
-// Size: 0x73
-function function_daff421c657d09ca(var_f92dd6ce11a58204, bundle) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x1e07
+// Size: 0x3f
+function function_daff421c657d09ca(var_f92dd6ce11a58204) {
     self endon("explode_cluster_spike");
     level endon("game_ended");
     level endon("removed_" + self.clusterid);
     if (istrue(var_f92dd6ce11a58204)) {
         self waittill("missile_stuck");
     }
-    function_ae53424c3a02628d(bundle, self.origin, self.owner, self.team, self.lifetime);
     thread function_31edd36326bada17();
 }
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ce
-// Size: 0x63
-function function_bdde9fcc527c241b(immediaterelease, streakinfo) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x1e4e
+// Size: 0x59
+function function_bdde9fcc527c241b(immediaterelease) {
     self endon("explode_cluster_spike");
     level endon("game_ended");
     level endon("removed_" + self.clusterid);
-    thread function_e328684112fe03c5(immediaterelease, streakinfo);
+    thread function_e328684112fe03c5(immediaterelease);
     var_632c2d9d36540b99 = 0;
     if (!istrue(immediaterelease)) {
         var_632c2d9d36540b99 = 1;
@@ -730,10 +710,10 @@ function function_bdde9fcc527c241b(immediaterelease, streakinfo) {
 }
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2139
-// Size: 0x1db
-function function_e328684112fe03c5(immediaterelease, streakinfo) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x1eaf
+// Size: 0x19c
+function function_e328684112fe03c5(immediaterelease) {
     self endon("explode_cluster_spike");
     level endon("game_ended");
     level endon("removed_" + self.clusterid);
@@ -752,11 +732,9 @@ function function_e328684112fe03c5(immediaterelease, streakinfo) {
         launchgoal = mineorigin + anglestoup(self.angles) * 200 + launchdir * 300;
         launchvelocity = launchgoal - mineorigin;
         if (isdefined(self) && isdefined(self.owner)) {
-            thread function_6360197cfe54c18e(immediaterelease, streakinfo);
-            var_9b32d1936831f5aa = function_71efed8bf57f1d39(self.bundle, streakinfo.mpstreaksysteminfo.blueprintindex);
-            spawnweapon = function_dd2a4fb3522f314(var_9b32d1936831f5aa, #"spawnweapon");
+            thread function_6360197cfe54c18e(immediaterelease);
             if (issharedfuncdefined("weapons", "_launchGrenade")) {
-                self.owner [[ getsharedfunc("weapons", "_launchGrenade") ]](spawnweapon, launchstart, launchvelocity, fusetime);
+                self.owner [[ getsharedfunc("weapons", "_launchGrenade") ]](self.bundle.spawnweapon, launchstart, launchvelocity, fusetime);
             }
         }
         wait 0.05;
@@ -766,7 +744,7 @@ function function_e328684112fe03c5(immediaterelease, streakinfo) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x231c
+// Checksum 0x0, Offset: 0x2053
 // Size: 0xf
 function function_94d34a6ffa8cd741() {
     thread clusterspike_explode("explode");
@@ -774,7 +752,7 @@ function function_94d34a6ffa8cd741() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2333
+// Checksum 0x0, Offset: 0x206a
 // Size: 0x7e
 function function_7fb05833db79cf2d(vehicle, mine) {
     mine endon("mine_destroyed");
@@ -791,8 +769,8 @@ function function_7fb05833db79cf2d(vehicle, mine) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23b9
-// Size: 0x100
+// Checksum 0x0, Offset: 0x20f0
+// Size: 0xff
 function function_ff273de0f0971ad(vehicle) {
     self setentityowner(self.owner);
     self clearscriptabledamageowner();
@@ -816,8 +794,8 @@ function function_ff273de0f0971ad(vehicle) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24c1
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x21f7
+// Size: 0x4d
 function function_60dface26506153e(weaponref) {
     bundle = level.streakglobals.streakbundles["cluster_spike"];
     return weaponref == bundle.deployweapon || weaponref == bundle.spawnweapon;
@@ -825,7 +803,7 @@ function function_60dface26506153e(weaponref) {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2518
+// Checksum 0x0, Offset: 0x224d
 // Size: 0xf
 function function_9537ab94dab9a1c0() {
     thread clusterspike_explode("destroy");
@@ -833,7 +811,7 @@ function function_9537ab94dab9a1c0() {
 
 // Namespace cluster_spike / namespace_39febbb7a6990e45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x252f
+// Checksum 0x0, Offset: 0x2264
 // Size: 0x15
 function function_49197cd063a740ea(callbackfunction) {
     self.var_d1659ed0a33bf98f = callbackfunction;
@@ -843,12 +821,12 @@ function function_49197cd063a740ea(callbackfunction) {
 
     // Namespace cluster_spike / namespace_39febbb7a6990e45
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x254c
-    // Size: 0x78
+    // Checksum 0x0, Offset: 0x2281
+    // Size: 0x77
     function function_b6f9b15b3da67aa0() {
-        self endon("<dev string:x94>");
-        level endon("<dev string:xad>");
-        level endon("<dev string:xbb>" + self.clusterid);
+        self endon("<dev string:x91>");
+        level endon("<dev string:xa7>");
+        level endon("<dev string:xb2>" + self.clusterid);
         while (true) {
             triggerdebug = getdvarint(@"hash_ecade10f325e63e6", 0);
             if (!triggerdebug) {
@@ -858,7 +836,7 @@ function function_49197cd063a740ea(callbackfunction) {
             break;
         }
         setdvar(@"hash_ecade10f325e63e6", 0);
-        self notify("<dev string:xc7>", [self.owner]);
+        self notify("<dev string:xbb>", [self.owner]);
     }
 
 #/

@@ -9,7 +9,7 @@
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1db
+// Checksum 0x0, Offset: 0x17c
 // Size: 0x143
 function addtosystem() {
     if (!isdefined(level.battlechatter)) {
@@ -40,8 +40,8 @@ function addtosystem() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x326
-// Size: 0x94
+// Checksum 0x0, Offset: 0x2c7
+// Size: 0x93
 function function_848612e5b224425b(var_c6910a7018189965, var_4189af81d34b8804, var_10e927a072c477b) {
     var_e530e91be23a6bc9 = tolower(default_to(var_c6910a7018189965, self.script_friendname));
     self.battlechatter.countryid = var_e530e91be23a6bc9;
@@ -55,7 +55,7 @@ function function_848612e5b224425b(var_c6910a7018189965, var_4189af81d34b8804, v
 
     // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3c2
+    // Checksum 0x0, Offset: 0x362
     // Size: 0x20
     function function_ffd2cfb5b8a113ac(text, duration) {
         thread function_c3cc4c3fb0ac344c(text, duration);
@@ -63,7 +63,7 @@ function function_848612e5b224425b(var_c6910a7018189965, var_4189af81d34b8804, v
 
     // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3ea
+    // Checksum 0x0, Offset: 0x38a
     // Size: 0x62
     function private function_c3cc4c3fb0ac344c(text, duration) {
         self endon("<dev string:x1c>");
@@ -80,15 +80,15 @@ function function_848612e5b224425b(var_c6910a7018189965, var_4189af81d34b8804, v
 
     // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x454
-    // Size: 0xa7
+    // Checksum 0x0, Offset: 0x3f4
+    // Size: 0xa5
     function private function_c911f04ca7e627e8() {
         self endon("<dev string:x1c>");
         self.var_446bf46cbf43cf30 = [];
         for (;;) {
             height = 30;
             foreach (debugln in self.var_446bf46cbf43cf30) {
-                print3d(self gettagorigin("<dev string:x25>") + (0, 0, height), debugln, (1, 1, 1), 1, 0.5, 1, 1);
+                print3d(self gettagorigin("<dev string:x22>") + (0, 0, height), debugln, (1, 1, 1), 1, 0.5, 1, 1);
                 height += 10;
             }
             waitframe();
@@ -99,8 +99,8 @@ function function_848612e5b224425b(var_c6910a7018189965, var_4189af81d34b8804, v
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x503
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x4a1
+// Size: 0xbe
 function clearvoice() {
     if (isdefined(self.battlechatter.npcid) && isdefined(self.voice)) {
         foreach (usedid in anim.usedids[self.voice]) {
@@ -115,7 +115,7 @@ function clearvoice() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cc
+// Checksum 0x0, Offset: 0x567
 // Size: 0x9a
 function setvoice(voice) {
     if (isdefined(voice)) {
@@ -136,7 +136,7 @@ function setvoice(voice) {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x66e
+// Checksum 0x0, Offset: 0x609
 // Size: 0x10
 function function_da324cd732971e8c() {
     clearvoice();
@@ -145,7 +145,7 @@ function function_da324cd732971e8c() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x686
+// Checksum 0x0, Offset: 0x621
 // Size: 0x185
 function removefromsystem(squad) {
     if (!isdefined(level.battlechatter) || !isdefined(self)) {
@@ -169,8 +169,8 @@ function removefromsystem(squad) {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x813
-// Size: 0x195
+// Checksum 0x0, Offset: 0x7ae
+// Size: 0x197
 function function_bd6944098e09347f(team, countryid, npcid, name) {
     if (istrue(level.var_ecafb96516684c19)) {
         return;
@@ -206,7 +206,7 @@ function function_bd6944098e09347f(team, countryid, npcid, name) {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b0
+// Checksum 0x0, Offset: 0x94d
 // Size: 0x2
 function function_3e6d99e336341602() {
     
@@ -214,7 +214,7 @@ function function_3e6d99e336341602() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ba
+// Checksum 0x0, Offset: 0x957
 // Size: 0x2
 function corpseloop() {
     
@@ -222,8 +222,8 @@ function corpseloop() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c4
-// Size: 0xe7
+// Checksum 0x0, Offset: 0x961
+// Size: 0xea
 function setnpcid() {
     assert(!isdefined(self.battlechatter.npcid));
     usedids = anim.usedids[self.voice];
@@ -241,7 +241,7 @@ function setnpcid() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab3
+// Checksum 0x0, Offset: 0xa53
 // Size: 0x13
 function evaluateattackevent(weapon) {
     useevent(weapon);
@@ -249,7 +249,7 @@ function evaluateattackevent(weapon) {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xace
+// Checksum 0x0, Offset: 0xa6e
 // Size: 0x47
 function aiThreadWaiter() {
     self endon("death");
@@ -265,8 +265,8 @@ function aiThreadWaiter() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1d
-// Size: 0x4c
+// Checksum 0x0, Offset: 0xabd
+// Size: 0x4d
 function waittill_missile_fire() {
     while (true) {
         missile, objweapon = self waittill("missile_fire");
@@ -279,7 +279,7 @@ function waittill_missile_fire() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb71
+// Checksum 0x0, Offset: 0xb12
 // Size: 0x66
 function waittill_grenade_fire() {
     while (true) {
@@ -295,7 +295,7 @@ function waittill_grenade_fire() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdf
+// Checksum 0x0, Offset: 0xb80
 // Size: 0x1f
 function function_ad344a5a58977b39() {
     while (true) {
@@ -306,7 +306,7 @@ function function_ad344a5a58977b39() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc06
+// Checksum 0x0, Offset: 0xba7
 // Size: 0x3d
 function waittill_move() {
     while (true) {
@@ -319,8 +319,8 @@ function waittill_move() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4b
-// Size: 0x37
+// Checksum 0x0, Offset: 0xbec
+// Size: 0x36
 function function_69110de99255d852() {
     var_5fedaa69e3ddfd3 = 0;
     while (true) {
@@ -336,7 +336,7 @@ function function_69110de99255d852() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8a
+// Checksum 0x0, Offset: 0xc2a
 // Size: 0x2
 function aivehiclekillwaiter() {
     
@@ -344,7 +344,7 @@ function aivehiclekillwaiter() {
 
 // Namespace namespace_201420652286908f / namespace_2fdc8e343bfb2334
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xc94
+// Checksum 0x0, Offset: 0xc34
 // Size: 0x40
 function custom_battlechatter_internal(phrase, sequence, priority, timeout, cooldown, endons) {
     function_d54e84a9513b0e45(phrase, phrase, priority, timeout, cooldown, endons);

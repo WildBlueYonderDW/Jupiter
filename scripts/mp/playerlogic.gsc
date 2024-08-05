@@ -1173,7 +1173,7 @@ function spawnplayer(fauxspawn, revivespawn) {
         self.weaponslotblocked = undefined;
         self.var_b43706cbb600fe5a = undefined;
         self.var_7744df488b629b5 = undefined;
-        self.clearSpawnProtection = undefined;
+        self.var_e3301eb009262dfa = undefined;
         scripts\mp\utility\stats::initpersstat("agentsKillstreakCount");
         if (isdefined(self.stuckbygrenade) && self.stuckbygrenade.stuckenemyentity == self) {
             self.stuckbygrenade.stuckenemyentity = undefined;
@@ -3438,7 +3438,7 @@ function function_8eed5edfb3ce6f1a() {
         self setsoundsubmix("jup_global_mp_zombie", 0.05);
         self setsoundsubmix("jup_global_mp_mimic", 0.05);
     }
-    if (isJuggerMoshGameMode()) {
+    if (function_a305f5d1be837817()) {
         self setsoundsubmix("jup_global_mp_juggermosh", 0.05);
     }
     if (level.mapname == "mp_jup_skydiving") {

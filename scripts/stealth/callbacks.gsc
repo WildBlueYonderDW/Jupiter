@@ -5,8 +5,8 @@
 
 // Namespace callbacks / scripts\stealth\callbacks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x141
-// Size: 0xd3
+// Checksum 0x0, Offset: 0x1c7
+// Size: 0xd0
 function init_callbacks() {
     level.global_callbacks = [];
     foreach (callback in ["_autosave_stealthcheck", "_patrol_endon_spotted_flag", "_spawner_stealth_default", "_idle_call_idle_func"]) {
@@ -25,15 +25,15 @@ function init_callbacks() {
 
 // Namespace callbacks / scripts\stealth\callbacks
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x21c
+// Checksum 0x0, Offset: 0x29f
 // Size: 0x39
 function global_empty_callback(empty1, empty2, empty3, empty4, empty5) {
-    assertmsg("<dev string:x1c>");
+    assertmsg("a _stealth or _idle related function was called in a global script without being initilized by the stealth system.  If you've already initilized those scripts, then this is a bug for Mo.");
 }
 
 // Namespace callbacks / scripts\stealth\callbacks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25d
+// Checksum 0x0, Offset: 0x2e0
 // Size: 0x9c
 function stealth_get_func(type) {
     if (isdefined(self.stealth) && isdefined(self.stealth.funcs) && isdefined(self.stealth.funcs[type])) {
@@ -47,8 +47,8 @@ function stealth_get_func(type) {
 
 // Namespace callbacks / scripts\stealth\callbacks
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x302
-// Size: 0x87
+// Checksum 0x0, Offset: 0x385
+// Size: 0x86
 function stealth_call(type, parm1, parm2, parm3, parm4) {
     func = stealth_get_func(type);
     if (isdefined(func)) {
@@ -69,8 +69,8 @@ function stealth_call(type, parm1, parm2, parm3, parm4) {
 
 // Namespace callbacks / scripts\stealth\callbacks
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x392
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x414
+// Size: 0x8b
 function stealth_call_thread(type, parm1, parm2, parm3, parm4) {
     func = stealth_get_func(type);
     if (isdefined(func)) {

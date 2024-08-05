@@ -7,7 +7,7 @@
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c6
+// Checksum 0x0, Offset: 0x29c
 // Size: 0x4f
 function initfx() {
     if (!add_init_script("fx", &initfx)) {
@@ -24,8 +24,8 @@ function initfx() {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31d
-// Size: 0x359
+// Checksum 0x0, Offset: 0x2f3
+// Size: 0x357
 function init_fx_thread() {
     if (!isdefined(level._fx)) {
         level._fx = spawnstruct();
@@ -91,7 +91,7 @@ function init_fx_thread() {
             }
         }
     }
-    foreach (msg, var_e2a3f554e65a5ced in var_4c5056380ab96e2d) {
+    foreach (var_e2a3f554e65a5ced in var_4c5056380ab96e2d) {
         thread scripts\common\exploder::exploder_flag_wait(msg, var_e2a3f554e65a5ced);
     }
     check_createfx_limit();
@@ -101,8 +101,8 @@ function init_fx_thread() {
 
     // Namespace fx / scripts\common\fx
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x67e
-    // Size: 0x137
+    // Checksum 0x0, Offset: 0x652
+    // Size: 0x13b
     function remove_dupes() {
         if (getdvarint(@"hash_66ba26fa32261de") == 0) {
             return;
@@ -114,8 +114,8 @@ function init_fx_thread() {
             for (j = i + 1; j < level.createfxent.size; j++) {
                 j_ent = level.createfxent[j];
                 if (j_ent.v["<dev string:x1c>"] == i_ent.v["<dev string:x1c>"]) {
-                    if (j_ent.v["<dev string:x24>"] == i_ent.v["<dev string:x24>"]) {
-                        println("<dev string:x2e>" + j_ent.v["<dev string:x1c>"] + "<dev string:x46>" + j_ent.v["<dev string:x24>"]);
+                    if (j_ent.v["<dev string:x21>"] == i_ent.v["<dev string:x21>"]) {
+                        println("<dev string:x28>" + j_ent.v["<dev string:x1c>"] + "<dev string:x3d>" + j_ent.v["<dev string:x21>"]);
                         add_ent = 0;
                     }
                 }
@@ -129,32 +129,32 @@ function init_fx_thread() {
 
     // Namespace fx / scripts\common\fx
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7bd
-    // Size: 0x114
+    // Checksum 0x0, Offset: 0x795
+    // Size: 0x115
     function offset_fix() {
-        if (getdvar(@"hash_c1674252f3005f02") == "<dev string:x4e>") {
+        if (getdvar(@"hash_c1674252f3005f02") == "<dev string:x42>") {
             return;
         }
         dvar = getdvar(@"hash_c1674252f3005f02");
-        toks = strtok(dvar, "<dev string:x52>");
+        toks = strtok(dvar, "<dev string:x43>");
         if (toks.size != 3) {
             return;
         }
         offset = (int(toks[0]), int(toks[1]), int(toks[2]));
         new_ents = [];
         foreach (ent in level.createfxent) {
-            ent.v["<dev string:x24>"] = ent.v["<dev string:x24>"] + offset;
+            ent.v["<dev string:x21>"] = ent.v["<dev string:x21>"] + offset;
         }
-        setdvar(@"hash_c1674252f3005f02", "<dev string:x4e>");
-        iprintlnbold("<dev string:x57>");
+        setdvar(@"hash_c1674252f3005f02", "<dev string:x42>");
+        iprintlnbold("<dev string:x45>");
     }
 
 #/
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d9
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x8b2
+// Size: 0xcb
 function check_createfx_limit() {
     /#
         if (!issp()) {
@@ -163,18 +163,18 @@ function check_createfx_limit() {
         fx_count = 0;
         sound_count = 0;
         foreach (ent in level.createfxent) {
-            if (is_createfx_type(ent, "<dev string:x86>")) {
+            if (is_createfx_type(ent, "<dev string:x71>")) {
                 fx_count++;
                 continue;
             }
-            if (is_createfx_type(ent, "<dev string:x8c>")) {
+            if (is_createfx_type(ent, "<dev string:x74>")) {
                 sound_count++;
             }
         }
-        println("<dev string:x95>" + fx_count);
-        println("<dev string:xb3>" + sound_count);
-        check_limit_type("<dev string:x86>", fx_count);
-        check_limit_type("<dev string:x8c>", sound_count);
+        println("<dev string:x7a>" + fx_count);
+        println("<dev string:x95>" + sound_count);
+        check_limit_type("<dev string:x71>", fx_count);
+        check_limit_type("<dev string:x74>", sound_count);
     #/
 }
 
@@ -182,17 +182,17 @@ function check_createfx_limit() {
 
     // Namespace fx / scripts\common\fx
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9ad
-    // Size: 0x6a
+    // Checksum 0x0, Offset: 0x985
+    // Size: 0x69
     function check_limit_type(type, count) {
         limit = undefined;
-        if (type == "<dev string:x86>") {
+        if (type == "<dev string:x71>") {
             limit = 1750;
-        } else if (type == "<dev string:x8c>") {
+        } else if (type == "<dev string:x74>") {
             limit = 384;
         }
         if (count > limit) {
-            assertmsg("<dev string:xd4>" + type + "<dev string:xf4>" + count + "<dev string:x130>" + limit);
+            assertmsg("<dev string:xb3>" + type + "<dev string:xd0>" + count + "<dev string:x109>" + limit);
         }
     }
 
@@ -200,29 +200,29 @@ function check_createfx_limit() {
 
 // Namespace fx / scripts\common\fx
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1f
+// Checksum 0x0, Offset: 0x9f6
 // Size: 0xcd
 function print_org(fxcommand, fxid, fxpos, waittime) {
     if (getdvar(@"hash_849debc78661e8d9") == "1") {
         /#
+            println("<dev string:x11c>");
+            println("<dev string:x11e>" + fxpos[0] + "<dev string:x43>" + fxpos[1] + "<dev string:x43>" + fxpos[2] + "<dev string:x129>");
+            println("<dev string:x12b>");
             println("<dev string:x146>");
-            println("<dev string:x14b>" + fxpos[0] + "<dev string:x52>" + fxpos[1] + "<dev string:x52>" + fxpos[2] + "<dev string:x159>");
-            println("<dev string:x15e>");
-            println("<dev string:x17c>");
-            println("<dev string:x18c>" + fxcommand + "<dev string:x159>");
-            println("<dev string:x1a4>" + fxid + "<dev string:x159>");
-            println("<dev string:x1b7>" + waittime + "<dev string:x159>");
-            println("<dev string:x1cb>");
+            println("<dev string:x153>" + fxcommand + "<dev string:x129>");
+            println("<dev string:x168>" + fxid + "<dev string:x129>");
+            println("<dev string:x178>" + waittime + "<dev string:x129>");
+            println("<dev string:x189>");
         #/
     }
 }
 
 // Namespace fx / scripts\common\fx
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf4
-// Size: 0xc3
+// Checksum 0x0, Offset: 0xacb
+// Size: 0xc2
 function loopfx(fxid, fxpos, waittime, fxpos2, fxstart, fxstop, timeout) {
-    println("<dev string:x1d0>");
+    println("<dev string:x18b>");
     ent = createloopeffect(fxid);
     ent.v["origin"] = fxpos;
     ent.v["angles"] = (0, 0, 0);
@@ -234,7 +234,7 @@ function loopfx(fxid, fxpos, waittime, fxpos2, fxstart, fxstop, timeout) {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbf
+// Checksum 0x0, Offset: 0xb95
 // Size: 0x6d
 function create_looper() {
     self.looper = playloopedfx(level._effect[self.v["fxid"]], self.v["delay"], self.v["origin"], 0, self.v["forward"], self.v["up"]);
@@ -243,8 +243,8 @@ function create_looper() {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc34
-// Size: 0x161
+// Checksum 0x0, Offset: 0xc0a
+// Size: 0x163
 function create_loopsound() {
     self notify("stop_loop");
     if (!isdefined(self.v["soundalias"])) {
@@ -254,7 +254,7 @@ function create_loopsound() {
         return;
     }
     /#
-        if (getdvar(@"hash_e6afce2cf5cf7515") == "<dev string:x1e9>") {
+        if (getdvar(@"hash_e6afce2cf5cf7515") == "<dev string:x1a1>") {
             return;
         }
     #/
@@ -282,7 +282,7 @@ function create_loopsound() {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9d
+// Checksum 0x0, Offset: 0xd75
 // Size: 0x11c
 function create_interval_sound() {
     self notify("stop_loop");
@@ -295,7 +295,7 @@ function create_interval_sound() {
     ender = undefined;
     runner = self;
     /#
-        if (getdvar(@"hash_e6afce2cf5cf7515") == "<dev string:x1e9>") {
+        if (getdvar(@"hash_e6afce2cf5cf7515") == "<dev string:x1a1>") {
             return;
         }
     #/
@@ -312,7 +312,7 @@ function create_interval_sound() {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xec1
+// Checksum 0x0, Offset: 0xe99
 // Size: 0xb1
 function loopfxthread() {
     waitframe();
@@ -342,7 +342,7 @@ function loopfxthread() {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf7a
+// Checksum 0x0, Offset: 0xf52
 // Size: 0x23
 function loopfxstop(timeout) {
     self endon("death");
@@ -352,7 +352,7 @@ function loopfxstop(timeout) {
 
 // Namespace fx / scripts\common\fx
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa5
+// Checksum 0x0, Offset: 0xf7d
 // Size: 0x55
 function gunfireloopfx(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaymax, betweensetsmin, betweensetsmax) {
     thread gunfireloopfxthread(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaymax, betweensetsmin, betweensetsmax);
@@ -360,8 +360,8 @@ function gunfireloopfx(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaym
 
 // Namespace fx / scripts\common\fx
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1002
-// Size: 0x15a
+// Checksum 0x0, Offset: 0xfda
+// Size: 0x162
 function gunfireloopfxthread(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shotdelaymax, betweensetsmin, betweensetsmax) {
     level endon("stop all gunfireloopfx");
     waitframe();
@@ -402,7 +402,7 @@ function gunfireloopfxthread(fxid, fxpos, shotsmin, shotsmax, shotdelaymin, shot
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1164
+// Checksum 0x0, Offset: 0x1144
 // Size: 0xaf
 function create_triggerfx() {
     if (!verify_effects_assignment(self.v["fxid"])) {
@@ -418,7 +418,7 @@ function create_triggerfx() {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x121b
+// Checksum 0x0, Offset: 0x11fb
 // Size: 0x58
 function verify_effects_assignment(effectid) {
     if (isdefined(level._effect[effectid])) {
@@ -434,27 +434,27 @@ function verify_effects_assignment(effectid) {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x127c
-// Size: 0xb6
+// Checksum 0x0, Offset: 0x125c
+// Size: 0xb4
 function verify_effects_assignment_print(effectid) {
     level notify("verify_effects_assignment_print");
     level endon("verify_effects_assignment_print");
     waitframe();
     /#
-        println("<dev string:x1ee>");
-        println("<dev string:x1f8>");
+        println("<dev string:x1a3>");
+        println("<dev string:x1aa>");
         keys = getarraykeys(level._missing_fx);
         foreach (key in keys) {
-            println("<dev string:x229>" + key);
+            println("<dev string:x1d8>" + key);
         }
-        println("<dev string:x1ee>");
+        println("<dev string:x1a3>");
     #/
-    assertmsg("<dev string:x257>");
+    assertmsg("Missing Effects ID assignments ( see console )");
 }
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x133a
+// Checksum 0x0, Offset: 0x1318
 // Size: 0x39
 function oneshotfxthread() {
     waitframe();
@@ -466,7 +466,7 @@ function oneshotfxthread() {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x137b
+// Checksum 0x0, Offset: 0x1359
 // Size: 0xbd
 function add_reactive_fx() {
     if (!issp() && getdvar(@"hash_284cbc4392371c00") == "") {
@@ -485,8 +485,8 @@ function add_reactive_fx() {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1440
-// Size: 0xed
+// Checksum 0x0, Offset: 0x141e
+// Size: 0xf0
 function reactive_fx_thread() {
     if (!issp()) {
         if (getdvar(@"hash_284cbc4392371c00") == "on") {
@@ -498,7 +498,7 @@ function reactive_fx_thread() {
     while (true) {
         attacker, explosion_radius, point, objweapon, delay = level waittill("code_damageradius");
         ents = sort_reactive_ents(point, explosion_radius);
-        foreach (i, ent in ents) {
+        foreach (ent in ents) {
             ent thread play_reactive_fx(i, delay);
         }
     }
@@ -506,7 +506,7 @@ function reactive_fx_thread() {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1535
+// Checksum 0x0, Offset: 0x1516
 // Size: 0x14
 function vector2d(vec) {
     return (vec[0], vec[1], 0);
@@ -514,8 +514,8 @@ function vector2d(vec) {
 
 // Namespace fx / scripts\common\fx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1552
-// Size: 0x286
+// Checksum 0x0, Offset: 0x1533
+// Size: 0x289
 function sort_reactive_ents(point, explosion_radius) {
     closest = [];
     time = gettime();
@@ -557,10 +557,10 @@ function sort_reactive_ents(point, explosion_radius) {
 
 // Namespace fx / scripts\common\fx
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e1
-// Size: 0x1ce
+// Checksum 0x0, Offset: 0x17c5
+// Size: 0x1cd
 function play_reactive_fx(num, delay) {
-    assertex(self.v["<dev string:x289>"] != "<dev string:x291>" || self.v["<dev string:x29a>"] != "<dev string:x2a8>", "<dev string:x2af>" + self.v["<dev string:x24>"] + "<dev string:x2c2>");
+    assertex(self.v["<dev string:x203>"] != "<dev string:x208>" || self.v["<dev string:x20e>"] != "<dev string:x219>", "<dev string:x21d>" + self.v["<dev string:x21>"] + "<dev string:x22d>");
     if (self.v["fxid"] != "No FX") {
         playfx(level._effect[self.v["fxid"]], self.v["origin"], self.v["forward"], self.v["up"]);
     }
@@ -597,8 +597,8 @@ function play_reactive_fx(num, delay) {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b7
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x199a
+// Size: 0xd2
 function get_reactive_sound_ent() {
     foreach (ent in level._fx.reactive_sound_ents) {
         if (!ent.is_playing) {
@@ -616,7 +616,7 @@ function get_reactive_sound_ent() {
 
 // Namespace fx / scripts\common\fx
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a95
+// Checksum 0x0, Offset: 0x1a75
 // Size: 0x2d
 function playfxnophase(fx, location, forwarddir, updir) {
     playfx(fx, location, forwarddir, updir);
@@ -624,8 +624,8 @@ function playfxnophase(fx, location, forwarddir, updir) {
 
 // Namespace fx / scripts\common\fx
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aca
-// Size: 0x89
+// Checksum 0x0, Offset: 0x1aaa
+// Size: 0x86
 function script_struct_fx_init() {
     level.struct_fx = getstructarray("struct_fx", "targetname");
     foreach (struct in level.struct_fx) {
@@ -637,7 +637,7 @@ function script_struct_fx_init() {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b5b
+// Checksum 0x0, Offset: 0x1b38
 // Size: 0x21d
 function play_struct_fx(struct) {
     if (isdefined(struct.script_fxid) && isdefined(level._effect[struct.script_fxid])) {
@@ -646,7 +646,7 @@ function play_struct_fx(struct) {
         }
         struct.fx = spawnfx(level._effect[struct.script_fxid], struct.origin, anglestoforward(struct.angles), anglestoup(struct.angles));
         if (isdefined(struct.script_delay_min) && isdefined(struct.script_delay_max)) {
-            assertex(struct.script_delay_min <= struct.script_delay_max, "<dev string:x2f9>" + struct.origin + "<dev string:x311>");
+            assertex(struct.script_delay_min <= struct.script_delay_max, "script_struct_fx at " + struct.origin + " has script_delay_min >= script_delay_max. ");
             triggerfx(struct.fx, randomfloat(struct.script_delay_min, struct.script_delay_max) / 1000);
         } else if (isdefined(struct.script_delay)) {
             triggerfx(struct.fx, struct.script_delay / 1000);
@@ -667,7 +667,7 @@ function play_struct_fx(struct) {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d80
+// Checksum 0x0, Offset: 0x1d5d
 // Size: 0x3c
 function stop_struct_fx(struct) {
     struct.fx delete();
@@ -678,7 +678,7 @@ function stop_struct_fx(struct) {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc4
+// Checksum 0x0, Offset: 0x1da1
 // Size: 0x17
 function struct_fx_active(struct) {
     return isdefined(struct.fx);
@@ -686,7 +686,7 @@ function struct_fx_active(struct) {
 
 // Namespace fx / scripts\common\fx
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de4
+// Checksum 0x0, Offset: 0x1dc1
 // Size: 0x18
 function struct_fx_inactive(struct) {
     return !isdefined(struct.fx);

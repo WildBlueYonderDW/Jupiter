@@ -5,7 +5,7 @@
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x25e
+// Checksum 0x0, Offset: 0x1f7
 // Size: 0x6b
 function function_c789cc0bd60384c2(start_pos, end_pos, open_height, var_ce8be7b4cdc21296, skydive_time, var_8330be2d492dad2) {
     self endon("death");
@@ -19,8 +19,8 @@ function function_c789cc0bd60384c2(start_pos, end_pos, open_height, var_ce8be7b4
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d1
-// Size: 0x180
+// Checksum 0x0, Offset: 0x26a
+// Size: 0x183
 function function_dcd66ae47dd9c9fa(start_pos, end_pos, open_height, var_ce8be7b4cdc21296) {
     self allowedstances("stand");
     self.ignoreme = 1;
@@ -49,8 +49,8 @@ function function_dcd66ae47dd9c9fa(start_pos, end_pos, open_height, var_ce8be7b4
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x459
-// Size: 0x142
+// Checksum 0x0, Offset: 0x3f5
+// Size: 0x147
 function function_3dee8aebad8a54d0(skydive_time) {
     self endon("death");
     dest = self.landing_spot;
@@ -73,8 +73,8 @@ function function_3dee8aebad8a54d0(skydive_time) {
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a3
-// Size: 0x105
+// Checksum 0x0, Offset: 0x544
+// Size: 0x104
 function function_45348b6cef309ef2() {
     chute = spawn("script_model", self gettagorigin("j_spine4"));
     chute.angles = self gettagangles("j_spine4");
@@ -94,8 +94,8 @@ function function_45348b6cef309ef2() {
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b0
-// Size: 0xf3
+// Checksum 0x0, Offset: 0x650
+// Size: 0xf4
 function function_aa703fb26bb4f9fe(var_8330be2d492dad2) {
     self endon("death");
     move_time = default_to(var_8330be2d492dad2, 5);
@@ -116,7 +116,7 @@ function function_aa703fb26bb4f9fe(var_8330be2d492dad2) {
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ab
+// Checksum 0x0, Offset: 0x74c
 // Size: 0x14
 function function_775ca9e4c54166aa() {
     wait 0.5;
@@ -125,7 +125,7 @@ function function_775ca9e4c54166aa() {
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7c7
+// Checksum 0x0, Offset: 0x768
 // Size: 0x23
 function function_316b7ce518c834d3() {
     self endon("death");
@@ -135,7 +135,7 @@ function function_316b7ce518c834d3() {
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f2
+// Checksum 0x0, Offset: 0x793
 // Size: 0x101
 function function_fb904ef821445698() {
     self endon("death");
@@ -161,7 +161,7 @@ function function_fb904ef821445698() {
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fb
+// Checksum 0x0, Offset: 0x89c
 // Size: 0x2d
 function function_377a053e8962309() {
     self endon("parachute_detached");
@@ -173,7 +173,7 @@ function function_377a053e8962309() {
 
 // Namespace namespace_6d2e67e0b5564054 / namespace_30bebe2c8fdd4f94
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x930
+// Checksum 0x0, Offset: 0x8d1
 // Size: 0x3d
 function function_a0c4f5545fcc37e4(ai) {
     self endon("death");

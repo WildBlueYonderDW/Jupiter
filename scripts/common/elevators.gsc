@@ -10,8 +10,8 @@
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bc
-// Size: 0x1e7
+// Checksum 0x0, Offset: 0x734
+// Size: 0x1e3
 function initelevators() {
     if (isdefined(level.var_b3c54f58528f476)) {
         return;
@@ -31,13 +31,11 @@ function initelevators() {
     level.elevatorstops = [];
     level.elevatoronspawnplayer = &elevatoronspawnplayer;
     script_model_anims("default");
-    var_9c512bd31f6b92d0 = scripts\engine\utility::getstructarray("elevator_car", "script_noteworthy");
     elevatorstops = getentitylessscriptablearray("elevator_stop", "script_noteworthy");
-    waitframe();
     foreach (stop in elevatorstops) {
         function_b0811deba3748e9d(stop);
-        waitframe();
     }
+    var_9c512bd31f6b92d0 = scripts\engine\utility::getstructarray("elevator_car", "script_noteworthy");
     foreach (elevatorset in level.elevatorstops) {
         if (elevatorset.size != 2) {
             continue;
@@ -49,8 +47,8 @@ function initelevators() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ab
-// Size: 0x2fd
+// Checksum 0x0, Offset: 0x91f
+// Size: 0x2fe
 function function_b0811deba3748e9d(stop) {
     stop.open = 0;
     indicatorholder = getentitylessscriptablearray(stop.target, "targetname");
@@ -61,7 +59,7 @@ function function_b0811deba3748e9d(stop) {
     if (isdefined(stop.doors[0].target)) {
         s_anchor = getstruct(stop.doors[0].target, "targetname");
     }
-    assertex(stop.doors.size != 0 && stop.doors.size <= 2, "<dev string:x1c>");
+    assertex(stop.doors.size != 0 && stop.doors.size <= 2, "Elevator has more than 2 doors per floor");
     foreach (door in stop.doors) {
         door.open = 0;
     }
@@ -96,8 +94,8 @@ function function_b0811deba3748e9d(stop) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb1
-// Size: 0x9b2
+// Checksum 0x0, Offset: 0xc26
+// Size: 0x99a
 function function_c0032a2e585d337b(elevatorset, var_9c512bd31f6b92d0, overridemodel) {
     elevator = spawnstruct();
     elevator.parts = [];
@@ -138,7 +136,6 @@ function function_c0032a2e585d337b(elevatorset, var_9c512bd31f6b92d0, overridemo
     car.elevator = elevator;
     car.occupants = [];
     car.var_27abfc12040d5908 = 0;
-    createnavobstaclebybounds(car.origin, (90, 90, 90), car.angles);
     if (isdefined(targetcar.script_parameters)) {
         var_6b72ca36ef52aa27 = strtok(targetcar.script_parameters, ",");
         car.n_travel_time = float(var_6b72ca36ef52aa27[0]);
@@ -189,7 +186,7 @@ function function_c0032a2e585d337b(elevatorset, var_9c512bd31f6b92d0, overridemo
     }
     car setmodel(car.str_model_name);
     car setanimtree();
-    assertex(car isscriptable(), "<dev string:x48>");
+    assertex(car isscriptable(), "Elevator car scriptable(s) not loaded. May need to be precached.");
     if (!car isscriptable()) {
         return;
     }
@@ -261,7 +258,7 @@ function function_c0032a2e585d337b(elevatorset, var_9c512bd31f6b92d0, overridemo
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x166c
+// Checksum 0x0, Offset: 0x15c9
 // Size: 0xa
 function elevatoronspawnplayer() {
     thread onspawnfinished();
@@ -269,7 +266,7 @@ function elevatoronspawnplayer() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x167e
+// Checksum 0x0, Offset: 0x15db
 // Size: 0x24
 function onspawnfinished() {
     self endon("death_or_disconnect");
@@ -281,8 +278,8 @@ function onspawnfinished() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16aa
-// Size: 0x154
+// Checksum 0x0, Offset: 0x1607
+// Size: 0x151
 function function_5c07037726ae5001(ent) {
     if (!isent(ent)) {
         return;
@@ -322,8 +319,8 @@ function function_5c07037726ae5001(ent) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1806
-// Size: 0x20c
+// Checksum 0x0, Offset: 0x1760
+// Size: 0x209
 function function_29de8f099a0a63df(ent) {
     if (!isent(ent)) {
         return;
@@ -372,8 +369,8 @@ function function_29de8f099a0a63df(ent) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a1a
-// Size: 0x154
+// Checksum 0x0, Offset: 0x1971
+// Size: 0x151
 function function_a465aa01fa0187d8(ent) {
     if (!isent(ent)) {
         return;
@@ -413,8 +410,8 @@ function function_a465aa01fa0187d8(ent) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b76
-// Size: 0xb1
+// Checksum 0x0, Offset: 0x1aca
+// Size: 0xb0
 function function_e7dd97852a7b0baf() {
     level endon("game_ended");
     self endon("disconnect");
@@ -434,7 +431,7 @@ function function_e7dd97852a7b0baf() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c2f
+// Checksum 0x0, Offset: 0x1b82
 // Size: 0x26
 function function_bd1cd7b7c484f126() {
     self endon("player_blocked");
@@ -447,7 +444,7 @@ function function_bd1cd7b7c484f126() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c5d
+// Checksum 0x0, Offset: 0x1bb0
 // Size: 0xd
 function function_12e75ac514f84d03() {
     wait 1;
@@ -456,7 +453,7 @@ function function_12e75ac514f84d03() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c72
+// Checksum 0x0, Offset: 0x1bc5
 // Size: 0x199
 function function_52b0636366efd3e4(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     if (isdefined(instance.floornum)) {
@@ -477,7 +474,7 @@ function function_52b0636366efd3e4(instance, part, state, player, var_a5b2c54141
 
 // Namespace elevators / scripts\common\elevators
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e13
+// Checksum 0x0, Offset: 0x1d66
 // Size: 0xaa
 function function_d99e32e6787622fe(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     if (isdefined(player)) {
@@ -489,8 +486,8 @@ function function_d99e32e6787622fe(instance, part, state, player, var_a5b2c54141
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec5
-// Size: 0x81
+// Checksum 0x0, Offset: 0x1e18
+// Size: 0x7e
 function function_c327c9e30f9df682() {
     foreach (part in self.parts) {
         if (isdefined(part.info)) {
@@ -502,7 +499,7 @@ function function_c327c9e30f9df682() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f4e
+// Checksum 0x0, Offset: 0x1e9e
 // Size: 0x102
 function elevatorbuttonpressed(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     if (isdefined(instance.floornum)) {
@@ -519,8 +516,8 @@ function elevatorbuttonpressed(instance, part, state, player, var_a5b2c541413aa8
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2058
-// Size: 0x9f
+// Checksum 0x0, Offset: 0x1fa8
+// Size: 0x9c
 function function_fea8a1d17e4d669f() {
     foreach (door in self.doors) {
         self.open = 1;
@@ -534,8 +531,8 @@ function function_fea8a1d17e4d669f() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ff
-// Size: 0x86
+// Checksum 0x0, Offset: 0x204c
+// Size: 0x83
 function function_7c2abb1b0d147a89() {
     self.elevator endon("emergency_block");
     foreach (door in self.doors) {
@@ -547,7 +544,7 @@ function function_7c2abb1b0d147a89() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x218d
+// Checksum 0x0, Offset: 0x20d7
 // Size: 0x21
 function function_580e82173ae3940c() {
     while (true) {
@@ -557,7 +554,7 @@ function function_580e82173ae3940c() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21b6
+// Checksum 0x0, Offset: 0x2100
 // Size: 0x62
 function function_4497ec9c55f12123() {
     if (self.targetfloor != self.currentfloor) {
@@ -573,14 +570,13 @@ function function_4497ec9c55f12123() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2220
-// Size: 0xfb
+// Checksum 0x0, Offset: 0x216a
+// Size: 0xe2
 function function_ec009a967d1d5eb9() {
     self.floors[self.currentfloor] setscriptablepartstate("elevator_ext_button", "disabled");
     self.floors[self.currentfloor] setscriptablepartstate("elevator_button_lights", "off");
     self notify("elevator_doors_unblocking");
     self.floors[self.currentfloor] thread function_fea8a1d17e4d669f();
-    self.car setscriptablepartstate("door_sounds", "open");
     if (self.car.var_ef04438af292c145 && self.currentfloor != 0) {
         self.car thread anim_single_solo(self.car, "open_back");
     } else {
@@ -592,8 +588,8 @@ function function_ec009a967d1d5eb9() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2323
-// Size: 0x185
+// Checksum 0x0, Offset: 0x2254
+// Size: 0x16c
 function function_8b680b3ef155fc34() {
     self endon("emergency_block");
     self notify("elevator_doors_closing");
@@ -605,7 +601,6 @@ function function_8b680b3ef155fc34() {
     self notify("elevator_doors_unblocking");
     thread function_f99e0077b2350e7();
     wait 0.01;
-    self.car setscriptablepartstate("door_sounds", "close");
     self.floors[self.currentfloor] thread function_7c2abb1b0d147a89();
     if (self.car.var_ef04438af292c145 && self.currentfloor != 0) {
         str_anim = "close_back";
@@ -626,8 +621,8 @@ function function_8b680b3ef155fc34() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24b0
-// Size: 0x455
+// Checksum 0x0, Offset: 0x23c8
+// Size: 0x456
 function function_82893c609a46609() {
     for (i = 0; i < self.floors.size; i++) {
         if (isdefined(self.floors[i].indicator)) {
@@ -648,7 +643,7 @@ function function_82893c609a46609() {
     }
     totalheight = abs(self.floors[self.targetfloor].targetheight - self.floors[self.currentfloor].targetheight);
     if (isdefined(self.car.n_travel_time)) {
-        assertex(self.car.n_travel_time >= self.car.var_acb6874b16adac5e + self.car.var_23e93511918b6091, "<dev string:x8c>" + self.car.var_acb6874b16adac5e + self.car.var_acb6874b16adac5e + "<dev string:xb6>");
+        assertex(self.car.n_travel_time >= self.car.var_acb6874b16adac5e + self.car.var_23e93511918b6091, "Elevator travel time must be at least " + self.car.var_acb6874b16adac5e + self.car.var_acb6874b16adac5e + ".\n");
         if (self.car.n_travel_time >= self.car.var_acb6874b16adac5e + self.car.var_23e93511918b6091) {
             duration = self.car.n_travel_time;
         }
@@ -680,7 +675,7 @@ function function_82893c609a46609() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x290d
+// Checksum 0x0, Offset: 0x2826
 // Size: 0x2b
 function function_7995b0b9c011087(duration) {
     self endon("death_or_disconnect");
@@ -691,7 +686,7 @@ function function_7995b0b9c011087(duration) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2940
+// Checksum 0x0, Offset: 0x2859
 // Size: 0x6e
 function function_f99e0077b2350e7() {
     self endon("elevator_closed");
@@ -711,7 +706,7 @@ function function_f99e0077b2350e7() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29b6
+// Checksum 0x0, Offset: 0x28cf
 // Size: 0x3e
 function function_ef19d9446fc2352(num) {
     return self.floors[num].child.child.child.origin;
@@ -719,7 +714,7 @@ function function_ef19d9446fc2352(num) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29fd
+// Checksum 0x0, Offset: 0x2916
 // Size: 0x26
 function function_c78df968f4751498() {
     function_bc48943904164e29("elevator_button_floor_01");
@@ -729,8 +724,8 @@ function function_c78df968f4751498() {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2b
-// Size: 0x111
+// Checksum 0x0, Offset: 0x2944
+// Size: 0x113
 function function_bc48943904164e29(str) {
     oldpart = self.parts[str];
     buttonpos = oldpart.origin;
@@ -749,7 +744,7 @@ function function_bc48943904164e29(str) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b44
+// Checksum 0x0, Offset: 0x2a5f
 // Size: 0x3cb
 function script_model_anims(subtype) {
     level.scr_animtree["elevator"] = %script_model;
@@ -792,8 +787,8 @@ function script_model_anims(subtype) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f17
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x2e32
+// Size: 0xd7
 function elevatoroccupancytracking(enttriggered, car) {
     enttriggered notify("elevator_occupancy_tracking");
     enttriggered endon("elevator_occupancy_tracking");
@@ -824,8 +819,8 @@ function elevatoroccupancytracking(enttriggered, car) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff4
-// Size: 0x5ac
+// Checksum 0x0, Offset: 0x2f11
+// Size: 0x5b0
 function function_8e2d666b5b0f2bd3(car) {
     if (!isdefined(self) || !isalive(self)) {
         return 0;
@@ -885,13 +880,13 @@ function function_8e2d666b5b0f2bd3(car) {
                 var_65a66f89bc16ea1 = car.origin + (randomintrange(-48, 48), randomintrange(-48, 48), var_8e2633c8a746ba9a);
             }
             /#
-                print3d(var_9d2ccfd4406c98b7, "<dev string:xbc>", (1, 0.25, 0), 1, 0.25, 1000);
+                print3d(var_9d2ccfd4406c98b7, "<dev string:x1c>", (1, 0.25, 0), 1, 0.25, 1000);
                 line(var_9d2ccfd4406c98b7 + (-4, -4, 0), var_9d2ccfd4406c98b7 + (4, 4, 0), (1, 0.25, 0), 1, 0, 1000);
                 line(var_9d2ccfd4406c98b7 + (-4, 4, 0), var_9d2ccfd4406c98b7 + (4, -4, 0), (1, 0.25, 0), 1, 0, 1000);
                 line(var_65a66f89bc16ea1, var_9d2ccfd4406c98b7, (1, 1, 0), 1, 0, 1000);
                 line(var_65a66f89bc16ea1 + (-4, -4, 0), var_65a66f89bc16ea1 + (4, 4, 0), (0, 1, 1), 1, 0, 1000);
                 line(var_65a66f89bc16ea1 + (-4, 4, 0), var_65a66f89bc16ea1 + (4, -4, 0), (0, 1, 1), 1, 0, 1000);
-                print3d(var_65a66f89bc16ea1, "<dev string:xc8>", (0, 1, 1), 1, 0.25, 1000);
+                print3d(var_65a66f89bc16ea1, "<dev string:x25>", (0, 1, 1), 1, 0.25, 1000);
             #/
             self setorigin(var_65a66f89bc16ea1);
             return 1;
@@ -906,7 +901,7 @@ function function_8e2d666b5b0f2bd3(car) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35a8
+// Checksum 0x0, Offset: 0x34c9
 // Size: 0xb7
 function function_e7de8f7b4f13cd26(occupant, remove_occupant) {
     self.occupants = function_fdc9d5557c53078e(self.occupants);
@@ -929,7 +924,7 @@ function function_e7de8f7b4f13cd26(occupant, remove_occupant) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3667
+// Checksum 0x0, Offset: 0x3588
 // Size: 0x73
 function removeOccupantOnDeath(occupant) {
     occupant notify("removeOccupantOnDeath");
@@ -946,8 +941,8 @@ function removeOccupantOnDeath(occupant) {
 
 // Namespace elevators / scripts\common\elevators
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e2
-// Size: 0xd1
+// Checksum 0x0, Offset: 0x3603
+// Size: 0xd2
 function function_cba565314ac6a79e(point, corner_a, corner_b, corner_c, corner_d) {
     corner_a = (corner_a[0], corner_a[1], 0);
     corner_b = (corner_b[0], corner_b[1], 0);
@@ -965,7 +960,7 @@ function function_cba565314ac6a79e(point, corner_a, corner_b, corner_c, corner_d
 
 // Namespace elevators / scripts\common\elevators
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37bc
+// Checksum 0x0, Offset: 0x36de
 // Size: 0x79
 function function_5bfc9aae53c14056() {
     level endon("game_ended");
@@ -978,13 +973,5 @@ function function_5bfc9aae53c14056() {
         }
         wait 3;
     }
-}
-
-// Namespace elevators / scripts\common\elevators
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x383d
-// Size: 0x15
-function function_49197cd063a740ea(callbackfunction) {
-    self.var_d1659ed0a33bf98f = callbackfunction;
 }
 

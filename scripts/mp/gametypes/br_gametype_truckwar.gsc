@@ -892,7 +892,7 @@ function private function_ad382245d8d861f3(vehicle, team) {
     vehicle endon("give_upgrade");
     wait 60;
     foreach (player in level.teamdata[team]["players"]) {
-        player namespace_88bfae359020fdd3::function_1976438a8865ac27("br_ftue_truckwar_upgrade");
+        player namespace_88bfae359020fdd3::ftue_triggerTip("br_ftue_truckwar_upgrade");
     }
 }
 

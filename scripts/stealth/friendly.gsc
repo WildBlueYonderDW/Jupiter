@@ -9,7 +9,7 @@
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f
+// Checksum 0x0, Offset: 0x13b
 // Size: 0x56
 function main() {
     if (!isdefined(level.stealth)) {
@@ -27,10 +27,10 @@ function main() {
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad
+// Checksum 0x0, Offset: 0x199
 // Size: 0x7f
 function init_settings() {
-    assertex(!isdefined(self.stealth), "<dev string:x1c>");
+    assertex(!isdefined(self.stealth), "Friendly is already initialized for stealth");
     self.stealth = spawnstruct();
     self.stealth.funcs = [];
     ent_flag_init("stealth_enabled");
@@ -43,7 +43,7 @@ function init_settings() {
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x234
+// Checksum 0x0, Offset: 0x220
 // Size: 0x94
 function spotted_thread() {
     self endon("death");
@@ -67,7 +67,7 @@ function spotted_thread() {
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d0
+// Checksum 0x0, Offset: 0x2bc
 // Size: 0x7b
 function state_hidden() {
     thread scripts\stealth\utility::setbattlechatter(0);
@@ -83,7 +83,7 @@ function state_hidden() {
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x353
+// Checksum 0x0, Offset: 0x33f
 // Size: 0xa2
 function state_spotted() {
     assert(!isplayer(self));
@@ -103,7 +103,7 @@ function state_spotted() {
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fd
+// Checksum 0x0, Offset: 0x3e9
 // Size: 0x9
 function getup_from_prone() {
     self endon("death");
@@ -111,7 +111,7 @@ function getup_from_prone() {
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x40e
+// Checksum 0x0, Offset: 0x3fa
 // Size: 0x50
 function visibility_thread() {
     self endon("death");
@@ -127,8 +127,8 @@ function visibility_thread() {
 
 // Namespace friendly / scripts\stealth\friendly
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x466
-// Size: 0x87
+// Checksum 0x0, Offset: 0x452
+// Size: 0x88
 function get_detect_range() {
     stance = self.currentpose;
     if (stance == "back") {

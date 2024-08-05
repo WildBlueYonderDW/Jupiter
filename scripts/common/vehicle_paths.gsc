@@ -11,16 +11,16 @@
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x451
+// Checksum 0x0, Offset: 0x568
 // Size: 0x92
 function gopath(vehicle) {
     if (!isdefined(vehicle)) {
         vehicle = self;
-        assertex(self.code_classname == "<dev string:x1c>", "<dev string:x2e>");
+        assertex(self.code_classname == "script_vehicle", "Tried to do goPath on a non-vehicle");
     }
     vehicle endon("death");
     if (isdefined(vehicle.hasstarted)) {
-        println("<dev string:x55>");
+        println("<dev string:x1c>");
         return;
     } else {
         vehicle.hasstarted = 1;
@@ -36,7 +36,7 @@ function gopath(vehicle) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb
+// Checksum 0x0, Offset: 0x602
 // Size: 0x39
 function _vehicle_paths(node, var_269fb0ec10b51524, var_cfa3aafb71b08d36) {
     if (ishelicopter()) {
@@ -48,8 +48,8 @@ function _vehicle_paths(node, var_269fb0ec10b51524, var_cfa3aafb71b08d36) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x52c
-// Size: 0x285
+// Checksum 0x0, Offset: 0x643
+// Size: 0x27c
 function trigger_process_node(node) {
     if (isdefined(node.script_flag_set)) {
         flag_set(node.script_flag_set);
@@ -95,7 +95,6 @@ function trigger_process_node(node) {
             }
         } else if (node.script_noteworthy == "engineoff") {
             self vehicle_turnengineoff();
-            self notify("engineoff");
         } else {
             self notify(node.script_noteworthy);
             self notify("noteworthy", node.script_noteworthy);
@@ -122,8 +121,8 @@ function trigger_process_node(node) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b9
-// Size: 0x116
+// Checksum 0x0, Offset: 0x8c7
+// Size: 0xc3
 function delete_riders() {
     if (isdefined(self.riders)) {
         foreach (g in self.riders) {
@@ -132,19 +131,10 @@ function delete_riders() {
                     g scripts\common\ai::stop_magic_bullet_shield();
                 }
                 if (!issp() && isai(g)) {
-                    if (!isalive(g)) {
-                        if (issharedfuncdefined("ai", "getCorpseEntity")) {
-                            body = g function_f3bb4f4911a1beb2("ai", "getCorpseEntity");
-                            if (isdefined(body) && !isint(body)) {
-                                body delete();
-                            }
-                        }
-                    } else {
-                        g.var_f543095c3ca1b743 = 1;
-                        g.diequietly = 1;
-                        g.nocorpse = 1;
-                        g kill();
-                    }
+                    g.var_f543095c3ca1b743 = 1;
+                    g.diequietly = 1;
+                    g.nocorpse = 1;
+                    g kill();
                     continue;
                 }
                 g delete();
@@ -155,7 +145,7 @@ function delete_riders() {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d7
+// Checksum 0x0, Offset: 0x992
 // Size: 0x51
 function islastnode(node) {
     if (!isdefined(node.target)) {
@@ -169,7 +159,7 @@ function islastnode(node) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x931
+// Checksum 0x0, Offset: 0x9ec
 // Size: 0x8b
 function vehicle_should_unload(wait_func, nextpoint) {
     if (isdefined(nextpoint.script_unload)) {
@@ -192,28 +182,28 @@ function vehicle_should_unload(wait_func, nextpoint) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c5
+// Checksum 0x0, Offset: 0xa80
 // Size: 0x7a
 function overshoot_next_node(vnode) {
     /#
         if (!isdefined(vnode)) {
             return;
         }
-        self endon("<dev string:x8f>");
-        vnode waittillmatch("<dev string:x9f>", self);
-        println("<dev string:xaa>");
-        println("<dev string:x106>");
-        println("<dev string:xaa>");
-        println("<dev string:x162>" + vnode.origin + "<dev string:x192>");
-        println("<dev string:x1b6>");
-        println("<dev string:xaa>");
+        self endon("<dev string:x53>");
+        vnode waittillmatch("<dev string:x60>", self);
+        println("<dev string:x68>");
+        println("<dev string:xc1>");
+        println("<dev string:x68>");
+        println("<dev string:x11a>" + vnode.origin + "<dev string:x147>");
+        println("<dev string:x168>");
+        println("<dev string:x68>");
     #/
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa47
-// Size: 0x7a
+// Checksum 0x0, Offset: 0xb02
+// Size: 0x79
 function vehicle_resumepathvehicle() {
     if (!ishelicopter()) {
         self resumespeed(35);
@@ -231,8 +221,8 @@ function vehicle_resumepathvehicle() {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac9
-// Size: 0xd4
+// Checksum 0x0, Offset: 0xb83
+// Size: 0xd3
 function get_path_getfunc(pathpoint) {
     get_func = &get_from_vehicle_node;
     if (isdefined(pathpoint.target) && isstruct(pathpoint.target)) {
@@ -254,7 +244,7 @@ function get_path_getfunc(pathpoint) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xba6
+// Checksum 0x0, Offset: 0xc5f
 // Size: 0xe0
 function struct_wait(nextpoint, lastpoint, dist_sq) {
     if (!isdefined(lastpoint)) {
@@ -278,8 +268,8 @@ function struct_wait(nextpoint, lastpoint, dist_sq) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8e
-// Size: 0x8d
+// Checksum 0x0, Offset: 0xd47
+// Size: 0x8c
 function node_wait(nextpoint, lastpoint, get_func) {
     if (isdefined(self.unique_id)) {
         nodeflag = "node_flag_triggered" + self.unique_id;
@@ -299,8 +289,8 @@ function node_wait(nextpoint, lastpoint, get_func) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd23
-// Size: 0x65
+// Checksum 0x0, Offset: 0xddb
+// Size: 0x64
 function nodes_flag_triggered(nodeflag, nextpoint, get_func) {
     count = 0;
     while (isdefined(nextpoint) && count < 3) {
@@ -315,7 +305,7 @@ function nodes_flag_triggered(nodeflag, nextpoint, get_func) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd90
+// Checksum 0x0, Offset: 0xe47
 // Size: 0x64
 function node_flag_triggered(nodeflag, node) {
     if (node ent_flag_exist(nodeflag)) {
@@ -333,7 +323,7 @@ function node_flag_triggered(nodeflag, node) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfc
+// Checksum 0x0, Offset: 0xeb3
 // Size: 0x3d
 function node_flag_triggered_cleanup(node, nodeflag) {
     node endon("processed_node" + nodeflag);
@@ -343,10 +333,10 @@ function node_flag_triggered_cleanup(node, nodeflag) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe41
-// Size: 0x7e3
+// Checksum 0x0, Offset: 0xef8
+// Size: 0x7f0
 function vehicle_paths_non_heli(node) {
-    assertex(isdefined(node) || isdefined(self.attachedpath), "<dev string:x211>");
+    assertex(isdefined(node) || isdefined(self.attachedpath), "vehicle_path() called without a path");
     self notify("newpath");
     if (isdefined(node)) {
         self.attachedpath = node;
@@ -542,7 +532,7 @@ function vehicle_paths_non_heli(node) {
         nextpoint = [[ get_func ]](nextpoint.target);
         if (!isdefined(nextpoint)) {
             nextpoint = lastpoint;
-            assertmsg("<dev string:x239>" + lastpoint.origin);
+            assertmsg("can't find nextpoint for node at origin (node targets nothing or different type?): " + lastpoint.origin);
             break;
         }
     }
@@ -562,7 +552,7 @@ function vehicle_paths_non_heli(node) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x162c
+// Checksum 0x0, Offset: 0x16f0
 // Size: 0x2e
 function vehicle_notifyonstop() {
     self endon("resumed_path");
@@ -576,7 +566,7 @@ function vehicle_notifyonstop() {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1662
+// Checksum 0x0, Offset: 0x1726
 // Size: 0xf
 function vehicle_waittill_stopped() {
     while (!vehicle_is_stopped()) {
@@ -586,7 +576,7 @@ function vehicle_waittill_stopped() {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1679
+// Checksum 0x0, Offset: 0x173d
 // Size: 0x21
 function add_z(vec, zplus) {
     return (vec[0], vec[1], vec[2] + zplus);
@@ -594,19 +584,19 @@ function add_z(vec, zplus) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a3
-// Size: 0x442
+// Checksum 0x0, Offset: 0x1767
+// Size: 0x447
 function vehicle_paths_helicopter(node, var_269fb0ec10b51524, var_cfa3aafb71b08d36) {
     if (self vehicle_isphysveh()) {
         if (self hascomponent("p2p")) {
             function_fabc06bb049f87ee(node);
             return;
         } else if (getdvarint(@"hash_31333fbc83a5058f") == 0) {
-            println("<dev string:x290>");
+            println("<dev string:x1c0>");
             return;
         }
     }
-    assertex(isdefined(node) || isdefined(self.attachedpath), "<dev string:x211>");
+    assertex(isdefined(node) || isdefined(self.attachedpath), "vehicle_path() called without a path");
     self notify("newpath");
     self endon("newpath");
     self endon("death");
@@ -710,7 +700,7 @@ function vehicle_paths_helicopter(node, var_269fb0ec10b51524, var_cfa3aafb71b08d
         nextpoint = [[ get_func ]](nextpoint.target);
         if (!isdefined(nextpoint)) {
             nextpoint = lastpoint;
-            assertmsg("<dev string:x239>" + lastpoint.origin);
+            assertmsg("can't find nextpoint for node at origin (node targets nothing or different type?): " + lastpoint.origin);
             break;
         }
     }
@@ -727,8 +717,8 @@ function vehicle_paths_helicopter(node, var_269fb0ec10b51524, var_cfa3aafb71b08d
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aed
-// Size: 0x4cf
+// Checksum 0x0, Offset: 0x1bb6
+// Size: 0x4db
 function heli_wait_node(nextpoint, lastpoint, var_cfa3aafb71b08d36) {
     self endon("newpath");
     if (isdefined(nextpoint.script_unload) || isdefined(nextpoint.script_land)) {
@@ -798,7 +788,7 @@ function heli_wait_node(nextpoint, lastpoint, var_cfa3aafb71b08d36) {
     self vehicle_helisetai(origin, speed, accel, decel, nextpoint.script_goalyaw, nextpoint.script_anglevehicle, yaw, airresistance, hasdelay, stopnode, unload, flag_wait, var_ccf44cff39a902f0);
     if (isdefined(nextpoint.radius)) {
         self setneargoalnotifydist(nextpoint.radius);
-        assertex(nextpoint.radius > 0, "<dev string:x2e1>" + nextpoint.radius);
+        assertex(nextpoint.radius > 0, "radius: " + nextpoint.radius);
         waittill_any_2("near_goal", "goal");
     } else {
         self waittill("goal");
@@ -809,14 +799,14 @@ function heli_wait_node(nextpoint, lastpoint, var_cfa3aafb71b08d36) {
     trigger_process_node(nextpoint);
     /#
         if (isdefined(nextpoint.script_flag_set)) {
-            self notify("<dev string:x2ed>", nextpoint, nextpoint.script_flag_set);
+            self notify("<dev string:x20e>", nextpoint, nextpoint.script_flag_set);
         } else {
-            self notify("<dev string:x2ed>", nextpoint);
+            self notify("<dev string:x20e>", nextpoint);
         }
     #/
     if (isdefined(nextpoint.script_firelink)) {
         if (!isdefined(level.helicopter_firelinkfunk)) {
-            assertmsg("<dev string:x305>");
+            assertmsg("no Fire Link funk.. need scriptssphelicopter_globals::init_helicopters();");
         }
         thread [[ level.helicopter_firelinkfunk ]](nextpoint);
     }
@@ -829,10 +819,10 @@ function heli_wait_node(nextpoint, lastpoint, var_cfa3aafb71b08d36) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc4
-// Size: 0x323
+// Checksum 0x0, Offset: 0x2099
+// Size: 0x326
 function function_fabc06bb049f87ee(node, var_b1f8b992bf79f2d3) {
-    assertex(isdefined(node) || isdefined(self.attachedpath), "<dev string:x352>");
+    assertex(isdefined(node) || isdefined(self.attachedpath), "vehicle_paths_physics_helicopter() called without a path");
     self notify("newpath");
     self endon("newpath");
     self endon("death");
@@ -912,7 +902,7 @@ function function_fabc06bb049f87ee(node, var_b1f8b992bf79f2d3) {
         nextpoint = [[ get_func ]](nextpoint.target);
         if (!isdefined(nextpoint)) {
             nextpoint = lastpoint;
-            assertmsg("<dev string:x239>" + lastpoint.origin);
+            assertmsg("can't find nextpoint for node at origin (node targets nothing or different type?): " + lastpoint.origin);
             break;
         }
     }
@@ -929,12 +919,12 @@ function function_fabc06bb049f87ee(node, var_b1f8b992bf79f2d3) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x22ef
-// Size: 0x2f8
+// Checksum 0x0, Offset: 0x23c7
+// Size: 0x301
 function function_2936413eac5d78b1(nextpoint, lastpoint, var_b1f8b992bf79f2d3) {
     self endon("newpath");
     if (isdefined(nextpoint.script_unload) || isdefined(nextpoint.script_land)) {
-        assertmsg("<dev string:x38e>");
+        assertmsg("script_unload and script_land are currently UNTESTED");
     }
     if (isdefined(lastpoint)) {
         airresistance = lastpoint.script_airresistance;
@@ -962,7 +952,7 @@ function function_2936413eac5d78b1(nextpoint, lastpoint, var_b1f8b992bf79f2d3) {
     }
     origin = nextpoint.origin;
     if (isdefined(nextpoint.radius)) {
-        assertex(nextpoint.radius > 0, "<dev string:x2e1>" + nextpoint.radius);
+        assertex(nextpoint.radius > 0, "radius: " + nextpoint.radius);
         self function_77320e794d35465a("p2p", "goalThreshold", nextpoint.radius);
     }
     if (isdefined(var_b1f8b992bf79f2d3)) {
@@ -977,14 +967,14 @@ function function_2936413eac5d78b1(nextpoint, lastpoint, var_b1f8b992bf79f2d3) {
     trigger_process_node(nextpoint);
     /#
         if (isdefined(nextpoint.script_flag_set)) {
-            self notify("<dev string:x2ed>", nextpoint, nextpoint.script_flag_set);
+            self notify("<dev string:x20e>", nextpoint, nextpoint.script_flag_set);
         } else {
-            self notify("<dev string:x2ed>", nextpoint);
+            self notify("<dev string:x20e>", nextpoint);
         }
     #/
     if (isdefined(nextpoint.script_firelink)) {
         if (!isdefined(level.helicopter_firelinkfunk)) {
-            assertmsg("<dev string:x305>");
+            assertmsg("no Fire Link funk.. need scriptssphelicopter_globals::init_helicopters();");
         }
         thread [[ level.helicopter_firelinkfunk ]](nextpoint);
     }
@@ -997,11 +987,11 @@ function function_2936413eac5d78b1(nextpoint, lastpoint, var_b1f8b992bf79f2d3) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25ef
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x26d0
+// Size: 0xd7
 function get_pathstruct() {
     structs = getstructarray(self.target, "targetname");
-    assertex(structs.size != 0, "<dev string:x3c6>" + self.origin + "<dev string:x3d5>");
+    assertex(structs.size != 0, "Vehicle at " + self.origin + " is not targeting a struct");
     if (structs.size == 1) {
         return structs[0];
     }
@@ -1011,14 +1001,14 @@ function get_pathstruct() {
             filtered[filtered.size] = struct;
         }
     }
-    assertex(filtered.size == 1, "<dev string:x3c6>" + self.origin + "<dev string:x3f3>");
+    assertex(filtered.size == 1, "Vehicle at " + self.origin + " is targeting too many path structs or no structs at all");
     return filtered[0];
 }
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26d0
-// Size: 0x214
+// Checksum 0x0, Offset: 0x27b0
+// Size: 0x217
 function getonpath(skip_attach) {
     path_start = undefined;
     type = self.vehicletype;
@@ -1031,9 +1021,9 @@ function getonpath(skip_attach) {
         path_start = getvehiclenode(self.target, "targetname");
         /#
             if (ishelicopter() && isdefined(path_start)) {
-                println("<dev string:x42f>" + path_start.targetname);
-                println("<dev string:x44f>" + function_3c8848a3a11b2553(self.vehicletype));
-                assertmsg("<dev string:x460>");
+                println("<dev string:x223>" + path_start.targetname);
+                println("<dev string:x240>" + function_3c8848a3a11b2553(self.vehicletype));
+                assertmsg("<dev string:x24e>");
             }
         #/
         if (!isdefined(path_start)) {
@@ -1077,8 +1067,8 @@ function getonpath(skip_attach) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28ec
-// Size: 0x6c
+// Checksum 0x0, Offset: 0x29cf
+// Size: 0x6b
 function _vehicle_resume_named(stop_name) {
     resume_speed = self.vehicle_stop_named[stop_name];
     self.vehicle_stop_named[stop_name] = undefined;
@@ -1094,13 +1084,13 @@ function _vehicle_resume_named(stop_name) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2960
+// Checksum 0x0, Offset: 0x2a42
 // Size: 0x99
 function _vehicle_stop_named(stop_name, acceleration, deceleration) {
     if (!isdefined(self.vehicle_stop_named)) {
         self.vehicle_stop_named = [];
     }
-    assertex(!isdefined(self.vehicle_stop_named[stop_name]), "<dev string:x496>");
+    assertex(!isdefined(self.vehicle_stop_named[stop_name]), "can't stop twice with same name");
     if (self hascomponent("p2p")) {
         self.vehicle_stop_named[stop_name] = self vehicle_getspeed();
         self function_77320e794d35465a("p2p", "manualSpeed", 0);
@@ -1112,8 +1102,8 @@ function _vehicle_stop_named(stop_name, acceleration, deceleration) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a01
-// Size: 0x1ed
+// Checksum 0x0, Offset: 0x2ae3
+// Size: 0x1ec
 function unload_node(node) {
     self endon("death");
     if (isdefined(self.ent_flag) && isdefined(self.ent_flag["prep_unload"]) && ent_flag("prep_unload")) {
@@ -1159,8 +1149,8 @@ function unload_node(node) {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bf7
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x2cd8
+// Size: 0x123
 function checkvehiclenavsplinestuck() {
     self notify("checkVehicleNavSplineStuck");
     self endon("checkVehicleNavSplineStuck");
@@ -1187,7 +1177,7 @@ function checkvehiclenavsplinestuck() {
         if (timeelapsedseconds > var_196855bdf0b6d359) {
             /#
                 duration = 400;
-                print3d(self getcentroid(), "<dev string:x4b9>", (1, 1, 1), 1, 1, duration);
+                print3d(self getcentroid(), "<dev string:x281>", (1, 1, 1), 1, 1, duration);
             #/
             self notify("vehicleStuckNavSpline");
             self stoppath();
@@ -1198,8 +1188,8 @@ function checkvehiclenavsplinestuck() {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d1c
-// Size: 0x6c
+// Checksum 0x0, Offset: 0x2e03
+// Size: 0x6b
 function checkvehiclenavsplineinterrupted() {
     self notify("checkVehicleNavSplineInterrupted");
     self endon("checkVehicleNavSplineInterrupted");
@@ -1208,7 +1198,7 @@ function checkvehiclenavsplineinterrupted() {
         self waittill("navspline_interrupted");
         /#
             duration = 400;
-            print3d(self getcentroid(), "<dev string:x4d4>", (1, 1, 1), 1, 1, duration);
+            print3d(self getcentroid(), "<dev string:x299>", (1, 1, 1), 1, 1, duration);
         #/
         self notify("vehicleNavSplineInterrupted");
         self stoppath();
@@ -1217,8 +1207,8 @@ function checkvehiclenavsplineinterrupted() {
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d90
-// Size: 0xfe
+// Checksum 0x0, Offset: 0x2e76
+// Size: 0x100
 function function_b5e5b1755c705053(goallocation, speedmph, var_56c51d0b8c3270ca, debugdraw) {
     startlocation = self.origin;
     vehicleforward = anglestoforward(self.angles);
@@ -1237,8 +1227,8 @@ function function_b5e5b1755c705053(goallocation, speedmph, var_56c51d0b8c3270ca,
 
 // Namespace vehicle_paths / scripts\common\vehicle_paths
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e96
-// Size: 0x2dd
+// Checksum 0x0, Offset: 0x2f7e
+// Size: 0x2e7
 function vehicleNavSplineSimpleFollowBehavior(speedmph, var_56c51d0b8c3270ca, debugdraw) {
     self notify("vehicleNavSplineSimpleFollowBehavior");
     self endon("vehicleNavSplineSimpleFollowBehavior");
@@ -1283,10 +1273,10 @@ function vehicleNavSplineSimpleFollowBehavior(speedmph, var_56c51d0b8c3270ca, de
             trace = scripts\engine\trace::ray_trace(self.origin, enemy getcentroid(), self);
             /#
                 if (istrue(debugdraw)) {
-                    visible = isdefined(trace) && trace["<dev string:x4f5>"] == "<dev string:x500>" && trace["<dev string:x512>"] == enemy;
+                    visible = isdefined(trace) && trace["<dev string:x2b7>"] == "<dev string:x2bf>" && trace["<dev string:x2ce>"] == enemy;
                     color = ter_op(visible, (1, 1, 0), (1, 0, 0));
                     line(enemy getcentroid(), self.origin, color, 1, 0, 1);
-                    print3d(self.origin, "<dev string:x51c>" + var_86033ffa1b086ec2, color, 1, 1, 1);
+                    print3d(self.origin, "<dev string:x2d5>" + var_86033ffa1b086ec2, color, 1, 1, 1);
                 }
             #/
             if (isdefined(trace) && trace["hittype"] == "hittype_entity" && trace["entity"] == enemy) {
@@ -1305,32 +1295,32 @@ function vehicleNavSplineSimpleFollowBehavior(speedmph, var_56c51d0b8c3270ca, de
 
     // Namespace vehicle_paths / scripts\common\vehicle_paths
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x317b
-    // Size: 0x188
+    // Checksum 0x0, Offset: 0x326d
+    // Size: 0x18d
     function function_2a708e9755fc798b(var_56c51d0b8c3270ca, speed) {
         duration = 400;
         textverticaloffset = 15;
         if (utility::issp()) {
             var_1b46e8b19292a40e = getdvar(@"hash_4e06d4ff70605269", 0);
-            print3d(self.origin, "<dev string:x520>" + var_1b46e8b19292a40e, (1, 1, 1), 1, 1, duration);
+            print3d(self.origin, "<dev string:x2d6>" + var_1b46e8b19292a40e, (1, 1, 1), 1, 1, duration);
         }
-        navmeshlayer = ter_op(isdefined(var_56c51d0b8c3270ca), var_56c51d0b8c3270ca, "<dev string:x53f>");
+        navmeshlayer = ter_op(isdefined(var_56c51d0b8c3270ca), var_56c51d0b8c3270ca, "<dev string:x2f2>");
         var_620e3a366fb95fcf = istrue(level.var_620e3a366fb95fcf);
         script_disconnectpaths = !isdefined(self.script_disconnectpaths) || istrue(self.script_disconnectpaths);
         var_30c993377fdf47dd = getdvar(@"hash_b0706332ae0689bc", 1);
-        print3d(self.origin + (0, 0, textverticaloffset * 3), "<dev string:x54a>" + navmeshlayer + "<dev string:x55b>" + speed, (1, 1, 1), 1, 1, duration);
-        print3d(self.origin + (0, 0, textverticaloffset * 2), "<dev string:x566>" + var_620e3a366fb95fcf + "<dev string:x584>" + script_disconnectpaths, (1, 1, 1), 1, 1, duration);
-        print3d(self.origin + (0, 0, textverticaloffset), "<dev string:x5a0>" + var_30c993377fdf47dd, (1, 1, 1), 1, 1, duration);
+        print3d(self.origin + (0, 0, textverticaloffset * 3), "<dev string:x2fa>" + navmeshlayer + "<dev string:x308>" + speed, (1, 1, 1), 1, 1, duration);
+        print3d(self.origin + (0, 0, textverticaloffset * 2), "<dev string:x310>" + var_620e3a366fb95fcf + "<dev string:x32b>" + script_disconnectpaths, (1, 1, 1), 1, 1, duration);
+        print3d(self.origin + (0, 0, textverticaloffset), "<dev string:x344>" + var_30c993377fdf47dd, (1, 1, 1), 1, 1, duration);
     }
 
     // Namespace vehicle_paths / scripts\common\vehicle_paths
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x330b
-    // Size: 0x8c
+    // Checksum 0x0, Offset: 0x3402
+    // Size: 0x8b
     function function_68d5232181fec390(splinepoints, pathcolor) {
-        self notify("<dev string:x5c6>");
-        self endon("<dev string:x5c6>");
-        self endon("<dev string:x5dd>");
+        self notify("<dev string:x367>");
+        self endon("<dev string:x367>");
+        self endon("<dev string:x37b>");
         while (true) {
             waitframe();
             sphere(splinepoints[0], 5, pathcolor, 0, 1);

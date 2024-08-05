@@ -9,14 +9,13 @@
 #using scripts\unittest\patch.gsc;
 #using scripts\unittest\private.gsc;
 #using scripts\unittest\error.gsc;
-#using script_13645532f846e433;
 
 #namespace unittest;
 
 // Namespace unittest / scripts\unittest\unittest
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8
-// Size: 0x4c
+// Checksum 0x0, Offset: 0xc0
+// Size: 0x44
 function test() {
     unittest_ops::main();
     unittest_call::main();
@@ -27,14 +26,13 @@ function test() {
     unittest_threads::main();
     unittest_patch::main();
     namespace_106f587ebebd0cab::main();
-    thread namespace_eb31a7ea746bf7d0::main();
     /#
     #/
 }
 
 // Namespace unittest / scripts\unittest\unittest
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13c
+// Checksum 0x0, Offset: 0x10c
 // Size: 0x9
 function error() {
     unittest_error::main();
@@ -42,8 +40,8 @@ function error() {
 
 // Namespace unittest / scripts\unittest\unittest
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x11d
+// Size: 0x8b
 function main() {
     setdvarifuninitialized(@"hash_3b4e5f0e69f46421", 0);
     while (true) {

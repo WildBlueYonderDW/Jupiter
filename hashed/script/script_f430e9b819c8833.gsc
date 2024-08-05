@@ -2,7 +2,7 @@
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c4
+// Checksum 0x0, Offset: 0x561
 // Size: 0x1c
 function function_63abc2408f9ef4ba(name) {
     level.var_2b911118b9f2e6c0[name] = getsystemtimeinmicroseconds();
@@ -10,7 +10,7 @@ function function_63abc2408f9ef4ba(name) {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e8
+// Checksum 0x0, Offset: 0x585
 // Size: 0x68
 function function_b41d4c50a5cb0a36(name) {
     time = getsystemtimeinmicroseconds();
@@ -23,7 +23,7 @@ function function_b41d4c50a5cb0a36(name) {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x758
+// Checksum 0x0, Offset: 0x5f5
 // Size: 0x5c
 function function_988c6c7c7776406c() {
     println("<dev string:x1c>");
@@ -36,10 +36,10 @@ function function_988c6c7c7776406c() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bc
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x659
+// Size: 0x10e
 function bench_foreach() {
-    println("<dev string:x31>");
+    println("<dev string:x2e>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     a = [];
     for (i = 0; i < 10000; i++) {
@@ -57,10 +57,10 @@ function bench_foreach() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d3
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x76f
+// Size: 0x11c
 function function_18cb5fb798c607cd() {
-    println("<dev string:x43>");
+    println("<dev string:x3d>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     a = [];
     a[0] = 0;
@@ -80,10 +80,10 @@ function function_18cb5fb798c607cd() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f8
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x893
+// Size: 0xbd
 function function_e4e266c2c4ebf49e() {
-    println("<dev string:x5a>");
+    println("<dev string:x51>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     a = [];
     function_63abc2408f9ef4ba("ForArray");
@@ -102,10 +102,10 @@ function function_e4e266c2c4ebf49e() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xabb
-// Size: 0x74
+// Checksum 0x0, Offset: 0x958
+// Size: 0x75
 function function_723ebfcdaa798c34() {
-    println("<dev string:x6d>");
+    println("<dev string:x61>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("ForLoopSetup");
     for (i = 0; i < max_iterations; i++) {
@@ -117,10 +117,10 @@ function function_723ebfcdaa798c34() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb37
-// Size: 0x78
+// Checksum 0x0, Offset: 0x9d5
+// Size: 0x79
 function function_10f6d810677cee84() {
-    println("<dev string:x84>");
+    println("<dev string:x75>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     a = 1;
     function_63abc2408f9ef4ba("IfElse");
@@ -136,10 +136,10 @@ function function_10f6d810677cee84() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb7
-// Size: 0x94
+// Checksum 0x0, Offset: 0xa56
+// Size: 0x98
 function function_9628bf5282b8bafc() {
-    println("<dev string:x95>");
+    println("<dev string:x83>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     a = 0;
     function_63abc2408f9ef4ba("AllocVar");
@@ -156,7 +156,7 @@ function function_9628bf5282b8bafc() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc53
+// Checksum 0x0, Offset: 0xaf6
 // Size: 0x2
 function function_41d5b4596b4cf805() {
     
@@ -164,10 +164,10 @@ function function_41d5b4596b4cf805() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5d
+// Checksum 0x0, Offset: 0xb00
 // Size: 0x63
 function function_dff6885d265db0fd() {
-    println("<dev string:xa8>");
+    println("<dev string:x93>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("MinScriptFunction");
     for (i = 0; i < max_iterations; i++) {
@@ -178,7 +178,7 @@ function function_dff6885d265db0fd() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc8
+// Checksum 0x0, Offset: 0xb6b
 // Size: 0xb
 function function_efadcc2e0fb51aaa(a) {
     
@@ -186,10 +186,10 @@ function function_efadcc2e0fb51aaa(a) {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcdb
-// Size: 0x6f
+// Checksum 0x0, Offset: 0xb7e
+// Size: 0x70
 function function_2308f139d0ffbc41() {
-    println("<dev string:xc4>");
+    println("<dev string:xac>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     a = 0;
     function_63abc2408f9ef4ba("OneArgScriptFunction");
@@ -201,7 +201,7 @@ function function_2308f139d0ffbc41() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0xd52
+// Checksum 0x0, Offset: 0xbf6
 // Size: 0x53
 function function_c7c4508ca492914f(a, b, c, d, e, f, g, h, j, k) {
     
@@ -209,10 +209,10 @@ function function_c7c4508ca492914f(a, b, c, d, e, f, g, h, j, k) {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdad
-// Size: 0xea
+// Checksum 0x0, Offset: 0xc51
+// Size: 0xf4
 function function_76d6d0feedd3126b() {
-    println("<dev string:xe3>");
+    println("<dev string:xc8>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     a = 0;
     b = 1;
@@ -233,10 +233,10 @@ function function_76d6d0feedd3126b() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9f
-// Size: 0x6b
+// Checksum 0x0, Offset: 0xd4d
+// Size: 0x6c
 function function_589fd6b13ca60155() {
-    println("<dev string:xfb>");
+    println("<dev string:xdd>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("BuiltinFunction");
     for (i = 0; i < max_iterations; i++) {
@@ -247,10 +247,10 @@ function function_589fd6b13ca60155() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf12
-// Size: 0xa0
+// Checksum 0x0, Offset: 0xdc1
+// Size: 0xa1
 function function_cae58617e7945254() {
-    println("<dev string:x115>");
+    println("<dev string:xf4>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     p = level.players[0];
     if (!isdefined(p)) {
@@ -268,10 +268,10 @@ function function_cae58617e7945254() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfba
-// Size: 0xd5
+// Checksum 0x0, Offset: 0xe6a
+// Size: 0xdf
 function bench_variables() {
-    println("<dev string:x12d>");
+    println("<dev string:x109>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("Variables");
     for (i = 0; i < max_iterations; i++) {
@@ -291,10 +291,10 @@ function bench_variables() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1097
-// Size: 0xf4
+// Checksum 0x0, Offset: 0xf51
+// Size: 0xfe
 function bench_strings() {
-    println("<dev string:x141>");
+    println("<dev string:x11a>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("Strings");
     for (i = 0; i < max_iterations; i++) {
@@ -314,10 +314,10 @@ function bench_strings() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1193
-// Size: 0xf5
+// Checksum 0x0, Offset: 0x1057
+// Size: 0xf7
 function function_add278ceb4188914() {
-    println("<dev string:x153>");
+    println("<dev string:x129>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("Arrays");
     for (i = 0; i < max_iterations; i++) {
@@ -343,10 +343,10 @@ function function_add278ceb4188914() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1290
-// Size: 0x298
+// Checksum 0x0, Offset: 0x1156
+// Size: 0x299
 function bench_fields() {
-    println("<dev string:x164>");
+    println("<dev string:x137>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     s = spawnstruct();
     level.s = spawnstruct();
@@ -385,10 +385,10 @@ function bench_fields() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1530
-// Size: 0x1a6
+// Checksum 0x0, Offset: 0x13f7
+// Size: 0x1a9
 function function_713ed9ae70c22b36() {
-    println("<dev string:x175>");
+    println("<dev string:x145>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     s = spawnstruct();
     function_63abc2408f9ef4ba("Ops");
@@ -423,7 +423,7 @@ function function_713ed9ae70c22b36() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16de
+// Checksum 0x0, Offset: 0x15a8
 // Size: 0x2
 function function_9cd6cc4b2f8e5e8f() {
     
@@ -431,10 +431,10 @@ function function_9cd6cc4b2f8e5e8f() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16e8
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x15b2
+// Size: 0x70
 function function_c0c13c7d2f02753b() {
-    println("<dev string:x183>");
+    println("<dev string:x150>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     f = &function_9cd6cc4b2f8e5e8f;
     function_63abc2408f9ef4ba("FunctionPointer");
@@ -446,10 +446,10 @@ function function_c0c13c7d2f02753b() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x175f
-// Size: 0x7f
+// Checksum 0x0, Offset: 0x162a
+// Size: 0x81
 function function_56f6defb83c08190() {
-    println("<dev string:x19d>");
+    println("<dev string:x167>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     f = &function_9cd6cc4b2f8e5e8f;
     s = spawnstruct();
@@ -462,8 +462,8 @@ function function_56f6defb83c08190() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e6
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x16b3
+// Size: 0xab
 function function_e9372cb2b92b01e7(waittime, var_8942d67f3b4bb0f) {
     level endon("bench_thread_end");
     while (true) {
@@ -488,10 +488,10 @@ function function_e9372cb2b92b01e7(waittime, var_8942d67f3b4bb0f) {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1895
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x1766
+// Size: 0xa9
 function bench_threads() {
-    println("<dev string:x1b5>");
+    println("<dev string:x17c>");
     max_threads = 100;
     function_63abc2408f9ef4ba("Threads");
     waittime = 0.01;
@@ -503,18 +503,18 @@ function bench_threads() {
         }
     }
     function_b41d4c50a5cb0a36("Threads");
-    println("<dev string:x1c7>");
+    println("<dev string:x18b>");
     wait 1;
-    println("<dev string:x1de>");
+    println("<dev string:x19f>");
     level notify("bench_thread_end");
 }
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1945
-// Size: 0x77
+// Checksum 0x0, Offset: 0x1817
+// Size: 0x78
 function function_1cb0315d0cdacba4() {
-    println("<dev string:x1f7>");
+    println("<dev string:x1b5>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("GetDvars");
     for (i = 0; i < max_iterations; i++) {
@@ -525,10 +525,10 @@ function function_1cb0315d0cdacba4() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c4
+// Checksum 0x0, Offset: 0x1897
 // Size: 0x6c
 function function_d5bce87878a08018() {
-    println("<dev string:x20a>");
+    println("<dev string:x1c5>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("SetDvars");
     for (i = 0; i < max_iterations; i++) {
@@ -539,10 +539,10 @@ function function_d5bce87878a08018() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a38
-// Size: 0x31
+// Checksum 0x0, Offset: 0x190b
+// Size: 0x30
 function function_8193a06614f54e87() {
-    println("<dev string:x21d>");
+    println("<dev string:x1d5>");
     i = 0;
     level.var_2b911118b9f2e6c0 = [];
     level.var_5abcc6f847b4e3ee = [];
@@ -550,13 +550,13 @@ function function_8193a06614f54e87() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a71
-// Size: 0xfc
+// Checksum 0x0, Offset: 0x1943
+// Size: 0xf9
 function function_4912bd03f307546c() {
-    println("<dev string:x22d>");
+    println("<dev string:x1e2>");
     i = 0;
     s = "\n";
-    foreach (k, v in level.var_5abcc6f847b4e3ee) {
+    foreach (v in level.var_5abcc6f847b4e3ee) {
         s += k;
         s += ",";
     }
@@ -572,8 +572,8 @@ function function_4912bd03f307546c() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b75
-// Size: 0x2b8
+// Checksum 0x0, Offset: 0x1a44
+// Size: 0x2b9
 function benchmark() {
     test_vars = [];
     if (getdvarint(@"hash_44e9f4a106f9b4a1", 0) > 0) {
@@ -676,7 +676,7 @@ function benchmark() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e35
+// Checksum 0x0, Offset: 0x1d05
 // Size: 0x31
 function shouldbench(a) {
     if (issubstr(getdvar(@"hash_86ef66e581c77f50", ""), a + ",")) {
@@ -687,7 +687,7 @@ function shouldbench(a) {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e6f
+// Checksum 0x0, Offset: 0x1d3f
 // Size: 0x8a
 function main() {
     level thread function_41e013dcb5b7b2a();
@@ -706,7 +706,7 @@ function main() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f01
+// Checksum 0x0, Offset: 0x1dd1
 // Size: 0x3c
 function leak() {
     a = spawnstruct();
@@ -717,7 +717,7 @@ function leak() {
 
 // Namespace benchmark / namespace_299f9e9612d25bc1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f45
+// Checksum 0x0, Offset: 0x1e15
 // Size: 0x4b
 function function_41e013dcb5b7b2a() {
     setdvarifuninitialized(@"hash_8c14a9cfaca224d4", 0);

@@ -2,7 +2,6 @@
 #using scripts\engine\math.gsc;
 #using script_2669878cf5a1b6bc;
 #using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\engine\trace.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\stealth\utility.gsc;
@@ -13,7 +12,7 @@
 
     // Namespace utility / namespace_4d62562249d2171e
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x29c
+    // Checksum 0x0, Offset: 0x250
     // Size: 0x1f
     function function_a464c293616a3a6(debug_string) {
         if (!function_e39a555170607456()) {
@@ -24,7 +23,7 @@
 
     // Namespace utility / namespace_4d62562249d2171e
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2c3
+    // Checksum 0x0, Offset: 0x277
     // Size: 0x17
     function function_e39a555170607456() {
         return getdvarint(@"hash_6d78d3cf7d56cdd5", 0) != 0;
@@ -34,7 +33,7 @@
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e2
+// Checksum 0x0, Offset: 0x296
 // Size: 0x29
 function function_f9dd1250ea99d251(val) {
     if (isplayer(self)) {
@@ -46,7 +45,7 @@ function function_f9dd1250ea99d251(val) {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x313
+// Checksum 0x0, Offset: 0x2c7
 // Size: 0x3c
 function function_50c9c1c52c852f54(val) {
     self.scriptedattackeraccuracy = val;
@@ -57,8 +56,8 @@ function function_50c9c1c52c852f54(val) {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x357
-// Size: 0x33
+// Checksum 0x0, Offset: 0x30b
+// Size: 0x32
 function hassixthsense() {
     perkname = "specialty_sixth_sense";
     return isdefined(perkname) && isdefined(self.perks) && isdefined(self.perks[perkname]);
@@ -66,8 +65,8 @@ function hassixthsense() {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x393
-// Size: 0x33
+// Checksum 0x0, Offset: 0x346
+// Size: 0x32
 function function_7043a32c6ff5835a() {
     perkname = "specialty_ai_stealth_sixth_sense";
     return isdefined(perkname) && isdefined(self.perks) && isdefined(self.perks[perkname]);
@@ -75,10 +74,10 @@ function function_7043a32c6ff5835a() {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cf
-// Size: 0x16
+// Checksum 0x0, Offset: 0x381
+// Size: 0x46
 function function_e33c1a98de731caf() {
-    if (scripts\cp_mp\utility\game_utility::function_42e2dcfd4571b89b()) {
+    if (getdvar(@"hash_7611a2790a0bf7fe", "") == "dmz" || getdvar(@"hash_7611a2790a0bf7fe", "") == "exgm") {
         return "all";
     }
     return "bad_guys";
@@ -86,8 +85,8 @@ function function_e33c1a98de731caf() {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ee
-// Size: 0x4f2
+// Checksum 0x0, Offset: 0x3d0
+// Size: 0x4fd
 function function_7f12653d04730492() {
     var_1572384ef9f3dbe2 = 1;
     if (getdvarint(@"hash_4096753656b86302", 0)) {
@@ -201,7 +200,7 @@ function function_7f12653d04730492() {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e8
+// Checksum 0x0, Offset: 0x8d5
 // Size: 0xeb
 function function_6186bf9e7a357a3e(dir, active, spotted, sightmask, spottedmask) {
     if (sightmask > 0) {
@@ -227,8 +226,8 @@ function function_6186bf9e7a357a3e(dir, active, spotted, sightmask, spottedmask)
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9db
-// Size: 0x10c
+// Checksum 0x0, Offset: 0x9c8
+// Size: 0x10a
 function function_d075e24b4fdf7c87(dir, mask) {
     consts = [];
     switch (dir) {
@@ -245,7 +244,7 @@ function function_d075e24b4fdf7c87(dir, mask) {
         consts = [16];
         break;
     default: 
-        assertmsg("<dev string:x1c>" + dir);
+        assertmsg("SIXTH SENSE: Unrecognized direction " + dir);
         break;
     }
     foreach (constvalue in consts) {
@@ -258,7 +257,7 @@ function function_d075e24b4fdf7c87(dir, mask) {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf0
+// Checksum 0x0, Offset: 0xadb
 // Size: 0x8e
 function function_df271fffca002529(weapon) {
     if (isweapon(weapon) && isnullweapon(weapon)) {
@@ -281,7 +280,7 @@ function function_df271fffca002529(weapon) {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb87
+// Checksum 0x0, Offset: 0xb72
 // Size: 0xf9
 function function_830f660f7a75ee82(player) {
     if (istrue(self.juggernaut)) {
@@ -312,7 +311,7 @@ function function_830f660f7a75ee82(player) {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc89
+// Checksum 0x0, Offset: 0xc74
 // Size: 0x1c
 function function_a5ff5e1965faf40e() {
     level.var_97068503cee0ee88 = [];
@@ -324,8 +323,8 @@ function function_a5ff5e1965faf40e() {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcad
-// Size: 0x3d
+// Checksum 0x0, Offset: 0xc98
+// Size: 0x3c
 function function_378625a93d79fdc2() {
     self.var_27e6cfd1a20ca927 = 0;
     self.var_de2a54afecc91d1 = 0;
@@ -336,8 +335,8 @@ function function_378625a93d79fdc2() {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf2
-// Size: 0x4d
+// Checksum 0x0, Offset: 0xcdc
+// Size: 0x4c
 function function_1a4d7090fc81e97() {
     function_39af3dff662a71d0(0);
     self.var_27e6cfd1a20ca927 = undefined;
@@ -350,7 +349,7 @@ function function_1a4d7090fc81e97() {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd47
+// Checksum 0x0, Offset: 0xd30
 // Size: 0x18
 function function_39af3dff662a71d0(sightmask) {
     self setclientomnvar("ui_ai_stealth_edge_glow", sightmask);
@@ -358,8 +357,8 @@ function function_39af3dff662a71d0(sightmask) {
 
 // Namespace utility / namespace_4d62562249d2171e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd67
-// Size: 0x13a
+// Checksum 0x0, Offset: 0xd50
+// Size: 0x13d
 function function_9af348cfa1145f9c(enemy) {
     forward = anglestoforward(self getplayerangles());
     forward2d = (forward[0], forward[1], forward[2]);

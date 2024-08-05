@@ -8,7 +8,7 @@
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f8
+// Checksum 0x0, Offset: 0x38f
 // Size: 0x42
 function _giveweapon(weapon, variant, dualwieldoverride, usedbefore) {
     if (!isdefined(variant)) {
@@ -22,7 +22,7 @@ function _giveweapon(weapon, variant, dualwieldoverride, usedbefore) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x342
+// Checksum 0x0, Offset: 0x3d9
 // Size: 0x23
 function _switchtoweapon(weapon) {
     /#
@@ -33,25 +33,25 @@ function _switchtoweapon(weapon) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36d
+// Checksum 0x0, Offset: 0x404
 // Size: 0x23
 function _switchtoweaponimmediate(weapon) {
     /#
-        debugweaponchangeprint("<dev string:x34>", weapon);
+        debugweaponchangeprint("<dev string:x31>", weapon);
     #/
     self switchtoweaponimmediate(weapon);
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x398
+// Checksum 0x0, Offset: 0x42f
 // Size: 0xd6
 function _takeweapon(weapon) {
     /#
         if (getdvarint(@"hash_e6a5211d6811a3e", 0) != 0) {
-            debugweaponchangeprint("<dev string:x55>", weapon);
+            debugweaponchangeprint("<dev string:x4f>", weapon);
             if (iscurrentweapon(weapon)) {
-                println("<dev string:x69>");
+                println("<dev string:x60>");
             }
         }
     #/
@@ -67,7 +67,7 @@ function _takeweapon(weapon) {
         if (!isstring(weaponstring) && isweapon(weapon)) {
             weaponstring = getcompleteweaponname(weapon);
         }
-        assertmsg("<dev string:x88>" + weaponstring + "<dev string:xcf>");
+        assertmsg("_takeWeapon called on the weapon that is the High Priority Weapon (" + weaponstring + "). Script should not do this.");
         self clearhighpriorityweapon(weapon);
     }
     self takeweapon(weapon);
@@ -75,7 +75,7 @@ function _takeweapon(weapon) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x476
+// Checksum 0x0, Offset: 0x50d
 // Size: 0x7b
 function takeweaponwhensafe(weapon) {
     self endon("death");
@@ -100,8 +100,8 @@ function takeweaponwhensafe(weapon) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f9
-// Size: 0x27
+// Checksum 0x0, Offset: 0x590
+// Size: 0x26
 function getcurrentmonitoredweaponswitchweapon() {
     validatehighpriorityflag();
     var_d93faf2b91e9b072 = self gethighpriorityweapon();
@@ -113,7 +113,7 @@ function getcurrentmonitoredweaponswitchweapon() {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x529
+// Checksum 0x0, Offset: 0x5bf
 // Size: 0x9
 function isanymonitoredweaponswitchinprogress() {
     return isdefined(getcurrentmonitoredweaponswitchweapon());
@@ -121,8 +121,8 @@ function isanymonitoredweaponswitchinprogress() {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53b
-// Size: 0x42
+// Checksum 0x0, Offset: 0x5d1
+// Size: 0x41
 function isswitchingtoweaponwithmonitoring(weapon) {
     if (isstring(weapon)) {
         weapon = makeweaponfromstring(weapon);
@@ -133,8 +133,8 @@ function isswitchingtoweaponwithmonitoring(weapon) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x586
-// Size: 0x109
+// Checksum 0x0, Offset: 0x61b
+// Size: 0xec
 function candomonitoredswitchtoweapon(weapon, var_26ca36763fa5b82) {
     if (!self hasweapon(weapon)) {
         return false;
@@ -143,9 +143,6 @@ function candomonitoredswitchtoweapon(weapon, var_26ca36763fa5b82) {
         return false;
     }
     if (!istrue(var_26ca36763fa5b82) && !val::get("weapon_switch") && !val::get("script_weapon_switch")) {
-        return false;
-    }
-    if (getdvarint(@"hash_c2eb94ce7d7bc097", 0) && self isviewmodelanimplaying()) {
         return false;
     }
     var_d93faf2b91e9b072 = getcurrentmonitoredweaponswitchweapon();
@@ -169,13 +166,13 @@ function candomonitoredswitchtoweapon(weapon, var_26ca36763fa5b82) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x698
+// Checksum 0x0, Offset: 0x710
 // Size: 0x4c
 function abortmonitoredweaponswitch(weapon) {
     /#
-        debugweaponchangeprint("<dev string:xf0>", weapon);
+        debugweaponchangeprint("<dev string:x7c>", weapon);
     #/
-    assertex(!iscurrentweapon(weapon), "<dev string:xfd>");
+    assertex(!iscurrentweapon(weapon), "abortMonitoredWeaponSwitch() called when the switch has already completed");
     if (self gethighpriorityweapon() == weapon) {
         self clearhighpriorityweapon(weapon);
     }
@@ -183,21 +180,21 @@ function abortmonitoredweaponswitch(weapon) {
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ed
-// Size: 0x14e
-function domonitoredweaponswitch(weapon, switchimmediate, var_26ca36763fa5b82, canceloffhand) {
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x765
+// Size: 0x12b
+function domonitoredweaponswitch(weapon, switchimmediate, var_26ca36763fa5b82) {
     self endon("disconnect");
     self endon("death");
     if (!isdefined(weapon)) {
         return 0;
     }
     /#
-        debugweaponchangeprint("<dev string:x14a>", weapon);
+        debugweaponchangeprint("<dev string:x86>", weapon);
     #/
     if (!candomonitoredswitchtoweapon(weapon, var_26ca36763fa5b82)) {
         /#
-            debugweaponchangeprint("<dev string:x171>", weapon);
+            debugweaponchangeprint("<dev string:xaa>", weapon);
         #/
         return 0;
     }
@@ -212,25 +209,22 @@ function domonitoredweaponswitch(weapon, switchimmediate, var_26ca36763fa5b82, c
         if (iscurrentweapon(weapon)) {
             validatehighpriorityflag();
             /#
-                debugweaponchangeprint("<dev string:x19f>", weapon);
+                debugweaponchangeprint("<dev string:xd5>", weapon);
             #/
             return 1;
         }
         if (!self ishighpriorityweapon(weapon) || !self hasweapon(weapon)) {
             /#
-                debugweaponchangeprint("<dev string:x1c8>", weapon);
+                debugweaponchangeprint("<dev string:xfb>", weapon);
             #/
             return 0;
         }
         if (!val::get("weapon") || !istrue(var_26ca36763fa5b82) && !val::get("weapon_switch") && !val::get("script_weapon_switch")) {
             /#
-                debugweaponchangeprint("<dev string:x20d>", weapon);
+                debugweaponchangeprint("<dev string:x13d>", weapon);
             #/
             self clearhighpriorityweapon(weapon);
             return 0;
-        }
-        if (istrue(canceloffhand) && !isnullweapon(self getheldoffhand())) {
-            self function_187fb04ebd01baea();
         }
         waitframe();
     }
@@ -238,7 +232,7 @@ function domonitoredweaponswitch(weapon, switchimmediate, var_26ca36763fa5b82, c
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x843
+// Checksum 0x0, Offset: 0x898
 // Size: 0x7
 function function_ed0dd95e839cd2a9() {
     return "iw9_gunless_mp";
@@ -246,7 +240,7 @@ function function_ed0dd95e839cd2a9() {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x853
+// Checksum 0x0, Offset: 0x8a8
 // Size: 0x7
 function function_3d5c51904fd25773() {
     return "iw9_gunless_quickdrop_mp";
@@ -254,7 +248,7 @@ function function_3d5c51904fd25773() {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x863
+// Checksum 0x0, Offset: 0x8b8
 // Size: 0x18
 function function_fc6a5b145563be33(switchimmediate) {
     return function_6d53276bd8e3c46d(switchimmediate, function_ed0dd95e839cd2a9());
@@ -262,7 +256,7 @@ function function_fc6a5b145563be33(switchimmediate) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x884
+// Checksum 0x0, Offset: 0x8d9
 // Size: 0x18
 function function_f1e9d0c09f38006b(switchimmediate) {
     return function_6d53276bd8e3c46d(switchimmediate, function_3d5c51904fd25773());
@@ -270,8 +264,8 @@ function function_f1e9d0c09f38006b(switchimmediate) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a5
-// Size: 0xee
+// Checksum 0x0, Offset: 0x8fa
+// Size: 0xe8
 function function_6d53276bd8e3c46d(switchimmediate, weaponname) {
     self endon("death_or_disconnect");
     if (!isdefined(weaponname)) {
@@ -282,36 +276,31 @@ function function_6d53276bd8e3c46d(switchimmediate, weaponname) {
     }
     gunless = makeweapon(weaponname);
     scripts\cp_mp\utility\inventory_utility::_giveweapon(gunless, undefined, undefined, 1);
-    self.gunnlessweapon = gunless;
     val::reset_all("gunless");
     val::set("gunless", "script_weapon_switch", 1);
-    println(self.name + "<dev string:x245>");
+    println(self.name + "<dev string:x172>");
     if (!isdefined(switchimmediate)) {
         switchimmediate = 0;
     }
     success = scripts\cp_mp\utility\inventory_utility::domonitoredweaponswitch(gunless, switchimmediate);
-    if (!success) {
-        if (!isnullweapon(gunless)) {
-            scripts\cp_mp\utility\inventory_utility::_takeweapon(gunless);
-        }
+    if (success) {
+        self.gunnlessweapon = gunless;
+    } else {
+        scripts\cp_mp\utility\inventory_utility::_takeweapon(gunless);
         scripts\cp_mp\utility\inventory_utility::forcevalidweapon();
     }
     val::set("gunless", "script_weapon_switch", 0);
-    println(self.name + "<dev string:x270>");
+    println(self.name + "<dev string:x19a>");
     return success;
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x99c
-// Size: 0x128
+// Checksum 0x0, Offset: 0x9eb
+// Size: 0x111
 function function_9897d143c3feee05() {
     self endon("death_or_disconnect");
-    if (!isdefined(self.gunnlessweapon)) {
-        return;
-    }
-    if (!self hasweapon(self.gunnlessweapon)) {
-        self.gunnlessweapon = undefined;
+    if (!isdefined(self.gunnlessweapon) || !self hasweapon(self.gunnlessweapon)) {
         return;
     }
     if (ent_flag_exist("swapLoadout_pending") && ent_flag("swapLoadout_pending")) {
@@ -319,8 +308,8 @@ function function_9897d143c3feee05() {
     }
     val::reset_all("gunless");
     val::set("gunless", "script_weapon_switch", 1);
-    println(self.name + "<dev string:x29b>");
-    while (isdefined(self.gunnlessweapon) && self hasweapon(self.gunnlessweapon)) {
+    println(self.name + "<dev string:x1c2>");
+    while (self hasweapon(self.gunnlessweapon)) {
         if (!scripts\cp_mp\utility\inventory_utility::iscurrentweapon(self.gunnlessweapon)) {
             scripts\cp_mp\utility\inventory_utility::abortmonitoredweaponswitch(self.gunnlessweapon);
         } else {
@@ -331,13 +320,13 @@ function function_9897d143c3feee05() {
     }
     self.gunnlessweapon = undefined;
     val::set("gunless", "script_weapon_switch", 0);
-    println(self.name + "<dev string:x2c6>");
+    println(self.name + "<dev string:x1ea>");
 }
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xacc
-// Size: 0x26
+// Checksum 0x0, Offset: 0xb04
+// Size: 0x25
 function validatehighpriorityflag() {
     currentweapon = self getcurrentweapon();
     if (self ishighpriorityweapon(currentweapon)) {
@@ -347,8 +336,8 @@ function validatehighpriorityflag() {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xafa
-// Size: 0xb6
+// Checksum 0x0, Offset: 0xb31
+// Size: 0xb5
 function getridofweapon(weapon, switchimmediate) {
     self endon("death");
     self endon("disconnect");
@@ -381,8 +370,8 @@ function getridofweapon(weapon, switchimmediate) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb9
-// Size: 0x290
+// Checksum 0x0, Offset: 0xbef
+// Size: 0x292
 function forcevalidweapon(bestweaponobj) {
     self endon("death");
     self endon("disconnect");
@@ -424,7 +413,7 @@ function forcevalidweapon(bestweaponobj) {
             currentprimaries = getcurrentprimaryweaponsminusalt();
             if (!isdefined(var_78660c26e2d18376) || !self hasweapon(var_78660c26e2d18376)) {
                 if ((!isdefined(self.lastdroppableweaponobj) || self.lastdroppableweaponobj.basename == "none") && !self hasweapon("iw9_me_fists_mp")) {
-                    assertmsg("<dev string:x2f1>");
+                    assertmsg("switchPlayerToAnyWeapon() assumes self.lastDroppableWeaponObj is always defined and is not \"none\"");
                     break;
                 }
                 if (self hasweapon(self.lastdroppableweaponobj)) {
@@ -454,7 +443,7 @@ function forcevalidweapon(bestweaponobj) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe51
+// Checksum 0x0, Offset: 0xe89
 // Size: 0x2a
 function iscurrentweapon(weapon) {
     if (isstring(weapon)) {
@@ -465,8 +454,8 @@ function iscurrentweapon(weapon) {
 
 // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe84
-// Size: 0x76
+// Checksum 0x0, Offset: 0xebc
+// Size: 0x75
 function getcurrentprimaryweaponsminusalt() {
     primaryweapons = [];
     currentweapons = self getweaponslistprimaries();
@@ -482,8 +471,8 @@ function getcurrentprimaryweaponsminusalt() {
 
     // Namespace inventory_utility / scripts\cp_mp\utility\inventory_utility
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf03
-    // Size: 0x5d
+    // Checksum 0x0, Offset: 0xf3a
+    // Size: 0x5c
     function debugweaponchangeprint(message, weapon) {
         weaponstring = undefined;
         if (isstring(weapon)) {
@@ -492,7 +481,7 @@ function getcurrentprimaryweaponsminusalt() {
             weaponstring = getcompleteweaponname(weapon);
         }
         if (getdvarint(@"hash_e6a5211d6811a3e", 0) != 0) {
-            println(message + "<dev string:x356>" + weaponstring);
+            println(message + "<dev string:x212>" + weaponstring);
         }
     }
 

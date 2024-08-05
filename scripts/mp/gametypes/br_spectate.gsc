@@ -477,7 +477,7 @@ function setbuybackpingmessage() {
                         continue;
                     }
                     if (teammate != self && !istrue(teammate.gulag)) {
-                        teammate namespace_88bfae359020fdd3::function_1976438a8865ac27("br_ftue_buyback");
+                        teammate namespace_88bfae359020fdd3::ftue_triggerTip("br_ftue_buyback");
                     }
                 }
                 wait var_9b07a6c625fc48d3;

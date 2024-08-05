@@ -4,10 +4,9 @@
 
 // Namespace throttle / scripts\engine\throttle
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x419
-// Size: 0x34
+// Checksum 0x0, Offset: 0x382
+// Size: 0x27
 function private function_9520a7d8b5aee737(throttle) {
-    throttle endon(throttle.var_a7774b82d7309ed7);
     while (isdefined(throttle)) {
         function_4707c765d202d592(throttle);
         wait throttle.updaterate_;
@@ -16,8 +15,8 @@ function private function_9520a7d8b5aee737(throttle) {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x455
-// Size: 0xae
+// Checksum 0x0, Offset: 0x3b1
+// Size: 0xac
 function private function_4707c765d202d592(throttle) {
     processed = 0;
     foreach (item in throttle.queue_) {
@@ -35,19 +34,14 @@ function private function_4707c765d202d592(throttle) {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x50b
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x465
+// Size: 0xb0
 function throttle_initialize(name, processlimit, updaterate, queuelimit) {
-    processlimit = default_to(processlimit, 1);
-    if (processlimit == 0) {
-        return undefined;
-    }
     assert(isdefined(name) && isstring(name));
     throttle = spawnstruct();
     throttle.queue_ = [];
     throttle.var_35615e062783af3e = name + "_wake_up";
-    throttle.var_a7774b82d7309ed7 = name + "_stop_threads";
-    throttle.processlimit_ = processlimit;
+    throttle.processlimit_ = default_to(processlimit, 1);
     throttle.updaterate_ = default_to(updaterate, level.framedurationseconds);
     throttle.queuelimit_ = queuelimit;
     thread function_9520a7d8b5aee737(throttle);
@@ -55,27 +49,10 @@ function throttle_initialize(name, processlimit, updaterate, queuelimit) {
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e3
-// Size: 0x21
-function throttle_destroy(throttle) {
-    if (isdefined(throttle)) {
-        throttle notify(throttle.var_a7774b82d7309ed7);
-        throttle = undefined;
-    }
-}
-
-// Namespace throttle / scripts\engine\throttle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x60c
-// Size: 0xed
+// Checksum 0x0, Offset: 0x51e
+// Size: 0xae
 function function_f632348cbb773537(throttle, entity) {
-    assertex(!isdefined(throttle.gate), "<dev string:x1c>");
-    throttle endon(throttle.var_a7774b82d7309ed7);
-    if (!isdefined(throttle)) {
-        assertmsg("<dev string:x75>");
-        return;
-    }
     while (isdefined(throttle.queuelimit_) && throttle.queue_.size > throttle.queuelimit_) {
         function_4707c765d202d592(throttle);
     }
@@ -95,7 +72,7 @@ function function_f632348cbb773537(throttle, entity) {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x701
+// Checksum 0x0, Offset: 0x5d4
 // Size: 0x25
 function function_11ab6d104bf77779(throttle, entity) {
     return array_contains(throttle.queue_, entity);
@@ -103,54 +80,15 @@ function function_11ab6d104bf77779(throttle, entity) {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x72f
+// Checksum 0x0, Offset: 0x602
 // Size: 0x31
 function function_8ce6c42c18618555(throttle, entity) {
     throttle.queue_ = array_remove(throttle.queue_, entity);
 }
 
 // Namespace throttle / scripts\engine\throttle
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x768
-// Size: 0xaf
-function function_af33edfaf05fc572(name, processlimit, updaterate) {
-    processlimit = default_to(processlimit, 1);
-    if (processlimit == 0) {
-        return undefined;
-    }
-    assert(isdefined(name) && isstring(name));
-    throttle = spawnstruct();
-    throttle.var_a7774b82d7309ed7 = name + "_stop_threads";
-    throttle.var_be94a08fd7e08d14 = 0;
-    throttle.processlimit_ = processlimit;
-    throttle.updaterate_ = default_to(updaterate, level.framedurationseconds);
-    /#
-        throttle.gate = 1;
-    #/
-    return throttle;
-}
-
-// Namespace throttle / scripts\engine\throttle
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x820
-// Size: 0x87
-function function_6f7b33660ae155ef(throttle) {
-    assertex(throttle.gate, "<dev string:x91>");
-    if (!isdefined(throttle)) {
-        assertmsg("<dev string:x75>");
-        return;
-    }
-    if (throttle.var_be94a08fd7e08d14 >= throttle.processlimit_) {
-        throttle endon(throttle.var_a7774b82d7309ed7);
-        wait throttle.updaterate_;
-        throttle.var_be94a08fd7e08d14 = 0;
-    }
-    throttle.var_be94a08fd7e08d14++;
-}
-
-// Namespace throttle / scripts\engine\throttle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8af
+// Checksum 0x0, Offset: 0x63b
 // Size: 0x25
 function function_ffc20a0cd9408d3e() {
     function_b997916f30000d4a();
@@ -162,25 +100,25 @@ function function_ffc20a0cd9408d3e() {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8dc
+// Checksum 0x0, Offset: 0x668
 // Size: 0x1e
 function test_print(msg) {
     /#
-        msg = "<dev string:xeb>" + msg;
+        msg = "<dev string:x1c>" + msg;
         println(msg);
     #/
 }
 
 // Namespace throttle / scripts\engine\throttle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x902
-// Size: 0x259
+// Checksum 0x0, Offset: 0x68e
+// Size: 0x258
 function function_b997916f30000d4a() {
     test_print("BEGIN throttle_UT_initialize");
     test_throttle = throttle_initialize("test_throttle_1", 1, level.framedurationseconds);
     test_print("CALL - throttle_initialize( test_throttle_1, " + 1 + ", " + level.framedurationseconds + ")");
     assert(isarray(test_throttle.queue_) && test_throttle.queue_.size == 0);
-    assert(test_throttle.var_35615e062783af3e == "<dev string:xfe>" + "<dev string:x111>");
+    assert(test_throttle.var_35615e062783af3e == "test_throttle_1" + "_wake_up");
     assert(test_throttle.processlimit_ == 1);
     assert(test_throttle.updaterate_ == level.framedurationseconds);
     assert(test_throttle.queuelimit_ == undefined);
@@ -193,7 +131,7 @@ function function_b997916f30000d4a() {
     test_throttle = throttle_initialize("test_throttle_defaults");
     test_print("CALL - throttle_initialize( test_throttle_defaults )");
     assert(isarray(test_throttle.queue_) && test_throttle.queue_.size == 0);
-    assert(test_throttle.var_35615e062783af3e == "<dev string:x11d>" + "<dev string:x111>");
+    assert(test_throttle.var_35615e062783af3e == "test_throttle_defaults" + "_wake_up");
     assert(test_throttle.processlimit_ == 1);
     assert(test_throttle.updaterate_ == level.framedurationseconds);
     assert(test_throttle.queuelimit_ == undefined);
@@ -202,8 +140,8 @@ function function_b997916f30000d4a() {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb63
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x8ee
+// Size: 0xc3
 function function_f0e537fab28ca40b() {
     test_print("BEGIN throttle_UT_queue");
     test_throttle = throttle_initialize("test_throttle_wait", 1, level.framedurationseconds);
@@ -219,8 +157,8 @@ function function_f0e537fab28ca40b() {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc2d
-// Size: 0x117
+// Checksum 0x0, Offset: 0x9b9
+// Size: 0x119
 function function_ee075c49b3a71bc5() {
     test_print("BEGIN throttle_UT_queue_10");
     test_throttle = throttle_initialize("test_throttle_wait", 1, level.framedurationseconds);
@@ -241,8 +179,8 @@ function function_ee075c49b3a71bc5() {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd4c
-// Size: 0x117
+// Checksum 0x0, Offset: 0xada
+// Size: 0x119
 function function_7402d747b0d4d1eb() {
     test_print("BEGIN throttle_UT_queue_10_threaded");
     test_throttle = throttle_initialize("test_throttle_wait", 1, level.framedurationseconds);
@@ -263,8 +201,8 @@ function function_7402d747b0d4d1eb() {
 
 // Namespace throttle / scripts\engine\throttle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6b
-// Size: 0x13c
+// Checksum 0x0, Offset: 0xbfb
+// Size: 0x13e
 function function_682c4176f0ccf633() {
     test_print("BEGIN throttle_UT_leave_queue");
     test_throttle = throttle_initialize("test_throttle_wait", 1, level.framedurationseconds);

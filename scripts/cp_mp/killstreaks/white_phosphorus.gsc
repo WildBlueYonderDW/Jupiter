@@ -14,7 +14,7 @@
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x90f
+// Checksum 0x0, Offset: 0x916
 // Size: 0x98
 function init() {
     if (issharedfuncdefined("white_phosphorus", "init")) {
@@ -33,7 +33,7 @@ function init() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9af
+// Checksum 0x0, Offset: 0x9b6
 // Size: 0x77
 function weapongivenwp(streakinfo) {
     if (istrue(level.wpinprogress)) {
@@ -50,8 +50,8 @@ function weapongivenwp(streakinfo) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2f
-// Size: 0x21
+// Checksum 0x0, Offset: 0xa36
+// Size: 0x20
 function tryusewp() {
     streakinfo = createstreakinfo("white_phosphorus", self);
     return tryusewpfromstruct(streakinfo);
@@ -59,8 +59,8 @@ function tryusewp() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa59
-// Size: 0x17d
+// Checksum 0x0, Offset: 0xa5f
+// Size: 0x17f
 function tryusewpfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -101,8 +101,8 @@ function tryusewpfromstruct(streakinfo) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdf
-// Size: 0xa9
+// Checksum 0x0, Offset: 0xbe7
+// Size: 0xa8
 function wp_getmapselectioninfo(streakinfo, numselection, directionalselection) {
     val::set("map_selection", "weapon_switch", 0);
     self setsoundsubmix("mp_killstreak_overlay");
@@ -122,8 +122,8 @@ function wp_getmapselectioninfo(streakinfo, numselection, directionalselection) 
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xc91
-// Size: 0x102
+// Checksum 0x0, Offset: 0xc98
+// Size: 0x101
 function wp_startdeploy(mappointinfo, streakinfo) {
     self endon("disconnect");
     level endon("game_ended");
@@ -134,7 +134,7 @@ function wp_startdeploy(mappointinfo, streakinfo) {
         return 0;
     }
     level.wpinprogress = 1;
-    foreach (deployindex, pointinfo in mappointinfo) {
+    foreach (pointinfo in mappointinfo) {
         mappoint = pointinfo.location;
         directionyaw = pointinfo.angles;
         wp_finishdeployment(mappoint, directionyaw, streakinfo);
@@ -146,8 +146,8 @@ function wp_startdeploy(mappointinfo, streakinfo) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9b
-// Size: 0x96
+// Checksum 0x0, Offset: 0xda1
+// Size: 0x95
 function wp_finishdeployment(droplocation, dropdirection, streakinfo) {
     level endon("white_phosphorus_end");
     level endon("game_ended");
@@ -157,7 +157,7 @@ function wp_finishdeployment(droplocation, dropdirection, streakinfo) {
     scripts\cp_mp\hostmigration::hostmigration_waitlongdurationwithpause(3);
     deployplane = wp_createplane(droplocation, dropdirection, streakinfo);
     if (!isdefined(deployplane)) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("White Phosphorus ( wp_finishDeployment ): Could not create plane.  This should not happen!");
         return 0;
     }
     deployplane thread wp_watchplanedisowned();
@@ -166,8 +166,8 @@ function wp_finishdeployment(droplocation, dropdirection, streakinfo) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe39
-// Size: 0x211
+// Checksum 0x0, Offset: 0xe3e
+// Size: 0x21a
 function wp_createplane(droppointorigin, planedirectionyaw, streakinfo) {
     heightent = scripts\cp_mp\utility\killstreak_utility::getkillstreakairstrikeheightent();
     planehalfdistance = 28000;
@@ -176,7 +176,7 @@ function wp_createplane(droppointorigin, planedirectionyaw, streakinfo) {
     var_361663d437db22f5 = 1500;
     planedirection = (0, planedirectionyaw, 0);
     if (!isdefined(heightent)) {
-        assertmsg("<dev string:x7a>");
+        assertmsg("NO DEFINED AIRSTRIKE HEIGHT SCRIPT_ORIGIN IN LEVEL");
         planeflyheight += 3000;
     } else {
         planeflyheight = heightent.origin[2] + 3000;
@@ -212,7 +212,7 @@ function wp_createplane(droppointorigin, planedirectionyaw, streakinfo) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1053
+// Checksum 0x0, Offset: 0x1061
 // Size: 0x37
 function wp_watchdisownaction(action, deployplane) {
     level endon("white_phosphorus_end");
@@ -224,7 +224,7 @@ function wp_watchdisownaction(action, deployplane) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1092
+// Checksum 0x0, Offset: 0x10a0
 // Size: 0x19
 function wp_watchplanedisowned() {
     self endon("death");
@@ -234,8 +234,8 @@ function wp_watchplanedisowned() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b3
-// Size: 0x67
+// Checksum 0x0, Offset: 0x10c1
+// Size: 0x66
 function wp_watchforsmokedisowned() {
     self endon("death");
     level waittill("white_phosphorus_end");
@@ -256,8 +256,8 @@ function wp_watchforsmokedisowned() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1122
-// Size: 0x94
+// Checksum 0x0, Offset: 0x112f
+// Size: 0x93
 function wp_watchforflaredisowned(effecttype) {
     self endon("death");
     level waittill("white_phosphorus_end");
@@ -281,8 +281,8 @@ function wp_watchforflaredisowned(effecttype) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11be
-// Size: 0x221
+// Checksum 0x0, Offset: 0x11ca
+// Size: 0x229
 function wp_deliverpayloads(streakinfo) {
     level endon("white_phosphorus_end");
     level endon("game_ended");
@@ -326,7 +326,7 @@ function wp_deliverpayloads(streakinfo) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e7
+// Checksum 0x0, Offset: 0x13fb
 // Size: 0x40
 function wp_watchend(streakinfo, payloadlifetime) {
     self endon("disconnect");
@@ -339,7 +339,7 @@ function wp_watchend(streakinfo, payloadlifetime) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x142f
+// Checksum 0x0, Offset: 0x1443
 // Size: 0x30
 function wp_watchgameend(streakinfo) {
     self endon("disconnect");
@@ -351,7 +351,7 @@ function wp_watchgameend(streakinfo) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1467
+// Checksum 0x0, Offset: 0x147b
 // Size: 0x1d
 function wp_enterpayloadaudio() {
     self endon("death");
@@ -362,7 +362,7 @@ function wp_enterpayloadaudio() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x148c
+// Checksum 0x0, Offset: 0x14a0
 // Size: 0x35
 function wp_exitpayloadaudio(flightgoal, flighttime) {
     self endon("death");
@@ -373,8 +373,8 @@ function wp_exitpayloadaudio(flightgoal, flighttime) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c9
-// Size: 0x44
+// Checksum 0x0, Offset: 0x14dd
+// Size: 0x43
 function wp_watchunsuccessfulzones(var_eb34677262fed134) {
     level endon("wp_zone_succeeded");
     level endon("game_ended");
@@ -386,8 +386,8 @@ function wp_watchunsuccessfulzones(var_eb34677262fed134) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1515
-// Size: 0x1b1
+// Checksum 0x0, Offset: 0x1528
+// Size: 0x1b9
 function wp_handlepayloadtyperelease(var_fab341cde0f5a8a4, var_3e69f8d86497745d, var_ec975df40affb201, var_985ed30dff21f18c, payloadlifetime, var_624c6f581e3a3784, var_f5c59be7baf53b36, var_3c6798c87677a9c3) {
     var_bebe0d78a71db256 = int(var_985ed30dff21f18c / var_624c6f581e3a3784);
     var_d0bb190b577957f4 = 0;
@@ -429,8 +429,8 @@ function wp_handlepayloadtyperelease(var_fab341cde0f5a8a4, var_3e69f8d86497745d,
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ce
-// Size: 0x76
+// Checksum 0x0, Offset: 0x16e9
+// Size: 0x75
 function wp_movekillcam(movetime, endpos, killcamforward, payloadlifetime) {
     self endon("death");
     endpos -= killcamforward * 3500;
@@ -444,7 +444,7 @@ function wp_movekillcam(movetime, endpos, killcamforward, payloadlifetime) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x174c
+// Checksum 0x0, Offset: 0x1766
 // Size: 0xa3
 function wp_testpayloads(testpos, testangles, testdelaytime) {
     self endon("death");
@@ -460,8 +460,8 @@ function wp_testpayloads(testpos, testangles, testdelaytime) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f7
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x1811
+// Size: 0xd1
 function wp_fireairburst(var_2d7a2733c414e4df, var_db855e6ae67f1a7f, var_854bddfcc12bbc97) {
     level endon("white_phosphorus_end");
     level endon("game_ended");
@@ -482,8 +482,8 @@ function wp_fireairburst(var_2d7a2733c414e4df, var_db855e6ae67f1a7f, var_854bddf
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ce
-// Size: 0x3a0
+// Checksum 0x0, Offset: 0x18ea
+// Size: 0x3a6
 function wp_firesmoke(smokelaunchpos, var_29c782c334f31ff1, smokedelaytime, smokezoneindex) {
     level endon("white_phosphorus_end");
     level endon("game_ended");
@@ -564,8 +564,8 @@ function wp_firesmoke(smokelaunchpos, var_29c782c334f31ff1, smokedelaytime, smok
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c76
-// Size: 0x2e9
+// Checksum 0x0, Offset: 0x1c98
+// Size: 0x2f1
 function wp_fireflaregroup(flarelaunchpos, var_47aae5e47f9b546c, flaredelaytime, killcament) {
     level endon("white_phosphorus_end");
     level endon("game_ended");
@@ -618,8 +618,8 @@ function wp_fireflaregroup(flarelaunchpos, var_47aae5e47f9b546c, flaredelaytime,
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f67
-// Size: 0x1c4
+// Checksum 0x0, Offset: 0x1f91
+// Size: 0x1d2
 function wp_getflarepositions(launchpos, impactcenterpos, numpoints, var_fcdcc201ce6e652e) {
     flarepoints = [];
     var_6f680ee249f67b0d = self.angles * (0, 1, 0);
@@ -648,8 +648,8 @@ function wp_getflarepositions(launchpos, impactcenterpos, numpoints, var_fcdcc20
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2134
-// Size: 0x237
+// Checksum 0x0, Offset: 0x216c
+// Size: 0x23f
 function wp_projwatchimpact(payloadlifetime, effecttype, shotsurface) {
     self endon("death");
     level endon("white_phosphorus_end");
@@ -683,6 +683,7 @@ function wp_projwatchimpact(payloadlifetime, effecttype, shotsurface) {
             }
             if (!iscp()) {
                 killstreak_createdangerzone(self.origin, 300, 300, payloadlifetime, self.owner, self.team);
+                thread wp_deletedangerzoneondeath();
             }
         }
         scripts\cp_mp\hostmigration::hostmigration_waitlongdurationwithpause(payloadlifetime);
@@ -698,9 +699,20 @@ function wp_projwatchimpact(payloadlifetime, effecttype, shotsurface) {
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x23b3
+// Size: 0x2d
+function wp_deletedangerzoneondeath() {
+    level endon("game_ended");
+    dangerzoneid = self.dangerzoneid;
+    self waittill("death");
+    killstreak_destroydangerzone(dangerzoneid);
+}
+
+// Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2373
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x23e8
+// Size: 0x5d
 function wp_delayzonedelete(timedelay) {
     self endon("death");
     level endon("white_phosphorus_end");
@@ -719,8 +731,8 @@ function wp_delayzonedelete(timedelay) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x23d9
-// Size: 0x196
+// Checksum 0x0, Offset: 0x244d
+// Size: 0x193
 function wp_watchdisorienteffect(var_2064c9035e8fddd4, var_73798c47bd1e4e64, var_1f86b15faeb68186) {
     self endon("death");
     self.playersindisorientradius = [];
@@ -757,8 +769,8 @@ function wp_watchdisorienteffect(var_2064c9035e8fddd4, var_73798c47bd1e4e64, var
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2577
-// Size: 0x89
+// Checksum 0x0, Offset: 0x25e8
+// Size: 0x87
 function wp_getplayerswithinrange(var_fe16f116477f0084, range) {
     playersinrange = [];
     foreach (player in var_fe16f116477f0084) {
@@ -771,8 +783,8 @@ function wp_getplayerswithinrange(var_fe16f116477f0084, range) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2609
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x2678
+// Size: 0xd6
 function wp_delaydisorientplayersinrange(delaytime, range, initialtargetarray) {
     self endon("death");
     if (isdefined(delaytime) && delaytime > 0) {
@@ -795,8 +807,8 @@ function wp_delaydisorientplayersinrange(delaytime, range, initialtargetarray) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e9
-// Size: 0x119
+// Checksum 0x0, Offset: 0x2756
+// Size: 0x116
 function wp_watchburneffect(burnradius) {
     self endon("stop_wp_status_effect");
     self endon("death");
@@ -822,8 +834,8 @@ function wp_watchburneffect(burnradius) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x280a
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x2874
+// Size: 0x10c
 function wp_watchblindeffect(blindradius) {
     self endon("stop_wp_status_effect");
     self endon("death");
@@ -849,7 +861,7 @@ function wp_watchblindeffect(blindradius) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2921
+// Checksum 0x0, Offset: 0x2988
 // Size: 0x4c
 function wp_addtoactivewplist(type, var_fa00ab9d021cd558) {
     if (type == "smoke") {
@@ -861,8 +873,8 @@ function wp_addtoactivewplist(type, var_fa00ab9d021cd558) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2975
-// Size: 0xd7
+// Checksum 0x0, Offset: 0x29dc
+// Size: 0xd3
 function wp_isactivewpzone(type, var_d0edab7a45b12083) {
     isactivezone = 0;
     if (type == "smoke") {
@@ -885,8 +897,8 @@ function wp_isactivewpzone(type, var_d0edab7a45b12083) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a55
-// Size: 0x271
+// Checksum 0x0, Offset: 0x2ab8
+// Size: 0x26b
 function wp_removefromactivewplist(type, var_e259cf0d8dcfa751, subeffecttype, dontdelete) {
     if (!isdefined(var_e259cf0d8dcfa751)) {
         return;
@@ -946,8 +958,8 @@ function wp_removefromactivewplist(type, var_e259cf0d8dcfa751, subeffecttype, do
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cce
-// Size: 0xe5
+// Checksum 0x0, Offset: 0x2d2b
+// Size: 0xe1
 function wp_isinanywpzone(type, var_c4b81997f0120a97) {
     var_83ebb8884bb96f82 = 0;
     if (type == "smoke") {
@@ -970,8 +982,8 @@ function wp_isinanywpzone(type, var_c4b81997f0120a97) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dbc
-// Size: 0xb1
+// Checksum 0x0, Offset: 0x2e15
+// Size: 0xb0
 function wp_isinwpzone(type, var_c4b81997f0120a97, wpzone) {
     isinzone = 0;
     var_2b3d4f72cf8ef276 = undefined;
@@ -993,7 +1005,7 @@ function wp_isinwpzone(type, var_c4b81997f0120a97, wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e76
+// Checksum 0x0, Offset: 0x2ece
 // Size: 0x4c
 function wp_addplayertostatusradiuslist(type, playertoadd) {
     if (type == "smoke") {
@@ -1005,8 +1017,8 @@ function wp_addplayertostatusradiuslist(type, playertoadd) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eca
-// Size: 0xf1
+// Checksum 0x0, Offset: 0x2f22
+// Size: 0xed
 function wp_removeplayerfromstatusradiuslist(type, var_9d90c26327e3eacd) {
     if (type == "smoke") {
         newlist = [];
@@ -1031,8 +1043,8 @@ function wp_removeplayerfromstatusradiuslist(type, var_9d90c26327e3eacd) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc3
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x3017
+// Size: 0xda
 function wp_removeplayerfromallstatusradiuslists(type, var_9d90c26327e3eacd) {
     if (type == "smoke") {
         foreach (wpzone in level.activewpzones) {
@@ -1051,7 +1063,7 @@ function wp_removeplayerfromallstatusradiuslists(type, var_9d90c26327e3eacd) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30aa
+// Checksum 0x0, Offset: 0x30f9
 // Size: 0x4c
 function wp_startdisorientplayeronspawn(wpzone) {
     wpzone endon("death");
@@ -1066,8 +1078,8 @@ function wp_startdisorientplayeronspawn(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30fe
-// Size: 0x15d
+// Checksum 0x0, Offset: 0x314d
+// Size: 0x15e
 function wp_startdisorientplayer(wpzone) {
     wpzone endon("death");
     self endon("death_or_disconnect");
@@ -1107,7 +1119,7 @@ function wp_startdisorientplayer(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3263
+// Checksum 0x0, Offset: 0x32b3
 // Size: 0x8c
 function wp_degenhealth(var_c3770dc539016800, wpzone) {
     if (istrue(self.gasmaskequipped)) {
@@ -1124,7 +1136,7 @@ function wp_degenhealth(var_c3770dc539016800, wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32f7
+// Checksum 0x0, Offset: 0x3347
 // Size: 0x3a
 function wp_startdofshiftforplayer(wpzone) {
     wpzone endon("death");
@@ -1137,7 +1149,7 @@ function wp_startdofshiftforplayer(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3339
+// Checksum 0x0, Offset: 0x3389
 // Size: 0x32
 function wp_stopdisorientonplayerdeath(wpzone) {
     wpzone endon("death");
@@ -1149,7 +1161,7 @@ function wp_stopdisorientonplayerdeath(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3373
+// Checksum 0x0, Offset: 0x33c3
 // Size: 0xec
 function wp_stopdisorientplayer(wpzone, var_fb8011c41299d291) {
     level endon("game_ended");
@@ -1179,8 +1191,8 @@ function wp_stopdisorientplayer(wpzone, var_fb8011c41299d291) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3467
-// Size: 0x18a
+// Checksum 0x0, Offset: 0x34b7
+// Size: 0x18b
 function wp_startburnplayer(wpzone, attacker) {
     wpzone endon("death");
     self endon("stop_wp_burn");
@@ -1224,7 +1236,7 @@ function wp_startburnplayer(wpzone, attacker) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35f9
+// Checksum 0x0, Offset: 0x364a
 // Size: 0x37
 function wp_stopburnplayer(wpzone) {
     wpzone wp_removeplayerfromstatusradiuslist("inner", self);
@@ -1236,7 +1248,7 @@ function wp_stopburnplayer(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3638
+// Checksum 0x0, Offset: 0x3689
 // Size: 0xa8
 function wp_startblindplayer(wpzone) {
     if (level.teambased && self.team == wpzone.team || self == wpzone.owner) {
@@ -1259,7 +1271,7 @@ function wp_startblindplayer(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36e8
+// Checksum 0x0, Offset: 0x3739
 // Size: 0x2f
 function wp_stopblindplayer(wpzone) {
     wpzone wp_removeplayerfromstatusradiuslist("inner", self);
@@ -1270,7 +1282,7 @@ function wp_stopblindplayer(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x371f
+// Checksum 0x0, Offset: 0x3770
 // Size: 0x31
 function wp_stopstatuseffectondeath(wpzone) {
     wpzone endon("death");
@@ -1282,7 +1294,7 @@ function wp_stopstatuseffectondeath(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3758
+// Checksum 0x0, Offset: 0x37a9
 // Size: 0xdd
 function wp_resetstatuseffect(var_2e501fc7d257ce57) {
     if (istrue(self.wpburning)) {
@@ -1311,10 +1323,10 @@ function wp_resetstatuseffect(var_2e501fc7d257ce57) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x383d
+// Checksum 0x0, Offset: 0x388e
 // Size: 0x6d
 function wp_removeplane(plane) {
-    assertex(isdefined(plane), "<dev string:xb0>");
+    assertex(isdefined(plane), "wp_removePlane - Plane was removed unexpectedly; this should never happen!");
     if (isdefined(plane.minimapid)) {
         if (scripts\engine\utility::issharedfuncdefined("game", "returnObjectiveID")) {
             [[ scripts\engine\utility::getsharedfunc("game", "returnObjectiveID") ]](plane.minimapid);
@@ -1326,8 +1338,8 @@ function wp_removeplane(plane) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38b2
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x3903
+// Size: 0x3b
 function wp_getsmokevisionset() {
     dayvisionset = "wp_smoke";
     nightvisionset = "wp_smoke_night";
@@ -1340,7 +1352,7 @@ function wp_getsmokevisionset() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38f5
+// Checksum 0x0, Offset: 0x3947
 // Size: 0x7b
 function wp_monitorsmokevisionset(wpzone) {
     wpzone endon("death");
@@ -1363,8 +1375,8 @@ function wp_monitorsmokevisionset(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3978
-// Size: 0x52
+// Checksum 0x0, Offset: 0x39ca
+// Size: 0x53
 function wp_gethealthdebuffamount() {
     var_feab9fa3a5844d2d = 50;
     if (wp_hasresistperk()) {
@@ -1380,7 +1392,7 @@ function wp_gethealthdebuffamount() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39d3
+// Checksum 0x0, Offset: 0x3a26
 // Size: 0x1d
 function wp_playcorpsetableburningfx(corpsetable) {
     corpsetable setscriptablepartstate("wp_burning", "flareUp", 0);
@@ -1388,7 +1400,7 @@ function wp_playcorpsetableburningfx(corpsetable) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x39f8
+// Checksum 0x0, Offset: 0x3a4b
 // Size: 0x20
 function wp_hasresistperk() {
     return isdefined(self.perks) && isdefined(self.perks["specialty_tac_resist"]);
@@ -1396,7 +1408,7 @@ function wp_hasresistperk() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a21
+// Checksum 0x0, Offset: 0x3a74
 // Size: 0x44
 function enableloopingcoughaudio(wpzone) {
     if (!isdefined(self.loopingcoughaudio)) {
@@ -1410,14 +1422,14 @@ function enableloopingcoughaudio(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a6d
+// Checksum 0x0, Offset: 0x3ac0
 // Size: 0x53
 function disableloopingcoughaudio() {
     if (!isdefined(self.loopingcoughaudio)) {
         return;
     }
     self.loopingcoughaudio--;
-    assertex(self.loopingcoughaudio >= 0, "<dev string:xfe>");
+    assertex(self.loopingcoughaudio >= 0, "disableLoopingCoughAudio called more times than enableLoopingCoughAudio.");
     if (self.loopingcoughaudio == 0) {
         thread stoploopingcoughaudio();
         self.loopingcoughaudio = undefined;
@@ -1426,8 +1438,8 @@ function disableloopingcoughaudio() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ac8
-// Size: 0x304
+// Checksum 0x0, Offset: 0x3b1b
+// Size: 0x29c
 function startloopingcoughaudio(wpzone) {
     self endon("death_or_disconnect");
     self endon("clearLoopingCoughAudio");
@@ -1442,7 +1454,7 @@ function startloopingcoughaudio(wpzone) {
                 } else {
                     zoneteam = "allies";
                 }
-                if (is_equal(self.team, zoneteam)) {
+                if (self.team == zoneteam) {
                     if (isdefined(self.operatorcustomization.gender) && self.operatorcustomization.gender == "female") {
                         var_bf9336bf707fa7ca = game["dialogue"]["allies_female_cough"].size;
                         current_cough = randomint(var_bf9336bf707fa7ca);
@@ -1480,16 +1492,6 @@ function startloopingcoughaudio(wpzone) {
                 if (isai(self)) {
                     self playsoundonmovingent(soundalias);
                 }
-            } else if (getgametype() == "ob") {
-                if (isplayer(self)) {
-                    enemyteams = array_remove(level.teamnamelist, self.team);
-                    self playsoundtoteam(soundalias, self.team, self, self);
-                    if (isdefined(enemyteams[0])) {
-                        self playsoundtoteam(soundalias, enemyteams[0], self, self);
-                    }
-                } else {
-                    self playsoundonmovingent(soundalias);
-                }
             }
             wait waittime;
             continue;
@@ -1500,7 +1502,7 @@ function startloopingcoughaudio(wpzone) {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dd4
+// Checksum 0x0, Offset: 0x3dbf
 // Size: 0xa
 function stoploopingcoughaudio() {
     self notify("clearLoopingCoughAudio");
@@ -1508,7 +1510,7 @@ function stoploopingcoughaudio() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3de6
+// Checksum 0x0, Offset: 0x3dd1
 // Size: 0x23
 function enableloopingcoughaudiosupression() {
     if (!isdefined(self.loopingcoughaudiosupression)) {
@@ -1519,19 +1521,19 @@ function enableloopingcoughaudiosupression() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e11
+// Checksum 0x0, Offset: 0x3dfc
 // Size: 0x33
 function disableloopingcoughaudiosupression() {
     if (!isdefined(self.loopingcoughaudiosupression)) {
         return;
     }
     self.loopingcoughaudiosupression--;
-    assertex(self.loopingcoughaudiosupression >= 0, "<dev string:x14a>");
+    assertex(self.loopingcoughaudiosupression >= 0, "disableLoopingCoughAudioSupression called more times than enableLoopingCoughAudioSupression.");
 }
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e4c
+// Checksum 0x0, Offset: 0x3e37
 // Size: 0x1b
 function loopingcoughaudioissupressed() {
     return isdefined(self.loopingcoughaudiosupression) && self.loopingcoughaudiosupression > 0;
@@ -1539,7 +1541,7 @@ function loopingcoughaudioissupressed() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e70
+// Checksum 0x0, Offset: 0x3e5b
 // Size: 0x1e
 function clearloopingcoughaudio() {
     self notify("clearLoopingCoughAudio");
@@ -1549,7 +1551,7 @@ function clearloopingcoughaudio() {
 
 // Namespace white_phosphorus / scripts\cp_mp\killstreaks\white_phosphorus
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e96
+// Checksum 0x0, Offset: 0x3e81
 // Size: 0x30
 function wp_playimpactsound(var_6b5d366f98ba252b) {
     var_6b5d366f98ba252b setscriptablepartstate("impact_center", "on", 0);

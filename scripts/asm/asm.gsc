@@ -9,7 +9,7 @@
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x939
+// Checksum 0x0, Offset: 0xb88
 // Size: 0x27
 function function_c051a94f99bd65f1(asmname) {
     self asminstantiate(asmname);
@@ -19,17 +19,17 @@ function function_c051a94f99bd65f1(asmname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x968
+// Checksum 0x0, Offset: 0xbb7
 // Size: 0x62
 function asm_getfunction(asmname, funcid) {
-    assertex(isdefined(anim.asmfuncs[asmname]), "<dev string:x1c>" + asmname);
-    assertex(isdefined(anim.asmfuncs[asmname][funcid]), "<dev string:x42>" + funcid + "<dev string:x5e>" + asmname);
+    assertex(isdefined(anim.asmfuncs[asmname]), "ASMRegister was not called on ASM " + asmname);
+    assertex(isdefined(anim.asmfuncs[asmname][funcid]), "Unable to find asm func " + funcid + " in ASM " + asmname);
     return anim.asmfuncs[asmname][funcid];
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d3
+// Checksum 0x0, Offset: 0xc22
 // Size: 0x7
 function asm_getgenerichandler() {
     return &asm_generichandler;
@@ -37,7 +37,7 @@ function asm_getgenerichandler() {
 
 // Namespace asm / scripts\asm\asm
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e3
+// Checksum 0x0, Offset: 0xc32
 // Size: 0x41
 function asm_setupaim(asmname, statename, blendtime, use_5) {
     if (isdefined(self.fnasm_setupaim)) {
@@ -47,8 +47,8 @@ function asm_setupaim(asmname, statename, blendtime, use_5) {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2c
-// Size: 0x152
+// Checksum 0x0, Offset: 0xc7b
+// Size: 0x153
 function asm_settransitionorientmode(orient_mode) {
     if (!isai(self)) {
         return;
@@ -81,7 +81,7 @@ function asm_settransitionorientmode(orient_mode) {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb86
+// Checksum 0x0, Offset: 0xdd6
 // Size: 0x30
 function asm_settransitionanimmode(anim_mode) {
     if (isdefined(self.fnasm_setanimmode)) {
@@ -93,7 +93,7 @@ function asm_settransitionanimmode(anim_mode) {
 
 // Namespace asm / scripts\asm\asm
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbe
+// Checksum 0x0, Offset: 0xe0e
 // Size: 0xe1
 function asm_generichandler(handlername, asmname, param1, param2, param3) {
     switch (handlername) {
@@ -111,15 +111,15 @@ function asm_generichandler(handlername, asmname, param1, param2, param3) {
         }
         break;
     default: 
-        assertmsg("<dev string:x6a>" + handlername);
+        assertmsg("unknown handler: " + handlername);
         break;
     }
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xca7
-// Size: 0x5a
+// Checksum 0x0, Offset: 0xef7
+// Size: 0x59
 function asm_setoverrideparams(asmname, params) {
     assert(isdefined(anim.asmparams));
     assert(isdefined(anim.asmparams[asmname]));
@@ -130,7 +130,7 @@ function asm_setoverrideparams(asmname, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0a
+// Checksum 0x0, Offset: 0xf59
 // Size: 0x1a
 function asm_globalinit() {
     if (isdefined(anim.asm)) {
@@ -141,7 +141,7 @@ function asm_globalinit() {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2c
+// Checksum 0x0, Offset: 0xf7b
 // Size: 0x25
 function asm_fireephemeralevent(eventtarget, eventname, params) {
     self asmfireephemeralevent(eventtarget, eventname, params);
@@ -149,7 +149,7 @@ function asm_fireephemeralevent(eventtarget, eventname, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd59
+// Checksum 0x0, Offset: 0xfa8
 // Size: 0x34
 function asm_init_blackboard() {
     if (isdefined(self._blackboard)) {
@@ -161,8 +161,8 @@ function asm_init_blackboard() {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd95
-// Size: 0x7f
+// Checksum 0x0, Offset: 0xfe4
+// Size: 0x7e
 function asm_terminateandreplace(var_f48b8938602f359b, var_388552599bfcb74) {
     self asmterminate();
     self clearaiblackboard();
@@ -180,8 +180,8 @@ function asm_terminateandreplace(var_f48b8938602f359b, var_388552599bfcb74) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1c
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x106a
+// Size: 0x4d
 function asm_getnotehandler(asmname, statename) {
     noteid = self asmgetnotehandler(asmname);
     if (!isdefined(noteid)) {
@@ -198,7 +198,7 @@ function asm_getnotehandler(asmname, statename) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe73
+// Checksum 0x0, Offset: 0x10c0
 // Size: 0x2b
 function asm_currentstatehasflag(asmname, flagname) {
     if (istrue(self.var_15b9736ae2dde804)) {
@@ -209,7 +209,7 @@ function asm_currentstatehasflag(asmname, flagname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xea7
+// Checksum 0x0, Offset: 0x10f4
 // Size: 0x25
 function asm_fireevent_internal(asmname, eventname, params) {
     self asmfireevent(asmname, eventname, params);
@@ -217,7 +217,7 @@ function asm_fireevent_internal(asmname, eventname, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xed4
+// Checksum 0x0, Offset: 0x1121
 // Size: 0x4a
 function asm_fireevent(asmname, eventname, params) {
     asm_fireevent_internal(asmname, eventname, params);
@@ -229,8 +229,8 @@ function asm_fireevent(asmname, eventname, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf26
-// Size: 0x37
+// Checksum 0x0, Offset: 0x1173
+// Size: 0x36
 function asm_ephemeraleventfired(eventtarget, eventname, var_bd6b21f67400a4) {
     bfired = self asmephemeraleventfired(eventtarget, eventname);
     if (bfired) {
@@ -241,7 +241,7 @@ function asm_ephemeraleventfired(eventtarget, eventname, var_bd6b21f67400a4) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf66
+// Checksum 0x0, Offset: 0x11b2
 // Size: 0x1d
 function asm_eventfiredrecently(asmname, eventname) {
     return self asmeventfiredwithin(asmname, eventname, 50);
@@ -249,7 +249,7 @@ function asm_eventfiredrecently(asmname, eventname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8c
+// Checksum 0x0, Offset: 0x11d8
 // Size: 0x1b
 function asm_geteventtime(asmname, eventname) {
     return self asmgeteventtime(asmname, eventname);
@@ -257,7 +257,7 @@ function asm_geteventtime(asmname, eventname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb0
+// Checksum 0x0, Offset: 0x11fc
 // Size: 0x1b
 function asm_geteventdata(asmname, eventname) {
     return self asmgeteventdata(asmname, eventname);
@@ -265,7 +265,7 @@ function asm_geteventdata(asmname, eventname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd4
+// Checksum 0x0, Offset: 0x1220
 // Size: 0x1b
 function asm_getephemeraleventdata(eventtarget, eventname) {
     return self asmgetephemeraleventdata(eventtarget, eventname);
@@ -273,7 +273,7 @@ function asm_getephemeraleventdata(eventtarget, eventname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xff8
+// Checksum 0x0, Offset: 0x1244
 // Size: 0x9
 function asm_clearallephemeralevents() {
     self asmclearephemeralevents();
@@ -281,7 +281,7 @@ function asm_clearallephemeralevents() {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1009
+// Checksum 0x0, Offset: 0x1255
 // Size: 0x9f
 function asm_shouldpowerdown(asmname, currentstate) {
     if (!isdefined(self.bpowerdown) || !self.bpowerdown) {
@@ -307,7 +307,7 @@ function asm_shouldpowerdown(asmname, currentstate) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b1
+// Checksum 0x0, Offset: 0x12fd
 // Size: 0x1b
 function asm_eventfired(asmname, eventname) {
     return self asmeventfired(asmname, eventname);
@@ -315,7 +315,7 @@ function asm_eventfired(asmname, eventname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d5
+// Checksum 0x0, Offset: 0x1321
 // Size: 0x24
 function asm_checktransitions(asmname, currentstatename, var_7bb056e0e335a770) {
     self asmtick(1);
@@ -323,7 +323,7 @@ function asm_checktransitions(asmname, currentstatename, var_7bb056e0e335a770) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1101
+// Checksum 0x0, Offset: 0x134d
 // Size: 0x5e
 function asm_setstate(tostatename, params) {
     if (self asmhasstate(self.asmname, tostatename)) {
@@ -336,8 +336,8 @@ function asm_setstate(tostatename, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1167
-// Size: 0x6b
+// Checksum 0x0, Offset: 0x13b3
+// Size: 0x6a
 function function_ac90fa5cc0a80298(state_name, params) {
     current = self asmgetcurrentstate(self.asmname);
     if (current != state_name) {
@@ -352,18 +352,18 @@ function function_ac90fa5cc0a80298(state_name, params) {
 
     // Namespace asm / scripts\asm\asm
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11da
+    // Checksum 0x0, Offset: 0x1425
     // Size: 0x10
     function asm_tick() {
-        assertmsg("<dev string:x7f>");
+        assertmsg("This ent is using the completely obsolete script-driven ASM!");
     }
 
 #/
 
 // Namespace asm / scripts\asm\asm
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f2
-// Size: 0x50
+// Checksum 0x0, Offset: 0x143d
+// Size: 0x4f
 function highestallowedstance(asmname, statename, tostatename, stance) {
     assert(isdefined(stance));
     highestallowedstance = gethighestallowedstance();
@@ -375,7 +375,7 @@ function highestallowedstance(asmname, statename, tostatename, stance) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x124b
+// Checksum 0x0, Offset: 0x1495
 // Size: 0x15
 function asm_getdemeanor() {
     return self._blackboard.movetype;
@@ -383,7 +383,7 @@ function asm_getdemeanor() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1269
+// Checksum 0x0, Offset: 0x14b3
 // Size: 0x2
 function asm_updatefrantic() {
     
@@ -391,7 +391,7 @@ function asm_updatefrantic() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1273
+// Checksum 0x0, Offset: 0x14bd
 // Size: 0x3
 function asm_isfrantic() {
     return false;
@@ -399,7 +399,7 @@ function asm_isfrantic() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x127f
+// Checksum 0x0, Offset: 0x14c9
 // Size: 0x16
 function asm_iscrawlmelee() {
     return isdefined(self.asm.crawlmelee);
@@ -407,7 +407,7 @@ function asm_iscrawlmelee() {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x129e
+// Checksum 0x0, Offset: 0x14e8
 // Size: 0x20
 function asm_setcrawlmelee(val) {
     self.asm.crawlmelee = val;
@@ -415,7 +415,7 @@ function asm_setcrawlmelee(val) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c6
+// Checksum 0x0, Offset: 0x1510
 // Size: 0x34
 function asm_setdemeanoranimoverride(demeanor, override, anime) {
     self.asm.animoverrides[demeanor][override] = anime;
@@ -423,7 +423,7 @@ function asm_setdemeanoranimoverride(demeanor, override, anime) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1302
+// Checksum 0x0, Offset: 0x154c
 // Size: 0x35
 function asm_cleardemeanoranimoverride(demeanor, override) {
     if (asm_hasdemeanoranimoverride(demeanor, override)) {
@@ -433,7 +433,7 @@ function asm_cleardemeanoranimoverride(demeanor, override) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x133f
+// Checksum 0x0, Offset: 0x1589
 // Size: 0x45
 function asm_hasdemeanoranimoverride(demeanor, override) {
     return isdefined(self.asm.animoverrides[demeanor]) && isdefined(self.asm.animoverrides[demeanor][override]);
@@ -441,7 +441,7 @@ function asm_hasdemeanoranimoverride(demeanor, override) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x138d
+// Checksum 0x0, Offset: 0x15d7
 // Size: 0x3b
 function asm_getdemeanoranimoverride(demeanor, override) {
     assert(asm_hasdemeanoranimoverride(demeanor, override));
@@ -450,7 +450,7 @@ function asm_getdemeanoranimoverride(demeanor, override) {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d1
+// Checksum 0x0, Offset: 0x161b
 // Size: 0x12
 function asm_getcurrentstate(asmname) {
     return self asmgetcurrentstate(asmname);
@@ -458,18 +458,18 @@ function asm_getcurrentstate(asmname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ec
+// Checksum 0x0, Offset: 0x1636
 // Size: 0x4f
 function asm_hasalias(statename, alias) {
     arcname = function_2285421dfc79c4d5();
-    assertex(isdefined(arcname), "<dev string:xbf>");
+    assertex(isdefined(arcname), "AI does not have archetype defined.");
     animresult = archetypegetrandomalias(arcname, statename, alias, asm_isfrantic());
     return isdefined(animresult);
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1444
+// Checksum 0x0, Offset: 0x168e
 // Size: 0x90
 function asm_getanim(asmname, statename, params) {
     if (isarray(params)) {
@@ -480,7 +480,7 @@ function asm_getanim(asmname, statename, params) {
         } else if (params.size == 3) {
             return self asmgetanim(asmname, statename, params[0], params[1], params[2]);
         } else {
-            assertmsg("<dev string:xe6>");
+            assertmsg("what gsc needs is some varargs and array flatten functionality.");
         }
         return;
     }
@@ -489,8 +489,8 @@ function asm_getanim(asmname, statename, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14dc
-// Size: 0x2e
+// Checksum 0x0, Offset: 0x1726
+// Size: 0x2d
 function asm_getrandomanim(asmname, statename) {
     var_b6648a33085e43a = asm_getrandomalias(statename);
     return asm_lookupanimfromalias(statename, var_b6648a33085e43a);
@@ -498,64 +498,64 @@ function asm_getrandomanim(asmname, statename) {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1513
-// Size: 0x63
+// Checksum 0x0, Offset: 0x175c
+// Size: 0x62
 function asm_getrandomalias(statename) {
     aliases = archetypegetaliases(self.animsetname, statename);
-    assertex(aliases.size > 0, "<dev string:x129>" + self.animsetname + "<dev string:x152>" + statename + "<dev string:x158>" + self.classname);
+    assertex(aliases.size > 0, "No aliases found in archetype state '" + self.animsetname + "->" + statename + "' for " + self.classname);
     return aliases[randomint(aliases.size)];
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x157f
+// Checksum 0x0, Offset: 0x17c7
 // Size: 0x51
 function function_c1bf21c5e8625ea(statename, alias) {
     arcname = self.basearchetype;
-    assertex(isdefined(arcname), "<dev string:x162>");
+    assertex(isdefined(arcname), "AI does not have base archetype defined.");
     animresult = archetypegetrandomalias(arcname, statename, alias, asm_isfrantic());
     return animresult;
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d9
+// Checksum 0x0, Offset: 0x1821
 // Size: 0x4e
 function asm_lookupanimfromaliasifexists(statename, alias) {
     arcname = function_2285421dfc79c4d5();
-    assertex(isdefined(arcname), "<dev string:xbf>");
+    assertex(isdefined(arcname), "AI does not have archetype defined.");
     animresult = archetypegetrandomalias(arcname, statename, alias, asm_isfrantic());
     return animresult;
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1630
+// Checksum 0x0, Offset: 0x1878
 // Size: 0x91
 function function_62d0bb5a77d09499(statename, alias) {
     arcname = self.basearchetype;
-    assertex(isdefined(arcname), "<dev string:x162>");
+    assertex(isdefined(arcname), "AI does not have base archetype defined.");
     animresult = archetypegetrandomalias(arcname, statename, alias, asm_isfrantic());
-    assertex(isdefined(animresult), "<dev string:x18e>" + function_3c8848a3a11b2553(alias) + "<dev string:x1a8>" + arcname + "<dev string:x1bc>" + statename + "<dev string:x1c9>" + self.classname + "<dev string:x1d4>");
+    assertex(isdefined(animresult), "<dev string:x1c>" + function_3c8848a3a11b2553(alias) + "<dev string:x33>" + arcname + "<dev string:x44>" + statename + "<dev string:x4e>" + self.classname + "<dev string:x56>");
     return animresult;
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ca
+// Checksum 0x0, Offset: 0x1912
 // Size: 0x8e
 function asm_lookupanimfromalias(statename, alias) {
     arcname = function_2285421dfc79c4d5();
-    assertex(isdefined(arcname), "<dev string:xbf>");
+    assertex(isdefined(arcname), "AI does not have archetype defined.");
     animresult = archetypegetrandomalias(arcname, statename, alias, asm_isfrantic());
-    assertex(isdefined(animresult), "<dev string:x18e>" + function_3c8848a3a11b2553(alias) + "<dev string:x1a8>" + arcname + "<dev string:x1bc>" + statename + "<dev string:x1c9>" + self.classname + "<dev string:x1d4>");
+    assertex(isdefined(animresult), "<dev string:x1c>" + function_3c8848a3a11b2553(alias) + "<dev string:x33>" + arcname + "<dev string:x44>" + statename + "<dev string:x4e>" + self.classname + "<dev string:x56>");
     return animresult;
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1761
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x19a9
+// Size: 0xe4
 function asm_getallanimsforstate(statename) {
     assert(isdefined(self.animsetname));
     arc = self.animsetname;
@@ -574,7 +574,7 @@ function asm_getallanimsforstate(statename) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x184d
+// Checksum 0x0, Offset: 0x1a96
 // Size: 0x5f
 function asm_getallanimsforalias(archetype, statename, alias) {
     var_3a8e690b2371c6d2 = archetypegetalias(archetype, statename, alias, 1);
@@ -590,7 +590,7 @@ function asm_getallanimsforalias(archetype, statename, alias) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18b5
+// Checksum 0x0, Offset: 0x1afe
 // Size: 0x23
 function asm_getallanimindicesforalias(statename, alias) {
     return animsetgetallanimindicesforalias(self.animsetname, statename, alias);
@@ -598,7 +598,7 @@ function asm_getallanimindicesforalias(statename, alias) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e1
+// Checksum 0x0, Offset: 0x1b2a
 // Size: 0x88
 function asm_playanimstate(asmname, statename, params) {
     self endon(statename + "_finished");
@@ -613,8 +613,8 @@ function asm_playanimstate(asmname, statename, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1971
-// Size: 0x50
+// Checksum 0x0, Offset: 0x1bba
+// Size: 0x4f
 function function_74a66de812856ba(asmname, statename, params) {
     self endon(statename + "_finished");
     var_abe93f4471a03711 = float(params);
@@ -625,7 +625,7 @@ function function_74a66de812856ba(asmname, statename, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c9
+// Checksum 0x0, Offset: 0x1c11
 // Size: 0x30
 function asm_hasknobs() {
     if (isagent(self) && !istrue(self.bsoldier) && self.unittype != "civilian") {
@@ -636,8 +636,8 @@ function asm_hasknobs() {
 
 // Namespace asm / scripts\asm\asm
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a02
-// Size: 0x25b
+// Checksum 0x0, Offset: 0x1c4a
+// Size: 0x266
 function function_fb56c9527636713f(asmname, statename, playbackrate, ismovestate) {
     self endon(statename + "_finished");
     if (!isdefined(playbackrate)) {
@@ -670,7 +670,7 @@ function function_fb56c9527636713f(asmname, statename, playbackrate, ismovestate
         if (isnumber(loopanim)) {
             self aisetanim(statename, loopanim, playbackrate);
         } else {
-            assertex(utility::issp(), "<dev string:x1d9>");
+            assertex(utility::issp(), "looped anims that are not in the animset (demeanor override?) is only supported by SP.");
             blankindex = asm_lookupanimfromalias(statename, "blank");
             self aisetanim(statename, blankindex);
             if (brestart) {
@@ -708,8 +708,8 @@ function function_fb56c9527636713f(asmname, statename, playbackrate, ismovestate
 
 // Namespace asm / scripts\asm\asm
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c65
-// Size: 0x100
+// Checksum 0x0, Offset: 0x1eb8
+// Size: 0x101
 function asm_lookupdirectionalfootanim(keypaddirection, asmname, statename, var_5217df91f13c7c48, optionalprefix) {
     prefix = "";
     if (isdefined(optionalprefix)) {
@@ -743,7 +743,7 @@ function asm_lookupdirectionalfootanim(keypaddirection, asmname, statename, var_
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d6e
+// Checksum 0x0, Offset: 0x1fc2
 // Size: 0x15
 function asm_setmoveplaybackrate(rate) {
     self.moveplaybackrate = rate;
@@ -751,7 +751,7 @@ function asm_setmoveplaybackrate(rate) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d8b
+// Checksum 0x0, Offset: 0x1fdf
 // Size: 0xb
 function asm_getmoveplaybackrate() {
     return self.moveplaybackrate;
@@ -759,7 +759,7 @@ function asm_getmoveplaybackrate() {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d9f
+// Checksum 0x0, Offset: 0x1ff3
 // Size: 0x12
 function asm_getcurrentstatename(asmname) {
     return self asmgetcurrentstate(asmname);
@@ -767,8 +767,8 @@ function asm_getcurrentstatename(asmname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dba
-// Size: 0x115
+// Checksum 0x0, Offset: 0x200e
+// Size: 0x116
 function asm_dosinglenotetrack(asmname, statename, customfunction, customparams, customflagname) {
     flagname = statename;
     if (isdefined(customflagname)) {
@@ -798,7 +798,7 @@ function asm_dosinglenotetrack(asmname, statename, customfunction, customparams,
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ed8
+// Checksum 0x0, Offset: 0x212d
 // Size: 0x8e
 function asm_handlenewnotetracks(asmname, note, statename) {
     if (asm_tryhandledeathstatechangenotetrack(note)) {
@@ -821,14 +821,14 @@ function asm_handlenewnotetracks(asmname, note, statename) {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f6e
-// Size: 0x136
+// Checksum 0x0, Offset: 0x21c3
+// Size: 0x138
 function asm_tryhandledeathstatechangenotetrack(notetrack) {
-    if (!isstartstr(notetrack, "ds ")) {
+    if (!string_starts_with(notetrack, "ds ")) {
         return false;
     }
     charindex = 3;
-    assertex(notetrack[charindex] == "<dev string:x233>", "<dev string:x238>");
+    assertex(notetrack[charindex] == "[", "Format for death state override notetrack should be 'ds [name] [param]'");
     self.asm.deathstateoverride = spawnstruct();
     charindex += 1;
     deathstate = "";
@@ -839,7 +839,7 @@ function asm_tryhandledeathstatechangenotetrack(notetrack) {
     self.asm.deathstateoverride.statename = deathstate;
     charindex += 1;
     if (charindex < notetrack.size) {
-        assertex(notetrack[charindex] + notetrack[charindex + 1] == "<dev string:x283>", "<dev string:x289>");
+        assertex(notetrack[charindex] + notetrack[charindex + 1] == " [", "Format for death state override notetrack should be 'ds [name]' or 'ds [name] [param]'");
         charindex += 2;
         params = "";
         while (charindex < notetrack.size && notetrack[charindex] != "]") {
@@ -853,8 +853,8 @@ function asm_tryhandledeathstatechangenotetrack(notetrack) {
 
 // Namespace asm / scripts\asm\asm
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ad
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x2304
+// Size: 0x5d
 function asm_donotetracksfortime(asmname, statename, time, customfunction, customparams) {
     var_24a91f52de25eb75 = statename + "_timeout";
     self endon(var_24a91f52de25eb75);
@@ -866,7 +866,7 @@ function asm_donotetracksfortime(asmname, statename, time, customfunction, custo
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2113
+// Checksum 0x0, Offset: 0x2369
 // Size: 0x24
 function asm_donotetrackswithtimeout_helper(endonstring, notifystring, timeout) {
     self endon(endonstring);
@@ -876,8 +876,8 @@ function asm_donotetrackswithtimeout_helper(endonstring, notifystring, timeout) 
 
 // Namespace asm / scripts\asm\asm
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x213f
-// Size: 0x7a
+// Checksum 0x0, Offset: 0x2395
+// Size: 0x7b
 function asm_donotetrackswithtimeout(asmname, statename, timeout, customfunction, customparams) {
     var_24a91f52de25eb75 = statename + "_timeout";
     var_7386724c9bd1d65c = statename + "_endHelper";
@@ -890,8 +890,8 @@ function asm_donotetrackswithtimeout(asmname, statename, timeout, customfunction
 
 // Namespace asm / scripts\asm\asm
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x21c2
-// Size: 0x81
+// Checksum 0x0, Offset: 0x2419
+// Size: 0x80
 function asm_donotetracks(asmname, statename, customfunction, customparams, customflagname, var_5c0d1cbfc351f2e1) {
     if (!isdefined(var_5c0d1cbfc351f2e1)) {
         var_5c0d1cbfc351f2e1 = 1;
@@ -909,8 +909,8 @@ function asm_donotetracks(asmname, statename, customfunction, customparams, cust
 
 // Namespace asm / scripts\asm\asm
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x224b
-// Size: 0x14c
+// Checksum 0x0, Offset: 0x24a1
+// Size: 0x14e
 function asm_donotetrackswithinterceptor(asmname, statename, interceptfunction, var_314a4fbce09143e7, customflagname) {
     assert(isdefined(interceptfunction));
     flagname = statename;
@@ -949,13 +949,13 @@ function asm_donotetrackswithinterceptor(asmname, statename, interceptfunction, 
 
 // Namespace asm / scripts\asm\asm
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x239f
+// Checksum 0x0, Offset: 0x25f7
 // Size: 0x89
 function asm_donotetrackssingleloop(asmname, statename, xanim, customfunction) {
     notifyname = statename + "_note_loop_end";
     self endon(notifyname);
     length = getanimlength(xanim);
-    assertex(length > 0, "<dev string:x2e3>" + statename + "<dev string:x2fe>" + xanim + "<dev string:x309>");
+    assertex(length > 0, "missing anim for state " + statename + " (anim " + xanim + " has length of 0)");
     thread asm_donotetrackssingleloop_waiter(notifyname, statename + "_finished", length);
     asm_donotetracks(asmname, statename, customfunction);
     self notify(notifyname);
@@ -963,7 +963,7 @@ function asm_donotetrackssingleloop(asmname, statename, xanim, customfunction) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2430
+// Checksum 0x0, Offset: 0x2688
 // Size: 0x35
 function asm_donotetrackssingleloop_waiter(notifyname, endonname, time) {
     self endon("death");
@@ -976,7 +976,7 @@ function asm_donotetrackssingleloop_waiter(notifyname, endonname, time) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x246d
+// Checksum 0x0, Offset: 0x26c5
 // Size: 0x19
 function asm_donotetracksfortime_helper(notifystring, time) {
     wait time;
@@ -985,8 +985,8 @@ function asm_donotetracksfortime_helper(notifystring, time) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x248e
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x26e6
+// Size: 0xb7
 function asm_waitforaimnotetrack(asmname, statename, blendtime) {
     self endon(statename + "_finished");
     bdone = 0;
@@ -1007,10 +1007,10 @@ function asm_waitforaimnotetrack(asmname, statename, blendtime) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x254e
-// Size: 0x19c
+// Checksum 0x0, Offset: 0x27a5
+// Size: 0x1a0
 function asm_lookuprandomalias(statename, optionalprefix, allownone) {
-    assertex(isdefined(self.animsetname), "<dev string:xbf>");
+    assertex(isdefined(self.animsetname), "AI does not have archetype defined.");
     archetype = self.animsetname;
     aliases = archetypegetaliases(archetype, statename);
     possible = 0;
@@ -1022,9 +1022,9 @@ function asm_lookuprandomalias(statename, optionalprefix, allownone) {
     if (!isdefined(aliases)) {
         /#
             if (!istrue(allownone)) {
-                msg = "<dev string:x31e>" + statename + "<dev string:x346>" + archetype;
+                msg = "<dev string:x58>" + statename + "<dev string:x7d>" + archetype;
                 if (isdefined(optionalprefix)) {
-                    msg += "<dev string:x358>" + optionalprefix;
+                    msg += "<dev string:x8c>" + optionalprefix;
                 }
                 assertmsg(msg);
             }
@@ -1042,9 +1042,9 @@ function asm_lookuprandomalias(statename, optionalprefix, allownone) {
     }
     /#
         if (!istrue(allownone) && !isdefined(chosen)) {
-            msg = "<dev string:x31e>" + statename + "<dev string:x346>" + archetype;
+            msg = "<dev string:x58>" + statename + "<dev string:x7d>" + archetype;
             if (isdefined(optionalprefix)) {
-                msg += "<dev string:x358>" + optionalprefix;
+                msg += "<dev string:x8c>" + optionalprefix;
             }
             assertmsg(msg);
         }
@@ -1054,15 +1054,15 @@ function asm_lookuprandomalias(statename, optionalprefix, allownone) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26f3
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x294e
+// Size: 0xa6
 function asm_chooseanim(asmname, statename, params) {
     if (!isdefined(params)) {
         var_b6648a33085e43a = asm_lookuprandomalias(statename);
         if (isdefined(var_b6648a33085e43a)) {
             return asm_lookupanimfromalias(statename, var_b6648a33085e43a);
         } else {
-            assertmsg("<dev string:x369>" + asmname + "<dev string:x3d0>" + statename);
+            assertmsg("ASM_ChooseAnim called with undefined alias and ASM_LookupRandomAlias failed to find an alias. ASM: " + asmname + " State: " + statename);
             return undefined;
         }
         return;
@@ -1080,8 +1080,8 @@ function asm_chooseanim(asmname, statename, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a0
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x29fc
+// Size: 0x7b
 function asm_clearfacialanim() {
     if (self.facialstate != "filler") {
         if (isai(self)) {
@@ -1099,7 +1099,7 @@ function asm_clearfacialanim() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2824
+// Checksum 0x0, Offset: 0x2a7f
 // Size: 0x48
 function asm_restorefacialanim() {
     asmname = self.asmname;
@@ -1112,7 +1112,7 @@ function asm_restorefacialanim() {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2874
+// Checksum 0x0, Offset: 0x2acf
 // Size: 0x37
 function asm_playfacialanim(asmname, statename, animname) {
     if (isdefined(self.fnasm_playfacialanim)) {
@@ -1122,8 +1122,8 @@ function asm_playfacialanim(asmname, statename, animname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28b3
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x2b0e
+// Size: 0x5c
 function asm_getroot() {
     assert(asm_hasknobs());
     animid = asm_lookupanimfromaliasifexists("knobs", "root");
@@ -1136,8 +1136,8 @@ function asm_getroot() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2919
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x2b73
+// Size: 0x4d
 function asm_getbodyknob() {
     animid = asm_lookupanimfromaliasifexists("knobs", "body");
     if (isdefined(animid)) {
@@ -1149,8 +1149,8 @@ function asm_getbodyknob() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2970
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x2bc9
+// Size: 0x59
 function asm_getinnerrootknob() {
     animid = asm_lookupanimfromaliasifexists("knobs", "inner_root");
     if (isdefined(animid)) {
@@ -1165,8 +1165,8 @@ function asm_getinnerrootknob() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29d3
-// Size: 0x54
+// Checksum 0x0, Offset: 0x2c2b
+// Size: 0x53
 function asm_getfacialknob() {
     animid = asm_lookupanimfromaliasifexists("always_on", "facial");
     if (isdefined(animid)) {
@@ -1180,8 +1180,8 @@ function asm_getfacialknob() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2f
-// Size: 0x54
+// Checksum 0x0, Offset: 0x2c86
+// Size: 0x53
 function asm_getheadlookknobifexists() {
     animid = asm_lookupanimfromaliasifexists("knobs", "headlook");
     if (isdefined(animid)) {
@@ -1195,8 +1195,8 @@ function asm_getheadlookknobifexists() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a8b
-// Size: 0xaa
+// Checksum 0x0, Offset: 0x2ce1
+// Size: 0xab
 function asm_isweaponoverride() {
     currentweapon = self.weapon;
     weapon = getweaponbasename(currentweapon);
@@ -1209,11 +1209,11 @@ function asm_isweaponoverride() {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b3e
-// Size: 0x5c
+// Checksum 0x0, Offset: 0x2d95
+// Size: 0x5b
 function function_6aa159fc2f693af7(statename, animid) {
     assert(isdefined(statename));
-    assertex(isdefined(animid), "<dev string:x3dc>" + statename);
+    assertex(isdefined(animid), "Undefined animId passed in for state " + statename);
     if (isnumber(animid)) {
         archetype = self.basearchetype;
         return animsetgetanimfromindex(archetype, statename, animid);
@@ -1223,11 +1223,11 @@ function function_6aa159fc2f693af7(statename, animid) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ba2
-// Size: 0x59
+// Checksum 0x0, Offset: 0x2df8
+// Size: 0x58
 function asm_getxanim(statename, animid) {
     assert(isdefined(statename));
-    assertex(isdefined(animid), "<dev string:x3dc>" + statename);
+    assertex(isdefined(animid), "Undefined animId passed in for state " + statename);
     if (isnumber(animid)) {
         archetype = function_2285421dfc79c4d5();
         return animsetgetanimfromindex(archetype, statename, animid);
@@ -1237,7 +1237,7 @@ function asm_getxanim(statename, animid) {
 
 // Namespace asm / scripts\asm\asm
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c03
+// Checksum 0x0, Offset: 0x2e58
 // Size: 0x94
 function asm_playanimstatewithnotetrackinterceptor(asmname, statename, var_179213470e3d2f54, var_49bd3392cc4caeb2) {
     self endon(statename + "_finished");
@@ -1254,7 +1254,7 @@ function asm_playanimstatewithnotetrackinterceptor(asmname, statename, var_17921
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c9f
+// Checksum 0x0, Offset: 0x2ef4
 // Size: 0x6c
 function asm_playanimstatenotransition(asmname, statename, params) {
     self endon(statename + "_finished");
@@ -1266,8 +1266,8 @@ function asm_playanimstatenotransition(asmname, statename, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d13
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x2f68
+// Size: 0x7f
 function function_30df7eff2a4557a5(statename, aliasname) {
     self endon("death");
     scripts\asm\asm_bb::bb_setanimscripted();
@@ -1282,7 +1282,7 @@ function function_30df7eff2a4557a5(statename, aliasname) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d99
+// Checksum 0x0, Offset: 0x2fef
 // Size: 0x3d
 function asm_playadditiveanimloopstate(asmname, statename, params) {
     assert(isdefined(self.fnasm_playadditiveanimloopstate));
@@ -1291,8 +1291,8 @@ function asm_playadditiveanimloopstate(asmname, statename, params) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dde
-// Size: 0x1c
+// Checksum 0x0, Offset: 0x3034
+// Size: 0x1b
 function function_6e9cb6cd0535fe65() {
     normalizedtime = self function_9f1a3a76adea61f6();
     self function_d07a6cd6faca576d(normalizedtime);
@@ -1300,7 +1300,7 @@ function function_6e9cb6cd0535fe65() {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e02
+// Checksum 0x0, Offset: 0x3057
 // Size: 0x15
 function function_8d1655ae223d862a(rate) {
     self.animplaybackratedefault = rate;
@@ -1308,7 +1308,7 @@ function function_8d1655ae223d862a(rate) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e1f
+// Checksum 0x0, Offset: 0x3074
 // Size: 0xb
 function function_4bb232c0fca955f6() {
     return self.animplaybackratedefault;
@@ -1316,7 +1316,7 @@ function function_4bb232c0fca955f6() {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e33
+// Checksum 0x0, Offset: 0x3088
 // Size: 0x51
 function yawdiffto2468(diff) {
     if (diff < -135) {
@@ -1338,7 +1338,7 @@ function yawdiffto2468(diff) {
 
     // Namespace asm / scripts\asm\asm
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2e8c
+    // Checksum 0x0, Offset: 0x30e1
     // Size: 0x24
     function function_9de97eaaf31f9e35() {
         if (isdefined(level.var_9197bd66f91ccd30) && level.var_9197bd66f91ccd30) {
@@ -1349,14 +1349,14 @@ function yawdiffto2468(diff) {
 
     // Namespace asm / scripts\asm\asm
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2eb8
-    // Size: 0x4d
+    // Checksum 0x0, Offset: 0x310d
+    // Size: 0x4c
     function function_3271c00e44d9636b() {
         dvar = getdvar(@"hash_9f9979f32e427f14");
-        if (dvar == "<dev string:x405>") {
+        if (dvar == "<dev string:x9a>") {
             return 0;
         }
-        if (dvar == "<dev string:x40c>") {
+        if (dvar == "<dev string:x9e>") {
             return 1;
         }
         if (int(dvar) == self getentitynumber()) {
@@ -1367,7 +1367,7 @@ function yawdiffto2468(diff) {
 
     // Namespace asm / scripts\asm\asm
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2f0d
+    // Checksum 0x0, Offset: 0x3161
     // Size: 0x1f
     function function_57bc598a3c0d7a1e(msg) {
         if (!function_3271c00e44d9636b()) {
@@ -1380,8 +1380,8 @@ function yawdiffto2468(diff) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f34
-// Size: 0x70f
+// Checksum 0x0, Offset: 0x3188
+// Size: 0x711
 function asm_setupgesture(asmname, statename) {
     demeanor = asm_getdemeanor();
     var_59c51d94cf774c12 = asm_isfrantic();
@@ -1439,8 +1439,8 @@ function asm_setupgesture(asmname, statename) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x364b
-// Size: 0xef
+// Checksum 0x0, Offset: 0x38a1
+// Size: 0xe2
 function setup_level_ents() {
     level endon("game_ended");
     count = 0;
@@ -1454,18 +1454,17 @@ function setup_level_ents() {
     }
     callback::callback("setup_all_traversals");
     /#
-        foreach (t in getnodearray("<dev string:x412>", "<dev string:x429>")) {
+        foreach (t in getnodearray("<dev string:xa1>", "<dev string:xb5>")) {
             t thread function_f1e58f7103a22462();
         }
         level thread drawtraversaldata();
-        level thread function_2bbb4d05ad09c81e();
     #/
 }
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3742
-// Size: 0x87
+// Checksum 0x0, Offset: 0x398b
+// Size: 0x84
 function function_35dd4cad0ca3fafc() {
     foreach (t in getallnodes()) {
         if (isdefined(t.type) && t.type == "Begin" && !isdefined(t.traverse_height)) {
@@ -1477,7 +1476,7 @@ function function_35dd4cad0ca3fafc() {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37d1
+// Checksum 0x0, Offset: 0x3a17
 // Size: 0x57
 function processdoublejumpmantletraversal(target) {
     assert(isdefined(target));
@@ -1492,27 +1491,25 @@ function processdoublejumpmantletraversal(target) {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3830
-// Size: 0x4ef
+// Checksum 0x0, Offset: 0x3a76
+// Size: 0x4a7
 function traversethink() {
     ent = getent(self.target, "targetname");
     if (!isdefined(ent)) {
         ent = getstruct(self.target, "targetname");
     }
     end_node = getnode(self.target, "targetname");
-    if (!isdefined(end_node)) {
-        if (level.script != "mp_jup_map" && level.script != "mp_jup_bigmap_wz2" && level.script != "mp_jup_bm_live_wz2" && level.script != "mp_jup_bm_wz2_s4") {
-            assertex(isdefined(end_node), "<dev string:x437>" + self.origin + "<dev string:x486>" + self.target);
-        }
+    if (!isdefined(end_node) && (level.script == "mp_jup_bigmap" || level.script == "mp_jup_bigmap_wz2")) {
         logstring("^1Warning: Unable to find matching negotiation_end_node for negotiation_start_node at " + self.origin + " " + self.target);
         return;
     }
+    assertex(isdefined(end_node), "Unable to find matching negotiation_end_node for negotiation_start_node at " + self.origin + " " + self.target);
     if (self.animscript == "traverse_ground") {
         function_2121ee28acaa2765(ent, end_node);
         return;
     }
     if (!isdefined(ent)) {
-        println("<dev string:x48b>" + self.animscript + "<dev string:x4ad>");
+        println("<dev string:xc0>" + self.animscript + "<dev string:xdf>");
         calculate_traverse_data(averagepoint([self.origin, end_node.origin]), end_node.origin);
         return;
     }
@@ -1528,7 +1525,7 @@ function traversethink() {
         /#
             if (getdvarint(@"hash_a838875af4383ca1", 0) != 0) {
                 if (isdefined(self.target)) {
-                    node = getnode(self.target, "<dev string:x429>");
+                    node = getnode(self.target, "<dev string:xb5>");
                     if (isdefined(node)) {
                         self.var_2ec927a0b0085925 = node.origin;
                     }
@@ -1541,7 +1538,7 @@ function traversethink() {
         /#
             if (getdvarint(@"hash_a838875af4383ca1", 0) != 0) {
                 if (isdefined(self.target)) {
-                    node = getnode(self.target, "<dev string:x429>");
+                    node = getnode(self.target, "<dev string:xb5>");
                     if (isdefined(node)) {
                         self.var_2ec927a0b0085925 = node.origin;
                     }
@@ -1556,7 +1553,7 @@ function traversethink() {
         self.startnodeoriginalangles = self.angles;
         /#
             if (getdvarint(@"hash_a838875af4383ca1", 0) != 0) {
-                self.var_2ec927a0b0085925 = getnode(self.target, "<dev string:x429>").origin;
+                self.var_2ec927a0b0085925 = getnode(self.target, "<dev string:xb5>").origin;
                 self.var_5d8aff9e6ac666b5 = ent.origin;
             }
         #/
@@ -1564,12 +1561,12 @@ function traversethink() {
     default: 
         break;
     }
-    if (isdefined(ent.target) && (level.script != "mp_jup_bigmap" && level.script != "mp_jup_bigmap_wz2" && level.script != "mp_jup_bm_live_wz2" && level.script != "mp_jup_bm_wz2_s4" || !isendstr(ent.target, "auto12190374188911454432"))) {
+    if (isdefined(ent.target) && (level.script != "mp_jup_bigmap" && level.script != "mp_jup_bigmap_wz2" || !isendstr(ent.target, "auto12190374188911454432"))) {
         ent2 = getent(ent.target, "targetname");
         if (!isdefined(ent2)) {
             ent2 = getstruct(ent.target, "targetname");
         }
-        assertex(isdefined(ent2), self.animscript + "<dev string:x519>" + self.origin + "<dev string:x52a>" + ent.targetname + "<dev string:x537>" + ent.origin + "<dev string:x53f>" + ent.target);
+        assertex(isdefined(ent2), self.animscript + " traverse at " + self.origin + " has ent " + ent.targetname + " at " + ent.origin + " pointing to missing ent/struct " + ent.target);
         if (isdefined(ent2)) {
             calculate_traverse_data(ent.origin, end_node.origin, ent2.origin);
         } else {
@@ -1590,15 +1587,15 @@ function traversethink() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d27
+// Checksum 0x0, Offset: 0x3f25
 // Size: 0xcc
 function function_ece7865eb2447554() {
     apex_pos = undefined;
     end_node = getnode(self.target, "targetname");
-    assertex(isdefined(end_node), "<dev string:x437>" + self.origin + "<dev string:x486>" + self.target);
+    assertex(isdefined(end_node), "Unable to find matching negotiation_end_node for negotiation_start_node at " + self.origin + " " + self.target);
     apex_pos = function_fda6a76c32365675(self.origin, end_node.origin);
     if (!isdefined(apex_pos)) {
-        assertmsg("<dev string:x563>" + self.origin + "<dev string:x5a3>");
+        assertmsg("Unable to calculate apex position for traversal starting at " + self.origin + ", using an average of the start and end points as a fallback");
         apex_pos = averagepoint([self.origin, end_node.origin]);
     }
     calculate_traverse_data(apex_pos, end_node.origin);
@@ -1606,8 +1603,8 @@ function function_ece7865eb2447554() {
 
 // Namespace asm / scripts\asm\asm
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dfb
-// Size: 0x181
+// Checksum 0x0, Offset: 0x3ff9
+// Size: 0x180
 function store_original_traverse_data() {
     self.original_data = spawnstruct();
     self.original_data.origin = self.origin;
@@ -1629,10 +1626,10 @@ function store_original_traverse_data() {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f84
-// Size: 0x125
+// Checksum 0x0, Offset: 0x4181
+// Size: 0x124
 function calculate_traverse_data(struct_pos, endnode_pos, var_83a69c989077feb7) {
-    assert(self.type == "<dev string:x5e3>");
+    assert(self.type == "Begin");
     if (self.animscript == "ladder_up" || self.animscript == "ladder_down") {
         ladderend = isdefined(var_83a69c989077feb7) ? var_83a69c989077feb7 : isdefined(struct_pos) ? struct_pos : endnode_pos;
         self.traverse_height = ladderend[2];
@@ -1652,8 +1649,8 @@ function calculate_traverse_data(struct_pos, endnode_pos, var_83a69c989077feb7) 
 
 // Namespace asm / scripts\asm\asm
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x40b1
-// Size: 0xd1
+// Checksum 0x0, Offset: 0x42ad
+// Size: 0xd0
 function re_calculate_traverse_data(ref_node, struct_pos, endnode_pos, var_83a69c989077feb7) {
     if (!isdefined(struct_pos)) {
         struct_pos = self.origin + rotatevector(ref_node.original_data.apex_delta_local, self.angles);
@@ -1670,8 +1667,8 @@ function re_calculate_traverse_data(ref_node, struct_pos, endnode_pos, var_83a69
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x418a
-// Size: 0x62c
+// Checksum 0x0, Offset: 0x4385
+// Size: 0x636
 function processwallruntraversal(target) {
     assert(isdefined(target));
     wallendnode = getent(target.target, "targetname");
@@ -1682,7 +1679,7 @@ function processwallruntraversal(target) {
     /#
         dist = distance(self.origin, target.origin);
         if (dist > 400) {
-            println("<dev string:x5ec>" + self.origin + "<dev string:x624>" + dist + "<dev string:x63f>" + 400);
+            println("<dev string:x148>" + self.origin + "<dev string:x17d>" + dist + "<dev string:x195>" + 400);
         }
     #/
     self.wall_info = spawnstruct();
@@ -1692,7 +1689,7 @@ function processwallruntraversal(target) {
     /#
         deltaz = var_70d5f712a9e22e96.origin[2] - self.origin[2];
         if (deltaz > 208) {
-            println("<dev string:x646>" + var_70d5f712a9e22e96.origin + "<dev string:x674>" + deltaz + "<dev string:x63f>" + 208);
+            println("<dev string:x199>" + var_70d5f712a9e22e96.origin + "<dev string:x1c4>" + deltaz + "<dev string:x195>" + 208);
         }
     #/
     walldir = undefined;
@@ -1704,7 +1701,7 @@ function processwallruntraversal(target) {
         /#
             dist = distance(var_70d5f712a9e22e96.origin, var_d258406ada10ec0a.origin);
             if (dist > 544) {
-                println("<dev string:x6a1>" + var_70d5f712a9e22e96.origin + "<dev string:x6c5>" + dist + "<dev string:x63f>" + 544);
+                println("<dev string:x1ee>" + var_70d5f712a9e22e96.origin + "<dev string:x20f>" + dist + "<dev string:x195>" + 544);
             }
             walldir = vectornormalize(var_d258406ada10ec0a.origin - var_70d5f712a9e22e96.origin);
             var_13654841eca9f761 = var_70d5f712a9e22e96.origin - self.origin;
@@ -1712,7 +1709,7 @@ function processwallruntraversal(target) {
             var_13654841eca9f761 = vectornormalize(var_13654841eca9f761);
             dotprod = vectordot(walldir, var_13654841eca9f761);
             if (dotprod < 0) {
-                println("<dev string:x6e0>" + self.origin + "<dev string:x705>");
+                println("<dev string:x227>" + self.origin + "<dev string:x249>");
             }
         #/
         deletestruct_ref(var_70d5f712a9e22e96);
@@ -1729,7 +1726,7 @@ function processwallruntraversal(target) {
         var_70d5f712a9e22e96 = temp;
         /#
             if (!isdefined(var_70d5f712a9e22e96)) {
-                traversalendnode = getnode(self.target, "<dev string:x429>");
+                traversalendnode = getnode(self.target, "<dev string:xb5>");
                 assert(isdefined(traversalendnode));
                 assert(isdefined(walldir));
                 var_66a49caa0a5f70ba = traversalendnode.origin - var_d258406ada10ec0a.origin;
@@ -1737,11 +1734,11 @@ function processwallruntraversal(target) {
                 var_66a49caa0a5f70ba = vectornormalize(var_66a49caa0a5f70ba);
                 dotprod = vectordot(var_66a49caa0a5f70ba, walldir);
                 if (dotprod < 0) {
-                    println("<dev string:x6e0>" + self.origin + "<dev string:x72f>");
+                    println("<dev string:x227>" + self.origin + "<dev string:x270>");
                 }
                 dist = distance(var_d258406ada10ec0a.origin, traversalendnode.origin);
                 if (dist > 512) {
-                    println("<dev string:x6e0>" + self.origin + "<dev string:x777>" + dist + "<dev string:x63f>" + 512);
+                    println("<dev string:x227>" + self.origin + "<dev string:x2b5>" + dist + "<dev string:x195>" + 512);
                 }
             }
         #/
@@ -1752,13 +1749,13 @@ function processwallruntraversal(target) {
                     deltaz = var_70d5f712a9e22e96.origin[2] - var_d258406ada10ec0a.origin[2];
                     if (deltaz > 0) {
                         if (dist > 420) {
-                            println("<dev string:x7a9>" + var_70d5f712a9e22e96.origin + "<dev string:x7f1>" + dist + "<dev string:x63f>" + 420);
+                            println("<dev string:x2e4>" + var_70d5f712a9e22e96.origin + "<dev string:x329>" + dist + "<dev string:x195>" + 420);
                         }
                         if (deltaz > 200) {
-                            println("<dev string:x803>" + var_70d5f712a9e22e96.origin + "<dev string:x832>" + deltaz + "<dev string:x63f>" + 200);
+                            println("<dev string:x338>" + var_70d5f712a9e22e96.origin + "<dev string:x364>" + deltaz + "<dev string:x195>" + 200);
                         }
                     } else if (dist > 512) {
-                        println("<dev string:x862>" + var_70d5f712a9e22e96.origin + "<dev string:x7f1>" + dist + "<dev string:x63f>" + 512);
+                        println("<dev string:x391>" + var_70d5f712a9e22e96.origin + "<dev string:x329>" + dist + "<dev string:x195>" + 512);
                     }
                 #/
                 self.wall_info.mantleoffset = var_70d5f712a9e22e96.origin - self.origin;
@@ -1774,7 +1771,7 @@ function processwallruntraversal(target) {
                 /#
                     deltaz = var_70d5f712a9e22e96.origin[2] - var_d258406ada10ec0a.origin[2];
                     if (deltaz > 164) {
-                        println("<dev string:x8aa>" + var_70d5f712a9e22e96.origin + "<dev string:x832>" + deltaz + "<dev string:x63f>" + 164);
+                        println("<dev string:x3d6>" + var_70d5f712a9e22e96.origin + "<dev string:x364>" + deltaz + "<dev string:x195>" + 164);
                     }
                 #/
                 deletestruct_ref(var_70d5f712a9e22e96);
@@ -1786,8 +1783,8 @@ function processwallruntraversal(target) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x47be
-// Size: 0xd1
+// Checksum 0x0, Offset: 0x49c3
+// Size: 0xd0
 function function_2121ee28acaa2765(target, end_node) {
     assert(isdefined(end_node));
     self.walk_nodes = [];
@@ -1804,8 +1801,8 @@ function function_2121ee28acaa2765(target, end_node) {
 
 // Namespace asm / scripts\asm\asm
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4897
-// Size: 0x18c
+// Checksum 0x0, Offset: 0x4a9b
+// Size: 0x190
 function function_af7d10bc22de3494(target) {
     assert(isdefined(target));
     self.wall_nodes = [];
@@ -1835,8 +1832,8 @@ function function_af7d10bc22de3494(target) {
 
 // Namespace asm / scripts\asm\asm
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a2b
-// Size: 0x2ff
+// Checksum 0x0, Offset: 0x4c33
+// Size: 0x2e0
 function function_fda6a76c32365675(begin_pos, end_pos) {
     apex_pos = undefined;
     var_7533ff429b05d245 = begin_pos;
@@ -1864,8 +1861,7 @@ function function_fda6a76c32365675(begin_pos, end_pos) {
             pit_height = 20;
             var_a8da4fd8b61d7002 = mid_point - (0, 0, pit_height);
             trace_end = physicstrace(mid_point, var_a8da4fd8b61d7002);
-            var_f49807d1d5831577 = vectordot(vectornormalize(begin_pos - trace_end), vectornormalize(end_pos - trace_end));
-            if (trace_end == var_a8da4fd8b61d7002 || abs(var_f49807d1d5831577) > 0.2) {
+            if (trace_end == var_a8da4fd8b61d7002) {
                 end_pos = mid_point;
                 var_a2d80e0c0cf75c95 = mid_point;
                 continue;
@@ -1904,7 +1900,7 @@ function function_fda6a76c32365675(begin_pos, end_pos) {
         }
         /#
             if (!isdefined(apex_pos)) {
-                println("<dev string:x8d8>" + iteration_limit + "<dev string:x927>" + begin_pos);
+                println("<dev string:x401>" + iteration_limit + "<dev string:x44d>" + begin_pos);
             }
         #/
     }
@@ -1913,7 +1909,7 @@ function function_fda6a76c32365675(begin_pos, end_pos) {
 
 // Namespace asm / scripts\asm\asm
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d33
+// Checksum 0x0, Offset: 0x4f1c
 // Size: 0x2f
 function function_e722e0c504ced0ee(asmname, statename, params) {
     self notify("agent_scene_stop");
@@ -1924,14 +1920,14 @@ function function_e722e0c504ced0ee(asmname, statename, params) {
 
     // Namespace asm / scripts\asm\asm
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4d6a
+    // Checksum 0x0, Offset: 0x4f53
     // Size: 0x53
     function function_f1e58f7103a22462() {
         wait 0.05;
-        println("<dev string:x943>" + self.origin);
+        println("<dev string:x466>" + self.origin);
         if (getdvarint(@"hash_60bc1b675216e3d")) {
             while (true) {
-                print3d(self.origin, "<dev string:x988>");
+                print3d(self.origin, "<dev string:x4a8>");
                 wait 0.05;
             }
         }
@@ -1939,45 +1935,45 @@ function function_e722e0c504ced0ee(asmname, statename, params) {
 
     // Namespace asm / scripts\asm\asm
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4dc5
+    // Checksum 0x0, Offset: 0x4fae
     // Size: 0x58
     function validatetraverse(traverse) {
-        return traverse == "<dev string:x9a0>" || traverse == "<dev string:x9b4>" || traverse == "<dev string:x9ca>" || traverse == "<dev string:x9e0>" || traverse == "<dev string:x9f8>" || traverse == "<dev string:xa12>" || traverse == "<dev string:xa25>";
+        return traverse == "<dev string:x4bd>" || traverse == "<dev string:x4ce>" || traverse == "<dev string:x4e1>" || traverse == "<dev string:x4f4>" || traverse == "<dev string:x509>" || traverse == "<dev string:x520>" || traverse == "<dev string:x530>";
     }
 
     // Namespace asm / scripts\asm\asm
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4e25
-    // Size: 0x201
+    // Checksum 0x0, Offset: 0x500e
+    // Size: 0x203
     function function_12534104fbe54e32() {
-        println("<dev string:xa36>");
-        foreach (t in getnodearray("<dev string:xa55>", "<dev string:x429>")) {
+        println("<dev string:x53e>");
+        foreach (t in getnodearray("<dev string:x55a>", "<dev string:xb5>")) {
             if (!validatetraverse(t.animscript)) {
                 continue;
             }
             for (s = 20; s < 280; s += 10) {
                 for (yaw = -180; yaw <= 180; yaw += 15) {
                     var_e9db8fc3741a7e52 = [];
-                    var_e9db8fc3741a7e52["<dev string:xa61>"] = t.traverse_height_delta;
-                    var_e9db8fc3741a7e52["<dev string:xa6b>"] = t.traverse_drop_height_delta;
-                    var_e9db8fc3741a7e52["<dev string:xa7a>"] = yaw;
-                    var_e9db8fc3741a7e52["<dev string:xa89>"] = s;
-                    if (t.animscript == "<dev string:x9e0>") {
-                        var_e9db8fc3741a7e52["<dev string:xa92>"] = length2d(t.across_delta);
+                    var_e9db8fc3741a7e52["<dev string:x563>"] = t.traverse_height_delta;
+                    var_e9db8fc3741a7e52["<dev string:x56a>"] = t.traverse_drop_height_delta;
+                    var_e9db8fc3741a7e52["<dev string:x576>"] = yaw;
+                    var_e9db8fc3741a7e52["<dev string:x582>"] = s;
+                    if (t.animscript == "<dev string:x4f4>") {
+                        var_e9db8fc3741a7e52["<dev string:x588>"] = length2d(t.across_delta);
                     }
                     alias = level scripts\anim\animselector::selectanim(t.animscript, var_e9db8fc3741a7e52, 0);
-                    if (alias == "<dev string:xa9c>") {
-                        nodestring = "<dev string:xaa7>";
-                        nodestring = nodestring + "<dev string:xae7>" + t.animscript;
-                        nodestring = nodestring + "<dev string:xaf2>" + t.origin;
-                        nodestring = nodestring + "<dev string:xafe>" + t.traverse_height_delta;
-                        nodestring = nodestring + "<dev string:xb0e>" + t.traverse_drop_height_delta;
-                        nodestring = nodestring + "<dev string:xb1c>" + s;
-                        nodestring = nodestring + "<dev string:xb2b>" + yaw;
-                        if (t.animscript == "<dev string:x9e0>") {
-                            nodestring = nodestring + "<dev string:xb38>" + length2d(t.across_delta);
+                    if (alias == "<dev string:x58f>") {
+                        nodestring = "<dev string:x597>";
+                        nodestring = nodestring + "<dev string:x5d4>" + t.animscript;
+                        nodestring = nodestring + "<dev string:x5dc>" + t.origin;
+                        nodestring = nodestring + "<dev string:x5e5>" + t.traverse_height_delta;
+                        nodestring = nodestring + "<dev string:x5f2>" + t.traverse_drop_height_delta;
+                        nodestring = nodestring + "<dev string:x5fd>" + s;
+                        nodestring = nodestring + "<dev string:x609>" + yaw;
+                        if (t.animscript == "<dev string:x4f4>") {
+                            nodestring = nodestring + "<dev string:x613>" + length2d(t.across_delta);
                         }
-                        nodestring += "<dev string:xb48>";
+                        nodestring += "<dev string:x620>";
                         println(nodestring);
                     }
                 }
@@ -1988,8 +1984,8 @@ function function_e722e0c504ced0ee(asmname, statename, params) {
 
     // Namespace asm / scripts\asm\asm
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x502e
-    // Size: 0x110
+    // Checksum 0x0, Offset: 0x5219
+    // Size: 0x10f
     function drawtraversaldata() {
         while (true) {
             waitframe();
@@ -1998,7 +1994,7 @@ function function_e722e0c504ced0ee(asmname, statename, params) {
             }
             recorder_enabled = getdvarint(@"hash_a83f59607205c9c0", 0) > 0;
             foreach (t in getallnodes()) {
-                if (isdefined(t.type) && t.type == "<dev string:x5e3>" && isdefined(t.traverse_height)) {
+                if (isdefined(t.type) && t.type == "<dev string:x623>" && isdefined(t.traverse_height)) {
                     apex_pos = t.origin + t.apex_delta;
                     if (recorder_enabled) {
                         recordsphere(apex_pos, 15, (0.2, 1, 0));
@@ -2007,138 +2003,6 @@ function function_e722e0c504ced0ee(asmname, statename, params) {
                     sphere(apex_pos, 15, (0.2, 1, 0));
                 }
             }
-        }
-    }
-
-    // Namespace asm / scripts\asm\asm
-    // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x5146
-    // Size: 0x481
-    function private function_2bbb4d05ad09c81e() {
-        level endon("<dev string:xb4e>");
-        setdvarifuninitialized(@"hash_e42ac6b1ddb1188e", 0);
-        while (true) {
-            if (getdvarint(@"hash_e42ac6b1ddb1188e", 0) <= 0) {
-                waitframe();
-                continue;
-            }
-            break;
-        }
-        while (!isalive(level.players[0])) {
-            waitframe();
-        }
-        var_c22f0f91887e7488 = spawnstruct();
-        var_c22f0f91887e7488.room_nodes = [];
-        var_c22f0f91887e7488.var_d1debc37b000d65d = [];
-        level childthread function_25f6ff1e2f38d5a(var_c22f0f91887e7488);
-        iprintlnbold("<dev string:xb5c>");
-        room_index = 0;
-        room_node = function_47ac2016d8dbf2c5(room_index);
-        room_node = {#origin:getclosestpointonnavmesh(room_node.origin)};
-        var_c52c258b548af58d = 0;
-        while (isdefined(room_node)) {
-            var_4b5523fa148a15c9 = undefined;
-            var_3bbd592cb0b58f64 = [];
-            foreach (var_80847fa4c21ff44b in var_c22f0f91887e7488.room_nodes) {
-                can_pathfind = 0;
-                dist = distance(room_node.origin, var_80847fa4c21ff44b.origin);
-                if (dist > 4000) {
-                    continue;
-                }
-                if (is_equal(var_4b5523fa148a15c9, var_80847fa4c21ff44b.island_id)) {
-                    can_pathfind = 1;
-                } else if (!can_pathfind) {
-                    path1 = findpathcustom(room_node.origin, var_80847fa4c21ff44b.origin);
-                    can_pathfind = function_b391661c3185e255(path1, var_80847fa4c21ff44b.origin);
-                    if (can_pathfind) {
-                        path2 = findpathcustom(var_80847fa4c21ff44b.origin, room_node.origin);
-                        can_pathfind = function_b391661c3185e255(path2, room_node.origin);
-                    }
-                }
-                if (can_pathfind) {
-                    var_4b5523fa148a15c9 = isdefined(var_4b5523fa148a15c9) ? var_4b5523fa148a15c9 : var_80847fa4c21ff44b.island_id;
-                    var_4b5523fa148a15c9 = min(var_4b5523fa148a15c9, var_80847fa4c21ff44b.island_id);
-                    var_3bbd592cb0b58f64[var_3bbd592cb0b58f64.size] = var_80847fa4c21ff44b;
-                }
-            }
-            foreach (var_80847fa4c21ff44b in var_3bbd592cb0b58f64) {
-                var_80847fa4c21ff44b.island_id = int(var_4b5523fa148a15c9);
-            }
-            var_c22f0f91887e7488.room_nodes[var_c22f0f91887e7488.room_nodes.size] = room_node;
-            if (!isdefined(var_4b5523fa148a15c9)) {
-                room_node.island_id = int(var_c52c258b548af58d);
-                var_c52c258b548af58d++;
-            } else {
-                room_node.island_id = int(var_4b5523fa148a15c9);
-            }
-            room_index++;
-            room_node = function_47ac2016d8dbf2c5(room_index);
-            if (isdefined(room_node)) {
-                room_node = {#origin:getclosestpointonnavmesh(room_node.origin)};
-            }
-            if (room_index % 150 == 0) {
-                waitframe();
-            }
-        }
-        foreach (room_node in var_c22f0f91887e7488.room_nodes) {
-            var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id] = isdefined(var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id]) ? var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id] : 0;
-            var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id] = var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id] + 1;
-        }
-        waitframe();
-        logstring("<dev string:xb82>");
-        foreach (room_node in var_c22f0f91887e7488.room_nodes) {
-            if (is_equal(var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id], 1)) {
-                logstring("<dev string:xbbe>" + room_node.origin);
-            }
-        }
-        iprintlnbold("<dev string:xbdf>");
-    }
-
-    // Namespace asm / scripts\asm\asm
-    // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x55cf
-    // Size: 0x43
-    function private function_b391661c3185e255(path, end_point) {
-        if (isdefined(path) && path.size > 0) {
-            dist = distance(path[path.size - 1], end_point);
-            return (dist < 10);
-        }
-        return 0;
-    }
-
-    // Namespace asm / scripts\asm\asm
-    // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x561a
-    // Size: 0x22e
-    function private function_25f6ff1e2f38d5a(var_c22f0f91887e7488) {
-        var_9a3849d89286b99c = [];
-        render_frames = int(ceil(1 / level.framedurationseconds));
-        while (true) {
-            if (getdvarint(@"hash_e42ac6b1ddb1188e", 0) <= 0) {
-                waitframe();
-                continue;
-            }
-            foreach (room_node in var_c22f0f91887e7488.room_nodes) {
-                if (!isdefined(var_9a3849d89286b99c[room_node.island_id])) {
-                    var_9a3849d89286b99c[room_node.island_id] = (randomfloat(1), randomfloat(1), randomfloat(1));
-                }
-                col = var_9a3849d89286b99c[room_node.island_id];
-                alpha = 1;
-                if (isdefined(var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id])) {
-                    if (var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id] == 1) {
-                        line(room_node.origin, room_node.origin + (0, 0, 4000), col, undefined, 0, render_frames);
-                        sphere(room_node.origin + (0, 0, 4000), 500, col, 1, render_frames);
-                    } else if (var_c22f0f91887e7488.var_d1debc37b000d65d[room_node.island_id] > 50) {
-                        alpha = 0.5;
-                        if (distance(room_node.origin, level.players[0].origin) > 2000) {
-                            continue;
-                        }
-                    }
-                }
-                sphere(room_node.origin, 20, col, 0, render_frames);
-                print3d(room_node.origin + (0, 0, 10), "<dev string:xc0e>" + room_node.island_id, col, alpha, undefined, render_frames);
-            }
-            wait 1;
         }
     }
 

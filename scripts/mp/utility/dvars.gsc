@@ -2,8 +2,8 @@
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2
-// Size: 0x90
+// Checksum 0x0, Offset: 0x92
+// Size: 0x8f
 function dvarintvalue(dvar, defval, minval, maxval) {
     dvar = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", dvar);
     if (getdvar(dvar) == "") {
@@ -24,8 +24,8 @@ function dvarintvalue(dvar, defval, minval, maxval) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b
-// Size: 0x90
+// Checksum 0x0, Offset: 0x12a
+// Size: 0x8f
 function dvarfloatvalue(dvar, defval, minval, maxval) {
     dvar = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", dvar);
     if (getdvar(dvar) == "") {
@@ -46,8 +46,8 @@ function dvarfloatvalue(dvar, defval, minval, maxval) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x204
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x1c2
+// Size: 0xb7
 function registerwatchdvarint(namestring, defaultvalue) {
     dvarstring = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", namestring);
     if (getdvarint(dvarstring, -1) == -1) {
@@ -61,8 +61,8 @@ function registerwatchdvarint(namestring, defaultvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c4
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x281
+// Size: 0xb7
 function registerwatchdvarfloat(namestring, defaultvalue) {
     dvarstring = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", namestring);
     if (getdvarfloat(dvarstring, -1) == -1) {
@@ -76,8 +76,8 @@ function registerwatchdvarfloat(namestring, defaultvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x384
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x340
+// Size: 0xbd
 function registerwatchdvar(namestring, defaultvalue) {
     dvarstring = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", namestring);
     if (getdvar(dvarstring, "") == "") {
@@ -91,8 +91,8 @@ function registerwatchdvar(namestring, defaultvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x44a
-// Size: 0x49
+// Checksum 0x0, Offset: 0x405
+// Size: 0x48
 function setoverridewatchdvar(dvarstring, value) {
     dvarhash = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", dvarstring);
     level.overridewatchdvars[dvarhash] = value;
@@ -100,8 +100,8 @@ function setoverridewatchdvar(dvarstring, value) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49b
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x455
+// Size: 0x9b
 function getwatcheddvar(dvarstring) {
     dvarhash = function_3514ae5d09f47ed2(dvarstring);
     if (isdefined(level.overridewatchdvars) && isdefined(level.overridewatchdvars[dvarhash])) {
@@ -115,7 +115,7 @@ function getwatcheddvar(dvarstring) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x53f
+// Checksum 0x0, Offset: 0x4f8
 // Size: 0x28
 function function_3514ae5d09f47ed2(dvarstring) {
     return hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", dvarstring);
@@ -123,8 +123,8 @@ function function_3514ae5d09f47ed2(dvarstring) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x570
-// Size: 0x14c
+// Checksum 0x0, Offset: 0x529
+// Size: 0x14b
 function updatewatcheddvarsexecute() {
     watchdvars = getarraykeys(level.watchdvars);
     foreach (dvarstring in watchdvars) {
@@ -144,7 +144,7 @@ function updatewatcheddvarsexecute() {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c4
+// Checksum 0x0, Offset: 0x67c
 // Size: 0x22
 function updatewatcheddvars() {
     while (game["state"] == "playing") {
@@ -155,8 +155,8 @@ function updatewatcheddvars() {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ee
-// Size: 0x35
+// Checksum 0x0, Offset: 0x6a6
+// Size: 0x34
 function getproperty(dvar, defvalue) {
     value = defvalue;
     /#
@@ -168,8 +168,8 @@ function getproperty(dvar, defvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x72c
-// Size: 0x35
+// Checksum 0x0, Offset: 0x6e3
+// Size: 0x34
 function getintproperty(dvar, defvalue) {
     value = defvalue;
     /#
@@ -181,8 +181,8 @@ function getintproperty(dvar, defvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x76a
-// Size: 0x35
+// Checksum 0x0, Offset: 0x720
+// Size: 0x34
 function getfloatproperty(dvar, defvalue) {
     value = defvalue;
     /#
@@ -194,7 +194,7 @@ function getfloatproperty(dvar, defvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a8
+// Checksum 0x0, Offset: 0x75d
 // Size: 0x1f
 function getoverridedvarintexceptmatchrulesvalues(override, fallback) {
     return getdvarint(override, getdvarint(fallback));
@@ -202,7 +202,7 @@ function getoverridedvarintexceptmatchrulesvalues(override, fallback) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d0
+// Checksum 0x0, Offset: 0x785
 // Size: 0x1f
 function getoverridedvarfloatexceptmatchrulesvalues(override, fallback) {
     return getdvarfloat(override, getdvarfloat(fallback));
@@ -210,7 +210,7 @@ function getoverridedvarfloatexceptmatchrulesvalues(override, fallback) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f8
+// Checksum 0x0, Offset: 0x7ad
 // Size: 0x1f
 function getoverridedvarexceptmatchrulesvalues(override, fallback) {
     return getdvar(override, getdvar(fallback));
@@ -218,21 +218,29 @@ function getoverridedvarexceptmatchrulesvalues(override, fallback) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x820
-// Size: 0x81
+// Checksum 0x0, Offset: 0x7d5
+// Size: 0x88
 function function_18581799c48cc262(class, member) {
     assert(isusingmatchrulesdata());
+    var_671cacea46ac6a97 = 0;
+    /#
+        var_671cacea46ac6a97 = 1;
+    #/
     dvar = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", member);
     data = getmatchrulesdata(class, member);
-    if (getbuildversion() == "SHIP" || getdvar(dvar) == "") {
+    if (!var_671cacea46ac6a97) {
         setdynamicdvar(dvar, data);
+        return;
     }
+    /#
+        setdevdvarifuninitialized(dvar, data);
+    #/
 }
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a9
-// Size: 0x43
+// Checksum 0x0, Offset: 0x865
+// Size: 0x42
 function function_29227adb79acc568(member, defvalue) {
     dvar = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", member);
     return getdvarint(dvar, defvalue);
@@ -240,8 +248,8 @@ function function_29227adb79acc568(member, defvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f5
-// Size: 0x43
+// Checksum 0x0, Offset: 0x8b0
+// Size: 0x42
 function function_ef4d323f56385843(member, defvalue) {
     dvar = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", member);
     return getdvarfloat(dvar, defvalue);
@@ -249,8 +257,8 @@ function function_ef4d323f56385843(member, defvalue) {
 
 // Namespace dvars / scripts\mp\utility\dvars
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x941
-// Size: 0x43
+// Checksum 0x0, Offset: 0x8fb
+// Size: 0x42
 function function_36fd7e50e2a25847(member, defvalue) {
     dvar = hashcat(@"hash_d98c82b5a26dc973", level.gametype, "_", member);
     return getdvar(dvar, defvalue);
@@ -260,16 +268,16 @@ function function_36fd7e50e2a25847(member, defvalue) {
 
     // Namespace dvars / scripts\mp\utility\dvars
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x98d
+    // Checksum 0x0, Offset: 0x946
     // Size: 0x9a
     function function_a972e013c8f2f2d4() {
         level notify("<dev string:x1c>");
         level endon("<dev string:x1c>");
         while (true) {
-            level waittill("<dev string:x3f>");
+            level waittill("<dev string:x3c>");
             setdevdvarifuninitialized(@"hash_7ae9abc841dc9c4b", 15);
             setdevdvarifuninitialized(@"hash_fe0a46289ab091e1", level.radarviewtime);
-            setdevdvarifuninitialized(@"hash_5bded6d7c75e5248", "<dev string:x57>");
+            setdevdvarifuninitialized(@"hash_5bded6d7c75e5248", "<dev string:x51>");
             setdevdvarifuninitialized(@"hash_b1f216df6049c46a", -1);
             setdevdvarifuninitialized(@"hash_681596f27a5e0f7a", 30);
             setdevdvarifuninitialized(@"hash_9d27a693c0c7d81b", 60);

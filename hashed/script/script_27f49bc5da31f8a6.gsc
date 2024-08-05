@@ -8,7 +8,7 @@
 
 // Namespace namespace_522dbf6c246fea47 / namespace_be4202a391caffc4
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x1d1
+// Checksum 0x0, Offset: 0x190
 // Size: 0x1e
 function autoexec main() {
     level.var_7bf42d565645a485 = 1;
@@ -17,8 +17,8 @@ function autoexec main() {
 
 // Namespace namespace_522dbf6c246fea47 / namespace_be4202a391caffc4
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1f7
-// Size: 0x3e
+// Checksum 0x0, Offset: 0x1b6
+// Size: 0x3d
 function private function_aece8e9cd30f3540() {
     callbacks = [];
     callbacks["spawn"] = &function_be7c293f00e99691;
@@ -30,8 +30,8 @@ function private function_aece8e9cd30f3540() {
 
 // Namespace namespace_522dbf6c246fea47 / namespace_be4202a391caffc4
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x23d
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x1fb
+// Size: 0xbc
 function private function_be7c293f00e99691(spawndata, faildata) {
     vehicle = function_bba34cf920370ff4("veh_jup_blima_anim_infil", spawndata, faildata);
     if (!isdefined(vehicle)) {
@@ -53,8 +53,8 @@ function private function_be7c293f00e99691(spawndata, faildata) {
 
 // Namespace namespace_522dbf6c246fea47 / namespace_be4202a391caffc4
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x303
-// Size: 0x12f
+// Checksum 0x0, Offset: 0x2c0
+// Size: 0x130
 function private set_attached_models() {
     array = [];
     array["TAG_FastRope_LE"] = spawnstruct();

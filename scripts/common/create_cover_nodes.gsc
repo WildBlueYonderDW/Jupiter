@@ -7,8 +7,8 @@
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x614
-// Size: 0x191
+// Checksum 0x0, Offset: 0x4e9
+// Size: 0x190
 function create_cover_node_init() {
     level endon("game_ended");
     initialize_path_node_placement();
@@ -17,35 +17,35 @@ function create_cover_node_init() {
         level thread function_699304dd575765c9(@"hash_6ffb4feaa0d03519", &function_b42e2fefe22d9e82);
         cmd = "<dev string:x1c>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x8d>";
+        cmd = "<dev string:x8a>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x100>";
+        cmd = "<dev string:xfa>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x179>";
+        cmd = "<dev string:x170>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x1f5>";
+        cmd = "<dev string:x1e9>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x273>";
+        cmd = "<dev string:x264>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x2e9>";
+        cmd = "<dev string:x2d7>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x361>";
+        cmd = "<dev string:x34c>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x3eb>";
+        cmd = "<dev string:x3d3>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x469>";
+        cmd = "<dev string:x44e>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x4d9>";
+        cmd = "<dev string:x4bb>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x545>";
+        cmd = "<dev string:x524>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x5b0>";
+        cmd = "<dev string:x58c>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x61f>";
+        cmd = "<dev string:x5f8>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x69f>";
+        cmd = "<dev string:x675>";
         addentrytodevgui(cmd);
-        cmd = "<dev string:x70f>";
+        cmd = "<dev string:x6e2>";
         addentrytodevgui(cmd);
         setdvarifuninitialized(@"hash_b2a482fbfca2360c", 1);
         setdvarifuninitialized(@"hash_d11a371f8f8dec6e", 0);
@@ -58,8 +58,8 @@ function create_cover_node_init() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ad
-// Size: 0x5c
+// Checksum 0x0, Offset: 0x681
+// Size: 0x5b
 function initialize_path_node_placement() {
     struct = spawnstruct();
     struct.trace_contents = create_solid_ai_contents(1);
@@ -72,8 +72,8 @@ function initialize_path_node_placement() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x812
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x6e5
+// Size: 0x5e
 function reset_path_node_placement_for_radius() {
     struct = reset_path_node_placement();
     struct.x_magnitude = 32;
@@ -86,8 +86,8 @@ function reset_path_node_placement_for_radius() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x87a
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x74c
+// Size: 0x5e
 function reset_path_node_placement_for_lookat() {
     struct = reset_path_node_placement();
     struct.debug_boxes = 1;
@@ -100,8 +100,8 @@ function reset_path_node_placement_for_lookat() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e2
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x7b3
+// Size: 0xc8
 function reset_path_node_placement_for_box_creation() {
     struct = reset_path_node_placement();
     struct.debug_boxes = 1;
@@ -122,8 +122,8 @@ function reset_path_node_placement_for_box_creation() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b4
-// Size: 0x528
+// Checksum 0x0, Offset: 0x884
+// Size: 0x527
 function reset_path_node_placement() {
     struct = level.path_node_debug_info;
     struct.total_grid_points = 0;
@@ -215,7 +215,7 @@ function reset_path_node_placement() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee5
+// Checksum 0x0, Offset: 0xdb4
 // Size: 0xb
 function debugdata() {
     return level.path_node_debug_info;
@@ -223,8 +223,8 @@ function debugdata() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xef9
-// Size: 0x97
+// Checksum 0x0, Offset: 0xdc8
+// Size: 0x96
 function run_single_grid_point_test(player) {
     level notify("place_path_nodes");
     level endon("place_path_nodes");
@@ -245,8 +245,8 @@ function run_single_grid_point_test(player) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf98
-// Size: 0xa6
+// Checksum 0x0, Offset: 0xe66
+// Size: 0xa5
 function place_path_node_from_lookat(player) {
     level notify("place_path_nodes");
     level endon("place_path_nodes");
@@ -269,8 +269,8 @@ function place_path_node_from_lookat(player) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1046
-// Size: 0x190
+// Checksum 0x0, Offset: 0xf13
+// Size: 0x193
 function delay_node_creation_from_single_point() {
     data = debugdata();
     player = data.player;
@@ -298,8 +298,8 @@ function delay_node_creation_from_single_point() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11de
-// Size: 0x16c
+// Checksum 0x0, Offset: 0x10ae
+// Size: 0x16f
 function delay_node_creation_from_look_at() {
     data = debugdata();
     player = data.player;
@@ -324,8 +324,8 @@ function delay_node_creation_from_look_at() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1352
-// Size: 0x22c
+// Checksum 0x0, Offset: 0x1225
+// Size: 0x22b
 function place_path_nodes_within_box(player) {
     level notify("place_path_nodes");
     level endon("place_path_nodes");
@@ -367,7 +367,7 @@ function place_path_nodes_within_box(player) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1586
+// Checksum 0x0, Offset: 0x1458
 // Size: 0x41a
 function create_and_update_box() {
     data = debugdata();
@@ -439,8 +439,8 @@ function create_and_update_box() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a8
-// Size: 0x63
+// Checksum 0x0, Offset: 0x187a
+// Size: 0x64
 function show_running_tool_message() {
     self endon("stop_showing_message");
     for (timer = 0; true; timer += 0.05) {
@@ -455,8 +455,8 @@ function show_running_tool_message() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a13
-// Size: 0x2f9
+// Checksum 0x0, Offset: 0x18e6
+// Size: 0x2ff
 function create_box() {
     data = debugdata();
     player = data.player;
@@ -525,8 +525,8 @@ function create_box() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d14
-// Size: 0xac
+// Checksum 0x0, Offset: 0x1bed
+// Size: 0xab
 function place_path_nodes_within_radius(player) {
     level notify("place_path_nodes");
     level endon("place_path_nodes");
@@ -548,8 +548,8 @@ function place_path_nodes_within_radius(player) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc8
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x1ca0
+// Size: 0x9b
 function place_path_nodes(player) {
     level notify("place_path_nodes");
     level endon("place_path_nodes");
@@ -569,8 +569,8 @@ function place_path_nodes(player) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e6c
-// Size: 0x4c3
+// Checksum 0x0, Offset: 0x1d43
+// Size: 0x4d5
 function clean_up_nodes() {
     level endon("game_ended");
     level endon("stop_creating_nodes");
@@ -674,8 +674,8 @@ function clean_up_nodes() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2337
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x2220
+// Size: 0xc2
 function translate_position_with_offset_data(var_a1306ee53c20150f, var_e3c2f7a7f3d4cce6) {
     if (isdefined(var_e3c2f7a7f3d4cce6)) {
         var_82b752b102f67a72 = var_e3c2f7a7f3d4cce6;
@@ -696,7 +696,7 @@ function translate_position_with_offset_data(var_a1306ee53c20150f, var_e3c2f7a7f
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23fe
+// Checksum 0x0, Offset: 0x22ea
 // Size: 0x9c
 function node_passes_nav_and_geo_validation(var_1325c007eaac8163) {
     data = debugdata();
@@ -720,8 +720,8 @@ function node_passes_nav_and_geo_validation(var_1325c007eaac8163) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x24a2
-// Size: 0x225
+// Checksum 0x0, Offset: 0x238e
+// Size: 0x22f
 function remove_similar_nodes(player) {
     level notify("place_path_nodes");
     level endon("place_path_nodes");
@@ -782,8 +782,8 @@ function remove_similar_nodes(player) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26cf
-// Size: 0x163
+// Checksum 0x0, Offset: 0x25c5
+// Size: 0x168
 function similar_nodes_nearby() {
     data = debugdata();
     dist = 100;
@@ -825,7 +825,7 @@ function similar_nodes_nearby() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x283b
+// Checksum 0x0, Offset: 0x2736
 // Size: 0x79
 function get_node_type_from_type(node) {
     switch (node.type) {
@@ -845,7 +845,7 @@ function get_node_type_from_type(node) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28bd
+// Checksum 0x0, Offset: 0x27b8
 // Size: 0x7
 function get_raw_or_devraw_subdir() {
     return "raw";
@@ -853,7 +853,7 @@ function get_raw_or_devraw_subdir() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28cd
+// Checksum 0x0, Offset: 0x27c8
 // Size: 0x7
 function get_gamemode_subdir() {
     return "cp";
@@ -861,8 +861,8 @@ function get_gamemode_subdir() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28dd
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x27d8
+// Size: 0xbb
 function close_map_write() {
     data = debugdata();
     if (flag("file_opened")) {
@@ -882,7 +882,7 @@ function close_map_write() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x299c
+// Checksum 0x0, Offset: 0x289b
 // Size: 0x122
 function create_cover_nodes_within_volume() {
     level endon("game_ended");
@@ -910,8 +910,8 @@ function create_cover_nodes_within_volume() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ac6
-// Size: 0x100
+// Checksum 0x0, Offset: 0x29c5
+// Size: 0x101
 function vol_create_cover_nodes_from_grid_point() {
     data = debugdata();
     data.should_create_exposed_node = 1;
@@ -935,8 +935,8 @@ function vol_create_cover_nodes_from_grid_point() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bce
-// Size: 0x12f
+// Checksum 0x0, Offset: 0x2ace
+// Size: 0x130
 function create_cover_nodes_from_grid_points() {
     level endon("game_ended");
     level endon("end_grid_creation");
@@ -965,8 +965,8 @@ function create_cover_nodes_from_grid_points() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d05
-// Size: 0xdd
+// Checksum 0x0, Offset: 0x2c06
+// Size: 0xdc
 function create_grid_point_in_volume() {
     data = debugdata();
     if (data.increase_x) {
@@ -990,7 +990,7 @@ function create_grid_point_in_volume() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dea
+// Checksum 0x0, Offset: 0x2cea
 // Size: 0x64
 function create_grid_point() {
     data = debugdata();
@@ -1011,7 +1011,7 @@ function create_grid_point() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e56
+// Checksum 0x0, Offset: 0x2d56
 // Size: 0xfe
 function create_grid_point_new() {
     data = debugdata();
@@ -1047,8 +1047,8 @@ function create_grid_point_new() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f5c
-// Size: 0x63
+// Checksum 0x0, Offset: 0x2e5c
+// Size: 0x62
 function increase_y_coordinate_new() {
     data = debugdata();
     if (isdefined(data.max_y)) {
@@ -1066,8 +1066,8 @@ function increase_y_coordinate_new() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc7
-// Size: 0x63
+// Checksum 0x0, Offset: 0x2ec6
+// Size: 0x62
 function increase_x_coordinate_new() {
     data = debugdata();
     if (isdefined(data.max_x)) {
@@ -1085,8 +1085,8 @@ function increase_x_coordinate_new() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3032
-// Size: 0x82
+// Checksum 0x0, Offset: 0x2f30
+// Size: 0x81
 function increase_x_coordinate() {
     data = debugdata();
     if (data.x_dir_fails <= data.max_dir_fails) {
@@ -1108,8 +1108,8 @@ function increase_x_coordinate() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30bc
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x2fb9
+// Size: 0x7d
 function vol_increase_x_coordinate() {
     data = debugdata();
     if (isdefined(data.max_x)) {
@@ -1129,8 +1129,8 @@ function vol_increase_x_coordinate() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3142
-// Size: 0x82
+// Checksum 0x0, Offset: 0x303e
+// Size: 0x81
 function increase_y_coordinate() {
     data = debugdata();
     if (data.y_dir_fails <= data.max_dir_fails) {
@@ -1152,8 +1152,8 @@ function increase_y_coordinate() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31cc
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x30c7
+// Size: 0x7d
 function vol_increase_y_coordinate() {
     data = debugdata();
     if (isdefined(data.max_y)) {
@@ -1173,8 +1173,8 @@ function vol_increase_y_coordinate() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3252
-// Size: 0x71
+// Checksum 0x0, Offset: 0x314c
+// Size: 0x70
 function vol_increase_z_coordinate() {
     data = debugdata();
     if (isdefined(data.max_z)) {
@@ -1193,8 +1193,8 @@ function vol_increase_z_coordinate() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32cb
-// Size: 0x2e1
+// Checksum 0x0, Offset: 0x31c4
+// Size: 0x2e4
 function get_next_origin() {
     data = debugdata();
     starting_pos = data.starting_pos;
@@ -1233,8 +1233,8 @@ function get_next_origin() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35b4
-// Size: 0x24d
+// Checksum 0x0, Offset: 0x34b0
+// Size: 0x257
 function get_next_volume_origin() {
     data = debugdata();
     starting_pos = data.starting_pos;
@@ -1278,7 +1278,7 @@ function get_next_volume_origin() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3809
+// Checksum 0x0, Offset: 0x370f
 // Size: 0xc1
 function vol_validate_grid_pos() {
     data = debugdata();
@@ -1295,7 +1295,7 @@ function vol_validate_grid_pos() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38d2
+// Checksum 0x0, Offset: 0x37d8
 // Size: 0x133
 function validate_grid_pos() {
     data = debugdata();
@@ -1321,7 +1321,7 @@ function validate_grid_pos() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a0d
+// Checksum 0x0, Offset: 0x3913
 // Size: 0x57
 function create_cover_nodes_from_single_grid_point() {
     data = debugdata();
@@ -1334,8 +1334,8 @@ function create_cover_nodes_from_single_grid_point() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a6c
-// Size: 0x100
+// Checksum 0x0, Offset: 0x3972
+// Size: 0x101
 function create_cover_nodes_from_grid_point() {
     data = debugdata();
     data.should_create_exposed_node = 1;
@@ -1359,8 +1359,8 @@ function create_cover_nodes_from_grid_point() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b74
-// Size: 0x220
+// Checksum 0x0, Offset: 0x3a7b
+// Size: 0x22a
 function vol_create_and_validate_node() {
     data = debugdata();
     pos = data.grid_origin;
@@ -1394,8 +1394,8 @@ function vol_create_and_validate_node() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d9c
-// Size: 0x21b
+// Checksum 0x0, Offset: 0x3cad
+// Size: 0x225
 function create_and_validate_node_from_single_grid_point() {
     data = debugdata();
     pos = data.grid_origin;
@@ -1432,8 +1432,8 @@ function create_and_validate_node_from_single_grid_point() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fbf
-// Size: 0x1d5
+// Checksum 0x0, Offset: 0x3eda
+// Size: 0x1df
 function create_and_validate_node() {
     data = debugdata();
     pos = data.grid_origin;
@@ -1464,7 +1464,7 @@ function create_and_validate_node() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x419c
+// Checksum 0x0, Offset: 0x40c1
 // Size: 0x129
 function create_node_trace(start_pos, end_pos, debug_color) {
     data = debugdata();
@@ -1487,7 +1487,7 @@ function create_node_trace(start_pos, end_pos, debug_color) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42ce
+// Checksum 0x0, Offset: 0x41f3
 // Size: 0x111
 function debug_node_array(node_array) {
     level notify("debug_node_array");
@@ -1511,8 +1511,8 @@ function debug_node_array(node_array) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43e7
-// Size: 0x70d
+// Checksum 0x0, Offset: 0x430c
+// Size: 0x722
 function reposition_cover_node() {
     if (!similar_nodes_nearby()) {
         return;
@@ -1650,8 +1650,8 @@ function reposition_cover_node() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4afc
-// Size: 0x69b
+// Checksum 0x0, Offset: 0x4a36
+// Size: 0x6b0
 function simple_reposition_node() {
     if (!similar_nodes_nearby()) {
         return;
@@ -1784,7 +1784,7 @@ function simple_reposition_node() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x519f
+// Checksum 0x0, Offset: 0x50ee
 // Size: 0xb
 function find_final_position(pos) {
     
@@ -1792,7 +1792,7 @@ function find_final_position(pos) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x51b2
+// Checksum 0x0, Offset: 0x5101
 // Size: 0x3
 function trace_for_stairs() {
     return false;
@@ -1800,8 +1800,8 @@ function trace_for_stairs() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x51be
-// Size: 0x120
+// Checksum 0x0, Offset: 0x510d
+// Size: 0x123
 function edge_point_valid(starting_pos, dir, forward) {
     data = debugdata();
     for (i = 32; i > 0; i--) {
@@ -1832,8 +1832,8 @@ function edge_point_valid(starting_pos, dir, forward) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x52e6
-// Size: 0x197
+// Checksum 0x0, Offset: 0x5238
+// Size: 0x19c
 function up_point_valid(starting_pos, dirs, forward, up) {
     data = debugdata();
     directions = dirs;
@@ -1872,8 +1872,8 @@ function up_point_valid(starting_pos, dirs, forward, up) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5485
-// Size: 0x48
+// Checksum 0x0, Offset: 0x53dc
+// Size: 0x47
 function attempt_throttle() {
     data = debugdata();
     data.throttle_counter++;
@@ -1885,8 +1885,8 @@ function attempt_throttle() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54d5
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x542b
+// Size: 0x8b
 function trace_result_hits_surface(result, normal) {
     data = debugdata();
     if (isdefined(result["position"]) && isdefined(result["fraction"]) && result["fraction"] < 1 && result["fraction"] > 0) {
@@ -1910,8 +1910,8 @@ function trace_result_hits_surface(result, normal) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5569
-// Size: 0xa2
+// Checksum 0x0, Offset: 0x54be
+// Size: 0xa3
 function open_and_write_to_paths_map() {
     data = debugdata();
     if (!flag("file_opened")) {
@@ -1930,8 +1930,8 @@ function open_and_write_to_paths_map() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5613
-// Size: 0xc0
+// Checksum 0x0, Offset: 0x5569
+// Size: 0xbf
 function draw_closest_wall_points(player, new_array) {
     level endon("game_ended");
     level notify("draw_closest_wall_points");
@@ -1950,8 +1950,8 @@ function draw_closest_wall_points(player, new_array) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x56db
-// Size: 0x24f
+// Checksum 0x0, Offset: 0x5630
+// Size: 0x250
 function run_path_node_removal() {
     level endon("game_ended");
     level endon("get_nav_start_points");
@@ -1989,7 +1989,7 @@ function run_path_node_removal() {
                     if (data.debug_boxes_count >= data.debug_boxes_max_count) {
                         data.debug_boxes_count = 0;
                     }
-                    level thread draw_box(data.origin, color, data.angles, 32, 1, 1, "<dev string:x7c7>" + data.debug_boxes_count);
+                    level thread draw_box(data.origin, color, data.angles, 32, 1, 1, "<dev string:x78e>" + data.debug_boxes_count);
                     return;
                 }
                 level thread draw_box(data.origin, color, data.angles, 32, 1, 1);
@@ -2000,8 +2000,8 @@ function run_path_node_removal() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5932
-// Size: 0x146
+// Checksum 0x0, Offset: 0x5888
+// Size: 0x14b
 function position_near_other_nodes(position) {
     data = debugdata();
     data.density_cap_count = 0;
@@ -2040,7 +2040,7 @@ function position_near_other_nodes(position) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a81
+// Checksum 0x0, Offset: 0x59dc
 // Size: 0x157
 function write_struct_to_map() {
     data = debugdata();
@@ -2064,8 +2064,8 @@ function write_struct_to_map() {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5be0
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x5b3b
+// Size: 0xc7
 function draw_line_until_endons(org1, r, g, b, var_618807e8cd83ef8) {
     self endon("death");
     data = debugdata();
@@ -2088,7 +2088,7 @@ function draw_line_until_endons(org1, r, g, b, var_618807e8cd83ef8) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cb1
+// Checksum 0x0, Offset: 0x5c0a
 // Size: 0x15
 function addentrytodevgui(command) {
     level thread addentrytodevgui_internal(command);
@@ -2096,18 +2096,18 @@ function addentrytodevgui(command) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cce
-// Size: 0x145
+// Checksum 0x0, Offset: 0x5c27
+// Size: 0x148
 function addentrytodevgui_internal(command) {
     /#
-        level endon("<dev string:x7da>");
+        level endon("<dev string:x79e>");
         wait 5;
-        final_command = "<dev string:x7e8>";
-        toks = strtok(command, "<dev string:x7ec>");
-        space = "<dev string:x7f1>";
+        final_command = "<dev string:x7a9>";
+        toks = strtok(command, "<dev string:x7aa>");
+        space = "<dev string:x7ac>";
         num_toks = 0;
         foreach (tok in toks) {
-            new_toks = strtok(tok, "<dev string:x7f1>");
+            new_toks = strtok(tok, "<dev string:x7ac>");
             count = 1;
             size = new_toks.size;
             foreach (new_tok in new_toks) {
@@ -2120,7 +2120,7 @@ function addentrytodevgui_internal(command) {
             }
             num_toks++;
             if (num_toks < toks.size) {
-                final_command += "<dev string:x7ec>";
+                final_command += "<dev string:x7aa>";
             }
         }
         adddebugcommand(final_command);
@@ -2129,7 +2129,7 @@ function addentrytodevgui_internal(command) {
 
 // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e1b
+// Checksum 0x0, Offset: 0x5d77
 // Size: 0x25
 function can_spawn_capsule_trace(pos) {
     return capsule_trace_passed(pos + (0, 0, 32), pos, 16, 32);
@@ -2139,17 +2139,17 @@ function can_spawn_capsule_trace(pos) {
 
     // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5e49
-    // Size: 0x6d
+    // Checksum 0x0, Offset: 0x5da5
+    // Size: 0x6c
     function function_699304dd575765c9(dvar, action_func) {
-        level endon("<dev string:x7f6>");
-        setdevdvarifuninitialized(dvar, "<dev string:x7e8>");
+        level endon("<dev string:x7ae>");
+        setdevdvarifuninitialized(dvar, "<dev string:x7a9>");
         while (true) {
             result = getdvar(dvar);
-            if (result != "<dev string:x7e8>") {
+            if (result != "<dev string:x7a9>") {
                 [[ action_func ]](result);
                 wait 0.05;
-                setdvar(dvar, "<dev string:x7e8>");
+                setdvar(dvar, "<dev string:x7a9>");
                 continue;
             }
             wait 0.25;
@@ -2158,11 +2158,11 @@ function can_spawn_capsule_trace(pos) {
 
     // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5ebe
-    // Size: 0x233
+    // Checksum 0x0, Offset: 0x5e19
+    // Size: 0x236
     function function_b42e2fefe22d9e82(itemref) {
-        items = strtok(itemref, "<dev string:x80e>");
-        playertoks = strtok(itemref, "<dev string:x813>");
+        items = strtok(itemref, "<dev string:x7c3>");
+        playertoks = strtok(itemref, "<dev string:x7c5>");
         player = undefined;
         if (playertoks.size > 1) {
             playerint = int(playertoks[0]);
@@ -2183,9 +2183,9 @@ function can_spawn_capsule_trace(pos) {
             data.origin = player.origin;
             data.angles = player.angles;
             if (trace_for_stairs()) {
-                iprintlnbold("<dev string:x830>");
+                iprintlnbold("<dev string:x7d6>");
             } else {
-                iprintlnbold("<dev string:x841>");
+                iprintlnbold("<dev string:x7e4>");
             }
             break;
         case #"hash_7e6fe08ccd73133c": 
@@ -2201,10 +2201,10 @@ function can_spawn_capsule_trace(pos) {
             level thread place_path_nodes(level.players[0]);
             break;
         case #"hash_c6514c88e37149bf": 
-            level notify("<dev string:x885>");
+            level notify("<dev string:x816>");
             break;
         case #"hash_23d3b48a2fabf145": 
-            level notify("<dev string:x8a2>");
+            level notify("<dev string:x82d>");
             break;
         case #"hash_a6f2bc30ca30e75d": 
             level thread remove_similar_nodes(level.players[0]);
@@ -2219,12 +2219,12 @@ function can_spawn_capsule_trace(pos) {
 
     // Namespace namespace_afecda1d484428f7 / scripts\common\create_cover_nodes
     // Params 7, eflags: 0x0
-    // Checksum 0x0, Offset: 0x60f9
-    // Size: 0x19d
+    // Checksum 0x0, Offset: 0x6057
+    // Size: 0x1a2
     function draw_box(pos, color, angles, size, alpha, depthtest, endon_string) {
         data = debugdata();
-        data.player endon("<dev string:x8cc>");
-        data.player endon("<dev string:x8da>");
+        data.player endon("<dev string:x84e>");
+        data.player endon("<dev string:x859>");
         if (isdefined(endon_string)) {
             data.player notify(endon_string);
             data.player endon(endon_string);

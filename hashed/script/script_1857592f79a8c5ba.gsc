@@ -6,8 +6,8 @@
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b5
-// Size: 0x105
+// Checksum 0x0, Offset: 0x157
+// Size: 0x109
 function function_6c3d4156dec73e1d(asmname, statename, params) {
     stance = scripts\asm\asm_bb::bb_getrequestedstance();
     coverstate = scripts\asm\asm_bb::bb_getrequestedcoverstate();
@@ -40,18 +40,18 @@ function function_6c3d4156dec73e1d(asmname, statename, params) {
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3
+// Checksum 0x0, Offset: 0x269
 // Size: 0x42
 function function_45dc5e082d9a020f(asmname, statename, params) {
     /#
-        utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x22>", 1);
+        utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x1f>", 1);
     #/
     utility::function_f3bb4f4911a1beb2("ai", "onUsedArmorPlate");
 }
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x30d
+// Checksum 0x0, Offset: 0x2b3
 // Size: 0x3f
 function private isrighthand(note) {
     res = 1;
@@ -64,8 +64,8 @@ function private isrighthand(note) {
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x355
-// Size: 0x87
+// Checksum 0x0, Offset: 0x2fb
+// Size: 0x86
 function private function_45dc0311bb854741(note, statename) {
     self endon("death");
     self endon(statename + "_finished");
@@ -85,7 +85,7 @@ function private function_45dc0311bb854741(note, statename) {
 
 // Namespace cap_use_armor_plate_solo / namespace_f8aba4f0ef4843d6
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e4
+// Checksum 0x0, Offset: 0x389
 // Size: 0x5a
 function function_e05a85a79478670c(note, params) {
     var_8a46c62f0a756dd3 = "armor_plate";

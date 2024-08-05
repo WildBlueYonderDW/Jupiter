@@ -6,7 +6,7 @@
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x1e0
+// Checksum 0x0, Offset: 0x18d
 // Size: 0x18
 function autoexec main() {
     registersharedfunc("super_launcher", "init", &function_ac4e5642f4a76765);
@@ -14,7 +14,7 @@ function autoexec main() {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x200
+// Checksum 0x0, Offset: 0x1ad
 // Size: 0x70
 function function_ac4e5642f4a76765() {
     scripts\engine\utility::registersharedfunc("super_launcher", "launcher_set", &function_cd7adfeda90090ea);
@@ -26,8 +26,8 @@ function function_ac4e5642f4a76765() {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x278
-// Size: 0x151
+// Checksum 0x0, Offset: 0x225
+// Size: 0x153
 function function_c31358a51d2e2031() {
     if (!issharedfuncdefined("supers", "setSuperIsActive") || !issharedfuncdefined("supers", "getCurrentSuper") || !issharedfuncdefined("supers", "tryGiveUseWeapon")) {
         return;
@@ -53,7 +53,7 @@ function function_c31358a51d2e2031() {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d2
+// Checksum 0x0, Offset: 0x381
 // Size: 0x14
 function function_b175b0e761ee083d() {
     function_7b092f96be9a26d9(0);
@@ -63,7 +63,7 @@ function function_b175b0e761ee083d() {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ef
+// Checksum 0x0, Offset: 0x39e
 // Size: 0x14
 function function_9152d073564d3361(fromdeath) {
     function_7b092f96be9a26d9(1);
@@ -71,7 +71,7 @@ function function_9152d073564d3361(fromdeath) {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x40b
+// Checksum 0x0, Offset: 0x3ba
 // Size: 0x10
 function function_cd7adfeda90090ea() {
     self setclientomnvar("ui_block_fu_not_ready_error", 1);
@@ -79,7 +79,7 @@ function function_cd7adfeda90090ea() {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x423
+// Checksum 0x0, Offset: 0x3d2
 // Size: 0x23
 function function_ab826319b54a872f() {
     self setclientomnvar("ui_block_fu_not_ready_error", 0);
@@ -89,7 +89,7 @@ function function_ab826319b54a872f() {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44e
+// Checksum 0x0, Offset: 0x3fd
 // Size: 0x28
 function function_7b092f96be9a26d9(b_value) {
     if (!isdefined(b_value)) {
@@ -104,7 +104,7 @@ function function_7b092f96be9a26d9(b_value) {
 
 // Namespace super_launchers / namespace_3bde511432bd1898
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47e
+// Checksum 0x0, Offset: 0x42d
 // Size: 0x61
 function function_51cf80cea7c30793() {
     self endon("death_or_disconnect");

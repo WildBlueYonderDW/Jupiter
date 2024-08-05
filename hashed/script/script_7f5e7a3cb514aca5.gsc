@@ -15,7 +15,7 @@
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x5
-// Checksum 0x0, Offset: 0x2dd
+// Checksum 0x0, Offset: 0x339
 // Size: 0x1d
 function private autoexec __init__system__() {
     system::register(#"radiation", undefined, &function_af7dbb927513bb60, &function_13dad5c9339829d7);
@@ -23,7 +23,7 @@ function private autoexec __init__system__() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x302
+// Checksum 0x0, Offset: 0x35e
 // Size: 0xf2
 function private function_af7dbb927513bb60() {
     level.radiation = spawnstruct();
@@ -39,7 +39,7 @@ function private function_af7dbb927513bb60() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3fc
+// Checksum 0x0, Offset: 0x458
 // Size: 0x20
 function private function_13dad5c9339829d7() {
     /#
@@ -49,10 +49,10 @@ function private function_13dad5c9339829d7() {
 }
 
 // Namespace radiation / namespace_6d781a0248843409
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x424
-// Size: 0x15f
-function create(origin, radius, var_29e95cf0babf9c87, var_9ebad3637bcb64d, var_29de4b245273b366, inverted) {
+// Params 5, eflags: 0x0
+// Checksum 0x0, Offset: 0x480
+// Size: 0x147
+function create(origin, radius, var_29e95cf0babf9c87, var_9ebad3637bcb64d, var_29de4b245273b366) {
     radius = float(radius);
     instance = spawnstruct();
     instance.origin = origin;
@@ -61,7 +61,6 @@ function create(origin, radius, var_29e95cf0babf9c87, var_9ebad3637bcb64d, var_2
     instance.radius = radius;
     instance.radiussq = squared(radius);
     instance.tickRate = var_29e95cf0babf9c87;
-    instance.inverted = inverted;
     instance.damagebase = 0;
     if (istrue(var_29de4b245273b366)) {
         instance.brcircle = spawnbrcircle(origin[0], origin[1], radius);
@@ -80,7 +79,7 @@ function create(origin, radius, var_29e95cf0babf9c87, var_9ebad3637bcb64d, var_2
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x58c
+// Checksum 0x0, Offset: 0x5d0
 // Size: 0xd1
 function transform(new_origin, new_radius, duration) {
     if (new_origin == self.origin && new_radius == self.radius) {
@@ -103,10 +102,10 @@ function transform(new_origin, new_radius, duration) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x665
+// Checksum 0x0, Offset: 0x6a9
 // Size: 0xd7
 function destroy() {
-    assertex(self.active, "<dev string:x1c>");
+    assertex(self.active, "radiation::destroy() called on a radiation that has already been destroyed.");
     self.active = 0;
     callback::callback("radiation_destroyed");
     self notify("radiation_destroyed");
@@ -126,7 +125,7 @@ function destroy() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x744
+// Checksum 0x0, Offset: 0x788
 // Size: 0x43
 function set_vision_set(vision_set, transition_time, inside) {
     self.visionset = vision_set;
@@ -136,7 +135,7 @@ function set_vision_set(vision_set, transition_time, inside) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x78f
+// Checksum 0x0, Offset: 0x7d3
 // Size: 0x5e
 function function_58016c61f549ad52(var_4341066c8e46637c, var_5e09e1c88a4d2697, is_jammer, inside) {
     self.var_75186cfe05cecd50 = var_4341066c8e46637c;
@@ -147,7 +146,7 @@ function function_58016c61f549ad52(var_4341066c8e46637c, var_5e09e1c88a4d2697, i
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f5
+// Checksum 0x0, Offset: 0x839
 // Size: 0x21
 function function_c7d1bf4975ea9e7c(tick_rate) {
     assert(tick_rate > 0);
@@ -156,13 +155,13 @@ function function_c7d1bf4975ea9e7c(tick_rate) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x81e
+// Checksum 0x0, Offset: 0x862
 // Size: 0xb1
 function set_damage(base_damage, damage_increase, var_e97e39807ca43a40, var_60fa6d142c5b7434, var_b72b14124763db6c) {
     assert(base_damage > 0);
     self.damagebase = float(base_damage);
     if (isdefined(self.damageincrease)) {
-        assertex(damage_increase != 0 && isdefined(var_e97e39807ca43a40) && var_e97e39807ca43a40 > 0, "<dev string:x6b>");
+        assertex(damage_increase != 0 && isdefined(var_e97e39807ca43a40) && var_e97e39807ca43a40 > 0, "RadiationERROR: damage_increase and damage_increase_rate must both be defined and nonzero or must both be undefined.");
         self.damageincrease = float(damage_increase);
         self.var_725a385a83f94afe = float(var_e97e39807ca43a40);
         self.var_39ee092269d3f4ea = isdefined(var_60fa6d142c5b7434) ? float(var_60fa6d142c5b7434) : undefined;
@@ -172,7 +171,7 @@ function set_damage(base_damage, damage_increase, var_e97e39807ca43a40, var_60fa
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d7
+// Checksum 0x0, Offset: 0x91b
 // Size: 0x32
 function function_8d2c769c2869e6b1() {
     if (!istrue(self.transforming)) {
@@ -183,7 +182,7 @@ function function_8d2c769c2869e6b1() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x912
+// Checksum 0x0, Offset: 0x956
 // Size: 0x2e
 function function_843f66591b4abb4d() {
     if (!istrue(self.transforming)) {
@@ -194,18 +193,15 @@ function function_843f66591b4abb4d() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x949
-// Size: 0x4f
+// Checksum 0x0, Offset: 0x98d
+// Size: 0x24
 function function_1b4f63fa623de69a(pos) {
-    if (istrue(self.inverted)) {
-        return (distance2dsquared(pos, self.origin) > self.radiussq);
-    }
     return distance2dsquared(pos, self.origin) < self.radiussq;
 }
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a0
+// Checksum 0x0, Offset: 0x9ba
 // Size: 0x24
 function function_b9aa944decd263a3(pos) {
     return distance2d(pos, self.origin) - self.radius;
@@ -213,7 +209,7 @@ function function_b9aa944decd263a3(pos) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9cd
+// Checksum 0x0, Offset: 0x9e7
 // Size: 0x52
 function function_fde05749af14d99c(pos) {
     if (!istrue(self.transforming)) {
@@ -226,8 +222,8 @@ function function_fde05749af14d99c(pos) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa28
-// Size: 0x178
+// Checksum 0x0, Offset: 0xa42
+// Size: 0x179
 function function_f66420bd66f3075f() {
     level endon("game_ended");
     self endon("death");
@@ -263,7 +259,7 @@ function function_f66420bd66f3075f() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xba8
+// Checksum 0x0, Offset: 0xbc3
 // Size: 0xc
 function function_1b42b4ffc7748d8d() {
     return isdefined(level.radiation);
@@ -271,7 +267,7 @@ function function_1b42b4ffc7748d8d() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbd
+// Checksum 0x0, Offset: 0xbd8
 // Size: 0x69
 function function_a611746a5dbb32ac(pos) {
     closest_distance = 999999;
@@ -284,8 +280,8 @@ function function_a611746a5dbb32ac(pos) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc2f
-// Size: 0x12d
+// Checksum 0x0, Offset: 0xc4a
+// Size: 0x12c
 function private function_3b5ce53109b60075() {
     level endon("game_ended");
     self endon("radiation_destroyed");
@@ -315,8 +311,8 @@ function private function_3b5ce53109b60075() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xd64
-// Size: 0x3c3
+// Checksum 0x0, Offset: 0xd7e
+// Size: 0x38e
 function private function_242555e5ab28a44c() {
     level endon("game_ended");
     self endon("radiation_destroyed");
@@ -375,10 +371,6 @@ function private function_242555e5ab28a44c() {
                 if (damage_diff > 0.01) {
                     self.var_8b468934c883d916[var_223ed137a7efba62] = damage_diff;
                 }
-                if (damage_int <= 0) {
-                    assertmsg("<dev string:xe3>" + damage + "<dev string:xff>" + self.damagebase + "<dev string:x15b>");
-                    damage_int = self.damagebase;
-                }
                 player dodamage(damage_int, player.origin, player, undefined, "MOD_TRIGGER_HURT", level.radiation.damageweapon);
                 player armor::damagearmor(damage_int, undefined, player, "MOD_TRIGGER_HURT");
                 if (randomint(100) < level.radiation.coughchance) {
@@ -392,7 +384,7 @@ function private function_242555e5ab28a44c() {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x112f
+// Checksum 0x0, Offset: 0x1114
 // Size: 0xb0
 function private function_52336389b0bbc8(var_223ed137a7efba62) {
     assert(isdefined(self.var_16b2e5a6752ec4e0[var_223ed137a7efba62]));
@@ -407,8 +399,8 @@ function private function_52336389b0bbc8(var_223ed137a7efba62) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e8
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x11cd
+// Size: 0xc3
 function function_dfd00c666da7f557(params) {
     player = params.player;
     if (isdefined(self.visionset)) {
@@ -429,8 +421,8 @@ function function_dfd00c666da7f557(params) {
 
 // Namespace radiation / namespace_6d781a0248843409
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b4
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x1298
+// Size: 0xc3
 function function_e6d761d1927e2ed1(params) {
     player = params.player;
     if (isdefined(self.visionset)) {
@@ -453,41 +445,41 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1380
+    // Checksum 0x0, Offset: 0x1363
     // Size: 0x1ef
     function private function_8748260c33092d78() {
-        devgui::function_6e7290c8ee4f558b("<dev string:x161>");
-        devgui::function_a9a864379a098ad6("<dev string:x175>", "<dev string:x189>", &function_4be3bac3c965bcba);
-        devgui::function_a9a864379a098ad6("<dev string:x1a7>", "<dev string:x1bb>", &function_ac6bb9d851bcc44e);
-        devgui::function_a9a864379a098ad6("<dev string:x1d9>", "<dev string:x1ea>", &debug_select);
-        devgui::function_a9a864379a098ad6("<dev string:x1fe>", "<dev string:x213>", &function_8203c9bd3f33309e);
-        devgui::function_a9a864379a098ad6("<dev string:x229>", "<dev string:x23c>", &function_ff46c564f2ccba22);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x259>", "<dev string:x278>", &function_78a309e6d9473c1a);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x29c>", "<dev string:x2bb>", &function_78a309e6d9473c1a);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x2de>", "<dev string:x300>", &function_78a309e6d9473c1a);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x327>", "<dev string:x34d>", &function_dcd293b3ab646634);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x373>", "<dev string:x399>", &function_dcd293b3ab646634);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x3bf>", "<dev string:x3e5>", &function_dcd293b3ab646634);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x40b>", "<dev string:x431>", &function_dcd293b3ab646634);
-        devgui::function_a9a864379a098ad6("<dev string:x457>", "<dev string:x481>", &function_329a7f5688224786);
-        devgui::function_a9a864379a098ad6("<dev string:x4ab>", "<dev string:x4d4>", &function_3b86c53c8320156b);
-        devgui::function_a9a864379a098ad6("<dev string:x4fd>", "<dev string:x526>", &function_37df17632b76cff3);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x54f>", "<dev string:x576>", &function_f1ce2bcb6075f617);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x59d>", "<dev string:x5c4>", &function_f1ce2bcb6075f617);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x5eb>", "<dev string:x612>", &function_f1ce2bcb6075f617);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x639>", "<dev string:x660>", &function_f1ce2bcb6075f617);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x687>", "<dev string:x6ae>", &function_f1ce2bcb6075f617);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x6d5>", "<dev string:x6fc>", &function_f1ce2bcb6075f617);
+        devgui::function_6e7290c8ee4f558b("<dev string:x1c>");
+        devgui::function_a9a864379a098ad6("<dev string:x2d>", "<dev string:x3e>", &function_4be3bac3c965bcba);
+        devgui::function_a9a864379a098ad6("<dev string:x59>", "<dev string:x6a>", &function_ac6bb9d851bcc44e);
+        devgui::function_a9a864379a098ad6("<dev string:x85>", "<dev string:x93>", &debug_select);
+        devgui::function_a9a864379a098ad6("<dev string:xa4>", "<dev string:xb6>", &function_8203c9bd3f33309e);
+        devgui::function_a9a864379a098ad6("<dev string:xc9>", "<dev string:xd9>", &function_ff46c564f2ccba22);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xf3>", "<dev string:x10f>", &function_78a309e6d9473c1a);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x130>", "<dev string:x14c>", &function_78a309e6d9473c1a);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x16c>", "<dev string:x18b>", &function_78a309e6d9473c1a);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x1af>", "<dev string:x1d2>", &function_dcd293b3ab646634);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x1f5>", "<dev string:x218>", &function_dcd293b3ab646634);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x23b>", "<dev string:x25e>", &function_dcd293b3ab646634);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x281>", "<dev string:x2a4>", &function_dcd293b3ab646634);
+        devgui::function_a9a864379a098ad6("<dev string:x2c7>", "<dev string:x2ee>", &function_329a7f5688224786);
+        devgui::function_a9a864379a098ad6("<dev string:x315>", "<dev string:x33b>", &function_3b86c53c8320156b);
+        devgui::function_a9a864379a098ad6("<dev string:x361>", "<dev string:x387>", &function_37df17632b76cff3);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x3ad>", "<dev string:x3d1>", &function_f1ce2bcb6075f617);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x3f5>", "<dev string:x419>", &function_f1ce2bcb6075f617);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x43d>", "<dev string:x461>", &function_f1ce2bcb6075f617);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x485>", "<dev string:x4a9>", &function_f1ce2bcb6075f617);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x4cd>", "<dev string:x4f1>", &function_f1ce2bcb6075f617);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x515>", "<dev string:x539>", &function_f1ce2bcb6075f617);
         devgui::function_fe953f000498048f();
         level thread function_8c073da924b036f8();
     }
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1577
-    // Size: 0x1ef
+    // Checksum 0x0, Offset: 0x155a
+    // Size: 0x1ee
     function private function_8c073da924b036f8() {
-        level endon("<dev string:x723>");
+        level endon("<dev string:x55d>");
         var_c046f169b0a7720d = 0;
         while (true) {
             if (var_c046f169b0a7720d != 5) {
@@ -506,30 +498,30 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x176e
+    // Checksum 0x0, Offset: 0x1750
     // Size: 0x28
     function function_4be3bac3c965bcba() {
-        return create((0, 0, 0), 2048, 1.5, "<dev string:x731>", 1);
+        return create((0, 0, 0), 2048, 1.5, "<dev string:x568>", 1);
     }
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x179e
-    // Size: 0x99
+    // Checksum 0x0, Offset: 0x1780
+    // Size: 0x9a
     function function_ac6bb9d851bcc44e() {
         player = level.players[0];
         forward = anglestoforward(player getplayerangles());
         trace = trace::ray_trace(player geteye(), player geteye() + forward * 150000);
-        if (isdefined(trace["<dev string:x742>"]) && isdefined(trace["<dev string:x74e>"]) && trace["<dev string:x74e>"] < 1) {
-            return create(trace["<dev string:x742>"], 2048, 1.5, "<dev string:x731>", 1);
+        if (isdefined(trace["<dev string:x576>"]) && isdefined(trace["<dev string:x57f>"]) && trace["<dev string:x57f>"] < 1) {
+            return create(trace["<dev string:x576>"], 2048, 1.5, "<dev string:x568>", 1);
         }
         return undefined;
     }
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x183f
-    // Size: 0x106
+    // Checksum 0x0, Offset: 0x1822
+    // Size: 0x107
     function debug_select() {
         if (level.radiation.instances.size == 0) {
             return;
@@ -537,8 +529,8 @@ function function_e6d761d1927e2ed1(params) {
         player = level.players[0];
         forward = anglestoforward(player getplayerangles());
         trace = trace::ray_trace(player geteye(), player geteye() + forward * 150000);
-        if (isdefined(trace["<dev string:x742>"]) && isdefined(trace["<dev string:x74e>"]) && trace["<dev string:x74e>"] < 1) {
-            level.radiation.instances = sortbydistance(level.radiation.instances, trace["<dev string:x742>"]);
+        if (isdefined(trace["<dev string:x576>"]) && isdefined(trace["<dev string:x57f>"]) && trace["<dev string:x57f>"] < 1) {
+            level.radiation.instances = sortbydistance(level.radiation.instances, trace["<dev string:x576>"]);
             level.radiation.debug_selected = level.radiation.instances[0];
             return;
         }
@@ -547,7 +539,7 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x194d
+    // Checksum 0x0, Offset: 0x1931
     // Size: 0x18
     function function_8203c9bd3f33309e() {
         level.radiation.debug_selected = undefined;
@@ -555,11 +547,11 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x196d
+    // Checksum 0x0, Offset: 0x1951
     // Size: 0x42
     function function_ff46c564f2ccba22() {
         if (!isdefined(level.radiation.debug_selected)) {
-            iprintlnbold("<dev string:x75a>");
+            iprintlnbold("<dev string:x588>");
             return;
         }
         level.radiation.debug_selected destroy();
@@ -567,11 +559,11 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x19b7
-    // Size: 0x137
+    // Checksum 0x0, Offset: 0x199b
+    // Size: 0x139
     function function_dcd293b3ab646634(params) {
         if (!isdefined(level.radiation.debug_selected)) {
-            iprintlnbold("<dev string:x787>");
+            iprintlnbold("<dev string:x5b2>");
             return;
         }
         direction = params[0];
@@ -597,11 +589,11 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1af6
+    // Checksum 0x0, Offset: 0x1adc
     // Size: 0xaf
     function function_78a309e6d9473c1a(params) {
         if (!isdefined(level.radiation.debug_selected)) {
-            iprintlnbold("<dev string:x7ca>");
+            iprintlnbold("<dev string:x5e6>");
             return;
         }
         increase = int(params[0]);
@@ -611,11 +603,11 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1bad
+    // Checksum 0x0, Offset: 0x1b93
     // Size: 0x65
     function function_329a7f5688224786() {
         if (!isdefined(level.radiation.debug_selected)) {
-            iprintlnbold("<dev string:x7f5>");
+            iprintlnbold("<dev string:x60e>");
             return;
         }
         level.radiation.debug_selected.var_75186cfe05cecd50 = !istrue(level.radiation.debug_selected.var_75186cfe05cecd50);
@@ -623,11 +615,11 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c1a
+    // Checksum 0x0, Offset: 0x1c00
     // Size: 0x65
     function function_3b86c53c8320156b() {
         if (!isdefined(level.radiation.debug_selected)) {
-            iprintlnbold("<dev string:x852>");
+            iprintlnbold("<dev string:x668>");
             return;
         }
         level.radiation.debug_selected.var_a2aa25ea43b31d54 = !istrue(level.radiation.debug_selected.var_a2aa25ea43b31d54);
@@ -635,11 +627,11 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c87
+    // Checksum 0x0, Offset: 0x1c6d
     // Size: 0x65
     function function_37df17632b76cff3() {
         if (!isdefined(level.radiation.debug_selected)) {
-            iprintlnbold("<dev string:x8d2>");
+            iprintlnbold("<dev string:x6e5>");
             return;
         }
         level.radiation.debug_selected.var_208cf23d5ed8f1f4 = !istrue(level.radiation.debug_selected.var_208cf23d5ed8f1f4);
@@ -647,11 +639,11 @@ function function_e6d761d1927e2ed1(params) {
 
     // Namespace radiation / namespace_6d781a0248843409
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1cf4
+    // Checksum 0x0, Offset: 0x1cda
     // Size: 0x57
     function function_f1ce2bcb6075f617(params) {
         if (!isdefined(level.radiation.debug_selected)) {
-            iprintlnbold("<dev string:x942>");
+            iprintlnbold("<dev string:x752>");
             return;
         }
         level.radiation.debug_selected.var_a292f5812d40eb56 = int(params[0]);

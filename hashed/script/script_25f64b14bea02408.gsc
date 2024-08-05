@@ -7,7 +7,7 @@
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x507
+// Checksum 0x0, Offset: 0x484
 // Size: 0xb4
 function getfunction(funcid) {
     switch (funcid) {
@@ -28,12 +28,12 @@ function getfunction(funcid) {
     case #"hash_80804c8d4d60b774": 
         return &namespace_a3bb9840357a7ef2::function_5ad32ab5f21ddf93;
     }
-    assertmsg("<dev string:x1c>" + funcid);
+    assertmsg("Missing function pointer for " + funcid);
 }
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c3
+// Checksum 0x0, Offset: 0x540
 // Size: 0x20
 function function_72d72588305107b4(interactionid) {
     self.battlechatterallowed = 0;
@@ -42,7 +42,7 @@ function function_72d72588305107b4(interactionid) {
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5eb
+// Checksum 0x0, Offset: 0x568
 // Size: 0x35
 function function_8add99cb1b82b964(interactionid) {
     self.battlechatterallowed = 1;
@@ -53,7 +53,7 @@ function function_8add99cb1b82b964(interactionid) {
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x628
+// Checksum 0x0, Offset: 0x5a5
 // Size: 0x1b
 function function_ea2a4a330d127793(statename) {
     thread function_414b3c5423728952(statename, randomfloat(2));
@@ -61,7 +61,7 @@ function function_ea2a4a330d127793(statename) {
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64b
+// Checksum 0x0, Offset: 0x5c8
 // Size: 0x15
 function function_336db229eb81d51e(statename) {
     self.balwayscoverexposed = 0;
@@ -69,7 +69,7 @@ function function_336db229eb81d51e(statename) {
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x668
+// Checksum 0x0, Offset: 0x5e5
 // Size: 0x29
 function function_280aee8c8ab42ef7(statename) {
     assert(isdefined(self.stealth));
@@ -78,7 +78,7 @@ function function_280aee8c8ab42ef7(statename) {
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x699
+// Checksum 0x0, Offset: 0x616
 // Size: 0x28
 function function_1f0637e40c2a0dda(statename) {
     assert(isdefined(self.stealth));
@@ -87,7 +87,7 @@ function function_1f0637e40c2a0dda(statename) {
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c9
+// Checksum 0x0, Offset: 0x646
 // Size: 0x37
 function function_414b3c5423728952(statename, t) {
     self endon("death");
@@ -99,8 +99,8 @@ function function_414b3c5423728952(statename, t) {
 
 // Namespace namespace_4671974d6a45393e / namespace_a115d70f5f164d7e
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x708
-// Size: 0x1bd
+// Checksum 0x0, Offset: 0x685
+// Size: 0x1bc
 function playdialog(statename, params) {
     assert(params.size == 1);
     dialog = params[0];

@@ -8,7 +8,7 @@
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e3
+// Checksum 0x0, Offset: 0x273
 // Size: 0x13
 function function_72d72588305107b4(interactionid) {
     self notify("interaction_started");
@@ -16,7 +16,7 @@ function function_72d72588305107b4(interactionid) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fe
+// Checksum 0x0, Offset: 0x28e
 // Size: 0x3b
 function function_8add99cb1b82b964(interactionid) {
     self.var_7916f201efb9963f = undefined;
@@ -26,7 +26,7 @@ function function_8add99cb1b82b964(interactionid) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x341
+// Checksum 0x0, Offset: 0x2d1
 // Size: 0x132
 function function_efcea5d26798e5b6(funcid) {
     switch (funcid) {
@@ -61,13 +61,13 @@ function function_efcea5d26798e5b6(funcid) {
     case #"hash_e8db290ca384380d": 
         return &function_688018e12db6e359;
     }
-    assertmsg("<dev string:x1c>" + funcid);
+    assertmsg("Missing function pointer for " + funcid);
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x47b
-// Size: 0x45
+// Checksum 0x0, Offset: 0x40b
+// Size: 0x44
 function function_606c28b248baddfd(statename, params) {
     assert(params.size == 1);
     phasename = params[0];
@@ -76,8 +76,8 @@ function function_606c28b248baddfd(statename, params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c8
-// Size: 0x20a
+// Checksum 0x0, Offset: 0x457
+// Size: 0x214
 function startcap(statename, params) {
     if (istrue(self.var_3605e45b535f0536)) {
         function_b76d8b8ad8e2c823(statename, params);
@@ -118,8 +118,8 @@ function startcap(statename, params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6da
-// Size: 0x20f
+// Checksum 0x0, Offset: 0x673
+// Size: 0x219
 function function_b76d8b8ad8e2c823(statename, params) {
     capinfo = function_a0cccf0b4c466b2c(self, params[0]);
     capname = capinfo.capname;
@@ -156,8 +156,8 @@ function function_b76d8b8ad8e2c823(statename, params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f1
-// Size: 0x38
+// Checksum 0x0, Offset: 0x894
+// Size: 0x37
 function withindisttogoal(statename, params) {
     mindist = params[0];
     if (self.pathpending) {
@@ -168,8 +168,8 @@ function withindisttogoal(statename, params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x932
-// Size: 0x187
+// Checksum 0x0, Offset: 0x8d4
+// Size: 0x186
 function processevent(receiver, info, origin) {
     if (info == "relaxed") {
         return true;
@@ -198,7 +198,7 @@ function processevent(receiver, info, origin) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac2
+// Checksum 0x0, Offset: 0xa63
 // Size: 0x4e
 function function_75bde4ab677d8c14(params) {
     if (isdefined(self._blackboard.var_7460b96395361857) && isdefined(params) && params.size > 0) {
@@ -211,7 +211,7 @@ function function_75bde4ab677d8c14(params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb19
+// Checksum 0x0, Offset: 0xaba
 // Size: 0xb
 function empty(params) {
     
@@ -219,8 +219,8 @@ function empty(params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2c
-// Size: 0x4f
+// Checksum 0x0, Offset: 0xacd
+// Size: 0x50
 function function_5b942e48767afec7(param) {
     statename = "curious";
     alias = "curious_anim";
@@ -233,7 +233,7 @@ function function_5b942e48767afec7(param) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb84
+// Checksum 0x0, Offset: 0xb26
 // Size: 0x1c
 function isincombat(statename, params) {
     return self.bisincombat;
@@ -241,7 +241,7 @@ function isincombat(statename, params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba9
+// Checksum 0x0, Offset: 0xb4b
 // Size: 0x11
 function shouldreact(params) {
     return self function_a4a9e73b2d25ff8b();
@@ -249,8 +249,8 @@ function shouldreact(params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc3
-// Size: 0x4e
+// Checksum 0x0, Offset: 0xb65
+// Size: 0x4d
 function inplace(statename, params) {
     self._blackboard.var_f725b0bb1f8d27ee = 1;
     interactionid = self function_92435c7a6ae85c3c();
@@ -260,8 +260,8 @@ function inplace(statename, params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc19
-// Size: 0x25
+// Checksum 0x0, Offset: 0xbba
+// Size: 0x24
 function function_25c933655d73066a(interactionid) {
     repulsorname = function_d980c506b2f1a19b(interactionid);
     destroynavrepulsor(repulsorname);
@@ -269,7 +269,7 @@ function function_25c933655d73066a(interactionid) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xc46
+// Checksum 0x0, Offset: 0xbe6
 // Size: 0x12
 function private function_d980c506b2f1a19b(interactionid) {
     return "civilian_interaction_" + interactionid;
@@ -277,8 +277,8 @@ function private function_d980c506b2f1a19b(interactionid) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xc61
-// Size: 0x2b0
+// Checksum 0x0, Offset: 0xc01
+// Size: 0x2ba
 function private function_c2a860252b030c52(interactionid) {
     var_36b6c21725713470 = function_adf0d34ff483c35a(interactionid);
     if (var_36b6c21725713470.size == 0) {
@@ -339,8 +339,8 @@ function private function_c2a860252b030c52(interactionid) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf19
-// Size: 0x4f
+// Checksum 0x0, Offset: 0xec3
+// Size: 0x50
 function function_8f98221d71dafe6e(param) {
     statename = "react";
     alias = "8";
@@ -353,8 +353,8 @@ function function_8f98221d71dafe6e(param) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf71
-// Size: 0x8a
+// Checksum 0x0, Offset: 0xf1c
+// Size: 0x89
 function function_d8786f820807c4f(statename, params) {
     newstate = "custom_patrol_lookaround_passthrough";
     if (!isdefined(params[0])) {
@@ -371,7 +371,7 @@ function function_d8786f820807c4f(statename, params) {
 
 // Namespace interaction_common / namespace_f901a4f9d899be59
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1003
+// Checksum 0x0, Offset: 0xfad
 // Size: 0x6a
 function function_688018e12db6e359(param) {
     statename = "friend_down";

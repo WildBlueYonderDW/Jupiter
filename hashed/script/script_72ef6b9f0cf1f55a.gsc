@@ -7,7 +7,7 @@
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 0, eflags: 0x5
-// Checksum 0x0, Offset: 0x3c0
+// Checksum 0x0, Offset: 0x11e6
 // Size: 0x19
 function private autoexec __init__system__() {
     system::register(#"hash_58f5dc856591d010", undefined, &pre_main, undefined);
@@ -15,8 +15,8 @@ function private autoexec __init__system__() {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3e1
-// Size: 0x10c
+// Checksum 0x0, Offset: 0x1207
+// Size: 0x10b
 function private pre_main() {
     if (!isdefined(level.player)) {
         level.player = getentarray("player", "classname")[0];
@@ -41,8 +41,8 @@ function private pre_main() {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4f5
-// Size: 0x510
+// Checksum 0x0, Offset: 0x131a
+// Size: 0x514
 function private function_ce0d74e919485109(var_44c1d0100b18dd6d) {
     if (!isdefined(var_44c1d0100b18dd6d)) {
         return;
@@ -60,7 +60,7 @@ function private function_ce0d74e919485109(var_44c1d0100b18dd6d) {
                     field = tolower(field_data.field_name);
                     max_value = field_data.max_value;
                     step_increment = field_data.step_increment;
-                    assertex(max_value >= step_increment, "<dev string:x1c>" + max_value + "<dev string:x2f>" + archetype_name + "<dev string:x4b>" + field + "<dev string:x59>" + step_increment + "<dev string:x7d>" + step_increment);
+                    assertex(max_value >= step_increment, "The max value (" + max_value + ") for widget archetype <" + archetype_name + ">, field <" + field + "> exceeds the step increment of " + step_increment + ". Clamping max value to " + step_increment);
                     max_value = max(max_value, step_increment);
                     bits = int(ceil(log(max_value / step_increment + 1) / log(2)));
                     data.archetypes[archetype_name][field] = spawnstruct();
@@ -70,7 +70,7 @@ function private function_ce0d74e919485109(var_44c1d0100b18dd6d) {
                     data.archetypes[archetype_name][field].shift = shift;
                     data.archetypes[archetype_name][field].mask = int(pow(2, bits) - 1) << shift;
                     shift += bits;
-                    assertex(shift <= 32, "<dev string:x99>" + archetype_name + "<dev string:xae>" + archetype_name + "<dev string:x10b>");
+                    assertex(shift <= 32, "Widget archetype " + archetype_name + "'s fields exceeds the maximum 32 bits of the omnvar.  Please adjust the field values for " + archetype_name + " and ensure the bits used by all fields do not exceed 32.");
                 }
             }
         }
@@ -101,7 +101,7 @@ function private function_ce0d74e919485109(var_44c1d0100b18dd6d) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xa0d
+// Checksum 0x0, Offset: 0x1836
 // Size: 0x4bc
 function private function_26f299852d555394(widget_name) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
@@ -113,14 +113,14 @@ function private function_26f299852d555394(widget_name) {
         if (isdefined(widget_data.archetype) && widget_data.archetype != "") {
             archetype = getscriptbundle("scriptedwidgetarchetype:" + widget_data.archetype);
             archetype_name = tolower(widget_data.archetype);
-            assertex(isdefined(data.archetypes[archetype_name]), "<dev string:x148>" + widget_name + "<dev string:x16e>" + archetype_name + "<dev string:x185>");
+            assertex(isdefined(data.archetypes[archetype_name]), "Attempting to use scripted widget " + widget_name + " but the archetype " + archetype_name + " was not added to the archetypes array in the appropriate scriptedwidgetslist asset");
             if (isdefined(archetype) && isdefined(data.archetypes[archetype_name])) {
                 data.widget_types[widget_name].archetype = archetype_name;
             }
         }
         data.widget_types[widget_name].parameters = [];
         if (isdefined(widget_data.parameters)) {
-            foreach (param_index, param in widget_data.parameters) {
+            foreach (param in widget_data.parameters) {
                 if (isdefined(param.name) && param.name != "") {
                     data.widget_types[widget_name].parameters[tolower(param.name)] = param_index;
                 }
@@ -128,7 +128,7 @@ function private function_26f299852d555394(widget_name) {
         }
         data.widget_types[widget_name].states = [];
         if (isdefined(widget_data.states)) {
-            foreach (state_index, state in widget_data.states) {
+            foreach (state in widget_data.states) {
                 if (isdefined(state.name) && state.name != "") {
                     data.widget_types[widget_name].states[tolower(state.name)] = state_index;
                 }
@@ -140,7 +140,7 @@ function private function_26f299852d555394(widget_name) {
                 if (isdefined(child.name) && child.name != "") {
                     child_name = tolower(child.name);
                     data.widget_types[widget_name].children[child_name] = [];
-                    foreach (var_f5de074125c2d341, child_widget in child.widgets) {
+                    foreach (child_widget in child.widgets) {
                         if (isdefined(child_widget.name)) {
                             var_35de4a7a76aee370 = tolower(child_widget.name);
                             data.widget_types[widget_name].children[child_name][var_35de4a7a76aee370] = spawnstruct();
@@ -157,7 +157,7 @@ function private function_26f299852d555394(widget_name) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xed1
+// Checksum 0x0, Offset: 0x1cfa
 // Size: 0xf1
 function function_efa7d98eea1fb836(widget_name, child_name, var_35de4a7a76aee370) {
     widget_name = tolower(widget_name);
@@ -171,7 +171,7 @@ function function_efa7d98eea1fb836(widget_name, child_name, var_35de4a7a76aee370
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xfcb
+// Checksum 0x0, Offset: 0x1df4
 // Size: 0xf1
 function function_ade28fda795d5664(widget_name, child_name, var_35de4a7a76aee370) {
     widget_name = tolower(widget_name);
@@ -185,8 +185,8 @@ function function_ade28fda795d5664(widget_name, child_name, var_35de4a7a76aee370
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10c5
-// Size: 0xfd
+// Checksum 0x0, Offset: 0x1eee
+// Size: 0xff
 function function_63d35b39e955e65c(var_fee88e2c79edd2f, var_1212b8095077474c) {
     if (!isdefined(level.var_6917e6eed10cfc44)) {
         level.var_6917e6eed10cfc44 = spawnstruct();
@@ -210,20 +210,20 @@ function function_63d35b39e955e65c(var_fee88e2c79edd2f, var_1212b8095077474c) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ca
-// Size: 0x16d
+// Checksum 0x0, Offset: 0x1ff5
+// Size: 0x16b
 function function_5c5dd45babfb8d7d(widgets, shouldhide) {
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x1dc>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_f212ecf957ec73f0), "<dev string:x1dc>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_f212ecf957ec73f0.widgets), "<dev string:x1dc>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_f212ecf957ec73f0.omnvar), "<dev string:x228>");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to hide or show widgets before hide_hud_widgets_init() was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_f212ecf957ec73f0), "Tried to hide or show widgets before hide_hud_widgets_init() was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_f212ecf957ec73f0.widgets), "Tried to hide or show widgets before hide_hud_widgets_init() was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_f212ecf957ec73f0.omnvar), "No omnvar specified for hiding hud widgets.  Call hide_hud_widgets_init() and pass in an omnvar.");
     data = level.var_6917e6eed10cfc44.var_f212ecf957ec73f0;
     if (!isarray(widgets)) {
         widgets = [widgets];
     }
     foreach (widget in widgets) {
         widget = tolower(widget);
-        assertex(isdefined(data.widgets[widget]), "<dev string:x28c>" + widget + "<dev string:x2ad>");
+        assertex(isdefined(data.widgets[widget]), "Tried to hide or show widget " + widget + ", but that widget is not registered in hide_hud_widgets_init()");
         shouldhide = function_f801c3e967c7768a(widget, shouldhide);
         self setclientomnvarbit(data.omnvar, data.widgets[widget], shouldhide);
     }
@@ -231,17 +231,17 @@ function function_5c5dd45babfb8d7d(widgets, shouldhide) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x133f
+// Checksum 0x0, Offset: 0x2168
 // Size: 0x2e7
 function function_90de31b2cbef19f9(widget_ref, widget_type, widget_struct) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x30e>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x30e>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to create scripted widgets before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to create scripted widgets before scripted_widgets_init was called.");
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     widget_ref = tolower(widget_ref);
     widget_type = tolower(widget_type);
     if (function_ada0825249682644(widget_ref)) {
-        assert("<dev string:x35b>" + widget_ref + "<dev string:x37e>");
+        assert("Cannot create scripted widget: " + widget_ref + ".  That reference is already active.");
         return;
     }
     index = function_f94203b920f0ba27(widget_ref, widget_type);
@@ -263,7 +263,7 @@ function function_90de31b2cbef19f9(widget_ref, widget_type, widget_struct) {
                 function_cc46ab20b75d5c58(1, "ui_scripted_widget_" + "under_hud_" + index);
             }
             if (isent(widget_struct.ent)) {
-                assertex(isdefined(widget_struct.anchor_type), "<dev string:x3a6>");
+                assertex(isdefined(widget_struct.anchor_type), "Must define <anchor_type> in the widget struct if specifying an ent to anchor to");
                 function_7a82d07837107ae6(widget_ref, widget_struct.ent, widget_struct.anchor_type);
             }
             if (isdefined(widget_struct.position)) {
@@ -273,17 +273,17 @@ function function_90de31b2cbef19f9(widget_ref, widget_type, widget_struct) {
         self setclientomnvar("ui_scripted_widget_" + "type_" + index, data.widget_types[widget_type].index);
         return;
     }
-    assert("<dev string:x3fa>");
+    assert("Cannot create more scripted widgets until one is removed");
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x162e
+// Checksum 0x0, Offset: 0x2457
 // Size: 0x14e
 function function_6cd0a8e23ff14e13(widget_prefix) {
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x436>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x436>");
-    assertex(isdefined(widget_prefix), "<dev string:x494>");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(widget_prefix), "Tried to get a widget name without providing a prefix as defined in APE");
     widget = function_6627dd3016f3d63f(widget_prefix, getdvar(@"hash_687fb8f9b7a23245"));
     if (isdefined(widget)) {
         return widget;
@@ -324,13 +324,13 @@ function function_6cd0a8e23ff14e13(widget_prefix) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1785
+// Checksum 0x0, Offset: 0x25ae
 // Size: 0x110
 function function_6627dd3016f3d63f(widget_prefix, params) {
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x436>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x436>");
-    assertex(isdefined(widget_prefix), "<dev string:x494>");
-    assertex(isdefined(params) && (isstring(params) || isarray(params)), "<dev string:x4df>");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(widget_prefix), "Tried to get a widget name without providing a prefix as defined in APE");
+    assertex(isdefined(params) && (isstring(params) || isarray(params)), "Tried to get a widget name without providing a string or table of params. Use scripted_widget_get_name_by_asset_prefix instead.");
     var_25f11f8236d36f82 = "";
     if (isstring(params)) {
         var_25f11f8236d36f82 = widget_prefix + "_" + params;
@@ -356,7 +356,7 @@ function function_6627dd3016f3d63f(widget_prefix, params) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x189e
+// Checksum 0x0, Offset: 0x26c7
 // Size: 0x59
 function function_a0ae4b54aa48ade2(widget_type) {
     widget_type = tolower(widget_type);
@@ -365,11 +365,11 @@ function function_a0ae4b54aa48ade2(widget_type) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1900
-// Size: 0x118
+// Checksum 0x0, Offset: 0x2729
+// Size: 0x117
 function function_956ab5009d077253(var_779716333f062476, param_name, var_a66ee63570312822) {
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x562>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x562>");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the params of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the params of a scripted widget before scripted_widgets_init was called.");
     widget_data = getscriptbundle("scriptedwidget:" + var_779716333f062476);
     param_index = function_7be2b65191088c8a(var_779716333f062476, param_name);
     if (isdefined(param_index)) {
@@ -385,11 +385,11 @@ function function_956ab5009d077253(var_779716333f062476, param_name, var_a66ee63
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a21
+// Checksum 0x0, Offset: 0x2849
 // Size: 0x88
 function function_7be2b65191088c8a(var_779716333f062476, param_name) {
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x436>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x436>");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
     var_779716333f062476 = tolower(var_779716333f062476);
     param_name = tolower(param_name);
     return level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[var_779716333f062476].parameters[param_name];
@@ -397,8 +397,8 @@ function function_7be2b65191088c8a(var_779716333f062476, param_name) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x1ab2
-// Size: 0x11f
+// Checksum 0x0, Offset: 0x28da
+// Size: 0x120
 function private function_95809d3a84b2020b(widget_ref, var_a79e2ddd22fbba9a, var_54a61fbefc52eb7f, var_5a4ed2926457d0b) {
     var_b8868bce74340be6 = spawnstruct();
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
@@ -422,12 +422,12 @@ function private function_95809d3a84b2020b(widget_ref, var_a79e2ddd22fbba9a, var
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bda
+// Checksum 0x0, Offset: 0x2a03
 // Size: 0xd8
 function function_af4f62f0f944a8f1(widget_ref, param_ref, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x5bb>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x5bb>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the param of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the param of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "param_", var_54a61fbefc52eb7f);
     if (isdefined(data)) {
         parameters = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[data.type].parameters;
@@ -437,12 +437,12 @@ function function_af4f62f0f944a8f1(widget_ref, param_ref, var_54a61fbefc52eb7f) 
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cba
-// Size: 0x9a
+// Checksum 0x0, Offset: 0x2ae3
+// Size: 0x99
 function function_b52897e8afbb0968(widget_ref, data_val, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x613>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x613>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the data of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the data of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (isdefined(data)) {
         function_cc46ab20b75d5c58(data_val, data.omnvar);
@@ -451,23 +451,23 @@ function function_b52897e8afbb0968(widget_ref, data_val, var_54a61fbefc52eb7f) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5c
+// Checksum 0x0, Offset: 0x2b84
 // Size: 0x80
 function function_daff24f3e11825ae(var_779716333f062476, state_name) {
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x66a>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x66a>");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the state index of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the state index of a scripted widget before scripted_widgets_init was called.");
     state_name = tolower(state_name);
     return level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[var_779716333f062476].states[state_name];
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de5
+// Checksum 0x0, Offset: 0x2c0d
 // Size: 0xd8
 function function_d28fa5295a04d555(widget_ref, state, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x6c8>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x6c8>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the state of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the state of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "state_", var_54a61fbefc52eb7f);
     if (isdefined(data)) {
         states = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[data.type].states;
@@ -477,17 +477,17 @@ function function_d28fa5295a04d555(widget_ref, state, var_54a61fbefc52eb7f) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec5
-// Size: 0x1e8
+// Checksum 0x0, Offset: 0x2ced
+// Size: 0x1ea
 function function_7a82d07837107ae6(widget_ref, anchor_ent, anchor_type) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref);
     if (!function_ada0825249682644(widget_ref)) {
         return;
     }
     anchor_type = tolower(anchor_type);
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    assertex(isdefined(data.anchor_types) && isdefined(data.anchor_types[anchor_type]), "<dev string:x720>" + anchor_type + "<dev string:x730>");
+    assertex(isdefined(data.anchor_types) && isdefined(data.anchor_types[anchor_type]), "Anchor type " + anchor_type + " does not exist. Ensure that the anchor table has been registered in scripted_widgets_init(), it's included in a csv, and the entry exists within the table");
     if (!isdefined(self.var_414b9a0d57c1e081)) {
         self.var_414b9a0d57c1e081 = [];
     }
@@ -513,10 +513,10 @@ function function_7a82d07837107ae6(widget_ref, anchor_ent, anchor_type) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x20b5
-// Size: 0x2e6
+// Checksum 0x0, Offset: 0x2edf
+// Size: 0x2ea
 function function_f4c37324750dc183(widget_ref, x_pos, y_pos, var_b8ce12ab15073e07, var_3f4f7e6d296ad6d9, var_5bf6089ef591d224, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     data = function_95809d3a84b2020b(widget_ref, "position_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -528,31 +528,31 @@ function function_f4c37324750dc183(widget_ref, x_pos, y_pos, var_b8ce12ab15073e0
     y_pos = int(y_pos);
     switch (var_b8ce12ab15073e07) {
     case 0: 
-        assertex(x_pos >= -63 && x_pos <= 1984, "<dev string:x7cf>" + -63 + "<dev string:x815>" + 1984 + "<dev string:x81e>");
+        assertex(x_pos >= -63 && x_pos <= 1984, "<scripted_widget_set_position>, 'x_pos' parameter must be between " + -63 + " and " + 1984 + " for left alignment");
         x_pos -= -63;
         break;
     case 1:
     case 3: 
-        assertex(x_pos >= -1023 && x_pos <= 1024, "<dev string:x7cf>" + -1023 + "<dev string:x815>" + 1024 + "<dev string:x835>");
+        assertex(x_pos >= -1023 && x_pos <= 1024, "<scripted_widget_set_position>, 'x_pos' parameter must be between " + -1023 + " and " + 1024 + " for center alignment");
         x_pos -= -1023;
         break;
     case 2: 
-        assertex(x_pos >= -1984 && x_pos <= 0 - -63, "<dev string:x7cf>" + -1984 + "<dev string:x815>" + 0 - -63 + "<dev string:x84e>");
+        assertex(x_pos >= -1984 && x_pos <= 0 - -63, "<scripted_widget_set_position>, 'x_pos' parameter must be between " + -1984 + " and " + 0 - -63 + " for right alignment");
         x_pos += 1984;
         break;
     }
     switch (var_3f4f7e6d296ad6d9) {
     case 0: 
-        assertex(y_pos >= -483 && y_pos <= 1564, "<dev string:x866>" + -483 + "<dev string:x815>" + 1564 + "<dev string:x8ac>");
+        assertex(y_pos >= -483 && y_pos <= 1564, "<scripted_widget_set_position>, 'y_pos' parameter must be between " + -483 + " and " + 1564 + " for top alignment");
         y_pos -= -483;
         break;
     case 1:
     case 3: 
-        assertex(y_pos >= -1023 && y_pos <= 1024, "<dev string:x866>" + -1023 + "<dev string:x815>" + 1024 + "<dev string:x8c2>");
+        assertex(y_pos >= -1023 && y_pos <= 1024, "<scripted_widget_set_position>, 'y_pos' parameter must be between " + -1023 + " and " + 1024 + " for middle alignment");
         y_pos -= -1023;
         break;
     case 2: 
-        assertex(y_pos >= -1564 && y_pos <= 0 - -483, "<dev string:x866>" + -1564 + "<dev string:x815>" + 0 - -483 + "<dev string:x8db>");
+        assertex(y_pos >= -1564 && y_pos <= 0 - -483, "<scripted_widget_set_position>, 'y_pos' parameter must be between " + -1564 + " and " + 0 - -483 + " for bottom alignment");
         y_pos += 1564;
         break;
     }
@@ -566,7 +566,7 @@ function function_f4c37324750dc183(widget_ref, x_pos, y_pos, var_b8ce12ab15073e0
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23a3
+// Checksum 0x0, Offset: 0x31d1
 // Size: 0x56
 function function_f845164fd6027e79(datatype) {
     if (!isdefined(datatype)) {
@@ -586,7 +586,7 @@ function function_f845164fd6027e79(datatype) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2401
+// Checksum 0x0, Offset: 0x322f
 // Size: 0x56
 function function_863b22a1564f8eb(datatype) {
     if (!isdefined(datatype)) {
@@ -606,10 +606,10 @@ function function_863b22a1564f8eb(datatype) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x245f
-// Size: 0x1c1
+// Checksum 0x0, Offset: 0x328d
+// Size: 0x1c5
 function function_d2da2b563383891f(widget_ref, var_d66aa55144b09de9, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     data = function_95809d3a84b2020b(widget_ref, "position_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return undefined;
@@ -652,10 +652,10 @@ function function_d2da2b563383891f(widget_ref, var_d66aa55144b09de9, var_54a61fb
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2629
-// Size: 0x60
+// Checksum 0x0, Offset: 0x345b
+// Size: 0x5f
 function function_1ec2f3bcef4a8818(widget_ref, priority, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     data = function_95809d3a84b2020b(widget_ref, "priority_", var_54a61fbefc52eb7f);
     if (isdefined(data)) {
         self setclientomnvar(data.omnvar, priority);
@@ -664,12 +664,12 @@ function function_1ec2f3bcef4a8818(widget_ref, priority, var_54a61fbefc52eb7f) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2691
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x34c2
+// Size: 0xc1
 function function_14a0ee2aaf9128c3(widget_ref, field_values, no_timestamp, var_54a61fbefc52eb7f, var_5a4ed2926457d0b) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x8f4>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x8f4>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f, var_5a4ed2926457d0b);
     if (!isdefined(data)) {
         return;
@@ -679,12 +679,12 @@ function function_14a0ee2aaf9128c3(widget_ref, field_values, no_timestamp, var_5
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x275b
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x358b
+// Size: 0xae
 function function_6e45b720d0914f42(widget_ref, field, value, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x8f4>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x8f4>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -694,12 +694,12 @@ function function_6e45b720d0914f42(widget_ref, field, value, var_54a61fbefc52eb7
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2812
+// Checksum 0x0, Offset: 0x3641
 // Size: 0xd6
 function function_2d3bf675525ba34c(widget_ref, field, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x8f4>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x8f4>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -710,12 +710,12 @@ function function_2d3bf675525ba34c(widget_ref, field, var_54a61fbefc52eb7f) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x28f0
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x371f
+// Size: 0xcb
 function function_ddc9d8c3b0ef6b87(widget_ref, current_pct, target_pct, time, var_54a61fbefc52eb7f, var_5a4ed2926457d0b) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x953>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x953>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the progress of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the progress of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -725,12 +725,12 @@ function function_ddc9d8c3b0ef6b87(widget_ref, current_pct, target_pct, time, va
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x29c4
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x37f2
+// Size: 0xc1
 function function_315df71064cc10b8(widget_ref, current_pct, bool, var_54a61fbefc52eb7f, var_5a4ed2926457d0b) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x9ae>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x9ae>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the progress bool of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the progress bool of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -740,12 +740,12 @@ function function_315df71064cc10b8(widget_ref, current_pct, bool, var_54a61fbefc
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a8e
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x38bb
+// Size: 0xc1
 function function_a435f7db4b861f0c(widget_ref, current_pct, current_alpha, var_54a61fbefc52eb7f, var_5a4ed2926457d0b) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:xa0e>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:xa0e>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the progress alpha of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the progress alpha of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -755,12 +755,12 @@ function function_a435f7db4b861f0c(widget_ref, current_pct, current_alpha, var_5
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b58
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x3984
+// Size: 0xcb
 function function_2181b4358a46aab3(widget_ref, count, max_count, time, var_54a61fbefc52eb7f, var_5a4ed2926457d0b) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:xa6f>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:xa6f>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the count of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the count of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -770,12 +770,12 @@ function function_2181b4358a46aab3(widget_ref, count, max_count, time, var_54a61
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c2c
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x3a57
+// Size: 0xae
 function function_b93f1b828644c021(widget_ref, horizontal_alignment, vertical_alignment, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:xac7>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:xac7>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the list item alignment of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the list item alignment of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -785,12 +785,12 @@ function function_b93f1b828644c021(widget_ref, horizontal_alignment, vertical_al
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ce3
-// Size: 0x9b
+// Checksum 0x0, Offset: 0x3b0d
+// Size: 0x9a
 function function_1f51eabeded054f0(widget_ref, timestamp, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:xb2d>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:xb2d>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the timestamp of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the timestamp of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "time_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -800,12 +800,12 @@ function function_1f51eabeded054f0(widget_ref, timestamp, var_54a61fbefc52eb7f) 
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d86
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x3baf
+// Size: 0xa4
 function function_1f1c11d26b17770f(widget_ref, fields, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:x8f4>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:x8f4>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to set the field values of a scripted widget before scripted_widgets_init was called.");
     data = function_95809d3a84b2020b(widget_ref, "data_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
         return;
@@ -815,12 +815,12 @@ function function_1f1c11d26b17770f(widget_ref, fields, var_54a61fbefc52eb7f) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e34
-// Size: 0xcb
+// Checksum 0x0, Offset: 0x3c5c
+// Size: 0xcc
 function function_fb3c9a259f146781(widget_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
-    assertex(isdefined(level.var_6917e6eed10cfc44), "<dev string:xb89>");
-    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "<dev string:xb89>");
+    assertex(isplayer(self), "Must be called on a player.");
+    assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to destroy scripted widgets before scripted_widgets_init was called.");
+    assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to destroy scripted widgets before scripted_widgets_init was called.");
     widget_ref = tolower(widget_ref);
     if (!function_ada0825249682644(widget_ref)) {
         return;
@@ -836,10 +836,10 @@ function function_fb3c9a259f146781(widget_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f07
-// Size: 0x60
+// Checksum 0x0, Offset: 0x3d30
+// Size: 0x5f
 function function_ada0825249682644(widget_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref);
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     return isdefined(self.var_a14cb42739301f30) && isdefined(self.var_a14cb42739301f30[widget_ref]);
@@ -847,19 +847,19 @@ function function_ada0825249682644(widget_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f70
+// Checksum 0x0, Offset: 0x3d98
 // Size: 0x31
 function function_114fb9814c0b068d() {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     return !isdefined(self.var_a219288779b991ce) || self.var_a219288779b991ce.size > 0;
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2faa
+// Checksum 0x0, Offset: 0x3dd2
 // Size: 0x65
 function function_440f285bc17a2787(list_ref, widget_type, list_items) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     function_90de31b2cbef19f9(list_ref, widget_type);
     self.var_a14cb42739301f30[list_ref].list = [];
@@ -870,10 +870,10 @@ function function_440f285bc17a2787(list_ref, widget_type, list_items) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3017
+// Checksum 0x0, Offset: 0x3e3f
 // Size: 0x37
 function function_cf43a9641fd024af(list_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     function_fb3c9a259f146781(list_ref);
     function_b267732c9e92f306(list_ref);
@@ -881,10 +881,10 @@ function function_cf43a9641fd024af(list_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3056
-// Size: 0x53
+// Checksum 0x0, Offset: 0x3e7e
+// Size: 0x52
 function function_872bbb1fa784b8d8(list_ref, item_ref, item_type, var_3cefc2b0c7f6f3ec) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     items = [];
     items[item_ref] = item_type;
     function_c9e5319d68e22011(list_ref, items, var_3cefc2b0c7f6f3ec);
@@ -892,17 +892,17 @@ function function_872bbb1fa784b8d8(list_ref, item_ref, item_type, var_3cefc2b0c7
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x30b1
+// Checksum 0x0, Offset: 0x3ed8
 // Size: 0xe2
 function function_c9e5319d68e22011(list_ref, list_items, var_3cefc2b0c7f6f3ec) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     items = [];
     omnvars = [];
-    foreach (item_ref, item_type in list_items) {
+    foreach (item_type in list_items) {
         item_type = tolower(item_type);
         var_3de03bfa4e76b915 = function_eabc5d231d49caab(list_ref, tolower(item_ref), item_type);
-        assertex(isdefined(var_3de03bfa4e76b915), "<dev string:xbd7>");
+        assertex(isdefined(var_3de03bfa4e76b915), "Tried to allocate list item in scripted_widget_list_add_items(), but there are no more omnvars in reserve");
         if (isdefined(var_3de03bfa4e76b915)) {
             items[items.size] = item_type;
             omnvars[omnvars.size] = var_3de03bfa4e76b915;
@@ -913,16 +913,16 @@ function function_c9e5319d68e22011(list_ref, list_items, var_3cefc2b0c7f6f3ec) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x319b
-// Size: 0x106
+// Checksum 0x0, Offset: 0x3fc2
+// Size: 0x104
 function function_1114ac444eb63515(list_ref, items) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
-    assertex(self.var_a14cb42739301f30[list_ref].list.size == items.size, "<dev string:xc44>");
+    assertex(self.var_a14cb42739301f30[list_ref].list.size == items.size, "Trying to reorder items in the list, but the list sizes don't match");
     self.var_a14cb42739301f30[list_ref].list = [];
-    foreach (index, item_ref in items) {
+    foreach (item_ref in items) {
         item_data = function_9cee54c391590f92(list_ref, item_ref);
-        assertex(isdefined(item_data), "<dev string:xc8b>" + item_ref + "<dev string:xcd8>");
+        assertex(isdefined(item_data), "Trying to reorder list items for an item that does not currently exist: <" + item_ref + ">");
         self.var_a14cb42739301f30[list_ref].list[index] = item_data.var_3de03bfa4e76b915;
     }
     function_989fbe51aaf74cb(list_ref);
@@ -930,15 +930,15 @@ function function_1114ac444eb63515(list_ref, items) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a9
-// Size: 0x191
+// Checksum 0x0, Offset: 0x40ce
+// Size: 0x194
 function function_5270193c147bd4f(list_ref, var_e9648468480b0e14, var_e9648768480b14ad) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     var_8ad345cd8693672b = function_9cee54c391590f92(list_ref, var_e9648468480b0e14);
     var_8ad346cd8693695e = function_9cee54c391590f92(list_ref, var_e9648768480b14ad);
-    assertex(isdefined(var_8ad345cd8693672b), "<dev string:xcdd>" + var_e9648468480b0e14 + "<dev string:xd00>");
-    assertex(isdefined(var_8ad346cd8693695e), "<dev string:xcdd>" + var_e9648768480b14ad + "<dev string:xd00>");
+    assertex(isdefined(var_8ad345cd8693672b), "Trying to swap list items but <" + var_e9648468480b0e14 + "> does not exist in the list");
+    assertex(isdefined(var_8ad346cd8693695e), "Trying to swap list items but <" + var_e9648768480b14ad + "> does not exist in the list");
     index_1 = undefined;
     index_2 = undefined;
     var_ee925786ed8c373f = var_8ad345cd8693672b.var_3de03bfa4e76b915;
@@ -958,13 +958,13 @@ function function_5270193c147bd4f(list_ref, var_e9648468480b0e14, var_e964876848
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3442
-// Size: 0x109
+// Checksum 0x0, Offset: 0x426a
+// Size: 0x10b
 function function_52c3bc127d006d2a(list_ref, var_6251f6c82cd01420) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     list_size = self.var_a14cb42739301f30[list_ref].list.size;
-    assertex(list_size >= abs(var_6251f6c82cd01420), "<dev string:xd20>" + list_ref + "<dev string:xd3e>" + var_6251f6c82cd01420 + "<dev string:xd47>" + list_size + "<dev string:xd55>");
+    assertex(list_size >= abs(var_6251f6c82cd01420), "Attempting to shift list <" + list_ref + "> by " + var_6251f6c82cd01420 + "but, only " + list_size + " items exist in the list");
     shift_index = var_6251f6c82cd01420;
     if (var_6251f6c82cd01420 < 0) {
         shift_index += list_size;
@@ -977,10 +977,10 @@ function function_52c3bc127d006d2a(list_ref, var_6251f6c82cd01420) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3553
+// Checksum 0x0, Offset: 0x437d
 // Size: 0x60
 function function_b33be752bae80ae0(list_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     self.var_a14cb42739301f30[list_ref].list = array_reverse(self.var_a14cb42739301f30[list_ref].list);
     function_989fbe51aaf74cb(list_ref);
@@ -988,30 +988,30 @@ function function_b33be752bae80ae0(list_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35bb
+// Checksum 0x0, Offset: 0x43e5
 // Size: 0x67
 function function_6e7b649d7feb6bb8(list_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
-    assertex(isdefined(self.var_5805a2cdb3ddbe56) && isdefined(self.var_5805a2cdb3ddbe56[list_ref]), "<dev string:xd71>" + list_ref + "<dev string:xda0>");
+    assertex(isdefined(self.var_5805a2cdb3ddbe56) && isdefined(self.var_5805a2cdb3ddbe56[list_ref]), "Tried to get list item refs, but the list <" + list_ref + "> does not currently exist");
     return getarraykeys(self.var_5805a2cdb3ddbe56[list_ref]);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x362b
+// Checksum 0x0, Offset: 0x4455
 // Size: 0x3e
 function function_58cce4d095e706ab(list_ref, item_ref, var_7a0a75a3e70333fe) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     function_31a20eb9ab140d08(list_ref, [item_ref], var_7a0a75a3e70333fe);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3671
-// Size: 0xe1
+// Checksum 0x0, Offset: 0x449b
+// Size: 0xe0
 function function_31a20eb9ab140d08(list_ref, list_items, var_7a0a75a3e70333fe) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     if (!function_ada0825249682644(list_ref)) {
         return;
@@ -1032,10 +1032,10 @@ function function_31a20eb9ab140d08(list_ref, list_items, var_7a0a75a3e70333fe) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x375a
+// Checksum 0x0, Offset: 0x4583
 // Size: 0x5a
 function function_5df3186604c72b24(list_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     if (!function_ada0825249682644(list_ref)) {
         return;
@@ -1047,10 +1047,10 @@ function function_5df3186604c72b24(list_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x37bc
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x45e5
+// Size: 0xe4
 function function_88f7dd62c7058ef5(list_ref, item_ref, param) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     item_data = function_9cee54c391590f92(list_ref, item_ref);
@@ -1064,10 +1064,10 @@ function function_88f7dd62c7058ef5(list_ref, item_ref, param) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x38a6
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x46d1
+// Size: 0xe4
 function function_1f9e6ee15b7f47c9(list_ref, item_ref, state) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     item_data = function_9cee54c391590f92(list_ref, item_ref);
@@ -1081,10 +1081,10 @@ function function_1f9e6ee15b7f47c9(list_ref, item_ref, state) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3990
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x47bd
+// Size: 0xc3
 function function_cee2207c6855e73c(list_ref, item_ref, data_val) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     item_data = function_9cee54c391590f92(list_ref, item_ref);
@@ -1098,10 +1098,10 @@ function function_cee2207c6855e73c(list_ref, item_ref, data_val) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a59
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x4888
+// Size: 0xe5
 function function_3eec25a52a78f31f(list_ref, item_ref, field_values, no_timestamp) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     item_data = function_9cee54c391590f92(list_ref, item_ref);
@@ -1118,10 +1118,10 @@ function function_3eec25a52a78f31f(list_ref, item_ref, field_values, no_timestam
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b44
-// Size: 0xe6
+// Checksum 0x0, Offset: 0x4975
+// Size: 0xe8
 function function_9d1591ce32fb0823(list_ref, item_ref, current_pct, target_pct, time) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     item_data = function_9cee54c391590f92(list_ref, item_ref);
@@ -1135,10 +1135,10 @@ function function_9d1591ce32fb0823(list_ref, item_ref, current_pct, target_pct, 
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c32
-// Size: 0xe6
+// Checksum 0x0, Offset: 0x4a65
+// Size: 0xe8
 function function_6f4f043fa2101c0f(list_ref, item_ref, count, max_count, time) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     item_data = function_9cee54c391590f92(list_ref, item_ref);
@@ -1152,10 +1152,10 @@ function function_6f4f043fa2101c0f(list_ref, item_ref, count, max_count, time) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d20
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x4b55
+// Size: 0xa2
 function function_f86a348db854d294(list_ref, item_ref, timestamp) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     item_data = function_9cee54c391590f92(list_ref, item_ref);
@@ -1168,10 +1168,10 @@ function function_f86a348db854d294(list_ref, item_ref, timestamp) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dc9
+// Checksum 0x0, Offset: 0x4bff
 // Size: 0x63
 function function_91fe3a20ea5f30c5(list_ref, item_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     item_ref = tolower(item_ref);
     return isdefined(self.var_5805a2cdb3ddbe56) && isdefined(self.var_5805a2cdb3ddbe56[list_ref]) && isdefined(self.var_5805a2cdb3ddbe56[list_ref][item_ref]);
@@ -1179,20 +1179,20 @@ function function_91fe3a20ea5f30c5(list_ref, item_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e35
+// Checksum 0x0, Offset: 0x4c6b
 // Size: 0x53
 function function_714a8c636f582042(list_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     return isdefined(self.var_5805a2cdb3ddbe56) && isdefined(self.var_5805a2cdb3ddbe56[list_ref]) && self.var_5805a2cdb3ddbe56[list_ref].size > 0;
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e91
+// Checksum 0x0, Offset: 0x4cc7
 // Size: 0x7e
 function function_2acd5041c3f3305e(anchor_ent, widget_ref, widget_type, anchor_type, widget_struct) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     if (!isdefined(widget_struct)) {
         widget_struct = spawnstruct();
@@ -1204,100 +1204,100 @@ function function_2acd5041c3f3305e(anchor_ent, widget_ref, widget_type, anchor_t
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f17
+// Checksum 0x0, Offset: 0x4d4d
 // Size: 0x47
 function function_d54d04e9ec5b38e3(anchor_ent, widget_ref, param) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_af4f62f0f944a8f1(widget_ref, param);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f66
+// Checksum 0x0, Offset: 0x4d9c
 // Size: 0x47
 function function_1d125bd1128e9582(anchor_ent, widget_ref, data) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_b52897e8afbb0968(widget_ref, data);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fb5
+// Checksum 0x0, Offset: 0x4deb
 // Size: 0x47
 function function_ad5527feaeffa977(anchor_ent, widget_ref, state) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_d28fa5295a04d555(widget_ref, state);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4004
+// Checksum 0x0, Offset: 0x4e3a
 // Size: 0x4f
 function function_e426dd1d2fd9f6b5(anchor_ent, widget_ref, field_values, var_54a61fbefc52eb7f) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     return function_1f1c11d26b17770f(widget_ref, field_values, var_54a61fbefc52eb7f);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x405c
+// Checksum 0x0, Offset: 0x4e92
 // Size: 0x50
 function function_d0cd9bfbc5529d31(anchor_ent, widget_ref, field_values, no_timestamp) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_14a0ee2aaf9128c3(widget_ref, field_values, no_timestamp);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x40b4
+// Checksum 0x0, Offset: 0x4eea
 // Size: 0x59
 function function_7d0a2b811ae8aebd(anchor_ent, widget_ref, current_pct, target_pct, time) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_ddc9d8c3b0ef6b87(widget_ref, current_pct, target_pct, time);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4115
+// Checksum 0x0, Offset: 0x4f4b
 // Size: 0x50
 function function_34831569ded8586a(anchor_ent, widget_ref, current_pct, bool) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_315df71064cc10b8(widget_ref, current_pct, bool);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x416d
+// Checksum 0x0, Offset: 0x4fa3
 // Size: 0x50
 function function_2b6611deface24de(anchor_ent, widget_ref, current_pct, current_alpha) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_a435f7db4b861f0c(widget_ref, current_pct, current_alpha);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c5
+// Checksum 0x0, Offset: 0x4ffb
 // Size: 0x47
 function function_5c09e38e4b882a2a(anchor_ent, widget_ref, timestamp) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     widget_ref = tolower(widget_ref) + anchor_ent getentitynumber();
     function_1f51eabeded054f0(widget_ref, timestamp);
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4214
-// Size: 0x4c
+// Checksum 0x0, Offset: 0x504a
+// Size: 0x4b
 function function_aae81ea024d45e77(anchor_ent, widget_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     ent_num = anchor_ent getentitynumber();
     widget_ref = tolower(widget_ref) + ent_num;
     function_bb8cf49fbbe8c0d8(widget_ref, ent_num);
@@ -1305,19 +1305,19 @@ function function_aae81ea024d45e77(anchor_ent, widget_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4268
+// Checksum 0x0, Offset: 0x509d
 // Size: 0x2c
 function function_bb17fbfad71dc49b(anchor_ent) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     function_984451ca1b1af664(anchor_ent getentitynumber());
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x429c
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x50d1
+// Size: 0x6e
 function function_b76083c9909e209a(anchor_ent, widget_ref) {
-    assertex(isplayer(self), "<dev string:x2ef>");
+    assertex(isplayer(self), "Must be called on a player.");
     ent_num = anchor_ent getentitynumber();
     widget_ref = tolower(widget_ref) + ent_num;
     return isdefined(self.var_414b9a0d57c1e081) && isdefined(self.var_414b9a0d57c1e081[ent_num]) && isdefined(self.var_414b9a0d57c1e081[ent_num][widget_ref]);
@@ -1325,7 +1325,7 @@ function function_b76083c9909e209a(anchor_ent, widget_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x4314
+// Checksum 0x0, Offset: 0x5148
 // Size: 0x6e
 function private function_bb8cf49fbbe8c0d8(widget_ref, ent_num) {
     if (isdefined(self.var_414b9a0d57c1e081[ent_num])) {
@@ -1342,11 +1342,11 @@ function private function_bb8cf49fbbe8c0d8(widget_ref, ent_num) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x438a
-// Size: 0x93
+// Checksum 0x0, Offset: 0x51be
+// Size: 0x90
 function private function_984451ca1b1af664(ent_num) {
     if (isdefined(self.var_414b9a0d57c1e081) && isdefined(self.var_414b9a0d57c1e081[ent_num])) {
-        foreach (widget_ref, index in self.var_414b9a0d57c1e081[ent_num]) {
+        foreach (index in self.var_414b9a0d57c1e081[ent_num]) {
             function_fb3c9a259f146781(widget_ref);
         }
         self.var_414b9a0d57c1e081[ent_num] = undefined;
@@ -1356,8 +1356,8 @@ function private function_984451ca1b1af664(ent_num) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4425
-// Size: 0x60
+// Checksum 0x0, Offset: 0x5256
+// Size: 0x5f
 function private function_583777ac2b762d3(ent) {
     if (isplayer(self)) {
         self endon("disconnected");
@@ -1371,14 +1371,14 @@ function private function_583777ac2b762d3(ent) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x448d
-// Size: 0x13d
+// Checksum 0x0, Offset: 0x52bd
+// Size: 0x13c
 function private function_b36e048ccaca2da4(value, archetype, field, packed_value, clear) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
-    assertex(isdefined(data[archetype]), "<dev string:xdbe>" + archetype + "<dev string:xe06>");
-    assertex(isdefined(data[archetype][field]), "<dev string:xe21>" + archetype + "<dev string:xe69>" + field + "<dev string:xe7b>");
+    assertex(isdefined(data[archetype]), "Trying to set anchored widget archetype field values for archetype <" + archetype + "> which does not exist.");
+    assertex(isdefined(data[archetype][field]), "Trying to set anchored widget archetype field value for archetype < " + archetype + "> when field <" + field + "> does not exist.");
     if (value > data[archetype][field].max_value) {
-        assert("<dev string:xe90>" + archetype + "<dev string:x4b>" + field + "<dev string:xeb4>" + value + "<dev string:xece>" + data[archetype][field].max_value + "<dev string:xee2>");
+        assert("Max value for widget archetype <" + archetype + ">, field <" + field + "> exceeded.  Value is " + value + ".  Max value is " + data[archetype][field].max_value + ".  Clamping to max value.");
         value = data[archetype][field].max_value;
     }
     value /= data[archetype][field].step_increment;
@@ -1392,12 +1392,12 @@ function private function_b36e048ccaca2da4(value, archetype, field, packed_value
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x45d3
-// Size: 0xb9
+// Checksum 0x0, Offset: 0x5402
+// Size: 0xb8
 function private function_f58cb12303817e47(value, archetype, field) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
-    assertex(isdefined(data[archetype]), "<dev string:xdbe>" + archetype + "<dev string:xe06>");
-    assertex(isdefined(data[archetype][field]), "<dev string:xe21>" + archetype + "<dev string:xe69>" + field + "<dev string:xe7b>");
+    assertex(isdefined(data[archetype]), "Trying to set anchored widget archetype field values for archetype <" + archetype + "> which does not exist.");
+    assertex(isdefined(data[archetype][field]), "Trying to set anchored widget archetype field value for archetype < " + archetype + "> when field <" + field + "> does not exist.");
     value = (value & data[archetype][field].mask) >> data[archetype][field].shift;
     value *= data[archetype][field].step_increment;
     return value;
@@ -1405,17 +1405,17 @@ function private function_f58cb12303817e47(value, archetype, field) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x4695
-// Size: 0x182
+// Checksum 0x0, Offset: 0x54c3
+// Size: 0x183
 function private function_e375e5ca24ea7bf4(widget_type, omnvar, field_values, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
-    assertex(isdefined(data.widget_types[widget_type]), "<dev string:xeff>" + widget_type + "<dev string:xe7b>");
+    assertex(isdefined(data.widget_types[widget_type]), "Widget type <" + widget_type + "> does not exist.");
     archetype = data.widget_types[widget_type].archetype;
-    assertex(isdefined(archetype), "<dev string:xeff>" + widget_type + "<dev string:xf10>");
+    assertex(isdefined(archetype), "Widget type <" + widget_type + "> is not an archetype.");
     packed_value = 0;
     foreach (field, value in field_values) {
-        assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "<dev string:xf2a>" + field + "<dev string:xf35>" + archetype + "<dev string:xf5f>");
+        assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
         value = clamp(value, 0, var_1c4f33d06f183332[archetype][field].max_value);
         packed_value = function_b36e048ccaca2da4(value, archetype, field, packed_value);
     }
@@ -1427,16 +1427,16 @@ function private function_e375e5ca24ea7bf4(widget_type, omnvar, field_values, va
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x481f
-// Size: 0x134
+// Checksum 0x0, Offset: 0x564e
+// Size: 0x136
 function private function_e6df6627eb26284f(widget_type, omnvar, field, value) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
-    assertex(isdefined(data.widget_types[widget_type]), "<dev string:xeff>" + widget_type + "<dev string:xe7b>");
+    assertex(isdefined(data.widget_types[widget_type]), "Widget type <" + widget_type + "> does not exist.");
     archetype = data.widget_types[widget_type].archetype;
-    assertex(isdefined(archetype), "<dev string:xeff>" + widget_type + "<dev string:xf10>");
+    assertex(isdefined(archetype), "Widget type <" + widget_type + "> is not an archetype.");
     packed_value = self getclientomnvar(omnvar);
-    assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "<dev string:xf2a>" + field + "<dev string:xf35>" + archetype + "<dev string:xf5f>");
+    assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
     value = clamp(value, 0, var_1c4f33d06f183332[archetype][field].max_value);
     packed_value = function_b36e048ccaca2da4(value, archetype, field, packed_value, 1);
     self setclientomnvar(omnvar, packed_value);
@@ -1444,19 +1444,19 @@ function private function_e6df6627eb26284f(widget_type, omnvar, field, value) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x495b
+// Checksum 0x0, Offset: 0x578c
 // Size: 0x1ae
 function private function_61dda643ffbb43a0(widget_type, omnvar, fields) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
-    assertex(isdefined(data.widget_types[widget_type]), "<dev string:xeff>" + widget_type + "<dev string:xe7b>");
+    assertex(isdefined(data.widget_types[widget_type]), "Widget type <" + widget_type + "> does not exist.");
     archetype = data.widget_types[widget_type].archetype;
-    assertex(isdefined(archetype), "<dev string:xeff>" + widget_type + "<dev string:xf10>");
+    assertex(isdefined(archetype), "Widget type <" + widget_type + "> is not an archetype.");
     value = self getclientomnvar(omnvar);
     ret_fields = [];
     if (isdefined(fields)) {
         foreach (field in fields) {
-            assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "<dev string:xf2a>" + field + "<dev string:xf35>" + archetype + "<dev string:xf5f>");
+            assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
             ret_fields[field] = function_f58cb12303817e47(value, archetype, field);
         }
     } else {
@@ -1469,13 +1469,13 @@ function private function_61dda643ffbb43a0(widget_type, omnvar, fields) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x4b12
-// Size: 0x157
+// Checksum 0x0, Offset: 0x5943
+// Size: 0x159
 function private function_ab8c8292f0d469c4(widget_type, omnvar, current_pct, target_pct, time, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_progress";
-    assertex(data.widget_types[widget_type].archetype == archetype, "<dev string:xeff>" + widget_type + "<dev string:xf65>" + archetype + "<dev string:xf75>");
+    assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
     current_pct = clamp(current_pct, 0, var_1c4f33d06f183332[archetype]["current_pct"].max_value);
     target_pct = clamp(target_pct, 0, var_1c4f33d06f183332[archetype]["target_pct"].max_value);
     packed_value = 0;
@@ -1488,13 +1488,13 @@ function private function_ab8c8292f0d469c4(widget_type, omnvar, current_pct, tar
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x4c71
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x5aa4
+// Size: 0x11f
 function private function_42866bf1e84c1d21(widget_type, omnvar, current_pct, bool, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_progress_bool";
-    assertex(data.widget_types[widget_type].archetype == archetype, "<dev string:xeff>" + widget_type + "<dev string:xf65>" + archetype + "<dev string:xf75>");
+    assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
     current_pct = clamp(current_pct, 0, var_1c4f33d06f183332[archetype]["current_pct"].max_value);
     packed_value = 0;
     packed_value = function_b36e048ccaca2da4(current_pct, archetype, "current_pct", packed_value);
@@ -1505,13 +1505,13 @@ function private function_42866bf1e84c1d21(widget_type, omnvar, current_pct, boo
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x4d96
-// Size: 0x13d
+// Checksum 0x0, Offset: 0x5bcb
+// Size: 0x13f
 function private function_7db1020b4d70e9e7(widget_type, omnvar, current_pct, current_alpha, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_progress_alpha";
-    assertex(data.widget_types[widget_type].archetype == archetype, "<dev string:xeff>" + widget_type + "<dev string:xf65>" + archetype + "<dev string:xf75>");
+    assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
     current_pct = clamp(current_pct, 0, var_1c4f33d06f183332[archetype]["current_pct"].max_value);
     current_alpha = clamp(current_alpha, 0, var_1c4f33d06f183332[archetype]["current_alpha"].max_value);
     packed_value = 0;
@@ -1523,13 +1523,13 @@ function private function_7db1020b4d70e9e7(widget_type, omnvar, current_pct, cur
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x4edb
-// Size: 0x17f
+// Checksum 0x0, Offset: 0x5d12
+// Size: 0x181
 function private function_99bfbb496e5ac12a(widget_type, omnvar, count, max_count, time, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_count";
-    assertex(data.widget_types[widget_type].archetype == archetype, "<dev string:xeff>" + widget_type + "<dev string:xf65>" + archetype + "<dev string:xf75>");
+    assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
     count = clamp(count, 0, var_1c4f33d06f183332[archetype]["count"].max_value);
     if (isdefined(max_count)) {
         max_count = clamp(max_count, 0, var_1c4f33d06f183332[archetype]["max_count"].max_value);
@@ -1551,13 +1551,13 @@ function private function_99bfbb496e5ac12a(widget_type, omnvar, count, max_count
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x5062
-// Size: 0x126
+// Checksum 0x0, Offset: 0x5e9b
+// Size: 0x128
 function private function_36bba30ae80af891(widget_type, omnvar, horizontal_alignment, vertical_alignment) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_list_item_alignment";
-    assertex(data.widget_types[widget_type].archetype == archetype, "<dev string:xeff>" + widget_type + "<dev string:xf65>" + archetype + "<dev string:xf75>");
+    assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
     horizontal_alignment = clamp(horizontal_alignment, 0, var_1c4f33d06f183332[archetype]["horizontal_alignment"].max_value);
     vertical_alignment = clamp(vertical_alignment, 0, var_1c4f33d06f183332[archetype]["vertical_alignment"].max_value);
     packed_value = 0;
@@ -1568,8 +1568,8 @@ function private function_36bba30ae80af891(widget_type, omnvar, horizontal_align
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x5190
-// Size: 0x88
+// Checksum 0x0, Offset: 0x5fcb
+// Size: 0x87
 function private function_cc46ab20b75d5c58(value, omnvar, ref_table, mask, shift) {
     if (isint(value)) {
         value = value;
@@ -1591,7 +1591,7 @@ function private function_cc46ab20b75d5c58(value, omnvar, ref_table, mask, shift
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5220
+// Checksum 0x0, Offset: 0x605a
 // Size: 0x82
 function private function_f801c3e967c7768a(widget, shouldhide) {
     if (!isdefined(self.var_5b0479a29905e04d)) {
@@ -1612,12 +1612,12 @@ function private function_f801c3e967c7768a(widget, shouldhide) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x52ab
-// Size: 0x12a
+// Checksum 0x0, Offset: 0x60e5
+// Size: 0x12b
 function private function_f94203b920f0ba27(widget_ref, widget_type) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     index = undefined;
-    assertex(isplayer(self), "<dev string:xf8b>");
+    assertex(isplayer(self), "Hud management functions other than init must be called on a player");
     if (!isdefined(self.var_a219288779b991ce)) {
         self.var_a219288779b991ce = [];
         for (i = 0; i < data.var_4dc78c94cd673b03; i++) {
@@ -1640,12 +1640,12 @@ function private function_f94203b920f0ba27(widget_ref, widget_type) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x53de
+// Checksum 0x0, Offset: 0x6219
 // Size: 0x96
 function private function_cca9604860a60e2a(widget_ref) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     index = undefined;
-    assertex(isplayer(self), "<dev string:xf8b>");
+    assertex(isplayer(self), "Hud management functions other than init must be called on a player");
     if (isdefined(self.var_a14cb42739301f30[widget_ref])) {
         index = self.var_a14cb42739301f30[widget_ref].index;
     }
@@ -1658,10 +1658,10 @@ function private function_cca9604860a60e2a(widget_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x547d
-// Size: 0x71
+// Checksum 0x0, Offset: 0x62b8
+// Size: 0x6e
 function private scripted_widget_closed(index) {
-    foreach (widget_ref, data in self.var_a14cb42739301f30) {
+    foreach (data in self.var_a14cb42739301f30) {
         if (data.index == index) {
             thread function_fb3c9a259f146781(widget_ref);
             return;
@@ -1671,8 +1671,8 @@ function private scripted_widget_closed(index) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x54f6
-// Size: 0x156
+// Checksum 0x0, Offset: 0x632e
+// Size: 0x15e
 function private function_f77df8178a108beb(index) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
     var_94a50c0a0059e601 = "ui_scripted_widget_" + "type_" + index;
@@ -1697,8 +1697,8 @@ function private function_f77df8178a108beb(index) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x5654
-// Size: 0x262
+// Checksum 0x0, Offset: 0x6494
+// Size: 0x26a
 function private function_eabc5d231d49caab(list_ref, item_ref, widget_type) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.var_56a961d04403887;
     var_3de03bfa4e76b915 = undefined;
@@ -1753,8 +1753,8 @@ function private function_eabc5d231d49caab(list_ref, item_ref, widget_type) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x58bf
-// Size: 0xd0
+// Checksum 0x0, Offset: 0x6707
+// Size: 0xd1
 function private function_91905deae6454c5d(list_ref, group_index) {
     group_mask = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.var_56a961d04403887.group_mask;
     group_shift = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.var_56a961d04403887.group_shift;
@@ -1767,8 +1767,8 @@ function private function_91905deae6454c5d(list_ref, group_index) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5997
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x67e0
+// Size: 0xea
 function private function_fbb932b933235b5e(list_ref, item_ref) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.var_56a961d04403887;
     var_3de03bfa4e76b915 = undefined;
@@ -1788,8 +1788,8 @@ function private function_fbb932b933235b5e(list_ref, item_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5a89
-// Size: 0xee
+// Checksum 0x0, Offset: 0x68d3
+// Size: 0xed
 function private function_b267732c9e92f306(list_ref) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.var_56a961d04403887;
     if (isdefined(self.var_5805a2cdb3ddbe56[list_ref])) {
@@ -1805,8 +1805,8 @@ function private function_b267732c9e92f306(list_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x5b7f
-// Size: 0x14d
+// Checksum 0x0, Offset: 0x69c8
+// Size: 0x14c
 function private function_5afd39d9a06be177(list_ref, items, omnvars, var_3cefc2b0c7f6f3ec) {
     if (istrue(var_3cefc2b0c7f6f3ec)) {
         self.var_a14cb42739301f30[list_ref].list = array_combine(omnvars, self.var_a14cb42739301f30[list_ref].list);
@@ -1814,7 +1814,7 @@ function private function_5afd39d9a06be177(list_ref, items, omnvars, var_3cefc2b
         self.var_a14cb42739301f30[list_ref].list = array_combine(self.var_a14cb42739301f30[list_ref].list, omnvars);
     }
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    foreach (index, item in items) {
+    foreach (item in items) {
         var_94a50c0a0059e601 = function_e5a3c7e8ca795281(self.var_a14cb42739301f30[list_ref].group, omnvars[index], "type_");
         self setclientomnvar(var_94a50c0a0059e601, data.widget_types[item].index);
     }
@@ -1823,7 +1823,7 @@ function private function_5afd39d9a06be177(list_ref, items, omnvars, var_3cefc2b
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5cd4
+// Checksum 0x0, Offset: 0x6b1c
 // Size: 0x4d
 function private function_2654508daa8b0930(list_ref, items) {
     self.var_a14cb42739301f30[list_ref].list = array_remove_array(self.var_a14cb42739301f30[list_ref].list, items);
@@ -1832,8 +1832,8 @@ function private function_2654508daa8b0930(list_ref, items) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5d29
-// Size: 0xeb
+// Checksum 0x0, Offset: 0x6b71
+// Size: 0xed
 function private function_989fbe51aaf74cb(list_ref) {
     max_items = 8;
     value = 0;
@@ -1852,8 +1852,8 @@ function private function_989fbe51aaf74cb(list_ref) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5e1c
-// Size: 0xc0
+// Checksum 0x0, Offset: 0x6c66
+// Size: 0xc3
 function private function_496f711a9ab7a47f(group, var_3de03bfa4e76b915) {
     var_3de03bfa4e76b915 = function_3e551e16074e030e(group, var_3de03bfa4e76b915);
     var_94a50c0a0059e601 = "ui_scripted_list_item_" + "type_" + var_3de03bfa4e76b915;
@@ -1870,7 +1870,7 @@ function private function_496f711a9ab7a47f(group, var_3de03bfa4e76b915) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5ee4
+// Checksum 0x0, Offset: 0x6d31
 // Size: 0x19
 function private function_3e551e16074e030e(group, index) {
     return index + group * 8;
@@ -1878,7 +1878,7 @@ function private function_3e551e16074e030e(group, index) {
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x5f06
+// Checksum 0x0, Offset: 0x6d53
 // Size: 0x2e
 function private function_e5a3c7e8ca795281(group, var_3de03bfa4e76b915, var_a79e2ddd22fbba9a) {
     var_3de03bfa4e76b915 = function_3e551e16074e030e(group, var_3de03bfa4e76b915);
@@ -1887,8 +1887,8 @@ function private function_e5a3c7e8ca795281(group, var_3de03bfa4e76b915, var_a79e
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5f3d
-// Size: 0x7a
+// Checksum 0x0, Offset: 0x6d8a
+// Size: 0x79
 function private function_9cee54c391590f92(list_ref, item_ref) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.var_56a961d04403887;
     if (isdefined(self.var_5805a2cdb3ddbe56) && isdefined(self.var_5805a2cdb3ddbe56[list_ref]) && isdefined(self.var_5805a2cdb3ddbe56[list_ref][item_ref])) {

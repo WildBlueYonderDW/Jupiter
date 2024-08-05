@@ -6,7 +6,7 @@
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21f
+// Checksum 0x0, Offset: 0x1e8
 // Size: 0x43
 function init(var_8611e1d824bbdb4a) {
     setdvarifuninitialized(@"hash_15c99dd2f2a0921a", 1);
@@ -18,7 +18,7 @@ function init(var_8611e1d824bbdb4a) {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26a
+// Checksum 0x0, Offset: 0x233
 // Size: 0x30
 function initplayer() {
     self.whizby = spawnstruct();
@@ -28,8 +28,8 @@ function initplayer() {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2
-// Size: 0x222
+// Checksum 0x0, Offset: 0x26b
+// Size: 0x225
 function function_a6e6611efb4164d5(attacker, distance, position, forward) {
     /#
         if (getdvarint(@"hash_7774635c5712048e")) {
@@ -52,20 +52,20 @@ function function_a6e6611efb4164d5(attacker, distance, position, forward) {
         } else if (isai(attacker)) {
             weapon = attacker.weapon;
         } else {
-            assertmsg("<dev string:x20>");
+            assertmsg("attacker in whizby is neither a player or AI");
         }
         weapclass = weaponclass(weapon);
         /#
             if (getdvar(@"hash_a6017ebde71968e5") != "<dev string:x1c>") {
                 switch (getdvar(@"hash_a6017ebde71968e5")) {
                 case #"hash_900cb06c552c5063": 
-                    weapclass = "<dev string:x57>";
+                    weapclass = "<dev string:x21>";
                     break;
                 case #"hash_28a7ce6c1f1955d9": 
-                    weapclass = "<dev string:x65>";
+                    weapclass = "<dev string:x29>";
                     break;
                 case #"hash_2f69646c2276faf4": 
-                    weapclass = "<dev string:x75>";
+                    weapclass = "<dev string:x33>";
                     break;
                 }
             }
@@ -82,7 +82,7 @@ function function_a6e6611efb4164d5(attacker, distance, position, forward) {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cc
+// Checksum 0x0, Offset: 0x498
 // Size: 0x106
 function function_43d3999d682de782(attacker, distance, position, forward, time) {
     if (getdvarint(@"hash_15c99dd2f2a0921a", 1) != 1) {
@@ -120,8 +120,8 @@ function function_43d3999d682de782(attacker, distance, position, forward, time) 
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5db
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x5a7
+// Size: 0x4a
 function function_cee14923e29e38ab(time) {
     if (!isdefined(self.lastdamagedtime)) {
         return false;
@@ -135,8 +135,8 @@ function function_cee14923e29e38ab(time) {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62f
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x5fa
+// Size: 0xbc
 function function_2fad28813245304d(var_85b3cf23250d4543) {
     zoomlevel = self playergetzoomfov();
     zoomfactor = math::normalize_value(4, 65, zoomlevel);
@@ -150,8 +150,8 @@ function function_2fad28813245304d(var_85b3cf23250d4543) {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ef
-// Size: 0x13c
+// Checksum 0x0, Offset: 0x6be
+// Size: 0x13d
 function function_b04dc57d51b057c(weapclass, weapon, var_85b3cf23250d4543) {
     eventtype = undefined;
     highestevent = 2;
@@ -198,13 +198,17 @@ function function_b04dc57d51b057c(weapclass, weapon, var_85b3cf23250d4543) {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x833
-// Size: 0x27e
+// Checksum 0x0, Offset: 0x803
+// Size: 0x2bd
 function function_5e980dbce5b2122(attacker, position, time, var_85b3cf23250d4543, distance) {
     playerang = self getplayerangles();
     eyepos = self geteye();
     var_14d9d4fffc09a76d = anglestoaxis(playerang);
-    attackerpos = attacker.origin + (0, 0, 50);
+    if (isdefined(attacker.currentweapon) && attacker tagexists("tag_flash")) {
+        attackerpos = attacker gettagorigin("tag_flash");
+    } else {
+        attackerpos = attacker.origin + (0, 0, 50);
+    }
     toattackervec = vectornormalize(attackerpos - eyepos);
     var_7caf68458d047d37 = vectordot(toattackervec, var_14d9d4fffc09a76d["forward"]);
     var_31659d73698c898a = vectordot(toattackervec, var_14d9d4fffc09a76d["right"]);
@@ -238,8 +242,8 @@ function function_5e980dbce5b2122(attacker, position, time, var_85b3cf23250d4543
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xab9
-// Size: 0x84
+// Checksum 0x0, Offset: 0xac8
+// Size: 0x86
 function function_dbabf852a35102e4(var_31659d73698c898a, var_7f628b9bd51160d5) {
     var_45c4bee623ce2bf8 = abs(var_31659d73698c898a) + abs(var_7f628b9bd51160d5);
     if (var_45c4bee623ce2bf8 > 0) {
@@ -262,8 +266,8 @@ function function_dbabf852a35102e4(var_31659d73698c898a, var_7f628b9bd51160d5) {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb46
-// Size: 0x11a
+// Checksum 0x0, Offset: 0xb57
+// Size: 0x11e
 function function_21676cfe493c7014(weapclass, distance, time) {
     basemag = 0.8;
     switch (weapclass) {
@@ -291,7 +295,7 @@ function function_21676cfe493c7014(weapclass, distance, time) {
 
 // Namespace whizby / namespace_d55725aa5dd0745b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc69
+// Checksum 0x0, Offset: 0xc7e
 // Size: 0x20
 function function_bcd1a794fb26ee5c() {
     self.whizby.cooldown = randomfloatrange(100, 450);
@@ -301,33 +305,33 @@ function function_bcd1a794fb26ee5c() {
 
     // Namespace whizby / namespace_d55725aa5dd0745b
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc91
+    // Checksum 0x0, Offset: 0xca6
     // Size: 0x4d
     function function_ecc51bc3ffb94164() {
         setdevdvar(@"hash_15c99dd2f2a0921a", 1);
         if (isbot(self)) {
             return;
         }
-        self endon("<dev string:x7f>");
-        self endon("<dev string:x88>");
+        self endon("<dev string:x3a>");
+        self endon("<dev string:x40>");
         thread function_4905c442ccddf750();
         while (true) {
-            self waittill("<dev string:x96>");
+            self waittill("<dev string:x4b>");
             function_f3cad80dd510b802();
         }
     }
 
     // Namespace whizby / namespace_d55725aa5dd0745b
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xce6
+    // Checksum 0x0, Offset: 0xcfb
     // Size: 0x43
     function function_4905c442ccddf750() {
         while (true) {
-            while (!self buttonpressed("<dev string:xa7>")) {
+            while (!self buttonpressed("<dev string:x59>")) {
                 wait 0.05;
             }
-            self notify("<dev string:x96>");
-            while (self buttonpressed("<dev string:xa7>")) {
+            self notify("<dev string:x4b>");
+            while (self buttonpressed("<dev string:x59>")) {
                 wait 0.05;
             }
         }
@@ -335,10 +339,10 @@ function function_bcd1a794fb26ee5c() {
 
     // Namespace whizby / namespace_d55725aa5dd0745b
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd31
-    // Size: 0x222
+    // Checksum 0x0, Offset: 0xd46
+    // Size: 0x229
     function function_f3cad80dd510b802() {
-        self endon("<dev string:x96>");
+        self endon("<dev string:x4b>");
         i = 0;
         dist = [10, 25, 50, 75];
         attacker = undefined;
@@ -362,7 +366,7 @@ function function_bcd1a794fb26ee5c() {
                 vecoffset = rotatevector(dirtoattacker, (0, 90 * var_86e3015864ec3379, 0));
                 height = (0, 0, randomfloatrange(45, 65));
                 position = self.origin + height + vecoffset * dist[i];
-                self notify("<dev string:xb5>", attacker, dist[i], position, dirtoattacker * -1);
+                self notify("<dev string:x64>", attacker, dist[i], position, dirtoattacker * -1);
                 i++;
                 if (i >= dist.size) {
                     i = 0;
@@ -387,18 +391,18 @@ function function_bcd1a794fb26ee5c() {
 
     // Namespace whizby / namespace_d55725aa5dd0745b
     // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf5b
-    // Size: 0xdd
+    // Checksum 0x0, Offset: 0xf77
+    // Size: 0xdc
     function function_708f66676f77c951(attacker, position, backorigin, var_85b3cf23250d4543, distance) {
         if (isdefined(attacker) && isdefined(position)) {
-            if (isdefined(attacker.currentweapon) && attacker tagexists("<dev string:xc5>")) {
-                start = attacker gettagorigin("<dev string:xc5>");
+            if (isdefined(attacker.currentweapon) && attacker tagexists("<dev string:x71>")) {
+                start = attacker gettagorigin("<dev string:x71>");
             } else {
                 start = attacker.origin + (0, 0, 50);
             }
             line(start, position, (1, 0, 0), 1, 1, 20);
             line(backorigin, position, (0.5, 0.5, 0.5), 1, 1, 20);
-            iprintln("<dev string:xd2>" + distance + "<dev string:xed>" + var_85b3cf23250d4543 + "<dev string:x101>");
+            iprintln("<dev string:x7b>" + distance + "<dev string:x93>" + var_85b3cf23250d4543 + "<dev string:xa4>");
         }
     }
 

@@ -11,7 +11,6 @@
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\mp\damage.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
 #using script_2669878cf5a1b6bc;
 #using scripts\mp\utility\weapon.gsc;
 #using scripts\mp\events.gsc;
@@ -32,7 +31,7 @@
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ce
+// Checksum 0x0, Offset: 0x75c
 // Size: 0xb2
 function register_ai_damage_callbacks() {
     level.agent_funcs["actor_enemy_lw_base_br"]["on_damaged"] = &callbacksoldieragentdamaged;
@@ -46,8 +45,8 @@ function register_ai_damage_callbacks() {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x988
-// Size: 0xa97
+// Checksum 0x0, Offset: 0x816
+// Size: 0xaad
 function callbacksoldieragentdamaged(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     evictim = self;
     if (!isdefined(evictim.agent_type)) {
@@ -73,7 +72,7 @@ function callbacksoldieragentdamaged(einflictor, eattacker, idamage, idflags, sm
     if (!shoulddodamage) {
         /#
             if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                println("<dev string:x33>");
+                println("<dev string:x30>");
             }
         #/
         return;
@@ -100,7 +99,7 @@ function callbacksoldieragentdamaged(einflictor, eattacker, idamage, idflags, sm
     if ((isplayerdamage || var_7543d4fe49c53684) && istrue(evictim.invulnerable) && smeansofdeath != "MOD_SUICIDE") {
         /#
             if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                println("<dev string:x53>");
+                println("<dev string:x4d>");
             }
         #/
         return;
@@ -256,20 +255,20 @@ function callbacksoldieragentdamaged(einflictor, eattacker, idamage, idflags, sm
     }
     /#
         if (getdvarint(@"hash_f42eefd3e1b79376") != 0 && idamage != initial_damage) {
-            println("<dev string:x65>" + idamage);
+            println("<dev string:x5c>" + idamage);
         }
     #/
     if (isdefined(evictim.unittype) && isdefined(level.agent_funcs[evictim.unittype]) && isdefined(level.agent_funcs[evictim.unittype]["on_damaged_finished"])) {
         evictim [[ level.agent_funcs[evictim.unittype]["on_damaged_finished"] ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname);
         return;
     }
-    assert(isdefined(level.agent_funcs[evictim.agent_type]["<dev string:x7c>"]));
+    assert(isdefined(level.agent_funcs[evictim.agent_type]["on_damaged_finished"]));
     evictim [[ level.agent_funcs[evictim.agent_type]["on_damaged_finished"] ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname);
 }
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1427
+// Checksum 0x0, Offset: 0x12cb
 // Size: 0x43
 function private function_2587e7c010a44740() {
     if (!isdefined(level.var_3749fd90367bc366)) {
@@ -283,7 +282,7 @@ function private function_2587e7c010a44740() {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x1473
+// Checksum 0x0, Offset: 0x1317
 // Size: 0xe5
 function callbacksoldieragentgametypedamagefinished(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname) {
     if (smeansofdeath == "MOD_SUICIDE") {
@@ -304,8 +303,8 @@ function callbacksoldieragentgametypedamagefinished(einflictor, eattacker, idama
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x1560
-// Size: 0x933
+// Checksum 0x0, Offset: 0x1404
+// Size: 0x911
 function callbacksoldieragentgametypekilled(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration) {
     if (isdefined(level.spawnloopupdatefunc)) {
         [[ level.spawnloopupdatefunc ]](eattacker, objweapon);
@@ -331,8 +330,7 @@ function callbacksoldieragentgametypekilled(einflictor, eattacker, idamage, smea
     }
     isplayerattacker = isdefined(eattacker) && isplayer(eattacker);
     var_c611d3b6a31f919 = isdefined(eattacker) && isdefined(eattacker.owner) && isplayer(eattacker.owner);
-    var_4057c6ccc0529d32 = eattacker scripts\mp\utility\killstreak::isjuggernaut();
-    iskillstreakweapon = var_4057c6ccc0529d32 || namespace_e0ee43ef2dddadaa::iskillstreakweapon(objweapon.basename);
+    iskillstreakweapon = namespace_e0ee43ef2dddadaa::iskillstreakweapon(objweapon.basename);
     isvehicleweapon = scripts\mp\utility\weapon::isvehicleweapon(objweapon.basename);
     playerattacker = undefined;
     if (isplayerattacker) {
@@ -405,7 +403,6 @@ function callbacksoldieragentgametypekilled(einflictor, eattacker, idamage, smea
                 }
                 if (istrue(playerattacker.modifiers["headshot"])) {
                     playerattacker thread scripts\mp\utility\points::doScoreEvent(#"headshot");
-                    playerattacker thread scripts\mp\events::killeventtextpopup(#"headshot", 0);
                 }
                 if (istrue(playerattacker.modifiers["pointblank"])) {
                     playerattacker thread scripts\mp\utility\points::doScoreEvent(#"pointblank");
@@ -481,7 +478,7 @@ function callbacksoldieragentgametypekilled(einflictor, eattacker, idamage, smea
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e9b
+// Checksum 0x0, Offset: 0x1d1d
 // Size: 0xad
 function is_friendly_damage(agent, attacker) {
     if (isdefined(attacker) && isdefined(agent) && isdefined(agent.team)) {
@@ -497,7 +494,7 @@ function is_friendly_damage(agent, attacker) {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f51
+// Checksum 0x0, Offset: 0x1dd3
 // Size: 0x99
 function should_do_damage_checks(eattacker, idamage, smeansofdeath, sweapon, shitloc, victim) {
     if (!isdefined(sweapon)) {
@@ -512,7 +509,7 @@ function should_do_damage_checks(eattacker, idamage, smeansofdeath, sweapon, shi
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff3
+// Checksum 0x0, Offset: 0x1e75
 // Size: 0x20
 function is_suicide_bomber() {
     return istrue(isdefined(self.unittype) && self.unittype == "suicidebomber");
@@ -520,8 +517,8 @@ function is_suicide_bomber() {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x201c
-// Size: 0xea
+// Checksum 0x0, Offset: 0x1e9e
+// Size: 0xe9
 function adjust_damage_based_on_weaponclass(idamage, sweapon, weaponclass, type, attacker) {
     modifieddamage = idamage;
     switch (weaponclass) {
@@ -552,7 +549,7 @@ function adjust_damage_based_on_weaponclass(idamage, sweapon, weaponclass, type,
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x210f
+// Checksum 0x0, Offset: 0x1f90
 // Size: 0x22
 function is_flashbang(weaponname, objweapon, inflictor) {
     return weaponname == "flash_grenade_mp";
@@ -560,7 +557,7 @@ function is_flashbang(weaponname, objweapon, inflictor) {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x213a
+// Checksum 0x0, Offset: 0x1fbb
 // Size: 0x12
 function is_gas(weaponname) {
     return weaponname == "gas_mp";
@@ -568,8 +565,8 @@ function is_gas(weaponname) {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2155
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x1fd6
+// Size: 0xc8
 function handle_death_sounds(attacker, victim, smeansofdeath) {
     if (!isbulletdamage(smeansofdeath)) {
         return;
@@ -589,8 +586,8 @@ function handle_death_sounds(attacker, victim, smeansofdeath) {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x2226
-// Size: 0x6e3
+// Checksum 0x0, Offset: 0x20a6
+// Size: 0x6f0
 function process_damage_feedback(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, victim) {
     var_168973eaf883aea1 = isdefined(eattacker) && isdefined(eattacker.classname) && isdefined(eattacker.classname) && !isdefined(eattacker.gunner) && (eattacker.classname == "script_vehicle" || eattacker.classname == "misc_turret" || eattacker.classname == "script_model");
     damager = undefined;
@@ -707,8 +704,8 @@ function process_damage_feedback(einflictor, eattacker, idamage, idflags, smeans
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2911
-// Size: 0x32
+// Checksum 0x0, Offset: 0x279e
+// Size: 0x31
 function _hasperk(perkname) {
     perks = self.perks;
     if (!isdefined(perks)) {
@@ -722,8 +719,8 @@ function _hasperk(perkname) {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x294c
-// Size: 0x467
+// Checksum 0x0, Offset: 0x27d8
+// Size: 0x474
 function shouldblockdamage(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     weaponbasename = objweapon.basename;
     bthermite = 0;
@@ -761,7 +758,7 @@ function shouldblockdamage(einflictor, eattacker, idamage, idflags, smeansofdeat
         if (bthermite) {
             /#
                 if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                    println("<dev string:x93>");
+                    println("<dev string:x70>");
                 }
             #/
             return true;
@@ -777,7 +774,7 @@ function shouldblockdamage(einflictor, eattacker, idamage, idflags, smeansofdeat
             assert(isdefined(self.thermitestuckpains));
             /#
                 if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                    println("<dev string:xaf>");
+                    println("<dev string:x89>");
                 }
             #/
             self.thermitestuckpains++;
@@ -789,7 +786,7 @@ function shouldblockdamage(einflictor, eattacker, idamage, idflags, smeansofdeat
             if (vectordot(anglestoforward(self.angles), var_8b5b7d7c1e6793de) > 0.5 && -0.98 < var_289cb9fcbd6aa7c8[2] && var_289cb9fcbd6aa7c8[2] < 0.98) {
                 /#
                     if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                        println("<dev string:xcf>");
+                        println("<dev string:xa6>");
                     }
                 #/
                 return true;
@@ -806,7 +803,7 @@ function shouldblockdamage(einflictor, eattacker, idamage, idflags, smeansofdeat
         if (vectordot(meforward, var_392a20ab0d4853fb) > 0.5) {
             /#
                 if (getdvarint(@"hash_f42eefd3e1b79376") != 0) {
-                    println("<dev string:xf3>");
+                    println("<dev string:xc7>");
                 }
             #/
             return true;
@@ -817,7 +814,7 @@ function shouldblockdamage(einflictor, eattacker, idamage, idflags, smeansofdeat
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dbc
+// Checksum 0x0, Offset: 0x2c55
 // Size: 0xb4
 function function_42baa3bb97d2d1d7(player, var_a3732517126407b2, idamage, vpoint, ielement) {
     idamage = int(clamp(idamage, 0, 1000000));
@@ -832,7 +829,7 @@ function function_42baa3bb97d2d1d7(player, var_a3732517126407b2, idamage, vpoint
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e78
+// Checksum 0x0, Offset: 0x2d11
 // Size: 0x37
 function function_73075c88c97d2d50() {
     return isdefined(level.gamemodebundle) && istrue(level.gamemodebundle.var_83ace700ff20678c) || getdvarint(@"hash_8a8ff6ed00ccc7a", 0);
@@ -840,7 +837,7 @@ function function_73075c88c97d2d50() {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb8
+// Checksum 0x0, Offset: 0x2d51
 // Size: 0x37
 function function_9db5f6f105cde5da() {
     return isdefined(level.gamemodebundle) && istrue(level.gamemodebundle.var_34f596a1ce19ca) || getdvarint(@"hash_550484f2b30cf121", 0);
@@ -848,7 +845,7 @@ function function_9db5f6f105cde5da() {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ef8
+// Checksum 0x0, Offset: 0x2d91
 // Size: 0x37
 function function_87c3b43d00319847() {
     return isdefined(level.gamemodebundle) && istrue(level.gamemodebundle.var_fe33630e0f09e5df) || getdvarint(@"hash_1661f35e34f544eb", 0);
@@ -856,8 +853,8 @@ function function_87c3b43d00319847() {
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f38
-// Size: 0x20f
+// Checksum 0x0, Offset: 0x2dd1
+// Size: 0x215
 function function_c54b2cc2e762c201(eattacker, etargethit, shitloc, smeansofdeath, sweapon, idamage, vpoint, var_da71c7321bc0a0f6, selement, var_14edc6d1db3695bc, var_feef4b237a6beb07) {
     if (!function_73075c88c97d2d50()) {
         return;
@@ -902,7 +899,7 @@ function function_c54b2cc2e762c201(eattacker, etargethit, shitloc, smeansofdeath
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x314f
+// Checksum 0x0, Offset: 0x2fee
 // Size: 0x93
 function function_7a6bbb24289296e7(player, var_a3732517126407b2, idamage, vpoint, ielement) {
     level endon("game_ended");
@@ -921,8 +918,8 @@ function function_7a6bbb24289296e7(player, var_a3732517126407b2, idamage, vpoint
 
 // Namespace mp_agent_damage / scripts\mp\mp_agent_damage
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x31ea
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x3089
+// Size: 0xe1
 function updaterecentagentkills(victim, einflictor, objweapon) {
     self endon("disconnect");
     level endon("game_ended");

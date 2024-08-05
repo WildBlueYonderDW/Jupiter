@@ -2,7 +2,6 @@
 #using scripts\common\utility.gsc;
 #using script_247745a526421ba7;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\cp_mp\emp_debuff.gsc;
 #using script_736dec95a49487a6;
 #using script_1ed1214969b5eba7;
@@ -11,28 +10,25 @@
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x5bf
-// Size: 0x86
+// Checksum 0x0, Offset: 0x3e9
+// Size: 0x44
 function autoexec main() {
     registersharedfunc("super_evg", "init", &function_69aaff334f8191de);
     registersharedfunc("super_evg", "onSuperButtonPressed", &function_cc4ae8e506326196);
     registersharedfunc("super_evg", "given", &function_c13e791e9af862d9);
-    registersharedfunc("super_evg", "evg_used", &evg_used);
-    registersharedfunc("super_evg", "taken", &function_d8743ede8ca118c6);
-    registersharedfunc("super_evg", "evg_handleKillcam", &evg_handleKillcam);
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64d
-// Size: 0x2
+// Checksum 0x0, Offset: 0x435
+// Size: 0x18
 function function_69aaff334f8191de() {
-    
+    registersharedfunc("super_evg", "evg_used", &evg_used);
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x657
+// Checksum 0x0, Offset: 0x455
 // Size: 0x23
 function evg_used(grenade) {
     flag_init("equipment_interact");
@@ -42,46 +38,37 @@ function evg_used(grenade) {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x683
-// Size: 0xaa
+// Checksum 0x0, Offset: 0x481
+// Size: 0x66
 function function_c13e791e9af862d9(objweapon) {
     function_816b4cfd02dde591();
     thread function_cb9565a90e01f30();
     thread function_5e0605fb98c65415();
     scripts\cp_mp\emp_debuff::set_apply_emp_callback(&function_52c31471752bee6f);
-    scripts\cp_mp\emp_debuff::set_clear_emp_callback(&function_a2f9ff9de49bc0b6);
     if (issharedfuncdefined("emp", "setEMP_Applied_Callback")) {
         self [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&function_52c31471752bee6f);
     }
-    if (issharedfuncdefined("emp", "setEMP_Cleared_Callback")) {
-        self [[ getsharedfunc("emp", "setEMP_Cleared_Callback") ]](&function_a2f9ff9de49bc0b6);
-    }
     namespace_b6b4a3ac458ab6e2::function_172d848d58051fdf(&function_381e4571957a1940);
-    namespace_b6b4a3ac458ab6e2::function_aa823a31304ed981(&function_570ac3b064bbb1a9);
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x735
-// Size: 0x9b
+// Checksum 0x0, Offset: 0x4ef
+// Size: 0x8d
 function function_5e0605fb98c65415() {
-    self notify("evg_checkSuperButtonHeld");
-    self endon("evg_checkSuperButtonHeld");
+    self notify("checkSuperButtonHeld");
+    self endon("checkSuperButtonHeld");
     level endon("game_ended");
     self endon("evg_take");
-    self endon("disconnect");
     counter = 0;
     self.var_dbf122a3332e5dcc = istrue(self.pers["useNVG"]);
     while (true) {
-        if (!isdefined(self)) {
-            return;
-        }
         while (self superbuttonpressed()) {
             if (!istrue(self.var_c6b5a81ec8caffd1)) {
                 function_cc4ae8e506326196();
                 self.var_c6b5a81ec8caffd1 = 1;
             }
-            wait 0.5;
+            wait 1.5;
         }
         self.var_c6b5a81ec8caffd1 = 0;
         wait 0.1;
@@ -90,36 +77,17 @@ function function_5e0605fb98c65415() {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d8
-// Size: 0x1fa
+// Checksum 0x0, Offset: 0x584
+// Size: 0xad
 function function_cc4ae8e506326196(objweapon) {
     level endon("game_ended");
     self endon("death_or_disconnect");
     self endon("evg_take");
     self notify("evg_end_recharge");
-    if (istrue(self.var_4eee2e8aacb91e8e)) {
-        function_dcfd36b8508e118e();
-        self.var_c6e22d7a9f998295 = 0;
-        self.var_b7f382cdc1975a2a = 0;
-        self.var_4eee2e8aacb91e8e = undefined;
-        self setclientomnvar("ui_block_fu_not_ready_error", 0);
-        self setclientomnvar("ui_super_can_use", 0);
-        self setweaponammoclip(self.super.weaponobj, 0);
-        function_afd32ce1f3abe610(0, 1);
-        return;
-    }
-    if (self.super.usepercent <= 0 && !self.super.isinuse && !self.super.isactive) {
-        result = waittill_any_timeout_1(0.5, "super_use_started");
-        if (result == "timeout") {
-            return;
-        }
-    }
     bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-    if (isdefined(level.nvgvisionsetoverride) && isstring(level.nvgvisionsetoverride) && !istrue(self.ishaywire)) {
+    if (isdefined(level.nvgvisionsetoverride) && isstring(level.nvgvisionsetoverride)) {
         visionsetnight(level.nvgvisionsetoverride);
-    } else if (istrue(self.ishaywire) || istrue(self.isemped) || istrue(self.ksempd) || isdefined(self.var_9d3e90085b3f0da3) || istrue(self.var_85dc59c6a906819f)) {
-        self visionsetnightforplayer("killstreak_color_light_damage");
-    } else if (!istrue(self.ishaywire)) {
+    } else {
         self visionsetnightforplayer(bundle.var_144afe956168e6e5);
     }
     if (!isdefined(self.pers["killstreak_forcedNVGOff"])) {
@@ -131,37 +99,29 @@ function function_cc4ae8e506326196(objweapon) {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9da
-// Size: 0x34e
+// Checksum 0x0, Offset: 0x639
+// Size: 0x230
 function function_65d533faebb8fd7d() {
-    if (self isonladder() || self ishanging() || self isthrowinggrenade()) {
+    if (istrue(self.ishaywire) || istrue(self.isemped) || istrue(self.ksempd)) {
+        return;
+    }
+    if (self isonladder() || self ishanging()) {
+        return;
+    }
+    if (isdefined(self.var_69182e585de962fe) && self.var_69182e585de962fe > gettime()) {
         return;
     }
     bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
     superinfo = self.super;
     outlineplayers = bundle.var_191c4a1763eabb22;
     if (istrue(self.pers["useNVG"])) {
-        function_dcfd36b8508e118e();
-        self setclientomnvar("ui_super_can_use", 1);
-        if (issharedfuncdefined("supers", "handleSuperUIStateChange")) {
-            self [[ getsharedfunc("supers", "handleSuperUIStateChange") ]](2);
-            superinfo.state = 2;
-        }
-        function_afd32ce1f3abe610(0);
-        self setweaponammoclip(superinfo.weaponobj, 1);
-        return;
-    }
-    if (isdefined(self.usingremote) || istrue(self.var_6678ccff9684345e)) {
+        function_afd32ce1f3abe610(1);
         return;
     }
     percentageremaining = 100;
     if (isdefined(self.var_c6e22d7a9f998295)) {
-        batteryduration = getdvarint(@"hash_cb489895214d11b9", bundle.var_94e973b394c254c0);
+        batteryduration = bundle.var_94e973b394c254c0;
         percentageremaining = int(ceil((batteryduration - self.var_c6e22d7a9f998295) * 100 / batteryduration));
-        var_81d507fbe368b535 = batteryduration - self.var_c6e22d7a9f998295;
-        if (var_81d507fbe368b535 < 1) {
-            self.var_1a65c878d85ac217 = 1;
-        }
     }
     superinfo.usepercent = percentageremaining / 100;
     if (issharedfuncdefined("supers", "updateSuperUIProgress")) {
@@ -173,21 +133,16 @@ function function_65d533faebb8fd7d() {
     if (percentageremaining <= 0) {
         return;
     }
-    if (!istrue(self.pausesuperpointsovertime)) {
-        self.pausesuperpointsovertime = 1;
-    }
     thread function_438ddb00054b12a9();
-    thread function_1ce7392d73fb7b4f();
     thread function_8ef049fddedb272f();
-    thread function_7dc67e564fe860c0();
-    thread function_eac06f5aa18f117();
-    self nightvisionviewon(0, 1);
+    self nightvisionviewon();
     thread function_53710fd0ad26ee61(1);
     self setscriptablepartstate("evgSfx", "evg_on", 0);
-    if (istrue(outlineplayers) && !(istrue(self.ishaywire) || istrue(self.isemped) || istrue(self.ksempd) || isdefined(self.var_9d3e90085b3f0da3) || istrue(self.var_85dc59c6a906819f))) {
+    if (istrue(outlineplayers)) {
         thread function_268e214f18447610(0.6);
     }
     waitframe();
+    self.var_69182e585de962fe = gettime() + 1000;
     function_6cbb5644d0b51e2d();
     if (issharedfuncdefined("supers", "setSuperIsActive")) {
         self [[ getsharedfunc("supers", "setSuperIsActive") ]](1);
@@ -195,20 +150,12 @@ function function_65d533faebb8fd7d() {
     if (issharedfuncdefined("supers", "setSuperIsInUse")) {
         self [[ getsharedfunc("supers", "setSuperIsInUse") ]](1);
     }
-    if (!istrue(self.var_b7f382cdc1975a2a)) {
-        self setclientomnvar("ui_block_fu_not_ready_error", 1);
-        self.var_b7f382cdc1975a2a = 1;
-    }
-    self setweaponammoclip(superinfo.weaponobj, 1);
-    while (!self isnightvisionon()) {
-        self nightvisionviewon(0, 1);
-        wait 0.5;
-    }
+    self setclientomnvar("ui_block_fu_not_ready_error", 1);
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd30
+// Checksum 0x0, Offset: 0x871
 // Size: 0x62
 function function_6cbb5644d0b51e2d() {
     if (!istrue(self.pers["useNVG"])) {
@@ -222,25 +169,26 @@ function function_6cbb5644d0b51e2d() {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9a
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x8db
+// Size: 0x83
 function function_8ef049fddedb272f() {
     level endon("game_ended");
     self endon("evg_off");
     self waittill("death_or_disconnect");
     self notify("evg_off_death");
-    self nightvisionviewoff(1);
-    self setclientomnvar("ui_super_can_use", 1);
-    if (issharedfuncdefined("supers", "handleSuperUIStateChange")) {
-        self [[ getsharedfunc("supers", "handleSuperUIStateChange") ]](2);
-        self.super.state = 2;
+    function_afd32ce1f3abe610(1);
+    if (issharedfuncdefined("supers", "setSuperIsActive")) {
+        self [[ getsharedfunc("supers", "setSuperIsActive") ]](0);
     }
-    function_afd32ce1f3abe610(0);
+    if (issharedfuncdefined("supers", "setSuperIsInUse")) {
+        self [[ getsharedfunc("supers", "setSuperIsInUse") ]](0);
+    }
+    self.var_c6e22d7a9f998295 = 0;
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe20
+// Checksum 0x0, Offset: 0x966
 // Size: 0xbe
 function function_53710fd0ad26ee61(enabled) {
     if (getdvarint(@"hash_6c4aa4fa4c54eb2a", 1) == 0) {
@@ -267,8 +215,8 @@ function function_53710fd0ad26ee61(enabled) {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee6
-// Size: 0xd5
+// Checksum 0x0, Offset: 0xa2c
+// Size: 0xd4
 function function_248a3eaffa9c3dff() {
     modeldown = undefined;
     if (isdefined(level.nvgheadoverrides) && isdefined(level.nvgheadoverrides[self.operatorcustomization.head])) {
@@ -285,7 +233,7 @@ function function_248a3eaffa9c3dff() {
     } else if (modeldown == "none") {
         modeldown = undefined;
     } else {
-        assert(0, "<dev string:x1c>");
+        assert(0, "Invalid entry value set in level.nvgHeadOverrides for NVG Override Down");
         modeldown = "offhand_wm_nvgquad_mp_1";
     }
     return modeldown;
@@ -293,8 +241,8 @@ function function_248a3eaffa9c3dff() {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc4
-// Size: 0xd5
+// Checksum 0x0, Offset: 0xb09
+// Size: 0xd4
 function function_289ea0fdb50f3084() {
     modelup = undefined;
     if (isdefined(level.nvgheadoverrides) && isdefined(level.nvgheadoverrides[self.operatorcustomization.head])) {
@@ -311,7 +259,7 @@ function function_289ea0fdb50f3084() {
     } else if (modelup == "none") {
         modelup = undefined;
     } else {
-        assert(0, "<dev string:x67>");
+        assert(0, "Invalid entry value set in level.nvgHeadOverrides for NVG Override Up");
         modelup = "offhand_wm_nvgquad_mp_1_up";
     }
     return modelup;
@@ -319,8 +267,8 @@ function function_289ea0fdb50f3084() {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a2
-// Size: 0x221
+// Checksum 0x0, Offset: 0xbe6
+// Size: 0x1dd
 function function_268e214f18447610(animdelay) {
     self endon("evg_off");
     self endon("evg_off_death");
@@ -333,7 +281,7 @@ function function_268e214f18447610(animdelay) {
     distancethreshold *= distancethreshold;
     var_5b27571147e34abd = getdvarint(@"hash_20b810a0c1bd5e81", 1);
     var_4430b08d5a2d47bf = undefined;
-    for (newspawns = undefined; true; newspawns = []) {
+    while (true) {
         entlist = array_combine(getaiarray(), level.players);
         foreach (player in entlist) {
             outlinefill = undefined;
@@ -347,15 +295,7 @@ function function_268e214f18447610(animdelay) {
             if (isdefined(self.outlineents[entnum])) {
                 continue;
             }
-            if (isdefined(newspawns)) {
-                if (isdefined(newspawns[entnum])) {
-                    newspawns[entnum] = undefined;
-                } else {
-                    newspawns[entnum] = 1;
-                    continue;
-                }
-            }
-            if (istrue(level.teambased) && player.team == self.team) {
+            if (player.team == self.team) {
                 if (var_5b27571147e34abd) {
                     var_4430b08d5a2d47bf = bundle.var_4ebae270af108843;
                 }
@@ -365,40 +305,16 @@ function function_268e214f18447610(animdelay) {
             }
             if (issharedfuncdefined("outline", "outlineEnableForPlayer")) {
                 self.outlineents[entnum] = [[ getsharedfunc("outline", "outlineEnableForPlayer") ]](player, self, var_4430b08d5a2d47bf, "level_script");
-                player thread function_e97683bcf5f6586e(self);
             }
         }
         wait 0.5;
-        if (!isdefined(newspawns)) {
-        }
     }
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12cb
-// Size: 0x93
-function function_e97683bcf5f6586e(owner) {
-    owner endon("remove_evg_outline");
-    level endon("game_ended");
-    self waittill("death_or_disconnect");
-    if (!isdefined(self) || !isdefined(owner)) {
-        return;
-    }
-    entnum = self getentitynumber();
-    if (!isdefined(owner.outlineents[entnum])) {
-        return;
-    }
-    if (issharedfuncdefined("outline", "outlineDisable")) {
-        [[ getsharedfunc("outline", "outlineDisable") ]](owner.outlineents[entnum], self);
-        owner.outlineents[entnum] = undefined;
-    }
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1366
-// Size: 0xfe
+// Checksum 0x0, Offset: 0xdcb
+// Size: 0xf0
 function function_ab4442abb750dff6(animdelay) {
     waitframe();
     if (!isdefined(self.outlineents)) {
@@ -408,27 +324,24 @@ function function_ab4442abb750dff6(animdelay) {
         wait animdelay;
     }
     entlist = array_combine(getaiarray(), level.players);
-    if (isdefined(entlist)) {
-        foreach (player in entlist) {
-            if (player == self) {
-                continue;
-            }
-            entnum = player getentitynumber();
-            if (!isdefined(self.outlineents[entnum])) {
-                continue;
-            }
-            if (issharedfuncdefined("outline", "outlineDisable")) {
-                [[ getsharedfunc("outline", "outlineDisable") ]](self.outlineents[entnum], player);
-            }
+    foreach (player in entlist) {
+        if (player == self) {
+            continue;
+        }
+        entnum = player getentitynumber();
+        if (!isdefined(self.outlineents[entnum])) {
+            continue;
+        }
+        if (issharedfuncdefined("outline", "outlineDisable")) {
+            [[ getsharedfunc("outline", "outlineDisable") ]](self.outlineents[entnum], player);
         }
     }
-    self notify("remove_evg_outline");
     self.outlineents = undefined;
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x146c
+// Checksum 0x0, Offset: 0xec3
 // Size: 0x13
 function function_bbf3a083d978a6d3(isjammed) {
     self function_9b28bd480aaad85f(isjammed);
@@ -436,22 +349,16 @@ function function_bbf3a083d978a6d3(isjammed) {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1487
-// Size: 0x5a
+// Checksum 0x0, Offset: 0xede
+// Size: 0x23
 function function_d8743ede8ca118c6(equipmentref, slot) {
     self notify("evg_take");
-    self.pausesuperpointsovertime = 0;
     thread function_816b4cfd02dde591();
-    if (self isnightvisionon()) {
-        self nightvisionviewoff(1);
-        self.pers["useNVG"] = 0;
-        self.var_cb424f04bd652fb1 = 0;
-    }
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e9
+// Checksum 0x0, Offset: 0xf09
 // Size: 0x20
 function function_cb9565a90e01f30() {
     level endon("game_ended");
@@ -462,7 +369,7 @@ function function_cb9565a90e01f30() {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1511
+// Checksum 0x0, Offset: 0xf31
 // Size: 0x22
 function function_816b4cfd02dde591() {
     self.var_d07d8acb673cb5c7 = undefined;
@@ -472,8 +379,8 @@ function function_816b4cfd02dde591() {
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x153b
-// Size: 0x196
+// Checksum 0x0, Offset: 0xf5b
+// Size: 0x179
 function function_438ddb00054b12a9() {
     self notify("evg_init_battery_decay");
     level endon("game_ended");
@@ -484,161 +391,56 @@ function function_438ddb00054b12a9() {
         self.var_c6e22d7a9f998295 = 0;
     }
     bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-    batteryduration = getdvarint(@"hash_cb489895214d11b9", bundle.var_94e973b394c254c0);
-    secondselapsed = 0;
+    counter = 0;
     superinfo = self.super;
-    var_b40dda23ea7d6b7f = bundle.var_58819f0e1d2d43d1;
-    var_5c51c07febe5909f = 0;
+    batteryduration = bundle.var_94e973b394c254c0;
     var_3c41d0b684e437f5 = batteryduration / 100;
     while (istrue(self.var_cb424f04bd652fb1)) {
         percentageremaining = int(ceil((batteryduration - self.var_c6e22d7a9f998295) * 100 / batteryduration));
         if (percentageremaining < 0) {
             percentageremaining = 0;
         }
-        if (secondselapsed >= var_3c41d0b684e437f5) {
-            self.var_c6e22d7a9f998295 += secondselapsed;
-            secondselapsed = 0;
+        if (counter >= var_3c41d0b684e437f5) {
+            self.var_c6e22d7a9f998295 += counter;
+            counter = 0;
         }
         if (percentageremaining <= 0) {
             thread function_2ac5b3d09529dd5b();
             break;
         }
         superinfo.usepercent = percentageremaining / 100;
-        if (!var_5c51c07febe5909f && percentageremaining <= var_b40dda23ea7d6b7f) {
-            function_af4d8022b3e0453b();
-            var_5c51c07febe5909f = 1;
-        }
         if (issharedfuncdefined("supers", "updateSuperUIProgress")) {
             self [[ getsharedfunc("supers", "updateSuperUIProgress") ]]();
         }
-        secondselapsed += 0.05;
+        if (issharedfuncdefined("supers", "updateSuperUIState")) {
+            self [[ getsharedfunc("supers", "updateSuperUIState") ]]();
+        }
+        counter += 0.05;
         wait 0.05;
     }
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16d9
-// Size: 0x10
-function function_af4d8022b3e0453b() {
-    self playsoundtoplayer("perk_evg_nods_battery_warning", self, self);
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f1
-// Size: 0x89
+// Checksum 0x0, Offset: 0x10dc
+// Size: 0x66
 function function_2ac5b3d09529dd5b() {
-    self.pausesuperpointsovertime = 0;
-    self.super.usepercent = 0;
-    self.var_4eee2e8aacb91e8e = 1;
-    bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-    superinfo = self.super;
-    outlineplayers = bundle.var_191c4a1763eabb22;
-    self visionsetnightforplayer("killstreak_color_light_damage");
-    if (istrue(outlineplayers)) {
-        thread function_ab4442abb750dff6(0.5);
+    function_afd32ce1f3abe610();
+    if (issharedfuncdefined("supers", "setSuperIsActive")) {
+        self [[ getsharedfunc("supers", "setSuperIsActive") ]](0);
     }
+    if (issharedfuncdefined("supers", "setSuperIsInUse")) {
+        self [[ getsharedfunc("supers", "setSuperIsInUse") ]](0);
+    }
+    self setclientomnvar("ui_block_fu_not_ready_error", 0);
 }
 
 // Namespace evg / namespace_2607d291739404b1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1782
-// Size: 0x1c0
-function function_dcfd36b8508e118e() {
-    level endon("game_ended");
-    self endon("death_or_disconnect");
-    self endon("evg_take");
-    offhand = self getheldoffhand();
-    if (isdefined(offhand) && isdefined(offhand.basename)) {
-        switch (offhand.basename) {
-        case #"hash_d9266153a899a37c": 
-            var_a43b3e9f1cbe3628 = offhand.basename;
-            break;
-        }
-    }
-    if (isdefined(var_a43b3e9f1cbe3628)) {
-        while (isdefined(self.offhandweapon) && isdefined(self.offhandweapon.basename) && self.offhandweapon.basename == var_a43b3e9f1cbe3628) {
-            wait 0.1;
-        }
-        return;
-    } else if (isdefined(self.currentweapon) && isdefined(self.currentweapon.basename) && self playerads() > 0) {
-        switch (self.currentweapon.basename) {
-        case #"hash_5c272c0617caebf0": 
-            var_a43b3e9f1cbe3628 = self.currentweapon.basename;
-            break;
-        }
-        if (isdefined(var_a43b3e9f1cbe3628)) {
-            while (self playerads() > 0) {
-                wait 0.1;
-            }
-        }
-        return;
-    }
-    while (self isinexecutionattack() || self isthrowinggrenade() || self ishanging() || istrue(self.gascoughinprogress)) {
-        wait 0.1;
-        if (self ishanging()) {
-            var_d4feadd35c01e637 = 1;
-        }
-    }
-    if (istrue(self.var_1a65c878d85ac217)) {
-        self.var_1a65c878d85ac217 = undefined;
-        wait 1;
-        return;
-    }
-    if (istrue(var_d4feadd35c01e637)) {
-        wait 0.5;
-    }
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x194a
-// Size: 0x76
-function function_1ce7392d73fb7b4f() {
-    level endon("game_ended");
-    self endon("evg_off");
-    self waittill("using_remote");
-    self setclientomnvar("ui_super_can_use", 1);
-    if (issharedfuncdefined("supers", "handleSuperUIStateChange")) {
-        self [[ getsharedfunc("supers", "handleSuperUIStateChange") ]](2);
-        self.super.state = 2;
-    }
-    thread function_afd32ce1f3abe610(0);
-    thread function_566f0857dabdcf7d();
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19c8
-// Size: 0x83
-function function_566f0857dabdcf7d() {
-    level endon("game_ended");
-    self endon("death_or_disconnect");
-    self endon("evg_take");
-    starttime = gettime();
-    gracetime = starttime + 5000;
-    while (!isdefined(self.usingremote) && gettime() < gracetime) {
-        wait 0.5;
-    }
-    while (true) {
-        wait 0.1;
-        if (!isdefined(self.usingremote)) {
-            wait 1.2;
-            thread function_65d533faebb8fd7d();
-            return;
-        }
-    }
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a53
-// Size: 0x1ce
-function function_afd32ce1f3abe610(shouldrefundsuper, var_d0e59be609065b4f) {
-    level endon("game_ended");
-    self endon("death_or_disconnect");
-    self endon("evg_take");
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x114a
+// Size: 0x1be
+function function_afd32ce1f3abe610(shouldrefundsuper) {
+    self notify("evg_off");
     self nightvisionviewoff();
     thread function_53710fd0ad26ee61(0);
     self setscriptablepartstate("evgSfx", "evg_off", 0);
@@ -649,9 +451,10 @@ function function_afd32ce1f3abe610(shouldrefundsuper, var_d0e59be609065b4f) {
         thread function_ab4442abb750dff6(0.5);
     }
     waitframe();
+    self.var_69182e585de962fe = gettime() + 1000;
     function_6cbb5644d0b51e2d();
     self.var_cb424f04bd652fb1 = 0;
-    batteryduration = getdvarint(@"hash_cb489895214d11b9", bundle.var_94e973b394c254c0);
+    batteryduration = bundle.var_94e973b394c254c0;
     if (istrue(shouldrefundsuper) && isdefined(self.var_c6e22d7a9f998295) && self.var_c6e22d7a9f998295 < batteryduration) {
         self.var_c6e22d7a9f998295 -= 0.1;
         if (self.var_c6e22d7a9f998295 <= 0) {
@@ -660,154 +463,34 @@ function function_afd32ce1f3abe610(shouldrefundsuper, var_d0e59be609065b4f) {
         percentageremaining = int(ceil((batteryduration - self.var_c6e22d7a9f998295) * 100 / batteryduration));
         superinfo.usepercent = percentageremaining / 100;
     }
-    self notify("evg_off");
     if (issharedfuncdefined("supers", "updateSuperUIProgress")) {
         self [[ getsharedfunc("supers", "updateSuperUIProgress") ]]();
     }
-    if (istrue(var_d0e59be609065b4f) && issharedfuncdefined("supers", "superUseFinished")) {
+    if (issharedfuncdefined("supers", "updateSuperUIState")) {
+        self [[ getsharedfunc("supers", "updateSuperUIState") ]]();
+    }
+    if (issharedfuncdefined("supers", "superUseFinished")) {
         self [[ getsharedfunc("supers", "superUseFinished") ]](shouldrefundsuper);
     }
-    while (self isnightvisionon()) {
-        self nightvisionviewoff();
-        wait 0.5;
-    }
 }
 
 // Namespace evg / namespace_2607d291739404b1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c29
-// Size: 0x65
-function function_52c31471752bee6f(data) {
-    self visionsetnightforplayer("killstreak_color_light_damage");
-    bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-    outlineplayers = bundle.var_191c4a1763eabb22;
-    if (istrue(self.pers["useNVG"]) && istrue(outlineplayers)) {
-        thread function_ab4442abb750dff6(0);
-    }
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c96
-// Size: 0x65
-function function_a2f9ff9de49bc0b6(data) {
-    bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-    outlineplayers = bundle.var_191c4a1763eabb22;
-    self visionsetnightforplayer(bundle.var_144afe956168e6e5);
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x1310
+// Size: 0x1e
+function function_52c31471752bee6f() {
     if (istrue(self.pers["useNVG"])) {
-        thread function_268e214f18447610(0);
-    }
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d03
-// Size: 0x65
-function function_381e4571957a1940(data) {
-    self visionsetnightforplayer("killstreak_color_light_damage");
-    bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-    outlineplayers = bundle.var_191c4a1763eabb22;
-    if (istrue(self.pers["useNVG"]) && istrue(outlineplayers)) {
-        thread function_ab4442abb750dff6(0);
-    }
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d70
-// Size: 0x6b
-function function_570ac3b064bbb1a9(data) {
-    bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-    outlineplayers = bundle.var_191c4a1763eabb22;
-    self visionsetnightforplayer(bundle.var_144afe956168e6e5);
-    if (istrue(self.pers["useNVG"]) && istrue(outlineplayers)) {
-        thread function_268e214f18447610(0);
-    }
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de3
-// Size: 0x163
-function evg_handleKillcam(attacker) {
-    self endon("disconnect");
-    self endon("final_killcam_starting");
-    if (isdefined(attacker.super.staticdata) && isdefined(attacker.super) && isdefined(attacker.super.staticdata.ref) && attacker.super.staticdata.ref == "super_evg") {
-        if (istrue(attacker.pers["useNVG"])) {
-            bundle = namespace_4a3033eafa6fd07::function_bf9c7e9dd30180e3("super_evg");
-            if (isdefined(level.nvgvisionsetoverride) && isstring(level.nvgvisionsetoverride)) {
-                return;
-            } else {
-                self visionsetnightforplayer(bundle.var_144afe956168e6e5);
-            }
-        }
-    }
-    if (isdefined(self.super.staticdata) && isdefined(self.super) && isdefined(self.super.staticdata.ref) && self.super.staticdata.ref == "super_evg") {
-        return;
-    }
-    thread function_3cb36de1b99ab71();
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f4e
-// Size: 0x52
-function function_3cb36de1b99ab71() {
-    self endon("disconnect");
-    self endon("final_killcam_starting");
-    self waittill("spawned");
-    if (isusingmatchrulesdata()) {
-        nvgVisionSet = getmatchrulesdata("commonOption", "nvgVisionSet");
-        self visionsetnightforplayer(nvgVisionSet);
-        return;
-    }
-    self visionsetnightforplayer("iw9_mp_nvg_base_color");
-}
-
-// Namespace evg / namespace_2607d291739404b1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fa8
-// Size: 0xe7
-function function_7dc67e564fe860c0() {
-    level endon("game_ended");
-    self endon("evg_off");
-    while (true) {
-        victiment = self waittill("execution_begin");
-        self nightvisionviewoff(1);
-        thread function_ab4442abb750dff6(0);
-        inexecution = self isinexecutionattack() || self isinexecutionvictim();
-        while (inexecution) {
-            inexecution = self isinexecutionattack() || self isinexecutionvictim();
-            waitframe();
-        }
-        if (isalive(self)) {
-            self nightvisionviewon(1, 1);
-            thread function_268e214f18447610(0);
-            continue;
-        }
-        self setclientomnvar("ui_super_can_use", 1);
-        if (issharedfuncdefined("supers", "handleSuperUIStateChange")) {
-            self [[ getsharedfunc("supers", "handleSuperUIStateChange") ]](2);
-            self.super.state = 2;
-        }
-        function_afd32ce1f3abe610(0);
+        function_afd32ce1f3abe610(1);
     }
 }
 
 // Namespace evg / namespace_2607d291739404b1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2097
-// Size: 0x60
-function function_eac06f5aa18f117() {
-    self endon("game_ended");
-    self endon("disconnect");
-    self endon("evg_take");
-    while (true) {
-        self waittill("joined_team");
-        lastteam = self.pers["last_team"];
-        if (isdefined(lastteam) && self.team != lastteam) {
-            self.var_c6e22d7a9f998295 = 0;
-        }
+// Checksum 0x0, Offset: 0x1336
+// Size: 0x1e
+function function_381e4571957a1940() {
+    if (istrue(self.pers["useNVG"])) {
+        function_afd32ce1f3abe610(1);
     }
 }
 

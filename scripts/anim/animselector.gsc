@@ -7,8 +7,8 @@
 
 // Namespace animselector / scripts\anim\animselector
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65e
-// Size: 0x2c4
+// Checksum 0x0, Offset: 0x9d0
+// Size: 0x2c3
 function getanimselectorfilenames() {
     var_55be9ad4f064aa9 = [];
     if (utility::iscp()) {
@@ -29,8 +29,8 @@ function getanimselectorfilenames() {
 
 // Namespace animselector / scripts\anim\animselector
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92b
-// Size: 0x45d
+// Checksum 0x0, Offset: 0xc9c
+// Size: 0x461
 function init() {
     if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"hash_add5b80d30e0737a") != 0) {
         return;
@@ -55,9 +55,9 @@ function init() {
             anim.animselector[statename][traverser].features = [];
             anim.animselector[statename][traverser].values = [];
             var_ef6dae508d785188 = tablelookuprownum(filename[1], 0, "__END__");
-            assertex(isdefined(var_ef6dae508d785188) && var_ef6dae508d785188 != -1, "<dev string:x1c>" + filename[1] + "<dev string:x42>");
+            assertex(isdefined(var_ef6dae508d785188) && var_ef6dae508d785188 != -1, "Error parsing anim selector table " + filename[1] + ": no __END__ symbol found in column 0.");
             var_ef6dae508d785188 -= 1;
-            assertex(var_ef6dae508d785188 > 0, "<dev string:x6c>");
+            assertex(var_ef6dae508d785188 > 0, "Error parsing anim selector table: table must contain at least 1 alias.");
             for (i = 0; i < var_ef6dae508d785188; i++) {
                 alias = tablelookupbyrow(filename[1], i + 1, 0);
                 anim.animselector[statename][traverser].aliases[i] = alias;
@@ -71,8 +71,8 @@ function init() {
                 }
                 anim.animselector[statename][traverser].features[i] = feature;
             }
-            assertex(isdefined(num_features), "<dev string:xb7>");
-            assertex(num_features > 0, "<dev string:xff>");
+            assertex(isdefined(num_features), "Error parsing anim selector table: no __END__ symbol found in row 0.");
+            assertex(num_features > 0, "Error parsing anim selector table: header must specify at least 1 feature.");
             for (i = 0; i < var_ef6dae508d785188; i++) {
                 for (j = 0; j < num_features; j++) {
                     alias = anim.animselector[statename][traverser].aliases[i];
@@ -92,11 +92,11 @@ function init() {
 
 // Namespace animselector / scripts\anim\animselector
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd90
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x1105
+// Size: 0xca
 function checkfeaturevalue(val, feature, var_e9db8fc3741a7e52) {
-    assertex(isdefined(anim.animselectorfeaturetable), "<dev string:x14d>");
-    assertex(isdefined(anim.animselectorfeaturetable[feature]), "<dev string:x17f>" + feature + "<dev string:x19a>");
+    assertex(isdefined(anim.animselectorfeaturetable), "anim selector feature table wasn't initialized");
+    assertex(isdefined(anim.animselectorfeaturetable[feature]), "anim selector feature '" + feature + "' is not defined in the anim selector table");
     featurename = anim.animselectorfeaturetable[feature][0];
     featurereq = anim.animselectorfeaturetable[feature][1];
     featureval = var_e9db8fc3741a7e52[featurename];
@@ -108,21 +108,21 @@ function checkfeaturevalue(val, feature, var_e9db8fc3741a7e52) {
     } else if (featurereq == 1) {
         return (featureval <= val);
     }
-    assertmsg("<dev string:x1c9>" + feature + "<dev string:x1e5>");
+    assertmsg("^1Anim selector feature " + feature + " has an invalid limit requirement.");
 }
 
 /#
 
     // Namespace animselector / scripts\anim\animselector
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe61
-    // Size: 0xb4
+    // Checksum 0x0, Offset: 0x11d7
+    // Size: 0xb2
     function function_99322e10827a8683(statename, var_e9db8fc3741a7e52) {
-        warningstring = "<dev string:x20b>" + self.animsetname + "<dev string:x237>" + statename + "<dev string:x244>";
-        foreach (key, value in var_e9db8fc3741a7e52) {
-            warningstring = warningstring + key + "<dev string:x255>" + value + "<dev string:x25b>";
+        warningstring = "<dev string:x1c>" + self.animsetname + "<dev string:x45>" + statename + "<dev string:x4f>";
+        foreach (value in var_e9db8fc3741a7e52) {
+            warningstring = warningstring + key + "<dev string:x5d>" + value + "<dev string:x60>";
         }
-        warningstring = warningstring + "<dev string:x261>" + self.origin + "<dev string:x25b>";
+        warningstring = warningstring + "<dev string:x63>" + self.origin + "<dev string:x60>";
         println(warningstring);
     }
 
@@ -130,16 +130,16 @@ function checkfeaturevalue(val, feature, var_e9db8fc3741a7e52) {
 
 // Namespace animselector / scripts\anim\animselector
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1d
-// Size: 0x1cc
+// Checksum 0x0, Offset: 0x1291
+// Size: 0x1cb
 function selectanim(statename, var_e9db8fc3741a7e52, var_1b240bbf89180b65) {
     assert(isdefined(anim.animselector[statename]));
     assert(isdefined(var_1b240bbf89180b65));
-    assertex(var_1b240bbf89180b65 != -1, "<dev string:x272>");
+    assertex(var_1b240bbf89180b65 != -1, "Invalid ent attempting to do traversal.");
     traverseinfo = anim.animselector[statename][var_1b240bbf89180b65];
     foreach (alias in traverseinfo.aliases) {
         if (isai(self) && !asm_hasalias(statename, alias)) {
-            println("<dev string:x29d>" + alias + "<dev string:x2b2>" + statename + "<dev string:x2d6>" + self.animsetname + "<dev string:x2e8>");
+            println("<dev string:x71>" + alias + "<dev string:x83>" + statename + "<dev string:xa4>" + self.animsetname + "<dev string:xb3>");
             continue;
         }
         var_b4d9ab801dafc0fd = 1;
@@ -154,20 +154,20 @@ function selectanim(statename, var_e9db8fc3741a7e52, var_1b240bbf89180b65) {
         }
         if (var_b4d9ab801dafc0fd) {
             /#
-                if (isai(self) && alias == "<dev string:x316>") {
+                if (isai(self) && alias == "<dev string:xde>") {
                     function_99322e10827a8683(statename, var_e9db8fc3741a7e52);
                 }
             #/
             return alias;
         }
     }
-    assertmsg("<dev string:x321>" + statename + "<dev string:x354>");
+    assertmsg("^1AnimSelector failed to select anim for state " + statename + ". Ensure that all aliases listed in the AnimSelectorTable are also included in the archetype. Also ensure that the table includes a default alias for catchall purposes.");
 }
 
 // Namespace animselector / scripts\anim\animselector
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f1
-// Size: 0x14e
+// Checksum 0x0, Offset: 0x1464
+// Size: 0x14d
 function gettraverserindex() {
     archetype = self getbasearchetype();
     if (isdefined(archetype)) {
@@ -193,7 +193,7 @@ function gettraverserindex() {
             if (isdefined(self.unittype) && self.unittype == "soldier") {
                 return 0;
             }
-            assertmsg("<dev string:x400>" + self.origin + "<dev string:x41b>" + default_to(self.var_e2b4fc394eef5c0f, "<dev string:x434>") + "<dev string:x439>" + archetype + "<dev string:x449>");
+            assertmsg("Traversal Location is: " + self.origin + ". Traversal Type is: " + default_to(self.var_e2b4fc394eef5c0f, " ") + ". Archetype " + archetype + " is not associated with any animselector tables.  If this is a soldier, add to the list of valid soldier archetypes in GetTraverserIndex(). If this is a zombie, we are facing an invalid traversal and need to fix the Animation Selector Table or the unknown traverseMode calculator.");
             return -1;
         }
     }

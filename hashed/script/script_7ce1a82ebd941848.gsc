@@ -594,7 +594,7 @@ function function_e86f6c7b0f5447e2() {
     wait 5;
     foreach (player in level.players) {
         if (isalive(player) && !player scripts\mp\gametypes\br_public::isplayeringulag()) {
-            player namespace_88bfae359020fdd3::function_1976438a8865ac27("br_ftue_dataheist");
+            player namespace_88bfae359020fdd3::ftue_triggerTip("br_ftue_dataheist");
         }
     }
 }

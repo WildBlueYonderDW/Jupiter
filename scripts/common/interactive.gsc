@@ -4,7 +4,7 @@
 
 // Namespace interactive / scripts\common\interactive
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f
+// Checksum 0x0, Offset: 0x70
 // Size: 0x66
 function entity_used(entity, player) {
     if (!isdefined(entity.interactive_used_func_id)) {
@@ -21,7 +21,7 @@ function entity_used(entity, player) {
 
 // Namespace interactive / scripts\common\interactive
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd
+// Checksum 0x0, Offset: 0xde
 // Size: 0x80
 function interactive_addusedcallback(usedcallback, id) {
     if (!isdefined(level.interactive_used_funcs)) {
@@ -41,7 +41,7 @@ function interactive_addusedcallback(usedcallback, id) {
 
 // Namespace interactive / scripts\common\interactive
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x186
+// Checksum 0x0, Offset: 0x167
 // Size: 0x15
 function interactive_addusedcallbacktoentity(id) {
     self.interactive_used_func_id = id;
@@ -49,7 +49,7 @@ function interactive_addusedcallbacktoentity(id) {
 
 // Namespace interactive / scripts\common\interactive
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a3
+// Checksum 0x0, Offset: 0x184
 // Size: 0xc
 function interactive_removeusedcallbackfromentity() {
     self.interactive_used_func_id = undefined;
@@ -57,8 +57,8 @@ function interactive_removeusedcallbackfromentity() {
 
 // Namespace interactive / scripts\common\interactive
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b7
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x198
+// Size: 0x6e
 function function_366418be14db1a9f(usable, player) {
     if (isdefined(usable.var_d19dfa5205fce031)) {
         result = [[ usable.var_d19dfa5205fce031 ]](usable, player);
@@ -70,8 +70,8 @@ function function_366418be14db1a9f(usable, player) {
 
 // Namespace interactive / scripts\common\interactive
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x22f
-// Size: 0x41
+// Checksum 0x0, Offset: 0x20f
+// Size: 0x40
 function function_14ec0a1f46d4d2d0(usable, player) {
     if (isdefined(usable.var_ee69e6a611184cfb)) {
         result = [[ usable.var_ee69e6a611184cfb ]](usable, player);

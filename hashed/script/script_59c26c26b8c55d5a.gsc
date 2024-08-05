@@ -2,8 +2,8 @@
 
 // Namespace ai_pickups / namespace_8e96ae2f715116d8
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x87
-// Size: 0x103
+// Checksum 0x0, Offset: 0xb6
+// Size: 0x102
 function function_fbc045e84cf575ae(name, seekradius, pickupgoalradius, var_47f82a4d9a77876f, var_c4356a88633f476d, var_65d0778d90ececae, canusefunc, usefunc, additionaldata) {
     if (!isdefined(level.var_634b074c62f96cd3)) {
         level.var_634b074c62f96cd3 = [];
@@ -23,7 +23,7 @@ function function_fbc045e84cf575ae(name, seekradius, pickupgoalradius, var_47f82
 
 // Namespace ai_pickups / namespace_8e96ae2f715116d8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x192
+// Checksum 0x0, Offset: 0x1c0
 // Size: 0x20
 function function_7bf8496cb1c4eee8(ent) {
     return level.var_634b074c62f96cd3[ent.var_447891d63f8a9e28];
@@ -31,18 +31,18 @@ function function_7bf8496cb1c4eee8(ent) {
 
 // Namespace ai_pickups / namespace_8e96ae2f715116d8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bb
-// Size: 0x4a
+// Checksum 0x0, Offset: 0x1e9
+// Size: 0x49
 function function_cb0d4933a6762cf9(pickupname) {
     self.var_447891d63f8a9e28 = pickupname;
     pickupdef = function_7bf8496cb1c4eee8(self);
-    assertex(isdefined(pickupdef), "<dev string:x1c>");
+    assertex(isdefined(pickupdef), "Pickup def needs to be defined for this pickupName before pickup can be added");
     function_45e8de724a35faf2(self, pickupdef.seekradius);
 }
 
 // Namespace ai_pickups / namespace_8e96ae2f715116d8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d
+// Checksum 0x0, Offset: 0x23a
 // Size: 0xc2
 function function_48eefcb82b853c11(taskid) {
     pickups = function_53d57c112257ea8a();
@@ -59,7 +59,7 @@ function function_48eefcb82b853c11(taskid) {
 
 // Namespace ai_pickups / namespace_8e96ae2f715116d8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d8
+// Checksum 0x0, Offset: 0x305
 // Size: 0xc1
 function function_a686ba7a3ef1cefa(taskid) {
     if (!isdefined(self.bt.pickupitem)) {
@@ -75,8 +75,8 @@ function function_a686ba7a3ef1cefa(taskid) {
 
 // Namespace ai_pickups / namespace_8e96ae2f715116d8
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a2
-// Size: 0x102
+// Checksum 0x0, Offset: 0x3cf
+// Size: 0x104
 function function_edc6e91837522e22(taskid) {
     if (!isdefined(self.bt.pickupitem)) {
         return anim.failure;

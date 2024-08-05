@@ -4,7 +4,7 @@
 
 // Namespace battlechatter_trigs / scripts\mp\battlechatter_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x715
+// Checksum 0x0, Offset: 0x647
 // Size: 0x2
 function extra_location_trigger_mapping() {
     
@@ -12,7 +12,7 @@ function extra_location_trigger_mapping() {
 
 // Namespace battlechatter_trigs / scripts\mp\battlechatter_trigs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x71f
+// Checksum 0x0, Offset: 0x651
 // Size: 0x1ef
 function geneva() {
     add_bcs_location_mapping("trigger_multiple_bcs_mp_geneva_masq_shop", "masq_shop");

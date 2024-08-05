@@ -7,7 +7,6 @@
 #using scripts\common\callbacks.gsc;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_189b67b2735b981d;
-#using script_76cc264b397db9cb;
 #using script_4a6760982b403bad;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
@@ -19,13 +18,12 @@
 #using script_249f45d992af1114;
 #using script_52d91cb28006a5bd;
 #using script_16ea1b94f0f381b3;
-#using script_600b944a95c3a7bf;
 
 #namespace armor;
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1270
+// Checksum 0x0, Offset: 0xf4f
 // Size: 0x1db
 function init() {
     /#
@@ -59,8 +57,8 @@ function init() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1453
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x1132
+// Size: 0xf7
 function function_a123482f01487930() {
     allowArmor = getdvarint(@"hash_4c8ec2fff0818a37", -1);
     spawnarmorplates = getdvarint(@"hash_d7b4016f72a67d64", -1);
@@ -86,15 +84,18 @@ function function_a123482f01487930() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x154f
-// Size: 0x93
+// Checksum 0x0, Offset: 0x1231
+// Size: 0xb1
 function function_13caa305c839a278(notification, slotindex) {
     if (isdefined(notification) && notification == "try_use_heal_slot") {
         var_57d8f859dc2dd35d = slotindex;
         var_c84cdf4dbd2b7b98 = 1;
         self.var_d26f815b7eb18327 = undefined;
+        if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1) {
+            var_57d8f859dc2dd35d = 0;
+        }
         if (var_57d8f859dc2dd35d == 1) {
-            var_c84cdf4dbd2b7b98 = function_20b8437058079297();
+            var_c84cdf4dbd2b7b98 = self getammocount(function_46cd39650beb293f());
             self.var_d26f815b7eb18327 = 1;
         } else if (isdefined(self.armorqueued) && self.armorqueued > 0 && var_57d8f859dc2dd35d == 2) {
             var_c84cdf4dbd2b7b98 = 0;
@@ -105,8 +106,8 @@ function function_13caa305c839a278(notification, slotindex) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ea
-// Size: 0x40d
+// Checksum 0x0, Offset: 0x12ea
+// Size: 0x416
 function initarmor(var_b5c8bc15f7117b19) {
     if (!istrue(level.allowArmor) || istrue(self.armorinitialized)) {
         return;
@@ -139,7 +140,7 @@ function initarmor(var_b5c8bc15f7117b19) {
         }
         self.maxarmorhealth = defaultmaxarmor;
         if (istrue(var_b5c8bc15f7117b19)) {
-            currentcount = function_20b8437058079297();
+            currentcount = self getammocount(function_46cd39650beb293f());
             function_7293fbe4c07e316f(currentcount);
             return;
         }
@@ -197,10 +198,13 @@ function initarmor(var_b5c8bc15f7117b19) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ff
-// Size: 0x28c
+// Checksum 0x0, Offset: 0x1708
+// Size: 0x28d
 function givestartingarmor(armorvalue, var_10fd8ed3fed0e0ae, var_ac1d8e40765a422e) {
     if (!istrue(level.allowArmor)) {
+        return;
+    }
+    if (getdvarint(@"hash_3b4a48911ecb759e", 0) == 1) {
         return;
     }
     if (istrue(level.var_1f9a4d8f7e4586bb)) {
@@ -208,10 +212,6 @@ function givestartingarmor(armorvalue, var_10fd8ed3fed0e0ae, var_ac1d8e40765a422
         return;
     }
     if (!function_a024d9111228a85e()) {
-        if (istrue(self.var_d4bfb0d4d797f448)) {
-            self.var_d4bfb0d4d797f448 = undefined;
-            return;
-        }
         function_be5c0cdfa0202544();
         return;
     }
@@ -277,7 +277,7 @@ function givestartingarmor(armorvalue, var_10fd8ed3fed0e0ae, var_ac1d8e40765a422
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c93
+// Checksum 0x0, Offset: 0x199d
 // Size: 0x18
 function function_be5c0cdfa0202544() {
     self setclientomnvar("ui_equipment_id_health", 27);
@@ -286,7 +286,7 @@ function function_be5c0cdfa0202544() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cb3
+// Checksum 0x0, Offset: 0x19bd
 // Size: 0x6c
 function function_46cd39650beb293f() {
     if (isdefined(level.equipment.table["equip_armorplate"])) {
@@ -300,7 +300,7 @@ function function_46cd39650beb293f() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d28
+// Checksum 0x0, Offset: 0x1a32
 // Size: 0x1b
 function hasarmor() {
     return isdefined(self.armorhealth) && self.armorhealth > 0;
@@ -308,7 +308,7 @@ function hasarmor() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d4c
+// Checksum 0x0, Offset: 0x1a56
 // Size: 0x56
 function function_9bca5c1d23a3e0b3() {
     if (!isdefined(self.armorhealth) || !isdefined(self.maxarmorhealth)) {
@@ -322,7 +322,7 @@ function function_9bca5c1d23a3e0b3() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1daa
+// Checksum 0x0, Offset: 0x1ab4
 // Size: 0x25
 function function_ac266fc218266d08() {
     if (!istrue(level.allowArmor)) {
@@ -335,21 +335,9 @@ function function_ac266fc218266d08() {
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dd8
-// Size: 0x37
-function function_11ae05e08cc74847(var_1c07ef7bc0e3723a) {
-    if (!isdefined(var_1c07ef7bc0e3723a)) {
-        var_1c07ef7bc0e3723a = self.armorhealth;
-    }
-    self.maxarmorhealth = 50 * function_829e435158d419cf();
-    setArmorHealth(var_1c07ef7bc0e3723a, 1);
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e17
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x1ae2
+// Size: 0x6a
 function setArmorHealth(value, var_5fb98290d356d5dd) {
     if (!isdefined(value)) {
         return;
@@ -357,29 +345,23 @@ function setArmorHealth(value, var_5fb98290d356d5dd) {
     self.armorhealth = int(clamp(value, 0, self.maxarmorhealth));
     if (issharedfuncdefined("player", "setArmorOmnvars")) {
         self [[ getsharedfunc("player", "setArmorOmnvars") ]](var_5fb98290d356d5dd);
-    } else {
-        setarmoromnvars(var_5fb98290d356d5dd);
+        return;
     }
-    function_f3bb4f4911a1beb2("helmet", "updateProtectionState", self);
+    setarmoromnvars(var_5fb98290d356d5dd);
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e9b
-// Size: 0x2a
-function function_20b8437058079297() {
-    /#
-        if (getdvarint(@"hash_9331af4b4b382c9f", 0)) {
-            return function_47320a25b8ee003();
-        }
-    #/
+// Checksum 0x0, Offset: 0x1b54
+// Size: 0xe
+function function_600f6cf462e983f() {
     return self getammocount(function_46cd39650beb293f());
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ece
-// Size: 0x47
+// Checksum 0x0, Offset: 0x1b6b
+// Size: 0x46
 function function_77b7145c92102847(armorhealth) {
     if (level.var_4b78859bacc88808 > 0) {
         platecount = float(armorhealth) / float(level.var_4b78859bacc88808);
@@ -390,20 +372,20 @@ function function_77b7145c92102847(armorhealth) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f1e
-// Size: 0x30
+// Checksum 0x0, Offset: 0x1bba
+// Size: 0x35
 function function_9c6e9a6643b6c9a6(var_7bd6e41ea1e31283) {
     if (!isdefined(var_7bd6e41ea1e31283)) {
         var_7bd6e41ea1e31283 = 1;
     }
-    current = function_20b8437058079297();
+    current = self getammocount(function_46cd39650beb293f());
     function_7293fbe4c07e316f(current + var_7bd6e41ea1e31283);
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f56
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x1bf7
+// Size: 0xa7
 function function_47320a25b8ee003() {
     var_a81adeb0e1f89320 = 2;
     if (isdefined(level.var_4941fc1ee570d4cb) && istrue(level.var_fb2b3c3db6061df5)) {
@@ -421,7 +403,7 @@ function function_47320a25b8ee003() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2007
+// Checksum 0x0, Offset: 0x1ca7
 // Size: 0x4
 function function_1348b97715104fe2() {
     return 50;
@@ -429,18 +411,18 @@ function function_1348b97715104fe2() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2014
-// Size: 0x27
+// Checksum 0x0, Offset: 0x1cb4
+// Size: 0x2d
 function function_79e0ab2aa0304a2c() {
-    current = function_20b8437058079297();
+    current = self getammocount(function_46cd39650beb293f());
     var_a81adeb0e1f89320 = function_47320a25b8ee003();
     return current >= var_a81adeb0e1f89320;
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2044
-// Size: 0x204
+// Checksum 0x0, Offset: 0x1cea
+// Size: 0x205
 function damagearmor(damage, var_3773b3d5cce15dce, attacker, smeansofdeath, var_5fb98290d356d5dd) {
     if (!hasarmor()) {
         return damage;
@@ -482,7 +464,7 @@ function damagearmor(damage, var_3773b3d5cce15dce, attacker, smeansofdeath, var_
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2251
+// Checksum 0x0, Offset: 0x1ef8
 // Size: 0x72
 function function_8832743697109f0d(attacker) {
     wait 0.2;
@@ -500,7 +482,7 @@ function function_8832743697109f0d(attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22cb
+// Checksum 0x0, Offset: 0x1f72
 // Size: 0x14
 function breakarmor() {
     damagearmor(self.armorhealth, 1);
@@ -508,19 +490,23 @@ function breakarmor() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e7
-// Size: 0x25
+// Checksum 0x0, Offset: 0x1f8e
+// Size: 0x4c
 function function_3f8a6f9da782d418() {
     if (self.maxarmorhealth == 0) {
         return 0;
     }
-    return self.armorhealth / self.maxarmorhealth;
+    armorpercent = self.armorhealth / self.maxarmorhealth;
+    if (istrue(level.var_fb2b3c3db6061df5)) {
+        armorpercent = self.armorhealth / 150;
+    }
+    return armorpercent;
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2315
-// Size: 0x83
+// Checksum 0x0, Offset: 0x1fe3
+// Size: 0x86
 function function_55811fc89cf705b5() {
     var_16da20e6451d7744 = [0.67, 0.34, 0];
     var_424327452369b290 = self getclientomnvar("ui_armor_percent");
@@ -536,8 +522,8 @@ function function_55811fc89cf705b5() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23a1
-// Size: 0x23e
+// Checksum 0x0, Offset: 0x2072
+// Size: 0x278
 function setarmoromnvars(var_5fb98290d356d5dd) {
     if (!isplayer(self)) {
         return;
@@ -554,6 +540,8 @@ function setarmoromnvars(var_5fb98290d356d5dd) {
     if (isdefined(level.var_ade00516ceb8b9dc) && istrue(level.var_fb2b3c3db6061df5)) {
         maxarmor = self [[ level.var_ade00516ceb8b9dc ]]();
         armorpercent = maxarmor != 0 ? self.armorhealth / self [[ level.var_ade00516ceb8b9dc ]]() : 0;
+    } else if (istrue(level.var_fb2b3c3db6061df5) && !(level.gametype == "dungeons")) {
+        armorpercent = self.armorhealth / 150;
     }
     self setclientomnvar("ui_armor_percent", armorpercent);
     self setclientomnvar("ui_equipment_id_health", 27);
@@ -582,7 +570,7 @@ function setarmoromnvars(var_5fb98290d356d5dd) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25e7
+// Checksum 0x0, Offset: 0x22f2
 // Size: 0x81
 function function_dfac14bd66442dca() {
     if (!function_ccf98e6391dd38b9()) {
@@ -601,7 +589,7 @@ function function_dfac14bd66442dca() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2670
+// Checksum 0x0, Offset: 0x237b
 // Size: 0x12
 function haslowarmor() {
     return self.armorhealth <= lowarmorthreshold();
@@ -609,7 +597,7 @@ function haslowarmor() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x268b
+// Checksum 0x0, Offset: 0x2396
 // Size: 0x11
 function lowarmorthreshold() {
     return self.maxarmorhealth * 0.28;
@@ -617,8 +605,8 @@ function lowarmorthreshold() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26a5
-// Size: 0x2b1
+// Checksum 0x0, Offset: 0x23b0
+// Size: 0x276
 function function_1b593d5e688a409c() {
     squadmates = level.teamdata[self.team]["players"];
     if (isdefined(level.squaddata) && isdefined(level.squaddata[self.team]) && isdefined(level.squaddata[self.team][self.sessionsquadid])) {
@@ -640,28 +628,24 @@ function function_1b593d5e688a409c() {
     if (squadmemberindex == -1) {
         return;
     }
-    assertex(squadmemberindex < namespace_9bb409deb69fb31d::function_9be60342a8babba5(), "<dev string:x1c>" + squadmemberindex + "<dev string:x82>" + self.team);
     if (isdefined(level.var_ade00516ceb8b9dc) && istrue(level.var_fb2b3c3db6061df5)) {
         maxarmor = [[ level.var_ade00516ceb8b9dc ]]();
         var_5524b1700566d195 = 512;
-        var_8ed19fd39d6993cf = 131071;
+        var_8ed19fd39d6993cf = 26262;
     } else if (istrue(level.var_fb2b3c3db6061df5)) {
         maxarmor = 150;
         var_5524b1700566d195 = 512;
-        var_8ed19fd39d6993cf = 131071;
+        var_8ed19fd39d6993cf = 26262;
     }
     var_cabc886d846dd979 = maxarmor != 0 ? int(armorhealth * maxarmor / maxarmor) : 0;
     if (istrue(level.var_fb2b3c3db6061df5)) {
-        var_8f098991d1e07346 = function_829e435158d419cf() << 9;
+        var_8f098991d1e07346 = self.var_bed158a6dfac230d << 9;
         var_cabc886d846dd979 += var_8f098991d1e07346;
         typebits = function_8775d4e6734630c0(self);
-        var_6f0cfce91ba1feb3 = typebits << 12;
+        var_6f0cfce91ba1feb3 = typebits << 11;
         var_cabc886d846dd979 += var_6f0cfce91ba1feb3;
         if (istrue(self.var_28c033c3c5b37f1f)) {
-            var_cabc886d846dd979 += 32768;
-        }
-        if (istrue(self.var_cc09658e840807ae)) {
-            var_cabc886d846dd979 += 65536;
+            var_cabc886d846dd979 += 16384;
         }
     }
     if (!isdefined(var_cabc886d846dd979)) {
@@ -677,24 +661,8 @@ function function_1b593d5e688a409c() {
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x295e
-// Size: 0x18
-function function_70edce5f0482fde7() {
-    return 3 + (istrue(level.var_75c3b6e138fd717c) ? 1 : 0);
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x297f
-// Size: 0x1f
-function function_829e435158d419cf() {
-    return self.var_bed158a6dfac230d + (istrue(level.var_75c3b6e138fd717c) ? 1 : 0);
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29a7
+// Checksum 0x0, Offset: 0x262e
 // Size: 0x13
 function function_774133dc8df0ccd5(var_10fd8ed3fed0e0ae) {
     function_7293fbe4c07e316f(var_10fd8ed3fed0e0ae);
@@ -702,8 +670,8 @@ function function_774133dc8df0ccd5(var_10fd8ed3fed0e0ae) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x29c2
-// Size: 0x23e
+// Checksum 0x0, Offset: 0x2649
+// Size: 0x20d
 function private function_7293fbe4c07e316f(var_10fd8ed3fed0e0ae) {
     backpackenabled = undefined;
     if (issharedfuncdefined("backpack", "isBackpackInventoryEnabled")) {
@@ -731,10 +699,6 @@ function private function_7293fbe4c07e316f(var_10fd8ed3fed0e0ae) {
         }
         self setweaponammoclip(armorobj, var_1c9dc6c0f33953cd);
         self setclientomnvar("ui_equipment_id_health_numCharges", var_1c9dc6c0f33953cd);
-        if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-            var_3312a64d533c3a0d = function_6a84ae8b37bed447();
-            function_f3bb4f4911a1beb2("player", "updateBRScoreboardStat", "armorPlateCount", var_1c9dc6c0f33953cd + var_3312a64d533c3a0d);
-        }
         return;
     }
     if (level.gametype == "dungeons" || getdvarint(@"hash_8ad1ab9436bccca", 0) || getdvarint(@"hash_5afa341109e3a9f4", 0)) {
@@ -749,17 +713,9 @@ function private function_7293fbe4c07e316f(var_10fd8ed3fed0e0ae) {
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c08
-// Size: 0xf
-function function_50deea7508dbf174() {
-    function_7293fbe4c07e316f(function_20b8437058079297());
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c1f
-// Size: 0x76
+// Checksum 0x0, Offset: 0x285e
+// Size: 0x7b
 function function_ef6d8b8c2ed89e8a(count) {
     if (self function_e8e6d2926fd6d61e()) {
         if (!self function_4a13111b050f0b72() || !istrue(self.var_b43706cbb600fe5a)) {
@@ -769,7 +725,7 @@ function function_ef6d8b8c2ed89e8a(count) {
                 amount = count;
             }
             if (self function_6adb0980232f3eff()) {
-                amount = function_20b8437058079297();
+                amount = self getammocount(function_46cd39650beb293f());
             }
             if (amount) {
                 self.var_b846f916af2f7782 = 1;
@@ -782,8 +738,8 @@ function function_ef6d8b8c2ed89e8a(count) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c9d
-// Size: 0x109
+// Checksum 0x0, Offset: 0x28e1
+// Size: 0x105
 function function_9f1608bd570dd94c(var_c84cdf4dbd2b7b98) {
     if (!istrue(level.allowArmor)) {
         return;
@@ -791,17 +747,15 @@ function function_9f1608bd570dd94c(var_c84cdf4dbd2b7b98) {
     self endon("death_or_disconnect");
     self notify("try_use_heal_slot");
     if (!function_cf37789d18fbcc1b()) {
-        if (iscp()) {
-            level.player setclientomnvar("ui_armor_warning", "hide_armor");
-            waitframe();
-            if (self.armorhealth >= self.maxarmorhealth) {
-                level.player setclientomnvar("ui_armor_warning", "max_armor");
-                return;
-            }
-            var_276f41532514ddcc = function_20b8437058079297();
-            if (var_276f41532514ddcc == 0) {
-                level.player setclientomnvar("ui_armor_warning", "no_armor");
-            }
+        level.player setclientomnvar("ui_armor_warning", "hide_armor");
+        waitframe();
+        if (self.armorhealth >= self.maxarmorhealth) {
+            level.player setclientomnvar("ui_armor_warning", "max_armor");
+            return;
+        }
+        var_276f41532514ddcc = self getammocount(function_46cd39650beb293f());
+        if (var_276f41532514ddcc == 0) {
+            level.player setclientomnvar("ui_armor_warning", "no_armor");
         }
         return;
     }
@@ -821,8 +775,8 @@ function function_9f1608bd570dd94c(var_c84cdf4dbd2b7b98) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dae
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x29ee
+// Size: 0xfe
 function function_2be3084f26829eac(var_d2a5ddc13d5ced30) {
     var_971d04134a431bfd = int(self.armorhealth / level.var_4b78859bacc88808);
     var_1688c3e909c6563f = self.maxarmorhealth / level.var_4b78859bacc88808;
@@ -832,7 +786,7 @@ function function_2be3084f26829eac(var_d2a5ddc13d5ced30) {
     if (var_2d430af8e8aea492 && var_f18c4218c7058e95 > var_971d04134a431bfd) {
         var_a02589dfaaa6749 = var_1688c3e909c6563f - var_f18c4218c7058e95;
     }
-    var_73bd1164e54e82ba = function_20b8437058079297();
+    var_73bd1164e54e82ba = self getammocount(function_46cd39650beb293f());
     var_d2a5ddc13d5ced30 = clamp(var_d2a5ddc13d5ced30, 0, min(var_a02589dfaaa6749, var_73bd1164e54e82ba));
     self.armorqueued = var_d2a5ddc13d5ced30;
     self setclientomnvar("ui_armor_queued_count", int(var_d2a5ddc13d5ced30));
@@ -840,12 +794,11 @@ function function_2be3084f26829eac(var_d2a5ddc13d5ced30) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2eaa
-// Size: 0xd7
+// Checksum 0x0, Offset: 0x2af4
+// Size: 0xb3
 function private function_7cb27dc2ce16cb4f() {
-    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1 || player_hasperk("specialty_onehanded_plating") && scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
+    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1) {
         self.insertingarmorplate = 0;
-        self.var_845334559a2fcaca = 0;
         self setclientomnvar("ui_inserting_armor_plate", 0);
         if (isdefined(level.equipment.table["equip_armor_onehanded"]) && isdefined(level.equipment.table["equip_armor_onehanded"].objweapon)) {
             armorweapon = level.equipment.table["equip_armor_onehanded"].objweapon;
@@ -858,7 +811,7 @@ function private function_7cb27dc2ce16cb4f() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2f89
+// Checksum 0x0, Offset: 0x2baf
 // Size: 0x12
 function private on_player_spawn(sparams) {
     function_7cb27dc2ce16cb4f();
@@ -866,7 +819,7 @@ function private on_player_spawn(sparams) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2fa3
+// Checksum 0x0, Offset: 0x2bc9
 // Size: 0x12
 function private function_5a97c5b79aaf7a5b(sparams) {
     function_7cb27dc2ce16cb4f();
@@ -874,8 +827,8 @@ function private function_5a97c5b79aaf7a5b(sparams) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2fbd
-// Size: 0x3dd
+// Checksum 0x0, Offset: 0x2be3
+// Size: 0x3c3
 function private function_f2a4a5aed60e552d() {
     self endon("disconnect");
     self endon("death");
@@ -883,7 +836,7 @@ function private function_f2a4a5aed60e552d() {
     if (istrue(self.insertingarmorplate) || self isswitchingweapon()) {
         return;
     }
-    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1 || player_hasperk("specialty_onehanded_plating") && scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
+    if (getdvarint(@"hash_d48a0404793bfcfe", 0) == 1) {
         if (!isnullweapon(self getheldoffhand())) {
             if (issharedfuncdefined("supers", "getSuperRefForSuperOffhand")) {
                 superref = self [[ getsharedfunc("supers", "getSuperRefForSuperOffhand") ]](self getheldoffhand());
@@ -893,7 +846,7 @@ function private function_f2a4a5aed60e552d() {
             }
             thread function_55c8966f39db409();
         }
-        if (!function_cf37789d18fbcc1b() || istrue(self.var_845334559a2fcaca)) {
+        if (!function_cf37789d18fbcc1b() || istrue(self.stoparmorinsert)) {
             return;
         }
         isplayerreloading = self isreloading();
@@ -924,13 +877,11 @@ function private function_f2a4a5aed60e552d() {
                 if (self hasweapon(armorweapon)) {
                     _takeweapon(armorweapon);
                 }
-                self.var_845334559a2fcaca = 1;
-                wait 0.5;
-                self.var_845334559a2fcaca = 0;
+                var_cf97caf9e7ec424 = (1000 - 900) / 1000;
+                wait var_cf97caf9e7ec424;
             }
             function_2be3084f26829eac(0);
             self.insertingarmorplate = 0;
-            self.var_845334559a2fcaca = 0;
             self setclientomnvar("ui_inserting_armor_plate", 0);
             self notify("insertArmorComplete");
         }
@@ -959,7 +910,7 @@ function private function_f2a4a5aed60e552d() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33a2
+// Checksum 0x0, Offset: 0x2fae
 // Size: 0x203
 function function_55c8966f39db409() {
     self endon("armor_restoreHeldOffhand");
@@ -985,7 +936,7 @@ function function_55c8966f39db409() {
         if (issharedfuncdefined("equipment", "hasEquipment") && self [[ getsharedfunc("equipment", "hasEquipment") ]](equipmentref)) {
             _giveweapon(self.var_35a985f3820afb24);
             slot = self [[ getsharedfunc("equipment", "findEquipmentSlot") ]](equipmentref);
-            assertex(isdefined(slot) && (slot == "<dev string:x93>" || slot == "<dev string:x9e>"), "<dev string:xab>" + equipmentref + "<dev string:xcd>");
+            assertex(isdefined(slot) && (slot == "primary" || slot == "secondary"), "armorTakeOffHand is trying to " + equipmentref + ", but its slot is invalid.");
             if (slot == "primary") {
                 self assignweaponoffhandprimary(self.var_35a985f3820afb24);
             } else if (slot == "secondary") {
@@ -1002,7 +953,7 @@ function function_55c8966f39db409() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x35ad
+// Checksum 0x0, Offset: 0x31b9
 // Size: 0x1b
 function function_df0c4be0709e8116(equipmentref, slot, objweapon) {
     
@@ -1010,7 +961,7 @@ function function_df0c4be0709e8116(equipmentref, slot, objweapon) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35d0
+// Checksum 0x0, Offset: 0x31dc
 // Size: 0x13
 function function_dd4193b50e36fb2c(equipmentref, equipmentslot) {
     
@@ -1018,12 +969,17 @@ function function_dd4193b50e36fb2c(equipmentref, equipmentslot) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x35eb
-// Size: 0x237
+// Checksum 0x0, Offset: 0x31f7
+// Size: 0x252
 function private usearmorplate() {
     assert(isdefined(self.maxarmorhealth) && self.maxarmorhealth > 0);
     if (isdefined(self.armorqueued)) {
         var_1d614448f6cac2d7 = self.armorqueued - 1;
+        if (getdvarint(@"hash_d48a0404793bfcfe", 0) != 1) {
+            if (istrue(self.var_d26f815b7eb18327)) {
+                var_1d614448f6cac2d7 = 1;
+            }
+        }
         function_2be3084f26829eac(var_1d614448f6cac2d7);
     }
     var_1c07ef7bc0e3723a = 0;
@@ -1042,7 +998,7 @@ function private usearmorplate() {
         self.pers["telemetry"].armor_equipped++;
     }
     setArmorHealth(var_1c07ef7bc0e3723a);
-    currentcount = function_20b8437058079297();
+    currentcount = self getammocount(function_46cd39650beb293f());
     newcount = int(max(0, currentcount - 1));
     function_7293fbe4c07e316f(newcount);
     if (scripts\cp_mp\utility\game_utility::function_9cdaadfddeda4d7a()) {
@@ -1050,10 +1006,7 @@ function private usearmorplate() {
     }
     scripts\cp_mp\challenges::onuseitem("armor_plate");
     if (scripts\cp_mp\utility\player_utility::player_hasperk("specialty_reduce_regen_delay_on_plate") && scripts\cp_mp\utility\game_utility::isbrstylegametype() && level.var_1fe86bfc07eaa587) {
-        if (!istrue(self.isincircle)) {
-            namespace_f8d3520d3483c1::function_7f2cfc2ced509047();
-            self notify("force_regeneration");
-        }
+        namespace_f8d3520d3483c1::function_7f2cfc2ced509047();
     }
     if (issharedfuncdefined("game", "onArmorPlateEquipped")) {
         function_f3bb4f4911a1beb2("game", "onArmorPlateEquipped");
@@ -1066,7 +1019,7 @@ function private usearmorplate() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x382a
+// Checksum 0x0, Offset: 0x3451
 // Size: 0x32
 function private function_7f2cfc2ced509047() {
     level endon("game_ended");
@@ -1078,22 +1031,14 @@ function private function_7f2cfc2ced509047() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3864
-// Size: 0x21
-function function_763f5fb36de6d3df() {
-    return floor((self.maxarmorhealth - self.armorhealth) / function_85e373bb15921966());
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x388e
-// Size: 0x9f
+// Checksum 0x0, Offset: 0x348b
+// Size: 0xab
 function function_85e373bb15921966() {
     if (issharedfuncdefined("perk", "hasPerk") || istrue(self.var_163e87b7d147df4e)) {
         if (self [[ getsharedfunc("perk", "hasPerk") ]]("specialty_increased_armor_health") || istrue(self.var_163e87b7d147df4e)) {
             return int(self.maxarmorhealth / 3);
-        } else if (istrue(level.var_7f3aafcf56c9ce14) && istrue(self.var_cc09658e840807ae) && isdefined(self.var_42294cc94c3bf2c3)) {
-            return [[ self.var_42294cc94c3bf2c3 ]]();
+        } else if (istrue(level.var_7f3aafcf56c9ce14) && self [[ getsharedfunc("perk", "hasPerk") ]]("specialty_pc_tempered") && isdefined(self.var_42294cc94c3bf2c3)) {
+            return self.var_42294cc94c3bf2c3;
         }
     }
     return level.var_4b78859bacc88808;
@@ -1101,7 +1046,7 @@ function function_85e373bb15921966() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3936
+// Checksum 0x0, Offset: 0x353f
 // Size: 0x11c
 function private function_1240021a9c87bcdb() {
     self endon("insertArmorComplete");
@@ -1137,7 +1082,7 @@ function private function_1240021a9c87bcdb() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3a5a
+// Checksum 0x0, Offset: 0x3663
 // Size: 0x3a
 function private watchgameend(streakinfo) {
     self endon("death");
@@ -1149,8 +1094,8 @@ function private watchgameend(streakinfo) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3a9c
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x36a5
+// Size: 0x39
 function private function_a5e267fd4b705fd6() {
     self endon("disconnect");
     self endon("insertArmorComplete");
@@ -1160,7 +1105,7 @@ function private function_a5e267fd4b705fd6() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3ade
+// Checksum 0x0, Offset: 0x36e6
 // Size: 0xd5
 function private function_d9c269fb5751937b() {
     self endon("disconnect");
@@ -1182,8 +1127,8 @@ function private function_d9c269fb5751937b() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3bbb
-// Size: 0x2b
+// Checksum 0x0, Offset: 0x37c3
+// Size: 0x2a
 function private function_ebbb01a971edd5b3() {
     self endon("armor_cancel_watch_stop");
     var_51b71f011305b016 = self waittill("try_armor_cancel");
@@ -1192,8 +1137,8 @@ function private function_ebbb01a971edd5b3() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3bee
-// Size: 0x42
+// Checksum 0x0, Offset: 0x37f5
+// Size: 0x41
 function private function_8a7d870c4615a027() {
     self endon("armor_cancel_watch_stop");
     msg = waittill_any_return_6("death", "mantle_start", "last_stand_start", "scr_change_swim_state", "special_weapon_fired", "armor_plate_done");
@@ -1202,8 +1147,8 @@ function private function_8a7d870c4615a027() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c38
-// Size: 0x58
+// Checksum 0x0, Offset: 0x383e
+// Size: 0x57
 function private function_9cda8706bc1d6a7d(mainreason, specificreason) {
     var_5814d27874b48e54 = spawnstruct();
     var_5814d27874b48e54.player = self;
@@ -1214,7 +1159,7 @@ function private function_9cda8706bc1d6a7d(mainreason, specificreason) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3c98
+// Checksum 0x0, Offset: 0x389d
 // Size: 0x9
 function private canqueuearmorbydefault() {
     return !is_player_gamepad_enabled();
@@ -1222,7 +1167,7 @@ function private canqueuearmorbydefault() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3caa
+// Checksum 0x0, Offset: 0x38af
 // Size: 0x134
 function private function_43d4382b6cea4df9(var_e12d78c11d85d9c2) {
     if (var_e12d78c11d85d9c2) {
@@ -1253,8 +1198,8 @@ function private function_43d4382b6cea4df9(var_e12d78c11d85d9c2) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3de6
-// Size: 0x1c6
+// Checksum 0x0, Offset: 0x39eb
+// Size: 0x1cc
 function private insertarmor(streakinfo) {
     self endon("disconnect");
     self endon("insertArmorComplete");
@@ -1303,14 +1248,11 @@ function private insertarmor(streakinfo) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x3fb4
-// Size: 0xd4
+// Checksum 0x0, Offset: 0x3bbf
+// Size: 0x82
 function private insertArmorComplete() {
     self endon("disconnect");
     self notify("insertArmorComplete");
-    if (isdefined(self.currentweapon) && isdefined(self.currentweapon.basename) && self.currentweapon.basename == "iw9_armor_plate_deploy_mp") {
-        scripts\cp_mp\killstreaks\killstreakdeploy::getridofkillstreakdeployweapon(self.currentweapon);
-    }
     function_25aae4d93a36c291();
     scripts\common\values::set("armor", "supers", 1);
     while (isdefined(self.currentweapon) && isdefined(self.currentweapon.basename) && self.currentweapon.basename == "iw9_armor_plate_deploy_mp") {
@@ -1323,8 +1265,8 @@ function private insertArmorComplete() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4090
-// Size: 0x137
+// Checksum 0x0, Offset: 0x3c49
+// Size: 0x13c
 function function_cf37789d18fbcc1b() {
     if (!isalive(self) || self isparachuting() || self isskydiving() || self isonladder() || self function_9cc921a57ff4deb5()) {
         return false;
@@ -1341,7 +1283,7 @@ function function_cf37789d18fbcc1b() {
     if (!istrue(self.var_4b6e638cb12a3e90) && isdefined(self.super) && istrue(self.super.isinuse) && !function_9719a1e79de2989f(self.super.staticdata.ref)) {
         return false;
     }
-    currentcount = function_20b8437058079297();
+    currentcount = self getammocount(function_46cd39650beb293f());
     if (currentcount == 0) {
         return false;
     }
@@ -1350,7 +1292,7 @@ function function_cf37789d18fbcc1b() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41d0
+// Checksum 0x0, Offset: 0x3d8e
 // Size: 0xf2
 function function_9719a1e79de2989f(supername) {
     if (!isdefined(supername)) {
@@ -1374,7 +1316,7 @@ function function_9719a1e79de2989f(supername) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x42cb
+// Checksum 0x0, Offset: 0x3e89
 // Size: 0x52
 function private function_4e03f222ed8b54a1() {
     if (!function_cf37789d18fbcc1b()) {
@@ -1387,7 +1329,7 @@ function private function_4e03f222ed8b54a1() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x4326
+// Checksum 0x0, Offset: 0x3ee4
 // Size: 0xb5
 function private function_451b277f45c6174f() {
     if (!isbot(self)) {
@@ -1406,7 +1348,7 @@ function private function_451b277f45c6174f() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x43e3
+// Checksum 0x0, Offset: 0x3fa1
 // Size: 0xb5
 function private function_25aae4d93a36c291() {
     if (!isbot(self)) {
@@ -1425,7 +1367,7 @@ function private function_25aae4d93a36c291() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44a0
+// Checksum 0x0, Offset: 0x405e
 // Size: 0xc
 function hashelmet() {
     return isdefined(self.br_helmetlevel);
@@ -1433,7 +1375,7 @@ function hashelmet() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44b5
+// Checksum 0x0, Offset: 0x4073
 // Size: 0x1b
 function function_47ad39003b16cf4c() {
     return isdefined(self.helmethealth) && self.helmethealth > 0;
@@ -1441,7 +1383,7 @@ function function_47ad39003b16cf4c() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44d9
+// Checksum 0x0, Offset: 0x4097
 // Size: 0x4b
 function helmetitemtypeforlevel(helmetlevel) {
     switch (helmetlevel) {
@@ -1457,8 +1399,8 @@ function helmetitemtypeforlevel(helmetlevel) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x452d
-// Size: 0x48
+// Checksum 0x0, Offset: 0x40eb
+// Size: 0x47
 function takehelmet(helmetitem, helmetlevel) {
     self.br_helmetlevel = helmetlevel;
     row = level.br_pickups.br_itemrow[helmetitem.scriptablename];
@@ -1466,8 +1408,8 @@ function takehelmet(helmetitem, helmetlevel) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x457d
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x413a
+// Size: 0x6e
 function function_cd4a78b4a236ddc8(armorname) {
     helmetlevel = 0;
     if (armorname == "equip_helmet_1") {
@@ -1487,15 +1429,15 @@ function function_cd4a78b4a236ddc8(armorname) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x45f5
-// Size: 0x158
+// Checksum 0x0, Offset: 0x41b1
+// Size: 0x149
 function function_e71f062243ea8827(damage, var_3773b3d5cce15dce, attacker) {
     if (!isdefined(self.helmethealth) || self.helmethealth <= 0) {
         return damage;
     }
     excessdamage = damage - self.helmethealth;
     self.helmethealth = int(clamp(self.helmethealth - damage, 0, self.var_cfc69e5588a5bed6));
-    if (istrue(self.var_895dae193cfaac3a) && !istrue(self.var_62e6d0c1bcceae79)) {
+    if (istrue(self.var_895dae193cfaac3a)) {
         if (self.helmethealth / self.var_cfc69e5588a5bed6 < 0.45 && !istrue(self.helmetdamaged)) {
             self setscriptablepartstate("helmet", "damaged");
             self.helmetdamaged = 1;
@@ -1525,7 +1467,7 @@ function function_e71f062243ea8827(damage, var_3773b3d5cce15dce, attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4756
+// Checksum 0x0, Offset: 0x4303
 // Size: 0x64
 function function_908110bdfb8e8ba(attacker) {
     wait 0.15;
@@ -1541,7 +1483,7 @@ function function_908110bdfb8e8ba(attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47c2
+// Checksum 0x0, Offset: 0x436f
 // Size: 0x64
 function function_1d16645547af7d5b(attacker) {
     wait 0.15;
@@ -1557,8 +1499,8 @@ function function_1d16645547af7d5b(attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x482e
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x43db
+// Size: 0xbd
 function damagehelmet(damage, snipershot, impactdir) {
     if (!isdefined(snipershot) || !level.var_23500029f84b30d0) {
         snipershot = 0;
@@ -1587,8 +1529,8 @@ function damagehelmet(damage, snipershot, impactdir) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x48f5
-// Size: 0x1ab
+// Checksum 0x0, Offset: 0x44a1
+// Size: 0x1b4
 function private popoffhelmet(impactdir, playerangles, playerorigin) {
     level endon("game_ended");
     helmettag = self gettagorigin("j_helmet");
@@ -1620,7 +1562,7 @@ function private popoffhelmet(impactdir, playerangles, playerorigin) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x4aa8
+// Checksum 0x0, Offset: 0x465d
 // Size: 0x42
 function private onhelmetsniped(victim, impactdir) {
     if (isdefined(victim)) {
@@ -1631,7 +1573,7 @@ function private onhelmetsniped(victim, impactdir) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4af2
+// Checksum 0x0, Offset: 0x46a7
 // Size: 0x4f
 function function_92fec40b905c5112() {
     if (isalive(self) && isdefined(self.armorhealth) && self.armorhealth < self.maxarmorhealth) {
@@ -1644,7 +1586,7 @@ function function_92fec40b905c5112() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b4a
+// Checksum 0x0, Offset: 0x46ff
 // Size: 0x75
 function function_4f88731347251184() {
     level endon("game_ended");
@@ -1660,8 +1602,8 @@ function function_4f88731347251184() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bc7
-// Size: 0x7f8
+// Checksum 0x0, Offset: 0x477c
+// Size: 0x7d9
 function function_90ce8eb3ddaa4943(attacker, inflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, unmodifieddamage, partname) {
     healthdamage = idamage;
     scaleddamage = idamage;
@@ -1674,7 +1616,7 @@ function function_90ce8eb3ddaa4943(attacker, inflictor, victim, idamage, objweap
     }
     if (var_7820f81ee1adf7b9 || function_244067e915c0eabe() && !istrue(victim.inlaststand)) {
         hitshield = shitloc == "shield" && smeansofdeath != "MOD_GRENADE_SPLASH" && !isdefined(victim.forcehitlocation);
-        var_94974807c7dc3acf = function_343613187bdf786f(objweapon, smeansofdeath) || istrue(victim.inlaststand) || hitshield || istrue(victim.var_7e5d64139d5dabb6);
+        var_94974807c7dc3acf = function_343613187bdf786f(objweapon, smeansofdeath) || istrue(victim.inlaststand) || hitshield;
         if (!istrue(var_94974807c7dc3acf) || function_244067e915c0eabe()) {
             var_49e6ef3edadd524e = namespace_e0ee43ef2dddadaa::getweaponrootname(objweapon);
             weapontype = weaponclass(objweapon);
@@ -1690,11 +1632,8 @@ function function_90ce8eb3ddaa4943(attacker, inflictor, victim, idamage, objweap
                 if (scripts\cp_mp\utility\weapon_utility::islauncherweapon(objweapon) && function_ad6472280450c778(attacker, victim)) {
                     scaleddamage = launcherdamagemod(scaleddamage, var_49e6ef3edadd524e);
                 }
-                if (getdvarint(@"hash_d216c825aefa6666", 0) && isoffhandweapon(objweapon) && function_ad6472280450c778(attacker, victim) && objweapon.basename != "dragonsbreath_mp") {
+                if (isoffhandweapon(objweapon) && function_ad6472280450c778(attacker, victim) && objweapon.basename != "dragonsbreath_mp") {
                     scaleddamage = equipmentdamagemod(scaleddamage, var_49e6ef3edadd524e);
-                }
-                if (getdvarint(@"hash_b39c4bff0da4c703", 0) && var_49e6ef3edadd524e == "iw9_knifestab" && scaleddamage > 135) {
-                    scaleddamage = 135;
                 }
                 if (var_49e6ef3edadd524e == "assault_drone_mp") {
                     scaleddamage = namespace_8a82a4967e25efd4::function_571f1e65c43fb585(inflictor, victim, scaleddamage);
@@ -1776,15 +1715,15 @@ function function_90ce8eb3ddaa4943(attacker, inflictor, victim, idamage, objweap
                 }
             }
             if (function_55c156d63be9eba2(objweapon) && smeansofdeath == "MOD_RIFLE_BULLET") {
-                function_22b15671bbf7a54e(attacker, victim, idflags, scaleddamage, healthdamage + armordamage, objweapon);
+                function_22b15671bbf7a54e(attacker, victim, idflags, scaleddamage, healthdamage + armordamage);
             } else {
                 var_4a101e7f1377c05d = istrue(function_43702519a3dc0854(smeansofdeath, objweapon, var_49e6ef3edadd524e, victim)) && armordamage >= 150;
                 var_b4a7d8cd8c4fb7da = isdefined(inflictor) && (isdefined(inflictor.stuckto) && inflictor.stuckto == victim || isdefined(inflictor.stuckenemyentity) && inflictor.stuckenemyentity == victim);
                 stuckexplosive = istrue(var_b4a7d8cd8c4fb7da) && isexplosivedamagemod(smeansofdeath);
                 var_2dc587f0e7d4d221 = istrue(stuckexplosive) && getdvarint(@"hash_5c2f4df8bafb4fc0", 1) && victim namespace_53fc9ddbb516e6e1::function_87072b42853a9c58("specialty_blastshield") && armordamage >= 130;
-                var_6bbde8c52eb2a305 = istrue(level.var_fb2b3c3db6061df5) && isdefined(victim.var_bed158a6dfac230d) && victim function_829e435158d419cf() >= function_70edce5f0482fde7();
+                var_84b2b2a1586de527 = istrue(level.var_fb2b3c3db6061df5) && isdefined(victim.var_bed158a6dfac230d) && victim.var_bed158a6dfac230d >= 3;
                 doscoreevents = 0;
-                if (var_6bbde8c52eb2a305) {
+                if (var_84b2b2a1586de527) {
                     if (var_4a101e7f1377c05d) {
                         if (healthdamage >= victim.health && !istrue(var_520f3f243189ca25)) {
                             healthdamage = int(clamp(healthdamage, 0, victim.health - 5));
@@ -1801,6 +1740,8 @@ function function_90ce8eb3ddaa4943(attacker, inflictor, victim, idamage, objweap
                         if (healthdamage < victim.health && isdefined(attacker) && isplayer(attacker) && attacker != victim && scripts\engine\utility::issharedfuncdefined("player", "doScoreEvent")) {
                             if (isdefined(victim.var_4045f099f3da4bd) && victim.var_4045f099f3da4bd == "brloot_plate_carrier_tempered") {
                                 attacker thread [[ scripts\engine\utility::getsharedfunc("player", "doScoreEvent") ]](#"hash_4caa4f3c52eaa383");
+                            } else {
+                                attacker thread [[ scripts\engine\utility::getsharedfunc("player", "doScoreEvent") ]](#"hash_676aa7832878d5ef");
                             }
                         }
                     }
@@ -1813,7 +1754,7 @@ function function_90ce8eb3ddaa4943(attacker, inflictor, victim, idamage, objweap
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x53c8
+// Checksum 0x0, Offset: 0x4f5e
 // Size: 0x5d
 function function_acb600e2132f092e(attacker, healthdamage, objweapon, smeansofdeath) {
     if (smeansofdeath == "MOD_MELEE" && !istrue(objweapon.ismelee) && !attacker [[ getsharedfunc("perk", "hasPerk") ]]("specialty_gunmelee")) {
@@ -1824,7 +1765,7 @@ function function_acb600e2132f092e(attacker, healthdamage, objweapon, smeansofde
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x542e
+// Checksum 0x0, Offset: 0x4fc4
 // Size: 0x21
 function function_3768b225bd3bcf44() {
     if (function_244067e915c0eabe() && function_ca2fbba0b1f55bbd()) {
@@ -1835,7 +1776,7 @@ function function_3768b225bd3bcf44() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5457
+// Checksum 0x0, Offset: 0x4fed
 // Size: 0x21
 function function_f42bf3137eb74656() {
     if (function_244067e915c0eabe() && function_ca2fbba0b1f55bbd()) {
@@ -1846,7 +1787,7 @@ function function_f42bf3137eb74656() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5480
+// Checksum 0x0, Offset: 0x5016
 // Size: 0x32
 function isgrenadeweapon(objweapon) {
     return isdefined(objweapon) && isdefined(objweapon.classname) && objweapon.classname == "grenade";
@@ -1854,7 +1795,7 @@ function isgrenadeweapon(objweapon) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54bb
+// Checksum 0x0, Offset: 0x5051
 // Size: 0x32
 function isoffhandweapon(objweapon) {
     return isdefined(objweapon) && isdefined(objweapon.inventorytype) && objweapon.inventorytype == "offhand";
@@ -1862,7 +1803,7 @@ function isoffhandweapon(objweapon) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x54f6
+// Checksum 0x0, Offset: 0x508c
 // Size: 0x65
 function function_f2ec69546b32a636(idamage, scaleddamage, excessdamage, armordamage) {
     if (excessdamage > 0) {
@@ -1880,12 +1821,12 @@ function function_f2ec69546b32a636(idamage, scaleddamage, excessdamage, armordam
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5564
-// Size: 0x74
+// Checksum 0x0, Offset: 0x50fa
+// Size: 0x73
 function function_6e4490a9f0f4006b(idamage, scaleddamage, eattacker, victim, idflags) {
     /#
         if (scaleddamage < idamage) {
-            assertmsg("<dev string:xeb>");
+            assertmsg("<dev string:x1c>");
         }
     #/
     if (scaleddamage > idamage) {
@@ -1898,13 +1839,13 @@ function function_6e4490a9f0f4006b(idamage, scaleddamage, eattacker, victim, idf
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x55e1
-// Size: 0x69
-function function_22b15671bbf7a54e(attacker, victim, idflags, scaleddamage, actualdamagedealt, objweapon) {
+// Params 5, eflags: 0x0
+// Checksum 0x0, Offset: 0x5176
+// Size: 0x55
+function function_22b15671bbf7a54e(attacker, victim, idflags, scaleddamage, actualdamagedealt) {
     /#
         if (actualdamagedealt > scaleddamage) {
-            assertmsg("<dev string:x162>" + objweapon.basename);
+            assertmsg("<dev string:x90>");
         }
     #/
     if (actualdamagedealt < scaleddamage) {
@@ -1914,8 +1855,8 @@ function function_22b15671bbf7a54e(attacker, victim, idflags, scaleddamage, actu
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x5652
-// Size: 0x153
+// Checksum 0x0, Offset: 0x51d3
+// Size: 0x15a
 function modifyHelmetDamage(attacker, inflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, skipclamp) {
     modifieddamage = idamage;
     helmetdamage = 0;
@@ -1937,7 +1878,7 @@ function modifyHelmetDamage(attacker, inflictor, victim, idamage, objweapon, sme
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x57ae
+// Checksum 0x0, Offset: 0x5336
 // Size: 0x15
 function isbulletpenetration(idflags) {
     return isdefined(idflags) && idflags & 8;
@@ -1945,7 +1886,7 @@ function isbulletpenetration(idflags) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x57cc
+// Checksum 0x0, Offset: 0x5354
 // Size: 0x8b
 function function_bdb257c83ae70586(attacker, victim, idflags, idamage, objweapon, smeansofdeath, unmodifieddamage) {
     if (!isdefined(unmodifieddamage)) {
@@ -1961,7 +1902,7 @@ function function_bdb257c83ae70586(attacker, victim, idflags, idamage, objweapon
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x5860
+// Checksum 0x0, Offset: 0x53e8
 // Size: 0x83
 function function_e5e4ad050998e4c1(attacker, objweapon, smeansofdeath, idamage, var_be4285b26ed99ab1) {
     if (issharedfuncdefined("damage", "handleAPAmmoDamage")) {
@@ -1975,7 +1916,7 @@ function function_e5e4ad050998e4c1(attacker, objweapon, smeansofdeath, idamage, 
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x58ec
+// Checksum 0x0, Offset: 0x5474
 // Size: 0x98
 function function_72638ae79d782126(attacker, victim, idflags, idamage, objweapon, unmodifieddamage) {
     var_960c2637064f97e9 = objweapon function_5be35054519da350();
@@ -1998,12 +1939,12 @@ function function_72638ae79d782126(attacker, victim, idflags, idamage, objweapon
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x598d
-// Size: 0x73
+// Checksum 0x0, Offset: 0x5515
+// Size: 0x72
 function function_5a1b7cfa5ac58688(idamage, objweapon, unmodifieddamage) {
     maxarmorclamp = objweapon function_957e87390fd5dba2();
     if (function_55c156d63be9eba2(objweapon) && maxarmorclamp > 0) {
-        assertmsg("<dev string:x20e>" + objweapon.basename + "<dev string:x221>");
+        assertmsg("spread weapon <" + objweapon.basename + "> found with maxDamageShelfClamp, this is not allowed by script.  All spread weapon maxDamageShelfClamp should be unmodified( -1 )");
         maxarmorclamp = -1;
     }
     if (maxarmorclamp > 0 && idamage > maxarmorclamp) {
@@ -2014,7 +1955,7 @@ function function_5a1b7cfa5ac58688(idamage, objweapon, unmodifieddamage) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a09
+// Checksum 0x0, Offset: 0x5590
 // Size: 0x14
 function function_b8f067334016ac40(objweapon, idamage) {
     return idamage;
@@ -2022,7 +1963,7 @@ function function_b8f067334016ac40(objweapon, idamage) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a26
+// Checksum 0x0, Offset: 0x55ad
 // Size: 0x64
 function function_48870325db7e028(idamage, number) {
     if (function_244067e915c0eabe() && function_ca2fbba0b1f55bbd()) {
@@ -2037,7 +1978,7 @@ function function_48870325db7e028(idamage, number) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a93
+// Checksum 0x0, Offset: 0x561a
 // Size: 0x79
 function function_5145949f900334f0(attacker, idflags, weapontype, var_49e6ef3edadd524e, shitloc, var_be4285b26ed99ab1, idamage, objweapon, smeansofdeath) {
     if (issharedfuncdefined("damage", "handleAPDamage")) {
@@ -2047,28 +1988,23 @@ function function_5145949f900334f0(attacker, idflags, weapontype, var_49e6ef3eda
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
-// Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b15
-// Size: 0xba
-function function_58a4d5ed666352ef(var_be4285b26ed99ab1, weapon, stepclamp, idflags) {
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x569c
+// Size: 0x9a
+function function_58a4d5ed666352ef(var_be4285b26ed99ab1, weapon, stepclamp) {
     var_e7ec701163e1b30c = 0;
-    if (idflags & 262144) {
-        var_cc5a11780bf1efb0 = 2;
-    } else {
-        var_cc5a11780bf1efb0 = 0;
-    }
     if (stepclamp == 4) {
-        var_e7ec701163e1b30c = weapon getmid3damage(var_cc5a11780bf1efb0);
+        var_e7ec701163e1b30c = weapon getmid3damage();
     } else if (stepclamp == 3) {
-        var_e7ec701163e1b30c = weapon getmid2damage(var_cc5a11780bf1efb0);
+        var_e7ec701163e1b30c = weapon getmid2damage();
     } else if (stepclamp == 2) {
-        var_e7ec701163e1b30c = weapon getmid1damage(var_cc5a11780bf1efb0);
+        var_e7ec701163e1b30c = weapon getmid1damage();
     }
     if (var_e7ec701163e1b30c <= 0) {
-        var_e7ec701163e1b30c = weapon function_dca0db73e11bc7d0(var_cc5a11780bf1efb0);
+        var_e7ec701163e1b30c = weapon.mindamage;
     }
     if (stepclamp == 1 || var_e7ec701163e1b30c <= 0) {
-        var_e7ec701163e1b30c = weapon getmaxdamage(var_cc5a11780bf1efb0);
+        var_e7ec701163e1b30c = weapon.maxdamage;
     }
     if (var_be4285b26ed99ab1 < var_e7ec701163e1b30c) {
         return int(var_e7ec701163e1b30c);
@@ -2078,17 +2014,14 @@ function function_58a4d5ed666352ef(var_be4285b26ed99ab1, weapon, stepclamp, idfl
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bd7
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x573e
+// Size: 0x9b
 function function_343613187bdf786f(objweapon, smeansofdeath) {
     weaponbasename = objweapon.basename;
     if (isdefined(weaponbasename) && weaponbasename == "danger_circle_br") {
         return true;
     }
     if (smeansofdeath == "MOD_EXECUTION") {
-        return true;
-    }
-    if (smeansofdeath == "MOD_MELEE_TAKEDOWN") {
         return true;
     }
     if (smeansofdeath == "MOD_FALLING") {
@@ -2108,15 +2041,31 @@ function function_343613187bdf786f(objweapon, smeansofdeath) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c89
+// Checksum 0x0, Offset: 0x57e2
 // Size: 0x2c
 function armorvest_washit(attacker) {
     return isdefined(attacker.hitarmorvest) && gettime() == attacker.hitarmorvest;
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x5817
+// Size: 0x68
+function function_75c4f7172e4ef3f5(attacker, victim, var_1da1a66b5c6a06a7) {
+    return isdefined(victim) && isdefined(victim.var_bed158a6dfac230d) && victim.var_bed158a6dfac230d >= 2 && var_1da1a66b5c6a06a7 > 0 && isdefined(victim.armorhealth) && victim.armorhealth > 50;
+}
+
+// Namespace armor / namespace_f8d3520d3483c1
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x5888
+// Size: 0x72
+function function_3f09a25cb8c206ff(attacker, victim, var_1da1a66b5c6a06a7) {
+    return isdefined(victim) && isdefined(victim.var_bed158a6dfac230d) && isdefined(level.var_4b78859bacc88808) && victim.var_bed158a6dfac230d >= 3 && var_1da1a66b5c6a06a7 > 0 && victim.armorhealth + var_1da1a66b5c6a06a7 > level.var_4b78859bacc88808 * 2;
+}
+
+// Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cbe
+// Checksum 0x0, Offset: 0x5903
 // Size: 0x1c
 function armorvest_sethit(attacker) {
     attacker.hitarmorvest = gettime();
@@ -2124,7 +2073,7 @@ function armorvest_sethit(attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ce2
+// Checksum 0x0, Offset: 0x5927
 // Size: 0x16
 function armorvest_clearhit(attacker) {
     attacker.hitarmorvest = undefined;
@@ -2132,15 +2081,23 @@ function armorvest_clearhit(attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d00
+// Checksum 0x0, Offset: 0x5945
 // Size: 0x2c
 function armorvest_wasbroke(attacker) {
     return isdefined(attacker.brokearmorvest) && gettime() == attacker.brokearmorvest;
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x597a
+// Size: 0x6e
+function function_78ea9ac6c9ab7305(attacker, victim, idamage, var_1da1a66b5c6a06a7) {
+    return isdefined(victim) && isdefined(victim.var_bed158a6dfac230d) && victim.var_bed158a6dfac230d >= 3 && armorvest_wasbroke(attacker) && idamage == victim.maxhealth - 10 && var_1da1a66b5c6a06a7 > 100;
+}
+
+// Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d35
+// Checksum 0x0, Offset: 0x59f1
 // Size: 0x1c
 function armorvest_setbroke(attacker) {
     attacker.brokearmorvest = gettime();
@@ -2148,7 +2105,7 @@ function armorvest_setbroke(attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d59
+// Checksum 0x0, Offset: 0x5a15
 // Size: 0x16
 function armorvest_clearbroke(attacker) {
     attacker.brokearmorvest = undefined;
@@ -2156,7 +2113,7 @@ function armorvest_clearbroke(attacker) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d77
+// Checksum 0x0, Offset: 0x5a33
 // Size: 0xc
 function function_49765aa03d634cab() {
     return istrue(level.var_e4623740d9b51824);
@@ -2164,7 +2121,7 @@ function function_49765aa03d634cab() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d8c
+// Checksum 0x0, Offset: 0x5a48
 // Size: 0x1b
 function function_a024d9111228a85e() {
     return !istrue(self.var_57c207fde9b78089) || istrue(level.var_843573804b98eb7e);
@@ -2172,7 +2129,7 @@ function function_a024d9111228a85e() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5db0
+// Checksum 0x0, Offset: 0x5a6c
 // Size: 0x1c
 function function_e47b13babb51a365() {
     if (self.armorhealth == self.maxarmorhealth) {
@@ -2183,8 +2140,8 @@ function function_e47b13babb51a365() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dd5
-// Size: 0x2a
+// Checksum 0x0, Offset: 0x5a91
+// Size: 0x29
 function repair_armor(amountrepair) {
     var_1c07ef7bc0e3723a = self.armorhealth + amountrepair;
     setArmorHealth(var_1c07ef7bc0e3723a);
@@ -2192,7 +2149,7 @@ function repair_armor(amountrepair) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e07
+// Checksum 0x0, Offset: 0x5ac2
 // Size: 0x8c
 function function_43702519a3dc0854(smeansofdeath, objweapon, var_49e6ef3edadd524e, victim) {
     if (smeansofdeath == "MOD_RIFLE_BULLET" || smeansofdeath == "MOD_EXPLOSIVE_BULLET" || var_49e6ef3edadd524e == "assault_drone_mp") {
@@ -2208,37 +2165,25 @@ function function_43702519a3dc0854(smeansofdeath, objweapon, var_49e6ef3edadd524
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e9b
-// Size: 0xf8
+// Checksum 0x0, Offset: 0x5b56
+// Size: 0x5d
 function function_ae24f0c0c8c6de2a(objweapon, var_49e6ef3edadd524e, weapontype) {
-    if (isdefined(level.gametypebundle.namekey) && (level.gametypebundle.namekey == "br_ranked" || level.gametypebundle.namekey == "resranked_escape" || level.gametypebundle.namekey == "resranked_fk")) {
-        return 0;
-    }
     if (weapontype == "sniper" && var_49e6ef3edadd524e != "iw9_sn_limax" && getweaponhasperk(objweapon, "specialty_explosivebullet")) {
-        return 1;
+        return true;
     }
     if (var_49e6ef3edadd524e == "iw9_dm_crossbow") {
-        return 1;
+        return true;
     }
     if (var_49e6ef3edadd524e == "jup_jp17_sn_hsierra") {
-        return 1;
+        return true;
     }
-    if (var_49e6ef3edadd524e == "jup_jp10_sn_cdelta50") {
-        return 1;
-    }
-    if (var_49e6ef3edadd524e == "jup_jp35_sn_moscar") {
-        return 1;
-    }
-    if (var_49e6ef3edadd524e == "jup_jp37_dm_kappa98") {
-        return 1;
-    }
-    return 0;
+    return false;
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f9b
-// Size: 0xf0
+// Checksum 0x0, Offset: 0x5bbc
+// Size: 0xef
 function crossbowdamagemod(scaleddamage, objweapon) {
     equippedbolt = "";
     foreach (i in objweapon.attachments) {
@@ -2265,7 +2210,7 @@ function crossbowdamagemod(scaleddamage, objweapon) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6094
+// Checksum 0x0, Offset: 0x5cb4
 // Size: 0x94
 function function_c49eb6797b9eec64() {
     self endon("death_or_disconnect");
@@ -2289,8 +2234,8 @@ function function_c49eb6797b9eec64() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6130
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x5d50
+// Size: 0xb7
 function function_8820428e84e96143() {
     self notify("armor_regen_begin");
     self endon("armor_regen_begin");
@@ -2311,8 +2256,8 @@ function function_8820428e84e96143() {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x61ed
-// Size: 0xe8
+// Checksum 0x0, Offset: 0x5e0f
+// Size: 0xe7
 function equipmentdamagemod(scaleddamage, var_49e6ef3edadd524e) {
     switch (var_49e6ef3edadd524e) {
     case #"hash_6a2e4f9c54756dc7": 
@@ -2345,8 +2290,8 @@ function equipmentdamagemod(scaleddamage, var_49e6ef3edadd524e) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x62dd
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x5efe
+// Size: 0xae
 function launcherdamagemod(damage, var_49e6ef3edadd524e) {
     switch (var_49e6ef3edadd524e) {
     case #"hash_390ba811ad3f09bc": 
@@ -2372,26 +2317,8 @@ function launcherdamagemod(damage, var_49e6ef3edadd524e) {
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6395
-// Size: 0x46
-function function_6aa482957b62905c(weapon) {
-    if (!isdefined(weapon)) {
-        return false;
-    }
-    if (!isdefined(weapon.basename)) {
-        return false;
-    }
-    switch (weapon.basename) {
-    case #"hash_533ad89345613b09": 
-        return true;
-    }
-    return false;
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x63e4
+// Checksum 0x0, Offset: 0x5fb5
 // Size: 0x2a
 function function_ad6472280450c778(attacker, victim) {
     if (isplayer(attacker) && isplayer(victim)) {
@@ -2402,8 +2329,8 @@ function function_ad6472280450c778(attacker, victim) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6417
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x5fe8
+// Size: 0xae
 function function_8775d4e6734630c0(player) {
     if (!istrue(level.var_7f3aafcf56c9ce14)) {
         return 0;
@@ -2423,10 +2350,6 @@ function function_8775d4e6734630c0(player) {
     case #"hash_e0c249ab38dcf963":
     case #"hash_ed2b8ec873f222c8": 
         return 4;
-    case #"hash_da7d38f29eddc709": 
-        return 5;
-    case #"hash_e83d0116aca94743": 
-        return 6;
     default: 
         break;
     }
@@ -2435,7 +2358,7 @@ function function_8775d4e6734630c0(player) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64ec
+// Checksum 0x0, Offset: 0x609f
 // Size: 0x28
 function function_55c156d63be9eba2(objweapon) {
     return isdefined(objweapon) && isdefined(weaponclass(objweapon)) && weaponclass(objweapon) == "spread";
@@ -2443,29 +2366,9 @@ function function_55c156d63be9eba2(objweapon) {
 
 // Namespace armor / namespace_f8d3520d3483c1
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x651d
+// Checksum 0x0, Offset: 0x60d0
 // Size: 0xb
 function function_ca2fbba0b1f55bbd() {
     return level.var_23960e36343a87a6;
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6531
-// Size: 0x3c
-function function_6a84ae8b37bed447() {
-    var_5bcc259db5e0bc53 = function_eeac688cedb92729();
-    if (issharedfuncdefined("backpack", "getTotalItemCountInBag")) {
-        return [[ getsharedfunc("backpack", "getTotalItemCountInBag") ]](var_5bcc259db5e0bc53);
-    }
-    return 0;
-}
-
-// Namespace armor / namespace_f8d3520d3483c1
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6576
-// Size: 0xd
-function function_eeac688cedb92729() {
-    return namespace_38b993c4618e76cd::getlootidfromref("armor_plate");
 }
 

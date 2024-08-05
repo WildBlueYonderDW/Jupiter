@@ -9,7 +9,7 @@
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x601
+// Checksum 0x0, Offset: 0x644
 // Size: 0x42
 function is_light() {
     if (self.classname == "light" || self.classname == "light_omni" || self.classname == "light_spot") {
@@ -20,7 +20,7 @@ function is_light() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x64b
+// Checksum 0x0, Offset: 0x68e
 // Size: 0x82
 function function_70a9f70afd49dead(time, endintensity) {
     self notify("stop intensity lerp");
@@ -37,7 +37,7 @@ function function_70a9f70afd49dead(time, endintensity) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d5
+// Checksum 0x0, Offset: 0x718
 // Size: 0x81
 function function_c690755ae1e4d083(time, endcolor) {
     self notify("stop color lerp");
@@ -54,7 +54,7 @@ function function_c690755ae1e4d083(time, endcolor) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x75e
+// Checksum 0x0, Offset: 0x7a1
 // Size: 0x82
 function function_8b766b3f91e671e2(time, endradius) {
     self notify("stop radius lerp");
@@ -71,7 +71,7 @@ function function_8b766b3f91e671e2(time, endradius) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x7e8
+// Checksum 0x0, Offset: 0x82b
 // Size: 0x16
 function private function_90d577e206f6609() {
     if (!istrue(level.var_f86dca03b4e10a79)) {
@@ -81,8 +81,8 @@ function private function_90d577e206f6609() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x806
-// Size: 0x3ae
+// Checksum 0x0, Offset: 0x849
+// Size: 0x3b6
 function flicker_light(min_delay, max_delay, var_327a4187018839, var_894b79fbcc60eeef, min_time, max_time, lerp_amount, min_num, max_num, min_pause, max_pause, pause_scale, intensity) {
     if (!isdefined(self.var_b18d887af93467d7)) {
         self.var_b18d887af93467d7 = 1;
@@ -217,8 +217,8 @@ function flicker_light(min_delay, max_delay, var_327a4187018839, var_894b79fbcc6
 
 // Namespace lighting / scripts\common\lighting
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbc
-// Size: 0x159
+// Checksum 0x0, Offset: 0xc07
+// Size: 0x15c
 function function_d688e745daa6f5d(min_time, max_time, var_327a4187018839, var_894b79fbcc60eeef, max_move, intensity) {
     self endon("kill_flicker");
     self endon("death");
@@ -258,7 +258,7 @@ function function_d688e745daa6f5d(min_time, max_time, var_327a4187018839, var_89
 
 // Namespace lighting / scripts\common\lighting
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xd1d
+// Checksum 0x0, Offset: 0xd6b
 // Size: 0x8b
 function blink_light(on_time, off_time, lerp_amount, blink_num, pause, intensity) {
     if (!isdefined(on_time)) {
@@ -286,7 +286,7 @@ function blink_light(on_time, off_time, lerp_amount, blink_num, pause, intensity
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb0
+// Checksum 0x0, Offset: 0xdfe
 // Size: 0x32
 function light_init() {
     if (!isdefined(level._light)) {
@@ -299,7 +299,7 @@ function light_init() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdea
+// Checksum 0x0, Offset: 0xe38
 // Size: 0x1f6
 function function_3e8e3c226faefbe3() {
     function_dbec921ed499ee34("fire", (0.972549, 0.62451, 0.345098), (0.2, 0.146275, 0.0878432), 0.005, 0.2, 8);
@@ -316,8 +316,8 @@ function function_3e8e3c226faefbe3() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xfe8
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x1036
+// Size: 0xde
 function function_dbec921ed499ee34(name, color0, color1, intensity, mindelay, maxdelay, maxmove) {
     if (!isdefined(level._light.var_6e360c0317c4e51d)) {
         level._light.var_6e360c0317c4e51d = [];
@@ -334,7 +334,7 @@ function function_dbec921ed499ee34(name, color0, color1, intensity, mindelay, ma
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cf
+// Checksum 0x0, Offset: 0x111c
 // Size: 0x53
 function function_8826927b5fe822eb(name) {
     if (isdefined(level._light.var_6e360c0317c4e51d) && isdefined(level._light.var_6e360c0317c4e51d[name])) {
@@ -345,8 +345,8 @@ function function_8826927b5fe822eb(name) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x112b
-// Size: 0x1cc
+// Checksum 0x0, Offset: 0x1178
+// Size: 0x1cd
 function function_985b4b064b531836(name, targetname, intensity_) {
     assert(isstring(name));
     assert(isstring(targetname));
@@ -355,17 +355,17 @@ function function_985b4b064b531836(name, targetname, intensity_) {
     ents2 = getentarray(targetname, "script_noteworthy");
     ents = array_combine(ents1, ents2);
     if (!isdefined(ents)) {
-        println("<dev string:x1c>" + name + "<dev string:x5a>" + targetname + "<dev string:x9f>");
+        println("<dev string:x1c>" + name + "<dev string:x57>" + targetname + "<dev string:x99>");
         return;
     }
     preset = function_8826927b5fe822eb(name);
     if (!isdefined(preset)) {
-        println("<dev string:xa5>" + name + "<dev string:xd2>");
+        println("<dev string:x9c>" + name + "<dev string:xc6>");
         return;
     }
     if (isdefined(intensity_)) {
         if (intensity_ < 0) {
-            println("<dev string:x125>" + name + "<dev string:x146>");
+            println("<dev string:x116>" + name + "<dev string:x134>");
             intensity_ = 0;
         }
         preset.intensity = intensity_;
@@ -381,7 +381,7 @@ function function_985b4b064b531836(name, targetname, intensity_) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12ff
+// Checksum 0x0, Offset: 0x134d
 // Size: 0x1a1
 function function_1d321dd7f8b825ce(name, targetname, intensity_, lerptime) {
     ents = [];
@@ -389,17 +389,17 @@ function function_1d321dd7f8b825ce(name, targetname, intensity_, lerptime) {
     ents2 = getentarray(targetname, "script_noteworthy");
     ents = array_combine(ents1, ents2);
     if (!isdefined(ents)) {
-        println("<dev string:x18c>" + name + "<dev string:x1b9>" + targetname + "<dev string:x9f>");
+        println("<dev string:x177>" + name + "<dev string:x1a1>" + targetname + "<dev string:x99>");
         return;
     }
     foreach (ent in ents) {
         if (!isdefined(ent.var_b18d887af93467d7)) {
-            println("<dev string:x1ea>");
+            println("<dev string:x1cf>");
             return;
         }
         if (isdefined(intensity_)) {
             if (intensity_ < 0) {
-                println("<dev string:x125>" + name + "<dev string:x146>");
+                println("<dev string:x116>" + name + "<dev string:x134>");
                 intensity_ = 0;
             }
         }
@@ -426,8 +426,8 @@ function function_1d321dd7f8b825ce(name, targetname, intensity_, lerptime) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a8
-// Size: 0x208
+// Checksum 0x0, Offset: 0x14f6
+// Size: 0x215
 function function_2540bf17dc38be84(color0, color1, intensity, mindelay, maxdelay, maxmove) {
     assert(isdefined(self.var_b18d887af93467d7));
     assert(isdefined(self.var_873c86db89081397));
@@ -475,8 +475,8 @@ function function_2540bf17dc38be84(color0, color1, intensity, mindelay, maxdelay
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16b8
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x1713
+// Size: 0xf8
 function fire_flicker(min_delay, max_delay) {
     assert(isdefined(self.var_b18d887af93467d7));
     assert(isdefined(self.var_873c86db89081397));
@@ -500,8 +500,8 @@ function fire_flicker(min_delay, max_delay) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17b4
-// Size: 0x111
+// Checksum 0x0, Offset: 0x1813
+// Size: 0x110
 function function_9958ec3e24311088(script_noteworthy, fxid) {
     light_object = spawnstruct();
     ents = getentarray(script_noteworthy, "script_noteworthy");
@@ -524,8 +524,8 @@ function function_9958ec3e24311088(script_noteworthy, fxid) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ce
-// Size: 0x186
+// Checksum 0x0, Offset: 0x192c
+// Size: 0x180
 function function_bd4b36550dbd76(intensity, color, is_on) {
     assert(isdefined(self.var_91064355da41c488));
     foreach (lightent in self.lightents) {
@@ -551,8 +551,8 @@ function function_bd4b36550dbd76(intensity, color, is_on) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a5c
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x1ab4
+// Size: 0xc3
 function flickering_light(light_object, off_color, off_intensity, on_color, on_intensity, min_delay, max_delay) {
     light_object endon("kill_flicker");
     light_object endon("death");
@@ -577,8 +577,8 @@ function flickering_light(light_object, off_color, off_intensity, on_color, on_i
 
 // Namespace lighting / scripts\common\lighting
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b25
-// Size: 0x64
+// Checksum 0x0, Offset: 0x1b7f
+// Size: 0x65
 function function_e986d74a7d49f65f(light_object, off_color, off_intensity, on_color, on_intensity) {
     light_object endon("kill_flicker");
     light_object endon("death");
@@ -591,8 +591,8 @@ function function_e986d74a7d49f65f(light_object, off_color, off_intensity, on_co
 
 // Namespace lighting / scripts\common\lighting
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b91
-// Size: 0x10b
+// Checksum 0x0, Offset: 0x1bec
+// Size: 0x10a
 function function_bf134e4c6c36436(name, minintensity, maxintensity, mindelay, maxdelay, minflicker, maxflicker, minpause, maxpause) {
     if (!isdefined(level._light.var_7946c098158094a8)) {
         level._light.var_7946c098158094a8 = [];
@@ -611,7 +611,7 @@ function function_bf134e4c6c36436(name, minintensity, maxintensity, mindelay, ma
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ca4
+// Checksum 0x0, Offset: 0x1cfe
 // Size: 0x53
 function function_ec6b3b3a4ca37980(name) {
     if (isdefined(level._light.var_7946c098158094a8) && isdefined(level._light.var_7946c098158094a8[name])) {
@@ -622,8 +622,8 @@ function function_ec6b3b3a4ca37980(name) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d00
-// Size: 0x21f
+// Checksum 0x0, Offset: 0x1d5a
+// Size: 0x220
 function function_bb536503bca3484c(name, targetname, minintensity, maxintensity) {
     assert(isstring(name));
     assert(isstring(targetname));
@@ -632,24 +632,24 @@ function function_bb536503bca3484c(name, targetname, minintensity, maxintensity)
     ents2 = getentarray(targetname, "script_noteworthy");
     ents = array_combine(ents1, ents2);
     if (!isdefined(ents)) {
-        println("<dev string:x25c>" + name + "<dev string:x1b9>" + targetname + "<dev string:x9f>");
+        println("<dev string:x23e>" + name + "<dev string:x1a1>" + targetname + "<dev string:x99>");
         return;
     }
     preset = function_ec6b3b3a4ca37980(name);
     if (!isdefined(preset)) {
-        println("<dev string:x2a3>" + name + "<dev string:x2d9>");
+        println("<dev string:x282>" + name + "<dev string:x2b5>");
         return;
     }
     if (isdefined(minintensity)) {
         if (minintensity < 0) {
-            println("<dev string:x125>" + name + "<dev string:x146>");
+            println("<dev string:x116>" + name + "<dev string:x134>");
             minintensity = 0;
         }
         preset.minintensity = minintensity;
     }
     if (isdefined(maxintensity)) {
         if (maxintensity < 0) {
-            println("<dev string:x125>" + name + "<dev string:x146>");
+            println("<dev string:x116>" + name + "<dev string:x134>");
             maxintensity = 0;
         }
         preset.maxintensity = maxintensity;
@@ -665,8 +665,8 @@ function function_bb536503bca3484c(name, targetname, minintensity, maxintensity)
 
 // Namespace lighting / scripts\common\lighting
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f27
-// Size: 0x168
+// Checksum 0x0, Offset: 0x1f82
+// Size: 0x16f
 function function_8ebd596ef73e60c7(minintensity, maxintensity, mindelay, maxdelay, minflicker, maxflicker, minpause, maxpause) {
     assert(isdefined(self.var_b18d887af93467d7));
     assert(isdefined(self.var_873c86db89081397));
@@ -683,17 +683,17 @@ function function_8ebd596ef73e60c7(minintensity, maxintensity, mindelay, maxdela
     if (max_flicker < min_flicker || max_flicker == 0) {
         min_flicker = 1;
         max_flicker = 3;
-        println("<dev string:x335>");
+        println("<dev string:x30e>");
     }
     if (max_pause < min_pause || max_pause == 0) {
         min_pause = 8;
         max_pause = 15;
-        println("<dev string:x382>");
+        println("<dev string:x358>");
     }
     if (max_intensity < min_intensity || max_intensity == 0) {
         min_intensity = 0;
         max_intensity = 10;
-        println("<dev string:x3cd>");
+        println("<dev string:x3a0>");
     }
     thread electric_flicker(min_intensity, max_intensity, min_delay, max_delay, min_flicker, max_flicker, min_pause, max_pause);
     original_origin = self.origin;
@@ -701,8 +701,8 @@ function function_8ebd596ef73e60c7(minintensity, maxintensity, mindelay, maxdela
 
 // Namespace lighting / scripts\common\lighting
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x2097
-// Size: 0x20a
+// Checksum 0x0, Offset: 0x20f9
+// Size: 0x212
 function electric_flicker(min_intensity, max_intensity, min_delay, max_delay, min_flicker, max_flicker, min_pause, max_pause) {
     assert(isdefined(self.var_b18d887af93467d7));
     assert(isdefined(self.var_873c86db89081397));
@@ -756,7 +756,7 @@ function electric_flicker(min_intensity, max_intensity, min_delay, max_delay, mi
 
 // Namespace lighting / scripts\common\lighting
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x22a9
+// Checksum 0x0, Offset: 0x2313
 // Size: 0xd6
 function function_238c2a0aae70e973(targetname, time, endintensity, flickerpercentage) {
     ents = [];
@@ -765,7 +765,7 @@ function function_238c2a0aae70e973(targetname, time, endintensity, flickerpercen
     ents = array_combine(ents1, ents2);
     if (ents.size == 0) {
         /#
-            iprintlnbold("<dev string:x41c>" + targetname + "<dev string:x435>");
+            iprintlnbold("<dev string:x3ec>" + targetname + "<dev string:x402>");
         #/
         return;
     }
@@ -776,8 +776,8 @@ function function_238c2a0aae70e973(targetname, time, endintensity, flickerpercen
 
 // Namespace lighting / scripts\common\lighting
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2387
-// Size: 0x1bb
+// Checksum 0x0, Offset: 0x23f1
+// Size: 0x1bc
 function function_defb9f9d0ce11b2b(ent, time, endintensity, flickerpercentage) {
     if (!isdefined(ent)) {
         return;
@@ -825,8 +825,8 @@ function function_defb9f9d0ce11b2b(ent, time, endintensity, flickerpercentage) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x254a
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x25b5
+// Size: 0xa5
 function function_e5074ba6c35b7cc5(ent, new_intensity) {
     if (isdefined(ent.target)) {
         otherlights = getentarray(ent.target, "targetname");
@@ -840,8 +840,8 @@ function function_e5074ba6c35b7cc5(ent, new_intensity) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25f9
-// Size: 0x96
+// Checksum 0x0, Offset: 0x2662
+// Size: 0x98
 function function_ee3c5a9a02050510(targetname, time, endradius) {
     ent = getent(targetname, "targetname");
     startradius = ent getlightradius();
@@ -858,8 +858,8 @@ function function_ee3c5a9a02050510(targetname, time, endradius) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2697
-// Size: 0x32
+// Checksum 0x0, Offset: 0x2702
+// Size: 0x31
 function function_f5600319797ffa1e(targetname, endintensity) {
     ent = getent(targetname, "targetname");
     ent setlightintensity(endintensity);
@@ -867,7 +867,7 @@ function function_f5600319797ffa1e(targetname, endintensity) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26d1
+// Checksum 0x0, Offset: 0x273b
 // Size: 0xad
 function function_4592ed3200c60f5(targetname, time, endcolor) {
     ents = [];
@@ -881,8 +881,8 @@ function function_4592ed3200c60f5(targetname, time, endcolor) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2786
-// Size: 0x80
+// Checksum 0x0, Offset: 0x27f0
+// Size: 0x81
 function function_b8c80e21f9ae102d(ent, time, endcolor) {
     startcolor = ent getlightcolor();
     ent.endcolor = endcolor;
@@ -898,8 +898,8 @@ function function_b8c80e21f9ae102d(ent, time, endcolor) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x280e
-// Size: 0x32
+// Checksum 0x0, Offset: 0x2879
+// Size: 0x31
 function function_269d4562a553f14c(targetname, endcolor) {
     ent = getent(targetname, "targetname");
     ent setlightcolor(endcolor);
@@ -907,8 +907,8 @@ function function_269d4562a553f14c(targetname, endcolor) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0x2848
-// Size: 0x667
+// Checksum 0x0, Offset: 0x28b2
+// Size: 0x66a
 function function_b01bc37bb97ec069(targetname, var_595f214a0c836320, min_intensity, max_intensity, fxid1, fxid2, var_7a699ba6660f6247, var_73423fd4b925b5f1, var_e40d0e4f030018db, var_75289c46941c448d, ender, snd_params, offint, oneshot_sfx) {
     assert(isstring(targetname));
     self endon("death");
@@ -920,7 +920,7 @@ function function_b01bc37bb97ec069(targetname, var_595f214a0c836320, min_intensi
     ents2 = getentarray(targetname, "script_noteworthy");
     ents = array_combine(ents1, ents2);
     if (!isdefined(ents)) {
-        println("<dev string:x446>");
+        println("<dev string:x410>");
         return;
     }
     lightents = [];
@@ -1064,19 +1064,19 @@ function function_b01bc37bb97ec069(targetname, var_595f214a0c836320, min_intensi
 
 // Namespace lighting / scripts\common\lighting
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb7
-// Size: 0x197
+// Checksum 0x0, Offset: 0x2f24
+// Size: 0x19d
 function function_86db5c6ec8a91629(ent, ent2, var_595f214a0c836320, min_intensity, var_7a699ba6660f6247, var_73423fd4b925b5f1, var_e40d0e4f030018db, var_75289c46941c448d, ender, snd_params, offint) {
     self endon("death");
     if (isdefined(ender)) {
         level endon(ender);
     }
     if (!isdefined(ent)) {
-        println("<dev string:x479>");
+        println("<dev string:x440>");
         return;
     }
     if (!isdefined(ent2)) {
-        println("<dev string:x490>");
+        println("<dev string:x454>");
         return;
     }
     lightents = [];
@@ -1112,7 +1112,7 @@ function function_86db5c6ec8a91629(ent, ent2, var_595f214a0c836320, min_intensit
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3056
+// Checksum 0x0, Offset: 0x30c9
 // Size: 0x2a
 function function_a7bb69ffe1fbf84e() {
     assert(isdefined(level._light));
@@ -1123,7 +1123,7 @@ function function_a7bb69ffe1fbf84e() {
 
     // Namespace lighting / scripts\common\lighting
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3088
+    // Checksum 0x0, Offset: 0x30fb
     // Size: 0x15
     function function_c2b7330a1c8f43d8() {
         setdvarifuninitialized(@"hash_4e1c5767f995ad93", 0);
@@ -1133,20 +1133,20 @@ function function_a7bb69ffe1fbf84e() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30a5
+// Checksum 0x0, Offset: 0x3118
 // Size: 0x63
 function function_278d40887314db6d(message, callback) {
-    assertex(isdefined(level._light), "<dev string:x4a8>");
+    assertex(isdefined(level._light), "Need to call light_message_init() before calling this function.");
     assert(isarray(level._light.messages));
     level._light.messages[message] = callback;
 }
 
 // Namespace lighting / scripts\common\lighting
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3110
+// Checksum 0x0, Offset: 0x3183
 // Size: 0xfa
 function light_message(message, arg1, arg2, arg3) {
-    assertex(isdefined(level._light), "<dev string:x4a8>");
+    assertex(isdefined(level._light), "Need to call light_message_init() before calling this function.");
     assert(isarray(level._light.messages));
     if (isdefined(level._light.messages[message])) {
         if (isdefined(arg3)) {
@@ -1165,7 +1165,7 @@ function light_message(message, arg1, arg2, arg3) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3212
+// Checksum 0x0, Offset: 0x3285
 // Size: 0x58
 function function_2ceafa9e1e353535(outer_start, inner_start, outer_end, inner_end, duration) {
     for (t = 0; t <= duration; t += 0.05) {
@@ -1176,7 +1176,7 @@ function function_2ceafa9e1e353535(outer_start, inner_start, outer_end, inner_en
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3272
+// Checksum 0x0, Offset: 0x32e5
 // Size: 0x17
 function function_47579c7a8607898a(fx_name) {
     thread function_aafda6e6603c63ca(fx_name, 50000);
@@ -1184,8 +1184,8 @@ function function_47579c7a8607898a(fx_name) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3291
-// Size: 0xed
+// Checksum 0x0, Offset: 0x3304
+// Size: 0xec
 function function_aafda6e6603c63ca(fxid, dist) {
     level endon("kill_sun2");
     level endon("death");
@@ -1206,7 +1206,7 @@ function function_aafda6e6603c63ca(fxid, dist) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3386
+// Checksum 0x0, Offset: 0x33f8
 // Size: 0x36
 function function_39eced3283796f8d(fxid, ent) {
     level waittill("kill_sun");
@@ -1216,7 +1216,7 @@ function function_39eced3283796f8d(fxid, ent) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c4
+// Checksum 0x0, Offset: 0x3436
 // Size: 0x1b
 function function_70aa892bc033402d(var_2968e9b67915600) {
     level.var_2968e9b67915600 = var_2968e9b67915600;
@@ -1225,7 +1225,7 @@ function function_70aa892bc033402d(var_2968e9b67915600) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33e7
+// Checksum 0x0, Offset: 0x3459
 // Size: 0x27
 function function_8ad7f8bc3ab43c98() {
     if (isdefined(level.var_2968e9b67915600)) {
@@ -1236,8 +1236,8 @@ function function_8ad7f8bc3ab43c98() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3416
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x3488
+// Size: 0x67
 function function_91aa9c6b08cb18be(time, destfov) {
     foreach (player in level.players) {
         player modifybasefov(destfov, time);
@@ -1247,8 +1247,8 @@ function function_91aa9c6b08cb18be(time, destfov) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3488
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x34f7
+// Size: 0x67
 function function_c58a66b712fbc58e(time, destfov) {
     foreach (player in level.players) {
         player lerpfov(destfov, time);
@@ -1258,8 +1258,8 @@ function function_c58a66b712fbc58e(time, destfov) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34fa
-// Size: 0x1c4
+// Checksum 0x0, Offset: 0x3566
+// Size: 0x1c9
 function lerp_fov_over_distance_trigger() {
     linepoints = strtok(self.script_parameters, " ");
     var_9ea56a7c9eb6b7ab = [];
@@ -1288,8 +1288,8 @@ function lerp_fov_over_distance_trigger() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x36c6
-// Size: 0x3c6
+// Checksum 0x0, Offset: 0x3737
+// Size: 0x3d5
 function function_9ce312d3d1b90fc4(var_d17bc90beaceba66, var_235ac5072a1ae788, var_b3c4e0e491f9176b, in_time, wait_time, out_time) {
     self notify("end_dof_loops");
     self endon("end_dof_loops");
@@ -1352,7 +1352,7 @@ function function_9ce312d3d1b90fc4(var_d17bc90beaceba66, var_235ac5072a1ae788, v
         }
         if (state != "wait") {
             /#
-                level.var_9f347f3156d0dee3 = "<dev string:x4eb>";
+                level.var_9f347f3156d0dee3 = "<dev string:x469>";
             #/
             done1 = function_830e692e8b173603(@"r_mbRadialOverrideStrength", state, var_6030244e11bf3e1b, strength_goal, var_235ac5072a1ae788, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
             done2 = function_830e692e8b173603(@"r_mbRadialOverrideDistortion", state, var_6030244e11bf3e1b, distortion_goal, var_d17bc90beaceba66, var_1339c9f748769b8b, var_bf8e19640d7f4ad0);
@@ -1360,9 +1360,9 @@ function function_9ce312d3d1b90fc4(var_d17bc90beaceba66, var_235ac5072a1ae788, v
             var_3b7da3be0a320c51 = done1 && done2 && done3;
             /#
                 if (var_3b7da3be0a320c51) {
-                    text = state + "<dev string:x4ef>" + "<dev string:x4f7>" + var_6030244e11bf3e1b + "<dev string:x502>" + level.var_9f347f3156d0dee3;
+                    text = state + "<dev string:x46a>" + "<dev string:x46f>" + var_6030244e11bf3e1b + "<dev string:x477>" + level.var_9f347f3156d0dee3;
                 } else {
-                    text = state + "<dev string:x4f7>" + var_6030244e11bf3e1b + "<dev string:x502>" + level.var_9f347f3156d0dee3;
+                    text = state + "<dev string:x46f>" + var_6030244e11bf3e1b + "<dev string:x477>" + level.var_9f347f3156d0dee3;
                 }
             #/
         } else {
@@ -1371,7 +1371,7 @@ function function_9ce312d3d1b90fc4(var_d17bc90beaceba66, var_235ac5072a1ae788, v
                 var_8fc9ec8f91bf68b4 = 0;
             }
             /#
-                text = state + "<dev string:x4f7>" + var_6030244e11bf3e1b + "<dev string:x507>" + var_8fc9ec8f91bf68b4 * 0.001 + "<dev string:x511>" + wait_time + "<dev string:x502>";
+                text = state + "<dev string:x46f>" + var_6030244e11bf3e1b + "<dev string:x479>" + var_8fc9ec8f91bf68b4 * 0.001 + "<dev string:x480>" + wait_time + "<dev string:x477>";
             #/
         }
         prev_time = gettime();
@@ -1388,7 +1388,7 @@ function function_9ce312d3d1b90fc4(var_d17bc90beaceba66, var_235ac5072a1ae788, v
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a94
+// Checksum 0x0, Offset: 0x3b14
 // Size: 0xd
 function function_6a722d3b33217661() {
     level.var_6a722d3b33217661 = 1;
@@ -1396,8 +1396,8 @@ function function_6a722d3b33217661() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x3aa9
-// Size: 0x1aa
+// Checksum 0x0, Offset: 0x3b29
+// Size: 0x1b0
 function function_830e692e8b173603(dvar_name, state, var_6030244e11bf3e1b, strength_goal, var_235ac5072a1ae788, var_1339c9f748769b8b, var_bf8e19640d7f4ad0) {
     var_bbcbab73e67c2fb0 = undefined;
     var_9fc794ffae3a33b6 = undefined;
@@ -1438,14 +1438,14 @@ function function_830e692e8b173603(dvar_name, state, var_6030244e11bf3e1b, stren
     }
     /#
         if (var_235ac5072a1ae788 > 0) {
-            dvar_short = "<dev string:x516>";
+            dvar_short = "<dev string:x482>";
             if (dvar_name == @"r_mbRadialOverrideDistortion") {
-                dvar_short = "<dev string:x51d>";
+                dvar_short = "<dev string:x486>";
             }
             if (dvar_name == @"r_mbRadialOverrideRadius") {
-                dvar_short = "<dev string:x524>";
+                dvar_short = "<dev string:x48a>";
             }
-            level.var_9f347f3156d0dee3 = dvar_short + "<dev string:x52b>" + var_9e9430cfada07d0e + "<dev string:x511>" + var_65ce6f8a79b7508 + "<dev string:x502>" + level.var_9f347f3156d0dee3;
+            level.var_9f347f3156d0dee3 = dvar_short + "<dev string:x48e>" + var_9e9430cfada07d0e + "<dev string:x480>" + var_65ce6f8a79b7508 + "<dev string:x477>" + level.var_9f347f3156d0dee3;
         }
     #/
     return is_done;
@@ -1453,7 +1453,7 @@ function function_830e692e8b173603(dvar_name, state, var_6030244e11bf3e1b, stren
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c5c
+// Checksum 0x0, Offset: 0x3ce2
 // Size: 0x8e
 function function_d8d7817826eadad8(ent, time, target) {
     ent notify("stop lerp");
@@ -1471,8 +1471,8 @@ function function_d8d7817826eadad8(ent, time, target) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cf2
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x3d78
+// Size: 0x7d
 function function_a73453a4796f91f4() {
     while (true) {
         self waittill("trigger");
@@ -1489,8 +1489,8 @@ function function_a73453a4796f91f4() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d76
-// Size: 0x4fa
+// Checksum 0x0, Offset: 0x3dfd
+// Size: 0x502
 function function_31c01ed170a03ed6(var_3ab4fd4794242e73, var_8a618ecfa14c2858, var_9e8f0007b795320f, spotdistcull, var_b2f5ddc90a053b53, endflag, var_8d3d30eebe904364) {
     level endon(endflag);
     if (isdefined(var_9e8f0007b795320f)) {
@@ -1584,7 +1584,7 @@ function function_31c01ed170a03ed6(var_3ab4fd4794242e73, var_8a618ecfa14c2858, v
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4278
+// Checksum 0x0, Offset: 0x4307
 // Size: 0xd
 function function_4bcc2f384d0be5d8() {
     level.var_97134dad75782583 = 0;
@@ -1593,7 +1593,7 @@ function function_4bcc2f384d0be5d8() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x428d
+// Checksum 0x0, Offset: 0x431c
 // Size: 0x66
 function dazed_effect(intensity, time) {
     noself_func("setsaveddvar", @"r_mbEnable", 1);
@@ -1613,7 +1613,7 @@ function dazed_effect(intensity, time) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42fb
+// Checksum 0x0, Offset: 0x438a
 // Size: 0xb3
 function function_e1f5d98cfa1ab7a(time) {
     noself_func("setsaveddvar", @"r_mbVelocityScale", 1);
@@ -1629,7 +1629,7 @@ function function_e1f5d98cfa1ab7a(time) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43b6
+// Checksum 0x0, Offset: 0x4445
 // Size: 0xd5
 function function_1a6f8798d7db1402(time) {
     noself_func("setsaveddvar", @"r_mbVelocityScale", 2);
@@ -1647,7 +1647,7 @@ function function_1a6f8798d7db1402(time) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4493
+// Checksum 0x0, Offset: 0x4522
 // Size: 0x2a
 function function_4593f6ae7d958614(time) {
     thread function_c62d87226808cd1c(0.007, 0.2);
@@ -1657,8 +1657,8 @@ function function_4593f6ae7d958614(time) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x44c5
-// Size: 0x76
+// Checksum 0x0, Offset: 0x4554
+// Size: 0x77
 function function_c62d87226808cd1c(end_value, duration) {
     start_value = getdvarfloat(@"r_mbRadialOverrideStrength");
     for (t = 0; t <= duration; t += 0.05) {
@@ -1670,8 +1670,8 @@ function function_c62d87226808cd1c(end_value, duration) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4543
-// Size: 0x85
+// Checksum 0x0, Offset: 0x45d3
+// Size: 0x86
 function lerp_dvar(dvar, end_value, duration) {
     start_value = getdvarfloat(dvar);
     for (t = 0.05; t <= duration + 0.0001; t += 0.05) {
@@ -1684,7 +1684,7 @@ function lerp_dvar(dvar, end_value, duration) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45d0
+// Checksum 0x0, Offset: 0x4661
 // Size: 0xb3
 function function_b46bbb8e3437e8de() {
     function_f7daaf8937034883("default", 1, 1, 4.5, 500, 500, 0.05, 0.5);
@@ -1696,8 +1696,8 @@ function function_b46bbb8e3437e8de() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x468b
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x471c
+// Size: 0xd4
 function function_f7daaf8937034883(name, nstart, nend, nblur, fstart, fend, fblur, fbias) {
     if (!isdefined(level._light.dof_presets)) {
         level._light.dof_presets = [];
@@ -1715,18 +1715,18 @@ function function_f7daaf8937034883(name, nstart, nend, nblur, fstart, fend, fblu
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4768
+// Checksum 0x0, Offset: 0x47f8
 // Size: 0x68
 function function_5eae701181e1340c(name) {
     if (isdefined(level._light.dof_presets) && isdefined(level._light.dof_presets[name])) {
         return level._light.dof_presets[name];
     }
-    println("<dev string:x530>" + name + "<dev string:x560>");
+    println("<dev string:x490>" + name + "<dev string:x4bd>");
 }
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x47d8
+// Checksum 0x0, Offset: 0x4868
 // Size: 0x8c
 function function_3e26806946a389b1(preset1, preset2, time) {
     assert(isdefined(preset1));
@@ -1742,7 +1742,7 @@ function function_3e26806946a389b1(preset1, preset2, time) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x486c
+// Checksum 0x0, Offset: 0x48fc
 // Size: 0x32
 function function_1b05e078eb7808c7() {
     function_3036060d639e67e8("default", 2, 8);
@@ -1752,8 +1752,8 @@ function function_1b05e078eb7808c7() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x48a6
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x4936
+// Size: 0xaf
 function function_3036060d639e67e8(name, start, end) {
     if (!isdefined(level._light.var_20dbacc20a295204)) {
         level._light.var_20dbacc20a295204 = [];
@@ -1767,18 +1767,18 @@ function function_3036060d639e67e8(name, start, end) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x495e
+// Checksum 0x0, Offset: 0x49ed
 // Size: 0x68
 function function_d27c01c01b7af003(name) {
     if (isdefined(level._light.var_20dbacc20a295204) && isdefined(level._light.var_20dbacc20a295204[name])) {
         return level._light.var_20dbacc20a295204[name];
     }
-    println("<dev string:x530>" + name + "<dev string:x560>");
+    println("<dev string:x490>" + name + "<dev string:x4bd>");
 }
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x49ce
+// Checksum 0x0, Offset: 0x4a5d
 // Size: 0x96
 function function_728e6d70bfd337c(preset1, preset2, time) {
     assert(isdefined(preset1));
@@ -1795,7 +1795,7 @@ function function_728e6d70bfd337c(preset1, preset2, time) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a6c
+// Checksum 0x0, Offset: 0x4afb
 // Size: 0xa9
 function function_9009498f4845910b(start_viewmodel, end_viewmodel, time) {
     if (time > 0) {
@@ -1810,7 +1810,7 @@ function function_9009498f4845910b(start_viewmodel, end_viewmodel, time) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b1d
+// Checksum 0x0, Offset: 0x4bac
 // Size: 0x1b8
 function lerp_viewmodel_dof(end_viewmodel, var_a43d50fddef154c2, var_fbd33eaf8837fcaf) {
     level notify("lerp_viewmodel_dof");
@@ -1839,15 +1839,15 @@ function lerp_viewmodel_dof(end_viewmodel, var_a43d50fddef154c2, var_fbd33eaf883
 
 // Namespace lighting / scripts\common\lighting
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cdd
+// Checksum 0x0, Offset: 0x4d6c
 // Size: 0x1ce
 function function_1500aeb623f5d725(player, target, aperture, var_965582b4f1f2f995, var_a90c6783e05bab5f, tag) {
     if (!isdefined(player)) {
-        assertmsg("<dev string:x576>");
+        assertmsg("_lighting.gsc::lighting_target_dof() - param <player> is undefined");
         return;
     }
     if (!isdefined(aperture)) {
-        assertmsg("<dev string:x5bc>");
+        assertmsg("_lighting.gsc::lighting_target_dof() - param <aperture> is undefined");
         return;
     }
     level notify("end_lighting_target_dof");
@@ -1865,7 +1865,7 @@ function function_1500aeb623f5d725(player, target, aperture, var_965582b4f1f2f99
     flag_clear("flag_autofocus_on");
     while (true) {
         if (!isdefined(target)) {
-            assertmsg("<dev string:x604>");
+            assertmsg("_lighting.gsc::lighting_target_dof() - param <target> is undefined or got deleted");
             return;
         }
         if (isdefined(tag) && target tagexists(tag)) {
@@ -1881,12 +1881,12 @@ function function_1500aeb623f5d725(player, target, aperture, var_965582b4f1f2f99
         if (isdefined(level.var_eab94425e32d22e9)) {
             if (isdefined(tag)) {
                 /#
-                    print3d(target gettagorigin(tag), "<dev string:x659>", (1, 1, 1), 1, 1, 2);
+                    print3d(target gettagorigin(tag), "<dev string:x4d0>", (1, 1, 1), 1, 1, 2);
                 #/
                 iprintln(dof_dist);
             } else {
                 /#
-                    print3d(target.origin, "<dev string:x659>", (1, 1, 1), 1, 1, 2);
+                    print3d(target.origin, "<dev string:x4d0>", (1, 1, 1), 1, 1, 2);
                 #/
                 iprintln(dof_dist);
             }
@@ -1897,7 +1897,7 @@ function function_1500aeb623f5d725(player, target, aperture, var_965582b4f1f2f99
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb3
+// Checksum 0x0, Offset: 0x4f42
 // Size: 0x25
 function function_87231e6662dd640e() {
     level waittill("end_lighting_target_dof");
@@ -1907,8 +1907,8 @@ function function_87231e6662dd640e() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ee0
-// Size: 0x356
+// Checksum 0x0, Offset: 0x4f6f
+// Size: 0x35b
 function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4ee89841a793b, xpos, ypos, sort) {
     assert(isdefined(time));
     overlay = newclienthudelem(level.player);
@@ -1962,7 +1962,7 @@ function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4e
         if (fadein > 0) {
             current_alpha = 0;
             var_bf49f656e04717f9 = max_alpha / fadein / step_time;
-            assertex(var_bf49f656e04717f9 > 0, "<dev string:x65e>");
+            assertex(var_bf49f656e04717f9 > 0, "alpha not increasing; infinite loop");
             while (current_alpha < max_alpha) {
                 overlay.alpha = current_alpha;
                 current_alpha += var_bf49f656e04717f9;
@@ -1975,7 +1975,7 @@ function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4e
             if (isdefined(overlay)) {
                 current_alpha = max_alpha;
                 var_11dde1254b91d215 = max_alpha / fadeout / step_time;
-                assertex(var_11dde1254b91d215 > 0, "<dev string:x685>");
+                assertex(var_11dde1254b91d215 > 0, "alpha not decreasing; infinite loop");
                 while (current_alpha > 0) {
                     overlay.alpha = current_alpha;
                     current_alpha -= var_11dde1254b91d215;
@@ -1996,7 +1996,7 @@ function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4e
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x523e
+// Checksum 0x0, Offset: 0x52d2
 // Size: 0x11
 function cleanup_overlay() {
     level waittill("end_screen_effect");
@@ -2005,7 +2005,7 @@ function cleanup_overlay() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5257
+// Checksum 0x0, Offset: 0x52eb
 // Size: 0x2
 function function_b7384d47f4e553ba() {
     
@@ -2013,8 +2013,8 @@ function function_b7384d47f4e553ba() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5261
-// Size: 0x10f
+// Checksum 0x0, Offset: 0x52f5
+// Size: 0x10e
 function function_a5aa23c60a77c71d() {
     overlay = newclienthudelem(level.player);
     overlay.x = 0;
@@ -2037,8 +2037,8 @@ function function_a5aa23c60a77c71d() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5378
-// Size: 0x382
+// Checksum 0x0, Offset: 0x540b
+// Size: 0x39f
 function bob_mask(hudelement) {
     self endon("stop_mask_bob");
     weapidletime = 0;
@@ -2100,7 +2100,7 @@ function bob_mask(hudelement) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5702
+// Checksum 0x0, Offset: 0x57b2
 // Size: 0x240
 function function_ff3f488d3c6c7c42(bfadein, fadeouttime, fadeintime, darktime) {
     assert(isplayer(self));
@@ -2148,7 +2148,7 @@ function function_ff3f488d3c6c7c42(bfadein, fadeouttime, fadeintime, darktime) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x594a
+// Checksum 0x0, Offset: 0x59fa
 // Size: 0x93
 function function_46a70661ce1c9488() {
     assert(isplayer(self));
@@ -2169,8 +2169,8 @@ function function_46a70661ce1c9488() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x59e5
-// Size: 0x24
+// Checksum 0x0, Offset: 0x5a95
+// Size: 0x23
 function function_9a29641575c38bf3() {
     delay = 1;
     self endon("stop_breathing");
@@ -2181,7 +2181,7 @@ function function_9a29641575c38bf3() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a11
+// Checksum 0x0, Offset: 0x5ac0
 // Size: 0x65
 function function_6c09ddf0408997a2() {
     self.gasmask = spawn("script_model", (0, 0, 0));
@@ -2191,7 +2191,7 @@ function function_6c09ddf0408997a2() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a7e
+// Checksum 0x0, Offset: 0x5b2d
 // Size: 0x1e
 function function_24468c3e7aa94338() {
     if (isdefined(self.gasmask)) {
@@ -2201,8 +2201,8 @@ function function_24468c3e7aa94338() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aa4
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x5b53
+// Size: 0xbe
 function function_1fce2623d8fec063(time, targetsample) {
     noself_func("setsaveddvar", @"sm_sunMoving", 1);
     currframe = 0;
@@ -2221,8 +2221,8 @@ function function_1fce2623d8fec063(time, targetsample) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b67
-// Size: 0xe8
+// Checksum 0x0, Offset: 0x5c19
+// Size: 0xec
 function function_395761b4520b0c62(time, target_value) {
     level notify("changing_volumetricDepth");
     level endon("changing_volumetricDepth");
@@ -2244,7 +2244,7 @@ function function_395761b4520b0c62(time, target_value) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c57
+// Checksum 0x0, Offset: 0x5d0d
 // Size: 0x42
 function function_e3e16e6e2ec15751() {
     flag_init("enable_grass_dof");
@@ -2257,8 +2257,8 @@ function function_e3e16e6e2ec15751() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ca1
-// Size: 0xac
+// Checksum 0x0, Offset: 0x5d57
+// Size: 0xaa
 function function_4a7732ef052bbd94() {
     level.var_ba34b17a09888734 = 0;
     var_eb5116b9494ff691 = getentarray("DOF_GRASS_ON", "targetname");
@@ -2278,8 +2278,8 @@ function function_4a7732ef052bbd94() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d55
-// Size: 0x76
+// Checksum 0x0, Offset: 0x5e09
+// Size: 0x75
 function function_89243203381caa61() {
     while (true) {
         player = self waittill("trigger");
@@ -2300,8 +2300,8 @@ function function_89243203381caa61() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dd3
-// Size: 0x69
+// Checksum 0x0, Offset: 0x5e86
+// Size: 0x68
 function function_13efea510c8ee6e7() {
     stance = self getstance();
     if (stance != "stand") {
@@ -2319,7 +2319,7 @@ function function_13efea510c8ee6e7() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e45
+// Checksum 0x0, Offset: 0x5ef7
 // Size: 0x20a
 function function_46434b79368903f9() {
     wait 0.05;
@@ -2362,7 +2362,7 @@ function function_46434b79368903f9() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6057
+// Checksum 0x0, Offset: 0x6109
 // Size: 0x11
 function function_61a998996cc98831() {
     function_ee7c0ccde65de2ec(%"hash_5b48ffed263332bc");
@@ -2370,7 +2370,7 @@ function function_61a998996cc98831() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6070
+// Checksum 0x0, Offset: 0x6122
 // Size: 0x11
 function function_9160006a3f10b2cd() {
     function_90fb4916aa7fd9f3(%"hash_5b48ffed263332bc");
@@ -2378,7 +2378,7 @@ function function_9160006a3f10b2cd() {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6089
+// Checksum 0x0, Offset: 0x613b
 // Size: 0x82
 function function_3f730819900e0fa0(duration, end_value) {
     self notify("stop lightfov lerp");
@@ -2395,7 +2395,7 @@ function function_3f730819900e0fa0(duration, end_value) {
 
 // Namespace lighting / scripts\common\lighting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6113
+// Checksum 0x0, Offset: 0x61c5
 // Size: 0x82
 function lerplightradius(duration, end_value) {
     self notify("stop lightradius lerp");
@@ -2408,23 +2408,5 @@ function lerplightradius(duration, end_value) {
         wait 0.05;
     }
     self setlightradius(end_value);
-}
-
-// Namespace lighting / scripts\common\lighting
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x619d
-// Size: 0x8d
-function function_a18b3876df7ffbb1(timeleft) {
-    level.accelerationfactor = 1;
-    var_ff294ea72dd3a5df = 0.03;
-    stepsize = (level.accelerationfactor - var_ff294ea72dd3a5df) / timeleft * 20;
-    while (level.accelerationfactor > var_ff294ea72dd3a5df) {
-        level.accelerationfactor -= stepsize;
-        if (level.accelerationfactor < var_ff294ea72dd3a5df) {
-            level.accelerationfactor = var_ff294ea72dd3a5df;
-        }
-        wait 0.05;
-        timeleft -= 0.05;
-    }
 }
 

@@ -4,8 +4,8 @@
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x863
-// Size: 0x29e
+// Checksum 0x0, Offset: 0x732
+// Size: 0x2a7
 function local() {
     a = 0;
     b = 1;
@@ -47,7 +47,7 @@ function local() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb09
+// Checksum 0x0, Offset: 0x9e1
 // Size: 0xa2
 function defines() {
     test_print("defines");
@@ -60,8 +60,8 @@ function defines() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb3
-// Size: 0x3ca
+// Checksum 0x0, Offset: 0xa8b
+// Size: 0x3c7
 function local_array() {
     test_print("local array");
     a = [];
@@ -111,8 +111,8 @@ function local_array() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf85
-// Size: 0x330
+// Checksum 0x0, Offset: 0xe5a
+// Size: 0x32b
 function level_array() {
     test_print("level array");
     level.a = [];
@@ -147,8 +147,8 @@ function level_array() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12bd
-// Size: 0x4f3
+// Checksum 0x0, Offset: 0x118d
+// Size: 0x4f0
 function local_object() {
     test_print("local object");
     s = spawnstruct();
@@ -200,8 +200,8 @@ function local_object() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17b8
-// Size: 0x680
+// Checksum 0x0, Offset: 0x1685
+// Size: 0x67b
 function level_object() {
     test_print("level object");
     level.s = spawnstruct();
@@ -251,8 +251,8 @@ function level_object() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e40
-// Size: 0x220
+// Checksum 0x0, Offset: 0x1d08
+// Size: 0x21f
 function local_combo() {
     a[0] = spawnstruct();
     a[0].a = 0;
@@ -274,7 +274,7 @@ function local_combo() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2068
+// Checksum 0x0, Offset: 0x1f2f
 // Size: 0x2c6
 function level_combo() {
     level.a[0] = spawnstruct();
@@ -297,7 +297,7 @@ function level_combo() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2336
+// Checksum 0x0, Offset: 0x21fd
 // Size: 0x57
 function is_true_print(val, name) {
     b = istrue(val);
@@ -310,8 +310,8 @@ function is_true_print(val, name) {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2395
-// Size: 0x85
+// Checksum 0x0, Offset: 0x225c
+// Size: 0x88
 function is_true() {
     u = undefined;
     int_false = 0;
@@ -327,7 +327,7 @@ function is_true() {
 
 // Namespace unittest_variables / scripts\unittest\variables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2422
+// Checksum 0x0, Offset: 0x22ec
 // Size: 0x59
 function main() {
     test_begin("Variables");

@@ -11,12 +11,12 @@
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22c
+// Checksum 0x0, Offset: 0x209
 // Size: 0xde
 function main() {
     scripts\smartobjects\utility::init_smartobjects();
     scripts\stealth\manager::main();
-    assertex(isdefined(level.stealth), "<dev string:x1c>");
+    assertex(isdefined(level.stealth), "level.stealth should have been defined in scriptsstealthmanager::main()");
     level.stealth.fnaddeventplaybcs = &namespace_378f8281e2d12ced::addeventplaybcs;
     level.fngetcorpsearrayfunc = &get_corpse_array;
     level.stealth.fngetplayerdrone = &get_player_drone;
@@ -35,7 +35,7 @@ function main() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x312
+// Checksum 0x0, Offset: 0x2ef
 // Size: 0x29
 function function_4fa3c4eb77c24130() {
     if (scripts\engine\utility::issharedfuncdefined("stealth_enemy", "init")) {
@@ -45,7 +45,7 @@ function function_4fa3c4eb77c24130() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x343
+// Checksum 0x0, Offset: 0x320
 // Size: 0x33
 function function_d3110770982eea0e(bspotted) {
     if (scripts\engine\utility::issharedfuncdefined("stealth", "spotted_event_handler")) {
@@ -55,7 +55,7 @@ function function_d3110770982eea0e(bspotted) {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x37e
+// Checksum 0x0, Offset: 0x35b
 // Size: 0x53
 function empty(param_1, param_2, param_3, param_4, param_5, param_6, param_7, param_8, param_9, param_10) {
     
@@ -63,7 +63,7 @@ function empty(param_1, param_2, param_3, param_4, param_5, param_6, param_7, pa
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d9
+// Checksum 0x0, Offset: 0x3b6
 // Size: 0x2
 function set_detect_ranges() {
     
@@ -71,8 +71,8 @@ function set_detect_ranges() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e3
-// Size: 0x34
+// Checksum 0x0, Offset: 0x3c0
+// Size: 0x33
 function set_corpse_detect_ranges() {
     array["sight_dist"] = 512;
     array["detect_dist"] = 256;
@@ -82,8 +82,8 @@ function set_corpse_detect_ranges() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x41f
-// Size: 0x34b
+// Checksum 0x0, Offset: 0x3fb
+// Size: 0x351
 function function_7e4ce548f5795c03() {
     while (!isdefined(level.stealth)) {
         waitframe();
@@ -140,7 +140,7 @@ function function_7e4ce548f5795c03() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x772
+// Checksum 0x0, Offset: 0x754
 // Size: 0x72
 function manager_thread() {
     while (true) {
@@ -162,7 +162,7 @@ function manager_thread() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ec
+// Checksum 0x0, Offset: 0x7ce
 // Size: 0x29
 function threat_sight_set_dvar(enabled) {
     if (enabled && !function_7a21aa652f0613b0()) {
@@ -173,8 +173,8 @@ function threat_sight_set_dvar(enabled) {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81d
-// Size: 0x1da
+// Checksum 0x0, Offset: 0x7ff
+// Size: 0x1d8
 function update_stealth_spotted_thread() {
     waitframe();
     wasspotted = 0;
@@ -219,8 +219,8 @@ function update_stealth_spotted_thread() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ff
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x9df
+// Size: 0xaf
 function get_corpse_array() {
     if (!isdefined(level.stealth.corpses)) {
         return [];
@@ -235,8 +235,8 @@ function get_corpse_array() {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaba
-// Size: 0x1c9
+// Checksum 0x0, Offset: 0xa97
+// Size: 0x1ca
 function monitor_death_thread(rangeauto, rangesight) {
     other = undefined;
     team = self.team;
@@ -275,7 +275,7 @@ function monitor_death_thread(rangeauto, rangesight) {
 
 // Namespace manager / namespace_42207369e7a21b21
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8b
+// Checksum 0x0, Offset: 0xc69
 // Size: 0x42
 function get_player_drone(player) {
     if (isdefined(player.scout_drone)) {

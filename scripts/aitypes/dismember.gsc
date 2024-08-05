@@ -6,7 +6,7 @@
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x138
+// Checksum 0x0, Offset: 0xf2
 // Size: 0x90
 function initscriptablepart(part) {
     if (!isdefined(self._blackboard.scriptableparts)) {
@@ -20,7 +20,7 @@ function initscriptablepart(part) {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d0
+// Checksum 0x0, Offset: 0x18a
 // Size: 0xfd
 function set_scriptablepartinfo(part, state) {
     if (self._blackboard.scriptableparts[part].state == "dismember") {
@@ -36,8 +36,8 @@ function set_scriptablepartinfo(part, state) {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d5
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x28f
+// Size: 0xbc
 function set_scriptablepartstate(part, state, waittime) {
     self endon("entitydeleted");
     set_scriptablepartinfo(part, state);
@@ -60,7 +60,7 @@ function set_scriptablepartstate(part, state, waittime) {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39a
+// Checksum 0x0, Offset: 0x353
 // Size: 0xac
 function setdismemberstatefx(part) {
     fx_part = part + "_dism_fx";
@@ -82,7 +82,7 @@ function setdismemberstatefx(part) {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44e
+// Checksum 0x0, Offset: 0x407
 // Size: 0x98
 function usedismemberfxlite(type) {
     newarray = [];
@@ -103,7 +103,7 @@ function usedismemberfxlite(type) {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ef
+// Checksum 0x0, Offset: 0x4a8
 // Size: 0x66
 function get_scriptablepartinfo(part) {
     if (!isdefined(self._blackboard.scriptableparts)) {
@@ -117,7 +117,7 @@ function get_scriptablepartinfo(part) {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x55e
+// Checksum 0x0, Offset: 0x517
 // Size: 0x2f
 function anylegdismembered() {
     if (get_scriptablepartinfo("left_leg") == "dismember" || get_scriptablepartinfo("right_leg") == "dismember") {
@@ -128,7 +128,7 @@ function anylegdismembered() {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x596
+// Checksum 0x0, Offset: 0x54f
 // Size: 0x2f
 function bothlegsdismembered() {
     if (get_scriptablepartinfo("left_leg") == "dismember" && get_scriptablepartinfo("right_leg") == "dismember") {
@@ -139,7 +139,7 @@ function bothlegsdismembered() {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ce
+// Checksum 0x0, Offset: 0x587
 // Size: 0x2f
 function anyarmdismembered() {
     if (get_scriptablepartinfo("left_arm") == "dismember" || get_scriptablepartinfo("right_arm") == "dismember") {
@@ -150,7 +150,7 @@ function anyarmdismembered() {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x606
+// Checksum 0x0, Offset: 0x5bf
 // Size: 0x1a
 function rightarmdismembered() {
     if (get_scriptablepartinfo("right_arm") == "dismember") {
@@ -161,7 +161,7 @@ function rightarmdismembered() {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x629
+// Checksum 0x0, Offset: 0x5e2
 // Size: 0x1a
 function leftarmdismembered() {
     if (get_scriptablepartinfo("left_arm") == "dismember") {
@@ -172,7 +172,7 @@ function leftarmdismembered() {
 
 // Namespace dismember / scripts\aitypes\dismember
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64c
+// Checksum 0x0, Offset: 0x605
 // Size: 0x2f
 function botharmsdismembered() {
     if (scripts\aitypes\dismember::get_scriptablepartinfo("left_arm") == "dismember" && scripts\aitypes\dismember::get_scriptablepartinfo("right_arm") == "dismember") {

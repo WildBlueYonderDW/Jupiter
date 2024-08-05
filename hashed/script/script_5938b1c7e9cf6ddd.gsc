@@ -11,7 +11,7 @@
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d
+// Checksum 0x0, Offset: 0x1d8
 // Size: 0x67
 function go_to_node(nodes, optional_arrived_at_node_func, var_5e38f20c9628ae25, var_686ec37f85316247) {
     if (!isdefined(nodes)) {
@@ -28,8 +28,8 @@ function go_to_node(nodes, optional_arrived_at_node_func, var_5e38f20c9628ae25, 
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x27c
-// Size: 0x251
+// Checksum 0x0, Offset: 0x247
+// Size: 0x254
 function go_to_node_internal(node, optional_arrived_at_node_func, var_5e38f20c9628ae25) {
     self notify("stop_going_to_node");
     self endon("stop_going_to_node");
@@ -107,11 +107,11 @@ function go_to_node_internal(node, optional_arrived_at_node_func, var_5e38f20c96
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d5
-// Size: 0xed
+// Checksum 0x0, Offset: 0x4a3
+// Size: 0xeb
 function go_through_patharray(patharray, optional_arrived_at_node_func, var_5e38f20c9628ae25) {
     self setgoalpath(patharray);
-    foreach (index, tempnode in patharray) {
+    foreach (tempnode in patharray) {
         node_fields_pre_goal(tempnode);
         patharrayindex = waittill_subgoal();
         self.patharrayindex = patharrayindex;
@@ -130,7 +130,7 @@ function go_through_patharray(patharray, optional_arrived_at_node_func, var_5e38
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ca
+// Checksum 0x0, Offset: 0x596
 // Size: 0xc0
 function node_fields_after_goal(node, optional_arrived_at_node_func) {
     if (isdefined(self.stealth)) {
@@ -155,7 +155,7 @@ function node_fields_after_goal(node, optional_arrived_at_node_func) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x692
+// Checksum 0x0, Offset: 0x65e
 // Size: 0xdd
 function ai_delete_when_out_of_sight(ai_array, fdist) {
     if (!isdefined(ai_array)) {
@@ -186,8 +186,8 @@ function ai_delete_when_out_of_sight(ai_array, fdist) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x777
-// Size: 0xdd
+// Checksum 0x0, Offset: 0x743
+// Size: 0xe2
 function player_looking_at(start, dot, dot_only, ignore_ent) {
     if (!isdefined(dot)) {
         dot = 0.8;
@@ -203,7 +203,7 @@ function player_looking_at(start, dot, dot_only, ignore_ent) {
         return 0;
     }
     if (isdefined(dot_only)) {
-        assertex(dot_only, "<dev string:x1c>");
+        assertex(dot_only, "dot_only must be true or undefined");
         return 1;
     }
     return ray_trace_detail_passed(start, end, ignore_ent, create_default_contents(1));
@@ -211,8 +211,8 @@ function player_looking_at(start, dot, dot_only, ignore_ent) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x85d
-// Size: 0x61
+// Checksum 0x0, Offset: 0x82e
+// Size: 0x60
 function either_player_looking_at(org, dot, dot_only, ignore_ent) {
     for (i = 0; i < level.players.size; i++) {
         if (level.players[i] player_looking_at(org, dot, dot_only, ignore_ent)) {
@@ -224,7 +224,7 @@ function either_player_looking_at(org, dot, dot_only, ignore_ent) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c7
+// Checksum 0x0, Offset: 0x897
 // Size: 0x66
 function players_within_distance(fdist, org) {
     var_74a76bbc5f12d7ea = fdist * fdist;
@@ -238,7 +238,7 @@ function players_within_distance(fdist, org) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x936
+// Checksum 0x0, Offset: 0x906
 // Size: 0x6a
 function go_to_node_set_goal(ent) {
     if (isnode(ent)) {
@@ -255,7 +255,7 @@ function go_to_node_set_goal(ent) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a8
+// Checksum 0x0, Offset: 0x978
 // Size: 0x3f
 function go_to_node_set_goal_ent(ent) {
     if (ent.code_classname == "info_volume") {
@@ -268,7 +268,7 @@ function go_to_node_set_goal_ent(ent) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ef
+// Checksum 0x0, Offset: 0x9bf
 // Size: 0x1b
 function go_to_node_set_goal_pos(ent) {
     set_goal_ent(ent);
@@ -277,7 +277,7 @@ function go_to_node_set_goal_pos(ent) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa12
+// Checksum 0x0, Offset: 0x9e2
 // Size: 0x1b
 function go_to_node_set_goal_node(node) {
     set_goal_node(node);
@@ -286,7 +286,7 @@ function go_to_node_set_goal_node(node) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa35
+// Checksum 0x0, Offset: 0xa05
 // Size: 0x31
 function set_goal_node(node) {
     self.last_set_goalnode = node;
@@ -297,7 +297,7 @@ function set_goal_node(node) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6e
+// Checksum 0x0, Offset: 0xa3e
 // Size: 0x51
 function set_goal_ent(target) {
     set_goal_pos(target.origin);
@@ -309,7 +309,7 @@ function set_goal_ent(target) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac7
+// Checksum 0x0, Offset: 0xa97
 // Size: 0x31
 function set_goal_pos(origin) {
     self.last_set_goalnode = undefined;
@@ -320,8 +320,8 @@ function set_goal_pos(origin) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb00
-// Size: 0x1f3
+// Checksum 0x0, Offset: 0xad0
+// Size: 0x1f4
 function go_to_node_wait_for_player(node, get_target_func) {
     if (distancesquared(level.player.origin, node.origin) < distancesquared(self.origin, node.origin)) {
         return true;
@@ -358,7 +358,7 @@ function go_to_node_wait_for_player(node, get_target_func) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcfc
+// Checksum 0x0, Offset: 0xccd
 // Size: 0x16a
 function node_fields_after_goal_and_wait(node, var_5e38f20c9628ae25) {
     if (isdefined(node.script_soundalias)) {
@@ -406,7 +406,7 @@ function node_fields_after_goal_and_wait(node, var_5e38f20c9628ae25) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6e
+// Checksum 0x0, Offset: 0xe3f
 // Size: 0x16
 function die() {
     self kill((0, 0, 0));
@@ -414,7 +414,7 @@ function die() {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8c
+// Checksum 0x0, Offset: 0xe5d
 // Size: 0xb
 function gesture_simple(var_7ca8d1ce367054f8) {
     
@@ -422,8 +422,8 @@ function gesture_simple(var_7ca8d1ce367054f8) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9f
-// Size: 0x1e
+// Checksum 0x0, Offset: 0xe70
+// Size: 0x1d
 function waittill_subgoal() {
     self endon("goal");
     index = self waittill("subgoal");
@@ -432,7 +432,7 @@ function waittill_subgoal() {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xec6
+// Checksum 0x0, Offset: 0xe96
 // Size: 0x1e6
 function node_fields_pre_goal(node) {
     if (isdefined(node.radius)) {
@@ -486,8 +486,8 @@ function node_fields_pre_goal(node) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b4
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x1084
+// Size: 0xb8
 function get_path_array(node, startnode) {
     array = [];
     count = 0;
@@ -520,7 +520,7 @@ function get_path_array(node, startnode) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1174
+// Checksum 0x0, Offset: 0x1145
 // Size: 0x122
 function go_to_node_should_stop(arrivaltarget) {
     if (!isdefined(arrivaltarget)) {
@@ -576,8 +576,8 @@ function go_to_node_should_stop(arrivaltarget) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x129f
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x1270
+// Size: 0xd6
 function get_least_used_from_array(array) {
     if (array.size == 1) {
         return array[0];
@@ -601,8 +601,8 @@ function get_least_used_from_array(array) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1380
-// Size: 0xe1
+// Checksum 0x0, Offset: 0x134f
+// Size: 0xde
 function get_target_goals(target) {
     goals = getnodearray(target, "targetname");
     new_goals = getstructarray(target, "targetname");
@@ -621,7 +621,7 @@ function get_target_goals(target) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x146a
+// Checksum 0x0, Offset: 0x1436
 // Size: 0x5d
 function is_target_goal_valid(object) {
     if (isspawner(object)) {
@@ -639,7 +639,7 @@ function is_target_goal_valid(object) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d0
+// Checksum 0x0, Offset: 0x149c
 // Size: 0x6a
 function go_to_node_end() {
     self endon("death");
@@ -656,8 +656,8 @@ function go_to_node_end() {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1542
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x150e
+// Size: 0xb3
 function set_moveplaybackrate(rate, time) {
     self notify("set_moveplaybackrate");
     self endon("set_moveplaybackrate");
@@ -679,7 +679,7 @@ function set_moveplaybackrate(rate, time) {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15fa
+// Checksum 0x0, Offset: 0x15c9
 // Size: 0x26
 function get_cover_volume_forward() {
     if (isdefined(self.goalvolumecoveryaw)) {
@@ -690,7 +690,7 @@ function get_cover_volume_forward() {
 
 // Namespace dog_utility / namespace_30928b2d56e819f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1628
+// Checksum 0x0, Offset: 0x15f7
 // Size: 0x38
 function get_player_from_self() {
     if (isdefined(self)) {

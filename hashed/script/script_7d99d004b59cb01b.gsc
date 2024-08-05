@@ -781,8 +781,8 @@ function function_8141c7ee58e8ad59(var_bb5fa24f4a5c3b42) {
     var_81d84bb5b65f498e thread anim_single_solo(var_81d84bb5b65f498e.var_7d1aa6814c853161, "blima_infil", "origin_animate_jnt");
     var_81d84bb5b65f498e.var_4df0c0e7ce492d0c = var_81d84bb5b65f498e namespace_3121700695454c9::spawn_anim_model("slot_0", "body_animate_jnt", "fullbody_sp_ally_helicopter_crew_chief");
     var_81d84bb5b65f498e thread anim_single_solo(var_81d84bb5b65f498e.var_4df0c0e7ce492d0c, "blima_infil", "body_animate_jnt");
-    var_81d84bb5b65f498e.var_4df0c1e7ce492f3f = var_81d84bb5b65f498e namespace_3121700695454c9::spawn_anim_model("slot_1", "body_animate_jnt", "fullbody_sp_ally_helicopter_crew_chief");
-    var_81d84bb5b65f498e thread anim_single_solo(var_81d84bb5b65f498e.var_4df0c1e7ce492f3f, "blima_infil", "body_animate_jnt");
+    var_81d84bb5b65f498e.seat1 = var_81d84bb5b65f498e namespace_3121700695454c9::spawn_anim_model("slot_1", "body_animate_jnt", "fullbody_sp_ally_helicopter_crew_chief");
+    var_81d84bb5b65f498e thread anim_single_solo(var_81d84bb5b65f498e.seat1, "blima_infil", "body_animate_jnt");
     self.target_entity = var_81d84bb5b65f498e;
     self settargetentity(self.target_entity, (0, 0, -30));
     thread namespace_f70554b797fd58c2::function_2add68d4c86e555b();

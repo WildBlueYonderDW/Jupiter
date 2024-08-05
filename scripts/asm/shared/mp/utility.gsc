@@ -10,7 +10,7 @@
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e9
+// Checksum 0x0, Offset: 0x190
 // Size: 0x42
 function dotraversal() {
     self endon("killanimscript");
@@ -22,7 +22,7 @@ function dotraversal() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x233
+// Checksum 0x0, Offset: 0x1da
 // Size: 0x1c
 function chooseanimwithoverride(asmname, statename, params) {
     return false;
@@ -30,7 +30,7 @@ function chooseanimwithoverride(asmname, statename, params) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x258
+// Checksum 0x0, Offset: 0x1ff
 // Size: 0x88
 function loopanimfortime(asmname, statename, params) {
     self endon(statename + "_finished");
@@ -54,7 +54,7 @@ function loopanimfortime(asmname, statename, params) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e8
+// Checksum 0x0, Offset: 0x28f
 // Size: 0x8f
 function waitforpathchange(asmname, statename) {
     self endon(statename + "_finished");
@@ -67,8 +67,8 @@ function waitforpathchange(asmname, statename) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x37f
-// Size: 0x87
+// Checksum 0x0, Offset: 0x326
+// Size: 0x86
 function playmoveloop_mp(asmname, statename, params) {
     thread waitforpathchange(asmname, statename);
     rate = 1;
@@ -82,8 +82,8 @@ function playmoveloop_mp(asmname, statename, params) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x40e
-// Size: 0x78
+// Checksum 0x0, Offset: 0x3b4
+// Size: 0x79
 function isfacingenemy(mindot) {
     if (!isdefined(mindot)) {
         mindot = 0.5;
@@ -99,7 +99,7 @@ function isfacingenemy(mindot) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x48f
+// Checksum 0x0, Offset: 0x436
 // Size: 0xf
 function isweaponfacingenemy() {
     if (isaimedataimtarget()) {
@@ -110,7 +110,7 @@ function isweaponfacingenemy() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a7
+// Checksum 0x0, Offset: 0x44e
 // Size: 0x15
 function wantstocrouch() {
     if (bb_getrequestedstance() == "crouch") {
@@ -121,7 +121,7 @@ function wantstocrouch() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c5
+// Checksum 0x0, Offset: 0x46c
 // Size: 0xa5
 function function_71eefa1c0da64a21(var_63a5b32b096323be) {
     if (!istrue(self._blackboard.shootparams_valid)) {
@@ -138,8 +138,8 @@ function function_71eefa1c0da64a21(var_63a5b32b096323be) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x573
-// Size: 0xed
+// Checksum 0x0, Offset: 0x51a
+// Size: 0xf1
 function isaimedataimtarget() {
     if (!isdefined(self._blackboard.shootparams_pos) && !isdefined(self._blackboard.shootparams_ent)) {
         return true;
@@ -162,7 +162,7 @@ function isaimedataimtarget() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x669
+// Checksum 0x0, Offset: 0x614
 // Size: 0x26
 function getaimpitchdifftolerance() {
     if (isdefined(self.aimpitchdifftolerance)) {
@@ -173,7 +173,7 @@ function getaimpitchdifftolerance() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x697
+// Checksum 0x0, Offset: 0x642
 // Size: 0x23
 function delayslowmotion(delay, start, end, time) {
     
@@ -181,7 +181,7 @@ function delayslowmotion(delay, start, end, time) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c2
+// Checksum 0x0, Offset: 0x66d
 // Size: 0x1b
 function delaymodifybasefov(delay, fov, time) {
     
@@ -189,7 +189,7 @@ function delaymodifybasefov(delay, fov, time) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e5
+// Checksum 0x0, Offset: 0x690
 // Size: 0x79
 function animscriptmp(archetype, statename, aliasname, loop, playbackrate, customendon, scriptednode, tag) {
     if (isdefined(customendon)) {
@@ -204,7 +204,7 @@ function animscriptmp(archetype, statename, aliasname, loop, playbackrate, custo
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x766
+// Checksum 0x0, Offset: 0x711
 // Size: 0x1c
 function cancelanimscriptmp() {
     if (!scripts\asm\asm_bb::bb_isanimscripted()) {
@@ -216,7 +216,7 @@ function cancelanimscriptmp() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x78a
+// Checksum 0x0, Offset: 0x735
 // Size: 0x2b
 function animscriptmp_watchcancel(customendon) {
     self endon("AnimscriptMP_Complete");
@@ -228,8 +228,8 @@ function animscriptmp_watchcancel(customendon) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x7bd
-// Size: 0x98
+// Checksum 0x0, Offset: 0x768
+// Size: 0x97
 function animscriptmp_single_internal(archetype, statename, aliasname, playbackrate, scriptnode, tag) {
     animscriptmp_internal(archetype, statename, aliasname, playbackrate, scriptnode, tag);
     var_e1940c994503c932 = isdefined(playbackrate) && playbackrate == 0;
@@ -243,7 +243,7 @@ function animscriptmp_single_internal(archetype, statename, aliasname, playbackr
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x85d
+// Checksum 0x0, Offset: 0x807
 // Size: 0x56
 function animscriptmp_loop_internal(archetype, statename, aliasname, playbackrate, scriptnode, tag) {
     self endon("CancelAnimscriptMP");
@@ -255,8 +255,8 @@ function animscriptmp_loop_internal(archetype, statename, aliasname, playbackrat
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x8bb
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x865
+// Size: 0xb9
 function private function_7618d8f3ba2fbcea(xanim, scriptnode, tag, animindex) {
     if (isdefined(tag)) {
         assert(isent(scriptnode));
@@ -274,8 +274,8 @@ function private function_7618d8f3ba2fbcea(xanim, scriptnode, tag, animindex) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x97a
-// Size: 0xec
+// Checksum 0x0, Offset: 0x926
+// Size: 0xed
 function animscriptmp_internal(archetype, statename, aliasname, playbackrate, scriptnode, tag) {
     self endon("CancelAnimscriptMP");
     self endon("death");
@@ -301,7 +301,7 @@ function animscriptmp_internal(archetype, statename, aliasname, playbackrate, sc
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6e
+// Checksum 0x0, Offset: 0xa1b
 // Size: 0x32
 function cancelanimscriptmp_internal() {
     scripts\asm\asm_bb::bb_clearanimscripted();
@@ -313,13 +313,9 @@ function cancelanimscriptmp_internal() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa8
-// Size: 0x9e
+// Checksum 0x0, Offset: 0xa55
+// Size: 0x7c
 function animscripted_single(aliasname, var_1a11aea0c900b403, statename) {
-    assertex(isalive(self), "<dev string:x1c>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     if (!isdefined(statename)) {
         statename = "animscripted";
@@ -331,22 +327,16 @@ function animscripted_single(aliasname, var_1a11aea0c900b403, statename) {
     }
     if (!var_1a11aea0c900b403) {
         xanim = asm_getxanim(statename, animindex);
-        if (isdefined(xanim)) {
-            animlength = getanimlength(xanim);
-            wait animlength;
-        }
+        animlength = getanimlength(xanim);
+        wait animlength;
     }
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4e
-// Size: 0x66
+// Checksum 0x0, Offset: 0xad9
+// Size: 0x47
 function function_dd94e74da0ad6ead(aliasname, statename) {
-    assertex(isalive(self), "<dev string:x4f>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     if (!isdefined(statename)) {
         statename = "animscripted";
@@ -357,13 +347,9 @@ function function_dd94e74da0ad6ead(aliasname, statename) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xbbc
-// Size: 0x99
+// Checksum 0x0, Offset: 0xb28
+// Size: 0x7c
 function animscripted_single_earlyend(aliasname, time) {
-    assertex(isalive(self), "<dev string:x87>");
-    if (!isalive(self)) {
-        return;
-    }
     assert(time > 0);
     scripts\asm\asm_mp::asm_setanimscripted();
     animindex = asm_lookupanimfromalias("animscripted", aliasname);
@@ -377,13 +363,9 @@ function animscripted_single_earlyend(aliasname, time) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc5d
-// Size: 0x96
+// Checksum 0x0, Offset: 0xbac
+// Size: 0x79
 function animscripted_loop(aliasname) {
-    assertex(isalive(self), "<dev string:xc3>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     animindex = asm_lookupanimfromalias("animscripted", aliasname);
     xanim = asm_getxanim("animscripted", animindex);
@@ -399,13 +381,9 @@ function animscripted_loop(aliasname) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcfb
-// Size: 0xa9
+// Checksum 0x0, Offset: 0xc2d
+// Size: 0x8c
 function animscripted_loop_earlyend(aliasname, time) {
-    assertex(isalive(self), "<dev string:xf4>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     animindex = asm_lookupanimfromalias("animscripted", aliasname);
     xanim = asm_getxanim("animscripted", animindex);
@@ -424,14 +402,10 @@ function animscripted_loop_earlyend(aliasname, time) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdac
-// Size: 0xbb
+// Checksum 0x0, Offset: 0xcc1
+// Size: 0x9f
 function animscripted_loop_for_time(aliasname, time) {
     assert(time > 0);
-    assertex(isalive(self), "<dev string:x12e>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     animindex = asm_lookupanimfromalias("animscripted", aliasname);
     xanim = asm_getxanim("animscripted", animindex);
@@ -447,14 +421,10 @@ function animscripted_loop_for_time(aliasname, time) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6f
-// Size: 0xac
+// Checksum 0x0, Offset: 0xd68
+// Size: 0x8f
 function animscripted_loop_n_times(aliasname, numloops) {
     assert(numloops);
-    assertex(isalive(self), "<dev string:x168>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     animindex = asm_lookupanimfromalias("animscripted", aliasname);
     xanim = asm_getxanim("animscripted", animindex);
@@ -471,15 +441,11 @@ function animscripted_loop_n_times(aliasname, numloops) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf23
-// Size: 0xca
+// Checksum 0x0, Offset: 0xdff
+// Size: 0xad
 function animscripted_loop_relative(aliasname, ent, tag) {
     self endon("death");
     assert(isdefined(ent));
-    assertex(isalive(self), "<dev string:x168>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     animindex = asm_lookupanimfromalias("animscripted", aliasname);
     xanim = asm_getxanim("animscripted", animindex);
@@ -496,14 +462,10 @@ function animscripted_loop_relative(aliasname, ent, tag) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xff5
-// Size: 0xc2
+// Checksum 0x0, Offset: 0xeb4
+// Size: 0xa5
 function animscripted_single_relative(aliasname, ent, tag, var_1a11aea0c900b403, statename) {
     assert(isdefined(ent));
-    assertex(isalive(self), "<dev string:x1a1>");
-    if (!isalive(self)) {
-        return;
-    }
     if (!isdefined(statename)) {
         statename = "animscripted";
     }
@@ -523,13 +485,9 @@ function animscripted_single_relative(aliasname, ent, tag, var_1a11aea0c900b403,
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x10bf
-// Size: 0x107
+// Checksum 0x0, Offset: 0xf61
+// Size: 0xee
 function animscripted_single_arrive_at(aliasname, pos, angles, var_1a11aea0c900b403) {
-    assertex(isalive(self), "<dev string:x1dd>");
-    if (!isalive(self)) {
-        return;
-    }
     scripts\asm\asm_mp::asm_setanimscripted();
     animindex = asm_lookupanimfromalias("animscripted", aliasname);
     xanim = asm_getxanim("animscripted", animindex);
@@ -551,7 +509,7 @@ function animscripted_single_arrive_at(aliasname, pos, angles, var_1a11aea0c900b
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ce
+// Checksum 0x0, Offset: 0x1057
 // Size: 0x10
 function animscripted_clear() {
     scripts\asm\asm_bb::bb_clearanimscripted();
@@ -560,7 +518,7 @@ function animscripted_clear() {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e6
+// Checksum 0x0, Offset: 0x106f
 // Size: 0x5d
 function function_8fa69650e33c84ef(anime) {
     if (!isdefined(level.scr_anim) || !isdefined(self.animname) || !isdefined(level.scr_anim[self.animname]) || !isdefined(level.scr_anim[self.animname][anime])) {
@@ -571,8 +529,8 @@ function function_8fa69650e33c84ef(anime) {
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x124c
-// Size: 0xee
+// Checksum 0x0, Offset: 0x10d5
+// Size: 0xe4
 function function_577d8abff6067c23(anime, anim_string, org, var_8c94765ca587f86c, anim_flag) {
     self endon("death");
     if (isstring(anim_flag)) {
@@ -580,7 +538,7 @@ function function_577d8abff6067c23(anime, anim_string, org, var_8c94765ca587f86c
     }
     aliasname = level.scr_anim[self.animname][anime];
     callback_name = anime + "_animscripted";
-    callback::callback(callback_name, {#aliasname:aliasname});
+    callback::callback(callback_name);
     if (isdefined(org)) {
         anim_node = spawnstruct();
         anim_node.origin = org;
@@ -598,8 +556,8 @@ function function_577d8abff6067c23(anime, anim_string, org, var_8c94765ca587f86c
 
 // Namespace utility / scripts\asm\shared\mp\utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1342
-// Size: 0x66
+// Checksum 0x0, Offset: 0x11c1
+// Size: 0x67
 function function_8efc1cbdaa97f95e(anime) {
     spawn_anim = scripts\asm\asm::asm_lookupanimfromalias("animscripted", level.scr_anim[self.animname][anime]);
     spawn_xanim = animsetgetanimfromindex(scripts\asm\shared\utility::function_2285421dfc79c4d5(), "animscripted", spawn_anim);
@@ -608,20 +566,9 @@ function function_8efc1cbdaa97f95e(anime) {
 }
 
 // Namespace utility / scripts\asm\shared\mp\utility
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b1
-// Size: 0x66
-function function_5173aedda202662(anime) {
-    spawn_anim = scripts\asm\asm::asm_lookupanimfromalias("animscripted", level.scr_anim[self.animname][anime]);
-    spawn_xanim = animsetgetanimfromindex(scripts\asm\shared\utility::function_2285421dfc79c4d5(), "animscripted", spawn_anim);
-    var_7d881d4e81293ae5 = getangledelta(spawn_xanim, 0, 1);
-    return var_7d881d4e81293ae5;
-}
-
-// Namespace utility / scripts\asm\shared\mp\utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1420
-// Size: 0x7d
+// Checksum 0x0, Offset: 0x1231
+// Size: 0x7e
 function ai_anim_first_frame(animation, animname) {
     var_1ed6bbc02282dd5 = "agent_scripted_" + getdvar(@"hash_687fb8f9b7a23245");
     aliasname = getanimname(animation);

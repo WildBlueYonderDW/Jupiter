@@ -7,7 +7,7 @@
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0
+// Checksum 0x0, Offset: 0xae
 // Size: 0x6d
 function initcap(asmname, statename, params) {
     if (isai(self)) {
@@ -23,7 +23,7 @@ function initcap(asmname, statename, params) {
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x155
+// Checksum 0x0, Offset: 0x123
 // Size: 0x2
 function function_912821adbd16d04c() {
     
@@ -31,7 +31,7 @@ function function_912821adbd16d04c() {
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f
+// Checksum 0x0, Offset: 0x12d
 // Size: 0x2
 function function_e3189c04775f3a0f() {
     
@@ -39,7 +39,7 @@ function function_e3189c04775f3a0f() {
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x169
+// Checksum 0x0, Offset: 0x137
 // Size: 0x86
 function function_dc875c74aa7545f4(asmname, statename, params) {
     if (!isdefined(self._blackboard.var_40a41c70824fa4c4)) {
@@ -53,7 +53,7 @@ function function_dc875c74aa7545f4(asmname, statename, params) {
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f7
+// Checksum 0x0, Offset: 0x1c5
 // Size: 0x1c
 function function_e9f61f14d08fcd61(asmname, statename, params) {
     return false;
@@ -61,7 +61,7 @@ function function_e9f61f14d08fcd61(asmname, statename, params) {
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x21c
+// Checksum 0x0, Offset: 0x1ea
 // Size: 0x1c
 function function_92087655510b0e0(asmname, statename, params) {
     return false;
@@ -69,7 +69,7 @@ function function_92087655510b0e0(asmname, statename, params) {
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x241
+// Checksum 0x0, Offset: 0x20f
 // Size: 0x4b
 function function_6d55fddf9c7024e2(asmname, statename, params) {
     if (isdefined(self.var_a70672e669ca7f00)) {
@@ -80,7 +80,7 @@ function function_6d55fddf9c7024e2(asmname, statename, params) {
 
 // Namespace base_interaction / namespace_93802ef5ac63ad7b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x294
+// Checksum 0x0, Offset: 0x262
 // Size: 0x2f
 function function_56c32e6f7b6ed8ed(asmname, statename, params) {
     self.var_a70672e669ca7f00 = undefined;

@@ -6,11 +6,11 @@
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e
-// Size: 0x144
+// Checksum 0x0, Offset: 0x26f
+// Size: 0x147
 function function_35669831b02dc8fa(spawnorigin, targetorigin, var_44eb7c4eafc2e56e) {
-    assert(isdefined(spawnorigin), "<dev string:x1c>");
-    assert(isdefined(targetorigin), "<dev string:x58>");
+    assert(isdefined(spawnorigin), "para_ac130SpawnAndFlyToDropoff: No spawnOrigin specified");
+    assert(isdefined(targetorigin), "para_ac130SpawnAndFlyToDropoff: No dropOffOrigin specified");
     ac130 = spawn("script_model", spawnorigin);
     ac130 setmodel("veh9_mil_air_cargo_plane_wm_dmz");
     ac130.angles = vectortoangles(targetorigin - spawnorigin);
@@ -33,8 +33,8 @@ function function_35669831b02dc8fa(spawnorigin, targetorigin, var_44eb7c4eafc2e5
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bb
-// Size: 0x1a4
+// Checksum 0x0, Offset: 0x3bf
+// Size: 0x1ad
 function function_16dfd690940ae271(exitorigin) {
     ac130 = self;
     finalloc = ac130.origin + anglestoforward(ac130.angles) * 64500;
@@ -75,12 +75,12 @@ function function_16dfd690940ae271(exitorigin) {
     ac130 setscriptablepartstate("lights2", "off", 0);
     ac130 setscriptablepartstate("contrails", "off", 0);
     ac130 delete();
-    println("<dev string:x96>");
+    println("<dev string:x1c>");
 }
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x567
+// Checksum 0x0, Offset: 0x574
 // Size: 0x59
 function create_paratrooper(falldelay, var_4f200828059689db) {
     self endon("death");
@@ -96,7 +96,7 @@ function create_paratrooper(falldelay, var_4f200828059689db) {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c8
+// Checksum 0x0, Offset: 0x5d5
 // Size: 0x178
 function parachute_set_spawn_values() {
     self allowedstances("stand");
@@ -129,8 +129,8 @@ function parachute_set_spawn_values() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x748
-// Size: 0x2f5
+// Checksum 0x0, Offset: 0x755
+// Size: 0x2fb
 function parachute_get_path(var_c225e4dd6095fdcd, var_c201cedd606d52b3, var_7dc1df4ff378a6f4) {
     self endon("death");
     if (!isdefined(var_c225e4dd6095fdcd)) {
@@ -156,7 +156,7 @@ function parachute_get_path(var_c225e4dd6095fdcd, var_c201cedd606d52b3, var_7dc1
             foundnode = 0;
             if (isdefined(nodes) && nodes.size > 0) {
                 var_7898211d070bae3c = 2;
-                foreach (index, node in nodes) {
+                foreach (node in nodes) {
                     if (index >= var_7898211d070bae3c) {
                         break;
                     }
@@ -190,7 +190,7 @@ function parachute_get_path(var_c225e4dd6095fdcd, var_c201cedd606d52b3, var_7dc1
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa45
+// Checksum 0x0, Offset: 0xa58
 // Size: 0xc0
 function function_f69c1c88941df67a(landing_spot) {
     if (istrue(self.var_faeb5e8cc0f1400a)) {
@@ -209,8 +209,8 @@ function function_f69c1c88941df67a(landing_spot) {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0d
-// Size: 0x166
+// Checksum 0x0, Offset: 0xb20
+// Size: 0x169
 function parachute_skydive(falldelay) {
     self endon("death");
     if (isdefined(self.ac130)) {
@@ -238,8 +238,8 @@ function parachute_skydive(falldelay) {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7b
-// Size: 0x81
+// Checksum 0x0, Offset: 0xc91
+// Size: 0x80
 function parachute_spawn() {
     chute = spawn("script_model", self gettagorigin("j_spine4"));
     chute.angles = self gettagangles("j_spine4");
@@ -251,7 +251,7 @@ function parachute_spawn() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd04
+// Checksum 0x0, Offset: 0xd19
 // Size: 0x4c
 function parachute_deploy() {
     self.chute scriptmodelplayanim("sdr_com_parachute_pullcord");
@@ -262,7 +262,7 @@ function parachute_deploy() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd58
+// Checksum 0x0, Offset: 0xd6d
 // Size: 0x24
 function delayeventfired() {
     self endon("death");
@@ -272,7 +272,7 @@ function delayeventfired() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd84
+// Checksum 0x0, Offset: 0xd99
 // Size: 0x12
 function parachute_idle() {
     thread parachute_move();
@@ -281,7 +281,7 @@ function parachute_idle() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd9e
+// Checksum 0x0, Offset: 0xdb3
 // Size: 0x23
 function parachute_idle_internal() {
     self endon("death");
@@ -291,8 +291,8 @@ function parachute_idle_internal() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc9
-// Size: 0x153
+// Checksum 0x0, Offset: 0xdde
+// Size: 0x155
 function parachute_move() {
     self endon("death");
     move_time = 6;
@@ -319,7 +319,7 @@ function parachute_move() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf24
+// Checksum 0x0, Offset: 0xf3b
 // Size: 0x123
 function do_landing() {
     self endon("death");
@@ -350,7 +350,7 @@ function do_landing() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x104f
+// Checksum 0x0, Offset: 0x1066
 // Size: 0x2d
 function watch_for_death() {
     self endon("parachute_detached");
@@ -362,7 +362,7 @@ function watch_for_death() {
 
 // Namespace namespace_72f3711d95f0e465 / namespace_c0945f72aac1f0a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1084
+// Checksum 0x0, Offset: 0x109b
 // Size: 0x4a
 function unlink_on_ai_death(ai) {
     self endon("death");

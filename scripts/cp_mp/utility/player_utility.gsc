@@ -8,8 +8,8 @@
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50c
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x58b
+// Size: 0x8d
 function getstancecenter() {
     if (self getstance() == "crouch") {
         center = self.origin + 0.5 * (0, 0, 48);
@@ -23,7 +23,7 @@ function getstancecenter() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a3
+// Checksum 0x0, Offset: 0x621
 // Size: 0x93
 function getstancetop(stanceoverride) {
     curstance = self getstance();
@@ -42,7 +42,7 @@ function getstancetop(stanceoverride) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x63f
+// Checksum 0x0, Offset: 0x6bd
 // Size: 0x32
 function _isalive() {
     return isalive(self) && !isdefined(self.fauxdead) && !istrue(self.delayedspawnedplayernotify) && !istrue(self.liveragdoll);
@@ -50,7 +50,7 @@ function _isalive() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x67a
+// Checksum 0x0, Offset: 0x6f8
 // Size: 0x32
 function setusingremote(remotename) {
     if (issharedfuncdefined("player", "setUsingRemote")) {
@@ -60,7 +60,7 @@ function setusingremote(remotename) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b4
+// Checksum 0x0, Offset: 0x732
 // Size: 0x32
 function clearusingremote(var_2c111f02d48e2671) {
     if (issharedfuncdefined("player", "clearUsingRemote")) {
@@ -70,7 +70,7 @@ function clearusingremote(var_2c111f02d48e2671) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ee
+// Checksum 0x0, Offset: 0x76c
 // Size: 0x4f
 function function_1e4a0e61fdb00e32(player) {
     if (issharedfuncdefined("player", "isOOB")) {
@@ -81,14 +81,14 @@ function function_1e4a0e61fdb00e32(player) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x746
+// Checksum 0x0, Offset: 0x7c4
 // Size: 0x85
 function isenemy(other) {
     if (level.teambased) {
         if (isdefined(other.team) && isdefined(self.team)) {
             return (other.team != self.team);
         } else {
-            assertmsg("<dev string:x1c>");
+            assertmsg("Team based modes should have .team on all players and agents.");
             return 1;
         }
         return;
@@ -101,7 +101,7 @@ function isenemy(other) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d3
+// Checksum 0x0, Offset: 0x851
 // Size: 0x61
 function isinvehicle(includetransitions) {
     if (isdefined(self.vehicle) && isdefined(self.vehicle.vehiclename)) {
@@ -117,7 +117,7 @@ function isinvehicle(includetransitions) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x83d
+// Checksum 0x0, Offset: 0x8bb
 // Size: 0x31
 function getvehicle(var_3fcd58f5bae3bd0) {
     if (isinvehicle()) {
@@ -129,8 +129,16 @@ function getvehicle(var_3fcd58f5bae3bd0) {
 }
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x8f5
+// Size: 0x2
+function function_1b144d551bfe8d95() {
+    
+}
+
+// Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x877
+// Checksum 0x0, Offset: 0x8ff
 // Size: 0x3c
 function function_f8789f15330de751(player) {
     if (!isdefined(player) || isbot(player) || isagent(player)) {
@@ -141,8 +149,8 @@ function function_f8789f15330de751(player) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bc
-// Size: 0x10b
+// Checksum 0x0, Offset: 0x944
+// Size: 0x107
 function getteamarray(team, var_dcc07fcc8a9beb59) {
     teamarray = [];
     if (!isdefined(var_dcc07fcc8a9beb59) || var_dcc07fcc8a9beb59) {
@@ -163,7 +171,7 @@ function getteamarray(team, var_dcc07fcc8a9beb59) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d0
+// Checksum 0x0, Offset: 0xa54
 // Size: 0x44
 function _freezecontrols(frozen, force, debug) {
     if (issharedfuncdefined("player", "freezeControls")) {
@@ -173,7 +181,7 @@ function _freezecontrols(frozen, force, debug) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1c
+// Checksum 0x0, Offset: 0xaa0
 // Size: 0x28
 function function_8213d31f7a3c32e2() {
     if (issharedfuncdefined("player", "freezeControlsDebug")) {
@@ -183,7 +191,7 @@ function function_8213d31f7a3c32e2() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4c
+// Checksum 0x0, Offset: 0xad0
 // Size: 0x3b
 function _freezelookcontrols(frozen, force) {
     if (issharedfuncdefined("player", "freezeLookControls")) {
@@ -193,7 +201,7 @@ function _freezelookcontrols(frozen, force) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8f
+// Checksum 0x0, Offset: 0xb13
 // Size: 0x1b
 function function_82f44f5f304ba91a(enabled) {
     function_f2c3ee9fded6a3df(enabled);
@@ -202,7 +210,7 @@ function function_82f44f5f304ba91a(enabled) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab2
+// Checksum 0x0, Offset: 0xb36
 // Size: 0x2f
 function function_f2c3ee9fded6a3df(enabled) {
     self allowmovement(!enabled);
@@ -213,7 +221,7 @@ function function_f2c3ee9fded6a3df(enabled) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae9
+// Checksum 0x0, Offset: 0xb6d
 // Size: 0x1b
 function function_cb6c6cd4245c5551(enabled) {
     self freezecontrols(enabled);
@@ -222,8 +230,8 @@ function function_cb6c6cd4245c5551(enabled) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0c
-// Size: 0x3f
+// Checksum 0x0, Offset: 0xb90
+// Size: 0x3e
 function getplayersuperfaction(player) {
     var_a67aa6a470ceeb29 = 0;
     if (isdefined(player.operatorcustomization)) {
@@ -234,7 +242,7 @@ function getplayersuperfaction(player) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb54
+// Checksum 0x0, Offset: 0xbd7
 // Size: 0x4c
 function setthermalvision(bool, fstop, focusdistance) {
     if (istrue(bool)) {
@@ -249,7 +257,7 @@ function setthermalvision(bool, fstop, focusdistance) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba8
+// Checksum 0x0, Offset: 0xc2b
 // Size: 0x84
 function watchthermalinputchange(inairvehicle) {
     self notify("watch_thermal_input_change");
@@ -268,7 +276,7 @@ function watchthermalinputchange(inairvehicle) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc34
+// Checksum 0x0, Offset: 0xcb7
 // Size: 0xa
 function stopwatchingthermalinputchange() {
     self notify("thermal_handling_ended");
@@ -276,8 +284,8 @@ function stopwatchingthermalinputchange() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc46
-// Size: 0x44
+// Checksum 0x0, Offset: 0xcc9
+// Size: 0x43
 function updateinputtypewatcher() {
     var_51ec07dc533464b5 = is_player_gamepad_enabled();
     if (!isdefined(self.gamepadwasenabled) || self.gamepadwasenabled != var_51ec07dc533464b5) {
@@ -288,7 +296,7 @@ function updateinputtypewatcher() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc92
+// Checksum 0x0, Offset: 0xd14
 // Size: 0x2a
 function getthermalswitchplayercommand(inairvehicle) {
     if (is_player_gamepad_enabled()) {
@@ -302,7 +310,7 @@ function getthermalswitchplayercommand(inairvehicle) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc5
+// Checksum 0x0, Offset: 0xd47
 // Size: 0x3b
 function enabledemeanorsafe() {
     if (!isdefined(self.demeanorsafeenabled)) {
@@ -316,10 +324,10 @@ function enabledemeanorsafe() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd08
+// Checksum 0x0, Offset: 0xd8a
 // Size: 0x53
 function disabledemeanorsafe() {
-    assertex(isdefined(self.demeanorsafeenabled) && self.demeanorsafeenabled > 0, "<dev string:x5d>");
+    assertex(isdefined(self.demeanorsafeenabled) && self.demeanorsafeenabled > 0, "disableDemeanorSafe called more times than enableDemeanorSafe.");
     self.demeanorsafeenabled--;
     if (self.demeanorsafeenabled == 0) {
         self.demeanorsafeenabled = undefined;
@@ -329,7 +337,7 @@ function disabledemeanorsafe() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd63
+// Checksum 0x0, Offset: 0xde5
 // Size: 0x49
 function forcedemeanorsafe(bool) {
     if (bool && self getdemeanorviewmodel() != "safe") {
@@ -343,8 +351,8 @@ function forcedemeanorsafe(bool) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb4
-// Size: 0xb4
+// Checksum 0x0, Offset: 0xe36
+// Size: 0xb3
 function forcedemeanorsafeinteral(bool) {
     self endon("death_or_disconnect");
     self notify("forceDemeanorSafeInteral");
@@ -371,7 +379,7 @@ function forcedemeanorsafeinteral(bool) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe70
+// Checksum 0x0, Offset: 0xef1
 // Size: 0x16
 function cleardemeanorsafe() {
     self.demeanorsafeenabled = undefined;
@@ -380,7 +388,7 @@ function cleardemeanorsafe() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8e
+// Checksum 0x0, Offset: 0xf0f
 // Size: 0xe9
 function playersareenemies(firstplayer, secondplayer, var_b2b9b3d299fbaeb1) {
     if (!isdefined(firstplayer) || !isdefined(secondplayer)) {
@@ -405,7 +413,7 @@ function playersareenemies(firstplayer, secondplayer, var_b2b9b3d299fbaeb1) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf7f
+// Checksum 0x0, Offset: 0x1000
 // Size: 0x1c
 function getteamindex(teamname) {
     return level.teamdata[teamname]["index"];
@@ -413,7 +421,7 @@ function getteamindex(teamname) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa4
+// Checksum 0x0, Offset: 0x1025
 // Size: 0x8
 function playerbloodrestricted() {
     return utility::iswegameplatform();
@@ -421,7 +429,7 @@ function playerbloodrestricted() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb5
+// Checksum 0x0, Offset: 0x1036
 // Size: 0xc
 function initdismembermentlist() {
     level.playerswithoutdismemberment = [];
@@ -429,10 +437,10 @@ function initdismembermentlist() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc9
+// Checksum 0x0, Offset: 0x104a
 // Size: 0x35
 function addtodismembermentlist() {
-    assertex(isdefined(level.playerswithoutdismemberment), "<dev string:x9f>");
+    assertex(isdefined(level.playerswithoutdismemberment), "addToDismembermentList called before initDismembermentList.");
     if (!self isdismembermentenabledforplayer()) {
         level.playerswithoutdismemberment[self getxuid()] = self;
     }
@@ -440,16 +448,16 @@ function addtodismembermentlist() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1006
+// Checksum 0x0, Offset: 0x1087
 // Size: 0x2a
 function removefromdismembermentlist() {
-    assertex(isdefined(level.playerswithoutdismemberment), "<dev string:xde>");
+    assertex(isdefined(level.playerswithoutdismemberment), "removeFromDismembermentList called before initDismembermentList.");
     level.playerswithoutdismemberment[self getxuid()] = undefined;
 }
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1038
+// Checksum 0x0, Offset: 0x10b9
 // Size: 0xb
 function getdismembermentlist() {
     return level.playerswithoutdismemberment;
@@ -457,7 +465,7 @@ function getdismembermentlist() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x104c
+// Checksum 0x0, Offset: 0x10cd
 // Size: 0x38
 function function_305fb8c759fa4de5() {
     if (!isdefined(self.playerhidden)) {
@@ -471,7 +479,7 @@ function function_305fb8c759fa4de5() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x108c
+// Checksum 0x0, Offset: 0x110d
 // Size: 0x2a
 function function_a593971d75d82113(var_1fffb4c6d7b458a3) {
     namespace_46e942396566f2da::function_112e56b7dbe18137();
@@ -484,22 +492,22 @@ function function_a593971d75d82113(var_1fffb4c6d7b458a3) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10be
+// Checksum 0x0, Offset: 0x113f
 // Size: 0x3d
 function function_379bb555405c16bb(reason) {
     if (getdvarint(@"hash_b5fe5be1cf552f2e", 0) == 0) {
         return;
     }
     logprint("PlayerHide(): " + reason);
-    println("<dev string:x122>" + reason);
+    println("<dev string:x1c>" + reason);
 }
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1103
+// Checksum 0x0, Offset: 0x1184
 // Size: 0x61
 function function_f81e91f54bddaf46() {
-    assertex(isdefined(self.playerhidden) && self.playerhidden > 0, "<dev string:x134>");
+    assertex(isdefined(self.playerhidden) && self.playerhidden > 0, "_playerShow called when player is not hidden.");
     if (self.playerhidden == 1) {
         function_6fb380927695ee76();
     }
@@ -511,7 +519,7 @@ function function_f81e91f54bddaf46() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x116c
+// Checksum 0x0, Offset: 0x11ed
 // Size: 0x2a
 function function_6fb380927695ee76(var_1fffb4c6d7b458a3) {
     if (istrue(var_1fffb4c6d7b458a3)) {
@@ -524,19 +532,19 @@ function function_6fb380927695ee76(var_1fffb4c6d7b458a3) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x119e
+// Checksum 0x0, Offset: 0x121f
 // Size: 0x3d
 function function_985b0973f29da4f8(reason) {
     if (getdvarint(@"hash_11b8360f35c60d6f", 0) == 0) {
         return;
     }
     logprint("PlayerShow(): " + reason);
-    println("<dev string:x165>" + reason);
+    println("<dev string:x2b>" + reason);
 }
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e3
+// Checksum 0x0, Offset: 0x1264
 // Size: 0x44
 function function_c28310e3b33872cb() {
     self.playerhidden = undefined;
@@ -550,7 +558,7 @@ function function_c28310e3b33872cb() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x122f
+// Checksum 0x0, Offset: 0x12b0
 // Size: 0x41
 function isreallyalive(player) {
     return isalive(player) && !isdefined(player.fauxdead) && !istrue(player.delayedspawnedplayernotify) && !istrue(player.liveragdoll);
@@ -558,7 +566,7 @@ function isreallyalive(player) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1279
+// Checksum 0x0, Offset: 0x12fa
 // Size: 0x38
 function player_hasperk(perk) {
     if (issharedfuncdefined("perk", "hasPerk")) {
@@ -569,7 +577,7 @@ function player_hasperk(perk) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b9
+// Checksum 0x0, Offset: 0x133a
 // Size: 0x41
 function isfemale() {
     return isdefined(self.operatorcustomization) && isdefined(self.operatorcustomization.gender) && self.operatorcustomization.gender == "female";
@@ -577,7 +585,7 @@ function isfemale() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1303
+// Checksum 0x0, Offset: 0x1384
 // Size: 0x12
 function isswimmingunderwater() {
     return self isswimming() && self isswimunderwater();
@@ -585,7 +593,7 @@ function isswimmingunderwater() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x131e
+// Checksum 0x0, Offset: 0x139f
 // Size: 0x12
 function function_d474b372046544b0() {
     return self isswimming() && !self isswimunderwater();
@@ -593,7 +601,7 @@ function function_d474b372046544b0() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1339
+// Checksum 0x0, Offset: 0x13ba
 // Size: 0x2c
 function playplayerandnpcsounds(player, firstpersonsound, thirdpersonsound) {
     player playlocalsound(firstpersonsound);
@@ -602,7 +610,7 @@ function playplayerandnpcsounds(player, firstpersonsound, thirdpersonsound) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x136d
+// Checksum 0x0, Offset: 0x13ee
 // Size: 0x103
 function function_f7348e400b4a608d(player, var_3be15d8ad8b7024d, priority, forceon) {
     if (!isdefined(player) || isbot(player) || isagent(player)) {
@@ -623,7 +631,7 @@ function function_f7348e400b4a608d(player, var_3be15d8ad8b7024d, priority, force
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1478
+// Checksum 0x0, Offset: 0x14f9
 // Size: 0x66
 function function_56d83cde22535f96(player) {
     if (!isdefined(player) || isbot(player) || isagent(player)) {
@@ -638,20 +646,20 @@ function function_56d83cde22535f96(player) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e6
+// Checksum 0x0, Offset: 0x1567
 // Size: 0xe3
 function printspawnmessage(message) {
     /#
         if (getdvarint(@"hash_da3b86849f785e06", 0) == 1) {
-            println("<dev string:x177>" + gettime() + "<dev string:x17d>" + self.name + "<dev string:x183>" + message);
-            println("<dev string:x189>" + self.sessionstate);
-            println("<dev string:x19c>" + self.origin);
+            println("<dev string:x3a>" + gettime() + "<dev string:x3d>" + self.name + "<dev string:x40>" + message);
+            println("<dev string:x43>" + self.sessionstate);
+            println("<dev string:x53>" + self.origin);
             if (isdefined(self.forcedspawncameraref)) {
-                println("<dev string:x1b0>" + self.forcedspawncameraref);
+                println("<dev string:x64>" + self.forcedspawncameraref);
             }
             if (isdefined(self.spawncameraent)) {
-                println("<dev string:x1d0>" + self.spawncameraent.origin);
-                println("<dev string:x1f1>" + self.spawncameraent.angles);
+                println("<dev string:x81>" + self.spawncameraent.origin);
+                println("<dev string:x9f>" + self.spawncameraent.angles);
             }
         }
     #/
@@ -659,7 +667,7 @@ function printspawnmessage(message) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d1
+// Checksum 0x0, Offset: 0x1652
 // Size: 0x64
 function function_7a8a04d15ad052d5() {
     level endon("game_ended");
@@ -677,8 +685,8 @@ function function_7a8a04d15ad052d5() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x163d
-// Size: 0x75
+// Checksum 0x0, Offset: 0x16be
+// Size: 0x74
 function function_fdff38028c016239() {
     self endon("disconnect");
     assert(istrue(self.liveragdoll));
@@ -693,8 +701,8 @@ function function_fdff38028c016239() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ba
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x173a
+// Size: 0xc5
 function function_6d606d81ea9ab50b(var_81aa39b3e585cd66, var_d198b30dc157c5cd) {
     if (!isdefined(var_81aa39b3e585cd66)) {
         var_81aa39b3e585cd66 = 0;
@@ -718,8 +726,8 @@ function function_6d606d81ea9ab50b(var_81aa39b3e585cd66, var_d198b30dc157c5cd) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1787
-// Size: 0x278
+// Checksum 0x0, Offset: 0x1808
+// Size: 0x285
 function function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd) {
     assert(isdefined(victim) && isent(victim));
     assert(isdefined(attacker) && isent(attacker));
@@ -771,10 +779,10 @@ function function_d93211a15c000cd(victim, attacker, var_d198b30dc157c5cd) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a08
-// Size: 0x1da
+// Checksum 0x0, Offset: 0x1a96
+// Size: 0x1d9
 function updatesessionstate(sessionstate, statusicon) {
-    assert(sessionstate == "<dev string:x212>" || sessionstate == "<dev string:x21d>" || sessionstate == "<dev string:x225>" || sessionstate == "<dev string:x232>" || sessionstate == "<dev string:x242>");
+    assert(sessionstate == "playing" || sessionstate == "dead" || sessionstate == "spectator" || sessionstate == "intermission" || sessionstate == "playing_but_spectating");
     ui_session_state = sessionstate;
     if (istrue(self.liveragdoll)) {
         if (self.sessionstate == "playing_but_spectating" && (sessionstate == "dead" || sessionstate == "spectator")) {
@@ -825,7 +833,7 @@ function updatesessionstate(sessionstate, statusicon) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bea
+// Checksum 0x0, Offset: 0x1c77
 // Size: 0x48
 function clearkillcamstate() {
     self.forcespectatorclient = -1;
@@ -839,8 +847,8 @@ function clearkillcamstate() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1c3a
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x1cc7
+// Size: 0x61
 function private function_c5a5b36868d0a68e() {
     self endon("disconnect");
     self notify("reset_killcam_player");
@@ -855,8 +863,8 @@ function private function_c5a5b36868d0a68e() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ca1
-// Size: 0x218
+// Checksum 0x0, Offset: 0x1d30
+// Size: 0x217
 function getplayersinradius(origin, radius, desiredteam, excludeent) {
     if (radius <= 0) {
         return [];
@@ -900,8 +908,8 @@ function getplayersinradius(origin, radius, desiredteam, excludeent) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec2
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x1f50
+// Size: 0xcf
 function getplayerlookatpos(player, ignoreents, contentoverride) {
     contents = scripts\engine\trace::create_default_contents();
     if (isdefined(contentoverride)) {
@@ -925,8 +933,8 @@ function getplayerlookatpos(player, ignoreents, contentoverride) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f97
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x2028
+// Size: 0x79
 function _visionsetnaked(visionset, time) {
     foreach (player in level.players) {
         if (!isdefined(player)) {
@@ -941,8 +949,8 @@ function _visionsetnaked(visionset, time) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x201c
-// Size: 0x86
+// Checksum 0x0, Offset: 0x20aa
+// Size: 0x85
 function waittillrecoveredhealth(time, interval) {
     self endon("death_or_disconnect");
     fullhealthtime = 0;
@@ -967,7 +975,7 @@ function waittillrecoveredhealth(time, interval) {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ab
+// Checksum 0x0, Offset: 0x2138
 // Size: 0x3f
 function hidehudenable() {
     if (!isdefined(self.ui_hudhidden)) {
@@ -981,10 +989,10 @@ function hidehudenable() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20f2
+// Checksum 0x0, Offset: 0x217f
 // Size: 0x4f
 function hidehuddisable() {
-    assert(isdefined(self.hidehudenabled) && self.hidehudenabled > 0, "<dev string:x25c>");
+    assert(isdefined(self.hidehudenabled) && self.hidehudenabled > 0, "hideHudDisable called when hud is not hidden.");
     if (self.hidehudenabled == 1) {
         self setclientomnvar("ui_hide_hud", 0);
     }
@@ -993,7 +1001,7 @@ function hidehuddisable() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2149
+// Checksum 0x0, Offset: 0x21d6
 // Size: 0x19
 function hidehudclear() {
     self.hidehudenabled = undefined;
@@ -1002,43 +1010,9 @@ function hidehudclear() {
 
 // Namespace player_utility / scripts\cp_mp\utility\player_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x216a
+// Checksum 0x0, Offset: 0x21f7
 // Size: 0x27
 function function_b7869f6d9d4242e3(reviver) {
     return istrue(reviver.revivingteammate) && !istrue(reviver.var_383e041e3e341315);
-}
-
-// Namespace player_utility / scripts\cp_mp\utility\player_utility
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x219a
-// Size: 0x61
-function isfriendly(var_da8cec9bce12f9cb, var_c4b81997f0120a97) {
-    assertex(isdefined(var_c4b81997f0120a97), "<dev string:x28d>");
-    if (!level.teambased) {
-        return false;
-    }
-    if (!isplayer(var_c4b81997f0120a97) && !isdefined(var_c4b81997f0120a97.team)) {
-        return false;
-    }
-    if (var_da8cec9bce12f9cb != var_c4b81997f0120a97.team) {
-        return false;
-    }
-    return true;
-}
-
-// Namespace player_utility / scripts\cp_mp\utility\player_utility
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2204
-// Size: 0x8
-function function_44d612709f857370() {
-    return self jumpbuttonpressed();
-}
-
-// Namespace player_utility / scripts\cp_mp\utility\player_utility
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2215
-// Size: 0x8
-function function_1551f039785a297d() {
-    return self superbuttonpressed();
 }
 

@@ -8,7 +8,7 @@
 
 // Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x138
+// Checksum 0x0, Offset: 0xf7
 // Size: 0x113
 function initcivilian(taskid) {
     if (isdefined(self.bt.initiated)) {
@@ -34,7 +34,7 @@ function initcivilian(taskid) {
 
 // Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x254
+// Checksum 0x0, Offset: 0x213
 // Size: 0x2c
 function setstealthstate_neutral(statename, e) {
     if (statename != "combat") {
@@ -45,7 +45,7 @@ function setstealthstate_neutral(statename, e) {
 
 // Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x289
+// Checksum 0x0, Offset: 0x248
 // Size: 0x23
 function function_216b6a27f343c39b(taskid) {
     initcivilian(taskid);
@@ -55,8 +55,8 @@ function function_216b6a27f343c39b(taskid) {
 
 // Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b5
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x274
+// Size: 0x6d
 function function_f10a50a61d990568(taskid) {
     state = bb_getcivilianstate();
     switch (state) {
@@ -73,7 +73,7 @@ function function_f10a50a61d990568(taskid) {
 
 // Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32b
+// Checksum 0x0, Offset: 0x2e9
 // Size: 0x16
 function function_6e84e4404795d5e9(taskid) {
     iprintlnbold("Terminating Interaction");
@@ -81,7 +81,7 @@ function function_6e84e4404795d5e9(taskid) {
 
 // Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x349
+// Checksum 0x0, Offset: 0x307
 // Size: 0x1c
 function function_fa485278009f93a7(taskid) {
     self notify("stop_going_to_node");

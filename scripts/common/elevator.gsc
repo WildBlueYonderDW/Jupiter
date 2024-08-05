@@ -5,8 +5,8 @@
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x52d
-// Size: 0x135
+// Checksum 0x0, Offset: 0x63a
+// Size: 0x133
 function init() {
     if (getdvar(@"hash_74714610a987a982") == "1") {
         return;
@@ -40,7 +40,7 @@ function init() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x66a
+// Checksum 0x0, Offset: 0x775
 // Size: 0x175
 function elevator_update_global_dvars() {
     while (true) {
@@ -65,7 +65,7 @@ function elevator_update_global_dvars() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e7
+// Checksum 0x0, Offset: 0x8f2
 // Size: 0xe
 function elevator_think() {
     elevator_fsm("[A]");
@@ -73,8 +73,8 @@ function elevator_think() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fd
-// Size: 0x57
+// Checksum 0x0, Offset: 0x908
+// Size: 0x54
 function elevator_call() {
     foreach (callbutton in level.elevator_callbuttons) {
         callbutton thread monitor_callbutton();
@@ -83,8 +83,8 @@ function elevator_call() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x85c
-// Size: 0x62
+// Checksum 0x0, Offset: 0x964
+// Size: 0x61
 function floor_override(inside_trig) {
     self endon("elevator_moving");
     self.floor_override = 0;
@@ -100,8 +100,8 @@ function floor_override(inside_trig) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c6
-// Size: 0x34f
+// Checksum 0x0, Offset: 0x9cd
+// Size: 0x355
 function elevator_fsm(state) {
     self.estate = state;
     door_trig = get_housing_door_trigger();
@@ -170,7 +170,7 @@ function elevator_fsm(state) {
             continue;
         }
         if (self.estate == "[D]") {
-            assertex(isdefined(self.moveto_floor), "<dev string:x1c>");
+            assertex(isdefined(self.moveto_floor), "Missing destination floor number");
             if (self.moveto_floor != get_curfloor()) {
                 thread elevator_move(self.moveto_floor);
                 self waittill("elevator_moved");
@@ -183,14 +183,14 @@ function elevator_fsm(state) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1d
-// Size: 0x1a8
+// Checksum 0x0, Offset: 0xd2a
+// Size: 0x1a7
 function monitor_callbutton() {
     while (true) {
         player = discrete_waittill("trigger");
         call_floor = undefined;
         call_elevators = [];
-        foreach (idx, linked_elevators in self.e) {
+        foreach (linked_elevators in self.e) {
             call_floor = idx;
             call_elevators = linked_elevators;
         }
@@ -223,8 +223,8 @@ function monitor_callbutton() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdcd
-// Size: 0x57
+// Checksum 0x0, Offset: 0xed9
+// Size: 0x56
 function call_elevator(call_floor) {
     self.moveto_floor = call_floor;
     inside_trigger = get_housing_inside_trigger();
@@ -236,8 +236,8 @@ function call_elevator(call_floor) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2c
-// Size: 0xa1
+// Checksum 0x0, Offset: 0xf37
+// Size: 0xa3
 function get_floor(player) {
     var_bd15884f5cd41f16 = get_outer_doorsets();
     if (var_bd15884f5cd41f16.size == 2) {
@@ -259,8 +259,8 @@ function get_floor(player) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xed5
-// Size: 0x60
+// Checksum 0x0, Offset: 0xfe2
+// Size: 0x5f
 function elevator_interrupt(door_trig) {
     self notify("interrupt_watch");
     level notify("elevator_interior_button_pressed");
@@ -275,8 +275,8 @@ function elevator_interrupt(door_trig) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3d
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x1049
+// Size: 0xb9
 function elevator_floor_update() {
     mainframe = get_housing_mainframe();
     cur_pos = mainframe.origin;
@@ -293,8 +293,8 @@ function elevator_floor_update() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xffe
-// Size: 0x128
+// Checksum 0x0, Offset: 0x110b
+// Size: 0x126
 function elevator_sound_think() {
     var_b1753895a03172ea = get_housing_musak_model();
     if (level.elevator_music && isdefined(var_b1753895a03172ea)) {
@@ -317,8 +317,8 @@ function elevator_sound_think() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x112e
-// Size: 0xc3
+// Checksum 0x0, Offset: 0x1239
+// Size: 0xc2
 function listen_for(msg) {
     while (true) {
         self waittill(msg);
@@ -346,8 +346,8 @@ function listen_for(msg) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f9
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x1303
+// Size: 0xbb
 function position_elevators() {
     foreach (elevator in level.elevators) {
         elevator.moveto_floor = elevator get_curfloor();
@@ -361,8 +361,8 @@ function position_elevators() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c0
-// Size: 0x1ae
+// Checksum 0x0, Offset: 0x13c6
+// Size: 0x1b1
 function elevator_move(floor_num) {
     self notify("elevator_moving");
     self endon("elevator_moving");
@@ -386,8 +386,8 @@ function elevator_move(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1476
-// Size: 0xff
+// Checksum 0x0, Offset: 0x157f
+// Size: 0x105
 function close_inner_doors() {
     self notify("closing_inner_doors");
     self endon("closing_inner_doors");
@@ -408,8 +408,8 @@ function close_inner_doors() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x157d
-// Size: 0x12a
+// Checksum 0x0, Offset: 0x168c
+// Size: 0x132
 function open_inner_doors() {
     self notify("opening_inner_doors");
     self endon("opening_inner_doors");
@@ -431,8 +431,8 @@ function open_inner_doors() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16af
-// Size: 0x108
+// Checksum 0x0, Offset: 0x17c6
+// Size: 0x10d
 function close_outer_doors(floor_num) {
     self notify("closing_floor_" + floor_num + "_outer_doors");
     self endon("closing_floor_" + floor_num + "_outer_doors");
@@ -452,8 +452,8 @@ function close_outer_doors(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17bf
-// Size: 0x11a
+// Checksum 0x0, Offset: 0x18db
+// Size: 0x120
 function open_outer_doors(floor_num) {
     level notify("elevator_doors_opening");
     self notify("opening_floor_" + floor_num + "_outer_doors");
@@ -474,15 +474,15 @@ function open_outer_doors(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e1
-// Size: 0xc53
+// Checksum 0x0, Offset: 0x1a03
+// Size: 0xc62
 function build_elevators() {
     elevator_groups = getentarray("elevator_group", "targetname");
-    assertex(isdefined(elevator_groups) && elevator_groups.size, "<dev string:x40>");
+    assertex(isdefined(elevator_groups) && elevator_groups.size, "Radiant: Missing elevator bounding origins");
     var_20aa4eadbc86b00 = getentarray("elevator_housing", "targetname");
-    assertex(isdefined(var_20aa4eadbc86b00) && var_20aa4eadbc86b00.size >= elevator_groups.size, "<dev string:x6e>");
+    assertex(isdefined(var_20aa4eadbc86b00) && var_20aa4eadbc86b00.size >= elevator_groups.size, "Fail! Missing the whole elevator, script_brushmodel with [targetname = elevator_housing] must be correctly placed");
     var_99d29b5b670be15 = getentarray("elevator_doorset", "targetname");
-    assertex(isdefined(var_99d29b5b670be15) && var_99d29b5b670be15.size >= elevator_groups.size, "<dev string:xe3>");
+    assertex(isdefined(var_99d29b5b670be15) && var_99d29b5b670be15.size >= elevator_groups.size, "Radiant: Missing elevator door(s)");
     foreach (elevator_bound in elevator_groups) {
         var_57dff06718226286 = getent(elevator_bound.target, "targetname");
         var_4195778095aaca54 = [];
@@ -520,7 +520,7 @@ function build_elevators() {
                 assert(isdefined(inside_trigger.motion_trigger));
             }
         }
-        assert(isdefined(parts.e["<dev string:x108>"]));
+        assert(isdefined(parts.e["housing"]));
         parts.e["outer_doorset"] = [];
         foreach (elevator_doorset in var_99d29b5b670be15) {
             if (elevator_doorset isinbound(var_4195778095aaca54)) {
@@ -545,7 +545,7 @@ function build_elevators() {
                 }
             }
         }
-        assert(isdefined(parts.e["<dev string:x113>"]));
+        assert(isdefined(parts.e["outer_doorset"]));
         for (i = 0; i < parts.e["outer_doorset"].size - 1; i++) {
             for (j = 0; j < parts.e["outer_doorset"].size - 1 - i; j++) {
                 if (parts.e["outer_doorset"][j + 1]["door_closed_pos"][2] < parts.e["outer_doorset"][j]["door_closed_pos"][2]) {
@@ -600,11 +600,11 @@ function build_elevators() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x253c
+// Checksum 0x0, Offset: 0x266d
 // Size: 0x2ad
 function build_call_buttons() {
     level.elevator_callbuttons = getentarray("elevator_call", "targetname");
-    assertex(isdefined(level.elevator_callbuttons) && level.elevator_callbuttons.size > 1, "<dev string:x124>");
+    assertex(isdefined(level.elevator_callbuttons) && level.elevator_callbuttons.size > 1, "Missing or not enough elevator call buttons");
     foreach (callbutton in level.elevator_callbuttons) {
         callbutton.e = [];
         var_7c9bd32185a94469 = (0, 0, callbutton.origin[2]);
@@ -623,15 +623,15 @@ function build_call_buttons() {
             }
         }
         callbutton make_discrete_trigger();
-        assertex(isdefined(callbutton.e) && callbutton.e.size, "<dev string:x153>" + callbutton.origin + "<dev string:x16f>");
+        assertex(isdefined(callbutton.e) && callbutton.e.size, "Elevator call button at " + callbutton.origin + " failed to grab near by elevators, placed too far?");
         callbutton.motion_trigger = spawn("trigger_radius", callbutton.origin + (0, 0, -32), 0, 32, 64);
     }
 }
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27f1
-// Size: 0x10e
+// Checksum 0x0, Offset: 0x2922
+// Size: 0x10d
 function setup_hints() {
     foreach (elevator in level.elevators) {
         use_trig = elevator get_housing_inside_trigger();
@@ -652,7 +652,7 @@ function setup_hints() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2907
+// Checksum 0x0, Offset: 0x2a37
 // Size: 0x14
 function make_discrete_trigger() {
     self.enabled = 1;
@@ -661,8 +661,8 @@ function make_discrete_trigger() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2923
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x2a53
+// Size: 0x59
 function discrete_waittill(msg) {
     assert(isdefined(self.motion_trigger));
     enable_trigger();
@@ -677,7 +677,7 @@ function discrete_waittill(msg) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2986
+// Checksum 0x0, Offset: 0x2ab5
 // Size: 0x7b
 function enable_trigger() {
     if (!self.enabled) {
@@ -691,7 +691,7 @@ function enable_trigger() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a09
+// Checksum 0x0, Offset: 0x2b38
 // Size: 0x1e
 function disable_trigger() {
     self notify("disable_trigger");
@@ -702,7 +702,7 @@ function disable_trigger() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2f
+// Checksum 0x0, Offset: 0x2b5e
 // Size: 0x7b
 function disable_trigger_helper() {
     self endon("disable_trigger");
@@ -716,7 +716,7 @@ function disable_trigger_helper() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ab2
+// Checksum 0x0, Offset: 0x2be1
 // Size: 0x1c
 function get_outer_doorset(floor_num) {
     return self.e["outer_doorset"][floor_num];
@@ -724,7 +724,7 @@ function get_outer_doorset(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ad7
+// Checksum 0x0, Offset: 0x2c06
 // Size: 0x11
 function get_outer_doorsets() {
     return self.e["outer_doorset"];
@@ -732,7 +732,7 @@ function get_outer_doorsets() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2af1
+// Checksum 0x0, Offset: 0x2c20
 // Size: 0x22
 function get_outer_closedpos(floor_num) {
     return self.e["outer_doorset"][floor_num]["door_closed_pos"];
@@ -740,7 +740,7 @@ function get_outer_closedpos(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b1c
+// Checksum 0x0, Offset: 0x2c4b
 // Size: 0x22
 function get_outer_leftdoor(floor_num) {
     return self.e["outer_doorset"][floor_num]["left_door"];
@@ -748,7 +748,7 @@ function get_outer_leftdoor(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b47
+// Checksum 0x0, Offset: 0x2c76
 // Size: 0x22
 function get_outer_rightdoor(floor_num) {
     return self.e["outer_doorset"][floor_num]["right_door"];
@@ -756,7 +756,7 @@ function get_outer_rightdoor(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b72
+// Checksum 0x0, Offset: 0x2ca1
 // Size: 0x22
 function get_outer_leftdoor_openedpos(floor_num) {
     return self.e["outer_doorset"][floor_num]["left_door_opened_pos"];
@@ -764,7 +764,7 @@ function get_outer_leftdoor_openedpos(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b9d
+// Checksum 0x0, Offset: 0x2ccc
 // Size: 0x22
 function get_outer_rightdoor_openedpos(floor_num) {
     return self.e["outer_doorset"][floor_num]["right_door_opened_pos"];
@@ -772,8 +772,8 @@ function get_outer_rightdoor_openedpos(floor_num) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bc8
-// Size: 0x148
+// Checksum 0x0, Offset: 0x2cf7
+// Size: 0x14c
 function get_housing_children() {
     children = [];
     door_trig = get_housing_door_trigger();
@@ -801,25 +801,25 @@ function get_housing_children() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d19
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x2e4c
+// Size: 0xbd
 function get_housing_mainframe() {
     parts = self.e["housing"]["mainframe"];
     housing_model = undefined;
     foreach (part in parts) {
         if (part.classname != "script_model" && part.code_classname != "light") {
-            assertex(!isdefined(housing_model), "<dev string:x1a5>");
+            assertex(!isdefined(housing_model), "Fail! Found more than one elevator housing script_brushmodels per elevator");
             housing_model = part;
         }
     }
-    assertex(isdefined(housing_model), "<dev string:x1f3>");
+    assertex(isdefined(housing_model), "Epic fail! No elevator housing script_brushmodel found");
     return housing_model;
 }
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2de0
-// Size: 0x8b
+// Checksum 0x0, Offset: 0x2f12
+// Size: 0x8a
 function get_housing_models() {
     parts = self.e["housing"]["mainframe"];
     var_212f549bb87dc0e3 = [];
@@ -833,8 +833,8 @@ function get_housing_models() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e74
-// Size: 0x8b
+// Checksum 0x0, Offset: 0x2fa5
+// Size: 0x8a
 function get_housing_primarylight() {
     parts = self.e["housing"]["mainframe"];
     var_6ddff02957646117 = [];
@@ -848,8 +848,8 @@ function get_housing_primarylight() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f08
-// Size: 0x89
+// Checksum 0x0, Offset: 0x3038
+// Size: 0x88
 function get_housing_musak_model() {
     models = get_housing_models();
     var_b1753895a03172ea = undefined;
@@ -863,7 +863,7 @@ function get_housing_musak_model() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f9a
+// Checksum 0x0, Offset: 0x30c9
 // Size: 0x17
 function get_housing_door_trigger() {
     return self.e["housing"]["door_trigger"];
@@ -871,7 +871,7 @@ function get_housing_door_trigger() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fba
+// Checksum 0x0, Offset: 0x30e9
 // Size: 0x17
 function get_housing_inside_trigger() {
     return self.e["housing"]["inside_trigger"];
@@ -879,7 +879,7 @@ function get_housing_inside_trigger() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fda
+// Checksum 0x0, Offset: 0x3109
 // Size: 0x17
 function get_housing_closedpos() {
     return self.e["housing"]["door_closed_pos"];
@@ -887,7 +887,7 @@ function get_housing_closedpos() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ffa
+// Checksum 0x0, Offset: 0x3129
 // Size: 0x17
 function get_housing_leftdoor() {
     return self.e["housing"]["left_door"];
@@ -895,7 +895,7 @@ function get_housing_leftdoor() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x301a
+// Checksum 0x0, Offset: 0x3149
 // Size: 0x17
 function get_housing_rightdoor() {
     return self.e["housing"]["right_door"];
@@ -903,7 +903,7 @@ function get_housing_rightdoor() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x303a
+// Checksum 0x0, Offset: 0x3169
 // Size: 0x17
 function get_housing_leftdoor_opened_pos() {
     return self.e["housing"]["left_door_opened_pos"];
@@ -911,7 +911,7 @@ function get_housing_leftdoor_opened_pos() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x305a
+// Checksum 0x0, Offset: 0x3189
 // Size: 0x17
 function get_housing_rightdoor_opened_pos() {
     return self.e["housing"]["right_door_opened_pos"];
@@ -919,8 +919,8 @@ function get_housing_rightdoor_opened_pos() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x307a
-// Size: 0x23
+// Checksum 0x0, Offset: 0x31a9
+// Size: 0x22
 function get_curfloor() {
     moving = elevator_floor_update();
     return self.e["current_floor"];
@@ -928,7 +928,7 @@ function get_curfloor() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30a6
+// Checksum 0x0, Offset: 0x31d4
 // Size: 0x11
 function get_initfloor() {
     return self.e["initial_floor"];
@@ -936,7 +936,7 @@ function get_initfloor() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x30c0
+// Checksum 0x0, Offset: 0x31ee
 // Size: 0x7f
 function waittill_finish_moving(ent1, var_e46b13ef3f8c9dcb, ent2, var_4ed727c032053180) {
     if (!isdefined(ent2) && !isdefined(var_4ed727c032053180)) {
@@ -955,10 +955,10 @@ function waittill_finish_moving(ent1, var_e46b13ef3f8c9dcb, ent2, var_4ed727c032
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3147
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x3275
+// Size: 0xa9
 function isinbound(var_45287878f0bc903f) {
-    assertex(isdefined(self) && isdefined(self.origin), "<dev string:x22d>");
+    assertex(isdefined(self) && isdefined(self.origin), "Fail! Can not test bounds with the entity called on");
     v_x = self.origin[0];
     v_y = self.origin[1];
     min_x = var_45287878f0bc903f[0];
@@ -970,8 +970,8 @@ function isinbound(var_45287878f0bc903f) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31f5
-// Size: 0xc3
+// Checksum 0x0, Offset: 0x3327
+// Size: 0xca
 function isinboundingspere(var_45287878f0bc903f) {
     v_x = self.origin[0];
     v_y = self.origin[1];
@@ -987,7 +987,7 @@ function isinboundingspere(var_45287878f0bc903f) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32c1
+// Checksum 0x0, Offset: 0x33fa
 // Size: 0x18
 function waittill_or_timeout(msg, timer) {
     self endon(msg);
@@ -996,7 +996,7 @@ function waittill_or_timeout(msg, timer) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e1
+// Checksum 0x0, Offset: 0x341a
 // Size: 0x20
 function elevator_get_dvar_int(dvar, def) {
     return int(elevator_get_dvar(dvar, def));
@@ -1004,7 +1004,7 @@ function elevator_get_dvar_int(dvar, def) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x330a
+// Checksum 0x0, Offset: 0x3443
 // Size: 0x36
 function elevator_get_dvar(dvar, def) {
     if (getdvar(dvar) != "") {
@@ -1016,8 +1016,8 @@ function elevator_get_dvar(dvar, def) {
 
 // Namespace elevator / scripts\common\elevator
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3348
-// Size: 0x553
+// Checksum 0x0, Offset: 0x3481
+// Size: 0x54f
 function elevator_debug() {
     if (!level.elevator_debug) {
         return;
@@ -1030,49 +1030,49 @@ function elevator_debug() {
             mainframe = elevator get_housing_mainframe();
             var_b1753895a03172ea = elevator get_housing_musak_model();
             /#
-                print3d(var_b1753895a03172ea.origin, "<dev string:x264>" + i + "<dev string:x26a>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(var_b1753895a03172ea.origin, "<dev string:x1c>" + i + "<dev string:x1f>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
             /#
-                print3d(mainframe.origin, "<dev string:x264>" + i + "<dev string:x27b>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(mainframe.origin, "<dev string:x1c>" + i + "<dev string:x2d>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
             /#
-                print3d(elevator.e["<dev string:x108>"]["<dev string:x289>"].origin, "<dev string:x264>" + i + "<dev string:x296>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(elevator.e["<dev string:x38>"]["<dev string:x40>"].origin, "<dev string:x1c>" + i + "<dev string:x4a>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
             /#
-                print3d(elevator.e["<dev string:x108>"]["<dev string:x2a4>"].origin, "<dev string:x264>" + i + "<dev string:x2b2>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(elevator.e["<dev string:x38>"]["<dev string:x55>"].origin, "<dev string:x1c>" + i + "<dev string:x60>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
             /#
-                print3d(elevator.e["<dev string:x108>"]["<dev string:x2c1>"], "<dev string:x264>" + i + "<dev string:x2d4>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(elevator.e["<dev string:x38>"]["<dev string:x6c>"], "<dev string:x1c>" + i + "<dev string:x7c>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
             /#
-                print3d(elevator.e["<dev string:x108>"]["<dev string:x2de>"].origin, "<dev string:x264>" + i + "<dev string:x2f0>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(elevator.e["<dev string:x38>"]["<dev string:x83>"].origin, "<dev string:x1c>" + i + "<dev string:x92>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
             foreach (j, efloor in elevator.e["outer_doorset"]) {
                 /#
-                    print3d(efloor["<dev string:x289>"].origin + (0, 0, 8), "<dev string:x264>" + i + "<dev string:x2f8>" + j + "<dev string:x296>", (0.75, 1, 0.75), 1, 0.25, 20);
+                    print3d(efloor["<dev string:x40>"].origin + (0, 0, 8), "<dev string:x1c>" + i + "<dev string:x97>" + j + "<dev string:x4a>", (0.75, 1, 0.75), 1, 0.25, 20);
                 #/
                 /#
-                    print3d(efloor["<dev string:x2a4>"].origin + (0, 0, 8), "<dev string:x264>" + i + "<dev string:x2f8>" + j + "<dev string:x2b2>", (0.75, 1, 0.75), 1, 0.25, 20);
+                    print3d(efloor["<dev string:x55>"].origin + (0, 0, 8), "<dev string:x1c>" + i + "<dev string:x97>" + j + "<dev string:x60>", (0.75, 1, 0.75), 1, 0.25, 20);
                 #/
                 /#
-                    print3d(efloor["<dev string:x2c1>"] + (0, 0, 8), "<dev string:x264>" + i + "<dev string:x2f8>" + j + "<dev string:x2d4>", (0.75, 1, 0.75), 1, 0.25, 20);
+                    print3d(efloor["<dev string:x6c>"] + (0, 0, 8), "<dev string:x1c>" + i + "<dev string:x97>" + j + "<dev string:x7c>", (0.75, 1, 0.75), 1, 0.25, 20);
                 #/
                 /#
-                    print3d(elevator.e["<dev string:x2ff>" + j + "<dev string:x308>"] + (0, 0, 8), "<dev string:x264>" + i + "<dev string:x2f8>" + j + "<dev string:x310>", (1, 0.75, 0.75), 1, 0.25, 20);
+                    print3d(elevator.e["<dev string:x9b>" + j + "<dev string:xa1>"] + (0, 0, 8), "<dev string:x1c>" + i + "<dev string:x97>" + j + "<dev string:xa6>", (1, 0.75, 0.75), 1, 0.25, 20);
                 #/
             }
         }
         foreach (callbutton in level.elevator_callbuttons) {
             /#
-                print3d(callbutton.origin, "<dev string:x319>", (0.75, 0.75, 1), 1, 0.25, 20);
+                print3d(callbutton.origin, "<dev string:xac>", (0.75, 0.75, 1), 1, 0.25, 20);
             #/
-            foreach (f_idx, efloor in callbutton.e) {
+            foreach (efloor in callbutton.e) {
                 printoffset = 0;
                 foreach (elinked in efloor) {
                     printoffset++;
                     print_pos = callbutton.origin + (0, 0, printoffset * -4);
                     /#
-                        print3d(print_pos, "<dev string:x327>" + f_idx + "<dev string:x32d>" + elinked.e["<dev string:x334>"] + "<dev string:x33a>", (0.75, 0.75, 1), 1, 0.25, 20);
+                        print3d(print_pos, "<dev string:xb7>" + f_idx + "<dev string:xba>" + elinked.e["<dev string:xbe>"] + "<dev string:xc1>", (0.75, 0.75, 1), 1, 0.25, 20);
                     #/
                 }
             }
@@ -1083,8 +1083,8 @@ function elevator_debug() {
 
 // Namespace elevator / scripts\common\elevator
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38a3
-// Size: 0x91
+// Checksum 0x0, Offset: 0x39d8
+// Size: 0x8e
 function function_d9d18dab18ebded(movingplatforment) {
     if (!isdefined(movingplatforment)) {
         return false;

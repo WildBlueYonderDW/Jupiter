@@ -5,8 +5,8 @@
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x378
-// Size: 0x160
+// Checksum 0x0, Offset: 0x2db
+// Size: 0x15d
 function init() {
     setdvarifuninitialized(@"hash_9a6917debd75e407", 0);
     waitframe();
@@ -31,7 +31,7 @@ function init() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e0
+// Checksum 0x0, Offset: 0x440
 // Size: 0xd1
 function group_by_flag() {
     if (isdefined(self.script_flag)) {
@@ -46,8 +46,8 @@ function group_by_flag() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b9
-// Size: 0x47
+// Checksum 0x0, Offset: 0x519
+// Size: 0x46
 function screens_think() {
     if (istrue(level.screens_off_test)) {
         return;
@@ -64,7 +64,7 @@ function screens_think() {
 
 // Namespace screens / scripts\common\screens
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x608
+// Checksum 0x0, Offset: 0x567
 // Size: 0x2b7
 function do_state(state) {
     self endon("death");
@@ -84,7 +84,7 @@ function do_state(state) {
     case #"hash_f4b6b015232fe2c6": 
         if (debug()) {
             /#
-                print3d(self.origin + (0, 0, 1.5), "<dev string:x2c>", (1, 1, 1), 1, 0.1, 2000);
+                print3d(self.origin + (0, 0, 1.5), "<dev string:x29>", (1, 1, 1), 1, 0.1, 2000);
             #/
         }
         childthread screens_flip();
@@ -92,7 +92,7 @@ function do_state(state) {
     case #"hash_21d2e67993db5d96": 
         if (debug()) {
             /#
-                print3d(self.origin + (0, 0, 1.5), "<dev string:x3b>", (1, 1, 1), 1, 0.1, 2000);
+                print3d(self.origin + (0, 0, 1.5), "<dev string:x35>", (1, 1, 1), 1, 0.1, 2000);
             #/
         }
         childthread screens_fliprnd();
@@ -100,7 +100,7 @@ function do_state(state) {
     case #"hash_b196217e12b52a9b": 
         if (debug()) {
             /#
-                print3d(self.origin + (0, 0, 1.5), "<dev string:x4d>", (1, 1, 1), 1, 0.1, 2000);
+                print3d(self.origin + (0, 0, 1.5), "<dev string:x44>", (1, 1, 1), 1, 0.1, 2000);
             #/
         }
         childthread screens_static();
@@ -108,7 +108,7 @@ function do_state(state) {
     case #"hash_97430f6c58e61cbc": 
         if (debug()) {
             /#
-                print3d(self.origin + (0, 0, 1.5), "<dev string:x5e>", (1, 1, 1), 1, 0.1, 2000);
+                print3d(self.origin + (0, 0, 1.5), "<dev string:x52>", (1, 1, 1), 1, 0.1, 2000);
             #/
         }
         childthread screens_red();
@@ -116,7 +116,7 @@ function do_state(state) {
     case #"hash_8c1dea2ed75f68af": 
         if (debug()) {
             /#
-                print3d(self.origin + (0, 0, 1.5), "<dev string:x6c>", (1, 1, 1), 1, 0.1, 2000);
+                print3d(self.origin + (0, 0, 1.5), "<dev string:x5d>", (1, 1, 1), 1, 0.1, 2000);
             #/
         }
         childthread screens_bink();
@@ -124,7 +124,7 @@ function do_state(state) {
     case #"hash_c217e57b0068891a": 
         if (debug()) {
             /#
-                print3d(self.origin + (0, 0, 1.5), "<dev string:x7b>", (1, 1, 1), 1, 0.1, 2000);
+                print3d(self.origin + (0, 0, 1.5), "<dev string:x69>", (1, 1, 1), 1, 0.1, 2000);
             #/
         }
         childthread screens_alertflip();
@@ -134,7 +134,7 @@ function do_state(state) {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c7
+// Checksum 0x0, Offset: 0x826
 // Size: 0x69
 function screens_create() {
     self.screen_model = spawn("script_model", self.origin);
@@ -146,7 +146,7 @@ function screens_create() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x938
+// Checksum 0x0, Offset: 0x897
 // Size: 0x3a
 function screens_damage_think() {
     self.screen_model setcandamage(1);
@@ -157,7 +157,7 @@ function screens_damage_think() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x97a
+// Checksum 0x0, Offset: 0x8d9
 // Size: 0x3b
 function screens_delete() {
     self.state = "off";
@@ -170,7 +170,7 @@ function screens_delete() {
 
 // Namespace screens / scripts\common\screens
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bd
+// Checksum 0x0, Offset: 0x91c
 // Size: 0x11f
 function screens_fixed(screen_override) {
     if (!isdefined(self.screens_fixed) && !isdefined(screen_override)) {
@@ -205,8 +205,8 @@ function screens_fixed(screen_override) {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xae4
-// Size: 0xa2
+// Checksum 0x0, Offset: 0xa43
+// Size: 0xa1
 function screens_static() {
     if (!isdefined(self.screens_static)) {
         return;
@@ -226,8 +226,8 @@ function screens_static() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8e
-// Size: 0xf3
+// Checksum 0x0, Offset: 0xaec
+// Size: 0xf5
 function screens_flip() {
     if (!isdefined(self.screens_flip)) {
         return;
@@ -253,8 +253,8 @@ function screens_flip() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc89
-// Size: 0xfd
+// Checksum 0x0, Offset: 0xbe9
+// Size: 0xff
 function screens_fliprnd() {
     if (!isdefined(self.screens_fliprnd)) {
         return;
@@ -280,8 +280,8 @@ function screens_fliprnd() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8e
-// Size: 0xa2
+// Checksum 0x0, Offset: 0xcf0
+// Size: 0xa1
 function screens_bink() {
     if (!isdefined(self.screens_bink)) {
         return;
@@ -301,8 +301,8 @@ function screens_bink() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe38
-// Size: 0x15e
+// Checksum 0x0, Offset: 0xd99
+// Size: 0x160
 function screens_red() {
     if (!isdefined(self.screens_red)) {
         return;
@@ -339,8 +339,8 @@ function screens_red() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf9e
-// Size: 0xef
+// Checksum 0x0, Offset: 0xf01
+// Size: 0xee
 function screens_alertflip() {
     if (!isdefined(self.screens_alertflip)) {
         return;
@@ -352,7 +352,7 @@ function screens_alertflip() {
         delay = randomfloatrange(0.5, 1);
         if (debug()) {
             /#
-                print3d(self.origin, "<dev string:x8f>", (1, 1, 1), 1, 0.1, int(delay / 0.05));
+                print3d(self.origin, "<dev string:x7a>", (1, 1, 1), 1, 0.1, int(delay / 0.05));
             #/
         }
         self.state = "on";
@@ -367,8 +367,8 @@ function screens_alertflip() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1095
-// Size: 0x273
+// Checksum 0x0, Offset: 0xff7
+// Size: 0x274
 function get_screens() {
     parts = getnumparts(self.screen_model.model);
     for (i = 0; i < parts; i++) {
@@ -435,7 +435,7 @@ function get_screens() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1310
+// Checksum 0x0, Offset: 0x1273
 // Size: 0xba
 function delete_screens() {
     if (isdefined(self.screens_red)) {
@@ -466,8 +466,8 @@ function delete_screens() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d2
-// Size: 0x16c
+// Checksum 0x0, Offset: 0x1335
+// Size: 0x168
 function get_state() {
     if (isdefined(self.script_parameters)) {
         tokens = strtok(self.script_parameters, " ");
@@ -494,7 +494,7 @@ function get_state() {
                 case #"hash_d32cec26f4e68bfc": 
                     return "alertflip";
                 default: 
-                    assertmsg("<dev string:xa6>" + token);
+                    assertmsg("Invalid state! " + token);
                     break;
                 }
             }
@@ -505,8 +505,8 @@ function get_state() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1547
-// Size: 0x180
+// Checksum 0x0, Offset: 0x14a6
+// Size: 0x17e
 function watch_scriptable() {
     if (!isdefined(self.target)) {
         return;
@@ -515,7 +515,7 @@ function watch_scriptable() {
     if (isdefined(scriptables[0])) {
         if (debug()) {
             /#
-                print3d(self.origin + (0, 0, 3), "<dev string:xb9>", (1, 1, 1), 1, 0.1, 10000);
+                print3d(self.origin + (0, 0, 3), "<dev string:x8e>", (1, 1, 1), 1, 0.1, 10000);
             #/
         }
         scriptables[0] waittill("death");
@@ -534,7 +534,7 @@ function watch_scriptable() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16cf
+// Checksum 0x0, Offset: 0x162c
 // Size: 0x19
 function debug() {
     if (getdvarint(@"hash_9a6917debd75e407") > 0) {
@@ -545,7 +545,7 @@ function debug() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f1
+// Checksum 0x0, Offset: 0x164e
 // Size: 0x2
 function set_screens_to_red() {
     
@@ -553,8 +553,8 @@ function set_screens_to_red() {
 
 // Namespace screens / scripts\common\screens
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16fb
-// Size: 0x211
+// Checksum 0x0, Offset: 0x1658
+// Size: 0x20f
 function screens_debug_counter() {
     if (!debug()) {
         return;
@@ -578,10 +578,10 @@ function screens_debug_counter() {
         }
         total_count = level.screens.screens.size + var_ec0e4105bdc56e33;
         /#
-            printtoscreen2d(1000, 70, "<dev string:xcb>" + total_count, (1, 1, 1), 2);
+            printtoscreen2d(1000, 70, "<dev string:x9d>" + total_count, (1, 1, 1), 2);
         #/
         /#
-            printtoscreen2d(1000, 100, "<dev string:xe3>" + active_screens, (1, 1, 1), 2);
+            printtoscreen2d(1000, 100, "<dev string:xb2>" + active_screens, (1, 1, 1), 2);
         #/
         waitframe();
     }
@@ -589,7 +589,7 @@ function screens_debug_counter() {
 
 // Namespace screens / scripts\common\screens
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1914
+// Checksum 0x0, Offset: 0x186f
 // Size: 0x120
 function screens_wait_for_flag(flag) {
     if (!flag_exist(flag)) {

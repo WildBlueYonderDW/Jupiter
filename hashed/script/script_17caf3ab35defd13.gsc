@@ -12,14 +12,12 @@
 #using scripts\cp_mp\emp_debuff.gsc;
 #using script_736dec95a49487a6;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 
 #namespace switchblade_drone;
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x965
+// Checksum 0x0, Offset: 0x705
 // Size: 0x18
 function autoexec main() {
     function_df7ab5b0f898e8bc(function_1823ff50bb28148d("switchblade_drone"), &init);
@@ -27,8 +25,8 @@ function autoexec main() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x985
-// Size: 0x119
+// Checksum 0x0, Offset: 0x725
+// Size: 0x118
 function private init() {
     if (issharedfuncdefined("switchblade_drone", "init")) {
         [[ getsharedfunc("switchblade_drone", "init") ]]();
@@ -49,7 +47,7 @@ function private init() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa6
+// Checksum 0x0, Offset: 0x845
 // Size: 0x1cc
 function function_1e5a79cefb8818fb() {
     setdvarifuninitialized(@"hash_b171aaba052d2c50", 5);
@@ -82,7 +80,7 @@ function function_1e5a79cefb8818fb() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7a
+// Checksum 0x0, Offset: 0xa19
 // Size: 0x61
 function function_167cc15cd8218528() {
     game["dialog"]["switchblade_ause"] = "ause";
@@ -94,8 +92,8 @@ function function_167cc15cd8218528() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xce3
-// Size: 0x138
+// Checksum 0x0, Offset: 0xa82
+// Size: 0x131
 function function_fac3964b226792c1(streakinfo) {
     if (!isdefined(streakinfo)) {
         streakinfo = createstreakinfo("switchblade_drone", self);
@@ -117,7 +115,6 @@ function function_fac3964b226792c1(streakinfo) {
     deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_doweaponfireddeploy(streakinfo, deployweaponobj, "grenade_fire", undefined, &function_7bf1d7276d8de2c3, &function_7f27487dffce9217);
     if (!istrue(deployresult)) {
         val::reset("switchbladeDrone", "usability");
-        function_44b0c510768ad13e(deployweaponobj);
         return undefined;
     }
     if (isdefined(level.killstreakbeginusefunc)) {
@@ -131,8 +128,8 @@ function function_fac3964b226792c1(streakinfo) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe24
-// Size: 0x175
+// Checksum 0x0, Offset: 0xbbc
+// Size: 0x176
 function function_df1cf83495e38426() {
     bundle = level.streakglobals.streakbundles["switchblade_drone"];
     dronelist = level.var_cde4ae1afb90a57a;
@@ -141,7 +138,7 @@ function function_df1cf83495e38426() {
     if (!isdefined(level.var_e5731fb152792de1[self.team])) {
         level.var_e5731fb152792de1[self.team] = 0;
     }
-    foreach (key, drone in dronelist) {
+    foreach (drone in dronelist) {
         if (!isdefined(drone)) {
             level.var_cde4ae1afb90a57a = array_remove_key(level.var_cde4ae1afb90a57a, key);
             continue;
@@ -169,7 +166,7 @@ function function_df1cf83495e38426() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa2
+// Checksum 0x0, Offset: 0xd3b
 // Size: 0x54
 function function_7bf1d7276d8de2c3(streakinfo, switchresult) {
     if (istrue(switchresult)) {
@@ -183,7 +180,7 @@ function function_7bf1d7276d8de2c3(streakinfo, switchresult) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xffe
+// Checksum 0x0, Offset: 0xd97
 // Size: 0x81
 function function_fd39610812b871ee() {
     self endon("disconnect");
@@ -205,8 +202,8 @@ function function_fd39610812b871ee() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1087
-// Size: 0x15b
+// Checksum 0x0, Offset: 0xe20
+// Size: 0x15a
 function function_cde5ec93a0a3eaad(streakinfo) {
     self endon("disconnect");
     self endon("grenade_fire");
@@ -239,8 +236,8 @@ function function_cde5ec93a0a3eaad(streakinfo) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ea
-// Size: 0x575
+// Checksum 0x0, Offset: 0xf82
+// Size: 0x4a3
 function function_7f27487dffce9217(streakinfo, weaponobj, projectile) {
     var_d06f735a85408be7 = 0;
     switchblade_drone = function_6fd64a7766f2f12a(projectile);
@@ -282,7 +279,6 @@ function function_7f27487dffce9217(streakinfo, weaponobj, projectile) {
     if (issharedfuncdefined("killstreak", "addToActiveKillstreakList")) {
         switchblade_drone [[ getsharedfunc("killstreak", "addToActiveKillstreakList") ]](streakinfo.streakname, "Killstreak_Air", self, 0, 1, 100);
     }
-    switchblade_drone.streakinfo = streakinfo;
     var_8eee8435268b02da = getdvarfloat(@"hash_7ad66a5bc22f0e3c");
     wait var_8eee8435268b02da;
     var_1ba7ca7ba398e6ed = getdvarfloat(@"hash_fec9a646e847f81b");
@@ -311,19 +307,12 @@ function function_7f27487dffce9217(streakinfo, weaponobj, projectile) {
     if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
         [[ getsharedfunc("sound", "playKillstreakDeployDialog") ]](switchblade_drone.owner, "switchblade_drone");
     }
-    if (isdefined(bundle) && isdefined(bundle.dangerzoneheight) && !istrue(bundle.var_9a08562cf535296a)) {
-        var_40db97c5db5e1e3e = switchblade_drone.centerpos - (0, 0, bundle.dangerzoneheight);
-        switchblade_drone function_ae53424c3a02628d(bundle, var_40db97c5db5e1e3e, switchblade_drone.owner, switchblade_drone.owner.team, bundle.dronelifetime);
-    }
     self endon("death");
     self endon("disconnect");
     var_87f86cdfa5b85a16 = getdvarint(@"hash_9bb73c3ac9654260");
     switchblade_drone thread function_6ec67c6c636c25d0(switchblade_drone.centerpos, switchblade_drone.startpos, var_87f86cdfa5b85a16);
     switchblade_drone thread function_e2cf8a8b93a4a86f();
     switchblade_drone thread function_f57f532b8644012a();
-    if (istrue(bundle.var_6c802afe258bcb2f)) {
-        switchblade_drone thread function_8e41e9774021d4f0("notify_switchblade_drone_explode", bundle.dronelifetime, bundle.dronemaxradius, bundle.var_eed1966ca1124f9, bundle.var_9e4f84bfa849e82b);
-    }
     if (isdefined(switchblade_drone)) {
         switchblade_drone thread function_171c9b525186dfee();
     }
@@ -335,8 +324,8 @@ function function_7f27487dffce9217(streakinfo, weaponobj, projectile) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1768
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x142e
+// Size: 0x8a
 function function_44b0c510768ad13e(weaponobj, swapdelay, takedelay) {
     if (isdefined(takedelay)) {
         wait takedelay;
@@ -345,8 +334,7 @@ function function_44b0c510768ad13e(weaponobj, swapdelay, takedelay) {
     if (!isdefined(self.lastdroppableweaponobj) || !self hasweapon(self.lastdroppableweaponobj)) {
         lastweaponobj = "iw9_me_fists_mp";
     } else {
-        var_cf06a44e7221edbb = getdvarint(@"hash_dba4a054e67dd255", 0) == 1;
-        lastweaponobj = scripts\cp_mp\utility\weapon_utility::restoreweaponstates(self.lastdroppableweaponobj, var_cf06a44e7221edbb);
+        lastweaponobj = scripts\cp_mp\utility\weapon_utility::restoreweaponstates(self.lastdroppableweaponobj);
     }
     if (isdefined(swapdelay)) {
         wait swapdelay;
@@ -357,7 +345,7 @@ function function_44b0c510768ad13e(weaponobj, swapdelay, takedelay) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1818
+// Checksum 0x0, Offset: 0x14c0
 // Size: 0x3f
 function function_a66b069993cf9abb(var_b7fd22ccc4fb4299) {
     self hide();
@@ -372,8 +360,8 @@ function function_a66b069993cf9abb(var_b7fd22ccc4fb4299) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x185f
-// Size: 0x219
+// Checksum 0x0, Offset: 0x1507
+// Size: 0x20c
 function function_6fd64a7766f2f12a(grenade) {
     grenade thread function_a66b069993cf9abb();
     var_8eee8435268b02da = getdvarfloat(@"hash_7ad66a5bc22f0e3c");
@@ -398,15 +386,14 @@ function function_6fd64a7766f2f12a(grenade) {
     switchblade_drone.targetorigin = var_c56004b641a6e904;
     if (istrue(bundle.var_9b2586bfb4f3de46) && issharedfuncdefined("game", "createObjective")) {
         switchblade_drone.minimapid = switchblade_drone [[ getsharedfunc("game", "createObjective") ]](bundle.minimapicon, switchblade_drone.team, 1, 1, 1);
-        scripts\mp\objidpoolmanager::function_2946e9eb07acb3f1(switchblade_drone.minimapid, %KILLSTREAKS/SWITCHBLADE_DRONE);
     }
     return switchblade_drone;
 }
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a81
-// Size: 0x30a
+// Checksum 0x0, Offset: 0x171c
+// Size: 0x31a
 function function_f50add73e923b629(streakname, location) {
     level notify("stop_switchblade_droneMoveCircle_thread");
     level endon("game_ended");
@@ -484,8 +471,8 @@ function function_f50add73e923b629(streakname, location) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d94
-// Size: 0x1dd
+// Checksum 0x0, Offset: 0x1a3f
+// Size: 0x1e9
 function function_e2cf8a8b93a4a86f() {
     self notify("stop_switchblade_tilt_thread");
     self endon("death");
@@ -525,8 +512,8 @@ function function_e2cf8a8b93a4a86f() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f79
-// Size: 0x2fa
+// Checksum 0x0, Offset: 0x1c30
+// Size: 0x30f
 function function_f57f532b8644012a() {
     self notify("stop_switchblade_step_thread");
     self endon("death");
@@ -582,8 +569,8 @@ function function_f57f532b8644012a() {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x227b
-// Size: 0x24b
+// Checksum 0x0, Offset: 0x1f47
+// Size: 0x260
 function function_6ec67c6c636c25d0(centerpos, startpos, flyvelocity) {
     self endon("death");
     level endon("game_ended");
@@ -626,8 +613,8 @@ function function_6ec67c6c636c25d0(centerpos, startpos, flyvelocity) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x24ce
-// Size: 0x136
+// Checksum 0x0, Offset: 0x21af
+// Size: 0x13f
 function function_5c89eb12f323ab1e(centerpos, startpos, flyvelocity) {
     self notify("flyingNewCircle");
     self endon("death");
@@ -661,11 +648,10 @@ function function_5c89eb12f323ab1e(centerpos, startpos, flyvelocity) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x260c
-// Size: 0x3f4
+// Checksum 0x0, Offset: 0x22f6
+// Size: 0x3f8
 function function_171c9b525186dfee(streakname, centerposzoffset) {
     self endon("death");
-    self endon("notify_switchblade_drone_explode");
     self.owner endon("disconnect");
     level endon("game_end");
     var_6ffab0b1f38dae17 = getdvarint(@"hash_cda65d1126957523");
@@ -739,15 +725,12 @@ function function_171c9b525186dfee(streakname, centerposzoffset) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a08
-// Size: 0x1c2
+// Checksum 0x0, Offset: 0x26f6
+// Size: 0x198
 function function_a831421d6d91a68(validtargets) {
     validtargets = sortbydistance(validtargets, self.origin);
     var_68e6f05a4ee24dee = physics_createcontents(["physicscontents_vehicleclip", "physicscontents_item", "physicscontents_ainoshoot"]);
     var_2fd6147a345c3d71 = physics_createcontents(["physicscontents_item", "physicscontents_ainoshoot"]);
-    if (level.mapname == "mp_jup_elevated") {
-        var_68e6f05a4ee24dee = physics_createcontents(["physicscontents_item", "physicscontents_ainoshoot"]);
-    }
     foreach (target in validtargets) {
         /#
             debugactive = getdvarint(@"hash_211a27e9e936be16");
@@ -772,8 +755,8 @@ function function_a831421d6d91a68(validtargets) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bd2
-// Size: 0xd0
+// Checksum 0x0, Offset: 0x2896
+// Size: 0xd1
 function function_e99de59922a658c2(besttarget) {
     var_68e6f05a4ee24dee = physics_createcontents(["physicscontents_vehicleclip", "physicscontents_item", "physicscontents_ainoshoot"]);
     var_2fd6147a345c3d71 = physics_createcontents(["physicscontents_item", "physicscontents_ainoshoot"]);
@@ -791,8 +774,8 @@ function function_e99de59922a658c2(besttarget) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cab
-// Size: 0x267
+// Checksum 0x0, Offset: 0x2970
+// Size: 0x230
 function function_1c87d0008280beb0(besttarget, targetloc) {
     self endon("death");
     self.owner endon("disconnect");
@@ -802,10 +785,6 @@ function function_1c87d0008280beb0(besttarget, targetloc) {
     timepassed = 0;
     var_90f8682d56eb4664 = getdvarint(@"hash_836eeca87d3a3d6f");
     var_a4e60d1f42b38d56 = getdvarint(@"hash_fc2d155242a3fc25");
-    if (isdefined(self.streakname) && self.streakname == "drone_swarm") {
-        var_90f8682d56eb4664 = getdvarint(@"hash_f065b6bad78c93b9");
-        var_a4e60d1f42b38d56 = getdvarint(@"hash_b6455b787cd7cbab");
-    }
     assert(var_90f8682d56eb4664 > 0);
     assert(var_a4e60d1f42b38d56 > 0);
     var_433184866bfb7ebc = getdvarint(@"hash_3bc605f5a6462807");
@@ -842,17 +821,15 @@ function function_1c87d0008280beb0(besttarget, targetloc) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f1a
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x2ba8
+// Size: 0xd6
 function function_b6d0baeed8dac51(target, targetloc) {
+    assert(isdefined(target) || isdefined(targetloc));
     targetorigin = undefined;
     if (isdefined(target)) {
         targetorigin = target.origin;
     } else if (isdefined(targetloc)) {
         targetorigin = targetloc;
-    } else {
-        assertmsg("<dev string:x1c>");
-        return false;
     }
     var_6d2275b0b1b6da95 = (targetorigin[0], targetorigin[1], targetorigin[2]);
     fromtarget = vectornormalize(var_6d2275b0b1b6da95 - self.origin);
@@ -870,8 +847,8 @@ function function_b6d0baeed8dac51(target, targetloc) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff5
-// Size: 0x34f
+// Checksum 0x0, Offset: 0x2c87
+// Size: 0x315
 function function_3c15b092a77b0142(target, targetloc) {
     self endon("death");
     self.owner endon("disconnect");
@@ -883,10 +860,6 @@ function function_3c15b092a77b0142(target, targetloc) {
         targetpos = target.origin;
     } else if (isdefined(targetloc)) {
         targetpos = targetloc;
-    } else {
-        assertmsg("<dev string:x60>");
-        function_344501824416bd86(1);
-        return;
     }
     starttime = gettime();
     startpos = self.origin;
@@ -895,9 +868,6 @@ function function_3c15b092a77b0142(target, targetloc) {
     var_3174aa0f12ab01af = getdvarint(@"hash_22f1ccc4024de95e");
     var_134d0390a5b98256 = getdvarint(@"hash_1da226fe14849c74");
     var_39a9b19eabdfe7d = getdvarint(@"hash_b9597bb5bad14e63");
-    if (isdefined(self.streakname) && self.streakname == "drone_swarm") {
-        var_134d0390a5b98256 = getdvarint(@"hash_9719cfd50a1766ee");
-    }
     totaltime = float(totaldistance / var_134d0390a5b98256 * 1000);
     assert(totaltime > 0);
     collisioncontents = undefined;
@@ -936,8 +906,8 @@ function function_3c15b092a77b0142(target, targetloc) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x334c
-// Size: 0x2a
+// Checksum 0x0, Offset: 0x2fa4
+// Size: 0x29
 function function_ea343190a5d1301e(data) {
     attacker = data.attacker;
     function_344501824416bd86(0);
@@ -945,8 +915,8 @@ function function_ea343190a5d1301e(data) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x337e
-// Size: 0x2a
+// Checksum 0x0, Offset: 0x2fd5
+// Size: 0x29
 function function_3a93e509a610b4bd(data) {
     attacker = data.attacker;
     function_344501824416bd86(0);
@@ -954,8 +924,8 @@ function function_3a93e509a610b4bd(data) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33b0
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x3006
+// Size: 0x3c
 function function_344501824416bd86(fromtrigger) {
     params = spawnstruct();
     params.fromtrigger = fromtrigger;
@@ -965,7 +935,7 @@ function function_344501824416bd86(fromtrigger) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33f5
+// Checksum 0x0, Offset: 0x304a
 // Size: 0x27
 function function_ba6789000bf88889(params) {
     params = spawnstruct();
@@ -975,7 +945,7 @@ function function_ba6789000bf88889(params) {
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3424
+// Checksum 0x0, Offset: 0x3079
 // Size: 0x2d
 function function_4706f9311a69b5bc(params) {
     self.owner function_8959c1606f65e65("switchblade_drone", "switchblade_drone_teamleader_timeout");
@@ -983,90 +953,35 @@ function function_4706f9311a69b5bc(params) {
 }
 
 // Namespace switchblade_drone / namespace_e5c25349d02a540b
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3459
-// Size: 0x29a
-function function_60f31efcd5e96e72(params, var_f543b7749f9023af) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x30ae
+// Size: 0x102
+function function_60f31efcd5e96e72(params) {
     if (isdefined(level.var_ca1a76fbc0ba0bef)) {
         thread [[ level.var_ca1a76fbc0ba0bef ]](self.streakinfo, self.origin, 0);
     }
-    if (!istrue(var_f543b7749f9023af)) {
-        level.var_cde4ae1afb90a57a = array_remove(level.var_cde4ae1afb90a57a, self);
-        bundle = level.streakglobals.streakbundles["switchblade_drone"];
-    } else {
-        level.var_f37653d229f1f1c4 = array_remove(level.var_f37653d229f1f1c4, self);
-        bundle = level.streakglobals.streakbundles["drone_swarm"];
-    }
+    level.var_cde4ae1afb90a57a = array_remove(level.var_cde4ae1afb90a57a, self);
     fromtrigger = params.fromtrigger;
-    if (!isdefined(self)) {
-        return;
-    }
     forward = anglestoup(self.angles);
     right = -1 * anglestoright(self.angles);
     up = anglestoforward(self.angles);
-    var_13e4641b8cbb438e = "explode";
-    if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        var_13e4641b8cbb438e = "explode_noDamage";
-    }
-    var_f451f1efd8b651c8 = self getscriptablepartstate(var_13e4641b8cbb438e);
+    var_f451f1efd8b651c8 = self getscriptablepartstate("explode");
     if (var_f451f1efd8b651c8 == "fromtrigger") {
         return;
     }
-    if (self.streakname == "switchblade_drone") {
-        self.owner scripts\cp_mp\utility\killstreak_utility::recordkillstreakendstats(self.streakinfo);
+    if (istrue(fromtrigger)) {
+        self setscriptablepartstate("explode", "fromtrigger", 0);
+        return;
     }
-    var_7410e124269a94e1 = bundle.var_c871fa4ec0859926;
-    maxdmg = bundle.var_eddb2ebe11eeda74;
-    mindmg = bundle.var_7103fcd230ad81b6;
-    var_de000fcd5162bbd2 = bundle.var_e9a78aad297298b;
-    var_392f2adc951f611a = bundle.var_da4afb96fb921fd1;
-    var_ed0a64c15fcaaa38 = bundle.var_b0ea710334746aa7;
-    var_3433b360988a2327 = istrue(fromtrigger) ? "fromtrigger" : "fromdamage";
-    if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        if (var_3433b360988a2327 == "fromtrigger") {
-            self radiusdamage(self.origin, var_7410e124269a94e1, maxdmg, mindmg, self.owner, "MOD_EXPLOSIVE", "switchblade_drone_mp");
-        } else {
-            self radiusdamage(self.origin, var_de000fcd5162bbd2, var_392f2adc951f611a, var_ed0a64c15fcaaa38, self.owner, "MOD_EXPLOSIVE", "switchblade_drone_mp");
-        }
-    }
-    self setscriptablepartstate(var_13e4641b8cbb438e, var_3433b360988a2327, 0);
-    self notify("notify_switchblade_drone_explode");
-}
-
-// Namespace switchblade_drone / namespace_e5c25349d02a540b
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x36fb
-// Size: 0x20f
-function function_8e41e9774021d4f0(msg, timer, radius, var_4d287b8e28ceffc8, var_781e7fd99e3f80a0) {
-    level endon("game_ended");
-    drone = self;
-    var_4b60537d15df5108 = [];
-    var_4b60537d15df5108 = utility::function_f3bb4f4911a1beb2("game", "getTeamData", drone.owner.team, "players");
-    circleradius = int(int(min(var_4d287b8e28ceffc8, var_781e7fd99e3f80a0) / 2) + radius);
-    drone.enemycircle = spawnstruct();
-    drone.var_8014ebffbb88822b = spawnstruct();
-    drone.enemycircle scripts\cp_mp\utility\game_utility::function_6b6b6273f8180522("switchblade_drone_danger_radius", drone.origin, circleradius);
-    drone.enemycircle scripts\cp_mp\utility\game_utility::function_6988310081de7b45();
-    foreach (player in var_4b60537d15df5108) {
-        drone.enemycircle scripts\cp_mp\utility\game_utility::function_d7d113d56ef0ef5b(player);
-    }
-    drone.var_8014ebffbb88822b scripts\cp_mp\utility\game_utility::function_6b6b6273f8180522("switchblade_drone_ally_radius", drone.origin, circleradius);
-    foreach (player in var_4b60537d15df5108) {
-        drone.var_8014ebffbb88822b scripts\cp_mp\utility\game_utility::function_cfd53c8f6878014f(player);
-    }
-    waittill_any_timeout_2(timer, msg, "game_ended");
-    drone.enemycircle scripts\cp_mp\utility\game_utility::function_4eaf685bc40a3b9();
-    drone.enemycircle scripts\cp_mp\utility\game_utility::function_af5604ce591768e1();
-    drone.var_8014ebffbb88822b scripts\cp_mp\utility\game_utility::function_4eaf685bc40a3b9();
-    drone.var_8014ebffbb88822b scripts\cp_mp\utility\game_utility::function_af5604ce591768e1();
+    self setscriptablepartstate("explode", "fromdamage", 0);
 }
 
 /#
 
     // Namespace switchblade_drone / namespace_e5c25349d02a540b
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3912
-    // Size: 0x40
+    // Checksum 0x0, Offset: 0x31b8
+    // Size: 0x3f
     function function_47bd4689d0d9b39e(center) {
         var_603716bcd61d52f9 = getdvarint(@"hash_f956bbb2c255914f");
         sphere(center, 15, (0, 0, 255), 0, var_603716bcd61d52f9);

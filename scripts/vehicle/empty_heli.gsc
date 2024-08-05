@@ -4,7 +4,7 @@
 
 // Namespace empty_heli / scripts\vehicle\empty_heli
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa9
+// Checksum 0x0, Offset: 0x84
 // Size: 0x36
 function main(model, type, classname) {
     build_template("empty_heli", model, type, classname);

@@ -1,18 +1,16 @@
 #using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_1407e72346815bc3;
 #using script_5af9038262d22c96;
 #using scripts\mp\utility\perk.gsc;
-#using scripts\common\utility.gsc;
 
 #namespace manager_mp;
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4
-// Size: 0x5d
+// Checksum 0x0, Offset: 0xfb
+// Size: 0x8d
 function init() {
-    if (scripts\cp_mp\utility\game_utility::function_42e2dcfd4571b89b()) {
+    if (getdvar(@"hash_7611a2790a0bf7fe", "") == "dmz" || getdvar(@"hash_7611a2790a0bf7fe", "") == "exgm") {
         level.var_6ccee8e6c00f06e6 = &namespace_583fd9066a09cd33::init_player;
         setdvarifuninitialized(@"hash_50363b4004713d67", 1);
         if (getdvarint(@"hash_50363b4004713d67")) {
@@ -24,7 +22,7 @@ function init() {
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x159
+// Checksum 0x0, Offset: 0x190
 // Size: 0x37
 function init_player() {
     self waittill("giveLoadout");
@@ -35,7 +33,7 @@ function init_player() {
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x198
+// Checksum 0x0, Offset: 0x1cf
 // Size: 0x4c
 function sixthsense_init() {
     self endon("death");
@@ -49,25 +47,25 @@ function sixthsense_init() {
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec
-// Size: 0x2c
+// Checksum 0x0, Offset: 0x223
+// Size: 0x30
 function dropaiaccuracy() {
-    if (!scripts\common\utility::function_a10967d736dc56e5()) {
+    if (!istrue(level.var_289df80e1ded586f)) {
         return;
     }
-    assertex(isplayer(self), "<dev string:x1c>");
+    assertex(isplayer(self), " This function needs to be called on a Player entity ");
     namespace_4d62562249d2171e::function_f9dd1250ea99d251(0.1);
 }
 
 // Namespace manager_mp / namespace_583fd9066a09cd33
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x220
-// Size: 0x29
+// Checksum 0x0, Offset: 0x25b
+// Size: 0x2d
 function revertaiaccuracy() {
-    if (!scripts\common\utility::function_a10967d736dc56e5()) {
+    if (!istrue(level.var_289df80e1ded586f)) {
         return;
     }
-    assertex(isplayer(self), "<dev string:x1c>");
+    assertex(isplayer(self), " This function needs to be called on a Player entity ");
     namespace_4d62562249d2171e::function_f9dd1250ea99d251(1);
 }
 

@@ -6,7 +6,7 @@
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6f
+// Checksum 0x0, Offset: 0x917
 // Size: 0x1a4
 function function_e05aeec06b7b52aa(var_dc6dc154664cf0aa, var_575e6f276810675e, var_a1e7fb7b162a7323, enterfunc, exitfunc, surfaceFunc, descendfunc, playsoundfunc, visionsetfunc, drownfunc, var_bb67e91ffc4e7632, var_cc3e168e41362ff2) {
     setdvarifuninitialized(@"hash_2a4f08bc79265550", 0);
@@ -29,8 +29,8 @@ function function_e05aeec06b7b52aa(var_dc6dc154664cf0aa, var_575e6f276810675e, v
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1b
-// Size: 0xb24
+// Checksum 0x0, Offset: 0xac3
+// Size: 0xb23
 function function_a1f804a91db4e6c2() {
     sfx = spawnstruct();
     sfx function_aa21b4352ca3b832(["sfx", "surface", "slow", "quiet", "plr"], "mvmt_swim_surfacing_plr_slow");
@@ -86,7 +86,7 @@ function function_a1f804a91db4e6c2() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1748
+// Checksum 0x0, Offset: 0x15ef
 // Size: 0x50
 function function_76828ba8fde01e05() {
     level._effect["swim_bubbles_light"] = loadfx("vfx/iw9/core/swimming/vfx_swim_gasp_bubbles_0.vfx");
@@ -96,7 +96,7 @@ function function_76828ba8fde01e05() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a0
+// Checksum 0x0, Offset: 0x1647
 // Size: 0x6e
 function function_aa21b4352ca3b832(keys, sfx) {
     i = 0;
@@ -115,8 +115,8 @@ function function_aa21b4352ca3b832(keys, sfx) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1816
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x16bd
+// Size: 0xa3
 function function_8c913c3634f4a84e(keys) {
     currentstruct = level.swim.sfx;
     i = 0;
@@ -132,7 +132,7 @@ function function_8c913c3634f4a84e(keys) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18c2
+// Checksum 0x0, Offset: 0x1768
 // Size: 0x42
 function function_cf9cebe58c49f708(key) {
     if (!isdefined(self.array)) {
@@ -145,7 +145,7 @@ function function_cf9cebe58c49f708(key) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x190c
+// Checksum 0x0, Offset: 0x17b2
 // Size: 0x46
 function function_e3e506e52aacfb27(key, sfx) {
     if (!isdefined(self.array)) {
@@ -158,7 +158,7 @@ function function_e3e506e52aacfb27(key, sfx) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x195a
+// Checksum 0x0, Offset: 0x1800
 // Size: 0x10e
 function function_fc7d07d4cc7ae9f1() {
     if (isdefined(self.swim)) {
@@ -186,7 +186,7 @@ function function_fc7d07d4cc7ae9f1() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a70
+// Checksum 0x0, Offset: 0x1916
 // Size: 0x36
 function function_d126e1e30aae39f() {
     while (true) {
@@ -197,7 +197,7 @@ function function_d126e1e30aae39f() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aae
+// Checksum 0x0, Offset: 0x1954
 // Size: 0xc6
 function function_ef73345010f390f4() {
     isplayerswimming = self isswimming();
@@ -220,7 +220,7 @@ function function_ef73345010f390f4() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b7c
+// Checksum 0x0, Offset: 0x1a22
 // Size: 0x2c
 function watchswim() {
     while (true) {
@@ -231,7 +231,7 @@ function watchswim() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bb0
+// Checksum 0x0, Offset: 0x1a56
 // Size: 0x53
 function function_4f0c9995f869868a() {
     if (function_d59269bc793fe756() && !self.swim.swimming) {
@@ -244,7 +244,7 @@ function function_4f0c9995f869868a() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c0b
+// Checksum 0x0, Offset: 0x1ab1
 // Size: 0x8
 function function_d59269bc793fe756() {
     return self isswimming();
@@ -252,8 +252,8 @@ function function_d59269bc793fe756() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c1c
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x1ac2
+// Size: 0xb9
 function function_d2c67316e3340d42() {
     var_946b001669de27fb = [self.swim.swimoverlay, self.swim.var_28a9dbf4ce30fa86];
     var_946b001669de27fb = [self.swim.swimoverlay];
@@ -267,7 +267,7 @@ function function_d2c67316e3340d42() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cdf
+// Checksum 0x0, Offset: 0x1b83
 // Size: 0x21
 function deathcleanup() {
     self endon("disconnect");
@@ -277,7 +277,7 @@ function deathcleanup() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d08
+// Checksum 0x0, Offset: 0x1bac
 // Size: 0x28
 function function_3b00a7c45356a6e1() {
     function_40d220afd2eb67b5();
@@ -289,7 +289,7 @@ function function_3b00a7c45356a6e1() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d38
+// Checksum 0x0, Offset: 0x1bdc
 // Size: 0x10
 function function_40d220afd2eb67b5() {
     self setclientomnvar("swim_breath_meter_hide", 1);
@@ -297,7 +297,7 @@ function function_40d220afd2eb67b5() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d50
+// Checksum 0x0, Offset: 0x1bf4
 // Size: 0xe
 function function_179cdce690151ad6() {
     function_b66c4e6d072630c(0.05);
@@ -305,7 +305,7 @@ function function_179cdce690151ad6() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d66
+// Checksum 0x0, Offset: 0x1c0a
 // Size: 0x24
 function function_38fe3b60e5adf79c() {
     self setscriptablepartstate("swimDebris", "aboveWater");
@@ -314,7 +314,7 @@ function function_38fe3b60e5adf79c() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d92
+// Checksum 0x0, Offset: 0x1c36
 // Size: 0x6c
 function function_8173a7a676c2aa00() {
     self notify("scr_change_breath_state");
@@ -331,7 +331,7 @@ function function_8173a7a676c2aa00() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e06
+// Checksum 0x0, Offset: 0x1caa
 // Size: 0x67
 function function_178428152f0b5e74() {
     self notify("scr_change_breath_state");
@@ -347,7 +347,7 @@ function function_178428152f0b5e74() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e75
+// Checksum 0x0, Offset: 0x1d19
 // Size: 0x3f
 function playerswimming() {
     self notify("scr_change_swim_state");
@@ -358,7 +358,7 @@ function playerswimming() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ebc
+// Checksum 0x0, Offset: 0x1d60
 // Size: 0x3e
 function function_1a0fcd6bae3d2370() {
     self notify("scr_change_swim_state");
@@ -369,7 +369,7 @@ function function_1a0fcd6bae3d2370() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f02
+// Checksum 0x0, Offset: 0x1da6
 // Size: 0x23
 function isplayerunderwater() {
     return isdefined(self.swim) && self.swim.underwater;
@@ -377,7 +377,7 @@ function isplayerunderwater() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f2e
+// Checksum 0x0, Offset: 0x1dd2
 // Size: 0x23
 function isplayerswimming() {
     return isdefined(self.swim) && self.swim.swimming;
@@ -385,7 +385,7 @@ function isplayerswimming() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f5a
+// Checksum 0x0, Offset: 0x1dfe
 // Size: 0x8a
 function function_b66c4e6d072630c(time) {
     if (self.swim.sfxstate == "none") {
@@ -401,7 +401,7 @@ function function_b66c4e6d072630c(time) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fec
+// Checksum 0x0, Offset: 0x1e90
 // Size: 0x89
 function function_4594e9dcebf2c645() {
     if (self.swim.sfxstate == "surface") {
@@ -418,7 +418,7 @@ function function_4594e9dcebf2c645() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x207d
+// Checksum 0x0, Offset: 0x1f21
 // Size: 0x7f
 function function_9a01935a05b613e4() {
     if (self.swim.sfxstate == "submerged") {
@@ -434,7 +434,7 @@ function function_9a01935a05b613e4() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2104
+// Checksum 0x0, Offset: 0x1fa8
 // Size: 0x64
 function function_2e58c560f3d8e570() {
     plrsfx = "mvmt_swim_gagging_plr_bubbles";
@@ -449,7 +449,7 @@ function function_2e58c560f3d8e570() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2170
+// Checksum 0x0, Offset: 0x2014
 // Size: 0x78
 function function_57108400022fb733() {
     plrsfx = "mvmt_swim_plr_bubbles_light";
@@ -468,7 +468,7 @@ function function_57108400022fb733() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21f0
+// Checksum 0x0, Offset: 0x2094
 // Size: 0x76
 function function_38f601b8026c2203() {
     plrsfx = "mvmt_swim_gagging_plr_bubbles_critical";
@@ -486,7 +486,7 @@ function function_38f601b8026c2203() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x226e
+// Checksum 0x0, Offset: 0x2112
 // Size: 0x1a
 function function_a3b4435c21f67884() {
     if (!function_c2be12529b0f0ad2()) {
@@ -498,7 +498,7 @@ function function_a3b4435c21f67884() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2290
+// Checksum 0x0, Offset: 0x2134
 // Size: 0x1a
 function function_e8c44b4b292c651d() {
     if (!function_c2be12529b0f0ad2()) {
@@ -510,7 +510,7 @@ function function_e8c44b4b292c651d() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22b2
+// Checksum 0x0, Offset: 0x2156
 // Size: 0x13
 function function_c400314c2dd6fbb0() {
     self setscriptablepartstate("swimDebris", "underWater");
@@ -518,7 +518,7 @@ function function_c400314c2dd6fbb0() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22cd
+// Checksum 0x0, Offset: 0x2171
 // Size: 0x13
 function function_aae8f85a278e89() {
     self setscriptablepartstate("swimDebris", "aboveWater");
@@ -526,7 +526,7 @@ function function_aae8f85a278e89() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e8
+// Checksum 0x0, Offset: 0x218c
 // Size: 0x13
 function function_3971e4c5bcf1b9b2() {
     self setscriptablepartstate("swimBubbles", "bubblesEnter");
@@ -534,7 +534,7 @@ function function_3971e4c5bcf1b9b2() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2303
+// Checksum 0x0, Offset: 0x21a7
 // Size: 0x13
 function function_a4cc23314a609ed7() {
     self setscriptablepartstate("swimBubbles", "aboveWater");
@@ -542,7 +542,7 @@ function function_a4cc23314a609ed7() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x231e
+// Checksum 0x0, Offset: 0x21c2
 // Size: 0x37
 function function_3a2421785a1b420f() {
     self thread [[ level.swim.var_cc3e168e41362ff2 ]]("swim_gasp_bubbles", "swim_breathing_disabled_end", 3);
@@ -551,7 +551,7 @@ function function_3a2421785a1b420f() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x235d
+// Checksum 0x0, Offset: 0x2201
 // Size: 0x26
 function function_110be15783d6c5e2() {
     self thread [[ level.swim.var_cc3e168e41362ff2 ]]("swim_bubbles_light", "swim_breathing_disabled_end", 3);
@@ -559,7 +559,7 @@ function function_110be15783d6c5e2() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x238b
+// Checksum 0x0, Offset: 0x222f
 // Size: 0x26
 function function_22d90d196efbb4a8() {
     self thread [[ level.swim.var_cc3e168e41362ff2 ]]("swim_drowning_bubbles", "swim_breathing_disabled_end", 3);
@@ -567,7 +567,7 @@ function function_22d90d196efbb4a8() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x23b9
+// Checksum 0x0, Offset: 0x225d
 // Size: 0x35
 function playsoundalias(plrsfx, npcsfx, soundsource) {
     self [[ level.swim.playsoundfunc ]](plrsfx, npcsfx, soundsource);
@@ -575,7 +575,7 @@ function playsoundalias(plrsfx, npcsfx, soundsource) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f6
+// Checksum 0x0, Offset: 0x229a
 // Size: 0x13
 function function_da4d3d2e5560fe3a() {
     if (!function_c2be12529b0f0ad2()) {
@@ -586,7 +586,7 @@ function function_da4d3d2e5560fe3a() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2411
+// Checksum 0x0, Offset: 0x22b5
 // Size: 0x9
 function function_3a7925b414e10c37() {
     dof_descend();
@@ -594,7 +594,7 @@ function function_3a7925b414e10c37() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2422
+// Checksum 0x0, Offset: 0x22c6
 // Size: 0x16
 function dof_surface() {
     if (!isdefined(level.dyndof)) {
@@ -604,7 +604,7 @@ function dof_surface() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2440
+// Checksum 0x0, Offset: 0x22e4
 // Size: 0x36
 function dof_descend() {
     if (!isdefined(level.dyndof)) {
@@ -616,7 +616,7 @@ function dof_descend() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x247e
+// Checksum 0x0, Offset: 0x2322
 // Size: 0x3c
 function function_458135edd51d48b8() {
     self.swim.swimoverlay fadeovertime(1);
@@ -625,7 +625,7 @@ function function_458135edd51d48b8() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24c2
+// Checksum 0x0, Offset: 0x2366
 // Size: 0x46
 function function_3b40f73c6038a3b0() {
     self.swim.swimoverlay fadeovertime(0.05);
@@ -641,8 +641,8 @@ function function_3b40f73c6038a3b0() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2510
-// Size: 0xf9
+// Checksum 0x0, Offset: 0x23b4
+// Size: 0xfd
 function function_fb5bfd7783364f80() {
     var_6fcfedc89a8dc3d5 = 0;
     var_21c40030c467a5f6 = function_d4a3e79cc1808058();
@@ -674,8 +674,8 @@ function function_fb5bfd7783364f80() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2611
-// Size: 0x2bf
+// Checksum 0x0, Offset: 0x24b9
+// Size: 0x2c2
 function function_5d9e116115d3c60d() {
     if (getdvarint(@"hash_42deeb1fb385c72", 1) == 1) {
         self setclientomnvar("swim_breath_meter_hide", 0);
@@ -729,8 +729,8 @@ function function_5d9e116115d3c60d() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28d8
-// Size: 0x113
+// Checksum 0x0, Offset: 0x2783
+// Size: 0x114
 function swim_drown(wasgodmode) {
     self endon("swim_stop_drowning");
     self notify("swim_start_drowning");
@@ -765,7 +765,7 @@ function swim_drown(wasgodmode) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29f4
+// Checksum 0x0, Offset: 0x28a0
 // Size: 0x37
 function function_9368fff2b3156346(isdisable) {
     if (!isdefined(self.swim)) {
@@ -776,7 +776,7 @@ function function_9368fff2b3156346(isdisable) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a33
+// Checksum 0x0, Offset: 0x28df
 // Size: 0x25
 function function_9b65944d3ce0f852() {
     if (!isdefined(self.swim)) {
@@ -787,7 +787,7 @@ function function_9b65944d3ce0f852() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a61
+// Checksum 0x0, Offset: 0x290d
 // Size: 0xa8
 function function_40de065884e608bf(timer) {
     self endon("death_or_disconnect");
@@ -807,7 +807,7 @@ function function_40de065884e608bf(timer) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b11
+// Checksum 0x0, Offset: 0x29bd
 // Size: 0x35
 function function_a05de828303d4bed() {
     if (function_bab53c4f3c6062b9()) {
@@ -821,7 +821,7 @@ function function_a05de828303d4bed() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b4e
+// Checksum 0x0, Offset: 0x29fa
 // Size: 0x4b
 function function_7a964640cf87f4fa() {
     self endon("swim_start_drowning");
@@ -832,7 +832,7 @@ function function_7a964640cf87f4fa() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ba1
+// Checksum 0x0, Offset: 0x2a4d
 // Size: 0xeb
 function function_39bc9721e2da8f9c() {
     while (self.swim.breath < 100) {
@@ -847,8 +847,8 @@ function function_39bc9721e2da8f9c() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c94
-// Size: 0x195
+// Checksum 0x0, Offset: 0x2b40
+// Size: 0x196
 function function_8c3428aeb7c8b1f4(amount, var_3918dd3a9b1b12a9) {
     self endon("scr_change_breath_state");
     breathfunc = level.swim.var_a1e7fb7b162a7323;
@@ -876,7 +876,7 @@ function function_8c3428aeb7c8b1f4(amount, var_3918dd3a9b1b12a9) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e31
+// Checksum 0x0, Offset: 0x2cde
 // Size: 0x1a
 function function_1bb8793f81f3dd35() {
     if (!function_c2be12529b0f0ad2()) {
@@ -888,7 +888,7 @@ function function_1bb8793f81f3dd35() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e53
+// Checksum 0x0, Offset: 0x2d00
 // Size: 0x10
 function lightbubbles() {
     function_57108400022fb733();
@@ -897,7 +897,7 @@ function lightbubbles() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e6b
+// Checksum 0x0, Offset: 0x2d18
 // Size: 0x1a
 function function_21dafdba97771de8() {
     if (!function_c2be12529b0f0ad2()) {
@@ -909,8 +909,8 @@ function function_21dafdba97771de8() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e8d
-// Size: 0x169
+// Checksum 0x0, Offset: 0x2d3a
+// Size: 0x16d
 function updateSwimOverlayColor() {
     var_21c40030c467a5f6 = function_d4a3e79cc1808058();
     if (isdefined(level.var_19d38dec02a818ce) && [[ level.var_19d38dec02a818ce ]]("player", "updateSwimOverlayColor")) {
@@ -934,8 +934,8 @@ function updateSwimOverlayColor() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ffe
-// Size: 0x13b
+// Checksum 0x0, Offset: 0x2eaf
+// Size: 0x141
 function function_66cd16083cc71a78() {
     var_21c40030c467a5f6 = function_d4a3e79cc1808058();
     /#
@@ -963,8 +963,8 @@ function function_66cd16083cc71a78() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3141
-// Size: 0x38
+// Checksum 0x0, Offset: 0x2ff8
+// Size: 0x37
 function function_3776bacc92b445d3() {
     if (!isdefined(self.swim)) {
         return false;
@@ -975,7 +975,7 @@ function function_3776bacc92b445d3() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3182
+// Checksum 0x0, Offset: 0x3038
 // Size: 0x15
 function function_ea8199f09c110522() {
     return self.swim.breathcritical;
@@ -983,7 +983,7 @@ function function_ea8199f09c110522() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a0
+// Checksum 0x0, Offset: 0x3056
 // Size: 0x15
 function function_bab53c4f3c6062b9() {
     return self.swim.drowning;
@@ -991,7 +991,7 @@ function function_bab53c4f3c6062b9() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31be
+// Checksum 0x0, Offset: 0x3074
 // Size: 0x15
 function function_7e903535100a53f3() {
     return self.swim.heartbeat;
@@ -999,8 +999,8 @@ function function_7e903535100a53f3() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31dc
-// Size: 0x38
+// Checksum 0x0, Offset: 0x3092
+// Size: 0x37
 function function_e40b04d1193aa8c3() {
     if (!isdefined(self.swim)) {
         return false;
@@ -1011,8 +1011,8 @@ function function_e40b04d1193aa8c3() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x321d
-// Size: 0x42
+// Checksum 0x0, Offset: 0x30d2
+// Size: 0x41
 function function_90c418d9bae08d74(var_bb85a75787c26d48) {
     if (!isdefined(self.swim)) {
         return false;
@@ -1023,7 +1023,7 @@ function function_90c418d9bae08d74(var_bb85a75787c26d48) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3268
+// Checksum 0x0, Offset: 0x311c
 // Size: 0x38
 function function_aa183ca1083d279() {
     self setclientomnvar("swim_breath_meter_critical", 0);
@@ -1035,7 +1035,7 @@ function function_aa183ca1083d279() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a8
+// Checksum 0x0, Offset: 0x315c
 // Size: 0x42
 function function_2635b692c9c491b4() {
     self setclienttriggeraudiozone("underwater_drowning", 5);
@@ -1046,7 +1046,7 @@ function function_2635b692c9c491b4() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32f2
+// Checksum 0x0, Offset: 0x31a6
 // Size: 0x17
 function function_542add828c78e976() {
     self.swim.heartbeat = 0;
@@ -1054,7 +1054,7 @@ function function_542add828c78e976() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3311
+// Checksum 0x0, Offset: 0x31c5
 // Size: 0x20
 function function_f53f052ec435e9c5() {
     self.swim.heartbeat = 1;
@@ -1063,7 +1063,7 @@ function function_f53f052ec435e9c5() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3339
+// Checksum 0x0, Offset: 0x31ed
 // Size: 0x26
 function function_9ab56eff95d3d9b7() {
     self.swim.drowning = 1;
@@ -1072,7 +1072,7 @@ function function_9ab56eff95d3d9b7() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3367
+// Checksum 0x0, Offset: 0x321b
 // Size: 0x10
 function function_4d1eaa072369ad4b() {
     self setclientomnvar("swim_breath_meter_critical", 3);
@@ -1080,8 +1080,8 @@ function function_4d1eaa072369ad4b() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x337f
-// Size: 0x38
+// Checksum 0x0, Offset: 0x3233
+// Size: 0x37
 function function_102c01b146eedc7d() {
     if (!isdefined(self.swim)) {
         return false;
@@ -1092,7 +1092,7 @@ function function_102c01b146eedc7d() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c0
+// Checksum 0x0, Offset: 0x3273
 // Size: 0x2a
 function function_75a367e461c6389a() {
     var_fd9f67f7fb502bd3 = [[ function_706e311766a84377() ]]();
@@ -1102,7 +1102,7 @@ function function_75a367e461c6389a() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33f3
+// Checksum 0x0, Offset: 0x32a6
 // Size: 0x3b
 function function_d4a3e79cc1808058() {
     var_fd9f67f7fb502bd3 = [[ function_706e311766a84377() ]]();
@@ -1112,8 +1112,8 @@ function function_d4a3e79cc1808058() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3437
-// Size: 0x55
+// Checksum 0x0, Offset: 0x32ea
+// Size: 0x56
 function function_317e02dca870dff(var_bb85a75787c26d48) {
     var_fd9f67f7fb502bd3 = [[ function_706e311766a84377() ]]();
     var_647e0301d37aebf7 = [[ level.swim.var_575e6f276810675e ]]();
@@ -1123,8 +1123,8 @@ function function_317e02dca870dff(var_bb85a75787c26d48) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3495
-// Size: 0x2e
+// Checksum 0x0, Offset: 0x3349
+// Size: 0x2d
 function function_b1b34805f6f1b18f() {
     var_fd9f67f7fb502bd3 = [[ function_706e311766a84377() ]]();
     return var_fd9f67f7fb502bd3 * self.swim.breath / 100;
@@ -1132,7 +1132,7 @@ function function_b1b34805f6f1b18f() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34cc
+// Checksum 0x0, Offset: 0x337f
 // Size: 0x188
 function function_5bcf4e2bd107536f() {
     self.swim.swimoverlay = newclienthudelem(self);
@@ -1151,7 +1151,7 @@ function function_5bcf4e2bd107536f() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x365c
+// Checksum 0x0, Offset: 0x350f
 // Size: 0x23
 function function_1cf86af6f8a0266d(msg1, msg2, timer) {
     self endon(msg1);
@@ -1161,7 +1161,7 @@ function function_1cf86af6f8a0266d(msg1, msg2, timer) {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3687
+// Checksum 0x0, Offset: 0x353a
 // Size: 0xd
 function function_c2be12529b0f0ad2() {
     return !isdefined(self.usingremote);
@@ -1169,7 +1169,7 @@ function function_c2be12529b0f0ad2() {
 
 // Namespace swim_common / namespace_8ade6bdb04213c12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x369d
+// Checksum 0x0, Offset: 0x3550
 // Size: 0x30
 function function_706e311766a84377() {
     if (isdefined(self.var_dc6dc154664cf0aa)) {

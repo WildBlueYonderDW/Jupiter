@@ -6,7 +6,7 @@
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ad
+// Checksum 0x0, Offset: 0x249
 // Size: 0x93
 function function_58bf160252f94e21() {
     if (isdefined(level.var_216a5e72460de468)) {
@@ -21,8 +21,8 @@ function function_58bf160252f94e21() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x348
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x2e4
+// Size: 0x8d
 function function_60cba38635fd35cb(equipmentref, equipmentslot, variantid) {
     if (equipmentref != "equip_geigercounter" && equipmentref != "equip_rfid") {
         return;
@@ -38,7 +38,7 @@ function function_60cba38635fd35cb(equipmentref, equipmentslot, variantid) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3de
+// Checksum 0x0, Offset: 0x379
 // Size: 0x4e
 function function_bdd02627bcafe359(equipmentref, equipmentslot) {
     if (equipmentref != "equip_geigercounter" && equipmentref != "equip_rfid") {
@@ -51,7 +51,7 @@ function function_bdd02627bcafe359(equipmentref, equipmentslot) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x434
+// Checksum 0x0, Offset: 0x3cf
 // Size: 0x27
 function function_3d5c1674387c936e(grenade) {
     waitframe();
@@ -64,8 +64,8 @@ function function_3d5c1674387c936e(grenade) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x463
-// Size: 0x168
+// Checksum 0x0, Offset: 0x3fe
+// Size: 0x16c
 function geigercounter_watchForDevicePullout() {
     self endon("disconnect");
     level endon("game_ended");
@@ -111,8 +111,8 @@ function geigercounter_watchForDevicePullout() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d3
-// Size: 0x91
+// Checksum 0x0, Offset: 0x572
+// Size: 0x90
 function function_f6ae22a0ef39407b() {
     if (issharedfuncdefined("radiation", "radiation_isInit") && issharedfuncdefined("radiation", "radiation_signedDistanceFromRadiationCircle")) {
         if ([[ scripts\engine\utility::getsharedfunc("radiation", "radiation_isInit") ]]()) {
@@ -128,7 +128,7 @@ function function_f6ae22a0ef39407b() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x66d
+// Checksum 0x0, Offset: 0x60b
 // Size: 0x249
 function function_bcbff1c1b64843b6(dist) {
     if (getweaponbasename(self getheldoffhand()) == "geiger_counter_mp") {
@@ -161,7 +161,7 @@ function function_bcbff1c1b64843b6(dist) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8be
+// Checksum 0x0, Offset: 0x85c
 // Size: 0x1a
 function function_a9d03825299dd6bf() {
     if (getweaponbasename(self getheldoffhand()) == "geiger_counter_mp") {
@@ -172,7 +172,7 @@ function function_a9d03825299dd6bf() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e1
+// Checksum 0x0, Offset: 0x87f
 // Size: 0x30
 function function_9b3c029182bf2647(raceresult) {
     self endon("geigercounter_watchRaceEnd");
@@ -183,7 +183,7 @@ function function_9b3c029182bf2647(raceresult) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x919
+// Checksum 0x0, Offset: 0x8b7
 // Size: 0x30
 function function_f668eed31b686b60(raceresult) {
     self endon("geigercounter_watchRaceEnd");
@@ -194,8 +194,8 @@ function function_f668eed31b686b60(raceresult) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x951
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x8ef
+// Size: 0x5a
 function function_841d127cb52727a9(raceresult) {
     self endon("geigercounter_watchRaceEnd");
     weapon = self waittill("pullout_gc");
@@ -210,7 +210,7 @@ function function_841d127cb52727a9(raceresult) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b4
+// Checksum 0x0, Offset: 0x951
 // Size: 0x47
 function function_b33a67426542b0c5(raceresult) {
     self endon("geigercounter_watchRaceEnd");
@@ -225,7 +225,7 @@ function function_b33a67426542b0c5(raceresult) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa03
+// Checksum 0x0, Offset: 0x9a0
 // Size: 0x42
 function function_ce0fef2f2c7f1717() {
     self notify("geigercounter_putaway");
@@ -239,7 +239,7 @@ function function_ce0fef2f2c7f1717() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4d
+// Checksum 0x0, Offset: 0x9ea
 // Size: 0x24
 function function_27b913c5a2199f7f() {
     return isdefined(self.var_bcb3e1f6f7cd3cb7) && istrue(self.var_bcb3e1f6f7cd3cb7.pulledout);
@@ -247,7 +247,7 @@ function function_27b913c5a2199f7f() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7a
+// Checksum 0x0, Offset: 0xa17
 // Size: 0xf
 function function_c5211deb59bc819a() {
     self setclientomnvar("ui_geigercounter_meter", 0);
@@ -255,7 +255,7 @@ function function_c5211deb59bc819a() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa91
+// Checksum 0x0, Offset: 0xa2e
 // Size: 0x18
 function function_7842c49c4d21bd5b(data) {
     self setclientomnvar("ui_geigercounter_meter", data);
@@ -263,8 +263,8 @@ function function_7842c49c4d21bd5b(data) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xab1
-// Size: 0x3b
+// Checksum 0x0, Offset: 0xa4e
+// Size: 0x3a
 function function_18ad59d3abd30f4() {
     var_506ef0d96798eae = self getclientomnvar("ui_geigercounter_type");
     if (var_506ef0d96798eae == 1) {
@@ -276,8 +276,8 @@ function function_18ad59d3abd30f4() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf4
-// Size: 0x3b
+// Checksum 0x0, Offset: 0xa90
+// Size: 0x3a
 function function_5600972de1b79706() {
     var_506ef0d96798eae = self getclientomnvar("ui_geigercounter_type");
     if (var_506ef0d96798eae == 1) {
@@ -289,7 +289,7 @@ function function_5600972de1b79706() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb37
+// Checksum 0x0, Offset: 0xad2
 // Size: 0x35
 function function_c8b79f6694c62ee8(overridevalue) {
     if (isdefined(overridevalue)) {
@@ -301,7 +301,7 @@ function function_c8b79f6694c62ee8(overridevalue) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb74
+// Checksum 0x0, Offset: 0xb0f
 // Size: 0x26
 function function_f0d61e14dfde9ccd(object) {
     level.var_bcb3e1f6f7cd3cb7.partition function_24bbefb4beda630d(object);
@@ -309,7 +309,7 @@ function function_f0d61e14dfde9ccd(object) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xba2
+// Checksum 0x0, Offset: 0xb3d
 // Size: 0x26
 function function_a67007b5af86ff0b(object) {
     level.var_bcb3e1f6f7cd3cb7.partition function_9cd3f5f067afea37(object);
@@ -317,8 +317,8 @@ function function_a67007b5af86ff0b(object) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd0
-// Size: 0x7f
+// Checksum 0x0, Offset: 0xb6b
+// Size: 0x7e
 function function_38c53210a5291d71(object) {
     if (!isdefined(object) || isstruct(object)) {
         return false;
@@ -329,8 +329,8 @@ function function_38c53210a5291d71(object) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc58
-// Size: 0x71
+// Checksum 0x0, Offset: 0xbf2
+// Size: 0x70
 function function_eff6d6db587f143d() {
     object = level.var_bcb3e1f6f7cd3cb7.partition function_60dbe20f8385f1b0(self.origin);
     while (function_38c53210a5291d71(object)) {
@@ -345,7 +345,7 @@ function function_eff6d6db587f143d() {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd2
+// Checksum 0x0, Offset: 0xc6b
 // Size: 0x3c
 function function_296cad0fb60ab083(var_476ba0cad41d3b92) {
     radiationpos = var_476ba0cad41d3b92.origin;
@@ -355,7 +355,7 @@ function function_296cad0fb60ab083(var_476ba0cad41d3b92) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd17
+// Checksum 0x0, Offset: 0xcb0
 // Size: 0x3c
 function function_4385c3a2905eef3b(player, var_1e331291fa3bd60) {
     return var_1e331291fa3bd60 < level.var_bcb3e1f6f7cd3cb7.radiationradius * level.var_bcb3e1f6f7cd3cb7.radiationradius;
@@ -363,8 +363,8 @@ function function_4385c3a2905eef3b(player, var_1e331291fa3bd60) {
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5c
-// Size: 0x2d2
+// Checksum 0x0, Offset: 0xcf5
+// Size: 0x2e4
 function _geigercounter_calculateGeigerCounterPulseRate(var_1e331291fa3bd60, object) {
     self notify("_geigercounter_calculateGeigerCounterPulseRate");
     self endon("_geigercounter_calculateGeigerCounterPulseRate");
@@ -411,7 +411,7 @@ function _geigercounter_calculateGeigerCounterPulseRate(var_1e331291fa3bd60, obj
 
 // Namespace geiger_counter / namespace_96abc792b7f61807
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1037
+// Checksum 0x0, Offset: 0xfe2
 // Size: 0x3a
 function function_a8a342d8f1a62582() {
     if (function_27b913c5a2199f7f()) {

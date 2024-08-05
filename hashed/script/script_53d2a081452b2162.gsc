@@ -4,7 +4,7 @@
 
 // Namespace easing / namespace_1291577eca690656
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x120
+// Checksum 0x0, Offset: 0xd9
 // Size: 0x108
 function ease_init() {
     level.ease_funcs = [];
@@ -24,7 +24,7 @@ function ease_init() {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x230
+// Checksum 0x0, Offset: 0x1e9
 // Size: 0x38
 function ease_linear(start, end, pct, ease_in, ease_out) {
     return (1 - pct) * start + pct * end;
@@ -32,7 +32,7 @@ function ease_linear(start, end, pct, ease_in, ease_out) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x271
+// Checksum 0x0, Offset: 0x22a
 // Size: 0x4b
 function ease_power(start, end, pct, ease_in, ease_out, power) {
     pct = easepower(pct, power, ease_in, ease_out);
@@ -41,7 +41,7 @@ function ease_power(start, end, pct, ease_in, ease_out, power) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c5
+// Checksum 0x0, Offset: 0x27e
 // Size: 0x44
 function function_5076f55422e87aca(start, end, pct, ease_in, ease_out) {
     pct = easepower(pct, 2, ease_in, ease_out);
@@ -50,7 +50,7 @@ function function_5076f55422e87aca(start, end, pct, ease_in, ease_out) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x312
+// Checksum 0x0, Offset: 0x2cb
 // Size: 0x44
 function ease_cubic(start, end, pct, ease_in, ease_out) {
     pct = easepower(pct, 3, ease_in, ease_out);
@@ -59,7 +59,7 @@ function ease_cubic(start, end, pct, ease_in, ease_out) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x35f
+// Checksum 0x0, Offset: 0x318
 // Size: 0x44
 function function_651839ae5c237167(start, end, pct, ease_in, ease_out) {
     pct = easepower(pct, 4, ease_in, ease_out);
@@ -68,7 +68,7 @@ function function_651839ae5c237167(start, end, pct, ease_in, ease_out) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ac
+// Checksum 0x0, Offset: 0x365
 // Size: 0x44
 function function_8ed1dfbb99ebbffb(start, end, pct, ease_in, ease_out) {
     pct = easepower(pct, 5, ease_in, ease_out);
@@ -77,7 +77,7 @@ function function_8ed1dfbb99ebbffb(start, end, pct, ease_in, ease_out) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f9
+// Checksum 0x0, Offset: 0x3b2
 // Size: 0x4b
 function function_7c81847ebfb3f5b3(start, end, pct, ease_in, ease_out, scale) {
     pct = easeexponential(pct, scale, ease_in, ease_out);
@@ -86,7 +86,7 @@ function function_7c81847ebfb3f5b3(start, end, pct, ease_in, ease_out, scale) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x44d
+// Checksum 0x0, Offset: 0x406
 // Size: 0x4b
 function function_26eb6629640c404b(start, end, pct, ease_in, ease_out, log_base) {
     pct = easelogarithmic(pct, log_base, ease_in, ease_out);
@@ -95,7 +95,7 @@ function function_26eb6629640c404b(start, end, pct, ease_in, ease_out, log_base)
 
 // Namespace easing / namespace_1291577eca690656
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a1
+// Checksum 0x0, Offset: 0x45a
 // Size: 0x42
 function ease_sine(start, end, pct, ease_in, ease_out) {
     pct = easesine(pct, ease_in, ease_out);
@@ -104,7 +104,7 @@ function ease_sine(start, end, pct, ease_in, ease_out) {
 
 // Namespace easing / namespace_1291577eca690656
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ec
+// Checksum 0x0, Offset: 0x4a5
 // Size: 0x55
 function ease_back(start, end, pct, ease_in, ease_out, var_210d57017070b86f, power) {
     pct = easeback(pct, var_210d57017070b86f, power, ease_in, ease_out);
@@ -113,7 +113,7 @@ function ease_back(start, end, pct, ease_in, ease_out, var_210d57017070b86f, pow
 
 // Namespace easing / namespace_1291577eca690656
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x54a
+// Checksum 0x0, Offset: 0x503
 // Size: 0x5f
 function function_d66c45282cb1cbcf(start, end, pct, ease_in, ease_out, amplitude, frequency, fade_scalar) {
     pct = easeelastic(pct, amplitude, frequency, fade_scalar, ease_in, ease_out);
@@ -122,7 +122,7 @@ function function_d66c45282cb1cbcf(start, end, pct, ease_in, ease_out, amplitude
 
 // Namespace easing / namespace_1291577eca690656
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b2
+// Checksum 0x0, Offset: 0x56b
 // Size: 0x55
 function ease_bounce(start, end, pct, ease_in, ease_out, bounces, decay_scalar) {
     pct = easebounce(pct, bounces, decay_scalar, ease_in, ease_out);
@@ -131,7 +131,7 @@ function ease_bounce(start, end, pct, ease_in, ease_out, bounces, decay_scalar) 
 
 // Namespace easing / namespace_1291577eca690656
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x610
+// Checksum 0x0, Offset: 0x5c9
 // Size: 0x61
 function ease_dvar(dvar, value, time, ease_type, ease_in, ease_out, ease_param1, ease_param2, ease_param3) {
     function_5a51a4e5eec18b00(&setdvar, dvar, value, time, ease_type, ease_in, ease_out, ease_param1, ease_param2, ease_param3);
@@ -139,7 +139,7 @@ function ease_dvar(dvar, value, time, ease_type, ease_in, ease_out, ease_param1,
 
 // Namespace easing / namespace_1291577eca690656
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x679
+// Checksum 0x0, Offset: 0x632
 // Size: 0x61
 function function_106f0697ee4d2c55(dvar, value, time, ease_type, ease_in, ease_out, ease_param1, ease_param2, ease_param3) {
     function_5a51a4e5eec18b00(&setsaveddvar, dvar, value, time, ease_type, ease_in, ease_out, ease_param1, ease_param2, ease_param3);
@@ -147,8 +147,8 @@ function function_106f0697ee4d2c55(dvar, value, time, ease_type, ease_in, ease_o
 
 // Namespace easing / namespace_1291577eca690656
 // Params 10, eflags: 0x4
-// Checksum 0x0, Offset: 0x6e2
-// Size: 0x191
+// Checksum 0x0, Offset: 0x69b
+// Size: 0x194
 function private function_5a51a4e5eec18b00(dvar_func, dvar, value, time, ease_type, ease_in, ease_out, ease_param1, ease_param2, ease_param3) {
     assert(isdefined(level.ease_funcs));
     assert(isdefined(level.ease_funcs[ease_type]));

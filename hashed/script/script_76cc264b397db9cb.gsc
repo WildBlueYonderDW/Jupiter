@@ -8,14 +8,13 @@
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x246
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x1fe
+// Size: 0x6c
 function init() {
     level.maxsquadsize = getdvarint(@"party_maxSquadSize", 1);
     if (level.maxsquadsize && function_a9cb1bbce9eb3d1b()) {
         level.maxsquadsize = level.maxteamsize;
     }
-    level.var_74add5a4a809f2af = getdvarint(@"hash_588ca000194bdbe1", level.maxsquadsize);
     level.usesquadleader = getdvarint(@"hash_56fe5e64db58eb48", 1);
     if (shouldmodesetsquads()) {
         initsquaddata();
@@ -24,8 +23,8 @@ function init() {
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2da
-// Size: 0x71
+// Checksum 0x0, Offset: 0x272
+// Size: 0x6e
 function initsquaddata() {
     level.squaddata = [];
     foreach (entry in level.teamnamelist) {
@@ -38,8 +37,8 @@ function initsquaddata() {
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x353
-// Size: 0x3a1
+// Checksum 0x0, Offset: 0x2e8
+// Size: 0x2d1
 function setsquad(team, index) {
     if (!shouldmodesetsquads()) {
         return;
@@ -75,12 +74,7 @@ function setsquad(team, index) {
         joinsquad(team, index);
         return;
     }
-    allowSquadFill = 1;
-    if (isdefined(level.var_1a9fc9c6bae428db)) {
-        allowSquadFill = [[ level.var_1a9fc9c6bae428db ]](self);
-    }
-    if (istrue(level.matchmakingmatch) && getdvarint(@"hash_3f2e64cb0f312641", 0) != 1) {
-        var_ebfb1594ba861d16 = istrue(level.var_d50f1d3b1431cf6b);
+    if (istrue(level.matchmakingmatch)) {
         fireteammembers = self getfireteammembers();
         if (isdefined(fireteammembers) && fireteammembers.size > 0) {
             squadindex = undefined;
@@ -92,40 +86,27 @@ function setsquad(team, index) {
             }
             if (isdefined(squadindex)) {
                 joinsquad(team, squadindex);
-                if (self isfireteamleader() && var_ebfb1594ba861d16) {
-                    data = level.squaddata[team][squadindex];
-                    data.var_1d135524e5154d9b = allowSquadFill;
-                }
+                return;
+            } else {
+                requestnewsquad(team, 1);
                 return;
             }
         }
-        if (self getprivatepartysize() > 1) {
-            requestnewsquad(team, 1, var_ebfb1594ba861d16);
+    }
+    foreach (squad in level.squaddata[team]) {
+        isfull = squad.players.size == level.maxsquadsize;
+        if (!squad.isfireteam && !isfull) {
+            joinsquad(team, squad.index);
             return;
         }
     }
-    foreach (squad in level.squaddata[team]) {
-        if (!istrue(squad.var_1d135524e5154d9b)) {
-            continue;
-        }
-        if (squad.players.size >= level.var_74add5a4a809f2af) {
-            continue;
-        }
-        if (istrue(level.matchmakingmatch)) {
-            if (squad.isfireteam && squad.players[0] getprivatepartysize() > squad.players.size) {
-                continue;
-            }
-        }
-        joinsquad(team, squad.index);
-        return;
-    }
-    requestnewsquad(team, 0, allowSquadFill);
+    requestnewsquad(team, 0);
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fc
-// Size: 0x104
+// Checksum 0x0, Offset: 0x5c1
+// Size: 0xc8
 function createsquad(team, index) {
     if (!isdefined(level.uniquesquadid)) {
         level.uniquesquadid = 0;
@@ -137,74 +118,56 @@ function createsquad(team, index) {
     data.index = index;
     data.team = team;
     data.isfireteam = 0;
-    data.var_1d135524e5154d9b = 1;
     data.players = [];
     data.squadleader = undefined;
     data.skydivezoneindex = undefined;
     data.properties = [];
-    if (!isdefined(level.squaddata[team])) {
-        level.squaddata[team] = [];
-    }
     level.squaddata[team][index] = data;
-    if (index >= level.uniquesquadid) {
-        level.uniquesquadid = index + 1;
-    }
+    level.uniquesquadid++;
     callback::callback("squad_created", data);
     return index;
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x809
+// Checksum 0x0, Offset: 0x692
 // Size: 0x20
 function freesquadindex(team, index) {
     level.squaddata[team][index] = undefined;
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x831
-// Size: 0x7d
-function requestnewsquad(team, isfireteam, var_1d135524e5154d9b) {
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x6ba
+// Size: 0x51
+function requestnewsquad(team, isfireteam) {
     index = createsquad(team);
     data = level.squaddata[team][index];
     data.infil = undefined;
-    if (isdefined(isfireteam)) {
-        data.isfireteam = isfireteam;
-    }
-    if (isdefined(var_1d135524e5154d9b)) {
-        data.var_1d135524e5154d9b = var_1d135524e5154d9b;
-    }
     joinsquad(team, index);
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b6
-// Size: 0x14d
+// Checksum 0x0, Offset: 0x713
+// Size: 0xb8
 function joinsquad(team, index) {
     if (!isdefined(level.squaddata[team][index])) {
         createsquad(team, index);
     }
     self.sessionsquadid = index;
     self.var_3f78c6a0862f9e25 = function_eec90fb96d0aff02(team, index);
-    if (!isdefined(level.squaddata[team][index].players)) {
-        level.squaddata[team][index].players = [];
-    }
     level.squaddata[team][index].players[level.squaddata[team][index].players.size] = self;
     choosesquadleader(team, index);
-    if (getdvarint(@"hash_e1cce0c7778e6dd3", 0)) {
-        logstring("[SQUAD DEBUG] Player joined squad. Player: " + self.name + ", Session Squad ID: " + self.sessionsquadid + ", Session UI Member Index: " + self.var_3f78c6a0862f9e25);
-    }
     namespace_c31609f90efcf2ca::onplayerjoinsquad(self);
-    callback::callback(#"hash_cc06eb1d45f33a0c", {#memberindex:self.var_3f78c6a0862f9e25, #index:self.sessionsquadid, #team:team});
+    callback::callback(#"hash_cc06eb1d45f33a0c", {#index:index, #team:team});
     self notify("joined_squad");
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa0b
-// Size: 0x2ff
+// Checksum 0x0, Offset: 0x7d3
+// Size: 0x285
 function leavesquad(team, index) {
     if (!shouldmodesetsquads()) {
         return;
@@ -212,17 +175,11 @@ function leavesquad(team, index) {
     if (!isdefined(team) || team == "spectator" || team == "codcaster" || !isdefined(index) || !isdefined(level.squaddata)) {
         return;
     }
-    assertex(isdefined(level.squaddata[team][index]), "<dev string:x1c>");
-    if (!isdefined(level.squaddata[team][index])) {
-        return;
-    }
+    assertex(isdefined(level.squaddata[team][index]), "Squad data for player is undefined");
     if (level.squaddata[team][index].players.size == 1) {
         freesquadindex(team, index);
-        callback::callback(#"hash_cef9136f9b434dc1", {#memberindex:self.var_3f78c6a0862f9e25, #index:index, #team:team});
+        callback::callback(#"hash_cef9136f9b434dc1", {#index:index, #team:team});
         return;
-    }
-    if (getdvarint(@"hash_e1cce0c7778e6dd3", 0)) {
-        logstring("[SQUAD DEBUG] PLayer leaving squad. Player: " + self.name + ", Session Squad ID: " + index + ", Session UI Member Index: " + self.var_3f78c6a0862f9e25);
     }
     self.var_71afb85ec1cc06f8 = self.var_3f78c6a0862f9e25;
     self.var_3f78c6a0862f9e25 = -1;
@@ -236,7 +193,7 @@ function leavesquad(team, index) {
         }
     }
     namespace_c31609f90efcf2ca::function_2a1e4811621fdcde(self);
-    callback::callback(#"hash_cef9136f9b434dc1", {#memberindex:self.var_71afb85ec1cc06f8, #index:index, #team:team});
+    callback::callback(#"hash_cef9136f9b434dc1", {#index:index, #team:team});
     level.squaddata[team][index].players = array_remove(level.squaddata[team][index].players, self);
     if (istrue(var_aa17b95935a5047f)) {
         squadmembers = array_randomize(level.squaddata[team][index].players);
@@ -251,7 +208,7 @@ function leavesquad(team, index) {
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd12
+// Checksum 0x0, Offset: 0xa60
 // Size: 0x5e
 function function_9be60342a8babba5() {
     if (issharedfuncdefined("teamAssim", "isEnabled") && [[ getsharedfunc("teamAssim", "isEnabled") ]]()) {
@@ -265,15 +222,15 @@ function function_9be60342a8babba5() {
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd78
-// Size: 0x11c
+// Checksum 0x0, Offset: 0xac6
+// Size: 0x109
 function function_eec90fb96d0aff02(team, index) {
     availableindices = [];
     for (i = 0; i < function_9be60342a8babba5(); i++) {
         availableindices[i] = 1;
     }
     foreach (player in level.squaddata[team][index].players) {
-        if (isdefined(player.var_3f78c6a0862f9e25) && player.var_3f78c6a0862f9e25 >= 0) {
+        if (player.var_3f78c6a0862f9e25 >= 0) {
             availableindices[player.var_3f78c6a0862f9e25] = 0;
         }
     }
@@ -282,26 +239,26 @@ function function_eec90fb96d0aff02(team, index) {
             return index;
         }
     }
-    assertmsg("<dev string:x42>");
+    assertmsg("getAvailableSquadMemberIndex() unable to find available index!");
     return undefined;
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9d
-// Size: 0x52
-function changesquad(team, oldteam, index) {
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0xbd8
+// Size: 0x4a
+function changesquad(team, index) {
     if (isdefined(self.sessionsquadid) && self.sessionsquadid == index) {
         return;
     }
-    leavesquad(oldteam, self.sessionsquadid);
+    leavesquad(team, self.sessionsquadid);
     joinsquad(team, index);
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xef7
-// Size: 0x2dc
+// Checksum 0x0, Offset: 0xc2a
+// Size: 0x2e0
 function updatesquadomnvars(team, squadindex) {
     if (!shouldmodesetsquads() || !isdefined(level.squaddata)) {
         return;
@@ -354,16 +311,8 @@ function updatesquadomnvars(team, squadindex) {
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11db
-// Size: 0x12
-function function_3d93807e453d0770() {
-    return scripts\cp_mp\utility\game_utility::function_fa7bfcc1d68b7b73() || scripts\cp_mp\utility\game_utility::function_6910a4c65560c44b();
-}
-
-// Namespace squads / namespace_9bb409deb69fb31d
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f6
+// Checksum 0x0, Offset: 0xf12
 // Size: 0x1b6
 function choosesquadleader(team, index) {
     if (!istrue(level.usesquadleader)) {
@@ -379,7 +328,7 @@ function choosesquadleader(team, index) {
     candidate = self;
     if (!var_ddb8d98c593d15de) {
         currentleader = getsquadleader(team, index);
-        if (function_3d93807e453d0770()) {
+        if (scripts\cp_mp\utility\game_utility::function_fa7bfcc1d68b7b73()) {
             if (isdefined(currentleader) && !isai(currentleader)) {
                 return;
             }
@@ -410,7 +359,7 @@ function choosesquadleader(team, index) {
 
     // Namespace squads / namespace_9bb409deb69fb31d
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13b4
+    // Checksum 0x0, Offset: 0x10d0
     // Size: 0x240
     function debugprintsquads() {
         stepy = 25;
@@ -419,17 +368,17 @@ function choosesquadleader(team, index) {
                 startx = 800;
                 starty = 25;
                 linecount = 1;
-                printtoscreen2d(startx, starty, "<dev string:x84>", (1, 1, 1), 1);
-                foreach (team, var_70643c8580524236 in level.squaddata) {
+                printtoscreen2d(startx, starty, "<dev string:x1c>", (1, 1, 1), 1);
+                foreach (var_70643c8580524236 in level.squaddata) {
                     linecount = 1;
-                    printtoscreen2d(startx, starty + stepy * linecount, "<dev string:x92>" + team, (1, 1, 1), 1);
+                    printtoscreen2d(startx, starty + stepy * linecount, "<dev string:x27>" + team, (1, 1, 1), 1);
                     linecount++;
                     foreach (squad in var_70643c8580524236) {
                         color = (1, 1, 1);
                         if (isdefined(squad.activemission)) {
                             color = (1, 1, 0);
                         }
-                        printtoscreen2d(startx + 25, starty + stepy * linecount, "<dev string:x9c>" + squad.index, color, 1);
+                        printtoscreen2d(startx + 25, starty + stepy * linecount, "<dev string:x2e>" + squad.index, color, 1);
                         linecount++;
                         foreach (player in squad.players) {
                             color = (1, 1, 1);
@@ -451,11 +400,11 @@ function choosesquadleader(team, index) {
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15fc
+// Checksum 0x0, Offset: 0x1318
 // Size: 0xe0
 function getsquaddata(team, sessionsquadid, property) {
-    assertex(isdefined(level.squaddata[team][sessionsquadid]), "<dev string:xa7>" + team + "<dev string:xc5>" + sessionsquadid + "<dev string:xcb>");
-    assertex(function_be6ce63a202791c5(team, sessionsquadid, property), "<dev string:xa7>" + team + "<dev string:xc5>" + sessionsquadid + "<dev string:xc5>" + property + "<dev string:xcb>");
+    assertex(isdefined(level.squaddata[team][sessionsquadid]), "UNDEFINED level.squadData[" + team + "][" + sessionsquadid + "]");
+    assertex(function_be6ce63a202791c5(team, sessionsquadid, property), "UNDEFINED level.squadData[" + team + "][" + sessionsquadid + "][" + property + "]");
     if (isdefined(level.squaddata[team][sessionsquadid]) && isdefined(level.squaddata[team][sessionsquadid].properties) && isdefined(level.squaddata[team][sessionsquadid].properties[property])) {
         return level.squaddata[team][sessionsquadid].properties[property];
     }
@@ -464,21 +413,21 @@ function getsquaddata(team, sessionsquadid, property) {
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x16e4
+// Checksum 0x0, Offset: 0x1400
 // Size: 0xa9
 function function_a20a10ce593f692b(team, sessionsquadid, property, value) {
-    assertex(isdefined(level.squaddata[team][sessionsquadid]), "<dev string:xa7>" + team + "<dev string:xc5>" + sessionsquadid + "<dev string:xcb>");
-    assertex(function_be6ce63a202791c5(team, sessionsquadid, property), "<dev string:xa7>" + team + "<dev string:xc5>" + sessionsquadid + "<dev string:xc5>" + property + "<dev string:xcb>");
-    assertex(isdefined(value), "<dev string:xd0>");
+    assertex(isdefined(level.squaddata[team][sessionsquadid]), "UNDEFINED level.squadData[" + team + "][" + sessionsquadid + "]");
+    assertex(function_be6ce63a202791c5(team, sessionsquadid, property), "UNDEFINED level.squadData[" + team + "][" + sessionsquadid + "][" + property + "]");
+    assertex(isdefined(value), "setSquadData() undefined value");
     level.squaddata[team][sessionsquadid].properties[property] = value;
 }
 
 // Namespace squads / namespace_9bb409deb69fb31d
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1795
+// Checksum 0x0, Offset: 0x14b1
 // Size: 0x7e
 function function_be6ce63a202791c5(team, sessionsquadid, property) {
-    assertex(isdefined(level.squaddata[team][sessionsquadid]), "<dev string:xa7>" + team + "<dev string:xc5>" + sessionsquadid + "<dev string:xcb>");
+    assertex(isdefined(level.squaddata[team][sessionsquadid]), "UNDEFINED level.squadData[" + team + "][" + sessionsquadid + "]");
     if (!isdefined(level.squaddata[team][sessionsquadid].properties)) {
         return false;
     }

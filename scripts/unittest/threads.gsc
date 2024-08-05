@@ -4,7 +4,7 @@
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f4
+// Checksum 0x0, Offset: 0x423
 // Size: 0x32
 function thread_wait() {
     test_print("thread_wait: 0");
@@ -16,7 +16,7 @@ function thread_wait() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x52e
+// Checksum 0x0, Offset: 0x45d
 // Size: 0x2d
 function f_resume(i) {
     test_print("f_resume: 0: " + i);
@@ -26,8 +26,8 @@ function f_resume(i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x563
-// Size: 0x2b
+// Checksum 0x0, Offset: 0x492
+// Size: 0x2a
 function thread_resume() {
     for (i = 0; i < 10; i++) {
         thread f_resume(i);
@@ -37,7 +37,7 @@ function thread_resume() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x596
+// Checksum 0x0, Offset: 0x4c4
 // Size: 0x55
 function f_notify(i) {
     test_print("f_notify wait: " + i);
@@ -47,8 +47,8 @@ function f_notify(i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f3
-// Size: 0x34
+// Checksum 0x0, Offset: 0x521
+// Size: 0x33
 function thread_wait_notify() {
     for (i = 0; i < 10; i++) {
         thread f_notify(i);
@@ -58,7 +58,7 @@ function thread_wait_notify() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x62f
+// Checksum 0x0, Offset: 0x55c
 // Size: 0xc
 function thread_terminate_child() {
     level notify("thread_terminate_endon");
@@ -67,7 +67,7 @@ function thread_terminate_child() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x644
+// Checksum 0x0, Offset: 0x571
 // Size: 0x14
 function thread_terminate_wrapper() {
     level endon("thread_terminate_endon");
@@ -77,8 +77,8 @@ function thread_terminate_wrapper() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x661
-// Size: 0x36
+// Checksum 0x0, Offset: 0x58e
+// Size: 0x35
 function thread_terminate_notify() {
     x = thread_terminate_wrapper();
     if (!isdefined(x)) {
@@ -90,7 +90,7 @@ function thread_terminate_notify() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x69f
+// Checksum 0x0, Offset: 0x5cb
 // Size: 0x3a
 function f_match(notifystr, i) {
     test_print("f_match wait: " + i);
@@ -100,7 +100,7 @@ function f_match(notifystr, i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e1
+// Checksum 0x0, Offset: 0x60d
 // Size: 0x2d
 function waittillmatch_wait(index) {
     test_print("waittillmatch_wait: " + index);
@@ -110,7 +110,7 @@ function waittillmatch_wait(index) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x716
+// Checksum 0x0, Offset: 0x642
 // Size: 0x33
 function waittillmatch_loop(index) {
     level endon("waittillmatch_end");
@@ -122,7 +122,7 @@ function waittillmatch_loop(index) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x751
+// Checksum 0x0, Offset: 0x67d
 // Size: 0xaa
 function thread_waittill_match() {
     notifystr = "f";
@@ -146,7 +146,7 @@ function thread_waittill_match() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x803
+// Checksum 0x0, Offset: 0x72f
 // Size: 0x26
 function f_endon(i) {
     level endon("f_endon");
@@ -158,7 +158,7 @@ function f_endon(i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x831
+// Checksum 0x0, Offset: 0x75d
 // Size: 0x56
 function stack_endon_recurse(i) {
     if (i < 0) {
@@ -173,7 +173,7 @@ function stack_endon_recurse(i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x88f
+// Checksum 0x0, Offset: 0x7bb
 // Size: 0x12
 function stack_endon() {
     level endon("stack_endon");
@@ -182,8 +182,8 @@ function stack_endon() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a9
-// Size: 0x52
+// Checksum 0x0, Offset: 0x7d5
+// Size: 0x51
 function thread_endon() {
     for (i = 0; i < 10; i++) {
         thread f_endon(i);
@@ -197,8 +197,8 @@ function thread_endon() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x903
-// Size: 0x43
+// Checksum 0x0, Offset: 0x82e
+// Size: 0x42
 function f_churn(i) {
     test_print("f_churn wait: " + i);
     x = level waittill("churn");
@@ -207,8 +207,8 @@ function f_churn(i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x94e
-// Size: 0x25
+// Checksum 0x0, Offset: 0x878
+// Size: 0x24
 function thread_churn() {
     for (i = 0; i < 10; i++) {
         thread f_churn(i);
@@ -217,7 +217,7 @@ function thread_churn() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x97b
+// Checksum 0x0, Offset: 0x8a4
 // Size: 0xc
 function thread_churn_notify() {
     level notify("churn", 4);
@@ -225,7 +225,7 @@ function thread_churn_notify() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98f
+// Checksum 0x0, Offset: 0x8b8
 // Size: 0x28
 function f_waitframe(i) {
     test_print("f_waitframe wait: " + i);
@@ -235,8 +235,8 @@ function f_waitframe(i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9bf
-// Size: 0x25
+// Checksum 0x0, Offset: 0x8e8
+// Size: 0x24
 function thread_waitframe() {
     for (i = 0; i < 10; i++) {
         thread f_waitframe(i);
@@ -245,7 +245,7 @@ function thread_waitframe() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ec
+// Checksum 0x0, Offset: 0x914
 // Size: 0x28
 function f_waitframeend(i) {
     test_print("f_waitframeend wait: " + i);
@@ -255,8 +255,8 @@ function f_waitframeend(i) {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1c
-// Size: 0x25
+// Checksum 0x0, Offset: 0x944
+// Size: 0x24
 function thread_waitframeend() {
     for (i = 0; i < 10; i++) {
         thread f_waitframeend(i);
@@ -265,8 +265,8 @@ function thread_waitframeend() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa49
-// Size: 0x38
+// Checksum 0x0, Offset: 0x970
+// Size: 0x37
 function f_running_func() {
     for (i = 0; true; i++) {
         test_print("f_running: " + i);
@@ -279,7 +279,7 @@ function f_running_func() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8a
+// Checksum 0x0, Offset: 0x9b0
 // Size: 0xf
 function f_running_func_call() {
     level endon("f_running");
@@ -288,7 +288,7 @@ function f_running_func_call() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa2
+// Checksum 0x0, Offset: 0x9c8
 // Size: 0x10
 function f_running_thread_call() {
     level endon("f_running");
@@ -297,7 +297,7 @@ function f_running_thread_call() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xabb
+// Checksum 0x0, Offset: 0x9e1
 // Size: 0x21
 function f_running_nested_1() {
     test_print("f_nested_1: pre");
@@ -307,7 +307,7 @@ function f_running_nested_1() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xae4
+// Checksum 0x0, Offset: 0xa0a
 // Size: 0x28
 function f_running_nested_2() {
     level endon("f_running");
@@ -318,7 +318,7 @@ function f_running_nested_2() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb14
+// Checksum 0x0, Offset: 0xa3a
 // Size: 0x21
 function f_running_nested_3() {
     test_print("f_nested_3: pre");
@@ -328,7 +328,7 @@ function f_running_nested_3() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3d
+// Checksum 0x0, Offset: 0xa63
 // Size: 0x29
 function f_running_nested_4() {
     test_print("f_nested_4: pre");
@@ -339,7 +339,7 @@ function f_running_nested_4() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6e
+// Checksum 0x0, Offset: 0xa94
 // Size: 0xe
 function f_running_nested_5() {
     test_print("f_nested_5");
@@ -347,7 +347,7 @@ function f_running_nested_5() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb84
+// Checksum 0x0, Offset: 0xaaa
 // Size: 0x22
 function f_running_nested_call() {
     test_print("f_nested: pre");
@@ -357,8 +357,8 @@ function f_running_nested_call() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbae
-// Size: 0x54
+// Checksum 0x0, Offset: 0xad4
+// Size: 0x53
 function thread_running_notify() {
     i = thread f_running_func_call();
     test_print("thread_running_func_call: IsDefined: " + isdefined(i));
@@ -370,7 +370,7 @@ function thread_running_notify() {
 
 // Namespace unittest_threads / scripts\unittest\threads
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0a
+// Checksum 0x0, Offset: 0xb2f
 // Size: 0x98
 function main() {
     test_begin("Threads");

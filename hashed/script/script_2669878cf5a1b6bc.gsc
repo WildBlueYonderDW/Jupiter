@@ -9,15 +9,15 @@
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0e
-// Size: 0x281
+// Checksum 0x0, Offset: 0x1301
+// Size: 0x284
 function buildweapon_blueprintwithcustomattachments(rootname, attachments, camo, reticle, variantid, attachmentids, cosmeticattachment, stickers, var_11a1fa68aeb971c0) {
     var_c7bd95b10c89cff8 = weaponassetnamemap(rootname, variantid);
     var_91bbf8d2294a656e = [];
     blockedslots = [];
     blockedtypes = [];
     if (isdefined(attachments)) {
-        assertex(!isdefined(attachmentids) || attachments.size == attachmentids.size, "<dev string:x1c>");
+        assertex(!isdefined(attachmentids) || attachments.size == attachmentids.size, "buildWeapon_variantWithCustomAttachments() passed attachmentIDs array not of the same size as the passed attachments array.");
         foreach (idx, attachment in attachments) {
             var_1fce8439ed13e7b3 = function_891b1fb6a51b97b0(var_c7bd95b10c89cff8, attachment);
             slotsblocked = function_c6d15635447865c5(var_c7bd95b10c89cff8, attachment);
@@ -57,8 +57,8 @@ function buildweapon_blueprintwithcustomattachments(rootname, attachments, camo,
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1098
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x158e
+// Size: 0xd3
 function buildweapon_blueprint(rootname, camo, reticle, variantid, cosmeticattachment, stickers, var_11a1fa68aeb971c0) {
     var_91bbf8d2294a656e = weaponattachcustomtoidmap(rootname, variantid);
     if (!isdefined(var_91bbf8d2294a656e)) {
@@ -76,12 +76,12 @@ function buildweapon_blueprint(rootname, camo, reticle, variantid, cosmeticattac
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1176
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x166a
+// Size: 0xbe
 function buildweapon_attachmentidmap(rootname, var_91bbf8d2294a656e, camo, reticle, variantid, cosmeticattachment, stickers, var_11a1fa68aeb971c0) {
     attachments = [];
     attachmentids = [];
-    foreach (attachment, id in var_91bbf8d2294a656e) {
+    foreach (id in var_91bbf8d2294a656e) {
         attachments[attachments.size] = attachment;
         attachmentids[attachmentids.size] = id;
     }
@@ -90,8 +90,8 @@ function buildweapon_attachmentidmap(rootname, var_91bbf8d2294a656e, camo, retic
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x123e
-// Size: 0x3f6
+// Checksum 0x0, Offset: 0x1731
+// Size: 0x408
 function buildweapon(rootname, attachments, camo, reticle, variantid, attachmentids, cosmeticattachment, stickers, var_11a1fa68aeb971c0, attachmenttuning) {
     var_4cc9de3064c7cf51 = level.var_ec2fb549b15ad827;
     if (!istrue(iskillstreakplayerweapon(rootname))) {
@@ -102,7 +102,7 @@ function buildweapon(rootname, attachments, camo, reticle, variantid, attachment
         return minigunweaponobj;
     }
     if (isdefined(attachments)) {
-        assertex(isarray(attachments), "<dev string:x9b>");
+        assertex(isarray(attachments), "buildWeapon() passed invalid attachment array.");
     } else {
         attachments = [];
     }
@@ -126,6 +126,7 @@ function buildweapon(rootname, attachments, camo, reticle, variantid, attachment
             continue;
         }
         var_379ca50ca75be2a9 = 0;
+        var_c7bd95b10c89cff8 = weaponassetnamemap(rootname, variantid);
         attachvariants = function_55db7a4374ed4b1b(var_c7bd95b10c89cff8, attachment);
         foreach (id in attachvariants) {
             if (attachmentid == id) {
@@ -140,7 +141,7 @@ function buildweapon(rootname, attachments, camo, reticle, variantid, attachment
         weaponobj = weaponobj withattachment(attachment);
     }
     if (istrue(var_11a1fa68aeb971c0)) {
-        if (weaponsupportslaserir(var_c7bd95b10c89cff8, weaponobj) && function_8a96b90526c40df6(weaponobj, attachments)) {
+        if (weaponsupportslaserir(var_c7bd95b10c89cff8) && function_8a96b90526c40df6(weaponobj, attachments)) {
             var_38d50ff0e9ee470f = getweaponnvgattachment(weaponobj);
             if (var_38d50ff0e9ee470f != "invalid" && !isdefined(var_91bbf8d2294a656e[var_38d50ff0e9ee470f])) {
                 weaponobj = weaponobj withattachment(var_38d50ff0e9ee470f);
@@ -172,9 +173,9 @@ function buildweapon(rootname, attachments, camo, reticle, variantid, attachment
         }
     }
     /#
-        if (isdefined(reticle) && reticle != "<dev string:xcd>") {
-            assertex(isdefined(weaponobj.scope), "<dev string:xd5>");
-            assertex(!isstartstr(weaponobj.scope, "<dev string:x121>"), "<dev string:x131>");
+        if (isdefined(reticle) && reticle != "<dev string:x1c>") {
+            assertex(isdefined(weaponobj.scope), "<dev string:x21>");
+            assertex(!isstartstr(weaponobj.scope, "<dev string:x6a>"), "<dev string:x77>");
         }
     #/
     return weaponobj;
@@ -182,8 +183,8 @@ function buildweapon(rootname, attachments, camo, reticle, variantid, attachment
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x163d
-// Size: 0x493
+// Checksum 0x0, Offset: 0x1b42
+// Size: 0x345
 function function_c7cb2ebf3712dc6c(rootname, var_91bbf8d2294a656e, variantid, var_c7bd95b10c89cff8, attachments) {
     if (!isdefined(var_91bbf8d2294a656e)) {
         var_91bbf8d2294a656e = [];
@@ -195,7 +196,6 @@ function function_c7cb2ebf3712dc6c(rootname, var_91bbf8d2294a656e, variantid, va
         var_3f065af353909441 = [];
     }
     var_c7bd95b10c89cff8 = function_72376783a92be46(rootname);
-    var_85b2a5343fc91ccb = weaponassetnamemap(rootname, variantid);
     var_f644cf7e62ab4d95 = function_d7f1989d63343007(var_c7bd95b10c89cff8, attachments);
     var_234557a232185389 = [];
     var_55559af28dcac702 = [];
@@ -228,13 +228,13 @@ function function_c7cb2ebf3712dc6c(rootname, var_91bbf8d2294a656e, variantid, va
     }
     attachmentsextra = [];
     level.var_79b6f061be629059 = [];
-    foreach (attachment, attachmentid in var_71daf4388d8cc783) {
+    foreach (attachmentid in var_71daf4388d8cc783) {
         extra = attachmentmap_toextra(attachment);
         if (isdefined(extra)) {
             foreach (extraattach in extra) {
                 var_201c473ebb366b33 = 0;
                 if (isdefined(variantid)) {
-                    var_201c473ebb366b33 = attachmentmap_extratovariantid(extraattach, rootname, variantid);
+                    var_201c473ebb366b33 = attachmentmap_extratovariantid(extraattach, rootname, variantid, attachmentid);
                 } else if (attachmentid != 0) {
                     var_201c473ebb366b33 = attachmentid;
                 }
@@ -243,47 +243,20 @@ function function_c7cb2ebf3712dc6c(rootname, var_91bbf8d2294a656e, variantid, va
             }
         }
     }
-    if (var_85b2a5343fc91ccb == "iw9_sh_charlie725_v10" && attachmentsextra < 1) {
-        attachmentsextra["charlie725_doom_blueprint_tuning"] = 4;
-    }
     if (attachmentsextra.size > 0) {
         var_71daf4388d8cc783 = array_combine_unique_keys(var_71daf4388d8cc783, attachmentsextra);
     }
     if (var_71daf4388d8cc783.size > 0) {
         var_71daf4388d8cc783 = filterattachmenttoidmap(var_71daf4388d8cc783, rootname, var_c7bd95b10c89cff8, var_91bbf8d2294a656e, attachments);
     }
-    if (isdefined(variantid) && variantid > 0) {
-        var_7f1a6289b5bc7357 = undefined;
-        var_c92002be65259b4e = undefined;
-        foreach (attachment, attachmentid in var_71daf4388d8cc783) {
-            attachmentscriptbundle = getscriptbundle(hashcat(%"hash_3c2c9813bb16552f", attachment));
-            if (isdefined(attachmentscriptbundle)) {
-                if (attachmentscriptbundle.category == "CONVERSIONKIT") {
-                    var_c92002be65259b4e = attachment;
-                    var_7f1a6289b5bc7357 = function_a9ead06bcb3c0be4(rootname, attachment, attachmentid);
-                    break;
-                }
-            }
-        }
-        if (isdefined(var_c92002be65259b4e) && isdefined(var_71daf4388d8cc783) && isdefined(var_7f1a6289b5bc7357)) {
-            var_79b6f061be629059 = attachmentmap_toextra(var_c92002be65259b4e);
-            if (isdefined(var_79b6f061be629059)) {
-                foreach (attachment, variantid in var_71daf4388d8cc783) {
-                    if (isdefined(var_79b6f061be629059[attachment]) && isdefined(var_7f1a6289b5bc7357[attachment])) {
-                        var_71daf4388d8cc783[attachment] = var_7f1a6289b5bc7357[attachment];
-                    }
-                }
-            }
-        }
-    }
-    assertex(var_71daf4388d8cc783.size <= 14, "<dev string:x182>");
+    assertex(var_71daf4388d8cc783.size <= 14, "buildWeapon() ended up with over 14 attachments after mods and defaults were added.");
     return var_71daf4388d8cc783;
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad9
-// Size: 0x3f4
+// Checksum 0x0, Offset: 0x1e90
+// Size: 0x3c4
 function filterattachmenttoidmap(var_91bbf8d2294a656e, weaponname, var_c7bd95b10c89cff8, var_3e66176ed86556b4, attachments) {
     filtered = [];
     attachments = [];
@@ -302,18 +275,12 @@ function filterattachmenttoidmap(var_91bbf8d2294a656e, weaponname, var_c7bd95b10
             }
         }
     }
-    if (iskillstreakweapon(weaponname)) {
-        weaponasset = weaponname;
-    } else {
-        rootname = getweaponrootname(weaponname);
-        weaponasset = weaponassetnamemap(rootname);
-    }
     foreach (var_7d28a5543f741df1, id1 in var_12537f9ef0bc941e) {
         foreach (var_cda1b0c40c7958fd, id2 in var_91bbf8d2294a656e) {
             if (var_7d28a5543f741df1 == var_cda1b0c40c7958fd) {
                 continue;
             }
-            conflictstring = attachmentsconflict(var_cda1b0c40c7958fd, var_7d28a5543f741df1, weaponname, slotschecked, weaponasset);
+            conflictstring = attachmentsconflict(var_cda1b0c40c7958fd, var_7d28a5543f741df1, weaponname, slotschecked);
             if (conflictstring == var_7d28a5543f741df1) {
                 var_7cb73d334cb60b70 = array_remove_key(var_7cb73d334cb60b70, var_cda1b0c40c7958fd);
             }
@@ -321,7 +288,7 @@ function filterattachmenttoidmap(var_91bbf8d2294a656e, weaponname, var_c7bd95b10
     }
     var_91bbf8d2294a656e = var_7cb73d334cb60b70;
     attachmentkey = getfirstarraykey(var_91bbf8d2294a656e);
-    assertex(isdefined(attachmentkey), "<dev string:x1d9>");
+    assertex(isdefined(attachmentkey), "attachmentToIdMap has no elements, possible error while reading table");
     attachments[0] = attachmentkey;
     for (attachmentindex = 0; attachmentindex < attachments.size; attachmentindex++) {
         attachment = attachments[attachmentindex];
@@ -336,7 +303,7 @@ function filterattachmenttoidmap(var_91bbf8d2294a656e, weaponname, var_c7bd95b10
                     add = 0;
                     break;
                 }
-                conflictstring = attachmentsconflict(attachment, filtereditem, weaponname, slotschecked, weaponasset);
+                conflictstring = attachmentsconflict(attachment, filtereditem, weaponname, slotschecked);
                 if (conflictstring == attachment) {
                     filtered[filteredindex] = "";
                     continue;
@@ -377,23 +344,17 @@ function filterattachmenttoidmap(var_91bbf8d2294a656e, weaponname, var_c7bd95b10
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ed6
-// Size: 0x285
+// Checksum 0x0, Offset: 0x225d
+// Size: 0x25a
 function function_89579d7ba0194e4a(var_91bbf8d2294a656e, weaponname, var_c7bd95b10c89cff8) {
     filtered = [];
     attachments = [];
     attachmentkey = getfirstarraykey(var_91bbf8d2294a656e);
-    assertex(isdefined(attachmentkey), "<dev string:x1d9>");
+    assertex(isdefined(attachmentkey), "attachmentToIdMap has no elements, possible error while reading table");
     attachments[0] = attachmentkey;
     var_76c539bdae654fd9 = [];
     if (isdefined(weaponname)) {
         var_76c539bdae654fd9 = function_6527364c1ecca6c6(weaponname);
-    }
-    if (iskillstreakweapon(weaponname)) {
-        weaponasset = weaponname;
-    } else {
-        rootname = getweaponrootname(weaponname);
-        weaponasset = weaponassetnamemap(rootname);
     }
     for (attachmentindex = 0; attachmentindex < attachments.size; attachmentindex++) {
         attachment = attachments[attachmentindex];
@@ -408,7 +369,7 @@ function function_89579d7ba0194e4a(var_91bbf8d2294a656e, weaponname, var_c7bd95b
                     add = 0;
                     break;
                 }
-                conflictstring = function_b9f9c92ef7f1922b(attachment, filtereditem, weaponname, weaponasset);
+                conflictstring = function_b9f9c92ef7f1922b(attachment, filtereditem, weaponname);
                 if (conflictstring == attachment) {
                     if (isdefined(level.var_79b6f061be629059) && array_contains(level.var_79b6f061be629059, conflictstring)) {
                         if (array_contains(var_76c539bdae654fd9, filtereditem)) {
@@ -458,11 +419,11 @@ function function_89579d7ba0194e4a(var_91bbf8d2294a656e, weaponname, var_c7bd95b
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2164
-// Size: 0x4af
+// Checksum 0x0, Offset: 0x24c0
+// Size: 0x484
 function function_73948793bdd465e3(var_91bbf8d2294a656e, var_c7bd95b10c89cff8) {
     attachmentkey = getfirstarraykey(var_91bbf8d2294a656e);
-    assertex(isdefined(attachmentkey), "<dev string:x1d9>");
+    assertex(isdefined(attachmentkey), "attachmentToIdMap has no elements, possible error while reading table");
     attachments[0] = attachmentkey;
     var_13f5ce59fee67e25 = "";
     priorityattach = "";
@@ -486,15 +447,9 @@ function function_73948793bdd465e3(var_91bbf8d2294a656e, var_c7bd95b10c89cff8) {
     if (!basenamefound) {
         return var_91bbf8d2294a656e;
     }
-    if (iskillstreakweapon(var_c7bd95b10c89cff8)) {
-        weaponasset = var_c7bd95b10c89cff8;
-    } else {
-        rootname = getweaponrootname(var_c7bd95b10c89cff8);
-        weaponasset = weaponassetnamemap(rootname);
-    }
     foreach (id, a in attachments) {
         for (counter = attachments.size; counter > id + 1; counter--) {
-            conflictstring = attachmentsconflict(a, attachments[counter - 1], var_c7bd95b10c89cff8, undefined, weaponasset);
+            conflictstring = attachmentsconflict(a, attachments[counter - 1], var_c7bd95b10c89cff8);
             if (conflictstring == attachments[counter - 1]) {
                 var_1b23d0f4ebcd81e2 = function_4add228b999c26aa(var_c7bd95b10c89cff8, conflictstring);
                 aslot = function_4add228b999c26aa(var_c7bd95b10c89cff8, a);
@@ -517,7 +472,7 @@ function function_73948793bdd465e3(var_91bbf8d2294a656e, var_c7bd95b10c89cff8) {
                 if (attachbasename != "") {
                     var_feaa04125d5c7ab2 = function_fa689aee146fbcf9(var_c7bd95b10c89cff8, attachbasename);
                     foreach (var_8f99d80bac78db05 in var_feaa04125d5c7ab2) {
-                        var_7f067bf518e3b85f = attachmentsconflict(var_8f99d80bac78db05, priorityattach, var_c7bd95b10c89cff8, undefined, weaponasset);
+                        var_7f067bf518e3b85f = attachmentsconflict(var_8f99d80bac78db05, priorityattach, var_c7bd95b10c89cff8);
                         if (var_7f067bf518e3b85f == priorityattach) {
                             continue;
                         }
@@ -526,7 +481,7 @@ function function_73948793bdd465e3(var_91bbf8d2294a656e, var_c7bd95b10c89cff8) {
                         }
                         var_7eb8fa9ea0957640 = function_4add228b999c26aa(var_c7bd95b10c89cff8, var_8f99d80bac78db05);
                         if (var_40c072e303020c37 == var_7eb8fa9ea0957640) {
-                            foreach (id2, a2 in attachments) {
+                            foreach (a2 in attachments) {
                                 if (a2 == var_13f5ce59fee67e25) {
                                     var_b93f2890063ccf4e = id2;
                                 }
@@ -576,22 +531,26 @@ function function_73948793bdd465e3(var_91bbf8d2294a656e, var_c7bd95b10c89cff8) {
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x261c
-// Size: 0x167
-function attachmentsconflict(attachment1, attachment2, weapon, slotschecked, weaponasset) {
-    assertex(isdefined(weapon), "<dev string:x222>");
-    assertex(isdefined(attachment1) && isdefined(attachment1), "<dev string:x253>");
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x294d
+// Size: 0x18d
+function attachmentsconflict(attachment1, attachment2, weapon, slotschecked) {
+    assertex(isdefined(weapon), "attachmentsConflict() passed undefined weapon");
+    assertex(isdefined(attachment1) && isdefined(attachment1), "attachmentsConflict() passed undefined attachment");
     if (attachmentiscosmetic(attachment1) && attachmentiscosmetic(attachment2)) {
         return attachment1;
     }
-    if (!isdefined(weaponasset)) {
-        if (iskillstreakweapon(weapon)) {
-            weaponasset = weapon;
-        } else {
-            rootname = getweaponrootname(weapon);
-            weaponasset = weaponassetnamemap(rootname);
-        }
+    weaponname = undefined;
+    if (isweapon(weapon)) {
+        weaponname = getcompleteweaponname(weapon);
+    } else {
+        weaponname = weapon;
+    }
+    if (iskillstreakweapon(weapon)) {
+        weaponasset = weapon;
+    } else {
+        rootname = getweaponrootname(weapon);
+        weaponasset = weaponassetnamemap(rootname);
     }
     if (!istrue(slotschecked)) {
         attachment1slot = function_4add228b999c26aa(weaponasset, attachment1);
@@ -620,13 +579,25 @@ function attachmentsconflict(attachment1, attachment2, weapon, slotschecked, wea
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x278c
-// Size: 0xd4
-function function_b9f9c92ef7f1922b(attachment1, attachment2, weapon, weaponasset) {
-    assertex(isdefined(weapon), "<dev string:x222>");
-    assertex(isdefined(attachment1) && isdefined(attachment1), "<dev string:x253>");
+// Checksum 0x0, Offset: 0x2ae3
+// Size: 0x134
+function function_b9f9c92ef7f1922b(attachment1, attachment2, weapon, var_85cf583664cf2b09) {
+    assertex(isdefined(weapon), "attachmentsConflict() passed undefined weapon");
+    assertex(isdefined(attachment1) && isdefined(attachment1), "attachmentsConflict() passed undefined attachment");
     if (attachmentiscosmetic(attachment1) && attachmentiscosmetic(attachment2)) {
         return attachment1;
+    }
+    weaponname = undefined;
+    if (isweapon(weapon)) {
+        weaponname = getcompleteweaponname(weapon);
+    } else {
+        weaponname = weapon;
+    }
+    if (iskillstreakweapon(weapon)) {
+        weaponasset = weapon;
+    } else {
+        rootname = getweaponrootname(weapon);
+        weaponasset = weaponassetnamemap(rootname);
     }
     attachment1slot = function_4add228b999c26aa(weaponasset, attachment1);
     attachment2slot = function_4add228b999c26aa(weaponasset, attachment2);
@@ -644,8 +615,8 @@ function function_b9f9c92ef7f1922b(attachment1, attachment2, weapon, weaponasset
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x2869
-// Size: 0x18f
+// Checksum 0x0, Offset: 0x2c20
+// Size: 0x190
 function private _attachmentblocks(weaponasset, attachment1, attachment2) {
     var_1fce8439ed13e7b3 = function_891b1fb6a51b97b0(weaponasset, attachment1);
     var_b28653df677fb727 = function_7c612ac92ba98dcb(weaponasset, attachment2);
@@ -676,7 +647,7 @@ function private _attachmentblocks(weaponasset, attachment1, attachment2) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a01
+// Checksum 0x0, Offset: 0x2db9
 // Size: 0x16
 function function_975e31b63f01fbcc(attachment) {
     return issubstr(attachment, "ironsdefault_");
@@ -684,7 +655,7 @@ function function_975e31b63f01fbcc(attachment) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a20
+// Checksum 0x0, Offset: 0x2dd8
 // Size: 0x25
 function function_de04e13ab01e1a10(attachment) {
     return issubstr(attachment, "ubshtgn") || issubstr(attachment, "ub_sh");
@@ -692,10 +663,10 @@ function function_de04e13ab01e1a10(attachment) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a4e
+// Checksum 0x0, Offset: 0x2e06
 // Size: 0x3f
 function attachmentmap_tocategory(attachmentname) {
-    assertex(isdefined(level.var_f83e21209be1b993), "<dev string:x288>");
+    assertex(isdefined(level.var_f83e21209be1b993), "attachmentMap_toCategory() called without first calling buildAttachmentMaps()");
     if (isdefined(level.var_f83e21209be1b993[attachmentname])) {
         return level.var_f83e21209be1b993[attachmentname];
     }
@@ -704,10 +675,10 @@ function attachmentmap_tocategory(attachmentname) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a96
-// Size: 0xde
+// Checksum 0x0, Offset: 0x2e4e
+// Size: 0xdd
 function attachmentmap_toextra(attachmentname) {
-    assertex(isdefined(level.var_50611d6541b815a3), "<dev string:x2d9>");
+    assertex(isdefined(level.var_50611d6541b815a3), "attachmentMap_toExtra() called without first calling buildAttachmentMaps()");
     if (isdefined(level.var_50611d6541b815a3[attachmentname])) {
         var_79b6f061be629059 = [];
         var_59bf6a1eae2b42d8 = level.var_50611d6541b815a3[attachmentname];
@@ -724,8 +695,8 @@ function attachmentmap_toextra(attachmentname) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b7c
-// Size: 0x2e
+// Checksum 0x0, Offset: 0x2f33
+// Size: 0x2d
 function attachmentperkmap(weapon, attachmentname) {
     attachperks = function_4f344ec5b7c45a3f(weapon, attachmentname);
     if (isdefined(attachperks)) {
@@ -736,13 +707,13 @@ function attachmentperkmap(weapon, attachmentname) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bb3
-// Size: 0x2d6
+// Checksum 0x0, Offset: 0x2f69
+// Size: 0x2d5
 function buildattachmentmaps() {
-    assertex(!isdefined(level.var_50611d6541b815a3), "<dev string:x327>");
-    assertex(!isdefined(level.weaponattachments), "<dev string:x36f>");
-    assertex(!isdefined(level.var_45bb5704bdfab245), "<dev string:x3bc>");
-    assertex(isdefined(level.weaponmapdata), "<dev string:x40d>");
+    assertex(!isdefined(level.var_50611d6541b815a3), "buildAttachmentMaps() called when base to extra map already existed.");
+    assertex(!isdefined(level.weaponattachments), "buildAttachmentMaps() called when weapon attachment list already existed.");
+    assertex(!isdefined(level.var_45bb5704bdfab245), "buildAttachmentMaps() called when weapon attachment map list already existed.");
+    assertex(isdefined(level.weaponmapdata), "buildWeaponMap() should be called before buildAttachmentMaps()");
     level.var_50611d6541b815a3 = [];
     level.weaponattachments = [];
     function_c471a035d22df5eb();
@@ -787,10 +758,10 @@ function buildattachmentmaps() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e91
-// Size: 0x186
+// Checksum 0x0, Offset: 0x3246
+// Size: 0x183
 function weaponattachremoveextraattachments(attachments) {
-    assertex(isdefined(level.var_50611d6541b815a3), "<dev string:x44f>");
+    assertex(isdefined(level.var_50611d6541b815a3), "weaponAttachRemoveExtraAttachments() called without first calling buildWeaponMap().");
     var_59bf6a1eae2b42d8 = [];
     foreach (attachment in attachments) {
         var_f08eec5e41ed914f = attachmentmap_toextra(attachment);
@@ -818,7 +789,7 @@ function weaponattachremoveextraattachments(attachments) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3020
+// Checksum 0x0, Offset: 0x33d2
 // Size: 0x35
 function function_693e108cb61ceeb5(weaponname, attachref) {
     if (isdefined(level.weaponattachments[attachref])) {
@@ -829,11 +800,11 @@ function function_693e108cb61ceeb5(weaponname, attachref) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x305e
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x3410
+// Size: 0x9f
 function buildweaponrootlist() {
     rootweapons = [];
-    foreach (weapon, data in level.weaponmapdata) {
+    foreach (data in level.weaponmapdata) {
         if (isdefined(data.group)) {
             if (!issubstr(data.group, "weapon_")) {
                 continue;
@@ -849,11 +820,11 @@ function buildweaponrootlist() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3108
-// Size: 0xfa
+// Checksum 0x0, Offset: 0x34b8
+// Size: 0xf9
 function weaponattachcustomtoidmap(weaponroot, variantid) {
-    assertex(isdefined(level.weaponmapdata), "<dev string:x4a6>");
-    assertex(isdefined(variantid), "<dev string:x4f4>");
+    assertex(isdefined(level.weaponmapdata), "weaponAttachCustomToIDMap() called without first calling buildWeaponMap().");
+    assertex(isdefined(variantid), "weaponAttachCustomToIDMap() called without a variantID. Only blueprint weapons have custom attachments.");
     if (isdefined(variantid) && variantid >= 0) {
         var_928c1cac31ea99e5 = weaponroot + "|" + variantid;
         if (getdvar(@"hash_7bc90c105eebbcca", "1") == "1") {
@@ -869,10 +840,10 @@ function weaponattachcustomtoidmap(weaponroot, variantid) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x320b
+// Checksum 0x0, Offset: 0x35ba
 // Size: 0xa6
 function weaponattachdefaulttoidmap(weaponroot, variantid, attachments) {
-    assertex(isdefined(level.weaponmapdata), "<dev string:x55f>");
+    assertex(isdefined(level.weaponmapdata), "weaponAttachDefaultToIDMap() called without first calling buildWeaponMap().");
     if (isdefined(variantid)) {
         var_928c1cac31ea99e5 = weaponroot + "|" + variantid;
         if (isdefined(level.weaponlootmapdata[var_928c1cac31ea99e5]) && isdefined(level.weaponlootmapdata[var_928c1cac31ea99e5].attachdefaulttoidmap)) {
@@ -887,29 +858,9 @@ function weaponattachdefaulttoidmap(weaponroot, variantid, attachments) {
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x32ba
-// Size: 0xb6
-function function_a9ead06bcb3c0be4(weaponroot, attachmentref, var_1708b873a34eeb50) {
-    if (isdefined(level) && isdefined(level.weaponlootmapdata)) {
-        variantid = 0;
-        var_928c1cac31ea99e5 = weaponroot + "|" + variantid;
-        for (var_478c4326fd03725e = level.weaponlootmapdata[var_928c1cac31ea99e5]; isdefined(var_478c4326fd03725e); var_478c4326fd03725e = level.weaponlootmapdata[var_928c1cac31ea99e5]) {
-            var_baf2384ff9b11421 = var_478c4326fd03725e.attachdefaulttoidmap;
-            if (isdefined(var_baf2384ff9b11421) && isdefined(var_baf2384ff9b11421[attachmentref]) && var_baf2384ff9b11421[attachmentref] == var_1708b873a34eeb50) {
-                return var_baf2384ff9b11421;
-            }
-            variantid++;
-            var_928c1cac31ea99e5 = weaponroot + "|" + variantid;
-        }
-    }
-    return undefined;
-}
-
-// Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3379
-// Size: 0xc8
+// Checksum 0x0, Offset: 0x3669
+// Size: 0xc7
 function weaponassetnamemap(weaponroot, variantid) {
     if (iskillstreakweapon(weaponroot)) {
         return weaponroot;
@@ -923,17 +874,17 @@ function weaponassetnamemap(weaponroot, variantid) {
     if (isdefined(level.weaponmapdata[weaponroot]) && isdefined(level.weaponmapdata[weaponroot].assetname)) {
         return level.weaponmapdata[weaponroot].assetname;
     }
-    assertmsg("<dev string:x5ae>" + weaponroot);
+    assertmsg("weaponAssetNameMap() could not find an asset name for weapon " + weaponroot);
     return weaponroot;
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x344a
-// Size: 0x49
+// Checksum 0x0, Offset: 0x3739
+// Size: 0x63
 function weapongroupmap(weaponroot) {
-    assertex(isdefined(level.weaponmapdata), "<dev string:x5ef>");
-    if (isdefined(level.weaponmapdata[weaponroot])) {
+    assertex(isdefined(level.weaponmapdata), "weaponGroupMap() called without first calling buildWeaponMap().");
+    if (isdefined(level.weaponmapdata[weaponroot]) && isdefined(level.weaponmapdata[weaponroot].group)) {
         return level.weaponmapdata[weaponroot].group;
     }
     return undefined;
@@ -941,32 +892,32 @@ function weapongroupmap(weaponroot) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x349c
+// Checksum 0x0, Offset: 0x37a5
 // Size: 0x2f
 function function_89497fa763d431c0(weaponroot) {
-    assertex(isdefined(level.weaponmapdata), "<dev string:x632>");
+    assertex(isdefined(level.weaponmapdata), "weaponNumberMap() called without first calling buildWeaponMap().");
     return isdefined(level.weaponmapdata[weaponroot]);
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x34d4
-// Size: 0x9e
-function attachmentmap_extratovariantid(attachment, weaponroot, var_fedb77aad2340743) {
-    assertex(isdefined(var_fedb77aad2340743), "<dev string:x676>");
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x37dd
+// Size: 0x66
+function attachmentmap_extratovariantid(attachment, weaponroot, var_fedb77aad2340743, attachmentid) {
+    assertex(isdefined(var_fedb77aad2340743), "");
     var_b40b03d6bdc699b3 = weaponroot + "|" + var_fedb77aad2340743;
-    if (isdefined(level.weaponlootmapdata[var_b40b03d6bdc699b3]) && isdefined(level.weaponlootmapdata[var_b40b03d6bdc699b3].attachdefaulttoidmap) && isdefined(level.weaponlootmapdata[var_b40b03d6bdc699b3].attachdefaulttoidmap[attachment])) {
-        return level.weaponlootmapdata[var_b40b03d6bdc699b3].attachdefaulttoidmap[attachment];
+    if (isdefined(level.weaponlootmapdata[var_b40b03d6bdc699b3]) && isdefined(attachmentid) && attachmentid > 0) {
+        return attachmentid;
     }
     return 0;
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x357b
-// Size: 0x6c8
+// Checksum 0x0, Offset: 0x384c
+// Size: 0x6d6
 function buildweaponmap() {
-    assertex(!isdefined(level.weaponmapdata), "<dev string:x67a>");
+    assertex(!isdefined(level.weaponmapdata), "buildWeaponMap() called when map already existed.");
     level.weaponmapdata = [];
     level.weapongroupdata = [];
     level.weaponlootmapdata = [];
@@ -1007,7 +958,7 @@ function buildweaponmap() {
                 movespeed = weaponscriptbundle.speedscale;
                 if (isdefined(movespeed)) {
                     level.weaponmapdata[weapon].speed = movespeed;
-                    assertex(isdefined(movespeed) && movespeed > 0 && movespeed <= 1, "<dev string:x6af>" + weapon);
+                    assertex(isdefined(movespeed) && movespeed > 0 && movespeed <= 1, "buildWeaponMap() found invalid movespeed for weapon: " + weapon);
                 }
                 var_d43f9c4f6b647ba4 = weaponscriptbundle.var_d43f9c4f6b647ba4;
                 if (isdefined(var_d43f9c4f6b647ba4)) {
@@ -1057,10 +1008,10 @@ function buildweaponmap() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c4b
-// Size: 0x27f
+// Checksum 0x0, Offset: 0x3f2a
+// Size: 0x282
 function function_ee4a536a155313b7() {
-    assertex(!isdefined(level.var_305637ed4e3e8513), "<dev string:x6e8>");
+    assertex(!isdefined(level.var_305637ed4e3e8513), "buildProgressionCamosMap() called when map already existed.");
     level.var_305637ed4e3e8513 = [];
     var_4e536400fecd2a19 = getscriptbundle(hashcat(%"hash_752ed0204d7db62c", level.gamemodebundle.var_e549d47c964a6cad));
     foreach (camoname in var_4e536400fecd2a19.camo_list) {
@@ -1096,7 +1047,7 @@ function function_ee4a536a155313b7() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ed2
+// Checksum 0x0, Offset: 0x41b4
 // Size: 0x61
 function getweaponvarianttablename(var_49e6ef3edadd524e) {
     if (string_starts_with(var_49e6ef3edadd524e, "jup_") || string_starts_with(var_49e6ef3edadd524e, "iw8_") || string_starts_with(var_49e6ef3edadd524e, "iw9_") || string_starts_with(var_49e6ef3edadd524e, "t10_")) {
@@ -1107,8 +1058,8 @@ function getweaponvarianttablename(var_49e6ef3edadd524e) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f3c
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x421e
+// Size: 0x7f
 function function_d7f1989d63343007(var_c7bd95b10c89cff8, attachments) {
     if (isdefined(attachments)) {
         var_15d209d47ba8a8a6 = alphabetize(attachments);
@@ -1124,7 +1075,7 @@ function function_d7f1989d63343007(var_c7bd95b10c89cff8, attachments) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fc3
+// Checksum 0x0, Offset: 0x42a6
 // Size: 0xa5
 function function_792bacb194f6f862(weapon, attachments) {
     assetname = function_72376783a92be46(weapon);
@@ -1144,7 +1095,7 @@ function function_792bacb194f6f862(weapon, attachments) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4071
+// Checksum 0x0, Offset: 0x4354
 // Size: 0xb4
 function parseattachdefaulttoidmap(attachmentdefaults) {
     if (attachmentdefaults != "") {
@@ -1165,7 +1116,7 @@ function parseattachdefaulttoidmap(attachmentdefaults) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x412e
+// Checksum 0x0, Offset: 0x4411
 // Size: 0x4b
 function function_72376783a92be46(rootname) {
     if (isdefined(level.weaponmapdata[rootname]) && isdefined(level.weaponmapdata[rootname].assetname)) {
@@ -1176,23 +1127,11 @@ function function_72376783a92be46(rootname) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4182
-// Size: 0x392
+// Checksum 0x0, Offset: 0x4465
+// Size: 0x2d7
 function getweaponrootname(weapon) {
-    if (!isdefined(weapon)) {
-        return "";
-    }
     if (!isdefined(level.weaponrootcache)) {
         level.weaponrootcache = [];
-        level.weaponrootcache["iw9_lm_dblmg_jup_sp_v1"] = "iw9_lm_dblmg_jup";
-        level.weaponrootcache["iw9_lm_dblmg_jup_mp"] = "iw9_lm_dblmg_jup";
-        level.weaponrootcache["iw9_lm_dblmg_jup"] = "iw9_lm_dblmg_jup";
-        level.weaponrootcache["jup_p01_ar_mike4_v3019"] = "iw9_ar_mike4";
-        classtokens = ["ar", "sm", "lm", "sh", "sn", "dm", "pi", "la", "me", "br"];
-        level.classtokens = [];
-        foreach (t in classtokens) {
-            level.classtokens[t] = 1;
-        }
     }
     weaponname = undefined;
     if (isweapon(weapon)) {
@@ -1201,65 +1140,51 @@ function getweaponrootname(weapon) {
         assert(isstring(weapon));
         weaponname = weapon;
     }
-    if (!isdefined(weaponname)) {
-        weaponname = "";
-    }
     cachedvalue = level.weaponrootcache[weaponname];
     if (isdefined(cachedvalue)) {
         return cachedvalue;
     }
+    if (!isdefined(weaponname)) {
+        weaponname = "";
+    }
+    if (weaponname == "iw9_lm_dblmg_jup_sp_v1" || weaponname == "iw9_lm_dblmg_jup_mp" | weaponname == "iw9_lm_dblmg_jup") {
+        return "iw9_lm_dblmg_jup";
+    }
     originalname = weaponname;
-    tokens = strtok(weaponname, "_");
-    toksize = tokens.size;
-    if (toksize == 0) {
-        return "";
-    }
-    index = 0;
-    if (tokens[0] == "alt") {
-        index++;
-    }
-    starttok = tokens[index];
-    if (starttok == "jup" || starttok == "iw9" || starttok == "iw8" || starttok == "t10") {
-        var_8c1f7c392c91d5e6 = 0;
-        if (starttok == "jup" && toksize >= index + 4 && isdefined(level.classtokens[tokens[index + 2]])) {
-            weaponname = function_32bbe5b5c454a061("_", tokens, index, 4);
-            var_8c1f7c392c91d5e6 = isdefined(level.weaponmapdata[weaponname]);
-            if (!var_8c1f7c392c91d5e6) {
-                var_60760fc3bed3938a = 0;
-                var_e3670c2fdef83c7c = [];
-                if (tokens[index + 1] == "iw9") {
-                    var_60760fc3bed3938a = index + 1;
-                } else {
-                    var_60760fc3bed3938a = index + 2;
-                    var_e3670c2fdef83c7c = array_add(var_e3670c2fdef83c7c, "iw9");
-                }
-                for (i = var_60760fc3bed3938a; i < tokens.size; i++) {
-                    var_e3670c2fdef83c7c = array_add(var_e3670c2fdef83c7c, tokens[i]);
-                }
-                tokens = var_e3670c2fdef83c7c;
-                toksize = tokens.size;
-            }
+    if (originalname == "jup_pi_raygun_mp" || originalname == "jup_pi_raygun") {
+        weaponname = "jup_pi_raygun";
+    } else {
+        tokens = strtok(weaponname, "_");
+        index = 0;
+        if (tokens[0] == "alt") {
+            index++;
         }
-        if (!var_8c1f7c392c91d5e6) {
-            if (toksize >= index + 3 && isdefined(level.classtokens[tokens[index + 1]])) {
-                if (toksize >= index + 4 && starttok == "t10" || tokens[index + 2] == "zombie") {
-                    weaponname = function_32bbe5b5c454a061("_", tokens, index, 4);
+        if (tokens[index] == "iw8" || tokens[index] == "iw9" || tokens[index] == "t10" || tokens[index] == "jup") {
+            classtokens = ["ar", "sm", "lm", "sh", "sn", "dm", "pi", "la", "me", "br"];
+            if (tokens[index] == "jup" && isdefined(tokens[index + 2]) && array_contains(classtokens, tokens[index + 2])) {
+                weaponname = tokens[index] + "_" + tokens[index + 1] + "_" + tokens[index + 2] + "_" + tokens[index + 3];
+            } else if (isdefined(tokens[index + 1]) && array_contains(classtokens, tokens[index + 1])) {
+                var_883157764b005ca1 = tokens.size >= index + 2 && tokens[index + 2] == "zombie";
+                if (tokens.size >= index + 4 && tokens[index] == "t10" || var_883157764b005ca1) {
+                    weaponname = tokens[index] + "_" + tokens[index + 1] + "_" + tokens[index + 2] + "_" + tokens[index + 3];
                 } else {
-                    weaponname = function_32bbe5b5c454a061("_", tokens, index, 3);
+                    weaponname = tokens[index] + "_" + tokens[index + 1] + "_" + tokens[index + 2];
                 }
             } else {
-                weaponname = function_32bbe5b5c454a061("_", tokens, index, 2);
+                weaponname = tokens[index] + "_" + tokens[index + 1];
             }
         }
     }
-    level.weaponrootcache[originalname] = weaponname;
+    if (level.weaponrootcache.size < 100) {
+        level.weaponrootcache[originalname] = weaponname;
+    }
     return weaponname;
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x451d
-// Size: 0x133
+// Checksum 0x0, Offset: 0x4745
+// Size: 0x137
 function getweaponclasstoken(weaponname) {
     assert(isstring(weaponname));
     weaponclasstokens[0] = strtok(weaponname, "_")[1];
@@ -1271,7 +1196,6 @@ function getweaponclasstoken(weaponname) {
         switch (potentialtoken) {
         case #"hash_fa0ed9f6bd4f4e9a":
         case #"hash_fa18d2f6bd57925a":
-        case #"hash_fa21c4f6bd5e3815":
         case #"hash_fa24ddf6bd609e07":
         case #"hash_fa27b9f6bd62a3f2":
         case #"hash_fa27bdf6bd62aa3e":
@@ -1281,23 +1205,25 @@ function getweaponclasstoken(weaponname) {
         case #"hash_fa50b6f6bd82f2e4":
         case #"hash_fa50b9f6bd82f79d": 
             return potentialtoken;
+        case #"hash_fa21c4f6bd5e3815": 
+            return "ar";
         }
     }
-    assertmsg("<dev string:x727>" + weaponname);
+    assertmsg("getWeaponClassToken: Could not parse a valid weapon class token from weapon: " + weaponname);
     return undefined;
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4659
-// Size: 0x1c
+// Checksum 0x0, Offset: 0x4885
+// Size: 0x1d
 function attachmentiscosmetic(attachment) {
-    return isdefined(attachment) && isstartstr(attachment, "cos_");
+    return isdefined(attachment) && string_starts_with(attachment, "cos_");
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x467e
+// Checksum 0x0, Offset: 0x48ab
 // Size: 0x1a
 function issilencerattach(weapon, attachment) {
     return function_1074e46972c88a69(weapon, attachment);
@@ -1305,8 +1231,8 @@ function issilencerattach(weapon, attachment) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x46a1
-// Size: 0xae
+// Checksum 0x0, Offset: 0x48ce
+// Size: 0xa9
 function combinedefaultandcustomattachmentidmaps(var_3f065af353909441, var_91bbf8d2294a656e) {
     combined = [];
     foreach (key, value in var_3f065af353909441) {
@@ -1323,8 +1249,8 @@ function combinedefaultandcustomattachmentidmaps(var_3f065af353909441, var_91bbf
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4758
-// Size: 0x1d9
+// Checksum 0x0, Offset: 0x4980
+// Size: 0x1d6
 function filterinvalidattachmentsfromidmap(var_f44f790efdadeea0, var_c7bd95b10c89cff8, weaponobj) {
     var_3aa0e5fbca9e041c = [];
     foreach (attachment, attachmentid in var_f44f790efdadeea0) {
@@ -1334,13 +1260,13 @@ function filterinvalidattachmentsfromidmap(var_f44f790efdadeea0, var_c7bd95b10c8
         }
         /#
             thread invalidattachmentwarning(attachment, var_c7bd95b10c89cff8);
-            println("<dev string:x778>" + var_c7bd95b10c89cff8 + "<dev string:x796>");
-            attachmentslots = ["<dev string:x79c>", "<dev string:x7a8>", "<dev string:x7b6>", "<dev string:x7c3>", "<dev string:x7cf>", "<dev string:x7db>", "<dev string:x7e5>", "<dev string:x7f1>", "<dev string:x7fc>", "<dev string:x805>", "<dev string:x80e>", "<dev string:x81d>", "<dev string:x829>", "<dev string:x833>"];
+            println("<dev string:xc5>" + var_c7bd95b10c89cff8 + "<dev string:xe0>");
+            attachmentslots = ["<dev string:xe3>", "<dev string:xec>", "<dev string:xf7>", "<dev string:x101>", "<dev string:x10a>", "<dev string:x113>", "<dev string:x11a>", "<dev string:x123>", "<dev string:x12b>", "<dev string:x131>", "<dev string:x137>", "<dev string:x143>", "<dev string:x14c>", "<dev string:x153>"];
             foreach (attachmentslot in attachmentslots) {
-                println("<dev string:x83c>" + attachmentslot);
+                println("<dev string:x159>" + attachmentslot);
                 attachmentsavailable = function_75b035199842693d(var_c7bd95b10c89cff8, attachmentslot);
                 foreach (attachment in attachmentsavailable) {
-                    println("<dev string:x841>" + attachment);
+                    println("<dev string:x15b>" + attachment);
                 }
             }
         #/
@@ -1352,10 +1278,10 @@ function filterinvalidattachmentsfromidmap(var_f44f790efdadeea0, var_c7bd95b10c8
 
     // Namespace weapon / namespace_e0ee43ef2dddadaa
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x493a
-    // Size: 0x7d
+    // Checksum 0x0, Offset: 0x4b5f
+    // Size: 0x7c
     function invalidattachmentwarning(attachment, var_c7bd95b10c89cff8) {
-        message = "<dev string:x847>" + attachment + "<dev string:x85f>" + var_c7bd95b10c89cff8;
+        message = "<dev string:x15e>" + attachment + "<dev string:x173>" + var_c7bd95b10c89cff8;
         if (isdefined(self) && isplayer(self)) {
             if (getdvarint(@"hash_ff689af941dd10a1", 0) == 1) {
                 iprintlnbold(message);
@@ -1363,17 +1289,17 @@ function filterinvalidattachmentsfromidmap(var_f44f790efdadeea0, var_c7bd95b10c8
                 iprintlnbold(message);
             }
         }
-        println("<dev string:x867>" + message);
+        println("<dev string:x178>" + message);
         assertmsg(message);
     }
 
 #/
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x49bf
-// Size: 0xff
-function weaponsupportslaserir(weaponbasename, weaponobj) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x4be3
+// Size: 0xba
+function weaponsupportslaserir(weaponbasename) {
     switch (weaponbasename) {
     case #"hash_ad9dd8204eeeec9":
     case #"hash_105072c3c4229775":
@@ -1387,16 +1313,13 @@ function weaponsupportslaserir(weaponbasename, weaponobj) {
     if (iskillstreakweapon(weaponbasename)) {
         return false;
     }
-    if (isdefined(weaponobj) && isdefined(weaponobj.extra) && isdefined(weaponobj.variantid) && weaponobj.extra == "charlie725_doom_blueprint_tuning") {
-        return false;
-    }
     class = weaponclass(weaponbasename);
     return class == "rifle" || class == "mg" || class == "sniper" || class == "smg" || class == "spread";
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ac7
+// Checksum 0x0, Offset: 0x4ca6
 // Size: 0x75
 function iskillstreakplayerweapon(weapon) {
     killstreakplayerweapon = 0;
@@ -1419,34 +1342,32 @@ function iskillstreakplayerweapon(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b45
-// Size: 0x7f
+// Checksum 0x0, Offset: 0x4d24
+// Size: 0x9b
 function function_417760651c48814b(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x874>");
-        return false;
+        assertmsg("Weapon.gsc - isSuperUseWeapon was passed an undefined weapon name");
+        return 0;
     }
     if (!isstring(weapon)) {
         weapon = weapon.basename;
     }
-    switch (weapon) {
-    case #"hash_b742b20d3ace6197":
-    case #"hash_db7c88dcdb203deb": 
-        return true;
+    if (function_602a4626cabc6981(weapon)) {
+        return 1;
     }
-    if (isdefined(level.superglobals)) {
-        return isdefined(level.superglobals.superweapons[weapon]);
+    if (!isdefined(level.superglobals) || !isdefined(level.superglobals.superweapons) || !isdefined(level.superglobals.superweapons[weapon])) {
+        return undefined;
     }
-    return false;
+    return isdefined(level.superglobals.superweapons[weapon]);
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bcd
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x4dc8
+// Size: 0x93
 function function_6c51b05ce2e9aed3(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x8b9>");
+        assertmsg("Weapon.gsc - isSuperGestureWeapon was passed an undefined weapon name");
         return false;
     }
     weaponname = undefined;
@@ -1459,7 +1380,6 @@ function function_6c51b05ce2e9aed3(weapon) {
         }
     }
     switch (weaponname) {
-    case #"hash_10713919c53cd30a":
     case #"hash_4cdc20240e59faaf":
     case #"hash_ca1eabc559246db2":
     case #"hash_cfc84b38b4da467b":
@@ -1471,11 +1391,32 @@ function function_6c51b05ce2e9aed3(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c76
-// Size: 0x72
+// Checksum 0x0, Offset: 0x4e64
+// Size: 0x68
+function function_602a4626cabc6981(weapon) {
+    if (!isdefined(weapon)) {
+        assertmsg("Weapon.gsc - isInSuperUseWhitelist was passed an undefined weapon name");
+        return 0;
+    }
+    if (!isstring(weapon)) {
+        weapon = weapon.basename;
+    }
+    switch (weapon) {
+    case #"hash_b742b20d3ace6197":
+    case #"hash_db7c88dcdb203deb": 
+        return 1;
+    default: 
+        return 0;
+    }
+}
+
+// Namespace weapon / namespace_e0ee43ef2dddadaa
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x4ed4
+// Size: 0x71
 function function_3de73a849ecea0d(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x902>");
+        assertmsg("Weapon.gsc - isOxygenMaskWeapon was passed an undefined weapon name");
         return false;
     }
     weapname = undefined;
@@ -1495,11 +1436,11 @@ function function_3de73a849ecea0d(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cf1
-// Size: 0x9e
+// Checksum 0x0, Offset: 0x4f4e
+// Size: 0x9d
 function isminigunweapon(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x949>");
+        assertmsg("Weapon.gsc - isMinigunWeapon cwas passed an undefined weapon name");
         return false;
     }
     weapname = undefined;
@@ -1519,11 +1460,11 @@ function isminigunweapon(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d98
-// Size: 0x78
+// Checksum 0x0, Offset: 0x4ff4
+// Size: 0x77
 function iskillstreakweapon(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x98e>");
+        assertmsg("Weapon.gsc - isKillstreakWeapon was passed an undefined weapon name");
         return false;
     }
     weaponname = undefined;
@@ -1543,7 +1484,7 @@ function iskillstreakweapon(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e19
+// Checksum 0x0, Offset: 0x5074
 // Size: 0x37
 function function_f30b8f5ee8f3e7f8(streakname, var_d8a64ed9bcdf7185) {
     if (!isdefined(level.killstreakweaponmap)) {
@@ -1554,8 +1495,8 @@ function function_f30b8f5ee8f3e7f8(streakname, var_d8a64ed9bcdf7185) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e58
-// Size: 0x4c6
+// Checksum 0x0, Offset: 0x50b3
+// Size: 0x448
 function function_b4b623b6321cd521() {
     if (!isdefined(level.killstreakweaponmap)) {
         level.killstreakweaponmap = [];
@@ -1611,21 +1552,15 @@ function function_b4b623b6321cd521() {
     level.killstreakweaponmap["missile_turret_proj_jup_mp"] = "missile_turret";
     level.killstreakweaponmap["drone_swarm_drone_mp"] = "drone_swarm";
     level.killstreakweaponmap["toma_proj_jup_mp"] = "toma_strike";
-    level.killstreakweaponmap["bunker_buster_proj_jup_mp"] = "bunker_buster";
-    level.killstreakweaponmap["dna_nuke_mp"] = "dna_nuke";
-    level.killstreakweaponmap["missile_drone_hellfire_mp"] = "missile_drone";
-    level.killstreakweaponmap["chopper_gunner_turret_ballistics_jup_mp"] = "chopper_gunner";
-    level.killstreakweaponmap["jup_deploy_sentry_ob"] = "sentry_gun";
-    level.killstreakweaponmap["cluster_spike_jup_ob"] = "cluster_spike";
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5326
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x5503
+// Size: 0xa4
 function function_1a9394eb58e66a9b(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x9d5>");
+        assertmsg("Weapon.gsc - isFakeKillstreakWeapon was passed an undefined weapon name");
         return false;
     }
     weaponname = undefined;
@@ -1650,53 +1585,35 @@ function function_1a9394eb58e66a9b(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x53d4
-// Size: 0x37
-function function_eac07882d12979d8(baseweaponname, subweaponname) {
-    if (!isdefined(level.var_64f3f18c47a2eed9)) {
-        level.var_64f3f18c47a2eed9 = [];
-    }
-    level.var_64f3f18c47a2eed9[subweaponname] = baseweaponname;
-}
-
-// Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5413
-// Size: 0x25
-function function_23defc57f8da7fbc(subweaponname) {
-    if (isdefined(level.var_64f3f18c47a2eed9)) {
-        return level.var_64f3f18c47a2eed9[subweaponname];
-    }
-    return undefined;
-}
-
-// Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5441
-// Size: 0x5a
+// Checksum 0x0, Offset: 0x55b0
+// Size: 0xb8
 function function_aea26b825f926e9c(weapon, attachmentname) {
     if (attachmentname == "none") {
-        return 1;
+        return true;
     }
-    if (!isdefined(weapon) || !isdefined(attachmentname)) {
-        return 0;
+    if (!isdefined(weapon) || isstring(weapon) && (weapon == "none" || weapon == "")) {
+        return false;
     }
-    if (isstring(weapon)) {
-        rootname = getweaponrootname(weapon);
-        weapon = weaponassetnamemap(rootname);
+    rootname = getweaponrootname(weapon);
+    weaponasset = weaponassetnamemap(rootname);
+    weaponattachments = function_91d352b50d9a0630(weaponasset);
+    attachmentslot = function_4add228b999c26aa(weaponasset, attachmentname);
+    attachmentarray = weaponattachments[attachmentslot];
+    if (isdefined(attachmentarray) && array_contains(attachmentarray, attachmentname)) {
+        return true;
     }
-    return function_d4927cf775ff6aec(weapon, attachmentname);
+    return false;
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54a4
+// Checksum 0x0, Offset: 0x5671
 // Size: 0x64
 function function_6e7bc1b23afa0ea8(weapon, var_10dc579c373a93dd) {
     if (namespace_e0ee43ef2dddadaa::function_aea26b825f926e9c(weapon, var_10dc579c373a93dd)) {
         return var_10dc579c373a93dd;
     }
-    println("<dev string:xa20>" + var_10dc579c373a93dd);
+    println("<dev string:x182>" + var_10dc579c373a93dd);
     rootname = getweaponrootname(weapon);
     weaponasset = weaponassetnamemap(rootname);
     return function_667f43ce2ee5b5dd(weaponasset, "receiver", 0);
@@ -1704,8 +1621,8 @@ function function_6e7bc1b23afa0ea8(weapon, var_10dc579c373a93dd) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5510
-// Size: 0x90
+// Checksum 0x0, Offset: 0x56dd
+// Size: 0x8e
 function buildweaponattachmentidmap(attachments, attachmentids) {
     var_91bbf8d2294a656e = [];
     foreach (idx, var_8bccf360992ddd62 in attachments) {
@@ -1724,8 +1641,8 @@ function buildweaponattachmentidmap(attachments, attachmentids) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55a9
-// Size: 0x86
+// Checksum 0x0, Offset: 0x5774
+// Size: 0x84
 function getweaponnvgattachment(weaponobj) {
     var_7efcef2ab37c2c45 = ["laserir_box", "laserir_cyl", "laserir_pstl"];
     foreach (attachment in var_7efcef2ab37c2c45) {
@@ -1740,25 +1657,25 @@ function getweaponnvgattachment(weaponobj) {
 
     // Namespace weapon / namespace_e0ee43ef2dddadaa
     // Params 10, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5638
-    // Size: 0x119
+    // Checksum 0x0, Offset: 0x5801
+    // Size: 0x118
     function function_13aeabbe4210eadc(itemname, rarity, lootid, baseweapon, attachments, fullweaponname, titlestring, descstring, icon, pickupsound) {
-        str = "<dev string:xa4f>";
-        str += "<dev string:xa57>" + itemname;
-        str += "<dev string:xa57>" + "<dev string:xa5d>";
-        str += "<dev string:xa57>" + rarity;
-        str += "<dev string:xa57>";
-        str += "<dev string:xa57>" + lootid;
-        str += "<dev string:xa57>";
-        str += "<dev string:xa57>";
-        str += "<dev string:xa57>" + baseweapon;
-        str += "<dev string:xa57>";
-        str += "<dev string:xa57>" + attachments;
-        str += "<dev string:xa57>" + fullweaponname;
-        str += "<dev string:xa57>" + function_e4891bb7bec886f9(titlestring);
-        str += "<dev string:xa57>" + function_e4891bb7bec886f9(descstring);
-        str += "<dev string:xa57>" + icon;
-        str += "<dev string:xa57>" + pickupsound;
+        str = "<dev string:x1ae>";
+        str += "<dev string:x1b3>" + itemname;
+        str += "<dev string:x1b3>" + "<dev string:x1b6>";
+        str += "<dev string:x1b3>" + rarity;
+        str += "<dev string:x1b3>";
+        str += "<dev string:x1b3>" + lootid;
+        str += "<dev string:x1b3>";
+        str += "<dev string:x1b3>";
+        str += "<dev string:x1b3>" + baseweapon;
+        str += "<dev string:x1b3>";
+        str += "<dev string:x1b3>" + attachments;
+        str += "<dev string:x1b3>" + fullweaponname;
+        str += "<dev string:x1b3>" + function_e4891bb7bec886f9(titlestring);
+        str += "<dev string:x1b3>" + function_e4891bb7bec886f9(descstring);
+        str += "<dev string:x1b3>" + icon;
+        str += "<dev string:x1b3>" + pickupsound;
         return str;
     }
 
@@ -1766,8 +1683,8 @@ function getweaponnvgattachment(weaponobj) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5759
-// Size: 0x79
+// Checksum 0x0, Offset: 0x5921
+// Size: 0x7b
 function function_623af97ae297f796() {
     attachmentlist = [];
     numrows = tablelookupgetnumrows("mp/attachmenttable.csv");
@@ -1776,7 +1693,7 @@ function function_623af97ae297f796() {
         if (attachmentname == "") {
             continue;
         }
-        assertex(!isdefined(attachmentlist[attachmentname]), "<dev string:xa67>" + attachmentname);
+        assertex(!isdefined(attachmentlist[attachmentname]), "Duplicate attachment reference name found in attachmentTable.csv: " + attachmentname);
         attachmentlist[attachmentname] = attachmentname;
     }
     return attachmentlist;
@@ -1784,8 +1701,8 @@ function function_623af97ae297f796() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x57db
-// Size: 0x42
+// Checksum 0x0, Offset: 0x59a5
+// Size: 0x41
 function getreticleindex(reticleref) {
     if (!isdefined(reticleref)) {
         return undefined;
@@ -1799,7 +1716,7 @@ function getreticleindex(reticleref) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5826
+// Checksum 0x0, Offset: 0x59ef
 // Size: 0x41
 function getweapontable() {
     if (!isdefined(level.weapontable)) {
@@ -1812,8 +1729,8 @@ function getweapontable() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5870
-// Size: 0x108
+// Checksum 0x0, Offset: 0x5a39
+// Size: 0x107
 function function_a221d76594ef4e8b() {
     if (isdefined(level.weaponlistbundle)) {
         return level.weaponlistbundle;
@@ -1823,7 +1740,7 @@ function function_a221d76594ef4e8b() {
         weaponlistbundle = getscriptbundle(hashcat(%"hash_7eccb7f3e167e22b", gamemodebundle.weaponlist));
         if (isdefined(weaponlistbundle) && isdefined(weaponlistbundle.weapons)) {
             level.weaponlistbundle = [];
-            foreach (index, struct in weaponlistbundle.weapons) {
+            foreach (struct in weaponlistbundle.weapons) {
                 if (isdefined(struct) && isdefined(struct.weapondata)) {
                     level.weaponlistbundle[index] = struct.weapondata;
                 }
@@ -1835,32 +1752,32 @@ function function_a221d76594ef4e8b() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5980
-// Size: 0x114
+// Checksum 0x0, Offset: 0x5b48
+// Size: 0x117
 function function_c7901c1f857aa1a0(weapon) {
-    println("<dev string:xaad>" + getcompleteweaponname(weapon));
+    println("<dev string:x1bd>" + getcompleteweaponname(weapon));
     variantindex = getweaponvariantindex(getcompleteweaponname(weapon));
     if (!isdefined(variantindex)) {
         itemname = getweaponbasename(weapon);
         weapon_lootid = namespace_e0ee43ef2dddadaa::getweaponlootid(weapon);
-        println("<dev string:xaca>" + itemname);
+        println("<dev string:x1d7>" + itemname);
         if (weapon_lootid > 0) {
-            println("<dev string:xadc>" + weapon_lootid + "<dev string:xaec>");
+            println("<dev string:x1e6>" + weapon_lootid + "<dev string:x1f3>");
         }
         return [itemname, weapon_lootid];
     }
-    println("<dev string:xaf1>" + variantindex);
+    println("<dev string:x1f5>" + variantindex);
     weaponscriptbundle = function_33ce6e3c89e6975f(getweaponbasename(weapon), variantindex);
     weapon_lootid = weaponscriptbundle.lootid;
     blueprintname = namespace_38b993c4618e76cd::function_793e8a72cedb8ef3(weaponscriptbundle.lootid);
-    println("<dev string:xb02>" + blueprintname);
-    println("<dev string:xadc>" + weapon_lootid + "<dev string:xaec>");
+    println("<dev string:x203>" + blueprintname);
+    println("<dev string:x1e6>" + weapon_lootid + "<dev string:x1f3>");
     return [blueprintname, weapon_lootid];
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a9d
+// Checksum 0x0, Offset: 0x5c68
 // Size: 0x28
 function function_8477d8595e0364a7(weapon, keys) {
     return function_50f8a8f765bad85e(hashcat(%"hash_31705bf9ed477170", weapon), keys);
@@ -1868,7 +1785,7 @@ function function_8477d8595e0364a7(weapon, keys) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ace
+// Checksum 0x0, Offset: 0x5c99
 // Size: 0x28
 function function_a622d54bb517923a(attachment, keys) {
     return function_50f8a8f765bad85e(hashcat(%"hash_3c2c9813bb16552f", attachment), keys);
@@ -1876,8 +1793,8 @@ function function_a622d54bb517923a(attachment, keys) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5aff
-// Size: 0x44
+// Checksum 0x0, Offset: 0x5cca
+// Size: 0x43
 function function_b8811a0fc04e4b9d(weapon, key, def) {
     value = getscriptbundlefieldvalue(hashcat(%"hash_31705bf9ed477170", weapon), key);
     if (!isdefined(value)) {
@@ -1887,8 +1804,22 @@ function function_b8811a0fc04e4b9d(weapon, key, def) {
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x5d16
+// Size: 0x82
+function function_91d352b50d9a0630(weapon) {
+    var_6df1fdd78eb73a36 = function_c471a035d22df5eb();
+    var_ac82e189f4d06152 = [];
+    foreach (slot in var_6df1fdd78eb73a36) {
+        var_63a235c3e361a6c3 = function_75b035199842693d(weapon, slot);
+        var_ac82e189f4d06152[slot] = var_63a235c3e361a6c3;
+    }
+    return var_ac82e189f4d06152;
+}
+
+// Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b4c
+// Checksum 0x0, Offset: 0x5da1
 // Size: 0x174
 function function_c471a035d22df5eb() {
     if (!isdefined(level.var_c7008cff883cd615)) {
@@ -1912,7 +1843,7 @@ function function_c471a035d22df5eb() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cc9
+// Checksum 0x0, Offset: 0x5f1e
 // Size: 0x5d
 function function_5419ac7173288fc1(weapon) {
     weaponname = weapon.basename;
@@ -1931,7 +1862,7 @@ function function_5419ac7173288fc1(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d2f
+// Checksum 0x0, Offset: 0x5f84
 // Size: 0x5d
 function function_ada582163d1aca5e(weapon) {
     weaponname = weapon.basename;
@@ -1950,8 +1881,8 @@ function function_ada582163d1aca5e(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d95
-// Size: 0x30
+// Checksum 0x0, Offset: 0x5fea
+// Size: 0x2f
 function function_aa8b0f148ca930aa(weapon) {
     weaponname = weapon.basename;
     if (!isdefined(weaponname)) {
@@ -1962,8 +1893,8 @@ function function_aa8b0f148ca930aa(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5dce
-// Size: 0x68
+// Checksum 0x0, Offset: 0x6022
+// Size: 0x67
 function function_79d6e6c22245687a(rootname, variantid) {
     var_928c1cac31ea99e5 = rootname + "|" + variantid;
     if (isdefined(level.weaponlootmapdata[var_928c1cac31ea99e5]) && isdefined(level.weaponlootmapdata[var_928c1cac31ea99e5].lootid)) {
@@ -1974,8 +1905,8 @@ function function_79d6e6c22245687a(rootname, variantid) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e3f
-// Size: 0x70
+// Checksum 0x0, Offset: 0x6092
+// Size: 0x6f
 function function_115404a4dbd59830(rootname, variantid) {
     if (!isdefined(variantid)) {
         variantid = 0;
@@ -1989,7 +1920,7 @@ function function_115404a4dbd59830(rootname, variantid) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5eb8
+// Checksum 0x0, Offset: 0x610a
 // Size: 0x4d
 function getweaponlootid(weapon) {
     variantid = 0;
@@ -2002,7 +1933,7 @@ function getweaponlootid(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f0e
+// Checksum 0x0, Offset: 0x6160
 // Size: 0x30
 function function_b0d37b9be0027733(customweaponname) {
     rootname = namespace_e0ee43ef2dddadaa::getweaponrootname(customweaponname);
@@ -2012,8 +1943,8 @@ function function_b0d37b9be0027733(customweaponname) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f47
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x6199
+// Size: 0xa6
 function function_98bac17512f9c622(weapon) {
     weaponlootid = 0;
     weaponname = undefined;
@@ -2034,8 +1965,8 @@ function function_98bac17512f9c622(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ff5
-// Size: 0x8d
+// Checksum 0x0, Offset: 0x6248
+// Size: 0xe0
 function function_89a83ae9a4c4142a(weapon) {
     if (getdvarint(@"hash_8f727124cb64ae24", 1) == 1) {
         weaponlootid = function_98bac17512f9c622(weapon);
@@ -2053,13 +1984,22 @@ function function_89a83ae9a4c4142a(weapon) {
     if (isdefined(level.specialweaponlist[weaponname])) {
         return level.specialweaponlist[weaponname];
     }
+    id = tablelookup("loot/special_weapon_ids.csv", 1, weaponname, 0);
+    if (!isdefined(id) || id == "0" || id == "") {
+        return 0;
+    }
+    id = int(id);
+    if (isdefined(id)) {
+        level.specialweaponlist[weaponname] = id;
+        return id;
+    }
     return getweaponlootid(weapon);
 }
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x608b
-// Size: 0xb3
+// Checksum 0x0, Offset: 0x6331
+// Size: 0xb2
 function function_c2bc8497963042d5(weapon) {
     weaponname = undefined;
     if (isweapon(weapon)) {
@@ -2087,8 +2027,8 @@ function function_c2bc8497963042d5(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6147
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x63ec
+// Size: 0x3c
 function getgrenadeinpullback() {
     offhandweapon = self getheldoffhand();
     if (isdefined(self.gestureweapon) && offhandweapon == makeweaponfromstring(self.gestureweapon)) {
@@ -2099,7 +2039,7 @@ function getgrenadeinpullback() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x618d
+// Checksum 0x0, Offset: 0x6431
 // Size: 0x1d
 function isweaponequipment(weapon) {
     return istrue(weapon.inventorytype == "offhand");
@@ -2107,7 +2047,7 @@ function isweaponequipment(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61b3
+// Checksum 0x0, Offset: 0x6457
 // Size: 0x19
 function function_56f6e04546b058f7(weapon) {
     if (weapon == "iw9_knifestab") {
@@ -2118,16 +2058,8 @@ function function_56f6e04546b058f7(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61d5
-// Size: 0x16
-function isakimbo(weapon) {
-    return getweaponhasperk(weapon, "specialty_akimbo");
-}
-
-// Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x61f4
-// Size: 0x33
+// Checksum 0x0, Offset: 0x6479
+// Size: 0x32
 function function_309bcc0c19de2d18(weapon) {
     rootname = namespace_e0ee43ef2dddadaa::getweaponrootname(weapon);
     return level.weaponmapdata[rootname].var_e56bf18451002522;
@@ -2135,8 +2067,8 @@ function function_309bcc0c19de2d18(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6230
-// Size: 0x78
+// Checksum 0x0, Offset: 0x64b4
+// Size: 0x75
 function function_8a96b90526c40df6(weapon, attachments) {
     foreach (attachment in attachments) {
         if (issubstr(attachment, "laser") || issubstr(attachment, "flashlight")) {
@@ -2148,7 +2080,7 @@ function function_8a96b90526c40df6(weapon, attachments) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62b1
+// Checksum 0x0, Offset: 0x6532
 // Size: 0x28
 function isspreadweapon(objweapon) {
     return isdefined(objweapon) && isdefined(weaponclass(objweapon)) && weaponclass(objweapon) == "spread";
@@ -2156,14 +2088,11 @@ function isspreadweapon(objweapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62e2
-// Size: 0x87
+// Checksum 0x0, Offset: 0x6563
+// Size: 0x78
 function iswonderweapon(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:xb19>");
-        return 0;
-    }
-    if (!isdefined(level.weaponmetadata)) {
+        assertmsg("<dev string:x217>");
         return 0;
     }
     var_768d659419360f70 = weapon.var_9d7facbe889e667c;
@@ -2179,7 +2108,7 @@ function iswonderweapon(weapon) {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6372
+// Checksum 0x0, Offset: 0x65e4
 // Size: 0x21
 function function_5238382582ce39fa() {
     buildweaponmap();
@@ -2192,8 +2121,8 @@ function function_5238382582ce39fa() {
 
 // Namespace weapon / namespace_e0ee43ef2dddadaa
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x639b
-// Size: 0x13e
+// Checksum 0x0, Offset: 0x660d
+// Size: 0x13f
 function fixupplayerweapons(player, weapon) {
     currentplayerweapons = player getweaponslistprimaries();
     dirtyprimary = 1;
@@ -2221,20 +2150,5 @@ function fixupplayerweapons(player, weapon) {
         player.secondaryweaponobj = makeweaponfromstring(weaponname);
     }
     return dirtyprimary || dirtysecondary;
-}
-
-// Namespace weapon / namespace_e0ee43ef2dddadaa
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x64e2
-// Size: 0x7a
-function function_72ce982d9fc26f1c(weapon) {
-    if (isdefined(weapon.attachments)) {
-        foreach (attachment in weapon.attachments) {
-            if (issubstr(attachment, "backup_pistol")) {
-                return true;
-            }
-        }
-    }
-    return false;
 }
 

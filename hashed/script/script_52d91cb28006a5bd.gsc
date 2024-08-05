@@ -8,7 +8,7 @@
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x401
+// Checksum 0x0, Offset: 0x377
 // Size: 0xbd
 function function_12d7ca3ff609caba() {
     level.var_a96456706e7c0324 = getdvarfloat(@"hash_378f4895fd171e8", 12);
@@ -23,7 +23,7 @@ function function_12d7ca3ff609caba() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c6
+// Checksum 0x0, Offset: 0x43c
 // Size: 0x2c
 function function_e7715ffb329c1b40(equipmentref, equipmentslot, variantid) {
     function_f3bb4f4911a1beb2("throwstar", "onGive");
@@ -31,7 +31,7 @@ function function_e7715ffb329c1b40(equipmentref, equipmentslot, variantid) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fa
+// Checksum 0x0, Offset: 0x470
 // Size: 0x24
 function function_92e126d1a5d3fb2(equipmentref, equipmentslot) {
     function_f3bb4f4911a1beb2("throwstar", "onTake");
@@ -39,8 +39,8 @@ function function_92e126d1a5d3fb2(equipmentref, equipmentslot) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x526
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x49c
+// Size: 0xe8
 function function_709581d70ebb07cd(grenade) {
     grenade endon("death");
     grenade.bwasunderwater = isswimmingunderwater();
@@ -60,8 +60,8 @@ function function_709581d70ebb07cd(grenade) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x611
-// Size: 0xfb
+// Checksum 0x0, Offset: 0x58c
+// Size: 0xfa
 function function_1f6c16ac84ef5c16() {
     self makeunusable();
     trigger = spawn("trigger_radius", self.origin, 0, 64, 64);
@@ -90,7 +90,7 @@ function function_1f6c16ac84ef5c16() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x714
+// Checksum 0x0, Offset: 0x68e
 // Size: 0xcd
 function private function_f54c5164b830fffb() {
     self endon("death");
@@ -120,12 +120,12 @@ function private function_f54c5164b830fffb() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x7e9
-// Size: 0x52
+// Checksum 0x0, Offset: 0x763
+// Size: 0x51
 function private function_10769923b31f128c(equipmentref) {
     if (scripts\engine\utility::issharedfuncdefined("throwstar", "tryToPickup")) {
         pickupsuccessful = self [[ getsharedfunc("throwstar", "tryToPickup") ]](equipmentref);
-        assertex(isdefined(pickupsuccessful), "<dev string:x1c>");
+        assertex(isdefined(pickupsuccessful), "shared func throwstar tryToPickup must return a bool.");
         return pickupsuccessful;
     }
     return 1;
@@ -133,7 +133,7 @@ function private function_10769923b31f128c(equipmentref) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x844
+// Checksum 0x0, Offset: 0x7bd
 // Size: 0x25
 function private function_8485894af3536c3b() {
     if (isdefined(self.var_6f09a59aee157204)) {
@@ -144,7 +144,7 @@ function private function_8485894af3536c3b() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x871
+// Checksum 0x0, Offset: 0x7ea
 // Size: 0x1b
 function private function_ff1f6e7881a17ea6() {
     self endon("death");
@@ -154,8 +154,8 @@ function private function_ff1f6e7881a17ea6() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x894
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x80d
+// Size: 0x4c
 function private function_a4294dfcd472070b() {
     self endon("explode");
     self endon("death");
@@ -170,8 +170,8 @@ function private function_a4294dfcd472070b() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8e9
-// Size: 0xff
+// Checksum 0x0, Offset: 0x861
+// Size: 0x104
 function private function_c759de2f9501126() {
     level endon("game_end");
     self endon("missile_stuck");
@@ -200,8 +200,8 @@ function private function_c759de2f9501126() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f0
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x96d
+// Size: 0xb2
 function function_db4bbcfe23f19148(einflictor, victim, idamage, partname) {
     if (scripts\cp_mp\utility\damage_utility::function_b656251147d7d40b(partname)) {
         idamage = 250;
@@ -214,19 +214,15 @@ function function_db4bbcfe23f19148(einflictor, victim, idamage, partname) {
     if (isdefined(einflictor.bwasunderwater) && istrue(einflictor.bwasunderwater)) {
         idamage = function_ce1d250379db9655(victim);
     }
-    if (isdefined(victim) && istrue(victim.inlaststand)) {
-        if (!victim function_f3bb4f4911a1beb2("perk", "hasPerk", "specialty_close_quarter")) {
-            idamage = victim.health;
-        } else {
-            idamage = victim.health <= idamage ? victim.health : idamage;
-        }
+    if (isdefined(victim) && isdefined(victim.inlaststand) && istrue(victim.inlaststand)) {
+        idamage = victim.health;
     }
     return idamage;
 }
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xad8
+// Checksum 0x0, Offset: 0xa28
 // Size: 0x4
 function function_fc924820627e1c55() {
     return 130;
@@ -234,7 +230,7 @@ function function_fc924820627e1c55() {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae5
+// Checksum 0x0, Offset: 0xa35
 // Size: 0x54
 function function_ce1d250379db9655(victim) {
     outdmg = 45;
@@ -247,7 +243,7 @@ function function_ce1d250379db9655(victim) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xb42
+// Checksum 0x0, Offset: 0xa92
 // Size: 0x8e
 function function_f206558a684b471a(stuckto, stuckpart, var_5bf254e86be4a055, surfacetype, hitvelocity, position, hitnormal) {
     if (function_81814781949469b5(stuckto)) {
@@ -267,7 +263,7 @@ function function_f206558a684b471a(stuckto, stuckpart, var_5bf254e86be4a055, sur
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xbd8
+// Checksum 0x0, Offset: 0xb28
 // Size: 0x36
 function private function_81814781949469b5(stuckto) {
     if (isdefined(stuckto) && (isplayer(stuckto) || isbot(stuckto) || isagent(stuckto))) {
@@ -278,7 +274,7 @@ function private function_81814781949469b5(stuckto) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xc16
+// Checksum 0x0, Offset: 0xb66
 // Size: 0xcd
 function private function_9453e7a6466c7e47(stuckto, stuckpart, surfacetype) {
     if (isdefined(stuckto) || isdefined(stuckpart)) {
@@ -307,7 +303,7 @@ function private function_9453e7a6466c7e47(stuckto, stuckpart, surfacetype) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xceb
+// Checksum 0x0, Offset: 0xc3b
 // Size: 0x19
 function private function_100e72ca4ff67c80(position) {
     if (scripts\engine\utility::function_6c71c72547bb931(position)) {
@@ -318,7 +314,7 @@ function private function_100e72ca4ff67c80(position) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xd0d
+// Checksum 0x0, Offset: 0xc5d
 // Size: 0x38
 function private function_24b586e36bf90639(var_5bf254e86be4a055, position, hitnormal) {
     playfx(level._effect["thorwstar_impact_flesh"], position, hitnormal, anglestoup(var_5bf254e86be4a055));
@@ -326,8 +322,8 @@ function private function_24b586e36bf90639(var_5bf254e86be4a055, position, hitno
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0xd4d
-// Size: 0x4a
+// Checksum 0x0, Offset: 0xc9d
+// Size: 0x49
 function private function_d621dbdc62927db7(var_5bf254e86be4a055, hitvelocity, position) {
     forward = vectornormalize(hitvelocity);
     playfx(level._effect["thorwstar_impact_stick"], position, forward, anglestoup(var_5bf254e86be4a055));
@@ -335,7 +331,7 @@ function private function_d621dbdc62927db7(var_5bf254e86be4a055, hitvelocity, po
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xd9f
+// Checksum 0x0, Offset: 0xcee
 // Size: 0x35
 function private function_54e5d17bda41f63a(position, var_5bf254e86be4a055) {
     playfx(level._effect["thorwstar_impact_water"], position, anglestoforward(var_5bf254e86be4a055), anglestoup(var_5bf254e86be4a055));
@@ -343,8 +339,8 @@ function private function_54e5d17bda41f63a(position, var_5bf254e86be4a055) {
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xddc
-// Size: 0x54
+// Checksum 0x0, Offset: 0xd2b
+// Size: 0x53
 function private function_83388fba79e562c(var_5bf254e86be4a055, hitvelocity, position, hitnormal) {
     reflectvec = scripts\engine\math::vector_reflect(hitvelocity, hitnormal);
     playfx(level._effect["thorwstar_impact_reflect"], position, reflectvec, anglestoup(var_5bf254e86be4a055));

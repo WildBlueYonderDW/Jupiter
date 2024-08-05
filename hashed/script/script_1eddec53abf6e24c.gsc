@@ -22,8 +22,8 @@
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe57
-// Size: 0xf3
+// Checksum 0x0, Offset: 0xb90
+// Size: 0xf4
 function init() {
     if (issharedfuncdefined("hover_jet", "init")) {
         [[ getsharedfunc("hover_jet", "init") ]]();
@@ -31,9 +31,9 @@ function init() {
     /#
         bundle = level.streakglobals.streakbundles["<dev string:x1c>"];
         if (isdefined(bundle)) {
-            setdevdvarifuninitialized(@"hash_66bec5bd52437caf", ter_op(isdefined(bundle), bundle.lifetime, 45));
+            setdevdvarifuninitialized(@"hash_66bec5bd52437caf", ter_op(isdefined(bundle), bundle.maxhealth, 2500));
         } else {
-            setdevdvarifuninitialized(@"hash_66bec5bd52437caf", 45);
+            setdevdvarifuninitialized(@"hash_66bec5bd52437caf", 2500);
         }
         setdevdvarifuninitialized(@"hash_48714771f0d0b941", 0);
         setdevdvarifuninitialized(@"hash_de4ffc2e910521a1", 0);
@@ -48,8 +48,8 @@ function init() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf52
-// Size: 0x6f
+// Checksum 0x0, Offset: 0xc8c
+// Size: 0x6c
 function function_3775988f960ec3e6() {
     level.hoverjets = [];
     level.incomingallhoverjets = 0;
@@ -60,7 +60,7 @@ function function_3775988f960ec3e6() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc9
+// Checksum 0x0, Offset: 0xd00
 // Size: 0x7e
 function init_hover_jet_anims() {
     level.scr_anim["hover_jet"]["airstrike_flyby_loop"] = mp_vehicles_always_loaded%mp_halfa_flyin;
@@ -71,7 +71,7 @@ function init_hover_jet_anims() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x104f
+// Checksum 0x0, Offset: 0xd86
 // Size: 0x7e
 function init_hover_jet_vo() {
     game["dialog"]["hover_jet" + "_use"] = "killstreak_remote_operator" + "_request_response";
@@ -82,7 +82,7 @@ function init_hover_jet_vo() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d5
+// Checksum 0x0, Offset: 0xe0c
 // Size: 0x39
 function weapongivenhoverjet(streakinfo) {
     if (issharedfuncdefined("killstreak", "startMapSelectSequence")) {
@@ -93,8 +93,8 @@ function weapongivenhoverjet(streakinfo) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1117
-// Size: 0x21
+// Checksum 0x0, Offset: 0xe4e
+// Size: 0x20
 function tryusehoverjet() {
     streakinfo = createstreakinfo("hover_jet", self);
     return tryusehoverjetfromstruct(streakinfo);
@@ -102,8 +102,8 @@ function tryusehoverjet() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1141
-// Size: 0x282
+// Checksum 0x0, Offset: 0xe77
+// Size: 0x1c8
 function tryusehoverjetfromstruct(streakinfo) {
     team = self.team;
     if (!scripts\cp_mp\vehicles\vehicle_tracking::reservevehicle()) {
@@ -111,20 +111,6 @@ function tryusehoverjetfromstruct(streakinfo) {
             [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
         }
         return false;
-    }
-    if (isdefined(level.activekillstreaks)) {
-        foreach (streak in level.activekillstreaks) {
-            if (streak.owner != self) {
-                continue;
-            }
-            switch (streak.streakname) {
-            case #"hash_a1031216158c7882": 
-                if (issharedfuncdefined("hud", "showErrorMessage")) {
-                    [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
-                }
-                return false;
-            }
-        }
     }
     level.incomingallhoverjets++;
     var_f2efed389ae42a3c = 1;
@@ -166,8 +152,8 @@ function tryusehoverjetfromstruct(streakinfo) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13cc
-// Size: 0x1ba
+// Checksum 0x0, Offset: 0x1048
+// Size: 0x1bb
 function _tryusehoverjetfromstructinternal(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -212,8 +198,8 @@ function _tryusehoverjetfromstructinternal(streakinfo) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x158f
-// Size: 0xb14
+// Checksum 0x0, Offset: 0x120c
+// Size: 0xb2b
 function starthoverjetairstrikepass(owner, streakinfo, mappointinfo) {
     if (isdefined(level.var_b67b5f9dfe488c2f)) {
         thread [[ level.var_b67b5f9dfe488c2f ]](streakinfo);
@@ -371,7 +357,7 @@ function starthoverjetairstrikepass(owner, streakinfo, mappointinfo) {
     }
     scripts\cp_mp\hostmigration::hostmigration_waitlongdurationwithpause(var_9bc4a52a93594ddd);
     /#
-        level notify("<dev string:x29>");
+        level notify("<dev string:x26>");
     #/
     if (!isdefined(jet)) {
         return;
@@ -384,7 +370,7 @@ function starthoverjetairstrikepass(owner, streakinfo, mappointinfo) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x20ab
+// Checksum 0x0, Offset: 0x1d3f
 // Size: 0x42
 function hoverjet_delaysetscriptable(delaytime, part, state) {
     self endon("death");
@@ -396,7 +382,7 @@ function hoverjet_delaysetscriptable(delaytime, part, state) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20f5
+// Checksum 0x0, Offset: 0x1d89
 // Size: 0x32
 function hoverjet_playflyfx() {
     thread delaythread(0.05, &hoverjet_playapproachfx);
@@ -406,44 +392,32 @@ function hoverjet_playflyfx() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x212f
-// Size: 0x2c
+// Checksum 0x0, Offset: 0x1dc3
+// Size: 0xe
 function hoverjet_playapproachfx() {
-    if (getgametype() == "wm") {
-        self playsoundonmovingent("ks_wm_hoverjet_approach");
-        return;
-    }
     self playsoundonmovingent("ks_hoverjet_approach");
 }
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2163
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x1dd9
+// Size: 0xe
 function hoverjet_playflybyfx() {
-    if (getgametype() == "wm" && level.mapname == "mp_jup_skydiving") {
-        self playsoundonmovingent("ks_wm_hoverjet_flyby");
-        return;
-    }
     self playsoundonmovingent("ks_hoverjet_flyby");
 }
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21aa
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x1def
+// Size: 0xe
 function hoverjet_playreturnfx() {
-    if (getgametype() == "wm" && level.mapname == "mp_jup_skydiving") {
-        self playsoundonmovingent("ks_wm_hoverjet_return");
-        return;
-    }
     self playsoundonmovingent("ks_hoverjet_return");
 }
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21f1
-// Size: 0x3b
+// Checksum 0x0, Offset: 0x1e05
+// Size: 0x3a
 function function_fbda9177c810ff24(targetlocation) {
     var_caeb7635e74ead06 = getdvarint(@"hash_8ef299ce102da922", 3);
     thread function_41780f288d860974(targetlocation, var_caeb7635e74ead06);
@@ -452,8 +426,8 @@ function function_fbda9177c810ff24(targetlocation) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2234
-// Size: 0x466
+// Checksum 0x0, Offset: 0x1e47
+// Size: 0x477
 function function_41780f288d860974(targetlocation, var_caeb7635e74ead06) {
     self endon("death");
     self endon("crashing");
@@ -474,7 +448,7 @@ function function_41780f288d860974(targetlocation, var_caeb7635e74ead06) {
     var_c0c290150bfe81b7 = ["tag_right_aphid_missile", "tag_left_aphid_missile", "tag_right_archer_missile", "tag_left_archer_missile"];
     var_43cf5d2a3c531d4b = 0;
     missiletargets = [];
-    foreach (index, location in targetlocations) {
+    foreach (location in targetlocations) {
         starttrace = location + (0, 0, 10000);
         endtrace = location - (0, 0, 10000);
         targettrace = ray_trace(starttrace, endtrace, level.characters, contentoverride);
@@ -496,7 +470,7 @@ function function_41780f288d860974(targetlocation, var_caeb7635e74ead06) {
         /#
             airstrikedebugon = getdvarint(@"hash_920f0586653a26d4", 0);
             if (isdefined(airstrikedebugon) && airstrikedebugon) {
-                self.owner iprintlnbold("<dev string:x3c>" + index + 1);
+                self.owner iprintlnbold("<dev string:x36>" + index + 1);
                 if (isdefined(missiletarget)) {
                     sphere(location, 500, (0, 1, 0), 0, 1000);
                 } else {
@@ -515,8 +489,8 @@ function function_41780f288d860974(targetlocation, var_caeb7635e74ead06) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x26a2
-// Size: 0x179
+// Checksum 0x0, Offset: 0x22c6
+// Size: 0x17f
 function function_f42c29a91cabc8c2(targetlocation, var_caeb7635e74ead06) {
     self endon("death");
     self endon("crashing");
@@ -556,8 +530,8 @@ function function_f42c29a91cabc8c2(targetlocation, var_caeb7635e74ead06) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2823
-// Size: 0x199
+// Checksum 0x0, Offset: 0x244d
+// Size: 0x1a0
 function function_2b7c965fb8b07829(targetlocation, sideoffset) {
     if (!isdefined(sideoffset)) {
         sideoffset = 0;
@@ -587,8 +561,8 @@ function function_2b7c965fb8b07829(targetlocation, sideoffset) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29c4
-// Size: 0x44
+// Checksum 0x0, Offset: 0x25f5
+// Size: 0x43
 function function_d6c447fe14ce9a65() {
     level endon("game_ended");
     position = self waittill("explode");
@@ -599,7 +573,7 @@ function function_d6c447fe14ce9a65() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a10
+// Checksum 0x0, Offset: 0x2640
 // Size: 0x4f
 function hoverjet_missilekillcammove(impactlocation, var_d0b12377bc0ec26f) {
     self endon("death");
@@ -612,7 +586,7 @@ function hoverjet_missilekillcammove(impactlocation, var_d0b12377bc0ec26f) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a67
+// Checksum 0x0, Offset: 0x2697
 // Size: 0x4d
 function hoverjet_firemissilescriptable(missileindex) {
     self endon("death");
@@ -624,8 +598,8 @@ function hoverjet_firemissilescriptable(missileindex) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2abc
-// Size: 0xe1
+// Checksum 0x0, Offset: 0x26ec
+// Size: 0xdf
 function hoverjet_findmissiletarget(targets, existingtargetarray) {
     visibletarget = undefined;
     foreach (target in targets) {
@@ -651,7 +625,7 @@ function hoverjet_findmissiletarget(targets, existingtargetarray) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ba6
+// Checksum 0x0, Offset: 0x27d4
 // Size: 0x4b
 function hoverjet_delaymissiletracking(missile, delaytime, missiletargetent) {
     self endon("death");
@@ -664,7 +638,7 @@ function hoverjet_delaymissiletracking(missile, delaytime, missiletargetent) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bf9
+// Checksum 0x0, Offset: 0x2827
 // Size: 0x44
 function hoverjet_delayresetscriptable(explosionindex) {
     self endon("death");
@@ -676,7 +650,7 @@ function hoverjet_delayresetscriptable(explosionindex) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c45
+// Checksum 0x0, Offset: 0x2873
 // Size: 0x30
 function starthoverjetdefend(streakinfo) {
     thread hoverjet_defendlocation(self.returngoal);
@@ -687,7 +661,7 @@ function starthoverjetdefend(streakinfo) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c7d
+// Checksum 0x0, Offset: 0x28ab
 // Size: 0x6e
 function hoverjet_defendlocation(defloc) {
     self endon("death");
@@ -707,8 +681,8 @@ function hoverjet_defendlocation(defloc) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cf3
-// Size: 0x130
+// Checksum 0x0, Offset: 0x2921
+// Size: 0x131
 function hoverjet_handlemissiledetection(player, missileteam, missiletarget, fxtagoverride) {
     self endon("death");
     missiletarget endon("death");
@@ -741,8 +715,8 @@ function hoverjet_handlemissiledetection(player, missileteam, missiletarget, fxt
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e2b
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x2a5a
+// Size: 0x8b
 function hoverjet_watchlifetime(lifetime) {
     self endon("death");
     self endon("leaving");
@@ -752,7 +726,7 @@ function hoverjet_watchlifetime(lifetime) {
     /#
         airstrikedebugon = getdvarint(@"hash_920f0586653a26d4", 0);
         if (isdefined(airstrikedebugon) && airstrikedebugon) {
-            self.owner iprintlnbold("<dev string:x65>");
+            self.owner iprintlnbold("<dev string:x5c>");
         }
     #/
     playkillstreakoperatordialog("hover_jet", "hover_jet" + "_leave", 1);
@@ -761,7 +735,7 @@ function hoverjet_watchlifetime(lifetime) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ebf
+// Checksum 0x0, Offset: 0x2aed
 // Size: 0x3d
 function hoverjet_watchgameend() {
     self endon("death");
@@ -773,7 +747,7 @@ function hoverjet_watchgameend() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f04
+// Checksum 0x0, Offset: 0x2b32
 // Size: 0x38
 function hoverjet_watchowner() {
     self endon("death");
@@ -786,7 +760,7 @@ function hoverjet_watchowner() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f44
+// Checksum 0x0, Offset: 0x2b72
 // Size: 0x3b
 function hoverjet_leaveonownernotify(notifymsg) {
     self endon("death");
@@ -799,7 +773,7 @@ function hoverjet_leaveonownernotify(notifymsg) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f87
+// Checksum 0x0, Offset: 0x2bb5
 // Size: 0x75
 function hoverjet_startcombatlogic() {
     self endon("death");
@@ -818,8 +792,8 @@ function hoverjet_startcombatlogic() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3004
-// Size: 0x1ad
+// Checksum 0x0, Offset: 0x2c32
+// Size: 0x1b5
 function hoverjet_movetolocation(location) {
     self endon("death");
     self endon("leaving");
@@ -862,8 +836,8 @@ function hoverjet_movetolocation(location) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x31b9
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x2def
+// Size: 0x7e
 function hoverjet_getcorrectheight(x, y, rand) {
     var_dc8bb6300463cf1e = self.hoverheight;
     /#
@@ -878,8 +852,8 @@ function hoverjet_getcorrectheight(x, y, rand) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x323e
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x2e76
+// Size: 0xd0
 function hoverjet_tracegroundpoint(x, y) {
     self endon("death");
     self endon("acquiringTarget");
@@ -899,8 +873,8 @@ function hoverjet_tracegroundpoint(x, y) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3313
-// Size: 0x181
+// Checksum 0x0, Offset: 0x2f4f
+// Size: 0x184
 function hoverjet_engagegroundtargets() {
     self notify("engageGround");
     self endon("engageGround");
@@ -943,8 +917,8 @@ function hoverjet_engagegroundtargets() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x349c
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x30db
+// Size: 0x5d
 function function_7cad88468df8256e() {
     self endon("death");
     level endon("game_ended");
@@ -957,8 +931,8 @@ function function_7cad88468df8256e() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3502
-// Size: 0x19f
+// Checksum 0x0, Offset: 0x3140
+// Size: 0x1a3
 function hoverjet_fireongroundtarget(targetvehicle) {
     firetime = weaponfiretime("hover_jet_turret_ballistics_mp");
     var_db0ea2c2c400255 = 0;
@@ -999,8 +973,8 @@ function hoverjet_fireongroundtarget(targetvehicle) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36a9
-// Size: 0x81
+// Checksum 0x0, Offset: 0x32eb
+// Size: 0x83
 function hoverjet_turretlookingattarget() {
     var_97f0985016aa48cb = 0.996;
     turretforward = anglestoforward(self gettagangles("tag_flash"));
@@ -1014,8 +988,8 @@ function hoverjet_turretlookingattarget() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3733
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x3377
+// Size: 0xc8
 function hoverjet_engageairtargets() {
     self notify("engageAir");
     self endon("engageAir");
@@ -1041,8 +1015,8 @@ function hoverjet_engageairtargets() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3804
-// Size: 0x22e
+// Checksum 0x0, Offset: 0x3447
+// Size: 0x235
 function hoverjet_fireonairtarget() {
     missileside = "right";
     var_b144b7d889960d44 = makeweapon("hover_jet_proj_mp");
@@ -1065,7 +1039,7 @@ function hoverjet_fireonairtarget() {
         /#
             airstrikedebugon = getdvarint(@"hash_920f0586653a26d4", 0);
             if (isdefined(airstrikedebugon) && airstrikedebugon) {
-                line(self gettagorigin("<dev string:x7a>"), self.bestairtarget.origin, (1, 0, 1), 1, 0, 1);
+                line(self gettagorigin("<dev string:x6e>"), self.bestairtarget.origin, (1, 0, 1), 1, 0, 1);
             }
         #/
         if (isdefined(self.bestairtarget)) {
@@ -1093,8 +1067,8 @@ function hoverjet_fireonairtarget() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a3a
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x3684
+// Size: 0xd4
 function hoverjet_setmissileoffset(target) {
     offset = (0, 0, 0);
     if (isdefined(target.streakinfo)) {
@@ -1119,8 +1093,8 @@ function hoverjet_setmissileoffset(target) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b18
-// Size: 0x75
+// Checksum 0x0, Offset: 0x3761
+// Size: 0x77
 function hoverjet_airtargetiswithinview(airtarget) {
     var_97f0985016aa48cb = 0.866;
     jetforward = anglestoforward(self.angles);
@@ -1131,7 +1105,7 @@ function hoverjet_airtargetiswithinview(airtarget) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b96
+// Checksum 0x0, Offset: 0x37e1
 // Size: 0x33
 function hoverjet_airtargetistooclose(airtarget) {
     return ter_op(distance2dsquared(airtarget.origin, self.origin) < 1000000, 1, 0);
@@ -1139,8 +1113,8 @@ function hoverjet_airtargetistooclose(airtarget) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bd2
-// Size: 0x183
+// Checksum 0x0, Offset: 0x381d
+// Size: 0x188
 function hoverjet_moveawayfromtarget(airtarget) {
     while (isdefined(airtarget) && hoverjet_airtargetistooclose(airtarget)) {
         newpos = undefined;
@@ -1166,8 +1140,8 @@ function hoverjet_moveawayfromtarget(airtarget) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d5d
-// Size: 0xc6
+// Checksum 0x0, Offset: 0x39ad
+// Size: 0xc5
 function function_e05ade915e49f05f() {
     function_b6018909193826e4();
     self.var_ad9affc67934f84d = scripts\mp\objidpoolmanager::requestobjectiveid();
@@ -1183,7 +1157,7 @@ function function_e05ade915e49f05f() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e2b
+// Checksum 0x0, Offset: 0x3a7a
 // Size: 0x1e
 function function_b6018909193826e4() {
     if (isdefined(self.var_ad9affc67934f84d)) {
@@ -1193,8 +1167,8 @@ function function_b6018909193826e4() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e51
-// Size: 0x17e
+// Checksum 0x0, Offset: 0x3aa0
+// Size: 0x181
 function hoverjet_watchforreposition() {
     self endon("death");
     self endon("crashing");
@@ -1219,7 +1193,7 @@ function hoverjet_watchforreposition() {
         /#
             airstrikedebugon = getdvarint(@"hash_920f0586653a26d4", 0);
             if (isdefined(airstrikedebugon) && airstrikedebugon) {
-                player iprintlnbold("<dev string:x88>");
+                player iprintlnbold("<dev string:x79>");
             }
             self.useobj thread function_d6e5bb5b2c900f89(1);
         #/
@@ -1233,7 +1207,7 @@ function hoverjet_watchforreposition() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fd7
+// Checksum 0x0, Offset: 0x3c29
 // Size: 0x2a
 function hoverjet_watchfornearmovementgoal() {
     self endon("death");
@@ -1244,7 +1218,7 @@ function hoverjet_watchfornearmovementgoal() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4009
+// Checksum 0x0, Offset: 0x3c5b
 // Size: 0x2d
 function hoverjet_randomizemovement() {
     self notify("random_movement");
@@ -1257,8 +1231,8 @@ function hoverjet_randomizemovement() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x403e
-// Size: 0x122
+// Checksum 0x0, Offset: 0x3c90
+// Size: 0x129
 function function_58258fda8ee98d76(streakname) {
     killstreakvehicle = self;
     scorepopup = "destroyed_" + streakname;
@@ -1278,7 +1252,7 @@ function function_58258fda8ee98d76(streakname) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4168
+// Checksum 0x0, Offset: 0x3dc1
 // Size: 0x34
 function function_a7c9961508e4b099(streakname) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageData")) {
@@ -1288,8 +1262,8 @@ function function_a7c9961508e4b099(streakname) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41a4
-// Size: 0x109
+// Checksum 0x0, Offset: 0x3dfd
+// Size: 0x10a
 function function_8987ef697fe06da3(streakname) {
     weaponname = "thermite_bolt_mp";
     weaponhitsperattack = 1;
@@ -1319,7 +1293,7 @@ function function_8987ef697fe06da3(streakname) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42b5
+// Checksum 0x0, Offset: 0x3f0f
 // Size: 0x39
 function function_3b2ccb79d72d0155(data) {
     damage = data.damage;
@@ -1329,8 +1303,8 @@ function function_3b2ccb79d72d0155(data) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42f7
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x3f51
+// Size: 0x9f
 function function_acd17bdc96a89f80(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -1344,7 +1318,7 @@ function function_acd17bdc96a89f80(data) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x439c
+// Checksum 0x0, Offset: 0x3ff9
 // Size: 0x13
 function function_be82a8c78a16752b() {
     self setscriptablepartstate("body_damage_light", "on");
@@ -1352,7 +1326,7 @@ function function_be82a8c78a16752b() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43b7
+// Checksum 0x0, Offset: 0x4014
 // Size: 0x13
 function function_239dc7891d929c9c() {
     self setscriptablepartstate("body_damage_medium", "on");
@@ -1360,7 +1334,7 @@ function function_239dc7891d929c9c() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43d2
+// Checksum 0x0, Offset: 0x402f
 // Size: 0x13
 function function_ba3a1232dbda15da() {
     self setscriptablepartstate("body_damage_heavy", "on");
@@ -1368,7 +1342,7 @@ function function_ba3a1232dbda15da() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43ed
+// Checksum 0x0, Offset: 0x404a
 // Size: 0x3f
 function hoverjet_handledeathdamage(data) {
     self.killedbyweapon = data.objweapon;
@@ -1378,7 +1352,7 @@ function hoverjet_handledeathdamage(data) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4435
+// Checksum 0x0, Offset: 0x4092
 // Size: 0xba
 function hoverjet_handledestroyed(attacker, killedbyweapon) {
     level endon("game_ended");
@@ -1401,8 +1375,8 @@ function hoverjet_handledestroyed(attacker, killedbyweapon) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44f7
-// Size: 0x13c
+// Checksum 0x0, Offset: 0x4154
+// Size: 0x10a
 function hoverjet_crash(speed) {
     self endon("explode");
     self.iscrashing = 1;
@@ -1411,11 +1385,7 @@ function hoverjet_crash(speed) {
     self vehicle_turnengineoff();
     self clearlookatent();
     self notify("crashing");
-    if (getgametype() == "wm" && level.mapname == "mp_jup_skydiving") {
-        self playsoundonmovingent("ks_wm_hoverjet_crash");
-    } else {
-        self playsoundonmovingent("ks_hoverjet_crash");
-    }
+    self playsoundonmovingent("ks_hoverjet_crash");
     self setmaxpitchroll(10, 50);
     self vehicle_setspeed(speed, 20, 20);
     self setneargoalnotifydist(100);
@@ -1433,8 +1403,8 @@ function hoverjet_crash(speed) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x463b
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x4266
+// Size: 0x7f
 function function_a12df0241d8eea2(var_6847739e80fb4e81) {
     self endon("death");
     var_9f9c84729373f7db = length(self.origin - var_6847739e80fb4e81);
@@ -1451,7 +1421,7 @@ function function_a12df0241d8eea2(var_6847739e80fb4e81) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46c1
+// Checksum 0x0, Offset: 0x42ed
 // Size: 0x4c
 function hoverjet_spinout(speed) {
     self endon("death");
@@ -1464,8 +1434,8 @@ function hoverjet_spinout(speed) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4715
-// Size: 0x1a8
+// Checksum 0x0, Offset: 0x4341
+// Size: 0x1ad
 function hoverjet_findcrashposition(crashdist) {
     crashstart = self.origin;
     crashoffset = 1000;
@@ -1518,7 +1488,7 @@ function hoverjet_findcrashposition(crashdist) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x48c6
+// Checksum 0x0, Offset: 0x44f7
 // Size: 0x7b
 function hoverjet_explode() {
     if (istrue(self.isexploding)) {
@@ -1535,8 +1505,8 @@ function hoverjet_explode() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4949
-// Size: 0x2e0
+// Checksum 0x0, Offset: 0x457a
+// Size: 0x2ba
 function hoverjet_leave() {
     self endon("death");
     if (isdefined(level.var_f56a88761038798b)) {
@@ -1578,11 +1548,7 @@ function hoverjet_leave() {
     pathgoal = leavestart;
     self setvehgoalpos(pathgoal, 1);
     self vehicleplayanim(level.scr_anim["hover_jet"]["exit"]);
-    if (getgametype() == "wm" && level.mapname == "mp_jup_skydiving") {
-        self playsoundonmovingent("ks_wm_hoverjet_leave");
-    } else {
-        self playsoundonmovingent("ks_hoverjet_leave");
-    }
+    self playsoundonmovingent("ks_hoverjet_leave");
     self setscriptablepartstate("thrusters", "active", 0);
     waittill_any_timeout_1(3, "goal");
     failsafetime = 0;
@@ -1608,7 +1574,7 @@ function hoverjet_leave() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c31
+// Checksum 0x0, Offset: 0x483c
 // Size: 0x139
 function hoverjet_cleanup(wasdestroyed) {
     if (istrue(self.var_bf178f6894d17b96)) {
@@ -1640,8 +1606,8 @@ function hoverjet_cleanup(wasdestroyed) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d72
-// Size: 0x95
+// Checksum 0x0, Offset: 0x497d
+// Size: 0x94
 function hoverjet_watchtargetstatus(target) {
     targetentnum = target getentitynumber();
     self endon("hoverJet_breakOffTarget " + targetentnum);
@@ -1661,8 +1627,8 @@ function hoverjet_watchtargetstatus(target) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e0f
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x4a19
+// Size: 0x4c
 function hoverjet_watchgroundtargetdeathdisconnect(groundtarget) {
     targetentnum = groundtarget getentitynumber();
     self endon("hoverJet_breakOffTarget " + targetentnum);
@@ -1675,8 +1641,8 @@ function hoverjet_watchgroundtargetdeathdisconnect(groundtarget) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e64
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x4a6d
+// Size: 0x4c
 function hoverjet_watchairtargetdeath(airtarget) {
     targetentnum = airtarget getentitynumber();
     self endon("hoverJet_breakOffTarget " + targetentnum);
@@ -1689,8 +1655,8 @@ function hoverjet_watchairtargetdeath(airtarget) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb9
-// Size: 0x4f
+// Checksum 0x0, Offset: 0x4ac1
+// Size: 0x4e
 function hoverjet_watchforbreakaction(target, action) {
     targetentnum = target getentitynumber();
     self endon("hoverJet_breakOffTarget " + targetentnum);
@@ -1703,8 +1669,8 @@ function hoverjet_watchforbreakaction(target, action) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f10
-// Size: 0x1a2
+// Checksum 0x0, Offset: 0x4b17
+// Size: 0x1a7
 function hoverjet_watchtargetlos(target, tolerance, vehicletarget) {
     targetentnum = target getentitynumber();
     self endon("death");
@@ -1739,7 +1705,7 @@ function hoverjet_watchtargetlos(target, tolerance, vehicletarget) {
             /#
                 var_4dbe11d3bda81e4a = getdvarint(@"hash_48714771f0d0b941", 0);
                 if (var_4dbe11d3bda81e4a) {
-                    line(self.turret gettagorigin("<dev string:xaa>"), target.origin, (1, 0, 0), 1, 0, 5);
+                    line(self.turret gettagorigin("<dev string:x98>"), target.origin, (1, 0, 0), 1, 0, 5);
                 }
             #/
             losttime = undefined;
@@ -1750,8 +1716,8 @@ function hoverjet_watchtargetlos(target, tolerance, vehicletarget) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50ba
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x4cc6
+// Size: 0x5a
 function hoverjet_watchtargettimeout(target) {
     targetentnum = target getentitynumber();
     self endon("death");
@@ -1765,7 +1731,7 @@ function hoverjet_watchtargettimeout(target) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x511d
+// Checksum 0x0, Offset: 0x4d28
 // Size: 0x204
 function hoverjet_breakofftarget(targetentnum, var_d239154c0f9ced8e) {
     breakmessage = undefined;
@@ -1815,8 +1781,8 @@ function hoverjet_breakofftarget(targetentnum, var_d239154c0f9ced8e) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5329
-// Size: 0x13a
+// Checksum 0x0, Offset: 0x4f34
+// Size: 0x13c
 function hoverjet_getbestairtarget(targets) {
     self endon("death");
     self endon("leaving");
@@ -1855,7 +1821,7 @@ function hoverjet_getbestairtarget(targets) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x546c
+// Checksum 0x0, Offset: 0x5079
 // Size: 0x88
 function function_9f6c5e46080e47dc() {
     var_c51de0af53e40876 = "airstrike_flyby_straight";
@@ -1864,13 +1830,13 @@ function function_9f6c5e46080e47dc() {
         switch (var_dc24abeecce774ba) {
         case 0:
         case 1: 
-            var_c51de0af53e40876 = "<dev string:xb8>";
+            var_c51de0af53e40876 = "<dev string:xa3>";
             break;
         case 2: 
-            var_c51de0af53e40876 = "<dev string:xd0>";
+            var_c51de0af53e40876 = "<dev string:xb8>";
             break;
         case 3: 
-            var_c51de0af53e40876 = "<dev string:xe8>";
+            var_c51de0af53e40876 = "<dev string:xcd>";
             break;
         }
     #/
@@ -1879,7 +1845,7 @@ function function_9f6c5e46080e47dc() {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x54fd
+// Checksum 0x0, Offset: 0x510a
 // Size: 0x18
 function function_b5a9a3ea21b6ea62(data) {
     if (isdefined(self)) {
@@ -1889,8 +1855,8 @@ function function_b5a9a3ea21b6ea62(data) {
 
 // Namespace hover_jet / namespace_e70862d8d2eb291c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x551d
-// Size: 0x24b
+// Checksum 0x0, Offset: 0x512a
+// Size: 0x24a
 function function_8b040f320bd1e206(data) {
     self endon("death");
     self notify("hoverJet_mini_emp_hit");
@@ -1941,10 +1907,10 @@ function function_8b040f320bd1e206(data) {
 
     // Namespace hover_jet / namespace_e70862d8d2eb291c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5770
+    // Checksum 0x0, Offset: 0x537c
     // Size: 0x3b
     function function_950a05f71804f5() {
-        self endon("<dev string:x104>");
+        self endon("<dev string:xe6>");
         while (true) {
             sphere(self.origin, 50, (1, 0, 0), 0, 1);
             wait 0.05;
@@ -1953,42 +1919,42 @@ function function_8b040f320bd1e206(data) {
 
     // Namespace hover_jet / namespace_e70862d8d2eb291c
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x57b3
-    // Size: 0x14e
+    // Checksum 0x0, Offset: 0x53bf
+    // Size: 0x150
     function function_9480f8b8d48d0f59(owner) {
-        self endon("<dev string:x104>");
-        self endon("<dev string:x10d>");
+        self endon("<dev string:xe6>");
+        self endon("<dev string:xec>");
         while (true) {
             if (getdvarint(@"hash_920f0586653a26d4") == 0) {
                 waitframe();
                 continue;
             }
             if (!isdefined(self.bestgroundtarget)) {
-                bestgroundtarget = "<dev string:x118>";
+                bestgroundtarget = "<dev string:xf4>";
             } else {
                 bestgroundtarget = self.bestgroundtarget.name;
             }
             if (!isdefined(self.bestairtarget)) {
-                bestairtarget = "<dev string:x118>";
+                bestairtarget = "<dev string:xf4>";
             } else {
                 bestairtarget = self.bestairtarget.model;
             }
             anglesforward = anglestoforward(owner.angles);
             scalar = (anglesforward[0] * 300, anglesforward[1] * 300, anglesforward[2]);
-            print3d(level.players[0].origin + scalar, "<dev string:x123>" + bestairtarget, (1, 1, 0));
-            print3d(level.players[0].origin + scalar - (0, 0, 20), "<dev string:x138>" + bestgroundtarget, (1, 1, 0));
+            print3d(level.players[0].origin + scalar, "<dev string:xfc>" + bestairtarget, (1, 1, 0));
+            print3d(level.players[0].origin + scalar - (0, 0, 20), "<dev string:x10e>" + bestgroundtarget, (1, 1, 0));
             waitframe();
         }
     }
 
     // Namespace hover_jet / namespace_e70862d8d2eb291c
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5909
-    // Size: 0x119
+    // Checksum 0x0, Offset: 0x5517
+    // Size: 0x11a
     function function_380d84b0fdfca800(owner, jet) {
-        self endon("<dev string:x104>");
-        jet endon("<dev string:x104>");
-        jet endon("<dev string:x10d>");
+        self endon("<dev string:xe6>");
+        jet endon("<dev string:xe6>");
+        jet endon("<dev string:xec>");
         self.debugcolor = (1, 1, 1);
         while (true) {
             if (getdvarint(@"hash_125a1951df8627f5", 0) == 0) {
@@ -1998,7 +1964,7 @@ function function_8b040f320bd1e206(data) {
             ownereyepos = owner geteye();
             anglesforward = anglestoforward(owner getplayerangles());
             scalar = (anglesforward[0] * 300, anglesforward[1] * 300, anglesforward[2]);
-            print3d(owner.origin + scalar, "<dev string:x150>" + distance(self.origin, ownereyepos), self.debugcolor);
+            print3d(owner.origin + scalar, "<dev string:x123>" + distance(self.origin, ownereyepos), self.debugcolor);
             sphere(self.origin, 50, self.debugcolor, 0, 1);
             line(self.origin, ownereyepos + anglesforward * 300, self.debugcolor, 1, 0, 1);
             waitframe();
@@ -2007,11 +1973,11 @@ function function_8b040f320bd1e206(data) {
 
     // Namespace hover_jet / namespace_e70862d8d2eb291c
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5a2a
+    // Checksum 0x0, Offset: 0x5639
     // Size: 0x5f
     function function_d6e5bb5b2c900f89(time) {
-        self endon("<dev string:x104>");
-        self endon("<dev string:x10d>");
+        self endon("<dev string:xe6>");
+        self endon("<dev string:xec>");
         if (getdvarint(@"hash_125a1951df8627f5", 0) == 0) {
             return;
         }
@@ -2022,19 +1988,19 @@ function function_8b040f320bd1e206(data) {
 
     // Namespace hover_jet / namespace_e70862d8d2eb291c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5a91
-    // Size: 0xf8
+    // Checksum 0x0, Offset: 0x56a0
+    // Size: 0xfa
     function function_3f69aefa7b90fb4a() {
         if (!isdefined(self) || !isdefined(self.owner)) {
             return;
         }
-        self endon("<dev string:x104>");
-        self endon("<dev string:x15e>");
-        self.owner endon("<dev string:x16a>");
-        level endon("<dev string:x178>");
-        self.owner notifyonplayercommand("<dev string:x186>", "<dev string:x198>");
-        self.owner notifyonplayercommand("<dev string:x186>", "<dev string:x1a6>");
-        bombweaponname = "<dev string:x1b3>";
+        self endon("<dev string:xe6>");
+        self endon("<dev string:x12e>");
+        self.owner endon("<dev string:x137>");
+        level endon("<dev string:x142>");
+        self.owner notifyonplayercommand("<dev string:x14d>", "<dev string:x15c>");
+        self.owner notifyonplayercommand("<dev string:x14d>", "<dev string:x167>");
+        bombweaponname = "<dev string:x171>";
         bomblifetime = 10;
         for (sideoffset = 100; true; sideoffset *= -1) {
             airstrikedebugon = getdvarint(@"hash_920f0586653a26d4", 0);
@@ -2042,7 +2008,7 @@ function function_8b040f320bd1e206(data) {
                 waitframe();
                 continue;
             }
-            self.owner waittill("<dev string:x186>");
+            self.owner waittill("<dev string:x14d>");
             function_2b7c965fb8b07829(self.origin - (0, 0, 10000), sideoffset);
         }
     }

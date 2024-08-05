@@ -5,7 +5,7 @@
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98
+// Checksum 0x0, Offset: 0x102
 // Size: 0x2f
 function init() {
     level.entbudgetused = 0;
@@ -15,7 +15,7 @@ function init() {
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf
+// Checksum 0x0, Offset: 0x139
 // Size: 0x30
 function registerspawncount(entcount) {
     self.entcount = entcount;
@@ -25,7 +25,7 @@ function registerspawncount(entcount) {
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x107
+// Checksum 0x0, Offset: 0x171
 // Size: 0xa4
 function deregisterspawn() {
     if (isdefined(self.entcount) && !isdefined(self.deregistered)) {
@@ -34,7 +34,7 @@ function deregisterspawn() {
         self.entcount = undefined;
         if (level.entbudgetused < 0) {
             level.entbudgetused = 0;
-            assertmsg("<dev string:x1c>");
+            assertmsg("Error more spawns deregistered than registered!");
         }
     }
     if (isdefined(self.entdeletefunc)) {
@@ -45,12 +45,9 @@ function deregisterspawn() {
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b3
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x21d
+// Size: 0x58
 function registerspawn(entcount, deletefunc) {
-    if (!isdefined(self)) {
-        return;
-    }
     self.entcount = entcount;
     self.entdeletefunc = deletefunc;
     level.entbudgetused += entcount;
@@ -60,7 +57,7 @@ function registerspawn(entcount, deletefunc) {
 
 // Namespace ent_manager / scripts\cp_mp\ent_manager
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x219
+// Checksum 0x0, Offset: 0x27d
 // Size: 0x94
 function updatebudget() {
     if (level.entbudgetused > level.entbudget) {
@@ -68,7 +65,7 @@ function updatebudget() {
             level.entbudgetused -= level.budgetedents[0].entcount;
             self [[ level.budgetedents[0].entdeletefunc ]]();
         } else {
-            assertmsg("<dev string:x4f>");
+            assertmsg("Error undefined entry in level.budgetedEnts!  Did this get deleted before deregistration?");
         }
         level.budgetedents = scripts\engine\utility::array_slice(level.budgetedents, 0, 1);
     }
@@ -78,8 +75,8 @@ function updatebudget() {
 
     // Namespace ent_manager / scripts\cp_mp\ent_manager
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2b5
-    // Size: 0x7c
+    // Checksum 0x0, Offset: 0x319
+    // Size: 0x79
     function function_a5aa9e07f21b879e() {
         if (isdefined(level.budgetedents)) {
             foreach (ent in level.budgetedents) {

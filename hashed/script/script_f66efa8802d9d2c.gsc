@@ -155,6 +155,6 @@ function function_22256c01d8eb752c(streakinfo) {
 // Checksum 0x0, Offset: 0x640
 // Size: 0x1e
 function function_44d1e060ec177f59(player) {
-    level thread scripts\mp\battlechatter_mp::trysaylocalsound(player, #"hash_2492241d17cecd6d");
+    level thread scripts\mp\battlechatter_mp::trysaylocalsound(player, #"bc_killstreak_action_juggernaut");
 }
 

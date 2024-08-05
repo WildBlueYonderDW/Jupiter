@@ -12,10 +12,10 @@
 
 // Namespace track / scripts\asm\track
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fd
-// Size: 0xf8
+// Checksum 0x0, Offset: 0x1f6
+// Size: 0xfb
 function track(asmname) {
-    assertex(!isdefined(self.var_a709fbd9fea148f6), "<dev string:x1c>");
+    assertex(!isdefined(self.var_a709fbd9fea148f6), "Track service activated when a track service was already running");
     self.var_a709fbd9fea148f6 = asmname;
     var_a60d2ae5b60f0734 = asm_lookupanimfromaliasifexists("knobs", "aim_2");
     if (!isdefined(var_a60d2ae5b60f0734)) {
@@ -31,7 +31,7 @@ function track(asmname) {
 
 // Namespace track / scripts\asm\track
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fd
+// Checksum 0x0, Offset: 0x2f9
 // Size: 0x12d
 function trackinit(aim_2, aim_4, aim_6, aim_8) {
     self.a.aimweight = 1;
@@ -50,12 +50,12 @@ function trackinit(aim_2, aim_4, aim_6, aim_8) {
 
     // Namespace track / scripts\asm\track
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x432
-    // Size: 0xae
+    // Checksum 0x0, Offset: 0x42e
+    // Size: 0xaf
     function laserthread() {
-        self endon("<dev string:x60>");
-        self notify("<dev string:x69>");
-        self endon("<dev string:x69>");
+        self endon("<dev string:x1c>");
+        self notify("<dev string:x22>");
+        self endon("<dev string:x22>");
         while (true) {
             if (isdefined(self.convergence) && isdefined(self.convergence.aim_pos)) {
                 startpos = getlaserstartpoint();
@@ -71,7 +71,7 @@ function trackinit(aim_2, aim_4, aim_6, aim_8) {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e8
+// Checksum 0x0, Offset: 0x4e5
 // Size: 0x2d
 function sniperdeathcleanup() {
     self endon("stop_sniper");
@@ -83,7 +83,7 @@ function sniperdeathcleanup() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x51d
+// Checksum 0x0, Offset: 0x51a
 // Size: 0x7b
 function sniperlaserhackstop() {
     if (isdefined(self.sniper_laser)) {
@@ -102,8 +102,8 @@ function sniperlaserhackstop() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a0
-// Size: 0x44
+// Checksum 0x0, Offset: 0x59d
+// Size: 0x43
 function shoulduselasertag() {
     weaponbasename = getweaponbasename(self.weapon);
     switch (weaponbasename) {
@@ -117,8 +117,8 @@ function shoulduselasertag() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ed
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x5e9
+// Size: 0x8d
 function getlaserstartpoint() {
     if (!isdefined(self.bhaslasertag)) {
         if (shoulduselasertag()) {
@@ -142,7 +142,7 @@ function getlaserstartpoint() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x684
+// Checksum 0x0, Offset: 0x67f
 // Size: 0x8
 function getlaserdirection() {
     return self getmuzzledir();
@@ -150,7 +150,7 @@ function getlaserdirection() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x695
+// Checksum 0x0, Offset: 0x690
 // Size: 0x8
 function getlaserangles() {
     return self getmuzzleangle();
@@ -158,8 +158,8 @@ function getlaserangles() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a6
-// Size: 0x236
+// Checksum 0x0, Offset: 0x6a1
+// Size: 0x239
 function sniperlaserhackstart() {
     if (isdefined(self.sniper_laser)) {
         return;
@@ -203,7 +203,7 @@ function sniperlaserhackstart() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e4
+// Checksum 0x0, Offset: 0x8e2
 // Size: 0x1f
 function trackturnofflaser() {
     if (istrue(self.var_70beb323dd9e1ac5)) {
@@ -215,7 +215,7 @@ function trackturnofflaser() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x90b
+// Checksum 0x0, Offset: 0x909
 // Size: 0x2d
 function trackturnonlaser() {
     if (istrue(self.var_70beb323dd9e1ac5)) {
@@ -229,7 +229,7 @@ function trackturnonlaser() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x940
+// Checksum 0x0, Offset: 0x93e
 // Size: 0x16
 function clearconvergence() {
     self.convergence = undefined;
@@ -238,8 +238,8 @@ function clearconvergence() {
 
 // Namespace track / scripts\asm\track
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x95e
-// Size: 0x508
+// Checksum 0x0, Offset: 0x95c
+// Size: 0x510
 function resetconvergence(bnewtarget, var_c5686a51213bf45e, bretarget) {
     if (!isdefined(self.convergence)) {
         self.convergence = spawnstruct();
@@ -336,8 +336,8 @@ function resetconvergence(bnewtarget, var_c5686a51213bf45e, bretarget) {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6e
-// Size: 0x32f
+// Checksum 0x0, Offset: 0xe74
+// Size: 0x332
 function calcconvergencetarget() {
     assert(isdefined(self._blackboard.shootparams_pos));
     if (self.var_1c2393f94226309c >= 0 && gettime() - self.var_1c2393f94226309c >= 100) {
@@ -381,7 +381,7 @@ function calcconvergencetarget() {
 
 // Namespace track / scripts\asm\track
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a6
+// Checksum 0x0, Offset: 0x11af
 // Size: 0x43
 function turnlaserbackon(waittime) {
     self endon("death");
@@ -395,8 +395,8 @@ function turnlaserbackon(waittime) {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f1
-// Size: 0x414
+// Checksum 0x0, Offset: 0x11fa
+// Size: 0x41d
 function convergencetargettick() {
     bcansee = 1;
     bnewtarget = 0;
@@ -487,7 +487,7 @@ function convergencetargettick() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x160e
+// Checksum 0x0, Offset: 0x1620
 // Size: 0x13
 function issniperconverging() {
     if (!isdefined(self.convergence)) {
@@ -498,7 +498,7 @@ function issniperconverging() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x162a
+// Checksum 0x0, Offset: 0x163c
 // Size: 0x13
 function issniperlaseron() {
     if (isdefined(self.sniper_laser)) {
@@ -509,7 +509,7 @@ function issniperlaseron() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1646
+// Checksum 0x0, Offset: 0x1658
 // Size: 0x5f
 function isaiming() {
     if (!isdefined(self.asm.aimstarttime)) {
@@ -526,8 +526,8 @@ function isaiming() {
 
 // Namespace track / scripts\asm\track
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ae
-// Size: 0x5fd
+// Checksum 0x0, Offset: 0x16c0
+// Size: 0x60e
 function trackloop(asmname) {
     self endon("asm_terminated");
     self endon("death");
@@ -662,7 +662,7 @@ function trackloop(asmname) {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cb3
+// Checksum 0x0, Offset: 0x1cd6
 // Size: 0xc7
 function trackloop_restoreaim() {
     if (!isdefined(self.asm.prevyawdelta)) {
@@ -679,7 +679,7 @@ function trackloop_restoreaim() {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d82
+// Checksum 0x0, Offset: 0x1da5
 // Size: 0x5d
 function getcurrentpoi() {
     if (self.var_f42c6628b5c02603) {
@@ -694,8 +694,8 @@ function getcurrentpoi() {
 
 // Namespace track / scripts\asm\track
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de8
-// Size: 0x39b
+// Checksum 0x0, Offset: 0x1e0b
+// Size: 0x3a3
 function trackloop_setanimweights(pitchdelta, yawdelta) {
     aim_5 = undefined;
     if (isdefined(self.asm.track.aim_2)) {
@@ -755,8 +755,8 @@ function trackloop_setanimweights(pitchdelta, yawdelta) {
 
 // Namespace track / scripts\asm\track
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x218b
-// Size: 0x4ea
+// Checksum 0x0, Offset: 0x21b6
+// Size: 0x502
 function trackloop_setanimweightslmg(pitchdelta, yawdelta) {
     assert(isdefined(self.asm.track.lmg_aim_1));
     aim_1 = self.asm.track.lmg_aim_1;
@@ -781,7 +781,7 @@ function trackloop_setanimweightslmg(pitchdelta, yawdelta) {
     if (first_index == 0) {
         first_index = 1;
     }
-    assertex(first_index < var_70662f647f89d5f7.size && first_index > 0, "<dev string:x75>" + first_index + "<dev string:x85>" + desired_yaw);
+    assertex(first_index < var_70662f647f89d5f7.size && first_index > 0, "Bad index : " + first_index + ", Desired Yaw: " + desired_yaw);
     statename = self.asm.track.lmg_aim_state;
     for (index = 0; index < var_70662f647f89d5f7.size; index++) {
         if (index == first_index || index == first_index - 1) {
@@ -808,7 +808,7 @@ function trackloop_setanimweightslmg(pitchdelta, yawdelta) {
 
 // Namespace track / scripts\asm\track
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x267d
+// Checksum 0x0, Offset: 0x26c0
 // Size: 0x111
 function setanimaimweight(goalweight, goaltime) {
     if (!isdefined(goaltime) || goaltime <= 0) {
@@ -829,8 +829,8 @@ function setanimaimweight(goalweight, goaltime) {
 
 // Namespace track / scripts\asm\track
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2796
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x27d9
+// Size: 0xba
 function incranimaimweight() {
     if (self.a.aimweight_t < self.a.aimweight_transframes) {
         self.a.aimweight_t++;

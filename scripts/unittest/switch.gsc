@@ -4,8 +4,8 @@
 
 // Namespace unittest_switch / scripts\unittest\switch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x294
-// Size: 0x6e2
+// Checksum 0x0, Offset: 0x1ee
+// Size: 0x6d8
 function switch_case() {
     numcases = [2, 1, 4, 3, 0];
     foreach (c in numcases) {
@@ -135,8 +135,8 @@ function switch_case() {
 
 // Namespace unittest_switch / scripts\unittest\switch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x97e
-// Size: 0x18c
+// Checksum 0x0, Offset: 0x8ce
+// Size: 0x18e
 function switch_nest() {
     test_print("switch_nest");
     numcases = [0, 0, 0, 1, 0, 2, 1, 0, 1, 1, 1, 2];
@@ -179,7 +179,7 @@ function switch_nest() {
 
 // Namespace unittest_switch / scripts\unittest\switch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb12
+// Checksum 0x0, Offset: 0xa64
 // Size: 0x70
 function switch_loop() {
     for (i = 0; i < 10; i++) {
@@ -200,7 +200,7 @@ function switch_loop() {
 
 // Namespace unittest_switch / scripts\unittest\switch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8a
+// Checksum 0x0, Offset: 0xadc
 // Size: 0x2f
 function main() {
     test_begin("Switch");

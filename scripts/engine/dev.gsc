@@ -6,8 +6,8 @@
 
     // Namespace dev / scripts\engine\dev
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x90
-    // Size: 0xa3
+    // Checksum 0x0, Offset: 0x70
+    // Size: 0xa5
     function function_4da869df964b68db(dvarname, var_d4bb121b87421c8) {
         setdevdvar(dvarname, "<dev string:x1c>");
         while (true) {
@@ -17,7 +17,7 @@
                 continue;
             }
             setdevdvar(dvarname, "<dev string:x1c>");
-            tokens = strtok(dvarvalue, "<dev string:x20>");
+            tokens = strtok(dvarvalue, "<dev string:x1d>");
             if (!isdefined(tokens) || tokens.size < 1) {
                 continue;
             }

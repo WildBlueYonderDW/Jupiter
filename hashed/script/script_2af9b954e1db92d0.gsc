@@ -9,7 +9,7 @@
 
 // Namespace hunt_point / namespace_3019a92c149eb488
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x186
+// Checksum 0x0, Offset: 0x13f
 // Size: 0x18
 function main() {
     add_smartobject_type("hunt_point", &getinfo, &canuse);
@@ -17,7 +17,7 @@ function main() {
 
 // Namespace hunt_point / namespace_3019a92c149eb488
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a6
+// Checksum 0x0, Offset: 0x15f
 // Size: 0xd
 function canuse(object) {
     return true;
@@ -25,8 +25,8 @@ function canuse(object) {
 
 // Namespace hunt_point / namespace_3019a92c149eb488
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bc
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x175
+// Size: 0x5c
 function getinfo() {
     info = createsmartobjectinfo();
     info.fnonuse = &onuse;
@@ -39,8 +39,8 @@ function getinfo() {
 
 // Namespace hunt_point / namespace_3019a92c149eb488
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x222
-// Size: 0x17b
+// Checksum 0x0, Offset: 0x1da
+// Size: 0x17f
 function onuse(object) {
     var_e8003c5231baea93 = self._blackboard.var_3dbe624a18d61f13;
     pod = function_bc5df124338cefea(self);
@@ -73,8 +73,8 @@ function onuse(object) {
 
 // Namespace hunt_point / namespace_3019a92c149eb488
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a5
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x361
+// Size: 0x6e
 function waitforgesture(flag) {
     self endon("death");
     self endon("smartobject_logic_finished");
@@ -91,7 +91,7 @@ function waitforgesture(flag) {
 
 // Namespace hunt_point / namespace_3019a92c149eb488
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c
+// Checksum 0x0, Offset: 0x3d7
 // Size: 0x22
 function function_522562e28309afaa(t) {
     wait t;

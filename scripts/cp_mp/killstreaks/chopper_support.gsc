@@ -18,7 +18,7 @@
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa6c
+// Checksum 0x0, Offset: 0x8c6
 // Size: 0xa9
 function init() {
     if (issharedfuncdefined("chopper_support", "init")) {
@@ -39,7 +39,7 @@ function init() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1d
+// Checksum 0x0, Offset: 0x977
 // Size: 0x87
 function init_chopper_support_vo() {
     game["dialog"]["chopper_support_light_damage"] = "chopper_support_health_high";
@@ -53,8 +53,8 @@ function init_chopper_support_vo() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbac
-// Size: 0x26
+// Checksum 0x0, Offset: 0xa06
+// Size: 0x25
 function tryusechoppersupport(streakname) {
     streakinfo = createstreakinfo(streakname, self);
     return tryusechoppersupportfromstruct(streakinfo);
@@ -62,8 +62,8 @@ function tryusechoppersupport(streakname) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdb
-// Size: 0x24d
+// Checksum 0x0, Offset: 0xa34
+// Size: 0x24f
 function tryusechoppersupportfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -124,8 +124,8 @@ function tryusechoppersupportfromstruct(streakinfo) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe31
-// Size: 0x89
+// Checksum 0x0, Offset: 0xc8c
+// Size: 0x88
 function usechoppersupport(player, streakinfo) {
     chopper = spawnchopper(player, streakinfo);
     level.incomingallchoppersupports--;
@@ -142,8 +142,8 @@ function usechoppersupport(player, streakinfo) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xec3
-// Size: 0xae8
+// Checksum 0x0, Offset: 0xd1d
+// Size: 0xaf8
 function spawnchopper(owner, streakinfo) {
     heightoffset = (0, 0, 1750);
     /#
@@ -188,13 +188,13 @@ function spawnchopper(owner, streakinfo) {
             #/
         } else {
             /#
-                owner iprintlnbold("<dev string:x1c>" + entrancestruct.script_linkto + "<dev string:x2f>");
+                owner iprintlnbold("<dev string:x1c>" + entrancestruct.script_linkto + "<dev string:x2c>");
             #/
         }
     } else {
         /#
-            if (level.gametype != "<dev string:x41>" && level.gametype != "<dev string:x48>" && !scripts\cp_mp\utility\game_utility::isbrstylegametype() && !istrue(level.leanthread)) {
-                owner iprintlnbold("<dev string:x54>");
+            if (level.gametype != "<dev string:x3b>" && level.gametype != "<dev string:x3f>" && !scripts\cp_mp\utility\game_utility::isbrstylegametype() && !istrue(level.leanthread)) {
+                owner iprintlnbold("<dev string:x48>");
             }
         #/
     }
@@ -298,7 +298,7 @@ function spawnchopper(owner, streakinfo) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b4
+// Checksum 0x0, Offset: 0x181e
 // Size: 0x118
 function startchopper(player, streakinfo) {
     self endon("death");
@@ -326,7 +326,7 @@ function startchopper(player, streakinfo) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad4
+// Checksum 0x0, Offset: 0x193e
 // Size: 0x6a
 function choppersupport_monitorowner() {
     self endon("death");
@@ -341,7 +341,7 @@ function choppersupport_monitorowner() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b46
+// Checksum 0x0, Offset: 0x19b0
 // Size: 0x9a
 function choppersupport_neargoalsettings() {
     self endon("leaving");
@@ -349,7 +349,7 @@ function choppersupport_neargoalsettings() {
     self waittill("near_goal");
     self vehicle_setspeed(int(self.speed / 2), int(self.accel / 3));
     thread choppersupport_watchlifetime();
-    thread chopperSupport_watchDestroyed();
+    thread choppersupport_watchdestoyed();
     thread choppersupport_watchgameendleave();
     thread choppersupport_watchleash();
     thread choppersupport_patrolfield(1);
@@ -361,8 +361,8 @@ function choppersupport_neargoalsettings() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1be8
-// Size: 0x16f
+// Checksum 0x0, Offset: 0x1a52
+// Size: 0x170
 function choppersupport_handlemissiledetection(player, missileteam, missiletarget, fxtagoverride) {
     self endon("death");
     while (true) {
@@ -398,7 +398,7 @@ function choppersupport_handlemissiledetection(player, missileteam, missiletarge
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5f
+// Checksum 0x0, Offset: 0x1bca
 // Size: 0xae
 function choppersupport_engageturrettarget(turret) {
     self endon("leaving");
@@ -424,8 +424,8 @@ function choppersupport_engageturrettarget(turret) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e15
-// Size: 0xcd
+// Checksum 0x0, Offset: 0x1c80
+// Size: 0xd1
 function choppersupport_acquireturrettarget(turret, targets) {
     self notify("engaging_target");
     result = undefined;
@@ -452,7 +452,7 @@ function choppersupport_acquireturrettarget(turret, targets) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1eeb
+// Checksum 0x0, Offset: 0x1d5a
 // Size: 0x59
 function choppersupport_setcurrenttarget(turret, target) {
     turret settargetentity(turret.groundtargetent);
@@ -465,8 +465,8 @@ function choppersupport_setcurrenttarget(turret, target) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f4c
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x1dbb
+// Size: 0xb1
 function choppersupport_clearcurrenttarget(turret) {
     if (isdefined(self.currenttarget) && self.currenttarget == turret.attackingtarget) {
         self.currenttarget = undefined;
@@ -488,8 +488,8 @@ function choppersupport_clearcurrenttarget(turret) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2006
-// Size: 0x303
+// Checksum 0x0, Offset: 0x1e74
+// Size: 0x308
 function choppersupport_fireonturrettarget(turret, turrettarget, turretvehicletarget, playdialog, var_7d1f0f4095d78597) {
     if (self.currentaction != "attacking") {
         self.currentaction = "attacking";
@@ -569,11 +569,11 @@ function choppersupport_fireonturrettarget(turret, turrettarget, turretvehicleta
 
     // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2311
+    // Checksum 0x0, Offset: 0x2184
     // Size: 0x5c
     function function_189edc0c3e4cce61(turret) {
-        turret endon("<dev string:x8a>");
-        turret.groundtargetent endon("<dev string:x99>");
+        turret endon("<dev string:x7b>");
+        turret.groundtargetent endon("<dev string:x87>");
         while (true) {
             sphere(turret.groundtargetent.origin, 10, (1, 1, 1), 0, 1);
             waitframe();
@@ -584,7 +584,7 @@ function choppersupport_fireonturrettarget(turret, turrettarget, turretvehicleta
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2375
+// Checksum 0x0, Offset: 0x21e8
 // Size: 0x4d
 function choppersupport_canattackactivetarget(turret, turrettarget) {
     return isdefined(self) && isdefined(turret) && isdefined(turrettarget) && !isdefined(self.iscrashing) && !isdefined(self.isleaving) && isdefined(turret.attackingtarget);
@@ -592,8 +592,8 @@ function choppersupport_canattackactivetarget(turret, turrettarget) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x23cb
-// Size: 0x111
+// Checksum 0x0, Offset: 0x223e
+// Size: 0x116
 function choppersupport_setattackpoint(turret, turrettarget, centerpoint, attackradius) {
     point = centerpoint;
     if (isdefined(attackradius)) {
@@ -614,8 +614,8 @@ function choppersupport_setattackpoint(turret, turrettarget, centerpoint, attack
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24e4
-// Size: 0x81
+// Checksum 0x0, Offset: 0x235c
+// Size: 0x83
 function choppersupport_turretlookingattarget() {
     var_97f0985016aa48cb = 0.992;
     turretforward = anglestoforward(self gettagangles("tag_flash"));
@@ -629,7 +629,7 @@ function choppersupport_turretlookingattarget() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x256e
+// Checksum 0x0, Offset: 0x23e8
 // Size: 0x5f
 function choppersupport_watchforlosttarget(turret) {
     thread choppersupport_watchforlosttargetaction(turret, "death_or_disconnect");
@@ -642,8 +642,8 @@ function choppersupport_watchforlosttarget(turret) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x25d5
-// Size: 0x66
+// Checksum 0x0, Offset: 0x244f
+// Size: 0x65
 function choppersupport_watchforlosttargetaction(turret, action) {
     self endon("leaving");
     self endon("explode");
@@ -660,8 +660,8 @@ function choppersupport_watchforlosttargetaction(turret, action) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2643
-// Size: 0x99
+// Checksum 0x0, Offset: 0x24bc
+// Size: 0x98
 function choppersupport_watchleashrange(turret) {
     self endon("leaving");
     self endon("explode");
@@ -687,8 +687,8 @@ function choppersupport_watchleashrange(turret) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e4
-// Size: 0x88
+// Checksum 0x0, Offset: 0x255c
+// Size: 0x87
 function choppersupport_watchtargetrange(turret) {
     self endon("leaving");
     self endon("explode");
@@ -709,8 +709,8 @@ function choppersupport_watchtargetrange(turret) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2774
-// Size: 0x140
+// Checksum 0x0, Offset: 0x25eb
+// Size: 0x144
 function choppersupport_watchtargetlos(turret, vehicletarget) {
     self endon("leaving");
     self endon("explode");
@@ -747,7 +747,7 @@ function choppersupport_watchtargetlos(turret, vehicletarget) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28bc
+// Checksum 0x0, Offset: 0x2737
 // Size: 0x38
 function choppersupport_watchtargettimeout(turret) {
     self endon("leaving");
@@ -760,7 +760,7 @@ function choppersupport_watchtargettimeout(turret) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28fc
+// Checksum 0x0, Offset: 0x2777
 // Size: 0x64
 function choppersupport_watchforlaststand(turret) {
     self endon("leaving");
@@ -778,8 +778,8 @@ function choppersupport_watchforlaststand(turret) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2968
-// Size: 0x94
+// Checksum 0x0, Offset: 0x27e3
+// Size: 0x93
 function choppersupport_isactivetarget(target) {
     activetarget = 0;
     if (!isdefined(target)) {
@@ -800,7 +800,7 @@ function choppersupport_isactivetarget(target) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a05
+// Checksum 0x0, Offset: 0x287f
 // Size: 0x3c
 function choppersupport_checkifactivetargets() {
     return isdefined(self.frontturret.attackingtarget) || isdefined(self.rearturret) && isdefined(self.rearturret.attackingtarget);
@@ -808,8 +808,8 @@ function choppersupport_checkifactivetargets() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a4a
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x28c4
+// Size: 0x7b
 function choppersupport_getactivetargets() {
     activetargets = [];
     if (isdefined(self.frontturret.attackingtarget)) {
@@ -823,8 +823,8 @@ function choppersupport_getactivetargets() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2acf
-// Size: 0x2f2
+// Checksum 0x0, Offset: 0x2948
+// Size: 0x2f7
 function choppersupport_patrolfield(initialpatrol) {
     self endon("death");
     self endon("leaving");
@@ -892,7 +892,7 @@ function choppersupport_patrolfield(initialpatrol) {
                 /#
                     debugpathing = getdvarint(@"hash_189e3806377f69dc", 0);
                     if (debugpathing) {
-                        self.owner iprintlnbold("<dev string:xa2>");
+                        self.owner iprintlnbold("<dev string:x8d>");
                         sphere(newlocation, 100, (0, 1, 0), 0, 120);
                     }
                 #/
@@ -905,8 +905,8 @@ function choppersupport_patrolfield(initialpatrol) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dc9
-// Size: 0x105
+// Checksum 0x0, Offset: 0x2c47
+// Size: 0x107
 function choppersupport_findclosestpatrolstruct() {
     pathstructs = array_combine(level.heli_structs_goals, level.heli_structs_paths);
     targetstruct = undefined;
@@ -931,8 +931,8 @@ function choppersupport_findclosestpatrolstruct() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ed7
-// Size: 0xa3
+// Checksum 0x0, Offset: 0x2d57
+// Size: 0xa5
 function choppersupport_canseeenemy(enemy) {
     icansee = 0;
     contents = scripts\engine\trace::create_contents(0, 1, 0, 1, 1, 0);
@@ -949,8 +949,8 @@ function choppersupport_canseeenemy(enemy) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f83
-// Size: 0x1ec
+// Checksum 0x0, Offset: 0x2e05
+// Size: 0x1f7
 function choppersupport_movetolocation(target, forcestopatgoal) {
     self endon("death");
     self endon("leaving");
@@ -999,7 +999,7 @@ function choppersupport_movetolocation(target, forcestopatgoal) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3177
+// Checksum 0x0, Offset: 0x3004
 // Size: 0xeb
 function choppersupport_leave() {
     self endon("death");
@@ -1025,7 +1025,7 @@ function choppersupport_leave() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x326a
+// Checksum 0x0, Offset: 0x30f7
 // Size: 0x184
 function choppersupport_cleanup(wasdestroyed) {
     if (issharedfuncdefined("player", "printGameAction")) {
@@ -1063,7 +1063,7 @@ function choppersupport_cleanup(wasdestroyed) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33f6
+// Checksum 0x0, Offset: 0x3283
 // Size: 0x28
 function choppersupport_watchlifetime() {
     self endon("death");
@@ -1074,7 +1074,7 @@ function choppersupport_watchlifetime() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3426
+// Checksum 0x0, Offset: 0x32b3
 // Size: 0x74
 function choppersupport_watchgameendleave() {
     if (isdefined(self.owner)) {
@@ -1093,8 +1093,8 @@ function choppersupport_watchgameendleave() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a2
-// Size: 0xea
+// Checksum 0x0, Offset: 0x332f
+// Size: 0xe9
 function choppersupport_watchleash() {
     self endon("death");
     self endon("leaving");
@@ -1127,35 +1127,33 @@ function choppersupport_watchleash() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3594
-// Size: 0x21c
+// Checksum 0x0, Offset: 0x3420
+// Size: 0x21e
 function choppersupport_gettargets(turret, rangeoverride, var_f8c5d9ba90c73623, var_f537b27c366f06c9) {
     self endon("death");
     self endon("leaving");
     targets = [];
-    players = [];
+    players = level.players;
+    agents = [];
+    if (isdefined(level.agentarray)) {
+        foreach (agent in level.agentarray) {
+            if (istrue(agent.isactive) && !issubstr(agent.agent_type, "civilian")) {
+                agents[agents.size] = agent;
+            }
+        }
+    }
     if (islargemap()) {
         var_397eb484dfddd2da = 4500;
         if (isdefined(rangeoverride)) {
             var_397eb484dfddd2da = rangeoverride;
         }
-        if (isdefined(self.gettargetfunc)) {
-            players = self [[ self.gettargetfunc ]]();
-        } else if (isbrstylegametype()) {
+        if (function_6c1fce6f6b8779d5() == "dmz" || function_6c1fce6f6b8779d5() == "exgm") {
             players = utility::function_2d7fd59d039fa69b(self.origin, var_397eb484dfddd2da, undefined);
         } else {
             players = utility::function_2d7fd59d039fa69b(self.origin, var_397eb484dfddd2da, 0);
         }
     } else {
-        agents = [];
-        if (isdefined(level.agentarray)) {
-            foreach (agent in level.agentarray) {
-                if (istrue(agent.isactive) && !issubstr(agent.agent_type, "civilian")) {
-                    agents[agents.size] = agent;
-                }
-            }
-        }
-        players = array_combine(level.players, agents);
+        players array_combine(players, agents);
     }
     for (i = 0; i < players.size; i++) {
         potentialtarget = players[i];
@@ -1179,8 +1177,8 @@ function choppersupport_gettargets(turret, rangeoverride, var_f8c5d9ba90c73623, 
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x37b9
-// Size: 0x418
+// Checksum 0x0, Offset: 0x3647
+// Size: 0x41e
 function choppersupport_istarget(turret, potentialtarget, var_f8c5d9ba90c73623, var_f537b27c366f06c9) {
     self endon("death");
     self endon("leaving");
@@ -1214,7 +1212,7 @@ function choppersupport_istarget(turret, potentialtarget, var_f8c5d9ba90c73623, 
                         }
                     }
                 }
-                canseetarget = ray_trace_passed(turret gettagorigin("<dev string:x102>"), potentialtarget gettagorigin("<dev string:x110>"), var_b9d5783a4f34efbc, contentsoverride);
+                canseetarget = ray_trace_passed(turret gettagorigin("<dev string:xea>"), potentialtarget gettagorigin("<dev string:xf5>"), var_b9d5783a4f34efbc, contentsoverride);
                 if (!istrue(canseetarget)) {
                     return [0, 0, 0];
                 }
@@ -1275,7 +1273,7 @@ function choppersupport_istarget(turret, potentialtarget, var_f8c5d9ba90c73623, 
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bda
+// Checksum 0x0, Offset: 0x3a6e
 // Size: 0x3c
 function choppersupport_isplayeractive(player) {
     return isdefined(player) && !player.notarget && player _isalive() && player.sessionstate == "playing";
@@ -1283,8 +1281,8 @@ function choppersupport_isplayeractive(player) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1f
-// Size: 0x234
+// Checksum 0x0, Offset: 0x3ab3
+// Size: 0x23a
 function choppersupport_getbesttarget(turret, targets) {
     bestyaw = undefined;
     besttarget = undefined;
@@ -1332,8 +1330,8 @@ function choppersupport_getbesttarget(turret, targets) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e5c
-// Size: 0x67
+// Checksum 0x0, Offset: 0x3cf6
+// Size: 0x68
 function getcorrectheight(x, y, randheightoffset, var_1d3a4b020ae79012) {
     var_dc8bb6300463cf1e = self.heightoffset[2];
     groundheight = tracegroundpoint(x, y, var_1d3a4b020ae79012);
@@ -1344,13 +1342,11 @@ function getcorrectheight(x, y, randheightoffset, var_1d3a4b020ae79012) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ecc
-// Size: 0x83
-function chopperSupport_watchDestroyed() {
+// Checksum 0x0, Offset: 0x3d67
+// Size: 0x73
+function choppersupport_watchdestoyed() {
     level endon("game_ended");
     self endon("chopperSupport_gone");
-    self notify("chopperSupport_watchDestroyed");
-    self endon("chopperSupport_watchDestroyed");
     owner = self.owner;
     self waittill("death");
     if (!isdefined(self)) {
@@ -1366,7 +1362,7 @@ function chopperSupport_watchDestroyed() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f57
+// Checksum 0x0, Offset: 0x3de2
 // Size: 0x7f
 function choppersupport_explode() {
     self notify("explode");
@@ -1384,8 +1380,8 @@ function choppersupport_explode() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fde
-// Size: 0x11e
+// Checksum 0x0, Offset: 0x3e69
+// Size: 0x11d
 function choppersupport_crash(speed) {
     self endon("explode");
     self setscriptablepartstate("crash", "on", 0);
@@ -1416,8 +1412,8 @@ function choppersupport_crash(speed) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4104
-// Size: 0x1be
+// Checksum 0x0, Offset: 0x3f8e
+// Size: 0x1c3
 function choppersupport_findcrashposition(crashdist, var_6c56ff5ecc704c48, var_6c7af55ecc98b102) {
     crashstart = self.origin;
     crashoffset = self.crashoffset;
@@ -1470,7 +1466,7 @@ function choppersupport_findcrashposition(crashdist, var_6c56ff5ecc704c48, var_6
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42cb
+// Checksum 0x0, Offset: 0x415a
 // Size: 0x4c
 function choppersupport_spinout(speed) {
     self endon("death");
@@ -1483,7 +1479,7 @@ function choppersupport_spinout(speed) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x431f
+// Checksum 0x0, Offset: 0x41ae
 // Size: 0x7e
 function tracenewpoint(x, y, z) {
     self endon("death");
@@ -1500,8 +1496,8 @@ function tracenewpoint(x, y, z) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x43a6
-// Size: 0x143
+// Checksum 0x0, Offset: 0x4235
+// Size: 0x147
 function tracegroundpoint(x, y, var_1d3a4b020ae79012) {
     self endon("death");
     self endon("acquiringTarget");
@@ -1530,8 +1526,8 @@ function tracegroundpoint(x, y, var_1d3a4b020ae79012) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x44f2
-// Size: 0x53
+// Checksum 0x0, Offset: 0x4385
+// Size: 0x52
 function beginevasivemaneuvers() {
     self endon("death");
     self notify("begin_evasive_maneuvers");
@@ -1545,8 +1541,8 @@ function beginevasivemaneuvers() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x454d
-// Size: 0x64
+// Checksum 0x0, Offset: 0x43df
+// Size: 0x65
 function getcorrectheightescort(x, y, rand, minheight) {
     var_dc8bb6300463cf1e = 200;
     if (isdefined(minheight)) {
@@ -1560,8 +1556,8 @@ function getcorrectheightescort(x, y, rand, minheight) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x45ba
-// Size: 0xfe
+// Checksum 0x0, Offset: 0x444d
+// Size: 0x105
 function function_f60fc20e14bd9b6f(streakname) {
     killstreakvehicle = self;
     scorepopup = "destroyed_" + streakname;
@@ -1581,7 +1577,7 @@ function function_f60fc20e14bd9b6f(streakname) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46c0
+// Checksum 0x0, Offset: 0x455a
 // Size: 0x34
 function function_635f6112bf87d114(streakname) {
     if (issharedfuncdefined("vehicle_damage", "setVehicleHitDamageData")) {
@@ -1591,8 +1587,8 @@ function function_635f6112bf87d114(streakname) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46fc
-// Size: 0x109
+// Checksum 0x0, Offset: 0x4596
+// Size: 0x10a
 function function_6561cd64026004d8(streakname) {
     weaponname = "thermite_bolt_mp";
     weaponhitsperattack = 1;
@@ -1622,7 +1618,7 @@ function function_6561cd64026004d8(streakname) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x480d
+// Checksum 0x0, Offset: 0x46a8
 // Size: 0x39
 function function_cb514462a6399faa(data) {
     damage = data.damage;
@@ -1632,8 +1628,8 @@ function function_cb514462a6399faa(data) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x484f
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x46ea
+// Size: 0x9f
 function function_400022dabdb64055(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -1647,7 +1643,7 @@ function function_400022dabdb64055(data) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x48f4
+// Checksum 0x0, Offset: 0x4792
 // Size: 0x3b
 function function_7d38d0927292ed9a() {
     self setscriptablepartstate("body_damage_light", "on");
@@ -1656,7 +1652,7 @@ function function_7d38d0927292ed9a() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4937
+// Checksum 0x0, Offset: 0x47d5
 // Size: 0x3b
 function function_29d9f6678d3dd0cf() {
     self setscriptablepartstate("body_damage_medium", "on");
@@ -1665,7 +1661,7 @@ function function_29d9f6678d3dd0cf() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x497a
+// Checksum 0x0, Offset: 0x4818
 // Size: 0x3b
 function function_5d99407a305345bf() {
     self setscriptablepartstate("body_damage_heavy", "on");
@@ -1674,7 +1670,7 @@ function function_5d99407a305345bf() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49bd
+// Checksum 0x0, Offset: 0x485b
 // Size: 0x4b
 function choppersupport_handledeathdamage(data) {
     self.killedbyweapon = data.objweapon;
@@ -1684,7 +1680,7 @@ function choppersupport_handledeathdamage(data) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a11
+// Checksum 0x0, Offset: 0x48af
 // Size: 0x86
 function choppersipport_randommovement() {
     self endon("death");
@@ -1700,8 +1696,8 @@ function choppersipport_randommovement() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a9f
-// Size: 0x1c7
+// Checksum 0x0, Offset: 0x493d
+// Size: 0x1d4
 function getrandompoint(pos) {
     self clearlookatent();
     if (distance2dsquared(self.origin, self.owner.origin) > 4194304) {
@@ -1733,8 +1729,8 @@ function getrandompoint(pos) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c6e
-// Size: 0x1c5
+// Checksum 0x0, Offset: 0x4b19
+// Size: 0x1cb
 function getnewpoint(pos, targ) {
     self endon("death");
     self endon("acquiringTarget");
@@ -1775,8 +1771,8 @@ function getnewpoint(pos, targ) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e3c
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x4ced
+// Size: 0x7f
 function getpathstart(coord) {
     pathrandomness = 100;
     halfdistance = 15000;
@@ -1789,8 +1785,8 @@ function getpathstart(coord) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ec1
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x4d75
+// Size: 0x61
 function getpathend() {
     pathrandomness = 150;
     halfdistance = 15000;
@@ -1802,8 +1798,8 @@ function getpathend() {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f28
-// Size: 0x79
+// Checksum 0x0, Offset: 0x4ddf
+// Size: 0x77
 function choppersupport_findtargetstruct(structlinkname, var_6e1e1e75fc237eb1) {
     foundstruct = undefined;
     foreach (struct in var_6e1e1e75fc237eb1) {
@@ -1817,8 +1813,8 @@ function choppersupport_findtargetstruct(structlinkname, var_6e1e1e75fc237eb1) {
 
 // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4faa
-// Size: 0x40
+// Checksum 0x0, Offset: 0x4e5f
+// Size: 0x3f
 function choppersupport_issmallpatrolmap() {
     var_549f2cf299fe01b8 = 0;
     switch (level.mapname) {
@@ -1834,28 +1830,28 @@ function choppersupport_issmallpatrolmap() {
 
     // Namespace chopper_support / scripts\cp_mp\killstreaks\chopper_support
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4ff3
-    // Size: 0x17e
+    // Checksum 0x0, Offset: 0x4ea7
+    // Size: 0x180
     function function_9480f8b8d48d0f59(owner) {
-        self endon("<dev string:x99>");
-        self endon("<dev string:x11a>");
+        self endon("<dev string:x87>");
+        self endon("<dev string:xfc>");
         while (true) {
             if (getdvarint(@"hash_f91acea7f6a68742") == 0) {
                 waitframe();
                 continue;
             }
-            fronttarget = "<dev string:x125>";
+            fronttarget = "<dev string:x104>";
             if (isdefined(self.frontturret.attackingtarget)) {
                 fronttarget = self.frontturret.attackingtarget.name;
             }
-            reartarget = "<dev string:x125>";
+            reartarget = "<dev string:x104>";
             if (isdefined(self.rearturret) && isdefined(self.rearturret.attackingtarget)) {
                 reartarget = self.rearturret.attackingtarget.name;
             }
             anglesforward = anglestoforward(owner.angles);
             scalar = (anglesforward[0] * 300, anglesforward[1] * 300, anglesforward[2]);
-            print3d(level.players[0].origin + scalar, "<dev string:x130>" + fronttarget, (1, 1, 0));
-            print3d(level.players[0].origin + scalar - (0, 0, 20), "<dev string:x149>" + reartarget, (1, 1, 0));
+            print3d(level.players[0].origin + scalar, "<dev string:x10c>" + fronttarget, (1, 1, 0));
+            print3d(level.players[0].origin + scalar - (0, 0, 20), "<dev string:x122>" + reartarget, (1, 1, 0));
             waitframe();
         }
     }

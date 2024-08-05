@@ -5,10 +5,10 @@
 
 // Namespace vision_utility / namespace_6c72573a48881070
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb8
+// Checksum 0x0, Offset: 0xcd
 // Size: 0x94
 function function_27a921508cb04613(visionset, transitionduration) {
-    assertex(isdefined(visionset) || visionset == "<dev string:x1c>", "<dev string:x20>");
+    assertex(isdefined(visionset) || visionset == "", "AddVisionSetNakedForPlayer(): needs to have a valid visionSet");
     if (!isdefined(transitionduration)) {
         transitionduration = 0;
     }
@@ -27,12 +27,9 @@ function function_27a921508cb04613(visionset, transitionduration) {
 
 // Namespace vision_utility / namespace_6c72573a48881070
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x154
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x169
+// Size: 0xb5
 function function_9a92ae402e209ecc(visionset, removeduration) {
-    if (!isdefined(self.activevisionsetlist)) {
-        return;
-    }
     if (!isdefined(self.activevisionsetlist[visionset])) {
         return;
     }
@@ -52,7 +49,7 @@ function function_9a92ae402e209ecc(visionset, removeduration) {
 
 // Namespace vision_utility / namespace_6c72573a48881070
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x221
+// Checksum 0x0, Offset: 0x226
 // Size: 0x27
 function function_cb1caaf18300a508() {
     thread function_47c42aba7e6b41e3("", 0);
@@ -63,7 +60,7 @@ function function_cb1caaf18300a508() {
 
 // Namespace vision_utility / namespace_6c72573a48881070
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x250
+// Checksum 0x0, Offset: 0x255
 // Size: 0x3f
 function function_8e888e08a6ab22d3(visionset) {
     if (!isdefined(self.activevisionsetlist) || !isdefined(self.activevisionsetlist[visionset])) {
@@ -77,8 +74,8 @@ function function_8e888e08a6ab22d3(visionset) {
 
 // Namespace vision_utility / namespace_6c72573a48881070
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x298
-// Size: 0x9a
+// Checksum 0x0, Offset: 0x29d
+// Size: 0x98
 function private function_5936afcd0e190a3b(removeduration) {
     self endon("disconnect");
     level endon("game_ended");
@@ -91,7 +88,7 @@ function private function_5936afcd0e190a3b(removeduration) {
         wait dur;
         waitframe();
     }
-    foreach (visionindex, visionsetcount in self.activevisionsetlist) {
+    foreach (visionsetcount in self.activevisionsetlist) {
         thread function_47c42aba7e6b41e3(visionindex, dur);
         waitframe();
     }
@@ -99,7 +96,7 @@ function private function_5936afcd0e190a3b(removeduration) {
 
 // Namespace vision_utility / namespace_6c72573a48881070
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x33a
+// Checksum 0x0, Offset: 0x33d
 // Size: 0x59
 function private function_47c42aba7e6b41e3(visionset, transitionduration) {
     self endon("disconnect");

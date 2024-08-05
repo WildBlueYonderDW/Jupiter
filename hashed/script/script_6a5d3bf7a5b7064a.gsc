@@ -13,7 +13,7 @@
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x559
+// Checksum 0x0, Offset: 0x46d
 // Size: 0x38
 function init() {
     if (!isdefined(level.var_562530bdb8e83b66)) {
@@ -26,8 +26,8 @@ function init() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x599
-// Size: 0x12c
+// Checksum 0x0, Offset: 0x4ad
+// Size: 0x129
 function function_9bc46d4b8891a740() {
     if (!isplayer(self) || isbot(self)) {
         return;
@@ -54,7 +54,7 @@ function function_9bc46d4b8891a740() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cd
+// Checksum 0x0, Offset: 0x5de
 // Size: 0x25b
 function initdeathsdooroverlaypulse() {
     if (!isdefined(level.projectbundle) || !isdefined(level.projectbundle.var_1ad4a3f795bf0321)) {
@@ -80,7 +80,7 @@ function initdeathsdooroverlaypulse() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x930
+// Checksum 0x0, Offset: 0x841
 // Size: 0x23c
 function function_12bd9b0199862940() {
     if (!isdefined(level.projectbundle) || !isdefined(level.projectbundle.var_e44fdf0e370e159a)) {
@@ -105,8 +105,8 @@ function function_12bd9b0199862940() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb74
-// Size: 0x80
+// Checksum 0x0, Offset: 0xa85
+// Size: 0x7e
 function function_fba4aaaecf8e34ac() {
     overlays = self.damage.var_7076478738f62d10;
     waittill_any_2("death_or_disconnect", "ending_cinematic");
@@ -119,8 +119,8 @@ function function_fba4aaaecf8e34ac() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbfc
-// Size: 0x8a
+// Checksum 0x0, Offset: 0xb0b
+// Size: 0x88
 function function_c0124edee3a13496() {
     overlays = self.damage.var_f4687931bd3b8634;
     waittill_any_4("disconnect", "death_delay_finished", "spawned", "ending_cinematic");
@@ -133,7 +133,7 @@ function function_c0124edee3a13496() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8e
+// Checksum 0x0, Offset: 0xb9b
 // Size: 0x25
 function function_3d879029586de3(alphavalue) {
     if (getdvarint(@"hash_4d7862eaa83b3b27")) {
@@ -144,7 +144,7 @@ function function_3d879029586de3(alphavalue) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbc
+// Checksum 0x0, Offset: 0xbc9
 // Size: 0xf3
 function onenterdeathsdoor(smeansofdeath) {
     if (istrue(self.deathsdoor)) {
@@ -175,7 +175,7 @@ function onenterdeathsdoor(smeansofdeath) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb7
+// Checksum 0x0, Offset: 0xcc4
 // Size: 0xee
 function playerbreathingpainsound(healthcap) {
     self endon("death_or_disconnect");
@@ -207,7 +207,7 @@ function playerbreathingpainsound(healthcap) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xead
+// Checksum 0x0, Offset: 0xdba
 // Size: 0xdd
 function onexitdeathsdoor(healed) {
     if (istrue(healed)) {
@@ -237,7 +237,7 @@ function onexitdeathsdoor(healed) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf92
+// Checksum 0x0, Offset: 0xe9f
 // Size: 0x22
 function function_9030f56a68f604dc() {
     if (!isdefined(self.damage.deathsdooroverlaypulse)) {
@@ -248,7 +248,7 @@ function function_9030f56a68f604dc() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbc
+// Checksum 0x0, Offset: 0xec9
 // Size: 0x7e
 function function_c2e66bc8cbf81b2d() {
     if (!isdefined(self.damage.var_5d28af440fb50e5a)) {
@@ -261,7 +261,7 @@ function function_c2e66bc8cbf81b2d() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1042
+// Checksum 0x0, Offset: 0xf4f
 // Size: 0x10
 function function_86765f42c27f4bee() {
     thread function_47b9c7c77690bb03(0, 3.5);
@@ -269,7 +269,7 @@ function function_86765f42c27f4bee() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x105a
+// Checksum 0x0, Offset: 0xf67
 // Size: 0x57
 function function_7067dfb2023a23b7() {
     if (!isdefined(self.damage.var_5d28af440fb50e5a)) {
@@ -281,8 +281,8 @@ function function_7067dfb2023a23b7() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b9
-// Size: 0x68
+// Checksum 0x0, Offset: 0xfc6
+// Size: 0x67
 function applyshrapnelfx() {
     self endon("disconnect");
     self notify("applyShrapnelFX");
@@ -299,8 +299,8 @@ function applyshrapnelfx() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1129
-// Size: 0x46
+// Checksum 0x0, Offset: 0x1035
+// Size: 0x45
 function applyshrapnelfxinternal() {
     self endon("death");
     self endon("joined_team");
@@ -312,7 +312,7 @@ function applyshrapnelfxinternal() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1178
+// Checksum 0x0, Offset: 0x1083
 // Size: 0x4c
 function function_6410111baf734017() {
     if (!isdefined(level.var_194088d9669cb53d)) {
@@ -324,8 +324,8 @@ function function_6410111baf734017() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11cd
-// Size: 0x19
+// Checksum 0x0, Offset: 0x10d8
+// Size: 0x18
 function function_549fbfada3618987() {
     var_194088d9669cb53d = function_6410111baf734017();
     return var_194088d9669cb53d > 2000;
@@ -333,7 +333,7 @@ function function_549fbfada3618987() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ef
+// Checksum 0x0, Offset: 0x10f9
 // Size: 0x66
 function updatefirsttimedamaged() {
     if (function_549fbfada3618987()) {
@@ -350,8 +350,8 @@ function updatefirsttimedamaged() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x125d
-// Size: 0xd4
+// Checksum 0x0, Offset: 0x1167
+// Size: 0xd3
 function removeoldattackersovertime() {
     self endon("damage");
     self endon("death_or_disconnect");
@@ -375,7 +375,7 @@ function removeoldattackersovertime() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1339
+// Checksum 0x0, Offset: 0x1242
 // Size: 0x16
 function function_446043a04ae1bfe() {
     self.attackers = [];
@@ -384,7 +384,7 @@ function function_446043a04ae1bfe() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1357
+// Checksum 0x0, Offset: 0x1260
 // Size: 0x115
 function damageeffects(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c6a06a7, objweapon, shitloc) {
     self endon("death_or_disconnect");
@@ -407,8 +407,8 @@ function damageeffects(idamage, eattacker, smeansofdeath, vpoint, var_1da1a66b5c
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1474
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x137d
+// Size: 0xc4
 function damagepainvision(vpoint, factor, smeansofdeath, idamage, objweapon) {
     self endon("damageEffects");
     self endon("death_or_disconnect");
@@ -435,7 +435,7 @@ function damagepainvision(vpoint, factor, smeansofdeath, idamage, objweapon) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1541
+// Checksum 0x0, Offset: 0x1449
 // Size: 0x46
 function shoulddopainvision(objweapon) {
     if (istrue(level.wpinprogress) || istrue(self.focus)) {
@@ -449,7 +449,7 @@ function shoulddopainvision(objweapon) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1590
+// Checksum 0x0, Offset: 0x1498
 // Size: 0x26
 function function_52f60ac82b866362(fadetime) {
     if (istrue(level.wpinprogress)) {
@@ -460,8 +460,8 @@ function function_52f60ac82b866362(fadetime) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x15be
-// Size: 0x1fb
+// Checksum 0x0, Offset: 0x14c6
+// Size: 0x1ff
 function damagebloodoverlaydirectional(vpoint, factor, smeansofdeath, idamage, objweapon, shitloc) {
     if (!isdefined(vpoint)) {
         return;
@@ -502,8 +502,8 @@ function damagebloodoverlaydirectional(vpoint, factor, smeansofdeath, idamage, o
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c1
-// Size: 0x54
+// Checksum 0x0, Offset: 0x16cd
+// Size: 0x53
 function function_9ca01a02f4efc7f6(smeansofdeath) {
     explosivemods = ["MOD_PROJECTILE", "MOD_PROJECTILE_SPLASH", "MOD_EXPLOSIVE", "MOD_GRENADE", "MOD_GRENADE_SPLASH"];
     if (array_contains(explosivemods, smeansofdeath)) {
@@ -514,7 +514,7 @@ function function_9ca01a02f4efc7f6(smeansofdeath) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x181e
+// Checksum 0x0, Offset: 0x1729
 // Size: 0x24
 function function_3e54581e73dff375(smeansofdeath) {
     if (smeansofdeath == "MOD_FALLING" || smeansofdeath == "MOD_IMPACT") {
@@ -525,7 +525,7 @@ function function_3e54581e73dff375(smeansofdeath) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x184b
+// Checksum 0x0, Offset: 0x1756
 // Size: 0x19
 function function_6a97b15cdcd5961b(smeansofdeath) {
     if (smeansofdeath == "MOD_FIRE") {
@@ -536,7 +536,7 @@ function function_6a97b15cdcd5961b(smeansofdeath) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x186d
+// Checksum 0x0, Offset: 0x1778
 // Size: 0x19
 function function_c1af921b6351d49a(smeansofdeath) {
     if (smeansofdeath == "MOD_DOWN") {
@@ -547,7 +547,7 @@ function function_c1af921b6351d49a(smeansofdeath) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x188f
+// Checksum 0x0, Offset: 0x179a
 // Size: 0xb1
 function function_9c9288020fccd597(factor, smeansofdeath, idamage, objweapon, shitloc) {
     if (!isalive(self)) {
@@ -579,8 +579,8 @@ function function_9c9288020fccd597(factor, smeansofdeath, idamage, objweapon, sh
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1949
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x1854
+// Size: 0xe4
 function getplayersidesfromposition(position) {
     forwardvec = vectornormalize(anglestoforward(self.angles));
     rightvec = vectornormalize(anglestoright(self.angles));
@@ -600,8 +600,8 @@ function getplayersidesfromposition(position) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a32
-// Size: 0x44
+// Checksum 0x0, Offset: 0x1941
+// Size: 0x43
 function createscreeneffectoffsets(x, y, scale) {
     offsets = [];
     offsets["x"] = x;
@@ -612,8 +612,8 @@ function createscreeneffectoffsets(x, y, scale) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a7f
-// Size: 0x297
+// Checksum 0x0, Offset: 0x198d
+// Size: 0x29b
 function createscreeneffect(side, shader, intime, outtime, randomoffsets, fadein, lowres, containsblood) {
     hud = newclienthudelem(self);
     hud.sort = 13;
@@ -666,7 +666,7 @@ function createscreeneffect(side, shader, intime, outtime, randomoffsets, fadein
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d1e
+// Checksum 0x0, Offset: 0x1c30
 // Size: 0x27
 function screeneffectcleanup(hud) {
     function_81a2b809749b4189(hud);
@@ -678,7 +678,7 @@ function screeneffectcleanup(hud) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d4d
+// Checksum 0x0, Offset: 0x1c5f
 // Size: 0x1a
 function function_81a2b809749b4189(hud) {
     self endon("death_or_disconnect");
@@ -687,7 +687,7 @@ function function_81a2b809749b4189(hud) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d6f
+// Checksum 0x0, Offset: 0x1c81
 // Size: 0x166
 function animatescreeneffect(hud, intime, outtime, x, y, scale, fadein) {
     self endon("death_or_disconnect");
@@ -725,7 +725,7 @@ function animatescreeneffect(hud, intime, outtime, x, y, scale, fadein) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1edd
+// Checksum 0x0, Offset: 0x1def
 // Size: 0x16
 function damageratio(idamage) {
     return math::normalize_value(10, 40, idamage);
@@ -733,7 +733,7 @@ function damageratio(idamage) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1efc
+// Checksum 0x0, Offset: 0x1e0e
 // Size: 0x76
 function function_2a9705c393c0e2c4() {
     return self.deathsdoor || isdefined(self.damage) && isdefined(self.damage.deathsdooroverlaypulse) && isdefined(self.damage.deathsdooroverlaypulse.var_eeda4296ae80e949) && self.damage.deathsdooroverlaypulse.var_eeda4296ae80e949 > 0;
@@ -741,8 +741,8 @@ function function_2a9705c393c0e2c4() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f7b
-// Size: 0x193
+// Checksum 0x0, Offset: 0x1e8d
+// Size: 0x199
 function function_41a40f1e0a6aa78e() {
     self notify("deaths_door_overlay_pulse");
     self endon("death_or_disconnect");
@@ -776,8 +776,8 @@ function function_41a40f1e0a6aa78e() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2116
-// Size: 0x105
+// Checksum 0x0, Offset: 0x202e
+// Size: 0x106
 function function_252173bf5ac108a3(startalpha, time) {
     if (!isplayer(self)) {
         return;
@@ -810,8 +810,8 @@ function function_252173bf5ac108a3(startalpha, time) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2223
-// Size: 0x147
+// Checksum 0x0, Offset: 0x213c
+// Size: 0x149
 function function_47b9c7c77690bb03(targetalpha, time) {
     self notify("lerpDeathDoorOverlayAlpha");
     self endon("lerpDeathDoorOverlayAlpha");
@@ -838,8 +838,8 @@ function function_47b9c7c77690bb03(targetalpha, time) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2372
-// Size: 0xea
+// Checksum 0x0, Offset: 0x228d
+// Size: 0xf0
 function falldamageeffects(falldamage) {
     factor = falldamage / self.maxhealth;
     var_2ff497a47c266950 = getdvarfloat(@"hash_6b03d4dba904d25e", 0.5);
@@ -857,7 +857,7 @@ function falldamageeffects(falldamage) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2464
+// Checksum 0x0, Offset: 0x2385
 // Size: 0x52
 function function_54117659a8e5c5b4() {
     self.var_dd452cc5c546120b = "deaths_door_mp";
@@ -872,8 +872,8 @@ function function_54117659a8e5c5b4() {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x24be
-// Size: 0x63
+// Checksum 0x0, Offset: 0x23df
+// Size: 0x64
 function function_501be800abf11f33(fadetime, scale) {
     var_c96095bb15c39d95 = default_to(self.var_dd452cc5c546120b, "deaths_door_mp");
     n_fadetime = default_to(fadetime, -1);
@@ -883,7 +883,7 @@ function function_501be800abf11f33(fadetime, scale) {
 
 // Namespace damage_effects / namespace_4887422e77f3514e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2529
+// Checksum 0x0, Offset: 0x244b
 // Size: 0x56
 function function_a2b4e6088394bade(fadetime) {
     var_c96095bb15c39d95 = default_to(self.var_dd452cc5c546120b, "deaths_door_mp");

@@ -12,8 +12,8 @@
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd
-// Size: 0x27c
+// Checksum 0x0, Offset: 0x16a
+// Size: 0x284
 function function_770a14e56b03b067(turret, var_8826c6bc694729c5, var_f537b27c366f06c9, var_9c8dd41525b291d5, var_693b7b6938cb597e, var_9a5ffe4775714312, var_da50ab9753c3ae26, var_4a44b8ef4d9cba92, var_1833609413f67de7, ignoreplayerteam, var_a4bf19053a661fc5) {
     if (!isdefined(turret)) {
         assertmsg("<dev string:x1c>");
@@ -62,11 +62,11 @@ function function_770a14e56b03b067(turret, var_8826c6bc694729c5, var_f537b27c366
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x442
+// Checksum 0x0, Offset: 0x3f7
 // Size: 0x3d
 function turret_settarget(turret, targetdata) {
     if (!isdefined(turret)) {
-        assertmsg("<dev string:x59>");
+        assertmsg("<dev string:x56>");
         return;
     }
     turret.currenttarget = function_70b8756e9fc03c44(targetdata);
@@ -74,11 +74,11 @@ function turret_settarget(turret, targetdata) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x487
+// Checksum 0x0, Offset: 0x43c
 // Size: 0x2d
 function turret_cleartarget(turret) {
     if (!isdefined(turret)) {
-        assertmsg("<dev string:x92>");
+        assertmsg("<dev string:x8c>");
         return;
     }
     turret.currenttarget = undefined;
@@ -86,11 +86,11 @@ function turret_cleartarget(turret) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bc
+// Checksum 0x0, Offset: 0x471
 // Size: 0x37
 function function_46c1ea4a69ad33d6(turret, targetstate) {
     if (!isdefined(turret)) {
-        assertmsg("<dev string:xcf>");
+        assertmsg("<dev string:xc6>");
         return;
     }
     turret.targetstate = targetstate;
@@ -98,22 +98,22 @@ function function_46c1ea4a69ad33d6(turret, targetstate) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fb
+// Checksum 0x0, Offset: 0x4b0
 // Size: 0x4d
 function function_7e4458965893599a(turret) {
     if (!isdefined(turret)) {
-        assertmsg("<dev string:x113>");
+        assertmsg("<dev string:x107>");
         return;
     }
     if (!isdefined(turret.targetstate)) {
-        assertmsg("<dev string:x157>");
+        assertmsg("<dev string:x148>");
     }
     return turret.targetstate;
 }
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x551
+// Checksum 0x0, Offset: 0x506
 // Size: 0x1d
 function function_20e6f4d27c8040bd(turret) {
     return isdefined(turret) && isdefined(turret.currenttarget);
@@ -121,7 +121,7 @@ function function_20e6f4d27c8040bd(turret) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x577
+// Checksum 0x0, Offset: 0x52c
 // Size: 0x49
 function function_bc2021c62b0d43cc(turret, target) {
     activetarget = 0;
@@ -137,7 +137,7 @@ function function_bc2021c62b0d43cc(turret, target) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c9
+// Checksum 0x0, Offset: 0x57e
 // Size: 0x24
 function function_2adff40b591b5758(turret) {
     return ter_op(function_20e6f4d27c8040bd(turret), turret.currenttarget, undefined);
@@ -145,11 +145,11 @@ function function_2adff40b591b5758(turret) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f6
+// Checksum 0x0, Offset: 0x5ab
 // Size: 0x2d
 function function_70b8756e9fc03c44(targetdata) {
     if (!isdefined(targetdata)) {
-        assertmsg("<dev string:x1f3>");
+        assertmsg("<dev string:x1e1>");
         return;
     }
     return targetdata.targetplayer;
@@ -157,11 +157,11 @@ function function_70b8756e9fc03c44(targetdata) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x62c
+// Checksum 0x0, Offset: 0x5e1
 // Size: 0x2d
 function function_effebb9076efbdb(targetdata) {
     if (!isdefined(targetdata)) {
-        assertmsg("<dev string:x273>");
+        assertmsg("<dev string:x25e>");
         return;
     }
     return targetdata.targetvehicle;
@@ -169,8 +169,8 @@ function function_effebb9076efbdb(targetdata) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x662
-// Size: 0x19d
+// Checksum 0x0, Offset: 0x617
+// Size: 0x1a4
 function turret_canseetarget(turret, potentialtarget, var_935ba61e1c5c6320) {
     contentsoverride = function_72017fc448d5c9a0();
     var_b9d5783a4f34efbc = [turret];
@@ -212,7 +212,7 @@ function turret_canseetarget(turret, potentialtarget, var_935ba61e1c5c6320) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x808
+// Checksum 0x0, Offset: 0x7c4
 // Size: 0x17
 function function_f6926785e402b9fe(targetdata) {
     return istrue(targetdata.attackvehicle);
@@ -220,7 +220,7 @@ function function_f6926785e402b9fe(targetdata) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x828
+// Checksum 0x0, Offset: 0x7e4
 // Size: 0x17
 function function_d463678ccf4beeda(targetdata) {
     return istrue(targetdata.attacklaststand);
@@ -228,7 +228,7 @@ function function_d463678ccf4beeda(targetdata) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x848
+// Checksum 0x0, Offset: 0x804
 // Size: 0x17
 function function_bebd2d48ca6c8a31(targetdata) {
     return istrue(targetdata.attackparachute);
@@ -236,8 +236,8 @@ function function_bebd2d48ca6c8a31(targetdata) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x868
-// Size: 0xd3
+// Checksum 0x0, Offset: 0x824
+// Size: 0xd6
 function function_bb61346fda4278e5(turret, target, var_a545c521308d6b1e, attackanglethreshold) {
     if (!function_20e6f4d27c8040bd(turret) && !isdefined(target)) {
         return false;
@@ -264,8 +264,8 @@ function function_bb61346fda4278e5(turret, target, var_a545c521308d6b1e, attacka
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 9, eflags: 0x4
-// Checksum 0x0, Offset: 0x944
-// Size: 0xd9
+// Checksum 0x0, Offset: 0x903
+// Size: 0xdb
 function private function_e1424ac9314fd672(turret, var_8826c6bc694729c5, var_f537b27c366f06c9, var_9c8dd41525b291d5, var_693b7b6938cb597e, var_da50ab9753c3ae26, var_4a44b8ef4d9cba92, ignoreplayerteam, var_a4bf19053a661fc5) {
     turret endon("death");
     level endon("game_ended");
@@ -288,8 +288,8 @@ function private function_e1424ac9314fd672(turret, var_8826c6bc694729c5, var_f53
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xa26
-// Size: 0x81
+// Checksum 0x0, Offset: 0x9e7
+// Size: 0x82
 function private function_f28fd019a7657543(turret, var_8826c6bc694729c5) {
     allpotentialtargets = [];
     if (utility::iscp()) {
@@ -307,8 +307,8 @@ function private function_f28fd019a7657543(turret, var_8826c6bc694729c5) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xab0
-// Size: 0x7e
+// Checksum 0x0, Offset: 0xa72
+// Size: 0x85
 function private function_72017fc448d5c9a0() {
     character = 0;
     world = 1;
@@ -324,8 +324,8 @@ function private function_72017fc448d5c9a0() {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 10, eflags: 0x4
-// Checksum 0x0, Offset: 0xb37
-// Size: 0x138
+// Checksum 0x0, Offset: 0xb00
+// Size: 0x13a
 function private function_c836479731703b1b(turret, potentialtarget, var_8826c6bc694729c5, var_f537b27c366f06c9, var_9c8dd41525b291d5, var_693b7b6938cb597e, var_da50ab9753c3ae26, var_4a44b8ef4d9cba92, ignoreplayerteam, var_a4bf19053a661fc5) {
     turret endon("death");
     if (!function_10f997ed68f4fcef(turret, potentialtarget, var_8826c6bc694729c5, var_f537b27c366f06c9, var_9c8dd41525b291d5, var_693b7b6938cb597e, var_da50ab9753c3ae26, var_4a44b8ef4d9cba92, ignoreplayerteam, var_a4bf19053a661fc5)) {
@@ -353,7 +353,7 @@ function private function_c836479731703b1b(turret, potentialtarget, var_8826c6bc
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 10, eflags: 0x4
-// Checksum 0x0, Offset: 0xc78
+// Checksum 0x0, Offset: 0xc43
 // Size: 0x23e
 function private function_10f997ed68f4fcef(turret, potentialtarget, var_8826c6bc694729c5, var_f537b27c366f06c9, var_9c8dd41525b291d5, var_693b7b6938cb597e, var_da50ab9753c3ae26, var_4a44b8ef4d9cba92, ignoreplayerteam, var_a4bf19053a661fc5) {
     if (!isdefined(potentialtarget)) {
@@ -428,7 +428,7 @@ function private function_10f997ed68f4fcef(turret, potentialtarget, var_8826c6bc
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xebf
+// Checksum 0x0, Offset: 0xe8a
 // Size: 0x2d
 function private function_52cda0abb7f78d63(player) {
     return isdefined(player) && player _isalive() && player.sessionstate == "playing";
@@ -436,8 +436,8 @@ function private function_52cda0abb7f78d63(player) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xef5
-// Size: 0x51
+// Checksum 0x0, Offset: 0xec0
+// Size: 0x50
 function private function_371b6c83926ff36() {
     targetdata = spawnstruct();
     targetdata.targetplayer = undefined;
@@ -450,7 +450,7 @@ function private function_371b6c83926ff36() {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xf4f
+// Checksum 0x0, Offset: 0xf19
 // Size: 0x56
 function private function_9598d2dcfc423f60(targetdata, var_9a5ffe4775714312) {
     self endon("death");
@@ -465,7 +465,7 @@ function private function_9598d2dcfc423f60(targetdata, var_9a5ffe4775714312) {
 
 // Namespace turret_utility / namespace_6e1510c5f3f599a2
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xfad
+// Checksum 0x0, Offset: 0xf77
 // Size: 0x2d
 function private function_7826e8e1bd494568(ent, notifymsg) {
     self endon("death");

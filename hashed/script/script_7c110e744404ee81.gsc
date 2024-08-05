@@ -6,7 +6,7 @@
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27a
+// Checksum 0x0, Offset: 0x212
 // Size: 0xa
 function main() {
     childthread stealth_combat_music_init();
@@ -14,7 +14,7 @@ function main() {
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28c
+// Checksum 0x0, Offset: 0x224
 // Size: 0xb9
 function stealth_combat_music_init() {
     flag_wait("level_stealth_initialized");
@@ -34,8 +34,8 @@ function stealth_combat_music_init() {
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34d
-// Size: 0x122
+// Checksum 0x0, Offset: 0x2e5
+// Size: 0x121
 function function_9ff225017ef5ce19() {
     if (!isdefined(self.stealth)) {
         return;
@@ -60,7 +60,7 @@ function function_9ff225017ef5ce19() {
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x477
+// Checksum 0x0, Offset: 0x40e
 // Size: 0x20
 function function_9d95291bb222ad5f(message, delay) {
     self endon(message);
@@ -70,8 +70,8 @@ function function_9d95291bb222ad5f(message, delay) {
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49f
-// Size: 0x126
+// Checksum 0x0, Offset: 0x436
+// Size: 0x127
 function stealth_music_transition_cp(aliasto) {
     self notify("stealth_music_transition_cp");
     self endon("stealth_music_transition_cp");
@@ -108,7 +108,7 @@ function stealth_music_transition_cp(aliasto) {
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cd
+// Checksum 0x0, Offset: 0x565
 // Size: 0xa1
 function player_music_loop(music_state) {
     self notify("player_music_loop");
@@ -130,8 +130,8 @@ function player_music_loop(music_state) {
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x676
-// Size: 0x7f6
+// Checksum 0x0, Offset: 0x60e
+// Size: 0x7fd
 function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc690b) {
     var_1d73b1caa088a858 = 180;
     var_732bd773132e7010 = 0.01;
@@ -173,7 +173,7 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc6
     }
     /#
         if (var_67e8151f4dfc690b) {
-            printtoscreen2d(32, 492, "<dev string:x1c>" + maxthreat + "<dev string:x2d>" + anycansee + "<dev string:x33>", (1, 1, 1), 1.5);
+            printtoscreen2d(32, 492, "<dev string:x1c>" + maxthreat + "<dev string:x2a>" + anycansee + "<dev string:x2d>", (1, 1, 1), 1.5);
         }
     #/
     if (isdefined(self.stealth.threat_sight_snd_ent)) {
@@ -205,10 +205,10 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc6
         self.stealth.threat_sight_snd_vol = clamp(self.stealth.threat_sight_snd_vol, 0, 1);
         /#
             if (var_67e8151f4dfc690b) {
-                printtoscreen2d(32, 508, "<dev string:x38>" + self.stealth.threat_sight_snd_threat, (1, 1, 1), 1.5);
+                printtoscreen2d(32, 508, "<dev string:x2f>" + self.stealth.threat_sight_snd_threat, (1, 1, 1), 1.5);
             }
             if (var_67e8151f4dfc690b) {
-                printtoscreen2d(32, 524, "<dev string:x49>" + self.stealth.threat_sight_snd_vol, (1, 1, 1), 1.5);
+                printtoscreen2d(32, 524, "<dev string:x3d>" + self.stealth.threat_sight_snd_vol, (1, 1, 1), 1.5);
             }
         #/
         foreach (alias, snd_ent in self.stealth.threat_sight_snd_ent) {
@@ -263,10 +263,10 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc6
             }
             /#
                 if (var_67e8151f4dfc690b) {
-                    printtoscreen2d(32, 540 + index * 16, "<dev string:x5a>" + index + "<dev string:x64>" + vol, (1, 1, 1), 1.5);
+                    printtoscreen2d(32, 540 + index * 16, "<dev string:x4b>" + index + "<dev string:x52>" + vol, (1, 1, 1), 1.5);
                 }
                 if (var_67e8151f4dfc690b) {
-                    printtoscreen2d(384, 540 + index * 16, "<dev string:x6e>" + coef, (1, 1, 1), 1.5);
+                    printtoscreen2d(384, 540 + index * 16, "<dev string:x59>" + coef, (1, 1, 1), 1.5);
                 }
             #/
             index++;
@@ -289,7 +289,7 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc6
 
 // Namespace stealth_music / namespace_d6e7a6955029e9b9
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe74
+// Checksum 0x0, Offset: 0xe13
 // Size: 0x59
 function function_f17fb237c7e883b2() {
     level endon("kill_spotted_sound_thread");

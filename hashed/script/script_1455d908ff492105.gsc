@@ -10,13 +10,11 @@
 #using script_3db04fd1b466bdba;
 #using script_58be75c518bf0d40;
 #using scripts\common\values.gsc;
-#using scripts\mp\utility\script.gsc;
 #using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
 #using scripts\cp_mp\emp_debuff.gsc;
 #using script_736dec95a49487a6;
 #using scripts\cp_mp\killstreaks\manual_turret.gsc;
 #using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\engine\trace.gsc;
 #using scripts\engine\math.gsc;
@@ -26,7 +24,7 @@
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0xdc7
+// Checksum 0x0, Offset: 0xba1
 // Size: 0x18
 function autoexec main() {
     function_df7ab5b0f898e8bc(function_1823ff50bb28148d("remote_turret"), &init);
@@ -34,7 +32,7 @@ function autoexec main() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xde7
+// Checksum 0x0, Offset: 0xbc1
 // Size: 0x85
 function private init() {
     if (issharedfuncdefined("remote_turret", "init")) {
@@ -52,7 +50,7 @@ function private init() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe74
+// Checksum 0x0, Offset: 0xc4e
 // Size: 0x28
 function function_cf9f8b598647e363(streakinfo, switchresult, weaponobj) {
     if (!istrue(switchresult)) {
@@ -62,8 +60,8 @@ function function_cf9f8b598647e363(streakinfo, switchresult, weaponobj) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xea4
-// Size: 0x26
+// Checksum 0x0, Offset: 0xc7e
+// Size: 0x25
 function function_3149fdf577104365(streakname) {
     streakinfo = createstreakinfo(streakname, self);
     return function_c916c5b82db1290(streakinfo);
@@ -71,36 +69,25 @@ function function_3149fdf577104365(streakname) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xed3
-// Size: 0x2ff
+// Checksum 0x0, Offset: 0xcac
+// Size: 0x24e
 function function_c916c5b82db1290(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
-    if (!isdefined(streakinfo.weaponname)) {
-        streakinfo.weaponname = "deploy_remote_turret_mp";
-    }
     if (isdefined(level.killstreaktriggeredfunc)) {
         if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
             self.bgivensentry = 0;
             return false;
         }
     }
-    if (self isswimming() || istrue(self.var_c6b64cf71bf74d14) || self isjumping() || self isinfreefall() || self ishanging() || self isparachuting()) {
-        if (issharedfuncdefined("hud", "showErrorMessage")) {
-            self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/REMOTE_TURRET_NOT_AVAILABLE");
-        }
-        return false;
-    }
     scripts\cp_mp\utility\weapon_utility::saveweaponstates();
     endonnotify = "sentry_placement_failed";
-    weaponobj = makeweapon("deploy_remote_turret_mp");
     if (issharedfuncdefined("weapons", "watchForPlacementFireState")) {
-        self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](streakinfo, endonnotify, weaponobj);
+        self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](streakinfo, endonnotify);
     }
-    deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_doweaponswitchdeploy(streakinfo, weaponobj, 1, undefined, undefined, &function_cf9f8b598647e363);
+    deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_doweaponswitchdeploy(streakinfo, makeweapon("deploy_remote_turret_mp"), 1, undefined, undefined, &function_cf9f8b598647e363);
     if (!istrue(deployresult)) {
         self.bgivensentry = 0;
-        self notify(endonnotify);
         return false;
     }
     if (isdefined(level.killstreakbeginusefunc)) {
@@ -130,22 +117,21 @@ function function_c916c5b82db1290(streakinfo) {
     if (issharedfuncdefined("emp", "setEMP_Cleared_Callback")) {
         turret [[ getsharedfunc("emp", "setEMP_Cleared_Callback") ]](&function_958fed8d4d1143fa);
     }
-    turret.colmodel function_f3bb4f4911a1beb2("escort", "registerEscortCollisionCallback", &function_a9d407dcc53c2a3d);
     turret function_a6f142a3e83c312e(self);
     turret function_e68434bdb941ed1e(turret.streakinfo.streakname, self, %KILLSTREAKS_HINTS/REMOTE_TURRET_USE, 1);
+    turret.useobj setuseholdduration(250);
     function_688e15aadc8b2663(turret, marker);
     if (issharedfuncdefined("remote_turret", "munitionUsed")) {
         self [[ getsharedfunc("remote_turret", "munitionUsed") ]]();
     }
     thread function_3da5b516d6b9a223(turret);
     self.var_3b28db27cbdbc523 = 1;
-    self notify("remote_turret_active");
     return true;
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11db
+// Checksum 0x0, Offset: 0xf03
 // Size: 0x6a
 function function_a6f142a3e83c312e(owner) {
     if (!isdefined(owner) || !isdefined(owner.var_c112b4aeaf6ce9ae)) {
@@ -158,13 +144,13 @@ function function_a6f142a3e83c312e(owner) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x124d
-// Size: 0x60
+// Checksum 0x0, Offset: 0xf75
+// Size: 0x5b
 function function_3da5b516d6b9a223(turret) {
     self endon("disconnect");
     turret endon("death");
     while (true) {
-        waittill_any_3("killstreakActionCalled", "super_started", "assaultDroneCalled");
+        waittill_2("killstreakActionCalled", "super_started");
         val::set("remote_turret", "usability", 0);
         wait 2;
         val::reset("remote_turret", "usability");
@@ -173,8 +159,8 @@ function function_3da5b516d6b9a223(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b5
-// Size: 0x13a
+// Checksum 0x0, Offset: 0xfd8
+// Size: 0x13b
 function function_302dac858d0c3cf4(turret, streakinfo, ignorecancel, var_290b1442271ab369) {
     self.bgivensentry = 1;
     thread function_654def657f4f961(var_290b1442271ab369);
@@ -206,7 +192,7 @@ function function_302dac858d0c3cf4(turret, streakinfo, ignorecancel, var_290b144
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f8
+// Checksum 0x0, Offset: 0x111c
 // Size: 0x50
 function function_654def657f4f961(delaytime) {
     self endon("death_or_disconnect");
@@ -220,8 +206,8 @@ function function_654def657f4f961(delaytime) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1450
-// Size: 0x439
+// Checksum 0x0, Offset: 0x1174
+// Size: 0x3f8
 function function_ff68719c4aed211e(turrettype, streakinfo) {
     config = level.sentrysettings[turrettype];
     turret = spawnturret("misc_turret", self.origin, level.sentrysettings[turrettype].weaponinfo);
@@ -243,8 +229,6 @@ function function_ff68719c4aed211e(turrettype, streakinfo) {
         var_2a98d1683cf44153 = getdvarint(@"hash_2c01d701bac5d9d3", 0);
         if (var_2a98d1683cf44153) {
             turret.timeout = 9999;
-        } else if (function_ec3aea190c440d29(@"hash_d17291ec1b4e806e")) {
-            turret.timeout = getdvarint(@"hash_d17291ec1b4e806e");
         }
     #/
     if (!isdefined(turret.timeout)) {
@@ -291,15 +275,14 @@ function function_ff68719c4aed211e(turrettype, streakinfo) {
     turret.colmodel setmodel("wm_jup_2h_remote_turret_00_invis_base");
     turret.colmodel dontinterpolate();
     turret.colmodel hide();
-    turret.colmodel.turret = turret;
     turret function_9553839f6b149375();
     return turret;
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1892
-// Size: 0x75d
+// Checksum 0x0, Offset: 0x1575
+// Size: 0x665
 function function_688e15aadc8b2663(turret, marker) {
     bundle = level.streakglobals.streakbundles["remote_turret"];
     config = level.sentrysettings[turret.turrettype];
@@ -337,7 +320,6 @@ function function_688e15aadc8b2663(turret, marker) {
     turret.colmodel.angles = turret.angles;
     turret.colmodel.origin = turret.origin;
     turret.colmodel linkto(turret);
-    turret.deletefunc = &function_3eccd3cd75317e53;
     turreticon = bundle.minimapicon;
     if (issharedfuncdefined("game", "createObjective")) {
         turret.minimapid = turret.colmodel [[ getsharedfunc("game", "createObjective") ]](turreticon, turret.team, undefined, 1, 1);
@@ -369,19 +351,8 @@ function function_688e15aadc8b2663(turret, marker) {
             turret.useownerobj disableplayeruse(guy);
         }
     }
-    turret thread function_691b0d98100b44cd();
-    if (issharedfuncdefined("game", "handlemovingplatforms")) {
-        data = spawnstruct();
-        data.deathoverridecallback = &function_3eccd3cd75317e53;
-        if (isdefined(turret.moving_platform)) {
-            data.linkparent = turret.moving_platform;
-            data.linkoffset = turret.moving_platform_offset;
-            data.angleoffset = turret.moving_platform_angles_offset;
-            if (isdefined(level.wztrain_info) && scripts\cp_mp\utility\train_utility::is_train_ent(turret.moving_platform)) {
-                data.var_49cb2c45d3230ed8 = 1;
-            }
-        }
-        turret thread [[ getsharedfunc("game", "handlemovingplatforms") ]](data);
+    if (issharedfuncdefined("remote_turret", "handleMovingPlatform")) {
+        [[ getsharedfunc("remote_turret", "handleMovingPlatform") ]](turret);
     }
     turret scripts\cp_mp\emp_debuff::allow_emp(1);
     if (issharedfuncdefined("game", "registerSentient")) {
@@ -403,10 +374,8 @@ function function_688e15aadc8b2663(turret, marker) {
     if (!istrue(turret.owner.ksempd)) {
         thread function_2bd5e2012f429ae3(turret);
     }
-    turret thread function_3b0cd265e614031a(self);
-    if (!istrue(turret.damagemonitored)) {
-        thread function_24b36e1359ab805c(turret);
-    }
+    thread function_3b0cd265e614031a(turret);
+    thread function_24b36e1359ab805c(turret);
     thread function_7a35c7c95b25b0e9(turret);
     thread function_1ad21168e3b8db0c(turret);
     thread function_cfb4701398c755b5(turret);
@@ -415,15 +384,14 @@ function function_688e15aadc8b2663(turret, marker) {
     turret.isplaced = 1;
     self.placedsentries[turret.turrettype][turretcount] = turret;
     turret notify("turret_place_successful");
-    turret function_ae53424c3a02628d(bundle, turret.origin, self, self.team, turret.timeout);
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff7
+// Checksum 0x0, Offset: 0x1be2
 // Size: 0x50
 function function_3650adfd6e0d1fb9(killstreakid) {
-    assertex(isdefined(killstreakid), "<dev string:x1c>");
+    assertex(isdefined(killstreakid), "remote_turret.gsc: Killstreak Use Widget tried to show without a killstreakID reference");
     if (killstreakid == 0) {
         self setclientomnvar("ui_killstreak_use_widget", killstreakid);
         self.var_57d85036ea10552d = undefined;
@@ -434,49 +402,16 @@ function function_3650adfd6e0d1fb9(killstreakid) {
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x204f
-// Size: 0xff
-function function_691b0d98100b44cd() {
-    self notify("end_remote_monitor");
-    self endon("end_remote_monitor");
-    self endon("death");
-    self endon("kill_turret");
-    self endon("carried");
-    level endon("game_ended");
-    self.useobj enableplayeruse(self.owner);
-    self.useobj setuseholdduration(500);
-    useobjdisabled = 0;
-    while (true) {
-        if (istrue(self.owner utility::isusingremote()) && !useobjdisabled && self.owner.usingremote != "remote_turret") {
-            self.useobj disableplayeruse(self.owner);
-            useobjdisabled = 1;
-        } else if (useobjdisabled && !istrue(self.owner utility::isusingremote())) {
-            wait 1;
-            self.useobj enableplayeruse(self.owner);
-            useobjdisabled = 0;
-        }
-        wait 0.1;
-    }
-}
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2156
-// Size: 0x45a
+// Checksum 0x0, Offset: 0x1c3a
+// Size: 0x1fa
 function function_2bd5e2012f429ae3(turret) {
     self endon("remote_turret_empd");
-    turret endon("remote_turret_death");
-    turret endon("remote_turret_ownerDeath");
+    self endon("remote_turret_death");
     turret endon("kill_turret");
     turret endon("carried");
     player = turret.useobj waittill("trigger");
-    if (!function_8cf8be1c2f72ddd5()) {
-        thread function_2bd5e2012f429ae3(turret);
-        return;
-    }
-    if (istrue(turret.isplaced) && !istrue(turret.owner.ksempd) && !istrue(utility::isusingremote()) && function_8cf8be1c2f72ddd5()) {
-        self.var_6678ccff9684345e = 1;
+    if (istrue(turret.isplaced) && !istrue(turret.owner.ksempd)) {
         self disableweaponswitch();
         if (istrue(turret.var_e42f0fcd6e0c1153)) {
             turret stopbarrelspin();
@@ -488,8 +423,6 @@ function function_2bd5e2012f429ae3(turret) {
         val::set("remote_turret", "supers", 0);
         val::set("remote_turret", "reload", 0);
         val::set("remote_turret", "offhand_weapons", 0);
-        val::set("remote_turret", "melee", 0);
-        self notify("using_remote");
         turret setscriptablepartstate("turret_mode", "turret_mode_pre_manual");
         turret function_361d73970f697d6a();
         turret thread function_b7ffbe66f2c448fc();
@@ -498,147 +431,45 @@ function function_2bd5e2012f429ae3(turret) {
         turret setmode("sentry_offline");
         turret notify("enterRemote");
         turret thread function_9cc5ca1b073338ab(self);
-        thread function_a920f20104777b97(turret, turret.var_de4dbbca9f355800);
-        /#
-            function_45456bb78fa8eb2d("<dev string:x77>");
-        #/
         function_baa645fe416db1d5(turret);
-        /#
-            function_45456bb78fa8eb2d("<dev string:x93>");
-        #/
         if (!istrue(turret.var_de4dbbca9f355800)) {
             wait 2;
             turret.var_de4dbbca9f355800 = 1;
         } else {
             wait 1;
         }
-        /#
-            if (getdvarint(@"hash_81827f5873d8d4c3", 0) == 1) {
-                thread function_1f85068748abaa9b(turret);
-            }
-            function_45456bb78fa8eb2d("<dev string:xb4>");
-        #/
-        thread function_478f159eb6d02ae8(turret);
-        self waittill("remoteTurretFadeComplete");
-        function_178aa80b91f36bf4();
+        function_478f159eb6d02ae8(turret);
         turret.var_ce4dc6c1d56eb0a9 = 1;
-        self.usingremote = "remote_turret";
         turret notify("remote_enter");
-        if (istrue(self.isjuggernaut)) {
-            self notify("remote_enter");
-        }
         turret setscriptablepartstate("turret_mode", "turret_mode_manual");
         turret setscriptablepartstate("lights", "remoted", 0);
-        turret function_392e60623411ef42(self);
-        if (function_8cf8be1c2f72ddd5()) {
-            self remotecontrolturret(turret);
-            thread function_dc251dedf977c842(turret);
-            val::reset("remote_turret", "allow_movement");
-            self.var_6678ccff9684345e = undefined;
-            return;
-        }
-        if (istrue(turret.isplaced)) {
-            turret stopbarrelspin();
-            turret setmode("sentry");
-            turret.var_ce4dc6c1d56eb0a9 = undefined;
-            self.usingremote = undefined;
-            turret notify("remote_exit");
-            if (istrue(self.isjuggernaut)) {
-                self notify("remote_exit");
-            }
-            turret setscriptablepartstate("turret_mode", "turret_mode_sentry");
-            turret setscriptablepartstate("lights", "daytime", 0);
-            turret function_13a319439a116d2(self);
-            turret function_911cde43e0f3c6b6(self);
-            _switchtoweapon(self.primaryweaponobj);
-            self enableweaponswitch();
-            turret thread function_3bb43305bf56bfec(undefined, self);
-            wait 1;
-            if (isdefined(turret.var_ac6546b5102546ae)) {
-                self takeweapon(turret.var_ac6546b5102546ae);
-                turret.var_ac6546b5102546ae = undefined;
-            }
-            val::reset("remote_turret", "allow_movement");
-            val::reset("remote_turret", "usability");
-            val::reset("remote_turret", "killstreaks");
-            val::reset("remote_turret", "supers");
-            val::reset("remote_turret", "reload");
-            val::reset("remote_turret", "offhand_weapons");
-            val::reset("remote_turret", "melee");
-            self.var_6678ccff9684345e = undefined;
-            thread function_2bd5e2012f429ae3(turret);
-        }
-    }
-}
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x25b8
-// Size: 0x1df
-function function_a920f20104777b97(turret, var_de4dbbca9f355800) {
-    level endon("game_ended");
-    self endon("disconnect");
-    hasendedearly = 0;
-    result = waittill_any_ents_return(self, "remoteTurret_deployTabletFinished", self, "remote_turret_empd", turret, "remote_turret_death", turret, "kill_turret", turret, "carried");
-    hasendedearly = !isdefined(result) || result != "remoteTurret_deployTabletFinished";
-    if (!hasendedearly) {
-        timeout = istrue(var_de4dbbca9f355800) ? 1 : 2;
-        result = waittill_any_ents_or_timeout_return(timeout, self, "remote_turret_empd", turret, "remote_turret_death", turret, "kill_turret", turret, "carried");
-        hasendedearly = !isdefined(result) || result != "timeout";
-    }
-    if (!hasendedearly) {
-        issuccess = self waittill("remoteTurretFadeComplete");
-        hasendedearly = !issuccess;
-    }
-    if (hasendedearly) {
-        /#
-            function_45456bb78fa8eb2d("<dev string:xcd>");
-        #/
         function_178aa80b91f36bf4();
-        currentweapon = self getcurrentweapon().basename;
-        if (currentweapon == "ks_remote_device_mp") {
-            _switchtoweapon(self.primaryweaponobj);
-        }
-        self enableweaponswitch();
-        if (isdefined(turret.var_ac6546b5102546ae)) {
-            self takeweapon(turret.var_ac6546b5102546ae);
-            turret.var_ac6546b5102546ae = undefined;
-        }
+        turret function_392e60623411ef42(self);
+        self remotecontrolturret(turret);
+        thread function_dc251dedf977c842(turret);
         val::reset("remote_turret", "allow_movement");
-        val::reset("remote_turret", "usability");
-        val::reset("remote_turret", "killstreaks");
-        val::reset("remote_turret", "supers");
-        val::reset("remote_turret", "reload");
-        val::reset("remote_turret", "offhand_weapons");
-        val::reset("remote_turret", "melee");
-        self.usingremote = undefined;
     }
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x279f
-// Size: 0x9d
+// Checksum 0x0, Offset: 0x1e3c
+// Size: 0x87
 function function_baa645fe416db1d5(turret) {
-    turret endon("kill_turret");
-    turret endon("remote_turret_death");
-    weaponobj = makeweapon("ks_remote_device_mp");
+    weaponbasename = "ks_remote_device_mp";
+    weaponobj = makeweapon(weaponbasename);
     deployanim = script_model%vm_ks_tablet_tap_raise;
     _giveweapon(weaponobj, 0, 0, 1);
-    turret.var_ac6546b5102546ae = weaponobj;
     switchresult = domonitoredweaponswitch(weaponobj, 0);
     scripts\cp_mp\utility\killstreak_utility::starttabletscreen(turret.streakinfo.streakname, 0);
     function_178aa80b91f36bf4();
-    self notify("remoteTurret_deployTabletFinished");
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2844
-// Size: 0xf2
+// Checksum 0x0, Offset: 0x1ecb
+// Size: 0xb8
 function function_478f159eb6d02ae8(turret) {
-    level endon("game_ended");
-    self endon("disconnect");
     if (_isalive()) {
         var_b1073e115b8f126a = turret getscriptablepartstate("turret_mode");
         if (var_b1073e115b8f126a == "turret_mode_manual") {
@@ -647,37 +478,21 @@ function function_478f159eb6d02ae8(turret) {
             turret setscriptablepartstate("turret_mode_fade", "turret_mode_sentrytomanual_fadestart");
         }
         level thread scripts\cp_mp\utility\game_utility::fadetoblackforplayer(self, 1, 0.3);
-        result = waittill_any_ents_or_timeout_return(0.7, self, "remote_turret_empd", turret, "remote_turret_death", self, "death", turret, "kill_turret", turret, "carried");
-        issuccess = isdefined(result) && result == "timeout";
-        if (!issuccess) {
+        result = waittill_any_timeout_1(0.7, "death");
+        if (!isdefined(result) || result == "death") {
             turret scripts\common\utility::function_3677f2be30fdd581("turret_mode_fade", "turret_mode_sentrytomanual_fadeinterrupted");
         }
         level thread scripts\cp_mp\utility\game_utility::fadetoblackforplayer(self, 0, 0.3);
-        self notify("remoteTurretFadeComplete", issuccess);
     }
-}
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x293e
-// Size: 0x71
-function function_8cf8be1c2f72ddd5() {
-    if (self isswimming() || istrue(self.var_c6b64cf71bf74d14) || self isjumping() || self isinfreefall() || self ishanging() || self isparachuting()) {
-        if (issharedfuncdefined("hud", "showErrorMessage")) {
-            self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/REMOTE_TURRET_NOT_AVAILABLE");
-        }
-        return false;
-    }
-    return true;
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x29b8
-// Size: 0x1db
+// Checksum 0x0, Offset: 0x1f8b
+// Size: 0x144
 function function_dc251dedf977c842(turret) {
     self endon("remote_turret_empd");
-    turret endon("remote_turret_death");
+    self endon("remote_turret_death");
     turret endon("kill_turret");
     turret endon("remote_turret_ownerDeath");
     turret endon("carried");
@@ -685,21 +500,11 @@ function function_dc251dedf977c842(turret) {
     self waittill("remoteCamExit");
     if (istrue(turret.isplaced)) {
         turret stopbarrelspin();
-        /#
-            if (getdvarint(@"hash_8cb86e86af6483b0", 0) == 1) {
-                thread function_1f85068748abaa9b(turret);
-            }
-        #/
-        thread function_478f159eb6d02ae8(turret);
-        self waittill("remoteTurretFadeComplete");
+        function_478f159eb6d02ae8(turret);
         self remotecontrolturretoff(turret);
         turret setmode("sentry");
         turret.var_ce4dc6c1d56eb0a9 = undefined;
-        self.usingremote = undefined;
         turret notify("remote_exit");
-        if (istrue(self.isjuggernaut)) {
-            self notify("remote_exit");
-        }
         turret setscriptablepartstate("turret_mode", "turret_mode_sentry");
         turret setscriptablepartstate("lights", "daytime", 0);
         turret function_13a319439a116d2(self);
@@ -708,25 +513,19 @@ function function_dc251dedf977c842(turret) {
         self enableweaponswitch();
         turret thread function_3bb43305bf56bfec(undefined, self);
         wait 1;
-        if (isdefined(turret.var_ac6546b5102546ae)) {
-            self takeweapon(turret.var_ac6546b5102546ae);
-            turret.var_ac6546b5102546ae = undefined;
-        }
-        val::reset("remote_turret", "allow_movement");
         val::reset("remote_turret", "usability");
         val::reset("remote_turret", "killstreaks");
         val::reset("remote_turret", "supers");
         val::reset("remote_turret", "reload");
         val::reset("remote_turret", "offhand_weapons");
-        val::reset("remote_turret", "melee");
         thread function_2bd5e2012f429ae3(turret);
     }
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b9b
-// Size: 0x106
+// Checksum 0x0, Offset: 0x20d7
+// Size: 0x108
 function private function_7317b5e0cedc533d(turret, var_43b83976503b9e6d) {
     if (!isdefined(self) || !isdefined(turret)) {
         return;
@@ -771,20 +570,8 @@ function private function_7317b5e0cedc533d(turret, var_43b83976503b9e6d) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ca9
-// Size: 0x31
-function function_fcf0bb8342007af(turret) {
-    level endon("game_ended");
-    self endon("disconnect");
-    issuccess = self waittill("remoteTurretFadeComplete");
-    if (issuccess) {
-    }
-}
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ce2
-// Size: 0x2f3
+// Checksum 0x0, Offset: 0x21e7
+// Size: 0x28e
 function function_c35af9dc8b19b148(turret) {
     turret endon("kill_turret");
     self endon("death_or_disconnect");
@@ -821,8 +608,6 @@ function function_c35af9dc8b19b148(turret) {
     turret.colmodel hide();
     function_fbce760dc23e09f(turret);
     turret hide();
-    function_3650adfd6e0d1fb9(0);
-    turret function_a6f142a3e83c312e(self);
     turret.carriedby = self;
     turret notify("carried");
     self playsound("kls_remote_turret_pickup");
@@ -830,29 +615,22 @@ function function_c35af9dc8b19b148(turret) {
     turret function_9cc5ca1b073338ab(self);
     thread function_ca5bd9a5609d8ba3();
     scripts\cp_mp\utility\weapon_utility::saveweaponstates();
-    turret killstreak_destroydangerzone();
     endonnotify = "sentry_placement_failed";
     if (issharedfuncdefined("weapons", "watchForPlacementFireState")) {
         self thread [[ getsharedfunc("weapons", "watchForPlacementFireState") ]](turret.streakinfo, endonnotify);
     }
     _giveweapon("deploy_remote_turret_mp");
-    var_2aae1f79f3c33d98 = domonitoredweaponswitch("deploy_remote_turret_mp", 1);
-    if (!istrue(var_2aae1f79f3c33d98)) {
-        return 0;
-    }
-    scripts\cp_mp\killstreaks\manual_turret::manualturret_toggleallowplacementactions(0);
+    scripts\cp_mp\utility\inventory_utility::_switchtoweapon("deploy_remote_turret_mp");
     marker = function_302dac858d0c3cf4(turret, turret.streakinfo, 1, 2);
-    scripts\cp_mp\killstreaks\manual_turret::manualturret_toggleallowplacementactions(1);
     if (!isdefined(marker)) {
         return 0;
     }
-    turret function_e68434bdb941ed1e(turret.streakinfo.streakname, self, %KILLSTREAKS_HINTS/REMOTE_TURRET_USE, 1);
     function_688e15aadc8b2663(turret, marker);
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fdd
+// Checksum 0x0, Offset: 0x247d
 // Size: 0x3f
 function function_7c80dd2c0c7ee701(immediateswitch) {
     if (istrue(immediateswitch)) {
@@ -865,7 +643,7 @@ function function_7c80dd2c0c7ee701(immediateswitch) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3024
+// Checksum 0x0, Offset: 0x24c4
 // Size: 0x68
 function function_fbce760dc23e09f(turret) {
     turret.isplaced = undefined;
@@ -877,7 +655,7 @@ function function_fbce760dc23e09f(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3094
+// Checksum 0x0, Offset: 0x2534
 // Size: 0x47
 function function_e4b89077ed169ef8(turret, marker) {
     turret endon("kill_turret");
@@ -890,8 +668,8 @@ function function_e4b89077ed169ef8(turret, marker) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e3
-// Size: 0x58
+// Checksum 0x0, Offset: 0x2583
+// Size: 0x57
 function function_80ff81904f57cb37(turret, useobj) {
     if (isdefined(turret)) {
         turret endon("kill_turret");
@@ -907,8 +685,8 @@ function function_80ff81904f57cb37(turret, useobj) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3143
-// Size: 0x133
+// Checksum 0x0, Offset: 0x25e2
+// Size: 0x122
 function function_839405550006f5b9(turret) {
     turret endon("kill_turret");
     turret endon("carried");
@@ -917,9 +695,6 @@ function function_839405550006f5b9(turret) {
     while (true) {
         player = turret.useownerobj waittill("trigger");
         if (player != turret.owner) {
-            continue;
-        }
-        if (istrue(self.ishaywire)) {
             continue;
         }
         if (issharedfuncdefined("remote_turret", "allowPickupOfTurret")) {
@@ -937,8 +712,8 @@ function function_839405550006f5b9(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x327e
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x270c
+// Size: 0x5c
 function function_9e8098735889a91c(turret) {
     turret endon("kill_turret");
     turret endon("carried");
@@ -953,8 +728,8 @@ function function_9e8098735889a91c(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32e3
-// Size: 0xd9
+// Checksum 0x0, Offset: 0x2770
+// Size: 0xd6
 function function_60712857f1107040(turret) {
     turret endon("kill_turret");
     turret endon("carried");
@@ -980,8 +755,8 @@ function function_60712857f1107040(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33c4
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x284e
+// Size: 0x4f
 function function_24b36e1359ab805c(turret) {
     turret endon("kill_turret");
     turret endon("carried");
@@ -990,13 +765,12 @@ function function_24b36e1359ab805c(turret) {
     if (issharedfuncdefined("remote_turret", "monitorDamage")) {
         self [[ getsharedfunc("remote_turret", "monitorDamage") ]](turret);
     }
-    turret.damagemonitored = 1;
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3429
-// Size: 0x72
+// Checksum 0x0, Offset: 0x28a5
+// Size: 0x71
 function function_7230352706ac17db(turret) {
     turret endon("kill_turret");
     turret endon("carried");
@@ -1015,7 +789,7 @@ function function_7230352706ac17db(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a3
+// Checksum 0x0, Offset: 0x291e
 // Size: 0x7f
 function function_58cc23bccf168a2d(data) {
     if (isdefined(data.attacker)) {
@@ -1026,13 +800,13 @@ function function_58cc23bccf168a2d(data) {
             self [[ getsharedfunc("remote_turret", "empStarted") ]]();
         }
     }
-    function_9830ac9a0fbf0d6e();
+    function_66a63d2003156721();
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x352a
-// Size: 0xb9
+// Checksum 0x0, Offset: 0x29a5
+// Size: 0x3e
 function function_aef483ef5ed5cff4(isdeath) {
     if (isdeath) {
         return;
@@ -1040,38 +814,22 @@ function function_aef483ef5ed5cff4(isdeath) {
     if (issharedfuncdefined("remote_turret", "empStarted")) {
         self [[ getsharedfunc("remote_turret", "empCleared") ]]();
     }
-    if (isdefined(self.useobj)) {
-        self.useobj enableplayeruse(self.useobj.owner);
-        self.useobj.activeuseobject = 1;
-    }
-    if (istrue(self.isplaced)) {
-        self setmode("sentry");
-        self.owner thread function_2bd5e2012f429ae3(self);
-        thread function_3bb43305bf56bfec(undefined, self.owner);
-    }
+    function_66a63d2003156721();
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x35eb
-// Size: 0x89
+// Checksum 0x0, Offset: 0x29eb
+// Size: 0x232
 function function_371131da10a20bb(data) {
     if (isdefined(data.attacker)) {
         if (issharedfuncdefined("player", "doScoreEvent")) {
-            data.attacker thread [[ getsharedfunc("player", "doScoreEvent") ]]("disabled_sentry_gun", undefined, undefined, undefined, undefined, undefined, undefined, undefined, undefined, 1);
+            data.attacker thread [[ getsharedfunc("player", "doScoreEvent") ]]("disabled_sentry_gun");
         }
         if (issharedfuncdefined("remote_turret", "empStarted")) {
             self [[ getsharedfunc("remote_turret", "empStarted") ]]();
         }
     }
-    function_9830ac9a0fbf0d6e();
-}
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x367c
-// Size: 0x22f
-function function_9830ac9a0fbf0d6e() {
     if (isdefined(self.useobj)) {
         self.useobj disableplayeruse(self.useobj.owner);
         self.useobj.activeuseobject = 0;
@@ -1087,33 +845,24 @@ function function_9830ac9a0fbf0d6e() {
     if (istrue(self.var_ce4dc6c1d56eb0a9)) {
         self.owner remotecontrolturretoff(self);
         self.var_ce4dc6c1d56eb0a9 = undefined;
-        self.owner.usingremote = undefined;
         self notify("remote_exit");
-        if (istrue(self.owner.isjuggernaut)) {
-            self.owner notify("remote_exit");
-        }
         self setscriptablepartstate("lights", "daytime", 0);
         function_9cc5ca1b073338ab(self.owner);
         function_911cde43e0f3c6b6(self.owner);
-        if (isdefined(self.owner)) {
-            self.owner _switchtoweapon(self.owner.primaryweaponobj);
-            self.owner enableweaponswitch();
-            wait 1;
-            if (isdefined(self) && isdefined(self.owner)) {
-                self.owner val::reset("remote_turret", "usability");
-                self.owner val::reset("remote_turret", "killstreaks");
-                self.owner val::reset("remote_turret", "supers");
-                self.owner val::reset("remote_turret", "reload");
-                self.owner val::reset("remote_turret", "offhand_weapons");
-                self.owner val::reset("remote_turret", "melee");
-            }
-        }
+        self.owner _switchtoweapon(self.owner.primaryweaponobj);
+        self.owner enableweaponswitch();
+        wait 1;
+        self.owner val::reset("remote_turret", "usability");
+        self.owner val::reset("remote_turret", "killstreaks");
+        self.owner val::reset("remote_turret", "supers");
+        self.owner val::reset("remote_turret", "reload");
+        self.owner val::reset("remote_turret", "offhand_weapons");
     }
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38b3
+// Checksum 0x0, Offset: 0x2c25
 // Size: 0xb4
 function function_958fed8d4d1143fa(data) {
     if (issharedfuncdefined("remote_turret", "empStarted")) {
@@ -1132,35 +881,8 @@ function function_958fed8d4d1143fa(data) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x396f
-// Size: 0x1f
-function function_a9d407dcc53c2a3d(var_9f1f082eeef5d90b) {
-    self.turret notify("kill_turret", 1, 1);
-}
-
-/#
-
-    // Namespace remote_turret / namespace_2f1467074a1bbe09
-    // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x3996
-    // Size: 0x52
-    function private function_1f85068748abaa9b(turret) {
-        level endon("<dev string:xec>");
-        self endon("<dev string:xfa>");
-        turret endon("<dev string:x108>");
-        wait 0.3;
-        fakedata = spawnstruct();
-        turret function_371131da10a20bb(fakedata);
-        wait 4;
-        turret function_958fed8d4d1143fa(fakedata);
-    }
-
-#/
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39f0
-// Size: 0x298
+// Checksum 0x0, Offset: 0x2ce1
+// Size: 0x1f7
 function function_cc47405c2cd435e(data) {
     if (!istrue(self.ishaywire)) {
         self.ishaywire = 1;
@@ -1173,46 +895,33 @@ function function_cc47405c2cd435e(data) {
             self.useobj disableplayeruse(self.useobj.owner);
             self.useobj.activeuseobject = 0;
         }
-        if (isdefined(self.useownerobj)) {
-            self.useownerobj hide();
-            self.useownerobj.activeuseobject = 0;
-        }
-        self.owner notify("stopSentryFire");
         self.owner notify("remote_turret_empd");
-        if (istrue(self.var_e42f0fcd6e0c1153)) {
-            self stopbarrelspin();
-            self.var_e42f0fcd6e0c1153 = undefined;
-        }
-        self setmode("sentry_offline");
         self setscriptablepartstate("turret_mode", "turret_mode_sentry");
         if (istrue(self.var_ce4dc6c1d56eb0a9)) {
             self.owner remotecontrolturretoff(self);
+            self setmode("sentry");
             self.var_ce4dc6c1d56eb0a9 = undefined;
-            self.owner.usingremote = undefined;
             self notify("remote_exit");
-            if (istrue(self.owner.isjuggernaut)) {
-                self.owner notify("remote_exit");
-            }
             self setscriptablepartstate("lights", "daytime", 0);
-            function_9cc5ca1b073338ab(self.owner);
+            function_13a319439a116d2(self.owner);
             function_911cde43e0f3c6b6(self.owner);
             self.owner _switchtoweapon(self.owner.primaryweaponobj);
             self.owner enableweaponswitch();
+            thread function_3bb43305bf56bfec(undefined, self.owner);
             wait 1;
             self.owner val::reset("remote_turret", "usability");
             self.owner val::reset("remote_turret", "killstreaks");
             self.owner val::reset("remote_turret", "supers");
             self.owner val::reset("remote_turret", "reload");
             self.owner val::reset("remote_turret", "offhand_weapons");
-            self.owner val::reset("remote_turret", "melee");
         }
     }
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c90
-// Size: 0xf0
+// Checksum 0x0, Offset: 0x2ee0
+// Size: 0xa0
 function function_fe21c57503ab070f(data) {
     if (issharedfuncdefined("remote_turret", "empStarted")) {
         self [[ getsharedfunc("remote_turret", "empCleared") ]]();
@@ -1221,21 +930,15 @@ function function_fe21c57503ab070f(data) {
         self.useobj enableplayeruse(self.useobj.owner);
         self.useobj.activeuseobject = 1;
     }
-    if (isdefined(self.useownerobj)) {
-        self.useownerobj show();
-        self.useownerobj.activeuseobject = 1;
-    }
     if (istrue(self.isplaced)) {
-        self setmode("sentry");
         self.owner thread function_2bd5e2012f429ae3(self);
-        thread function_3bb43305bf56bfec(undefined, self.owner);
     }
     self.ishaywire = undefined;
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d88
+// Checksum 0x0, Offset: 0x2f88
 // Size: 0x64
 function function_66a63d2003156721() {
     if (scripts\cp_mp\emp_debuff::is_empd()) {
@@ -1249,58 +952,33 @@ function function_66a63d2003156721() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3df4
-// Size: 0x37
-function function_aa2dc590a653d06e(owner) {
-    self endon("death");
+// Checksum 0x0, Offset: 0x2ff4
+// Size: 0x140
+function function_3b0cd265e614031a(turret) {
+    turret endon("death");
+    turret endon("carried");
     while (true) {
-        if (owner _isalive()) {
-            self.var_808be693ae64b086 = undefined;
-            break;
-        }
-        wait 0.1;
-    }
-}
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e33
-// Size: 0x1b4
-function function_3b0cd265e614031a(owner) {
-    self endon("death");
-    self endon("carried");
-    while (true) {
-        if (!owner _isalive()) {
-            if (!istrue(self.var_808be693ae64b086)) {
-                self notify("remote_turret_ownerDeath");
-                self.var_808be693ae64b086 = 1;
-                thread function_aa2dc590a653d06e(owner);
-                if (istrue(self.var_ce4dc6c1d56eb0a9) && istrue(self.isplaced) || istrue(owner.var_6678ccff9684345e)) {
-                    owner remotecontrolturretoff(self);
-                    self setmode("sentry");
-                    self.var_ce4dc6c1d56eb0a9 = undefined;
-                    owner.usingremote = undefined;
-                    self notify("remote_exit");
-                    if (istrue(self.isjuggernaut)) {
-                        owner notify("remote_exit");
-                    }
-                    self.overheated = 0;
-                    self setscriptablepartstate("turret_mode", "turret_mode_sentry");
-                    self setscriptablepartstate("lights", "daytime", 0);
-                    function_13a319439a116d2(owner);
-                    function_911cde43e0f3c6b6(owner);
-                    owner _switchtoweapon(owner.primaryweaponobj);
-                    owner enableweaponswitch();
-                    owner val::reset("remote_turret", "allow_movement");
-                    owner val::reset("remote_turret", "usability");
-                    owner val::reset("remote_turret", "killstreaks");
-                    owner val::reset("remote_turret", "supers");
-                    owner val::reset("remote_turret", "reload");
-                    owner val::reset("remote_turret", "offhand_weapons");
-                    owner val::reset("remote_turret", "melee");
-                    thread function_3bb43305bf56bfec(undefined, owner);
-                }
-                owner thread function_2bd5e2012f429ae3(self);
+        if (!_isalive()) {
+            if (istrue(turret.var_ce4dc6c1d56eb0a9) && istrue(turret.isplaced)) {
+                turret notify("remote_turret_ownerDeath");
+                self remotecontrolturretoff(turret);
+                turret setmode("sentry");
+                turret.var_ce4dc6c1d56eb0a9 = undefined;
+                turret notify("remote_exit");
+                turret.overheated = 0;
+                turret setscriptablepartstate("turret_mode", "turret_mode_sentry");
+                turret setscriptablepartstate("lights", "daytime", 0);
+                turret function_13a319439a116d2(self);
+                turret function_911cde43e0f3c6b6(self);
+                _switchtoweapon(self.primaryweaponobj);
+                self enableweaponswitch();
+                val::reset("remote_turret", "usability");
+                val::reset("remote_turret", "killstreaks");
+                val::reset("remote_turret", "supers");
+                val::reset("remote_turret", "reload");
+                val::reset("remote_turret", "offhand_weapons");
+                turret thread function_3bb43305bf56bfec(undefined, self);
+                thread function_2bd5e2012f429ae3(turret);
             }
         }
         wait 0.1;
@@ -1309,40 +987,31 @@ function function_3b0cd265e614031a(owner) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fef
-// Size: 0x3c2
+// Checksum 0x0, Offset: 0x313c
+// Size: 0x35a
 function function_7a35c7c95b25b0e9(turret) {
     turret endon("carried");
     skipshutdown, wasdestroyed = turret waittill("kill_turret");
     turret notify("remote_turret_death");
-    turret notify("death");
     waitframe();
     self.var_3b28db27cbdbc523 = undefined;
     if (istrue(turret.var_ce4dc6c1d56eb0a9)) {
         turret function_911cde43e0f3c6b6(self);
         self remotecontrolturretoff(turret);
         turret.var_ce4dc6c1d56eb0a9 = undefined;
-        self.usingremote = undefined;
         turret notify("remote_exit");
-        if (istrue(self.isjuggernaut)) {
-            self notify("remote_exit");
-        }
         turret.overheated = 0;
         turret setscriptablepartstate("turret_mode", "turret_mode_sentry");
         turret setscriptablepartstate("lights", "daytime", 0);
-        if (isdefined(self)) {
-            _switchtoweapon(self.primaryweaponobj);
-        }
-    }
-    if (isdefined(self)) {
+        _switchtoweapon(self.primaryweaponobj);
         self enableweaponswitch();
-        val::reset("remote_turret", "allow_movement");
         val::reset("remote_turret", "usability");
         val::reset("remote_turret", "killstreaks");
         val::reset("remote_turret", "supers");
         val::reset("remote_turret", "reload");
         val::reset("remote_turret", "offhand_weapons");
-        val::reset("remote_turret", "melee");
+    }
+    if (isdefined(self)) {
         self.placedsentries[turret.turrettype] = array_remove(self.placedsentries[turret.turrettype], turret);
         function_fbce760dc23e09f(turret);
         turret thread function_9cc5ca1b073338ab(self);
@@ -1367,9 +1036,6 @@ function function_7a35c7c95b25b0e9(turret) {
         turret setscriptablepartstate("explode", "violent");
     }
     level callback::callback("killstreak_finish_use", {#streakinfo:turret.streakinfo});
-    if (isdefined(turret.damagemonitored)) {
-        turret.damagemonitored = undefined;
-    }
     if (isdefined(turret.killcament)) {
         turret.killcament delete();
     }
@@ -1393,16 +1059,8 @@ function function_7a35c7c95b25b0e9(turret) {
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43b9
-// Size: 0x17
-function function_3eccd3cd75317e53(data) {
-    self notify("kill_turret", 1, 1);
-}
-
-// Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43d8
+// Checksum 0x0, Offset: 0x349e
 // Size: 0x19
 function function_f8e82a6dd884bd91() {
     level endon("game_ended");
@@ -1412,8 +1070,8 @@ function function_f8e82a6dd884bd91() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x43f9
-// Size: 0xfd
+// Checksum 0x0, Offset: 0x34bf
+// Size: 0xfc
 function function_1ad21168e3b8db0c(turret) {
     turret endon("kill_turret");
     turret endon("carried");
@@ -1435,7 +1093,7 @@ function function_1ad21168e3b8db0c(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x44fe
+// Checksum 0x0, Offset: 0x35c3
 // Size: 0x39
 function function_cfb4701398c755b5(turret) {
     turret endon("kill_turret");
@@ -1446,7 +1104,7 @@ function function_cfb4701398c755b5(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x453f
+// Checksum 0x0, Offset: 0x3604
 // Size: 0x2b
 function function_40906ee89de6f708(turret) {
     turret endon("kill_turret");
@@ -1457,7 +1115,7 @@ function function_40906ee89de6f708(turret) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4572
+// Checksum 0x0, Offset: 0x3637
 // Size: 0xa3
 function function_20db11c0f7f046c1(type) {
     turretmodel = undefined;
@@ -1469,20 +1127,20 @@ function function_20db11c0f7f046c1(type) {
     /#
         modeltype = getdvarint(@"hash_e19e5d308effeda3", 1);
         if (!modeltype) {
-            turretmodel = "<dev string:x111>";
+            turretmodel = "<dev string:x1c>";
         }
     #/
-    assertex(isdefined(turretmodel), "<dev string:x12f>");
+    assertex(isdefined(turretmodel), "For some reason turretModel is not defined, this should never happen");
     self setmodel(turretmodel);
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x461d
+// Checksum 0x0, Offset: 0x36e2
 // Size: 0xf1
 function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
     /#
-        self.owner endon("<dev string:x177>");
+        self.owner endon("<dev string:x37>");
     #/
     self endon("kill_turret");
     self endon("carried");
@@ -1515,13 +1173,13 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
 
     // Namespace remote_turret / namespace_2f1467074a1bbe09
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4716
-    // Size: 0x25f
+    // Checksum 0x0, Offset: 0x37db
+    // Size: 0x266
     function function_1223f321ae6ff9a5(var_630af5192659dd3b) {
-        self endon("<dev string:x191>");
-        self endon("<dev string:x1a0>");
-        level endon("<dev string:xec>");
-        self.turrettarget = spawn("<dev string:x1ab>", self gettagorigin("<dev string:x1bb>") + anglestoforward(self gettagangles("<dev string:x1bb>") * 300));
+        self endon("<dev string:x4e>");
+        self endon("<dev string:x5a>");
+        level endon("<dev string:x62>");
+        self.turrettarget = spawn("<dev string:x6d>", self gettagorigin("<dev string:x7a>") + anglestoforward(self gettagangles("<dev string:x7a>") * 300));
         self.turrettarget.targeton = 0;
         self.turrettarget dontinterpolate();
         self.turrettarget thread function_8ffe5560e2df8a72(self);
@@ -1533,16 +1191,16 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
             var_50651df7c1ef6241 = level.sentrysettings[self.turrettype];
         }
         sentrymode = var_50651df7c1ef6241.sentrymodeon;
-        manualmode = "<dev string:x1c8>";
+        manualmode = "<dev string:x84>";
         turretmode = sentrymode;
         notifyon = 0;
         while (true) {
             if (getdvarint(@"hash_c9bd691ce96079ac", 0) == 1) {
                 if (!istrue(notifyon)) {
-                    self.owner notifyonplayercommand("<dev string:x177>", "<dev string:x1d9>");
+                    self.owner notifyonplayercommand("<dev string:x37>", "<dev string:x92>");
                     notifyon = 1;
                 }
-                self.owner waittill("<dev string:x177>");
+                self.owner waittill("<dev string:x37>");
                 if (turretmode != manualmode) {
                     self setmode(manualmode);
                     turretmode = manualmode;
@@ -1550,8 +1208,8 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
                     endtrace = starttrace + anglestoforward(self.owner getplayerangles()) * 50000;
                     trace = scripts\engine\trace::ray_trace(starttrace, endtrace, self.owner);
                     endpos = undefined;
-                    if (isdefined(trace["<dev string:x1e9>"]) && trace["<dev string:x1e9>"] != "<dev string:x1f4>") {
-                        endpos = trace["<dev string:x204>"];
+                    if (isdefined(trace["<dev string:x9f>"]) && trace["<dev string:x9f>"] != "<dev string:xa7>") {
+                        endpos = trace["<dev string:xb4>"];
                     }
                     if (isdefined(endpos)) {
                         thread function_ee5cbfd60227d0b8(endpos);
@@ -1566,7 +1224,7 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
             }
             notifyon = 0;
             if (turretmode != sentrymode) {
-                self.owner notifyonplayercommandremove("<dev string:x177>", "<dev string:x1d9>");
+                self.owner notifyonplayercommandremove("<dev string:x37>", "<dev string:x92>");
                 function_c151e4a17d929b78();
                 turretmode = sentrymode;
                 self setmode(turretmode);
@@ -1578,23 +1236,23 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
 
     // Namespace remote_turret / namespace_2f1467074a1bbe09
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x497d
-    // Size: 0x1a1
+    // Checksum 0x0, Offset: 0x3a49
+    // Size: 0x1a5
     function function_ee5cbfd60227d0b8(firepos) {
-        self.owner endon("<dev string:x210>");
-        self.owner endon("<dev string:x177>");
-        self endon("<dev string:x191>");
-        self endon("<dev string:x1a0>");
-        level endon("<dev string:xec>");
+        self.owner endon("<dev string:xbd>");
+        self.owner endon("<dev string:x37>");
+        self endon("<dev string:x4e>");
+        self endon("<dev string:x5a>");
+        level endon("<dev string:x62>");
         thread function_b7ffbe66f2c448fc();
         self.turrettarget.origin = firepos;
         self settargetentity(self.turrettarget);
         self.turrettarget.targeton = 1;
-        starttag = "<dev string:x226>";
-        if (self.streakinfo.streakname == "<dev string:x23a>") {
-            starttag = "<dev string:x248>";
+        starttag = "<dev string:xd0>";
+        if (self.streakinfo.streakname == "<dev string:xe1>") {
+            starttag = "<dev string:xec>";
         }
-        endtag = "<dev string:x1bb>";
+        endtag = "<dev string:x7a>";
         wait 1;
         while (true) {
             var_30c9c9336ef2caaf = self gettagorigin(starttag);
@@ -1612,24 +1270,24 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
 
     // Namespace remote_turret / namespace_2f1467074a1bbe09
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4b26
+    // Checksum 0x0, Offset: 0x3bf6
     // Size: 0x39
     function function_c151e4a17d929b78() {
         self cleartargetentity();
         thread function_b7ffbe66f2c448fc();
         self.turrettarget.targeton = 0;
-        self.owner notify("<dev string:x210>");
+        self.owner notify("<dev string:xbd>");
     }
 
     // Namespace remote_turret / namespace_2f1467074a1bbe09
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4b67
+    // Checksum 0x0, Offset: 0x3c37
     // Size: 0x61
     function function_8ffe5560e2df8a72(turret) {
-        turret endon("<dev string:x191>");
-        turret endon("<dev string:x1a0>");
-        self endon("<dev string:x108>");
-        level endon("<dev string:xec>");
+        turret endon("<dev string:x4e>");
+        turret endon("<dev string:x5a>");
+        self endon("<dev string:xff>");
+        level endon("<dev string:x62>");
         while (true) {
             if (istrue(self.targeton)) {
                 sphere(self.origin, 20, (1, 1, 0), 0, 1);
@@ -1640,14 +1298,14 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
 
     // Namespace remote_turret / namespace_2f1467074a1bbe09
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4bd0
+    // Checksum 0x0, Offset: 0x3ca0
     // Size: 0x39
     function function_818d215a79eecafe(turret) {
-        turret endon("<dev string:x191>");
-        turret endon("<dev string:x1a0>");
-        self endon("<dev string:x108>");
-        level endon("<dev string:xec>");
-        turret waittill("<dev string:x108>");
+        turret endon("<dev string:x4e>");
+        turret endon("<dev string:x5a>");
+        self endon("<dev string:xff>");
+        level endon("<dev string:x62>");
+        turret waittill("<dev string:xff>");
         self delete();
     }
 
@@ -1655,7 +1313,7 @@ function function_3bb43305bf56bfec(var_630af5192659dd3b, player) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c11
+// Checksum 0x0, Offset: 0x3ce1
 // Size: 0x1a
 function function_7e11984961aa0adb() {
     self endon("death");
@@ -1664,7 +1322,7 @@ function function_7e11984961aa0adb() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c33
+// Checksum 0x0, Offset: 0x3d03
 // Size: 0x6b
 function function_7a41af7e47221e8f(var_630af5192659dd3b) {
     if (!istrue(self.var_e42f0fcd6e0c1153)) {
@@ -1680,7 +1338,7 @@ function function_7a41af7e47221e8f(var_630af5192659dd3b) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ca6
+// Checksum 0x0, Offset: 0x3d76
 // Size: 0x2a
 function function_361d73970f697d6a() {
     self.momentum = 0;
@@ -1692,8 +1350,8 @@ function function_361d73970f697d6a() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cd8
-// Size: 0x182
+// Checksum 0x0, Offset: 0x3da8
+// Size: 0x189
 function function_da96aa677b43fd18(var_630af5192659dd3b, var_ebed6e83eb956d18, var_7a4f7bd11952e7bc) {
     self endon("death");
     self endon("kill_turret");
@@ -1734,7 +1392,7 @@ function function_da96aa677b43fd18(var_630af5192659dd3b, var_ebed6e83eb956d18, v
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e62
+// Checksum 0x0, Offset: 0x3f39
 // Size: 0xa
 function function_b7ffbe66f2c448fc() {
     self notify("stop_shooting");
@@ -1742,7 +1400,7 @@ function function_b7ffbe66f2c448fc() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e74
+// Checksum 0x0, Offset: 0x3f4b
 // Size: 0x4a
 function function_7bd876f944b5caf3() {
     self endon("death");
@@ -1759,11 +1417,11 @@ function function_7bd876f944b5caf3() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ec6
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x3f9d
+// Size: 0x9f
 function turret_heatmonitor() {
     /#
-        self.owner endon("<dev string:x177>");
+        self.owner endon("<dev string:x37>");
     #/
     self endon("kill_turret");
     self endon("carried");
@@ -1784,7 +1442,7 @@ function turret_heatmonitor() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f6e
+// Checksum 0x0, Offset: 0x4044
 // Size: 0x5e
 function playheatfx() {
     self endon("death");
@@ -1800,11 +1458,11 @@ function playheatfx() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fd4
+// Checksum 0x0, Offset: 0x40aa
 // Size: 0x92
 function turret_coolmonitor() {
     /#
-        self.owner endon("<dev string:x177>");
+        self.owner endon("<dev string:x37>");
     #/
     self endon("kill_turret");
     self endon("carried");
@@ -1823,7 +1481,7 @@ function turret_coolmonitor() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x506e
+// Checksum 0x0, Offset: 0x4144
 // Size: 0x39
 function function_2c51e186f21ecfae() {
     self endon("death");
@@ -1841,60 +1499,72 @@ function function_2c51e186f21ecfae() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x50af
-// Size: 0x206
+// Checksum 0x0, Offset: 0x4185
+// Size: 0x226
 function function_1baea357653599af() {
     level endon("game_ended");
     self.owner endon("disconnect");
     self endon("death");
     self endon("entering");
-    entmask = function_869ccb4e3451b8c6(["etype_player", "etype_ai"]);
     while (true) {
-        targetarray = function_b1eef70090b5b7b5(self.origin, 1575, entmask);
-        foreach (ent in targetarray) {
-            if (!isdefined(ent)) {
-                continue;
-            }
-            if (isplayer(ent) || isbot(ent)) {
-                if (issharedfuncdefined("player", "isReallyAlive")) {
-                    if (![[ getsharedfunc("player", "isReallyAlive") ]](ent)) {
-                        continue;
-                    }
-                }
-            }
-            if (isagent(ent) && !isalive(ent)) {
-                continue;
-            }
-            if (level.teambased) {
-                if (isdefined(ent.team) && ent.team == self.ownerteam) {
+        function_62a0eac6f83f3455();
+        foreach (targetarray in level.var_e725f44030790232 function_df633f460888a47(self.origin)) {
+            foreach (ent in targetarray) {
+                if (!isdefined(ent)) {
                     continue;
                 }
-            } else if (ent == self.owner) {
-                continue;
+                if (isplayer(ent) || isbot(ent)) {
+                    if (issharedfuncdefined("player", "isReallyAlive")) {
+                        if (![[ getsharedfunc("player", "isReallyAlive") ]](ent)) {
+                            continue;
+                        }
+                    }
+                }
+                if (isagent(ent) && !isalive(ent)) {
+                    continue;
+                }
+                if (level.teambased) {
+                    if (isdefined(ent.team) && ent.team == self.ownerteam) {
+                        continue;
+                    }
+                } else if (ent == self.owner) {
+                    continue;
+                }
+                if (scripts\cp_mp\emp_debuff::is_empd()) {
+                    continue;
+                }
+                targetinfo = function_a8c3018671379cee(ent);
+                if (!targetinfo.isinrange || !targetinfo.isvisible || !targetinfo.isindetectrange || !targetinfo.var_9ae205c4c40af967) {
+                    continue;
+                }
+                if (self.owner function_d326d254331ad16b(ent)) {
+                    continue;
+                }
+                if (istrue(self.markingtarget)) {
+                    continue;
+                }
+                params = function_1a5c1f370962e7bc(self.cameratype);
+                function_b25c3111cbbcee44(ent, 3, "super_tac_camera");
             }
-            if (scripts\cp_mp\emp_debuff::is_empd()) {
-                continue;
-            }
-            targetinfo = function_a8c3018671379cee(ent);
-            if (!targetinfo.isinrange || !targetinfo.isvisible || !targetinfo.isindetectrange || !targetinfo.var_9ae205c4c40af967) {
-                continue;
-            }
-            if (self.owner function_d326d254331ad16b(ent)) {
-                continue;
-            }
-            if (istrue(self.markingtarget)) {
-                continue;
-            }
-            params = function_1a5c1f370962e7bc(self.cameratype);
-            function_b25c3111cbbcee44(ent, 3, "super_tac_camera");
         }
     }
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x43b3
+// Size: 0x2b
+function function_62a0eac6f83f3455() {
+    if (isdefined(level.var_e725f44030790232)) {
+        return;
+    }
+    level.var_e725f44030790232 = function_21a6a1c613b50a28(level.characters, 1575);
+}
+
+// Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x52bd
-// Size: 0x76
+// Checksum 0x0, Offset: 0x43e6
+// Size: 0x75
 function function_a8c3018671379cee(target) {
     info = spawnstruct();
     info.isvisible = function_a13b737dd0cea460(target);
@@ -1908,8 +1578,8 @@ function function_a8c3018671379cee(target) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x533c
-// Size: 0x226
+// Checksum 0x0, Offset: 0x4464
+// Size: 0x22e
 function private function_3456f1755f48358c(scantarget, scanfov, var_5e43b44751d01b1a) {
     if (!isdefined(scantarget)) {
         return 0;
@@ -1962,7 +1632,7 @@ function private function_3456f1755f48358c(scantarget, scanfov, var_5e43b44751d0
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x556b
+// Checksum 0x0, Offset: 0x469b
 // Size: 0x77
 function function_84c67e2797c250e9(target) {
     if (!isdefined(target)) {
@@ -1978,7 +1648,7 @@ function function_84c67e2797c250e9(target) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x55eb
+// Checksum 0x0, Offset: 0x471b
 // Size: 0x77
 function function_7bf16f569dc33813(target) {
     if (!isdefined(target)) {
@@ -1994,8 +1664,8 @@ function function_7bf16f569dc33813(target) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x566b
-// Size: 0x268
+// Checksum 0x0, Offset: 0x479b
+// Size: 0x271
 function function_a13b737dd0cea460(target) {
     if (!isdefined(target)) {
         return 0;
@@ -2045,8 +1715,8 @@ function function_a13b737dd0cea460(target) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x58dc
-// Size: 0x247
+// Checksum 0x0, Offset: 0x4a15
+// Size: 0x251
 function function_f232be2b19471805(target) {
     if (!isdefined(target)) {
         return 0;
@@ -2091,7 +1761,7 @@ function function_f232be2b19471805(target) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5b2c
+// Checksum 0x0, Offset: 0x4c6f
 // Size: 0x51
 function private function_d326d254331ad16b(target) {
     if (!isdefined(target)) {
@@ -2110,7 +1780,7 @@ function private function_d326d254331ad16b(target) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b86
+// Checksum 0x0, Offset: 0x4cc9
 // Size: 0xc2
 function function_bcc24554453f6d67(player) {
     if (!isdefined(player)) {
@@ -2136,18 +1806,18 @@ function function_bcc24554453f6d67(player) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c50
-// Size: 0x35
+// Checksum 0x0, Offset: 0x4d93
+// Size: 0x34
 function function_1a5c1f370962e7bc(cameratype) {
     params = level.var_bb0266f422d9afa3[cameratype];
-    assertex(isdefined(params), "<dev string:x25e>" + cameratype);
+    assertex(isdefined(params), "level.dCamSettings does not have an entry for " + cameratype);
     return params;
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x5c8e
-// Size: 0x80
+// Checksum 0x0, Offset: 0x4dd0
+// Size: 0x7f
 function private function_b25c3111cbbcee44(target, sensorduration, supername) {
     sensordata = function_cb0d2df7f050aa8e(target);
     if (!isdefined(sensordata)) {
@@ -2161,8 +1831,8 @@ function private function_b25c3111cbbcee44(target, sensorduration, supername) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5d16
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x4e57
+// Size: 0x7d
 function private function_cb0d2df7f050aa8e(target) {
     if (!isdefined(self.var_dae7e92e87a31e4)) {
         self.var_dae7e92e87a31e4 = [];
@@ -2179,8 +1849,8 @@ function private function_cb0d2df7f050aa8e(target) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5d9c
-// Size: 0x67
+// Checksum 0x0, Offset: 0x4edc
+// Size: 0x64
 function private function_487185d4893d5f85(supername) {
     foreach (player in level.players) {
         if (!isdefined(player)) {
@@ -2192,8 +1862,8 @@ function private function_487185d4893d5f85(supername) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e0b
-// Size: 0x7f
+// Checksum 0x0, Offset: 0x4f48
+// Size: 0x7e
 function function_9553839f6b149375() {
     params = function_1a5c1f370962e7bc("tacCam");
     self.headiconbox = scripts\cp_mp\entityheadicons::setheadicon_singleimage([], "jup_hud_icon_killstreaks_remote_turret", 5, 1, 1000, 100, undefined, 1);
@@ -2204,8 +1874,8 @@ function function_9553839f6b149375() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e92
-// Size: 0x123
+// Checksum 0x0, Offset: 0x4fce
+// Size: 0x126
 function function_768370d8be2da2d2(player, unset, supername) {
     if (!isdefined(self)) {
         return;
@@ -2228,7 +1898,7 @@ function function_768370d8be2da2d2(player, unset, supername) {
     if (!isdefined(var_d1c9d3655a4f3302)) {
         return;
     }
-    isfriendly = scripts\cp_mp\utility\player_utility::isfriendly(self.owner.team, player);
+    isfriendly = isfriendly(self.owner.team, player);
     var_7295a6a7d7aafad7 = function_10aa38d58090b230(player, supername);
     if (isfriendly) {
         if (istrue(unset)) {
@@ -2256,7 +1926,7 @@ function function_768370d8be2da2d2(player, unset, supername) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x5fbd
+// Checksum 0x0, Offset: 0x50fc
 // Size: 0x4f
 function private function_10aa38d58090b230(player, supername) {
     if (isdefined(player.super) && player.super.staticdata.ref == supername) {
@@ -2267,7 +1937,7 @@ function private function_10aa38d58090b230(player, supername) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6014
+// Checksum 0x0, Offset: 0x5153
 // Size: 0x24
 function private function_9b936bec0466b8b5() {
     if (!isdefined(self.var_dae7e92e87a31e4)) {
@@ -2281,7 +1951,7 @@ function private function_9b936bec0466b8b5() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6041
+// Checksum 0x0, Offset: 0x5180
 // Size: 0x3e
 function private function_f38fae4f6dd4b035(player) {
     scripts\cp_mp\entityheadicons::setheadicon_removeclientfrommask(self.headiconbox, player);
@@ -2291,7 +1961,7 @@ function private function_f38fae4f6dd4b035(player) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6087
+// Checksum 0x0, Offset: 0x51c6
 // Size: 0x3e
 function private function_9cc5ca1b073338ab(player) {
     scripts\cp_mp\entityheadicons::setheadicon_removeclientfrommask(self.headiconbox, player);
@@ -2301,7 +1971,7 @@ function private function_9cc5ca1b073338ab(player) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x60cd
+// Checksum 0x0, Offset: 0x520c
 // Size: 0x3e
 function private function_13a319439a116d2(player) {
     scripts\cp_mp\entityheadicons::setheadicon_addclienttomask(self.headiconbox, player);
@@ -2311,7 +1981,7 @@ function private function_13a319439a116d2(player) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6113
+// Checksum 0x0, Offset: 0x5252
 // Size: 0x3e
 function private function_58672d602d2120d3(player) {
     scripts\cp_mp\entityheadicons::setheadicon_removeclientfrommask(self.headiconbox, player);
@@ -2321,8 +1991,8 @@ function private function_58672d602d2120d3(player) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x6159
-// Size: 0xc0
+// Checksum 0x0, Offset: 0x5298
+// Size: 0xbf
 function function_e793fcf03710f124(camera, index, status, forcestate, var_be632e8c9259a360) {
     if (!isdefined(self.var_2d5baa13a621c5eb)) {
         self.var_2d5baa13a621c5eb = [];
@@ -2339,8 +2009,8 @@ function function_e793fcf03710f124(camera, index, status, forcestate, var_be632e
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6221
-// Size: 0xce
+// Checksum 0x0, Offset: 0x535f
+// Size: 0xcd
 function function_d094908c5788a3e9() {
     level endon("game_ended");
     self endon("disconnect");
@@ -2360,7 +2030,7 @@ function function_d094908c5788a3e9() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x62f7
+// Checksum 0x0, Offset: 0x5434
 // Size: 0x4a
 function private function_2a98f46d2b757869(sensordata, sensorduration, supername) {
     level endon("game_ended");
@@ -2373,7 +2043,7 @@ function private function_2a98f46d2b757869(sensordata, sensorduration, supername
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x6349
+// Checksum 0x0, Offset: 0x5486
 // Size: 0x39
 function private function_d27569772a3ad7d7(sensordata) {
     if (isdefined(self.var_dae7e92e87a31e4[sensordata.entnum])) {
@@ -2383,7 +2053,7 @@ function private function_d27569772a3ad7d7(sensordata) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x638a
+// Checksum 0x0, Offset: 0x54c7
 // Size: 0x10
 function function_57bec1aaf3404bf6() {
     self setclientomnvar("ui_remote_turret_status", 2);
@@ -2391,15 +2061,33 @@ function function_57bec1aaf3404bf6() {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x63a2
+// Checksum 0x0, Offset: 0x54df
 // Size: 0x10
 function function_ca5bd9a5609d8ba3() {
     self setclientomnvar("ui_remote_turret_status", 1);
 }
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x54f7
+// Size: 0x61
+function isfriendly(var_da8cec9bce12f9cb, var_c4b81997f0120a97) {
+    assertex(isdefined(var_c4b81997f0120a97), "isFriendlyTeam argument 2 is not defined");
+    if (!level.teambased) {
+        return false;
+    }
+    if (!isplayer(var_c4b81997f0120a97) && !isdefined(var_c4b81997f0120a97.team)) {
+        return false;
+    }
+    if (var_da8cec9bce12f9cb != var_c4b81997f0120a97.team) {
+        return false;
+    }
+    return true;
+}
+
+// Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63ba
+// Checksum 0x0, Offset: 0x5561
 // Size: 0x38
 function function_392e60623411ef42(player) {
     player _setvisibiilityomnvarforkillstreak(self.streakinfo.streakname, "on");
@@ -2408,22 +2096,9 @@ function function_392e60623411ef42(player) {
 
 // Namespace remote_turret / namespace_2f1467074a1bbe09
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x63fa
+// Checksum 0x0, Offset: 0x55a1
 // Size: 0x2b
 function function_911cde43e0f3c6b6(player) {
     player _setvisibiilityomnvarforkillstreak(self.streakinfo.streakname, "off");
 }
 
-/#
-
-    // Namespace remote_turret / namespace_2f1467074a1bbe09
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x642d
-    // Size: 0x30
-    function function_45456bb78fa8eb2d(printmsg) {
-        if (getdvarint(@"hash_2da6e96d161f55bc", 0) == 1) {
-            print("<dev string:x290>" + printmsg);
-        }
-    }
-
-#/

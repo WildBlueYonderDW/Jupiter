@@ -6,8 +6,8 @@
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x21c
-// Size: 0xf7
+// Checksum 0x0, Offset: 0x25b
+// Size: 0xf6
 function vehicle_dlog_spawnevent(vehicle, spawntype, vehicletype) {
     instancedata = vehicle_dlog_getinstancedata(vehicle, 1);
     if (!isdefined(instancedata)) {
@@ -27,8 +27,8 @@ function vehicle_dlog_spawnevent(vehicle, spawntype, vehicletype) {
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x31b
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x359
+// Size: 0xf5
 function vehicle_dlog_exitevent(vehicle, player, seatid, exittype) {
     if (!isplayer(player)) {
         return;
@@ -48,8 +48,8 @@ function vehicle_dlog_exitevent(vehicle, player, seatid, exittype) {
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x419
-// Size: 0xf6
+// Checksum 0x0, Offset: 0x456
+// Size: 0xf5
 function vehicle_dlog_enterevent(vehicle, player, seatid, entertype) {
     if (!isplayer(player)) {
         return;
@@ -69,11 +69,11 @@ function vehicle_dlog_enterevent(vehicle, player, seatid, entertype) {
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x517
-// Size: 0x70
+// Checksum 0x0, Offset: 0x553
+// Size: 0x6f
 function vehicle_dlog_init() {
-    assertex(isdefined(level.vehicle), "<dev string:x1c>");
-    assertex(!isdefined(level.vehicle.dlogdata), "<dev string:x51>");
+    assertex(isdefined(level.vehicle), "vehicle_dlog_init() called before vehicle_init().");
+    assertex(!isdefined(level.vehicle.dlogdata), "vehicle_dlog_init() should only be called once.");
     leveldata = spawnstruct();
     leveldata.uniqueid = 0;
     level.vehicle.dlogdata = leveldata;
@@ -81,16 +81,16 @@ function vehicle_dlog_init() {
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x58f
+// Checksum 0x0, Offset: 0x5ca
 // Size: 0x37
 function vehicle_dlog_getleveldata() {
-    assertex(isdefined(level.vehicle.dlogdata), "<dev string:x84>");
+    assertex(isdefined(level.vehicle.dlogdata), "vehicle_dlog_getLevelData() called before vehicle_dlog_init().");
     return level.vehicle.dlogdata;
 }
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cf
+// Checksum 0x0, Offset: 0x60a
 // Size: 0x7e
 function vehicle_dlog_getinstancedata(vehicle, create) {
     leveldata = vehicle_dlog_getleveldata();
@@ -106,7 +106,7 @@ function vehicle_dlog_getinstancedata(vehicle, create) {
 
 // Namespace vehicle_dlog / scripts\cp_mp\vehicles\vehicle_dlog
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x656
+// Checksum 0x0, Offset: 0x691
 // Size: 0x16
 function vehicle_dlog_getuniqueid(vehicle) {
     return vehicle.dlogid;

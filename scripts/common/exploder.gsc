@@ -6,8 +6,8 @@
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x377
-// Size: 0xd1
+// Checksum 0x0, Offset: 0x2e7
+// Size: 0xd0
 function setup_individual_exploder(ent) {
     targetname = ent.targetname;
     if (!isdefined(targetname)) {
@@ -39,8 +39,8 @@ function setup_individual_exploder(ent) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x450
-// Size: 0xef
+// Checksum 0x0, Offset: 0x3bf
+// Size: 0xed
 function addinitexploders(potentialexploders) {
     foreach (ent in potentialexploders) {
         if (!isdefined(ent)) {
@@ -63,8 +63,8 @@ function addinitexploders(potentialexploders) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x547
-// Size: 0x84a
+// Checksum 0x0, Offset: 0x4b4
+// Size: 0x84b
 function setupexploders() {
     level.init_exploders = [];
     level.exploders = [];
@@ -131,7 +131,7 @@ function setupexploders() {
             ent.v["fxid"] = exploder.script_fxid;
         }
         ent.v["exploder"] = exploder.script_exploder;
-        assertex(isdefined(exploder.script_exploder), "<dev string:x1c>" + exploder.origin + "<dev string:x33>");
+        assertex(isdefined(exploder.script_exploder), "Exploder at origin " + exploder.origin + " has no script_exploder");
         if (!isdefined(ent.v["delay"])) {
             ent.v["delay"] = 0;
         }
@@ -183,8 +183,8 @@ function setupexploders() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd99
-// Size: 0xc9
+// Checksum 0x0, Offset: 0xd07
+// Size: 0xc5
 function exploder_flag_wait(msg, var_e2a3f554e65a5ced) {
     if (!flag_exist(msg)) {
         flag_init(msg);
@@ -199,7 +199,7 @@ function exploder_flag_wait(msg, var_e2a3f554e65a5ced) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6a
+// Checksum 0x0, Offset: 0xdd4
 // Size: 0x2c
 function exploder_is_damaged_model(ent) {
     return isdefined(ent.targetname) && ent.targetname == "exploder";
@@ -207,7 +207,7 @@ function exploder_is_damaged_model(ent) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9f
+// Checksum 0x0, Offset: 0xe09
 // Size: 0x42
 function exploder_starts_hidden(ent) {
     return ent.model == "fx" && (!isdefined(ent.targetname) || ent.targetname != "exploderchunk");
@@ -215,7 +215,7 @@ function exploder_starts_hidden(ent) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeea
+// Checksum 0x0, Offset: 0xe54
 // Size: 0x2c
 function exploder_is_chunk(ent) {
     return isdefined(ent.targetname) && ent.targetname == "exploderchunk";
@@ -223,8 +223,8 @@ function exploder_is_chunk(ent) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1f
-// Size: 0xf3
+// Checksum 0x0, Offset: 0xe89
+// Size: 0xf1
 function show_exploder_models_proc(num) {
     num += "";
     exploders = get_exploders();
@@ -245,8 +245,8 @@ function show_exploder_models_proc(num) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x101a
-// Size: 0xae
+// Checksum 0x0, Offset: 0xf82
+// Size: 0xac
 function get_exploders(str) {
     exploders = [];
     if (level.createfx_enabled) {
@@ -264,8 +264,8 @@ function get_exploders(str) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d1
-// Size: 0xd9
+// Checksum 0x0, Offset: 0x1037
+// Size: 0xd7
 function get_createfx_exploders(str) {
     /#
         array = [];
@@ -273,13 +273,13 @@ function get_createfx_exploders(str) {
             if (!isdefined(ent)) {
                 continue;
             }
-            if (ent.v["<dev string:x4e>"] != "<dev string:x56>") {
+            if (ent.v["<dev string:x1c>"] != "<dev string:x21>") {
                 continue;
             }
-            if (!isdefined(ent.v["<dev string:x56>"])) {
+            if (!isdefined(ent.v["<dev string:x21>"])) {
                 continue;
             }
-            if (isdefined(str) && ent.v["<dev string:x56>"] + "<dev string:x62>" != str) {
+            if (isdefined(str) && ent.v["<dev string:x21>"] + "<dev string:x2a>" != str) {
                 continue;
             }
             array[array.size] = ent;
@@ -293,8 +293,8 @@ function get_createfx_exploders(str) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b2
-// Size: 0x107
+// Checksum 0x0, Offset: 0x1116
+// Size: 0x106
 function stop_exploder_proc(num, players, bkill) {
     num += "";
     var_1c5e2f2d32a97f95 = 0;
@@ -319,15 +319,15 @@ function stop_exploder_proc(num, players, bkill) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c1
-// Size: 0x69
+// Checksum 0x0, Offset: 0x1224
+// Size: 0x68
 function stop_clientside_exploder(explodername, players, bkill) {
     if (havemapentseffects()) {
         stopclientexploder(explodername, players, bkill);
         return;
     }
     if (!is_valid_clientside_exploder_name(explodername)) {
-        println("<dev string:x66>" + explodername + "<dev string:x83>");
+        println("<dev string:x2b>" + explodername + "<dev string:x45>");
         return;
     }
     exploder_num = int(explodername);
@@ -336,7 +336,7 @@ function stop_clientside_exploder(explodername, players, bkill) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1332
+// Checksum 0x0, Offset: 0x1294
 // Size: 0x3b
 function get_exploder_array_proc(msg) {
     msg += "";
@@ -350,8 +350,8 @@ function get_exploder_array_proc(msg) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1376
-// Size: 0xa4
+// Checksum 0x0, Offset: 0x12d8
+// Size: 0xa2
 function hide_exploder_models_proc(num) {
     num += "";
     exploders = get_exploders(num);
@@ -369,8 +369,8 @@ function hide_exploder_models_proc(num) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1422
-// Size: 0xae
+// Checksum 0x0, Offset: 0x1382
+// Size: 0xac
 function delete_exploder_proc(num) {
     num += "";
     exploders = get_exploders(num);
@@ -389,8 +389,8 @@ function delete_exploder_proc(num) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d8
-// Size: 0x115
+// Checksum 0x0, Offset: 0x1436
+// Size: 0x119
 function exploder_damage() {
     if (isdefined(self.v["delay"])) {
         delay = self.v["delay"];
@@ -420,7 +420,7 @@ function exploder_damage() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f5
+// Checksum 0x0, Offset: 0x1557
 // Size: 0x174
 function activate_individual_exploder_proc() {
     if (isdefined(self.v["firefx"])) {
@@ -456,8 +456,8 @@ function activate_individual_exploder_proc() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1771
-// Size: 0x175
+// Checksum 0x0, Offset: 0x16d3
+// Size: 0x174
 function brush_delete() {
     num = self.v["exploder"];
     if (isdefined(self.v["delay"])) {
@@ -498,8 +498,8 @@ function brush_delete() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ee
-// Size: 0x28a
+// Checksum 0x0, Offset: 0x184f
+// Size: 0x290
 function brush_throw() {
     if (isdefined(self.v["delay"])) {
         wait self.v["delay"];
@@ -559,7 +559,7 @@ function brush_throw() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b80
+// Checksum 0x0, Offset: 0x1ae7
 // Size: 0x1fe
 function brush_show() {
     if (isdefined(self.v["delay"])) {
@@ -606,7 +606,7 @@ function brush_show() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d86
+// Checksum 0x0, Offset: 0x1ced
 // Size: 0x31
 function exploder_rumble() {
     if (!issp()) {
@@ -618,7 +618,7 @@ function exploder_rumble() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dbf
+// Checksum 0x0, Offset: 0x1d26
 // Size: 0xb6
 function exploder_delay() {
     if (!isdefined(self.v["delay"])) {
@@ -639,7 +639,7 @@ function exploder_delay() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e7d
+// Checksum 0x0, Offset: 0x1de4
 // Size: 0x79
 function effect_loopsound() {
     if (isdefined(self.loopsound_ent)) {
@@ -654,7 +654,7 @@ function effect_loopsound() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1efe
+// Checksum 0x0, Offset: 0x1e65
 // Size: 0x9
 function sound_effect() {
     effect_soundalias();
@@ -662,7 +662,7 @@ function sound_effect() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f0f
+// Checksum 0x0, Offset: 0x1e76
 // Size: 0x46
 function effect_soundalias() {
     origin = self.v["origin"];
@@ -673,7 +673,7 @@ function effect_soundalias() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f5d
+// Checksum 0x0, Offset: 0x1ec4
 // Size: 0x2e
 function exploder_earthquake() {
     exploder_delay();
@@ -682,7 +682,7 @@ function exploder_earthquake() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f93
+// Checksum 0x0, Offset: 0x1efa
 // Size: 0x55
 function exploder_playsound() {
     if (!isdefined(self.v["soundalias"]) || self.v["soundalias"] == "nil") {
@@ -693,8 +693,8 @@ function exploder_playsound() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff0
-// Size: 0x120
+// Checksum 0x0, Offset: 0x1f57
+// Size: 0x126
 function fire_effect() {
     forward = self.v["forward"];
     up = self.v["up"];
@@ -719,8 +719,8 @@ function fire_effect() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2118
-// Size: 0x121
+// Checksum 0x0, Offset: 0x2085
+// Size: 0x120
 function cannon_effect() {
     if (isdefined(self.v["repeat"])) {
         thread exploder_playsound();
@@ -743,28 +743,28 @@ function cannon_effect() {
 
     // Namespace exploder / scripts\common\exploder
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2241
-    // Size: 0x190
+    // Checksum 0x0, Offset: 0x21ad
+    // Size: 0x197
     function function_6538f332fa49ccda() {
-        level endon("<dev string:xab>");
+        level endon("<dev string:x6a>");
         while (true) {
-            origin, delay, damageamount, damageradius, dotraces, envonly, earthquakename, rumblename = level waittill("<dev string:xb9>");
+            origin, delay, damageamount, damageradius, dotraces, envonly, earthquakename, rumblename = level waittill("<dev string:x75>");
             ent = spawnstruct();
             ent.v = [];
-            ent.v["<dev string:x56>"] = 0;
-            ent.v["<dev string:xc9>"] = origin;
-            ent.v["<dev string:xd3>"] = (0, 0, 0);
-            ent.v["<dev string:xdd>"] = delay;
-            ent.v["<dev string:xea>"] = damageamount;
-            ent.v["<dev string:xf4>"] = damageradius;
-            ent.v["<dev string:x105>"] = dotraces;
-            ent.v["<dev string:x111>"] = envonly;
-            ent.v["<dev string:x11c>"] = "<dev string:x12d>";
+            ent.v["<dev string:x21>"] = 0;
+            ent.v["<dev string:x82>"] = origin;
+            ent.v["<dev string:x89>"] = (0, 0, 0);
+            ent.v["<dev string:x90>"] = delay;
+            ent.v["<dev string:x9a>"] = damageamount;
+            ent.v["<dev string:xa1>"] = damageradius;
+            ent.v["<dev string:xaf>"] = dotraces;
+            ent.v["<dev string:xb8>"] = envonly;
+            ent.v["<dev string:xc0>"] = "<dev string:xce>";
             if (isdefined(earthquakename) && earthquakename.size > 0) {
-                ent.v["<dev string:x137>"] = earthquakename;
+                ent.v["<dev string:xd5>"] = earthquakename;
             }
             if (isdefined(rumblename) && rumblename.size > 0) {
-                ent.v["<dev string:x145>"] = rumblename;
+                ent.v["<dev string:xe0>"] = rumblename;
             }
             ent activate_individual_exploder_proc();
         }
@@ -774,8 +774,8 @@ function cannon_effect() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x23d9
-// Size: 0xc6
+// Checksum 0x0, Offset: 0x234c
+// Size: 0xc5
 function activate_exploder(num, players, starttime) {
     num += "";
     level notify("exploding_" + num);
@@ -794,15 +794,15 @@ function activate_exploder(num, players, starttime) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x24a7
-// Size: 0x69
+// Checksum 0x0, Offset: 0x2419
+// Size: 0x68
 function activate_clientside_exploder(explodername, players, starttime) {
     if (havemapentseffects()) {
         activateclientexploder(explodername, players, starttime);
         return;
     }
     if (!is_valid_clientside_exploder_name(explodername)) {
-        println("<dev string:x66>" + explodername + "<dev string:x83>");
+        println("<dev string:x2b>" + explodername + "<dev string:x45>");
         return;
     }
     exploder_num = int(explodername);
@@ -811,8 +811,8 @@ function activate_clientside_exploder(explodername, players, starttime) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2518
-// Size: 0x46
+// Checksum 0x0, Offset: 0x2489
+// Size: 0x45
 function is_valid_clientside_exploder_name(explodername) {
     if (!isdefined(explodername)) {
         return false;
@@ -829,7 +829,7 @@ function is_valid_clientside_exploder_name(explodername) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2567
+// Checksum 0x0, Offset: 0x24d7
 // Size: 0x52
 function shouldrunserversideeffects() {
     if (utility::issp() && !havemapentseffects()) {
@@ -846,7 +846,7 @@ function shouldrunserversideeffects() {
 
 // Namespace exploder / scripts\common\exploder
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25c1
+// Checksum 0x0, Offset: 0x2531
 // Size: 0x27
 function exploder_before_load(num, players, starttime) {
     waittillframeend();
@@ -856,7 +856,7 @@ function exploder_before_load(num, players, starttime) {
 
 // Namespace exploder / scripts\common\exploder
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25f0
+// Checksum 0x0, Offset: 0x2560
 // Size: 0x25
 function exploder_after_load(num, players, starttime) {
     activate_exploder(num, players, starttime);

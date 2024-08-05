@@ -1,0 +1,11 @@
+#namespace namespace_5151014d19d77931;
+
+// Namespace namespace_5151014d19d77931 / namespace_1f0e0edf6f56ff0
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x68
+// Size: 0x24
+function function_fa57a1fb4444ac9c() {
+    setsaveddvar(@"hash_351ca4838eccf185", 1);
+    setsaveddvar(@"hash_def5bdc115ba2abb", 5);
+}
+

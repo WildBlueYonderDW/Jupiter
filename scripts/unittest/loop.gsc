@@ -4,7 +4,7 @@
 
 // Namespace unittest_loop / scripts\unittest\loop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b9
+// Checksum 0x0, Offset: 0x160
 // Size: 0xa5
 function for_simple() {
     test_print("for simple");
@@ -28,8 +28,8 @@ function for_simple() {
 
 // Namespace unittest_loop / scripts\unittest\loop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x266
-// Size: 0xba
+// Checksum 0x0, Offset: 0x20d
+// Size: 0xb5
 function foreach_shared_variables(x) {
     test_print("foreach_shared_variables");
     if (isdefined(x)) {
@@ -46,8 +46,8 @@ function foreach_shared_variables(x) {
 
 // Namespace unittest_loop / scripts\unittest\loop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x328
-// Size: 0x91
+// Checksum 0x0, Offset: 0x2ca
+// Size: 0x8f
 function foreach_mutable_key() {
     test_print("foreach_mutable_key");
     a = [1, 2, 3, 4];
@@ -59,8 +59,8 @@ function foreach_mutable_key() {
 
 // Namespace unittest_loop / scripts\unittest\loop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1
-// Size: 0xee
+// Checksum 0x0, Offset: 0x361
+// Size: 0xea
 function foreach_simple() {
     test_print("foreach_simple");
     a = [1, 2, 3, 4];
@@ -77,7 +77,7 @@ function foreach_simple() {
 
 // Namespace unittest_loop / scripts\unittest\loop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b7
+// Checksum 0x0, Offset: 0x453
 // Size: 0xaa
 function while_simple() {
     test_print("while simple");
@@ -101,8 +101,8 @@ function while_simple() {
 
 // Namespace unittest_loop / scripts\unittest\loop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x569
-// Size: 0x94
+// Checksum 0x0, Offset: 0x505
+// Size: 0x96
 function loop_control() {
     test_print("for control");
     for (i = 0; i < 1; i++) {
@@ -127,7 +127,7 @@ function loop_control() {
 
 // Namespace unittest_loop / scripts\unittest\loop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x605
+// Checksum 0x0, Offset: 0x5a3
 // Size: 0x36
 function main() {
     test_begin("Loops");

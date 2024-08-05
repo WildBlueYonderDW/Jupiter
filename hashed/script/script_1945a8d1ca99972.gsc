@@ -1,0 +1,14 @@
+#namespace namespace_b6d939a03f87aa20;
+
+// Namespace namespace_b6d939a03f87aa20 / namespace_c869eec25a8977a0
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xdc
+// Size: 0x33
+function main() {
+    a[0] = "head_sc_m_swaynos_bg_civ";
+    a[1] = "head_sc_m_perez_bg_civ";
+    a[2] = "head_sp_civ_var_05_hat_b_civ";
+    a[3] = "head_sp_opforce_grunt_var_03_var_1_civ";
+    return a;
+}
+

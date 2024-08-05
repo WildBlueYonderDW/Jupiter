@@ -2,8 +2,8 @@
 
 // Namespace ai_shooting / scripts\code\ai_shooting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e
-// Size: 0xbb
+// Checksum 0x0, Offset: 0x6b
+// Size: 0xbe
 function decidenumshotsformg() {
     turret = undefined;
     if (isdefined(self.fngetusedturret)) {
@@ -26,8 +26,8 @@ function decidenumshotsformg() {
 
 // Namespace ai_shooting / scripts\code\ai_shooting
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x152
-// Size: 0x8d
+// Checksum 0x0, Offset: 0x132
+// Size: 0x8e
 function decidenumshotsforfull() {
     numshots = self.bulletsinclip;
     weapclass = weaponclass(self.weapon);
@@ -46,8 +46,8 @@ function decidenumshotsforfull() {
 
 // Namespace ai_shooting / scripts\code\ai_shooting
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e8
-// Size: 0xb0
+// Checksum 0x0, Offset: 0x1c9
+// Size: 0xb1
 function decidenumshotsforburst(var_b22c497b24d57aca) {
     maxburst = 5;
     var_8ba699667e1a6d48 = weaponburstcount(self.weapon);
@@ -70,8 +70,8 @@ function decidenumshotsforburst(var_b22c497b24d57aca) {
 
 // Namespace ai_shooting / scripts\code\ai_shooting
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a1
-// Size: 0xd0
+// Checksum 0x0, Offset: 0x283
+// Size: 0xd2
 function reduceshotcountbydistance(var_ed80adb830bc0010, var_b22c497b24d57aca) {
     var_5e2b1cc3aba6d0ec = 62500;
     var_613a15adbe0efe37 = 810000;

@@ -5,7 +5,7 @@
 
 // Namespace vehicle_anim / namespace_68d1bc1bac7da538
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x112
+// Checksum 0x0, Offset: 0xe1
 // Size: 0x24
 function init_vehicles() {
     create_func_ref("fastrope_anim", &fastrope_anim);
@@ -14,7 +14,7 @@ function init_vehicles() {
 
 // Namespace vehicle_anim / namespace_68d1bc1bac7da538
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e
+// Checksum 0x0, Offset: 0x10d
 // Size: 0x4d
 function fastrope_anim(model, animation, flag) {
     model dontinterpolate();
@@ -24,7 +24,7 @@ function fastrope_anim(model, animation, flag) {
 
 // Namespace vehicle_anim / namespace_68d1bc1bac7da538
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x193
+// Checksum 0x0, Offset: 0x162
 // Size: 0xb2
 function vehicle_anim(vehicle, animation) {
     if (isdefined(vehicle)) {
@@ -42,7 +42,7 @@ function vehicle_anim(vehicle, animation) {
 
 // Namespace vehicle_anim / namespace_68d1bc1bac7da538
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24d
+// Checksum 0x0, Offset: 0x21c
 // Size: 0x13
 function vehicleaniminit() {
     scripts\engine\utility::create_func_ref("use_turret", &utility::use_turret);
@@ -50,7 +50,7 @@ function vehicleaniminit() {
 
 // Namespace vehicle_anim / namespace_68d1bc1bac7da538
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x268
+// Checksum 0x0, Offset: 0x237
 // Size: 0xc
 function set_vehicle_anims_mkilo23_ai_infil(positions) {
     return positions;
@@ -58,7 +58,7 @@ function set_vehicle_anims_mkilo23_ai_infil(positions) {
 
 // Namespace vehicle_anim / namespace_68d1bc1bac7da538
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27d
+// Checksum 0x0, Offset: 0x24c
 // Size: 0xc
 function set_vehicle_anims_umike(positions) {
     return positions;

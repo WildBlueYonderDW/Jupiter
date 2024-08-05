@@ -5,7 +5,7 @@
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x962
+// Checksum 0x0, Offset: 0x760
 // Size: 0xff
 function damagefeedback_init() {
     level.hitmarkerpriorities = [];
@@ -29,7 +29,7 @@ function damagefeedback_init() {
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa69
+// Checksum 0x0, Offset: 0x867
 // Size: 0x20
 function function_7bc7c3983cef0956(marker, priority) {
     level.hitmarkerpriorities[marker] = priority;
@@ -37,8 +37,8 @@ function function_7bc7c3983cef0956(marker, priority) {
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xa91
-// Size: 0x38a
+// Checksum 0x0, Offset: 0x88f
+// Size: 0x329
 function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, var_62cf84636d4cef2c, nonplayer, targetentnum, armorPlateCount, var_203066c6662e1f2d) {
     if (!isplayer(self)) {
         return;
@@ -75,33 +75,26 @@ function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, va
     case #"hash_29d29edc3c4bd21f":
     case #"hash_2f87b65a1756fbc1":
     case #"hash_2fc100f2b74f0620":
-    case #"hash_302bdfe2981fa111":
     case #"hash_350f19f266bbb791":
     case #"hash_3b8a7e998825e7c0":
     case #"hash_3c687341f7275bb2":
     case #"hash_3dfff68d08667b7e":
-    case #"hash_3f1bede7caeea324":
     case #"hash_425f5f52214e9881":
     case #"hash_4b4056ee5e5c3555":
     case #"hash_4bdab969a8904cac":
     case #"hash_5b770c686e85a82a":
-    case #"hash_5c035610dbc2c193":
     case #"hash_6145e54d4160575d":
     case #"hash_635a3ba72a0e2577":
     case #"hash_645b9186bb9ba5b1":
-    case #"hash_6caa86fc10182857":
     case #"hash_6d93a8d02d1b75e1":
-    case #"hash_6eb75fd530d36be9":
     case #"hash_7bee0512ecd80819":
     case #"hash_7df4cd93173dca7c":
     case #"hash_93712eceeb1ff510":
-    case #"hash_94d5b36d557e08cd":
     case #"hash_9bddb43d21e0ec36":
     case #"hash_a1c8ae5eec4e0bc2":
     case #"hash_a38fa9efabd2c0a4":
     case #"hash_a54ca25c946c6e33":
     case #"hash_b3b5fb9c8c5f3e09":
-    case #"hash_bd3b02ce8ef8b988":
     case #"hash_18392ddb8b61cb4":
     case #"hash_c58cc85ba9fb86d4":
     case #"hash_cbc78f7c7ad72ad1":
@@ -110,7 +103,6 @@ function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, va
     case #"hash_d5fcf5b86ed9ef29":
     case #"hash_567a00990919afc":
     case #"hash_dc64d86a5dcc42d3":
-    case #"hash_e0acb4f805778e36":
     case #"hash_ff1e12935aa62b10": 
         updatehitmarker(hitmarkertype, killingblow, headshot, nonplayer, icontype, targetentnum, armorPlateCount, var_203066c6662e1f2d);
         break;
@@ -122,8 +114,8 @@ function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, va
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xe23
-// Size: 0x5c6
+// Checksum 0x0, Offset: 0xbc0
+// Size: 0x5c7
 function updatehitmarker(markertype, killingblow, headshot, nonplayer, icontype, targetentnum, armorPlateCount, var_203066c6662e1f2d) {
     if (function_fa167eb35ec0eeea()) {
         return;
@@ -283,7 +275,7 @@ function updatehitmarker(markertype, killingblow, headshot, nonplayer, icontype,
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f1
+// Checksum 0x0, Offset: 0x118f
 // Size: 0x27
 function gethitmarkerpriority(hitmarkertype) {
     if (!isdefined(level.hitmarkerpriorities[hitmarkertype])) {
@@ -294,8 +286,8 @@ function gethitmarkerpriority(hitmarkertype) {
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1421
-// Size: 0x309
+// Checksum 0x0, Offset: 0x11bf
+// Size: 0x308
 function hudicontype(typehit) {
     nosound = 0;
     if (isdefined(level.damagefeedbacknosound) && level.damagefeedbacknosound) {
@@ -380,7 +372,7 @@ function hudicontype(typehit) {
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1732
+// Checksum 0x0, Offset: 0x14cf
 // Size: 0x2a
 function function_7a129dca534be5f9() {
     self notify("hitIconReset");
@@ -392,7 +384,7 @@ function function_7a129dca534be5f9() {
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1764
+// Checksum 0x0, Offset: 0x1501
 // Size: 0x24
 function function_fa167eb35ec0eeea() {
     /#
@@ -405,8 +397,8 @@ function function_fa167eb35ec0eeea() {
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1791
-// Size: 0x248
+// Checksum 0x0, Offset: 0x152e
+// Size: 0x247
 function function_6a07ef2910dea0e5() {
     self notify("hitmarkerStack_singleton");
     self endon("hitmarkerStack_singleton");
@@ -453,7 +445,7 @@ function function_6a07ef2910dea0e5() {
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19e1
+// Checksum 0x0, Offset: 0x177d
 // Size: 0x62
 function function_697d593ebcb428dd(var_e9d476a3809cb3f1, flag) {
     self setclientomnvar(var_e9d476a3809cb3f1, flag);
@@ -461,13 +453,13 @@ function function_697d593ebcb428dd(var_e9d476a3809cb3f1, flag) {
     notifyvalue = self getclientomnvar(notifyname);
     self setclientomnvar(notifyname, !notifyvalue);
     /#
-        logstring("<dev string:x1c>" + var_e9d476a3809cb3f1 + "<dev string:x48>" + flag);
+        logstring("<dev string:x1c>" + var_e9d476a3809cb3f1 + "<dev string:x45>" + flag);
     #/
 }
 
 // Namespace damagefeedback / namespace_e072c8407b2a861c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a4b
+// Checksum 0x0, Offset: 0x17e7
 // Size: 0x68
 function function_25f98f1b652f57ec() {
     setdvar(@"hash_2951db54014fba41", 6);
@@ -482,241 +474,241 @@ function function_25f98f1b652f57ec() {
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1abb
+    // Checksum 0x0, Offset: 0x1857
     // Size: 0x29d
     function function_a76226d272200c64() {
         if (getdvarint(@"hash_2909726ff0e12a7d", 0) == 1 && isdefined(level.gamemodebundle) && istrue(level.gamemodebundle.var_e76a5e57e1ff6b9b)) {
-            scripts\common\devgui::function_6e7290c8ee4f558b("<dev string:x53>");
-            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x6c>", "<dev string:x8a>");
-            scripts\common\devgui::function_df648211d66cd3dd("<dev string:xa9>", "<dev string:xc7>");
-            scripts\common\devgui::function_df648211d66cd3dd("<dev string:xe5>", "<dev string:x109>");
-            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x12c>", "<dev string:x14b>");
-            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x16a>", "<dev string:x188>");
-            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x1a6>", "<dev string:x1c9>");
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x1ec>", "<dev string:x1ff>", &function_f4137b4aff2d357f);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x221>", "<dev string:x235>", &function_244f7ed1bde7a922);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x258>", "<dev string:x274>", &function_9b3b346bf41b42ec);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x29e>", "<dev string:x2bb>", &function_dedbab246909a68b);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x2e6>", "<dev string:x302>", &function_e9943edf01fae246);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x32c>", "<dev string:x349>", &function_12f0988382364fc5);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x374>", "<dev string:x38d>", &function_aad4b8e06fba7712);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x3b4>", "<dev string:x3cf>", &function_5ccbb72c64ed64b0);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x3f8>", "<dev string:x412>", &function_a481845bd08b83ea);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x43a>", "<dev string:x44c>", &function_3cef16eb6c7ab7f5);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x46d>", "<dev string:x480>", &function_4a73df03aaeb1f40);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x4a2>", "<dev string:x4bd>", &function_4b5b7c47cb916820);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x4e6>", "<dev string:x502>", &function_7d67bfa0977275ef);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x52c>", "<dev string:x543>", &function_5ba699d40ad475b5);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x569>", "<dev string:x584>", &function_847c3a90c31506da);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x5ae>", "<dev string:x5d4>", &function_ff8a5baefaf2044);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x60e>", "<dev string:x62b>", &function_f1c42880c41252b3);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x65c>", "<dev string:x67e>", &function_c98bce4a7d0771f5);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x6b4>", "<dev string:x6d0>", &function_21d0791f2931f95);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x700>", "<dev string:x71d>", &function_a319100f1b453a35);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x74e>", "<dev string:x76b>", &function_fc755361ba8bc81);
-            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x79d>", "<dev string:x7be>", &function_fb89825e361fc1f0);
+            scripts\common\devgui::function_6e7290c8ee4f558b("<dev string:x4d>");
+            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x63>", "<dev string:x7e>");
+            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x9a>", "<dev string:xb5>");
+            scripts\common\devgui::function_df648211d66cd3dd("<dev string:xd0>", "<dev string:xf1>");
+            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x111>", "<dev string:x12d>");
+            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x149>", "<dev string:x164>");
+            scripts\common\devgui::function_df648211d66cd3dd("<dev string:x17f>", "<dev string:x19f>");
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x1bf>", "<dev string:x1cf>", &function_f4137b4aff2d357f);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x1ee>", "<dev string:x1ff>", &function_244f7ed1bde7a922);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x21f>", "<dev string:x238>", &function_9b3b346bf41b42ec);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x25f>", "<dev string:x279>", &function_dedbab246909a68b);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x2a1>", "<dev string:x2ba>", &function_e9943edf01fae246);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x2e1>", "<dev string:x2fb>", &function_12f0988382364fc5);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x323>", "<dev string:x339>", &function_aad4b8e06fba7712);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x35d>", "<dev string:x375>", &function_5ccbb72c64ed64b0);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x39b>", "<dev string:x3b2>", &function_a481845bd08b83ea);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x3d7>", "<dev string:x3e6>", &function_3cef16eb6c7ab7f5);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x404>", "<dev string:x414>", &function_4a73df03aaeb1f40);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x433>", "<dev string:x44b>", &function_4b5b7c47cb916820);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x471>", "<dev string:x48a>", &function_7d67bfa0977275ef);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x4b1>", "<dev string:x4c5>", &function_5ba699d40ad475b5);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x4e8>", "<dev string:x500>", &function_847c3a90c31506da);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x527>", "<dev string:x54a>", &function_ff8a5baefaf2044);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x581>", "<dev string:x59b>", &function_f1c42880c41252b3);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x5c9>", "<dev string:x5e8>", &function_c98bce4a7d0771f5);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x61b>", "<dev string:x634>", &function_21d0791f2931f95);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x661>", "<dev string:x67b>", &function_a319100f1b453a35);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x6a9>", "<dev string:x6c3>", &function_fc755361ba8bc81);
+            scripts\common\devgui::function_a9a864379a098ad6("<dev string:x6f2>", "<dev string:x710>", &function_fb89825e361fc1f0);
             scripts\common\devgui::function_fe953f000498048f();
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d60
-    // Size: 0x72
+    // Checksum 0x0, Offset: 0x1afc
+    // Size: 0x70
     function function_f4137b4aff2d357f() {
         markerflag = 0;
         markerflag |= 1 << 0;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1dda
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x1b74
+    // Size: 0x79
     function function_244f7ed1bde7a922() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 1;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1e5d
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x1bf5
+    // Size: 0x79
     function function_9b3b346bf41b42ec() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 3;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ee0
-    // Size: 0x84
+    // Checksum 0x0, Offset: 0x1c76
+    // Size: 0x82
     function function_dedbab246909a68b() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 3;
         markerflag |= 1 << 1;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1f6c
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x1d00
+    // Size: 0x79
     function function_e9943edf01fae246() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 2;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1fef
-    // Size: 0x84
+    // Checksum 0x0, Offset: 0x1d81
+    // Size: 0x82
     function function_12f0988382364fc5() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 2;
         markerflag |= 1 << 1;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x207b
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x1e0b
+    // Size: 0x79
     function function_aad4b8e06fba7712() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 4;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x20fe
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x1e8c
+    // Size: 0x79
     function function_5ccbb72c64ed64b0() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 5;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2181
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x1f0d
+    // Size: 0x79
     function function_a481845bd08b83ea() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 6;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x7f3>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x742>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2204
-    // Size: 0x72
+    // Checksum 0x0, Offset: 0x1f8e
+    // Size: 0x70
     function function_3cef16eb6c7ab7f5() {
         markerflag = 0;
         markerflag |= 1 << 0;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x80d>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x759>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x227e
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x2006
+    // Size: 0x79
     function function_4a73df03aaeb1f40() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 1;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x80d>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x759>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2301
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x2087
+    // Size: 0x79
     function function_4b5b7c47cb916820() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 2;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x80d>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x759>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2384
-    // Size: 0x84
+    // Checksum 0x0, Offset: 0x2108
+    // Size: 0x82
     function function_7d67bfa0977275ef() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 2;
         markerflag |= 1 << 1;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x80d>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x759>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2410
-    // Size: 0x72
+    // Checksum 0x0, Offset: 0x2192
+    // Size: 0x70
     function function_5ba699d40ad475b5() {
         markerflag = 0;
         markerflag |= 1 << 0;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x826>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x76f>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x248a
-    // Size: 0x7b
+    // Checksum 0x0, Offset: 0x220a
+    // Size: 0x79
     function function_847c3a90c31506da() {
         markerflag = 0;
         markerflag |= 1 << 0;
         markerflag |= 1 << 1;
         foreach (player in level.players) {
-            player function_697d593ebcb428dd("<dev string:x826>", markerflag);
+            player function_697d593ebcb428dd("<dev string:x76f>", markerflag);
         }
     }
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x250d
+    // Checksum 0x0, Offset: 0x228b
     // Size: 0x13
     function function_ff8a5baefaf2044() {
         function_847c3a90c31506da();
@@ -725,7 +717,7 @@ function function_25f98f1b652f57ec() {
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2528
+    // Checksum 0x0, Offset: 0x22a6
     // Size: 0x13
     function function_f1c42880c41252b3() {
         function_f4137b4aff2d357f();
@@ -734,7 +726,7 @@ function function_25f98f1b652f57ec() {
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2543
+    // Checksum 0x0, Offset: 0x22c1
     // Size: 0x13
     function function_c98bce4a7d0771f5() {
         function_244f7ed1bde7a922();
@@ -743,7 +735,7 @@ function function_25f98f1b652f57ec() {
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x255e
+    // Checksum 0x0, Offset: 0x22dc
     // Size: 0x13
     function function_21d0791f2931f95() {
         function_3cef16eb6c7ab7f5();
@@ -752,7 +744,7 @@ function function_25f98f1b652f57ec() {
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2579
+    // Checksum 0x0, Offset: 0x22f7
     // Size: 0x13
     function function_a319100f1b453a35() {
         function_3cef16eb6c7ab7f5();
@@ -761,7 +753,7 @@ function function_25f98f1b652f57ec() {
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2594
+    // Checksum 0x0, Offset: 0x2312
     // Size: 0x13
     function function_fc755361ba8bc81() {
         function_3cef16eb6c7ab7f5();
@@ -770,7 +762,7 @@ function function_25f98f1b652f57ec() {
 
     // Namespace damagefeedback / namespace_e072c8407b2a861c
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x25af
+    // Checksum 0x0, Offset: 0x232d
     // Size: 0x13
     function function_fb89825e361fc1f0() {
         function_3cef16eb6c7ab7f5();

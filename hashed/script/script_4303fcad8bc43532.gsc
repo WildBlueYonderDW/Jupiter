@@ -7,7 +7,7 @@
 
     // Namespace scene_sequence / namespace_9957e512cf2d2a76
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11b
+    // Checksum 0x0, Offset: 0xe6
     // Size: 0x5
     function function_e514286a93d143da() {
         
@@ -17,8 +17,8 @@
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x128
-// Size: 0x391
+// Checksum 0x0, Offset: 0xf3
+// Size: 0x395
 function function_7227ec8ef6d85118(existingentities, sequencename, defaultscenename) {
     var_3fb4893405249050 = self;
     /#
@@ -79,8 +79,8 @@ function function_7227ec8ef6d85118(existingentities, sequencename, defaultscenen
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4c1
-// Size: 0x2a
+// Checksum 0x0, Offset: 0x490
+// Size: 0x29
 function private start_sequence(startnode) {
     var_3fb4893405249050 = self;
     var_3fb4893405249050 thread function_fcafbb83f84886ce(startnode);
@@ -89,8 +89,8 @@ function private start_sequence(startnode) {
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0x4f3
-// Size: 0x89
+// Checksum 0x0, Offset: 0x4c1
+// Size: 0x86
 function private play_node(scenestruct, shot, scene, existingentities, var_8ae676fd0285f8c2) {
     foreach (conditionname in var_8ae676fd0285f8c2) {
         self endon(conditionname);
@@ -101,8 +101,8 @@ function private play_node(scenestruct, shot, scene, existingentities, var_8ae67
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x584
-// Size: 0x397
+// Checksum 0x0, Offset: 0x54f
+// Size: 0x394
 function private function_fcafbb83f84886ce(currentnode) {
     var_3fb4893405249050 = self;
     scenestruct = var_3fb4893405249050.scenesequence.scenestructs[currentnode.scene];
@@ -162,7 +162,7 @@ function private function_fcafbb83f84886ce(currentnode) {
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x923
+// Checksum 0x0, Offset: 0x8eb
 // Size: 0x13c
 function private finish_node(currentnode, exitcondition) {
     var_3fb4893405249050 = self;
@@ -183,8 +183,8 @@ function private finish_node(currentnode, exitcondition) {
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa67
-// Size: 0x9f
+// Checksum 0x0, Offset: 0xa2f
+// Size: 0x9d
 function function_d2345fa03215e539(note) {
     var_3fb4893405249050 = self;
     var_3fb4893405249050 notify(note);
@@ -197,8 +197,8 @@ function function_d2345fa03215e539(note) {
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb0e
-// Size: 0xbd
+// Checksum 0x0, Offset: 0xad4
+// Size: 0xbb
 function function_2af98a24e1bf3199(notifytarget, note, objectname, repeat) {
     var_3fb4893405249050 = self;
     if (isdefined(var_3fb4893405249050.scenesequence) && isdefined(var_3fb4893405249050.scenesequence.scenestructs)) {
@@ -210,7 +210,7 @@ function function_2af98a24e1bf3199(notifytarget, note, objectname, repeat) {
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd3
+// Checksum 0x0, Offset: 0xb97
 // Size: 0x1c
 function function_12b58037eff0f736(conditionname) {
     if (isstring(conditionname)) {
@@ -220,7 +220,7 @@ function function_12b58037eff0f736(conditionname) {
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf7
+// Checksum 0x0, Offset: 0xbbb
 // Size: 0x1e
 function function_919ec256b1627543(conditionname) {
     if (isstring(conditionname)) {
@@ -230,7 +230,7 @@ function function_919ec256b1627543(conditionname) {
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1d
+// Checksum 0x0, Offset: 0xbe1
 // Size: 0x207
 function function_d57898e86f3bb52f(scene, shotname, func, param1, param2, param3, param4) {
     var_3fb4893405249050 = self;
@@ -266,8 +266,8 @@ function function_d57898e86f3bb52f(scene, shotname, func, param1, param2, param3
 
 // Namespace scene_sequence / namespace_9957e512cf2d2a76
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xe2c
-// Size: 0x1a2
+// Checksum 0x0, Offset: 0xdf0
+// Size: 0x1a0
 function private function_5e4d2ddddbc6b48b(shotname) {
     scenestruct = self;
     if (isdefined(scenestruct.callbacks) && isdefined(scenestruct.callbacks[shotname])) {

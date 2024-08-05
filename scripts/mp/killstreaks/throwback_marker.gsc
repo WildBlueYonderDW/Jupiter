@@ -8,7 +8,7 @@
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5
+// Checksum 0x0, Offset: 0x18f
 // Size: 0x21
 function init() {
     val::group_register("throwback_marker", ["usability", "gesture"]);
@@ -16,8 +16,8 @@ function init() {
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x20e
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x1b8
+// Size: 0xec
 function throwbackmarker_trythrowbackmarker(streakinfo, weapondetonatefunc, weaponoverride, var_58c629ede719bbe8, var_13f3d557b033435d, var_a85466d943bd012d, var_91f739c2c51347d4, var_86356a6d4923a876) {
     var_bdffc63c4171c131 = &throwbackmarker_weapongiven;
     var_8fd4d93dd619da88 = &throwbackmarker_weaponswitchended;
@@ -37,8 +37,8 @@ function throwbackmarker_trythrowbackmarker(streakinfo, weapondetonatefunc, weap
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x300
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x2ad
+// Size: 0x39
 function throwbackmarker_weapongiven(streakinfo) {
     var_e9053b0829a68d67 = 1;
     if (isdefined(streakinfo.throwbackmarker_weapongivenfunc)) {
@@ -49,7 +49,7 @@ function throwbackmarker_weapongiven(streakinfo) {
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x343
+// Checksum 0x0, Offset: 0x2ef
 // Size: 0x42
 function throwbackmarker_weaponswitchended(streakinfo, switchresult) {
     if (istrue(switchresult)) {
@@ -62,8 +62,8 @@ function throwbackmarker_weaponswitchended(streakinfo, switchresult) {
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38d
-// Size: 0x80
+// Checksum 0x0, Offset: 0x339
+// Size: 0x7f
 function throwbackmarker_watchplayerweapon(streakinfo) {
     self endon("disconnect");
     self notifyonplayercommand("cancel_deploy", "+actionslot 3");
@@ -79,8 +79,8 @@ function throwbackmarker_watchplayerweapon(streakinfo) {
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x415
-// Size: 0x65
+// Checksum 0x0, Offset: 0x3c0
+// Size: 0x64
 function throwbackmarker_weaponfired(streakinfo, var_a9dd4e8c5e5c7178, firedprojectile) {
     firedresult = "success";
     level thread throwbackmarker_watchdetonate(streakinfo, firedprojectile, self);
@@ -93,8 +93,8 @@ function throwbackmarker_weaponfired(streakinfo, var_a9dd4e8c5e5c7178, firedproj
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x483
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x42d
+// Size: 0x5c
 function throwbackmarker_watchdetonate(streakinfo, projectile, owner) {
     level endon("game_ended");
     projectile endon("trigger");
@@ -106,8 +106,8 @@ function throwbackmarker_watchdetonate(streakinfo, projectile, owner) {
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e8
-// Size: 0x72
+// Checksum 0x0, Offset: 0x491
+// Size: 0x73
 function throwbackmarker_watchthrowback(streakinfo, projectile) {
     projectile endon("fired_off");
     player = projectile waittill("trigger");
@@ -120,8 +120,8 @@ function throwbackmarker_watchthrowback(streakinfo, projectile) {
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x562
-// Size: 0x51
+// Checksum 0x0, Offset: 0x50c
+// Size: 0x50
 function throwbackmarker_takeweapon(weapon) {
     self endon("death_or_disconnect");
     level endon("game_ended");
@@ -138,7 +138,7 @@ function throwbackmarker_takeweapon(weapon) {
 
 // Namespace throwback_marker / scripts\mp\killstreaks\throwback_marker
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bb
+// Checksum 0x0, Offset: 0x564
 // Size: 0x29
 function throwbackmarker_weapontaken(streakinfo) {
     if (isdefined(streakinfo.throwbackmarker_weapontakenfunc)) {

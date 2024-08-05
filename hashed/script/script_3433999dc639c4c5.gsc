@@ -8,7 +8,7 @@
 
 // Namespace hunt_checkin / namespace_c96ea713559d0559
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x171
+// Checksum 0x0, Offset: 0x12d
 // Size: 0x18
 function main() {
     add_smartobject_type("hunt_checkin", &getinfo, &canuse);
@@ -16,7 +16,7 @@ function main() {
 
 // Namespace hunt_checkin / namespace_c96ea713559d0559
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x191
+// Checksum 0x0, Offset: 0x14d
 // Size: 0xd
 function canuse(object) {
     return true;
@@ -24,8 +24,8 @@ function canuse(object) {
 
 // Namespace hunt_checkin / namespace_c96ea713559d0559
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a7
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x163
+// Size: 0x5c
 function getinfo() {
     info = createsmartobjectinfo();
     info.fnonuse = &onuse;
@@ -38,8 +38,8 @@ function getinfo() {
 
 // Namespace hunt_checkin / namespace_c96ea713559d0559
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d
-// Size: 0x169
+// Checksum 0x0, Offset: 0x1c8
+// Size: 0x16c
 function onuse(object) {
     pod = function_bc5df124338cefea(self);
     assert(isdefined(pod));
@@ -71,8 +71,8 @@ function onuse(object) {
 
 // Namespace hunt_checkin / namespace_c96ea713559d0559
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x37e
-// Size: 0x68
+// Checksum 0x0, Offset: 0x33c
+// Size: 0x67
 function waitforgesture(flag) {
     self endon("death");
     self endon("smartobject_logic_finished");
@@ -88,7 +88,7 @@ function waitforgesture(flag) {
 
 // Namespace hunt_checkin / namespace_c96ea713559d0559
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ee
+// Checksum 0x0, Offset: 0x3ab
 // Size: 0x22
 function function_522562e28309afaa(t) {
     wait t;

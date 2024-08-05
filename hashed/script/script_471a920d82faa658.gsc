@@ -8,8 +8,8 @@
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x343
-// Size: 0x13b
+// Checksum 0x0, Offset: 0x2c1
+// Size: 0x129
 function getfunction(funcid) {
     switch (funcid) {
     case #"hash_dab0d83df51da4d": 
@@ -30,8 +30,6 @@ function getfunction(funcid) {
         return &function_af686e8a0657ce57;
     case #"hash_c5687eec52003555": 
         return &function_ec9dc4b6415cd3b9;
-    case #"hash_e016759d0510a58c": 
-        return &function_ee02600437ca1900;
     case #"hash_d50b41c248a37316": 
         return &onenter;
     case #"hash_214ba25246813d79": 
@@ -50,7 +48,7 @@ function getfunction(funcid) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x487
+// Checksum 0x0, Offset: 0x3f3
 // Size: 0xc8
 function private function_3dbd361f74b442f9(interactionid) {
     setdvarifuninitialized(@"hash_6bff7f7a44419fce", 0);
@@ -69,7 +67,7 @@ function private function_3dbd361f74b442f9(interactionid) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x557
+// Checksum 0x0, Offset: 0x4c3
 // Size: 0xf0
 function private function_a157fbbc31d9eb1a(interactionid) {
     if (isdefined(self.capdata) && isdefined(self.capdata.var_9c471c82abe76355)) {
@@ -94,8 +92,8 @@ function private function_a157fbbc31d9eb1a(interactionid) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x64f
-// Size: 0x39f
+// Checksum 0x0, Offset: 0x5bb
+// Size: 0x3b2
 function private calcstartorigin(statename, role) {
     id = self function_92435c7a6ae85c3c();
     assert(isdefined(id));
@@ -176,8 +174,8 @@ function private calcstartorigin(statename, role) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x9f7
-// Size: 0x1c6
+// Checksum 0x0, Offset: 0x976
+// Size: 0x1ca
 function private function_17c9514d056f8b0c(statename, mindist, maxdist) {
     id = self function_92435c7a6ae85c3c();
     origin = function_bbfc94714c82788b(id);
@@ -215,7 +213,7 @@ function private function_17c9514d056f8b0c(statename, mindist, maxdist) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xbc6
+// Checksum 0x0, Offset: 0xb49
 // Size: 0x58
 function private function_ddad29bbdecd1671() {
     assert(isdefined(self.capdata));
@@ -225,7 +223,7 @@ function private function_ddad29bbdecd1671() {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xc26
+// Checksum 0x0, Offset: 0xba9
 // Size: 0x13
 function private arrivalsetup(statename, params) {
     
@@ -233,7 +231,7 @@ function private arrivalsetup(statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xc41
+// Checksum 0x0, Offset: 0xbc4
 // Size: 0x4f
 function private arrivalcleanup(statename, params) {
     self.var_a57082fdf62bc898 = undefined;
@@ -246,8 +244,8 @@ function private arrivalcleanup(statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xc98
-// Size: 0x4e
+// Checksum 0x0, Offset: 0xc1b
+// Size: 0x4d
 function private opendoor(interactionid, var_d293838fe8a43473) {
     doorobj = function_60d6151af81a343(interactionid, "door");
     if (isdefined(doorobj) && doorobj scriptabledoorisclosed()) {
@@ -257,8 +255,8 @@ function private opendoor(interactionid, var_d293838fe8a43473) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xcee
-// Size: 0x1a7
+// Checksum 0x0, Offset: 0xc70
+// Size: 0x1ab
 function private function_ec9dc4b6415cd3b9(statename, params) {
     if (!istrue(self.capdata.var_74c9b1f78857273d)) {
         arrivalcleanup();
@@ -284,21 +282,8 @@ function private function_ec9dc4b6415cd3b9(statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xe9d
-// Size: 0x56
-function private function_ee02600437ca1900(statename, params) {
-    id = self function_92435c7a6ae85c3c();
-    abortinteraction(id);
-    doorid = function_60d6151af81a343(id, "doorindex");
-    if (isdefined(doorid)) {
-        function_e415e810d4e34ed(doorid, gettime() + 10000);
-    }
-}
-
-// Namespace door_check / namespace_4ef97519f59e04e6
-// Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xefb
-// Size: 0xfd
+// Checksum 0x0, Offset: 0xe23
+// Size: 0xfc
 function private onenter(statename, params) {
     self endon("death");
     self.capdata.var_3f651b778e93656e = 1;
@@ -321,7 +306,7 @@ function private onenter(statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1000
+// Checksum 0x0, Offset: 0xf27
 // Size: 0x37
 function function_27dc505064bcf45b(asmname, statename, tostatename, params) {
     return istrue(self.capdata.var_74c9b1f78857273d);
@@ -329,7 +314,7 @@ function function_27dc505064bcf45b(asmname, statename, tostatename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1040
+// Checksum 0x0, Offset: 0xf67
 // Size: 0x37
 function function_57787698e416086f(asmname, statename, tostatename, params) {
     return istrue(self.capdata.var_3f651b778e93656e);
@@ -337,8 +322,8 @@ function function_57787698e416086f(asmname, statename, tostatename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1080
-// Size: 0x42
+// Checksum 0x0, Offset: 0xfa7
+// Size: 0x41
 function function_14242f7e3e92261c(asmname, statename, params) {
     alias = self.capdata.var_d6cf89a3e47ada1f;
     return scripts\asm\asm::asm_lookupanimfromalias(statename, alias);
@@ -346,8 +331,8 @@ function function_14242f7e3e92261c(asmname, statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10cb
-// Size: 0x76
+// Checksum 0x0, Offset: 0xff1
+// Size: 0x75
 function function_cfa7813e89867c4(asmname, statename, params) {
     alias = self.capdata.var_d6cf89a3e47ada1f + "_" + self.capdata.var_2b1676bab1ba8985 + "_" + self.capdata.role;
     return scripts\asm\asm::asm_lookupanimfromalias(statename, alias);
@@ -355,7 +340,7 @@ function function_cfa7813e89867c4(asmname, statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x114a
+// Checksum 0x0, Offset: 0x106f
 // Size: 0x1a
 function function_cea2a40434f5918() {
     if (utility::issp()) {
@@ -366,8 +351,8 @@ function function_cea2a40434f5918() {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x116c
-// Size: 0x14b
+// Checksum 0x0, Offset: 0x1091
+// Size: 0x14c
 function function_ce30ac74cab64cfd(note) {
     if (note == "door_open") {
         opendoor(self function_92435c7a6ae85c3c(), self.origin);
@@ -400,7 +385,7 @@ function function_ce30ac74cab64cfd(note) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12bf
+// Checksum 0x0, Offset: 0x11e5
 // Size: 0x92
 function function_184b5862455e8902() {
     self endon("death");
@@ -418,7 +403,7 @@ function function_184b5862455e8902() {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1359
+// Checksum 0x0, Offset: 0x127f
 // Size: 0x70
 function function_a3564484875da8f8(asmname, statename, params) {
     thread scripts\asm\asm::function_fb56c9527636713f(asmname, statename, 1);
@@ -429,7 +414,7 @@ function function_a3564484875da8f8(asmname, statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d1
+// Checksum 0x0, Offset: 0x12f7
 // Size: 0x58
 function function_26b903a39f018550(asmname, statename, params) {
     thread scripts\asm\asm::asm_playanimstate(asmname, statename, params);
@@ -438,11 +423,11 @@ function function_26b903a39f018550(asmname, statename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1431
-// Size: 0xe9
+// Checksum 0x0, Offset: 0x1357
+// Size: 0xe8
 function function_a910d69a0daa7775(asmname, statename, tostatename, params) {
     if (!isdefined(params) || isarray(params)) {
-        assertmsg("<dev string:x33>");
+        assertmsg("SideAliasIs requires param 'left' or 'right', aborting.");
         return false;
     }
     if (!isdefined(self.capdata.var_d6cf89a3e47ada1f)) {
@@ -461,7 +446,7 @@ function function_a910d69a0daa7775(asmname, statename, tostatename, params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1523
+// Checksum 0x0, Offset: 0x1448
 // Size: 0x32
 function private function_23cd7f6fdf460eb4(params) {
     return istrue(self.doorcheck.arrived) || self isingoal(self.origin);
@@ -469,7 +454,7 @@ function private function_23cd7f6fdf460eb4(params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x155e
+// Checksum 0x0, Offset: 0x1483
 // Size: 0x1f
 function private function_21bcb65ded71229f(params) {
     return istrue(self.doorcheck.arrived);
@@ -477,8 +462,8 @@ function private function_21bcb65ded71229f(params) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x1586
-// Size: 0x137
+// Checksum 0x0, Offset: 0x14ab
+// Size: 0x141
 function private function_e62b12681729b218(asmname, statename, tostatename, params) {
     id = self function_92435c7a6ae85c3c();
     assert(isdefined(id));
@@ -512,7 +497,7 @@ function private function_e62b12681729b218(asmname, statename, tostatename, para
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x16c6
+// Checksum 0x0, Offset: 0x15f5
 // Size: 0x4d
 function private function_17557d7a61c7b24a(asmname, statename, tostatename, params) {
     id = self function_92435c7a6ae85c3c();
@@ -522,8 +507,8 @@ function private function_17557d7a61c7b24a(asmname, statename, tostatename, para
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0x171c
-// Size: 0xb9
+// Checksum 0x0, Offset: 0x164b
+// Size: 0xbe
 function private function_27937ccb1b1abef1(asmname, statename, tostatename, params) {
     if (!isdefined(self.enemy)) {
         return false;
@@ -540,7 +525,7 @@ function private function_27937ccb1b1abef1(asmname, statename, tostatename, para
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x17de
+// Checksum 0x0, Offset: 0x1712
 // Size: 0x24
 function private function_af686e8a0657ce57(interactionid) {
     self.capdata.var_2b1676bab1ba8985 = "dual";
@@ -548,7 +533,7 @@ function private function_af686e8a0657ce57(interactionid) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x180a
+// Checksum 0x0, Offset: 0x173e
 // Size: 0xb
 function function_8055622a418ebd4f(interactionid) {
     
@@ -556,7 +541,7 @@ function function_8055622a418ebd4f(interactionid) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x181d
+// Checksum 0x0, Offset: 0x1751
 // Size: 0xb
 function function_767fb54813708a82(interactionid) {
     
@@ -564,8 +549,8 @@ function function_767fb54813708a82(interactionid) {
 
 // Namespace door_check / namespace_4ef97519f59e04e6
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1830
-// Size: 0x1a8
+// Checksum 0x0, Offset: 0x1764
+// Size: 0x1ad
 function private function_64fca4864613393f(idleorigin, var_d78735c0a8459b07) {
     self endon("death");
     forward = anglestoforward(var_d78735c0a8459b07);
@@ -581,7 +566,7 @@ function private function_64fca4864613393f(idleorigin, var_d78735c0a8459b07) {
         print3d(idleorigin + (0, 0, 100), breachtype, (255, 255, 255), 1, 0.6, 200);
     #/
     /#
-        print3d(idleorigin + (0, 0, 80), self.capdata.var_d6cf89a3e47ada1f + "<dev string:x6e>" + self.capdata.var_2b1676bab1ba8985 + "<dev string:x6e>" + self.capdata.role, (255, 255, 255), 1, 0.6, 150);
+        print3d(idleorigin + (0, 0, 80), self.capdata.var_d6cf89a3e47ada1f + "<dev string:x30>" + self.capdata.var_2b1676bab1ba8985 + "<dev string:x30>" + self.capdata.role, (255, 255, 255), 1, 0.6, 150);
     #/
     /#
         print3d(idleorigin + (0, 0, 60), self.var_a57082fdf62bc898, (255, 255, 255), 1, 0.4, 150);

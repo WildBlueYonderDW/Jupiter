@@ -6,7 +6,7 @@
 
 // Namespace namespace_e367146fa7344941 / namespace_e342703f6722ee12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x118
+// Checksum 0x0, Offset: 0xdd
 // Size: 0x17
 function main() {
     level.var_cdc15ee14362fbf = &namespace_e342703f6722ee12::init;
@@ -15,7 +15,7 @@ function main() {
 
 // Namespace namespace_e367146fa7344941 / namespace_e342703f6722ee12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x137
+// Checksum 0x0, Offset: 0xfc
 // Size: 0x10
 function init() {
     function_a96666bc3e3d2cb0();
@@ -24,7 +24,7 @@ function init() {
 
 // Namespace namespace_e367146fa7344941 / namespace_e342703f6722ee12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14f
+// Checksum 0x0, Offset: 0x114
 // Size: 0xba
 function function_a96666bc3e3d2cb0() {
     scripts\mp\gametypes\br_gametypes::disablefeature("circle");
@@ -47,7 +47,7 @@ function function_a96666bc3e3d2cb0() {
 
 // Namespace namespace_e367146fa7344941 / namespace_e342703f6722ee12
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x211
+// Checksum 0x0, Offset: 0x1d6
 // Size: 0x2
 function function_81b59887710baf14() {
     

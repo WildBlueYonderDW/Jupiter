@@ -2360,24 +2360,24 @@ function private function_97114a0080982e86(param) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc25
 // Size: 0xa2
-function function_b250bbe5574864ea(var_79350d510b31eecb, param0, param1, param2) {
+function function_b250bbe5574864ea(subevent, param0, param1, param2) {
     mp_header = function_968a17536a9b61d3();
     param0 = function_97114a0080982e86(param0);
     param1 = function_97114a0080982e86(param1);
     param2 = function_97114a0080982e86(param2);
-    dlog_recordevent("dlog_event_mp_notifications", ["mp_header", mp_header, "sub_event", var_79350d510b31eecb, "param0", param0, "param1", param1, "param2", param2]);
+    dlog_recordevent("dlog_event_mp_notifications", ["mp_header", mp_header, "sub_event", subevent, "param0", param0, "param1", param1, "param2", param2]);
 }
 
 // Namespace namespace_3a38da80071a2614 / namespace_e77194a0203f683
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xdccf
 // Size: 0xa3
-function function_24a800e2ee3154e(var_79350d510b31eecb, param0, param1, param2) {
+function function_24a800e2ee3154e(subevent, param0, param1, param2) {
     mp_header = function_968a17536a9b61d3();
     param0 = function_97114a0080982e86(param0);
     param1 = function_97114a0080982e86(param1);
     param2 = function_97114a0080982e86(param2);
-    self dlog_recordplayerevent("dlog_event_mp_notifications_player", ["mp_header", mp_header, "sub_event", var_79350d510b31eecb, "param0", param0, "param1", param1, "param2", param2]);
+    self dlog_recordplayerevent("dlog_event_mp_notifications_player", ["mp_header", mp_header, "sub_event", subevent, "param0", param0, "param1", param1, "param2", param2]);
 }
 
 // Namespace namespace_3a38da80071a2614 / namespace_e77194a0203f683

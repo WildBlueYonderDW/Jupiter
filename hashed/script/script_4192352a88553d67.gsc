@@ -2,7 +2,7 @@
 
 // Namespace telemetry / namespace_627d023f48c9561
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x95
+// Checksum 0x0, Offset: 0x72
 // Size: 0xa8
 function init() {
     if (isdefined(game)) {

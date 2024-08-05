@@ -11,7 +11,7 @@
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x898
+// Checksum 0x0, Offset: 0x740
 // Size: 0x37
 function function_1ad414b91ae3a040(var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val) {
     function_2ad245efb6cf07aa(var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val, #"int");
@@ -19,7 +19,7 @@ function function_1ad414b91ae3a040(var_fd773ed7f8ab59de, dvar_str, bundle_val, d
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d7
+// Checksum 0x0, Offset: 0x77f
 // Size: 0x37
 function function_7b9978e4325e037b(var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val) {
     function_2ad245efb6cf07aa(var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val, #"float");
@@ -27,7 +27,7 @@ function function_7b9978e4325e037b(var_fd773ed7f8ab59de, dvar_str, bundle_val, d
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x916
+// Checksum 0x0, Offset: 0x7be
 // Size: 0x5c
 function function_2ad245efb6cf07aa(var_fd773ed7f8ab59de, dvar_str, bundle_val, default_val, value_type) {
     level.var_b51c54768ce5dc13[var_fd773ed7f8ab59de] = function_892aec72bcbbbc96(dvar_str, bundle_val, default_val);
@@ -38,8 +38,8 @@ function function_2ad245efb6cf07aa(var_fd773ed7f8ab59de, dvar_str, bundle_val, d
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x97a
-// Size: 0x73
+// Checksum 0x0, Offset: 0x822
+// Size: 0x72
 function function_892aec72bcbbbc96(dvar_str, bundle_val, default_val) {
     var_cc2712a8519a8fd1 = spawnstruct();
     if (isdefined(dvar_str)) {
@@ -58,8 +58,8 @@ function function_892aec72bcbbbc96(dvar_str, bundle_val, default_val) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9f6
-// Size: 0xe6
+// Checksum 0x0, Offset: 0x89d
+// Size: 0xe5
 function function_2fbfcadcc628d1a9(var_fd773ed7f8ab59de) {
     var_cc2712a8519a8fd1 = level.var_b51c54768ce5dc13[var_fd773ed7f8ab59de];
     if (!isdefined(var_cc2712a8519a8fd1)) {
@@ -81,7 +81,7 @@ function function_2fbfcadcc628d1a9(var_fd773ed7f8ab59de) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xae5
+// Checksum 0x0, Offset: 0x98b
 // Size: 0x8d
 function init() {
     if (issharedfuncdefined("toma_strike", "init")) {
@@ -101,7 +101,7 @@ function init() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb7a
+// Checksum 0x0, Offset: 0xa20
 // Size: 0x5f
 function init_toma_strike_vo() {
     game["dialog"]["toma_strike" + "_use"] = "killstreak_remote_operator" + "_request_response";
@@ -111,7 +111,7 @@ function init_toma_strike_vo() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe1
+// Checksum 0x0, Offset: 0xa87
 // Size: 0x57
 function function_f690e3ac50d71008() {
     level.var_d05191e44c57d2f7 = "toma_strike_placement";
@@ -120,14 +120,14 @@ function function_f690e3ac50d71008() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc40
-// Size: 0x44f
+// Checksum 0x0, Offset: 0xae6
+// Size: 0x44e
 function function_75667e2fe77b75c5(var_db99a5290e2a0cd0) {
     bundle = isdefined(level.streakglobals.streakbundles["toma_strike"]) ? level.streakglobals.streakbundles["toma_strike"] : {#var_d2a6e2899c72649b:undefined};
     level.var_d2a6e2899c72649b = isdefined(bundle.var_d2a6e2899c72649b) ? bundle.var_d2a6e2899c72649b : "toma_proj_mp";
     if (var_db99a5290e2a0cd0 == 1) {
         function_1ad414b91ae3a040(#"selection_radius", @"hash_ca710d92e3e6f796", bundle.var_ef6057a8dee4db1a, 900);
-        function_7b9978e4325e037b(#"launch_delay", @"hash_fa567925d565ce1f", bundle.var_a20f464e59b5af88, 5);
+        function_1ad414b91ae3a040(#"launch_delay", @"hash_fa567925d565ce1f", bundle.var_a20f464e59b5af88, 5);
         function_1ad414b91ae3a040(#"num_waves", @"hash_5f34f197c71def3c", bundle.var_f7545ca62e446f27, 4);
         function_1ad414b91ae3a040(#"hash_3082f1a04b68416a", @"hash_9d9d004060864d1f", bundle.var_11743a7230976341, 4);
         function_7b9978e4325e037b(#"hash_6f7dfd81108ea213", @"hash_791db5592ca32e41", bundle.var_977070ec24e2ee7d, 3.25);
@@ -138,7 +138,7 @@ function function_75667e2fe77b75c5(var_db99a5290e2a0cd0) {
     }
     if (var_db99a5290e2a0cd0 == 2) {
         function_1ad414b91ae3a040(#"selection_radius", @"hash_ca710d92e3e6f796", bundle.var_ef6057a8dee4db1a, 50);
-        function_7b9978e4325e037b(#"launch_delay", @"hash_fa567925d565ce1f", bundle.var_a20f464e59b5af88, 0);
+        function_1ad414b91ae3a040(#"launch_delay", @"hash_fa567925d565ce1f", bundle.var_a20f464e59b5af88, 0);
         function_1ad414b91ae3a040(#"num_waves", @"hash_5f34f197c71def3c", bundle.var_f7545ca62e446f27, 1);
         function_1ad414b91ae3a040(#"hash_3082f1a04b68416a", @"hash_9d9d004060864d1f", bundle.var_11743a7230976341, 14);
         function_7b9978e4325e037b(#"hash_6f7dfd81108ea213", @"hash_791db5592ca32e41", bundle.var_977070ec24e2ee7d, 3.25);
@@ -148,7 +148,7 @@ function function_75667e2fe77b75c5(var_db99a5290e2a0cd0) {
         return;
     }
     function_1ad414b91ae3a040(#"selection_radius", @"hash_ca710d92e3e6f796", bundle.var_ef6057a8dee4db1a, 450);
-    function_7b9978e4325e037b(#"launch_delay", @"hash_fa567925d565ce1f", bundle.var_a20f464e59b5af88, 2);
+    function_1ad414b91ae3a040(#"launch_delay", @"hash_fa567925d565ce1f", bundle.var_a20f464e59b5af88, 2);
     function_1ad414b91ae3a040(#"num_waves", @"hash_5f34f197c71def3c", bundle.var_f7545ca62e446f27, 4);
     function_1ad414b91ae3a040(#"hash_3082f1a04b68416a", @"hash_9d9d004060864d1f", bundle.var_11743a7230976341, 4);
     function_7b9978e4325e037b(#"hash_6f7dfd81108ea213", @"hash_791db5592ca32e41", bundle.var_977070ec24e2ee7d, 3.25);
@@ -159,7 +159,7 @@ function function_75667e2fe77b75c5(var_db99a5290e2a0cd0) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1097
+// Checksum 0x0, Offset: 0xf3c
 // Size: 0xc9
 function function_23d581c2a3bc96b3() {
     setdvarifuninitialized(@"hash_1eb5365bdad13b78", 0);
@@ -172,13 +172,13 @@ function function_23d581c2a3bc96b3() {
     setdvarifuninitialized(@"hash_6b6230528e92a697", 4);
     setdvarifuninitialized(@"hash_4539fb841b0d72ce", 0.5);
     setdvarifuninitialized(@"hash_32f455fe26173e84", 0.75);
-    setdvarifuninitialized(@"hash_a394734820792b88", 3);
+    setdvarifuninitialized(@"hash_a394734820792b88", 4);
 }
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1168
-// Size: 0x2be
+// Checksum 0x0, Offset: 0x100d
+// Size: 0x2bd
 function function_cad492faa20c3feb(var_f3f8aa78862a0804) {
     var_db99a5290e2a0cd0 = getdvarint(@"hash_1eb5365bdad13b78", 0);
     if (var_db99a5290e2a0cd0 == var_f3f8aa78862a0804) {
@@ -195,7 +195,7 @@ function function_cad492faa20c3feb(var_f3f8aa78862a0804) {
         setdvar(@"hash_6b6230528e92a697", 4);
         setdvar(@"hash_4539fb841b0d72ce", 0.5);
         setdvar(@"hash_32f455fe26173e84", 0.75);
-        setdvar(@"hash_a394734820792b88", 3);
+        setdvar(@"hash_a394734820792b88", 4);
     } else if (var_f3f8aa78862a0804 == 1) {
         setdvar(@"hash_1eb5365bdad13b78", 1);
         setdvar(@"hash_ca710d92e3e6f796", 900);
@@ -221,12 +221,12 @@ function function_cad492faa20c3feb(var_f3f8aa78862a0804) {
         setdvar(@"hash_32f455fe26173e84", 0.8);
         setdvar(@"hash_a394734820792b88", 1.5);
     }
-    self.var_70b761d63979e102 = getdvarfloat(@"hash_a394734820792b88", 3) - 0.075;
+    self.var_70b761d63979e102 = getdvarfloat(@"hash_a394734820792b88", 4) - 0.075;
 }
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x142e
+// Checksum 0x0, Offset: 0x12d2
 // Size: 0x3d
 function trytomastriketriggered(streakinfo) {
     streakname = streakinfo.streakname;
@@ -236,8 +236,8 @@ function trytomastriketriggered(streakinfo) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1474
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x1318
+// Size: 0xae
 function gettimeremaining() {
     shortestleft = undefined;
     foreach (strike in level.toma_strikes) {
@@ -251,8 +251,8 @@ function gettimeremaining() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x152c
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x13cf
+// Size: 0xc4
 function weapongiventomastrike(streakinfo) {
     if (isdefined(level.toma_strikes) && level.toma_strikes.size >= 2) {
         if (istrue(level.var_eb94e9ccd3da6b2e)) {
@@ -274,7 +274,7 @@ function weapongiventomastrike(streakinfo) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15fa
+// Checksum 0x0, Offset: 0x149c
 // Size: 0x14d
 function weaponfiredtomastrike(streakinfo, var_a9dd4e8c5e5c7178, firedprojectile) {
     if (!isdefined(streakinfo.targetoverride)) {
@@ -310,8 +310,8 @@ function weaponfiredtomastrike(streakinfo, var_a9dd4e8c5e5c7178, firedprojectile
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1750
-// Size: 0x21
+// Checksum 0x0, Offset: 0x15f2
+// Size: 0x20
 function tryusetomastrike() {
     streakinfo = function_bc5bcad4a3bbd734("toma_strike", self);
     return tryusetomastrikefromstruct(streakinfo);
@@ -319,8 +319,8 @@ function tryusetomastrike() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x177a
-// Size: 0x1b1
+// Checksum 0x0, Offset: 0x161b
+// Size: 0x1b2
 function tryusetomastrikefromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -368,15 +368,17 @@ function tryusetomastrikefromstruct(streakinfo) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1934
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x17d6
+// Size: 0x8e
 function function_717a6e5e13464b20() {
     var_db99a5290e2a0cd0 = getdvarint(@"hash_1eb5365bdad13b78", 0);
     isbr = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
     if (isbr && isplayer(self)) {
         var_db99a5290e2a0cd0 = 1;
+        function_cad492faa20c3feb(var_db99a5290e2a0cd0);
     } else if (isagent(self)) {
         var_db99a5290e2a0cd0 = 2;
+        function_cad492faa20c3feb(var_db99a5290e2a0cd0);
     } else {
         var_db99a5290e2a0cd0 = 0;
     }
@@ -386,8 +388,8 @@ function function_717a6e5e13464b20() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x19bb
-// Size: 0x15e
+// Checksum 0x0, Offset: 0x186d
+// Size: 0x15f
 function function_5d38cccb518046f6(target, var_44b5105c6f71bc85, var_6530ac0c11cac0f8, var_fc2a5d82867fc3a1) {
     var_db99a5290e2a0cd0 = function_717a6e5e13464b20();
     function_75667e2fe77b75c5(var_db99a5290e2a0cd0);
@@ -416,8 +418,8 @@ function function_5d38cccb518046f6(target, var_44b5105c6f71bc85, var_6530ac0c11c
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b21
-// Size: 0xcd
+// Checksum 0x0, Offset: 0x19d4
+// Size: 0xcc
 function starttomastrike(striketype, streakinfo) {
     tomaid = function_d46771d03c3e46fa();
     function_e744d4edafed7523(tomaid, striketype);
@@ -437,8 +439,8 @@ function starttomastrike(striketype, streakinfo) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf6
-// Size: 0xe6
+// Checksum 0x0, Offset: 0x1aa8
+// Size: 0xeb
 function tomastrike_getownerlookat(owner) {
     content = ["physicscontents_water", "physicscontents_clipshot", "physicscontents_missileclip", "physicscontents_vehicle"];
     contentoverride = physics_createcontents(content);
@@ -458,7 +460,7 @@ function tomastrike_getownerlookat(owner) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce5
+// Checksum 0x0, Offset: 0x1b9c
 // Size: 0x4e
 function function_d46771d03c3e46fa() {
     level.var_2512ecdb67f24156++;
@@ -470,7 +472,7 @@ function function_d46771d03c3e46fa() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d3c
+// Checksum 0x0, Offset: 0x1bf3
 // Size: 0x31
 function tomastrike_watchgameend(tomaid, streakinfo) {
     level endon("toma_strike_clean_up_" + tomaid);
@@ -482,7 +484,7 @@ function tomastrike_watchgameend(tomaid, streakinfo) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d75
+// Checksum 0x0, Offset: 0x1c2c
 // Size: 0x5d
 function function_817d8b8f6d28b2b7(tomaid, streakinfo) {
     level endon("game_ended");
@@ -497,8 +499,8 @@ function function_817d8b8f6d28b2b7(tomaid, streakinfo) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dda
-// Size: 0x47
+// Checksum 0x0, Offset: 0x1c91
+// Size: 0x46
 function function_9bdb853be512d3ed(actionnotify, tomaid, player) {
     level endon("toma_strike_clean_up_" + tomaid);
     notifyobject = level;
@@ -511,7 +513,7 @@ function function_9bdb853be512d3ed(actionnotify, tomaid, player) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e29
+// Checksum 0x0, Offset: 0x1cdf
 // Size: 0x90
 function function_bb7e41c7f2afb421(tomaid) {
     level endon("game_ended");
@@ -532,7 +534,7 @@ function function_bb7e41c7f2afb421(tomaid) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec1
+// Checksum 0x0, Offset: 0x1d77
 // Size: 0x58
 function function_44ffb652b0e5c138(tomaid) {
     level endon("toma_strike_finished_" + tomaid);
@@ -546,7 +548,7 @@ function function_44ffb652b0e5c138(tomaid) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f21
+// Checksum 0x0, Offset: 0x1dd7
 // Size: 0x58
 function function_9b8a16f9169ac8b2(tomaid) {
     level endon("toma_strike_finished_" + tomaid);
@@ -560,8 +562,8 @@ function function_9b8a16f9169ac8b2(tomaid) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f81
-// Size: 0x35e
+// Checksum 0x0, Offset: 0x1e37
+// Size: 0x369
 function function_e744d4edafed7523(tomaid, striketype, target) {
     level.toma_strikes[tomaid] = spawnstruct();
     level.toma_strikes[tomaid].starttimems = gettime();
@@ -607,7 +609,7 @@ function function_e744d4edafed7523(tomaid, striketype, target) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e7
+// Checksum 0x0, Offset: 0x21a8
 // Size: 0x3f
 function function_f05afcd1f818600(tomaid, explosiontype, strikeindex) {
     assert(explosiontype != 1);
@@ -616,7 +618,7 @@ function function_f05afcd1f818600(tomaid, explosiontype, strikeindex) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x232f
+// Checksum 0x0, Offset: 0x21f0
 // Size: 0x49
 function function_db43c64d90389bec(tomaid, explosiontype, waveindex, strikeindex) {
     assert(explosiontype == 1);
@@ -625,7 +627,7 @@ function function_db43c64d90389bec(tomaid, explosiontype, waveindex, strikeindex
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2381
+// Checksum 0x0, Offset: 0x2242
 // Size: 0x3f
 function function_2a08e4b3be6f5721(tomaid, explosiontype, waveindex) {
     assert(explosiontype == 1);
@@ -634,7 +636,7 @@ function function_2a08e4b3be6f5721(tomaid, explosiontype, waveindex) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23c9
+// Checksum 0x0, Offset: 0x228a
 // Size: 0x49
 function function_19051844ba5d9143(striketype) {
     numstrikes = getdvarint(@"hash_3417b331cd0f5b4f");
@@ -644,7 +646,7 @@ function function_19051844ba5d9143(striketype) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x241b
+// Checksum 0x0, Offset: 0x22dc
 // Size: 0x21
 function function_79762e7627b23945(tomaid) {
     return level.toma_strikes[tomaid].strikedelay.size;
@@ -652,7 +654,7 @@ function function_79762e7627b23945(tomaid) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2445
+// Checksum 0x0, Offset: 0x2306
 // Size: 0x2b
 function function_8e60d713e3da2f08(tomaid, waveid) {
     return level.toma_strikes[tomaid].strikedelay[waveid].size;
@@ -660,8 +662,8 @@ function function_8e60d713e3da2f08(tomaid, waveid) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2479
-// Size: 0x83f
+// Checksum 0x0, Offset: 0x233a
+// Size: 0x858
 function tomastrike_attacktarget(striketype, vehicle, marker, streakinfo, tomaid) {
     self endon("disconnect");
     level endon("game_ended");
@@ -803,8 +805,8 @@ function tomastrike_attacktarget(striketype, vehicle, marker, streakinfo, tomaid
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cc0
-// Size: 0xac
+// Checksum 0x0, Offset: 0x2b9a
+// Size: 0xad
 function function_99347dc58ab12b57(center) {
     wait 6;
     var_6bb1b1677e0a4cf2 = createnavbadplacebyshape(center, (0, 0, 0), 8, 400, 500);
@@ -826,8 +828,8 @@ function function_99347dc58ab12b57(center) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d74
-// Size: 0x24b
+// Checksum 0x0, Offset: 0x2c4f
+// Size: 0x253
 function findunobstructedfiringinfo(var_27c77d35f1de2019, var_a0edd3f59d938fb1, var_d77253c873d2b420, ownerforward, ownerright) {
     gravity = getdvarint(@"bg_gravity", 800);
     if (getdvarint(@"hash_12ca000dd2976ebc", 0)) {
@@ -838,7 +840,7 @@ function findunobstructedfiringinfo(var_27c77d35f1de2019, var_a0edd3f59d938fb1, 
     var_a78cd67f5364240c = vectornormalize(var_27c77d35f1de2019 - (var_cb6109df81ef0dc[0], var_cb6109df81ef0dc[1], 0));
     var_1f0ff6559c9092d0 = tomastrike_getrandombombingpoint(var_27c77d35f1de2019, var_a0edd3f59d938fb1, var_a78cd67f5364240c);
     var_dea0d8baceebf59b = (0, 0, -1 * gravity);
-    traveltime = getdvarfloat(@"hash_a394734820792b88", 3);
+    traveltime = getdvarfloat(@"hash_a394734820792b88", 4);
     var_556b5972dbd50cf4 = (var_1f0ff6559c9092d0.point - 0.5 * var_dea0d8baceebf59b * squared(traveltime) - var_cb6109df81ef0dc) / traveltime;
     /#
         clusterdebugon = getdvarint(@"hash_920f0586653a26d4", 0);
@@ -848,7 +850,7 @@ function findunobstructedfiringinfo(var_27c77d35f1de2019, var_a0edd3f59d938fb1, 
         }
     #/
     if (!isdefined(self.var_70b761d63979e102)) {
-        self.var_70b761d63979e102 = getdvarfloat(@"hash_a394734820792b88", 3) - 0.075;
+        self.var_70b761d63979e102 = getdvarfloat(@"hash_a394734820792b88", 4) - 0.075;
     }
     var_f69efd87385e55 = var_cb6109df81ef0dc + var_556b5972dbd50cf4 * self.var_70b761d63979e102 + 0.5 * var_dea0d8baceebf59b * squared(self.var_70b761d63979e102);
     var_fa378e997a33a137.sourcepos = var_cb6109df81ef0dc;
@@ -862,7 +864,7 @@ function findunobstructedfiringinfo(var_27c77d35f1de2019, var_a0edd3f59d938fb1, 
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc8
+// Checksum 0x0, Offset: 0x2eab
 // Size: 0x50
 function delayscriptablechangethread(delaytime) {
     self.owner endon("disconnect");
@@ -874,8 +876,8 @@ function delayscriptablechangethread(delaytime) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3020
-// Size: 0x174
+// Checksum 0x0, Offset: 0x2f03
+// Size: 0x17d
 function tomastrike_getrandombombingpoint(var_27c77d35f1de2019, var_a0edd3f59d938fb1, var_a78cd67f5364240c) {
     randdist = randomint(var_a0edd3f59d938fb1);
     randangle = randomint(360);
@@ -909,7 +911,7 @@ function tomastrike_getrandombombingpoint(var_27c77d35f1de2019, var_a0edd3f59d93
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x319d
+// Checksum 0x0, Offset: 0x3089
 // Size: 0x21
 function tomastrike_isflyingvehicle(entity) {
     return isdefined(self.vehiclename) && istrue(entity function_d7d7db3140b95ce3());
@@ -917,7 +919,7 @@ function tomastrike_isflyingvehicle(entity) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31c7
+// Checksum 0x0, Offset: 0x30b3
 // Size: 0x3c
 function tomastrike_isflyingkillstreak(entity) {
     return isdefined(entity.streakinfo) && isdefined(entity.sentientpool) && entity.sentientpool == "Killstreak_Air";
@@ -925,8 +927,8 @@ function tomastrike_isflyingkillstreak(entity) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x320c
-// Size: 0x431
+// Checksum 0x0, Offset: 0x30f8
+// Size: 0x421
 function tomastrike_firestrike(striketype, var_fa378e997a33a137, streakinfo, vehicle) {
     self endon("disconnect");
     level endon("game_ended");
@@ -934,10 +936,7 @@ function tomastrike_firestrike(striketype, var_fa378e997a33a137, streakinfo, veh
         self earthquakeforplayer(0.35, 1, vehicle.origin, 1000);
         self playlocalsound("weap_cluster_fire");
     }
-    if (!isdefined(level.var_d2a6e2899c72649b)) {
-        function_75667e2fe77b75c5(striketype);
-    }
-    missile = magicgrenademanual(level.var_d2a6e2899c72649b, var_fa378e997a33a137.sourcepos, var_fa378e997a33a137.initvelocity, getdvarfloat(@"hash_a394734820792b88", 3) + 2, self);
+    missile = magicgrenademanual(level.var_d2a6e2899c72649b, var_fa378e997a33a137.sourcepos, var_fa378e997a33a137.initvelocity, getdvarfloat(@"hash_a394734820792b88", 4) + 2, self);
     missile forcenetfieldhighlod(1);
     var_d9855d8e772a9061 = getdvarint(@"hash_2cfbf02c634789ea", 1);
     if (var_d9855d8e772a9061 == 0) {
@@ -971,12 +970,12 @@ function tomastrike_firestrike(striketype, var_fa378e997a33a137, streakinfo, veh
     missile thread toma_strike_watch_owner();
     missile thread function_dd555baddc036858();
     explosiontype = getdvarint(@"hash_604652367665c1e0", 1);
-    var_63160bef0a2103d3 = getdvarfloat(@"hash_a394734820792b88", 3) - 0.5;
+    var_63160bef0a2103d3 = getdvarfloat(@"hash_a394734820792b88", 4) - 0.5;
     killcamendpos = var_fa378e997a33a137.preexplpos;
     if (explosiontype != 1) {
         missile thread toma_strike_watch_airexplosion(var_fa378e997a33a137.preexplpos, var_fa378e997a33a137.entityhit, var_fa378e997a33a137.entityhittype, self.var_70b761d63979e102);
     } else {
-        missile thread toma_strike_watch_airexplosion(undefined, undefined, undefined, getdvarfloat(@"hash_a394734820792b88", 3) + 1);
+        missile thread toma_strike_watch_airexplosion(undefined, undefined, undefined, getdvarfloat(@"hash_a394734820792b88", 4) + 1);
     }
     missile thread toma_strike_watch_stuck(explosiontype, vectortoangles(var_fa378e997a33a137.initvelocity), gettime(), var_fa378e997a33a137.initvelocity);
     missile.killcament thread toma_strike_move_killcam(var_63160bef0a2103d3, killcamendpos);
@@ -984,7 +983,7 @@ function tomastrike_firestrike(striketype, var_fa378e997a33a137, streakinfo, veh
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3645
+// Checksum 0x0, Offset: 0x3521
 // Size: 0xff
 function function_6153b8a392d10771(groundexplodepos, var_63d5339e498e6f77, stuckto, owner, starttime, streakinfo) {
     level endon("game_ended");
@@ -1011,7 +1010,7 @@ function function_6153b8a392d10771(groundexplodepos, var_63d5339e498e6f77, stuck
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x374c
+// Checksum 0x0, Offset: 0x3628
 // Size: 0xf1
 function function_441a028592c3ca77(var_8e46de7d6785b0d8) {
     self endon("death");
@@ -1038,7 +1037,7 @@ function function_441a028592c3ca77(var_8e46de7d6785b0d8) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3845
+// Checksum 0x0, Offset: 0x3721
 // Size: 0x21
 function toma_strike_delay_hide() {
     self endon("death");
@@ -1048,8 +1047,8 @@ function toma_strike_delay_hide() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x386e
-// Size: 0x71
+// Checksum 0x0, Offset: 0x374a
+// Size: 0x70
 function toma_strike_watch_owner() {
     self endon("missile_empd");
     self endon("death");
@@ -1066,8 +1065,8 @@ function toma_strike_watch_owner() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38e7
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x37c2
+// Size: 0x7d
 function function_dd555baddc036858() {
     self notify("missile_empd");
     self endon("death");
@@ -1088,7 +1087,7 @@ function function_dd555baddc036858() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x396d
+// Checksum 0x0, Offset: 0x3847
 // Size: 0x9f
 function toma_strike_watch_airexplosion(var_8e46de7d6785b0d8, entityhit, entityhittype, explosiondelay) {
     self endon("death");
@@ -1107,7 +1106,7 @@ function toma_strike_watch_airexplosion(var_8e46de7d6785b0d8, entityhit, entityh
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a14
+// Checksum 0x0, Offset: 0x38ee
 // Size: 0x48
 function toma_strike_move_killcam(var_b0ce2d9bbd8d8fae, endpos) {
     if (isdefined(self)) {
@@ -1122,8 +1121,8 @@ function toma_strike_move_killcam(var_b0ce2d9bbd8d8fae, endpos) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a64
-// Size: 0x17a
+// Checksum 0x0, Offset: 0x393e
+// Size: 0x17d
 function toma_strike_watch_stuck(explosiontype, var_6951cf1f43bc8ebe, var_8011cffb839e8243, launchvelocity) {
     self endon("death");
     self endon("missile_dest_failed");
@@ -1159,7 +1158,7 @@ function toma_strike_watch_stuck(explosiontype, var_6951cf1f43bc8ebe, var_8011cf
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3be6
+// Checksum 0x0, Offset: 0x3ac3
 // Size: 0xad
 function function_7ef768a282337b03() {
     self endon("death");
@@ -1181,8 +1180,8 @@ function function_7ef768a282337b03() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c9c
-// Size: 0x10a
+// Checksum 0x0, Offset: 0x3b79
+// Size: 0x10c
 function toma_strike_stuck(explosiontype, stuckto, var_6951cf1f43bc8ebe, impactvelocity) {
     angles = undefined;
     forward = vectornormalize(impactvelocity);
@@ -1206,8 +1205,8 @@ function toma_strike_stuck(explosiontype, stuckto, var_6951cf1f43bc8ebe, impactv
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3dae
-// Size: 0x1ee
+// Checksum 0x0, Offset: 0x3c8d
+// Size: 0x1f9
 function toma_strike_stuck_player(explosiontype, grenade, stuckto, var_6951cf1f43bc8ebe, impactvelocity) {
     impactvelocity *= (0, 0, 1);
     caststart = grenade.origin;
@@ -1236,8 +1235,8 @@ function toma_strike_stuck_player(explosiontype, grenade, stuckto, var_6951cf1f4
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fa4
-// Size: 0x322
+// Checksum 0x0, Offset: 0x3e8e
+// Size: 0x330
 function toma_strike_launch_cluster(grenade, impactorigin, var_4b65413211af7033, impactent, impacttime) {
     owner = grenade.owner;
     killcament = grenade.killcament;
@@ -1282,13 +1281,13 @@ function toma_strike_launch_cluster(grenade, impactorigin, var_4b65413211af7033,
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x42ce
-// Size: 0x713
+// Checksum 0x0, Offset: 0x41c6
+// Size: 0x71e
 function toma_strike_start_branch() {
     killcament = self.killcament;
     /#
-        if (issharedfuncdefined("<dev string:x1c>", "<dev string:x2b>")) {
-            self thread [[ getsharedfunc("<dev string:x1c>", "<dev string:x2b>") ]]();
+        if (issharedfuncdefined("<dev string:x1c>", "<dev string:x28>")) {
+            self thread [[ getsharedfunc("<dev string:x1c>", "<dev string:x28>") ]]();
         }
     #/
     if (!isdefined(self.preventstarttime)) {
@@ -1427,8 +1426,8 @@ function toma_strike_start_branch() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x49e9
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x48ec
+// Size: 0xb9
 function toma_strike_branch_create_explosion(origin, angles, stuckto, streakinfo) {
     delayms = 50;
     if (true) {
@@ -1444,7 +1443,7 @@ function toma_strike_branch_create_explosion(origin, angles, stuckto, streakinfo
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x4aaa
+// Checksum 0x0, Offset: 0x49ae
 // Size: 0x122
 function toma_strike_create_explosion(origin, angles, stuckto, owner, starttime, streakinfo) {
     bundle = isdefined(level.streakglobals.streakbundles["toma_strike"]) ? level.streakglobals.streakbundles["toma_strike"] : {#var_3a1a5610b3e228c0:undefined};
@@ -1465,7 +1464,7 @@ function toma_strike_create_explosion(origin, angles, stuckto, owner, starttime,
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bd5
+// Checksum 0x0, Offset: 0x4ad9
 // Size: 0x61
 function toma_strike_start_explosion() {
     self endon("death");
@@ -1482,7 +1481,7 @@ function toma_strike_start_explosion() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c3e
+// Checksum 0x0, Offset: 0x4b42
 // Size: 0x1e
 function toma_strike_explosion_end() {
     self setscriptablepartstate("explode", "active", 0);
@@ -1492,7 +1491,7 @@ function toma_strike_explosion_end() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c64
+// Checksum 0x0, Offset: 0x4b68
 // Size: 0x24
 function toma_strike_shared_data_register_cast() {
     self.caststotal++;
@@ -1502,7 +1501,7 @@ function toma_strike_shared_data_register_cast() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c90
+// Checksum 0x0, Offset: 0x4b94
 // Size: 0xc
 function toma_strike_shared_data_register_ent() {
     self.entstotal++;
@@ -1510,7 +1509,7 @@ function toma_strike_shared_data_register_ent() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ca4
+// Checksum 0x0, Offset: 0x4ba8
 // Size: 0x38
 function toma_strike_shared_data_can_cast_this_frame() {
     if (self.frametimestamp < gettime()) {
@@ -1522,8 +1521,8 @@ function toma_strike_shared_data_can_cast_this_frame() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ce5
-// Size: 0xc7
+// Checksum 0x0, Offset: 0x4be9
+// Size: 0xc6
 function toma_strike_shared_data_is_complete(var_af8745e2185687a8) {
     iscomplete = 0;
     if (self.caststotal >= 60) {
@@ -1550,8 +1549,8 @@ function toma_strike_shared_data_is_complete(var_af8745e2185687a8) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4db5
-// Size: 0x17a
+// Checksum 0x0, Offset: 0x4cb8
+// Size: 0x179
 function toma_strike_branch_register_cast(casttype, var_8e87ebe279cdfcfb, hitposition) {
     self.shareddata toma_strike_shared_data_register_cast();
     self.casts++;
@@ -1568,16 +1567,16 @@ function toma_strike_branch_register_cast(casttype, var_8e87ebe279cdfcfb, hitpos
             debugmsg = undefined;
             switch (var_8e87ebe279cdfcfb) {
             case 0: 
-                debugmsg = "<dev string:x47>";
+                debugmsg = "<dev string:x41>";
                 break;
             case 1: 
-                debugmsg = "<dev string:x56>";
+                debugmsg = "<dev string:x4d>";
                 break;
             case 2: 
-                debugmsg = "<dev string:x62>";
+                debugmsg = "<dev string:x56>";
                 break;
             case 3: 
-                debugmsg = "<dev string:x75>";
+                debugmsg = "<dev string:x66>";
                 break;
             }
             self.hitpositions[self.hitpositions.size] = hitposition;
@@ -1585,13 +1584,13 @@ function toma_strike_branch_register_cast(casttype, var_8e87ebe279cdfcfb, hitpos
         } else {
             switch (casttype) {
             case 0: 
-                debugmsg = "<dev string:x7f>";
+                debugmsg = "<dev string:x6d>";
                 break;
             case 1: 
-                debugmsg = "<dev string:x8a>";
+                debugmsg = "<dev string:x75>";
                 break;
             case 2: 
-                debugmsg = "<dev string:x97>";
+                debugmsg = "<dev string:x7f>";
                 break;
             }
         }
@@ -1605,8 +1604,8 @@ function toma_strike_branch_register_cast(casttype, var_8e87ebe279cdfcfb, hitpos
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f37
-// Size: 0x1fd
+// Checksum 0x0, Offset: 0x4e39
+// Size: 0x1fb
 function toma_strike_branch_is_complete(var_af8745e2185687a8) {
     iscomplete = 0;
     var_3ce5d6eb962629fa = undefined;
@@ -1635,7 +1634,7 @@ function toma_strike_branch_is_complete(var_af8745e2185687a8) {
         if (isdefined(oncompletedfunc)) {
             self [[ oncompletedfunc ]]();
         }
-        println("<dev string:x9d>");
+        println("<dev string:x82>");
         if (istrue(var_3ce5d6eb962629fa)) {
             iscomplete = 0;
             foreach (branch in self.branches) {
@@ -1657,8 +1656,8 @@ function toma_strike_branch_is_complete(var_af8745e2185687a8) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x513d
-// Size: 0x116
+// Checksum 0x0, Offset: 0x503d
+// Size: 0x115
 function toma_strike_create_branch(shareddata, castdata, parent, startingorigin, startingangles, startingstuckto, startingcasttype, preventstarttime, oncompletedfunc) {
     branch = spawnstruct();
     branch.shareddata = shareddata;
@@ -1680,8 +1679,8 @@ function toma_strike_create_branch(shareddata, castdata, parent, startingorigin,
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x525c
-// Size: 0xf7
+// Checksum 0x0, Offset: 0x515b
+// Size: 0xf6
 function toma_strike_get_shared_data(owner, streakinfo, impacttime, killcament) {
     shareddata = spawnstruct();
     shareddata.owner = owner;
@@ -1699,8 +1698,8 @@ function toma_strike_get_shared_data(owner, streakinfo, impacttime, killcament) 
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x535c
-// Size: 0x68
+// Checksum 0x0, Offset: 0x525a
+// Size: 0x67
 function toma_strike_get_cast_data() {
     castdata = spawnstruct();
     castdata.distforward = 125;
@@ -1714,7 +1713,7 @@ function toma_strike_get_cast_data() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x53cd
+// Checksum 0x0, Offset: 0x52ca
 // Size: 0x59
 function toma_strike_get_cast_dir(angles, casttype) {
     switch (casttype) {
@@ -1730,7 +1729,7 @@ function toma_strike_get_cast_dir(angles, casttype) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x542f
+// Checksum 0x0, Offset: 0x532c
 // Size: 0x83
 function toma_strike_get_cast_dist(casttype, castdata) {
     switch (casttype) {
@@ -1750,8 +1749,8 @@ function toma_strike_get_cast_dist(casttype, castdata) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x54bb
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x53b8
+// Size: 0x3b
 function toma_strike_rebuild_angles_up_right(up, right) {
     forward = vectornormalize(vectorcross(up, right));
     right = vectorcross(forward, up);
@@ -1760,8 +1759,8 @@ function toma_strike_rebuild_angles_up_right(up, right) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5500
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x53fc
+// Size: 0x3b
 function toma_strike_rebuild_angles_up_forward(up, forward) {
     right = vectornormalize(vectorcross(forward, up));
     forward = vectorcross(up, right);
@@ -1770,7 +1769,7 @@ function toma_strike_rebuild_angles_up_forward(up, forward) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5545
+// Checksum 0x0, Offset: 0x5440
 // Size: 0xa2
 function toma_strike_setmarkerobjective(objid, icon, owner, offset) {
     if (issp()) {
@@ -1794,7 +1793,7 @@ function toma_strike_setmarkerobjective(objid, icon, owner, offset) {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x55ef
+// Checksum 0x0, Offset: 0x54ea
 // Size: 0x5f
 function toma_strike_handlemarkerscriptable() {
     self endon("death");
@@ -1810,8 +1809,8 @@ function toma_strike_handlemarkerscriptable() {
 
 // Namespace toma_strike / scripts\cp_mp\killstreaks\toma_strike
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5656
-// Size: 0x1e3
+// Checksum 0x0, Offset: 0x5551
+// Size: 0x1ed
 function tomastrike_findoptimallaunchpos(markerorigin, var_d77253c873d2b420, ownerforward, ownerright) {
     contents = scripts\engine\trace::create_default_contents(1);
     trace = scripts\engine\trace::ray_trace(markerorigin - var_d77253c873d2b420 * 30, markerorigin + var_d77253c873d2b420 * 1000, undefined, contents);

@@ -7,7 +7,7 @@
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x120
+// Checksum 0x0, Offset: 0xe2
 // Size: 0x3f
 function init() {
     if (false) {
@@ -25,7 +25,7 @@ function init() {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x167
+// Checksum 0x0, Offset: 0x129
 // Size: 0x3d
 function function_90ab35efc8f0fb46(info, var_80ed4d4a2aaf5d44) {
     if (isdedicatedserver()) {
@@ -38,8 +38,8 @@ function function_90ab35efc8f0fb46(info, var_80ed4d4a2aaf5d44) {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac
-// Size: 0x14
+// Checksum 0x0, Offset: 0x16e
+// Size: 0x13
 function function_2c6779a0712ad84f() {
     time = gettime();
     return time;
@@ -47,7 +47,7 @@ function function_2c6779a0712ad84f() {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9
+// Checksum 0x0, Offset: 0x18a
 // Size: 0xac
 function function_b8b443d92560ecf4(type, origin, state, time, data, entnum) {
     if (!isdefined(data) || !isstring(data)) {
@@ -63,7 +63,7 @@ function function_b8b443d92560ecf4(type, origin, state, time, data, entnum) {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x27d
+// Checksum 0x0, Offset: 0x23e
 // Size: 0x9a
 function addevent(type, origin, state, data, ent) {
     if (!isdefined(origin)) {
@@ -88,7 +88,7 @@ function addevent(type, origin, state, data, ent) {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x31f
+// Checksum 0x0, Offset: 0x2e0
 // Size: 0x33
 function function_e18f9b7e01cd916f(type, ent) {
     if (!isdefined(ent)) {
@@ -99,7 +99,7 @@ function function_e18f9b7e01cd916f(type, ent) {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x35a
+// Checksum 0x0, Offset: 0x31b
 // Size: 0x3f
 function function_a569c60476357392(type, ent, state, data) {
     if (!isdefined(ent)) {
@@ -110,7 +110,7 @@ function function_a569c60476357392(type, ent, state, data) {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a1
+// Checksum 0x0, Offset: 0x362
 // Size: 0x108
 function function_82ffbfa82a26d37e(type, origin, ent, data) {
     assert(isdefined(level.delayedeventtypes));
@@ -136,8 +136,8 @@ function function_82ffbfa82a26d37e(type, origin, ent, data) {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b1
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x472
+// Size: 0xc1
 function function_56c9bb1673c2ca(type, ent, state) {
     if (!isdefined(type) || !isdefined(ent) || !isdefined(level.delayedeventtypes) || !isdefined(level.delayedeventtypes[type])) {
         return;
@@ -153,8 +153,8 @@ function function_56c9bb1673c2ca(type, ent, state) {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57d
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x53b
+// Size: 0xdf
 function onendgame() {
     level waittill("start_game_ended");
     foreach (typearray in level.delayedeventtypes) {
@@ -169,7 +169,7 @@ function onendgame() {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x668
+// Checksum 0x0, Offset: 0x622
 // Size: 0x1b
 function function_3eb0a74e7ece96f9() {
     if (isplayer(self)) {
@@ -183,8 +183,8 @@ function function_3eb0a74e7ece96f9() {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x68c
-// Size: 0x12a
+// Checksum 0x0, Offset: 0x646
+// Size: 0x12e
 function function_5c0639c941555983() {
     level endon("game_ended");
     self endon("disconnect");
@@ -223,7 +223,7 @@ function function_5c0639c941555983() {
 
 // Namespace analytics / namespace_11c0583894ef486f
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7be
+// Checksum 0x0, Offset: 0x77c
 // Size: 0x41
 function updatebreadcrumb(time) {
     if (!function_3eb0a74e7ece96f9()) {

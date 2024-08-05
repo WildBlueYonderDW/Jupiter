@@ -436,7 +436,7 @@ function onPickupTakenIntoBackpack(pickupent) {
     }
     var_7c0646d93451368c = scripts\mp\gametypes\br_pickups::function_b77386f2a0293169(pickupent.scriptablename);
     if (var_7c0646d93451368c) {
-        namespace_88bfae359020fdd3::function_1976438a8865ac27("br_ftue_valuables");
+        namespace_88bfae359020fdd3::ftue_triggerTip("br_ftue_valuables");
     }
 }
 

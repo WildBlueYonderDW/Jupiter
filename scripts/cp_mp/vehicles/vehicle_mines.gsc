@@ -7,10 +7,10 @@
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14e
-// Size: 0x73
+// Checksum 0x0, Offset: 0x18a
+// Size: 0x72
 function vehicle_mines_init() {
-    assertex(isdefined(level.vehicle), "<dev string:x1c>");
+    assertex(isdefined(level.vehicle), "vehicle_mines_init() called before vehicle_init().");
     leveldata = spawnstruct();
     leveldata.minedata = [];
     level.vehicle.minetriggerdata = leveldata;
@@ -21,17 +21,17 @@ function vehicle_mines_init() {
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c9
+// Checksum 0x0, Offset: 0x204
 // Size: 0x37
 function vehicle_mines_getleveldata() {
-    assertex(isdefined(level.vehicle.minetriggerdata), "<dev string:x52>");
+    assertex(isdefined(level.vehicle.minetriggerdata), "vehicle_mines_getLevelData() called before vehicle_mines_init().");
     return level.vehicle.minetriggerdata;
 }
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x209
-// Size: 0xd0
+// Checksum 0x0, Offset: 0x244
+// Size: 0xcf
 function vehicle_mines_getleveldataforvehicle(vehicleref, create) {
     var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle_damage::vehicle_damage_getleveldataforvehicle(vehicleref, create);
     if ((!isdefined(var_e2818ad39a3341b4) || !isdefined(var_e2818ad39a3341b4.frontextents)) && istrue(create)) {
@@ -52,7 +52,7 @@ function vehicle_mines_getleveldataforvehicle(vehicleref, create) {
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e2
+// Checksum 0x0, Offset: 0x31c
 // Size: 0x78
 function vehicle_mines_getleveldataformine(equipref, create) {
     leveldata = vehicle_mines_getleveldata();
@@ -68,8 +68,8 @@ function vehicle_mines_getleveldataformine(equipref, create) {
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x363
-// Size: 0x396
+// Checksum 0x0, Offset: 0x39d
+// Size: 0x374
 function vehicle_mines_shouldvehicletriggermine(vehicle, mine) {
     if (!vehicle scripts\cp_mp\vehicles\vehicle::isvehicle()) {
         return false;
@@ -78,11 +78,7 @@ function vehicle_mines_shouldvehicletriggermine(vehicle, mine) {
     if (!isdefined(var_e2818ad39a3341b4)) {
         return false;
     }
-    var_c3f020620e873c83 = isdefined(mine.equipmentref) ? mine.equipmentref : mine.killstreakref;
-    if (!isdefined(var_c3f020620e873c83)) {
-        return false;
-    }
-    var_574564c86203493f = vehicle_mines_getleveldataformine(var_c3f020620e873c83);
+    var_574564c86203493f = vehicle_mines_getleveldataformine(mine.equipmentref);
     if (!isdefined(var_574564c86203493f)) {
         return false;
     }
@@ -143,17 +139,10 @@ function vehicle_mines_shouldvehicletriggermine(vehicle, mine) {
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x702
-// Size: 0xe8
+// Checksum 0x0, Offset: 0x71a
+// Size: 0xb4
 function vehicle_mines_minetrigger(vehicle, mine) {
-    var_c3f020620e873c83 = isdefined(mine.equipmentref) ? mine.equipmentref : mine.killstreakref;
-    if (!isdefined(var_c3f020620e873c83)) {
-        return;
-    }
-    var_574564c86203493f = vehicle_mines_getleveldataformine(var_c3f020620e873c83);
-    if (!isdefined(var_574564c86203493f)) {
-        return;
-    }
+    var_574564c86203493f = vehicle_mines_getleveldataformine(mine.equipmentref);
     if (isdefined(var_574564c86203493f.triggercallback)) {
         thread [[ var_574564c86203493f.triggercallback ]](vehicle, mine);
     }
@@ -168,7 +157,7 @@ function vehicle_mines_minetrigger(vehicle, mine) {
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f2
+// Checksum 0x0, Offset: 0x7d6
 // Size: 0x11d
 function vehicle_mines_isfriendlytomine(mine) {
     var_c665c37b6477e11c = 0;
@@ -201,7 +190,7 @@ function vehicle_mines_isfriendlytomine(mine) {
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x918
+// Checksum 0x0, Offset: 0x8fc
 // Size: 0x17
 function vehicle_mines_getnormal2d(vector) {
     return (vector[1], vector[0] * -1, 0);
@@ -209,7 +198,7 @@ function vehicle_mines_getnormal2d(vector) {
 
 // Namespace vehicle_mines / scripts\cp_mp\vehicles\vehicle_mines
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x938
+// Checksum 0x0, Offset: 0x91c
 // Size: 0x35
 function vehicle_mines_getloscheckcontents() {
     return physics_createcontents(["physicscontents_water", "physicscontents_glass", "physicscontents_item", "physicscontents_vehicle", "physicscontents_ainosight"]);

@@ -789,8 +789,8 @@ function function_78a1012c4821caf6() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x34e9
 // Size: 0x75
-function function_9306d91e52ec93e1(var_72b043c81ce7080) {
-    namespace_262d6474998a2356::function_641bc1548cff8210(var_72b043c81ce7080, level.players);
+function function_9306d91e52ec93e1(currentMission) {
+    namespace_262d6474998a2356::function_641bc1548cff8210(currentMission, level.players);
     foreach (player in level.players) {
         player setclientomnvar("ui_ob_active_contract_region_difficulty", 0);
     }

@@ -11,8 +11,8 @@
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x487
-// Size: 0x205
+// Checksum 0x0, Offset: 0x571
+// Size: 0x209
 function function_cfec51cac79ca4e6(superinfo, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, var_f6a32dcc4b19aad9, var_67a06b4ea269058e, waittime, skipfirstraise, isimmediate) {
     level endon("game_ended");
     self endon("disconnect");
@@ -61,7 +61,7 @@ function function_cfec51cac79ca4e6(superinfo, var_bdffc63c4171c131, var_8fd4d93d
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x695
+// Checksum 0x0, Offset: 0x783
 // Size: 0x19a
 function function_f3a5a94b1d50ed38(superinfo, weaponobj, firednotify, var_bdffc63c4171c131, var_8fd4d93dd619da88, weaponfiredcallback, var_91f739c2c51347d4, var_d55d8445518099b) {
     level endon("game_ended");
@@ -77,7 +77,7 @@ function function_f3a5a94b1d50ed38(superinfo, weaponobj, firednotify, var_bdffc6
         return false;
     }
     function_4f203f286301b4ae(superinfo);
-    assertex(isdefined(weaponobj) && weaponobj.basename != "<dev string:x1c>", "<dev string:x24>" + superinfo.staticdata.ref + "<dev string:x37>");
+    assertex(isdefined(weaponobj) && weaponobj.basename != "none", "Field Upgrade \"" + superinfo.staticdata.ref + "\" trying to do a weapon-switch deploy, but has an invalid weapon");
     switchresult = function_323489241ce4764a(weaponobj, superinfo, &function_f3e423ce0923187e, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b);
     if (!istrue(switchresult)) {
         function_7cc79842967d7ae0(superinfo);
@@ -98,10 +98,10 @@ function function_f3a5a94b1d50ed38(superinfo, weaponobj, firednotify, var_bdffc6
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x838
+// Checksum 0x0, Offset: 0x926
 // Size: 0xd9
 function function_8300ec48c43363d6(superinfo, weaponobj, keepweapon, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b) {
-    assertex(isdefined(weaponobj) && weaponobj.basename != "<dev string:x1c>", "<dev string:x24>" + superinfo.staticdata.ref + "<dev string:x37>");
+    assertex(isdefined(weaponobj) && weaponobj.basename != "none", "Field Upgrade \"" + superinfo.staticdata.ref + "\" trying to do a weapon-switch deploy, but has an invalid weapon");
     function_4f203f286301b4ae(superinfo);
     cleanupwaitfunc = ter_op(istrue(keepweapon), &function_f3e423ce0923187e, undefined);
     switchresult = function_323489241ce4764a(weaponobj, superinfo, cleanupwaitfunc, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b);
@@ -115,8 +115,8 @@ function function_8300ec48c43363d6(superinfo, weaponobj, keepweapon, var_bdffc63
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x919
-// Size: 0x1dc
+// Checksum 0x0, Offset: 0xa07
+// Size: 0x1dd
 function private function_342f97880f848caa(superinfo, animlength, var_67a06b4ea269058e) {
     level endon("game_ended");
     self endon("disconnect");
@@ -157,7 +157,7 @@ function private function_342f97880f848caa(superinfo, animlength, var_67a06b4ea2
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xafe
+// Checksum 0x0, Offset: 0xbed
 // Size: 0x33
 function private function_b351e53752cdb017(superinfo) {
     level endon("game_ended");
@@ -170,7 +170,7 @@ function private function_b351e53752cdb017(superinfo) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xb39
+// Checksum 0x0, Offset: 0xc28
 // Size: 0x46
 function private function_1a0d50cc1357bdae() {
     level endon("game_ended");
@@ -188,8 +188,8 @@ function private function_1a0d50cc1357bdae() {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xb87
-// Size: 0xa1
+// Checksum 0x0, Offset: 0xc76
+// Size: 0xa0
 function private function_a74d2cee7557d7b1(timedelay) {
     self endon("disconnect");
     result = waittill_any_timeout_1(timedelay, "cancel_remote_sequence");
@@ -209,7 +209,7 @@ function private function_a74d2cee7557d7b1(timedelay) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xc30
+// Checksum 0x0, Offset: 0xd1e
 // Size: 0x24
 function private function_7cc79842967d7ae0(superinfo) {
     superinfo.isdeploying = 0;
@@ -218,7 +218,7 @@ function private function_7cc79842967d7ae0(superinfo) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc5c
+// Checksum 0x0, Offset: 0xd4a
 // Size: 0x26
 function private function_c46ce93718743bf6() {
     self endon("disconnect");
@@ -229,7 +229,7 @@ function private function_c46ce93718743bf6() {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8a
+// Checksum 0x0, Offset: 0xd78
 // Size: 0x14f
 function function_323489241ce4764a(deployweaponobj, superinfo, cleanupwaitfunc, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, skipfirstraise, isimmediate) {
     level endon("game_ended");
@@ -275,7 +275,7 @@ function function_323489241ce4764a(deployweaponobj, superinfo, cleanupwaitfunc, 
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0xde2
+// Checksum 0x0, Offset: 0xed0
 // Size: 0x146
 function private function_e65b31e6948c503(switchresult, superinfo, deployweaponobj, cleanupwaitfunc, var_91f739c2c51347d4, var_d55d8445518099b) {
     level endon("game_ended");
@@ -314,8 +314,8 @@ function private function_e65b31e6948c503(switchresult, superinfo, deployweapono
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf30
-// Size: 0x54
+// Checksum 0x0, Offset: 0x101e
+// Size: 0x53
 function private function_b22d2e6d02d50b21(deployweaponobj) {
     getridofweapon(deployweaponobj, istrue(self.var_4a2f2f50a9020e2e));
     self.var_4a2f2f50a9020e2e = undefined;
@@ -327,7 +327,7 @@ function private function_b22d2e6d02d50b21(deployweaponobj) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xf8c
+// Checksum 0x0, Offset: 0x1079
 // Size: 0x49
 function private function_12bd106b0dd9b11d(superinfo, deployweaponobj) {
     level endon("game_ended");
@@ -342,8 +342,8 @@ function private function_12bd106b0dd9b11d(superinfo, deployweaponobj) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfdd
-// Size: 0x35
+// Checksum 0x0, Offset: 0x10ca
+// Size: 0x34
 function function_b04cbd5db8951229(weaponname) {
     var_cd5c5ac9105ab0d7 = 0;
     switch (weaponname) {
@@ -356,7 +356,7 @@ function function_b04cbd5db8951229(weaponname) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x101b
+// Checksum 0x0, Offset: 0x1107
 // Size: 0x65
 function private function_6ce6b67d4d0ff91b(superinfo, deployweaponobj) {
     level endon("game_ended");
@@ -374,10 +374,10 @@ function private function_6ce6b67d4d0ff91b(superinfo, deployweaponobj) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1088
+// Checksum 0x0, Offset: 0x1174
 // Size: 0x74
 function private function_4f203f286301b4ae(superinfo) {
-    assertex(!istrue(superinfo.isdeploying), "<dev string:x7b>" + superinfo.staticdata.ref + "<dev string:x8f>");
+    assertex(!istrue(superinfo.isdeploying), "Scripter error: " + superinfo.staticdata.ref + " trying to deploy while it's already deploying");
     superinfo.isdeploying = 1;
     val::set("deployStart", "crate_use", 0);
     val::set("deployStart", "ascender_use", 0);
@@ -385,7 +385,7 @@ function private function_4f203f286301b4ae(superinfo) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1104
+// Checksum 0x0, Offset: 0x11f0
 // Size: 0x3c
 function private function_dfc98a2de8e662a6(superinfo, var_bdffc63c4171c131) {
     level endon("game_ended");
@@ -400,8 +400,8 @@ function private function_dfc98a2de8e662a6(superinfo, var_bdffc63c4171c131) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1149
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x1235
+// Size: 0x7d
 function private function_f3e423ce0923187e(superinfo) {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -421,7 +421,7 @@ function private function_f3e423ce0923187e(superinfo) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x11cf
+// Checksum 0x0, Offset: 0x12ba
 // Size: 0x27
 function private function_afb1be43e272a00a(ent, finishednotify) {
     self endon("super_finished_with_deploy_weapon");
@@ -431,11 +431,11 @@ function private function_afb1be43e272a00a(ent, finishednotify) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11fe
+// Checksum 0x0, Offset: 0x12e9
 // Size: 0x8e
 function function_fceaa660b4da1c2b(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:xc1>");
+        assertmsg("<dev string:x1c>");
         return 0;
     }
     weaponname = undefined;
@@ -459,11 +459,11 @@ function function_fceaa660b4da1c2b(weapon) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1295
+// Checksum 0x0, Offset: 0x1380
 // Size: 0x28
 function issuperweapon(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:xf8>");
+        assertmsg("isSuperWeapon called without a weapon name passed in");
         return false;
     }
     return isdefined(getsuperrefforsuperweapon(weapon));
@@ -471,7 +471,7 @@ function issuperweapon(weapon) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c6
+// Checksum 0x0, Offset: 0x13b1
 // Size: 0xa0
 function getsuperrefforsuperweapon(weapon) {
     if (!isdefined(level.superglobals)) {
@@ -503,7 +503,7 @@ function getsuperrefforsuperweapon(weapon) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x136f
+// Checksum 0x0, Offset: 0x145a
 // Size: 0x82
 function getsuperrefforsuperuseweapon(weapon) {
     if (!isstring(weapon)) {
@@ -517,7 +517,7 @@ function getsuperrefforsuperuseweapon(weapon) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13fa
+// Checksum 0x0, Offset: 0x14e5
 // Size: 0x5b
 function getsuperrefforsuperoffhand(weapon) {
     if (!isstring(weapon)) {
@@ -531,7 +531,7 @@ function getsuperrefforsuperoffhand(weapon) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x145e
+// Checksum 0x0, Offset: 0x1549
 // Size: 0x74
 function getsuperrefforsuperextraweapon(weapon) {
     if (!isstring(weapon)) {
@@ -545,8 +545,8 @@ function getsuperrefforsuperextraweapon(weapon) {
 
 // Namespace superDeploy / namespace_49492dacb8708592
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x14db
-// Size: 0x13c
+// Checksum 0x0, Offset: 0x15c6
+// Size: 0x13d
 function function_e92aaca7f2fd7e8(superinfo, firednotify, var_4ef1099365450bae, weaponfiredcallback) {
     level endon("game_ended");
     self endon("disconnect");
@@ -574,7 +574,7 @@ function function_e92aaca7f2fd7e8(superinfo, firednotify, var_4ef1099365450bae, 
             if (isdefined(weaponfiredcallback)) {
                 firedresult = [[ weaponfiredcallback ]](superinfo, var_a9dd4e8c5e5c7178, firedprojectile);
                 if (!isdefined(firedresult)) {
-                    assertex(isdefined(firedresult), "<dev string:x130>");
+                    assertex(isdefined(firedresult), "weaponFiredCallback returned undefined, please make sure it returns success || failure || continue");
                     return false;
                 } else if (firedresult == "failure") {
                     return false;
@@ -583,7 +583,7 @@ function function_e92aaca7f2fd7e8(superinfo, firednotify, var_4ef1099365450bae, 
                 } else if (firedresult == "success") {
                     return true;
                 } else {
-                    assertmsg("<dev string:x196>");
+                    assertmsg("weaponFiredCallback returned an unrecognized string value.  Please make sure it returns success || failure || continue");
                     return false;
                 }
             }

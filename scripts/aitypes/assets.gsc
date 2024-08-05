@@ -6,7 +6,7 @@
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67e
+// Checksum 0x0, Offset: 0x5dd
 // Size: 0x2
 function main() {
     
@@ -14,7 +14,7 @@ function main() {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x688
+// Checksum 0x0, Offset: 0x5e7
 // Size: 0x153
 function soldier() {
     if (!function_fca40a005d4059d6("soldier")) {
@@ -40,7 +40,7 @@ function soldier() {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e3
+// Checksum 0x0, Offset: 0x742
 // Size: 0x2
 function civilian() {
     
@@ -48,7 +48,7 @@ function civilian() {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ed
+// Checksum 0x0, Offset: 0x74c
 // Size: 0x2
 function dog() {
     
@@ -56,7 +56,7 @@ function dog() {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7
+// Checksum 0x0, Offset: 0x756
 // Size: 0x81
 function juggernaut() {
     if (!function_fca40a005d4059d6("juggernaut")) {
@@ -72,7 +72,7 @@ function juggernaut() {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x880
+// Checksum 0x0, Offset: 0x7df
 // Size: 0x9a
 function suicidebomber() {
     if (!function_fca40a005d4059d6("suicidebomber")) {
@@ -90,7 +90,7 @@ function suicidebomber() {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x922
+// Checksum 0x0, Offset: 0x881
 // Size: 0x1c
 function zombie() {
     if (!function_fca40a005d4059d6("zombie")) {
@@ -100,7 +100,7 @@ function zombie() {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x946
+// Checksum 0x0, Offset: 0x8a5
 // Size: 0x73
 function function_89bd0a0f1b23fe8d(type) {
     if (!isdefined(level.var_7d310f9c5a785dcb)) {
@@ -120,7 +120,7 @@ function function_89bd0a0f1b23fe8d(type) {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9c1
+// Checksum 0x0, Offset: 0x920
 // Size: 0x25
 function function_fca40a005d4059d6(type) {
     return isdefined(level.var_7d310f9c5a785dcb) && istrue(level.var_7d310f9c5a785dcb[type]);
@@ -128,7 +128,7 @@ function function_fca40a005d4059d6(type) {
 
 // Namespace assets / scripts\aitypes\assets
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ef
+// Checksum 0x0, Offset: 0x94e
 // Size: 0xcb
 function function_7d79a3fa97a020cc() {
     if (isdefined(level.g_effect) && isdefined(level.g_effect["human_gib_fullbody"])) {

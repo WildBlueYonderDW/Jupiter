@@ -8,7 +8,7 @@
 
 // Namespace gesture / scripts\asm\gesture
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x23d
+// Checksum 0x0, Offset: 0x1f4
 // Size: 0x38
 function ai_request_gesture(gesture, target_obj, timeout_ms, notify_name) {
     if (!isdefined(timeout_ms)) {
@@ -19,7 +19,7 @@ function ai_request_gesture(gesture, target_obj, timeout_ms, notify_name) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27d
+// Checksum 0x0, Offset: 0x234
 // Size: 0x73
 function ai_cancel_gesture() {
     if (!isdefined(self._blackboard.gesturerequest)) {
@@ -33,7 +33,7 @@ function ai_cancel_gesture() {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f8
+// Checksum 0x0, Offset: 0x2af
 // Size: 0x19e
 function handlegesturenotetrack(flagname) {
     notes = self waittill(flagname);
@@ -57,7 +57,7 @@ function handlegesturenotetrack(flagname) {
         } else if (note == "finish_early") {
             /#
                 if (getdvarint(@"hash_7528066c9678d0a0", 0) == 1) {
-                    print3d(self.origin + (0, 0, 52), "<dev string:x2d>", (1, 1, 1), 1, 0.5, 20);
+                    print3d(self.origin + (0, 0, 52), "<dev string:x2a>", (1, 1, 1), 1, 0.5, 20);
                 }
             #/
             self._blackboard.partialgestureplaying = 0;
@@ -74,8 +74,8 @@ function handlegesturenotetrack(flagname) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x49f
-// Size: 0x44
+// Checksum 0x0, Offset: 0x456
+// Size: 0x43
 function gesturedonotetracks(animlength) {
     self endon("gesture_timeout");
     thread gesturenotetracktimeoutthread(animlength);
@@ -90,7 +90,7 @@ function gesturedonotetracks(animlength) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb
+// Checksum 0x0, Offset: 0x4a1
 // Size: 0x1c
 function gesturenotetracktimeoutthread(timeout_sec) {
     self endon("gesture_finished");
@@ -100,12 +100,12 @@ function gesturenotetracktimeoutthread(timeout_sec) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x50f
-// Size: 0x340
+// Checksum 0x0, Offset: 0x4c5
+// Size: 0x342
 function gesture(asmname) {
     self endon("asm_terminated");
     self endon("death");
-    assertex(!isdefined(self._blackboard.gesturerequest), "<dev string:x3d>");
+    assertex(!isdefined(self._blackboard.gesturerequest), "Gesture requested before gesture service started");
     while (true) {
         if (!isdefined(self._blackboard.gesturerequest)) {
             self waittill("gesture_requested");
@@ -139,7 +139,7 @@ function gesture(asmname) {
             /#
                 if (getdvarint(@"hash_7528066c9678d0a0", 0) == 1) {
                     anim_length = getanimlength(gesture_anim);
-                    print3d(self.origin + (0, 0, 72), self._blackboard.gesturerequest.gesture + "<dev string:x71>", (1, 1, 1), 1, 1, int(anim_length * 20));
+                    print3d(self.origin + (0, 0, 72), self._blackboard.gesturerequest.gesture + "<dev string:x37>", (1, 1, 1), 1, 1, int(anim_length * 20));
                 }
             #/
             self.gunposeoverride_internal = "disable";
@@ -167,8 +167,8 @@ function gesture(asmname) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x857
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x80f
+// Size: 0x89
 function gesture_should_disable_lookat(gesture) {
     var_a0ac7796b5ece550 = ["casual_point", "military_point", "beckon", "nvg_on", "nvg_off", "wrist_com_lower", "wrist_com_raise"];
     if (isdefined(self._blackboard.civilianfocuscurvalue) && gesture == "beckon") {
@@ -182,7 +182,7 @@ function gesture_should_disable_lookat(gesture) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ea
+// Checksum 0x0, Offset: 0x8a1
 // Size: 0x162
 function ai_request_gesture_internal(gesture, target_object, timeout_ms, notify_name) {
     if (isdefined(self._blackboard.gesturerequest)) {
@@ -190,7 +190,7 @@ function ai_request_gesture_internal(gesture, target_object, timeout_ms, notify_
     }
     /#
         if (getdvarint(@"hash_7528066c9678d0a0", 0) == 1) {
-            print3d(self.origin + (0, 0, 84), gesture + "<dev string:x7d>", (1, 1, 1), 1, 1, int(timeout_ms / 50));
+            print3d(self.origin + (0, 0, 84), gesture + "<dev string:x40>", (1, 1, 1), 1, 1, int(timeout_ms / 50));
         }
     #/
     self._blackboard.gesturerequest = spawnstruct();
@@ -204,7 +204,7 @@ function ai_request_gesture_internal(gesture, target_object, timeout_ms, notify_
 
 // Namespace gesture / scripts\asm\gesture
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa54
+// Checksum 0x0, Offset: 0xa0b
 // Size: 0x18
 function civisfocusingleft() {
     return self._blackboard.civilianfocusstate == 3;
@@ -212,7 +212,7 @@ function civisfocusingleft() {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa75
+// Checksum 0x0, Offset: 0xa2c
 // Size: 0x18
 function civisfocusingright() {
     return self._blackboard.civilianfocusstate == 4;
@@ -220,8 +220,8 @@ function civisfocusingright() {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa96
-// Size: 0x1a4
+// Checksum 0x0, Offset: 0xa4d
+// Size: 0x1a7
 function get_gesture_alias(gesture, gesture_target) {
     if (isdefined(self._blackboard.civilianfocuscurvalue)) {
         if (gesture == "beckon") {
@@ -257,7 +257,7 @@ function get_gesture_alias(gesture, gesture_target) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc43
+// Checksum 0x0, Offset: 0xbfd
 // Size: 0x78
 function ai_finish_gesture() {
     assert(isdefined(self._blackboard.gesturerequest));
@@ -269,8 +269,8 @@ function ai_finish_gesture() {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc3
-// Size: 0x74
+// Checksum 0x0, Offset: 0xc7d
+// Size: 0x73
 function chooseanim_gesture(asmname, statename, params) {
     assert(isdefined(self._blackboard.gesturerequest));
     gesture_anim = asm_lookupanimfromalias(statename, self._blackboard.gesturerequest.latestalias);
@@ -280,8 +280,8 @@ function chooseanim_gesture(asmname, statename, params) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd40
-// Size: 0x1c9
+// Checksum 0x0, Offset: 0xcf9
+// Size: 0x1ca
 function playcoveranim_gesture(asmname, statename, params) {
     self endon(statename + "_finished");
     self._blackboard.activegesturenotify = self._blackboard.gesturerequest.notifyname;
@@ -295,7 +295,7 @@ function playcoveranim_gesture(asmname, statename, params) {
     }
     /#
         if (getdvarint(@"hash_7528066c9678d0a0", 0) == 1) {
-            print3d(self.origin + (0, 0, 72), self._blackboard.gesturerequest.gesture + "<dev string:x71>", (1, 1, 1), 1, 1, 80);
+            print3d(self.origin + (0, 0, 72), self._blackboard.gesturerequest.gesture + "<dev string:x37>", (1, 1, 1), 1, 1, 80);
         }
     #/
     self._blackboard.gesturerequest = undefined;
@@ -311,7 +311,7 @@ function playcoveranim_gesture(asmname, statename, params) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xf11
+// Checksum 0x0, Offset: 0xecb
 // Size: 0x60
 function cleargestureanim(asmname, statename, params) {
     if (isdefined(self._blackboard.activegesturenotify)) {
@@ -322,7 +322,7 @@ function cleargestureanim(asmname, statename, params) {
 
 // Namespace gesture / scripts\asm\gesture
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xf79
+// Checksum 0x0, Offset: 0xf33
 // Size: 0xea
 function gesture_finishearly(asmname, statename, tostatename, gesture) {
     if (bb_moverequested() && istrue(self.gestureinterruptible)) {

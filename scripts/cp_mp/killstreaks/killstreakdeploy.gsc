@@ -14,8 +14,8 @@
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x92b
-// Size: 0x266
+// Checksum 0x0, Offset: 0x98a
+// Size: 0x268
 function candeploykillstreak(streakinfo, deployweaponobj, var_818a18147626dfbf) {
     if (!isdefined(var_818a18147626dfbf)) {
         var_818a18147626dfbf = 1;
@@ -33,7 +33,7 @@ function candeploykillstreak(streakinfo, deployweaponobj, var_818a18147626dfbf) 
         }
     } else if (!killstreakcanbeusedatroundstart(streakinfo.streakname)) {
         if (isdefined(level.killstreakrounddelay) && level.killstreakrounddelay > 0) {
-            assertex(level.graceperiod >= level.killstreakrounddelay, "<dev string:x1c>" + level.graceperiod + "<dev string:x33>" + level.killstreakrounddelay);
+            assertex(level.graceperiod >= level.killstreakrounddelay, "level.gracePeriod: " + level.graceperiod + " must be greater or equal to level.killstreakRoundDelay: " + level.killstreakrounddelay);
             if (level.graceperiod - level.ingraceperiod < level.killstreakrounddelay) {
                 optionalparam = level.killstreakrounddelay - level.graceperiod - level.ingraceperiod;
                 if (issharedfuncdefined("hud", "showErrorMessage")) {
@@ -66,10 +66,10 @@ function candeploykillstreak(streakinfo, deployweaponobj, var_818a18147626dfbf) 
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb9a
+// Checksum 0x0, Offset: 0xbfb
 // Size: 0x105
 function ondeploystart(streakinfo) {
-    assertex(!istrue(streakinfo.isdeploying), "<dev string:x70>" + streakinfo.streakname + "<dev string:x84>");
+    assertex(!istrue(streakinfo.isdeploying), "Scripter Error: " + streakinfo.streakname + " trying to deploy while it's already deploying.");
     streakinfo.isdeploying = 1;
     streakinfo.owner.isdeploying = 1;
     streakinfo.owner setclientomnvar("ui_mobile_killstreak_is_deploying", 1);
@@ -86,14 +86,12 @@ function ondeploystart(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xca7
-// Size: 0x11d
+// Checksum 0x0, Offset: 0xd08
+// Size: 0x109
 function ondeployfinished(streakinfo) {
     streakinfo.isdeploying = 0;
     streakinfo.owner.isdeploying = 0;
-    if (streakinfo.streakname != "missile_drone") {
-        streakinfo.owner setclientomnvar("ui_mobile_killstreak_is_deploying", 0);
-    }
+    streakinfo.owner setclientomnvar("ui_mobile_killstreak_is_deploying", 0);
     streakinfo.owner val::reset_all("deploy");
     if (isdefined(level.var_bcf8ebbb820ae06d)) {
         thread [[ level.var_bcf8ebbb820ae06d ]](streakinfo);
@@ -115,7 +113,7 @@ function ondeployfinished(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdcc
+// Checksum 0x0, Offset: 0xe19
 // Size: 0xa
 function streakdeploy_cancelalldeployments() {
     self notify("cancel_all_killstreak_deployments");
@@ -123,7 +121,7 @@ function streakdeploy_cancelalldeployments() {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdde
+// Checksum 0x0, Offset: 0xe2b
 // Size: 0xe9
 function streakdeploy_dogesturedeploy(streakinfo, gestureweaponobj) {
     level endon("game_ended");
@@ -131,7 +129,7 @@ function streakdeploy_dogesturedeploy(streakinfo, gestureweaponobj) {
     if (!candeploykillstreak(streakinfo, gestureweaponobj)) {
         return 0;
     }
-    assertex(isdefined(gestureweaponobj) && gestureweaponobj.basename != "<dev string:xb7>", "<dev string:xbf>" + streakinfo.streakname + "<dev string:xcf>");
+    assertex(isdefined(gestureweaponobj) && gestureweaponobj.basename != "none", "Killstreak \"" + streakinfo.streakname + "\" trying to do gesture deploy, but has invalid gesture weapon");
     ondeploystart(streakinfo);
     thread watchforcancelduringgesture(streakinfo, gestureweaponobj);
     result = giveandfireoffhandreliable(gestureweaponobj);
@@ -149,7 +147,7 @@ function streakdeploy_dogesturedeploy(streakinfo, gestureweaponobj) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xed0
+// Checksum 0x0, Offset: 0xf1d
 // Size: 0x3f
 function watchforcancelduringgesture(streakinfo, gestureweaponobj) {
     level endon("game_ended");
@@ -162,7 +160,7 @@ function watchforcancelduringgesture(streakinfo, gestureweaponobj) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf17
+// Checksum 0x0, Offset: 0xf64
 // Size: 0x29
 function watchlaststandend(gestureweaponobj) {
     level endon("game_ended");
@@ -173,7 +171,7 @@ function watchlaststandend(gestureweaponobj) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf48
+// Checksum 0x0, Offset: 0xf95
 // Size: 0x3a
 function function_44d17dbe4db72ea9(streakinfo) {
     self endon("cancel_all_killstreak_deployments");
@@ -187,14 +185,14 @@ function function_44d17dbe4db72ea9(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8a
+// Checksum 0x0, Offset: 0xfd7
 // Size: 0xda
 function streakdeploy_doweaponswitchdeploy(streakinfo, weaponobj, keepweapon, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b) {
     if (!candeploykillstreak(streakinfo, weaponobj)) {
         return false;
     }
     ondeploystart(streakinfo);
-    assertex(isdefined(weaponobj) && weaponobj.basename != "<dev string:xb7>", "<dev string:xbf>" + streakinfo.streakname + "<dev string:x110>");
+    assertex(isdefined(weaponobj) && weaponobj.basename != "none", "Killstreak \"" + streakinfo.streakname + "\" trying to do a weapon-switch deploy, but has an invalid weapon");
     cleanupwaitfunc = ter_op(istrue(keepweapon), &waituntilfinishedwithdeployweapon, undefined);
     switchresult = switchtodeployweapon(weaponobj, streakinfo, cleanupwaitfunc, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b);
     if (!istrue(switchresult)) {
@@ -207,7 +205,7 @@ function streakdeploy_doweaponswitchdeploy(streakinfo, weaponobj, keepweapon, va
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x106d
+// Checksum 0x0, Offset: 0x10ba
 // Size: 0x165
 function streakdeploy_doweaponfireddeploy(streakinfo, weaponobj, firednotify, var_bdffc63c4171c131, var_8fd4d93dd619da88, weaponfiredcallback, var_91f739c2c51347d4, var_d55d8445518099b) {
     level endon("game_ended");
@@ -217,7 +215,7 @@ function streakdeploy_doweaponfireddeploy(streakinfo, weaponobj, firednotify, va
         return false;
     }
     ondeploystart(streakinfo);
-    assertex(isdefined(weaponobj) && weaponobj.basename != "<dev string:xb7>", "<dev string:xbf>" + streakinfo.streakname + "<dev string:x154>");
+    assertex(isdefined(weaponobj) && weaponobj.basename != "none", "Killstreak \"" + streakinfo.streakname + "\" trying to do a weapon-fired deploy, but has an invalid weapon");
     switchresult = switchtodeployweapon(weaponobj, streakinfo, &waituntilfinishedwithdeployweapon, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b);
     if (!istrue(switchresult)) {
         ondeployfinished(streakinfo);
@@ -238,8 +236,8 @@ function streakdeploy_doweaponfireddeploy(streakinfo, weaponobj, firednotify, va
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x11db
-// Size: 0x241
+// Checksum 0x0, Offset: 0x1228
+// Size: 0x247
 function streakdeploy_doweapontabletdeploy(streakinfo, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, var_f6a32dcc4b19aad9, var_67a06b4ea269058e, var_afe464c242489272, var_818a18147626dfbf, var_c2a00d4f077ebd87) {
     level endon("game_ended");
     self endon("disconnect");
@@ -297,7 +295,7 @@ function streakdeploy_doweapontabletdeploy(streakinfo, var_bdffc63c4171c131, var
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1425
+// Checksum 0x0, Offset: 0x1478
 // Size: 0x57
 function streakdeploy_playtabletdeploydialog(streakinfo) {
     self endon("death_or_disconnect");
@@ -310,8 +308,8 @@ function streakdeploy_playtabletdeploydialog(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x1484
-// Size: 0x133
+// Checksum 0x0, Offset: 0x14d7
+// Size: 0x135
 function streakdeploy_dothrowbackmarkerdeploy(streakinfo, weaponoverride, var_bdffc63c4171c131, var_8fd4d93dd619da88, weaponfiredcallback, var_91f739c2c51347d4, var_d55d8445518099b) {
     level endon("game_ended");
     self endon("disconnect");
@@ -326,7 +324,7 @@ function streakdeploy_dothrowbackmarkerdeploy(streakinfo, weaponoverride, var_bd
         return false;
     }
     ondeploystart(streakinfo);
-    assertex(isdefined(weaponobj) && weaponobj.basename != "<dev string:xb7>", "<dev string:xbf>" + streakinfo.streakname + "<dev string:x154>");
+    assertex(isdefined(weaponobj) && weaponobj.basename != "none", "Killstreak \"" + streakinfo.streakname + "\" trying to do a weapon-fired deploy, but has an invalid weapon");
     switchresult = switchtodeployweapon(weaponobj, streakinfo, &waituntilfinishedwithdeployweapon, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b);
     if (!istrue(switchresult)) {
         ondeployfinished(streakinfo);
@@ -339,7 +337,7 @@ function streakdeploy_dothrowbackmarkerdeploy(streakinfo, weaponoverride, var_bd
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x15c0
+// Checksum 0x0, Offset: 0x1615
 // Size: 0x176
 function switchtodeployweapon(deployweaponobj, streakinfo, cleanupwaitfunc, var_bdffc63c4171c131, var_8fd4d93dd619da88, var_91f739c2c51347d4, var_d55d8445518099b, skipfirstraise) {
     level endon("game_ended");
@@ -367,7 +365,7 @@ function switchtodeployweapon(deployweaponobj, streakinfo, cleanupwaitfunc, var_
     }
     self dlog_recordplayerevent("dlog_event_killstreak_tablet", ["file_line_info", "After switchToDeployWeapon"]);
     thread watchforcancelduringweaponswitch(streakinfo, deployweaponobj);
-    thread function_7605a5b4c0a6e117(streakinfo, deployweaponobj);
+    thread watchformeleeduringweaponswitch(streakinfo, deployweaponobj);
     switchresult = domonitoredweaponswitch(deployweaponobj, isbot(self, 1), streakinfo.var_9d7c6ee83f507a26);
     streakinfo notify("deploy_weapon_switch_ended");
     if (isdefined(var_8fd4d93dd619da88)) {
@@ -386,7 +384,7 @@ function switchtodeployweapon(deployweaponobj, streakinfo, cleanupwaitfunc, var_
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x173f
+// Checksum 0x0, Offset: 0x1794
 // Size: 0x3c
 function callweapongivencallback(streakinfo, var_bdffc63c4171c131) {
     level endon("game_ended");
@@ -401,7 +399,7 @@ function callweapongivencallback(streakinfo, var_bdffc63c4171c131) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1784
+// Checksum 0x0, Offset: 0x17d9
 // Size: 0x49
 function watchforcancelduringweaponswitch(streakinfo, deployweaponobj) {
     level endon("game_ended");
@@ -416,18 +414,14 @@ function watchforcancelduringweaponswitch(streakinfo, deployweaponobj) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17d5
-// Size: 0x93
-function function_7605a5b4c0a6e117(streakinfo, deployweaponobj) {
+// Checksum 0x0, Offset: 0x182a
+// Size: 0x6b
+function watchformeleeduringweaponswitch(streakinfo, deployweaponobj) {
     level endon("game_ended");
     self endon("disconnect");
     self endon("death");
     streakinfo endon("deploy_weapon_switch_ended");
-    if (streakinfo.streakname == "") {
-        self waittill("melee_swipe_start");
-    } else {
-        waittill_any_2("melee_swipe_start", "br_pickup_scriptable");
-    }
+    self waittill("melee_swipe_start");
     if (isswitchingtoweaponwithmonitoring(deployweaponobj)) {
         abortmonitoredweaponswitch(deployweaponobj);
         return;
@@ -438,8 +432,8 @@ function function_7605a5b4c0a6e117(streakinfo, deployweaponobj) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1870
-// Size: 0x155
+// Checksum 0x0, Offset: 0x189d
+// Size: 0x156
 function watchdeployweaponfired(streakinfo, firednotify, var_4ef1099365450bae, weaponfiredcallback) {
     level endon("game_ended");
     self endon("disconnect");
@@ -467,7 +461,7 @@ function watchdeployweaponfired(streakinfo, firednotify, var_4ef1099365450bae, w
             if (isdefined(weaponfiredcallback)) {
                 firedresult = [[ weaponfiredcallback ]](streakinfo, var_a9dd4e8c5e5c7178, firedprojectile);
                 if (!isdefined(firedresult)) {
-                    assertex(isdefined(firedresult), "<dev string:x197>");
+                    assertex(isdefined(firedresult), "weaponFiredCallback returned undefined, please make sure it returns success || failure || continue");
                     return false;
                 } else if (firedresult == "failure") {
                     return false;
@@ -479,7 +473,7 @@ function watchdeployweaponfired(streakinfo, firednotify, var_4ef1099365450bae, w
                 } else if (firedresult == "success") {
                     return true;
                 } else {
-                    assertmsg("<dev string:x1fd>");
+                    assertmsg("weaponFiredCallback returned an unrecognized string value.  Please make sure it returns success || failure || continue");
                     return false;
                 }
             }
@@ -491,7 +485,7 @@ function watchdeployweaponfired(streakinfo, firednotify, var_4ef1099365450bae, w
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19ce
+// Checksum 0x0, Offset: 0x19fc
 // Size: 0x1e9
 function watchdeployweaponanimtransition(streakinfo, animlength, var_67a06b4ea269058e) {
     level endon("game_ended");
@@ -536,7 +530,7 @@ function watchdeployweaponanimtransition(streakinfo, animlength, var_67a06b4ea26
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bc0
+// Checksum 0x0, Offset: 0x1bee
 // Size: 0x26
 function unfreezecontrolsonroundend() {
     self endon("disconnect");
@@ -547,8 +541,8 @@ function unfreezecontrolsonroundend() {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1bee
-// Size: 0xc3
+// Checksum 0x0, Offset: 0x1c1c
+// Size: 0xc2
 function private startweapontabletfadetransition(timedelay, streakinfo) {
     self endon("disconnect");
     result = waittill_any_timeout_1(timedelay, "cancel_remote_sequence");
@@ -570,7 +564,7 @@ function private startweapontabletfadetransition(timedelay, streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cb9
+// Checksum 0x0, Offset: 0x1ce6
 // Size: 0xa4
 function watchweapontabletstop(streakinfo) {
     level endon("game_ended");
@@ -596,8 +590,8 @@ function watchweapontabletstop(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d65
-// Size: 0xce
+// Checksum 0x0, Offset: 0x1d92
+// Size: 0xcd
 function watchweapontabletcallinpos(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -629,7 +623,7 @@ function watchweapontabletcallinpos(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e3b
+// Checksum 0x0, Offset: 0x1e67
 // Size: 0x13
 function function_67f13db1409ec06d(streakinfo) {
     waituntilfinishedwithdeployweapon(streakinfo);
@@ -637,8 +631,8 @@ function function_67f13db1409ec06d(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e56
-// Size: 0x86
+// Checksum 0x0, Offset: 0x1e82
+// Size: 0x85
 function private waituntilfinishedwithdeployweapon(streakinfo) {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -659,7 +653,7 @@ function private waituntilfinishedwithdeployweapon(streakinfo) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x1ee4
+// Checksum 0x0, Offset: 0x1f0f
 // Size: 0x27
 function private function_2bff7042844c915b(ent, finishednotify) {
     self endon("killstreak_really_finished_with_deploy_weapon");
@@ -669,8 +663,8 @@ function private function_2bff7042844c915b(ent, finishednotify) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x1f13
-// Size: 0x1ae
+// Checksum 0x0, Offset: 0x1f3e
+// Size: 0x1af
 function private cleanupdeployweapon(switchresult, streakinfo, weaponobj, cleanupwaitfunc, var_91f739c2c51347d4, var_d55d8445518099b) {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -711,8 +705,8 @@ function private cleanupdeployweapon(switchresult, streakinfo, weaponobj, cleanu
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c9
-// Size: 0x54
+// Checksum 0x0, Offset: 0x20f5
+// Size: 0x53
 function getridofkillstreakdeployweapon(weaponobj) {
     getridofweapon(weaponobj, istrue(self.var_4a2f2f50a9020e2e));
     self.var_4a2f2f50a9020e2e = undefined;
@@ -724,27 +718,12 @@ function getridofkillstreakdeployweapon(weaponobj) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2125
+// Checksum 0x0, Offset: 0x2150
 // Size: 0x61
-function private function_1a815b06ac8daec6(objweapon) {
+function private function_a0cee45d6a20e17f(objweapon) {
     currentweapon = self getcurrentweapon().basename;
     killstreakweapon = objweapon.basename;
-    if (isdefined(currentweapon) && function_b752eaae4d806c4c(currentweapon) && isdefined(killstreakweapon) && !function_b752eaae4d806c4c(killstreakweapon)) {
-        return true;
-    }
-    return false;
-}
-
-// Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x218f
-// Size: 0x48
-function function_b752eaae4d806c4c(currentweapon) {
-    switch (currentweapon) {
-    case #"hash_1898ea54a0bc6404":
-    case #"hash_5fee2c6097070f10":
-    case #"hash_879b8ea58093f02c":
-    case #"hash_e03f05f611764899": 
+    if (isdefined(currentweapon) && currentweapon == "deploy_sentry_mp" && isdefined(killstreakweapon) && killstreakweapon != "deploy_sentry_mp") {
         return true;
     }
     return false;
@@ -752,19 +731,16 @@ function function_b752eaae4d806c4c(currentweapon) {
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e0
-// Size: 0x33f
+// Checksum 0x0, Offset: 0x21ba
+// Size: 0x2a4
 function candeploykillstreakweapon(streakinfo, objweapon) {
-    if (self getcurrentweapon().basename == "none") {
-        waitframe();
-    }
     if (!scripts\cp_mp\utility\game_utility::isbrstylegametype() && istrue(level.gameended)) {
         return function_9c92daea59d1e8cf();
     }
     if (isdefined(objweapon) && self hasweapon(objweapon)) {
         return function_9c92daea59d1e8cf();
     }
-    if (isdefined(objweapon) && function_1a815b06ac8daec6(objweapon)) {
+    if (isdefined(objweapon) && function_a0cee45d6a20e17f(objweapon)) {
         return function_9c92daea59d1e8cf();
     }
     if (!val::get("weapon_switch") || !val::get("weapon")) {
@@ -788,9 +764,6 @@ function candeploykillstreakweapon(streakinfo, objweapon) {
         return function_9c92daea59d1e8cf();
     }
     if (self ismantling()) {
-        return function_9c92daea59d1e8cf();
-    }
-    if (self ishanging()) {
         return function_9c92daea59d1e8cf();
     }
     if (isswimmingunderwater()) {
@@ -820,19 +793,11 @@ function candeploykillstreakweapon(streakinfo, objweapon) {
     if (isdefined(level.var_ec09dd198521feea) && level.var_ec09dd198521feea == 1 && isdefined(level.var_9fb437a5f1d70130) && array_contains(level.var_9fb437a5f1d70130, streakinfo.streakname)) {
         return "MP/CANNOT_USE_GENERIC";
     }
-    if (isdefined(streakinfo) && streakinfo.streakname == "juggernaut" && getdvarint(@"hash_d2d7564ba2f2f9d", 0)) {
-        return function_9c92daea59d1e8cf();
-    }
-    if (utility::issharedfuncdefined(streakinfo.streakname, "canUseAdditionalConditions")) {
-        if (!self [[ utility::getsharedfunc(streakinfo.streakname, "canUseAdditionalConditions") ]](streakinfo)) {
-            return "KILLSTREAKS/CANNOT_BE_USED";
-        }
-    }
 }
 
 // Namespace killstreakdeploy / scripts\cp_mp\killstreaks\killstreakdeploy
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2528
+// Checksum 0x0, Offset: 0x2467
 // Size: 0x76
 function function_9c92daea59d1e8cf(messagetype) {
     if (isdefined(messagetype) && messagetype == "oob") {

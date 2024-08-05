@@ -4,7 +4,7 @@
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x357
+// Checksum 0x0, Offset: 0x298
 // Size: 0x184
 function gettweakabledvarvalue(category, name) {
     switch (category) {
@@ -43,8 +43,8 @@ function gettweakabledvarvalue(category, name) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e4
-// Size: 0x174
+// Checksum 0x0, Offset: 0x425
+// Size: 0x173
 function gettweakabledvar(category, name) {
     switch (category) {
     case #"hash_8e9d608fb4870733": 
@@ -81,8 +81,8 @@ function gettweakabledvar(category, name) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x661
-// Size: 0x1e7
+// Checksum 0x0, Offset: 0x5a1
+// Size: 0x1e8
 function gettweakablevalue(category, name) {
     switch (category) {
     case #"hash_8e9d608fb4870733": 
@@ -114,9 +114,9 @@ function gettweakablevalue(category, name) {
         break;
     }
     /#
-        if (scripts\engine\utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x24>")) {
-            gametype = [[ scripts\engine\utility::getsharedfunc("<dev string:x1c>", "<dev string:x24>") ]]();
-            overridedvar = hashcat(@"hash_d98c82b5a26dc973", gametype, "<dev string:x33>", category, "<dev string:x33>", name);
+        if (scripts\engine\utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x21>")) {
+            gametype = [[ scripts\engine\utility::getsharedfunc("<dev string:x1c>", "<dev string:x21>") ]]();
+            overridedvar = hashcat(@"hash_d98c82b5a26dc973", gametype, "<dev string:x2d>", category, "<dev string:x2d>", name);
             if (isstring(value)) {
                 return getdvar(overridedvar, value);
             } else {
@@ -130,8 +130,8 @@ function gettweakablevalue(category, name) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x851
-// Size: 0x174
+// Checksum 0x0, Offset: 0x792
+// Size: 0x173
 function gettweakablelastvalue(category, name) {
     switch (category) {
     case #"hash_8e9d608fb4870733": 
@@ -168,8 +168,8 @@ function gettweakablelastvalue(category, name) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ce
-// Size: 0x178
+// Checksum 0x0, Offset: 0x90e
+// Size: 0x177
 function settweakabledvar(category, name, value) {
     switch (category) {
     case #"hash_8e9d608fb4870733": 
@@ -205,7 +205,7 @@ function settweakabledvar(category, name, value) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4e
+// Checksum 0x0, Offset: 0xa8d
 // Size: 0x163
 function settweakablevalue(category, name, value) {
     switch (category) {
@@ -240,7 +240,7 @@ function settweakablevalue(category, name, value) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb9
+// Checksum 0x0, Offset: 0xbf8
 // Size: 0x163
 function settweakablelastvalue(category, name, value) {
     switch (category) {
@@ -275,7 +275,7 @@ function settweakablelastvalue(category, name, value) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xe24
+// Checksum 0x0, Offset: 0xd63
 // Size: 0x3ea
 function registertweakable(category, name, dvar, value) {
     if (isstring(value)) {
@@ -353,8 +353,8 @@ function registertweakable(category, name, dvar, value) {
 
 // Namespace tweakables / scripts\mp\tweakables
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1216
-// Size: 0x47f
+// Checksum 0x0, Offset: 0x1155
+// Size: 0x477
 function init() {
     level.clienttweakables = [];
     level.tweakablesinitialized = 1;
@@ -404,6 +404,5 @@ function init() {
     registertweakable("hardpoint", "allowhelicopter", @"hash_477cfb1bbabaa927", 1);
     registertweakable("hud", "showobjicons", @"ui_hud_showobjicons", 1);
     setdvar(@"ui_hud_showobjicons", 1);
-    level notify("tweakablesInitialized");
 }
 

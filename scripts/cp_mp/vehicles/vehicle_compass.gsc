@@ -6,8 +6,8 @@
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x106
-// Size: 0x39
+// Checksum 0x0, Offset: 0x220
+// Size: 0x38
 function vehicle_compass_registerinstance(vehicle) {
     leveldata = vehicle_compass_getleveldata();
     leveldata.instances[vehicle getentitynumber()] = vehicle;
@@ -16,8 +16,8 @@ function vehicle_compass_registerinstance(vehicle) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x147
-// Size: 0x2f
+// Checksum 0x0, Offset: 0x260
+// Size: 0x2e
 function vehicle_compass_deregisterinstance(vehicle) {
     leveldata = vehicle_compass_getleveldata();
     leveldata.instances[vehicle getentitynumber()] = undefined;
@@ -25,8 +25,8 @@ function vehicle_compass_deregisterinstance(vehicle) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e
-// Size: 0x48
+// Checksum 0x0, Offset: 0x296
+// Size: 0x47
 function vehicle_compass_instanceisregistered(vehicle) {
     leveldata = vehicle_compass_getleveldata();
     return isdefined(leveldata.instances[vehicle getentitynumber()]) && leveldata.instances[vehicle getentitynumber()] == vehicle;
@@ -34,8 +34,8 @@ function vehicle_compass_instanceisregistered(vehicle) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf
-// Size: 0x81
+// Checksum 0x0, Offset: 0x2e6
+// Size: 0x80
 function vehicle_compass_updatevisibilityforplayer(vehicle, player, var_6ecb77fd1f27c667) {
     leveldata = vehicle_compass_getleveldata();
     if (!leveldata.visibilityisscriptcontrolled) {
@@ -46,7 +46,7 @@ function vehicle_compass_updatevisibilityforplayer(vehicle, player, var_6ecb77fd
     }
     if (!vehicle_compass_instanceisregistered(vehicle)) {
         if (!istrue(var_6ecb77fd1f27c667)) {
-            assertmsg("<dev string:x1c>");
+            assertmsg("vehicle_compass_updateVisibilityForPlayer() called on an unregistered vehicle.");
         }
         return;
     }
@@ -59,8 +59,8 @@ function vehicle_compass_updatevisibilityforplayer(vehicle, player, var_6ecb77fd
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x258
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x36e
+// Size: 0xa3
 function vehicle_compass_updatevisibilityforallplayers(vehicle, var_6ecb77fd1f27c667) {
     leveldata = vehicle_compass_getleveldata();
     if (!leveldata.visibilityisscriptcontrolled) {
@@ -68,7 +68,7 @@ function vehicle_compass_updatevisibilityforallplayers(vehicle, var_6ecb77fd1f27
     }
     if (!vehicle_compass_instanceisregistered(vehicle)) {
         if (!istrue(var_6ecb77fd1f27c667)) {
-            assertmsg("<dev string:x6e>");
+            assertmsg("vehicle_compass_updateVisibilityForAllPlayers() called on an unregistered vehicle.");
         }
         return;
     }
@@ -79,8 +79,8 @@ function vehicle_compass_updatevisibilityforallplayers(vehicle, var_6ecb77fd1f27
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x305
-// Size: 0x82
+// Checksum 0x0, Offset: 0x419
+// Size: 0x80
 function vehicle_compass_updateallvisibilityforplayer(player) {
     leveldata = vehicle_compass_getleveldata();
     if (!istrue(leveldata.visibilityisscriptcontrolled)) {
@@ -93,8 +93,8 @@ function vehicle_compass_updateallvisibilityforplayer(player) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x38f
-// Size: 0x4f
+// Checksum 0x0, Offset: 0x4a1
+// Size: 0x4e
 function vehicle_compass_shouldbevisibletoplayer(vehicle, player) {
     if (issharedfuncdefined("vehicle_compass", "shouldBeVisibleToPlayer")) {
         shouldBeVisibleToPlayer = [[ getsharedfunc("vehicle_compass", "shouldBeVisibleToPlayer") ]](vehicle, player);
@@ -107,8 +107,8 @@ function vehicle_compass_shouldbevisibletoplayer(vehicle, player) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e7
-// Size: 0x81
+// Checksum 0x0, Offset: 0x4f8
+// Size: 0x80
 function vehicle_compass_show(vehicle) {
     leveldata = vehicle_compass_getleveldata();
     if (leveldata.visibilityisscriptcontrolled) {
@@ -126,8 +126,8 @@ function vehicle_compass_show(vehicle) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x470
-// Size: 0x45
+// Checksum 0x0, Offset: 0x580
+// Size: 0x44
 function vehicle_compass_hide(vehicle) {
     leveldata = vehicle_compass_getleveldata();
     leveldata.instances[vehicle getentitynumber()] = undefined;
@@ -138,15 +138,11 @@ function vehicle_compass_hide(vehicle) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bd
-// Size: 0xb8
+// Checksum 0x0, Offset: 0x5cc
+// Size: 0x93
 function vehicle_compass_setteamfriendlyto(vehicle, team) {
-    if (iscp()) {
-        var_1e5f7ff00358bc18 = isdefined(vehicle.riders) && vehicle.riders.size > 0 || isdefined(vehicle.runningtovehicle) && vehicle.runningtovehicle.size > 0;
-        if (!isdefined(team) || team == "neutral" || istrue(vehicle.isempty) && !var_1e5f7ff00358bc18) {
-            team = "none";
-        }
-    } else if (!isdefined(team) || team == "neutral") {
+    var_1e5f7ff00358bc18 = isdefined(vehicle.riders) && vehicle.riders.size > 0 || isdefined(vehicle.runningtovehicle) && vehicle.runningtovehicle.size > 0;
+    if (!isdefined(team) || team == "neutral" || istrue(vehicle.isempty) && !var_1e5f7ff00358bc18) {
         team = "none";
     }
     vehicle setvehicleteam(team);
@@ -154,7 +150,7 @@ function vehicle_compass_setteamfriendlyto(vehicle, team) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x57d
+// Checksum 0x0, Offset: 0x667
 // Size: 0x1b
 function vehicle_compass_setplayerfriendlyto(vehicle, player) {
     vehicle setentityowner(undefined);
@@ -162,11 +158,11 @@ function vehicle_compass_setplayerfriendlyto(vehicle, player) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a0
+// Checksum 0x0, Offset: 0x68a
 // Size: 0xeb
 function vehicle_compass_init() {
-    assertex(isdefined(level.vehicle), "<dev string:xc4>");
-    assertex(!isdefined(level.vehicle.compass), "<dev string:xfc>");
+    assertex(isdefined(level.vehicle), "vehicle_compass_init() called before vehicle_init().");
+    assertex(!isdefined(level.vehicle.compass), "vehicle_compass_init() should only be called once.");
     leveldata = spawnstruct();
     level.vehicle.compass = leveldata;
     leveldata.instances = [];
@@ -182,16 +178,16 @@ function vehicle_compass_init() {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x693
+// Checksum 0x0, Offset: 0x77d
 // Size: 0x37
 function vehicle_compass_getleveldata() {
-    assertex(isdefined(level.vehicle.compass), "<dev string:x132>");
+    assertex(isdefined(level.vehicle.compass), "vehicle_compass_getLevelData() called before vehicle_compass_init().");
     return level.vehicle.compass;
 }
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6d3
+// Checksum 0x0, Offset: 0x7bd
 // Size: 0x90
 function vehicle_compass_friendlystatuschangedcallback(vehicle, var_965ea26e6eb230b9, var_52312180ef1940be) {
     leveldata = vehicle_compass_getleveldata();
@@ -209,7 +205,7 @@ function vehicle_compass_friendlystatuschangedcallback(vehicle, var_965ea26e6eb2
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x76b
+// Checksum 0x0, Offset: 0x855
 // Size: 0x20
 function vehicle_compass_playerjoinedteamcallback(player) {
     if (!level.teambased) {
@@ -220,7 +216,7 @@ function vehicle_compass_playerjoinedteamcallback(player) {
 
 // Namespace vehicle_compass / scripts\cp_mp\vehicles\vehicle_compass
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x793
+// Checksum 0x0, Offset: 0x87d
 // Size: 0xa
 function vehicle_compass_playerspawnedcallback() {
     vehicle_compass_updateallvisibilityforplayer(self);

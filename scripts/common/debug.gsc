@@ -6,53 +6,53 @@
 
     // Namespace debug / scripts\common\debug
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xaa
-    // Size: 0x96
+    // Checksum 0x0, Offset: 0x82
+    // Size: 0x95
     function function_a2eaafb222316a2(ent) {
         if (!isdefined(ent)) {
             return "<dev string:x1c>";
         }
-        text = "<dev string:x20>" + "<dev string:x25>" + ent getentitynumber();
+        text = "<dev string:x1d>" + "<dev string:x1f>" + ent getentitynumber();
         if (isdefined(ent.classname)) {
-            text = text + "<dev string:x2b>" + ent.classname + "<dev string:x3a>";
+            text = text + "<dev string:x22>" + ent.classname + "<dev string:x2e>";
         }
         if (isdefined(ent.model)) {
-            text = text + "<dev string:x3f>" + ent.model + "<dev string:x3a>";
+            text = text + "<dev string:x30>" + ent.model + "<dev string:x2e>";
         }
-        text += "<dev string:x4a>";
+        text += "<dev string:x38>";
         return text;
     }
 
     // Namespace debug / scripts\common\debug
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x148
+    // Checksum 0x0, Offset: 0x11f
     // Size: 0x9c
     function function_57f3a2089db4a571(corpse) {
         if (getdvarint(@"hash_f806a3434286263f", 0) != 0) {
             level.var_57f3a2089db4a571 = 1;
             if (isdefined(corpse)) {
                 entnum = corpse getentitynumber();
-                cmd = "<dev string:x4f>" + entnum + "<dev string:x6c>" + entnum;
-                adddebugcommand(cmd + "<dev string:x87>");
+                cmd = "<dev string:x3a>" + entnum + "<dev string:x54>" + entnum;
+                adddebugcommand(cmd + "<dev string:x6c>");
             }
             return;
         }
         if (isdefined(level.var_57f3a2089db4a571) && level.var_57f3a2089db4a571) {
-            adddebugcommand("<dev string:x8c>");
+            adddebugcommand("<dev string:x6e>");
             level.var_57f3a2089db4a571 = undefined;
         }
     }
 
     // Namespace debug / scripts\common\debug
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ec
+    // Checksum 0x0, Offset: 0x1c3
     // Size: 0x2f
     function function_600b37e8cf3f2de9(ent) {
         if (!isdefined(ent)) {
             return "<dev string:x1c>";
         }
         if (isent(ent)) {
-            return ("<dev string:x25>" + ent getentitynumber());
+            return ("<dev string:x1f>" + ent getentitynumber());
         }
     }
 
@@ -60,7 +60,7 @@
 
 // Namespace debug / scripts\common\debug
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x223
+// Checksum 0x0, Offset: 0x1fa
 // Size: 0x2c
 function function_e8ee861a699bea81(variable, undefined_return) {
     if (isdefined(variable)) {
@@ -74,7 +74,7 @@ function function_e8ee861a699bea81(variable, undefined_return) {
 
 // Namespace debug / scripts\common\debug
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x258
+// Checksum 0x0, Offset: 0x22f
 // Size: 0x9f
 function function_f9304b74bdeafdb0(button, before_text, after_text) {
     self endon("death");
@@ -87,7 +87,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
     while (true) {
         if (isdefined(before_text)) {
             /#
-                printtoscreen2d(10, 100, "<dev string:xc5>" + button + "<dev string:xcf>" + before_text, (1, 1, 1), 2);
+                printtoscreen2d(10, 100, "<dev string:xa4>" + button + "<dev string:xab>" + before_text, (1, 1, 1), 2);
             #/
         }
         if (self buttonpressed(button)) {
@@ -108,7 +108,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2ff
+    // Checksum 0x0, Offset: 0x2d6
     // Size: 0x107
     function function_7320cd1e4f724899(text, color, duration, x, y, scale) {
         if (!isdefined(level.var_252b0cb021ff0964)) {
@@ -119,7 +119,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
             level thread function_64f6fe11a0db2eef(x, y, scale);
         }
         if (!isdefined(text)) {
-            text = "<dev string:xd8>";
+            text = "<dev string:xb1>";
             return;
         }
         if (!isdefined(color)) {
@@ -136,11 +136,11 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x40e
-    // Size: 0x206
+    // Checksum 0x0, Offset: 0x3e5
+    // Size: 0x20d
     function function_64f6fe11a0db2eef(x, y, scale) {
-        level notify("<dev string:x10e>");
-        level endon("<dev string:x10e>");
+        level notify("<dev string:xe4>");
+        level endon("<dev string:xe4>");
         if (!isdefined(x)) {
             x = getdvarint(@"hash_fd8a279c8461a319", 850);
         }
@@ -182,7 +182,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x61c
+    // Checksum 0x0, Offset: 0x5fa
     // Size: 0x45
     function debug_sphere(target, radius, color, seconds, level_endon, target_endon) {
         level thread function_2061efdf2b62dcdc(target, radius, color, seconds, level_endon, target_endon);
@@ -190,7 +190,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x669
+    // Checksum 0x0, Offset: 0x647
     // Size: 0x10a
     function function_2061efdf2b62dcdc(target, radius, color, seconds, level_endon, target_endon) {
         if (!isdefined(radius)) {
@@ -214,7 +214,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
             level endon(level_endon);
         }
         if (isdefined(target_endon)) {
-            assertex(!isvector(target), "<dev string:x12c>");
+            assertex(!isvector(target), "<dev string:xff>");
             target endon(target_endon);
         }
         while (isdefined(target)) {
@@ -231,7 +231,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 7, eflags: 0x0
-    // Checksum 0x0, Offset: 0x77b
+    // Checksum 0x0, Offset: 0x759
     // Size: 0x4f
     function debug_line(target, target2, color, seconds, level_endon, target_endon, target2_endon) {
         level thread function_43a9c3a623a796bd(target, target2, color, seconds, level_endon, target_endon, target2_endon);
@@ -239,8 +239,8 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 7, eflags: 0x0
-    // Checksum 0x0, Offset: 0x7d2
-    // Size: 0x166
+    // Checksum 0x0, Offset: 0x7b0
+    // Size: 0x167
     function function_43a9c3a623a796bd(target, target2, color, seconds, level_endon, target_endon, target2_endon) {
         target_vector = undefined;
         if (isvector(target)) {
@@ -264,11 +264,11 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
             level endon(level_endon);
         }
         if (isdefined(target_endon)) {
-            assertex(!isvector(target), "<dev string:x12c>");
+            assertex(!isvector(target), "<dev string:xff>");
             target endon(target_endon);
         }
         if (isdefined(target2_endon)) {
-            assertex(!isvector(target2), "<dev string:x12c>");
+            assertex(!isvector(target2), "<dev string:xff>");
             target2 endon(target2_endon);
         }
         while (isdefined(target) && isdefined(target2)) {
@@ -288,7 +288,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x940
+    // Checksum 0x0, Offset: 0x91f
     // Size: 0x45
     function draw_angles(target, angles, radius, seconds, level_endon, target_endon) {
         level thread function_3a97db5a17888208(target, angles, radius, seconds, level_endon, target_endon);
@@ -296,8 +296,8 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x98d
-    // Size: 0x172
+    // Checksum 0x0, Offset: 0x96c
+    // Size: 0x175
     function function_3a97db5a17888208(target, angles, radius, seconds, level_endon, target_endon) {
         if (!isdefined(radius)) {
             radius = 100;
@@ -314,7 +314,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
             level endon(level_endon);
         }
         if (isdefined(target_endon)) {
-            assertex(!isvector(target), "<dev string:x12c>");
+            assertex(!isvector(target), "<dev string:xff>");
             target endon(target_endon);
         }
         while (isdefined(target)) {
@@ -337,7 +337,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 11, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb07
+    // Checksum 0x0, Offset: 0xae9
     // Size: 0x77
     function interact(target, text, on_use_func, var_38669543a34ecd14, end_on_use, level_endon, target_endon, color, z_offset, alpha, scale) {
         level thread interact_internal(target, text, on_use_func, var_38669543a34ecd14, end_on_use, level_endon, target_endon, color, z_offset, alpha, scale);
@@ -345,8 +345,8 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 11, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb86
-    // Size: 0x233
+    // Checksum 0x0, Offset: 0xb68
+    // Size: 0x234
     function interact_internal(target, text, on_use_func, var_38669543a34ecd14, end_on_use, level_endon, target_endon, color, z_offset, alpha, scale) {
         if (!isdefined(end_on_use)) {
             end_on_use = 0;
@@ -367,22 +367,22 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
             v_target = target.origin;
         }
         interact = undefined;
-        if (issharedfuncdefined("<dev string:x15b>", "<dev string:x163>")) {
-            interact = [[ getsharedfunc("<dev string:x15b>", "<dev string:x163>") ]](v_target, "<dev string:x177>", undefined, undefined, 5, "<dev string:x186>", "<dev string:x198>", 100, 90, 100, 90);
+        if (issharedfuncdefined("<dev string:x12b>", "<dev string:x130>")) {
+            interact = [[ getsharedfunc("<dev string:x12b>", "<dev string:x130>") ]](v_target, "<dev string:x141>", undefined, undefined, 5, "<dev string:x14d>", "<dev string:x15c>", 100, 90, 100, 90);
         } else {
-            assertmsg("<dev string:x1a0>");
+            assertmsg("<dev string:x161>");
         }
         if (isent(target)) {
             interact linkto(target);
-            interact thread utility::function_fe32d769b4bbd6a1(target, "<dev string:x1f2>");
-            target endon("<dev string:x1f2>");
+            interact thread utility::function_fe32d769b4bbd6a1(target, "<dev string:x1b0>");
+            target endon("<dev string:x1b0>");
         }
         if (isdefined(level_endon)) {
             level endon(level_endon);
             interact thread utility::function_fe32d769b4bbd6a1(level, level_endon);
         }
         if (isdefined(target_endon)) {
-            assertex(!isvector(target), "<dev string:x12c>");
+            assertex(!isvector(target), "<dev string:xff>");
             target endon(target_endon);
             interact thread utility::function_fe32d769b4bbd6a1(target, target_endon);
         }
@@ -397,7 +397,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
         }
         childthread function_2061efdf2b62dcdc(interact, 2, color);
         while (isdefined(target)) {
-            player = interact waittill("<dev string:x203>");
+            player = interact waittill("<dev string:x1be>");
             if (isdefined(on_use_func)) {
                 if (isdefined(var_38669543a34ecd14)) {
                     if (!isarray(var_38669543a34ecd14)) {
@@ -417,7 +417,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 9, eflags: 0x0
-    // Checksum 0x0, Offset: 0xdc1
+    // Checksum 0x0, Offset: 0xda4
     // Size: 0x63
     function debug_print3d(target, text, color, seconds, level_endon, target_endon, alpha, scale, z_offset) {
         level thread function_bbc7faeb2e19df2d(target, text, color, seconds, level_endon, target_endon, alpha, scale, z_offset);
@@ -425,7 +425,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 9, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe2c
+    // Checksum 0x0, Offset: 0xe0f
     // Size: 0x146
     function function_bbc7faeb2e19df2d(target, text, color, seconds, level_endon, target_endon, alpha, scale, z_offset) {
         if (!isdefined(alpha)) {
@@ -455,7 +455,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
             level endon(level_endon);
         }
         if (isdefined(target_endon)) {
-            assertex(!isvector(target), "<dev string:x12c>");
+            assertex(!isvector(target), "<dev string:xff>");
             target endon(target_endon);
         }
         while (isdefined(target)) {
@@ -472,7 +472,7 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
 
     // Namespace debug / scripts\common\debug
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xf7a
+    // Checksum 0x0, Offset: 0xf5d
     // Size: 0x2e7
     function get_color(color) {
         switch (color) {
@@ -531,15 +531,15 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
         case #"hash_2748d207379562f9": 
             return (0.9, 0.9, 0.9);
         default: 
-            assertmsg("<dev string:x32d>");
+            assertmsg("<dev string:x285>");
             return undefined;
         }
     }
 
     // Namespace debug / scripts\common\debug
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1269
-    // Size: 0x521
+    // Checksum 0x0, Offset: 0x124c
+    // Size: 0x531
     function function_8245dce28f1f395c(dmg_data, original_damage, pre_final, display_time, display_scale, var_3b3652114fdefa9f) {
         if (!isdefined(display_time)) {
             display_time = 5;
@@ -556,17 +556,17 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
         if (!isdefined(self)) {
             return;
         }
-        einflictor = isdefined(dmg_data["<dev string:x39b>"]) ? dmg_data["<dev string:x39b>"] : undefined;
-        eattacker = isdefined(dmg_data["<dev string:x3a9>"]) ? dmg_data["<dev string:x3a9>"] : undefined;
-        idamage = isdefined(dmg_data["<dev string:x3b6>"]) ? dmg_data["<dev string:x3b6>"] : 0;
-        smod = isdefined(dmg_data["<dev string:x3c1>"]) ? dmg_data["<dev string:x3c1>"] : undefined;
-        sweapon = isdefined(dmg_data["<dev string:x3d2>"]) ? dmg_data["<dev string:x3d2>"] : undefined;
-        vpoint = isdefined(dmg_data["<dev string:x3dd>"]) ? dmg_data["<dev string:x3dd>"] : undefined;
-        vdir = isdefined(dmg_data["<dev string:x3e7>"]) ? dmg_data["<dev string:x3e7>"] : undefined;
-        shitloc = isdefined(dmg_data["<dev string:x3ef>"]) ? dmg_data["<dev string:x3ef>"] : undefined;
-        objweapon = isdefined(dmg_data["<dev string:x3fa>"]) ? dmg_data["<dev string:x3fa>"] : undefined;
-        partname = isdefined(dmg_data["<dev string:x407>"]) ? dmg_data["<dev string:x407>"] : undefined;
-        tagname = isdefined(dmg_data["<dev string:x413>"]) ? dmg_data["<dev string:x413>"] : undefined;
+        einflictor = isdefined(dmg_data["<dev string:x2f0>"]) ? dmg_data["<dev string:x2f0>"] : undefined;
+        eattacker = isdefined(dmg_data["<dev string:x2fb>"]) ? dmg_data["<dev string:x2fb>"] : undefined;
+        idamage = isdefined(dmg_data["<dev string:x305>"]) ? dmg_data["<dev string:x305>"] : 0;
+        smod = isdefined(dmg_data["<dev string:x30d>"]) ? dmg_data["<dev string:x30d>"] : undefined;
+        sweapon = isdefined(dmg_data["<dev string:x31b>"]) ? dmg_data["<dev string:x31b>"] : undefined;
+        vpoint = isdefined(dmg_data["<dev string:x323>"]) ? dmg_data["<dev string:x323>"] : undefined;
+        vdir = isdefined(dmg_data["<dev string:x32a>"]) ? dmg_data["<dev string:x32a>"] : undefined;
+        shitloc = isdefined(dmg_data["<dev string:x32f>"]) ? dmg_data["<dev string:x32f>"] : undefined;
+        objweapon = isdefined(dmg_data["<dev string:x337>"]) ? dmg_data["<dev string:x337>"] : undefined;
+        partname = isdefined(dmg_data["<dev string:x341>"]) ? dmg_data["<dev string:x341>"] : undefined;
+        tagname = isdefined(dmg_data["<dev string:x34a>"]) ? dmg_data["<dev string:x34a>"] : undefined;
         if (istrue(var_3b3652114fdefa9f)) {
             if (!isdefined(eattacker) || isdefined(eattacker) && !isplayer(eattacker) && (!isdefined(einflictor) || isdefined(einflictor) && !isplayer(einflictor))) {
                 return;
@@ -575,49 +575,49 @@ function function_f9304b74bdeafdb0(button, before_text, after_text) {
         if (is_equal(display_time, -1)) {
             display_time = undefined;
         }
-        s = "<dev string:x41e>" + self getentitynumber();
+        s = "<dev string:x352>" + self getentitynumber();
         if (isdefined(einflictor)) {
-            s += "<dev string:x42d>" + einflictor getentitynumber();
+            s += "<dev string:x35e>" + einflictor getentitynumber();
         }
         if (isdefined(eattacker)) {
-            s += "<dev string:x439>" + eattacker getentitynumber();
+            s += "<dev string:x367>" + eattacker getentitynumber();
         }
         if (isdefined(shitloc)) {
-            s += "<dev string:x445>" + shitloc;
+            s += "<dev string:x370>" + shitloc;
         }
         s2 = "<dev string:x1c>";
-        s2 += "<dev string:x44f>" + idamage;
+        s2 += "<dev string:x377>" + idamage;
         if (isdefined(original_damage) && original_damage != idamage) {
-            s2 += "<dev string:x458>" + original_damage;
+            s2 += "<dev string:x37d>" + original_damage;
         }
         if (isdefined(smod)) {
-            s2 += "<dev string:x467>" + smod;
+            s2 += "<dev string:x389>" + smod;
         }
         s3 = "<dev string:x1c>";
         if (isdefined(self) && isdefined(self.health) && isdefined(self.maxhealth)) {
             if (istrue(pre_final)) {
-                s3 = "<dev string:x470>" + self.health - idamage + "<dev string:x47c>" + self.maxhealth;
+                s3 = "<dev string:x38f>" + self.health - idamage + "<dev string:x398>" + self.maxhealth;
             } else {
-                s3 = "<dev string:x470>" + self.health + "<dev string:x47c>" + self.maxhealth;
+                s3 = "<dev string:x38f>" + self.health + "<dev string:x398>" + self.maxhealth;
             }
         }
         s4 = "<dev string:x1c>";
         if (isdefined(sweapon)) {
             if (isstring(sweapon)) {
-                s4 = "<dev string:x483>" + sweapon;
+                s4 = "<dev string:x39c>" + sweapon;
             } else if (isdefined(sweapon.basename)) {
-                s4 = "<dev string:x483>" + sweapon.basename;
+                s4 = "<dev string:x39c>" + sweapon.basename;
             }
         } else if (isdefined(objweapon)) {
             if (isdefined(objweapon.basename)) {
-                s4 = "<dev string:x483>" + objweapon.basename;
+                s4 = "<dev string:x39c>" + objweapon.basename;
             }
         }
         if (isdefined(einflictor) && isdefined(einflictor.weapon_name)) {
-            s4 += "<dev string:x48f>" + einflictor.weapon_name;
+            s4 += "<dev string:x3a5>" + einflictor.weapon_name;
             weap_name = einflictor.weapon_name;
         }
-        s5 = "<dev string:x4ab>";
+        s5 = "<dev string:x3be>";
         printloc = undefined;
         if (isdefined(vpoint)) {
             printloc = vpoint;

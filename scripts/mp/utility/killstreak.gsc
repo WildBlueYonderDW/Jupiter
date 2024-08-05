@@ -1578,7 +1578,7 @@ function killstreak_pre_mod_damage_callback(data) {
         data.damage = damage;
     }
     if (isdefined(attacker) && attacker isspawnprotected()) {
-        attacker clearSpawnProtection();
+        attacker function_e3301eb009262dfa();
     }
     shouldcontinue = 1;
     var_bacc6dd14316758c = self.kspremoddamagecallback;

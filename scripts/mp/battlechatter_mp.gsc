@@ -202,7 +202,7 @@ function hurtbadlywait() {
     self endon("death_or_disconnect");
     self endon("bc_damage_taken");
     wait 1.5;
-    level thread trysaylocalsound(self, #"hash_c9f3c24df8902b3d");
+    level thread trysaylocalsound(self, #"bc_status_player_low_health");
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp
@@ -298,7 +298,7 @@ function ongrenadeuse(grenade) {
     var_49e6ef3edadd524e = function_f581838ce4328f7a(grenade.weapon_object);
     switch (var_49e6ef3edadd524e) {
     case #"hash_7c03088193266bc4": 
-        level thread trysaylocalsound(self, #"hash_87dc683c44e94ce5");
+        level thread trysaylocalsound(self, #"bc_equipment_action_grenade");
         break;
     case #"hash_5d11ac1131cddab1": 
         level thread trysaylocalsound(self, #"hash_e0f134f0aa8e5e19");
@@ -339,7 +339,7 @@ function ongrenadeuse(grenade) {
         level thread trysaylocalsound(self, #"hash_b2fa51b9f1fa0d4f");
         break;
     case #"hash_675a272e58f54e46": 
-        level thread trysaylocalsound(self, #"hash_2f2caf1b0dd33e9c");
+        level thread trysaylocalsound(self, #"bc_equipment_action_stim");
         break;
     case #"hash_11a03a12f93f62b2": 
         level thread trysaylocalsound(self, #"hash_bb9ab22ba578e5ab");
@@ -390,16 +390,16 @@ function function_204aeba40a2aa027(superref) {
         level thread trysaylocalsound(self, #"hash_792d7ce252e00d97");
         break;
     case #"hash_3d18c216d6eeb2cc": 
-        level thread trysaylocalsound(self, #"hash_f9aa61cfa10b735b");
+        level thread trysaylocalsound(self, #"bc_fieldupgrade_action_aprounds");
         break;
     case #"hash_f2f5c0ae2a0a92c2": 
         if (isdefined(self.operatorcustomization) && isdefined(self.operatorcustomization.operatorref) && self.operatorcustomization.operatorref == "nikto_eastern") {
             return;
         }
-        level thread trysaylocalsound(self, #"hash_ac1a2f277b83330");
+        level thread trysaylocalsound(self, #"bc_fieldupgrade_action_battlerage");
         break;
     case #"hash_b0c881a998e8d402": 
-        level thread trysaylocalsound(self, #"hash_59169aed8d3f8d14");
+        level thread trysaylocalsound(self, #"bc_fieldupgrade_action_deadsilence");
         break;
     case #"hash_6f4c7534ae718637": 
         level thread trysaylocalsound(self, #"hash_b590bf555735bea3");
@@ -643,7 +643,7 @@ function playkillstreakdeploydialog(owner, streakname) {
     case #"hash_195360490caa3220":
     case #"hash_7e7648c4805888c5":
     case #"hash_de3d319cd367bcba": 
-        level thread trysaylocalsound(owner, #"hash_28d138c351a647d0");
+        level thread trysaylocalsound(owner, #"bc_killstreak_action_nuke");
         break;
     case #"hash_bf2f9adbd2b41d5":
     case #"hash_8c766d6477287bb6":
@@ -737,7 +737,7 @@ function killstreakdestroyed(streakname) {
         level thread trysaylocalsound(self, #"hash_6c808886c536757e");
         break;
     case #"hash_4ad475e6e15635bd": 
-        level thread trysaylocalsound(self, #"hash_3a0f5bb16df88c43");
+        level thread trysaylocalsound(self, #"bc_killstreak_killfirm_juggernaut");
         break;
     case #"hash_cd0a0403551fc411": 
         level thread trysaylocalsound(self, #"hash_156c1172c3c9c31b");
@@ -1025,9 +1025,9 @@ function dosound(soundtype, targetent, location) {
     if (isdefined(location)) {
         soundaliasbase = "loc_callout_" + location;
     }
-    if (soundtype == #"hash_197b54b4d0e467b7") {
+    if (soundtype == #"bc_combat_action_execution") {
         if (self.operatorcustomization.executionquip == "none") {
-            soundtype = #"hash_197b54b4d0e467b7";
+            soundtype = #"bc_combat_action_execution";
         }
     }
     var_4f632c1568af9fc0 = level.bcinfo["asset"][soundtype];
@@ -1964,7 +1964,7 @@ function adddamagetaken(attacker, objweapon, idamage) {
         level thread trysaylocalsound(self, #"hash_ffa7904a61fa07be", undefined, 0.75);
         return;
     }
-    level thread trysaylocalsound(self, #"hash_cf3cf044a0dfdabf", undefined, 0.75);
+    level thread trysaylocalsound(self, #"bc_combat_inform_taking_fire", undefined, 0.75);
 }
 
 // Namespace battlechatter_mp / scripts\mp\battlechatter_mp

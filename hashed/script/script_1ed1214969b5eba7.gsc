@@ -2,14 +2,12 @@
 #using scripts\common\utility.gsc;
 #using scripts\common\values.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 
 #namespace supers;
 
 // Namespace supers / namespace_4a3033eafa6fd07
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf8
+// Checksum 0x0, Offset: 0x1e9
 // Size: 0xa2
 function function_f0327aead8f016e2(globals) {
     if (isdefined(level.gametypebundle)) {
@@ -25,8 +23,8 @@ function function_f0327aead8f016e2(globals) {
 
 // Namespace supers / namespace_4a3033eafa6fd07
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a2
-// Size: 0x775
+// Checksum 0x0, Offset: 0x293
+// Size: 0x739
 function function_e3234be372f6209d(supertable) {
     var_5d7589bf09bdf4d8 = getscriptbundle(supertable);
     for (i = 0; i < var_5d7589bf09bdf4d8.super_list.size; i++) {
@@ -45,7 +43,7 @@ function function_e3234be372f6209d(supertable) {
                 weaponname = superbundle.offhandweapon;
                 staticdata.weapon = weaponname;
                 blueprints = function_bb92a5000082832a(weaponname);
-                foreach (blueprint, index in blueprints) {
+                foreach (index in blueprints) {
                     var_b13ff8bade98bb3f = weaponname + "|" + string(index);
                     level.superblueprints[var_b13ff8bade98bb3f] = function_3211981142ec5aee(weaponname, blueprint);
                 }
@@ -84,9 +82,6 @@ function function_e3234be372f6209d(supertable) {
                 staticdata.canuseinlaststand = superbundle.canuseinlaststand;
                 staticdata.persistondeath = superbundle.persistondeath;
                 staticdata.var_ff2e3a3658646a3f = superbundle.var_ff2e3a3658646a3f;
-                staticdata.var_202e9663db810505 = istrue(superbundle.var_202e9663db810505);
-                staticdata.var_9270ee84f5a4a7a1 = superbundle.var_9270ee84f5a4a7a1;
-                staticdata.var_1ee3cdaf7e0e4486 = superbundle.var_1ee3cdaf7e0e4486;
                 staticdata.var_f579d98fe982ce3e = superbundle.var_f579d98fe982ce3e;
                 staticdata.var_6af942bb3f913f9f = istrue(superbundle.var_cd006f80436a89fd);
                 staticdata.var_d835cd7abd661b88 = superbundle.var_6ccf992f8f601e2e;
@@ -102,13 +97,13 @@ function function_e3234be372f6209d(supertable) {
                 }
                 level.superglobals.supersbyid[i] = superref;
                 if (!isdefined(staticdata.weapon)) {
-                    assertmsg("<dev string:x1c>" + superref + "<dev string:x51>");
+                    assertmsg("super scriptbundle has invalid weapon for super \"" + superref + "\"");
                     level.superglobals.staticsuperdata[superref] = undefined;
                 } else {
                     level.superglobals.supersbyoffhand[staticdata.weapon] = staticdata;
                 }
                 if (!isdefined(staticdata.pointsneeded)) {
-                    assertmsg("<dev string:x56>" + superref + "<dev string:x51>");
+                    assertmsg("super scriptbundle has invalid points needed for super \"" + superref + "\"");
                     level.superglobals.staticsuperdata[superref] = undefined;
                 }
                 if (isdefined(staticdata.maxactivations)) {
@@ -124,9 +119,9 @@ function function_e3234be372f6209d(supertable) {
                     }
                 }
                 if (isdefined(staticdata.useweapon) && isweapon(staticdata.useweapon)) {
-                    assertex(isdefined(staticdata.useweaponclipammo), "<dev string:x92>" + superref + "<dev string:xaa>");
-                    assertex(isdefined(staticdata.useweaponstockammo), "<dev string:x92>" + superref + "<dev string:xe8>");
-                    assertex(isdefined(staticdata.useweapontrackstats), "<dev string:x92>" + superref + "<dev string:x127>");
+                    assertex(isdefined(staticdata.useweaponclipammo), "super scriptbundle \"" + superref + "\" has a useWeapon value set, but no useWeaponClipAmmo set.");
+                    assertex(isdefined(staticdata.useweaponstockammo), "super scriptbundle \"" + superref + "\" has a useWeapon value set, but no useWeaponStockAmmo set.");
+                    assertex(isdefined(staticdata.useweapontrackstats), "super scriptbundle \"" + superref + "\" has a useWeapon value set, but no useWeaponTrackStats set.");
                     level.superglobals.superweapons[staticdata.useweapon.basename] = staticdata;
                 }
                 if (isdefined(staticdata.graceperiod)) {
@@ -142,8 +137,8 @@ function function_e3234be372f6209d(supertable) {
 
 // Namespace supers / namespace_4a3033eafa6fd07
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x91f
-// Size: 0x3b
+// Checksum 0x0, Offset: 0x9d4
+// Size: 0x3a
 function private initializesuper(var_511f1c7eaf0d2df7) {
     if (!isdefined(level.var_db30cf1837ca94fd)) {
         return;
@@ -157,7 +152,7 @@ function private initializesuper(var_511f1c7eaf0d2df7) {
 
 // Namespace supers / namespace_4a3033eafa6fd07
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x962
+// Checksum 0x0, Offset: 0xa16
 // Size: 0x7d
 function getsuperid(superref) {
     if (!isdefined(superref) || !isdefined(level.superglobals) || !isdefined(level.superglobals.staticsuperdata) || !isdefined(level.superglobals.staticsuperdata[superref]) || superref == "none") {
@@ -168,8 +163,8 @@ function getsuperid(superref) {
 
 // Namespace supers / namespace_4a3033eafa6fd07
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e8
-// Size: 0x3e
+// Checksum 0x0, Offset: 0xa9c
+// Size: 0x3d
 function function_bf9c7e9dd30180e3(superref) {
     superdata = level.superglobals.staticsuperdata[superref];
     if (isdefined(superdata)) {
@@ -180,39 +175,26 @@ function function_bf9c7e9dd30180e3(superref) {
 
 // Namespace supers / namespace_4a3033eafa6fd07
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2f
-// Size: 0x147
+// Checksum 0x0, Offset: 0xae2
+// Size: 0xec
 function buildsuper(weaponname, blueprintindex) {
     if (!isdefined(weaponname)) {
         return undefined;
     }
     if (isdefined(blueprintindex) && blueprintindex > 0) {
         var_b13ff8bade98bb3f = weaponname + "|" + string(blueprintindex);
-        attachmentblueprints = level.superblueprints[var_b13ff8bade98bb3f];
-        if (!isdefined(attachmentblueprints)) {
-            /#
-                errormessage = "<dev string:x167>" + weaponname + "<dev string:x1a7>" + blueprintindex + "<dev string:x1c6>";
-                println(errormessage);
-                iprintlnbold(errormessage);
-            #/
-            return makeweapon(weaponname);
-        }
+        var_327f51ee83320be4 = level.superblueprints[var_b13ff8bade98bb3f];
         attachments = [];
         var_c9b64ec1c40ac0ef = [];
         arrayindex = 0;
-        foreach (attachment, blueprintindex in attachmentblueprints) {
+        foreach (blueprintindex in var_327f51ee83320be4) {
             attachments[arrayindex] = attachment;
             var_c9b64ec1c40ac0ef[arrayindex] = blueprintindex;
             arrayindex++;
         }
         weapon = makeweapon(weaponname, attachments, undefined, undefined, blueprintindex, var_c9b64ec1c40ac0ef);
-        /#
-            if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-                assertmsg("<dev string:x1eb>");
-            }
-        #/
     } else {
-        weapon = scripts\cp_mp\utility\weapon_utility::function_eeaa22f0cd1ff845(weaponname);
+        weapon = makeweapon(weaponname);
     }
     return weapon;
 }

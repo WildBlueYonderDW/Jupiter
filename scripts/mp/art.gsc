@@ -7,7 +7,7 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x98
+    // Checksum 0x0, Offset: 0x78
     // Size: 0x4d
     function main() {
         setdevdvarifuninitialized(@"hash_41ecbb9b60af8bcf", 0);
@@ -20,7 +20,7 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xed
+    // Checksum 0x0, Offset: 0xcd
     // Size: 0x49
     function inittweaks() {
         setdevdvar(@"r_artUseTweaks", 1);
@@ -34,14 +34,14 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x13e
-    // Size: 0x8d
+    // Checksum 0x0, Offset: 0x11e
+    // Size: 0x8c
     function tweakart() {
         if (!isdefined(level.tweakfile)) {
             level.tweakfile = 0;
         }
-        setdevdvar(@"hash_9cdc5d2317818d34", "<dev string:x31>");
-        setdevdvar(@"hash_eadbba3bd00553b7", "<dev string:x38>");
+        setdevdvar(@"hash_9cdc5d2317818d34", "<dev string:x2e>");
+        setdevdvar(@"hash_eadbba3bd00553b7", "<dev string:x32>");
         printed = 0;
         for (;;) {
             while (getdvarint(@"hash_41ecbb9b60af8bcf", 0) == 0) {
@@ -58,11 +58,11 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1d3
-    // Size: 0x11d
+    // Checksum 0x0, Offset: 0x1b2
+    // Size: 0x11c
     function tess_init() {
         var_75e889a96a1e1e5 = getdvar(@"r_tessellation");
-        if (var_75e889a96a1e1e5 == "<dev string:x3d>") {
+        if (var_75e889a96a1e1e5 == "<dev string:x34>") {
             return;
         }
         level.tess = spawnstruct();
@@ -78,7 +78,7 @@
 
     // Namespace art / scripts\mp\art
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2f8
+    // Checksum 0x0, Offset: 0x2d6
     // Size: 0x5d
     function tess_set_goal(var_92ad28aede5bf05e, cutoff_falloff, blend_time) {
         level.tess.cutoff_distance_goal = var_92ad28aede5bf05e;
@@ -88,8 +88,8 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x35d
-    // Size: 0x234
+    // Checksum 0x0, Offset: 0x33b
+    // Size: 0x237
     function tess_update() {
         while (true) {
             var_8e82e2ee78f6c824 = level.tess.cutoff_distance_current;
@@ -117,30 +117,30 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x599
+    // Checksum 0x0, Offset: 0x57a
     // Size: 0xa8
     function dumpsettings() {
         if (getdvarint(@"hash_eadbba3bd00553b7") == 0) {
             return 0;
         }
-        setdevdvar(@"hash_eadbba3bd00553b7", "<dev string:x38>");
+        setdevdvar(@"hash_eadbba3bd00553b7", "<dev string:x32>");
         fileprint_launcher_start_file();
-        fileprint_launcher("<dev string:x41>");
-        fileprint_launcher("<dev string:x97>");
-        fileprint_launcher("<dev string:xa1>");
-        fileprint_launcher("<dev string:xa6>");
-        fileprint_launcher("<dev string:xc2>");
-        if (!fileprint_launcher_end_file("<dev string:xc7>" + level.script + "<dev string:xea>", 1)) {
+        fileprint_launcher("<dev string:x35>");
+        fileprint_launcher("<dev string:x88>");
+        fileprint_launcher("<dev string:x8f>");
+        fileprint_launcher("<dev string:x91>");
+        fileprint_launcher("<dev string:xaa>");
+        if (!fileprint_launcher_end_file("<dev string:xac>" + level.script + "<dev string:xcc>", 1)) {
             return;
         }
-        iprintlnbold("<dev string:xf6>");
-        println("<dev string:x10a>");
+        iprintlnbold("<dev string:xd5>");
+        println("<dev string:xe6>");
     }
 
     // Namespace art / scripts\mp\art
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x649
-    // Size: 0x93
+    // Checksum 0x0, Offset: 0x62a
+    // Size: 0x92
     function button_down(btn, btn2) {
         pressed = level.players[0] buttonpressed(btn);
         if (!pressed) {
@@ -158,8 +158,8 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6e4
-    // Size: 0x168
+    // Checksum 0x0, Offset: 0x6c4
+    // Size: 0x16e
     function hud_init() {
         listsize = 7;
         hudelems = [];
@@ -171,8 +171,8 @@
         for (i = 0; i < listsize; i++) {
             hudelems[i] = _newhudelem();
             hudelems[i].location = 0;
-            hudelems[i].alignx = "<dev string:x12a>";
-            hudelems[i].aligny = "<dev string:x132>";
+            hudelems[i].alignx = "<dev string:x103>";
+            hudelems[i].aligny = "<dev string:x108>";
             hudelems[i].foreground = 1;
             hudelems[i].fontscale = 2;
             hudelems[i].sort = 20;
@@ -183,7 +183,7 @@
             }
             hudelems[i].x = 20;
             hudelems[i].y = org;
-            hudelems[i] _settext("<dev string:x13c>");
+            hudelems[i] _settext("<dev string:x10f>");
             if (i == div) {
                 alphainc *= -1;
             }
@@ -195,8 +195,8 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x854
-    // Size: 0x45
+    // Checksum 0x0, Offset: 0x83a
+    // Size: 0x44
     function _newhudelem() {
         if (!isdefined(level.scripted_elems)) {
             level.scripted_elems = [];
@@ -208,11 +208,11 @@
 
     // Namespace art / scripts\mp\art
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8a1
-    // Size: 0xc1
+    // Checksum 0x0, Offset: 0x886
+    // Size: 0xbf
     function _settext(text) {
         self.realtext = text;
-        self setdevtext("<dev string:x141>");
+        self setdevtext("<dev string:x111>");
         thread _clearalltextafterhudelem();
         var_bff8d89bfd98e29f = 0;
         foreach (elem in level.scripted_elems) {
@@ -221,12 +221,12 @@
                 elem setdevtext(elem.realtext);
             }
         }
-        println("<dev string:x146>" + var_bff8d89bfd98e29f);
+        println("<dev string:x113>" + var_bff8d89bfd98e29f);
     }
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x96a
+    // Checksum 0x0, Offset: 0x94d
     // Size: 0x34
     function _clearalltextafterhudelem() {
         if (level._clearalltextafterhudelem) {
@@ -240,7 +240,7 @@
 
     // Namespace art / scripts\mp\art
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9a6
+    // Checksum 0x0, Offset: 0x989
     // Size: 0x25
     function function_67bc9d1f5c5c787c() {
         setdevdvar(@"hash_de86d29dde73df", 0);

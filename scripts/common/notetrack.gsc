@@ -7,7 +7,7 @@
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x348
+// Checksum 0x0, Offset: 0x2b0
 // Size: 0xb
 function function_11f8c6d6f5ba948() {
     level thread function_9ce792d127499205();
@@ -15,8 +15,8 @@ function function_11f8c6d6f5ba948() {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35b
-// Size: 0x96
+// Checksum 0x0, Offset: 0x2c3
+// Size: 0x94
 function function_68c73b00bb25af3(guy, msg) {
     guy endon("stop_sequencing_notetracks");
     guy endon("death");
@@ -34,7 +34,7 @@ function function_68c73b00bb25af3(guy, msg) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f9
+// Checksum 0x0, Offset: 0x35f
 // Size: 0x4a
 function start_notetrack_wait(guy, anim_string, anime, animname, animation, var_173bdb8ba434651d) {
     guy notify("stop_sequencing_notetracks");
@@ -43,8 +43,8 @@ function start_notetrack_wait(guy, anim_string, anime, animname, animation, var_
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x44b
-// Size: 0x399
+// Checksum 0x0, Offset: 0x3b1
+// Size: 0x39d
 function notetrack_wait(guy, msg, tag_entity, anime, animname_override, animation, var_173bdb8ba434651d) {
     guy endon("stop_sequencing_notetracks");
     guy endon("death");
@@ -73,7 +73,7 @@ function notetrack_wait(guy, msg, tag_entity, anime, animname_override, animatio
             scripted_notetracks["any"] = level.scr_notetrack[animname]["any"];
         }
     }
-    foreach (var_2c62c57192ed45cb, _ in scripted_notetracks) {
+    foreach (_ in scripted_notetracks) {
         foreach (var_39b955b6ea2a96e in level.scr_notetrack[animname][var_2c62c57192ed45cb]) {
             foreach (scr_notetrack in var_39b955b6ea2a96e) {
                 if (isdefined(scr_notetrack["dialog"])) {
@@ -121,7 +121,7 @@ function notetrack_wait(guy, msg, tag_entity, anime, animname_override, animatio
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ec
+// Checksum 0x0, Offset: 0x756
 // Size: 0xa
 function function_e2bc0c9e826cf659() {
     thread function_392d5e426b4896d2();
@@ -129,7 +129,7 @@ function function_e2bc0c9e826cf659() {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fe
+// Checksum 0x0, Offset: 0x768
 // Size: 0xae
 function function_392d5e426b4896d2() {
     self endon("entitydeleted");
@@ -153,8 +153,8 @@ function function_392d5e426b4896d2() {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b4
-// Size: 0x190
+// Checksum 0x0, Offset: 0x81e
+// Size: 0x18c
 function notetrack_handler(guy, anime, notetrack, animname, scripted_notetracks, tag_owner, var_966821fc90c3ca9d) {
     /#
         if (getdvar(@"hash_6fe9ed215f6efcba") == "<dev string:x1c>") {
@@ -183,8 +183,8 @@ function notetrack_handler(guy, anime, notetrack, animname, scripted_notetracks,
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa4c
-// Size: 0x2eb
+// Checksum 0x0, Offset: 0x9b2
+// Size: 0x2ec
 function anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_owner) {
     if (isdefined(scr_notetrack["function"])) {
         self thread [[ scr_notetrack["function"] ]](guy);
@@ -256,8 +256,8 @@ function anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_own
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd3f
-// Size: 0xd0
+// Checksum 0x0, Offset: 0xca6
+// Size: 0xcf
 function anim_addmodel(guy, array) {
     if (!isdefined(guy.scriptmodel)) {
         guy.scriptmodel = [];
@@ -271,12 +271,12 @@ function anim_addmodel(guy, array) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe17
+// Checksum 0x0, Offset: 0xd7d
 // Size: 0x11b
 function anim_removemodel(guy, array) {
     /#
         if (!isdefined(guy.scriptmodel)) {
-            assertmsg("<dev string:x22>" + guy.animname);
+            assertmsg("<dev string:x1f>" + guy.animname);
         }
     #/
     for (i = 0; i < guy.scriptmodel.size; i++) {
@@ -293,8 +293,8 @@ function anim_removemodel(guy, array) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf3a
-// Size: 0x66
+// Checksum 0x0, Offset: 0xea0
+// Size: 0x65
 function notetrack_effect(guy, scr_notetrack) {
     var_863c90262c71c1b7 = isdefined(scr_notetrack["moreThanThreeHack"]);
     if (var_863c90262c71c1b7) {
@@ -308,7 +308,7 @@ function notetrack_effect(guy, scr_notetrack) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa8
+// Checksum 0x0, Offset: 0xf0d
 // Size: 0x15
 function trace_part_for_efx_cancel(part) {
     self notify("cancel_trace_for_part_" + part);
@@ -316,8 +316,8 @@ function trace_part_for_efx_cancel(part) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xfc5
-// Size: 0x188
+// Checksum 0x0, Offset: 0xf2a
+// Size: 0x18a
 function trace_part_for_efx(part, effect, water_effect, delete_depth) {
     lock_string = "trace_part_for_efx";
     self endon("cancel_trace_for_part_" + part);
@@ -355,7 +355,7 @@ function trace_part_for_efx(part, effect, water_effect, delete_depth) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1155
+// Checksum 0x0, Offset: 0x10bc
 // Size: 0x3a
 function hidepartatdepth(depth, part) {
     self endon("entitydeleted");
@@ -367,7 +367,7 @@ function hidepartatdepth(depth, part) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1197
+// Checksum 0x0, Offset: 0x10fe
 // Size: 0x382
 function test_trace_tag(struct) {
     linecolor = undefined;
@@ -391,16 +391,16 @@ function test_trace_tag(struct) {
                 struct.hit_water = trace["surfacetype"] == "water";
                 /#
                     if (getdvarint(@"hash_b46df2b57cc019b") == 1) {
-                        stringname = "<dev string:x75>";
-                        foreach (key, value in level._effect) {
+                        stringname = "<dev string:x6f>";
+                        foreach (value in level._effect) {
                             if (struct.effect != value) {
                                 continue;
                             }
                             stringname = key;
                             break;
                         }
-                        print3d(_add_z(struct.last_pos, 6), "<dev string:x79>" + struct.part, (1, 1, 1), 1, 1, 100);
-                        print3d(struct.last_pos, "<dev string:x82>" + stringname, (1, 1, 1), 1, 1, 100);
+                        print3d(_add_z(struct.last_pos, 6), "<dev string:x70>" + struct.part, (1, 1, 1), 1, 1, 100);
+                        print3d(struct.last_pos, "<dev string:x76>" + stringname, (1, 1, 1), 1, 1, 100);
                     }
                 #/
                 struct.hit_surface = 1;
@@ -408,8 +408,8 @@ function test_trace_tag(struct) {
             } else {
                 /#
                     if (getdvarint(@"hash_b46df2b57cc019b") == 1) {
-                        if (isdefined(trace["<dev string:x8e>"])) {
-                            print3d(_add_z(struct.last_pos, 6), "<dev string:x98>" + trace["<dev string:x8e>"].classname, (0, 0, 1), 1, 1, 100);
+                        if (isdefined(trace["<dev string:x7f>"])) {
+                            print3d(_add_z(struct.last_pos, 6), "<dev string:x86>" + trace["<dev string:x7f>"].classname, (0, 0, 1), 1, 1, 100);
                         }
                     }
                 #/
@@ -426,7 +426,7 @@ function test_trace_tag(struct) {
         struct.stationary = 1;
         /#
             if (getdvarint(@"hash_b46df2b57cc019b") == 1) {
-                print3d(struct.current_pos, "<dev string:xa4>" + struct.part, (1, 0, 0));
+                print3d(struct.current_pos, "<dev string:x8f>" + struct.part, (1, 0, 0));
             }
         #/
     }
@@ -435,7 +435,7 @@ function test_trace_tag(struct) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1521
+// Checksum 0x0, Offset: 0x1488
 // Size: 0x21
 function _add_z(vec, zplus) {
     return (vec[0], vec[1], vec[2] + zplus);
@@ -443,14 +443,14 @@ function _add_z(vec, zplus) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x154b
-// Size: 0x11e
+// Checksum 0x0, Offset: 0x14b2
+// Size: 0x11f
 function validatenotetracks(flagname, notes, animation) {
     /#
         if (isdefined(animation)) {
-            assertex(notes.size <= 4, "<dev string:xb6>" + notes.size + "<dev string:xcf>" + function_3c8848a3a11b2553(getanimname(animation)));
+            assertex(notes.size <= 4, "<dev string:x9e>" + notes.size + "<dev string:xb4>" + function_3c8848a3a11b2553(getanimname(animation)));
         } else {
-            assertex(notes.size <= 4, "<dev string:xb6>" + notes.size + "<dev string:x119>" + flagname + "<dev string:x16d>");
+            assertex(notes.size <= 4, "<dev string:x9e>" + notes.size + "<dev string:xfb>" + flagname + "<dev string:x14c>");
         }
         for (i = 0; i < notes.size; i++) {
             found = 0;
@@ -458,9 +458,9 @@ function validatenotetracks(flagname, notes, animation) {
                 if (notes[i] == notes[j]) {
                     found = 1;
                     if (isdefined(animation)) {
-                        println("<dev string:x172>" + function_3c8848a3a11b2553(getanimname(animation)) + "<dev string:x18c>" + flagname + "<dev string:x1a1>" + notes[i] + "<dev string:x1c7>");
+                        println("<dev string:x14e>" + function_3c8848a3a11b2553(getanimname(animation)) + "<dev string:x165>" + flagname + "<dev string:x177>" + notes[i] + "<dev string:x19a>");
                     } else {
-                        println("<dev string:x1cc>" + flagname + "<dev string:x1a1>" + notes[i] + "<dev string:x1c7>");
+                        println("<dev string:x19c>" + flagname + "<dev string:x177>" + notes[i] + "<dev string:x19a>");
                     }
                 }
                 if (found) {
@@ -474,7 +474,7 @@ function validatenotetracks(flagname, notes, animation) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1671
+// Checksum 0x0, Offset: 0x15d9
 // Size: 0x97
 function printnotetracks(notes) {
     /#
@@ -483,16 +483,16 @@ function printnotetracks(notes) {
         }
         msg = notes[0];
         for (i = 1; i < notes.size; i++) {
-            msg += "<dev string:x1f4>" + notes[i];
+            msg += "<dev string:x1c1>" + notes[i];
         }
-        println("<dev string:x1fa>" + gettime() + "<dev string:x1ff>" + self getentitynumber() + "<dev string:x205>" + msg);
+        println("<dev string:x1c4>" + gettime() + "<dev string:x1c6>" + self getentitynumber() + "<dev string:x1c9>" + msg);
     #/
 }
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1710
-// Size: 0x8b
+// Checksum 0x0, Offset: 0x1678
+// Size: 0x8a
 function animsound_start_tracker(anime, animname) {
     add_to_animsound();
     newsound = spawnstruct();
@@ -508,8 +508,8 @@ function animsound_start_tracker(anime, animname) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a3
-// Size: 0x98
+// Checksum 0x0, Offset: 0x170a
+// Size: 0x97
 function animsound_start_tracker_loop(anime, loop, animname) {
     add_to_animsound();
     anime = loop + anime;
@@ -526,8 +526,8 @@ function animsound_start_tracker_loop(anime, loop, animname) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1843
-// Size: 0x96
+// Checksum 0x0, Offset: 0x17a9
+// Size: 0x95
 function animsound_tracker(anime, notetrack, animname) {
     notetrack = tolower(notetrack);
     add_to_animsound();
@@ -547,8 +547,8 @@ function animsound_tracker(anime, notetrack, animname) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e1
-// Size: 0xb7
+// Checksum 0x0, Offset: 0x1846
+// Size: 0xb8
 function animsound_exists(anime, notetrack) {
     notetrack = tolower(notetrack);
     keys = getarraykeys(self.animsounds);
@@ -568,8 +568,8 @@ function animsound_exists(anime, notetrack) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a1
-// Size: 0xef
+// Checksum 0x0, Offset: 0x1907
+// Size: 0xf2
 function add_animsound(newsound) {
     for (i = 0; i < level.animsound_hudlimit; i++) {
         if (isdefined(self.animsounds[i])) {
@@ -593,7 +593,7 @@ function add_animsound(newsound) {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a98
+// Checksum 0x0, Offset: 0x1a01
 // Size: 0x77
 function add_to_animsound() {
     if (!isdefined(self.animsounds)) {
@@ -613,7 +613,7 @@ function add_to_animsound() {
 
 // Namespace notetrack / scripts\common\notetrack
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b17
+// Checksum 0x0, Offset: 0x1a80
 // Size: 0xa7
 function function_9ce792d127499205() {
     level endon("game_ended");

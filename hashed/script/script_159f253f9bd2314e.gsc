@@ -14,8 +14,8 @@
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x205
-// Size: 0x5f3
+// Checksum 0x0, Offset: 0x24e
+// Size: 0x5fd
 function function_7f42b3806988f8db(asmname, statename, params) {
     stop_sounds();
     self stoplookat();
@@ -71,7 +71,7 @@ function function_7f42b3806988f8db(asmname, statename, params) {
     deathanimdata = undefined;
     deathanim = undefined;
     deathxanim = undefined;
-    assertex(isdefined(self.deathalias) && isdefined(self.deathstate) || !isdefined(self.deathalias) && !isdefined(self.deathstate), "<dev string:x1c>");
+    assertex(isdefined(self.deathalias) && isdefined(self.deathstate) || !isdefined(self.deathalias) && !isdefined(self.deathstate), ".deathAlias and .deathState must both be defined, or neither defined");
     var_4d3cebad4e3e8617 = isdefined(self.deathalias) && isdefined(self.deathstate);
     if (!isdefined(self.skipdeathanim) || istrue(self.var_aa0214e1292a7b3)) {
         deathanimdata = function_ea379d7359bd10ae(asmname, statename, params);
@@ -90,7 +90,7 @@ function function_7f42b3806988f8db(asmname, statename, params) {
                 self aisetanim(statename, deathanim);
             }
         } else {
-            assertex(utility::issp(), "<dev string:x64>");
+            assertex(utility::issp(), "Custom death anim only supported in SP.");
             bodyknob = asm_getinnerrootknob();
             self clearanim(bodyknob, 0.05);
             self setflaggedanimknoballrestart(statename, deathanim, bodyknob, 1, 0.05);
@@ -105,7 +105,7 @@ function function_7f42b3806988f8db(asmname, statename, params) {
         self animmode(self.deathanimmode);
     }
     if (isdefined(self.skipdeathanim)) {
-        assertex(self.skipdeathanim, "<dev string:x8f>");
+        assertex(self.skipdeathanim, "self.skipDeathAnim must be either true or undefined.");
         if (!isdefined(self.noragdoll)) {
             if (isdefined(self.fnpreragdoll)) {
                 self [[ self.fnpreragdoll ]]();
@@ -174,7 +174,7 @@ function function_7f42b3806988f8db(asmname, statename, params) {
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x800
+// Checksum 0x0, Offset: 0x853
 // Size: 0x13
 function deathnotetracks(note) {
     scripts\anim\notetracks::notetrack_prefix_handler(note);
@@ -182,10 +182,10 @@ function deathnotetracks(note) {
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x81b
-// Size: 0x10a
+// Checksum 0x0, Offset: 0x86e
+// Size: 0x10b
 function function_ea379d7359bd10ae(asmname, statename, params) {
-    assertex(isdefined(self.deathalias) && isdefined(self.deathstate) || !isdefined(self.deathalias) && !isdefined(self.deathstate), "<dev string:x1c>");
+    assertex(isdefined(self.deathalias) && isdefined(self.deathstate) || !isdefined(self.deathalias) && !isdefined(self.deathstate), ".deathAlias and .deathState must both be defined, or neither defined");
     var_4d3cebad4e3e8617 = isdefined(self.deathalias) && isdefined(self.deathstate);
     if (isdefined(self.deathanim)) {
         deathanim = self.deathanim;
@@ -202,7 +202,7 @@ function function_ea379d7359bd10ae(asmname, statename, params) {
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92e
+// Checksum 0x0, Offset: 0x982
 // Size: 0x29
 function stop_sounds() {
     self stopsoundchannel("voice_bchatter_1_3d");
@@ -213,8 +213,8 @@ function stop_sounds() {
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x95f
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x9b3
+// Size: 0x69
 function deathcleanup() {
     if (istrue(self.skipdeathcleanup)) {
         return;
@@ -234,8 +234,8 @@ function deathcleanup() {
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d1
-// Size: 0x1db
+// Checksum 0x0, Offset: 0xa24
+// Size: 0x1e0
 function doimmediateragdolldeath() {
     if (isdefined(self.weapon)) {
         namespace_223959d3e5206cfb::dropallaiweapons();
@@ -286,7 +286,7 @@ function doimmediateragdolldeath() {
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb4
+// Checksum 0x0, Offset: 0xc0c
 // Size: 0x6b
 function waitforragdoll(time) {
     wait time;
@@ -309,7 +309,7 @@ function waitforragdoll(time) {
 
 // Namespace death / namespace_965f49d67e204fd4
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc27
+// Checksum 0x0, Offset: 0xc7f
 // Size: 0x5a
 function startragdollwithoutwait() {
     if (isagent(self)) {

@@ -8,7 +8,7 @@
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d
+// Checksum 0x0, Offset: 0x10d
 // Size: 0x2e
 function corpse_init_entity() {
     assert(isdefined(self.stealth));
@@ -17,7 +17,7 @@ function corpse_init_entity() {
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x183
+// Checksum 0x0, Offset: 0x143
 // Size: 0x8c
 function corpse_init_level() {
     if (isdefined(level.stealth) && isdefined(level.stealth.corpse)) {
@@ -32,8 +32,8 @@ function corpse_init_level() {
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x217
-// Size: 0x34
+// Checksum 0x0, Offset: 0x1d7
+// Size: 0x33
 function set_corpse_ranges_default() {
     array["sight_dist"] = 600;
     array["detect_dist"] = 300;
@@ -43,7 +43,7 @@ function set_corpse_ranges_default() {
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x253
+// Checksum 0x0, Offset: 0x212
 // Size: 0x2c
 function set_corpse_ranges(array) {
     if (!isdefined(array["shadow_dist"])) {
@@ -54,7 +54,7 @@ function set_corpse_ranges(array) {
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x287
+// Checksum 0x0, Offset: 0x246
 // Size: 0x1a
 function set_corpse_ignore() {
     assert(isent(self));
@@ -63,8 +63,8 @@ function set_corpse_ignore() {
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a9
-// Size: 0xc7
+// Checksum 0x0, Offset: 0x268
+// Size: 0xc4
 function corpse_check_shadow(origin) {
     if (!isdefined(self.in_shadow_origin) || distancesquared(self.in_shadow_origin, origin) > 1) {
         self.in_shadow = undefined;
@@ -83,7 +83,7 @@ function corpse_check_shadow(origin) {
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x379
+// Checksum 0x0, Offset: 0x335
 // Size: 0xfb
 function corpse_found(event) {
     self notify("corpse_found");
@@ -108,7 +108,7 @@ function corpse_found(event) {
 
 // Namespace corpse / scripts\stealth\corpse
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x47c
+// Checksum 0x0, Offset: 0x438
 // Size: 0xde
 function corpse_seen(event) {
     if (isdefined(level.battlechatter)) {

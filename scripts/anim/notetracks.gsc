@@ -12,8 +12,8 @@
 
     // Namespace notetracks / scripts\anim\notetracks
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa91
-    // Size: 0x1a6
+    // Checksum 0x0, Offset: 0x8f4
+    // Size: 0x1ab
     function shownotetrack(note) {
         if (getdvarint(@"hash_a19781010239d2e6") != 1 && getdvarint(@"hash_a19781010239d2e6") != self getentitynumber()) {
             return;
@@ -23,9 +23,9 @@
         anim.var_6bf5d5ac4b32352f = 20;
         duration = anim.var_6bf5d5ac4b32352f + int(20 / anim.var_6011144769939896);
         color = (0.5, 0.75, 1);
-        if (note == "<dev string:x25>" || note == "<dev string:x2c>") {
+        if (note == "<dev string:x22>" || note == "<dev string:x26>") {
             color = (0.25, 0.4, 0.5);
-        } else if (note == "<dev string:x36>") {
+        } else if (note == "<dev string:x2d>") {
             color = (1, 0.5, 0.5);
         }
         for (i = 0; i < duration; i++) {
@@ -50,8 +50,8 @@
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3f
-// Size: 0x4dd
+// Checksum 0x0, Offset: 0xaa7
+// Size: 0x4db
 function registernotetracks() {
     thread function_1f7bb66025f2aedf();
     anim.notetracks["anim_movement = \"stop\""] = &notetrackmovementstop;
@@ -117,7 +117,7 @@ function registernotetracks() {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1124
+// Checksum 0x0, Offset: 0xf8a
 // Size: 0x13
 function notetrackstopanim(note, flagname) {
     
@@ -125,10 +125,10 @@ function notetrackstopanim(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x113f
-// Size: 0xdd
+// Checksum 0x0, Offset: 0xfa5
+// Size: 0xdc
 function notetrackcoverposerequest(note, flagname) {
-    assert(issubstr(note, "<dev string:x43>"));
+    assert(issubstr(note, "anim_coverpose = "));
     coverpose = strtok(note, " = ")[1];
     switch (coverpose) {
     case #"hash_175771022bc5e75d":
@@ -143,14 +143,14 @@ function notetrackcoverposerequest(note, flagname) {
         self.var_b74cb68648b5306e = coverpose;
         break;
     default: 
-        assertmsg("<dev string:x58>");
+        assertmsg("Unrecognized coverpose selector");
         break;
     }
 }
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1224
+// Checksum 0x0, Offset: 0x1089
 // Size: 0x2c
 function notetrackmovementstop(note, flagname) {
     self.a.movement = "stop";
@@ -158,7 +158,7 @@ function notetrackmovementstop(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1258
+// Checksum 0x0, Offset: 0x10bd
 // Size: 0x2c
 function notetrackmovementwalk(note, flagname) {
     self.a.movement = "walk";
@@ -166,7 +166,7 @@ function notetrackmovementwalk(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x128c
+// Checksum 0x0, Offset: 0x10f1
 // Size: 0x2c
 function notetrackmovementrun(note, flagname) {
     self.a.movement = "run";
@@ -174,7 +174,7 @@ function notetrackmovementrun(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12c0
+// Checksum 0x0, Offset: 0x1125
 // Size: 0x2c
 function notetrackmovementgunposeoverride(note, flagname) {
     self.asm.movementgunposeoverride = "run_gun_down";
@@ -182,7 +182,7 @@ function notetrackmovementgunposeoverride(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f4
+// Checksum 0x0, Offset: 0x1159
 // Size: 0x13
 function notetrackalertnessaiming(note, flagname) {
     
@@ -190,7 +190,7 @@ function notetrackalertnessaiming(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x130f
+// Checksum 0x0, Offset: 0x1174
 // Size: 0x13
 function notetrackalertnesscasual(note, flagname) {
     
@@ -198,7 +198,7 @@ function notetrackalertnesscasual(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x132a
+// Checksum 0x0, Offset: 0x118f
 // Size: 0x13
 function notetrackalertnessalert(note, flagname) {
     
@@ -208,18 +208,18 @@ function notetrackalertnessalert(note, flagname) {
 
     // Namespace notetracks / scripts\anim\notetracks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1345
+    // Checksum 0x0, Offset: 0x11aa
     // Size: 0x6e
     function function_48e7a4a270c0d370(note, flagname) {
-        setdvarifuninitialized(@"hash_d54f2997c58912ce", "<dev string:x7b>");
+        setdvarifuninitialized(@"hash_d54f2997c58912ce", "<dev string:x37>");
         if (getdvarint(@"hash_d54f2997c58912ce") < 1) {
             return;
         }
         if (!isdefined(flagname)) {
-            flagname = "<dev string:x80>";
+            flagname = "<dev string:x39>";
         }
-        if (issubstr(note, "<dev string:x85>")) {
-            println("<dev string:x8a>" + note + "<dev string:xbd>" + flagname);
+        if (issubstr(note, "<dev string:x3b>")) {
+            println("<dev string:x3d>" + note + "<dev string:x6d>" + flagname);
         }
     }
 
@@ -227,7 +227,7 @@ function notetrackalertnessalert(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13bb
+// Checksum 0x0, Offset: 0x1220
 // Size: 0x13
 function notetrackloadshell(note, flagname) {
     
@@ -235,7 +235,7 @@ function notetrackloadshell(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d6
+// Checksum 0x0, Offset: 0x123b
 // Size: 0x13
 function notetrackpistolrechamber(note, flagname) {
     
@@ -243,7 +243,7 @@ function notetrackpistolrechamber(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f1
+// Checksum 0x0, Offset: 0x1256
 // Size: 0x4a
 function notetrackgravity(note, flagname) {
     if (issubstr(note, "on")) {
@@ -257,8 +257,8 @@ function notetrackgravity(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1443
-// Size: 0x141
+// Checksum 0x0, Offset: 0x12a8
+// Size: 0x142
 function customnotetrackfx(note, flagname) {
     assert(isdefined(level._notetrackfx[note]));
     if (isdefined(self.groundtype)) {
@@ -289,7 +289,7 @@ function customnotetrackfx(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x158c
+// Checksum 0x0, Offset: 0x13f2
 // Size: 0x18
 function notetrackcodemove(note, flagname) {
     return "code_move";
@@ -297,7 +297,7 @@ function notetrackcodemove(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ad
+// Checksum 0x0, Offset: 0x1413
 // Size: 0x1f
 function notetrackfaceenemy(note, flagname) {
     self orientmode("face enemy");
@@ -305,7 +305,7 @@ function notetrackfaceenemy(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15d4
+// Checksum 0x0, Offset: 0x143a
 // Size: 0x8a
 function notetrackbodyfall(note, flagname) {
     suffix = "_small";
@@ -326,8 +326,8 @@ function notetrackbodyfall(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1666
-// Size: 0xb9
+// Checksum 0x0, Offset: 0x14cc
+// Size: 0xb8
 function donotetracks(flagname, customfunction, debugidentifier) {
     for (;;) {
         notes = self waittill(flagname);
@@ -349,7 +349,7 @@ function donotetracks(flagname, customfunction, debugidentifier) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1727
+// Checksum 0x0, Offset: 0x158c
 // Size: 0x78
 function handlenotetrack(note, flagname, customfunction, customparams) {
     if (isdefined(self.fnasm_handlenotetrack)) {
@@ -358,13 +358,13 @@ function handlenotetrack(note, flagname, customfunction, customparams) {
     if (isdefined(level._defaultnotetrackhandler)) {
         return [[ level._defaultnotetrackhandler ]](note, flagname, customfunction, customparams);
     }
-    assertmsg("<dev string:xc8>" + self getentitynumber());
+    assertmsg("No note track handler for ent " + self getentitynumber());
 }
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x17a7
-// Size: 0x3b
+// Checksum 0x0, Offset: 0x160c
+// Size: 0x3a
 function hascustomnotetrackhandler(note) {
     notetrackfunc = anim.notetracks[note];
     if (isdefined(notetrackfunc)) {
@@ -378,8 +378,8 @@ function hascustomnotetrackhandler(note) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x17eb
-// Size: 0x98
+// Checksum 0x0, Offset: 0x164f
+// Size: 0x97
 function handlecustomnotetrackhandler(note, flagname, customfunction, customparams) {
     assert(hascustomnotetrackhandler(note));
     notetrackfunc = anim.notetracks[note];
@@ -399,7 +399,7 @@ function handlecustomnotetrackhandler(note, flagname, customfunction, custompara
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x188b
+// Checksum 0x0, Offset: 0x16ee
 // Size: 0x27b
 function handlecommonnotetrack(note, flagname, customfunction, customparams) {
     /#
@@ -468,8 +468,8 @@ function handlecommonnotetrack(note, flagname, customfunction, customparams) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b0e
-// Size: 0xfb
+// Checksum 0x0, Offset: 0x1971
+// Size: 0xfc
 function donotetracksintercept(flagname, interceptfunction, debugidentifier) {
     assert(isdefined(interceptfunction));
     for (;;) {
@@ -501,7 +501,7 @@ function donotetracksintercept(flagname, interceptfunction, debugidentifier) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c11
+// Checksum 0x0, Offset: 0x1a75
 // Size: 0xd7
 function donotetrackspostcallback(flagname, postfunction) {
     assert(isdefined(postfunction));
@@ -531,7 +531,7 @@ function donotetrackspostcallback(flagname, postfunction) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf0
+// Checksum 0x0, Offset: 0x1b54
 // Size: 0x2d
 function donotetracksfortimeout(flagname, killstring, customfunction, debugidentifier) {
     donotetracks(flagname, customfunction, debugidentifier);
@@ -539,7 +539,7 @@ function donotetracksfortimeout(flagname, killstring, customfunction, debugident
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d25
+// Checksum 0x0, Offset: 0x1b89
 // Size: 0x33
 function donotetracksforever(flagname, killstring, customfunction, debugidentifier) {
     donotetracksforeverproc(&donotetracks, flagname, killstring, customfunction, debugidentifier);
@@ -547,7 +547,7 @@ function donotetracksforever(flagname, killstring, customfunction, debugidentifi
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d60
+// Checksum 0x0, Offset: 0x1bc4
 // Size: 0x33
 function donotetracksforeverintercept(flagname, killstring, interceptfunction, debugidentifier) {
     donotetracksforeverproc(&donotetracksintercept, flagname, killstring, interceptfunction, debugidentifier);
@@ -555,8 +555,8 @@ function donotetracksforeverintercept(flagname, killstring, interceptfunction, d
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d9b
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x1bff
+// Size: 0xe1
 function donotetracksforeverproc(notetracksfunc, flagname, killstring, customfunction, debugidentifier) {
     if (isdefined(killstring)) {
         self endon(killstring);
@@ -574,7 +574,7 @@ function donotetracksforeverproc(notetracksfunc, flagname, killstring, customfun
             returnednote = [[ notetracksfunc ]](flagname, customfunction, debugidentifier);
             timetaken = gettime() - time;
             if (timetaken < 0.05) {
-                println(gettime() + "<dev string:xea>" + debugidentifier + "<dev string:xef>" + flagname + "<dev string:x14b>" + returnednote + "<dev string:x15a>");
+                println(gettime() + "<dev string:x75>" + debugidentifier + "<dev string:x77>" + flagname + "<dev string:xd0>" + returnednote + "<dev string:xdc>");
                 wait 0.05 - timetaken;
             }
         }
@@ -583,8 +583,8 @@ function donotetracksforeverproc(notetracksfunc, flagname, killstring, customfun
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e83
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x1ce8
+// Size: 0x4d
 function donotetrackswithtimeout(flagname, time, customfunction, debugidentifier) {
     ent = spawnstruct();
     ent thread donotetracksfortimeendnotify(time);
@@ -593,8 +593,8 @@ function donotetrackswithtimeout(flagname, time, customfunction, debugidentifier
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ed9
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x1d3d
+// Size: 0x4d
 function donotetracksfortime(time, flagname, customfunction, debugidentifier) {
     ent = spawnstruct();
     ent thread donotetracksfortimeendnotify(time);
@@ -603,8 +603,8 @@ function donotetracksfortime(time, flagname, customfunction, debugidentifier) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f2f
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x1d92
+// Size: 0x4d
 function donotetracksfortimeintercept(time, flagname, interceptfunction, debugidentifier) {
     ent = spawnstruct();
     ent thread donotetracksfortimeendnotify(time);
@@ -613,7 +613,7 @@ function donotetracksfortimeintercept(time, flagname, interceptfunction, debugid
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f85
+// Checksum 0x0, Offset: 0x1de7
 // Size: 0x3a
 function donotetracksfortimeproc(donotetracksforeverfunc, flagname, customfunction, debugidentifier, ent) {
     ent endon("stop_notetracks");
@@ -622,7 +622,7 @@ function donotetracksfortimeproc(donotetracksforeverfunc, flagname, customfuncti
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc7
+// Checksum 0x0, Offset: 0x1e29
 // Size: 0x15
 function donotetracksfortimeendnotify(time) {
     wait time;
@@ -631,7 +631,7 @@ function donotetracksfortimeendnotify(time) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fe4
+// Checksum 0x0, Offset: 0x1e46
 // Size: 0x2a
 function notetrack_prefix_handler(notetrack) {
     assert(isdefined(level.fnnotetrackprefixhandler));
@@ -640,7 +640,7 @@ function notetrack_prefix_handler(notetrack) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2017
+// Checksum 0x0, Offset: 0x1e79
 // Size: 0x1b
 function function_8b5c774e7238fec5(guy, notetrack) {
     function_580423f29d7d5065(notetrack);
@@ -648,8 +648,8 @@ function function_8b5c774e7238fec5(guy, notetrack) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x203a
-// Size: 0x7d
+// Checksum 0x0, Offset: 0x1e9c
+// Size: 0x7b
 function function_6ba70af530538250() {
     if (utility::iscp() || utility::ismp()) {
         linked_children = self getlinkedchildren();
@@ -664,8 +664,8 @@ function function_6ba70af530538250() {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c0
-// Size: 0xa9e
+// Checksum 0x0, Offset: 0x1f20
+// Size: 0xab7
 function notetrack_prefix_handler_common(notetrack) {
     prefix3 = getsubstr(notetrack, 0, 3);
     if (prefix3 == "sm_") {
@@ -673,7 +673,7 @@ function notetrack_prefix_handler_common(notetrack) {
         self setmodel(model);
     } else if (prefix3 == "fb_") {
         player = function_6ba70af530538250();
-        assertex(isdefined(player), "<dev string:x15f>" + notetrack);
+        assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         fade_data = strtok(notetrack, "_");
         var_21c15ce9aa5f97e2 = tolower(fade_data[1]);
         var_3e748cf38c614200 = undefined;
@@ -692,7 +692,7 @@ function notetrack_prefix_handler_common(notetrack) {
         return 1;
     } else if (prefix3 == "rm_") {
         player = function_6ba70af530538250();
-        assertex(isdefined(player), "<dev string:x15f>" + notetrack);
+        assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         rumble = getsubstr(notetrack, 3);
         player playrumbleonentity(rumble);
         return 1;
@@ -723,7 +723,7 @@ function notetrack_prefix_handler_common(notetrack) {
     prefix4 = getsubstr(notetrack, 0, 4);
     if (prefix4 == "fsf_") {
         player = function_6ba70af530538250();
-        assertex(isdefined(player), "<dev string:x15f>" + notetrack);
+        assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         var_985c64fc7f3f4b6 = strtok(notetrack, "_");
         var_80698c7167df0cb7 = float(var_985c64fc7f3f4b6[1]);
         var_19fd165b9d684b3d = float(var_985c64fc7f3f4b6[2]);
@@ -735,22 +735,19 @@ function notetrack_prefix_handler_common(notetrack) {
             stopallrumbles();
         } else {
             player = function_6ba70af530538250();
-            assertex(isdefined(player), "<dev string:x15f>" + notetrack);
+            assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
             player stoprumble(rumble);
         }
         return 1;
     } else if (prefix4 == "rml_") {
         player = function_6ba70af530538250();
-        assertex(isdefined(player), "<dev string:x15f>" + notetrack);
+        assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         rumble = function_6add3fe5d360337b(notetrack, prefix4);
         player playrumblelooponentity(rumble);
         return 1;
     } else if (prefix4 == "fov_") {
         player = function_6ba70af530538250();
-        assertex(isdefined(player), "<dev string:x15f>" + notetrack);
-        if (!isdefined(player)) {
-            return 1;
-        }
+        assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         fov_data = strtok(notetrack, "_");
         var_555d27d0d0741def = tolower(fov_data[1]);
         fov_value = undefined;
@@ -787,12 +784,12 @@ function notetrack_prefix_handler_common(notetrack) {
         return 1;
     } else if (prefix4 == "dof_") {
         player = function_6ba70af530538250();
-        assertex(isdefined(player), "<dev string:x15f>" + notetrack);
+        assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         dof_tokens = strtok(notetrack, ",");
         var_3f6822b43fe907ad = tolower(dof_tokens[0]);
         if (var_3f6822b43fe907ad == "dof_auto") {
             if (!isdefined(dof_tokens[1])) {
-                assertmsg("<dev string:x182>" + notetrack + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x19c>");
+                assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:xf2>");
                 return;
             }
             fstop = float(dof_tokens[1]);
@@ -801,7 +798,7 @@ function notetrack_prefix_handler_common(notetrack) {
             player scripts\common\utility::dof_enable_autofocus(fstop, undefined, var_f94941fb655b0a39, var_b225076a313507bb);
         } else if (var_3f6822b43fe907ad == "dof_ent" || var_3f6822b43fe907ad == "dof_ent1") {
             if (!isdefined(dof_tokens[1])) {
-                assertmsg("<dev string:x182>" + notetrack + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x19c>");
+                assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:xf2>");
                 return;
             }
             fstop = float(dof_tokens[1]);
@@ -811,7 +808,7 @@ function notetrack_prefix_handler_common(notetrack) {
             if (isdefined(dof_tokens[4])) {
                 override_bone = cleanup_string(dof_tokens[4]);
                 if (isdefined(override_bone) && !self tagexists(override_bone)) {
-                    assertmsg("<dev string:x182>" + notetrack + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x1c5>");
+                    assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:x118>");
                     return;
                 }
             }
@@ -825,12 +822,12 @@ function notetrack_prefix_handler_common(notetrack) {
             }
         } else if (var_3f6822b43fe907ad == "dof_distance" || var_3f6822b43fe907ad == "dof_distance1") {
             if (!isdefined(dof_tokens[1])) {
-                assertmsg("<dev string:x182>" + notetrack + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x216>");
+                assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:x166>");
                 return;
             }
             focus_distance = float(dof_tokens[1]);
             if (!isdefined(dof_tokens[2])) {
-                assertmsg("<dev string:x182>" + notetrack + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x19c>");
+                assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:xf2>");
                 return;
             }
             fstop = float(dof_tokens[2]);
@@ -844,11 +841,11 @@ function notetrack_prefix_handler_common(notetrack) {
         } else if (var_3f6822b43fe907ad == "dof_pos" || var_3f6822b43fe907ad == "dof_pos1") {
             focus_pos = function_71da05b697e393a1(dof_tokens[1], dof_tokens[2], dof_tokens[3]);
             if (!isdefined(focus_pos)) {
-                assertmsg("<dev string:x248>" + notetrack + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x257>");
+                assertmsg("<dev string:x195>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:x1a1>");
                 return;
             }
             if (!isdefined(dof_tokens[4])) {
-                assertmsg("<dev string:x182>" + notetrack + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x19c>");
+                assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:xf2>");
                 return;
             }
             fstop = float(dof_tokens[4]);
@@ -863,7 +860,7 @@ function notetrack_prefix_handler_common(notetrack) {
         } else if (var_3f6822b43fe907ad == "dof_stop") {
             player scripts\common\utility::dof_disable_autofocus();
         } else {
-            assertmsg("<dev string:x182>" + notetrack + "<dev string:x2cd>" + function_a2eaafb222316a2(self) + "<dev string:x2d7>");
+            assertmsg("<dev string:xde>" + notetrack + "<dev string:x214>" + function_a2eaafb222316a2(self) + "<dev string:x21b>");
         }
         return 1;
     }
@@ -919,8 +916,8 @@ function notetrack_prefix_handler_common(notetrack) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b67
-// Size: 0x9f
+// Checksum 0x0, Offset: 0x29e0
+// Size: 0x9e
 function shootnotetrack() {
     waittillframeend();
     if (isdefined(self) && isalive(self) && gettime() > self._blackboard.var_60dcaa3d3be97ab) {
@@ -939,7 +936,7 @@ function shootnotetrack() {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c0e
+// Checksum 0x0, Offset: 0x2a86
 // Size: 0x28
 function function_df92aadf78bfcf42(note, flagname) {
     if (self.bulletsinclip) {
@@ -949,7 +946,7 @@ function function_df92aadf78bfcf42(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c3e
+// Checksum 0x0, Offset: 0x2ab6
 // Size: 0x5a
 function notetrackfire(note, flagname) {
     if (isdefined(self.script) && isdefined(anim.fire_notetrack_functions[self.script])) {
@@ -961,8 +958,8 @@ function notetrackfire(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ca0
-// Size: 0x1e7
+// Checksum 0x0, Offset: 0x2b18
+// Size: 0x1ec
 function notetrackfirespray(note, flagname) {
     if (!isalive(self) && self isbadguy()) {
         if (isdefined(self.changed_team)) {
@@ -971,7 +968,7 @@ function notetrackfirespray(note, flagname) {
         self.changed_team = 1;
         teams["axis"] = "team3";
         teams["team3"] = "axis";
-        assertex(isdefined(teams[self.team]), "<dev string:x366>" + self.team);
+        assertex(isdefined(teams[self.team]), "no team for " + self.team);
         self.team = teams[self.team];
     }
     if (!issentient(self)) {
@@ -1006,7 +1003,7 @@ function notetrackfirespray(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e8f
+// Checksum 0x0, Offset: 0x2d0c
 // Size: 0x1a
 function notetrackrefillclip(note, flagname) {
     scripts\anim\weaponlist::refillclip();
@@ -1014,8 +1011,8 @@ function notetrackrefillclip(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb1
-// Size: 0x49
+// Checksum 0x0, Offset: 0x2d2e
+// Size: 0x48
 function notetracknotify(note, flagname, customparams) {
     player = level.players[customparams[0]];
     if (customparams.size == 3 && isdefined(player)) {
@@ -1025,8 +1022,8 @@ function notetracknotify(note, flagname, customparams) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f02
-// Size: 0x73
+// Checksum 0x0, Offset: 0x2d7e
+// Size: 0x74
 function function_5b7a0a74bd3d5e0b(note, flagname, customparams) {
     if (customparams.size == 3) {
         params = strtok(customparams[2], ",");
@@ -1042,7 +1039,7 @@ function function_5b7a0a74bd3d5e0b(note, flagname, customparams) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f7d
+// Checksum 0x0, Offset: 0x2dfa
 // Size: 0x6c
 function getpreferredweapon() {
     if (self._blackboard.weaponrequest == weaponclass(self.primaryweapon)) {
@@ -1055,7 +1052,7 @@ function getpreferredweapon() {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff2
+// Checksum 0x0, Offset: 0x2e6f
 // Size: 0x3b
 function notetrackguntochest(note, flagname) {
     if (isdefined(self.fnplaceweaponon)) {
@@ -1065,7 +1062,7 @@ function notetrackguntochest(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3035
+// Checksum 0x0, Offset: 0x2eb2
 // Size: 0x61
 function notetrackguntoback(note, flagname) {
     if (isdefined(self.fnplaceweaponon)) {
@@ -1077,8 +1074,8 @@ function notetrackguntoback(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x309e
-// Size: 0x106
+// Checksum 0x0, Offset: 0x2f1b
+// Size: 0x105
 function notetrackpistolpickup(note, flagname) {
     pistolposition = "right";
     if (!isdefined(self.sidearm) || isnullweapon(self.sidearm) || self.weapon == self.sidearm && isdefined(self.a.weaponpos[pistolposition]) && self.a.weaponpos[pistolposition] == self.weapon) {
@@ -1096,7 +1093,7 @@ function notetrackpistolpickup(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x31ac
+// Checksum 0x0, Offset: 0x3028
 // Size: 0x90
 function notetrackpistolputaway(note, flagname) {
     if (isdefined(self.fnplaceweaponon)) {
@@ -1112,8 +1109,8 @@ function notetrackpistolputaway(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3244
-// Size: 0xef
+// Checksum 0x0, Offset: 0x30c0
+// Size: 0xee
 function function_c99ec552dfea0f86(note, flagname) {
     pistolposition = "right";
     assert(isdefined(self.secondaryweapon));
@@ -1129,7 +1126,7 @@ function function_c99ec552dfea0f86(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x333b
+// Checksum 0x0, Offset: 0x31b6
 // Size: 0x90
 function function_316d2ec7583a1e29(note, flagname) {
     if (isdefined(self.fnplaceweaponon)) {
@@ -1145,7 +1142,7 @@ function function_316d2ec7583a1e29(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x33d3
+// Checksum 0x0, Offset: 0x324e
 // Size: 0x52
 function notetrackguntoright(note, flagname) {
     if (isdefined(self.fnplaceweaponon)) {
@@ -1156,7 +1153,7 @@ function notetrackguntoright(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x342d
+// Checksum 0x0, Offset: 0x32a8
 // Size: 0x52
 function function_12e1635911fd2716(note, flagname) {
     if (isdefined(self.fnplaceweaponon)) {
@@ -1167,7 +1164,7 @@ function function_12e1635911fd2716(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3487
+// Checksum 0x0, Offset: 0x3302
 // Size: 0x30
 function notetrackhton0(note, flagname) {
     if (!isai(self)) {
@@ -1180,7 +1177,7 @@ function notetrackhton0(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34bf
+// Checksum 0x0, Offset: 0x333a
 // Size: 0x31
 function notetrackhton1(note, flagname) {
     if (!isai(self)) {
@@ -1193,7 +1190,7 @@ function notetrackhton1(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x34f8
+// Checksum 0x0, Offset: 0x3373
 // Size: 0x2e
 function notetrackhtoff(note, flagname) {
     if (!isai(self)) {
@@ -1206,7 +1203,7 @@ function notetrackhtoff(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x352e
+// Checksum 0x0, Offset: 0x33a9
 // Size: 0x41
 function function_5a8f2c4ba78d7bff(note, flagname) {
     if (isai(self)) {
@@ -1219,7 +1216,7 @@ function function_5a8f2c4ba78d7bff(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3577
+// Checksum 0x0, Offset: 0x33f2
 // Size: 0x2f
 function function_ab37da002eddaf9f(note, flagname) {
     if (isai(self)) {
@@ -1230,7 +1227,7 @@ function function_ab37da002eddaf9f(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35ae
+// Checksum 0x0, Offset: 0x3429
 // Size: 0x2f
 function function_b67df3617c4f2903(note, flagname) {
     if (isai(self)) {
@@ -1241,7 +1238,7 @@ function function_b67df3617c4f2903(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x35e5
+// Checksum 0x0, Offset: 0x3460
 // Size: 0x2d
 function function_28b89c4ec5292326(note, flagname) {
     if (isai(self)) {
@@ -1251,7 +1248,7 @@ function function_28b89c4ec5292326(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x361a
+// Checksum 0x0, Offset: 0x3495
 // Size: 0x2e
 function function_1777a8463e80f52e(note, flagname) {
     if (isdefined(self.var_9087e842f157d27c)) {
@@ -1261,8 +1258,8 @@ function function_1777a8463e80f52e(note, flagname) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3650
-// Size: 0x1eb
+// Checksum 0x0, Offset: 0x34cb
+// Size: 0x1f6
 function function_6b6fe2ba8bff11cd(var_bed488ee5acfc2b9) {
     info = strtok(var_bed488ee5acfc2b9, ",", 1);
     model = info[0];
@@ -1292,11 +1289,11 @@ function function_6b6fe2ba8bff11cd(var_bed488ee5acfc2b9) {
     if (!isdefined(tag) || tag == "") {
         tag = "";
     } else if (isent(self) && !self tagexists(tag)) {
-        assertmsg("<dev string:x182>" + var_bed488ee5acfc2b9 + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x376>" + tag + "<dev string:x38f>");
+        assertmsg("<dev string:xde>" + var_bed488ee5acfc2b9 + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:x2a7>" + tag + "<dev string:x2bd>");
         return undefined;
     }
     if (!isdefined(model)) {
-        assertmsg("<dev string:x182>" + var_bed488ee5acfc2b9 + "<dev string:x193>" + function_a2eaafb222316a2(self) + "<dev string:x3ce>");
+        assertmsg("<dev string:xde>" + var_bed488ee5acfc2b9 + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:x2f9>");
         return undefined;
     }
     return [model, tag, var_ee3807ab9a6a9c73, var_26b9fd069cbbe5da, var_4cfe7205fd162f00];
@@ -1304,8 +1301,8 @@ function function_6b6fe2ba8bff11cd(var_bed488ee5acfc2b9) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3844
-// Size: 0xa7
+// Checksum 0x0, Offset: 0x36ca
+// Size: 0xa9
 function function_fdb7ea91bda694dc(attachinfo) {
     var_c00a2c6249962d83 = function_6b6fe2ba8bff11cd(attachinfo);
     var_ee3807ab9a6a9c73 = var_c00a2c6249962d83[2];
@@ -1323,8 +1320,8 @@ function function_fdb7ea91bda694dc(attachinfo) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x38f3
-// Size: 0x15b
+// Checksum 0x0, Offset: 0x377b
+// Size: 0x161
 function function_f22b886a2036c871(attachinfo) {
     var_c00a2b6249962b50 = function_6b6fe2ba8bff11cd(attachinfo);
     var_4cfe7205fd162f00 = var_c00a2b6249962b50[4];
@@ -1362,8 +1359,8 @@ function function_f22b886a2036c871(attachinfo) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a57
-// Size: 0x6b
+// Checksum 0x0, Offset: 0x38e5
+// Size: 0x6c
 function function_a06953a984b6a42a(attachinfo) {
     var_c00a2e62499631e9 = function_6b6fe2ba8bff11cd(attachinfo);
     tag = var_c00a2e62499631e9[1];
@@ -1377,7 +1374,7 @@ function function_a06953a984b6a42a(attachinfo) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3aca
+// Checksum 0x0, Offset: 0x3959
 // Size: 0x34
 function private function_bccbbce06002296d(tag) {
     self detach(self.notetrackattach[tag], tag);
@@ -1387,8 +1384,8 @@ function private function_bccbbce06002296d(tag) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b06
-// Size: 0xdd
+// Checksum 0x0, Offset: 0x3995
+// Size: 0xde
 function function_e5e7e79093ba26ea(attachinfo) {
     var_c00a2d6249962fb6 = function_6b6fe2ba8bff11cd(attachinfo);
     tag = var_c00a2d6249962fb6[1];
@@ -1407,7 +1404,7 @@ function function_e5e7e79093ba26ea(attachinfo) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x3beb
+// Checksum 0x0, Offset: 0x3a7b
 // Size: 0x32
 function private function_ef14ac1aa72b102c(tag) {
     self.var_42d97b626fd6d9cf[tag] delete();
@@ -1417,8 +1414,8 @@ function private function_ef14ac1aa72b102c(tag) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c25
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x3ab5
+// Size: 0xa7
 function function_45f825a87c104b8e(attachinfo) {
     var_c00a326249963ab5 = function_6b6fe2ba8bff11cd(attachinfo);
     tag = var_c00a326249963ab5[1];
@@ -1435,8 +1432,8 @@ function function_45f825a87c104b8e(attachinfo) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cd2
-// Size: 0x91
+// Checksum 0x0, Offset: 0x3b64
+// Size: 0x92
 function function_8ecc4b9e8758773e(info) {
     info = strtok(info, ",");
     tag = info[0];
@@ -1450,8 +1447,8 @@ function function_8ecc4b9e8758773e(info) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d6b
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x3bfe
+// Size: 0xb3
 function function_78157f1bf846e991(var_9d5f59d543dcaaab) {
     if (isdefined(self.notetrackattach)) {
         tags = getarraykeys(self.notetrackattach);
@@ -1469,8 +1466,8 @@ function function_78157f1bf846e991(var_9d5f59d543dcaaab) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e28
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x3cb9
+// Size: 0xb3
 function function_b305ad01e100f851(var_9d5f59d543dcaaab) {
     if (isdefined(self.var_42d97b626fd6d9cf)) {
         tags = getarraykeys(self.var_42d97b626fd6d9cf);
@@ -1488,7 +1485,7 @@ function function_b305ad01e100f851(var_9d5f59d543dcaaab) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ee5
+// Checksum 0x0, Offset: 0x3d74
 // Size: 0x1d
 function function_580423f29d7d5065(note) {
     function_78157f1bf846e991(1);
@@ -1497,7 +1494,7 @@ function function_580423f29d7d5065(note) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f0a
+// Checksum 0x0, Offset: 0x3d99
 // Size: 0x3c
 function function_f74121b03472e19d(var_3e748cf38c614200, var_21e5d264c2eefa94, var_9f075c08a89eab6f) {
     if (isdefined(var_3e748cf38c614200)) {
@@ -1513,7 +1510,7 @@ function function_f74121b03472e19d(var_3e748cf38c614200, var_21e5d264c2eefa94, v
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f4e
+// Checksum 0x0, Offset: 0x3ddd
 // Size: 0x100
 function fadetoblack(fadetime) {
     self notify("do_fade_from_black");
@@ -1537,7 +1534,7 @@ function fadetoblack(fadetime) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4056
+// Checksum 0x0, Offset: 0x3ee5
 // Size: 0x10f
 function function_e680e372d73b3702(fadetime) {
     self notify("do_fade_from_black");
@@ -1562,7 +1559,7 @@ function function_e680e372d73b3702(fadetime) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x416d
+// Checksum 0x0, Offset: 0x3ffc
 // Size: 0x4f
 function function_305541769c1da042(numberstring) {
     if (isdefined(numberstring)) {
@@ -1579,7 +1576,7 @@ function function_305541769c1da042(numberstring) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x41c5
+// Checksum 0x0, Offset: 0x4054
 // Size: 0x3d
 function function_b8ba8f3c8f62ace7(boolstring) {
     if (isdefined(boolstring)) {
@@ -1595,8 +1592,8 @@ function function_b8ba8f3c8f62ace7(boolstring) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x420b
-// Size: 0x4e
+// Checksum 0x0, Offset: 0x409a
+// Size: 0x4d
 function function_71da05b697e393a1(stringx, stringy, stringz) {
     if (isdefined(stringx) && isdefined(stringy) && isdefined(stringz)) {
         vector = (float(stringx), float(stringy), float(stringz));
@@ -1607,7 +1604,7 @@ function function_71da05b697e393a1(stringx, stringy, stringz) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4262
+// Checksum 0x0, Offset: 0x40f0
 // Size: 0x59
 function cleanup_string(string) {
     string = tolower(string);
@@ -1621,7 +1618,7 @@ function cleanup_string(string) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x42c4
+// Checksum 0x0, Offset: 0x4152
 // Size: 0x1b
 function function_6add3fe5d360337b(notetrack, note_prefix) {
     return getsubstr(notetrack, note_prefix.size);
@@ -1629,8 +1626,8 @@ function function_6add3fe5d360337b(notetrack, note_prefix) {
 
 // Namespace notetracks / scripts\anim\notetracks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x42e8
-// Size: 0x2ad
+// Checksum 0x0, Offset: 0x4176
+// Size: 0x2af
 function function_1f7bb66025f2aedf() {
     if (!issp()) {
         return;

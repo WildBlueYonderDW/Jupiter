@@ -20,19 +20,17 @@
 #using scripts\cp_mp\killstreaks\airdrop.gsc;
 #using scripts\cp_mp\killstreaks\helper_drone.gsc;
 #using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_5f09cc6e22a3f571;
 #using scripts\cp_mp\entityheadicons.gsc;
 #using scripts\mp\objidpoolmanager.gsc;
 #using script_282eb9d7fde0753e;
 #using scripts\cp_mp\killstreaks\juggernaut.gsc;
 #using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using script_6bfe39bd5c12f84a;
 
 #namespace airdrop;
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e58
+// Checksum 0x0, Offset: 0x1ec1
 // Size: 0xf3
 function init() {
     if (issharedfuncdefined("airdrop", "init")) {
@@ -57,7 +55,7 @@ function init() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f53
+// Checksum 0x0, Offset: 0x1fbc
 // Size: 0xb3
 function initkillstreak() {
     /#
@@ -76,7 +74,7 @@ function initkillstreak() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x200e
+// Checksum 0x0, Offset: 0x2077
 // Size: 0x32
 function initheli() {
     level.littlebirds = [];
@@ -87,8 +85,8 @@ function initheli() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2048
-// Size: 0x32e
+// Checksum 0x0, Offset: 0x20b1
+// Size: 0x2f9
 function initcratedata() {
     leveldata = spawnstruct();
     leveldata.configs = [];
@@ -97,9 +95,9 @@ function initcratedata() {
     level.cratedata = leveldata;
     level.cratedata.unresolvedcollisiontolerancesqr = pow(getdvarfloat(@"hash_a0cbf9e8d23fb12c", 2), 2);
     /#
-        var_8f3ab761a14ddcdb = getentarray("<dev string:x20>", "<dev string:x34>");
-        assertex(isdefined(var_8f3ab761a14ddcdb), "<dev string:x42>");
-        assertex(isdefined(var_8f3ab761a14ddcdb) && var_8f3ab761a14ddcdb.size <= 1, "<dev string:x73>");
+        var_8f3ab761a14ddcdb = getentarray("<dev string:x1d>", "<dev string:x2e>");
+        assertex(isdefined(var_8f3ab761a14ddcdb), "<dev string:x39>");
+        assertex(isdefined(var_8f3ab761a14ddcdb) && var_8f3ab761a14ddcdb.size <= 1, "<dev string:x67>");
     #/
     level.cratedata.mountmantlemodel = getent("care_package_col", "targetname");
     if (issharedfuncdefined("airdrop", "registerActionSet")) {
@@ -137,8 +135,7 @@ function initcratedata() {
         initbattleroyalecratedata();
         function_c5c61b985836f974();
     case #"hash_b9458959b10637f8":
-    case #"hash_dd5b900f435d3f36":
-    case #"hash_ddd385f0a27d71bb": 
+    case #"hash_dd5b900f435d3f36": 
         initdropzonekillstreakcratedata();
         function_c5c61b985836f974();
         break;
@@ -156,18 +153,15 @@ function initcratedata() {
         [[ getsharedfunc("airdrop", "getMapSpecificCrateData") ]]();
     }
     initcratedropdata();
-    if (getdvarint(@"hash_8061a7c1f39caf1e", 1)) {
-        thread function_b6469ac2ab6f3dc6();
-    } else if (issharedfuncdefined("game", "registerPlayerFrameUpdateCallback")) {
+    if (issharedfuncdefined("game", "registerPlayerFrameUpdateCallback")) {
         [[ getsharedfunc("game", "registerPlayerFrameUpdateCallback") ]](&trackcratemantlingexploit);
     }
     thread watchallcrateusability();
-    flag_set("airdrop_init_crate_data");
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x237e
+// Checksum 0x0, Offset: 0x23b2
 // Size: 0x4e
 function function_93512c08385359e1() {
     level.var_27f78817b59dfe32 = "airdrop_placement";
@@ -176,7 +170,7 @@ function function_93512c08385359e1() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23d4
+// Checksum 0x0, Offset: 0x2408
 // Size: 0x1b
 function function_27994695f48962e1() {
     game["dialog"]["airdrop_use"] = "killstreak_remote_operator" + "_request_response";
@@ -184,10 +178,10 @@ function function_27994695f48962e1() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23f7
-// Size: 0x69
+// Checksum 0x0, Offset: 0x242b
+// Size: 0x68
 function getleveldata(cratetype) {
-    assertex(isdefined(level.cratedata), "<dev string:xbb>");
+    assertex(isdefined(level.cratedata), "getLevelData() called before initCrateData().");
     leveldata = level.cratedata.configs[cratetype];
     if (!isdefined(leveldata)) {
         leveldata = getemptyleveldata();
@@ -198,8 +192,8 @@ function getleveldata(cratetype) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2469
-// Size: 0x27a
+// Checksum 0x0, Offset: 0x249c
+// Size: 0x279
 function getemptyleveldata() {
     leveldata = spawnstruct();
     leveldata.basemodel = "military_carepackage_03_mp";
@@ -249,91 +243,24 @@ function getemptyleveldata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ec
+// Checksum 0x0, Offset: 0x271e
 // Size: 0x21
 function hasleveldata(cratetype) {
     return isdefined(level.cratedata.configs[cratetype]);
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2716
-// Size: 0xa2
-function function_a594839d4da1bcae(packagetype, var_d628101acde803fe) {
-    var_60b40a3e802a0270 = getscriptbundle(hashcat(%"hash_6d8c41a1f85cf7b", packagetype));
-    if (!isdefined(var_60b40a3e802a0270)) {
-        return;
-    }
-    if (!isdefined(level.package_airdrop)) {
-        function_67f7a9ae6d11ad89();
-    }
-    if (!level.package_airdrop.enabled) {
-        return;
-    }
-    var_60b40a3e802a0270.var_d628101acde803fe = var_d628101acde803fe;
-    function_488b6a7dcff9a50f(var_60b40a3e802a0270);
-    waitframe();
-    if (utility::issharedfuncdefined("package_airdrop", "registerPackageScriptBundle")) {
-        [[ scripts\engine\utility::getsharedfunc("package_airdrop", "registerPackageScriptBundle") ]](packagetype, var_60b40a3e802a0270);
-    }
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27c0
-// Size: 0x33
-function function_7dc6e272aac60753(packagetype) {
-    if (utility::issharedfuncdefined("package_airdrop", "isPackageRegistered")) {
-        return [[ scripts\engine\utility::getsharedfunc("package_airdrop", "isPackageRegistered") ]](packagetype);
-    }
-    return 0;
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x27fc
-// Size: 0x1e
-function private function_488b6a7dcff9a50f(var_60b40a3e802a0270) {
-    thread function_2d058528b4c8c4ce(var_60b40a3e802a0270.var_a9b8bcc86865726f);
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x2822
-// Size: 0x46
-function private function_2d058528b4c8c4ce(effectname) {
-    if (isdefined(effectname) && !isdefined(level.package_airdrop.var_a24412357ddb62a[effectname])) {
-        level.package_airdrop.var_a24412357ddb62a[effectname] = loadfx(effectname);
-    }
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2870
-// Size: 0x8a
-function private function_67f7a9ae6d11ad89() {
-    level.package_airdrop = spawnstruct();
-    level.package_airdrop.enabled = getdvarint(@"hash_3f81fafbdd04d8c9", 1);
-    if (!level.package_airdrop.enabled) {
-        return;
-    }
-    level.package_airdrop.var_d06bc42924b8912c = [];
-    level.package_airdrop.var_a24412357ddb62a = [];
-    level.package_airdrop.var_ead3462c77c26bd8 = [];
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x2902
-// Size: 0x55a
+// Checksum 0x0, Offset: 0x2748
+// Size: 0x52d
 function createcrate(owner, team, cratetype, position, angles, destination, hasnophysics, var_6244a1d5b282bb6c, data, skipminimapicon, markerposition) {
-    assertex(hasleveldata(cratetype), "<dev string:xec>");
+    assertex(hasleveldata(cratetype), "createCrate() called with an invalid crateType.");
     leveldata = getleveldata(cratetype);
     if (leveldata.supportsownercapture) {
-        assertex(isdefined(owner), "<dev string:x11f>");
+        assertex(isdefined(owner), "createCrate() specifies ownerCapture but has no owner.");
     }
     if (leveldata.supportsreroll) {
-        assertex(isdefined(owner), "<dev string:x159>");
+        assertex(isdefined(owner), "createCrate() specifies supportsReroll but has no owner (only owners can reroll).");
     }
     crate = spawn("script_model", position);
     crate.angles = angles;
@@ -344,10 +271,6 @@ function createcrate(owner, team, cratetype, position, angles, destination, hasn
                 return undefined;
             }
         }
-    }
-    if (!isdefined(crate)) {
-        println("<dev string:x1ae>" + cratetype);
-        return undefined;
     }
     crate.owner = owner;
     crate.team = team;
@@ -425,13 +348,12 @@ function createcrate(owner, team, cratetype, position, angles, destination, hasn
     } else if (istrue(var_6244a1d5b282bb6c)) {
         crate cratephysicson();
     }
-    crate function_f3bb4f4911a1beb2("escort", "registerEscortCollisionCallback", &function_c62f80d2f5717d4a);
     return crate;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e65
+// Checksum 0x0, Offset: 0x2c7e
 // Size: 0xb
 function activatecratefirsttime() {
     activatecrate(1);
@@ -439,8 +361,8 @@ function activatecratefirsttime() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e78
-// Size: 0xd3
+// Checksum 0x0, Offset: 0x2c91
+// Size: 0xd2
 function activatecrate(isfirstactivation) {
     self notify("activateCrate");
     self.isfirstactivation = undefined;
@@ -466,8 +388,8 @@ function activatecrate(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f53
-// Size: 0x60
+// Checksum 0x0, Offset: 0x2d6b
+// Size: 0x5f
 function deactivatecrate(ispermanent) {
     if (istrue(ispermanent)) {
         destroyminimapicon();
@@ -482,8 +404,8 @@ function deactivatecrate(ispermanent) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fbb
-// Size: 0x1a1
+// Checksum 0x0, Offset: 0x2dd2
+// Size: 0x1a4
 function capturecrate(player) {
     leveldata = getleveldata(self.cratetype);
     var_45c6df348e1551b3 = isdefined(self.owner);
@@ -521,10 +443,10 @@ function capturecrate(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3164
-// Size: 0x2cb
+// Checksum 0x0, Offset: 0x2f7e
+// Size: 0x2c4
 function destroycrate(immediate) {
-    if (!isdefined(self) || istrue(self.isdestroyed)) {
+    if (istrue(self.isdestroyed)) {
         return;
     }
     if (!isdefined(immediate)) {
@@ -579,7 +501,7 @@ function destroycrate(immediate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3437
+// Checksum 0x0, Offset: 0x324a
 // Size: 0x148
 function deletecrate(delay) {
     if (istrue(self.isdestroyed)) {
@@ -621,8 +543,8 @@ function deletecrate(delay) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3587
-// Size: 0x53
+// Checksum 0x0, Offset: 0x339a
+// Size: 0x52
 function deletecrateimmediate() {
     var_cbf7be4f62a0ddb2 = level.framedurationseconds;
     if (isdefined(self getlinkedscriptableinstance()) && self getscriptablehaspart("visibility")) {
@@ -633,7 +555,7 @@ function deletecrateimmediate() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35e2
+// Checksum 0x0, Offset: 0x33f4
 // Size: 0xa1
 function watchcratedestroyearly() {
     self endon("death");
@@ -645,7 +567,7 @@ function watchcratedestroyearly() {
         }
     #/
     if (isdefined(leveldata.timeout)) {
-        assert(leveldata.timeout > 0, "<dev string:x1d1>");
+        assert(leveldata.timeout > 0, "watchCrateDestroyEarly called with a timeOut value of 0.");
     }
     watchcratedestroyearlyinternal(leveldata.timeout);
     if (istrue(self.nevertimeout)) {
@@ -656,8 +578,8 @@ function watchcratedestroyearly() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x368b
-// Size: 0xf0
+// Checksum 0x0, Offset: 0x349d
+// Size: 0xee
 function watchcratedestroyearlyinternal(timeout) {
     if (isdefined(self.owner)) {
         self.owner endon("disconnect");
@@ -687,7 +609,7 @@ function watchcratedestroyearlyinternal(timeout) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3783
+// Checksum 0x0, Offset: 0x3593
 // Size: 0x1b2
 function destroycrateinbadtrigger() {
     if (issharedfuncdefined("entity", "touchingBadTrigger")) {
@@ -724,8 +646,8 @@ function destroycrateinbadtrigger() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x393d
-// Size: 0xf7
+// Checksum 0x0, Offset: 0x374d
+// Size: 0xf6
 function initcratedropdata() {
     leveldata = spawnstruct();
     leveldata.helis = [];
@@ -747,7 +669,7 @@ function initcratedropdata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a3c
+// Checksum 0x0, Offset: 0x384b
 // Size: 0x9
 function initscriptedhelidropdata() {
     initscriptedhelidropanims();
@@ -755,7 +677,7 @@ function initscriptedhelidropdata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a4d
+// Checksum 0x0, Offset: 0x385c
 // Size: 0x91
 function initscriptedhelidropanims() {
     level.scr_animtree["care_package"] = %script_model;
@@ -769,7 +691,7 @@ function initscriptedhelidropanims() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ae6
+// Checksum 0x0, Offset: 0x38f5
 // Size: 0x33
 function initscriptedhelidropvehicleanims() {
     level.scr_animtree["care_package_heli"] = %mp_vehicles_always_loaded;
@@ -778,7 +700,7 @@ function initscriptedhelidropvehicleanims() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b21
+// Checksum 0x0, Offset: 0x3930
 // Size: 0xbc
 function initbrc130airdropdropanims() {
     level.scr_anim["care_package"]["brc130_drop_high"] = script_model%mp_carepackage_ckpg_flyin_10500;
@@ -791,7 +713,7 @@ function initbrc130airdropdropanims() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x3be5
+// Checksum 0x0, Offset: 0x39f4
 // Size: 0x4e
 function placecrate(owner, team, cratetype, position, angles, data, skipminimapicon) {
     return createcrate(owner, team, cratetype, position, angles, undefined, 0, 1, data, skipminimapicon, position);
@@ -799,8 +721,8 @@ function placecrate(owner, team, cratetype, position, angles, data, skipminimapi
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c3c
-// Size: 0x82
+// Checksum 0x0, Offset: 0x3a4b
+// Size: 0x81
 function dropcrate(owner, team, cratetype, position, angles, destination, data, skipminimapicon) {
     if (!isdefined(destination)) {
         caststart = getcratedropcaststart(position, 0);
@@ -811,8 +733,8 @@ function dropcrate(owner, team, cratetype, position, angles, destination, data, 
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cc7
-// Size: 0x243
+// Checksum 0x0, Offset: 0x3ad5
+// Size: 0x247
 function dropcratefrommanualheli(owner, team, cratetype, position, angles, enteroffset, exitoffset, destination, data) {
     position = getcratedropcaststart(position, 1);
     height = position[2];
@@ -856,7 +778,7 @@ function dropcratefrommanualheli(owner, team, cratetype, position, angles, enter
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f13
+// Checksum 0x0, Offset: 0x3d25
 // Size: 0x4c
 function watchdropcratefrommanualheli() {
     self endon("death");
@@ -871,7 +793,7 @@ function watchdropcratefrommanualheli() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f67
+// Checksum 0x0, Offset: 0x3d79
 // Size: 0x289
 function watchdropcratefrommanualheliinternal() {
     if (self.hasowner) {
@@ -920,8 +842,8 @@ function watchdropcratefrommanualheliinternal() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x41f8
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x400a
+// Size: 0x3b
 function docratedropfrommanualheli() {
     crate = self.crate;
     self.crate.dropstruct = undefined;
@@ -931,8 +853,8 @@ function docratedropfrommanualheli() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x423c
-// Size: 0x289
+// Checksum 0x0, Offset: 0x404d
+// Size: 0x28b
 function createcrateforscripteddrop(owner, team, cratetype, destination, hasnophysics, var_6244a1d5b282bb6c, data, streakinfo, scenenode, animname, _anim, clearanimdroptime, markerposition) {
     if (isdefined(streakinfo) && isdefined(streakinfo.streakname) && isstruct(data)) {
         streakbundle = undefined;
@@ -971,8 +893,8 @@ function createcrateforscripteddrop(owner, team, cratetype, destination, hasnoph
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x44ce
-// Size: 0x1bf
+// Checksum 0x0, Offset: 0x42e1
+// Size: 0x1c0
 function createchuteforscripteddrop(scenenode, crate, animname, _anim) {
     if (!isdefined(scenenode.chutes)) {
         scenenode.chutes = [];
@@ -998,7 +920,7 @@ function createchuteforscripteddrop(scenenode, crate, animname, _anim) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4696
+// Checksum 0x0, Offset: 0x44aa
 // Size: 0x30
 function destroychute() {
     if (isdefined(self.scenenode)) {
@@ -1009,20 +931,12 @@ function destroychute() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x46ce
-// Size: 0x345
+// Checksum 0x0, Offset: 0x44e2
+// Size: 0x29f
 function dropcratefromscriptedheli(owner, team, cratetype, position, angles, destination, data, streakinfo) {
     if (issharedfuncdefined("killstreak", "currentActiveVehicleCount") && issharedfuncdefined("killstreak", "maxVehiclesAllowed")) {
         if ([[ getsharedfunc("killstreak", "currentActiveVehicleCount") ]]() >= [[ getsharedfunc("killstreak", "maxVehiclesAllowed") ]]()) {
             return undefined;
-        }
-    }
-    if (isdefined(level.var_2562ea48235e90b5)) {
-        exfils = level.var_2562ea48235e90b5;
-        foreach (exfil in exfils) {
-            if (istrue(exfil.var_1326008dc390c510) && distancesquared(exfil.origin, position) < squared(750)) {
-                return undefined;
-            }
         }
     }
     var_ebb5c644a3f5cfbc = getcratedropcaststart(position, 1);
@@ -1054,7 +968,7 @@ function dropcratefromscriptedheli(owner, team, cratetype, position, angles, des
     scenenode.heliendtime = gettime() + getanimlength(level.scr_anim["care_package_heli"]["care_package_drop"]) * 1000;
     scenenode.latestanimendtime = scenenode.heliendtime;
     crate = createcrateforscripteddrop(owner, team, cratetype, destination, undefined, 0, data, streakinfo, scenenode, "care_package", "care_package_drop", undefined, position);
-    if (!isdefined(crate) || isdefined(owner) && istrue(owner.ksempd)) {
+    if (!isdefined(crate)) {
         return undefined;
     }
     chute = createchuteforscripteddrop(scenenode, crate, "care_package_chute", "care_package_drop");
@@ -1068,8 +982,8 @@ function dropcratefromscriptedheli(owner, team, cratetype, position, angles, des
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a1c
-// Size: 0x1a0
+// Checksum 0x0, Offset: 0x478a
+// Size: 0x198
 function watchdropcratefromscriptedheli() {
     self endon("death");
     scripts\common\anim::anim_first_frame_solo(self.heli, "care_package_drop");
@@ -1098,8 +1012,8 @@ function watchdropcratefromscriptedheli() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4bc4
-// Size: 0x4c8
+// Checksum 0x0, Offset: 0x492a
+// Size: 0x476
 function watchdropcratefromscriptedheliinternal() {
     firstframe = undefined;
     while (gettime() <= self.latestanimendtime) {
@@ -1148,7 +1062,7 @@ function watchdropcratefromscriptedheliinternal() {
             }
             foreach (crate in self.crates) {
                 if (isdefined(crate)) {
-                    if (gettime() > crate.animendtime || isdefined(self.owner) && istrue(self.owner.ksempd)) {
+                    if (gettime() > crate.animendtime) {
                         if (disowned) {
                             crate thread destroycrate();
                         }
@@ -1177,7 +1091,7 @@ function watchdropcratefromscriptedheliinternal() {
             }
             foreach (chute in self.chutes) {
                 if (isdefined(chute)) {
-                    if (gettime() > chute.animendtime || isdefined(self.owner) && istrue(self.owner.ksempd)) {
+                    if (gettime() > chute.animendtime) {
                         chute thread destroychute();
                         continue;
                     }
@@ -1197,7 +1111,7 @@ function watchdropcratefromscriptedheliinternal() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5094
+// Checksum 0x0, Offset: 0x4da8
 // Size: 0x69
 function docratedropfromscripted(crate) {
     crate.scenenode = undefined;
@@ -1213,8 +1127,8 @@ function docratedropfromscripted(crate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5105
-// Size: 0x5e
+// Checksum 0x0, Offset: 0x4e19
+// Size: 0x5d
 function getcratedropcaststart(position, fromheli, droptype) {
     caststart = undefined;
     if (istrue(fromheli)) {
@@ -1227,7 +1141,7 @@ function getcratedropcaststart(position, fromheli, droptype) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x516c
+// Checksum 0x0, Offset: 0x4e7f
 // Size: 0x29
 function getcratedropcastend(caststart, fromheli) {
     return caststart + (0, 0, -1 * ter_op(istrue(fromheli), 25000, 25000));
@@ -1235,8 +1149,8 @@ function getcratedropcastend(caststart, fromheli) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x519e
-// Size: 0xee
+// Checksum 0x0, Offset: 0x4eb1
+// Size: 0xef
 function getcratedropdestination(caststart, castend, destination) {
     ignorelist = getcratedropignorelist();
     contentoverride = scripts\engine\trace::create_contents(0, 1, 1, 1, 0, 0);
@@ -1258,7 +1172,7 @@ function getcratedropdestination(caststart, castend, destination) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5295
+// Checksum 0x0, Offset: 0x4fa9
 // Size: 0xb7
 function getcratedropignorelist() {
     if (isdefined(level.cratedata.helis) && isdefined(level.cratedata.ac130s)) {
@@ -1269,8 +1183,8 @@ function getcratedropignorelist() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x5354
-// Size: 0x4b6
+// Checksum 0x0, Offset: 0x5068
+// Size: 0x4c1
 function createheli(owner, team, position, angles, vehicleisreserved, streakinfo) {
     heli = undefined;
     var_50cea258b08e022b = #"heli";
@@ -1362,8 +1276,8 @@ function createheli(owner, team, position, angles, vehicleisreserved, streakinfo
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5813
-// Size: 0x36
+// Checksum 0x0, Offset: 0x5532
+// Size: 0x35
 function private function_5be12c382c72de75(data) {
     veh = data.victim;
     veh thread destroyheli();
@@ -1372,7 +1286,7 @@ function private function_5be12c382c72de75(data) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5852
+// Checksum 0x0, Offset: 0x5570
 // Size: 0x3c
 function private function_5df678b586cdb293(veh) {
     if (!isdefined(veh)) {
@@ -1384,8 +1298,8 @@ function private function_5df678b586cdb293(veh) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5896
-// Size: 0x172
+// Checksum 0x0, Offset: 0x55b4
+// Size: 0x178
 function private function_763c331f22e7499e(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -1406,7 +1320,7 @@ function private function_763c331f22e7499e(data) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a11
+// Checksum 0x0, Offset: 0x5735
 // Size: 0x18
 function watchhelidestroyearly() {
     self endon("death");
@@ -1416,7 +1330,7 @@ function watchhelidestroyearly() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a31
+// Checksum 0x0, Offset: 0x5755
 // Size: 0x52
 function watchhelidestroyearlyinternal() {
     self endon("death");
@@ -1431,7 +1345,7 @@ function watchhelidestroyearlyinternal() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a8b
+// Checksum 0x0, Offset: 0x57af
 // Size: 0xb
 function destroyheli() {
     thread deleteheli(0);
@@ -1439,7 +1353,7 @@ function destroyheli() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a9e
+// Checksum 0x0, Offset: 0x57c2
 // Size: 0x5f
 function deleteheli(delay) {
     self notify("death");
@@ -1455,7 +1369,7 @@ function deleteheli(delay) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b05
+// Checksum 0x0, Offset: 0x5829
 // Size: 0x12
 function destroyhelicallback(data) {
     destroyheli();
@@ -1463,16 +1377,16 @@ function destroyhelicallback(data) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b1f
+// Checksum 0x0, Offset: 0x5843
 // Size: 0x36
 function getscriptedhelidropheightbase(droptype) {
-    assertex(isdefined(level.cratedropdata), "<dev string:x20d>");
+    assertex(isdefined(level.cratedropdata), "getScriptedHeliDropHeightBase() called before initCrateDropData().");
     return level.cratedropdata.heliheight;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b5e
+// Checksum 0x0, Offset: 0x5882
 // Size: 0x3b
 function getscriptedhelidropheight(droptype) {
     return getscriptedhelidropheightbase(droptype) + level.cratedropdata.helis.size * level.cratedropdata.heliheightoffset;
@@ -1480,17 +1394,17 @@ function getscriptedhelidropheight(droptype) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ba2
-// Size: 0x4c
+// Checksum 0x0, Offset: 0x58c6
+// Size: 0x4b
 function addhelidroppingcratetolist(heli) {
-    assertex(isdefined(level.cratedropdata), "<dev string:x253>");
+    assertex(isdefined(level.cratedropdata), "getScriptedHeliDropHeight() called before initCrateDropData().");
     entnum = heli getentitynumber();
     level.cratedropdata.helis[entnum] = heli;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bf6
+// Checksum 0x0, Offset: 0x5919
 // Size: 0x20
 function removehelidroppingcratefromlist(entnum) {
     level.cratedropdata.helis[entnum] = undefined;
@@ -1498,8 +1412,8 @@ function removehelidroppingcratefromlist(entnum) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5c1e
-// Size: 0x17c
+// Checksum 0x0, Offset: 0x5941
+// Size: 0x17d
 function makecrateusable() {
     leveldata = getleveldata(self.cratetype);
     if (istrue(leveldata.hasnointeraction)) {
@@ -1507,7 +1421,7 @@ function makecrateusable() {
     }
     level.cratedata.usablecrates[self getentitynumber()] = self;
     self.isusable = 1;
-    assertex(leveldata.supportsownercapture || leveldata.supportsothercapture, "<dev string:x295>");
+    assertex(leveldata.supportsownercapture || leveldata.supportsothercapture, "makeCrateUsable called on a crate that does not support owner capture OR other capture.");
     if (leveldata.supportsownercapture && leveldata.supportsothercapture) {
         thread watchcrateuse(1);
         useobject = self.useobject;
@@ -1535,8 +1449,8 @@ function makecrateusable() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5da2
-// Size: 0x40b
+// Checksum 0x0, Offset: 0x5ac6
+// Size: 0x39b
 function watchcrateuse(usetype, useobject) {
     self endon("death");
     self endon("makeCrateUnusable");
@@ -1561,12 +1475,6 @@ function watchcrateuse(usetype, useobject) {
     }
     triggerobject.inuse = 0;
     triggerobject.playerusing = undefined;
-    if (!isdefined(self.playeroutlines)) {
-        self.playeroutlines = [];
-    }
-    if (issharedfuncdefined("outline", "outlineEnableForTeam") && isdefined(self.team)) {
-        self.playeroutlines[self.playeroutlines.size] = [[ getsharedfunc("outline", "outlineEnableForTeam") ]](self, self.team, "outline_depth_cyan", "level_script");
-    }
     while (true) {
         player = triggerobject waittill("trigger");
         if (getdvarint(@"hash_618b9c003b5b3883", 0) == 0) {
@@ -1624,7 +1532,7 @@ function watchcrateuse(usetype, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x61b5
+// Checksum 0x0, Offset: 0x5e69
 // Size: 0x1e3
 function watchcrateuseinternal(player, useobject) {
     triggerobject = gettriggerobject(useobject);
@@ -1639,8 +1547,8 @@ function watchcrateuseinternal(player, useobject) {
         var_544e47b30f4f8fc3 = getdvarint(@"hash_7acaaf8f4063ab02", 0);
         if (isdefined(triggerobject.usetimeoverride)) {
             triggerobject.usetime = triggerobject.usetimeoverride;
-        } else if (issharedfuncdefined("<dev string:x2f0>", "<dev string:x2f8>")) {
-            if ([[ getsharedfunc("<dev string:x2f0>", "<dev string:x2f8>") ]]() == "<dev string:x307>") {
+        } else if (issharedfuncdefined("<dev string:xac>", "<dev string:xb1>")) {
+            if ([[ getsharedfunc("<dev string:xac>", "<dev string:xb1>") ]]() == "<dev string:xbd>") {
             } else {
                 triggerobject.usetime = ter_op(var_544e47b30f4f8fc3, 3, 0.5);
             }
@@ -1664,25 +1572,22 @@ function watchcrateuseinternal(player, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x63a1
-// Size: 0x25
+// Checksum 0x0, Offset: 0x6055
+// Size: 0x16
 function function_7972a1043e6facab() {
     if (utility::iscp()) {
         return "use";
-    }
-    if (scripts\cp_mp\utility\game_utility::function_d04af493b6e718ac()) {
-        return "open";
     }
     return "care_package";
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x63cf
+// Checksum 0x0, Offset: 0x6074
 // Size: 0xca
 function makecrateunusable() {
     self notify("makeCrateUnusable");
-    assertex(isdefined(level.cratedata), "<dev string:x30f>");
+    assertex(isdefined(level.cratedata), "makeCrateUnusable() called before initCrateData().");
     level.cratedata.usablecrates[self getentitynumber()] = undefined;
     self.isusable = 0;
     if (isdefined(self.playerusing)) {
@@ -1700,8 +1605,8 @@ function makecrateunusable() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x64a1
-// Size: 0x13e
+// Checksum 0x0, Offset: 0x6146
+// Size: 0x13f
 function startusingcrate(player, useobject) {
     if (!isdefined(self.playersusing)) {
         self.playersusing = [];
@@ -1731,8 +1636,8 @@ function startusingcrate(player, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65e7
-// Size: 0x46
+// Checksum 0x0, Offset: 0x628d
+// Size: 0x45
 function airdrop_givecrateuseweapon() {
     self endon("disconnect");
     level endon("game_ended");
@@ -1745,8 +1650,8 @@ function airdrop_givecrateuseweapon() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6635
-// Size: 0x94
+// Checksum 0x0, Offset: 0x62da
+// Size: 0x76
 function airdrop_watchforcrateuseend(crateweaponobj) {
     self endon("disconnect");
     level endon("game_ended");
@@ -1757,8 +1662,7 @@ function airdrop_watchforcrateuseend(crateweaponobj) {
     }
     scripts\cp_mp\utility\inventory_utility::_takeweapon(crateweaponobj);
     if (isdefined(self.lastdroppableweaponobj)) {
-        var_cf06a44e7221edbb = getdvarint(@"hash_dba4a054e67dd255", 0) == 1;
-        lastweaponobj = scripts\cp_mp\utility\weapon_utility::restoreweaponstates(self.lastdroppableweaponobj, var_cf06a44e7221edbb);
+        lastweaponobj = scripts\cp_mp\utility\weapon_utility::restoreweaponstates(self.lastdroppableweaponobj);
         self switchtoweapon(lastweaponobj);
         thread scripts\cp_mp\utility\inventory_utility::forcevalidweapon(lastweaponobj);
     }
@@ -1766,7 +1670,7 @@ function airdrop_watchforcrateuseend(crateweaponobj) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x66d1
+// Checksum 0x0, Offset: 0x6358
 // Size: 0x113
 function stopusingcrate(player, useobject) {
     if (array_contains(self.playersusing, player)) {
@@ -1790,7 +1694,7 @@ function stopusingcrate(player, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x67ec
+// Checksum 0x0, Offset: 0x6473
 // Size: 0x19f
 function canstartusingcrate(player, useobject, var_c83f8b96968afe72) {
     if (issharedfuncdefined("airdrop", "specialCase_canUseCrate")) {
@@ -1848,7 +1752,7 @@ function canstartusingcrate(player, useobject, var_c83f8b96968afe72) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6994
+// Checksum 0x0, Offset: 0x661b
 // Size: 0x11a
 function canstartusingcratetriggerobject(player, useobject) {
     triggerobject = gettriggerobject(useobject);
@@ -1872,8 +1776,8 @@ function canstartusingcratetriggerobject(player, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ab7
-// Size: 0xf9
+// Checksum 0x0, Offset: 0x673e
+// Size: 0xf8
 function cankeepusingcrate(player, useobject) {
     if (!val::get("crate_use")) {
         return false;
@@ -1907,8 +1811,8 @@ function cankeepusingcrate(player, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bb9
-// Size: 0x112
+// Checksum 0x0, Offset: 0x683f
+// Size: 0x111
 function makecrateusableforplayer(crate, player) {
     triggerobject = crate gettriggerobject();
     function_b21dea8dc3360508(triggerobject, crate);
@@ -1939,8 +1843,8 @@ function makecrateusableforplayer(crate, player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cd3
-// Size: 0x12b
+// Checksum 0x0, Offset: 0x6958
+// Size: 0x12a
 function function_b21dea8dc3360508(triggerobject, crate) {
     leveldata = getleveldata(crate.cratetype);
     if (!iscp()) {
@@ -1966,7 +1870,7 @@ function function_b21dea8dc3360508(triggerobject, crate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e06
+// Checksum 0x0, Offset: 0x6a8a
 // Size: 0x220
 function watchallcrateusability() {
     var_36afca263bbc6fbc = 0;
@@ -2019,8 +1923,8 @@ function watchallcrateusability() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x702e
-// Size: 0x52
+// Checksum 0x0, Offset: 0x6cb2
+// Size: 0x51
 function playusesound(player, useobject) {
     triggerobject = gettriggerobject(useobject);
     if (triggerobject.usetype == 1) {
@@ -2032,8 +1936,8 @@ function playusesound(player, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7088
-// Size: 0x68
+// Checksum 0x0, Offset: 0x6d0b
+// Size: 0x67
 function stopusesound(player, useobject) {
     triggerobject = gettriggerobject(useobject);
     if (triggerobject.usetype == 1) {
@@ -2048,7 +1952,7 @@ function stopusesound(player, useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x70f8
+// Checksum 0x0, Offset: 0x6d7a
 // Size: 0x15
 function gettriggerobject(useobject) {
     return isdefined(useobject) ? useobject : self;
@@ -2056,8 +1960,8 @@ function gettriggerobject(useobject) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7116
-// Size: 0x17f
+// Checksum 0x0, Offset: 0x6d98
+// Size: 0x180
 function cratephysicson(contactpoint, force) {
     leveldata = getleveldata(self.cratetype);
     if (isdefined(leveldata.cratephysicsoncallback)) {
@@ -2090,8 +1994,8 @@ function cratephysicson(contactpoint, force) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x729d
-// Size: 0x119
+// Checksum 0x0, Offset: 0x6f20
+// Size: 0xf8
 function function_a4d56f106b5ad5f9(data) {
     engine = scripts\cp_mp\utility\train_utility::function_d6b0a591ac99bd();
     assert(isdefined(engine));
@@ -2099,7 +2003,7 @@ function function_a4d56f106b5ad5f9(data) {
         return;
     }
     if (is_equal(data.lasttouchedplatform, engine)) {
-        if (!istrue(self.hitbytrain) || isdefined(self.cratetype) && self.cratetype == "battle_royale_elite_chopper") {
+        if (!istrue(self.hitbytrain)) {
             force = engine.velocity * 150;
             contactpoint = engine.origin + rotatevector((375, 0, -100), engine.angles);
             self playsound("mp_care_package_high_impact");
@@ -2118,7 +2022,7 @@ function function_a4d56f106b5ad5f9(data) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x73be
+// Checksum 0x0, Offset: 0x7020
 // Size: 0x47
 function cratephysicsoff() {
     if (!istrue(self.physicsactivated)) {
@@ -2135,8 +2039,8 @@ function cratephysicsoff() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x740d
-// Size: 0x1bb
+// Checksum 0x0, Offset: 0x706f
+// Size: 0x1c0
 function monitoraveragevelocityandupdate() {
     self endon("death");
     self notify("monitorAverageVelocityAndUpdate");
@@ -2197,8 +2101,8 @@ function monitoraveragevelocityandupdate() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x75d0
-// Size: 0x1db
+// Checksum 0x0, Offset: 0x7237
+// Size: 0x1df
 function monitoraveragevelocities(var_fea57fa0e78c63db, numdatapoints, var_2b14322307dd13aa) {
     clearaveragevelocities();
     self endon("death");
@@ -2241,7 +2145,7 @@ function monitoraveragevelocities(var_fea57fa0e78c63db, numdatapoints, var_2b143
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x77b3
+// Checksum 0x0, Offset: 0x741e
 // Size: 0x5a
 function getaveragelinearvelocity() {
     if (isdefined(self.avlinvel)) {
@@ -2259,7 +2163,7 @@ function getaveragelinearvelocity() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7816
+// Checksum 0x0, Offset: 0x7481
 // Size: 0x5a
 function getaverageangularvelocity() {
     if (isdefined(self.avangvel)) {
@@ -2277,8 +2181,8 @@ function getaverageangularvelocity() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7879
-// Size: 0x87
+// Checksum 0x0, Offset: 0x74e4
+// Size: 0x88
 function calculateaveragevelocities() {
     var_7a89fce67703419f = 0;
     var_3386dde146fd60b4 = 0;
@@ -2292,7 +2196,7 @@ function calculateaveragevelocities() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7908
+// Checksum 0x0, Offset: 0x7574
 // Size: 0x50
 function clearaveragevelocities() {
     self notify("clear_average_velocities");
@@ -2307,7 +2211,7 @@ function clearaveragevelocities() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7960
+// Checksum 0x0, Offset: 0x75cc
 // Size: 0x4c
 function monitorimpact(delay) {
     monitorimpactend();
@@ -2323,8 +2227,8 @@ function monitorimpact(delay) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x79b4
-// Size: 0x319
+// Checksum 0x0, Offset: 0x7620
+// Size: 0x30d
 function monitorimpactinternal(delay) {
     self endon("death");
     if (isdefined(delay)) {
@@ -2352,8 +2256,7 @@ function monitorimpactinternal(delay) {
                         }
                     } else if (getdvarint(@"hash_35d73d70c6843ce8", 1)) {
                         var_62ccfb7ea15a4520 = ent scripts\cp_mp\vehicles\vehicle::function_62ccfb7ea15a4520();
-                        var_bbdfa26a1db6eb7b = ent namespace_7c5d7b789e91a667::function_bbdfa26a1db6eb7b();
-                        if (!var_62ccfb7ea15a4520 && !var_bbdfa26a1db6eb7b && !istrue(ent.exfilhelicopter)) {
+                        if (!var_62ccfb7ea15a4520 && !istrue(ent.exfilhelicopter)) {
                             ent.var_a8f4bb03b366aa80 = 1;
                             ent scripts\cp_mp\vehicles\vehicle::vehicle_explode();
                         }
@@ -2368,17 +2271,18 @@ function monitorimpactinternal(delay) {
             }
             checklinktotrain(ent);
         }
-        surface = physics_getsurfacetypefromflags(flag1);
-        surfacetype = getsubstr(surface["name"], 9);
-        if (surfacetype == "water" && !istrue(self.inwater)) {
-            self.inwater = 1;
-        }
-        if (surfacetype == "glass_pane") {
-            glassradiusdamage(self.origin - (0, 0, 10), 100, 1000, 1000);
-            thread function_1422483e8c7e2002();
-        }
         if (gettime() - var_260ef1536027d0e1 >= 200) {
             var_260ef1536027d0e1 = gettime();
+            surface = physics_getsurfacetypefromflags(flag1);
+            surfacetype = getsubstr(surface["name"], 9);
+            if (surfacetype == "glass_pane") {
+                glassradiusdamage(self.origin - (0, 0, 10), 100, 1000, 1000);
+                waitframe();
+                cratephysicson();
+            }
+            if (surfacetype == "water" && !istrue(self.inwater)) {
+                self.inwater = 1;
+            }
             if (surfacetype == "user_terrain1") {
                 surfacetype = "user_terrain_1";
             }
@@ -2391,19 +2295,8 @@ function monitorimpactinternal(delay) {
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cd5
-// Size: 0x19
-function function_1422483e8c7e2002() {
-    self notify("airdrop_reactivatePhysics_singleton");
-    self endon("airdrop_reactivatePhysics_singleton");
-    waitframe();
-    cratephysicson();
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cf6
+// Checksum 0x0, Offset: 0x7935
 // Size: 0x88
 function checklinktotrain(ent) {
     if (isdefined(ent) && isdefined(ent.script_noteworthy) && isstartstr(ent.script_noteworthy, "train_") && !isdefined(self getlinkedparent())) {
@@ -2422,8 +2315,8 @@ function checklinktotrain(ent) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d86
-// Size: 0x229
+// Checksum 0x0, Offset: 0x79c5
+// Size: 0x22d
 function checklinktotraininternal(ent) {
     self endon("death");
     self endon("cancel_link_to_train");
@@ -2443,7 +2336,7 @@ function checklinktotraininternal(ent) {
         if (traceresult.size > 0 && isdefined(traceresult["entity"]) && scripts\cp_mp\utility\train_utility::is_train_ent(traceresult["entity"])) {
             traintracerelpos = combineangles(invertangles(ent.angles), ent.origin - traceresult["position"]);
             if (!isdefined(self.traintracerelpos)) {
-            } else if (distancesquared(traintracerelpos, self.traintracerelpos) > 10) {
+            } else if (distancesquared(traintracerelpos, self.traintracerelpos) > 100) {
                 self.traintracefails++;
                 self.traintracesuccesses = 0;
             } else {
@@ -2466,7 +2359,7 @@ function checklinktotraininternal(ent) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7fb7
+// Checksum 0x0, Offset: 0x7bfa
 // Size: 0x32
 function cancelchecklinktotrain() {
     self notify("cancel_link_to_train");
@@ -2478,8 +2371,8 @@ function cancelchecklinktotrain() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ff1
-// Size: 0x55
+// Checksum 0x0, Offset: 0x7c34
+// Size: 0x54
 function airdrop_crushchicken(chicken) {
     self endon("death");
     crushtime = gettime();
@@ -2491,7 +2384,7 @@ function airdrop_crushchicken(chicken) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x804e
+// Checksum 0x0, Offset: 0x7c90
 // Size: 0x35
 function monitorimpactend() {
     if (!istrue(self.monitoringimpact)) {
@@ -2505,14 +2398,14 @@ function monitorimpactend() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x808b
-// Size: 0xbf
+// Checksum 0x0, Offset: 0x7ccd
+// Size: 0xaa
 function impactshoulddestroyent(entity) {
     if (!istrue(self.physicssettled)) {
         if (isdefined(entity.classname)) {
             if (entity.classname == "worldSpawn") {
                 return false;
-            } else if (entity.classname == "script_vehicle" && entity.targetname != "veh_jup_nuclear_locomotive") {
+            } else if (entity.classname == "script_vehicle") {
                 return true;
             } else if (entity.classname == "misc_turret") {
                 return true;
@@ -2528,8 +2421,8 @@ function impactshoulddestroyent(entity) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8153
-// Size: 0x161
+// Checksum 0x0, Offset: 0x7d80
+// Size: 0x169
 function monitorplayerimpact() {
     monitorplayerimpactend();
     self endon("death");
@@ -2566,7 +2459,7 @@ function monitorplayerimpact() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x82bc
+// Checksum 0x0, Offset: 0x7ef1
 // Size: 0xa
 function monitorplayerimpactend() {
     self notify("monitorPlayerImpactEnd");
@@ -2574,20 +2467,20 @@ function monitorplayerimpactend() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x82ce
-// Size: 0xce
+// Checksum 0x0, Offset: 0x7f03
+// Size: 0xb5
 function playimpactfx(position, normal, impulse, surfacetype) {
     if (surfacetype != "glass_pane") {
         var_64eb7ced98f907bd = "airdrop_crate_impact_ground";
         if (surfacetype == "water") {
             var_64eb7ced98f907bd = "airdrop_crate_impact_water";
             self playsurfacesound("mp_care_package_impact_water_body", surfacetype);
-        } else if (impulse > 350) {
-            self playsurfacesound("mp_care_package_high_impact", surfacetype);
-        } else if (350 > impulse && impulse > 175) {
-            self playsurfacesound("mp_care_package_med_impact", surfacetype);
-        } else if (175 > impulse && impulse > 30) {
+        } else if (impulse < 175) {
             self playsurfacesound("mp_care_package_low_impact", surfacetype);
+        } else if (impulse < 350) {
+            self playsurfacesound("mp_care_package_med_impact", surfacetype);
+        } else {
+            self playsurfacesound("mp_care_package_high_impact", surfacetype);
         }
         playfx(getfx(var_64eb7ced98f907bd), position, normal);
     }
@@ -2596,7 +2489,7 @@ function playimpactfx(position, normal, impulse, surfacetype) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x83a4
+// Checksum 0x0, Offset: 0x7fc0
 // Size: 0x191
 function createdangerzone() {
     if (issharedfuncdefined("game", "lpcFeatureGated") && [[ getsharedfunc("game", "lpcFeatureGated") ]]()) {
@@ -2626,8 +2519,8 @@ function createdangerzone() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x853e
-// Size: 0x80
+// Checksum 0x0, Offset: 0x815a
+// Size: 0x7f
 function spawnuniversaldangerzone(position, radius, height, timeout) {
     if (issharedfuncdefined("spawn", "addSpawnDangerZone")) {
         dangerzoneid = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](position, radius, height, undefined, timeout, level.players[randomint(level.players.size)], 1);
@@ -2638,8 +2531,8 @@ function spawnuniversaldangerzone(position, radius, height, timeout) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x85c6
-// Size: 0x78
+// Checksum 0x0, Offset: 0x81e1
+// Size: 0x77
 function destroydangerzone() {
     if (issharedfuncdefined("spawn", "isSpawnDangerZoneAlive") && issharedfuncdefined("spawn", "removeSpawnDangerZone")) {
         dangerzoneid = self.dangerzoneid;
@@ -2652,7 +2545,7 @@ function destroydangerzone() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8646
+// Checksum 0x0, Offset: 0x8260
 // Size: 0x9c
 function _createnavobstacle() {
     self notify("createNavObstacle");
@@ -2669,7 +2562,7 @@ function _createnavobstacle() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x86eb
+// Checksum 0x0, Offset: 0x8305
 // Size: 0x47
 function _watchnavobstacle(id, origin, updatedistsqr) {
     self endon("death");
@@ -2681,7 +2574,7 @@ function _watchnavobstacle(id, origin, updatedistsqr) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x873a
+// Checksum 0x0, Offset: 0x8354
 // Size: 0x30
 function _destroynavobstacle() {
     self notify("createNavObstacle");
@@ -2693,8 +2586,8 @@ function _destroynavobstacle() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8772
-// Size: 0x123
+// Checksum 0x0, Offset: 0x838c
+// Size: 0x115
 function createmountmantlemodel() {
     leveldata = getleveldata(self.cratetype);
     if (isdefined(leveldata.mountmantlemodel)) {
@@ -2708,7 +2601,6 @@ function createmountmantlemodel() {
         mountmantlemodel.unresolved_collision_func = &crateunresolvedcollisioncallback;
         mountmantlemodel.killcament = self.killcament;
         mountmantlemodel.mountmantlemodel = 1;
-        mountmantlemodel.var_2ee93f095dc416f8 = 1;
         mountmantlemodel.unresolved_collision_notify_min = 1;
         mountmantlemodel clonebrushmodeltoscriptmodel(level.cratedata.mountmantlemodel);
         mountmantlemodel linkto(self);
@@ -2721,7 +2613,7 @@ function createmountmantlemodel() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x889e
+// Checksum 0x0, Offset: 0x84aa
 // Size: 0x28
 function destroymountmantlemodel() {
     if (isdefined(self.mountmantlemodel)) {
@@ -2732,10 +2624,10 @@ function destroymountmantlemodel() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x88ce
-// Size: 0x108
+// Checksum 0x0, Offset: 0x84da
+// Size: 0x107
 function crateunresolvedcollisioncallback(hitent, penetration) {
-    assertex(isdefined(level.cratedata), "<dev string:x345>");
+    assertex(isdefined(level.cratedata), "crateUnresolvedCollisionCallback() called before initCrateData().");
     if (level.cratedata.unresolvedcollisiontolerancesqr > 0) {
         if (lengthsquared(penetration) <= level.cratedata.unresolvedcollisiontolerancesqr) {
             return;
@@ -2757,8 +2649,8 @@ function crateunresolvedcollisioncallback(hitent, penetration) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x89de
-// Size: 0x1d2
+// Checksum 0x0, Offset: 0x85e9
+// Size: 0x1d3
 function _createheadicon() {
     if (istrue(self.disallowheadiconid)) {
         return;
@@ -2801,7 +2693,7 @@ function _createheadicon() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bb9
+// Checksum 0x0, Offset: 0x87c5
 // Size: 0x27
 function _destroyheadicon() {
     scripts\cp_mp\entityheadicons::setheadicon_deleteicon(self.headiconid);
@@ -2812,7 +2704,7 @@ function _destroyheadicon() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8be8
+// Checksum 0x0, Offset: 0x87f4
 // Size: 0x6e
 function function_3a065ce769b6ce3d() {
     if (isdefined(self.scriptedobjid)) {
@@ -2829,8 +2721,8 @@ function function_3a065ce769b6ce3d() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8c5e
-// Size: 0x107
+// Checksum 0x0, Offset: 0x886a
+// Size: 0x108
 function createminimapicon() {
     destroyminimapicon();
     leveldata = getleveldata(self.cratetype);
@@ -2858,7 +2750,7 @@ function createminimapicon() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d6e
+// Checksum 0x0, Offset: 0x897b
 // Size: 0x52
 function destroyminimapicon() {
     if (isdefined(self.minimapid)) {
@@ -2872,7 +2764,7 @@ function destroyminimapicon() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8dc8
+// Checksum 0x0, Offset: 0x89d5
 // Size: 0x67
 function looselinkto(parent, offset, instancedata) {
     self endon("death");
@@ -2888,16 +2780,16 @@ function looselinkto(parent, offset, instancedata) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e37
+// Checksum 0x0, Offset: 0x8a44
 // Size: 0x36
 function addtolists() {
-    assertex(isdefined(level.cratedata), "<dev string:x38a>");
+    assertex(isdefined(level.cratedata), "addToLists() called before initCrateData().");
     level.cratedata.crates[self getentitynumber()] = self;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e75
+// Checksum 0x0, Offset: 0x8a82
 // Size: 0x2e
 function removefromlists(id) {
     if (!isdefined(level.cratedata)) {
@@ -2908,8 +2800,8 @@ function removefromlists(id) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8eab
-// Size: 0x16b
+// Checksum 0x0, Offset: 0x8ab8
+// Size: 0x16d
 function getrandomkeyfromweightsarray(arr, exclusionlist) {
     if (isdefined(exclusionlist)) {
         if (!isarray(exclusionlist)) {
@@ -2924,7 +2816,7 @@ function getrandomkeyfromweightsarray(arr, exclusionlist) {
             isexcluded = 0;
             if (isdefined(exclusionlist)) {
                 if (exclusionlist.size > 0) {
-                    foreach (id, excludedkey in exclusionlist) {
+                    foreach (excludedkey in exclusionlist) {
                         if (excludedkey == key) {
                             exclusionlist[id] = undefined;
                             isexcluded = 1;
@@ -2956,7 +2848,7 @@ function getrandomkeyfromweightsarray(arr, exclusionlist) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x901f
+// Checksum 0x0, Offset: 0x8c2e
 // Size: 0x7
 function getdefaultcapturevisualscallback() {
     return &defaultcapturevisualscallback;
@@ -2964,7 +2856,7 @@ function getdefaultcapturevisualscallback() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x902f
+// Checksum 0x0, Offset: 0x8c3e
 // Size: 0x13
 function getdefaultcapturevisualsdeletiondelay() {
     return getanimlength(script_model%mp_military_carepackage_straps_falling) + 1;
@@ -2972,8 +2864,8 @@ function getdefaultcapturevisualsdeletiondelay() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x904b
-// Size: 0x108
+// Checksum 0x0, Offset: 0x8c5a
+// Size: 0x109
 function defaultcapturevisualscallback(model) {
     if (!isdefined(self)) {
         return;
@@ -3006,7 +2898,7 @@ function defaultcapturevisualscallback(model) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x915b
+// Checksum 0x0, Offset: 0x8d6b
 // Size: 0x3
 function getdefaultdestroyvisualsdeletiondelay() {
     return false;
@@ -3014,7 +2906,7 @@ function getdefaultdestroyvisualsdeletiondelay() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9167
+// Checksum 0x0, Offset: 0x8d77
 // Size: 0x7
 function getdefaultdestroyvisualscallback() {
     return &defaultdestroyvisualscallback;
@@ -3022,7 +2914,7 @@ function getdefaultdestroyvisualscallback() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9177
+// Checksum 0x0, Offset: 0x8d87
 // Size: 0xb
 function defaultdestroyvisualscallback(model) {
     
@@ -3030,7 +2922,7 @@ function defaultdestroyvisualscallback(model) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x918a
+// Checksum 0x0, Offset: 0x8d9a
 // Size: 0x15
 function getdefaultmountmantlemodel() {
     return level.cratedata.mountmantlemodel;
@@ -3038,7 +2930,7 @@ function getdefaultmountmantlemodel() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91a8
+// Checksum 0x0, Offset: 0x8db8
 // Size: 0x25
 function getnumdroppedcrates() {
     if (!isdefined(level.cratedata)) {
@@ -3049,20 +2941,8 @@ function getnumdroppedcrates() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91d6
-// Size: 0x34
-function function_58f652f9f3a0775() {
-    if (issharedfuncdefined("damage", "_suicide")) {
-        self thread [[ getsharedfunc("damage", "_suicide") ]]();
-        return;
-    }
-    self suicide();
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9212
-// Size: 0x222
+// Checksum 0x0, Offset: 0x8de6
+// Size: 0x2a1
 function trackcratemantlingexploit() {
     if (!isdefined(self.entmantlingendtime)) {
         if (self ismantling()) {
@@ -3090,7 +2970,11 @@ function trackcratemantlingexploit() {
                             self.entmantling = undefined;
                             self.entmantlingcrate = undefined;
                             self.entmantlingendtime = undefined;
-                            function_58f652f9f3a0775();
+                            if (issharedfuncdefined("damage", "_suicide")) {
+                                self thread [[ getsharedfunc("damage", "_suicide") ]]();
+                                return;
+                            }
+                            self suicide();
                             return;
                         }
                     }
@@ -3100,7 +2984,11 @@ function trackcratemantlingexploit() {
                         self.entmantling = undefined;
                         self.entmantlingcrate = undefined;
                         self.entmantlingendtime = undefined;
-                        function_58f652f9f3a0775();
+                        if (issharedfuncdefined("damage", "_suicide")) {
+                            self thread [[ getsharedfunc("damage", "_suicide") ]]();
+                            return;
+                        }
+                        self suicide();
                         return;
                     }
                 }
@@ -3110,7 +2998,11 @@ function trackcratemantlingexploit() {
                 self.entmantling = undefined;
                 self.entmantlingcrate = undefined;
                 self.entmantlingendtime = undefined;
-                function_58f652f9f3a0775();
+                if (issharedfuncdefined("damage", "_suicide")) {
+                    self thread [[ getsharedfunc("damage", "_suicide") ]]();
+                    return;
+                }
+                self suicide();
                 return;
             }
         }
@@ -3118,49 +3010,11 @@ function trackcratemantlingexploit() {
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x943c
-// Size: 0x1ea
-function function_b6469ac2ab6f3dc6() {
-    entmask = function_869ccb4e3451b8c6(["etype_player"]);
-    radius = getdvarint(@"hash_e9b16488fdec1843", 100);
-    while (true) {
-        foreach (crate in level.cratedata.crates) {
-            if (!isdefined(crate) || !istrue(crate.physicsactivated) || istrue(crate.physicssettled)) {
-                continue;
-            }
-            nearplayers = function_b1eef70090b5b7b5(crate.origin, radius, entmask);
-            foreach (p in nearplayers) {
-                if (p ismantling()) {
-                    entmantling = p getmovingplatformparent();
-                    if (isdefined(entmantling) && isdefined(entmantling.crate)) {
-                        if (isdefined(crate.mountmantlemodel)) {
-                            if (entmantling != crate.mountmantlemodel && p istouching(crate.mountmantlemodel)) {
-                                p function_58f652f9f3a0775();
-                            }
-                        } else if (entmantling.crate != crate) {
-                            if (p istouching(crate)) {
-                                p function_58f652f9f3a0775();
-                            }
-                        }
-                        continue;
-                    }
-                    if (p istouching(crate) || isdefined(crate.mountmantlemodel) && p istouching(crate.mountmantlemodel)) {
-                        p function_58f652f9f3a0775();
-                    }
-                }
-            }
-        }
-        waitframe();
-    }
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x962e
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x908f
+// Size: 0xde
 function overridecapturestring(stringoverride) {
-    assertex(isdefined(stringoverride), "<dev string:x3b9>");
+    assertex(isdefined(stringoverride), "overrideCrateCaptureString() requires a stringOverride.");
     if (isdefined(self.capturestring) && self.capturestring == stringoverride) {
         return;
     }
@@ -3178,10 +3032,10 @@ function overridecapturestring(stringoverride) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9716
-// Size: 0xdf
+// Checksum 0x0, Offset: 0x9175
+// Size: 0xdd
 function overridererollstring(stringoverride) {
-    assertex(isdefined(stringoverride), "<dev string:x3f4>");
+    assertex(isdefined(stringoverride), "overrideCrateRerollString() requires a stringOverride.");
     if (isdefined(self.rerollstring) && self.rerollstring == stringoverride) {
         return;
     }
@@ -3199,7 +3053,7 @@ function overridererollstring(stringoverride) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x97fd
+// Checksum 0x0, Offset: 0x925a
 // Size: 0x99
 function overrideheadicon(iconoverride) {
     if (!isdefined(self.headicon) && !isdefined(iconoverride)) {
@@ -3225,7 +3079,7 @@ function overrideheadicon(iconoverride) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x989e
+// Checksum 0x0, Offset: 0x92fb
 // Size: 0x9a
 function overrideminimapicon(iconoverride) {
     if (!isdefined(self.minimapicon) && !isdefined(iconoverride)) {
@@ -3251,10 +3105,10 @@ function overrideminimapicon(iconoverride) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9940
-// Size: 0xd0
+// Checksum 0x0, Offset: 0x939d
+// Size: 0xce
 function overridesupportsreroll(booloverride) {
-    assertex(isdefined(booloverride), "<dev string:x42e>");
+    assertex(isdefined(booloverride), "overrideSupportsReroll() requires a boolOverride.");
     if (self.supportsreroll == booloverride) {
         return;
     }
@@ -3274,8 +3128,8 @@ function overridesupportsreroll(booloverride) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a18
-// Size: 0x31b
+// Checksum 0x0, Offset: 0x9473
+// Size: 0x31c
 function initkillstreakcratedata() {
     level.cratedata.ksweights = [];
     level.cratedata.kscapturestrings = [];
@@ -3302,20 +3156,20 @@ function initkillstreakcratedata() {
         addkillstreakcratedata("cruise_predator", undefined, undefined, 150);
         addkillstreakcratedata("toma_strike", undefined, undefined, 150);
         addkillstreakcratedata("precision_airstrike", undefined, undefined, 150);
+        addkillstreakcratedata("sentry_gun", undefined, undefined, 150);
         addkillstreakcratedata("remote_turret", undefined, undefined, 150);
         addkillstreakcratedata("lrad", undefined, undefined, 150);
         addkillstreakcratedata("fuel_airstrike", undefined, undefined, 100);
         addkillstreakcratedata("hover_jet", undefined, undefined, 100);
         addkillstreakcratedata("airdrop_escort", undefined, undefined, 100);
         addkillstreakcratedata("pac_sentry", undefined, undefined, 100);
-        addkillstreakcratedata("loitering_munition", undefined, undefined, 50);
+        addkillstreakcratedata("loitering_munition", undefined, undefined, 100);
         addkillstreakcratedata("juggernaut_recon", undefined, undefined, 100);
         addkillstreakcratedata("ims", undefined, undefined, 100);
         addkillstreakcratedata("auto_drone", undefined, undefined, 50);
         addkillstreakcratedata("chopper_gunner", undefined, undefined, 50);
         addkillstreakcratedata("directional_uav", undefined, undefined, 25);
         addkillstreakcratedata("gunship", undefined, undefined, 25);
-        addkillstreakcratedata("missile_drone", undefined, undefined, 25);
         addkillstreakcratedata("juggernaut", undefined, undefined, 10);
         return;
     }
@@ -3328,8 +3182,8 @@ function initkillstreakcratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d3b
-// Size: 0x264
+// Checksum 0x0, Offset: 0x9797
+// Size: 0x26e
 function initdropzonekillstreakcratedata() {
     level.cratedata.ksweights = [];
     level.cratedata.kscapturestrings = [];
@@ -3351,22 +3205,22 @@ function initdropzonekillstreakcratedata() {
     addkillstreakcratedata("cruise_predator", undefined, undefined, 150);
     addkillstreakcratedata("toma_strike", undefined, undefined, 150);
     addkillstreakcratedata("precision_airstrike", undefined, undefined, 150);
+    addkillstreakcratedata("sentry_gun", undefined, undefined, 150);
     addkillstreakcratedata("remote_turret", undefined, undefined, 150);
     addkillstreakcratedata("lrad", undefined, undefined, 150);
     addkillstreakcratedata("fuel_airstrike", undefined, undefined, 100);
     addkillstreakcratedata("hover_jet", undefined, undefined, 100);
     addkillstreakcratedata("airdrop_escort", undefined, undefined, 100);
     addkillstreakcratedata("pac_sentry", undefined, undefined, 100);
-    addkillstreakcratedata("loitering_munition", undefined, undefined, 50);
+    addkillstreakcratedata("loitering_munition", undefined, undefined, 100);
     addkillstreakcratedata("juggernaut_recon", undefined, undefined, 100);
     addkillstreakcratedata("ims", undefined, undefined, 100);
     addkillstreakcratedata("auto_drone", undefined, undefined, 50);
     addkillstreakcratedata("chopper_gunner", undefined, undefined, 50);
     addkillstreakcratedata("directional_uav", undefined, undefined, 25);
     addkillstreakcratedata("gunship", undefined, undefined, 25);
-    addkillstreakcratedata("missile_drone", undefined, undefined, 25);
     addkillstreakcratedata("juggernaut", undefined, undefined, 10);
-    if (scripts\cp_mp\utility\game_utility::isinfectedgametype()) {
+    if (level.gametype == "infect") {
         leveldata.isteamonlycrate = 1;
         return;
     }
@@ -3375,7 +3229,7 @@ function initdropzonekillstreakcratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9fa7
+// Checksum 0x0, Offset: 0x9a0d
 // Size: 0x82
 function addkillstreakcratedata(streakname, capturestring, rerollstring, weight) {
     if (!isdefined(level.streakglobals.streakbundles[streakname])) {
@@ -3388,8 +3242,8 @@ function addkillstreakcratedata(streakname, capturestring, rerollstring, weight)
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa031
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x9a97
+// Size: 0x3e
 function getkillstreakcratedatabystreakname(streakname, supportsreroll) {
     data = spawnstruct();
     data.streakname = streakname;
@@ -3399,19 +3253,19 @@ function getkillstreakcratedatabystreakname(streakname, supportsreroll) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa079
+// Checksum 0x0, Offset: 0x9ade
 // Size: 0x86
 function overridekillstreakcrateweight(streakname, weightoverride) {
-    assertex(isdefined(level.cratedata), "<dev string:x463>");
-    assertex(isdefined(level.cratedata.ksweights), "<dev string:x4a5>");
-    assertex(isdefined(level.cratedata.ksweights), "<dev string:x4f1>");
+    assertex(isdefined(level.cratedata), "overrideKillstreakCrateWeight() called before initCrateData().");
+    assertex(isdefined(level.cratedata.ksweights), "overrideKillstreakCrateWeight() called before initKillstreakCrateData().");
+    assertex(isdefined(level.cratedata.ksweights), "overrideKillstreakCrateWeight() called with an invalid streakName.");
     level.cratedata.ksweights[streakname] = weightoverride;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa107
-// Size: 0xae
+// Checksum 0x0, Offset: 0x9b6c
+// Size: 0xb0
 function killstreakcrateactivatecallback(isfirstactivation) {
     data = self.data;
     capturestring = level.cratedata.kscapturestrings[data.streakname];
@@ -3430,8 +3284,8 @@ function killstreakcrateactivatecallback(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa1bd
-// Size: 0x1fc
+// Checksum 0x0, Offset: 0x9c24
+// Size: 0x1db
 function killstreakcratecapturecallback(player) {
     streakname = self.data.streakname;
     useimmediate = 0;
@@ -3449,7 +3303,6 @@ function killstreakcratecapturecallback(player) {
             } else {
                 player scripts\cp_mp\killstreaks\juggernaut::tryusejuggernaut(useimmediate);
             }
-            player thread scripts\cp_mp\challenges::usedkillstreak(streakname, namespace_649c2fab0fd72b8b::function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
         }
         break;
     }
@@ -3480,19 +3333,19 @@ function killstreakcratecapturecallback(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa3c1
-// Size: 0x6c
+// Checksum 0x0, Offset: 0x9e07
+// Size: 0x6b
 function getrandomkillstreak(var_52a8c1bddbf44d11) {
-    assertex(isdefined(level.cratedata), "<dev string:x537>");
-    assertex(isdefined(level.cratedata.ksweights), "<dev string:x56f>");
+    assertex(isdefined(level.cratedata), "getRandomKillstreak() called before initCrateData().");
+    assertex(isdefined(level.cratedata.ksweights), "getRandomKillstreak() called before initKillstreakCrateData().");
     streakname = getrandomkeyfromweightsarray(level.cratedata.ksweights, var_52a8c1bddbf44d11);
     return streakname;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xa436
-// Size: 0xca
+// Checksum 0x0, Offset: 0x9e7b
+// Size: 0xcb
 function placekillstreakcrate(owner, team, streakname, position, angles) {
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
@@ -3513,8 +3366,8 @@ function placekillstreakcrate(owner, team, streakname, position, angles) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xa509
-// Size: 0xd6
+// Checksum 0x0, Offset: 0x9f4f
+// Size: 0xd7
 function dropkillstreakcrate(owner, team, streakname, position, angles, destination) {
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
@@ -3535,8 +3388,8 @@ function dropkillstreakcrate(owner, team, streakname, position, angles, destinat
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5e8
-// Size: 0x12c
+// Checksum 0x0, Offset: 0xa02f
+// Size: 0x12d
 function dropkillstreakcratefromscriptedheli(owner, team, streakname, position, angles, destination, vehicleisreserved, streakinfo) {
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
@@ -3561,12 +3414,12 @@ function dropkillstreakcratefromscriptedheli(owner, team, streakname, position, 
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa71d
-// Size: 0xba
+// Checksum 0x0, Offset: 0xa165
+// Size: 0xc3
 function airdrop_playdeploydialog(streakinfo) {
     self endon("death_or_disconnect");
     level endon("game_ended");
-    if (level.gametype == "grnd" || scripts\cp_mp\utility\game_utility::isinfectedgametype()) {
+    if (level.gametype == "grnd" || level.gametype == "infect") {
         return;
     }
     var_52a5be2e2f91d710 = undefined;
@@ -3581,8 +3434,8 @@ function airdrop_playdeploydialog(streakinfo) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7df
-// Size: 0x110
+// Checksum 0x0, Offset: 0xa230
+// Size: 0x111
 function dropkillstreakcratefrommanualheli(owner, team, streakname, position, angles, destination, vehicleisreserved) {
     if (!isdefined(streakname) || streakname == "random") {
         streakname = getrandomkillstreak();
@@ -3606,8 +3459,8 @@ function dropkillstreakcratefrommanualheli(owner, team, streakname, position, an
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8f8
-// Size: 0x193
+// Checksum 0x0, Offset: 0xa34a
+// Size: 0x197
 function tryairdroptriggered(streakinfo) {
     streakname = streakinfo.streakname;
     droptype = streakname;
@@ -3643,7 +3496,7 @@ function tryairdroptriggered(streakinfo) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa94
+// Checksum 0x0, Offset: 0xa4ea
 // Size: 0x21
 function airdropmarkerswitchended(streakinfo, switchresult) {
     if (istrue(switchresult)) {
@@ -3653,8 +3506,8 @@ function airdropmarkerswitchended(streakinfo, switchresult) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaabd
-// Size: 0x89
+// Checksum 0x0, Offset: 0xa513
+// Size: 0x88
 function airdrop_watchplayerweapon(streakinfo) {
     self endon("disconnect");
     if (!isbot(self)) {
@@ -3672,8 +3525,8 @@ function airdrop_watchplayerweapon(streakinfo) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab4e
-// Size: 0x106
+// Checksum 0x0, Offset: 0xa5a3
+// Size: 0x105
 function airdropvisualmarkerfired(streakinfo) {
     streakinfo.airdroptype = streakinfo.streakname;
     if (issharedfuncdefined("vehicle", "incrementFauxVehicleCount")) {
@@ -3698,8 +3551,8 @@ function airdropvisualmarkerfired(streakinfo) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xac5d
-// Size: 0xfd
+// Checksum 0x0, Offset: 0xa6b1
+// Size: 0xfe
 function airdropvisualmarkeractivate(marker, droptype, streakinfo) {
     fxposition = drop_to_ground(marker.location, 50, -200, (0, 0, 1));
     fxposition += (0, 0, 1);
@@ -3712,13 +3565,13 @@ function airdropvisualmarkeractivate(marker, droptype, streakinfo) {
     if (isdefined(marker.visual)) {
         marker.visual delete();
     }
-    assertmsg("<dev string:x5b1>");
+    assertmsg("doFlyBy() no longer supported. See airdrop.gsc for new drop methods");
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xad62
-// Size: 0x21
+// Checksum 0x0, Offset: 0xa7b7
+// Size: 0x20
 function tryuseairdropmarker() {
     streakinfo = createstreakinfo("airdrop", self);
     return tryuseairdropmarkerfromstruct(streakinfo);
@@ -3726,8 +3579,8 @@ function tryuseairdropmarker() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xad8c
-// Size: 0x1eb
+// Checksum 0x0, Offset: 0xa7e0
+// Size: 0x1ec
 function tryuseairdropmarkerfromstruct(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -3792,7 +3645,7 @@ function tryuseairdropmarkerfromstruct(streakinfo) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf80
+// Checksum 0x0, Offset: 0xa9d5
 // Size: 0xae
 function function_f66b707d0894b6de(streakinfo) {
     self endon("death_or_disconnect");
@@ -3806,7 +3659,7 @@ function function_f66b707d0894b6de(streakinfo) {
             break;
         }
         /#
-            iprintln("<dev string:x5f8>");
+            iprintln("<dev string:xc2>");
         #/
         break;
     }
@@ -3814,7 +3667,7 @@ function function_f66b707d0894b6de(streakinfo) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb036
+// Checksum 0x0, Offset: 0xaa8b
 // Size: 0xf9
 function airdropmarkerfired(streakinfo, weaponobj, projectile, var_4b0c1a8c50d15340) {
     streakinfo.airdroptype = streakinfo.streakname;
@@ -3822,7 +3675,7 @@ function airdropmarkerfired(streakinfo, weaponobj, projectile, var_4b0c1a8c50d15
         [[ getsharedfunc("killstreak", "incrementFauxVehicleCount") ]]();
     }
     projectile.owner = self;
-    assertex(isdefined(streakinfo.airdroptype), "<dev string:x627>");
+    assertex(isdefined(streakinfo.airdroptype), "airDropMarkerFired() was passed a streakInfo that didn't go through tryAirdropTriggered()");
     projectile thread airdropmarkeractivate(streakinfo.airdroptype, undefined, streakinfo, var_4b0c1a8c50d15340);
     if (issharedfuncdefined("killstreak", "logKillstreakEvent")) {
         self [[ getsharedfunc("killstreak", "logKillstreakEvent") ]](streakinfo.airdroptype, self.origin);
@@ -3836,8 +3689,8 @@ function airdropmarkerfired(streakinfo, weaponobj, projectile, var_4b0c1a8c50d15
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb138
-// Size: 0x488
+// Checksum 0x0, Offset: 0xab8d
+// Size: 0x496
 function airdropmarkeractivate(droptype, lifeid, streakinfo, var_4b0c1a8c50d15340) {
     level endon("game_ended");
     var_811f337efd111e98 = self.owner.angles;
@@ -3877,11 +3730,11 @@ function airdropmarkeractivate(droptype, lifeid, streakinfo, var_4b0c1a8c50d1534
         break;
     }
     /#
-        if (droptype == "<dev string:x684>") {
+        if (droptype == "<dev string:xee>") {
             crateoverride = getdvar(@"hash_c247993ede3808ca");
             if (crateoverride != "<dev string:x1c>") {
-                if (issharedfuncdefined("<dev string:x68f>", "<dev string:x69a>")) {
-                    [[ getsharedfunc("<dev string:x68f>", "<dev string:x69a>") ]]();
+                if (issharedfuncdefined("<dev string:xf6>", "<dev string:xfe>")) {
+                    [[ getsharedfunc("<dev string:xf6>", "<dev string:xfe>") ]]();
                 }
                 dropkillstreakcratefromscriptedheli(owner, owner.team, crateoverride, position, var_fda870b32ab92c1f, position, 1, streakinfo);
                 return;
@@ -3920,8 +3773,8 @@ function airdropmarkeractivate(droptype, lifeid, streakinfo, var_4b0c1a8c50d1534
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5c8
-// Size: 0xbd
+// Checksum 0x0, Offset: 0xb02b
+// Size: 0xbc
 function function_206d83d7637be6a7(position, owner) {
     if (level.teambased) {
         var_13ba232eee7e6069 = spawnscriptable("airdrop_marker", position, (0, 0, 1));
@@ -3930,13 +3783,13 @@ function function_206d83d7637be6a7(position, owner) {
         return;
     }
     payload = [#"teamselect", owner getentitynumber()];
-    var_13ba232eee7e6069 = spawnscriptable("airdrop_marker", position, (0, 0, 1), undefined, payload);
+    var_13ba232eee7e6069 = spawnscriptable("airdrop_marker", position, (0, 0, 1), payload);
     var_13ba232eee7e6069 setscriptablepartstate("smokeSignal", "activeFFA");
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb68d
+// Checksum 0x0, Offset: 0xb0ef
 // Size: 0x77
 function airdropmarkertaken(streakinfo) {
     if (istrue(streakinfo.airdropmarkerfired)) {
@@ -3950,17 +3803,9 @@ function airdropmarkertaken(streakinfo) {
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb70c
-// Size: 0x13
-function function_c62f80d2f5717d4a(var_9f1f082eeef5d90b) {
-    thread destroycrate();
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb727
-// Size: 0x8b
+// Checksum 0x0, Offset: 0xb16e
+// Size: 0x8a
 function initbattleroyalecratedata() {
     leveldata = getleveldata("battle_royale");
     leveldata.capturestring = %MP/BR_CRATE;
@@ -3975,8 +3820,8 @@ function initbattleroyalecratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb7ba
-// Size: 0x2a
+// Checksum 0x0, Offset: 0xb200
+// Size: 0x29
 function getbrcratedatabytype(type) {
     data = spawnstruct();
     data.type = type;
@@ -3985,7 +3830,7 @@ function getbrcratedatabytype(type) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb7ed
+// Checksum 0x0, Offset: 0xb232
 // Size: 0x37
 function brcrateactivatecallback(isfirstactivation) {
     if (istrue(isfirstactivation)) {
@@ -3997,7 +3842,7 @@ function brcrateactivatecallback(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb82c
+// Checksum 0x0, Offset: 0xb271
 // Size: 0x33
 function brcratecapturecallback(player) {
     if (issharedfuncdefined("airdrop", "makeItemsFromCrate")) {
@@ -4007,7 +3852,7 @@ function brcratecapturecallback(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb867
+// Checksum 0x0, Offset: 0xb2ac
 // Size: 0x95
 function dropbrcratefromscriptedheli(position) {
     type = ter_op(cointoss(), "weapon", "attachment");
@@ -4022,7 +3867,7 @@ function dropbrcratefromscriptedheli(position) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb905
+// Checksum 0x0, Offset: 0xb34a
 // Size: 0x84
 function dropbrcratefrommanualheli(position) {
     type = ter_op(cointoss(), "weapon", "attachment");
@@ -4037,12 +3882,12 @@ function dropbrcratefrommanualheli(position) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb992
-// Size: 0x11f
+// Checksum 0x0, Offset: 0xb3d7
+// Size: 0x11e
 function initbattleroyaleloadoutcratedata() {
     leveldata = getleveldata("battle_royale_loadout");
     leveldata.capturestring = %MP/BR_CRATE_LOADOUT;
-    leveldata.basemodel = "military_carepackage_01_br";
+    leveldata.basemodel = "military_carepackage_01_loadout_br";
     leveldata.mountmantlemodel = undefined;
     leveldata.supportsownercapture = 0;
     leveldata.headicon = undefined;
@@ -4063,7 +3908,7 @@ function initbattleroyaleloadoutcratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbab9
+// Checksum 0x0, Offset: 0xb4fd
 // Size: 0x5e
 function brloadoutcrateactivatecallback(isfirstactivation) {
     if (istrue(isfirstactivation)) {
@@ -4078,7 +3923,7 @@ function brloadoutcrateactivatecallback(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb1f
+// Checksum 0x0, Offset: 0xb563
 // Size: 0x1c
 function brloadoutcratecapturecallback(player) {
     giveweaponsfromdropbag(player);
@@ -4087,8 +3932,8 @@ function brloadoutcratecapturecallback(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb43
-// Size: 0x1e3
+// Checksum 0x0, Offset: 0xb587
+// Size: 0x29e
 function brloadoutcratepostcapture(player) {
     if (!isdefined(self.numuses)) {
         self.numuses = 0;
@@ -4103,11 +3948,17 @@ function brloadoutcratepostcapture(player) {
     self.playersused[self.playersused.size] = player;
     self.numuses++;
     if (isdefined(self.playeroutlines)) {
-        if (!isdefined(self.var_b3447241cb747d0b)) {
-            self.var_b3447241cb747d0b = [];
+        foreach (outlineid in self.playeroutlines) {
+            if (isdefined(self.outlines) && isdefined(self.outlines[outlineid]) && isdefined(self.outlines[outlineid].playersvisibleto)) {
+                if (self.outlines[outlineid].playersvisibleto.size == 1 && self.outlines[outlineid].playersvisibleto[0] == player) {
+                    if (issharedfuncdefined("airdrop", "outlineDisable")) {
+                        [[ getsharedfunc("airdrop", "outlineDisable") ]](outlineid, self);
+                    }
+                    self.playeroutlines = array_remove(self.playeroutlines, outlineid);
+                    break;
+                }
+            }
         }
-        self.var_b3447241cb747d0b[self.var_b3447241cb747d0b.size] = player;
-        function_86f1096305a8c8f9(player);
     }
     self notify("brLoadoutPostCapture", player);
     if (istrue(self.strongholdcrate) || istrue(self.var_4cd5b8f62d173211)) {
@@ -4126,40 +3977,11 @@ function brloadoutcratepostcapture(player) {
         }
         thread destroycrate();
     }
-    scripts\cp_mp\challenges::function_8359cadd253f9604(player, "pickup_airdrop_crate", 1);
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbd2e
-// Size: 0x1c3
-function function_86f1096305a8c8f9(player) {
-    foreach (outlineid in self.playeroutlines) {
-        if (isdefined(self.outlines) && isdefined(self.outlines[outlineid]) && isdefined(self.outlines[outlineid].playersvisibleto)) {
-            if (issharedfuncdefined("outline", "outlineDisable")) {
-                [[ getsharedfunc("outline", "outlineDisable") ]](outlineid, self);
-            }
-            self.playeroutlines = array_remove(self.playeroutlines, outlineid);
-            totalteamplayers = level.teamdata[player.team]["players"];
-            var_7e9c8818d60b887a = totalteamplayers;
-            foreach (teammate in totalteamplayers) {
-                if (array_contains(self.var_b3447241cb747d0b, teammate)) {
-                    var_7e9c8818d60b887a = array_remove(var_7e9c8818d60b887a, teammate);
-                }
-            }
-            if (var_7e9c8818d60b887a.size > 0) {
-                if (issharedfuncdefined("outline", "outlineEnableForTeam")) {
-                    self.playeroutlines[self.playeroutlines.size] = [[ getsharedfunc("outline", "outlineEnableForTeam") ]](self, self.team, "outline_depth_cyan", "level_script", self.var_b3447241cb747d0b);
-                }
-            }
-            break;
-        }
-    }
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbef9
+// Checksum 0x0, Offset: 0xb82d
 // Size: 0x32
 function brloadoutcratedestroycallback(immediate) {
     if (issharedfuncdefined("airdrop", "brOnLoadoutCrateDestroyed")) {
@@ -4169,7 +3991,7 @@ function brloadoutcratedestroycallback(immediate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf33
+// Checksum 0x0, Offset: 0xb867
 // Size: 0x32
 function giveweaponsfromdropbag(player) {
     if (issharedfuncdefined("airdrop", "br_giveDropBagLoadout")) {
@@ -4179,7 +4001,7 @@ function giveweaponsfromdropbag(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf6d
+// Checksum 0x0, Offset: 0xb8a1
 // Size: 0x35
 function dropbrloadoutcrate(team, position, destination) {
     return dropcrate(undefined, team, "battle_royale_loadout", position, (0, randomfloat(360), 0), destination);
@@ -4187,8 +4009,8 @@ function dropbrloadoutcrate(team, position, destination) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbfab
-// Size: 0x11f
+// Checksum 0x0, Offset: 0xb8df
+// Size: 0x11e
 function function_c5c61b985836f974() {
     leveldata = getleveldata("loadout_drop");
     leveldata.capturestring = %MP/BR_CRATE_LOADOUT;
@@ -4212,7 +4034,7 @@ function function_c5c61b985836f974() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc0d2
+// Checksum 0x0, Offset: 0xba05
 // Size: 0x37
 function function_22501284ac235158(isfirstactivation) {
     if (istrue(isfirstactivation)) {
@@ -4224,7 +4046,7 @@ function function_22501284ac235158(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc111
+// Checksum 0x0, Offset: 0xba44
 // Size: 0x34
 function function_a5d8804d96fe6a17(player) {
     if (issharedfuncdefined("airdrop", "airdropSelectLoadout")) {
@@ -4234,8 +4056,8 @@ function function_a5d8804d96fe6a17(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc14d
-// Size: 0x67
+// Checksum 0x0, Offset: 0xba80
+// Size: 0x66
 function function_d854bf5a8cd7daf2(player) {
     if (!isdefined(self.numuses)) {
         self.numuses = 0;
@@ -4249,8 +4071,8 @@ function function_d854bf5a8cd7daf2(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1bc
-// Size: 0xd1
+// Checksum 0x0, Offset: 0xbaee
+// Size: 0xd2
 function function_63e71231fbc15aa9(owner, team, streakname, position, angles, destination, vehicleisreserved, streakinfo) {
     cratetype = streakname;
     cratedropdata = getkillstreakcratedatabystreakname(streakname, 0);
@@ -4269,11 +4091,11 @@ function function_63e71231fbc15aa9(owner, team, streakname, position, angles, de
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc296
-// Size: 0x14a
+// Checksum 0x0, Offset: 0xbbc9
+// Size: 0x156
 function initbattleroyalec130airdropcratedata() {
     leveldata = getleveldata("battle_royale_c130_loot");
-    if (scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5() == "plunder") {
+    if (getdvar(@"hash_7611a2790a0bf7fe", "") == "plunder") {
         leveldata.capturestring = %MP/DMZ_LOOT_CRATE_CAPTURE;
     } else {
         leveldata.capturestring = %MP/GENERIC_LOOT_CRATE_CAPTURE;
@@ -4299,7 +4121,7 @@ function initbattleroyalec130airdropcratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3e8
+// Checksum 0x0, Offset: 0xbd27
 // Size: 0xb
 function brc130airdropcrateactivatecallback(isfirstactivation) {
     
@@ -4307,7 +4129,7 @@ function brc130airdropcrateactivatecallback(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc3fb
+// Checksum 0x0, Offset: 0xbd3a
 // Size: 0xd9
 function brc130airdropcratecapturecallback(player) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -4328,7 +4150,7 @@ function brc130airdropcratecapturecallback(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4dc
+// Checksum 0x0, Offset: 0xbe1b
 // Size: 0x89
 function brc130airdropcratedestroycallback(immediate) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -4343,21 +4165,70 @@ function brc130airdropcratedestroycallback(immediate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc56d
+// Checksum 0x0, Offset: 0xbeac
 // Size: 0x1c
 function brc130airdropcratephysicsoncallback() {
-    self setscriptablepartstate(#"crate_audio", #"detach", 0);
+    self setscriptablepartstate(#"hash_e0f820f3df4e17d1", #"detach", 0);
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xc591
-// Size: 0x15f
+// Checksum 0x0, Offset: 0xbed0
+// Size: 0x3da
 function dropbrc130airdropcrate(dropposition, dropdestination, dropangles, var_958bbdfed6f2e9ef, var_fe41be11a71dc1b4, nodropanim, team, var_cf11cd8c8b813faf) {
-    droplootid = isdefined(var_958bbdfed6f2e9ef) ? var_958bbdfed6f2e9ef : "battle_royale_c130_loot";
-    nodropanim = isdefined(nodropanim) ? nodropanim : 0;
-    crate = function_dab97789e02a5320(dropposition, dropdestination, dropangles, droplootid, team, nodropanim);
+    var_dd3f2e9ec30744d5 = 250;
+    var_c8ec5569be94e5c8 = level.c130airdrop_heightoverride;
+    releaseoffset = 1000;
+    var_55917b74a3b88b89 = 10500;
+    var_843ccd48992e3408 = 7500;
+    var_e0570c6b08e54443 = 3000;
+    releasedestination = dropdestination + (0, 0, releaseoffset);
+    droplootid = "battle_royale_c130_loot";
+    if (isdefined(var_958bbdfed6f2e9ef)) {
+        droplootid = var_958bbdfed6f2e9ef;
+    }
+    if (!isdefined(nodropanim)) {
+        nodropanim = 0;
+    }
+    crate = createcrate(undefined, team, droplootid, dropposition, (0, 0, 0), dropdestination, undefined, 0);
     if (isdefined(crate)) {
+        crate.skipminimapicon = 1;
+        if (!nodropanim && releasedestination[2] < dropposition[2]) {
+            animid = undefined;
+            var_ff42e8ba492b161a = distance(dropposition, releasedestination);
+            if (var_ff42e8ba492b161a >= var_55917b74a3b88b89) {
+                animid = "brc130_drop_high";
+            } else if (var_ff42e8ba492b161a >= var_843ccd48992e3408) {
+                animid = "brc130_drop_med";
+            } else if (var_ff42e8ba492b161a >= var_e0570c6b08e54443) {
+                animid = "brc130_drop_low";
+            }
+            if (isdefined(animid)) {
+                animzoffset = 1000;
+                scenenode = spawn("script_model", releasedestination + (0, 0, animzoffset));
+                scenenode.angles = dropangles;
+                scenenode setmodel("tag_origin");
+                crate.animname = "care_package";
+                crate.dropanim = level.scr_anim[crate.animname][animid];
+                crate.animlength = getanimlength(crate.dropanim);
+                crate scripts\common\anim::setanimtree();
+                chute = spawn("script_model", crate.origin);
+                chute.angles = crate.angles;
+                chute.animname = "care_package_chute";
+                chute.dropanim = level.scr_anim[chute.animname][animid];
+                chute.animlength = getanimlength(chute.dropanim);
+                chute setmodel("veh9_mil_lnd_parachute_carepackage_br");
+                chute scripts\common\anim::setanimtree();
+                scenenode thread scripts\common\anim::anim_single_solo(crate, animid);
+                scenenode thread scripts\common\anim::anim_single_solo(chute, animid);
+                crate thread watchbrc130aidropcrateanimend();
+                chute thread watchbrc130airdropchuteanimend(scenenode);
+            } else {
+                crate cratephysicson();
+            }
+        } else {
+            crate cratephysicson();
+        }
         var_40920b1903f4682a = #"cashdrop_common";
         var_c16dc9d131bd10ba = getdvarint(@"hash_ff7bb52f31b387e1", 1);
         if (var_c16dc9d131bd10ba) {
@@ -4366,11 +4237,12 @@ function dropbrc130airdropcrate(dropposition, dropdestination, dropangles, var_9
         if (isdefined(var_fe41be11a71dc1b4)) {
             var_40920b1903f4682a = var_fe41be11a71dc1b4;
         }
-        crate setscriptablepartstate("objective_map", var_40920b1903f4682a, 0);
-        if (!nodropanim) {
-            crate setscriptablepartstate("crate_audio", "parachuting", 0);
+        crate setscriptablepartstate(#"objective_map", var_40920b1903f4682a, 0);
+        crate setscriptablepartstate(#"hash_e0f820f3df4e17d1", #"parachuting", 0);
+        var_946146964fc4025f = "ks_airdrop_crate_br";
+        if (isdefined(var_cf11cd8c8b813faf)) {
+            var_946146964fc4025f = var_cf11cd8c8b813faf;
         }
-        var_946146964fc4025f = isdefined(var_cf11cd8c8b813faf) ? var_cf11cd8c8b813faf : "ks_airdrop_crate_br";
         crate.smokesignal = spawn("script_model", dropdestination);
         crate.smokesignal setmodel(var_946146964fc4025f);
         crate.smokesignal setscriptablepartstate(#"smoke_signal", #"on", 0);
@@ -4379,67 +4251,8 @@ function dropbrc130airdropcrate(dropposition, dropdestination, dropangles, var_9
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xc6f9
-// Size: 0x2c1
-function function_dab97789e02a5320(dropposition, dropdestination, dropangles, packagetype, team, var_c9f07c0481b9634a) {
-    var_dd3f2e9ec30744d5 = 250;
-    var_c8ec5569be94e5c8 = level.c130airdrop_heightoverride;
-    releaseoffset = 1000;
-    var_55917b74a3b88b89 = 10500;
-    var_843ccd48992e3408 = 7500;
-    var_e0570c6b08e54443 = 3000;
-    releasedestination = dropdestination + (0, 0, releaseoffset);
-    crate = createcrate(undefined, team, packagetype, dropposition, (0, 0, 0), dropdestination, undefined, 0);
-    if (!isdefined(crate)) {
-        return undefined;
-    }
-    crate.skipminimapicon = 1;
-    if (!var_c9f07c0481b9634a && releasedestination[2] < dropposition[2]) {
-        animid = undefined;
-        var_ff42e8ba492b161a = distance(dropposition, releasedestination);
-        if (var_ff42e8ba492b161a >= var_55917b74a3b88b89) {
-            animid = "brc130_drop_high";
-        } else if (var_ff42e8ba492b161a >= var_843ccd48992e3408) {
-            animid = "brc130_drop_med";
-        } else if (var_ff42e8ba492b161a >= var_e0570c6b08e54443) {
-            animid = "brc130_drop_low";
-        }
-        if (isdefined(animid)) {
-            animzoffset = 1000;
-            scenenode = spawn("script_model", releasedestination + (0, 0, animzoffset));
-            scenenode.angles = dropangles;
-            scenenode setmodel("tag_origin");
-            crate.animname = "care_package";
-            crate.dropanim = level.scr_anim[crate.animname][animid];
-            crate.animlength = getanimlength(crate.dropanim);
-            crate scripts\common\anim::setanimtree();
-            if (isdefined(team)) {
-                namespace_c5f7e08ad7ea4280::function_8ba05ef17e2b7d10(crate, team);
-            }
-            chute = spawn("script_model", crate.origin);
-            chute.angles = crate.angles;
-            chute.animname = "care_package_chute";
-            chute.dropanim = level.scr_anim[chute.animname][animid];
-            chute.animlength = getanimlength(chute.dropanim);
-            chute setmodel("veh9_mil_lnd_parachute_carepackage_br");
-            chute scripts\common\anim::setanimtree();
-            scenenode thread scripts\common\anim::anim_single_solo(crate, animid);
-            scenenode thread scripts\common\anim::anim_single_solo(chute, animid);
-            crate thread watchbrc130aidropcrateanimend();
-            chute thread watchbrc130airdropchuteanimend(scenenode);
-        } else {
-            crate cratephysicson();
-        }
-    } else {
-        crate cratephysicson();
-    }
-    return crate;
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9c3
+// Checksum 0x0, Offset: 0xc2b3
 // Size: 0x38
 function watchbrc130aidropcrateanimend() {
     self endon("death");
@@ -4453,7 +4266,7 @@ function watchbrc130aidropcrateanimend() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xca03
+// Checksum 0x0, Offset: 0xc2f3
 // Size: 0x34
 function watchbrc130airdropchuteanimend(scenenode) {
     self endon("death");
@@ -4468,8 +4281,8 @@ function watchbrc130airdropchuteanimend(scenenode) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xca3f
-// Size: 0x133
+// Checksum 0x0, Offset: 0xc32f
+// Size: 0x132
 function initbattleroyalelootchoppercratedata() {
     leveldata = getleveldata("battle_royale_chopper_loot");
     if (scripts\cp_mp\utility\game_utility::function_fa7bfcc1d68b7b73()) {
@@ -4497,7 +4310,7 @@ function initbattleroyalelootchoppercratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb7a
+// Checksum 0x0, Offset: 0xc469
 // Size: 0xb
 function brlootchoppercrateactivatecallback(isfirstactivation) {
     
@@ -4505,7 +4318,7 @@ function brlootchoppercrateactivatecallback(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb8d
+// Checksum 0x0, Offset: 0xc47c
 // Size: 0xb3
 function brlootchoppercratecapturecallback(player) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -4523,7 +4336,7 @@ function brlootchoppercratecapturecallback(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc48
+// Checksum 0x0, Offset: 0xc537
 // Size: 0x63
 function brlootchoppercratedestroycallback(immediate) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -4535,8 +4348,8 @@ function brlootchoppercratedestroycallback(immediate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xccb3
-// Size: 0xec
+// Checksum 0x0, Offset: 0xc5a2
+// Size: 0xed
 function dropbrlootchoppercrate(position, destination) {
     crate = dropcrate(undefined, undefined, "battle_royale_chopper_loot", position, (0, randomfloat(360), 0), destination);
     if (isdefined(crate)) {
@@ -4556,8 +4369,8 @@ function dropbrlootchoppercrate(position, destination) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcda8
-// Size: 0xb8
+// Checksum 0x0, Offset: 0xc698
+// Size: 0xb7
 function dropbrlootchoppercrateforpublicevent(position, destination) {
     crate = dropcrate(undefined, undefined, "battle_royale_chopper_loot", position, (0, randomfloat(360), 0), destination);
     if (isdefined(crate)) {
@@ -4572,12 +4385,16 @@ function dropbrlootchoppercrateforpublicevent(position, destination) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xce69
-// Size: 0x108
+// Checksum 0x0, Offset: 0xc758
+// Size: 0x124
 function function_ddd270c88107faf9() {
     leveldata = getleveldata("battle_royale_elite_chopper");
-    leveldata.capturestring = %MP/BR_CRATE_ELITE;
-    leveldata.basemodel = "military_carepackage_01_elite_chopper";
+    if (scripts\cp_mp\utility\game_utility::function_fa7bfcc1d68b7b73()) {
+        leveldata.capturestring = %MP/BR_CRATE_LOADOUT;
+    } else {
+        leveldata.capturestring = %MP/DMZ_PLUNDER_CRATE_CAPTURE;
+    }
+    leveldata.basemodel = "military_carepackage_03_br";
     leveldata.mountmantlemodel = undefined;
     leveldata.supportsownercapture = 0;
     leveldata.headicon = undefined;
@@ -4596,7 +4413,7 @@ function function_ddd270c88107faf9() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf79
+// Checksum 0x0, Offset: 0xc884
 // Size: 0xb
 function function_bcae3fa5db092dd4(isfirstactivation) {
     
@@ -4604,7 +4421,7 @@ function function_bcae3fa5db092dd4(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcf8c
+// Checksum 0x0, Offset: 0xc897
 // Size: 0x8b
 function function_60b85568611b92f3(player) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -4619,7 +4436,7 @@ function function_60b85568611b92f3(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd01f
+// Checksum 0x0, Offset: 0xc92a
 // Size: 0x63
 function function_1ecb1fecb6f56ecf(immediate) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -4631,13 +4448,13 @@ function function_1ecb1fecb6f56ecf(immediate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd08a
-// Size: 0xb8
+// Checksum 0x0, Offset: 0xc995
+// Size: 0xb7
 function function_4671cbee65d1615d(position, destination) {
     crate = dropcrate(undefined, undefined, "battle_royale_elite_chopper", position, (0, randomfloat(360), 0), destination);
     if (isdefined(crate)) {
         crate.skipminimapicon = 1;
-        crate setscriptablepartstate(#"objective_map", #"hash_e0257dc3ae9c640c", 0);
+        crate setscriptablepartstate(#"objective_map", #"pe_chopper_crate", 0);
         crate.smokesignal = spawn("script_model", destination);
         crate.smokesignal setmodel("ks_airdrop_crate_br");
         crate.smokesignal setscriptablepartstate(#"smoke_signal", #"hash_681713bdddb46d8e", 0);
@@ -4647,8 +4464,8 @@ function function_4671cbee65d1615d(position, destination) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd14b
-// Size: 0x124
+// Checksum 0x0, Offset: 0xca55
+// Size: 0x123
 function function_53a94fee5954af57() {
     leveldata = getleveldata("battle_royale_cash_crate");
     leveldata.capturestring = %MP/DMZ_PLUNDER_CRATE_CAPTURE;
@@ -4673,7 +4490,7 @@ function function_53a94fee5954af57() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd277
+// Checksum 0x0, Offset: 0xcb80
 // Size: 0x32
 function function_bf892d4093c5f9d3(isfirstactivation) {
     if (issharedfuncdefined("airdrop", "registerCrateForCleanup")) {
@@ -4683,7 +4500,7 @@ function function_bf892d4093c5f9d3(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2b1
+// Checksum 0x0, Offset: 0xcbba
 // Size: 0x8d
 function function_93bbdfaba40c778a(player) {
     self setscriptablepartstate("objective_map", "inactive", 0);
@@ -4699,7 +4516,7 @@ function function_93bbdfaba40c778a(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd346
+// Checksum 0x0, Offset: 0xcc4f
 // Size: 0x65
 function function_66ee09b2e374fb6e(immediate) {
     self setscriptablepartstate("objective_map", "inactive", 0);
@@ -4712,8 +4529,8 @@ function function_66ee09b2e374fb6e(immediate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd3b3
-// Size: 0xd8
+// Checksum 0x0, Offset: 0xccbc
+// Size: 0xd9
 function function_9feb10c0096cc4d6(position, destination) {
     crate = dropcrate(undefined, undefined, "battle_royale_cash_crate", position, (0, randomfloat(360), 0), destination);
     if (isdefined(crate)) {
@@ -4733,8 +4550,8 @@ function function_9feb10c0096cc4d6(position, destination) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd494
-// Size: 0x128
+// Checksum 0x0, Offset: 0xcd9e
+// Size: 0x127
 function initplundercratedata() {
     leveldata = getleveldata("esc_cache");
     leveldata.capturestring = %MP/ESC_CACHE_USE_HINT;
@@ -4761,8 +4578,8 @@ function initplundercratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5c4
-// Size: 0x2a
+// Checksum 0x0, Offset: 0xcecd
+// Size: 0x29
 function getplcratedata(contents) {
     data = spawnstruct();
     data.contents = contents;
@@ -4771,8 +4588,8 @@ function getplcratedata(contents) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd5f7
-// Size: 0x3e
+// Checksum 0x0, Offset: 0xceff
+// Size: 0x3d
 function placeplcrate(contents, position, angles) {
     crate = placecrate(undefined, undefined, "esc_cache", position, angles, getplcratedata(contents));
     return crate;
@@ -4780,8 +4597,8 @@ function placeplcrate(contents, position, angles) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd63e
-// Size: 0x128
+// Checksum 0x0, Offset: 0xcf45
+// Size: 0x127
 function initarmcratedata() {
     level.cratedata.armweights = [];
     level.cratedata.armcapturestrings = [];
@@ -4804,7 +4621,7 @@ function initarmcratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd76e
+// Checksum 0x0, Offset: 0xd074
 // Size: 0x68
 function addarmcratedata(streakname, capturestring, defconlevel, weight) {
     level.cratedata.armdefconlevels[streakname] = defconlevel;
@@ -4814,8 +4631,8 @@ function addarmcratedata(streakname, capturestring, defconlevel, weight) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7de
-// Size: 0x2a
+// Checksum 0x0, Offset: 0xd0e4
+// Size: 0x29
 function getarmcratedatabystreakname(streakname) {
     data = spawnstruct();
     data.streakname = streakname;
@@ -4824,7 +4641,7 @@ function getarmcratedatabystreakname(streakname) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd811
+// Checksum 0x0, Offset: 0xd116
 // Size: 0x56
 function armcrateactivatecallback(isfirstactivation) {
     data = self.data;
@@ -4836,7 +4653,7 @@ function armcrateactivatecallback(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd86f
+// Checksum 0x0, Offset: 0xd174
 // Size: 0x56
 function armcratecapturecallback(player) {
     if (issharedfuncdefined("killstreak", "awardKillstreak")) {
@@ -4846,11 +4663,11 @@ function armcratecapturecallback(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd8cd
+// Checksum 0x0, Offset: 0xd1d2
 // Size: 0x7d
 function getrandomarmkillstreak(team) {
-    assertex(isdefined(level.cratedata), "<dev string:x6b7>");
-    assertex(isdefined(level.cratedata.armweights), "<dev string:x6f2>");
+    assertex(isdefined(level.cratedata), "getRandomArmKillstreak() called before initCrateData().");
+    assertex(isdefined(level.cratedata.armweights), "getRandomArmKillstreak() called before initArmCrateData().");
     var_52a8c1bddbf44d11 = getarmkillsteakstoexcludebyteamdefconlevel(team);
     streakname = getrandomkeyfromweightsarray(level.cratedata.armweights, var_52a8c1bddbf44d11);
     return streakname;
@@ -4858,16 +4675,16 @@ function getrandomarmkillstreak(team) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd953
-// Size: 0xd0
+// Checksum 0x0, Offset: 0xd258
+// Size: 0xcf
 function getarmkillsteakstoexcludebyteamdefconlevel(team) {
-    assertex(isdefined(level.cratedata.armdefconlevels), "<dev string:x730>");
-    assertex(isdefined(level.defconlevel), "<dev string:x782>");
+    assertex(isdefined(level.cratedata.armdefconlevels), "getArmKillsteaksToExcludeByTeamDefconLevel() called before initArmCrateData().");
+    assertex(isdefined(level.defconlevel), "getArmKillsteaksToExcludeByDefconLevel() called before scriptsmpgametypesarm::onStartGameType().");
     defconlevel = level.defconlevel;
     var_59f9b4ec41bab131 = undefined;
     if (defconlevel > 1) {
         var_59f9b4ec41bab131 = [];
-        foreach (streakname, var_fce39dabbbb5c9e0 in level.cratedata.armdefconlevels) {
+        foreach (var_fce39dabbbb5c9e0 in level.cratedata.armdefconlevels) {
             if (defconlevel > var_fce39dabbbb5c9e0) {
                 var_59f9b4ec41bab131[var_59f9b4ec41bab131.size] = streakname;
             }
@@ -4877,37 +4694,29 @@ function getarmkillsteakstoexcludebyteamdefconlevel(team) {
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0xda2c
-// Size: 0xb6
-function function_1ae233a5a8df359(team, streakname, position, angles, destination, cratetype, var_aa29643445bcf5c3) {
+// Params 5, eflags: 0x0
+// Checksum 0x0, Offset: 0xd330
+// Size: 0xf9
+function droparmcratefromscriptedheli(team, streakname, position, angles, destination) {
     if (!isdefined(streakname) || streakname == "random") {
-        streakname = [[ var_aa29643445bcf5c3 ]](team);
+        streakname = getrandomarmkillstreak(team);
     }
-    cratedropdata = spawnstruct();
-    cratedropdata.streakname = streakname;
-    scenenode = dropcratefromscriptedheli(undefined, team, cratetype, position, angles, destination, cratedropdata);
+    cratedropdata = getarmcratedatabystreakname(streakname);
+    scenenode = dropcratefromscriptedheli(undefined, team, "arm_no_owner", position, angles, destination, cratedropdata);
     if (!isdefined(scenenode)) {
         return undefined;
-    }
-    if (!isdefined(scenenode.crates)) {
+    } else if (!isdefined(scenenode.crates) || !isdefined(array_get_first_item(scenenode.crates))) {
         return undefined;
     }
-    return array_get_first_item(scenenode.crates);
-}
-
-// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
-// Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xdaeb
-// Size: 0x40
-function droparmcratefromscriptedheli(team, streakname, position, angles, destination) {
-    return function_1ae233a5a8df359(team, streakname, position, angles, destination, "arm_no_owner", &getrandomarmkillstreak);
+    foreach (crate in scenenode.crates) {
+        return crate;
+    }
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xdb34
-// Size: 0x134
+// Checksum 0x0, Offset: 0xd431
+// Size: 0x133
 function function_a3299432ddb721e3() {
     level.cratedata.var_332809acea23b57 = [];
     level.cratedata.var_7480157ed64deda2 = [];
@@ -4922,7 +4731,7 @@ function function_a3299432ddb721e3() {
     function_c035e11237e84114("precision_airstrike", 40);
     function_c035e11237e84114("toma_strike", 40);
     function_c035e11237e84114("fuel_airstrike", 40);
-    function_c035e11237e84114("remote_turret", 40);
+    function_c035e11237e84114("sentry_gun", 40);
     function_c035e11237e84114("pac_sentry", 30);
     function_c035e11237e84114("auto_drone", 20);
     function_c035e11237e84114("hover_jet", 20);
@@ -4933,7 +4742,7 @@ function function_a3299432ddb721e3() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdc70
+// Checksum 0x0, Offset: 0xd56c
 // Size: 0x2a
 function function_c035e11237e84114(streakname, weight) {
     level.cratedata.var_332809acea23b57[streakname] = weight;
@@ -4941,7 +4750,7 @@ function function_c035e11237e84114(streakname, weight) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdca2
+// Checksum 0x0, Offset: 0xd59e
 // Size: 0x56
 function function_d8a8e185cfa2de1b(isfirstactivation) {
     data = self.data;
@@ -4953,27 +4762,49 @@ function function_d8a8e185cfa2de1b(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd00
-// Size: 0x6b
+// Checksum 0x0, Offset: 0xd5fc
+// Size: 0x6a
 function function_5d1369bfc4efd8b7(team) {
-    assertex(isdefined(level.cratedata), "<dev string:x7e6>");
-    assertex(isdefined(level.cratedata.var_332809acea23b57), "<dev string:x823>");
+    assertex(isdefined(level.cratedata), "getRandomArmKillstreak() called before initCrateData().");
+    assertex(isdefined(level.cratedata.var_332809acea23b57), "getRandomArmKillstreak() called before initArmCrateData().");
     streakname = getrandomkeyfromweightsarray(level.cratedata.var_332809acea23b57);
     return streakname;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0xd66f
+// Size: 0x29
+function function_506b410ce5a55cb3(streakname) {
+    data = spawnstruct();
+    data.streakname = streakname;
+    return data;
+}
+
+// Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd74
-// Size: 0x40
+// Checksum 0x0, Offset: 0xd6a1
+// Size: 0xf9
 function function_99cc30ea8be5b2a6(team, streakname, position, angles, destination) {
-    return function_1ae233a5a8df359(team, streakname, position, angles, destination, "gwtdm_no_owner", &function_5d1369bfc4efd8b7);
+    if (!isdefined(streakname) || streakname == "random") {
+        streakname = function_5d1369bfc4efd8b7(team);
+    }
+    cratedropdata = function_506b410ce5a55cb3(streakname);
+    scenenode = dropcratefromscriptedheli(undefined, team, "gwtdm_no_owner", position, angles, destination, cratedropdata);
+    if (!isdefined(scenenode)) {
+        return undefined;
+    } else if (!isdefined(scenenode.crates) || !isdefined(array_get_first_item(scenenode.crates))) {
+        return undefined;
+    }
+    foreach (crate in scenenode.crates) {
+        return crate;
+    }
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xddbd
-// Size: 0x140
+// Checksum 0x0, Offset: 0xd7a2
+// Size: 0x13f
 function initbattleroyalejuggernautcratedata() {
     leveldata = getleveldata("battle_royale_juggernaut");
     if (scripts\cp_mp\utility\game_utility::function_fa7bfcc1d68b7b73()) {
@@ -5002,7 +4833,7 @@ function initbattleroyalejuggernautcratedata() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf05
+// Checksum 0x0, Offset: 0xd8e9
 // Size: 0x3b
 function brjuggernautcrateactivatecallback(isfirstactivation) {
     scripts\cp_mp\killstreaks\juggernaut::oncrateactivated(isfirstactivation);
@@ -5013,7 +4844,7 @@ function brjuggernautcrateactivatecallback(isfirstactivation) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf48
+// Checksum 0x0, Offset: 0xd92c
 // Size: 0x93
 function brjuggernautcratecapturecallback(player) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -5029,7 +4860,7 @@ function brjuggernautcratecapturecallback(player) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfe3
+// Checksum 0x0, Offset: 0xd9c7
 // Size: 0x83
 function brjuggernautcratedestroycallback(immediate) {
     self setscriptablepartstate(#"objective_map", #"inactive", 0);
@@ -5044,16 +4875,16 @@ function brjuggernautcratedestroycallback(immediate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe06e
+// Checksum 0x0, Offset: 0xda52
 // Size: 0x2d
 function brjuggernautcratephysicsoncallback(position, destination) {
-    self setscriptablepartstate(#"crate_audio", #"detach", 0);
+    self setscriptablepartstate(#"hash_e0f820f3df4e17d1", #"detach", 0);
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0a3
-// Size: 0x50
+// Checksum 0x0, Offset: 0xda87
+// Size: 0x4f
 function dropjuggernautcrate(team, position, destination) {
     streakinfo = createstreakinfo("juggernaut", self);
     return dropcrate(undefined, team, "battle_royale_juggernaut", position, (0, randomfloat(360), 0), destination, streakinfo, 1);
@@ -5061,8 +4892,8 @@ function dropjuggernautcrate(team, position, destination) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe0fc
-// Size: 0xd5
+// Checksum 0x0, Offset: 0xdadf
+// Size: 0xd4
 function spawnjuggernautcrateatposition(pos, var_e648e96614161011) {
     crate = scripts\cp_mp\killstreaks\airdrop::dropjuggernautcrate(self.team, pos + (0, 0, 4096), pos + (0, 0, 512));
     assert(isdefined(crate));
@@ -5076,7 +4907,7 @@ function spawnjuggernautcrateatposition(pos, var_e648e96614161011) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1d9
+// Checksum 0x0, Offset: 0xdbbb
 // Size: 0x2c
 function enablejuggernautcrateobjective(crate) {
     crate setotherent(self);
@@ -5085,7 +4916,7 @@ function enablejuggernautcrateobjective(crate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe20d
+// Checksum 0x0, Offset: 0xdbef
 // Size: 0x2c
 function choosejuggernautcratemodel(crate) {
     crate setotherent(self);
@@ -5094,7 +4925,7 @@ function choosejuggernautcratemodel(crate) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe241
+// Checksum 0x0, Offset: 0xdc23
 // Size: 0x88
 function juggcanusecrate(cratetype) {
     canusecrate = 1;
@@ -5117,7 +4948,7 @@ function juggcanusecrate(cratetype) {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2d2
+// Checksum 0x0, Offset: 0xdcb4
 // Size: 0x1c
 function function_3c4492046080faa9() {
     return ter_op(istrue(self.inwater), 50, 5);
@@ -5125,7 +4956,7 @@ function function_3c4492046080faa9() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe2f7
+// Checksum 0x0, Offset: 0xdcd9
 // Size: 0x1c
 function function_f7e3f128296ac3b6() {
     return ter_op(istrue(self.inwater), 5, 1);
@@ -5133,7 +4964,7 @@ function function_f7e3f128296ac3b6() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe31c
+// Checksum 0x0, Offset: 0xdcfe
 // Size: 0x16
 function function_d4833b6c916db9c6() {
     return ter_op(istrue(self.inwater), 3, 6);
@@ -5141,8 +4972,8 @@ function function_d4833b6c916db9c6() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xe33b
-// Size: 0x3a
+// Checksum 0x0, Offset: 0xdd1d
+// Size: 0x39
 function private function_c857ac89588adf6f() {
     leveldata = getleveldata(self.cratetype);
     return ter_op(istrue(self.inwater), 5, leveldata.headiconoffset);
@@ -5150,8 +4981,8 @@ function private function_c857ac89588adf6f() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe37e
-// Size: 0x7a
+// Checksum 0x0, Offset: 0xdd5f
+// Size: 0x79
 function function_19dc247eaaf9da8f() {
     leveldata = getleveldata("elite_arrow_bombsite");
     leveldata.basemodel = "military_carepackage_01_cq";
@@ -5165,8 +4996,8 @@ function function_19dc247eaaf9da8f() {
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe400
-// Size: 0xd4
+// Checksum 0x0, Offset: 0xdde0
+// Size: 0xc5
 function function_56e93fd2282a71ce() {
     leveldata = getleveldata("legendary_supply_drop");
     leveldata.basemodel = "military_carepackage_03_br";
@@ -5181,12 +5012,11 @@ function function_56e93fd2282a71ce() {
     leveldata.capturestring = %MP/GENERIC_LOOT_CRATE_CAPTURE;
     leveldata.capturecallback = &function_e7051a617b94015;
     leveldata.destroyoncapture = 1;
-    leveldata.var_c23ca3472233553d = 1;
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe4dc
+// Checksum 0x0, Offset: 0xdead
 // Size: 0x33
 function function_e7051a617b94015(player) {
     if (issharedfuncdefined("br_legendary_supply_drop", "legendary_supply_onCrateUse")) {

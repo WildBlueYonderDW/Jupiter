@@ -15,8 +15,8 @@
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9ee
-// Size: 0x21b
+// Checksum 0x0, Offset: 0x875
+// Size: 0x21a
 function soldier_init(asmname, statename, params) {
     assert(isdefined(self.asm));
     self.asm.footsteps = spawnstruct();
@@ -61,7 +61,7 @@ function soldier_init(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc11
+// Checksum 0x0, Offset: 0xa97
 // Size: 0x27
 function initscriptable() {
     self endon("death");
@@ -71,8 +71,8 @@ function initscriptable() {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc40
-// Size: 0x4bc
+// Checksum 0x0, Offset: 0xac6
+// Size: 0x4be
 function initaimlimits(asmname) {
     if (!isdefined(level.combataimlimits)) {
         level.combataimlimits = [];
@@ -190,7 +190,7 @@ function initaimlimits(asmname) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1104
+// Checksum 0x0, Offset: 0xf8c
 // Size: 0xd3
 function initanimspeedthresholds_soldier(animsetname) {
     if (istrue(anim.var_432836e99816347c[animsetname])) {
@@ -218,7 +218,7 @@ function initanimspeedthresholds_soldier(animsetname) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x11df
+// Checksum 0x0, Offset: 0x1067
 // Size: 0x8f
 function needtoturn3d(asmname, statename, tostatename, params) {
     if (istrue(self.matchexposednodeorientation) && isdefined(self.node)) {
@@ -237,8 +237,8 @@ function needtoturn3d(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1277
-// Size: 0x16b
+// Checksum 0x0, Offset: 0x10ff
+// Size: 0x16d
 function getturndesiredyaw() {
     if (isdefined(self.desiredturnyaw)) {
         return self.desiredturnyaw;
@@ -267,8 +267,8 @@ function getturndesiredyaw() {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13eb
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x1275
+// Size: 0xd4
 function getturndesiredyaw3d() {
     predicttime = 0.25;
     shootent = undefined;
@@ -291,8 +291,8 @@ function getturndesiredyaw3d() {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c6
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x1352
+// Size: 0xd4
 function getturndesiredpitch3d() {
     predicttime = 0.25;
     shootent = undefined;
@@ -315,8 +315,8 @@ function getturndesiredpitch3d() {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15a1
-// Size: 0x166
+// Checksum 0x0, Offset: 0x142f
+// Size: 0x16a
 function chooseturnanim3d(asmname, statename, params) {
     desiredyaw = getturndesiredyaw3d();
     desiredpitch = getturndesiredpitch3d();
@@ -364,8 +364,8 @@ function chooseturnanim3d(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x170f
-// Size: 0x81
+// Checksum 0x0, Offset: 0x15a1
+// Size: 0x82
 function choosecrouchturnanim(asmname, statename, params) {
     desiredyaw = getturndesiredyaw();
     if (desiredyaw < -135) {
@@ -383,8 +383,8 @@ function choosecrouchturnanim(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1799
-// Size: 0x1b7
+// Checksum 0x0, Offset: 0x162c
+// Size: 0x1bd
 function reload_cleanup(asmname, statename, params) {
     nullweapon = nullweapon();
     weap = self.var_1e61bb39def2d99d;
@@ -430,7 +430,7 @@ function reload_cleanup(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1958
+// Checksum 0x0, Offset: 0x17f1
 // Size: 0x26
 function terminateexposedprone(asmname, statename, params) {
     self.pushable = 1;
@@ -438,7 +438,7 @@ function terminateexposedprone(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1986
+// Checksum 0x0, Offset: 0x181f
 // Size: 0x25
 function terminateexposedidleaimdown(asmname, statename, params) {
     self.aimingdown = 0;
@@ -446,7 +446,7 @@ function terminateexposedidleaimdown(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b3
+// Checksum 0x0, Offset: 0x184c
 // Size: 0x25
 function terminateexposedcrouchaimdown(asmname, statename, params) {
     self.aimingdown = 0;
@@ -454,7 +454,7 @@ function terminateexposedcrouchaimdown(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19e0
+// Checksum 0x0, Offset: 0x1879
 // Size: 0x40
 function shouldfaceenemyinexposed() {
     if (isdefined(self.pathgoalpos)) {
@@ -465,8 +465,8 @@ function shouldfaceenemyinexposed() {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a29
-// Size: 0x93
+// Checksum 0x0, Offset: 0x18c2
+// Size: 0x94
 function playanim_weaponswitch(asmname, statename, params) {
     self endon(statename + "_finished");
     weapclass = bb_getrequestedweapon();
@@ -481,8 +481,8 @@ function playanim_weaponswitch(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ac4
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x195e
+// Size: 0x3c
 function terminate_weaponswitch(asmname, statename, params) {
     weapclass = weaponclass(self.weapon);
     updateweaponarchetype(weapclass);
@@ -490,8 +490,8 @@ function terminate_weaponswitch(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b09
-// Size: 0x17a
+// Checksum 0x0, Offset: 0x19a2
+// Size: 0x182
 function playturnanim_turnanimanglefixup(turnxanim, statename) {
     self endon("death");
     self endon(statename + "_finished");
@@ -522,7 +522,7 @@ function playturnanim_turnanimanglefixup(turnxanim, statename) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c8b
+// Checksum 0x0, Offset: 0x1b2c
 // Size: 0x8e
 function shouldsnaptocover_checktype(asmname, statename, tostatename, params) {
     if (bb_moverequested()) {
@@ -543,7 +543,7 @@ function shouldsnaptocover_checktype(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d22
+// Checksum 0x0, Offset: 0x1bc3
 // Size: 0x14
 function reloadnotehandler(note) {
     scripts\anim\notetracks::notetrack_prefix_handler(note);
@@ -552,7 +552,7 @@ function reloadnotehandler(note) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d3f
+// Checksum 0x0, Offset: 0x1be0
 // Size: 0x30
 function assesscleanup(asmname, statename, params) {
     self._blackboard.var_74f8f2b8eff7c7f = 0;
@@ -560,7 +560,7 @@ function assesscleanup(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d77
+// Checksum 0x0, Offset: 0x1c18
 // Size: 0x49
 function function_9d9a4c83d3a8b338(asmname, statename, tostatename, params) {
     if (!isdefined(self.assesslength)) {
@@ -574,7 +574,7 @@ function function_9d9a4c83d3a8b338(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dc9
+// Checksum 0x0, Offset: 0x1c6a
 // Size: 0x85
 function facegoalthread_newenemyreaction(statename, reactworldyaw) {
     self notify("FaceGoalThread");
@@ -591,7 +591,7 @@ function facegoalthread_newenemyreaction(statename, reactworldyaw) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e56
+// Checksum 0x0, Offset: 0x1cf7
 // Size: 0x65
 function handlefacegoalnotetrack_newenemyreaction(statename, note, lastknown) {
     assert(isdefined(lastknown));
@@ -606,8 +606,8 @@ function handlefacegoalnotetrack_newenemyreaction(statename, note, lastknown) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ec4
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x1d65
+// Size: 0xca
 function playanim_newenemyreaction(asmname, statename, params) {
     self endon(statename + "_finished");
     pushdisabledgunpose();
@@ -625,8 +625,8 @@ function playanim_newenemyreaction(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f95
-// Size: 0xae
+// Checksum 0x0, Offset: 0x1e37
+// Size: 0xb3
 function chooseanim_playerpushed(asmname, statename, params) {
     movedir = asm_getephemeraleventdata("player_pushed", "player_pushed");
     movedirnormalized = vectornormalize(movedir);
@@ -640,7 +640,7 @@ function chooseanim_playerpushed(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x204c
+// Checksum 0x0, Offset: 0x1ef3
 // Size: 0x73
 function terminate_casualkiller(asmname, statename, params) {
     self setbasearchetype(self findoverridearchetype("default"));
@@ -655,7 +655,7 @@ function terminate_casualkiller(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c7
+// Checksum 0x0, Offset: 0x1f6e
 // Size: 0x2f
 function pushdisabledgunpose() {
     if (isdefined(self.gunposeoverride)) {
@@ -666,7 +666,7 @@ function pushdisabledgunpose() {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20fe
+// Checksum 0x0, Offset: 0x1fa5
 // Size: 0x38
 function popdisabledgunpose() {
     if (isdefined(self.stashedgunposeoverride)) {
@@ -679,7 +679,7 @@ function popdisabledgunpose() {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x213e
+// Checksum 0x0, Offset: 0x1fe5
 // Size: 0x3e
 function function_e9cdfb92cc489acb(asmname, statename, params) {
     self function_f662e31df8183bf8(self.origin, self.angles);
@@ -688,7 +688,7 @@ function function_e9cdfb92cc489acb(asmname, statename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2184
+// Checksum 0x0, Offset: 0x202b
 // Size: 0x59
 function function_33294352d1956570(asmname, statename, tostatename, params) {
     if (istrue(self.var_9dc04ef5e55f3574)) {
@@ -700,7 +700,7 @@ function function_33294352d1956570(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e6
+// Checksum 0x0, Offset: 0x208d
 // Size: 0x40
 function function_78fcdbc229ec648c(asmname, statename, tostatename, params) {
     self function_1c339daaba3f71db(0);
@@ -710,8 +710,8 @@ function function_78fcdbc229ec648c(asmname, statename, tostatename, params) {
 
 // Namespace script_funcs / scripts\asm\soldier\script_funcs
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x222e
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x20d5
+// Size: 0x4c
 function forwardpushevent(asmname, statename, tostatename, params) {
     movedir = asm_geteventdata(asmname, "player_pushed");
     asm_fireephemeralevent("player_pushed", "player_pushed", movedir);

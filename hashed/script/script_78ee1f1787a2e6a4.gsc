@@ -7,8 +7,8 @@
 
 // Namespace ai / namespace_49fda402f68ade28
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d
-// Size: 0xb3c
+// Checksum 0x0, Offset: 0x392
+// Size: 0xb3b
 function spawner_fields(spawner) {
     spawner function_2222444238558aaa();
     if (isdefined(spawner.script_dontshootwhilemoving)) {
@@ -101,17 +101,17 @@ function spawner_fields(spawner) {
         self.script_accuracy = undefined;
     }
     if (isdefined(spawner.script_ignoreme)) {
-        assertex(spawner.script_ignoreme == 1, "<dev string:x1c>");
+        assertex(spawner.script_ignoreme == 1, "script_ignoreme set to something other than true (1) in Radiant. The only valid values are true or undefined. Defaulting to true.");
         self.ignoreme = 1;
         self.script_ignoreme = undefined;
     }
     if (isdefined(spawner.script_ignore_suppression)) {
-        assertex(spawner.script_ignore_suppression == 1, "<dev string:xa1>");
+        assertex(spawner.script_ignore_suppression == 1, "script_ignore_suppression set to something other than true (1) in Radiant. The only valid values are true or undefined. Defaulting to true.");
         self.ignoresuppression = 1;
         self.script_ignore_suppression = undefined;
     }
     if (isdefined(spawner.script_ignoreall)) {
-        assertex(spawner.script_ignoreall == 1, "<dev string:x130>");
+        assertex(spawner.script_ignoreall == 1, "script_ignoreall set to something other than true (1) in Radiant. The only valid values are true or undefined. Defaulting to true.");
         self.ignoreall = 1;
         self clearenemy();
     }
@@ -151,12 +151,12 @@ function spawner_fields(spawner) {
         self.script_forcebalconydeath = undefined;
     }
     if (isdefined(spawner.script_diequietly)) {
-        assertex(self.script_diequietly, "<dev string:x1b6>" + self.export);
+        assertex(self.script_diequietly, "Quiet deaths are disabled by default so don't set script_diequietly to false, check ai with export " + self.export);
         self.diequietly = 1;
         self.script_diequietly = undefined;
     }
     if (isdefined(spawner.script_noragdoll)) {
-        assertex(spawner.script_noragdoll, "<dev string:x21d>" + self.export);
+        assertex(spawner.script_noragdoll, "noragdoll is disabled by default so don't set script_noragdoll to false, check ai with export " + self.export);
         self.noragdoll = 1;
         self.script_noragdoll = undefined;
     }
@@ -165,7 +165,7 @@ function spawner_fields(spawner) {
         self.script_pacifist = undefined;
     }
     if (isdefined(spawner.script_bulletshield)) {
-        assertex(spawner.script_bulletshield, "<dev string:x27f>" + self.export);
+        assertex(spawner.script_bulletshield, "bulletshield is disabled by default so don't set script_bulletshield to false, check ai with export " + self.export);
         magic_bullet_shield();
         self.script_bulletshield = undefined;
     }
@@ -248,7 +248,7 @@ function spawner_fields(spawner) {
 
 // Namespace ai / namespace_49fda402f68ade28
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xc61
+// Checksum 0x0, Offset: 0xed5
 // Size: 0x256
 function private function_2222444238558aaa() {
     if (utility::issp()) {
@@ -312,7 +312,7 @@ function private function_2222444238558aaa() {
 
 // Namespace ai / namespace_49fda402f68ade28
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xebf
+// Checksum 0x0, Offset: 0x1133
 // Size: 0x21
 function spawn_running() {
     self endon("death");
@@ -323,7 +323,7 @@ function spawn_running() {
 
 // Namespace ai / namespace_49fda402f68ade28
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xee8
+// Checksum 0x0, Offset: 0x115c
 // Size: 0x11
 function function_691ff0cbc56cf8d3() {
     waittillframeend();
@@ -335,8 +335,8 @@ function function_691ff0cbc56cf8d3() {
 
 // Namespace ai / namespace_49fda402f68ade28
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0xf01
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x1175
+// Size: 0x3e
 function private function_5be4133799f4425d() {
     if (!isdefined(level.players)) {
         return level.player;

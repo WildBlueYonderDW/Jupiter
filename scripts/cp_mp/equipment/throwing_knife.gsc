@@ -1,27 +1,26 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\equipment\throwing_knife.gsc;
 #using script_cbb0697de4c5728;
 
 #namespace throwing_knife;
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ba
+// Checksum 0x0, Offset: 0x331
 // Size: 0x5b
 function throwing_knife_init() {
     level.throwingknifemaxpickups = getdvarfloat(@"hash_9cf2c444ba60d047", 12);
     level.throwingknifepickuptimeout = getdvarfloat(@"hash_63a7b50937e43d7b", 20);
     /#
-        scripts\engine\utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x2e>");
+        scripts\engine\utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x2b>");
     #/
     [[ getsharedfunc("throwing_knife", "init") ]]();
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x41d
+// Checksum 0x0, Offset: 0x394
 // Size: 0x45
 function throwing_knife_ongive(equipmentref, equipmentslot, variantid) {
     if (scripts\engine\utility::issharedfuncdefined("throwing_knife", "onGive")) {
@@ -31,7 +30,7 @@ function throwing_knife_ongive(equipmentref, equipmentslot, variantid) {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x46a
+// Checksum 0x0, Offset: 0x3e1
 // Size: 0x3c
 function throwing_knife_ontake(equipmentref, equipmentslot) {
     if (scripts\engine\utility::issharedfuncdefined("throwing_knife", "onTake")) {
@@ -40,19 +39,9 @@ function throwing_knife_ontake(equipmentref, equipmentslot) {
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ae
-// Size: 0x27
-function function_d763df6d36a1e34a(equipmentref, var_3dbc3b058135cbfb) {
-    if (isdefined(var_3dbc3b058135cbfb) && var_3dbc3b058135cbfb == 0) {
-        scripts\cp_mp\equipment\throwing_knife::throwing_knife_ongive(equipmentref);
-    }
-}
-
-// Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4dd
-// Size: 0x172
+// Checksum 0x0, Offset: 0x425
+// Size: 0x18f
 function throwing_knife_used(grenade) {
     grenade endon("death");
     grenade function_a39ea6b39ffb2b53();
@@ -81,6 +70,9 @@ function throwing_knife_used(grenade) {
         grenade delete();
         return;
     }
+    if (iscp()) {
+        grenade.equipmentref = "equip_throwing_knife";
+    }
     grenade setscriptablepartstate("showLocation", "active", 0);
     /#
         grenade thread function_dec7a62735f22d28();
@@ -92,10 +84,10 @@ function throwing_knife_used(grenade) {
 
     // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x657
+    // Checksum 0x0, Offset: 0x5bc
     // Size: 0x50
     function function_dec7a62735f22d28() {
-        self endon("<dev string:x36>");
+        self endon("<dev string:x30>");
         while (true) {
             if (getdvarint(@"hash_a8d9e3f367c7effc") > 0) {
                 cylinder(self.origin, self.origin + (0, 0, 64), 64);
@@ -108,8 +100,8 @@ function throwing_knife_used(grenade) {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x6af
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x614
+// Size: 0x4c
 function private function_bdd18334e29f6933() {
     self endon("explode");
     self endon("death");
@@ -124,8 +116,8 @@ function private function_bdd18334e29f6933() {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x704
-// Size: 0xf8
+// Checksum 0x0, Offset: 0x668
+// Size: 0xfd
 function private function_86b5c08af20abc5e() {
     level endon("game_end");
     self endon("missile_stuck");
@@ -150,7 +142,7 @@ function private function_86b5c08af20abc5e() {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x804
+// Checksum 0x0, Offset: 0x76d
 // Size: 0x54
 function function_3d8b0933df7505fd(victim) {
     outdmg = 45;
@@ -163,7 +155,7 @@ function function_3d8b0933df7505fd(victim) {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x861
+// Checksum 0x0, Offset: 0x7ca
 // Size: 0x16a
 function getcorpstablestate(stuckpart) {
     switch (stuckpart) {
@@ -202,14 +194,14 @@ function getcorpstablestate(stuckpart) {
     case #"hash_34f36cef327aaf2d": 
         return "ll_";
     default: 
-        println("<dev string:x3f>" + stuckpart + "<dev string:x6a>");
+        println("<dev string:x36>" + stuckpart + "<dev string:x5e>");
         return undefined;
     }
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d3
+// Checksum 0x0, Offset: 0x93c
 // Size: 0x47
 function function_a39ea6b39ffb2b53() {
     var_e5f5e8abcb0b75bc = namespace_46e942396566f2da::function_150370c11a6c880(self.weapon_object);
@@ -221,8 +213,8 @@ function function_a39ea6b39ffb2b53() {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa22
-// Size: 0x10c
+// Checksum 0x0, Offset: 0x98b
+// Size: 0x10b
 function throwing_knife_makepickup() {
     self makeunusable();
     trigger = spawn("trigger_radius", self.origin, 0, 64, 64);
@@ -252,8 +244,8 @@ function throwing_knife_makepickup() {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb36
-// Size: 0x129
+// Checksum 0x0, Offset: 0xa9e
+// Size: 0xf8
 function throwing_knife_watchpickup() {
     self endon("death");
     isbackpackinventoryenabled = 0;
@@ -278,12 +270,7 @@ function throwing_knife_watchpickup() {
         } else if (!player hasweapon(self.weapon_object) && !isbackpackinventoryenabled) {
             continue;
         }
-        variantid = 0;
-        weaponobj = self.weapon_object;
-        if (isdefined(weaponobj)) {
-            variantid = weaponobj.variantid;
-        }
-        if (player throwing_knife_trytopickup(self.equipmentref, variantid)) {
+        if (player throwing_knife_trytopickup(self.equipmentref)) {
             thread throwing_knife_deletepickup();
         }
     }
@@ -291,7 +278,7 @@ function throwing_knife_watchpickup() {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc67
+// Checksum 0x0, Offset: 0xb9e
 // Size: 0x1b
 function throwing_knife_watchpickuptimeout() {
     self endon("death");
@@ -301,7 +288,7 @@ function throwing_knife_watchpickuptimeout() {
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc8a
+// Checksum 0x0, Offset: 0xbc1
 // Size: 0x25
 function throwing_knife_deletepickup() {
     if (isdefined(self.knife_trigger)) {
@@ -311,13 +298,13 @@ function throwing_knife_deletepickup() {
 }
 
 // Namespace throwing_knife / scripts\cp_mp\equipment\throwing_knife
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb7
-// Size: 0x5a
-function throwing_knife_trytopickup(equipmentref, variantid) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0xbee
+// Size: 0x51
+function throwing_knife_trytopickup(equipmentref) {
     if (scripts\engine\utility::issharedfuncdefined("throwing_knife", "tryToPickup")) {
         pickupsuccessful = self [[ getsharedfunc("throwing_knife", "tryToPickup") ]](equipmentref);
-        assertex(isdefined(pickupsuccessful), "<dev string:x70>");
+        assertex(isdefined(pickupsuccessful), "shared func throwing_knife tryToPickup must return a bool.");
         return pickupsuccessful;
     }
     return 1;

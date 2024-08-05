@@ -4,7 +4,7 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x88
+    // Checksum 0x0, Offset: 0x68
     // Size: 0xa5
     function drawent(ent, radius, forwardlen, drawtimeseconds, color) {
         drawframes = int(drawtimeseconds / level.framedurationseconds);
@@ -17,7 +17,7 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x135
+    // Checksum 0x0, Offset: 0x115
     // Size: 0x63
     function drawline(start, end, drawtimeseconds, color) {
         drawframes = int(drawtimeseconds / level.framedurationseconds);
@@ -29,7 +29,7 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a0
+    // Checksum 0x0, Offset: 0x180
     // Size: 0x63
     function drawsphere(origin, radius, drawtimeseconds, color) {
         drawframes = int(drawtimeseconds / level.framedurationseconds);
@@ -41,7 +41,7 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 5, eflags: 0x0
-    // Checksum 0x0, Offset: 0x20b
+    // Checksum 0x0, Offset: 0x1eb
     // Size: 0x73
     function drawcylinder(origin, radius, height, drawtimeseconds, color) {
         drawframes = int(drawtimeseconds / level.framedurationseconds);
@@ -53,7 +53,7 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 10, eflags: 0x0
-    // Checksum 0x0, Offset: 0x286
+    // Checksum 0x0, Offset: 0x266
     // Size: 0xf2
     function drawboxfrompoints(topleftfront, toprightfront, topleftback, toprightback, bottomleftfront, bottomrightfront, var_2febbcb4c37b3b64, var_3a64b6f876a6b09f, drawtimeseconds, color) {
         thread drawline(topleftfront, toprightfront, drawtimeseconds, color);
@@ -72,8 +72,8 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x380
-    // Size: 0xf1
+    // Checksum 0x0, Offset: 0x360
+    // Size: 0xf4
     function drawangles(origin, angles, var_3e6845817408f87e, scalar) {
         if (!isdefined(scalar)) {
             scalar = 1;
@@ -92,7 +92,7 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x479
+    // Checksum 0x0, Offset: 0x45c
     // Size: 0x69
     function function_bb5850f548a9d261() {
         timescalecode = getdvarfloat(@"hash_4899ba8ad5536527");
@@ -112,8 +112,8 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4ea
-    // Size: 0xf8
+    // Checksum 0x0, Offset: 0x4cd
+    // Size: 0xf7
     function function_7111207db5db2175(midpoint, halfsize, drawtimeseconds, color) {
         vertices = [];
         vertices[0] = midpoint + (halfsize[0] * -1, halfsize[1] * -1, halfsize[2]);
@@ -129,15 +129,15 @@
 
     // Namespace debug_utility / scripts\cp_mp\utility\debug_utility
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5ea
-    // Size: 0xff
+    // Checksum 0x0, Offset: 0x5cc
+    // Size: 0xfe
     function waitfordvar(dvar, dvar_type, input_func) {
-        level notify("<dev string:x2e>" + function_f28fd66285fa2c9(dvar));
-        level endon("<dev string:x2e>" + function_f28fd66285fa2c9(dvar));
-        setdvarifuninitialized(dvar, "<dev string:x3b>");
+        level notify("<dev string:x2b>" + function_f28fd66285fa2c9(dvar));
+        level endon("<dev string:x2b>" + function_f28fd66285fa2c9(dvar));
+        setdvarifuninitialized(dvar, "<dev string:x35>");
         while (true) {
-            if (getdvar(dvar, "<dev string:x3b>") != "<dev string:x3b>") {
-                var_4f9df27618277b1e = "<dev string:x3b>";
+            if (getdvar(dvar, "<dev string:x35>") != "<dev string:x35>") {
+                var_4f9df27618277b1e = "<dev string:x35>";
                 switch (dvar_type) {
                 case #"hash_4730906c2f53f03e": 
                     var_4f9df27618277b1e = getdvarint(dvar);
@@ -154,7 +154,7 @@
                     break;
                 }
                 level thread [[ input_func ]](var_4f9df27618277b1e);
-                setdvar(dvar, "<dev string:x3b>");
+                setdvar(dvar, "<dev string:x35>");
             }
             wait 0.1;
         }

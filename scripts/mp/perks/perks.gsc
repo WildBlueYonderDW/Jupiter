@@ -613,7 +613,7 @@ function function_301144e1b628a10c() {
         if (perkbundlename == "replace_me") {
             continue;
         }
-        var_1e98f3ba9660d523 = hashcat(%"hash_284b297186abe3f4", perkbundlename);
+        var_1e98f3ba9660d523 = hashcat(%"perk:", perkbundlename);
         if (var_1e98f3ba9660d523 == %"hash_3636afb8639a35a5") {
             bundle = {#unused:1};
         } else {

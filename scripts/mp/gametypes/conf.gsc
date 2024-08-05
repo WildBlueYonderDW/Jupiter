@@ -35,7 +35,7 @@ function main() {
     }
     scripts\mp\globallogic::init();
     scripts\mp\globallogic::setupcallbacks();
-    if (isJuggerMoshGameMode()) {
+    if (function_a305f5d1be837817()) {
         level.var_29ed825c4a9a052c = scripts\mp\utility\game::function_9a59855eebf296b6();
     }
     allowed[0] = getgametype();

@@ -7,10 +7,10 @@
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x52f
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x58c
+// Size: 0x69
 function _magicbullet(objweapon, start, end, owner, event_ent) {
-    assertex(!isstring(objweapon), "<dev string:x1c>");
+    assertex(!isstring(objweapon), "_magicBullet() called with a string instead of a weapon object.");
     missile = magicbullet(objweapon, start, end, owner, event_ent);
     if (isdefined(missile) && isdefined(owner)) {
         missile setotherent(owner);
@@ -20,7 +20,7 @@ function _magicbullet(objweapon, start, end, owner, event_ent) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a2
+// Checksum 0x0, Offset: 0x5fe
 // Size: 0xa7
 function islockonlauncher(objweapon) {
     islockon = undefined;
@@ -48,8 +48,8 @@ function islockonlauncher(objweapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x652
-// Size: 0xf5
+// Checksum 0x0, Offset: 0x6ae
+// Size: 0xda
 function addlockedon(entity, attacker) {
     if (!isdefined(entity.islockedon)) {
         entity.islockedon = 0;
@@ -61,26 +61,23 @@ function addlockedon(entity, attacker) {
         }
     }
     if (isdefined(attacker)) {
-        assertex(!isdefined(attacker.entlockedonto), "<dev string:x5f>");
+        assertex(!isdefined(attacker.entlockedonto), "addLockedOn called on an attacker that is already locked on to another entity.");
         attacker.entlockedonto = entity;
-        assertex(!isdefined(entity.attackerslockedon[attacker getentitynumber()]), "<dev string:xb1>");
+        assertex(!isdefined(entity.attackerslockedon[attacker getentitynumber()]), "addLockedOn called on an attacker that is already locked on to THIS entity.");
         entity.attackerslockedon[attacker getentitynumber()] = attacker;
-        if (isplayer(attacker)) {
-            attacker function_f3bb4f4911a1beb2("game", "clearSpawnProtection");
-        }
     }
     entity.islockedon++;
 }
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x74f
+// Checksum 0x0, Offset: 0x790
 // Size: 0xb6
 function removelockedon(entity, attacker) {
     if (!isdefined(entity.islockedon)) {
         return;
     }
-    assert(islockedonto(entity), "<dev string:x100>");
+    assert(islockedonto(entity), "removeLockedOn called on an entity that is not locked onto.");
     if (entity.islockedon == 1) {
         if (isdefined(entity.lockedonremovedcallback)) {
             entity thread [[ entity.lockedonremovedcallback ]]();
@@ -97,7 +94,7 @@ function removelockedon(entity, attacker) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x80d
+// Checksum 0x0, Offset: 0x84e
 // Size: 0x20
 function setlockedoncallback(entity, lockedoncallback) {
     entity.lockedoncallback = lockedoncallback;
@@ -105,7 +102,7 @@ function setlockedoncallback(entity, lockedoncallback) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x835
+// Checksum 0x0, Offset: 0x876
 // Size: 0x20
 function setlockedonremovedcallback(entity, lockedonremovedcallback) {
     entity.lockedonremovedcallback = lockedonremovedcallback;
@@ -113,8 +110,8 @@ function setlockedonremovedcallback(entity, lockedonremovedcallback) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x85d
-// Size: 0x130
+// Checksum 0x0, Offset: 0x89e
+// Size: 0x12d
 function clearlockedon(entity) {
     entity notify("clearLockedOn");
     if (islockedonto(entity)) {
@@ -145,7 +142,7 @@ function clearlockedon(entity) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x995
+// Checksum 0x0, Offset: 0x9d3
 // Size: 0x33
 function clearlockedonondisconnect(player) {
     if (isdefined(self.entlockedonto)) {
@@ -156,7 +153,7 @@ function clearlockedonondisconnect(player) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d0
+// Checksum 0x0, Offset: 0xa0e
 // Size: 0x28
 function islockedonto(entity) {
     return isdefined(entity.islockedon) && entity.islockedon > 0;
@@ -164,7 +161,7 @@ function islockedonto(entity) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa01
+// Checksum 0x0, Offset: 0xa3f
 // Size: 0x6c
 function function_97db16de04046c2b(inflictor, victim, equipref) {
     if (isdefined(inflictor)) {
@@ -180,7 +177,7 @@ function function_97db16de04046c2b(inflictor, victim, equipref) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa76
+// Checksum 0x0, Offset: 0xab4
 // Size: 0x15
 function function_605b121f1fadd46c(allowed) {
     self.var_605b121f1fadd46c = allowed;
@@ -188,7 +185,7 @@ function function_605b121f1fadd46c(allowed) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa93
+// Checksum 0x0, Offset: 0xad1
 // Size: 0x1b
 function function_acc627f597d5b2cf() {
     if (isdefined(self.var_605b121f1fadd46c)) {
@@ -199,7 +196,7 @@ function function_acc627f597d5b2cf() {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xab7
+// Checksum 0x0, Offset: 0xaf5
 // Size: 0x29
 function function_f18dbd353f3e1570(entity) {
     return isdefined(entity.var_f2f04bcc448fab3a) && entity.var_f2f04bcc448fab3a.size > 0;
@@ -207,7 +204,7 @@ function function_f18dbd353f3e1570(entity) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xae9
+// Checksum 0x0, Offset: 0xb27
 // Size: 0x20
 function function_53fd22613ea65204(entity, var_5ec2da3d1d27e716) {
     entity.var_5ec2da3d1d27e716 = var_5ec2da3d1d27e716;
@@ -215,7 +212,7 @@ function function_53fd22613ea65204(entity, var_5ec2da3d1d27e716) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb11
+// Checksum 0x0, Offset: 0xb4f
 // Size: 0x20
 function function_b55a664e824540d2(entity, var_218d5fb97d94f2c) {
     entity.var_218d5fb97d94f2c = var_218d5fb97d94f2c;
@@ -223,7 +220,7 @@ function function_b55a664e824540d2(entity, var_218d5fb97d94f2c) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb39
+// Checksum 0x0, Offset: 0xb77
 // Size: 0x68
 function function_69d45a21a6d4e9f8(entity, ownerteam) {
     if (!isdefined(entity.var_f2f04bcc448fab3a)) {
@@ -237,13 +234,13 @@ function function_69d45a21a6d4e9f8(entity, ownerteam) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xba9
-// Size: 0x113
+// Checksum 0x0, Offset: 0xbe7
+// Size: 0x112
 function function_28e583bfecc38a25(entity, ownerteam) {
     if (!isdefined(entity.var_f2f04bcc448fab3a)) {
         return;
     }
-    assert(function_f18dbd353f3e1570(entity), "<dev string:x13f>");
+    assert(function_f18dbd353f3e1570(entity), "removeBunkerBusterAttached called on an entity that does not have bunkerbusters attached.");
     teams = entity.var_f2f04bcc448fab3a;
     entity.var_f2f04bcc448fab3a = [];
     removed = 0;
@@ -264,7 +261,7 @@ function function_28e583bfecc38a25(entity, ownerteam) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc4
+// Checksum 0x0, Offset: 0xd01
 // Size: 0x62
 function addincoming(entity) {
     if (!isdefined(entity.hasincoming)) {
@@ -280,13 +277,13 @@ function addincoming(entity) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd2e
+// Checksum 0x0, Offset: 0xd6b
 // Size: 0x6c
 function removeincoming(entity) {
     if (!isdefined(entity.hasincoming)) {
         return;
     }
-    assert(hasincoming(entity), "<dev string:x19c>");
+    assert(hasincoming(entity), "removeIncoming called on an entity that does not have incoming.");
     if (entity.hasincoming == 1) {
         if (isdefined(entity.incomingremovedcallback)) {
             entity thread [[ entity.incomingremovedcallback ]]();
@@ -297,7 +294,7 @@ function removeincoming(entity) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xda2
+// Checksum 0x0, Offset: 0xddf
 // Size: 0x109
 function giveandfireoffhandreliable(objweapon) {
     self endon("death");
@@ -306,7 +303,7 @@ function giveandfireoffhandreliable(objweapon) {
     if (isdefined(heldoffhand) && !isnullweapon(heldoffhand)) {
         return 0;
     }
-    assert(isweapon(objweapon), "<dev string:x1df>");
+    assert(isweapon(objweapon), "giveAndFireOffhandReliable() requires a weapon object");
     if (!isweapon(objweapon)) {
         if (isstring(objweapon)) {
             objweapon = makeweapon(objweapon);
@@ -339,7 +336,7 @@ function giveandfireoffhandreliable(objweapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb3
+// Checksum 0x0, Offset: 0xef0
 // Size: 0x38
 function function_8ea8b6459d144947(player, objweapon) {
     self endon("race_end");
@@ -350,8 +347,8 @@ function function_8ea8b6459d144947(player, objweapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xef3
-// Size: 0x72
+// Checksum 0x0, Offset: 0xf30
+// Size: 0x71
 function function_158897145d2efb26(player, objweapon) {
     self endon("race_end");
     for (timeelapsed = 0; player hasweapon(objweapon) && timeelapsed < 5; timeelapsed += level.framedurationseconds) {
@@ -366,7 +363,7 @@ function function_158897145d2efb26(player, objweapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf6d
+// Checksum 0x0, Offset: 0xfa9
 // Size: 0x20
 function setincomingcallback(entity, incomingcallback) {
     entity.incomingcallback = incomingcallback;
@@ -374,7 +371,7 @@ function setincomingcallback(entity, incomingcallback) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf95
+// Checksum 0x0, Offset: 0xfd1
 // Size: 0x20
 function setincomingremovedcallback(entity, incomingremovedcallback) {
     entity.incomingremovedcallback = incomingremovedcallback;
@@ -382,7 +379,7 @@ function setincomingremovedcallback(entity, incomingremovedcallback) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbd
+// Checksum 0x0, Offset: 0xff9
 // Size: 0x28
 function hasincoming(entity) {
     return isdefined(entity.hasincoming) && entity.hasincoming > 0;
@@ -390,7 +387,7 @@ function hasincoming(entity) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfee
+// Checksum 0x0, Offset: 0x102a
 // Size: 0x51
 function watchtargetlockedontobyprojectile(target, projectile) {
     target endon("clearLockedOn");
@@ -405,7 +402,7 @@ function watchtargetlockedontobyprojectile(target, projectile) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1047
+// Checksum 0x0, Offset: 0x1083
 // Size: 0x13
 function clearprojectilelockedon(projectile) {
     projectile notify("clearTargetLockedOntoByProjectile");
@@ -413,8 +410,8 @@ function clearprojectilelockedon(projectile) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1062
-// Size: 0x2e1
+// Checksum 0x0, Offset: 0x109e
+// Size: 0x2e9
 function dropweaponfordeathlaunch(item, weapongroup, damage, angles) {
     if (item physics_getnumbodies() == 0) {
         return;
@@ -449,7 +446,7 @@ function dropweaponfordeathlaunch(item, weapongroup, damage, angles) {
         var_5de19bfa9bb86f0c *= -1;
     }
     if (!isdefined(item)) {
-        println("<dev string:x218>");
+        println("<dev string:x1c>");
         return;
     }
     var_2e3a4c6faf317522 = item physics_getentitycenterofmass();
@@ -481,11 +478,11 @@ function dropweaponfordeathlaunch(item, weapongroup, damage, angles) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x134b
+// Checksum 0x0, Offset: 0x138f
 // Size: 0xf2
 function isbulletweapon(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x251>");
+        assertmsg("<dev string:x52>");
         return 0;
     }
     if (isweapon(weapon) && isnullweapon(weapon)) {
@@ -515,11 +512,11 @@ function isbulletweapon(weapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1445
-// Size: 0xd6
+// Checksum 0x0, Offset: 0x1489
+// Size: 0xd5
 function islauncherweapon(weapon) {
     if (!isdefined(weapon)) {
-        assertmsg("<dev string:x293>");
+        assertmsg("<dev string:x91>");
         return false;
     }
     if (isweapon(weapon) && isnullweapon(weapon)) {
@@ -546,22 +543,15 @@ function islauncherweapon(weapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1524
-// Size: 0xe3
+// Checksum 0x0, Offset: 0x1567
+// Size: 0xaa
 function function_38642db3c423bcdc(weapon) {
-    if (getdvarint(@"hash_86c5f9dae77ee49e", 1) == 0) {
-        return false;
-    }
-    var_1bae199ae2509f57 = ["riotshield", "iw9_me_riotshield_mp", "iw9_la_juliet_mp", "iw9_la_gromeo_mp", "iw9_me_sword01_mp", "iw9_me_kamas_mp"];
+    var_1bae199ae2509f57 = ["riotshield", "iw9_me_riotshield_mp", "iw9_la_juliet_mp", "iw9_la_gromeo_mp", "iw9_me_sword01_mp"];
     if (isweapon(weapon) && isnullweapon(weapon)) {
         return false;
     }
     if (isstring(weapon) && weapon == "none") {
         return false;
-    }
-    theweapontype = weapon.basename;
-    if (namespace_e0ee43ef2dddadaa::isakimbo(weapon)) {
-        return true;
     }
     theweapontype = weapon.basename;
     for (i = 0; i < var_1bae199ae2509f57.size; i++) {
@@ -574,7 +564,7 @@ function function_38642db3c423bcdc(weapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1610
+// Checksum 0x0, Offset: 0x161a
 // Size: 0x42
 function isriotshield(weapon) {
     if (isweapon(weapon) && isnullweapon(weapon)) {
@@ -588,19 +578,18 @@ function isriotshield(weapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x165b
-// Size: 0xa3
+// Checksum 0x0, Offset: 0x1665
+// Size: 0x45
 function isknifeonly(weapon) {
     rootname = namespace_e0ee43ef2dddadaa::getweaponrootname(weapon);
     isknife = namespace_e0ee43ef2dddadaa::function_b8811a0fc04e4b9d(rootname, #"isknife", 0);
-    basename = isdefined(weapon) && isdefined(weapon.basename) && isweapon(weapon) ? weapon.basename : undefined;
-    return isknife || rootname == "iw9_me_knife" || rootname == "jup_jp23_me_knife" || rootname == "iw9_knifestab" || isdefined(basename) && basename == "jup_amp_knifestab_mp";
+    return isknife || rootname == "iw9_me_knife";
 }
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1707
-// Size: 0x88
+// Checksum 0x0, Offset: 0x16b3
+// Size: 0x89
 function function_cfac6d60b7a14ab9(weapon) {
     if (!isdefined(weapon) || !isdefined(weapon.basename)) {
         return false;
@@ -612,32 +601,8 @@ function function_cfac6d60b7a14ab9(weapon) {
 }
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1798
-// Size: 0x6b
-function function_d986642147d8bd2f(weapon) {
-    if (!isdefined(weapon)) {
-        assertmsg("<dev string:x2d7>");
-        return 0;
-    }
-    weapname = undefined;
-    if (isweapon(weapon)) {
-        if (isnullweapon(weapon)) {
-            return 0;
-        }
-        weapname = weapon.basename;
-    } else {
-        if (weapon == "none") {
-            return 0;
-        }
-        weapname = weapon;
-    }
-    return issubstr(weapname, "me_swhiskey");
-}
-
-// Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x180c
+// Checksum 0x0, Offset: 0x1745
 // Size: 0x50
 function saveweaponstates() {
     if (scripts\engine\utility::issharedfuncdefined("weapons", "saveToggleScopeStates")) {
@@ -649,16 +614,16 @@ function saveweaponstates() {
 }
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1864
-// Size: 0x74
-function restoreweaponstates(lastweaponobj, updatetogglescopestate) {
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x179d
+// Size: 0x67
+function restoreweaponstates(lastweaponobj) {
     if (self isalternatemode(lastweaponobj)) {
         if (scripts\engine\utility::issharedfuncdefined("weapons", "updateSavedAltState")) {
             lastweaponobj = self [[ scripts\engine\utility::getsharedfunc("weapons", "updateSavedAltState") ]](lastweaponobj);
         }
     }
-    if (updatetogglescopestate && scripts\engine\utility::issharedfuncdefined("weapons", "updateToggleScopeState")) {
+    if (scripts\engine\utility::issharedfuncdefined("weapons", "updateToggleScopeState")) {
         self [[ scripts\engine\utility::getsharedfunc("weapons", "updateToggleScopeState") ]](lastweaponobj);
     }
     return lastweaponobj;
@@ -666,8 +631,8 @@ function restoreweaponstates(lastweaponobj, updatetogglescopestate) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e1
-// Size: 0x1ca
+// Checksum 0x0, Offset: 0x180d
+// Size: 0x1cd
 function function_c9e5c511b923a42f(idamage, attacker, victim, smeansofdeath, shitloc, inflictor, vpoint, var_1da1a66b5c6a06a7, var_986b2e0350629522, helmetdamage) {
     if (isdefined(level.var_b39eda08d7912835)) {
         distmsg = "";
@@ -697,7 +662,7 @@ function function_c9e5c511b923a42f(idamage, attacker, victim, smeansofdeath, shi
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab3
+// Checksum 0x0, Offset: 0x19e2
 // Size: 0x2f
 function function_eeaa22f0cd1ff845(weaponstring) {
     attachments = function_6527364c1ecca6c6(weaponstring);
@@ -706,22 +671,9 @@ function function_eeaa22f0cd1ff845(weaponstring) {
 }
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aeb
-// Size: 0x32
-function function_8cda2444c7d142df() {
-    if (isagent(self)) {
-        cachevalue = "ai_" + self getentitynumber();
-    } else {
-        cachevalue = self.guid;
-    }
-    return cachevalue;
-}
-
-// Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b26
-// Size: 0x95
+// Checksum 0x0, Offset: 0x1a1a
+// Size: 0x94
 function function_49967318fbd12317(objweapon, var_76b470a332915556) {
     if (!isdefined(level.var_b5224f533f8fffb0)) {
         level.var_b5224f533f8fffb0 = [];
@@ -736,21 +688,21 @@ function function_49967318fbd12317(objweapon, var_76b470a332915556) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bc3
+// Checksum 0x0, Offset: 0x1ab6
 // Size: 0x7a
 function function_820fe7d9e7ec7c65(objweapon) {
     note = "removeWeaponParent_" + objweapon.basename;
     self notify(note);
     self endon(note);
     uniqueid = self.guid;
-    wait 12;
+    wait 5;
     level.var_b5224f533f8fffb0[objweapon.basename] = array_remove_key(level.var_b5224f533f8fffb0[objweapon.basename], uniqueid);
 }
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c45
-// Size: 0xb4
+// Checksum 0x0, Offset: 0x1b38
+// Size: 0xb3
 function function_1e3102980c3a4cc1(objweapon) {
     weaponname = undefined;
     if (isweapon(objweapon)) {
@@ -765,7 +717,7 @@ function function_1e3102980c3a4cc1(objweapon) {
     if (isdefined(level.var_b5224f533f8fffb0) && array_contains_key(level.var_b5224f533f8fffb0, weaponname)) {
         /#
             if (!isdefined(level.var_b5224f533f8fffb0[weaponname][self.guid])) {
-                assertmsg("<dev string:x318>" + weaponname + "<dev string:x353>");
+                assertmsg("<dev string:xd2>" + weaponname + "<dev string:x10a>");
             }
         #/
         return level.var_b5224f533f8fffb0[weaponname][self.guid];
@@ -775,17 +727,16 @@ function function_1e3102980c3a4cc1(objweapon) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d02
-// Size: 0x51
+// Checksum 0x0, Offset: 0x1bf4
+// Size: 0x27
 function function_f0cf737b5d0ccda5(weapon) {
     weapname = getweaponbasename(weapon);
-    result = issubstr(weapname, "sword01") || issubstr(weapname, "kamas") || issubstr(weapname, "pickaxe");
-    return result;
+    return issubstr(weapname, "sword01");
 }
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d5c
+// Checksum 0x0, Offset: 0x1c24
 // Size: 0x8f
 function function_a3fc7ebc9fc3e9a3(eattacker, victim, idflags) {
     hand = function_88e9e2299bd29fd1(idflags);
@@ -798,7 +749,7 @@ function function_a3fc7ebc9fc3e9a3(eattacker, victim, idflags) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1df4
+// Checksum 0x0, Offset: 0x1cbc
 // Size: 0x22
 function function_88e9e2299bd29fd1(idflags) {
     if (idflags & 2048) {
@@ -809,7 +760,7 @@ function function_88e9e2299bd29fd1(idflags) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e1e
+// Checksum 0x0, Offset: 0x1ce6
 // Size: 0x17
 function function_d77e6b2580f74622(victim) {
     return "" + victim getentitynumber();
@@ -817,8 +768,8 @@ function function_d77e6b2580f74622(victim) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e3e
-// Size: 0x12c
+// Checksum 0x0, Offset: 0x1d06
+// Size: 0x12e
 function function_1113fc99a0327d7d(eattacker, victim, idflags, idamage) {
     hand = function_88e9e2299bd29fd1(idflags);
     victimentnum = function_d77e6b2580f74622(victim);
@@ -837,7 +788,7 @@ function function_1113fc99a0327d7d(eattacker, victim, idflags, idamage) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f72
+// Checksum 0x0, Offset: 0x1e3c
 // Size: 0x9b
 function function_ad15087050f05b04(eattacker, victim, idflags, idamage) {
     hand = function_88e9e2299bd29fd1(idflags);
@@ -850,7 +801,7 @@ function function_ad15087050f05b04(eattacker, victim, idflags, idamage) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2015
+// Checksum 0x0, Offset: 0x1edf
 // Size: 0xb4
 function function_9665cbeba4d776f7(eattacker, victim, idflags, amount) {
     hand = function_88e9e2299bd29fd1(idflags);
@@ -863,13 +814,12 @@ function function_9665cbeba4d776f7(eattacker, victim, idflags, amount) {
 
 // Namespace weapon_utility / scripts\cp_mp\utility\weapon_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20d1
-// Size: 0x2a
+// Checksum 0x0, Offset: 0x1f9b
+// Size: 0x22
 function cleanupconcussionstun(time) {
     self endon("death_or_disconnect");
     level endon("game_ended");
     wait time;
     utility::setplayerunstunned();
-    self notify("concussion_unstunned");
 }
 

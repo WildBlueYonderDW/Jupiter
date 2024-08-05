@@ -18,10 +18,10 @@
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x414
+// Checksum 0x0, Offset: 0x4cf
 // Size: 0x8a
 function setupweapon(primaryweaponobject) {
-    assertex(isweapon(primaryweaponobject), "<dev string:x1c>");
+    assertex(isweapon(primaryweaponobject), "weapon param for SetupWeapon needs to be a weapon object");
     self.weapon = primaryweaponobject;
     self giveweapon(self.weapon);
     self setspawnweapon(self.weapon);
@@ -32,38 +32,35 @@ function setupweapon(primaryweaponobject) {
 }
 
 // Namespace mp_agent / scripts\mp\mp_agent
-// Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a6
-// Size: 0xce
-function spawnnewagentaitype(aitype, position, angles, team, var_42e5c77b1d7fe6e7, gender) {
+// Params 5, eflags: 0x0
+// Checksum 0x0, Offset: 0x561
+// Size: 0xa2
+function spawnnewagentaitype(aitype, position, angles, team, var_42e5c77b1d7fe6e7) {
     /#
     #/
     if (!string_starts_with(aitype, "actor_")) {
         aitype = "actor_" + aitype;
     }
-    if (isdefined(level.var_ab4e7a61416509ca)) {
-        aitype = [[ level.var_ab4e7a61416509ca ]](aitype);
-    }
     if (!isdefined(level.agent_definition[aitype]) || !isdefined(level.agent_definition[aitype]["setup_func"])) {
-        assertmsg("<dev string:x6f>" + aitype + "<dev string:x74>");
+        assertmsg("'" + aitype + "' is not defined in level.agent_definition, please add aitype to level csv, and ensure it is properly marked for mp/cp.");
         /#
         #/
         return undefined;
     }
-    agent = spawnnewagent(aitype, team, position, angles, undefined, var_42e5c77b1d7fe6e7, gender);
+    agent = spawnnewagent(aitype, team, position, angles, undefined, var_42e5c77b1d7fe6e7);
     /#
     #/
     return agent;
 }
 
 // Namespace mp_agent / scripts\mp\mp_agent
-// Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x57d
-// Size: 0x60
-function spawnnewagent(agent_type, spawn_team, spawn_position, spawn_angles, var_f9e7dc261e07162e, var_42e5c77b1d7fe6e7, gender) {
+// Params 6, eflags: 0x0
+// Checksum 0x0, Offset: 0x60c
+// Size: 0x55
+function spawnnewagent(agent_type, spawn_team, spawn_position, spawn_angles, var_f9e7dc261e07162e, var_42e5c77b1d7fe6e7) {
     /#
     #/
-    agent = dospawnaitype(agent_type, spawn_position, spawn_angles, 0, 0, 1, 0, spawn_team, var_42e5c77b1d7fe6e7, gender);
+    agent = dospawnaitype(agent_type, spawn_position, spawn_angles, 0, 0, 1, 0, spawn_team, var_42e5c77b1d7fe6e7);
     /#
     #/
     return agent;
@@ -71,8 +68,8 @@ function spawnnewagent(agent_type, spawn_team, spawn_position, spawn_angles, var
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e6
-// Size: 0xec
+// Checksum 0x0, Offset: 0x66a
+// Size: 0xeb
 function function_391ec48831a02c13(agent, agent_type, spawn_team, var_f9e7dc261e07162e) {
     namespace_14d36171baccf528::function_51de6da7b0dcf26f(agent);
     agent.connecttime = gettime();
@@ -85,7 +82,7 @@ function function_391ec48831a02c13(agent, agent_type, spawn_team, var_f9e7dc261e
         if (isweapon(var_f9e7dc261e07162e)) {
             agent setupweapon(var_f9e7dc261e07162e);
         } else {
-            assertmsg("<dev string:x100>");
+            assertmsg("Optional weapon param for spawnNewAgent must be a weapon object. Consider instead adding a weapon to the aitype (or at least use the appropriate MP/CP version of buildWeapon first)");
             return undefined;
         }
     }
@@ -99,7 +96,7 @@ function function_391ec48831a02c13(agent, agent_type, spawn_team, var_f9e7dc261e
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6da
+// Checksum 0x0, Offset: 0x75d
 // Size: 0x61
 function function_af0713caaf6c21c5() {
     if (!isdefined(level.agent_funcs[self.agent_type])) {
@@ -112,7 +109,7 @@ function function_af0713caaf6c21c5() {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x743
+// Checksum 0x0, Offset: 0x7c6
 // Size: 0x4a
 function assign_agent_func(var_ad662d6a990f6fcc, default_func) {
     assert(!isdefined(level.agent_funcs[self.agent_type][var_ad662d6a990f6fcc]));
@@ -121,7 +118,7 @@ function assign_agent_func(var_ad662d6a990f6fcc, default_func) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x795
+// Checksum 0x0, Offset: 0x818
 // Size: 0x95
 function function_b4a6a1a854015dfc(agent_type) {
     self.agent_type = agent_type;
@@ -134,11 +131,11 @@ function function_b4a6a1a854015dfc(agent_type) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x832
-// Size: 0xe0
+// Checksum 0x0, Offset: 0x8b5
+// Size: 0xdf
 function getfreeagent(agent_type) {
     if (!isdefined(level.agentarray)) {
-        println("<dev string:x1b8>");
+        println("<dev string:x3e>");
         return undefined;
     }
     var_7818398cdd97fe84 = function_76b285b4bae7356c();
@@ -152,7 +149,7 @@ function getfreeagent(agent_type) {
     }
     /#
         if (!isdefined(var_7818398cdd97fe84)) {
-            println("<dev string:x1fb>");
+            println("<dev string:x7e>");
         }
     #/
     return var_7818398cdd97fe84;
@@ -160,7 +157,7 @@ function getfreeagent(agent_type) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91b
+// Checksum 0x0, Offset: 0x99d
 // Size: 0x57
 function initagentscriptvariables() {
     self.pers = [];
@@ -176,7 +173,7 @@ function initagentscriptvariables() {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x97a
+// Checksum 0x0, Offset: 0x9fc
 // Size: 0xf5
 function initplayerscriptvariables() {
     self.class = undefined;
@@ -206,7 +203,7 @@ function initplayerscriptvariables() {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa77
+// Checksum 0x0, Offset: 0xaf9
 // Size: 0x48
 function function_d99212ec742486d0(agent_type, spawn_team) {
     if (!isdefined(spawn_team)) {
@@ -220,7 +217,7 @@ function function_d99212ec742486d0(agent_type, spawn_team) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xac7
+// Checksum 0x0, Offset: 0xb49
 // Size: 0x1f
 function set_agent_health(health) {
     self.health = health;
@@ -229,7 +226,7 @@ function set_agent_health(health) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaee
+// Checksum 0x0, Offset: 0xb70
 // Size: 0x10e
 function is_friendly_damage(agent, attacker) {
     if (isdefined(attacker) && isdefined(agent) && isdefined(agent.team) && !istrue(attacker.allowfriendlyfire)) {
@@ -248,8 +245,8 @@ function is_friendly_damage(agent, attacker) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0xc05
-// Size: 0x317
+// Checksum 0x0, Offset: 0xc87
+// Size: 0x318
 function default_on_damage(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     victim = self;
     func = undefined;
@@ -289,15 +286,15 @@ function default_on_damage(einflictor, eattacker, idamage, idflags, smeansofdeat
         return;
     }
     if (isdefined(victim.agent_type)) {
-        assert(isdefined(level.agent_funcs[victim.agent_type]["<dev string:x252>"]));
+        assert(isdefined(level.agent_funcs[victim.agent_type]["on_damaged_finished"]));
         victim [[ level.agent_funcs[victim.agent_type]["on_damaged_finished"] ]](einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, 0, modelindex, partname);
     }
 }
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 14, eflags: 0x0
-// Checksum 0x0, Offset: 0xf24
-// Size: 0x26a
+// Checksum 0x0, Offset: 0xfa7
+// Size: 0x269
 function default_on_damage_finished(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, stun_fraction, modelindex, partname, armorhit) {
     prevhealth = self.health;
     objweapon = sweapon;
@@ -334,8 +331,8 @@ function default_on_damage_finished(einflictor, eattacker, idamage, idflags, sme
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x1196
-// Size: 0x265
+// Checksum 0x0, Offset: 0x1218
+// Size: 0x257
 function default_on_killed(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration) {
     if (isdefined(self.on_zombie_agent_killed_common)) {
         self [[ self.on_zombie_agent_killed_common ]](einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration, 0);
@@ -364,19 +361,19 @@ function default_on_killed(einflictor, eattacker, idamage, smeansofdeath, objwea
     params_struct.timeoffset = timeoffset;
     params_struct.deathanimduration = deathanimduration;
     callback::callback("on_ai_killed", params_struct);
-    if (isdefined(eattacker) && isdefined(eattacker.vehicle) && isdefined(eattacker.vehicle.var_74633b25289a1962)) {
+    if (isdefined(eattacker.vehicle) && isdefined(eattacker.vehicle.var_74633b25289a1962)) {
         [[ eattacker.vehicle.var_74633b25289a1962 ]](eattacker.vehicle, self, params_struct);
         return;
     }
-    if (isdefined(einflictor) && isdefined(einflictor.var_74633b25289a1962) && smeansofdeath == "MOD_CRUSH") {
+    if (isdefined(einflictor.var_74633b25289a1962) && smeansofdeath == "MOD_CRUSH") {
         [[ einflictor.var_74633b25289a1962 ]](einflictor, self, params_struct);
     }
 }
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1403
-// Size: 0x2c
+// Checksum 0x0, Offset: 0x1477
+// Size: 0x2b
 function getnumactiveagents(type) {
     if (!isdefined(type)) {
         type = "all";
@@ -387,8 +384,8 @@ function getnumactiveagents(type) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1438
-// Size: 0xad
+// Checksum 0x0, Offset: 0x14ab
+// Size: 0xab
 function getactiveagentsoftype(type) {
     assert(isdefined(type));
     if (!isdefined(level.agentarray)) {
@@ -407,8 +404,8 @@ function getactiveagentsoftype(type) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ee
-// Size: 0x93
+// Checksum 0x0, Offset: 0x155f
+// Size: 0x91
 function getaliveagentsofteam(team) {
     var_c5c35cc6c0816de1 = [];
     foreach (agent in level.agentarray) {
@@ -421,12 +418,12 @@ function getaliveagentsofteam(team) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x158a
+// Checksum 0x0, Offset: 0x15f9
 // Size: 0x39
 function activateagent() {
     /#
         if (!self.isactive) {
-            assertex(self.connecttime == gettime(), "<dev string:x269>");
+            assertex(self.connecttime == gettime(), "<dev string:xd2>");
         }
     #/
     self.isactive = 1;
@@ -434,7 +431,7 @@ function activateagent() {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15cb
+// Checksum 0x0, Offset: 0x163a
 // Size: 0x34
 function ai_washitbyvehicle(meansofdeath, attacker) {
     if (meansofdeath != "MOD_CRUSH") {
@@ -451,8 +448,8 @@ function ai_washitbyvehicle(meansofdeath, attacker) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x1608
-// Size: 0x657
+// Checksum 0x0, Offset: 0x1677
+// Size: 0x640
 function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, timeoffset, deathanimduration, dropweapons) {
     var_37a99e672a1ecc0e = ai_washitbyvehicle(smeansofdeath, einflictor);
     self asmdodeathtransition(self.asmname);
@@ -473,7 +470,6 @@ function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeanso
     if (!isdefined(self.body.team)) {
         self.body.team = self.team;
     }
-    self.body.aicategory = self.aicategory;
     if (namespace_46e942396566f2da::function_bbee2e46ab15a720(eattacker, objweapon, smeansofdeath, shitloc, einflictor)) {
         return;
     }
@@ -563,7 +559,7 @@ function on_humanoid_agent_killed_common(einflictor, eattacker, idamage, smeanso
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c67
+// Checksum 0x0, Offset: 0x1cbf
 // Size: 0x5f
 function function_89fcc8d16c4fd558(corpse, vehicle, seatid, var_f9e25038fed22bf0) {
     corpse endon("death");
@@ -579,10 +575,10 @@ function function_89fcc8d16c4fd558(corpse, vehicle, seatid, var_f9e25038fed22bf0
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cce
-// Size: 0x7f
+// Checksum 0x0, Offset: 0x1d26
+// Size: 0x7c
 function function_7687424c385de94(vehicle, seatindex) {
-    foreach (seatid, var_5539341a688c012f in scripts\cp_mp\vehicles\vehicle::function_29b4292c92443328(vehicle scripts\cp_mp\vehicles\vehicle::function_d93ec4635290febd()).occupancy.seatids) {
+    foreach (var_5539341a688c012f in scripts\cp_mp\vehicles\vehicle::function_29b4292c92443328(vehicle scripts\cp_mp\vehicles\vehicle::function_d93ec4635290febd()).occupancy.seatids) {
         if (var_5539341a688c012f == seatindex) {
             return seatid;
         }
@@ -591,7 +587,7 @@ function function_7687424c385de94(vehicle, seatindex) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d55
+// Checksum 0x0, Offset: 0x1daa
 // Size: 0x50
 function ragdoll_on_vehicle_death(vehicle) {
     self endon("entitydeleted");
@@ -615,7 +611,7 @@ function ragdoll_on_vehicle_death(vehicle) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dad
+// Checksum 0x0, Offset: 0x1e02
 // Size: 0x4e
 function should_do_immediate_ragdoll(agent) {
     if (istrue(agent.do_immediate_ragdoll)) {
@@ -632,8 +628,8 @@ function should_do_immediate_ragdoll(agent) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e04
-// Size: 0x1dd
+// Checksum 0x0, Offset: 0x1e59
+// Size: 0x1e2
 function do_immediate_ragdoll(agent_body) {
     if (!isdefined(agent_body)) {
         return;
@@ -674,8 +670,8 @@ function do_immediate_ragdoll(agent_body) {
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fe9
-// Size: 0x2aa
+// Checksum 0x0, Offset: 0x2043
+// Size: 0x2ad
 function delaystartragdoll(ent, shitloc, vdir, objweapon, einflictor, smeansofdeath) {
     if (isdefined(ent)) {
         deathanim = ent getcorpseanim();
@@ -750,7 +746,7 @@ function delaystartragdoll(ent, shitloc, vdir, objweapon, einflictor, smeansofde
 
 // Namespace mp_agent / scripts\mp\mp_agent
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x229b
+// Checksum 0x0, Offset: 0x22f8
 // Size: 0x49
 function updateburningtodeath(corpse) {
     wait 0.7;

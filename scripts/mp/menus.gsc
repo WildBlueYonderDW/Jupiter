@@ -709,7 +709,7 @@ function waitforclassselect() {
             waitframe();
             continue;
         }
-        if ((isJuggerMoshGameMode() || function_6c88a48a9e942c3d()) && !isbot(self) && !isloadoutindexdefault(newclass)) {
+        if ((function_a305f5d1be837817() || function_6c88a48a9e942c3d()) && !isbot(self) && !isloadoutindexdefault(newclass)) {
             newclass = 100;
         }
         if ("" + newclass != "callback") {

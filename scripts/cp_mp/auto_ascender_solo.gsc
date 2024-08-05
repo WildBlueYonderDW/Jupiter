@@ -15,8 +15,8 @@
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f6
-// Size: 0x2b8
+// Checksum 0x0, Offset: 0x687
+// Size: 0x2b0
 function init() {
     level.ascendsolostarts = getstructarray("ascend_solo_begin", "script_noteworthy");
     level.descendsolostarts = getstructarray("descend_solo_begin", "script_noteworthy");
@@ -46,7 +46,7 @@ function init() {
                 break;
             }
         }
-        assertex(isdefined(a.sololink), "<dev string:x1c>" + a.origin);
+        assertex(isdefined(a.sololink), "+++++++++++++++++++++++++++++ Ascender did not link! Solo ascenders must be position vertically to link.  " + a.origin);
     }
     initanimtree();
     scripts\engine\scriptable::scriptable_addusedcallbackbypart("ascender_solo", &ascendersoloscriptableused);
@@ -54,7 +54,7 @@ function init() {
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b6
+// Checksum 0x0, Offset: 0x93f
 // Size: 0x494
 function initanimtree() {
     level.scr_animtree["player"] = %script_model;
@@ -100,10 +100,10 @@ function initanimtree() {
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xe52
+// Checksum 0x0, Offset: 0xddb
 // Size: 0x67
 function ascendersoloscriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
-    assert(part == "<dev string:x8a>");
+    assert(part == "ascender_solo");
     if (state == "on") {
         if (istrue(player.usingascender)) {
             return;
@@ -114,8 +114,8 @@ function ascendersoloscriptableused(instance, part, state, player, var_a5b2c5414
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xec1
-// Size: 0x7b
+// Checksum 0x0, Offset: 0xe4a
+// Size: 0x7a
 function endascenderanim(player, dir, ascendermodelview, ascendermodelworld) {
     player endon("death_or_disconnect");
     player endon("ascender_solo_cancel");
@@ -131,7 +131,7 @@ function endascenderanim(player, dir, ascendermodelview, ascendermodelworld) {
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf44
+// Checksum 0x0, Offset: 0xecc
 // Size: 0x3d
 function spinafterdelay(goalangles) {
     self endon("death_or_disconnect");
@@ -143,8 +143,8 @@ function spinafterdelay(goalangles) {
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xf89
-// Size: 0x34c
+// Checksum 0x0, Offset: 0xf11
+// Size: 0x355
 function startascenderanim(player, dir, ascendermodelview, ascendermodelworld, var_8ea61c746773c4ae) {
     player endon("death_or_disconnect");
     player endon("ascender_solo_cancel");
@@ -197,7 +197,7 @@ function startascenderanim(player, dir, ascendermodelview, ascendermodelworld, v
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x12dd
+// Checksum 0x0, Offset: 0x126e
 // Size: 0xc4
 function loopwaitanim(scenenode, ascendermodelview, ascendermodelworld, dir) {
     self endon("death_or_disconnect");
@@ -225,8 +225,8 @@ function loopwaitanim(scenenode, ascendermodelview, ascendermodelworld, dir) {
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a9
-// Size: 0x54d
+// Checksum 0x0, Offset: 0x133a
+// Size: 0x55c
 function ascenderuse(instance, player) {
     level endon("game_ended");
     player endon("death_or_disconnect");
@@ -324,8 +324,8 @@ function ascenderuse(instance, player) {
 
 // Namespace namespace_7789eb64bade5954 / scripts\cp_mp\auto_ascender_solo
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18fe
-// Size: 0xd4
+// Checksum 0x0, Offset: 0x189e
+// Size: 0xd1
 function ispointnearsoloascenderline(point) {
     foreach (a in level.ascendsolostarts) {
         if (distance2dsquared(a.origin, point) < scripts\cp_mp\auto_ascender::function_211b63898ba23e96()) {

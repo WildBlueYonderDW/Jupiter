@@ -5,8 +5,8 @@
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a0
-// Size: 0x1f1
+// Checksum 0x0, Offset: 0x14a
+// Size: 0x1f6
 function playgrenadereturnthrowanim(asmname, statename, params) {
     self endon(statename + "_finished");
     var_d21fbd6dd45d4d02 = asm_getanim(asmname, statename);
@@ -50,7 +50,7 @@ function playgrenadereturnthrowanim(asmname, statename, params) {
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x399
+// Checksum 0x0, Offset: 0x348
 // Size: 0x6a
 function terminategrenadereturnthrowanim(asmname, statename, params) {
     asm_fireephemeralevent("grenade_response", "return throw complete");
@@ -63,7 +63,7 @@ function terminategrenadereturnthrowanim(asmname, statename, params) {
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x40b
+// Checksum 0x0, Offset: 0x3ba
 // Size: 0x5b
 function islowthrowsafe() {
     start = (self.origin[0], self.origin[1], self.origin[2] + 20);
@@ -73,8 +73,8 @@ function islowthrowsafe() {
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x46f
-// Size: 0xb3
+// Checksum 0x0, Offset: 0x41e
+// Size: 0xb4
 function choosegrenadereturnthrowanim(asmname, statename, params) {
     var_d21fbd6dd45d4d02 = undefined;
     throwdist = 1000;
@@ -94,7 +94,7 @@ function choosegrenadereturnthrowanim(asmname, statename, params) {
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x52b
+// Checksum 0x0, Offset: 0x4db
 // Size: 0x39
 function playgrenadeavoidanim(asmname, statename, params) {
     self.asm.bshouldattemptdive = randomint(100) > 50;
@@ -102,8 +102,8 @@ function playgrenadeavoidanim(asmname, statename, params) {
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x56c
-// Size: 0x119
+// Checksum 0x0, Offset: 0x51c
+// Size: 0x11c
 function shouldgrenadedive(asmname, statename, tostatename, params) {
     if (!self.asm.bshouldattemptdive) {
         return false;
@@ -131,7 +131,7 @@ function shouldgrenadedive(asmname, statename, tostatename, params) {
 
 // Namespace grenade_response / scripts\asm\soldier\grenade_response
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x68e
+// Checksum 0x0, Offset: 0x641
 // Size: 0x2e
 function grenadeavoid_terminate(asmname, statename, params) {
     self.asm.bshouldattemptdive = undefined;

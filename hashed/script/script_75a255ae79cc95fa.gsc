@@ -10,7 +10,7 @@
 
 // Namespace namespace_448bd9a9504ba3bb / namespace_19a443bf64856d84
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x154
+// Checksum 0x0, Offset: 0x119
 // Size: 0x145
 function main() {
     self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_3a5e8d0afca97482");
@@ -38,8 +38,8 @@ function main() {
 
 // Namespace namespace_448bd9a9504ba3bb / namespace_19a443bf64856d84
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a1
-// Size: 0x57
+// Checksum 0x0, Offset: 0x266
+// Size: 0x56
 function setup_model() {
     var_42e5c77b1d7fe6e7 = isdefined(self.var_42e5c77b1d7fe6e7) ? self.var_42e5c77b1d7fe6e7 : "default";
     switch (var_42e5c77b1d7fe6e7) {
@@ -52,7 +52,7 @@ function setup_model() {
 
 // Namespace namespace_448bd9a9504ba3bb / namespace_19a443bf64856d84
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x300
+// Checksum 0x0, Offset: 0x2c4
 // Size: 0x8
 function function_9ac26a51c94ccf52() {
     return namespace_7eb5c3a922f62367::main();
@@ -60,8 +60,8 @@ function function_9ac26a51c94ccf52() {
 
 // Namespace namespace_448bd9a9504ba3bb / namespace_19a443bf64856d84
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x311
-// Size: 0xc7
+// Checksum 0x0, Offset: 0x2d5
+// Size: 0xc6
 function precache() {
     agent_type = "actor_jup_capture_bot_mp_base";
     if (!isdefined(level.agent_definition)) {

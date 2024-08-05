@@ -8,8 +8,8 @@
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc
-// Size: 0x1ca
+// Checksum 0x0, Offset: 0x35b
+// Size: 0x1cb
 function function_620aa345ac2f9963() {
     if (level.gametype == "dungeons") {
         return;
@@ -18,15 +18,15 @@ function function_620aa345ac2f9963() {
     if (isdefined(projectbundle)) {
         var_eecca1d1275b620d = hashcat(%"hash_5c338ed91460dbe1", projectbundle.var_702b32c96429baee);
     } else {
-        assertmsg("<dev string:x1c>");
+        assertmsg("Undefined project bundle when initializing battle tracks");
         return;
     }
     level.var_702b32c96429baee = getscriptbundle(var_eecca1d1275b620d).var_702b32c96429baee;
     if (!isdefined(level.var_702b32c96429baee)) {
-        assertmsg("<dev string:x58>");
+        assertmsg("Didn't find a vehicle track list");
         return;
     }
-    foreach (index, trackinfo in level.var_702b32c96429baee) {
+    foreach (trackinfo in level.var_702b32c96429baee) {
         if (index <= 1) {
             continue;
         }
@@ -38,17 +38,17 @@ function function_620aa345ac2f9963() {
         trackinfo.var_ebb583a772b21a39 = var_2450b73ccbdae7d.var_ebb583a772b21a39;
         trackinfo.ingamemusicstate = var_2450b73ccbdae7d.ingamemusicstate;
         if (!isdefined(trackinfo.var_ebb583a772b21a39)) {
-            assertmsg("<dev string:x7c>" + trackinfo.vehicletrack);
+            assertmsg("Didn't find a SFX alias in track: " + trackinfo.vehicletrack);
         }
         if (!isdefined(trackinfo.ingamemusicstate)) {
-            assertmsg("<dev string:xa2>" + trackinfo.vehicletrack);
+            assertmsg("Didn't find a music state in track: " + trackinfo.vehicletrack);
         }
     }
 }
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ce
+// Checksum 0x0, Offset: 0x52e
 // Size: 0x5f
 function battle_tracks_onentervehicle(vehicle, player) {
     if (level.gametype == "dungeons") {
@@ -67,7 +67,7 @@ function battle_tracks_onentervehicle(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x535
+// Checksum 0x0, Offset: 0x595
 // Size: 0xae
 function battle_tracks_vehicleoccupancyenter(vehicle, player, seatid, var_fc7c7a874b43a31a) {
     if (level.gametype == "dungeons") {
@@ -93,8 +93,8 @@ function battle_tracks_vehicleoccupancyenter(vehicle, player, seatid, var_fc7c7a
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5eb
-// Size: 0x7c
+// Checksum 0x0, Offset: 0x64b
+// Size: 0x7b
 function battle_tracks_onexitvehicle(vehicle, player, seatid) {
     if (level.gametype == "dungeons") {
         return;
@@ -111,7 +111,7 @@ function battle_tracks_onexitvehicle(vehicle, player, seatid) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x66f
+// Checksum 0x0, Offset: 0x6ce
 // Size: 0x42
 function battle_tracks_monitorstandingonvehicles(player) {
     if (level.gametype == "dungeons") {
@@ -127,7 +127,7 @@ function battle_tracks_monitorstandingonvehicles(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b9
+// Checksum 0x0, Offset: 0x718
 // Size: 0xa1
 function battle_tracks_updatebattletracks(vehicle, player) {
     vehicle.battletracks = [];
@@ -148,8 +148,8 @@ function battle_tracks_updatebattletracks(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x762
-// Size: 0x11c
+// Checksum 0x0, Offset: 0x7c1
+// Size: 0x11e
 function battle_tracks_updatebattletracksfromplayerdata(vehicle, player, startindex, endindex) {
     data = scripts\cp_mp\vehicles\vehicle::function_86f6f784630b11fb(vehicle scripts\cp_mp\vehicles\vehicle::function_d93ec4635290febd());
     for (arrayindex = startindex; arrayindex <= endindex; arrayindex++) {
@@ -175,20 +175,20 @@ function battle_tracks_updatebattletracksfromplayerdata(vehicle, player, startin
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x886
-// Size: 0x65
+// Checksum 0x0, Offset: 0x8e7
+// Size: 0x64
 function battle_tracks_setmusicstate(vehicle, trackindex) {
     musicstate = battle_tracks_getmusicstate(trackindex);
     if (vehicle.battletracksmusicstate == "") {
         vehicle.battletracksmusicstate = musicstate;
         return;
     }
-    assertex(vehicle.battletracksmusicstate == musicstate, "<dev string:xca>");
+    assertex(vehicle.battletracksmusicstate == musicstate, "Unable to play tracks from different music state");
 }
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8f3
+// Checksum 0x0, Offset: 0x953
 // Size: 0x4a
 function battle_tracks_playerselectrandomtracks(vehicle, player) {
     data = scripts\cp_mp\vehicles\vehicle::function_86f6f784630b11fb(vehicle scripts\cp_mp\vehicles\vehicle::function_d93ec4635290febd());
@@ -198,7 +198,7 @@ function battle_tracks_playerselectrandomtracks(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x946
+// Checksum 0x0, Offset: 0x9a6
 // Size: 0x99
 function battle_tracks_gettrackindex(vehicle, player, arrayindex, data) {
     /#
@@ -216,7 +216,7 @@ function battle_tracks_gettrackindex(vehicle, player, arrayindex, data) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9e7
+// Checksum 0x0, Offset: 0xa47
 // Size: 0x3e
 function battle_tracks_getsfxalias(trackindex) {
     if (isdefined(level.var_702b32c96429baee) && isdefined(level.var_702b32c96429baee[trackindex])) {
@@ -226,7 +226,7 @@ function battle_tracks_getsfxalias(trackindex) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2d
+// Checksum 0x0, Offset: 0xa8d
 // Size: 0x3e
 function battle_tracks_getmusicstate(trackindex) {
     if (isdefined(level.var_702b32c96429baee) && isdefined(level.var_702b32c96429baee[trackindex])) {
@@ -236,8 +236,8 @@ function battle_tracks_getmusicstate(trackindex) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa73
-// Size: 0xb8
+// Checksum 0x0, Offset: 0xad3
+// Size: 0xb6
 function battle_tracks_playbattletrackstoalloccupants(vehicle) {
     if (getdvarint(@"hash_157cdff8f5182e88", 0) == 0) {
         all_occupants = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getalloccupants(vehicle, 1);
@@ -254,8 +254,8 @@ function battle_tracks_playbattletrackstoalloccupants(vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb33
-// Size: 0xb7
+// Checksum 0x0, Offset: 0xb91
+// Size: 0xb5
 function battle_tracks_stopbattletrackstoalloccupants(vehicle) {
     if (getdvarint(@"hash_157cdff8f5182e88", 0) == 0) {
         all_occupants = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getalloccupants(vehicle, 1);
@@ -272,7 +272,7 @@ function battle_tracks_stopbattletrackstoalloccupants(vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf2
+// Checksum 0x0, Offset: 0xc4e
 // Size: 0x119
 function battle_tracks_playbattletrackstoplayer(vehicle, player, var_29172b8e5d02be98) {
     if (getdvarint(@"hash_157cdff8f5182e88", 0) != 0) {
@@ -299,7 +299,7 @@ function battle_tracks_playbattletrackstoplayer(vehicle, player, var_29172b8e5d0
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd13
+// Checksum 0x0, Offset: 0xd6f
 // Size: 0x65
 function function_59720efc5c367af2(vehicle, player, var_a922e318ff7f4a24) {
     if (!isdefined(player.battletracksmusicstate)) {
@@ -313,7 +313,7 @@ function function_59720efc5c367af2(vehicle, player, var_a922e318ff7f4a24) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd81
+// Checksum 0x0, Offset: 0xddd
 // Size: 0x7b
 function battle_tracks_stopbattletracksforplayer(battletracksmusicstate, player, var_29172b8e5d02be98) {
     if (getdvarint(@"hash_157cdff8f5182e88", 0) != 0) {
@@ -336,7 +336,7 @@ function battle_tracks_stopbattletracksforplayer(battletracksmusicstate, player,
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe04
+// Checksum 0x0, Offset: 0xe60
 // Size: 0x27
 function function_c3d244ceadc23533(player) {
     return isdefined(player.battletracksmusicstate) && isdefined(player.var_b132b6a670abb56e);
@@ -344,7 +344,7 @@ function function_c3d244ceadc23533(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe34
+// Checksum 0x0, Offset: 0xe90
 // Size: 0x30
 function battle_tracks_isbattletracksowner(vehicle, player) {
     return isdefined(vehicle.battletracksowner) && vehicle.battletracksowner == player;
@@ -352,7 +352,7 @@ function battle_tracks_isbattletracksowner(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6d
+// Checksum 0x0, Offset: 0xec9
 // Size: 0x2c
 function battle_tracks_clearbattletracks(vehicle) {
     vehicle.battletracksowner = undefined;
@@ -362,7 +362,7 @@ function battle_tracks_clearbattletracks(vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xea1
+// Checksum 0x0, Offset: 0xefd
 // Size: 0x32
 function battle_tracks_hasemptybattletracks(vehicle) {
     if (!isdefined(vehicle.battletracks)) {
@@ -376,8 +376,8 @@ function battle_tracks_hasemptybattletracks(vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xedc
-// Size: 0x181
+// Checksum 0x0, Offset: 0xf38
+// Size: 0x183
 function battle_tracks_togglethink(player, vehicle) {
     player notify("stop_battle_tracks_toggle_think");
     player endon("stop_battle_tracks_toggle_think");
@@ -420,8 +420,8 @@ function battle_tracks_togglethink(player, vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1065
-// Size: 0x49
+// Checksum 0x0, Offset: 0x10c3
+// Size: 0x48
 function function_338b77c14712dbb3() {
     self endon("cancel_battle_tracks_toggle_state");
     progress = 0;
@@ -434,7 +434,7 @@ function function_338b77c14712dbb3() {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b6
+// Checksum 0x0, Offset: 0x1113
 // Size: 0x54
 function battle_tracks_updatetogglestate(player, vehicle, togglestate) {
     switch (togglestate) {
@@ -449,7 +449,7 @@ function battle_tracks_updatetogglestate(player, vehicle, togglestate) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1112
+// Checksum 0x0, Offset: 0x116f
 // Size: 0x28
 function battle_tracks_toggleonstate(player, vehicle) {
     battle_tracks_settogglestate(player, "on");
@@ -458,7 +458,7 @@ function battle_tracks_toggleonstate(player, vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1142
+// Checksum 0x0, Offset: 0x119f
 // Size: 0x28
 function battle_tracks_toggleoffstate(player, vehicle) {
     battle_tracks_settogglestate(player, "off");
@@ -467,7 +467,7 @@ function battle_tracks_toggleoffstate(player, vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1172
+// Checksum 0x0, Offset: 0x11cf
 // Size: 0x48
 function battle_tracks_getnewtogglestate(player) {
     switch (player.pers["battleTracksToggleState"]) {
@@ -480,7 +480,7 @@ function battle_tracks_getnewtogglestate(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11c2
+// Checksum 0x0, Offset: 0x121f
 // Size: 0x2d
 function battle_tracks_tryinittogglestate(player) {
     if (!isdefined(player.pers["battleTracksToggleState"])) {
@@ -490,8 +490,8 @@ function battle_tracks_tryinittogglestate(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f7
-// Size: 0x98
+// Checksum 0x0, Offset: 0x1254
+// Size: 0x97
 function battle_tracks_settogglestate(player, value) {
     player.pers["battleTracksToggleState"] = value;
     var_587830fd4042be45 = player getclientomnvar("ui_veh_battle_tracks_toggle_state");
@@ -513,8 +513,8 @@ function battle_tracks_settogglestate(player, value) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1297
-// Size: 0x40
+// Checksum 0x0, Offset: 0x12f3
+// Size: 0x3f
 function battle_tracks_hidetogglewidget(player) {
     if (isdefined(player)) {
         var_587830fd4042be45 = player getclientomnvar("ui_veh_battle_tracks_toggle_state");
@@ -527,16 +527,16 @@ function battle_tracks_hidetogglewidget(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12df
+// Checksum 0x0, Offset: 0x133a
 // Size: 0x3f
 function battle_tracks_gettogglestate(player) {
-    assertex(isdefined(player.pers["<dev string:xfe>"]), "<dev string:x119>");
+    assertex(isdefined(player.pers["<dev string:x1c>"]), "<dev string:x34>");
     return player.pers["battleTracksToggleState"];
 }
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1327
+// Checksum 0x0, Offset: 0x1382
 // Size: 0x3c
 function battle_tracks_togglestateis(player, value) {
     return isdefined(player.pers["battleTracksToggleState"]) && player.pers["battleTracksToggleState"] == value;
@@ -544,8 +544,8 @@ function battle_tracks_togglestateis(player, value) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x136c
-// Size: 0x42
+// Checksum 0x0, Offset: 0x13c7
+// Size: 0x41
 function battle_tracks_trystopdrivertogglethink(vehicle, player, seatid) {
     var_df653126c71ef4ca = isdefined(seatid) && scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_isdriverseat(vehicle, seatid);
     if (var_df653126c71ef4ca) {
@@ -555,7 +555,7 @@ function battle_tracks_trystopdrivertogglethink(vehicle, player, seatid) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13b6
+// Checksum 0x0, Offset: 0x1410
 // Size: 0xc8
 function battle_tracks_stoptogglethink(player) {
     if (!isdefined(player)) {
@@ -581,10 +581,28 @@ function battle_tracks_stoptogglethink(player) {
 }
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x14e0
+// Size: 0x4b
+function function_12a073ab00ffe201() {
+    gametype = level.gametype;
+    if (gametype == "br") {
+        subgametype = getdvar(@"hash_7611a2790a0bf7fe", "");
+        if (subgametype != "") {
+            return subgametype;
+        }
+    }
+    return gametype;
+}
+
+// Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1486
-// Size: 0x44
+// Checksum 0x0, Offset: 0x1534
+// Size: 0x55
 function battle_tracks_shouldstartbattletracks(vehicle) {
+    if (function_12a073ab00ffe201() == "x2") {
+        return false;
+    }
     if (battle_tracks_hasemptybattletracks(vehicle)) {
         return false;
     }
@@ -596,8 +614,8 @@ function battle_tracks_shouldstartbattletracks(vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d3
-// Size: 0x4f
+// Checksum 0x0, Offset: 0x1592
+// Size: 0x4e
 function battle_tracks_tryplayingbattletrackswhenstandingonvehicle(player) {
     vehicle = player getmovingplatformparent();
     if (battle_tracks_shouldplaybattletrackswhenstandingonvehicle(vehicle, player)) {
@@ -611,7 +629,7 @@ function battle_tracks_tryplayingbattletrackswhenstandingonvehicle(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x152a
+// Checksum 0x0, Offset: 0x15e8
 // Size: 0x1d
 function battle_tracks_playbattletrackswhenstandingonvehicle(vehicle, player) {
     battle_tracks_playbattletrackstoplayer(vehicle, player, 0);
@@ -619,7 +637,7 @@ function battle_tracks_playbattletrackswhenstandingonvehicle(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x154f
+// Checksum 0x0, Offset: 0x160d
 // Size: 0x25
 function battle_tracks_stopbattletrackswhenstandingonvehicle(player) {
     if (function_c3d244ceadc23533(player)) {
@@ -630,7 +648,7 @@ function battle_tracks_stopbattletrackswhenstandingonvehicle(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x157c
+// Checksum 0x0, Offset: 0x163a
 // Size: 0x13
 function function_7718d2895fdba333(player) {
     player notify("battle_tracks_standingOnVehicleTimeout");
@@ -638,7 +656,7 @@ function function_7718d2895fdba333(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1597
+// Checksum 0x0, Offset: 0x1655
 // Size: 0x3b
 function battle_tracks_standingonvehicletimeout(vehicle, player) {
     level endon("game_ended");
@@ -651,7 +669,7 @@ function battle_tracks_standingonvehicletimeout(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15da
+// Checksum 0x0, Offset: 0x1698
 // Size: 0x92
 function function_d9a28875c82616d0(player, vehicle) {
     level endon("game_ended");
@@ -674,7 +692,7 @@ function function_d9a28875c82616d0(player, vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1674
+// Checksum 0x0, Offset: 0x1732
 // Size: 0x1f
 function battle_tracks_stopbattletracksfromstandingonvehicle(player) {
     battle_tracks_stopbattletracksforplayer(player.battletracksmusicstate, player, 0);
@@ -682,7 +700,7 @@ function battle_tracks_stopbattletracksfromstandingonvehicle(player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x169b
+// Checksum 0x0, Offset: 0x1759
 // Size: 0x5a
 function battle_tracks_shouldplaybattletrackswhenstandingonvehicle(vehicle, player) {
     if (!isdefined(vehicle)) {
@@ -708,8 +726,8 @@ function battle_tracks_shouldplaybattletrackswhenstandingonvehicle(vehicle, play
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16fe
-// Size: 0x44
+// Checksum 0x0, Offset: 0x17bc
+// Size: 0x43
 function battle_tracks_standingonsamevehiclewithsametracksowner(vehicle, player) {
     if (!isdefined(player.var_b132b6a670abb56e)) {
         return false;
@@ -720,7 +738,7 @@ function battle_tracks_standingonsamevehiclewithsametracksowner(vehicle, player)
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x174b
+// Checksum 0x0, Offset: 0x1808
 // Size: 0x27
 function function_4c953e9e77258030(vehicle, player) {
     if (battle_tracks_hasemptybattletracks(vehicle)) {
@@ -731,7 +749,7 @@ function function_4c953e9e77258030(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x177b
+// Checksum 0x0, Offset: 0x1838
 // Size: 0x46
 function battle_tracks_getbattletracksid(vehicle) {
     vehicleid = vehicle getentitynumber() + "";
@@ -741,7 +759,7 @@ function battle_tracks_getbattletracksid(vehicle) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x17ca
+// Checksum 0x0, Offset: 0x1887
 // Size: 0x65
 function battle_tracks_playerinlisteningzone(vehicle, player) {
     switch (vehicle.targetname) {
@@ -755,7 +773,7 @@ function battle_tracks_playerinlisteningzone(vehicle, player) {
 
 // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1837
+// Checksum 0x0, Offset: 0x18f4
 // Size: 0x5b
 function battle_tracks_vehicleallowlisteningoutsideoccupancy(vehicle) {
     if (isdefined(vehicle.targetname)) {
@@ -775,21 +793,21 @@ function battle_tracks_vehicleallowlisteningoutsideoccupancy(vehicle) {
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x189a
+    // Checksum 0x0, Offset: 0x1957
     // Size: 0x1f
     function function_561f62b5ed736105() {
-        return getdvar(@"hash_88960e36a4bc7a7d", "<dev string:x150>") != "<dev string:x150>";
+        return getdvar(@"hash_88960e36a4bc7a7d", "<dev string:x68>") != "<dev string:x68>";
     }
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x18c1
-    // Size: 0xbe
+    // Checksum 0x0, Offset: 0x197e
+    // Size: 0xbf
     function function_ea5ef1563045fe8c(vehicle) {
-        vehicle.battletracksmusicstate = "<dev string:x154>";
+        vehicle.battletracksmusicstate = "<dev string:x69>";
         result = [];
-        var_44b9b57f1594cdf2 = getdvar(@"hash_88960e36a4bc7a7d", "<dev string:x150>");
-        var_5587c2774459b359 = strtok(var_44b9b57f1594cdf2, "<dev string:x161>");
+        var_44b9b57f1594cdf2 = getdvar(@"hash_88960e36a4bc7a7d", "<dev string:x68>");
+        var_5587c2774459b359 = strtok(var_44b9b57f1594cdf2, "<dev string:x73>");
         foreach (var_ab66d57be4626030 in var_5587c2774459b359) {
             var_d60db1b8fa4a20ce = int(var_ab66d57be4626030);
             result = scripts\engine\utility::array_add(result, var_d60db1b8fa4a20ce);
@@ -799,91 +817,91 @@ function battle_tracks_vehicleallowlisteningoutsideoccupancy(vehicle) {
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1987
-    // Size: 0xcb
+    // Checksum 0x0, Offset: 0x1a45
+    // Size: 0xc8
     function function_3971973c87f8c8d(vehicle, player) {
         if (!function_f15328434523e979()) {
             return;
         }
-        println("<dev string:x166>");
-        println("<dev string:x18c>" + gettime());
-        println("<dev string:x19d>" + player getentitynumber());
-        println("<dev string:x1b7>" + vehicle.battletracksmusicstate);
+        println("<dev string:x75>");
+        println("<dev string:x98>" + gettime());
+        println("<dev string:xa6>" + player getentitynumber());
+        println("<dev string:xbd>" + vehicle.battletracksmusicstate);
         foreach (battletrack in vehicle.battletracks) {
-            println("<dev string:x1c8>" + battletrack);
+            println("<dev string:xcb>" + battletrack);
         }
-        println("<dev string:x1d3>");
+        println("<dev string:xd3>");
     }
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1a5a
+    // Checksum 0x0, Offset: 0x1b15
     // Size: 0x66
     function function_be79f42e9d2ddc27(battletracksmusicstate, player) {
         if (!function_f15328434523e979()) {
             return;
         }
-        println("<dev string:x1f9>");
-        println("<dev string:x18c>" + gettime());
-        println("<dev string:x19d>" + player getentitynumber());
-        println("<dev string:x1b7>" + battletracksmusicstate);
-        println("<dev string:x1d3>");
+        println("<dev string:xf6>");
+        println("<dev string:x98>" + gettime());
+        println("<dev string:xa6>" + player getentitynumber());
+        println("<dev string:xbd>" + battletracksmusicstate);
+        println("<dev string:xd3>");
     }
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1ac8
+    // Checksum 0x0, Offset: 0x1b83
     // Size: 0x88
     function function_55f68a20f93c4f9a(player, var_587830fd4042be45) {
         if (!function_f15328434523e979()) {
             return;
         }
-        println("<dev string:x21f>");
-        println("<dev string:x18c>" + gettime());
-        println("<dev string:x19d>" + player getentitynumber());
-        println("<dev string:x24a>");
-        println("<dev string:x278>" + var_587830fd4042be45);
-        println("<dev string:x28a>" + player getclientomnvar("<dev string:x297>"));
-        println("<dev string:x2bc>");
+        println("<dev string:x119>");
+        println("<dev string:x98>" + gettime());
+        println("<dev string:xa6>" + player getentitynumber());
+        println("<dev string:x141>");
+        println("<dev string:x16c>" + var_587830fd4042be45);
+        println("<dev string:x17b>" + player getclientomnvar("<dev string:x185>"));
+        println("<dev string:x1a7>");
     }
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b58
+    // Checksum 0x0, Offset: 0x1c13
     // Size: 0x88
     function function_495e92841f7d35ec(player, var_587830fd4042be45) {
         if (!function_f15328434523e979()) {
             return;
         }
-        println("<dev string:x2e7>");
-        println("<dev string:x18c>" + gettime());
-        println("<dev string:x19d>" + player getentitynumber());
-        println("<dev string:x24a>");
-        println("<dev string:x278>" + var_587830fd4042be45);
-        println("<dev string:x28a>" + player getclientomnvar("<dev string:x297>"));
-        println("<dev string:x313>");
+        println("<dev string:x1cf>");
+        println("<dev string:x98>" + gettime());
+        println("<dev string:xa6>" + player getentitynumber());
+        println("<dev string:x141>");
+        println("<dev string:x16c>" + var_587830fd4042be45);
+        println("<dev string:x17b>" + player getclientomnvar("<dev string:x185>"));
+        println("<dev string:x1f8>");
     }
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1be8
+    // Checksum 0x0, Offset: 0x1ca3
     // Size: 0x88
     function function_d852952d0fba338f(player, var_587830fd4042be45) {
         if (!function_f15328434523e979()) {
             return;
         }
-        println("<dev string:x33f>");
-        println("<dev string:x18c>" + gettime());
-        println("<dev string:x19d>" + player getentitynumber());
-        println("<dev string:x24a>");
-        println("<dev string:x278>" + var_587830fd4042be45);
-        println("<dev string:x28a>" + player getclientomnvar("<dev string:x297>"));
-        println("<dev string:x36d>");
+        println("<dev string:x221>");
+        println("<dev string:x98>" + gettime());
+        println("<dev string:xa6>" + player getentitynumber());
+        println("<dev string:x141>");
+        println("<dev string:x16c>" + var_587830fd4042be45);
+        println("<dev string:x17b>" + player getclientomnvar("<dev string:x185>"));
+        println("<dev string:x24c>");
     }
 
     // Namespace battle_tracks / scripts\cp_mp\vehicles\customization\battle_tracks
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c78
+    // Checksum 0x0, Offset: 0x1d33
     // Size: 0x17
     function function_f15328434523e979() {
         return getdvarint(@"hash_79d2fc5a92fbfcd1", 0) != 0;

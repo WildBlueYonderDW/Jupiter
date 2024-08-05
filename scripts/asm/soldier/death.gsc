@@ -19,8 +19,8 @@
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaeb
-// Size: 0x68
+// Checksum 0x0, Offset: 0x9ec
+// Size: 0x67
 function deathlmgcleanup() {
     if (!isdefined(self._blackboard.leftweaponent)) {
         return;
@@ -33,8 +33,8 @@ function deathlmgcleanup() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb5b
-// Size: 0x885
+// Checksum 0x0, Offset: 0xa5b
+// Size: 0x88f
 function playdeathanim(asmname, statename, params) {
     stop_sounds();
     self stoplookat();
@@ -136,7 +136,7 @@ function playdeathanim(asmname, statename, params) {
     deathanimdata = undefined;
     deathanim = undefined;
     deathxanim = undefined;
-    assertex(isdefined(self.deathalias) && isdefined(self.deathstate) || !isdefined(self.deathalias) && !isdefined(self.deathstate), "<dev string:x1c>");
+    assertex(isdefined(self.deathalias) && isdefined(self.deathstate) || !isdefined(self.deathalias) && !isdefined(self.deathstate), ".deathAlias and .deathState must both be defined, or neither defined");
     var_4d3cebad4e3e8617 = isdefined(self.deathalias) && isdefined(self.deathstate);
     if (!isdefined(self.skipdeathanim) || istrue(self.var_aa0214e1292a7b3)) {
         deathanimdata = function_ea379d7359bd10ae(asmname, statename, params);
@@ -169,7 +169,7 @@ function playdeathanim(asmname, statename, params) {
                 self aisetanim(statename, deathanim);
             }
         } else {
-            assertex(utility::issp(), "<dev string:x64>");
+            assertex(utility::issp(), "Custom death anim only supported in SP.");
             bodyknob = asm_getinnerrootknob();
             self clearanim(bodyknob, 0.05);
             self setflaggedanimknoballrestart(statename, deathanim, bodyknob, 1, 0.05);
@@ -184,7 +184,7 @@ function playdeathanim(asmname, statename, params) {
         self animmode(self.deathanimmode);
     }
     if (isdefined(self.skipdeathanim)) {
-        assertex(self.skipdeathanim, "<dev string:x8f>");
+        assertex(self.skipdeathanim, "self.skipDeathAnim must be either true or undefined.");
         if (!isdefined(self.noragdoll)) {
             if (isdefined(self.fnpreragdoll)) {
                 self [[ self.fnpreragdoll ]]();
@@ -231,15 +231,15 @@ function playdeathanim(asmname, statename, params) {
         }
     }
     /#
-        if (getdvar(@"hash_27494f1d75fc0809") == "<dev string:xc7>") {
-            if (animhasnotetrack(deathxanim, "<dev string:xcd>")) {
+        if (getdvar(@"hash_27494f1d75fc0809") == "<dev string:x1c>") {
+            if (animhasnotetrack(deathxanim, "<dev string:x1f>")) {
                 return;
             }
-            if (animhasnotetrack(deathxanim, "<dev string:xdf>")) {
+            if (animhasnotetrack(deathxanim, "<dev string:x2e>")) {
                 return;
             }
-            println("<dev string:xf1>", deathxanim, "<dev string:x105>");
-            iprintlnbold("<dev string:x12c>");
+            println("<dev string:x3d>", deathxanim, "<dev string:x4e>");
+            iprintlnbold("<dev string:x72>");
         }
     #/
     if (!isagent(self) && !isdefined(self.skipdeathanim)) {
@@ -279,7 +279,7 @@ function playdeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13e8
+// Checksum 0x0, Offset: 0x12f2
 // Size: 0x51
 function deathnotetrackhandler(note) {
     if (self.burningtodeath) {
@@ -297,8 +297,8 @@ function deathnotetrackhandler(note) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1441
-// Size: 0x17d
+// Checksum 0x0, Offset: 0x134b
+// Size: 0x17c
 function handleburningtodeath(deathxanim) {
     if (isscriptedagent(self) && !isnullweapon(self.damageweapon) && self.unittype != "juggernaut" && utility::shouldburnfromdamage(self.damageweapon)) {
         self.burningtodeath = 1;
@@ -313,11 +313,11 @@ function handleburningtodeath(deathxanim) {
     }
     if (isscriptedagent(self)) {
         /#
-            weaponname = "<dev string:x184>";
+            weaponname = "<dev string:xc7>";
             if (!isnullweapon(self.damageweapon)) {
                 weaponname = self.damageweapon.basename;
             }
-            assertmsg("<dev string:x191>" + weaponname);
+            assertmsg("<dev string:xd1>" + weaponname);
         #/
         return;
     }
@@ -339,7 +339,7 @@ function handleburningtodeath(deathxanim) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15c6
+// Checksum 0x0, Offset: 0x14cf
 // Size: 0x5c
 function handleburndeathmodelswap() {
     if (isdefined(self.headmodel)) {
@@ -355,7 +355,7 @@ function handleburndeathmodelswap() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x162a
+// Checksum 0x0, Offset: 0x1533
 // Size: 0xe0
 function handleburndeathvfx() {
     self endon("stop_burn_VFX");
@@ -382,8 +382,8 @@ function handleburndeathvfx() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1712
-// Size: 0xe2
+// Checksum 0x0, Offset: 0x161b
+// Size: 0xe1
 function getburnvfxtagpackets() {
     var_bd804c4d30dbc230 = [];
     var_bd804c4d30dbc230[var_bd804c4d30dbc230.size] = createburnvfxpacket("j_knee_ri", "vfx_burn_sml_high");
@@ -401,8 +401,8 @@ function getburnvfxtagpackets() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17fd
-// Size: 0x47
+// Checksum 0x0, Offset: 0x1705
+// Size: 0x46
 function createburnvfxpacket(tag, burnvfx, smoldervfx) {
     packet = spawnstruct();
     packet.tag = tag;
@@ -412,8 +412,8 @@ function createburnvfxpacket(tag, burnvfx, smoldervfx) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x184d
-// Size: 0x9b
+// Checksum 0x0, Offset: 0x1754
+// Size: 0x82
 function detachriotshield(inexecution) {
     assert(istrue(self.bhasriotshieldattached));
     if (shoulddropriotshield()) {
@@ -423,7 +423,7 @@ function detachriotshield(inexecution) {
         self detach(self.riotshieldmodel, self.riotshieldmodeltag);
     } else {
         self detachshieldmodel(self.riotshieldmodel, self.riotshieldmodeltag);
-        if (istrue(inexecution) && !istrue(isagent(self) && istrue(level.var_e97d3de5b99775a6))) {
+        if (istrue(inexecution)) {
             dropriotshieldweapon();
         }
     }
@@ -432,7 +432,7 @@ function detachriotshield(inexecution) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18f0
+// Checksum 0x0, Offset: 0x17de
 // Size: 0x13
 function shoulddropriotshield() {
     if (istrue(self.shoulddropriotshield)) {
@@ -443,8 +443,8 @@ function shoulddropriotshield() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x190c
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x17fa
+// Size: 0x8d
 function dropriotshield() {
     shieldorigin = self gettagorigin(self.riotshieldmodeltag);
     var_3e3f178f45c14044 = self gettagangles(self.riotshieldmodeltag);
@@ -457,8 +457,8 @@ function dropriotshield() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a0
-// Size: 0x69
+// Checksum 0x0, Offset: 0x188f
+// Size: 0x6b
 function dropriotshieldweapon() {
     shieldorigin = self gettagorigin(self.riotshieldmodeltag);
     var_3e3f178f45c14044 = self gettagangles(self.riotshieldmodeltag);
@@ -469,7 +469,7 @@ function dropriotshieldweapon() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a11
+// Checksum 0x0, Offset: 0x1902
 // Size: 0x1b
 function deleteriotshield(time) {
     self endon("death");
@@ -479,8 +479,8 @@ function deleteriotshield(time) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a34
-// Size: 0x106
+// Checksum 0x0, Offset: 0x1925
+// Size: 0x108
 function c8deathsound(c8, notetrack) {
     prefix = getsubstr(notetrack, 0, 3);
     if (prefix == "vo_") {
@@ -507,8 +507,8 @@ function c8deathsound(c8, notetrack) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b42
-// Size: 0x135
+// Checksum 0x0, Offset: 0x1a35
+// Size: 0x134
 function playexplosivedeathanim(asmname, statename, params) {
     if ((utility::isdamageweapon(makeweapon("iw7_knife_upgrade1")) || utility::wasdamagedbyoffhandshield() || utility::isdamageweapon(makeweapon("iw7_sonic"))) && isdefined(self.attacker)) {
         var_85e28f54b572f39f = vectortoyaw(self.attacker.origin - self.origin);
@@ -527,7 +527,7 @@ function playexplosivedeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c7f
+// Checksum 0x0, Offset: 0x1b71
 // Size: 0x68
 function playbalconydeathanim(asmname, statename, params) {
     function_2afce3c4640b03c9(gettime() + randomintrange(25000, 35000));
@@ -537,7 +537,7 @@ function playbalconydeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cef
+// Checksum 0x0, Offset: 0x1be1
 // Size: 0xb7
 function playdeathanim_melee_ragdolldelayed(asmname, statename, params) {
     var_2e6c636f8e86eff0 = isagent(self);
@@ -569,7 +569,7 @@ function playdeathanim_melee_ragdolldelayed(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1dae
+// Checksum 0x0, Offset: 0x1ca0
 // Size: 0x2f
 function chooseshockdeathanim(asmname, statename, tostatename, params) {
     return asm_lookupanimfromalias(statename, "standing");
@@ -577,7 +577,7 @@ function chooseshockdeathanim(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de6
+// Checksum 0x0, Offset: 0x1cd8
 // Size: 0x37
 function shouldplayshockdeath(asmname, statename, tostatename, params) {
     return isshocked() || isdefined(self.shockdeath);
@@ -585,7 +585,7 @@ function shouldplayshockdeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e26
+// Checksum 0x0, Offset: 0x1d18
 // Size: 0x5e
 function shouldplayexplosivedeath(asmname, statename, tostatename, params) {
     if (self.unittype == "juggernaut") {
@@ -603,7 +603,7 @@ function shouldplayexplosivedeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e8d
+// Checksum 0x0, Offset: 0x1d7f
 // Size: 0x86
 function function_a9ab7e592a976b98(asmname, statename, tostatename, params) {
     if (istrue(self.var_774a6020b81b9c70)) {
@@ -620,8 +620,8 @@ function function_a9ab7e592a976b98(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f1c
-// Size: 0x77
+// Checksum 0x0, Offset: 0x1e0e
+// Size: 0x76
 function function_bd0988db0fd373a1(asmname, statename, params) {
     deathalias = "train";
     if (self.currentpose == "stand") {
@@ -635,7 +635,7 @@ function function_bd0988db0fd373a1(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f9c
+// Checksum 0x0, Offset: 0x1e8d
 // Size: 0x54
 function function_d111a9b9015e2baa(asmname, statename, params) {
     self.nodrop = 1;
@@ -647,7 +647,7 @@ function function_d111a9b9015e2baa(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff8
+// Checksum 0x0, Offset: 0x1ee9
 // Size: 0x73
 function shouldplayplayermeleedeath(asmname, statename, tostatename, params) {
     if (isdefined(self.damagemod) && isalive(self.attacker)) {
@@ -664,8 +664,8 @@ function shouldplayplayermeleedeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2074
-// Size: 0x14d
+// Checksum 0x0, Offset: 0x1f65
+// Size: 0x14c
 function shouldplaybalconydeath(asmname, statename, tostatename, params) {
     if (self.currentpose == "prone") {
         return false;
@@ -702,7 +702,7 @@ function shouldplaybalconydeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x21ca
+// Checksum 0x0, Offset: 0x20ba
 // Size: 0x43
 function shouldplaybalconyraildeath(asmname, statename, tostatename, params) {
     return self._blackboard.balconydeathnode.script_balcony == 1;
@@ -710,7 +710,7 @@ function shouldplaybalconyraildeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2216
+// Checksum 0x0, Offset: 0x2106
 // Size: 0x33
 function choosebalconydeathanim(asmname, statename, tostatename, params) {
     return asm_lookupanimfromalias(statename, self.currentpose);
@@ -718,8 +718,8 @@ function choosebalconydeathanim(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2252
-// Size: 0x169
+// Checksum 0x0, Offset: 0x2142
+// Size: 0x168
 function shouldplaystrongdamagedeath(asmname, statename, tostatename, params) {
     objweapon = self.damageweapon;
     if (!isdefined(objweapon) || isnullweapon(objweapon)) {
@@ -759,8 +759,8 @@ function shouldplaystrongdamagedeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x23c4
-// Size: 0x11c
+// Checksum 0x0, Offset: 0x22b3
+// Size: 0x11a
 function c6_scriptablecleanup() {
     if (!isdefined(self)) {
         return;
@@ -774,7 +774,7 @@ function c6_scriptablecleanup() {
     if (!isdefined(self._blackboard.scriptableparts)) {
         return;
     }
-    foreach (partname, part in self._blackboard.scriptableparts) {
+    foreach (part in self._blackboard.scriptableparts) {
         state = part.state;
         if (state == "normal") {
             continue;
@@ -789,8 +789,8 @@ function c6_scriptablecleanup() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24e8
-// Size: 0xeb
+// Checksum 0x0, Offset: 0x23d5
+// Size: 0xe8
 function c8_scriptablecleanup() {
     self.bt.disabledismemberbehaviors = 1;
     if (isdefined(self.asm.bpreragdolled)) {
@@ -811,8 +811,8 @@ function c8_scriptablecleanup() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x25db
-// Size: 0x69
+// Checksum 0x0, Offset: 0x24c5
+// Size: 0x6b
 function choosemovingdeathanim(asmname, statename, params) {
     curspeed = length(self.velocity);
     archetype = self getbasearchetype();
@@ -823,7 +823,7 @@ function choosemovingdeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x266b
+// Checksum 0x0, Offset: 0x2557
 // Size: 0x76
 function choosecrouchingdeathanim(asmname, statename, params) {
     if (damagelocationisany("head", "neck")) {
@@ -837,10 +837,10 @@ function choosecrouchingdeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ea
+// Checksum 0x0, Offset: 0x25d6
 // Size: 0x1aa
 function choosecoverdeathanim(asmname, statename, params) {
-    assertex(isdefined(params), "<dev string:x1f5>" + statename);
+    assertex(isdefined(params), "Cover type not passed as param to state " + statename);
     switch (params) {
     case #"hash_f1676baca0ae608b": 
         return asm_lookupanimfromalias(statename, "stand");
@@ -872,12 +872,12 @@ function choosecoverdeathanim(asmname, statename, params) {
     case #"hash_307cdefbc9ff53fa": 
         return asm_lookupanimfromalias(statename, "3d");
     }
-    assertmsg("<dev string:x221>");
+    assertmsg("invalid cover type passed to asm death function.");
 }
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x289c
+// Checksum 0x0, Offset: 0x2788
 // Size: 0x231
 function choosestandingdeathanim(asmname, statename, params) {
     if (isusingsidearm()) {
@@ -922,8 +922,8 @@ function choosestandingdeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ad6
-// Size: 0x21e
+// Checksum 0x0, Offset: 0x29c2
+// Size: 0x226
 function chooseexplosivedeathanim(asmname, statename, params) {
     ismolotov = 0;
     objweapon = self.damageweapon;
@@ -980,8 +980,8 @@ function chooseexplosivedeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cfd
-// Size: 0x151
+// Checksum 0x0, Offset: 0x2bf1
+// Size: 0x150
 function choosestandingpistoldeathanim(asmname, statename, params) {
     if (abs(self.damageyaw) < 50) {
         return asm_lookupanimfromalias(statename, "pistol_2");
@@ -1005,7 +1005,7 @@ function choosestandingpistoldeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e57
+// Checksum 0x0, Offset: 0x2d4a
 // Size: 0x27
 function choosestandingmeleedeathanim(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, "default");
@@ -1013,7 +1013,7 @@ function choosestandingmeleedeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e87
+// Checksum 0x0, Offset: 0x2d7a
 // Size: 0x3
 function firingdeathallowed() {
     return false;
@@ -1021,7 +1021,7 @@ function firingdeathallowed() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e93
+// Checksum 0x0, Offset: 0x2d86
 // Size: 0x46
 function playdeathfx() {
     self endon("killanimscript");
@@ -1036,14 +1036,14 @@ function playdeathfx() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ee1
-// Size: 0x107
+// Checksum 0x0, Offset: 0x2dd4
+// Size: 0x10b
 function play_blood_pool(note, flagname) {
     if (!isdefined(self)) {
         return;
     }
     if (isdefined(self.skipbloodpool)) {
-        assertex(self.skipbloodpool, "<dev string:x255>");
+        assertex(self.skipbloodpool, "Setting must be either true or undefined");
         return;
     }
     tagpos = self gettagorigin("j_SpineUpper");
@@ -1060,7 +1060,7 @@ function play_blood_pool(note, flagname) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ff0
+// Checksum 0x0, Offset: 0x2ee7
 // Size: 0xf4
 function shouldhelmetpoponpain(bexplosivedamage) {
     if (!istrue(self.shouldhelmetpop)) {
@@ -1089,7 +1089,7 @@ function shouldhelmetpoponpain(bexplosivedamage) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30ed
+// Checksum 0x0, Offset: 0x2fe4
 // Size: 0xae
 function shouldhelmetpopondeath(bexplosivedamage) {
     if (!istrue(self.shouldhelmetpop)) {
@@ -1112,8 +1112,8 @@ function shouldhelmetpopondeath(bexplosivedamage) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a4
-// Size: 0x24e
+// Checksum 0x0, Offset: 0x309b
+// Size: 0x251
 function helmetpop() {
     if (!isdefined(self)) {
         return;
@@ -1162,8 +1162,8 @@ function helmetpop() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x33fa
-// Size: 0xde
+// Checksum 0x0, Offset: 0x32f4
+// Size: 0xe1
 function helmetlaunch(damagedir) {
     launchforce = damagedir;
     launchforce *= randomfloatrange(2000, 4000);
@@ -1187,8 +1187,8 @@ function helmetlaunch(damagedir) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34e0
-// Size: 0x1f
+// Checksum 0x0, Offset: 0x33dd
+// Size: 0x1e
 function getsuffocationdeathanim() {
     animation = undefined;
     if (randomint(11) >= 1) {
@@ -1199,7 +1199,7 @@ function getsuffocationdeathanim() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3508
+// Checksum 0x0, Offset: 0x3404
 // Size: 0x3
 function shouldplaysuffocatedeath() {
     return false;
@@ -1207,8 +1207,8 @@ function shouldplaysuffocatedeath() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3514
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x3410
+// Size: 0xc1
 function shouldheadpop(bexplosivedamage) {
     if (self.unittype != "soldier" && self.unittype != "juggernaut") {
         return false;
@@ -1234,7 +1234,7 @@ function shouldheadpop(bexplosivedamage) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35df
+// Checksum 0x0, Offset: 0x34da
 // Size: 0x65
 function headpop() {
     if (!isdefined(self.headmodel)) {
@@ -1248,7 +1248,7 @@ function headpop() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x364c
+// Checksum 0x0, Offset: 0x3547
 // Size: 0x24
 function cross2d(a, b) {
     return a[0] * b[1] - b[0] * a[1];
@@ -1256,7 +1256,7 @@ function cross2d(a, b) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3679
+// Checksum 0x0, Offset: 0x3574
 // Size: 0x6e
 function meleegetattackercardinaldirection(var_e508c1784ebedbc6, var_d9c3b6b9654ffd8e) {
     dot = vectordot(var_d9c3b6b9654ffd8e, var_e508c1784ebedbc6);
@@ -1277,8 +1277,8 @@ function meleegetattackercardinaldirection(var_e508c1784ebedbc6, var_d9c3b6b9654
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x36ef
-// Size: 0x1be
+// Checksum 0x0, Offset: 0x35ea
+// Size: 0x1ca
 function orientmeleevictim(directional_orient) {
     knifeweapon = makeweapon("iw7_knife_upgrade1");
     var_af2a51355e17e303 = makeweapon("iw7_sonic");
@@ -1308,7 +1308,7 @@ function orientmeleevictim(directional_orient) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38b5
+// Checksum 0x0, Offset: 0x37bc
 // Size: 0x3f
 function function_b84fca76682933d4() {
     if (!isdefined(self.attacker.lastkillalertsoundtime) || gettime() > self.attacker.lastkillalertsoundtime + 700) {
@@ -1319,8 +1319,8 @@ function function_b84fca76682933d4() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x38fd
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x3804
+// Size: 0xa8
 function function_2ae52d0a5e94265a() {
     isbullet = isdefined(self.damageweapon) && weapontype(self.damageweapon) == "bullet";
     if (isplayer(self.attacker) && isbullet && !function_b84fca76682933d4()) {
@@ -1335,8 +1335,8 @@ function function_2ae52d0a5e94265a() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x39ae
-// Size: 0x1d8
+// Checksum 0x0, Offset: 0x38b4
+// Size: 0x1d9
 function playdeathsound(bexplosivedamage) {
     if (utility::issp()) {
         function_2ae52d0a5e94265a();
@@ -1392,7 +1392,7 @@ function playdeathsound(bexplosivedamage) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b8e
+// Checksum 0x0, Offset: 0x3a95
 // Size: 0x83
 function shouldskipdeathsound() {
     if (!getdvarint(@"hash_f133094f3b5288b6", 0) && damagelocationisany("head", "helmet")) {
@@ -1411,8 +1411,8 @@ function shouldskipdeathsound() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1a
-// Size: 0x40
+// Checksum 0x0, Offset: 0x3b21
+// Size: 0x3f
 function removeselffrom_squadlastseenenemypos(org) {
     for (i = 0; i < anim.squadindex.size; i++) {
         anim.squadindex[i] clearsightposnear(org);
@@ -1421,7 +1421,7 @@ function removeselffrom_squadlastseenenemypos(org) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c62
+// Checksum 0x0, Offset: 0x3b68
 // Size: 0x46
 function clearsightposnear(org) {
     if (!isdefined(self.sightpos)) {
@@ -1435,7 +1435,7 @@ function clearsightposnear(org) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cb0
+// Checksum 0x0, Offset: 0x3bb6
 // Size: 0x3c
 function isattackerwithindist(attacker, maxdist) {
     if (!isdefined(attacker)) {
@@ -1449,7 +1449,7 @@ function isattackerwithindist(attacker, maxdist) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cf5
+// Checksum 0x0, Offset: 0x3bfb
 // Size: 0x30
 function isspecialdeath(asmname, statename, tostatename, params) {
     if (isshocked()) {
@@ -1460,7 +1460,7 @@ function isspecialdeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d2e
+// Checksum 0x0, Offset: 0x3c34
 // Size: 0x45
 function choosespecialdeath(asmname, statename, params) {
     if (isshocked()) {
@@ -1471,7 +1471,7 @@ function choosespecialdeath(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d7b
+// Checksum 0x0, Offset: 0x3c81
 // Size: 0x11d
 function shouldgib() {
     if (!isdismembermentenabled()) {
@@ -1499,7 +1499,7 @@ function shouldgib() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ea1
+// Checksum 0x0, Offset: 0x3da7
 // Size: 0xe8
 function dogibdefault(victim) {
     origin = victim gettagorigin("j_spine4");
@@ -1521,7 +1521,7 @@ function dogibdefault(victim) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f91
+// Checksum 0x0, Offset: 0x3e97
 // Size: 0x2b
 function dogib() {
     if (isdefined(self.gib_override_func)) {
@@ -1533,7 +1533,7 @@ function dogib() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3fc4
+// Checksum 0x0, Offset: 0x3eca
 // Size: 0xf3
 function shouldplayshieldbashdeath(asmname, statename, tostatename, params) {
     objweapon = self.damageweapon;
@@ -1554,8 +1554,8 @@ function shouldplayshieldbashdeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x40c0
-// Size: 0x1c0
+// Checksum 0x0, Offset: 0x3fc6
+// Size: 0x1c1
 function doshieldbashdeath(asmname, statename, tostatename, params) {
     stop_sounds();
     namespace_223959d3e5206cfb::dropallaiweapons();
@@ -1585,8 +1585,8 @@ function doshieldbashdeath(asmname, statename, tostatename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4288
-// Size: 0xc9
+// Checksum 0x0, Offset: 0x418f
+// Size: 0xc8
 function getpainbodypartdeath() {
     if (damagelocationisany("head", "helmet", "neck")) {
         part = "head";
@@ -1614,8 +1614,8 @@ function getpainbodypartdeath() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4359
-// Size: 0x39
+// Checksum 0x0, Offset: 0x425f
+// Size: 0x38
 function getpainbodypartcrouchdeath() {
     if (damagelocationisany("head", "helmet", "neck")) {
         part = "head";
@@ -1627,8 +1627,8 @@ function getpainbodypartcrouchdeath() {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x439a
-// Size: 0x198
+// Checksum 0x0, Offset: 0x429f
+// Size: 0x19e
 function choosedirectionaldeathanim(asmname, statename, params) {
     size = scripts\asm\soldier\pain::getpainweaponsize();
     if (isdefined(self.var_687d9daf7a379462) && isdefined(self.var_aae53348ffc9b4dd) && isdefined(self.currentpose) && self.var_687d9daf7a379462 == "lowerbody" && self.var_aae53348ffc9b4dd == "_lg" && self.currentpose == "prone") {
@@ -1662,8 +1662,8 @@ function choosedirectionaldeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x453b
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x4446
+// Size: 0x123
 function choosedirectionalcrouchdeathanim(asmname, statename, params) {
     part = getpainbodypartcrouchdeath();
     size = scripts\asm\soldier\pain::getpainweaponsize();
@@ -1691,8 +1691,8 @@ function choosedirectionalcrouchdeathanim(asmname, statename, params) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4661
-// Size: 0xd4
+// Checksum 0x0, Offset: 0x4572
+// Size: 0xd5
 function shouldfireintoairdeath(statename, part) {
     if (utility::iscp()) {
         return false;
@@ -1721,8 +1721,8 @@ function shouldfireintoairdeath(statename, part) {
 
 // Namespace death / scripts\asm\soldier\death
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x473e
-// Size: 0x104
+// Checksum 0x0, Offset: 0x4650
+// Size: 0x10a
 function choosedirectionallargepaindeathanim(asmname, statename, params) {
     part = "lowerbody";
     size = "_lg";

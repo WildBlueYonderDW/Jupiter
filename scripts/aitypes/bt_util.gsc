@@ -4,7 +4,7 @@
 
 // Namespace bt_util / scripts\aitypes\bt_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x90
+// Checksum 0x0, Offset: 0x70
 // Size: 0x50
 function init() {
     if (isdefined(level._btactions)) {
@@ -20,7 +20,7 @@ function init() {
 
 // Namespace bt_util / scripts\aitypes\bt_util
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe8
+// Checksum 0x0, Offset: 0xc8
 // Size: 0x56
 function bt_init() {
     assert(!isdefined(self.bt));
@@ -33,7 +33,7 @@ function bt_init() {
 
 // Namespace bt_util / scripts\aitypes\bt_util
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x146
+// Checksum 0x0, Offset: 0x126
 // Size: 0x31
 function bt_terminateandreplace(var_99252870276d5b3e) {
     self btterminatetreeinstance();

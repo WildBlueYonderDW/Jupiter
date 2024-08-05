@@ -13,7 +13,7 @@
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x5
-    // Checksum 0x0, Offset: 0x12e
+    // Checksum 0x0, Offset: 0xfc
     // Size: 0xc
     function private autoexec main() {
         function_bda4aa7e471bfbf3();
@@ -23,7 +23,7 @@
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x142
+// Checksum 0x0, Offset: 0x110
 // Size: 0x5c
 function function_a8c2757799695a5a(ent) {
     ent.state = 0;
@@ -38,7 +38,7 @@ function function_a8c2757799695a5a(ent) {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a6
+// Checksum 0x0, Offset: 0x174
 // Size: 0x4a
 function function_79bb217b25d90ffd(ball, base_speed, var_263af4e6f5cae741, max_speed) {
     ball.var_8a5887cc6471628 = base_speed;
@@ -48,7 +48,7 @@ function function_79bb217b25d90ffd(ball, base_speed, var_263af4e6f5cae741, max_s
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f8
+// Checksum 0x0, Offset: 0x1c6
 // Size: 0x78
 function launch_ball(launch_velocity, var_f75e4b9bea638a30, air_drag) {
     function_4f4004b3bbfaf766(self, 2);
@@ -62,7 +62,7 @@ function launch_ball(launch_velocity, var_f75e4b9bea638a30, air_drag) {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x278
+// Checksum 0x0, Offset: 0x246
 // Size: 0x4e
 function function_8a1752d6a06e7cd7(ball, target_ent) {
     ball.var_349af4466beb8322 = target_ent;
@@ -73,7 +73,7 @@ function function_8a1752d6a06e7cd7(ball, target_ent) {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ce
+// Checksum 0x0, Offset: 0x29c
 // Size: 0x14
 function set_invisible(ball) {
     function_4f4004b3bbfaf766(ball, 0);
@@ -81,7 +81,7 @@ function set_invisible(ball) {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x2ea
+// Checksum 0x0, Offset: 0x2b8
 // Size: 0x8f
 function private function_4f4004b3bbfaf766(ball, state) {
     if (state != ball.state) {
@@ -91,22 +91,22 @@ function private function_4f4004b3bbfaf766(ball, state) {
             self.var_10d2d4a57de28f3 = distance2d(self.var_349af4466beb8322.origin, self.origin);
         }
         /#
-            ball ball_print("<dev string:x2d>" + function_abea44bf774018a9(state));
+            ball ball_print("<dev string:x2a>" + function_abea44bf774018a9(state));
         #/
     }
 }
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x381
-// Size: 0x1ad
+// Checksum 0x0, Offset: 0x34f
+// Size: 0x1ae
 function private function_1038bfc87beec575() {
     self endon("death");
     while (true) {
         if (self.state == 2) {
             ball_speed = length(self.ball_velocity);
             if (ball_speed <= 0) {
-                function_4f4004b3bbfaf766(self, 4);
+                function_4f4004b3bbfaf766(self, 1);
             }
         }
         var_7f4a6be39f5c9522 = isalive(self.var_349af4466beb8322) && !istrue(self.var_349af4466beb8322.ignoreme) && !istrue(self.var_349af4466beb8322.notarget) && !istrue(self.var_349af4466beb8322.var_f2f5db77ae69537f);
@@ -136,8 +136,8 @@ function private function_1038bfc87beec575() {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x536
-// Size: 0x363
+// Checksum 0x0, Offset: 0x505
+// Size: 0x317
 function private function_e61b88b7b91e2427() {
     self endon("death");
     var_4c1e1071f143a794 = 0.2;
@@ -158,7 +158,7 @@ function private function_e61b88b7b91e2427() {
         movement_pos = self.ball_velocity + self.origin;
         self moveto(movement_pos, var_4c1e1071f143a794);
         waitresult = waittill_any_timeout_2(var_4c1e1071f143a794, "movedone", "new_homing_ball_velocity");
-        if (isdefined(target_pos) && self.prev_position != self.origin && distancesquared(self.prev_position, self.origin) > 1) {
+        if (isdefined(target_pos) && self.prev_position != self.origin) {
             var_4a062b0b3c49dd29 = pointonsegmentnearesttopoint(self.prev_position, self.origin, target_pos);
             if (distancesquared(var_4a062b0b3c49dd29, target_pos) < squared(64)) {
                 function_b34696cf4be98a4d();
@@ -167,20 +167,18 @@ function private function_e61b88b7b91e2427() {
                 if (function_64e4823b3d753975()) {
                     sphere(var_4a062b0b3c49dd29, 20, (0, 0, 1));
                     sphere(target_pos, 20, (0, 0.2, 0.8));
-                    ball_print("<dev string:x3d>" + distance(var_4a062b0b3c49dd29, target_pos), target_pos);
+                    ball_print("<dev string:x37>" + distance(var_4a062b0b3c49dd29, target_pos), target_pos);
                 }
             #/
         }
-        if (self.prev_position != self.origin && distancesquared(self.prev_position, self.origin) > 1) {
-            var_a074c763266c6245 = function_143526130b12b2b6(averagepoint([self.prev_position, self.origin]), distance(self.prev_position, self.origin) + 64);
-            foreach (character in var_a074c763266c6245) {
-                var_cfb227596c65259f = pointonsegmentnearesttopoint(self.prev_position, self.origin, character getcentroid());
-                var_ba3647c931043819 = math::function_6c1e6433c5e5cf79(var_cfb227596c65259f, character getcentroid(), character getboundshalfsize(), character.angles);
-                if (distancesquared(var_cfb227596c65259f, var_ba3647c931043819) < squared(64) && !is_equal(self.team, character.team)) {
-                    params = spawnstruct();
-                    params.hitcharacter = character;
-                    callback("homing_ball_hit_character", params);
-                }
+        var_a074c763266c6245 = function_143526130b12b2b6(averagepoint([self.prev_position, self.origin]), distance(self.prev_position, self.origin) + 64);
+        foreach (character in var_a074c763266c6245) {
+            var_cfb227596c65259f = pointonsegmentnearesttopoint(self.prev_position, self.origin, character getcentroid());
+            var_ba3647c931043819 = math::function_6c1e6433c5e5cf79(var_cfb227596c65259f, character getcentroid(), character getboundshalfsize(), character.angles);
+            if (distancesquared(var_cfb227596c65259f, var_ba3647c931043819) < squared(64) && !is_equal(self.team, character.team)) {
+                params = spawnstruct();
+                params.hitcharacter = character;
+                callback("homing_ball_hit_character", params);
             }
         }
     }
@@ -188,7 +186,7 @@ function private function_e61b88b7b91e2427() {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8a1
+// Checksum 0x0, Offset: 0x824
 // Size: 0x75
 function private function_40db784a7c4e39f6() {
     if (self.state == 3) {
@@ -206,7 +204,7 @@ function private function_40db784a7c4e39f6() {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x91f
+// Checksum 0x0, Offset: 0x8a2
 // Size: 0x74
 function private function_b34696cf4be98a4d() {
     self.var_81c8a1b6673ed52b = gettime();
@@ -226,8 +224,8 @@ function private function_b34696cf4be98a4d() {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x99b
-// Size: 0x336
+// Checksum 0x0, Offset: 0x91e
+// Size: 0x344
 function private function_f1cf0263bc538e(var_4c1e1071f143a794, target_pos) {
     current_angles = vectortoangles(self.momentum_dir);
     if (isdefined(target_pos)) {
@@ -272,8 +270,8 @@ function private function_f1cf0263bc538e(var_4c1e1071f143a794, target_pos) {
         self.ball_velocity = self.ball_velocity * -1 * getdvarfloat(@"hash_a02fb18b5abd33d5", 0.7);
         /#
             if (function_64e4823b3d753975()) {
-                line(self.origin, trace["<dev string:x53>"], (1, 0, 0), 1);
-                ball_print("<dev string:x5f>", trace["<dev string:x53>"]);
+                line(self.origin, trace["<dev string:x4a>"], (1, 0, 0), 1);
+                ball_print("<dev string:x53>", trace["<dev string:x4a>"]);
             }
         #/
     }
@@ -281,8 +279,8 @@ function private function_f1cf0263bc538e(var_4c1e1071f143a794, target_pos) {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xcd9
-// Size: 0xb4
+// Checksum 0x0, Offset: 0xc6a
+// Size: 0xb8
 function private function_da518249c3bd9b59(is_vertical, var_1c729d9d0f7eda98) {
     lerp_factor = default_to(self.turn_rate, 1);
     var_218197316c330f7f = gettime() - self.var_81c8a1b6673ed52b;
@@ -300,8 +298,8 @@ function private function_da518249c3bd9b59(is_vertical, var_1c729d9d0f7eda98) {
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0xd96
-// Size: 0x140
+// Checksum 0x0, Offset: 0xd2b
+// Size: 0x146
 function private function_c33c9ec6d127eef2(var_12a34cc28b3fbf8c, var_1c729d9d0f7eda98) {
     target_pos = var_12a34cc28b3fbf8c;
     if (self.state == 3) {
@@ -322,8 +320,8 @@ function private function_c33c9ec6d127eef2(var_12a34cc28b3fbf8c, var_1c729d9d0f7
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xedf
-// Size: 0x12a
+// Checksum 0x0, Offset: 0xe7a
+// Size: 0x12c
 function private function_f68a56043bfa8c0b(var_12a34cc28b3fbf8c, var_4c1e1071f143a794, ball_velocity, b_do_trace) {
     b_do_trace = default_to(b_do_trace, 1);
     push_vector = (0, 0, 0);
@@ -341,7 +339,7 @@ function private function_f68a56043bfa8c0b(var_12a34cc28b3fbf8c, var_4c1e1071f14
             /#
                 if (function_64e4823b3d753975()) {
                     line(self.origin, position, (1, 0, 0), 1);
-                    ball_print("<dev string:x6b>", position);
+                    ball_print("<dev string:x5c>", position);
                 }
             #/
         }
@@ -353,38 +351,38 @@ function private function_f68a56043bfa8c0b(var_12a34cc28b3fbf8c, var_4c1e1071f14
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1012
+    // Checksum 0x0, Offset: 0xfaf
     // Size: 0x2e
     function function_bda4aa7e471bfbf3() {
-        function_6e7290c8ee4f558b("<dev string:x78>");
-        function_a9a864379a098ad6("<dev string:x95>", "<dev string:xb1>", &function_4982940c42590e46);
+        function_6e7290c8ee4f558b("<dev string:x66>");
+        function_a9a864379a098ad6("<dev string:x80>", "<dev string:x99>", &function_4982940c42590e46);
         function_fe953f000498048f();
     }
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1048
+    // Checksum 0x0, Offset: 0xfe5
     // Size: 0x71
     function private function_abea44bf774018a9(state) {
         switch (state) {
         case 0: 
-            return "<dev string:xcd>";
+            return "<dev string:xb2>";
         case 1: 
-            return "<dev string:xda>";
+            return "<dev string:xbc>";
         case 2: 
-            return "<dev string:xe2>";
+            return "<dev string:xc1>";
         case 3: 
-            return "<dev string:xf1>";
+            return "<dev string:xcd>";
         }
-        return "<dev string:x10e>";
+        return "<dev string:xe7>";
     }
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x10c1
+    // Checksum 0x0, Offset: 0x105e
     // Size: 0xbc
     function private function_b088653a7495d62d() {
-        self endon("<dev string:x112>");
+        self endon("<dev string:xe8>");
         while (true) {
             if (!function_64e4823b3d753975()) {
                 waitframe();
@@ -394,14 +392,14 @@ function private function_f68a56043bfa8c0b(var_12a34cc28b3fbf8c, var_4c1e1071f14
             if (isdefined(self.var_63295c4748ede4d1)) {
                 draw_arrow(self.origin, self.var_63295c4748ede4d1, (1, 0, 0));
             }
-            print3d(self.origin + (0, 0, 90), "<dev string:x11b>" + function_abea44bf774018a9(self.state), (1, 0, 0), 0.5, 0.5);
+            print3d(self.origin + (0, 0, 90), "<dev string:xee>" + function_abea44bf774018a9(self.state), (1, 0, 0), 0.5, 0.5);
             waitframe();
         }
     }
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x1185
+    // Checksum 0x0, Offset: 0x1122
     // Size: 0x17
     function private function_64e4823b3d753975() {
         return getdvarint(@"hash_b9852c62ef771212", 0) > 0;
@@ -409,20 +407,20 @@ function private function_f68a56043bfa8c0b(var_12a34cc28b3fbf8c, var_4c1e1071f14
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0x11a4
+    // Checksum 0x0, Offset: 0x1141
     // Size: 0x1a
     function private function_4982940c42590e46() {
-        function_2fb888667001fc39("<dev string:xb1>", @"hash_b9852c62ef771212");
+        function_2fb888667001fc39("<dev string:x99>", @"hash_b9852c62ef771212");
     }
 
     // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0x11c6
+    // Checksum 0x0, Offset: 0x1163
     // Size: 0x5a
     function private ball_print(text, pos) {
         if (function_64e4823b3d753975()) {
             pos = default_to(pos, self.origin + (0, 0, 70));
-            print3d(pos, "<dev string:x12b>" + text, (1, 0, 0));
+            print3d(pos, "<dev string:xfb>" + text, (1, 0, 0));
         }
     }
 

@@ -12,7 +12,7 @@
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x203
+// Checksum 0x0, Offset: 0x1f5
 // Size: 0x39
 function ischargetoreadycomplete(asmname, statename, tostatename, params) {
     return self.in_melee && self.var_f2383297dd7b5e7e;
@@ -20,8 +20,8 @@ function ischargetoreadycomplete(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x245
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x237
+// Size: 0x8d
 function playmeleeanim_chargetoready_distcheck(statename) {
     self endon(statename + "_finished");
     var_ea974c3c587825a6 = 4900;
@@ -43,8 +43,8 @@ function playmeleeanim_chargetoready_distcheck(statename) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d9
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x2cc
+// Size: 0xae
 function donotetracks_vsplayer(asmname, statename, optionalhandler) {
     while (true) {
         notes = self waittill(statename);
@@ -65,8 +65,8 @@ function donotetracks_vsplayer(asmname, statename, optionalhandler) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x390
-// Size: 0x135
+// Checksum 0x0, Offset: 0x382
+// Size: 0x136
 function handlenotetrack_vsplayer(asmname, statename, note) {
     switch (note) {
     case #"hash_da2c994ab2c9478c": 
@@ -109,8 +109,8 @@ function handlenotetrack_vsplayer(asmname, statename, note) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cd
-// Size: 0x418
+// Checksum 0x0, Offset: 0x4c0
+// Size: 0x426
 function function_e157c0ce32f71cbe(target, var_a7fa0e3c9034f2f4, meleedirection, ismeleeswipe) {
     if (!isdefined(target)) {
         return 1;
@@ -200,7 +200,7 @@ function function_e157c0ce32f71cbe(target, var_a7fa0e3c9034f2f4, meleedirection,
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ed
+// Checksum 0x0, Offset: 0x8ee
 // Size: 0x3d
 function meleeblur(blurpower, blurduration) {
     self endon("death_or_disconnect");
@@ -213,7 +213,7 @@ function meleeblur(blurpower, blurduration) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x932
+// Checksum 0x0, Offset: 0x933
 // Size: 0x67
 function player_impulse_from_origin(origin, magnitude) {
     if (!self isonground()) {
@@ -226,7 +226,7 @@ function player_impulse_from_origin(origin, magnitude) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a1
+// Checksum 0x0, Offset: 0x9a2
 // Size: 0x80
 function melee_shouldabortcharge(asmname, statename, tostatename, params) {
     if (!self.in_melee) {
@@ -249,7 +249,7 @@ function melee_shouldabortcharge(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2a
+// Checksum 0x0, Offset: 0xa2b
 // Size: 0xba
 function melee_shouldabort(asmname, statename, tostatename, params) {
     if (!self.in_melee) {
@@ -278,7 +278,7 @@ function melee_shouldabort(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xaed
+// Checksum 0x0, Offset: 0xaee
 // Size: 0x23
 function candocovermelee_anim(asmname, statename, tostatename, params) {
     
@@ -286,7 +286,7 @@ function candocovermelee_anim(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb18
+// Checksum 0x0, Offset: 0xb19
 // Size: 0x23
 function candomeleeflip_angles(asmname, statename, tostatename, params) {
     
@@ -294,7 +294,7 @@ function candomeleeflip_angles(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb43
+// Checksum 0x0, Offset: 0xb44
 // Size: 0x23
 function candomeleeflip_anim(asmname, statename, tostatename, params) {
     
@@ -302,7 +302,7 @@ function candomeleeflip_anim(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb6e
+// Checksum 0x0, Offset: 0xb6f
 // Size: 0x23
 function candomeleewrestle_angles(asmname, statename, tostatename, params) {
     
@@ -310,7 +310,7 @@ function candomeleewrestle_angles(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb99
+// Checksum 0x0, Offset: 0xb9a
 // Size: 0x23
 function candomeleewrestle_anim(asmname, statename, tostatename, params) {
     
@@ -318,7 +318,7 @@ function candomeleewrestle_anim(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xbc4
+// Checksum 0x0, Offset: 0xbc5
 // Size: 0x23
 function candomeleebehind_angles(asmname, statename, tostatename, params) {
     
@@ -326,7 +326,7 @@ function candomeleebehind_angles(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xbef
+// Checksum 0x0, Offset: 0xbf0
 // Size: 0x23
 function candomeleebehind_anim(asmname, statename, tostatename, params) {
     
@@ -334,8 +334,8 @@ function candomeleebehind_anim(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1a
-// Size: 0x92
+// Checksum 0x0, Offset: 0xc1b
+// Size: 0x95
 function candomeleeanim_internal(meleeanim) {
     target = self.meleetarget;
     targetpos = target.origin;
@@ -349,7 +349,7 @@ function candomeleeanim_internal(meleeanim) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb5
+// Checksum 0x0, Offset: 0xcb9
 // Size: 0xb
 function candomeleeanim(tostatename) {
     
@@ -357,7 +357,7 @@ function candomeleeanim(tostatename) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc8
+// Checksum 0x0, Offset: 0xccc
 // Size: 0x1b
 function melee_validatepoints(startpos, targetpos, var_889f170fb7dc87c5) {
     
@@ -365,7 +365,7 @@ function melee_validatepoints(startpos, targetpos, var_889f170fb7dc87c5) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xceb
+// Checksum 0x0, Offset: 0xcef
 // Size: 0x2c
 function melee_shouldlosersurvive(asmname, statename, tostatename, params) {
     return self.var_d8a098b0872bb2cb;
@@ -373,7 +373,7 @@ function melee_shouldlosersurvive(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xd20
+// Checksum 0x0, Offset: 0xd24
 // Size: 0x2c
 function melee_shouldstop(asmname, statename, tostatename, params) {
     return self.var_4c96a3a056b956e4;
@@ -381,7 +381,7 @@ function melee_shouldstop(asmname, statename, tostatename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xd55
+// Checksum 0x0, Offset: 0xd59
 // Size: 0x6f
 function playmeleeanim_chargetoready(asmname, statename, params) {
     self endon(statename + "_finished");
@@ -395,8 +395,8 @@ function playmeleeanim_chargetoready(asmname, statename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xdcc
-// Size: 0x12e
+// Checksum 0x0, Offset: 0xdd0
+// Size: 0x12f
 function playmeleeanim_vsplayer(asmname, statename, params) {
     playmeleeattacksound();
     target = scripts\asm\asm_bb::bb_getmeleetarget();
@@ -426,7 +426,7 @@ function playmeleeanim_vsplayer(asmname, statename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf02
+// Checksum 0x0, Offset: 0xf07
 // Size: 0x9f
 function playmeleeattacksound() {
     if (!isdefined(self.a.nextmeleeattacksound)) {
@@ -442,7 +442,7 @@ function playmeleeattacksound() {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xfa9
+// Checksum 0x0, Offset: 0xfae
 // Size: 0x9f
 function playmeleechargesound() {
     if (!isdefined(self.a.nextmeleechargesound)) {
@@ -458,7 +458,7 @@ function playmeleechargesound() {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1050
+// Checksum 0x0, Offset: 0x1055
 // Size: 0x4a
 function playmeleechargeanim(asmname, statename, params) {
     playmeleechargesound();
@@ -469,11 +469,11 @@ function playmeleechargeanim(asmname, statename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a2
-// Size: 0xd9
+// Checksum 0x0, Offset: 0x10a7
+// Size: 0xdb
 function on_execution_begin(asmname, statename, params) {
     if (!utility::issharedfuncdefined("player", "getExecutionPartner")) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("Execution not supported");
         return;
     }
     if (istrue(self.bhasriotshieldattached)) {
@@ -484,7 +484,7 @@ function on_execution_begin(asmname, statename, params) {
     self function_4cd0eaf5381f92db(0);
     otherguy = function_f3bb4f4911a1beb2("player", "getExecutionPartner");
     if (isdefined(otherguy)) {
-        assertex(isplayer(otherguy), "<dev string:x37>");
+        assertex(isplayer(otherguy), "currently assuming that there are no ai vs ai executions");
         pos = (self.origin + otherguy.origin) * 0.5;
         level thread execution_obstacle(pos, distfromcenter, halfheight);
     }
@@ -492,7 +492,7 @@ function on_execution_begin(asmname, statename, params) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1183
+// Checksum 0x0, Offset: 0x118a
 // Size: 0x53
 function execution_obstacle(pos, distfromcenter, halfheight) {
     var_48e1c3e32a05c3bf = (0, 0, 0);
@@ -503,7 +503,7 @@ function execution_obstacle(pos, distfromcenter, halfheight) {
 
 // Namespace melee / scripts\asm\soldier\melee
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11de
+// Checksum 0x0, Offset: 0x11e5
 // Size: 0x113
 function function_6cde2d3ae248271d(note, flagname) {
     if (!isdefined(self.var_e6b3eb176dda8abc)) {

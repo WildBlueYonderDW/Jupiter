@@ -7,8 +7,8 @@
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x28a
-// Size: 0x230
+// Checksum 0x0, Offset: 0x258
+// Size: 0x23a
 function function_9030ff462f3daa1a() {
     version = getbuildversion();
     if (version == "SHIP") {
@@ -51,7 +51,7 @@ function function_9030ff462f3daa1a() {
             function_db7bae3d5d2e993(function_cb47153207fc68d2(clientnum));
         }
         dvarchanged = 0;
-        foreach (dvar, val in values) {
+        foreach (val in values) {
             if (val != getdvarfloat(dvar)) {
                 dvarchanged = 1;
                 break;
@@ -72,7 +72,7 @@ function function_9030ff462f3daa1a() {
 
 // Namespace dof / scripts\common\dof
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x4c2
+// Checksum 0x0, Offset: 0x49a
 // Size: 0xa6
 function private function_db7bae3d5d2e993(player) {
     if (!isdefined(level.dyndof)) {
@@ -95,7 +95,7 @@ function private function_db7bae3d5d2e993(player) {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x570
+// Checksum 0x0, Offset: 0x548
 // Size: 0xaf
 function private function_bee71193bca6c80c() {
     level.dyndof endon("new_player");
@@ -115,8 +115,8 @@ function private function_bee71193bca6c80c() {
 
 // Namespace dof / scripts\common\dof
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x627
-// Size: 0x65
+// Checksum 0x0, Offset: 0x5ff
+// Size: 0x62
 function private function_cb47153207fc68d2(num) {
     foreach (player in level.players) {
         if (player getentitynumber() == num) {
@@ -128,7 +128,7 @@ function private function_cb47153207fc68d2(num) {
 
 // Namespace dof / scripts\common\dof
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x695
+// Checksum 0x0, Offset: 0x66a
 // Size: 0x5a
 function function_c7a153413fa65e8d(fstop, focusspeed, aperturespeed) {
     level.dyndof.fstop = fstop;
@@ -138,14 +138,14 @@ function function_c7a153413fa65e8d(fstop, focusspeed, aperturespeed) {
 
 // Namespace dof / scripts\common\dof
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f7
+// Checksum 0x0, Offset: 0x6cc
 // Size: 0x21b
 function function_c1f42ed707642a04(fstop, focusspeed, aperturespeed) {
     if (isdefined(level.dyndof)) {
         function_c7a153413fa65e8d(fstop, focusspeed, aperturespeed);
         return;
     }
-    assertex(isdefined(fstop), "<dev string:x1c>");
+    assertex(isdefined(fstop), "fStop not defined.");
     if (!isdefined(focusspeed)) {
         focusspeed = 1;
     }
@@ -188,8 +188,8 @@ function function_c1f42ed707642a04(fstop, focusspeed, aperturespeed) {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91a
-// Size: 0x87
+// Checksum 0x0, Offset: 0x8ef
+// Size: 0x86
 function function_4a2ce820849a53f7() {
     struct = spawnstruct();
     struct.maxfocusdist = 50000;
@@ -203,8 +203,8 @@ function function_4a2ce820849a53f7() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9aa
-// Size: 0x54
+// Checksum 0x0, Offset: 0x97e
+// Size: 0x53
 function function_121b9c1e3a5664af() {
     contents = ["physicscontents_ainoshoot", "physicscontents_clipshot", "physicscontents_item", "physicscontents_solid", "physicscontents_vehicle", "physicscontents_water", "physicscontents_characterproxy"];
     return physics_createcontents(contents);
@@ -212,8 +212,8 @@ function function_121b9c1e3a5664af() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa07
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x9da
+// Size: 0x4a
 function function_e7a3f680f309a5a() {
     contents = ["physicscontents_ainoshoot", "physicscontents_clipshot", "physicscontents_item", "physicscontents_solid", "physicscontents_vehicle", "physicscontents_water"];
     return physics_createcontents(contents);
@@ -221,8 +221,8 @@ function function_e7a3f680f309a5a() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa5b
-// Size: 0x313
+// Checksum 0x0, Offset: 0xa2d
+// Size: 0x318
 function function_91d67d689e8a5ac5() {
     level endon("stop_dyndof");
     var_eb2609c9a7a036f = gettime() + 500;
@@ -276,8 +276,8 @@ function function_91d67d689e8a5ac5() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd76
-// Size: 0x189
+// Checksum 0x0, Offset: 0xd4d
+// Size: 0x18b
 function function_ddd1e6b7bd85c6d1() {
     self endon("death");
     playereyeorigin = function_7641c664cf37b604();
@@ -295,7 +295,7 @@ function function_ddd1e6b7bd85c6d1() {
     if (isdefined(var_a3d92abc0bca4a49) && var_a3d92abc0bca4a49.dofscore > var_cab8f864ac7d1b1.var_ca6d02ada0248c95) {
         if (getdvarint(@"hash_ad68aff4b57edc12")) {
             /#
-                printtoscreen2d(10, 800 + 30, "<dev string:x32>", (1, 1, 1), 1.5);
+                printtoscreen2d(10, 800 + 30, "<dev string:x1c>", (1, 1, 1), 1.5);
             #/
             /#
                 sphere(var_a3d92abc0bca4a49.origin, 4, (1, 1, 1));
@@ -305,7 +305,7 @@ function function_ddd1e6b7bd85c6d1() {
     }
     if (getdvarint(@"hash_ad68aff4b57edc12")) {
         /#
-            printtoscreen2d(10, 800 + 30, "<dev string:x42>", (1, 1, 1), 1.5);
+            printtoscreen2d(10, 800 + 30, "<dev string:x29>", (1, 1, 1), 1.5);
         #/
     }
     return var_cab8f864ac7d1b1;
@@ -313,8 +313,8 @@ function function_ddd1e6b7bd85c6d1() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf07
-// Size: 0x293
+// Checksum 0x0, Offset: 0xee0
+// Size: 0x29b
 function function_8ec129ee5a53f0bc() {
     basefovdvar = getdvarint(@"cg_targetBaseFov");
     if (getdvarint(@"cg_targetBaseFov") == level.dyndof.var_d453b380dfd6161d) {
@@ -358,8 +358,8 @@ function function_8ec129ee5a53f0bc() {
 
 // Namespace dof / scripts\common\dof
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a2
-// Size: 0x4d8
+// Checksum 0x0, Offset: 0x1183
+// Size: 0x4d5
 function function_b23eb6ebe631ccdc(playereyeorigin, playerviewangles) {
     traces = [];
     distances = 0;
@@ -402,7 +402,7 @@ function function_b23eb6ebe631ccdc(playereyeorigin, playerviewangles) {
     keys = getarraykeys(groupscores);
     highestgroup = groupscores[keys[0]];
     var_2f61b87587e59816 = keys[0];
-    foreach (index, var_37a3b21ee1ebea60 in groupscores) {
+    foreach (var_37a3b21ee1ebea60 in groupscores) {
         if (highestgroup < var_37a3b21ee1ebea60) {
             highestgroup = var_37a3b21ee1ebea60;
             var_2f61b87587e59816 = index;
@@ -426,7 +426,7 @@ function function_b23eb6ebe631ccdc(playereyeorigin, playerviewangles) {
     }
     if (getdvarint(@"hash_ad68aff4b57edc12")) {
         /#
-            printtoscreen2d(10, 800 + 90, "<dev string:x56>" + groupscores[beststruct.groupnum], (1, 1, 1), 1.5);
+            printtoscreen2d(10, 800 + 90, "<dev string:x3a>" + groupscores[beststruct.groupnum], (1, 1, 1), 1.5);
         #/
     }
     beststruct.var_ca6d02ada0248c95 = groupscores[beststruct.groupnum];
@@ -436,7 +436,7 @@ function function_b23eb6ebe631ccdc(playereyeorigin, playerviewangles) {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1683
+// Checksum 0x0, Offset: 0x1661
 // Size: 0x8c
 function function_50c7801fc0abbd3a() {
     if (gettime() > level.dyndof.var_a94780cfbefad9ce) {
@@ -448,8 +448,8 @@ function function_50c7801fc0abbd3a() {
 
 // Namespace dof / scripts\common\dof
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1717
-// Size: 0xa6f
+// Checksum 0x0, Offset: 0x16f5
+// Size: 0xa77
 function function_ac3ec9d38fd2434(playereyepos, playerangles) {
     ents = getaiarray();
     if (!level.dyndof.issp) {
@@ -502,7 +502,7 @@ function function_ac3ec9d38fd2434(playereyepos, playerangles) {
             ent.dofscore += score;
             if (getdvarint(@"hash_ad68aff4b57edc12")) {
                 /#
-                    print3d(entorigin + (0, 0, -5), "<dev string:x6c>" + score + "<dev string:x75>" + dot + "<dev string:x80>", (1, 1, 1), 0.8, 0.2);
+                    print3d(entorigin + (0, 0, -5), "<dev string:x4d>" + score + "<dev string:x53>" + dot + "<dev string:x5b>", (1, 1, 1), 0.8, 0.2);
                 #/
             }
         }
@@ -522,7 +522,7 @@ function function_ac3ec9d38fd2434(playereyepos, playerangles) {
             }
             if (getdvarint(@"hash_ad68aff4b57edc12")) {
                 /#
-                    print3d(entorigin + (0, 0, -10), "<dev string:x85>" + distscore + "<dev string:x8f>" + ent.dofscore + "<dev string:x80>", (1, 1, 1), 0.8, 0.2);
+                    print3d(entorigin + (0, 0, -10), "<dev string:x5d>" + distscore + "<dev string:x64>" + ent.dofscore + "<dev string:x5b>", (1, 1, 1), 0.8, 0.2);
                 #/
             }
         } else {
@@ -530,7 +530,7 @@ function function_ac3ec9d38fd2434(playereyepos, playerangles) {
             ent.dofscore *= distscale * 0.5;
             if (getdvarint(@"hash_ad68aff4b57edc12")) {
                 /#
-                    print3d(entorigin + (0, 0, -10), "<dev string:x95>" + distscale + "<dev string:x8f>" + ent.dofscore + "<dev string:x80>", (1, 1, 1), 0.8, 0.2);
+                    print3d(entorigin + (0, 0, -10), "<dev string:x67>" + distscale + "<dev string:x64>" + ent.dofscore + "<dev string:x5b>", (1, 1, 1), 0.8, 0.2);
                 #/
             }
         }
@@ -545,7 +545,7 @@ function function_ac3ec9d38fd2434(playereyepos, playerangles) {
             }
             if (getdvarint(@"hash_ad68aff4b57edc12")) {
                 /#
-                    print3d(entorigin + (0, 0, -15), "<dev string:xa4>" + scale + "<dev string:x8f>" + ent.dofscore + "<dev string:x80>", (1, 1, 1), 0.8, 0.2);
+                    print3d(entorigin + (0, 0, -15), "<dev string:x73>" + scale + "<dev string:x64>" + ent.dofscore + "<dev string:x5b>", (1, 1, 1), 0.8, 0.2);
                 #/
             }
         }
@@ -589,7 +589,7 @@ function function_ac3ec9d38fd2434(playereyepos, playerangles) {
                     ent.dofscore = 0;
                     if (getdvarint(@"hash_ad68aff4b57edc12")) {
                         /#
-                            print3d(ent.doftraceorigin + (0, 0, -20), "<dev string:xae>", (1, 1, 1), 0.8, 0.2);
+                            print3d(ent.doftraceorigin + (0, 0, -20), "<dev string:x7a>", (1, 1, 1), 0.8, 0.2);
                         #/
                         /#
                             line(ent.origin, directent.origin, (1, 0, 0));
@@ -613,7 +613,7 @@ function function_ac3ec9d38fd2434(playereyepos, playerangles) {
         struct.dofdist = bestscoreent.dofdist;
         if (getdvarint(@"hash_ad68aff4b57edc12")) {
             /#
-                printtoscreen2d(10, 800 + 60, "<dev string:xc5>" + struct.dofscore, (1, 1, 1), 1.5);
+                printtoscreen2d(10, 800 + 60, "<dev string:x8e>" + struct.dofscore, (1, 1, 1), 1.5);
             #/
         }
     }
@@ -622,8 +622,8 @@ function function_ac3ec9d38fd2434(playereyepos, playerangles) {
 
 // Namespace dof / scripts\common\dof
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x218f
-// Size: 0xe4
+// Checksum 0x0, Offset: 0x2175
+// Size: 0xe7
 function function_41ae85dd67830a98(ent, playereyepos, playerforward) {
     extratags = ["j_spineupper"];
     closesttag = "tag_eye";
@@ -643,8 +643,8 @@ function function_41ae85dd67830a98(ent, playereyepos, playerforward) {
 
 // Namespace dof / scripts\common\dof
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x227c
-// Size: 0x36
+// Checksum 0x0, Offset: 0x2265
+// Size: 0x35
 function function_ce15d73cabdc73a4(targetorigin, sourcepos, sourceforward) {
     normal = vectornormalize(targetorigin - sourcepos);
     return vectordot(sourceforward, normal);
@@ -652,7 +652,7 @@ function function_ce15d73cabdc73a4(targetorigin, sourcepos, sourceforward) {
 
 // Namespace dof / scripts\common\dof
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x22bb
+// Checksum 0x0, Offset: 0x22a3
 // Size: 0xb9
 function function_77d9a6389a3305ee(playereyeorigin, playerangles, var_f85ab554f9f088c8, pos) {
     angles = combineangles(playerangles, var_f85ab554f9f088c8);
@@ -670,8 +670,8 @@ function function_77d9a6389a3305ee(playereyeorigin, playerangles, var_f85ab554f9
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x237d
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x2365
+// Size: 0xc4
 function function_7641c664cf37b604() {
     if (level.dyndof.player islinked()) {
         linkedent = level.dyndof.player getlinkedparent();
@@ -692,7 +692,7 @@ function function_7641c664cf37b604() {
 
 // Namespace dof / scripts\common\dof
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x244b
+// Checksum 0x0, Offset: 0x2432
 // Size: 0x2b6
 function function_abfbc195c3aac94c(playereyeorigin, highestgroup) {
     level notify("stop_dyndof_debug");
@@ -700,7 +700,7 @@ function function_abfbc195c3aac94c(playereyeorigin, highestgroup) {
     level endon("stop_dyndof_debug");
     /#
         while (getdvarint(@"hash_ad68aff4b57edc12")) {
-            closestpos = level.dyndof.var_1fef56bc059b6f9a.trace["<dev string:xd7>"];
+            closestpos = level.dyndof.var_1fef56bc059b6f9a.trace["<dev string:x9d>"];
             closestdist = level.dyndof.var_1fef56bc059b6f9a.dofdist;
             foreach (array in level.dyndof.tracestructs) {
                 foreach (struct in array) {
@@ -728,7 +728,7 @@ function function_abfbc195c3aac94c(playereyeorigin, highestgroup) {
                         break;
                     }
                     print3d(struct.origin, struct.dofscore, (1, 1, 1), 0.7, 0.05);
-                    function_28ac1e5f07cc8ea8(struct.trace["<dev string:xd7>"], color);
+                    function_28ac1e5f07cc8ea8(struct.trace["<dev string:x9d>"], color);
                 }
             }
             radius = math::normalize_value(0, 3000, closestdist);
@@ -741,8 +741,8 @@ function function_abfbc195c3aac94c(playereyeorigin, highestgroup) {
 
 // Namespace dof / scripts\common\dof
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2709
-// Size: 0x7a
+// Checksum 0x0, Offset: 0x26f0
+// Size: 0x79
 function function_28ac1e5f07cc8ea8(pos, color) {
     range = 1;
     if (!isdefined(color)) {
@@ -757,8 +757,8 @@ function function_28ac1e5f07cc8ea8(pos, color) {
 
 // Namespace dof / scripts\common\dof
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x278b
-// Size: 0x155
+// Checksum 0x0, Offset: 0x2771
+// Size: 0x161
 function function_7d02f8d29555766e(start, end, actorpos) {
     raydir = vectornormalize(end - start);
     radius = 8;
@@ -788,11 +788,11 @@ function function_7d02f8d29555766e(start, end, actorpos) {
 
 // Namespace dof / scripts\common\dof
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0x28e9
-// Size: 0x256
+// Checksum 0x0, Offset: 0x28db
+// Size: 0x255
 function dyndof(fstop, targetentity, focusspeed, aperturespeed, angles, var_387062334ab0e50e, ignorelist, ignorecollision, var_4a0992ce3ff1d7ea) {
-    assertex(isdefined(fstop), "<dev string:x1c>");
-    assertex(!isdefined(targetentity) || isent(targetentity), "<dev string:xe3>");
+    assertex(isdefined(fstop), "fStop not defined.");
+    assertex(!isdefined(targetentity) || isent(targetentity), "targetEntity must be an entity or undefined");
     if (!isdefined(focusspeed)) {
         focusspeed = 1;
     }
@@ -840,8 +840,8 @@ function dyndof(fstop, targetentity, focusspeed, aperturespeed, angles, var_3870
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b47
-// Size: 0x2e
+// Checksum 0x0, Offset: 0x2b38
+// Size: 0x2d
 function dyndof_disable() {
     player = self;
     player notify("stop_dyndof");
@@ -852,7 +852,7 @@ function dyndof_disable() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x2b7d
+// Checksum 0x0, Offset: 0x2b6d
 // Size: 0x4e
 function private function_a0bbe9bbf0848458() {
     if (self isplayingxcam()) {
@@ -865,8 +865,8 @@ function private function_a0bbe9bbf0848458() {
 
 // Namespace dof / scripts\common\dof
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bd4
-// Size: 0x1e2
+// Checksum 0x0, Offset: 0x2bc4
+// Size: 0x1e5
 function dyndof_thread(targetentity) {
     player = self;
     if (isdefined(targetentity)) {
@@ -888,7 +888,7 @@ function dyndof_thread(targetentity) {
         if (!isint(pos)) {
             /#
                 if (getdvarint(@"hash_93ca035fa3964d3d", 0)) {
-                    print3d(pos + (0, 0, 1.5), "<dev string:x112>" + pos, (0, 1, 0), 1, 0.1, 1);
+                    print3d(pos + (0, 0, 1.5), "<dev string:xa6>" + pos, (0, 1, 0), 1, 0.1, 1);
                     line(pos, pos - (0, 0, 1000), (0, 1, 0), 1, 1, 1);
                 }
             #/
@@ -900,8 +900,8 @@ function dyndof_thread(targetentity) {
 
 // Namespace dof / scripts\common\dof
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dbe
-// Size: 0x865
+// Checksum 0x0, Offset: 0x2db1
+// Size: 0x872
 function dyndof_distance(targetentity) {
     player = self;
     if (isdefined(targetentity)) {
@@ -990,16 +990,16 @@ function dyndof_distance(targetentity) {
                 /#
                     if (getdvarint(@"hash_93ca035fa3964d3d", 0)) {
                         line(player.dyndof.prevorigin, var_92f914f8aed12f65, (1, 1, 1), 1, 1);
-                        print3d(var_92f914f8aed12f65, "<dev string:x123>", (1, 1, 1), 1, 0.1, 1, 1);
-                        print3d(var_92f914f8aed12f65 + (0, 0, 2), "<dev string:x12a>", (1, 0, 0), 1, 0.1, 1);
+                        print3d(var_92f914f8aed12f65, "<dev string:xb4>", (1, 1, 1), 1, 0.1, 1, 1);
+                        print3d(var_92f914f8aed12f65 + (0, 0, 2), "<dev string:xb8>", (1, 0, 0), 1, 0.1, 1);
                     }
                 #/
                 return var_92f914f8aed12f65;
             }
             /#
                 if (getdvarint(@"hash_93ca035fa3964d3d", 0)) {
-                    print3d(pos, "<dev string:x123>", (1, 1, 1), 1, 0.1, 1, 1);
-                    print3d(pos + (0, 0, 2), "<dev string:x160>", (1, 0, 0), 1, 0.1, 1);
+                    print3d(pos, "<dev string:xb4>", (1, 1, 1), 1, 0.1, 1, 1);
+                    print3d(pos + (0, 0, 2), "<dev string:xeb>", (1, 0, 0), 1, 0.1, 1);
                 }
             #/
         }
@@ -1055,7 +1055,7 @@ function dyndof_distance(targetentity) {
 // Namespace dof / scripts\common\dof
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x362c
-// Size: 0x12f
+// Size: 0x131
 function dyndof_trace_internal(angles, pos) {
     player = self;
     assert(isdefined(player));
@@ -1082,8 +1082,8 @@ function dyndof_trace_internal(angles, pos) {
 
 // Namespace dof / scripts\common\dof
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3764
-// Size: 0x1ca
+// Checksum 0x0, Offset: 0x3766
+// Size: 0x1cc
 function dyndof_trace_target(pos) {
     player = self;
     assert(isdefined(player));
@@ -1096,18 +1096,18 @@ function dyndof_trace_target(pos) {
         if (distance(trace[0]["position"], pos) < 8) {
             /#
                 if (getdvarint(@"hash_93ca035fa3964d3d", 0)) {
-                    print3d(pos_print, "<dev string:x18f>", (1, 0, 1), 1, 0.1, 1, 1);
+                    print3d(pos_print, "<dev string:x117>", (1, 0, 1), 1, 0.1, 1, 1);
                     playereye = dyndof_getplayerorigin();
-                    line(playereye, trace[0]["<dev string:xd7>"], (1, 0, 1));
+                    line(playereye, trace[0]["<dev string:x9d>"], (1, 0, 1));
                 }
             #/
             return true;
         } else {
             /#
                 if (getdvarint(@"hash_93ca035fa3964d3d", 0)) {
-                    print3d(pos_print, "<dev string:x1a5>", (1, 0, 0), 1, 0.1, 1, 1);
+                    print3d(pos_print, "<dev string:x12a>", (1, 0, 0), 1, 0.1, 1, 1);
                     playereye = dyndof_getplayerorigin();
-                    line(playereye, trace[0]["<dev string:xd7>"], (1, 0, 0));
+                    line(playereye, trace[0]["<dev string:x9d>"], (1, 0, 0));
                 }
             #/
             return false;
@@ -1115,7 +1115,7 @@ function dyndof_trace_target(pos) {
     }
     /#
         if (getdvarint(@"hash_93ca035fa3964d3d", 0)) {
-            print3d(pos_print, "<dev string:x1b5>", (0, 1, 0), 1, 0.1, 1, 1);
+            print3d(pos_print, "<dev string:x137>", (0, 1, 0), 1, 0.1, 1, 1);
             playereye = dyndof_getplayerorigin();
             line(playereye, pos, (0, 1, 0));
         }
@@ -1125,8 +1125,8 @@ function dyndof_trace_target(pos) {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3937
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x393b
+// Size: 0xd5
 function dyndof_getplayerorigin() {
     player = self;
     if (player isplayingxcam()) {
@@ -1154,8 +1154,8 @@ function dyndof_getplayerorigin() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a12
-// Size: 0x3d
+// Checksum 0x0, Offset: 0x3a19
+// Size: 0x3f
 function dyndof_getplayerangles() {
     player = self;
     var_c0014162498c3d04 = player function_a0bbe9bbf0848458();
@@ -1166,8 +1166,8 @@ function dyndof_getplayerangles() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a58
-// Size: 0x75
+// Checksum 0x0, Offset: 0x3a61
+// Size: 0x74
 function create_dyndof() {
     struct = spawnstruct();
     struct.maxfocusdist = 50000;
@@ -1180,7 +1180,7 @@ function create_dyndof() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ad6
+// Checksum 0x0, Offset: 0x3ade
 // Size: 0x1a
 function destroy_dyndof() {
     if (!isdefined(self.dyndof)) {
@@ -1191,8 +1191,8 @@ function destroy_dyndof() {
 
 // Namespace dof / scripts\common\dof
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3af8
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x3b00
+// Size: 0x4a
 function get_dyndof_contents() {
     dof_contents = ["physicscontents_characterproxy", "physicscontents_ainoshoot", "physicscontents_clipshot", "physicscontents_item", "physicscontents_vehicle", "physicscontents_water"];
     return physics_createcontents(dof_contents);
@@ -1200,7 +1200,7 @@ function get_dyndof_contents() {
 
 // Namespace dof / scripts\common\dof
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b4c
+// Checksum 0x0, Offset: 0x3b53
 // Size: 0x226
 function dyndof_debug(traces, closesttrace) {
     player = self;
@@ -1216,21 +1216,21 @@ function dyndof_debug(traces, closesttrace) {
                 }
                 if (isdefined(traces)) {
                     foreach (trace in traces) {
-                        line(trace["<dev string:xd7>"], dyndof_getplayerorigin() + (0, 0, -1));
+                        line(trace["<dev string:x9d>"], dyndof_getplayerorigin() + (0, 0, -1));
                     }
                 }
-                line(closesttrace["<dev string:xd7>"], dyndof_getplayerorigin() + (0, 0, -1), (1, 1, 0));
-                value = math::normalize_value(0, 3000, distance(dyndof_getplayerorigin(), closesttrace["<dev string:xd7>"]));
+                line(closesttrace["<dev string:x9d>"], dyndof_getplayerorigin() + (0, 0, -1), (1, 1, 0));
+                value = math::normalize_value(0, 3000, distance(dyndof_getplayerorigin(), closesttrace["<dev string:x9d>"]));
                 value *= 32;
-                sphere(closesttrace["<dev string:xd7>"], value, (1, 1, 0));
-                print3d(closesttrace["<dev string:xd7>"], closesttrace["<dev string:x1c5>"], (1, 1, 1), 1, 0.1, 1);
-                if (isdefined(closesttrace["<dev string:x1d0>"]) && isdefined(closesttrace["<dev string:x1d0>"].model)) {
-                    model = closesttrace["<dev string:x1d0>"].model;
+                sphere(closesttrace["<dev string:x9d>"], value, (1, 1, 0));
+                print3d(closesttrace["<dev string:x9d>"], closesttrace["<dev string:x144>"], (1, 1, 1), 1, 0.1, 1);
+                if (isdefined(closesttrace["<dev string:x14c>"]) && isdefined(closesttrace["<dev string:x14c>"].model)) {
+                    model = closesttrace["<dev string:x14c>"].model;
                     if (!isdefined(player.var_526ab6a3fcbfa671) || model != player.var_526ab6a3fcbfa671) {
-                        iprintln("<dev string:x1da>" + model);
+                        iprintln("<dev string:x153>" + model);
                         player.var_526ab6a3fcbfa671 = model;
                     }
-                    print3d(closesttrace["<dev string:xd7>"] + (0, 0, -1.5), model, (1, 1, 1), 1, 0.1, 1);
+                    print3d(closesttrace["<dev string:x9d>"] + (0, 0, -1.5), model, (1, 1, 1), 1, 0.1, 1);
                 }
                 waitframe();
             }

@@ -7,11 +7,11 @@
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x201
+// Checksum 0x0, Offset: 0x1ae
 // Size: 0xaa
 function init() {
     /#
-        issharedfuncdefined("<dev string:x1c>", "<dev string:x2d>", 1);
+        issharedfuncdefined("<dev string:x1c>", "<dev string:x2a>", 1);
     #/
     level.var_32fe21b3c5052471 = getdvarint(@"hash_8ed0da01bb4e0c5f", 1);
     level.factionfriendlyheadicon = "hud_icon_head_friendly_sm";
@@ -26,8 +26,8 @@ function init() {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b3
-// Size: 0x21a
+// Checksum 0x0, Offset: 0x260
+// Size: 0x218
 function setheadicon_singleimage(showto, image, offset, var_e0e11f3b4551be11, var_c5409ca7522182b3, naturaldist, delaytime, var_fa4cf28a58192889, var_b3ea37733a1577e5, overrideorigin, showonminimap, iconsize) {
     level endon("game_ended");
     if (isdefined(delaytime)) {
@@ -90,8 +90,8 @@ function setheadicon_singleimage(showto, image, offset, var_e0e11f3b4551be11, va
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 13, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d6
-// Size: 0x271
+// Checksum 0x0, Offset: 0x481
+// Size: 0x26f
 function setheadicon_multiimage(showto, friendlyimage, neutralimage, enemyimage, offset, var_e0e11f3b4551be11, var_c5409ca7522182b3, naturaldist, delaytime, var_fa4cf28a58192889, var_b3ea37733a1577e5, overrideorigin, showonminimap) {
     level endon("game_ended");
     if (isdefined(delaytime)) {
@@ -112,7 +112,7 @@ function setheadicon_multiimage(showto, friendlyimage, neutralimage, enemyimage,
     }
     if (!isplayer(self)) {
         if (!isdefined(self.owner) && !isdefined(self.team)) {
-            assertmsg("<dev string:x4a>");
+            assertmsg("<dev string:x44>");
             setheadicon_deleteicon(icon);
             return;
         }
@@ -168,8 +168,8 @@ function setheadicon_multiimage(showto, friendlyimage, neutralimage, enemyimage,
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x750
-// Size: 0x1b6
+// Checksum 0x0, Offset: 0x6f9
+// Size: 0x1b7
 function setheadicon_factionimage(showtoallfactions, offset, var_e0e11f3b4551be11, var_c5409ca7522182b3, naturaldist, delaytime, var_fa4cf28a58192889, ownerinvisible, overrideorigin, showonminimap) {
     if (scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924()) {
         return;
@@ -220,8 +220,8 @@ function setheadicon_factionimage(showtoallfactions, offset, var_e0e11f3b4551be1
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x90f
-// Size: 0x39b
+// Checksum 0x0, Offset: 0x8b9
+// Size: 0x37d
 function _updateiconowner(icondata) {
     self notify("_updateIconOwner()");
     if (istrue(icondata.showtoallfactions)) {
@@ -230,7 +230,7 @@ function _updateiconowner(icondata) {
         setheadiconenemyimage(icondata.icon, level.factionenemyheadicon);
         if (!isplayer(self)) {
             if (!isdefined(self.owner) && !isdefined(self.team)) {
-                assertmsg("<dev string:xaf>");
+                assertmsg("<dev string:xa6>");
                 setheadicon_deleteicon(icondata.icon);
                 return;
             }
@@ -263,7 +263,7 @@ function _updateiconowner(icondata) {
         return;
     }
     if (!isdefined(self.owner)) {
-        assertmsg("<dev string:x128>");
+        assertmsg("<dev string:x11c>");
         setheadicon_deleteicon(icondata.icon);
         return;
     }
@@ -271,7 +271,7 @@ function _updateiconowner(icondata) {
         if (!isdefined(player)) {
             continue;
         }
-        if (level.teambased && isdefined(self.owner.team) && player.team != self.owner.team) {
+        if (level.teambased && player.team != self.owner.team) {
             continue;
         }
         if (!level.teambased && player != self.owner) {
@@ -286,8 +286,8 @@ function _updateiconowner(icondata) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcb2
-// Size: 0x56
+// Checksum 0x0, Offset: 0xc3e
+// Size: 0x55
 function setheadicon_watchforlateconnect(icon) {
     self endon("death");
     self endon("_updateIconOwner()");
@@ -303,7 +303,7 @@ function setheadicon_watchforlateconnect(icon) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd10
+// Checksum 0x0, Offset: 0xc9b
 // Size: 0x50
 function setheadicon_watchforlatespawn(icon, player) {
     self endon("death");
@@ -320,11 +320,10 @@ function setheadicon_watchforlatespawn(icon, player) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd68
-// Size: 0x73
+// Checksum 0x0, Offset: 0xcf3
+// Size: 0x6c
 function setheadicon_watchfornewowner(icondata) {
     self endon("death");
-    self endon("headicon_deleted");
     if (isplayer(self)) {
         self endon("disconnect");
     }
@@ -340,8 +339,8 @@ function setheadicon_watchfornewowner(icondata) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xde3
-// Size: 0xc9
+// Checksum 0x0, Offset: 0xd67
+// Size: 0xc8
 function setheadicon_watchforteamswitch(icondata) {
     level endon("game_ended");
     self endon("headicon_deleted");
@@ -366,7 +365,7 @@ function setheadicon_watchforteamswitch(icondata) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb4
+// Checksum 0x0, Offset: 0xe37
 // Size: 0x47
 function setheadicon_watchdeath(icon) {
     level endon("game_ended");
@@ -381,8 +380,8 @@ function setheadicon_watchdeath(icon) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf03
-// Size: 0x79
+// Checksum 0x0, Offset: 0xe86
+// Size: 0x76
 function isteam(showto) {
     if (showto == "spectator" || showto == "codcaster") {
         return true;
@@ -397,8 +396,8 @@ function isteam(showto) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xf85
-// Size: 0xfa
+// Checksum 0x0, Offset: 0xf05
+// Size: 0xfb
 function setheadicon_createnewicon(prioritygroup, overrideorigin) {
     if (!isdefined(prioritygroup)) {
         prioritygroup = 0;
@@ -418,7 +417,7 @@ function setheadicon_createnewicon(prioritygroup, overrideorigin) {
             if (isdefined(self.owner)) {
                 var_a41b5f8513836136 = self.owner;
             }
-            var_a41b5f8513836136 iprintlnbold("<dev string:x1a1>");
+            var_a41b5f8513836136 iprintlnbold("<dev string:x192>");
         #/
         return;
     }
@@ -433,8 +432,8 @@ function setheadicon_createnewicon(prioritygroup, overrideorigin) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1088
-// Size: 0x6a
+// Checksum 0x0, Offset: 0x1009
+// Size: 0x69
 function setheadicon_deleteicon(icon) {
     iconinfo = setheadicon_getexistingiconinfo(icon);
     if (isdefined(iconinfo)) {
@@ -448,7 +447,7 @@ function setheadicon_deleteicon(icon) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10fa
+// Checksum 0x0, Offset: 0x107a
 // Size: 0x10
 function setheadicon_allowiconcreation() {
     return level.activeheadicons.size < 1023;
@@ -456,7 +455,7 @@ function setheadicon_allowiconcreation() {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1113
+// Checksum 0x0, Offset: 0x1093
 // Size: 0x2c
 function setheadicon_getexistingiconinfo(icon) {
     if (!isdefined(icon)) {
@@ -470,7 +469,7 @@ function setheadicon_getexistingiconinfo(icon) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1148
+// Checksum 0x0, Offset: 0x10c8
 // Size: 0x37
 function setheadicon_removeoldicon(var_85c943684cfc2305) {
     lowestpriority = setheadicon_findlowestprioritygroup(var_85c943684cfc2305);
@@ -480,8 +479,8 @@ function setheadicon_removeoldicon(var_85c943684cfc2305) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1187
-// Size: 0x80
+// Checksum 0x0, Offset: 0x1107
+// Size: 0x7e
 function setheadicon_findlowestprioritygroup(var_85c943684cfc2305) {
     lowestpriority = var_85c943684cfc2305;
     foreach (iconinfo in level.activeheadicons) {
@@ -494,8 +493,8 @@ function setheadicon_findlowestprioritygroup(var_85c943684cfc2305) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1210
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x118e
+// Size: 0xa4
 function setheadicon_findoldestcreatedicon(var_49d4316fce0b35b7) {
     var_4a38995d4f273f6b = undefined;
     oldesticon = undefined;
@@ -510,8 +509,8 @@ function setheadicon_findoldestcreatedicon(var_49d4316fce0b35b7) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12be
-// Size: 0x33
+// Checksum 0x0, Offset: 0x123b
+// Size: 0x32
 function setheadicon_addclienttomask(headicon, client) {
     iconinfo = setheadicon_getexistingiconinfo(headicon);
     if (isdefined(iconinfo)) {
@@ -521,8 +520,8 @@ function setheadicon_addclienttomask(headicon, client) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f9
-// Size: 0x33
+// Checksum 0x0, Offset: 0x1275
+// Size: 0x32
 function setheadicon_removeclientfrommask(headicon, client) {
     iconinfo = setheadicon_getexistingiconinfo(headicon);
     if (isdefined(iconinfo)) {
@@ -532,8 +531,8 @@ function setheadicon_removeclientfrommask(headicon, client) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1334
-// Size: 0x61
+// Checksum 0x0, Offset: 0x12af
+// Size: 0x5e
 function function_670bc5c30525bf6(imagename) {
     foreach (name in level.var_b516ed3abe09ea) {
         if (name == imagename) {
@@ -545,7 +544,7 @@ function function_670bc5c30525bf6(imagename) {
 
 // Namespace entityheadicons / scripts\cp_mp\entityheadicons
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x139e
+// Checksum 0x0, Offset: 0x1316
 // Size: 0x11
 function function_6ede573723f08c0f() {
     return getdvarint(@"hash_1d8c3eb547f8c176", 0);

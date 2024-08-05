@@ -5,7 +5,7 @@
 
 // Namespace render_utility / namespace_ff14d1780afedf10
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x137
+// Checksum 0x0, Offset: 0x10b
 // Size: 0x85
 function function_4f2c4138dacca16a(aberration, radius, strength, distortion) {
     assert(isdefined(self));
@@ -26,7 +26,7 @@ function function_4f2c4138dacca16a(aberration, radius, strength, distortion) {
 
 // Namespace render_utility / namespace_ff14d1780afedf10
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c4
+// Checksum 0x0, Offset: 0x198
 // Size: 0x60
 function function_e2eae50826e12247() {
     assert(isdefined(self));

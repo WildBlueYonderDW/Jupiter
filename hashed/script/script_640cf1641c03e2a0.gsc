@@ -182,7 +182,7 @@ function function_fa870422edefd17d() {
     self setscriptablepartstate("skydiveVfx", "default", 0);
     self playsound("mp_parachute_land_ally");
     self notify("para_landed");
-    level thread scripts\mp\ai_behavior::function_5d96b05a065564e(self);
+    level thread scripts\mp\ai_behavior::ai_watchForBadPath(self);
 }
 
 // Namespace namespace_39878ad79a617fab / namespace_885300a47c2b51e6

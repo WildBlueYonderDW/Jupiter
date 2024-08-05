@@ -8,9 +8,9 @@
 #using scripts\mp\load.gsc;
 #using scripts\mp\compass.gsc;
 
-#namespace mp_jup_elevated;
+#namespace namespace_2cb209ba3e78dae7;
 
-// Namespace mp_jup_elevated / namespace_734b3c31253a1205
+// Namespace namespace_2cb209ba3e78dae7 / namespace_734b3c31253a1205
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x184
 // Size: 0xa6

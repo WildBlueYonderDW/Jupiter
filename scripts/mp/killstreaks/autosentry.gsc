@@ -1519,12 +1519,12 @@ function sam_acquiretarget() {
                     return uav;
                 }
             }
-            foreach (lb in level.littlebirds) {
-                if (isdefined(lb.team) && lb.team == self.team) {
+            foreach (LB in level.littlebirds) {
+                if (isdefined(LB.team) && LB.team == self.team) {
                     continue;
                 }
-                if (sighttracepassed(eyeline, lb.origin, 0, self)) {
-                    return lb;
+                if (sighttracepassed(eyeline, LB.origin, 0, self)) {
+                    return LB;
                 }
             }
             foreach (heli in level.helis) {
@@ -1558,12 +1558,12 @@ function sam_acquiretarget() {
                     return uav;
                 }
             }
-            foreach (lb in level.littlebirds) {
-                if (isdefined(lb.owner) && isdefined(self.owner) && lb.owner == self.owner) {
+            foreach (LB in level.littlebirds) {
+                if (isdefined(LB.owner) && isdefined(self.owner) && LB.owner == self.owner) {
                     continue;
                 }
-                if (sighttracepassed(eyeline, lb.origin, 0, self)) {
-                    return lb;
+                if (sighttracepassed(eyeline, LB.origin, 0, self)) {
+                    return LB;
                 }
             }
             foreach (heli in level.helis) {

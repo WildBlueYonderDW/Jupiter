@@ -7,7 +7,7 @@
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc
+// Checksum 0x0, Offset: 0xa6
 // Size: 0x37
 function _shellshock(name, category, duration, animationresponse, interruptdelayms) {
     namespace_1ce798d596a27341::_shellshock(name, category, duration, animationresponse, interruptdelayms);
@@ -15,7 +15,7 @@ function _shellshock(name, category, duration, animationresponse, interruptdelay
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x10b
+// Checksum 0x0, Offset: 0xe5
 // Size: 0x12
 function _stopshellshock(fromdeath) {
     namespace_1ce798d596a27341::_stopshellshock();
@@ -23,7 +23,7 @@ function _stopshellshock(fromdeath) {
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x125
+// Checksum 0x0, Offset: 0xff
 // Size: 0x6d
 function shellshock_artilleryearthquake(position, scale, duration, radius, ignoreclients) {
     playrumbleonposition("artillery_rumble", position);
@@ -42,8 +42,8 @@ function shellshock_artilleryearthquake(position, scale, duration, radius, ignor
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a
-// Size: 0xbd
+// Checksum 0x0, Offset: 0x174
+// Size: 0xbb
 function shellshock_screenshakeonposition(position, radius, ignoreclients) {
     shockplayers = utility::playersinsphere(position, radius);
     foreach (player in shockplayers) {

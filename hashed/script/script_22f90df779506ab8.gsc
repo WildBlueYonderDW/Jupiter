@@ -10,7 +10,7 @@
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27e
+// Checksum 0x0, Offset: 0x265
 // Size: 0x132
 function getfunction(funcid) {
     switch (funcid) {
@@ -45,12 +45,12 @@ function getfunction(funcid) {
     case #"hash_2bb757aa70fc12dd": 
         return &cleargoal;
     }
-    assertmsg("<dev string:x1c>" + funcid);
+    assertmsg("Missing function pointer for " + funcid);
 }
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b8
+// Checksum 0x0, Offset: 0x39f
 // Size: 0x2d
 function function_3dbd361f74b442f9(interactionid) {
     self.keepclaimednode = 1;
@@ -59,7 +59,7 @@ function function_3dbd361f74b442f9(interactionid) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ed
+// Checksum 0x0, Offset: 0x3d4
 // Size: 0x61
 function function_a157fbbc31d9eb1a(interactionid) {
     self clearbtgoal(1);
@@ -76,7 +76,7 @@ function function_a157fbbc31d9eb1a(interactionid) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x456
+// Checksum 0x0, Offset: 0x43d
 // Size: 0x28
 function setstationary(statename, params) {
     self function_e64ea2b4e79c4b74(1);
@@ -85,7 +85,7 @@ function setstationary(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x486
+// Checksum 0x0, Offset: 0x46d
 // Size: 0x8b
 function function_bd30a256562f3cdc(statename, params) {
     users = getaiarray(self.team);
@@ -104,8 +104,8 @@ function function_bd30a256562f3cdc(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x519
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x500
+// Size: 0x89
 function function_b98f00d5db5e9c5d(statename, params) {
     self endon("death");
     other = function_cbe869548ea6baac("changingcover");
@@ -129,8 +129,8 @@ function function_b98f00d5db5e9c5d(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ab
-// Size: 0x63
+// Checksum 0x0, Offset: 0x591
+// Size: 0x62
 function function_5ef09b6972c9fab(statename, params) {
     other = function_cbe869548ea6baac("changingcover");
     self endon("death");
@@ -143,7 +143,7 @@ function function_5ef09b6972c9fab(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x616
+// Checksum 0x0, Offset: 0x5fb
 // Size: 0x81
 function function_c753b2bac95c6bfe(statename, params) {
     users = getaiarray(self.team);
@@ -161,8 +161,8 @@ function function_c753b2bac95c6bfe(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x69f
-// Size: 0xb4
+// Checksum 0x0, Offset: 0x684
+// Size: 0xb5
 function coveringfire(statename, params) {
     self endon("death");
     self endon("endcoverfire");
@@ -183,7 +183,7 @@ function coveringfire(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x75b
+// Checksum 0x0, Offset: 0x741
 // Size: 0x27
 function function_ddf0d739daa1d97c(statename, params) {
     self.balwayscoverexposed = 0;
@@ -192,7 +192,7 @@ function function_ddf0d739daa1d97c(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x78a
+// Checksum 0x0, Offset: 0x770
 // Size: 0x9b
 function changecover(statename, params) {
     self endon("death");
@@ -213,7 +213,7 @@ function changecover(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x82d
+// Checksum 0x0, Offset: 0x813
 // Size: 0x24
 function dialogue(statename, params) {
     if (isdefined(params[0])) {
@@ -223,7 +223,7 @@ function dialogue(statename, params) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x859
+// Checksum 0x0, Offset: 0x83f
 // Size: 0x1f
 function function_c3722414c55a6ae1(statename) {
     return isdefined(self.covernode) || !isalive(self);
@@ -231,7 +231,7 @@ function function_c3722414c55a6ae1(statename) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x881
+// Checksum 0x0, Offset: 0x867
 // Size: 0x14
 function cleargoal(statename) {
     self clearbtgoal(1);
@@ -239,8 +239,8 @@ function cleargoal(statename) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x89d
-// Size: 0x61
+// Checksum 0x0, Offset: 0x883
+// Size: 0x60
 function dodelay(interval, func, param, bool) {
     time = gettime() + interval;
     while (gettime() < time) {
@@ -259,7 +259,7 @@ function dodelay(interval, func, param, bool) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x906
+// Checksum 0x0, Offset: 0x8eb
 // Size: 0x44
 function function_30b70873a0937989(var_22e9090a351646e9) {
     /#
@@ -269,7 +269,7 @@ function function_30b70873a0937989(var_22e9090a351646e9) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x952
+// Checksum 0x0, Offset: 0x937
 // Size: 0x31
 function function_cbe869548ea6baac(tag) {
     id = self function_92435c7a6ae85c3c();
@@ -279,8 +279,8 @@ function function_cbe869548ea6baac(tag) {
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x98c
-// Size: 0x16c
+// Checksum 0x0, Offset: 0x971
+// Size: 0x170
 function function_9867614bbd49f378(asmname, statename, params) {
     targetpos = undefined;
     if (isdefined(self.node) && distancesquared(self.node.origin, self.origin) > 1024) {
@@ -304,13 +304,13 @@ function function_9867614bbd49f378(asmname, statename, params) {
         animindex = 4;
     }
     turnanim = scripts\asm\cap::function_18e6c36c02a94dbd(statename, statename + "_" + animindex);
-    assertex(isdefined(turnanim), "<dev string:x3d>" + animindex + "<dev string:x5a>" + self.animsetname);
+    assertex(isdefined(turnanim), "Cardinal turn anim index " + animindex + "is missing in cap animset " + self.animsetname);
     return turnanim;
 }
 
 // Namespace coverfire / namespace_c35c41aba500a8a0
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb01
+// Checksum 0x0, Offset: 0xaea
 // Size: 0x4e
 function function_8fd655a41a26c662(asmname, statename, tostatename, param) {
     if (!isdefined(self.prevcovernode)) {

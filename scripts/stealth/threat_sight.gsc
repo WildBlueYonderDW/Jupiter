@@ -5,8 +5,8 @@
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x187
-// Size: 0x161
+// Checksum 0x0, Offset: 0x12e
+// Size: 0x15f
 function threat_sight_set_enabled(enabled) {
     assert(isdefined(level.stealth));
     wasenabled = function_7a21aa652f0613b0();
@@ -35,7 +35,7 @@ function threat_sight_set_enabled(enabled) {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f0
+// Checksum 0x0, Offset: 0x295
 // Size: 0x33
 function threat_sight_set_dvar(enabled) {
     if (enabled && !function_7a21aa652f0613b0()) {
@@ -47,7 +47,7 @@ function threat_sight_set_dvar(enabled) {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32b
+// Checksum 0x0, Offset: 0x2d0
 // Size: 0x56
 function threat_sight_set_dvar_display(enabled) {
     self notify("threat_sight_set_dvar_display");
@@ -63,7 +63,7 @@ function threat_sight_set_dvar_display(enabled) {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x389
+// Checksum 0x0, Offset: 0x32e
 // Size: 0x38
 function threat_sight_enabled() {
     if (!getdvarint(@"ai_threatSight")) {
@@ -77,7 +77,7 @@ function threat_sight_enabled() {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ca
+// Checksum 0x0, Offset: 0x36f
 // Size: 0x9e
 function threat_sight_player_entity_state_set(ai, statename) {
     if (!isdefined(self.stealth)) {
@@ -100,7 +100,7 @@ function threat_sight_player_entity_state_set(ai, statename) {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x470
+// Checksum 0x0, Offset: 0x415
 // Size: 0x13c
 function threat_sight_force_visible(othersentient, durationseconds) {
     self function_d955a85131dc6e69(othersentient, durationseconds);
@@ -121,7 +121,7 @@ function threat_sight_force_visible(othersentient, durationseconds) {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b4
+// Checksum 0x0, Offset: 0x559
 // Size: 0x21c
 function threat_sight_force_visible_thread() {
     if (istrue(self.stealth.force_visible_thread)) {
@@ -157,8 +157,8 @@ function threat_sight_force_visible_thread() {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d8
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x77d
+// Size: 0xf1
 function function_468da1365698eabf() {
     level endon("threat_sight_disabled");
     if (!isdefined(level.stealth.fnthreatsightplayersightaudio)) {
@@ -183,14 +183,10 @@ function function_468da1365698eabf() {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8d4
-// Size: 0xf4
+// Checksum 0x0, Offset: 0x876
+// Size: 0xb5
 function function_3e245e55717e286a() {
     level endon("threat_sight_disabled");
-    if (!isdefined(level.stealth.var_ed06a52046d9f7a1)) {
-        level waittill("threat_sight_rumble_enabled");
-        assert(isdefined(level.stealth.var_ed06a52046d9f7a1));
-    }
     while (!isdefined(level.players)) {
         waitframe();
     }
@@ -209,8 +205,8 @@ function function_3e245e55717e286a() {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d0
-// Size: 0xac
+// Checksum 0x0, Offset: 0x933
+// Size: 0xab
 function threat_sight_fake(origin, amount) {
     self notify("threat_sight_fake");
     self endon("threat_sight_fake");
@@ -228,7 +224,7 @@ function threat_sight_fake(origin, amount) {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa84
+// Checksum 0x0, Offset: 0x9e6
 // Size: 0x5b
 function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc690b) {
     if (isdefined(level.stealth) && isdefined(level.stealth.fnthreatsightplayersightaudio)) {
@@ -238,7 +234,7 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc6
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xae7
+// Checksum 0x0, Offset: 0xa49
 // Size: 0x3f
 function function_9b25540da1b89219() {
     if (isdefined(level.stealth) && isdefined(level.stealth.var_585390079b597cd6)) {
@@ -248,7 +244,7 @@ function function_9b25540da1b89219() {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb2e
+// Checksum 0x0, Offset: 0xa90
 // Size: 0x52
 function function_82079fb63bda0995(anycansee, maxthreat) {
     if (isdefined(level.stealth) && isdefined(level.stealth.var_ed06a52046d9f7a1)) {
@@ -258,7 +254,7 @@ function function_82079fb63bda0995(anycansee, maxthreat) {
 
 // Namespace threat_sight / scripts\stealth\threat_sight
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb88
+// Checksum 0x0, Offset: 0xaea
 // Size: 0x3f
 function function_e4eaeef9e706471e() {
     if (isdefined(level.stealth) && isdefined(level.stealth.var_45cffb1cb64f32c7)) {

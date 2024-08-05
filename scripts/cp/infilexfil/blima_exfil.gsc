@@ -1,0 +1,970 @@
+#using scripts\engine\utility.gsc;
+#using scripts\common\utility.gsc;
+#using scripts\cp\infilexfil\infilexfil.gsc;
+#using scripts\cp\cp_anim.gsc;
+#using scripts\common\anim.gsc;
+#using scripts\mp\utility\infilexfil.gsc;
+#using scripts\cp\cp_infilexfil.gsc;
+#using scripts\cp\vehicles\cp_heli_trip.gsc;
+#using script_afb7e332aee4bf2;
+#using scripts\cp\utility.gsc;
+#using scripts\cp\cp_objective_mechanics.gsc;
+#using scripts\common\vehicle.gsc;
+#using scripts\cp\cp_objectives.gsc;
+#using scripts\cp\powers\cp_tactical_cover.gsc;
+#using scripts\cp\cp_agent_utils.gsc;
+#using scripts\engine\trace.gsc;
+#using scripts\cp\cp_juggernaut.gsc;
+#using script_71332a5b74214116;
+
+#namespace namespace_6e95118392db10bb;
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x6bf
+// Size: 0xc1
+function player_exfil_think(var_214da032eefdfe74, seat) {
+    self endon("death");
+    self endon("disconnect");
+    self endon("player_free_spot");
+    thread infil_player_rig(seat, "viewhands_base_iw8");
+    self.player_rig.weapon_state_func = &handleweaponstatenotetrack;
+    self.player_rig linkto(var_214da032eefdfe74, "body_animate_jnt", (0, 0, 0), (0, 0, 0));
+    self lerpfovbypreset("80_instant");
+    self setdemeanorviewmodel("safe", "iw8_ges_demeanor_safe_heli");
+    var_214da032eefdfe74 anim_player_solo(self, self.player_rig, "exfil", "body_animate_jnt");
+    var_214da032eefdfe74 thread rideloop(self);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x788
+// Size: 0x63
+function spawnactors(team, scene_name, extra_crew) {
+    initanims();
+    if (!isdefined(self.actors)) {
+        self.actors = [];
+    }
+    self.actors[self.actors.size] = spawn_anim_model("pilot", "body_animate_jnt", "allied_pilot_fullbody_3");
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 6, eflags: 0x0
+// Checksum 0x0, Offset: 0x7f3
+// Size: 0x18c
+function spawn_anim_model(animname, linkto_tag, body, head, weapon, hat) {
+    guy = spawn("script_model", (0, 0, 0));
+    guy setmodel(body);
+    if (isdefined(head)) {
+        guy_head = spawn("script_model", (0, 0, 0));
+        guy_head setmodel(head);
+        guy_head linkto(guy, "j_spine4", (0, 0, 0), (0, 0, 0));
+        guy.head = guy_head;
+        guy thread delete_on_death(guy_head);
+    }
+    if (isdefined(hat)) {
+        var_72ad02f2e286273e = spawn("script_model", (0, 0, 0));
+        var_72ad02f2e286273e setmodel(hat);
+        var_72ad02f2e286273e linkto(guy.head, "j_spine4", (0, 0, 0), (0, 0, 0));
+        guy.hat = var_72ad02f2e286273e;
+        guy thread delete_on_death(var_72ad02f2e286273e);
+    }
+    guy.animname = animname;
+    guy setanimtree();
+    if (isdefined(linkto_tag)) {
+        thread delete_on_death(guy);
+        guy linkto(self, linkto_tag, (0, 0, 0), (0, 0, 0));
+    }
+    return guy;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x988
+// Size: 0x19
+function initanims(subtype) {
+    script_model_anims();
+    vehicle_anims();
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x9a9
+// Size: 0x29c
+function script_model_anims() {
+    level.scr_animtree["pilot"] = %script_model;
+    level.scr_anim["pilot"]["exfil"] = script_model%vh_blima_rappel_pilot;
+    level.scr_animtree["copilot"] = %script_model;
+    level.scr_anim["copilot"]["exfil"] = script_model%vh_blima_rappel_copilot;
+    level.scr_animtree["seat1"] = %script_model;
+    level.scr_anim["seat1"]["exfil"] = script_model%cp_exfil_blima_plr01_wm;
+    level.scr_eventanim["seat1"]["exfil"] = %"hash_1a45a000005b7977";
+    level.scr_anim["seat1"]["exfil_idle"] = script_model%cp_exfil_blima_plr01_idle_wm;
+    level.scr_eventanim["seat1"]["exfil_idle"] = %"hash_45fdcebc7ada32aa";
+    level.scr_animtree["seat2"] = %script_model;
+    level.scr_anim["seat2"]["exfil"] = script_model%cp_exfil_blima_plr02_wm;
+    level.scr_eventanim["seat2"]["exfil"] = %"hash_1a45a100005b7b2a";
+    level.scr_anim["seat2"]["exfil_idle"] = script_model%cp_exfil_blima_plr02_idle_wm;
+    level.scr_eventanim["seat2"]["exfil_idle"] = %"hash_44236875bd5b27d";
+    level.scr_animtree["seat3"] = %script_model;
+    level.scr_anim["seat3"]["exfil"] = script_model%cp_exfil_blima_plr03_wm;
+    level.scr_eventanim["seat3"]["exfil"] = %"hash_1a45a200005b7cdd";
+    level.scr_anim["seat3"]["exfil_idle"] = script_model%cp_exfil_blima_plr03_idle_wm;
+    level.scr_eventanim["seat3"]["exfil_idle"] = %"hash_213c21a9b30a48d0";
+    level.scr_animtree["seat4"] = %script_model;
+    level.scr_anim["seat4"]["exfil"] = script_model%cp_exfil_blima_plr04_wm;
+    level.scr_eventanim["seat4"]["exfil"] = %"hash_13e4ff431b84ab3";
+    level.scr_anim["seat4"]["exfil_idle"] = script_model%cp_exfil_blima_plr04_idle_wm;
+    level.scr_eventanim["seat4"]["exfil_idle"] = %"hash_13e4ff431b84ab3";
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xc4d
+// Size: 0x14
+function vehicle_anims() {
+    level.scr_animtree["exfil_chopper"] = %mp_vehicles_always_loaded;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0xc69
+// Size: 0x2e
+function exfil_players(var_214da032eefdfe74, objnum, custompassengerwaitfunc) {
+    exfil(var_214da032eefdfe74, objnum, custompassengerwaitfunc);
+    var_214da032eefdfe74 thread leave_and_end_game();
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0xc9f
+// Size: 0x6b
+function function_9149f78899f36b7(var_214da032eefdfe74, objnum, custompassengerwaitfunc) {
+    exfil(var_214da032eefdfe74, objnum, custompassengerwaitfunc);
+    var_214da032eefdfe74 heli_leave(1, 1);
+    if (isdefined(var_214da032eefdfe74.headicon)) {
+        deleteheadicon(var_214da032eefdfe74.headicon);
+    }
+    var_214da032eefdfe74 notify("death");
+    wait 0.1;
+    if (isdefined(var_214da032eefdfe74)) {
+        var_214da032eefdfe74 delete();
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0xd12
+// Size: 0x9b
+function exfil(var_214da032eefdfe74, objnum, custompassengerwaitfunc) {
+    scripts\cp\vehicles\cp_heli_trip::initanims();
+    level.heli_trip_vehicle = var_214da032eefdfe74;
+    if (isdefined(custompassengerwaitfunc) && isfunction(custompassengerwaitfunc)) {
+        level.heli_trip_vehicle thread [[ custompassengerwaitfunc ]]();
+    } else {
+        level.heli_trip_vehicle thread scripts\cp\vehicles\cp_heli_trip::wait_for_passengers(0);
+    }
+    objective_setlabel(objnum, %COOP_GAME_PLAY/EXFIL);
+    var_214da032eefdfe74 notify("waiting_to_leave");
+    level.heli_trip_vehicle waittill_any_2("all_players_on_board", "heli_trip_timed_out");
+    level notify("ready_to_exfil");
+    objective_delete(objnum);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0xdb5
+// Size: 0x2d
+function spawn_vehicle_actors(vehicle) {
+    vehicle.animname = "exfil_chopper";
+    vehicle spawnactors();
+    vehicle thread actorloopthink();
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xdea
+// Size: 0x10
+function leave_and_end_game() {
+    heli_leave();
+    end_game();
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0xe02
+// Size: 0x196
+function heli_leave(var_28fb9ce9b6706e97, var_4461656ab93d2faa) {
+    wait 1;
+    self cleargoalyaw();
+    self vehicle_setspeed(15, 10);
+    org = self.origin + (0, 0, 1200);
+    self setvehgoalpos(org, 1);
+    wait 5;
+    if (isdefined(self.exfil_speed)) {
+        self vehicle_setspeed(self.exfil_speed, 20);
+    } else {
+        self vehicle_setspeed(60, 20);
+    }
+    if (isdefined(self.exfil_struct) && isdefined(self.exfil_struct.target)) {
+        var_2325a77fb5939978 = getstructarray(self.exfil_struct.target, "targetname");
+        var_f1b25ad1d7caa88e = var_2325a77fb5939978[0];
+        var_f13e0951028d543f = (var_f1b25ad1d7caa88e.origin[0], var_f1b25ad1d7caa88e.origin[1], self.origin[2]);
+        var_1dc53a6f1393b456 = vectornormalize(var_f13e0951028d543f - self.origin);
+        var_1dc53a6f1393b456 *= 20000;
+        self setvehgoalpos(org + var_1dc53a6f1393b456);
+    } else {
+        self setvehgoalpos(org + (0, -20000, 0));
+    }
+    if (istrue(var_28fb9ce9b6706e97)) {
+        self waittill("goal");
+    }
+    if (!istrue(var_4461656ab93d2faa)) {
+        if (flag_exist("endgame_delay")) {
+            flag_wait("endgame_delay");
+        } else {
+            wait 4;
+        }
+        wait 3;
+    }
+    self notify("end_of_path");
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xfa0
+// Size: 0x24
+function end_game() {
+    level thread [[ level.endgame ]]("allies", level.end_game_string_index["win"]);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0xfcc
+// Size: 0x110
+function all_alive_players_in_chopper() {
+    var_44992e6b98f5ec99 = 0;
+    playersinlaststand = 0;
+    var_5edc4b509d7b55f1 = [];
+    var_a51c5139b9bfb6e = [];
+    foreach (player in level.players) {
+        if (player.team == "axis") {
+            var_5edc4b509d7b55f1[var_5edc4b509d7b55f1.size] = player;
+            continue;
+        }
+        var_a51c5139b9bfb6e[var_a51c5139b9bfb6e.size] = player;
+    }
+    foreach (player in var_a51c5139b9bfb6e) {
+        if (namespace_d4aab8c9cb8ecb14::player_in_laststand(player) || player isspectatingplayer()) {
+            playersinlaststand++;
+        }
+        if (istrue(player.inchopper)) {
+            var_44992e6b98f5ec99++;
+        }
+    }
+    return var_44992e6b98f5ec99 > 0 && var_a51c5139b9bfb6e.size == var_44992e6b98f5ec99 + playersinlaststand;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x10e5
+// Size: 0x22
+function wait_for_all_players_ready() {
+    while (true) {
+        if (all_alive_players_in_chopper()) {
+            level notify("ready_to_exfil");
+            return;
+        }
+        wait 0.1;
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x110f
+// Size: 0x1a
+function actorloopthink() {
+    thread actorloop(self.actors[0], "tag_seat_0");
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x1131
+// Size: 0x36
+function actorloop(actor, tag) {
+    self endon("unload");
+    self endon("death");
+    actor endon("death");
+    anim_single_solo(actor, "exfil", tag);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x116f
+// Size: 0x119
+function init_interactions() {
+    fwd = anglestoforward(self.angles);
+    RT = anglestoright(self.angles);
+    lft = anglestoleft(self.angles);
+    org = self.origin + (0, 0, -110);
+    pos4 = org + fwd * 20 + lft * 45;
+    pos2 = org + fwd * 20 + RT * 45;
+    pos3 = org + fwd * -20 + lft * 45;
+    pos1 = org + fwd * -20 + RT * 45;
+    create_vehicle_interaction(pos4, %CP_VEHICLE_TRAVEL/ENTER, "seat4", self);
+    create_vehicle_interaction(pos2, %CP_VEHICLE_TRAVEL/ENTER, "seat2", self);
+    create_vehicle_interaction(pos3, %CP_VEHICLE_TRAVEL/ENTER, "seat3", self);
+    create_vehicle_interaction(pos1, %CP_VEHICLE_TRAVEL/ENTER, "seat1", self);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x1290
+// Size: 0xa0
+function create_vehicle_interaction(loc, hintstring, name, vehicle) {
+    interaction = spawn("script_model", loc);
+    interaction setmodel("tag_origin");
+    interaction sethintstring(hintstring);
+    interaction setcursorhint("HINT_BUTTON");
+    interaction sethintdisplayrange(200);
+    interaction sethintdisplayfov(90);
+    interaction setuserange(72);
+    interaction setusefov(90);
+    interaction sethintonobstruction("hide");
+    interaction setuseholdduration("duration_short");
+    interaction thread use_think(vehicle, name);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x1338
+// Size: 0x92
+function use_think(vehicle, name) {
+    self makeusable();
+    while (true) {
+        player = self waittill("trigger");
+        if (!player scripts\cp\utility::is_valid_player()) {
+            continue;
+        }
+        if (isdefined(level.nuclear_core)) {
+            if (!isdefined(level.nuclear_core_carrier)) {
+                iprintln(" PICK THE CORE UP BEFORE LEAVING! ");
+                continue;
+            }
+        }
+        self makeunusable();
+        player scripts\cp\infilexfil\infilexfil::infil_player_allow_cp(0);
+        waitframe();
+        player thread scripts\cp\vehicles\cp_heli_trip::playerpassengerthink();
+        player.inchopper = 1;
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x13d2
+// Size: 0x53
+function allow_players_exfil() {
+    foreach (player in level.players) {
+        player notify("allow_exfil");
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x142d
+// Size: 0xb9
+function player_listen_for_exfil() {
+    self endon("disconnect");
+    self waittill("allow_exfil");
+    while (true) {
+        if (self usebuttonpressed() && self getcurrentweapon().basename == "ks_remote_map_cp") {
+            self iprintlnbold("EXFIL CALLED");
+            level notify("call_exfil", self.origin);
+            return;
+        }
+        if (self meleebuttonpressed()) {
+            timepressed = 0;
+            while (self meleebuttonpressed()) {
+                timepressed++;
+                wait 0.05;
+                if (timepressed >= 60) {
+                    break;
+                }
+            }
+            if (timepressed >= 60) {
+                self iprintlnbold("EXFIL CALLED");
+                level notify("call_exfil", self.origin);
+                return;
+            }
+        }
+        wait 0.1;
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x14ee
+// Size: 0xe5
+function function_387b5e2e4b970437(var_f94346053e3f63e5, var_e1e1732f234cf593, var_cf805cd60ef50d4f, custompassengerwaitfunc) {
+    if (!isdefined(var_f94346053e3f63e5)) {
+        var_f94346053e3f63e5 = "exfil_location";
+    }
+    self notify("listen_for_exfil_" + var_f94346053e3f63e5);
+    self endon("listen_for_exfil_" + var_f94346053e3f63e5);
+    if (!isdefined(var_e1e1732f234cf593)) {
+        var_e1e1732f234cf593 = "player_exfil";
+    }
+    pos, var_37e32cd4230d5e54 = level waittill("call_exfil_" + var_f94346053e3f63e5);
+    var_2f5be15466f1811d = getstruct(var_e1e1732f234cf593, "targetname");
+    if (isdefined(level.player_exfil_struct)) {
+        var_2f5be15466f1811d = level.player_exfil_struct;
+    }
+    var_2f5be15466f1811d.vehicletype = "blima_cp";
+    heli = function_aa22ac000bb68a77(var_2f5be15466f1811d);
+    heli thread function_8e002faa7893c07c(pos, var_f94346053e3f63e5, var_cf805cd60ef50d4f, custompassengerwaitfunc);
+    if (istrue(var_37e32cd4230d5e54)) {
+        level.exfil_heli = heli;
+        return heli;
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x15db
+// Size: 0x10f
+function function_8e002faa7893c07c(pos, var_f94346053e3f63e5, var_cf805cd60ef50d4f, custompassengerwaitfunc) {
+    heli = self;
+    exfil_struct = getclosest(pos, getstructarray(var_f94346053e3f63e5, "targetname"));
+    if (isdefined(level.use_airdrop_fx)) {
+        magicgrenademanual("deploy_airdrop_mp", getgroundposition(exfil_struct.origin, 16), (0, 90, 0), 0.01);
+    } else {
+        exfil_struct.smoke_canister = scripts\cp\cp_objective_mechanics::smoke_canister_spawn(exfil_struct.origin, 1);
+    }
+    heli.exfil_struct = exfil_struct;
+    objnum = function_283c1ba04595d987(heli, exfil_struct);
+    heli thread rumble_nearby_players();
+    heli thread wait_while_exfil_arrives(objnum);
+    heli waittill("wait_done");
+    if (isdefined(var_cf805cd60ef50d4f)) {
+        heli go_to_exfil_location(exfil_struct, var_cf805cd60ef50d4f);
+    } else {
+        heli go_to_exfil_location(exfil_struct, 1);
+    }
+    heli function_9149f78899f36b7(heli, objnum, custompassengerwaitfunc);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x16f2
+// Size: 0x96
+function function_aa22ac000bb68a77(var_2f5be15466f1811d) {
+    heli = scripts\common\vehicle::vehicle_spawn(var_2f5be15466f1811d);
+    heli thread damage_players_on_blades();
+    heli.godmode = 1;
+    heli.health = 100000;
+    heli.maxhealth = 100000;
+    heli.team = "allies";
+    heli.script_team = "allies";
+    heli setvehicleteam("allies");
+    heli setcandamage(0);
+    thread spawn_vehicle_actors(heli);
+    return heli;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x1791
+// Size: 0x105
+function function_283c1ba04595d987(heli, exfil_struct) {
+    objnum = scripts\cp\cp_objectives::requestworldid("exfil_loc", 10);
+    objective_state(objnum, "current");
+    objective_position(objnum, exfil_struct.origin - (0, 0, 100));
+    objective_icon(objnum, "icon_waypoint_objective_general");
+    objective_setminimapiconsize(objnum, "icon_regular");
+    objective_setshowdistance(objnum, 1);
+    objective_setplayintro(objnum, 1);
+    heli.headicon = createheadicon(heli);
+    setheadiconimage(heli.headicon, "hud_icon_head_equipment_friendly");
+    setheadiconmaxdistance(heli.headicon, 12000);
+    setheadiconnaturaldistance(heli.headicon, 1500);
+    setheadiconzoffset(heli.headicon, 10);
+    setheadiconsnaptoedges(heli.headicon, 1);
+    heli.objnum = objnum;
+    return objnum;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x189f
+// Size: 0x2f2
+function listen_for_exfil(var_f94346053e3f63e5, var_cf805cd60ef50d4f, custompassengerwaitfunc) {
+    self notify("listen_for_exfil");
+    self endon("listen_for_exfil");
+    if (!isdefined(var_f94346053e3f63e5)) {
+        var_f94346053e3f63e5 = "exfil_location";
+    }
+    pos, var_37e32cd4230d5e54 = level waittill("call_exfil");
+    var_2f5be15466f1811d = getstruct("player_exfil", "targetname");
+    if (isdefined(level.player_exfil_struct)) {
+        var_2f5be15466f1811d = level.player_exfil_struct;
+    }
+    var_2f5be15466f1811d.vehicletype = "blima_cp";
+    heli = scripts\common\vehicle::vehicle_spawn(var_2f5be15466f1811d);
+    heli thread damage_players_on_blades();
+    heli.godmode = 1;
+    heli.health = 100000;
+    heli.maxhealth = 100000;
+    heli.team = "allies";
+    heli.script_team = "allies";
+    heli setvehicleteam("allies");
+    heli setcandamage(0);
+    if (istrue(var_37e32cd4230d5e54)) {
+        level.exfil_heli = heli;
+    }
+    exfil_struct = getclosest(pos, getstructarray(var_f94346053e3f63e5, "targetname"));
+    if (isdefined(level.use_airdrop_fx)) {
+        magicgrenademanual("deploy_airdrop_mp", getgroundposition(exfil_struct.origin, 16), (0, 90, 0), 0.01);
+    } else {
+        exfil_struct.smoke_canister = scripts\cp\cp_objective_mechanics::smoke_canister_spawn(exfil_struct.origin, 1);
+    }
+    heli.exfil_struct = exfil_struct;
+    objnum = scripts\cp\cp_objectives::requestworldid("exfil_loc", 10);
+    objective_state(objnum, "current");
+    objective_position(objnum, exfil_struct.origin - (0, 0, 100));
+    objective_icon(objnum, "icon_waypoint_objective_general");
+    objective_setminimapiconsize(objnum, "icon_regular");
+    objective_setshowdistance(objnum, 1);
+    objective_setplayintro(objnum, 1);
+    heli.headicon = createheadicon(heli);
+    setheadiconimage(heli.headicon, "hud_icon_head_equipment_friendly");
+    setheadiconmaxdistance(heli.headicon, 12000);
+    setheadiconnaturaldistance(heli.headicon, 1500);
+    setheadiconzoffset(heli.headicon, 10);
+    setheadiconsnaptoedges(heli.headicon, 1);
+    heli.objnum = objnum;
+    spawn_vehicle_actors(heli);
+    heli thread rumble_nearby_players();
+    heli thread wait_while_exfil_arrives(objnum);
+    heli waittill("wait_done");
+    if (isdefined(var_cf805cd60ef50d4f)) {
+        heli go_to_exfil_location(exfil_struct, var_cf805cd60ef50d4f);
+    } else {
+        heli go_to_exfil_location(exfil_struct, 1);
+    }
+    heli exfil_players(heli, objnum, custompassengerwaitfunc);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x1b99
+// Size: 0xb2
+function go_to_exfil_location(exfil_struct, var_32c0ed10586351ab, var_ea300f7c7016466d) {
+    if (!isdefined(exfil_struct.angles)) {
+        exfil_struct.angles = (0, 0, 0);
+    }
+    self.going_to_exfil = 1;
+    if (!isdefined(var_ea300f7c7016466d) || !istrue(var_ea300f7c7016466d)) {
+        self vehicleplayanim(mp_vehicles_always_loaded%est_blima_doors_open);
+    }
+    self vehicle_setspeed(90, 30);
+    self setvehgoalpos(exfil_struct.origin + (0, 0, 1200), 1);
+    self waittill("goal");
+    self vehicle_setspeed(15, 10);
+    arrive_at_exfil_location(self);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x1c53
+// Size: 0x87
+function wait_while_exfil_arrives(objectiveindex) {
+    objective_setlabel(objectiveindex, %CP_BR_SYRK_OBJECTIVES/EXFIL_ENROUTE);
+    level thread scripts\cp\utility::objective_update("exfil_enroute");
+    objective_setshowprogress(objectiveindex, 1);
+    objective_setprogress(objectiveindex, 0);
+    objective_setbackground(objectiveindex, 1);
+    time = 10;
+    progress = 10;
+    while (true) {
+        wait 1;
+        progress--;
+        objective_setprogress(objectiveindex, progress / time);
+        if (progress <= 15) {
+            self notify("wait_done");
+        }
+        if (progress <= 0) {
+            return;
+        }
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x1ce2
+// Size: 0x1ad
+function heli_cleanup_exfil_area(heli) {
+    heli endon("death");
+    level notify("starting_cleanup");
+    heli.minigun setturretteam("allies");
+    heli.minigun setmode("manual");
+    nextfiretime = gettime();
+    var_d1ccb3cf97ad85f5 = 0;
+    while (true) {
+        valid_target = heli get_nearby_enemy(heli.exfil_struct.origin + (0, 0, -150));
+        if (!isdefined(valid_target)) {
+            heli.minigun cleartargetentity();
+            wait 1;
+            var_d1ccb3cf97ad85f5++;
+            if (var_d1ccb3cf97ad85f5 >= 3) {
+                return;
+            }
+            continue;
+        }
+        var_d1ccb3cf97ad85f5 = 0;
+        var_119d71e3f7006f18 = valid_target.origin + (0, 0, 1100);
+        heli.minigun settargetentity(valid_target);
+        if (distance(var_119d71e3f7006f18, heli.origin) > 500) {
+            heli setvehgoalpos(var_119d71e3f7006f18, 1);
+        }
+        msg = heli.minigun waittill_notify_or_timeout_return("turret_on_target", 3);
+        if (msg == "timeout") {
+            heli.minigun cleartargetentity();
+            continue;
+        }
+        if (gettime() > nextfiretime) {
+            for (i = 0; i < 35; i++) {
+                heli.minigun shootturret();
+                wait 0.1;
+            }
+            nextfiretime = gettime() + 1000;
+        }
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x1e97
+// Size: 0xf3
+function arrive_at_exfil_location(heli) {
+    heli setvehgoalpos(heli.exfil_struct.origin + (0, 0, 1200), 1);
+    heli waittill("goal");
+    heli settargetyaw(heli.exfil_struct.angles[1]);
+    heli setyawspeed(50, 25, 25, 0);
+    wait 3;
+    level notify("arrive_at_exfil_location", heli.origin);
+    level.exfil_heli_landing = heli;
+    heli thread keep_from_crushing_players();
+    heli thread destroy_vehicles();
+    heli.goalradius = 4;
+    heli setvehgoalpos(heli.exfil_struct.origin, 1);
+    heli waittill("goal");
+    heli vehicle_setspeedimmediate(0);
+    heli vehicle_cleardrivingstate();
+    level notify("arrived_at_exfil_location");
+    level.exfil_heli_landing = undefined;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x1f92
+// Size: 0x127
+function destroy_vehicles() {
+    self endon("goal");
+    wait 4;
+    if (!isdefined(level.vehicle)) {
+        return;
+    }
+    if (!isdefined(level.vehicle.instances)) {
+        return;
+    }
+    foreach (var_c58342f14efee4ca in level.vehicle.instances) {
+        foreach (vehicle in var_c58342f14efee4ca) {
+            if (!isdefined(vehicle) || !isdefined(vehicle.origin)) {
+                continue;
+            }
+            if (vehicle == self) {
+                continue;
+            }
+            if (distance2d(vehicle.origin, self.origin) < 512) {
+                vehicle dodamage(vehicle.health + 1000, self.origin);
+            }
+        }
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x20c1
+// Size: 0x114
+function keep_from_crushing_players() {
+    self endon("goal");
+    while (true) {
+        foreach (player in level.players) {
+            if (player istouching(self)) {
+                thread move_player_from_under_heli(player);
+            }
+            thread kill_sentries(player);
+            thread kill_tac_covers(player);
+        }
+        if (isdefined(level.hvtlist)) {
+            foreach (hvt in level.hvtlist) {
+                if (isdefined(hvt) && !istrue(hvt.carried) && distance2d(self.origin, hvt.origin) <= 200) {
+                    thread move_hvt_from_under_heli(hvt);
+                }
+            }
+        }
+        waitframe();
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x21dd
+// Size: 0xcc
+function kill_tac_covers(player) {
+    if (isdefined(player.taccovers) && isarray(player.taccovers) && player.taccovers.size > 0) {
+        foreach (var_e8a8b3a28bb94537 in player.taccovers) {
+            if (isdefined(var_e8a8b3a28bb94537) && isdefined(var_e8a8b3a28bb94537.collision)) {
+                if (var_e8a8b3a28bb94537 istouching(self) || var_e8a8b3a28bb94537.collision istouching(self)) {
+                    var_e8a8b3a28bb94537 scripts\cp\powers\cp_tactical_cover::tac_cover_delete(0.05);
+                }
+            }
+        }
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x22b1
+// Size: 0x175
+function kill_sentries(player) {
+    if (isdefined(player.placedsentries)) {
+        if (isdefined(player.placedsentries["sentry_turret"]) && isarray(player.placedsentries["sentry_turret"]) && player.placedsentries["sentry_turret"].size > 0) {
+            foreach (turret in player.placedsentries["sentry_turret"]) {
+                if (isdefined(turret)) {
+                    if (turret istouching(self)) {
+                        turret notify("kill_turret", 1, 0);
+                    }
+                }
+            }
+        }
+        if (isdefined(player.placedsentries["manual_turret"]) && isarray(player.placedsentries["manual_turret"]) && player.placedsentries["manual_turret"].size > 0) {
+            foreach (turret in player.placedsentries["manual_turret"]) {
+                if (isdefined(turret)) {
+                    if (turret istouching(self)) {
+                        turret notify("kill_turret", 1, 0);
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x242e
+// Size: 0x5a
+function move_player_from_under_heli(player) {
+    vec = player.origin - self.origin;
+    vec = vectornormalize(vec);
+    vec *= 200;
+    vec = (vec[0], vec[1], 0);
+    player setorigin(player.origin + vec, 1);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x2490
+// Size: 0x65
+function move_hvt_from_under_heli(hvt) {
+    vec = hvt.origin - self.origin;
+    vec = vectornormalize(vec);
+    vec *= 200;
+    vec = (vec[0], vec[1], 0);
+    hvt.origin += vec;
+    hvt notify("displaced");
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x24fd
+// Size: 0xe7
+function get_nearby_enemy(org, dist_check) {
+    if (!isdefined(dist_check)) {
+        dist_check = 2250000;
+    }
+    guys = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
+    guys = sortbydistance(guys, self.origin);
+    foreach (guy in guys) {
+        if (!isalive(guy)) {
+            continue;
+        }
+        if (distancesquared(guy.origin, org) < dist_check && scripts\engine\trace::ray_trace_passed(self.origin + (0, 0, -250), guy.origin + (0, 0, 100), guys)) {
+            return guy;
+        }
+    }
+    return undefined;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x25ed
+// Size: 0x184
+function heli_mg_create(var_e686baee775ad49f, turret_weapon) {
+    tag = "tag_flash";
+    originoffset = (-64, 0, 0);
+    origin = self gettagorigin(tag);
+    if (!isdefined(turret_weapon)) {
+        turret_weapon = "sentry_minigun_mp";
+    }
+    self.minigun = spawnturret("misc_turret", origin, turret_weapon);
+    self.minigun.angles = self gettagangles(tag);
+    if (isdefined(var_e686baee775ad49f)) {
+        self.minigun setmodel(var_e686baee775ad49f);
+    } else {
+        self.minigun setmodel("veh8_mil_air_ahotel64_turret_wm");
+    }
+    self.minigun linkto(self, tag, originoffset, (0, 0, 0));
+    self.minigun setturretteam("axis");
+    self.minigun setmode("auto_nonai");
+    self.minigun setdefaultdroppitch(0);
+    self.minigun setleftarc(360);
+    self.minigun setrightarc(360);
+    self.minigun settoparc(180);
+    self.minigun setbottomarc(180);
+    self.minigun setconvergencetime(0.05, "yaw");
+    self.minigun setconvergencetime(0.05, "pitch");
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x2779
+// Size: 0x2b
+function rumble_nearby_players() {
+    self endon("death");
+    while (true) {
+        playrumbleonposition("cp_chopper_rumble", self.origin);
+        wait 0.2;
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x27ac
+// Size: 0x45
+function rideloop(player) {
+    level endon("game_ended");
+    player endon("death");
+    player endon("disconnect");
+    while (true) {
+        anim_player_solo(player, player.player_rig, "exfil_idle", "body_animate_jnt");
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x27f9
+// Size: 0x8e
+function damage_players_on_blades() {
+    self endon("death");
+    var_abd2ee0e56b7afbc = spawn("trigger_radius", self.origin, 0, 350, 64);
+    var_abd2ee0e56b7afbc enablelinkto();
+    var_abd2ee0e56b7afbc linkto(self, "tag_origin");
+    var_c30d67b7a7e94f1c = spawn("trigger_radius", self gettagorigin("tail_rotor_jnt"), 0, 64, 64);
+    var_c30d67b7a7e94f1c enablelinkto();
+    var_c30d67b7a7e94f1c linkto(self, "tail_rotor_jnt");
+    var_abd2ee0e56b7afbc thread blade_trigger_think(self);
+    var_c30d67b7a7e94f1c thread blade_trigger_think(self);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x288f
+// Size: 0xab
+function blade_trigger_think(heli) {
+    heli endon("death");
+    while (true) {
+        ent = self waittill("trigger");
+        if (!isplayer(ent)) {
+            continue;
+        }
+        if (istrue(ent.inlaststand)) {
+            ent notify("force_bleed_out");
+            continue;
+        }
+        if (istrue(ent.isjuggernaut)) {
+            ent scripts\cp\cp_juggernaut::jugg_removejuggernaut();
+        }
+        ent setvelocity((-500, 0, 500));
+        ent.shouldskiplaststand = 1;
+        ent dodamage(ent.health + 1000, self.origin);
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x2942
+// Size: 0x25
+function function_a195b29bf788fbc7() {
+    namespace_a3902e911697e714::register_interaction("exfil_spot", "null", undefined, &function_1ef16b5bead75324, &function_f0e0473d6c709fdc, 0, 0, &function_b540a63f7d14e39f);
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x296f
+// Size: 0x12f
+function function_53b91a8ca24ad84(active) {
+    while (!isdefined(level.var_ec373b5131038e2d)) {
+        wait 0.1;
+    }
+    if (istrue(active)) {
+        objnum = scripts\cp\cp_objectives::requestworldid("exfil_loc", 10);
+        objective_state(objnum, "current");
+        objective_icon(objnum, "icon_waypoint_objective_general");
+        objective_setminimapiconsize(objnum, "icon_regular");
+        objective_setshowdistance(objnum, 1);
+        objective_setplayintro(objnum, 1);
+        objective_setlabel(objnum, %CP_STRIKE/CALL_EXFIL);
+        foreach (var_df071553d0996ff9 in level.var_ec373b5131038e2d) {
+            objective_position(objnum, var_df071553d0996ff9.origin);
+            namespace_a3902e911697e714::add_to_current_interaction_list(var_df071553d0996ff9);
+        }
+        return;
+    }
+    foreach (var_df071553d0996ff9 in level.var_ec373b5131038e2d) {
+        namespace_a3902e911697e714::remove_from_current_interaction_list(var_df071553d0996ff9);
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x2aa6
+// Size: 0x5e
+function function_b540a63f7d14e39f(var_6071184f8a3861b3) {
+    level.var_ec373b5131038e2d = var_6071184f8a3861b3;
+    foreach (var_df071553d0996ff9 in var_6071184f8a3861b3) {
+        namespace_a3902e911697e714::add_to_current_interaction_list(var_df071553d0996ff9);
+    }
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x2b0c
+// Size: 0x18
+function function_1ef16b5bead75324(var_df071553d0996ff9, player) {
+    return %CP_STRIKE/CALL_EXFIL;
+}
+
+// Namespace namespace_6e95118392db10bb / scripts\cp\infilexfil\blima_exfil
+// Params 2, eflags: 0x0
+// Checksum 0x0, Offset: 0x2b2d
+// Size: 0x4b
+function function_f0e0473d6c709fdc(var_df071553d0996ff9, player) {
+    player endon("disconnect");
+    scripts\cp\cp_objectives::freeworldid("exfil_loc");
+    level notify("call_exfil", player.origin, 1);
+    namespace_a3902e911697e714::remove_from_current_interaction_list(var_df071553d0996ff9);
+    player namespace_a3902e911697e714::refresh_interaction();
+}
+

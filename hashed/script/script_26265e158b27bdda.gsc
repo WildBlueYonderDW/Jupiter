@@ -9,7 +9,7 @@
 
 // Namespace door / namespace_2ab3cc97bdf86f18
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x144
+// Checksum 0x0, Offset: 0x109
 // Size: 0x122
 function stealth_suspicious_doors_init() {
     if (istrue(level.ship_assault)) {
@@ -31,7 +31,7 @@ function stealth_suspicious_doors_init() {
 
 // Namespace door / namespace_2ab3cc97bdf86f18
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26e
+// Checksum 0x0, Offset: 0x233
 // Size: 0x49
 function suspicious_door_thread() {
     self notify("suspicious_door_thread");
@@ -49,8 +49,8 @@ function suspicious_door_thread() {
 
 // Namespace door / namespace_2ab3cc97bdf86f18
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bf
-// Size: 0x467
+// Checksum 0x0, Offset: 0x284
+// Size: 0x473
 function suspicious_door_sighting() {
     if (!isdefined(self.stealth.suspicious_door)) {
         self.stealth.suspicious_door = spawnstruct();
@@ -143,8 +143,8 @@ function suspicious_door_sighting() {
 
 // Namespace door / namespace_2ab3cc97bdf86f18
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x72e
-// Size: 0x254
+// Checksum 0x0, Offset: 0x6ff
+// Size: 0x25b
 function private canseedoor(door, debounce) {
     result = 0;
     debugorigin = door.origin;
@@ -186,8 +186,8 @@ function private canseedoor(door, debounce) {
 
 // Namespace door / namespace_2ab3cc97bdf86f18
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x98b
-// Size: 0x1ef
+// Checksum 0x0, Offset: 0x963
+// Size: 0x1f3
 function suspicious_door_found(event) {
     door = event.entity;
     if (isdefined(door.aiopener)) {

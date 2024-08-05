@@ -57,7 +57,7 @@ function dowhizby(attacker, distance, position, forward, effecttime) {
     }
     weapon = attacker getcurrentweapon();
     if (isdefined(weapon) && weaponclass(weapon) == "sniper") {
-        scripts\mp\battlechatter_mp::trysaylocalsound(self, #"hash_cafa7ad7442c35d5", undefined, 0.2);
+        scripts\mp\battlechatter_mp::trysaylocalsound(self, #"bc_flavor_player_surprise", undefined, 0.2);
     }
     thread scripts\mp\battlechatter_mp::addrecentattacker(attacker);
     return effecttime;

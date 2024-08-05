@@ -1,7 +1,6 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 #using scripts\cp_mp\vehicles\vehicle.gsc;
 #using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using scripts\cp_mp\emp_debuff.gsc;
@@ -11,7 +10,7 @@
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x45e
+// Checksum 0x0, Offset: 0x562
 // Size: 0x28
 function emp_debuff_init() {
     if (issharedfuncdefined("emp", "init")) {
@@ -21,8 +20,8 @@ function emp_debuff_init() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x48e
-// Size: 0xe4
+// Checksum 0x0, Offset: 0x592
+// Size: 0xe3
 function function_662905d3b9455612(data, time, var_d5c235d554645bbc) {
     if (istrue(level.gameended)) {
         return;
@@ -54,7 +53,7 @@ function function_662905d3b9455612(data, time, var_d5c235d554645bbc) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57a
+// Checksum 0x0, Offset: 0x67d
 // Size: 0x51
 function function_7d6c1037f26ddb70() {
     if (scripts\cp_mp\vehicles\vehicle::isvehiclekillstreak()) {
@@ -70,7 +69,7 @@ function function_7d6c1037f26ddb70() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d3
+// Checksum 0x0, Offset: 0x6d6
 // Size: 0xa2
 function function_9100acf46355b9c2(data) {
     driver = data.var_51c985754e08a199;
@@ -87,7 +86,7 @@ function function_9100acf46355b9c2(data) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x67d
+// Checksum 0x0, Offset: 0x780
 // Size: 0x2d
 function function_eb40c1291f724432(data) {
     data.var_51c985754e08a199 setclientomnvar("ui_emp_button_combo_show", 0);
@@ -96,7 +95,7 @@ function function_eb40c1291f724432(data) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b2
+// Checksum 0x0, Offset: 0x7b5
 // Size: 0xf2
 function function_84ff119fbcaf315(data) {
     vehicle = data.victim;
@@ -117,7 +116,7 @@ function function_84ff119fbcaf315(data) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ac
+// Checksum 0x0, Offset: 0x8af
 // Size: 0x36
 function function_9cdf5e46cecefb7f(data) {
     level endon("game_ended");
@@ -128,7 +127,7 @@ function function_9cdf5e46cecefb7f(data) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ea
+// Checksum 0x0, Offset: 0x8ed
 // Size: 0x11d
 function function_70eaf1a1aca6a06c(notifylist) {
     self.victim endon("emp_cleared");
@@ -170,8 +169,8 @@ function function_70eaf1a1aca6a06c(notifylist) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x90f
-// Size: 0xb8
+// Checksum 0x0, Offset: 0xa12
+// Size: 0xb7
 function function_bcda60626641c653(driver, notifylist) {
     self.var_51c985754e08a199 = driver;
     self.var_51c985754e08a199 setclientomnvar("ui_emp_button_combo_show", 1);
@@ -190,7 +189,7 @@ function function_bcda60626641c653(driver, notifylist) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9cf
+// Checksum 0x0, Offset: 0xad1
 // Size: 0x29
 function function_e86117e40bd6ee1f() {
     level waittill_any_3("game_ended", "round_end_finished", "start_game_ended");
@@ -199,7 +198,7 @@ function function_e86117e40bd6ee1f() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa00
+// Checksum 0x0, Offset: 0xb02
 // Size: 0x5b
 function function_28045a145366e0c5() {
     maxduration = self.empdurationremaining;
@@ -214,7 +213,7 @@ function function_28045a145366e0c5() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa63
+// Checksum 0x0, Offset: 0xb65
 // Size: 0x3e
 function function_d5ea7c13a646e507() {
     self.empdurationremaining = 6;
@@ -226,7 +225,7 @@ function function_d5ea7c13a646e507() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaa9
+// Checksum 0x0, Offset: 0xbab
 // Size: 0x40
 function function_3e29189f38a017d(vehicle, driver) {
     driver endon("disconnect");
@@ -237,7 +236,7 @@ function function_3e29189f38a017d(vehicle, driver) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf1
+// Checksum 0x0, Offset: 0xbf3
 // Size: 0x52
 function function_1b1d64a1cc52aab5(data, time) {
     data.victim endon("death_or_disconnect");
@@ -247,7 +246,7 @@ function function_1b1d64a1cc52aab5(data, time) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4b
+// Checksum 0x0, Offset: 0xc4d
 // Size: 0x8d
 function function_f552430dc0f43d18(driver) {
     self.victim notify("waitButtonComboSuccess");
@@ -266,17 +265,17 @@ function function_f552430dc0f43d18(driver) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe0
-// Size: 0x36e
+// Checksum 0x0, Offset: 0xce2
+// Size: 0x33a
 function apply_emp_struct(data, disablehud, var_88cc62362fd687a2) {
-    assertex(isdefined(data), "<dev string:x1c>");
-    assertex(isdefined(data.attacker), "<dev string:x40>");
-    assertex(isdefined(data.victim), "<dev string:x6f>");
+    assertex(isdefined(data), "apply_emp() called without data.");
+    assertex(isdefined(data.attacker), "apply_emp() data does not have a .attacker.");
+    assertex(isdefined(data.victim), "apply_emp() data does not have a .victim.");
     if (issharedfuncdefined("perk", "hasPerk") && data.victim [[ getsharedfunc("perk", "hasPerk") ]]("specialty_emp_immunity")) {
         return;
     }
-    assertex(isdefined(data.objweapon), "<dev string:x9c>");
-    assertex(isweapon(data.objweapon), "<dev string:xcc>");
+    assertex(isdefined(data.objweapon), "apply_emp() data does not have a .objWeapon.");
+    assertex(isweapon(data.objweapon), "apply_emp() data.objWeapon is not a weapon object.");
     if (!isdefined(data.damage)) {
         data.damage = 1;
     }
@@ -310,12 +309,9 @@ function apply_emp_struct(data, disablehud, var_88cc62362fd687a2) {
     if (!isdefined(data.victim.empcount)) {
         data.victim.empcount = 0;
     }
-    if (!isdefined(data.reason)) {
-        data.reason = "DDOS";
-    }
     data.victim.empcount++;
     if (data.victim.empcount == 1) {
-        if (isent(data.victim) && isplayer(data.victim)) {
+        if (isplayer(data.victim)) {
             data.victim thread function_3839fb2d04a8d30e(data, disablehud, var_88cc62362fd687a2);
         }
         if (isdefined(data.victim.empstartcallback)) {
@@ -331,8 +327,8 @@ function apply_emp_struct(data, disablehud, var_88cc62362fd687a2) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf56
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x1024
+// Size: 0x53
 function remove_emp() {
     if (!isdefined(self.empcount)) {
         return;
@@ -342,7 +338,6 @@ function remove_emp() {
         self thread [[ self.empremovecallback ]]();
     }
     self notify("emp_removed");
-    self notify("stopLauncherCheck");
     if (self.empcount == 0) {
         clear_emp(0);
     }
@@ -350,24 +345,23 @@ function remove_emp() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb9
-// Size: 0x70
+// Checksum 0x0, Offset: 0x107f
+// Size: 0x5d
 function clear_emp(fromdeath) {
     if (isdefined(self.empcount)) {
         self.empcount = undefined;
-        if (isent(self) && isplayer(self)) {
+        if (isplayer(self)) {
             thread function_a50bae7a5c1bb54e(istrue(fromdeath));
         } else if (isdefined(self.empclearcallback)) {
             self thread [[ self.empclearcallback ]](istrue(fromdeath));
         }
         self notify("emp_cleared");
-        scripts\cp_mp\utility\weapon_utility::function_605b121f1fadd46c(1);
     }
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1031
+// Checksum 0x0, Offset: 0x10e4
 // Size: 0x6a
 function allow_emp(status) {
     if (isplayer(self)) {
@@ -378,7 +372,7 @@ function allow_emp(status) {
         self.empnotallowed = 0;
     }
     if (status) {
-        assertex(self.empnotallowed > 0, "<dev string:x102>");
+        assertex(self.empnotallowed > 0, "allow_emp(true) called when emp was already allowed.");
         self.empnotallowed--;
         return;
     }
@@ -387,20 +381,7 @@ function allow_emp(status) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10a3
-// Size: 0x25
-function function_5c534584bf65d24c() {
-    if (istrue(self.exploding)) {
-        return false;
-    } else if (istrue(self.empnotallowed)) {
-        return false;
-    }
-    return true;
-}
-
-// Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10d1
+// Checksum 0x0, Offset: 0x1156
 // Size: 0x38
 function can_be_empd() {
     if (isplayer(self)) {
@@ -415,7 +396,7 @@ function can_be_empd() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1112
+// Checksum 0x0, Offset: 0x1197
 // Size: 0x1b
 function is_empd() {
     return isdefined(self.empcount) && self.empcount > 0;
@@ -423,7 +404,7 @@ function is_empd() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1136
+// Checksum 0x0, Offset: 0x11bb
 // Size: 0x1e
 function emp_debuff_get_emp_count() {
     if (isdefined(self.empcount)) {
@@ -434,7 +415,7 @@ function emp_debuff_get_emp_count() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x115c
+// Checksum 0x0, Offset: 0x11e1
 // Size: 0x15
 function set_apply_emp_callback(applycallback) {
     self.empapplycallback = applycallback;
@@ -442,7 +423,7 @@ function set_apply_emp_callback(applycallback) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1179
+// Checksum 0x0, Offset: 0x11fe
 // Size: 0x15
 function set_start_emp_callback(startcallback) {
     self.empstartcallback = startcallback;
@@ -450,7 +431,7 @@ function set_start_emp_callback(startcallback) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1196
+// Checksum 0x0, Offset: 0x121b
 // Size: 0x15
 function set_clear_emp_callback(clearcallback) {
     self.empclearcallback = clearcallback;
@@ -458,7 +439,7 @@ function set_clear_emp_callback(clearcallback) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b3
+// Checksum 0x0, Offset: 0x1238
 // Size: 0x3d
 function add_emp_ent(ent) {
     data = function_879c1eec976b6d33();
@@ -469,7 +450,7 @@ function add_emp_ent(ent) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f9
+// Checksum 0x0, Offset: 0x127e
 // Size: 0x2b
 function play_scramble(var_fa88f8af6b2f44d0, isjammer) {
     if (istrue(isjammer)) {
@@ -481,7 +462,7 @@ function play_scramble(var_fa88f8af6b2f44d0, isjammer) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x122c
+// Checksum 0x0, Offset: 0x12b1
 // Size: 0x2b
 function stop_scramble(var_fa88f8af6b2f44d0, isjammer) {
     if (istrue(isjammer)) {
@@ -493,7 +474,7 @@ function stop_scramble(var_fa88f8af6b2f44d0, isjammer) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x125f
+// Checksum 0x0, Offset: 0x12e4
 // Size: 0x51
 function function_396e8b70241f9f10(var_fa88f8af6b2f44d0, var_699323575339379a) {
     if (istrue(var_699323575339379a)) {
@@ -504,8 +485,8 @@ function function_396e8b70241f9f10(var_fa88f8af6b2f44d0, var_699323575339379a) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12b8
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x133d
+// Size: 0x5e
 function play_emp_scramble(var_fa88f8af6b2f44d0) {
     if (var_fa88f8af6b2f44d0 == 0) {
         return;
@@ -523,14 +504,14 @@ function play_emp_scramble(var_fa88f8af6b2f44d0) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x131f
+// Checksum 0x0, Offset: 0x13a3
 // Size: 0x80
 function stop_emp_scramble(var_fa88f8af6b2f44d0) {
     if (var_fa88f8af6b2f44d0 == 0) {
         return;
     }
-    assert(isdefined(self.empscramblelevels), "<dev string:x13a>");
-    assert(isdefined(self.empscramblelevels[var_fa88f8af6b2f44d0]), "<dev string:x168>");
+    assert(isdefined(self.empscramblelevels), "stopped scramble effect without playing it");
+    assert(isdefined(self.empscramblelevels[var_fa88f8af6b2f44d0]), "need to play scramble effect level before stopping it");
     self.empscramblelevels[var_fa88f8af6b2f44d0] = self.empscramblelevels[var_fa88f8af6b2f44d0] - 1;
     if (self.empscramblelevels[var_fa88f8af6b2f44d0] == 0) {
         self.empscramblelevels[var_fa88f8af6b2f44d0] = undefined;
@@ -540,21 +521,18 @@ function stop_emp_scramble(var_fa88f8af6b2f44d0) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x13a7
-// Size: 0x37
+// Checksum 0x0, Offset: 0x142b
+// Size: 0x1b
 function function_f7c6d776d032122f() {
     self.empscramblelevels = [];
     _update_emp_scramble();
-    if (isdefined(self.empclearcallback)) {
-        self thread [[ self.empclearcallback ]](0);
-    }
     self notify("emp_scramble_off");
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x13e6
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x144e
+// Size: 0x6d
 function private _update_emp_scramble() {
     highestlevel = 0;
     foreach (var_fa88f8af6b2f44d0, _ in self.empscramblelevels) {
@@ -567,8 +545,8 @@ function private _update_emp_scramble() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x145d
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x14c3
+// Size: 0x6d
 function private function_9884b1bc85070e0e() {
     highestlevel = 0;
     foreach (var_fa88f8af6b2f44d0, _ in self.var_a0d8d8b22da8ec61) {
@@ -581,8 +559,8 @@ function private function_9884b1bc85070e0e() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14d4
-// Size: 0x5f
+// Checksum 0x0, Offset: 0x1538
+// Size: 0x5e
 function function_1e2a945f433a4672(var_fa88f8af6b2f44d0) {
     if (var_fa88f8af6b2f44d0 == 0) {
         return;
@@ -600,14 +578,14 @@ function function_1e2a945f433a4672(var_fa88f8af6b2f44d0) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x153b
+// Checksum 0x0, Offset: 0x159e
 // Size: 0x80
 function function_f9646d0da61017ec(var_fa88f8af6b2f44d0) {
     if (var_fa88f8af6b2f44d0 == 0) {
         return;
     }
-    assert(isdefined(self.var_a0d8d8b22da8ec61), "<dev string:x1a1>");
-    assert(isdefined(self.var_a0d8d8b22da8ec61[var_fa88f8af6b2f44d0]), "<dev string:x1d6>");
+    assert(isdefined(self.var_a0d8d8b22da8ec61), "stopped jammer scramble effect without playing it");
+    assert(isdefined(self.var_a0d8d8b22da8ec61[var_fa88f8af6b2f44d0]), "need to play jammer scramble effect level before stopping it");
     self.var_a0d8d8b22da8ec61[var_fa88f8af6b2f44d0] = self.var_a0d8d8b22da8ec61[var_fa88f8af6b2f44d0] - 1;
     if (self.var_a0d8d8b22da8ec61[var_fa88f8af6b2f44d0] == 0) {
         self.var_a0d8d8b22da8ec61[var_fa88f8af6b2f44d0] = undefined;
@@ -617,7 +595,7 @@ function function_f9646d0da61017ec(var_fa88f8af6b2f44d0) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x15c3
+// Checksum 0x0, Offset: 0x1626
 // Size: 0x3b
 function play_scramble_for_player_until_cleared(player, var_fa88f8af6b2f44d0) {
     player scripts\cp_mp\emp_debuff::play_emp_scramble(var_fa88f8af6b2f44d0);
@@ -629,7 +607,7 @@ function play_scramble_for_player_until_cleared(player, var_fa88f8af6b2f44d0) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1606
+// Checksum 0x0, Offset: 0x1669
 // Size: 0x3b
 function function_9d31a370d60f86da(player, var_fa88f8af6b2f44d0) {
     player scripts\cp_mp\emp_debuff::play_emp_scramble(var_fa88f8af6b2f44d0);
@@ -641,7 +619,7 @@ function function_9d31a370d60f86da(player, var_fa88f8af6b2f44d0) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1649
+// Checksum 0x0, Offset: 0x16ac
 // Size: 0x33
 function private function_8ee0deb8fa69cbee(status) {
     if (issharedfuncdefined("emp", "setPlayerEMPImmune")) {
@@ -651,7 +629,7 @@ function private function_8ee0deb8fa69cbee(status) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1684
+// Checksum 0x0, Offset: 0x16e7
 // Size: 0x1e
 function private function_6bb2554b82b32d0f() {
     if (!isdefined(self.empcount)) {
@@ -662,7 +640,7 @@ function private function_6bb2554b82b32d0f() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x16aa
+// Checksum 0x0, Offset: 0x170d
 // Size: 0x36
 function private function_28b3cf4c66aab86f() {
     if (!scripts\cp_mp\utility\player_utility::_isalive()) {
@@ -676,8 +654,8 @@ function private function_28b3cf4c66aab86f() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x16e9
-// Size: 0x82
+// Checksum 0x0, Offset: 0x174c
+// Size: 0x7a
 function private function_3839fb2d04a8d30e(data, disablehud, var_88cc62362fd687a2) {
     if (issharedfuncdefined("emp", "onPlayerEMPed")) {
         self [[ getsharedfunc("emp", "onPlayerEMPed") ]](data);
@@ -689,12 +667,11 @@ function private function_3839fb2d04a8d30e(data, disablehud, var_88cc62362fd687a
         val::set("emp", "killstreaks", 0);
         val::set("emp", "supers", 0);
     }
-    thread function_8f356fd498d7a733();
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1773
+// Checksum 0x0, Offset: 0x17ce
 // Size: 0x23
 function private function_a50bae7a5c1bb54e(fromdeath) {
     self setempjammed(0);
@@ -705,8 +682,8 @@ function private function_a50bae7a5c1bb54e(fromdeath) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x179e
-// Size: 0x32
+// Checksum 0x0, Offset: 0x17f9
+// Size: 0x31
 function private function_bc44636b60d908b() {
     data = spawnstruct();
     level.emp = data;
@@ -715,7 +692,7 @@ function private function_bc44636b60d908b() {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x17d8
+// Checksum 0x0, Offset: 0x1832
 // Size: 0x1f
 function private function_879c1eec976b6d33() {
     if (!isdefined(level.emp)) {
@@ -725,27 +702,8 @@ function private function_879c1eec976b6d33() {
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
-// Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1800
-// Size: 0x55
-function private function_8f356fd498d7a733() {
-    self endon("death_or_disconnect");
-    self endon("stopLauncherCheck");
-    level endon("game_ended");
-    while (true) {
-        currentweapon = self getcurrentweapon();
-        if (weapon_utility::islockonlauncher(currentweapon)) {
-            scripts\cp_mp\utility\weapon_utility::function_605b121f1fadd46c(0);
-        } else {
-            scripts\cp_mp\utility\weapon_utility::function_605b121f1fadd46c(1);
-        }
-        wait 1;
-    }
-}
-
-// Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x185d
+// Checksum 0x0, Offset: 0x185a
 // Size: 0x7b
 function function_ecb3af104f3ab0f4(entity, applycallback, startcallback, clearcallback) {
     if (isdefined(applycallback)) {
@@ -767,8 +725,8 @@ function function_ecb3af104f3ab0f4(entity, applycallback, startcallback, clearca
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18e0
-// Size: 0x4c
+// Checksum 0x0, Offset: 0x18dd
+// Size: 0x4b
 function emp_debuff_deregister(entity) {
     if (!isdefined(level.var_7cfe8a4bd3bd978c)) {
         return;
@@ -785,7 +743,7 @@ function emp_debuff_deregister(entity) {
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x1934
+// Checksum 0x0, Offset: 0x1930
 // Size: 0x44
 function private function_c772d34f3b6b6273(ents, optionalorigin, var_5a946d15b7708ff0) {
     if (isdefined(optionalorigin)) {
@@ -801,8 +759,8 @@ function private function_c772d34f3b6b6273(ents, optionalorigin, var_5a946d15b77
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1981
-// Size: 0xa9d
+// Checksum 0x0, Offset: 0x197d
+// Size: 0x4fa
 function empdebuff_get_emp_ents(optionalorigin, optionalradius) {
     data = function_879c1eec976b6d33();
     radiussquared = undefined;
@@ -816,19 +774,19 @@ function empdebuff_get_emp_ents(optionalorigin, optionalradius) {
         }
     }
     foreach (mine in level.mines) {
-        if (isdefined(mine) && mine function_5c534584bf65d24c() && mine function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
+        if (isdefined(mine) && mine can_be_empd() && mine function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
             ents[ents.size] = mine;
         }
     }
     turrets = getentarray("misc_turret", "classname");
     foreach (turret in turrets) {
-        if (isdefined(turret) && turret function_5c534584bf65d24c() && turret function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
+        if (isdefined(turret) && turret can_be_empd() && turret function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
             ents[ents.size] = turret;
         }
     }
     if (isdefined(level.activekillstreaks)) {
         foreach (streak in level.activekillstreaks) {
-            if (isdefined(streak) && streak function_5c534584bf65d24c() && streak function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
+            if (isdefined(streak) && streak can_be_empd() && streak function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
                 ents[ents.size] = streak;
             }
         }
@@ -836,22 +794,15 @@ function empdebuff_get_emp_ents(optionalorigin, optionalradius) {
     if (isdefined(level.vehicle)) {
         foreach (vehicles in level.vehicle.instances) {
             foreach (vehicle in vehicles) {
-                if (isdefined(vehicle) && vehicle function_5c534584bf65d24c() && vehicle function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
+                if (isdefined(vehicle) && vehicle can_be_empd() && vehicle function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
                     ents[ents.size] = vehicle;
                 }
             }
         }
     }
-    if (isdefined(level.trackers)) {
-        foreach (tracker in level.trackers) {
-            if (isdefined(tracker) && tracker function_5c534584bf65d24c() && tracker function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                ents[ents.size] = tracker;
-            }
-        }
-    }
     if (isdefined(level.var_7cfe8a4bd3bd978c)) {
         foreach (equipment in level.var_7cfe8a4bd3bd978c) {
-            if (isdefined(equipment) && equipment function_5c534584bf65d24c() && equipment function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
+            if (isdefined(equipment) && equipment can_be_empd() && equipment function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
                 ents[ents.size] = equipment;
             }
         }
@@ -863,84 +814,16 @@ function empdebuff_get_emp_ents(optionalorigin, optionalradius) {
             }
         }
     }
-    if (isdefined(level.holdprop) && istrue(level.holdprop.canemp) && isdefined(level.var_f1073fbd45b59a06) && isdefined(level.var_f1073fbd45b59a06.var_df987907a483df89)) {
-        foreach (stronghold in level.var_f1073fbd45b59a06.var_df987907a483df89) {
-            if (isdefined(stronghold) && isdefined(stronghold.task) && isdefined(stronghold.task.holdpoint) && isdefined(stronghold.task.holdpoint.trigger) && stronghold.task.holdpoint.trigger function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                ents[ents.size] = stronghold.task.holdpoint.trigger;
-            }
-        }
-    }
-    if (istrue(level.var_684d782689230a50)) {
-        foreach (towerstruct in level.uavtowers) {
-            if (isdefined(towerstruct) && isdefined(towerstruct.uav_station) && towerstruct.uav_station function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                ents[ents.size] = towerstruct.uav_station;
-            }
-        }
-    }
-    if (istrue(level.var_3976c9c03dc06d9b) && isdefined(level.var_fc4bb27a820f54dd)) {
-        if (isdefined(level.var_fc4bb27a820f54dd.var_cd2de8814a52f22c)) {
-            foreach (var_5c5b88ce7ae1228e in level.var_fc4bb27a820f54dd.var_cd2de8814a52f22c) {
-                if (!istrue(var_5c5b88ce7ae1228e.b_occupied)) {
-                    continue;
-                }
-                if (var_5c5b88ce7ae1228e function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                    ents[ents.size] = var_5c5b88ce7ae1228e;
-                }
-            }
-        }
-        if (isdefined(level.var_fc4bb27a820f54dd.var_858ba27e4dbd844c)) {
-            foreach (var_e744c8777474039a in level.var_fc4bb27a820f54dd.var_858ba27e4dbd844c) {
-                if (var_e744c8777474039a function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                    ents[ents.size] = var_e744c8777474039a;
-                }
-            }
-        }
-    }
-    if (istrue(level.var_3976c9c03dc06d9b) && scripts\engine\utility::issharedfuncdefined(#"hash_7c77f410582a71b4", #"hash_3dd4fa0f710a2eff")) {
-        drones = [[ scripts\engine\utility::getsharedfunc(#"hash_7c77f410582a71b4", #"hash_3dd4fa0f710a2eff") ]]();
-        assert(isdefined(drones));
-        foreach (var_5c5b88ce7ae1228e in drones) {
-            if (!isdefined(var_5c5b88ce7ae1228e)) {
-                continue;
-            }
-            if (!istrue(var_5c5b88ce7ae1228e.b_occupied)) {
-                continue;
-            }
-            if (var_5c5b88ce7ae1228e function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                ents[ents.size] = var_5c5b88ce7ae1228e;
-            }
-        }
-    }
-    if (isdefined(level.deployablekiosks)) {
-        if (istrue(level.deployablekiosks.var_8bf814f9559f53)) {
-            if (isdefined(level.deployablekiosks.drones)) {
-                foreach (drone in level.deployablekiosks.drones) {
-                    if (drone function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                        ents[ents.size] = drone;
-                    }
-                }
-            }
-        }
-        if (istrue(level.deployablekiosks.var_aaa31c1e28a5663c)) {
-            if (isdefined(level.deployablekiosks.buystations)) {
-                foreach (buystation in level.deployablekiosks.buystations) {
-                    if (buystation function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                        ents[ents.size] = buystation;
-                    }
-                }
-            }
-        }
-    }
-    if (isdefined(level.var_c75aa35bb2f6a4e2)) {
-        foreach (object in level.var_c75aa35bb2f6a4e2) {
-            if (object function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
-                ents[ents.size] = object;
-            }
-        }
-    }
     foreach (player in level.players) {
         if (!isplayer(player) && player can_be_empd() && player function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
             ents[ents.size] = player;
+        }
+    }
+    if (isdefined(level.var_372bd0f371e44049)) {
+        foreach (var_1b91d895c80e84b2 in level.var_372bd0f371e44049) {
+            if (var_1b91d895c80e84b2 function_c772d34f3b6b6273(ents, optionalorigin, radiussquared)) {
+                ents[ents.size] = var_1b91d895c80e84b2;
+            }
         }
     }
     return ents;

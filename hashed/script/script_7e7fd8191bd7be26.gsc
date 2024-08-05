@@ -6,8 +6,8 @@
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ea
-// Size: 0x8d
+// Checksum 0x0, Offset: 0x1a3
+// Size: 0x8c
 function function_21bd6a8c4766ad5a(guy, useinplace, var_9b57bd8d7f3d4e6a) {
     if (!isdefined(guy) || !isalive(guy)) {
         printerror("Armor plate guy passed in undefined or dead!?");
@@ -31,8 +31,8 @@ function function_21bd6a8c4766ad5a(guy, useinplace, var_9b57bd8d7f3d4e6a) {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x280
-// Size: 0x1f4
+// Checksum 0x0, Offset: 0x238
+// Size: 0x1fa
 function function_63c85ab9240382f7(dyingguy, helper) {
     if (!isdefined(dyingguy) || !isalive(dyingguy)) {
         printerror("Dying guy passed in undefined or dead!?");
@@ -87,8 +87,8 @@ function function_63c85ab9240382f7(dyingguy, helper) {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x47c
-// Size: 0x84
+// Checksum 0x0, Offset: 0x43a
+// Size: 0x85
 function private function_5b3b464cc2cb45f4() {
     var_b4312e532eae7720 = function_96e4999ac9cb2936();
     if (!isdefined(var_b4312e532eae7720)) {
@@ -108,7 +108,7 @@ function private function_5b3b464cc2cb45f4() {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x509
+// Checksum 0x0, Offset: 0x4c8
 // Size: 0x1a
 function private function_d1957c81b78fce90(id) {
     self waittill("endusearmorplate");
@@ -117,7 +117,7 @@ function private function_d1957c81b78fce90(id) {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x52b
+// Checksum 0x0, Offset: 0x4ea
 // Size: 0x1a
 function private function_51084cecd9163520(id) {
     self waittill("end_revival");
@@ -126,7 +126,7 @@ function private function_51084cecd9163520(id) {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x54d
+// Checksum 0x0, Offset: 0x50c
 // Size: 0x1d
 function private function_4c0173cde37dfa4a(var_f4cd424dd91129f3) {
     self waittill("cap_exit_completed");
@@ -135,7 +135,7 @@ function private function_4c0173cde37dfa4a(var_f4cd424dd91129f3) {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 2, eflags: 0x4
-// Checksum 0x0, Offset: 0x572
+// Checksum 0x0, Offset: 0x531
 // Size: 0x40
 function private function_7640cb412c9e964c(levelscr, timeout) {
     self endon("death");
@@ -148,7 +148,7 @@ function private function_7640cb412c9e964c(levelscr, timeout) {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x5ba
+// Checksum 0x0, Offset: 0x579
 // Size: 0x29
 function private function_c0456e000364a1d7(guy) {
     if (!isdefined(guy.revive_bleedouttime)) {
@@ -158,7 +158,7 @@ function private function_c0456e000364a1d7(guy) {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x5eb
+// Checksum 0x0, Offset: 0x5aa
 // Size: 0x10
 function private function_96e4999ac9cb2936() {
     return getscriptbundle(%"hash_808ddc26c257759");
@@ -166,7 +166,7 @@ function private function_96e4999ac9cb2936() {
 
 // Namespace namespace_51941b5526d40882 / namespace_1ee1798c32f768c2
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x604
+// Checksum 0x0, Offset: 0x5c3
 // Size: 0x26
 function private printerror(msg) {
     /#

@@ -4381,7 +4381,7 @@ function function_2da93e2a35e2182f(agent, team, frontlineindex, laneKey, var_3e3
         agent setgoalvolumeauto(volume, volume.heading);
         agent.var_99f2752b6513c9dd = volume;
         if (!istrue(var_3e332762c9138001)) {
-            level thread scripts\mp\ai_behavior::function_5d96b05a065564e(agent);
+            level thread scripts\mp\ai_behavior::ai_watchForBadPath(agent);
             agent thread function_55c73da3bc1275f7(agent);
         }
         return 1;

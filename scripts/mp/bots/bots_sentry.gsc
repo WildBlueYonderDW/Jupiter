@@ -10,8 +10,8 @@
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x291
-// Size: 0xf8
+// Checksum 0x0, Offset: 0x221
+// Size: 0xf7
 function bot_killstreak_sentry(killstreak_info, killstreaks_array, can_use, targettype) {
     self endon("bot_sentry_exited");
     self endon("death_or_disconnect");
@@ -39,7 +39,7 @@ function bot_killstreak_sentry(killstreak_info, killstreaks_array, can_use, targ
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x392
+// Checksum 0x0, Offset: 0x321
 // Size: 0x106
 function bot_sentry_add_goal(killstreak_info, targetorigin, targettype, killstreaks_array) {
     placement = bot_sentry_choose_placement(killstreak_info, targetorigin, targettype, killstreaks_array);
@@ -60,7 +60,7 @@ function bot_sentry_add_goal(killstreak_info, targetorigin, targettype, killstre
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a0
+// Checksum 0x0, Offset: 0x42f
 // Size: 0x68
 function bot_sentry_should_abort(tactical_goal) {
     self endon("death_or_disconnect");
@@ -74,7 +74,7 @@ function bot_sentry_should_abort(tactical_goal) {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x511
+// Checksum 0x0, Offset: 0x4a0
 // Size: 0x6d
 function bot_sentry_cancel_failsafe() {
     self endon("death_or_disconnect");
@@ -91,7 +91,7 @@ function bot_sentry_cancel_failsafe() {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x586
+// Checksum 0x0, Offset: 0x515
 // Size: 0x14
 function bot_sentry_path_start(tactical_goal) {
     thread bot_sentry_path_thread(tactical_goal);
@@ -99,7 +99,7 @@ function bot_sentry_path_start(tactical_goal) {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a2
+// Checksum 0x0, Offset: 0x531
 // Size: 0xfc
 function bot_sentry_path_thread(tactical_goal) {
     self endon("stop_tactical_goal");
@@ -121,8 +121,8 @@ function bot_sentry_path_thread(tactical_goal) {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a6
-// Size: 0xef
+// Checksum 0x0, Offset: 0x635
+// Size: 0xf1
 function bot_sentry_choose_target(targettype) {
     defend_center = defend_valid_center();
     if (isdefined(defend_center)) {
@@ -152,8 +152,8 @@ function bot_sentry_choose_target(targettype) {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x79d
-// Size: 0x193
+// Checksum 0x0, Offset: 0x72e
+// Size: 0x195
 function bot_sentry_choose_placement(killstreak_info, targetorigin, targettype, killstreaks_array) {
     placement = undefined;
     nodes = getnodesinradius(targetorigin, 1000, 0, 512);
@@ -191,7 +191,7 @@ function bot_sentry_choose_placement(killstreak_info, targetorigin, targettype, 
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x939
+// Checksum 0x0, Offset: 0x8cc
 // Size: 0x47
 function bot_sentry_carried_obj() {
     if (isdefined(self.carriedsentry)) {
@@ -207,8 +207,8 @@ function bot_sentry_carried_obj() {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x988
-// Size: 0x28e
+// Checksum 0x0, Offset: 0x91b
+// Size: 0x296
 function bot_sentry_activate(tactical_goal) {
     result = 0;
     carried_obj = bot_sentry_carried_obj();
@@ -256,7 +256,7 @@ function bot_sentry_activate(tactical_goal) {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc1f
+// Checksum 0x0, Offset: 0xbba
 // Size: 0x1a
 function bot_send_place_notify() {
     self notify("place_sentry");
@@ -266,7 +266,7 @@ function bot_send_place_notify() {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc41
+// Checksum 0x0, Offset: 0xbdc
 // Size: 0x34
 function bot_send_cancel_notify() {
     self switchtoweapon("none");
@@ -279,7 +279,7 @@ function bot_send_cancel_notify() {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc7d
+// Checksum 0x0, Offset: 0xc18
 // Size: 0x21
 function bot_sentry_cancel(tactical_goal) {
     self notify("bot_sentry_canceled");
@@ -289,8 +289,8 @@ function bot_sentry_cancel(tactical_goal) {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xca6
-// Size: 0x9a
+// Checksum 0x0, Offset: 0xc41
+// Size: 0x99
 function bot_sentry_ensure_exit() {
     self notify("bot_sentry_abort_goal_think");
     self notify("bot_sentry_ensure_exit");
@@ -317,7 +317,7 @@ function bot_sentry_ensure_exit() {
 
 // Namespace bots_sentry / scripts\mp\bots\bots_sentry
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd48
+// Checksum 0x0, Offset: 0xce2
 // Size: 0x7e
 function bot_sentry_force_cancel() {
     if (isdefined(self.carriedsentry)) {

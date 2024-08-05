@@ -2,14 +2,13 @@
 #using scripts\common\utility.gsc;
 #using scripts\cp_mp\vehicles\vehicle.gsc;
 #using scripts\common\anim.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 
 #namespace namespace_66c684fea143fbfd;
 
 // Namespace namespace_66c684fea143fbfd / namespace_801fa17f47560d76
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x340
-// Size: 0x30
+// Checksum 0x0, Offset: 0x14c
+// Size: 0x2f
 function function_ccdcf48542c8a5b7(vehicleref) {
     vehicledata = function_29b4292c92443328(vehicleref);
     return isdefined(vehicledata) && isdefined(vehicledata.airdrop);
@@ -17,8 +16,8 @@ function function_ccdcf48542c8a5b7(vehicleref) {
 
 // Namespace namespace_66c684fea143fbfd / namespace_801fa17f47560d76
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x379
-// Size: 0x860
+// Checksum 0x0, Offset: 0x184
+// Size: 0x442
 function function_66c684fea143fbfd(vehicleref, spawndata, faildata) {
     vehicledata = function_29b4292c92443328(vehicleref);
     airdropdata = vehicledata.airdrop;
@@ -29,34 +28,27 @@ function function_66c684fea143fbfd(vehicleref, spawndata, faildata) {
         spawndata.angles = (0, 0, 0);
     }
     if (!isdefined(airdropdata)) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("Tried to airdrop a vehicle which doesn't support it");
         if (scripts\engine\utility::issharedfuncdefined(vehicleref, "spawnPostAirdrop")) {
             return [[ scripts\engine\utility::getsharedfunc(vehicleref, "spawnPostAirdrop") ]](spawndata, faildata);
         }
         return vehicle_spawn(vehicleref, spawndata, faildata);
     }
-    var_c374a91971cb3bfa = drop_to_ground(spawndata.origin);
-    if (var_c374a91971cb3bfa[2] > spawndata.origin[2]) {
-        spawndata.origin = var_c374a91971cb3bfa;
-    }
     scenenode = spawn("script_model", spawndata.origin);
     scenenode.angles = spawndata.angles;
     scenenode setmodel("tag_origin");
-    parachute_defined_id = level.scr_animtree["parachute"];
-    carrier_defined_id = level.scr_animtree["ac130"];
-    fakeveh_defined_id = level.scr_animtree[vehicleref];
     parachute = spawn("script_model", spawndata.origin);
     parachute.angles = spawndata.angles;
     parachute.animname = "parachute";
     parachute setmodel(airdropdata.parachutemodel);
-    parachute_assigned_id = parachute scripts\common\anim::setanimtree();
+    parachute scripts\common\anim::setanimtree();
     parachute forcenetfieldhighlod(1);
     parachute hide();
     carrier = spawn("script_model", spawndata.origin);
     carrier.angles = spawndata.angles;
     carrier.animname = "ac130";
     carrier setmodel(airdropdata.planemodel);
-    carrier_assigned_id = carrier scripts\common\anim::setanimtree();
+    carrier scripts\common\anim::setanimtree();
     carrier hide();
     fakevehicle = spawn("script_model", spawndata.origin);
     fakevehicle.angles = spawndata.angles;
@@ -66,7 +58,7 @@ function function_66c684fea143fbfd(vehicleref, spawndata, faildata) {
         model = spawndata.var_14cde247ac3313a4 + "::" + model;
     }
     fakevehicle setmodel(model);
-    fakeveh_assigned_id = fakevehicle scripts\common\anim::setanimtree();
+    fakevehicle scripts\common\anim::setanimtree();
     fakevehicle hide();
     scenenode.vehicle = fakevehicle;
     scenenode.parachute = parachute;
@@ -85,24 +77,6 @@ function function_66c684fea143fbfd(vehicleref, spawndata, faildata) {
     if (scenenode.carrierendtime > scenenode.endtime) {
         scenenode.endtime = scenenode.carrierendtime;
     }
-    parachute_assigned_id = default_to(parachute_assigned_id, -1);
-    carrier_assigned_id = default_to(carrier_assigned_id, -1);
-    fakeveh_assigned_id = default_to(fakeveh_assigned_id, -1);
-    /#
-        var_6225bc2716a52a = "<dev string:x53>" + parachute.animname + "<dev string:x6a>" + parachute_defined_id + "<dev string:x79>" + parachute_assigned_id + "<dev string:x89>" + function_bc75d50913a6465b(parachute) + "<dev string:x99>";
-        var_e72f3461789bf92d = "<dev string:x9f>" + carrier.animname + "<dev string:x6a>" + carrier_defined_id + "<dev string:x79>" + carrier_assigned_id + "<dev string:x89>" + function_bc75d50913a6465b(carrier) + "<dev string:x99>";
-        var_295c2a63a99e0a8a = "<dev string:xb4>" + fakevehicle.animname + "<dev string:x6a>" + fakeveh_defined_id + "<dev string:x79>" + fakeveh_assigned_id + "<dev string:x89>" + function_bc75d50913a6465b(fakevehicle) + "<dev string:xcd>";
-        println("<dev string:xd2>" + vehicleref + "<dev string:xe6>" + var_6225bc2716a52a + var_e72f3461789bf92d + var_295c2a63a99e0a8a);
-    #/
-    objective_type = "NA";
-    if (isdefined(level.zone) && isdefined(level.zone.objectivetype)) {
-        objective_type = "" + level.zone.objectivetype;
-    }
-    objective_id = "NA";
-    if (isdefined(level.zone) && isdefined(level.zone.name)) {
-        objective_id = "" + level.zone.name;
-    }
-    dlog_recordevent("dlog_event_vehicle_airdrop_debug", ["match_guid", function_94c7ae7049488358(), "matchtime_ms", scripts\cp_mp\utility\game_utility::gettimesincegamestart(), "map_name", getmapname(), "game_type", level.gametype, "objective_type", objective_type, "objective_id", objective_id, "round", default_to(game["roundsPlayed"], -1), "vehicle_ref", vehicleref, "pos_x", spawndata.origin[0], "pos_y", spawndata.origin[1], "pos_z", spawndata.origin[2], "parachute_animname", parachute.animname, "parachute_defined_id", parachute_defined_id, "parachute_assigned_id", parachute_assigned_id, "parachute_current_id", function_bc75d50913a6465b(parachute), "carrier_animname", carrier.animname, "carrier_defined_id", carrier_defined_id, "carrier_assigned_id", carrier_assigned_id, "carrier_current_id", function_bc75d50913a6465b(carrier), "fakeveh_animname", fakevehicle.animname, "fakeveh_defined_id", fakeveh_defined_id, "fakeveh_assigned_id", fakeveh_assigned_id, "fakeveh_current_id", function_bc75d50913a6465b(fakevehicle)]);
     scenenode thread function_c4f85850fb179639(vehicleref, spawndata, faildata, airdropdata);
     vehicle = spawndata waittill("spawn");
     return vehicle;
@@ -110,8 +84,8 @@ function function_66c684fea143fbfd(vehicleref, spawndata, faildata) {
 
 // Namespace namespace_66c684fea143fbfd / namespace_801fa17f47560d76
 // Params 4, eflags: 0x4
-// Checksum 0x0, Offset: 0xbe2
-// Size: 0x2a4
+// Checksum 0x0, Offset: 0x5cf
+// Size: 0x2a1
 function private function_c4f85850fb179639(vehicleref, spawndata, faildata, airdropdata) {
     scripts\common\anim::anim_first_frame_solo(self.vehicle, airdropdata.scenename);
     scripts\common\anim::anim_first_frame_solo(self.parachute, airdropdata.scenename);
@@ -157,8 +131,8 @@ function private function_c4f85850fb179639(vehicleref, spawndata, faildata, aird
 
 // Namespace namespace_66c684fea143fbfd / namespace_801fa17f47560d76
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xe8e
-// Size: 0x1ac
+// Checksum 0x0, Offset: 0x878
+// Size: 0x1ae
 function private function_b708213b1c5dc2a8(vehicleref, fakevehicle, spawndata, faildata, airdropdata) {
     self.vehicle = undefined;
     if (!isdefined(fakevehicle)) {
@@ -196,7 +170,7 @@ function private function_b708213b1c5dc2a8(vehicleref, fakevehicle, spawndata, f
 
 // Namespace namespace_66c684fea143fbfd / namespace_801fa17f47560d76
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1042
+// Checksum 0x0, Offset: 0xa2e
 // Size: 0xb7
 function private function_f694f53c094603a(airdropdata) {
     self endon("death");
@@ -218,7 +192,7 @@ function private function_f694f53c094603a(airdropdata) {
 
 // Namespace namespace_66c684fea143fbfd / namespace_801fa17f47560d76
 // Params 3, eflags: 0x4
-// Checksum 0x0, Offset: 0x1101
+// Checksum 0x0, Offset: 0xaed
 // Size: 0xbd
 function private airdrop_land(airdropdata, position, angles) {
     playfx(airdropdata.effect, position, anglestoforward(angles));

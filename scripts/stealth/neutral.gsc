@@ -13,7 +13,7 @@
 
 // Namespace neutral / scripts\stealth\neutral
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xed
+// Checksum 0x0, Offset: 0xc7
 // Size: 0xb2
 function main() {
     if (isdefined(self.stealth)) {

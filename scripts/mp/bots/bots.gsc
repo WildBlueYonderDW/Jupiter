@@ -22,11 +22,9 @@
 #using scripts\mp\bots\bots_gametype_war.gsc;
 #using scripts\mp\teams.gsc;
 #using scripts\mp\hostmigration.gsc;
-#using script_4c9bd9a3bf3f8cf7;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using scripts\mp\playerlogic.gsc;
 #using scripts\mp\menus.gsc;
-#using script_72af5a878a9d3397;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\mp\class.gsc;
 #using scripts\mp\perks\perkpackage.gsc;
@@ -42,7 +40,7 @@
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd1
+// Checksum 0x0, Offset: 0xc06
 // Size: 0xbb
 function main() {
     if (isdefined(level.createfx_enabled) && level.createfx_enabled) {
@@ -76,7 +74,7 @@ function main() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xd94
+    // Checksum 0x0, Offset: 0xcc9
     // Size: 0x9a
     function function_dc85300e25bf3deb() {
         level endon("<dev string:x1c>");
@@ -97,8 +95,8 @@ function main() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0xe36
-    // Size: 0x1ac
+    // Checksum 0x0, Offset: 0xd6b
+    // Size: 0x1b1
     function draw_box(pos, color, angles, size, alpha, depthtest) {
         if (!isdefined(size)) {
             size = 32;
@@ -137,7 +135,7 @@ function main() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0xfea
+    // Checksum 0x0, Offset: 0xf24
     // Size: 0x56
     function drawtraversalbox(pos, color, angles, size, alpha, depthtest) {
         pos = (pos[0], pos[1], pos[2] - size / 2);
@@ -146,8 +144,8 @@ function main() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1048
-    // Size: 0x201
+    // Checksum 0x0, Offset: 0xf82
+    // Size: 0x203
     function function_bcc5e2c3e16c7934(var_65aa68f5910e096) {
         var_d9d64c0994a5a7f6 = 0;
         navmeshpt = getclosestpointonnavmesh(self.origin);
@@ -156,7 +154,7 @@ function main() {
         }
         endnode = undefined;
         if (isdefined(self.target)) {
-            endnode = getnode(self.target, "<dev string:x2a>");
+            endnode = getnode(self.target, "<dev string:x27>");
         }
         if (isdefined(endnode)) {
             navmeshpt = getclosestpointonnavmesh(self.origin);
@@ -169,7 +167,7 @@ function main() {
         }
         color = (0, 1, 0);
         if (var_d9d64c0994a5a7f6) {
-            print3d(self.origin + (0, 0, 32), self.animscript + "<dev string:x38>", (1, 0, 0), 1);
+            print3d(self.origin + (0, 0, 32), self.animscript + "<dev string:x32>", (1, 0, 0), 1);
             color = (1, 0, 0);
         } else {
             print3d(self.origin + (0, 0, 32), self.animscript, (1, 1, 1), 1);
@@ -183,8 +181,8 @@ function main() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1251
-    // Size: 0xde
+    // Checksum 0x0, Offset: 0x118d
+    // Size: 0xe2
     function function_d59ab5740c283ae3(origin) {
         var_fb2fb6eb30927421 = getdvarint(@"hash_d46f7bf3970382f9");
         var_65aa68f5910e096 = 0;
@@ -203,7 +201,7 @@ function main() {
                     continue;
                 }
             }
-            if (!isdefined(node.animscript) || node.animscript == "<dev string:x41>") {
+            if (!isdefined(node.animscript) || node.animscript == "<dev string:x38>") {
                 continue;
             }
             node function_bcc5e2c3e16c7934(var_65aa68f5910e096);
@@ -214,7 +212,7 @@ function main() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1337
+// Checksum 0x0, Offset: 0x1277
 // Size: 0x32a
 function setup_callbacks() {
     level.bot_funcs = [];
@@ -261,7 +259,7 @@ function setup_callbacks() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1669
+// Checksum 0x0, Offset: 0x15a9
 // Size: 0x49
 function codecallback_leaderdialog(dialog, location) {
     if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["leader_dialog"])) {
@@ -271,7 +269,7 @@ function codecallback_leaderdialog(dialog, location) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ba
+// Checksum 0x0, Offset: 0x15fa
 // Size: 0x8c
 function init() {
     if (getdvarint(@"hash_abe45e35ef030a56") == 0) {
@@ -297,7 +295,7 @@ function init() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x174e
+// Checksum 0x0, Offset: 0x168e
 // Size: 0xc9
 function initbotlevelvariables() {
     if (!isdefined(level.crateownerusetime)) {
@@ -320,8 +318,8 @@ function initbotlevelvariables() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x181f
-// Size: 0x22a
+// Checksum 0x0, Offset: 0x175f
+// Size: 0x22b
 function initbotmapextents() {
     if (isdefined(level.teleportgetactivenodesfunc)) {
         all_nodes = [[ level.teleportgetactivenodesfunc ]]();
@@ -366,7 +364,7 @@ function initbotmapextents() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a51
+// Checksum 0x0, Offset: 0x1992
 // Size: 0x28
 function bot_post_teleport() {
     level.bot_variables_initialized = undefined;
@@ -377,7 +375,7 @@ function bot_post_teleport() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a81
+// Checksum 0x0, Offset: 0x19c2
 // Size: 0x4
 function shouldspawnbots() {
     return true;
@@ -385,8 +383,8 @@ function shouldspawnbots() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a8e
-// Size: 0xad
+// Checksum 0x0, Offset: 0x19cf
+// Size: 0xaa
 function refresh_existing_bots() {
     wait 1;
     foreach (player in level.players) {
@@ -405,15 +403,15 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1b43
-    // Size: 0xe2
+    // Checksum 0x0, Offset: 0x1a81
+    // Size: 0xe3
     function function_cfe352958059570a() {
         level endon("<dev string:x1c>");
-        setdevdvarifuninitialized(@"hash_f4c99c3f45339d3f", "<dev string:x41>");
+        setdevdvarifuninitialized(@"hash_f4c99c3f45339d3f", "<dev string:x38>");
         while (true) {
             value = getdvar(@"hash_f4c99c3f45339d3f");
-            if (value == "<dev string:x45>") {
-                setdevdvar(@"hash_f4c99c3f45339d3f", "<dev string:x41>");
+            if (value == "<dev string:x39>") {
+                setdevdvar(@"hash_f4c99c3f45339d3f", "<dev string:x38>");
                 var_7cd7a1678123ea91 = getdvarint(@"hash_d1ce2062f6b1971e");
                 var_4155625a9c67e873 = getdvarint(@"hash_f6a053d208e8b550");
                 setdvar(@"hash_d1ce2062f6b1971e", 0);
@@ -429,11 +427,11 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1c2d
-    // Size: 0x2a5
+    // Checksum 0x0, Offset: 0x1b6c
+    // Size: 0x2a8
     function function_13012f2ebb78e1ab() {
         level endon("<dev string:x1c>");
-        setdevdvarifuninitialized(@"hash_57843b1c39f06368", "<dev string:x41>");
+        setdevdvarifuninitialized(@"hash_57843b1c39f06368", "<dev string:x38>");
         setdevdvarifuninitialized(@"hash_f7fec3f23eed8a03", 17);
         setdevdvarifuninitialized(@"hash_c45117ed6fbd7c31", 6);
         setdevdvarifuninitialized(@"hash_120407f488061ef3", 180);
@@ -484,8 +482,8 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x1eda
-    // Size: 0x1b3
+    // Checksum 0x0, Offset: 0x1e1c
+    // Size: 0x1b4
     function function_fbc3db3d21bb0677() {
         level endon("<dev string:x1c>");
         while (!bot_bots_enabled_or_added()) {
@@ -496,7 +494,7 @@ function refresh_existing_bots() {
             level.var_3d7b4a188d5de49e[level.var_3d7b4a188d5de49e.size] = spawnstruct();
         }
         level.var_d65b83156825b08c = 0;
-        setdevdvarifuninitialized(@"hash_886b3374b1579604", "<dev string:x41>");
+        setdevdvarifuninitialized(@"hash_886b3374b1579604", "<dev string:x38>");
         for (;;) {
             if (getdvarint(@"bot_DisableAllAI")) {
                 wait 0.05;
@@ -504,22 +502,22 @@ function refresh_existing_bots() {
             }
             var_f52bbde72992fec0 = getdvar(@"hash_2113a3b9387cd9f0");
             function_3b9730a04944204();
-            if (var_f52bbde72992fec0 == "<dev string:x4a>") {
+            if (var_f52bbde72992fec0 == "<dev string:x3b>") {
                 function_16dc1bd6b6c0bc76();
-            } else if (var_f52bbde72992fec0 == "<dev string:x54>") {
+            } else if (var_f52bbde72992fec0 == "<dev string:x42>") {
                 function_7403595c45dccd77();
-            } else if (var_f52bbde72992fec0 == "<dev string:x63>") {
+            } else if (var_f52bbde72992fec0 == "<dev string:x4e>") {
                 function_16dc1bd6b6c0bc76();
                 function_7403595c45dccd77();
-            } else if (var_f52bbde72992fec0 == "<dev string:x7d>" || var_f52bbde72992fec0 == "<dev string:x91>") {
-                function_cabafea737e3a024(var_f52bbde72992fec0 == "<dev string:x7d>");
-            } else if (var_f52bbde72992fec0 == "<dev string:xb3>") {
+            } else if (var_f52bbde72992fec0 == "<dev string:x65>" || var_f52bbde72992fec0 == "<dev string:x76>") {
+                function_cabafea737e3a024(var_f52bbde72992fec0 == "<dev string:x65>");
+            } else if (var_f52bbde72992fec0 == "<dev string:x95>") {
                 function_d862b7eae98dfc13();
             }
-            if (getdvar(@"hash_886b3374b1579604") != "<dev string:x41>" && level.gametype == "<dev string:xc7>") {
-                setdevdvar(@"hash_886b3374b1579604", "<dev string:x41>");
+            if (getdvar(@"hash_886b3374b1579604") != "<dev string:x38>" && level.gametype == "<dev string:xa6>") {
+                setdevdvar(@"hash_886b3374b1579604", "<dev string:x38>");
                 human = function_35d942f93b6a3cfe()[0];
-                if (isalive(human) && human.team != "<dev string:xce>") {
+                if (isalive(human) && human.team != "<dev string:xaa>") {
                     level.var_e6522d43cff255f2 = human.origin;
                 }
             }
@@ -529,12 +527,12 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2095
+    // Checksum 0x0, Offset: 0x1fd8
     // Size: 0x85
     function function_3b9730a04944204() {
         for (i = 0; i < level.var_d65b83156825b08c; i++) {
             struct = level.var_3d7b4a188d5de49e[i];
-            if (isdefined(struct.defense_trigger) && struct.defense_trigger.classname != "<dev string:xdb>") {
+            if (isdefined(struct.defense_trigger) && struct.defense_trigger.classname != "<dev string:xb4>") {
                 botdebugdrawtrigger(0, struct.defense_trigger);
             }
         }
@@ -543,8 +541,8 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2122
-    // Size: 0x7c0
+    // Checksum 0x0, Offset: 0x2065
+    // Size: 0x7c6
     function function_16dc1bd6b6c0bc76() {
         assert(level.var_d65b83156825b08c == 0);
         foreach (player in level.participants) {
@@ -574,9 +572,9 @@ function refresh_existing_bots() {
                 }
                 var_f5ba03ba3a641936 = level.var_3d7b4a188d5de49e[level.var_d65b83156825b08c];
                 level.var_d65b83156825b08c++;
-                if (player.team == "<dev string:xed>") {
+                if (player.team == "<dev string:xc3>") {
                     var_f5ba03ba3a641936.cylinder_color = (0, 0, 1);
-                } else if (player.team == "<dev string:xf7>") {
+                } else if (player.team == "<dev string:xca>") {
                     var_f5ba03ba3a641936.cylinder_color = (1, 0, 0);
                 }
                 var_f5ba03ba3a641936.defense_team = player.team;
@@ -598,7 +596,7 @@ function refresh_existing_bots() {
                 }
             }
             if (isdefined(struct.defense_trigger)) {
-                if (struct.defense_trigger.classname != "<dev string:xdb>") {
+                if (struct.defense_trigger.classname != "<dev string:xb4>") {
                     botdebugdrawtrigger(1, struct.defense_trigger, struct.cylinder_color, 1);
                 } else {
                     bot_draw_cylinder(struct.defense_center, struct.defense_trigger.radius, struct.defense_trigger.height, 0.05, undefined, struct.cylinder_color, 1);
@@ -609,9 +607,9 @@ function refresh_existing_bots() {
             }
             foreach (bot in struct.bots) {
                 line_color = undefined;
-                if (bot.team == "<dev string:xed>") {
+                if (bot.team == "<dev string:xc3>") {
                     line_color = (0, 0, 1);
-                } else if (bot.team == "<dev string:xf7>") {
+                } else if (bot.team == "<dev string:xca>") {
                     line_color = (1, 0, 0);
                 }
                 lineend = bot.origin + (0, 0, 25);
@@ -649,8 +647,8 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x28ea
-    // Size: 0x371
+    // Checksum 0x0, Offset: 0x2833
+    // Size: 0x373
     function function_7403595c45dccd77() {
         foreach (player in level.participants) {
             if (player.health > 0 && isai(player) && isdefined(player.watch_nodes)) {
@@ -674,9 +672,9 @@ function refresh_existing_bots() {
                 if (isdefined(player.var_bfc743b5b4029ae3)) {
                     offset = (0, 0, 60);
                     playerstance = player getstance();
-                    if (playerstance == "<dev string:xff>") {
+                    if (playerstance == "<dev string:xcf>") {
                         offset = (0, 0, 40);
-                    } else if (playerstance == "<dev string:x109>") {
+                    } else if (playerstance == "<dev string:xd6>") {
                         offset = (0, 0, 11);
                     }
                     print3d(player.origin + offset, int(player.var_bfc743b5b4029ae3[player.team]), (0, 0, 1), 1, 1.1);
@@ -688,8 +686,8 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2c63
-    // Size: 0x2bf
+    // Checksum 0x0, Offset: 0x2bae
+    // Size: 0x2cb
     function function_cabafea737e3a024(var_2f4e4b921733b189) {
         if (!isdefined(level.entrance_indices) || !isdefined(level.entrance_points)) {
             return;
@@ -732,8 +730,8 @@ function refresh_existing_bots() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2f2a
-    // Size: 0x36e
+    // Checksum 0x0, Offset: 0x2e81
+    // Size: 0x36d
     function function_d862b7eae98dfc13() {
         if (!isdefined(level.entrance_indices) || !isdefined(level.precalculated_paths)) {
             return;
@@ -774,7 +772,7 @@ function refresh_existing_bots() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32a0
+// Checksum 0x0, Offset: 0x31f6
 // Size: 0x4d
 function bot_player_spawned() {
     if (istrue(self.pers[#"hash_c2cf97cc1cced6a1"])) {
@@ -788,8 +786,8 @@ function bot_player_spawned() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32f5
-// Size: 0xde
+// Checksum 0x0, Offset: 0x324b
+// Size: 0xdd
 function bot_set_loadout_class() {
     if (!isdefined(self.bot_class)) {
         if (!bot_gametype_chooses_class()) {
@@ -797,8 +795,8 @@ function bot_set_loadout_class() {
                 wait 0.05;
             }
             /#
-                debugclass = getdvar(@"hash_f126b40c4dd6c2c9", "<dev string:x41>");
-                if (isdefined(debugclass) && debugclass != "<dev string:x41>") {
+                debugclass = getdvar(@"hash_f126b40c4dd6c2c9", "<dev string:x38>");
+                if (isdefined(debugclass) && debugclass != "<dev string:x38>") {
                     self.bot_class = debugclass;
                     return;
                 }
@@ -817,8 +815,8 @@ function bot_set_loadout_class() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33db
-// Size: 0x6c
+// Checksum 0x0, Offset: 0x3330
+// Size: 0x6b
 function watch_players_connecting() {
     while (true) {
         player = level waittill("connected");
@@ -833,7 +831,7 @@ function watch_players_connecting() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x344f
+// Checksum 0x0, Offset: 0x33a3
 // Size: 0x36
 function bots_notify_on_spawn(player) {
     player endon("bots_human_disconnected");
@@ -845,7 +843,7 @@ function bots_notify_on_spawn(player) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x348d
+// Checksum 0x0, Offset: 0x33e1
 // Size: 0x22
 function bots_notify_on_disconnect(player) {
     player endon("bots_human_spawned");
@@ -855,7 +853,7 @@ function bots_notify_on_disconnect(player) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34b7
+// Checksum 0x0, Offset: 0x340b
 // Size: 0x36
 function bots_remove_from_array_on_notify(player) {
     player waittill_any_2("bots_human_spawned", "bots_human_disconnected");
@@ -864,7 +862,7 @@ function bots_remove_from_array_on_notify(player) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34f5
+// Checksum 0x0, Offset: 0x3449
 // Size: 0x49
 function monitor_pause_spawning() {
     level.players_waiting_to_join = [];
@@ -881,7 +879,7 @@ function monitor_pause_spawning() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3546
+// Checksum 0x0, Offset: 0x349a
 // Size: 0x34
 function bot_can_join_team(team) {
     if (matchmakinggame()) {
@@ -898,7 +896,7 @@ function bot_can_join_team(team) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3583
+// Checksum 0x0, Offset: 0x34d7
 // Size: 0x3c
 function bot_allowed_to_switch_teams() {
     if (isdefined(level.bots_disable_team_switching) && level.bots_disable_team_switching) {
@@ -912,8 +910,8 @@ function bot_allowed_to_switch_teams() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x35c8
-// Size: 0x2ab
+// Checksum 0x0, Offset: 0x351c
+// Size: 0x276
 function bot_connect_monitor() {
     level endon("game_ended");
     self notify("bot_connect_monitor");
@@ -927,10 +925,10 @@ function bot_connect_monitor() {
     for (;;) {
         /#
             if (getdvarint(@"hash_955d9d2c8102c6bc", -1) != -1) {
-                error("<dev string:x112>");
+                error("<dev string:xdc>");
             }
-            if (getdvar(@"hash_9e5da81386e98d36", "<dev string:x14c>") != "<dev string:x14c>") {
-                error("<dev string:x157>");
+            if (getdvar(@"hash_9e5da81386e98d36", "<dev string:x113>") != "<dev string:x113>") {
+                error("<dev string:x11b>");
             }
         #/
         if (level.pausing_bot_connect_monitor) {
@@ -938,7 +936,6 @@ function bot_connect_monitor() {
             continue;
         }
         function_824881e424da15b4();
-        namespace_c50b30148766aa59::function_cde96c5b28cc69f6();
         new_bots = function_2ce39e65a48d5ec0(var_29e1cb7568f77e66);
         for (i = 0; i < new_bots.size; i++) {
             if (new_bots[i].team == "free") {
@@ -946,7 +943,7 @@ function bot_connect_monitor() {
             } else {
                 new_bots[i].bot.bot_team = new_bots[i].team;
             }
-            if (scripts\cp_mp\utility\game_utility::function_ba5574c7f287c587() || scripts\cp_mp\utility\game_utility::function_6910a4c65560c44b()) {
+            if (scripts\cp_mp\utility\game_utility::function_ba5574c7f287c587()) {
                 var_5be31bbf808e8d4c = new_bots[i].squad;
                 new_bots[i].bot.bot_squad = var_5be31bbf808e8d4c;
             }
@@ -957,12 +954,10 @@ function bot_connect_monitor() {
                 class = "class" + randomint(3);
                 new_bots[i].bot notify("loadout_class_selected", class);
                 new_bots[i].bot notify("luinotifyserver", "class_select", class);
-            } else {
-                new_bots[i].bot.equipment_enabled = 1;
-                new_bots[i].bot thread [[ level.bot_funcs["think"] ]]();
+                continue;
             }
-            new_bots[i].bot namespace_92443376a63aa4bd::function_3283fdac29887de();
-            new_bots[i].bot function_81c6c4218188e7d8();
+            new_bots[i].bot.equipment_enabled = 1;
+            new_bots[i].bot thread [[ level.bot_funcs["think"] ]]();
         }
         if (new_bots.size > 0) {
             level notify("spawned_bots");
@@ -973,23 +968,8 @@ function bot_connect_monitor() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x387b
-// Size: 0x93
-function function_81c6c4218188e7d8() {
-    if (isdefined(self.xuid) && self.xuid != "") {
-        return;
-    }
-    if (isdefined(self.var_5876cd9fc14af731) && isdefined(self.var_5876cd9fc14af731.xuid) && self.var_5876cd9fc14af731.xuid != "") {
-        self.xuid = self.var_5876cd9fc14af731.xuid;
-        return;
-    }
-    self.xuid = self function_7a32b0201993d7f7();
-}
-
-// Namespace bots / scripts\mp\bots\bots
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3916
-// Size: 0x144
+// Checksum 0x0, Offset: 0x379a
+// Size: 0x142
 function bot_monitor_team_limits() {
     level endon("game_ended");
     self notify("bot_monitor_team_limits");
@@ -1018,8 +998,8 @@ function bot_monitor_team_limits() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a62
-// Size: 0xd2
+// Checksum 0x0, Offset: 0x38e4
+// Size: 0xcf
 function update_max_players_from_team_agents() {
     if (isdefined(level.agentarray) && istrue(level.var_96df914b8abdd34f)) {
         foreach (agent in level.agentarray) {
@@ -1032,7 +1012,7 @@ function update_max_players_from_team_agents() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b3c
+// Checksum 0x0, Offset: 0x39bb
 // Size: 0x3d
 function bot_get_player_team() {
     if (isdefined(self.team)) {
@@ -1046,8 +1026,8 @@ function bot_get_player_team() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b82
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x3a01
+// Size: 0x6c
 function bot_get_host_team() {
     foreach (player in level.players) {
         if (!isai(player) && player ishost()) {
@@ -1059,7 +1039,7 @@ function bot_get_host_team() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bfa
+// Checksum 0x0, Offset: 0x3a76
 // Size: 0xab
 function bot_get_human_picked_team() {
     havehost = 0;
@@ -1083,7 +1063,7 @@ function bot_get_human_picked_team() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cae
+// Checksum 0x0, Offset: 0x3b2a
 // Size: 0x85
 function player_picked_team(player) {
     if (isdefined(player.team) && player.team != "spectator") {
@@ -1100,7 +1080,7 @@ function player_picked_team(player) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d3c
+// Checksum 0x0, Offset: 0x3bb8
 // Size: 0xb0
 function bot_get_human_picked_class() {
     havehost = 0;
@@ -1124,8 +1104,8 @@ function bot_get_human_picked_class() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3df5
-// Size: 0xd8
+// Checksum 0x0, Offset: 0x3c71
+// Size: 0xd9
 function bot_client_counts() {
     clientcounts = [];
     for (i = 0; i < level.players.size; i++) {
@@ -1147,7 +1127,7 @@ function bot_client_counts() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ed6
+// Checksum 0x0, Offset: 0x3d53
 // Size: 0x32
 function cat_array_add(arraycounts, category) {
     if (!isdefined(arraycounts)) {
@@ -1162,7 +1142,7 @@ function cat_array_add(arraycounts, category) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f11
+// Checksum 0x0, Offset: 0x3d8e
 // Size: 0x26
 function cat_array_get(arraycounts, category) {
     if (!isdefined(arraycounts)) {
@@ -1176,8 +1156,8 @@ function cat_array_get(arraycounts, category) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x3f40
-// Size: 0x118
+// Checksum 0x0, Offset: 0x3dbd
+// Size: 0x115
 function move_bots_from_team_to_team(count, teamfrom, teamto, difficulty) {
     foreach (player in level.players) {
         if (!isdefined(player.team)) {
@@ -1202,8 +1182,8 @@ function move_bots_from_team_to_team(count, teamfrom, teamto, difficulty) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4060
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x3eda
+// Size: 0xbb
 function bots_update_difficulty(team, difficulty) {
     foreach (player in level.players) {
         if (!isdefined(player.team)) {
@@ -1219,7 +1199,7 @@ function bots_update_difficulty(team, difficulty) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4126
+// Checksum 0x0, Offset: 0x3f9d
 // Size: 0x3d
 function bot_drop() {
     assert(isbot(self));
@@ -1230,8 +1210,8 @@ function bot_drop() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x416b
-// Size: 0x134
+// Checksum 0x0, Offset: 0x3fe2
+// Size: 0x133
 function drop_bots(count, team) {
     bots = [];
     foreach (player in level.players) {
@@ -1260,7 +1240,7 @@ function drop_bots(count, team) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x42a7
+// Checksum 0x0, Offset: 0x411d
 // Size: 0x48
 function bot_lui_convert_team_to_int(team_name) {
     if (team_name == "axis") {
@@ -1277,27 +1257,27 @@ function bot_lui_convert_team_to_int(team_name) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x42f7
-// Size: 0x161
+// Checksum 0x0, Offset: 0x416d
+// Size: 0x160
 function spawn_bot_latent(team, botcallback, connecting) {
     var_f1b03ffe289c1025 = gettime() + 60000;
     while (!self canspawnbotortestclient()) {
         if (gettime() >= var_f1b03ffe289c1025) {
             kick(self.entity_number, "EXE/PLAYERKICKED_BOT_BALANCE");
             connecting.abort = 1;
-            println("<dev string:x1a3>");
+            println("<dev string:x164>");
             return;
         }
         wait 0.05;
         if (!isdefined(self)) {
             connecting.abort = 1;
-            println("<dev string:x1d6>");
+            println("<dev string:x194>");
             return;
         }
     }
     if (!isdefined(self)) {
         connecting.abort = 1;
-        println("<dev string:x216>");
+        println("<dev string:x1d1>");
         return;
     }
     self spawnbotortestclient();
@@ -1319,8 +1299,8 @@ function spawn_bot_latent(team, botcallback, connecting) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x4460
-// Size: 0x304
+// Checksum 0x0, Offset: 0x42d5
+// Size: 0x306
 function spawn_bots(num_bots, team, botcallback, var_a018df45312ba50f, var_dfc67eaaf62bc0, difficulty, fixedspawndata) {
     level.var_9bb484946bcc49b2 = 1;
     var_f1b03ffe289c1025 = gettime() + 15000;
@@ -1340,9 +1320,9 @@ function spawn_bots(num_bots, team, botcallback, var_a018df45312ba50f, var_dfc67
         if (!isdefined(bot)) {
             /#
                 if (gettime() >= var_f1b03ffe289c1025) {
-                    println("<dev string:x256>");
+                    println("<dev string:x20e>");
                 } else {
-                    println("<dev string:x296>");
+                    println("<dev string:x24b>");
                 }
             #/
             if (isdefined(var_a018df45312ba50f) && var_a018df45312ba50f) {
@@ -1374,7 +1354,7 @@ function spawn_bots(num_bots, team, botcallback, var_a018df45312ba50f, var_dfc67
     }
     /#
         if (gettime() >= var_f1b03ffe289c1025) {
-            println("<dev string:x2d4>");
+            println("<dev string:x286>");
         }
     #/
     connectedcomplete = 0;
@@ -1396,8 +1376,8 @@ function spawn_bots(num_bots, team, botcallback, var_a018df45312ba50f, var_dfc67
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x476c
-// Size: 0x58
+// Checksum 0x0, Offset: 0x45e3
+// Size: 0x57
 function bot_gametype_chooses_team() {
     if (matchmakinggame() && self.sessionteam != "none") {
         allow_choice = 0;
@@ -1411,7 +1391,7 @@ function bot_gametype_chooses_team() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47cd
+// Checksum 0x0, Offset: 0x4643
 // Size: 0xc
 function bot_gametype_chooses_class() {
     return istrue(level.bots_gametype_handles_class_choice);
@@ -1419,7 +1399,7 @@ function bot_gametype_chooses_class() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47e2
+// Checksum 0x0, Offset: 0x4658
 // Size: 0x1c
 function bot_is_ready_to_spawn() {
     if (!isdefined(self.classcallback)) {
@@ -1432,8 +1412,8 @@ function bot_is_ready_to_spawn() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4807
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x467d
+// Size: 0xa2
 function forcebotpos(bot, botteam) {
     var_a4b90ad02e7922ad = getdvarvector(@"hash_70d05793de60eab8");
     verticalbuffer = 12;
@@ -1452,76 +1432,46 @@ function forcebotpos(bot, botteam) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x48b0
-    // Size: 0x141
-    function function_84fead845cc1c1ff(var_c9176bb4dce2c995) {
-        hostplayer = function_35d942f93b6a3cfe()[0];
-        setspawnweap = 0;
-        botweapon = var_c9176bb4dce2c995 getcurrentweapon();
-        playerweapon = hostplayer getcurrentweapon();
-        if (isdefined(playerweapon) && botweapon != playerweapon) {
-            if (var_c9176bb4dce2c995 isreloading()) {
-                wait 3;
-                var_c9176bb4dce2c995 takeallweapons();
-                var_c9176bb4dce2c995 scripts\mp\class::loadout_updateplayer(hostplayer.var_240e299e201c6a39, hostplayer.classstruct, hostplayer.class, setspawnweap, 0);
-            } else {
-                var_c9176bb4dce2c995 takeallweapons();
-                var_c9176bb4dce2c995 scripts\mp\class::loadout_updateplayer(hostplayer.var_240e299e201c6a39, hostplayer.classstruct, hostplayer.class, setspawnweap, 0);
-            }
-        }
-        if (getdvarint(@"hash_17bb7ff71c139bfe")) {
-            var_c0afad358ef6d08 = hostplayer.operatorcustomization.skinref;
-            setdvar(@"hash_803cefdbe23f6bfe", var_c0afad358ef6d08);
-        } else {
-            var_c0afad358ef6d08 = getdvar(@"hash_803cefdbe23f6bfe");
-        }
-        if (var_c9176bb4dce2c995.operatorcustomization.skinref != var_c0afad358ef6d08) {
-            var_c9176bb4dce2c995 scripts\mp\teams::createoperatorcustomization();
-        }
-    }
-
-    // Namespace bots / scripts\mp\bots\bots
-    // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x49f9
-    // Size: 0x89d
+    // Checksum 0x0, Offset: 0x4727
+    // Size: 0x961
     function function_214bc4c1c6c204d2(var_c9176bb4dce2c995) {
-        self endon("<dev string:x2f3>");
-        self endon("<dev string:x301>");
+        self endon("<dev string:x2a2>");
+        self endon("<dev string:x2ad>");
         hostplayer = function_35d942f93b6a3cfe()[0];
         level.var_f55a78de40f16b44 = 1;
         function_9a9702fa32785f74(var_c9176bb4dce2c995);
-        stancetype = ["<dev string:x30a>", "<dev string:x31d>", "<dev string:x32f>", "<dev string:x340>", "<dev string:x35b>", "<dev string:x36e>", "<dev string:x382>"];
+        stancetype = ["<dev string:x2b3>", "<dev string:x2c3>", "<dev string:x2d2>", "<dev string:x2e0>", "<dev string:x2f8>", "<dev string:x308>", "<dev string:x319>"];
         switch (stancetype[(var_c9176bb4dce2c995.var_5ce930ab383b8a15 - 1) % 7]) {
         case #"hash_f0b12bd1282d46ee": 
-            if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+            if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                 var_c9176bb4dce2c995 setorigin((-978, -638, 132));
             } else {
                 var_c9176bb4dce2c995 setorigin((-1140, -638, 132));
             }
             break;
         case #"hash_f4e2152a6151d486": 
-            if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+            if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                 var_c9176bb4dce2c995 setorigin((-569, -518, 132));
             } else {
                 var_c9176bb4dce2c995 setorigin((-500, -518, 132));
             }
             break;
         case #"hash_f07871b4fc312ea4": 
-            if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+            if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                 var_c9176bb4dce2c995 setorigin((-425, -518, 132));
             } else {
                 var_c9176bb4dce2c995 setorigin((-350, -518, 132));
             }
             break;
         case #"hash_86607b8541f5dee5": 
-            if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+            if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                 var_c9176bb4dce2c995 setorigin((-1575, 279, 130));
             } else {
                 var_c9176bb4dce2c995 setorigin((-290, -518, 132));
             }
             break;
         case #"hash_36b8a15fa0645e0f": 
-            if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+            if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                 var_c9176bb4dce2c995 setorigin((-1675, 279, 130));
             }
             break;
@@ -1531,126 +1481,139 @@ function forcebotpos(bot, botteam) {
             setspawnweap = 0;
             botweapon = var_c9176bb4dce2c995 getcurrentweapon();
             playerweapon = hostplayer getcurrentweapon();
-            function_84fead845cc1c1ff(var_c9176bb4dce2c995);
+            if (isdefined(playerweapon) && botweapon != playerweapon) {
+                if (var_c9176bb4dce2c995 isreloading()) {
+                    wait 3;
+                    var_c9176bb4dce2c995 takeallweapons();
+                    var_c9176bb4dce2c995 scripts\mp\class::loadout_updateplayer(hostplayer.var_240e299e201c6a39, hostplayer.classstruct, hostplayer.class, setspawnweap, 0);
+                } else {
+                    var_c9176bb4dce2c995 takeallweapons();
+                    var_c9176bb4dce2c995 scripts\mp\class::loadout_updateplayer(hostplayer.var_240e299e201c6a39, hostplayer.classstruct, hostplayer.class, setspawnweap, 0);
+                }
+            }
+            var_c0afad358ef6d08 = getdvar(@"hash_803cefdbe23f6bfe");
+            if (var_c9176bb4dce2c995.operatorcustomization.skinref != var_c0afad358ef6d08) {
+                var_c9176bb4dce2c995 scripts\mp\teams::createoperatorcustomization();
+            }
             switch (stancetype[(var_c9176bb4dce2c995.var_5ce930ab383b8a15 - 1) % 7]) {
             case #"hash_f0b12bd1282d46ee": 
-                if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+                if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                     var_c9176bb4dce2c995 setplayerangles((0, 90, 0));
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
                     var_c9176bb4dce2c995 givemaxammo(botweapon);
                     var_c9176bb4dce2c995 setweaponammostock(botweapon, 300, 1);
-                    var_c9176bb4dce2c995 botpressbutton("<dev string:x3a4>");
+                    var_c9176bb4dce2c995 botpressbutton("<dev string:x335>");
                     var_c9176bb4dce2c995 forcereloading();
                 } else {
                     var_c9176bb4dce2c995 setplayerangles((0, 90, 0));
                     var_c9176bb4dce2c995 givemaxammo(botweapon);
-                    var_c9176bb4dce2c995 botpressbutton("<dev string:x3a4>", 30);
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
+                    var_c9176bb4dce2c995 botpressbutton("<dev string:x335>", 30);
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
                 }
                 break;
             case #"hash_f4e2152a6151d486": 
-                if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+                if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                     var_c9176bb4dce2c995 setplayerangles((0, 90, 0));
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x109>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:xd6>");
                     wait 3;
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
                 } else {
                     var_c9176bb4dce2c995 setplayerangles((0, 90, 0));
-                    var_c9176bb4dce2c995 botsetstance("<dev string:xff>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:xcf>");
                     wait 3;
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
                 }
                 break;
             case #"hash_f07871b4fc312ea4": 
-                if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+                if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                     var_c9176bb4dce2c995 setplayerangles((0, 90, 0));
-                    var_c9176bb4dce2c995 botpressbutton("<dev string:x3ae>");
+                    var_c9176bb4dce2c995 botpressbutton("<dev string:x33c>");
                 } else {
                     var_c9176bb4dce2c995 setplayerangles((0, 90, 0));
-                    var_c9176bb4dce2c995 botpressbutton("<dev string:x3b7>");
+                    var_c9176bb4dce2c995 botpressbutton("<dev string:x342>");
                 }
                 break;
             case #"hash_86607b8541f5dee5": 
-                if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+                if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                     wait 1;
                     objweapon = hostplayer.offhandweapon.basename;
                     var_c9176bb4dce2c995 giveandfireoffhand(objweapon);
                     wait 2;
                     superweaponname = level.superglobals.staticsuperdata[hostplayer.loadoutfieldupgrade1].weapon;
                     if (!isdefined(superweaponname)) {
-                        superweaponname = "<dev string:x3bf>";
+                        superweaponname = "<dev string:x347>";
                     }
                     superweapon = makeweapon(superweaponname);
-                    var_c9176bb4dce2c995 scripts\mp\perks\perkpackage::perkpackage_givedebug("<dev string:x3d3>");
+                    var_c9176bb4dce2c995 scripts\mp\perks\perkpackage::perkpackage_givedebug("<dev string:x358>");
                     if (isdefined(var_c9176bb4dce2c995.super)) {
-                        if (!isnullweapon(superweapon) && superweapon.basename != "<dev string:x3bf>") {
+                        if (!isnullweapon(superweapon) && superweapon.basename != "<dev string:x347>") {
                             var_c9176bb4dce2c995 giveandfireoffhandreliable(superweapon);
                         }
                         var_c9176bb4dce2c995 thread scripts\mp\supers::trysuperusebegin(superweapon);
                     }
                 } else {
                     var_c9176bb4dce2c995 setplayerangles((0, 90, 0));
-                    var_c9176bb4dce2c995 botpressbutton("<dev string:x3e6>", 2.5);
+                    var_c9176bb4dce2c995 botpressbutton("<dev string:x368>", 2.5);
                 }
                 break;
             case #"hash_c74bdb650448859e": 
-                if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
+                if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
                     waitframe();
-                    var_c9176bb4dce2c995 botsetscriptgoal((359, -421, 130), 5, "<dev string:x3f1>", undefined, undefined);
-                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x3fd>", "<dev string:x405>");
+                    var_c9176bb4dce2c995 botsetscriptgoal((359, -421, 130), 5, "<dev string:x370>", undefined, undefined);
+                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x379>", "<dev string:x37e>");
                     var_c9176bb4dce2c995 botlookatpoint((361, -531, 130), 3);
                     var_c9176bb4dce2c995 forcemantle();
                     wait 1;
-                    var_c9176bb4dce2c995 botsetscriptgoal((363, -483, 170), 10, "<dev string:x3f1>", undefined, undefined);
+                    var_c9176bb4dce2c995 botsetscriptgoal((363, -483, 170), 10, "<dev string:x370>", undefined, undefined);
                 } else {
-                    var_c9176bb4dce2c995 botsetflag("<dev string:x411>", 1);
-                    var_c9176bb4dce2c995 botsetflag("<dev string:x421>", 1);
-                    var_c9176bb4dce2c995 botsetscriptgoal((-867, 355, 130), 10, "<dev string:x3f1>", undefined, undefined);
-                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x3fd>", "<dev string:x405>");
-                    var_c9176bb4dce2c995 botsetscriptgoal((-540, 355, 130), 10, "<dev string:x3f1>", undefined, undefined);
-                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x3fd>", "<dev string:x405>");
+                    var_c9176bb4dce2c995 botsetflag("<dev string:x387>", 1);
+                    var_c9176bb4dce2c995 botsetflag("<dev string:x394>", 1);
+                    var_c9176bb4dce2c995 botsetscriptgoal((-867, 355, 130), 10, "<dev string:x370>", undefined, undefined);
+                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x379>", "<dev string:x37e>");
+                    var_c9176bb4dce2c995 botsetscriptgoal((-540, 355, 130), 10, "<dev string:x370>", undefined, undefined);
+                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x379>", "<dev string:x37e>");
                 }
                 break;
             case #"hash_284de335e850af7a": 
-                if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
-                    var_c9176bb4dce2c995 botsetscriptgoal((969, -198, 130), 10, "<dev string:x3f1>", undefined, undefined);
-                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x3fd>", "<dev string:x405>");
+                if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
+                    var_c9176bb4dce2c995 botsetscriptgoal((969, -198, 130), 10, "<dev string:x370>", undefined, undefined);
+                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x379>", "<dev string:x37e>");
                     var_c9176bb4dce2c995 botlookatpoint((1054, -200, 266), 3);
-                    var_c9176bb4dce2c995 botsetscriptgoal((1027, -201, 266), 10, "<dev string:x3f1>", undefined, undefined);
-                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x3fd>", "<dev string:x405>");
+                    var_c9176bb4dce2c995 botsetscriptgoal((1027, -201, 266), 10, "<dev string:x370>", undefined, undefined);
+                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x379>", "<dev string:x37e>");
                 } else {
                     var_c9176bb4dce2c995 setorigin((1012, 358, 130));
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
                     var_c9176bb4dce2c995 botlookatpoint((1008, 438, 130), 3);
-                    var_c9176bb4dce2c995 botpressbutton("<dev string:x444>", 2);
+                    var_c9176bb4dce2c995 botpressbutton("<dev string:x3b4>", 2);
                     wait 3;
                     var_c9176bb4dce2c995 botlookatpoint((1007, 350, 378), 3);
-                    var_c9176bb4dce2c995 botpressbutton("<dev string:x444>", 2);
+                    var_c9176bb4dce2c995 botpressbutton("<dev string:x3b4>", 2);
                     wait 3;
                 }
                 break;
             case #"hash_36b8a15fa0645e0f": 
-                if (var_c9176bb4dce2c995.bot_team == "<dev string:xed>") {
+                if (var_c9176bb4dce2c995.bot_team == "<dev string:xc3>") {
                     wait 1;
                     objweapon1 = hostplayer.offhandinventory[1].basename;
                     var_c9176bb4dce2c995 giveandfireoffhand(objweapon1);
                 } else {
                     var_c9176bb4dce2c995 allowprone(1);
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
-                    var_c9176bb4dce2c995 botsetscriptgoal((-867, 199, 130), 10, "<dev string:x3f1>", undefined, undefined);
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
+                    var_c9176bb4dce2c995 botsetscriptgoal((-867, 199, 130), 10, "<dev string:x370>", undefined, undefined);
                     wait 1;
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x109>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:xd6>");
                     wait 0.5;
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
-                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x3fd>", "<dev string:x405>");
-                    var_c9176bb4dce2c995 botsetscriptgoal((-540, 199, 130), 10, "<dev string:x3f1>", undefined, undefined);
-                    var_c9176bb4dce2c995 botsetflag("<dev string:x411>", 1);
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
+                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x379>", "<dev string:x37e>");
+                    var_c9176bb4dce2c995 botsetscriptgoal((-540, 199, 130), 10, "<dev string:x370>", undefined, undefined);
+                    var_c9176bb4dce2c995 botsetflag("<dev string:x387>", 1);
                     wait 1;
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x109>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:xd6>");
                     wait 0.5;
-                    var_c9176bb4dce2c995 botsetstance("<dev string:x39b>");
-                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x3fd>", "<dev string:x405>");
+                    var_c9176bb4dce2c995 botsetstance("<dev string:x32f>");
+                    var_c9176bb4dce2c995 waittill_any_2("<dev string:x379>", "<dev string:x37e>");
                 }
                 break;
             }
@@ -1659,7 +1622,7 @@ function forcebotpos(bot, botteam) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x529e
+    // Checksum 0x0, Offset: 0x5090
     // Size: 0x5
     function function_6a932d3bcaaa7623() {
         
@@ -1667,16 +1630,16 @@ function forcebotpos(bot, botteam) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x52ab
+    // Checksum 0x0, Offset: 0x509d
     // Size: 0xa0
     function function_9a9702fa32785f74(bot) {
         bot setplayerangles((0, 266, 0));
-        bot endon("<dev string:x301>");
-        bot botsetflag("<dev string:x44b>", 1);
-        bot botsetflag("<dev string:x462>", 1);
+        bot endon("<dev string:x2ad>");
+        bot botsetflag("<dev string:x3b8>", 1);
+        bot botsetflag("<dev string:x3cc>", 1);
         bot botsetawareness(0);
-        bot botsetflag("<dev string:x472>", 1);
-        bot botsetflag("<dev string:x488>", 1);
+        bot botsetflag("<dev string:x3d9>", 1);
+        bot botsetflag("<dev string:x3ec>", 1);
         bot.personality_update_function = &function_6a932d3bcaaa7623;
         setdvar(@"hash_91a24c408f08888b", 1);
         setdvar(@"hash_e39c6d129db1722", 1);
@@ -1686,8 +1649,8 @@ function forcebotpos(bot, botteam) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5353
-// Size: 0x4a1
+// Checksum 0x0, Offset: 0x5145
+// Size: 0x483
 function bot_think() {
     self notify("bot_think");
     self endon("bot_think");
@@ -1755,15 +1718,12 @@ function bot_think() {
                 self.bwaitingforteamselect = undefined;
                 self.bot_team = team;
             }
-            if (scripts\cp_mp\utility\game_utility::function_fa7bfcc1d68b7b73() || scripts\cp_mp\utility\game_utility::function_6910a4c65560c44b()) {
+            if (scripts\cp_mp\utility\game_utility::function_fa7bfcc1d68b7b73()) {
                 var_27eb9f95564a944d = "botsight_mgl_br";
             } else {
                 var_27eb9f95564a944d = "botsight";
             }
             self function_95d5375059c2a022(var_27eb9f95564a944d, 1);
-            if (!threatbiasgroupexists("Bots")) {
-                createthreatbiasgroup("Bots");
-            }
             self setthreatbiasgroup("Bots");
             if (isdefined(level.bot_funcs) && isdefined(level.bot_funcs["know_enemies_on_start"])) {
                 self thread [[ level.bot_funcs["know_enemies_on_start"] ]]();
@@ -1818,7 +1778,7 @@ function bot_think() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x57fc
+// Checksum 0x0, Offset: 0x55d0
 // Size: 0x23
 function bot_modify_behavior_from_tweakables() {
     if (scripts\mp\tweakables::gettweakablevalue("game", "onlyheadshots")) {
@@ -1830,11 +1790,11 @@ function bot_modify_behavior_from_tweakables() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5827
-    // Size: 0x36
+    // Checksum 0x0, Offset: 0x55fb
+    // Size: 0x35
     function function_70008d3ab47d171d() {
-        debug_personality = getdvar(@"hash_ef7ffe5706136ad9", "<dev string:x14c>");
-        if (debug_personality != "<dev string:x14c>") {
+        debug_personality = getdvar(@"hash_ef7ffe5706136ad9", "<dev string:x113>");
+        if (debug_personality != "<dev string:x113>") {
             bot_set_personality(debug_personality);
         }
     }
@@ -1843,7 +1803,7 @@ function bot_modify_behavior_from_tweakables() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5865
+// Checksum 0x0, Offset: 0x5638
 // Size: 0x87
 function respawn_watcher() {
     self endon("started_spawnPlayer");
@@ -1864,8 +1824,8 @@ function respawn_watcher() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x58f4
-// Size: 0xd0
+// Checksum 0x0, Offset: 0x56c7
+// Size: 0xd6
 function bot_get_rank_xp() {
     difficulty = self botgetdifficulty();
     persname = "bot_rank_" + difficulty;
@@ -1884,7 +1844,7 @@ function bot_get_rank_xp() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59cd
+// Checksum 0x0, Offset: 0x57a6
 // Size: 0x14
 function bot_3d_sighting_model(associatedent) {
     thread bot_3d_sighting_model_thread(associatedent);
@@ -1892,7 +1852,7 @@ function bot_3d_sighting_model(associatedent) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x59e9
+// Checksum 0x0, Offset: 0x57c2
 // Size: 0x9c
 function bot_3d_sighting_model_thread(associatedent) {
     associatedent endon("disconnect");
@@ -1914,8 +1874,8 @@ function bot_3d_sighting_model_thread(associatedent) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a8d
-// Size: 0x279
+// Checksum 0x0, Offset: 0x5866
+// Size: 0x278
 function bot_random_ranks_for_difficulty(difficulty) {
     result = [];
     result["rank"] = 0;
@@ -1934,7 +1894,7 @@ function bot_random_ranks_for_difficulty(difficulty) {
         level.bot_rnd_rank["veteran"][0] = 40;
         level.bot_rnd_rank["veteran"][1] = 54;
     }
-    assertex(level.bot_rnd_rank["<dev string:x49a>"][1] == level.var_e0e30c15f736bd96, "<dev string:x4a5>");
+    assertex(level.bot_rnd_rank["veteran"][1] == level.var_e0e30c15f736bd96, "Max level has changed, please adjust values in bot_random_ranks_for_difficulty()");
     if (!isdefined(level.bot_rnd_prestige)) {
         level.bot_rnd_prestige = [];
         level.bot_rnd_prestige["recruit"][0] = 0;
@@ -1955,7 +1915,7 @@ function bot_random_ranks_for_difficulty(difficulty) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d0f
+// Checksum 0x0, Offset: 0x5ae7
 // Size: 0xd
 function function_9bd84cede4fe8f24(crate) {
     return true;
@@ -1963,7 +1923,7 @@ function function_9bd84cede4fe8f24(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d25
+// Checksum 0x0, Offset: 0x5afd
 // Size: 0x34
 function crate_can_use_always(crate) {
     if (isagent(self) && !isdefined(crate.boxtype)) {
@@ -1977,8 +1937,8 @@ function crate_can_use_always(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d62
-// Size: 0x9d
+// Checksum 0x0, Offset: 0x5b3a
+// Size: 0x9e
 function get_human_player() {
     result = undefined;
     players = getentarray("player", "classname");
@@ -1996,8 +1956,8 @@ function get_human_player() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5e08
-    // Size: 0x80
+    // Checksum 0x0, Offset: 0x5be1
+    // Size: 0x7e
     function function_35d942f93b6a3cfe() {
         humans = [];
         foreach (player in level.players) {
@@ -2010,13 +1970,13 @@ function get_human_player() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5e90
-    // Size: 0x80
+    // Checksum 0x0, Offset: 0x5c67
+    // Size: 0x7f
     function function_9ea1b3409311f518() {
         humans = function_35d942f93b6a3cfe();
         human_spectators = [];
         foreach (player in humans) {
-            if (player.team == "<dev string:xce>") {
+            if (player.team == "<dev string:xaa>") {
                 human_spectators[human_spectators.size] = player;
             }
         }
@@ -2027,8 +1987,8 @@ function get_human_player() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f18
-// Size: 0x159
+// Checksum 0x0, Offset: 0x5cee
+// Size: 0x158
 function bot_damage_callback(eattacker, idamage, smeansofdeath, sweapon, einflictor, shitloc, vpoint, var_1da1a66b5c6a06a7) {
     if (!isdefined(var_1da1a66b5c6a06a7)) {
         var_1da1a66b5c6a06a7 = 0;
@@ -2071,8 +2031,8 @@ function bot_damage_callback(eattacker, idamage, smeansofdeath, sweapon, einflic
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 10, eflags: 0x0
-// Checksum 0x0, Offset: 0x6079
-// Size: 0x15f
+// Checksum 0x0, Offset: 0x5e4e
+// Size: 0xe5
 function on_bot_killed(einflictor, attacker, idamage, smeansofdeath, sweapon, vdir, shitloc, psoffsettime, deathanimduration, killid) {
     self botclearscriptenemy();
     self botclearscriptgoal();
@@ -2083,19 +2043,12 @@ function on_bot_killed(einflictor, attacker, idamage, smeansofdeath, sweapon, vd
             self.respawn_with_launcher = 1;
         }
     }
-    /#
-        if (isdefined(level.testdummy) && level.testdummy == self && isdefined(self.menu) && isdefined(self.firstdamagetime)) {
-            ttk = gettime() - self.firstdamagetime;
-            self.menu["<dev string:x4f9>"] setvalue(function_c89ed1840c8d0f0f(ttk));
-            self.firstdamagetime = undefined;
-        }
-    #/
 }
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x61e0
-// Size: 0x11b
+// Checksum 0x0, Offset: 0x5f3b
+// Size: 0x11c
 function bot_should_do_killcam() {
     if (istrue(game["isLaunchChunk"])) {
         return true;
@@ -2128,7 +2081,7 @@ function bot_should_do_killcam() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6304
+// Checksum 0x0, Offset: 0x6060
 // Size: 0x4
 function bot_should_pickup_weapons() {
     return true;
@@ -2136,7 +2089,7 @@ function bot_should_pickup_weapons() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6311
+// Checksum 0x0, Offset: 0x606d
 // Size: 0x9d
 function bot_restart_think_threads() {
     self thread [[ level.bot_funcs["bot_think_watch_enemy"] ]]();
@@ -2160,12 +2113,12 @@ function bot_restart_think_threads() {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x63b6
-    // Size: 0xd2
+    // Checksum 0x0, Offset: 0x6112
+    // Size: 0xd1
     function function_85449d9e699cd4cd() {
-        self notify("<dev string:x500>");
-        self endon("<dev string:x500>");
-        self endon("<dev string:x513>");
+        self notify("<dev string:x3fb>");
+        self endon("<dev string:x3fb>");
+        self endon("<dev string:x40b>");
         level endon("<dev string:x1c>");
         while (true) {
             if (getdvarint(@"bot_DisableAllAI")) {
@@ -2175,13 +2128,13 @@ function bot_restart_think_threads() {
             if (isdefined(level.var_e6522d43cff255f2)) {
                 bot_disable_tactical_goals();
                 self.ignoreall = 1;
-                self botsetstance("<dev string:x39b>");
+                self botsetstance("<dev string:x32f>");
                 if (!self bothasscriptgoal()) {
-                    self botsetscriptgoal(level.var_e6522d43cff255f2, 0, "<dev string:x3f1>");
+                    self botsetscriptgoal(level.var_e6522d43cff255f2, 0, "<dev string:x370>");
                 } else {
                     goal = self botgetscriptgoal();
                     if (!bot_vectors_are_equal(goal, level.var_e6522d43cff255f2)) {
-                        self botsetscriptgoal(level.var_e6522d43cff255f2, 0, "<dev string:x3f1>");
+                        self botsetscriptgoal(level.var_e6522d43cff255f2, 0, "<dev string:x370>");
                     }
                 }
             }
@@ -2193,7 +2146,7 @@ function bot_restart_think_threads() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6490
+// Checksum 0x0, Offset: 0x61eb
 // Size: 0x46
 function sortdoorsbydistance(door1, door2) {
     return distancesquared(door1.origin, self.closestdoorpos) < distancesquared(door2.origin, self.closestdoorpos);
@@ -2201,8 +2154,8 @@ function sortdoorsbydistance(door1, door2) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x64df
-// Size: 0xcf
+// Checksum 0x0, Offset: 0x623a
+// Size: 0xd0
 function bot_think_dynamic_doors() {
     self notify("bot_think_dynamic_doors");
     self endon("bot_think_dynamic_doors");
@@ -2230,8 +2183,8 @@ function bot_think_dynamic_doors() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x65b6
-// Size: 0x193
+// Checksum 0x0, Offset: 0x6312
+// Size: 0x191
 function bot_think_nvg() {
     self notify("bot_think_nvg");
     self endon("bot_think_nvg");
@@ -2275,17 +2228,19 @@ function bot_think_nvg() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6751
-// Size: 0x9d
+// Checksum 0x0, Offset: 0x64ab
+// Size: 0xb5
 function bot_think_watch_enemy(bendondeath) {
-    level endon("game_ended");
+    endmessage = "spawned_player";
+    if (isdefined(bendondeath) && bendondeath) {
+        endmessage = "death";
+    }
     self notify("bot_think_watch_enemy");
     self endon("bot_think_watch_enemy");
     self endon("bot_suspended");
+    self endon(endmessage);
     self endon("disconnect");
-    if (istrue(bendondeath)) {
-        self endon("death");
-    }
+    level endon("game_ended");
     self.last_enemy_sight_time = 0;
     while (true) {
         /#
@@ -2305,8 +2260,8 @@ function bot_think_watch_enemy(bendondeath) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x67f6
-// Size: 0x26b
+// Checksum 0x0, Offset: 0x6568
+// Size: 0x272
 function bot_think_seek_dropped_weapons() {
     self notify("bot_think_seek_dropped_weapons");
     self endon("bot_think_seek_dropped_weapons");
@@ -2370,8 +2325,8 @@ function bot_think_seek_dropped_weapons() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a69
-// Size: 0x12d
+// Checksum 0x0, Offset: 0x67e2
+// Size: 0x12e
 function bot_seek_dropped_weapon(dropped_weapon) {
     if (bot_has_tactical_goal("seek_dropped_weapon", dropped_weapon) == 0) {
         action_thread = undefined;
@@ -2398,7 +2353,7 @@ function bot_seek_dropped_weapon(dropped_weapon) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6b9e
+// Checksum 0x0, Offset: 0x6918
 // Size: 0x1c
 function bot_pickup_weapon(goal) {
     self botpressbutton("use", 2);
@@ -2407,7 +2362,7 @@ function bot_pickup_weapon(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6bc2
+// Checksum 0x0, Offset: 0x693c
 // Size: 0x7f
 function should_stop_seeking_weapon(goal) {
     if (!isdefined(goal.object)) {
@@ -2428,7 +2383,7 @@ function should_stop_seeking_weapon(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6c4a
+// Checksum 0x0, Offset: 0x69c4
 // Size: 0x52
 function crate_in_range(crate) {
     if (!isdefined(crate.owner) || crate.owner != self) {
@@ -2441,8 +2396,8 @@ function crate_in_range(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ca5
-// Size: 0x1ee
+// Checksum 0x0, Offset: 0x6a1f
+// Size: 0x1ed
 function bot_crate_valid(crate) {
     if (!isdefined(crate)) {
         return false;
@@ -2453,7 +2408,7 @@ function bot_crate_valid(crate) {
             cratecanuse = 1;
         }
     }
-    assertex(isdefined(cratecanuse), "<dev string:x52a>");
+    assertex(isdefined(cratecanuse), "crate_can_use callback is undefined, bots will not pickup crates in this mode");
     if (!cratecanuse) {
         return false;
     }
@@ -2475,7 +2430,7 @@ function bot_crate_valid(crate) {
         }
         /#
             if (isdefined(level.bot_can_use_box_by_type) && !isdefined(level.bot_can_use_box_by_type[crate.boxtype])) {
-                assertmsg("<dev string:x57b>" + crate.boxtype + "<dev string:x58b>");
+                assertmsg("<dev string:x41f>" + crate.boxtype + "<dev string:x42c>");
                 return false;
             }
         #/
@@ -2490,7 +2445,7 @@ function bot_crate_valid(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6e9c
+// Checksum 0x0, Offset: 0x6c15
 // Size: 0xc
 function bot_has_streak_in_crate(crate) {
     return false;
@@ -2498,7 +2453,7 @@ function bot_has_streak_in_crate(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6eb1
+// Checksum 0x0, Offset: 0x6c2a
 // Size: 0x3b
 function crate_landed_and_on_path_grid(crate) {
     assert(isdefined(crate));
@@ -2514,7 +2469,7 @@ function crate_landed_and_on_path_grid(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ef5
+// Checksum 0x0, Offset: 0x6c6e
 // Size: 0x82
 function crate_has_landed(crate) {
     if (isdefined(crate.boxtype)) {
@@ -2527,7 +2482,7 @@ function crate_has_landed(crate) {
             return false;
         }
         if (isdefined(crate.avlinvel)) {
-            return (crate.avlinvel < 0.01);
+            return (crate.avlinvel < 0.001);
         }
     }
     return false;
@@ -2535,7 +2490,7 @@ function crate_has_landed(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6f80
+// Checksum 0x0, Offset: 0x6cf9
 // Size: 0x43
 function crate_is_on_path_grid(crate) {
     assert(crate_has_landed(crate));
@@ -2547,7 +2502,7 @@ function crate_is_on_path_grid(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6fcc
+// Checksum 0x0, Offset: 0x6d45
 // Size: 0xff
 function node_within_use_radius_of_crate(node, crate) {
     if (isdefined(crate.boxtype) && crate.boxtype == "scavenger_bag") {
@@ -2560,8 +2515,8 @@ function node_within_use_radius_of_crate(node, crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x70d3
-// Size: 0x23c
+// Checksum 0x0, Offset: 0x6e4c
+// Size: 0x241
 function crate_calculate_on_path_grid(crate) {
     assert(!isdefined(crate.nearest_nodes));
     assert(!isdefined(crate.on_path_grid));
@@ -2613,8 +2568,8 @@ function crate_calculate_on_path_grid(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7317
-// Size: 0x249
+// Checksum 0x0, Offset: 0x7095
+// Size: 0x252
 function crate_get_nearest_valid_nodes(crate) {
     nodes = getnodesinradiussorted(crate.origin, 256, 0);
     for (i = nodes.size; i > 0; i--) {
@@ -2688,8 +2643,8 @@ function crate_get_nearest_valid_nodes(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7569
-// Size: 0xbe
+// Checksum 0x0, Offset: 0x72f0
+// Size: 0xbd
 function crate_get_bot_target(crate) {
     if (isdefined(crate.nearest_points)) {
         return crate.nearest_points[0];
@@ -2702,12 +2657,12 @@ function crate_get_bot_target(crate) {
             return crate.nearest_nodes[0].origin;
         }
     }
-    assertmsg("<dev string:x5aa>");
+    assertmsg("unreachable");
 }
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x762f
+// Checksum 0x0, Offset: 0x73b5
 // Size: 0x62
 function crate_get_bot_target_check_distance(crate, use_radius) {
     var_dbe8b001ddd1337e = crate_get_bot_target(crate);
@@ -2722,8 +2677,8 @@ function crate_get_bot_target_check_distance(crate, use_radius) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7699
-// Size: 0x790
+// Checksum 0x0, Offset: 0x741f
+// Size: 0x787
 function bot_think_crate() {
     self notify("bot_think_crate");
     self endon("bot_think_crate");
@@ -2800,10 +2755,8 @@ function bot_think_crate() {
                     var_f8b50191af8c5b3c = var_2df5bad592ba26ac[0] getnearestnode();
                     if (isdefined(var_f8b50191af8c5b3c)) {
                         var_10256e13fb6f7945 = 0;
-                        if (isdefined(crate.nearest_nodes)) {
-                            foreach (node in crate.nearest_nodes) {
-                                var_10256e13fb6f7945 = var_10256e13fb6f7945 || nodesvisible(var_f8b50191af8c5b3c, node, 1);
-                            }
+                        foreach (node in crate.nearest_nodes) {
+                            var_10256e13fb6f7945 = var_10256e13fb6f7945 || nodesvisible(var_f8b50191af8c5b3c, node, 1);
                         }
                     }
                 }
@@ -2875,7 +2828,7 @@ function bot_think_crate() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e31
+// Checksum 0x0, Offset: 0x7bae
 // Size: 0xd
 function bot_should_use_ballistic_vest_crate(crate) {
     return true;
@@ -2883,7 +2836,7 @@ function bot_should_use_ballistic_vest_crate(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e47
+// Checksum 0x0, Offset: 0x7bc4
 // Size: 0x4
 function crate_should_claim() {
     return true;
@@ -2891,7 +2844,7 @@ function crate_should_claim() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e54
+// Checksum 0x0, Offset: 0x7bd1
 // Size: 0x3
 function crate_low_ammo_check() {
     return false;
@@ -2899,7 +2852,7 @@ function crate_low_ammo_check() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7e60
+// Checksum 0x0, Offset: 0x7bdd
 // Size: 0x3d
 function bot_should_use_ammo_crate(crate) {
     if (getcompleteweaponname(self getcurrentweapon()) == level.boxsettings[crate.boxtype].minigunweapon) {
@@ -2910,7 +2863,7 @@ function bot_should_use_ammo_crate(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ea6
+// Checksum 0x0, Offset: 0x7c23
 // Size: 0x21
 function bot_pre_use_ammo_crate(crate) {
     _switchtoweapon(self.secondaryweapon);
@@ -2919,7 +2872,7 @@ function bot_pre_use_ammo_crate(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ecf
+// Checksum 0x0, Offset: 0x7c4c
 // Size: 0x26
 function bot_post_use_ammo_crate(crate) {
     _switchtoweapon(nullweapon());
@@ -2928,8 +2881,8 @@ function bot_post_use_ammo_crate(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7efd
-// Size: 0x97
+// Checksum 0x0, Offset: 0x7c7a
+// Size: 0x96
 function bot_should_use_scavenger_bag(crate) {
     if (bot_get_low_on_ammo(0.66)) {
         var_b6f1deb8e946e67c = self getnearestnode();
@@ -2946,8 +2899,8 @@ function bot_should_use_scavenger_bag(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f9d
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x7d19
+// Size: 0x6d
 function bot_should_use_grenade_crate(crate) {
     offhand_list = self getweaponslistoffhands();
     foreach (weapon in offhand_list) {
@@ -2960,7 +2913,7 @@ function bot_should_use_grenade_crate(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8015
+// Checksum 0x0, Offset: 0x7d8f
 // Size: 0xd
 function bot_should_use_juicebox_crate(crate) {
     return true;
@@ -2968,8 +2921,8 @@ function bot_should_use_juicebox_crate(crate) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x802b
-// Size: 0x79
+// Checksum 0x0, Offset: 0x7da5
+// Size: 0x78
 function crate_monitor_position() {
     self notify("crate_monitor_position");
     self endon("crate_monitor_position");
@@ -2991,7 +2944,7 @@ function crate_monitor_position() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x80ac
+// Checksum 0x0, Offset: 0x7e25
 // Size: 0x8
 function crate_wait_use() {
     wait 0.5;
@@ -2999,7 +2952,7 @@ function crate_wait_use() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80bc
+// Checksum 0x0, Offset: 0x7e35
 // Size: 0x1e
 function crate_picked_up(goal) {
     if (!isdefined(goal.object)) {
@@ -3010,8 +2963,8 @@ function crate_picked_up(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x80e3
-// Size: 0x1aa
+// Checksum 0x0, Offset: 0x7e5c
+// Size: 0x1a9
 function use_crate(goal) {
     if (isagent(self)) {
         val::reset_all("agent_use");
@@ -3048,7 +3001,7 @@ function use_crate(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8295
+// Checksum 0x0, Offset: 0x800d
 // Size: 0x16b
 function use_box(goal) {
     if (isagent(self)) {
@@ -3080,7 +3033,7 @@ function use_box(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8408
+// Checksum 0x0, Offset: 0x8180
 // Size: 0x1e
 function watch_bot_died_during_crate(goal) {
     thread bot_watch_for_death(goal.object);
@@ -3088,7 +3041,7 @@ function watch_bot_died_during_crate(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x842e
+// Checksum 0x0, Offset: 0x81a6
 // Size: 0x3b
 function stop_using_crate(goal) {
     if (isdefined(goal.object)) {
@@ -3098,8 +3051,8 @@ function stop_using_crate(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8471
-// Size: 0x51
+// Checksum 0x0, Offset: 0x81e9
+// Size: 0x50
 function bot_watch_for_death(object) {
     object endon("death_or_disconnect");
     object endon("revived");
@@ -3113,8 +3066,8 @@ function bot_watch_for_death(object) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x84ca
-// Size: 0x16b
+// Checksum 0x0, Offset: 0x8241
+// Size: 0x16e
 function bot_think_crate_blocking_path() {
     self notify("bot_think_crate_blocking_path");
     self endon("bot_think_crate_blocking_path");
@@ -3161,8 +3114,8 @@ function bot_think_crate_blocking_path() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x863d
-// Size: 0xb5
+// Checksum 0x0, Offset: 0x83b7
+// Size: 0xb4
 function bot_think_usable_objects() {
     self notify("bot_think_usable_objects");
     self endon("bot_think_usable_objects");
@@ -3194,8 +3147,8 @@ function bot_think_usable_objects() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x86fa
-// Size: 0x444
+// Checksum 0x0, Offset: 0x8473
+// Size: 0x44d
 function bot_think_revive() {
     self notify("bot_think_revive");
     self endon("bot_think_revive");
@@ -3300,7 +3253,7 @@ function bot_think_revive() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b46
+// Checksum 0x0, Offset: 0x88c8
 // Size: 0x31
 function watch_bot_died_during_revive(goal) {
     if (islaststandenabled()) {
@@ -3310,7 +3263,7 @@ function watch_bot_died_during_revive(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8b7f
+// Checksum 0x0, Offset: 0x8901
 // Size: 0x4f
 function stop_reviving(goal) {
     if (isdefined(goal.object.owner)) {
@@ -3320,7 +3273,7 @@ function stop_reviving(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8bd6
+// Checksum 0x0, Offset: 0x8958
 // Size: 0xe0
 function player_revived_or_dead(goal) {
     if (islaststandenabled()) {
@@ -3338,8 +3291,8 @@ function player_revived_or_dead(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8cbf
-// Size: 0x21b
+// Checksum 0x0, Offset: 0x8a41
+// Size: 0x21c
 function revive_player(goal) {
     if (isdefined(goal.object.owner)) {
         goal.object.owner.bots[self.team] = 1;
@@ -3383,8 +3336,8 @@ function revive_player(goal) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x8ee2
-// Size: 0xf1
+// Checksum 0x0, Offset: 0x8c65
+// Size: 0xf2
 function bot_can_revive() {
     if (isdefined(self.laststand) && self.laststand == 1) {
         return false;
@@ -3420,7 +3373,7 @@ function bot_can_revive() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fdc
+// Checksum 0x0, Offset: 0x8d60
 // Size: 0x3a
 function revive_watch_for_finished(player) {
     self endon("death_or_disconnect");
@@ -3432,8 +3385,8 @@ function revive_watch_for_finished(player) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x901e
-// Size: 0x134
+// Checksum 0x0, Offset: 0x8da2
+// Size: 0x136
 function bot_know_enemies_on_start() {
     self endon("death_or_disconnect");
     level endon("game_ended");
@@ -3470,8 +3423,8 @@ function bot_know_enemies_on_start() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x915a
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x8ee0
+// Size: 0x5c
 function bot_think_gametype() {
     self notify("bot_think_gametype");
     self endon("bot_think_gametype");
@@ -3489,7 +3442,7 @@ function bot_think_gametype() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91bf
+// Checksum 0x0, Offset: 0x8f44
 // Size: 0x2
 function default_gametype_think() {
     
@@ -3497,12 +3450,12 @@ function default_gametype_think() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x91c9
+// Checksum 0x0, Offset: 0x8f4e
 // Size: 0x85
 function monitor_smoke_grenades() {
     level.bot_smoke_sight_clip_large = getent("smoke_grenade_sight_clip_256", "targetname");
     if (!isdefined(level.bot_smoke_sight_clip_large)) {
-        assertmsg("<dev string:x5b9>" + "<dev string:x5e8>" + "<dev string:x608>");
+        assertmsg("Missing script_brushmodel with targetname '" + "smoke_grenade_sight_clip_256" + "'.  Make sure the 'care_package' prefab is included in this map.");
         return;
     }
     while (true) {
@@ -3515,8 +3468,8 @@ function monitor_smoke_grenades() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9256
-// Size: 0x2e
+// Checksum 0x0, Offset: 0x8fdb
+// Size: 0x2d
 function handle_smoke() {
     self endon("late_death");
     thread smoke_grenade_late_death();
@@ -3526,7 +3479,7 @@ function handle_smoke() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x928c
+// Checksum 0x0, Offset: 0x9010
 // Size: 0x6b
 function create_smoke_occluder(origin, overrideduration) {
     occluder = spawn("script_model", origin);
@@ -3544,7 +3497,7 @@ function create_smoke_occluder(origin, overrideduration) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x92ff
+// Checksum 0x0, Offset: 0x9083
 // Size: 0x1a
 function smoke_grenade_late_death() {
     self endon("explode");
@@ -3555,8 +3508,8 @@ function smoke_grenade_late_death() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9321
-// Size: 0x139
+// Checksum 0x0, Offset: 0x90a5
+// Size: 0x136
 function bot_add_scavenger_bag(dropbag) {
     added = 0;
     dropbag.boxtype = "scavenger_bag";
@@ -3564,7 +3517,7 @@ function bot_add_scavenger_bag(dropbag) {
     if (!isdefined(level.bot_scavenger_bags)) {
         level.bot_scavenger_bags = [];
     }
-    foreach (index, existingbag in level.bot_scavenger_bags) {
+    foreach (existingbag in level.bot_scavenger_bags) {
         if (!isdefined(existingbag)) {
             added = 1;
             level.bot_scavenger_bags[index] = dropbag;
@@ -3583,13 +3536,13 @@ function bot_add_scavenger_bag(dropbag) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9462
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x91e3
+// Size: 0xa3
 function bot_triggers() {
     var_750831cedcd7f13e = getentarray("bot_flag_set", "targetname");
     foreach (trigger in var_750831cedcd7f13e) {
         if (!isdefined(trigger.script_noteworthy)) {
-            assertmsg("<dev string:x64c>" + trigger.origin + "<dev string:x664>");
+            assertmsg("Bot Flag trigger at " + trigger.origin + " is missing script_noteworthy flag name.");
             continue;
         }
         trigger thread bot_flag_trigger(trigger.script_noteworthy);
@@ -3598,8 +3551,8 @@ function bot_triggers() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x950f
-// Size: 0x56
+// Checksum 0x0, Offset: 0x928e
+// Size: 0x55
 function bot_flag_trigger(flag_name) {
     self endon("death");
     while (true) {
@@ -3614,7 +3567,7 @@ function bot_flag_trigger(flag_name) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x956d
+// Checksum 0x0, Offset: 0x92eb
 // Size: 0x2d
 function bot_flag_trigger_clear(flag_name) {
     self endon("flag_trigger_set_" + flag_name);
@@ -3629,8 +3582,8 @@ function bot_flag_trigger_clear(flag_name) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x95a2
-    // Size: 0x1f6
+    // Checksum 0x0, Offset: 0x9320
+    // Size: 0x1fd
     function function_361fab20102e6557() {
         level endon("<dev string:x1c>");
         while (true) {
@@ -3654,7 +3607,7 @@ function bot_flag_trigger_clear(flag_name) {
                     setdvar(@"hash_5e767ceb6b77e053", -3);
                 }
                 setdvar(@"hash_2d5236cbe9894aff", 1);
-                player = level waittill("<dev string:x690>");
+                player = level waittill("<dev string:x448>");
                 player setorigin(spawnorigin);
                 player setplayerangles(spawnangles);
                 setdvar(@"hash_5e767ceb6b77e053", 0);
@@ -3680,7 +3633,7 @@ function bot_flag_trigger_clear(flag_name) {
                 fixedspawndata = spawnstruct();
                 fixedspawndata.origin = spawnorigin;
                 fixedspawndata.angles = spawnangles;
-                level thread [[ level.bot_funcs["<dev string:x6a2>"] ]](1, team, undefined, undefined, undefined, undefined, fixedspawndata);
+                level thread [[ level.bot_funcs["<dev string:x457>"] ]](1, team, undefined, undefined, undefined, undefined, fixedspawndata);
             }
             waitframe();
         }
@@ -3688,7 +3641,7 @@ function bot_flag_trigger_clear(flag_name) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x97a0
+    // Checksum 0x0, Offset: 0x9525
     // Size: 0x16d
     function function_c71139dd1c600b64() {
         level endon("<dev string:x1c>");
@@ -3701,19 +3654,19 @@ function bot_flag_trigger_clear(flag_name) {
                 }
                 switch (var_80037671e3f2ed57) {
                 case 1: 
-                    var_9369cf0d229589 = "<dev string:x6b0>";
+                    var_9369cf0d229589 = "<dev string:x462>";
                     var_7d14e075a8fac17e = 999;
                     break;
                 case 2: 
-                    var_9369cf0d229589 = "<dev string:xed>";
+                    var_9369cf0d229589 = "<dev string:xc3>";
                     var_7d14e075a8fac17e = 999;
                     break;
                 case 3: 
-                    var_9369cf0d229589 = "<dev string:xf7>";
+                    var_9369cf0d229589 = "<dev string:xca>";
                     var_7d14e075a8fac17e = 999;
                     break;
                 default: 
-                    var_9369cf0d229589 = "<dev string:x6b0>";
+                    var_9369cf0d229589 = "<dev string:x462>";
                     var_7d14e075a8fac17e = 1;
                     break;
                 }
@@ -3721,7 +3674,7 @@ function bot_flag_trigger_clear(flag_name) {
                     if (var_7d14e075a8fac17e <= 0) {
                         break;
                     }
-                    if (var_9369cf0d229589 == "<dev string:x6b0>" || var_9369cf0d229589 == bot.team) {
+                    if (var_9369cf0d229589 == "<dev string:x462>" || var_9369cf0d229589 == bot.team) {
                         kick(bot getentitynumber());
                     }
                     var_7d14e075a8fac17e--;
@@ -3736,8 +3689,8 @@ function bot_flag_trigger_clear(flag_name) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9915
-// Size: 0xba
+// Checksum 0x0, Offset: 0x969a
+// Size: 0xbc
 function function_b771795f421ef637(player) {
     angles = player getplayerangles();
     fwd = anglestoforward(angles);
@@ -3754,7 +3707,7 @@ function function_b771795f421ef637(player) {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x99d8
+// Checksum 0x0, Offset: 0x975f
 // Size: 0xa6
 function function_8e439247eeca6302() {
     self botsetflag("disable_movement", 1);
@@ -3769,7 +3722,7 @@ function function_8e439247eeca6302() {
 
 // Namespace bots / scripts\mp\bots\bots
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a86
+// Checksum 0x0, Offset: 0x980d
 // Size: 0x3d
 function function_22577987c6639704(neworigin, newangles) {
     self.pers[#"fixedspawnorigin"] = neworigin;
@@ -3780,8 +3733,8 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9acb
-    // Size: 0x18a
+    // Checksum 0x0, Offset: 0x9852
+    // Size: 0x190
     function function_8c79a04b049a7ea2() {
         level endon("<dev string:x1c>");
         while (true) {
@@ -3810,8 +3763,8 @@ function function_22577987c6639704(neworigin, newangles) {
                     if (!isdefined(results)) {
                         continue;
                     }
-                    spawnorigin = results["<dev string:x6b7>"];
-                    spawnangles = results["<dev string:x6c1>"];
+                    spawnorigin = results["<dev string:x466>"];
+                    spawnangles = results["<dev string:x46d>"];
                 }
                 if (isdefined(level.testdummy)) {
                     level function_6ff6a20ce4521fa9(spawnorigin, spawnangles);
@@ -3820,7 +3773,7 @@ function function_22577987c6639704(neworigin, newangles) {
                 fixedspawndata = spawnstruct();
                 fixedspawndata.origin = spawnorigin;
                 fixedspawndata.angles = spawnangles;
-                level thread [[ level.bot_funcs["<dev string:x6a2>"] ]](1, team, &function_8af1863f5e7ade4a, undefined, undefined, undefined, fixedspawndata);
+                level thread [[ level.bot_funcs["<dev string:x457>"] ]](1, team, &function_8af1863f5e7ade4a, undefined, undefined, undefined, fixedspawndata);
             }
             waitframe();
         }
@@ -3828,7 +3781,7 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9c5d
+    // Checksum 0x0, Offset: 0x99ea
     // Size: 0x16
     function function_8af1863f5e7ade4a() {
         level.testdummy = self;
@@ -3837,7 +3790,7 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9c7b
+    // Checksum 0x0, Offset: 0x9a08
     // Size: 0x74
     function function_6ff6a20ce4521fa9(origin, angles) {
         level.testdummy.pers[#"fixedspawnorigin"] = origin;
@@ -3848,8 +3801,8 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9cf7
-    // Size: 0x70
+    // Checksum 0x0, Offset: 0x9a84
+    // Size: 0x65
     function function_5188aadb27d72a11() {
         host = scripts\mp\dev::devfindhost();
         if (!isdefined(self.hud)) {
@@ -3857,7 +3810,6 @@ function function_22577987c6639704(neworigin, newangles) {
         }
         self.var_2fc19f3a438f03a5 = 0;
         self.var_b0ab2dca24bfe60a = 0;
-        self.firstdamagetime = undefined;
         self.fnbotdamagecallback = &function_b09b8c00320b91e;
         thread function_6e65c3faa4356411();
         thread function_c87dcea241ae074d();
@@ -3866,8 +3818,8 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 8, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9d6f
-    // Size: 0x240
+    // Checksum 0x0, Offset: 0x9af1
+    // Size: 0x227
     function function_b09b8c00320b91e(eattacker, idamage, smeansofdeath, objweapon, einflictor, shitloc, vpoint, var_1da1a66b5c6a06a7) {
         if (!isdefined(var_1da1a66b5c6a06a7)) {
             var_1da1a66b5c6a06a7 = 0;
@@ -3878,49 +3830,46 @@ function function_22577987c6639704(neworigin, newangles) {
         }
         self.var_2fc19f3a438f03a5++;
         self.var_b0ab2dca24bfe60a += idamage + var_1da1a66b5c6a06a7;
-        if (!isdefined(self.firstdamagetime)) {
-            self.firstdamagetime = gettime();
-        }
         source_pos = eattacker == einflictor ? eattacker geteye() : self.origin;
         range = distance(source_pos, vpoint);
-        weap_token = strtok(getcompleteweaponname(objweapon), "<dev string:x6cb>");
-        weap_name = "<dev string:x41>";
+        weap_token = strtok(getcompleteweaponname(objweapon), "<dev string:x474>");
+        weap_name = "<dev string:x38>";
         foreach (tok in weap_token) {
-            weap_name += tok + "<dev string:x6d0>";
+            weap_name += tok + "<dev string:x476>";
         }
         if (isdefined(self.armorhealth)) {
-            self.menu["<dev string:x6d5>"] setvalue(self.armorhealth);
+            self.menu["<dev string:x478>"] setvalue(self.armorhealth);
         }
-        self.menu["<dev string:x6de>"] setvalue(self.health);
-        self.menu["<dev string:x6e8>"] setvalue(idamage + var_1da1a66b5c6a06a7);
-        self.menu["<dev string:x6f2>"] setvalue(self.var_b0ab2dca24bfe60a);
-        self.menu["<dev string:x701>"] setvalue(self.var_2fc19f3a438f03a5);
-        self.menu["<dev string:x709>"] setvalue(range);
-        self.menu["<dev string:x712>"] setdevtext(shitloc);
-        self.menu["<dev string:x71c>"] setdevtext(weap_name);
+        self.menu["<dev string:x47e>"] setvalue(self.health);
+        self.menu["<dev string:x485>"] setvalue(idamage + var_1da1a66b5c6a06a7);
+        self.menu["<dev string:x48c>"] setvalue(self.var_b0ab2dca24bfe60a);
+        self.menu["<dev string:x498>"] setvalue(self.var_2fc19f3a438f03a5);
+        self.menu["<dev string:x49d>"] setvalue(range);
+        self.menu["<dev string:x4a3>"] setdevtext(shitloc);
+        self.menu["<dev string:x4aa>"] setdevtext(weap_name);
     }
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x9fb7
+    // Checksum 0x0, Offset: 0x9d20
     // Size: 0x59
     function function_6e65c3faa4356411() {
-        self endon("<dev string:x2f3>");
+        self endon("<dev string:x2a2>");
         for (;;) {
             waitframe();
             if (isdefined(self.armorhealth)) {
-                self.menu["<dev string:x6d5>"] setvalue(self.armorhealth);
+                self.menu["<dev string:x478>"] setvalue(self.armorhealth);
             }
-            self.menu["<dev string:x6de>"] setvalue(self.health);
+            self.menu["<dev string:x47e>"] setvalue(self.health);
         }
     }
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa018
-    // Size: 0x6f
+    // Checksum 0x0, Offset: 0x9d81
+    // Size: 0x6c
     function function_c87dcea241ae074d() {
-        self waittill("<dev string:x2f3>");
+        self waittill("<dev string:x2a2>");
         self.hud destroy();
         foreach (menu in self.menu) {
             menu destroy();
@@ -3929,12 +3878,12 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa08f
+    // Checksum 0x0, Offset: 0x9df5
     // Size: 0x30
     function function_51da8c98ef44eceb() {
-        self endon("<dev string:x2f3>");
+        self endon("<dev string:x2a2>");
         while (true) {
-            self waittill("<dev string:x301>");
+            self waittill("<dev string:x2ad>");
             self.var_2fc19f3a438f03a5 = 0;
             self.var_b0ab2dca24bfe60a = 0;
         }
@@ -3942,13 +3891,13 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa0c7
-    // Size: 0xd5
+    // Checksum 0x0, Offset: 0x9e2d
+    // Size: 0xd8
     function function_5723f098aabd9836(host) {
-        host endon("<dev string:x301>");
-        host endon("<dev string:x2f3>");
-        placementmodel = spawn("<dev string:x726>", (0, 0, 0));
-        placementmodel setmodel("<dev string:x736>");
+        host endon("<dev string:x2ad>");
+        host endon("<dev string:x2a2>");
+        placementmodel = spawn("<dev string:x4b1>", (0, 0, 0));
+        placementmodel setmodel("<dev string:x4be>");
         for (;;) {
             waitframe();
             spawnorigin = function_b771795f421ef637(host);
@@ -3961,8 +3910,8 @@ function function_22577987c6639704(neworigin, newangles) {
             placementmodel.angles = spawnangles;
             if (host usebuttonpressed()) {
                 results = [];
-                results["<dev string:x6b7>"] = spawnorigin;
-                results["<dev string:x6c1>"] = spawnangles;
+                results["<dev string:x466>"] = spawnorigin;
+                results["<dev string:x46d>"] = spawnangles;
                 placementmodel delete();
                 return results;
             }
@@ -3971,46 +3920,44 @@ function function_22577987c6639704(neworigin, newangles) {
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa1a4
-    // Size: 0x2f3
+    // Checksum 0x0, Offset: 0x9f0d
+    // Size: 0x2b6
     function function_e53f5c23f0a7a78f(host) {
         x = -40;
-        y = 145;
+        y = 150;
         scale = 0.9;
-        self.hud = host function_829a24c34a7fda26("<dev string:x749>", x, y, scale, 0.6, 10);
+        self.hud = host function_829a24c34a7fda26("<dev string:x4ce>", x, y, scale, 0.6, 10);
         menu = [];
         menux = x + 5;
         if (isdefined(host.armorhealth)) {
-            menu[menu.size] = host function_829a24c34a7fda26("<dev string:x757>", menux, y + 10 * (menu.size + 1), scale);
+            menu[menu.size] = host function_829a24c34a7fda26("<dev string:x4d9>", menux, y + 10 * (menu.size + 1), scale);
         }
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x762>", menux, y + 10 * (menu.size + 1), scale);
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x76e>", menux, y + 10 * (menu.size + 1), scale);
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x77a>", menux, y + 10 * (menu.size + 1), scale);
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x78c>", menux, y + 10 * (menu.size + 1), scale);
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x7a0>", menux, y + 10 * (menu.size + 1), scale);
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x7b2>", menux, y + 10 * (menu.size + 1), scale);
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x7bd>", menux, y + 10 * (menu.size + 1), scale);
-        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x7cf>", menux, y + 10 * (menu.size + 1), scale);
+        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x4e1>", menux, y + 10 * (menu.size + 1), scale);
+        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x4ea>", menux, y + 10 * (menu.size + 1), scale);
+        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x4f3>", menux, y + 10 * (menu.size + 1), scale);
+        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x502>", menux, y + 10 * (menu.size + 1), scale);
+        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x513>", menux, y + 10 * (menu.size + 1), scale);
+        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x51b>", menux, y + 10 * (menu.size + 1), scale);
+        menu[menu.size] = host function_829a24c34a7fda26("<dev string:x52a>", menux, y + 10 * (menu.size + 1), scale);
         menux = x + 85;
         indexoffset = menu.size;
         if (isdefined(host.armorhealth)) {
-            menu["<dev string:x6d5>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+            menu["<dev string:x478>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
         }
-        menu["<dev string:x6de>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
-        menu["<dev string:x6e8>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
-        menu["<dev string:x6f2>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
-        menu["<dev string:x701>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
-        menu["<dev string:x4f9>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
-        menu["<dev string:x709>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
-        menu["<dev string:x712>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
-        menu["<dev string:x71c>"] = host function_829a24c34a7fda26("<dev string:x41>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+        menu["<dev string:x47e>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+        menu["<dev string:x485>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+        menu["<dev string:x48c>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+        menu["<dev string:x498>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+        menu["<dev string:x49d>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+        menu["<dev string:x4a3>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
+        menu["<dev string:x4aa>"] = host function_829a24c34a7fda26("<dev string:x38>", menux, y + 10 * (menu.size + 1 - indexoffset), scale);
         self.menu = menu;
     }
 
     // Namespace bots / scripts\mp\bots\bots
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0xa49f
-    // Size: 0x124
+    // Checksum 0x0, Offset: 0xa1cb
+    // Size: 0x123
     function function_829a24c34a7fda26(text, x, y, scale, alpha, sort) {
         if (!isdefined(alpha)) {
             alpha = 1;
@@ -4022,9 +3969,9 @@ function function_22577987c6639704(neworigin, newangles) {
             sort = 20;
         }
         hudelem = newclienthudelem(self);
-        hudelem.elemtype = "<dev string:x7db>";
+        hudelem.elemtype = "<dev string:x533>";
         hudelem.alpha = alpha;
-        hudelem.font = "<dev string:x14c>";
+        hudelem.font = "<dev string:x113>";
         hudelem.fontscale = scale;
         hudelem.basefontscale = scale;
         hudelem.sort = sort;

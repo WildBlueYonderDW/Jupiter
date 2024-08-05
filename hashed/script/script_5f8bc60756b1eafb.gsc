@@ -10,7 +10,7 @@
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe3
+// Checksum 0x0, Offset: 0xac4
 // Size: 0x136
 function init() {
     if (!isdefined(level.scripted_melee)) {
@@ -34,8 +34,8 @@ function init() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xd21
-// Size: 0x226
+// Checksum 0x0, Offset: 0xc02
+// Size: 0x224
 function function_78748799de25da5f() {
     function_b0c99390cdb7edd5();
     anims = [];
@@ -71,7 +71,7 @@ function function_78748799de25da5f() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf4f
+// Checksum 0x0, Offset: 0xe2e
 // Size: 0x654
 function function_b0c99390cdb7edd5() {
     level.scr_animtree["scripted_melee_player_rig"] = %player;
@@ -134,7 +134,7 @@ function function_b0c99390cdb7edd5() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ab
+// Checksum 0x0, Offset: 0x148a
 // Size: 0x40
 function function_65bbb083561fa648() {
     self.scripted_melee_player_rig = scripts\engine\sp\utility::spawn_anim_model("scripted_melee_player_rig", self.origin, self.angles);
@@ -143,8 +143,8 @@ function function_65bbb083561fa648() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x15f3
-// Size: 0x7e
+// Checksum 0x0, Offset: 0x14d2
+// Size: 0x7f
 function enable_victims() {
     team3 = scripts\engine\sp\utility::get_all_closest_living(self.origin, getaiarray("team3"), 128, 0);
     enemies = scripts\engine\sp\utility::get_all_closest_living(self.origin, getaiarray("axis"), 128, 0);
@@ -157,7 +157,7 @@ function enable_victims() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1679
+// Checksum 0x0, Offset: 0x1559
 // Size: 0x23
 function function_b3cab4bbbd2f27bf() {
     if (!getdvarint(@"hash_301100a436cfdb2c")) {
@@ -168,7 +168,7 @@ function function_b3cab4bbbd2f27bf() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16a4
+// Checksum 0x0, Offset: 0x1584
 // Size: 0x11
 function function_53bc249de0d47b05() {
     self disableinvulnerability();
@@ -177,8 +177,8 @@ function function_53bc249de0d47b05() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16bd
-// Size: 0x152
+// Checksum 0x0, Offset: 0x159d
+// Size: 0x150
 function function_91c24157247ef2fc(guy) {
     debug_print("start ragdoll via note");
     if (!isdefined(guy) && isdefined(guy.var_540e3c006ce71d3a.var_4187711225445340)) {
@@ -207,8 +207,8 @@ function function_91c24157247ef2fc(guy) {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1817
-// Size: 0x25
+// Checksum 0x0, Offset: 0x16f5
+// Size: 0x24
 function function_6410c0421b1874ac() {
     rules = scripts\engine\utility::array_combine(rules_default(), [&function_29377f3b78dcb609]);
     return rules;
@@ -216,7 +216,7 @@ function function_6410c0421b1874ac() {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1845
+// Checksum 0x0, Offset: 0x1722
 // Size: 0x2b
 function function_29377f3b78dcb609(player, victim) {
     if (victim scripts\sp\fakeactor::is_fakeactor() || !isai(victim)) {
@@ -227,7 +227,7 @@ function function_29377f3b78dcb609(player, victim) {
 
 // Namespace namespace_491e31b31cdf2a0a / namespace_8938ef39370f4a55
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1879
+// Checksum 0x0, Offset: 0x1756
 // Size: 0x13
 function function_5e2b19fd9204a302(bool) {
     self playerlinkeduselinkedvelocity(bool);

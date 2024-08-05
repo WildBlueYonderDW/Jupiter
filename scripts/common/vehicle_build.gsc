@@ -8,8 +8,8 @@
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x30e
-// Size: 0xa5
+// Checksum 0x0, Offset: 0x467
+// Size: 0xa4
 function build_radiusdamage(offset, range, maxdamage, mindamage) {
     if (!isdefined(offset)) {
         offset = (0, 0, 0);
@@ -24,8 +24,8 @@ function build_radiusdamage(offset, range, maxdamage, mindamage) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bb
-// Size: 0xd5
+// Checksum 0x0, Offset: 0x513
+// Size: 0xd4
 function build_rumble(rumble, scale, duration, radius, basetime, randomaditionaltime) {
     if (!isdefined(level.vehicle.templates.rumble)) {
         level.vehicle.templates.rumble = [];
@@ -39,8 +39,8 @@ function build_rumble(rumble, scale, duration, radius, basetime, randomaditional
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x498
-// Size: 0x99
+// Checksum 0x0, Offset: 0x5ef
+// Size: 0x98
 function build_deathquake(scale, duration, radius) {
     classname = level.vtclassname;
     if (!isdefined(level.vehicle.templates.death_earthquake)) {
@@ -51,8 +51,8 @@ function build_deathquake(scale, duration, radius) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x539
-// Size: 0x88
+// Checksum 0x0, Offset: 0x68f
+// Size: 0x87
 function build_quake(scale, duration, radius, basetime, randomaditionaltime) {
     struct = spawnstruct();
     struct.scale = scale;
@@ -69,8 +69,8 @@ function build_quake(scale, duration, radius, basetime, randomaditionaltime) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x5ca
-// Size: 0x139
+// Checksum 0x0, Offset: 0x71f
+// Size: 0x138
 function build_fx(effect, tag, sound, beffectlooping, delay, bsoundlooping, waitdelay, stayontag, notifystring, selfdeletedelay, remove_deathfx_entity_delay, attacker_velocity_lerp) {
     if (!isdefined(bsoundlooping)) {
         bsoundlooping = 0;
@@ -99,10 +99,10 @@ function build_fx(effect, tag, sound, beffectlooping, delay, bsoundlooping, wait
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x70c
-// Size: 0x127
+// Checksum 0x0, Offset: 0x860
+// Size: 0x126
 function build_deathfx(effect, tag, sound, beffectlooping, delay, bsoundlooping, waitdelay, stayontag, notifystring, var_5b457edcff6fa295, remove_deathfx_entity_delay, attacker_velocity_lerp) {
-    assertex(isdefined(effect), "<dev string:x1c>");
+    assertex(isdefined(effect), "Failed to build death effect because there is no effect specified for the model used for that vehicle.");
     classname = level.vtclassname;
     if (!isdefined(level.vehicle.templates.vehicle_death_fx[classname])) {
         level.vehicle.templates.vehicle_death_fx[classname] = [];
@@ -112,10 +112,10 @@ function build_deathfx(effect, tag, sound, beffectlooping, delay, bsoundlooping,
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 11, eflags: 0x0
-// Checksum 0x0, Offset: 0x83b
-// Size: 0x11d
+// Checksum 0x0, Offset: 0x98e
+// Size: 0x11c
 function build_rocket_deathfx(effect, tag, sound, beffectlooping, delay, bsoundlooping, waitdelay, stayontag, notifystring, var_5b457edcff6fa295, remove_deathfx_entity_delay) {
-    assertex(isdefined(effect), "<dev string:x1c>");
+    assertex(isdefined(effect), "Failed to build death effect because there is no effect specified for the model used for that vehicle.");
     classname = level.vtclassname;
     if (!isdefined(level.vehicle.templates.vehicle_death_fx[classname])) {
         level.vehicle.templates.vehicle_death_fx[classname] = [];
@@ -125,13 +125,13 @@ function build_rocket_deathfx(effect, tag, sound, beffectlooping, delay, bsoundl
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x960
-// Size: 0x180
+// Checksum 0x0, Offset: 0xab2
+// Size: 0x17f
 function build_deathanimations(var_4a32601cc0b7dcc, var_de6189ed34354801, var_9ecae3da61774d2e, var_da007c9cd223ae3a) {
-    assertex(isdefined(var_4a32601cc0b7dcc), "<dev string:x86>" + level.vtclassname);
-    assertex(isdefined(var_de6189ed34354801), "<dev string:xb3>" + level.vtclassname);
-    assertex(isdefined(var_9ecae3da61774d2e), "<dev string:xde>" + level.vtclassname);
-    assertex(isdefined(var_da007c9cd223ae3a), "<dev string:x10c>" + level.vtclassname);
+    assertex(isdefined(var_4a32601cc0b7dcc), "No forwardAnimation for build_deathanim: " + level.vtclassname);
+    assertex(isdefined(var_de6189ed34354801), "No rightAnimation for build_deathanim: " + level.vtclassname);
+    assertex(isdefined(var_9ecae3da61774d2e), "No backwardAnimation for build_deathanim: " + level.vtclassname);
+    assertex(isdefined(var_da007c9cd223ae3a), "No leftAnimation for build_deathanim: " + level.vtclassname);
     classname = level.vtclassname;
     if (!isdefined(level.vehicle.templates.deathanimations[classname])) {
         level.vehicle.templates.deathanimations[classname] = [];
@@ -144,8 +144,8 @@ function build_deathanimations(var_4a32601cc0b7dcc, var_de6189ed34354801, var_9e
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xae8
-// Size: 0x4e
+// Checksum 0x0, Offset: 0xc39
+// Size: 0x4d
 function build_landanims(landthread) {
     assert(isdefined(landthread));
     classname = level.vtclassname;
@@ -154,7 +154,7 @@ function build_landanims(landthread) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xb3e
+// Checksum 0x0, Offset: 0xc8e
 // Size: 0x104
 function build_turret(info, tag, model, defaultonmode, defaultdroppitch, defaultdropyaw, offset_tag, referencename, mainturretchild) {
     classname = level.vtclassname;
@@ -167,12 +167,12 @@ function build_turret(info, tag, model, defaultonmode, defaultdroppitch, default
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0xc4a
+// Checksum 0x0, Offset: 0xd9a
 // Size: 0xc6
 function build_mainturret(info, tag, model, defaultonmode, defaultdroppitch, defaultdropyaw, offset_tag, referencename) {
     classname = level.vtclassname;
     if (isdefined(level.vehicle.templates.mainturret[classname])) {
-        assertmsg("<dev string:x136>");
+        assertmsg("only 1 mainturret allowed per vehicle");
     }
     struct = build_turret_struct(info, tag, model, defaultonmode, defaultdroppitch, defaultdropyaw, offset_tag, referencename);
     level.vehicle.templates.mainturret[classname] = struct;
@@ -180,8 +180,8 @@ function build_mainturret(info, tag, model, defaultonmode, defaultdroppitch, def
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 9, eflags: 0x0
-// Checksum 0x0, Offset: 0xd18
-// Size: 0xfa
+// Checksum 0x0, Offset: 0xe68
+// Size: 0xf9
 function build_turret_struct(info, tag, model, defaultonmode, defaultdroppitch, defaultdropyaw, offset_tag, referencename, mainturretchild) {
     precachemodel(model);
     precacheturret(info);
@@ -206,8 +206,8 @@ function build_turret_struct(info, tag, model, defaultonmode, defaultdroppitch, 
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1b
-// Size: 0x171
+// Checksum 0x0, Offset: 0xf6a
+// Size: 0x170
 function build_light(classname, name, tag, effect, group, delay) {
     if (!isdefined(level.vehicle.templates.vehicle_lights)) {
         level.vehicle.templates.vehicle_lights = [];
@@ -232,8 +232,8 @@ function build_light(classname, name, tag, effect, group, delay) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xf94
-// Size: 0x17a
+// Checksum 0x0, Offset: 0x10e2
+// Size: 0x179
 function function_2cf37d073c6bde84(classname, name, part, group, delay, var_22ed434f33b345af) {
     if (!isdefined(level.vehicle.templates.vehicle_lights)) {
         level.vehicle.templates.vehicle_lights = [];
@@ -260,7 +260,7 @@ function function_2cf37d073c6bde84(classname, name, part, group, delay, var_22ed
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1116
+// Checksum 0x0, Offset: 0x1263
 // Size: 0x8a
 function build_hideparts(classname, var_a5ced284f97867db) {
     assert(isdefined(classname));
@@ -273,7 +273,7 @@ function build_hideparts(classname, var_a5ced284f97867db) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11a8
+// Checksum 0x0, Offset: 0x12f5
 // Size: 0x59
 function build_deathmodel(model, deathmodel) {
     if (model != level.vtmodel) {
@@ -289,14 +289,14 @@ function build_deathmodel(model, deathmodel) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1209
+// Checksum 0x0, Offset: 0x1356
 // Size: 0xcc
 function build_husk(model, huskmodel, type, var_cb3cc2d75d941670) {
     if (model != level.vtmodel) {
         return;
     }
-    assertex(isdefined(huskmodel), "<dev string:x15f>");
-    assertex(isdefined(type), "<dev string:x183>");
+    assertex(isdefined(huskmodel), "need to define a scriptable husk");
+    assertex(isdefined(type), "need to define a vehicle type");
     precachemodel(model);
     precachemodel(huskmodel);
     level.vehicle.templates.husk[model] = huskmodel;
@@ -309,7 +309,7 @@ function build_husk(model, huskmodel, type, var_cb3cc2d75d941670) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12dd
+// Checksum 0x0, Offset: 0x142a
 // Size: 0xf1
 function build_idle(animation) {
     if (!isdefined(level.vehicle.templates.idle_anim)) {
@@ -323,7 +323,7 @@ function build_idle(animation) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x13d6
+// Checksum 0x0, Offset: 0x1523
 // Size: 0xda
 function build_drive(forward, reverse, normalspeed, rate) {
     if (!isdefined(normalspeed)) {
@@ -341,14 +341,14 @@ function build_drive(forward, reverse, normalspeed, rate) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x14b8
+// Checksum 0x0, Offset: 0x1605
 // Size: 0x498
 function build_template(class, model, type, classname) {
     vehicle_setuplevelvariables();
     if (!isdefined(type)) {
         type = class;
     }
-    assertex(isdefined(classname), "<dev string:x1a4>");
+    assertex(isdefined(classname), "templated without classname");
     precachevehicle(type);
     level.vehicle.templates.team[classname] = "neutral";
     level.vehicle.templates.has_main_turret[model] = 0;
@@ -417,8 +417,8 @@ function build_template(class, model, type, classname) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1958
-// Size: 0x73f
+// Checksum 0x0, Offset: 0x1aa5
+// Size: 0x744
 function function_40778829123b7952(vehicleref, vehicleclass) {
     classname = vehicleref;
     bundlename = classname + "_sp";
@@ -452,7 +452,7 @@ function function_40778829123b7952(vehicleref, vehicleclass) {
         build_husk(model, huskmodel, huskvehicle, 0);
     }
     if (istrue(bundle.ai.var_289df80e1ded586f)) {
-        assert(isdefined(bundle.ai.vehicleanimalias) && bundle.ai.vehicleanimalias != "<dev string:x1c3>", "<dev string:x1c7>" + vehicleref);
+        assert(isdefined(bundle.ai.vehicleanimalias) && bundle.ai.vehicleanimalias != "", "You must specify a vehicleAnimAlias if this vehicle supports AI: " + vehicleref);
         unload_groups = [];
         unload_groups["default"] = [];
         unload_groups["all"] = [];
@@ -520,7 +520,7 @@ function function_40778829123b7952(vehicleref, vehicleclass) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20a0
+// Checksum 0x0, Offset: 0x21f2
 // Size: 0x39
 function build_exhaust(effect) {
     level.vehicle.templates.exhaust_fx[level.vtmodel] = loadfx(effect);
@@ -528,10 +528,10 @@ function build_exhaust(effect) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x20e1
-// Size: 0x14b
+// Checksum 0x0, Offset: 0x2233
+// Size: 0x14a
 function build_enginefx(effect, effect_tag, max_effect, max_effort, med_effect, med_effort, min_effect, min_effort) {
-    assertex(isdefined(effect), "<dev string:x20c>");
+    assertex(isdefined(effect), "Failed to build engine effect because there is no effect specified.");
     if (!isdefined(effect_tag)) {
         effect_tag = "tag_engine_fx";
     }
@@ -558,7 +558,7 @@ function build_enginefx(effect, effect_tag, max_effect, max_effort, med_effect, 
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2234
+// Checksum 0x0, Offset: 0x2385
 // Size: 0x79
 function build_treadfx(classname, type, fx, do_wash) {
     if (!issp()) {
@@ -578,8 +578,8 @@ function build_treadfx(classname, type, fx, do_wash) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x22b5
-// Size: 0x70
+// Checksum 0x0, Offset: 0x2406
+// Size: 0x6e
 function build_all_treadfx(classname, fx) {
     types = get_surface_types();
     foreach (type in types) {
@@ -589,7 +589,7 @@ function build_all_treadfx(classname, fx) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x232d
+// Checksum 0x0, Offset: 0x247c
 // Size: 0x10c
 function set_vehicle_effect(classname, material, fx, suffix) {
     if (!isdefined(level.vehicle.templates.surface_effects)) {
@@ -610,7 +610,7 @@ function set_vehicle_effect(classname, material, fx, suffix) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2441
+// Checksum 0x0, Offset: 0x2590
 // Size: 0x11a
 function get_surface_types() {
     return ["brick", "bark", "carpet", "cloth", "concrete", "dirt", "flesh", "foliage", "glass", "grass", "gravel", "ice", "metal", "mud", "paper", "plaster", "rock", "sand", "snow", "water", "wood", "asphalt", "ceramic", "plastic", "rubber", "cushion", "fruit", "paintedmetal", "riotshield", "slush", "default"];
@@ -618,7 +618,7 @@ function get_surface_types() {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2564
+// Checksum 0x0, Offset: 0x26b3
 // Size: 0x34
 function build_team(team) {
     level.vehicle.templates.team[level.vtclassname] = team;
@@ -626,7 +626,7 @@ function build_team(team) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25a0
+// Checksum 0x0, Offset: 0x26ef
 // Size: 0x3f
 function build_bulletshield(bshield) {
     assert(isdefined(bshield));
@@ -635,7 +635,7 @@ function build_bulletshield(bshield) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25e7
+// Checksum 0x0, Offset: 0x2736
 // Size: 0x3f
 function build_grenadeshield(bshield) {
     assert(isdefined(bshield));
@@ -644,7 +644,7 @@ function build_grenadeshield(bshield) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x262e
+// Checksum 0x0, Offset: 0x277d
 // Size: 0x3f
 function function_d82e00bef8433948(weaponarray) {
     assert(isdefined(weaponarray));
@@ -653,7 +653,7 @@ function function_d82e00bef8433948(weaponarray) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2675
+// Checksum 0x0, Offset: 0x27c4
 // Size: 0x3f
 function function_ceeb72985b41bfb1(bshield) {
     assert(isdefined(bshield));
@@ -662,8 +662,8 @@ function function_ceeb72985b41bfb1(bshield) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x26bc
-// Size: 0x118
+// Checksum 0x0, Offset: 0x280b
+// Size: 0x117
 function build_aianims(aithread, vehiclethread, vehicleanimalias) {
     classname = level.vtclassname;
     level.vehicle.templates.aianims[classname] = [[ aithread ]]();
@@ -678,8 +678,8 @@ function build_aianims(aithread, vehiclethread, vehicleanimalias) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x27dc
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x292a
+// Size: 0xc3
 function function_a82f8a25ad7e6b3f(var_fdd5ab14ab76741a, vehicleanimalias) {
     classname = level.vtclassname;
     level.vehicle.templates.aianims[classname] = var_fdd5ab14ab76741a;
@@ -690,7 +690,7 @@ function function_a82f8a25ad7e6b3f(var_fdd5ab14ab76741a, vehicleanimalias) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28a8
+// Checksum 0x0, Offset: 0x29f5
 // Size: 0x36
 function build_attach_models(modelsthread) {
     level.vehicle.templates.attachedmodels[level.vtclassname] = [[ modelsthread ]]();
@@ -698,7 +698,7 @@ function build_attach_models(modelsthread) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x28e6
+// Checksum 0x0, Offset: 0x2a33
 // Size: 0x34
 function function_423e10816a23372f(attachmodels) {
     level.vehicle.templates.attachedmodels[level.vtclassname] = attachmodels;
@@ -706,7 +706,7 @@ function function_423e10816a23372f(attachmodels) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2922
+// Checksum 0x0, Offset: 0x2a6f
 // Size: 0x36
 function build_unload_groups(unloadgroupsthread) {
     level.vehicle.templates.unloadgroups[level.vtclassname] = [[ unloadgroupsthread ]]();
@@ -714,7 +714,7 @@ function build_unload_groups(unloadgroupsthread) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2960
+// Checksum 0x0, Offset: 0x2aad
 // Size: 0x34
 function function_ab7252da140c8fe7(unloadgroups) {
     level.vehicle.templates.unloadgroups[level.vtclassname] = unloadgroups;
@@ -722,8 +722,8 @@ function function_ab7252da140c8fe7(unloadgroups) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x299c
-// Size: 0x93
+// Checksum 0x0, Offset: 0x2ae9
+// Size: 0x92
 function build_life(health, minhealth, maxhealth) {
     classname = level.vtclassname;
     level.vehicle.templates.life[classname] = health;
@@ -735,17 +735,17 @@ function build_life(health, minhealth, maxhealth) {
 
     // Namespace vehicle_build / scripts\common\vehicle_build
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x2a37
+    // Checksum 0x0, Offset: 0x2b83
     // Size: 0x21
     function build_destructible(model, destructible) {
-        assertmsg("<dev string:x253>");
+        assertmsg("this is disabled for now! ");
     }
 
 #/
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a60
+// Checksum 0x0, Offset: 0x2bac
 // Size: 0x2f
 function build_localinit(init_thread) {
     level.vehicleinitthread[function_40fd49171fad19d3(level.vttype)][level.vtclassname] = init_thread;
@@ -753,7 +753,7 @@ function build_localinit(init_thread) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a97
+// Checksum 0x0, Offset: 0x2be3
 // Size: 0x71
 function build_atmo_types(atmo_type, space_type) {
     level.vehicle.templates.atmotypes[level.vtclassname]["atmo"] = atmo_type;
@@ -762,7 +762,7 @@ function build_atmo_types(atmo_type, space_type) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b10
+// Checksum 0x0, Offset: 0x2c5c
 // Size: 0x34
 function build_ace(is_ace) {
     level.vehicle.templates.aces[level.vtclassname] = is_ace;
@@ -770,7 +770,7 @@ function build_ace(is_ace) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b4c
+// Checksum 0x0, Offset: 0x2c98
 // Size: 0x34
 function build_semiace(var_cdf39af1c6b4f363) {
     level.vehicle.templates.semiaces[level.vtclassname] = var_cdf39af1c6b4f363;
@@ -778,8 +778,8 @@ function build_semiace(var_cdf39af1c6b4f363) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b88
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x2cd4
+// Size: 0x6d
 function build_playercontrolled_model(playercontrolledmodel, worldmodel) {
     struct = spawnstruct();
     struct.playercontrolledmodel = playercontrolledmodel;
@@ -790,7 +790,7 @@ function build_playercontrolled_model(playercontrolledmodel, worldmodel) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bfe
+// Checksum 0x0, Offset: 0x2d49
 // Size: 0x82
 function build_is_helicopter(vehicle_type) {
     if (!isdefined(level.vehicle.templates.helicopter_list)) {
@@ -804,7 +804,7 @@ function build_is_helicopter(vehicle_type) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c88
+// Checksum 0x0, Offset: 0x2dd3
 // Size: 0x82
 function function_3a186b889337bd1b(vehicle_type) {
     if (!isdefined(level.vehicle.templates.boat_list)) {
@@ -818,7 +818,7 @@ function function_3a186b889337bd1b(vehicle_type) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d12
+// Checksum 0x0, Offset: 0x2e5d
 // Size: 0x82
 function build_is_airplane(vehicle_type) {
     if (!isdefined(level.vehicle.templates.airplane_list)) {
@@ -832,7 +832,7 @@ function build_is_airplane(vehicle_type) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d9c
+// Checksum 0x0, Offset: 0x2ee7
 // Size: 0x82
 function function_5a73d7723fce9849(vehicle_type) {
     if (!isdefined(level.vehicle.templates.tank_list)) {
@@ -846,7 +846,7 @@ function function_5a73d7723fce9849(vehicle_type) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e26
+// Checksum 0x0, Offset: 0x2f71
 // Size: 0x82
 function build_single_tread(vehicle_type) {
     if (!isdefined(level.vehicle.templates.single_tread_list)) {
@@ -860,7 +860,7 @@ function build_single_tread(vehicle_type) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2eb0
+// Checksum 0x0, Offset: 0x2ffb
 // Size: 0x74
 function build_rider_death_func(func) {
     if (!isdefined(level.vehicle.templates.rider_death_func)) {
@@ -871,7 +871,7 @@ function build_rider_death_func(func) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f2c
+// Checksum 0x0, Offset: 0x3077
 // Size: 0x50
 function function_d97dafaf227ed144(classname, vehicletype, init_thread) {
     level.vehicle.templates.var_95742f5c97192175[classname] = vehicletype;
@@ -880,7 +880,7 @@ function function_d97dafaf227ed144(classname, vehicletype, init_thread) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f84
+// Checksum 0x0, Offset: 0x30cf
 // Size: 0x34
 function build_hud(classname, index) {
     level.vehicle.templates.hudindex[classname] = index;
@@ -888,7 +888,7 @@ function build_hud(classname, index) {
 
 // Namespace vehicle_build / scripts\common\vehicle_build
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc0
+// Checksum 0x0, Offset: 0x310b
 // Size: 0x8f
 function function_2660787ca33cf457(classname, parentbone, childbones) {
     if (!isdefined(level.vehicle.templates.dependentparts)) {

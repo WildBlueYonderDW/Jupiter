@@ -10,8 +10,8 @@
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4e8
-// Size: 0xe5
+// Checksum 0x0, Offset: 0x47a
+// Size: 0xe3
 function mortar_launcher_init() {
     load_fx();
     mortars = getentarray("player_mortar", "targetname");
@@ -34,7 +34,7 @@ function mortar_launcher_init() {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d5
+// Checksum 0x0, Offset: 0x565
 // Size: 0x50
 function load_fx() {
     level._effect["vfx_flare_launch"] = loadfx("vfx/iw8/level/embassy/vfx_mortar_fire.vfx");
@@ -44,7 +44,7 @@ function load_fx() {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x62d
+// Checksum 0x0, Offset: 0x5bd
 // Size: 0x6d
 function setupmortarplayeranimscripts() {
     level.scr_animtree["player_mortar"] = %script_model;
@@ -55,7 +55,7 @@ function setupmortarplayeranimscripts() {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a2
+// Checksum 0x0, Offset: 0x632
 // Size: 0x63
 function setupmortarmodelanimscripts() {
     level.scr_animtree["mortar"] = %script_model;
@@ -66,8 +66,8 @@ function setupmortarmodelanimscripts() {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x70d
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x69d
+// Size: 0xc0
 function create_player_rig(player, animname, var_486db5fa512a3b6b, blockview) {
     if (!isdefined(player)) {
         return;
@@ -84,7 +84,7 @@ function create_player_rig(player, animname, var_486db5fa512a3b6b, blockview) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 7, eflags: 0x0
-// Checksum 0x0, Offset: 0x7d6
+// Checksum 0x0, Offset: 0x765
 // Size: 0xba
 function put_player_into_rig(rig, blendtime, right, left, top, bottom, player) {
     player val::set("put_player_into_rig", "ads", 0);
@@ -100,7 +100,7 @@ function put_player_into_rig(rig, blendtime, right, left, top, bottom, player) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x898
+// Checksum 0x0, Offset: 0x827
 // Size: 0x3d
 function take_player_out_of_rig(player) {
     player val::reset_all("mortar");
@@ -111,7 +111,7 @@ function take_player_out_of_rig(player) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x8dd
+// Checksum 0x0, Offset: 0x86c
 // Size: 0x70
 function mortar_launch_player_effect(player, mortar) {
     if (!istrue(level.ismp)) {
@@ -125,8 +125,8 @@ function mortar_launch_player_effect(player, mortar) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x955
-// Size: 0x219
+// Checksum 0x0, Offset: 0x8e4
+// Size: 0x220
 function movemortar(model, start, end, time, height) {
     setdvarifuninitialized(@"hash_7a0d2f4714304d2b", "0 ");
     if (getdvarint(@"hash_7a0d2f4714304d2b")) {
@@ -171,7 +171,7 @@ function movemortar(model, start, end, time, height) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb76
+// Checksum 0x0, Offset: 0xb0c
 // Size: 0x5f
 function anglemortar() {
     if (!isdefined(self.prevorigin)) {
@@ -185,8 +185,8 @@ function anglemortar() {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbdd
-// Size: 0x191
+// Checksum 0x0, Offset: 0xb73
+// Size: 0x190
 function mortar_test(mortar) {
     if (!istrue(level.ismp)) {
         mortar.interact = mortarlauncher_createhintobject(mortar.origin + (0, 0, 40), "HINT_BUTTON", undefined, %CP_DWN_TWN_OBJECTIVES/ROOF_DEFEND, undefined, undefined, "show", 50, 160, 32, 120);
@@ -213,7 +213,7 @@ function mortar_test(mortar) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd76
+// Checksum 0x0, Offset: 0xd0b
 // Size: 0x1d9
 function player_launch_mortar(player, mortar) {
     self endon("death_or_disconnect");
@@ -246,7 +246,7 @@ function player_launch_mortar(player, mortar) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xf57
+// Checksum 0x0, Offset: 0xeec
 // Size: 0x24f
 function mortar_targetting(mortar) {
     self endon("death_or_disconnect");
@@ -290,7 +290,7 @@ function mortar_targetting(mortar) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11ae
+// Checksum 0x0, Offset: 0x1143
 // Size: 0x3a
 function mortar_ondeathcleanup(mortar) {
     mortar endon("mortar_fired");
@@ -302,8 +302,8 @@ function mortar_ondeathcleanup(mortar) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11f0
-// Size: 0x2af
+// Checksum 0x0, Offset: 0x1185
+// Size: 0x2b1
 function launch_mortar(endpos, player) {
     start = self gettagorigin("j_shaft_top");
     end = getgroundposition(self.origin + anglestoforward(self.angles) * 8000, 8, 1000);
@@ -354,7 +354,7 @@ function launch_mortar(endpos, player) {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a7
+// Checksum 0x0, Offset: 0x143e
 // Size: 0x1b
 function kill_mortar_target() {
     self.previs_model setscriptablepartstate("target", "neutral");
@@ -362,8 +362,8 @@ function kill_mortar_target() {
 
 // Namespace mortar_launcher / scripts\cp_mp\mortar_launcher
 // Params 12, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ca
-// Size: 0x1b7
+// Checksum 0x0, Offset: 0x1461
+// Size: 0x1b6
 function mortarlauncher_createhintobject(org, type, icon, hintstring, priority, duration, onobstruction, hintdist, hintfov, usedist, usefov, useent) {
     hintobj = undefined;
     if (isdefined(useent)) {
@@ -373,7 +373,7 @@ function mortarlauncher_createhintobject(org, type, icon, hintstring, priority, 
     }
     hintobj makeusable();
     if (isdefined(useent) && isdefined(org)) {
-        assertex(isstring(org), "<dev string:x1c>");
+        assertex(isstring(org), "When creating a hint object with a passed in ent, you need to set org to a tag on that model");
         hintobj sethinttag(org);
     }
     if (isdefined(type)) {

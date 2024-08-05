@@ -22,13 +22,12 @@
 #using scripts\mp\utility\damage.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
 
 #namespace butterfly_mine;
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x58f
+// Checksum 0x0, Offset: 0x3fd
 // Size: 0x18
 function autoexec main() {
     registersharedfunc("equip_butterfly_mine", "init", &function_843dde4bf96b6965);
@@ -36,18 +35,17 @@ function autoexec main() {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5af
-// Size: 0x45
+// Checksum 0x0, Offset: 0x41d
+// Size: 0x2b
 function function_843dde4bf96b6965() {
     minetriggerdata = scripts\cp_mp\vehicles\vehicle_mines::vehicle_mines_getleveldataformine("equip_butterfly_mine", 1);
     minetriggerdata.triggercallback = &function_4751713f978b6416;
-    level.var_e705f4189f25418d = getdvarint(@"hash_eb66ecc15316468f", 1);
 }
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x5fc
-// Size: 0x1a9
+// Checksum 0x0, Offset: 0x450
+// Size: 0x1ae
 function function_539f38f444d5b41a(grenade) {
     grenade setotherent(self);
     grenade setcandamage(0);
@@ -58,7 +56,7 @@ function function_539f38f444d5b41a(grenade) {
     ref = namespace_4fb9dddfb8c1a67a::function_7f245729fcb6414d(grenade.weapon_name);
     grenade.tableinfo = namespace_4fb9dddfb8c1a67a::getequipmenttableinfo(ref);
     if (!isdefined(grenade.tableinfo.bundle)) {
-        assertmsg("<dev string:x1c>");
+        assertmsg("Butterfly Mine needs a bundle.");
     }
     var_6951cf1f43bc8ebe = self getgunangles();
     var_8011cffb839e8243 = gettime();
@@ -78,7 +76,7 @@ function function_539f38f444d5b41a(grenade) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7ad
+// Checksum 0x0, Offset: 0x606
 // Size: 0x5c
 function function_a1a46255fbfac86c(grenade, var_6951cf1f43bc8ebe, impactvelocity) {
     grenade.ownedmines = [];
@@ -87,8 +85,8 @@ function function_a1a46255fbfac86c(grenade, var_6951cf1f43bc8ebe, impactvelocity
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x811
-// Size: 0x274
+// Checksum 0x0, Offset: 0x66a
+// Size: 0x26f
 function function_33f76685d61ffb0(minename, nummines, impactvelocity, stepstartradius, var_ec8c077b88a3003e, var_450483a591a06439, fandegrees, var_4d1e3f4a23058445) {
     var_4b65413211af7033 = undefined;
     forward = vectornormalize(impactvelocity);
@@ -115,30 +113,16 @@ function function_33f76685d61ffb0(minename, nummines, impactvelocity, stepstartr
             function_6300c632dc21b15a(scatteredmine, self.owner, self);
             self.ownedmines[mineindex + var_4d1e3f4a23058445] = scatteredmine;
             scatteredmine thread function_ffa6fec05cb3637a(self.tableinfo.bundle);
-            if (scripts\engine\utility::issharedfuncdefined("entity", "trackEntityLimit")) {
-                [[ scripts\engine\utility::getsharedfunc("entity", "trackEntityLimit") ]](scatteredmine, self.owner, "butterfly_mine");
-                scatteredmine thread function_1575acb1c3533196();
-                waitframe();
-            }
         }
     }
-    thread function_ebc941d7484bb7a9();
-}
-
-// Namespace butterfly_mine / namespace_b96a346cb4f3959c
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8d
-// Size: 0x4e
-function function_ebc941d7484bb7a9() {
-    level endon("game_ended");
-    self.owner endon("disconnect");
-    thread delaythread(1, &scripts\cp_mp\challenges::function_b0f754c8a379154e, "equip_butterfly_mine", self.owner, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
+    wait 1;
+    scripts\cp_mp\challenges::function_b0f754c8a379154e("equip_butterfly_mine", self.owner, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
 }
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xae3
-// Size: 0x1d4
+// Checksum 0x0, Offset: 0x8e1
+// Size: 0x1dc
 function function_70fd9ddef68b9ae3(launchdirection, launchlocation, raycastdistance) {
     var_7c2f0a987752b57e = launchdirection;
     var_9e1171a935066689 = (launchdirection[0], launchdirection[1], 0);
@@ -175,8 +159,8 @@ function function_70fd9ddef68b9ae3(launchdirection, launchlocation, raycastdista
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xcbf
-// Size: 0x375
+// Checksum 0x0, Offset: 0xac5
+// Size: 0x31a
 function function_6300c632dc21b15a(butterflymine, owner, sourcegrenade, lifetimeOverride) {
     butterflymine.owner = owner;
     butterflymine.team = owner.team;
@@ -194,19 +178,12 @@ function function_6300c632dc21b15a(butterflymine, owner, sourcegrenade, lifetime
     if (isdefined(sourcegrenade)) {
         butterflymine.sourcegrenade = sourcegrenade;
     }
-    butterflymine enableplayermarks("equipment");
-    if (level.teambased) {
-        butterflymine filteroutplayermarks(butterflymine.owner.team);
-    } else {
-        butterflymine filteroutplayermarks(butterflymine.owner);
-    }
     butterflymine.damagetaken = 0;
     butterflymine scripts\cp_mp\ent_manager::registerspawn(1, &function_435b53c90ec01143);
     butterflymine.headiconid = butterflymine scripts\cp_mp\entityheadicons::setheadicon_factionimage(0, 2, undefined, undefined, undefined, undefined, 1);
     butterflymine setentityowner(owner);
     butterflymine setotherent(owner);
     butterflymine setcandamage(1);
-    butterflymine.deletefunc = &function_435b53c90ec01143;
     entnum = butterflymine getentitynumber();
     level.mines[entnum] = butterflymine;
     butterflymine thread scripts\mp\damage::monitordamage(1, "hitequip", &function_ca00c87cb0a3d308, &function_31cc0ad55f88e7f3);
@@ -231,8 +208,8 @@ function function_6300c632dc21b15a(butterflymine, owner, sourcegrenade, lifetime
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x103c
-// Size: 0x1f5
+// Checksum 0x0, Offset: 0xde7
+// Size: 0x1f9
 function function_ffa6fec05cb3637a(bundle) {
     self endon("death");
     self endon("explode");
@@ -278,8 +255,8 @@ function function_ffa6fec05cb3637a(bundle) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1239
-// Size: 0x269
+// Checksum 0x0, Offset: 0xfe8
+// Size: 0x243
 function function_fb430131c2697d67(attacker) {
     thread function_56ae4ffb25eb1168(5);
     if (isai(attacker)) {
@@ -323,18 +300,14 @@ function function_fb430131c2697d67(attacker) {
         self.sourcegrenade.owner updatedamagefeedback("hitequip");
     }
     self setscriptablepartstate("arm", "neutral", 0);
-    if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        self radiusdamage(self.origin, self.explosionradius, self.maxdmg, self.mindmg, self.owner, "MOD_EXPLOSIVE", "butterfly_mine_mp");
-        self setscriptablepartstate("explode", "fromPlayerBR", 0);
-    } else {
-        self setscriptablepartstate("explode", statestring, 0);
-    }
+    self setscriptablepartstate("explode", statestring, 0);
+    self radiusdamage(self.origin, self.explosionradius, self.maxdmg, self.mindmg, attacker, "MOD_EXPLOSIVE", "butterfly_mine_mp");
     scripts\cp_mp\challenges::function_b0f754c8a379154e("equip_butterfly_mine", self.sourcegrenade.owner, undefined, function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"hit"));
 }
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x14aa
+// Checksum 0x0, Offset: 0x1233
 // Size: 0x1d
 function function_4751713f978b6416(vehicle, mine) {
     mine thread function_fb430131c2697d67(vehicle);
@@ -342,7 +315,7 @@ function function_4751713f978b6416(vehicle, mine) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14cf
+// Checksum 0x0, Offset: 0x1258
 // Size: 0x39
 function function_435b53c90ec01143(attacker) {
     thread function_56ae4ffb25eb1168(5);
@@ -352,7 +325,7 @@ function function_435b53c90ec01143(attacker) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1510
+// Checksum 0x0, Offset: 0x1299
 // Size: 0x32
 function function_e7e5214ee3b16fb1() {
     thread function_56ae4ffb25eb1168(1, 1);
@@ -362,12 +335,9 @@ function function_e7e5214ee3b16fb1() {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x154a
-// Size: 0x149
+// Checksum 0x0, Offset: 0x12d3
+// Size: 0x13d
 function function_56ae4ffb25eb1168(var_cbf7be4f62a0ddb2, var_6c3c372dfdf70054) {
-    if (!isdefined(self)) {
-        return;
-    }
     self notify("death");
     self setcandamage(0);
     if (isdefined(self.headiconid)) {
@@ -393,9 +363,6 @@ function function_56ae4ffb25eb1168(var_cbf7be4f62a0ddb2, var_6c3c372dfdf70054) {
     cleanupequipment(self getentitynumber());
     if (isdefined(var_cbf7be4f62a0ddb2)) {
         wait var_cbf7be4f62a0ddb2;
-        if (!isdefined(self)) {
-            return;
-        }
     }
     scripts\cp_mp\ent_manager::deregisterspawn();
     if (isdefined(self.sourcegrenade)) {
@@ -408,8 +375,8 @@ function function_56ae4ffb25eb1168(var_cbf7be4f62a0ddb2, var_6c3c372dfdf70054) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x169b
-// Size: 0x72
+// Checksum 0x0, Offset: 0x1418
+// Size: 0x6f
 function function_f1ccd9eaaa39e87c() {
     if (isdefined(self.ownedmines)) {
         foreach (mine in self.ownedmines) {
@@ -422,8 +389,8 @@ function function_f1ccd9eaaa39e87c() {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1715
-// Size: 0x72
+// Checksum 0x0, Offset: 0x148f
+// Size: 0x6f
 function function_81ddc6ea59046dcb() {
     if (isdefined(self.ownedmines)) {
         foreach (mine in self.ownedmines) {
@@ -436,8 +403,8 @@ function function_81ddc6ea59046dcb() {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x178f
-// Size: 0xde
+// Checksum 0x0, Offset: 0x1506
+// Size: 0xe2
 function function_31cc0ad55f88e7f3(data) {
     attacker = data.attacker;
     objweapon = data.objweapon;
@@ -464,7 +431,7 @@ function function_31cc0ad55f88e7f3(data) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1876
+// Checksum 0x0, Offset: 0x15f1
 // Size: 0x55
 function function_76df7cd7c6105e46(meansofdeath) {
     switch (meansofdeath) {
@@ -480,8 +447,8 @@ function function_76df7cd7c6105e46(meansofdeath) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d3
-// Size: 0xce
+// Checksum 0x0, Offset: 0x164e
+// Size: 0xcd
 function function_ca00c87cb0a3d308(data) {
     attacker = data.attacker;
     if (isdefined(attacker)) {
@@ -501,27 +468,22 @@ function function_ca00c87cb0a3d308(data) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a9
-// Size: 0x104
+// Checksum 0x0, Offset: 0x1723
+// Size: 0xe8
 function function_92c9dde336b60a46(sourcegrenade, previousexplosionpoint) {
     wait 0.35;
     closestmine = self;
     closestdistsqr = 250000;
     minesinrange = 0;
-    if (isdefined(sourcegrenade) && isdefined(sourcegrenade.ownedmines)) {
-        foreach (mine in sourcegrenade.ownedmines) {
-            if (!isdefined(mine)) {
-                continue;
-            }
-            if (mine == self) {
-                continue;
-            }
-            thisdistsqr = distancesquared(mine.origin, previousexplosionpoint);
-            if (thisdistsqr < closestdistsqr) {
-                closestmine = mine;
-                closestdistsqr = thisdistsqr;
-                minesinrange = 1;
-            }
+    foreach (mine in sourcegrenade.ownedmines) {
+        if (mine == self) {
+            continue;
+        }
+        thisdistsqr = distancesquared(mine.origin, previousexplosionpoint);
+        if (thisdistsqr < closestdistsqr) {
+            closestmine = mine;
+            closestdistsqr = thisdistsqr;
+            minesinrange = 1;
         }
     }
     if (istrue(minesinrange)) {
@@ -532,8 +494,8 @@ function function_92c9dde336b60a46(sourcegrenade, previousexplosionpoint) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ab5
-// Size: 0xa3
+// Checksum 0x0, Offset: 0x1813
+// Size: 0x9f
 function function_692167ff37e7ef8(data) {
     if (!isdefined(self.owner)) {
         return;
@@ -542,7 +504,7 @@ function function_692167ff37e7ef8(data) {
     if (istrue(scripts\cp_mp\utility\player_utility::playersareenemies(self.owner, attacker))) {
         attacker notify("destroyed_equipment");
         if (!istrue(self.sourcegrenade.givenscore)) {
-            attacker scripts\mp\killstreaks\killstreaks::givescoreforequipment(self, undefined, 1);
+            attacker scripts\mp\killstreaks\killstreaks::givescoreforequipment(self);
             self.sourcegrenade.givenscore = 1;
         }
     }
@@ -554,7 +516,7 @@ function function_692167ff37e7ef8(data) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b60
+// Checksum 0x0, Offset: 0x18ba
 // Size: 0x1d
 function function_b540d1d357522929() {
     self endon("death");
@@ -566,7 +528,7 @@ function function_b540d1d357522929() {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b85
+// Checksum 0x0, Offset: 0x18df
 // Size: 0x3f
 function function_1ba54174ee9ab40f() {
     self.owner endon("disconnect");
@@ -579,20 +541,8 @@ function function_1ba54174ee9ab40f() {
 }
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bcc
-// Size: 0x1e
-function function_1575acb1c3533196() {
-    self endon("death");
-    self waittill("entity_limit_destroy");
-    if (isdefined(self)) {
-        thread function_435b53c90ec01143();
-    }
-}
-
-// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bf2
+// Checksum 0x0, Offset: 0x1926
 // Size: 0x43
 function function_f92200134f4ce696(data) {
     if (istrue(self.isexploding)) {
@@ -606,7 +556,7 @@ function function_f92200134f4ce696(data) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c3d
+// Checksum 0x0, Offset: 0x1971
 // Size: 0x3b
 function function_b86eee224cc33fc(data) {
     if (isdefined(self) && !istrue(self.isexploding)) {
@@ -617,7 +567,7 @@ function function_b86eee224cc33fc(data) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c80
+// Checksum 0x0, Offset: 0x19b4
 // Size: 0x3a
 function function_d2c4655c7d6a3331(data) {
     if (isdefined(self) || !istrue(self.isexploding)) {
@@ -628,8 +578,8 @@ function function_d2c4655c7d6a3331(data) {
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cc2
-// Size: 0x3c
+// Checksum 0x0, Offset: 0x19f6
+// Size: 0x3b
 function function_5f9ffc69b9bd0ab3(up, forward) {
     right = vectornormalize(vectorcross(forward, up));
     forward = vectorcross(up, right);
@@ -637,75 +587,9 @@ function function_5f9ffc69b9bd0ab3(up, forward) {
 }
 
 // Namespace butterfly_mine / namespace_b96a346cb4f3959c
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d07
-// Size: 0xd9
-function function_6fed985972fc7a38(inflictor, attacker) {
-    victim = self;
-    if (victim _hasperk("specialty_tac_resist") || victim _hasperk("specialty_tac_resist_br")) {
-        return;
-    }
-    victim notify("buttfly_mine_frangible");
-    bundle = inflictor.sourcegrenade.bundle;
-    if (isdefined(bundle) && istrue(bundle.var_5b4fa8f37a5d72d8)) {
-        if (isdefined(bundle.var_443434c1cae61f7)) {
-            time = getdvarfloat(@"hash_32be7e91632bbd2c", bundle.var_443434c1cae61f7);
-        } else {
-            time = getdvarfloat(@"hash_32be7e91632bbd2c", 3);
-        }
-        attacker thread scripts\mp\perks\perkfunctions::ammodisabling_run(victim, 0, time);
-        victim thread function_62a7d32fe50d51c3(time);
-    }
-}
-
-// Namespace butterfly_mine / namespace_b96a346cb4f3959c
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1de8
-// Size: 0x85
-function private function_62a7d32fe50d51c3(timer) {
-    victim = self;
-    victim endon("buttfly_mine_frangible");
-    victim endon("death_or_disconnect");
-    victim thread function_cf129b3a4e4245d0(timer);
-    var_350eace8871c8665 = timer;
-    if (level.var_e705f4189f25418d) {
-        frequency = 1;
-        while (isalive(victim) && timer > 0) {
-            self function_2f6b8c6721d18b0b("vsp_fall");
-            self function_9227c84d3fb311a3("vsp_fall");
-            wait frequency;
-            timer -= frequency;
-        }
-    }
-}
-
-// Namespace butterfly_mine / namespace_b96a346cb4f3959c
-// Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x1e75
-// Size: 0x74
-function private function_cf129b3a4e4245d0(timer) {
-    self endon("buttfly_mine_frangible");
-    self endon("death_or_disconnect");
-    if (isusingremote()) {
-        return;
-    }
-    if (isalive(self)) {
-        self enableplayerbreathsystem(0);
-        wait 1;
-        while (timer > 0 && isalive(self)) {
-            self playlocalsound("plr_breath_pain_init");
-            timer -= 1.7;
-            wait 1.7;
-        }
-        wait 0.5;
-        self enableplayerbreathsystem(1);
-    }
-}
-
-// Namespace butterfly_mine / namespace_b96a346cb4f3959c
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ef1
-// Size: 0x19c
+// Checksum 0x0, Offset: 0x1a3a
+// Size: 0x199
 function function_e1d976fb5e329d97(oldowner) {
     if (istrue(self.exploding)) {
         return;

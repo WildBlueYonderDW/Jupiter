@@ -10,8 +10,8 @@
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ea
-// Size: 0x137
+// Checksum 0x0, Offset: 0x200
+// Size: 0x136
 function asm_init(var_b5da6777bfe1ace8, archetypename) {
     self.asmname = var_b5da6777bfe1ace8;
     first_init = 0;
@@ -45,7 +45,7 @@ function asm_init(var_b5da6777bfe1ace8, archetypename) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x329
+// Checksum 0x0, Offset: 0x33e
 // Size: 0xf7
 function hack_setup_a_struct() {
     if (isdefined(self.a)) {
@@ -69,7 +69,7 @@ function hack_setup_a_struct() {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x428
+// Checksum 0x0, Offset: 0x43d
 // Size: 0x2c
 function function_a2b8f8b0891ee7fe() {
     level.fnanimatedprop_setup = &animatedprop_setup;
@@ -79,8 +79,8 @@ function function_a2b8f8b0891ee7fe() {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x45c
-// Size: 0x8b
+// Checksum 0x0, Offset: 0x471
+// Size: 0x8a
 function animatedprop_setup(modelname, var, origin, angles) {
     assert(isdefined(level.scr_model));
     assert(isdefined(level.scr_model[modelname]));
@@ -92,8 +92,8 @@ function animatedprop_setup(modelname, var, origin, angles) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ef
-// Size: 0x72
+// Checksum 0x0, Offset: 0x503
+// Size: 0x71
 function animatedprop_setanim(propname, param) {
     assert(isdefined(self.animated_prop));
     assert(isdefined(level.scr_anim) && isdefined(level.scr_anim[propname]));
@@ -103,8 +103,8 @@ function animatedprop_setanim(propname, param) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x569
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x57c
+// Size: 0xc0
 function runpain() {
     if (isdefined(self.fnshouldplaypainanim)) {
         if (![[ self.fnshouldplaypainanim ]]()) {
@@ -131,8 +131,8 @@ function runpain() {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x632
-// Size: 0x127
+// Checksum 0x0, Offset: 0x644
+// Size: 0x128
 function shouldplaypainanim() {
     var_392782e59863c89f = 64;
     if (istrue(self.a.disablepain)) {
@@ -159,7 +159,7 @@ function shouldplaypainanim() {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x762
+// Checksum 0x0, Offset: 0x775
 // Size: 0x34
 function asm_handlenotetracks(note, animstate, animindex, animtime) {
     asm_fireevent(self.asmname, note);
@@ -169,18 +169,18 @@ function asm_handlenotetracks(note, animstate, animindex, animtime) {
 
     // Namespace asm_mp / scripts\asm\asm_mp
     // Params 2, eflags: 0x0
-    // Checksum 0x0, Offset: 0x79e
+    // Checksum 0x0, Offset: 0x7b1
     // Size: 0x29
     function asm_shoulddeathtransition(asmname, currentstate) {
-        assertmsg("<dev string:x1c>" + asmname + "<dev string:x32>");
+        assertmsg("someone using ASM " + asmname + " is running the completely obsolete script ASM!");
     }
 
 #/
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cf
-// Size: 0x124
+// Checksum 0x0, Offset: 0x7e2
+// Size: 0x125
 function asm_settransitionorientmode_transition(orient_mode) {
     switch (orient_mode) {
     case #"hash_96a6a25bd7beed30": 
@@ -207,8 +207,8 @@ function asm_settransitionorientmode_transition(orient_mode) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x8fb
-// Size: 0x166
+// Checksum 0x0, Offset: 0x90f
+// Size: 0x16a
 function asm_settransitionorientmode_legacy(orient_mode) {
     switch (orient_mode) {
     case #"hash_a6238b3102248f7f": 
@@ -236,14 +236,14 @@ function asm_settransitionorientmode_legacy(orient_mode) {
         self orientmode("face angle", yaw);
         break;
     default: 
-        assertex(0, "<dev string:x65>");
+        assertex(0, "Invalid orient_mode passed to ASM_SetTransitionOrientMode_Legacy");
         break;
     }
 }
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa69
+// Checksum 0x0, Offset: 0xa81
 // Size: 0x24
 function asm_getanimindex(asmname, statename, params) {
     return self asmgetanim(asmname, statename, params);
@@ -251,7 +251,7 @@ function asm_getanimindex(asmname, statename, params) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa96
+// Checksum 0x0, Offset: 0xaae
 // Size: 0x1b
 function asm_playadditiveanimloopstate_mp(asmname, statename, params) {
     
@@ -259,8 +259,8 @@ function asm_playadditiveanimloopstate_mp(asmname, statename, params) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xab9
-// Size: 0x1eb
+// Checksum 0x0, Offset: 0xad1
+// Size: 0x1ed
 function dooropen(door, t) {
     if (distance2dsquared(self.origin, door.origin) < 16) {
     }
@@ -295,7 +295,7 @@ function dooropen(door, t) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcac
+// Checksum 0x0, Offset: 0xcc6
 // Size: 0x12
 function doorclose(door) {
     door scriptabledoorclose();
@@ -303,8 +303,8 @@ function doorclose(door) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc6
-// Size: 0xdb
+// Checksum 0x0, Offset: 0xce0
+// Size: 0xdf
 function doorneedstoclose(door) {
     if (istrue(door scriptableisdoor()) && door scriptabledoorisclosed()) {
         return false;
@@ -324,7 +324,7 @@ function doorneedstoclose(door) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdaa
+// Checksum 0x0, Offset: 0xdc8
 // Size: 0x3b
 function getdoorcenter(door) {
     assert(isdefined(self._blackboard.doorpos));
@@ -333,7 +333,7 @@ function getdoorcenter(door) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdee
+// Checksum 0x0, Offset: 0xe0c
 // Size: 0x19
 function dooralreadyopen(door) {
     return abs(door scriptabledoorangle()) > 60;
@@ -341,7 +341,7 @@ function dooralreadyopen(door) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe10
+// Checksum 0x0, Offset: 0xe2e
 // Size: 0x21
 function asm_animhasfacialoverridemp(var_63db3c9e26531938) {
     if (!animisleaf(var_63db3c9e26531938)) {
@@ -352,7 +352,7 @@ function asm_animhasfacialoverridemp(var_63db3c9e26531938) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe3a
+// Checksum 0x0, Offset: 0xe58
 // Size: 0x25
 function asm_playfacialanim_mp(asmname, statename, animname) {
     self setfacialindexfromasm(asmname, statename, animname);
@@ -360,8 +360,8 @@ function asm_playfacialanim_mp(asmname, statename, animname) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe67
-// Size: 0xa2
+// Checksum 0x0, Offset: 0xe85
+// Size: 0xa1
 function asm_playfacialaniminternalmp(var_63db3c9e26531938, a_state) {
     if (!isfacialstateallowed("asm")) {
         return;
@@ -384,7 +384,7 @@ function asm_playfacialaniminternalmp(var_63db3c9e26531938, a_state) {
 
 // Namespace asm_mp / scripts\asm\asm_mp
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf11
+// Checksum 0x0, Offset: 0xf2e
 // Size: 0x50
 function asm_setanimscripted() {
     self animmode("noclip");

@@ -9,8 +9,8 @@
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d2
-// Size: 0xa0
+// Checksum 0x0, Offset: 0x594
+// Size: 0x9f
 function ai_init() {
     flag_name = self.animsetname + "_animsetname_init";
     if (!flag(flag_name)) {
@@ -29,7 +29,7 @@ function ai_init() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x47a
+// Checksum 0x0, Offset: 0x63b
 // Size: 0x41
 function function_67ec1df786cad61a() {
     for (i = 0; i < level.players.size; i++) {
@@ -40,7 +40,7 @@ function function_67ec1df786cad61a() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c3
+// Checksum 0x0, Offset: 0x684
 // Size: 0x9
 function function_d7edb8535850db35() {
     self function_d068af002e4ecab5();
@@ -48,7 +48,7 @@ function function_d7edb8535850db35() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d4
+// Checksum 0x0, Offset: 0x695
 // Size: 0x72
 function set_forcegoal() {
     if (isdefined(self.set_forcedgoal)) {
@@ -65,7 +65,7 @@ function set_forcegoal() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x54e
+// Checksum 0x0, Offset: 0x70f
 // Size: 0x50
 function unset_forcegoal() {
     if (!isdefined(self.set_forcedgoal)) {
@@ -79,7 +79,7 @@ function unset_forcegoal() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a6
+// Checksum 0x0, Offset: 0x767
 // Size: 0xd
 function disable_exits() {
     self.disableexits = 1;
@@ -87,7 +87,7 @@ function disable_exits() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5bb
+// Checksum 0x0, Offset: 0x77c
 // Size: 0xc
 function enable_exits() {
     self.disableexits = 0;
@@ -95,7 +95,7 @@ function enable_exits() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5cf
+// Checksum 0x0, Offset: 0x790
 // Size: 0xc
 function disable_turnanims() {
     self.var_4cd89215083d17cd = 0;
@@ -103,7 +103,7 @@ function disable_turnanims() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5e3
+// Checksum 0x0, Offset: 0x7a4
 // Size: 0xd
 function enable_turnanims() {
     self.var_4cd89215083d17cd = 1;
@@ -111,7 +111,7 @@ function enable_turnanims() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x5f8
+// Checksum 0x0, Offset: 0x7b9
 // Size: 0xd
 function disable_arrivals() {
     self.disablearrivals = 1;
@@ -119,7 +119,7 @@ function disable_arrivals() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x60d
+// Checksum 0x0, Offset: 0x7ce
 // Size: 0x14
 function enable_arrivals() {
     self endon("death");
@@ -129,7 +129,7 @@ function enable_arrivals() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x629
+// Checksum 0x0, Offset: 0x7ea
 // Size: 0x20
 function set_rebel(var_5b0a55b4e162fee3) {
     self._blackboard.wildfireenabled = var_5b0a55b4e162fee3;
@@ -137,25 +137,25 @@ function set_rebel(var_5b0a55b4e162fee3) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x651
+// Checksum 0x0, Offset: 0x812
 // Size: 0x20
 function disable_long_death() {
-    assertex(isalive(self), "<dev string:x1c>");
+    assertex(isalive(self), "Tried to disable long death on a non living thing");
     self.var_98add129a7ecb962 = 0;
 }
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x679
+// Checksum 0x0, Offset: 0x83a
 // Size: 0x21
 function enable_long_death() {
-    assertex(isalive(self), "<dev string:x51>");
+    assertex(isalive(self), "Tried to enable long death on a non living thing");
     self.var_98add129a7ecb962 = 1;
 }
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6a2
+// Checksum 0x0, Offset: 0x863
 // Size: 0x40
 function enable_danger_react(duration) {
     duration *= 1000;
@@ -167,7 +167,7 @@ function enable_danger_react(duration) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ea
+// Checksum 0x0, Offset: 0x8ab
 // Size: 0x26
 function disable_danger_react() {
     assert(isai(self));
@@ -177,7 +177,7 @@ function disable_danger_react() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x718
+// Checksum 0x0, Offset: 0x8d9
 // Size: 0xc
 function disable_surprise() {
     self.newenemyreactiondistsq = 0;
@@ -185,7 +185,7 @@ function disable_surprise() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x72c
+// Checksum 0x0, Offset: 0x8ed
 // Size: 0x4f
 function spawn_failed(ent) {
     if (!isalive(ent)) {
@@ -202,8 +202,8 @@ function spawn_failed(ent) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x784
-// Size: 0x92
+// Checksum 0x0, Offset: 0x945
+// Size: 0x91
 function gun_remove() {
     if (isai(self)) {
         script_func("anim_placeweaponon", self.weapon, "none");
@@ -224,8 +224,8 @@ function gun_remove() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x81e
-// Size: 0x70
+// Checksum 0x0, Offset: 0x9de
+// Size: 0x6f
 function gun_remove_fake() {
     if (isdefined(self.fake_weapon_models)) {
         for (i = self.fake_weapon_models.size - 1; i >= 0; i--) {
@@ -241,8 +241,8 @@ function gun_remove_fake() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x896
-// Size: 0xce
+// Checksum 0x0, Offset: 0xa55
+// Size: 0xcc
 function gun_create_fake(models) {
     foreach (model in models) {
         if (issubstr(model, "toprail") || issubstr(model, "railcust")) {
@@ -264,8 +264,8 @@ function gun_create_fake(models) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x96c
-// Size: 0xb6
+// Checksum 0x0, Offset: 0xb29
+// Size: 0xb5
 function gun_recall() {
     if (isai(self)) {
         script_func("anim_placeweaponon", self.weapon, "right");
@@ -285,16 +285,16 @@ function gun_recall() {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa2a
-// Size: 0x93
+// Checksum 0x0, Offset: 0xbe6
+// Size: 0x92
 function set_gunpose(type, gundiscipline) {
     /#
-        validtypes["<dev string:x85>"] = 1;
-        validtypes["<dev string:x92>"] = 1;
-        validtypes["<dev string:x9e>"] = 1;
-        validtypes["<dev string:xa7>"] = 1;
-        validtypes["<dev string:xae>"] = 1;
-        assertex(isdefined(validtypes[type]), "<dev string:xb9>" + type + "<dev string:xc9>");
+        validtypes["<dev string:x1c>"] = 1;
+        validtypes["<dev string:x26>"] = 1;
+        validtypes["<dev string:x2f>"] = 1;
+        validtypes["<dev string:x35>"] = 1;
+        validtypes["<dev string:x39>"] = 1;
+        assertex(isdefined(validtypes[type]), "<dev string:x41>" + type + "<dev string:x4e>");
     #/
     if (type == "automatic") {
         type = undefined;
@@ -305,7 +305,7 @@ function set_gunpose(type, gundiscipline) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xac5
+// Checksum 0x0, Offset: 0xc80
 // Size: 0x17
 function reset_gunpose() {
     self.gunposeoverride = undefined;
@@ -314,7 +314,7 @@ function reset_gunpose() {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xae4
+// Checksum 0x0, Offset: 0xc9f
 // Size: 0x1c
 function poi_enable(val, startstruct) {
     scripts\asm\shared\utility::toggle_poi(val, startstruct);
@@ -322,7 +322,7 @@ function poi_enable(val, startstruct) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb08
+// Checksum 0x0, Offset: 0xcc3
 // Size: 0x37
 function stop_use_turret() {
     self notify("stop_use_turret");
@@ -333,20 +333,20 @@ function stop_use_turret() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xb47
+// Checksum 0x0, Offset: 0xd02
 // Size: 0xe5
 function magic_bullet_shield(var_7a28bdd1351dcbfb) {
     if (!isdefined(var_7a28bdd1351dcbfb)) {
         var_7a28bdd1351dcbfb = 0;
     }
     if (isai(self)) {
-        assertex(isalive(self), "<dev string:xe3>");
-        assertex(!self.delayeddeath, "<dev string:x122>");
-        assertex(!isdefined(self.syncedmeleetarget) || !self.in_melee, "<dev string:x15c>");
+        assertex(isalive(self), "Tried to do magic_bullet_shield on a dead or undefined guy.");
+        assertex(!self.delayeddeath, "Tried to do magic_bullet_shield on a guy about to die.");
+        assertex(!isdefined(self.syncedmeleetarget) || !self.in_melee, "Trying to turn on magic_bullet_shield while synced melee in progress (might be about to die).");
     } else {
         self.health = 100000;
     }
-    assertex(!isdefined(self.magic_bullet_shield), "<dev string:x1bd>");
+    assertex(!isdefined(self.magic_bullet_shield), "Can't call magic bullet shield on a character twice. Use make_hero and remove_heroes_from_array so that you don't end up with shielded guys in your logic.");
     if (isai(self)) {
         val::set("magic_bullet_shield", "attackeraccuracy", 0.1);
     }
@@ -361,11 +361,11 @@ function magic_bullet_shield(var_7a28bdd1351dcbfb) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc34
+// Checksum 0x0, Offset: 0xdef
 // Size: 0x45
 function stop_magic_bullet_shield() {
     self notify("stop_magic_bullet_shield");
-    assertex(isdefined(self.magic_bullet_shield) && self.magic_bullet_shield, "<dev string:x25b>");
+    assertex(isdefined(self.magic_bullet_shield) && self.magic_bullet_shield, "Tried to stop magic bullet shield on a guy without magic bulletshield");
     val::reset_all("magic_bullet_shield");
     self.magic_bullet_shield = undefined;
 }
@@ -374,17 +374,17 @@ function stop_magic_bullet_shield() {
 
     // Namespace ai / scripts\common\ai
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc81
+    // Checksum 0x0, Offset: 0xe3c
     // Size: 0x72
     function magic_bullet_death_detection() {
-        self endon("<dev string:x2a4>");
+        self endon("<dev string:x65>");
         export = self.export;
         entnum = self getentitynumber();
-        self waittill("<dev string:x2c0>");
+        self waittill("<dev string:x7e>");
         if (isdefined(self)) {
-            assertex(0, "<dev string:x2c9>" + export + "<dev string:x2f1>");
+            assertex(0, "<dev string:x84>" + export + "<dev string:xa9>");
         } else {
-            assertex(0, "<dev string:x2c9>" + export + "<dev string:x304>");
+            assertex(0, "<dev string:x84>" + export + "<dev string:xb9>");
         }
         export = export;
     }
@@ -393,7 +393,7 @@ function stop_magic_bullet_shield() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xcfb
+// Checksum 0x0, Offset: 0xeb6
 // Size: 0x3b
 function force_long_death_on_back_with_pistol(skipcrawl) {
     self.forcelongdeath = 4;
@@ -405,10 +405,10 @@ function force_long_death_on_back_with_pistol(skipcrawl) {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd3e
+// Checksum 0x0, Offset: 0xef9
 // Size: 0xba
 function function_a1404ef1116dbe2c(skipcrawl, skipintro) {
-    assertex(self asmhasstate(self.asmname, "<dev string:x336>"), "<dev string:x34b>" + self.asmname + "<dev string:x35f>");
+    assertex(self asmhasstate(self.asmname, "choose_long_death"), "My current asm [" + self.asmname + "] has no choose_long_death state");
     var_535b99b940095f4 = [29, 31, 33, 35];
     randind = randomint(4);
     self.forcelongdeath = var_535b99b940095f4[randind];
@@ -423,7 +423,7 @@ function function_a1404ef1116dbe2c(skipcrawl, skipintro) {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe00
+// Checksum 0x0, Offset: 0xfbb
 // Size: 0x51
 function function_b9307a16e291255e(skipcrawl, skipintro) {
     self.forcelongdeath = 37;
@@ -438,7 +438,7 @@ function function_b9307a16e291255e(skipcrawl, skipintro) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe59
+// Checksum 0x0, Offset: 0x1014
 // Size: 0xd
 function force_long_death_crawling_away() {
     self.forcelongdeath = 3;
@@ -446,7 +446,7 @@ function force_long_death_crawling_away() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe6e
+// Checksum 0x0, Offset: 0x1029
 // Size: 0xd
 function force_long_death_stumbling() {
     self.forcelongdeath = 2;
@@ -454,8 +454,8 @@ function force_long_death_stumbling() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe83
-// Size: 0x14a
+// Checksum 0x0, Offset: 0x103e
+// Size: 0x14e
 function find_and_teleport_to_cover(coverselector) {
     var_6cb7c526ca1b2907 = 0;
     frompoint = undefined;
@@ -481,7 +481,7 @@ function find_and_teleport_to_cover(coverselector) {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xfd6
+// Checksum 0x0, Offset: 0x1195
 // Size: 0x59
 function aigroundturret_requestmount(turret) {
     if (self._blackboard.aigroundturretstate == "none") {
@@ -494,7 +494,7 @@ function aigroundturret_requestmount(turret) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1038
+// Checksum 0x0, Offset: 0x11f7
 // Size: 0x37
 function aigroundturret_mountcompleted() {
     if (self._blackboard.aigroundturretstate == "turret_mount_requested") {
@@ -504,7 +504,7 @@ function aigroundturret_mountcompleted() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1077
+// Checksum 0x0, Offset: 0x1236
 // Size: 0xa5
 function aigroundturret_cancel() {
     if (self._blackboard.aigroundturretstate != "none") {
@@ -522,7 +522,7 @@ function aigroundturret_cancel() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1125
+// Checksum 0x0, Offset: 0x12e4
 // Size: 0x4a
 function aigroundturret_dismountcompleted() {
     if (self._blackboard.aigroundturretstate == "turret_dismount_requested") {
@@ -533,8 +533,8 @@ function aigroundturret_dismountcompleted() {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1177
-// Size: 0x58
+// Checksum 0x0, Offset: 0x1336
+// Size: 0x57
 function ai_operate_turret(turret_operator, turret) {
     if (!isdefined(turret_operator) || !isalive(turret_operator)) {
         return;
@@ -548,8 +548,8 @@ function ai_operate_turret(turret_operator, turret) {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x11d7
-// Size: 0x4d
+// Checksum 0x0, Offset: 0x1395
+// Size: 0x4c
 function ai_dismount_turret(turret_operator) {
     if (!isdefined(turret_operator) || !isalive(turret_operator)) {
         return;
@@ -563,7 +563,7 @@ function ai_dismount_turret(turret_operator) {
 
 // Namespace ai / scripts\common\ai
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x122c
+// Checksum 0x0, Offset: 0x13e9
 // Size: 0x68
 function function_e2368c53744b331c(minhide, maxhide, cooldown, usesuppression) {
     if (isai(self)) {
@@ -584,7 +584,7 @@ function function_e2368c53744b331c(minhide, maxhide, cooldown, usesuppression) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x129c
+// Checksum 0x0, Offset: 0x1459
 // Size: 0x33
 function function_1123c27b444d9b1f() {
     if (isai(self)) {
@@ -597,8 +597,8 @@ function function_1123c27b444d9b1f() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12d7
-// Size: 0x33a
+// Checksum 0x0, Offset: 0x1494
+// Size: 0x338
 function function_4dcca048a83a2f3c(strength) {
     setdvarifuninitialized(@"hash_8483522c1e47a279", 0);
     level.currentwind = strength;
@@ -621,9 +621,9 @@ function function_4dcca048a83a2f3c(strength) {
             if (getdvarint(@"hash_8483522c1e47a279")) {
                 /#
                     if (isdefined(guy.model)) {
-                        println("<dev string:x383>" + guy.classname + "<dev string:x3b3>" + guy.model);
+                        println("<dev string:xe8>" + guy.classname + "<dev string:x115>" + guy.model);
                     } else {
-                        println("<dev string:x383>" + guy.classname);
+                        println("<dev string:xe8>" + guy.classname);
                     }
                 #/
             }
@@ -664,7 +664,7 @@ function function_4dcca048a83a2f3c(strength) {
             guy setscriptablepartstate("wind", "100", 0);
             break;
         default: 
-            assertmsg("<dev string:x3b8>" + level.currentwind + "<dev string:x3c6>");
+            assertmsg("Value of, " + level.currentwind + " is incorrect!");
             break;
         }
     }
@@ -672,7 +672,7 @@ function function_4dcca048a83a2f3c(strength) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1619
+// Checksum 0x0, Offset: 0x17d4
 // Size: 0x55
 function wind_debug() {
     self endon("death");
@@ -680,7 +680,7 @@ function wind_debug() {
     self endon("stop_wind_debug");
     while (true) {
         /#
-            print3d(self.origin, "<dev string:x3d8>", (1, 1, 1), 1, 0.25, 10, 1);
+            print3d(self.origin, "<dev string:x117>", (1, 1, 1), 1, 0.25, 10, 1);
         #/
         wait 0.5;
     }
@@ -688,8 +688,8 @@ function wind_debug() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1676
-// Size: 0x54
+// Checksum 0x0, Offset: 0x1831
+// Size: 0x53
 function set_deathanim(deathanim) {
     deathxanim = undefined;
     if (isstring(deathanim)) {
@@ -704,7 +704,7 @@ function set_deathanim(deathanim) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x16d2
+// Checksum 0x0, Offset: 0x188c
 // Size: 0x16
 function clear_deathanim() {
     self.deathanim = undefined;
@@ -713,7 +713,7 @@ function clear_deathanim() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16f0
+// Checksum 0x0, Offset: 0x18aa
 // Size: 0x32
 function function_82a45e8aef44ce3f(death_func) {
     self.deathfunction = death_func;
@@ -726,7 +726,7 @@ function function_82a45e8aef44ce3f(death_func) {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x172a
+// Checksum 0x0, Offset: 0x18e4
 // Size: 0x36
 function remove_blackboard_isburning(guy) {
     waitframe();
@@ -740,7 +740,7 @@ function remove_blackboard_isburning(guy) {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1768
+// Checksum 0x0, Offset: 0x1922
 // Size: 0x111
 function function_60daa23100a2b874(grenade, target) {
     if (isdefined(target.asmname) && target asmhaspainstate(target.asmname)) {
@@ -763,8 +763,8 @@ function function_60daa23100a2b874(grenade, target) {
 
 // Namespace ai / scripts\common\ai
 // Params 8, eflags: 0x0
-// Checksum 0x0, Offset: 0x1881
-// Size: 0x102
+// Checksum 0x0, Offset: 0x1a3b
+// Size: 0x107
 function function_3bd08a7c5eba1671(num_points, cylinder_origin, cylinder_height, outer_radius, inner_radius, use_throttle, begin_yaw, end_yaw) {
     level endon("game_ended");
     spawn_points = [];
@@ -795,7 +795,7 @@ function function_3bd08a7c5eba1671(num_points, cylinder_origin, cylinder_height,
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x198c
+// Checksum 0x0, Offset: 0x1b4b
 // Size: 0x21
 function function_dd21d67ede8ba22(max_health) {
     self.maxhealth = max_health;
@@ -804,8 +804,8 @@ function function_dd21d67ede8ba22(max_health) {
 
 // Namespace ai / scripts\common\ai
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b5
-// Size: 0xe4
+// Checksum 0x0, Offset: 0x1b74
+// Size: 0xe3
 function function_30dd4f3ef5f328ea(origin, team, species, subclass) {
     all_ai = [];
     if (isdefined(team) && isdefined(species)) {
@@ -831,7 +831,7 @@ function function_30dd4f3ef5f328ea(origin, team, species, subclass) {
 
 // Namespace ai / scripts\common\ai
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aa2
+// Checksum 0x0, Offset: 0x1c60
 // Size: 0x5a
 function function_8a09c0e5fa78a48c(smokeorigin, duration, lightsmokeradius, heavysmokeradius) {
     if (!isdefined(duration)) {
@@ -851,8 +851,8 @@ function function_8a09c0e5fa78a48c(smokeorigin, duration, lightsmokeradius, heav
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b04
-// Size: 0x1db
+// Checksum 0x0, Offset: 0x1cc2
+// Size: 0x1dd
 function function_f8903387ea945165(smokeorigin, smoketype) {
     delay = 0;
     duration = undefined;
@@ -884,7 +884,7 @@ function function_f8903387ea945165(smokeorigin, smoketype) {
         heavyradius = getdvarint(@"hash_2a401f3b20b48474", 250);
         break;
     default: 
-        assertmsg("<dev string:x3e2>");
+        assertmsg("mglAddActiveSmoke() is called with unsupported smoke type");
         break;
     }
     wait delay;
@@ -893,7 +893,7 @@ function function_f8903387ea945165(smokeorigin, smoketype) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ce7
+// Checksum 0x0, Offset: 0x1ea7
 // Size: 0x89
 function ai_deathflag() {
     level.deathflags[self.script_deathflag]["ai"][self.unique_id] = self;
@@ -910,7 +910,7 @@ function ai_deathflag() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d78
+// Checksum 0x0, Offset: 0x1f38
 // Size: 0x11
 function function_d3262c3e00795e21() {
     self endon("death");
@@ -919,8 +919,8 @@ function function_d3262c3e00795e21() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d91
-// Size: 0x82
+// Checksum 0x0, Offset: 0x1f51
+// Size: 0x7f
 function update_deathflag(deathflag) {
     level notify("updating_deathflag_" + deathflag);
     level endon("updating_deathflag_" + deathflag);
@@ -935,7 +935,7 @@ function update_deathflag(deathflag) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e1b
+// Checksum 0x0, Offset: 0x1fd8
 // Size: 0x39
 function function_b571948011d94c21() {
     self endon("entitydeleted");
@@ -952,7 +952,7 @@ function function_b571948011d94c21() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e5c
+// Checksum 0x0, Offset: 0x2019
 // Size: 0x26
 function get_cover_volume_forward() {
     if (isdefined(self.goalvolumecoveryaw)) {
@@ -963,8 +963,8 @@ function get_cover_volume_forward() {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e8a
-// Size: 0x1a5
+// Checksum 0x0, Offset: 0x2047
+// Size: 0x1a7
 function set_goal_volume(volume) {
     if (isdefined(self.team) && self.team == "allies") {
         self.fixednode = 0;
@@ -1008,8 +1008,8 @@ function set_goal_volume(volume) {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2037
-// Size: 0x39
+// Checksum 0x0, Offset: 0x21f6
+// Size: 0x38
 function set_grenadeweapon(types) {
     offhands = strtok(types, " ");
     self.grenadeweapon = makeweapon(offhands[randomint(offhands.size)]);
@@ -1017,7 +1017,7 @@ function set_grenadeweapon(types) {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2078
+// Checksum 0x0, Offset: 0x2236
 // Size: 0x34
 function function_3e5ce428974325fb(name, cooldown_ms) {
     assert(isint(cooldown_ms));
@@ -1026,7 +1026,7 @@ function function_3e5ce428974325fb(name, cooldown_ms) {
 
 // Namespace ai / scripts\common\ai
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20b4
+// Checksum 0x0, Offset: 0x2272
 // Size: 0x3d
 function function_5ad6396ef3963027(name) {
     cooldown_timestamp = default_to(self function_11e2d4051ea44b35(name), 0);
@@ -1036,7 +1036,7 @@ function function_5ad6396ef3963027(name) {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x20fa
+// Checksum 0x0, Offset: 0x22b8
 // Size: 0x3a
 function function_19b9d658132ed54f(name, cooldown_ms) {
     assert(isint(cooldown_ms));
@@ -1045,7 +1045,7 @@ function function_19b9d658132ed54f(name, cooldown_ms) {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x213c
+// Checksum 0x0, Offset: 0x22fa
 // Size: 0x3a
 function function_6bb792058491579(name, cooldown_ms) {
     assert(isint(cooldown_ms));
@@ -1054,7 +1054,7 @@ function function_6bb792058491579(name, cooldown_ms) {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x217e
+// Checksum 0x0, Offset: 0x233c
 // Size: 0x36
 function function_2cd503a62cb7eb47(name, cooldown_ms) {
     assert(isint(cooldown_ms));
@@ -1063,7 +1063,7 @@ function function_2cd503a62cb7eb47(name, cooldown_ms) {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21bc
+// Checksum 0x0, Offset: 0x237a
 // Size: 0x23
 function is_warlord() {
     return isdefined(self.subclass) && issubstr(self.subclass, "warlord");
@@ -1071,10 +1071,10 @@ function is_warlord() {
 
 // Namespace ai / scripts\common\ai
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x21e8
-// Size: 0x56
+// Checksum 0x0, Offset: 0x23a6
+// Size: 0x43
 function function_f6347c9c410226d3() {
-    if (isdefined(self.aicategory) && (self.aicategory == "special" || self.aicategory == "elite" || self.aicategory == "boss") || is_warlord()) {
+    if (isdefined(self.aicategory) && (self.aicategory == "special" || self.aicategory == "elite") || is_warlord()) {
         return true;
     }
     return false;
@@ -1082,8 +1082,8 @@ function function_f6347c9c410226d3() {
 
 // Namespace ai / scripts\common\ai
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2247
-// Size: 0x230
+// Checksum 0x0, Offset: 0x23f2
+// Size: 0x233
 function function_8cb35add373dee8a(goto_func, node) {
     self endon("death");
     if (!istrue(node.var_97c8a15d77788e5a)) {
@@ -1108,7 +1108,7 @@ function function_8cb35add373dee8a(goto_func, node) {
         self._blackboard.idlenode = node;
         /#
             if (getdvarint(@"hash_75d5a192711fbacb", 0) != 0) {
-                print3d(self.origin + (0, 0, randomintrange(40, 150)), "<dev string:x41f>" + node.interactionid, (1, 1, 1), 1, 1, 1000);
+                print3d(self.origin + (0, 0, randomintrange(40, 150)), "<dev string:x11e>" + node.interactionid, (1, 1, 1), 1, 1, 1000);
             }
         #/
         interactionid = self function_92435c7a6ae85c3c();

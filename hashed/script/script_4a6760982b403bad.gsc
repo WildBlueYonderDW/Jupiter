@@ -2,7 +2,7 @@
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f
+// Checksum 0x0, Offset: 0x13d
 // Size: 0x60
 function function_aacbbe63c26687ae(callback, func) {
     if (!isdefined(level.var_ec2c9117bd4b336b)) {
@@ -16,7 +16,7 @@ function function_aacbbe63c26687ae(callback, func) {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x177
+// Checksum 0x0, Offset: 0x1a5
 // Size: 0x2d
 function function_9ce94b15ee6758ee(callback) {
     if (!isdefined(level.var_ec2c9117bd4b336b)) {
@@ -30,8 +30,8 @@ function function_9ce94b15ee6758ee(callback) {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad
-// Size: 0x87
+// Checksum 0x0, Offset: 0x1db
+// Size: 0x86
 function function_80820d6d364c1836(callback, data) {
     if (!function_9ce94b15ee6758ee(callback)) {
         return;
@@ -49,8 +49,8 @@ function function_80820d6d364c1836(callback, data) {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23c
-// Size: 0x42
+// Checksum 0x0, Offset: 0x269
+// Size: 0x41
 function function_1b15450e092933cf(basetime) {
     timefrom = basetime;
     if (isdefined(level.starttimefrommatchstart)) {
@@ -66,8 +66,8 @@ function function_1b15450e092933cf(basetime) {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x287
-// Size: 0x5d
+// Checksum 0x0, Offset: 0x2b3
+// Size: 0x5c
 function function_50989a55805a440b() {
     mountstring = self playermounttype();
     if (isdefined(mountstring)) {
@@ -85,7 +85,7 @@ function function_50989a55805a440b() {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ed
+// Checksum 0x0, Offset: 0x318
 // Size: 0x3d
 function function_892570944f6b6a2(client) {
     if (istrue(game["isLaunchChunk"])) {
@@ -103,7 +103,7 @@ function function_892570944f6b6a2(client) {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x333
+// Checksum 0x0, Offset: 0x35e
 // Size: 0x85
 function function_4b974d822d418a06(data) {
     if (!isdefined(data.player)) {
@@ -123,8 +123,8 @@ function function_4b974d822d418a06(data) {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c1
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x3ec
+// Size: 0xaa
 function get_objective_type() {
     objectivetype = "hub";
     if (isdefined(level.active_objectives_string)) {
@@ -143,7 +143,7 @@ function get_objective_type() {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x473
+// Checksum 0x0, Offset: 0x49f
 // Size: 0x30
 function function_ff48d255c865806(client) {
     if (function_892570944f6b6a2(client)) {
@@ -154,11 +154,11 @@ function function_ff48d255c865806(client) {
 
 // Namespace namespace_c45ac99c4997e722 / namespace_de6e6777b0937bd7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ab
+// Checksum 0x0, Offset: 0x4d7
 // Size: 0x31
 function function_86d327084eebf87a(value) {
     if (!isdefined(value) || !isfloat(value)) {
-        assert("<dev string:x1c>");
+        assert("value is not a \"Float\". Defaulting to -1000000.0, since it is currently outside the scope of tuning values.");
         value = -1e+06;
     }
     return value;

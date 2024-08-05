@@ -8,7 +8,7 @@
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x22e
+// Checksum 0x0, Offset: 0x2a2
 // Size: 0x30
 function function_7dcad89b9c0264a6() {
     if (!isdefined(level.var_6e5ff6cae14c4081)) {
@@ -21,7 +21,7 @@ function function_7dcad89b9c0264a6() {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x266
+// Checksum 0x0, Offset: 0x2da
 // Size: 0xb3
 function function_28991b23dba743d8(final_dest) {
     if (!isdefined(self.var_324836dc0d03f0a4) || self.var_324836dc0d03f0a4 < 5) {
@@ -43,7 +43,7 @@ function function_28991b23dba743d8(final_dest) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x321
+// Checksum 0x0, Offset: 0x395
 // Size: 0x127
 function function_c3889abf5cd6abbf(pathdata, speed, var_5b69959df7b5f457, navmeshlayer) {
     self endon("death");
@@ -70,7 +70,7 @@ function function_c3889abf5cd6abbf(pathdata, speed, var_5b69959df7b5f457, navmes
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x450
+// Checksum 0x0, Offset: 0x4c4
 // Size: 0x74
 function function_1d917ec593f5d37(node, speed) {
     if (!isdefined(node.relativespeed)) {
@@ -90,7 +90,7 @@ function function_1d917ec593f5d37(node, speed) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cc
+// Checksum 0x0, Offset: 0x540
 // Size: 0x6f
 function function_e8730cc0c5eac096(pathdata) {
     pathdata.index = (pathdata.index + pathdata.direction) % pathdata.path.size;
@@ -101,10 +101,10 @@ function function_e8730cc0c5eac096(pathdata) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x543
-// Size: 0x1a1
+// Checksum 0x0, Offset: 0x5b7
+// Size: 0x19f
 function function_26e9e22860c819ce(start_point, end_point, speed, var_91b19cfb0a78c588) {
-    assert(isdefined(level.var_2814a8f25a392eaa), "<dev string:x1c>");
+    assert(isdefined(level.var_2814a8f25a392eaa), "scriptscp_mpvehiclesvehicle::vehicle_findNavmeshLayer must find a navmesh layer before this function is called. Or maybe this level has no navmesh?");
     if (isdefined(var_91b19cfb0a78c588)) {
         newpath = findpathcustom(start_point, getclosestpointonnavmesh(var_91b19cfb0a78c588, level.var_2814a8f25a392eaa), 0, 1, level.var_2814a8f25a392eaa);
         end_point = function_c06bd2ea8930eebf(end_point, newpath);
@@ -112,7 +112,7 @@ function function_26e9e22860c819ce(start_point, end_point, speed, var_91b19cfb0a
         newpath = findpathcustom(start_point, getclosestpointonnavmesh(end_point, level.var_2814a8f25a392eaa), 0, 1, level.var_2814a8f25a392eaa);
     }
     /#
-        if (getdvar(@"hash_5932a654e8efe1fa") != "<dev string:xb3>") {
+        if (getdvar(@"hash_5932a654e8efe1fa") != "<dev string:x1c>") {
             foreach (index, node in newpath) {
                 sphere(node, 16, (1, 1, 1), 0, 10000);
                 if (isdefined(newpath[index + 1])) {
@@ -120,7 +120,7 @@ function function_26e9e22860c819ce(start_point, end_point, speed, var_91b19cfb0a
                 }
             }
         }
-        if (getdvar(@"hash_ec592c9ed8224d75") != "<dev string:xb3>") {
+        if (getdvar(@"hash_ec592c9ed8224d75") != "<dev string:x1c>") {
             sphere(end_point, 16, (1, 1, 1), 0, 2);
         }
     #/
@@ -133,7 +133,7 @@ function function_26e9e22860c819ce(start_point, end_point, speed, var_91b19cfb0a
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ec
+// Checksum 0x0, Offset: 0x75e
 // Size: 0x147
 function function_69695f8c7ed9c3f6(newpath, speed) {
     self endon("death");
@@ -167,7 +167,7 @@ function function_69695f8c7ed9c3f6(newpath, speed) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x83b
+// Checksum 0x0, Offset: 0x8ad
 // Size: 0x4f
 function fn_damagefeedback(hittype) {
     if (hittype == "hitveharmorbreak") {
@@ -182,8 +182,8 @@ function fn_damagefeedback(hittype) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x892
-// Size: 0x18f
+// Checksum 0x0, Offset: 0x904
+// Size: 0x18e
 function function_6a0b2a08499a9842() {
     if (isdefined(self.aidriver)) {
         self.aidriver.var_71c1911e983f326d = undefined;
@@ -210,8 +210,8 @@ function function_6a0b2a08499a9842() {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa29
-// Size: 0x114
+// Checksum 0x0, Offset: 0xa9a
+// Size: 0x117
 function function_6a9574988f246f34(vehicle, var_7f2253bd1b8cfa5e, var_90a4404fceed797f, endnotify) {
     vehicle endon("death");
     level endon("game_ended");
@@ -251,8 +251,8 @@ function function_6a9574988f246f34(vehicle, var_7f2253bd1b8cfa5e, var_90a4404fce
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb45
-// Size: 0x21e
+// Checksum 0x0, Offset: 0xbb9
+// Size: 0x21d
 function function_a3775811155639ea() {
     self endon("death");
     self endon("stop_chasing");
@@ -274,8 +274,8 @@ function function_a3775811155639ea() {
                 self.pausing = 1;
                 self vehicle_setspeedimmediate(20, 150, 150);
                 /#
-                    if (getdvar(@"hash_ec592c9ed8224d75") != "<dev string:xb3>") {
-                        print3d(self.origin + (0, 0, 40), "<dev string:xb7>", (1, 1, 1), 1, 1, 20, 1);
+                    if (getdvar(@"hash_ec592c9ed8224d75") != "<dev string:x1c>") {
+                        print3d(self.origin + (0, 0, 40), "<dev string:x1d>", (1, 1, 1), 1, 1, 20, 1);
                     }
                 #/
                 wait 2;
@@ -287,8 +287,8 @@ function function_a3775811155639ea() {
                 self.pausing = 1;
                 self vehicle_setspeedimmediate(20, 150, 150);
                 /#
-                    if (getdvar(@"hash_ec592c9ed8224d75") != "<dev string:xb3>") {
-                        print3d(self.origin + (0, 0, 40), "<dev string:xb7>", (1, 1, 1), 1, 1, 20, 1);
+                    if (getdvar(@"hash_ec592c9ed8224d75") != "<dev string:x1c>") {
+                        print3d(self.origin + (0, 0, 40), "<dev string:x1d>", (1, 1, 1), 1, 1, 20, 1);
                     }
                 #/
                 wait 2;
@@ -301,8 +301,8 @@ function function_a3775811155639ea() {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd6b
-// Size: 0x5e
+// Checksum 0x0, Offset: 0xdde
+// Size: 0x5d
 function function_be6d24ea93bcadf7(vehicle) {
     newpath = function_3a2f47ea8b6a51b3(vehicle.origin, 16, 1024);
     while (isdefined(vehicle) && vehicle vehicle_getspeed() < 2) {
@@ -314,7 +314,7 @@ function function_be6d24ea93bcadf7(vehicle) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xdd1
+// Checksum 0x0, Offset: 0xe43
 // Size: 0x3b
 function function_cba4ff426a2f58ab(pos, delay) {
     self endon("death");
@@ -329,7 +329,7 @@ function function_cba4ff426a2f58ab(pos, delay) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe14
+// Checksum 0x0, Offset: 0xe86
 // Size: 0x4d
 function function_1da2c31423c2676a(veh_speed) {
     if (!isdefined(self.riders)) {
@@ -344,11 +344,11 @@ function function_1da2c31423c2676a(veh_speed) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0xe69
-// Size: 0x1d7
+// Checksum 0x0, Offset: 0xedb
+// Size: 0x19c
 function function_8f40a2c8678f8304(start_point, end_point, speed, setmaxspeed, var_a967646668185a6d, navmeshlayer) {
     navmeshlayer = default_to(navmeshlayer, level.var_2814a8f25a392eaa);
-    assert(isdefined(level.var_2814a8f25a392eaa), "<dev string:x1c>");
+    assert(isdefined(level.var_2814a8f25a392eaa), "scriptscp_mpvehiclesvehicle::vehicle_findNavmeshLayer must find a navmesh layer before this function is called. Or maybe this level has no navmesh?");
     var_acb8205b4eae2fa0 = undefined;
     if (!isdefined(setmaxspeed)) {
         setmaxspeed = 1;
@@ -360,23 +360,19 @@ function function_8f40a2c8678f8304(start_point, end_point, speed, setmaxspeed, v
         var_acb8205b4eae2fa0 = [getclosestpointonnavmesh(end_point, navmeshlayer)];
     } else {
         var_acb8205b4eae2fa0 = findpathcustom(start_point, getclosestpointonnavmesh(end_point, navmeshlayer), 1, 1, navmeshlayer);
-        if (isdefined(self.skippathdistance) && var_acb8205b4eae2fa0.size >= 3) {
-            for (pathindex = 0; pathindex < var_acb8205b4eae2fa0.size - 1; pathindex++) {
-                if (distance2dsquared(var_acb8205b4eae2fa0[pathindex], var_acb8205b4eae2fa0[pathindex + 1]) < self.skippathdistance * self.skippathdistance) {
-                    var_acb8205b4eae2fa0 = array_remove_index(var_acb8205b4eae2fa0, pathindex + 1, 0);
-                    continue;
-                }
-            }
-        }
         var_acb8205b4eae2fa0[0] = undefined;
         /#
-            foreach (index, node in var_acb8205b4eae2fa0) {
-                thread scripts\cp_mp\utility\debug_utility::drawsphere(node, 16, 10, (1, 1, 1));
-                if (isdefined(var_acb8205b4eae2fa0[index + 1])) {
-                    thread scripts\cp_mp\utility\debug_utility::drawline(node, var_acb8205b4eae2fa0[index + 1], 10, (0, 1, 0));
+            if (getdvar(@"hash_5932a654e8efe1fa") != "<dev string:x1c>") {
+                foreach (index, node in var_acb8205b4eae2fa0) {
+                    thread scripts\cp_mp\utility\debug_utility::drawsphere(node, 16, 10000, (1, 1, 1));
+                    if (isdefined(var_acb8205b4eae2fa0[index + 1])) {
+                        thread scripts\cp_mp\utility\debug_utility::drawline(node, var_acb8205b4eae2fa0[index + 1], 10000, (0, 1, 0));
+                    }
                 }
             }
-            sphere(end_point, 16, (1, 1, 1), 0, 2);
+            if (getdvar(@"hash_ec592c9ed8224d75") != "<dev string:x1c>") {
+                sphere(end_point, 16, (1, 1, 1), 0, 2);
+            }
         #/
     }
     if (var_acb8205b4eae2fa0.size >= 1) {
@@ -386,8 +382,8 @@ function function_8f40a2c8678f8304(start_point, end_point, speed, setmaxspeed, v
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1048
-// Size: 0x217
+// Checksum 0x0, Offset: 0x107f
+// Size: 0x21a
 function function_aa85eb39828a4d80(var_acb8205b4eae2fa0, speed, setmaxspeed, var_a967646668185a6d) {
     self notify("path_updated");
     self endon("path_updated");
@@ -395,7 +391,7 @@ function function_aa85eb39828a4d80(var_acb8205b4eae2fa0, speed, setmaxspeed, var
     self endon("death");
     self endon("unloaded");
     if (!isdefined(speed) && !isdefined(self.var_5bbf95f73f01706e)) {
-        assertmsg("<dev string:xc1>");
+        assertmsg("vehicleP2P_gotoPath - No speed defined, and no AUTO_* Config Key detected!");
         return "path_blocked";
     }
     if (istrue(setmaxspeed) && isdefined(speed)) {
@@ -441,8 +437,8 @@ function function_aa85eb39828a4d80(var_acb8205b4eae2fa0, speed, setmaxspeed, var
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1268
-// Size: 0x35
+// Checksum 0x0, Offset: 0x12a2
+// Size: 0x34
 function function_b3b7d0915dc445c7(speed) {
     manualspeed = function_906e53c2fb9d3f9c("p2p", "manualSpeed");
     self function_77320e794d35465a(manualspeed, scripts\engine\utility::mph_to_ips(speed));
@@ -450,7 +446,7 @@ function function_b3b7d0915dc445c7(speed) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12a5
+// Checksum 0x0, Offset: 0x12de
 // Size: 0x147
 function function_9804c82501de981b(newpath, speed) {
     self endon("death");
@@ -484,7 +480,7 @@ function function_9804c82501de981b(newpath, speed) {
 
 // Namespace namespace_a1044864694a4aae / namespace_9246f10206f50768
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f4
+// Checksum 0x0, Offset: 0x142d
 // Size: 0x63
 function get_duration_between_points(startpos, endpos, speed, convert) {
     dist = distance(startpos, endpos);

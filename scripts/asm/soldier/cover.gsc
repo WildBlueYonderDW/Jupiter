@@ -11,7 +11,7 @@
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x255
+// Checksum 0x0, Offset: 0x1ed
 // Size: 0x2a
 function shouldcoverexpose() {
     return bb_getrequestedcoverstate() == "exposed" && isdefined(self.enemy) && isdefined(self.node);
@@ -19,7 +19,7 @@ function shouldcoverexpose() {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x288
+// Checksum 0x0, Offset: 0x220
 // Size: 0x45
 function shouldcoverexposedreload(asmname, statename, tostatename, params) {
     if (isdefined(self.covernode) && self.balwayscoverexposed) {
@@ -30,8 +30,8 @@ function shouldcoverexposedreload(asmname, statename, tostatename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d6
-// Size: 0x55
+// Checksum 0x0, Offset: 0x26e
+// Size: 0x56
 function calcanimstartpos(stoppos, var_2cdc979364d3101c, animdelta, var_f73bea4534a3831f) {
     dangle = var_2cdc979364d3101c - var_f73bea4534a3831f;
     angles = (0, dangle, 0);
@@ -41,7 +41,7 @@ function calcanimstartpos(stoppos, var_2cdc979364d3101c, animdelta, var_f73bea45
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x334
+// Checksum 0x0, Offset: 0x2cd
 // Size: 0x25
 function ishighnode(node) {
     if (!isdefined(node)) {
@@ -55,7 +55,7 @@ function ishighnode(node) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x362
+// Checksum 0x0, Offset: 0x2fb
 // Size: 0x55
 function start_conceal_add(statename, anime, waittime) {
     self endon(statename + "_finished");
@@ -67,8 +67,8 @@ function start_conceal_add(statename, anime, waittime) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bf
-// Size: 0x4b
+// Checksum 0x0, Offset: 0x358
+// Size: 0x4a
 function transitionedfromrun(asmname) {
     prevstate = self asmgetstatetransitioningfrom(asmname);
     if (isdefined(prevstate)) {
@@ -83,7 +83,7 @@ function transitionedfromrun(asmname) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x413
+// Checksum 0x0, Offset: 0x3ab
 // Size: 0x18d
 function playcoveranimloop3d(asmname, statename, params) {
     if (!isdefined(self.asm.lastcovernode)) {
@@ -97,9 +97,9 @@ function playcoveranimloop3d(asmname, statename, params) {
     /#
         if (isdefined(self.asm.lastcovernode)) {
             if (statename == "<dev string:x1c>" && !nodeiscoverexposed3dtype(self.asm.lastcovernode)) {
-                assertmsg("<dev string:x2d>" + getnodetypename(self.asm.lastcovernode));
-            } else if (statename == "<dev string:x8a>" && !nodeiscoverstand3dtype(self.asm.lastcovernode)) {
-                assertmsg("<dev string:x99>" + getnodetypename(self.asm.lastcovernode));
+                assertmsg("<dev string:x2a>" + getnodetypename(self.asm.lastcovernode));
+            } else if (statename == "<dev string:x84>" && !nodeiscoverstand3dtype(self.asm.lastcovernode)) {
+                assertmsg("<dev string:x90>" + getnodetypename(self.asm.lastcovernode));
             }
         }
     #/
@@ -108,8 +108,8 @@ function playcoveranimloop3d(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x5a8
-// Size: 0x156
+// Checksum 0x0, Offset: 0x540
+// Size: 0x157
 function playcoveranimloop(asmname, statename, params) {
     self.keepclaimednodeifvalid = 1;
     if (isdefined(params)) {
@@ -142,8 +142,8 @@ function playcoveranimloop(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x706
-// Size: 0x89
+// Checksum 0x0, Offset: 0x69f
+// Size: 0x88
 function conceal_add_cleanup(statename) {
     self endon("death");
     self endon("entitydeleted");
@@ -160,8 +160,8 @@ function conceal_add_cleanup(statename) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x797
-// Size: 0x9c
+// Checksum 0x0, Offset: 0x72f
+// Size: 0x9d
 function lerpto(covernode, var_2f841227a5cdde35, endonstr) {
     self endon(endonstr);
     while (true) {
@@ -180,7 +180,7 @@ function lerpto(covernode, var_2f841227a5cdde35, endonstr) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x83b
+// Checksum 0x0, Offset: 0x7d4
 // Size: 0x3d
 function terminatecoverreload(asmname, statename, params) {
     asm_fireephemeralevent("reload", "end");
@@ -190,7 +190,7 @@ function terminatecoverreload(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x880
+// Checksum 0x0, Offset: 0x819
 // Size: 0x7c
 function playcoveranim_droprpg(asmname, statename, params) {
     self.keepclaimednodeifvalid = 1;
@@ -204,8 +204,8 @@ function playcoveranim_droprpg(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x904
-// Size: 0x144
+// Checksum 0x0, Offset: 0x89d
+// Size: 0x146
 function playshuffleloop(asmname, statename, params) {
     var_946cbac627c6d79d = [];
     var_946cbac627c6d79d["crouch_shuffle_right"] = -90;
@@ -233,8 +233,8 @@ function playshuffleloop(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa50
-// Size: 0xc4
+// Checksum 0x0, Offset: 0x9eb
+// Size: 0xc7
 function shouldplayshuffleenter(asmname, statename, tostatename, params) {
     assert(isdefined(self._blackboard.shufflenode));
     enteranim = asm_getrandomanim(asmname, tostatename);
@@ -247,7 +247,7 @@ function shouldplayshuffleenter(asmname, statename, tostatename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xb1d
+// Checksum 0x0, Offset: 0xabb
 // Size: 0x2e
 function abortshufflecleanup(asmname, statename, params) {
     self._blackboard.shufflenode = undefined;
@@ -255,8 +255,8 @@ function abortshufflecleanup(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb53
-// Size: 0x2a2
+// Checksum 0x0, Offset: 0xaf1
+// Size: 0x2ab
 function shouldbeginshuffleexit(asmname, statename, tostatename, params) {
     assert(isdefined(self._blackboard.shufflenode));
     assert(isdefined(self.node));
@@ -299,8 +299,8 @@ function shouldbeginshuffleexit(asmname, statename, tostatename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xdfe
-// Size: 0x1ae
+// Checksum 0x0, Offset: 0xda5
+// Size: 0x1b6
 function playshuffleanim_arrival(asmname, statename, params) {
     self.a.arrivalasmstatename = statename;
     arrivalanim = asm_getanim(asmname, statename);
@@ -333,7 +333,7 @@ function playshuffleanim_arrival(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xfb4
+// Checksum 0x0, Offset: 0xf63
 // Size: 0x48
 function playshuffleanim_terminate(asmname, statename, params) {
     self._blackboard.shufflenode = undefined;
@@ -343,7 +343,7 @@ function playshuffleanim_terminate(asmname, statename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1004
+// Checksum 0x0, Offset: 0xfb3
 // Size: 0x14
 function coverreloadnotetrackhandler(note) {
     scripts\anim\notetracks::notetrack_prefix_handler(note);
@@ -352,12 +352,12 @@ function coverreloadnotetrackhandler(note) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1021
-// Size: 0x1df
+// Checksum 0x0, Offset: 0xfd0
+// Size: 0x1e2
 function cover3dpickexposedir(asmname, statename, tostatename, params) {
     assert(isdefined(self.enemy));
     assert(isdefined(self.node));
-    assert(self.node.type == "<dev string:xf2>");
+    assert(self.node.type == "Cover 3D");
     self.bt.cover3dexposedirpicked = undefined;
     enemyeye = (self.enemy.origin + getenemyeyepos()) / 2;
     current_state = anim.asm[asmname].states[tostatename];
@@ -382,8 +382,8 @@ function cover3dpickexposedir(asmname, statename, tostatename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1209
-// Size: 0x55
+// Checksum 0x0, Offset: 0x11bb
+// Size: 0x54
 function cover3dcanexposedir(asmname, statename, tostatename, params) {
     var_b045478fad8648fe = asmname + "_" + statename + "_" + params;
     return var_b045478fad8648fe == self.bt.cover3dexposedirpicked;
@@ -391,7 +391,7 @@ function cover3dcanexposedir(asmname, statename, tostatename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1267
+// Checksum 0x0, Offset: 0x1218
 // Size: 0xda
 function checkcovermultichangerequest(asmname, statename, tostatename, params) {
     if (!bb_iscovermultiswitchrequested()) {
@@ -412,8 +412,8 @@ function checkcovermultichangerequest(asmname, statename, tostatename, params) {
 
 // Namespace cover / scripts\asm\soldier\cover
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x134a
-// Size: 0x9f
+// Checksum 0x0, Offset: 0x12fb
+// Size: 0x9e
 function finishcovermultichangerequest(asmname, statename, params) {
     assert(isdefined(self.asm.covermultiswitchdata));
     requestednodetype = self.asm.covermultiswitchdata.requestednodetype;

@@ -2,7 +2,6 @@
 #using scripts\common\utility.gsc;
 #using scripts\cp_mp\utility\player_utility.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\perk.gsc;
 #using scripts\mp\weapons.gsc;
 #using scripts\cp_mp\dragonsbreath.gsc;
 
@@ -10,8 +9,8 @@
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a1
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x2b4
+// Size: 0x3e
 function function_df4e9a1e313ea352() {
     dragonsbreathdamage = spawnstruct();
     dragonsbreathdamage.newhitlocs = [];
@@ -22,8 +21,8 @@ function function_df4e9a1e313ea352() {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e9
-// Size: 0x86
+// Checksum 0x0, Offset: 0x2fb
+// Size: 0x83
 function function_6dc8c5de229e86ff(newhitlocs, attacker, objweapon) {
     foreach (part in newhitlocs) {
         if (isshield(part)) {
@@ -37,21 +36,17 @@ function function_6dc8c5de229e86ff(newhitlocs, attacker, objweapon) {
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x477
-// Size: 0x4b
-function function_56a694363da738ac(objweapon) {
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x386
+// Size: 0x25
+function function_56a694363da738ac() {
     corpsetable = self getcorpseentity();
-    if (!isdefined(corpsetable)) {
-        return;
-    }
-    function_a1b485fd94771e09(objweapon);
-    corpsetable setscriptablepartstate(self.dragonsbreathdamage.var_8a46c62f0a756dd3, "flareUp", 0);
+    corpsetable setscriptablepartstate("burning", "flareUp", 0);
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ca
+// Checksum 0x0, Offset: 0x3b3
 // Size: 0x19
 function function_9fd9dc9d9d3a0bc4() {
     self notify("stop_dragonsbreathDamage");
@@ -60,8 +55,8 @@ function function_9fd9dc9d9d3a0bc4() {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4eb
-// Size: 0x2b4
+// Checksum 0x0, Offset: 0x3d4
+// Size: 0x256
 function function_a0888e06aa555932(newBurningParts, attacker, objweapon) {
     self notify("newBurningParts");
     self endon("disconnect");
@@ -71,16 +66,11 @@ function function_a0888e06aa555932(newBurningParts, attacker, objweapon) {
     foreach (part in newBurningParts) {
         if (isdefined(self.dragonsbreathdamage.hitslocs[part])) {
             self.dragonsbreathdamage.hitslocs[part] = self.dragonsbreathdamage.hitslocs[part] + 0.5;
-            if (getweaponhasperk(objweapon, "specialty_ub_flamethrower")) {
-                self.dragonsbreathdamage.hitslocs[part] = min(self.dragonsbreathdamage.hitslocs[part], 1);
-            } else {
-                self.dragonsbreathdamage.hitslocs[part] = min(self.dragonsbreathdamage.hitslocs[part], 4);
-            }
+            self.dragonsbreathdamage.hitslocs[part] = min(self.dragonsbreathdamage.hitslocs[part], 4);
             continue;
         }
         self.dragonsbreathdamage.hitslocs[part] = 0.5;
     }
-    function_a1b485fd94771e09(objweapon);
     function_f21bfcf42e2f3e8b();
     while (true) {
         wait 0.25;
@@ -97,7 +87,6 @@ function function_a0888e06aa555932(newBurningParts, attacker, objweapon) {
             }
         }
         if (statechange) {
-            function_a1b485fd94771e09(objweapon);
             function_f21bfcf42e2f3e8b();
         }
     }
@@ -105,23 +94,15 @@ function function_a0888e06aa555932(newBurningParts, attacker, objweapon) {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a7
-// Size: 0xec
+// Checksum 0x0, Offset: 0x632
+// Size: 0xa9
 function function_8b5ae6ab700339f8(attacker, objweapon) {
-    if (isdefined(attacker) && isalive(attacker)) {
-        attacker endon("death");
+    if (isdefined(attacker)) {
         var_9becaeedb8c6bf2c = makeweapon("dragonsbreath_mp");
         attacker function_49967318fbd12317(var_9becaeedb8c6bf2c, objweapon);
         var_3315791b141386c1 = 10 * 0.5;
         numevents = min(self.dragonsbreathdamage.hitslocs.size, 3);
         var_76e563db5d11a0ea = int(var_3315791b141386c1 * numevents);
-        if (getweaponhasperk(objweapon, "specialty_ub_flamethrower")) {
-            var_3315791b141386c1 = 4 * 0.5;
-            var_76e563db5d11a0ea = int(var_3315791b141386c1 * numevents);
-        }
-        if (scripts\mp\utility\perk::_hasperk("specialty_blastshield")) {
-            var_76e563db5d11a0ea = 2;
-        }
         if (var_76e563db5d11a0ea > 0) {
             self dodamage(var_76e563db5d11a0ea, attacker.origin, attacker, attacker, "MOD_FIRE", var_9becaeedb8c6bf2c, "torso_upper");
         }
@@ -129,25 +110,9 @@ function function_8b5ae6ab700339f8(attacker, objweapon) {
 }
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x89b
-// Size: 0xad
-function function_a1b485fd94771e09(objweapon) {
-    self.dragonsbreathdamage.var_8a46c62f0a756dd3 = "burning";
-    if (isdefined(objweapon) && isdefined(objweapon.underbarrel)) {
-        if (objweapon.underbarrel == "jup_ub_flame_01" && objweapon.underbarrelvarindex == 5) {
-            self.dragonsbreathdamage.var_8a46c62f0a756dd3 = "virus";
-        }
-    }
-    if (!self getscriptablehaspart(self.dragonsbreathdamage.var_8a46c62f0a756dd3)) {
-        self.dragonsbreathdamage.var_8a46c62f0a756dd3 = "burning";
-    }
-}
-
-// Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x950
-// Size: 0x3bf
+// Checksum 0x0, Offset: 0x6e3
+// Size: 0x398
 function function_f21bfcf42e2f3e8b() {
     burningstate = "";
     points = [];
@@ -178,7 +143,7 @@ function function_f21bfcf42e2f3e8b() {
             hitlocs[burningparts] = hitlocs[burningparts] + 1;
         }
     }
-    foreach (hitlocname, hitlocvalue in hitlocs) {
+    foreach (hitlocvalue in hitlocs) {
         burningpart = function_3d9255af28a82f08(hitlocname);
         if (isdefined(burningpart)) {
             points[burningpart] = points[burningpart] + hitlocvalue;
@@ -211,9 +176,9 @@ function function_f21bfcf42e2f3e8b() {
     }
     if (burningstate != self.dragonsbreathdamage.burningstate) {
         if (burningstate == "neutral") {
-            scripts\mp\weapons::disableburnfx(1, self.dragonsbreathdamage.burningstate, self.dragonsbreathdamage.var_8a46c62f0a756dd3);
+            scripts\mp\weapons::disableburnfx(1, self.dragonsbreathdamage.burningstate);
         } else {
-            scripts\mp\weapons::enableburnfx(1, burningstate, self.dragonsbreathdamage.var_8a46c62f0a756dd3);
+            scripts\mp\weapons::enableburnfx(1, burningstate);
         }
         self.dragonsbreathdamage.burningstate = burningstate;
     }
@@ -221,7 +186,7 @@ function function_f21bfcf42e2f3e8b() {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd17
+// Checksum 0x0, Offset: 0xa83
 // Size: 0x146
 function function_3d9255af28a82f08(hitloc) {
     switch (hitloc) {
@@ -264,7 +229,7 @@ function function_3d9255af28a82f08(hitloc) {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xe65
+// Checksum 0x0, Offset: 0xbd1
 // Size: 0x51
 function isdragonsbreathweapon(objweapon) {
     if (istrue(objweapon.isalternate)) {
@@ -282,7 +247,7 @@ function isdragonsbreathweapon(objweapon) {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xebf
+// Checksum 0x0, Offset: 0xc2b
 // Size: 0x32
 function function_cfd2e1e48edaf93(objweapon) {
     if (!istrue(objweapon.isalternate)) {
@@ -295,7 +260,7 @@ function function_cfd2e1e48edaf93(objweapon) {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xefa
+// Checksum 0x0, Offset: 0xc66
 // Size: 0x1d
 function isshield(hitloc) {
     if (hitloc == "shield") {
@@ -306,8 +271,8 @@ function isshield(hitloc) {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xf1f
-// Size: 0x140
+// Checksum 0x0, Offset: 0xc8b
+// Size: 0x143
 function function_c206c109a26f598(idamage, attacker, objweapon, hitloc) {
     if (!isdefined(self.var_7e2abe421347dd30)) {
         self.var_7e2abe421347dd30 = [];
@@ -331,8 +296,8 @@ function function_c206c109a26f598(idamage, attacker, objweapon, hitloc) {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1067
-// Size: 0x1dc
+// Checksum 0x0, Offset: 0xdd6
+// Size: 0x1e1
 function function_1a50056b16521c9e(attacker, var_60d435c6357875ea) {
     self notify("db_damage");
     self endon("db_damage");
@@ -369,7 +334,7 @@ function function_1a50056b16521c9e(attacker, var_60d435c6357875ea) {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x124b
+// Checksum 0x0, Offset: 0xfbf
 // Size: 0x11
 function function_22d1fced237d6878() {
     self notify("db_damage");
@@ -378,7 +343,7 @@ function function_22d1fced237d6878() {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1264
+// Checksum 0x0, Offset: 0xfd8
 // Size: 0x16
 function function_d36940aa00b20558() {
     self.var_7e2abe421347dd30 = undefined;
@@ -387,8 +352,8 @@ function function_d36940aa00b20558() {
 
 // Namespace dragonsbreath / scripts\cp_mp\dragonsbreath
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1282
-// Size: 0x124
+// Checksum 0x0, Offset: 0xff6
+// Size: 0x123
 function function_5a05899bb304a6d4(hitloc, burningtime) {
     if (!isplayer(self)) {
         return;

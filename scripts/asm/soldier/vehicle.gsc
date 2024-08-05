@@ -5,20 +5,20 @@
 #using scripts\common\ai.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\common\vehicle_aianim.gsc;
+#using scripts\asm\asm_bb.gsc;
 #using scripts\vehicle\vehicle_common.gsc;
 #using scripts\engine\trace.gsc;
 #using scripts\common\vehicle.gsc;
 #using scripts\common\vehicle_code.gsc;
 #using scripts\asm\soldier\death.gsc;
 #using scripts\asm\soldier\melee.gsc;
-#using scripts\asm\asm_bb.gsc;
 #using scripts\asm\soldier\script_funcs.gsc;
 
 #namespace vehicle;
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d5
+// Checksum 0x0, Offset: 0x4f7
 // Size: 0x3c
 function setvehiclearchetype(asmname, statename, params) {
     self setoverridearchetype("vehicle", self._blackboard.currentvehicleanimalias, 1);
@@ -26,7 +26,7 @@ function setvehiclearchetype(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x519
+// Checksum 0x0, Offset: 0x53b
 // Size: 0x2a
 function clearvehiclearchetype(asmname, statename, params) {
     self clearoverridearchetype("vehicle", 0, 1);
@@ -34,8 +34,8 @@ function clearvehiclearchetype(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x54b
-// Size: 0x80
+// Checksum 0x0, Offset: 0x56d
+// Size: 0x7f
 function function_35baeb62e712b6b4(asmname, statename, tostatename, params) {
     if (!isdefined(self._blackboard.currentvehicle)) {
         return true;
@@ -49,8 +49,8 @@ function function_35baeb62e712b6b4(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5d4
-// Size: 0x3a
+// Checksum 0x0, Offset: 0x5f5
+// Size: 0x39
 function function_b3bb4d116f5a79cb(currentvehicle, position) {
     if (isdefined(currentvehicle)) {
         aianims = anim_pos(currentvehicle, position);
@@ -61,8 +61,8 @@ function function_b3bb4d116f5a79cb(currentvehicle, position) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x617
-// Size: 0xcc
+// Checksum 0x0, Offset: 0x637
+// Size: 0xcd
 function function_ef715d817b10b063() {
     alias = "";
     if (istrue(self.var_2954e7fe0d59dc3a)) {
@@ -88,7 +88,7 @@ function function_ef715d817b10b063() {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x6ec
+// Checksum 0x0, Offset: 0x70d
 // Size: 0x11b
 function function_ad6244629719d941(aianims) {
     alias = "";
@@ -121,8 +121,8 @@ function function_ad6244629719d941(aianims) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x810
-// Size: 0x84
+// Checksum 0x0, Offset: 0x831
+// Size: 0x83
 function function_37da44a7cf24fdad(aianims) {
     alias = "";
     if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
@@ -140,7 +140,7 @@ function function_37da44a7cf24fdad(aianims) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x89d
+// Checksum 0x0, Offset: 0x8bd
 // Size: 0x3b
 function chooseanim_vehicle(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, string(self._blackboard.var_9176cae5619d7fba));
@@ -148,8 +148,8 @@ function chooseanim_vehicle(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8e1
-// Size: 0x118
+// Checksum 0x0, Offset: 0x901
+// Size: 0x11c
 function function_93584fe710642bd2(asmname, statename, params) {
     arcname = self._blackboard.currentvehicleanimalias;
     alias = string(self._blackboard.var_9176cae5619d7fba);
@@ -168,8 +168,8 @@ function function_93584fe710642bd2(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa01
-// Size: 0xd4
+// Checksum 0x0, Offset: 0xa25
+// Size: 0xd7
 function function_47a713aa81f9ae9e(asmname, statename, params) {
     arcname = self._blackboard.currentvehicleanimalias;
     alias = string(self._blackboard.var_9176cae5619d7fba);
@@ -183,9 +183,50 @@ function function_47a713aa81f9ae9e(asmname, statename, params) {
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0xb05
+// Size: 0xac
+function function_179d01a77dc31f73(alias) {
+    toenemy = self.enemy.origin - self.origin;
+    toenemyyaw = angleclamp180(vectortoyaw(toenemy) - self.angles[1]);
+    if (toenemyyaw > 135) {
+        alias += "_2";
+    } else if (toenemyyaw > 45) {
+        alias += "_4";
+    } else if (toenemyyaw > -45) {
+        alias += "_8";
+    } else if (toenemyyaw > -135) {
+        alias += "_6";
+    } else {
+        alias += "_2";
+    }
+    return alias;
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xade
-// Size: 0xe5
+// Checksum 0x0, Offset: 0xbba
+// Size: 0xf0
+function function_5b4b5fffac712ed5(asmname, statename, params) {
+    alias = string(self._blackboard.var_9176cae5619d7fba);
+    if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
+        vehicle = self._blackboard.currentvehicle;
+        position = self._blackboard.var_9176cae5619d7fba;
+        aianims = anim_pos(vehicle, position);
+        if (istrue(self.var_2954e7fe0d59dc3a)) {
+            alias += "_4";
+        } else {
+            alias += "_6";
+        }
+    }
+    alias = function_179d01a77dc31f73(alias);
+    return asm_lookupanimfromalias(statename, alias);
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0xcb3
+// Size: 0xe7
 function function_9cc47d66814e0219(asmname, statename, params) {
     alias = string(self._blackboard.var_9176cae5619d7fba);
     if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
@@ -203,7 +244,7 @@ function function_9cc47d66814e0219(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbcc
+// Checksum 0x0, Offset: 0xda3
 // Size: 0x24
 function function_71542e68d0fa0478(asmname, statename, params) {
     return chooseanim_vehicle(asmname, statename, params);
@@ -211,23 +252,22 @@ function function_71542e68d0fa0478(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf9
-// Size: 0x9a
+// Checksum 0x0, Offset: 0xdd0
+// Size: 0x7d
 function function_b2e6831f01246042(asmname, statename, params) {
     alias = string(self._blackboard.var_9176cae5619d7fba);
     if (isdefined(self.var_2954e7fe0d59dc3a)) {
         var_19f92fa83d7cd69 = function_ef715d817b10b063();
         alias += var_19f92fa83d7cd69;
         self.var_2954e7fe0d59dc3a = !self.var_2954e7fe0d59dc3a;
-        self._blackboard.var_feaa963beeb05107 = self.var_2954e7fe0d59dc3a;
     }
     return asm_lookupanimfromalias(statename, alias);
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xc9c
-// Size: 0x181
+// Checksum 0x0, Offset: 0xe56
+// Size: 0x185
 function function_7f09702cf0b2e4b5(asmname, statename, params) {
     alias = string(self._blackboard.var_9176cae5619d7fba);
     if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
@@ -252,8 +292,8 @@ function function_7f09702cf0b2e4b5(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xe26
-// Size: 0xbb
+// Checksum 0x0, Offset: 0xfe4
+// Size: 0xba
 function function_f96dcce7d9cc58a5(asmname, statename, params) {
     if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
         vehicle = self._blackboard.currentvehicle;
@@ -266,7 +306,46 @@ function function_f96dcce7d9cc58a5(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xeea
+// Checksum 0x0, Offset: 0x10a7
+// Size: 0x1a0
+function function_6fd8668b4581ef1c(asmname, statename, tostatename, params) {
+    if (!isdefined(self._blackboard.currentvehicle)) {
+        return false;
+    }
+    if (!function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
+        return false;
+    }
+    if (!isdefined(self.enemy)) {
+        return false;
+    }
+    if (!isdefined(self._blackboard.var_9176cae5619d7fba) || !isdefined(self._blackboard.currentvehicle)) {
+        return false;
+    }
+    vehicle = self._blackboard.currentvehicle;
+    position = self._blackboard.var_9176cae5619d7fba;
+    aianims = anim_pos(vehicle, position);
+    tovehicle = self.enemy.origin - vehicle.origin;
+    var_b948350ee67e31fb = angleclamp180(vectortoyaw(tovehicle) - vehicle.angles[1]);
+    if (abs(var_b948350ee67e31fb) > 179 || abs(var_b948350ee67e31fb) < 1) {
+        return false;
+    }
+    if (isdefined(self.var_2954e7fe0d59dc3a) && (var_b948350ee67e31fb < 0 && self.var_2954e7fe0d59dc3a || var_b948350ee67e31fb > 0 && !self.var_2954e7fe0d59dc3a)) {
+        return true;
+    }
+    return false;
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x1250
+// Size: 0x3d
+function function_e692591195808b8a(asmname, statename, tostatename, param) {
+    return vehiclehasalias(asmname, statename, tostatename, param) && self [[ self.fnisinstealthidle ]]();
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x1296
 // Size: 0x2f
 function function_6bc1a54175023072(asmname, statename, tostatename, param) {
     return self [[ self.fnisinstealthidle ]]();
@@ -274,7 +353,15 @@ function function_6bc1a54175023072(asmname, statename, tostatename, param) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xf22
+// Checksum 0x0, Offset: 0x12ce
+// Size: 0x3d
+function function_5cfc1f1b9c10e164(asmname, statename, tostatename, param) {
+    return vehiclehasalias(asmname, statename, tostatename, param) && self [[ self.fnisinstealthcombat ]]();
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x1314
 // Size: 0x66
 function vehicleincombat(asmname, statename, tostatename, params) {
     if (weaponclass(self.weapon) == "rocketlauncher" && !istrue(self.vehiclerpg)) {
@@ -285,8 +372,8 @@ function vehicleincombat(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xf91
-// Size: 0x125
+// Checksum 0x0, Offset: 0x1383
+// Size: 0x124
 function function_222ef5b005c37d77(asmname, statename, tostatename, param) {
     if (!isdefined(self._blackboard.currentvehicle)) {
         return false;
@@ -309,16 +396,44 @@ function function_222ef5b005c37d77(asmname, statename, tostatename, param) {
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x14b0
+// Size: 0x13a
+function function_925c10bfb5db43d0(asmname, statename, tostatename, param) {
+    if (!isdefined(self._blackboard.currentvehicle) || !isdefined(self._blackboard.currentvehicle.var_df380f11aba27f75)) {
+        return false;
+    }
+    if (!isdefined(self.enemy)) {
+        return false;
+    }
+    aianims = anim_pos(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba);
+    var_5345a5d80b9177ed = gettime() > self._blackboard.currentvehicle.var_df380f11aba27f75 || istrue(aianims.var_b6cfb5b21c28c002);
+    if (function_1746ad7c74ead3e8(asmname, statename, tostatename, param) && var_5345a5d80b9177ed) {
+        self._blackboard.currentvehicle.var_df380f11aba27f75 = gettime() + self._blackboard.currentvehicle.var_13b94e70465e220d;
+        return true;
+    }
+    return false;
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x15f3
+// Size: 0x37
+function function_1ef6637ea6bf8c1f(asmname, statename, tostatename, param) {
+    return vehiclehasalias(asmname, statename, tostatename, param) && scripts\asm\asm_bb::bb_iswhizbyrequested();
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x10bf
-// Size: 0x2b4
+// Checksum 0x0, Offset: 0x1633
+// Size: 0x2b9
 function function_d4533dcc81147462(asmname, statename, param) {
     alias = string(self._blackboard.var_9176cae5619d7fba);
     if (isdefined(archetypegetrandomalias(self._blackboard.currentvehicleanimalias, statename, alias, asm_isfrantic()))) {
         return asm_lookupanimfromalias(statename, alias);
     }
     alias = alias + "_" + self._blackboard.vehicledir;
-    assertex(isdefined(self.collision_data), "<dev string:x1c>");
+    assertex(isdefined(self.collision_data), "Vehicle Impulse Response requires collision data to exists. This data should be initialized when a collision is detected by VehicleCollisionWatcher");
     vehicle = self._blackboard.currentvehicle;
     forward = anglestoforward(vehicle.angles);
     normal = self.collision_data.normal;
@@ -366,8 +481,8 @@ function function_d4533dcc81147462(asmname, statename, param) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x137c
-// Size: 0x246
+// Checksum 0x0, Offset: 0x18f5
+// Size: 0x24c
 function function_3a547f046d6592a(asmname, statename, params) {
     arcname = self._blackboard.currentvehicleanimalias;
     alias = string(self._blackboard.var_9176cae5619d7fba);
@@ -401,7 +516,7 @@ function function_3a547f046d6592a(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15ca
+// Checksum 0x0, Offset: 0x1b49
 // Size: 0x27
 function chooseanim_vehicleturret(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, "blank");
@@ -409,7 +524,7 @@ function chooseanim_vehicleturret(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15fa
+// Checksum 0x0, Offset: 0x1b79
 // Size: 0x27
 function chooseanim_vehicleturretdeath(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, "vehicle_turret_death");
@@ -417,8 +532,8 @@ function chooseanim_vehicleturretdeath(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x162a
-// Size: 0x152
+// Checksum 0x0, Offset: 0x1ba9
+// Size: 0x157
 function getvehicleanimtargetoriginandangles(vehicle, vehicleanim, vehicletag, vehiclelocation, vehicleangles, var_47b4bdc915cff70d) {
     result = [];
     if (!isdefined(var_47b4bdc915cff70d)) {
@@ -446,8 +561,8 @@ function getvehicleanimtargetoriginandangles(vehicle, vehicleanim, vehicletag, v
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1785
-// Size: 0x216
+// Checksum 0x0, Offset: 0x1d09
+// Size: 0x1f8
 function linktovehicle(org, ang, linktoblend, sittag) {
     self forceteleport(org, ang);
     if (istrue(linktoblend)) {
@@ -470,7 +585,6 @@ function linktovehicle(org, ang, linktoblend, sittag) {
         aianims = anim_pos(vehicle, position);
         if (isdefined(aianims.onleft)) {
             self.var_2954e7fe0d59dc3a = aianims.onleft;
-            self._blackboard.var_feaa963beeb05107 = aianims.onleft;
         }
     }
     if (isagent(self)) {
@@ -482,8 +596,8 @@ function linktovehicle(org, ang, linktoblend, sittag) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x19a3
-// Size: 0x290
+// Checksum 0x0, Offset: 0x1f09
+// Size: 0x298
 function faceenemyincombat(asmname, statename) {
     self endon(statename + "_finished");
     while (true) {
@@ -515,8 +629,8 @@ function faceenemyincombat(asmname, statename) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1c3b
-// Size: 0x1d6
+// Checksum 0x0, Offset: 0x21a9
+// Size: 0x1d7
 function playanim_vehicleidle(asmname, statename, params) {
     self endon(statename + "_finished");
     setvehiclearchetype();
@@ -542,8 +656,8 @@ function playanim_vehicleidle(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e19
-// Size: 0x59
+// Checksum 0x0, Offset: 0x2388
+// Size: 0x58
 function function_7d994706653f02b4(asmname, statename, params) {
     self endon("death");
     self endon(statename + "_finished");
@@ -555,7 +669,7 @@ function function_7d994706653f02b4(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e7a
+// Checksum 0x0, Offset: 0x23e8
 // Size: 0x2c
 function function_e985e877247d21e9(asmname, statename, params) {
     setvehiclearchetype();
@@ -564,7 +678,7 @@ function function_e985e877247d21e9(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1eae
+// Checksum 0x0, Offset: 0x241c
 // Size: 0x2c
 function function_3cb7671ef707bc14(asmname, statename, params) {
     setvehiclearchetype();
@@ -573,8 +687,8 @@ function function_3cb7671ef707bc14(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ee2
-// Size: 0x187
+// Checksum 0x0, Offset: 0x2450
+// Size: 0x18c
 function vehicleturretshootthread(turret) {
     self endon("death");
     self endon("stop_shooting");
@@ -618,8 +732,8 @@ function vehicleturretshootthread(turret) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2071
-// Size: 0x1ba
+// Checksum 0x0, Offset: 0x25e4
+// Size: 0x1b9
 function playanim_vehicleturret(asmname, statename, params) {
     self endon(statename + "_finished");
     utility::use_turret(self._blackboard.currentvehicle.mgturret[0], undefined);
@@ -642,7 +756,7 @@ function playanim_vehicleturret(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2233
+// Checksum 0x0, Offset: 0x27a5
 // Size: 0xd4
 function playanim_vehicleturret_terminate(asmname, statename, params) {
     clearvehiclearchetype();
@@ -657,7 +771,7 @@ function playanim_vehicleturret_terminate(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x230f
+// Checksum 0x0, Offset: 0x2881
 // Size: 0x35
 function rotatetocurrentangles() {
     self endon("death");
@@ -671,8 +785,8 @@ function rotatetocurrentangles() {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x234c
-// Size: 0xdb4
+// Checksum 0x0, Offset: 0x28be
+// Size: 0xdd4
 function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiting, var_d1b180ee30493e0b) {
     if (isplayer(self)) {
         self endon("death_or_disconnect");
@@ -722,7 +836,7 @@ function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiti
             self orientmode("face angle 3d", self.asm.targetvalues["startAngles"]);
             /#
                 if (scripts\vehicle\vehicle_common::function_745ac044fcee731b(3)) {
-                    sphere(self.asm.targetvalues["<dev string:xb3>"], 3, (0, 0, 1), 0, 300);
+                    sphere(self.asm.targetvalues["<dev string:x1c>"], 3, (0, 0, 1), 0, 300);
                 }
             #/
         }
@@ -745,7 +859,7 @@ function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiti
     wait waittime;
     /#
         if (scripts\vehicle\vehicle_common::function_745ac044fcee731b(3)) {
-            print3d(self.origin + (0, 0, 60), "<dev string:xc3>", (1, 1, 1), 1, 0.3, 300);
+            print3d(self.origin + (0, 0, 60), "<dev string:x29>", (1, 1, 1), 1, 0.3, 300);
             sphere(self.origin, 2, (1, 0, 0), 0, 300);
         }
     #/
@@ -766,7 +880,7 @@ function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiti
         if (distance2dsquared(targetpoint, self.asm.targetvalues["targetOrigin"]) > 16384) {
             /#
                 if (scripts\vehicle\vehicle_common::function_745ac044fcee731b(3)) {
-                    print3d(self.origin, "<dev string:xd8>", (1, 1, 1), 1, 0.3, 2000, 0);
+                    print3d(self.origin, "<dev string:x3b>", (1, 1, 1), 1, 0.3, 2000, 0);
                     line(self.origin, targetpoint, (255, 165, 0), 1, 0, 2000);
                     sphere(targetpoint, 5, (255, 165, 0), 0, 2000);
                 }
@@ -790,15 +904,15 @@ function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiti
         self orientmode("face angle 3d", self.asm.targetvalues["targetAngles"]);
         /#
             if (getdvarint(@"hash_516c8a0d29dad543", 0) == 1) {
-                startpoint = self.asm.targetvalues["<dev string:xfa>"];
-                startangles = self.asm.targetvalues["<dev string:x109>"];
+                startpoint = self.asm.targetvalues["<dev string:x5a>"];
+                startangles = self.asm.targetvalues["<dev string:x66>"];
                 startendpoint = startpoint + anglestoforward(startangles) * 5;
                 line(startpoint, startendpoint, (0, 1, 0), 1, 0, 2000);
                 sphere(startpoint, 1, (0, 1, 0), 0, 2000);
                 line(targetpoint, self.origin, (0, 0, 1), 1, 0, 2000);
                 sphere(targetpoint, 5, (0, 0, 1), 0, 2000);
-                line(self.asm.targetvalues["<dev string:xb3>"], self.origin, (1, 0, 0), 1, 0, 2000);
-                sphere(self.asm.targetvalues["<dev string:xb3>"], 5, (1, 0, 0), 0, 2000);
+                line(self.asm.targetvalues["<dev string:x1c>"], self.origin, (1, 0, 0), 1, 0, 2000);
+                sphere(self.asm.targetvalues["<dev string:x1c>"], 5, (1, 0, 0), 0, 2000);
             }
         #/
     }
@@ -813,7 +927,7 @@ function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiti
     wait warpduration;
     /#
         if (scripts\vehicle\vehicle_common::function_745ac044fcee731b(3)) {
-            print3d(self.origin + (0, 0, 60), "<dev string:x118>", (1, 1, 1), 1, 0.3, 300);
+            print3d(self.origin + (0, 0, 60), "<dev string:x72>", (1, 1, 1), 1, 0.3, 300);
             sphere(self.origin, 2, (1, 0, 0), 0, 300);
         }
     #/
@@ -844,7 +958,7 @@ function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiti
         motionwarpwithtimes(xanim, tagorigin, tagangles, var_47b4bdc915cff70d, 1, var_33db3a06c680bc05);
         /#
             if (scripts\vehicle\vehicle_common::function_745ac044fcee731b(3)) {
-                print3d(self.origin + (0, 0, 60), "<dev string:x12b>", (1, 1, 1), 1, 0.3, 300);
+                print3d(self.origin + (0, 0, 60), "<dev string:x82>", (1, 1, 1), 1, 0.3, 300);
                 sphere(tagorigin, 3, (0, 1, 0), 0, 300);
             }
         #/
@@ -867,8 +981,8 @@ function enterexitvehiclemotionwarp(asmname, statename, xanim, vehicletag, exiti
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x3108
-// Size: 0x16c
+// Checksum 0x0, Offset: 0x369a
+// Size: 0x16b
 function function_710d997ba5906931(waitduration, targetpoint, targetangles, tagorigin, tagangles, warpduration) {
     self endon("death");
     self endon("EndVehicleMotionWarp");
@@ -882,7 +996,7 @@ function function_710d997ba5906931(waitduration, targetpoint, targetangles, tago
     if (!var_539a5cf0803a5cfe) {
         /#
             if (scripts\vehicle\vehicle_common::function_745ac044fcee731b(3)) {
-                print3d(self.origin + (0, 0, 60), "<dev string:x155>", (1, 1, 1), 1, 0.3, 300);
+                print3d(self.origin + (0, 0, 60), "<dev string:xa9>", (1, 1, 1), 1, 0.3, 300);
                 sphere(self.origin, 3, (1, 0, 0), 0, 300);
             }
         #/
@@ -893,8 +1007,8 @@ function function_710d997ba5906931(waitduration, targetpoint, targetangles, tago
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x327c
-// Size: 0x19d
+// Checksum 0x0, Offset: 0x380d
+// Size: 0x1a2
 function playanim_entervehicle(asmname, statename, params) {
     self endon(statename + "_finished");
     setvehiclearchetype();
@@ -902,7 +1016,7 @@ function playanim_entervehicle(asmname, statename, params) {
     self._blackboard.startedenteringvehicle = 1;
     animindex = asm_getanim(asmname, statename);
     xanim = asm_getxanim(statename, animindex);
-    assertex(isdefined(xanim), "<dev string:x178>" + self._blackboard.var_9176cae5619d7fba + "<dev string:x18e>" + self._blackboard.currentvehicleanimalias + "<dev string:x1a0>" + statename + "<dev string:x1af>" + self.classname + "<dev string:x1b8>");
+    assertex(isdefined(xanim), "Cannot find alias " + self._blackboard.var_9176cae5619d7fba + " in archetype " + self._blackboard.currentvehicleanimalias + " for state " + statename + " for " + self.classname + ". The state may not be added in the arc");
     self animmode("noclip");
     self orientmode("face current angles");
     if (isdefined(self._blackboard.currentvehicle)) {
@@ -917,8 +1031,8 @@ function playanim_entervehicle(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3421
-// Size: 0x1fd
+// Checksum 0x0, Offset: 0x39b7
+// Size: 0x1ff
 function entervehicle_terminate(asmname, statename, params) {
     clearvehiclearchetype();
     if (isalive(self)) {
@@ -953,13 +1067,12 @@ function entervehicle_terminate(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3626
-// Size: 0x4a
+// Checksum 0x0, Offset: 0x3bbe
+// Size: 0x43
 function exitvehiclewatchpath(statename) {
     self endon(statename + "_finished");
     while (true) {
         if (isdefined(self.pathgoalpos)) {
-            endvehiclemotionwarp();
             self animmode("gravity");
             self orientmode("face motion");
             return;
@@ -972,11 +1085,11 @@ function exitvehiclewatchpath(statename) {
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3678
-    // Size: 0xc3
+    // Checksum 0x0, Offset: 0x3c09
+    // Size: 0xc5
     function function_ee4d3aa4c40e4e63(xanim) {
-        waittime = getnotetracktimes(xanim, "<dev string:x1e3>")[0];
-        ragdolltime = getnotetracktimes(xanim, "<dev string:x1f9>")[0];
+        waittime = getnotetracktimes(xanim, "<dev string:xc9>")[0];
+        ragdolltime = getnotetracktimes(xanim, "<dev string:xdc>")[0];
         if (isdefined(waittime) && isdefined(ragdolltime)) {
             animlength = getanimlength(xanim);
             wait waittime * animlength;
@@ -992,8 +1105,8 @@ function exitvehiclewatchpath(statename) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3743
-// Size: 0x246
+// Checksum 0x0, Offset: 0x3cd6
+// Size: 0x248
 function playanim_exitvehicle(asmname, statename, params) {
     self endon(statename + "_finished");
     self setdefaultaimlimits();
@@ -1013,7 +1126,7 @@ function playanim_exitvehicle(asmname, statename, params) {
     setvehiclearchetype();
     animindex = asm_getanim(asmname, statename);
     xanim = asm_getxanim(statename, animindex);
-    assertex(isdefined(xanim), "<dev string:x178>" + self._blackboard.var_9176cae5619d7fba + "<dev string:x18e>" + self._blackboard.currentvehicleanimalias + "<dev string:x1a0>" + statename + "<dev string:x1af>" + self.classname + "<dev string:x1b8>");
+    assertex(isdefined(xanim), "Cannot find alias " + self._blackboard.var_9176cae5619d7fba + " in archetype " + self._blackboard.currentvehicleanimalias + " for state " + statename + " for " + self.classname + ". The state may not be added in the arc");
     self._blackboard.exitvehicleanimindex = animindex;
     /#
         if (getdvarint(@"hash_89424474a6dbe389", 0) == 1) {
@@ -1035,7 +1148,7 @@ function playanim_exitvehicle(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3991
+// Checksum 0x0, Offset: 0x3f26
 // Size: 0x24
 function endvehiclemotionwarp() {
     self notify("EndVehicleMotionWarp");
@@ -1045,8 +1158,8 @@ function endvehiclemotionwarp() {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x39bd
-// Size: 0x42f
+// Checksum 0x0, Offset: 0x3f52
+// Size: 0x434
 function exitvehicle_terminate(asmname, statename, params) {
     self._blackboard.invehicle = 0;
     utility::clear_movement_speed();
@@ -1120,7 +1233,7 @@ function exitvehicle_terminate(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3df4
+// Checksum 0x0, Offset: 0x438e
 // Size: 0x36
 function vehicletransition_terminate(asmname, statename, params) {
     if (!isalive(self)) {
@@ -1131,8 +1244,8 @@ function vehicletransition_terminate(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e32
-// Size: 0xa8
+// Checksum 0x0, Offset: 0x43cc
+// Size: 0xa7
 function watchvehicledeath() {
     self endon("entitydeleted");
     if (self isragdoll()) {
@@ -1163,8 +1276,8 @@ function watchvehicledeath() {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ee2
-// Size: 0x41e
+// Checksum 0x0, Offset: 0x447b
+// Size: 0x423
 function playanim_vehicledeath(asmname, statename, params) {
     if (!isdefined(self)) {
         return;
@@ -1238,7 +1351,7 @@ function playanim_vehicledeath(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4308
+// Checksum 0x0, Offset: 0x48a6
 // Size: 0x2c
 function playanim_vehicle(asmname, statename, params) {
     setvehiclearchetype();
@@ -1247,7 +1360,7 @@ function playanim_vehicle(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x433c
+// Checksum 0x0, Offset: 0x48da
 // Size: 0x37
 function function_863eaacfe47cedee(asmname, statename, params) {
     setvehiclearchetype();
@@ -1257,7 +1370,7 @@ function function_863eaacfe47cedee(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x437b
+// Checksum 0x0, Offset: 0x4919
 // Size: 0x9c
 function playanim_vehiclereload(asmname, statename, params) {
     self endon("reload_terminate");
@@ -1266,14 +1379,14 @@ function playanim_vehiclereload(asmname, statename, params) {
     animid = asm_getanim(asmname, statename);
     self aisetanim(statename, animid);
     xanim = asm_getxanim(statename, animid);
-    assert(animhasnotetrack(xanim, "<dev string:x212>") || animhasnotetrack(xanim, "<dev string:x221>"));
+    assert(animhasnotetrack(xanim, "refill clip") || animhasnotetrack(xanim, "reload done"));
     asm_playfacialanim(asmname, statename, xanim);
     asm_donotetracks(asmname, statename, undefined, undefined, undefined, 1);
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x441f
+// Checksum 0x0, Offset: 0x49bd
 // Size: 0x4d
 function function_59af18a4aee683ff(asmname, statename, params) {
     setvehiclearchetype();
@@ -1284,7 +1397,7 @@ function function_59af18a4aee683ff(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4474
+// Checksum 0x0, Offset: 0x4a12
 // Size: 0x4b
 function function_97519548bded06bd(asmname, statename, params) {
     setvehiclearchetype();
@@ -1295,8 +1408,8 @@ function function_97519548bded06bd(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x44c7
-// Size: 0x122
+// Checksum 0x0, Offset: 0x4a65
+// Size: 0x124
 function function_e2cdb897d2f82507(asmname, statename, params) {
     self endon(statename + "_finished");
     self endon("death");
@@ -1321,7 +1434,7 @@ function function_e2cdb897d2f82507(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x45f1
+// Checksum 0x0, Offset: 0x4b91
 // Size: 0x2c
 function vehiclereload_terminate(asmname, statename, params) {
     scripts\asm\soldier\script_funcs::reload_cleanup(asmname, statename, params);
@@ -1330,7 +1443,7 @@ function vehiclereload_terminate(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4625
+// Checksum 0x0, Offset: 0x4bc5
 // Size: 0x3c
 function isvehicledead(asmname, statename, tostatename, params) {
     return !isalive(self._blackboard.currentvehicle);
@@ -1338,7 +1451,7 @@ function isvehicledead(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x466a
+// Checksum 0x0, Offset: 0x4c0a
 // Size: 0x16
 function isnotinvehicle() {
     return !self._blackboard.invehicle;
@@ -1346,8 +1459,8 @@ function isnotinvehicle() {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4689
-// Size: 0xc7
+// Checksum 0x0, Offset: 0x4c29
+// Size: 0xc8
 function function_99cabda949b9375a(asmname, statename, tostatename, params) {
     vehicle = self._blackboard.currentvehicle;
     position = self._blackboard.var_9176cae5619d7fba;
@@ -1366,7 +1479,7 @@ function function_99cabda949b9375a(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4759
+// Checksum 0x0, Offset: 0x4cfa
 // Size: 0x6c
 function function_29fed6f5a8b07e74(asmname, statename, tostatename, params) {
     if (isdefined(self._blackboard.vehicledir)) {
@@ -1377,8 +1490,8 @@ function function_29fed6f5a8b07e74(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x47ce
-// Size: 0x107
+// Checksum 0x0, Offset: 0x4d6f
+// Size: 0x10a
 function function_3e064916882c7b95(asmname, statename, params) {
     alias = string(self._blackboard.var_9176cae5619d7fba);
     vehicle = self._blackboard.currentvehicle;
@@ -1398,8 +1511,8 @@ function function_3e064916882c7b95(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x48de
-// Size: 0xa9
+// Checksum 0x0, Offset: 0x4e82
+// Size: 0xaa
 function function_b6fb6cffe3f92b36(asmname, statename, params) {
     self endon(statename + "_finished");
     setvehiclearchetype();
@@ -1416,7 +1529,7 @@ function function_b6fb6cffe3f92b36(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x498f
+// Checksum 0x0, Offset: 0x4f34
 // Size: 0x68
 function vehicleshouldstophide(asmname, statename, tostatename, params) {
     if (!self issuppressed() && isdefined(self.var_edb88205b19560bd) && self.var_edb88205b19560bd) {
@@ -1427,7 +1540,7 @@ function vehicleshouldstophide(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x49ff
+// Checksum 0x0, Offset: 0x4fa4
 // Size: 0x3b
 function function_fda43da6e52af4b5(asmname, statename, params) {
     self._blackboard.var_3769628964ac89c1 = 1;
@@ -1435,9 +1548,53 @@ function function_fda43da6e52af4b5(asmname, statename, params) {
 }
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x4fe7
+// Size: 0xf8
+function function_b8f7a5c394a25131() {
+    if (!isdefined(self._blackboard.var_e38c46be257216d3)) {
+        return "";
+    }
+    alias = self._blackboard.var_9176cae5619d7fba + "_" + self._blackboard.var_e38c46be257216d3;
+    if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
+        vehicle = self._blackboard.currentvehicle;
+        position = self._blackboard.var_9176cae5619d7fba;
+        aianims = anim_pos(vehicle, position);
+        if (istrue(self.var_2954e7fe0d59dc3a)) {
+            alias += "_4";
+        } else {
+            alias += "_6";
+        }
+    }
+    return alias;
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4a42
-// Size: 0xee
+// Checksum 0x0, Offset: 0x50e8
+// Size: 0x7a
+function function_9bf47724e18bbbee(asmname, statename, tostatename, params) {
+    if (!isdefined(self._blackboard.var_e38c46be257216d3)) {
+        return false;
+    }
+    alias = function_b8f7a5c394a25131();
+    animresult = archetypegetrandomalias(self._blackboard.currentvehicleanimalias, tostatename, alias, asm_isfrantic());
+    return isdefined(animresult);
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 3, eflags: 0x0
+// Checksum 0x0, Offset: 0x516b
+// Size: 0x34
+function function_7150ef4bc326b7f4(asmname, statename, params) {
+    alias = function_b8f7a5c394a25131();
+    return asm_lookupanimfromalias(statename, alias);
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x51a8
+// Size: 0xf2
 function function_b4b7ff53be58de23(asmname, statename, tostatename, params) {
     arcname = self._blackboard.currentvehicleanimalias;
     alias = string(self._blackboard.var_9176cae5619d7fba);
@@ -1453,8 +1610,29 @@ function function_b4b7ff53be58de23(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b39
-// Size: 0x123
+// Checksum 0x0, Offset: 0x52a3
+// Size: 0x121
+function vehiclehasalias(asmname, statename, tostatename, params) {
+    arcname = self._blackboard.currentvehicleanimalias;
+    alias = string(self._blackboard.var_9176cae5619d7fba);
+    if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
+        vehicle = self._blackboard.currentvehicle;
+        position = self._blackboard.var_9176cae5619d7fba;
+        aianims = anim_pos(vehicle, position);
+        if (istrue(self.var_2954e7fe0d59dc3a)) {
+            alias += "_4";
+        } else {
+            alias += "_6";
+        }
+    }
+    animresult = archetypegetrandomalias(arcname, tostatename, alias, asm_isfrantic());
+    return isdefined(animresult);
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x53cd
+// Size: 0x127
 function function_b0734010e3a7e4b3(asmname, statename, tostatename, params) {
     arcname = self._blackboard.currentvehicleanimalias;
     alias = string(self._blackboard.var_9176cae5619d7fba);
@@ -1474,8 +1652,8 @@ function function_b0734010e3a7e4b3(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4c64
-// Size: 0xa1
+// Checksum 0x0, Offset: 0x54fc
+// Size: 0xa3
 function function_b373bc69137d18d1(asmname, statename, tostatename, params) {
     arcname = self._blackboard.currentvehicleanimalias;
     alias = string(self._blackboard.var_9176cae5619d7fba);
@@ -1489,7 +1667,29 @@ function function_b373bc69137d18d1(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d0e
+// Checksum 0x0, Offset: 0x55a8
+// Size: 0x12a
+function function_1746ad7c74ead3e8(asmname, statename, tostatename, params) {
+    arcname = self._blackboard.currentvehicleanimalias;
+    alias = string(self._blackboard.var_9176cae5619d7fba);
+    if (function_b3bb4d116f5a79cb(self._blackboard.currentvehicle, self._blackboard.var_9176cae5619d7fba)) {
+        vehicle = self._blackboard.currentvehicle;
+        position = self._blackboard.var_9176cae5619d7fba;
+        aianims = anim_pos(vehicle, position);
+        if (istrue(self.var_2954e7fe0d59dc3a)) {
+            alias += "_4";
+        } else {
+            alias += "_6";
+        }
+    }
+    alias = function_179d01a77dc31f73(alias);
+    animresult = archetypegetrandomalias(arcname, tostatename, alias, asm_isfrantic());
+    return isdefined(animresult);
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x56db
 // Size: 0x2d
 function vehicleshouldrunexit(asmname, statename, tostatename, params) {
     return istrue(self.vehiclerunexit);
@@ -1497,7 +1697,15 @@ function vehicleshouldrunexit(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d44
+// Checksum 0x0, Offset: 0x5711
+// Size: 0x49
+function function_a1f0771e220c6c30(asmname, statename, tostatename, params) {
+    return istrue(self.var_58e8388f04abb64e) && !vehicleincombat(asmname, statename, tostatename, params) && vehiclehasalias(asmname, statename, tostatename, params);
+}
+
+// Namespace vehicle / scripts\asm\soldier\vehicle
+// Params 4, eflags: 0x0
+// Checksum 0x0, Offset: 0x5763
 // Size: 0x44
 function vehiclegetoutcodemove(asmname, statename, tostatename, params) {
     if (asm_eventfired(asmname, "code_move") && isdefined(self.pathgoalpos)) {
@@ -1508,8 +1716,8 @@ function vehiclegetoutcodemove(asmname, statename, tostatename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4d91
-// Size: 0x18b
+// Checksum 0x0, Offset: 0x57b0
+// Size: 0x193
 function function_eba2c90ee8749a0f() {
     self endon("EndVehicleCollisionThread");
     self endon("death");
@@ -1535,7 +1743,7 @@ function function_eba2c90ee8749a0f() {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f24
+// Checksum 0x0, Offset: 0x594b
 // Size: 0x23
 function function_c9c1b653ecdcaffd(asmname, statename, params) {
     thread function_eba2c90ee8749a0f();
@@ -1543,7 +1751,7 @@ function function_c9c1b653ecdcaffd(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f4f
+// Checksum 0x0, Offset: 0x5976
 // Size: 0x19
 function function_535f605646d65a4d() {
     if (isdefined(self.collision_data)) {
@@ -1553,7 +1761,7 @@ function function_535f605646d65a4d() {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f70
+// Checksum 0x0, Offset: 0x5997
 // Size: 0x23
 function function_ea6fcddde1c07c00(asmname, statename, params) {
     self notify("EndVehicleCollisionThread");
@@ -1563,7 +1771,7 @@ function function_ea6fcddde1c07c00(asmname, statename, params) {
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4f9b
+    // Checksum 0x0, Offset: 0x59c2
     // Size: 0x1b
     function function_ef6a628ea4adc090() {
         wait 0.5;
@@ -1574,8 +1782,8 @@ function function_ea6fcddde1c07c00(asmname, statename, params) {
 
 // Namespace vehicle / scripts\asm\soldier\vehicle
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x4fbe
-// Size: 0x17a
+// Checksum 0x0, Offset: 0x59e5
+// Size: 0x17c
 function function_9e3ca0a0abcf9cf0(asmname, statename, tostatename, params) {
     if (!isdefined(self._blackboard.currentvehicle) || !isdefined(self._blackboard.var_9176cae5619d7fba)) {
         return false;
@@ -1607,18 +1815,18 @@ function function_9e3ca0a0abcf9cf0(asmname, statename, tostatename, params) {
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
     // Params 6, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5141
+    // Checksum 0x0, Offset: 0x5b6a
     // Size: 0x80
     function function_b8fad26db245639d(asmname, statename, arc, alias, xanim, message) {
-        println("<dev string:x230>" + asmname + "<dev string:x281>" + statename + "<dev string:x28e>" + arc + "<dev string:x29f>");
+        println("<dev string:xf2>" + asmname + "<dev string:x140>" + statename + "<dev string:x14a>" + arc + "<dev string:x158>");
         level.var_e941151b3a81c996 = 0;
-        println("<dev string:x2a5>" + alias + "<dev string:x2b3>" + xanim + "<dev string:x2b3>" + message);
+        println("<dev string:x15b>" + alias + "<dev string:x166>" + xanim + "<dev string:x166>" + message);
     }
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x51c9
-    // Size: 0x3a3
+    // Checksum 0x0, Offset: 0x5bf2
+    // Size: 0x3aa
     function function_f3e1b78b6e0b6b0(asmname, statename, arc) {
         if (!archetypeassetloaded(arc)) {
             return;
@@ -1635,52 +1843,52 @@ function function_9e3ca0a0abcf9cf0(asmname, statename, tostatename, params) {
                 anims = [var_fb34eb17f76fc7a1.anims];
             }
             foreach (xanim in anims) {
-                waittime = getnotetracktimes(xanim, "<dev string:x1e3>")[0];
-                ragdolltime = getnotetracktimes(xanim, "<dev string:x1f9>")[0];
-                var_7d4694abb95101bc = getnotetracktimes(xanim, "<dev string:xc3>");
-                var_d184203d4dd078 = getnotetracktimes(xanim, "<dev string:x118>");
-                var_1cf3cc2bfbd90835 = getnotetracktimes(xanim, "<dev string:x2b8>");
-                finishtimes = getnotetracktimes(xanim, "<dev string:x2c5>");
+                waittime = getnotetracktimes(xanim, "<dev string:xc9>")[0];
+                ragdolltime = getnotetracktimes(xanim, "<dev string:xdc>")[0];
+                var_7d4694abb95101bc = getnotetracktimes(xanim, "<dev string:x29>");
+                var_d184203d4dd078 = getnotetracktimes(xanim, "<dev string:x72>");
+                var_1cf3cc2bfbd90835 = getnotetracktimes(xanim, "<dev string:x168>");
+                finishtimes = getnotetracktimes(xanim, "<dev string:x172>");
                 if (isdefined(var_7d4694abb95101bc) && var_7d4694abb95101bc.size > 1) {
-                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x2cf>");
+                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x179>");
                 }
                 if (isdefined(var_d184203d4dd078) && var_d184203d4dd078.size > 1) {
-                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x309>");
+                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x1b0>");
                 }
                 if (isdefined(var_7d4694abb95101bc) && var_7d4694abb95101bc.size > 0 && isdefined(var_d184203d4dd078) && var_d184203d4dd078.size > 0) {
                     if (var_7d4694abb95101bc[0] >= var_d184203d4dd078[0]) {
-                        function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x341>");
+                        function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x1e5>");
                     }
                     if (isdefined(finishtimes)) {
                         if (finishtimes.size > 0 && var_7d4694abb95101bc[0] > finishtimes[0]) {
-                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x37a>");
+                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x21b>");
                         }
                         if (finishtimes.size > 0 && var_d184203d4dd078[0] > finishtimes[0]) {
-                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x3aa>");
+                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x248>");
                         }
                     }
                     if (isdefined(var_1cf3cc2bfbd90835)) {
                         if (var_1cf3cc2bfbd90835.size > 0 && var_7d4694abb95101bc[0] > var_1cf3cc2bfbd90835[0]) {
-                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x3ef>");
+                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x28a>");
                         }
                         if (var_1cf3cc2bfbd90835.size > 0 && var_d184203d4dd078[0] > var_1cf3cc2bfbd90835[0]) {
-                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x422>");
+                            function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x2ba>");
                         }
                     }
                     totalmovedelta = getmovedelta(xanim, 0, 1);
                     var_95de91b718b5a4f2 = getmovedelta(xanim, var_7d4694abb95101bc[0], var_d184203d4dd078[0]);
                     if (abs(var_95de91b718b5a4f2[2]) < abs(totalmovedelta[2]) * 0.5) {
-                        function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x453>");
+                        function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x2e8>");
                     }
                 }
                 if (isdefined(waittime) && !isdefined(ragdolltime)) {
-                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x496>");
+                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x328>");
                 }
                 if (!isdefined(waittime) && isdefined(ragdolltime)) {
-                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x4db>");
+                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x36a>");
                 }
                 if (isdefined(waittime) && isdefined(ragdolltime) && waittime >= ragdolltime) {
-                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x520>");
+                    function_b8fad26db245639d(asmname, statename, arc, alias, xanim, "<dev string:x3ac>");
                 }
             }
         }
@@ -1688,13 +1896,13 @@ function function_9e3ca0a0abcf9cf0(asmname, statename, tostatename, params) {
 
     // Namespace vehicle / scripts\asm\soldier\vehicle
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5574
-    // Size: 0x136
+    // Checksum 0x0, Offset: 0x5fa4
+    // Size: 0x134
     function function_839aa14eda8a2d82(asmname, statename, params) {
         if (isagent(self)) {
             return;
         }
-        archetypes = ["<dev string:x55c>", "<dev string:x563>", "<dev string:x56e>", "<dev string:x577>", "<dev string:x587>", "<dev string:x590>", "<dev string:x59d>", "<dev string:x5b1>", "<dev string:x5bb>", "<dev string:x5c8>", "<dev string:x5db>", "<dev string:x5e6>", "<dev string:x5ef>", "<dev string:x602>", "<dev string:x614>", "<dev string:x61d>", "<dev string:x627>", "<dev string:x630>", "<dev string:x63a>", "<dev string:x643>"];
+        archetypes = ["<dev string:x3e5>", "<dev string:x3e9>", "<dev string:x3f1>", "<dev string:x3f7>", "<dev string:x404>", "<dev string:x40a>", "<dev string:x414>", "<dev string:x425>", "<dev string:x42c>", "<dev string:x436>", "<dev string:x446>", "<dev string:x44e>", "<dev string:x454>", "<dev string:x464>", "<dev string:x473>", "<dev string:x479>", "<dev string:x480>", "<dev string:x486>", "<dev string:x48d>", "<dev string:x493>"];
         foreach (arc in archetypes) {
             function_f3e1b78b6e0b6b0(asmname, statename, arc);
         }

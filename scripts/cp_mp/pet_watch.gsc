@@ -7,8 +7,8 @@
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x669
-// Size: 0x343
+// Checksum 0x0, Offset: 0x562
+// Size: 0x344
 function init() {
     if (!isdefined(level.petconsts) && !utility::iscp()) {
         level thread autofeeder();
@@ -55,8 +55,8 @@ function init() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9b4
-// Size: 0x77
+// Checksum 0x0, Offset: 0x8ae
+// Size: 0x74
 function autofeeder() {
     level endon("game_ended");
     while (true) {
@@ -71,7 +71,7 @@ function autofeeder() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa33
+// Checksum 0x0, Offset: 0x92a
 // Size: 0x3f
 function setstate(state, forceanim) {
     self setclientomnvar("ui_pet_watch_action", state * -1);
@@ -81,7 +81,7 @@ function setstate(state, forceanim) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xa7a
+// Checksum 0x0, Offset: 0x971
 // Size: 0xc8
 function doaction(action) {
     switch (action) {
@@ -111,8 +111,8 @@ function doaction(action) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb4a
-// Size: 0x52
+// Checksum 0x0, Offset: 0xa41
+// Size: 0x51
 function growpet() {
     targettime = level.petconsts[self.petwatch.phase].phasetime;
     self.petwatch.growthtime = targettime;
@@ -121,7 +121,7 @@ function growpet() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xba4
+// Checksum 0x0, Offset: 0xa9a
 // Size: 0xc
 function onjoinspectators() {
     self.petwatch = undefined;
@@ -129,7 +129,7 @@ function onjoinspectators() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb8
+// Checksum 0x0, Offset: 0xaae
 // Size: 0x235
 function turbopetchallengewatcher() {
     self endon("disconnect");
@@ -194,7 +194,7 @@ function turbopetchallengewatcher() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf5
+// Checksum 0x0, Offset: 0xceb
 // Size: 0x86f
 function initpet(forceinit, var_f14d8f0fa461ea50, skipreset) {
     if (!isdefined(self.petwatch)) {
@@ -278,8 +278,8 @@ function initpet(forceinit, var_f14d8f0fa461ea50, skipreset) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x166c
-// Size: 0x22
+// Checksum 0x0, Offset: 0x1562
+// Size: 0x21
 function gethours(time) {
     var_30fecbc8f289eab = 3600;
     return int(time / var_30fecbc8f289eab);
@@ -287,8 +287,8 @@ function gethours(time) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1697
-// Size: 0x86
+// Checksum 0x0, Offset: 0x158c
+// Size: 0x8a
 function gethourtime(systime) {
     var_30fecbc8f289eab = 3600;
     var_663ed12a0431a739 = 24 * var_30fecbc8f289eab;
@@ -301,8 +301,8 @@ function gethourtime(systime) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1726
-// Size: 0x193
+// Checksum 0x0, Offset: 0x161f
+// Size: 0x1a3
 function testtiming() {
     now = getsystemtime();
     var_bf86f2c24693e09b = now - 300;
@@ -326,87 +326,87 @@ function testtiming() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x18c1
-// Size: 0x82d
+// Checksum 0x0, Offset: 0x17ca
+// Size: 0x842
 function printplayerdatastats() {
     /#
-        phase = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x26>");
-        lastupdatetime = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x2f>");
-        bored = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x41>");
-        dirty = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x4d>");
-        unruly = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x59>");
-        hungry = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x66>");
-        bonustimeapplied = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x73>");
-        charged = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x80>");
-        growthtime = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x8b>");
-        reproductionstreak = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x99>");
-        damage = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xaf>");
-        unicornpoints = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xb9>");
-        vampirepoints = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xc7>");
-        dragonpoints = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xd7>");
-        killstreakcharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xe7>");
-        wingamescharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xfb>");
-        objectivescorecharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x10d>");
-        killscharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x125>");
-        topkillstreakcharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x134>");
-        nukecharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x14b>");
-        wingamestop3 = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x159>");
-        plantscharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x169>");
-        executionscharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x179>");
-        println("<dev string:x18d>");
-        println("<dev string:x19b>" + self.petwatch.phase);
-        println("<dev string:x1a9>" + self.petwatch.lastupdatetime);
-        println("<dev string:x1c0>" + self.petwatch.bored);
-        println("<dev string:x1ce>" + self.petwatch.dirty);
-        println("<dev string:x1dc>" + self.petwatch.unruly);
-        println("<dev string:x1eb>" + self.petwatch.hungry);
-        println("<dev string:x1fa>" + self.petwatch.bonustimeapplied);
-        println("<dev string:x213>" + self.petwatch.charged);
-        println("<dev string:x223>" + self.petwatch.growthtime);
-        println("<dev string:x236>" + self.petwatch.reproductionstreak);
-        println("<dev string:x251>" + self.petwatch.damage);
-        println("<dev string:x260>" + self.petwatch.unicornpoints);
-        println("<dev string:x276>" + self.petwatch.vampirepoints);
-        println("<dev string:x28c>" + self.petwatch.dragonpoints);
-        println("<dev string:x2a1>" + self.petwatch.killstreakcharge);
-        println("<dev string:x2ba>" + self.petwatch.wingamescharge);
-        println("<dev string:x2d1>" + self.petwatch.objectivescorecharge);
-        println("<dev string:x2ee>" + self.petwatch.killscharge);
-        println("<dev string:x302>" + self.petwatch.topkillstreakcharge);
-        println("<dev string:x31e>" + self.petwatch.nukecharge);
-        println("<dev string:x331>" + self.petwatch.wingamestop3);
-        println("<dev string:x346>" + self.petwatch.plantscharge);
-        println("<dev string:x35b>" + self.petwatch.executionscharge);
-        println("<dev string:x374>");
-        println("<dev string:x19b>" + phase);
-        println("<dev string:x1a9>" + lastupdatetime);
-        println("<dev string:x1c0>" + bored);
-        println("<dev string:x1ce>" + dirty);
-        println("<dev string:x1dc>" + unruly);
-        println("<dev string:x1eb>" + hungry);
-        println("<dev string:x1fa>" + bonustimeapplied);
-        println("<dev string:x213>" + charged);
-        println("<dev string:x223>" + growthtime);
-        println("<dev string:x236>" + reproductionstreak);
-        println("<dev string:x251>" + damage);
-        println("<dev string:x260>" + unicornpoints);
-        println("<dev string:x276>" + vampirepoints);
-        println("<dev string:x28c>" + dragonpoints);
-        println("<dev string:x2a1>" + killstreakcharge);
-        println("<dev string:x2ba>" + wingamescharge);
-        println("<dev string:x2d1>" + objectivescorecharge);
-        println("<dev string:x2ee>" + killscharge);
-        println("<dev string:x302>" + topkillstreakcharge);
-        println("<dev string:x31e>" + nukecharge);
-        println("<dev string:x331>" + wingamestop3);
-        println("<dev string:x346>" + plantscharge);
-        println("<dev string:x35b>" + executionscharge);
+        phase = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x23>");
+        lastupdatetime = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x29>");
+        bored = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x38>");
+        dirty = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x41>");
+        unruly = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x4a>");
+        hungry = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x54>");
+        bonustimeapplied = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x5e>");
+        charged = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x68>");
+        growthtime = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x70>");
+        reproductionstreak = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x7b>");
+        damage = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x8e>");
+        unicornpoints = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x95>");
+        vampirepoints = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xa0>");
+        dragonpoints = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xad>");
+        killstreakcharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xba>");
+        wingamescharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xcb>");
+        objectivescorecharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xda>");
+        killscharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xef>");
+        topkillstreakcharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:xfb>");
+        nukecharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x10f>");
+        wingamestop3 = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x11a>");
+        plantscharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x127>");
+        executionscharge = self getplayerdata("<dev string:x1c>", self.petwatch.playerdatafield, "<dev string:x134>");
+        println("<dev string:x145>");
+        println("<dev string:x150>" + self.petwatch.phase);
+        println("<dev string:x15b>" + self.petwatch.lastupdatetime);
+        println("<dev string:x16f>" + self.petwatch.bored);
+        println("<dev string:x17a>" + self.petwatch.dirty);
+        println("<dev string:x185>" + self.petwatch.unruly);
+        println("<dev string:x191>" + self.petwatch.hungry);
+        println("<dev string:x19d>" + self.petwatch.bonustimeapplied);
+        println("<dev string:x1b3>" + self.petwatch.charged);
+        println("<dev string:x1c0>" + self.petwatch.growthtime);
+        println("<dev string:x1d0>" + self.petwatch.reproductionstreak);
+        println("<dev string:x1e8>" + self.petwatch.damage);
+        println("<dev string:x1f4>" + self.petwatch.unicornpoints);
+        println("<dev string:x207>" + self.petwatch.vampirepoints);
+        println("<dev string:x21a>" + self.petwatch.dragonpoints);
+        println("<dev string:x22c>" + self.petwatch.killstreakcharge);
+        println("<dev string:x242>" + self.petwatch.wingamescharge);
+        println("<dev string:x256>" + self.petwatch.objectivescorecharge);
+        println("<dev string:x270>" + self.petwatch.killscharge);
+        println("<dev string:x281>" + self.petwatch.topkillstreakcharge);
+        println("<dev string:x29a>" + self.petwatch.nukecharge);
+        println("<dev string:x2aa>" + self.petwatch.wingamestop3);
+        println("<dev string:x2bc>" + self.petwatch.plantscharge);
+        println("<dev string:x2ce>" + self.petwatch.executionscharge);
+        println("<dev string:x2e4>");
+        println("<dev string:x150>" + phase);
+        println("<dev string:x15b>" + lastupdatetime);
+        println("<dev string:x16f>" + bored);
+        println("<dev string:x17a>" + dirty);
+        println("<dev string:x185>" + unruly);
+        println("<dev string:x191>" + hungry);
+        println("<dev string:x19d>" + bonustimeapplied);
+        println("<dev string:x1b3>" + charged);
+        println("<dev string:x1c0>" + growthtime);
+        println("<dev string:x1d0>" + reproductionstreak);
+        println("<dev string:x1e8>" + damage);
+        println("<dev string:x1f4>" + unicornpoints);
+        println("<dev string:x207>" + vampirepoints);
+        println("<dev string:x21a>" + dragonpoints);
+        println("<dev string:x22c>" + killstreakcharge);
+        println("<dev string:x242>" + wingamescharge);
+        println("<dev string:x256>" + objectivescorecharge);
+        println("<dev string:x270>" + killscharge);
+        println("<dev string:x281>" + topkillstreakcharge);
+        println("<dev string:x29a>" + nukecharge);
+        println("<dev string:x2aa>" + wingamestop3);
+        println("<dev string:x2bc>" + plantscharge);
+        println("<dev string:x2ce>" + executionscharge);
     #/
 }
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20f6
+// Checksum 0x0, Offset: 0x2014
 // Size: 0x2a7
 function testpetdebug(testcode) {
     if (testcode > 16 && !isdefined(self.petwatch)) {
@@ -490,8 +490,8 @@ function testpetdebug(testcode) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x23a5
-// Size: 0x71
+// Checksum 0x0, Offset: 0x22c3
+// Size: 0x73
 function hoursawakesincelastupdate(currenttime, lastupdatetime, var_6ba7d3f06e41be2b) {
     var_e01aac667d095892 = gethourtime(currenttime);
     var_50c8acb81baf34af = gethours(currenttime - lastupdatetime);
@@ -503,7 +503,7 @@ function hoursawakesincelastupdate(currenttime, lastupdatetime, var_6ba7d3f06e41
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x241f
+// Checksum 0x0, Offset: 0x233f
 // Size: 0x12
 function updatepetstatesincelastupdate(var_6ba7d3f06e41be2b) {
     self endon("disconnect");
@@ -511,7 +511,7 @@ function updatepetstatesincelastupdate(var_6ba7d3f06e41be2b) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x243a
+// Checksum 0x0, Offset: 0x235a
 // Size: 0x65
 function addthrowingknifecharge() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -522,7 +522,7 @@ function addthrowingknifecharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x24a7
+// Checksum 0x0, Offset: 0x23c7
 // Size: 0x77
 function addkillstreakcharge() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -534,7 +534,7 @@ function addkillstreakcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2526
+// Checksum 0x0, Offset: 0x2446
 // Size: 0x3b
 function addallkillstreaksunlockedinonelife() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -544,7 +544,7 @@ function addallkillstreaksunlockedinonelife() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2569
+// Checksum 0x0, Offset: 0x2489
 // Size: 0x63
 function addteabagcharge() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -555,7 +555,7 @@ function addteabagcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x25d4
+// Checksum 0x0, Offset: 0x24f4
 // Size: 0x3b
 function addplundercarrycredit() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -565,7 +565,7 @@ function addplundercarrycredit() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2617
+// Checksum 0x0, Offset: 0x2537
 // Size: 0x63
 function addjuggernautcharge() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -576,7 +576,7 @@ function addjuggernautcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2682
+// Checksum 0x0, Offset: 0x25a2
 // Size: 0x65
 function addvehicularmanslaughtercharge() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -587,10 +587,25 @@ function addvehicularmanslaughtercharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x26ef
-// Size: 0x8f
+// Checksum 0x0, Offset: 0x260f
+// Size: 0x4a
+function getsubgametype() {
+    gametype = level.gametype;
+    if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
+        subgametype = getdvar(@"hash_7611a2790a0bf7fe", "");
+        if (subgametype != "") {
+            return subgametype;
+        }
+    }
+    return gametype;
+}
+
+// Namespace pet_watch / scripts\cp_mp\pet_watch
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x2662
+// Size: 0x8e
 function addtop3brcharge() {
-    subtype = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5();
+    subtype = getsubgametype();
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && (subtype == "br" || subtype == "aladdin" || subtype == "jugg" || subtype == "mini" || subtype == "mini_mgl")) {
         if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
             self setclientomnvar("ui_pet_watch_bonus_earned_1", 90000);
@@ -600,7 +615,7 @@ function addtop3brcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2786
+// Checksum 0x0, Offset: 0x26f8
 // Size: 0x3d
 function addwatch2v2topscore() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -610,7 +625,7 @@ function addwatch2v2topscore() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x27cb
+// Checksum 0x0, Offset: 0x273d
 // Size: 0x13a
 function update2v2progress() {
     if (!scripts\engine\utility::issharedfuncdefined("game", "getTeamData")) {
@@ -631,7 +646,7 @@ function update2v2progress() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x290d
+// Checksum 0x0, Offset: 0x287f
 // Size: 0x68
 function tryupdategenericprogress(progress, code) {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -642,8 +657,8 @@ function tryupdategenericprogress(progress, code) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x297d
-// Size: 0x122
+// Checksum 0x0, Offset: 0x28ef
+// Size: 0x120
 function trackcarpunches(car) {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
         if (!isdefined(car.carpunchers)) {
@@ -651,7 +666,7 @@ function trackcarpunches(car) {
             car.carpunchcount = [];
         }
         var_4c98940b9e06b7f8 = -1;
-        foreach (i, puncher in car.carpunchers) {
+        foreach (puncher in car.carpunchers) {
             if (puncher == self) {
                 var_4c98940b9e06b7f8 = i;
                 break;
@@ -670,12 +685,12 @@ function trackcarpunches(car) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2aa7
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x2a17
+// Size: 0xc4
 function checkcarpuncherprogressgeneric() {
     if (isdefined(self.carpunchers)) {
         punchcount = 0;
-        foreach (i, puncher in self.carpunchers) {
+        foreach (puncher in self.carpunchers) {
             var_1e47e3db30463930 = isdefined(puncher.petwatch) && puncher.petwatch.petwatchtype == "pet_turbo";
             if (!var_1e47e3db30463930) {
                 continue;
@@ -690,13 +705,13 @@ function checkcarpuncherprogressgeneric() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b74
-// Size: 0xcb
+// Checksum 0x0, Offset: 0x2ae3
+// Size: 0xc9
 function checkcarpuncherprogress(car) {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
         if (isdefined(car.carpunchers)) {
             punchcount = 0;
-            foreach (i, puncher in car.carpunchers) {
+            foreach (puncher in car.carpunchers) {
                 if (puncher == self) {
                     punchcount = car.carpunchcount[i];
                     break;
@@ -711,8 +726,8 @@ function checkcarpuncherprogress(car) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c47
-// Size: 0x75
+// Checksum 0x0, Offset: 0x2bb4
+// Size: 0x74
 function addnukecharge() {
     if (isdefined(self.petwatch)) {
         self.petwatch.nukecharge++;
@@ -726,7 +741,7 @@ function addnukecharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cc4
+// Checksum 0x0, Offset: 0x2c30
 // Size: 0x46
 function addtopkillstreakcharge() {
     if (isdefined(self.petwatch)) {
@@ -737,7 +752,7 @@ function addtopkillstreakcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d12
+// Checksum 0x0, Offset: 0x2c7e
 // Size: 0x1e
 function addallkillstreaksunlocked() {
     if (isdefined(self.petwatch)) {
@@ -747,7 +762,7 @@ function addallkillstreaksunlocked() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d38
+// Checksum 0x0, Offset: 0x2ca4
 // Size: 0x63
 function addplantingcharge() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype != "pet_turbo") {
@@ -758,7 +773,7 @@ function addplantingcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2da3
+// Checksum 0x0, Offset: 0x2d0f
 // Size: 0xfe
 function addobjectivescorecharge(event, originalpoints, eventinfo) {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype != "pet_turbo") {
@@ -784,7 +799,7 @@ function addobjectivescorecharge(event, originalpoints, eventinfo) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ea9
+// Checksum 0x0, Offset: 0x2e15
 // Size: 0x86
 function addtenkillcharge() {
     if (isdefined(self.petwatch)) {
@@ -796,7 +811,7 @@ function addtenkillcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f37
+// Checksum 0x0, Offset: 0x2ea3
 // Size: 0x5a
 function addkillcharge() {
     if (isdefined(self.petwatch)) {
@@ -808,7 +823,7 @@ function addkillcharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f99
+// Checksum 0x0, Offset: 0x2f05
 // Size: 0x48
 function addexecutioncharge() {
     if (isdefined(self.petwatch)) {
@@ -819,7 +834,7 @@ function addexecutioncharge() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fe9
+// Checksum 0x0, Offset: 0x2f55
 // Size: 0x80
 function addwatchchargewin() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype != "pet_turbo") {
@@ -832,7 +847,7 @@ function addwatchchargewin() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3071
+// Checksum 0x0, Offset: 0x2fdd
 // Size: 0x65
 function addwatchchargewintop3() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype != "pet_turbo") {
@@ -843,8 +858,8 @@ function addwatchchargewintop3() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x30de
-// Size: 0x74
+// Checksum 0x0, Offset: 0x304a
+// Size: 0x75
 function petplundertimer() {
     self endon("disconnect");
     self endon("cancel_pet_plunder_timer");
@@ -860,7 +875,7 @@ function petplundertimer() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x315a
+// Checksum 0x0, Offset: 0x30c7
 // Size: 0x3f
 function updatenukeprogress(progress) {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -870,7 +885,7 @@ function updatenukeprogress(progress) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x31a1
+// Checksum 0x0, Offset: 0x310e
 // Size: 0x99
 function onplayergetsplunder() {
     if (isdefined(self.petwatch) && self.petwatch.petwatchtype == "pet_turbo") {
@@ -890,7 +905,7 @@ function onplayergetsplunder() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3242
+// Checksum 0x0, Offset: 0x31af
 // Size: 0x31
 function setphase(phase) {
     self.petwatch.phase = phase;
@@ -899,8 +914,8 @@ function setphase(phase) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x327b
-// Size: 0x127
+// Checksum 0x0, Offset: 0x31e8
+// Size: 0x128
 function updateuistate() {
     bitfield = 0;
     if (self.petwatch.bored < 0) {
@@ -919,13 +934,13 @@ function updateuistate() {
     dmgstep = int(max(0, min(dmgstep, 9)));
     bitfield += 100000 * dmgstep;
     state = bitfield + self.petwatch.phase;
-    println("<dev string:x393>" + bitfield + "<dev string:x3ae>" + self.petwatch.phase);
+    println("<dev string:x300>" + bitfield + "<dev string:x318>" + self.petwatch.phase);
     self setclientomnvar("ui_pet_watch_state", state);
 }
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33aa
+// Checksum 0x0, Offset: 0x3318
 // Size: 0x2fb
 function resetpetstats() {
     self.petwatch.bored = level.petconsts[self.petwatch.phase].boredstart;
@@ -961,7 +976,7 @@ function resetpetstats() {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x36ad
+// Checksum 0x0, Offset: 0x361b
 // Size: 0x4c
 function resetpet(var_801259433dadb5e0, phaseoverride) {
     if (isdefined(phaseoverride)) {
@@ -975,7 +990,7 @@ function resetpet(var_801259433dadb5e0, phaseoverride) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3701
+// Checksum 0x0, Offset: 0x366f
 // Size: 0x18
 function debugsetlasttime(hours) {
     self setclientomnvar("ui_pet_watch_action", hours);
@@ -983,8 +998,8 @@ function debugsetlasttime(hours) {
 
 // Namespace pet_watch / scripts\cp_mp\pet_watch
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3721
-// Size: 0x465
+// Checksum 0x0, Offset: 0x368f
+// Size: 0x46b
 function feedaction() {
     if (!isdefined(self.petwatch)) {
         return;
@@ -1003,11 +1018,11 @@ function feedaction() {
     dirtychanged = self.petwatch.lastdirtyscore < dirtyscore;
     var_9635660a6eb2d37f = self.petwatch.lastboredscore < var_68f4532ae38c7889;
     var_b2f5debac3f6ee00 = self.petwatch.lastunrulyscore < var_10da2b565b61ab1e;
-    println("<dev string:x3b9>" + var_68f4532ae38c7889 + "<dev string:x3d1>" + dirtyscore + "<dev string:x3e1>" + var_10da2b565b61ab1e + "<dev string:x3f2>" + var_cc874f65d38801b2);
+    println("<dev string:x320>" + var_68f4532ae38c7889 + "<dev string:x335>" + dirtyscore + "<dev string:x342>" + var_10da2b565b61ab1e + "<dev string:x350>" + var_cc874f65d38801b2);
     if (!var_e4de697fecf32054 && !dirtychanged && !var_9635660a6eb2d37f && !var_b2f5debac3f6ee00) {
         return;
     }
-    println("<dev string:x403>" + self.petwatch.bored + "<dev string:x419>" + self.petwatch.dirty + "<dev string:x424>" + self.petwatch.unruly + "<dev string:x430>" + self.petwatch.hungry);
+    println("<dev string:x35e>" + self.petwatch.bored + "<dev string:x371>" + self.petwatch.dirty + "<dev string:x379>" + self.petwatch.unruly + "<dev string:x382>" + self.petwatch.hungry);
     var_68f4532ae38c7889 = max(-240, min(var_68f4532ae38c7889, 240));
     dirtyscore = max(-240, min(dirtyscore, 240));
     var_10da2b565b61ab1e = max(-240, min(var_10da2b565b61ab1e, 240));
@@ -1053,6 +1068,6 @@ function feedaction() {
     self.petwatch.dirty = dirtyscore;
     self.petwatch.unruly = var_10da2b565b61ab1e;
     self.petwatch.hungry = var_cc874f65d38801b2;
-    println("<dev string:x43c>" + self.petwatch.bored + "<dev string:x419>" + self.petwatch.dirty + "<dev string:x424>" + self.petwatch.unruly + "<dev string:x430>" + self.petwatch.hungry);
+    println("<dev string:x38b>" + self.petwatch.bored + "<dev string:x371>" + self.petwatch.dirty + "<dev string:x379>" + self.petwatch.unruly + "<dev string:x382>" + self.petwatch.hungry);
 }
 

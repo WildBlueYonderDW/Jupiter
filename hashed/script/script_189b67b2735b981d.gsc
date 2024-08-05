@@ -14,8 +14,8 @@
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x9d1
-// Size: 0x87
+// Checksum 0x0, Offset: 0x777
+// Size: 0x8a
 function function_ce3fed6316f195b9(tablename) {
     for (row = 0; true; row++) {
         eventname = tablelookupbyrow(tablename, row, 1);
@@ -31,8 +31,8 @@ function function_ce3fed6316f195b9(tablename) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xa60
-// Size: 0x75
+// Checksum 0x0, Offset: 0x809
+// Size: 0x74
 function function_81e38b9504bed322(eventname, delay, globalcooldown, linecooldown) {
     result = spawnstruct();
     result.delay = delay;
@@ -44,8 +44,8 @@ function function_81e38b9504bed322(eventname, delay, globalcooldown, linecooldow
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xadd
-// Size: 0x73
+// Checksum 0x0, Offset: 0x885
+// Size: 0x75
 function function_ebda2510d1d4f81d(tablename) {
     for (row = 0; true; row++) {
         eventtablename = tablelookupbyrow(tablename, row, 0);
@@ -60,7 +60,7 @@ function function_ebda2510d1d4f81d(tablename) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xb58
+// Checksum 0x0, Offset: 0x902
 // Size: 0x49
 function function_6b8aa0609ecb3cbd(index, eventtablename, eventname, playaudio) {
     level.var_20e6a6f36157adc[eventname].lines[eventtablename] = playaudio;
@@ -68,29 +68,8 @@ function function_6b8aa0609ecb3cbd(index, eventtablename, eventname, playaudio) 
 }
 
 // Namespace talking_gun / namespace_27c74152ccb91331
-// Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xba9
-// Size: 0xc7
-function function_2fa456bb8a94b7a1(eventname, stateid, var_9c40af0f61186602) {
-    if (!isdefined(level.var_20e6a6f36157adc)) {
-        function_c961767b96992af9();
-    }
-    event = level.var_20e6a6f36157adc[eventname];
-    if (isdefined(event) && isdefined(event.var_1a2e4136162e552b)) {
-        return;
-    }
-    var_e3fb66cb950f273 = spawnstruct();
-    var_e3fb66cb950f273.eventid = stateid;
-    var_e3fb66cb950f273.omnvar = ter_op(isdefined(var_9c40af0f61186602), var_9c40af0f61186602, "ui_talkinggun_faceid");
-    if (!isdefined(level.event)) {
-        level.var_20e6a6f36157adc[eventname] = spawnstruct();
-    }
-    level.var_20e6a6f36157adc[eventname].var_1a2e4136162e552b = var_e3fb66cb950f273;
-}
-
-// Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc78
+// Checksum 0x0, Offset: 0x953
 // Size: 0x51
 function function_c961767b96992af9() {
     thread function_b77041c06bd0e53a();
@@ -107,7 +86,7 @@ function function_c961767b96992af9() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xcd1
+// Checksum 0x0, Offset: 0x9ac
 // Size: 0x10c
 function function_b04504ffd83192e1() {
     self.var_d1d541d826231cad = spawnstruct();
@@ -126,8 +105,8 @@ function function_b04504ffd83192e1() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xde5
-// Size: 0x13a
+// Checksum 0x0, Offset: 0xac0
+// Size: 0x13b
 function function_2f181c374b1af79d() {
     level endon("game_ended");
     while (true) {
@@ -152,7 +131,7 @@ function function_2f181c374b1af79d() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xf27
+// Checksum 0x0, Offset: 0xc03
 // Size: 0x21f
 function function_b77041c06bd0e53a() {
     level endon("game_ended");
@@ -186,8 +165,8 @@ function function_b77041c06bd0e53a() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x114e
-// Size: 0x155
+// Checksum 0x0, Offset: 0xe2a
+// Size: 0x154
 function function_e8084259d5e9e5a6() {
     self endon("game_ended");
     while (true) {
@@ -218,7 +197,7 @@ function function_e8084259d5e9e5a6() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x12ab
+// Checksum 0x0, Offset: 0xf86
 // Size: 0x92
 function function_b97b71722a3dc5f0(player, eventname) {
     if (!isdefined(player.var_d1d541d826231cad)) {
@@ -234,8 +213,8 @@ function function_b97b71722a3dc5f0(player, eventname) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1346
-// Size: 0xb4
+// Checksum 0x0, Offset: 0x1021
+// Size: 0xb1
 function function_7b50742a287d3ca1(player) {
     if (!isdefined(player.var_d1d541d826231cad)) {
         return false;
@@ -258,7 +237,7 @@ function function_7b50742a287d3ca1(player) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1403
+// Checksum 0x0, Offset: 0x10db
 // Size: 0x32
 function function_b52945d0ec45b0cc(player) {
     if (scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_occupantisvehicledriver(player)) {
@@ -275,7 +254,7 @@ function function_b52945d0ec45b0cc(player) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x143e
+// Checksum 0x0, Offset: 0x1116
 // Size: 0x3b
 function function_547117b1a7105f45(player, delay, line) {
     player endon("death_or_disconnect");
@@ -285,8 +264,8 @@ function function_547117b1a7105f45(player, delay, line) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1481
-// Size: 0x8a
+// Checksum 0x0, Offset: 0x1159
+// Size: 0x79
 function function_a1e1b35a0bd2f57c(player, eventname) {
     if (!function_7b50742a287d3ca1(player)) {
         return false;
@@ -295,7 +274,7 @@ function function_a1e1b35a0bd2f57c(player, eventname) {
         function_c961767b96992af9();
     }
     event = level.var_20e6a6f36157adc[eventname];
-    if (!isdefined(event) || !isdefined(event.lines) || !isdefined(event.lines[player.var_d1d541d826231cad.guntype])) {
+    if (!isdefined(event) || !isdefined(event.lines[player.var_d1d541d826231cad.guntype])) {
         return false;
     }
     return true;
@@ -303,8 +282,8 @@ function function_a1e1b35a0bd2f57c(player, eventname) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1514
-// Size: 0x5b
+// Checksum 0x0, Offset: 0x11db
+// Size: 0x5a
 function function_e4d7e0e2fa1fe358() {
     if (issharedfuncdefined("game", "gameFlag")) {
         prematchdone = [[ getsharedfunc("game", "gameFlag") ]]("prematch_done");
@@ -318,7 +297,7 @@ function function_e4d7e0e2fa1fe358() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1578
+// Checksum 0x0, Offset: 0x123e
 // Size: 0x10d
 function function_cd101ca0e17cfd60(player, eventname) {
     if (!function_7b50742a287d3ca1(player)) {
@@ -349,34 +328,9 @@ function function_cd101ca0e17cfd60(player, eventname) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x168e
-// Size: 0x67
-function function_9667b86a2c02b9a(player, eventname) {
-    if (!function_7b50742a287d3ca1(player)) {
-        return undefined;
-    }
-    if (!function_e4d7e0e2fa1fe358()) {
-        return undefined;
-    }
-    if (!isdefined(level.var_20e6a6f36157adc)) {
-        function_c961767b96992af9();
-    }
-    event = level.var_20e6a6f36157adc[eventname];
-    if (!isdefined(event)) {
-        return undefined;
-    }
-    return event.var_1a2e4136162e552b;
-}
-
-// Namespace talking_gun / namespace_27c74152ccb91331
-// Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16fe
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x1354
+// Size: 0x7a
 function function_55b08d6d71b41402(player, eventname) {
-    screenevent = function_9667b86a2c02b9a(player, eventname);
-    if (isdefined(screenevent)) {
-        player setclientomnvar(screenevent.omnvar, screenevent.eventid);
-    }
     if (!function_cd101ca0e17cfd60(player, eventname)) {
         return;
     }
@@ -389,8 +343,8 @@ function function_55b08d6d71b41402(player, eventname) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17b5
-// Size: 0xb2
+// Checksum 0x0, Offset: 0x13d6
+// Size: 0xb3
 function function_c5f05871ba7c3aa3() {
     currentstock = self getweaponammostock(self.currentweapon);
     maxstock = weaponmaxammo(self.currentweapon);
@@ -409,7 +363,7 @@ function function_c5f05871ba7c3aa3() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x186f
+// Checksum 0x0, Offset: 0x1491
 // Size: 0x18
 function function_81f5578aed261da1(player) {
     function_55b08d6d71b41402(player, "loot_found");
@@ -417,8 +371,8 @@ function function_81f5578aed261da1(player) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x188f
-// Size: 0xc2
+// Checksum 0x0, Offset: 0x14b1
+// Size: 0xbf
 function function_44cdb18eb18593de(team, activity) {
     if (isdefined(activity) && isdefined(activity.name) && activity.name == "hold") {
         return;
@@ -438,7 +392,7 @@ function function_44cdb18eb18593de(team, activity) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1959
+// Checksum 0x0, Offset: 0x1578
 // Size: 0x1e
 function function_952d1a246a3ece86(player) {
     wait 2;
@@ -447,8 +401,8 @@ function function_952d1a246a3ece86(player) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x197f
-// Size: 0x89
+// Checksum 0x0, Offset: 0x159e
+// Size: 0x86
 function function_bf5315076804b215(team) {
     if (isdefined(level.var_1642386c8e73a981)) {
         foreach (player in level.var_1642386c8e73a981) {
@@ -464,8 +418,8 @@ function function_bf5315076804b215(team) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a10
-// Size: 0x72
+// Checksum 0x0, Offset: 0x162c
+// Size: 0x71
 function function_4cca00246f03b1f2(player, droppedweapon, soundposition) {
     guntype = player.var_d1d541d826231cad.guntype;
     while (true) {
@@ -479,8 +433,8 @@ function function_4cca00246f03b1f2(player, droppedweapon, soundposition) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a8a
-// Size: 0x97
+// Checksum 0x0, Offset: 0x16a5
+// Size: 0x96
 function function_aba04688789ce643(droppedweapon, objweapon, var_cdce80998ec668ee) {
     if (!function_d8239f9d7164d68e(droppedweapon)) {
         return;
@@ -499,7 +453,7 @@ function function_aba04688789ce643(droppedweapon, objweapon, var_cdce80998ec668e
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b29
+// Checksum 0x0, Offset: 0x1743
 // Size: 0x29
 function function_bd70b31dd13292bc(player) {
     player endon("death_or_disconnect");
@@ -510,7 +464,7 @@ function function_bd70b31dd13292bc(player) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b5a
+// Checksum 0x0, Offset: 0x1774
 // Size: 0x69
 function function_bd70a21dd1326d59(player) {
     player endon("death_or_disconnect");
@@ -524,14 +478,13 @@ function function_bd70a21dd1326d59(player) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bcb
-// Size: 0x5c2
+// Checksum 0x0, Offset: 0x17e5
+// Size: 0x59e
 function function_14c5b1a6f5a9f37c(data) {
     if (isdefined(data.victim.var_d1d541d826231cad)) {
         data.victim.var_d1d541d826231cad.var_e759da6edf27a220 = 0;
         data.victim.var_d1d541d826231cad.var_56560380a4b1a392 = [];
         data.victim.var_d1d541d826231cad.var_6a8d989a494b74c4 = 1;
-        data.victim.var_d1d541d826231cad.active = 0;
     }
     if (data.attacker == data.victim) {
         return;
@@ -609,8 +562,8 @@ function function_14c5b1a6f5a9f37c(data) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2195
-// Size: 0xba
+// Checksum 0x0, Offset: 0x1d8b
+// Size: 0xa8
 function function_27fe46449778a3e3(winner) {
     if (isdefined(level.var_1642386c8e73a981)) {
         foreach (player in level.var_1642386c8e73a981) {
@@ -620,7 +573,7 @@ function function_27fe46449778a3e3(winner) {
             if (!isdefined(player.team)) {
                 continue;
             }
-            if (isplayer(winner) ? player == winner : player.team == winner) {
+            if (player.team == winner) {
                 function_55b08d6d71b41402(player, "round_won");
                 continue;
             }
@@ -631,7 +584,7 @@ function function_27fe46449778a3e3(winner) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2257
+// Checksum 0x0, Offset: 0x1e3b
 // Size: 0x108
 function function_967de5f2484e51ef(player, killstreakname) {
     wait 1;
@@ -651,7 +604,7 @@ function function_967de5f2484e51ef(player, killstreakname) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2367
+// Checksum 0x0, Offset: 0x1f4b
 // Size: 0x30
 function function_d0c66e5691fa4856(player, event) {
     level endon("game_ended");
@@ -662,7 +615,7 @@ function function_d0c66e5691fa4856(player, event) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x239f
+// Checksum 0x0, Offset: 0x1f83
 // Size: 0x33
 function function_556866c3c047a8b8(victim) {
     level endon("game_ended");
@@ -674,8 +627,8 @@ function function_556866c3c047a8b8(victim) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x23da
-// Size: 0x40
+// Checksum 0x0, Offset: 0x1fbe
+// Size: 0x3f
 function function_f0b105c339fb3e1(objweapon) {
     weapongroup = function_f3bb4f4911a1beb2("weapons", "getWeaponGroup", objweapon);
     return isdefined(weapongroup) && (weapongroup == "weapon_sniper" || weapongroup == "weapon_dmr");
@@ -683,15 +636,15 @@ function function_f0b105c339fb3e1(objweapon) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2423
-// Size: 0x2f8
+// Checksum 0x0, Offset: 0x2006
+// Size: 0x306
 function function_a81df078cbb965a5() {
     self endon("game_ended");
     while (true) {
         einflictor, eattacker, victim, idamage, idflags, smeansofdeath, objweapon, var_fcdf19e3cdd29669, vpoint, vdir, shitloc, psoffsettime, modelindex, partname = self waittill("post_player_damaged");
         if (!isdefined(victim) || !isdefined(eattacker)) {
             /#
-                iprintln("<dev string:x4e>");
+                iprintln("<dev string:x4b>");
             #/
             continue;
         }
@@ -738,7 +691,7 @@ function function_a81df078cbb965a5() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2723
+// Checksum 0x0, Offset: 0x2314
 // Size: 0xe5
 function function_3addbb064480340() {
     self endon("game_ended");
@@ -765,7 +718,7 @@ function function_3addbb064480340() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2810
+// Checksum 0x0, Offset: 0x2401
 // Size: 0x1b9
 function function_eb8660dbfa7117b5() {
     self endon("disconnect");
@@ -800,7 +753,7 @@ function function_eb8660dbfa7117b5() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29d1
+// Checksum 0x0, Offset: 0x25c2
 // Size: 0x2d
 function function_cd39869120c7218() {
     self endon("disconnect");
@@ -813,7 +766,7 @@ function function_cd39869120c7218() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a06
+// Checksum 0x0, Offset: 0x25f7
 // Size: 0x26d
 function function_26acd7206ca70734(sparams) {
     var_51ba34154a645b70 = isdefined(self.bossname);
@@ -853,7 +806,7 @@ function function_26acd7206ca70734(sparams) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c7b
+// Checksum 0x0, Offset: 0x286c
 // Size: 0x94
 function function_aea35499f76041bb() {
     self endon("death_or_disconnect");
@@ -869,8 +822,8 @@ function function_aea35499f76041bb() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d17
-// Size: 0x182
+// Checksum 0x0, Offset: 0x2908
+// Size: 0x181
 function function_d8239f9d7164d68e(droppedweapon) {
     if (!isdefined(droppedweapon)) {
         return false;
@@ -890,7 +843,7 @@ function function_d8239f9d7164d68e(droppedweapon) {
         weapontocheck = droppedweapon.customweaponname;
     } else {
         /#
-            iprintlnbold("<dev string:x90>");
+            iprintlnbold("<dev string:x8a>");
         #/
         return false;
     }
@@ -908,7 +861,7 @@ function function_d8239f9d7164d68e(droppedweapon) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ea2
+// Checksum 0x0, Offset: 0x2a92
 // Size: 0x3c
 function function_7fd5a6abcd15e5ba() {
     self endon("game_ended");
@@ -920,7 +873,7 @@ function function_7fd5a6abcd15e5ba() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ee6
+// Checksum 0x0, Offset: 0x2ad6
 // Size: 0x42
 function function_7143e9d45cff1d4c() {
     self endon("game_ended");
@@ -933,8 +886,8 @@ function function_7143e9d45cff1d4c() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f30
-// Size: 0x8e
+// Checksum 0x0, Offset: 0x2b20
+// Size: 0x8c
 function function_572b61079927196b() {
     while (true) {
         winners = level waittill("br_ending_start");
@@ -949,8 +902,8 @@ function function_572b61079927196b() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fc6
-// Size: 0xf9
+// Checksum 0x0, Offset: 0x2bb4
+// Size: 0xf8
 function function_ef6885141252869(player, grenade) {
     issuper = function_f3bb4f4911a1beb2("weapons", "isSuperWeapon", grenade.weapon_object);
     if (issuper) {
@@ -979,8 +932,8 @@ function function_ef6885141252869(player, grenade) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x30c7
-// Size: 0x208
+// Checksum 0x0, Offset: 0x2cb4
+// Size: 0x1fe
 function function_2cc0d17b7e641e00(player, guntype) {
     playdeploy = !isdefined(player.var_d1d541d826231cad) || player.var_d1d541d826231cad.var_6a8d989a494b74c4;
     if (!isdefined(level.var_1642386c8e73a981)) {
@@ -1020,14 +973,12 @@ function function_2cc0d17b7e641e00(player, guntype) {
     } else if (playdeploy) {
         player thread function_aea35499f76041bb();
     }
-    if (guntype != "doom") {
-        player setclientomnvar("ui_talkinggun_faceid", guntype);
-    }
+    player setclientomnvar("ui_talkinggun_faceid", guntype);
 }
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32d7
+// Checksum 0x0, Offset: 0x2eba
 // Size: 0xbf
 function function_f70b3ce9138e10b(player) {
     if (!isdefined(player)) {
@@ -1051,7 +1002,7 @@ function function_f70b3ce9138e10b(player) {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x339e
+// Checksum 0x0, Offset: 0x2f81
 // Size: 0xa
 function function_da3d9f34d24ac85a() {
     function_f70b3ce9138e10b(self);
@@ -1059,7 +1010,7 @@ function function_da3d9f34d24ac85a() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33b0
+// Checksum 0x0, Offset: 0x2f93
 // Size: 0x21
 function function_96f59fefd781e47() {
     if (!getdvarint(@"hash_18bf04d5c5766462")) {
@@ -1070,7 +1021,7 @@ function function_96f59fefd781e47() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x33d9
+// Checksum 0x0, Offset: 0x2fbc
 // Size: 0x21
 function function_96f5afefd78207a() {
     if (!getdvarint(@"hash_18bf04d5c5766462")) {
@@ -1081,7 +1032,7 @@ function function_96f5afefd78207a() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3402
+// Checksum 0x0, Offset: 0x2fe5
 // Size: 0x21
 function function_96f5bfefd7822ad() {
     if (!getdvarint(@"hash_18bf04d5c5766462")) {
@@ -1092,7 +1043,7 @@ function function_96f5bfefd7822ad() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x342b
+// Checksum 0x0, Offset: 0x300e
 // Size: 0x21
 function function_96f54fefd781348() {
     if (!getdvarint(@"hash_18bf04d5c5766462")) {
@@ -1103,7 +1054,7 @@ function function_96f54fefd781348() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3454
+// Checksum 0x0, Offset: 0x3037
 // Size: 0xf
 function function_fc6e0b02abb995cb() {
     function_2cc0d17b7e641e00(self, "announcer");
@@ -1111,7 +1062,7 @@ function function_fc6e0b02abb995cb() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x346b
+// Checksum 0x0, Offset: 0x304e
 // Size: 0xf
 function function_73e4ae4f932e9f30() {
     function_2cc0d17b7e641e00(self, "robot");
@@ -1119,7 +1070,7 @@ function function_73e4ae4f932e9f30() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3482
+// Checksum 0x0, Offset: 0x3065
 // Size: 0xf
 function function_cc0fddfe26b772a7() {
     function_2cc0d17b7e641e00(self, "blackcell");
@@ -1127,127 +1078,25 @@ function function_cc0fddfe26b772a7() {
 
 // Namespace talking_gun / namespace_27c74152ccb91331
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3499
+// Checksum 0x0, Offset: 0x307c
 // Size: 0xf
 function function_fc09644394bf843f() {
     function_2cc0d17b7e641e00(self, "npc");
 }
 
-// Namespace talking_gun / namespace_27c74152ccb91331
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34b0
-// Size: 0xf
-function function_44d73a43ca35cbcc() {
-    function_2cc0d17b7e641e00(self, "cat");
-}
-
-// Namespace talking_gun / namespace_27c74152ccb91331
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34c7
-// Size: 0xf
-function function_514a7643d295a3a2() {
-    function_2cc0d17b7e641e00(self, "dog");
-}
-
 /#
 
     // Namespace talking_gun / namespace_27c74152ccb91331
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x34de
+    // Checksum 0x0, Offset: 0x3093
     // Size: 0x93
     function function_3d9dc061bbfb25ab() {
         while (true) {
             eventname = getdvar(@"hash_53cb08e924ea65a4");
-            if (eventname != "<dev string:xe0>") {
+            if (eventname != "<dev string:xd7>") {
                 event = level.var_20e6a6f36157adc[eventname];
                 thread function_547117b1a7105f45(self, event.delay, event.lines[self.var_d1d541d826231cad.guntype]);
-                setdvar(@"hash_53cb08e924ea65a4", "<dev string:xe0>");
-            }
-            wait 0.05;
-        }
-    }
-
-#/
-
-// Namespace talking_gun / namespace_27c74152ccb91331
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3579
-// Size: 0x17a
-function function_62e0bcef615a8d1d() {
-    /#
-        setdevdvarifuninitialized(@"hash_ed477691433d09ec", "<dev string:xe0>");
-        thread function_a5408bdf77302300();
-    #/
-    function_2cc0d17b7e641e00(self, "doom");
-    var_5275b9018a6575aa = "ui_doomscreen_faceid";
-    function_2fa456bb8a94b7a1("contract_complete", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("loot_found", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("obj_capture", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("killstreak_used", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("round_won", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("knocked_down_enemy", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("self_apply", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("war_cry", 1, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("highalert_spotted", 2, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("teammate_death_revived_me", 2, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("round_lost", 2, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("sprint", 2, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("player_knocked_down", 3, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("highalert_spotted_left", 7, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("highalert_spotted_right", 8, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("killed_enemy_multi", 9, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("killed_enemy_5x", 9, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("killed_enemy_10x", 9, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("killed_enemy_15x", 9, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("killed_enemy_20x", 9, var_5275b9018a6575aa);
-    function_2fa456bb8a94b7a1("nuke_earned", 9, var_5275b9018a6575aa);
-}
-
-// Namespace talking_gun / namespace_27c74152ccb91331
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36fb
-// Size: 0x17
-function function_ade69726300553ac() {
-    function_f70b3ce9138e10b(self);
-    if (isdefined(self)) {
-        self notify("remove_doom_screen");
-    }
-}
-
-/#
-
-    // Namespace talking_gun / namespace_27c74152ccb91331
-    // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x371a
-    // Size: 0xe5
-    function function_a5408bdf77302300() {
-        self endon("<dev string:xe4>");
-        while (true) {
-            eventname = getdvar(@"hash_ed477691433d09ec");
-            if (eventname != "<dev string:xe0>") {
-                var_cabc886d846dd979 = 0;
-                switch (eventname) {
-                case #"hash_dd65780f43656833": 
-                    var_cabc886d846dd979 = 1;
-                    break;
-                case #"hash_bcd16c32933c3b91": 
-                    var_cabc886d846dd979 = 2;
-                    break;
-                case #"hash_1f1d7b3efcb82111": 
-                    var_cabc886d846dd979 = 3;
-                    break;
-                case #"hash_95f8d06c03be72f6": 
-                    var_cabc886d846dd979 = 7;
-                    break;
-                case #"hash_ec1d2322d127982b": 
-                    var_cabc886d846dd979 = 8;
-                    break;
-                case #"hash_379a17913fa2594a": 
-                    var_cabc886d846dd979 = 9;
-                    break;
-                }
-                self setclientomnvar("<dev string:x13a>", var_cabc886d846dd979);
-                setdvar(@"hash_ed477691433d09ec", "<dev string:xe0>");
+                setdvar(@"hash_53cb08e924ea65a4", "<dev string:xd7>");
             }
             wait 0.05;
         }

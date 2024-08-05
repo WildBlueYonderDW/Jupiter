@@ -2,7 +2,6 @@
 #using scripts\engine\math.gsc;
 #using scripts\common\utility.gsc;
 #using script_608c50392df8c7d1;
-#using scripts\common\callbacks.gsc;
 #using scripts\engine\trace.gsc;
 #using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
@@ -14,13 +13,14 @@
 #using script_3db04fd1b466bdba;
 #using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
 #using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
+#using scripts\cp_mp\killstreaks\airstrike.gsc;
 #using scripts\cp_mp\hostmigration.gsc;
 
 #namespace loitering_munition;
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x8dc
+// Checksum 0x0, Offset: 0x6fc
 // Size: 0x18
 function autoexec main() {
     function_df7ab5b0f898e8bc(function_1823ff50bb28148d("loitering_munition"), &init);
@@ -28,8 +28,8 @@ function autoexec main() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x8fc
-// Size: 0x85
+// Checksum 0x0, Offset: 0x71c
+// Size: 0x6d
 function private init() {
     if (issharedfuncdefined("killstreak", "registerKillstreak")) {
         [[ getsharedfunc("killstreak", "registerKillstreak") ]]("loitering_munition", &function_10fd15ea1cbf20d7);
@@ -37,7 +37,6 @@ function private init() {
     if (issharedfuncdefined("loitering_munition", "init")) {
         [[ getsharedfunc("loitering_munition", "init") ]]();
     }
-    utility::registersharedfunc("loitering_munition", "loiteringMunition_droneGunEmpApplied", &loiteringMunition_droneGunEmpApplied, 1);
     function_bef8cd415537722d();
     function_f127f9d5fb83d16f();
     function_ffabcdb2f67fa01();
@@ -45,8 +44,8 @@ function private init() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x989
-// Size: 0x6f
+// Checksum 0x0, Offset: 0x791
+// Size: 0x6c
 function function_bef8cd415537722d() {
     level.var_e6abdc44c5b61710 = [];
     level.var_c4ad491a88892d7d = 0;
@@ -57,7 +56,7 @@ function function_bef8cd415537722d() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa00
+// Checksum 0x0, Offset: 0x805
 // Size: 0x7e
 function function_f127f9d5fb83d16f() {
     game["dialog"]["loitering_munition" + "_use"] = "killstreak_remote_operator" + "_request_response";
@@ -68,19 +67,21 @@ function function_f127f9d5fb83d16f() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xa86
-// Size: 0x128
+// Checksum 0x0, Offset: 0x88b
+// Size: 0x1a6
 function function_ffabcdb2f67fa01() {
     setdvarifuninitialized(@"hash_63717c2d49096cc0", 0);
     setdvarifuninitialized(@"hash_ebfeaea6f20a1405", 30);
+    setdvarifuninitialized(@"hash_c5f0368d419f8310", 1000);
+    setdvarifuninitialized(@"hash_83ba042d81b2b120", 45);
+    setdvarifuninitialized(@"hash_e3ab68c71611ce49", 1);
     setdvarifuninitialized(@"hash_172e95433cf0b88e", 350);
     setdvarifuninitialized(@"hash_cf8d560a06e3c99a", 12);
-    setdvarifuninitialized(@"hash_c7de055e8594d50d", 5);
-    setdvarifuninitialized(@"hash_78f9a29ffb7613a4", 6);
-    setdvarifuninitialized(@"hash_58038edaa16cb940", 10000);
-    setdvarifuninitialized(@"hash_9b0622c0db71da50", 6500);
-    setdvarifuninitialized(@"hash_d24a6beafc09520d", 4000);
-    setdvarifuninitialized(@"hash_d19ff3129783aaaa", 600);
+    setdvarifuninitialized(@"hash_c7de055e8594d50d", 3);
+    setdvarifuninitialized(@"hash_78f9a29ffb7613a4", 3);
+    setdvarifuninitialized(@"hash_9b0622c0db71da50", 5500);
+    setdvarifuninitialized(@"hash_d24a6beafc09520d", 3000);
+    setdvarifuninitialized(@"hash_d19ff3129783aaaa", 500);
     setdvarifuninitialized(@"hash_eb1b674b807cfef7", 65);
     setdvarifuninitialized(@"hash_8a2477633227e955", 12);
     setdvarifuninitialized(@"hash_370e4d3dc0144183", 20);
@@ -88,11 +89,16 @@ function function_ffabcdb2f67fa01() {
     setdvarifuninitialized(@"hash_ef3d77b4896f28bd", 20);
     setdvarifuninitialized(@"hash_c636877e41fa349a", 5000);
     setdvarifuninitialized(@"hash_27c3395ed27ae0da", 1);
+    setdvarifuninitialized(@"hash_b51efdad28c50ea2", 400);
+    setdvarifuninitialized(@"hash_6857560fa901c7b2", 3);
+    setdvarifuninitialized(@"hash_5e1222e42a107858", 10);
+    setdvarifuninitialized(@"hash_f5ca68385a8223bd", 2);
+    setdvarifuninitialized(@"hash_7f01901e93aa8023", 0.3);
 }
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbb6
+// Checksum 0x0, Offset: 0xa39
 // Size: 0x39
 function function_383626d0aa423226(streakinfo) {
     if (issharedfuncdefined("killstreak", "startMapSelectSequence")) {
@@ -103,7 +109,7 @@ function function_383626d0aa423226(streakinfo) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xbf8
+// Checksum 0x0, Offset: 0xa7b
 // Size: 0x25
 function function_10fd15ea1cbf20d7(streakinfo) {
     if (!isdefined(streakinfo)) {
@@ -114,8 +120,8 @@ function function_10fd15ea1cbf20d7(streakinfo) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xc26
-// Size: 0x13a
+// Checksum 0x0, Offset: 0xaa9
+// Size: 0x1de
 function function_6f3c393ac15fff72(streakinfo) {
     team = self.team;
     if (!scripts\cp_mp\vehicles\vehicle_tracking::reservevehicle()) {
@@ -124,21 +130,39 @@ function function_6f3c393ac15fff72(streakinfo) {
         }
         return false;
     }
-    if (isdefined(level.activekillstreaks)) {
-        foreach (streak in level.activekillstreaks) {
-            if (streak.owner != self) {
-                continue;
+    level.var_c4ad491a88892d7d++;
+    var_5dff9ede4f9dd559 = 1;
+    if (islargemap()) {
+        var_5dff9ede4f9dd559 = 2;
+    }
+    if (level.var_e6abdc44c5b61710.size >= var_5dff9ede4f9dd559 || level.var_e6abdc44c5b61710.size + level.var_c4ad491a88892d7d > var_5dff9ede4f9dd559) {
+        if (issharedfuncdefined("hud", "showErrorMessage")) {
+            if (isplayer(self)) {
+                [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
             }
-            switch (streak.streakname) {
-            case #"hash_bf2f9adbd2b41d5": 
-                if (issharedfuncdefined("hud", "showErrorMessage")) {
-                    [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/AIR_SPACE_TOO_CROWDED");
-                }
-                return false;
+        }
+        level.var_c4ad491a88892d7d--;
+        scripts\cp_mp\vehicles\vehicle_tracking::clearvehiclereservation();
+        return false;
+    }
+    if (islargemap() && level.teambased) {
+        var_8c9491b09f17c452 = 1;
+        level.var_a666d88720d5075e[team]++;
+        if (getnumactivekillstreakperteam(team, level.var_e6abdc44c5b61710) + level.var_a666d88720d5075e[team] > var_8c9491b09f17c452) {
+            level.var_c4ad491a88892d7d--;
+            level.var_a666d88720d5075e[team]--;
+            if (issharedfuncdefined("hud", "showErrorMessage")) {
+                [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/MAX_FRIENDLY_LOITERING_MUNITION");
             }
+            scripts\cp_mp\vehicles\vehicle_tracking::clearvehiclereservation();
+            return false;
         }
     }
     result = function_84453b5bca0b00e2(streakinfo);
+    level.var_c4ad491a88892d7d--;
+    if (islargemap() && level.teambased) {
+        level.var_a666d88720d5075e[team]--;
+    }
     if (!istrue(result)) {
         scripts\cp_mp\vehicles\vehicle_tracking::clearvehiclereservation();
         return false;
@@ -149,8 +173,8 @@ function function_6f3c393ac15fff72(streakinfo) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd69
-// Size: 0x302
+// Checksum 0x0, Offset: 0xc90
+// Size: 0x2ba
 function function_84453b5bca0b00e2(streakinfo) {
     level endon("game_ended");
     self endon("disconnect");
@@ -173,10 +197,9 @@ function function_84453b5bca0b00e2(streakinfo) {
         }
     }
     mappointinfo = undefined;
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
     if (isplayer(self)) {
         if (issharedfuncdefined("killstreak", "getSelectMapPoint")) {
-            mappointinfo = self [[ getsharedfunc("killstreak", "getSelectMapPoint") ]](streakinfo, 3);
+            mappointinfo = self [[ getsharedfunc("killstreak", "getSelectMapPoint") ]](streakinfo, 1);
         }
     } else if (isdefined(self.enemy)) {
         mappointinfo = self.enemy.origin;
@@ -200,9 +223,6 @@ function function_84453b5bca0b00e2(streakinfo) {
     loitering_munition thread function_62c1c6833c19817c(maxrolldegrees, maxyawdiff);
     loitering_munition thread function_74f5ba869b257143(var_38a541b4d6af30a9, var_9d60d851a7af2d4e, var_2a86c82583ac927b);
     loitering_munition thread function_43297bd0e3598dc5();
-    if (issharedfuncdefined("emp", "setEMP_Applied_Callback")) {
-        loitering_munition [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&function_de63e0c45173a927);
-    }
     if (isplayer(self)) {
         var_52a5be2e2f91d710 = undefined;
         if (issharedfuncdefined("sound", "playKillstreakDeployDialog")) {
@@ -220,46 +240,19 @@ function function_84453b5bca0b00e2(streakinfo) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1074
-// Size: 0x586
+// Checksum 0x0, Offset: 0xf53
+// Size: 0x39e
 function function_4db4fc3b03545fc2(streakinfo, mappointinfo) {
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
     if (isarray(mappointinfo)) {
-        if (mappointinfo.size == 1) {
-            maplocation = mappointinfo[0].location;
-        } else {
-            xvalue = 0;
-            yvalue = 0;
-            zvalue = 0;
-            foreach (mappoint in mappointinfo) {
-                xvalue += mappoint.location[0];
-                yvalue += mappoint.location[1];
-                zvalue += mappoint.location[2];
-            }
-            xvalue /= mappointinfo.size;
-            yvalue /= mappointinfo.size;
-            zvalue /= mappointinfo.size;
-            maplocation = (xvalue, yvalue, zvalue);
-        }
+        maplocation = mappointinfo[0].location;
     } else {
         maplocation = mappointinfo;
     }
     droneflyheight = getdvarint(@"hash_9b0622c0db71da50");
-    var_a5dd4bcdfac5c613 = getdvarint(@"hash_58038edaa16cb940");
-    if (istrue(bundle.var_ee82a52d1d3eaf91) && isdefined(bundle.var_caac57476330e68c) && bundle.var_caac57476330e68c.size > 0) {
-        foreach (map in bundle.var_caac57476330e68c) {
-            if (issubstr(level.mapname, map.name)) {
-                if (isdefined(map.var_de509f5295976bb4)) {
-                    droneflyheight += map.var_de509f5295976bb4;
-                    zoffset = map.var_de509f5295976bb4;
-                }
-                break;
-            }
-        }
-    }
-    var_46517af2dcdd1619 = getdvarint(@"hash_d24a6beafc09520d");
-    spawnpathstart = (maplocation[0], maplocation[1], droneflyheight) + (var_46517af2dcdd1619, 0, 0) + (0, var_a5dd4bcdfac5c613, 0);
-    var_6b43387e451b23c7 = bundle.var_562c96bcc5cb13ac;
+    var_a5dd4bcdfac5c613 = 10000;
+    direction = scripts\cp_mp\killstreaks\airstrike::callstrike_findoptimaldirection(self, maplocation, droneflyheight, var_a5dd4bcdfac5c613);
+    spawnpathstart = maplocation - var_a5dd4bcdfac5c613 * direction;
+    var_6b43387e451b23c7 = "jup_misc_loitering_munitions_mp";
     loitering_munition = spawn("script_model", spawnpathstart + (0, 0, droneflyheight));
     if (!isdefined(loitering_munition)) {
         return;
@@ -269,17 +262,13 @@ function function_4db4fc3b03545fc2(streakinfo, mappointinfo) {
     loitering_munition.owner = self;
     loitering_munition.team = self.team;
     loitering_munition.health = 999999;
-    loitering_munition.maxhealth = bundle.maxhealth;
+    loitering_munition.maxhealth = getdvarint(@"hash_c5f0368d419f8310");
     loitering_munition.currenthealth = loitering_munition.maxhealth;
     loitering_munition.streakinfo = streakinfo;
     loitering_munition.streakname = streakinfo.streakname;
-    loitering_munition.flaresreservecount = bundle.var_94b105020336a135;
     loitering_munition.entrylocation = loitering_munition.origin;
+    loitering_munition.entrydirection = direction;
     loitering_munition.maplocation = maplocation;
-    loitering_munition.targetlocations = mappointinfo;
-    if (isdefined(zoffset)) {
-        loitering_munition.zoffset = zoffset;
-    }
     loitering_munition setscriptablepartstate("blinking_lights", "on", 0);
     loitering_munition setscriptablepartstate("thrusters", "active", 0);
     loitering_munition setscriptablepartstate("contrails", "on", 0);
@@ -290,8 +279,9 @@ function function_4db4fc3b03545fc2(streakinfo, mappointinfo) {
         loitering_munition [[ getsharedfunc("killstreak", "addToActiveKillstreakList") ]](streakinfo.streakname, "Killstreak_Air", self, 0, 1, 100);
     }
     if (issharedfuncdefined("game", "createObjective")) {
-        loitering_munition.minimapid = loitering_munition [[ getsharedfunc("game", "createObjective") ]](bundle.minimapicon, loitering_munition.team, undefined, 1, 1);
+        loitering_munition.minimapid = loitering_munition [[ getsharedfunc("game", "createObjective") ]]("icon_killstreak_hover_jet_small", loitering_munition.team, 1, 1, 1);
     }
+    var_46517af2dcdd1619 = getdvarint(@"hash_d24a6beafc09520d");
     loitering_munition.centerpos = (maplocation[0], maplocation[1], droneflyheight);
     loitering_munition.startpos = loitering_munition.centerpos + (var_46517af2dcdd1619, 0, 0);
     heightent = scripts\cp_mp\utility\killstreak_utility::getkillstreakairstrikeheightent();
@@ -310,11 +300,11 @@ function function_4db4fc3b03545fc2(streakinfo, mappointinfo) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1603
-// Size: 0x55
+// Checksum 0x0, Offset: 0x12fa
+// Size: 0x56
 function function_43297bd0e3598dc5() {
     var_4659ac69102900ff = getdvarint(@"hash_c7de055e8594d50d");
-    self moveto(self.startpos, var_4659ac69102900ff, var_4659ac69102900ff * 0.1, 2);
+    self moveto(self.startpos, var_4659ac69102900ff, var_4659ac69102900ff * 0.1, var_4659ac69102900ff * 0.3);
     self setscriptablepartstate("movement_sfx", "enter", 0);
     wait var_4659ac69102900ff;
     thread function_a6e6d62bd87beaae();
@@ -322,11 +312,10 @@ function function_43297bd0e3598dc5() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1660
-// Size: 0x181
+// Checksum 0x0, Offset: 0x1358
+// Size: 0x162
 function function_a6e6d62bd87beaae() {
     level endon("game_ended");
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
     flyvelocity = getdvarint(@"hash_d19ff3129783aaaa");
     thread function_1694bb799481d4d9(self.centerpos, self.startpos, flyvelocity);
     if (isplayer(self.owner)) {
@@ -343,7 +332,7 @@ function function_a6e6d62bd87beaae() {
     thread function_9cf03ad1c46c99ba();
     thread function_deb2ff6757e3f032();
     if (isplayer(self.owner)) {
-        var_48ed56ece1e9c39 = bundle.var_dc4c4ad00e024744;
+        var_48ed56ece1e9c39 = getdvarint(@"hash_83ba042d81b2b120");
         thread function_b36b89b7443ed55c(var_48ed56ece1e9c39);
     }
     thread function_8ccbdcb7c4391a3e();
@@ -354,8 +343,8 @@ function function_a6e6d62bd87beaae() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x17e9
-// Size: 0x144
+// Checksum 0x0, Offset: 0x14c2
+// Size: 0x14d
 function function_1694bb799481d4d9(centerpos, startpos, flyvelocity) {
     self notify("flyingNewCircle");
     self endon("death");
@@ -388,44 +377,99 @@ function function_1694bb799481d4d9(centerpos, startpos, flyvelocity) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1935
-// Size: 0x195
+// Checksum 0x0, Offset: 0x1617
+// Size: 0x176
 function function_9cf03ad1c46c99ba() {
     self endon("death");
     self endon("leaving");
     self endon("crashing");
     level endon("game_ended");
     var_b7550113928779b5 = self.owner;
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
+    if (isplayer(var_b7550113928779b5)) {
+        var_b7550113928779b5 thread function_de9902ea1186bf33();
+        var_b7550113928779b5 notifyonplayercommand("loitering_munition_trigger", "+loitering_munition_trigger");
+    }
     self.missilefireside = undefined;
     armdelay = getdvarint(@"hash_27c3395ed27ae0da");
     wait armdelay;
     if (isplayer(var_b7550113928779b5)) {
-        hintref = %KILLSTREAKS_HINTS/LOITERING_MUNITION_HINT_3;
+        isusinggamepad = self.owner is_player_gamepad_enabled();
+        hintref = %KILLSTREAKS_HINTS/LOITERING_MUNITION_KBM_HINT;
+        if (istrue(isusinggamepad)) {
+            hintref = %KILLSTREAKS_HINTS/LOITERING_MUNITION_CONTROLLER_HINT;
+        }
         function_e68434bdb941ed1e(self.streakinfo.streakname, self.owner, hintref, 1);
-        self.useobj setuseholdduration(100);
+        self.useobj setuseholdduration(250);
         self.useobj setcursorhint("HINT_NOICON");
-        self.owner playsoundtoplayer("kls_loitering_munition_ready_beep", self.owner);
+        thread function_c43bc3874ebb495c();
     }
     while (true) {
-        player = self.useobj waittill("trigger");
-        self.owner playsoundtoplayer("kls_loitering_munition_location_move_confirm", self.owner);
-        if (!isreallyalive(self.owner)) {
-            continue;
-        }
+        var_b7550113928779b5 waittill("loitering_munition_trigger");
         if (!isdefined(self.ismoving) || !istrue(self.ismoving)) {
             if (isplayer(var_b7550113928779b5)) {
-                function_3f55c1fb553a4775(self.owner, self.useobj, 1);
+                function_3f55c1fb553a4775(self.owner, self.useobj);
             }
-            function_4ffdf897638f08bd();
+            thread function_4ffdf897638f08bd();
+            break;
         }
+    }
+    var_b7550113928779b5 notifyonplayercommandremove("loitering_munition_trigger", "+loitering_munition_trigger");
+}
+
+// Namespace loitering_munition / namespace_2989abaabfa17ecb
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x1795
+// Size: 0x9d
+function function_de9902ea1186bf33() {
+    self endon("attackSequence_started");
+    self notifyonplayercommand("LStickPress", "+breath_sprint");
+    self notifyonplayercommand("LStickPress", "+actionslot 1");
+    self notifyonplayercommand("RStickPress", "+melee_zoom");
+    self notifyonplayercommand("RStickPress", "+stance");
+    self.var_51c7406d8d778871 = 0;
+    self.var_f159ccc5cfa778c3 = 0;
+    thread function_1b61a9122d01d5f9();
+    thread function_3a3177c4efb62a9f();
+    while (true) {
+        if (istrue(self.var_51c7406d8d778871) && istrue(self.var_f159ccc5cfa778c3)) {
+            self notify("loitering_munition_trigger");
+        }
+        waitframe();
+    }
+}
+
+// Namespace loitering_munition / namespace_2989abaabfa17ecb
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x183a
+// Size: 0x2e
+function function_1b61a9122d01d5f9() {
+    while (true) {
+        self waittill("LStickPress");
+        self.var_51c7406d8d778871 = 1;
+        wait 0.1;
+        self.var_51c7406d8d778871 = 0;
+        waitframe();
+    }
+}
+
+// Namespace loitering_munition / namespace_2989abaabfa17ecb
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x1870
+// Size: 0x2e
+function function_3a3177c4efb62a9f() {
+    while (true) {
+        self waittill("RStickPress");
+        self.var_f159ccc5cfa778c3 = 1;
+        wait 0.1;
+        self.var_f159ccc5cfa778c3 = 0;
+        waitframe();
     }
 }
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ad2
-// Size: 0x86
+// Checksum 0x0, Offset: 0x18a6
+// Size: 0x85
 function function_9b0f13da4e5d2aa2(ai_params) {
     self endon("death");
     self endon("leaving");
@@ -443,96 +487,29 @@ function function_9b0f13da4e5d2aa2(ai_params) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b60
-// Size: 0x18d
+// Checksum 0x0, Offset: 0x1933
+// Size: 0xc5
 function function_4ffdf897638f08bd() {
     self notify("attackSequence_started");
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
-    totalswoops = bundle.var_c0b748698c447651;
-    var_5f115cdf23e1676d = bundle.var_8742511635165b49;
-    if (!isdefined(self.var_4c4d6e577c688eb2)) {
-        self.var_4c4d6e577c688eb2 = 0;
+    totalswoops = getdvarint(@"hash_6857560fa901c7b2");
+    var_5f115cdf23e1676d = getdvarfloat(@"hash_f5ca68385a8223bd");
+    for (var_aaced5265eda4ac9 = 0; var_aaced5265eda4ac9 < totalswoops; var_aaced5265eda4ac9++) {
+        self playsoundonmovingent("kls_loitering_munition_dive");
+        thread function_b17ae5fa4c850521(1);
+        function_9b1ccbca322b8707();
+        flyvelocity = getdvarint(@"hash_d19ff3129783aaaa");
+        self.startpos = self.origin;
+        thread function_1694bb799481d4d9(self.centerpos, self.startpos, flyvelocity);
+        wait var_5f115cdf23e1676d;
     }
-    self playsoundonmovingent("kls_loitering_munition_dive");
-    targetlocation = function_e603f6eeea780ef2();
-    thread function_b17ae5fa4c850521(1, targetlocation);
-    function_9b1ccbca322b8707(targetlocation);
-    flyvelocity = getdvarint(@"hash_d19ff3129783aaaa");
-    self.startpos = self.origin;
-    self.var_4c4d6e577c688eb2++;
-    thread function_1694bb799481d4d9(self.centerpos, self.startpos, flyvelocity);
-    wait var_5f115cdf23e1676d;
-    if (self.var_4c4d6e577c688eb2 >= totalswoops) {
-        function_6ba72911f4a2d09b(1);
-        return;
-    }
-    if (self.var_4c4d6e577c688eb2 == 1) {
-        hintref = %KILLSTREAKS_HINTS/LOITERING_MUNITION_HINT_2;
-        self.owner playsoundtoplayer("kls_loitering_munition_ready_beep", self.owner);
-    } else {
-        hintref = %KILLSTREAKS_HINTS/LOITERING_MUNITION_HINT_1;
-        self.owner playsoundtoplayer("kls_loitering_munition_ready_beep", self.owner);
-    }
-    self.useobj sethintstring(hintref);
-    function_17576a4cdcd447a7(self.owner);
+    function_6ba72911f4a2d09b(1);
 }
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf5
-// Size: 0x2c7
-function function_e603f6eeea780ef2() {
-    if (self.targetlocations.size == 1) {
-        return self.targetlocations[0];
-    }
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
-    missileradius = bundle.var_eec8a18ac19421ef;
-    contentoverride = scripts\engine\trace::create_contents(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-    radius = 16;
-    height = 64;
-    heightvector = (0, 0, height);
-    getsurfacetype = 0;
-    var_a993d59bb6e4abd2 = [];
-    targetindex = 0;
-    if (istrue(level.teambased)) {
-        enemyteam = get_enemy_team(self.owner.team);
-    } else {
-        enemyteam = ["allies", "axis"];
-    }
-    foreach (location in self.targetlocations) {
-        var_f871c8c75be77b8c = function_143526130b12b2b6(location.location, missileradius, enemyteam);
-        index = var_a993d59bb6e4abd2.size;
-        var_a993d59bb6e4abd2[index] = 0;
-        foreach (ent in var_f871c8c75be77b8c) {
-            trace = scripts\engine\trace::capsule_trace(self.origin, ent.origin, radius, height, (0, 0, 0), [], contentoverride, getsurfacetype);
-            /#
-                if (getdvarint(@"hash_aa7e6ce09e5c3a10", 0) == 1) {
-                    var_34fb5f21bc6e423d = self.origin;
-                    var_3292b1174fe87384 = ent.origin;
-                    var_bc8dc8693bdfd6f5 = var_34fb5f21bc6e423d + heightvector;
-                    var_db689ed52d5f374c = var_3292b1174fe87384 + heightvector;
-                    function_90a556e6f70ba1e5(var_34fb5f21bc6e423d, var_3292b1174fe87384, radius);
-                    function_90a556e6f70ba1e5(var_bc8dc8693bdfd6f5, var_db689ed52d5f374c, radius);
-                }
-            #/
-            if (trace["hittype"] != "hittype_world") {
-                var_a993d59bb6e4abd2[index] = var_a993d59bb6e4abd2[index] + 1;
-                continue;
-            }
-            var_a993d59bb6e4abd2[index] = var_a993d59bb6e4abd2[index] + 2;
-        }
-        if (!isdefined(targetindex) || var_a993d59bb6e4abd2[index] > var_a993d59bb6e4abd2[targetindex]) {
-            targetindex = index;
-        }
-    }
-    return self.targetlocations[targetindex].location;
-}
-
-// Namespace loitering_munition / namespace_2989abaabfa17ecb
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fc5
-// Size: 0x1d0
-function function_9b1ccbca322b8707(targetlocation) {
+// Checksum 0x0, Offset: 0x1a00
+// Size: 0x1d5
+function function_9b1ccbca322b8707() {
     self notify("diveBombStart");
     divestartposition = self.origin;
     diveheight = 3250;
@@ -540,10 +517,7 @@ function function_9b1ccbca322b8707(targetlocation) {
     if (isdefined(heightent)) {
         diveheight = heightent.origin[2];
     }
-    if (!isdefined(targetlocation)) {
-        targetlocation = self.centerpos;
-    }
-    var_7e19d0c0148b19e9 = (targetlocation[0], targetlocation[1], diveheight);
+    var_7e19d0c0148b19e9 = (self.centerpos[0], self.centerpos[1], diveheight);
     circlemidpoint = divestartposition - (divestartposition - var_7e19d0c0148b19e9) / 2;
     divetime = getdvarint(@"hash_c636877e41fa349a");
     var_c3fec9b95b46dd6b = divetime / 2;
@@ -572,13 +546,12 @@ function function_9b1ccbca322b8707(targetlocation) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x219d
-// Size: 0x21f
+// Checksum 0x0, Offset: 0x1bdd
+// Size: 0x213
 function function_b17ae5fa4c850521(delaytime, targetoverride, ai_params) {
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
-    var_942eea14d031c96a = bundle.var_be180dad16337504;
-    var_de379aee30fead15 = bundle.var_e62e108574ec8584;
-    missileradius = bundle.var_eec8a18ac19421ef;
+    var_942eea14d031c96a = getdvarint(@"hash_5e1222e42a107858");
+    var_de379aee30fead15 = getdvarfloat(@"hash_7f01901e93aa8023");
+    missileradius = getdvarint(@"hash_b51efdad28c50ea2");
     var_9052e244d25ee16c = 3;
     if (isdefined(delaytime)) {
         wait delaytime;
@@ -613,10 +586,9 @@ function function_b17ae5fa4c850521(delaytime, targetoverride, ai_params) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x23c4
-// Size: 0x191
+// Checksum 0x0, Offset: 0x1df8
+// Size: 0x153
 function function_c7ee8ae86699fdf1(startradius, endradius, startangle, endangle, targetoverride, missilenum) {
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
     randomradius = randomintrange(int(startradius), int(endradius));
     randomangle = (0, randomintrange(int(startangle), int(endangle)), 0);
     if (isdefined(targetoverride)) {
@@ -625,7 +597,7 @@ function function_c7ee8ae86699fdf1(startradius, endradius, startangle, endangle,
         } else if (isdefined(targetoverride.origin)) {
             radiuscenter = targetoverride.origin;
         } else {
-            radiuscenter = self.centerpos;
+            var_b210de76083c5b0a = self.centerpos;
         }
     } else {
         radiuscenter = self.centerpos;
@@ -634,9 +606,6 @@ function function_c7ee8ae86699fdf1(startradius, endradius, startangle, endangle,
     anglevector = rotatevector(anglevector, randomangle);
     targetvector = radiuscenter + anglevector;
     targetvector = (targetvector[0], targetvector[1], 0);
-    if (isdefined(self.zoffset)) {
-        targetvector += (0, 0, self.zoffset);
-    }
     if (!isdefined(missilenum)) {
         missilenum = 1;
     }
@@ -644,18 +613,16 @@ function function_c7ee8ae86699fdf1(startradius, endradius, startangle, endangle,
     self setscriptablepartstate("fire_missile_" + index, "off", 0);
     self setscriptablepartstate("fire_missile_" + index, "on", 0);
     thread function_d922267e4ad96226(targetvector);
-    self playsound("kls_loitering_munition_fire");
 }
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x255d
-// Size: 0x1b0
+// Checksum 0x0, Offset: 0x1f53
+// Size: 0x19c
 function function_d922267e4ad96226(targetlocation) {
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
     firedirection = vectornormalize(targetlocation - self.origin);
     missilestart = self.origin + firedirection * 250;
-    missile_ref = bundle.var_b5798e1a5232bfed;
+    missile_ref = ter_op(utility::iscp(), "loitering_munition_proj_mp", "loitering_munition_proj_mp");
     missile = _magicbullet(makeweapon(missile_ref), missilestart, targetlocation, self.owner);
     missile.streakinfo = self.streakinfo;
     missile playsoundonmovingent("kls_loitering_munition_proj_travel");
@@ -676,7 +643,7 @@ function function_d922267e4ad96226(targetlocation) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2715
+// Checksum 0x0, Offset: 0x20f7
 // Size: 0x2b
 function function_769e917ac9e39efa(missiletargetpos) {
     level endon("game_ended");
@@ -688,8 +655,8 @@ function function_769e917ac9e39efa(missiletargetpos) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2748
-// Size: 0x86
+// Checksum 0x0, Offset: 0x212a
+// Size: 0x85
 function function_9e19665e571e16ad(owner, lifetime, radius, height) {
     owner endon("disconnect");
     level endon("game_ended");
@@ -702,7 +669,7 @@ function function_9e19665e571e16ad(owner, lifetime, radius, height) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x27d6
+// Checksum 0x0, Offset: 0x21b7
 // Size: 0x4f
 function function_82b1fd06b2e37252(impactlocation, var_d0b12377bc0ec26f) {
     self endon("death");
@@ -715,7 +682,7 @@ function function_82b1fd06b2e37252(impactlocation, var_d0b12377bc0ec26f) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x282d
+// Checksum 0x0, Offset: 0x220e
 // Size: 0x4d
 function function_66e849b2e19dcfbf(missileindex) {
     self endon("death");
@@ -727,15 +694,15 @@ function function_66e849b2e19dcfbf(missileindex) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2882
-// Size: 0x16a
+// Checksum 0x0, Offset: 0x2263
+// Size: 0x131
 function function_7828ae21b80db901(player, missileteam, missiletarget, fxtagoverride) {
     self endon("death");
     missiletarget endon("death");
     missiletarget endon("crashing");
     level endon("game_ended");
     while (true) {
-        if (!isdefined(missiletarget) || !isdefined(missiletarget.flaresreservecount)) {
+        if (!isdefined(missiletarget)) {
             break;
         }
         center = missiletarget getpointinbounds(0, 0, 0);
@@ -751,9 +718,6 @@ function function_7828ae21b80db901(player, missileteam, missiletarget, fxtagover
             if (issharedfuncdefined("flares", "deploy")) {
                 newtarget = missiletarget [[ getsharedfunc("flares", "deploy") ]]();
             }
-            if (issharedfuncdefined("killstreak", "updateScrapAssistDataForceCredit")) {
-                missiletarget [[ getsharedfunc("killstreak", "updateScrapAssistDataForceCredit") ]](player);
-            }
             self missile_settargetent(newtarget);
             self notify("missile_pairedWithFlare");
             return;
@@ -764,8 +728,8 @@ function function_7828ae21b80db901(player, missileteam, missiletarget, fxtagover
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29f4
-// Size: 0xde
+// Checksum 0x0, Offset: 0x239c
+// Size: 0xe0
 function function_c43bc3874ebb495c() {
     self endon("death");
     self endon("leaving");
@@ -792,8 +756,8 @@ function function_c43bc3874ebb495c() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ada
-// Size: 0x117
+// Checksum 0x0, Offset: 0x2484
+// Size: 0x114
 function function_17ff76d29019fb07(targetpos) {
     self notify("moveToLocation");
     self.ismoving = 1;
@@ -810,12 +774,11 @@ function function_17ff76d29019fb07(targetpos) {
     self.ismoving = 0;
     function_17576a4cdcd447a7(self.owner);
     thread function_1694bb799481d4d9(self.centerpos, self.startpos, flyvelocity);
-    wait 0.5;
 }
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bf9
+// Checksum 0x0, Offset: 0x25a0
 // Size: 0x51
 function function_b36b89b7443ed55c(lifetime) {
     self endon("death");
@@ -829,7 +792,7 @@ function function_b36b89b7443ed55c(lifetime) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c52
+// Checksum 0x0, Offset: 0x25f9
 // Size: 0x35
 function function_deb2ff6757e3f032() {
     self endon("death");
@@ -840,7 +803,7 @@ function function_deb2ff6757e3f032() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c8f
+// Checksum 0x0, Offset: 0x2636
 // Size: 0x38
 function function_deb2b377a055cca2() {
     self endon("death");
@@ -853,7 +816,7 @@ function function_deb2b377a055cca2() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ccf
+// Checksum 0x0, Offset: 0x2676
 // Size: 0x3c
 function function_72fe13a5b1035c50(notifymsg) {
     self endon("death");
@@ -866,20 +829,18 @@ function function_72fe13a5b1035c50(notifymsg) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d13
-// Size: 0xf2
+// Checksum 0x0, Offset: 0x26ba
+// Size: 0x83
 function function_6ba72911f4a2d09b(hastriggered) {
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
-    function_3f55c1fb553a4775(self.owner, self.useobj);
-    if (!istrue(hastriggered) && istrue(bundle.var_4707e64d9d8605d7)) {
-        targetlocation = function_e603f6eeea780ef2();
-        thread function_b17ae5fa4c850521(1, targetlocation);
-        function_9b1ccbca322b8707(targetlocation);
+    if (!istrue(hastriggered)) {
+        var_e07710f2160dc2ca = getdvarint(@"hash_e3ab68c71611ce49");
+        if (istrue(var_e07710f2160dc2ca)) {
+            function_9b1ccbca322b8707();
+        }
     }
     self notify("leaveSequence");
     var_77b76ae62f912bb0 = getdvarint(@"hash_78f9a29ffb7613a4");
-    var_a1ed2ce3492f0b4a = self.origin + anglestoforward(self.angles) * 10000;
-    self moveto(var_a1ed2ce3492f0b4a, var_77b76ae62f912bb0, 1);
+    self moveto(self.entrylocation, var_77b76ae62f912bb0);
     self setscriptablepartstate("movement_sfx", "exit", 0);
     wait var_77b76ae62f912bb0;
     function_fe6411544dd4c6f8(0);
@@ -887,7 +848,7 @@ function function_6ba72911f4a2d09b(hastriggered) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e0d
+// Checksum 0x0, Offset: 0x2745
 // Size: 0x38
 function function_8ccbdcb7c4391a3e() {
     self endon("death");
@@ -900,17 +861,13 @@ function function_8ccbdcb7c4391a3e() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e4d
-// Size: 0xe5
+// Checksum 0x0, Offset: 0x2785
+// Size: 0x61
 function function_9190a53712ac6557(data) {
     if (!isdefined(self.currenthealth)) {
         self.currenthealth = self.maxhealth;
     }
     modifieddamage = function_7bdb3610d602438d(data);
-    bundle = level.streakglobals.streakbundles["loitering_munition"];
-    if (isdefined(bundle) && istrue(bundle.var_30ffeba5007cf73f)) {
-        modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedDamageUsingDamageTuning") ]](data.attacker, data.objweapon, data.meansofdeath, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
-    }
     self.currenthealth -= modifieddamage;
     killstreak_updateDamageState(self.currenthealth);
     return modifieddamage;
@@ -918,7 +875,7 @@ function function_9190a53712ac6557(data) {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f3b
+// Checksum 0x0, Offset: 0x27ef
 // Size: 0x13
 function function_6e2ef534469c7d9a() {
     self setscriptablepartstate("body_damage_light", "on");
@@ -926,7 +883,7 @@ function function_6e2ef534469c7d9a() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f56
+// Checksum 0x0, Offset: 0x280a
 // Size: 0x13
 function function_20bc864cde4580cf() {
     self setscriptablepartstate("body_damage_medium", "on");
@@ -934,7 +891,7 @@ function function_20bc864cde4580cf() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f71
+// Checksum 0x0, Offset: 0x2825
 // Size: 0x13
 function function_4e8f651c045cd5bf() {
     self setscriptablepartstate("body_damage_heavy", "on");
@@ -942,8 +899,8 @@ function function_4e8f651c045cd5bf() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2f8c
-// Size: 0x56
+// Checksum 0x0, Offset: 0x2840
+// Size: 0x55
 function function_7df983371cd48d23() {
     self endon("death");
     level endon("game_ended");
@@ -956,7 +913,7 @@ function function_7df983371cd48d23() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fea
+// Checksum 0x0, Offset: 0x289d
 // Size: 0x2c
 function function_ab26c91383cb6029() {
     self notify("explode");
@@ -967,17 +924,19 @@ function function_ab26c91383cb6029() {
 
 // Namespace loitering_munition / namespace_2989abaabfa17ecb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x301e
-// Size: 0x113
+// Checksum 0x0, Offset: 0x28d1
+// Size: 0x145
 function function_fe6411544dd4c6f8(wasdestroyed) {
     if (isdefined(self.killcament)) {
         self.killcament delete();
     }
-    if (!isdefined(self)) {
-        return;
-    }
     self setscriptablepartstate("blinking_lights", "off", 0);
     self setscriptablepartstate("thrusters", "off", 0);
+    var_b7550113928779b5 = self.owner;
+    var_b7550113928779b5 notifyonplayercommandremove("LStickPress", "+breath_sprint");
+    var_b7550113928779b5 notifyonplayercommandremove("LStickPress", "+actionslot 1");
+    var_b7550113928779b5 notifyonplayercommandremove("RStickPress", "+melee_zoom");
+    var_b7550113928779b5 notifyonplayercommandremove("RStickPress", "+stance");
     self.streakinfo.expiredbydeath = istrue(wasdestroyed);
     if (!istrue(self.recordedgameendstats)) {
         self.owner scripts\cp_mp\utility\killstreak_utility::recordkillstreakendstats(self.streakinfo);
@@ -989,88 +948,20 @@ function function_fe6411544dd4c6f8(wasdestroyed) {
         }
         self.minimapid = undefined;
     }
-    level callback::callback("killstreak_finish_use", {#streakinfo:self.streakinfo});
     self delete();
-}
-
-// Namespace loitering_munition / namespace_2989abaabfa17ecb
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3139
-// Size: 0x18
-function function_de63e0c45173a927(data) {
-    if (isdefined(self)) {
-        thread function_ab26c91383cb6029();
-    }
-}
-
-// Namespace loitering_munition / namespace_2989abaabfa17ecb
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3159
-// Size: 0x15c
-function loiteringMunition_droneGunEmpApplied(data) {
-    self endon("death");
-    self notify("loitering_mini_emp_hit");
-    self endon("loitering_mini_emp_hit");
-    childthread function_e4fc57397c1b18d0();
-    if (self.flaresreservecount > 0 && (!isdefined(self.var_e8d88b601e41fba5) || self.var_e8d88b601e41fba5 <= gettime() - 10000)) {
-        if (!isdefined(self.var_e8d88b601e41fba5)) {
-            self.var_e8d88b601e41fba5 = gettime();
-        }
-        if (issharedfuncdefined("flares", "reduceReserves")) {
-            [[ getsharedfunc("flares", "reduceReserves") ]](self);
-        }
-        if (issharedfuncdefined("flares", "playFx")) {
-            self thread [[ getsharedfunc("flares", "playFx") ]]("jet_flares");
-        }
-        if (issharedfuncdefined("flares", "deploy")) {
-            self [[ getsharedfunc("flares", "deploy") ]]();
-        }
-        if (issharedfuncdefined("killstreak", "updateScrapAssistDataForceCredit")) {
-            self [[ getsharedfunc("killstreak", "updateScrapAssistDataForceCredit") ]](data.attacker);
-        }
-        if (scripts\engine\utility::issharedfuncdefined("player", "doScoreEvent")) {
-            data.attacker thread [[ scripts\engine\utility::getsharedfunc("player", "doScoreEvent") ]]("emped_killstreak");
-        }
-    }
-}
-
-// Namespace loitering_munition / namespace_2989abaabfa17ecb
-// Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x32bd
-// Size: 0x43
-function function_e4fc57397c1b18d0() {
-    function_3f55c1fb553a4775(self.owner, self.useobj);
-    wait 3;
-    if (isdefined(self) && isdefined(self.owner)) {
-        function_17576a4cdcd447a7(self.owner);
-    }
 }
 
 /#
 
     // Namespace loitering_munition / namespace_2989abaabfa17ecb
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3308
-    // Size: 0x96
-    function function_90a556e6f70ba1e5(raycaststart, raycastend, radius) {
-        duration = 100;
-        red = (255, 0, 0);
-        green = (0, 255, 0);
-        blue = (0, 0, 255);
-        sphere(raycaststart, radius, red, 0, duration);
-        sphere(raycastend, radius, blue, 0, duration);
-        line(raycaststart, raycastend, green, 1, 0, duration);
-    }
-
-    // Namespace loitering_munition / namespace_2989abaabfa17ecb
-    // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x33a6
-    // Size: 0x148
+    // Checksum 0x0, Offset: 0x2a1e
+    // Size: 0x14a
     function function_c50a1e52a02c0164(aabbmin, aabbmax, duration) {
-        self notify("<dev string:x3e>");
-        level endon("<dev string:x57>");
-        self endon("<dev string:x65>");
-        self endon("<dev string:x3e>");
+        self notify("<dev string:x3b>");
+        level endon("<dev string:x51>");
+        self endon("<dev string:x5c>");
+        self endon("<dev string:x3b>");
         drawcolor = (0, 255, 0);
         var_eb404bf9ac5040f0 = (aabbmax[0] - aabbmin[0], 0, 0);
         var_a6c378e90c169b15 = (0, aabbmax[1] - aabbmin[1], 0);

@@ -6,8 +6,8 @@
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x11e
-// Size: 0x38
+// Checksum 0x0, Offset: 0x10b
+// Size: 0x37
 function lights_on(group, classname) {
     groups = strtok(group, " ");
     array_levelthread(groups, &lights_on_internal, classname);
@@ -15,8 +15,8 @@ function lights_on(group, classname) {
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e
-// Size: 0x198
+// Checksum 0x0, Offset: 0x14a
+// Size: 0x195
 function group_light(model, name, group) {
     if (!isdefined(level.vehicle.templates.vehicle_lights_group)) {
         level.vehicle.templates.vehicle_lights_group = [];
@@ -37,7 +37,7 @@ function group_light(model, name, group) {
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2fe
+// Checksum 0x0, Offset: 0x2e7
 // Size: 0x73
 function lights_delayfxforframe() {
     level notify("new_lights_delayfxforframe");
@@ -55,8 +55,8 @@ function lights_delayfxforframe() {
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x379
-// Size: 0x22f
+// Checksum 0x0, Offset: 0x362
+// Size: 0x230
 function lights_off_internal(group, model, classname) {
     self notify("lights_off");
     if (isdefined(classname)) {
@@ -73,10 +73,10 @@ function lights_off_internal(group, model, classname) {
     if (!isdefined(level.vehicle.templates.vehicle_lights_group[model][group])) {
         /#
             println("<dev string:x1c>" + self.vehicletype);
-            println("<dev string:x2d>" + self.classname);
-            println("<dev string:x3c>" + group);
+            println("<dev string:x2a>" + self.classname);
+            println("<dev string:x36>" + group);
         #/
-        assertmsg("<dev string:x4d>");
+        assertmsg("lights not defined for this vehicle( see console");
         return;
     }
     lights = level.vehicle.templates.vehicle_lights_group[model][group];
@@ -106,8 +106,8 @@ function lights_off_internal(group, model, classname) {
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x5b0
-// Size: 0x2e9
+// Checksum 0x0, Offset: 0x59a
+// Size: 0x2eb
 function lights_on_internal(group, model) {
     level.lastlighttime = gettime();
     self endon("lights_off");
@@ -167,8 +167,8 @@ function lights_on_internal(group, model) {
 
 // Namespace vehicle_lights / scripts\common\vehicle_lights
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x8a1
-// Size: 0x42
+// Checksum 0x0, Offset: 0x88d
+// Size: 0x41
 function lights_off(group, model, classname) {
     groups = strtok(group, " ", model);
     array_levelthread(groups, &lights_off_internal, model, classname);

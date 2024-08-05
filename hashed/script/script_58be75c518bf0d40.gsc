@@ -6,7 +6,7 @@
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b7
+// Checksum 0x0, Offset: 0x150
 // Size: 0x28
 function function_c9406922e0267f09() {
     if (issharedfuncdefined("squad_utility", "init")) {
@@ -16,12 +16,9 @@ function function_c9406922e0267f09() {
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e7
-// Size: 0x57
+// Checksum 0x0, Offset: 0x180
+// Size: 0x3c
 function getsquadmembers(testteam, aliveonly) {
-    if (!isdefined(testteam) && !(isdefined(self) && isdefined(self.team))) {
-        return [];
-    }
     if (issharedfuncdefined("squad_utility", "getSquadMembers")) {
         return [[ getsharedfunc("squad_utility", "getSquadMembers") ]](testteam, aliveonly);
     }
@@ -30,13 +27,10 @@ function getsquadmembers(testteam, aliveonly) {
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x247
-// Size: 0x4c
+// Checksum 0x0, Offset: 0x1c5
+// Size: 0x39
 function getsquadleader(team, index) {
     if (!istrue(level.usesquadleader)) {
-        return undefined;
-    }
-    if (!isdefined(level.squaddata[team][index])) {
         return undefined;
     }
     return level.squaddata[team][index].squadleader;
@@ -44,8 +38,8 @@ function getsquadleader(team, index) {
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29c
-// Size: 0x16e
+// Checksum 0x0, Offset: 0x207
+// Size: 0x16d
 function shouldmodesetsquads() {
     if (isdefined(level.gametypebundle) && istrue(level.gametypebundle.issquadmode)) {
         return issquadmode();
@@ -84,14 +78,14 @@ function shouldmodesetsquads() {
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x412
-// Size: 0x9e
+// Checksum 0x0, Offset: 0x37c
+// Size: 0xab
 function function_a9cb1bbce9eb3d1b() {
     if (isdefined(level.gametypebundle) && istrue(level.gametypebundle.var_597e7a2e7fd129b)) {
         return 1;
     }
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
-        if (scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5() == "rumble_mgl") {
+        if (getdvar(@"hash_7611a2790a0bf7fe", "") == "rumble_mgl") {
             return 0;
         } else if (getdvarint(@"hash_80ba0c604a8e46f3", 0) == 1) {
             return 0;
@@ -110,7 +104,7 @@ function function_a9cb1bbce9eb3d1b() {
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x4b8
+// Checksum 0x0, Offset: 0x42f
 // Size: 0xe
 function issquadmode() {
     return level.maxsquadsize > 1;
@@ -118,7 +112,7 @@ function issquadmode() {
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x4cf
+// Checksum 0x0, Offset: 0x446
 // Size: 0x48
 function function_6b09c63febc4655c(team, index) {
     if (!isdefined(level.squaddata[team][index])) {
@@ -129,24 +123,10 @@ function function_6b09c63febc4655c(team, index) {
 
 // Namespace squad_utility / namespace_ca7b90256548aa40
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x520
-// Size: 0x39
+// Checksum 0x0, Offset: 0x497
+// Size: 0x38
 function function_9b1d18c04d310cfc(player1, player2) {
     var_95cd83fc3f6a06a0 = player1 getsquadmembers(player1.team);
     return array_contains(var_95cd83fc3f6a06a0, player2);
-}
-
-// Namespace squad_utility / namespace_ca7b90256548aa40
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x562
-// Size: 0x68
-function function_927316c54a7540ae(player) {
-    playerteam = player.team;
-    playersquadindex = player.sessionsquadid;
-    if (!isdefined(playerteam) || !isdefined(playersquadindex)) {
-        return 0;
-    }
-    squadmembers = level.squaddata[playerteam][playersquadindex].players;
-    return squadmembers.size;
 }
 

@@ -8,7 +8,7 @@
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19b
+// Checksum 0x0, Offset: 0x1c8
 // Size: 0x3b
 function init_interaction() {
     level.interacts = [];
@@ -22,7 +22,7 @@ function init_interaction() {
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1de
+// Checksum 0x0, Offset: 0x20b
 // Size: 0xe7
 function function_32645103f7520635(scriptable, on_use_function, var_81adce70ad13cf33, var_f3bf6e6da951239b) {
     assert(!array_contains(level.interacts, scriptable));
@@ -44,8 +44,8 @@ function function_32645103f7520635(scriptable, on_use_function, var_81adce70ad13
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ce
-// Size: 0x159
+// Checksum 0x0, Offset: 0x2fb
+// Size: 0x158
 function register_interact(org_or_ent, radius, use_callback, hint_string, var_9555688dd3098f5b, var_746458e71e0663eb) {
     ent = undefined;
     if (isvector(org_or_ent)) {
@@ -79,14 +79,14 @@ function register_interact(org_or_ent, radius, use_callback, hint_string, var_95
     ent thread function_25c9189dc624f33();
     ent setusefov(360);
     ent setcursorhint("HINT_NOICON");
-    assertex(isarray(level.interacts), "<dev string:x4b>");
+    assertex(isarray(level.interacts), "scripts\cp_mp\interaction::init_interaction() needs to be run for this game mode or gametype before registering interacts");
     level.interacts = array_add(level.interacts, ent);
     return ent;
 }
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x430
+// Checksum 0x0, Offset: 0x45c
 // Size: 0x36
 function function_e6c63f16f2258b80(hint_callback) {
     if (isdefined(hint_callback)) {
@@ -99,7 +99,7 @@ function function_e6c63f16f2258b80(hint_callback) {
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x46e
+// Checksum 0x0, Offset: 0x49a
 // Size: 0x36
 function function_98fc2e3f04194a50(var_c6681d6b0c54e37e) {
     if (isdefined(var_c6681d6b0c54e37e)) {
@@ -112,7 +112,7 @@ function function_98fc2e3f04194a50(var_c6681d6b0c54e37e) {
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x4ac
+// Checksum 0x0, Offset: 0x4d8
 // Size: 0x40
 function function_c2efffe46a3f99d2(hint_string, var_9555688dd3098f5b, var_746458e71e0663eb) {
     assert(self isusable());
@@ -124,7 +124,7 @@ function function_c2efffe46a3f99d2(hint_string, var_9555688dd3098f5b, var_746458
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x4f4
+// Checksum 0x0, Offset: 0x520
 // Size: 0x31
 function function_f62a6ba54b34e2bc(radius) {
     assert(self isusable());
@@ -136,7 +136,7 @@ function function_f62a6ba54b34e2bc(radius) {
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x52d
+// Checksum 0x0, Offset: 0x559
 // Size: 0xd
 function function_9a0883b5a0999dac() {
     self.var_2b37e5554c33ef0b = 1;
@@ -144,8 +144,8 @@ function function_9a0883b5a0999dac() {
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0x542
-// Size: 0x63
+// Checksum 0x0, Offset: 0x56e
+// Size: 0x62
 function private function_33d615753cbbb49c(player) {
     if (!isplayer(player)) {
         return true;
@@ -165,8 +165,8 @@ function private function_33d615753cbbb49c(player) {
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x5ae
-// Size: 0x1a7
+// Checksum 0x0, Offset: 0x5d9
+// Size: 0x1a8
 function private function_25c9189dc624f33() {
     self endon("death");
     while (true) {
@@ -197,7 +197,7 @@ function private function_25c9189dc624f33() {
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x75d
+// Checksum 0x0, Offset: 0x789
 // Size: 0x211
 function private function_cb6e7c567d06f936(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     e_container = undefined;
@@ -229,8 +229,8 @@ function private function_cb6e7c567d06f936(instance, part, state, player, var_a5
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 6, eflags: 0x4
-// Checksum 0x0, Offset: 0x976
-// Size: 0x105
+// Checksum 0x0, Offset: 0x9a2
+// Size: 0x103
 function private function_b13174d586e772a0(instance, part, state, player, var_a5b2c541413aa895, usestring) {
     e_container = undefined;
     if (isdefined(instance) && array_contains(level.interacts, instance)) {
@@ -250,8 +250,8 @@ function private function_b13174d586e772a0(instance, part, state, player, var_a5
 
 // Namespace interaction / namespace_5775ad2badedbcaa
 // Params 5, eflags: 0x4
-// Checksum 0x0, Offset: 0xa83
-// Size: 0x10d
+// Checksum 0x0, Offset: 0xaad
+// Size: 0x10b
 function private function_725b4f278c8bd980(instance, part, state, player, useduration) {
     e_container = undefined;
     if (isdefined(instance) && array_contains(level.interacts, instance)) {
@@ -273,40 +273,40 @@ function private function_725b4f278c8bd980(instance, part, state, player, usedur
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xb98
+    // Checksum 0x0, Offset: 0xbc0
     // Size: 0x72
     function private debug_interacts() {
-        function_6e7290c8ee4f558b("<dev string:xc8>");
-        function_a9a864379a098ad6("<dev string:xdc>", "<dev string:xf1>", &function_7fbb580f18773f80, 1);
-        function_a9a864379a098ad6("<dev string:x106>", "<dev string:x126>", &function_1df05860f0b63778);
-        function_a9a864379a098ad6("<dev string:x146>", "<dev string:x166>", &function_8bb1a737fa8cb24f);
-        function_a9a864379a098ad6("<dev string:x185>", "<dev string:x1a6>", &function_fe3eefe62bf65fc7);
+        function_6e7290c8ee4f558b("<dev string:x48>");
+        function_a9a864379a098ad6("<dev string:x59>", "<dev string:x6b>", &function_7fbb580f18773f80, 1);
+        function_a9a864379a098ad6("<dev string:x7d>", "<dev string:x9a>", &function_1df05860f0b63778);
+        function_a9a864379a098ad6("<dev string:xb7>", "<dev string:xd4>", &function_8bb1a737fa8cb24f);
+        function_a9a864379a098ad6("<dev string:xf0>", "<dev string:x10e>", &function_fe3eefe62bf65fc7);
         function_fe953f000498048f();
     }
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xc12
+    // Checksum 0x0, Offset: 0xc3a
     // Size: 0x3c
     function private function_7fbb580f18773f80() {
         pos = function_9b4c82dba041b23d();
         interact = register_interact(pos);
-        interact function_c2efffe46a3f99d2(%"<dev string:x1ba>", %"<dev string:x1df>", 100);
+        interact function_c2efffe46a3f99d2(%"<dev string:x11f>", %"<dev string:x141>", 100);
     }
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xc56
+    // Checksum 0x0, Offset: 0xc7e
     // Size: 0x50
     function private function_1df05860f0b63778() {
         pos = function_9b4c82dba041b23d();
-        item = spawnscriptable("<dev string:x206>", pos, (0, 0, 0));
+        item = spawnscriptable("<dev string:x165>", pos, (0, 0, 0));
         function_32645103f7520635(item, &function_7303c641ccd3c51f, &function_990edc4c3536146d, &function_6cdb3ee0ad65070d);
     }
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0xcae
+    // Checksum 0x0, Offset: 0xcd6
     // Size: 0x15
     function private function_7303c641ccd3c51f(player) {
         self freescriptable();
@@ -314,25 +314,25 @@ function private function_725b4f278c8bd980(instance, part, state, player, usedur
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0xccb
+    // Checksum 0x0, Offset: 0xcf3
     // Size: 0x56
     function private function_990edc4c3536146d(player) {
         recordline(self.origin, self.origin + (0, 0, 72));
-        record3dtext("<dev string:x217>", self.origin + (0, 0, 72));
+        record3dtext("<dev string:x173>", self.origin + (0, 0, 72));
     }
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 1, eflags: 0x4
-    // Checksum 0x0, Offset: 0xd29
+    // Checksum 0x0, Offset: 0xd51
     // Size: 0x56
     function private function_6cdb3ee0ad65070d(player) {
         recordline(self.origin, self.origin + (0, 0, 72));
-        record3dtext("<dev string:x228>", self.origin + (0, 0, 72));
+        record3dtext("<dev string:x181>", self.origin + (0, 0, 72));
     }
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xd87
+    // Checksum 0x0, Offset: 0xdaf
     // Size: 0x35
     function private function_8bb1a737fa8cb24f() {
         pos = function_9b4c82dba041b23d();
@@ -342,22 +342,22 @@ function private function_725b4f278c8bd980(instance, part, state, player, usedur
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 2, eflags: 0x4
-    // Checksum 0x0, Offset: 0xdc4
-    // Size: 0x8b
+    // Checksum 0x0, Offset: 0xdec
+    // Size: 0x8a
     function private function_71322f3a8aa428ef(usable, player) {
         current_weapon = player getcurrentweapon();
         if (istrue(current_weapon.ismelee)) {
-            return {#string:%"<dev string:x24d>", #type:"<dev string:x23c>"};
+            return {#string:%"<dev string:x1a0>", #type:"<dev string:x192>"};
         }
-        return {#params:[0, 100], #string:%"<dev string:x287>", #type:"<dev string:x278>"};
+        return {#params:[0, 100], #string:%"<dev string:x1d4>", #type:"<dev string:x1c8>"};
     }
 
     // Namespace interaction / namespace_5775ad2badedbcaa
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xe57
-    // Size: 0xdc
+    // Checksum 0x0, Offset: 0xe7e
+    // Size: 0xd9
     function private function_fe3eefe62bf65fc7() {
-        level endon("<dev string:x2b5>");
+        level endon("<dev string:x1ff>");
         while (true) {
             waitframe();
             if (!isdefined(level.interacts)) {
@@ -370,7 +370,7 @@ function private function_725b4f278c8bd980(instance, part, state, player, usedur
                 if (isdefined(interact_ent.var_10a09b4e9dcdf2ed)) {
                     scripts\engine\utility::draw_circle(interact_ent.origin, interact_ent.var_10a09b4e9dcdf2ed, (1, 0, 0), 1, 1, 1);
                 }
-                record3dtext("<dev string:x2c3>", interact_ent.origin + (0, 0, 32));
+                record3dtext("<dev string:x20a>", interact_ent.origin + (0, 0, 32));
             }
         }
     }

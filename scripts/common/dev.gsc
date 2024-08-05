@@ -4,7 +4,7 @@
 
     // Namespace dev / scripts\common\dev
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x87
+    // Checksum 0x0, Offset: 0x68
     // Size: 0x13
     function init() {
         initdvars();
@@ -13,7 +13,7 @@
 
     // Namespace dev / scripts\common\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xa2
+    // Checksum 0x0, Offset: 0x83
     // Size: 0x19
     function private initdvars() {
         setdevdvarifuninitialized(@"hash_ebdec3f29783ea70", "<dev string:x1c>");
@@ -21,7 +21,7 @@
 
     // Namespace dev / scripts\common\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xc3
+    // Checksum 0x0, Offset: 0xa4
     // Size: 0xd
     function private initthreads() {
         thread function_945e8b4a4a05b526();
@@ -29,8 +29,8 @@
 
     // Namespace dev / scripts\common\dev
     // Params 0, eflags: 0x4
-    // Checksum 0x0, Offset: 0xd8
-    // Size: 0x901
+    // Checksum 0x0, Offset: 0xb9
+    // Size: 0x902
     function private function_945e8b4a4a05b526() {
         white = (1, 1, 1);
         red = (1, 0, 0);
@@ -38,8 +38,8 @@
         blue = (0, 0, 1);
         while (true) {
             if (getdvarint(@"hash_ebdec3f29783ea70") > 0) {
-                script_models = getentarray("<dev string:x21>", "<dev string:x31>");
-                script_origins = getentarray("<dev string:x3e>", "<dev string:x31>");
+                script_models = getentarray("<dev string:x1e>", "<dev string:x2b>");
+                script_origins = getentarray("<dev string:x35>", "<dev string:x2b>");
                 scriptmovercounts = spawnstruct();
                 scriptmovercounts.scriptmodeltargets = [];
                 scriptmovercounts.scriptmodelnoteworthy = [];
@@ -56,7 +56,7 @@
                         alpha = 1;
                         scale = 1;
                         print3d(ent.origin, ent.targetname, color, alpha, scale);
-                        originstring = "<dev string:x4f>" + ent.origin[0] + "<dev string:x54>" + ent.origin[1] + "<dev string:x54>" + ent.origin[2] + "<dev string:x5a>";
+                        originstring = "<dev string:x43>" + ent.origin[0] + "<dev string:x45>" + ent.origin[1] + "<dev string:x45>" + ent.origin[2] + "<dev string:x48>";
                         print3d(ent.origin + (0, 0, -20), originstring, color, alpha, scale);
                         if (isdefined(scriptmovercounts.scriptmodeltargets[ent.targetname])) {
                             scriptmovercounts.scriptmodeltargets[ent.targetname] = scriptmovercounts.scriptmodeltargets[ent.targetname] + 1;
@@ -95,7 +95,7 @@
                             break;
                         }
                         print3d(ent.origin, ent.targetname, color, alpha, scale);
-                        originstring = "<dev string:x4f>" + ent.origin[0] + "<dev string:x54>" + ent.origin[1] + "<dev string:x54>" + ent.origin[2] + "<dev string:x5a>";
+                        originstring = "<dev string:x43>" + ent.origin[0] + "<dev string:x45>" + ent.origin[1] + "<dev string:x45>" + ent.origin[2] + "<dev string:x48>";
                         print3d(ent.origin + (0, 0, -20), originstring, color, alpha, scale);
                         if (isdefined(scriptmovercounts.var_f6496cc6c6cd9606[ent.targetname])) {
                             scriptmovercounts.var_f6496cc6c6cd9606[ent.targetname] = scriptmovercounts.var_f6496cc6c6cd9606[ent.targetname] + 1;
@@ -117,38 +117,38 @@
                 var_bc545feded2c6a23 = 400;
                 var_bc545eeded2c67f0 = 50;
                 var_916c5c90b430d951 = 15;
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:x8e>");
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:x70>");
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xac>");
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:x8b>");
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xbe>" + scriptmovercounts.scriptmodelmisc);
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:x9a>" + scriptmovercounts.scriptmodelmisc);
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xd1>");
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xaa>");
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
                 foreach (targetname, targetcount in scriptmovercounts.scriptmodeltargets) {
-                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, targetname + "<dev string:xdc>" + targetcount);
+                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, targetname + "<dev string:xb2>" + targetcount);
                     var_bc545eeded2c67f0 += var_916c5c90b430d951;
                 }
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xe2>");
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xb5>");
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
                 foreach (noteworthyname, noteworthycount in scriptmovercounts.scriptmodelnoteworthy) {
-                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, noteworthyname + "<dev string:xdc>" + noteworthycount);
+                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, noteworthyname + "<dev string:xb2>" + noteworthycount);
                     var_bc545eeded2c67f0 += var_916c5c90b430d951;
                 }
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xf1>");
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xc1>");
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xbe>" + scriptmovercounts.var_174f250d6560ec80);
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:x9a>" + scriptmovercounts.var_174f250d6560ec80);
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xd1>");
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xaa>");
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
-                foreach (targetname, targetcount in scriptmovercounts.var_f6496cc6c6cd9606) {
-                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, targetname + "<dev string:xdc>" + targetcount);
+                foreach (targetcount in scriptmovercounts.var_f6496cc6c6cd9606) {
+                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, targetname + "<dev string:xb2>" + targetcount);
                     var_bc545eeded2c67f0 += var_916c5c90b430d951;
                 }
-                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xe2>");
+                printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, "<dev string:xb5>");
                 var_bc545eeded2c67f0 += var_916c5c90b430d951;
-                foreach (noteworthyname, noteworthycount in scriptmovercounts.var_14a5f24d72a497bf) {
-                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, noteworthyname + "<dev string:xdc>" + noteworthycount);
+                foreach (noteworthycount in scriptmovercounts.var_14a5f24d72a497bf) {
+                    printtoscreen2d(var_bc545feded2c6a23, var_bc545eeded2c67f0, noteworthyname + "<dev string:xb2>" + noteworthycount);
                     var_bc545eeded2c67f0 += var_916c5c90b430d951;
                 }
             }

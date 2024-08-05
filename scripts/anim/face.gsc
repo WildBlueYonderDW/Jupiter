@@ -2,8 +2,8 @@
 
 // Namespace face / scripts\anim\face
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x21d
-// Size: 0x438
+// Checksum 0x0, Offset: 0x197
+// Size: 0x43d
 function saygenericdialogue(typestring) {
     if (self.unittype != "soldier" && self.unittype != "civilian" && self.unittype != "juggernaut" && self.unittype != "suicidebomber") {
         return;
@@ -109,14 +109,14 @@ function saygenericdialogue(typestring) {
         }
     }
     if (getdvarint(@"hash_67846a0d7aa3030a", 1)) {
-        println("<dev string:x42>" + soundalias);
+        println("<dev string:x3f>" + soundalias);
     }
     thread playfacethread(soundalias, undefined);
 }
 
 // Namespace face / scripts\anim\face
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x65d
+// Checksum 0x0, Offset: 0x5dc
 // Size: 0x1d
 function sayspecificdialogue(soundalias, notifystring) {
     thread playfacethread(soundalias, notifystring);
@@ -124,7 +124,7 @@ function sayspecificdialogue(soundalias, notifystring) {
 
 // Namespace face / scripts\anim\face
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x682
+// Checksum 0x0, Offset: 0x601
 // Size: 0x42
 function playfacethread(soundalias, notifystring) {
     if (isdefined(notifystring)) {
@@ -139,7 +139,7 @@ function playfacethread(soundalias, notifystring) {
 
 // Namespace face / scripts\anim\face
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x6cc
+// Checksum 0x0, Offset: 0x64b
 // Size: 0x6e
 function playfacesound(alias, notification, var_9a0afe8ff3d2508f) {
     if (isai(self)) {
@@ -159,7 +159,7 @@ function playfacesound(alias, notification, var_9a0afe8ff3d2508f) {
 
 // Namespace face / scripts\anim\face
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x742
+// Checksum 0x0, Offset: 0x6c1
 // Size: 0x20
 function waitforfacesound(msg) {
     self endon("death");
@@ -169,7 +169,7 @@ function waitforfacesound(msg) {
 
 // Namespace face / scripts\anim\face
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x76a
+// Checksum 0x0, Offset: 0x6e9
 // Size: 0x2a
 function initlevelface() {
     anim.numenemyvoices = 7;
@@ -180,7 +180,7 @@ function initlevelface() {
 
 // Namespace face / scripts\anim\face
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x79c
+// Checksum 0x0, Offset: 0x71b
 // Size: 0xc
 function initfacialanims() {
     anim.facial = [];
@@ -188,7 +188,7 @@ function initfacialanims() {
 
 // Namespace face / scripts\anim\face
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7b0
+// Checksum 0x0, Offset: 0x72f
 // Size: 0x16
 function animhasfacialoverride(var_63db3c9e26531938) {
     return animhasnotetrack(var_63db3c9e26531938, "facial_override");
@@ -196,7 +196,7 @@ function animhasfacialoverride(var_63db3c9e26531938) {
 
 // Namespace face / scripts\anim\face
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x7cf
+// Checksum 0x0, Offset: 0x74e
 // Size: 0xf5
 function playfacialanim(var_63db3c9e26531938, a_state, a_idx) {
     if (isdefined(self.bdisabledefaultfacialanims) && self.bdisabledefaultfacialanims) {

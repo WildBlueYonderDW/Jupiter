@@ -8,8 +8,8 @@
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x460
-// Size: 0x1d2
+// Checksum 0x0, Offset: 0x359
+// Size: 0x1da
 function evaluatesyncedmeleebyxanim(meleexanim, var_63cac41d4942d388) {
     target = self.meleetarget;
     targetangles = target.angles;
@@ -46,8 +46,8 @@ function evaluatesyncedmeleebyxanim(meleexanim, var_63cac41d4942d388) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x63b
-// Size: 0x1b3
+// Checksum 0x0, Offset: 0x53c
+// Size: 0x1be
 function function_732d599999bac851(meleexanim, zombiemeleexanim) {
     var_ebb9a4d2fdf4c28 = getanimlength(meleexanim);
     var_c58fcfa6cf8e7b0e = getanimlength(zombiemeleexanim);
@@ -81,8 +81,8 @@ function function_732d599999bac851(meleexanim, zombiemeleexanim) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x7f7
-// Size: 0x363
+// Checksum 0x0, Offset: 0x703
+// Size: 0x371
 function evaluatesyncedmelee(asmname, statename, tostatename, params) {
     if (isdefined(level.var_134c418fea89d2ad)) {
         return [[ level.var_134c418fea89d2ad ]](self, asmname, statename, tostatename, params);
@@ -160,7 +160,7 @@ function evaluatesyncedmelee(asmname, statename, tostatename, params) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xb63
+// Checksum 0x0, Offset: 0xa7d
 // Size: 0xd7
 function melee_setmeleetimer(unittype, factor) {
     if (!isdefined(anim)) {
@@ -186,8 +186,8 @@ function melee_setmeleetimer(unittype, factor) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xc42
-// Size: 0xc4
+// Checksum 0x0, Offset: 0xb5c
+// Size: 0xc6
 function melee_calcsyncdirection() {
     assert(self.in_melee);
     target = self.meleetarget;
@@ -207,8 +207,8 @@ function melee_calcsyncdirection() {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd0f
-// Size: 0x49
+// Checksum 0x0, Offset: 0xc2b
+// Size: 0x48
 function melee_waitfordroppedweapon(statename) {
     self endon(statename + "_finished");
     droppedweapon = self waittill("weapon_dropped");
@@ -220,7 +220,7 @@ function melee_waitfordroppedweapon(statename) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xd60
+// Checksum 0x0, Offset: 0xc7b
 // Size: 0xb6
 function melee_synced_setup(statename, battacker) {
     self.meleestatename = statename;
@@ -242,7 +242,7 @@ function melee_synced_setup(statename, battacker) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe1e
+// Checksum 0x0, Offset: 0xd39
 // Size: 0x8a
 function melee_unlink() {
     self unlink();
@@ -256,7 +256,7 @@ function melee_unlink() {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xeb0
+// Checksum 0x0, Offset: 0xdcb
 // Size: 0x3e
 function chooseanim_syncmelee(asmname, statename, params) {
     assert(isdefined(self.meleeanimalias));
@@ -265,8 +265,8 @@ function chooseanim_syncmelee(asmname, statename, params) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xef7
-// Size: 0x156
+// Checksum 0x0, Offset: 0xe12
+// Size: 0x155
 function melee_decide_winner() {
     assert(self.in_melee);
     assert(isdefined(self.meleetarget));
@@ -300,7 +300,7 @@ function melee_decide_winner() {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1055
+// Checksum 0x0, Offset: 0xf6f
 // Size: 0x3a
 function function_41377dafffee3185(asmname, statename, params) {
     self kill(self.origin + anglestoforward(self.angles));
@@ -308,8 +308,8 @@ function function_41377dafffee3185(asmname, statename, params) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1097
-// Size: 0x270
+// Checksum 0x0, Offset: 0xfb1
+// Size: 0x274
 function playmeleeanim_synced(asmname, statename, params) {
     assert(self.in_melee);
     assert(isdefined(self.meleetarget));
@@ -361,7 +361,7 @@ function playmeleeanim_synced(asmname, statename, params) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x130f
+// Checksum 0x0, Offset: 0x122d
 // Size: 0x7f
 function playmeleeanim_synced_survive(asmname, statename, params) {
     assert(!self.in_melee);
@@ -375,7 +375,7 @@ function playmeleeanim_synced_survive(asmname, statename, params) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1396
+// Checksum 0x0, Offset: 0x12b4
 // Size: 0xf0
 function playmeleeanim_synced_cleanup(asmname, statename, params) {
     assert(self.in_melee);
@@ -401,8 +401,8 @@ function playmeleeanim_synced_cleanup(asmname, statename, params) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x148e
-// Size: 0x1f8
+// Checksum 0x0, Offset: 0x13ac
+// Size: 0x1fc
 function playmeleeanim_synced_victim(asmname, statename, params) {
     self endon(statename + "_finished");
     assert(self.in_melee);
@@ -446,7 +446,7 @@ function playmeleeanim_synced_victim(asmname, statename, params) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x168e
+// Checksum 0x0, Offset: 0x15b0
 // Size: 0x29
 function waitforpartnerdelete(statename, partner) {
     if (!isdefined(partner)) {
@@ -458,8 +458,8 @@ function waitforpartnerdelete(statename, partner) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x16bf
-// Size: 0x1b4
+// Checksum 0x0, Offset: 0x15e1
+// Size: 0x1b3
 function playmeleeanim_synced_waitforpartnerexit(asmname, statename) {
     self endon(statename + "_finished");
     if (isdefined(self.var_57ec55bda59c3915)) {
@@ -509,7 +509,7 @@ function playmeleeanim_synced_waitforpartnerexit(asmname, statename) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x187b
+// Checksum 0x0, Offset: 0x179c
 // Size: 0x1da
 function function_4f145058cbb5099e(var_d59fc6b752df85f0, append_code) {
     append = "";
@@ -564,8 +564,8 @@ function function_4f145058cbb5099e(var_d59fc6b752df85f0, append_code) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a5d
-// Size: 0x297
+// Checksum 0x0, Offset: 0x197e
+// Size: 0x29b
 function melee_handlenotetracks(note) {
     prefix = getsubstr(note, 0, 3);
     used_prefix = 0;
@@ -637,7 +637,7 @@ function melee_handlenotetracks(note) {
 
 // Namespace namespace_15a6b98dc3353454 / namespace_5b839d77e9fabdb7
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cfc
+// Checksum 0x0, Offset: 0x1c21
 // Size: 0x95
 function melee_droppedweaponrestore() {
     assert(isdefined(self));

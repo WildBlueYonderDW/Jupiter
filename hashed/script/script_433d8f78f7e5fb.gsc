@@ -7,7 +7,7 @@
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x70b
+// Checksum 0x0, Offset: 0x4e1
 // Size: 0x15e
 function init_flavorbursts() {
     anim.flavorbursts["unitedstates"] = [];
@@ -40,8 +40,8 @@ function init_flavorbursts() {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x871
-// Size: 0x27e
+// Checksum 0x0, Offset: 0x647
+// Size: 0x27d
 function assign_npcid() {
     if (!issp() && !iscp() || !isdefined(self.script_friendname) && !isstartstr(self.classname, "actor_jup_ally_hero")) {
         setnpcid();
@@ -81,7 +81,7 @@ function assign_npcid() {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xaf7
+// Checksum 0x0, Offset: 0x8cc
 // Size: 0x27c
 function bcs_setup_countryids() {
     if (!isdefined(anim.usedids)) {
@@ -110,8 +110,8 @@ function bcs_setup_countryids() {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd7b
-// Size: 0x579
+// Checksum 0x0, Offset: 0xb50
+// Size: 0x578
 function function_793f0c4da1ff138f(countryid) {
     names = [];
     switch (countryid) {
@@ -258,7 +258,7 @@ function function_793f0c4da1ff138f(countryid) {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x12fc
+// Checksum 0x0, Offset: 0x10d0
 // Size: 0xe9
 function bcs_setup_playernameids() {
     anim.playernameids["unitednations"] = "1";
@@ -276,7 +276,7 @@ function bcs_setup_playernameids() {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x13ed
+// Checksum 0x0, Offset: 0x11c1
 // Size: 0x61
 function isalliedcountryid(id) {
     switch (id) {
@@ -293,7 +293,7 @@ function isalliedcountryid(id) {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1456
+// Checksum 0x0, Offset: 0x122a
 // Size: 0x49
 function isalliedmilitarycountryid(id) {
     switch (id) {
@@ -308,7 +308,7 @@ function isalliedmilitarycountryid(id) {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14a7
+// Checksum 0x0, Offset: 0x127b
 // Size: 0x19
 function bcisgrenade(model) {
     if (model == "offhand_wm_grenade_mike67") {
@@ -319,7 +319,7 @@ function bcisgrenade(model) {
 
 // Namespace namespace_2430e72272756bb0 / namespace_e28f0031df263755
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14c9
+// Checksum 0x0, Offset: 0x129d
 // Size: 0x19
 function bcisrpg(classname) {
     if (classname == "rocketlauncher") {

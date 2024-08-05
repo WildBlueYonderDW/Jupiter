@@ -1,16 +1,15 @@
 #using scripts\engine\utility.gsc;
 #using scripts\common\utility.gsc;
 #using scripts\common\values.gsc;
-#using script_13865ca76df87ea;
 #using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_6159d9fd44490f13;
 #using scripts\cp_mp\equipment\throwing_knife.gsc;
 #using script_52d91cb28006a5bd;
+#using script_ec0f9ad939b29e0;
 #using script_479e458f6f530f0d;
 #using script_7c40fa80892a721;
 #using scripts\cp_mp\utility\game_utility.gsc;
 #using script_7ef95bba57dc4b82;
-#using script_ec0f9ad939b29e0;
 #using scripts\cp_mp\utility\weapon_utility.gsc;
 #using scripts\mp\flags.gsc;
 #using scripts\cp_mp\challenges.gsc;
@@ -22,7 +21,7 @@
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xca4
+// Checksum 0x0, Offset: 0xad5
 // Size: 0x179
 function init() {
     level.equipment = spawnstruct();
@@ -61,8 +60,8 @@ function init() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe25
-// Size: 0x21b
+// Checksum 0x0, Offset: 0xc56
+// Size: 0x271
 function inititems() {
     level.equipment.callbacks = [];
     globals = level.equipment;
@@ -72,6 +71,9 @@ function inititems() {
     }
     scripts\cp_mp\equipment\throwing_knife::throwing_knife_init();
     namespace_9cff5695f11e1c45::function_12d7ca3ff609caba();
+    globals.callbacks["equip_hb_sensor"]["onGive"] = &namespace_8a392daf295e43f8::function_78ce4bfda3e762b3;
+    globals.callbacks["equip_hb_sensor"]["onTake"] = &namespace_8a392daf295e43f8::function_7f948b7f43448ea9;
+    globals.callbacks["super_hb_sensor"]["onGive"] = &namespace_8a392daf295e43f8::function_78ce4bfda3e762b3;
     globals.callbacks["equip_throwing_knife"]["onGive"] = &scripts\cp_mp\equipment\throwing_knife::throwing_knife_ongive;
     globals.callbacks["equip_throwing_knife"]["onTake"] = &scripts\cp_mp\equipment\throwing_knife::throwing_knife_ontake;
     globals.callbacks["equip_throwing_knife_fire"]["onGive"] = &scripts\cp_mp\equipment\throwing_knife::throwing_knife_ongive;
@@ -98,20 +100,17 @@ function inititems() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x4
-// Checksum 0x0, Offset: 0x1048
-// Size: 0x4e
+// Checksum 0x0, Offset: 0xecf
+// Size: 0x28
 function private function_f8d145900d997580() {
     if (issharedfuncdefined("thermobaric_grenade", "thermobaric_grenade_init")) {
         [[ getsharedfunc("thermobaric_grenade", "thermobaric_grenade_init") ]]();
-    }
-    if (issharedfuncdefined("emp_grenade", "emp_grenade_init")) {
-        [[ getsharedfunc("emp_grenade", "emp_grenade_init") ]]();
     }
 }
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x109e
+// Checksum 0x0, Offset: 0xeff
 // Size: 0x45
 function getcallback(ref, callback) {
     if (!isdefined(level.equipment.callbacks[ref])) {
@@ -122,11 +121,10 @@ function getcallback(ref, callback) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10ec
-// Size: 0x343
+// Checksum 0x0, Offset: 0xf4d
+// Size: 0x322
 function loadtable() {
     level.equipment.table = [];
-    level.var_415476758ec47760 = [];
     for (row = 1; true; row++) {
         ref = tablelookupbyrow(level.equipmenttable, row, 1);
         if (!isdefined(ref) || ref == "") {
@@ -136,7 +134,7 @@ function loadtable() {
         struct = spawnstruct();
         struct.ref = lowerref;
         weaponname = tablelookupbyrow(level.equipmenttable, row, 6);
-        assertex(isdefined(weaponname) && weaponname != "<dev string:x43>", "<dev string:x47>" + lowerref + "<dev string:x66>");
+        assertex(isdefined(weaponname) && weaponname != "", "equipment_mp.csv error -  \"" + lowerref + "\" has no weapon");
         if (weaponname != "none") {
             attachname = tablelookupbyrow(level.equipmenttable, row, 19);
             attachments = undefined;
@@ -147,9 +145,6 @@ function loadtable() {
                 }
             }
             struct.objweapon = makeweapon(weaponname, attachments);
-            if (!isdefined(level.var_415476758ec47760[weaponname])) {
-                level.var_415476758ec47760[weaponname] = lowerref;
-            }
         }
         struct.id = row;
         struct.image = tablelookupbyrow(level.equipmenttable, row, 4);
@@ -181,12 +176,11 @@ function loadtable() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1437
-// Size: 0x3fd
+// Checksum 0x0, Offset: 0x1277
+// Size: 0x3de
 function function_29d51c2a86346a9c() {
     level.equipment.table = [];
     level.equipmentblueprints = [];
-    level.var_415476758ec47760 = [];
     var_9df9fe298aef6003 = getscriptbundle(level.equipmenttable);
     if (isdefined(var_9df9fe298aef6003)) {
         for (i = 0; i < var_9df9fe298aef6003.equipment_list.size; i++) {
@@ -198,7 +192,7 @@ function function_29d51c2a86346a9c() {
                     struct = spawnstruct();
                     struct.ref = equipmentref;
                     weaponname = equipmentbundle.useweapon;
-                    assertex(isdefined(weaponname), level.equipmenttable + "<dev string:x79>" + equipmentref + "<dev string:x66>");
+                    assertex(isdefined(weaponname), level.equipmenttable + " error -  \"" + equipmentref + "\" has no weapon");
                     if (weaponname != "none") {
                         attachments = undefined;
                         baseweapon = makeweapon(weaponname);
@@ -207,12 +201,9 @@ function function_29d51c2a86346a9c() {
                         }
                         struct.objweapon = makeweapon(weaponname, attachments);
                         blueprints = function_bb92a5000082832a(weaponname);
-                        foreach (blueprint, id in blueprints) {
+                        foreach (id in blueprints) {
                             var_1092bc40c58c1c9a = weaponname + "|" + string(id);
                             level.equipmentblueprints[var_1092bc40c58c1c9a] = function_3211981142ec5aee(weaponname, blueprint);
-                        }
-                        if (!isdefined(level.var_415476758ec47760[weaponname])) {
-                            level.var_415476758ec47760[weaponname] = equipmentref;
                         }
                     }
                     struct.id = i;
@@ -249,25 +240,22 @@ function function_29d51c2a86346a9c() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x183c
+// Checksum 0x0, Offset: 0x165d
 // Size: 0x55
 function getequipmenttableinfo(ref) {
     if (isdefined(ref) && !isdefined(level.equipment.table[ref])) {
-        assertmsg("<dev string:x88>" + ref + "<dev string:xde>");
+        assertmsg("getEquipmentTableInfo was called fo equipment with a ref that wasn't initialized: " + ref + "!");
     }
     return level.equipment.table[ref];
 }
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x189a
-// Size: 0xc0
+// Checksum 0x0, Offset: 0x16bb
+// Size: 0xaa
 function function_f4f687e4e1edb923(equipmentname) {
     tokens = strtok(equipmentname, "_");
     tokens = array_remove_index(tokens, tokens.size - 1);
-    if (tokens[0] == "jup") {
-        tokens = array_remove_index(tokens, 0);
-    }
     equipmentroot = "";
     counter = 0;
     foreach (tok in tokens) {
@@ -283,7 +271,7 @@ function function_f4f687e4e1edb923(equipmentname) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1963
+// Checksum 0x0, Offset: 0x176e
 // Size: 0xca
 function buildequipment(weaponname, variantid) {
     if (!isdefined(weaponname)) {
@@ -293,7 +281,7 @@ function buildequipment(weaponname, variantid) {
         weapon = makeweapon(weaponname, [], undefined, undefined, variantid);
         var_1092bc40c58c1c9a = weaponname + "|" + string(variantid);
         attachments = level.equipmentblueprints[var_1092bc40c58c1c9a];
-        foreach (attachment, variant in attachments) {
+        foreach (variant in attachments) {
             weapon = weapon withattachment(attachment, variant);
         }
     } else {
@@ -304,8 +292,8 @@ function buildequipment(weaponname, variantid) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a36
-// Size: 0x2b7
+// Checksum 0x0, Offset: 0x1841
+// Size: 0x281
 function giveequipment(ref, slot, class, variantid) {
     assert(isdefined(ref));
     assert(isdefined(slot));
@@ -316,7 +304,7 @@ function giveequipment(ref, slot, class, variantid) {
         return;
     }
     tableinfo = getequipmenttableinfo(ref);
-    assertex(isdefined(tableinfo), "<dev string:xe3>" + ref + "<dev string:x10f>");
+    assertex(isdefined(tableinfo), "Attempting to give unknown equipment - \"" + ref + "\"");
     if (!isdefined(tableinfo)) {
         return;
     }
@@ -330,10 +318,6 @@ function giveequipment(ref, slot, class, variantid) {
     weapon = undefined;
     if (isdefined(variantid)) {
         weapon = buildequipment(tableinfo.weaponname, variantid);
-        var_9b32d1936831f5aa = function_71efed8bf57f1d39(tableinfo.bundle, variantid);
-        if (isdefined(var_9b32d1936831f5aa)) {
-            self function_53c61cc39f6a3b11(var_9b32d1936831f5aa);
-        }
     } else {
         weapon = tableinfo.objweapon;
     }
@@ -354,7 +338,7 @@ function giveequipment(ref, slot, class, variantid) {
         self thread [[ var_645972186625daee ]](ref, slot, variantid);
     }
     function_22bf78eca6578d7d(slot, class);
-    isthrowing = ref == "equip_throwing_knife" || ref == "equip_throwing_knife_fire" || ref == "equip_throwing_knife_electric" || ref == "equip_shuriken" || ref == "equip_throwstar";
+    isthrowing = ref == "equip_throwing_knife" || ref == "equip_throwing_knife_fire" || ref == "equip_throwing_knife_electric" || ref == "equip_shuriken";
     if (issharedfuncdefined("game", "getGameType") && [[ getsharedfunc("game", "getGameType") ]]() == "arena" && isthrowing) {
     } else {
         thread watchlethaldelayplayer(ref, slot);
@@ -364,8 +348,8 @@ function giveequipment(ref, slot, class, variantid) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cf5
-// Size: 0xf7
+// Checksum 0x0, Offset: 0x1aca
+// Size: 0xf8
 function takeequipment(slot) {
     assert(isdefined(slot));
     ref = getcurrentequipment(slot);
@@ -397,7 +381,7 @@ function takeequipment(slot) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1df4
+// Checksum 0x0, Offset: 0x1bca
 // Size: 0x13d
 function equiponplayerdamaged(data) {
     weaponname = data.objweapon.basename;
@@ -408,7 +392,7 @@ function equiponplayerdamaged(data) {
                 if (damageweaponname == weaponname) {
                     callbackstarttime = gettime();
                     result = [[ var_148e2d88d1deffd3 ]](data);
-                    assertex(gettime() == callbackstarttime, "<dev string:x114>" + ref + "<dev string:x134>");
+                    assertex(gettime() == callbackstarttime, "onPlayerDamagedCallback for " + ref + " cannot have waits.");
                     return result;
                 }
             }
@@ -418,8 +402,8 @@ function equiponplayerdamaged(data) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f39
-// Size: 0x96
+// Checksum 0x0, Offset: 0x1d0f
+// Size: 0x95
 function ondestroyedbytrophy() {
     if (isdefined(self.equipmentref)) {
         var_99115207769478ff = getcallback(self.equipmentref, "onDestroyedByTrophy");
@@ -438,7 +422,7 @@ function ondestroyedbytrophy() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1fd8
+// Checksum 0x0, Offset: 0x1dad
 // Size: 0x53
 function is_equipment_slot_allowed(slot) {
     switch (slot) {
@@ -453,7 +437,7 @@ function is_equipment_slot_allowed(slot) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2033
+// Checksum 0x0, Offset: 0x1e08
 // Size: 0x5e
 function sethudslot(slot, id) {
     if (slot != "super") {
@@ -469,7 +453,7 @@ function sethudslot(slot, id) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2099
+// Checksum 0x0, Offset: 0x1e6e
 // Size: 0x25
 function getcurrentequipment(slot) {
     if (!isdefined(self.equipment)) {
@@ -480,20 +464,20 @@ function getcurrentequipment(slot) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x20c7
-// Size: 0x64
+// Checksum 0x0, Offset: 0x1e9c
+// Size: 0x61
 function clearallequipment() {
     if (!isdefined(self.equipment)) {
         return;
     }
-    foreach (slot, ref in self.equipment) {
+    foreach (ref in self.equipment) {
         takeequipment(slot);
     }
 }
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2133
+// Checksum 0x0, Offset: 0x1f05
 // Size: 0x13
 function function_f528e58424d9c3e3(classtype, isprimary) {
     
@@ -501,7 +485,7 @@ function function_f528e58424d9c3e3(classtype, isprimary) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x214e
+// Checksum 0x0, Offset: 0x1f20
 // Size: 0xf2
 function function_11a4d197e8db4f(classtype) {
     if (!isdefined(level.gamemodebundle) || !istrue(level.gamemodebundle.var_e12ed09bf2e43167)) {
@@ -527,7 +511,7 @@ function function_11a4d197e8db4f(classtype) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2249
+// Checksum 0x0, Offset: 0x201b
 // Size: 0xf2
 function function_58ea099b568dbfaf(classtype) {
     if (!isdefined(level.gamemodebundle) || !istrue(level.gamemodebundle.var_e12ed09bf2e43167)) {
@@ -553,8 +537,8 @@ function function_58ea099b568dbfaf(classtype) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2344
-// Size: 0x3e9
+// Checksum 0x0, Offset: 0x2116
+// Size: 0x3a1
 function getequipmentmaxammo(ref, class) {
     tableinfo = getequipmenttableinfo(ref);
     if (!isdefined(tableinfo)) {
@@ -601,13 +585,7 @@ function getequipmentmaxammo(ref, class) {
             issecondary = isdefined(slot) && slot == "secondary" || isequipmenttactical(ref);
             if (issharedfuncdefined("perk", "hasPerk")) {
                 if (self [[ getsharedfunc("perk", "hasPerk") ]]("specialty_extra_deadly") && isprimary) {
-                    if (self [[ getsharedfunc("perk", "hasPerk") ]]("specialty_ninja_vest")) {
-                        if (issubstr(ref, "throwing_knife") || issubstr(ref, "throwstar") || issubstr(ref, "shuriken")) {
-                            maxammo++;
-                        }
-                    } else {
-                        maxammo++;
-                    }
+                    maxammo++;
                 }
                 if (self [[ getsharedfunc("perk", "hasPerk") ]]("specialty_extra_tactical") && issecondary) {
                     maxammo++;
@@ -630,7 +608,7 @@ function getequipmentmaxammo(ref, class) {
         }
     } else {
         equipmentname = level.br_pickups.br_equipnametoscriptable[tableinfo.ref];
-        assertex(isdefined(level.br_pickups.maxcounts[equipmentname]), "<dev string:x14b>" + equipmentname + "<dev string:x159>");
+        assertex(isdefined(level.br_pickups.maxcounts[equipmentname]), "Equipment " + equipmentname + " not found in level.br_pickups.maxCounts. Please add a stack size in the appropriate loot_item_defs table.");
         maxammo = level.br_pickups.maxcounts[equipmentname];
         if (!isdefined(maxammo)) {
             maxammo = 0;
@@ -648,7 +626,7 @@ function getequipmentmaxammo(ref, class) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2736
+// Checksum 0x0, Offset: 0x24c0
 // Size: 0x82
 function getequipmentstartammo(ref) {
     tableinfo = getequipmenttableinfo(ref);
@@ -668,8 +646,8 @@ function getequipmentstartammo(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x27c1
-// Size: 0x11c
+// Checksum 0x0, Offset: 0x254b
+// Size: 0x46
 function getequipmentammo(ref) {
     tableinfo = getequipmenttableinfo(ref);
     if (!isdefined(tableinfo)) {
@@ -678,24 +656,13 @@ function getequipmentammo(ref) {
     if (!isdefined(tableinfo.objweapon)) {
         return 0;
     }
-    ammocount = self getammocount(tableinfo.objweapon);
-    if (ammocount == 0 && isdefined(tableinfo.objweapon.basename)) {
-        tableweaponname = tableinfo.objweapon.basename;
-        if (isdefined(self) && isdefined(self.offhandinventory)) {
-            foreach (weaponobj in self.offhandinventory) {
-                if (isdefined(weaponobj) && isdefined(weaponobj.basename) && weaponobj.basename == tableweaponname) {
-                    ammocount = self getammocount(weaponobj);
-                }
-            }
-        }
-    }
-    return ammocount;
+    return self getammocount(tableinfo.objweapon);
 }
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x28e6
-// Size: 0x13d
+// Checksum 0x0, Offset: 0x259a
+// Size: 0x13f
 function setequipmentammo(ref, amount) {
     tableinfo = getequipmenttableinfo(ref);
     if (!isdefined(tableinfo) || !isdefined(tableinfo.objweapon)) {
@@ -722,8 +689,8 @@ function setequipmentammo(ref, amount) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a2b
-// Size: 0x74
+// Checksum 0x0, Offset: 0x26e1
+// Size: 0x76
 function function_1ab06e1478168800() {
     gaveprimary = 0;
     primary = getcurrentequipment("primary");
@@ -740,8 +707,8 @@ function function_1ab06e1478168800() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2aa8
-// Size: 0x66
+// Checksum 0x0, Offset: 0x2760
+// Size: 0x68
 function function_f1c136649b4207d6() {
     chargedprimary = 0;
     primary = getcurrentequipment("primary");
@@ -758,7 +725,7 @@ function function_f1c136649b4207d6() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b17
+// Checksum 0x0, Offset: 0x27d1
 // Size: 0x68
 function function_91bd2a98062313cb(slot, amount) {
     ref = getcurrentequipment(slot);
@@ -772,7 +739,7 @@ function function_91bd2a98062313cb(slot, amount) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b87
+// Checksum 0x0, Offset: 0x2841
 // Size: 0x62
 function incrementequipmentammo(ref, var_930290d7f474a0ae, class) {
     if (!isdefined(var_930290d7f474a0ae)) {
@@ -786,7 +753,7 @@ function incrementequipmentammo(ref, var_930290d7f474a0ae, class) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bf2
+// Checksum 0x0, Offset: 0x28ac
 // Size: 0x73
 function decrementequipmentammo(ref, var_7d2e0ea9107a4c02, class) {
     if (!isdefined(var_7d2e0ea9107a4c02)) {
@@ -802,8 +769,8 @@ function decrementequipmentammo(ref, var_7d2e0ea9107a4c02, class) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c6d
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x2927
+// Size: 0x6f
 function incrementequipmentslotammo(slot, var_930290d7f474a0ae) {
     ref = getcurrentequipment(slot);
     if (!isdefined(ref)) {
@@ -819,8 +786,8 @@ function incrementequipmentslotammo(slot, var_930290d7f474a0ae) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ce3
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x299e
+// Size: 0x6f
 function decrementequipmentslotammo(slot, var_7d2e0ea9107a4c02) {
     ref = getcurrentequipment(slot);
     if (!isdefined(ref)) {
@@ -836,8 +803,8 @@ function decrementequipmentslotammo(slot, var_7d2e0ea9107a4c02) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d59
-// Size: 0x2c
+// Checksum 0x0, Offset: 0x2a15
+// Size: 0x2b
 function getequipmentslotammo(slot) {
     ref = getcurrentequipment(slot);
     if (!isdefined(ref)) {
@@ -848,8 +815,8 @@ function getequipmentslotammo(slot) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d8e
-// Size: 0x35
+// Checksum 0x0, Offset: 0x2a49
+// Size: 0x34
 function setequipmentslotammo(slot, count) {
     ref = getcurrentequipment(slot);
     if (!isdefined(ref)) {
@@ -860,7 +827,7 @@ function setequipmentslotammo(slot, count) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2dcc
+// Checksum 0x0, Offset: 0x2a86
 // Size: 0x35
 function chargeequipment(ref) {
     switch (ref) {
@@ -873,19 +840,24 @@ function chargeequipment(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e09
-// Size: 0x1d
+// Checksum 0x0, Offset: 0x2ac3
+// Size: 0x92
 function function_7f245729fcb6414d(weaponname) {
     if (!isdefined(weaponname)) {
         return undefined;
     }
-    return level.var_415476758ec47760[weaponname];
+    foreach (tableinfo in level.equipment.table) {
+        if (isdefined(tableinfo.weaponname) && weaponname == tableinfo.weaponname) {
+            return tableinfo.ref;
+        }
+    }
+    return undefined;
 }
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2e2f
-// Size: 0x95
+// Checksum 0x0, Offset: 0x2b5e
+// Size: 0x92
 function function_2113b6f7cb462692(weaponname) {
     if (!isdefined(weaponname)) {
         return undefined;
@@ -900,8 +872,8 @@ function function_2113b6f7cb462692(weaponname) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2ecd
-// Size: 0x188
+// Checksum 0x0, Offset: 0x2bf9
+// Size: 0x115
 function mapequipmentweaponforref(objweapon) {
     weaponname = undefined;
     switch (objweapon.basename) {
@@ -911,9 +883,6 @@ function mapequipmentweaponforref(objweapon) {
         break;
     case #"hash_5701898d598fdb27": 
         weaponname = "claymore_mp";
-        break;
-    case #"hash_1608b7d163aaf95f": 
-        weaponname = "jup_claymore_ob";
         break;
     case #"hash_cce14c95e4764532": 
         weaponname = "at_mine_mp";
@@ -926,16 +895,6 @@ function mapequipmentweaponforref(objweapon) {
     case #"hash_a009d256608f52ce":
     case #"hash_c4b9b21ecac2ced4": 
         weaponname = "bunkerbuster_mp";
-        break;
-    case #"hash_9286c53dccee4e99":
-    case #"hash_a50980582cd5f387":
-    case #"hash_adcbea12d23c5553": 
-        weaponname = "jup_bunkerbuster_br";
-        break;
-    case #"hash_9276d33dcce198b0":
-    case #"hash_a51366582cde195e":
-    case #"hash_adeee012d2581c12": 
-        weaponname = "jup_bunkerbuster_ob";
         break;
     case #"hash_5e5b9bb1e397e30a": 
         weaponname = "shock_stick_mp";
@@ -955,33 +914,39 @@ function mapequipmentweaponforref(objweapon) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x305e
-// Size: 0x29
+// Checksum 0x0, Offset: 0x2d17
+// Size: 0x94
 function getequipmentreffromweapon(objweapon) {
     objweapon = mapequipmentweaponforref(objweapon);
-    return level.var_415476758ec47760[objweapon.basename];
-}
-
-// Namespace equipment / namespace_4fb9dddfb8c1a67a
-// Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3090
-// Size: 0x3e
-function getweaponfromequipmentref(equipref) {
-    equip = level.equipment.table[equipref];
-    if (isdefined(equip)) {
-        return equip.objweapon;
+    foreach (tableinfo in level.equipment.table) {
+        if (isdefined(tableinfo.objweapon) && objweapon == tableinfo.objweapon) {
+            return tableinfo.ref;
+        }
     }
     return undefined;
 }
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x30d7
-// Size: 0xdc
+// Checksum 0x0, Offset: 0x2db4
+// Size: 0x8b
+function getweaponfromequipmentref(equipref) {
+    foreach (tableinfo in level.equipment.table) {
+        if (isdefined(tableinfo.ref) && equipref == tableinfo.ref) {
+            return tableinfo.objweapon;
+        }
+    }
+    return undefined;
+}
+
+// Namespace equipment / namespace_4fb9dddfb8c1a67a
+// Params 1, eflags: 0x0
+// Checksum 0x0, Offset: 0x2e48
+// Size: 0xd8
 function hasequipment(ref) {
     if (!isdefined(self.equipment)) {
         if (iscp() && isdefined(self.powers)) {
-            foreach (key, value in self.powers) {
+            foreach (value in self.powers) {
                 if (key == ref) {
                     return true;
                 }
@@ -999,13 +964,13 @@ function hasequipment(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x31bc
-// Size: 0x6e
+// Checksum 0x0, Offset: 0x2f29
+// Size: 0x6b
 function findequipmentslot(ref) {
     if (!isdefined(self.equipment)) {
         return undefined;
     }
-    foreach (slot, equippedref in self.equipment) {
+    foreach (equippedref in self.equipment) {
         if (equippedref == ref) {
             return slot;
         }
@@ -1014,7 +979,7 @@ function findequipmentslot(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3232
+// Checksum 0x0, Offset: 0x2f9c
 // Size: 0x12
 function isequipmentlethal(ref) {
     return isequipmentprimary(ref);
@@ -1022,7 +987,7 @@ function isequipmentlethal(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x324d
+// Checksum 0x0, Offset: 0x2fb7
 // Size: 0x55
 function isequipmentprimary(ref) {
     if (isdefined(ref) && isdefined(level.equipment.table[ref])) {
@@ -1033,7 +998,7 @@ function isequipmentprimary(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32aa
+// Checksum 0x0, Offset: 0x3014
 // Size: 0x12
 function isequipmenttactical(ref) {
     return isequipmentsecondary(ref);
@@ -1041,7 +1006,7 @@ function isequipmenttactical(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x32c5
+// Checksum 0x0, Offset: 0x302f
 // Size: 0x55
 function isequipmentsecondary(ref) {
     if (isdefined(ref) && isdefined(level.equipment.table[ref])) {
@@ -1052,7 +1017,7 @@ function isequipmentsecondary(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3322
+// Checksum 0x0, Offset: 0x308c
 // Size: 0x51
 function isequipmentselectable(ref) {
     if (!isdefined(ref)) {
@@ -1066,8 +1031,8 @@ function isequipmentselectable(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x337b
-// Size: 0x112
+// Checksum 0x0, Offset: 0x30e5
+// Size: 0x113
 function function_22bf78eca6578d7d(slot, class) {
     if (!isdefined(self.equipment) || self.equipment.size == 0) {
         return;
@@ -1099,7 +1064,7 @@ function function_22bf78eca6578d7d(slot, class) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3495
+// Checksum 0x0, Offset: 0x3200
 // Size: 0xa
 function equiponplayerspawned() {
     thread watchoffhandfired();
@@ -1107,7 +1072,7 @@ function equiponplayerspawned() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x34a7
+// Checksum 0x0, Offset: 0x3212
 // Size: 0xc
 function resetequipment() {
     self.equipment = [];
@@ -1115,19 +1080,15 @@ function resetequipment() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x34bb
-// Size: 0x215
+// Checksum 0x0, Offset: 0x3226
+// Size: 0x1c7
 function executeoffhandfired(objweapon) {
     foreach (slot, ref in self.equipment) {
         tableinfo = getequipmenttableinfo(ref);
         if (isdefined(tableinfo.objweapon) && objweapon == tableinfo.objweapon) {
             if (issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]()) {
                 if (issharedfuncdefined("dlog", "brAnalytics_equipmentUse")) {
-                    item_type = "";
-                    if (isdefined(tableinfo.bundle) && isdefined(tableinfo.bundle.equipmenttype)) {
-                        item_type = tableinfo.bundle.equipmenttype;
-                    }
-                    [[ getsharedfunc("dlog", "brAnalytics_equipmentUse") ]](self, objweapon, item_type);
+                    [[ getsharedfunc("dlog", "brAnalytics_equipmentUse") ]](self, objweapon);
                 }
             }
             if (issharedfuncdefined("equipment", "getEquipmentRefFromWeapon")) {
@@ -1159,8 +1120,8 @@ function executeoffhandfired(objweapon) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x36d8
-// Size: 0x34
+// Checksum 0x0, Offset: 0x33f5
+// Size: 0x33
 function watchoffhandfired() {
     level endon("game_ended");
     self endon("death_or_disconnect");
@@ -1172,8 +1133,8 @@ function watchoffhandfired() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3714
-// Size: 0x82
+// Checksum 0x0, Offset: 0x3430
+// Size: 0x80
 function givescavengerammo() {
     foreach (ref in self.equipment) {
         tableinfo = getequipmenttableinfo(ref);
@@ -1185,8 +1146,8 @@ function givescavengerammo() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x379e
-// Size: 0x30
+// Checksum 0x0, Offset: 0x34b8
+// Size: 0x2f
 function getdefaultslot(ref) {
     tableinfo = getequipmenttableinfo(ref);
     if (!isdefined(tableinfo)) {
@@ -1197,7 +1158,7 @@ function getdefaultslot(ref) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x37d7
+// Checksum 0x0, Offset: 0x34f0
 // Size: 0x12a
 function watchlethaldelay() {
     level endon("lethal_delay_end");
@@ -1233,7 +1194,7 @@ function watchlethaldelay() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3909
+// Checksum 0x0, Offset: 0x3622
 // Size: 0x118
 function watchlethaldelayplayer(equipmentref, slot) {
     self endon("death_or_disconnect");
@@ -1268,8 +1229,8 @@ function watchlethaldelayplayer(equipmentref, slot) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x3a29
-// Size: 0x126
+// Checksum 0x0, Offset: 0x3742
+// Size: 0x128
 function watchlethaldelayfeedbackplayer(player, slot) {
     level endon("lethal_delay_end");
     if (!istrue(scripts\mp\flags::gameflag("prematch_done"))) {
@@ -1301,7 +1262,7 @@ function watchlethaldelayfeedbackplayer(player, slot) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3b57
+// Checksum 0x0, Offset: 0x3872
 // Size: 0x6e
 function cancellethaldelay() {
     level.lethaldelay = 0;
@@ -1316,8 +1277,8 @@ function cancellethaldelay() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3bcd
-// Size: 0x82
+// Checksum 0x0, Offset: 0x38e8
+// Size: 0x81
 function lethaldelaypassed() {
     if (isdefined(level.lethaldelay) && level.lethaldelay == 0) {
         return true;
@@ -1336,8 +1297,8 @@ function lethaldelaypassed() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x3c58
-// Size: 0x57
+// Checksum 0x0, Offset: 0x3972
+// Size: 0x56
 function currentgametypestopsclock() {
     if (issharedfuncdefined("game", "getGameType")) {
         gametype = [[ getsharedfunc("game", "getGameType") ]]();
@@ -1350,8 +1311,8 @@ function currentgametypestopsclock() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3cb8
-// Size: 0x87
+// Checksum 0x0, Offset: 0x39d1
+// Size: 0x85
 function onownerdisconnect(player) {
     if (issharedfuncdefined("equipment", "getAllEquip")) {
         allequip = player [[ getsharedfunc("equipment", "getAllEquip") ]]();
@@ -1363,8 +1324,8 @@ function onownerdisconnect(player) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3d47
-// Size: 0xe7
+// Checksum 0x0, Offset: 0x3a5e
+// Size: 0xe6
 function hackequipment(hacker) {
     self.ishacked = 1;
     newowner = hacker;
@@ -1388,21 +1349,21 @@ function hackequipment(hacker) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e36
+// Checksum 0x0, Offset: 0x3b4c
 // Size: 0x3d
-function function_24fce6c89fd2bee3(CaptureBot) {
-    if (isdefined(CaptureBot)) {
+function function_24fce6c89fd2bee3(var_e0d7784e906d506) {
+    if (isdefined(var_e0d7784e906d506)) {
         if (!isdefined(self.var_134d6db4538498ee)) {
             self.var_134d6db4538498ee = [];
         }
-        self.var_134d6db4538498ee[self.var_134d6db4538498ee.size] = CaptureBot;
+        self.var_134d6db4538498ee[self.var_134d6db4538498ee.size] = var_e0d7784e906d506;
     }
 }
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3e7b
-// Size: 0x74
+// Checksum 0x0, Offset: 0x3b91
+// Size: 0x71
 function function_f5cbee8dfc1dc4f0(var_2c6dc87bb9f89da0) {
     if (isdefined(self.var_134d6db4538498ee)) {
         foreach (oldbot in self.var_134d6db4538498ee) {
@@ -1416,7 +1377,7 @@ function function_f5cbee8dfc1dc4f0(var_2c6dc87bb9f89da0) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x3ef8
+// Checksum 0x0, Offset: 0x3c0b
 // Size: 0xfe
 function changeowner(newowner) {
     oldowner = self.owner;
@@ -1446,8 +1407,8 @@ function changeowner(newowner) {
 
     // Namespace equipment / namespace_4fb9dddfb8c1a67a
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x3ffe
-    // Size: 0x13f
+    // Checksum 0x0, Offset: 0x3d11
+    // Size: 0x142
     function debughackequipment() {
         setdevdvar(@"hash_aa4a28e418803dd5", 0);
         while (true) {
@@ -1456,23 +1417,23 @@ function changeowner(newowner) {
                 mainplayer = level.players[0];
                 enemyplayer = undefined;
                 for (i = 1; i < level.players.size; i++) {
-                    if (issharedfuncdefined("<dev string:x1c7>", "<dev string:x1d1>") && mainplayer [[ getsharedfunc("<dev string:x1c7>", "<dev string:x1d1>") ]](level.players[i])) {
+                    if (issharedfuncdefined("<dev string:x40>", "<dev string:x47>") && mainplayer [[ getsharedfunc("<dev string:x40>", "<dev string:x47>") ]](level.players[i])) {
                         enemyplayer = level.players[i];
                         break;
                     }
                 }
                 if (!isdefined(enemyplayer)) {
-                    iprintlnbold("<dev string:x1dc>");
+                    iprintlnbold("<dev string:x4f>");
                     continue;
                 }
-                if (issharedfuncdefined("<dev string:x219>", "<dev string:x226>")) {
-                    allequip = mainplayer [[ getsharedfunc("<dev string:x219>", "<dev string:x226>") ]]();
+                if (issharedfuncdefined("<dev string:x89>", "<dev string:x93>")) {
+                    allequip = mainplayer [[ getsharedfunc("<dev string:x89>", "<dev string:x93>") ]]();
                     equipment = undefined;
                     if (allequip.size > 0) {
                         equipment = allequip[0];
                     }
                     if (!isdefined(equipment)) {
-                        iprintlnbold("<dev string:x235>");
+                        iprintlnbold("<dev string:x9f>");
                         continue;
                     }
                     equipment hackequipment(enemyplayer);
@@ -1484,20 +1445,20 @@ function changeowner(newowner) {
 
     // Namespace equipment / namespace_4fb9dddfb8c1a67a
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4145
-    // Size: 0xc3
+    // Checksum 0x0, Offset: 0x3e5b
+    // Size: 0xc2
     function debugemp() {
         setdevdvar(@"hash_d39ba2fefaffd043", 0);
         while (true) {
             if (getdvarint(@"hash_d39ba2fefaffd043") != 0) {
                 setdevdvar(@"hash_d39ba2fefaffd043", 0);
                 if (level.players.size < 2) {
-                    iprintlnbold("<dev string:x289>");
+                    iprintlnbold("<dev string:xf0>");
                     continue;
                 }
                 secondplayer = level.players[1];
-                if (issharedfuncdefined("<dev string:x2bc>", "<dev string:x2c7>")) {
-                    secondplayer [[ getsharedfunc("<dev string:x2bc>", "<dev string:x2c7>") ]]("<dev string:x2d9>", (0, 0, 0), (0, 0, 0), 0.05, 0);
+                if (issharedfuncdefined("<dev string:x120>", "<dev string:x128>")) {
+                    secondplayer [[ getsharedfunc("<dev string:x120>", "<dev string:x128>") ]]("<dev string:x137>", (0, 0, 0), (0, 0, 0), 0.05, 0);
                 }
             }
             waitframe();
@@ -1506,21 +1467,21 @@ function changeowner(newowner) {
 
     // Namespace equipment / namespace_4fb9dddfb8c1a67a
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4210
-    // Size: 0x101
+    // Checksum 0x0, Offset: 0x3f25
+    // Size: 0x104
     function debugempdrone() {
         setdevdvar(@"hash_a6ef3bcfa25b1aef", 0);
         while (true) {
             if (getdvarint(@"hash_a6ef3bcfa25b1aef") != 0) {
                 setdevdvar(@"hash_a6ef3bcfa25b1aef", 0);
                 if (level.players.size < 2) {
-                    iprintlnbold("<dev string:x2eb>");
+                    iprintlnbold("<dev string:x146>");
                     continue;
                 }
                 firstplayer = level.players[0];
                 secondplayer = level.players[1];
                 streakinfo = spawnstruct();
-                streakinfo.streakname = "<dev string:x31c>";
+                streakinfo.streakname = "<dev string:x174>";
                 streakinfo.owner = secondplayer;
                 streakinfo.id = scripts\cp_mp\utility\killstreak_utility::getuniquekillstreakid(secondplayer);
                 streakinfo.lifeid = 0;
@@ -1533,15 +1494,15 @@ function changeowner(newowner) {
 
     // Namespace equipment / namespace_4fb9dddfb8c1a67a
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x4319
-    // Size: 0xc3
+    // Checksum 0x0, Offset: 0x4031
+    // Size: 0xc0
     function debugdestroyempdrones() {
         setdevdvar(@"hash_196b4febb9f4dd1f", 0);
         while (true) {
             if (getdvarint(@"hash_196b4febb9f4dd1f") != 0) {
                 setdevdvar(@"hash_196b4febb9f4dd1f", 0);
                 foreach (killstreak in level.activekillstreaks) {
-                    if (isdefined(killstreak.streakinfo) && killstreak.streakinfo.streakname == "<dev string:x31c>") {
+                    if (isdefined(killstreak.streakinfo) && killstreak.streakinfo.streakname == "<dev string:x174>") {
                         killstreak scripts\cp_mp\killstreaks\emp_drone::empdrone_destroy();
                     }
                 }
@@ -1554,8 +1515,8 @@ function changeowner(newowner) {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x43e4
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x40f9
+// Size: 0xc3
 function initlethalmaxoffsetmap() {
     level.lethal_equipmentmaskoffsets = [];
     bitindex = 0;
@@ -1576,8 +1537,8 @@ function initlethalmaxoffsetmap() {
 
 // Namespace equipment / namespace_4fb9dddfb8c1a67a
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x44b1
-// Size: 0xae
+// Checksum 0x0, Offset: 0x41c4
+// Size: 0xaf
 function function_707926e6ce8ddc60(slot, var_317d7e8b927bd393) {
     if (slot == "primary") {
         primary_gren = getcurrentequipment(slot);

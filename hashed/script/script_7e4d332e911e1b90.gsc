@@ -8,7 +8,7 @@
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x343
+// Checksum 0x0, Offset: 0x434
 // Size: 0xb
 function initialize(type) {
     
@@ -16,10 +16,10 @@ function initialize(type) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x356
+// Checksum 0x0, Offset: 0x447
 // Size: 0x140
 function updateanimpose() {
-    assertex(self.a.movement == "<dev string:x1c>" || self.a.movement == "<dev string:x24>" || self.a.movement == "<dev string:x2c>", "<dev string:x33>" + self.currentpose + "<dev string:x46>" + self.a.movement);
+    assertex(self.a.movement == "stop" || self.a.movement == "walk" || self.a.movement == "run", "UpdateAnimPose " + self.currentpose + " " + self.a.movement);
     if (isdefined(self.desired_anim_pose) && self.desired_anim_pose != self.currentpose) {
         if (self.currentpose == "prone") {
             exitpronewrapper(0.5);
@@ -37,20 +37,20 @@ function updateanimpose() {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 1, eflags: 0x0
-    // Checksum 0x0, Offset: 0x49e
-    // Size: 0xcd
+    // Checksum 0x0, Offset: 0x58f
+    // Size: 0xce
     function checkgrenadeinhand(animscript) {
-        self endon("<dev string:x4b>");
-        if (animscript == "<dev string:x5d>" || animscript == "<dev string:x65>") {
+        self endon("<dev string:x1c>");
+        if (animscript == "<dev string:x2b>" || animscript == "<dev string:x30>") {
             wait 0.05;
             waittillframeend();
         }
         attachsize = self getattachsize();
         for (i = 0; i < attachsize; i++) {
             model = tolower(self getattachmodelname(i));
-            assertex(model != "<dev string:x6e>", "<dev string:x84>" + self.origin);
-            assertex(model != "<dev string:xde>", "<dev string:x84>" + self.origin);
-            assertex(model != "<dev string:xfe>", "<dev string:x84>" + self.origin);
+            assertex(model != "<dev string:x36>", "<dev string:x49>" + self.origin);
+            assertex(model != "<dev string:xa0>", "<dev string:x49>" + self.origin);
+            assertex(model != "<dev string:xbd>", "<dev string:x49>" + self.origin);
         }
     }
 
@@ -58,7 +58,7 @@ function updateanimpose() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x573
+// Checksum 0x0, Offset: 0x665
 // Size: 0x5d
 function printdisplaceinfo() {
     self endon("death");
@@ -66,7 +66,7 @@ function printdisplaceinfo() {
     self endon("displaceprint");
     for (;;) {
         /#
-            print3d(self.origin + (0, 0, 60), "<dev string:x119>", (0, 0.4, 0.7), 0.85, 0.5);
+            print3d(self.origin + (0, 0, 60), "<dev string:xd5>", (0, 0.4, 0.7), 0.85, 0.5);
         #/
         wait 0.05;
     }
@@ -76,7 +76,7 @@ function printdisplaceinfo() {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0x5d8
+    // Checksum 0x0, Offset: 0x6ca
     // Size: 0x34
     function isdebugon() {
         return getdvarint(@"animDebug") == 1 || isdefined(anim.debugent) && anim.debugent == self;
@@ -84,8 +84,8 @@ function printdisplaceinfo() {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x614
-    // Size: 0x4e
+    // Checksum 0x0, Offset: 0x706
+    // Size: 0x4d
     function drawdebuglineinternal(frompoint, topoint, color, durationframes) {
         for (i = 0; i < durationframes; i++) {
             line(frompoint, topoint, color);
@@ -95,7 +95,7 @@ function printdisplaceinfo() {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x66a
+    // Checksum 0x0, Offset: 0x75b
     // Size: 0x3b
     function drawdebugline(frompoint, topoint, color, durationframes) {
         if (isdebugon()) {
@@ -105,8 +105,8 @@ function printdisplaceinfo() {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x6ad
-    // Size: 0x51
+    // Checksum 0x0, Offset: 0x79e
+    // Size: 0x50
     function debugline(frompoint, topoint, color, durationframes) {
         for (i = 0; i < durationframes * 20; i++) {
             line(frompoint, topoint, color);
@@ -118,7 +118,7 @@ function printdisplaceinfo() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x706
+// Checksum 0x0, Offset: 0x7f6
 // Size: 0x2b
 function notifyaftertime(notifystring, killmestring, time) {
     self endon("death");
@@ -129,7 +129,7 @@ function notifyaftertime(notifystring, killmestring, time) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x739
+// Checksum 0x0, Offset: 0x829
 // Size: 0x60
 function drawstringtime(msg, org, color, timer) {
     maxtime = timer * 20;
@@ -143,8 +143,8 @@ function drawstringtime(msg, org, color, timer) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x7a1
-// Size: 0xaf
+// Checksum 0x0, Offset: 0x891
+// Size: 0xae
 function showlastenemysightpos(string) {
     self notify("got known enemy2");
     self endon("got known enemy2");
@@ -172,11 +172,11 @@ function showlastenemysightpos(string) {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x858
+    // Checksum 0x0, Offset: 0x947
     // Size: 0x8a
     function function_f5e6ad17591107bc(string, org, printtime, color) {
-        level notify("<dev string:x126>" + org);
-        level endon("<dev string:x126>" + org);
+        level notify("<dev string:xdf>" + org);
+        level endon("<dev string:xdf>" + org);
         if (!isdefined(color)) {
             color = (0.3, 0.9, 0.6);
         }
@@ -189,10 +189,10 @@ function showlastenemysightpos(string) {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 4, eflags: 0x0
-    // Checksum 0x0, Offset: 0x8ea
+    // Checksum 0x0, Offset: 0x9d9
     // Size: 0x4a
     function function_e125b2100c281c9c(string, org, printtime, color) {
-        if (getdvar(@"hash_9f7713320782588b") != "<dev string:x13b>") {
+        if (getdvar(@"hash_9f7713320782588b") != "<dev string:xf1>") {
             level thread function_f5e6ad17591107bc(string, org, printtime, color);
         }
     }
@@ -201,7 +201,7 @@ function showlastenemysightpos(string) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x93c
+// Checksum 0x0, Offset: 0xa2b
 // Size: 0x34
 function hasenemysightpos() {
     if (isdefined(self.node)) {
@@ -212,7 +212,7 @@ function hasenemysightpos() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x978
+// Checksum 0x0, Offset: 0xa67
 // Size: 0xb
 function getenemysightpos() {
     return self.goodshootpos;
@@ -220,7 +220,7 @@ function getenemysightpos() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x98c
+// Checksum 0x0, Offset: 0xa7b
 // Size: 0xd
 function debugtimeout() {
     wait 5;
@@ -229,7 +229,7 @@ function debugtimeout() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a1
+// Checksum 0x0, Offset: 0xa90
 // Size: 0xb8
 function debugposinternal(org, string, size) {
     self endon("death");
@@ -253,7 +253,7 @@ function debugposinternal(org, string, size) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xa61
+// Checksum 0x0, Offset: 0xb50
 // Size: 0x22
 function debugpos(org, string) {
     thread debugposinternal(org, string, 2.15);
@@ -261,7 +261,7 @@ function debugpos(org, string) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0xa8b
+// Checksum 0x0, Offset: 0xb7a
 // Size: 0x26
 function debugpossize(org, string, size) {
     thread debugposinternal(org, string, size);
@@ -269,7 +269,7 @@ function debugpossize(org, string, size) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xab9
+// Checksum 0x0, Offset: 0xba8
 // Size: 0xbd
 function debugburstprint(numshots, maxshots) {
     burstsize = numshots / maxshots;
@@ -291,26 +291,26 @@ function debugburstprint(numshots, maxshots) {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xb7e
-    // Size: 0xa1
+    // Checksum 0x0, Offset: 0xc6d
+    // Size: 0xa2
     function printshootproc() {
-        self endon("<dev string:x65>");
-        self notify("<dev string:x13f>" + self.export);
-        self endon("<dev string:x13f>" + self.export);
+        self endon("<dev string:x30>");
+        self notify("<dev string:xf2>" + self.export);
+        self endon("<dev string:xf2>" + self.export);
         printtime = 0.25;
         timer = printtime * 20;
         for (i = 0; i < timer; i += 1) {
             wait 0.05;
-            print3d(self.origin + (0, 0, 70), "<dev string:x14e>", (1, 0, 0), 1, 1);
+            print3d(self.origin + (0, 0, 70), "<dev string:xfe>", (1, 0, 0), 1, 1);
         }
     }
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 0, eflags: 0x0
-    // Checksum 0x0, Offset: 0xc27
+    // Checksum 0x0, Offset: 0xd17
     // Size: 0x24
     function printshoot() {
-        if (getdvar(@"hash_9f7713320782588b") == "<dev string:x157>") {
+        if (getdvar(@"hash_9f7713320782588b") == "<dev string:x104>") {
             thread printshootproc();
         }
     }
@@ -319,11 +319,11 @@ function debugburstprint(numshots, maxshots) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xc53
+// Checksum 0x0, Offset: 0xd43
 // Size: 0x66
 function showdebugproc(frompoint, topoint, color, printtime) {
     /#
-        self endon("<dev string:x65>");
+        self endon("<dev string:x30>");
         timer = printtime * 20;
         for (i = 0; i < timer; i += 1) {
             wait 0.05;
@@ -334,7 +334,7 @@ function showdebugproc(frompoint, topoint, color, printtime) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0xcc1
+// Checksum 0x0, Offset: 0xdb1
 // Size: 0x3d
 function showdebugline(frompoint, topoint, color, printtime) {
     thread showdebugproc(frompoint, topoint + (0, 0, -5), color, printtime);
@@ -342,7 +342,7 @@ function showdebugline(frompoint, topoint, color, printtime) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xd06
+// Checksum 0x0, Offset: 0xdf6
 // Size: 0xe5
 function shootenemywrapper_normal(var_9bc9d0ee2a8a46f5) {
     self._blackboard.var_60dcaa3d3be97ab = gettime();
@@ -364,7 +364,7 @@ function shootenemywrapper_normal(var_9bc9d0ee2a8a46f5) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xdf3
+// Checksum 0x0, Offset: 0xee3
 // Size: 0x1c
 function shootenemywrapper_shootnotify(var_9bc9d0ee2a8a46f5) {
     level notify("an_enemy_shot", self);
@@ -373,7 +373,7 @@ function shootenemywrapper_shootnotify(var_9bc9d0ee2a8a46f5) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xe17
+// Checksum 0x0, Offset: 0xf07
 // Size: 0xb3
 function shootposwrapper(shootpos, var_9bc9d0ee2a8a46f5) {
     self._blackboard.var_60dcaa3d3be97ab = gettime();
@@ -395,8 +395,8 @@ function shootposwrapper(shootpos, var_9bc9d0ee2a8a46f5) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xed2
-// Size: 0x216
+// Checksum 0x0, Offset: 0xfc2
+// Size: 0x21e
 function throwgun() {
     org = spawn("script_model", (0, 0, 0));
     org setmodel("temp");
@@ -437,8 +437,8 @@ function throwgun() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x10f0
-// Size: 0xc1
+// Checksum 0x0, Offset: 0x11e8
+// Size: 0xc0
 function personalcoldbreath() {
     tag = "TAG_EYE";
     self endon("death");
@@ -463,7 +463,7 @@ function personalcoldbreath() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x11b9
+// Checksum 0x0, Offset: 0x12b0
 // Size: 0x26
 function ispartiallysuppressedwrapper() {
     if (self.suppressionmeter <= self.suppressionthreshold * 0.25) {
@@ -476,7 +476,7 @@ function ispartiallysuppressedwrapper() {
 
     // Namespace utility / namespace_f87a4b6569ce73b2
     // Params 3, eflags: 0x0
-    // Checksum 0x0, Offset: 0x11e8
+    // Checksum 0x0, Offset: 0x12df
     // Size: 0x5b
     function showlines(start, end, end2) {
         for (;;) {
@@ -491,7 +491,7 @@ function ispartiallysuppressedwrapper() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x124b
+// Checksum 0x0, Offset: 0x1342
 // Size: 0x10
 function usingboltactionweapon() {
     return weaponisboltaction(self.weapon);
@@ -499,12 +499,12 @@ function usingboltactionweapon() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1264
+// Checksum 0x0, Offset: 0x135b
 // Size: 0x85
 function setfootstepeffect(type, name, fx) {
-    assertex(isdefined(name), "<dev string:x15c>");
-    assertex(isdefined(fx), "<dev string:x189>");
-    assertex(isdefined(type), "<dev string:x1b0>");
+    assertex(isdefined(name), "Need to define the footstep surface type.");
+    assertex(isdefined(fx), "Need to define the footstep effect.");
+    assertex(isdefined(type), "Need to define the footstep unittype.");
     if (!isdefined(anim.optionalstepeffects)) {
         anim.optionalstepeffects = [];
     }
@@ -514,12 +514,12 @@ function setfootstepeffect(type, name, fx) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f1
+// Checksum 0x0, Offset: 0x13e8
 // Size: 0x85
 function setfootstepeffectsmall(type, name, fx) {
-    assertex(isdefined(name), "<dev string:x15c>");
-    assertex(isdefined(fx), "<dev string:x189>");
-    assertex(isdefined(type), "<dev string:x1b0>");
+    assertex(isdefined(name), "Need to define the footstep surface type.");
+    assertex(isdefined(fx), "Need to define the footstep effect.");
+    assertex(isdefined(type), "Need to define the footstep unittype.");
     if (!isdefined(anim.optionalstepeffectssmall)) {
         anim.optionalstepeffectssmall = [];
     }
@@ -529,12 +529,12 @@ function setfootstepeffectsmall(type, name, fx) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x137e
+// Checksum 0x0, Offset: 0x1475
 // Size: 0x9c
 function setfootprinteffect(type, name, fx) {
-    assertex(isdefined(name), "<dev string:x15c>");
-    assertex(isdefined(fx), "<dev string:x189>");
-    assertex(isdefined(type), "<dev string:x1b0>");
+    assertex(isdefined(name), "Need to define the footstep surface type.");
+    assertex(isdefined(fx), "Need to define the footstep effect.");
+    assertex(isdefined(type), "Need to define the footstep unittype.");
     if (!isdefined(anim.optionalfootprinteffects)) {
         anim.optionalfootprinteffects = [];
     }
@@ -547,10 +547,10 @@ function setfootprinteffect(type, name, fx) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1422
+// Checksum 0x0, Offset: 0x1519
 // Size: 0x44
 function unsetfootstepeffect(name) {
-    assertex(isdefined(name), "<dev string:x1d9>");
+    assertex(isdefined(name), "Need to define the footstep surface type to unset.");
     if (isdefined(anim.optionalstepeffects)) {
         anim.optionalstepeffects[name] = undefined;
     }
@@ -559,10 +559,10 @@ function unsetfootstepeffect(name) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x146e
+// Checksum 0x0, Offset: 0x1565
 // Size: 0x44
 function unsetfootstepeffectsmall(name) {
-    assertex(isdefined(name), "<dev string:x1d9>");
+    assertex(isdefined(name), "Need to define the footstep surface type to unset.");
     if (isdefined(anim.optionalstepeffectssmall)) {
         anim.optionalstepeffectssmall[name] = undefined;
     }
@@ -571,10 +571,10 @@ function unsetfootstepeffectsmall(name) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x14ba
+// Checksum 0x0, Offset: 0x15b1
 // Size: 0x44
 function unsetfootprinteffect(name) {
-    assertex(isdefined(name), "<dev string:x1d9>");
+    assertex(isdefined(name), "Need to define the footstep surface type to unset.");
     if (isdefined(anim.optionalfootprinteffects)) {
         anim.optionalfootprinteffects[name] = undefined;
     }
@@ -583,13 +583,13 @@ function unsetfootprinteffect(name) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 6, eflags: 0x0
-// Checksum 0x0, Offset: 0x1506
+// Checksum 0x0, Offset: 0x15fd
 // Size: 0xdb
 function setnotetrackeffect(notetrack, tag, surfacename, fx, sound_prefix, sound_suffix) {
     assert(isdefined(notetrack));
     assert(isdefined(tag));
     assert(isdefined(fx));
-    assertex(isstring(notetrack), "<dev string:x20f>");
+    assertex(isstring(notetrack), "Notetrack name must be a string");
     if (!isdefined(surfacename)) {
         surfacename = "all";
     }
@@ -604,8 +604,8 @@ function setnotetrackeffect(notetrack, tag, surfacename, fx, sound_prefix, sound
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x15e9
-// Size: 0xad
+// Checksum 0x0, Offset: 0x16e0
+// Size: 0xac
 function setnotetracksound(notetrack, surfacename, sound_prefix, sound_suffix) {
     if (!isdefined(surfacename)) {
         surfacename = "all";
@@ -629,7 +629,7 @@ function setnotetracksound(notetrack, surfacename, sound_prefix, sound_suffix) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x169e
+// Checksum 0x0, Offset: 0x1794
 // Size: 0x14
 function enterpronewrapper(timer) {
     thread enterpronewrapperproc(timer);
@@ -637,7 +637,7 @@ function enterpronewrapper(timer) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x16ba
+// Checksum 0x0, Offset: 0x17b0
 // Size: 0x7d
 function enterpronewrapperproc(timer) {
     self endon("death");
@@ -652,7 +652,7 @@ function enterpronewrapperproc(timer) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x173f
+// Checksum 0x0, Offset: 0x1835
 // Size: 0x21
 function stoponback() {
     exitpronewrapper(1);
@@ -661,7 +661,7 @@ function stoponback() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1768
+// Checksum 0x0, Offset: 0x185e
 // Size: 0x14
 function exitpronewrapper(timer) {
     thread exitpronewrapperproc(timer);
@@ -669,7 +669,7 @@ function exitpronewrapper(timer) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1784
+// Checksum 0x0, Offset: 0x187a
 // Size: 0x51
 function exitpronewrapperproc(timer) {
     self endon("death");
@@ -684,7 +684,7 @@ function exitpronewrapperproc(timer) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17dd
+// Checksum 0x0, Offset: 0x18d3
 // Size: 0xb
 function getaiprimaryweapon() {
     return self.primaryweapon;
@@ -692,7 +692,7 @@ function getaiprimaryweapon() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17f1
+// Checksum 0x0, Offset: 0x18e7
 // Size: 0xb
 function getaisecondaryweapon() {
     return self.secondaryweapon;
@@ -700,7 +700,7 @@ function getaisecondaryweapon() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1805
+// Checksum 0x0, Offset: 0x18fb
 // Size: 0xb
 function getaisidearmweapon() {
     return self.sidearm;
@@ -708,7 +708,7 @@ function getaisidearmweapon() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1819
+// Checksum 0x0, Offset: 0x190f
 // Size: 0xb
 function getaicurrentweapon() {
     return self.weapon;
@@ -716,7 +716,7 @@ function getaicurrentweapon() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x182d
+// Checksum 0x0, Offset: 0x1923
 // Size: 0x6d
 function getaicurrentweaponslot() {
     if (self.weapon == self.primaryweapon) {
@@ -728,13 +728,13 @@ function getaicurrentweaponslot() {
     if (self.weapon == self.sidearm) {
         return "sidearm";
     }
-    assertmsg("<dev string:x232>");
+    assertmsg("self.weapon does not match any known slot");
 }
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18a2
-// Size: 0x3f
+// Checksum 0x0, Offset: 0x1998
+// Size: 0x3e
 function aihasweapon(objweapon) {
     assert(isweapon(objweapon));
     weaponname = getcompleteweaponname(objweapon);
@@ -746,8 +746,8 @@ function aihasweapon(objweapon) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18ea
-// Size: 0x27
+// Checksum 0x0, Offset: 0x19df
+// Size: 0x26
 function getanimendpos(theanim) {
     movedelta = getmovedelta(theanim, 0, 1);
     return self localtoworldcoords(movedelta);
@@ -755,8 +755,8 @@ function getanimendpos(theanim) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x191a
-// Size: 0xc5
+// Checksum 0x0, Offset: 0x1a0e
+// Size: 0xc6
 function ragdolldeath(moveanim) {
     self endon("killanimscript");
     lastorg = self.origin;
@@ -779,7 +779,7 @@ function ragdolldeath(moveanim) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19e7
+// Checksum 0x0, Offset: 0x1adc
 // Size: 0xc
 function iscqbwalkingorfacingenemy() {
     return !self.facemotion;
@@ -787,7 +787,7 @@ function iscqbwalkingorfacingenemy() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x19fc
+// Checksum 0x0, Offset: 0x1af1
 // Size: 0x1d
 function randomizeidleset() {
     self.a.idleset = randomint(2);
@@ -795,8 +795,8 @@ function randomizeidleset() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a21
-// Size: 0x43
+// Checksum 0x0, Offset: 0x1b16
+// Size: 0x42
 function getrandomintfromseed(intseed, intmax) {
     assert(intmax > 0);
     index = intseed % anim.randominttablesize;
@@ -805,7 +805,7 @@ function getrandomintfromseed(intseed, intmax) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a6d
+// Checksum 0x0, Offset: 0x1b61
 // Size: 0x30
 function getcurrentweaponslotname() {
     assert(isdefined(self));
@@ -820,43 +820,43 @@ function getcurrentweaponslotname() {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1aa6
+// Checksum 0x0, Offset: 0x1b9a
 // Size: 0xed
 function lookupanim(var_4cabf1b2b096a23a, anim_index) {
     assert(isai(self));
     if (isdefined(self.animarchetype)) {
-        assertex(isdefined(anim.archetypes[self.animarchetype]), "<dev string:x25f>" + self.animarchetype);
+        assertex(isdefined(anim.archetypes[self.animarchetype]), "Invalid anim archetype: " + self.animarchetype);
         if (isdefined(anim.archetypes[self.animarchetype][var_4cabf1b2b096a23a]) && isdefined(anim.archetypes[self.animarchetype][var_4cabf1b2b096a23a][anim_index])) {
             return anim.archetypes[self.animarchetype][var_4cabf1b2b096a23a][anim_index];
         }
     }
-    assertex(isdefined(anim.archetypes["<dev string:x27b>"][var_4cabf1b2b096a23a][anim_index]), "<dev string:x286>" + var_4cabf1b2b096a23a + "<dev string:x2af>" + anim_index + "<dev string:x2b5>");
+    assertex(isdefined(anim.archetypes["soldier"][var_4cabf1b2b096a23a][anim_index]), "Missing anim for soldier archetype: [" + var_4cabf1b2b096a23a + "][" + anim_index + "]");
     return anim.archetypes["soldier"][var_4cabf1b2b096a23a][anim_index];
 }
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1b9c
-// Size: 0x11f
+// Checksum 0x0, Offset: 0x1c90
+// Size: 0x11d
 function lookupanimarray(var_4cabf1b2b096a23a) {
     assert(isai(self));
     if (isdefined(self.animarchetype)) {
-        assertex(isdefined(anim.archetypes[self.animarchetype]), "<dev string:x25f>" + self.animarchetype);
+        assertex(isdefined(anim.archetypes[self.animarchetype]), "Invalid anim archetype: " + self.animarchetype);
         if (isdefined(anim.archetypes[self.animarchetype][var_4cabf1b2b096a23a])) {
             animset = anim.archetypes["soldier"][var_4cabf1b2b096a23a];
-            foreach (key, value in anim.archetypes[self.animarchetype][var_4cabf1b2b096a23a]) {
+            foreach (value in anim.archetypes[self.animarchetype][var_4cabf1b2b096a23a]) {
                 animset[key] = value;
             }
             return animset;
         }
     }
-    assertex(isdefined(anim.archetypes["<dev string:x27b>"][var_4cabf1b2b096a23a]), "<dev string:x2ba>" + var_4cabf1b2b096a23a + "<dev string:x2b5>");
+    assertex(isdefined(anim.archetypes["soldier"][var_4cabf1b2b096a23a]), "Missing anim array for soldier archetype: [" + var_4cabf1b2b096a23a + "]");
     return anim.archetypes["soldier"][var_4cabf1b2b096a23a];
 }
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cc4
+// Checksum 0x0, Offset: 0x1db6
 // Size: 0x11
 function isenergyweapon(weapon) {
     return weaponusesenergybullets(weapon);
@@ -864,10 +864,10 @@ function isenergyweapon(weapon) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1cde
-// Size: 0x8c
+// Checksum 0x0, Offset: 0x1dd0
+// Size: 0x8b
 function function_b5216a6d7bd17210(str_gestureweapon, var_d160dd91a3ae5bb8) {
-    assertex(isdefined(str_gestureweapon), "<dev string:x2e9>");
+    assertex(isdefined(str_gestureweapon), "Gesture weapon must be defined");
     var_d160dd91a3ae5bb8 = default_to(var_d160dd91a3ae5bb8, 0);
     if (var_d160dd91a3ae5bb8) {
         self cancelreload();
@@ -887,7 +887,7 @@ function function_b5216a6d7bd17210(str_gestureweapon, var_d160dd91a3ae5bb8) {
 
 // Namespace utility / namespace_f87a4b6569ce73b2
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d72
+// Checksum 0x0, Offset: 0x1e63
 // Size: 0x2f
 function function_422595121745c8a1(gestureweapon) {
     self endon("offhand_fired");

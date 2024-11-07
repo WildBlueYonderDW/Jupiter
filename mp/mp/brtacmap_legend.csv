@@ -1,0 +1,17 @@
+legend,trophyUploadStation,ui_map_icon_trophy_s03,,MP/SCORPION_TROPHY_BANK,,@hash_a8673f69d0431388,,,,0
+legend,zoneLocked,hud_icon_objective_zclock,,MP_BR_INGAME/ZC_LOCKED_ZONE,,@hash_0,IsBRZonecontrolGametype,,,0
+legend,zoneNeutral,hud_icon_idle_t1,,MP_BR_INGAME/ZC_BRONZE_ZONE,,@hash_0,IsBRZonecontrolGametype,,,0
+legend,zoneHigh,hud_icon_idle_t2,,MP_BR_INGAME/ZC_SILVER_ZONE,,@hash_0,IsBRZonecontrolGametype,,,0
+legend,leaderCrown,ui_map_icon_zcleader,,MP_BR_INGAME/ZC_LEADER,,@hash_0,IsBRZonecontrolGametype,,,0
+top,contracts,,,,1,@hash_0,,,,0
+middle,squadDropbag,ui_map_icon_drop_loadout_blue,,MP_BR_INGAME/SQUAD_DROPBAG,,@hash_3c5c5bba3f7423f0,,,,0
+middle,highstakesCrate,ui_map_icon_drop_doublexp,,MP/DOUBLEXP_CRATE_NAME,,@hash_ec487051294f83c2,,,,0
+middle,abandonedCache,ui_map_icon_loot_cache,,MP_BR_INGAME/ABANDONEDCACHE,,@hash_4af62e57f66d060b,,,,0
+middle,armoryKiosk,ui_map_icon_poi_shop,,MP_BR_INGAME/ARMORY_KIOSK,,@hash_880384e6dfe250ba,,,,0
+middle,deployableBuyStation,ui_map_icon_portable_buystation,,EQUIPMENT/DEPLOYABLE_KIOSK_MARKER,,@hash_880384e6dfe250ba,,,,0
+middle,weaponTradeStation,ui_map_icon_poi_weapontrader,,MP_BR_INGAME/ARMORY_TRADER,,@hash_708738ae7dcb76af,,,,0
+middle,ammocache,ui_map_icon_ammo_cache,,MP_BR_INGAME/AMMO_CACHE,,@hash_0,,,,0
+middle,train,hud_icon_minimap_vehicle_train_engine,,DMZ/TRAIN,,@hash_0,AreTrainsEnabled,,,0
+middle,redeployDrone,ui_map_icon_redeploy_drone,,VEHICLES/REDEPLOY_DRONE,,@hash_eb0811ead28c4f53,,,,0
+middle,uavTower,ui_map_icon_uav_tower,,DMZ/UAV_TOWER,,@hash_5af0f9b3aea8fda6,,,,0
+middle,brokenATM,ui_mp_br_mapmenu_legend_poi_broken_atm,,MP_BR_INGAME/BROKEN_ATM,,@hash_a6b7002b1a7fef73,,,,0

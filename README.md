@@ -4,7 +4,7 @@ Decompilation of some parts of Modern Warfare III using [Atian Call of Duty Tool
 
 Dumped using [Cordycep](https://github.com/Scobalula/Cordycep).
 
-Dump date: `2024/07/30`
+Dump date: `2024/11/07`
 
 ## Pools
 
@@ -15,4 +15,3 @@ Pools dumped
 | gscobj             | 69  | `/`                      |
 | stringtable        | 70  | `/`                      |
 | ddl                | 72  | `/`                      |
-

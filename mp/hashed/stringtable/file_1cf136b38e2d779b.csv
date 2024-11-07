@@ -1,0 +1,5 @@
+legend,player,hud_icon_minimap_player_squad,,MP_BR_INGAME/PLAYER,,@hash_0,,,,0
+legend,playerPingMgl,mgl_ui_icon_ping_squadleader,,MP_BR_INGAME/MAP_KEY_PLAYER_PING,,@hash_0,,,,0
+top,contracts,,,,1,@hash_0,,,,0
+middle,pois,,,,1,@hash_0,,,,0
+bottom,vehicles,,,,1,@hash_0,,,,0

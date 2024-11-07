@@ -1,0 +1,15 @@
+top,plunderBalloon,ui_map_icon_cash_balloon,BattleRoyale.BRPocketPlunder,MP_BR_INGAME/EXTRACTION_BALLOON,,@hash_0,,,,0
+top,atmCache,ui_map_icon_atm,BattleRoyale.BRPocketPlunder,MP_BR_INGAME/ATM_CACHE,,@hash_a6b7002b1a7fef73,,,,0
+top,topEarner,ui_map_icon_marked_leader,IW9StyleGuide.styleGuideMatchEnemyHighlight,MP_BR_INGAME/TOP_EARNER,,@hash_0,,,,0
+top,cashHoarder,ui_map_icon_top_earners,IW9StyleGuide.styleGuideMatchEnemyHighlight,MP_BR_INGAME/CASH_HOARDER,,@hash_0,,,,0
+top,plunderChopper,hud_icon_minimap_vehicle_heli_blima,IW9StyleGuide.styleGuideFeatured01,VEHICLES/LOOT_CHOPPER,,@hash_0,,,,0
+top,plunderDrop,ui_map_icon_cash_drop,IW9StyleGuide.styleGuideFeatured01,MP_BR_INGAME/CASH_DROP,,@hash_0,,,,0
+middle,trophyUploadStation,ui_map_icon_trophy_s03,,MP/SCORPION_TROPHY_BANK,,@hash_a8673f69d0431388,,,,0
+middle,armoryKiosk,ui_map_icon_poi_shop,,MP_BR_INGAME/ARMORY_KIOSK,,@hash_880384e6dfe250ba,,,,0
+middle,deployableBuyStation,ui_map_icon_portable_buystation,,EQUIPMENT/DEPLOYABLE_KIOSK_MARKER,,@hash_880384e6dfe250ba,,,,0
+middle,weaponTradeStation,ui_map_icon_poi_weapontrader,,MP_BR_INGAME/ARMORY_TRADER,1,@hash_708738ae7dcb76af,,,,0
+middle,ammocache,ui_map_icon_ammo_cache,,MP_BR_INGAME/AMMO_CACHE,,@hash_0,,,,0
+middle,fortress,ui_map_icon_stronghold,,MP_BR_INGAME/FORTRESS,,@hash_9adec631e1eee04a,,,,0
+middle,abandonedCache,ui_map_icon_loot_cache,BattleRoyale.BRPocketPlunder,MP_BR_INGAME/ABANDONEDCACHE,,@hash_4af62e57f66d060b,,,,0
+middle,redeployDrone,ui_map_icon_redeploy_drone,,VEHICLES/REDEPLOY_DRONE,,@hash_eb0811ead28c4f53,,,,0
+bottom,contracts,,,,1,@hash_0,,,,0

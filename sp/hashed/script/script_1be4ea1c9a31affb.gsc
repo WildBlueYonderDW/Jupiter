@@ -1,0 +1,99 @@
+#using scripts\asm\asm.gsc;
+#using scripts\aitypes\bt_util.gsc;
+#using scripts\asm\asm_mp.gsc;
+#using scripts\common\ai.gsc;
+#using script_617a12fe4e2213f0;
+#using script_65e7570ed0fea149;
+#using script_51850e194d55b71a;
+#using script_60697709c8bd04cb;
+#using script_154c8e0f0c53a024;
+#using scripts\cp_mp\agents\agent_init.gsc;
+#using scripts\aitypes\assets.gsc;
+
+#namespace namespace_cccc9535a38ae95a;
+
+// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x1c5
+// Size: 0x112
+function main() {
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_5da5f70b384e9e79");
+    self.health = 30;
+    self.maxhealth = 30;
+    self.behaviortreeasset = "civilian_livingworld";
+    self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
+    self.asmasset = "civilian_react";
+    self.weapon = nullweapon();
+    self.grenadeweapon = nullweapon();
+    self.grenadeammo = 0;
+    setup_model();
+    assert(isscriptedagent(self));
+    assert(isdefined(self.behaviortreeasset));
+    assert(isdefined(self.asmasset));
+    self.var_a942dd31d55102c9 = self.asmasset;
+    self.a = spawnstruct();
+    scripts\asm\asm::asm_init_blackboard();
+    scripts\aitypes\bt_util::bt_init();
+    scripts\asm\asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts\common\ai::ai_init();
+}
+
+// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x2df
+// Size: 0x56
+function setup_model() {
+    var_42e5c77b1d7fe6e7 = isdefined(self.var_42e5c77b1d7fe6e7) ? self.var_42e5c77b1d7fe6e7 : "default";
+    switch (var_42e5c77b1d7fe6e7) {
+    case #"hash_7038dec66d8275be":
+    default:
+        function_9ac26a51c94ccf52();
+        break;
+    }
+}
+
+// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x33d
+// Size: 0x99
+function function_9ac26a51c94ccf52() {
+    assertex(isdefined(self.var_e2682e6f1838391e), "self.characterSelectionIndex has not been set, it should have been set in Agent_Spawn() for mp and InitSpawn() in SP in code");
+    switch (self.var_e2682e6f1838391e) {
+    case 0:
+        return namespace_e0af609dc8acb230::main();
+    case 1:
+        return namespace_e0af639dc8acb8c9::main();
+    case 2:
+        return namespace_e0af629dc8acb696::main();
+    case 3:
+        return namespace_e0af659dc8acbd2f::main();
+    case 4:
+        return namespace_e0af649dc8acbafc::main();
+    }
+}
+
+// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Params 0, eflags: 0x0
+// Checksum 0x0, Offset: 0x3de
+// Size: 0xc2
+function precache() {
+    agent_type = "actor_jup_civilian_cp_male";
+    if (!isdefined(level.agent_definition)) {
+        level.agent_definition = [];
+    }
+    if (!isdefined(level.agent_definition[agent_type])) {
+        level.agent_definition[agent_type] = [];
+        level.agent_definition[agent_type]["team"] = "neutral";
+        level.agent_definition[agent_type]["setup_func"] = &main;
+        level.agent_definition[agent_type]["setup_model_func"] = &setup_model;
+        namespace_e0af609dc8acb230::function_8168fbf6282d398b();
+        namespace_e0af639dc8acb8c9::function_8168fbf6282d398b();
+        namespace_e0af629dc8acb696::function_8168fbf6282d398b();
+        namespace_e0af659dc8acbd2f::function_8168fbf6282d398b();
+        namespace_e0af649dc8acbafc::function_8168fbf6282d398b();
+    }
+    scripts\cp_mp\agents\agent_init::agent_init();
+    scripts\aitypes\bt_util::init();
+    scripts\aitypes\assets::civilian();
+}
+

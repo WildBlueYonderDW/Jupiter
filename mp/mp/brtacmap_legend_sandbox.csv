@@ -1,0 +1,10 @@
+legend,player,icon_minimap_player,,MP_BR_INGAME/PLAYER,,@hash_0,,,,0
+legend,playerPing,ui_mp_br_mapmenu_ping_navigation_squadleader,,MP_BR_INGAME/MAP_KEY_PLAYER_PING,,@hash_0,,,,0
+top,contracts,,,,1,@hash_0,,,,0
+middle,armoryKiosk,ui_mp_br_mapmenu_legend_poi_shop,,MP_BR_INGAME/ARMORY_KIOSK,,@hash_0,,,,0
+middle,jugg,ui_mp_br_mapmenu_legend_juggernaut_player,,MP_BR_INGAME/JUGG,,@hash_0,,,,0
+bottom,koth,ui_mp_br_mapmenu_icon_poi_sb_koh,,MP_BR_INGAME/ATTRACT_KOTH_NAME,,@hash_0,,ui_mp_br_mapmenu_distance_icon_poi_sb,MP_BR_INGAME/ATTRACTIONS,0
+bottom,raceHeli,ui_mp_br_mapmenu_icon_poi_sb_race_helo,,MP_BR_INGAME/ATTRACT_RT_HELI_NAME,,@hash_0,,,,0
+bottom,raceParachute,ui_mp_br_mapmenu_icon_poi_sb_race_parachute,,MP_BR_INGAME/ATTRACT_RT_PARACHUTE_NAME,,@hash_0,,,,0
+bottom,raceVehicle,ui_mp_br_mapmenu_icon_poi_sb_race_vehicle,,MP_BR_INGAME/ATTRACT_RT_NAME,,@hash_0,,,,0
+bottom,train,ui_mp_br_mapmenu_legend_vehicle_train,,VEHICLES/TRAIN,,@hash_ed4a71e34e488e86,,,,0

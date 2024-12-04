@@ -1,8 +1,8 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
 #namespace namespace_4ef95c8017583719;
 
@@ -11,7 +11,7 @@
 // Checksum 0x0, Offset: 0x6b06
 // Size: 0x17
 function main() {
-    function_924e96057d3d3cf6();
+    ai_anims();
     player_anims();
     init_anim_script_model();
 }
@@ -20,7 +20,7 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b25
 // Size: 0x3689
-function function_924e96057d3d3cf6() {
+function ai_anims() {
     level.scr_anim["generic"]["dup_est_search_cabinet_terry_death"] = generic_human%dup_est_search_cabinet_terry_death;
     level.scr_anim["generic"]["dup_est_search_desk_terry_death_back"] = generic_human%dup_est_search_desk_terry_death_back;
     level.scr_anim["generic"]["lon_intersect_civ06_idle"][0] = generic_human%lon_intersect_civ06_idle;

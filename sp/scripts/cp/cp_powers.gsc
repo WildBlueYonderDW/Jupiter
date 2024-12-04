@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\powershud.gsc;
-#using scripts\cp\equipment\cp_trophy_system.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp\cp_loadout.gsc;
 #using script_afb7e332aee4bf2;
-#using scripts\cp\cp_powers.gsc;
-#using scripts\cp\powers\cp_tactical_cover.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_loadout;
+#using scripts\cp\cp_powers;
+#using scripts\cp\equipment\cp_trophy_system;
+#using scripts\cp\powers\cp_tactical_cover;
+#using scripts\cp\utility;
+#using scripts\cp_mp\powershud;
+#using scripts\engine\utility;
 
 #namespace namespace_4a6f3a8a613dc141;
 
@@ -475,7 +475,7 @@ function cleanpowercooldowns() {
         cooldowns = self.powercooldowns;
         foreach (struct in cooldowns) {
             if (power_cooldownremaining(struct) == 0) {
-                self.powercooldowns[var_b19bd2030265157a] = undefined;
+                self.powercooldowns[pwr] = undefined;
             }
         }
     }
@@ -501,7 +501,7 @@ function clearpowers() {
     if (isdefined(self.powers)) {
         powers = self.powers;
         foreach (struct in powers) {
-            removepower(var_b19bd2030265157a);
+            removepower(pwr);
         }
         self.powers = [];
     }
@@ -1053,13 +1053,13 @@ function power_adjustcharges(adjustment, slot, var_d6eae0bf53da1172) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3536
 // Size: 0xac
-function function_ae3298b480d63acd(slot, var_ff342e44b3c617ad) {
+function function_ae3298b480d63acd(slot, num_charges) {
     if (slot == "primary") {
         primary_gren = getpower(slot);
         if (!array_contains_key(level.powers, primary_gren)) {
             primary_gren = "power_frag";
         }
-        thread scripts\cp\cp_powers::givepower(primary_gren, "primary", undefined, undefined, undefined, undefined, 1, var_ff342e44b3c617ad);
+        thread scripts\cp\cp_powers::givepower(primary_gren, "primary", undefined, undefined, undefined, undefined, 1, num_charges);
         return;
     }
     if (slot == "secondary") {
@@ -1067,7 +1067,7 @@ function function_ae3298b480d63acd(slot, var_ff342e44b3c617ad) {
         if (!array_contains_key(level.powers, secondary_gren)) {
             secondary_gren = "power_flash";
         }
-        thread scripts\cp\cp_powers::givepower(secondary_gren, "secondary", undefined, undefined, undefined, undefined, 1, var_ff342e44b3c617ad);
+        thread scripts\cp\cp_powers::givepower(secondary_gren, "secondary", undefined, undefined, undefined, undefined, 1, num_charges);
     }
 }
 
@@ -1405,7 +1405,7 @@ function takecover(power) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x41a2
 // Size: 0x17
-function function_d9ebb18fdf6bb7eb(power) {
+function is_power(power) {
     return isdefined(level.powers[power]);
 }
 

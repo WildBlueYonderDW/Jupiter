@@ -1,23 +1,23 @@
-#using script_41387eecc35b88bf;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using script_24e4405cf93f20ed;
-#using script_4bac13d511590220;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using script_214930d31a3a8321;
-#using scripts\mp\vehicles\damage.gsc;
-#using script_711820027508efbb;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using script_22f1701e151b9d12;
 #using script_1f97a44d1761c919;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\flags.gsc;
+#using script_214930d31a3a8321;
+#using script_22f1701e151b9d12;
+#using script_24e4405cf93f20ed;
+#using script_41387eecc35b88bf;
+#using script_4bac13d511590220;
 #using script_711611a499b96971;
+#using script_711820027508efbb;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\debug;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_3bba63e428117813;
 
@@ -73,7 +73,7 @@ function function_ab13526d8a324001() {
     var_59a5ab1b4256bb79.isimmune = 1;
     scripts\cp_mp\vehicles\vehicle_interact::vehicle_interact_makeunusable(var_59a5ab1b4256bb79);
     function_7769ede06d2efd50();
-    function_f173aab0b2500c46();
+    spawn_orb();
     /#
         level thread function_b6204aec63918c11();
         level thread function_74d84bc498a40435();
@@ -145,7 +145,7 @@ function function_dfd20fa6ae9ecbb1() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf0b
 // Size: 0x7d
-function function_f173aab0b2500c46() {
+function spawn_orb() {
     var_cc3ecaa413b19b2d = getstruct("orb_spawn", "script_noteworthy");
     if (!isdefined(var_cc3ecaa413b19b2d)) {
         assert(0, "<dev string:x1c>");
@@ -302,7 +302,7 @@ function function_21794c4da288d340() {
     update_objective_setbackground(level.var_378ba68d7497e1d8[objectivename], 1);
     objective_addalltomask(level.var_378ba68d7497e1d8[objectivename]);
     objective_playermask_showtoall(level.var_378ba68d7497e1d8[objectivename]);
-    thread function_d9e5426b9b097c35();
+    thread stronghold_triggers();
     flag_wait("fletcher_mall_rescued");
     scripts\mp\objidpoolmanager::returnreservedobjectiveid(level.var_378ba68d7497e1d8["fletcher_meeting_icon"]);
     level.var_fe5c2634af4ea573 = "QUEST_0_RIFT_S2_REGROUP_POST_MALL";
@@ -320,7 +320,7 @@ function function_21794c4da288d340() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16ab
 // Size: 0x11a
-function function_d9e5426b9b097c35() {
+function stronghold_triggers() {
     var_f1067a7d9bfc5956 = 4;
     level.var_b638221ce9565e9c = [];
     var_3be6f15b5b74f3a9 = [(-28257, -20944, 410), (-24904, -18691, 490), (-24509, -21011, 490), (-26125, -22329, 446)];
@@ -485,17 +485,17 @@ function function_3706bfdc9306bb23() {
 // Size: 0xe3
 function function_45db14db9e1d13bd(startangles, endangles) {
     startx = startangles[0];
-    var_688f97559bf04d6a = endangles[0];
+    endx = endangles[0];
     starty = startangles[1];
     endy = endangles[1];
     startz = startangles[2];
     endz = endangles[2];
-    while (abs(var_688f97559bf04d6a - startx) > 180) {
-        if (var_688f97559bf04d6a > startx) {
-            var_688f97559bf04d6a -= 360;
+    while (abs(endx - startx) > 180) {
+        if (endx > startx) {
+            endx -= 360;
             continue;
         }
-        var_688f97559bf04d6a += 360;
+        endx += 360;
     }
     while (abs(endy - starty) > 180) {
         if (endy > starty) {
@@ -511,7 +511,7 @@ function function_45db14db9e1d13bd(startangles, endangles) {
         }
         endz += 360;
     }
-    return (var_688f97559bf04d6a, endy, endz);
+    return (endx, endy, endz);
 }
 
 // Namespace namespace_3bba63e428117813 / namespace_a1cde428d7647a68

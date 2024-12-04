@@ -1,8 +1,8 @@
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_objectives.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_3bcaa2cbaf54abdd;
+#using scripts\common\utility;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_a2e2a31335836e7d;
 
@@ -37,46 +37,46 @@ function register_event(name, start_func, stop_func, init_func) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2be
 // Size: 0x2a
-function run(var_6bbbfbeb60e7e110) {
+function run(event_table) {
     if (getdvarint(@"hash_3d8a77f6192d51dd", 0) != 0) {
         return;
     }
-    level thread start_event_director(var_6bbbfbeb60e7e110);
+    level thread start_event_director(event_table);
 }
 
 // Namespace namespace_a2e2a31335836e7d / scripts\cp\cp_objectives_events
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f0
 // Size: 0x390
-function start_event_director(var_6bbbfbeb60e7e110) {
+function start_event_director(event_table) {
     level endon("game_ended");
     row_index = 1;
-    level.event_table_ref = var_6bbbfbeb60e7e110;
-    var_655fb8b3fb126d72 = int(tablelookup(var_6bbbfbeb60e7e110, 0, "maxid", 1));
-    while (row_index <= var_655fb8b3fb126d72) {
-        event_to_stop = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 5);
-        var_334956874d1fa70e = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 2);
+    level.event_table_ref = event_table;
+    max_row = int(tablelookup(event_table, 0, "maxid", 1));
+    while (row_index <= max_row) {
+        event_to_stop = tablelookup(event_table, 0, row_index + "", 5);
+        var_334956874d1fa70e = tablelookup(event_table, 0, row_index + "", 2);
         objstruct = spawnstruct();
         objstruct.index = int(0);
         objstruct.row_index = row_index;
-        objstruct.ref = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 2);
-        objstruct.activatestring = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 7);
-        objstruct.objicon = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 8);
-        objstruct.label = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 9);
+        objstruct.ref = tablelookup(event_table, 0, row_index + "", 2);
+        objstruct.activatestring = tablelookup(event_table, 0, row_index + "", 7);
+        objstruct.objicon = tablelookup(event_table, 0, row_index + "", 8);
+        objstruct.label = tablelookup(event_table, 0, row_index + "", 9);
         if (isdefined(level.objectivestabledata[objstruct.ref]) && isdefined(level.objectivestabledata[objstruct.ref].questtype)) {
             objstruct.questtype = level.objectivestabledata[objstruct.ref].questtype;
         } else {
             objstruct.questtype = "global";
         }
-        objstruct.timer1 = int(tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 11));
-        objstruct.timer2 = int(tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 12));
-        objstruct.timer3 = int(tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 13));
-        objstruct.showobjprogress = int(tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 14));
-        objstruct.points = int(tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 15));
-        objstruct.time_stamp = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 1);
-        objstruct.associated_table = var_6bbbfbeb60e7e110;
+        objstruct.timer1 = int(tablelookup(event_table, 0, row_index + "", 11));
+        objstruct.timer2 = int(tablelookup(event_table, 0, row_index + "", 12));
+        objstruct.timer3 = int(tablelookup(event_table, 0, row_index + "", 13));
+        objstruct.showobjprogress = int(tablelookup(event_table, 0, row_index + "", 14));
+        objstruct.points = int(tablelookup(event_table, 0, row_index + "", 15));
+        objstruct.time_stamp = tablelookup(event_table, 0, row_index + "", 1);
+        objstruct.associated_table = event_table;
         objstruct.event_to_stop = event_to_stop;
-        repeat = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 3);
+        repeat = tablelookup(event_table, 0, row_index + "", 3);
         objstruct.repeat = repeat;
         assign_event_location(objstruct);
         objstruct.showobjprogressbackup = objstruct.showobjprogress;
@@ -183,7 +183,7 @@ function thread_timestamped_events(time_passed, eventstruct) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e5
 // Size: 0x137
-function try_start_event(event, var_6bbbfbeb60e7e110, row_index) {
+function try_start_event(event, event_table, row_index) {
     if (event == "") {
         return;
     }
@@ -195,8 +195,8 @@ function try_start_event(event, var_6bbbfbeb60e7e110, row_index) {
     if (getdvarint(@"hash_3d8a77f6192d51dd", 0) != 0) {
         return;
     }
-    if (!isdefined(var_6bbbfbeb60e7e110)) {
-        var_6bbbfbeb60e7e110 = level.event_table_ref;
+    if (!isdefined(event_table)) {
+        event_table = level.event_table_ref;
     }
     var_b3da61e297c69198 = level.objectivestabledata[event];
     repeat = var_b3da61e297c69198.repeat;
@@ -209,7 +209,7 @@ function try_start_event(event, var_6bbbfbeb60e7e110, row_index) {
     }
     mark_event_active(event, 1);
     try_run_init_of_event(event);
-    var_ad0353179fefbe5c = tablelookup(var_6bbbfbeb60e7e110, 0, row_index + "", 4);
+    var_ad0353179fefbe5c = tablelookup(event_table, 0, row_index + "", 4);
     if (var_ad0353179fefbe5c != "") {
         level thread check_prerequisites_then_start_event(event, var_ad0353179fefbe5c, repeat);
         return;
@@ -397,9 +397,9 @@ function is_event_active(event) {
     if (!isdefined(event)) {
         return 0;
     }
-    var_351783d44ae6d6e = level.event_director.registered_events[event];
-    if (isdefined(var_351783d44ae6d6e)) {
-        return istrue(var_351783d44ae6d6e.active);
+    potential_event = level.event_director.registered_events[event];
+    if (isdefined(potential_event)) {
+        return istrue(potential_event.active);
     }
     return 0;
 }

@@ -1,31 +1,31 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_mines.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\vehicles\vehicle_interact_cp.gsc;
-#using scripts\cp\vehicles\vehicle_occupancy_cp.gsc;
-#using scripts\cp\vehicles\vehicle_spawn_cp.gsc;
-#using scripts\cp\vehicles\vehicle_compass_cp.gsc;
-#using scripts\cp\vehicles\vehicle_damage_cp.gsc;
-#using script_6e32c3e5e141c690;
-#using script_5ef6975905ae15bf;
 #using script_18ae04893bb2f9ac;
-#using script_7c390291bf40788f;
-#using script_3bdd48aafc976300;
 #using script_228478d4175cb3b9;
 #using script_31e1ae5e1ddce676;
-#using script_66df092e7e148d2f;
-#using scripts\cp\vehicles\damage_cp.gsc;
-#using scripts\cp\vehicles\vehicle_oob_cp.gsc;
 #using script_354c862768cfe202;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using script_3bdd48aafc976300;
+#using script_5ef6975905ae15bf;
+#using script_66df092e7e148d2f;
+#using script_6e32c3e5e141c690;
+#using script_7c390291bf40788f;
+#using scripts\common\utility;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\utility;
+#using scripts\cp\vehicles\damage_cp;
+#using scripts\cp\vehicles\vehicle_compass_cp;
+#using scripts\cp\vehicles\vehicle_damage_cp;
+#using scripts\cp\vehicles\vehicle_interact_cp;
+#using scripts\cp\vehicles\vehicle_occupancy_cp;
+#using scripts\cp\vehicles\vehicle_oob_cp;
+#using scripts\cp\vehicles\vehicle_spawn_cp;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_mines;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
 
-#namespace namespace_e602a4f12c0bfe0f;
+#namespace vehicle_cp;
 
-// Namespace namespace_e602a4f12c0bfe0f / scripts\cp\vehicles\vehicle_cp
+// Namespace vehicle_cp / scripts\cp\vehicles\vehicle_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x309
 // Size: 0x1c8
@@ -54,7 +54,7 @@ function vehicle_cp_init() {
     scripts\engine\utility::registersharedfunc("veh9_techo_rebel_armor", "armorDeathFeedback", &namespace_3d3d5211c3029f82::function_974320dd370c5572);
 }
 
-// Namespace namespace_e602a4f12c0bfe0f / scripts\cp\vehicles\vehicle_cp
+// Namespace vehicle_cp / scripts\cp\vehicles\vehicle_cp
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d9
 // Size: 0x140
@@ -82,11 +82,11 @@ function spawn_script_model_at_pos(posindex, tag, animname, xanim, model) {
     return spawned;
 }
 
-// Namespace namespace_e602a4f12c0bfe0f / scripts\cp\vehicles\vehicle_cp
+// Namespace vehicle_cp / scripts\cp\vehicles\vehicle_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x622
 // Size: 0x10e
-function spawn_vehicle_accessory(model, var_fef22745912bc53f, origin_offset, angles_offset) {
+function spawn_vehicle_accessory(model, on_tag, origin_offset, angles_offset) {
     var_c6296a5ec3b3611e = spawn("script_model", self.origin);
     var_c6296a5ec3b3611e setmodel(model);
     var_c6296a5ec3b3611e notsolid();
@@ -98,8 +98,8 @@ function spawn_vehicle_accessory(model, var_fef22745912bc53f, origin_offset, ang
         angles_offset = (0, 0, 0);
     }
     tag = "tag_origin";
-    if (isdefined(var_fef22745912bc53f)) {
-        tag = var_fef22745912bc53f;
+    if (isdefined(on_tag)) {
+        tag = on_tag;
     }
     tagorigin = self gettagorigin(tag);
     if (isdefined(tagorigin)) {
@@ -115,7 +115,7 @@ function spawn_vehicle_accessory(model, var_fef22745912bc53f, origin_offset, ang
     return var_c6296a5ec3b3611e;
 }
 
-// Namespace namespace_e602a4f12c0bfe0f / scripts\cp\vehicles\vehicle_cp
+// Namespace vehicle_cp / scripts\cp\vehicles\vehicle_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x739
 // Size: 0x14b
@@ -143,7 +143,7 @@ function vehicle_cp_create(vehicle, spawndata) {
     scripts\cp\cp_outofbounds::registerentforoob(vehicle, vehicle scripts\cp_mp\vehicles\vehicle::function_d93ec4635290febd());
 }
 
-// Namespace namespace_e602a4f12c0bfe0f / scripts\cp\vehicles\vehicle_cp
+// Namespace vehicle_cp / scripts\cp\vehicles\vehicle_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x88c
 // Size: 0x13
@@ -151,7 +151,7 @@ function vehicle_cp_createlate(vehicle, spawndata) {
     
 }
 
-// Namespace namespace_e602a4f12c0bfe0f / scripts\cp\vehicles\vehicle_cp
+// Namespace vehicle_cp / scripts\cp\vehicles\vehicle_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a7
 // Size: 0x15
@@ -159,7 +159,7 @@ function vehicle_cp_deletenextframe(vehicle) {
     scripts\cp\cp_outofbounds::clearoob(vehicle, 1);
 }
 
-// Namespace namespace_e602a4f12c0bfe0f / scripts\cp\vehicles\vehicle_cp
+// Namespace vehicle_cp / scripts\cp\vehicles\vehicle_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c4
 // Size: 0xb

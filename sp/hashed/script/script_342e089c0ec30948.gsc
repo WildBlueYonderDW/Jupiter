@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace decoy_canals;
 
@@ -148,7 +148,7 @@ function function_b0c960a09a66707f() {
     if (isdefined(self.var_27412df95be7991b)) {
         foreach (decoy in self.var_27412df95be7991b) {
             if (decoy function_dc8efc008c7e5f66()) {
-                decoy thread function_855837fe7f239e04();
+                decoy thread decoy_detonate();
             }
         }
     }
@@ -158,17 +158,17 @@ function function_b0c960a09a66707f() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a1
 // Size: 0x20
-function function_855837fe7f239e04() {
+function decoy_detonate() {
     self endon("death");
     wait 0.1;
-    thread function_4fe9d8db53148399(self.owner);
+    thread decoy_explode(self.owner);
 }
 
 // Namespace decoy_canals / namespace_3049e458639813e8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c9
 // Size: 0x55
-function function_4fe9d8db53148399(attacker) {
+function decoy_explode(attacker) {
     self setentityowner(attacker);
     self setscriptablepartstate("weaponFire", "arFire", 0);
     self setscriptablepartstate("weaponSounds", "arFire", 0);
@@ -209,10 +209,10 @@ function function_e8998826905426fd() {
     owner = self.owner;
     self waittill("detonateExplosive", attacker);
     if (isdefined(attacker)) {
-        thread function_4fe9d8db53148399(attacker);
+        thread decoy_explode(attacker);
         return;
     }
-    thread function_4fe9d8db53148399(owner);
+    thread decoy_explode(owner);
 }
 
 // Namespace decoy_canals / namespace_3049e458639813e8

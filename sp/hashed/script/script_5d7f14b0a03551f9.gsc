@@ -1,13 +1,13 @@
-#using scripts\code\ai.gsc;
-#using script_5c36b3719581f7cc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\ai.gsc;
-#using script_69e728578d1cf117;
-#using script_43da6863c9e2716a;
 #using script_2d58b371506c4359;
-#using scripts\aitypes\assets.gsc;
+#using script_43da6863c9e2716a;
+#using script_5c36b3719581f7cc;
+#using script_69e728578d1cf117;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\code\ai;
+#using scripts\common\ai;
 
 #namespace namespace_77a8e0f6b3fdd228;
 

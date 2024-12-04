@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_e80538ef14d00e1;
 #using script_3cb1beed718e7650;
-#using scripts\common\ai.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\anim\utility_common.gsc;
 #using script_4bac13d511590220;
-#using scripts\aitypes\stealth.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\stealth\manager.gsc;
-#using scripts\stealth\event.gsc;
-#using scripts\cp\astar.gsc;
+#using script_e80538ef14d00e1;
+#using scripts\aitypes\stealth;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\common\ai;
+#using scripts\common\devgui;
+#using scripts\common\vehicle_aianim;
+#using scripts\cp\astar;
+#using scripts\cp\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\stealth\event;
+#using scripts\stealth\manager;
+#using scripts\vehicle\vehicle_common;
 
 #namespace namespace_9189537c98b32e20;
 
@@ -25,7 +25,7 @@
 function function_ddc83442e3d668a2() {
     /#
         setdvarifuninitialized(@"hash_323c5dc40c71123b", 0);
-        setdvarifuninitialized(@"hash_f9d938304e5a0a21", 0);
+        setdvarifuninitialized(@"astar_debug", 0);
         scripts\common\devgui::function_6e7290c8ee4f558b("<dev string:x1c>");
         scripts\common\devgui::function_df648211d66cd3dd("<dev string:x44>", "<dev string:x56>");
         scripts\common\devgui::function_df648211d66cd3dd("<dev string:x67>", "<dev string:x73>");
@@ -51,7 +51,7 @@ function private function_6dab410e5ceb1071() {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d2
 // Size: 0x1cb
-function function_ec7209ab67c18011(veh_spawner, var_5b8046e7d2f07129, patrol_start, var_aca8515371f9cc5e, var_4572269ac9c3d9a4, var_8dea32f301dcccc2) {
+function function_ec7209ab67c18011(veh_spawner, AI_spawners, patrol_start, var_aca8515371f9cc5e, var_4572269ac9c3d9a4, var_8dea32f301dcccc2) {
     flag_wait("level_ready_for_script");
     boat = self;
     function_c72ff775cd61b11(@"hash_42a7dc5bbe9d261e", 1, 0);
@@ -81,9 +81,9 @@ function function_ec7209ab67c18011(veh_spawner, var_5b8046e7d2f07129, patrol_sta
     boat.var_721298f6d1910c00 = 1;
     boat notify("p2p_initialized");
     veh_spawner.var_b4f37280e21bb388 = 1;
-    boat function_8cc8823e44e405c2(var_5b8046e7d2f07129, var_aca8515371f9cc5e);
+    boat function_8cc8823e44e405c2(AI_spawners, var_aca8515371f9cc5e);
     boat function_e0f6bd3e9722d395(var_4572269ac9c3d9a4, var_8dea32f301dcccc2);
-    boat function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(boat.var_4d41a3945ec12e4b));
+    boat function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(boat.patrol_speed));
     boat function_2b986086827eceac();
 }
 
@@ -91,9 +91,9 @@ function function_ec7209ab67c18011(veh_spawner, var_5b8046e7d2f07129, patrol_sta
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a5
 // Size: 0x59
-function function_e0f6bd3e9722d395(var_4d41a3945ec12e4b, var_5b16139e921e8371) {
-    self.var_4d41a3945ec12e4b = default_to(var_4d41a3945ec12e4b, level.var_1e27a0af989a26de.var_f626abb832f28059);
-    self.var_5b16139e921e8371 = default_to(var_5b16139e921e8371, level.var_1e27a0af989a26de.var_4152c54f5313e7db);
+function function_e0f6bd3e9722d395(patrol_speed, combat_speed) {
+    self.patrol_speed = default_to(patrol_speed, level.var_1e27a0af989a26de.var_f626abb832f28059);
+    self.combat_speed = default_to(combat_speed, level.var_1e27a0af989a26de.var_4152c54f5313e7db);
 }
 
 // Namespace namespace_9189537c98b32e20 / namespace_43b3b385872f43b5
@@ -132,9 +132,9 @@ function private function_c2038b032f620193() {
 // Size: 0x93
 function private function_f2fe2883cf45f93f() {
     for (i = 0; i < self.var_9b068f7f14971da.var_7695abc527a21c02.size; i++) {
-        var_57accdc40b2f50e = namespace_ba155a12c323dc5a::function_3b0860e6185e09a1(self.var_9b068f7f14971da.var_7695abc527a21c02[i]);
-        is_looping = var_57accdc40b2f50e[1];
-        points = var_57accdc40b2f50e[0];
+        __a0 = namespace_ba155a12c323dc5a::function_3b0860e6185e09a1(self.var_9b068f7f14971da.var_7695abc527a21c02[i]);
+        is_looping = __a0[1];
+        points = __a0[0];
         if (!istrue(is_looping)) {
             self.var_9b068f7f14971da.var_9c0f0cc54cc29d9d[i] = points[points.size - 1];
         }
@@ -179,9 +179,9 @@ function function_2cc3ca6a47e4797e() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcf5
 // Size: 0x1af
-function function_8cc8823e44e405c2(var_5b8046e7d2f07129, var_aca8515371f9cc5e) {
+function function_8cc8823e44e405c2(AI_spawners, var_aca8515371f9cc5e) {
     vehicle = self;
-    vehicle.var_b42547b593cc4de7 = var_5b8046e7d2f07129;
+    vehicle.var_b42547b593cc4de7 = AI_spawners;
     riders = [];
     identifier = vehicle.targetname;
     vehicle_data = undefined;
@@ -308,7 +308,7 @@ function function_4679fedb96354bdc() {
     self function_77320e794d35465a("p2p", "goalPoint", self.var_6bc03688e829aec1.origin);
     duration = namespace_9246f10206f50768::get_duration_between_points(self.origin, self.var_6bc03688e829aec1.origin, mph_to_ips(10));
     waittill_any_timeout_1(duration, "near_goal");
-    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.var_4d41a3945ec12e4b));
+    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.patrol_speed));
     self function_77320e794d35465a("p2p", "goalPoint", self.var_6bc03688e829aec1.origin);
     self function_77320e794d35465a("path", "radiantId", self.var_bf7bf8c7f826a84e);
     self function_77320e794d35465a("path", "radiusToStep", 275);
@@ -739,7 +739,7 @@ function function_e870a3cd2688d180() {
     }
     childthread function_38ae9bf031879aa3(closest_point);
     self function_77320e794d35465a("p2p", "goalPoint", closest_point.origin);
-    duration = namespace_9246f10206f50768::get_duration_between_points(self.origin, closest_point.origin, mph_to_ips(self.var_4d41a3945ec12e4b));
+    duration = namespace_9246f10206f50768::get_duration_between_points(self.origin, closest_point.origin, mph_to_ips(self.patrol_speed));
     waittill_any_timeout_1(duration, "near_goal");
 }
 
@@ -851,7 +851,7 @@ function function_fc360dcb38689a0f(last_position) {
     if (!isdefined(startnode)) {
         assertmsg("Dungeon Boat - Some how couldn't find a start node; Info: " + self.var_5defc868d3cf1117 + ", self.node_grid_starts.size: " + self.var_7695abc527a21c02.size);
     }
-    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.var_4d41a3945ec12e4b));
+    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.patrol_speed));
     function_2cc3ca6a47e4797e();
     thread boat_gotoSearchPathP2P(startnode);
 }
@@ -873,12 +873,12 @@ function boat_gotoSearchPathP2P(startnode) {
     self.var_c4ebc27445338878 = [];
     self.var_c4ebc27445338878 = array_add(self.var_c4ebc27445338878, startnode);
     nextnode = function_f0144da019d3204e(self.currentnode.target);
-    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.var_4d41a3945ec12e4b));
+    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.patrol_speed));
     while (true) {
         waitframe();
         function_23bfa180991fa189();
         self function_77320e794d35465a("p2p", "goalPoint", nextnode.origin);
-        duration = namespace_9246f10206f50768::get_duration_between_points(self.origin, nextnode.origin, mph_to_ips(self.var_4d41a3945ec12e4b));
+        duration = namespace_9246f10206f50768::get_duration_between_points(self.origin, nextnode.origin, mph_to_ips(self.patrol_speed));
         waittill_any_timeout_1(duration, "near_goal");
         if (isdefined(nextnode.target)) {
             nextnode = function_f0144da019d3204e(nextnode.target);
@@ -913,20 +913,20 @@ function boat_playerProximityWatcher() {
     self notify("boat_playerProximityWatcher");
     self endon("boat_playerProximityWatcher");
     self endon("kill_hunt_threads");
-    var_f18f9c708f7fd52b = self.driver;
-    while (isalive(var_f18f9c708f7fd52b)) {
+    main_rider = self.driver;
+    while (isalive(main_rider)) {
         dist_sq = distancesquared(self.origin, level.player.origin);
-        if (var_f18f9c708f7fd52b [[ var_f18f9c708f7fd52b.fnisinstealthcombat ]]()) {
-            var_f18f9c708f7fd52b.var_1cc2783745745c10 = undefined;
+        if (main_rider [[ main_rider.fnisinstealthcombat ]]()) {
+            main_rider.var_1cc2783745745c10 = undefined;
             if (dist_sq < 110889) {
-                var_f18f9c708f7fd52b getenemyinfo(level.player);
+                main_rider getenemyinfo(level.player);
             }
-        } else if (!var_f18f9c708f7fd52b.var_e31ee88092e41cc8 || !isdefined(var_f18f9c708f7fd52b.var_1cc2783745745c10) || distancesquared(var_f18f9c708f7fd52b.var_1cc2783745745c10, level.player.origin) > 40000) {
+        } else if (!main_rider.var_e31ee88092e41cc8 || !isdefined(main_rider.var_1cc2783745745c10) || distancesquared(main_rider.var_1cc2783745745c10, level.player.origin) > 40000) {
             if (dist_sq < 90000) {
                 if (function_4675d9e479f8f8d9(level.player) != "back") {
-                    var_f18f9c708f7fd52b aieventlistenerevent("cover_blown", level.player, level.player.origin);
+                    main_rider aieventlistenerevent("cover_blown", level.player, level.player.origin);
                     scripts\stealth\event::event_broadcast_generic("cover_blown", level.player.origin, 1500);
-                    var_f18f9c708f7fd52b.var_1cc2783745745c10 = level.player.origin;
+                    main_rider.var_1cc2783745745c10 = level.player.origin;
                 }
             }
         }
@@ -1032,7 +1032,7 @@ function function_270763f0236fea20(startnode, var_bee4565a93db8564) {
     function_2cc3ca6a47e4797e();
     self.node_grid = self.var_9b068f7f14971da.node_grid;
     self.var_7695abc527a21c02 = self.var_9b068f7f14971da.var_7695abc527a21c02;
-    move_speed = ter_op(istrue(var_bee4565a93db8564), mph_to_ips(self.var_5b16139e921e8371), mph_to_ips(self.var_4d41a3945ec12e4b));
+    move_speed = ter_op(istrue(var_bee4565a93db8564), mph_to_ips(self.combat_speed), mph_to_ips(self.patrol_speed));
     self function_77320e794d35465a("p2p", "manualSpeed", move_speed);
     if (istrue(var_bee4565a93db8564)) {
         function_d9e3bc55827b77e6(1, startnode, move_speed);
@@ -1063,7 +1063,7 @@ function function_d9e3bc55827b77e6(var_bee4565a93db8564, startnode, move_speed) 
         path_data = scripts\cp\astar::function_845fd743c0fadc39(self.node_grid, start_pos, end_pos, exclude, dyn_node, level.var_5590a4152d5e59db);
     }
     /#
-        if (getdvarint(@"hash_f9d938304e5a0a21", 0)) {
+        if (getdvarint(@"astar_debug", 0)) {
             sphere(end_pos, 50, (1, 0, 1), 0, 333);
         }
     #/
@@ -1072,53 +1072,53 @@ function function_d9e3bc55827b77e6(var_bee4565a93db8564, startnode, move_speed) 
         return;
     }
     function_23bfa180991fa189();
-    var_ff65d6c608a23a56 = path_data.path;
+    full_path = path_data.path;
     start_node = path_data.start_node;
     end_node = path_data.end_node;
-    var_f69926f2a0d4d7ff = [];
-    var_ab2d4e189bb096f8 = [];
-    foreach (index, item in var_ff65d6c608a23a56) {
+    boat_path = [];
+    boat_duration = [];
+    foreach (index, item in full_path) {
         item.claimed = 1;
-        var_f69926f2a0d4d7ff[var_f69926f2a0d4d7ff.size] = item.origin;
-        if (isdefined(var_ff65d6c608a23a56[index + 1])) {
-            var_ab2d4e189bb096f8[var_ab2d4e189bb096f8.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, var_ff65d6c608a23a56[index + 1].origin, move_speed);
+        boat_path[boat_path.size] = item.origin;
+        if (isdefined(full_path[index + 1])) {
+            boat_duration[boat_duration.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, full_path[index + 1].origin, move_speed);
         } else {
-            var_ab2d4e189bb096f8[var_ab2d4e189bb096f8.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, var_ff65d6c608a23a56[index - 1].origin, move_speed);
+            boat_duration[boat_duration.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, full_path[index - 1].origin, move_speed);
         }
         /#
-            if (getdvarint(@"hash_f9d938304e5a0a21", 0)) {
-                var_a54d8b03b3f42b54 = (0, 1, 0);
-                sphere(item.origin, 64, var_a54d8b03b3f42b54, 0, 1000);
-                print3d(item.origin, "<dev string:x120>", var_a54d8b03b3f42b54, 1, 1, 1000, 1);
+            if (getdvarint(@"astar_debug", 0)) {
+                clr = (0, 1, 0);
+                sphere(item.origin, 64, clr, 0, 1000);
+                print3d(item.origin, "<dev string:x120>", clr, 1, 1, 1000, 1);
             }
         #/
     }
     self.currentnode = startnode;
     self.attachedpath = startnode;
     self function_77320e794d35465a("p2p", "manualSpeed", move_speed);
-    for (i = 0; i < var_ff65d6c608a23a56.size; i++) {
-        if (distancesquared(var_ff65d6c608a23a56[i].origin, self.origin) < squared(64)) {
+    for (i = 0; i < full_path.size; i++) {
+        if (distancesquared(full_path[i].origin, self.origin) < squared(64)) {
             continue;
         }
         /#
             if (getdvarint(@"hash_323c5dc40c71123b")) {
-                sphere(var_ff65d6c608a23a56[i].origin, 50, (1, 0, 0), 0, 333);
+                sphere(full_path[i].origin, 50, (1, 0, 0), 0, 333);
             }
         #/
-        self function_77320e794d35465a("p2p", "goalPoint", var_ff65d6c608a23a56[i].origin);
-        duration = var_ab2d4e189bb096f8[i];
+        self function_77320e794d35465a("p2p", "goalPoint", full_path[i].origin);
+        duration = boat_duration[i];
         /#
             if (getdvarint(@"hash_323c5dc40c71123b")) {
-                print3d(var_ff65d6c608a23a56[i].origin, "<dev string:x139>" + duration, (1, 0, 0), 1, 4, 100, 1);
+                print3d(full_path[i].origin, "<dev string:x139>" + duration, (1, 0, 0), 1, 4, 100, 1);
             }
         #/
         waittill_any_timeout_1(duration, "near_goal");
         /#
             if (getdvarint(@"hash_323c5dc40c71123b")) {
-                sphere(var_ff65d6c608a23a56[i].origin, 50, (0, 1, 0), 0, 333);
+                sphere(full_path[i].origin, 50, (0, 1, 0), 0, 333);
             }
         #/
-        if (var_ff65d6c608a23a56[i] == end_node) {
+        if (full_path[i] == end_node) {
             if (!istrue(var_bee4565a93db8564)) {
                 wait 1;
             }
@@ -1127,7 +1127,7 @@ function function_d9e3bc55827b77e6(var_bee4565a93db8564, startnode, move_speed) 
                     iprintln("<dev string:x146>");
                 }
             #/
-            foreach (index, item in var_ff65d6c608a23a56) {
+            foreach (index, item in full_path) {
                 item.claimed = undefined;
             }
             if (istrue(var_bee4565a93db8564)) {
@@ -1167,7 +1167,7 @@ function function_8675ad097bb3809d(startnode) {
     function_2cc3ca6a47e4797e();
     self.node_grid = self.var_9b068f7f14971da.node_grid;
     self.var_7695abc527a21c02 = self.var_9b068f7f14971da.var_7695abc527a21c02;
-    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.var_5b16139e921e8371));
+    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.combat_speed));
     function_23bfa180991fa189();
     start_pos = getclosest(self.origin, self.node_grid).origin;
     end_pos = getclosest(startnode, self.node_grid).origin;
@@ -1179,39 +1179,39 @@ function function_8675ad097bb3809d(startnode) {
         waitframe();
         return;
     }
-    var_ff65d6c608a23a56 = path_data.path;
+    full_path = path_data.path;
     start_node = path_data.start_node;
     end_node = path_data.end_node;
-    var_f69926f2a0d4d7ff = [];
-    var_ab2d4e189bb096f8 = [];
-    foreach (index, item in var_ff65d6c608a23a56) {
+    boat_path = [];
+    boat_duration = [];
+    foreach (index, item in full_path) {
         item.claimed = 1;
-        var_f69926f2a0d4d7ff[var_f69926f2a0d4d7ff.size] = item.origin;
-        if (isdefined(var_ff65d6c608a23a56[index + 1])) {
-            var_ab2d4e189bb096f8[var_ab2d4e189bb096f8.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, var_ff65d6c608a23a56[index + 1].origin, mph_to_ips(self.var_5b16139e921e8371));
+        boat_path[boat_path.size] = item.origin;
+        if (isdefined(full_path[index + 1])) {
+            boat_duration[boat_duration.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, full_path[index + 1].origin, mph_to_ips(self.combat_speed));
         } else {
-            var_ab2d4e189bb096f8[var_ab2d4e189bb096f8.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, var_ff65d6c608a23a56[index - 1].origin, mph_to_ips(self.var_5b16139e921e8371));
+            boat_duration[boat_duration.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, full_path[index - 1].origin, mph_to_ips(self.combat_speed));
         }
         /#
-            if (getdvarint(@"hash_f9d938304e5a0a21", 0)) {
-                var_a54d8b03b3f42b54 = (0, 1, 0);
-                sphere(item.origin, 64, var_a54d8b03b3f42b54, 0, 1000);
-                print3d(item.origin, "<dev string:x166>", var_a54d8b03b3f42b54, 1, 1, 1000, 1);
+            if (getdvarint(@"astar_debug", 0)) {
+                clr = (0, 1, 0);
+                sphere(item.origin, 64, clr, 0, 1000);
+                print3d(item.origin, "<dev string:x166>", clr, 1, 1, 1000, 1);
             }
         #/
     }
     self.currentnode = startnode;
     self.attachedpath = startnode;
-    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.var_5b16139e921e8371));
-    for (i = 0; i < var_ff65d6c608a23a56.size; i++) {
-        if (distancesquared(var_ff65d6c608a23a56[i].origin, self.origin) < squared(64)) {
+    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.combat_speed));
+    for (i = 0; i < full_path.size; i++) {
+        if (distancesquared(full_path[i].origin, self.origin) < squared(64)) {
             continue;
         }
-        self function_77320e794d35465a("p2p", "goalPoint", var_ff65d6c608a23a56[i].origin);
-        duration = var_ab2d4e189bb096f8[i];
+        self function_77320e794d35465a("p2p", "goalPoint", full_path[i].origin);
+        duration = boat_duration[i];
         waittill_any_timeout_1(duration, "near_goal");
-        if (var_ff65d6c608a23a56[i] == end_node) {
-            foreach (index, item in var_ff65d6c608a23a56) {
+        if (full_path[i] == end_node) {
+            foreach (index, item in full_path) {
                 item.claimed = undefined;
             }
             self.node_grid = self.var_9b068f7f14971da.node_grid;
@@ -1240,7 +1240,7 @@ function function_38ae9bf031879aa3(startnode) {
     function_2cc3ca6a47e4797e();
     self.node_grid = self.var_9b068f7f14971da.node_grid;
     self.var_7695abc527a21c02 = self.var_9b068f7f14971da.var_7695abc527a21c02;
-    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.var_4d41a3945ec12e4b));
+    self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.patrol_speed));
     while (true) {
         start_pos = self.origin;
         end_pos = getclosest(startnode.origin, self.node_grid).origin;
@@ -1253,45 +1253,45 @@ function function_38ae9bf031879aa3(startnode) {
             continue;
         }
         function_23bfa180991fa189();
-        var_ff65d6c608a23a56 = path_data.path;
+        full_path = path_data.path;
         start_node = path_data.start_node;
         end_node = path_data.end_node;
-        var_f69926f2a0d4d7ff = [];
-        var_ab2d4e189bb096f8 = [];
-        foreach (index, item in var_ff65d6c608a23a56) {
+        boat_path = [];
+        boat_duration = [];
+        foreach (index, item in full_path) {
             item.claimed = 1;
-            var_f69926f2a0d4d7ff[var_f69926f2a0d4d7ff.size] = item.origin;
-            if (isdefined(var_ff65d6c608a23a56[index + 1])) {
-                var_ab2d4e189bb096f8[var_ab2d4e189bb096f8.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, var_ff65d6c608a23a56[index + 1].origin, mph_to_ips(self.var_4d41a3945ec12e4b));
+            boat_path[boat_path.size] = item.origin;
+            if (isdefined(full_path[index + 1])) {
+                boat_duration[boat_duration.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, full_path[index + 1].origin, mph_to_ips(self.patrol_speed));
             } else {
-                var_ab2d4e189bb096f8[var_ab2d4e189bb096f8.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, var_ff65d6c608a23a56[index - 1].origin, mph_to_ips(self.var_4d41a3945ec12e4b));
+                boat_duration[boat_duration.size] = namespace_9246f10206f50768::get_duration_between_points(item.origin, full_path[index - 1].origin, mph_to_ips(self.patrol_speed));
             }
             /#
-                if (getdvarint(@"hash_f9d938304e5a0a21", 0)) {
-                    var_a54d8b03b3f42b54 = (0, 1, 0);
-                    sphere(item.origin, 64, var_a54d8b03b3f42b54, 0, 1000);
-                    print3d(item.origin, "<dev string:x120>", var_a54d8b03b3f42b54, 1, 1, 1000, 1);
+                if (getdvarint(@"astar_debug", 0)) {
+                    clr = (0, 1, 0);
+                    sphere(item.origin, 64, clr, 0, 1000);
+                    print3d(item.origin, "<dev string:x120>", clr, 1, 1, 1000, 1);
                 }
             #/
         }
         self.currentnode = startnode;
         self.attachedpath = startnode;
-        self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.var_4d41a3945ec12e4b));
-        for (i = 0; i < var_ff65d6c608a23a56.size; i++) {
-            if (distancesquared(var_ff65d6c608a23a56[i].origin, self.origin) < squared(64)) {
+        self function_77320e794d35465a("p2p", "manualSpeed", mph_to_ips(self.patrol_speed));
+        for (i = 0; i < full_path.size; i++) {
+            if (distancesquared(full_path[i].origin, self.origin) < squared(64)) {
                 continue;
             }
-            self function_77320e794d35465a("p2p", "goalPoint", var_ff65d6c608a23a56[i].origin);
-            duration = var_ab2d4e189bb096f8[i];
+            self function_77320e794d35465a("p2p", "goalPoint", full_path[i].origin);
+            duration = boat_duration[i];
             waittill_any_timeout_1(duration, "near_goal");
-            if (var_ff65d6c608a23a56[i] == end_node) {
+            if (full_path[i] == end_node) {
                 wait 1;
                 /#
                     if (getdvarint(@"hash_323c5dc40c71123b")) {
                         iprintln("<dev string:x146>");
                     }
                 #/
-                foreach (index, item in var_ff65d6c608a23a56) {
+                foreach (index, item in full_path) {
                     item.claimed = undefined;
                 }
                 self.node_grid = self.var_9b068f7f14971da.node_grid;
@@ -1329,10 +1329,10 @@ function private function_6a7750a534755a28() {
         }
         steps = 3 * scale * 20;
         alpha = 1;
-        var_85bca1424e521f21 = 1 / steps;
+        alpha_lerp = 1 / steps;
         for (i = 0; i < steps; i++) {
             wait 0.05;
-            alpha -= var_85bca1424e521f21;
+            alpha -= alpha_lerp;
             alpha = min(alpha, 1);
             print3d(self.origin + offset, msg, color, alpha, scale);
             offset += (0, 0, 10);
@@ -1372,14 +1372,14 @@ function private function_6a7750a534755a28() {
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x3ad1
     // Size: 0x16a
-    function function_c0735cff4544083b(startstruct, var_eddb76d153f70e86) {
+    function get_points(startstruct, full_array) {
         structs = [];
         structs[structs.size] = startstruct;
         structs[structs.size] = getstruct(startstruct.target, "<dev string:x178>");
         if (!isdefined(structs[structs.size])) {
-            if (isdefined(var_eddb76d153f70e86)) {
+            if (isdefined(full_array)) {
                 var_4385d19aded0c280 = [];
-                foreach (point in var_eddb76d153f70e86) {
+                foreach (point in full_array) {
                     var_4385d19aded0c280 = array_add(var_4385d19aded0c280, point.origin);
                 }
                 return var_4385d19aded0c280;

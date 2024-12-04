@@ -1,53 +1,53 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\equipment\concussion_grenade.gsc;
 #using script_2669878cf5a1b6bc;
-#using script_7c40fa80892a721;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\mp\flags.gsc;
-#using script_f820c96419fe887;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\supers\super_deadsilence.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using script_5bab271917698dc4;
-#using scripts\mp\class.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_armor.gsc;
 #using script_294dda4a4b00ffe3;
 #using script_4b87f2871b6b025c;
-#using scripts\mp\gametypes\br_gametype_zxp.gsc;
-#using scripts\mp\deathicons.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using script_5bab271917698dc4;
 #using script_7ab5b649fa408138;
+#using script_7c40fa80892a721;
+#using script_f820c96419fe887;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\deathicons;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\concussion_grenade;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_armor;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametype_zxp;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\laststand;
+#using scripts\mp\playerlogic;
+#using scripts\mp\supers\super_deadsilence;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_7d6064c7725fad70;
 
@@ -668,9 +668,9 @@ function playerzombierespawn(var_fd96c3c1ec7b2988, var_babf157dec7ecb90) {
         spawnangles = var_57ac5dc40b2e5a9[1];
         spawnorigin = var_57ac5dc40b2e5a9[0];
     }
-    var_c00a2c6249962d83 = playerzombieprestream(spawnorigin, spawnangles);
-    streamorigin = var_c00a2c6249962d83[1];
-    spawnorigin = var_c00a2c6249962d83[0];
+    __a10 = playerzombieprestream(spawnorigin, spawnangles);
+    streamorigin = __a10[1];
+    spawnorigin = __a10[0];
     namespace_8bfdb6eb5a3df67a::function_334a8fe67e88bbe7();
     wait 1;
     scripts\mp\class::loadout_emptycacheofloadout("gamemode");
@@ -886,7 +886,7 @@ function onuse(player) {
 // Size: 0x144
 function function_dc5e885eda9f918e(player) {
     if (!isdefined(player)) {
-        thread namespace_969a33dd8ab17ac4::function_3bbc840fb244d188(self);
+        thread scripts\mp\gametypes\br_gametype_zxp::function_3bbc840fb244d188(self);
         return;
     }
     if (!function_7ffb58b4ceffae1b(player)) {
@@ -895,7 +895,7 @@ function function_dc5e885eda9f918e(player) {
     if (istrue(level.gameended)) {
         return;
     }
-    thread namespace_969a33dd8ab17ac4::function_3bbc840fb244d188(self, undefined, player);
+    thread scripts\mp\gametypes\br_gametype_zxp::function_3bbc840fb244d188(self, undefined, player);
     if (player.numconsumed >= level.brgametype.zombienumtoconsume) {
         return;
     }
@@ -909,7 +909,7 @@ function function_dc5e885eda9f918e(player) {
     }
     if (player.numconsumed >= level.brgametype.zombienumtoconsume) {
         player.var_5166e5e6229b88ee = 1;
-        player thread namespace_969a33dd8ab17ac4::playerzombiebacktohuman();
+        player thread scripts\mp\gametypes\br_gametype_zxp::playerzombiebacktohuman();
         player scripts\mp\gametypes\br_public::updatebrscoreboardstat("numVaccine", level.brgametype.zombienumtoconsume);
         dlog_recordevent("dlog_event_zxp_syringe_use", []);
         return;
@@ -1398,12 +1398,12 @@ function playerzombiehitground(var_e3438b8cb9c2c515, var_a2f406096e542298) {
     if (!isdefined(groundnormal)) {
         groundnormal = (0, 0, 1);
     }
-    var_543553043475c8c6 = anglestoforward(self.angles);
+    ovf = anglestoforward(self.angles);
     newangles = vectortoangles(groundnormal);
     pitch = angleclamp180(newangles[0] + 90);
     newangles = (0, newangles[1], 0);
     var_65667e04420c7105 = anglestoforward(newangles);
-    dot = vectordot(var_65667e04420c7105, var_543553043475c8c6);
+    dot = vectordot(var_65667e04420c7105, ovf);
     newpitch = dot * pitch;
     var_20adb86449c4cc7 = getdvarint(@"hash_f89852faf4700eb7", 20);
     var_a4ad9b2f0f9e5a70 = getdvarint(@"hash_6b79ddef31557a12", -70);
@@ -2100,7 +2100,7 @@ function kioskreviveplayer(sponsor, tokenused) {
     }
     player scripts\mp\hud_message::clearsplashqueue();
     if (level.brgametype.var_863f6d0e1a1c01e9) {
-        player namespace_969a33dd8ab17ac4::playerzombiebacktohuman(1);
+        player scripts\mp\gametypes\br_gametype_zxp::playerzombiebacktohuman(1);
     } else {
         player playerzombierespawn(0);
     }
@@ -2640,8 +2640,8 @@ function playerapplyjumpvelocity(angledir, maxjumpvelocity, fraction, startoffse
         yawangles = (0, player_angles[1], 0);
         right = anglestoright(yawangles);
         fwd = vectorcross(ground_normal, right);
-        var_829ceac2f5ec057b = vectortoangles(fwd);
-        ground_pitch = angleclamp180(var_829ceac2f5ec057b[0]);
+        fwd_angles = vectortoangles(fwd);
+        ground_pitch = angleclamp180(fwd_angles[0]);
         min_pitch = -85;
         max_pitch = ground_pitch;
         player_pitch = player_angles[0];
@@ -2654,9 +2654,9 @@ function playerapplyjumpvelocity(angledir, maxjumpvelocity, fraction, startoffse
         var_aee49e405bf58492 = var_e6980f09269e2b33 + frac * (var_e6bc250926c6d64d - var_e6980f09269e2b33);
         player_angles = (player_pitch + var_aee49e405bf58492, player_angles[1], player_angles[2]);
     }
-    var_179db9acb8f30e85 = getdvarfloat(@"hash_cf56037c34ea141f", 0);
-    if (var_179db9acb8f30e85 != 0) {
-        player_angles = (player_angles[0] + var_179db9acb8f30e85, player_angles[1], player_angles[2]);
+    pitch_add = getdvarfloat(@"hash_cf56037c34ea141f", 0);
+    if (pitch_add != 0) {
+        player_angles = (player_angles[0] + pitch_add, player_angles[1], player_angles[2]);
     }
     dir = anglestoforward(player_angles);
     velocity = dir * fraction * maxjumpvelocity;
@@ -2976,7 +2976,7 @@ function playerzombievehiclehittoss(damagedata) {
     var_33a88760203205c8 = 500;
     var_7188c5ad86f4bcdb = 90;
     var_d511b11429292c8a = 60;
-    var_d809df5fd4884122 = 30;
+    const_offset = 30;
     hitdir = damagedata.direction_vec;
     var_7973ec383855b23b = vectortoyaw(hitdir);
     var_ee8d7fd04ae3145c = var_7188c5ad86f4bcdb;
@@ -2987,7 +2987,7 @@ function playerzombievehiclehittoss(damagedata) {
     var_517b722235216a01 += var_7973ec383855b23b;
     var_50600b9245d45105 = (var_ee8d7fd04ae3145c, var_517b722235216a01, 0);
     var_19468a9f48671d17 = vectornormalize((hitdir[0], hitdir[1], 0));
-    startoffset = var_19468a9f48671d17 * var_d809df5fd4884122 + (0, 0, var_d809df5fd4884122);
+    startoffset = var_19468a9f48671d17 * const_offset + (0, 0, const_offset);
     namespace_27c39fecb94c2a6d::playerapplyjumpvelocity(var_50600b9245d45105, var_33a88760203205c8, 1, startoffset);
 }
 
@@ -3115,7 +3115,7 @@ function postupdategameevents() {
     }
     winnerplayers = scripts\mp\utility\teams::getteamdata(winnerteam, "players");
     foreach (player in winnerplayers) {
-        player namespace_969a33dd8ab17ac4::function_85ac199ed33991d6();
+        player scripts\mp\gametypes\br_gametype_zxp::function_85ac199ed33991d6();
     }
     function_93d2f288e29b5dc7(winnerteam);
     thread scripts\mp\gamelogic::endgame(winnerteam, game["end_reason"]["enemies_eliminated"]);

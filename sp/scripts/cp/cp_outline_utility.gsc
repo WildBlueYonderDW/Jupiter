@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_1d2f0cc78b0ded34;
 

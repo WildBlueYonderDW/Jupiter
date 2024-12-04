@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\utility\join_team_aggregator;
 
 #namespace namespace_79cde40897d177f7;
 

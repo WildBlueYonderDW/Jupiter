@@ -1,5 +1,5 @@
-#using scripts\asm\asm_bb.gsc;
 #using script_53651341190c5aab;
+#using scripts\asm\asm_bb;
 
 #namespace namespace_5a3b74f5fb73d362;
 

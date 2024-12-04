@@ -1,8 +1,8 @@
-#using script_d74ae0b4aa21186;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_quest_util;
 
 #namespace perform_recon_contract;
 

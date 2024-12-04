@@ -1,13 +1,13 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
-#namespace namespace_39759e1576844205;
+#namespace cp_movers;
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x400
 // Size: 0x153
@@ -36,7 +36,7 @@ function main() {
     init();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x55b
 // Size: 0x15
@@ -44,7 +44,7 @@ function script_mover_classnames() {
     return ["script_model_mover", "script_brushmodel_mover"];
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x579
 // Size: 0x88
@@ -62,7 +62,7 @@ function script_mover_is_script_mover() {
     return 0;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x60a
 // Size: 0x37
@@ -73,7 +73,7 @@ function script_mover_add_hintstring(name, hintstring) {
     level.script_mover_hintstrings[name] = hintstring;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x649
 // Size: 0x37
@@ -84,7 +84,7 @@ function script_mover_add_parameters(name, parameters) {
     level.script_mover_parameters[name] = parameters;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x2fb
@@ -148,7 +148,7 @@ function script_mover_int() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x98b
 // Size: 0x4f
@@ -165,7 +165,7 @@ function script_mover_use_trigger(trigger) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e2
 // Size: 0x43
@@ -177,7 +177,7 @@ function script_mover_move_to_named_goal(goal_name) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa2d
 // Size: 0x26
@@ -185,7 +185,7 @@ function anglesclamp180(angles) {
     return (angleclamp180(angles[0]), angleclamp180(angles[1]), angleclamp180(angles[2]));
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa5c
 // Size: 0x3bb
@@ -272,7 +272,7 @@ function script_mover_parse_targets() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe1f
 // Size: 0x3a
@@ -285,7 +285,7 @@ function script_mover_func_on_notify(ent, func, note) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe61
 // Size: 0x3b
@@ -298,7 +298,7 @@ function script_mover_call_func_on_notify(ent, func, note) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xea4
 // Size: 0x9
@@ -306,7 +306,7 @@ function script_mover_trigger_on() {
     trigger_on();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xeb5
 // Size: 0x524
@@ -393,7 +393,7 @@ function script_mover_move_to_target(current) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x13e1
 // Size: 0x88
@@ -411,7 +411,7 @@ function script_mover_run_notify(notify_origin, level_notify, start, end) {
     level notify(level_notify);
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1471
 // Size: 0x57
@@ -424,7 +424,7 @@ function script_mover_init_move_parameters() {
     script_mover_parse_move_parameters(self.script_parameters);
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14d0
 // Size: 0x222
@@ -478,7 +478,7 @@ function script_mover_parse_move_parameters(parameters) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16fa
 // Size: 0x87
@@ -499,7 +499,7 @@ function script_mover_parse_range(str) {
     return value;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x178a
 // Size: 0x66
@@ -510,7 +510,7 @@ function script_mover_apply_move_parameters(from) {
     script_mover_set_defaults();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17f8
 // Size: 0x3f
@@ -524,7 +524,7 @@ function script_mover_set_param(param_name, value) {
     self.params[param_name] = value;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x183f
 // Size: 0x78
@@ -537,7 +537,7 @@ function script_mover_allow_usable(usable) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x18bf
 // Size: 0x54
@@ -551,7 +551,7 @@ function script_mover_set_usable(use_ent, usable) {
     use_ent makeunusable();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x191b
 // Size: 0x62
@@ -562,7 +562,7 @@ function script_mover_save_default_move_parameters() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1985
 // Size: 0xbf
@@ -581,7 +581,7 @@ function script_mover_set_defaults() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a4c
 // Size: 0xb
@@ -589,7 +589,7 @@ function init() {
     level thread script_mover_agent_spawn_watch();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a5f
 // Size: 0x35
@@ -602,7 +602,7 @@ function script_mover_agent_spawn_watch() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a9c
 // Size: 0x143
@@ -644,7 +644,7 @@ function player_unresolved_collision_watch() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1be7
 // Size: 0x19
@@ -656,7 +656,7 @@ function clear_unresolved_collision_count_next_frame() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c08
 // Size: 0xfb
@@ -678,14 +678,14 @@ function unresolved_collision_owner_damage(player) {
         player mover_suicide();
         return;
     }
-    var_6fdf3dbbb3b42f68 = 1000;
+    damage_ammount = 1000;
     if (isdefined(inflictor.unresolved_collision_damage)) {
-        var_6fdf3dbbb3b42f68 = inflictor.unresolved_collision_damage;
+        damage_ammount = inflictor.unresolved_collision_damage;
     }
-    player dodamage(var_6fdf3dbbb3b42f68, inflictor.origin, inflictor.owner, inflictor, "MOD_CRUSH");
+    player dodamage(damage_ammount, inflictor.origin, inflictor.owner, inflictor, "MOD_CRUSH");
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d0b
 // Size: 0x1d8
@@ -743,7 +743,7 @@ function unresolved_collision_nearest_node(player, var_4258fb168fb20ba6) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1eeb
 // Size: 0x13
@@ -751,7 +751,7 @@ function unresolved_collision_void(player, penetration) {
     
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f06
 // Size: 0x21
@@ -762,7 +762,7 @@ function mover_suicide() {
     _suicide();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f2f
 // Size: 0x71
@@ -780,7 +780,7 @@ function player_pushed_kill(min_mph) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fa8
 // Size: 0xa
@@ -788,7 +788,7 @@ function stop_player_pushed_kill() {
     self notify("stop_player_pushed_kill");
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fba
 // Size: 0x33
@@ -800,7 +800,7 @@ function script_mover_get_top_parent() {
     return topparent;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ff6
 // Size: 0xa5
@@ -819,7 +819,7 @@ function script_mover_start_use(useent) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20a3
 // Size: 0x34
@@ -830,7 +830,7 @@ function script_mover_has_parent_moved(parent) {
     return lengthsquared(parent.origin - parent.startuseorigin) > 0.001;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20e0
 // Size: 0x82
@@ -858,7 +858,7 @@ function script_mover_use_can_link(ent) {
     return true;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x216b
 // Size: 0xa9
@@ -884,7 +884,7 @@ function script_mover_link_to_use_object(player) {
     player playerlinkedoffsetenable();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x221c
 // Size: 0x45
@@ -897,7 +897,7 @@ function script_mover_unlink_from_use_object(player) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2269
 // Size: 0x3c
@@ -908,7 +908,7 @@ function sciprt_mover_use_object_wait_for_disconnect(var_262b8635e7ff6adb) {
     self.scriptmoverlinkdummy = undefined;
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22ad
 // Size: 0x8c
@@ -926,7 +926,7 @@ function notify_moving_platform_invalid() {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2341
 // Size: 0x6f
@@ -942,7 +942,7 @@ function process_moving_platform_death(data, platform) {
     self delete();
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x23b8
 // Size: 0xa4
@@ -968,7 +968,7 @@ function handle_moving_platform_touch(data) {
     }
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2464
 // Size: 0x8b
@@ -989,7 +989,7 @@ function handle_moving_platform_invalid(data) {
     thread process_moving_platform_death(data, platform);
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x24f7
 // Size: 0x13c
@@ -1025,7 +1025,7 @@ function handle_moving_platforms(data) {
     thread handle_moving_platform_invalid(data);
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x263b
 // Size: 0xa
@@ -1033,7 +1033,7 @@ function stop_handling_moving_platforms() {
     self notify("stop_handling_moving_platforms");
 }
 
-// Namespace namespace_39759e1576844205 / scripts\cp\cp_movers
+// Namespace cp_movers / scripts\cp\cp_movers
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x264d
 // Size: 0xb

@@ -27,7 +27,7 @@ function init() {
     setdvar(@"ui_securing_progress", 0);
     setdvar(@"hash_9fb9448766c1f439", 1);
     setdvar(@"hash_6a3a3c63c640148f", 1);
-    setdvar(@"hash_7674db8d5fb90c21", 0);
+    setdvar(@"minimap_sp", 0);
     setdvar(@"hash_6b6a0dbe8c0bf7bf", 0);
     helmet_meters_init();
 }
@@ -40,11 +40,11 @@ function helmet_meters_init() {
     if (isdefined(level.helmet_meters)) {
         return;
     }
-    var_82e17163c463a68f = [];
-    var_82e17163c463a68f["oxygen"] = 0;
-    var_82e17163c463a68f["temperature"] = 0;
-    var_82e17163c463a68f["pressure"] = 0;
-    level.helmet_meters = var_82e17163c463a68f;
+    meters = [];
+    meters["oxygen"] = 0;
+    meters["temperature"] = 0;
+    meters["pressure"] = 0;
+    level.helmet_meters = meters;
 }
 
 // Namespace hud / scripts\sp\hud
@@ -260,11 +260,11 @@ function helmet_meters_forced_decompress(environment, duration) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xab1
 // Size: 0x1c0
-function helmet_meters_ramp(type, duration, var_f3834a5535c25544) {
+function helmet_meters_ramp(type, duration, goal_value) {
     accel = 0;
     decel = 0;
     var_78cd7a63f38d99d1 = 0;
-    var_4d6f2e32d535b9da = abs((var_f3834a5535c25544 - level.helmet_meters[type]) / duration * 0.05);
+    base_increment = abs((goal_value - level.helmet_meters[type]) / duration * 0.05);
     var_e9d476a3809cb3f1 = "ui_helmet_meter_" + type;
     if (type == "oxygen") {
         accel = 1;
@@ -276,19 +276,19 @@ function helmet_meters_ramp(type, duration, var_f3834a5535c25544) {
         accel = 1;
         decel = 1;
     }
-    var_4a6b621514643f05 = accel * 0.05;
-    var_a3ec44b662b56140 = decel * 0.05;
-    var_27c1cb3c9ea0e04d = 1;
-    if (var_f3834a5535c25544 == level.helmet_meters[type]) {
+    accel_increment = accel * 0.05;
+    decel_increment = decel * 0.05;
+    value_raise = 1;
+    if (goal_value == level.helmet_meters[type]) {
         return;
-    } else if (var_f3834a5535c25544 < level.helmet_meters[type]) {
-        var_27c1cb3c9ea0e04d = 0;
+    } else if (goal_value < level.helmet_meters[type]) {
+        value_raise = 0;
     }
     for (i = 0; i < duration; i += 0.05) {
-        if (var_27c1cb3c9ea0e04d) {
-            level.helmet_meters[type] = level.helmet_meters[type] + var_4d6f2e32d535b9da;
+        if (value_raise) {
+            level.helmet_meters[type] = level.helmet_meters[type] + base_increment;
         } else {
-            level.helmet_meters[type] = level.helmet_meters[type] - var_4d6f2e32d535b9da;
+            level.helmet_meters[type] = level.helmet_meters[type] - base_increment;
         }
         var_f82eacb5a2248d90 = helmet_meters_rounding(type, level.helmet_meters[type]);
         setomnvar(var_e9d476a3809cb3f1, var_f82eacb5a2248d90);
@@ -303,17 +303,17 @@ function helmet_meters_ramp(type, duration, var_f3834a5535c25544) {
 // Checksum 0x0, Offset: 0xc79
 // Size: 0xd5
 function helmet_meters_stabilize(type) {
-    var_f3834a5535c25544 = 0;
+    goal_value = 0;
     if (type == "oxygen") {
-        var_f3834a5535c25544 = randomfloatrange(-0.5, 0.5) + level.helmet_meters[type];
+        goal_value = randomfloatrange(-0.5, 0.5) + level.helmet_meters[type];
     } else if (type == "temperature") {
-        var_f3834a5535c25544 = randomintrange(-1, 1) + level.helmet_meters[type];
+        goal_value = randomintrange(-1, 1) + level.helmet_meters[type];
     } else if (type == "pressure") {
-        var_f3834a5535c25544 = randomfloatrange(-0.5, 0.5) + level.helmet_meters[type];
+        goal_value = randomfloatrange(-0.5, 0.5) + level.helmet_meters[type];
     }
     old_value = level.helmet_meters[type];
     duration = randomfloatrange(1, 3);
-    helmet_meters_ramp(type, duration, var_f3834a5535c25544);
+    helmet_meters_ramp(type, duration, goal_value);
     duration = randomfloatrange(1, 2);
     helmet_meters_ramp(type, duration, old_value);
 }
@@ -322,8 +322,8 @@ function helmet_meters_stabilize(type) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xd56
 // Size: 0x2d
-function helmet_meters_ramp_and_stabilize(type, duration, var_f3834a5535c25544) {
-    helmet_meters_ramp(type, duration, var_f3834a5535c25544);
+function helmet_meters_ramp_and_stabilize(type, duration, goal_value) {
+    helmet_meters_ramp(type, duration, goal_value);
     helmet_meters_stabilize(type);
 }
 
@@ -332,7 +332,7 @@ function helmet_meters_ramp_and_stabilize(type, duration, var_f3834a5535c25544) 
 // Checksum 0x0, Offset: 0xd8b
 // Size: 0x25
 function helmet_meters_rounding(type, value) {
-    var_f3834a5535c25544 = int(value);
-    return var_f3834a5535c25544;
+    goal_value = int(value);
+    return goal_value;
 }
 

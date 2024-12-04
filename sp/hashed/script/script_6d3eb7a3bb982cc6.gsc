@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_6617e2f2bb62b52b;
 #using script_24f248b33b79e48d;
 #using script_41387eecc35b88bf;
+#using script_6617e2f2bb62b52b;
 #using script_72ef6b9f0cf1f55a;
-#using script_413d0426f154bd91;
+#using scripts\common\data_tracker;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace namespace_20c011482c0cdeb0;
 
@@ -444,15 +444,15 @@ function function_90aa487b23e54e57(players, new_message) {
         if (!isdefined(player.var_92f4eecabdc55527)) {
             player function_16fe68fcacc54f0f();
         }
-        var_82af0bc82d09574f = 0;
+        msg_added = 0;
         for (i = 0; i < player.var_92f4eecabdc55527.size; i++) {
             if (new_message.priority < player.var_92f4eecabdc55527[i].priority) {
                 player.var_92f4eecabdc55527 = array_insert(player.var_92f4eecabdc55527, new_message, i);
-                var_973fad7f53ec7115 = 1;
+                message_added = 1;
                 break;
             }
         }
-        if (!var_82af0bc82d09574f) {
+        if (!msg_added) {
             player.var_92f4eecabdc55527 = array_add(player.var_92f4eecabdc55527, new_message);
         }
         if (player.var_92f4eecabdc55527.size > player.var_e606088079f4b1aa.size) {
@@ -481,15 +481,15 @@ function function_818b83330689fe30(players, new_message) {
         if (!isdefined(player.var_10ef8425f61dad4c)) {
             player function_16fe68fcacc54f0f();
         }
-        var_82af0bc82d09574f = 0;
+        msg_added = 0;
         for (i = 0; i < player.var_10ef8425f61dad4c.size; i++) {
             if (new_message.priority < player.var_10ef8425f61dad4c[i].priority) {
                 player.var_10ef8425f61dad4c = array_insert(player.var_10ef8425f61dad4c, new_message, i);
-                var_973fad7f53ec7115 = 1;
+                message_added = 1;
                 break;
             }
         }
-        if (!var_82af0bc82d09574f) {
+        if (!msg_added) {
             player.var_10ef8425f61dad4c = array_add(player.var_10ef8425f61dad4c, new_message);
         }
         if (player.var_10ef8425f61dad4c.size > player.var_eb666c0aadcb83f.size) {
@@ -618,7 +618,7 @@ function function_aadccf880d10d728(players, new_message) {
             player function_16fe68fcacc54f0f();
         }
         message_found = 0;
-        var_973fad7f53ec7115 = 0;
+        message_added = 0;
         group_start = -1;
         for (i = 0; i < player.var_f950fdb9893b4448.size; i++) {
             if (player.var_f950fdb9893b4448[i].uniqueid == new_message.uniqueid) {
@@ -637,12 +637,12 @@ function function_aadccf880d10d728(players, new_message) {
                     }
                     if (my_group && player.var_f950fdb9893b4448[i].priority > new_message.priority) {
                         player.var_f950fdb9893b4448 = array_insert(player.var_f950fdb9893b4448, new_message, i);
-                        var_973fad7f53ec7115 = 1;
+                        message_added = 1;
                         break;
                     }
                     if (!my_group) {
                         player.var_f950fdb9893b4448 = array_insert(player.var_f950fdb9893b4448, new_message, i);
-                        var_973fad7f53ec7115 = 1;
+                        message_added = 1;
                         break;
                     }
                 }
@@ -650,12 +650,12 @@ function function_aadccf880d10d728(players, new_message) {
                 for (i = 0; i < player.var_f950fdb9893b4448.size; i++) {
                     if (player.var_f950fdb9893b4448[i].group_priority > new_message.group_priority) {
                         player.var_f950fdb9893b4448 = array_insert(player.var_f950fdb9893b4448, new_message, i);
-                        var_973fad7f53ec7115 = 1;
+                        message_added = 1;
                         break;
                     }
                 }
             }
-            if (!var_973fad7f53ec7115) {
+            if (!message_added) {
                 player.var_f950fdb9893b4448 = array_add(player.var_f950fdb9893b4448, new_message);
             }
         }

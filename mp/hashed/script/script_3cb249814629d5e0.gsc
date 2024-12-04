@@ -1,7 +1,7 @@
-#using script_d74ae0b4aa21186;
-#using scripts\engine\utility.gsc;
 #using script_5120873d6d2bb7e2;
-#using scripts\engine\trace.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace evade_cars;
 

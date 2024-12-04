@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
 #using script_7c40fa80892a721;
+#using scripts\common\utility;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_da4a6af5bd075b80;
+#namespace armor_crate;
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x1f4
@@ -43,7 +43,7 @@ function armor_crate_init() {
     level.deployable_box["armor"] = [];
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cf
 // Size: 0x21
@@ -53,7 +53,7 @@ function weaponswitchendedsupportbox(streakinfo, switchresult) {
     }
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f8
 // Size: 0x15
@@ -61,7 +61,7 @@ function tryusesupportbox(streakinfo, grenade) {
     return true;
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x516
 // Size: 0xd
@@ -69,7 +69,7 @@ function armorbox_canusedeployable(boxent) {
     return true;
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x52c
 // Size: 0xb0
@@ -85,7 +85,7 @@ function supportbox_grenadelaunchfunc(boxent) {
     self notify("grenade_fire", throwngrenade);
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0x43
@@ -100,7 +100,7 @@ function armorbox_onusedeployable(boxent) {
     return true;
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x630
 // Size: 0x43
@@ -115,7 +115,7 @@ function function_a011821531cf62c8(boxent) {
     return true;
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x67c
 // Size: 0x2
@@ -123,7 +123,7 @@ function function_98abc38c4430f306() {
     
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x686
 // Size: 0x29
@@ -133,7 +133,7 @@ function function_25da11ee5fd804ee() {
     box_disableplayeruse(self);
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b7
 // Size: 0xde
@@ -161,7 +161,7 @@ function supportbox_watchplayerweapon(streakinfo) {
     }
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x79d
 // Size: 0x20
@@ -169,7 +169,7 @@ function supportbox_handledamage() {
     var_86280fefb94b6b28 = level.boxsettings[self.boxtype];
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7c5
 // Size: 0x89
@@ -182,7 +182,7 @@ function supportbox_handledeathdamage(data) {
     attacker notify("destroyed_equipment");
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x856
 // Size: 0xa4
@@ -197,7 +197,7 @@ function supportbox_modifydamage(data) {
     return modifieddamage;
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x903
 // Size: 0x9d
@@ -216,7 +216,7 @@ function supportbox_waittill_removeorweaponchange(removenotify, var_e12eb6c8616b
     return info;
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9a9
 // Size: 0x41
@@ -228,23 +228,23 @@ function supportbox_waittill_notify(msg, ent) {
     ent notify("returned", msg, param);
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f2
 // Size: 0x6e
 function cangive_ammo() {
     currentweapon = getvalidtakeweapon();
-    var_de8a9ead75a0581 = self getweaponammoclip(currentweapon);
-    var_c56bbe615f626cc8 = weaponclipsize(currentweapon);
-    var_a862b844906a7c8 = weaponmaxammo(currentweapon);
-    var_82068ca6d5b3c991 = self getweaponammostock(currentweapon);
-    if (var_82068ca6d5b3c991 < var_a862b844906a7c8 || var_de8a9ead75a0581 < var_c56bbe615f626cc8) {
+    current_ammo = self getweaponammoclip(currentweapon);
+    max_clip = weaponclipsize(currentweapon);
+    max_stock = weaponmaxammo(currentweapon);
+    player_stock = self getweaponammostock(currentweapon);
+    if (player_stock < max_stock || current_ammo < max_clip) {
         return 1;
     }
     return 0;
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xa68
 // Size: 0xd8
@@ -262,7 +262,7 @@ function adjust_clip_ammo_from_stock(player, sweapon, hand, maxclipammo, var_674
     player setweaponammoclip(sweapon, int(newammo), hand);
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb48
 // Size: 0x33
@@ -272,17 +272,17 @@ function test_ammo_crate(player) {
     set_crafted_inventory_item("crafted_autosentry", &give_crafted_ammo_crate, player);
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xb83
 // Size: 0x3b
-function give_crafted_ammo_crate(var_df071553d0996ff9, player) {
+function give_crafted_ammo_crate(interaction_struct, player) {
     player thread watch_dpad();
     player notify("new_power", "crafted_autosentry");
     set_crafted_inventory_item("crafted_autosentry", &give_crafted_ammo_crate, player);
 }
 
-// Namespace namespace_da4a6af5bd075b80 / namespace_e6634524c3d3cf37
+// Namespace armor_crate / namespace_e6634524c3d3cf37
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbc6
 // Size: 0x92

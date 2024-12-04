@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\playerlogic.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\cranked.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\matchdata.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\cranked;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\matchdata;
+#using scripts\mp\playerlogic;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace game_utility;
 
@@ -192,7 +192,7 @@ function registertimelimitdvar(dvarstring, defaultvalue) {
 // Size: 0x35
 function registerhalftimedvar(dvarstring, defaultvalue) {
     registerwatchdvarint("halftime", defaultvalue);
-    setdvar(@"hash_39ee97c0c58089e1", gethalftime());
+    setdvar(@"ui_halftime", gethalftime());
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -479,7 +479,7 @@ function waslastround() {
     if (!level.teambased) {
         return true;
     }
-    if (function_8cc09267ba72c7f7() && game["roundsPlayed"] == 1) {
+    if (isMutationGameMode() && game["roundsPlayed"] == 1) {
         return false;
     }
     if (hitroundlimit() || hitwinlimit()) {
@@ -494,7 +494,7 @@ function waslastround() {
             return true;
         }
     }
-    if (getgametype() == "wm" || function_8cc09267ba72c7f7()) {
+    if (getgametype() == "wm" || isMutationGameMode()) {
         if (game["roundsPlayed"] == 2) {
             return true;
         }
@@ -1086,7 +1086,7 @@ function onlinestatsenabled() {
 // Checksum 0x0, Offset: 0x30d4
 // Size: 0x1d
 function privatematch() {
-    return level.onlinegame && getdvarint(@"hash_485ef1ed1d39d3a3");
+    return level.onlinegame && getdvarint(@"xblive_privatematch");
 }
 
 // Namespace game_utility / scripts\mp\utility\game
@@ -1329,7 +1329,7 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
     setdynamicdvar(hashcat(@"scr_", getgametype(), "_winLimit"), winlimit);
     registerwinlimitdvar(getgametype(), winlimit);
     roundlimit = getmatchrulesdata("commonOption", "roundLimit");
-    if (function_8cc09267ba72c7f7()) {
+    if (isMutationGameMode()) {
         roundlimit = 2;
     }
     setdynamicdvar(hashcat(@"scr_", getgametype(), "_roundLimit"), roundlimit);
@@ -1409,9 +1409,9 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
     setdynamicdvar(hashcat(@"scr_", getgametype(), "_ffPunishDamageLimit"), getmatchrulesdata("commonOption", "ffPunishDamageLimit"));
     setdynamicdvar(hashcat(@"scr_", getgametype(), "_ffKickKillLimit"), getmatchrulesdata("commonOption", "ffKickKillLimit"));
     setdynamicdvar(hashcat(@"scr_", getgametype(), "_ffKickDamageLimit"), getmatchrulesdata("commonOption", "ffKickDamageLimit"));
-    setdynamicdvar(@"hash_66c38b5b61297ac1", getmatchrulesdata("commonOption", "thirdPerson"));
+    setdynamicdvar(@"scr_thirdperson", getmatchrulesdata("commonOption", "thirdPerson"));
     if (getdvarint(@"hash_ff21d0d18916f3a1", 0) == 1) {
-        setdynamicdvar(@"hash_c00e244ea59d530e", getmatchrulesdata("commonOption", "thirdPerson"));
+        setdynamicdvar(@"camera_thirdperson", getmatchrulesdata("commonOption", "thirdPerson"));
     }
     setdynamicdvar(hashcat(@"scr_", getgametype(), "_roundRetainStreaks"), getmatchrulesdata("commonOption", "roundRetainStreaks"));
     setdynamicdvar(hashcat(@"scr_", getgametype(), "_roundRetainStreakProg"), getmatchrulesdata("commonOption", "roundRetainStreakProg"));
@@ -1435,7 +1435,7 @@ function setcommonrulesfrommatchrulesdata(skipfriendlyfire) {
             var_c84f9319fe9e602f = 1;
         }
     #/
-    if (var_c84f9319fe9e602f || function_8cc09267ba72c7f7() || function_4ef12b6ed882dc9b() || function_4db593966758d557()) {
+    if (var_c84f9319fe9e602f || isMutationGameMode() || function_4ef12b6ed882dc9b() || function_4db593966758d557()) {
         setdynamicdvar(@"hash_7194076ab4888f2b", 1);
     } else {
         setdynamicdvar(@"hash_7194076ab4888f2b", getmatchrulesdata("commonOption", "infilSkip"));
@@ -1743,7 +1743,7 @@ function isteamplacementsbmmmode() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e7c
 // Size: 0x38
-function function_a305f5d1be837817() {
+function isJuggerMoshGameMode() {
     switch (getgametype()) {
     case #"hash_2f5af599c5c220d3":
     case #"hash_b024b6bb2d9e8547":
@@ -1776,7 +1776,7 @@ function function_7dc15b2c8dcd2ee7() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4efb
 // Size: 0x11
-function function_8cc09267ba72c7f7() {
+function isMutationGameMode() {
     return getdvarint(@"hash_bc885339c750a6ee", 0);
 }
 
@@ -1784,8 +1784,8 @@ function function_8cc09267ba72c7f7() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f15
 // Size: 0x25
-function function_6c88a48a9e942c3d() {
-    return function_8cc09267ba72c7f7() && isdefined(self) && self [[ getsharedfunc("escort", "isZombie") ]]();
+function isMutationGameModeZombie() {
+    return isMutationGameMode() && isdefined(self) && self [[ getsharedfunc("escort", "isZombie") ]]();
 }
 
 // Namespace game_utility / scripts\mp\utility\game

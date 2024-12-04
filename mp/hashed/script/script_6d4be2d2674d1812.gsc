@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using script_5acb344add63cac4;
-#using scripts\engine\utility.gsc;
 #using script_371b4c2ab5861e62;
+#using script_5acb344add63cac4;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace ww_dg2;
 

@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_6df6604a74a7a9c7;
-#using scripts\engine\scriptable.gsc;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace namespace_26050772d3578b37;
 
@@ -21,12 +21,12 @@ function function_a110e6203cd98cc9() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x34e
 // Size: 0x6a
-function function_98264e8b6400bc85(var_a1d327fb581ff2cf, callbackfunc) {
-    if (!isdefined(level.var_e7980e4dbe01a4ca) || !isdefined(level.var_e7980e4dbe01a4ca[var_a1d327fb581ff2cf])) {
-        level.var_e7980e4dbe01a4ca[var_a1d327fb581ff2cf] = 0;
+function function_98264e8b6400bc85(callback_type, callbackfunc) {
+    if (!isdefined(level.rune_callbacks) || !isdefined(level.rune_callbacks[callback_type])) {
+        level.rune_callbacks[callback_type] = 0;
     }
-    utility::registersharedfunc("zombie", var_a1d327fb581ff2cf + string(level.var_e7980e4dbe01a4ca[var_a1d327fb581ff2cf]), callbackfunc);
-    level.var_e7980e4dbe01a4ca[var_a1d327fb581ff2cf]++;
+    utility::registersharedfunc("zombie", callback_type + string(level.rune_callbacks[callback_type]), callbackfunc);
+    level.rune_callbacks[callback_type]++;
 }
 
 // Namespace namespace_26050772d3578b37 / namespace_324cb75236a72d33
@@ -41,12 +41,12 @@ function function_f35c102a1c5f2a6d(callbackfunc) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e6
 // Size: 0x7e
-function function_a052c2969b025a94(var_a1d327fb581ff2cf, manager, eattacker) {
-    if (!isdefined(level.var_e7980e4dbe01a4ca) || !isdefined(level.var_e7980e4dbe01a4ca[var_a1d327fb581ff2cf])) {
+function function_a052c2969b025a94(callback_type, manager, eattacker) {
+    if (!isdefined(level.rune_callbacks) || !isdefined(level.rune_callbacks[callback_type])) {
         return;
     }
-    for (i = 0; i < level.var_e7980e4dbe01a4ca[var_a1d327fb581ff2cf]; i++) {
-        utility::function_f3bb4f4911a1beb2("zombie", var_a1d327fb581ff2cf + string(i), manager.targetname, eattacker);
+    for (i = 0; i < level.rune_callbacks[callback_type]; i++) {
+        utility::function_f3bb4f4911a1beb2("zombie", callback_type + string(i), manager.targetname, eattacker);
     }
 }
 
@@ -54,11 +54,11 @@ function function_a052c2969b025a94(var_a1d327fb581ff2cf, manager, eattacker) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x46c
 // Size: 0x180
-function function_857ac0179192120b(var_2e1328d879102c24, var_652403fd36183952, var_24babb8dc6d1ef89, var_266a2e67ff9628e1) {
-    manager = getstruct(var_652403fd36183952, "targetname");
-    keys = function_759722ee5b57fdd7(var_2e1328d879102c24, 0, 8);
+function function_857ac0179192120b(num_keys, sequence_name, var_24babb8dc6d1ef89, var_266a2e67ff9628e1) {
+    manager = getstruct(sequence_name, "targetname");
+    keys = function_759722ee5b57fdd7(num_keys, 0, 8);
     manager.keys = string_join(keys);
-    manager.var_a649630cf1819d2c = "";
+    manager.input_keys = "";
     manager.var_110cf8fc64d76958 = 1;
     function_4d535e852051c34b(manager);
     if (isdefined(var_24babb8dc6d1ef89) && var_24babb8dc6d1ef89 > 0) {
@@ -89,14 +89,14 @@ function function_857ac0179192120b(var_2e1328d879102c24, var_652403fd36183952, v
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f4
 // Size: 0x8e
-function function_b7c2ddf5f84c1f61(var_5f8bb464b19d1f53, var_652403fd36183952) {
-    manager = getstruct(var_652403fd36183952, "targetname");
+function function_b7c2ddf5f84c1f61(var_5f8bb464b19d1f53, sequence_name) {
+    manager = getstruct(sequence_name, "targetname");
     keys = [];
     for (i = 0; i < var_5f8bb464b19d1f53.size; i++) {
         keys[i] = 0;
     }
     manager.keys = string_join(keys);
-    manager.var_a649630cf1819d2c = "";
+    manager.input_keys = "";
     manager.var_110cf8fc64d76958 = 0;
     function_9cd5804e2fa21c69(manager, var_5f8bb464b19d1f53);
     return manager;
@@ -108,11 +108,11 @@ function function_b7c2ddf5f84c1f61(var_5f8bb464b19d1f53, var_652403fd36183952) {
 // Size: 0xf0
 function function_4d535e852051c34b(manager) {
     manager.var_b010dc081d6a5b9e = [];
-    var_271731c98378fce7 = manager;
+    glyph_struct = manager;
     for (i = 0; i < manager.keys.size; i++) {
-        assert(isdefined(var_271731c98378fce7.target), "<dev string:x1c>");
-        var_271731c98378fce7 = getstruct(var_271731c98378fce7.target, "targetname");
-        var_cd753944acd74399 = function_5fbd85f165bb8819(var_271731c98378fce7, manager, manager.keys[i], 1);
+        assert(isdefined(glyph_struct.target), "<dev string:x1c>");
+        glyph_struct = getstruct(glyph_struct.target, "targetname");
+        var_cd753944acd74399 = function_5fbd85f165bb8819(glyph_struct, manager, manager.keys[i], 1);
         var_cd753944acd74399 setscriptablepartstate("health", "inactive");
         forward = anglestoup(var_cd753944acd74399.angles);
         assert(!array_contains(manager.var_b010dc081d6a5b9e, var_cd753944acd74399));
@@ -147,10 +147,10 @@ function function_9cd5804e2fa21c69(manager, var_5f8bb464b19d1f53) {
     assertex(var_5f8bb464b19d1f53.size >= manager.keys.size, "<dev string:x4f>");
     var_fcb014c591343ab2 = function_759722ee5b57fdd7(manager.keys.size, 0, var_5f8bb464b19d1f53.size);
     for (i = 0; i < var_fcb014c591343ab2.size; i++) {
-        var_a52148463cc638e1 = var_5f8bb464b19d1f53[var_fcb014c591343ab2[i]];
-        if (isdefined(var_a52148463cc638e1.target)) {
-            var_d8264d57f6ea661c = [var_a52148463cc638e1];
-            next_struct = var_a52148463cc638e1;
+        input_struct = var_5f8bb464b19d1f53[var_fcb014c591343ab2[i]];
+        if (isdefined(input_struct.target)) {
+            var_d8264d57f6ea661c = [input_struct];
+            next_struct = input_struct;
             while (isdefined(next_struct.target)) {
                 next_struct = getstruct(next_struct.target, "targetname");
                 assert(!isdefined(next_struct.var_2229ba773caf2785));
@@ -158,12 +158,12 @@ function function_9cd5804e2fa21c69(manager, var_5f8bb464b19d1f53) {
                 var_d8264d57f6ea661c = array_add(var_d8264d57f6ea661c, next_struct);
             }
             var_5c563764e59bdadd = randomintrange(0, var_d8264d57f6ea661c.size);
-            var_a52148463cc638e1 = var_d8264d57f6ea661c[var_5c563764e59bdadd];
+            input_struct = var_d8264d57f6ea661c[var_5c563764e59bdadd];
         }
-        var_c582fb37a6bf9aa7 = function_5fbd85f165bb8819(var_a52148463cc638e1, manager, manager.keys[i], 0);
+        var_c582fb37a6bf9aa7 = function_5fbd85f165bb8819(input_struct, manager, manager.keys[i], 0);
         var_c582fb37a6bf9aa7.var_6e1ffc1ce6ad69b7 = 1;
         forward = anglestoup(var_c582fb37a6bf9aa7.angles);
-        var_c582fb37a6bf9aa7.var_7c781d924d61f590 = spawn_model(function_f9cf95976ac21710(manager.keys[i]), var_c582fb37a6bf9aa7.origin - forward * 5, var_c582fb37a6bf9aa7.angles);
+        var_c582fb37a6bf9aa7.stone_model = spawn_model(function_f9cf95976ac21710(manager.keys[i]), var_c582fb37a6bf9aa7.origin - forward * 5, var_c582fb37a6bf9aa7.angles);
         assert(!array_contains(manager.var_1ea94f63b761803c, var_c582fb37a6bf9aa7));
         manager.var_1ea94f63b761803c[i] = var_c582fb37a6bf9aa7;
     }
@@ -173,7 +173,7 @@ function function_9cd5804e2fa21c69(manager, var_5f8bb464b19d1f53) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa1e
 // Size: 0x13d
-function function_2f1c7733804996dc(manager, var_6feb1183955c97a0) {
+function function_2f1c7733804996dc(manager, move_delay) {
     if (isdefined(level.crystals)) {
         foreach (crystal in level.crystals) {
             if (crystal.script_parameters == manager.targetname) {
@@ -181,7 +181,7 @@ function function_2f1c7733804996dc(manager, var_6feb1183955c97a0) {
                     trail = utility::spawn_model("tag_origin", crystal.origin + (0, 0, 64));
                     trail.goal_position = var_1fc4dc6317fafddf.origin;
                     playfxontag(getfx("zombie_soul"), trail, "tag_origin");
-                    trail thread function_c94394817834d4e5(var_6feb1183955c97a0, var_1fc4dc6317fafddf);
+                    trail thread function_c94394817834d4e5(move_delay, var_1fc4dc6317fafddf);
                 }
                 break;
             }
@@ -193,13 +193,13 @@ function function_2f1c7733804996dc(manager, var_6feb1183955c97a0) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xb63
 // Size: 0xb0
-function function_c94394817834d4e5(var_6feb1183955c97a0, var_1fc4dc6317fafddf) {
+function function_c94394817834d4e5(move_delay, var_1fc4dc6317fafddf) {
     level endon("game_ended");
     self endon("death");
     self playsound("evt_ob_rr_crystal_break_rune_trail_spawn");
     self playloopsound("evt_ob_rr_crystal_break_rune_trail_travel_lp");
-    if (var_6feb1183955c97a0 > 0) {
-        wait var_6feb1183955c97a0;
+    if (move_delay > 0) {
+        wait move_delay;
     }
     movetime = distance(self.origin, self.goal_position) / 256;
     self moveto(self.goal_position, movetime, 0.2);
@@ -213,14 +213,14 @@ function function_c94394817834d4e5(var_6feb1183955c97a0, var_1fc4dc6317fafddf) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xc1b
 // Size: 0xc6
-function function_5fbd85f165bb8819(var_7872b3a50fc59bb5, manager, key, var_b16c2b68e8380e39) {
+function function_5fbd85f165bb8819(marker_struct, manager, key, var_b16c2b68e8380e39) {
     var_458342df61da4b6e = ter_op(var_b16c2b68e8380e39, "ob_combo_rune_sequence_display", "ob_combo_rune_sequence");
-    var_128a3d3fa7a8b8ea = anglestoaxis(var_7872b3a50fc59bb5.angles);
+    var_128a3d3fa7a8b8ea = anglestoaxis(marker_struct.angles);
     var_f89d0b187bab99f6 = axistoangles(var_128a3d3fa7a8b8ea["up"] * -1, var_128a3d3fa7a8b8ea["right"], var_128a3d3fa7a8b8ea["forward"]);
-    scriptable = spawnscriptable(var_458342df61da4b6e, var_7872b3a50fc59bb5.origin, var_f89d0b187bab99f6);
+    scriptable = spawnscriptable(var_458342df61da4b6e, marker_struct.origin, var_f89d0b187bab99f6);
     scriptable.manager = manager;
     scriptable setscriptablepartstate("model", key);
-    scriptable.var_fa09fa79b74b79d1 = key;
+    scriptable.rune_key = key;
     return scriptable;
 }
 
@@ -244,32 +244,32 @@ function function_f9cf95976ac21710(index) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd4e
 // Size: 0x13b
-function function_4575ce4d8f4bf822(manager, var_5ae92d952ab77a57) {
+function function_4575ce4d8f4bf822(manager, input_key) {
     instance = self;
-    instance setscriptablepartstate("vfx", var_5ae92d952ab77a57 + "_incorrect");
+    instance setscriptablepartstate("vfx", input_key + "_incorrect");
     instance setscriptablepartstate("model", "inactive");
     if (isdefined(manager.var_b010dc081d6a5b9e)) {
-        foreach (var_3e220042128fb492 in manager.var_b010dc081d6a5b9e) {
-            var_3e220042128fb492 setscriptablepartstate("vfx", var_3e220042128fb492.var_fa09fa79b74b79d1 + "_incorrect");
-            var_3e220042128fb492 setscriptablepartstate("model", "inactive");
+        foreach (display_rune in manager.var_b010dc081d6a5b9e) {
+            display_rune setscriptablepartstate("vfx", display_rune.rune_key + "_incorrect");
+            display_rune setscriptablepartstate("model", "inactive");
         }
     }
-    foreach (var_29bf9324b9a3d408 in manager.var_1ea94f63b761803c) {
-        var_29bf9324b9a3d408 setscriptablepartstate("health", "inactive");
+    foreach (input_rune in manager.var_1ea94f63b761803c) {
+        input_rune setscriptablepartstate("health", "inactive");
     }
-    instance function_bbfa3e81df7313aa(manager, var_5ae92d952ab77a57, 0);
+    instance function_bbfa3e81df7313aa(manager, input_key, 0);
 }
 
 // Namespace namespace_26050772d3578b37 / namespace_324cb75236a72d33
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe91
 // Size: 0x91
-function function_bbfa3e81df7313aa(manager, var_5ae92d952ab77a57, var_7992efec744d9618) {
+function function_bbfa3e81df7313aa(manager, input_key, is_correct) {
     instance = self;
-    state = ter_op(var_7992efec744d9618, "correct", "incorrect");
+    state = ter_op(is_correct, "correct", "incorrect");
     if (isdefined(manager.var_b010dc081d6a5b9e)) {
-        var_23c530316124278 = manager.var_b010dc081d6a5b9e[manager.var_a649630cf1819d2c.size - 1];
-        var_23c530316124278 setscriptablepartstate("sfx", state);
+        display_glyph = manager.var_b010dc081d6a5b9e[manager.input_keys.size - 1];
+        display_glyph setscriptablepartstate("sfx", state);
     }
     instance setscriptablepartstate("sfx", state);
 }
@@ -299,15 +299,15 @@ function function_e43f71d6d1c35383(einflictor, eattacker, instance, idamage, idf
         }
     }
     manager = instance.manager;
-    var_5ae92d952ab77a57 = instance getscriptablepartstate("model", 0);
-    manager.var_a649630cf1819d2c += var_5ae92d952ab77a57;
-    result = function_33c458e08626294f(manager.var_a649630cf1819d2c, manager.keys);
+    input_key = instance getscriptablepartstate("model", 0);
+    manager.input_keys += input_key;
+    result = function_33c458e08626294f(manager.input_keys, manager.keys);
     switch (result) {
     case #"hash_f43afb7b1b11f010":
         /#
             iprintlnbold("<dev string:x84>");
         #/
-        instance function_4575ce4d8f4bf822(manager, var_5ae92d952ab77a57);
+        instance function_4575ce4d8f4bf822(manager, input_key);
         function_a052c2969b025a94("invalid", manager, eattacker);
         wait 1.5;
         manager function_a6f3de8969ab6191();
@@ -317,15 +317,15 @@ function function_e43f71d6d1c35383(einflictor, eattacker, instance, idamage, idf
         /#
             iprintlnbold("<dev string:x93>");
         #/
-        instance setscriptablepartstate("vfx", var_5ae92d952ab77a57);
+        instance setscriptablepartstate("vfx", input_key);
         instance setscriptablepartstate("model", "inactive");
         instance setscriptablepartstate("health", "inactive");
         if (isdefined(manager.var_b010dc081d6a5b9e)) {
-            var_23c530316124278 = manager.var_b010dc081d6a5b9e[manager.var_a649630cf1819d2c.size - 1];
-            var_23c530316124278 setscriptablepartstate("vfx", var_5ae92d952ab77a57);
-            var_23c530316124278 setscriptablepartstate("model", "inactive");
+            display_glyph = manager.var_b010dc081d6a5b9e[manager.input_keys.size - 1];
+            display_glyph setscriptablepartstate("vfx", input_key);
+            display_glyph setscriptablepartstate("model", "inactive");
         }
-        instance function_bbfa3e81df7313aa(manager, var_5ae92d952ab77a57, 1);
+        instance function_bbfa3e81df7313aa(manager, input_key, 1);
         function_a052c2969b025a94("valid", manager, eattacker);
         break;
     }
@@ -349,17 +349,17 @@ function function_e43f71d6d1c35383(einflictor, eattacker, instance, idamage, idf
 // Size: 0x184
 function function_24e03be2bc20e57b() {
     manager = self;
-    manager.var_a649630cf1819d2c = "";
+    manager.input_keys = "";
     foreach (instance in manager.var_1ea94f63b761803c) {
-        instance setscriptablepartstate("model", instance.var_fa09fa79b74b79d1);
+        instance setscriptablepartstate("model", instance.rune_key);
         instance setscriptablepartstate("vfx", "unlinked");
         instance setscriptablepartstate("health", "damageable");
         instance setscriptablepartstate("sfx", "off");
-        instance.var_7c781d924d61f590 show();
+        instance.stone_model show();
     }
     if (isdefined(manager.var_b010dc081d6a5b9e)) {
         foreach (instance in manager.var_b010dc081d6a5b9e) {
-            instance setscriptablepartstate("model", instance.var_fa09fa79b74b79d1);
+            instance setscriptablepartstate("model", instance.rune_key);
             instance setscriptablepartstate("vfx", "unlinked");
             instance setscriptablepartstate("sfx", "off");
         }
@@ -376,7 +376,7 @@ function function_24e03be2bc20e57b() {
 // Size: 0x13e
 function function_a63a2112c7b585e5() {
     manager = self;
-    manager.var_a649630cf1819d2c = "";
+    manager.input_keys = "";
     if (isdefined(manager.var_b010dc081d6a5b9e)) {
         foreach (instance in manager.var_b010dc081d6a5b9e) {
             instance setscriptablepartstate("model", "inactive");
@@ -388,7 +388,7 @@ function function_a63a2112c7b585e5() {
         instance setscriptablepartstate("model", "inactive");
         instance setscriptablepartstate("vfx", "off");
         instance setscriptablepartstate("sfx", "off");
-        instance.var_7c781d924d61f590 hide();
+        instance.stone_model hide();
     }
     manager notify("rune_reset");
 }
@@ -400,7 +400,7 @@ function function_a63a2112c7b585e5() {
 function function_a6f3de8969ab6191() {
     manager = self;
     manager.keys = undefined;
-    manager.var_a649630cf1819d2c = undefined;
+    manager.input_keys = undefined;
     if (isdefined(manager.var_b010dc081d6a5b9e)) {
         foreach (instance in manager.var_b010dc081d6a5b9e) {
             instance setscriptablepartstate("model", "inactive");
@@ -414,7 +414,7 @@ function function_a6f3de8969ab6191() {
         instance setscriptablepartstate("model", "inactive");
         instance setscriptablepartstate("vfx", "off");
         instance setscriptablepartstate("sfx", "off");
-        instance.var_7c781d924d61f590 delete();
+        instance.stone_model delete();
         instance freescriptable();
     }
     manager.var_1ea94f63b761803c = undefined;
@@ -425,10 +425,10 @@ function function_a6f3de8969ab6191() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1677
 // Size: 0x79
-function function_759722ee5b57fdd7(var_2e1328d879102c24, min, max) {
-    assert(var_2e1328d879102c24 <= max - min, "<dev string:xcb>");
+function function_759722ee5b57fdd7(num_keys, min, max) {
+    assert(num_keys <= max - min, "<dev string:xcb>");
     keys = [];
-    for (i = 0; i < var_2e1328d879102c24; i++) {
+    for (i = 0; i < num_keys; i++) {
         key = randomintrange(min, max);
         if (!arraycontains(keys, key)) {
             keys[i] = key;
@@ -443,9 +443,9 @@ function function_759722ee5b57fdd7(var_2e1328d879102c24, min, max) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x16f9
 // Size: 0x3a
-function function_33c458e08626294f(var_a649630cf1819d2c, keys) {
-    if (var_a649630cf1819d2c == getsubstr(keys, 0, var_a649630cf1819d2c.size)) {
-        if (var_a649630cf1819d2c.size == keys.size) {
+function function_33c458e08626294f(input_keys, keys) {
+    if (input_keys == getsubstr(keys, 0, input_keys.size)) {
+        if (input_keys.size == keys.size) {
             return "complete";
         }
         return "valid";

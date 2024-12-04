@@ -1,6 +1,6 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\common\callbacks;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_702fb5f6d0e65edf;
 
@@ -22,7 +22,7 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18a
 // Size: 0x41
-function function_ecda523e7843aa() {
+function rewardAssistPoints() {
     killstreakpoints = setkillstreakpoints(getdvarint(@"hash_db219318c57c207c"));
     scripts\mp\killstreaks\killstreaks::givestreakpoints(#"assist", killstreakpoints, getdvarint(@"hash_d91cb66b19053d12"));
 }

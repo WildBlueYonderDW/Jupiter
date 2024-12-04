@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using script_40e63dd222434655;
-#using script_59ff79d681bb860c;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_44f4640b93ab1b47;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using script_4c9bd9a3bf3f8cf7;
-#using script_2e6a95dfe7dfc5f8;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_72af5a878a9d3397;
-#using script_5bab271917698dc4;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using scripts\mp\playerlogic.gsc;
 #using script_26ccbfe3954cacf4;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
+#using script_2e6a95dfe7dfc5f8;
+#using script_40e63dd222434655;
+#using script_44f4640b93ab1b47;
+#using script_4c9bd9a3bf3f8cf7;
+#using script_59ff79d681bb860c;
+#using script_5bab271917698dc4;
+#using script_72af5a878a9d3397;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\playerlogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace manager;
 
@@ -819,7 +819,7 @@ function private function_a0e0c0e1e94630f6() {
             var_67ba7c3c6b03a843 += level.br_level.br_circledelaytimes[circleindex];
         }
         points = [];
-        mapname = getdvar(@"hash_687fb8f9b7a23245");
+        mapname = getdvar(@"g_mapname");
         foundmap = 0;
         rownum = tablelookupgetnumrows(tablename);
         for (row = 0; row < rownum; row++) {

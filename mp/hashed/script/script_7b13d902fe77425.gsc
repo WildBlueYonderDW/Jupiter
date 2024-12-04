@@ -1,9 +1,9 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_485622d93fa7e4cf;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_c241d988869e3ed2;
 

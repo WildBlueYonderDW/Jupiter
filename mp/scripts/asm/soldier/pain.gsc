@@ -1,14 +1,14 @@
-#using scripts\asm\asm.gsc;
-#using script_7e4d332e911e1b90;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\face.gsc;
-#using scripts\asm\soldier\death.gsc;
-#using scripts\asm\soldier\script_funcs.gsc;
-#using script_50eeb9595c6d6e1b;
 #using script_3433ee6b63c7e243;
+#using script_50eeb9595c6d6e1b;
+#using script_7e4d332e911e1b90;
+#using scripts\anim\face;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\death;
+#using scripts\asm\soldier\script_funcs;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace pain;
 

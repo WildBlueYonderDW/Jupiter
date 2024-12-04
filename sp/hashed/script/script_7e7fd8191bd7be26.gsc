@@ -1,6 +1,6 @@
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
+#using scripts\common\ai;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
 
 #namespace namespace_51941b5526d40882;
 

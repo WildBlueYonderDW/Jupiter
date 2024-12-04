@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace namespace_8c2443d2e806600c;
 
@@ -976,7 +976,7 @@ function vehomn_updateomnvarsonseatenter(vehicle, var_fc7c7a874b43a31a, var_7558
 // Checksum 0x0, Offset: 0x2880
 // Size: 0x37e
 function function_d2d9c09551d91164(vehicle, player) {
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+    if (getdvarint(@"mgl", 0)) {
         return;
     }
     vehomn_setvehicle(vehicle.vehiclename, player);
@@ -1135,9 +1135,9 @@ function vehomn_updatenextseatomnvars(vehicle) {
 function vehomn_updaterotationomnvarsperframeforclient(vehicle, client, seatid, data) {
     var_e2818ad39a3341b4 = vehomn_getleveldataforvehicle(vehicle.vehiclename);
     if (var_e2818ad39a3341b4.rotationrefsbyseatandweapon.size > 0 && isdefined(var_e2818ad39a3341b4.rotationrefsbyseatandweapon[seatid])) {
-        var_48449f38d385a654 = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_isdriverseat(vehicle, seatid);
+        usingCamera = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_isdriverseat(vehicle, seatid);
         var_c50b485a43752fd = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforseat(vehicle.vehiclename, seatid);
-        if (var_48449f38d385a654) {
+        if (usingCamera) {
             if (isdefined(vehicle.objweapon)) {
                 rotationref = var_e2818ad39a3341b4.rotationrefsbyseatandweapon[seatid][vehicle.objweapon.basename];
                 if (isdefined(rotationref)) {

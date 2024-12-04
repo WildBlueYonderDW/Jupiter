@@ -1,6 +1,6 @@
-#namespace namespace_8e595e5e582e9e82;
+#namespace bodies_c_jup_sp_enemy_rusdelegate;
 
-// Namespace namespace_8e595e5e582e9e82 / namespace_ccfca4f1467f1b02
+// Namespace bodies_c_jup_sp_enemy_rusdelegate / namespace_ccfca4f1467f1b02
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd1
 // Size: 0x29

@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7b2517368c79e5bc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_6a37cb2f602c62bc;
 

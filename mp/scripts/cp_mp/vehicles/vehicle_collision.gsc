@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using script_5f09cc6e22a3f571;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_utility;
+#using scripts\engine\utility;
 
 #namespace vehicle_collision;
 

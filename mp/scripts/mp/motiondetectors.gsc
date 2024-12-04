@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace motiondetectors;
 

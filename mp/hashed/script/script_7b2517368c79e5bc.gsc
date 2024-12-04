@@ -1,32 +1,32 @@
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using script_5032ed8da1128621;
-#using scripts\common\utility.gsc;
-#using script_43971bbeefd98f05;
-#using script_3e2f8cc477d57433;
-#using script_32dd4b86977d430c;
-#using script_600b944a95c3a7bf;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_6a11212698833ae9;
+#using script_12a101fb4d4cb63e;
+#using script_14183f3fced4ee2b;
 #using script_14e5d6cbb6a32c41;
 #using script_1de396bd08617dd4;
-#using script_cbdac3b4a48bb8f;
-#using script_53758641d3c1870c;
-#using script_670b6177abb05234;
-#using script_6f74c67411fcab41;
-#using script_443d99fe707f1d9f;
-#using script_14183f3fced4ee2b;
-#using script_64457324b9cce77;
 #using script_3282f33bea60a32;
-#using script_12a101fb4d4cb63e;
-#using script_54be039c89fddc12;
+#using script_32dd4b86977d430c;
 #using script_3af0e35fc47898ae;
 #using script_3cb11ad6dcd981;
-#using scripts\common\debug.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
+#using script_3e2f8cc477d57433;
+#using script_43971bbeefd98f05;
+#using script_443d99fe707f1d9f;
+#using script_5032ed8da1128621;
+#using script_53758641d3c1870c;
+#using script_54be039c89fddc12;
+#using script_600b944a95c3a7bf;
+#using script_64457324b9cce77;
+#using script_670b6177abb05234;
+#using script_6a11212698833ae9;
+#using script_6f74c67411fcab41;
+#using script_cbdac3b4a48bb8f;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace common_item;
 
@@ -278,9 +278,9 @@ function function_de489fa2ffdb7f2d(item, autouse, var_95484d8d503de3b8) {
             }
             canuse = default_to(canuse, 1);
             if (istrue(canuse)) {
-                var_57accdc40b2f50e = [undefined, 0];
-                var_64009c8d010b1490 = var_57accdc40b2f50e[1];
-                var_2814cca693e6ef2d = var_57accdc40b2f50e[0];
+                __a0 = [undefined, 0];
+                var_64009c8d010b1490 = __a0[1];
+                var_2814cca693e6ef2d = __a0[0];
                 if (isdefined(callbacks.var_df9b308efe82294a)) {
                     var_57acddc40b2f741 = self [[ callbacks.var_df9b308efe82294a ]]();
                     var_64009c8d010b1490 = var_57acddc40b2f741[1];
@@ -1575,7 +1575,7 @@ function function_49b86047c8a8b228(dropstruct, baseorigin, baseangles, ignoreent
     }
     ring_quantity = 3;
     slot_yaw = 360 / var_c459fe3ec72a8224;
-    var_ac72a33c0ed48603 = isdefined(dropstruct.var_7281c7ba7331bc41) ? dropstruct.var_7281c7ba7331bc41 : 30;
+    ring_yaw = isdefined(dropstruct.var_7281c7ba7331bc41) ? dropstruct.var_7281c7ba7331bc41 : 30;
     var_551904951118b7b9 = level.var_1dfefe3988a59ae5;
     var_ab9f50e5b2c2e07e = ter_op(isdefined(dropstruct.var_8ee5ee589d379b1), dropstruct.var_8ee5ee589d379b1, -5);
     var_ab7c62e5b29cc05c = ter_op(isdefined(dropstruct.var_91170e589f9e8ff), dropstruct.var_91170e589f9e8ff, 5);
@@ -1626,7 +1626,7 @@ function function_49b86047c8a8b228(dropstruct, baseorigin, baseangles, ignoreent
     }
     dropdata.ring = int(var_d2052427afb83208 / var_c459fe3ec72a8224);
     dropdata.ringslot = var_d2052427afb83208 - dropdata.ring * var_c459fe3ec72a8224;
-    dropdata.yaw = baseangles[1] + dropdata.ringslot * slot_yaw + dropdata.ring * var_ac72a33c0ed48603 + randomfloatrange(var_ab9f50e5b2c2e07e, var_ab7c62e5b29cc05c);
+    dropdata.yaw = baseangles[1] + dropdata.ringslot * slot_yaw + dropdata.ring * ring_yaw + randomfloatrange(var_ab9f50e5b2c2e07e, var_ab7c62e5b29cc05c);
     dropdata.dist = var_57716496f9f490f + dropdata.ring * var_e0cc897878c28778 + randomfloatrange(var_b0bb91ad89d1aaed, var_b0987bad89ab32d3);
     if (isdefined(dropstruct.var_8a600b6102da9f9b)) {
         dropdata.yaw = baseangles[1] + dropstruct.var_8a600b6102da9f9b;

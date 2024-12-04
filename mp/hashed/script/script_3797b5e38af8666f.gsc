@@ -1,7 +1,7 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\cap.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\cap;
+#using scripts\asm\shared\utility;
+#using scripts\engine\utility;
 
 #namespace base_interaction;
 
@@ -72,8 +72,8 @@ function function_92087655510b0e0(asmname, statename, params) {
 // Checksum 0x0, Offset: 0x241
 // Size: 0x4b
 function function_6d55fddf9c7024e2(asmname, statename, params) {
-    if (isdefined(self.var_a70672e669ca7f00)) {
-        self forceteleport(self.origin, self.var_a70672e669ca7f00);
+    if (isdefined(self.interaction_angles)) {
+        self forceteleport(self.origin, self.interaction_angles);
     }
     function_59308d53cabcdfdb(asmname, statename, params);
 }
@@ -83,7 +83,7 @@ function function_6d55fddf9c7024e2(asmname, statename, params) {
 // Checksum 0x0, Offset: 0x294
 // Size: 0x2f
 function function_56c32e6f7b6ed8ed(asmname, statename, params) {
-    self.var_a70672e669ca7f00 = undefined;
+    self.interaction_angles = undefined;
     cap_exit(asmname, statename, params);
 }
 

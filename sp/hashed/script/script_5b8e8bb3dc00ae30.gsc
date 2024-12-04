@@ -1,6 +1,6 @@
-#using scripts\asm\asm.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\sp\anim.gsc;
+#using scripts\asm\asm;
+#using scripts\common\notetrack;
+#using scripts\sp\anim;
 
 #namespace animmode;
 
@@ -45,10 +45,10 @@ function main() {
         self teleport(origin, angles);
     }
     self.pushable = 0;
-    var_6e2597877d503152 = 0.3;
+    clear_time = 0.3;
     blend_time = 0.2;
     if (isdefined(self.anim_blend_time_override)) {
-        var_6e2597877d503152 = self.anim_blend_time_override;
+        clear_time = self.anim_blend_time_override;
         blend_time = self.anim_blend_time_override;
     }
     self animmode(self._animmode);

@@ -1,6 +1,6 @@
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\utility\script;
 
 #namespace namespace_dc3509b15456adcd;
 

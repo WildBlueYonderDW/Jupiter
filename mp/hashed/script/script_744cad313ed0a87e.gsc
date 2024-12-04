@@ -1,44 +1,44 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_4948cdf739393d2d;
-#using scripts\mp\flags.gsc;
-#using script_58f20490049af6ac;
-#using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\gametypes\br.gsc;
-#using script_57d3850a12cf1d8f;
-#using script_367c2e5a914658d7;
-#using script_2bc0b0102f9b7751;
-#using scripts\mp\gametypes\br_bosses.gsc;
-#using script_3ff084f114b7f6c9;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\poi.gsc;
 #using script_15ca41a3fbb0e379;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\hud_message.gsc;
-#using script_744cad313ed0a87e;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using script_371b4c2ab5861e62;
 #using script_24fbedba9a7a1ef4;
-#using script_600b944a95c3a7bf;
+#using script_2bc0b0102f9b7751;
 #using script_2d9d24f7c63ac143;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using script_367c2e5a914658d7;
+#using script_371b4c2ab5861e62;
+#using script_3ff084f114b7f6c9;
+#using script_48814951e916af89;
+#using script_4948cdf739393d2d;
+#using script_57d3850a12cf1d8f;
+#using script_58f20490049af6ac;
+#using script_600b944a95c3a7bf;
+#using script_64acb6ce534155b7;
+#using script_744cad313ed0a87e;
+#using script_7ab5b649fa408138;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_bosses;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\poi;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_c62d39d6e6afb119;
 
@@ -2290,10 +2290,10 @@ function function_405d3047ee9c2b3f() {
     while (!isdefined(level.br_ac130)) {
         wait 0.1;
     }
-    var_90416d079805b8a5 = level.br_ac130.angles;
-    var_90416d079805b8a5 += (0, -90, 0);
+    fwd_ang = level.br_ac130.angles;
+    fwd_ang += (0, -90, 0);
     fortress = self;
-    fortress function_dc34a21ff66578cf(fortress.var_c4b85c30a02a19f8, fortress.origin, var_90416d079805b8a5);
+    fortress function_dc34a21ff66578cf(fortress.var_c4b85c30a02a19f8, fortress.origin, fwd_ang);
     fortress thread function_39bb860db14e2d9();
 }
 
@@ -2301,7 +2301,7 @@ function function_405d3047ee9c2b3f() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x95b5
 // Size: 0xb9
-function function_dc34a21ff66578cf(scriptablestate, pos, var_90416d079805b8a5) {
+function function_dc34a21ff66578cf(scriptablestate, pos, fwd_ang) {
     fortress = self;
     if (istrue(self.isblacksite) && getdvarint(@"hash_634e713979b0981a", 1)) {
         return;
@@ -2310,7 +2310,7 @@ function function_dc34a21ff66578cf(scriptablestate, pos, var_90416d079805b8a5) {
     pos += (0, 0, 1000);
     var_6db960044e337f44 = spawn("script_model", pos);
     var_6db960044e337f44 setmodel(fx_model);
-    var_6db960044e337f44.angles = var_90416d079805b8a5;
+    var_6db960044e337f44.angles = fwd_ang;
     var_6db960044e337f44 setscriptablepartstate("name_fx", scriptablestate, 0);
     var_6db960044e337f44 forcenetfieldhighlod(1);
     fortress.stronghold_fx = var_6db960044e337f44;

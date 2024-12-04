@@ -1,20 +1,20 @@
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
 #using script_3eeed4ec7fabcd1;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
-#namespace namespace_a9a13560b3801977;
+#namespace jup_ally_hero_farah_cp;
 
-// Namespace namespace_a9a13560b3801977 / namespace_b0483acf9824408e
+// Namespace jup_ally_hero_farah_cp / namespace_b0483acf9824408e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d7
 // Size: 0x1ac
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_72cc88c0207a91c4");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_ally_hero_farah_cp");
     self.health = 150;
     self.maxhealth = 150;
     self.behaviortreeasset = "soldier_agent";
@@ -43,7 +43,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_a9a13560b3801977 / namespace_b0483acf9824408e
+// Namespace jup_ally_hero_farah_cp / namespace_b0483acf9824408e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x38b
 // Size: 0x56
@@ -57,7 +57,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_a9a13560b3801977 / namespace_b0483acf9824408e
+// Namespace jup_ally_hero_farah_cp / namespace_b0483acf9824408e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e9
 // Size: 0x8
@@ -65,7 +65,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_a0b2a98c225c8839::main();
 }
 
-// Namespace namespace_a9a13560b3801977 / namespace_b0483acf9824408e
+// Namespace jup_ally_hero_farah_cp / namespace_b0483acf9824408e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fa
 // Size: 0xae
@@ -87,7 +87,7 @@ function precache() {
     thread setup_weapons();
 }
 
-// Namespace namespace_a9a13560b3801977 / namespace_b0483acf9824408e
+// Namespace jup_ally_hero_farah_cp / namespace_b0483acf9824408e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b0
 // Size: 0x14d

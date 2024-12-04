@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace estate_infil;
 
@@ -18,7 +18,7 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c3
 // Size: 0x95
-function function_626fb204e5a41e30(subtype) {
+function estate_init(subtype) {
     function_f1aed36ab4598ea("palfa_estate_infil");
     thread function_99fbfc1d5ecbea75();
     /#
@@ -28,14 +28,14 @@ function function_626fb204e5a41e30(subtype) {
     var_453e4fc2c649fea4[0] = [0];
     var_453e4fc2c649fea4[1] = [1, 2, 3];
     var_453e4fc2c649fea4[2] = [4, 5];
-    thread infil_add("infil_estate", subtype, 6, 4, var_453e4fc2c649fea4, &function_8975a5f6e2dfa5a1, &function_2e33cc2fe5c25c43, &function_162bb826cd9f6807);
+    thread infil_add("infil_estate", subtype, 6, 4, var_453e4fc2c649fea4, &estate_spawn, &function_2e33cc2fe5c25c43, &function_162bb826cd9f6807);
 }
 
 // Namespace estate_infil / namespace_87aa8ad55dad1e84
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x960
 // Size: 0xf0
-function function_8975a5f6e2dfa5a1(team, target, subtype, originalsubtype) {
+function estate_spawn(team, target, subtype, originalsubtype) {
     initanims(subtype, team, originalsubtype);
     scene_node = getstruct(target, "targetname");
     infil = spawn("script_origin", scene_node.origin);
@@ -396,7 +396,7 @@ function spawn_anim_model(animname, linkto_ent, body, head, weapon) {
 // Size: 0x1b9
 function initanims(subtype, team, originalsubtype) {
     script_model_alpha_anims(subtype);
-    function_68aab9f69431ce1(subtype, team, originalsubtype);
+    vehicles_anims(subtype, team, originalsubtype);
     addnotetrack_customfunction("slot_0", "fov_63_2", &player_fov_default_2);
     addnotetrack_customfunction("slot_1", "fov_63_2", &player_fov_default_2);
     addnotetrack_customfunction("slot_2", "fov_63_2", &player_fov_default_2);
@@ -449,7 +449,7 @@ function script_model_alpha_anims(subtype) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ba7
 // Size: 0x59
-function function_68aab9f69431ce1(subtype, team, originalsubtype) {
+function vehicles_anims(subtype, team, originalsubtype) {
     level.scr_anim["estate_heli"]["estate_infil_intro"] = mp_vehicles_always_loaded%jup_mp_infil_palfa_vehicle;
     level.scr_anim["estate_heli"]["estate_infil_exit"] = mp_vehicles_always_loaded%jup_mp_infil_palfa_vehicle_exit;
 }

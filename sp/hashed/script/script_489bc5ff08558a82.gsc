@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_354c862768cfe202;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_1fcffdd06e4267a7;
 
@@ -639,8 +639,8 @@ function firebullet(origin, angles, dist, var_dc1ab01f03316243) {
     worldup = (0, 0, 1);
     var_cde77178f5341b4f = anglestoforward(angles) * var_dc1ab01f03316243;
     a = (0, 0, 0) + (0, 0, 0);
-    var_6eb9bc0310cb1b7e = 0;
-    var_6eb9bc0310cb1b7e = dist / var_dc1ab01f03316243;
+    max_t = 0;
+    max_t = dist / var_dc1ab01f03316243;
     t = 0;
     r = origin;
     if (!isdefined(level.bullets)) {
@@ -652,15 +652,15 @@ function firebullet(origin, angles, dist, var_dc1ab01f03316243) {
     var_e6ad177ff55e26c1 = [];
     var_fba2e3ad41033620 = 0;
     var_242a6d26cfa4f8ff = 0.2;
-    while (t < var_6eb9bc0310cb1b7e && !istrue(var_fba2e3ad41033620)) {
-        var_3c9070482d1f3bdf = r;
+    while (t < max_t && !istrue(var_fba2e3ad41033620)) {
+        old_r = r;
         r = origin + var_cde77178f5341b4f * t + 0.5 * a * squared(t);
-        forward = vectornormalize(r - var_3c9070482d1f3bdf);
-        var_9cd84d753a49efac = distance(r, var_3c9070482d1f3bdf);
+        forward = vectornormalize(r - old_r);
+        var_9cd84d753a49efac = distance(r, old_r);
         bullet.origin = r;
         contents = create_contents(1, 1, 1, 1, 1, 1);
         ignoreents = array_merge(level.bulletdrop.ignoreents, var_e6ad177ff55e26c1);
-        var_8a592fbfa1086de3 = ray_trace(var_3c9070482d1f3bdf, r, ignoreents, contents, 0, 1);
+        var_8a592fbfa1086de3 = ray_trace(old_r, r, ignoreents, contents, 0, 1);
         traces = [var_8a592fbfa1086de3];
         if (self.firetype == "doom_proj") {
             color = ter_op(var_fba2e3ad41033620, (1, 1, 0), (1, 0, 0));
@@ -682,7 +682,7 @@ function firebullet(origin, angles, dist, var_dc1ab01f03316243) {
         if (isdefined(var_5f6effb5ffeb0640)) {
             if (!var_fba2e3ad41033620) {
                 level notify("ballisticBulletImpact", var_5f6effb5ffeb0640);
-                r = var_3c9070482d1f3bdf;
+                r = old_r;
                 var_fba2e3ad41033620 = 1;
             }
             if (isdefined(var_fbfe68887f79d14c)) {
@@ -775,7 +775,7 @@ function isenemyinfrontofme(enemy, var_3b37ca6ec4d56e75) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x249d
 // Size: 0xa5
-function isenemyrightofme(enemy, var_7595128b0dfbcb5b) {
+function isenemyrightofme(enemy, ang_offset) {
     dir = vectornormalize((enemy.origin - self gettagorigin("tag_flash")) * (1, 1, 0));
     right = vectornormalize(anglestoright(self.angles));
     dot = vectordot(dir, right);

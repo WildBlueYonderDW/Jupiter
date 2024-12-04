@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_7edf952f8921aa6b;
 #using script_1243911b5893214a;
-#using scripts\common\values.gsc;
+#using script_7edf952f8921aa6b;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace zombie_melee;
 

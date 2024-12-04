@@ -1,6 +1,6 @@
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_e3e994302f5316d8;
 

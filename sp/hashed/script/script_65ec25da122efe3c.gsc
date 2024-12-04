@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
-#using scripts\cp\cp_ammo_crate.gsc;
-#using scripts\cp\cp_grenade_crate.gsc;
-#using script_66122a002aff5d57;
-#using script_354c862768cfe202;
 #using script_18c9036dc9a4081;
+#using script_354c862768cfe202;
+#using script_66122a002aff5d57;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_ammo_crate;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\cp_grenade_crate;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace munitions_crate;
 
@@ -153,7 +153,7 @@ function function_1749db81c9375723(player) {
 function function_8db4cafb79e5124a() {
     self notify("ammo_cache_success");
     self endon("ammo_cache_success");
-    thread namespace_6250b14b3f614101::function_ee5540242ef172d4();
+    thread namespace_6250b14b3f614101::player_play_pickup_anim();
     self playlocalsound("weap_ammo_pickup");
     thread namespace_3d3d5211c3029f82::hudicontype("ammobox");
 }
@@ -285,11 +285,11 @@ function supportbox_waittill_notify(msg, ent) {
 // Size: 0x6e
 function cangive_ammo() {
     currentweapon = getvalidtakeweapon();
-    var_de8a9ead75a0581 = self getweaponammoclip(currentweapon);
-    var_c56bbe615f626cc8 = weaponclipsize(currentweapon);
-    var_a862b844906a7c8 = weaponmaxammo(currentweapon);
-    var_82068ca6d5b3c991 = self getweaponammostock(currentweapon);
-    if (var_82068ca6d5b3c991 < var_a862b844906a7c8 || var_de8a9ead75a0581 < var_c56bbe615f626cc8) {
+    current_ammo = self getweaponammoclip(currentweapon);
+    max_clip = weaponclipsize(currentweapon);
+    max_stock = weaponmaxammo(currentweapon);
+    player_stock = self getweaponammostock(currentweapon);
+    if (player_stock < max_stock || current_ammo < max_clip) {
         return 1;
     }
     return 0;
@@ -327,7 +327,7 @@ function test_ammo_crate(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcf4
 // Size: 0x3b
-function give_crafted_ammo_crate(var_df071553d0996ff9, player) {
+function give_crafted_ammo_crate(interaction_struct, player) {
     player thread watch_dpad();
     player notify("new_power", "crafted_autosentry");
     set_crafted_inventory_item("crafted_autosentry", &give_crafted_ammo_crate, player);

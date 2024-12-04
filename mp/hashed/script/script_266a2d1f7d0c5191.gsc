@@ -1,10 +1,10 @@
-#using script_89c4e8e66e8a360;
 #using script_2f981f68661d5e1a;
-#using script_5dfa1fb6b030bdcb;
 #using script_32d93a194074fa6a;
 #using script_47a7dd805c87b33f;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\utility.gsc;
+#using script_5dfa1fb6b030bdcb;
+#using script_89c4e8e66e8a360;
+#using scripts\engine\utility;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_fbc22dc6f2271b4;
 

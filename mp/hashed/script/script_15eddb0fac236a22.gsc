@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_4925be476a433a59;
 
@@ -324,23 +324,23 @@ function function_968efd4a57cd5164(cashvalue) {
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x10b9
 // Size: 0xa6
-function private function_3c954868ecfc7400(current_weapon, var_2ec84d08fa2f7c3e) {
+function private function_3c954868ecfc7400(current_weapon, kills_count) {
     if (!scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
         return;
     }
     var_c1648f9a511f9859 = self.var_d0459a2a284e95b0;
     weapon_index = getweaponindex(current_weapon);
     if (isdefined(var_c1648f9a511f9859) && var_c1648f9a511f9859 == weapon_index) {
-        self.var_1c12f40e4a9da54d = var_2ec84d08fa2f7c3e;
+        self.var_1c12f40e4a9da54d = kills_count;
         return;
     }
     if (!isdefined(self.var_1c12f40e4a9da54d)) {
         self.var_1c12f40e4a9da54d = 0;
     }
-    if (var_2ec84d08fa2f7c3e > self.var_1c12f40e4a9da54d) {
+    if (kills_count > self.var_1c12f40e4a9da54d) {
         self.var_2be26c80434dff7c = current_weapon.basename;
         self.var_d0459a2a284e95b0 = weapon_index;
-        self.var_1c12f40e4a9da54d = var_2ec84d08fa2f7c3e;
+        self.var_1c12f40e4a9da54d = kills_count;
     }
 }
 

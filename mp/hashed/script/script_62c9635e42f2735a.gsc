@@ -1,11 +1,11 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\frontendutils.gsc;
 #using script_5e9e768a83da2ad4;
-#using script_cbb0697de4c5728;
 #using script_6775ad452d13858;
-#using scripts\cp_mp\crossbow.gsc;
+#using script_cbb0697de4c5728;
+#using scripts\common\utility;
+#using scripts\cp_mp\crossbow;
+#using scripts\cp_mp\frontendutils;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_a406dc37134c52b;
 
@@ -29,7 +29,7 @@ function function_2bef3a70387bed5() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa9d
 // Size: 0x197
-function function_55b15747ca46a0ac() {
+function frontend_spawnplayer() {
     println("<dev string:x1c>");
     level.var_b6f6be0fc7f95080 = spawn("sound_transient_soundbanks", (0, 0, 0));
     level.var_b6f6be0fc7f95080 settransientsoundbank("jup_frontend_firingrange.all", 1);
@@ -73,7 +73,7 @@ function function_ad45f79e3a9b4d2(var_fe2109095a023ed7) {
     if (istrue(self.var_19300a2d63d79909)) {
         self.var_19300a2d63d79909 = 0;
         waitframe();
-        function_55b15747ca46a0ac();
+        frontend_spawnplayer();
     }
 }
 
@@ -166,11 +166,11 @@ function function_b770c0d79c3b668(currweaponobj, prevweaponobj) {
 // Size: 0x1b6
 function weaponattachmentperkupdate(currweaponobj, prevweaponobj) {
     var_503110dc18b08ab9 = undefined;
-    var_88c1658d6b22a174 = undefined;
+    oldattachments = undefined;
     if (!isundefinedweapon(prevweaponobj)) {
-        var_88c1658d6b22a174 = getweaponattachments(prevweaponobj);
-        if (isdefined(var_88c1658d6b22a174) && var_88c1658d6b22a174.size > 0) {
-            foreach (oldattach in var_88c1658d6b22a174) {
+        oldattachments = getweaponattachments(prevweaponobj);
+        if (isdefined(oldattachments) && oldattachments.size > 0) {
+            foreach (oldattach in oldattachments) {
                 perks = function_de5d0db99cd9bfd7(prevweaponobj, oldattach);
                 if (!isdefined(perks)) {
                     continue;
@@ -190,7 +190,7 @@ function weaponattachmentperkupdate(currweaponobj, prevweaponobj) {
                     continue;
                 }
                 foreach (perk in perks) {
-                    function_1ee3fbfcceaa746b(perk);
+                    frontend_giveperk(perk);
                 }
             }
         }
@@ -232,7 +232,7 @@ function function_3350b04cb0437d15(perk) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1308
 // Size: 0x15
-function function_1ee3fbfcceaa746b(perk) {
+function frontend_giveperk(perk) {
     self setperk(perk, 1);
 }
 
@@ -313,7 +313,7 @@ function function_cb993ebadda105c7() {
     waitframe();
     waitframe();
     self.var_19300a2d63d79909 = 0;
-    function_55b15747ca46a0ac();
+    frontend_spawnplayer();
     function_f9ef7bd954fb4194();
     loadout_giveperk("specialty_pistoldraw");
     thread function_ad11142812a6dc9f();

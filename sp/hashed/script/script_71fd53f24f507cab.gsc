@@ -1,13 +1,13 @@
-#using scripts\common\utility.gsc;
-#using script_3a8f9ace195c9da9;
 #using script_102d83a437e2b29f;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
+#using script_3a8f9ace195c9da9;
 #using script_f603f40349f99c8;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_843b34fd54bc670f;
+#namespace reinforcement_util;
 
-// Namespace namespace_843b34fd54bc670f / namespace_e9ca4fea4faf85cf
+// Namespace reinforcement_util / namespace_e9ca4fea4faf85cf
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x20a
 // Size: 0x65
@@ -20,11 +20,11 @@ function function_8bcc57ecc1d97b99(var_4fc8f8139dbb2513, var_bd977d7be720602c) {
     thread function_4263d0d23af617df();
 }
 
-// Namespace namespace_843b34fd54bc670f / namespace_e9ca4fea4faf85cf
+// Namespace reinforcement_util / namespace_e9ca4fea4faf85cf
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x277
 // Size: 0x1b8
-function function_aa1b88ace5bb6c1a(var_dfec89ad8ca0cdc1, var_1b4eb49dae050e20, var_f249c0bb3d7fb281, predicates, var_c1cc3c4bab7d6d0b) {
+function add_reinforcement(var_dfec89ad8ca0cdc1, var_1b4eb49dae050e20, var_f249c0bb3d7fb281, predicates, var_c1cc3c4bab7d6d0b) {
     assert(isdefined(var_dfec89ad8ca0cdc1) && isstring(var_dfec89ad8ca0cdc1));
     assert(isdefined(var_1b4eb49dae050e20) && isint(var_1b4eb49dae050e20));
     assert(isdefined(var_f249c0bb3d7fb281) && isstring(var_f249c0bb3d7fb281));
@@ -55,7 +55,7 @@ function function_aa1b88ace5bb6c1a(var_dfec89ad8ca0cdc1, var_1b4eb49dae050e20, v
     targetdata.spawners[var_f249c0bb3d7fb281] = var_4262643d07dfa727;
 }
 
-// Namespace namespace_843b34fd54bc670f / namespace_e9ca4fea4faf85cf
+// Namespace reinforcement_util / namespace_e9ca4fea4faf85cf
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x437
 // Size: 0x265
@@ -101,7 +101,7 @@ function private function_4263d0d23af617df() {
     }
 }
 
-// Namespace namespace_843b34fd54bc670f / namespace_e9ca4fea4faf85cf
+// Namespace reinforcement_util / namespace_e9ca4fea4faf85cf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a4
 // Size: 0x5d
@@ -117,21 +117,21 @@ function function_6e91939ff8132810(var_d8f27b0d11d1236) {
     targetdata.var_d625f475dff5d2bd += 1;
 }
 
-// Namespace namespace_843b34fd54bc670f / namespace_e9ca4fea4faf85cf
+// Namespace reinforcement_util / namespace_e9ca4fea4faf85cf
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x709
 // Size: 0x224
-function function_d4ff9113ebde2be0(var_4b36e304c4e6b091, heli_health, heli_type, var_81bab6febf7f6625, var_8fe58d021853358c, var_65a79f108a26d325, var_493bc9bba3b495b) {
+function heli_reinforcements(heli_name, heli_health, heli_type, var_81bab6febf7f6625, var_8fe58d021853358c, var_65a79f108a26d325, var_493bc9bba3b495b) {
     if (isstring(var_493bc9bba3b495b) && var_493bc9bba3b495b != "") {
         flag_wait(var_493bc9bba3b495b);
     }
-    if (!isdefined(var_4b36e304c4e6b091) || !isstring(var_4b36e304c4e6b091) || var_4b36e304c4e6b091 == "") {
+    if (!isdefined(heli_name) || !isstring(heli_name) || heli_name == "") {
         assertmsg("Reinforcements helicopter needs a name to find the vehicle spawner struct.");
         return;
     }
-    veh_spawners = getstructarray(var_4b36e304c4e6b091, "targetname");
+    veh_spawners = getstructarray(heli_name, "targetname");
     if (!isdefined(veh_spawners) || veh_spawners.size < 1) {
-        assertmsg("Vehicle spawner struct " + var_4b36e304c4e6b091 + " does not exist.");
+        assertmsg("Vehicle spawner struct " + heli_name + " does not exist.");
         return;
     }
     veh_spawner = veh_spawners[0];
@@ -148,7 +148,7 @@ function function_d4ff9113ebde2be0(var_4b36e304c4e6b091, heli_health, heli_type,
         }
     }
     heli = namespace_548a10c405703106::function_e48fde1878d8a034(veh_spawner);
-    heli.var_4b048eed990a0102 = 1;
+    heli.no_evasive = 1;
     heli.nocrash = 1;
     if (isdefined(heli_health) && isnumber(heli_health)) {
         heli.health_remaining = heli_health;
@@ -163,7 +163,7 @@ function function_d4ff9113ebde2be0(var_4b36e304c4e6b091, heli_health, heli_type,
     return heli;
 }
 
-// Namespace namespace_843b34fd54bc670f / namespace_e9ca4fea4faf85cf
+// Namespace reinforcement_util / namespace_e9ca4fea4faf85cf
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x936
 // Size: 0x8d
@@ -175,8 +175,8 @@ function private function_aeab3822a7542ef4() {
     self.ignoreall = 1;
     namespace_a0852b262a68d01::function_fac67371e80874db();
     self setstealthstate("idle");
-    var_45924fcab5f91caa = getstruct(self.target, "targetname");
-    self setgoalpos(var_45924fcab5f91caa.origin);
+    struct_goal = getstruct(self.target, "targetname");
+    self setgoalpos(struct_goal.origin);
     waittill_any_return_2("reached_path_end", "stop_going_to_node");
     self.ignoreall = 0;
     return true;

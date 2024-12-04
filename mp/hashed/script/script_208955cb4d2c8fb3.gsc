@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
 #using script_22f1701e151b9d12;
-#using script_41387eecc35b88bf;
-#using script_7956d56c4922bd1;
-#using scripts\stealth\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\equipment.gsc;
+#using script_41387eecc35b88bf;
 #using script_42adcce5878f583;
+#using script_7956d56c4922bd1;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\stealth\utility;
 
 #namespace namespace_87d75ea764a6d2fd;
 

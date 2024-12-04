@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\common\devgui.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
 #using script_2669878cf5a1b6bc;
 #using script_7b2517368c79e5bc;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace ob_golden_ammo;
 

@@ -1,8 +1,8 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_3008e3767a2a503c;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace ob_season6;
 

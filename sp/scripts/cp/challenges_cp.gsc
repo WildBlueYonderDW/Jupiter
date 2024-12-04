@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\challenges.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\cp\cp_gameskill.gsc;
 #using script_5e5507d57bbbb709;
+#using script_600b944a95c3a7bf;
 #using script_998572ff3c96ee5;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_analytics.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
 
-#namespace namespace_1c42fb369f1e7bdf;
+#namespace challenges_cp;
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x663
 // Size: 0xc
@@ -21,7 +21,7 @@ function init() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x677
 // Size: 0x139
@@ -39,7 +39,7 @@ function function_b7193191c525b263() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7b8
 // Size: 0x11d
@@ -50,11 +50,11 @@ function function_472e90d2e14c4b53(eattacker) {
         enemytype = function_bdfe9c25f2838f5d("juggernaut");
         aeeventname = #"kill";
         aeeventid = function_6e2deb013c9ca85e(aeeventname);
-        eattacker function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), equipmentid, function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), 1]);
+        eattacker function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), equipmentid, function_d6f771aedba70ce7(aeeventname, #"kill_amount"), 1]);
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8dd
 // Size: 0xe5
@@ -64,11 +64,11 @@ function destroyvehicles() {
     if (function_24d5a807c593dc49()) {
         aeeventname = #"kill";
         aeeventid = function_6e2deb013c9ca85e(aeeventname);
-        self function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), 1]);
+        self function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"kill_amount"), 1]);
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ca
 // Size: 0x12f
@@ -77,14 +77,14 @@ function function_38154b1c06023442(eattacker) {
     function_7665dcad8b978321("Demon Dog got a kill.");
     if (function_24d5a807c593dc49()) {
         var_c24e8fa2bc7818bc = 0;
-        var_c24e8fa2bc7818bc = scripts\cp_mp\challenges::function_6d40f12a09494350(var_c24e8fa2bc7818bc, function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hash_58b185451852f662"));
+        var_c24e8fa2bc7818bc = scripts\cp_mp\challenges::function_6d40f12a09494350(var_c24e8fa2bc7818bc, function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"ontrain"));
         aeeventname = #"kill";
         aeeventid = function_6e2deb013c9ca85e(aeeventname);
-        eattacker function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_7f94e81c1787ff7a"), var_c24e8fa2bc7818bc]);
+        eattacker function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"kill_amount"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_7f94e81c1787ff7a"), var_c24e8fa2bc7818bc]);
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb01
 // Size: 0xf3
@@ -101,21 +101,21 @@ function function_15c867e400749a3b() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbfc
 // Size: 0xed
-function function_ce271d4118a0475d(var_676e18b47a5ad0ec) {
+function function_ce271d4118a0475d(money_spent) {
     function_7665dcad8b978321("Player has spent money");
     if (function_24d5a807c593dc49()) {
         typeid = function_7042dad035dc176c("special");
         aeeventname = #"buy_item";
         aeeventid = function_6e2deb013c9ca85e(aeeventname);
-        self function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"string_ref"), typeid, function_d6f771aedba70ce7(aeeventname, #"value"), var_676e18b47a5ad0ec, function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6()]);
+        self function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"string_ref"), typeid, function_d6f771aedba70ce7(aeeventname, #"value"), money_spent, function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6()]);
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcf1
 // Size: 0xec
@@ -129,7 +129,7 @@ function function_d8b00758a4ecbda7(item) {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xde5
 // Size: 0xe5
@@ -143,7 +143,7 @@ function function_9ec128ba953ab4e0() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xed2
 // Size: 0xe5
@@ -157,7 +157,7 @@ function function_fc52996338c115d1() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfbf
 // Size: 0xe5
@@ -171,7 +171,7 @@ function function_3d55d46e36d8430b() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10ac
 // Size: 0xf5
@@ -188,7 +188,7 @@ function function_613a81f77b1154d0(enemycount) {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x11a9
 // Size: 0x127
@@ -204,7 +204,7 @@ function function_b036c3abb6389913() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x12d8
 // Size: 0x410
@@ -231,14 +231,14 @@ function function_ff3ffccac94c5578(mission, stars_earned) {
         modifiers = player.modifiers["endGameMask"];
         rolename = player namespace_1f50a6a7107e9381::function_cc1ccc9e93b22c24();
         var_aa83d0f8bb75bea8 = function_7042dad035dc176c(rolename);
-        var_f8159225b84b2698 = player namespace_6652f29dded2b69b::function_cbaa41c477d4c53f();
-        var_e8ec973ec9fe7d09 = player namespace_1f50a6a7107e9381::function_ca8c9ff1ff9db6e();
+        careerStars = player namespace_6652f29dded2b69b::function_cbaa41c477d4c53f();
+        var_e8ec973ec9fe7d09 = player namespace_1f50a6a7107e9381::kit_getrank();
         var_7f721e60f7d473c1 = stars_earned;
         function_7665dcad8b978321("Player has completed the given mission");
         if (function_24d5a807c593dc49()) {
-            aeeventname = #"hash_6d948a44db5a2b8";
+            aeeventname = #"end_match";
             aeeventid = function_6e2deb013c9ca85e(aeeventname);
-            player function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_4f965de7c7e8ca6c"), stars_earned, function_d6f771aedba70ce7(aeeventname, #"hash_6ded7124daf81bbf"), var_7f721e60f7d473c1, function_d6f771aedba70ce7(aeeventname, #"hash_87c3da69c8339ef5"), var_f8159225b84b2698, function_d6f771aedba70ce7(aeeventname, #"hash_17746d12d7b3cc71"), missionid, function_d6f771aedba70ce7(aeeventname, #"hash_8dd9828579063e7"), modifiers, function_d6f771aedba70ce7(aeeventname, #"hash_c5584888c734ff3f"), var_aa83d0f8bb75bea8, function_d6f771aedba70ce7(aeeventname, #"hash_2e01536cc1e8b800"), var_e8ec973ec9fe7d09]);
+            player function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_4f965de7c7e8ca6c"), stars_earned, function_d6f771aedba70ce7(aeeventname, #"hash_6ded7124daf81bbf"), var_7f721e60f7d473c1, function_d6f771aedba70ce7(aeeventname, #"hash_87c3da69c8339ef5"), careerStars, function_d6f771aedba70ce7(aeeventname, #"hash_17746d12d7b3cc71"), missionid, function_d6f771aedba70ce7(aeeventname, #"hash_8dd9828579063e7"), modifiers, function_d6f771aedba70ce7(aeeventname, #"cp_role"), var_aa83d0f8bb75bea8, function_d6f771aedba70ce7(aeeventname, #"hash_2e01536cc1e8b800"), var_e8ec973ec9fe7d09]);
         }
         playlist_id = 0;
         playlist_name = "private_match";
@@ -250,7 +250,7 @@ function function_ff3ffccac94c5578(mission, stars_earned) {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16f0
 // Size: 0xa6
@@ -277,7 +277,7 @@ function function_862a7d40f77a77d6(missionname) {
     return undefined;
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x179f
 // Size: 0x14b
@@ -299,7 +299,7 @@ function function_51bbba3794076bf4() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x18f2
 // Size: 0x152
@@ -313,17 +313,17 @@ function function_a4f684e73d9ec4c6(eattacker) {
             if (function_24d5a807c593dc49()) {
                 aeeventname = #"kill";
                 aeeventid = function_6e2deb013c9ca85e(aeeventname);
-                eattacker function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_7f94e81c1787ff7a"), var_c24e8fa2bc7818bc]);
+                eattacker function_db073176839d77fb(aeeventid, [function_d6f771aedba70ce7(aeeventname, #"gamemode"), function_2b0b870d1cf29add(), function_d6f771aedba70ce7(aeeventname, #"gametype"), function_2ff6fac4cf0827a6(), function_d6f771aedba70ce7(aeeventname, #"version"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_e2f5c601b57b3960"), enemytype, function_d6f771aedba70ce7(aeeventname, #"kill_amount"), 1, function_d6f771aedba70ce7(aeeventname, #"hash_7f94e81c1787ff7a"), var_c24e8fa2bc7818bc]);
             }
         }
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a4c
 // Size: 0x130
-function function_7ea6bab94f0c5e45(mission, objweapon, player) {
+function destroySamSiteNoPlant(mission, objweapon, player) {
     if (isdefined(objweapon) && mission == "cp_mission_esc" && !istrue(level.var_5f694efafeb95d7)) {
         if (objweapon.basename != "c4_cp_noproj") {
             function_7665dcad8b978321("Player destroyed SAM without planting an explosive");
@@ -337,7 +337,7 @@ function function_7ea6bab94f0c5e45(mission, objweapon, player) {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b84
 // Size: 0xe5
@@ -351,7 +351,7 @@ function function_66b45cb5dd35268c() {
     }
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c71
 // Size: 0xbd
@@ -374,7 +374,7 @@ function function_bdfe9c25f2838f5d(typename) {
     return enemytype;
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d37
 // Size: 0x47
@@ -383,7 +383,7 @@ function function_284bd74f0f8d5534(bitname, var_6859cf87418e7fa0) {
     self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], var_6859cf87418e7fa0);
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d86
 // Size: 0x6b
@@ -395,7 +395,7 @@ function function_266d25f14be47e20(bitname, var_6859cf87418e7fa0) {
     self.modifiers["endGameMask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["endGameMask"], var_6859cf87418e7fa0);
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1df9
 // Size: 0x28
@@ -407,7 +407,7 @@ function function_7665dcad8b978321(msg) {
     #/
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e29
 // Size: 0x12
@@ -415,7 +415,7 @@ function function_24d5a807c593dc49() {
     return getdvarint(@"hash_86f5418dec919161", 1);
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e44
 // Size: 0x8
@@ -423,7 +423,7 @@ function function_2b0b870d1cf29add() {
     return scripts\cp_mp\challenges::getchallengegamemode();
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e55
 // Size: 0x8
@@ -431,7 +431,7 @@ function function_2ff6fac4cf0827a6() {
     return scripts\cp_mp\challenges::function_17c5d7feb226e256();
 }
 
-// Namespace namespace_1c42fb369f1e7bdf / scripts\cp\challenges_cp
+// Namespace challenges_cp / scripts\cp\challenges_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e66
 // Size: 0xcb

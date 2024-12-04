@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace audio_utility;
 
@@ -424,7 +424,7 @@ function function_1186ca4e2e51afea(name) {
 // Checksum 0x0, Offset: 0xf05
 // Size: 0x119
 function function_f1aed36ab4598ea(name) {
-    if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"hash_add5b80d30e0737a") != 0) {
+    if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"g_connectpaths") != 0) {
         return;
     }
     function_5b159f140bd186df();
@@ -445,7 +445,7 @@ function function_f1aed36ab4598ea(name) {
 // Checksum 0x0, Offset: 0x1026
 // Size: 0x101
 function function_f4e0ff5cb899686d(name) {
-    if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"hash_add5b80d30e0737a") != 0) {
+    if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"g_connectpaths") != 0) {
         return;
     }
     function_5b159f140bd186df();

@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\common\ai.gsc;
-#using script_371b4c2ab5861e62;
-#using script_214930d31a3a8321;
-#using script_711820027508efbb;
-#using script_1f97a44d1761c919;
-#using script_edb8e725d068ac9;
-#using scripts\mp\equipment\gas_grenade.gsc;
 #using script_18b61963cd1351ff;
-#using scripts\asm\asm.gsc;
+#using script_1f97a44d1761c919;
+#using script_214930d31a3a8321;
+#using script_371b4c2ab5861e62;
 #using script_669f1da0d61f1ffa;
+#using script_711820027508efbb;
+#using script_edb8e725d068ac9;
+#using scripts\asm\asm;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_d3a01dcb29d44376;
 
@@ -336,8 +336,8 @@ function throw_grenade() {
     level.var_376e6e8117393127 set("catchup_ignoreall", "ignoreall", 0);
     level.var_376e6e8117393127.grenadeweapon = makeweapon("s2_aether_grenade_vial_ob");
     level.var_376e6e8117393127.grenadeammo = 100;
-    var_39d97be6a0b0016 = getstruct("aether_gas_spawn", "script_noteworthy");
-    gasfx = spawnscriptable("s2_ob_jup_scriptable_chemist_aether_gas", var_39d97be6a0b0016.origin + (50, 0, 0), var_39d97be6a0b0016.angles);
+    gas_spawn = getstruct("aether_gas_spawn", "script_noteworthy");
+    gasfx = spawnscriptable("s2_ob_jup_scriptable_chemist_aether_gas", gas_spawn.origin + (50, 0, 0), gas_spawn.angles);
     level.gasfx = gasfx;
     if (getdvarint(@"hash_35faba7502dbe9b0", 0)) {
         level thread function_24a7b362c9c4595a();
@@ -355,7 +355,7 @@ function throw_grenade() {
     level notify("aether_grenade_thrown");
     wait 1.5;
     level.gasfx setscriptablepartstate("formation_vfx", "active");
-    grenade = magicgrenademanual("jup_gas_grenade_ob_aether", var_39d97be6a0b0016.origin, (0, 0, 0), 0);
+    grenade = magicgrenademanual("jup_gas_grenade_ob_aether", gas_spawn.origin, (0, 0, 0), 0);
     grenade.owner = level.var_376e6e8117393127;
     grenade.owner thread scripts\mp\equipment\gas_grenade::gas_used(grenade);
     wait 0.5;
@@ -469,16 +469,16 @@ function function_24a7b362c9c4595a() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a0c
 // Size: 0x10d
-function function_e08162326217b5c3() {
-    var_39d97be6a0b0016 = getstruct("aether_gas_spawn", "script_noteworthy");
+function goto_stage() {
+    gas_spawn = getstruct("aether_gas_spawn", "script_noteworthy");
     level.var_3bd5693ef6922254 = getstructarray("fletcher_betrayal_goal", "script_noteworthy");
     level.var_376e6e8117393127 setgoalpos(level.var_3bd5693ef6922254[0].origin, 15);
     level.var_376e6e8117393127 notify("new_goal_given");
-    level.var_d31429e0a68259a4 setgoalpos(var_39d97be6a0b0016.origin, 10);
+    level.var_d31429e0a68259a4 setgoalpos(gas_spawn.origin, 10);
     level.var_d31429e0a68259a4 notify("new_goal_given");
-    level.var_1b8210e0db900e1a setgoalpos(var_39d97be6a0b0016.origin + (50, 0, 0), 10);
+    level.var_1b8210e0db900e1a setgoalpos(gas_spawn.origin + (50, 0, 0), 10);
     level.var_1b8210e0db900e1a notify("new_goal_given");
-    level.var_2692e299e63da688 setgoalpos(var_39d97be6a0b0016.origin + (-50, 0, 0), 10);
+    level.var_2692e299e63da688 setgoalpos(gas_spawn.origin + (-50, 0, 0), 10);
     level.var_2692e299e63da688 notify("new_goal_given");
 }
 

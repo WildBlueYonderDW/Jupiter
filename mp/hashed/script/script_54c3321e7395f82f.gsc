@@ -1,13 +1,13 @@
+#using script_3ab210ea917601e7;
 #using script_41387eecc35b88bf;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_43971bbeefd98f05;
 #using script_46c7c73b1a7e4773;
+#using script_58be75c518bf0d40;
 #using script_5f501fbedf0953f;
 #using script_638d701d263ee1ed;
-#using scripts\common\utility.gsc;
-#using script_58be75c518bf0d40;
-#using script_3ab210ea917601e7;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_57a329915670ffdc;
 
@@ -207,8 +207,8 @@ function private function_96f15b75346c0661(vehicle) {
         v_pos = vehicle.origin;
         loot_yaw = ter_op(cointoss(), -90, 90);
         loot_vector = (96, 0, 0);
-        var_a0bf28f44f823d04 = v_angles + (0, loot_yaw, 0);
-        loot_point = v_pos + rotatevector(loot_vector, var_a0bf28f44f823d04);
+        loot_angles = v_angles + (0, loot_yaw, 0);
+        loot_point = v_pos + rotatevector(loot_vector, loot_angles);
         var_839f515b361331f9 = getgroundposition(loot_point, 32, 720, 0);
         vehicle.loot_crate.origin = var_839f515b361331f9;
     }

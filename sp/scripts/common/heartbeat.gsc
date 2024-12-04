@@ -1,6 +1,6 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
 #using script_4b87f2871b6b025c;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace heartbeat;
 

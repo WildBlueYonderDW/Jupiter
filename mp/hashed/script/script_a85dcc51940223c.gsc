@@ -1,8 +1,8 @@
-#using scripts\asm\shared\mp\utility.gsc;
 #using script_2583ee5680cf4736;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_70e82607cc395cfd;
 
@@ -11,14 +11,14 @@
 // Checksum 0x0, Offset: 0x150
 // Size: 0xd9
 function function_2a31a579270a3a95() {
-    var_a11d4ed0fbfe6652 = getscriptablearray("player_prox_vfx", "targetname");
-    if (!isdefined(var_a11d4ed0fbfe6652) || var_a11d4ed0fbfe6652.size == 0) {
-        var_a11d4ed0fbfe6652 = getentitylessscriptablearray("player_prox_vfx", "targetname");
+    vfx_structs = getscriptablearray("player_prox_vfx", "targetname");
+    if (!isdefined(vfx_structs) || vfx_structs.size == 0) {
+        vfx_structs = getentitylessscriptablearray("player_prox_vfx", "targetname");
     }
-    if (!isdefined(var_a11d4ed0fbfe6652) || var_a11d4ed0fbfe6652.size == 0) {
-        var_a11d4ed0fbfe6652 = getentitylessscriptablearray("scriptable_ob_floating_excavator", "classname");
+    if (!isdefined(vfx_structs) || vfx_structs.size == 0) {
+        vfx_structs = getentitylessscriptablearray("scriptable_ob_floating_excavator", "classname");
     }
-    foreach (vfx in var_a11d4ed0fbfe6652) {
+    foreach (vfx in vfx_structs) {
         vfx setscriptablepartstate("prox_state", "far", 1);
         radius = vfx.script_noteworthy;
         if (!isdefined(radius)) {

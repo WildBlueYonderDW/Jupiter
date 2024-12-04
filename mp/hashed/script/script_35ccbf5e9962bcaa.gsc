@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\asm\asm.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\common\values.gsc;
-#using script_429c2a03090c1ea1;
 #using script_3b78d23dad7ec5be;
+#using script_429c2a03090c1ea1;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\asm;
+#using scripts\common\callbacks;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace namespace_277ce153e9305d9d;
 
@@ -150,7 +150,7 @@ function function_f79a85a5da89607() {
                         continue;
                     }
                     if (!istrue(zombie._blackboard.var_3a5dd6684caabe58)) {
-                        zombie namespace_db1ce2c035564e2c::function_e96aac065abbec4e(self.origin);
+                        zombie namespace_db1ce2c035564e2c::knockdown_ai(self.origin);
                     }
                 }
             }

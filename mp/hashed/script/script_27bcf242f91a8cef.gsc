@@ -1,44 +1,44 @@
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\utility.gsc;
-#using script_7b2517368c79e5bc;
-#using script_43971bbeefd98f05;
-#using script_9880b9dc28bc25e;
-#using script_7edf952f8921aa6b;
-#using scripts\cp_mp\challenges.gsc;
+#using script_185660037b9236c1;
+#using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
 #using script_398835140857d740;
 #using script_3ab210ea917601e7;
-#using script_4ef01fe6151dde4d;
-#using script_79deab1955343d5d;
 #using script_41387eecc35b88bf;
-#using script_185660037b9236c1;
+#using script_43971bbeefd98f05;
+#using script_46c7c73b1a7e4773;
+#using script_4ef01fe6151dde4d;
 #using script_4fdefae8b7bcdf73;
-#using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
+#using script_58be75c518bf0d40;
+#using script_638d701d263ee1ed;
 #using script_64351208cb856df9;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_6a8ec730b2bfa844;
 #using script_6d70705bb9712bb;
-#using script_46c7c73b1a7e4773;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_638d701d263ee1ed;
-#using scripts\mp\gameobjects.gsc;
+#using script_7956d56c4922bd1;
+#using script_79deab1955343d5d;
+#using script_7b2517368c79e5bc;
+#using script_7edf952f8921aa6b;
+#using script_9880b9dc28bc25e;
 #using script_d60e0219a7419e0;
-#using scripts\mp\hud_message.gsc;
-#using script_22f1701e151b9d12;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using script_2583ee5680cf4736;
-#using script_58be75c518bf0d40;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\anim;
+#using scripts\mp\gameobjects;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_5c6deef041b03f11;
 
@@ -785,7 +785,7 @@ function function_8361aeffba083290(player) {
 // Checksum 0x0, Offset: 0x2ff8
 // Size: 0x15c
 function onSabotageExtractorDisabled(activity_instance, extractor) {
-    if (activity_instance function_b978f5e2753317a4(16446) || getdvarint(@"hash_37acf332efd205cc", 0) || getdvarint(@"hash_7b8b09c504a0c9a0", 0)) {
+    if (activity_instance function_b978f5e2753317a4(16446) || getdvarint(@"force_challenges", 0) || getdvarint(@"hash_7b8b09c504a0c9a0", 0)) {
         if (!isdefined(activity_instance.var_da225ff88f5191eb) || !activity_instance.var_da225ff88f5191eb) {
             quest_item = undefined;
             v_pos = getclosestpointonnavmesh(extractor.origin);

@@ -1,6 +1,6 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
+#using scripts\asm\asm;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace despawn;
 

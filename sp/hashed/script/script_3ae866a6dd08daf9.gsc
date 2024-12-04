@@ -1,19 +1,19 @@
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_objectives.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using script_354c862768cfe202;
-#using script_74502a9e0ef1f19c;
-#using script_3ae866a6dd08daf9;
-#using scripts\common\devgui.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using script_2a8fc67f80783750;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_721af321ffade1d;
-#using script_7ef95bba57dc4b82;
 #using script_1db8d0e02a99c5e2;
+#using script_2a8fc67f80783750;
+#using script_354c862768cfe202;
+#using script_3ae866a6dd08daf9;
+#using script_721af321ffade1d;
+#using script_74502a9e0ef1f19c;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\devgui;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace laser_traps;
 
@@ -467,13 +467,13 @@ function trap_toggle_fx_logic() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2340
 // Size: 0x14d
-function toggle_fx_trap(var_a446477617a37c57) {
+function toggle_fx_trap(state_override) {
     self endon("death");
     if (isdefined(self.laser_end_ent)) {
         self.laser_end_ent endon("death");
     }
-    if (isdefined(var_a446477617a37c57)) {
-        if (var_a446477617a37c57 == 69) {
+    if (isdefined(state_override)) {
+        if (state_override == 69) {
             self.current_state = 69;
             if (isdefined(self.laser_fx)) {
                 self.laser_fx delete();
@@ -631,7 +631,7 @@ function function_af78ce8adb2963e1() {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c48
 // Size: 0x59d
-function setup_sentry(var_804269875f5062f1, damage_type, turret_model, parent_struct, var_385e9c9e53753524, var_507ba3530ef8559e, var_5ec17b72139bf948) {
+function setup_sentry(var_804269875f5062f1, damage_type, turret_model, parent_struct, var_385e9c9e53753524, var_507ba3530ef8559e, time_delay) {
     sentrytype = ter_op(isdefined(var_507ba3530ef8559e), var_507ba3530ef8559e, "bs_laser");
     if (isdefined(var_385e9c9e53753524)) {
         sentrytype = var_385e9c9e53753524;
@@ -724,7 +724,7 @@ function setup_sentry(var_804269875f5062f1, damage_type, turret_model, parent_st
     turret scripts\cp_mp\emp_debuff::allow_emp(1);
     turret sentryturret_empupdate();
     turret laseron();
-    turret thread function_42929a0d4354a323(var_5ec17b72139bf948);
+    turret thread function_42929a0d4354a323(time_delay);
     turret notify("lasers_started");
     turret.killcament = spawn("script_model", turret.origin);
     turret.killcament linkto(turret, "TAG_AIM_ANIMATED", (0, 0, 0), (0, 0, 0));
@@ -781,7 +781,7 @@ function sentryturret_setinactive(turret) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x32e3
 // Size: 0x5c1
-function function_42929a0d4354a323(var_5ec17b72139bf948) {
+function function_42929a0d4354a323(time_delay) {
     self endon("death");
     self endon("exit_idle");
     self endon("stop_idle_movement");
@@ -814,12 +814,12 @@ function function_42929a0d4354a323(var_5ec17b72139bf948) {
         return;
     }
     sentry_origin = self.sentry_struct.origin;
-    var_4d16d428538ff673 = self.sentry_struct.angles;
-    var_878bae61aca86fc5 = anglestoforward(var_4d16d428538ff673);
-    var_a1b727d30fc62a0f = anglestoup(var_4d16d428538ff673);
-    var_77064c73f538ee42 = anglestoup(var_4d16d428538ff673) * -1;
-    var_1b77e17a42e2545b = anglestoleft(var_4d16d428538ff673);
-    var_6232855eba31163a = anglestoright(var_4d16d428538ff673);
+    sentry_angles = self.sentry_struct.angles;
+    var_878bae61aca86fc5 = anglestoforward(sentry_angles);
+    var_a1b727d30fc62a0f = anglestoup(sentry_angles);
+    var_77064c73f538ee42 = anglestoup(sentry_angles) * -1;
+    var_1b77e17a42e2545b = anglestoleft(sentry_angles);
+    var_6232855eba31163a = anglestoright(sentry_angles);
     maxangle = self.sentry_struct.maxangle;
     drawdist = 300;
     var_b716ed1e1043d49d = rotatepointaroundvector(var_a1b727d30fc62a0f, var_878bae61aca86fc5, maxangle);
@@ -835,27 +835,27 @@ function function_42929a0d4354a323(var_5ec17b72139bf948) {
     var_3c19d396e8243a45 = vectortoangles(var_878bae61aca86fc5);
     var_a0d15869f98efc85 = vectortoangles(var_1b77e17a42e2545b);
     var_10972f86bc3d391e = vectortoangles(var_6232855eba31163a);
-    if (!isdefined(var_5ec17b72139bf948)) {
-        var_5ec17b72139bf948 = 10;
+    if (!isdefined(time_delay)) {
+        time_delay = 10;
     }
     if (istrue(function_d1cb6967231a8e1d())) {
-        function_64109b7cba5261eb(var_3c19d396e8243a45, var_5ec17b72139bf948, "fwd");
+        function_64109b7cba5261eb(var_3c19d396e8243a45, time_delay, "fwd");
         function_60d6fd7d2cc9347a(var_3c19d396e8243a45);
         return;
     }
     if (istrue(function_b19f85f4a1d36e2b())) {
         if (!self.sentry_struct function_a0857113d8c32a2a()) {
-            function_64109b7cba5261eb(var_3c19d396e8243a45, var_5ec17b72139bf948, "fwd");
+            function_64109b7cba5261eb(var_3c19d396e8243a45, time_delay, "fwd");
             function_1df98bfa8297278b(var_3c19d396e8243a45);
             waitframe();
             while (true) {
-                function_64109b7cba5261eb(var_d5c157bf3efda129, var_5ec17b72139bf948, "up");
-                function_64109b7cba5261eb(var_3c19d396e8243a45, var_5ec17b72139bf948, "fwd");
-                function_64109b7cba5261eb(var_d11155af3ef22cb0, var_5ec17b72139bf948, "down");
-                function_64109b7cba5261eb(var_3c19d396e8243a45, var_5ec17b72139bf948, "fwd");
+                function_64109b7cba5261eb(var_d5c157bf3efda129, time_delay, "up");
+                function_64109b7cba5261eb(var_3c19d396e8243a45, time_delay, "fwd");
+                function_64109b7cba5261eb(var_d11155af3ef22cb0, time_delay, "down");
+                function_64109b7cba5261eb(var_3c19d396e8243a45, time_delay, "fwd");
             }
         } else {
-            function_64109b7cba5261eb(var_3c19d396e8243a45, var_5ec17b72139bf948, "fwd");
+            function_64109b7cba5261eb(var_3c19d396e8243a45, time_delay, "fwd");
             function_60d6fd7d2cc9347a(var_3c19d396e8243a45);
         }
         return;
@@ -876,10 +876,10 @@ function function_42929a0d4354a323(var_5ec17b72139bf948) {
                 var_f7269954c1d2798a = 1;
                 function_c2659db9dbffda55(var_5a8f11024e7733a5, 0.2, "left");
             }
-            function_c2659db9dbffda55(var_5a8f11024e7733a5, var_5ec17b72139bf948, "left");
-            function_c2659db9dbffda55(var_3c19d396e8243a45, var_5ec17b72139bf948, "fwd");
-            function_c2659db9dbffda55(var_6b5bd2eb86959740, var_5ec17b72139bf948, "right");
-            function_c2659db9dbffda55(var_3c19d396e8243a45, var_5ec17b72139bf948, "fwd");
+            function_c2659db9dbffda55(var_5a8f11024e7733a5, time_delay, "left");
+            function_c2659db9dbffda55(var_3c19d396e8243a45, time_delay, "fwd");
+            function_c2659db9dbffda55(var_6b5bd2eb86959740, time_delay, "right");
+            function_c2659db9dbffda55(var_3c19d396e8243a45, time_delay, "fwd");
         }
         return;
     }
@@ -1025,39 +1025,39 @@ function function_c2659db9dbffda55(angles, timehere, debug_text) {
 // Checksum 0x0, Offset: 0x3d91
 // Size: 0x29c
 function function_2cc59ea2a67bd2f4(struct, turrets) {
-    struct.var_c1abc60ce5507e66 = spawn("script_model", struct.origin);
-    struct.var_c1abc60ce5507e66.angles = struct.angles;
+    struct.hint_obj = spawn("script_model", struct.origin);
+    struct.hint_obj.angles = struct.angles;
     if (isdefined(level.var_9bf3c4b5835fa48f)) {
-        struct.var_c1abc60ce5507e66 setmodel(level.var_9bf3c4b5835fa48f);
+        struct.hint_obj setmodel(level.var_9bf3c4b5835fa48f);
         struct.fx = spawn_tag_origin(struct.origin, struct.angles);
-        struct.var_c1abc60ce5507e66.screenfx = level._effect["vfx_shdb_killstreak_tablet_02_lnd"];
+        struct.hint_obj.screenfx = level._effect["vfx_shdb_killstreak_tablet_02_lnd"];
         wait 1;
-        playfxontag(struct.var_c1abc60ce5507e66.screenfx, struct.fx, "tag_origin");
+        playfxontag(struct.hint_obj.screenfx, struct.fx, "tag_origin");
     } else if (function_240f7f4e57340e8f()) {
-        struct.var_c1abc60ce5507e66 setmodel("offhand_2h_wm_c4_v0_jup_cp");
+        struct.hint_obj setmodel("offhand_2h_wm_c4_v0_jup_cp");
     } else {
-        struct.var_c1abc60ce5507e66 setmodel("offhand_2h_wm_c4_v0");
+        struct.hint_obj setmodel("offhand_2h_wm_c4_v0");
     }
-    struct.var_c1abc60ce5507e66.turret_structs = getstructarray(struct.target, "targetname");
-    struct.var_c1abc60ce5507e66.parent_struct = struct;
-    struct.var_c1abc60ce5507e66 makeusable();
+    struct.hint_obj.turret_structs = getstructarray(struct.target, "targetname");
+    struct.hint_obj.parent_struct = struct;
+    struct.hint_obj makeusable();
     hintstring = %COOP_GAME_PLAY/DISABLE_TRAP;
-    struct.var_c1abc60ce5507e66 sethintstring(hintstring);
-    struct.var_c1abc60ce5507e66 setcursorhint("HINT_BUTTON");
-    struct.var_c1abc60ce5507e66 sethintdisplayrange(256);
-    struct.var_c1abc60ce5507e66 sethintdisplayfov(80);
-    struct.var_c1abc60ce5507e66 setuserange(96);
-    struct.var_c1abc60ce5507e66 setusefov(50);
+    struct.hint_obj sethintstring(hintstring);
+    struct.hint_obj setcursorhint("HINT_BUTTON");
+    struct.hint_obj sethintdisplayrange(256);
+    struct.hint_obj sethintdisplayfov(80);
+    struct.hint_obj setuserange(96);
+    struct.hint_obj setusefov(50);
     if (is_equal(struct.script_parameters, "show_on_obstruct")) {
-        struct.var_c1abc60ce5507e66 sethintonobstruction("show");
+        struct.hint_obj sethintonobstruction("show");
     } else {
-        struct.var_c1abc60ce5507e66 sethintonobstruction("hide");
+        struct.hint_obj sethintonobstruction("hide");
     }
-    struct.var_c1abc60ce5507e66 setuseholdduration("duration_short");
-    struct.var_c1abc60ce5507e66 thread function_2de9d0204a3afb2e(struct);
+    struct.hint_obj setuseholdduration("duration_short");
+    struct.hint_obj thread function_2de9d0204a3afb2e(struct);
     thread function_52c16ddca816e35f(struct, turrets);
     thread function_fa30749284648339(struct, turrets);
-    return struct.var_c1abc60ce5507e66;
+    return struct.hint_obj;
 }
 
 // Namespace laser_traps / namespace_84c374d417dc82cf
@@ -1067,9 +1067,9 @@ function function_2cc59ea2a67bd2f4(struct, turrets) {
 function function_fa30749284648339(struct, turrets) {
     wait 2;
     if (function_ee8a913e5baf0c5d()) {
-        struct.var_c1abc60ce5507e66 thread function_e071eff8292be8d4();
+        struct.hint_obj thread function_e071eff8292be8d4();
         foreach (turret in turrets) {
-            turret thread function_e071eff8292be8d4(struct.var_c1abc60ce5507e66, 1);
+            turret thread function_e071eff8292be8d4(struct.hint_obj, 1);
         }
     }
 }
@@ -1245,7 +1245,7 @@ function function_2de9d0204a3afb2e(parentstruct) {
         }
         if (isdefined(self)) {
             if (function_ee8a913e5baf0c5d()) {
-                defuse_struct.var_c1abc60ce5507e66 thread function_876bc60d7ad75112();
+                defuse_struct.hint_obj thread function_876bc60d7ad75112();
             }
             playfx(level._effect["vfx_c4_explode"], self.origin);
             waittillframeend();
@@ -1285,18 +1285,18 @@ function function_53dbc1c223362f47() {
 // Checksum 0x0, Offset: 0x4833
 // Size: 0x28e
 function function_52c16ddca816e35f(struct, turrets) {
-    struct.var_c1abc60ce5507e66 endon("death");
+    struct.hint_obj endon("death");
     while (true) {
-        struct.var_c1abc60ce5507e66 waittill("trigger", player);
+        struct.hint_obj waittill("trigger", player);
         if (isplayer(player)) {
             if (function_240f7f4e57340e8f()) {
                 level thread function_b2bcaab3f4eef8f6(struct, player);
             } else {
-                struct.var_c1abc60ce5507e66 makeunusable();
+                struct.hint_obj makeunusable();
                 if (!isdefined(level.var_9bf3c4b5835fa48f)) {
                     level thread namespace_3bbec94305f740f0::function_91bdcd29d2bcb28(struct, player);
                 } else {
-                    killfxontag(struct.var_c1abc60ce5507e66.screenfx, struct.fx, "tag_origin");
+                    killfxontag(struct.hint_obj.screenfx, struct.fx, "tag_origin");
                 }
             }
             playsoundatpos(struct.origin, "cp_laser_disable");
@@ -1326,11 +1326,11 @@ function function_52c16ddca816e35f(struct, turrets) {
                 }
             }
             if (function_ee8a913e5baf0c5d()) {
-                struct.var_c1abc60ce5507e66 thread function_876bc60d7ad75112();
+                struct.hint_obj thread function_876bc60d7ad75112();
             }
             flag_set("traps_defused_" + struct.script_noteworthy);
             if (!function_240f7f4e57340e8f()) {
-                struct.var_c1abc60ce5507e66 delete();
+                struct.hint_obj delete();
             }
             return;
         }
@@ -1408,12 +1408,12 @@ function function_571c0f2116929a45() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d06
 // Size: 0x43c
-function function_378a45d52d6ec58(player, start, end, var_99786f84f0705a7f) {
+function function_378a45d52d6ec58(player, start, end, should_detonate) {
     level endon("game_ended");
     self endon("death");
     self endon("stop_idle_movement");
     if (getdvarint(@"hash_69cb90d22e939f4f", 0) == 0 || getdvarint(@"hash_69cb90d22e939f4f", 0) == 2) {
-        if (!istrue(var_99786f84f0705a7f)) {
+        if (!istrue(should_detonate)) {
             var_f5709ff014fb0607 = self [[ self.parent_struct.var_208398798bfa4135 ]]();
             if (istrue(var_f5709ff014fb0607)) {
                 return 0;
@@ -1423,7 +1423,7 @@ function function_378a45d52d6ec58(player, start, end, var_99786f84f0705a7f) {
             self [[ self.parent_struct.var_a92e83b5bd4bfdd1 ]]();
         }
         defuse_struct = self.parent_struct;
-        if (istrue(var_99786f84f0705a7f)) {
+        if (istrue(should_detonate)) {
             if (isdefined(player) && isplayer(player)) {
                 if (player isufo()) {
                     return 0;
@@ -1448,7 +1448,7 @@ function function_378a45d52d6ec58(player, start, end, var_99786f84f0705a7f) {
             player.skipcorpse = 1;
         }
         wait time;
-        if (istrue(var_99786f84f0705a7f)) {
+        if (istrue(should_detonate)) {
             if (function_240f7f4e57340e8f()) {
                 var_9ad84e4cee9ffa58 = 40;
                 var_33af5852c130c934 = 10;
@@ -1484,12 +1484,12 @@ function function_378a45d52d6ec58(player, start, end, var_99786f84f0705a7f) {
                     thread function_277b35006fab38dd(turret);
                 }
             }
-            if (isdefined(defuse_struct.var_c1abc60ce5507e66)) {
+            if (isdefined(defuse_struct.hint_obj)) {
                 if (function_ee8a913e5baf0c5d()) {
-                    defuse_struct.var_c1abc60ce5507e66 thread function_876bc60d7ad75112();
+                    defuse_struct.hint_obj thread function_876bc60d7ad75112();
                 }
-                playfx(level._effect["vfx_c4_explode"], defuse_struct.var_c1abc60ce5507e66.origin);
-                defuse_struct.var_c1abc60ce5507e66 delete();
+                playfx(level._effect["vfx_c4_explode"], defuse_struct.hint_obj.origin);
+                defuse_struct.hint_obj delete();
             }
             thread function_277b35006fab38dd(self);
             return 1;
@@ -1518,7 +1518,7 @@ function function_a9a8361dace89499() {
     wait 2;
     var_4a5d9d7667048bf3 = scripts\engine\trace::create_character_contents();
     var_71fcc381ba289efb = scripts\engine\trace::create_contents(0, 1, 1, 0, 1, 1);
-    var_99786f84f0705a7f = isdefined(self.parent_struct.var_208398798bfa4135) ? 0 : 1;
+    should_detonate = isdefined(self.parent_struct.var_208398798bfa4135) ? 0 : 1;
     if (scripts\cp\utility::function_aae723485e3b0e9d()) {
         var_4a5d9d7667048bf3 = scripts\engine\trace::create_contents(1, undefined, undefined, undefined, undefined, 1);
     }
@@ -1535,7 +1535,7 @@ function function_a9a8361dace89499() {
             var_2056ee644f4c232a = trace["entity"] scripts\cp_mp\vehicles\vehicle::isvehicle() && scripts\cp\utility::function_aae723485e3b0e9d() && isdefined(level.var_f107bd5b4c54277e);
             if (isplayer(trace["entity"]) || istrue(var_2056ee644f4c232a)) {
                 player = trace["entity"];
-                detonated = function_378a45d52d6ec58(player, start, self.targetent.origin, var_99786f84f0705a7f);
+                detonated = function_378a45d52d6ec58(player, start, self.targetent.origin, should_detonate);
                 if (istrue(detonated)) {
                     return;
                 }
@@ -1551,13 +1551,13 @@ function function_a9a8361dace89499() {
                 if (!var_2056ee644f4c232a) {
                     eyepos = player geteye();
                     if (trace["position"][2] <= eyepos[2]) {
-                        detonated = function_378a45d52d6ec58(player, start, end, var_99786f84f0705a7f);
+                        detonated = function_378a45d52d6ec58(player, start, end, should_detonate);
                         if (istrue(detonated)) {
                             return;
                         }
                     }
                 } else {
-                    detonated = function_378a45d52d6ec58(player, start, end, var_99786f84f0705a7f);
+                    detonated = function_378a45d52d6ec58(player, start, end, should_detonate);
                     if (istrue(detonated)) {
                         return;
                     }
@@ -1709,9 +1709,9 @@ function function_4855a66011f5974b(structs, var_4d11817a3622efdf, var_43c554793a
     }
     foreach (str in structs) {
         str.turrets = [];
-        var_c3336162b80cd5d1 = getstructarray(str.target, "targetname");
-        foreach (var_573f54c927e2eb98 in var_c3336162b80cd5d1) {
-            turret = setup_sentry(var_573f54c927e2eb98, undefined, undefined, str, "dungeon_laser");
+        laser_structs = getstructarray(str.target, "targetname");
+        foreach (laser_struct in laser_structs) {
+            turret = setup_sentry(laser_struct, undefined, undefined, str, "dungeon_laser");
             str.turrets = array_add(str.turrets, turret);
             if (!var_4d11817a3622efdf) {
                 turret hideallparts();
@@ -1746,8 +1746,8 @@ function function_fab50c852e0e8e32(defuse_struct, attacker) {
     playrumbleonposition("grenade_rumble", defuse_struct.origin);
     earthquake(0.45, 0.7, defuse_struct.origin, 800);
     playfx(getfx("claymore_explode"), self.origin);
-    var_310236dbf257fbb5 = getaiarrayinradius(self.origin, 2048, "axis");
-    foreach (ai in var_310236dbf257fbb5) {
+    nearby_ai = getaiarrayinradius(self.origin, 2048, "axis");
+    foreach (ai in nearby_ai) {
         ai aieventlistenerevent("combat", attacker, self.origin);
     }
     waitframe();
@@ -1759,8 +1759,8 @@ function function_fab50c852e0e8e32(defuse_struct, attacker) {
 // Size: 0x133
 function function_b2bcaab3f4eef8f6(defuse_struct, player) {
     level endon("game_ended");
-    defuse_struct.var_c1abc60ce5507e66.owner = player;
-    defuse_struct.var_c1abc60ce5507e66.weapon_name = "jup_c4_mp";
+    defuse_struct.hint_obj.owner = player;
+    defuse_struct.hint_obj.weapon_name = "jup_c4_mp";
     pickupent = spawnstruct();
     pickupent.scriptablename = "brloot_offhand_c4";
     pickupent.equipname = level.br_pickups.br_equipname[pickupent.scriptablename];
@@ -1768,8 +1768,8 @@ function function_b2bcaab3f4eef8f6(defuse_struct, player) {
     pickupent.count = 1;
     pickupent.origin = defuse_struct.origin;
     pickupent.isstuck = 1;
-    defuse_struct.var_c1abc60ce5507e66 thread namespace_47366e00aa4211f4::makeexplosiveusabletag("tag_use", 0, undefined, pickupent);
-    defuse_struct.var_c1abc60ce5507e66 setcursorhint("HINT_BUTTON");
+    defuse_struct.hint_obj thread namespace_47366e00aa4211f4::makeexplosiveusabletag("tag_use", 0, undefined, pickupent);
+    defuse_struct.hint_obj setcursorhint("HINT_BUTTON");
     if (istrue(defuse_struct.var_1850e5fe23b4a98b)) {
         level thread function_699c8edefecc8612(defuse_struct);
     }
@@ -1781,7 +1781,7 @@ function function_b2bcaab3f4eef8f6(defuse_struct, player) {
 // Size: 0x76
 function function_699c8edefecc8612(defuse_struct) {
     defuse_struct endon("death");
-    defuse_struct.var_c1abc60ce5507e66 waittill("pickup_equipment_success");
+    defuse_struct.hint_obj waittill("pickup_equipment_success");
     foreach (turret in defuse_struct.turrets) {
         turret delete();
     }

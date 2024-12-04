@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_860bfdfe82326e3;
 #using script_16ea1b94f0f381b3;
 #using script_7b2517368c79e5bc;
+#using script_860bfdfe82326e3;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace loot_crystal;
 

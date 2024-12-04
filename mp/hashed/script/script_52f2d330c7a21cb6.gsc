@@ -1,10 +1,10 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\asm\asm.gsc;
 #using script_429c2a03090c1ea1;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\asm;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 
@@ -105,19 +105,19 @@ function private function_a826442ad2416fe0(dmgstruct) {
         var_42af6cd244301807 = abs(var_52729c4793f5c462) > var_6b6ac322c0340936;
         if (var_42af6cd244301807) {
             var_5b26e71b0c8a7d6 = utility::sign(var_52729c4793f5c462) > 0;
-            var_5b42d211edcbb68a = 0;
+            hit_armor = 0;
             var_30fd53b88d65ec90 = self.var_68e442281a31d4a2[var_39033f9289f86348];
             var_efcc55fa67abaded = "gill_" + var_30fd53b88d65ec90 + (var_5b26e71b0c8a7d6 ? "_ri" : "_le");
             var_5aafe18394733126 = "plate_" + var_30fd53b88d65ec90 + "_armor" + (var_5b26e71b0c8a7d6 ? "_ri" : "_le");
             if (!function_cec565632b7fc419(var_5aafe18394733126)) {
                 if (var_8a3284c7a40fe130 > var_54327d15562bd3a1) {
-                    var_5b42d211edcbb68a = 1;
+                    hit_armor = 1;
                 }
             }
             if (function_cec565632b7fc419(var_efcc55fa67abaded)) {
                 var_efcc55fa67abaded = undefined;
             }
-            var_4266d23631e69398 = var_5b42d211edcbb68a ? var_5aafe18394733126 : var_efcc55fa67abaded;
+            var_4266d23631e69398 = hit_armor ? var_5aafe18394733126 : var_efcc55fa67abaded;
         }
         /#
             if (function_41e6ad038b005511()) {

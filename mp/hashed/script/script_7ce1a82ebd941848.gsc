@@ -1,31 +1,31 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_48814951e916af89;
-#using script_252fa7d2b1b1b50b;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\utility\points.gsc;
-#using script_371b4c2ab5861e62;
 #using script_21c19cfc7139d773;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+#using script_252fa7d2b1b1b50b;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
 #using script_5238dee479bbf7fb;
 #using script_55e418c5cc946593;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
 #using script_58f20490049af6ac;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\common\devgui.gsc;
+#using script_7ab5b649fa408138;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_8b4dfd90ae2d6d57;
 
@@ -52,7 +52,7 @@ function autoexec main() {
 function init(event_info) {
     event_info.validatefunc = &event_validate;
     event_info.waitfunc = &event_wait;
-    event_info.activatefunc = &function_dce158cd5558c35d;
+    event_info.activatefunc = &event_activate;
     event_info.postinitfunc = &function_de40a46baab733f5;
     event_info.deactivatefunc = &event_deactivate;
     function_f1aed36ab4598ea("wz_pe_dataheist");
@@ -141,7 +141,7 @@ function init_dvars(event_data) {
     event_data.var_d03b16e4339a4546 = getdvarint(@"hash_9e246216c8ab73cd", 2);
     event_data.var_5b470c719e713baa = getdvarint(@"hash_d1254cb3a6456cd3", 3);
     event_data.var_3b2fe32897ffd722 = getdvarint(@"hash_6f20a3b0bc339fcb", 2);
-    event_data.var_b9f9031320c76aa6 = getdvarfloat(@"hash_743f2aafce01b00d", 0.4);
+    event_data.agent_accuracy = getdvarfloat(@"hash_743f2aafce01b00d", 0.4);
     event_data.var_464ff1ef779c439d = getdvarint(@"hash_8a328fc0a8b887e4", 8);
     event_data.var_4febd27038048ffb = getdvarint(@"hash_89e40bcff5370f82", 120);
     event_data.var_94b952789d039abb = getdvarint(@"hash_5b21ed44f9d400", 1) == 1;
@@ -293,7 +293,7 @@ function event_wait() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16a0
 // Size: 0x54a
-function function_dce158cd5558c35d() {
+function event_activate() {
     assertex(self.var_a1579dc24e9412dd > 0, "<dev string:x87>");
     self endon("event_deactivated");
     /#
@@ -1484,7 +1484,7 @@ function function_24afcbb2ea0ccb49(event_duration) {
             }
             dump function_d10a8a5bcebaedf2("<dev string:x33d>" + index + "<dev string:x342>" + point.group + "<dev string:x349>" + point.status);
             if (point.is_valid) {
-                dump function_8c2574850bb05347("<dev string:x358>" + point.valid_neighbors.size);
+                dump dump_add("<dev string:x358>" + point.valid_neighbors.size);
             }
         }
         keys = getarraykeys(good_starts);
@@ -1656,7 +1656,7 @@ function function_ddfc2513ffdc4ddc() {
         position_offset = (0, 0, 40);
         var_f037fc926270b3a2 = (0, 0, 4);
         scale = 0.25;
-        var_f83c0acd92722303 = (0, 1, 0);
+        color_active = (0, 1, 0);
         color_blocked = (1, 0.65, 0);
         color_range = (0.25, 0.25, 0.25);
         color = undefined;
@@ -1673,7 +1673,7 @@ function function_ddfc2513ffdc4ddc() {
                 } else if (uplink.num_blockers > 0) {
                     color = color_blocked;
                 } else {
-                    color = var_f83c0acd92722303;
+                    color = color_active;
                 }
                 print3d(uplink.origin + position_offset - var_f037fc926270b3a2 * 0, "<dev string:x711>" + uplink.origin, color, 1, scale, var_e486b5f3a3268190, 1);
                 print3d(uplink.origin + position_offset - var_f037fc926270b3a2 * 1, "<dev string:x71d>" + uplink.angles, color, 1, scale, var_e486b5f3a3268190, 1);
@@ -1860,7 +1860,7 @@ function function_ddfc2513ffdc4ddc() {
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x5a46
     // Size: 0x22
-    function function_8c2574850bb05347(text) {
+    function dump_add(text) {
         self.msg += text;
     }
 
@@ -1869,7 +1869,7 @@ function function_ddfc2513ffdc4ddc() {
     // Checksum 0x0, Offset: 0x5a70
     // Size: 0x1c
     function function_d10a8a5bcebaedf2(text) {
-        function_8c2574850bb05347("<dev string:x832>" + text);
+        dump_add("<dev string:x832>" + text);
     }
 
 #/

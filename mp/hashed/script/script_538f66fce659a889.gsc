@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_5bc86a57086a4774;
-#using scripts\mp\gametypes\br_gametypes.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_dbc1018dd2e067e;
 

@@ -1,4 +1,4 @@
-#using scripts\common\vehicle_code.gsc;
+#using scripts\common\vehicle_code;
 
 #namespace vehicle_treads;
 
@@ -7,8 +7,8 @@
 // Checksum 0x0, Offset: 0xda
 // Size: 0xd7
 function vehicle_treads() {
-    var_d0b6bc7da35f797c = self.classname;
-    if (!isdefined(level.vehicle.templates.surface_effects[var_d0b6bc7da35f797c])) {
+    tread_class = self.classname;
+    if (!isdefined(level.vehicle.templates.surface_effects[tread_class])) {
         return;
     }
     if (no_treads()) {

@@ -1,11 +1,11 @@
+#using script_429c2a03090c1ea1;
+#using script_4c543f01345a2c04;
+#using script_6de180c937bb3129;
 #using script_7edf952f8921aa6b;
 #using script_da0dce9d411d119;
-#using script_6de180c937bb3129;
-#using script_4c543f01345a2c04;
-#using script_429c2a03090c1ea1;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace zombie_entity;
 
@@ -82,10 +82,10 @@ function function_3d588dcd552b26db(params) {
     // Params 3, eflags: 0x4
     // Checksum 0x0, Offset: 0x3a5
     // Size: 0x6d
-    function private draw_tag(tagname, var_a3f61a062796e87e, is_active) {
+    function private draw_tag(tagname, tag_radius, is_active) {
         tag_origin = self gettagorigin(tagname);
         tag_angles = self gettagangles(tagname);
-        function_ad6307798215e0be(tagname + "<dev string:x33>" + tag_angles[0] + "<dev string:x3a>" + tag_angles[1] + "<dev string:x3a>" + tag_angles[2], tag_origin, var_a3f61a062796e87e, is_active);
+        function_ad6307798215e0be(tagname + "<dev string:x33>" + tag_angles[0] + "<dev string:x3a>" + tag_angles[1] + "<dev string:x3a>" + tag_angles[2], tag_origin, tag_radius, is_active);
     }
 
     // Namespace zombie_entity / namespace_75bb5b9aa3fc4820
@@ -93,14 +93,14 @@ function function_3d588dcd552b26db(params) {
     // Checksum 0x0, Offset: 0x41a
     // Size: 0xc3
     function private function_ad6307798215e0be(text, pos, radius, is_active) {
-        var_30e3a3183c5891e8 = getdvarint(@"hash_9dd191a7e11820fd", 0);
-        if (var_30e3a3183c5891e8 > 0) {
+        debug_val = getdvarint(@"hash_9dd191a7e11820fd", 0);
+        if (debug_val > 0) {
             pos = default_to(pos, self.origin + (0, 0, 70));
             color = (1, 0, 0);
             if (is_active) {
                 color = (0, 1, 0);
             }
-            var_db334a0ef5cf7571 = var_30e3a3183c5891e8 == 1;
+            var_db334a0ef5cf7571 = debug_val == 1;
             if (!var_db334a0ef5cf7571) {
                 var_db334a0ef5cf7571 = is_active;
             }

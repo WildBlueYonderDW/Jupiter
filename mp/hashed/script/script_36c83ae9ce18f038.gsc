@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_c130airdrop.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_c130airdrop;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weaponrank;
 
 #namespace namespace_7f96036adeb34fc3;
 
@@ -25,7 +25,7 @@
 // Checksum 0x0, Offset: 0x55b
 // Size: 0x52
 function autoexec main() {
-    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"hash_638f8e5869440fa3", &init);
+    scripts\mp\gametypes\br_publicevents::function_dbc8f6cb3760cd82(%"doublexp_crate", &init);
     if (getdvarint(@"hash_ce6e92b818a2a324", 0) == 0 && getdvarint(@"hash_da7fe1bcdf3005b7", 1) != 0) {
         scripts\cp_mp\killstreaks\airdrop::function_a594839d4da1bcae("airdrop_doublexp_crate", &function_daa510e2d1ce6f2f);
     }
@@ -454,7 +454,7 @@ function function_e9e2cf1181eb7177() {
     // Checksum 0x0, Offset: 0x1921
     // Size: 0x17
     function function_db70bae7732f5204() {
-        level thread scripts\mp\gametypes\br_publicevents::function_e37ee072d95a7c98(%"hash_638f8e5869440fa3");
+        level thread scripts\mp\gametypes\br_publicevents::function_e37ee072d95a7c98(%"doublexp_crate");
     }
 
     // Namespace namespace_7f96036adeb34fc3 / namespace_23cf3e2af85d0dda

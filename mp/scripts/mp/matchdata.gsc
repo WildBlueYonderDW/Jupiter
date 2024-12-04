@@ -1,17 +1,17 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\stats.gsc;
 #using script_3f8889c16399185c;
-#using scripts\mp\rank.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\hud_util;
+#using scripts\mp\rank;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weaponrank;
 
 #namespace matchdata;
 
@@ -305,7 +305,7 @@ function endofgamesummarylogger() {
             }
             player setplayerdata("common", "round", "challengesCompleted", i, "ch_none");
         }
-        current_map = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+        current_map = tolower(getdvar(@"g_mapname"));
         var_329a74732d424f82 = getbasegametype();
         if (var_329a74732d424f82 == "defuse") {
             var_329a74732d424f82 = "sd";
@@ -321,7 +321,7 @@ function endofgamesummarylogger() {
 // Size: 0xdc
 function recordrecentlyplayeddata() {
     if (matchmakinggame()) {
-        currentmap = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+        currentmap = tolower(getdvar(@"g_mapname"));
         foreach (player in level.players) {
             for (i = 4; i > 0; i--) {
                 map = player getplayerdata(level.var_5d69837cf4db0407, "mapsPlayed", i - 1);

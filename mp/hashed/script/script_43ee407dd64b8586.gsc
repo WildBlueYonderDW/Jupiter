@@ -15,8 +15,8 @@ function main() {
 function sfx_metal_det(var_eaad182af1b91884, alias, timer) {
     level endon("game_ended");
     level waittill("matchStartTimer_done");
-    var_4602cb6c9dce758 = getentarray(var_eaad182af1b91884, "targetname");
-    foreach (trig in var_4602cb6c9dce758) {
+    metal_triggers = getentarray(var_eaad182af1b91884, "targetname");
+    foreach (trig in metal_triggers) {
         thread function_a0912e6a103cc3a(trig, alias, timer);
     }
 }

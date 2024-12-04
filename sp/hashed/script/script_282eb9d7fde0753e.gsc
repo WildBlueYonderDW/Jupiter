@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_3db04fd1b466bdba;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
 #using script_13865ca76df87ea;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_3db04fd1b466bdba;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace juggernaut_recon;
 

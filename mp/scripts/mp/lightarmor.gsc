@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\heavyarmor.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\heavyarmor;
+#using scripts\mp\utility\weapon;
 
 #namespace lightarmor;
 

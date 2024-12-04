@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\hud_message.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace armor_plate;
 

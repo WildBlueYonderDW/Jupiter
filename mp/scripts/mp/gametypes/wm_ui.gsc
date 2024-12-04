@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using script_57614a088fb41089;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\wm_objectives.gsc;
 #using script_3fddda92c991755e;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\hud_message.gsc;
+#using script_57614a088fb41089;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\wm_objectives;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\script;
 
 #namespace wm_ui;
 

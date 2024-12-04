@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_451a1a9bd9613164;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\common\ui.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\ui;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\teams;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace namespace_8083561953b0e8a;
 
@@ -159,9 +159,9 @@ function private function_cb22a71dbdfb420d(isthirdperson) {
     }
     operatorref = "none";
     operatorskin = "none";
-    var_57accdc40b2f50e = player scripts\mp\teams::function_e7fe5b7d4b92813c();
-    operatorskin = var_57accdc40b2f50e[1];
-    operatorref = var_57accdc40b2f50e[0];
+    __a0 = player scripts\mp\teams::function_e7fe5b7d4b92813c();
+    operatorskin = __a0[1];
+    operatorref = __a0[0];
     if (!isdefined(operatorref)) {
         operatorref = "unknown";
     }

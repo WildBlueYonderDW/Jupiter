@@ -1,30 +1,30 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_439fa02b5251fa5b;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_282eb9d7fde0753e;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\damage_tuning;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace airdrop;
 
@@ -4168,7 +4168,7 @@ function brc130airdropcratedestroycallback(immediate) {
 // Checksum 0x0, Offset: 0xbeac
 // Size: 0x1c
 function brc130airdropcratephysicsoncallback() {
-    self setscriptablepartstate(#"hash_e0f820f3df4e17d1", #"detach", 0);
+    self setscriptablepartstate(#"crate_audio", #"detach", 0);
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
@@ -4238,7 +4238,7 @@ function dropbrc130airdropcrate(dropposition, dropdestination, dropangles, var_9
             var_40920b1903f4682a = var_fe41be11a71dc1b4;
         }
         crate setscriptablepartstate(#"objective_map", var_40920b1903f4682a, 0);
-        crate setscriptablepartstate(#"hash_e0f820f3df4e17d1", #"parachuting", 0);
+        crate setscriptablepartstate(#"crate_audio", #"parachuting", 0);
         var_946146964fc4025f = "ks_airdrop_crate_br";
         if (isdefined(var_cf11cd8c8b813faf)) {
             var_946146964fc4025f = var_cf11cd8c8b813faf;
@@ -4878,7 +4878,7 @@ function brjuggernautcratedestroycallback(immediate) {
 // Checksum 0x0, Offset: 0xda52
 // Size: 0x2d
 function brjuggernautcratephysicsoncallback(position, destination) {
-    self setscriptablepartstate(#"hash_e0f820f3df4e17d1", #"detach", 0);
+    self setscriptablepartstate(#"crate_audio", #"detach", 0);
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop
@@ -4911,7 +4911,7 @@ function spawnjuggernautcrateatposition(pos, var_e648e96614161011) {
 // Size: 0x2c
 function enablejuggernautcrateobjective(crate) {
     crate setotherent(self);
-    crate setscriptablepartstate(#"objective_map", #"hash_c44e3ef5002e7e39");
+    crate setscriptablepartstate(#"objective_map", #"jugg_world");
 }
 
 // Namespace airdrop / scripts\cp_mp\killstreaks\airdrop

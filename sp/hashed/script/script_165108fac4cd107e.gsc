@@ -1,6 +1,6 @@
-#namespace namespace_a372fbdb2f1451dc;
+#namespace bodies_civ_western_boy;
 
-// Namespace namespace_a372fbdb2f1451dc / namespace_688807fc9b63575c
+// Namespace bodies_civ_western_boy / namespace_688807fc9b63575c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfe
 // Size: 0x47

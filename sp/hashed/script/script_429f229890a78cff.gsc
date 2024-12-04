@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
 #using script_53651341190c5aab;
-#using scripts\asm\cap.gsc;
+#using scripts\asm\cap;
+#using scripts\engine\utility;
 
 #namespace soldier_conversation;
 

@@ -1,13 +1,13 @@
-#using script_6c32b2aeb4eff172;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
-#using script_56b220efd477bae3;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
 #using script_38c517e34d7c3efb;
 #using script_503081a86c1539d3;
+#using script_56b220efd477bae3;
+#using script_6c32b2aeb4eff172;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp_mp\agents\agent_init;
 
 #namespace jup_spawner_zombie_disciple;
 

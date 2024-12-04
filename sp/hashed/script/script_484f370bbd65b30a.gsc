@@ -1,31 +1,31 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\player_rig.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\sp\objectives.gsc;
-#using script_5d265b4fca61f070;
-#using scripts\common\ai.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\common\exploder.gsc;
-#using script_53f4e6352b0b2425;
-#using script_1db908936531314b;
-#using script_6bf6c8e2e1fdccaa;
 #using script_19163c4e4e504a5e;
-#using scripts\common\scene.gsc;
-#using scripts\common\values.gsc;
-#using scripts\sp\player.gsc;
-#using script_760b8e170bd1e20d;
-#using script_4b7698942d6f679a;
-#using script_54110734a7546551;
-#using script_e2fc04a6cc6c766;
-#using script_51f0a664afd44022;
+#using script_1db908936531314b;
 #using script_3433ee6b63c7e243;
+#using script_4b7698942d6f679a;
+#using script_51f0a664afd44022;
+#using script_53f4e6352b0b2425;
+#using script_54110734a7546551;
+#using script_5d265b4fca61f070;
+#using script_6bf6c8e2e1fdccaa;
+#using script_760b8e170bd1e20d;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\exploder;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\objectives;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\hud_util;
+#using scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting;
+#using scripts\sp\player;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_rig;
+#using scripts\sp\utility;
 
 #namespace namespace_c1af6f027faee73;
 
@@ -42,7 +42,7 @@ function function_9282638b76e87b0a() {
 // Checksum 0x0, Offset: 0x1088
 // Size: 0x2e
 function function_86a88b13dcfe495e() {
-    thread namespace_da16efa8eb97d1c0::function_249935a288de9743();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::cp_intro();
     thread function_e39d8a96b86719ce(1);
     set_start_location("intro", [level.player]);
 }
@@ -129,7 +129,7 @@ function function_a7dd8cac82fd443a() {
     function_64f815da552ce8c6();
     wait 8;
     level.player say("dx_sp_jvip_jvrl_koa2_allteamsalpha21beadv");
-    level.player.var_6c9aaf1d68e4fde5 say("dx_sp_jvip_jvrl_koc1_charliecopieswereset");
+    level.player.vo_handler say("dx_sp_jvip_jvrl_koc1_charliecopieswereset");
     level.ally1 say("dx_sp_jvip_jvrl_koa1_rogerthatmovingtopha");
     level.ally1 say("dx_sp_jvip_jvrl_koa1_patrolboattwooclockl");
 }
@@ -158,7 +158,7 @@ function function_64aa262d16ae7f08() {
     teleport_player(struct);
     waitframe();
     level.player fade_in(0, "black");
-    level thread namespace_da16efa8eb97d1c0::function_9a73cff3a0f6f2c5();
+    level thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::function_9a73cff3a0f6f2c5();
     array = [level.ally1, level.ally2];
     animnode = getstruct("scene_vip_0000_intro", "targetname");
     var_e86b25000c0fb10e = getstruct("scene_vip_0001_intro", "targetname");
@@ -176,14 +176,14 @@ function function_64aa262d16ae7f08() {
         var_479df2f396f53c1c.headmodel = "head_c_jup_sp_enemy_pmc_scuba_01";
         var_479df2f396f53c1c attach(var_479df2f396f53c1c.headmodel);
         var_479df2f396f53c1c.name = "";
-        var_d855e26182afdbbb = animnode scene::get_entity("Prop 5");
-        var_d855e36182afddee = animnode scene::get_entity("Prop 6");
-        var_a4674cc45c73983e = playfxontag(getfx("vfx_vip_light_searchlight_boat"), var_d855e26182afdbbb, "tag_light_front_left");
-        var_a4674bc45c73960b = playfxontag(getfx("vfx_vip_light_searchlight_boat"), var_d855e36182afddee, "tag_light_front_left");
+        boat_1 = animnode scene::get_entity("Prop 5");
+        boat_2 = animnode scene::get_entity("Prop 6");
+        var_a4674cc45c73983e = playfxontag(getfx("vfx_vip_light_searchlight_boat"), boat_1, "tag_light_front_left");
+        var_a4674bc45c73960b = playfxontag(getfx("vfx_vip_light_searchlight_boat"), boat_2, "tag_light_front_left");
         var_e79ff62bf78d657e = getent("boat_searchlight_4", "targetname");
         var_e79ff62bf78d657e setlightintensity(2000);
-        var_cd6e8c3833e8aada = spawn_tag_origin(var_d855e36182afddee.origin, var_d855e36182afddee.angles);
-        var_e79ff62bf78d657e linkto(var_d855e36182afddee, "tag_light_front_left", (20, 0, 0), (0, 0, 0));
+        var_cd6e8c3833e8aada = spawn_tag_origin(boat_2.origin, boat_2.angles);
+        var_e79ff62bf78d657e linkto(boat_2, "tag_light_front_left", (20, 0, 0), (0, 0, 0));
         animnode waittill("scene_complete");
     }
     if (isdefined(var_e86b25000c0fb10e)) {
@@ -312,7 +312,7 @@ function function_36d8c0ddc6500bb7(play_fx) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b9c
 // Size: 0xe1
-function function_1763ed293a10c251() {
+function spin_propeller() {
     level.player endon("end_dpv");
     setsaveddvar(@"hash_d7685846e216c7b3", 0.95);
     wait 1;
@@ -321,8 +321,8 @@ function function_1763ed293a10c251() {
     while (true) {
         velocity = level.player getvelocity();
         forward = anglestoforward(level.player function_d8b4c23126bf4d7b());
-        var_2aab9a62a99790ce = vectordot(velocity, forward);
-        speed = var_2aab9a62a99790ce * 10;
+        forward_speed = vectordot(velocity, forward);
+        speed = forward_speed * 10;
         if (speed > 0) {
             angle += speed * 0.05;
             if (angle > 360) {
@@ -394,7 +394,7 @@ function function_18cb72f43f56aa7c() {
     level.player player::focusdisable();
     level.player freezecontrols(1);
     function_1ae8f046dee579e0(1);
-    var_72b9f31491f124aa = [level.ally1, level.ally2];
+    character_array = [level.ally1, level.ally2];
     var_d683d17bf2124d5e = ["shot_010", "shot_020"];
     animnode = getstruct("scene_vip_0100_scuba_alpha", "targetname");
     var_a6faa64bf8570cef = getstruct("vip_0160_scuba_emerge", "targetname");
@@ -417,13 +417,13 @@ function function_18cb72f43f56aa7c() {
         #/
     }
     thread function_8b09f4e11779ca18(0);
-    animnode thread scene::play(var_72b9f31491f124aa, "shot_010");
+    animnode thread scene::play(character_array, "shot_010");
     gun = spawn("script_model", level.player.origin);
     gun setmodel("misc_wm_grappling_gun_v0");
     waitframe();
     flag_set("flag_scuba_path");
     animnode scene::stop();
-    thread namespace_da16efa8eb97d1c0::function_361103be5fb28520();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::function_361103be5fb28520();
     thread function_ec9ece71a79e97b0();
     var_d683d17bf2124d5e = ["shot_010"];
     thread function_5c55148c6770a5e9();
@@ -433,13 +433,13 @@ function function_18cb72f43f56aa7c() {
     thread function_5fa1163ea2815b93();
     flag_set("pushthroughkelp_flag");
     if (flag("flag_skipped_intro")) {
-        level thread namespace_da16efa8eb97d1c0::function_9a73cff3a0f6f2c5(1);
+        level thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::function_9a73cff3a0f6f2c5(1);
     }
     flag_set("introscreen_start_wait");
     wait 4.75;
     var_d683d17bf2124d5e = ["shot_020"];
-    var_d7354477532ace9e = 0.209821;
-    var_a6faa64bf8570cef thread function_57ac36ea7abb5af4(undefined, var_72b9f31491f124aa, var_d683d17bf2124d5e, var_d7354477532ace9e);
+    start_fraction = 0.209821;
+    var_a6faa64bf8570cef thread function_57ac36ea7abb5af4(undefined, character_array, var_d683d17bf2124d5e, start_fraction);
     thread function_f0130740538b7590();
     waitframe();
     level.player fade_in(1, "black");
@@ -484,10 +484,10 @@ function function_b2c23647d71787b() {
     }
     level.ally1 waittill("notify_switch_wall_idle");
     thread function_4f1b7657a4c9d1e();
-    var_72b9f31491f124aa = [level.ally1, level.ally2];
-    var_c575ac7fd41d6a6b = ["shot_010"];
+    character_array = [level.ally1, level.ally2];
+    shot_array = ["shot_010"];
     animnode = getstruct("scene_vip_0300_wallascend_infil", "targetname");
-    animnode thread scene::play(var_72b9f31491f124aa, var_c575ac7fd41d6a6b);
+    animnode thread scene::play(character_array, shot_array);
 }
 
 // Namespace namespace_c1af6f027faee73 / namespace_f83394fbcfe496f2
@@ -668,7 +668,7 @@ function function_4a5007e839e4aed4() {
     level.player fade_out(0, "black");
     level.player player::focusdisable();
     function_1ae8f046dee579e0(1);
-    thread namespace_da16efa8eb97d1c0::function_75435fbfafba50fd();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::cp_scuba();
     thread function_e39d8a96b86719ce(1);
     thread function_871fc21b56c849b5();
     set_start_location("scuba", [level.player]);
@@ -715,7 +715,7 @@ function function_e4045a2c8864391a() {
 // Checksum 0x0, Offset: 0x2b41
 // Size: 0x6d
 function function_3c253b47edbac811() {
-    var_72b9f31491f124aa = [level.ally1, level.ally2];
+    character_array = [level.ally1, level.ally2];
     if (!isdefined(level.ally1)) {
         /#
             iprintlnbold("<dev string:x36>");
@@ -766,16 +766,16 @@ function function_c2f36ea9f72514f0() {
     flag_init("scubastart_flag3");
     flag_init("flag_light_past_1");
     flag_init("flag_light_past_2");
-    var_981cc5a89993e7 = snd_play("temp_quad_city_ext_rain_lp", level.player);
-    function_e70d88e85d5fb19a(var_981cc5a89993e7, 3, 0);
+    rain = snd_play("temp_quad_city_ext_rain_lp", level.player);
+    function_e70d88e85d5fb19a(rain, 3, 0);
     flag_set("flag_obj_get_to_gulag_activate");
-    function_9185173ee7017a51(var_981cc5a89993e7, 2.5);
+    snd_stop(rain, 2.5);
     flag_set("scubastart_flag1");
     flag_set("scubastart_flag3");
     waitframe();
     thread function_ae27179cfeed7c4b();
     flag_set("player_scuba_start");
-    namespace_da16efa8eb97d1c0::function_73dfa61909504f41();
+    scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::function_73dfa61909504f41();
     thread autosave_by_name("diving");
     flag_wait("flag_scuba1");
     thread autosave_by_name("Begin Scuba");
@@ -937,7 +937,7 @@ function function_efbac668dca48fa6() {
 // Checksum 0x0, Offset: 0x330e
 // Size: 0x2e
 function function_65a5cbf78d6b21f2() {
-    thread namespace_da16efa8eb97d1c0::function_b1068e4a2925a813();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::cp_wall();
     thread function_e39d8a96b86719ce(1);
     set_start_location("wall", [level.player]);
 }
@@ -956,8 +956,8 @@ function function_4d72aea895f54ad4() {
 // Checksum 0x0, Offset: 0x3362
 // Size: 0xdb
 function function_bedfa3bff2319b7f() {
-    level.var_96dbdcb478b3cb78 = getstruct("rappel_anchor", "targetname");
-    level.var_96dbdcb478b3cb78 endon("trigger");
+    level.connection_interact = getstruct("rappel_anchor", "targetname");
+    level.connection_interact endon("trigger");
     wait 2;
     level.ally1 thread say("dx_sp_jvip_wasc_koa1_hooksup");
     wait 10;
@@ -1019,7 +1019,7 @@ function function_e277f03964910976() {
     flag_wait("vo_player_raised_line_launcher");
     thread function_bedfa3bff2319b7f();
     flag_wait("vo_player_shot_line");
-    thread function_9dc0e3bf2226eb71();
+    thread wall_music();
     wait 4.6;
     level.player say("dx_sp_jvip_wasc_koa2_goodhookletsgetuptop");
 }
@@ -1028,7 +1028,7 @@ function function_e277f03964910976() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x357c
 // Size: 0xd
-function function_9dc0e3bf2226eb71() {
+function wall_music() {
     setmusicstate("mx_vip_wall");
 }
 
@@ -1037,10 +1037,10 @@ function function_9dc0e3bf2226eb71() {
 // Checksum 0x0, Offset: 0x3591
 // Size: 0xadf
 function function_d9013be857e37ea3() {
-    var_7d2db41d8ea5379f = getent("ally_01", "targetname");
-    var_7d2db51d8ea539d2 = getent("ally_03", "targetname");
-    var_7d2db41d8ea5379f hide();
-    var_7d2db51d8ea539d2 hide();
+    ally_1 = getent("ally_01", "targetname");
+    ally_2 = getent("ally_03", "targetname");
+    ally_1 hide();
+    ally_2 hide();
     thread function_e277f03964910976();
     animnode = getstruct("scene_vip_0300_wallascend_infil", "targetname");
     level.player val::set("vip_infil", "melee", 0);
@@ -1052,20 +1052,20 @@ function function_d9013be857e37ea3() {
     if (!isdefined(level.ally1)) {
         spawn_allies();
         thread function_4f1b7657a4c9d1e();
-        var_72b9f31491f124aa = [level.ally1, level.ally2];
-        var_c575ac7fd41d6a6b = ["shot_010"];
-        animnode thread scene::play(var_72b9f31491f124aa, var_c575ac7fd41d6a6b);
+        character_array = [level.ally1, level.ally2];
+        shot_array = ["shot_010"];
+        animnode thread scene::play(character_array, shot_array);
     }
-    level.var_b3e6bd4be4999e4b = make_weapon("jup_ar_mike4_sp_grappling_gun");
-    level.ally1 namespace_223959d3e5206cfb::forceuseweapon(level.var_b3e6bd4be4999e4b, "primary");
-    level.ally2 namespace_223959d3e5206cfb::forceuseweapon(level.var_b3e6bd4be4999e4b, "primary");
+    level.ai_grapple = make_weapon("jup_ar_mike4_sp_grappling_gun");
+    level.ally1 namespace_223959d3e5206cfb::forceuseweapon(level.ai_grapple, "primary");
+    level.ally2 namespace_223959d3e5206cfb::forceuseweapon(level.ai_grapple, "primary");
     flag_wait("flag_start_wall_ascend");
     utility::disable_trigger_with_targetname("killvolume_infil_01");
     utility::disable_trigger_with_targetname("killvolume_infil_02");
     trigger_on("out_of_bounds", "targetname");
     trigger_on("kill_volume", "targetname");
     thread scripts\sp\player::disable_player_weapon_info();
-    thread namespace_da16efa8eb97d1c0::function_bddf445e41d4f976();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::function_bddf445e41d4f976();
     thread autosave_by_name("reached_wall");
     thread function_509115a6d7f4e772();
     level.player scripts\engine\sp\utility::function_6078d3c20d55c620();
@@ -1094,22 +1094,22 @@ function function_d9013be857e37ea3() {
     thread namespace_165c742e346e899e::function_5ec1f44b04115fd7();
     level.player enableslowaim(0, 0);
     level notify("start_rappel_dof");
-    var_72b9f31491f124aa = [level.ally1, level.ally2];
-    var_c575ac7fd41d6a6b = ["shot_020"];
-    animnode scene::play(var_72b9f31491f124aa, var_c575ac7fd41d6a6b);
+    character_array = [level.ally1, level.ally2];
+    shot_array = ["shot_020"];
+    animnode scene::play(character_array, shot_array);
     level.player function_5ee68a5b461ab5b8(0);
     level.player val::set("vip_infil", "nvg", -1);
     level.player val::set("vip_infil", "allow_movement", 0);
     level.player unlink();
     waitframe();
-    var_10606b1b7108ed62 = spawn_tag_origin(rappel_interact.origin + (0, -20, 0), level.player getplayerangles());
+    shot_link = spawn_tag_origin(rappel_interact.origin + (0, -20, 0), level.player getplayerangles());
     level.player enableslowaim(0.1, 0.1);
     var_4ecb5fe54eeb05ef = 25;
     var_9366824b3b7badf4 = 25;
     var_325d1535876a1326 = 7.5;
     var_7c2e7c229980e9ea = 0;
     level.player lerpfovscalefactor(0, 2.5);
-    level.player playerlinktodelta(var_10606b1b7108ed62, "tag_origin", 1, var_4ecb5fe54eeb05ef, var_9366824b3b7badf4, var_325d1535876a1326, var_7c2e7c229980e9ea, 0, 1, 0, 1, 0.7, 0.2, 1);
+    level.player playerlinktodelta(shot_link, "tag_origin", 1, var_4ecb5fe54eeb05ef, var_9366824b3b7badf4, var_325d1535876a1326, var_7c2e7c229980e9ea, 0, 1, 0, 1, 0.7, 0.2, 1);
     flag_set("vo_player_raised_line_launcher");
     thread namespace_165c742e346e899e::function_853e7e2a9a736f5();
     level.player take_weapon(gunlessweapon);
@@ -1131,13 +1131,13 @@ function function_d9013be857e37ea3() {
     level.enemy_top_wall = utility::spawn_targetname("enemy_top_wall", 1);
     level.enemy_top_wall context_melee_allow(0);
     level.enemy_top_wall visiblenotsolid();
-    var_72b9f31491f124aa = [level.ally1, level.ally2, level.enemy_top_wall];
-    var_c575ac7fd41d6a6b = ["shot_030"];
+    character_array = [level.ally1, level.ally2, level.enemy_top_wall];
+    shot_array = ["shot_030"];
     level.player player::focusdisable();
     function_1ae8f046dee579e0(1);
     var_e63bd682741ed0 = animnode;
-    animnode thread function_57ac36ea7abb5af4(undefined, var_72b9f31491f124aa, var_c575ac7fd41d6a6b);
-    var_e63bd682741ed0 thread function_57ac36ea7abb5af4(undefined, var_72b9f31491f124aa, "shot_030_player");
+    animnode thread function_57ac36ea7abb5af4(undefined, character_array, shot_array);
+    var_e63bd682741ed0 thread function_57ac36ea7abb5af4(undefined, character_array, "shot_030_player");
     thread function_9196cb662717ed67();
     thread function_e5c6c0fef85baaa8();
     flag_set("vo_player_shot_line");
@@ -1154,8 +1154,8 @@ function function_d9013be857e37ea3() {
     pistol = make_weapon("iw9_pi_golf17", ["silencer01_pi"]);
     level.ally1 namespace_223959d3e5206cfb::forceuseweapon(pistol, "primary");
     level.ally2 namespace_223959d3e5206cfb::forceuseweapon(gunlessweapon, "primary");
-    thread namespace_da16efa8eb97d1c0::function_76a901b98ffd8919();
-    thread namespace_da16efa8eb97d1c0::function_996c7c0ab957b783();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::function_76a901b98ffd8919();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::function_996c7c0ab957b783();
     flag_wait("flag_wall_ascend_hide_ascender");
     var_fa3cbb5b6c14860c = animnode scene::get_entity("Prop 3");
     var_5fdb1d716743eacb = utility::spawn_model("misc_wm_ascender", var_fa3cbb5b6c14860c.origin, var_fa3cbb5b6c14860c.angles);
@@ -1235,12 +1235,12 @@ function function_9196cb662717ed67() {
     wait 1;
     pitch = 0.1;
     yaw = 0.1;
-    var_8a7d2aad0cb7408e = (0.33 - pitch) / 60;
-    var_76042867d657e3b3 = (0.33 - yaw) / 60;
+    pitch_inc = (0.33 - pitch) / 60;
+    yaw_inc = (0.33 - yaw) / 60;
     while (pitch < 0.33 && yaw < 0.33) {
         level.player enableslowaim(pitch, yaw);
-        pitch += var_8a7d2aad0cb7408e;
-        yaw += var_76042867d657e3b3;
+        pitch += pitch_inc;
+        yaw += yaw_inc;
         waitframe();
     }
 }
@@ -1297,8 +1297,8 @@ function function_18260f3a76fe4289() {
     level.player waittill("player_on_wall");
     while (true) {
         struct = getstruct(self.target, "targetname");
-        var_ae39bb9175285a00 = distance(self.origin, struct.origin);
-        time = var_ae39bb9175285a00 / 80;
+        distance_value = distance(self.origin, struct.origin);
+        time = distance_value / 80;
         self moveto(struct.origin, time, 0.5, 0.5);
         wait time;
         if (isdefined(struct.script_noteworthy)) {
@@ -1347,8 +1347,8 @@ function function_29b6cd032d120925() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4459
 // Size: 0x85
-function function_409f8618118b58d2(var_e1316ee1c1cb2e24) {
-    foreach (laser in var_e1316ee1c1cb2e24) {
+function function_409f8618118b58d2(laser_group) {
+    foreach (laser in laser_group) {
         script_origin = spawn_script_origin(laser.origin, laser.angles);
         script_origin thread function_14d1b3c1fc80c027(self);
         script_origin linkto(self);
@@ -1361,8 +1361,8 @@ function function_409f8618118b58d2(var_e1316ee1c1cb2e24) {
 // Size: 0x9a
 function function_587d14c181e07bce() {
     struct = spawn_script_origin(self.origin, (0, 0, 0));
-    var_4296fb65008a66f6 = getent("camera_view_1", "targetname");
-    var_4296fb65008a66f6 linkto(self);
+    view_range = getent("camera_view_1", "targetname");
+    view_range linkto(self);
     waitframe();
     self linkto(struct);
     self.health = 1;
@@ -1370,7 +1370,7 @@ function function_587d14c181e07bce() {
     self waittill("damage");
     self notify("destroyed");
     struct notify("destroyed");
-    var_4296fb65008a66f6 hide();
+    view_range hide();
     self hide();
     flag_set("flag_camera_1_destroyed");
 }
@@ -1381,18 +1381,18 @@ function function_587d14c181e07bce() {
 // Size: 0xa6
 function function_587d13c181e0799b() {
     struct = spawn_script_origin(self.origin, (0, 0, 0));
-    var_4296fb65008a66f6 = getent("camera_view_2", "targetname");
-    var_4296fb65008a66f6 linkto(self);
+    view_range = getent("camera_view_2", "targetname");
+    view_range linkto(self);
     waitframe();
     self linkto(struct);
     waitframe();
-    struct thread function_139f4dff6f341241(1);
+    struct thread camera_rotation(1);
     self.health = 1;
     self setcandamage(1);
     self waittill("damage");
     self notify("destroyed");
     struct notify("destroyed");
-    var_4296fb65008a66f6 hide();
+    view_range hide();
     self hide();
     flag_set("flag_camera_2_destroyed");
 }
@@ -1416,24 +1416,24 @@ function function_511781114d769f73() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x46a2
 // Size: 0xd8
-function function_139f4dff6f341241(var_f13e1d37c474f38c) {
+function camera_rotation(invert_rotation) {
     self endon("destroyed");
-    var_bc90ff5a73cce244 = spawn_script_origin(self.origin, self.angles);
-    self linkto(var_bc90ff5a73cce244);
-    var_72560bb7eeab6b1a = self.angles - (0, 85, 0);
-    var_15b9ba04ce2dc9a4 = self.angles + (0, 85, 0);
+    rotation_controller = spawn_script_origin(self.origin, self.angles);
+    self linkto(rotation_controller);
+    min_rotation = self.angles - (0, 85, 0);
+    max_rotation = self.angles + (0, 85, 0);
     while (true) {
-        if (!var_f13e1d37c474f38c) {
-            var_bc90ff5a73cce244 rotateto(var_72560bb7eeab6b1a, 6, 1, 1);
+        if (!invert_rotation) {
+            rotation_controller rotateto(min_rotation, 6, 1, 1);
             wait 6;
-            var_bc90ff5a73cce244 rotateto(var_15b9ba04ce2dc9a4, 6, 1, 1);
+            rotation_controller rotateto(max_rotation, 6, 1, 1);
             wait 6;
             continue;
         }
-        if (var_f13e1d37c474f38c) {
-            var_bc90ff5a73cce244 rotateto(var_15b9ba04ce2dc9a4, 6, 1, 1);
+        if (invert_rotation) {
+            rotation_controller rotateto(max_rotation, 6, 1, 1);
             wait 6;
-            var_bc90ff5a73cce244 rotateto(var_72560bb7eeab6b1a, 6, 1, 1);
+            rotation_controller rotateto(min_rotation, 6, 1, 1);
             wait 6;
         }
     }

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\common\vehicle_code.gsc;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\engine\utility;
 
 #namespace vehicle_common;
 

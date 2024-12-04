@@ -1,11 +1,11 @@
-#using scripts\cp\cp_hud_util.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
-#using script_3bcaa2cbaf54abdd;
 #using script_187a04151c40fb72;
+#using script_3bcaa2cbaf54abdd;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_5e48ca858a12162d;
 

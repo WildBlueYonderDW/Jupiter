@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\sp\player_death.gsc;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_death;
+#using scripts\sp\utility;
 
 #namespace secure;
 
@@ -23,7 +23,7 @@ function function_88fddb3f49798cf8() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x296
 // Size: 0x260
-function function_ec647f66fd4eaebe(var_9016fe4d53edf29d, var_2445e1148769275b, var_1df99c5de05de391, var_d1cd6c3d70240a2f, var_e17b3a55625272eb) {
+function function_ec647f66fd4eaebe(secured_stance, var_2445e1148769275b, var_1df99c5de05de391, var_d1cd6c3d70240a2f, var_e17b3a55625272eb) {
     self endon("death");
     ent_flag_init("secured");
     if (isdefined(self.var_50e27baf1cb17e06)) {
@@ -39,8 +39,8 @@ function function_ec647f66fd4eaebe(var_9016fe4d53edf29d, var_2445e1148769275b, v
     if (isai(self) && isdefined(self.weapon)) {
         scripts\common\ai::gun_remove();
     }
-    var_853109c1d1596d59 = isdefined(var_2445e1148769275b);
-    if (var_853109c1d1596d59) {
+    do_intro = isdefined(var_2445e1148769275b);
+    if (do_intro) {
         has_anim = isdefined(level.scr_anim[self.animname][var_2445e1148769275b]);
         assertex(istrue(has_anim), "No secure-intro anim exists for animname " + self.animname);
     }
@@ -63,14 +63,14 @@ function function_ec647f66fd4eaebe(var_9016fe4d53edf29d, var_2445e1148769275b, v
         var_dca6bd8cd35f9e77 = var_1df99c5de05de391;
     } else {
         function_88fddb3f49798cf8();
-        if (!isdefined(var_9016fe4d53edf29d)) {
-            var_9016fe4d53edf29d = "crouch";
+        if (!isdefined(secured_stance)) {
+            secured_stance = "crouch";
         } else {
-            assertex(var_9016fe4d53edf29d == "stand" || var_9016fe4d53edf29d == "crouch" || var_9016fe4d53edf29d == "prone", "Invalid secure stance! Valid choices: crouch stand prone");
+            assertex(secured_stance == "stand" || secured_stance == "crouch" || secured_stance == "prone", "Invalid secure stance! Valid choices: crouch stand prone");
         }
-        var_dca6bd8cd35f9e77 = "secured_" + var_9016fe4d53edf29d;
+        var_dca6bd8cd35f9e77 = "secured_" + secured_stance;
     }
-    if (var_853109c1d1596d59) {
+    if (do_intro) {
         anim_single_solo(self, var_2445e1148769275b);
     }
     level.player thread function_ccc820d1294511ad();
@@ -82,10 +82,10 @@ function function_ec647f66fd4eaebe(var_9016fe4d53edf29d, var_2445e1148769275b, v
 // Checksum 0x0, Offset: 0x4fe
 // Size: 0x95
 function function_ccc820d1294511ad() {
-    if (isdefined(self.var_fac32c9303b72f30)) {
+    if (isdefined(self.is_securing)) {
         return;
     }
-    self.var_fac32c9303b72f30 = 1;
+    self.is_securing = 1;
     self endon("death");
     wait 0.25;
     self playrumbleonentity("damage_light");
@@ -99,7 +99,7 @@ function function_ccc820d1294511ad() {
     wait 0.2;
     self enableweapons();
     self enablequickweaponswitch(0);
-    self.var_fac32c9303b72f30 = undefined;
+    self.is_securing = undefined;
 }
 
 // Namespace secure / namespace_86dbfbdd50c3e14f

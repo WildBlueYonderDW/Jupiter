@@ -1,9 +1,9 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_infilexfil.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_infilexfil;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace infilexfil;
 
@@ -96,17 +96,17 @@ function infil_init(type, subtype) {
             team = infil_data.script_team;
             game["infil"][team]["lanes"][type][subtype] = infil_ent;
             register_infil_spots(team, infil_ent, infil_type["seats"], infil_type["required_seats"], infil_type["fill_order"], infil_type["player_func"]);
-            var_4aa73becade28233 = infil_ent [[ infil_type["get_length_func"] ]](subtype);
+            infil_time = infil_ent [[ infil_type["get_length_func"] ]](subtype);
             if (!isdefined(var_d47ac5a6cbdc6dcf)) {
-                if (isdefined(var_4aa73becade28233)) {
-                    var_4aa73becade28233 += 1;
+                if (isdefined(infil_time)) {
+                    infil_time += 1;
                 } else {
-                    var_4aa73becade28233 = 1;
+                    infil_time = 1;
                 }
-                var_d47ac5a6cbdc6dcf = var_4aa73becade28233;
+                var_d47ac5a6cbdc6dcf = infil_time;
                 continue;
             }
-            var_4aa73becade28233 += 1;
+            infil_time += 1;
         }
     }
     if (gamehasinfil() && isdefined(var_d47ac5a6cbdc6dcf)) {

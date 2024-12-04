@@ -1,27 +1,27 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using script_3433ee6b63c7e243;
-#using script_7e4d332e911e1b90;
-#using scripts\anim\utility_common.gsc;
 #using script_13d1c402f1421c35;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\anim\notetracks.gsc;
-#using script_3aeb9f02de401a76;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\aitypes\dismember.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\sp\anim.gsc;
+#using script_3433ee6b63c7e243;
 #using script_35de402efc5acfb3;
-#using scripts\sp\pip_util.gsc;
+#using script_3aeb9f02de401a76;
+#using script_7e4d332e911e1b90;
+#using scripts\aitypes\dismember;
+#using scripts\anim\notetracks;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm_bb;
+#using scripts\asm\asm_sp;
+#using scripts\asm\shared\utility;
+#using scripts\common\debug;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\pip_util;
+#using scripts\sp\utility;
 
-#namespace namespace_67d243f3e2920da9;
+#namespace notetracks_sp;
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcda
 // Size: 0x21
@@ -33,7 +33,7 @@ function registernotetracksifnot() {
     registernotetracks();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd03
 // Size: 0x606
@@ -115,7 +115,7 @@ function registernotetracks() {
     anim.notetracks["viewlinkmodel"] = &function_127bf3d03ce7da3a;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1311
 // Size: 0x14b
@@ -163,7 +163,7 @@ function handlenotetrack(note, flagname, customfunction, customparams) {
     return retval;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1465
 // Size: 0x2e
@@ -175,7 +175,7 @@ function notetrackvisorraise(note, flagname) {
     scripts\asm\asm_sp::asm_playvisorraise();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x149b
 // Size: 0x2f
@@ -187,7 +187,7 @@ function notetrackvisorlower(note, flagname) {
     scripts\asm\asm_sp::asm_playvisorraise();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x14d2
 // Size: 0x34
@@ -199,7 +199,7 @@ function notetrackvisorlower_instant(note, flagname) {
     scripts\asm\asm_sp::asm_playvisorraise("_instant");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x150e
 // Size: 0x33
@@ -211,7 +211,7 @@ function notetrackvisorraise_instant(note, flagname) {
     scripts\asm\asm_sp::asm_playvisorraise("_instant");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1549
 // Size: 0x34
@@ -223,7 +223,7 @@ function notetrackvisorpricelower_instant(note, flagname) {
     scripts\asm\asm_sp::asm_playvisorraise("_price_instant");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1585
 // Size: 0x33
@@ -235,7 +235,7 @@ function notetrackvisorpriceraise_instant(note, flagname) {
     scripts\asm\asm_sp::asm_playvisorraise("_price_instant");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x15c0
 // Size: 0x2e
@@ -247,7 +247,7 @@ function notetrackvisorraise_clear(note, flagname) {
     scripts\asm\asm_sp::asm_clearvisoranim();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x15f6
 // Size: 0x1f
@@ -255,7 +255,7 @@ function notetrackfingerposeoffleft(note, flagname) {
     scripts\asm\asm_sp::asm_clearikfingeranim("left");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x161d
 // Size: 0x1f
@@ -263,7 +263,7 @@ function notetrackfingerposeonleft(note, flagname) {
     scripts\asm\asm_sp::asm_ikfingeranim("left");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1644
 // Size: 0x1f
@@ -271,7 +271,7 @@ function notetrackfingerposeoffright(note, flagname) {
     scripts\asm\asm_sp::asm_clearikfingeranim("left");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x166b
 // Size: 0x1f
@@ -279,7 +279,7 @@ function notetrackfingerposeonright(note, flagname) {
     scripts\asm\asm_sp::asm_ikfingeranim("right");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1692
 // Size: 0x1f
@@ -287,7 +287,7 @@ function notetrackfacialidle(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("idle");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x16b9
 // Size: 0x1f
@@ -295,7 +295,7 @@ function notetrackfacialrun(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("run");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x16e0
 // Size: 0x1f
@@ -303,7 +303,7 @@ function notetrackfacialpain(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("pain");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1707
 // Size: 0x1f
@@ -311,7 +311,7 @@ function notetrackfacialdeath(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("death");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x172e
 // Size: 0x1f
@@ -319,7 +319,7 @@ function function_b090d15f9d63d223(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("talk_lg");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1755
 // Size: 0x1f
@@ -327,7 +327,7 @@ function function_b094c05f9d67a297(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("talk_md");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x177c
 // Size: 0x1f
@@ -335,7 +335,7 @@ function function_b07adb5f9d4bb4ee(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("talk_sm");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17a3
 // Size: 0x1f
@@ -343,7 +343,7 @@ function notetrackfacialcheer(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("cheer");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17ca
 // Size: 0x1f
@@ -351,7 +351,7 @@ function notetrackfacialhappy(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("happy");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17f1
 // Size: 0x1f
@@ -359,7 +359,7 @@ function notetrackfacialscared(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("scared");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1818
 // Size: 0x1f
@@ -367,7 +367,7 @@ function notetrackfacialangry(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("angry");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x183f
 // Size: 0x1f
@@ -375,22 +375,22 @@ function notetrackfacialgasdeath(note, flagname) {
     scripts\asm\asm_sp::asm_playfacialanimfromnotetrack("gas_death");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1866
 // Size: 0x6c
 function notetrackmovement(note, flagname) {
     if (isdefined(self.classname) && self.classname != "script_model") {
-        var_6608ae999a05364c = 1;
+        lead_type = 1;
         if (issubstr(note, "post")) {
-            var_6608ae999a05364c = 2;
+            lead_type = 2;
         }
-        var_4a6afe0b63c4e16b = get_notetrack_movement();
-        self playclothmovesound(var_4a6afe0b63c4e16b, var_6608ae999a05364c);
+        run_type = get_notetrack_movement();
+        self playclothmovesound(run_type, lead_type);
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x18da
 // Size: 0xc4
@@ -420,7 +420,7 @@ function notetrackbodyfall(note, flagname) {
     self playsurfacesound(soundalias, groundtype);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x19a6
 // Size: 0x3e
@@ -432,7 +432,7 @@ function notetrackfootscrape(note, flagname) {
     groundtype = "dirt";
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x19ec
 // Size: 0x6e
@@ -447,14 +447,14 @@ function notetrackland(note, flagname) {
     self playequipmovesound("land", self.weapon);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a62
 // Size: 0x19d
-function playfootstep(var_ae6db4ab3762ff57, is_large, var_df283c0f77bc4d5c) {
+function playfootstep(is_left, is_large, var_df283c0f77bc4d5c) {
     if (!isai(self)) {
         if (isdefined(self.var_ba304776b29ba32d)) {
-            [[ self.var_ba304776b29ba32d ]](var_ae6db4ab3762ff57, is_large, var_df283c0f77bc4d5c);
+            [[ self.var_ba304776b29ba32d ]](is_left, is_large, var_df283c0f77bc4d5c);
             return;
         }
         if (!var_df283c0f77bc4d5c) {
@@ -483,12 +483,12 @@ function playfootstep(var_ae6db4ab3762ff57, is_large, var_df283c0f77bc4d5c) {
         self.lastgroundtype = self.groundtype;
     }
     foot = "J_Ball_RI";
-    if (var_ae6db4ab3762ff57) {
+    if (is_left) {
         foot = "J_Ball_LE";
     }
-    var_4a6afe0b63c4e16b = get_notetrack_movement();
+    run_type = get_notetrack_movement();
     if (!var_df283c0f77bc4d5c) {
-        function_4f6cdffaa41ad3d1(groundtype, actiontype, var_4a6afe0b63c4e16b);
+        function_4f6cdffaa41ad3d1(groundtype, actiontype, run_type);
     }
     if (is_large) {
         if (![[ anim.fnfootstepeffect ]](foot, groundtype)) {
@@ -502,15 +502,15 @@ function playfootstep(var_ae6db4ab3762ff57, is_large, var_df283c0f77bc4d5c) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c07
 // Size: 0xe9
-function playhandstep(var_ae6db4ab3762ff57, is_large) {
+function playhandstep(is_left, is_large) {
     if (!isai(self)) {
         return;
     }
-    if (var_ae6db4ab3762ff57) {
+    if (is_left) {
         tag = "J_MID_LE_1";
         if (scripts\aitypes\dismember::get_scriptablepartinfo("left_arm") == "dismember") {
             return;
@@ -539,25 +539,25 @@ function playhandstep(var_ae6db4ab3762ff57, is_large) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cf8
 // Size: 0xae
 function notetrackhandstep(note, flagname) {
-    var_ae6db4ab3762ff57 = issubstr(note, "left");
+    is_left = issubstr(note, "left");
     is_large = issubstr(note, "large");
     foot = "right";
-    if (var_ae6db4ab3762ff57) {
+    if (is_left) {
         foot = "left";
     }
     if (isai(self)) {
         self.asm.footsteps.foot = foot;
         self.asm.footsteps.time = gettime();
     }
-    playhandstep(var_ae6db4ab3762ff57, is_large);
+    playhandstep(is_left, is_large);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dae
 // Size: 0x1ae
@@ -587,7 +587,7 @@ function playfootprinteffect(foot, groundtype) {
     return true;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f65
 // Size: 0xe7
@@ -607,7 +607,7 @@ function track_flir_footstep(effectid, org, forwardv, upv) {
     anim.flirfootprints = array_remove(anim.flirfootprints, footstep);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2054
 // Size: 0x68
@@ -620,7 +620,7 @@ function play_flir_footstep_fx() {
     triggerfx(self.fx, self.spawntime / 1000);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20c4
 // Size: 0x28
@@ -632,7 +632,7 @@ function kill_flir_footstep_fx() {
     self.fx delete();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x20f4
 // Size: 0x10a
@@ -652,7 +652,7 @@ function playfootstepeffect(foot, groundtype) {
     return true;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2207
 // Size: 0x10a
@@ -672,7 +672,7 @@ function playfootstepeffectsmall(foot, groundtype) {
     return true;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x231a
 // Size: 0x1c1
@@ -680,7 +680,7 @@ function get_notetrack_movement() {
     if (isai(self) && !isbot(self)) {
         return self function_cbe5ad2464f5abe();
     }
-    var_4a6afe0b63c4e16b = "run";
+    run_type = "run";
     animsetname = undefined;
     if (isdefined(self.asm)) {
         animsetname = self getbasearchetype();
@@ -688,32 +688,32 @@ function get_notetrack_movement() {
     if (isdefined(animsetname) && animspeedthresholdsexist(animsetname) && hasanimspeedthresholdstring(animsetname, "sprint") && isdefined(self.velocity)) {
         var_68a306f6cb2dda9c = getanimspeedbetweenthresholds(animsetname, "run", "sprint", 0.8);
         if (length2d(self.velocity) > var_68a306f6cb2dda9c) {
-            var_4a6afe0b63c4e16b = "sprint";
+            run_type = "sprint";
         }
     }
     if (isdefined(self._blackboard)) {
         if (self._blackboard.movetype == "walk" || self._blackboard.movetype == "casual_gun" || self._blackboard.movetype == "patrol" || self._blackboard.movetype == "casual") {
-            var_4a6afe0b63c4e16b = "walk";
+            run_type = "walk";
         }
         if (scripts\asm\asm_bb::bb_getrequestedstance() == "prone") {
-            var_4a6afe0b63c4e16b = "prone";
+            run_type = "prone";
         }
     } else if (isdefined(self.a)) {
         if (isdefined(self.a.movement)) {
             if (self.a.movement == "walk") {
-                var_4a6afe0b63c4e16b = "walk";
+                run_type = "walk";
             }
         }
         if (isdefined(self.currentpose)) {
             if (self.currentpose == "prone") {
-                var_4a6afe0b63c4e16b = "prone";
+                run_type = "prone";
             }
         }
     }
-    return var_4a6afe0b63c4e16b;
+    return run_type;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x24e4
 // Size: 0x3c
@@ -726,7 +726,7 @@ function notetracklaser(note, flagname) {
     self updatelaserstatus();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2528
 // Size: 0x92
@@ -746,7 +746,7 @@ function notetrackgunhand(note, flagname) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x25c2
 // Size: 0x47
@@ -760,7 +760,7 @@ function notetrackposestand(note, flagname) {
     setpose("stand");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2611
 // Size: 0x47
@@ -774,7 +774,7 @@ function notetrackposecrouch(note, flagname) {
     setpose("crouch");
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2660
 // Size: 0x9e
@@ -792,7 +792,7 @@ function notetrackposeprone(note, flagname) {
     self.a.proneaiming = undefined;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2706
 // Size: 0x6e
@@ -806,7 +806,7 @@ function notetrackposecrawl(note, flagname) {
     self.a.proneaiming = undefined;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x277c
 // Size: 0x94
@@ -824,7 +824,7 @@ function notetrackposeback(note, flagname) {
     enterpronewrapper(1);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2818
 // Size: 0x4a
@@ -841,7 +841,7 @@ function notetrackrocketlauncherammoattach() {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x286a
 // Size: 0x1c
@@ -849,7 +849,7 @@ function notetrackdropclip(note, flagname) {
     thread handledropclip(flagname);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x288e
 // Size: 0x38
@@ -860,7 +860,7 @@ function notetrackhelmetpop(note, flagname) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x28ce
 // Size: 0xd8
@@ -893,7 +893,7 @@ function notetrackstartragdoll(note, flagname) {
     #/
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x29ae
 // Size: 0xbc
@@ -919,7 +919,7 @@ function notetrackragdollblendinit(note, flagname) {
     self ragdollblendinit();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a72
 // Size: 0x13
@@ -927,7 +927,7 @@ function notetrackragdollblendstart(note, flagname) {
     
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a8d
 // Size: 0x13
@@ -935,7 +935,7 @@ function notetrackragdollblendend(note, flagname) {
     
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2aa8
 // Size: 0x13
@@ -943,7 +943,7 @@ function notetrackragdollblendrootanim(note, flagname) {
     
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ac3
 // Size: 0x13
@@ -951,7 +951,7 @@ function notetrackragdollblendrootragdoll(note, flagname) {
     
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ade
 // Size: 0x37
@@ -966,7 +966,7 @@ function function_d935eab3adddb72e(note, flagname) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b1d
 // Size: 0x7c
@@ -982,7 +982,7 @@ function notetrackgundrop(note, flagname) {
     self.lastweapon = self.weapon;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ba1
 // Size: 0x45
@@ -995,7 +995,7 @@ function setpose(pose) {
     self notify("entered_pose" + pose);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bee
 // Size: 0x14
@@ -1006,7 +1006,7 @@ function unlinknextframe() {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c0a
 // Size: 0x152
@@ -1040,7 +1040,7 @@ function notetrack_model_translate(model) {
     return result;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d65
 // Size: 0x83
@@ -1060,7 +1060,7 @@ function notetrack_vo(alias) {
     scripts\sp\anim::play_sound_at_viewheight(alias, "sounddone", 1);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2df0
 // Size: 0xdcf
@@ -1089,8 +1089,8 @@ function notetrack_prefix_handler_sp(notetrack) {
         break;
     case #"hash_212b5a6c1b27bb77":
         if (canplaynotetrackvo()) {
-            var_dfd66055ff978a3c = getsubstr(notetrack, 3);
-            prefix = namespace_378f8281e2d12ced::executeevent(var_dfd66055ff978a3c);
+            custom_bc = getsubstr(notetrack, 3);
+            prefix = namespace_378f8281e2d12ced::executeevent(custom_bc);
             return 1;
         }
         break;
@@ -1113,12 +1113,12 @@ function notetrack_prefix_handler_sp(notetrack) {
         }
         break;
     case #"hash_256b66c0ab12624":
-        var_f058cbbc0c35931a = strtok(tolower(notetrack), "[]");
-        str = strtok(getsubstr(var_f058cbbc0c35931a[0], 3), ",() ");
+        vector_str = strtok(tolower(notetrack), "[]");
+        str = strtok(getsubstr(vector_str[0], 3), ",() ");
         vectors = [];
-        if (var_f058cbbc0c35931a.size > 1) {
-            for (i = 1; i < var_f058cbbc0c35931a.size; i++) {
-                vector = strtok(var_f058cbbc0c35931a[i], ",");
+        if (vector_str.size > 1) {
+            for (i = 1; i < vector_str.size; i++) {
+                vector = strtok(vector_str[i], ",");
                 if (vector.size > 1) {
                     assertex(vector.size == 3, "anim.gsc: vector size not equal to 3 (" + vector.size);
                     str = array_add(str, (float(vector[0]), float(vector[1]), float(vector[2])));
@@ -1368,17 +1368,17 @@ function notetrack_prefix_handler_sp(notetrack) {
         level.player lerpfovscalefactor(var_80698c7167df0cb7, var_19fd165b9d684b3d);
         return 1;
     case #"hash_f94a040a056fe52b":
-        var_5a7203790a8ccead = strtok(notetrack, "_");
-        var_db689c59f0f9b985 = var_5a7203790a8ccead.size;
-        var_71dfe6fb4627ff8b = float(var_5a7203790a8ccead[1]);
-        var_2a0df86e83a41bb6 = float(var_5a7203790a8ccead[2]);
+        dof_values = strtok(notetrack, "_");
+        var_db689c59f0f9b985 = dof_values.size;
+        var_71dfe6fb4627ff8b = float(dof_values[1]);
+        var_2a0df86e83a41bb6 = float(dof_values[2]);
         var_8592a3d4811dc109 = undefined;
         var_88e40ad662b298be = undefined;
         if (var_db689c59f0f9b985 > 3) {
-            var_8592a3d4811dc109 = float(var_5a7203790a8ccead[3]);
+            var_8592a3d4811dc109 = float(dof_values[3]);
         }
         if (var_db689c59f0f9b985 > 4) {
-            var_88e40ad662b298be = float(var_5a7203790a8ccead[4]);
+            var_88e40ad662b298be = float(dof_values[4]);
         }
         level.player thread utility::dof_enable(var_71dfe6fb4627ff8b, var_2a0df86e83a41bb6, undefined, var_8592a3d4811dc109, var_88e40ad662b298be);
         return 1;
@@ -1386,7 +1386,7 @@ function notetrack_prefix_handler_sp(notetrack) {
     return scripts\anim\notetracks::notetrack_prefix_handler_common(notetrack);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bc8
 // Size: 0x2d
@@ -1400,7 +1400,7 @@ function canplaynotetrackvo() {
     return true;
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bfe
 // Size: 0x32
@@ -1408,7 +1408,7 @@ function eyeonnotehandler(note, flagname) {
     self setanim(generic_human%lookat_eye_node, 1, 0.2, 1);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c38
 // Size: 0x28
@@ -1416,7 +1416,7 @@ function eyeoffnotehandler(note, flagname) {
     self clearanim(generic_human%lookat_eye_node, 0.2);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c68
 // Size: 0x3b
@@ -1428,7 +1428,7 @@ function function_78d07eae81b909a4(note, flagname) {
     level.player enableweapons();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cab
 // Size: 0x3b
@@ -1440,7 +1440,7 @@ function function_f60a480f6d11b189(note, flagname) {
     level.player disableweapons();
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cee
 // Size: 0x15a
@@ -1486,7 +1486,7 @@ function function_4c5f855c0e23d2ec(parameters) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e50
 // Size: 0x4a
@@ -1502,7 +1502,7 @@ function function_22238dd24555b428(parameters) {
     self function_106bce0aeee91d2c(speed);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ea2
 // Size: 0x74
@@ -1514,13 +1514,13 @@ function function_3d33d0c14b96b661(parameters) {
     if (self function_e9e893b7f1032d7f() == 0) {
         return;
     }
-    var_e49dbba7580f19f8 = float(parameters[1]);
+    spine = float(parameters[1]);
     neck = float(parameters[2]);
     head = float(parameters[3]);
-    self function_1c46ba98e23c02c1(var_e49dbba7580f19f8, neck, head);
+    self function_1c46ba98e23c02c1(spine, neck, head);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f1e
 // Size: 0x6a
@@ -1532,12 +1532,12 @@ function function_d61145721b9f2990(parameters) {
     if (self function_e9e893b7f1032d7f() == 0) {
         return;
     }
-    var_e49dbba7580f19f8 = float(parameters[1]);
+    spine = float(parameters[1]);
     neck = float(parameters[2]);
     head = float(parameters[3]);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f90
 // Size: 0xb4
@@ -1564,7 +1564,7 @@ function function_8d6dc47bf25b58(parameters) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x404c
 // Size: 0x5f
@@ -1581,7 +1581,7 @@ function function_bf398d3bbc1f1d84(parameters) {
     self function_5b21b24798da64b5(horizontal, vertical);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x40b3
 // Size: 0x7e
@@ -1599,7 +1599,7 @@ function function_fa7a1453b16a7545(parameters) {
     down = float(parameters[4]);
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4139
 // Size: 0x3e
@@ -1614,7 +1614,7 @@ function function_aeadf8545de91b27(parameters) {
     self function_81e6e6fa91aff70b(float(parameters[1]));
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x417f
 // Size: 0x17d
@@ -1643,7 +1643,7 @@ function function_127bf3d03ce7da3a(note, flagname, customparams) {
     }
 }
 
-// Namespace namespace_67d243f3e2920da9 / namespace_acef762f74130ac8
+// Namespace notetracks_sp / namespace_acef762f74130ac8
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4304
 // Size: 0x29

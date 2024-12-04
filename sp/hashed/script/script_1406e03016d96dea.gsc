@@ -1,6 +1,6 @@
-#namespace namespace_f753c60aee8a4de4;
+#namespace bodies_civilian_asm_female_1;
 
-// Namespace namespace_f753c60aee8a4de4 / namespace_d85309d988e50764
+// Namespace bodies_civilian_asm_female_1 / namespace_d85309d988e50764
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dc
 // Size: 0xdd

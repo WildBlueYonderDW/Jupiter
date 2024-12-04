@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
 #using script_1db8d0e02a99c5e2;
-#using scripts\cp_mp\vehicles\vehicle_mines.gsc;
-#using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_6159d9fd44490f13;
-#using scripts\cp\cp_juggernaut.gsc;
+#using script_74502a9e0ef1f19c;
+#using script_7ef95bba57dc4b82;
 #using script_afb7e332aee4bf2;
-#using scripts\cp\cp_claymore.gsc;
-#using scripts\stealth\debug.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_claymore;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\cp_juggernaut;
+#using scripts\cp\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_mines;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\stealth\debug;
 
-#namespace namespace_bd9fbcae69e50ecf;
+#namespace cp_claymore;
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x599
 // Size: 0xc5
@@ -35,7 +35,7 @@ function claymore_init() {
     setdvarifuninitialized(@"hash_dd3c99b07675fd4a", 200);
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x666
 // Size: 0x1be
@@ -78,7 +78,7 @@ function claymore_use(grenade) {
     grenade thread claymore_plant();
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x82c
 // Size: 0x23e
@@ -90,13 +90,13 @@ function claymore_plant() {
         self.owner endon("disconnect");
     }
     owner = self.owner;
-    var_997b28e32a97c75 = spawnstruct();
-    var_997b28e32a97c75.scriptablename = "brloot_offhand_claymore";
-    var_997b28e32a97c75.equipname = level.br_pickups.br_equipname[var_997b28e32a97c75.scriptablename];
-    var_997b28e32a97c75.maxcount = self.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(var_997b28e32a97c75.equipname);
-    var_997b28e32a97c75.count = 1;
-    var_997b28e32a97c75.origin = self.origin;
-    thread makeexplosiveusabletag("tag_use", 1, undefined, var_997b28e32a97c75);
+    pickup_str = spawnstruct();
+    pickup_str.scriptablename = "brloot_offhand_claymore";
+    pickup_str.equipname = level.br_pickups.br_equipname[pickup_str.scriptablename];
+    pickup_str.maxcount = self.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(pickup_str.equipname);
+    pickup_str.count = 1;
+    pickup_str.origin = self.origin;
+    thread makeexplosiveusabletag("tag_use", 1, undefined, pickup_str);
     if (isdefined(self.owner) && isplayer(self.owner)) {
         weap_name = ter_op(function_240f7f4e57340e8f(), "jup_claymore_cp", "claymore_mp");
         owner onlethalequipmentplanted(self, weap_name);
@@ -124,7 +124,7 @@ function claymore_plant() {
     thread claymore_watchfortrigger();
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa72
 // Size: 0x72
@@ -140,7 +140,7 @@ function claymore_forceclampangles() {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xaec
 // Size: 0x33f
@@ -173,13 +173,13 @@ function claymore_watchfortrigger() {
                     }
                     forward = anglestoforward(self.angles);
                     up = anglestoup(self.angles);
-                    var_9f19a836cb82eecc = ter_op(function_240f7f4e57340e8f(), 4, 0);
-                    castorigin = self.origin + up * var_9f19a836cb82eecc;
+                    cast_offset = ter_op(function_240f7f4e57340e8f(), 4, 0);
+                    castorigin = self.origin + up * cast_offset;
                     ignorelist = get_mine_ignore_list();
                     var_ad283a45677a1ea3 = ent gettagorigin("j_mainroot");
                     eorigins = [var_ad283a45677a1ea3];
                     btwn = castorigin - var_ad283a45677a1ea3;
-                    if (vectordot(btwn, (0, 0, 1)) >= var_9f19a836cb82eecc) {
+                    if (vectordot(btwn, (0, 0, 1)) >= cast_offset) {
                         eorigins[eorigins.size] = ent gettagorigin("j_spineupper");
                     } else {
                         eorigins[eorigins.size] = ent.origin;
@@ -216,7 +216,7 @@ function claymore_watchfortrigger() {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe33
 // Size: 0x106
@@ -240,7 +240,7 @@ function get_mine_ignore_list() {
     return ignorelist;
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf42
 // Size: 0x88
@@ -256,7 +256,7 @@ function claymore_trigger(ent) {
     thread claymore_explode(self.owner, ent);
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xfd2
 // Size: 0x86
@@ -272,7 +272,7 @@ function claymore_triggerfromvehicle(vehicle, mine) {
     mine thread claymore_explodefromvehicletrigger(vehicle);
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1060
 // Size: 0xa2
@@ -287,7 +287,7 @@ function claymore_explodefromvehicletrigger(vehicle) {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x110a
 // Size: 0x354
@@ -319,8 +319,8 @@ function claymore_explode(attacker, var_95938587db4f6823) {
     }
     weap_name = ter_op(function_240f7f4e57340e8f(), "jup_claymore_cp", "claymore_mp");
     level notify("grenade_exploded_during_stealth", self.origin, weap_name, self.owner_name);
-    var_310236dbf257fbb5 = getaiarrayinradius(self.origin, 2048, "axis");
-    foreach (ai in var_310236dbf257fbb5) {
+    nearby_ai = getaiarrayinradius(self.origin, 2048, "axis");
+    foreach (ai in nearby_ai) {
         ai aieventlistenerevent("combat", var_95938587db4f6823, self.origin);
         if (isdefined(var_95938587db4f6823) && isplayer(var_95938587db4f6823)) {
             ai getenemyinfo(var_95938587db4f6823);
@@ -335,7 +335,7 @@ function claymore_explode(attacker, var_95938587db4f6823) {
     self detonate();
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1466
 // Size: 0x22e
@@ -358,8 +358,8 @@ function function_6c884eee24235c94(attacker, var_95938587db4f6823) {
     playfx(getfx("claymore_explode"), self.origin, forward, up);
     weap_name = ter_op(function_240f7f4e57340e8f(), "jup_claymore_cp", "claymore_mp");
     level notify("grenade_exploded_during_stealth", self.origin, weap_name, self.owner_name);
-    var_310236dbf257fbb5 = getaiarrayinradius(self.origin, 2048, "axis");
-    foreach (ai in var_310236dbf257fbb5) {
+    nearby_ai = getaiarrayinradius(self.origin, 2048, "axis");
+    foreach (ai in nearby_ai) {
         ai aieventlistenerevent("combat", var_95938587db4f6823, self.origin);
         if (isdefined(var_95938587db4f6823) && isplayer(var_95938587db4f6823)) {
             ai getenemyinfo(var_95938587db4f6823);
@@ -373,7 +373,7 @@ function function_6c884eee24235c94(attacker, var_95938587db4f6823) {
     self detonate();
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x169c
 // Size: 0x48
@@ -387,7 +387,7 @@ function claymore_explodeonnotify() {
     thread claymore_explode(attacker);
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16ec
 // Size: 0x36
@@ -400,7 +400,7 @@ function claymore_destroy(destroydelay) {
     self setscriptablepartstate("destroy", "active", 0);
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x172a
 // Size: 0xb3
@@ -424,7 +424,7 @@ function claymore_destroyonemp() {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17e5
 // Size: 0xc3
@@ -450,7 +450,7 @@ function claymore_delete(var_cbf7be4f62a0ddb2) {
     self delete();
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x18b0
 // Size: 0x11c
@@ -478,7 +478,7 @@ function claymore_modifieddamage(victim, objweapon, inflictor, meansofdeath, dam
     return damage;
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19d5
 // Size: 0x14d
@@ -505,7 +505,7 @@ function remotedefusesetup() {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2a
 // Size: 0x86
@@ -521,7 +521,7 @@ function defuseusemonitoring() {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bb8
 // Size: 0xef
@@ -553,7 +553,7 @@ function defusethink() {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x1caf
 // Size: 0xf3
@@ -561,16 +561,16 @@ function spawn_claymore_group(var_9ea7808f138295b7, var_f8f2ebf05b9af55a, floati
     if (getdvarint(@"hash_e87416769abd9b7", 0) != 0) {
         return;
     }
-    var_c4ea99fa46d27c12 = getstructarray(var_9ea7808f138295b7, "targetname");
-    var_bc0546f6244318cf = [];
-    foreach (spawner in var_c4ea99fa46d27c12) {
+    claymores = getstructarray(var_9ea7808f138295b7, "targetname");
+    spawned_claymores = [];
+    foreach (spawner in claymores) {
         claymore = spawn_enemy_claymore(spawner.origin, spawner.angles, var_f8f2ebf05b9af55a, floating, var_254c09e3a6421a39, var_617112b94b09e784, var_5c53eb01a38766b8, var_ed96a661e85f5e5c);
-        var_bc0546f6244318cf = array_add(var_bc0546f6244318cf, claymore);
+        spawned_claymores = array_add(spawned_claymores, claymore);
     }
-    return var_bc0546f6244318cf;
+    return spawned_claymores;
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dab
 // Size: 0xf1
@@ -588,7 +588,7 @@ function spawn_enemy_claymore(origin, angles, var_f8f2ebf05b9af55a, floating, va
     return claymore;
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ea5
 // Size: 0x307
@@ -669,7 +669,7 @@ function plant_enemy_claymore(origin, angles, var_f8f2ebf05b9af55a, parent, var_
     thread function_553142ed1d7441e4();
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x21b4
 // Size: 0x13d
@@ -710,7 +710,7 @@ function function_a29e39b6de05a901(tagname, isgrenade) {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22f9
 // Size: 0x8e
@@ -727,7 +727,7 @@ function function_1e994dd89f124753() {
     self linkto(self.parent, "tag_origin");
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x238f
 // Size: 0x30
@@ -738,7 +738,7 @@ function function_553142ed1d7441e4() {
     level.var_804a2874c0323da7 = array_removedead(level.var_804a2874c0323da7);
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x23c7
 // Size: 0xeb
@@ -746,18 +746,18 @@ function custom_explode_mine(origin, var_ed96a661e85f5e5c) {
     self endon("clean_custom_explode");
     self endon("deleted_equipment");
     forwardpos = origin + (0, 0, 50) + anglestoforward(self.angles) * 95;
-    var_419bfd33c72e7ef9 = origin + (0, 0, 50) + anglestoforward(self.angles) * 30;
+    forwardpos_b = origin + (0, 0, 50) + anglestoforward(self.angles) * 30;
     self waittill("death");
     if (istrue(var_ed96a661e85f5e5c) && istrue(self.ishacked)) {
         attacker = level.player;
     } else {
         attacker = getaiarray("axis")[0];
     }
-    radiusdamage(var_419bfd33c72e7ef9, 30, 1000, 200, attacker, "MOD_EXPLOSIVE", "claymore_radial_mp");
+    radiusdamage(forwardpos_b, 30, 1000, 200, attacker, "MOD_EXPLOSIVE", "claymore_radial_mp");
     radiusdamage(forwardpos, 75, 1000, 20, attacker, "MOD_EXPLOSIVE", "claymore_radial_mp");
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24ba
 // Size: 0x25a
@@ -818,7 +818,7 @@ function function_e2b6464932ab9b06() {
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x271c
 // Size: 0x70c
@@ -845,8 +845,8 @@ function enemy_claymore_watchfortrigger(var_f8f2ebf05b9af55a, var_ed96a661e85f5e
         }
         forward = anglestoforward(self.angles);
         up = anglestoup(self.angles);
-        var_9f19a836cb82eecc = ter_op(function_240f7f4e57340e8f(), 2, 0);
-        castorigin = self.origin + up * var_9f19a836cb82eecc;
+        cast_offset = ter_op(function_240f7f4e57340e8f(), 2, 0);
+        castorigin = self.origin + up * cast_offset;
         ignorelist = [self];
         if (isdefined(level.dynamicladders)) {
             foreach (struct in level.dynamicladders) {
@@ -895,8 +895,8 @@ function enemy_claymore_watchfortrigger(var_f8f2ebf05b9af55a, var_ed96a661e85f5e
             }
             eorigins = [var_ad283a45677a1ea3];
             btwn = castorigin - var_ad283a45677a1ea3;
-            var_9f19a836cb82eecc = ter_op(function_240f7f4e57340e8f(), 4, 0);
-            if (var_548b9f6609ce3883 tagexists("j_spineupper") && vectordot(btwn, (0, 0, 1)) >= var_9f19a836cb82eecc) {
+            cast_offset = ter_op(function_240f7f4e57340e8f(), 4, 0);
+            if (var_548b9f6609ce3883 tagexists("j_spineupper") && vectordot(btwn, (0, 0, 1)) >= cast_offset) {
                 eorigins[eorigins.size] = var_548b9f6609ce3883 gettagorigin("j_spineupper");
             } else {
                 eorigins[eorigins.size] = var_548b9f6609ce3883.origin;
@@ -937,8 +937,8 @@ function enemy_claymore_watchfortrigger(var_f8f2ebf05b9af55a, var_ed96a661e85f5e
                 castresults = physics_raycast(castorigin, eorigin, contents, ignorelist, 0, "physicsquery_closest", 1);
                 /#
                     if (getdvarint(@"hash_135469cd54831746") == 1) {
-                        var_204ccd40e6576eb1 = scripts\engine\trace::internal_create_debug_data(castresults, "<dev string:x7b>", castorigin, eorigin);
-                        thread scripts\engine\trace::draw_trace(var_204ccd40e6576eb1, (1, 1, 1), 1, 5);
+                        debug_results = scripts\engine\trace::internal_create_debug_data(castresults, "<dev string:x7b>", castorigin, eorigin);
+                        thread scripts\engine\trace::draw_trace(debug_results, (1, 1, 1), 1, 5);
                     }
                 #/
                 if (isvehicle) {
@@ -977,7 +977,7 @@ function enemy_claymore_watchfortrigger(var_f8f2ebf05b9af55a, var_ed96a661e85f5e
     }
 }
 
-// Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+// Namespace cp_claymore / scripts\cp\cp_claymore
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e30
 // Size: 0x105
@@ -990,40 +990,40 @@ function function_6cb0cbea56d5fb64() {
     self.ishacked = 1;
     self setscriptablepartstate("hacked", "neutral", 0);
     self setscriptablepartstate("arm", "active", 0);
-    var_997b28e32a97c75 = spawnstruct();
-    var_997b28e32a97c75.scriptablename = "brloot_offhand_claymore";
-    var_997b28e32a97c75.equipname = level.br_pickups.br_equipname[var_997b28e32a97c75.scriptablename];
-    var_997b28e32a97c75.maxcount = self.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(var_997b28e32a97c75.equipname);
-    var_997b28e32a97c75.count = 1;
-    var_997b28e32a97c75.origin = self.origin;
-    thread makeexplosiveusabletag("tag_use", 1, undefined, var_997b28e32a97c75);
+    pickup_str = spawnstruct();
+    pickup_str.scriptablename = "brloot_offhand_claymore";
+    pickup_str.equipname = level.br_pickups.br_equipname[pickup_str.scriptablename];
+    pickup_str.maxcount = self.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(pickup_str.equipname);
+    pickup_str.count = 1;
+    pickup_str.origin = self.origin;
+    thread makeexplosiveusabletag("tag_use", 1, undefined, pickup_str);
 }
 
 /#
 
-    // Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+    // Namespace cp_claymore / scripts\cp\cp_claymore
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x2f3d
     // Size: 0x129
-    function function_68f18447b57f4963(var_5b0daff23a6ad05c) {
+    function function_68f18447b57f4963(draw_min) {
         while (true) {
             if (getdvarint(@"hash_135469cd54831746") == 1) {
                 forward = anglestoforward(self.angles);
                 up = anglestoup(self.angles);
-                var_9f19a836cb82eecc = ter_op(function_240f7f4e57340e8f(), 4, 0);
+                cast_offset = ter_op(function_240f7f4e57340e8f(), 4, 0);
                 dist_min = ter_op(function_240f7f4e57340e8f(), 5, 20);
-                castorigin = self.origin + up * var_9f19a836cb82eecc;
-                thread scripts\stealth\debug::function_ab68b8f1b9191d70(castorigin, -15, 15, self.angles, 130, 1, 15, (1, 1, 0));
-                thread scripts\stealth\debug::function_ab68b8f1b9191d70(castorigin, -15, 15, self.angles, 90, 1, 15, (1, 0, 0));
-                if (istrue(var_5b0daff23a6ad05c)) {
-                    thread scripts\stealth\debug::function_ab68b8f1b9191d70(castorigin, -15, 15, self.angles, dist_min, 1, 15, (0, 1, 0));
+                castorigin = self.origin + up * cast_offset;
+                thread scripts\stealth\debug::draw_arc(castorigin, -15, 15, self.angles, 130, 1, 15, (1, 1, 0));
+                thread scripts\stealth\debug::draw_arc(castorigin, -15, 15, self.angles, 90, 1, 15, (1, 0, 0));
+                if (istrue(draw_min)) {
+                    thread scripts\stealth\debug::draw_arc(castorigin, -15, 15, self.angles, dist_min, 1, 15, (0, 1, 0));
                 }
             }
             waitframe();
         }
     }
 
-    // Namespace namespace_bd9fbcae69e50ecf / scripts\cp\cp_claymore
+    // Namespace cp_claymore / scripts\cp\cp_claymore
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x306e
     // Size: 0x39

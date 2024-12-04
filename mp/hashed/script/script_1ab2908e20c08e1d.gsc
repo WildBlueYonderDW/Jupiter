@@ -1,13 +1,13 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\mp\utility\weapon.gsc;
 #using script_7b2517368c79e5bc;
-#using scripts\mp\utility\player.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace inhibitor;
 

@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_5a4a5d9ba343ff8f;
+#using scripts\common\callbacks;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace effect_burn;
 
@@ -9,7 +9,7 @@
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x16f
 // Size: 0xfe
-function burn(durations, damage_percent, damage_cooldowns, attacker, unique_id, var_aaf0465944b061ed, inflictor, var_f10d0c4ca5eccac9, idamage) {
+function burn(durations, damage_percent, damage_cooldowns, attacker, unique_id, var_aaf0465944b061ed, inflictor, incendiary_rounds, idamage) {
     if (!istrue(self.aisettings.var_994ad2292fc29de6)) {
         return 0;
     }
@@ -20,7 +20,7 @@ function burn(durations, damage_percent, damage_cooldowns, attacker, unique_id, 
     burn_effect.attacker = attacker;
     burn_effect.inflictor = inflictor;
     burn_effect.var_51357609845cf128 = gettime();
-    burn_effect.var_f10d0c4ca5eccac9 = var_f10d0c4ca5eccac9;
+    burn_effect.incendiary_rounds = incendiary_rounds;
     burn_effect.idamage = idamage;
     return start_effect(burn_effect);
 }
@@ -69,7 +69,7 @@ function private function_8ca6d968f6bcfe21(effect) {
             now = gettime();
             if (now < burn_effect.end_time && now >= burn_effect.var_51357609845cf128) {
                 burn_effect.var_51357609845cf128 += function_a5b14435e3229bed(burn_effect.damage_cooldowns);
-                if (isdefined(burn_effect.var_f10d0c4ca5eccac9) && istrue(burn_effect.var_f10d0c4ca5eccac9)) {
+                if (isdefined(burn_effect.incendiary_rounds) && istrue(burn_effect.incendiary_rounds)) {
                     damage_amount = max(burn_effect.idamage * burn_effect.damage_percent, 10);
                 } else {
                     damage_amount = self.maxhealth * burn_effect.damage_percent;
@@ -82,15 +82,15 @@ function private function_8ca6d968f6bcfe21(effect) {
                         burn_effect.attacker callback::callback("zombie_score_event", scoreeventparams);
                     }
                 }
-                var_4122d19555c5a456 = undefined;
+                the_attacker = undefined;
                 if (isent(burn_effect.attacker)) {
-                    var_4122d19555c5a456 = burn_effect.attacker;
+                    the_attacker = burn_effect.attacker;
                 }
-                inflictor = var_4122d19555c5a456;
+                inflictor = the_attacker;
                 if (isdefined(burn_effect.inflictor)) {
                     inflictor = burn_effect.inflictor;
                 }
-                self dodamage(damage_amount, self.origin, var_4122d19555c5a456, inflictor, "MOD_UNKNOWN", "none", "none", undefined, 65536);
+                self dodamage(damage_amount, self.origin, the_attacker, inflictor, "MOD_UNKNOWN", "none", "none", undefined, 65536);
             }
             function_f632348cbb773537(function_b46aef18c1b91ade(), self);
         }

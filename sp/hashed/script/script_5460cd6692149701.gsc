@@ -1,7 +1,7 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_173f238005cb70b9;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_4e51d94cfd9dde90;
 
@@ -36,7 +36,7 @@ function main(spawnpoints) {
 // Checksum 0x0, Offset: 0x23a
 // Size: 0x21
 function function_9cf84ec973ee6f67(spawnpoint) {
-    level.var_f582a12cb1e46357[level.var_f582a12cb1e46357.size] = spawnpoint;
+    level.queued_spawnpoints[level.queued_spawnpoints.size] = spawnpoint;
 }
 
 // Namespace namespace_4e51d94cfd9dde90 / namespace_7adb1ffcf7f14c91
@@ -45,17 +45,17 @@ function function_9cf84ec973ee6f67(spawnpoint) {
 // Size: 0xcb
 function function_b44747cb0cd4eec0() {
     level endon("game_ended ");
-    level.var_f582a12cb1e46357 = [];
+    level.queued_spawnpoints = [];
     while (true) {
         level waittill("spawnpoint_flag", flagname);
         var_27754596431f547a = [];
-        foreach (point in level.var_f582a12cb1e46357) {
+        foreach (point in level.queued_spawnpoints) {
             if (point.script_flag == flagname) {
                 var_27754596431f547a[var_27754596431f547a.size] = point;
             }
         }
         level.var_5a11797125800495 = array_combine(var_27754596431f547a, level.var_5a11797125800495);
-        level.var_f582a12cb1e46357 = array_remove_array(level.var_f582a12cb1e46357, var_27754596431f547a);
+        level.queued_spawnpoints = array_remove_array(level.queued_spawnpoints, var_27754596431f547a);
     }
 }
 
@@ -63,7 +63,7 @@ function function_b44747cb0cd4eec0() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x336
 // Size: 0x77
-function function_9581045871f15252(struct, maxdist, mindist, var_a25052287d3b6768) {
+function spawnpoint_choose(struct, maxdist, mindist, var_a25052287d3b6768) {
     while (true) {
         spawnpoint = function_3b28deadada9e76e(struct, maxdist, mindist, var_a25052287d3b6768);
         if (isdefined(spawnpoint)) {

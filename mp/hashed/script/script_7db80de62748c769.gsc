@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_48ca7f64463ff6dc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\utility;
 
 #namespace namespace_753b428633ceb556;
 

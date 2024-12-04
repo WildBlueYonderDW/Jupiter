@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
-#using xmodelalias\civilian_me_female_bodies.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\civilian_me_female_heads.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\civilian_me_female_bodies;
+#using xmodelalias\civilian_me_female_heads;
 
 #namespace namespace_9e0fd862dfef5824;
 
@@ -36,7 +36,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "civilian_react_female";
-    self.voice = #"hash_29890644b3ac02c1";
+    self.voice = #"fsafemale";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self function_6b0082dec4510b24("civilian_me_female_bodies", xmodelalias\civilian_me_female_bodies::main());

@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
 #using script_3c4008d0ac301044;
+#using scripts\engine\utility;
 
 #namespace namespace_ccabef44488edcf1;
 
@@ -16,7 +16,7 @@ function autoexec auto() {
 // Checksum 0x0, Offset: 0x10e
 // Size: 0x42
 function init() {
-    namespace_ed6047eb43ed37e8::main();
+    mp_jup_fort_ob_unstable_rift_cs::main();
     if (getdvarint(@"hash_bc12bf20804347c5", 1)) {
         function_eb7f544259415a09("mp_jup_fort_ob_unstable_rifts");
     }
@@ -37,7 +37,7 @@ function function_d963b1c1ea4328e6() {
             waitframe();
         }
         crystal.var_f6f86c3af9ca88a0 = 1;
-        crystal setscriptablepartstate(#"hash_5839d424446cf8ea", #"dead");
+        crystal setscriptablepartstate(#"loot_crystal", #"dead");
     }
     var_45b5395bf31775c7 = getentitylessscriptablearray(%"hash_1c8652bc1468292");
     foreach (index, crystal in var_45b5395bf31775c7) {
@@ -45,7 +45,7 @@ function function_d963b1c1ea4328e6() {
             waitframe();
         }
         crystal.var_f6f86c3af9ca88a0 = 1;
-        crystal setscriptablepartstate(#"hash_5839d424446cf8ea", #"dead");
+        crystal setscriptablepartstate(#"loot_crystal", #"dead");
         waitframe();
     }
 }

@@ -1,101 +1,101 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\callback_group.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\equipment\bandage.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\equipment.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_728ffcee8cbf30ee;
-#using script_396a814d39e7044f;
-#using scripts\mp\calloutmarkerping_mp.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_3583ff375ab3a91e;
-#using script_55e418c5cc946593;
-#using script_2d9d24f7c63ac143;
-#using scripts\cp_mp\challenges.gsc;
-#using script_6fc415ff6a905dc1;
-#using script_b7a9ce0a2282b79;
-#using script_1f97a44d1761c919;
-#using script_67cc94c07ab18d3a;
-#using script_b0385bb45379222;
-#using scripts\mp\loot.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\mp\equipment.gsc;
-#using script_7c40fa80892a721;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\supers.gsc;
-#using script_3aacf02225ca0da5;
-#using script_ec0f9ad939b29e0;
-#using scripts\mp\equipment\throwing_knife_mp.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using script_2391409ef7b431e1;
-#using scripts\mp\juggernaut.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using script_21c19cfc7139d773;
-#using script_5bc60484d17fa95c;
 #using script_1193c0b83fce13b;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using scripts\mp\overseer.gsc;
-#using script_156835ef9924856a;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using script_439d01e25d19543b;
-#using script_744cad313ed0a87e;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\gametypes\br_jugg_common.gsc;
-#using scripts\mp\gametypes\br_extract_quest.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_blueprint_extract_spawn.gsc;
-#using scripts\common\interactive.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using script_7c03ab87c5f9f420;
-#using script_6a8ec730b2bfa844;
-#using script_58f20490049af6ac;
 #using script_11a95cb71d0cda4;
-#using script_498b5814b18986c9;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using script_3ff2458477d23489;
-#using scripts\mp\gametypes\br_gametype_truckwar.gsc;
-#using script_32c2f4a699e57e1e;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+#using script_156835ef9924856a;
 #using script_15eddb0fac236a22;
-#using script_676f8221e501bed1;
 #using script_189b67b2735b981d;
-#using scripts\mp\equipment\nvg.gsc;
+#using script_1f97a44d1761c919;
+#using script_21c19cfc7139d773;
+#using script_2391409ef7b431e1;
+#using script_2669878cf5a1b6bc;
+#using script_2d9d24f7c63ac143;
+#using script_32c2f4a699e57e1e;
+#using script_3583ff375ab3a91e;
+#using script_396a814d39e7044f;
+#using script_3aacf02225ca0da5;
+#using script_3ff2458477d23489;
+#using script_439d01e25d19543b;
+#using script_498b5814b18986c9;
+#using script_55e418c5cc946593;
+#using script_5762ac2f22202ba2;
+#using script_58f20490049af6ac;
+#using script_5bc60484d17fa95c;
+#using script_600b944a95c3a7bf;
+#using script_64acb6ce534155b7;
+#using script_676f8221e501bed1;
+#using script_67cc94c07ab18d3a;
+#using script_6a8ec730b2bfa844;
+#using script_6fc415ff6a905dc1;
+#using script_728ffcee8cbf30ee;
+#using script_744cad313ed0a87e;
+#using script_7c03ab87c5f9f420;
+#using script_7c40fa80892a721;
+#using script_b0385bb45379222;
+#using script_b7a9ce0a2282b79;
+#using script_ec0f9ad939b29e0;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\common\interactive;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\callback_group;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\calloutmarkerping_mp;
+#using scripts\mp\class;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\bandage;
+#using scripts\mp\equipment\nvg;
+#using scripts\mp\equipment\throwing_knife_mp;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_blueprint_extract_spawn;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_extract_quest;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_gametype_truckwar;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_jugg_common;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\hud_message;
+#using scripts\mp\juggernaut;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\loot;
+#using scripts\mp\overseer;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\perks\perks;
+#using scripts\mp\supers;
+#using scripts\mp\utility\equipment;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace br_pickups;
 
@@ -825,10 +825,10 @@ function function_e5528af9b712723f() {
     if (level.brloottablename == "") {
         level.brloottablename = "mp/loot/br/default/loot_item_defs.csv";
     }
-    level.var_6178ce645aeeb787 = getdvar(@"hash_496705f4c6403e66", "mp/loot/br/default/loot_table_zones.csv");
+    level.var_6178ce645aeeb787 = getdvar(@"loot_table_zone", "mp/loot/br/default/loot_table_zones.csv");
     if (level.var_6178ce645aeeb787 == "") {
         level.var_6178ce645aeeb787 = "mp/loot/br/default/loot_table_zones.csv";
-        setdvar(@"hash_add02e4fff48882f", level.var_6178ce645aeeb787);
+        setdvar(@"loot_table_zones", level.var_6178ce645aeeb787);
     }
     var_6a537ee3949585f4 = [];
     var_5c845b7a0ef0780f = 0;
@@ -3756,7 +3756,7 @@ function function_a26bbfa747602ee1(scriptablename) {
             level scripts\common\callbacks::add("player_death", &on_player_death);
             level.var_b18569a63dc2a99f = 1;
         }
-        thread namespace_dfe80adf32f5c14a::function_1471010076460554(itemref);
+        thread namespace_dfe80adf32f5c14a::apply_powerup(itemref);
         break;
     case #"hash_560ea2939c546227":
         if (issharedfuncdefined("limbo", "limbo_become_mutant")) {
@@ -3789,7 +3789,7 @@ function function_5658dce20f11e8c4() {
     var_807c55ed4bcc246e.var_4aeed0bec3628793 = &function_c2d0fcc8985b5209;
     var_807c55ed4bcc246e.var_2cb986fd5f1717f0 = &function_e25fbc6849d4c2fb;
     var_807c55ed4bcc246e.var_573fe16545e70f6a = &function_ace3bd9b1c5be1b5;
-    namespace_e667d0588ac725d7::registerHeadGear("gas_mask", var_807c55ed4bcc246e);
+    br_headgear::registerHeadGear("gas_mask", var_807c55ed4bcc246e);
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups
@@ -3797,7 +3797,7 @@ function function_5658dce20f11e8c4() {
 // Checksum 0x0, Offset: 0xe533
 // Size: 0x37a
 function function_9cbd64a86452a4df(headGearType, pickupent, fromkiosk, itemslotindex, backpackequip) {
-    if (!namespace_e667d0588ac725d7::function_27c9f3cd0731b4c0(headGearType)) {
+    if (!br_headgear::function_27c9f3cd0731b4c0(headGearType)) {
         return;
     }
     if (istrue(backpackequip) && isdefined(itemslotindex)) {
@@ -3806,14 +3806,14 @@ function function_9cbd64a86452a4df(headGearType, pickupent, fromkiosk, itemsloti
     if (!isdefined(pickupent.count) || pickupent.count <= 0) {
         return;
     }
-    if (namespace_e667d0588ac725d7::function_48c7a8ee781fbf56(self)) {
-        var_9b80a5cc3b03821b = namespace_e667d0588ac725d7::function_5ecd6df2572a5899(self.headGearType, self);
-        var_93d8e637e6795a3d = namespace_e667d0588ac725d7::function_5109f3947b0c7dfb(self.headGearType, self);
+    if (br_headgear::function_48c7a8ee781fbf56(self)) {
+        var_9b80a5cc3b03821b = br_headgear::function_5ecd6df2572a5899(self.headGearType, self);
+        var_93d8e637e6795a3d = br_headgear::function_5109f3947b0c7dfb(self.headGearType, self);
         var_bcc562a93657d3c0 = namespace_38b993c4618e76cd::function_fae5e1d3de32d3f7(var_9b80a5cc3b03821b);
         var_b5eca7b860554273 = var_9b80a5cc3b03821b;
         var_f894ac8ba04fe76d = var_93d8e637e6795a3d;
         var_2365aeea4341a770 = var_bcc562a93657d3c0;
-        var_dfd3db8653da1c23 = self.headGearType == headGearType && namespace_e667d0588ac725d7::function_d036366985435d3(headGearType, self, pickupent) || istrue(backpackequip);
+        var_dfd3db8653da1c23 = self.headGearType == headGearType && br_headgear::function_d036366985435d3(headGearType, self, pickupent) || istrue(backpackequip);
         if (!var_dfd3db8653da1c23) {
             var_b5eca7b860554273 = pickupent.scriptablename;
             var_f894ac8ba04fe76d = pickupent.count;
@@ -3845,14 +3845,14 @@ function function_9cbd64a86452a4df(headGearType, pickupent, fromkiosk, itemsloti
         if (!var_dfd3db8653da1c23) {
             return;
         }
-        namespace_e667d0588ac725d7::function_46a4f41002ccc37d(self, self.headGearType, "br_circle");
+        br_headgear::function_46a4f41002ccc37d(self, self.headGearType, "br_circle");
         namespace_b16531563568eaba::function_55dc9108a9301e59(self);
     }
     lootid = namespace_38b993c4618e76cd::function_fae5e1d3de32d3f7(pickupent.scriptablename);
     namespace_b16531563568eaba::function_2dd07f0034a0fed1(self, lootid);
-    namespace_e667d0588ac725d7::function_a34e6737707000de(headGearType, self, pickupent.count, pickupent.scriptablename);
-    if (namespace_e667d0588ac725d7::function_c210b50cd31a3bc2(headGearType)) {
-        namespace_e667d0588ac725d7::function_3ee77b6233481af9(headGearType, "br_circle");
+    br_headgear::function_a34e6737707000de(headGearType, self, pickupent.count, pickupent.scriptablename);
+    if (br_headgear::function_c210b50cd31a3bc2(headGearType)) {
+        br_headgear::function_3ee77b6233481af9(headGearType, "br_circle");
     }
     var_b9f31e3efe413baf = 0;
     if (headGearType == "gas_mask") {
@@ -6579,8 +6579,8 @@ function droponplayerdeath(attacker) {
             dropbrkillstreak(dropstruct);
             dropdogtag(dropstruct);
             dropbrselfrevivetoken(dropstruct);
-        } else if (namespace_e667d0588ac725d7::function_48c7a8ee781fbf56(self)) {
-            namespace_e667d0588ac725d7::function_72935b93ba0bbe17(self.headGearType, self);
+        } else if (br_headgear::function_48c7a8ee781fbf56(self)) {
+            br_headgear::function_72935b93ba0bbe17(self.headGearType, self);
             namespace_b16531563568eaba::function_55dc9108a9301e59(self);
         }
         if (function_990be1aa4ad3c9d4()) {
@@ -7100,34 +7100,34 @@ function function_e374e6d9eaaa4dc5(dropstruct, dontspawnitem, delaydrop) {
         return;
     }
     headGearType = self.headGearType;
-    if (!namespace_e667d0588ac725d7::function_27c9f3cd0731b4c0(headGearType)) {
+    if (!br_headgear::function_27c9f3cd0731b4c0(headGearType)) {
         return;
     }
-    if (namespace_e667d0588ac725d7::hasheadgear(headGearType, self)) {
-        if (istrue(delaydrop) && namespace_e667d0588ac725d7::function_c210b50cd31a3bc2(headGearType)) {
-            namespace_e667d0588ac725d7::function_9f52e7f6c7bae335(headGearType, "br_circle");
+    if (br_headgear::hasheadgear(headGearType, self)) {
+        if (istrue(delaydrop) && br_headgear::function_c210b50cd31a3bc2(headGearType)) {
+            br_headgear::function_9f52e7f6c7bae335(headGearType, "br_circle");
             if (headGearType == "gas_mask") {
                 wait 0.6;
             }
-            if (!namespace_e667d0588ac725d7::hasheadgear(headGearType, self)) {
+            if (!br_headgear::hasheadgear(headGearType, self)) {
                 return;
             }
         }
         dropinfo = getitemdroporiginandangles(dropstruct, self.origin, self.angles, self);
         allowautopickup = isalive(self) || getdvarint(@"hash_4508c701f27f5496", 1);
         var_aa825dbcbd2edbfd = undefined;
-        var_d13c72f4128a8c16 = namespace_e667d0588ac725d7::function_5109f3947b0c7dfb(headGearType, self);
+        var_d13c72f4128a8c16 = br_headgear::function_5109f3947b0c7dfb(headGearType, self);
         if (!istrue(dontspawnitem) && var_d13c72f4128a8c16 > 0) {
-            var_fcb952f595aa03ed = namespace_e667d0588ac725d7::function_5ecd6df2572a5899(headGearType, self);
+            var_fcb952f595aa03ed = br_headgear::function_5ecd6df2572a5899(headGearType, self);
             var_aa825dbcbd2edbfd = spawnpickup(var_fcb952f595aa03ed, dropinfo, int(var_d13c72f4128a8c16), 1, undefined, allowautopickup);
         }
-        namespace_e667d0588ac725d7::function_72935b93ba0bbe17(headGearType, self);
+        br_headgear::function_72935b93ba0bbe17(headGearType, self);
         if (isdefined(var_aa825dbcbd2edbfd)) {
             function_2f4e0022c686dbe6(var_aa825dbcbd2edbfd);
         }
         namespace_b16531563568eaba::function_55dc9108a9301e59(self);
         if (!istrue(dontspawnitem)) {
-            namespace_e667d0588ac725d7::function_b606f6e492722fdb(headGearType, self);
+            br_headgear::function_b606f6e492722fdb(headGearType, self);
         }
     }
     br_public::updatebrscoreboardstat("headGearType", 0);
@@ -7744,15 +7744,15 @@ function getquickdroparmorcount(dropall) {
 // Checksum 0x0, Offset: 0x1823b
 // Size: 0x65
 function getquickdropammocount(ammotype, dropall) {
-    var_41fe346fd14b2567 = self.br_ammo[ammotype];
+    ammoamount = self.br_ammo[ammotype];
     clipsize = level.br_ammo_clipsize[ammotype];
-    if (!isdefined(var_41fe346fd14b2567) || !isdefined(clipsize)) {
+    if (!isdefined(ammoamount) || !isdefined(clipsize)) {
         return 0;
     }
     if (istrue(dropall)) {
-        return int(var_41fe346fd14b2567);
+        return int(ammoamount);
     }
-    return int(min(clipsize, var_41fe346fd14b2567));
+    return int(min(clipsize, ammoamount));
 }
 
 // Namespace br_pickups / scripts\mp\gametypes\br_pickups

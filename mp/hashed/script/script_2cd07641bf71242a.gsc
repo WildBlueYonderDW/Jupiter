@@ -1,7 +1,7 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\traverse.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\traverse;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_4fecf90fd9e5c41a;
 

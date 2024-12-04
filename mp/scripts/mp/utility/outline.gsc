@@ -1,11 +1,11 @@
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\outline.gsc;
-#using scripts\engine\utility.gsc;
 #using script_58be75c518bf0d40;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\outline;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace outline;
 

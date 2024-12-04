@@ -1,36 +1,36 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\asm\shared\sp\utility.gsc;
-#using script_78ee1f1787a2e6a4;
-#using scripts\sp\spawner.gsc;
-#using scripts\sp\flags.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\sp\gameskill.gsc;
-#using script_a5d836e2cde0ea2;
-#using scripts\common\vehicle.gsc;
-#using scripts\sp\drone_base.gsc;
-#using scripts\sp\fakeactor.gsc;
-#using scripts\sp\player_stats.gsc;
-#using scripts\sp\analytics.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\sp\stealth\idle_sitting.gsc;
-#using scripts\common\gameskill.gsc;
-#using scripts\sp\debug.gsc;
-#using scripts\sp\friendlyfire.gsc;
-#using scripts\sp\loot.gsc;
-#using scripts\sp\damagefeedback.gsc;
-#using scripts\sp\stealth\manager.gsc;
 #using script_5c36b3719581f7cc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\sp\mgturret.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\stealth\enemy.gsc;
+#using script_78ee1f1787a2e6a4;
+#using script_a5d836e2cde0ea2;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\sp\utility;
+#using scripts\common\ai;
+#using scripts\common\debug;
+#using scripts\common\gameskill;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\analytics;
+#using scripts\sp\anim;
+#using scripts\sp\damagefeedback;
+#using scripts\sp\debug;
+#using scripts\sp\drone_base;
+#using scripts\sp\fakeactor;
+#using scripts\sp\flags;
+#using scripts\sp\friendlyfire;
+#using scripts\sp\gameskill;
+#using scripts\sp\loot;
+#using scripts\sp\mgturret;
+#using scripts\sp\player;
+#using scripts\sp\player_stats;
+#using scripts\sp\spawner;
+#using scripts\sp\stealth\idle_sitting;
+#using scripts\sp\stealth\manager;
+#using scripts\sp\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\enemy;
 
 #namespace spawner;
 
@@ -116,21 +116,21 @@ function main() {
     thread process_deathflags();
     array_thread(ai, &spawn_think);
     var_662425da496a7dd3 = getarraykeys(level.ai_classname_in_level);
-    var_f8591c3c34a5520 = 0;
-    var_f55a7ec543c5ad6c = 0;
+    precache_rpg = 0;
+    precache_armor = 0;
     for (i = 0; i < var_662425da496a7dd3.size; i++) {
         classname = tolower(var_662425da496a7dd3[i]);
-        if (!var_f8591c3c34a5520 && issubstr(classname, "rpg")) {
-            var_f8591c3c34a5520 = 1;
+        if (!precache_rpg && issubstr(classname, "rpg")) {
+            precache_rpg = 1;
             rocketlauncher = "iw8_la_rpapa7";
             precacheitem(rocketlauncher);
             continue;
         }
-        if (!var_f55a7ec543c5ad6c && issubstr(classname, "tier")) {
-            var_f55a7ec543c5ad6c = 1;
+        if (!precache_armor && issubstr(classname, "tier")) {
+            precache_armor = 1;
             namespace_c5f28ee126743bce::precache();
         }
-        if (var_f8591c3c34a5520 && var_f55a7ec543c5ad6c) {
+        if (precache_rpg && precache_armor) {
             break;
         }
     }
@@ -364,13 +364,13 @@ function trigger_spawner_reinforcement(trigger) {
 // Checksum 0x0, Offset: 0x1a29
 // Size: 0x14a
 function trigger_reinforcement_spawn_guys() {
-    var_bff0e26f729c5356 = trigger_reinforcement_get_reinforcement_spawner();
+    reinforcement = trigger_reinforcement_get_reinforcement_spawner();
     guy = spawn_ai();
     if (!isdefined(guy)) {
         self delete();
-        if (isdefined(var_bff0e26f729c5356)) {
-            guy = var_bff0e26f729c5356 spawn_ai();
-            var_bff0e26f729c5356 delete();
+        if (isdefined(reinforcement)) {
+            guy = reinforcement spawn_ai();
+            reinforcement delete();
             if (!isdefined(guy)) {
                 return;
             }
@@ -378,52 +378,52 @@ function trigger_reinforcement_spawn_guys() {
             return;
         }
     }
-    if (!isdefined(var_bff0e26f729c5356)) {
+    if (!isdefined(reinforcement)) {
         return;
     }
     guy waittill("death");
-    if (!isdefined(var_bff0e26f729c5356)) {
+    if (!isdefined(reinforcement)) {
         return;
     }
-    if (!isdefined(var_bff0e26f729c5356.count)) {
-        var_bff0e26f729c5356.count = 1;
+    if (!isdefined(reinforcement.count)) {
+        reinforcement.count = 1;
     }
     for (;;) {
-        if (!isdefined(var_bff0e26f729c5356)) {
+        if (!isdefined(reinforcement)) {
             break;
         }
-        spawned = var_bff0e26f729c5356 spawn_ai();
+        spawned = reinforcement spawn_ai();
         if (!isdefined(spawned)) {
-            var_bff0e26f729c5356 delete();
+            reinforcement delete();
             break;
         }
-        spawned thread reincrement_count_if_deleted(var_bff0e26f729c5356);
+        spawned thread reincrement_count_if_deleted(reinforcement);
         spawned waittill("death", attacker);
         if (!player_saw_kill(spawned, attacker)) {
             println("<dev string:x84>");
-            if (!isdefined(var_bff0e26f729c5356)) {
+            if (!isdefined(reinforcement)) {
                 break;
             }
-            var_bff0e26f729c5356.count++;
+            reinforcement.count++;
         }
         if (!isdefined(spawned)) {
             continue;
         }
-        if (!isdefined(var_bff0e26f729c5356)) {
+        if (!isdefined(reinforcement)) {
             break;
         }
-        if (!isdefined(var_bff0e26f729c5356.count)) {
+        if (!isdefined(reinforcement.count)) {
             break;
         }
-        if (var_bff0e26f729c5356.count <= 0) {
+        if (reinforcement.count <= 0) {
             break;
         }
         if (!script_wait()) {
             wait randomfloatrange(1, 3);
         }
     }
-    if (isdefined(var_bff0e26f729c5356)) {
-        var_bff0e26f729c5356 delete();
+    if (isdefined(reinforcement)) {
+        reinforcement delete();
     }
 }
 
@@ -433,18 +433,18 @@ function trigger_reinforcement_spawn_guys() {
 // Size: 0x7f
 function trigger_reinforcement_get_reinforcement_spawner() {
     if (isdefined(self.target)) {
-        var_bff0e26f729c5356 = getspawner(self.target, "targetname");
-        if (isdefined(var_bff0e26f729c5356) && isspawner(var_bff0e26f729c5356)) {
-            return var_bff0e26f729c5356;
+        reinforcement = getspawner(self.target, "targetname");
+        if (isdefined(reinforcement) && isspawner(reinforcement)) {
+            return reinforcement;
         }
     }
     if (isdefined(self.script_linkto)) {
-        var_bff0e26f729c5356 = getspawner(self.script_linkto, "script_linkname");
-        if (!isdefined(var_bff0e26f729c5356)) {
-            var_bff0e26f729c5356 = get_linked_ent();
+        reinforcement = getspawner(self.script_linkto, "script_linkname");
+        if (!isdefined(reinforcement)) {
+            reinforcement = get_linked_ent();
         }
-        if (isdefined(var_bff0e26f729c5356) && isspawner(var_bff0e26f729c5356)) {
-            return var_bff0e26f729c5356;
+        if (isdefined(reinforcement) && isspawner(reinforcement)) {
+            return reinforcement;
         }
     }
     return undefined;
@@ -496,9 +496,9 @@ function kill_spawner(trigger) {
 // Size: 0xa9
 function killspawner(var_e7b46a5be98be42d) {
     println("<dev string:xbb>" + var_e7b46a5be98be42d);
-    var_13cae3e72d89ec16 = getspawnerarray();
+    actor_spawners = getspawnerarray();
     vehicle_spawners = vehicle_getspawnerarray();
-    spawners = array_combine(var_13cae3e72d89ec16, vehicle_spawners);
+    spawners = array_combine(actor_spawners, vehicle_spawners);
     for (i = 0; i < spawners.size; i++) {
         if (isdefined(spawners[i].script_killspawner) && var_e7b46a5be98be42d == spawners[i].script_killspawner) {
             if (isnonentspawner(spawners[i])) {
@@ -557,8 +557,8 @@ function cull_spawners_from_killspawner(random_killspawner) {
     if (keys.size <= 1) {
         return;
     }
-    var_c8f2803f103cfd68 = random(keys);
-    spawn_groups[var_c8f2803f103cfd68] = undefined;
+    save_key = random(keys);
+    spawn_groups[save_key] = undefined;
     foreach (spawners in spawn_groups) {
         foreach (spawner in spawners) {
             if (isdefined(spawner)) {
@@ -798,20 +798,20 @@ function shouldnt_spawn_because_of_script_difficulty() {
     if (!isdefined(self.script_difficulty)) {
         return 0;
     }
-    var_941d1a5151ce73b8 = 0;
+    should_delete = 0;
     switch (self.script_difficulty) {
     case #"hash_22ce4003c1e5227b":
         if (level.gameskill > 1) {
-            var_941d1a5151ce73b8 = 1;
+            should_delete = 1;
         }
         break;
     case #"hash_cc9157548a55043c":
         if (level.gameskill < 2) {
-            var_941d1a5151ce73b8 = 1;
+            should_delete = 1;
         }
         break;
     }
-    return var_941d1a5151ce73b8;
+    return should_delete;
 }
 
 // Namespace spawner / scripts\sp\spawner
@@ -1147,7 +1147,7 @@ function spawn_think_game_skill_related() {
     // Checksum 0x0, Offset: 0x3163
     // Size: 0x70
     function function_14174a31d7324291() {
-        if (getdvar(@"hash_a5a1f35d513dd71b") == "<dev string:x12d>") {
+        if (getdvar(@"debug_misstime") == "<dev string:x12d>") {
             thread scripts\sp\debug::debugmisstime();
         }
         thread show_bad_path();
@@ -1184,7 +1184,7 @@ function spawn_think_action(targetname) {
     ai::spawner_fields(self);
     thread scripts\sp\loot::corpselootthink();
     /#
-        if (getdvarint(@"hash_c5674a8346e3c499") == 1) {
+        if (getdvarint(@"scr_heat") == 1) {
             enable_heat_behavior();
         }
     #/
@@ -2984,10 +2984,10 @@ function flood_spawner_think(trigger) {
         pyramid_spawn(trigger);
         return;
     }
-    var_1603e1240684a0bb = trigger_requires_player(trigger);
+    requires_player = trigger_requires_player(trigger);
     script_delay();
     while (self.count > 0) {
-        while (var_1603e1240684a0bb && !level.player istouching(trigger)) {
+        while (requires_player && !level.player istouching(trigger)) {
             wait 0.5;
         }
         soldier = spawn_ai();
@@ -3073,9 +3073,9 @@ function pyramid_death_report(spawner) {
 // Size: 0x30f
 function pyramid_spawn(trigger) {
     self endon("death");
-    var_1603e1240684a0bb = trigger_requires_player(trigger);
+    requires_player = trigger_requires_player(trigger);
     script_delay();
-    if (var_1603e1240684a0bb) {
+    if (requires_player) {
         while (!level.player istouching(trigger)) {
             wait 0.5;
         }
@@ -3334,7 +3334,7 @@ function spawner_dronespawn(spawner) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x7502
 // Size: 0x2a4
-function spawner_makerealai(drone, var_79372f4fe4115ef1) {
+function spawner_makerealai(drone, target_override) {
     if (!isdefined(drone.spawner)) {
         /#
             println("<dev string:x295>");
@@ -3348,8 +3348,8 @@ function spawner_makerealai(drone, var_79372f4fe4115ef1) {
     var_cd86f8bccdae9c69 = drone.spawner.target;
     drone.spawner.origin = drone.origin;
     drone.spawner.angles = drone.angles;
-    if (isdefined(var_79372f4fe4115ef1)) {
-        drone.spawner.target = var_79372f4fe4115ef1;
+    if (isdefined(target_override)) {
+        drone.spawner.target = target_override;
     }
     drone.spawner.count += 1;
     guy = drone.spawner stalingradspawn();
@@ -3379,7 +3379,7 @@ function spawner_makerealai(drone, var_79372f4fe4115ef1) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x77af
 // Size: 0x293
-function spawner_makefakeactor(ai, var_79372f4fe4115ef1) {
+function spawner_makefakeactor(ai, target_override) {
     if (!isdefined(ai.spawner)) {
         /#
             println("<dev string:x295>");
@@ -3393,8 +3393,8 @@ function spawner_makefakeactor(ai, var_79372f4fe4115ef1) {
     var_cd86f8bccdae9c69 = ai.spawner.target;
     ai.spawner.origin = ai.origin;
     ai.spawner.angles = ai.angles;
-    if (isdefined(var_79372f4fe4115ef1)) {
-        ai.spawner.target = var_79372f4fe4115ef1;
+    if (isdefined(target_override)) {
+        ai.spawner.target = target_override;
     }
     ai.spawner.count += 1;
     guy = fakeactorspawn(ai.spawner);

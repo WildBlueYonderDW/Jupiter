@@ -1,9 +1,9 @@
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_2d425a56b4025faa;
-#using scripts\engine\utility.gsc;
 #using script_61c5258ded4d690d;
+#using scripts\common\system;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace ww_setup;
 

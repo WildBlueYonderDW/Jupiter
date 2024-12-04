@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\wm_objectives.gsc;
-#using scripts\mp\utility\player.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\wm_objectives;
+#using scripts\mp\utility\player;
 
 #namespace namespace_5e37f681245edd90;
 

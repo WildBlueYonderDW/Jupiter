@@ -1,14 +1,14 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\stealth\event.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
+#using scripts\stealth\event;
 
-#namespace namespace_94715b1541bc0e7b;
+#namespace dynolight;
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x662
 // Size: 0x19e
@@ -24,29 +24,29 @@ function init() {
         setdvar(@"hash_dfe07eaa4a978e85", 0);
     }
     level.castingdynolights = [];
-    foreach (var_94715b1541bc0e7b in level.dynolights) {
-        if (!isdefined(var_94715b1541bc0e7b.init_count)) {
-            var_94715b1541bc0e7b.init_count = 0;
+    foreach (dynolight in level.dynolights) {
+        if (!isdefined(dynolight.init_count)) {
+            dynolight.init_count = 0;
         }
-        var_94715b1541bc0e7b.init_count++;
-        var_94715b1541bc0e7b thread dynolight_postload_state_init();
-        var_94715b1541bc0e7b thread dynolight_death_watcher();
-        if (isdefined(var_94715b1541bc0e7b.targetname)) {
-            targets = getentarray(var_94715b1541bc0e7b.targetname, "target");
+        dynolight.init_count++;
+        dynolight thread dynolight_postload_state_init();
+        dynolight thread dynolight_death_watcher();
+        if (isdefined(dynolight.targetname)) {
+            targets = getentarray(dynolight.targetname, "target");
         } else {
             targets = [];
         }
         foreach (target in targets) {
             if (target is_lightswitch()) {
-                target thread lightswitch_init(var_94715b1541bc0e7b);
+                target thread lightswitch_init(dynolight);
             }
         }
-        var_94715b1541bc0e7b.lightpos = var_94715b1541bc0e7b.origin;
+        dynolight.lightpos = dynolight.origin;
     }
     level.dynolight_trace_contents = create_contents(0, 1, 0, 0, 0, 0, 0, 1, 0);
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x808
 // Size: 0x38
@@ -57,7 +57,7 @@ function add_dynolight(ent) {
     level.dynolights[level.dynolights.size] = ent;
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x848
 // Size: 0x27b
@@ -106,7 +106,7 @@ function dynolight_postload_state_init() {
     self.lightpos = get_model_trace_start();
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xacb
 // Size: 0x33
@@ -119,7 +119,7 @@ function lightswitch_postload_state_init() {
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb06
 // Size: 0x2c1
@@ -161,15 +161,15 @@ function lightswitch_init(controlled) {
             }
         }
     }
-    foreach (var_f819e7742dfc07c8 in controlled.circuitparents) {
-        if (var_f819e7742dfc07c8 == self) {
+    foreach (circuit in controlled.circuitparents) {
+        if (circuit == self) {
             continue;
         }
-        if (!array_contains(self.circuitsiblings, var_f819e7742dfc07c8)) {
-            self.circuitsiblings = array_add(self.circuitsiblings, var_f819e7742dfc07c8);
+        if (!array_contains(self.circuitsiblings, circuit)) {
+            self.circuitsiblings = array_add(self.circuitsiblings, circuit);
         }
-        if (!array_contains(var_f819e7742dfc07c8.circuitsiblings, self)) {
-            var_f819e7742dfc07c8.circuitsiblings = array_add(var_f819e7742dfc07c8.circuitsiblings, self);
+        if (!array_contains(circuit.circuitsiblings, self)) {
+            circuit.circuitsiblings = array_add(circuit.circuitsiblings, self);
         }
     }
     if (controlled is_light()) {
@@ -181,7 +181,7 @@ function lightswitch_init(controlled) {
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdcf
 // Size: 0xde
@@ -192,26 +192,26 @@ function lightswitch_interact_manager() {
     while (true) {
         self waittill("lightswitch_toggle");
         if (self.script_light_switch_state == 1) {
-            var_3adbbae91e45099c = "_off";
-            var_908a456afe967357 = 0;
+            sfx_suffix = "_off";
+            desired_state = 0;
             if (isdefined(self.script_light_switch_fx)) {
                 playfxontag(self.script_light_switch_fx, self, get_lightswitch_fx_tag());
             }
         } else {
-            var_3adbbae91e45099c = "_on";
-            var_908a456afe967357 = 1;
+            sfx_suffix = "_on";
+            desired_state = 1;
             if (isdefined(self.script_light_switch_fx)) {
                 killfxontag(self.script_light_switch_fx, self, get_lightswitch_fx_tag());
             }
         }
-        thread play_sound_in_space(self.script_light_switch_sfx + var_3adbbae91e45099c, self.origin);
-        lightswitch_onoff(var_908a456afe967357);
-        lightswitch_update_children(var_908a456afe967357, self);
+        thread play_sound_in_space(self.script_light_switch_sfx + sfx_suffix, self.origin);
+        lightswitch_onoff(desired_state);
+        lightswitch_update_children(desired_state, self);
         thread lightswitch_toggle_debounce();
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xeb5
 // Size: 0x28
@@ -222,7 +222,7 @@ function get_lightswitch_fx_tag() {
     return getpartname(self.model, 0);
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xee6
 // Size: 0x60
@@ -242,7 +242,7 @@ function lightswitch_onoff(state) {
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf4e
 // Size: 0x39
@@ -258,7 +258,7 @@ function lightswitch_disable(state) {
     lightswitch_enable_interact();
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf8f
 // Size: 0xef
@@ -279,7 +279,7 @@ function lightswitch_send_stealth_event() {
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1086
 // Size: 0x31
@@ -292,7 +292,7 @@ function lightswitch_toggle_debounce() {
     lightswitch_enable_interact();
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10bf
 // Size: 0xb
@@ -300,7 +300,7 @@ function collect_circuit_children(exclude) {
     
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10d2
 // Size: 0xb
@@ -308,15 +308,15 @@ function collect_circuit_siblines(exclude) {
     
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x10e5
 // Size: 0x345
-function lightswitch_update_children(var_908a456afe967357, var_7009229600a41e8a) {
+function lightswitch_update_children(desired_state, var_7009229600a41e8a) {
     var_56f49452d58c0380 = self.lights;
-    foreach (var_f819e7742dfc07c8 in self.circuitsiblings) {
-        var_f819e7742dfc07c8 lightswitch_onoff(var_908a456afe967357);
-        foreach (light in var_f819e7742dfc07c8.lights) {
+    foreach (circuit in self.circuitsiblings) {
+        circuit lightswitch_onoff(desired_state);
+        foreach (light in circuit.lights) {
             if (!array_contains(var_56f49452d58c0380, light)) {
                 var_56f49452d58c0380 = array_add(var_56f49452d58c0380, light);
             }
@@ -326,19 +326,19 @@ function lightswitch_update_children(var_908a456afe967357, var_7009229600a41e8a)
     var_20133fbeadfae162 = [];
     while (true) {
         var_e186c1bce116892b = 0;
-        foreach (var_f819e7742dfc07c8 in var_701ae0782a275861) {
-            if (!array_contains(var_20133fbeadfae162, var_f819e7742dfc07c8)) {
-                foreach (var_c574bafba1435a68 in var_f819e7742dfc07c8.circuitchildren) {
+        foreach (circuit in var_701ae0782a275861) {
+            if (!array_contains(var_20133fbeadfae162, circuit)) {
+                foreach (var_c574bafba1435a68 in circuit.circuitchildren) {
                     if (!array_contains(var_701ae0782a275861, var_c574bafba1435a68)) {
                         var_701ae0782a275861 = array_add(var_701ae0782a275861, var_c574bafba1435a68);
                     }
                 }
-                foreach (var_c574bafba1435a68 in var_f819e7742dfc07c8.circuitsiblings) {
+                foreach (var_c574bafba1435a68 in circuit.circuitsiblings) {
                     if (!array_contains(var_701ae0782a275861, var_c574bafba1435a68)) {
                         var_701ae0782a275861 = array_add(var_701ae0782a275861, var_c574bafba1435a68);
                     }
                 }
-                var_20133fbeadfae162 = array_add(var_20133fbeadfae162, var_f819e7742dfc07c8);
+                var_20133fbeadfae162 = array_add(var_20133fbeadfae162, circuit);
                 var_e186c1bce116892b = 1;
             }
         }
@@ -346,11 +346,11 @@ function lightswitch_update_children(var_908a456afe967357, var_7009229600a41e8a)
             break;
         }
     }
-    var_272e5f2d4e8dbc28 = ter_op(var_908a456afe967357, 0, 1);
-    foreach (var_f819e7742dfc07c8 in var_701ae0782a275861) {
-        var_f819e7742dfc07c8 lightswitch_onoff(var_908a456afe967357);
-        var_f819e7742dfc07c8 lightswitch_disable(var_272e5f2d4e8dbc28);
-        foreach (light in var_f819e7742dfc07c8.lights) {
+    var_272e5f2d4e8dbc28 = ter_op(desired_state, 0, 1);
+    foreach (circuit in var_701ae0782a275861) {
+        circuit lightswitch_onoff(desired_state);
+        circuit lightswitch_disable(var_272e5f2d4e8dbc28);
+        foreach (light in circuit.lights) {
             if (!array_contains(var_56f49452d58c0380, light)) {
                 var_56f49452d58c0380 = array_add(var_56f49452d58c0380, light);
             }
@@ -360,11 +360,11 @@ function lightswitch_update_children(var_908a456afe967357, var_7009229600a41e8a)
         if (!light.alive) {
             continue;
         }
-        light dynolight_set_onoff_state(var_908a456afe967357);
+        light dynolight_set_onoff_state(desired_state);
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1432
 // Size: 0xe7
@@ -383,19 +383,19 @@ function lightswitch_enable_interact() {
             offset = rotatevectorinverted(offset, self.angles);
         }
     }
-    var_28e5cbcd928a9ca9 = 120;
+    show_dist = 120;
     if (isdefined(self.show_dist_override)) {
-        var_28e5cbcd928a9ca9 = self.show_dist_override;
+        show_dist = self.show_dist_override;
     }
-    var_3619f00a65ff1269 = 85;
+    use_dist = 85;
     if (isdefined(self.use_dist_override)) {
-        var_3619f00a65ff1269 = self.use_dist_override;
+        use_dist = self.use_dist_override;
     }
-    scripts\sp\player\cursor_hint::create_cursor_hint(undefined, offset, %SCRIPT/LIGHTSWITCH_INTERACT, 65, var_28e5cbcd928a9ca9, var_3619f00a65ff1269, 0, undefined, undefined, undefined, "duration_none", undefined, undefined, undefined, 90);
+    scripts\sp\player\cursor_hint::create_cursor_hint(undefined, offset, %SCRIPT/LIGHTSWITCH_INTERACT, 65, show_dist, use_dist, 0, undefined, undefined, undefined, "duration_none", undefined, undefined, undefined, 90);
     thread lightswitch_trigger_notify();
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1521
 // Size: 0x60
@@ -412,7 +412,7 @@ function lightswitch_trigger_notify() {
     self notify("tempRandoDraWdisable");
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1589
 // Size: 0x1b
@@ -422,7 +422,7 @@ function lightswitch_disable_interact() {
     scripts\sp\player\cursor_hint::remove_cursor_hint();
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15ac
 // Size: 0xa
@@ -430,7 +430,7 @@ function lightswitch_toggle() {
     self notify("lightswitch_toggle");
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15be
 // Size: 0x7d
@@ -447,7 +447,7 @@ function dynolight_set_onoff_state(on) {
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1643
 // Size: 0x5d
@@ -459,7 +459,7 @@ function dynolight_update_nvg_mode() {
     self setscriptablepartstate("onoff", "on");
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16a8
 // Size: 0xae
@@ -469,14 +469,14 @@ function dynolight_death_watcher() {
     self.alive = 0;
     self.intensity = 0;
     self.timeoflaststatechange = gettime();
-    foreach (var_75a9c89cd4a6fb0b in self.circuitparents) {
-        var_75a9c89cd4a6fb0b.lights = array_remove(var_75a9c89cd4a6fb0b.lights, self);
-        var_75a9c89cd4a6fb0b check_lightswitch_cleanup();
+    foreach (lightswitch in self.circuitparents) {
+        lightswitch.lights = array_remove(lightswitch.lights, self);
+        lightswitch check_lightswitch_cleanup();
     }
     thread stealth_event_on_light_death();
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x175e
 // Size: 0x6f
@@ -491,7 +491,7 @@ function stealth_event_on_light_death() {
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17d5
 // Size: 0x50f
@@ -591,19 +591,19 @@ function get_model_trace_start() {
     return start;
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ced
 // Size: 0x79
 function lightswitch_death_watcher() {
     self waittill("death");
-    foreach (var_75a9c89cd4a6fb0b in self.circuitparents) {
-        var_75a9c89cd4a6fb0b.circuitchildren = array_remove(var_75a9c89cd4a6fb0b.circuitchildren, self);
-        var_75a9c89cd4a6fb0b check_lightswitch_cleanup();
+    foreach (lightswitch in self.circuitparents) {
+        lightswitch.circuitchildren = array_remove(lightswitch.circuitchildren, self);
+        lightswitch check_lightswitch_cleanup();
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d6e
 // Size: 0x28
@@ -613,7 +613,7 @@ function check_lightswitch_cleanup() {
     }
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d9e
 // Size: 0x2a
@@ -624,7 +624,7 @@ function is_lightswitch() {
     return 0;
 }
 
-// Namespace namespace_94715b1541bc0e7b / scripts\sp\interactables\dynolight
+// Namespace dynolight / scripts\sp\interactables\dynolight
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dd0
 // Size: 0x2a

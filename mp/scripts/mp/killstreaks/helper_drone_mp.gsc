@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using script_41297c155fdee34;
 #using script_295b6cc01b40780c;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
+#using script_41297c155fdee34;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
 
 #namespace helper_drone_mp;
 

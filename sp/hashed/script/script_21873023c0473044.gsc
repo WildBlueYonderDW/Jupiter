@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_cfd52d213f603cb1;
 
@@ -31,7 +31,7 @@ function function_344254816bb001eb() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12d
 // Size: 0x82
-function function_28fc7edb00dd6601(var_876657a6669c093a) {
+function function_28fc7edb00dd6601(assaultDrone) {
     flag_clear("player_demigod");
     if (!isdefined(self.lastdroppableweaponobj) || !self hasweapon(self.lastdroppableweaponobj)) {
         lastweaponobj = "iw9_me_fists_mp";

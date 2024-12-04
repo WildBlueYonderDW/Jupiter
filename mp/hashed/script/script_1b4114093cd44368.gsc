@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\common\values.gsc;
 #using script_4b87f2871b6b025c;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\utility\lower_message;
 
 #namespace oxygenmask;
 

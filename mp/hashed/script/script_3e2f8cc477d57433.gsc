@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_7b2517368c79e5bc;
+#using script_2669878cf5a1b6bc;
+#using script_43971bbeefd98f05;
 #using script_443d99fe707f1d9f;
 #using script_485622d93fa7e4cf;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_5640d32580c6bc7d;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using script_43971bbeefd98f05;
-#using scripts\mp\equipment.gsc;
 #using script_600b944a95c3a7bf;
-#using script_2669878cf5a1b6bc;
 #using script_6fc415ff6a905dc1;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\utility\lui_game_event_aggregator;
 
 #namespace common_inventory;
 
@@ -85,9 +85,9 @@ function private function_893d47a3b0d1dfe2(notification, var_421750c958bd3064) {
                 break;
             }
             itemindex = function_4953ec8e37aa67b8(var_421750c958bd3064);
-            var_57accdc40b2f50e = function_80fcd9b9bddea7a9(itemtype, itemindex);
-            quantity = var_57accdc40b2f50e[1];
-            itembundle = var_57accdc40b2f50e[0];
+            __a0 = function_80fcd9b9bddea7a9(itemtype, itemindex);
+            quantity = __a0[1];
+            itembundle = __a0[0];
             if (!isdefined(itembundle) || quantity <= 0) {
                 assertmsg("<dev string:x80>" + itemtype + "<dev string:xc5>");
                 break;
@@ -124,7 +124,7 @@ function private function_893d47a3b0d1dfe2(notification, var_421750c958bd3064) {
             }
             itemindex = function_4953ec8e37aa67b8(var_421750c958bd3064);
             if (isdefined(self.var_2fa5b49969def47)) {
-                namespace_3883e3399f2870b5::function_68085c72d7b628ec(self.var_2fa5b49969def47, self);
+                namespace_3883e3399f2870b5::closeLootableContainer(self.var_2fa5b49969def47, self);
             }
             var_57acddc40b2f741 = function_80fcd9b9bddea7a9(itemtype, itemindex);
             removedquantity = var_57acddc40b2f741[1];

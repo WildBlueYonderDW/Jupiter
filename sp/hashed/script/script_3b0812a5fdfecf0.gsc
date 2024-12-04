@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
 #using script_5d265b4fca61f070;
 #using script_afb7e332aee4bf2;
+#using scripts\engine\utility;
 
 #namespace namespace_720324fc2825f6b9;
 
@@ -9,14 +9,14 @@
 // Checksum 0x0, Offset: 0xfa
 // Size: 0x3e9
 function function_8e12a06df7f7b5a6(var_b150eb894ec98d28, var_5a5437bab7d7156b, var_16b772b16d97af4b, var_e852b681bf0fbfc0, var_8de67ca83b99be42) {
-    assertex(isdefined(level.var_f740dcfe6d515900) && isdefined(level.var_c7fdcd075be6fa67) && isdefined(level.var_a9016d2b6b364c4d) && isdefined(level.var_7467bfae31bc08ed) && isdefined(level.var_ea67a61926b2fc20), "One or more decks are not defined.");
+    assertex(isdefined(level.var_f740dcfe6d515900) && isdefined(level.var_c7fdcd075be6fa67) && isdefined(level.var_a9016d2b6b364c4d) && isdefined(level.var_7467bfae31bc08ed) && isdefined(level.investigate_deck), "One or more decks are not defined.");
     var_ed1e225d2f4e55c9 = "none";
     while (!utility::flag(var_5a5437bab7d7156b)) {
         if (isdefined(var_8de67ca83b99be42) && [[ var_8de67ca83b99be42 ]]()) {
             return;
         }
-        var_a28e3a76030f64b6 = [[ var_16b772b16d97af4b ]]();
-        if (distancesquared(var_a28e3a76030f64b6.origin, self.origin) < 22500 || [[ var_e852b681bf0fbfc0 ]]() || namespace_d4aab8c9cb8ecb14::player_in_laststand(self)) {
+        closest_site = [[ var_16b772b16d97af4b ]]();
+        if (distancesquared(closest_site.origin, self.origin) < 22500 || [[ var_e852b681bf0fbfc0 ]]() || namespace_d4aab8c9cb8ecb14::player_in_laststand(self)) {
             wait 1;
             continue;
         }
@@ -28,14 +28,14 @@ function function_8e12a06df7f7b5a6(var_b150eb894ec98d28, var_5a5437bab7d7156b, v
                 if (function_eac0cd99c9c6d8ee() == "hidden" && !flag("vo_hidden_said")) {
                     if (function_6e7eeaf3dc05e54e() && var_ed1e225d2f4e55c9 != "hunt") {
                         flag_set("vo_hidden_said");
-                        var_32882cb102708260 = function_705b9bbd3a47d1e6(level.var_f740dcfe6d515900 deck_draw(), 0.4, 4, 0, 0.3);
-                        if (istrue(var_32882cb102708260)) {
+                        said = function_705b9bbd3a47d1e6(level.var_f740dcfe6d515900 deck_draw(), 0.4, 4, 0, 0.3);
+                        if (istrue(said)) {
                             var_ed1e225d2f4e55c9 = "hunt";
                         }
                     } else if (function_eac0cd99c9c6d8ee() == "hidden" && !function_8f63b34b24e150de() && var_ed1e225d2f4e55c9 != "clear") {
                         flag_set("vo_hidden_said");
-                        var_32882cb102708260 = function_705b9bbd3a47d1e6(level.var_c7fdcd075be6fa67 deck_draw(), 0.4, 4, 0, 0.3);
-                        if (istrue(var_32882cb102708260)) {
+                        said = function_705b9bbd3a47d1e6(level.var_c7fdcd075be6fa67 deck_draw(), 0.4, 4, 0, 0.3);
+                        if (istrue(said)) {
                             var_ed1e225d2f4e55c9 = "clear";
                         }
                     }
@@ -50,23 +50,23 @@ function function_8e12a06df7f7b5a6(var_b150eb894ec98d28, var_5a5437bab7d7156b, v
                 if (function_eac0cd99c9c6d8ee() == "spotted" && !flag("vo_alert_said")) {
                     if (function_1bb1470f934a81eb() && var_ed1e225d2f4e55c9 != "combat" && function_14a67b26aa91919(3) > 1) {
                         flag_set("vo_alert_said");
-                        var_32882cb102708260 = function_705b9bbd3a47d1e6(level.var_a9016d2b6b364c4d deck_draw(), 0.4, 3, 0, 0.2);
+                        said = function_705b9bbd3a47d1e6(level.var_a9016d2b6b364c4d deck_draw(), 0.4, 3, 0, 0.2);
                         if (self isswimming()) {
                             function_705b9bbd3a47d1e6(level.var_7467bfae31bc08ed deck_draw(), 0.4, 4, 0, 0.6);
                         }
-                        if (istrue(var_32882cb102708260)) {
+                        if (istrue(said)) {
                             var_ed1e225d2f4e55c9 = "combat";
                         }
                     } else if (!function_1bb1470f934a81eb() && function_6e7eeaf3dc05e54e() && var_ed1e225d2f4e55c9 != "hunt" && function_14a67b26aa91919(2) > 1) {
                         flag_set("vo_alert_said");
-                        var_32882cb102708260 = function_705b9bbd3a47d1e6(level.var_f740dcfe6d515900 deck_draw(), 0.4, 4, 0, 0.3);
-                        if (istrue(var_32882cb102708260)) {
+                        said = function_705b9bbd3a47d1e6(level.var_f740dcfe6d515900 deck_draw(), 0.4, 4, 0, 0.3);
+                        if (istrue(said)) {
                             var_ed1e225d2f4e55c9 = "hunt";
                         }
                     } else if (!function_1bb1470f934a81eb() && !function_6e7eeaf3dc05e54e() && function_8f63b34b24e150de() && var_ed1e225d2f4e55c9 != "investigate_up" && function_14a67b26aa91919(1) > 1) {
                         flag_set("vo_alert_said");
-                        var_32882cb102708260 = function_705b9bbd3a47d1e6(level.var_ea67a61926b2fc20 deck_draw(), 0.4, 4, 0, 0.3);
-                        if (istrue(var_32882cb102708260)) {
+                        said = function_705b9bbd3a47d1e6(level.investigate_deck deck_draw(), 0.4, 4, 0, 0.3);
+                        if (istrue(said)) {
                             var_ed1e225d2f4e55c9 = "investigate_up";
                         }
                     }

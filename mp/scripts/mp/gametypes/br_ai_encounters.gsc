@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\gametypes\br_ai_encounters_util.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gametypes\br_respawn.gsc;
-#using scripts\mp\utility\script.gsc;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\anim;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_ai_encounters_util;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_respawn;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\hud_util;
+#using scripts\mp\mp_agent;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
 
 #namespace br_ai_encounters;
 
@@ -1787,7 +1787,7 @@ function smoking_idle_end(animalias) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x46cc
 // Size: 0x9a
-function smoking_react(var_e25ca6f64fdb941f) {
+function smoking_react(react_alias) {
     self endon("death");
     self waittill("damage");
     ai_smoking_cleanup();
@@ -1798,7 +1798,7 @@ function smoking_react(var_e25ca6f64fdb941f) {
         self.idle_prop physicslaunchserver(self.idle_prop.origin, (0, 0, -10));
         self.idle_prop = undefined;
     }
-    scripts\asm\shared\mp\utility::animscripted_single(var_e25ca6f64fdb941f);
+    scripts\asm\shared\mp\utility::animscripted_single(react_alias);
     reset_guy(self);
 }
 

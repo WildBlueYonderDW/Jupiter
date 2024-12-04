@@ -1,16 +1,16 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\scriptable.gsc;
 #using script_7f5e7a3cb514aca5;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\common\devgui.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\parachute;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_41d841f881f9d22e;
 

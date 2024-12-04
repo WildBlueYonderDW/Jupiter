@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_killstreaks.gsc;
-#using scripts\mp\killstreaks\autosentry.gsc;
-#using scripts\mp\killstreaks\placeable.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_killstreaks;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\killstreaks\autosentry;
+#using scripts\mp\killstreaks\placeable;
 
 #namespace bots_sentry;
 

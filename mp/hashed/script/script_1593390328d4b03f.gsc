@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
 #using script_3d2770dc09c1243;
-#using scripts\engine\trace.gsc;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_util;
 
 #namespace namespace_90fdb6fb49847e53;
 

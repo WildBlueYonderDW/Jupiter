@@ -1,5 +1,5 @@
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
 
 #namespace namespace_f2ee1738ba315249;
 

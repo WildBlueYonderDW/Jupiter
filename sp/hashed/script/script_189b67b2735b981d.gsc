@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_7ef95bba57dc4b82;
-#using scripts\common\callbacks.gsc;
 #using script_15de7dc4d21f1da3;
+#using script_2669878cf5a1b6bc;
 #using script_436add9de781cdfb;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace talking_gun;
 

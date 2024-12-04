@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\killstreaks\flares.gsc;
-#using script_784aa75d4a32fa24;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\killstreaks\chopper_gunner.gsc;
 #using script_2c17aa19d1e937b2;
+#using script_784aa75d4a32fa24;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\killstreaks\chopper_gunner;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\flags;
+#using scripts\mp\killstreaks\flares;
 
 #namespace namespace_261788a314dc6d82;
 
@@ -25,8 +25,8 @@ function function_8063e641963cd522() {
     while (!isdefined(level.struct_class_names)) {
         waitframe();
     }
-    if (!isdefined(level.var_a18f242eedeb1941)) {
-        level.var_a18f242eedeb1941 = [];
+    if (!isdefined(level.HeliGroups)) {
+        level.HeliGroups = [];
     }
     helis = [];
     var_f7c41a7192f6d0e7 = [];
@@ -44,7 +44,7 @@ function function_8063e641963cd522() {
         endstruct = spawnstruct();
         endstruct.origin = goal.origin;
         endstruct.angles = goal.angles;
-        helitype = var_ca5ae2c8e6c2c4db.var_f2bc1b4875488d73;
+        helitype = var_ca5ae2c8e6c2c4db.script_helitype;
         if (!isdefined(helitype)) {
             helitype = "blima";
         }
@@ -83,8 +83,8 @@ function function_8063e641963cd522() {
         crashnode = undefined;
         var_fde45a9b7dbe3ee0 = scripts\common\vehicle_paths::get_path_getfunc(goal);
         while (isdefined(curnode)) {
-            if (isdefined(curnode.var_d69d7ea717062c4b)) {
-                switch (curnode.var_d69d7ea717062c4b) {
+            if (isdefined(curnode.script_attack)) {
+                switch (curnode.script_attack) {
                 case #"hash_a68928468343f517":
                     var_2f04632a38b3fda1[var_2f04632a38b3fda1.size] = curnode;
                     break;
@@ -98,7 +98,7 @@ function function_8063e641963cd522() {
                     break;
                 }
             }
-            if (isdefined(curnode.var_59c8ac73106455e)) {
+            if (isdefined(curnode.script_crash)) {
                 crashnode = curnode;
             }
             function_8f862de8eb07febc(curnode);
@@ -121,11 +121,11 @@ function function_8063e641963cd522() {
         #/
     }
     var_e3e68c2dd65aa2fa = self.context;
-    if (isdefined(var_e3e68c2dd65aa2fa) && !isdefined(level.var_a18f242eedeb1941[var_e3e68c2dd65aa2fa])) {
-        level.var_a18f242eedeb1941[var_e3e68c2dd65aa2fa] = [];
+    if (isdefined(var_e3e68c2dd65aa2fa) && !isdefined(level.HeliGroups[var_e3e68c2dd65aa2fa])) {
+        level.HeliGroups[var_e3e68c2dd65aa2fa] = [];
     }
     if (isdefined(var_e3e68c2dd65aa2fa)) {
-        level.var_a18f242eedeb1941[var_e3e68c2dd65aa2fa] = var_f7c41a7192f6d0e7;
+        level.HeliGroups[var_e3e68c2dd65aa2fa] = var_f7c41a7192f6d0e7;
     }
 }
 

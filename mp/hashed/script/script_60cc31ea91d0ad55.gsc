@@ -1,8 +1,8 @@
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_1b6238014513ce61;
 

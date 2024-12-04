@@ -1,17 +1,17 @@
-#using scripts\mp\utility\script.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
 #using script_74b851b7aa1ef32d;
+#using scripts\common\ae_utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\ent_manager;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
 
 #namespace smoke_grenade;
 
@@ -111,7 +111,7 @@ function smokegrenadeexplode(position, owner, bundle) {
         level callback::callback("smoke_grenade_explode", params);
     }
     if (getdvarint(@"hash_abe45e35ef030a56") == 1) {
-        if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+        if (getdvarint(@"mgl", 0)) {
             thread scripts\common\ai::function_f8903387ea945165(position, 1);
         } else {
             function_8a09c0e5fa78a48c(position, smokeduration, undefined, smokeradius);

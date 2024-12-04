@@ -1,7 +1,7 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\asm\cap.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\cap;
+#using scripts\asm\shared\utility;
+#using scripts\engine\utility;
 
 #namespace cap_hostage;
 

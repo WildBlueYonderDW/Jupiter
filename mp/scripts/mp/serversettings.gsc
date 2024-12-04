@@ -1,5 +1,5 @@
-#using scripts\mp\tweakables.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\mp\tweakables;
 
 #namespace serversettings;
 

@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\gametypes\br_lootchopper.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
 #using script_261e315c49e5e4ef;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_46cf752d93dc17b;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_lootchopper;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_d2cdf0e410334eae;
 

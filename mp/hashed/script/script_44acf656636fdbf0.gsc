@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gametypes\br.gsc;
+#using script_14183df6f9af8737;
 #using script_44acf656636fdbf0;
 #using script_451a1a9bd9613164;
-#using script_14183df6f9af8737;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_gametypes;
 
 #namespace namespace_8089669b072e0a9f;
 

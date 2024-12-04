@@ -1,17 +1,17 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\killstreaks\nuke.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\arm.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using script_2c17aa19d1e937b2;
-#using scripts\mp\gametypes\wm.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_2bc0b0102f9b7751;
+#using script_2c17aa19d1e937b2;
 #using script_48814951e916af89;
-#using scripts\mp\menus.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\killstreaks\nuke;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\arm;
+#using scripts\mp\gametypes\wm;
+#using scripts\mp\menus;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace wm_ending;
 
@@ -27,8 +27,8 @@ function init() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x531
 // Size: 0x27
-function function_1c915051680a9364(var_65c66b5814217d34, func_defenders) {
-    level.var_cdb45c94ef19a71a = var_65c66b5814217d34;
+function function_1c915051680a9364(func_attackers, func_defenders) {
+    level.var_cdb45c94ef19a71a = func_attackers;
     level.var_eb56ee71d36c7f7a = func_defenders;
 }
 

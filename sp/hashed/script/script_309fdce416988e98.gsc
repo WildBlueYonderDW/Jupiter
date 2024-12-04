@@ -1,9 +1,9 @@
 #using script_72ef6b9f0cf1f55a;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\ui.gsc;
+#using scripts\common\system;
+#using scripts\common\ui;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
 
 #namespace compass_messaging;
 
@@ -33,11 +33,11 @@ function private pre_main() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x265
 // Size: 0x8f
-function function_38e800ec19177b32(var_23ef8d2ca61c2ef, var_b469cdf176e59127) {
+function function_38e800ec19177b32(combo_array, combo_param) {
     index = level.compass_messaging.var_59c6013a7507e6a.size;
     level.compass_messaging.var_59c6013a7507e6a[index] = spawnstruct();
-    level.compass_messaging.var_59c6013a7507e6a[index].var_23ef8d2ca61c2ef = var_23ef8d2ca61c2ef;
-    level.compass_messaging.var_59c6013a7507e6a[index].var_b469cdf176e59127 = var_b469cdf176e59127;
+    level.compass_messaging.var_59c6013a7507e6a[index].combo_array = combo_array;
+    level.compass_messaging.var_59c6013a7507e6a[index].combo_param = combo_param;
 }
 
 // Namespace compass_messaging / namespace_5d422cd60f12e32e
@@ -99,9 +99,9 @@ function function_716cd5eee423ff24() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x527
 // Size: 0x42
-function function_f2784cc23bce336(var_c9913039c855ec7e) {
-    assertex(isdefined(var_c9913039c855ec7e), "You must specify a state string defined in the <" + level.compass_messaging.widget + "> asset.");
-    function_d28fa5295a04d555("compass_messaging", var_c9913039c855ec7e);
+function function_f2784cc23bce336(state_str) {
+    assertex(isdefined(state_str), "You must specify a state string defined in the <" + level.compass_messaging.widget + "> asset.");
+    function_d28fa5295a04d555("compass_messaging", state_str);
 }
 
 // Namespace compass_messaging / namespace_5d422cd60f12e32e
@@ -109,8 +109,8 @@ function function_f2784cc23bce336(var_c9913039c855ec7e) {
 // Checksum 0x0, Offset: 0x571
 // Size: 0x3d
 function private function_e8b07426ecc4985d(val) {
-    if (isdefined(self.compass_messaging.var_3b4ef3dd92b5337c)) {
-        function_376aee39c931c5ff(self.compass_messaging.var_3b4ef3dd92b5337c, val);
+    if (isdefined(self.compass_messaging.current_ref)) {
+        function_376aee39c931c5ff(self.compass_messaging.current_ref, val);
     }
 }
 
@@ -118,34 +118,34 @@ function private function_e8b07426ecc4985d(val) {
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0x5b6
 // Size: 0x23c
-function private function_995628fd8247db2f(var_bd4d9cdcb3a696c8, message, var_8641c5c765d283f4) {
-    if (!isdefined(var_8641c5c765d283f4)) {
-        var_8641c5c765d283f4 = 0;
+function private function_995628fd8247db2f(var_bd4d9cdcb3a696c8, message, is_combo) {
+    if (!isdefined(is_combo)) {
+        is_combo = 0;
     }
     if (!isdefined(self.compass_messaging.messages[var_bd4d9cdcb3a696c8])) {
         self.compass_messaging.messages[var_bd4d9cdcb3a696c8] = spawnstruct();
         self.compass_messaging.messages[var_bd4d9cdcb3a696c8].index = function_7be2b65191088c8a(level.compass_messaging.widget, var_bd4d9cdcb3a696c8);
         self.compass_messaging.messages[var_bd4d9cdcb3a696c8].messages = [];
-        self.compass_messaging.messages[var_bd4d9cdcb3a696c8].var_8641c5c765d283f4 = var_8641c5c765d283f4;
+        self.compass_messaging.messages[var_bd4d9cdcb3a696c8].is_combo = is_combo;
     }
     if (isdefined(message)) {
         self.compass_messaging.messages[var_bd4d9cdcb3a696c8].messages = array_add(self.compass_messaging.messages[var_bd4d9cdcb3a696c8].messages, message);
     }
     foreach (combo in level.compass_messaging.var_59c6013a7507e6a) {
-        if (!isdefined(self.compass_messaging.messages[combo.var_b469cdf176e59127])) {
-            var_5bbfc040446ef991 = 1;
-            foreach (param in combo.var_23ef8d2ca61c2ef) {
+        if (!isdefined(self.compass_messaging.messages[combo.combo_param])) {
+            add_combo = 1;
+            foreach (param in combo.combo_array) {
                 if (!isdefined(self.compass_messaging.messages[param])) {
-                    var_5bbfc040446ef991 = 0;
+                    add_combo = 0;
                     break;
                 }
             }
-            if (var_5bbfc040446ef991) {
-                function_995628fd8247db2f(combo.var_b469cdf176e59127, undefined, 1);
+            if (add_combo) {
+                function_995628fd8247db2f(combo.combo_param, undefined, 1);
             }
         }
     }
-    if (!var_8641c5c765d283f4) {
+    if (!is_combo) {
         function_8466c8d7d5bfa33a();
     }
 }
@@ -161,9 +161,9 @@ function private function_7c17bfd98aea6570(var_bd4d9cdcb3a696c8, var_34c256cc371
     self notify("compass_message_removed_" + var_bd4d9cdcb3a696c8);
     self.compass_messaging.messages[var_bd4d9cdcb3a696c8] = undefined;
     foreach (combo in level.compass_messaging.var_59c6013a7507e6a) {
-        if (isdefined(self.compass_messaging.messages[combo.var_b469cdf176e59127]) && self.compass_messaging.messages[combo.var_b469cdf176e59127].var_8641c5c765d283f4) {
-            if (array_contains(combo.var_23ef8d2ca61c2ef, var_bd4d9cdcb3a696c8)) {
-                function_7c17bfd98aea6570(combo.var_b469cdf176e59127, 1);
+        if (isdefined(self.compass_messaging.messages[combo.combo_param]) && self.compass_messaging.messages[combo.combo_param].is_combo) {
+            if (array_contains(combo.combo_array, var_bd4d9cdcb3a696c8)) {
+                function_7c17bfd98aea6570(combo.combo_param, 1);
             }
         }
     }
@@ -189,7 +189,7 @@ function private function_8466c8d7d5bfa33a() {
             var_9bcb4f4973c9c5e6 = ref;
         }
     }
-    if (isdefined(var_9bcb4f4973c9c5e6) && (!isdefined(self.compass_messaging.var_3b4ef3dd92b5337c) || self.compass_messaging.var_3b4ef3dd92b5337c != var_9bcb4f4973c9c5e6 || self.compass_messaging.messages[var_9bcb4f4973c9c5e6].messages.size > 0)) {
+    if (isdefined(var_9bcb4f4973c9c5e6) && (!isdefined(self.compass_messaging.current_ref) || self.compass_messaging.current_ref != var_9bcb4f4973c9c5e6 || self.compass_messaging.messages[var_9bcb4f4973c9c5e6].messages.size > 0)) {
         function_309fb06c47e16c0f(var_9bcb4f4973c9c5e6);
     }
 }
@@ -199,7 +199,7 @@ function private function_8466c8d7d5bfa33a() {
 // Checksum 0x0, Offset: 0xa30
 // Size: 0xd5
 function private function_309fb06c47e16c0f(ref) {
-    self.compass_messaging.var_3b4ef3dd92b5337c = ref;
+    self.compass_messaging.current_ref = ref;
     message = self.compass_messaging.messages[ref];
     if (!function_ada0825249682644("compass_messaging")) {
         function_90de31b2cbef19f9("compass_messaging", level.compass_messaging.widget);

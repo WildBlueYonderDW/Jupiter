@@ -1,23 +1,23 @@
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\utility.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using script_67fb1233e876ed8;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\weapon.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using script_5762ac2f22202ba2;
+#using script_67fb1233e876ed8;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\hud_message;
+#using scripts\mp\poi;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace ammorestock;
 
@@ -809,7 +809,7 @@ function function_42f888e2e819cc64(player, instance) {
         player playlocalsound("br_pickup_deny");
         return 2;
     }
-    var_bf00bd1d7da56c26 = 0;
+    gaveammo = 0;
     var_509d86412c9d7426 = player getweaponslistprimaries();
     var_12a372e8caa042bb = [];
     foreach (item in var_509d86412c9d7426) {

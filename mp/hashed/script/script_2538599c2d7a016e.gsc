@@ -1,4 +1,4 @@
-#using scripts\mp\infilexfil\lbravo_infil.gsc;
+#using scripts\mp\infilexfil\lbravo_infil;
 
 #namespace namespace_af7f92f25b32072f;
 

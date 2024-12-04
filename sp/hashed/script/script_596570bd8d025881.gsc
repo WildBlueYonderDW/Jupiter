@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\devgui.gsc;
-#using script_608c50392df8c7d1;
-#using scripts\common\values.gsc;
 #using script_16ea1b94f0f381b3;
 #using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
+#using script_608c50392df8c7d1;
 #using script_736dec95a49487a6;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\killstreaks\manual_turret.gsc;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\killstreaks\manual_turret;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace lrad;
 
@@ -792,8 +792,8 @@ function function_d2368d84391b6a68() {
     while (true) {
         self.stuntrigger waittill("trigger");
         entities_players = level.players;
-        var_eb4d537c12ccad6d = getaiarray();
-        allentities = array_combine_unique(entities_players, var_eb4d537c12ccad6d);
+        entities_ai = getaiarray();
+        allentities = array_combine_unique(entities_players, entities_ai);
         var_f4fc390187305987 = self.stuntrigger getistouchingentities(allentities);
         self.owner.var_9717afbc6163113 = var_f4fc390187305987;
         foreach (ent in var_f4fc390187305987) {

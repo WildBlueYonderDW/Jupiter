@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
 #using script_4e5018973422744d;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using script_699beeb185d284d2;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
 
 #namespace namespace_4005e39d519fcb0d;
 

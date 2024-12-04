@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
 #using script_1fb4294da3259ab0;
 #using script_20857c2ea652800b;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace namespace_5b41b2b7b50f7b5a;
 
@@ -79,7 +79,7 @@ function function_502a3a9e49f2a036() {
 // Checksum 0x0, Offset: 0x2d5
 // Size: 0x1b
 function function_8d9f9441a6e46f2f() {
-    return isdefined(self.var_9ef678fddf58d09a) && self.var_9ef678fddf58d09a != 0;
+    return isdefined(self.companion_type) && self.companion_type != 0;
 }
 
 // Namespace namespace_5b41b2b7b50f7b5a / namespace_38d9b4fc12a735da
@@ -87,8 +87,8 @@ function function_8d9f9441a6e46f2f() {
 // Checksum 0x0, Offset: 0x2f9
 // Size: 0x1a
 function function_9aea241ac7d66cd3() {
-    if (isdefined(self.var_9ef678fddf58d09a)) {
-        return self.var_9ef678fddf58d09a;
+    if (isdefined(self.companion_type)) {
+        return self.companion_type;
     }
     return 0;
 }
@@ -98,8 +98,8 @@ function function_9aea241ac7d66cd3() {
 // Checksum 0x0, Offset: 0x31c
 // Size: 0x1d
 function function_d5e1cdc9b72396a8() {
-    if (isdefined(self.var_9ef678fddf58d09a)) {
-        return (self.var_9ef678fddf58d09a == 1);
+    if (isdefined(self.companion_type)) {
+        return (self.companion_type == 1);
     }
     return false;
 }
@@ -109,8 +109,8 @@ function function_d5e1cdc9b72396a8() {
 // Checksum 0x0, Offset: 0x342
 // Size: 0x1d
 function function_29aefcbd36a1ac40() {
-    if (isdefined(self.var_9ef678fddf58d09a)) {
-        return (self.var_9ef678fddf58d09a == 2);
+    if (isdefined(self.companion_type)) {
+        return (self.companion_type == 2);
     }
     return false;
 }
@@ -120,8 +120,8 @@ function function_29aefcbd36a1ac40() {
 // Checksum 0x0, Offset: 0x368
 // Size: 0x1d
 function function_6e0380da29582926() {
-    if (isdefined(self.var_9ef678fddf58d09a)) {
-        return (self.var_9ef678fddf58d09a == 3);
+    if (isdefined(self.companion_type)) {
+        return (self.companion_type == 3);
     }
     return false;
 }
@@ -131,7 +131,7 @@ function function_6e0380da29582926() {
 // Checksum 0x0, Offset: 0x38e
 // Size: 0xd
 function function_115ba5b3dc835cee() {
-    self.var_9ef678fddf58d09a = 2;
+    self.companion_type = 2;
 }
 
 // Namespace namespace_5b41b2b7b50f7b5a / namespace_38d9b4fc12a735da

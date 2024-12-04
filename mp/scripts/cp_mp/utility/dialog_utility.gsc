@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace dialog_utility;
 

@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_1407e72346815bc3;
 #using script_5af9038262d22c96;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\perk;
 
 #namespace manager_mp;
 

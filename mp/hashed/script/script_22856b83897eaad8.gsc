@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\common\devgui.gsc;
 #using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace ob_armor;
 
@@ -11,7 +11,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f
 // Size: 0x40
-function function_876c219bf2b0fbd7() {
+function init_armor() {
     level.var_e8f60267621fda8d = &function_c71dfd42d05c80b1;
     level.var_49bf61396483bae7 = &function_1260ae7112d01f9c;
     registersharedfunc("ob_armor", "set_golden_armor", &set_golden_armor);

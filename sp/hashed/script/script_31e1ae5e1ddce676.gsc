@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_mines.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp\vehicles\vehicle_oob_cp.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+#using scripts\common\utility;
+#using scripts\cp\vehicles\vehicle_oob_cp;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_mines;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
 
 #namespace namespace_c1f1eb97c978bfbb;
 

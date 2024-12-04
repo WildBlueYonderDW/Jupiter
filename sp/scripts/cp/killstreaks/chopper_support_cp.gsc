@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using scripts\cp\vehicles\damage_cp.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\parachute.gsc;
+#using scripts\common\utility;
+#using scripts\cp\vehicles\damage_cp;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace namespace_c85976bb1188f2a;
 

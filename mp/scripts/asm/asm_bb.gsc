@@ -1,8 +1,8 @@
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\shared\utility;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace asm_bb;
 

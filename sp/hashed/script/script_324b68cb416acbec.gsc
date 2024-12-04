@@ -1,6 +1,6 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_d7008f2c77d25ce5;
 
@@ -9,14 +9,14 @@
 // Checksum 0x0, Offset: 0xff
 // Size: 0x9
 function main() {
-    function_ca410274ca39d561();
+    squads_init();
 }
 
 // Namespace namespace_d7008f2c77d25ce5 / namespace_6d1c9cb20efeb350
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x110
 // Size: 0x298
-function function_ca410274ca39d561() {
+function squads_init() {
     level.var_d7008f2c77d25ce5 = [];
     level.var_d7008f2c77d25ce5["ar"] = ["ar", "ar", "ar"];
     level.var_d7008f2c77d25ce5["smg"] = ["smg", "smg", "smg"];
@@ -38,7 +38,7 @@ function function_ca410274ca39d561() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x16
-function function_de96b8a387dbe2a(var_516ff72cf3a5b67d) {
-    return level.var_d7008f2c77d25ce5[var_516ff72cf3a5b67d];
+function squad_get(squad_name) {
+    return level.var_d7008f2c77d25ce5[squad_name];
 }
 

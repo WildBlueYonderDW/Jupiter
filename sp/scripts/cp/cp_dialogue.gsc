@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
 #using script_166b4f052da169a7;
 #using script_5d265b4fca61f070;
-#using scripts\engine\trace.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_f8a56e8949145a55;
 
@@ -73,9 +73,9 @@ function function_46b7602a9a7bf8b4(origin, radius, desiredteam, excludeents) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d7
 // Size: 0x141
-function play_vo_to_all(alias, var_b040aaf18afe0139) {
-    if (isdefined(var_b040aaf18afe0139)) {
-        wait var_b040aaf18afe0139;
+function play_vo_to_all(alias, optional_delay) {
+    if (isdefined(optional_delay)) {
+        wait optional_delay;
     }
     if (istrue(level.dialogue_playing)) {
         /#
@@ -268,8 +268,8 @@ function function_315ce8400f242845(alias, player, emitter) {
     if (!isdefined(radio_dist)) {
         return "dx_radio_2d";
     }
-    var_7f92a5190dffd8c1 = distancesquared(player.origin + (0, 0, 60), emitter.origin);
-    return ter_op(var_7f92a5190dffd8c1 < squared(radio_dist), "dx_open_air", "dx_radio_2d");
+    player_distsq = distancesquared(player.origin + (0, 0, 60), emitter.origin);
+    return ter_op(player_distsq < squared(radio_dist), "dx_open_air", "dx_radio_2d");
 }
 
 // Namespace namespace_f8a56e8949145a55 / scripts\cp\cp_dialogue

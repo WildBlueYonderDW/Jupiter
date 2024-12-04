@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\poi.gsc;
 #using script_1f97a44d1761c919;
 #using script_41ba451876d0900c;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
+#using script_48814951e916af89;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\poi;
 
 #namespace namespace_88b738f3cc56f24f;
 

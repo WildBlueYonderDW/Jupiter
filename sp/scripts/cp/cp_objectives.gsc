@@ -1,24 +1,24 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_checkpoint.gsc;
-#using scripts\cp\cp_objectives_events.gsc;
-#using scripts\cp\cp_analytics.gsc;
-#using script_3bcaa2cbaf54abdd;
-#using scripts\cp\coop_personal_ents.gsc;
-#using script_afb7e332aee4bf2;
 #using script_187a04151c40fb72;
+#using script_3bcaa2cbaf54abdd;
+#using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\cp\coop_personal_ents;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_checkpoint;
+#using scripts\cp\cp_objectives_events;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_e8ce0059cd9e3f73;
+#namespace cp_objectives;
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa25
 // Size: 0x10b
 function objectives_init() {
     flag_init("objective_table_parsed");
     /#
-        level thread function_699304dd575765c9(@"hash_e6d8ad34aadb296", &function_2e0726d51b65646);
+        level thread debug_activation(@"hash_e6d8ad34aadb296", &function_2e0726d51b65646);
     #/
     flag_init("objectives_registered");
     level.objectivestabledata = [];
@@ -47,7 +47,7 @@ function objectives_init() {
     level thread objectivedebug();
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb38
 // Size: 0x27
@@ -60,7 +60,7 @@ function setupobjectiveloops() {
     level thread runobjectiveloop();
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb67
 // Size: 0x41
@@ -72,7 +72,7 @@ function runmainobjective() {
     level thread run_objective(var_eaf8894a5f8595e8, "primary");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb0
 // Size: 0xb9
@@ -94,7 +94,7 @@ function runsecondaryobjectives() {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc71
 // Size: 0x9c
@@ -116,7 +116,7 @@ function runobjectiveloop() {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd15
 // Size: 0x4
@@ -124,7 +124,7 @@ function should_run_objectives() {
     return true;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd22
 // Size: 0x2
@@ -132,7 +132,7 @@ function objectivedebug() {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd2c
 // Size: 0x4ed
@@ -219,7 +219,7 @@ function parseobjectivestable(table) {
 
 /#
 
-    // Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+    // Namespace cp_objectives / scripts\cp\cp_objectives
     // Params 9, eflags: 0x0
     // Checksum 0x0, Offset: 0x1221
     // Size: 0x346
@@ -282,7 +282,7 @@ function parseobjectivestable(table) {
 
 #/
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x156f
 // Size: 0x1d7
@@ -324,7 +324,7 @@ function processiconposref(objstruct) {
     objstruct.iconpos = iconpos;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x174e
 // Size: 0x48
@@ -337,7 +337,7 @@ function setobjectivelocations(objectivestruct, var_47a3a239c6b7196a) {
     objectivestruct.objectivelocations[0] = var_47a3a239c6b7196a;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x179e
 // Size: 0x2b
@@ -348,7 +348,7 @@ function getobjectivestructfromref(ref) {
     return undefined;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17d1
 // Size: 0x5f
@@ -368,7 +368,7 @@ function overridenextstep(objectivestruct, var_99d1679d9e88f1b2) {
     objectivestruct.nextsteps[0] = var_99d1679d9e88f1b2;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1838
 // Size: 0xbf
@@ -390,7 +390,7 @@ function addheadicon(ent, icon, offset) {
     return ent.headiconid;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1900
 // Size: 0x38
@@ -399,7 +399,7 @@ function removeheadicon(ent) {
     self.headiconents = array_remove(self.headiconents, ent);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x1940
 // Size: 0x12a
@@ -423,37 +423,37 @@ function registerobjective(objectivename, var_b87ab6d2c49ef466, var_b99e0b410506
     createdevguientryforobjective(objectivestruct);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a72
 // Size: 0x44d
-function objective_update_internal(var_7e4818482caca9b2, time, var_2a373c148bea63f, var_d087eb5608985a9c, nofailontimeout, var_be5d009c804d64a2, var_159fa119be87c25, var_29ae2de1f604bc2f) {
-    level notify(var_7e4818482caca9b2 + "_update_instance");
-    level endon(var_7e4818482caca9b2 + "_update_instance");
-    level endon(var_7e4818482caca9b2 + "_completed");
-    level endon(var_7e4818482caca9b2 + "_failed");
-    level endon(var_7e4818482caca9b2 + "objective_paused");
+function objective_update_internal(message_ref, time, yellow_time, red_time, nofailontimeout, object_count, objective_slot, big_timer) {
+    level notify(message_ref + "_update_instance");
+    level endon(message_ref + "_update_instance");
+    level endon(message_ref + "_completed");
+    level endon(message_ref + "_failed");
+    level endon(message_ref + "objective_paused");
     var_6427da22a2830c8e = undefined;
-    var_159fa119be87c25 = undefined;
-    var_90ff623d1168ac69 = undefined;
+    objective_slot = undefined;
+    reset_bool = undefined;
     if (isdefined(level.objectives_table)) {
-        var_9381e429530b0dc6 = check_event_flag(var_7e4818482caca9b2);
-        if (isdefined(level.objectivestabledata[var_7e4818482caca9b2])) {
-            var_6427da22a2830c8e = level.objectivestabledata[var_7e4818482caca9b2].index;
+        event_flag = check_event_flag(message_ref);
+        if (isdefined(level.objectivestabledata[message_ref])) {
+            var_6427da22a2830c8e = level.objectivestabledata[message_ref].index;
         } else {
-            var_6427da22a2830c8e = int(tablelookup(level.objectives_table, 1, var_7e4818482caca9b2, 0));
+            var_6427da22a2830c8e = int(tablelookup(level.objectives_table, 1, message_ref, 0));
         }
-        var_90ff623d1168ac69 = check_objective_reset_value(var_7e4818482caca9b2);
-        if (istrue(var_90ff623d1168ac69)) {
+        reset_bool = check_objective_reset_value(message_ref);
+        if (istrue(reset_bool)) {
             reset_objective_slots();
         }
-        if (!isdefined(var_159fa119be87c25)) {
-            var_159fa119be87c25 = get_objective_slot(var_7e4818482caca9b2);
+        if (!isdefined(objective_slot)) {
+            objective_slot = get_objective_slot(message_ref);
         }
-        lua_objective_incomplete(var_7e4818482caca9b2);
+        lua_objective_incomplete(message_ref);
     }
     if (!isdefined(level.objectives_table)) {
-        var_6427da22a2830c8e = int(tablelookup("cp/cp_default_objectives.csv", 1, var_7e4818482caca9b2, 0));
+        var_6427da22a2830c8e = int(tablelookup("cp/cp_default_objectives.csv", 1, message_ref, 0));
     }
     if (!isdefined(var_6427da22a2830c8e)) {
         return;
@@ -462,7 +462,7 @@ function objective_update_internal(var_7e4818482caca9b2, time, var_2a373c148bea6
         nofailontimeout = 0;
     }
     setindex = 1;
-    type = get_objective_type(var_7e4818482caca9b2);
+    type = get_objective_type(message_ref);
     if (isdefined(type)) {
         if (type == "global") {
             setindex = 0;
@@ -470,37 +470,37 @@ function objective_update_internal(var_7e4818482caca9b2, time, var_2a373c148bea6
     }
     if (istrue(setindex)) {
         show_objective_widget();
-        switch (var_159fa119be87c25) {
+        switch (objective_slot) {
         case 1:
-            function_3e3f7e6442d2ee69(var_159fa119be87c25, level.objectivestabledata[var_7e4818482caca9b2]);
+            function_3e3f7e6442d2ee69(objective_slot, level.objectivestabledata[message_ref]);
             setomnvar("cp_objective_sub_1_index", var_6427da22a2830c8e);
             break;
         case 2:
-            function_3e3f7e6442d2ee69(var_159fa119be87c25, level.objectivestabledata[var_7e4818482caca9b2]);
+            function_3e3f7e6442d2ee69(objective_slot, level.objectivestabledata[message_ref]);
             setomnvar("cp_objective_sub_2_index", var_6427da22a2830c8e);
             break;
         case 3:
-            function_3e3f7e6442d2ee69(var_159fa119be87c25, level.objectivestabledata[var_7e4818482caca9b2]);
+            function_3e3f7e6442d2ee69(objective_slot, level.objectivestabledata[message_ref]);
             setomnvar("cp_objective_sub_3_index", var_6427da22a2830c8e);
             break;
         case 4:
-            function_3e3f7e6442d2ee69(var_159fa119be87c25, level.objectivestabledata[var_7e4818482caca9b2]);
+            function_3e3f7e6442d2ee69(objective_slot, level.objectivestabledata[message_ref]);
             setomnvar("cp_objective_sub_4_index", var_6427da22a2830c8e);
             break;
         }
-        if (isdefined(var_be5d009c804d64a2)) {
-            switch (var_159fa119be87c25) {
+        if (isdefined(object_count)) {
+            switch (objective_slot) {
             case 1:
-                setomnvar("cp_objective_sub_count_1", var_be5d009c804d64a2);
+                setomnvar("cp_objective_sub_count_1", object_count);
                 break;
             case 2:
-                setomnvar("cp_objective_sub_count_2", var_be5d009c804d64a2);
+                setomnvar("cp_objective_sub_count_2", object_count);
                 break;
             case 3:
-                setomnvar("cp_objective_sub_count_3", var_be5d009c804d64a2);
+                setomnvar("cp_objective_sub_count_3", object_count);
                 break;
             case 4:
-                setomnvar("cp_objective_sub_count_4", var_be5d009c804d64a2);
+                setomnvar("cp_objective_sub_count_4", object_count);
                 break;
             }
         }
@@ -512,58 +512,58 @@ function objective_update_internal(var_7e4818482caca9b2, time, var_2a373c148bea6
     }
     if (isdefined(time) && time > 0) {
         setomnvar("cp_countdown_color", 0);
-        var_8ccc1169d91ffeef = var_159fa119be87c25;
-        if (istrue(var_29ae2de1f604bc2f)) {
-            var_8ccc1169d91ffeef = 5;
+        timer_slot = objective_slot;
+        if (istrue(big_timer)) {
+            timer_slot = 5;
         }
-        setomnvar("cp_countdown_timer_alpha", var_8ccc1169d91ffeef);
+        setomnvar("cp_countdown_timer_alpha", timer_slot);
         setomnvar("cp_countdown_timer", gettime() + time * 1000);
-        if (isdefined(var_2a373c148bea63f) && var_2a373c148bea63f > 0 && var_2a373c148bea63f < time && !isdefined(var_d087eb5608985a9c)) {
-            wait time - var_2a373c148bea63f;
+        if (isdefined(yellow_time) && yellow_time > 0 && yellow_time < time && !isdefined(red_time)) {
+            wait time - yellow_time;
             setomnvar("cp_countdown_color", 1);
-            wait var_2a373c148bea63f;
-        } else if (isdefined(var_2a373c148bea63f) && isdefined(var_d087eb5608985a9c) && var_2a373c148bea63f > 0 && var_2a373c148bea63f < time && var_d087eb5608985a9c < var_2a373c148bea63f) {
-            wait time - var_2a373c148bea63f;
+            wait yellow_time;
+        } else if (isdefined(yellow_time) && isdefined(red_time) && yellow_time > 0 && yellow_time < time && red_time < yellow_time) {
+            wait time - yellow_time;
             setomnvar("cp_countdown_color", 1);
-            wait var_2a373c148bea63f - var_d087eb5608985a9c;
+            wait yellow_time - red_time;
             setomnvar("cp_countdown_color", 2);
-            wait var_d087eb5608985a9c;
+            wait red_time;
         } else {
             wait time;
         }
         if (!istrue(nofailontimeout)) {
-            fail_objective(var_7e4818482caca9b2);
+            fail_objective(message_ref);
         } else {
-            level notify(var_7e4818482caca9b2 + "_timer_complete");
+            level notify(message_ref + "_timer_complete");
         }
         reset_objective_timers();
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ec7
 // Size: 0xaa
-function function_74e8374f8dd7beb3(var_a1acfbea8f4fcbea, var_2a373c148bea63f, var_d087eb5608985a9c) {
+function function_74e8374f8dd7beb3(original_time, yellow_time, red_time) {
     level endon("game_ended");
-    setomnvar("cp_countdown_timer", gettime() + var_a1acfbea8f4fcbea * 1000);
+    setomnvar("cp_countdown_timer", gettime() + original_time * 1000);
     setomnvar("cp_countdown_timer_alpha", 5);
     setomnvar("cp_countdown_color", 0);
-    time_remaining = var_a1acfbea8f4fcbea;
-    if (isdefined(var_2a373c148bea63f) && var_2a373c148bea63f < var_a1acfbea8f4fcbea) {
-        time = var_a1acfbea8f4fcbea - var_2a373c148bea63f;
+    time_remaining = original_time;
+    if (isdefined(yellow_time) && yellow_time < original_time) {
+        time = original_time - yellow_time;
         thread function_1261c5424863a560(time, 2);
         time_remaining = time;
     }
-    if (isdefined(var_d087eb5608985a9c) && var_d087eb5608985a9c < time_remaining) {
-        time = var_a1acfbea8f4fcbea - var_d087eb5608985a9c;
+    if (isdefined(red_time) && red_time < time_remaining) {
+        time = original_time - red_time;
         thread function_1261c5424863a560(time, 1);
     }
-    wait var_a1acfbea8f4fcbea;
+    wait original_time;
     reset_objective_timers();
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f79
 // Size: 0x82
@@ -579,7 +579,7 @@ function function_f7e398d203c2a25e(objective) {
     return var_2147f031250509f6;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2004
 // Size: 0x24
@@ -589,7 +589,7 @@ function function_1261c5424863a560(time_to_wait, new_color) {
     function_2d1e769c3e096073(new_color);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2030
 // Size: 0x8b
@@ -610,32 +610,32 @@ function function_2d1e769c3e096073(color) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x20c3
 // Size: 0x2a9
-function event_update_internal(var_7e4818482caca9b2, time, var_2a373c148bea63f, var_d087eb5608985a9c, nofailontimeout, var_be5d009c804d64a2) {
-    level notify(var_7e4818482caca9b2 + "_update_instance");
-    level endon(var_7e4818482caca9b2 + "_update_instance");
-    level endon(var_7e4818482caca9b2 + "_completed");
-    level endon(var_7e4818482caca9b2 + "_failed");
-    level endon(var_7e4818482caca9b2 + "objective_paused");
+function event_update_internal(message_ref, time, yellow_time, red_time, nofailontimeout, object_count) {
+    level notify(message_ref + "_update_instance");
+    level endon(message_ref + "_update_instance");
+    level endon(message_ref + "_completed");
+    level endon(message_ref + "_failed");
+    level endon(message_ref + "objective_paused");
     var_6427da22a2830c8e = undefined;
-    var_90ff623d1168ac69 = undefined;
+    reset_bool = undefined;
     if (isdefined(level.objectives_table)) {
-        if (isdefined(level.objectivestabledata[var_7e4818482caca9b2])) {
-            var_6427da22a2830c8e = level.objectivestabledata[var_7e4818482caca9b2].index;
+        if (isdefined(level.objectivestabledata[message_ref])) {
+            var_6427da22a2830c8e = level.objectivestabledata[message_ref].index;
         } else {
-            var_6427da22a2830c8e = int(tablelookup(level.objectives_table, 1, var_7e4818482caca9b2, 0));
+            var_6427da22a2830c8e = int(tablelookup(level.objectives_table, 1, message_ref, 0));
         }
-        var_90ff623d1168ac69 = check_objective_reset_value(var_7e4818482caca9b2);
-        if (istrue(var_90ff623d1168ac69)) {
+        reset_bool = check_objective_reset_value(message_ref);
+        if (istrue(reset_bool)) {
             reset_objective_slots();
         }
-        lua_objective_incomplete(var_7e4818482caca9b2);
+        lua_objective_incomplete(message_ref);
     }
     if (!isdefined(level.objectives_table)) {
-        var_6427da22a2830c8e = int(tablelookup("cp/cp_default_objectives.csv", 1, var_7e4818482caca9b2, 0));
+        var_6427da22a2830c8e = int(tablelookup("cp/cp_default_objectives.csv", 1, message_ref, 0));
     }
     if (!isdefined(var_6427da22a2830c8e)) {
         return;
@@ -644,17 +644,17 @@ function event_update_internal(var_7e4818482caca9b2, time, var_2a373c148bea63f, 
         nofailontimeout = 0;
     }
     setindex = 1;
-    type = get_objective_type(var_7e4818482caca9b2);
+    type = get_objective_type(message_ref);
     if (isdefined(type)) {
         if (type == "global") {
             setindex = 0;
         }
     }
     if (istrue(setindex)) {
-        function_531e694c49fc6238(level.objectivestabledata[var_7e4818482caca9b2]);
+        function_531e694c49fc6238(level.objectivestabledata[message_ref]);
         setomnvar("cp_objective_event_index", var_6427da22a2830c8e);
-        if (isdefined(var_be5d009c804d64a2)) {
-            setomnvar("cp_objective_event_count", var_be5d009c804d64a2);
+        if (isdefined(object_count)) {
+            setomnvar("cp_objective_event_count", object_count);
         }
     }
     if (soundexists("iw8_new_objective_sfx")) {
@@ -664,31 +664,31 @@ function event_update_internal(var_7e4818482caca9b2, time, var_2a373c148bea63f, 
         setomnvar("cp_countdown_event_color", 0);
         setomnvar("cp_countdown_event_timer_alpha", 1);
         setomnvar("cp_countdown_event_timer", gettime() + time * 1000);
-        if (isdefined(var_2a373c148bea63f) && var_2a373c148bea63f > 0 && var_2a373c148bea63f < time && !isdefined(var_d087eb5608985a9c)) {
-            wait time - var_2a373c148bea63f;
+        if (isdefined(yellow_time) && yellow_time > 0 && yellow_time < time && !isdefined(red_time)) {
+            wait time - yellow_time;
             setomnvar("cp_countdown_event_color", 1);
-            wait var_2a373c148bea63f;
-        } else if (isdefined(var_2a373c148bea63f) && var_2a373c148bea63f > 0 && var_2a373c148bea63f < time && isdefined(var_d087eb5608985a9c) && var_d087eb5608985a9c < var_2a373c148bea63f) {
-            wait time - var_2a373c148bea63f;
+            wait yellow_time;
+        } else if (isdefined(yellow_time) && yellow_time > 0 && yellow_time < time && isdefined(red_time) && red_time < yellow_time) {
+            wait time - yellow_time;
             setomnvar("cp_countdown_event_color", 1);
-            wait var_2a373c148bea63f - var_d087eb5608985a9c;
+            wait yellow_time - red_time;
             setomnvar("cp_countdown_event_color", 2);
-            wait var_d087eb5608985a9c;
+            wait red_time;
         } else {
             wait time;
         }
         if (!istrue(nofailontimeout)) {
-            fail_objective(var_7e4818482caca9b2);
+            fail_objective(message_ref);
             reset_event_timers();
         } else {
-            level notify(var_7e4818482caca9b2 + "_timer_complete");
+            level notify(message_ref + "_timer_complete");
         }
         return;
     }
     setomnvar("cp_countdown_event_timer_alpha", 0);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2374
 // Size: 0xf
@@ -696,7 +696,7 @@ function show_objective_widget() {
     setomnvar("cp_objective_index", 1);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x238b
 // Size: 0xe
@@ -704,35 +704,35 @@ function hide_objective_widget() {
     setomnvar("cp_objective_index", 0);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x23a1
 // Size: 0x90
-function get_objective_slot(var_7e4818482caca9b2) {
-    var_159fa119be87c25 = undefined;
-    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[var_7e4818482caca9b2])) {
-        var_159fa119be87c25 = level.objectivestabledata[var_7e4818482caca9b2].var_53b4259e1f971282;
+function get_objective_slot(message_ref) {
+    objective_slot = undefined;
+    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[message_ref])) {
+        objective_slot = level.objectivestabledata[message_ref].var_53b4259e1f971282;
     }
-    if (isdefined(level.objectives_table) && !isdefined(var_159fa119be87c25)) {
-        var_159fa119be87c25 = tablelookup(level.objectives_table, 1, var_7e4818482caca9b2, 29);
+    if (isdefined(level.objectives_table) && !isdefined(objective_slot)) {
+        objective_slot = tablelookup(level.objectives_table, 1, message_ref, 29);
     }
-    if (isdefined(var_159fa119be87c25) && var_159fa119be87c25 != "") {
-        return int(var_159fa119be87c25);
+    if (isdefined(objective_slot) && objective_slot != "") {
+        return int(objective_slot);
     }
     return 1;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2439
 // Size: 0x8b
-function check_objective_reset_value(var_7e4818482caca9b2) {
+function check_objective_reset_value(message_ref) {
     objective_reset = undefined;
-    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[var_7e4818482caca9b2])) {
-        objective_reset = level.objectivestabledata[var_7e4818482caca9b2].var_d1f50ecf0047c109;
+    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[message_ref])) {
+        objective_reset = level.objectivestabledata[message_ref].var_d1f50ecf0047c109;
     }
     if (isdefined(level.objectives_table) && !isdefined(objective_reset)) {
-        objective_reset = tablelookup(level.objectives_table, 1, var_7e4818482caca9b2, 30);
+        objective_reset = tablelookup(level.objectives_table, 1, message_ref, 30);
     }
     if (isdefined(objective_reset) && objective_reset != "") {
         return 1;
@@ -740,16 +740,16 @@ function check_objective_reset_value(var_7e4818482caca9b2) {
     return 0;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x24cc
 // Size: 0x1d
-function fail_objective(var_7e4818482caca9b2) {
-    level notify(var_7e4818482caca9b2 + "_failed");
-    reset_objective_omnvars(var_7e4818482caca9b2);
+function fail_objective(message_ref) {
+    level notify(message_ref + "_failed");
+    reset_objective_omnvars(message_ref);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x24f1
 // Size: 0x1bc
@@ -794,7 +794,7 @@ function run_objective(var_dcd66f3ea861d2a2, var_5dcdfd3a4eff9961, team, var_a1b
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x26b5
 // Size: 0x4b
@@ -805,7 +805,7 @@ function function_15e35b3d28646e05(objectivestruct, var_dcd66f3ea861d2a2, var_5d
     completeobjective(objectivestruct, var_dcd66f3ea861d2a2, var_5dcdfd3a4eff9961);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2708
 // Size: 0x6c
@@ -819,7 +819,7 @@ function function_7850abf9f827db14(var_f2d97351ff0781ba, newstate, wait_time, pl
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x277c
 // Size: 0x5b
@@ -836,7 +836,7 @@ function function_41851a22b94a7feb(var_f2d97351ff0781ba, new_state, wait_time, p
     update_objective_state(var_f2d97351ff0781ba, new_state, play_intro);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x27df
 // Size: 0x2b
@@ -845,11 +845,11 @@ function update_objective_state(var_f2d97351ff0781ba, new_state, play_intro) {
     objective_state(var_f2d97351ff0781ba, new_state);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2812
 // Size: 0xa9
-function function_74fbd2df5669698e(var_3f06e0b17a3b8593, var_92ded4da9f094cac, wait_time) {
+function function_74fbd2df5669698e(first_state, end_state, wait_time) {
     activequests = get_active_objectives();
     if (!isdefined(activequests)) {
         return;
@@ -857,15 +857,15 @@ function function_74fbd2df5669698e(var_3f06e0b17a3b8593, var_92ded4da9f094cac, w
     for (i = 0; i < activequests.size; i++) {
         if (isdefined(activequests[i]) && isdefined(activequests[i].objectiveindex)) {
             objectiveindex = activequests[i].objectiveindex;
-            level thread update_objective_state(objectiveindex, var_3f06e0b17a3b8593, 0);
+            level thread update_objective_state(objectiveindex, first_state, 0);
             if (getdvarint(@"hash_80b4d12585669f54", 0) > 0) {
-                level thread function_41851a22b94a7feb(objectiveindex, var_92ded4da9f094cac, wait_time, 0);
+                level thread function_41851a22b94a7feb(objectiveindex, end_state, wait_time, 0);
             }
         }
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x28c3
 // Size: 0x46
@@ -875,7 +875,7 @@ function function_4060f86cf056cf74(notification, val) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2911
 // Size: 0x128
@@ -903,7 +903,7 @@ function watchforobjectivefailure(objectivestruct, var_dcd66f3ea861d2a2, var_5dc
     tryrunnextobjective(objectivestruct, 0);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a41
 // Size: 0x4b
@@ -919,19 +919,19 @@ function mark_objective_failed(name) {
     objective_state(index, "failed");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a94
 // Size: 0xe1
-function lua_objective_complete(var_7e4818482caca9b2) {
-    var_9381e429530b0dc6 = check_event_flag(var_7e4818482caca9b2);
-    if (!istrue(var_9381e429530b0dc6)) {
-        var_159fa119be87c25 = get_objective_slot(var_7e4818482caca9b2);
-        var_d44a3d0c31d349c3 = check_for_objective_timer(var_7e4818482caca9b2);
+function lua_objective_complete(message_ref) {
+    event_flag = check_event_flag(message_ref);
+    if (!istrue(event_flag)) {
+        objective_slot = get_objective_slot(message_ref);
+        var_d44a3d0c31d349c3 = check_for_objective_timer(message_ref);
         if (var_d44a3d0c31d349c3) {
             reset_objective_timers();
         }
-        switch (var_159fa119be87c25) {
+        switch (objective_slot) {
         case 1:
             setomnvar("cp_objective_sub_1_complete", 1);
             break;
@@ -951,19 +951,19 @@ function lua_objective_complete(var_7e4818482caca9b2) {
     reset_event_timers();
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b7d
 // Size: 0xdb
-function lua_objective_incomplete(var_7e4818482caca9b2, var_9381e429530b0dc6) {
-    var_9381e429530b0dc6 = check_event_flag(var_7e4818482caca9b2);
-    if (!istrue(var_9381e429530b0dc6)) {
-        var_159fa119be87c25 = get_objective_slot(var_7e4818482caca9b2);
-        var_d44a3d0c31d349c3 = check_for_objective_timer(var_7e4818482caca9b2);
+function lua_objective_incomplete(message_ref, event_flag) {
+    event_flag = check_event_flag(message_ref);
+    if (!istrue(event_flag)) {
+        objective_slot = get_objective_slot(message_ref);
+        var_d44a3d0c31d349c3 = check_for_objective_timer(message_ref);
         if (var_d44a3d0c31d349c3) {
             reset_objective_timers();
         }
-        switch (var_159fa119be87c25) {
+        switch (objective_slot) {
         case 1:
             setomnvar("cp_objective_sub_1_complete", 0);
             break;
@@ -983,17 +983,17 @@ function lua_objective_incomplete(var_7e4818482caca9b2, var_9381e429530b0dc6) {
     reset_event_timers();
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c60
 // Size: 0x8c
-function check_for_objective_timer(var_7e4818482caca9b2) {
+function check_for_objective_timer(message_ref) {
     timer1 = undefined;
-    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[var_7e4818482caca9b2])) {
-        timer1 = level.objectivestabledata[var_7e4818482caca9b2].timer1;
+    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[message_ref])) {
+        timer1 = level.objectivestabledata[message_ref].timer1;
     }
     if (isdefined(level.objectives_table) && !isdefined(timer1)) {
-        timer1 = int(tablelookup(level.objectives_table, 1, var_7e4818482caca9b2, 9));
+        timer1 = int(tablelookup(level.objectives_table, 1, message_ref, 9));
     }
     if (isdefined(timer1) && timer1 > 0) {
         return 1;
@@ -1001,7 +1001,7 @@ function check_for_objective_timer(var_7e4818482caca9b2) {
     return 0;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cf4
 // Size: 0x8a
@@ -1020,7 +1020,7 @@ function reset_objective_slots() {
     setomnvar("cp_objective_sub_count_4", -1);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d86
 // Size: 0x26
@@ -1030,7 +1030,7 @@ function reset_objective_timers() {
     setomnvar("cp_countdown_color", 0);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2db4
 // Size: 0x26
@@ -1040,44 +1040,44 @@ function reset_event_timers() {
     setomnvar("cp_countdown_event_color", 0);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2de2
 // Size: 0x40
-function reset_subobjective_slot(var_7e4818482caca9b2) {
-    slot = get_objective_slot(var_7e4818482caca9b2);
+function reset_subobjective_slot(message_ref) {
+    slot = get_objective_slot(message_ref);
     setomnvar("cp_objective_sub_" + slot + "_index", 0);
     setomnvar("cp_objective_sub_count_" + slot, -1);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e2a
 // Size: 0x8d
-function check_event_flag(var_7e4818482caca9b2) {
-    var_9381e429530b0dc6 = undefined;
-    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[var_7e4818482caca9b2])) {
-        var_9381e429530b0dc6 = level.objectivestabledata[var_7e4818482caca9b2].eventflag;
+function check_event_flag(message_ref) {
+    event_flag = undefined;
+    if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[message_ref])) {
+        event_flag = level.objectivestabledata[message_ref].eventflag;
     }
-    if (isdefined(level.objectives_table) && !isdefined(var_9381e429530b0dc6)) {
-        var_9381e429530b0dc6 = int(tablelookup(level.objectives_table, 1, var_7e4818482caca9b2, 31));
+    if (isdefined(level.objectives_table) && !isdefined(event_flag)) {
+        event_flag = int(tablelookup(level.objectives_table, 1, message_ref, 31));
     }
-    if (isdefined(var_9381e429530b0dc6) && var_9381e429530b0dc6 == 1) {
+    if (isdefined(event_flag) && event_flag == 1) {
         return 1;
     }
     return 0;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ebf
 // Size: 0x108
-function reset_objective_omnvars(var_7e4818482caca9b2) {
-    var_9381e429530b0dc6 = check_event_flag(var_7e4818482caca9b2);
-    if (!istrue(var_9381e429530b0dc6)) {
-        var_159fa119be87c25 = get_objective_slot(var_7e4818482caca9b2);
-        function_a245aa068aad0c25(var_159fa119be87c25);
-        switch (var_159fa119be87c25) {
+function reset_objective_omnvars(message_ref) {
+    event_flag = check_event_flag(message_ref);
+    if (!istrue(event_flag)) {
+        objective_slot = get_objective_slot(message_ref);
+        function_a245aa068aad0c25(objective_slot);
+        switch (objective_slot) {
         case 1:
             setomnvar("cp_objective_sub_1_index", 0);
             setomnvar("cp_objective_sub_count_1", -1);
@@ -1102,7 +1102,7 @@ function reset_objective_omnvars(var_7e4818482caca9b2) {
     setomnvar("cp_objective_event_count", -1);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fcf
 // Size: 0x96
@@ -1123,7 +1123,7 @@ function watchfordebugcompletion(objectivestruct, var_dcd66f3ea861d2a2, var_5dcd
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x306d
 // Size: 0x1b
@@ -1131,7 +1131,7 @@ function debugbeatobjective(objectivename) {
     level notify("debug_beat_" + objectivename + "_objective");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3090
 // Size: 0xc4
@@ -1149,7 +1149,7 @@ function createdevguientryforobjective(objectivestruct) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x315c
 // Size: 0xb
@@ -1157,7 +1157,7 @@ function addprintlinetext(var_dcd66f3ea861d2a2) {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x316f
 // Size: 0x78
@@ -1174,7 +1174,7 @@ function initializeobjective(objectivestruct, var_dcd66f3ea861d2a2, var_5dcdfd3a
     objectivestruct notify("objective_initialized");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x31ef
 // Size: 0x11d
@@ -1200,7 +1200,7 @@ function function_a51fcb4045af8a4c(var_dcd66f3ea861d2a2, var_5dcdfd3a4eff9961) {
     tryrunnextobjective(objectivestruct, 1);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3314
 // Size: 0x99
@@ -1218,7 +1218,7 @@ function startobjective(objectivestruct, var_dcd66f3ea861d2a2, var_5dcdfd3a4eff9
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x33b5
 // Size: 0x41
@@ -1230,7 +1230,7 @@ function function_d0218c674cea5dc3(var_dcd66f3ea861d2a2) {
     level.active_objectives_string = level.active_objectives_string + "," + var_dcd66f3ea861d2a2;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x33fe
 // Size: 0x1e5
@@ -1269,7 +1269,7 @@ function completeobjective(objectivestruct, var_dcd66f3ea861d2a2, var_5dcdfd3a4e
     objectivestruct notify(var_dcd66f3ea861d2a2 + "_completed");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x35eb
 // Size: 0xa5
@@ -1287,7 +1287,7 @@ function function_4312a455bfdaa469(objectivestruct, var_dcd66f3ea861d2a2, var_5d
     objectivestruct notify(var_dcd66f3ea861d2a2 + "_completed");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3698
 // Size: 0x71
@@ -1307,7 +1307,7 @@ function delete_objective(name) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3711
 // Size: 0xda
@@ -1328,7 +1328,7 @@ function tryrunnextobjective(objectivestruct, var_a5c6e6f71769ad99) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37f3
 // Size: 0xe1
@@ -1353,7 +1353,7 @@ function remove_from_active_quests(objectivestruct) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x38dc
 // Size: 0xdf
@@ -1373,7 +1373,7 @@ function findandrunrandomprimaryobjective() {
     thread run_objective(random(primaryobjectives).ref);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x39c3
 // Size: 0x2
@@ -1381,7 +1381,7 @@ function initobjectivehud() {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x39cd
 // Size: 0xb
@@ -1389,7 +1389,7 @@ function setlevelobjectivetext(text) {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x39e0
 // Size: 0x2
@@ -1397,7 +1397,7 @@ function clearobjectivetext() {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x39ea
 // Size: 0x13
@@ -1405,7 +1405,7 @@ function setobjectivetextforplayer(player, text) {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a05
 // Size: 0xb
@@ -1413,7 +1413,7 @@ function clearobjectivetextforplayer(player) {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a18
 // Size: 0x9
@@ -1421,7 +1421,7 @@ function blankobjectivefunc() {
     level endon("new_objective_chosen");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a29
 // Size: 0x87
@@ -1435,15 +1435,15 @@ function setomnvarbasedonindex(index) {
     setomnvar("cp_objective_index", 0);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ab8
 // Size: 0x21
-function setobjectivetocompleteanddroploot(var_df071553d0996ff9, player) {
-    var_df071553d0996ff9.completedobjective = 1;
+function setobjectivetocompleteanddroploot(interaction_struct, player) {
+    interaction_struct.completedobjective = 1;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ae1
 // Size: 0x141
@@ -1478,7 +1478,7 @@ function create_objective_waypoint(origin, team, shader, alpha, scale) {
     return waypoint;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c2b
 // Size: 0x61
@@ -1496,7 +1496,7 @@ function destroy_objective_waypoint(var_bdc9be1e8d868b84, var_5d6af369e433bf0d, 
     var_bdc9be1e8d868b84 destroy();
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c94
 // Size: 0x2
@@ -1504,7 +1504,7 @@ function give_objective_skillpoints() {
     
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c9e
 // Size: 0x3ca
@@ -1560,7 +1560,7 @@ function default_init_objective(objectivestruct, var_c8e8379712763a61) {
     add_objective(sname, var_672b0e8c8d60b53b, var_c9b351269a319209, var_76519454e15d81d8, slabel, icon, var_c2ca522a99b04a12, stype, objectivestruct, var_c8e8379712763a61);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4070
 // Size: 0x443
@@ -1647,7 +1647,7 @@ function defaultcompleteobjective(objectivestruct, var_673ee5e7ddb8a56a) {
     level.completedobjectives[level.completedobjectives.size] = objectivestruct;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x44bb
 // Size: 0x37
@@ -1655,7 +1655,7 @@ function does_team_have_active_chain(team) {
     return isdefined(level.currentteamobjectivechain) && isdefined(level.currentteamobjectivechain[team]) && level.currentteamobjectivechain[team].size > 0;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x44fb
 // Size: 0x66
@@ -1672,7 +1672,7 @@ function add_to_list_of_current_chain_idx(objectivestruct, team) {
     level.currentteamobjectivechain[team][level.currentteamobjectivechain[team].size] = objectivestruct;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4569
 // Size: 0x86
@@ -1685,7 +1685,7 @@ function delete_all_team_chain_objectives(team) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x45f7
 // Size: 0x27
@@ -1699,7 +1699,7 @@ function delay_delete_objective(objectiveindex, delay_time) {
     objective_delete(objectiveindex);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4626
 // Size: 0x7e
@@ -1714,7 +1714,7 @@ function checkpoint_revive() {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x46ac
 // Size: 0x282
@@ -1770,7 +1770,7 @@ function add_objective(name, state, position, text, var_44acebb5ec08d85d, iconna
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4936
 // Size: 0x14f
@@ -1811,7 +1811,7 @@ function startprogresstimer(objectivestruct, var_7add62896f072eb8, reversed) {
     objective_set_progress(objectivestruct.objectiveindex, var_6939f739bef3dab9);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a8d
 // Size: 0x25
@@ -1819,7 +1819,7 @@ function set_nearby_console(objectivestruct) {
     objectivestruct.nearby_players[objectivestruct.nearby_players.size] = self;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4aba
 // Size: 0x1ea
@@ -1850,8 +1850,8 @@ function show_to_players_that_are_near(index, position, objectivestruct, dist_ov
         } else {
             minimap_objective_pin_global(index, 0);
             objectivestruct.nearby_players = [];
-            var_6bcd40d4aae48211 = get_array_of_closest(position, level.players, undefined, undefined, dist);
-            array_call(var_6bcd40d4aae48211, &set_nearby_console, objectivestruct);
+            closest_players = get_array_of_closest(position, level.players, undefined, undefined, dist);
+            array_call(closest_players, &set_nearby_console, objectivestruct);
             var_fb5515ee07f47db0 = 0;
             foreach (player in level.players) {
                 if (istrue(player.disable_objective_update)) {
@@ -1872,7 +1872,7 @@ function show_to_players_that_are_near(index, position, objectivestruct, dist_ov
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cac
 // Size: 0xd3
@@ -1903,7 +1903,7 @@ function watchfornearbyplayers(index, position, objectivestruct, dist_override) 
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d87
 // Size: 0x2c
@@ -1913,7 +1913,7 @@ function unset_all_locations(id) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4dbb
 // Size: 0x91
@@ -1931,7 +1931,7 @@ function initobjectiveicons() {
     level.worldobjidpool = worldobjidpool;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e54
 // Size: 0x7a
@@ -1948,7 +1948,7 @@ function requestminimapid(priority) {
     return objid;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ed7
 // Size: 0xa0
@@ -1963,7 +1963,7 @@ function removebestminimapid(prioritymax) {
     return returnminimapid(query[0].objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f80
 // Size: 0x60
@@ -1974,7 +1974,7 @@ function comparepriorityandtime(a, b) {
     return a.priority < b.priority;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fe8
 // Size: 0x111
@@ -2000,7 +2000,7 @@ function getnextminimapid(priority) {
     return nextid;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5102
 // Size: 0xb8
@@ -2020,7 +2020,7 @@ function returnminimapid(objid) {
     return true;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x51c3
 // Size: 0x8b
@@ -2034,7 +2034,7 @@ function function_cabeebf04bbbf02d(identifier) {
     return undefined;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5257
 // Size: 0xb1
@@ -2057,7 +2057,7 @@ function requestworldid(identifier, priority) {
     return var_302c9ba2263554ea;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5311
 // Size: 0xdf
@@ -2081,7 +2081,7 @@ function function_c0663d9578eb8bbb(objid) {
     return objid;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x53f9
 // Size: 0xa8
@@ -2097,7 +2097,7 @@ function freeworldid(identifier) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x54a9
 // Size: 0x98
@@ -2113,7 +2113,7 @@ function freeworldidbyobjid(objid) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5549
 // Size: 0xc0
@@ -2131,7 +2131,7 @@ function removebestworldid(prioritymax) {
     return internal_reclaimworldid(query[0].objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5612
 // Size: 0x198
@@ -2167,7 +2167,7 @@ function getnextworldid(priority) {
     return nextid;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x57b3
 // Size: 0x142
@@ -2200,7 +2200,7 @@ function internal_reclaimworldid(objid) {
     return true;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x58fe
 // Size: 0x68
@@ -2213,7 +2213,7 @@ function is_objective_active(var_82b6ee472031a48b) {
     return false;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x596f
 // Size: 0x79
@@ -2235,7 +2235,7 @@ function _add_objective(objectivenumber, state, position, iconname, iconsize) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x59f0
 // Size: 0x3f
@@ -2246,7 +2246,7 @@ function minimap_objective_add(objid, state, position, iconshader, iconsize) {
     _add_objective(objid, state, position, iconshader, iconsize);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a37
 // Size: 0x23
@@ -2257,7 +2257,7 @@ function minimap_objective_state(objid, state) {
     objective_state(objid, state);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a62
 // Size: 0x23
@@ -2268,7 +2268,7 @@ function minimap_objective_position(objid, position) {
     objective_position(objid, position);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a8d
 // Size: 0x23
@@ -2279,7 +2279,7 @@ function minimap_objective_icon(objid, iconshader) {
     objective_icon(objid, iconshader);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ab8
 // Size: 0x23
@@ -2290,7 +2290,7 @@ function minimap_objective_setbackground(objid, type) {
     objective_setbackground(objid, type);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ae3
 // Size: 0x23
@@ -2301,7 +2301,7 @@ function minimap_objective_onentity(objid, ent) {
     objective_onentity(objid, ent);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b0e
 // Size: 0x2c
@@ -2313,7 +2313,7 @@ function minimap_objective_onentitywithrotation(objid, ent) {
     objective_setrotateonminimap(objid, 1);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b42
 // Size: 0x23
@@ -2324,7 +2324,7 @@ function minimap_objective_setzoffset(objid, offset) {
     objective_setzoffset(objid, offset);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b6d
 // Size: 0x31
@@ -2337,7 +2337,7 @@ function minimap_objective_player(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ba6
 // Size: 0x31
@@ -2350,7 +2350,7 @@ function minimap_objective_team(objid, team) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5bdf
 // Size: 0x21
@@ -2362,7 +2362,7 @@ function minimap_objective_playermask_hidefromall(objid) {
     objective_hidefromplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c08
 // Size: 0x2a
@@ -2374,7 +2374,7 @@ function minimap_objective_playermask_hidefrom(objid, ent) {
     objective_removeclientfrommask(objid, ent);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c3a
 // Size: 0x2a
@@ -2386,7 +2386,7 @@ function minimap_objective_playermask_showto(objid, ent) {
     objective_addclienttomask(objid, ent);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c6c
 // Size: 0x21
@@ -2398,7 +2398,7 @@ function minimap_objective_playermask_showtoall(objid) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c95
 // Size: 0x52
@@ -2415,7 +2415,7 @@ function minimap_objective_playerteam(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5cef
 // Size: 0x52
@@ -2432,7 +2432,7 @@ function minimap_objective_playerenemyteam(objid, ent) {
     objective_hidefromplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d49
 // Size: 0x2a
@@ -2444,7 +2444,7 @@ function minimap_objective_team_addtomask(objid, team) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d7b
 // Size: 0x2a
@@ -2456,7 +2456,7 @@ function minimap_objective_team_removefrommask(objid, team) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5dad
 // Size: 0x23
@@ -2467,7 +2467,7 @@ function minimap_objective_pin_global(objid, pin) {
     objective_setpinned(objid, pin);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5dd8
 // Size: 0x23
@@ -2478,7 +2478,7 @@ function minimap_objective_pin_team(objid, team) {
     objective_pinforteam(objid, team);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e03
 // Size: 0x23
@@ -2489,7 +2489,7 @@ function minimap_objective_unpin_team(objid, team) {
     objective_unpinforteam(objid, team);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e2e
 // Size: 0x23
@@ -2500,7 +2500,7 @@ function minimap_objective_pin_player(objid, player) {
     objective_pinforclient(objid, player);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e59
 // Size: 0x23
@@ -2511,7 +2511,7 @@ function minimap_objective_unpin_player(objid, player) {
     objective_unpinforclient(objid, player);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e84
 // Size: 0x23
@@ -2522,7 +2522,7 @@ function objective_set_hot(objid, bool) {
     objective_sethot(objid, bool);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5eaf
 // Size: 0x23
@@ -2533,7 +2533,7 @@ function objective_show_progress(objid, show) {
     objective_setshowprogress(objid, show);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5eda
 // Size: 0x23
@@ -2544,7 +2544,7 @@ function objective_show_team_progress(objid, team) {
     objective_showprogressforteam(objid, team);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f05
 // Size: 0x23
@@ -2555,7 +2555,7 @@ function objective_hide_team_progress(objid, team) {
     objective_hideprogressforteam(objid, team);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f30
 // Size: 0x23
@@ -2566,7 +2566,7 @@ function objective_show_player_progress(objid, player) {
     objective_showprogressforclient(objid, player);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f5b
 // Size: 0x23
@@ -2577,7 +2577,7 @@ function objective_hide_player_progress(objid, player) {
     objective_hideprogressforclient(objid, player);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f86
 // Size: 0x23
@@ -2588,7 +2588,7 @@ function objective_set_progress(objid, progress) {
     objective_setprogress(objid, progress);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fb1
 // Size: 0x23
@@ -2599,7 +2599,7 @@ function objective_set_progress_team(objid, team) {
     objective_setprogressteam(objid, team);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fdc
 // Size: 0x23
@@ -2610,7 +2610,7 @@ function objective_set_progress_client(objid, player) {
     objective_setprogressclient(objid, player);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6007
 // Size: 0x23
@@ -2621,7 +2621,7 @@ function objective_set_play_intro(objid, show) {
     objective_setplayintro(objid, show);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6032
 // Size: 0x23
@@ -2632,7 +2632,7 @@ function objective_set_play_outro(objid, show) {
     objective_setplayoutro(objid, show);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x605d
 // Size: 0x23
@@ -2643,11 +2643,11 @@ function objective_set_pulsate(objid, pulse) {
     objective_setpulsate(objid, pulse);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x6088
 // Size: 0x1a0
-function update_objective(name, state, position, var_9e3ea33dc78e3908, label, var_6d3f81546283a608, icon, var_c8ba7d7310a522e1, should_play_intro, var_2d17a4ab32a30541) {
+function update_objective(name, state, position, var_9e3ea33dc78e3908, label, var_6d3f81546283a608, icon, background_preset, should_play_intro, var_2d17a4ab32a30541) {
     if (!isdefined(level.objectivestabledata[name])) {
         return;
     }
@@ -2686,8 +2686,8 @@ function update_objective(name, state, position, var_9e3ea33dc78e3908, label, va
     if (isdefined(icon)) {
         objective_icon(index, icon);
     }
-    if (isdefined(var_c8ba7d7310a522e1)) {
-        objective_setbackground(index, var_c8ba7d7310a522e1);
+    if (isdefined(background_preset)) {
+        objective_setbackground(index, background_preset);
     }
     function_215a200907638b6e();
     setomnvarbasedonindex(0);
@@ -2698,7 +2698,7 @@ function update_objective(name, state, position, var_9e3ea33dc78e3908, label, va
     function_7850abf9f827db14(index, newstate, undefined, istrue(should_play_intro));
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6230
 // Size: 0x6d
@@ -2712,7 +2712,7 @@ function getobjectiveforfloor(var_7fa79ccde6800a5e) {
     thread run_objective(var_9f552ac3a1c58174.ref, var_9f552ac3a1c58174.questtype);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x62a5
 // Size: 0xb
@@ -2720,16 +2720,16 @@ function get_active_objectives() {
     return level.activequests;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x62b9
 // Size: 0x8e
-function get_objective_type(var_7e4818482caca9b2) {
+function get_objective_type(message_ref) {
     if (!isdefined(level.objectivestabledata)) {
         return;
     }
     foreach (objectivestruct in level.objectivestabledata) {
-        if (objectivestruct.ref == var_7e4818482caca9b2) {
+        if (objectivestruct.ref == message_ref) {
             if (isdefined(objectivestruct.questtype)) {
                 return objectivestruct.questtype;
             }
@@ -2738,25 +2738,25 @@ function get_objective_type(var_7e4818482caca9b2) {
     return undefined;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x6350
 // Size: 0x9b
-function create_breadcrumb_for_team(team, var_da9f87445b20f758, var_6de56dbbc90a7cbd, iconname) {
+function create_breadcrumb_for_team(team, var_da9f87445b20f758, breadcrumb_label, iconname) {
     players = getplayersinteam(team);
     var_f02b9c5f28f98df5 = [];
     foreach (player in players) {
-        var_f02b9c5f28f98df5[var_f02b9c5f28f98df5.size] = create_breadcrumb_for_player(player, var_da9f87445b20f758, var_6de56dbbc90a7cbd, iconname);
+        var_f02b9c5f28f98df5[var_f02b9c5f28f98df5.size] = create_breadcrumb_for_player(player, var_da9f87445b20f758, breadcrumb_label, iconname);
         wait 0.5;
     }
     return var_f02b9c5f28f98df5;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x63f4
 // Size: 0x1f4
-function create_breadcrumb_for_player(player, var_da9f87445b20f758, var_6de56dbbc90a7cbd, iconname) {
+function create_breadcrumb_for_player(player, var_da9f87445b20f758, breadcrumb_label, iconname) {
     if (!isdefined(level.activebreadcrumbs)) {
         level.activebreadcrumbs = [];
     }
@@ -2781,8 +2781,8 @@ function create_breadcrumb_for_player(player, var_da9f87445b20f758, var_6de56dbb
     } else {
         var_4f5586ff3cac9451.iconname = "icon_waypoint_objective_general";
     }
-    if (isdefined(var_6de56dbbc90a7cbd)) {
-        var_4f5586ff3cac9451.label = var_6de56dbbc90a7cbd;
+    if (isdefined(breadcrumb_label)) {
+        var_4f5586ff3cac9451.label = breadcrumb_label;
     }
     var_4f5586ff3cac9451.player = player;
     index = 0;
@@ -2795,7 +2795,7 @@ function create_breadcrumb_for_player(player, var_da9f87445b20f758, var_6de56dbb
     return var_4f5586ff3cac9451;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x65f1
 // Size: 0x34
@@ -2803,17 +2803,17 @@ function compare_breadcrumb_order(a, b) {
     return int(a.targetname) < int(b.targetname);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x662e
 // Size: 0x11b
-function watchforplayernearbcrumb(var_b08291cd2f6bd3d8) {
+function watchforplayernearbcrumb(index_override) {
     level endon("game_ended");
     self endon("breadcrumb_finished");
     player = self.player;
     curindex = 0;
-    if (isdefined(var_b08291cd2f6bd3d8)) {
-        curindex = var_b08291cd2f6bd3d8;
+    if (isdefined(index_override)) {
+        curindex = index_override;
     }
     lastindex = self.stepstructs.size;
     distsq = 90000;
@@ -2836,7 +2836,7 @@ function watchforplayernearbcrumb(var_b08291cd2f6bd3d8) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6751
 // Size: 0x37
@@ -2847,7 +2847,7 @@ function get_bcrumbstruct_proximity(var_4f5586ff3cac9451, index) {
     return 90000;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6791
 // Size: 0x161
@@ -2873,7 +2873,7 @@ function update_breadcrumb_for_player(var_4f5586ff3cac9451, index) {
     objective_state(var_4f5586ff3cac9451.id, "current");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x68fa
 // Size: 0x62
@@ -2886,7 +2886,7 @@ function delete_breadcrumb(objstruct) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6964
 // Size: 0x54
@@ -2896,7 +2896,7 @@ function delete_breadcrumb_array(var_b03c3da266132086) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x69c0
 // Size: 0x34
@@ -2907,13 +2907,13 @@ function objective_minimapupdate(objectiveindex) {
     level notify("objective_minimapUpdate");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x69fc
 // Size: 0x7e
 function give_objective_xp_to_all_players(type) {
     if (!isdefined(type)) {
-        type = #"hash_b4b6f2ba2523025e";
+        type = #"minor_objective";
     }
     foreach (player in level.players) {
         player thread namespace_5aac85eab99c40a::giverankxp(type, namespace_5aac85eab99c40a::getscoreinfovalue(type));
@@ -2921,7 +2921,7 @@ function give_objective_xp_to_all_players(type) {
     level notify("give_objective_xp_to_all_players", type);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a82
 // Size: 0x89
@@ -2935,7 +2935,7 @@ function increment_player_participation() {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b13
 // Size: 0x1ac
@@ -2946,8 +2946,8 @@ function prepare_mission_failed_text(objectivename) {
     }
     if (isdefined(level.objectivestabledata) && isdefined(level.objectivestabledata[objectivestruct.objname])) {
         var_58aa18381e030864 = level.objectivestabledata[objectivestruct.objname].index;
-        var_dc028d1a1b4185e6 = level.objectivestabledata[objectivestruct.objname].failedtext;
-        if (isdefined(var_dc028d1a1b4185e6) && var_dc028d1a1b4185e6 != "") {
+        failed_text = level.objectivestabledata[objectivestruct.objname].failedtext;
+        if (isdefined(failed_text) && failed_text != "") {
             foreach (player in level.players) {
                 player setclientomnvar("ui_cp_mission_fail_index", var_58aa18381e030864);
             }
@@ -2963,7 +2963,7 @@ function prepare_mission_failed_text(objectivename) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6cc7
 // Size: 0x155
@@ -2996,7 +2996,7 @@ function run_debug_start_objective(var_2c54f5164c98d2d) {
     }
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6e24
 // Size: 0x2a
@@ -3008,7 +3008,7 @@ function objective_playermask_hidefrom(objid, ent) {
     objective_showtoplayersinmask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6e56
 // Size: 0x2a
@@ -3022,7 +3022,7 @@ function objective_playermask_addshowplayer(objid, ent) {
 
 /#
 
-    // Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+    // Namespace cp_objectives / scripts\cp\cp_objectives
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x6e88
     // Size: 0x120
@@ -3055,7 +3055,7 @@ function objective_playermask_addshowplayer(objid, ent) {
 
 #/
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6fb0
 // Size: 0x1b
@@ -3063,7 +3063,7 @@ function showquestobjicontoplayer(player) {
     objective_addclienttomask(self.objectiveiconid, player);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6fd3
 // Size: 0x1b
@@ -3071,7 +3071,7 @@ function hidequestobjiconfromplayer(player) {
     objective_removeclientfrommask(self.objectiveiconid, player);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ff6
 // Size: 0x16f
@@ -3092,7 +3092,7 @@ function function_3e3f7e6442d2ee69(slotindex, objstruct) {
     #/
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x716d
 // Size: 0xc7
@@ -3109,7 +3109,7 @@ function function_a245aa068aad0c25(slotindex) {
     #/
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x723c
 // Size: 0xeb
@@ -3125,7 +3125,7 @@ function function_531e694c49fc6238(objstruct) {
     #/
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x732f
 // Size: 0x78
@@ -3138,7 +3138,7 @@ function function_44eb8f15c8b0f94c() {
     #/
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x73af
 // Size: 0xeb
@@ -3154,7 +3154,7 @@ function function_393d1a6fdf1b49a8(objstruct) {
     #/
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x74a2
 // Size: 0x78
@@ -3167,7 +3167,7 @@ function function_215a200907638b6e() {
     #/
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7522
 // Size: 0xc
@@ -3175,7 +3175,7 @@ function function_9a19ccf8dc6c3caf() {
     return istrue(self.pinobj);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7537
 // Size: 0x77
@@ -3186,7 +3186,7 @@ function function_dc06030ceb03363b() {
     return false;
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x75b7
 // Size: 0x102
@@ -3209,7 +3209,7 @@ function createquestobjicon(iconref, state, var_38116998df9814d4) {
     println(self.category + "<dev string:x259>");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x76c1
 // Size: 0x12
@@ -3217,7 +3217,7 @@ function showquestobjicontoall(objid) {
     objective_addalltomask(objid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x76db
 // Size: 0x22
@@ -3228,7 +3228,7 @@ function deletequestobjicon() {
     freeworldidbyobjid(self.objectiveiconid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7705
 // Size: 0x1b
@@ -3236,7 +3236,7 @@ function movequestobjicon(neworigin) {
     objective_position(self.objectiveiconid, neworigin);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7728
 // Size: 0xc
@@ -3244,7 +3244,7 @@ function checkforactiveobjicon() {
     return isdefined(self.objectiveiconid);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x773d
 // Size: 0x20
@@ -3252,7 +3252,7 @@ function function_e18920c0717c1b4e(boolean) {
     level.player setclientomnvar("ui_objective_reveal_fanfare_enabled", boolean);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7765
 // Size: 0x20
@@ -3260,7 +3260,7 @@ function function_84126bde5bb3888b(boolean) {
     level.player setclientomnvar("ui_objective_dismiss_fanfare_enabled", boolean);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x778d
 // Size: 0x15
@@ -3268,7 +3268,7 @@ function function_4e1c4a6c6eec1568() {
     return level.player getclientomnvar("ui_objective_reveal_fanfare_enabled");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x77ab
 // Size: 0xa3
@@ -3290,7 +3290,7 @@ function function_b338aa1e9ec37fbd(displaytime) {
     flag_clear("objective_splash_onscreen");
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7856
 // Size: 0x66
@@ -3304,18 +3304,18 @@ function function_3ea9346c75f0a9bc(displaytime) {
     level.player setclientomnvar("ui_show_objectives_force", 0);
 }
 
-// Namespace namespace_e8ce0059cd9e3f73 / scripts\cp\cp_objectives
+// Namespace cp_objectives / scripts\cp\cp_objectives
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x78c4
 // Size: 0xb5
-function function_b26ad6615e6cf8ce(start_flag, var_9f0d03d1b41551c5) {
+function function_b26ad6615e6cf8ce(start_flag, end_flag) {
     level endon("game_ended");
     if (isdefined(start_flag)) {
         flag_wait(start_flag);
     }
     level.player setclientomnvar("ui_show_objectives", 1);
-    if (isdefined(var_9f0d03d1b41551c5)) {
-        flag_wait(var_9f0d03d1b41551c5);
+    if (isdefined(end_flag)) {
+        flag_wait(end_flag);
     } else {
         while (true) {
             result = level function_28551e899093b138("objectives_updated_state", "objectives_updated");

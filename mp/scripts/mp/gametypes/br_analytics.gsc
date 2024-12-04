@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_58f20490049af6ac;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using script_728ffcee8cbf30ee;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_3ff084f114b7f6c9;
-#using script_744cad313ed0a87e;
-#using script_4948cdf739393d2d;
 #using script_371b4c2ab5861e62;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\matchdata.gsc;
-#using scripts\mp\poi.gsc;
+#using script_3ff084f114b7f6c9;
+#using script_4948cdf739393d2d;
+#using script_58f20490049af6ac;
+#using script_728ffcee8cbf30ee;
+#using script_744cad313ed0a87e;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\matchdata;
+#using scripts\mp\poi;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace br_analytics;
 
@@ -1098,8 +1098,8 @@ function branalytics_economy_snapshot(activeplayers) {
             teammin = var_aaa3a2b391a4d25b[player.team];
         }
     }
-    var_53dca488a704d8e7 = int(safedivide(totalplunder, activeplayers.size));
-    var_8da025f6da65d8d3 = int(safedivide(totalplunder, var_aaa3a2b391a4d25b.size));
+    player_avg = int(safedivide(totalplunder, activeplayers.size));
+    team_avg = int(safedivide(totalplunder, var_aaa3a2b391a4d25b.size));
     eventparams = [];
     eventparams[eventparams.size] = "num_players_alive";
     eventparams[eventparams.size] = function_3fe52b08c657d074(activeplayers.size);
@@ -1112,9 +1112,9 @@ function branalytics_economy_snapshot(activeplayers) {
     eventparams[eventparams.size] = "top_team_total_plunder_held";
     eventparams[eventparams.size] = function_dcaf784c32fdf05b(teammax);
     eventparams[eventparams.size] = "avg_player_plunder_held";
-    eventparams[eventparams.size] = function_dcaf784c32fdf05b(var_53dca488a704d8e7);
+    eventparams[eventparams.size] = function_dcaf784c32fdf05b(player_avg);
     eventparams[eventparams.size] = "avg_team_total_plunder_held";
-    eventparams[eventparams.size] = function_dcaf784c32fdf05b(var_8da025f6da65d8d3);
+    eventparams[eventparams.size] = function_dcaf784c32fdf05b(team_avg);
     eventparams[eventparams.size] = "min_player_plunder_held";
     eventparams[eventparams.size] = function_f8cfd7cafbc5981e(playermin);
     eventparams[eventparams.size] = "min_team_total_plunder_held";

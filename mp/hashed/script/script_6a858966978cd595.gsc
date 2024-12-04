@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_6a858966978cd595;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace bottle;
 
@@ -15,7 +15,7 @@ function bottle_init() {
     }
     level.g_effect["bottle_break"] = loadfx("vfx/iw9/core/bottle/vfx_bottle_explosion.vfx");
     /#
-        setdvarifuninitialized(@"hash_600f7a3322505cf2", 0);
+        setdvarifuninitialized(@"debug_bottle", 0);
     #/
     globals = level.equipment;
     if (scripts\engine\utility::issharedfuncdefined("equipment", "equipment_init")) {
@@ -97,7 +97,7 @@ function function_a32bb7bb61372225(ai, position, hitpart, hitvelocity) {
     // Checksum 0x0, Offset: 0x4d6
     // Size: 0x14
     function function_402e63d965a03b3c() {
-        return getdvarint(@"hash_600f7a3322505cf2");
+        return getdvarint(@"debug_bottle");
     }
 
 #/

@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_2669878cf5a1b6bc;
 #using script_18661c91de5b5195;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using script_afb7e332aee4bf2;
 #using script_189b67b2735b981d;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\utility\player.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_74502a9e0ef1f19c;
-#using scripts\engine\trace.gsc;
+#using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_8b0201354228db72;
 
@@ -886,7 +886,7 @@ function threatcallouttracking() {
             continue;
         }
         enemycount = 0;
-        var_9b61f16c33beb5c0 = 0;
+        found_enemy = 0;
         dist = 4000000;
         if (self playerads() > 0.7) {
             dist = 6250000;
@@ -895,7 +895,7 @@ function threatcallouttracking() {
         foreach (enemy in enemies) {
             if (isdefined(enemy) && enemy scripts\cp_mp\utility\player_utility::_isalive() && !enemy _hasperk("specialty_coldblooded") && distancesquared(self.origin, enemy.origin) < dist) {
                 location = enemy getvalidlocation(self);
-                var_9b61f16c33beb5c0 = 1;
+                found_enemy = 1;
                 enemycount++;
                 if (isdefined(location) && !saidtoorecently(#"callout_location") && friendly_nearby(4840000)) {
                     if (_hasperk("specialty_quieter") || !friendly_nearby(262144)) {

@@ -1,14 +1,14 @@
-#using script_104e3370b024f998;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\equipment\gas_grenade.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_6a5d3bf7a5b7064a;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\equipment\temp_v;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\weapons;
 
 #namespace namespace_5e1ef10a2cd37246;
 

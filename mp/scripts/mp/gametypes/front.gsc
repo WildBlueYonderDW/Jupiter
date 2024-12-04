@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\arbitrary_up.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\arbitrary_up;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_util;
+#using scripts\mp\rank;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\points;
 
 #namespace front;
 
@@ -20,7 +20,7 @@
 // Checksum 0x0, Offset: 0x56d
 // Size: 0x1d8
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();

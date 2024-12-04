@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_cbb0697de4c5728;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace player_utility;
 
@@ -1030,7 +1030,7 @@ function isfriendly(var_da8cec9bce12f9cb, var_c4b81997f0120a97) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2204
 // Size: 0x8
-function function_44d612709f857370() {
+function _jumpbuttonpressed() {
     return self jumpbuttonpressed();
 }
 

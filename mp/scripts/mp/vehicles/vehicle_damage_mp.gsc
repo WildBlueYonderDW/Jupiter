@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\events.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\engine\utility;
+#using scripts\mp\events;
+#using scripts\mp\rank;
+#using scripts\mp\utility\points;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_7218c21b35eb429b;
 

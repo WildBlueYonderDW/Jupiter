@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_59ff79d681bb860c;
 #using script_27fdece778e999d8;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\engine\trace.gsc;
+#using script_59ff79d681bb860c;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
 
 #namespace namespace_22333af54656799d;
 

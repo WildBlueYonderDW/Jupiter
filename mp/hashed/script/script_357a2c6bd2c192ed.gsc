@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_608c50392df8c7d1;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
 #using script_17caf3ab35defd13;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\utility\dialog_utility.gsc;
+#using script_3db04fd1b466bdba;
+#using script_608c50392df8c7d1;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\dialog_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
 
 #namespace drone_swarm;
 
@@ -223,8 +223,8 @@ function function_21865cb353bbaf24(streakinfo) {
     if (istrue(bundle.var_1a96eb836648c8bc) && isdefined(bundle.var_432a767eb030d3cb) && bundle.var_432a767eb030d3cb.size > 0) {
         foreach (map in bundle.var_432a767eb030d3cb) {
             if (issubstr(level.mapname, map.name)) {
-                if (isdefined(map.var_dd2423489bbafc5d)) {
-                    self.var_4a76be0b74871ec4 += map.var_dd2423489bbafc5d;
+                if (isdefined(map.swarm_zoffset)) {
+                    self.var_4a76be0b74871ec4 += map.swarm_zoffset;
                 }
                 if (isdefined(map.var_6b078300599a2dd)) {
                     self.var_6f6fa8798d5ee25d = map.var_6b078300599a2dd;

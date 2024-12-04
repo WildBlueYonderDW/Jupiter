@@ -1,19 +1,19 @@
-#using scripts\mp\loot.gsc;
-#using script_48614492ef09b23;
-#using scripts\engine\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using script_1f97a44d1761c919;
 #using script_2d9d24f7c63ac143;
+#using script_48614492ef09b23;
 #using script_600b944a95c3a7bf;
-#using scripts\cp_mp\challenges.gsc;
 #using script_6a8ec730b2bfa844;
 #using script_b7a9ce0a2282b79;
-#using scripts\mp\utility\points.gsc;
-#using script_1f97a44d1761c919;
-#using scripts\mp\poi.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\ae_utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\loot;
+#using scripts\mp\poi;
+#using scripts\mp\utility\points;
 
 #namespace dead_drop;
 

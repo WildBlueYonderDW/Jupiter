@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\challenges.gsc;
 #using script_293ba44c408fef1;
 #using script_6ad351ebd5a33280;
+#using scripts\common\ae_utility;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
 
 #namespace namespace_8774b67219227679;
 
@@ -39,9 +39,9 @@ function function_7e0fb3d81ab13495() {
     if (var_e2e97a737d97f20b < 1) {
         return;
     }
-    var_57accdc40b2f50e = function_7bf95013c0b101c8();
-    success = var_57accdc40b2f50e[1];
-    var_a6521f8c3fdde3ce = var_57accdc40b2f50e[0];
+    __a0 = function_7bf95013c0b101c8();
+    success = __a0[1];
+    var_a6521f8c3fdde3ce = __a0[0];
     if (!success) {
         return;
     }

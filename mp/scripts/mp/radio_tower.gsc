@@ -1,8 +1,8 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\system.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace radio_tower;
 

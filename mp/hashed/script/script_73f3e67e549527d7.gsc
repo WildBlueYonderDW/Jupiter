@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
 
 #namespace namespace_b91ea62e7515f41c;
 

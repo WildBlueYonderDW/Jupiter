@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
 
 #namespace mapselect;
 

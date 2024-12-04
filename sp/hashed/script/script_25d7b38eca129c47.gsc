@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
 #namespace namespace_69b39d9c0dcbae56;
 

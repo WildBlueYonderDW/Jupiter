@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using script_65f58f3c394dcf9a;
-#using script_42db00fecb0fa74d;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using script_48814951e916af89;
 #using script_371b4c2ab5861e62;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\utility\player.gsc;
+#using script_42db00fecb0fa74d;
+#using script_48814951e916af89;
 #using script_64acb6ce534155b7;
+#using script_65f58f3c394dcf9a;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\poi;
+#using scripts\mp\utility\player;
 
 #namespace namespace_2e202f9e22e98e2c;
 

@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\cranked.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\cranked;
+#using scripts\mp\gameobjects;
+#using scripts\mp\utility\game;
 
 #namespace obj_grindzone;
 

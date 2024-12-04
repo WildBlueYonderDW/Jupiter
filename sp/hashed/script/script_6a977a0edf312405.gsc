@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace fogofwar;
 

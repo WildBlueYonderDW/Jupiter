@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_3f8889c16399185c;
-#using scripts\cp\utility.gsc;
-#using script_2669878cf5a1b6bc;
 #using script_187a04151c40fb72;
-#using scripts\cp\cp_analytics.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_3f8889c16399185c;
+#using scripts\common\utility;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_f125e4a25d33be15;
+#namespace cp_weaponrank;
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x411
 // Size: 0x50
@@ -24,7 +24,7 @@ function init() {
     level thread onplayerconnect();
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x469
 // Size: 0x10e
@@ -50,7 +50,7 @@ function onplayerconnect() {
     }
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x57f
 // Size: 0x2b2
@@ -85,7 +85,7 @@ function loadweaponranktable() {
     assertex(level.weaponranktable.maxweaponranks.size > 0, "Found no valid leveling weapons while parsing StatsTable.csv. This is likely an error");
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x839
 // Size: 0x40
@@ -96,7 +96,7 @@ function getplayerweaponrank(rootweapon) {
     return rank;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x882
 // Size: 0xef
@@ -119,7 +119,7 @@ function getplayerweaponrankxp(rootweapon, type) {
     }
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x979
 // Size: 0x42
@@ -130,7 +130,7 @@ function isplayerweaponatmaxxp(rootweapon) {
     return currentxp >= maxxp;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c4
 // Size: 0x71
@@ -143,7 +143,7 @@ function weaponshouldgetxp(weapon) {
     return weaponhasranks(rootname);
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3e
 // Size: 0x84
@@ -159,7 +159,7 @@ function weaponhasranks(rootname) {
     return hasranks;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xacb
 // Size: 0x34
@@ -169,7 +169,7 @@ function getweaponmaxrankxp(rootweapon) {
     return getweaponrankinfomaxxp(maxrank);
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb08
 // Size: 0x42
@@ -185,7 +185,7 @@ function getweaponrankforxp(xpval) {
     return rankid;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb53
 // Size: 0x30
@@ -194,7 +194,7 @@ function getmaxweaponrankforrootweapon(rootweapon) {
     return level.weaponranktable.maxweaponranks[rootweapon];
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb8c
 // Size: 0x15
@@ -202,7 +202,7 @@ function getmaxweaponrank() {
     return level.weaponranktable.maxrank;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbaa
 // Size: 0x2a
@@ -210,7 +210,7 @@ function getweaponrankinfominxp(rankid) {
     return level.weaponranktable.rankinfo[rankid].minxp;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbdd
 // Size: 0x2a
@@ -218,7 +218,7 @@ function getweaponrankinfoxptonextrank(rankid) {
     return level.weaponranktable.rankinfo[rankid].xptonextrank;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc10
 // Size: 0x2a
@@ -226,7 +226,7 @@ function getweaponrankinfomaxxp(rankid) {
     return level.weaponranktable.rankinfo[rankid].maxxp;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc43
 // Size: 0x28b
@@ -287,7 +287,7 @@ function giveplayerweaponxp(objweapon, type, xp) {
     return xp;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xed7
 // Size: 0x41
@@ -303,7 +303,7 @@ function remapscoreeventforweapon(event) {
     return event;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xf21
 // Size: 0x1d
@@ -311,7 +311,7 @@ function addglobalweaponrankxpmultiplier(multiplier, ref) {
     level addweaponrankxpmultiplier(multiplier, ref);
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf46
 // Size: 0x9
@@ -319,7 +319,7 @@ function getglobalweaponrankxpmultiplier() {
     return level getweaponrankxpmultiplier();
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf58
 // Size: 0x7
@@ -327,7 +327,7 @@ function getplatformweaponrankxpmultiplier() {
     return true;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xf68
 // Size: 0x66
@@ -342,7 +342,7 @@ function addweaponrankxpmultiplier(multiplier, ref) {
     self.weaponrankxpmultipliers[ref] = multiplier;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfd6
 // Size: 0x7c
@@ -360,7 +360,7 @@ function getweaponrankxpmultiplier() {
     return modifiertotal;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x105b
 // Size: 0x14
@@ -368,7 +368,7 @@ function removeglobalweaponrankxpmultiplier(ref) {
     level removeweaponrankxpmultiplier(ref);
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1077
 // Size: 0x60
@@ -384,7 +384,7 @@ function removeweaponrankxpmultiplier(ref) {
     self.rankxpmultipliers[ref] = undefined;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10df
 // Size: 0x6a
@@ -393,11 +393,11 @@ function getweaponrankxpmultipliertotal() {
     globalmodifier = getglobalweaponrankxpmultiplier();
     gametypemodifier = getgametypeweaponxpmultiplier();
     platformmodifier = getplatformweaponrankxpmultiplier();
-    var_82547f9421d4db3d = getdvarfloat(@"hash_e5fe74384334ce18", 1);
-    return playermodifier * globalmodifier * gametypemodifier * var_82547f9421d4db3d * platformmodifier;
+    dev_scalar = getdvarfloat(@"hash_e5fe74384334ce18", 1);
+    return playermodifier * globalmodifier * gametypemodifier * dev_scalar * platformmodifier;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1152
 // Size: 0x61
@@ -411,7 +411,7 @@ function getgametypeweaponxpmultiplier() {
     return level.gametypebundle.var_3c836934a83182a5;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x11bc
 // Size: 0x61
@@ -425,7 +425,7 @@ function getgametypekillsperhouravg() {
     return level.gametypebundle.var_d98341b1a105c7af;
 }
 
-// Namespace namespace_f125e4a25d33be15 / scripts\cp\cp_weaponrank
+// Namespace cp_weaponrank / scripts\cp\cp_weaponrank
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1226
 // Size: 0x9d

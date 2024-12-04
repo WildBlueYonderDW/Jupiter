@@ -1,10 +1,10 @@
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\equipment\armor_plate.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\perk.gsc;
 #using script_7c40fa80892a721;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\equipment\armor_plate;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\perk;
 
 #namespace br_armor;
 

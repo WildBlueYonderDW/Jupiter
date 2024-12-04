@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace mortar_launcher;
 

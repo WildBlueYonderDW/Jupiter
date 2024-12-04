@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\gametypes\wm_objectives.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\wm_utility.gsc;
-#using scripts\mp\gametypes\wm.gsc;
-#using scripts\mp\gametypes\wm_ui.gsc;
-#using scripts\mp\utility\damage.gsc;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\wm;
+#using scripts\mp\gametypes\wm_objectives;
+#using scripts\mp\gametypes\wm_ui;
+#using scripts\mp\gametypes\wm_utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
 
 #namespace namespace_440053aa087d84ad;
 
@@ -467,7 +467,7 @@ function function_966c7001d35327ef(flagzone) {
         } else {
             level.flagbase function_3677f2be30fdd581("model", "green");
         }
-        var_f414affbb2644d5a = level.zone.var_d731642d971f0c49;
+        var_f414affbb2644d5a = level.zone.flag_capture_zone;
         var_f414affbb2644d5a scripts\mp\gameobjects::enableobject();
         var_f414affbb2644d5a scripts\mp\gameobjects::setownerteam(game["defenders"]);
         var_f414affbb2644d5a scripts\mp\gameobjects::allowuse("enemy");

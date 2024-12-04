@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\equipment.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\equipment;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace thermite;
 

@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\toma_strike.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\equipment\molotov.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\toma_strike;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace toma_strike_mp;
 

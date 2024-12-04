@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using script_292b2f4fcd5999c8;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_9880b9dc28bc25e;
-#using scripts\mp\hud_util.gsc;
 #using script_1f97a44d1761c919;
-#using script_7a29618b7ee8f7e6;
+#using script_292b2f4fcd5999c8;
 #using script_38eac2888ef17fd;
+#using script_7a29618b7ee8f7e6;
+#using script_9880b9dc28bc25e;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
 
 #namespace zm_quest;
 
@@ -770,7 +770,7 @@ function function_d424a7b864a53e8b(var_49e0726f42025d89) {
         level.players[0] thread namespace_46474fbe41dfa60d::grab_nuke("nuke", level.players[0], 1, 1, 1);
         return;
     }
-    level.players[0] thread namespace_46474fbe41dfa60d::function_8b529500146929b8(level.players[0].origin, ais, "nuke", 1);
+    level.players[0] thread namespace_46474fbe41dfa60d::nuke_ais(level.players[0].origin, ais, "nuke", 1);
 }
 
 /#

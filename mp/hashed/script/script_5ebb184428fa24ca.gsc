@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
 #using script_7c40fa80892a721;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\damage.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
 
 #namespace namespace_40ededfb94637443;
 
@@ -55,13 +55,13 @@ function private function_f2ce93122d83a204(einflictor, victim, eattacker, idamag
     if (getdvarint(@"hash_b846de437d41a8ef", 1)) {
         if (smeansofdeath == "MOD_PROJECTILE_SPLASH") {
             var_673ae434262aaa44 = victim == eattacker;
-            var_a4d95d3f43faa6a3 = 1;
+            splash_scalar = 1;
             if (getdvarint(@"hash_4b9a04cf1bb4c1f2", 0)) {
                 damagetoownerscalar = var_673ae434262aaa44 ? 0.75 : 1;
-                var_a4d95d3f43faa6a3 = idamage / 1500 * damagetoownerscalar;
+                splash_scalar = idamage / 1500 * damagetoownerscalar;
             }
             idamage = var_673ae434262aaa44 ? getdvarint(@"hash_dbaf380170608765", 50) : getdvarint(@"hash_7baa22b2c2382c66", 150);
-            idamage = int(idamage * var_a4d95d3f43faa6a3);
+            idamage = int(idamage * splash_scalar);
         } else if (smeansofdeath == "MOD_PROJECTILE") {
             idamage = getdvarint(@"hash_90703bd9bb1c3416", 200);
         }

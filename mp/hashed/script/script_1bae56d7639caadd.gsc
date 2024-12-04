@@ -1,27 +1,27 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using script_608c50392df8c7d1;
-#using script_247745a526421ba7;
-#using scripts\engine\scriptable.gsc;
 #using script_1ed1214969b5eba7;
-#using scripts\engine\trace.gsc;
+#using script_608c50392df8c7d1;
 #using script_610f57bddd265be2;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\damage.gsc;
 #using script_736dec95a49487a6;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\utility\debug.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace redeploy_drone_beacon;
 
@@ -742,10 +742,10 @@ function private function_9d6c964e1422e8d1(data) {
     // Checksum 0x0, Offset: 0x1f73
     // Size: 0x96
     function private function_a5f6aa4efd1afbe4(beacon, var_e43451c4c85f5b88, waittime, var_5ae08673376c9361) {
-        var_c00a2c6249962d83 = function_e3ed19e8256d0323(beacon, var_e43451c4c85f5b88);
-        sphereradius = var_c00a2c6249962d83[2];
-        var_dba39463727fdc54 = var_c00a2c6249962d83[1];
-        var_e139d2bb0710565d = var_c00a2c6249962d83[0];
+        __a10 = function_e3ed19e8256d0323(beacon, var_e43451c4c85f5b88);
+        sphereradius = __a10[2];
+        var_dba39463727fdc54 = __a10[1];
+        var_e139d2bb0710565d = __a10[0];
         level thread scripts\cp_mp\utility\debug_utility::drawcylinder(var_e139d2bb0710565d, sphereradius, var_dba39463727fdc54[2] - var_e139d2bb0710565d[2], waittime, var_5ae08673376c9361);
         level thread scripts\mp\utility\debug::drawsphere(var_e139d2bb0710565d, sphereradius, waittime, var_5ae08673376c9361);
         level thread scripts\mp\utility\debug::drawsphere(var_dba39463727fdc54, sphereradius, waittime, var_5ae08673376c9361);

@@ -6,7 +6,7 @@
 // Size: 0x73
 function init() {
     ents = getentarray("destructable", "targetname");
-    if (getdvar(@"hash_22975ef58f3a25e") == "0") {
+    if (getdvar(@"scr_destructables") == "0") {
         for (i = 0; i < ents.size; i++) {
             ents[i] delete();
         }

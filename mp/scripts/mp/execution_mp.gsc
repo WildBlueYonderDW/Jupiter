@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player_frame_update_aggregator.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\execution;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player_frame_update_aggregator;
 
 #namespace execution_mp;
 

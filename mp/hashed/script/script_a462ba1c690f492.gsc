@@ -1,47 +1,47 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_9880b9dc28bc25e;
-#using script_7edf952f8921aa6b;
-#using script_398835140857d740;
-#using script_4ef01fe6151dde4d;
-#using script_79deab1955343d5d;
-#using script_41387eecc35b88bf;
-#using script_185660037b9236c1;
-#using script_4fdefae8b7bcdf73;
-#using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
-#using script_64351208cb856df9;
-#using scripts\asm\shared\mp\utility.gsc;
 #using script_1362708683492300;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_7cfaa6fd841fb4dd;
-#using script_2ff6eb4f5b8663fb;
-#using script_2583ee5680cf4736;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\mp\ai_behavior.gsc;
-#using script_42982ffd0134f28e;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using script_2d05e472a90adb1d;
-#using scripts\common\vehicle_code.gsc;
-#using script_6617e2f2bb62b52b;
+#using script_185660037b9236c1;
+#using script_220d0eb95a8fab7d;
 #using script_2304453c69e996e2;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using script_6f65366f542f6627;
-#using scripts\mp\scoreboard.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using script_7c40fa80892a721;
-#using scripts\mp\perks\perkpackage.gsc;
-#using script_639bf783929acf9b;
-#using script_7b2517368c79e5bc;
+#using script_2583ee5680cf4736;
+#using script_2d05e472a90adb1d;
+#using script_2ff6eb4f5b8663fb;
+#using script_398835140857d740;
+#using script_41387eecc35b88bf;
+#using script_42982ffd0134f28e;
+#using script_4ef01fe6151dde4d;
+#using script_4fdefae8b7bcdf73;
 #using script_58be75c518bf0d40;
+#using script_639bf783929acf9b;
+#using script_64351208cb856df9;
+#using script_6617e2f2bb62b52b;
+#using script_6f65366f542f6627;
+#using script_7956d56c4922bd1;
+#using script_79deab1955343d5d;
+#using script_7b2517368c79e5bc;
+#using script_7c40fa80892a721;
+#using script_7cfaa6fd841fb4dd;
+#using script_7edf952f8921aa6b;
+#using script_9880b9dc28bc25e;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gamelogic;
+#using scripts\mp\mp_agent;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\scoreboard;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_cf011d7d8f1de3ac;
 
@@ -53,7 +53,7 @@ function function_87759397315122a3() {
     setdvar(@"hash_f1d095735ac37f33", 0);
     setdvar(@"hash_f1f518497502aea8", 1);
     level.var_54492f7bf0674200 = spawnstruct();
-    level.var_54492f7bf0674200.var_7c11b077004fcf2c = 0;
+    level.var_54492f7bf0674200.n_armored = 0;
     level.var_54492f7bf0674200.n_mercs = 0;
     level.var_54492f7bf0674200.n_zombies = 0;
     level.var_54492f7bf0674200.difficulty = "difficulty_normal";
@@ -372,8 +372,8 @@ function spawn_zombie(s_pt, b_attack, n_radius) {
     if (!isdefined(b_attack)) {
         b_attack = 0;
     }
-    var_31109020393ed11b = function_af6084ba33d72168();
-    aitype = getdvar(@"hash_5254c3fbd200d7ee", var_31109020393ed11b);
+    str_aitype = function_af6084ba33d72168();
+    aitype = getdvar(@"hash_5254c3fbd200d7ee", str_aitype);
     pos = level.var_4db5d2aa78c050a3;
     team = "team_two_hundred";
     ai_zombie = scripts\mp\mp_agent::spawnnewagentaitype(aitype, s_pt.origin, s_pt.angles, team);
@@ -425,8 +425,8 @@ function spawn_merc(s_pt, b_attack, n_radius) {
 // Checksum 0x0, Offset: 0x1e25
 // Size: 0x156
 function function_9472a81e1e313004(s_pt) {
-    var_31109020393ed11b = function_af6084ba33d72168();
-    aitype = getdvar(@"hash_5254c3fbd200d7ee", var_31109020393ed11b);
+    str_aitype = function_af6084ba33d72168();
+    aitype = getdvar(@"hash_5254c3fbd200d7ee", str_aitype);
     pos = level.var_4db5d2aa78c050a3;
     team = "team_two_hundred";
     ai_zombie = scripts\mp\mp_agent::spawnnewagentaitype(aitype, s_pt.origin, s_pt.angles, team);
@@ -441,7 +441,7 @@ function function_9472a81e1e313004(s_pt) {
         if (ai_zombie.agent_type == "actor_jup_spawner_zombie_base") {
             ai_zombie thread function_46c328e4e24b334a(self);
         } else {
-            self.var_7c11b077004fcf2c++;
+            self.n_armored++;
             ai_zombie thread function_beb2cfd9b21349d5(self);
         }
         if (scripts\engine\utility::percent_chance(20)) {
@@ -473,7 +473,7 @@ function function_beb2cfd9b21349d5(s_quest) {
     self waittill("death");
     if (s_quest.n_zombies > 0) {
         s_quest.n_zombies--;
-        s_quest.var_7c11b077004fcf2c--;
+        s_quest.n_armored--;
     }
 }
 
@@ -482,12 +482,12 @@ function function_beb2cfd9b21349d5(s_quest) {
 // Checksum 0x0, Offset: 0x1ffd
 // Size: 0x39
 function function_af6084ba33d72168() {
-    if (scripts\engine\utility::percent_chance(20) && self.var_7c11b077004fcf2c < 6) {
-        var_31109020393ed11b = "jup_spawner_zombie_base_armored_heavy";
+    if (scripts\engine\utility::percent_chance(20) && self.n_armored < 6) {
+        str_aitype = "jup_spawner_zombie_base_armored_heavy";
     } else {
-        var_31109020393ed11b = "jup_spawner_zombie_base";
+        str_aitype = "jup_spawner_zombie_base";
     }
-    return var_31109020393ed11b;
+    return str_aitype;
 }
 
 // Namespace namespace_cf011d7d8f1de3ac / namespace_e39de371869cd948
@@ -1022,14 +1022,14 @@ function function_caf7e8e50d7bee96() {
 // Size: 0x106
 function function_b38b0cc78701b351() {
     var_82a6f259e309287e = getstructarray("horde_attractor", "targetname");
-    foreach (var_24c1b984117168cd in var_82a6f259e309287e) {
-        var_24c1b984117168cd.attractor = namespace_5381a59d140f4df8::add_attractor(var_24c1b984117168cd, 1, 1000, 0, undefined, &function_b38f0b92e2bc5fdb);
+    foreach (s_attractor in var_82a6f259e309287e) {
+        s_attractor.attractor = namespace_5381a59d140f4df8::add_attractor(s_attractor, 1, 1000, 0, undefined, &function_b38f0b92e2bc5fdb);
     }
     self.var_2adad5a67432a282 waittill("entry");
     scripts\mp\objidpoolmanager::update_objective_onentity(self.var_4118ca23a8b62b78, self.var_2adad5a67432a282);
     scripts\mp\objidpoolmanager::update_objective_setzoffset(self.var_4118ca23a8b62b78, 64);
-    foreach (var_24c1b984117168cd in var_82a6f259e309287e) {
-        namespace_5381a59d140f4df8::remove_attractor(var_24c1b984117168cd.attractor);
+    foreach (s_attractor in var_82a6f259e309287e) {
+        namespace_5381a59d140f4df8::remove_attractor(s_attractor.attractor);
     }
 }
 
@@ -1649,12 +1649,12 @@ function function_8313312f00f4badd() {
 // Checksum 0x0, Offset: 0x4e83
 // Size: 0x80
 function function_b38f0b92e2bc5fdb(attractor, zombie) {
-    if (distance2dsquared(zombie.origin, attractor.source.origin) < 1000000 && !isdefined(zombie.var_33e9b8b06770859a)) {
-        zombie.var_33e9b8b06770859a = 1;
+    if (distance2dsquared(zombie.origin, attractor.source.origin) < 1000000 && !isdefined(zombie.is_attacking)) {
+        zombie.is_attacking = 1;
         zombie thread attack_player(1500);
         return false;
     }
-    if (isdefined(zombie.var_33e9b8b06770859a)) {
+    if (isdefined(zombie.is_attacking)) {
         return false;
     }
     return true;
@@ -1667,13 +1667,13 @@ function function_b38f0b92e2bc5fdb(attractor, zombie) {
 function function_3dd03206e8d95f5d(attractor, zombie) {
     if (isdefined(level.players)) {
         player = getclosest(zombie.origin, level.players);
-        if (isdefined(player) && distance2dsquared(zombie.origin, player.origin) < 40000 && isdefined(attractor.var_2adad5a67432a282) && !player istouching(attractor.var_2adad5a67432a282) && !isdefined(zombie.var_33e9b8b06770859a)) {
-            zombie.var_33e9b8b06770859a = 1;
+        if (isdefined(player) && distance2dsquared(zombie.origin, player.origin) < 40000 && isdefined(attractor.var_2adad5a67432a282) && !player istouching(attractor.var_2adad5a67432a282) && !isdefined(zombie.is_attacking)) {
+            zombie.is_attacking = 1;
             zombie thread attack_player(1500);
             return false;
         }
     }
-    if (isdefined(zombie.var_33e9b8b06770859a)) {
+    if (isdefined(zombie.is_attacking)) {
         return false;
     }
     return true;

@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\system.gsc;
 #using script_72ef6b9f0cf1f55a;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_6917e6eed10cfc44;
 
@@ -38,13 +38,13 @@ function function_bd850d4d3b0d537c(layer, locstring, groupname) {
     if (!isdefined(player.var_6917e6eed10cfc44)) {
         player.var_6917e6eed10cfc44 = spawnstruct();
     }
-    if (!isdefined(player.var_6917e6eed10cfc44.var_bb855feeb1be91c8)) {
-        player.var_6917e6eed10cfc44.var_bb855feeb1be91c8 = [];
+    if (!isdefined(player.var_6917e6eed10cfc44.hint_group)) {
+        player.var_6917e6eed10cfc44.hint_group = [];
     }
-    if (!isdefined(player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname])) {
-        player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname] = [];
+    if (!isdefined(player.var_6917e6eed10cfc44.hint_group[groupname])) {
+        player.var_6917e6eed10cfc44.hint_group[groupname] = [];
     }
-    player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname]["prompt_group_" + groupname + "_" + layer] = locstring;
+    player.var_6917e6eed10cfc44.hint_group[groupname]["prompt_group_" + groupname + "_" + layer] = locstring;
     player function_1517a14bb9c788b5(groupname);
 }
 
@@ -59,17 +59,17 @@ function function_8aa54007d532f449(layer, groupname) {
     if (!isdefined(player.var_6917e6eed10cfc44)) {
         return;
     }
-    if (!isdefined(player.var_6917e6eed10cfc44.var_bb855feeb1be91c8)) {
+    if (!isdefined(player.var_6917e6eed10cfc44.hint_group)) {
         return;
     }
-    if (!isdefined(player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname])) {
+    if (!isdefined(player.var_6917e6eed10cfc44.hint_group[groupname])) {
         return;
     }
     if (isdefined(layer)) {
-        player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname]["prompt_group_" + groupname + "_" + layer] = -1;
+        player.var_6917e6eed10cfc44.hint_group[groupname]["prompt_group_" + groupname + "_" + layer] = -1;
     } else {
-        foreach (locstring in player.var_6917e6eed10cfc44.var_bb855feeb1be91c8) {
-            player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname][refname] = -1;
+        foreach (locstring in player.var_6917e6eed10cfc44.hint_group) {
+            player.var_6917e6eed10cfc44.hint_group[groupname][refname] = -1;
         }
     }
     player function_1517a14bb9c788b5(groupname);
@@ -100,12 +100,12 @@ function private function_1517a14bb9c788b5(groupname) {
     player = self;
     assert(isdefined(groupname));
     assert(isdefined(player.var_6917e6eed10cfc44));
-    assert(isdefined(player.var_6917e6eed10cfc44.var_bb855feeb1be91c8));
-    assert(isdefined(player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname]));
+    assert(isdefined(player.var_6917e6eed10cfc44.hint_group));
+    assert(isdefined(player.var_6917e6eed10cfc44.hint_group[groupname]));
     assert(isdefined(level.var_6917e6eed10cfc44.var_2942d2c381b69899[groupname]));
     settings = level.var_6917e6eed10cfc44.var_2942d2c381b69899[groupname];
     var_ed4126f0b51385b9 = -1;
-    foreach (refname, locstring in player.var_6917e6eed10cfc44.var_bb855feeb1be91c8[groupname]) {
+    foreach (refname, locstring in player.var_6917e6eed10cfc44.hint_group[groupname]) {
         isactive = player function_ada0825249682644(refname);
         if (isistring(locstring)) {
             var_ed4126f0b51385b9++;

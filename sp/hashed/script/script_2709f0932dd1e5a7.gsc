@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
 #using script_7c110e744404ee81;
+#using scripts\cp\utility;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\engine\utility;
 
 #namespace namespace_17e488825cae945a;
 

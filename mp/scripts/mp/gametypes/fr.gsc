@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using script_60b33963be93ae9d;
+#using script_18c2fb8b3f85c7cd;
+#using script_2707474774db34b;
 #using script_392e29d6a9a83091;
 #using script_41387eecc35b88bf;
-#using script_2707474774db34b;
+#using script_60b33963be93ae9d;
 #using script_6617e2f2bb62b52b;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using script_18c2fb8b3f85c7cd;
-#using scripts\mp\gametypes\bradley_spawner.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\bradley_spawner;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_util;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
 
 #namespace fr;
 
@@ -27,7 +27,7 @@
 // Checksum 0x0, Offset: 0x359
 // Size: 0x1e9
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();

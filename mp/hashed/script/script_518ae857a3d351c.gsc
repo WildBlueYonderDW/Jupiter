@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace namespace_6582714a62ad086d;
 
@@ -263,11 +263,11 @@ function function_42929a0d4354a323() {
         return;
     }
     sentry_origin = self.sentry_struct.origin;
-    var_4d16d428538ff673 = self.sentry_struct.angles;
-    var_878bae61aca86fc5 = anglestoforward(var_4d16d428538ff673);
-    var_a1b727d30fc62a0f = anglestoup(var_4d16d428538ff673);
-    var_1b77e17a42e2545b = anglestoleft(var_4d16d428538ff673);
-    var_6232855eba31163a = anglestoright(var_4d16d428538ff673);
+    sentry_angles = self.sentry_struct.angles;
+    var_878bae61aca86fc5 = anglestoforward(sentry_angles);
+    var_a1b727d30fc62a0f = anglestoup(sentry_angles);
+    var_1b77e17a42e2545b = anglestoleft(sentry_angles);
+    var_6232855eba31163a = anglestoright(sentry_angles);
     maxangle = 15;
     var_b716ed1e1043d49d = rotatepointaroundvector(var_a1b727d30fc62a0f, var_878bae61aca86fc5, maxangle);
     var_37acb3a5ef4e3396 = vectornormalize(vectorcross(var_b716ed1e1043d49d, var_a1b727d30fc62a0f));

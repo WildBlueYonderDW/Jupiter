@@ -1,6 +1,6 @@
-#namespace namespace_c821bba5ab2671d;
+#namespace bodies_civilian_uk_male_surge_1;
 
-// Namespace namespace_c821bba5ab2671d / namespace_e3079807f9898f9d
+// Namespace bodies_civilian_uk_male_surge_1 / namespace_e3079807f9898f9d
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x362
 // Size: 0x15f

@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\flags.gsc;
 #using script_1f97a44d1761c919;
-#using scripts\mp\gamescore.gsc;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_7ab5b649fa408138;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\teams;
 
 #namespace music_and_dialog;
 
@@ -466,14 +466,14 @@ function function_42b070fb8d72b5f8() {
         function_414b65c7174581d1("mp_mode_get_high", "axis");
         return;
     }
-    if (self.musicpack != 1 && getdvarint(@"hash_71ef9b867531fea1") > 4) {
-        if (getdvarint(@"hash_71ef9b867531fea1") == 5) {
+    if (self.musicpack != 1 && getdvarint(@"current_season") > 4) {
+        if (getdvarint(@"current_season") == 5) {
             function_414b65c7174581d1("mp_season05", "allies");
             function_414b65c7174581d1("mp_season05", "axis");
             if (getgametype() == "xfire" || getgametype() == "warrior") {
                 function_414b65c7174581d1("mp_season05", "team_three");
             }
-        } else if (getdvarint(@"hash_71ef9b867531fea1") == 6 && getdvarfloat(@"hash_c804bf7eae3d0887") != 6.5) {
+        } else if (getdvarint(@"current_season") == 6 && getdvarfloat(@"hash_c804bf7eae3d0887") != 6.5) {
             function_414b65c7174581d1("mp_season06", "allies");
             function_414b65c7174581d1("mp_season06", "axis");
             if (getgametype() == "xfire" || getgametype() == "warrior") {
@@ -1106,7 +1106,7 @@ function prematch_music() {
     if (!level.splitscreen && !isdefined(self.playedinfilmusic) || level.splitscreen && !isdefined(level.playedstartingmusic)) {
         if (!self issplitscreenplayer() || self issplitscreenplayerprimary()) {
             if (isdefined(self.team) && self.team != "spectator" && getgametype() != "arm" && getgametype() != "conflict" && !isroundbased()) {
-                mapname = getdvar(@"hash_687fb8f9b7a23245");
+                mapname = getdvar(@"g_mapname");
                 if (mapname == "mp_gunsmith_gl") {
                     self setplayermusicstate("");
                 } else if (getgametype() == "training_course") {
@@ -1928,7 +1928,7 @@ function suspensemusic(var_8c71e0347db7824d) {
     if (!ismusicenabled()) {
         return;
     }
-    mapname = getdvar(@"hash_687fb8f9b7a23245");
+    mapname = getdvar(@"g_mapname");
     if (mapname == "mp_gunsmith_gl") {
         return;
     }

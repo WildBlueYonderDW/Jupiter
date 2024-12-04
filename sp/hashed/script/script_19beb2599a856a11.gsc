@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
-#namespace namespace_7711270eeb24f454;
+#namespace vehicle_utility;
 
-// Namespace namespace_7711270eeb24f454 / namespace_cd0ebd726f5d0d
+// Namespace vehicle_utility / namespace_cd0ebd726f5d0d
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x149
 // Size: 0x2a
@@ -14,7 +14,7 @@ function function_7d87dd9eb57867a1() {
     thread vehicle_watch_for_driving(&function_fbef61d68f733524, &function_e5f869d16eb9abea);
 }
 
-// Namespace namespace_7711270eeb24f454 / namespace_cd0ebd726f5d0d
+// Namespace vehicle_utility / namespace_cd0ebd726f5d0d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17b
 // Size: 0xbe
@@ -38,7 +38,7 @@ function function_fbef61d68f733524(veh) {
     self notify("entered_driving_vehicle", veh);
 }
 
-// Namespace namespace_7711270eeb24f454 / namespace_cd0ebd726f5d0d
+// Namespace vehicle_utility / namespace_cd0ebd726f5d0d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x241
 // Size: 0x38
@@ -52,7 +52,7 @@ function function_36dbb623c325c79(bool) {
     self setcandamage(0);
 }
 
-// Namespace namespace_7711270eeb24f454 / namespace_cd0ebd726f5d0d
+// Namespace vehicle_utility / namespace_cd0ebd726f5d0d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x281
 // Size: 0x101
@@ -80,7 +80,7 @@ function function_e5f869d16eb9abea(veh) {
     self notify("exited_driving_vehicle", veh);
 }
 
-// Namespace namespace_7711270eeb24f454 / namespace_cd0ebd726f5d0d
+// Namespace vehicle_utility / namespace_cd0ebd726f5d0d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38a
 // Size: 0x77
@@ -97,7 +97,7 @@ function function_f3ae3ea0abca3cfb(bone) {
     return false;
 }
 
-// Namespace namespace_7711270eeb24f454 / namespace_cd0ebd726f5d0d
+// Namespace vehicle_utility / namespace_cd0ebd726f5d0d
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x40a
 // Size: 0xc0
@@ -132,7 +132,7 @@ function vehicle_watch_for_driving(entercallback, exitcallback) {
     }
 }
 
-// Namespace namespace_7711270eeb24f454 / namespace_cd0ebd726f5d0d
+// Namespace vehicle_utility / namespace_cd0ebd726f5d0d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d2
 // Size: 0xa9

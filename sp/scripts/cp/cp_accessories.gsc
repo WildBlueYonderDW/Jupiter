@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_12e2fb553ec1605e;
 #using script_6775ad452d13858;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_1f340815ef8cbfdf;
 

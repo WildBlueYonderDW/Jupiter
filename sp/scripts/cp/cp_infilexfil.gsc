@@ -1,14 +1,14 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\anim\face.gsc;
-#using scripts\cp\cp_anim.gsc;
-#using scripts\cp\infilexfil\infilexfil.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\anim\face;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_anim;
+#using scripts\cp\infilexfil\infilexfil;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_e4ab792ab4281cb5;
 
@@ -99,11 +99,11 @@ function cp_infil_player_allow(allow, var_1b7f9d59a74ff1a1) {
         val::set("infil_player", "weapon_switch", 0);
         val::set("infil_player", "usability", 0);
         val::set("infil_player", "tacmap_scoreboard", 0);
-        function_4cbaed764c116a25(1);
+        disable_backpack_inventory(1);
         return;
     }
     val::reset_all("infil_player");
-    function_4cbaed764c116a25(0);
+    disable_backpack_inventory(0);
 }
 
 // Namespace namespace_e4ab792ab4281cb5 / scripts\cp\cp_infilexfil

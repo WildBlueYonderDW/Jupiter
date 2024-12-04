@@ -1,6 +1,6 @@
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\points;
 
 #namespace archassault;
 

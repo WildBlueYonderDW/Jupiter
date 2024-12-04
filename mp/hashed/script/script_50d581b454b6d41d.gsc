@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_5bc86a57086a4774;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_quest_util;
 
 #namespace namespace_8dea0c1922c392c6;
 

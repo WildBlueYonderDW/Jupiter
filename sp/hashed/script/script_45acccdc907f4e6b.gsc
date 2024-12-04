@@ -1,14 +1,14 @@
-#using scripts\cp\utility.gsc;
 #using script_18a73a64992dd07d;
-#using scripts\cp\cp_anim.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
 #using script_3a8f9ace195c9da9;
 #using script_48324b060b129b7b;
-#using scripts\common\cap.gsc;
+#using scripts\common\anim;
+#using scripts\common\cap;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_anim;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_d9f909ec3bbe3190;
 
@@ -24,26 +24,26 @@ function function_2c0fafcfd11ce596() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d8
 // Size: 0x4d
-function function_f2f1d806aee5bca8(var_b5a86f3dc4a94929, var_b8c9ee08c9db35f6, area, var_16b05bd666017c36, spawn_func) {
+function function_f2f1d806aee5bca8(var_b5a86f3dc4a94929, spawner_targetname, area, var_16b05bd666017c36, spawn_func) {
     struct_array = getstructarray(var_b5a86f3dc4a94929, "targetname");
-    return function_c81e06844e5ec033(struct_array, var_b8c9ee08c9db35f6, area, var_16b05bd666017c36, spawn_func);
+    return function_c81e06844e5ec033(struct_array, spawner_targetname, area, var_16b05bd666017c36, spawn_func);
 }
 
 // Namespace namespace_d9f909ec3bbe3190 / namespace_b07f03e6ee596f81
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x32e
 // Size: 0x12d
-function private function_c81e06844e5ec033(struct_array, var_b8c9ee08c9db35f6, area, var_16b05bd666017c36, spawn_func) {
+function private function_c81e06844e5ec033(struct_array, spawner_targetname, area, var_16b05bd666017c36, spawn_func) {
     var_59c0ae1b42751e1c = [];
     foreach (struct in struct_array) {
         if (isdefined(struct.script_flag_wait) && !flag(struct.script_flag_wait)) {
             level thread function_7f3ead6056d853a9(struct, struct.script_flag_wait);
             continue;
         }
-        var_4e289de92961ab3d = getstruct(var_b8c9ee08c9db35f6, "targetname");
-        if (isdefined(var_4e289de92961ab3d) && !isdefined(var_4e289de92961ab3d.script_fakeactor) && !isdefined(var_4e289de92961ab3d.script_drone)) {
+        spawner_struct = getstruct(spawner_targetname, "targetname");
+        if (isdefined(spawner_struct) && !isdefined(spawner_struct.script_fakeactor) && !isdefined(spawner_struct.script_drone)) {
         }
-        guy = function_30c9ebd0a0c2ad2(struct, var_b8c9ee08c9db35f6);
+        guy = function_30c9ebd0a0c2ad2(struct, spawner_targetname);
         guy thread [[ spawn_func ]]();
         var_59c0ae1b42751e1c = array_add(var_59c0ae1b42751e1c, guy);
     }
@@ -88,13 +88,13 @@ function function_ee51e20891506e33(struct_targetname, end_on, var_b2ca5107267bfd
         self endon(end_on);
     }
     if (isdefined(var_b2ca5107267bfd0)) {
-        var_92987830015f9951 = function_7a18da6e48b71c35(var_b2ca5107267bfd0);
+        vignette_struct = function_7a18da6e48b71c35(var_b2ca5107267bfd0);
     } else if (isstruct(struct_targetname)) {
-        var_92987830015f9951 = struct_targetname;
+        vignette_struct = struct_targetname;
     } else {
-        var_92987830015f9951 = function_7a18da6e48b71c35(struct_targetname);
+        vignette_struct = function_7a18da6e48b71c35(struct_targetname);
     }
-    var_92987830015f9951 function_26a3493d0bbd5d04();
+    vignette_struct function_26a3493d0bbd5d04();
     if (isstruct(struct_targetname)) {
         target_node = struct_targetname;
     } else {
@@ -125,12 +125,12 @@ function private function_26a3493d0bbd5d04() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x5e0
 // Size: 0x48
-function private function_af2ef99ebc503337(var_eda126efed3681eb) {
+function private function_af2ef99ebc503337(vign_struct) {
     if (!isdefined(level.var_726ab598c8999175)) {
         level.var_726ab598c8999175 = [];
     }
-    if (isdefined(var_eda126efed3681eb.script_dialogue)) {
-        level.var_726ab598c8999175[var_eda126efed3681eb.script_dialogue] = self;
+    if (isdefined(vign_struct.script_dialogue)) {
+        level.var_726ab598c8999175[vign_struct.script_dialogue] = self;
     }
 }
 
@@ -138,12 +138,12 @@ function private function_af2ef99ebc503337(var_eda126efed3681eb) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x630
 // Size: 0x70
-function function_245bb82d6b4f9621(var_5b729f094c82d3fe, guys, var_db7e7ff4175feab2) {
+function function_245bb82d6b4f9621(vo_lines, guys, var_db7e7ff4175feab2) {
     if (!isdefined(var_db7e7ff4175feab2)) {
-        var_a18fb38c99721757 = 150;
+        distance_toplayer = 150;
     }
-    for (i = 0; i < var_5b729f094c82d3fe.size; i++) {
-        vo_line = var_5b729f094c82d3fe[i];
+    for (i = 0; i < vo_lines.size; i++) {
+        vo_line = vo_lines[i];
         guy = guys[i % guys.size];
         function_f6e5be73709120c9(vo_line, guy, var_db7e7ff4175feab2);
     }
@@ -155,7 +155,7 @@ function function_245bb82d6b4f9621(var_5b729f094c82d3fe, guys, var_db7e7ff4175fe
 // Size: 0xae
 function function_f6e5be73709120c9(vo_line, guy, var_db7e7ff4175feab2) {
     if (!isdefined(var_db7e7ff4175feab2)) {
-        var_a18fb38c99721757 = 150;
+        distance_toplayer = 150;
     }
     if (isdefined(level.var_726ab598c8999175[guy])) {
         while (true) {
@@ -177,7 +177,7 @@ function function_f6e5be73709120c9(vo_line, guy, var_db7e7ff4175feab2) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x75e
 // Size: 0x1f0
-function function_30c9ebd0a0c2ad2(struct, var_b8c9ee08c9db35f6) {
+function function_30c9ebd0a0c2ad2(struct, spawner_targetname) {
     /#
         if (isdefined(struct.spawned_ai)) {
             if (isalive(struct.spawned_ai)) {
@@ -189,13 +189,13 @@ function function_30c9ebd0a0c2ad2(struct, var_b8c9ee08c9db35f6) {
     #/
     if (isdefined(struct.script_flag) && flag(struct.script_flag)) {
         /#
-            if (getdvarint(@"hash_3e112ea7505ccb4c", 0) >= 2) {
+            if (getdvarint(@"vignette_debug", 0) >= 2) {
                 iprintln("<dev string:x89>" + struct.animation + "<dev string:xa5>");
             }
         #/
         return undefined;
     }
-    var_c6d613ae4e3ab31b = function_7a18da6e48b71c35(var_b8c9ee08c9db35f6);
+    var_c6d613ae4e3ab31b = function_7a18da6e48b71c35(spawner_targetname);
     if (isdefined(struct.script_char_index)) {
         var_c6d613ae4e3ab31b.script_char_index = struct.script_char_index;
     }
@@ -204,7 +204,7 @@ function function_30c9ebd0a0c2ad2(struct, var_b8c9ee08c9db35f6) {
     var_c6d613ae4e3ab31b.script_char_index = undefined;
     if (!isdefined(guy)) {
         /#
-            if (getdvarint(@"hash_3e112ea7505ccb4c", 0) >= 1) {
+            if (getdvarint(@"vignette_debug", 0) >= 1) {
                 if (isdefined(struct.animation)) {
                     if (isdefined(struct.script_area)) {
                         iprintln("<dev string:xdc>" + struct.animation + "<dev string:xf6>" + struct.script_area);
@@ -316,13 +316,13 @@ function private function_e39484d42f09b9c1(guy) {
             }
             if (isdefined(self.script_delay)) {
                 if (isarray(level.scr_anim[guy.animname][anime])) {
-                    var_5a95096cb6d515a7 = guy getanim(anime)[0];
+                    anim_entry = guy getanim(anime)[0];
                 } else {
-                    var_5a95096cb6d515a7 = guy getanim(anime);
+                    anim_entry = guy getanim(anime);
                 }
-                total_time = getanimlength(var_5a95096cb6d515a7);
+                total_time = getanimlength(anim_entry);
                 assertex(self.script_delay < total_time, "Delay of guy at " + self.origin + " is larger than duration of the animation.");
-                guy delaycall(0.05, &setanimtime, var_5a95096cb6d515a7, (self.script_delay - 0.05) / total_time);
+                guy delaycall(0.05, &setanimtime, anim_entry, (self.script_delay - 0.05) / total_time);
                 if (isdefined(guy.var_13527d2fba952c3)) {
                     var_85a34c1e6ad7515f = guy.var_13527d2fba952c3 getanim(anime)[0];
                     guy.var_13527d2fba952c3 delaycall(0.05, &setanimtime, var_85a34c1e6ad7515f, (self.script_delay - 0.05) / total_time);
@@ -376,8 +376,8 @@ function private function_e39484d42f09b9c1(guy) {
     }
     if (function_68f8b8bd65b54d3("death_anim")) {
         if (isdefined(anime)) {
-            var_5a95096cb6d515a7 = guy getanim(anime);
-            total_time = getanimlength(var_5a95096cb6d515a7);
+            anim_entry = guy getanim(anime);
+            total_time = getanimlength(anim_entry);
             wait total_time - 1;
         }
         guy.skipdeathanim = 1;
@@ -419,7 +419,7 @@ function private function_7f3ead6056d853a9(struct, flag_name, var_f60cd9a27ada91
         level endon("vignette_area_despawned" + struct.script_area);
     }
     flag_wait(flag_name);
-    level thread function_30c9ebd0a0c2ad2(struct, struct.var_b8c9ee08c9db35f6);
+    level thread function_30c9ebd0a0c2ad2(struct, struct.spawner_targetname);
 }
 
 // Namespace namespace_d9f909ec3bbe3190 / namespace_b07f03e6ee596f81
@@ -442,15 +442,15 @@ function function_18427c47e3d50aa0() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x112b
 // Size: 0x6d
-function function_3c2871f926a2104(obj, goalradius, var_5bdd72e964d44dc2) {
+function function_3c2871f926a2104(obj, goalradius, endon_flag) {
     self endon("death");
-    if (isdefined(var_5bdd72e964d44dc2)) {
-        self endon(var_5bdd72e964d44dc2);
+    if (isdefined(endon_flag)) {
+        self endon(endon_flag);
     }
     level thread function_ee51e20891506e33(obj);
     self.fixednode = 1;
     destination = function_f79d38f6a9ba4ebd(obj, goalradius, 0);
-    function_87ace1da6b53a07f(destination, var_5bdd72e964d44dc2);
+    function_87ace1da6b53a07f(destination, endon_flag);
     self notify("arrived");
     obj notify("trigger", self);
 }
@@ -459,10 +459,10 @@ function function_3c2871f926a2104(obj, goalradius, var_5bdd72e964d44dc2) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x11a0
 // Size: 0x6b
-function function_a846ca4a4153373(start_flag, obj, goalradius, var_5bdd72e964d44dc2) {
+function function_a846ca4a4153373(start_flag, obj, goalradius, endon_flag) {
     self endon("death");
-    if (isdefined(var_5bdd72e964d44dc2)) {
-        self endon(var_5bdd72e964d44dc2);
+    if (isdefined(endon_flag)) {
+        self endon(endon_flag);
     }
     if (!isdefined(start_flag)) {
         if (isdefined(obj.script_flag_wait)) {
@@ -472,17 +472,17 @@ function function_a846ca4a4153373(start_flag, obj, goalradius, var_5bdd72e964d44
     if (isdefined(start_flag)) {
         level flag_wait(start_flag);
     }
-    function_3c2871f926a2104(obj, goalradius, var_5bdd72e964d44dc2);
+    function_3c2871f926a2104(obj, goalradius, endon_flag);
 }
 
 // Namespace namespace_d9f909ec3bbe3190 / namespace_b07f03e6ee596f81
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x1213
 // Size: 0x3b
-function private function_87ace1da6b53a07f(destination, var_5bdd72e964d44dc2) {
+function private function_87ace1da6b53a07f(destination, endon_flag) {
     self endon("death");
-    if (isdefined(var_5bdd72e964d44dc2)) {
-        self endon(var_5bdd72e964d44dc2);
+    if (isdefined(endon_flag)) {
+        self endon(endon_flag);
     }
     while (distance(self.origin, destination) > 5) {
         waitframe();
@@ -493,10 +493,10 @@ function private function_87ace1da6b53a07f(destination, var_5bdd72e964d44dc2) {
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x1256
 // Size: 0x76
-function private function_5e587c0f3de781be(start_flag, obj, goalradius, var_5bdd72e964d44dc2) {
+function private function_5e587c0f3de781be(start_flag, obj, goalradius, endon_flag) {
     self endon("death");
-    if (isdefined(var_5bdd72e964d44dc2)) {
-        self endon(var_5bdd72e964d44dc2);
+    if (isdefined(endon_flag)) {
+        self endon(endon_flag);
     }
     if (!isdefined(start_flag)) {
         if (isdefined(obj.script_flag_wait)) {
@@ -514,11 +514,11 @@ function private function_5e587c0f3de781be(start_flag, obj, goalradius, var_5bdd
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0x12d4
 // Size: 0x146
-function private function_f79d38f6a9ba4ebd(obj, goalradius, var_d591e399ba87281f) {
+function private function_f79d38f6a9ba4ebd(obj, goalradius, ignoreall_override) {
     self.goalradius = default_to(goalradius, 5);
     self.var_c833409fb72d15fb = 1;
     self.allowstrafe = 0;
-    self.ignoreall = default_to(var_d591e399ba87281f, 1);
+    self.ignoreall = default_to(ignoreall_override, 1);
     destination = undefined;
     if (isdefined(obj.animation)) {
         animname = "generic";

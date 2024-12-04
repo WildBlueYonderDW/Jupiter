@@ -1,11 +1,11 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\soldier\throwgrenade.gsc;
-#using scripts\anim\utility_common.gsc;
 #using script_13d1c402f1421c35;
-#using script_7e4d332e911e1b90;
 #using script_50eeb9595c6d6e1b;
+#using script_7e4d332e911e1b90;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\soldier\throwgrenade;
+#using scripts\common\utility;
 
 #namespace throwgrenade;
 
@@ -214,7 +214,7 @@ function reducegiptponkillanimscript(statename, throwingat) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x93c
 // Size: 0x4e6
-function dogrenadethrow(asmname, statename, var_a9112040a3d575f1, throwvel, var_3251b898a0907271, var_e57aea3945878349) {
+function dogrenadethrow(asmname, statename, throw_anim, throwvel, var_3251b898a0907271, var_e57aea3945878349) {
     self endon("killanimscript");
     self endon(statename + "_finished");
     /#
@@ -227,10 +227,10 @@ function dogrenadethrow(asmname, statename, var_a9112040a3d575f1, throwvel, var_
     }
     bodyknob = asm_getbodyknob();
     assert(isdefined(bodyknob));
-    throw_xanim = asm_getxanim(statename, var_a9112040a3d575f1);
+    throw_xanim = asm_getxanim(statename, throw_anim);
     function_216c67ab6749137a(self, undefined, "grenade_throw", namespace_24b7b4457f51f1a3::function_c666e714b2411844(self.grenadeweapon));
     asm_playfacialanim(asmname, statename, throw_xanim);
-    self aisetanim(statename, var_a9112040a3d575f1, fasteranimspeed());
+    self aisetanim(statename, throw_anim, fasteranimspeed());
     thread asm_donotetracks(asmname, statename);
     model = scripts\anim\utility_common::getgrenademodel();
     attachside = "none";

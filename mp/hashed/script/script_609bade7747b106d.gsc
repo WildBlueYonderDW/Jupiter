@@ -1,26 +1,26 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_6df6604a74a7a9c7;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using script_639bf783929acf9b;
+#using script_16ea1b94f0f381b3;
 #using script_22856b83897eaad8;
-#using script_7c40fa80892a721;
-#using script_64316dc775e91122;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
 #using script_2669878cf5a1b6bc;
 #using script_398835140857d740;
-#using script_7f5e7a3cb514aca5;
-#using script_62a4f7a62643fe8;
-#using script_6f65366f542f6627;
-#using scripts\mp\utility\player.gsc;
-#using script_443d99fe707f1d9f;
-#using script_2583ee5680cf4736;
-#using script_7b2517368c79e5bc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_16ea1b94f0f381b3;
-#using script_22f1701e151b9d12;
 #using script_3e2f8cc477d57433;
+#using script_443d99fe707f1d9f;
+#using script_62a4f7a62643fe8;
+#using script_639bf783929acf9b;
+#using script_64316dc775e91122;
+#using script_6df6604a74a7a9c7;
+#using script_6f65366f542f6627;
+#using script_7b2517368c79e5bc;
+#using script_7c40fa80892a721;
+#using script_7f5e7a3cb514aca5;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
 
 #namespace namespace_71b655df1f1b6d7d;
 
@@ -390,7 +390,7 @@ function private function_99bd868e2b6e5c7c(player) {
 // Checksum 0x0, Offset: 0x1ab3
 // Size: 0x346
 function private function_376cc7d8d36560b7(player, lvl) {
-    var_f173afb0b2501745 = player.origin;
+    spawn_org = player.origin;
     a_killstreaks = ["ob_jup_item_killstreak_sentrygun", "ob_jup_item_killstreak_cluster_spike", "ob_jup_item_killstreak_precision_airstrike", "ob_jup_item_killstreak_juggernaut", "ob_jup_item_killstreak_clusterstrike"];
     var_cf4e7b98057c823 = ["ob_jup_item_weapon_pi_raygun", "ob_jup_item_weapon_la_plasmagun", "ob_jup_item_weapon_ar_dg2"];
     var_92e89639152b09d2 = ["ob_jup_item_ammomod_napalmburst", "ob_jup_item_ammomod_deadwire", "ob_jup_item_ammomod_cryofreeze", "ob_jup_item_ammomod_brainrot", "ob_jup_item_ammomod_shatterblast"];
@@ -410,7 +410,7 @@ function private function_376cc7d8d36560b7(player, lvl) {
     foreach (item in a_items) {
         itembundle = getscriptbundle("itemspawnentry:" + item);
         if (isdefined(itembundle)) {
-            namespace_2abc885019e1956::function_c465d27f3f6066b4(itembundle, var_f173afb0b2501745);
+            namespace_2abc885019e1956::function_c465d27f3f6066b4(itembundle, spawn_org);
         } else {
             assertmsg("<dev string:xb3>" + item);
         }

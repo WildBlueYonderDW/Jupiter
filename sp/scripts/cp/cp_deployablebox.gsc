@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_ammo_crate.gsc;
-#using scripts\cp\cp_grenade_crate.gsc;
-#using scripts\cp\cp_armor_crate.gsc;
-#using script_65ec25da122efe3c;
-#using scripts\cp\cp_adrenaline_crate.gsc;
-#using script_71332a5b74214116;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp\cp_hostmigration.gsc;
 #using script_3bcaa2cbaf54abdd;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_41ae4f5ca24216cb;
-#using scripts\cp\cp_player_battlechatter.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using script_65ec25da122efe3c;
+#using script_71332a5b74214116;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_adrenaline_crate;
+#using scripts\cp\cp_ammo_crate;
+#using scripts\cp\cp_armor_crate;
+#using scripts\cp\cp_grenade_crate;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_a45ee0c37a3592d;
 
@@ -49,8 +49,8 @@ function init_box_interaction() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e2
 // Size: 0x48
-function box_hint_func(var_df071553d0996ff9, player) {
-    var_86280fefb94b6b28 = level.boxsettings[var_df071553d0996ff9.box.boxtype];
+function box_hint_func(interaction_struct, player) {
+    var_86280fefb94b6b28 = level.boxsettings[interaction_struct.box.boxtype];
     return var_86280fefb94b6b28.hintstring;
 }
 
@@ -58,8 +58,8 @@ function box_hint_func(var_df071553d0996ff9, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x533
 // Size: 0x26
-function box_activate_func(var_df071553d0996ff9, player) {
-    var_df071553d0996ff9.box notify("captured", player);
+function box_activate_func(interaction_struct, player) {
+    interaction_struct.box notify("captured", player);
 }
 
 // Namespace namespace_a45ee0c37a3592d / scripts\cp\cp_deployablebox
@@ -197,9 +197,9 @@ function markeractivate(lifeid, boxtype, usedcallback, damagecallback, deathcall
     box addboxtoownerarray(box.owner);
     box supportbox_addowneroutline();
     box [[ usedcallback ]](box, damagecallback, deathcallback, timeoutcallback);
-    var_de062dae32f4b236 = level.crafting_table_data[boxtype].metal;
-    var_c317862b1cc1d7df = 0;
-    if (owner namespace_6c67e93a4c487d83::try_take_player_currency(var_de062dae32f4b236)) {
+    item_cost = level.crafting_table_data[boxtype].metal;
+    secondary_cost = 0;
+    if (owner namespace_6c67e93a4c487d83::try_take_player_currency(item_cost)) {
     }
 }
 

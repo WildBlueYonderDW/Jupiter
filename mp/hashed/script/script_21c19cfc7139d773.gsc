@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\hud_popup.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_popup;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_3169ff42d7051988;
 

@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\chopper_gunner.gsc;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\chopper_gunner;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_651a05358f2f3326;
 
@@ -53,8 +53,8 @@ function chopper_gunner_findtargetstruct(structlinkname, var_6e1e1e75fc237eb1) {
 function chopper_gunner_assigntargetmarkers() {
     var_2cd52bbc2a67b7cf = [];
     var_5408012d0aed529a = [];
-    var_72b9f31491f124aa = level.players;
-    foreach (player in var_72b9f31491f124aa) {
+    character_array = level.players;
+    foreach (player in character_array) {
         if (level.teambased && player.team == self.team || player == self.owner) {
             var_5408012d0aed529a[var_5408012d0aed529a.size] = player;
             continue;

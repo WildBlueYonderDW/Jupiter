@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
 #using script_930a1e7bd882c1d;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\mp\music_and_dialog.gsc;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_e9fb4fdd12296fce;
 
@@ -402,18 +402,18 @@ function function_ad4a7a73c7d7d9e0() {
     var_8e3afd40d3c95b46 = "j_prop_" + infilanimindex + 1;
     cos45 = cos(45);
     if (dotforward < -1 * cos45) {
-        return ["wz_infil_gprop_standard_sh010", level.var_1a209bd995a7fa83["wz_infil_gprop_standard_sh010"], "wz_infil_standardforward_jump_sh010", var_8e3afd40d3c95b46];
+        return ["wz_infil_gprop_standard_sh010", level.br_anim["wz_infil_gprop_standard_sh010"], "wz_infil_standardforward_jump_sh010", var_8e3afd40d3c95b46];
     }
     if (dotright > cos45) {
-        return ["wz_infil_gprop_l90_sh010", level.var_1a209bd995a7fa83["wz_infil_gprop_l90_sh010"], "wz_infil_l90_jump_sh010", var_8e3afd40d3c95b46];
+        return ["wz_infil_gprop_l90_sh010", level.br_anim["wz_infil_gprop_l90_sh010"], "wz_infil_l90_jump_sh010", var_8e3afd40d3c95b46];
     }
     if (dotright < -1 * cos45) {
-        return ["wz_infil_gprop_r90_sh010", level.var_1a209bd995a7fa83["wz_infil_gprop_r90_sh010"], "wz_infil_r90_jump_sh010", var_8e3afd40d3c95b46];
+        return ["wz_infil_gprop_r90_sh010", level.br_anim["wz_infil_gprop_r90_sh010"], "wz_infil_r90_jump_sh010", var_8e3afd40d3c95b46];
     }
     if (dotright > 0) {
-        return ["wz_infil_gprop_l180_sh010", level.var_1a209bd995a7fa83["wz_infil_gprop_l180_sh010"], "wz_infil_l180_jump_sh010", var_8e3afd40d3c95b46];
+        return ["wz_infil_gprop_l180_sh010", level.br_anim["wz_infil_gprop_l180_sh010"], "wz_infil_l180_jump_sh010", var_8e3afd40d3c95b46];
     }
-    return ["wz_infil_gprop_r180_sh010", level.var_1a209bd995a7fa83["wz_infil_gprop_r180_sh010"], "wz_infil_r180_jump_sh010", var_8e3afd40d3c95b46];
+    return ["wz_infil_gprop_r180_sh010", level.br_anim["wz_infil_gprop_r180_sh010"], "wz_infil_r180_jump_sh010", var_8e3afd40d3c95b46];
 }
 
 // Namespace namespace_e9fb4fdd12296fce / namespace_3c940a00e48e77dd

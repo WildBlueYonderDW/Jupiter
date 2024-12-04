@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
 #using script_13d1c402f1421c35;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\utility;
 
 #namespace concussion;
 
@@ -66,8 +66,8 @@ function function_f8d836a0568d26e0(grenadeorigin, weapon, thrower) {
         attackerteam = thrower.team;
         var_321c9ba320abaad8 = distancesquared(self.origin, grenadeorigin);
         maxtime = 5;
-        var_7aa958975b8f8314 = math::normalize_value(1, 512, sqrt(var_321c9ba320abaad8));
-        var_92af705d147100bf = math::factor_value(maxtime, 1, var_7aa958975b8f8314);
+        normalizeddist = math::normalize_value(1, 512, sqrt(var_321c9ba320abaad8));
+        var_92af705d147100bf = math::factor_value(maxtime, 1, normalizeddist);
         var_92af705d147100bf = round(var_92af705d147100bf);
         self.flashingteam = attackerteam;
         namespace_ba1fcf33692e2fad::flashbangstart(var_92af705d147100bf);
@@ -81,8 +81,8 @@ function function_f8d836a0568d26e0(grenadeorigin, weapon, thrower) {
 // Size: 0xce
 function function_7857adf642da6884(var_a2858e1f2b3b8f7d, weapon) {
     maxtime = level.player.gs.maxflashbangtime;
-    var_7aa958975b8f8314 = math::normalize_value(1, 512, sqrt(var_a2858e1f2b3b8f7d));
-    var_92af705d147100bf = math::factor_value(maxtime, 1, var_7aa958975b8f8314);
+    normalizeddist = math::normalize_value(1, 512, sqrt(var_a2858e1f2b3b8f7d));
+    var_92af705d147100bf = math::factor_value(maxtime, 1, normalizeddist);
     var_92af705d147100bf = round(var_92af705d147100bf);
     level.player thread player_gesture_combat("ges_frag_block");
     self.flashendtime = gettime() + int(var_92af705d147100bf * 1000);

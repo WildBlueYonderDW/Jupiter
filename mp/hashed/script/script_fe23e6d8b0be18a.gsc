@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
 #using script_2583ee5680cf4736;
-#using script_860bfdfe82326e3;
 #using script_639bf783929acf9b;
-#using scripts\mp\equipment\c4.gsc;
+#using script_860bfdfe82326e3;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\c4;
 
 #namespace doorbuy;
 
@@ -435,11 +435,11 @@ function function_b92412ffa0393ddc(func) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1913
 // Size: 0x122
-function trigger_power(b_state, var_df15b645595483e) {
+function trigger_power(b_state, n_power_zone) {
     doors = function_bfd5db9911f7056b();
-    var_27c8a0347a3bbcb7 = !isdefined(var_df15b645595483e);
+    var_27c8a0347a3bbcb7 = !isdefined(n_power_zone);
     foreach (door in doors) {
-        var_f0b0324cf67d6487 = isdefined(door.script_int) && isdefined(var_df15b645595483e) && door.script_int == var_df15b645595483e;
+        var_f0b0324cf67d6487 = isdefined(door.script_int) && isdefined(n_power_zone) && door.script_int == n_power_zone;
         if (!var_f0b0324cf67d6487 && !var_27c8a0347a3bbcb7) {
             continue;
         }

@@ -1,6 +1,6 @@
-#namespace namespace_3f40e31403e367da;
+#namespace civilian_russian_female_head;
 
-// Namespace namespace_3f40e31403e367da / xmodelalias\civilian_russian_female_head
+// Namespace civilian_russian_female_head / xmodelalias\civilian_russian_female_head
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc7
 // Size: 0x33

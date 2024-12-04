@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace namespace_a9f18099144e93ba;
 
@@ -47,7 +47,7 @@ function function_43bd4a976c1ed3de() {
         var_545ae14048828eed = length(var_3fc17f20be7dce79);
         var_9a9a0f5df2182638 = length2d(var_3fc17f20be7dce79);
         percentage = 1 - var_545ae14048828eed / total_length;
-        var_d7bdff7ec44f0654 = 1 - var_9a9a0f5df2182638 / var_35761ff94239aeb5;
+        percentage_2d = 1 - var_9a9a0f5df2182638 / var_35761ff94239aeb5;
         speed_percentage = 1;
         if (percentage < 0.5) {
             speed_percentage = 0.7 + easesine(percentage / 0.5, 1, 0) * 0.3;
@@ -59,9 +59,9 @@ function function_43bd4a976c1ed3de() {
         if (var_545ae14048828eed > self.var_17e48b8b7457c.speed) {
             new_origin = self.origin + vectornormalize(var_1e6385adc65df44c) * speed;
             if (delta_z < var_35761ff94239aeb5) {
-                z_percentage = easesine(var_d7bdff7ec44f0654, 1, 1);
+                z_percentage = easesine(percentage_2d, 1, 1);
             } else {
-                z_percentage = easepower(var_d7bdff7ec44f0654, 2, 0, 1);
+                z_percentage = easepower(percentage_2d, 2, 0, 1);
             }
             new_origin = (new_origin[0], new_origin[1], start_point[2] + delta_z * z_percentage);
         } else {

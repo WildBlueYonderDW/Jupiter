@@ -1,35 +1,35 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility_code.gsc;
-#using script_7e4d332e911e1b90;
-#using scripts\anim\utility_common.gsc;
-#using scripts\sp\starts.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\values.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\equipment\molotov.gsc;
-#using scripts\sp\gameskill.gsc;
-#using scripts\sp\nvg\nvg_ai.gsc;
 #using script_13d1c402f1421c35;
-#using scripts\sp\autosave.gsc;
-#using scripts\sp\endmission.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\sp\analytics.gsc;
-#using scripts\sp\player_death.gsc;
-#using scripts\sp\player\context_melee.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\sp\stayahead.gsc;
-#using scripts\sp\spawner.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\sp\hud_util.gsc;
-#using scripts\sp\door.gsc;
-#using scripts\game\sp\door.gsc;
+#using script_7e4d332e911e1b90;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\sp\utility_code;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\game\sp\door;
+#using scripts\sp\analytics;
+#using scripts\sp\autosave;
+#using scripts\sp\door;
+#using scripts\sp\endmission;
+#using scripts\sp\equipment\molotov;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\gameskill;
+#using scripts\sp\hud_util;
+#using scripts\sp\nvg\nvg_ai;
+#using scripts\sp\player;
+#using scripts\sp\player\context_melee;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_death;
+#using scripts\sp\spawner;
+#using scripts\sp\starts;
+#using scripts\sp\stayahead;
 
 #namespace utility;
 
@@ -251,9 +251,9 @@ function player_seek_enable() {
     self endon("death");
     self endon("stop_player_seek");
     self endon("entitydeleted");
-    var_7e1ec739ae6c0015 = 1200;
+    g_radius = 1200;
     if (has_shotgun()) {
-        var_7e1ec739ae6c0015 = 250;
+        g_radius = 250;
     }
     var_16d0bb7fd27fcfc = distance(self.origin, level.player.origin);
     for (;;) {
@@ -261,8 +261,8 @@ function player_seek_enable() {
         self.goalradius = var_16d0bb7fd27fcfc;
         self setgoalentity(level.player);
         var_16d0bb7fd27fcfc -= 175;
-        if (var_16d0bb7fd27fcfc < var_7e1ec739ae6c0015) {
-            var_16d0bb7fd27fcfc = var_7e1ec739ae6c0015;
+        if (var_16d0bb7fd27fcfc < g_radius) {
+            var_16d0bb7fd27fcfc = g_radius;
             return;
         }
     }
@@ -338,9 +338,9 @@ function throwgrenadeatplayerasap() {
 // Size: 0x1cc
 function waterfx(endflag, soundalias) {
     self endon("death");
-    var_1c4f2cdc9abc7e07 = 0;
+    play_sound = 0;
     if (isdefined(soundalias)) {
-        var_1c4f2cdc9abc7e07 = 1;
+        play_sound = 1;
     }
     if (isdefined(endflag)) {
         flag_assert(endflag);
@@ -362,13 +362,13 @@ function waterfx(endflag, soundalias) {
         } else if (isdefined(level._effect["water_" + self.a.movement])) {
             fx = "water_" + self.a.movement;
         }
-        var_d8ed6850de1c878f = getfx(fx);
+        water_fx = getfx(fx);
         start = trace["position"];
         angles = (0, self.angles[1], 0);
         forward = anglestoforward(angles);
         up = anglestoup(angles);
-        playfx(var_d8ed6850de1c878f, start, up, forward);
-        if (fx != "water_stop" && var_1c4f2cdc9abc7e07) {
+        playfx(water_fx, start, up, forward);
+        if (fx != "water_stop" && play_sound) {
             thread play_sound_in_space(soundalias, start);
         }
     }
@@ -507,13 +507,13 @@ function mask_interactives_in_volumes(volumes) {
     foreach (ent in var_be2a0ce5c21257cf) {
         /#
             if (isdefined(ent.script_noteworthy)) {
-                var_c0a719a71cd5c3c3 = ent.script_noteworthy;
+                ent_type = ent.script_noteworthy;
             } else {
-                var_c0a719a71cd5c3c3 = ent.targetname;
+                ent_type = ent.targetname;
             }
-            assertex(isdefined(ent.interactive_type), var_c0a719a71cd5c3c3 + "<dev string:x1c>");
-            assertex(isdefined(level._interactive), var_c0a719a71cd5c3c3 + "<dev string:x4f>");
-            assertex(isdefined(level._interactive[ent.interactive_type]), var_c0a719a71cd5c3c3 + "<dev string:x86>" + ent.interactive_type + "<dev string:xae>");
+            assertex(isdefined(ent.interactive_type), ent_type + "<dev string:x1c>");
+            assertex(isdefined(level._interactive), ent_type + "<dev string:x4f>");
+            assertex(isdefined(level._interactive[ent.interactive_type]), ent_type + "<dev string:x86>" + ent.interactive_type + "<dev string:xae>");
         #/
         if (!isdefined(level._interactive[ent.interactive_type].savetostructfn)) {
             continue;
@@ -578,139 +578,139 @@ function is_in_antigrav_grenade() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x34f6
 // Size: 0x64f
-function hud_intel_message(var_7a49c194700d0b2c, var_b19a96b5c0a299d3, var_5baa186d177b643, var_2be6a7f58da8f2d4) {
-    var_81662484a343c985 = 20;
+function hud_intel_message(header_string, body_string, var_5baa186d177b643, var_2be6a7f58da8f2d4) {
+    intel_value = 20;
     if (!isdefined(var_5baa186d177b643)) {
         var_5baa186d177b643 = "default";
     }
     switch (var_5baa186d177b643) {
     case #"hash_16c9edc2631cebf9":
-        var_81662484a343c985 = 0;
+        intel_value = 0;
         break;
     case #"hash_16c9ecc2631cea66":
-        var_81662484a343c985 = 1;
+        intel_value = 1;
         break;
     case #"hash_16c9ebc2631ce8d3":
-        var_81662484a343c985 = 2;
+        intel_value = 2;
         break;
     case #"hash_16c9eac2631ce740":
-        var_81662484a343c985 = 3;
+        intel_value = 3;
         break;
     case #"hash_16c9f1c2631cf245":
-        var_81662484a343c985 = 4;
+        intel_value = 4;
         break;
     case #"hash_16c9f0c2631cf0b2":
-        var_81662484a343c985 = 5;
+        intel_value = 5;
         break;
     case #"hash_16c9efc2631cef1f":
-        var_81662484a343c985 = 6;
+        intel_value = 6;
         break;
     case #"hash_16c9eec2631ced8c":
-        var_81662484a343c985 = 7;
+        intel_value = 7;
         break;
     case #"hash_16c9f5c2631cf891":
-        var_81662484a343c985 = 8;
+        intel_value = 8;
         break;
     case #"hash_16c9f4c2631cf6fe":
-        var_81662484a343c985 = 9;
+        intel_value = 9;
         break;
     case #"hash_fcca0c020684e562":
-        var_81662484a343c985 = 10;
+        intel_value = 10;
         break;
     case #"hash_fcca0d020684e6f5":
-        var_81662484a343c985 = 11;
+        intel_value = 11;
         break;
     case #"hash_fcca0a020684e23c":
-        var_81662484a343c985 = 12;
+        intel_value = 12;
         break;
     case #"hash_fcca0b020684e3cf":
-        var_81662484a343c985 = 13;
+        intel_value = 13;
         break;
     case #"hash_fcca08020684df16":
-        var_81662484a343c985 = 14;
+        intel_value = 14;
         break;
     case #"hash_fcca09020684e0a9":
-        var_81662484a343c985 = 15;
+        intel_value = 15;
         break;
     case #"hash_fcca06020684dbf0":
-        var_81662484a343c985 = 16;
+        intel_value = 16;
         break;
     case #"hash_fcca07020684dd83":
-        var_81662484a343c985 = 17;
+        intel_value = 17;
         break;
     case #"hash_fcca14020684f1fa":
-        var_81662484a343c985 = 18;
+        intel_value = 18;
         break;
     case #"hash_fcca15020684f38d":
-        var_81662484a343c985 = 19;
+        intel_value = 19;
         break;
     case #"hash_7038dec66d8275be":
-        var_81662484a343c985 = 20;
+        intel_value = 20;
         break;
     case #"hash_cc2f9c6895f781d6":
-        var_81662484a343c985 = 20;
+        intel_value = 20;
         break;
     case #"hash_d8f1f065b9610dde":
-        var_81662484a343c985 = 21;
+        intel_value = 21;
         break;
     case #"hash_3fee7f4438bd3468":
-        var_81662484a343c985 = 22;
+        intel_value = 22;
         break;
     case #"hash_cc9bd548714d725f":
-        var_81662484a343c985 = 23;
+        intel_value = 23;
         break;
     case #"hash_4a8e0d18adc8bc5d":
-        var_81662484a343c985 = 24;
+        intel_value = 24;
         break;
     case #"hash_840c353cb832f8db":
-        var_81662484a343c985 = 25;
+        intel_value = 25;
         break;
     case #"hash_d884fa199c3e6167":
-        var_81662484a343c985 = 26;
+        intel_value = 26;
         break;
     case #"hash_618f3064f8fb4964":
-        var_81662484a343c985 = 27;
+        intel_value = 27;
         break;
     case #"hash_618f3164f8fb4af7":
-        var_81662484a343c985 = 28;
+        intel_value = 28;
         break;
     case #"hash_618f3264f8fb4c8a":
-        var_81662484a343c985 = 29;
+        intel_value = 29;
         break;
     case #"hash_618f3364f8fb4e1d":
-        var_81662484a343c985 = 30;
+        intel_value = 30;
         break;
     case #"hash_618f2c64f8fb4318":
-        var_81662484a343c985 = 31;
+        intel_value = 31;
         break;
     case #"hash_618f2d64f8fb44ab":
-        var_81662484a343c985 = 32;
+        intel_value = 32;
         break;
     case #"hash_618f2e64f8fb463e":
-        var_81662484a343c985 = 33;
+        intel_value = 33;
         break;
     case #"hash_618f2f64f8fb47d1":
-        var_81662484a343c985 = 34;
+        intel_value = 34;
         break;
     case #"hash_618f2864f8fb3ccc":
-        var_81662484a343c985 = 35;
+        intel_value = 35;
         break;
     case #"hash_618f2964f8fb3e5f":
-        var_81662484a343c985 = 36;
+        intel_value = 36;
         break;
     case #"hash_35dd41db085fb045":
-        var_81662484a343c985 = 37;
+        intel_value = 37;
         break;
     case #"hash_9a1ab51f3a54ac68":
-        var_81662484a343c985 = 38;
+        intel_value = 38;
         break;
     case #"hash_60889fe00c561285":
-        var_81662484a343c985 = 39;
+        intel_value = 39;
         break;
     }
-    setomnvar("ui_sp_intel_messaging_image_index", var_81662484a343c985);
-    setomnvar("ui_sp_intel_messaging_text", var_b19a96b5c0a299d3);
-    setomnvar("ui_sp_intel_messaging_header", var_7a49c194700d0b2c);
+    setomnvar("ui_sp_intel_messaging_image_index", intel_value);
+    setomnvar("ui_sp_intel_messaging_text", body_string);
+    setomnvar("ui_sp_intel_messaging_header", header_string);
     setomnvar("ui_sp_intel_messaging", 1);
     level.player thread _intel_waypoint_button_listener();
     var_31761df376c7c7c3 = var_5baa186d177b643 == "tally_intel";
@@ -743,9 +743,9 @@ function hud_intel_message(var_7a49c194700d0b2c, var_b19a96b5c0a299d3, var_5baa1
         target_loc.icon.alpha = 1;
         target_loc.icon setwaypoint(1, 1, 0);
         target_loc.icon settargetent(target_loc);
-        var_e8f6915fe5634b93 = distance2dsquared(level.player.origin, target_loc.origin);
+        current_dist = distance2dsquared(level.player.origin, target_loc.origin);
         while (true) {
-            if (distance2dsquared(level.player.origin, target_loc.origin) < squared(75) || distance2dsquared(level.player.origin, target_loc.origin) > var_e8f6915fe5634b93 * 2.5) {
+            if (distance2dsquared(level.player.origin, target_loc.origin) < squared(75) || distance2dsquared(level.player.origin, target_loc.origin) > current_dist * 2.5) {
                 break;
             }
             wait 0.05;
@@ -765,7 +765,7 @@ function hud_intel_message(var_7a49c194700d0b2c, var_b19a96b5c0a299d3, var_5baa1
 // Checksum 0x0, Offset: 0x3b4d
 // Size: 0x18
 function is_demo() {
-    if (getdvarint(@"hash_3a25f2d5a820ad8", 0)) {
+    if (getdvarint(@"scr_demo", 0)) {
         return true;
     }
     return false;
@@ -786,7 +786,7 @@ function is_lastlevel() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b90
 // Size: 0x106
-function hudoutline_ar_callout(display_name, var_c355e4a1f2f73b02, var_502fbff642b814f5) {
+function hudoutline_ar_callout(display_name, large_object, widget_offset) {
     if (isdefined(level.player.ar_callout_ent)) {
         hudoutline_ar_disable();
     }
@@ -801,25 +801,25 @@ function hudoutline_ar_callout(display_name, var_c355e4a1f2f73b02, var_502fbff64
     }
     setomnvar("ui_ar_object_text", display_name);
     wait 0.05;
-    if (isdefined(var_c355e4a1f2f73b02) && var_c355e4a1f2f73b02) {
+    if (isdefined(large_object) && large_object) {
         hudoutline_enable_new("outlinefill_depth_orange", "default");
     } else {
         hudoutline_enable_new("outlinefill_nodepth_orange", "default");
     }
     setomnvar("ui_show_ar_elem", 1);
-    thread _ar_callout_tracker(var_502fbff642b814f5);
+    thread _ar_callout_tracker(widget_offset);
 }
 
 // Namespace utility / scripts\sp\utility
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c9e
 // Size: 0x85
-function _ar_callout_tracker(var_502fbff642b814f5) {
+function _ar_callout_tracker(widget_offset) {
     level.player endon("stop_ar_callout");
     self endon("death");
     while (true) {
-        if (isdefined(var_502fbff642b814f5)) {
-            offset = self.origin + var_502fbff642b814f5;
+        if (isdefined(widget_offset)) {
+            offset = self.origin + widget_offset;
         } else {
             offset = self.origin + (0, 0, 30);
         }
@@ -972,7 +972,7 @@ function missionfailedwrapper() {
     scripts\sp\analytics::analytics_obj_failed();
     level.missionfailed = 1;
     flag_set("missionfailed");
-    if (getdvar(@"hash_1780d96f1fef8d01") == "1") {
+    if (getdvar(@"failure_disabled") == "1") {
         return;
     }
     if (isdefined(level.mission_fail_func)) {
@@ -1014,7 +1014,7 @@ function player_giveachievement_wrapper(achievement) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x4075
 // Size: 0x2a5
-function play_skippable_cinematic(var_7843d2ebea704934, var_5ece5031931fdda9, var_f7bf02ab54fdcd73, var_2eda2be8546dadd6, var_ea1e6a586be81a36, var_80abb89d9bfbd9c4) {
+function play_skippable_cinematic(cinematic_name, skip_waittill, var_f7bf02ab54fdcd73, var_2eda2be8546dadd6, var_ea1e6a586be81a36, var_80abb89d9bfbd9c4) {
     if (!isdefined(var_2eda2be8546dadd6)) {
         var_2eda2be8546dadd6 = 0;
     }
@@ -1027,7 +1027,7 @@ function play_skippable_cinematic(var_7843d2ebea704934, var_5ece5031931fdda9, va
     setsaveddvar(@"hash_d3ee5a6578fe61de", "1");
     setsaveddvar(@"hash_b9ff37d084074df3", "1");
     level.player cleardamageindicators();
-    cinematicingame(var_7843d2ebea704934);
+    cinematicingame(cinematic_name);
     level.player scripts\sp\player::remove_damage_effects_instantly();
     remove_equipment_immediately();
     registered = "skippable_cinematic";
@@ -1042,9 +1042,9 @@ function play_skippable_cinematic(var_7843d2ebea704934, var_5ece5031931fdda9, va
         waitframe();
     }
     var_44e364ac7d2904 = spawnstruct();
-    thread cinematic_skip_input(var_5ece5031931fdda9, var_ea1e6a586be81a36, var_44e364ac7d2904);
+    thread cinematic_skip_input(skip_waittill, var_ea1e6a586be81a36, var_44e364ac7d2904);
     if (isdefined(var_f7bf02ab54fdcd73)) {
-        var_bd33a86b740d108e = cinematic_waittill_skip_or_time(var_f7bf02ab54fdcd73);
+        was_timeout = cinematic_waittill_skip_or_time(var_f7bf02ab54fdcd73);
         level.player val::reset_all(registered);
         level.player cleardamageindicators();
         level notify("skippable_cinematic_done");
@@ -1054,8 +1054,8 @@ function play_skippable_cinematic(var_7843d2ebea704934, var_5ece5031931fdda9, va
         setsaveddvar(@"hash_d3ee5a6578fe61de", "0");
         setsaveddvar(@"hash_b9ff37d084074df3", "0");
         setomnvar("ui_is_bink_skippable", 0);
-        if (!istrue(var_44e364ac7d2904.var_c33041680e5b5239)) {
-            if (istrue(var_bd33a86b740d108e)) {
+        if (!istrue(var_44e364ac7d2904.was_skipped)) {
+            if (istrue(was_timeout)) {
                 stopcinematicingame(var_80abb89d9bfbd9c4);
             } else {
                 stopcinematicingame(var_2eda2be8546dadd6);
@@ -1069,7 +1069,7 @@ function play_skippable_cinematic(var_7843d2ebea704934, var_5ece5031931fdda9, va
     setsaveddvar(@"hash_d3ee5a6578fe61de", "0");
     setsaveddvar(@"hash_b9ff37d084074df3", "0");
     setomnvar("ui_is_bink_skippable", 0);
-    if (!istrue(var_44e364ac7d2904.var_c33041680e5b5239)) {
+    if (!istrue(var_44e364ac7d2904.was_skipped)) {
         stopcinematicingame(var_2eda2be8546dadd6);
     }
     level.player val::reset_all(registered);
@@ -1081,20 +1081,20 @@ function play_skippable_cinematic(var_7843d2ebea704934, var_5ece5031931fdda9, va
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4322
 // Size: 0x9e
-function cinematic_skip_input(var_5ece5031931fdda9, var_ea1e6a586be81a36, var_171db63c4573af26) {
+function cinematic_skip_input(skip_waittill, var_ea1e6a586be81a36, var_171db63c4573af26) {
     if (!isdefined(var_ea1e6a586be81a36)) {
         var_ea1e6a586be81a36 = 0;
     }
     level endon("skippable_cinematic_done");
-    if (isdefined(var_5ece5031931fdda9)) {
-        self waittill(var_5ece5031931fdda9);
+    if (isdefined(skip_waittill)) {
+        self waittill(skip_waittill);
     }
     setomnvar("ui_is_bink_skippable", 1);
     while (true) {
         level.player waittill("luinotifyserver", message, value);
         if (message == "skip_bink_input") {
             if (isdefined(var_171db63c4573af26)) {
-                var_171db63c4573af26.var_c33041680e5b5239 = 1;
+                var_171db63c4573af26.was_skipped = 1;
             }
             level notify("cinematic_skipped");
             stopcinematicingame(var_ea1e6a586be81a36);
@@ -1111,8 +1111,8 @@ function cinematic_waittill_skip_or_time(wait_time) {
     level endon("cinematic_skipped");
     wait_time *= 1000;
     while (true) {
-        var_6097b8e64effbf66 = cinematicgettimeinmsec();
-        if (var_6097b8e64effbf66 >= wait_time) {
+        cinematic_time = cinematicgettimeinmsec();
+        if (cinematic_time >= wait_time) {
             return 1;
         }
         waitframe();
@@ -1256,10 +1256,10 @@ function context_melee_set_silent_kill(bool) {
     function_1a12913e4f208e36("context_melee_set_silent_kill");
     assertex(isdefined(bool));
     if (bool) {
-        setdvar(@"hash_ac0f71bc1ff1dc42", 1);
+        setdvar(@"context_melee_silent", 1);
         return;
     }
-    setdvar(@"hash_ac0f71bc1ff1dc42", 0);
+    setdvar(@"context_melee_silent", 0);
 }
 
 // Namespace utility / scripts\sp\utility
@@ -1315,34 +1315,34 @@ function context_melee_set_hint_directions(directions) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x48a7
 // Size: 0x3fc
-function context_melee_override_anim(var_56e57b64f9ac67c4, direction, var_3177edd6eff71e89, var_b20aaaec40f95803, launch, rules, var_fb8f407964e90b58) {
+function context_melee_override_anim(animScene, direction, var_3177edd6eff71e89, var_b20aaaec40f95803, launch, rules, victimLives) {
     function_1a12913e4f208e36("context_melee_override_anim");
     if (getdvarint(@"hash_fa7c16b886c722ed")) {
-        function_299b43ee3353dacc(var_56e57b64f9ac67c4, direction, rules, var_fb8f407964e90b58, undefined, launch);
+        function_299b43ee3353dacc(animScene, direction, rules, victimLives, undefined, launch);
         return;
     }
     if (!isdefined(direction)) {
         direction = "all";
     }
-    if (!isdefined(var_56e57b64f9ac67c4) && isdefined(self.context_melee_anim_name) && isdefined(self.context_melee_anim_name[direction])) {
+    if (!isdefined(animScene) && isdefined(self.context_melee_anim_name) && isdefined(self.context_melee_anim_name[direction])) {
         context_melee_removeOverrideDirection(direction, 1);
         return;
     }
-    assertex(isdefined(var_56e57b64f9ac67c4));
+    assertex(isdefined(animScene));
     /#
-        if (!isdefined(level.scr_anim["<dev string:xce>"][var_56e57b64f9ac67c4]) && !istrue(launch)) {
-            iprintlnbold("<dev string:xd6>" + var_56e57b64f9ac67c4 + "<dev string:xe0>");
+        if (!isdefined(level.scr_anim["<dev string:xce>"][animScene]) && !istrue(launch)) {
+            iprintlnbold("<dev string:xd6>" + animScene + "<dev string:xe0>");
         }
-        if (!isdefined(level.scr_anim[context_melee_getPlayerRigAnimname()][var_56e57b64f9ac67c4])) {
-            iprintlnbold("<dev string:xd6>" + var_56e57b64f9ac67c4 + "<dev string:x102>");
+        if (!isdefined(level.scr_anim[context_melee_getPlayerRigAnimname()][animScene])) {
+            iprintlnbold("<dev string:xd6>" + animScene + "<dev string:x102>");
         }
     #/
-    self.context_melee_victim_lives = var_fb8f407964e90b58;
-    if (isdefined(level.scr_anim[context_melee_getPlayerRigAnimname()][var_56e57b64f9ac67c4]) && isdefined(level.scr_anim["generic"][var_56e57b64f9ac67c4])) {
+    self.context_melee_victim_lives = victimLives;
+    if (isdefined(level.scr_anim[context_melee_getPlayerRigAnimname()][animScene]) && isdefined(level.scr_anim["generic"][animScene])) {
         if (!isdefined(self.context_melee_anim_name)) {
             self.context_melee_anim_name = [];
         }
-        self.context_melee_anim_name[direction] = var_56e57b64f9ac67c4;
+        self.context_melee_anim_name[direction] = animScene;
         notetracks = ["cm_death", "cm_ragdoll", "cm_fx", "cm_sfx", "cm_sfx_player"];
         functions[0] = &scripts\sp\player\context_melee::context_melee_death;
         functions[1] = &scripts\sp\player\context_melee::context_melee_ragdoll;
@@ -1350,22 +1350,22 @@ function context_melee_override_anim(var_56e57b64f9ac67c4, direction, var_3177ed
         functions[3] = &scripts\sp\player\context_melee::context_melee_sfx;
         functions[4] = &scripts\sp\player\context_melee::context_melee_sfx;
         foreach (notetrack in notetracks) {
-            if (isdefined(level.scr_notetrack["generic"]) && isdefined(level.scr_notetrack["generic"][var_56e57b64f9ac67c4]) && isdefined(level.scr_notetrack["generic"][var_56e57b64f9ac67c4][notetrack]) && level.scr_notetrack["generic"][var_56e57b64f9ac67c4][notetrack].size > 0) {
-                for (i = 0; i < level.scr_notetrack["generic"][var_56e57b64f9ac67c4][notetrack].size; i++) {
-                    if (isdefined(level.scr_notetrack["generic"][var_56e57b64f9ac67c4][notetrack][i]["function"])) {
-                        if (level.scr_notetrack["generic"][var_56e57b64f9ac67c4][notetrack][i]["function"] == functions[n]) {
-                            println("<dev string:x11d>" + var_56e57b64f9ac67c4 + "<dev string:x136>" + notetrack + "<dev string:x138>");
-                            level.scr_notetrack["generic"][var_56e57b64f9ac67c4][notetrack][i]["function"] = undefined;
+            if (isdefined(level.scr_notetrack["generic"]) && isdefined(level.scr_notetrack["generic"][animScene]) && isdefined(level.scr_notetrack["generic"][animScene][notetrack]) && level.scr_notetrack["generic"][animScene][notetrack].size > 0) {
+                for (i = 0; i < level.scr_notetrack["generic"][animScene][notetrack].size; i++) {
+                    if (isdefined(level.scr_notetrack["generic"][animScene][notetrack][i]["function"])) {
+                        if (level.scr_notetrack["generic"][animScene][notetrack][i]["function"] == functions[n]) {
+                            println("<dev string:x11d>" + animScene + "<dev string:x136>" + notetrack + "<dev string:x138>");
+                            level.scr_notetrack["generic"][animScene][notetrack][i]["function"] = undefined;
                         }
                     }
                 }
             }
         }
-        scripts\common\anim::addnotetrack_customfunction("generic", "cm_death", &scripts\sp\player\context_melee::context_melee_death, var_56e57b64f9ac67c4);
-        scripts\common\anim::addnotetrack_customfunction("generic", "cm_ragdoll", &scripts\sp\player\context_melee::context_melee_ragdoll, var_56e57b64f9ac67c4);
-        scripts\common\anim::addnotetrack_customfunction("generic", "cm_fx", &scripts\sp\player\context_melee::context_melee_fx, var_56e57b64f9ac67c4);
-        scripts\common\anim::addnotetrack_customfunction("generic", "cm_sfx", &scripts\sp\player\context_melee::context_melee_sfx, var_56e57b64f9ac67c4);
-        scripts\common\anim::addnotetrack_customfunction("generic", "cm_sfx_player", &scripts\sp\player\context_melee::context_melee_sfx, var_56e57b64f9ac67c4);
+        scripts\common\anim::addnotetrack_customfunction("generic", "cm_death", &scripts\sp\player\context_melee::context_melee_death, animScene);
+        scripts\common\anim::addnotetrack_customfunction("generic", "cm_ragdoll", &scripts\sp\player\context_melee::context_melee_ragdoll, animScene);
+        scripts\common\anim::addnotetrack_customfunction("generic", "cm_fx", &scripts\sp\player\context_melee::context_melee_fx, animScene);
+        scripts\common\anim::addnotetrack_customfunction("generic", "cm_sfx", &scripts\sp\player\context_melee::context_melee_sfx, animScene);
+        scripts\common\anim::addnotetrack_customfunction("generic", "cm_sfx_player", &scripts\sp\player\context_melee::context_melee_sfx, animScene);
     }
     if (isdefined(var_3177edd6eff71e89)) {
         context_melee_set_lastframe_bone(var_3177edd6eff71e89);
@@ -1699,11 +1699,11 @@ function enable_stayahead_turbo(speed) {
     }
     /#
         if (getdvarint(@"hash_3d6aec1e7192648b")) {
-            var_c6365167a47ef64 = speed;
-            if (!isdefined(var_c6365167a47ef64)) {
-                var_c6365167a47ef64 = "<dev string:x195>";
+            print_speed = speed;
+            if (!isdefined(print_speed)) {
+                print_speed = "<dev string:x195>";
             }
-            iprintln("<dev string:x19f>" + var_c6365167a47ef64);
+            iprintln("<dev string:x19f>" + print_speed);
         }
     #/
     self.stayahead.turbo = speed;
@@ -1808,7 +1808,7 @@ function stayahead_lookat_enabled(bool) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x591f
 // Size: 0x2fd
-function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc1e2b3da, blueprint) {
+function make_weapon(basename, attachments, reticle, camo, lootid, alt_mode, blueprint) {
     if (!isdefined(level._weapons)) {
         level._weapons = spawnstruct();
     }
@@ -1835,7 +1835,7 @@ function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc
             print("<dev string:x1fb>" + basename);
         }
     #/
-    if (istrue(var_ccbab88fc1e2b3da)) {
+    if (istrue(alt_mode)) {
         var_8b5443598fc587bf = &makealtweapon;
     } else {
         var_8b5443598fc587bf = &makeweapon;
@@ -1843,12 +1843,12 @@ function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc
     defaults = function_6527364c1ecca6c6(basename);
     defaults = removeconflictingattachments(attachments, defaults, basename);
     attachments = array_combine(attachments, defaults);
-    var_31792301aa1f7373 = [];
+    attachment_variants = [];
     foreach (attachment in attachments) {
         if (issubstr(attachment, "|")) {
             attachments = array_remove(attachments, attachment);
             attachments[attachments.size] = strtok(attachment, "|")[0];
-            var_31792301aa1f7373[var_31792301aa1f7373.size] = attachment;
+            attachment_variants[attachment_variants.size] = attachment;
         }
     }
     /#
@@ -1865,7 +1865,7 @@ function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc
     } else {
         weapon = builtin [[ var_8b5443598fc587bf ]](basename);
     }
-    foreach (attachment in var_31792301aa1f7373) {
+    foreach (attachment in attachment_variants) {
         tok = strtok(attachment, "|");
         /#
             function_cb12b7d7e358890c(basename, [tok[0]], var_8b5443598fc587bf);
@@ -1964,24 +1964,24 @@ function check_for_blacklisted_attachment() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f74
 // Size: 0x8f
-function give_weapon(weapon, var_e16e8f22bc34f7dc, var_f50c33aafefd2127, var_7c28c5d814dcfd9, var_bb91d53764edc89a) {
+function give_weapon(weapon, model_variant, dual_wield, var_7c28c5d814dcfd9, used_before) {
     if (isstring(weapon)) {
         weapon = make_weapon(weapon);
     }
-    if (isdefined(var_bb91d53764edc89a)) {
-        self giveweapon(weapon, var_e16e8f22bc34f7dc, var_f50c33aafefd2127, var_7c28c5d814dcfd9, var_bb91d53764edc89a);
+    if (isdefined(used_before)) {
+        self giveweapon(weapon, model_variant, dual_wield, var_7c28c5d814dcfd9, used_before);
         return;
     }
     if (isdefined(var_7c28c5d814dcfd9)) {
-        self giveweapon(weapon, var_e16e8f22bc34f7dc, var_f50c33aafefd2127, var_7c28c5d814dcfd9);
+        self giveweapon(weapon, model_variant, dual_wield, var_7c28c5d814dcfd9);
         return;
     }
-    if (isdefined(var_f50c33aafefd2127)) {
-        self giveweapon(weapon, var_e16e8f22bc34f7dc, var_f50c33aafefd2127);
+    if (isdefined(dual_wield)) {
+        self giveweapon(weapon, model_variant, dual_wield);
         return;
     }
-    if (isdefined(var_e16e8f22bc34f7dc)) {
-        self giveweapon(weapon, var_e16e8f22bc34f7dc);
+    if (isdefined(model_variant)) {
+        self giveweapon(weapon, model_variant);
         return;
     }
     self giveweapon(weapon);
@@ -2095,7 +2095,7 @@ function function_e59f7849726ad730(weaponname, var_fd0d6694540a4bab, newweaponst
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x66fa
 // Size: 0x107
-function aim_at(origin, laser_state, var_bed50c3a7a759bb, aim_time) {
+function aim_at(origin, laser_state, laser_tag, aim_time) {
     self notify("stop_aiming");
     self endon("stop_aiming");
     self endon("death");
@@ -2118,7 +2118,7 @@ function aim_at(origin, laser_state, var_bed50c3a7a759bb, aim_time) {
     #/
     wait aim_time * 0.5;
     if (laser_state > 0) {
-        thread aim_at_laser_on(laser_state, var_bed50c3a7a759bb);
+        thread aim_at_laser_on(laser_state, laser_tag);
     }
     wait aim_time * 0.5;
 }
@@ -2156,10 +2156,10 @@ function internal_aim_at_laser_tracker() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x68e3
 // Size: 0x4e
-function function_e24293736e639dcf(team, org, ang, var_3a6fa490549f46d9) {
+function function_e24293736e639dcf(team, org, ang, expendable) {
     ent = spawn_script_origin(org, ang);
     ent.health = 1;
-    ent makeentitysentient(team, var_3a6fa490549f46d9);
+    ent makeentitysentient(team, expendable);
     return ent;
 }
 
@@ -2175,18 +2175,18 @@ function is_aiming() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x694f
 // Size: 0xea
-function aim_at_laser_on(laser_state, var_bed50c3a7a759bb) {
+function aim_at_laser_on(laser_state, laser_tag) {
     self endon("laser_off");
     self endon("death");
     assertex(isdefined(self.aim_target), "Must call entity aim_at() before using aim_at_laser_on()");
     if (laser_state != 0) {
-        if (!isdefined(var_bed50c3a7a759bb)) {
-            var_bed50c3a7a759bb = "tag_laser";
+        if (!isdefined(laser_tag)) {
+            laser_tag = "tag_laser";
         }
-        self.aim_laser = spawn("script_model", self gettagorigin(var_bed50c3a7a759bb));
+        self.aim_laser = spawn("script_model", self gettagorigin(laser_tag));
         self.aim_laser setmodel("tag_laser");
         self.aim_laser setmoverlaserweapon(self.weapon);
-        self.aim_laser.tag = var_bed50c3a7a759bb;
+        self.aim_laser.tag = laser_tag;
         if (laser_state == 1) {
             self.aim_laser laseron();
         } else {
@@ -2254,7 +2254,7 @@ function link_aim_to(ent, tag, origin_offset) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x6bbe
 // Size: 0x301
-function move_aim_to_enemy(enemy, tag, var_cca3fab42a571371, var_dc102d0a3fa40d6c, var_3c6327d2dc93eeb9, var_6bfff23ca9261d1e) {
+function move_aim_to_enemy(enemy, tag, acquire_time, var_dc102d0a3fa40d6c, var_3c6327d2dc93eeb9, enable_debug) {
     assertex(isdefined(self.aim_target), "Must enable aiming with aim_at() before moving aim");
     self endon("stop_aiming");
     self endon("death");
@@ -2262,8 +2262,8 @@ function move_aim_to_enemy(enemy, tag, var_cca3fab42a571371, var_dc102d0a3fa40d6
     if (!isdefined(tag)) {
         tag = "tag_origin";
     }
-    if (!isdefined(var_cca3fab42a571371)) {
-        var_cca3fab42a571371 = 3;
+    if (!isdefined(acquire_time)) {
+        acquire_time = 3;
     }
     if (!isdefined(var_dc102d0a3fa40d6c)) {
         var_dc102d0a3fa40d6c = 50;
@@ -2272,37 +2272,37 @@ function move_aim_to_enemy(enemy, tag, var_cca3fab42a571371, var_dc102d0a3fa40d6
         var_3c6327d2dc93eeb9 = 1;
     }
     /#
-        if (!isdefined(var_6bfff23ca9261d1e)) {
-            var_6bfff23ca9261d1e = 0;
+        if (!isdefined(enable_debug)) {
+            enable_debug = 0;
         }
     #/
     var_12ad39f0f512b167 = enemy gettagorigin(tag);
-    var_d1ae2a623abd35c1 = var_dc102d0a3fa40d6c;
+    noise_offset = var_dc102d0a3fa40d6c;
     var_f9803f210f99196a = enemy.origin;
-    var_2c0637398aff5042 = var_dc102d0a3fa40d6c / var_cca3fab42a571371;
-    start_speed = distance(self.aim_target.origin, var_12ad39f0f512b167) / var_cca3fab42a571371;
+    var_2c0637398aff5042 = var_dc102d0a3fa40d6c / acquire_time;
+    start_speed = distance(self.aim_target.origin, var_12ad39f0f512b167) / acquire_time;
     while (distancesquared(self.aim_target.origin, enemy gettagorigin(tag)) > 5) {
         delta_time = 0.05;
         if (randomfloat(100) > 50) {
-            var_78339221b41e8b44 = enemy localtoworldcoords((0, 0, var_d1ae2a623abd35c1));
+            noise_vec = enemy localtoworldcoords((0, 0, noise_offset));
         } else {
-            var_78339221b41e8b44 = enemy localtoworldcoords((0, 0, var_d1ae2a623abd35c1 * -1));
+            noise_vec = enemy localtoworldcoords((0, 0, noise_offset * -1));
         }
-        var_2e85b4cc8c8f0d24 = var_78339221b41e8b44 - enemy.origin + enemy gettagorigin(tag);
+        final_destination = noise_vec - enemy.origin + enemy gettagorigin(tag);
         var_f6101d58d76925eb = self.aim_target.origin;
-        var_d763e2d8ff9ff57b = length(enemy.origin - var_f9803f210f99196a) / delta_time;
-        speed = var_d763e2d8ff9ff57b + start_speed;
-        direction = vectornormalize(var_2e85b4cc8c8f0d24 - var_f6101d58d76925eb);
+        enemy_speed = length(enemy.origin - var_f9803f210f99196a) / delta_time;
+        speed = enemy_speed + start_speed;
+        direction = vectornormalize(final_destination - var_f6101d58d76925eb);
         velocity = direction * speed * delta_time;
         /#
-            if (var_6bfff23ca9261d1e) {
-                thread draw_angles((0, 0, 0), var_2e85b4cc8c8f0d24);
+            if (enable_debug) {
+                thread draw_angles((0, 0, 0), final_destination);
                 line(var_f6101d58d76925eb, var_f6101d58d76925eb + direction, (0, 1, 0));
-                line(var_f6101d58d76925eb + direction, var_2e85b4cc8c8f0d24, (1, 0, 0));
+                line(var_f6101d58d76925eb + direction, final_destination, (1, 0, 0));
             }
         #/
-        var_d1ae2a623abd35c1 -= var_2c0637398aff5042 * delta_time;
-        var_d1ae2a623abd35c1 = clamp(var_d1ae2a623abd35c1, 0, var_dc102d0a3fa40d6c);
+        noise_offset -= var_2c0637398aff5042 * delta_time;
+        noise_offset = clamp(noise_offset, 0, var_dc102d0a3fa40d6c);
         var_f9803f210f99196a = enemy.origin;
         move_aim_to(var_f6101d58d76925eb + velocity, delta_time, 0.001, 0.001);
     }
@@ -2340,14 +2340,14 @@ function move_aim_along_spline(start_struct, var_fc410ce8bf19dac9) {
     assertex(isdefined(self.aim_target), "Must enable aiming with aim_at() before moving aim");
     assertex(isdefined(start_struct), "Must pass in starting struct in spline to move_aim_along_spline()");
     assertex(isdefined(var_fc410ce8bf19dac9), "Must pass in how long to aim along spline to move_aim_along_spline()");
-    var_69bbf8519d194df1 = 0;
+    spline_dist = 0;
     for (current_struct = start_struct; isdefined(current_struct.target); current_struct = current_struct.next) {
         current_struct.next = getstruct(current_struct.target, "targetname");
         current_struct.dist_to_next = distance(current_struct.next.origin, current_struct.origin);
-        var_69bbf8519d194df1 += current_struct.dist_to_next;
+        spline_dist += current_struct.dist_to_next;
     }
     for (current_struct = start_struct; isdefined(current_struct.target); current_struct = current_struct.next) {
-        aim_time = current_struct.dist_to_next / var_69bbf8519d194df1 * var_fc410ce8bf19dac9;
+        aim_time = current_struct.dist_to_next / spline_dist * var_fc410ce8bf19dac9;
         move_aim_to(current_struct.next.origin, aim_time);
     }
 }
@@ -2398,24 +2398,24 @@ function aim_search_around(var_eb0c52046ed75b79, var_3dce490e575954cb, var_c1c64
         }
         deltatime = 0.05;
         time_elapsed = 0;
-        var_fb4344fc091e2d67 = self.aim_target.origin;
+        search_target = self.aim_target.origin;
         while (time_elapsed < 4) {
-            var_73b5b47181e59812 = self gettagorigin("tag_flash")[2];
+            muzzle_height = self gettagorigin("tag_flash")[2];
             if (length(self.velocity) > 0) {
-                var_841f34de4ef161e4 = vectortoangles(self.velocity);
+                check_angles = vectortoangles(self.velocity);
             } else {
-                var_841f34de4ef161e4 = self.angles;
+                check_angles = self.angles;
             }
-            var_9f241dc3c38e2c9a = var_841f34de4ef161e4 + (var_8360d787cd2d6eca, var_dda88971030cb1e1, 0);
-            var_f14fe3dc08460a5d = anglestoforward(var_9f241dc3c38e2c9a) * 75;
-            var_712cff6062468796 = (self.origin[0], self.origin[1], var_73b5b47181e59812);
-            var_fb4344fc091e2d67 = var_712cff6062468796 + var_f14fe3dc08460a5d;
+            search_angles = check_angles + (var_8360d787cd2d6eca, var_dda88971030cb1e1, 0);
+            search_vector = anglestoforward(search_angles) * 75;
+            search_start = (self.origin[0], self.origin[1], muzzle_height);
+            search_target = search_start + search_vector;
             /#
                 if (getdvarint(@"hash_500912e607f2c429")) {
-                    thread draw_angles(var_9f241dc3c38e2c9a, var_fb4344fc091e2d67, (0, 0, 1), 1, 10);
+                    thread draw_angles(search_angles, search_target, (0, 0, 1), 1, 10);
                 }
             #/
-            var_bd6328b6f6b2add8 = var_fb4344fc091e2d67 - self.aim_target.origin;
+            var_bd6328b6f6b2add8 = search_target - self.aim_target.origin;
             var_1db13f6a6eb165a9 = length(var_bd6328b6f6b2add8);
             var_a2b39965224cb294 = vectornormalize(var_bd6328b6f6b2add8);
             var_f8e3f290a434df80 = var_1db13f6a6eb165a9 / (4 - time_elapsed);
@@ -2423,7 +2423,7 @@ function aim_search_around(var_eb0c52046ed75b79, var_3dce490e575954cb, var_c1c64
             move_aim_to(self.aim_target.origin + var_3d4f8d9283542d92 * deltatime, deltatime, 1e-05, 1e-05);
             time_elapsed += deltatime;
         }
-        self.aim_target.origin = var_fb4344fc091e2d67;
+        self.aim_target.origin = search_target;
     }
 }
 
@@ -2990,44 +2990,44 @@ function function_e151438c44c81414() {
     sandboxLoadoutData = "sandboxLoadoutData";
     var_c85bd7b3f6961d17 = ["cp_jup_port", "cp_jup_chemical", "cp_jup_ranch", "cp_jup_resort", "cp_jup_apt", "cp_jup_dam"];
     var_4b3db997f0b29c9 = [128, 350, 64, 128, 128, 128];
-    level.player function_2bd9c79b322a6eae("spProgData", "cp_jup_parachute_activated", 0);
-    level.player function_2bd9c79b322a6eae("sandboxLastCheckpointData", "last_checkpoint_map", "");
-    level.player function_2bd9c79b322a6eae("sandboxLastCheckpointData", "last_checkpoint", "");
+    level.player setProgressionData("spProgData", "cp_jup_parachute_activated", 0);
+    level.player setProgressionData("sandboxLastCheckpointData", "last_checkpoint_map", "");
+    level.player setProgressionData("sandboxLastCheckpointData", "last_checkpoint", "");
     for (j = 0; j < var_c85bd7b3f6961d17.size; j++) {
-        var_72b043c81ce7080 = var_c85bd7b3f6961d17[j];
+        currentMission = var_c85bd7b3f6961d17[j];
         for (i = 0; i < 40; i++) {
-            level.player function_2bd9c79b322a6eae(var_f20970ea949bc843, var_72b043c81ce7080, "SboxItems", i, "unlockState", 0);
-            level.player function_2bd9c79b322a6eae(var_f20970ea949bc843, var_72b043c81ce7080, "SboxItems", i, "isNewUnlock", 0);
+            level.player setProgressionData(var_f20970ea949bc843, currentMission, "SboxItems", i, "unlockState", 0);
+            level.player setProgressionData(var_f20970ea949bc843, currentMission, "SboxItems", i, "isNewUnlock", 0);
         }
-        level.player function_2bd9c79b322a6eae(sandboxLoadoutData, var_72b043c81ce7080, "lethalGrenade", 0);
-        level.player function_2bd9c79b322a6eae(sandboxLoadoutData, var_72b043c81ce7080, "primaryWeapon", 0);
-        level.player function_2bd9c79b322a6eae(sandboxLoadoutData, var_72b043c81ce7080, "secondaryWeapon", 0);
-        level.player function_2bd9c79b322a6eae(sandboxLoadoutData, var_72b043c81ce7080, "tacticalGrenade", 0);
-        level.player function_2bd9c79b322a6eae(sandboxLoadoutData, var_72b043c81ce7080, "fieldEquipment", 0);
+        level.player setProgressionData(sandboxLoadoutData, currentMission, "lethalGrenade", 0);
+        level.player setProgressionData(sandboxLoadoutData, currentMission, "primaryWeapon", 0);
+        level.player setProgressionData(sandboxLoadoutData, currentMission, "secondaryWeapon", 0);
+        level.player setProgressionData(sandboxLoadoutData, currentMission, "tacticalGrenade", 0);
+        level.player setProgressionData(sandboxLoadoutData, currentMission, "fieldEquipment", 0);
         for (i = 0; i < 16; i++) {
-            level.player function_2bd9c79b322a6eae("sandboxMissionObjectiveData", var_72b043c81ce7080, "objective_" + i, 0);
+            level.player setProgressionData("sandboxMissionObjectiveData", currentMission, "objective_" + i, 0);
         }
-        level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_attempts", 0);
-        level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_should_show_loadout", 0);
-        level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_successes", 0);
-        level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_ascender_tool", 0);
-        level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_nvg", 0);
-        level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_checkpoint_id", 0);
-        level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_plate_level", 1);
+        level.player setProgressionData("spProgData", currentMission + "_attempts", 0);
+        level.player setProgressionData("spProgData", currentMission + "_should_show_loadout", 0);
+        level.player setProgressionData("spProgData", currentMission + "_successes", 0);
+        level.player setProgressionData("spProgData", currentMission + "_ascender_tool", 0);
+        level.player setProgressionData("spProgData", currentMission + "_nvg", 0);
+        level.player setProgressionData("spProgData", currentMission + "_checkpoint_id", 0);
+        level.player setProgressionData("spProgData", currentMission + "_plate_level", 1);
         for (i = 0; i < 16; i++) {
-            level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_map_unlocks", i, 0);
+            level.player setProgressionData("spProgData", currentMission + "_map_unlocks", i, 0);
         }
         for (i = 0; i < 4; i++) {
-            level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_ks_unlocks", i, 0);
+            level.player setProgressionData("spProgData", currentMission + "_ks_unlocks", i, 0);
         }
         for (i = 0; i < var_4b3db997f0b29c9[j]; i++) {
-            level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_discoverables", i, 0);
+            level.player setProgressionData("spProgData", currentMission + "_discoverables", i, 0);
         }
         for (i = 0; i < 25; i++) {
-            level.player function_2bd9c79b322a6eae("spProgData", var_72b043c81ce7080 + "_plate_carriers", i, 0);
+            level.player setProgressionData("spProgData", currentMission + "_plate_carriers", i, 0);
         }
         for (i = 0; i < 8096; i++) {
-            level.player function_2bd9c79b322a6eae("fogOfWarData", "fogOfWarMapData", var_72b043c81ce7080, "tilesDiscovered", i, 0);
+            level.player setProgressionData("fogOfWarData", "fogOfWarMapData", currentMission, "tilesDiscovered", i, 0);
         }
     }
 }

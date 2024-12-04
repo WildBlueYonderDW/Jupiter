@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\utility.gsc;
 #using script_116171939929af39;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\cp_agent_utils.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\cp\killstreaks\gunship_cp.gsc;
-#using scripts\cp_mp\killstreaks\gunship.gsc;
-#using scripts\cp\cp_flares.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\killstreaks\toma_strike.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_flares;
+#using scripts\cp\killstreaks\gunship_cp;
+#using scripts\cp\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\gunship;
+#using scripts\cp_mp\killstreaks\toma_strike;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_9bb5964cbcb3c5d7;
+#namespace gunship_cp;
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5bc
 // Size: 0x63
@@ -34,7 +34,7 @@ function init() {
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x627
 // Size: 0x1b
@@ -42,7 +42,7 @@ function gunship_findboxcenter(mins, maxs) {
     return namespace_162cff1cf88b9bbf::findboxcenter(mins, maxs);
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x64b
 // Size: 0x120
@@ -65,7 +65,7 @@ function gunship_getbombingpoints(centerpoint, numpoints, var_a0edd3f59d938fb1) 
     return var_953968ce39783e28;
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x774
 // Size: 0x36
@@ -77,7 +77,7 @@ function gunship_startbrrespawn(player) {
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7b2
 // Size: 0x245
@@ -117,7 +117,7 @@ function gunship_assigntargetmarkers(gunner) {
     level thread gunship_assignedtargetmarkers_onnewai(self.enemytargetmarkergroup, 0);
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ff
 // Size: 0x48
@@ -130,7 +130,7 @@ function gunship_assignedtargetmarkers_onnewai(var_4226c12910d867d4, var_262f4b5
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0xa4f
 // Size: 0x3df
@@ -162,16 +162,16 @@ function enemygunship_spawngunship(var_2acd6736c2bc3edb, var_a2c5157971449c35, c
         center = centeroverride;
         level.gunship.origin = centeroverride;
     }
-    var_74a3b0688680d1fb = spawn("script_model", center);
-    var_74a3b0688680d1fb setmodel("tag_origin");
-    var_74a3b0688680d1fb.team = "axis";
+    gunship_owner = spawn("script_model", center);
+    gunship_owner setmodel("tag_origin");
+    gunship_owner.team = "axis";
     gunship = spawn("script_model", center);
     gunship setmodel(var_bc737640dd23dd18);
     gunship setcandamage(1);
     gunship.currenthealth = 1000;
     gunship.maxhealth = gunship.currenthealth;
     gunship.health = 9999999;
-    gunship.owner = var_74a3b0688680d1fb;
+    gunship.owner = gunship_owner;
     gunship.timeout = 6669;
     gunship.currentdamagestate = 0;
     gunship.team = "axis";
@@ -187,10 +187,10 @@ function enemygunship_spawngunship(var_2acd6736c2bc3edb, var_a2c5157971449c35, c
         objective_setshowoncompass(minimapid, 1);
     }
     gunship.minimapid = minimapid;
-    var_74a3b0688680d1fb linkto(level.gunship, "tag_origin");
+    gunship_owner linkto(level.gunship, "tag_origin");
     gunship linkto(level.gunship, "tag_origin", var_78ac3c5ef5263d4f, (0, var_8945c22a67231e20 + 90, -30));
-    var_74a3b0688680d1fb.pers = [];
-    gunship.streakinfo = var_74a3b0688680d1fb createstreakinfo("gunship", var_74a3b0688680d1fb);
+    gunship_owner.pers = [];
+    gunship.streakinfo = gunship_owner createstreakinfo("gunship", gunship_owner);
     /#
         if (getdvarint(@"hash_dc7962896e99ec", 0) != 0) {
             gunship thread scripts\cp\killstreaks\gunship_cp::enemygunship_watchdebuglocation(undefined, 1);
@@ -215,7 +215,7 @@ function enemygunship_spawngunship(var_2acd6736c2bc3edb, var_a2c5157971449c35, c
     gunship playloopsound("iw8_ks_ac130_lp");
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe36
 // Size: 0x154
@@ -246,7 +246,7 @@ function play_fake_vo_for_gunship() {
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xf92
 // Size: 0x64
@@ -268,7 +268,7 @@ function enemygunship_watchexfilsequencestart(gunner, var_fa9457caf94a8d20) {
     thread scripts\cp_mp\killstreaks\gunship::gunship_leave(gunner);
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xffe
 // Size: 0x3dd
@@ -335,7 +335,7 @@ function enemygunship_watchdamage(gunner) {
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13e3
 // Size: 0x4a
@@ -351,7 +351,7 @@ function run_suppression_logic(delay) {
     childthread removesuppressioneffectsaftertimeout(delay);
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1435
 // Size: 0x42
@@ -367,7 +367,7 @@ function removesuppressioneffectsaftertimeout(timeout) {
     self.suppressedgunner = undefined;
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x147f
 // Size: 0x1eb
@@ -408,7 +408,7 @@ function enemygunship_handlemissiledetection(player, missileteam, missiletarget,
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1672
 // Size: 0x2d
@@ -417,7 +417,7 @@ function gunship_lockedoncallback() {
     scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_showwarning("missileLocking", self.owner, "killstreak");
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16a7
 // Size: 0x1c
@@ -425,7 +425,7 @@ function gunship_lockedonremovedcallback() {
     scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_hidewarning("missileLocking", self.owner, "killstreak");
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16cb
 // Size: 0x305
@@ -494,7 +494,7 @@ function enemygunship_watchtargets(gunner) {
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19d8
 // Size: 0xa8
@@ -510,7 +510,7 @@ function enemygunship_getnearbytargets(maintarget) {
     return nearbytargets;
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a89
 // Size: 0xed
@@ -533,7 +533,7 @@ function enemygunship_watchplanedistance() {
 
 /#
 
-    // Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+    // Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x1b7e
     // Size: 0x116
@@ -559,7 +559,7 @@ function enemygunship_watchplanedistance() {
 
 #/
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c9c
 // Size: 0x194
@@ -604,7 +604,7 @@ function enemygunship_firerounds(target) {
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e38
 // Size: 0x11
@@ -612,7 +612,7 @@ function enemygunship_getfiretime(weapon) {
     return weaponfiretime(weapon);
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e52
 // Size: 0xb7
@@ -627,7 +627,7 @@ function enemygunship_getshotgoal(target) {
     return endpos;
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f12
 // Size: 0x1b9
@@ -677,7 +677,7 @@ function enemygunship_attackgoal(shotgoal, currentdebugweapon) {
     }
 }
 
-// Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+// Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20d3
 // Size: 0xb
@@ -687,7 +687,7 @@ function enemygunship_watchweaponimpact(projectile) {
 
 /#
 
-    // Namespace namespace_9bb5964cbcb3c5d7 / scripts\cp\killstreaks\gunship_cp
+    // Namespace gunship_cp / scripts\cp\killstreaks\gunship_cp
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x20e6
     // Size: 0x90

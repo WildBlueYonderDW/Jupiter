@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace art;
 
@@ -14,7 +14,7 @@
         thread tweakart();
         tess_init();
         if (!isdefined(level.script)) {
-            level.script = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+            level.script = tolower(getdvar(@"g_mapname"));
         }
     }
 

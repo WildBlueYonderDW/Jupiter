@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_48814951e916af89;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_1f97a44d1761c919;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_code.gsc;
+#using script_48814951e916af89;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
+#using scripts\vehicle\vehicle_common;
 
 #namespace namespace_35e55eb0037e4a11;
 

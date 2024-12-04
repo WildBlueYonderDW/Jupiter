@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\heads_usmc_male.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\heads_usmc_male;
 
 #namespace namespace_84d82620a2192a17;
 

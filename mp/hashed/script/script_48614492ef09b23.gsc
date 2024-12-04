@@ -1,13 +1,13 @@
-#using scripts\mp\loot.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\hud_message.gsc;
-#using script_b7a9ce0a2282b79;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\utility.gsc;
-#using script_2d9d24f7c63ac143;
 #using script_2391409ef7b431e1;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_2d9d24f7c63ac143;
+#using script_600b944a95c3a7bf;
+#using script_b7a9ce0a2282b79;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\loot;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_e40ee8b394ce404;
 
@@ -317,17 +317,17 @@ function function_54d1e54b22f3f1f6(container) {
 function function_4b1ea8143efb9dd(itemtype, itemindex, dropall) {
     switch (itemtype) {
     case 10:
-        lootid = namespace_aead94004cf4c147::function_6196d9ea9a30e609(itemindex);
+        lootid = namespace_aead94004cf4c147::getLootIDAtBackpackIndex(itemindex);
         if (!isdefined(lootid)) {
             return [0, 0];
         }
         scriptablename = namespace_38b993c4618e76cd::getScriptableFromLootID(lootid);
         quantity = 1;
         if (namespace_85cd45b4fe0d86fb::function_3c17a26ce6a4668(lootid)) {
-            var_c00a2c6249962d83 = namespace_85cd45b4fe0d86fb::function_379463a84adb07b4(quantity);
-            var_dab81ead77442a10 = var_c00a2c6249962d83[2];
-            itemcountlefthand = var_c00a2c6249962d83[1];
-            quantity = var_c00a2c6249962d83[0];
+            __a10 = namespace_85cd45b4fe0d86fb::function_379463a84adb07b4(quantity);
+            var_dab81ead77442a10 = __a10[2];
+            itemcountlefthand = __a10[1];
+            quantity = __a10[0];
         } else if (istrue(dropall) || scripts\mp\gametypes\br_pickups::function_d345eec68e01361f(lootid)) {
             quantity = namespace_aead94004cf4c147::function_897b29adb37f06a7(itemindex);
         } else if (isdefined(scriptablename) && scripts\mp\gametypes\br_public::isammo(scriptablename)) {
@@ -355,7 +355,7 @@ function function_4b1ea8143efb9dd(itemtype, itemindex, dropall) {
 // Checksum 0x0, Offset: 0x12e6
 // Size: 0x96
 function function_5711a00587f71794(player) {
-    if (!function_6f45e7311f77eac4(player)) {
+    if (!isContainerOpen(player)) {
         return 0;
     }
     if (!isdefined(player.var_2fa5b49969def47)) {
@@ -396,7 +396,7 @@ function function_3689ee4697dd6347(player, container) {
 // Checksum 0x0, Offset: 0x1402
 // Size: 0xb3
 function function_1225f23a18664f4c(player) {
-    if (!function_6f45e7311f77eac4(player)) {
+    if (!isContainerOpen(player)) {
         return 0;
     }
     if (!isdefined(player.var_2fa5b49969def47)) {

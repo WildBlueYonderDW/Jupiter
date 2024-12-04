@@ -1,7 +1,7 @@
-#using scripts\common\vehicle_build.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_build;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_815718246d44cc4c;
 

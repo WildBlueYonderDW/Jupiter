@@ -1,8 +1,8 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_3a8f9ace195c9da9;
-#using scripts\cp_mp\utility\scriptable_door_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\scriptable_door_utility;
+#using scripts\engine\utility;
 
 #namespace cp_lock_door;
 
@@ -25,7 +25,7 @@ function function_5e512a9e89597b21() {
         }
         if (isdefined(door)) {
             door function_79a4d351eac40e17();
-            if (!isdefined(locker.var_c7ca156b125fd448) || istrue(int(locker.var_c7ca156b125fd448))) {
+            if (!isdefined(locker.remove_prompt) || istrue(int(locker.remove_prompt))) {
                 door scriptabledoorfreeze(1);
             }
             if (!isdefined(locker.var_cd11c31526523a63) || istrue(int(locker.var_cd11c31526523a63))) {

@@ -1,4 +1,4 @@
-#using scripts\engine\scriptable.gsc;
+#using scripts\engine\scriptable;
 
 #namespace rollup_doors;
 

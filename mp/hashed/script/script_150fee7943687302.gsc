@@ -1,10 +1,10 @@
-#using script_d74ae0b4aa21186;
+#using script_3fcc27c3656c46dc;
 #using script_40e63dd222434655;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using script_3fcc27c3656c46dc;
 #using script_9963540126262c0;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_armory_kiosk;
 
 #namespace buy_items;
 

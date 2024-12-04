@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
 #using script_6bfe39bd5c12f84a;
-#using scripts\cp\cp_outline_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_outline_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_8a41a85545b288a9;
 

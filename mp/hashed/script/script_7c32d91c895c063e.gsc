@@ -1,7 +1,7 @@
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_57614a088fb41089;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_af11c3f4276ff1a1;
 

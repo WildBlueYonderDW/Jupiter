@@ -1,5 +1,5 @@
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\utility.gsc;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\utility;
 
 #namespace thermite;
 

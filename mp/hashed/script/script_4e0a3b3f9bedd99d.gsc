@@ -1,19 +1,19 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\soldier\throwgrenade.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
 #using script_4b6cdcd3c396abab;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\shellshock.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\mp\equipment\gas_grenade.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\asm\soldier\melee.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\soldier\melee;
+#using scripts\asm\soldier\throwgrenade;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\shellshock;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
 
 #namespace smokebomb;
 

@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
 #using script_64acb6ce534155b7;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_assassination_quest.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_assassination_quest;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_9fd96a29b5786f5b;
 

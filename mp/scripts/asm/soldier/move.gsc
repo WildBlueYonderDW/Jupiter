@@ -1,13 +1,13 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\anim\weaponlist.gsc;
-#using scripts\asm\soldier\script_funcs.gsc;
+#using scripts\anim\utility_common;
+#using scripts\anim\weaponlist;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\script_funcs;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace move;
 
@@ -469,9 +469,9 @@ function handlewarpexitstart(note, params) {
             duration = params.duration - params.duration % 50;
         }
         assert(animhasnotetrack(params.xanim, endnote));
-        var_57accdc40b2f50e = motionwarp_getworldifydata(params);
-        anglealongpath = var_57accdc40b2f50e[1];
-        posalongpath = var_57accdc40b2f50e[0];
+        __a0 = motionwarp_getworldifydata(params);
+        anglealongpath = __a0[1];
+        posalongpath = __a0[0];
         motionwarpwithnotetracks(params.xanim, posalongpath, (0, anglealongpath, 0), "warp_exit_start", endnote, duration, 0);
     }
 }
@@ -483,25 +483,25 @@ function handlewarpexitstart(note, params) {
 function checktransitionpreconditions() {
     if (!isdefined(self.pathgoalpos)) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:xc6>");
+            debug_arrival("<dev string:xab>" + self getentitynumber() + "<dev string:xc6>");
         #/
         return false;
     }
     if (!self.facemotion) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:xea>");
+            debug_arrival("<dev string:xab>" + self getentitynumber() + "<dev string:xea>");
         #/
         return false;
     }
     if (isdefined(self.disableexits) && self.disableexits) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:x109>");
+            debug_arrival("<dev string:xab>" + self getentitynumber() + "<dev string:x109>");
         #/
         return false;
     }
     if (self.stairsstate != "none") {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:x129>");
+            debug_arrival("<dev string:xab>" + self getentitynumber() + "<dev string:x129>");
         #/
         return false;
     }
@@ -517,7 +517,7 @@ function checktransitionpreconditions() {
     }
     if (self pathdisttogoal() < mindist) {
         /#
-            function_57bc598a3c0d7a1e("<dev string:xab>" + self getentitynumber() + "<dev string:x139>");
+            debug_arrival("<dev string:xab>" + self getentitynumber() + "<dev string:x139>");
         #/
         return false;
     }

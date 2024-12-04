@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
 #using script_1db8d0e02a99c5e2;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_7ef95bba57dc4b82;
 #using script_354c862768cfe202;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using script_74502a9e0ef1f19c;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_be787b38fa646463;
 

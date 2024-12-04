@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
 
 #namespace namespace_83b166db657d8e25;
 
@@ -38,7 +38,7 @@ function function_b7859cb26794e233() {
     level.scr_anim["outro_button"]["attacker_outro_shot01"] = script_model%jup_war_mp_attacker_exfil_button;
     level.scr_animtree["outro_missile"] = %script_model;
     level.scr_anim["outro_missile"]["attacker_outro_shot02"] = script_model%jup_war_mp_attacker_exfil_end_missile;
-    level.var_cce2d86c9cf3563b["attacker_outro_shot01"] = 65;
+    level.scr_fov["attacker_outro_shot01"] = 65;
 }
 
 // Namespace namespace_83b166db657d8e25 / namespace_d7d87c46812c4227
@@ -62,7 +62,7 @@ function function_234f0be18cecda1f() {
     level.scr_anim["soldier_02"]["defender_outro"] = script_model%jup_war_defender_exfil_soldier_02;
     level.scr_animtree["soldier_03"] = %script_model;
     level.scr_anim["soldier_03"]["defender_outro"] = script_model%jup_war_defender_exfil_soldier_03;
-    level.var_cce2d86c9cf3563b["defender_outro"] = 81.2;
+    level.scr_fov["defender_outro"] = 81.2;
 }
 
 // Namespace namespace_83b166db657d8e25 / namespace_d7d87c46812c4227

@@ -1,14 +1,14 @@
-#using scripts\common\vehicle.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\helicopter_globals.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_code.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_code;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\helicopter_globals;
+#using scripts\sp\utility;
 
-#namespace namespace_4c777491adda48fb;
+#namespace helicopter_ai;
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a1
 // Size: 0x5e
@@ -22,7 +22,7 @@ function evasive_think(vehicle) {
     }
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x207
 // Size: 0x260
@@ -69,7 +69,7 @@ function evasive_createmaneuvers(vehicle, var_17240fd48aa84699) {
     return points;
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x470
 // Size: 0x1b5
@@ -108,7 +108,7 @@ function evasive_startmaneuvers(vehicle, points) {
     vehicle thread utility::vehicle_resumepath();
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x62d
 // Size: 0x39
@@ -121,7 +121,7 @@ function evasive_endmaneuvers(vehicle) {
     vehicle thread utility::vehicle_resumepath();
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x181
@@ -141,13 +141,13 @@ function evasive_addpoint(forward, side, up, goalYawMethod) {
     self.evasive_points[index]["forward"] = forward;
     self.evasive_points[index]["side"] = side;
     self.evasive_points[index]["up"] = up;
-    var_f6beae9ff9a9876f = anglestoforward(self.evasive_points[0]["ang"]);
+    vec_forward = anglestoforward(self.evasive_points[0]["ang"]);
     vec_right = anglestoright(self.evasive_points[0]["ang"]);
-    self.evasive_points[index]["pos"] = self.evasive_points[index - 1]["pos"] + var_f6beae9ff9a9876f * self.evasive_points[index]["forward"] + vec_right * self.evasive_points[index]["side"] + (0, 0, up);
+    self.evasive_points[index]["pos"] = self.evasive_points[index - 1]["pos"] + vec_forward * self.evasive_points[index]["forward"] + vec_right * self.evasive_points[index]["side"] + (0, 0, up);
     self.evasive_points[index]["goalYawMethod"] = goalYawMethod;
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7f7
 // Size: 0x2d
@@ -157,7 +157,7 @@ function evasive_getallpoints(vehicle) {
     return points;
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x82d
 // Size: 0x57
@@ -167,16 +167,16 @@ function evasive_drawpoints(points) {
     }
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x88c
 // Size: 0x2e2
 function wingman_think(vehicle) {
     vehicle endon("death");
     level.playervehicle endon("death");
-    var_2bff61561a805133 = 2200;
-    var_9a4d6ad378be2c9d = 1500;
-    var_abd0e34725af38e3 = 0;
+    dist_forward = 2200;
+    dist_side = 1500;
+    dist_up = 0;
     var_b608f355e5ab52b8 = 1;
     var_40b0f17ed8bcc0f1 = 1.2;
     var_f70c456b97d2571b = 50;
@@ -185,12 +185,12 @@ function wingman_think(vehicle) {
     var_a2e4675d403a8346 = getplayerhelispeed();
     var_a9848973d185d972 = 0;
     var_c71354f9021ff3f3 = gettime();
-    goalpos = wingman_getgoalpos(var_2bff61561a805133, var_9a4d6ad378be2c9d, var_abd0e34725af38e3);
+    goalpos = wingman_getgoalpos(dist_forward, dist_side, dist_up);
     vehicle vehicle_setspeed(30, 20, 20);
     vehicle settargetyaw(level.playervehicle.angles[1]);
     vehicle setvehgoalpos(goalpos, 1);
     for (;;) {
-        goalpos = wingman_getgoalpos(var_2bff61561a805133, var_9a4d6ad378be2c9d, var_abd0e34725af38e3);
+        goalpos = wingman_getgoalpos(dist_forward, dist_side, dist_up);
         if (getdvar(@"hash_c9ab8c9fc46c92cf") == "1") {
             thread draw_line_for_time(level.playervehicle.origin, goalpos, 0, 1, 0, var_b608f355e5ab52b8);
             thread draw_line_for_time(level.playervehicle.origin, vehicle.origin, 0, 0, 1, var_b608f355e5ab52b8);
@@ -236,18 +236,18 @@ function wingman_think(vehicle) {
     }
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb76
 // Size: 0x99
-function wingman_getgoalpos(var_2bff61561a805133, var_9a4d6ad378be2c9d, var_abd0e34725af38e3) {
-    var_f6beae9ff9a9876f = anglestoforward(flat_angle(level.playervehicle.angles));
+function wingman_getgoalpos(dist_forward, dist_side, dist_up) {
+    vec_forward = anglestoforward(flat_angle(level.playervehicle.angles));
     vec_right = anglestoright(flat_angle(level.playervehicle.angles));
-    goalpos = level.playervehicle.origin + var_f6beae9ff9a9876f * var_2bff61561a805133 + vec_right * var_9a4d6ad378be2c9d + (0, 0, var_abd0e34725af38e3);
+    goalpos = level.playervehicle.origin + vec_forward * dist_forward + vec_right * dist_side + (0, 0, dist_up);
     return goalpos;
 }
 
-// Namespace namespace_4c777491adda48fb / scripts\sp\helicopter_ai
+// Namespace helicopter_ai / scripts\sp\helicopter_ai
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc18
 // Size: 0x10

@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_3ed005fe9b78b9da;
-#using scripts\mp\hud_util.gsc;
 #using script_33b83540dd41c31e;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
+#using script_3ed005fe9b78b9da;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace namespace_82a062af69d3ecd6;
 

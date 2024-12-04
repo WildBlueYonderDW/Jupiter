@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_7edf952f8921aa6b;
 #using script_4fa22bc28608e9bd;
-#using scripts\asm\shared\mp\utility.gsc;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_cb396b2f1fa7bd07;
 
@@ -34,7 +34,7 @@ function function_99484082dc3884de() {
     self.var_7f35bbdd17571a22 = self.zombieaisettings.var_e58a65b7a8f5973c.var_c8bcab8c1ce580a4;
     self.var_16874cb97aa71c9f = self.zombieaisettings.var_e58a65b7a8f5973c.var_15ca0d607bd0f65d;
     self.var_146b3cc414242deb = self.zombieaisettings.var_e58a65b7a8f5973c.var_6ad8008df08f66a8 * 1000;
-    self.var_5d76955658d19832 = self.zombieaisettings.var_e58a65b7a8f5973c.var_11513ec3b3dded73;
+    self.summon_invulnerability = self.zombieaisettings.var_e58a65b7a8f5973c.var_11513ec3b3dded73;
     self.var_7415a936b72426f1 = self.zombieaisettings.var_e58a65b7a8f5973c.var_49e28583f4085c3;
     self.var_446ffae9ade57ccc = self.zombieaisettings.var_e58a65b7a8f5973c.var_1edd3815011a08bd;
     self.var_68500b288d8cc059 = self.zombieaisettings.var_e58a65b7a8f5973c.var_65f99a67b50617f5;
@@ -124,7 +124,7 @@ function function_e8bb01e68081e922() {
     self endon("death");
     while (true) {
         self waittill("summon_loop_start");
-        if (istrue(self.var_5d76955658d19832)) {
+        if (istrue(self.summon_invulnerability)) {
             self.var_7878d9a79c788c74 = 1;
             if (isdefined(level.var_718ee74a7cdbfee5) && isdefined(level.players)) {
                 foreach (player in level.players) {

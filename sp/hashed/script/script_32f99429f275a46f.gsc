@@ -1,34 +1,34 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\sp\destructibles\barrel_common.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\destructibles\barrel_common;
+#using scripts\sp\utility;
 
-#namespace namespace_36e29f37467ebcd6;
+#namespace log_pile;
 
-// Namespace namespace_36e29f37467ebcd6 / namespace_831319c7b03ee2b3
+// Namespace log_pile / namespace_831319c7b03ee2b3
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x127
 // Size: 0x7c
 function function_51b91752c24c4995() {
-    var_8b6e8b1442b446fe = getentarray("dyn_log_pile", "targetname");
-    if (var_8b6e8b1442b446fe.size <= 0) {
+    piles = getentarray("dyn_log_pile", "targetname");
+    if (piles.size <= 0) {
         return;
     }
     level.g_effect["log_pile_impact"] = loadfx("vfx/jup/prop/scriptables/vfx_jup_log_shrapnel_01.vfx");
-    for (i = 0; i < var_8b6e8b1442b446fe.size; i++) {
-        var_8b6e8b1442b446fe[i] setcandamage(1);
-        var_8b6e8b1442b446fe[i].spewtags = [];
-        var_8b6e8b1442b446fe[i] thread function_36e29f37467ebcd6();
+    for (i = 0; i < piles.size; i++) {
+        piles[i] setcandamage(1);
+        piles[i].spewtags = [];
+        piles[i] thread log_pile();
     }
 }
 
-// Namespace namespace_36e29f37467ebcd6 / namespace_831319c7b03ee2b3
+// Namespace log_pile / namespace_831319c7b03ee2b3
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ab
 // Size: 0x17e
-function function_36e29f37467ebcd6() {
+function log_pile() {
     self endon("entitydeleted");
     while (true) {
         self waittill("damage", amount, attacker, direction_vec, point, type, modelname, tagname, partname, dflags, objweapon);
@@ -57,7 +57,7 @@ function function_36e29f37467ebcd6() {
     }
 }
 
-// Namespace namespace_36e29f37467ebcd6 / namespace_831319c7b03ee2b3
+// Namespace log_pile / namespace_831319c7b03ee2b3
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x331
 // Size: 0x3e

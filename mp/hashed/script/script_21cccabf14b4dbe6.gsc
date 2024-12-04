@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_multi_circle.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_multi_circle;
+#using scripts\mp\utility\game;
 
 #namespace namespace_9ced0748cfd1d189;
 
@@ -30,7 +30,7 @@ function function_a8a81e6bc157564d() {
     if (getdvarint(@"hash_5bd161f5b9367829", 1) != 0) {
         scripts\mp\gametypes\br_gametypes::enablefeature("circleEarlyStart");
     }
-    function_ccacfdcc7aa6b6d7();
+    initLevelData();
     waitframe();
     circlespath = undefined;
     if (scripts\mp\gametypes\br_gametypes::isbrgametypefuncdefined("createMultiCircleObjectivesStruct")) {
@@ -54,7 +54,7 @@ function function_a8a81e6bc157564d() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x352
 // Size: 0x1b6
-function function_ccacfdcc7aa6b6d7() {
+function initLevelData() {
     level.var_cb9a9bfbbc8b8a0f = 1;
     level.var_2df69b8e552238b6 = 1;
     level.br_circle.circleindex = 0;

@@ -1,23 +1,23 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using script_5d265b4fca61f070;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\sp\player_death.gsc;
-#using scripts\sp\player_rig.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\spawner.gsc;
-#using scripts\sp\trigger.gsc;
-#using script_9feb66b51ab34e8;
 #using script_10bb9f045d0c567a;
+#using script_5d265b4fca61f070;
 #using script_73e89fcb51b31802;
+#using script_9feb66b51ab34e8;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\player;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_death;
+#using scripts\sp\player_rig;
+#using scripts\sp\spawner;
+#using scripts\sp\trigger;
+#using scripts\sp\utility;
+#using scripts\stealth\threat_sight;
+#using scripts\stealth\utility;
 
 #namespace namespace_5b6d7d7426cd03ec;
 
@@ -169,7 +169,7 @@ function function_d7d941d826e22756() {
 function function_50d86411bde48d67(animnode) {
     self endon("death");
     animnode animation::anim_single_solo(self, "meetup_scene_2");
-    namespace_72b975aae422b41a::function_e2ca6c74c16376cc();
+    anim_sp::die_frozen();
 }
 
 // Namespace namespace_5b6d7d7426cd03ec / namespace_cceec28ff7e1d259
@@ -285,7 +285,7 @@ function function_97b8fd183c25fd05() {
         if (dist <= var_a825dbbc9429b523) {
             break;
         }
-        if (!namespace_1542dec1529315d1::function_d36f9832eaeb482b(level.var_30a959d3248e68af.struct2, level.player, 0.1)) {
+        if (!namespace_1542dec1529315d1::dot_check(level.var_30a959d3248e68af.struct2, level.player, 0.1)) {
             continue;
         }
         if (!level.player istouching(trigger) && dist <= distmax) {
@@ -366,7 +366,7 @@ function function_97b8fa183c25f66c() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x29c7
 // Size: 0x247
-function function_644b4bb159657282() {
+function spawn_weapons() {
     structs = utility::getstructarray("gun_struct", "targetname");
     foreach (struct in structs) {
         type = struct.script_noteworthy;
@@ -781,7 +781,7 @@ function function_ade8b458bbcf24ac() {
     utility::flag_wait("maintenance_door_vo_done");
     thread function_b0f6f8771d05cf5a();
     delaythread(1, &function_f024005ec95e9860);
-    thread function_9e84a67c4196ab81();
+    thread start_fan();
     animnode notify(level.partner.var_428407c1b0a62c2f);
     animnode thread animation::anim_single([var_a74fc3fb31676a23, var_a74fc1fb316765bd], "maintenance_door_exit");
     animnode thread animation::anim_single_solo(button, "maintenance_door_exit");
@@ -823,7 +823,7 @@ function function_95d5a5017e02f7b8() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a62
 // Size: 0x2a
-function function_9e84a67c4196ab81() {
+function start_fan() {
     fan = getent("spinning_fan", "targetname");
     fan thread fan_spin(0.3);
 }
@@ -833,14 +833,14 @@ function function_9e84a67c4196ab81() {
 // Checksum 0x0, Offset: 0x3a94
 // Size: 0xd3
 function function_5f96ca0117e9176a() {
-    var_ee3ec1998020bf1f = [];
-    var_ee3ec1998020bf1f[0] = getent("server_fan_01", "targetname");
-    var_ee3ec1998020bf1f[0].speed = 0.15;
-    var_ee3ec1998020bf1f[1] = getent("server_fan_02", "targetname");
-    var_ee3ec1998020bf1f[1].speed = 0.2;
-    var_ee3ec1998020bf1f[2] = getent("server_fan_03", "targetname");
-    var_ee3ec1998020bf1f[2].speed = 0.3;
-    foreach (fan in var_ee3ec1998020bf1f) {
+    fans = [];
+    fans[0] = getent("server_fan_01", "targetname");
+    fans[0].speed = 0.15;
+    fans[1] = getent("server_fan_02", "targetname");
+    fans[1].speed = 0.2;
+    fans[2] = getent("server_fan_03", "targetname");
+    fans[2].speed = 0.3;
+    foreach (fan in fans) {
         fan thread fan_spin(0.2);
     }
 }
@@ -1008,7 +1008,7 @@ function function_6c37af56aaaad249(var_a825dbbc9429b523, var_d58153930aeae9b5) {
     if (level.player issprinting() && dist <= var_d58153930aeae9b5) {
         return true;
     }
-    if (function_d36f9832eaeb482b(level.partner, level.player, 0.1)) {
+    if (dot_check(level.partner, level.player, 0.1)) {
         return true;
     }
     return false;
@@ -1327,14 +1327,14 @@ function function_a3c019859ba20bab() {
             break;
         }
     }
-    function_500caeb0c0ff5bfd(3, 0);
+    partner_countdown(3, 0);
 }
 
 // Namespace namespace_5b6d7d7426cd03ec / namespace_cceec28ff7e1d259
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4daa
 // Size: 0xcc
-function function_500caeb0c0ff5bfd(time, skip) {
+function partner_countdown(time, skip) {
     level endon("final_button_pushed");
     thread function_d9f5caa06bcb843e(time);
     utility::countdown_start(time, %SP_JUP_SILO/UI_EXIT_01);

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
 #using script_40ee7223a578cbc8;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
 
 #namespace namespace_453f6d7726d3161e;
 

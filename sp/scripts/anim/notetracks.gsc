@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\anim\weaponlist.gsc;
+#using scripts\anim\utility_common;
+#using scripts\anim\weaponlist;
+#using scripts\asm\shared\utility;
+#using scripts\common\debug;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace notetracks;
 
@@ -675,15 +675,15 @@ function notetrack_prefix_handler_common(notetrack) {
         player = function_6ba70af530538250();
         assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         fade_data = strtok(notetrack, "_");
-        var_21c15ce9aa5f97e2 = tolower(fade_data[1]);
+        fade_action = tolower(fade_data[1]);
         var_3e748cf38c614200 = undefined;
         var_21e5d264c2eefa94 = undefined;
         var_9f075c08a89eab6f = undefined;
-        if (var_21c15ce9aa5f97e2 == "to") {
+        if (fade_action == "to") {
             var_3e748cf38c614200 = float(fade_data[2]);
-        } else if (var_21c15ce9aa5f97e2 == "from") {
+        } else if (fade_action == "from") {
             var_9f075c08a89eab6f = float(fade_data[2]);
-        } else if (var_21c15ce9aa5f97e2 == "tofrom") {
+        } else if (fade_action == "tofrom") {
             var_3e748cf38c614200 = float(fade_data[2]);
             var_21e5d264c2eefa94 = float(fade_data[3]);
             var_9f075c08a89eab6f = float(fade_data[4]);
@@ -749,13 +749,13 @@ function notetrack_prefix_handler_common(notetrack) {
         player = function_6ba70af530538250();
         assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         fov_data = strtok(notetrack, "_");
-        var_555d27d0d0741def = tolower(fov_data[1]);
+        fov_action = tolower(fov_data[1]);
         fov_value = undefined;
         fov_time = undefined;
         var_4ddc157b83fb4768 = undefined;
         var_d774055d7a1b20db = undefined;
         var_9a3e5dc4eb196631 = undefined;
-        if (var_555d27d0d0741def == "start") {
+        if (fov_action == "start") {
             fov_value = float(fov_data[2]);
             if (isdefined(fov_data[3])) {
                 fov_time = float(fov_data[3]);
@@ -786,8 +786,8 @@ function notetrack_prefix_handler_common(notetrack) {
         player = function_6ba70af530538250();
         assertex(isdefined(player), "Player undefined in notetrack: " + notetrack);
         dof_tokens = strtok(notetrack, ",");
-        var_3f6822b43fe907ad = tolower(dof_tokens[0]);
-        if (var_3f6822b43fe907ad == "dof_auto") {
+        dof_action = tolower(dof_tokens[0]);
+        if (dof_action == "dof_auto") {
             if (!isdefined(dof_tokens[1])) {
                 assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:xf2>");
                 return;
@@ -796,7 +796,7 @@ function notetrack_prefix_handler_common(notetrack) {
             var_f94941fb655b0a39 = function_305541769c1da042(dof_tokens[2]);
             var_b225076a313507bb = function_305541769c1da042(dof_tokens[3]);
             player scripts\common\utility::dof_enable_autofocus(fstop, undefined, var_f94941fb655b0a39, var_b225076a313507bb);
-        } else if (var_3f6822b43fe907ad == "dof_ent" || var_3f6822b43fe907ad == "dof_ent1") {
+        } else if (dof_action == "dof_ent" || dof_action == "dof_ent1") {
             if (!isdefined(dof_tokens[1])) {
                 assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:xf2>");
                 return;
@@ -814,13 +814,13 @@ function notetrack_prefix_handler_common(notetrack) {
             }
             var_d6c219c0784f4dc6 = function_b8ba8f3c8f62ace7(dof_tokens[5]);
             focus_ent = self;
-            if (var_3f6822b43fe907ad == "dof_ent") {
+            if (dof_action == "dof_ent") {
                 player scripts\common\utility::dof_enable_autofocus(fstop, focus_ent, var_f94941fb655b0a39, var_b225076a313507bb, undefined, override_bone, undefined, var_d6c219c0784f4dc6, 1);
             } else {
                 focus_distance = distance(player geteye(), focus_ent.origin);
                 player utility::dof_enable(fstop, focus_distance, undefined, var_f94941fb655b0a39, var_b225076a313507bb, undefined, override_bone);
             }
-        } else if (var_3f6822b43fe907ad == "dof_distance" || var_3f6822b43fe907ad == "dof_distance1") {
+        } else if (dof_action == "dof_distance" || dof_action == "dof_distance1") {
             if (!isdefined(dof_tokens[1])) {
                 assertmsg("<dev string:xde>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:x166>");
                 return;
@@ -833,12 +833,12 @@ function notetrack_prefix_handler_common(notetrack) {
             fstop = float(dof_tokens[2]);
             var_f94941fb655b0a39 = function_305541769c1da042(dof_tokens[3]);
             var_b225076a313507bb = function_305541769c1da042(dof_tokens[4]);
-            if (var_3f6822b43fe907ad == "dof_distance") {
+            if (dof_action == "dof_distance") {
                 player scripts\common\utility::dof_enable_autofocus(fstop, undefined, var_f94941fb655b0a39, var_b225076a313507bb, undefined, focus_distance, undefined, 1);
             } else {
                 player utility::dof_enable(fstop, focus_distance, undefined, var_f94941fb655b0a39, var_b225076a313507bb);
             }
-        } else if (var_3f6822b43fe907ad == "dof_pos" || var_3f6822b43fe907ad == "dof_pos1") {
+        } else if (dof_action == "dof_pos" || dof_action == "dof_pos1") {
             focus_pos = function_71da05b697e393a1(dof_tokens[1], dof_tokens[2], dof_tokens[3]);
             if (!isdefined(focus_pos)) {
                 assertmsg("<dev string:x195>" + notetrack + "<dev string:xec>" + function_a2eaafb222316a2(self) + "<dev string:x1a1>");
@@ -851,13 +851,13 @@ function notetrack_prefix_handler_common(notetrack) {
             fstop = float(dof_tokens[4]);
             var_f94941fb655b0a39 = function_305541769c1da042(dof_tokens[5]);
             var_b225076a313507bb = function_305541769c1da042(dof_tokens[6]);
-            if (var_3f6822b43fe907ad == "dof_pos") {
+            if (dof_action == "dof_pos") {
                 player scripts\common\utility::dof_enable_autofocus(fstop, undefined, var_f94941fb655b0a39, var_b225076a313507bb, undefined, focus_pos, undefined, 1);
             } else {
                 focus_distance = distance(player geteye(), focus_pos);
                 player utility::dof_enable(fstop, focus_distance, undefined, var_f94941fb655b0a39, var_b225076a313507bb, focus_pos);
             }
-        } else if (var_3f6822b43fe907ad == "dof_stop") {
+        } else if (dof_action == "dof_stop") {
             player scripts\common\utility::dof_disable_autofocus();
         } else {
             assertmsg("<dev string:xde>" + notetrack + "<dev string:x214>" + function_a2eaafb222316a2(self) + "<dev string:x21b>");
@@ -1304,10 +1304,10 @@ function function_6b6fe2ba8bff11cd(var_bed488ee5acfc2b9) {
 // Checksum 0x0, Offset: 0x36ca
 // Size: 0xa9
 function function_fdb7ea91bda694dc(attachinfo) {
-    var_c00a2c6249962d83 = function_6b6fe2ba8bff11cd(attachinfo);
-    var_ee3807ab9a6a9c73 = var_c00a2c6249962d83[2];
-    tag = var_c00a2c6249962d83[1];
-    model = var_c00a2c6249962d83[0];
+    __a10 = function_6b6fe2ba8bff11cd(attachinfo);
+    var_ee3807ab9a6a9c73 = __a10[2];
+    tag = __a10[1];
+    model = __a10[0];
     if (isdefined(self.notetrackattach) && isdefined(self.notetrackattach[tag])) {
         function_bccbbce06002296d(tag);
     }
@@ -1644,14 +1644,14 @@ function function_1f7bb66025f2aedf() {
     var_e681aa5d14129651[0] = "rm_";
     var_e681aa5d14129651[1] = "rml_";
     var_e681aa5d14129651[2] = "rms_";
-    var_7efcb4fa162fff17 = array_combine(var_2076c164305ff2a6, var_e681aa5d14129651);
+    prefix_array = array_combine(var_2076c164305ff2a6, var_e681aa5d14129651);
     foreach (var_5452e6acec0818e1 in level.scr_anim) {
         foreach (var_b0051352d1332656 in var_5452e6acec0818e1) {
             if (!isarray(var_b0051352d1332656)) {
                 var_b0051352d1332656 = [var_b0051352d1332656];
             }
             foreach (animation in var_b0051352d1332656) {
-                foreach (note_prefix in var_7efcb4fa162fff17) {
+                foreach (note_prefix in prefix_array) {
                     if (!isanimation(animation)) {
                         continue;
                     }

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp\utility\entity.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp\utility\entity;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_27499dd1aeecef75;
 

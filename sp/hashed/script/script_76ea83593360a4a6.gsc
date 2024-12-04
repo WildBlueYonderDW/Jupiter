@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\heads_london_police.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\heads_london_police;
 
 #namespace namespace_3cd9ed78820ed8fa;
 

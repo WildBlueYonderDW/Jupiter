@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_3054293078dbc58c;
-#using scripts\engine\math.gsc;
-#using script_7edf952f8921aa6b;
-#using script_77be8cd2b6610d5;
-#using scripts\common\values.gsc;
-#using scripts\common\ai.gsc;
 #using script_193e3e231841082f;
-#using scripts\mp\mp_agent_damage.gsc;
+#using script_3054293078dbc58c;
+#using script_77be8cd2b6610d5;
+#using script_7edf952f8921aa6b;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent_damage;
 
 #namespace zombie_deathworm;
 

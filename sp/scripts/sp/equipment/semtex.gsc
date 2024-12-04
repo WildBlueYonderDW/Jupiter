@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\utility;
 
 #namespace semtex;
 
@@ -47,12 +47,12 @@ function semtex_watch_beacon(attacker, fuse) {
         return;
     }
     if (isai(attacker)) {
-        var_db4cc438ccd1b2b3 = 2;
+        semtex_fuse = 2;
         if (isdefined(fuse)) {
-            var_db4cc438ccd1b2b3 = fuse;
+            semtex_fuse = fuse;
         }
         self setscriptablepartstate("state", "beacon_ai", 0);
-        wait var_db4cc438ccd1b2b3;
+        wait semtex_fuse;
     }
     self setscriptablepartstate("state", "beacon", 0);
 }

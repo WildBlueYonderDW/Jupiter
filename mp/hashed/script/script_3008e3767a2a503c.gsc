@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
 
 #namespace namespace_876949a26c07c757;
 
@@ -21,7 +21,7 @@ function init() {
     level.var_78a0087bea386662 = spawnstruct();
     level.var_78a0087bea386662.var_d04b4a9729479cad = &function_d04b4a9729479cad;
     level.var_78a0087bea386662.var_c80fb54710c9e5aa = &function_c80fb54710c9e5aa;
-    level.var_78a0087bea386662.var_e807776b16dce7d4 = &function_52ecb2291cfdb603;
+    level.var_78a0087bea386662.var_e807776b16dce7d4 = &get_reward;
     level.var_78a0087bea386662.onuse = &onuse;
     level.var_78a0087bea386662.var_d70ec56158c8530b = &function_d70ec56158c8530b;
     level.var_e191e47360df882c = getdvarfloat(@"hash_f392490d3e81dd36", 30);
@@ -355,7 +355,7 @@ function function_c80fb54710c9e5aa(reward) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1106
 // Size: 0x8d
-function function_52ecb2291cfdb603() {
+function get_reward() {
     values = [1, 2, 3, 4];
     weights = [getdvarfloat(@"hash_c98b32754e2d7c86"), getdvarfloat(@"hash_f305666815da5e5f"), getdvarfloat(@"hash_805ad2ae010a9d84"), getdvarfloat(@"hash_d1deadfc50d1019d")];
     reward = weighted_array_randomize(values, weights);
@@ -368,15 +368,15 @@ function function_52ecb2291cfdb603() {
 // Size: 0x89
 function weighted_array_randomize(array, weights) {
     assert(array.size == weights.size);
-    var_13acbd53528ed1ff = 0;
+    cumulative_weight = 0;
     for (i = 0; i < weights.size; i++) {
-        var_13acbd53528ed1ff += weights[i];
+        cumulative_weight += weights[i];
     }
-    random_weight = randomfloat(var_13acbd53528ed1ff);
-    var_98abcc65d2b0707d = 0;
+    random_weight = randomfloat(cumulative_weight);
+    running_total = 0;
     for (i = 0; i < array.size; i++) {
-        var_98abcc65d2b0707d += weights[i];
-        if (var_98abcc65d2b0707d >= random_weight) {
+        running_total += weights[i];
+        if (running_total >= random_weight) {
             return array[i];
         }
     }

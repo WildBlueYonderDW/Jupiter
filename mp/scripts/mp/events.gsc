@@ -1,68 +1,68 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_247745a526421ba7;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\potg.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\player_frame_update_aggregator.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\hud_message.gsc;
 #using script_15eddb0fac236a22;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\potg_events.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\weapons.gsc;
-#using script_6a5d3bf7a5b7064a;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\dragonsbreath.gsc;
-#using scripts\cp_mp\crossbow.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using script_7c40fa80892a721;
-#using script_4948cdf739393d2d;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\mp\calloutmarkerping_mp.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\gametypes\war.gsc;
-#using script_728ffcee8cbf30ee;
-#using scripts\mp\flags.gsc;
 #using script_1cf2ed809496bf4e;
-#using scripts\mp\poi.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\equipment\snapshot_grenade.gsc;
-#using script_548072087c9fd504;
-#using scripts\mp\gametypes\br_challenges.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_374557d490fff8bd;
-#using scripts\mp\persistence.gsc;
-#using script_4a6760982b403bad;
-#using scripts\mp\gametypes\br_analytics.gsc;
 #using script_45f403e1732217d3;
-#using scripts\mp\equipment.gsc;
+#using script_4948cdf739393d2d;
+#using script_4a6760982b403bad;
+#using script_548072087c9fd504;
 #using script_6775ad452d13858;
-#using scripts\engine\trace.gsc;
+#using script_6a5d3bf7a5b7064a;
+#using script_728ffcee8cbf30ee;
+#using script_7c40fa80892a721;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\crossbow;
+#using scripts\cp_mp\dragonsbreath;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\calloutmarkerping_mp;
+#using scripts\mp\class;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\snapshot_grenade;
+#using scripts\mp\events;
+#using scripts\mp\flags;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_challenges;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\gametypes\war;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\persistence;
+#using scripts\mp\poi;
+#using scripts\mp\potg;
+#using scripts\mp\potg_events;
+#using scripts\mp\rank;
+#using scripts\mp\supers;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\player_frame_update_aggregator;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace events;
 
@@ -363,7 +363,7 @@ function onplayerconnect() {
         player.lastweaponchangetime = 0;
         player initstancetracking();
         if (getdvarint(@"hash_eba0ce405ac50c64", 0) == 1) {
-            player setclientdvar(@"hash_cc2997fd2acb23e0", 1);
+            player setclientdvar(@"cg_everyonehearseveryone", 1);
         }
     }
 }
@@ -789,7 +789,7 @@ function function_b7f154368abbe463(victim, objweapon, meansofdeath, inflictor, d
                     }
                 } else {
                     self.modifiers["hipfire"] = 1;
-                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"Hipfire"));
+                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hipfire"));
                 }
             }
             if (victim issprinting()) {
@@ -823,7 +823,7 @@ function function_b7f154368abbe463(victim, objweapon, meansofdeath, inflictor, d
                     self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"ads"));
                 } else {
                     self.modifiers["hipfire"] = 1;
-                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"Hipfire"));
+                    self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hipfire"));
                 }
             }
         }
@@ -1658,7 +1658,7 @@ function killedplayer(killid, victim, objweapon, meansofdeath, inflictor, deathd
             }
             if (istrue(self.modifiers["low_health_kill"])) {
                 thread doScoreEvent(#"low_health_kill");
-                level thread scripts\mp\battlechatter_mp::trysaylocalsound(self, #"hash_2f4fcdb5f53af5ca", undefined, 1);
+                level thread scripts\mp\battlechatter_mp::trysaylocalsound(self, #"bc_flavor_player_closecall", undefined, 1);
             }
             if (istrue(self.modifiers["ads"])) {
                 incpersstat("adsKills", 1);
@@ -2364,9 +2364,9 @@ function isbackkill(attacker, victim, meansofdeath) {
     if (meansofdeath != "MOD_RIFLE_BULLET" && meansofdeath != "MOD_PISTOL_BULLET" && meansofdeath != "MOD_MELEE" && meansofdeath != "MOD_HEAD_SHOT" && meansofdeath != "MOD_IMPACT" && !scripts\mp\weapons::function_d24bf01d284ef941(attacker.currentweapon)) {
         return false;
     }
-    var_cb116ac8aa94ce55 = victim getplayerangles();
-    var_524b19d2034e1406 = attacker getplayerangles();
-    anglediff = angleclamp180(var_cb116ac8aa94ce55[1] - var_524b19d2034e1406[1]);
+    victimangles = victim getplayerangles();
+    attackerangles = attacker getplayerangles();
+    anglediff = angleclamp180(victimangles[1] - attackerangles[1]);
     if (abs(anglediff) < 80) {
         return true;
     }
@@ -3892,7 +3892,7 @@ function function_2510f24c715782c3(killid, victim, objweapon, meansofdeath, infl
     }
     if (isdefined(getgametype()) && getgametype() == "gold_gun") {
         if (function_ef71b0d20683d9aa(objweapon.basename)) {
-            thread scripts\mp\utility\points::doScoreEvent(#"hash_2e26e029be55081f");
+            thread scripts\mp\utility\points::doScoreEvent(#"kill_ray_gun");
         }
         if (isdefined(victim.loadoutprimary)) {
             if (function_ef71b0d20683d9aa(victim.loadoutprimary)) {

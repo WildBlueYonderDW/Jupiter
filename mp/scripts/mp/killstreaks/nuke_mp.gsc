@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\nuke.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\damage.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\nuke;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\gamelogic;
+#using scripts\mp\hostmigration;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\rank;
 
 #namespace nuke_mp;
 

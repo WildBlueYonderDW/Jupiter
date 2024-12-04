@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_64acb6ce534155b7;
-#using scripts\mp\gametypes\br_keypad_util.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br_bunker_utility.gsc;
-#using scripts\mp\gametypes\br_bunker_loot_vaults.gsc;
-#using scripts\mp\gametypes\br_bunker_alt.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_bunker_alt;
+#using scripts\mp\gametypes\br_bunker_loot_vaults;
+#using scripts\mp\gametypes\br_bunker_utility;
+#using scripts\mp\gametypes\br_keypad_util;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\teams;
 
 #namespace br_bunker_alt;
 

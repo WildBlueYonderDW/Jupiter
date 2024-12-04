@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_2669878cf5a1b6bc;
 #using script_34e2c429f1463c06;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_4d6911a5d970ff49;
 

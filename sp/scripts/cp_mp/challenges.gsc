@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
 #using script_4b87f2871b6b025c;
+#using script_600b944a95c3a7bf;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace challenges;
 
@@ -58,7 +58,7 @@ function init() {
             if (!getdvarint(@"hash_48ae63d778571691", 0)) {
                 continue;
             }
-            setdvar(@"hash_37acf332efd205cc", 1);
+            setdvar(@"force_challenges", 1);
             setdvar(@"hash_5a8c71e376f35349", 1);
             return;
         }
@@ -608,7 +608,7 @@ function vehiclekilled(vehicle, attacker, damage, objweapon) {
         if (!isdefined(attackervehicle) || platform != attackervehicle) {
             ref = scripts\cp_mp\utility\train_utility::function_e58b746157089c68(platform);
             if (isdefined(ref) && (ref == "cargo_train" || ref == "br_passenger_train")) {
-                modifiers1 = scripts\cp_mp\challenges::function_6d40f12a09494350(modifiers1, ae_utility::function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hash_58b185451852f662"));
+                modifiers1 = scripts\cp_mp\challenges::function_6d40f12a09494350(modifiers1, ae_utility::function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"ontrain"));
                 if (ref == "cargo_train") {
                     modifiers2 = scripts\cp_mp\challenges::function_6d40f12a09494350(modifiers2, ae_utility::function_e2ff8f4b4e94f723(#"hash_7f94e71c1787fdc7", #"hash_7d4ca6b82b853a92"));
                 } else if (ref == "br_passenger_train") {
@@ -853,7 +853,7 @@ function function_b5929663421247fa(player, result, winner) {
     }
     gametype = function_17c5d7feb226e256();
     var_bb38571cca0414f = function_c1945f26d99b0ed9(player);
-    aeeventname = #"hash_6d948a44db5a2b8";
+    aeeventname = #"end_match";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"match_result"), result, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_8dd9828579063e7"), var_8142a29197569218, ae_utility::function_d6f771aedba70ce7(aeeventname, #"placement"), placement, ae_utility::function_d6f771aedba70ce7(aeeventname, #"playlist_id"), playlistid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"team_size"), teamsize, ae_utility::function_d6f771aedba70ce7(aeeventname, #"lobby_id"), lobbyid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287b83e723dcd4"), var_bb38571cca0414f[0], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287c83e723de87"), var_bb38571cca0414f[1], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287d83e723e03a"), var_bb38571cca0414f[2], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287e83e723e1ed"), var_bb38571cca0414f[3], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287783e723d608"), var_bb38571cca0414f[4], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"match_id"), function_94c7ae7049488358()];
     /#
@@ -918,7 +918,7 @@ function function_1ba256da09a9878a(player, lootid, lootref, loottype, quantity, 
         location2 = function_55be16fb0f5f4a19(self.closestpoi);
     }
     aeeventname = #"buy_item";
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"string_ref"), var_99bd169488e48ac1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"value"), quantity, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"loot_id"), lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d7806c74c1d4a500"), typeid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"cash_value"), cashvalue, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_80f9b45ba3e6882e"), var_e7d05247043893ad, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"string_ref"), var_99bd169488e48ac1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"value"), quantity, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"loot_id"), lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d7806c74c1d4a500"), typeid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"cash_value"), cashvalue, ae_utility::function_d6f771aedba70ce7(aeeventname, #"buy_action"), var_e7d05247043893ad, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2];
     /#
         function_7d97a2a745e514c4(aeeventname, params);
     #/
@@ -1081,7 +1081,7 @@ function function_b8e86c6dea0ac027(player) {
     }
     gamemode = getchallengegamemode(player);
     gametype = function_17c5d7feb226e256();
-    aeeventname = #"hash_b4b41fbe3398f1ef";
+    aeeventname = #"squad_wiped";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype];
     function_7d97a2a745e514c4(aeeventid, params);
@@ -1188,25 +1188,25 @@ function function_247ba07507f78ac2(victim, attacker) {
                 var_158bd631747ae80 = 0;
                 if (isdefined(var_2420b2d3569c0c6)) {
                     if (var_2420b2d3569c0c6[0]) {
-                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"hash_bfcd97db994fd903"));
+                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"recommended_season_0"));
                     }
                     if (var_2420b2d3569c0c6[1]) {
-                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"hash_bfcd96db994fd750"));
+                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"recommended_season_1"));
                     }
                     if (var_2420b2d3569c0c6[2]) {
-                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"hash_bfcd99db994fdc69"));
+                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"recommended_season_2"));
                     }
                     if (var_2420b2d3569c0c6[3]) {
-                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"hash_bfcd98db994fdab6"));
+                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"recommended_season_3"));
                     }
                     if (var_2420b2d3569c0c6[4]) {
-                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"hash_bfcd9bdb994fdfcf"));
+                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"recommended_season_4"));
                     }
                     if (var_2420b2d3569c0c6[5]) {
-                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"hash_bfcd9adb994fde1c"));
+                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"recommended_season_5"));
                     }
                     if (var_2420b2d3569c0c6[6]) {
-                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"hash_bfcd9ddb994fe335"));
+                        var_158bd631747ae80 = function_6d40f12a09494350(var_158bd631747ae80, ae_utility::function_e2ff8f4b4e94f723(#"hash_2d6d28e2d2af4ddc", #"recommended_season_6"));
                     }
                 }
             }
@@ -1289,7 +1289,7 @@ function function_597bc208d923a465(ref, totalkills) {
     killstreak_lootid = loot::getlootidfromref(ref);
     var_35529beecc177a27 = function_3ea2b9fa713d6ed3(self);
     aeeventname = #"killstreak_end";
-    function_8e81148472fb520a(self, aeeventname, [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), total_kills, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_834ae5ef756e04aa"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_797a1495585997f4"), bitfield, ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), killstreak_lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_bd518e95df4103fe"), var_35529beecc177a27]);
+    function_8e81148472fb520a(self, aeeventname, [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"kill_amount"), total_kills, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_834ae5ef756e04aa"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_797a1495585997f4"), bitfield, ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), killstreak_lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_bd518e95df4103fe"), var_35529beecc177a27]);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -1584,7 +1584,7 @@ function private function_417907aeeb08baac(instancetype) {
         return function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_1e306cba757eda6f", #"computer"));
     case #"hash_8387e0bfe22abc5d":
     case #"hash_f1db14019ca6a516":
-        return function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_1e306cba757eda6f", #"hash_f50873a1c64bb93d"));
+        return function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_1e306cba757eda6f", #"dmz_dead_drop"));
     case #"hash_3b6111354af78459":
     case #"hash_8193a20e7851382b":
     case #"hash_a7972bf23ae4418b":
@@ -1683,8 +1683,8 @@ function function_da9003df08944b01(instance) {
 // Checksum 0x0, Offset: 0x7540
 // Size: 0x63
 function onkioskpurchaseitem(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"buy"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"buy"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -1692,8 +1692,8 @@ function onkioskpurchaseitem(itemtyperef, itemref, lootid, quantity, cashvalue) 
 // Checksum 0x0, Offset: 0x75ab
 // Size: 0x63
 function function_ea50038423fc4cfc(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"sell"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"sell"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -1701,8 +1701,8 @@ function function_ea50038423fc4cfc(itemtyperef, itemref, lootid, quantity, cashv
 // Checksum 0x0, Offset: 0x7616
 // Size: 0x9b
 function function_7ba17fb69c312e2c(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"trade"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"trade"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
     loot_method = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_2af1f13aa6ae3b5f", #"loot"));
     function_d24138b32084fc3e(self, lootid, itemtyperef, loot_method, quantity);
 }
@@ -1712,8 +1712,8 @@ function function_7ba17fb69c312e2c(itemtyperef, itemref, lootid, quantity, cashv
 // Checksum 0x0, Offset: 0x76b9
 // Size: 0x63
 function function_c2c80007aff49924(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"hash_8007c41db906acd9"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"hash_8007c41db906acd9"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -1721,8 +1721,8 @@ function function_c2c80007aff49924(itemtyperef, itemref, lootid, quantity, cashv
 // Checksum 0x0, Offset: 0x7724
 // Size: 0x63
 function function_3d8a8b0878f9f129(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"hash_23f44b864cfb53cd"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"hash_23f44b864cfb53cd"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -1835,19 +1835,19 @@ function function_b2306d0693ba65c1(iswinner) {
     gamemode = getchallengegamemode(self);
     gametype = function_17c5d7feb226e256();
     operatorlootid = function_aff35122a61a900b(self.team);
-    var_9c46b4c2597d7b03 = 0;
+    bitfield1 = 0;
     if (iswinner) {
-        var_9c46b4c2597d7b03 = function_6d40f12a09494350(var_9c46b4c2597d7b03, ae_utility::function_e2ff8f4b4e94f723(#"hash_2614881933cc996e", #"win"));
+        bitfield1 = function_6d40f12a09494350(bitfield1, ae_utility::function_e2ff8f4b4e94f723(#"hash_2614881933cc996e", #"win"));
     } else {
-        var_9c46b4c2597d7b03 = function_6d40f12a09494350(var_9c46b4c2597d7b03, ae_utility::function_e2ff8f4b4e94f723(#"hash_2614881933cc996e", #"loss"));
+        bitfield1 = function_6d40f12a09494350(bitfield1, ae_utility::function_e2ff8f4b4e94f723(#"hash_2614881933cc996e", #"loss"));
     }
     teamsize = 0;
     if (gamemode & 8) {
         teamsize = getdvarint(@"hash_4838b7c39021124c", 0);
     }
-    aeeventname = #"hash_994db9edf20fed8d";
+    aeeventname = #"gulag_end";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_2614881933cc996e"), var_9c46b4c2597d7b03, ae_utility::function_d6f771aedba70ce7(aeeventname, #"team_size"), teamsize];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_2614881933cc996e"), bitfield1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"team_size"), teamsize];
     /#
         function_7d97a2a745e514c4(aeeventid, params);
     #/
@@ -2273,7 +2273,7 @@ function getlocation(poi, sublocation) {
         switch (level.mapname) {
         case #"hash_57eba45b7ddbdcd6":
         case #"hash_63326ac3e12f8da0":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_a4d38581fcb97980"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"mp_saba"));
             break;
         case #"hash_4617d802bdced46":
         case #"hash_a82a4d91a314a926":
@@ -2308,10 +2308,10 @@ function getlocation(poi, sublocation) {
         }
         switch (var_b8d53bb8326b1bbb) {
         case #"hash_2fc7c295b037f8c8":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_c59a70f46ab66e88"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_airport"));
             break;
         case #"hash_323a903afe21c55":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_c0b040a45d7f0a35"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_moderncity"));
             break;
         case #"hash_55998447da820c51":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_9fee7ac96c9e2af1"));
@@ -2326,16 +2326,16 @@ function getlocation(poi, sublocation) {
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_6a081a3989640435"));
             break;
         case #"hash_7c61ad10d89b8ce6":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_49fbbe5a5c14d7c6"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_oasis"));
             break;
         case #"hash_24913acf39b1b9d":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_28ab5a939841bfd"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_oilfield"));
             break;
         case #"hash_e9beb39bd45dace9":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_d0e5b315d427e429"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_caves"));
             break;
         case #"hash_37758f87479407e4":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_2e6861cdeca18e4"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_fort"));
             break;
         case #"hash_f18f60036d48d0f":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_observatory"));
@@ -2347,16 +2347,16 @@ function getlocation(poi, sublocation) {
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_68cbc9667238f93d"));
             break;
         case #"hash_8d517c7cd4c59daf":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_99636d58796652cf"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_oldtwn"));
             break;
         case #"hash_94cea40522328dd7":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_a9fe32b2ed7b1bf7"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_mtntwn"));
             break;
         case #"hash_3ca65c5d8ac073f1":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_c6c5b57c493dd111"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_exhume"));
             break;
         case #"hash_ceed33ec74498ad9":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_a1b46214885e7f79"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_cemetery"));
             break;
         case #"hash_1488720cef98266d":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_hydro"));
@@ -2407,52 +2407,52 @@ function getlocation(poi, sublocation) {
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_8ff0c309b1a1908"));
             break;
         case #"hash_fea386fb2aa41ed6":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_cfccedc70ac465f6"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_beachclub"));
             break;
         case #"hash_ee3a4e86c1774bb7":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_85dc83908332197"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_castle"));
             break;
         case #"hash_b74d2013e0a73b91":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_61728124a39e1551"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_coastalruins"));
             break;
         case #"hash_42039e0dfa3b0be4":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_5d07baf686ac81a4"));
             break;
         case #"hash_425ebb3f3dd8bf73":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_ff40b181aa9cecf3"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_culdesac"));
             break;
         case #"hash_c5c4b2288656dc11":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_6fb5a791f63fb951"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_powerplant"));
             break;
         case #"hash_202632819760f0f3":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_920cb008ee9154b3"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_residential"));
             break;
         case #"hash_a15a99827cbcb8cd":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_2c100bd4079345ad"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_shipwreck"));
             break;
         case #"hash_45a8eb1e8a07af8a":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_76b4cdd1fe62556a"));
             break;
         case #"hash_c3ce7ba6414ef022":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_4ad336a27b70ccc2"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_watertreatment"));
             break;
         case #"hash_f58c21f8c451efe6":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_71b6f989a628c046"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sealion_waterways"));
             break;
         case #"hash_5065eaea648578ee":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_5c92ddd8afae3f2e"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_castle"));
             break;
         case #"hash_b4fec2c123adbfd2":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_cemetary"));
             break;
         case #"hash_14bbe6b90c8369ca":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_3745f76867e6f0aa"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_cityhall"));
             break;
         case #"hash_4f1ad34662aa3a82":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_d9882bc1d14ba8e2"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_firestation"));
             break;
         case #"hash_53022f086491e02a":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_e255ab5466506d4a"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_fleamarket"));
             break;
         case #"hash_5b71b0ea2ed56595":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_97f878cab4a2b055"));
@@ -2476,13 +2476,13 @@ function getlocation(poi, sublocation) {
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_737542d6543379cc"));
             break;
         case #"hash_e26564d1e7044875":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_decb4eb3adeb4b5"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_stadium"));
             break;
         case #"hash_b4aa823331182196":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_station"));
             break;
         case #"hash_c6f07a0b07c6b7b2":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_6f01ec126761b1f2"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"delta_terminal"));
             break;
         default:
             break;
@@ -2491,10 +2491,10 @@ function getlocation(poi, sublocation) {
     if (isdefined(sublocation)) {
         switch (sublocation) {
         case #"hash_95e472767d515c8b":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_8e363fe394c0790b"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"sira_mall"));
             break;
         case #"hash_7c61ad10d89b8ce6":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"hash_49fbbe5a5c14d7c6"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_92939ab8dccb3d82", #"saba_oasis"));
             break;
         }
     }
@@ -2554,7 +2554,7 @@ function function_55be16fb0f5f4a19(poi, sublocation) {
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_dc0d981f2d59d210", #"delta_zoo"));
             break;
         case #"hash_e1decce80236cc9c":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_dc0d981f2d59d210", #"hash_6d8328a895845c5c"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_dc0d981f2d59d210", #"biobunker_radiation"));
             break;
         case #"hash_82f3ea371858dcb6":
             location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_dc0d981f2d59d210", #"hash_c9755af2f26af356"));
@@ -2644,7 +2644,7 @@ function function_55be16fb0f5f4a19(poi, sublocation) {
     if (isdefined(sublocation)) {
         switch (sublocation) {
         case #"hash_70402ffb70386a5c":
-            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_dc0d981f2d59d210", #"hash_aeaf8e0e09370e1c"));
+            location = function_6d40f12a09494350(location, ae_utility::function_e2ff8f4b4e94f723(#"hash_dc0d981f2d59d210", #"saba_sandstorm"));
             break;
         }
     }
@@ -2873,13 +2873,13 @@ function reportKillChallengeEvent(attacker, victimstruct, modifiers1, modifiers2
         level.var_a3dfc554743efd89[#"weapon_loot_id"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id");
         level.var_a3dfc554743efd89[#"gametype"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype");
         level.var_a3dfc554743efd89[#"version"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"version");
-        level.var_a3dfc554743efd89[#"hash_af7cd8c514ea5582"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd8c514ea5582");
-        level.var_a3dfc554743efd89[#"hash_af7cd7c514ea53cf"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd7c514ea53cf");
-        level.var_a3dfc554743efd89[#"hash_af7cd6c514ea521c"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd6c514ea521c");
-        level.var_a3dfc554743efd89[#"hash_af7cd5c514ea5069"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd5c514ea5069");
-        level.var_a3dfc554743efd89[#"hash_af7cd4c514ea4eb6"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd4c514ea4eb6");
-        level.var_a3dfc554743efd89[#"hash_af7cd3c514ea4d03"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd3c514ea4d03");
-        level.var_a3dfc554743efd89[#"hash_af7cd2c514ea4b50"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd2c514ea4b50");
+        level.var_a3dfc554743efd89[#"weapon_attachment1"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment1");
+        level.var_a3dfc554743efd89[#"weapon_attachment2"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment2");
+        level.var_a3dfc554743efd89[#"weapon_attachment3"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment3");
+        level.var_a3dfc554743efd89[#"weapon_attachment4"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment4");
+        level.var_a3dfc554743efd89[#"weapon_attachment5"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment5");
+        level.var_a3dfc554743efd89[#"weapon_attachment6"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment6");
+        level.var_a3dfc554743efd89[#"weapon_attachment7"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment7");
         level.var_a3dfc554743efd89[#"hash_af7ce1c514ea64cd"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce1c514ea64cd");
         level.var_a3dfc554743efd89[#"hash_af7ce0c514ea631a"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce0c514ea631a");
         level.var_a3dfc554743efd89[#"hash_1b7a08e28a2f9d76"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_1b7a08e28a2f9d76");
@@ -2909,7 +2909,7 @@ function reportKillChallengeEvent(attacker, victimstruct, modifiers1, modifiers2
         level.var_a7f8fb431b350d82[#"reportKillChallengeEvent"] = 1;
     }
     paramcache = level.var_a3dfc554743efd89;
-    eventparams = [paramcache[#"gamemode"], gamemode, paramcache[#"hash_834ae5ef756e04aa"], operatorlootid, paramcache[#"weapon_loot_id"], weaponlootid, paramcache[#"gametype"], gametype, paramcache[#"version"], 1, paramcache[#"hash_af7cd8c514ea5582"], var_349e390338192305[0], paramcache[#"hash_af7cd7c514ea53cf"], var_349e390338192305[1], paramcache[#"hash_af7cd6c514ea521c"], var_349e390338192305[2], paramcache[#"hash_af7cd5c514ea5069"], var_349e390338192305[3], paramcache[#"hash_af7cd4c514ea4eb6"], var_349e390338192305[4], paramcache[#"hash_af7cd3c514ea4d03"], var_349e390338192305[5], paramcache[#"hash_af7cd2c514ea4b50"], var_349e390338192305[6], paramcache[#"hash_af7ce1c514ea64cd"], var_349e390338192305[7], paramcache[#"hash_af7ce0c514ea631a"], var_349e390338192305[8], paramcache[#"hash_1b7a08e28a2f9d76"], var_349e390338192305[9], paramcache[#"hash_a0dd9c7405f2d85e"], var_b28608820870666, paramcache[#"hash_7f94e81c1787ff7a"], modifiers1, paramcache[#"hash_7f94e71c1787fdc7"], modifiers2, paramcache[#"hash_e2f5c601b57b3960"], enemytype, paramcache[#"hash_92939ab8dccb3d82"], location, paramcache[#"hash_dc0d981f2d59d210"], location2, paramcache[#"hash_bd518e95df4103fe"], var_7fb63b7fac6d1698, paramcache[#"loot_id"], var_c0d251f100091822, paramcache[#"distance"], v_distance, paramcache[#"hash_1ce058287dc8c73b"], attachmentflags, paramcache[#"weapon_camo"], weaponcamo, paramcache[#"hit_loc"], hitloc, paramcache[#"team_size"], teamsize, paramcache[#"hash_ab2e7c9b727a3d6c"], var_3fff36caeace1b84, paramcache[#"hash_365c4ef34bc9c239"], var_4a7a1118f15a4c9, paramcache[#"hash_2f109e5ad9e45eff"], criticalstreak, paramcache[#"hash_7e912c64fa5c6cde"], var_79a1a1fe9f3bf357, paramcache[#"hash_16db99d7417ef29d"], var_a0595326ca4cf35d, paramcache[#"hash_22d8c6e760626656"], var_7b718ef6c64f049f];
+    eventparams = [paramcache[#"gamemode"], gamemode, paramcache[#"hash_834ae5ef756e04aa"], operatorlootid, paramcache[#"weapon_loot_id"], weaponlootid, paramcache[#"gametype"], gametype, paramcache[#"version"], 1, paramcache[#"weapon_attachment1"], var_349e390338192305[0], paramcache[#"weapon_attachment2"], var_349e390338192305[1], paramcache[#"weapon_attachment3"], var_349e390338192305[2], paramcache[#"weapon_attachment4"], var_349e390338192305[3], paramcache[#"weapon_attachment5"], var_349e390338192305[4], paramcache[#"weapon_attachment6"], var_349e390338192305[5], paramcache[#"weapon_attachment7"], var_349e390338192305[6], paramcache[#"hash_af7ce1c514ea64cd"], var_349e390338192305[7], paramcache[#"hash_af7ce0c514ea631a"], var_349e390338192305[8], paramcache[#"hash_1b7a08e28a2f9d76"], var_349e390338192305[9], paramcache[#"hash_a0dd9c7405f2d85e"], var_b28608820870666, paramcache[#"hash_7f94e81c1787ff7a"], modifiers1, paramcache[#"hash_7f94e71c1787fdc7"], modifiers2, paramcache[#"hash_e2f5c601b57b3960"], enemytype, paramcache[#"hash_92939ab8dccb3d82"], location, paramcache[#"hash_dc0d981f2d59d210"], location2, paramcache[#"hash_bd518e95df4103fe"], var_7fb63b7fac6d1698, paramcache[#"loot_id"], var_c0d251f100091822, paramcache[#"distance"], v_distance, paramcache[#"hash_1ce058287dc8c73b"], attachmentflags, paramcache[#"weapon_camo"], weaponcamo, paramcache[#"hit_loc"], hitloc, paramcache[#"team_size"], teamsize, paramcache[#"hash_ab2e7c9b727a3d6c"], var_3fff36caeace1b84, paramcache[#"hash_365c4ef34bc9c239"], var_4a7a1118f15a4c9, paramcache[#"hash_2f109e5ad9e45eff"], criticalstreak, paramcache[#"hash_7e912c64fa5c6cde"], var_79a1a1fe9f3bf357, paramcache[#"hash_16db99d7417ef29d"], var_a0595326ca4cf35d, paramcache[#"hash_22d8c6e760626656"], var_7b718ef6c64f049f];
     if (isdefined(var_1d68c79557cc54ea)) {
         if (isdefined(var_1d68c79557cc54ea[0])) {
             eventparams[eventparams.size] = paramcache[#"hash_648b2ad7f16589f0"];
@@ -2964,7 +2964,7 @@ function function_e6ba0866eca5b87b(attacker, iskillstreak) {
     gametype = function_17c5d7feb226e256();
     aeeventname = #"multikill";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), var_9b8336914d1339a9, ae_utility::function_d6f771aedba70ce7(aeeventname, #"is_killstreak"), iskillstreak];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"kill_amount"), var_9b8336914d1339a9, ae_utility::function_d6f771aedba70ce7(aeeventname, #"is_killstreak"), iskillstreak];
     attacker function_db073176839d77fb(aeeventid, params);
 }
 
@@ -3128,14 +3128,14 @@ function private reportstat(statname, amount) {
     }
     reportstats = 0;
     damage_amount = 0;
-    var_cfb8ab0eb8945dbe = 0;
+    score_amount = 0;
     switch (statname) {
     case #"hash_1cc8a923a608c2a0":
         damage_amount = amount;
         reportstats = 1;
         break;
     case #"hash_2c58990905f03e75":
-        var_cfb8ab0eb8945dbe = amount;
+        score_amount = amount;
         reportstats = 1;
         break;
     case #"hash_7ecdf387b72248b4":
@@ -3180,7 +3180,7 @@ function private reportstat(statname, amount) {
             level.var_d44156bac78184ca[#"team_size"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"team_size");
         }
         paramcache = level.var_d44156bac78184ca;
-        eventparams = [paramcache[#"version"], 1, paramcache[#"gamemode"], var_6ddcf3c092eaf383.gamemode, paramcache[#"gametype"], var_6ddcf3c092eaf383.gametype, paramcache[#"damage"], damage_amount, paramcache[#"score"], var_cfb8ab0eb8945dbe, paramcache[#"team_size"], var_6ddcf3c092eaf383.teamsize];
+        eventparams = [paramcache[#"version"], 1, paramcache[#"gamemode"], var_6ddcf3c092eaf383.gamemode, paramcache[#"gametype"], var_6ddcf3c092eaf383.gametype, paramcache[#"damage"], damage_amount, paramcache[#"score"], score_amount, paramcache[#"team_size"], var_6ddcf3c092eaf383.teamsize];
         if (!isdefined(level.var_6de4f66f58ecd7b1)) {
             level.var_6de4f66f58ecd7b1 = [];
         }
@@ -3444,7 +3444,7 @@ function findenemytype(victim) {
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"little_bird");
             break;
         case #"hash_112ffa8db1ed9ebd":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_5fb21b221745a25d");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_acv_6x6");
             break;
         case #"hash_2ddb1b1fa5093dd1":
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_apc_8x8");
@@ -3453,7 +3453,7 @@ function findenemytype(victim) {
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_blima");
             break;
         case #"hash_b8b8fefba61ac382":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_bbeb472fbad33a42");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_chopped_pickup");
             break;
         case #"hash_cb2498c4a1e415fd":
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_cougar");
@@ -3471,7 +3471,7 @@ function findenemytype(victim) {
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_mil_cargo_truck");
             break;
         case #"hash_5211f142350a63e1":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_5a56788757845581");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_overland_2016");
             break;
         case #"hash_66c8846b85d8c948":
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_palfa");
@@ -3480,10 +3480,10 @@ function findenemytype(victim) {
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_patrol_boat");
             break;
         case #"hash_d589a6a019e9defe":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_917aeee71e27f45e");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_pickup_2014");
             break;
         case #"hash_81ea99824b4eacca":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_e202951813530a6a");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_pwc");
             break;
         case #"hash_44d67727616d3059":
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_rhib");
@@ -3498,7 +3498,7 @@ function findenemytype(victim) {
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_techo_rebel_armor");
             break;
         case #"hash_a7bdb3825f53a60d":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_d2c6f182bbaf7ed");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"veh9_utv");
             break;
         }
         if (isdefined(vehicletype)) {
@@ -3544,10 +3544,10 @@ function function_8435d79a41ea37b0(victim) {
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"veh_jup_jltv_mg");
             break;
         case #"hash_885f51af68244d3":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"hash_d8bc5dbbe845033");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"veh_jup_suv_1996");
             break;
         case #"hash_c9d9aa17e7c175a5":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"hash_b5db3f5f667140e5");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"veh_jup_pickup_2014");
             break;
         case #"hash_a4c3ae5c9f3a69f":
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"hash_f56b6b0fcad9f6bf");
@@ -3559,10 +3559,10 @@ function function_8435d79a41ea37b0(victim) {
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"veh_jup_orav");
             break;
         case #"hash_63cf913c1ee55d64":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"hash_600923f71dda19c4");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"veh_jup_razorback");
             break;
         case #"hash_6437bb8a3a27be5e":
-            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"hash_6370c70666411dde");
+            vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"veh_jup_truck_tech_hmg");
             break;
         case #"hash_da4cefbee9ff0d74":
             vehicletype = ae_utility::function_e2ff8f4b4e94f723(#"hash_22d8c6e760626656", #"hash_48bbae067d189af4");
@@ -3635,7 +3635,7 @@ function function_e9dc49603ac403d(enemytype, var_7b718ef6c64f049f, victim) {
             category = [[ var_3b341f9dc3b7ffb4 ]](victim, "category");
             subcategory = [[ var_3b341f9dc3b7ffb4 ]](victim, "subcategory");
             if (issubstr(victim.agent_type, "aq")) {
-                enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"aq"));
+                enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"AQ"));
             } else if (var_86df29145c484d9c) {
                 enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_4ece742ef2d8f981"));
             } else if (function_c7496288999ac847(victim.agent_type, subcategory)) {
@@ -3645,7 +3645,7 @@ function function_e9dc49603ac403d(enemytype, var_7b718ef6c64f049f, victim) {
             }
             if (isdefined(category) && isdefined(subcategory)) {
                 if (category == "mission" && subcategory == "elimTarget") {
-                    enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_3af40a144c598ac6"));
+                    enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"elim_target"));
                 }
                 if (category == "bosses") {
                     enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"boss"));
@@ -3708,7 +3708,7 @@ function return_enemy_type_mask(enemytype, victim) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xe79f
 // Size: 0x193
-function private function_742decc7f891bb0e(var_9c46b4c2597d7b03) {
+function private function_742decc7f891bb0e(bitfield1) {
     if (!challengesenabledforplayer()) {
         return;
     }
@@ -3723,7 +3723,7 @@ function private function_742decc7f891bb0e(var_9c46b4c2597d7b03) {
     }
     aeeventname = #"hash_6a5ad49f1800e512";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_ecf2f40148801ac5"), var_9c46b4c2597d7b03];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_ecf2f40148801ac5"), bitfield1];
     /#
         function_7d97a2a745e514c4(aeeventid, params);
     #/
@@ -3751,7 +3751,7 @@ function function_ca0ab723ebcf6d79() {
     }
     self.var_d405f79d63134727 += 1;
     awardflag = 0;
-    awardflag = function_6d40f12a09494350(awardflag, ae_utility::function_e2ff8f4b4e94f723(#"hash_ecf2f40148801ac5", #"hash_972a0e505ecce104"));
+    awardflag = function_6d40f12a09494350(awardflag, ae_utility::function_e2ff8f4b4e94f723(#"hash_ecf2f40148801ac5", #"token_award"));
     function_742decc7f891bb0e(awardflag);
 }
 
@@ -3775,7 +3775,7 @@ function function_8935e658d461fc50() {
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0xea49
 // Size: 0x1c7
-function private function_8feb2dc462cfc7f4(command, var_9c46b4c2597d7b03, var_9c46b5c2597d7d36) {
+function private function_8feb2dc462cfc7f4(command, bitfield1, var_9c46b5c2597d7d36) {
     if (!challengesenabledforplayer()) {
         return;
     }
@@ -3788,9 +3788,9 @@ function private function_8feb2dc462cfc7f4(command, var_9c46b4c2597d7b03, var_9c
         location = getlocation(self.closestpoi);
         location2 = function_55be16fb0f5f4a19(self.closestpoi);
     }
-    aeeventname = #"hash_dc778d0b22208a4a";
+    aeeventname = #"game_flag";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2 ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_7164db7c4d5bdb1c"), command, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_4a7f024e87253788"), var_9c46b4c2597d7b03, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_4a7f054e87253ca1"), var_9c46b5c2597d7d36];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2 ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_7164db7c4d5bdb1c"), command, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_4a7f024e87253788"), bitfield1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_4a7f054e87253ca1"), var_9c46b5c2597d7d36];
     self function_db073176839d77fb(aeeventid, params);
 }
 

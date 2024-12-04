@@ -1,11 +1,11 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gamescore.gsc;
 #using script_7ef95bba57dc4b82;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\equipment\concussion_grenade.gsc;
+#using scripts\mp\equipment\concussion_grenade;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace warrior_stunning;
 

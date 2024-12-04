@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
 #using script_6cb121f049b87187;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
 
 #namespace namespace_68b09a1fc10d2d0a;
 
@@ -21,9 +21,9 @@ function init() {
     level.var_78a0087bea386662 = spawnstruct();
     level.var_78a0087bea386662.var_d04b4a9729479cad = &function_d04b4a9729479cad;
     level.var_78a0087bea386662.var_c80fb54710c9e5aa = &function_c80fb54710c9e5aa;
-    level.var_78a0087bea386662.var_e807776b16dce7d4 = &function_52ecb2291cfdb603;
+    level.var_78a0087bea386662.var_e807776b16dce7d4 = &get_reward;
     level.var_78a0087bea386662.var_d70ec56158c8530b = &function_fba8eb934ad3b08b;
-    level.var_78a0087bea386662.onuse = &function_f1e11c45881efcf0;
+    level.var_78a0087bea386662.onuse = &on_use;
     level callback::add("player_disconnect", &onplayerdisconnect);
     thread function_899920a5f5f76a4b();
 }
@@ -51,7 +51,7 @@ function function_d04b4a9729479cad() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ec
 // Size: 0x8d
-function function_52ecb2291cfdb603() {
+function get_reward() {
     values = [1, 2, 3, 4];
     weights = [getdvarfloat(@"hash_74822a7ee2049480"), getdvarfloat(@"hash_ce850e1d9a8797f5"), getdvarfloat(@"hash_8fae92f7f71f88d2"), getdvarfloat(@"hash_6510b02bd7cdff97")];
     reward = weighted_array_randomize(values, weights);
@@ -110,7 +110,7 @@ function function_fba8eb934ad3b08b(reward) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x64c
 // Size: 0x30c
-function function_f1e11c45881efcf0(player) {
+function on_use(player) {
     if (isdefined(player.owner)) {
         player = player.owner;
     }

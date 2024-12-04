@@ -1,10 +1,10 @@
-#using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots_gametype_br.gsc;
-#using script_40e63dd222434655;
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
 #using script_1076881dd9127338;
 #using script_37d9a569491ff1e0;
+#using script_40e63dd222434655;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
 
 #namespace sniper_combat;
 
@@ -37,7 +37,7 @@ function evaluatescore(bot) {
 // Size: 0x2b0
 function function_1613f016af44e830(bot) {
     /#
-        if (getdvar(@"hash_e39c6d129db1722") == "<dev string:x1c>") {
+        if (getdvar(@"bot_notarget") == "<dev string:x1c>") {
             return undefined;
         }
     #/
@@ -63,7 +63,7 @@ function function_1613f016af44e830(bot) {
     target = undefined;
     foreach (player in nearbyevent.result) {
         /#
-            if (!isbot(player) && getdvar(@"hash_e39c6d129db1722") == "<dev string:x23>") {
+            if (!isbot(player) && getdvar(@"bot_notarget") == "<dev string:x23>") {
                 continue;
             }
         #/

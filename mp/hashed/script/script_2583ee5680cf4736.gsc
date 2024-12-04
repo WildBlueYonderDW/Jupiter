@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\common\interactive.gsc;
 #using script_2669878cf5a1b6bc;
+#using scripts\common\devgui;
+#using scripts\common\interactive;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace interaction;
 

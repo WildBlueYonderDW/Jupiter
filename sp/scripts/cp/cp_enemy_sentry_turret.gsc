@@ -1,11 +1,11 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_71332a5b74214116;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using script_6f1e07ce9ff97d5f;
-#using script_354c862768cfe202;
 #using script_187a04151c40fb72;
+#using script_354c862768cfe202;
+#using script_6f1e07ce9ff97d5f;
+#using script_71332a5b74214116;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\engine\utility;
 
 #namespace namespace_7a90ea0792cd0054;
 

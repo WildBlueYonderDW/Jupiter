@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
 #using script_1407e72346815bc3;
 #using script_5af9038262d22c96;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\utility\perk;
 
 #namespace manager_mp;
 

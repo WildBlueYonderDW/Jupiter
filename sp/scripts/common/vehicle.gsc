@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_lights.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\common\vehicle_aianim.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_lights;
+#using scripts\common\vehicle_paths;
+#using scripts\engine\utility;
 
 #namespace vehicle;
 
@@ -608,7 +608,7 @@ function function_a59f81db0ddb38c2() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1255
 // Size: 0xa0
-function function_538ef15c254e4d34(inflictor) {
+function vehicle_kill(inflictor) {
     if (istrue(self.godmode) || istrue(self.demigodmode)) {
         /#
             print("<dev string:x1c>");
@@ -735,7 +735,7 @@ function function_c8a94acef0beb362(amount, resetstarting) {
         self.healthbuffer = 0;
     }
     if (amount >= self.health) {
-        function_538ef15c254e4d34(level);
+        vehicle_kill(level);
         return;
     }
     self.health -= amount;
@@ -972,8 +972,8 @@ function function_8ed0ffa3f8be7c75(xhash) {
 // Checksum 0x0, Offset: 0x1bb5
 // Size: 0x3e
 function codecallback_vehiclespawned() {
-    if (isdefined(level.vehicle) && isdefined(level.vehicle.OnVehicleSpawned)) {
-        self [[ level.vehicle.OnVehicleSpawned ]]();
+    if (isdefined(level.vehicle) && isdefined(level.vehicle.onVehicleSpawned)) {
+        self [[ level.vehicle.onVehicleSpawned ]]();
     }
 }
 

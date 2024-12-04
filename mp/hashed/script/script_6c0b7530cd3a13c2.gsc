@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\create_script_utility.gsc;
+#using scripts\common\create_script_utility;
+#using scripts\engine\utility;
 
 #namespace mp_jup_st_i_ob_activities_warlord_cs;
 
@@ -3337,7 +3337,7 @@ function function_2996618112317e30(fe, us, cf) {
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_north_dock";
-    s.var_79798f7074f15fdc = "90";
+    s.targeting_angle = "90";
     fe [[ f ]](s, us, cf, (36911.7, -31535.9, 2984), (0, 113.03, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 5300);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
@@ -3401,7 +3401,7 @@ function function_2996618112317e30(fe, us, cf) {
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_west_tip";
-    s.var_79798f7074f15fdc = "120";
+    s.targeting_angle = "120";
     fe [[ f ]](s, us, cf, (31818.7, -36159.9, 3025.07), (0, 241.74, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 4500);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
@@ -3412,7 +3412,7 @@ function function_2996618112317e30(fe, us, cf) {
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_south_tip";
-    s.var_79798f7074f15fdc = "120";
+    s.targeting_angle = "120";
     fe [[ f ]](s, us, cf, (34823.6, -37116.6, 3086.56), (0, 287.59, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 4700);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
@@ -3441,7 +3441,7 @@ function function_2996618112317e30(fe, us, cf) {
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_fortress_east";
-    s.var_79798f7074f15fdc = "180";
+    s.targeting_angle = "180";
     fe [[ f ]](s, us, cf, (34203.9, -34999.9, 3432), (0, 36.41, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 5300);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
@@ -3452,13 +3452,13 @@ function function_2996618112317e30(fe, us, cf) {
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_fortress_west";
-    s.var_79798f7074f15fdc = "180";
+    s.targeting_angle = "180";
     fe [[ f ]](s, us, cf, (33817.7, -35203.6, 3432), (0, 216.41, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 4700);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_helipad_north_east";
-    s.var_79798f7074f15fdc = "140";
+    s.targeting_angle = "140";
     fe [[ f ]](s, us, cf, (37136.7, -34169.4, 3186.33), (0, 24.6, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 5000);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
@@ -3479,13 +3479,13 @@ function function_2996618112317e30(fe, us, cf) {
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_inwards_helipad";
-    s.var_79798f7074f15fdc = "120";
+    s.targeting_angle = "120";
     fe [[ f ]](s, us, cf, (35859.2, -35894.4, 3210.66), (0, 120.96, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 3500);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";
     s.groupid = "warlord_mortars";
     s.name = "mortar_area_inwards_west";
-    s.var_79798f7074f15fdc = "120";
+    s.targeting_angle = "120";
     fe [[ f ]](s, us, cf, (31863.4, -34968.4, 3056), (0, 331.08, 0), "warlord_mortar_area", undefined, undefined, undefined, "link_warlord_rainmaker", (0, 0, 0), (0, 0, 0), 3500);
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_st_i_ob_activities_warlord_cs";

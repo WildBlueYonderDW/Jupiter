@@ -1,23 +1,23 @@
-#using scripts\mp\trials\trial_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\trials\mp_trials_patches.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\trials\trial_enemy_sentry_turret.gsc;
-#using scripts\mp\compass.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\menus.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\dialog.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\outline.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\compass;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\globallogic;
+#using scripts\mp\menus;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\trials\mp_trials_patches;
+#using scripts\mp\trials\trial_enemy_sentry_turret;
+#using scripts\mp\trials\trial_utility;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
 
 #namespace trial;
 
@@ -26,7 +26,7 @@
 // Checksum 0x0, Offset: 0x9b7
 // Size: 0x7a6
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     flag_init("strike_init_done");
@@ -41,7 +41,7 @@ function main() {
         setdynamicdvar(@"hash_127490a7577f169f", 0);
         setdynamicdvar(@"hash_a54edeed7c5b587f", 0);
     }
-    if (issubstr(getdvar(@"hash_687fb8f9b7a23245"), "mp_t_")) {
+    if (issubstr(getdvar(@"g_mapname"), "mp_t_")) {
         setdvar(@"hash_2a4effcaf5954d38", 0);
     }
     if (getdvar(@"hash_a1767cfd7ede043b") == "1") {
@@ -217,12 +217,12 @@ function trial_mission_data_init() {
     assert(tableexists(mission_table));
     missionid = getdvarint(@"hash_b93f834a6e6a8b21", 0);
     if (missionid == 0) {
-        fallbackid = tablelookup(mission_table, 2, getdvar(@"hash_687fb8f9b7a23245"), 0);
+        fallbackid = tablelookup(mission_table, 2, getdvar(@"g_mapname"), 0);
         if (fallbackid != "") {
-            println("<dev string:x1c>" + fallbackid + "<dev string:x56>" + getdvar(@"hash_687fb8f9b7a23245"));
+            println("<dev string:x1c>" + fallbackid + "<dev string:x56>" + getdvar(@"g_mapname"));
             missionid = fallbackid;
         } else {
-            assertmsg("<dev string:x79>" + getdvar(@"hash_687fb8f9b7a23245") + "<dev string:xe7>");
+            assertmsg("<dev string:x79>" + getdvar(@"g_mapname") + "<dev string:xe7>");
             return;
         }
     }
@@ -238,8 +238,8 @@ function trial_mission_data_init() {
     level.trial["attempts"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 11));
     level.trial["compassMaterialOverride"] = tablelookup(mission_table, 0, level.trial["missionID"], 18);
     level.trial["playerDataId"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 20));
-    if (level.trial["zone"] != getdvar(@"hash_687fb8f9b7a23245")) {
-        assertmsg("<dev string:x106>" + getdvar(@"hash_687fb8f9b7a23245") + "<dev string:x119>" + level.trial["<dev string:x137>"] + "<dev string:x144>" + level.trial["<dev string:x153>"] + "<dev string:x15b>");
+    if (level.trial["zone"] != getdvar(@"g_mapname")) {
+        assertmsg("<dev string:x106>" + getdvar(@"g_mapname") + "<dev string:x119>" + level.trial["<dev string:x137>"] + "<dev string:x144>" + level.trial["<dev string:x153>"] + "<dev string:x15b>");
     }
     setomnvar("ui_trial_mission_score_is_time", level.trial["scoreType"] == "time");
     setomnvar("ui_trial_mission_id", level.trial["missionID"]);
@@ -257,12 +257,12 @@ function function_72965bdb36677ee9(missionid) {
     mission_table = trial_fetch_mission_table();
     assert(tableexists(mission_table));
     if (missionid == 0) {
-        fallbackid = tablelookup(mission_table, 2, getdvar(@"hash_687fb8f9b7a23245"), 0);
+        fallbackid = tablelookup(mission_table, 2, getdvar(@"g_mapname"), 0);
         if (fallbackid != "") {
-            println("<dev string:x1c>" + fallbackid + "<dev string:x56>" + getdvar(@"hash_687fb8f9b7a23245"));
+            println("<dev string:x1c>" + fallbackid + "<dev string:x56>" + getdvar(@"g_mapname"));
             missionid = fallbackid;
         } else {
-            assertmsg("<dev string:x79>" + getdvar(@"hash_687fb8f9b7a23245") + "<dev string:xe7>");
+            assertmsg("<dev string:x79>" + getdvar(@"g_mapname") + "<dev string:xe7>");
             return;
         }
     }
@@ -278,8 +278,8 @@ function function_72965bdb36677ee9(missionid) {
     level.trial["attempts"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 11));
     level.trial["compassMaterialOverride"] = tablelookup(mission_table, 0, level.trial["missionID"], 18);
     level.trial["playerDataId"] = int(tablelookup(mission_table, 0, level.trial["missionID"], 20));
-    if (level.trial["zone"] != getdvar(@"hash_687fb8f9b7a23245")) {
-        assertmsg("<dev string:x106>" + getdvar(@"hash_687fb8f9b7a23245") + "<dev string:x119>" + level.trial["<dev string:x137>"] + "<dev string:x144>" + level.trial["<dev string:x153>"] + "<dev string:x15b>");
+    if (level.trial["zone"] != getdvar(@"g_mapname")) {
+        assertmsg("<dev string:x106>" + getdvar(@"g_mapname") + "<dev string:x119>" + level.trial["<dev string:x137>"] + "<dev string:x144>" + level.trial["<dev string:x153>"] + "<dev string:x15b>");
     }
     setomnvar("ui_trial_mission_score_is_time", level.trial["scoreType"] == "time");
     setomnvar("ui_trial_mission_id", level.trial["missionID"]);
@@ -346,12 +346,12 @@ function onplayerconnect(player) {
     thread scripts\cp_mp\utility\game_utility::fadetoblackforplayer(player, 0, 0.5);
     if (game["trial"]["tries_remaining"] < level.trial["attempts"]) {
         player scripts\mp\utility\dialog::leaderdialogonplayer("trial_retry");
-    } else if (getdvar(@"hash_687fb8f9b7a23245") == getdvar(@"hash_3ff42928b2b7f8e5", "")) {
+    } else if (getdvar(@"g_mapname") == getdvar(@"old_mapname", "")) {
         player scripts\mp\utility\dialog::leaderdialogonplayer("trial_intro_short");
     } else {
         player scripts\mp\utility\dialog::leaderdialogonplayer("trial_intro");
     }
-    setdvar(@"hash_3ff42928b2b7f8e5", getdvar(@"hash_687fb8f9b7a23245"));
+    setdvar(@"old_mapname", getdvar(@"g_mapname"));
     thread trial_restart_watcher();
 }
 
@@ -383,9 +383,9 @@ function setspecialloadout() {
     if (isdefined(var_9309e04671262786)) {
         weap_tokens = strtok(var_9309e04671262786.script_parameters, "+");
         var_51b7953d0e3a6f82 = weap_tokens[0];
-        var_116a551dc9d3c305 = array_remove(weap_tokens, var_51b7953d0e3a6f82);
+        weap_attachments = array_remove(weap_tokens, var_51b7953d0e3a6f82);
         level.trial_loadout["axis"]["loadoutPrimary"] = var_51b7953d0e3a6f82;
-        foreach (i, attachment in var_116a551dc9d3c305) {
+        foreach (i, attachment in weap_attachments) {
             if (!i) {
                 level.trial_loadout["axis"]["loadoutPrimaryAttachment"] = attachment;
                 continue;
@@ -397,9 +397,9 @@ function setspecialloadout() {
     if (isdefined(var_226dd676a3cf59cb)) {
         weap_tokens = strtok(var_226dd676a3cf59cb.script_parameters, "+");
         var_51b7953d0e3a6f82 = weap_tokens[0];
-        var_116a551dc9d3c305 = array_remove(weap_tokens, var_51b7953d0e3a6f82);
+        weap_attachments = array_remove(weap_tokens, var_51b7953d0e3a6f82);
         level.trial_loadout["axis"]["loadoutSecondary"] = var_51b7953d0e3a6f82;
-        foreach (i, attachment in var_116a551dc9d3c305) {
+        foreach (i, attachment in weap_attachments) {
             if (!i) {
                 level.trial_loadout["axis"]["loadoutSecondaryAttachment"] = attachment;
                 continue;
@@ -465,13 +465,13 @@ function weapon_think() {
     level.player endon("death");
     weap_tokens = strtok(self.script_parameters, "+");
     var_51b7953d0e3a6f82 = weap_tokens[0];
-    var_116a551dc9d3c305 = array_remove(weap_tokens, var_51b7953d0e3a6f82);
+    weap_attachments = array_remove(weap_tokens, var_51b7953d0e3a6f82);
     var_11a1fa68aeb971c0 = scripts\cp_mp\utility\game_utility::function_d2d2b803a7b741a4();
     basename = namespace_e0ee43ef2dddadaa::weaponassetnamemap(var_51b7953d0e3a6f82);
     weapobj = makeweapon(basename);
     attachmentsvalid = [];
     has_akimbo = 0;
-    foreach (a in var_116a551dc9d3c305) {
+    foreach (a in weap_attachments) {
         if (weapobj canuseattachment(a)) {
             if (a == "akimbo") {
                 has_akimbo = 1;
@@ -481,8 +481,8 @@ function weapon_think() {
         }
         assertmsg("<dev string:x27c>" + a + "<dev string:x294>" + basename);
     }
-    var_116a551dc9d3c305 = attachmentsvalid;
-    built_weapon = namespace_e0ee43ef2dddadaa::buildweapon(var_51b7953d0e3a6f82, var_116a551dc9d3c305, "none", "none", -1, undefined, undefined, undefined, var_11a1fa68aeb971c0);
+    weap_attachments = attachmentsvalid;
+    built_weapon = namespace_e0ee43ef2dddadaa::buildweapon(var_51b7953d0e3a6f82, weap_attachments, "none", "none", -1, undefined, undefined, undefined, var_11a1fa68aeb971c0);
     weapon_name = getcompleteweaponname(built_weapon);
     if (has_akimbo) {
         thread weapon_akimbo_prop_think(weapon_name);

@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace namespace_d0fc9ba845d3f014;
 
@@ -115,7 +115,7 @@ function function_2a19c46ce6857095(einflictor, eattacker, instance, idamage, idf
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x68c
 // Size: 0x69
-function function_462c84ca1ffad84b(player) {
+function trigger_trap(player) {
     trap = self;
     if (isdefined(player) && isplayer(player)) {
         if (player isufo()) {
@@ -151,7 +151,7 @@ function function_2c05910d78d46c7f() {
         if (isdefined(trace["entity"]) && trace["hittype"] == "hittype_entity") {
             if (isplayer(trace["entity"])) {
                 player = trace["entity"];
-                detonated = function_462c84ca1ffad84b(player);
+                detonated = trigger_trap(player);
                 return;
             }
         }
@@ -167,7 +167,7 @@ function function_2c05910d78d46c7f() {
                 player = trace["entity"];
                 eyepos = player geteye();
                 if (trace["position"][2] <= eyepos[2]) {
-                    detonated = function_462c84ca1ffad84b(player);
+                    detonated = trigger_trap(player);
                     return;
                 }
             }

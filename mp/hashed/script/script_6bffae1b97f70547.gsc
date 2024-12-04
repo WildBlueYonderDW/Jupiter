@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_2669878cf5a1b6bc;
 #using script_6bffae1b97f70547;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace ammo_mod;
 

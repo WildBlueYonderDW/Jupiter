@@ -1,70 +1,70 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7ab5b649fa408138;
-#using script_48814951e916af89;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\gametypes\arm_vehicles.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\rally_point.gsc;
-#using scripts\mp\spawnselection.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using script_640cf1641c03e2a0;
-#using script_2bc0b0102f9b7751;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\spawncamera.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using script_5bab271917698dc4;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\damage.gsc;
-#using script_3f1b6713ca4c9c7;
-#using script_76cc264b397db9cb;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\game_utility_mp.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\spawnfactor.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
 #using script_268c4da1ef6a20a8;
-#using script_371b4c2ab5861e62;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\common\cap.gsc;
-#using script_7e7fd8191bd7be26;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using script_2bc0b0102f9b7751;
 #using script_36967ce8ee2ea745;
-#using script_721ee99d7a8f9168;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
+#using script_371b4c2ab5861e62;
+#using script_3f1b6713ca4c9c7;
+#using script_48814951e916af89;
+#using script_5bab271917698dc4;
+#using script_600b944a95c3a7bf;
+#using script_640cf1641c03e2a0;
+#using script_76cc264b397db9cb;
+#using script_7ab5b649fa408138;
+#using script_7e7fd8191bd7be26;
 #using script_d17503f56b92539;
+#using scripts\common\cap;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_airdrop;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\damage;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\arm_vehicles;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rally_point;
+#using scripts\mp\rank;
+#using scripts\mp\spawncamera;
+#using scripts\mp\spawnfactor;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnselection;
+#using scripts\mp\spectating;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\game_utility_mp;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace gwtdm;
 
@@ -73,7 +73,7 @@
 // Checksum 0x0, Offset: 0x1e87
 // Size: 0xa60
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -3268,8 +3268,8 @@ function function_c9189ff5d2e5af61(team, helireinforcements, var_c0e1f16535e4fa1
     waittime_heli = level.prematchperiodend - var_50ba4037bbd61cff;
     waittime_heli = ter_op(waittime_heli > 0, waittime_heli, 0);
     var_a1d84737ec0b465d = 20 - var_6749ab538ec0ddeb;
-    var_488a1360da4e442a = level.prematchperiodend - var_a1d84737ec0b465d;
-    var_488a1360da4e442a = ter_op(var_488a1360da4e442a > 0, var_488a1360da4e442a, 0);
+    waittime_ac130 = level.prematchperiodend - var_a1d84737ec0b465d;
+    waittime_ac130 = ter_op(waittime_ac130 > 0, waittime_ac130, 0);
     for (timepassed = 0; !helistarted || !ac130started; timepassed++) {
         if (!helistarted && timepassed >= waittime_heli) {
             foreach (laneKey, lanedata in level.agentmanager[team]) {
@@ -3277,7 +3277,7 @@ function function_c9189ff5d2e5af61(team, helireinforcements, var_c0e1f16535e4fa1
             }
             helistarted = 1;
         }
-        if (!ac130started && timepassed >= var_488a1360da4e442a) {
+        if (!ac130started && timepassed >= waittime_ac130) {
             function_93e7d3696caa5331(10, level.var_48e03f24b9b5c1a, team);
             ac130started = 1;
         }
@@ -4033,9 +4033,9 @@ function function_8decce720ed19f1a(vehiclename, vehicleteam, attacker) {
 function function_4baf8b94714b68fe() {
     level endon("game_ended");
     percent_25 = level.scorelimit * 0.25;
-    var_4b0036858d3bb806 = level.scorelimit * 0.5;
+    percent_50 = level.scorelimit * 0.5;
     percent_75 = level.scorelimit * 0.75;
-    var_4b11ce858d4f10aa = level.scorelimit * 0.9;
+    percent_90 = level.scorelimit * 0.9;
     past25 = 0;
     var_ad095265b1032cf4 = 0;
     past75 = 0;
@@ -4054,7 +4054,7 @@ function function_4baf8b94714b68fe() {
             scripts\mp\utility\dialog::statusdialog("score_25_winning", winningteam, 1);
             scripts\mp\utility\dialog::statusdialog("score_25_losing", losingteam, 1);
         }
-        if (!var_ad095265b1032cf4 && (axisscore >= var_4b0036858d3bb806 || alliesscore >= var_4b0036858d3bb806)) {
+        if (!var_ad095265b1032cf4 && (axisscore >= percent_50 || alliesscore >= percent_50)) {
             var_ad095265b1032cf4 = 1;
             level thread killstreakCrateLoop();
             scripts\mp\utility\dialog::statusdialog("score_50_winning", winningteam, 1);
@@ -4067,7 +4067,7 @@ function function_4baf8b94714b68fe() {
             scripts\mp\utility\dialog::statusdialog("score_75_winning", winningteam, 1);
             scripts\mp\utility\dialog::statusdialog("score_75_losing", losingteam, 1);
         }
-        if (!var_ad1aca65b1163f38 && (axisscore >= var_4b11ce858d4f10aa || alliesscore >= var_4b11ce858d4f10aa)) {
+        if (!var_ad1aca65b1163f38 && (axisscore >= percent_90 || alliesscore >= percent_90)) {
             var_ad1aca65b1163f38 = 1;
             scripts\mp\utility\dialog::statusdialog("score_90_winning", winningteam, 1);
             scripts\mp\utility\dialog::statusdialog("score_90_losing", losingteam, 1);
@@ -4127,7 +4127,7 @@ function function_a350ea3bd2c8470() {
                 spawndata.angles = droplocation.angles;
                 spawndata.spawntype = "GAME_MODE";
                 spawndata.var_b88b7b3c17715e3f = team;
-                vehicle = namespace_801fa17f47560d76::function_66c684fea143fbfd("veh9_jltv_mg", spawndata);
+                vehicle = scripts\cp_mp\vehicles\vehicle_airdrop::vehicle_airdrop("veh9_jltv_mg", spawndata);
                 if (isdefined(vehicle)) {
                     level.var_84c26a9fa39f7586[team]++;
                     if (!var_c2344893389fa188[team] && level.var_84c26a9fa39f7586[team] == vehiclecount) {
@@ -4298,7 +4298,7 @@ function ac130_matchstart() {
 function function_37169a4fb87a0e3() {
     level endon("game_ended");
     percent_25 = level.scorelimit * 0.25;
-    var_4b0036858d3bb806 = level.scorelimit * 0.5;
+    percent_50 = level.scorelimit * 0.5;
     percent_80 = level.scorelimit * 0.8;
     var_76650562e610d426 = 0;
     var_7fba03c049d4faba = 0;
@@ -4312,7 +4312,7 @@ function function_37169a4fb87a0e3() {
         if (axisscore >= percent_25 && !var_76650562e610d426) {
             function_93e7d3696caa5331(5, level.var_48e03f24b9b5c1a, "axis");
             var_76650562e610d426 = 1;
-        } else if (axisscore > var_4b0036858d3bb806 && !var_7fba03c049d4faba) {
+        } else if (axisscore > percent_50 && !var_7fba03c049d4faba) {
             var_7fba03c049d4faba = 1;
         } else if (axisscore > percent_80 && !var_1acb94d12e9f55f3) {
             function_93e7d3696caa5331(9, level.var_48e03f24b9b5c1a, "axis");
@@ -4321,7 +4321,7 @@ function function_37169a4fb87a0e3() {
         if (alliesscore >= percent_25 && !var_2c7ad0c8251c8f9) {
             function_93e7d3696caa5331(5, level.var_48e03f24b9b5c1a, "allies");
             var_2c7ad0c8251c8f9 = 1;
-        } else if (alliesscore > var_4b0036858d3bb806 && !var_427d285446343e15) {
+        } else if (alliesscore > percent_50 && !var_427d285446343e15) {
             var_427d285446343e15 = 1;
         } else if (alliesscore > percent_80 && !var_977746fccdd041c8) {
             function_93e7d3696caa5331(9, level.var_48e03f24b9b5c1a, "allies");
@@ -4381,7 +4381,7 @@ function function_2da93e2a35e2182f(agent, team, frontlineindex, laneKey, var_3e3
         agent setgoalvolumeauto(volume, volume.heading);
         agent.var_99f2752b6513c9dd = volume;
         if (!istrue(var_3e332762c9138001)) {
-            level thread scripts\mp\ai_behavior::function_5d96b05a065564e(agent);
+            level thread scripts\mp\ai_behavior::ai_watchForBadPath(agent);
             agent thread function_55c73da3bc1275f7(agent);
         }
         return 1;

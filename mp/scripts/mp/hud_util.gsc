@@ -1,10 +1,10 @@
-#using scripts\mp\utility\script.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\game.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
 
 #namespace hud_util;
 

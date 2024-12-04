@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
-#using scripts\mp\juggernaut.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\hud_util;
+#using scripts\mp\juggernaut;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\weapons;
 
 #namespace juggernaut_mp;
 
@@ -185,6 +185,6 @@ function juggernautweaponpickedup(juggernautweaponobject, prevweaponobject) {
 // Checksum 0x0, Offset: 0x7cb
 // Size: 0x1e
 function jugg_playoperatoruseline(player) {
-    level thread scripts\mp\battlechatter_mp::trysaylocalsound(player, #"hash_2492241d17cecd6d");
+    level thread scripts\mp\battlechatter_mp::trysaylocalsound(player, #"bc_killstreak_action_juggernaut");
 }
 

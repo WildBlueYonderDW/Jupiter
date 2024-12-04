@@ -1,6 +1,6 @@
-#namespace namespace_1038df473218ab50;
+#namespace input_watcher;
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x257
 // Size: 0x190
@@ -31,43 +31,43 @@ function function_f65d06cca9dfed8e() {
     elem = function_7eac7ed595472c9c(x, 430, "+actionslot 4");
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ef
 // Size: 0x211
-function function_e26b9c8fdb6a56da(elem) {
+function elem_used(elem) {
     level.player endon("death");
     msg = "empty";
-    var_187bb9534c02fb44 = undefined;
-    var_64084d2c5ab172ab = undefined;
+    msg_released = undefined;
+    special_watcher = undefined;
     switch (elem.command) {
     case #"hash_a727710e67c210ae":
         msg = "weapon_switch_pressed";
-        var_187bb9534c02fb44 = "weapon_switch_released";
+        msg_released = "weapon_switch_released";
         break;
     case #"hash_c1922905c1b7c5d4":
         msg = "reload_pressed";
-        var_187bb9534c02fb44 = "reload_released";
+        msg_released = "reload_released";
         break;
     case #"hash_121ff0782562a716":
         msg = "stance_pressed";
-        var_187bb9534c02fb44 = "stance_released";
+        msg_released = "stance_released";
         break;
     case #"hash_e2df384de99a55d8":
         msg = "jump_pressed";
-        var_187bb9534c02fb44 = "jump_released";
+        msg_released = "jump_released";
         break;
     case #"hash_74d3c6a203d8ce69":
         msg = "jump_pressed";
-        var_187bb9534c02fb44 = "jump_released";
+        msg_released = "jump_released";
         break;
     case #"hash_145d147f72c3e226":
         msg = "attack_pressed";
-        var_187bb9534c02fb44 = "attack_released";
+        msg_released = "attack_released";
         break;
     case #"hash_515c29a15bc6fb56":
         msg = "ads_pressed";
-        var_187bb9534c02fb44 = "ads_released";
+        msg_released = "ads_released";
         break;
     case #"hash_b382e86ce00ace17":
         msg = "actionslot1";
@@ -83,11 +83,11 @@ function function_e26b9c8fdb6a56da(elem) {
         break;
     case #"hash_203d8ea2bf3b5dda":
         msg = "frag_pressed";
-        var_187bb9534c02fb44 = "frag_released";
+        msg_released = "frag_released";
         break;
     case #"hash_5b56a4ba0edb6e23":
         msg = "smoke_pressed";
-        var_187bb9534c02fb44 = "smoke_released";
+        msg_released = "smoke_released";
         break;
     default:
         break;
@@ -95,8 +95,8 @@ function function_e26b9c8fdb6a56da(elem) {
     while (true) {
         level.player waittill(msg);
         elem.alpha = 0.8;
-        if (isdefined(var_187bb9534c02fb44)) {
-            level.player waittill(var_187bb9534c02fb44);
+        if (isdefined(msg_released)) {
+            level.player waittill(msg_released);
         } else {
             wait 0.2;
         }
@@ -104,15 +104,15 @@ function function_e26b9c8fdb6a56da(elem) {
     }
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x608
 // Size: 0x94
 function function_e35f3577f69d85c5(elem) {
     level.player endon("death");
     msg = "empty";
-    var_187bb9534c02fb44 = undefined;
-    var_64084d2c5ab172ab = undefined;
+    msg_released = undefined;
+    special_watcher = undefined;
     switch (elem.str) {
     case #"hash_f0cbcf6c87f7254a":
         thread function_3d932d2039e4023e(elem);
@@ -125,7 +125,7 @@ function function_e35f3577f69d85c5(elem) {
     }
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a4
 // Size: 0x5e
@@ -142,7 +142,7 @@ function function_3d932d2039e4023e(elem) {
     }
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x70a
 // Size: 0x5e
@@ -159,7 +159,7 @@ function function_7b62e26ca7fbb3cc(elem) {
     }
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x770
 // Size: 0xef
@@ -177,11 +177,11 @@ function function_7eac7ed595472c9c(x, y, command) {
             elem setdevtext("<dev string:x22>" + elem.command + "<dev string:x25>");
         }
     #/
-    thread function_e26b9c8fdb6a56da(elem);
+    thread elem_used(elem);
     return elem;
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x868
 // Size: 0xa2
@@ -200,7 +200,7 @@ function function_6606195a237494eb(x, y, str) {
     return elem;
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x913
 // Size: 0x10
@@ -208,7 +208,7 @@ function moving_forward() {
     return self getnormalizedmovement()[0] > 0.1;
 }
 
-// Namespace namespace_1038df473218ab50 / namespace_f77c4851575d4a2f
+// Namespace input_watcher / namespace_f77c4851575d4a2f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x92c
 // Size: 0x10

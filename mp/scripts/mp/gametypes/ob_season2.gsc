@@ -1,13 +1,13 @@
-#using scripts\common\callbacks.gsc;
-#using script_4a6760982b403bad;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_371b4c2ab5861e62;
 #using script_2583ee5680cf4736;
-#using scripts\cp_mp\challenges.gsc;
+#using script_371b4c2ab5861e62;
+#using script_4a6760982b403bad;
 #using script_58be75c518bf0d40;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
 
 #namespace ob_season2;
 

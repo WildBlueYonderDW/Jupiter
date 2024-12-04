@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_fcdb0d05e06f5c50;
 
@@ -39,7 +39,7 @@ function main() {
     self attach("head_c_jup_sp_enemy_pmc_juggernaut_02", "", 1);
     self.headmodel = "head_c_jup_sp_enemy_pmc_juggernaut_02";
     self setclothtype(#"vestheavy");
-    self function_8abe5a968cc3c220(#"hash_446e723313de4113");
+    self function_8abe5a968cc3c220(#"milhvygr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using script_3a9930dfe832ae05;
-#using scripts\common\powerups.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
+#using script_3a9930dfe832ae05;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\weapon;
 
 #namespace full_ammo;
 

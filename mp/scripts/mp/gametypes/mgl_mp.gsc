@@ -1,11 +1,11 @@
-#using scripts\mp\hud_message.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_27fdece778e999d8;
 #using script_4a941421347ff7df;
-#using scripts\mp\autopilot.gsc;
 #using script_59ff79d681bb860c;
-#using scripts\mp\utility\game.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\autopilot;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
 
 #namespace mgl_mp;
 

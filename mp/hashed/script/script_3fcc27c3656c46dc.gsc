@@ -1,9 +1,9 @@
-#using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots_gametype_br.gsc;
 #using script_40e63dd222434655;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\gametypes\br_armory_kiosk;
 
 #namespace namespace_21b0fdaf3b4a63b2;
 

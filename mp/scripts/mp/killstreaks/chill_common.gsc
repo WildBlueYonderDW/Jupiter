@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\weapons.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\utility\perk;
+#using scripts\mp\weapons;
 
 #namespace chill_common;
 

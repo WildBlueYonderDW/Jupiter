@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
 
 #namespace damagefeedback;
 

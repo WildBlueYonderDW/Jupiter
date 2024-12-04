@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\scene.gsc;
 #using script_784c8c4f3e5f8686;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\devgui;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\engine\utility;
 
 #namespace scene;
 

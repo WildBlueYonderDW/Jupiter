@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
 #using script_3f61d095f24df4d7;
-#using scripts\code\character.gsc;
-#using xmodelalias\civilian_london_female_heads_skintone_med.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\civilian_london_female_heads_skintone_med;
 
 #namespace namespace_6b9ab5ef278a209b;
 

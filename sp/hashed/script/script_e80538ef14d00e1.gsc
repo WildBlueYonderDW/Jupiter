@@ -1,36 +1,36 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_6fba7df440c493c4;
-#using script_3433ee6b63c7e243;
-#using script_18a73a64992dd07d;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using script_25845aca699d038d;
-#using script_354c862768cfe202;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\vehicles\vehicle_dlog.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_e80538ef14d00e1;
-#using scripts\cp\cp_wave_spawning.gsc;
-#using scripts\cp\vehicles\vehicle_cp.gsc;
-#using scripts\cp\coop_stealth.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp\helicopter\cp_helicopter.gsc;
 #using script_166b4f052da169a7;
-#using script_74502a9e0ef1f19c;
-#using script_41ae4f5ca24216cb;
+#using script_18a73a64992dd07d;
+#using script_25845aca699d038d;
+#using script_3433ee6b63c7e243;
+#using script_354c862768cfe202;
 #using script_3bcaa2cbaf54abdd;
+#using script_41ae4f5ca24216cb;
 #using script_54f6cd90dd31bbf0;
+#using script_74502a9e0ef1f19c;
+#using script_e80538ef14d00e1;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp\coop_stealth;
+#using scripts\cp\cp_wave_spawning;
+#using scripts\cp\helicopter\cp_helicopter;
+#using scripts\cp\utility;
+#using scripts\cp\vehicles\vehicle_cp;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_anim;
+#using scripts\cp_mp\vehicles\vehicle_dlog;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace vehicles;
 
@@ -61,7 +61,7 @@ function vehicles_init() {
     }
     setdvar(@"hash_b77d72f69452a294", 1);
     level thread init_vehicle_spawning();
-    namespace_68d1bc1bac7da538::init_vehicles();
+    scripts\cp_mp\vehicles\vehicle_anim::init_vehicles();
     create_func_ref("vehicle_damage_modifier", &cp_vehicle_damage_monitor);
     create_func_ref("anim_placeweaponon", &namespace_223959d3e5206cfb::placeweaponon);
     level._effect["helidown_rpghit"] = loadfx("vfx/iw8_cp/chopper/vfx_chopper_air_explosion.vfx");
@@ -76,7 +76,7 @@ function vehicles_init() {
         cmd = "<dev string:xf4>";
         addentrytodevgui(cmd);
         create_func_ref("<dev string:x15b>", &setup_player_vehicles);
-        level thread function_699304dd575765c9(@"hash_67d581853aa8906d", &cp_vehicle_debug);
+        level thread debug_activation(@"hash_67d581853aa8906d", &cp_vehicle_debug);
     #/
 }
 
@@ -108,15 +108,15 @@ function create_passengers_unload_groups() {
                 keys = getarraykeys(level.vehicle.templates.unloadgroups);
                 for (i = 0; i < keys.size; i++) {
                     key = keys[i];
-                    var_377c1a79d26e9469 = level.vehicle.templates.aianims[keys[i]].size;
+                    passenger_size = level.vehicle.templates.aianims[keys[i]].size;
                     if (!isdefined(level.vehicle.templates.unloadgroups[key])) {
                         level.vehicle.templates.unloadgroups[key] = [];
                     }
                     if (isdefined(level.vehicle.templates.unloadgroups[key]["passengers"])) {
                         continue;
                     }
-                    if (var_377c1a79d26e9469 > 1) {
-                        for (j = 1; j < var_377c1a79d26e9469; j++) {
+                    if (passenger_size > 1) {
+                        for (j = 1; j < passenger_size; j++) {
                             if (isdefined(level.vehicle.templates.aianims[key][j])) {
                                 seat = level.vehicle.templates.aianims[key][j];
                                 if (isdefined(seat.getout)) {
@@ -187,13 +187,13 @@ function vehiclefollowstructpathsplines(path_start, pathing_array, var_6f3f0d19b
         } else {
             var_865de0e45fd72eda[var_865de0e45fd72eda.size] = pathing_array[i].origin;
         }
-        var_5fb584989ac3658a = 300;
+        path_speed = 300;
         if ((!isdefined(self.convoy) || istrue(self.convoy.settings.use_path_speeds)) && isdefined(pathing_array[i].speed)) {
-            var_5fb584989ac3658a = 300 * pathing_array[i].speed / 15;
+            path_speed = 300 * pathing_array[i].speed / 15;
             /#
             #/
         }
-        var_d530f6290fec0a8c = get_duration_between_points(last_point, currentpoint, ter_op(isdefined(self.cp_speed), self.cp_speed, var_5fb584989ac3658a));
+        var_d530f6290fec0a8c = get_duration_between_points(last_point, currentpoint, ter_op(isdefined(self.cp_speed), self.cp_speed, path_speed));
         durations[durations.size] = var_d530f6290fec0a8c;
         last_point = currentpoint;
     }
@@ -231,22 +231,22 @@ function vehicle_process_node_when_at_goal(var_6f3f0d19b9577e15) {
     self notify("vehicle_process_node_when_at_goal");
     self endon("vehicle_process_node_when_at_goal");
     dist_sq = 62500;
-    var_88b8d987c09fc6c6 = 1;
-    nextpoint = self.pathing_array[var_88b8d987c09fc6c6];
-    lastpoint = self.pathing_array[var_88b8d987c09fc6c6];
+    node_index = 1;
+    nextpoint = self.pathing_array[node_index];
+    lastpoint = self.pathing_array[node_index];
     level.vehicle_tracker = self;
     if (istrue(var_6f3f0d19b9577e15)) {
         thread process_nextpoint_after_struct_wait(nextpoint, dist_sq);
     }
     while (true) {
-        self waittill("trigger", var_57baf91195be52b6, param1, param2, param3);
-        if (isint(var_57baf91195be52b6)) {
-            if (var_88b8d987c09fc6c6 < var_57baf91195be52b6 + 1) {
+        self waittill("trigger", completed_ratio, param1, param2, param3);
+        if (isint(completed_ratio)) {
+            if (node_index < completed_ratio + 1) {
                 if (isdefined(self.path_gobbler)) {
                     deletestruct_ref(nextpoint);
                 }
-                var_88b8d987c09fc6c6 = var_57baf91195be52b6 + 1;
-                nextpoint = get_next_node_on_spline(var_88b8d987c09fc6c6);
+                node_index = completed_ratio + 1;
+                nextpoint = get_next_node_on_spline(node_index);
                 if (isdefined(nextpoint)) {
                     lastpoint = nextpoint;
                     self notify("new_next_point");
@@ -360,15 +360,15 @@ function struct_path_unload_node(node) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ace
 // Size: 0x47
-function get_next_node_on_spline(var_88b8d987c09fc6c6) {
-    if (!isdefined(var_88b8d987c09fc6c6)) {
+function get_next_node_on_spline(node_index) {
+    if (!isdefined(node_index)) {
         return undefined;
     }
     if (!isdefined(self.pathing_array)) {
         return undefined;
     }
-    if (isdefined(self.pathing_array[var_88b8d987c09fc6c6])) {
-        return self.pathing_array[var_88b8d987c09fc6c6];
+    if (isdefined(self.pathing_array[node_index])) {
+        return self.pathing_array[node_index];
     }
     return undefined;
 }
@@ -377,8 +377,8 @@ function get_next_node_on_spline(var_88b8d987c09fc6c6) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b1d
 // Size: 0x23
-function function_cb612f9367051ea2(var_d5a516e7fa6744d0) {
-    return self issuspendedvehicle() || var_d5a516e7fa6744d0 && self vehicle_getspeed() < 1;
+function function_cb612f9367051ea2(started_path) {
+    return self issuspendedvehicle() || started_path && self vehicle_getspeed() < 1;
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
@@ -403,16 +403,16 @@ function vehicle_on_last_pathing_array(vehicle) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b96
 // Size: 0x89
-function create_extra_structpath(var_3ebdd87863997706, var_1714bc755a5d3e09, var_6fc8c07bf9fb910d) {
-    if (!isdefined(var_6fc8c07bf9fb910d)) {
-        var_6fc8c07bf9fb910d = (var_1714bc755a5d3e09 - self.origin) / 2;
+function create_extra_structpath(after_toggle, first_position, second_position) {
+    if (!isdefined(second_position)) {
+        second_position = (first_position - self.origin) / 2;
     }
-    var_e8576d498b34741b = var_1714bc755a5d3e09;
-    var_e0a5fd5c9513b506 = var_6fc8c07bf9fb910d;
-    avg = (var_e0a5fd5c9513b506 + var_e8576d498b34741b) / 2;
+    last_oldpos = first_position;
+    var_e0a5fd5c9513b506 = second_position;
+    avg = (var_e0a5fd5c9513b506 + last_oldpos) / 2;
     var_a20aa2636ccbfa4 = avg - var_e0a5fd5c9513b506;
     var_f17000b1738727b3 = spawnstruct();
-    var_f17000b1738727b3.origin = var_e8576d498b34741b + var_a20aa2636ccbfa4;
+    var_f17000b1738727b3.origin = last_oldpos + var_a20aa2636ccbfa4;
     return var_f17000b1738727b3;
 }
 
@@ -464,9 +464,9 @@ function finish_spline_path() {
     }
     self stoppath(1);
     self notify("stop_follow_path");
-    var_2e495148b31b2470 = self.pathing_array[self.pathing_array.size - 1];
-    if (isdefined(var_2e495148b31b2470)) {
-        struct_path_unload_node(var_2e495148b31b2470);
+    final_node = self.pathing_array[self.pathing_array.size - 1];
+    if (isdefined(final_node)) {
+        struct_path_unload_node(final_node);
         wait 0.25;
         if (isdefined(level.vehicle.var_9442d439c225c3fe)) {
             if ([[ level.vehicle.var_9442d439c225c3fe ]](self)) {
@@ -516,13 +516,13 @@ function cp_vehicle_damage_monitor(damage_data) {
                 idamage *= self.damage_multiplier;
             }
             if (istrue(damage_data.attacker.damage_from_above)) {
-                var_edf11ea9c8aca047 = damage_data.attacker.origin[2];
-                var_49a5cf44a8a698e8 = self.origin[2];
-                if (var_edf11ea9c8aca047 >= var_49a5cf44a8a698e8) {
-                    difference = int(abs(var_edf11ea9c8aca047 - var_49a5cf44a8a698e8));
-                    var_e88ce06aee61de95 = int(difference / 64);
-                    if (var_e88ce06aee61de95 > 0) {
-                        idamage *= 1 + 0.4 * var_e88ce06aee61de95;
+                attacker_z = damage_data.attacker.origin[2];
+                victim_z = self.origin[2];
+                if (attacker_z >= victim_z) {
+                    difference = int(abs(attacker_z - victim_z));
+                    idamage_multiplier = int(difference / 64);
+                    if (idamage_multiplier > 0) {
+                        idamage *= 1 + 0.4 * idamage_multiplier;
                     }
                 }
             }
@@ -726,20 +726,20 @@ function register_vehicle_max_ai(vehicle_type, model, type, classname, var_35c13
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x28a1
 // Size: 0x10a
-function get_max_ai_from_infil_name(var_f8e5e3aa5762a8e7, vehicle_type) {
+function get_max_ai_from_infil_name(module_struct, vehicle_type) {
     if (isdefined(level.vehicle_builds) && isdefined(level.vehicle_builds[vehicle_type]) && isdefined(level.vehicle_builds[vehicle_type].max_ai)) {
-        var_21d08b20ae007765 = namespace_f02c28a5e2bd7edd::get_invalid_seats_from_module_struct(var_f8e5e3aa5762a8e7, vehicle_type);
+        var_21d08b20ae007765 = namespace_f02c28a5e2bd7edd::get_invalid_seats_from_module_struct(module_struct, vehicle_type);
         if (isdefined(var_21d08b20ae007765)) {
             count = 0;
             for (i = 0; i < self.usedpositions.size; i++) {
-                var_dfce408c92a4bbdd = 1;
+                found_seat = 1;
                 for (j = 0; j < var_21d08b20ae007765.size; j++) {
                     if (var_21d08b20ae007765[j] == i) {
-                        var_dfce408c92a4bbdd = 0;
+                        found_seat = 0;
                         break;
                     }
                 }
-                if (var_dfce408c92a4bbdd) {
+                if (found_seat) {
                     count++;
                 }
             }
@@ -930,15 +930,15 @@ function register_vehicle_spawn_drivers(spawn_type, num_script_models, driver_mo
 // Size: 0x108
 function choose_random_ground_vehicle_spawn(group, spawn_point, param3) {
     if (isdefined(spawn_point.ai_infil_type)) {
-        var_6cf71aa4de010f27 = spawn_point.ai_infil_type;
+        random_infil = spawn_point.ai_infil_type;
     } else {
-        var_6cf71aa4de010f27 = get_random_available_ground_ai_infil();
+        random_infil = get_random_available_ground_ai_infil();
     }
-    if (isdefined(var_6cf71aa4de010f27)) {
+    if (isdefined(random_infil)) {
         spawn_point.og_script_function = spawn_point.script_function;
-        spawn_point.script_function = var_6cf71aa4de010f27;
-        if (!isdefined(spawn_point.vehicle) && isdefined(level.ai_spawn_vehicle_func[var_6cf71aa4de010f27].vehicle_spawn_func)) {
-            if ([[ level.ai_spawn_vehicle_func[var_6cf71aa4de010f27].vehicle_spawn_func ]](group, spawn_point, var_6cf71aa4de010f27)) {
+        spawn_point.script_function = random_infil;
+        if (!isdefined(spawn_point.vehicle) && isdefined(level.ai_spawn_vehicle_func[random_infil].vehicle_spawn_func)) {
+            if ([[ level.ai_spawn_vehicle_func[random_infil].vehicle_spawn_func ]](group, spawn_point, random_infil)) {
                 return 1;
             } else {
                 return 0;
@@ -948,8 +948,8 @@ function choose_random_ground_vehicle_spawn(group, spawn_point, param3) {
         } else {
             return 0;
         }
-        self thread [[ level.spawner_script_funcs[var_6cf71aa4de010f27].script_function ]](group, spawn_point, var_6cf71aa4de010f27);
-        thread attempt_ai_ground_infil_cooldown(var_6cf71aa4de010f27);
+        self thread [[ level.spawner_script_funcs[random_infil].script_function ]](group, spawn_point, random_infil);
+        thread attempt_ai_ground_infil_cooldown(random_infil);
         return;
     }
     return 0;
@@ -959,11 +959,11 @@ function choose_random_ground_vehicle_spawn(group, spawn_point, param3) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x303e
 // Size: 0x50
-function decrement_wave_veh_count(var_6cf71aa4de010f27) {
-    if (isdefined(self.valid_vehicles) && isdefined(self.valid_vehicles[var_6cf71aa4de010f27])) {
-        self.valid_vehicles[var_6cf71aa4de010f27]--;
-        if (self.valid_vehicles[var_6cf71aa4de010f27] < 1) {
-            self.valid_vehicles[var_6cf71aa4de010f27] = undefined;
+function decrement_wave_veh_count(random_infil) {
+    if (isdefined(self.valid_vehicles) && isdefined(self.valid_vehicles[random_infil])) {
+        self.valid_vehicles[random_infil]--;
+        if (self.valid_vehicles[random_infil] < 1) {
+            self.valid_vehicles[random_infil] = undefined;
         }
     }
 }
@@ -973,40 +973,40 @@ function decrement_wave_veh_count(var_6cf71aa4de010f27) {
 // Checksum 0x0, Offset: 0x3096
 // Size: 0x1c9
 function choose_escalation_air_vehicle_spawn(group, spawn_point, param3) {
-    var_6cf71aa4de010f27 = undefined;
+    random_infil = undefined;
     var_a980f9185c6c9df8 = group scripts\cp\cp_wave_spawning::get_current_wave_ref();
     if (isdefined(var_a980f9185c6c9df8)) {
-        var_f7a6739c47ba2ee1 = group namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_wave();
-        if (istrue(group.use_only_veh_spawners) && (!isdefined(var_f7a6739c47ba2ee1) || var_f7a6739c47ba2ee1.size < 1)) {
+        allowed_vehicles = group namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_wave();
+        if (istrue(group.use_only_veh_spawners) && (!isdefined(allowed_vehicles) || allowed_vehicles.size < 1)) {
             return 0;
         }
-        var_f7a6739c47ba2ee1 = spawn_point namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_spawnpoint(var_f7a6739c47ba2ee1);
-        if (isdefined(var_f7a6739c47ba2ee1) && var_f7a6739c47ba2ee1.size > 0) {
-            var_6cf71aa4de010f27 = random(var_f7a6739c47ba2ee1);
-            if (namespace_5729d24318b60bcd::has_vehicle_type_exceeded_module_cap(group, var_6cf71aa4de010f27)) {
+        allowed_vehicles = spawn_point namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_spawnpoint(allowed_vehicles);
+        if (isdefined(allowed_vehicles) && allowed_vehicles.size > 0) {
+            random_infil = random(allowed_vehicles);
+            if (namespace_5729d24318b60bcd::has_vehicle_type_exceeded_module_cap(group, random_infil)) {
                 return 0;
             }
         }
     } else if (isdefined(group.valid_vehicles) && array_sum(group.valid_vehicles) > 0) {
-        var_f7a6739c47ba2ee1 = group namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_wave();
-        var_f7a6739c47ba2ee1 = spawn_point namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_spawnpoint(var_f7a6739c47ba2ee1);
-        if (isdefined(var_f7a6739c47ba2ee1) && var_f7a6739c47ba2ee1.size > 0) {
-            var_6cf71aa4de010f27 = random(var_f7a6739c47ba2ee1);
-            if (namespace_5729d24318b60bcd::has_vehicle_type_exceeded_module_cap(group, var_6cf71aa4de010f27)) {
+        allowed_vehicles = group namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_wave();
+        allowed_vehicles = spawn_point namespace_5729d24318b60bcd::get_allowed_vehicle_types_from_spawnpoint(allowed_vehicles);
+        if (isdefined(allowed_vehicles) && allowed_vehicles.size > 0) {
+            random_infil = random(allowed_vehicles);
+            if (namespace_5729d24318b60bcd::has_vehicle_type_exceeded_module_cap(group, random_infil)) {
                 return 0;
             }
         }
     } else {
-        var_6cf71aa4de010f27 = get_random_available_air_ai_infil();
+        random_infil = get_random_available_air_ai_infil();
     }
-    if (isdefined(var_6cf71aa4de010f27)) {
-        if (namespace_5729d24318b60bcd::has_vehicle_type_exceeded_module_cap(group, var_6cf71aa4de010f27)) {
+    if (isdefined(random_infil)) {
+        if (namespace_5729d24318b60bcd::has_vehicle_type_exceeded_module_cap(group, random_infil)) {
             return 0;
         }
         spawn_point.og_script_function = spawn_point.script_function;
-        spawn_point.script_function = var_6cf71aa4de010f27;
-        if (!isdefined(spawn_point.vehicle) && isdefined(level.ai_spawn_vehicle_func[var_6cf71aa4de010f27].vehicle_spawn_func)) {
-            if ([[ level.ai_spawn_vehicle_func[var_6cf71aa4de010f27].vehicle_spawn_func ]](group, spawn_point, var_6cf71aa4de010f27)) {
+        spawn_point.script_function = random_infil;
+        if (!isdefined(spawn_point.vehicle) && isdefined(level.ai_spawn_vehicle_func[random_infil].vehicle_spawn_func)) {
+            if ([[ level.ai_spawn_vehicle_func[random_infil].vehicle_spawn_func ]](group, spawn_point, random_infil)) {
                 return 1;
             } else {
                 return 0;
@@ -1016,7 +1016,7 @@ function choose_escalation_air_vehicle_spawn(group, spawn_point, param3) {
         } else {
             return 0;
         }
-        self thread [[ level.spawner_script_funcs[var_6cf71aa4de010f27].script_function ]](group, spawn_point, var_6cf71aa4de010f27);
+        self thread [[ level.spawner_script_funcs[random_infil].script_function ]](group, spawn_point, random_infil);
         return;
     }
     return 0;
@@ -1028,15 +1028,15 @@ function choose_escalation_air_vehicle_spawn(group, spawn_point, param3) {
 // Size: 0x108
 function choose_random_air_vehicle_spawn(group, spawn_point, param3) {
     if (isdefined(spawn_point.ai_infil_type)) {
-        var_6cf71aa4de010f27 = spawn_point.ai_infil_type;
+        random_infil = spawn_point.ai_infil_type;
     } else {
-        var_6cf71aa4de010f27 = get_random_available_air_ai_infil();
+        random_infil = get_random_available_air_ai_infil();
     }
-    if (isdefined(var_6cf71aa4de010f27)) {
+    if (isdefined(random_infil)) {
         spawn_point.og_script_function = spawn_point.script_function;
-        spawn_point.script_function = var_6cf71aa4de010f27;
-        if (!isdefined(spawn_point.vehicle) && isdefined(level.ai_spawn_vehicle_func[var_6cf71aa4de010f27].vehicle_spawn_func)) {
-            if ([[ level.ai_spawn_vehicle_func[var_6cf71aa4de010f27].vehicle_spawn_func ]](group, spawn_point, var_6cf71aa4de010f27)) {
+        spawn_point.script_function = random_infil;
+        if (!isdefined(spawn_point.vehicle) && isdefined(level.ai_spawn_vehicle_func[random_infil].vehicle_spawn_func)) {
+            if ([[ level.ai_spawn_vehicle_func[random_infil].vehicle_spawn_func ]](group, spawn_point, random_infil)) {
                 return 1;
             } else {
                 return 0;
@@ -1046,8 +1046,8 @@ function choose_random_air_vehicle_spawn(group, spawn_point, param3) {
         } else {
             return 0;
         }
-        self thread [[ level.spawner_script_funcs[var_6cf71aa4de010f27].script_function ]](group, spawn_point, var_6cf71aa4de010f27);
-        thread attempt_ai_air_infil_cooldown(var_6cf71aa4de010f27);
+        self thread [[ level.spawner_script_funcs[random_infil].script_function ]](group, spawn_point, random_infil);
+        thread attempt_ai_air_infil_cooldown(random_infil);
         return;
     }
     return 0;
@@ -1057,12 +1057,12 @@ function choose_random_air_vehicle_spawn(group, spawn_point, param3) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3377
 // Size: 0x8d
-function ai_ground_veh_spawn(var_f8e5e3aa5762a8e7, spawn_point, infil_name) {
+function ai_ground_veh_spawn(module_struct, spawn_point, infil_name) {
     if (isdefined(spawn_point.vehicle)) {
         self.vehicle = spawn_point.vehicle;
         self.vehicle thread thread_on_notify("unloaded", &clear_kill_off_flags, self, undefined, self, self, "death");
-        thread delay_enter_vehicle(var_f8e5e3aa5762a8e7, spawn_point, spawn_point.vehicle, infil_name);
-        spawn_point.vehicle thread allow_infil_after_full_or_timeout(var_f8e5e3aa5762a8e7, infil_name);
+        thread delay_enter_vehicle(module_struct, spawn_point, spawn_point.vehicle, infil_name);
+        spawn_point.vehicle thread allow_infil_after_full_or_timeout(module_struct, infil_name);
     }
 }
 
@@ -1084,11 +1084,11 @@ function function_64f6b6424352bc68(group, spawn_point, infil_name) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x348f
 // Size: 0x89
-function ai_enter_vehicle(var_f8e5e3aa5762a8e7, spawn_point, infil_name) {
+function ai_enter_vehicle(module_struct, spawn_point, infil_name) {
     if (isdefined(spawn_point.vehicle)) {
         thread clear_kill_off_flags_after_unload(spawn_point.vehicle);
-        thread delay_enter_vehicle(var_f8e5e3aa5762a8e7, spawn_point, spawn_point.vehicle, infil_name);
-        spawn_point.vehicle thread allow_infil_after_full_or_timeout(var_f8e5e3aa5762a8e7, infil_name);
+        thread delay_enter_vehicle(module_struct, spawn_point, spawn_point.vehicle, infil_name);
+        spawn_point.vehicle thread allow_infil_after_full_or_timeout(module_struct, infil_name);
         if (isdefined(spawn_point.script_demeanor)) {
             namespace_5729d24318b60bcd::set_demeanor_from_unittype(spawn_point.script_demeanor);
         }
@@ -1120,7 +1120,7 @@ function clear_kill_off_flags_after_unload_wait(vehicle) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x357b
 // Size: 0xe8
-function delay_enter_vehicle(var_f8e5e3aa5762a8e7, spawn_point, vehicle, infil_name) {
+function delay_enter_vehicle(module_struct, spawn_point, vehicle, infil_name) {
     if (isdefined(self.spawnpoint.pos_override_struct) && self.spawnpoint.pos_override_struct != vehicle) {
         vehicle thread add_to_vehicle_queue(self);
         return;
@@ -1130,9 +1130,9 @@ function delay_enter_vehicle(var_f8e5e3aa5762a8e7, spawn_point, vehicle, infil_n
     if (isdefined(spawn_point.script_demeanor)) {
         namespace_5729d24318b60bcd::set_demeanor_from_unittype(spawn_point.script_demeanor);
     }
-    var_9c2ea6e4aa0dcdc = vehicle get_valid_seats(var_f8e5e3aa5762a8e7, infil_name);
-    if (!isdefined(self.forced_startingposition) && isdefined(var_9c2ea6e4aa0dcdc) && int(var_9c2ea6e4aa0dcdc) >= 0) {
-        self.forced_startingposition = var_9c2ea6e4aa0dcdc;
+    forced_seat = vehicle get_valid_seats(module_struct, infil_name);
+    if (!isdefined(self.forced_startingposition) && isdefined(forced_seat) && int(forced_seat) >= 0) {
+        self.forced_startingposition = forced_seat;
     }
     self dontinterpolate();
     vehicle thread scripts\common\vehicle_aianim::guy_enter(self);
@@ -1177,8 +1177,8 @@ function remove_from_vehicle_queue(vehicle) {
 // Checksum 0x0, Offset: 0x3745
 // Size: 0x143
 function veh_ground_veh_spawn(group, spawn_point, infil_name) {
-    var_a0b5803da717965f = level.ai_spawn_vehicle_func[infil_name];
-    var_1317c822798f0c26 = var_a0b5803da717965f get_vehicle_spawn_points(spawn_point);
+    data_struct = level.ai_spawn_vehicle_func[infil_name];
+    var_1317c822798f0c26 = data_struct get_vehicle_spawn_points(spawn_point);
     if (var_1317c822798f0c26.size > 0) {
         foreach (veh_spawn_point in var_1317c822798f0c26) {
             if (istrue(veh_spawn_point.in_use)) {
@@ -1256,11 +1256,11 @@ function spawn_script_model_driver_and_passengers(vehicle, infil_name) {
         }
     }
     if (isdefined(level.vehicle_builds[infil_name]) && isdefined(level.vehicle_builds[infil_name].max_ai)) {
-        var_fc3670006dae0c6e = int(min(level.vehicle_builds[infil_name].max_ai, vehicle.usedpositions.size));
+        max_guys = int(min(level.vehicle_builds[infil_name].max_ai, vehicle.usedpositions.size));
     } else {
-        var_fc3670006dae0c6e = vehicle.usedpositions.size;
+        max_guys = vehicle.usedpositions.size;
     }
-    if (vehicle.attachedguys.size >= var_fc3670006dae0c6e) {
+    if (vehicle.attachedguys.size >= max_guys) {
         vehicle notify("spawning_done");
         return;
     }
@@ -1276,7 +1276,7 @@ function script_model_pilot_kill_watch(var_c2f1ca305ee16808) {
     if (!isdefined(self) || !isdefined(var_c2f1ca305ee16808)) {
         return;
     }
-    var_4116e8fd5da7b698 = 250;
+    health_amount = 250;
     while (true) {
         self waittill("damage", amount, attacker, unused, point);
         if (isdefined(attacker) && isplayer(attacker) && isdefined(amount) && amount > 0 && isdefined(point)) {
@@ -1293,8 +1293,8 @@ function script_model_pilot_kill_watch(var_c2f1ca305ee16808) {
             veh_dot = vectordot(vectornormalize(anglestoforward(self.angles)), vectornormalize(point - self.origin));
             seat_pos = var_c2f1ca305ee16808.origin + (0, 0, 18);
             if (hit_dot > 0.99975 && veh_dot > 0.73 && point[2] > seat_pos[2]) {
-                var_4116e8fd5da7b698 -= amount;
-                if (var_4116e8fd5da7b698 <= 0) {
+                health_amount -= amount;
+                if (health_amount <= 0) {
                     self notify("death", attacker);
                 }
             }
@@ -1336,23 +1336,23 @@ function get_vehicle_spawn_points(spawn_point) {
     if (istrue(spawn_point.veh_model_spawner)) {
         return [spawn_point];
     }
-    var_1f6308549434002c = getstructarray(self.spawn_points, "targetname");
-    var_7bbda18a855c7111 = [];
+    potential_structs = getstructarray(self.spawn_points, "targetname");
+    return_array = [];
     if (isdefined(spawn_point.script_linkname)) {
-        for (i = 0; i < var_1f6308549434002c.size; i++) {
-            if (is_linked_struct(var_1f6308549434002c[i], spawn_point)) {
-                var_7bbda18a855c7111[var_7bbda18a855c7111.size] = var_1f6308549434002c[i];
+        for (i = 0; i < potential_structs.size; i++) {
+            if (is_linked_struct(potential_structs[i], spawn_point)) {
+                return_array[return_array.size] = potential_structs[i];
             }
         }
-        if (var_7bbda18a855c7111.size < 1) {
-            return array_randomize(var_1f6308549434002c);
+        if (return_array.size < 1) {
+            return array_randomize(potential_structs);
         } else {
-            var_fd373f834db9228e = random(var_7bbda18a855c7111);
-            return [var_fd373f834db9228e];
+            returned_struct = random(return_array);
+            return [returned_struct];
         }
         return;
     }
-    return array_randomize(var_1f6308549434002c);
+    return array_randomize(potential_structs);
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
@@ -1360,8 +1360,8 @@ function get_vehicle_spawn_points(spawn_point) {
 // Checksum 0x0, Offset: 0x3e71
 // Size: 0x23c
 function veh_heli_spawn(group, spawn_point, infil_name) {
-    var_a0b5803da717965f = level.ai_spawn_vehicle_func[infil_name];
-    var_1317c822798f0c26 = var_a0b5803da717965f get_vehicle_spawn_points(spawn_point);
+    data_struct = level.ai_spawn_vehicle_func[infil_name];
+    var_1317c822798f0c26 = data_struct get_vehicle_spawn_points(spawn_point);
     if (var_1317c822798f0c26.size > 0) {
         foreach (veh_spawn_point in var_1317c822798f0c26) {
             if (istrue(veh_spawn_point.in_use)) {
@@ -1548,15 +1548,15 @@ function clear_vehicle_build_to_spawnpoint(veh_spawn_point) {
 // Size: 0xb8
 function copy_vehicle_build_to_spawnpoint(infil_name, veh_spawn_point) {
     if (isdefined(level.vehicle_builds) && isdefined(level.vehicle_builds[infil_name])) {
-        var_a0b5803da717965f = level.vehicle_builds[infil_name];
-        if (isdefined(var_a0b5803da717965f.classname_mp)) {
-            veh_spawn_point.classname_mp = var_a0b5803da717965f.classname_mp;
+        data_struct = level.vehicle_builds[infil_name];
+        if (isdefined(data_struct.classname_mp)) {
+            veh_spawn_point.classname_mp = data_struct.classname_mp;
         }
-        if (isdefined(var_a0b5803da717965f.vehicletype)) {
-            veh_spawn_point.vehicletype = var_a0b5803da717965f.vehicletype;
+        if (isdefined(data_struct.vehicletype)) {
+            veh_spawn_point.vehicletype = data_struct.vehicletype;
         }
-        if (isdefined(var_a0b5803da717965f.vehiclename)) {
-            veh_spawn_point.vehiclename = var_a0b5803da717965f.vehiclename;
+        if (isdefined(data_struct.vehiclename)) {
+            veh_spawn_point.vehiclename = data_struct.vehiclename;
         }
     }
 }
@@ -1594,7 +1594,7 @@ function waittill_full_or_timeout(infil_name, group) {
     } else {
         wait 1;
     }
-    var_cbd3f7020ec784e3 = create_vehicle_path(infil_name);
+    start_path = create_vehicle_path(infil_name);
     if (self vehicle_isphysveh()) {
         self.veh_brake = 0;
     }
@@ -1662,9 +1662,9 @@ function heli_waittill_full_or_timeout(infil_name, group) {
     thread_on_notify_no_endon_death("unloading", &check_for_unloading_func, infil_name, undefined, undefined);
     thread_on_notify_no_endon_death("unloaded", &delete_nav_obstacle, undefined, undefined, undefined);
     if (isdefined(self.spawn_point.heli_path_func)) {
-        var_cbd3f7020ec784e3 = self [[ self.spawn_point.heli_path_func ]](infil_name);
+        start_path = self [[ self.spawn_point.heli_path_func ]](infil_name);
     } else {
-        var_cbd3f7020ec784e3 = create_direct_heli_path(infil_name);
+        start_path = create_direct_heli_path(infil_name);
     }
     self.spawn_point.vehicle = undefined;
 }
@@ -1727,12 +1727,12 @@ function convert_remaining_to_ai(group, var_c02e57df860f2d41) {
             level deposit_from_compromised_convoy_delayed(self);
         }
         rider remove_fake_guy_from_list();
-        var_3dd82b36b07a721b = var_78543f1a37928429.vehicle_position;
+        new_seat = var_78543f1a37928429.vehicle_position;
         var_78543f1a37928429.vehicle_position = undefined;
         var_78543f1a37928429.specs = "vehicle_ai";
         soldier = namespace_5729d24318b60bcd::function_4441d2c30537ec6b(group, var_78543f1a37928429, 0, "vehicle_ai", undefined, 1);
         if (isdefined(soldier)) {
-            soldier.forced_startingposition = var_3dd82b36b07a721b;
+            soldier.forced_startingposition = new_seat;
             if (istrue(self.stealth_enabled)) {
                 soldier.ignoreall = 0;
                 soldier.sightmaxdistance = 2200;
@@ -1913,10 +1913,10 @@ function mark_remaining_as_died_poorly() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x511e
 // Size: 0x78
-function get_vehicle_riders(var_522c6b77ac421e1d) {
+function get_vehicle_riders(check_isalive) {
     count = 0;
     foreach (guy in self.riders) {
-        if (istrue(var_522c6b77ac421e1d)) {
+        if (istrue(check_isalive)) {
             if (isalive(guy)) {
                 count++;
             }
@@ -1931,7 +1931,7 @@ function get_vehicle_riders(var_522c6b77ac421e1d) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x519f
 // Size: 0x165
-function get_vehicle_unloadable_riders(var_522c6b77ac421e1d, infil_name) {
+function get_vehicle_unloadable_riders(check_isalive, infil_name) {
     count = 0;
     if (isdefined(self.classname_mp)) {
         if (isdefined(level.vehicle) && isdefined(level.vehicle.templates) && isdefined(level.vehicle.templates.aianims) && isdefined(level.vehicle.templates.aianims[self.classname_mp])) {
@@ -1975,8 +1975,8 @@ function create_vehicle_path(infil_name) {
         start_point = duplicate_struct(self.veh_spawn_point);
         add_targetname_kvps(start_point, undefined, infil_name + counter + "_start");
         self.currentnode = start_point;
-        var_d1160844762a0829 = create_simple_path(self.currentnode, self.angles, counter, infil_name, "_end_node_pathing_", (1, 1, 0));
-        if (var_d1160844762a0829) {
+        path_created = create_simple_path(self.currentnode, self.angles, counter, infil_name, "_end_node_pathing_", (1, 1, 0));
+        if (path_created) {
             return start_point;
         }
     }
@@ -1988,9 +1988,9 @@ function create_vehicle_path(infil_name) {
         foreach (struct in linked_structs) {
             var_2c4faf696b6cfdca = math::get_dot(self.origin, self.angles, struct.origin);
             var_d305c3c2de1b97a = math::get_dot(self.origin, vectortoangles(unload_struct.origin - self.origin), struct.origin);
-            var_d8f6616d2843d321 = var_2c4faf696b6cfdca + var_d305c3c2de1b97a;
-            if (var_d8f6616d2843d321 > var_b1cf71f85043aea6) {
-                var_b1cf71f85043aea6 = var_d8f6616d2843d321;
+            dot_score = var_2c4faf696b6cfdca + var_d305c3c2de1b97a;
+            if (dot_score > var_b1cf71f85043aea6) {
+                var_b1cf71f85043aea6 = dot_score;
                 var_4769a2cad76e31f = struct;
             }
         }
@@ -2008,19 +2008,19 @@ function create_vehicle_path(infil_name) {
     if (!isdefined(var_4769a2cad76e31f)) {
         return;
     }
-    var_cbd3f7020ec784e3 = duplicate_struct(var_4769a2cad76e31f);
-    var_cbd3f7020ec784e3.angles = vectortoangles(var_cbd3f7020ec784e3.origin - self.origin);
+    start_path = duplicate_struct(var_4769a2cad76e31f);
+    start_path.angles = vectortoangles(start_path.origin - self.origin);
     if (false) {
         level thread draw_line_until_endons(self.spawn_point.origin, 1, 1, 1, "create_vehicle_path");
-        level thread draw_line_until_endons(var_cbd3f7020ec784e3.origin, 0, 1, 0, "create_vehicle_path");
+        level thread draw_line_until_endons(start_path.origin, 0, 1, 0, "create_vehicle_path");
         level thread draw_line_until_endons(unload_struct.origin, 1, 1, 0, "create_vehicle_path");
     }
-    add_targetname_kvps(var_cbd3f7020ec784e3, undefined, infil_name + counter + "_start");
-    create_path_from_struct_to_struct(var_cbd3f7020ec784e3, unload_struct, counter, infil_name, "_unload_pathing_", (1, 1, 1));
+    add_targetname_kvps(start_path, undefined, infil_name + counter + "_start");
+    create_path_from_struct_to_struct(start_path, unload_struct, counter, infil_name, "_unload_pathing_", (1, 1, 1));
     thread_on_notify("unloaded", &create_path_to_delete_node, infil_name, counter, self);
     thread_on_notify_no_endon_death("death", &reset_spawn_point_targetname, self.spawn_point, undefined, self);
     self.disabled_nodes = undefined;
-    return var_cbd3f7020ec784e3;
+    return start_path;
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
@@ -2030,8 +2030,8 @@ function create_vehicle_path(infil_name) {
 function create_path_to_delete_node(infil_name, counter) {
     start_point = self.spawn_point;
     self.currentnode = start_point;
-    var_d1160844762a0829 = create_simple_path(self.currentnode, self.angles, counter, infil_name, "_end_node_pathing_", (1, 1, 0));
-    if (!var_d1160844762a0829) {
+    path_created = create_simple_path(self.currentnode, self.angles, counter, infil_name, "_end_node_pathing_", (1, 1, 0));
+    if (!path_created) {
         var_5bda6f0ecaf2f49 = get_best_end_point(infil_name, self.currentnode);
         end_point = duplicate_struct(var_5bda6f0ecaf2f49);
         self.path_gobbler = 1;
@@ -2043,7 +2043,7 @@ function create_path_to_delete_node(infil_name, counter) {
     }
     if (math::is_point_in_front(self.currentnode.origin) || self.spawn_point.origin == self.currentnode.origin) {
         self.target = self.pathing_array[1].targetname;
-    } else if (!var_d1160844762a0829) {
+    } else if (!path_created) {
         self.target = self.pathing_array[1].targetname;
     } else {
         self.pathing_array = array_remove_index(self.pathing_array, 0);
@@ -2056,12 +2056,12 @@ function create_path_to_delete_node(infil_name, counter) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x5892
 // Size: 0x3f4
-function create_simple_path(start_struct, var_db617c385ee191cb, counter, infil_name, var_b530ab3549782a68, color) {
+function create_simple_path(start_struct, comp_angles, counter, infil_name, kvp_string, color) {
     level endon("game_ended");
     self endon("death");
-    var_4a9e97799777f3fd = 1;
+    found_links = 1;
     current_struct = start_struct;
-    var_4d423fe4a21114ad = -0.3;
+    valid_dot = -0.3;
     self.pathing_array = [start_struct];
     if (false) {
         level.players[0] notifyonplayercommand("use", "+usereload");
@@ -2079,28 +2079,28 @@ function create_simple_path(start_struct, var_db617c385ee191cb, counter, infil_n
         }
         if (isdefined(current_struct.script_linkto)) {
             linked_structs = current_struct get_veh_linked_structs();
-            var_1f6308549434002c = [];
+            potential_structs = [];
             best_dot = -1;
-            var_150cd8abc305712d = undefined;
+            best_option = undefined;
             if (linked_structs.size == 1) {
-                var_1f6308549434002c[var_1f6308549434002c.size] = linked_structs[0];
+                potential_structs[potential_structs.size] = linked_structs[0];
             } else {
                 for (i = 0; i < linked_structs.size; i++) {
-                    var_e7f629e8d81b352c = linked_structs[i];
-                    if (!isdefined(var_150cd8abc305712d)) {
-                        var_150cd8abc305712d = var_e7f629e8d81b352c;
+                    linked_struct = linked_structs[i];
+                    if (!isdefined(best_option)) {
+                        best_option = linked_struct;
                     }
-                    var_2c4faf696b6cfdca = math::get_dot(current_struct.origin, var_db617c385ee191cb, var_e7f629e8d81b352c.origin);
-                    if (var_2c4faf696b6cfdca >= var_4d423fe4a21114ad) {
-                        var_1f6308549434002c[var_1f6308549434002c.size] = var_e7f629e8d81b352c;
+                    var_2c4faf696b6cfdca = math::get_dot(current_struct.origin, comp_angles, linked_struct.origin);
+                    if (var_2c4faf696b6cfdca >= valid_dot) {
+                        potential_structs[potential_structs.size] = linked_struct;
                     }
                 }
             }
-            if (var_1f6308549434002c.size < 1 && isdefined(var_150cd8abc305712d)) {
-                var_1f6308549434002c[var_1f6308549434002c.size] = var_150cd8abc305712d;
+            if (potential_structs.size < 1 && isdefined(best_option)) {
+                potential_structs[potential_structs.size] = best_option;
             }
-            if (var_1f6308549434002c.size > 0) {
-                selected_struct = random(var_1f6308549434002c);
+            if (potential_structs.size > 0) {
+                selected_struct = random(potential_structs);
                 selected_struct = duplicate_struct(selected_struct);
                 self.path_gobbler = 1;
                 self.pathing_array[self.pathing_array.size] = selected_struct;
@@ -2116,25 +2116,25 @@ function create_simple_path(start_struct, var_db617c385ee191cb, counter, infil_n
         }
         if (isdefined(current_struct.target)) {
             linked_structs = current_struct get_target_array();
-            var_1f6308549434002c = [];
+            potential_structs = [];
             best_dot = -1;
-            var_150cd8abc305712d = undefined;
+            best_option = undefined;
             for (i = 0; i < linked_structs.size; i++) {
-                var_e7f629e8d81b352c = linked_structs[i];
-                var_2c4faf696b6cfdca = math::get_dot(current_struct.origin, var_db617c385ee191cb, var_e7f629e8d81b352c.origin);
-                if (var_2c4faf696b6cfdca >= var_4d423fe4a21114ad) {
-                    var_1f6308549434002c[var_1f6308549434002c.size] = var_e7f629e8d81b352c;
+                linked_struct = linked_structs[i];
+                var_2c4faf696b6cfdca = math::get_dot(current_struct.origin, comp_angles, linked_struct.origin);
+                if (var_2c4faf696b6cfdca >= valid_dot) {
+                    potential_structs[potential_structs.size] = linked_struct;
                     continue;
                 }
                 if (var_2c4faf696b6cfdca >= best_dot) {
-                    var_150cd8abc305712d = linked_structs[i];
+                    best_option = linked_structs[i];
                 }
             }
-            if (var_1f6308549434002c.size < 1 && isdefined(var_150cd8abc305712d)) {
-                var_1f6308549434002c[var_1f6308549434002c.size] = var_150cd8abc305712d;
+            if (potential_structs.size < 1 && isdefined(best_option)) {
+                potential_structs[potential_structs.size] = best_option;
             }
-            if (var_1f6308549434002c.size > 0) {
-                selected_struct = random(var_1f6308549434002c);
+            if (potential_structs.size > 0) {
+                selected_struct = random(potential_structs);
                 if (array_contains(self.pathing_array, selected_struct)) {
                     self.pathing_array[self.pathing_array.size] = selected_struct;
                     self.looping_path = 1;
@@ -2193,11 +2193,11 @@ function split_large_pathing_array() {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d90
 // Size: 0x2f4
-function create_path_from_struct_to_struct(start_struct, goal_struct, counter, infil_name, var_b530ab3549782a68, color) {
+function create_path_from_struct_to_struct(start_struct, goal_struct, counter, infil_name, kvp_string, color) {
     level endon("game_ended");
     self endon("death");
-    var_11423199b914525b = start_struct;
-    var_11423199b914525b.angles = self.angles;
+    last_struct = start_struct;
+    last_struct.angles = self.angles;
     closest_struct = undefined;
     searching = 1;
     index = 0;
@@ -2223,18 +2223,18 @@ function create_path_from_struct_to_struct(start_struct, goal_struct, counter, i
         if (false) {
             level.players[0] waittill("use");
         }
-        var_11423199b914525b = find_closest_path_struct(var_11423199b914525b, goal_struct, infil_name + counter + var_b530ab3549782a68 + index, color, infil_name);
-        if (isdefined(var_11423199b914525b)) {
-            if (!isdefined(var_11423199b914525b.pathing_index)) {
-                var_11423199b914525b.pathing_index = self.pathing_array.size;
-                self.pathing_array[self.pathing_array.size] = var_11423199b914525b;
+        last_struct = find_closest_path_struct(last_struct, goal_struct, infil_name + counter + kvp_string + index, color, infil_name);
+        if (isdefined(last_struct)) {
+            if (!isdefined(last_struct.pathing_index)) {
+                last_struct.pathing_index = self.pathing_array.size;
+                self.pathing_array[self.pathing_array.size] = last_struct;
                 if (false) {
-                    if (isdefined(var_11423199b914525b.previous_struct)) {
-                        level thread draw_line_until_endons(var_11423199b914525b.previous_struct.origin, color[0], color[1], color[2], ["create_vehicle_path", "kill_debug_" + var_11423199b914525b.pathing_index], var_11423199b914525b.origin);
+                    if (isdefined(last_struct.previous_struct)) {
+                        level thread draw_line_until_endons(last_struct.previous_struct.origin, color[0], color[1], color[2], ["create_vehicle_path", "kill_debug_" + last_struct.pathing_index], last_struct.origin);
                     }
                 }
             }
-            if (var_11423199b914525b.origin == goal_struct.origin) {
+            if (last_struct.origin == goal_struct.origin) {
                 break;
             }
         } else {
@@ -2258,14 +2258,14 @@ function create_path_from_struct_to_struct(start_struct, goal_struct, counter, i
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x608c
 // Size: 0x4be
-function find_closest_path_struct(var_11423199b914525b, goal_struct, var_b530ab3549782a68, color, infil_name) {
+function find_closest_path_struct(last_struct, goal_struct, kvp_string, color, infil_name) {
     self notify("find_closest_path_struct");
     if (false) {
-        level thread drawsphere(var_11423199b914525b.origin, 24, 1, (1, 1, 1));
+        level thread drawsphere(last_struct.origin, 24, 1, (1, 1, 1));
     }
     closest_struct = undefined;
-    var_2a4e8a0618aaa740 = sortbydistance(var_11423199b914525b get_veh_linked_structs(), goal_struct.origin);
-    if (var_2a4e8a0618aaa740.size < 1) {
+    nearby_array = sortbydistance(last_struct get_veh_linked_structs(), goal_struct.origin);
+    if (nearby_array.size < 1) {
         var_b077fdca28691bb5 = getstructarray(level.ai_spawn_vehicle_func[infil_name].path_start_points, "targetname");
         if (!isdefined(var_b077fdca28691bb5) || var_b077fdca28691bb5.size < 1) {
             var_b077fdca28691bb5 = getstructarray(level.ai_spawn_vehicle_func[infil_name].path_start_points, "script_linkName");
@@ -2273,32 +2273,32 @@ function find_closest_path_struct(var_11423199b914525b, goal_struct, var_b530ab3
         if (!isdefined(var_b077fdca28691bb5) || var_b077fdca28691bb5.size < 1) {
             return;
         }
-        var_d089782220d4e340 = get_array_of_closest(var_11423199b914525b.origin, var_b077fdca28691bb5, [var_11423199b914525b], 3);
-        foreach (var_4a97bf4dd0c4cfb3 in var_d089782220d4e340) {
-            var_2a4e8a0618aaa740[var_2a4e8a0618aaa740.size] = var_4a97bf4dd0c4cfb3;
-            var_2a4e8a0618aaa740 = array_combine(var_2a4e8a0618aaa740, sortbydistance(var_4a97bf4dd0c4cfb3 get_veh_linked_structs(), var_4a97bf4dd0c4cfb3.origin));
+        new_structs = get_array_of_closest(last_struct.origin, var_b077fdca28691bb5, [last_struct], 3);
+        foreach (new_struct in new_structs) {
+            nearby_array[nearby_array.size] = new_struct;
+            nearby_array = array_combine(nearby_array, sortbydistance(new_struct get_veh_linked_structs(), new_struct.origin));
         }
     }
-    var_7d2c11dd3bb5b02b = [];
+    sorted_paths = [];
     best_dot = -5;
-    var_d28e1722bfe56faf = 20000;
-    var_797a9fed467ec56b = -5;
-    var_641ac8d8abe488f5 = undefined;
+    best_distance = 20000;
+    backup_dot = -5;
+    backup_struct = undefined;
     var_e79809bd510fbd33 = 0;
-    foreach (var_4a97bf4dd0c4cfb3 in var_2a4e8a0618aaa740) {
-        add_struct = var_4a97bf4dd0c4cfb3;
-        foreach (var_14e4fca1867a6a88 in self.pathing_array) {
-            if (istrue(var_14e4fca1867a6a88.disabled) || var_4a97bf4dd0c4cfb3.origin == var_14e4fca1867a6a88.origin) {
+    foreach (new_struct in nearby_array) {
+        add_struct = new_struct;
+        foreach (saved_struct in self.pathing_array) {
+            if (istrue(saved_struct.disabled) || new_struct.origin == saved_struct.origin) {
                 add_struct = undefined;
                 break;
             }
         }
         if (isdefined(add_struct)) {
-            var_7d2c11dd3bb5b02b[var_7d2c11dd3bb5b02b.size] = add_struct;
+            sorted_paths[sorted_paths.size] = add_struct;
         }
     }
-    var_11423199b914525b.rewinding_path = undefined;
-    if (var_7d2c11dd3bb5b02b.size > 1) {
+    last_struct.rewinding_path = undefined;
+    if (sorted_paths.size > 1) {
         /#
             if (istrue(0)) {
                 print3d(self.pathing_array[self.pathing_array.size - 1].origin + (0, 0, 65), "<dev string:x171>", (0, 1, 0), 1, 1, 999, 1);
@@ -2306,37 +2306,37 @@ function find_closest_path_struct(var_11423199b914525b, goal_struct, var_b530ab3
         #/
         self.pathing_array[self.pathing_array.size - 1].was_branch = 1;
     }
-    if (is_linked_struct(var_11423199b914525b, goal_struct)) {
+    if (is_linked_struct(last_struct, goal_struct)) {
         closest_struct = goal_struct;
-    } else if (var_7d2c11dd3bb5b02b.size > 0) {
+    } else if (sorted_paths.size > 0) {
         if (istrue(0)) {
-            foreach (var_5d94b582be0ed7b3 in var_7d2c11dd3bb5b02b) {
+            foreach (p_path in sorted_paths) {
                 /#
-                    print3d(var_5d94b582be0ed7b3.origin - (0, 0, 50), "<dev string:x179>", (0.7, 0.1, 0.3), 1, 3, 100, 1);
+                    print3d(p_path.origin - (0, 0, 50), "<dev string:x179>", (0.7, 0.1, 0.3), 1, 3, 100, 1);
                 #/
             }
         }
-        closest_struct = calc_best_closest_struct(var_11423199b914525b, goal_struct, var_7d2c11dd3bb5b02b);
+        closest_struct = calc_best_closest_struct(last_struct, goal_struct, sorted_paths);
     }
-    if (!isdefined(closest_struct) && isdefined(var_641ac8d8abe488f5)) {
-        closest_struct = var_641ac8d8abe488f5;
+    if (!isdefined(closest_struct) && isdefined(backup_struct)) {
+        closest_struct = backup_struct;
     }
     if (isdefined(closest_struct)) {
-        closest_struct.angles = vectortoangles(closest_struct.origin - var_11423199b914525b.origin);
+        closest_struct.angles = vectortoangles(closest_struct.origin - last_struct.origin);
         if (closest_struct.origin != goal_struct.origin) {
             closest_struct = duplicate_struct(closest_struct);
         }
-        closest_struct.previous_struct = var_11423199b914525b;
-        if (isdefined(var_11423199b914525b.previous_struct)) {
-            closest_struct.antepenultimate_struct = var_11423199b914525b.previous_struct;
+        closest_struct.previous_struct = last_struct;
+        if (isdefined(last_struct.previous_struct)) {
+            closest_struct.antepenultimate_struct = last_struct.previous_struct;
         }
-        add_targetname_kvps(closest_struct, var_11423199b914525b, var_b530ab3549782a68);
+        add_targetname_kvps(closest_struct, last_struct, kvp_string);
         return closest_struct;
     }
     if (!isdefined(closest_struct)) {
-        closest_struct = step_back_to_last_good_branch(var_11423199b914525b, goal_struct);
+        closest_struct = step_back_to_last_good_branch(last_struct, goal_struct);
         if (isdefined(closest_struct)) {
-            add_targetname_kvps(closest_struct, var_11423199b914525b, var_b530ab3549782a68);
+            add_targetname_kvps(closest_struct, last_struct, kvp_string);
         }
     }
     return closest_struct;
@@ -2346,11 +2346,11 @@ function find_closest_path_struct(var_11423199b914525b, goal_struct, var_b530ab3
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6553
 // Size: 0x99
-function is_linked_struct(linked_to, var_7af2b9581b2aed2d) {
-    if (isdefined(linked_to.script_linkto) && isdefined(var_7af2b9581b2aed2d.script_linkname)) {
+function is_linked_struct(linked_to, link_name) {
+    if (isdefined(linked_to.script_linkto) && isdefined(link_name.script_linkname)) {
         linknames = linked_to get_links();
         foreach (linkname in linknames) {
-            if (var_7af2b9581b2aed2d.script_linkname == linkname) {
+            if (link_name.script_linkname == linkname) {
                 return true;
             }
         }
@@ -2405,76 +2405,76 @@ function get_veh_linked_structs() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x67d9
 // Size: 0x438
-function calc_best_closest_struct(var_11423199b914525b, goal_struct, var_9d96e50603f4c631) {
+function calc_best_closest_struct(last_struct, goal_struct, enabled_paths) {
     var_c409751f6400ecc2 = 1000000;
     var_a743d2bf021f5457 = 360;
     best_score = -50;
     closest_struct = undefined;
     bonus = 0.5;
-    for (i = 0; i < var_9d96e50603f4c631.size; i++) {
-        if (var_9d96e50603f4c631[i].origin == var_11423199b914525b.origin) {
-            var_11423199b914525b = var_11423199b914525b.previous_struct;
+    for (i = 0; i < enabled_paths.size; i++) {
+        if (enabled_paths[i].origin == last_struct.origin) {
+            last_struct = last_struct.previous_struct;
         }
     }
     var_d31a2ee982e4801c = -5;
-    var_d2d5f9260f458419 = distance(goal_struct.origin, var_11423199b914525b.origin);
-    foreach (var_a34ff509b2f68b57 in var_9d96e50603f4c631) {
+    var_d2d5f9260f458419 = distance(goal_struct.origin, last_struct.origin);
+    foreach (potential_struct in enabled_paths) {
         var_95a0d262b22644 = 5;
         var_26bf31ac98d0a5d4 = 5;
         var_e79809bd510fbd33 = 0;
         dot = undefined;
         score = -5;
-        if (var_a34ff509b2f68b57 == var_11423199b914525b) {
+        if (potential_struct == last_struct) {
             continue;
         }
-        if (var_a34ff509b2f68b57.origin == var_11423199b914525b.origin) {
+        if (potential_struct.origin == last_struct.origin) {
             continue;
         }
-        if (isdefined(var_11423199b914525b.previous_struct) && var_11423199b914525b.previous_struct.origin == var_a34ff509b2f68b57.origin) {
+        if (isdefined(last_struct.previous_struct) && last_struct.previous_struct.origin == potential_struct.origin) {
             continue;
         }
-        if (isdefined(var_11423199b914525b.antepenultimate_struct) && var_11423199b914525b.antepenultimate_struct.origin == var_a34ff509b2f68b57.origin) {
+        if (isdefined(last_struct.antepenultimate_struct) && last_struct.antepenultimate_struct.origin == potential_struct.origin) {
             continue;
         }
-        if (isdefined(var_a34ff509b2f68b57.script_noteworthy) && var_a34ff509b2f68b57.script_noteworthy == "deleteme" && var_a34ff509b2f68b57.origin != goal_struct.origin) {
+        if (isdefined(potential_struct.script_noteworthy) && potential_struct.script_noteworthy == "deleteme" && potential_struct.origin != goal_struct.origin) {
             continue;
         }
-        if (!istrue(self.allow_unload_on_path) && isdefined(var_a34ff509b2f68b57.script_unload) && var_a34ff509b2f68b57.origin != goal_struct.origin) {
+        if (!istrue(self.allow_unload_on_path) && isdefined(potential_struct.script_unload) && potential_struct.origin != goal_struct.origin) {
             continue;
         }
-        if (istrue(var_a34ff509b2f68b57.disabled)) {
+        if (istrue(potential_struct.disabled)) {
             continue;
         }
-        if (check_all_previous_in_pathing(var_a34ff509b2f68b57, 30)) {
+        if (check_all_previous_in_pathing(potential_struct, 30)) {
             continue;
         }
-        if (istrue(struct_is_personally_disabled(var_a34ff509b2f68b57))) {
+        if (istrue(struct_is_personally_disabled(potential_struct))) {
             continue;
         }
-        var_c8f2f4c482b5ca84 = distance(var_11423199b914525b.origin, var_a34ff509b2f68b57.origin);
-        if (var_a34ff509b2f68b57.origin == goal_struct.origin && var_c8f2f4c482b5ca84 > 1250) {
+        comp_distance = distance(last_struct.origin, potential_struct.origin);
+        if (potential_struct.origin == goal_struct.origin && comp_distance > 1250) {
             continue;
         }
-        var_c8f2f4c482b5ca84 = distance(goal_struct.origin, var_a34ff509b2f68b57.origin);
-        var_fb156017c7455904 = vectortoangles(goal_struct.origin - var_11423199b914525b.origin);
-        if (!isdefined(var_11423199b914525b.angles)) {
-            var_11423199b914525b.angles = (0, 0, 0);
+        comp_distance = distance(goal_struct.origin, potential_struct.origin);
+        var_fb156017c7455904 = vectortoangles(goal_struct.origin - last_struct.origin);
+        if (!isdefined(last_struct.angles)) {
+            last_struct.angles = (0, 0, 0);
         }
-        var_2c4faf696b6cfdca = math::get_dot(var_11423199b914525b.origin, var_11423199b914525b.angles, var_a34ff509b2f68b57.origin);
+        var_2c4faf696b6cfdca = math::get_dot(last_struct.origin, last_struct.angles, potential_struct.origin);
         var_2c4faf696b6cfdca = math::normalize_value(-0.5, 0.8, var_2c4faf696b6cfdca);
-        var_d305c3c2de1b97a = math::get_dot(var_11423199b914525b.origin, var_fb156017c7455904, var_a34ff509b2f68b57.origin);
+        var_d305c3c2de1b97a = math::get_dot(last_struct.origin, var_fb156017c7455904, potential_struct.origin);
         var_d305c3c2de1b97a = math::normalize_value(-0.8, 0.8, var_d305c3c2de1b97a);
-        var_ae9ece2d695c9009 = math::normalize_value(0, 2000, var_c8f2f4c482b5ca84);
+        var_ae9ece2d695c9009 = math::normalize_value(0, 2000, comp_distance);
         var_ae9ece2d695c9009 = 1 - var_ae9ece2d695c9009;
         score = var_2c4faf696b6cfdca + var_d305c3c2de1b97a + var_ae9ece2d695c9009;
         if (var_2c4faf696b6cfdca < 0.25) {
             score -= 10;
         }
         if (false) {
-            thread print_debug_info(var_a34ff509b2f68b57, var_d305c3c2de1b97a, var_2c4faf696b6cfdca, var_c8f2f4c482b5ca84, score, "find_closest_path_struct");
+            thread print_debug_info(potential_struct, var_d305c3c2de1b97a, var_2c4faf696b6cfdca, comp_distance, score, "find_closest_path_struct");
         }
         if (score > best_score) {
-            closest_struct = var_a34ff509b2f68b57;
+            closest_struct = potential_struct;
             best_score = score;
         }
     }
@@ -2487,12 +2487,12 @@ function calc_best_closest_struct(var_11423199b914525b, goal_struct, var_9d96e50
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c1a
 // Size: 0x1ce
-function get_best_end_point(infil_name, unload_struct, var_d5641e1e944f4c45) {
+function get_best_end_point(infil_name, unload_struct, dot_angles) {
     if (isdefined(unload_struct.script_linkto)) {
-        var_72d387304f911195 = unload_struct get_veh_linked_structs();
-        for (i = 0; i < var_72d387304f911195.size; i++) {
-            if (is_equal(level.ai_spawn_vehicle_func[infil_name].exit_points, var_72d387304f911195[i].targetname)) {
-                return var_72d387304f911195[i];
+        linkto_structs = unload_struct get_veh_linked_structs();
+        for (i = 0; i < linkto_structs.size; i++) {
+            if (is_equal(level.ai_spawn_vehicle_func[infil_name].exit_points, linkto_structs[i].targetname)) {
+                return linkto_structs[i];
             }
         }
     }
@@ -2501,10 +2501,10 @@ function get_best_end_point(infil_name, unload_struct, var_d5641e1e944f4c45) {
     var_14bb0bb2b7d418d7 = undefined;
     sorted_structs = get_array_of_closest(unload_struct.origin, var_2b008b868cc6c2f7, [unload_struct]);
     if (isdefined(unload_struct.angles)) {
-        var_d5641e1e944f4c45 = unload_struct.angles;
+        dot_angles = unload_struct.angles;
     }
     foreach (struct in sorted_structs) {
-        dot = math::get_dot(unload_struct.origin, var_d5641e1e944f4c45, struct.origin);
+        dot = math::get_dot(unload_struct.origin, dot_angles, struct.origin);
         if (dot > best_dot) {
             if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
                 thread draw_capsule(struct.origin, 32, 32, (0, 0, 0), (1, 0, 0), 0, 250);
@@ -2520,7 +2520,7 @@ function get_best_end_point(infil_name, unload_struct, var_d5641e1e944f4c45) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6df1
 // Size: 0x83
-function check_all_previous_in_pathing(var_a34ff509b2f68b57, limit) {
+function check_all_previous_in_pathing(potential_struct, limit) {
     if (!isdefined(self.pathing_array)) {
         return false;
     }
@@ -2528,7 +2528,7 @@ function check_all_previous_in_pathing(var_a34ff509b2f68b57, limit) {
         limit = self.pathing_array.size;
     }
     for (i = 0; i < limit; i++) {
-        if (isdefined(self.pathing_array[i]) && self.pathing_array[i].origin == var_a34ff509b2f68b57.origin) {
+        if (isdefined(self.pathing_array[i]) && self.pathing_array[i].origin == potential_struct.origin) {
             return true;
         }
     }
@@ -2539,12 +2539,12 @@ function check_all_previous_in_pathing(var_a34ff509b2f68b57, limit) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6e7d
 // Size: 0x66
-function struct_is_personally_disabled(var_a34ff509b2f68b57) {
+function struct_is_personally_disabled(potential_struct) {
     if (!isdefined(self.disabled_nodes)) {
         return false;
     }
     for (k = self.disabled_nodes.size - 1; k >= 0; k--) {
-        if (self.disabled_nodes[k].origin == var_a34ff509b2f68b57.origin) {
+        if (self.disabled_nodes[k].origin == potential_struct.origin) {
             return true;
         }
     }
@@ -2555,7 +2555,7 @@ function struct_is_personally_disabled(var_a34ff509b2f68b57) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6eec
 // Size: 0x266
-function step_back_to_last_good_branch(var_11423199b914525b, goal_struct) {
+function step_back_to_last_good_branch(last_struct, goal_struct) {
     closest_struct = undefined;
     var_bf3b8c90fdeeb414 = undefined;
     var_df17d2e0402832da = [];
@@ -2573,16 +2573,16 @@ function step_back_to_last_good_branch(var_11423199b914525b, goal_struct) {
             }
             if (var_df17d2e0402832da.size > 0) {
                 if (var_df17d2e0402832da.size == 1) {
-                    var_20b60c4020309035 = var_df17d2e0402832da[0];
+                    best_struct = var_df17d2e0402832da[0];
                 } else {
-                    var_20b60c4020309035 = calc_best_closest_struct(var_11423199b914525b, goal_struct, var_df17d2e0402832da);
+                    best_struct = calc_best_closest_struct(last_struct, goal_struct, var_df17d2e0402832da);
                 }
                 var_f5641ed3c3b1543 = i;
-                var_bf3b8c90fdeeb414 = var_20b60c4020309035;
+                var_bf3b8c90fdeeb414 = best_struct;
                 /#
                     if (istrue(0)) {
                         print3d(self.pathing_array[i].origin + (0, 0, -90), "<dev string:x1b1>" + var_df17d2e0402832da.size, (0, 1, 1), 1, 5, 999, 1);
-                        print3d(var_20b60c4020309035.origin + (0, 0, -90), "<dev string:x1bc>", (0, 1, 1), 1, 5, 999, 1);
+                        print3d(best_struct.origin + (0, 0, -90), "<dev string:x1bc>", (0, 1, 1), 1, 5, 999, 1);
                     }
                 #/
                 break;
@@ -2593,7 +2593,7 @@ function step_back_to_last_good_branch(var_11423199b914525b, goal_struct) {
         }
         disable_this_node_for_us(self.pathing_array[i]);
     }
-    if (isdefined(var_11423199b914525b.previous_struct)) {
+    if (isdefined(last_struct.previous_struct)) {
         if (isdefined(var_bf3b8c90fdeeb414)) {
             closest_struct = var_bf3b8c90fdeeb414;
             if (isdefined(self.pathing_array[var_f5641ed3c3b1543 - 1])) {
@@ -2676,18 +2676,18 @@ function create_direct_heli_path(infil_name) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x730b
 // Size: 0xfd
-function adjust_angles_for_heli_path(var_e4bfc6c39103117a, var_c138766838237d11) {
-    for (i = 0; i < var_e4bfc6c39103117a.size; i++) {
+function adjust_angles_for_heli_path(linkto_path, landing_point) {
+    for (i = 0; i < linkto_path.size; i++) {
         j = i + 1;
-        if (isdefined(var_e4bfc6c39103117a[j])) {
-            angles = vectortoangles(var_e4bfc6c39103117a[j].origin - var_e4bfc6c39103117a[i].origin);
-            var_e4bfc6c39103117a[i].angles = (0, angles[1], 0);
+        if (isdefined(linkto_path[j])) {
+            angles = vectortoangles(linkto_path[j].origin - linkto_path[i].origin);
+            linkto_path[i].angles = (0, angles[1], 0);
             continue;
         }
-        angles = vectortoangles(var_c138766838237d11.origin - var_e4bfc6c39103117a[i].origin);
-        var_e4bfc6c39103117a[i].angles = (0, angles[1], 0);
-        if (!isdefined(var_c138766838237d11.angles) || var_c138766838237d11.angles == (0, 0, 0)) {
-            var_c138766838237d11.angles = (0, angles[1], 0);
+        angles = vectortoangles(landing_point.origin - linkto_path[i].origin);
+        linkto_path[i].angles = (0, angles[1], 0);
+        if (!isdefined(landing_point.angles) || landing_point.angles == (0, 0, 0)) {
+            landing_point.angles = (0, angles[1], 0);
         }
         break;
     }
@@ -2698,17 +2698,17 @@ function adjust_angles_for_heli_path(var_e4bfc6c39103117a, var_c138766838237d11)
 // Checksum 0x0, Offset: 0x7410
 // Size: 0x699
 function create_direct_path_from_landing_point(infil_name) {
-    var_d15ea8815c13b619 = create_unique_kvp_string();
-    var_c4c70597ebb70938 = var_d15ea8815c13b619;
-    var_c138766838237d11 = duplicate_struct(self.spawn_point);
-    var_c138766838237d11.targetname = var_d15ea8815c13b619;
-    addtostructarray("targetname", var_c138766838237d11.targetname, var_c138766838237d11);
-    var_e4bfc6c39103117a = [];
-    if (isdefined(var_c138766838237d11.script_linkto)) {
-        var_e4bfc6c39103117a = var_c138766838237d11 build_path_from_script_linkto(infil_name);
+    new_kvp = create_unique_kvp_string();
+    target_kvp = new_kvp;
+    landing_point = duplicate_struct(self.spawn_point);
+    landing_point.targetname = new_kvp;
+    addtostructarray("targetname", landing_point.targetname, landing_point);
+    linkto_path = [];
+    if (isdefined(landing_point.script_linkto)) {
+        linkto_path = landing_point build_path_from_script_linkto(infil_name);
     }
-    if (var_e4bfc6c39103117a.size > 0) {
-        adjust_angles_for_heli_path(var_e4bfc6c39103117a, var_c138766838237d11);
+    if (linkto_path.size > 0) {
+        adjust_angles_for_heli_path(linkto_path, landing_point);
         new_goal_pos = self.spawn_point.origin;
         for (i = 0; i < self.riders.size; i++) {
             if (isalive(self.riders[i]) && isai(self.riders[i])) {
@@ -2716,63 +2716,63 @@ function create_direct_path_from_landing_point(infil_name) {
             }
         }
         if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
-            thread draw_line_for_time(self.veh_spawn_point.origin, var_e4bfc6c39103117a[0].origin, 1, 1, 1, 60);
+            thread draw_line_for_time(self.veh_spawn_point.origin, linkto_path[0].origin, 1, 1, 1, 60);
         }
-        return var_e4bfc6c39103117a[0];
+        return linkto_path[0];
     }
-    if (isdefined(var_c138766838237d11.script_linkname)) {
+    if (isdefined(landing_point.script_linkname)) {
         path_array = [];
-        var_fd605680df0f71c6 = getstructarray(level.ai_spawn_vehicle_func[infil_name].path_start_points, "script_linkname");
-        if (!isdefined(var_fd605680df0f71c6) || var_fd605680df0f71c6.size < 1) {
-            var_fd605680df0f71c6 = getstructarray(level.ai_spawn_vehicle_func[infil_name].path_start_points, "targetname");
+        potential_paths = getstructarray(level.ai_spawn_vehicle_func[infil_name].path_start_points, "script_linkname");
+        if (!isdefined(potential_paths) || potential_paths.size < 1) {
+            potential_paths = getstructarray(level.ai_spawn_vehicle_func[infil_name].path_start_points, "targetname");
         }
-        if (!isdefined(var_fd605680df0f71c6) || var_fd605680df0f71c6.size < 1) {
+        if (!isdefined(potential_paths) || potential_paths.size < 1) {
             return;
         }
-        linkname = var_c138766838237d11.script_linkname;
-        for (i = 0; i < var_fd605680df0f71c6.size; i++) {
-            if (is_equal(var_fd605680df0f71c6[i].script_linkto, linkname)) {
+        linkname = landing_point.script_linkname;
+        for (i = 0; i < potential_paths.size; i++) {
+            if (is_equal(potential_paths[i].script_linkto, linkname)) {
                 temp_array = [];
-                var_4a97bf4dd0c4cfb3 = duplicate_struct(var_fd605680df0f71c6[i]);
-                var_4a97bf4dd0c4cfb3.target = var_c4c70597ebb70938;
-                addtostructarray("target", var_c4c70597ebb70938, var_4a97bf4dd0c4cfb3);
-                var_4a97bf4dd0c4cfb3.targetname = create_unique_kvp_string();
-                addtostructarray("targetname", var_4a97bf4dd0c4cfb3.targetname, var_4a97bf4dd0c4cfb3);
-                temp_array = var_4a97bf4dd0c4cfb3 get_linkto_structs_return_to_array(temp_array, var_fd605680df0f71c6);
+                new_struct = duplicate_struct(potential_paths[i]);
+                new_struct.target = target_kvp;
+                addtostructarray("target", target_kvp, new_struct);
+                new_struct.targetname = create_unique_kvp_string();
+                addtostructarray("targetname", new_struct.targetname, new_struct);
+                temp_array = new_struct get_linkto_structs_return_to_array(temp_array, potential_paths);
                 if (temp_array.size > 0) {
                     path_array[path_array.size] = temp_array;
                 }
             }
         }
         if (path_array.size > 0) {
-            var_7bbda18a855c7111 = [];
+            return_array = [];
             for (i = 0; i < path_array.size; i++) {
                 thread cleanup_unused_paths(path_array[i], path_array[i][path_array[i].size - 1]);
-                var_7bbda18a855c7111[var_7bbda18a855c7111.size] = path_array[i][path_array[i].size - 1];
+                return_array[return_array.size] = path_array[i][path_array[i].size - 1];
                 if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
                     thread draw_capsule(path_array[i][path_array[i].size - 1].origin, 32, 32, (0, 0, 0), (1, 0, 0), 0, 250);
                 }
             }
-            mid_point = math::get_mid_point(var_c138766838237d11.origin, self.origin);
+            mid_point = math::get_mid_point(landing_point.origin, self.origin);
             if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
                 thread draw_capsule(self.origin, 32, 32, (0, 0, 0), (0, 1, 0), 0, 250);
                 thread draw_capsule(self.spawn_point.origin, 32, 32, (0, 0, 0), (0, 1, 0), 0, 250);
                 thread draw_capsule(mid_point, 32, 32, (0, 0, 0), (1, 1, 0), 0, 250);
             }
-            var_4769a2cad76e31f = getclosest(mid_point, var_7bbda18a855c7111);
+            var_4769a2cad76e31f = getclosest(mid_point, return_array);
             if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
                 thread draw_line_for_time(var_4769a2cad76e31f.origin, self.origin, 1, 0, 0, 10);
             }
             if (isdefined(var_4769a2cad76e31f.target)) {
-                var_24f98af94d03218a = var_4769a2cad76e31f get_target_array();
-                for (i = 0; i < var_24f98af94d03218a.size; i++) {
+                target_array = var_4769a2cad76e31f get_target_array();
+                for (i = 0; i < target_array.size; i++) {
                     if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
-                        thread draw_line_for_time(var_4769a2cad76e31f.origin, var_24f98af94d03218a[i].origin, 1, 0, 0, 12.5);
-                        thread draw_capsule(var_24f98af94d03218a[i].origin, 32, 32, (0, 0, 0), (0, 1, 1), 0, 250);
+                        thread draw_line_for_time(var_4769a2cad76e31f.origin, target_array[i].origin, 1, 0, 0, 12.5);
+                        thread draw_capsule(target_array[i].origin, 32, 32, (0, 0, 0), (0, 1, 1), 0, 250);
                     }
-                    if (i >= var_24f98af94d03218a.size - 1) {
+                    if (i >= target_array.size - 1) {
                         if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
-                            thread draw_line_for_time(var_c138766838237d11.origin, var_24f98af94d03218a[i].origin, 1, 0, 0, 12.5);
+                            thread draw_line_for_time(landing_point.origin, target_array[i].origin, 1, 0, 0, 12.5);
                         }
                     }
                 }
@@ -2785,24 +2785,24 @@ function create_direct_path_from_landing_point(infil_name) {
             return var_4769a2cad76e31f;
         } else {
             path_array = [];
-            var_4769a2cad76e31f = create_entrance_points(var_c138766838237d11);
+            var_4769a2cad76e31f = create_entrance_points(landing_point);
             if (isdefined(var_4769a2cad76e31f)) {
-                var_4769a2cad76e31f.target = var_c4c70597ebb70938;
-                addtostructarray("target", var_c4c70597ebb70938, var_4769a2cad76e31f);
+                var_4769a2cad76e31f.target = target_kvp;
+                addtostructarray("target", target_kvp, var_4769a2cad76e31f);
                 var_4769a2cad76e31f.targetname = create_unique_kvp_string();
                 addtostructarray("targetname", var_4769a2cad76e31f.targetname, var_4769a2cad76e31f);
                 if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
                     thread draw_capsule(var_4769a2cad76e31f.origin, 32, 32, (0, 0, 0), (0, 1, 1), 0, 250);
-                    thread draw_capsule(var_c138766838237d11.origin, 32, 32, (0, 0, 0), (0, 1, 0), 0, 250);
+                    thread draw_capsule(landing_point.origin, 32, 32, (0, 0, 0), (0, 1, 0), 0, 250);
                 }
                 return var_4769a2cad76e31f;
             } else {
-                return var_c138766838237d11;
+                return landing_point;
             }
         }
         return;
     }
-    return var_c138766838237d11;
+    return landing_point;
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
@@ -2821,57 +2821,57 @@ function allow_deleteme_on_path(infil_name) {
 // Checksum 0x0, Offset: 0x7aef
 // Size: 0x228
 function build_path_from_script_linkto(infil_name) {
-    var_e4bfc6c39103117a = [];
+    linkto_path = [];
     links = get_links();
-    var_11423199b914525b = undefined;
+    last_struct = undefined;
     for (i = 0; i < links.size; i++) {
-        var_bfefd376cfe6ea7c = links[i];
-        var_72d387304f911195 = getstructarray(var_bfefd376cfe6ea7c, "script_linkname");
-        if (isdefined(var_72d387304f911195) && var_72d387304f911195.size > 0) {
-            var_72d387304f911195 = array_randomize(var_72d387304f911195);
-            for (j = 0; j < var_72d387304f911195.size; j++) {
-                var_10e8e4764f42a564 = var_72d387304f911195[j];
-                if (is_equal(var_10e8e4764f42a564.targetname, "heli_spawner")) {
+        linkto_string = links[i];
+        linkto_structs = getstructarray(linkto_string, "script_linkname");
+        if (isdefined(linkto_structs) && linkto_structs.size > 0) {
+            linkto_structs = array_randomize(linkto_structs);
+            for (j = 0; j < linkto_structs.size; j++) {
+                linkto_struct = linkto_structs[j];
+                if (is_equal(linkto_struct.targetname, "heli_spawner")) {
                     continue;
                 }
                 if (!allow_deleteme_on_path(infil_name)) {
-                    if (is_equal(var_10e8e4764f42a564.script_noteworthy, "deleteme")) {
+                    if (is_equal(linkto_struct.script_noteworthy, "deleteme")) {
                         continue;
                     }
                 }
-                var_10e8e4764f42a564 = duplicate_struct(var_10e8e4764f42a564);
-                var_e4bfc6c39103117a[var_e4bfc6c39103117a.size] = var_10e8e4764f42a564;
-                var_10e8e4764f42a564.targetname = create_unique_kvp_string();
-                addtostructarray("targetname", var_10e8e4764f42a564.targetname, var_10e8e4764f42a564);
-                if (isdefined(var_11423199b914525b)) {
+                linkto_struct = duplicate_struct(linkto_struct);
+                linkto_path[linkto_path.size] = linkto_struct;
+                linkto_struct.targetname = create_unique_kvp_string();
+                addtostructarray("targetname", linkto_struct.targetname, linkto_struct);
+                if (isdefined(last_struct)) {
                     if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
-                        thread draw_line_for_time(var_11423199b914525b.origin, var_10e8e4764f42a564.origin, 1, 1, 1, 60);
+                        thread draw_line_for_time(last_struct.origin, linkto_struct.origin, 1, 1, 1, 60);
                     }
-                    var_11423199b914525b.target = var_10e8e4764f42a564.targetname;
-                    addtostructarray("target", var_11423199b914525b.target, var_11423199b914525b);
+                    last_struct.target = linkto_struct.targetname;
+                    addtostructarray("target", last_struct.target, last_struct);
                 }
-                var_11423199b914525b = var_10e8e4764f42a564;
+                last_struct = linkto_struct;
                 break;
             }
         }
     }
-    if (var_e4bfc6c39103117a.size > 0) {
-        var_e4bfc6c39103117a[var_e4bfc6c39103117a.size - 1].target = self.targetname;
-        addtostructarray("target", var_e4bfc6c39103117a[var_e4bfc6c39103117a.size - 1].target, var_e4bfc6c39103117a[var_e4bfc6c39103117a.size - 1]);
+    if (linkto_path.size > 0) {
+        linkto_path[linkto_path.size - 1].target = self.targetname;
+        addtostructarray("target", linkto_path[linkto_path.size - 1].target, linkto_path[linkto_path.size - 1]);
         if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
-            thread draw_line_for_time(var_e4bfc6c39103117a[var_e4bfc6c39103117a.size - 1].origin, self.origin, 1, 1, 1, 60);
+            thread draw_line_for_time(linkto_path[linkto_path.size - 1].origin, self.origin, 1, 1, 1, 60);
         }
     }
-    return var_e4bfc6c39103117a;
+    return linkto_path;
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d20
 // Size: 0x3fc
-function create_entrance_points(var_c138766838237d11) {
+function create_entrance_points(landing_point) {
     var_e2c3188febed52f5 = [];
-    start_pos = var_c138766838237d11.origin;
+    start_pos = landing_point.origin;
     if (scripts\engine\trace::capsule_trace_passed(start_pos + (1500, 0, 1500), start_pos, 256, 512, (0, 0, 0), level.characters)) {
         struct = spawnstruct();
         struct.origin = start_pos + (1500, 0, 1500);
@@ -2912,7 +2912,7 @@ function create_entrance_points(var_c138766838237d11) {
         struct.origin = start_pos + (1500, 1500, 1500);
         var_e2c3188febed52f5[var_e2c3188febed52f5.size] = struct;
     }
-    mid_point = math::get_mid_point(var_c138766838237d11.origin, self.origin);
+    mid_point = math::get_mid_point(landing_point.origin, self.origin);
     if (getdvarint(@"hash_610414ecdfe9549f", 0)) {
         thread draw_capsule(mid_point, 32, 32, (0, 0, 0), (1, 1, 0), 0, 250);
     }
@@ -2984,14 +2984,14 @@ function create_heli_path(infil_name) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x832e
 // Size: 0x635
-function begin_searching_for_landing_loc(var_cbd3f7020ec784e3, infil_name, counter) {
+function begin_searching_for_landing_loc(start_path, infil_name, counter) {
     level endon("game_ended");
     self endon("death");
     self notify("begin_searching_for_landing_loc");
     self endon("begin_searching_for_landing_loc");
     self endon("all_passengers_dead");
     var_b1b8b417f4009bfd = undefined;
-    var_c138766838237d11 = undefined;
+    landing_point = undefined;
     exit_path = undefined;
     last_point = undefined;
     while (true) {
@@ -3030,19 +3030,19 @@ function begin_searching_for_landing_loc(var_cbd3f7020ec784e3, infil_name, count
             }
             if (distance2dsquared(var_b1b8b417f4009bfd.origin, self.origin) <= search_radius * search_radius) {
                 level.valid_air_vehicle_spawn_points = array_remove(level.valid_air_vehicle_spawn_points, var_b1b8b417f4009bfd);
-                var_c138766838237d11 = duplicate_struct(var_b1b8b417f4009bfd);
+                landing_point = duplicate_struct(var_b1b8b417f4009bfd);
                 if (!isdefined(var_b1b8b417f4009bfd.script_noteworthy)) {
-                    var_c138766838237d11.targetname = "arrived_at_node_" + counter;
+                    landing_point.targetname = "arrived_at_node_" + counter;
                 } else {
-                    var_c138766838237d11.targetname = var_b1b8b417f4009bfd.script_noteworthy;
+                    landing_point.targetname = var_b1b8b417f4009bfd.script_noteworthy;
                 }
-                thread scripts\common\vehicle_paths::vehicle_paths_helicopter(var_c138766838237d11);
-                self.landing_spot = var_c138766838237d11;
-                var_16164552c155a2bc = (150, 150, 150);
+                thread scripts\common\vehicle_paths::vehicle_paths_helicopter(landing_point);
+                self.landing_spot = landing_point;
+                nav_box = (150, 150, 150);
                 if (infil_name == "lbravo_ai_infil") {
-                    var_16164552c155a2bc = (90, 90, 90);
+                    nav_box = (90, 90, 90);
                 }
-                self.nav_obstacle = createnavobstaclebybounds(var_c138766838237d11.origin, var_16164552c155a2bc, (0, 0, 0), "axis");
+                self.nav_obstacle = createnavobstaclebybounds(landing_point.origin, nav_box, (0, 0, 0), "axis");
                 thread delete_nav_obstacle_on_death();
                 break;
             } else {
@@ -3052,23 +3052,23 @@ function begin_searching_for_landing_loc(var_cbd3f7020ec784e3, infil_name, count
                 }
                 var_cd529f062f8821f0 = get_best_hover_point(point, var_5c3edfd13b3c67f0);
                 if (isdefined(var_cd529f062f8821f0)) {
-                    var_62d76f425463eed4 = duplicate_struct(var_cd529f062f8821f0);
+                    hover_point = duplicate_struct(var_cd529f062f8821f0);
                     if (!isdefined(var_cd529f062f8821f0.script_noteworthy)) {
-                        var_62d76f425463eed4.script_noteworthy = "arrived_at_node_" + counter;
+                        hover_point.script_noteworthy = "arrived_at_node_" + counter;
                     } else {
-                        var_62d76f425463eed4.script_noteworthy = var_cd529f062f8821f0.script_noteworthy;
+                        hover_point.script_noteworthy = var_cd529f062f8821f0.script_noteworthy;
                     }
-                    var_62d76f425463eed4.radius = 512;
+                    hover_point.radius = 512;
                     if (!isdefined(last_point) || var_cd529f062f8821f0 != last_point) {
-                        thread scripts\common\vehicle_paths::vehicle_paths_helicopter(var_62d76f425463eed4);
+                        thread scripts\common\vehicle_paths::vehicle_paths_helicopter(hover_point);
                     }
                     last_point = var_cd529f062f8821f0;
                     level.invalid_path_points[level.invalid_path_points.size] = var_cd529f062f8821f0;
-                    result = waittill_any_timeout_1(2.5, var_62d76f425463eed4.script_noteworthy);
+                    result = waittill_any_timeout_1(2.5, hover_point.script_noteworthy);
                     if (result == "timeout") {
                         last_point = undefined;
                     }
-                    deletestruct_ref(var_62d76f425463eed4);
+                    deletestruct_ref(hover_point);
                     level.invalid_path_points = array_remove(level.invalid_path_points, var_cd529f062f8821f0);
                 } else {
                     wait 1;
@@ -3082,23 +3082,23 @@ function begin_searching_for_landing_loc(var_cbd3f7020ec784e3, infil_name, count
         }
         var_cd529f062f8821f0 = get_best_hover_point(point, var_5c3edfd13b3c67f0);
         if (isdefined(var_cd529f062f8821f0)) {
-            var_62d76f425463eed4 = duplicate_struct(var_cd529f062f8821f0);
+            hover_point = duplicate_struct(var_cd529f062f8821f0);
             if (!isdefined(var_cd529f062f8821f0.script_noteworthy)) {
-                var_62d76f425463eed4.script_noteworthy = "arrived_at_node_" + counter;
+                hover_point.script_noteworthy = "arrived_at_node_" + counter;
             } else {
-                var_62d76f425463eed4.script_noteworthy = var_cd529f062f8821f0.script_noteworthy;
+                hover_point.script_noteworthy = var_cd529f062f8821f0.script_noteworthy;
             }
-            var_62d76f425463eed4.radius = 512;
+            hover_point.radius = 512;
             if (!isdefined(last_point) || var_cd529f062f8821f0 != last_point) {
-                thread scripts\common\vehicle_paths::vehicle_paths_helicopter(var_62d76f425463eed4);
+                thread scripts\common\vehicle_paths::vehicle_paths_helicopter(hover_point);
             }
             last_point = var_cd529f062f8821f0;
             level.invalid_path_points[level.invalid_path_points.size] = var_cd529f062f8821f0;
-            result = waittill_any_timeout_1(2.5, var_62d76f425463eed4.script_noteworthy);
+            result = waittill_any_timeout_1(2.5, hover_point.script_noteworthy);
             if (result == "timeout") {
                 last_point = undefined;
             }
-            deletestruct_ref(var_62d76f425463eed4);
+            deletestruct_ref(hover_point);
             level.invalid_path_points = array_remove(level.invalid_path_points, var_cd529f062f8821f0);
             continue;
         }
@@ -3108,17 +3108,17 @@ function begin_searching_for_landing_loc(var_cbd3f7020ec784e3, infil_name, count
     if (!array_contains(level.valid_air_vehicle_spawn_points, var_b1b8b417f4009bfd)) {
         level.valid_air_vehicle_spawn_points[level.valid_air_vehicle_spawn_points.size] = var_b1b8b417f4009bfd;
     }
-    if (isdefined(var_c138766838237d11)) {
-        exit_path = get_exit_route(var_c138766838237d11, infil_name + counter + "_start");
+    if (isdefined(landing_point)) {
+        exit_path = get_exit_route(landing_point, infil_name + counter + "_start");
     }
     var_5bda6f0ecaf2f49 = random(getstructarray(level.ai_spawn_vehicle_func[infil_name].exit_points, "targetname"));
     end_point = duplicate_struct(var_5bda6f0ecaf2f49);
-    if (isdefined(var_c138766838237d11) && isdefined(exit_path) && exit_path != var_c138766838237d11) {
-        add_targetname_kvps(exit_path, var_c138766838237d11, infil_name + counter + "_exit_path");
+    if (isdefined(landing_point) && isdefined(exit_path) && exit_path != landing_point) {
+        add_targetname_kvps(exit_path, landing_point, infil_name + counter + "_exit_path");
         add_targetname_kvps(end_point, exit_path, infil_name + counter + "_end");
         thread scripts\common\vehicle_paths::vehicle_paths_helicopter(exit_path);
     } else {
-        add_targetname_kvps(end_point, var_c138766838237d11, infil_name + counter + "_end");
+        add_targetname_kvps(end_point, landing_point, infil_name + counter + "_end");
         thread scripts\common\vehicle_paths::vehicle_paths_helicopter(end_point);
     }
     delete_nav_obstacle();
@@ -3129,8 +3129,8 @@ function begin_searching_for_landing_loc(var_cbd3f7020ec784e3, infil_name, count
 // Checksum 0x0, Offset: 0x896b
 // Size: 0x1a
 function create_unique_kvp_string() {
-    var_9578950475cf30fc = get_next_free_num();
-    return "unique_KVP_" + var_9578950475cf30fc;
+    targetname_index = get_next_free_num();
+    return "unique_KVP_" + targetname_index;
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
@@ -3151,10 +3151,10 @@ function get_best_hover_point(point, var_5c3edfd13b3c67f0) {
     var_5c3edfd13b3c67f0 = sortbydistance(var_5c3edfd13b3c67f0, point);
     best_dot = -5;
     best_point = undefined;
-    foreach (var_a810da8ff1a1de67 in var_5c3edfd13b3c67f0) {
-        dot = math::get_dot(self.origin, self.angles, var_a810da8ff1a1de67.origin);
+    foreach (path_point in var_5c3edfd13b3c67f0) {
+        dot = math::get_dot(self.origin, self.angles, path_point.origin);
         if (dot > 0) {
-            return var_a810da8ff1a1de67;
+            return path_point;
         }
     }
     return best_point;
@@ -3164,13 +3164,13 @@ function get_best_hover_point(point, var_5c3edfd13b3c67f0) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a71
 // Size: 0x86
-function get_exit_route(starting_struct, var_b530ab3549782a68) {
+function get_exit_route(starting_struct, kvp_string) {
     current_struct = starting_struct;
     if (isdefined(current_struct.script_linkto)) {
         for (counter = 0; isdefined(current_struct.script_linkto); counter++) {
             exit_path = random(current_struct get_veh_linked_structs());
             exit_path = duplicate_struct(exit_path);
-            add_targetname_kvps(exit_path, starting_struct, var_b530ab3549782a68 + "_exit_route_" + counter);
+            add_targetname_kvps(exit_path, starting_struct, kvp_string + "_exit_route_" + counter);
             current_struct = exit_path;
         }
     }
@@ -3202,52 +3202,52 @@ function add_targetname_kvps(targetstruct, var_8862e77985bbe111, string_add) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8ba9
 // Size: 0x26f
-function duplicate_struct(var_46b23510aa75285a) {
+function duplicate_struct(original_struct) {
     struct = spawnstruct();
     struct.path_gobbler = 1;
-    struct.origin = var_46b23510aa75285a.origin;
-    if (isdefined(var_46b23510aa75285a.angles)) {
-        struct.angles = var_46b23510aa75285a.angles;
+    struct.origin = original_struct.origin;
+    if (isdefined(original_struct.angles)) {
+        struct.angles = original_struct.angles;
     } else {
         struct.angles = (0, 0, 0);
     }
-    if (isdefined(var_46b23510aa75285a.script_unload)) {
-        struct.script_unload = var_46b23510aa75285a.script_unload;
+    if (isdefined(original_struct.script_unload)) {
+        struct.script_unload = original_struct.script_unload;
     }
-    if (isdefined(var_46b23510aa75285a.lookahead)) {
-        struct.lookahead = var_46b23510aa75285a.lookahead;
+    if (isdefined(original_struct.lookahead)) {
+        struct.lookahead = original_struct.lookahead;
     }
-    if (isdefined(var_46b23510aa75285a.speed)) {
-        struct.speed = var_46b23510aa75285a.speed;
+    if (isdefined(original_struct.speed)) {
+        struct.speed = original_struct.speed;
     } else {
         struct.speed = 2000;
     }
-    if (isdefined(var_46b23510aa75285a.start_node)) {
-        struct.start_node = var_46b23510aa75285a.start_node;
+    if (isdefined(original_struct.start_node)) {
+        struct.start_node = original_struct.start_node;
     }
-    if (isdefined(var_46b23510aa75285a.script_noteworthy)) {
-        struct.script_noteworthy = var_46b23510aa75285a.script_noteworthy;
+    if (isdefined(original_struct.script_noteworthy)) {
+        struct.script_noteworthy = original_struct.script_noteworthy;
     }
-    if (isdefined(var_46b23510aa75285a.script_linkname)) {
-        struct.script_linkname = var_46b23510aa75285a.script_linkname;
+    if (isdefined(original_struct.script_linkname)) {
+        struct.script_linkname = original_struct.script_linkname;
     }
-    if (isdefined(var_46b23510aa75285a.script_linkto)) {
-        struct.script_linkto = var_46b23510aa75285a.script_linkto;
+    if (isdefined(original_struct.script_linkto)) {
+        struct.script_linkto = original_struct.script_linkto;
     }
-    if (isdefined(var_46b23510aa75285a.script_brake)) {
-        struct.script_brake = var_46b23510aa75285a.script_brake;
+    if (isdefined(original_struct.script_brake)) {
+        struct.script_brake = original_struct.script_brake;
     }
-    if (isdefined(var_46b23510aa75285a.script_pathtype)) {
-        struct.script_pathtype = var_46b23510aa75285a.script_pathtype;
+    if (isdefined(original_struct.script_pathtype)) {
+        struct.script_pathtype = original_struct.script_pathtype;
     }
-    if (isdefined(var_46b23510aa75285a.script_goalyaw)) {
-        struct.script_goalyaw = var_46b23510aa75285a.script_goalyaw;
+    if (isdefined(original_struct.script_goalyaw)) {
+        struct.script_goalyaw = original_struct.script_goalyaw;
     }
-    if (isdefined(var_46b23510aa75285a.script_anglevehicle)) {
-        struct.script_anglevehicle = var_46b23510aa75285a.script_anglevehicle;
+    if (isdefined(original_struct.script_anglevehicle)) {
+        struct.script_anglevehicle = original_struct.script_anglevehicle;
     }
-    if (isdefined(var_46b23510aa75285a.radius)) {
-        struct.radius = var_46b23510aa75285a.radius;
+    if (isdefined(original_struct.radius)) {
+        struct.radius = original_struct.radius;
     } else {
         struct.radius = 512;
     }
@@ -3275,17 +3275,17 @@ function activate_vehicle_spawner(veh_spawn_point, spawn_point, vehicle, group) 
     if (isdefined(group)) {
         group.recently_spawned_vehicle = undefined;
     }
-    var_d5d036f9232893ba = 1;
+    enable_spawners = 1;
     if (isdefined(vehicle)) {
         if (vehicle get_vehicle_riders() < 1) {
-            var_d5d036f9232893ba = 0;
+            enable_spawners = 0;
         }
     }
     if (isdefined(veh_spawn_point)) {
         veh_spawn_point toggle_in_use(0);
     }
     if (isdefined(spawn_point)) {
-        if (var_d5d036f9232893ba) {
+        if (enable_spawners) {
             spawn_point namespace_5729d24318b60bcd::enable_spawner();
         } else if (isdefined(vehicle)) {
             vehicle enable_spawner_after_vehicle_death(spawn_point);
@@ -3332,8 +3332,8 @@ function decrement_vehicles_active(infil_name, group) {
     level.all_spawned_vehicles = array_remove(level.all_spawned_vehicles, self);
     level.ai_spawn_vehicle_func[infil_name].count--;
     if (isdefined(self.veh_spawn_point) && isdefined(self.veh_spawn_point.script_vehiclegroup)) {
-        var_24f98af94d03218a = getstructarray(self.veh_spawn_point.script_vehiclegroup, "targetname");
-        foreach (other_struct in var_24f98af94d03218a) {
+        target_array = getstructarray(self.veh_spawn_point.script_vehiclegroup, "targetname");
+        foreach (other_struct in target_array) {
             other_struct.disabled = undefined;
         }
     }
@@ -3399,15 +3399,15 @@ function clear_kill_off_flags(guy) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x92bb
 // Size: 0x53
-function get_invalid_seats_from_module_struct(var_f8e5e3aa5762a8e7, infil_name) {
-    if (isdefined(var_f8e5e3aa5762a8e7) && isdefined(infil_name)) {
-        if (!isdefined(var_f8e5e3aa5762a8e7.vehicle_invalid_seats)) {
+function get_invalid_seats_from_module_struct(module_struct, infil_name) {
+    if (isdefined(module_struct) && isdefined(infil_name)) {
+        if (!isdefined(module_struct.vehicle_invalid_seats)) {
             return;
         }
-        if (!isdefined(var_f8e5e3aa5762a8e7.vehicle_invalid_seats[infil_name])) {
+        if (!isdefined(module_struct.vehicle_invalid_seats[infil_name])) {
             return;
         }
-        return var_f8e5e3aa5762a8e7.vehicle_invalid_seats[infil_name];
+        return module_struct.vehicle_invalid_seats[infil_name];
     }
     return undefined;
 }
@@ -3416,9 +3416,9 @@ function get_invalid_seats_from_module_struct(var_f8e5e3aa5762a8e7, infil_name) 
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9316
 // Size: 0xa7
-function get_valid_seats(var_f8e5e3aa5762a8e7, infil_name) {
-    if (isdefined(var_f8e5e3aa5762a8e7) && isdefined(infil_name)) {
-        var_21d08b20ae007765 = get_invalid_seats_from_module_struct(var_f8e5e3aa5762a8e7, infil_name);
+function get_valid_seats(module_struct, infil_name) {
+    if (isdefined(module_struct) && isdefined(infil_name)) {
+        var_21d08b20ae007765 = get_invalid_seats_from_module_struct(module_struct, infil_name);
         if (!isdefined(var_21d08b20ae007765)) {
             var_21d08b20ae007765 = [];
         }
@@ -3426,14 +3426,14 @@ function get_valid_seats(var_f8e5e3aa5762a8e7, infil_name) {
             if (self.usedpositions[i]) {
                 continue;
             }
-            var_dfce408c92a4bbdd = 1;
+            found_seat = 1;
             for (j = 0; j < var_21d08b20ae007765.size; j++) {
                 if (var_21d08b20ae007765[j] == i) {
-                    var_dfce408c92a4bbdd = 0;
+                    found_seat = 0;
                     break;
                 }
             }
-            if (var_dfce408c92a4bbdd) {
+            if (found_seat) {
                 return i;
             }
         }
@@ -3464,13 +3464,13 @@ function send_notify_after_player_tac_vis(var_ff5ccede2521cb13) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9444
 // Size: 0x161
-function allow_infil_after_full_or_timeout(var_f8e5e3aa5762a8e7, infil_name) {
+function allow_infil_after_full_or_timeout(module_struct, infil_name) {
     self notify("allow_infil_after_full_or_timeout");
     self endon("allow_infil_after_full_or_timeout");
     self endon("death");
     self endon("spawning_done");
     level endon("game_ended");
-    max_ai = get_max_ai_from_infil_name(var_f8e5e3aa5762a8e7, infil_name);
+    max_ai = get_max_ai_from_infil_name(module_struct, infil_name);
     if (isdefined(level.ai_spawn_vehicle_func[infil_name].max_wait_for_infil)) {
         waittill_any_timeout_1(level.ai_spawn_vehicle_func[infil_name].max_wait_for_infil, "stop_waiting_for_spawns");
     }
@@ -3506,31 +3506,31 @@ function allow_infil_after_full_or_timeout(var_f8e5e3aa5762a8e7, infil_name) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x95ad
 // Size: 0x54
-function register_combined_vehicles(var_c7813bd63c9ba2e4, model, type, classname, var_12628bd52433b570, alias, var_ad42c731f2aff73c) {
+function register_combined_vehicles(var_c7813bd63c9ba2e4, model, type, classname, mp_vehiclename, alias, build_alias) {
     [[ var_c7813bd63c9ba2e4 ]](model, type, classname);
-    level thread register_combined_vehicles_threaded(var_c7813bd63c9ba2e4, model, type, classname, var_12628bd52433b570, alias, var_ad42c731f2aff73c);
+    level thread register_combined_vehicles_threaded(var_c7813bd63c9ba2e4, model, type, classname, mp_vehiclename, alias, build_alias);
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x9609
 // Size: 0x1c9
-function register_combined_vehicles_threaded(var_c7813bd63c9ba2e4, model, type, classname, var_12628bd52433b570, alias, var_ad42c731f2aff73c, var_abb7bdd43400a0c7) {
+function register_combined_vehicles_threaded(var_c7813bd63c9ba2e4, model, type, classname, mp_vehiclename, alias, build_alias, spec_override) {
     level endon("game_ended");
     flag_wait("level_ready_for_script");
-    register_vehicle_build(var_ad42c731f2aff73c, model, type, classname, var_ad42c731f2aff73c);
+    register_vehicle_build(build_alias, model, type, classname, build_alias);
     struct = spawnstruct();
     copy_vehicle_build_to_spawnpoint(alias, struct);
     if (struct scripts\common\vehicle::ishelicopter()) {
         add_ai_air_infil(alias);
-        register_vehicle_spawn(alias, 10, 10, undefined, "heli_spawner", "heli_exit", "heli_infil_path", undefined, &veh_heli_spawn, var_ad42c731f2aff73c);
+        register_vehicle_spawn(alias, 10, 10, undefined, "heli_spawner", "heli_exit", "heli_infil_path", undefined, &veh_heli_spawn, build_alias);
         register_spawner_script_function(alias, &function_64f6b6424352bc68);
     } else {
         add_ai_ground_infil(alias);
-        register_vehicle_spawn(alias, 10, 10, undefined, "ai_ground_veh_spawner", "ground_veh_exit", "ground_veh_infil_path", undefined, &veh_ground_veh_spawn, var_ad42c731f2aff73c);
+        register_vehicle_spawn(alias, 10, 10, undefined, "ai_ground_veh_spawner", "ground_veh_exit", "ground_veh_infil_path", undefined, &veh_ground_veh_spawn, build_alias);
         register_spawner_script_function(alias, &ai_ground_veh_spawn);
     }
-    register_vehicle_max_ai(var_ad42c731f2aff73c, model, type, classname, var_12628bd52433b570);
+    register_vehicle_max_ai(build_alias, model, type, classname, mp_vehiclename);
     vehicle_build = level.vehicle.templates.aianims[classname];
     var_3c435505038f3d9c = 0;
     for (i = 0; i < vehicle_build.size; i++) {
@@ -3541,8 +3541,8 @@ function register_combined_vehicles_threaded(var_c7813bd63c9ba2e4, model, type, 
     if (var_3c435505038f3d9c > 0) {
         register_vehicle_spawn_drivers(alias, var_3c435505038f3d9c, random(["aq_pilot_fullbody_1", "aq_pilot_fullbody_2"]));
     }
-    if (isdefined(var_12628bd52433b570) && getdvarint(@"hash_ca67d9f39e1dd86f", 0)) {
-        create_mp_version_of_vehicle(var_12628bd52433b570, classname, var_ad42c731f2aff73c);
+    if (isdefined(mp_vehiclename) && getdvarint(@"hash_ca67d9f39e1dd86f", 0)) {
+        create_mp_version_of_vehicle(mp_vehiclename, classname, build_alias);
     }
     level notify(alias);
 }
@@ -3551,47 +3551,47 @@ function register_combined_vehicles_threaded(var_c7813bd63c9ba2e4, model, type, 
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x97da
 // Size: 0x7a
-function create_mp_version_of_vehicle(var_12628bd52433b570, classname, var_ad42c731f2aff73c) {
-    if (!isdefined(var_12628bd52433b570)) {
+function create_mp_version_of_vehicle(mp_vehiclename, classname, build_alias) {
+    if (!isdefined(mp_vehiclename)) {
         return;
     }
     if (!isdefined(level.vehicle)) {
         return;
     }
-    struct = level.vehicle_builds[var_ad42c731f2aff73c];
-    struct.vehiclename = var_ad42c731f2aff73c;
-    create_vehicle_vehicledata(var_12628bd52433b570, classname, var_ad42c731f2aff73c);
-    create_vehicle_occupancy_data(var_12628bd52433b570, classname, var_ad42c731f2aff73c);
-    create_vehicle_interact(var_12628bd52433b570, classname, var_ad42c731f2aff73c);
-    create_vehicle_omnvars_data(var_12628bd52433b570, classname, var_ad42c731f2aff73c);
+    struct = level.vehicle_builds[build_alias];
+    struct.vehiclename = build_alias;
+    create_vehicle_vehicledata(mp_vehiclename, classname, build_alias);
+    create_vehicle_occupancy_data(mp_vehiclename, classname, build_alias);
+    create_vehicle_interact(mp_vehiclename, classname, build_alias);
+    create_vehicle_omnvars_data(mp_vehiclename, classname, build_alias);
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x985c
 // Size: 0x1e4
-function create_vehicle_interact(var_12628bd52433b570, classname, var_ad42c731f2aff73c) {
+function create_vehicle_interact(mp_vehiclename, classname, build_alias) {
     if (!isdefined(level.vehicle.interact)) {
         return;
     }
     if (!isdefined(level.vehicle.interact.vehicledata)) {
         return;
     }
-    if (isdefined(level.vehicle.interact.vehicledata[var_12628bd52433b570]) && !isdefined(level.vehicle.interact.vehicledata[var_ad42c731f2aff73c])) {
+    if (isdefined(level.vehicle.interact.vehicledata[mp_vehiclename]) && !isdefined(level.vehicle.interact.vehicledata[build_alias])) {
         if (isdefined(level.vehicle.templates.aianims[classname])) {
-            var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle_interact::vehicle_interact_getleveldataforvehicle(var_ad42c731f2aff73c, 1);
+            var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle_interact::vehicle_interact_getleveldataforvehicle(build_alias, 1);
             for (i = 0; i < level.vehicle.templates.aianims[classname].size; i++) {
                 struct = level.vehicle.templates.aianims[classname][i];
                 sittag = tolower(struct.sittag);
                 var_e2818ad39a3341b4.seatenterarrays[sittag] = [];
                 var_e2818ad39a3341b4.seatenterarrays[sittag][var_e2818ad39a3341b4.seatenterarrays[sittag].size] = sittag;
-                var_c50b485a43752fd = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforseat(var_ad42c731f2aff73c, sittag, 1);
+                var_c50b485a43752fd = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforseat(build_alias, sittag, 1);
                 if (i == 0) {
-                    var_7432b7fb4c69781f = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(var_ad42c731f2aff73c, 1);
+                    var_7432b7fb4c69781f = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(build_alias, 1);
                     var_7432b7fb4c69781f.driverseatid = sittag;
                 }
             }
-            level.vehicle.interact.vehicledata[var_ad42c731f2aff73c] = var_e2818ad39a3341b4;
+            level.vehicle.interact.vehicledata[build_alias] = var_e2818ad39a3341b4;
         }
     }
 }
@@ -3600,14 +3600,14 @@ function create_vehicle_interact(var_12628bd52433b570, classname, var_ad42c731f2
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9a48
 // Size: 0xba
-function create_vehicle_vehicledata(var_12628bd52433b570, classname, var_ad42c731f2aff73c) {
+function create_vehicle_vehicledata(mp_vehiclename, classname, build_alias) {
     if (!isdefined(level.vehicle.vehicledata)) {
         return;
     }
-    if (isdefined(level.vehicle.vehicledata[var_12628bd52433b570]) && !isdefined(level.vehicle.vehicledata[var_ad42c731f2aff73c])) {
-        var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle::vehicle_getleveldataforvehicle(var_ad42c731f2aff73c);
-        var_e2818ad39a3341b4.destroycallback = level.vehicle.vehicledata[var_12628bd52433b570].destroycallback;
-        level.vehicle.vehicledata[var_ad42c731f2aff73c] = var_e2818ad39a3341b4;
+    if (isdefined(level.vehicle.vehicledata[mp_vehiclename]) && !isdefined(level.vehicle.vehicledata[build_alias])) {
+        var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle::vehicle_getleveldataforvehicle(build_alias);
+        var_e2818ad39a3341b4.destroycallback = level.vehicle.vehicledata[mp_vehiclename].destroycallback;
+        level.vehicle.vehicledata[build_alias] = var_e2818ad39a3341b4;
     }
 }
 
@@ -3615,13 +3615,13 @@ function create_vehicle_vehicledata(var_12628bd52433b570, classname, var_ad42c73
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9b0a
 // Size: 0x183
-function create_vehicle_omnvars_data(var_12628bd52433b570, classname, var_ad42c731f2aff73c) {
+function create_vehicle_omnvars_data(mp_vehiclename, classname, build_alias) {
     if (!isdefined(level.vehicle.omnvars.vehicledata)) {
         return;
     }
-    if (isdefined(level.vehicle.omnvars.vehicledata[var_12628bd52433b570]) && !isdefined(level.vehicle.omnvars.vehicledata[var_ad42c731f2aff73c])) {
-        var_e2818ad39a3341b4 = scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_getleveldataforvehicle(var_ad42c731f2aff73c, 1);
-        var_ee8a4198ec7e827c = scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_getleveldataforvehicle(var_12628bd52433b570);
+    if (isdefined(level.vehicle.omnvars.vehicledata[mp_vehiclename]) && !isdefined(level.vehicle.omnvars.vehicledata[build_alias])) {
+        var_e2818ad39a3341b4 = scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_getleveldataforvehicle(build_alias, 1);
+        var_ee8a4198ec7e827c = scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_getleveldataforvehicle(mp_vehiclename);
         var_e2818ad39a3341b4.ammoids = var_ee8a4198ec7e827c.ammoids;
         var_e2818ad39a3341b4.id = var_ee8a4198ec7e827c.id;
         var_e2818ad39a3341b4.rotationids = var_ee8a4198ec7e827c.rotationids;
@@ -3630,7 +3630,7 @@ function create_vehicle_omnvars_data(var_12628bd52433b570, classname, var_ad42c7
         var_e2818ad39a3341b4.warningclearcallbacks = var_ee8a4198ec7e827c.warningclearcallbacks;
         var_e2818ad39a3341b4.warningendcallbacks = var_ee8a4198ec7e827c.warningendcallbacks;
         var_e2818ad39a3341b4.warningstartcallbacks = var_ee8a4198ec7e827c.warningstartcallbacks;
-        level.vehicle.omnvars.vehicledata[var_ad42c731f2aff73c] = var_e2818ad39a3341b4;
+        level.vehicle.omnvars.vehicledata[build_alias] = var_e2818ad39a3341b4;
     }
 }
 
@@ -3638,19 +3638,19 @@ function create_vehicle_omnvars_data(var_12628bd52433b570, classname, var_ad42c7
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c95
 // Size: 0xf3
-function create_seatids_override(var_ad42c731f2aff73c, seatids) {
+function create_seatids_override(build_alias, seatids) {
     if (!isdefined(level.vehicle.omnvars.vehicledata)) {
         return;
     }
-    if (isdefined(level.vehicle.omnvars.vehicledata[var_ad42c731f2aff73c])) {
-        var_e2818ad39a3341b4 = scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_getleveldataforvehicle(var_ad42c731f2aff73c, 1);
-        var_7432b7fb4c69781f = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(var_ad42c731f2aff73c);
+    if (isdefined(level.vehicle.omnvars.vehicledata[build_alias])) {
+        var_e2818ad39a3341b4 = scripts\cp_mp\utility\vehicle_omnvar_utility::vehomn_getleveldataforvehicle(build_alias, 1);
+        var_7432b7fb4c69781f = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(build_alias);
         var_e2818ad39a3341b4.seatids = [];
         keys = getarraykeys(var_7432b7fb4c69781f.seatdata);
         for (i = 0; i < keys.size; i++) {
             var_e2818ad39a3341b4.seatids[keys[i]] = seatids[i];
         }
-        level.vehicle.omnvars.vehicledata[var_ad42c731f2aff73c] = var_e2818ad39a3341b4;
+        level.vehicle.omnvars.vehicledata[build_alias] = var_e2818ad39a3341b4;
     }
 }
 
@@ -3658,26 +3658,26 @@ function create_seatids_override(var_ad42c731f2aff73c, seatids) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9d90
 // Size: 0x36a
-function create_vehicle_occupancy_data(var_12628bd52433b570, classname, var_ad42c731f2aff73c) {
+function create_vehicle_occupancy_data(mp_vehiclename, classname, build_alias) {
     if (!isdefined(level.vehicle.occupancy.vehicledata)) {
         return;
     }
-    if (isdefined(level.vehicle.occupancy.vehicledata[var_12628bd52433b570]) && !isdefined(level.vehicle.occupancy.vehicledata[var_ad42c731f2aff73c])) {
-        var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(var_ad42c731f2aff73c, 1);
-        var_e2818ad39a3341b4.camera = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].camera;
-        var_e2818ad39a3341b4.damagefeedbackgroupheavy = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].damagefeedbackgroupheavy;
-        var_e2818ad39a3341b4.damagefeedbackgrouplight = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].damagefeedbackgrouplight;
-        var_e2818ad39a3341b4.damagemodifier = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].damagemodifier;
-        var_e2818ad39a3341b4.enterendcallback = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].enterendcallback;
-        var_e2818ad39a3341b4.enterstartcallback = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].enterstartcallback;
-        var_e2818ad39a3341b4.exitdirections = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].exitdirections;
-        var_e2818ad39a3341b4.exitendcallback = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].exitendcallback;
-        var_e2818ad39a3341b4.exitextents = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].exitextents;
-        var_e2818ad39a3341b4.exitoffsets = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].exitoffsets;
-        var_e2818ad39a3341b4.exitstartcallback = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].exitstartcallback;
-        var_e2818ad39a3341b4.restrictions = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].restrictions;
-        var_e2818ad39a3341b4.threatbiasgroup = level.vehicle.occupancy.vehicledata[var_12628bd52433b570].threatbiasgroup;
-        level.vehicle.occupancy.vehicledata[var_ad42c731f2aff73c] = var_e2818ad39a3341b4;
+    if (isdefined(level.vehicle.occupancy.vehicledata[mp_vehiclename]) && !isdefined(level.vehicle.occupancy.vehicledata[build_alias])) {
+        var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(build_alias, 1);
+        var_e2818ad39a3341b4.camera = level.vehicle.occupancy.vehicledata[mp_vehiclename].camera;
+        var_e2818ad39a3341b4.damagefeedbackgroupheavy = level.vehicle.occupancy.vehicledata[mp_vehiclename].damagefeedbackgroupheavy;
+        var_e2818ad39a3341b4.damagefeedbackgrouplight = level.vehicle.occupancy.vehicledata[mp_vehiclename].damagefeedbackgrouplight;
+        var_e2818ad39a3341b4.damagemodifier = level.vehicle.occupancy.vehicledata[mp_vehiclename].damagemodifier;
+        var_e2818ad39a3341b4.enterendcallback = level.vehicle.occupancy.vehicledata[mp_vehiclename].enterendcallback;
+        var_e2818ad39a3341b4.enterstartcallback = level.vehicle.occupancy.vehicledata[mp_vehiclename].enterstartcallback;
+        var_e2818ad39a3341b4.exitdirections = level.vehicle.occupancy.vehicledata[mp_vehiclename].exitdirections;
+        var_e2818ad39a3341b4.exitendcallback = level.vehicle.occupancy.vehicledata[mp_vehiclename].exitendcallback;
+        var_e2818ad39a3341b4.exitextents = level.vehicle.occupancy.vehicledata[mp_vehiclename].exitextents;
+        var_e2818ad39a3341b4.exitoffsets = level.vehicle.occupancy.vehicledata[mp_vehiclename].exitoffsets;
+        var_e2818ad39a3341b4.exitstartcallback = level.vehicle.occupancy.vehicledata[mp_vehiclename].exitstartcallback;
+        var_e2818ad39a3341b4.restrictions = level.vehicle.occupancy.vehicledata[mp_vehiclename].restrictions;
+        var_e2818ad39a3341b4.threatbiasgroup = level.vehicle.occupancy.vehicledata[mp_vehiclename].threatbiasgroup;
+        level.vehicle.occupancy.vehicledata[build_alias] = var_e2818ad39a3341b4;
     }
 }
 
@@ -3685,26 +3685,26 @@ function create_vehicle_occupancy_data(var_12628bd52433b570, classname, var_ad42
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0xa102
 // Size: 0xab
-function register_seat_data_for_vehicle(var_ad42c731f2aff73c, seatid, seatswitcharray, animtag, exitids, exitoffsets, exitdirections, spawnpriority) {
+function register_seat_data_for_vehicle(build_alias, seatid, seatswitcharray, animtag, exitids, exitoffsets, exitdirections, spawnpriority) {
     if (!isdefined(level.vehicle)) {
         return;
     }
     if (!isdefined(level.vehicle.occupancy.vehicledata)) {
         return;
     }
-    if (!isdefined(!isdefined(level.vehicle.occupancy.vehicledata[var_ad42c731f2aff73c]))) {
+    if (!isdefined(!isdefined(level.vehicle.occupancy.vehicledata[build_alias]))) {
         return;
     }
-    register_seat_data(var_ad42c731f2aff73c, seatid, seatswitcharray, animtag, exitids, exitoffsets, exitdirections, spawnpriority);
+    register_seat_data(build_alias, seatid, seatswitcharray, animtag, exitids, exitoffsets, exitdirections, spawnpriority);
 }
 
 // Namespace vehicles / namespace_f02c28a5e2bd7edd
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0xa1b5
 // Size: 0xf1
-function register_seat_data(var_ad42c731f2aff73c, seatid, seatswitcharray, animtag, exitids, exitoffsets, exitdirections, spawnpriority) {
-    var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(var_ad42c731f2aff73c, 1);
-    var_c50b485a43752fd = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforseat(var_ad42c731f2aff73c, seatid, 1);
+function register_seat_data(build_alias, seatid, seatswitcharray, animtag, exitids, exitoffsets, exitdirections, spawnpriority) {
+    var_e2818ad39a3341b4 = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforvehicle(build_alias, 1);
+    var_c50b485a43752fd = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getleveldataforseat(build_alias, seatid, 1);
     var_c50b485a43752fd.seatswitcharray = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_generateseatswitcharray(seatid, seatswitcharray);
     var_c50b485a43752fd.restrictions = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getdriverrestrictions();
     var_c50b485a43752fd.damagemodifier = 0.5;
@@ -3719,7 +3719,7 @@ function register_seat_data(var_ad42c731f2aff73c, seatid, seatswitcharray, animt
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa2ae
 // Size: 0x1da
-function register_techo_seat_data(var_ad42c731f2aff73c) {
+function register_techo_seat_data(build_alias) {
     seatswitcharray = ["tag_driver", "tag_passenger", "tag_bed1", "tag_bed2", "tag_bed_center"];
     var_f079ddd1216d5051 = ["tag_seat_0", "tag_seat_2", "tag_seat_4", "tag_seat_4", "tag_seat_4", "tag_seat_3", "tag_seat_5"];
     var_f29d65b6397ba222 = seatswitcharray;
@@ -3727,12 +3727,12 @@ function register_techo_seat_data(var_ad42c731f2aff73c) {
     exitoffsets = (5, 14, 55);
     exitdirections = "left";
     spawnpriority = 10;
-    if (isdefined(level.vehicle.interact.vehicledata[var_ad42c731f2aff73c]) && isdefined(isdefined(level.vehicle.interact.vehicledata[var_ad42c731f2aff73c].seatenterarrays))) {
-        keys = getarraykeys(level.vehicle.interact.vehicledata[var_ad42c731f2aff73c].seatenterarrays);
-        for (i = 0; i < level.vehicle.interact.vehicledata[var_ad42c731f2aff73c].seatenterarrays.size; i++) {
+    if (isdefined(level.vehicle.interact.vehicledata[build_alias]) && isdefined(isdefined(level.vehicle.interact.vehicledata[build_alias].seatenterarrays))) {
+        keys = getarraykeys(level.vehicle.interact.vehicledata[build_alias].seatenterarrays);
+        for (i = 0; i < level.vehicle.interact.vehicledata[build_alias].seatenterarrays.size; i++) {
             seatid = keys[i];
             exitids = array_add(var_f29d65b6397ba222, seatid);
-            register_seat_data_for_vehicle(var_ad42c731f2aff73c, seatid, seatswitcharray, var_f079ddd1216d5051[i], exitids, exitoffsets, exitdirections, spawnpriority);
+            register_seat_data_for_vehicle(build_alias, seatid, seatswitcharray, var_f079ddd1216d5051[i], exitids, exitoffsets, exitdirections, spawnpriority);
         }
     }
 }
@@ -3773,7 +3773,7 @@ function vehicle_registrations(lbravo, blima, mindia8) {
 // Checksum 0x0, Offset: 0xa54b
 // Size: 0xf1
 function setup_player_vehicles(player, playername, ip1) {
-    var_b8a6e872b1f411c9 = "-";
+    dash = "-";
     ampersand = "&";
     underscore = "_";
     keys = getarraykeys(level.var_a0b2c978ca57ffc5);
@@ -3783,7 +3783,7 @@ function setup_player_vehicles(player, playername, ip1) {
         if (string_starts_with(key, "veh9")) {
             name = getsubstr(name, 5, key.size);
         }
-        cmd = "devgui_cmd \"CP Players:2 / " + playername + " / Spawn Vehicle / " + name + "\" \"set scr_vehicle_debug Spawn" + underscore + var_b8a6e872b1f411c9 + ip1 + var_b8a6e872b1f411c9 + ampersand + key + "\" \n";
+        cmd = "devgui_cmd \"CP Players:2 / " + playername + " / Spawn Vehicle / " + name + "\" \"set scr_vehicle_debug Spawn" + underscore + dash + ip1 + dash + ampersand + key + "\" \n";
         addentrytodevgui(cmd);
     }
 }
@@ -3823,8 +3823,8 @@ function cp_vehicle_debug(itemref) {
 // Checksum 0x0, Offset: 0xa730
 // Size: 0x283
 function spawn_enemy_chopper(group, spawn_point, infil_name) {
-    var_a0b5803da717965f = level.ai_spawn_vehicle_func[infil_name];
-    var_1317c822798f0c26 = var_a0b5803da717965f get_vehicle_spawn_points(spawn_point);
+    data_struct = level.ai_spawn_vehicle_func[infil_name];
+    var_1317c822798f0c26 = data_struct get_vehicle_spawn_points(spawn_point);
     if (isdefined(level.attack_heli)) {
         return false;
     }
@@ -3970,11 +3970,11 @@ function helicopter_death_lockon_clear() {
 function damage_players_on_top() {
     self endon("death");
     while (true) {
-        var_e3d2ad13835aa960 = utility::playersnear(self.origin, 256);
-        for (i = 0; i < var_e3d2ad13835aa960.size; i++) {
-            if (var_e3d2ad13835aa960[i].origin[2] > self.origin[2]) {
-                if (var_e3d2ad13835aa960[i].origin[2] - self.origin[2] <= 32 && var_e3d2ad13835aa960[i] isonground()) {
-                    var_e3d2ad13835aa960[i] dodamage(var_e3d2ad13835aa960[i].health + 1000, self.origin, self, self, "MOD_CRUSH");
+        players_near = utility::playersnear(self.origin, 256);
+        for (i = 0; i < players_near.size; i++) {
+            if (players_near[i].origin[2] > self.origin[2]) {
+                if (players_near[i].origin[2] - self.origin[2] <= 32 && players_near[i] isonground()) {
+                    players_near[i] dodamage(players_near[i].health + 1000, self.origin, self, self, "MOD_CRUSH");
                 }
             }
         }
@@ -4062,14 +4062,14 @@ function landing_damage_watcher() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0d3
 // Size: 0x57
-function is_point_in_cylinder(point, var_886b00ec9ff57f52, cylinder_radius, cylinder_height) {
-    if (distance_2d_squared(point, var_886b00ec9ff57f52) > squared(cylinder_radius)) {
+function is_point_in_cylinder(point, cylinder_org, cylinder_radius, cylinder_height) {
+    if (distance_2d_squared(point, cylinder_org) > squared(cylinder_radius)) {
         return false;
     }
-    if (point[2] < var_886b00ec9ff57f52[2]) {
+    if (point[2] < cylinder_org[2]) {
         return false;
     }
-    if (point[2] > var_886b00ec9ff57f52[2] + cylinder_height) {
+    if (point[2] > cylinder_org[2] + cylinder_height) {
         return false;
     }
     return true;
@@ -4277,7 +4277,7 @@ function get_helicopter_path_positions(target_player) {
     self.path_positions = [];
     slices = 12;
     dist = 2048;
-    var_9c59afefc22f0c25 = 360 / slices;
+    angle_frac = 360 / slices;
     pos = self.origin;
     self.flight_pos = undefined;
     self.flight_pos_dot = undefined;
@@ -4291,7 +4291,7 @@ function get_helicopter_path_positions(target_player) {
         targetpos = get_center_point_of_array(level.players);
     }
     for (i = 0; i < slices; i++) {
-        angle = var_9c59afefc22f0c25 * i;
+        angle = angle_frac * i;
         var_8a9f895755fd607e = cos(angle) * dist;
         var_d867033ab311670b = sin(angle) * dist;
         x = pos[0] + var_8a9f895755fd607e;
@@ -4395,7 +4395,7 @@ function heli_move() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xbdc7
 // Size: 0xb0
-function should_move_to_target(var_a59ee877388b07fb, target) {
+function should_move_to_target(dist_ent, target) {
     var_47c3d9295106d6d0 = 6250000;
     if (isdefined(self.should_move_to_target_dist)) {
         var_47c3d9295106d6d0 = self.should_move_to_target_dist * self.should_move_to_target_dist;
@@ -4404,7 +4404,7 @@ function should_move_to_target(var_a59ee877388b07fb, target) {
         self.landed = undefined;
         return true;
     }
-    if (distance2dsquared(var_a59ee877388b07fb.origin, target.origin) > var_47c3d9295106d6d0 || isdefined(self.gotopos) && distance2dsquared(var_a59ee877388b07fb.origin, self.gotopos) > var_47c3d9295106d6d0) {
+    if (distance2dsquared(dist_ent.origin, target.origin) > var_47c3d9295106d6d0 || isdefined(self.gotopos) && distance2dsquared(dist_ent.origin, self.gotopos) > var_47c3d9295106d6d0) {
         return true;
     }
     return false;
@@ -4478,8 +4478,8 @@ function heli_evade(target) {
         } else {
             self setvehgoalpos(points[start_index].origin, 0);
         }
-        var_31b102d6a07a30a9 = 1500;
-        var_31b102d6a07a30a9 *= rad / 5000;
+        notify_dist = 1500;
+        notify_dist *= rad / 5000;
         heli_speed = 100;
         heli_speed *= rad / 5000;
         self setneargoalnotifydist(1500);
@@ -4526,19 +4526,19 @@ function rumble_nearby_players() {
 function heli_check_players() {
     self endon("death");
     self.best_target = undefined;
-    var_a24a55403eabfa0a = 5;
-    var_35bcd149dd29f68b = 0;
+    reacquire_timer = 5;
+    reacquire_counter = 0;
     while (true) {
         valid_target = heli_get_target();
         if (isdefined(valid_target)) {
-            var_35bcd149dd29f68b = 0;
+            reacquire_counter = 0;
             self notify("target_found");
             self.best_target = valid_target;
         } else {
             self notify("target_lost");
-            var_35bcd149dd29f68b += 0.25;
-            if (var_35bcd149dd29f68b >= var_a24a55403eabfa0a) {
-                var_35bcd149dd29f68b = 0;
+            reacquire_counter += 0.25;
+            if (reacquire_counter >= reacquire_timer) {
+                reacquire_counter = 0;
                 self.best_target = undefined;
             }
         }
@@ -4605,12 +4605,12 @@ function heli_get_target() {
             tracepoints = [r, l, f, b];
             foreach (point in tracepoints) {
                 if (isdefined(player.vehicle)) {
-                    var_72bd42692055cdd = [self, player, player.vehicle];
+                    ignore_array = [self, player, player.vehicle];
                 } else {
-                    var_72bd42692055cdd = [self, player];
+                    ignore_array = [self, player];
                 }
                 trace_pos = (player.origin[0], player.origin[1], 0) + (point[0], point[1], 0) * 1800 + (0, 0, self.chopper_height);
-                if (scripts\engine\trace::ray_trace_passed(trace_pos, player.origin + (0, 0, 10), var_72bd42692055cdd)) {
+                if (scripts\engine\trace::ray_trace_passed(trace_pos, player.origin + (0, 0, 10), ignore_array)) {
                     closest = player;
                     self.gotopos = trace_pos;
                     self.nocircle = 1;

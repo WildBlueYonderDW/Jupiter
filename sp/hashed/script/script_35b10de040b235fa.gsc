@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace namespace_7a9ebf6a2d068561;
 

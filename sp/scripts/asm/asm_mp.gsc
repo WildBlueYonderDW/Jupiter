@@ -1,10 +1,10 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\notetracks_mp.gsc;
 #using script_3433ee6b63c7e243;
+#using scripts\anim\notetracks_mp;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace asm_mp;
 
@@ -186,11 +186,11 @@ function asm_settransitionorientmode_transition(orient_mode) {
     case #"hash_96a6a25bd7beed30":
         var_8e1451b5845405b1 = 1024;
         if (actor_is3d()) {
-            var_5e1cf0a9046f6f99 = self.angles;
+            orient_angles = self.angles;
             if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < var_8e1451b5845405b1) {
-                var_5e1cf0a9046f6f99 = self function_f134f30c17faeaf(self.node);
+                orient_angles = self function_f134f30c17faeaf(self.node);
             }
-            self orientmode("face angle 3d", var_5e1cf0a9046f6f99);
+            self orientmode("face angle 3d", orient_angles);
         } else {
             yaw = self.angles[1];
             if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < var_8e1451b5845405b1) {
@@ -343,11 +343,11 @@ function dooralreadyopen(door) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe2e
 // Size: 0x21
-function asm_animhasfacialoverridemp(var_63db3c9e26531938) {
-    if (!animisleaf(var_63db3c9e26531938)) {
+function asm_animhasfacialoverridemp(a_anim) {
+    if (!animisleaf(a_anim)) {
         return 0;
     }
-    return animhasnotetrack(var_63db3c9e26531938, "facial_override");
+    return animhasnotetrack(a_anim, "facial_override");
 }
 
 // Namespace asm_mp / scripts\asm\asm_mp
@@ -362,11 +362,11 @@ function asm_playfacialanim_mp(asmname, statename, animname) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe85
 // Size: 0xa1
-function asm_playfacialaniminternalmp(var_63db3c9e26531938, a_state) {
+function asm_playfacialaniminternalmp(a_anim, a_state) {
     if (!isfacialstateallowed("asm")) {
         return;
     }
-    if (isdefined(var_63db3c9e26531938) && asm_animhasfacialoverridemp(var_63db3c9e26531938)) {
+    if (isdefined(a_anim) && asm_animhasfacialoverridemp(a_anim)) {
         return;
     }
     headknob = asm_lookupanimfromaliasifexists("knobs", "head");

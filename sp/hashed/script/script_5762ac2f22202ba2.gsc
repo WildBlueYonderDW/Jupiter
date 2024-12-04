@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
 
 #namespace damagefeedback;
 
@@ -39,7 +39,7 @@ function function_7bc7c3983cef0956(marker, priority) {
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x88f
 // Size: 0x329
-function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, var_62cf84636d4cef2c, nonplayer, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d) {
+function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, var_62cf84636d4cef2c, nonplayer, targetentnum, armorPlateCount, var_203066c6662e1f2d) {
     if (!isplayer(self)) {
         return;
     }
@@ -104,10 +104,10 @@ function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, va
     case #"hash_567a00990919afc":
     case #"hash_dc64d86a5dcc42d3":
     case #"hash_ff1e12935aa62b10":
-        updatehitmarker(hitmarkertype, killingblow, headshot, nonplayer, icontype, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d);
+        updatehitmarker(hitmarkertype, killingblow, headshot, nonplayer, icontype, targetentnum, armorPlateCount, var_203066c6662e1f2d);
         break;
     default:
-        updatehitmarker(hitmarkertype, killingblow, headshot, nonplayer, undefined, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d);
+        updatehitmarker(hitmarkertype, killingblow, headshot, nonplayer, undefined, targetentnum, armorPlateCount, var_203066c6662e1f2d);
         break;
     }
 }
@@ -116,7 +116,7 @@ function updatedamagefeedback(icontype, killingblow, headshot, hitmarkertype, va
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0xbc0
 // Size: 0x5c7
-function updatehitmarker(markertype, killingblow, headshot, nonplayer, icontype, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d) {
+function updatehitmarker(markertype, killingblow, headshot, nonplayer, icontype, targetentnum, armorPlateCount, var_203066c6662e1f2d) {
     if (function_fa167eb35ec0eeea()) {
         return;
     }
@@ -135,8 +135,8 @@ function updatehitmarker(markertype, killingblow, headshot, nonplayer, icontype,
     if (!isdefined(targetentnum)) {
         targetentnum = -1;
     }
-    if (!isdefined(var_f7ea2887b1e3535b)) {
-        var_f7ea2887b1e3535b = 0;
+    if (!isdefined(armorPlateCount)) {
+        armorPlateCount = 0;
     }
     if (getdvarint(@"hash_1db87c3b655b5645", 0) == 1) {
         hitmarkernotif = spawnstruct();
@@ -266,7 +266,7 @@ function updatehitmarker(markertype, killingblow, headshot, nonplayer, icontype,
     } else {
         self setclientomnvar("damage_feedback_nonplayer", 0);
     }
-    self setclientomnvar("damage_feedback_armor", int(min(var_f7ea2887b1e3535b, 3)));
+    self setclientomnvar("damage_feedback_armor", int(min(armorPlateCount, 3)));
     if (targetentnum > -1) {
         self setclientomnvar("damage_feedback_entity", targetentnum);
         self setclientomnvar("damage_feedback_entity_notify", gettime());

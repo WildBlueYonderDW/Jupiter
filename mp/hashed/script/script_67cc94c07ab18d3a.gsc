@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_4a6760982b403bad;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using script_b7a9ce0a2282b79;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\gametypes\br_plunder.gsc;
+#using script_2d9d24f7c63ac143;
+#using script_4a6760982b403bad;
+#using script_5762ac2f22202ba2;
 #using script_67cc94c07ab18d3a;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using script_b7a9ce0a2282b79;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\lui_game_event_aggregator;
 
 #namespace namespace_52ebf044fee9e4cd;
 
@@ -186,10 +186,10 @@ function private function_ec72aaffd5629e92(value) {
 // Size: 0x1d2
 function function_373d9e3e41486ae1(player, var_85166da84e55de25) {
     player setplayerdata(level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "blueprintTuned", 0);
-    var_88c1658d6b22a174 = [];
+    oldattachments = [];
     var_6db9df5a6da9f3f7 = [];
     for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
-        var_88c1658d6b22a174[attachmentindex] = player getplayerdata(level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "attachment");
+        oldattachments[attachmentindex] = player getplayerdata(level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "attachment");
         var_6db9df5a6da9f3f7[attachmentindex] = player getplayerdata(level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "variantID");
     }
     for (attachmentindex = 0; attachmentindex < 7; attachmentindex++) {
@@ -197,7 +197,7 @@ function function_373d9e3e41486ae1(player, var_85166da84e55de25) {
         var_f23b046d49b6fa9b = player getplayerdata(level.loadoutsgroup, "upgradeWeapon", "attachmentSetup", attachmentindex, "variantID");
         player setplayerdata(level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "attachment", var_460bd2a877684086);
         player setplayerdata(level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "variantID", var_f23b046d49b6fa9b);
-        itemindex = array_find(var_88c1658d6b22a174, var_460bd2a877684086);
+        itemindex = array_find(oldattachments, var_460bd2a877684086);
         var_a5bfd04c143c5c3d = isdefined(itemindex) && var_6db9df5a6da9f3f7[itemindex] == var_f23b046d49b6fa9b;
         if (var_460bd2a877684086 == "none" || var_a5bfd04c143c5c3d) {
             player setplayerdata(level.var_5d69837cf4db0407, "insuredWeapons", "weaponSetups", var_85166da84e55de25, "attachmentSetup", attachmentindex, "hasBPTune", 0);

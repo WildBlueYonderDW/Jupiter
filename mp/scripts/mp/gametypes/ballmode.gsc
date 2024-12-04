@@ -1,40 +1,40 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using script_37092055e9712f79;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using script_6a5d3bf7a5b7064a;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\points.gsc;
 #using script_1a8a97698664c7c9;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\bradley_spawner.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\utility\debug.gsc;
+#using script_37092055e9712f79;
+#using script_6a5d3bf7a5b7064a;
+#using script_7ab5b649fa408138;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\class;
+#using scripts\mp\equipment;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\bradley_spawner;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\teams;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
 
 #namespace ballmode;
 
@@ -43,7 +43,7 @@
 // Checksum 0x0, Offset: 0x1147
 // Size: 0x3b7
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();

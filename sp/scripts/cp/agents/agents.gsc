@@ -1,4 +1,4 @@
-#using scripts\mp\agents\agent_common.gsc;
+#using scripts\mp\agents\agent_common;
 
 #namespace agents;
 

@@ -1,11 +1,11 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\soldier\patrol.gsc;
-#using scripts\common\string.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\asm\soldier\death.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\soldier\death;
+#using scripts\asm\soldier\patrol;
+#using scripts\common\anim;
+#using scripts\common\string;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace patrol_idle;
 

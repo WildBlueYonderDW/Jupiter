@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\aitypes\bt_util.gsc;
+#using scripts\aitypes\bt_util;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace assets;
 

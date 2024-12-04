@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_3f8889c16399185c;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\playerlogic.gsc;
+#using script_3f8889c16399185c;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\weapon;
 
 #namespace weaponrank;
 
@@ -137,7 +137,7 @@ function isplayerweaponatmaxxp(rootweapon) {
 // Size: 0x71
 function weaponshouldgetxp(weapon) {
     var_f486e79b42c6cbec = getdvarint(@"hash_39c5e2e95ae3c2e6", 1) == 1;
-    if (!var_f486e79b42c6cbec && self.pers["rank"] < 3 && !getdvarint(@"hash_37acf332efd205cc")) {
+    if (!var_f486e79b42c6cbec && self.pers["rank"] < 3 && !getdvarint(@"force_challenges")) {
         return 0;
     }
     rootname = getweaponrootname(weapon);

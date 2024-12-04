@@ -1,7 +1,7 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_818db91055f1f65e;
 
@@ -74,7 +74,7 @@ function function_c0331162f149609c(duration) {
 function function_ead09275bb875c19() {
     level.bink_display_lights = getentarray("gp_bink_light", "targetname");
     foreach (light in level.bink_display_lights) {
-        light.var_eb99fbea3747c2df = light getlightcolor();
+        light.og_color = light getlightcolor();
         light.og_intensity = light getlightintensity();
     }
 }
@@ -149,13 +149,13 @@ function function_9070eca46954f112(col1, col2, duration, speed, changeintensity,
     }
     steps = floor(duration * 20);
     for (i = 0; i < steps; i++) {
-        var_cdde8478f52a266a = function_6655396aec86b2ef(i * speed);
-        var_a7122ab037474a3d = vectorlerp(col1, col2, var_cdde8478f52a266a);
-        self setlightcolor(var_a7122ab037474a3d);
+        var_cdde8478f52a266a = pulse_function(i * speed);
+        blend_col = vectorlerp(col1, col2, var_cdde8478f52a266a);
+        self setlightcolor(blend_col);
         if (changeintensity) {
-            var_cdde8378f52a2437 = function_6655396aec86b2ef((i + 50) * speed);
-            var_50d6e555f692abfe = math::lerp(self.og_intensity * var_b153a77942d79d3b, self.og_intensity, var_cdde8378f52a2437);
-            self setlightintensity(var_50d6e555f692abfe);
+            var_cdde8378f52a2437 = pulse_function((i + 50) * speed);
+            blend_intensity = math::lerp(self.og_intensity * var_b153a77942d79d3b, self.og_intensity, var_cdde8378f52a2437);
+            self setlightintensity(blend_intensity);
         }
         wait 0.05;
     }
@@ -168,13 +168,13 @@ function function_9070eca46954f112(col1, col2, duration, speed, changeintensity,
 function lerp_light_color_to(col, duration) {
     self notify("lerp_light_color_to");
     self endon("lerp_light_color_to");
-    var_45bc9f5268f90238 = self getlightcolor();
+    curr_col = self getlightcolor();
     steps = floor(duration * 20);
     for (i = 0; i < steps; i++) {
         t = float((i + 1) / steps);
         t = t * t * t;
-        var_a7122ab037474a3d = vectorlerp(var_45bc9f5268f90238, col, t);
-        self setlightcolor(var_a7122ab037474a3d);
+        blend_col = vectorlerp(curr_col, col, t);
+        self setlightcolor(blend_col);
         wait 0.05;
     }
 }
@@ -183,15 +183,15 @@ function lerp_light_color_to(col, duration) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c2
 // Size: 0x95
-function lerp_light_color_from_to(var_3ddfe174855a3f28, var_9f38e87b16efe319, duration) {
+function lerp_light_color_from_to(from_col, to_col, duration) {
     self notify("lerp_light_color_from_to");
     self endon("lerp_light_color_ftom_to");
-    self setlightcolor(var_3ddfe174855a3f28);
+    self setlightcolor(from_col);
     steps = floor(duration * 20);
     for (i = 0; i < steps; i++) {
         t = float((i + 1) / steps);
-        var_a7122ab037474a3d = vectorlerp(var_3ddfe174855a3f28, var_9f38e87b16efe319, t);
-        self setlightcolor(var_a7122ab037474a3d);
+        blend_col = vectorlerp(from_col, to_col, t);
+        self setlightcolor(blend_col);
         wait 0.05;
     }
 }
@@ -200,7 +200,7 @@ function lerp_light_color_from_to(var_3ddfe174855a3f28, var_9f38e87b16efe319, du
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa5f
 // Size: 0x4c
-function function_6655396aec86b2ef(x) {
+function pulse_function(x) {
     y = sin(2 * x) + sin(3.14159 * x);
     return clamp((y + 2) / 4, 0, 1);
 }
@@ -253,7 +253,7 @@ function function_569aec3f2378f201() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xce3
 // Size: 0xe2
-function grandprix_fire_flicker(lower, var_ef51947aa5ac420a, full, min_time, max_time) {
+function grandprix_fire_flicker(lower, higher, full, min_time, max_time) {
     self notify("grandprix_fire_flicker");
     self endon("grandprix_fire_flicker");
     level endon("game_ended");
@@ -262,7 +262,7 @@ function grandprix_fire_flicker(lower, var_ef51947aa5ac420a, full, min_time, max
         return;
     }
     for (old_intensity = full; ; old_intensity = intensity) {
-        intensity = randomfloatrange(full * lower, full * var_ef51947aa5ac420a);
+        intensity = randomfloatrange(full * lower, full * higher);
         timer = randomfloatrange(min_time, max_time);
         timer *= 20;
         for (i = 0; i < timer; i++) {

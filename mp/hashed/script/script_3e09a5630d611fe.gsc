@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
 #using script_3008e3767a2a503c;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
 
 #namespace namespace_e862d960d61679ed;
 
@@ -21,10 +21,10 @@ function init() {
     level.var_78a0087bea386662 = spawnstruct();
     level.var_78a0087bea386662.var_d04b4a9729479cad = &function_d04b4a9729479cad;
     level.var_78a0087bea386662.var_c80fb54710c9e5aa = &function_c80fb54710c9e5aa;
-    level.var_78a0087bea386662.var_e807776b16dce7d4 = &function_52ecb2291cfdb603;
-    level.var_78a0087bea386662.onuse = &function_f1e11c45881efcf0;
+    level.var_78a0087bea386662.var_e807776b16dce7d4 = &get_reward;
+    level.var_78a0087bea386662.onuse = &on_use;
     level.var_78a0087bea386662.var_d70ec56158c8530b = &function_d70ec56158c8530b;
-    level.var_78a0087bea386662.var_35ad50d0a725c013 = &function_ee22089593019c42;
+    level.var_78a0087bea386662.var_35ad50d0a725c013 = &get_payload;
     level.var_e191e47360df882c = getdvarfloat(@"hash_f392490d3e81dd36", 30);
 }
 
@@ -50,7 +50,7 @@ function function_d04b4a9729479cad() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x75
-function function_52ecb2291cfdb603() {
+function get_reward() {
     values = [1, 2, 3];
     weights = [getdvarfloat(@"hash_8d2054eb767885c0"), getdvarfloat(@"hash_db7a7896756f4c35"), getdvarfloat(@"hash_7d79b068a44a9c12")];
     reward = weighted_array_randomize(values, weights);
@@ -61,7 +61,7 @@ function function_52ecb2291cfdb603() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x42e
 // Size: 0x30
-function function_ee22089593019c42(player) {
+function get_payload(player) {
     payload = [#"teamselect", player getentitynumber()];
     return payload;
 }
@@ -70,7 +70,7 @@ function function_ee22089593019c42(player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x467
 // Size: 0x402
-function function_f1e11c45881efcf0(player) {
+function on_use(player) {
     if (isdefined(player.owner)) {
         player = player.owner;
     }

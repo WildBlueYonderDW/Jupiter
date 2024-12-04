@@ -1,6 +1,6 @@
 #using script_39ebe40c5c0566e7;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\perks\perks;
 
 #namespace perk;
 

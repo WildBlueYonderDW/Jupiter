@@ -1,9 +1,9 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_537a712b2be3193c;
 #using script_504283b70de854fa;
-#using scripts\engine\trace.gsc;
+#using script_537a712b2be3193c;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_e09acb604a639f22;
 
@@ -40,8 +40,8 @@ function function_3b6cb5add3327a1b() {
     spawnpoint = getclosest(spot.origin, level.var_5a11797125800495);
     aitype = "actor_enemy_cp_rus_desert_smg";
     guys = [];
-    guys[guys.size] = namespace_d9d93e01b62de24a::function_43825e7633150be3(aitype, spawnpoint, 0, 128);
-    guys[guys.size] = namespace_d9d93e01b62de24a::function_43825e7633150be3(aitype, spawnpoint, 0, 128);
+    guys[guys.size] = namespace_d9d93e01b62de24a::ai_spawn(aitype, spawnpoint, 0, 128);
+    guys[guys.size] = namespace_d9d93e01b62de24a::ai_spawn(aitype, spawnpoint, 0, 128);
     foreach (guy in guys) {
         if (!isdefined(guy)) {
             continue;
@@ -54,7 +54,7 @@ function function_3b6cb5add3327a1b() {
         }
         guy.entered_combat = 1;
     }
-    mortar.var_4123ff32a76f808f = guys;
+    mortar.spawned_team = guys;
     level notify("mortar_team_spawned", mortar);
     level thread function_230d6eebda212ccf(mortar, trig);
     namespace_d9d93e01b62de24a::function_e4f3059610095250(guys);

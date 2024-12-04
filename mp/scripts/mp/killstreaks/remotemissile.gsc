@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
 
 #namespace remotemissile;
 
@@ -202,7 +202,7 @@ function missileeyes(player, rocket) {
         player thread delayedfofoverlay();
         player cameralinkto(rocket, "tag_origin");
         player controlslinkto(rocket);
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdperson")) {
             player setthirdpersondof(0);
         }
         rocket waittill("death");
@@ -217,7 +217,7 @@ function missileeyes(player, rocket) {
         }
         wait 0.5;
         player cameraunlink();
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdperson")) {
             player setthirdpersondof(1);
         }
     }
@@ -246,7 +246,7 @@ function player_cleanuponteamchange(rocket) {
     if (self.team != "spectator") {
         self controlsunlink();
         self cameraunlink();
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdperson")) {
             setthirdpersondof(1);
         }
     }
@@ -276,7 +276,7 @@ function player_cleanupongameended(rocket) {
     level waittill("game_ended");
     self controlsunlink();
     self cameraunlink();
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdperson")) {
         setthirdpersondof(1);
     }
 }

@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_347e655acacdace;
-#using script_7f9409b703dad400;
-#using script_3e31016b9c11a616;
-#using script_41387eecc35b88bf;
+#using script_185660037b9236c1;
 #using script_3ab210ea917601e7;
 #using script_3ac7886f9e4eceef;
-#using script_413d0426f154bd91;
-#using script_185660037b9236c1;
+#using script_3e31016b9c11a616;
+#using script_41387eecc35b88bf;
+#using script_7f9409b703dad400;
+#using scripts\common\data_tracker;
+#using scripts\common\progress_tracker;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_a8e6d792fb89051e;
 
@@ -101,7 +101,7 @@ function private function_5d8afaa62329ec72(uniquename, ProgressTracker, customca
         ProgressTracker addcallback(self, customcallbackfunction);
     }
     function_53a8c0ab528f44cd(uniquename, ProgressTracker);
-    namespace_e82a1efb852543c9::function_e4b4be816ed43365(uniquename, ProgressTracker);
+    scripts\common\data_tracker::function_e4b4be816ed43365(uniquename, ProgressTracker);
     namespace_68dc261109a9503f::function_ce906635a152d2d0(self, uniquename);
 }
 
@@ -110,9 +110,9 @@ function private function_5d8afaa62329ec72(uniquename, ProgressTracker, customca
 // Checksum 0x0, Offset: 0x51c
 // Size: 0x74
 function private function_864b19ca6e4a3a81(ProgressTracker) {
-    uniquename = ProgressTracker namespace_96552c234e66ebee::function_4f3f1f9cedf2d883();
-    namespace_e82a1efb852543c9::function_5aa098a0e2a91e3e(uniquename);
-    activitynexuslog("Progress Tracker: " + uniquename + " 's value has been updated. Progress Remaining: " + ProgressTracker namespace_96552c234e66ebee::function_cfeb21bf93c30dae(), @"hash_c6dd0e44e8224971", self);
+    uniquename = ProgressTracker scripts\common\progress_tracker::function_4f3f1f9cedf2d883();
+    scripts\common\data_tracker::function_5aa098a0e2a91e3e(uniquename);
+    activitynexuslog("Progress Tracker: " + uniquename + " 's value has been updated. Progress Remaining: " + ProgressTracker scripts\common\progress_tracker::function_cfeb21bf93c30dae(), @"hash_c6dd0e44e8224971", self);
     if (ProgressTracker iscomplete()) {
         activitynexuslog("Progress Tracker: " + uniquename + " is complete.", @"hash_c6dd0e44e8224971", self);
     }
@@ -124,7 +124,7 @@ function private function_864b19ca6e4a3a81(ProgressTracker) {
 // Size: 0x5d
 function private function_2d8ae6d7b07724e2(ProgressTracker) {
     uniquename = ProgressTracker function_4f3f1f9cedf2d883();
-    namespace_e82a1efb852543c9::removedata(uniquename);
+    scripts\common\data_tracker::removedata(uniquename);
     function_f2a618a7ad2f558d(uniquename, self.var_6c29f2fdb0054bbe);
     function_11bf7ad9c1fdc527(uniquename);
     activitynexuslog("Progress Tracker: " + uniquename + " has ended for the activity. ", @"hash_c6dd0e44e8224971", self);

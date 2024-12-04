@@ -1,15 +1,15 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_spawning_util.gsc;
 #using script_18a73a64992dd07d;
-#using scripts\cp\cp_aiparachute.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\killstreaks\airstrike.gsc;
-#using scripts\cp\cp_gameskill.gsc;
-#using scripts\cp\cp_hud_message.gsc;
 #using script_3bcaa2cbaf54abdd;
-#using scripts\cp\cp_wave_spawning.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_aiparachute;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_spawning_util;
+#using scripts\cp\cp_wave_spawning;
+#using scripts\cp\utility;
+#using scripts\cp_mp\killstreaks\airstrike;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_4d6b762e48839f2a;
 
@@ -36,11 +36,11 @@ function init_wave_spawning() {
 // Checksum 0x0, Offset: 0x46c
 // Size: 0x345
 function initialize_wave_spawn_modules() {
-    var_c28f7df6d5d55a37 = [&set_count_based_on_grouped_modules, "grouped_wave_spawning", 0, 0];
+    wave_min = [&set_count_based_on_grouped_modules, "grouped_wave_spawning", 0, 0];
     var_61671992d4830187 = [&set_count_based_on_grouped_modules, "grouped_wave_spawning", [&get_ambient_max_count, 30], 30];
-    var_c2b28bf6d5fbc0b9 = [&set_count_based_on_grouped_modules, "grouped_wave_spawning", [&get_ambient_max_count, 30], 30];
-    registerambientgroup("wave_spawning", var_c28f7df6d5d55a37, var_61671992d4830187, undefined, [&wave_spawn_proc, undefined, undefined, 0.1, [&get_wave_low_threshold, 0], &get_wave_high_threshold, 1], undefined, &return_wave_veh_spawners, &init_wave_spawning_module_proc);
-    registerambientgroup("wave_spawning", var_c28f7df6d5d55a37, var_c2b28bf6d5fbc0b9, undefined, [&wave_spawn, undefined, undefined, [&get_spawn_time_from_wave, 1], [&get_wave_low_threshold, 0], &get_wave_high_threshold, 1], undefined, &return_cover_spawners, &init_wave_spawning_module);
+    wave_max = [&set_count_based_on_grouped_modules, "grouped_wave_spawning", [&get_ambient_max_count, 30], 30];
+    registerambientgroup("wave_spawning", wave_min, var_61671992d4830187, undefined, [&wave_spawn_proc, undefined, undefined, 0.1, [&get_wave_low_threshold, 0], &get_wave_high_threshold, 1], undefined, &return_wave_veh_spawners, &init_wave_spawning_module_proc);
+    registerambientgroup("wave_spawning", wave_min, wave_max, undefined, [&wave_spawn, undefined, undefined, [&get_spawn_time_from_wave, 1], [&get_wave_low_threshold, 0], &get_wave_high_threshold, 1], undefined, &return_cover_spawners, &init_wave_spawning_module);
     register_module_pause_unpause_funcs("wave_spawning", &pause_wave_hud, &unpause_wave_hud);
     register_module_init_func("wave_spawning", [&combine_module_counters, "wave_spawning"]);
     register_module_as_passive("wave_spawning");
@@ -71,7 +71,7 @@ function initialize_wave_spawn_modules() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7b9
 // Size: 0x15
-function increase_wave_ai_spawned_counter(var_f8e5e3aa5762a8e7) {
+function increase_wave_ai_spawned_counter(module_struct) {
     level.wave_ai_spawned++;
 }
 
@@ -79,12 +79,12 @@ function increase_wave_ai_spawned_counter(var_f8e5e3aa5762a8e7) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d6
 // Size: 0x9b
-function increase_wave_ai_killed_counter(var_f8e5e3aa5762a8e7) {
-    if (!isdefined(var_f8e5e3aa5762a8e7) && isdefined(self.group)) {
-        var_f8e5e3aa5762a8e7 = self.group;
+function increase_wave_ai_killed_counter(module_struct) {
+    if (!isdefined(module_struct) && isdefined(self.group)) {
+        module_struct = self.group;
     }
-    if (isdefined(var_f8e5e3aa5762a8e7) && !istrue(var_f8e5e3aa5762a8e7.kamikaze) && istrue(self.never_unloaded_from_vehicle)) {
-        subtract_from_spawn_count_from_group(var_f8e5e3aa5762a8e7);
+    if (isdefined(module_struct) && !istrue(module_struct.kamikaze) && istrue(self.never_unloaded_from_vehicle)) {
+        subtract_from_spawn_count_from_group(module_struct);
         toggle_force_stop_wave_from_groupname("wave_spawning", undefined, "wave_retry");
         run_func_on_group_by_groupname("wave_spawning", [&send_notify_to_module_struct, "wave_delay_over"]);
         level.wave_ai_spawned--;
@@ -97,8 +97,8 @@ function increase_wave_ai_killed_counter(var_f8e5e3aa5762a8e7) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x879
 // Size: 0x17
-function send_notify_to_module_struct(var_f8e5e3aa5762a8e7, var_ff5ccede2521cb13) {
-    var_f8e5e3aa5762a8e7 notify(var_ff5ccede2521cb13);
+function send_notify_to_module_struct(module_struct, var_ff5ccede2521cb13) {
+    module_struct notify(var_ff5ccede2521cb13);
 }
 
 // Namespace namespace_4d6b762e48839f2a / scripts\cp\cp_wave_spawning
@@ -113,10 +113,10 @@ function init_wave_spawning_module(group) {
     /#
         level.wave = group;
     #/
-    var_a93265a5807d2927 = define_var_if_undefined(group get_current_wave_ref(), 1);
+    starting_wave = define_var_if_undefined(group get_current_wave_ref(), 1);
     if (isdefined(level.spawn_module_structs_memory[group.group_name])) {
         for (i = 0; i < level.spawn_module_structs_memory[group.group_name].size; i++) {
-            level.spawn_module_structs_memory[group.group_name][i].wave_reference = var_a93265a5807d2927;
+            level.spawn_module_structs_memory[group.group_name][i].wave_reference = starting_wave;
             level.spawn_module_structs_memory[group.group_name][i].cover_node_spawners_override_id = 0;
             level.spawn_module_structs_memory[group.group_name][i].cover_node_spawners_override = [];
             level.spawn_module_structs_memory[group.group_name][i].wave_spawner_overrides = [];
@@ -156,7 +156,7 @@ function init_wave_spawning_module_proc(group) {
         flag_init("wave_spawning_initialized");
     }
     /#
-        level.var_f163e6cab15a2534 = group;
+        level.veh_wave = group;
     #/
     group init_passive_wave_struct();
     flag_wait("cover_spawners_initialized");
@@ -167,11 +167,11 @@ function init_wave_spawning_module_proc(group) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb67
 // Size: 0x46
-function cap_vehicle_type_on_module(var_f8e5e3aa5762a8e7, vehicle_type, max_num) {
-    if (!isdefined(var_f8e5e3aa5762a8e7.vehicle_caps)) {
-        var_f8e5e3aa5762a8e7.vehicle_caps = [];
+function cap_vehicle_type_on_module(module_struct, vehicle_type, max_num) {
+    if (!isdefined(module_struct.vehicle_caps)) {
+        module_struct.vehicle_caps = [];
     }
-    var_f8e5e3aa5762a8e7.vehicle_caps[vehicle_type] = max_num;
+    module_struct.vehicle_caps[vehicle_type] = max_num;
 }
 
 // Namespace namespace_4d6b762e48839f2a / scripts\cp\cp_wave_spawning
@@ -267,13 +267,13 @@ function move_spawnpoints_to_valid_positions(debug) {
 // Checksum 0x0, Offset: 0xf0d
 // Size: 0x148
 function get_positions_around_vector(pos) {
-    var_7bbda18a855c7111 = [];
+    return_array = [];
     slices = 12;
     dist = 2048;
-    var_9c59afefc22f0c25 = 360 / slices;
+    angle_frac = 360 / slices;
     starting_pos = pos;
     for (i = 0; i < slices; i++) {
-        angle = var_9c59afefc22f0c25 * i;
+        angle = angle_frac * i;
         var_8a9f895755fd607e = cos(angle) * dist;
         var_d867033ab311670b = sin(angle) * dist;
         x = starting_pos[0] + var_8a9f895755fd607e;
@@ -284,10 +284,10 @@ function get_positions_around_vector(pos) {
         if (isdefined(results) && isdefined(results["shape_position"])) {
             pos = results["shape_position"];
             pos = getgroundposition(pos, 1, 1000, 1000);
-            var_7bbda18a855c7111[var_7bbda18a855c7111.size] = pos;
+            return_array[return_array.size] = pos;
         }
     }
-    return array_randomize(var_7bbda18a855c7111);
+    return array_randomize(return_array);
 }
 
 // Namespace namespace_4d6b762e48839f2a / scripts\cp\cp_wave_spawning
@@ -358,7 +358,7 @@ function wave_spawn(group, wavetime, spawn_window_time, spawntime, low_threshold
     spawn_window_time = define_var_if_undefined(spawn_window_time, get_passive_spawn_window_time());
     spawntime = define_var_if_undefined(spawntime, 0.1);
     ref_count = group get_spawncount_from_groupnames(["wave_spawning", "wave_paratroopers"]);
-    var_3260fe8e5dbc524b = group get_activecount_from_group();
+    active_count = group get_activecount_from_group();
     low_threshold = get_passive_wave_low_threshold(group, low_threshold);
     high_threshold = get_passive_wave_high_threshold(group, high_threshold);
     scripts\cp\cp_gameskill::wave_difficulty_update(self.wave_difficulty);
@@ -368,7 +368,7 @@ function wave_spawn(group, wavetime, spawn_window_time, spawntime, low_threshold
             toggle_force_stop_wave_from_groupname("wave_paratroopers", 1, "end_wave");
             group waittill("wave_delay_over");
         } else if (ref_count < group.spawn_wave_total) {
-            if (var_3260fe8e5dbc524b >= high_threshold) {
+            if (active_count >= high_threshold) {
                 run_func_on_group_by_groupname(group.group_name, [&change_module_status, "wait_4_count: " + low_threshold]);
                 run_func_on_group_by_groupname("wave_paratroopers", [&change_module_status, "wait_4_count: " + low_threshold]);
                 group group_wait_for_activecount_notify(low_threshold);
@@ -408,20 +408,20 @@ function wave_spawn_proc(group, wavetime, spawn_window_time, spawntime, low_thre
     spawn_window_time = define_var_if_undefined(spawn_window_time, get_passive_spawn_window_time());
     spawntime = define_var_if_undefined(spawntime, 0.1);
     ref_count = group get_spawncount_from_groupnames(["wave_spawning", "wave_paratroopers"]);
-    var_3260fe8e5dbc524b = group get_activecount_from_group();
+    active_count = group get_activecount_from_group();
     low_threshold = get_passive_wave_low_threshold(group, low_threshold);
     high_threshold = get_passive_wave_high_threshold(group, high_threshold);
     scripts\cp\cp_gameskill::wave_difficulty_update(self.wave_difficulty);
     if (isdefined(low_threshold) && isdefined(high_threshold)) {
-        var_f7a6739c47ba2ee1 = group get_allowed_vehicle_types_from_wave();
-        if (istrue(group.use_only_veh_spawners) && (!isdefined(var_f7a6739c47ba2ee1) || var_f7a6739c47ba2ee1.size < 1)) {
+        allowed_vehicles = group get_allowed_vehicle_types_from_wave();
+        if (istrue(group.use_only_veh_spawners) && (!isdefined(allowed_vehicles) || allowed_vehicles.size < 1)) {
             run_func_on_group_by_groupname(group.group_name, &unset_vehicle_only_wave);
         }
         if (istrue(group.stop_wave_spawning)) {
             toggle_force_stop_wave_from_groupname(group.group_name, 1, "end_wave");
             toggle_force_stop_wave_from_groupname("wave_paratroopers", 1, "end_wave");
             group waittill("wave_delay_over");
-        } else if (var_3260fe8e5dbc524b >= high_threshold) {
+        } else if (active_count >= high_threshold) {
             if (ref_count < group.spawn_wave_total) {
                 run_func_on_group_by_groupname(group.group_name, [&change_module_status, "wait_4_count: " + low_threshold]);
                 run_func_on_group_by_groupname("wave_paratroopers", [&change_module_status, "wait_4_count: " + low_threshold]);
@@ -446,7 +446,7 @@ function wave_spawn_proc(group, wavetime, spawn_window_time, spawntime, low_thre
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17ec
 // Size: 0x29
-function unset_vehicle_only_wave(group, var_b386118c13efb928) {
+function unset_vehicle_only_wave(group, new_status) {
     group.wave_use_vehicles = undefined;
     group.use_only_veh_spawners = undefined;
 }
@@ -484,8 +484,8 @@ function increase_wave_num(var_2248eae0b480df1b) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1926
 // Size: 0x25
-function pause_wave_hud(var_f8e5e3aa5762a8e7) {
-    var_f8e5e3aa5762a8e7 change_module_status(undefined, "Module Paused");
+function pause_wave_hud(module_struct) {
+    module_struct change_module_status(undefined, "Module Paused");
     setomnvar("cp_wave_timer", 0);
 }
 
@@ -493,19 +493,19 @@ function pause_wave_hud(var_f8e5e3aa5762a8e7) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1953
 // Size: 0x19
-function unpause_wave_hud(var_f8e5e3aa5762a8e7) {
-    var_f8e5e3aa5762a8e7 change_module_status(undefined, "Module Unpaused");
+function unpause_wave_hud(module_struct) {
+    module_struct change_module_status(undefined, "Module Unpaused");
 }
 
 // Namespace namespace_4d6b762e48839f2a / scripts\cp\cp_wave_spawning
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1974
 // Size: 0x29
-function delay_then_run_wave_override(timer, var_9c3cfaf7756aaac2) {
+function delay_then_run_wave_override(timer, wave_ref) {
     if (isdefined(timer) && timer > 0) {
         wait timer;
     }
-    set_wave_ref_override(var_9c3cfaf7756aaac2);
+    set_wave_ref_override(wave_ref);
 }
 
 // Namespace namespace_4d6b762e48839f2a / scripts\cp\cp_wave_spawning
@@ -514,20 +514,20 @@ function delay_then_run_wave_override(timer, var_9c3cfaf7756aaac2) {
 // Size: 0xd8
 function update_current_count_death(group) {
     if (isdefined(group)) {
-        var_de3a9f49d03bdacc = group;
+        wave_group = group;
     } else if (isdefined(self.group)) {
-        var_de3a9f49d03bdacc = self.group;
+        wave_group = self.group;
     } else {
         return 0;
     }
-    var_3260fe8e5dbc524b = var_de3a9f49d03bdacc get_activecount_from_group();
-    level thread wave_failsafe_end(var_de3a9f49d03bdacc);
-    if (var_de3a9f49d03bdacc is_wave_hud_enabled() && !istrue(var_de3a9f49d03bdacc.kamikaze)) {
-        update_enemies_remaining(undefined, var_de3a9f49d03bdacc);
+    active_count = wave_group get_activecount_from_group();
+    level thread wave_failsafe_end(wave_group);
+    if (wave_group is_wave_hud_enabled() && !istrue(wave_group.kamikaze)) {
+        update_enemies_remaining(undefined, wave_group);
     }
-    if (!istrue(var_de3a9f49d03bdacc.kamikaze) && istrue(var_de3a9f49d03bdacc.stop_wave_spawning) && var_3260fe8e5dbc524b < var_de3a9f49d03bdacc.next_threshold) {
-        run_func_on_group_by_groupname(var_de3a9f49d03bdacc.group_name, [&toggle_kamikaze_for_group, 1]);
-        level thread wave_go_kamikaze(var_de3a9f49d03bdacc);
+    if (!istrue(wave_group.kamikaze) && istrue(wave_group.stop_wave_spawning) && active_count < wave_group.next_threshold) {
+        run_func_on_group_by_groupname(wave_group.group_name, [&toggle_kamikaze_for_group, 1]);
+        level thread wave_go_kamikaze(wave_group);
     }
 }
 
@@ -541,13 +541,13 @@ function update_enemies_remaining(num, group) {
         level.wave_enemies_remaining = num;
         return;
     }
-    var_c43c439e2df8bd7c = get_module_structs_by_groupname("wave_spawning");
-    var_c43c439e2df8bd7c = array_combine(var_c43c439e2df8bd7c, get_module_structs_by_groupname("wave_paratroopers"));
+    module_structs = get_module_structs_by_groupname("wave_spawning");
+    module_structs = array_combine(module_structs, get_module_structs_by_groupname("wave_paratroopers"));
     group.total_killed += 1;
     count = 0;
-    for (i = 0; i < var_c43c439e2df8bd7c.size; i++) {
-        if (isdefined(var_c43c439e2df8bd7c[i].total_killed)) {
-            count += var_c43c439e2df8bd7c[i].total_killed;
+    for (i = 0; i < module_structs.size; i++) {
+        if (isdefined(module_structs[i].total_killed)) {
+            count += module_structs[i].total_killed;
         }
     }
     count = level.wave_ai_killed;
@@ -607,66 +607,66 @@ function set_wave_settings() {
         group_name = "wave_spawning";
         if (isdefined(level.spawn_module_structs_memory[group_name])) {
             for (i = 0; i < level.spawn_module_structs_memory[group_name].size; i++) {
-                var_f8e5e3aa5762a8e7 = level.spawn_module_structs_memory[group_name][i];
-                var_fd12dfca9e789574 = var_f8e5e3aa5762a8e7 get_current_wave_ref();
-                var_f8e5e3aa5762a8e7.valid_vehicles = [];
-                var_f8e5e3aa5762a8e7.valid_vehicles["lbravo_carrier"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 15));
-                var_f8e5e3aa5762a8e7.valid_vehicles["mindia8"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 16));
-                var_f8e5e3aa5762a8e7.valid_vehicles["attack_heli"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 19));
-                if (array_sum(var_f8e5e3aa5762a8e7.valid_vehicles) > 0) {
-                    var_f8e5e3aa5762a8e7.wave_use_vehicles = 1;
+                module_struct = level.spawn_module_structs_memory[group_name][i];
+                search_term = module_struct get_current_wave_ref();
+                module_struct.valid_vehicles = [];
+                module_struct.valid_vehicles["lbravo_carrier"] = int(tablelookup(table, 0, search_term, 15));
+                module_struct.valid_vehicles["mindia8"] = int(tablelookup(table, 0, search_term, 16));
+                module_struct.valid_vehicles["attack_heli"] = int(tablelookup(table, 0, search_term, 19));
+                if (array_sum(module_struct.valid_vehicles) > 0) {
+                    module_struct.wave_use_vehicles = 1;
                 }
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts = [];
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["ar"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 1));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["ar_heavy"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 2));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["ar_heavy_laser"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 3));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["smg"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 4));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["smg_heavy"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 5));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["shotgun"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 6));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["shotgun_heavy"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 7));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["rpg"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 8));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["lmg"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 9));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["lmg_heavy"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 10));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["sniper"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 11));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["goliath"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 12));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["suicidebomber"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 13));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts["juggernaut"] = int(tablelookup(table, 0, var_fd12dfca9e789574, 14));
-                var_f8e5e3aa5762a8e7.spawn_aitype_counts = var_f8e5e3aa5762a8e7 remove_invalid_aitypes();
-                var_f8e5e3aa5762a8e7.wave_difficulty = int(tablelookup(table, 0, var_fd12dfca9e789574, 22));
-                var_f8e5e3aa5762a8e7.high_threshold = int(tablelookup(table, 0, var_fd12dfca9e789574, 23));
-                var_f8e5e3aa5762a8e7.min_count = int(tablelookup(table, 0, var_fd12dfca9e789574, 24));
-                var_f8e5e3aa5762a8e7.next_threshold = int(tablelookup(table, 0, var_fd12dfca9e789574, 25));
-                var_f8e5e3aa5762a8e7.timeout_after_min_count = int(tablelookup(table, 0, var_fd12dfca9e789574, 26));
-                var_f8e5e3aa5762a8e7.next_wave = tablelookup(table, 0, var_fd12dfca9e789574, 29);
-                var_f8e5e3aa5762a8e7.use_only_veh_spawners = int(tablelookup(table, 0, var_fd12dfca9e789574, 32));
-                var_f8e5e3aa5762a8e7.paratroopers_allowed = int(tablelookup(table, 0, var_fd12dfca9e789574, 20));
-                var_f8e5e3aa5762a8e7.wave_airstrikes_allowed = int(tablelookup(table, 0, var_fd12dfca9e789574, 21));
-                var_2831269a752e5bf5 = float(tablelookup(table, 0, var_fd12dfca9e789574, 30));
-                var_f8e5e3aa5762a8e7.wave_time_between_spawns = ter_op(var_2831269a752e5bf5 > 0, var_2831269a752e5bf5, 1);
+                module_struct.spawn_aitype_counts = [];
+                module_struct.spawn_aitype_counts["ar"] = int(tablelookup(table, 0, search_term, 1));
+                module_struct.spawn_aitype_counts["ar_heavy"] = int(tablelookup(table, 0, search_term, 2));
+                module_struct.spawn_aitype_counts["ar_heavy_laser"] = int(tablelookup(table, 0, search_term, 3));
+                module_struct.spawn_aitype_counts["smg"] = int(tablelookup(table, 0, search_term, 4));
+                module_struct.spawn_aitype_counts["smg_heavy"] = int(tablelookup(table, 0, search_term, 5));
+                module_struct.spawn_aitype_counts["shotgun"] = int(tablelookup(table, 0, search_term, 6));
+                module_struct.spawn_aitype_counts["shotgun_heavy"] = int(tablelookup(table, 0, search_term, 7));
+                module_struct.spawn_aitype_counts["rpg"] = int(tablelookup(table, 0, search_term, 8));
+                module_struct.spawn_aitype_counts["lmg"] = int(tablelookup(table, 0, search_term, 9));
+                module_struct.spawn_aitype_counts["lmg_heavy"] = int(tablelookup(table, 0, search_term, 10));
+                module_struct.spawn_aitype_counts["sniper"] = int(tablelookup(table, 0, search_term, 11));
+                module_struct.spawn_aitype_counts["goliath"] = int(tablelookup(table, 0, search_term, 12));
+                module_struct.spawn_aitype_counts["suicidebomber"] = int(tablelookup(table, 0, search_term, 13));
+                module_struct.spawn_aitype_counts["juggernaut"] = int(tablelookup(table, 0, search_term, 14));
+                module_struct.spawn_aitype_counts = module_struct remove_invalid_aitypes();
+                module_struct.wave_difficulty = int(tablelookup(table, 0, search_term, 22));
+                module_struct.high_threshold = int(tablelookup(table, 0, search_term, 23));
+                module_struct.min_count = int(tablelookup(table, 0, search_term, 24));
+                module_struct.next_threshold = int(tablelookup(table, 0, search_term, 25));
+                module_struct.timeout_after_min_count = int(tablelookup(table, 0, search_term, 26));
+                module_struct.next_wave = tablelookup(table, 0, search_term, 29);
+                module_struct.use_only_veh_spawners = int(tablelookup(table, 0, search_term, 32));
+                module_struct.paratroopers_allowed = int(tablelookup(table, 0, search_term, 20));
+                module_struct.wave_airstrikes_allowed = int(tablelookup(table, 0, search_term, 21));
+                var_2831269a752e5bf5 = float(tablelookup(table, 0, search_term, 30));
+                module_struct.wave_time_between_spawns = ter_op(var_2831269a752e5bf5 > 0, var_2831269a752e5bf5, 1);
                 if (scripts\cp\utility::is_wave_gametype()) {
-                    var_f8e5e3aa5762a8e7.disable_wave_hud = int(tablelookup(table, 0, var_fd12dfca9e789574, 31));
+                    module_struct.disable_wave_hud = int(tablelookup(table, 0, search_term, 31));
                 } else {
-                    var_f8e5e3aa5762a8e7.disable_wave_hud = 1;
+                    module_struct.disable_wave_hud = 1;
                 }
                 /#
                     if (getdvarint(@"hash_7aa9ca88617b9ed4", 0)) {
-                        var_f8e5e3aa5762a8e7.disable_wave_hud = 0;
+                        module_struct.disable_wave_hud = 0;
                     }
                 #/
-                var_f8e5e3aa5762a8e7.spawn_wave_total = array_sum(var_f8e5e3aa5762a8e7.spawn_aitype_counts) + var_f8e5e3aa5762a8e7.paratroopers_allowed * 8;
-                var_f8e5e3aa5762a8e7.total_killed = 0;
-                var_f8e5e3aa5762a8e7.requested_spawners = [];
-                toks = strtok(tablelookup(table, 0, var_fd12dfca9e789574, 27), ",");
+                module_struct.spawn_wave_total = array_sum(module_struct.spawn_aitype_counts) + module_struct.paratroopers_allowed * 8;
+                module_struct.total_killed = 0;
+                module_struct.requested_spawners = [];
+                toks = strtok(tablelookup(table, 0, search_term, 27), ",");
                 if (isdefined(toks) && toks.size > 0) {
                     for (j = 0; j < toks.size; j++) {
-                        var_f8e5e3aa5762a8e7 add_spawners_to_passive_wave_spawning(toks[j]);
+                        module_struct add_spawners_to_passive_wave_spawning(toks[j]);
                     }
                 }
-                var_f8e5e3aa5762a8e7.requested_veh_spawners = [];
-                toks = strtok(tablelookup(table, 0, var_fd12dfca9e789574, 28), ",");
+                module_struct.requested_veh_spawners = [];
+                toks = strtok(tablelookup(table, 0, search_term, 28), ",");
                 if (isdefined(toks) && toks.size > 0) {
                     for (j = 0; j < toks.size; j++) {
-                        var_f8e5e3aa5762a8e7 add_veh_spawners_to_passive_wave_spawning(toks[j]);
+                        module_struct add_veh_spawners_to_passive_wave_spawning(toks[j]);
                     }
                 }
             }
@@ -678,16 +678,16 @@ function set_wave_settings() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2265
 // Size: 0xb0
-function copy_wave_settings_from_module(var_f8e5e3aa5762a8e7, group_name) {
+function copy_wave_settings_from_module(module_struct, group_name) {
     if (isdefined(level.spawn_module_structs_memory[group_name])) {
         group = level.spawn_module_structs_memory[group_name][0];
-        var_f8e5e3aa5762a8e7.high_threshold = group.high_threshold;
-        var_f8e5e3aa5762a8e7.next_threshold = group.next_threshold;
-        var_f8e5e3aa5762a8e7.min_count = group.min_count;
-        var_f8e5e3aa5762a8e7.disable_wave_hud = group.disable_wave_hud;
+        module_struct.high_threshold = group.high_threshold;
+        module_struct.next_threshold = group.next_threshold;
+        module_struct.min_count = group.min_count;
+        module_struct.disable_wave_hud = group.disable_wave_hud;
         return;
     }
-    var_f8e5e3aa5762a8e7.spawn_wave_total = var_f8e5e3aa5762a8e7.totalspawns;
+    module_struct.spawn_wave_total = module_struct.totalspawns;
 }
 
 // Namespace namespace_4d6b762e48839f2a / scripts\cp\cp_wave_spawning
@@ -747,11 +747,11 @@ function get_wave_high_threshold(group) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x24a6
 // Size: 0x2f
-function get_spawn_time_from_wave(group, var_d795f37a2be44743) {
+function get_spawn_time_from_wave(group, default_spawntime) {
     if (isdefined(self.wave_time_between_spawns)) {
         return self.wave_time_between_spawns;
     }
-    return var_d795f37a2be44743;
+    return default_spawntime;
 }
 
 // Namespace namespace_4d6b762e48839f2a / scripts\cp\cp_wave_spawning
@@ -795,11 +795,11 @@ function get_current_wave_ref() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x25c8
 // Size: 0x5f
-function add_spawners_to_passive_wave_spawning(var_b8c9ee08c9db35f6) {
-    if (!array_contains(self.requested_spawners, var_b8c9ee08c9db35f6)) {
-        spawners = getstructarray(var_b8c9ee08c9db35f6, "targetname");
+function add_spawners_to_passive_wave_spawning(spawner_targetname) {
+    if (!array_contains(self.requested_spawners, spawner_targetname)) {
+        spawners = getstructarray(spawner_targetname, "targetname");
         if (spawners.size > 0) {
-            self.requested_spawners[self.requested_spawners.size] = var_b8c9ee08c9db35f6;
+            self.requested_spawners[self.requested_spawners.size] = spawner_targetname;
             array_thread(spawners, &spawner_init);
         }
     }
@@ -809,11 +809,11 @@ function add_spawners_to_passive_wave_spawning(var_b8c9ee08c9db35f6) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x262f
 // Size: 0x5f
-function add_veh_spawners_to_passive_wave_spawning(var_b8c9ee08c9db35f6) {
-    if (!array_contains(self.requested_veh_spawners, var_b8c9ee08c9db35f6)) {
-        spawners = getstructarray(var_b8c9ee08c9db35f6, "targetname");
+function add_veh_spawners_to_passive_wave_spawning(spawner_targetname) {
+    if (!array_contains(self.requested_veh_spawners, spawner_targetname)) {
+        spawners = getstructarray(spawner_targetname, "targetname");
         if (spawners.size > 0) {
-            self.requested_veh_spawners[self.requested_veh_spawners.size] = var_b8c9ee08c9db35f6;
+            self.requested_veh_spawners[self.requested_veh_spawners.size] = spawner_targetname;
             array_thread(spawners, &spawner_init);
         }
     }
@@ -911,7 +911,7 @@ function get_ambient_max_count(group, default_value) {
     // Checksum 0x0, Offset: 0x2a05
     // Size: 0xb2
     function function_46ec151542255df6() {
-        level thread function_699304dd575765c9(@"hash_5e35c90539fb0416", &function_fa78a89dd0b02138);
+        level thread debug_activation(@"hash_5e35c90539fb0416", &function_fa78a89dd0b02138);
         wave_table = level.wave_table;
         if (tableexists(wave_table)) {
             row = 0;
@@ -948,9 +948,9 @@ function get_ambient_max_count(group, default_value) {
         case #"hash_ed49946bfff8e78a":
             break;
         case #"hash_bda5687440fc2934":
-            var_fc9c59514f5aa556 = int(params[1]);
-            if (var_fc9c59514f5aa556 > 0) {
-                params[1] = var_fc9c59514f5aa556;
+            test_index = int(params[1]);
+            if (test_index > 0) {
+                params[1] = test_index;
             }
             setomnvar("<dev string:xa8>", 0);
             setomnvar("<dev string:xb6>", params[1]);

@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace namespace_3d584eb182204aa6;
 

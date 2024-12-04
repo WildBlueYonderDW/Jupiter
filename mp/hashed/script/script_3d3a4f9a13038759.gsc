@@ -1,9 +1,9 @@
-#using scripts\mp\gametypes\br_circle.gsc;
 #using script_35ee5e2cef30eea2;
 #using script_5693b37bfb748170;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
 
 #namespace namespace_ffc66489af4e13ac;
 

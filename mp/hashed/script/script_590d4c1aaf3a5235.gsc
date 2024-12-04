@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_4bac13d511590220;
-#using scripts\mp\poi.gsc;
 #using script_1c47017ba325709a;
 #using script_2b736eb3fdd9b328;
+#using script_48814951e916af89;
+#using script_4bac13d511590220;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\poi;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_57e5dd82a72e648a;
 

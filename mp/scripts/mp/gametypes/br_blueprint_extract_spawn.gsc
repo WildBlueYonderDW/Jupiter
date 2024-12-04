@@ -1,11 +1,11 @@
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_extract_quest.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\mp\gametypes\br_extract_quest;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace br_blueprint_extract_spawn;
 

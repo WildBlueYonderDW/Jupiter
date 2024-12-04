@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_util;
 
 #namespace br_publicevent_firesale;
 

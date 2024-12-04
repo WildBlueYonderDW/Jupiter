@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_lights.gsc;
-#using scripts\common\vehicle_treadfx.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_lights;
+#using scripts\common\vehicle_treadfx;
+#using scripts\engine\utility;
 
 #namespace vehicle_build;
 
@@ -262,13 +262,13 @@ function function_2cf37d073c6bde84(classname, name, part, group, delay, var_22ed
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1116
 // Size: 0x8a
-function build_hideparts(classname, var_a5ced284f97867db) {
+function build_hideparts(classname, parts_array) {
     assert(isdefined(classname));
-    assert(isdefined(var_a5ced284f97867db));
+    assert(isdefined(parts_array));
     if (!isdefined(level.vehicle.templates.hide_part_list)) {
         level.vehicle.templates.hide_part_list = [];
     }
-    level.vehicle.templates.hide_part_list[classname] = var_a5ced284f97867db;
+    level.vehicle.templates.hide_part_list[classname] = parts_array;
 }
 
 // Namespace vehicle_build / scripts\common\vehicle_build

@@ -1,19 +1,19 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\sp\utility_code.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_575fda2758b0a36e;
-#using scripts\sp\endmission.gsc;
-#using scripts\sp\gameskill.gsc;
 #using script_4b87f2871b6b025c;
-#using scripts\engine\trace.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\sp\debug.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\sp\equipment\tripwire.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\anim\utility_common.gsc;
+#using script_575fda2758b0a36e;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\utility;
+#using scripts\engine\sp\utility_code;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\debug;
+#using scripts\sp\endmission;
+#using scripts\sp\equipment\tripwire;
+#using scripts\sp\gameskill;
+#using scripts\sp\player;
+#using scripts\sp\utility;
 
 #namespace autosave;
 
@@ -192,7 +192,7 @@ function beginningoflevelsave_thread() {
 // Size: 0x1a
 function function_e96f7708c1775016(trigger) {
     trigger waittill("trigger");
-    function_8d94212299b4b241();
+    autosave_silent();
 }
 
 // Namespace autosave / scripts\sp\autosave
@@ -375,7 +375,7 @@ function autosave_hudfail_update() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2e
 // Size: 0x327
-function _autosave_game_now(var_f450def949fd681e, var_37d5547bbe7fe582, var_bc910db033e0a289) {
+function _autosave_game_now(suppress_print, suppress_notify, var_bc910db033e0a289) {
     if (is_trials_level()) {
         return 0;
     }
@@ -387,7 +387,7 @@ function _autosave_game_now(var_f450def949fd681e, var_37d5547bbe7fe582, var_bc91
     if (isdefined(level.missionfailed) && level.missionfailed) {
         return 0;
     }
-    if (!isdefined(var_37d5547bbe7fe582) || !var_37d5547bbe7fe582) {
+    if (!isdefined(suppress_notify) || !suppress_notify) {
         level notify("trying_new_autosave");
     }
     if (flag("game_saving")) {
@@ -409,7 +409,7 @@ function _autosave_game_now(var_f450def949fd681e, var_37d5547bbe7fe582, var_bc91
     }
     filename = "save_now";
     var_aed6d94a7c103648 = getdescription();
-    if (getdvarint(@"hash_31147f793b338d70") != 0) {
+    if (getdvarint(@"map_reloading") != 0) {
         autosaveprint("_autosave_game_now() Game is restarting", 0);
         return 0;
     }
@@ -417,7 +417,7 @@ function _autosave_game_now(var_f450def949fd681e, var_37d5547bbe7fe582, var_bc91
         autosaveprint("_autosave_game_now() Game is going to next mission", 0);
         return 0;
     }
-    if (isdefined(var_f450def949fd681e)) {
+    if (isdefined(suppress_print)) {
         var_57da6dcc2d8f10a9 = savegamenocommit(filename, var_aed6d94a7c103648, "$default", 1);
     } else {
         var_57da6dcc2d8f10a9 = savegamenocommit(filename, var_aed6d94a7c103648);
@@ -499,7 +499,7 @@ function try_to_autosave_now(var_57da6dcc2d8f10a9) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ed3
 // Size: 0x516
-function tryautosave(name, description, image, timeout, var_f78389d2b10c1f26, var_f450def949fd681e, var_7ee0e272b34faff) {
+function tryautosave(name, description, image, timeout, var_f78389d2b10c1f26, suppress_print, var_7ee0e272b34faff) {
     if (is_trials_level()) {
         return 0;
     }
@@ -531,8 +531,8 @@ function tryautosave(name, description, image, timeout, var_f78389d2b10c1f26, va
     if (isdefined(timeout) && timeout < time0 + time1 + time2) {
         assertmsg("Warning, tried to do an autosave_or_timeout with a time less than " + time0 + time1 + time2 + " (the minimum time it takes to do autosave checks)");
     }
-    if (!isdefined(var_f450def949fd681e)) {
-        var_f450def949fd681e = 0;
+    if (!isdefined(suppress_print)) {
+        suppress_print = 0;
     }
     if (!isdefined(image)) {
         image = "$default";
@@ -565,7 +565,7 @@ function tryautosave(name, description, image, timeout, var_f78389d2b10c1f26, va
         trycount++;
         if (autosavecheck(undefined, var_f78389d2b10c1f26)) {
             waitfortransientloading("tryAutoSave()");
-            if (getdvarint(@"hash_31147f793b338d70") != 0) {
+            if (getdvarint(@"map_reloading") != 0) {
                 autosaveprint("tryAutoSave() Game is restarting", 0);
                 break;
             }
@@ -573,7 +573,7 @@ function tryautosave(name, description, image, timeout, var_f78389d2b10c1f26, va
                 autosaveprint("tryAutoSave() Game is going to next mission", 0);
                 break;
             }
-            var_57da6dcc2d8f10a9 = savegamenocommit(level.var_93f4c5209aa8ebbe, var_aed6d94a7c103648, image, var_f450def949fd681e);
+            var_57da6dcc2d8f10a9 = savegamenocommit(level.var_93f4c5209aa8ebbe, var_aed6d94a7c103648, image, suppress_print);
             autosaveprint("tryAutoSave() Saving no commit", 2, var_57da6dcc2d8f10a9);
             if (var_57da6dcc2d8f10a9 < 0) {
                 autosaveprint("tryAutoSave() save error", 0, var_57da6dcc2d8f10a9);
@@ -1001,8 +1001,8 @@ function autosavethreatcheck(var_9a6be9e4b6d6b6d1, var_57da6dcc2d8f10a9) {
             autosaveprint("AI (" + enemy getentitynumber() + ") meleeing player", 0, var_57da6dcc2d8f10a9);
             return false;
         }
-        var_5c5e201e116c223b = [[ level.autosave.proximity_threat_func ]](enemy);
-        if (var_5c5e201e116c223b == "return_even_if_low_accuracy") {
+        proximity_threat = [[ level.autosave.proximity_threat_func ]](enemy);
+        if (proximity_threat == "return_even_if_low_accuracy") {
             autosaveprint("AI (" + enemy getentitynumber() + ") too close to player, so close we're ignoring his accuracy", 0, var_57da6dcc2d8f10a9);
             return false;
         }
@@ -1014,7 +1014,7 @@ function autosavethreatcheck(var_9a6be9e4b6d6b6d1, var_57da6dcc2d8f10a9) {
             #/
             continue;
         }
-        if (var_5c5e201e116c223b == "none") {
+        if (proximity_threat == "none") {
             /#
                 if (getdvarint(@"hash_6af159684591cb79")) {
                     enemy thread scripts\sp\debug::function_e31e954e5ae9ad1d("<dev string:x98>", (0, 0, 85), 0.8, (0, 1, 0));

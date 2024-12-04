@@ -1,7 +1,7 @@
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\utility\inventory;
 
 #namespace namespace_357503b62afdbcce;
 

@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using script_5bc60484d17fa95c;
-#using scripts\mp\hud_message.gsc;
-#using script_5bab271917698dc4;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_3aa8e63a56e3416;
-#using scripts\mp\hud_util.gsc;
+#using script_5bab271917698dc4;
+#using script_5bc60484d17fa95c;
+#using scripts\common\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
 
 #namespace namespace_de6eb888abbe38e1;
 

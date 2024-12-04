@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
 #using script_7556d6ff132b5aa;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace bunkerbuster;
 

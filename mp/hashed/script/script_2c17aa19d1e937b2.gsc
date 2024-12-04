@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\anim.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace samsite;
 
@@ -551,7 +551,7 @@ function function_7647015ee3137876() {
 // Size: 0x39
 function function_3c11327e37345bb2() {
     level.scr_animtree["samsite"] = %script_model;
-    level.scr_anim["samsite"]["fire"] = level.var_1a209bd995a7fa83["iw9_mp_prop_samsite_launch"];
+    level.scr_anim["samsite"]["fire"] = level.br_anim["iw9_mp_prop_samsite_launch"];
 }
 
 // Namespace samsite / namespace_f70554b797fd58c2

@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\killstreaks\jackal.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\mp\agents\agent_common.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_common;
+#using scripts\mp\anim;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\killstreaks\jackal;
+#using scripts\mp\mp_agent;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_f0e55b457115eff8;
 
@@ -306,26 +306,26 @@ function helithink(team, scene_node, scene_name) {
 // Checksum 0x0, Offset: 0x1ea2
 // Size: 0x127
 function heli_interior_sfx(scene_name) {
-    var_4237dfc2448d7bc8 = spawn("script_model", self.linktoent.origin);
-    var_60876d0f32d5396 = spawn("script_model", self.linktoent.origin);
-    var_60876d0f32d5396 linkto(self.linktoent, "tag_light_cockpit01");
+    ceiling_sfx = spawn("script_model", self.linktoent.origin);
+    cockpit_sfx = spawn("script_model", self.linktoent.origin);
+    cockpit_sfx linkto(self.linktoent, "tag_light_cockpit01");
     wait 0.1;
     if (scene_name == "alpha") {
         self.linktoent playsoundonmovingent("scn_mp_hackney_heli1_lr");
-        var_4237dfc2448d7bc8 linkto(self.linktoent, "j_tied_cable_02");
+        ceiling_sfx linkto(self.linktoent, "j_tied_cable_02");
         wait 0.1;
-        var_4237dfc2448d7bc8 playsoundonmovingent("scn_infil_hackney_heli1_ceiling_rattles");
-        var_60876d0f32d5396 playsoundonmovingent("scn_infil_hackney_heli1_cockpit_rattles");
+        ceiling_sfx playsoundonmovingent("scn_infil_hackney_heli1_ceiling_rattles");
+        cockpit_sfx playsoundonmovingent("scn_infil_hackney_heli1_cockpit_rattles");
     } else {
         self.linktoent playsoundonmovingent("scn_mp_hackney_heli2_lr");
-        var_4237dfc2448d7bc8 linkto(self.linktoent, "j_ceiling_cable_02");
+        ceiling_sfx linkto(self.linktoent, "j_ceiling_cable_02");
         wait 0.1;
-        var_4237dfc2448d7bc8 playsoundonmovingent("scn_infil_hackney_heli2_ceiling_rattles");
-        var_60876d0f32d5396 playsoundonmovingent("scn_infil_hackney_heli2_cockpit_rattles");
+        ceiling_sfx playsoundonmovingent("scn_infil_hackney_heli2_ceiling_rattles");
+        cockpit_sfx playsoundonmovingent("scn_infil_hackney_heli2_cockpit_rattles");
     }
     level waittill("prematch_over");
-    var_4237dfc2448d7bc8 delete();
-    var_60876d0f32d5396 delete();
+    ceiling_sfx delete();
+    cockpit_sfx delete();
 }
 
 // Namespace namespace_f0e55b457115eff8 / scripts\mp\infilexfil\rappel_hackney_infil
@@ -618,7 +618,7 @@ function vehicles_alpha_anims(subtype) {
     switch (subtype) {
     case #"hash_6829ee5abc10c38b":
         level.scr_animtree["blima"] = %mp_vehicles_always_loaded;
-        switch (getdvar(@"hash_687fb8f9b7a23245")) {
+        switch (getdvar(@"g_mapname")) {
         case #"hash_be52fbd3b8746bc":
         case #"hash_d83171ba75f8b8fe":
             level.scr_anim["blima"]["rappel_hackney_infil_alpha"] = mp_vehicles_always_loaded%mp_infil_blima_heli_mpspear_alpha;
@@ -647,7 +647,7 @@ function vehicles_alpha_anims(subtype) {
         break;
     case #"hash_1cc79b02710cab23":
         level.scr_animtree["blima"] = %mp_vehicles_always_loaded;
-        switch (getdvar(@"hash_687fb8f9b7a23245")) {
+        switch (getdvar(@"g_mapname")) {
         case #"hash_be52fbd3b8746bc":
         case #"hash_d83171ba75f8b8fe":
             level.scr_anim["blima"]["rappel_hackney_infil_bravo"] = mp_vehicles_always_loaded%mp_infil_blima_heli_mpspear_bravo;
@@ -751,9 +751,9 @@ function cleanup() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x370c
 // Size: 0x9f
-function spawn_infil_axis_ai(lane, spawn_loc, var_fd901b0c91a0d1f, var_17f7f54aa3ef276) {
+function spawn_infil_axis_ai(lane, spawn_loc, spawn_ang, weapon_override) {
     level.gameskill = 0;
-    agent = scripts\mp\mp_agent::spawnnewagent("soldier_agent", "axis", spawn_loc, var_fd901b0c91a0d1f, ter_op(isdefined(var_17f7f54aa3ef276), var_17f7f54aa3ef276, "iw8_ar_mike4_mp"));
+    agent = scripts\mp\mp_agent::spawnnewagent("soldier_agent", "axis", spawn_loc, spawn_ang, ter_op(isdefined(weapon_override), weapon_override, "iw8_ar_mike4_mp"));
     if (!isdefined(agent)) {
         return undefined;
     }

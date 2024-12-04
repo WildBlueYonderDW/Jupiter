@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace namespace_a131188218d8b5c3;
 

@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_5d265b4fca61f070;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
 
 #namespace namespace_f83311618817dbe7;
 

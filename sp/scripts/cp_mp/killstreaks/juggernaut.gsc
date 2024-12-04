@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_13865ca76df87ea;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
 #using script_189b67b2735b981d;
+#using script_2669878cf5a1b6bc;
 #using script_cbb0697de4c5728;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace juggernaut;
 

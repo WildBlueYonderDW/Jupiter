@@ -1,4 +1,4 @@
-#using scripts\common\callbacks.gsc;
+#using scripts\common\callbacks;
 
 #namespace namespace_c3d111a5cd3816be;
 

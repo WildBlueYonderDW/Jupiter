@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_2c17aa19d1e937b2;
+#using script_48814951e916af89;
 #using script_7b8639f512d4cfe4;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_ae057c3bf5e89076;
 

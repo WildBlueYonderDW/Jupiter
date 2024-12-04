@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\mp\damage.gsc;
-#using script_5295a2c10229ffef;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\engine\trace.gsc;
 #using script_42adcce5878f583;
+#using script_5295a2c10229ffef;
+#using scripts\common\utility;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\utility\debug;
 
 #namespace namespace_3fa2391f9077d907;
 
@@ -157,11 +157,11 @@ function private function_87e78a3564c3df84(var_2f53a6b82c6bd61b, var_2f2f9cb82c4
     self endon("death");
     self endon("afo_dummy_destroyed");
     self.activity endon("activity_ended");
-    while (!isdefined(self.activity.var_4b7032d8632723e0)) {
+    while (!isdefined(self.activity.warlord_agent)) {
         wait 2;
     }
-    while (isdefined(self.activity.var_4b7032d8632723e0)) {
-        pinglocationenemyteams(self.origin, self.team, self.activity.var_4b7032d8632723e0);
+    while (isdefined(self.activity.warlord_agent)) {
+        pinglocationenemyteams(self.origin, self.team, self.activity.warlord_agent);
         firetype = utility::ter_op(randomint(2), "smgFire", "arFire");
         self setscriptablepartstate("weaponSounds", firetype, 1);
         if (!isdefined(var_2f53a6b82c6bd61b) || !isdefined(var_2f2f9cb82c434565)) {
@@ -223,7 +223,7 @@ function private function_a3ba34f65c02912a(damagedirection) {
 function private function_3b91f075feeb9315() {
     level endon("game_ended");
     self waittill("afo_dummy_destroyed");
-    if (isdefined(self.activity) && isdefined(self.activity.var_4b7032d8632723e0)) {
+    if (isdefined(self.activity) && isdefined(self.activity.warlord_agent)) {
         var_211e69a014146049 = self.origin + (0, 0, 65);
         var_bcf224bf37277a85 = utility::playersincylinder(var_211e69a014146049, 512, undefined, 100);
         flashbangweapon = makeweapon("jup_flash_grenade_ob");
@@ -235,14 +235,14 @@ function private function_3b91f075feeb9315() {
                 thread scripts\mp\utility\debug::drawsphere(var_211e69a014146049, 5, 10, (1, 0, 0));
             }
         #/
-        inflictor = self.activity.var_4b7032d8632723e0;
+        inflictor = self.activity.warlord_agent;
         foreach (flashedplayer in var_bcf224bf37277a85) {
             directray = scripts\engine\trace::ray_trace_passed(flashedplayer geteye(), var_211e69a014146049, flashedplayer);
             if (directray) {
                 flashedplayer dodamage(1, var_211e69a014146049, inflictor, inflictor, "MOD_EXPLOSIVE", flashbangweapon);
             }
         }
-        self.activity.var_4b7032d8632723e0 namespace_dc53a27a8db8e6bf::function_a15f7af910d7f1b6();
+        self.activity.warlord_agent namespace_dc53a27a8db8e6bf::function_a15f7af910d7f1b6();
     }
     if (isdefined(self.navobstacleid)) {
         destroynavobstacle(self.navobstacleid);

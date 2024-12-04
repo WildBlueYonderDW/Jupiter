@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\spawnlogic.gsc;
 #using script_d17503f56b92539;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\gameobjects;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace spawnfactor;
 

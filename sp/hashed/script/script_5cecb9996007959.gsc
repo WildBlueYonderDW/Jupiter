@@ -1,6 +1,6 @@
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\common\cap.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\cap;
 
 #namespace namespace_ee40130089e5429f;
 

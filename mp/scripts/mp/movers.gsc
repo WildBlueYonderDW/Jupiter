@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\movers.gsc;
-#using scripts\common\elevators.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\equipment\tactical_cover.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
+#using scripts\common\elevators;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\movers;
+#using scripts\mp\utility\damage;
+#using scripts\mp\weapons;
 
 #namespace movers;
 
@@ -747,11 +747,11 @@ function unresolved_collision_owner_damage(player) {
         player scripts\mp\movers::mover_suicide();
         return;
     }
-    var_6fdf3dbbb3b42f68 = 1000;
+    damage_ammount = 1000;
     if (isdefined(inflictor.unresolved_collision_damage)) {
-        var_6fdf3dbbb3b42f68 = inflictor.unresolved_collision_damage;
+        damage_ammount = inflictor.unresolved_collision_damage;
     }
-    player dodamage(var_6fdf3dbbb3b42f68, inflictor.origin, inflictor.owner, inflictor, "MOD_CRUSH");
+    player dodamage(damage_ammount, inflictor.origin, inflictor.owner, inflictor, "MOD_CRUSH");
 }
 
 // Namespace movers / scripts\mp\movers

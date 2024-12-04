@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\flags.gsc;
-#using script_48814951e916af89;
 #using script_15074130da8a935c;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using script_48814951e916af89;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_550d8f4896d02349;
 

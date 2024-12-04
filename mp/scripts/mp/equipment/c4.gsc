@@ -1,26 +1,26 @@
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\print.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\equipment.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\mp\equipment_interact.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
 #using script_736dec95a49487a6;
-#using scripts\common\elevators.gsc;
-#using scripts\mp\perks\perk_equipmentping.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\utility\points.gsc;
+#using scripts\common\ai;
+#using scripts\common\elevators;
+#using scripts\common\utility;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment_interact;
+#using scripts\mp\hud_message;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\perks\perk_equipmentping;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\weapons;
 
 #namespace c4;
 
@@ -177,14 +177,14 @@ function c4_explode(attacker) {
         var_cbf7be4f62a0ddb2 = 5;
         statename = "explode";
     }
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+    if (getdvarint(@"mgl", 0)) {
         thread scripts\common\ai::function_f8903387ea945165(self.origin, 2);
     }
     self setentityowner(attacker);
     self clearscriptabledamageowner();
     self setscriptablepartstate("effects", statename, 0);
     if (istrue(self.var_e73a396a2a6b1d56)) {
-        radius = self.bundle.var_76a521b701863819;
+        radius = self.bundle.c4_radius;
         innerdamage = self.bundle.var_6ace4783c4cf0969;
         outerdamage = self.bundle.var_c28313493ecca6a;
         self radiusdamage(self.origin, radius, innerdamage, outerdamage, attacker, "MOD_EXPLOSIVE", self.weapon_object);

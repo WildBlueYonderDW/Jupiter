@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_6a8ec730b2bfa844;
-#using script_41ba451876d0900c;
 #using script_1f97a44d1761c919;
+#using script_371b4c2ab5861e62;
+#using script_41ba451876d0900c;
+#using script_48814951e916af89;
+#using script_6a8ec730b2bfa844;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\game;
 
 #namespace poi;
 
@@ -60,7 +60,7 @@ function poi_init() {
         poidefaultstate = 0;
     }
     foreach (poiname in level.poi_names) {
-        dvarhash = hashcat(@"hash_8a42e4da731a0a67", poiname);
+        dvarhash = hashcat(@"poi_", poiname);
         if (getdvarint(dvarhash, poidefaultstate) == 0) {
             level.var_ab20b3a256911579[level.var_ab20b3a256911579.size] = poiname;
         }

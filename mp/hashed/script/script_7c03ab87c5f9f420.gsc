@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_19c169a442d5975a;
-#using scripts\mp\utility\script.gsc;
-#using script_67015c88c47ec4f8;
 #using script_48814951e916af89;
-#using script_6a8ec730b2bfa844;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\hud_message.gsc;
+#using script_67015c88c47ec4f8;
 #using script_6775ad452d13858;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\player.gsc;
+#using script_6a8ec730b2bfa844;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
 
 #namespace disguise;
 

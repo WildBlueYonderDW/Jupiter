@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace tweakables;
 
@@ -375,7 +375,7 @@ function init() {
     registertweakable("game", "deathpointloss", @"hash_cd8fc3bf8aba4931", 0);
     registertweakable("game", "suicidepointloss", @"hash_1ef34a7cbafda853", 0);
     registertweakable("team", "teamkillpointloss", @"hash_e8121d056bde22a3", 0);
-    registertweakable("game", "thirdperson", @"hash_c00e244ea59d530e", 0);
+    registertweakable("game", "thirdperson", @"camera_thirdperson", 0);
     registertweakable("game", "lowgravity", @"hash_12ca000dd2976ebc", 0);
     registertweakable("game", "lowgravitystrength", @"hash_2f4cf62df1af9a6", 125);
     registertweakable("game", "minfalldamageheight", @"bg_falldamageminheight", 225);

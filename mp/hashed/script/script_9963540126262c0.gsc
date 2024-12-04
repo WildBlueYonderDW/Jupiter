@@ -1,6 +1,6 @@
 #using script_d74ae0b4aa21186;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_4cfb97b54bb76867;
 

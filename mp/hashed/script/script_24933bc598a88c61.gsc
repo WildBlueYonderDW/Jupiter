@@ -1,33 +1,33 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\callback_group.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using script_a35012b9b75a996;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\shellshock.gsc;
-#using script_104e3370b024f998;
 #using script_7ef95bba57dc4b82;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\callback_group;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\shock_stick;
+#using scripts\mp\equipment\temp_v;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\shellshock;
+#using scripts\mp\supers;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace super_electric_discharge;
 
@@ -233,7 +233,7 @@ function function_2c9f694b8b0758e1(sourcearray, reforigin, shockdata) {
         if (player == self) {
             continue;
         }
-        if (!istrue(player namespace_742e7eca5294ecdc::shockstick_canbehaywire(shockdata, 1))) {
+        if (!istrue(player scripts\mp\equipment\shock_stick::shockstick_canbehaywire(shockdata, 1))) {
             continue;
         }
         index = filteredplayers.size;
@@ -330,7 +330,7 @@ function function_55d0db940f81e2e6(victim, weaponobj, shockdata) {
     victim.var_fe74f3f4d5afe567 = gettime();
     thread function_83a614bd6a1f69f0(victim, totalshocktime);
     while (gettime() < shockendtime) {
-        shockdata thread namespace_742e7eca5294ecdc::shockstick_applyhaywire(victim, shockdata.weapon, 0);
+        shockdata thread scripts\mp\equipment\shock_stick::shockstick_applyhaywire(victim, shockdata.weapon, 0);
         damage = ter_op(isplayer(victim), 3, 5);
         if (victim isswimming()) {
             damage *= 2;
@@ -402,7 +402,7 @@ function function_456170ef7257430b(var_58e914135e6ea706, iskillstreak) {
         self.super.isactive = 0;
     }
     removeperk("specialty_blastshield");
-    thread namespace_416e533f6ed17708::function_269b97f3d86eb172(shouldfinish, dontclear, "super_use_finished", istrue(iskillstreak));
+    thread scripts\mp\equipment\temp_v::function_269b97f3d86eb172(shouldfinish, dontclear, "super_use_finished", istrue(iskillstreak));
     return true;
 }
 

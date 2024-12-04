@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gametypes\br_lootchopper.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_lootchopper;
+#using scripts\mp\hud_util;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_1e78e6063f4018af;
 

@@ -1,6 +1,6 @@
-#namespace namespace_c6da8755859ef4fe;
+#namespace civ_russian_male_head_1_flashback;
 
-// Namespace namespace_c6da8755859ef4fe / namespace_57dcde873ef717e
+// Namespace civ_russian_male_head_1_flashback / namespace_57dcde873ef717e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x149
 // Size: 0x65

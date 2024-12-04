@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\math.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\common\values.gsc;
-#using scripts\common\ai.gsc;
 #using script_193e3e231841082f;
 #using script_22f1701e151b9d12;
 #using script_6c63dbe7d4c85e19;
+#using script_7edf952f8921aa6b;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 
@@ -159,14 +159,14 @@ function private function_363dbe4e6642291(mobile_spawner, var_69e3e4c4a13b7d1) {
     mobile_spawner utility::function_3ab9164ef76940fd("mobile_spawner", "mobile_spawner_impact");
     var_46d416fa1e8b773e = utility::random(var_69e3e4c4a13b7d1 ? self.var_e62a57499d165e15 : self.var_d230d829f6d05081);
     aitypes = namespace_2b1145f62aa835b8::get_aitype_by_subclass_sharedfunc(var_46d416fa1e8b773e);
-    var_9f578d49d039394b = undefined;
+    base_aitype = undefined;
     foreach (aitype in aitypes) {
         strlen = aitype.size;
-        if (!isdefined(var_9f578d49d039394b) || var_9f578d49d039394b.size > strlen) {
-            var_9f578d49d039394b = aitype;
+        if (!isdefined(base_aitype) || base_aitype.size > strlen) {
+            base_aitype = aitype;
         }
     }
-    var_931e0bfccfc26fa5 = var_9f578d49d039394b;
+    var_931e0bfccfc26fa5 = base_aitype;
     var_28c911f563f84e4 = utility::function_114e5c055b13dacf(mobile_spawner.origin, 200, -200);
     if (isdefined(var_28c911f563f84e4)) {
         angles = (0, 0, 0);
@@ -245,8 +245,8 @@ function private function_4b8806398ad868d9(var_7ffb0443e06ecae) {
         playfx(getfx("mobile_spawner_death_elite_vfx"), self getcentroid() + (0, 0, 30));
     }
     explosion_radius = 500;
-    var_310236dbf257fbb5 = getaiarrayinradius(self.origin, explosion_radius);
-    foreach (ai in var_310236dbf257fbb5) {
+    nearby_ai = getaiarrayinradius(self.origin, explosion_radius);
+    foreach (ai in nearby_ai) {
         if (ai ent_flag("spawned_by_mobile_spawner")) {
             ai kill(ai.origin);
             wait randomfloatrange(0, 0.2);

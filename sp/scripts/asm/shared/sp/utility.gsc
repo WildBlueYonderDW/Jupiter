@@ -1,12 +1,12 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\sp\art.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\asm_sp;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\sp\art;
 
 #namespace utility;
 
@@ -294,8 +294,8 @@ function playerhealth() {
         } else {
             self playlocalsound("breathing_hurt");
         }
-        var_399177f7eeb779b7 = 0.1;
-        wait var_399177f7eeb779b7 + randomfloat(0.8);
+        breathing_time = 0.1;
+        wait breathing_time + randomfloat(0.8);
     }
 }
 
@@ -326,9 +326,9 @@ function meleegrab_counterinput(animtime) {
     time = gettime();
     start_delay = animtime - var_a7c377795bd0850e;
     start_time = time + start_delay * 1000;
-    var_e8807713f4b2054a = animtime;
-    end_time = time + var_e8807713f4b2054a * 1000;
-    thread meleegrab_slowmo(start_delay, var_e8807713f4b2054a);
+    end_delay = animtime;
+    end_time = time + end_delay * 1000;
+    thread meleegrab_slowmo(start_delay, end_delay);
     thread meleegrab_counterhint(start_delay, var_a7c377795bd0850e);
     while (playercounterpress()) {
         wait 0.05;
@@ -357,7 +357,7 @@ function meleegrab_counterinput(animtime) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb7
 // Size: 0x78
-function meleegrab_slowmo(start_delay, var_e8807713f4b2054a) {
+function meleegrab_slowmo(start_delay, end_delay) {
     level.player endon("meleegrab_interupt");
     wait start_delay;
     setslowmotion(1, 0.3, 0.1);
@@ -468,7 +468,7 @@ function counterhintdestroy(fade) {
         wait 1;
         ai_array = getaiarray();
         assert(ai_array.size > 0);
-        var_928c81484dd6d876 = ai_array[0];
+        my_ai = ai_array[0];
         asm = anim.asm[asmname];
         foreach (state in asm.states) {
             if (!isdefined(state.flags) || !(array_contains(state.flags, "<dev string:x1c>") || array_contains(state.flags, "<dev string:x29>"))) {
@@ -527,7 +527,7 @@ function counterhintdestroy(fade) {
         wait 1;
         ai_array = getaiarray();
         assert(ai_array.size > 0);
-        var_928c81484dd6d876 = ai_array[0];
+        my_ai = ai_array[0];
         asm = anim.asm[asmname];
         foreach (statename, state in asm.states) {
             if (!issubstr(statename, "<dev string:xb6>")) {
@@ -586,7 +586,7 @@ function counterhintdestroy(fade) {
         wait 1;
         ai_array = getaiarray();
         assert(ai_array.size > 0);
-        var_928c81484dd6d876 = ai_array[0];
+        my_ai = ai_array[0];
         asm = anim.asm[asmname];
         foreach (statename, state in asm.states) {
             if (issubstr(statename, "<dev string:x161>")) {
@@ -669,7 +669,7 @@ function counterhintdestroy(fade) {
         wait 1;
         ai_array = getaiarray();
         assert(ai_array.size > 0);
-        var_928c81484dd6d876 = ai_array[0];
+        my_ai = ai_array[0];
         asm = anim.asm[asmname];
         foreach (statename, state in asm.states) {
             if (issubstr(statename, "<dev string:x161>")) {

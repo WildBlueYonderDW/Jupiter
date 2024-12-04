@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
 #using script_642c5544c38837a2;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace supply_sweep;
 

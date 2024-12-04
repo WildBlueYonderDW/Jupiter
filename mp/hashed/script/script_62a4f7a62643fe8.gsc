@@ -1,34 +1,34 @@
-#using script_686729055b66c6e4;
-#using script_4fa22bc28608e9bd;
-#using scripts\common\ai.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using script_22f1701e151b9d12;
-#using script_7d3e27aa82b5d70b;
-#using script_7b2517368c79e5bc;
-#using script_7f5e7a3cb514aca5;
-#using script_749ff6f56673a813;
 #using script_1f97a44d1761c919;
-#using scripts\engine\math.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\ai_behavior.gsc;
-#using script_41387eecc35b88bf;
-#using script_a35012b9b75a996;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\ob.gsc;
-#using scripts\mp\hud_message.gsc;
+#using script_22f1701e151b9d12;
 #using script_3a13b8032b62a5e6;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_645acc6422636f9f;
+#using script_41387eecc35b88bf;
 #using script_4e6e58ab5d96c2b0;
+#using script_4fa22bc28608e9bd;
 #using script_638d701d263ee1ed;
+#using script_645acc6422636f9f;
+#using script_686729055b66c6e4;
+#using script_749ff6f56673a813;
+#using script_7b2517368c79e5bc;
+#using script_7d3e27aa82b5d70b;
+#using script_7f5e7a3cb514aca5;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\equipment\shock_stick;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\ob;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
 
 #namespace aether_storm;
 
@@ -644,16 +644,16 @@ function function_e427c341b9abc409() {
     utility::flag_wait("ai_spawn_director_initialized");
     spawnpoint = getclosestpointonnavmesh(level.aether_storm.starting_origin);
     var_957d0419ff6605b9 = namespace_2b1145f62aa835b8::get_aitype_by_subclass_sharedfunc("zombie_disciple_hvt_stormcaller");
-    var_9f578d49d039394b = undefined;
+    base_aitype = undefined;
     foreach (aitype in var_957d0419ff6605b9) {
         strlen = aitype.size;
-        if (!isdefined(var_9f578d49d039394b) || var_9f578d49d039394b.size > strlen) {
-            var_9f578d49d039394b = aitype;
+        if (!isdefined(base_aitype) || base_aitype.size > strlen) {
+            base_aitype = aitype;
         }
     }
     while (!isdefined(level.aether_storm.stormcaller)) {
         wait 1;
-        level.aether_storm.stormcaller = namespace_2b1145f62aa835b8::spawnnewaitype_sharedfunc(var_9f578d49d039394b, spawnpoint, (0, 0, 0), "team_two_hundred");
+        level.aether_storm.stormcaller = namespace_2b1145f62aa835b8::spawnnewaitype_sharedfunc(base_aitype, spawnpoint, (0, 0, 0), "team_two_hundred");
     }
     level.aether_storm.var_9be93da34100a104 = [];
     level.aether_storm.stormcaller._blackboard.var_46621811c1024018 = spawnpoint;
@@ -1009,7 +1009,7 @@ function function_1ccf067179383388(victim, shock_duration, damage) {
 // Checksum 0x0, Offset: 0x45cd
 // Size: 0x7d
 function function_1e93e4747cd83387(victim, shock_duration, damage) {
-    victim zombie_stun::function_2e4d3c67e63f83ac(shock_duration);
+    victim zombie_stun::stun_ai(shock_duration);
     victim utility::function_3ab9164ef76940fd("shockStickVfx", "vfx_start");
     victim dodamage(damage, victim.origin, victim, undefined, "MOD_TRIGGER_HURT", "danger_circle_br", "none", undefined, 65536);
     wait shock_duration;
@@ -1077,27 +1077,27 @@ function function_d0f8b9fdea272469(sparams) {
     function private function_3a2ca530d33dbb7c() {
         level endon("<dev string:x53f>");
         devgui::function_6e7290c8ee4f558b("<dev string:x54d>");
-        devgui::function_b23a59dfb4ca49a1("<dev string:x561>", "<dev string:x58c>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x5dc>", "<dev string:x607>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x657>", "<dev string:x680>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x6ce>", "<dev string:x6f8>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x747>", "<dev string:x771>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x7c0>", "<dev string:x7eb>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x83b>", "<dev string:x866>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x8b6>", "<dev string:x8df>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x92d>", "<dev string:x957>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:x9a6>", "<dev string:x9d0>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xa1f>", "<dev string:xa4d>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xaa0>", "<dev string:xace>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xb21>", "<dev string:xb4d>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xb9e>", "<dev string:xbcb>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xc1d>", "<dev string:xc4a>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xc9c>", "<dev string:xcc0>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xd10>", "<dev string:xd36>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xd81>", "<dev string:xda6>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xdf0>", "<dev string:xe15>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xe5f>", "<dev string:xe84>", &function_9ecaf8b1fd98837e);
-        devgui::function_b23a59dfb4ca49a1("<dev string:xece>", "<dev string:xef3>", &function_9ecaf8b1fd98837e);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x561>", "<dev string:x58c>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x5dc>", "<dev string:x607>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x657>", "<dev string:x680>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x6ce>", "<dev string:x6f8>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x747>", "<dev string:x771>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x7c0>", "<dev string:x7eb>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x83b>", "<dev string:x866>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x8b6>", "<dev string:x8df>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x92d>", "<dev string:x957>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:x9a6>", "<dev string:x9d0>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xa1f>", "<dev string:xa4d>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xaa0>", "<dev string:xace>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xb21>", "<dev string:xb4d>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xb9e>", "<dev string:xbcb>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xc1d>", "<dev string:xc4a>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xc9c>", "<dev string:xcc0>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xd10>", "<dev string:xd36>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xd81>", "<dev string:xda6>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xdf0>", "<dev string:xe15>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xe5f>", "<dev string:xe84>", &debug_announcement);
+        devgui::function_b23a59dfb4ca49a1("<dev string:xece>", "<dev string:xef3>", &debug_announcement);
         devgui::function_b2159fbbd7ac094e("<dev string:xf3c>", @"hash_c970fe9ef25b9a04");
         devgui::function_b23a59dfb4ca49a1("<dev string:xf4f>", "<dev string:xf60>", &function_108d531ae15fcc87);
         devgui::function_b23a59dfb4ca49a1("<dev string:xf8f>", "<dev string:xfa0>", &function_108d531ae15fcc87);
@@ -1263,7 +1263,7 @@ function function_d0f8b9fdea272469(sparams) {
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x57f6
     // Size: 0x397
-    function function_9ecaf8b1fd98837e(params) {
+    function debug_announcement(params) {
         switch (params[0]) {
         case #"hash_11b12a173b095faa":
         case #"hash_1eac9737b00b8d4f":

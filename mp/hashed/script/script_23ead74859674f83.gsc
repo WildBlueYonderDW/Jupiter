@@ -1,8 +1,8 @@
-#using scripts\mp\mp_agent.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm_bb;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace rusher_util;
 

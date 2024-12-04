@@ -1,11 +1,11 @@
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using script_7c40fa80892a721;
 #using script_5acb344add63cac4;
 #using script_6d4be2d2674d1812;
-#using scripts\engine\utility.gsc;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_53b51ef230f6a8e6;
 
@@ -99,11 +99,11 @@ function private function_ac6cb661c14270d6(einflictor, victim, eattacker, idamag
         }
         /#
             if (getdvarint(@"hash_81fb55760c8c99aa", 0)) {
-                var_1e7eea2f57f4d0b0 = victim.health + victim.armorhealth;
+                total_health = victim.health + victim.armorhealth;
                 string = victim.name + "<dev string:x1c>";
-                string += "<dev string:x21>" + var_1e7eea2f57f4d0b0 + "<dev string:x1c>";
+                string += "<dev string:x21>" + total_health + "<dev string:x1c>";
                 string += "<dev string:x32>" + idamage + "<dev string:x1c>";
-                string += "<dev string:x43>" + var_1e7eea2f57f4d0b0 - idamage + "<dev string:x1c>";
+                string += "<dev string:x43>" + total_health - idamage + "<dev string:x1c>";
                 string += "<dev string:x54>" + smeansofdeath + "<dev string:x1c>";
                 println(string);
             }

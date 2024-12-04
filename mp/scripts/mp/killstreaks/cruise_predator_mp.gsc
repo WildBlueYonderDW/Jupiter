@@ -1,14 +1,14 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\cruise_predator.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\cruise_predator;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\events;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_a635c889f6cc10b4;
 

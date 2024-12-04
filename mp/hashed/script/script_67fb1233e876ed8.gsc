@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace structspawnconfig;
 

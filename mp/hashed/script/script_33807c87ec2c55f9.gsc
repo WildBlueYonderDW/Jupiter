@@ -1,5 +1,5 @@
-#using scripts\common\system.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\system;
+#using scripts\engine\utility;
 
 #namespace ww_raygun;
 

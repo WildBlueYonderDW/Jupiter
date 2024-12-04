@@ -1,36 +1,36 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\spawnselection.gsc;
-#using scripts\common\ui.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gametypes\arm_vehicles.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\spawncamera.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\flashpoint.gsc;
-#using scripts\mp\utility\lower_message.gsc;
 #using script_58be75c518bf0d40;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\common\ui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\flashpoint;
+#using scripts\mp\gametypes\arm_vehicles;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spawncamera;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\spawnselection;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\trigger;
 
 #namespace spawnselection;
 
@@ -1256,13 +1256,13 @@ function updateplayerspawninputtype(var_84d6164f2a6eb8da) {
     }
     var_c1606c1030582cfa = 65536;
     var_9078b4c4e3258dfb = 131072;
-    var_caaf532a5fd0a997 = 262144;
+    mask_activate = 262144;
     var_e4f4a7af0d80ea24 = 524288;
     self.gwinputtypesused["rightmouseup"] = istrue(self.gwinputtypesused["rightmouseup"]) || (var_84d6164f2a6eb8da & var_c1606c1030582cfa) > 0;
     self.gwinputtypesused["leftmouseup"] = istrue(self.gwinputtypesused["leftmouseup"]) || (var_84d6164f2a6eb8da & var_9078b4c4e3258dfb) > 0;
-    self.gwinputtypesused["activate"] = istrue(self.gwinputtypesused["activate"]) || (var_84d6164f2a6eb8da & var_caaf532a5fd0a997) > 0;
+    self.gwinputtypesused["activate"] = istrue(self.gwinputtypesused["activate"]) || (var_84d6164f2a6eb8da & mask_activate) > 0;
     self.gwinputtypesused["gostand"] = istrue(self.gwinputtypesused["gostand"]) || (var_84d6164f2a6eb8da & var_e4f4a7af0d80ea24) > 0;
-    return var_84d6164f2a6eb8da & ~(var_c1606c1030582cfa | var_9078b4c4e3258dfb | var_caaf532a5fd0a997 | var_e4f4a7af0d80ea24);
+    return var_84d6164f2a6eb8da & ~(var_c1606c1030582cfa | var_9078b4c4e3258dfb | mask_activate | var_e4f4a7af0d80ea24);
 }
 
 // Namespace spawnselection / scripts\mp\spawnselection

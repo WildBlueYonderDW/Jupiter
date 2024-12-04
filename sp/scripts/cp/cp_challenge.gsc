@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using script_7ef95bba57dc4b82;
 #using script_12e2fb553ec1605e;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_6f1e07ce9ff97d5f;
-#using scripts\cp_mp\challenges.gsc;
+#using script_74502a9e0ef1f19c;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
 
-#namespace namespace_2d7448bcd288038;
+#namespace cp_challenge;
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x37b
 // Size: 0x1d
@@ -26,7 +26,7 @@ function init() {
     }
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a0
 // Size: 0x1fe
@@ -81,7 +81,7 @@ function setupchallengelocales() {
     }
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a6
 // Size: 0x21
@@ -92,7 +92,7 @@ function challengesenabled() {
     return level.challengesallowed;
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d0
 // Size: 0x25
@@ -106,7 +106,7 @@ function challengesenabledforplayer() {
     return true;
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fe
 // Size: 0x6c2
@@ -268,7 +268,7 @@ function onplayerkilled(inflictor, attacker, damage, damageflags, meansofdeath, 
     }
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcc8
 // Size: 0xdd
@@ -300,7 +300,7 @@ function return_enemy_type_mask(enemytype, victim) {
     return enemytype;
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 12, eflags: 0x0
 // Checksum 0x0, Offset: 0xdae
 // Size: 0x1ef
@@ -342,7 +342,7 @@ function juggernaut_kill_assists_included(attacker, victim, var_b5eec3b49cf346d2
     return false;
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0xfa6
 // Size: 0x5a
@@ -353,7 +353,7 @@ function ondeath(inflictor, attacker, damage, damageflags, meansofdeath, objweap
     self reportchallengeuserevent("death", 0);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1008
 // Size: 0x134
@@ -384,7 +384,7 @@ function onplayerkillassist(victim) {
     }
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x1144
 // Size: 0x12b
@@ -393,8 +393,8 @@ function onkillstreakend(ref, duration, currenttime, totalkills, var_eed18a862d3
         return;
     }
     killstreak = ref;
-    var_f178b5249c7541c0 = duration;
-    var_b951c0c77a5a6d08 = currenttime;
+    time_used = duration;
+    current_gametime = currenttime;
     total_kills = totalkills;
     var_4b45015a9a8707e4 = var_eed18a862d3f3954;
     var_4b45045a9a870e7d = var_eed18d862d3f3fed;
@@ -416,10 +416,10 @@ function onkillstreakend(ref, duration, currenttime, totalkills, var_eed18a862d3
     default:
         break;
     }
-    self reportchallengeuserevent("killstreak_end", killstreak, var_f178b5249c7541c0, var_b951c0c77a5a6d08, total_kills, var_4b45015a9a8707e4, var_4b45045a9a870e7d, var_4b45035a9a870c4a, operators);
+    self reportchallengeuserevent("killstreak_end", killstreak, time_used, current_gametime, total_kills, var_4b45015a9a8707e4, var_4b45045a9a870e7d, var_4b45035a9a870c4a, operators);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1277
 // Size: 0x6c
@@ -433,7 +433,7 @@ function onfieldupgradeendbuffer(ref, value) {
     scripts\cp_mp\challenges::function_bd59aa7e8cece1ab(ref, value);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x12eb
 // Size: 0x43
@@ -446,7 +446,7 @@ function onfieldupgradeend(ref, value) {
     self reportchallengeuserevent("field_end", field_upgrade, amount);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1336
 // Size: 0xd6
@@ -472,7 +472,7 @@ function oncapture(modifiers) {
     self reportchallengeuserevent("capture", gametypecol, modifiers1, modifiers2);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1414
 // Size: 0xd6
@@ -498,7 +498,7 @@ function ondefuse(modifiers) {
     self reportchallengeuserevent("defuse", gametypecol, modifiers1, modifiers2);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f2
 // Size: 0x76
@@ -517,7 +517,7 @@ function onplant(modifiers) {
     self reportchallengeuserevent("defuse", gametype, modifiers1, modifiers2, operators);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1570
 // Size: 0x22
@@ -528,7 +528,7 @@ function onstun(equipment) {
     self reportchallengeuserevent("stun", equipment);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x159a
 // Size: 0x22
@@ -539,7 +539,7 @@ function onstim(health_recovered) {
     self reportchallengeuserevent("stim", health_recovered);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15c4
 // Size: 0xcd
@@ -561,7 +561,7 @@ function onhack(equipment) {
     self reportchallengeuserevent("hack", equipment, loadout_perks);
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1699
 // Size: 0xcd
@@ -585,7 +585,7 @@ function gettouchinglocaletriggers(attacker, victim) {
     return buffer;
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x176f
 // Size: 0x13
@@ -593,7 +593,7 @@ function onplayerteamrevive(reviver, revivee) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x178a
 // Size: 0xb
@@ -601,7 +601,7 @@ function onsuccessfulhit(objweapon) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x179d
 // Size: 0x2
@@ -609,7 +609,7 @@ function onspawn() {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17a7
 // Size: 0x13
@@ -617,7 +617,7 @@ function updatesuperweaponkills(objweapon, inflictor) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x17c2
 // Size: 0x1b
@@ -625,7 +625,7 @@ function updatesuperkills(superref, meansofdeath, var_b34cda8a56dd46c5) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17e5
 // Size: 0xb
@@ -633,7 +633,7 @@ function resistedstun(attacker) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17f8
 // Size: 0x2
@@ -641,7 +641,7 @@ function triggereddelayedexplosion() {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1802
 // Size: 0x1b
@@ -649,7 +649,7 @@ function minedestroyed(mine, attacker, type) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1825
 // Size: 0x2
@@ -657,7 +657,7 @@ function roundbegin() {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x182f
 // Size: 0xb
@@ -665,7 +665,7 @@ function roundend(winnerstring) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1842
 // Size: 0x33
@@ -673,7 +673,7 @@ function playerdamaged(inflictor, attacker, damage, meansofdeath, objweapon, shi
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x187d
 // Size: 0x13
@@ -681,7 +681,7 @@ function processuavassist(owner, uavtype) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1898
 // Size: 0x2b
@@ -689,7 +689,7 @@ function killstreakdamaged(killstreakname, owner, attacker, weapon, damage) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x18cb
 // Size: 0x680
@@ -841,7 +841,7 @@ function killstreakkilled(killstreakname, owner, streakent, attacker, damage, da
     }
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f53
 // Size: 0x48
@@ -856,7 +856,7 @@ function iskillstreakvehicle(killstreakname) {
     return true;
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fa4
 // Size: 0x667
@@ -1007,7 +1007,7 @@ function equipmentdestroyed(inflictor, attacker, damage, damageflags, meansofdea
     }
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2613
 // Size: 0x629
@@ -1149,7 +1149,7 @@ function vehiclekilled(vehicle, attacker, damage, objweapon) {
     attacker reportchallengeuserevent("kill", var_b5eec3b49cf346d2, weapons, modifiers1, modifiers2, operators, gametypecol, var_349e390338192305, loadout_perks, enemytype, var_a5958dc7369199c7, gettouchinglocaletriggers(attacker, victim));
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c44
 // Size: 0x13
@@ -1157,7 +1157,7 @@ function processfinalkillchallenges(attacker, victim) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c5f
 // Size: 0xb
@@ -1165,7 +1165,7 @@ function usedkillstreak(streakname) {
     
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c72
 // Size: 0x36
@@ -1176,7 +1176,7 @@ function getoperators() {
     return operators;
 }
 
-// Namespace namespace_2d7448bcd288038 / scripts\cp\cp_challenge
+// Namespace cp_challenge / scripts\cp\cp_challenge
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cb1
 // Size: 0x65d

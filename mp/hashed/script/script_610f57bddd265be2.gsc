@@ -1,31 +1,31 @@
-#using scripts\common\debug.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
 #using script_263974019a8ba3fa;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\engine\scriptable.gsc;
-#using script_67fb1233e876ed8;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using script_610f57bddd265be2;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_58f20490049af6ac;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\common\devgui.gsc;
+#using script_58f20490049af6ac;
+#using script_610f57bddd265be2;
+#using script_67fb1233e876ed8;
+#using script_7ab5b649fa408138;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\player;
+#using scripts\mp\weapons;
 
 #namespace namespace_93577502ddc60c0d;
 
@@ -1229,9 +1229,9 @@ function redeploy_drone_relocate(scr_override, b_immediate, var_3d94e3b5be6fd3d1
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x42f2
 // Size: 0x38d
-function function_ce1ac8102a9fc02e(spawn_position, var_76bfd75ccab42a13, var_daad7d20d7a17c02, var_32611311fef143b, var_3d94e3b5be6fd3d1, var_e7ab465dec469435) {
-    if (!isdefined(var_e7ab465dec469435)) {
-        var_e7ab465dec469435 = function_8a5c9896b0d26b24();
+function function_ce1ac8102a9fc02e(spawn_position, var_76bfd75ccab42a13, var_daad7d20d7a17c02, var_32611311fef143b, var_3d94e3b5be6fd3d1, movement_parameters) {
+    if (!isdefined(movement_parameters)) {
+        movement_parameters = function_8a5c9896b0d26b24();
     }
     var_daad7d20d7a17c02.b_occupied = 1;
     var_daad7d20d7a17c02.b_used = 1;
@@ -1245,7 +1245,7 @@ function function_ce1ac8102a9fc02e(spawn_position, var_76bfd75ccab42a13, var_daa
         drone.health = var_76bfd75ccab42a13.health;
         drone.type = var_76bfd75ccab42a13.type;
     } else {
-        drone.speed = var_e7ab465dec469435.var_73e374ce21fb4fb5;
+        drone.speed = movement_parameters.var_73e374ce21fb4fb5;
         drone health_init();
     }
     drone setcandamage(1);
@@ -1268,8 +1268,8 @@ function function_ce1ac8102a9fc02e(spawn_position, var_76bfd75ccab42a13, var_daa
         return false;
     }
     drone setscriptablepartstate("redeploy_drone_cable_sfx", "retract_stop");
-    drone thread function_6d9358d777958a1b(var_daad7d20d7a17c02, var_e7ab465dec469435);
-    drone thread function_53a07930f4fc0e08(var_daad7d20d7a17c02, var_e7ab465dec469435);
+    drone thread function_6d9358d777958a1b(var_daad7d20d7a17c02, movement_parameters);
+    drone thread function_53a07930f4fc0e08(var_daad7d20d7a17c02, movement_parameters);
     drone thread function_314cdfb5c5633b1(var_76bfd75ccab42a13, var_daad7d20d7a17c02);
     while (!isdefined(drone.var_3b4fee20d214bd9b) || !isdefined(drone.var_f44262daab1a384a)) {
         if (drone.health <= 0) {
@@ -1460,26 +1460,26 @@ function function_77e61741cc59c806() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f0b
 // Size: 0x2d8
-function function_6d9358d777958a1b(var_daad7d20d7a17c02, var_e7ab465dec469435) {
+function function_6d9358d777958a1b(var_daad7d20d7a17c02, movement_parameters) {
     level endon("game_ended");
     self endon("entitydeleted");
-    if (!isdefined(var_e7ab465dec469435)) {
-        var_e7ab465dec469435 = function_8a5c9896b0d26b24();
+    if (!isdefined(movement_parameters)) {
+        movement_parameters = function_8a5c9896b0d26b24();
     }
     self.v_destination = var_daad7d20d7a17c02.origin;
     self.drone_arrived = 0;
     /#
         utility::function_2bf8ec790b5a10f8(@"hash_d7987b5db214b981", &debug::debug_line, [self, var_daad7d20d7a17c02.origin, (1, 0, 0), undefined, "<dev string:x1c>", "<dev string:xbb>"]);
     #/
-    while (self.speed < var_e7ab465dec469435.var_73e374ce21fb4fb5) {
+    while (self.speed < movement_parameters.var_73e374ce21fb4fb5) {
         self.speed += 1;
-        if (self.speed > var_e7ab465dec469435.var_73e374ce21fb4fb5) {
-            self.speed = var_e7ab465dec469435.var_73e374ce21fb4fb5;
+        if (self.speed > movement_parameters.var_73e374ce21fb4fb5) {
+            self.speed = movement_parameters.var_73e374ce21fb4fb5;
         }
         self moveto(self.origin + self.speed * vectornormalize(self.v_destination - self.origin), 0.05, 0, 0);
         wait 0.05;
     }
-    var_a15c0fcf14bbd67b = squared(var_e7ab465dec469435.var_64ab0a075a4d97e4);
+    var_a15c0fcf14bbd67b = squared(movement_parameters.var_64ab0a075a4d97e4);
     while (distancesquared(self.origin, self.v_destination) > var_a15c0fcf14bbd67b) {
         self moveto(self.origin + self.speed * vectornormalize(self.v_destination - self.origin), 0.05, 0, 0);
         wait 0.05;
@@ -1491,8 +1491,8 @@ function function_6d9358d777958a1b(var_daad7d20d7a17c02, var_e7ab465dec469435) {
         if (var_4e8a734825248b09 < 0.1) {
             break;
         }
-        self.speed = var_4e8a734825248b09 * var_e7ab465dec469435.var_f9b853a2bbd2f0d8;
-        self.speed = clamp(self.speed, var_e7ab465dec469435.var_5f59cdfbf4669cc3, var_e7ab465dec469435.var_73e374ce21fb4fb5);
+        self.speed = var_4e8a734825248b09 * movement_parameters.var_f9b853a2bbd2f0d8;
+        self.speed = clamp(self.speed, movement_parameters.var_5f59cdfbf4669cc3, movement_parameters.var_73e374ce21fb4fb5);
         self.speed = min(self.speed, var_4e8a734825248b09);
         self moveto(self.origin + vectornormalize(self.v_destination - self.origin) * self.speed, 0.05, 0, 0);
         wait 0.05;

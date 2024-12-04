@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\utility\team_utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_737f801e6beb18c7;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using script_6b80871eb8142180;
-#using script_4a6760982b403bad;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_42f868a5dda17294;
-#using scripts\cp_mp\entityheadicons.gsc;
 #using script_3a8f9ace195c9da9;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
+#using script_42f868a5dda17294;
 #using script_46b342a079938c68;
+#using script_4a6760982b403bad;
+#using script_6b80871eb8142180;
+#using script_737f801e6beb18c7;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\team_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_e666063f094d5591;
 
@@ -1392,14 +1392,14 @@ function function_8a8136a64df0f01d(var_4da79e9b4e1ffbd5) {
         var_ef51b8985476aebb array_add(var_ef51b8985476aebb, var_4da79e9b4e1ffbd5);
     }
     contentoverride = physics_createcontents(var_ef51b8985476aebb);
-    if (isdefined(self.binocularsstruct.var_44beb123db9049a9) && isdefined(self.binocularsstruct.var_44beb123db9049a9[contentoverride]) && isdefined(self.binocularsstruct.var_19500a5122c11ce8) && self.binocularsstruct.var_44beb123db9049a9[contentoverride] == gettime()) {
+    if (isdefined(self.binocularsstruct.lookatpos_time) && isdefined(self.binocularsstruct.lookatpos_time[contentoverride]) && isdefined(self.binocularsstruct.var_19500a5122c11ce8) && self.binocularsstruct.lookatpos_time[contentoverride] == gettime()) {
         return self.binocularsstruct.var_19500a5122c11ce8[contentoverride];
     }
     starttrace = self getvieworigin();
     endtrace = starttrace + anglestoforward(self getplayerangles()) * 50000;
     ignoreents = scripts\cp_mp\utility\killstreak_utility::playerkillstreakgetownerlookatignoreents();
     trace = scripts\engine\trace::ray_trace(starttrace, endtrace, ignoreents, contentoverride);
-    self.binocularsstruct.var_44beb123db9049a9[contentoverride] = gettime();
+    self.binocularsstruct.lookatpos_time[contentoverride] = gettime();
     if (trace["hittype"] == "hittype_none") {
         if (isdefined(self.binocularsstruct.var_19500a5122c11ce8) && isdefined(self.binocularsstruct.var_19500a5122c11ce8[contentoverride])) {
             self.binocularsstruct.var_19500a5122c11ce8[contentoverride] = undefined;
@@ -1425,14 +1425,14 @@ function function_79d9dbea734fc001(viewpoint) {
         var_56afec62d47e756b += 0.02;
     }
     distmultiplier = 1 - exp(viewdist * -1 / 100);
-    var_b418f88ace63c52c = viewdist * var_56afec62d47e756b * distmultiplier;
+    offset_factor = viewdist * var_56afec62d47e756b * distmultiplier;
     direction = (viewpoint - level.players[0].origin) / viewdist;
-    var_37623a067c1305a1 = (0, 0, 1) * var_b418f88ace63c52c;
-    var_494aa771bb4ebe1 = vectorcross(direction, var_37623a067c1305a1);
-    vectors = [viewpoint + var_37623a067c1305a1, viewpoint - var_37623a067c1305a1, viewpoint + var_494aa771bb4ebe1, viewpoint - var_494aa771bb4ebe1];
+    up_down = (0, 0, 1) * offset_factor;
+    left_right = vectorcross(direction, up_down);
+    vectors = [viewpoint + up_down, viewpoint - up_down, viewpoint + left_right, viewpoint - left_right];
     for (i = 0; i < vectors.size; i++) {
         var_dcd1632d8f3813d8 = (vectors[i] - self.origin) / viewdist;
-        vectors[i] = vectors[i] + var_dcd1632d8f3813d8 * var_b418f88ace63c52c * 2;
+        vectors[i] = vectors[i] + var_dcd1632d8f3813d8 * offset_factor * 2;
     }
     return vectors;
 }
@@ -1565,7 +1565,7 @@ function function_42beae79b9afdeef(objective) {
 // Size: 0xad
 function function_a4070ba049bbd2e6(maxrange, cosfov) {
     infov = [];
-    var_1c91c276fc7873f7 = array_combine(level.var_8b30d8e5d8aecf1.var_348cf09925bd209, level.var_8b30d8e5d8aecf1.objectivelocations);
+    var_1c91c276fc7873f7 = array_combine(level.var_8b30d8e5d8aecf1.valid_entities, level.var_8b30d8e5d8aecf1.objectivelocations);
     foreach (item in var_1c91c276fc7873f7) {
         if (istrue(binoculars_targetisvalid(item))) {
             infov = array_add(infov, item);

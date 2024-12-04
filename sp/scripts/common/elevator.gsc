@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace elevator;
 
@@ -53,7 +53,7 @@ function elevator_update_global_dvars() {
         level.elevator_return = elevator_get_dvar_int(@"hash_a2d058994e722a4", "0");
         level.elevator_waittime = elevator_get_dvar_int(@"hash_6d3dbdefd394cade", "6");
         level.elevator_aggressive_call = elevator_get_dvar_int(@"hash_59e9d8f59b714057", "0");
-        level.elevator_debug = elevator_get_dvar_int(@"hash_72c20cd8f6d7fa38", "0");
+        level.elevator_debug = elevator_get_dvar_int(@"debug_elevator", "0");
         if (utility::issp()) {
             level.elevator_motion_detection = elevator_get_dvar_int(@"hash_2f42511a40542c14", "0");
         } else {

@@ -1,8 +1,8 @@
 #using script_2b85a88a1d543a;
 #using script_713ccfa3a01d4d19;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
+#using scripts\common\callbacks;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_dev;
 
 #namespace namespace_c79c976ae904fa16;
 

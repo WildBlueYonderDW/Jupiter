@@ -1,4 +1,4 @@
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using scripts\cp_mp\utility\weapon_utility;
 
 #namespace riotshield;
 

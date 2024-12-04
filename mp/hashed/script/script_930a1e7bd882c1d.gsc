@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using scripts\cp_mp\parachute.gsc;
 #using script_75377e59f5becac8;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_e7bbffdd71331a9a;
 

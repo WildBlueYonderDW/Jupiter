@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\killstreaks\remoteuav.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\killstreaks\remoteuav;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace uav_mp;
 
@@ -32,7 +32,7 @@ function init_uav_mp() {
     level.uavsettings["uav"].teamsplash = "used_uav";
     level.uavsettings["uav"].votimeout = "timeout_uav";
     level.uavsettings["uav"].calloutdestroyed = "callout_destroyed_uav";
-    level.uavsettings["uav"].addfunc = &function_a4d3120487c90203;
+    level.uavsettings["uav"].addfunc = &uav_addactiveuav;
     level.uavsettings["uav"].removefunc = &uav_removeactiveuav;
     function_7dbeff3d392879b3();
     var_5085fa19030c6eb9 = level.streakglobals.streakbundles["directional_uav"];
@@ -48,7 +48,7 @@ function init_uav_mp() {
     level.uavsettings["directional_uav"].modelbase = var_30bd814725530611;
     level.uavsettings["directional_uav"].votimeout = "timeout_directional_uav";
     level.uavsettings["directional_uav"].teamsplash = "used_directional_uav";
-    level.uavsettings["directional_uav"].addfunc = &function_a4d3120487c90203;
+    level.uavsettings["directional_uav"].addfunc = &uav_addactiveuav;
     level.uavsettings["directional_uav"].removefunc = &uav_removeactiveuav;
     scripts\mp\utility\spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
     scripts\engine\utility::registersharedfunc("uav", "remoteUAV_processTaggedAssist", &scripts\mp\killstreaks\remoteuav::remoteuav_processtaggedassist);
@@ -80,7 +80,7 @@ function function_7dbeff3d392879b3() {
     level.uavsettings["counter_uav"].destroyedsplash = "callout_destroyed_scrambler_drone_guard";
     level.uavsettings["counter_uav"].scorepopup = "destroyed_scrambler_drone_guard";
     level.uavsettings["counter_uav"].calloutdestroyed = "callout_destroyed_counter_uav";
-    level.uavsettings["counter_uav"].addfunc = &function_24d8b56676d4d3d1;
+    level.uavsettings["counter_uav"].addfunc = &uav_addactivecounteruav;
     level.uavsettings["counter_uav"].removefunc = &uav_removeactivecounteruav;
 }
 

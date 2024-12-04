@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\game;
 
 #namespace namespace_31d46e80f376f2f7;
 

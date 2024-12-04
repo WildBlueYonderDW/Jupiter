@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_247745a526421ba7;
-#using scripts\engine\trace.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
 #using script_6de53543fee67f02;
-#using scripts\cp_mp\emp_debuff.gsc;
 #using script_736dec95a49487a6;
-#using scripts\cp_mp\outofrange.gsc;
-#using scripts\cp_mp\killstreaks\gunship.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\killstreaks\gunship;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\outofrange;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace recon_drone;
 
@@ -180,8 +180,8 @@ function function_ab931b44a2efddf7(streakinfo) {
     }
     startpos = scripts\cp_mp\killstreaks\helper_drone::function_34280b807c23a453(helperdronetype);
     startangles = self.angles;
-    recondrone = recondrone_create(startpos, startangles, helperdronetype, streakinfo);
-    if (!isdefined(recondrone)) {
+    reconDrone = recondrone_create(startpos, startangles, helperdronetype, streakinfo);
+    if (!isdefined(reconDrone)) {
         return false;
     }
     thread scripts\cp_mp\killstreaks\helper_drone::helperdrone_giveplayerfauxremote(streakinfo);
@@ -190,16 +190,16 @@ function function_ab931b44a2efddf7(streakinfo) {
     }
     if (issharedfuncdefined("game", "isBRStyleGameType")) {
         if ([[ getsharedfunc("game", "isBRStyleGameType") ]]()) {
-            recondrone vehicleshowonminimap(0);
+            reconDrone vehicleshowonminimap(0);
             scripts\cp_mp\utility\killstreak_utility::playkillstreakusedialog(helperdronetype);
-            recondrone scripts\cp_mp\killstreaks\helper_drone::helperdrone_notifyenemyplayersinrange(helperdronetype);
+            reconDrone scripts\cp_mp\killstreaks\helper_drone::helperdrone_notifyenemyplayersinrange(helperdronetype);
         }
     }
     scripts\cp_mp\killstreaks\helper_drone::function_c3786c4fba09c2f2(streakinfo);
     if (iscp()) {
-        thread scripts\cp_mp\killstreaks\helper_drone::starthelperdrone(recondrone, 1);
+        thread scripts\cp_mp\killstreaks\helper_drone::starthelperdrone(reconDrone, 1);
     } else {
-        thread scripts\cp_mp\killstreaks\helper_drone::starthelperdrone(recondrone);
+        thread scripts\cp_mp\killstreaks\helper_drone::starthelperdrone(reconDrone);
     }
     return true;
 }
@@ -209,8 +209,8 @@ function function_ab931b44a2efddf7(streakinfo) {
 // Checksum 0x0, Offset: 0x15a1
 // Size: 0xae
 function recondrone_create(startpos, startang, helperdronetype, streakinfo) {
-    recondrone = scripts\cp_mp\killstreaks\helper_drone::createhelperdrone(startpos, startang, helperdronetype, streakinfo, 0, 1);
-    if (!isdefined(recondrone)) {
+    reconDrone = scripts\cp_mp\killstreaks\helper_drone::createhelperdrone(startpos, startang, helperdronetype, streakinfo, 0, 1);
+    if (!isdefined(reconDrone)) {
         if (issharedfuncdefined("hud", "showErrorMessage")) {
             self [[ getsharedfunc("hud", "showErrorMessage") ]]("KILLSTREAKS/NOT_ENOUGH_SPACE");
         }
@@ -222,7 +222,7 @@ function recondrone_create(startpos, startang, helperdronetype, streakinfo) {
         scripts\cp_mp\killstreaks\helper_drone::function_c3786c4fba09c2f2(streakinfo);
         return undefined;
     }
-    return recondrone;
+    return reconDrone;
 }
 
 // Namespace recon_drone / namespace_893ac0cf28c5af44
@@ -1518,22 +1518,22 @@ function recondrone_watchsuperinternal(streakinfo) {
     if (isdefined(self.recondronesafespawn) && !isinlaststand) {
         self.reconvehiclereserved = undefined;
         thread recondrone_watchcleanupreserved(streakinfo, 0);
-        recondrone = recondrone_create(self.recondronesafespawn, self.angles, streakinfo.streakname, streakinfo);
+        reconDrone = recondrone_create(self.recondronesafespawn, self.angles, streakinfo.streakname, streakinfo);
         self.recondronesafespawn = undefined;
-        if (isdefined(recondrone)) {
+        if (isdefined(reconDrone)) {
             thread scripts\cp_mp\killstreaks\helper_drone::helperdrone_giveplayerfauxremote(streakinfo);
-            recondrone recondrone_addtolists(recondrone, self);
+            reconDrone recondrone_addtolists(reconDrone, self);
             scripts\cp_mp\killstreaks\helper_drone::function_c3786c4fba09c2f2(streakinfo);
-            thread scripts\cp_mp\killstreaks\helper_drone::starthelperdrone(recondrone);
+            thread scripts\cp_mp\killstreaks\helper_drone::starthelperdrone(reconDrone);
             if (issharedfuncdefined("sound", "trySayLocalSound")) {
                 level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](self, #"hash_c836f1cdb2da4224");
             }
             isbr = issharedfuncdefined("game", "isBRStyleGameType") && [[ getsharedfunc("game", "isBRStyleGameType") ]]();
             if (isbr) {
-                recondrone vehicleshowonminimap(0);
+                reconDrone vehicleshowonminimap(0);
             }
             scripts\cp_mp\utility\killstreak_utility::playkillstreakusedialog(streakinfo.streakname);
-            recondrone scripts\cp_mp\killstreaks\helper_drone::helperdrone_notifyenemyplayersinrange(streakinfo.streakname);
+            reconDrone scripts\cp_mp\killstreaks\helper_drone::helperdrone_notifyenemyplayersinrange(streakinfo.streakname);
             self notify("successful_recon_deployment");
             return true;
         } else {
@@ -1576,10 +1576,10 @@ function recondrone_watchsuperendfromswitch() {
 function recondrone_unsetsuper(fromdeath) {
     self notify("reconDroneUnset");
     if (true) {
-        recondrone = self.recondronesuper;
-        if (isdefined(recondrone)) {
-            if (!istrue(recondrone.isdestroyed)) {
-                recondrone scripts\cp_mp\killstreaks\helper_drone::function_ba1c5496f8fc5f67();
+        reconDrone = self.recondronesuper;
+        if (isdefined(reconDrone)) {
+            if (!istrue(reconDrone.isdestroyed)) {
+                reconDrone scripts\cp_mp\killstreaks\helper_drone::function_ba1c5496f8fc5f67();
             }
         }
     }
@@ -1981,8 +1981,8 @@ function function_7d0db4b7f46e7dc0() {
 // Checksum 0x0, Offset: 0x55a8
 // Size: 0x28
 function function_157c2bcd50ca6207() {
-    recondrone = self.recondronesuper;
-    return isdefined(recondrone) && !istrue(recondrone.isdestroyed);
+    reconDrone = self.recondronesuper;
+    return isdefined(reconDrone) && !istrue(reconDrone.isdestroyed);
 }
 
 /#

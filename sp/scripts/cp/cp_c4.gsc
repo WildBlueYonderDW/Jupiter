@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
+#using script_1db8d0e02a99c5e2;
 #using script_74502a9e0ef1f19c;
 #using script_7ef95bba57dc4b82;
-#using script_1db8d0e02a99c5e2;
-#using scripts\cp_mp\entityheadicons.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\engine\utility;
 
-#namespace namespace_3c94cb034daa5398;
+#namespace cp_c4;
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x202
 // Size: 0x1f9
@@ -28,20 +28,20 @@ function c4_used(grenade) {
     thread monitordisownedequipment(self, grenade);
     level notify("c4_planted", stuckto, hitent);
     if (isdefined(grenade.owner) && !istrue(grenade.owner.var_95f9da0e6a58183b)) {
-        var_997b28e32a97c75 = spawnstruct();
-        var_997b28e32a97c75.scriptablename = "brloot_offhand_c4";
-        var_997b28e32a97c75.equipname = level.br_pickups.br_equipname[var_997b28e32a97c75.scriptablename];
-        var_997b28e32a97c75.maxcount = grenade.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(var_997b28e32a97c75.equipname);
-        var_997b28e32a97c75.count = 1;
-        var_997b28e32a97c75.origin = grenade.origin;
-        var_997b28e32a97c75.isstuck = 1;
-        grenade thread namespace_47366e00aa4211f4::makeexplosiveusabletag("tag_use", 1, undefined, var_997b28e32a97c75);
+        pickup_str = spawnstruct();
+        pickup_str.scriptablename = "brloot_offhand_c4";
+        pickup_str.equipname = level.br_pickups.br_equipname[pickup_str.scriptablename];
+        pickup_str.maxcount = grenade.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(pickup_str.equipname);
+        pickup_str.count = 1;
+        pickup_str.origin = grenade.origin;
+        pickup_str.isstuck = 1;
+        grenade thread namespace_47366e00aa4211f4::makeexplosiveusabletag("tag_use", 1, undefined, pickup_str);
     }
     grenade setscriptablepartstate("effects", "plant", 0);
     grenade.headiconid = grenade scripts\cp_mp\entityheadicons::setheadicon_factionimage(0, 0, undefined, undefined, undefined, 0.1, 1);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x403
 // Size: 0x2f
@@ -52,7 +52,7 @@ function c4_detonate() {
     thread c4_explode(self.owner);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x43a
 // Size: 0x6a
@@ -67,7 +67,7 @@ function c4_explode(attacker) {
     self setscriptablepartstate("effects", "explode", 0);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x27
@@ -76,7 +76,7 @@ function c4_destroy(attacker) {
     self setscriptablepartstate("effects", "destroy", 0);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4db
 // Size: 0xb7
@@ -98,7 +98,7 @@ function c4_delete(var_cbf7be4f62a0ddb2) {
     self delete();
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x59a
 // Size: 0x60
@@ -115,7 +115,7 @@ function c4_explodeonnotify() {
     thread c4_explode(owner);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x602
 // Size: 0x62
@@ -129,7 +129,7 @@ function c4_destroyonemp() {
     thread c4_destroy();
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x66c
 // Size: 0x32
@@ -137,7 +137,7 @@ function c4_candetonate(grenade) {
     return (gettime() - self.throwtime) / 1000 > 0.3 && !isdefined(self.detonationtime);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a7
 // Size: 0xc4
@@ -157,7 +157,7 @@ function c4_watchfordetonation() {
     }
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x773
 // Size: 0xed
@@ -198,7 +198,7 @@ function c4_watchforaltdetonation() {
     }
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x868
 // Size: 0x27
@@ -208,7 +208,7 @@ function c4_animdetonate() {
     thread c4_animdetonatecleanup();
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x897
 // Size: 0x42
@@ -223,7 +223,7 @@ function c4_animdetonatecleanup() {
     }
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e1
 // Size: 0x6b
@@ -237,7 +237,7 @@ function c4_detonateall() {
     }
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x954
 // Size: 0x4e
@@ -251,7 +251,7 @@ function c4_addtoarray(grenade) {
     thread c4_removefromarrayondeath(grenade);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9aa
 // Size: 0xa6
@@ -271,7 +271,7 @@ function c4_removefromarray(entnum) {
     }
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa58
 // Size: 0x33
@@ -282,7 +282,7 @@ function c4_removefromarrayondeath(grenade) {
     c4_removefromarray(entnum);
 }
 
-// Namespace namespace_3c94cb034daa5398 / scripts\cp\cp_c4
+// Namespace cp_c4 / scripts\cp\cp_c4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa93
 // Size: 0x28

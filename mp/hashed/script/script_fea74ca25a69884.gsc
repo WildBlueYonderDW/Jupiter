@@ -1,59 +1,59 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\dev.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\carriable.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using script_7933519955f32c4e;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\gametypes\br_vehicles.gsc;
-#using scripts\mp\gametypes\br_functional_poi.gsc;
-#using scripts\cp_mp\auto_ascender.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\javelin.gsc;
-#using script_3aacf02225ca0da5;
-#using script_64acb6ce534155b7;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\juggernaut.gsc;
-#using script_3aa8e63a56e3416;
-#using script_5bc60484d17fa95c;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\gametypes\br_vip_quest.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using script_7c40fa80892a721;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\class.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using script_3aa8e63a56e3416;
+#using script_3aacf02225ca0da5;
+#using script_5bc60484d17fa95c;
+#using script_64acb6ce534155b7;
+#using script_7933519955f32c4e;
+#using script_7c40fa80892a721;
+#using scripts\common\utility;
+#using scripts\cp_mp\auto_ascender;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\dev;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\carriable;
+#using scripts\mp\class;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_functional_poi;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\gametypes\br_vehicles;
+#using scripts\mp\gametypes\br_vip_quest;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\hud_util;
+#using scripts\mp\javelin;
+#using scripts\mp\juggernaut;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\laststand;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\supers;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace namespace_3db0584c4c3b350b;
 
@@ -100,9 +100,9 @@ function devscriptedtests(args) {
     function_8032016446156bad();
     resetplayers();
     resetcircles();
-    var_57accdc40b2f50e = spawnteams(args);
-    enemyteammates = var_57accdc40b2f50e[1];
-    hostteammates = var_57accdc40b2f50e[0];
+    __a0 = spawnteams(args);
+    enemyteammates = __a0[1];
+    hostteammates = __a0[0];
     host iprintlnbold("Test ready");
     wait 2;
     runtests(args, host, hostteammates, enemyteammates);
@@ -167,7 +167,7 @@ function function_8032016446156bad() {
     level.ingraceperiod = 0;
     level.var_82a0e660e66306dc = undefined;
     setdvar(@"hash_c2de8ca6dc8512c1", 1);
-    setdvar(@"hash_faf1db5754891b2d", 150);
+    setdvar(@"br_minplayers", 150);
     setdvar(@"hash_cb2d56d085e5a9b9", 150);
     setdvar(@"hash_2c879521333c4987", 0);
     setdvar(@"hash_f79cd84983250eda", 0);
@@ -1193,7 +1193,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         /#
             setdevdvar(@"hash_7a1447160ba151fe", 1);
         #/
-        setdvar(@"hash_faf1db5754891b2d", 2);
+        setdvar(@"br_minplayers", 2);
         level.gulag.maxuses = 0;
         wait 1;
         killplayerinstant(host, enemyteammates[0]);
@@ -1368,7 +1368,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         killplayer(host, enemyteammates[0]);
     }
     if (argshave(args, "infilDeath")) {
-        thread waitandsuicide(getdvarint(@"hash_80d1406b579aaa79", 1), hostteammates[1]);
+        thread waitandsuicide(getdvarint(@"test_suicide", 1), hostteammates[1]);
         onprematchstarted2();
         level waittill("br_c130_left_bounds");
         wait 2;
@@ -1379,7 +1379,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         killplayerinstant(host, enemyteammates[0]);
     }
     if (argshave(args, "reconGulag1")) {
-        setdvar(@"hash_faf1db5754891b2d", 9);
+        setdvar(@"br_minplayers", 9);
         wait 5;
         enemy1 = enemyteammates[0][0];
         enemy2 = enemyteammates[1][0];
@@ -1440,7 +1440,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         killplayerinstant(friendly1, enemy2);
     }
     if (argshave(args, "endGameTwoDie")) {
-        setdvar(@"hash_faf1db5754891b2d", 8);
+        setdvar(@"br_minplayers", 8);
         wait 5;
         scripts\mp\gametypes\br_gulag::shutdowngulag("circle_index", 0);
         enemy1 = enemyteammates[0][0];
@@ -1518,7 +1518,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
             gulagenemy = enemy2;
         }
         killplayer(host, gulagenemy);
-        wait getdvarint(@"hash_f4becbcb52fb0332", 2);
+        wait getdvarint(@"test_wait", 2);
         disconnectbot(teammate);
     }
     if (argshave(args, "gulag22b")) {
@@ -1717,17 +1717,17 @@ function runtests(args, host, hostteammates, enemyteammates) {
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
-        wait getdvarint(@"hash_f4becbcb52fb0332", 12);
-        if (getdvarint(@"hash_197c9f3caaa6312b", 0)) {
+        wait getdvarint(@"test_wait", 12);
+        if (getdvarint(@"test_kill", 0)) {
             killplayer(host, enemyteammates[0]);
             killplayer(var_70189b6a231df8d6, enemyteammates[0]);
             wait getdvarfloat(@"hash_3a9d30277e079900", 0);
-        } else if (getdvarint(@"hash_b3434b6b4b7df9fb", 0)) {
+        } else if (getdvarint(@"test_kill2", 0)) {
             killplayer(host, enemyteammates[0]);
             wait getdvarfloat(@"hash_3a9d30277e079900", 0);
         }
         arena = host.arena;
-        if (getdvarint(@"hash_fb8d8ca747bf8b29", 0)) {
+        if (getdvarint(@"test_allies", 0)) {
             scripts\mp\gametypes\br_vip_quest::vip_respawnplayer(host, friendly2, "debug");
             scripts\mp\gametypes\br_vip_quest::vip_respawnplayer(var_70189b6a231df8d6, friendly2, "debug");
         } else {
@@ -1759,17 +1759,17 @@ function runtests(args, host, hostteammates, enemyteammates) {
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
-        wait getdvarint(@"hash_f4becbcb52fb0332", 12);
-        if (getdvarint(@"hash_197c9f3caaa6312b", 0)) {
+        wait getdvarint(@"test_wait", 12);
+        if (getdvarint(@"test_kill", 0)) {
             killplayer(host, enemyteammates[0]);
             killplayer(var_70189b6a231df8d6, enemyteammates[0]);
             wait getdvarfloat(@"hash_3a9d30277e079900", 0);
-        } else if (getdvarint(@"hash_b3434b6b4b7df9fb", 1)) {
+        } else if (getdvarint(@"test_kill2", 1)) {
             killplayer(host, enemyteammates[0]);
             wait getdvarfloat(@"hash_3a9d30277e079900", 1);
         }
         arena = host.arena;
-        if (getdvarint(@"hash_fb8d8ca747bf8b29", 1)) {
+        if (getdvarint(@"test_allies", 1)) {
             scripts\mp\gametypes\br_vip_quest::vip_respawnplayer(host, friendly2, "debug");
             scripts\mp\gametypes\br_vip_quest::vip_respawnplayer(var_70189b6a231df8d6, friendly2, "debug");
         } else {
@@ -1801,7 +1801,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         while (!istrue(host.gulagarena)) {
             waitframe();
         }
-        wait getdvarint(@"hash_f4becbcb52fb0332", 5);
+        wait getdvarint(@"test_wait", 5);
         disconnectbot(var_70189b6a231df8d6);
         disconnectbot(enemy1);
         disconnectbot(enemy2);
@@ -1837,7 +1837,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         while (!istrue(enemy1.gulagarena)) {
             waitframe();
         }
-        wait getdvarint(@"hash_f4becbcb52fb0332", 1);
+        wait getdvarint(@"test_wait", 1);
         killplayer(host, enemy1);
         killplayer(var_70189b6a231df8d6, enemy1);
         killplayer(enemy3, host);
@@ -1992,7 +1992,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
     }
     if (argshave(args, "endGameTeam")) {
         level.br_infils_disabled = 1;
-        setdvar(@"hash_faf1db5754891b2d", 8);
+        setdvar(@"br_minplayers", 8);
         wait 5;
         scripts\mp\gametypes\br_gulag::shutdowngulag("circle_index", 0);
         enemy1 = enemyteammates[0][0];
@@ -2052,7 +2052,7 @@ function runtests(args, host, hostteammates, enemyteammates) {
         while (!istrue(host.var_93018d510a589832)) {
             waitframe();
         }
-        wait getdvarfloat(@"hash_f4becbcb52fb0332", 3.5);
+        wait getdvarfloat(@"test_wait", 3.5);
         killplayerinstant(enemy1, friendly1);
     }
     if (argshave(args, "helmet_test")) {

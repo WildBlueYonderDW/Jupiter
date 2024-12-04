@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_mines.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle_mines;
+#using scripts\engine\utility;
 
 #namespace namespace_9609f46bac493ba4;
 

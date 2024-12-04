@@ -1,17 +1,17 @@
-#using scripts\mp\utility\print.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\gametypes\br_extract_chopper.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\killstreaks\flares.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\damage.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\gametypes\br_extract_chopper;
+#using scripts\mp\hostmigration;
+#using scripts\mp\killstreaks\flares;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\weapon;
 
 #namespace br_extract_chopper;
 

@@ -1,13 +1,13 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_6b80871eb8142180;
-#using script_46b342a079938c68;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_3a8f9ace195c9da9;
-#using scripts\cp_mp\entityheadicons.gsc;
+#using script_46b342a079938c68;
+#using script_6b80871eb8142180;
 #using script_737f801e6beb18c7;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_a8e999320b18af1d;
 
@@ -21,7 +21,7 @@ function function_2b6ed7aa07f89126() {
     level.var_8b30d8e5d8aecf1.var_cbefd54560ae748b = 0;
     if (!isdefined(level.var_8b30d8e5d8aecf1.var_15649dca955ec899)) {
         level.var_8b30d8e5d8aecf1.var_15649dca955ec899 = function_8996551ace9f412();
-        level.var_8b30d8e5d8aecf1.var_80eec6017a52acd = [];
+        level.var_8b30d8e5d8aecf1.struct_map = [];
         function_933650aaf0f8897a();
     }
     level.var_8b30d8e5d8aecf1.objectivelocations = function_39f40beae668b99e();
@@ -32,7 +32,7 @@ function function_2b6ed7aa07f89126() {
 // Params 17, eflags: 0x0
 // Checksum 0x0, Offset: 0x497
 // Size: 0xaba
-function function_85aedb842bdb548b(discovery_name, enabled, objective_radius, should_persist, cooldown, should_draw_quest_circle, quest_circle_radius, quest_circle_origin_override, allow_spotter, skip_spotter_delay, spotter_ignore_water, allow_LOS, var_6ed7b1082a7e28f1, var_9e0b7830a49b77f4, should_draw_device_icon, discover_block_flag, min_distance) {
+function function_85aedb842bdb548b(discovery_name, enabled, objective_radius, should_persist, cooldown, should_draw_quest_circle, quest_circle_radius, quest_circle_origin_override, allow_spotter, skip_spotter_delay, spotter_ignore_water, allow_LOS, los_distance, allow_proximity, should_draw_device_icon, discover_block_flag, min_distance) {
     if (!isdefined(self)) {
         assertmsg("Not valid object for discovery");
         return;
@@ -42,7 +42,7 @@ function function_85aedb842bdb548b(discovery_name, enabled, objective_radius, sh
     }
     if (!isdefined(level.var_8b30d8e5d8aecf1.var_15649dca955ec899)) {
         level.var_8b30d8e5d8aecf1.var_15649dca955ec899 = function_8996551ace9f412();
-        level.var_8b30d8e5d8aecf1.var_80eec6017a52acd = [];
+        level.var_8b30d8e5d8aecf1.struct_map = [];
         function_933650aaf0f8897a();
     }
     typecast_kvps();
@@ -58,7 +58,7 @@ function function_85aedb842bdb548b(discovery_name, enabled, objective_radius, sh
         return;
     }
     foreach (setting in level.var_8b30d8e5d8aecf1.var_15649dca955ec899) {
-        defaultsetting = level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting;
+        defaultsetting = level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting;
         switch (setting) {
         case #"hash_d6d0f2f8a901b9fd":
             self.var_3d33ce746b270d75.discovery_name = isdefined(self.var_3d33ce746b270d75.discovery_name) ? self.var_3d33ce746b270d75.discovery_name : default_to(discovery_name, isdefined(self.script_noteworthy) ? self.script_noteworthy : defaultsetting);
@@ -100,10 +100,10 @@ function function_85aedb842bdb548b(discovery_name, enabled, objective_radius, sh
             self.var_3d33ce746b270d75.allow_LOS = isdefined(self.var_3d33ce746b270d75.allow_LOS) ? self.var_3d33ce746b270d75.allow_LOS : default_to(allow_LOS, istrue(self.los) ? 1 : 0);
             break;
         case #"hash_fb276a280398f7fd":
-            self.var_3d33ce746b270d75.var_6ed7b1082a7e28f1 = isdefined(self.var_3d33ce746b270d75.var_6ed7b1082a7e28f1) ? self.var_3d33ce746b270d75.var_6ed7b1082a7e28f1 : default_to(var_6ed7b1082a7e28f1, isdefined(self.var_6ed7b1082a7e28f1) ? self.var_6ed7b1082a7e28f1 : defaultsetting);
+            self.var_3d33ce746b270d75.los_distance = isdefined(self.var_3d33ce746b270d75.los_distance) ? self.var_3d33ce746b270d75.los_distance : default_to(los_distance, isdefined(self.los_distance) ? self.los_distance : defaultsetting);
             break;
         case #"hash_cbf5517d15c305d0":
-            self.var_3d33ce746b270d75.var_9e0b7830a49b77f4 = isdefined(self.var_3d33ce746b270d75.var_9e0b7830a49b77f4) ? self.var_3d33ce746b270d75.var_9e0b7830a49b77f4 : default_to(var_9e0b7830a49b77f4, istrue(self.proximity) ? 1 : 0);
+            self.var_3d33ce746b270d75.allow_proximity = isdefined(self.var_3d33ce746b270d75.allow_proximity) ? self.var_3d33ce746b270d75.allow_proximity : default_to(allow_proximity, istrue(self.proximity) ? 1 : 0);
             break;
         case #"hash_cd735096462515a3":
             self.var_3d33ce746b270d75.discover_block_flag = isdefined(self.var_3d33ce746b270d75.discover_block_flag) ? self.var_3d33ce746b270d75.discover_block_flag : default_to(discover_block_flag, isdefined(self.discover_block_flag) ? self.discover_block_flag : defaultsetting);
@@ -146,9 +146,9 @@ function function_b86d00bf56de247() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf92
 // Size: 0x56
-function function_ac954082a55b68b7(var_90393610e3865554) {
+function function_ac954082a55b68b7(spread_offset) {
     if (isdefined(level.var_8b30d8e5d8aecf1) && isdefined(level.var_8b30d8e5d8aecf1.var_3f2c367416b5b6e7)) {
-        level.var_8b30d8e5d8aecf1.var_3f2c367416b5b6e7 = var_90393610e3865554;
+        level.var_8b30d8e5d8aecf1.var_3f2c367416b5b6e7 = spread_offset;
         return;
     }
     assertmsg("Discovery Projection Spread is not set");
@@ -165,7 +165,7 @@ function function_3c886a3ecef3e90e(var_53b1635570b0e202) {
     case #"hash_1d73586c9f6890cd":
         return istrue(self.var_3d33ce746b270d75.allow_LOS);
     case #"hash_161d2d6c65d1cc82":
-        return istrue(self.var_3d33ce746b270d75.var_9e0b7830a49b77f4);
+        return istrue(self.var_3d33ce746b270d75.allow_proximity);
     }
     return false;
 }
@@ -206,7 +206,7 @@ function function_847531f882fe30d0(isallowed) {
 // Size: 0x4e
 function function_70c1d0abf9be9b83(isallowed) {
     assertex(function_409b4b9bee1fbe1c(self), "<dev string:x1c>");
-    self.var_3d33ce746b270d75.var_9e0b7830a49b77f4 = isallowed;
+    self.var_3d33ce746b270d75.allow_proximity = isallowed;
     if (function_3c886a3ecef3e90e("proximity")) {
         thread compare_objective_distance();
     }
@@ -218,7 +218,7 @@ function function_70c1d0abf9be9b83(isallowed) {
 // Size: 0x38
 function function_bab704273dd54bf8(var_366f9b64a15f4a45) {
     assertex(function_409b4b9bee1fbe1c(self), "<dev string:x1c>");
-    self.var_3d33ce746b270d75.var_6ed7b1082a7e28f1 = var_366f9b64a15f4a45;
+    self.var_3d33ce746b270d75.los_distance = var_366f9b64a15f4a45;
 }
 
 // Namespace namespace_a8e999320b18af1d / namespace_8c7f8f6b3076a74a
@@ -515,7 +515,7 @@ function function_238f43a4d2d691d1(duration, originoverride) {
         self.var_3d33ce746b270d75.marker.z = self.origin[2];
     }
     level.players[0] playlocalsound("br_ping_location");
-    thread function_abde4baaca273089(self.var_3d33ce746b270d75.var_4940f7746e804062);
+    thread function_abde4baaca273089(self.var_3d33ce746b270d75.ping_duration);
 }
 
 // Namespace namespace_a8e999320b18af1d / namespace_8c7f8f6b3076a74a
@@ -544,7 +544,7 @@ function function_abde4baaca273089(duration) {
 // Size: 0x38
 function function_8877d1ab9056dac1(duration) {
     assertex(function_409b4b9bee1fbe1c(self), "<dev string:x1c>");
-    self.var_3d33ce746b270d75.var_4940f7746e804062 = duration;
+    self.var_3d33ce746b270d75.ping_duration = duration;
 }
 
 // Namespace namespace_a8e999320b18af1d / namespace_8c7f8f6b3076a74a
@@ -598,7 +598,7 @@ function function_409b4b9bee1fbe1c(objective) {
 // Size: 0x36
 function function_5175ee2a98016ca8(objective) {
     objective = default_to(objective, self);
-    return function_409b4b9bee1fbe1c(objective) && istrue(objective.var_3d33ce746b270d75.var_f7dd9d13d2a7fdac);
+    return function_409b4b9bee1fbe1c(objective) && istrue(objective.var_3d33ce746b270d75.is_volume);
 }
 
 // Namespace namespace_a8e999320b18af1d / namespace_8c7f8f6b3076a74a
@@ -734,23 +734,23 @@ function function_914b829c1006fba6() {
     // Size: 0x21c
     function function_ab522b97af67094c(linecolor) {
         origin = self.origin;
-        var_872fff8a91852c9f = self.struct.var_74e936bbadd15418;
-        var_870c0d8a915cd0b1 = self.struct.var_750c4cbbadf7cc32;
+        size_min = self.struct.var_74e936bbadd15418;
+        size_max = self.struct.var_750c4cbbadf7cc32;
         angles = self.angles;
-        var_6d30da2bfddc1c25 = var_870c0d8a915cd0b1[0] + var_872fff8a91852c9f[0];
-        var_98feda8066e0301c = var_870c0d8a915cd0b1[1] + var_872fff8a91852c9f[1];
-        var_e032621197901cfc = var_870c0d8a915cd0b1[2] + var_872fff8a91852c9f[2];
+        box_width = size_max[0] + size_min[0];
+        box_depth = size_max[1] + size_min[1];
+        box_height = size_max[2] + size_min[2];
         forward = anglestoforward(angles);
         right = anglestoright(angles);
         up = anglestoup(angles);
-        topleftfront = origin + forward * var_870c0d8a915cd0b1[0] + right * var_870c0d8a915cd0b1[1] + up * var_870c0d8a915cd0b1[2];
-        toprightfront = origin - forward * var_872fff8a91852c9f[0] + right * var_870c0d8a915cd0b1[1] + up * var_870c0d8a915cd0b1[2];
-        topleftback = origin + forward * var_870c0d8a915cd0b1[0] - right * var_872fff8a91852c9f[1] + up * var_870c0d8a915cd0b1[2];
-        toprightback = origin - forward * var_872fff8a91852c9f[0] - right * var_872fff8a91852c9f[1] + up * var_870c0d8a915cd0b1[2];
-        bottomleftfront = origin + forward * var_870c0d8a915cd0b1[0] + right * var_870c0d8a915cd0b1[1] - up * var_872fff8a91852c9f[2];
-        bottomrightfront = origin - forward * var_872fff8a91852c9f[0] + right * var_870c0d8a915cd0b1[1] - up * var_872fff8a91852c9f[2];
-        var_2febbcb4c37b3b64 = origin + forward * var_870c0d8a915cd0b1[0] - right * var_872fff8a91852c9f[1] - up * var_872fff8a91852c9f[2];
-        var_3a64b6f876a6b09f = origin - forward * var_872fff8a91852c9f[0] - right * var_872fff8a91852c9f[1] - up * var_872fff8a91852c9f[2];
+        topleftfront = origin + forward * size_max[0] + right * size_max[1] + up * size_max[2];
+        toprightfront = origin - forward * size_min[0] + right * size_max[1] + up * size_max[2];
+        topleftback = origin + forward * size_max[0] - right * size_min[1] + up * size_max[2];
+        toprightback = origin - forward * size_min[0] - right * size_min[1] + up * size_max[2];
+        bottomleftfront = origin + forward * size_max[0] + right * size_max[1] - up * size_min[2];
+        bottomrightfront = origin - forward * size_min[0] + right * size_max[1] - up * size_min[2];
+        var_2febbcb4c37b3b64 = origin + forward * size_max[0] - right * size_min[1] - up * size_min[2];
+        var_3a64b6f876a6b09f = origin - forward * size_min[0] - right * size_min[1] - up * size_min[2];
         thread scripts\cp_mp\utility\debug_utility::drawboxfrompoints(topleftfront, toprightfront, topleftback, toprightback, bottomleftfront, bottomrightfront, var_2febbcb4c37b3b64, var_3a64b6f876a6b09f, function_75d09d086b745c89(), linecolor);
     }
 
@@ -807,8 +807,8 @@ function private function_c6c97baa041205e(func, var_6fd9b0faefe473cf, var_9318be
 // Size: 0x2c3
 function private function_62a59bb3c360a4ab() {
     objectives = [];
-    var_e23670110d552735 = getstructarray("scan_objective", "targetname");
-    foreach (struct in var_e23670110d552735) {
+    struct_objectives = getstructarray("scan_objective", "targetname");
+    foreach (struct in struct_objectives) {
         var_25abbf787ca0afe2 = 1;
         if (isdefined(level.var_8b30d8e5d8aecf1.var_d2d40b11daa9282b)) {
             foreach (var_2f9e676cecaabadd in level.var_8b30d8e5d8aecf1.var_d2d40b11daa9282b) {
@@ -828,14 +828,14 @@ function private function_62a59bb3c360a4ab() {
             objectives = array_add(objectives, struct);
         }
     }
-    var_1f29309b3f1d5664 = function_f159c10d5cf8f0b4("scan_volume", "targetname");
-    foreach (volume in var_1f29309b3f1d5664) {
+    volume_objectives = function_f159c10d5cf8f0b4("scan_volume", "targetname");
+    foreach (volume in volume_objectives) {
         var_25abbf787ca0afe2 = 1;
         if (isdefined(level.var_8b30d8e5d8aecf1.var_d2d40b11daa9282b)) {
             foreach (var_2f9e676cecaabadd in level.var_8b30d8e5d8aecf1.var_d2d40b11daa9282b) {
                 if (volume.origin == var_2f9e676cecaabadd.origin) {
                     if (isdefined(volume.var_3d33ce746b270d75)) {
-                        var_2f9e676cecaabadd.var_3d33ce746b270d75.var_f7dd9d13d2a7fdac = 1;
+                        var_2f9e676cecaabadd.var_3d33ce746b270d75.is_volume = 1;
                     }
                     var_25abbf787ca0afe2 = 0;
                 }
@@ -845,7 +845,7 @@ function private function_62a59bb3c360a4ab() {
             if (!isdefined(volume.var_3d33ce746b270d75)) {
                 volume.var_3d33ce746b270d75 = spawnstruct();
             }
-            volume.var_3d33ce746b270d75.var_f7dd9d13d2a7fdac = 1;
+            volume.var_3d33ce746b270d75.is_volume = 1;
             objectives = array_add(objectives, volume);
         }
     }
@@ -994,8 +994,8 @@ function private typecast_kvps() {
     if (isdefined(self.los)) {
         self.los = int(self.los);
     }
-    if (isdefined(self.var_6ed7b1082a7e28f1)) {
-        self.var_6ed7b1082a7e28f1 = float(self.var_6ed7b1082a7e28f1);
+    if (isdefined(self.los_distance)) {
+        self.los_distance = float(self.los_distance);
     }
     if (isdefined(self.should_draw_quest_circle)) {
         self.should_draw_quest_circle = int(self.should_draw_quest_circle);
@@ -1034,40 +1034,40 @@ function private function_8996551ace9f412() {
 // Size: 0x268
 function private function_933650aaf0f8897a() {
     foreach (setting in level.var_8b30d8e5d8aecf1.var_15649dca955ec899) {
-        level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting] = spawnstruct();
+        level.var_8b30d8e5d8aecf1.struct_map[setting] = spawnstruct();
         switch (setting) {
         case #"hash_135276b3546d194e":
         case #"hash_c1e511c2e0fe1aba":
         case #"hash_fe0f2103d5e6f97e":
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = 1;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = 1;
             break;
         case #"hash_69d120f65437dfed":
         case #"hash_87ac8497d076bcfb":
         case #"hash_9b9cbf8d07d50013":
         case #"hash_a5fcdf32b085d9f1":
         case #"hash_ddb2514b3e1a3ee0":
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = 0;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = 0;
             break;
         case #"hash_b915fc5a5d63c7b3":
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = 200;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = 200;
             break;
         case #"hash_a5c807181bedf71":
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = 500;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = 500;
             break;
         case #"hash_fb276a280398f7fd":
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = 1000;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = 1000;
             break;
         case #"hash_3bab558141f6bed3":
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = 200;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = 200;
             break;
         case #"hash_6241b3d45f637356":
         case #"hash_7b6614415d1b2e48":
         case #"hash_cd735096462515a3":
         case #"hash_d6d0f2f8a901b9fd":
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = undefined;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = undefined;
             break;
         default:
-            level.var_8b30d8e5d8aecf1.var_80eec6017a52acd[setting].defaultsetting = undefined;
+            level.var_8b30d8e5d8aecf1.struct_map[setting].defaultsetting = undefined;
             break;
         }
     }

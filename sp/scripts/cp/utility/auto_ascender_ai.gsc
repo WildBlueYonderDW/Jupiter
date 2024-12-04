@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\asm\asm.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\asm\shared\mp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_65193b393806247d;
 
@@ -59,11 +59,11 @@ function release_ascendstruct_ondeath(var_e329e466286dfc92) {
 function ai_ascender_doanims(var_478bfac22ea8f9e, var_a2aa0d90b41a955f, var_16eece1d377a2b4b, var_cfb273d832b1732e, var_5d4eba776abdcecf, var_ffe0bd8231cc883b, var_b02a4b4bfc64aa4e, animnode, dir) {
     self endon("death");
     var_d242fefc078b21d9 = scripts\asm\asm::asm_lookupanimfromalias("animscripted2", var_478bfac22ea8f9e);
-    var_244b47a473bc2cf8 = scripts\asm\asm::asm_getxanim("animscripted2", var_d242fefc078b21d9);
+    in_xanim = scripts\asm\asm::asm_getxanim("animscripted2", var_d242fefc078b21d9);
     var_bc638c476608c29e = scripts\asm\asm::asm_lookupanimfromalias("animscripted2", var_a2aa0d90b41a955f);
-    var_abdcc31f53aaeb21 = scripts\asm\asm::asm_getxanim("animscripted2", var_bc638c476608c29e);
+    out_xanim = scripts\asm\asm::asm_getxanim("animscripted2", var_bc638c476608c29e);
     var_9ac8d3c06231f652 = scripts\asm\asm::asm_lookupanimfromalias("animscripted2", var_16eece1d377a2b4b);
-    var_fd4a95f23ebcc23d = scripts\asm\asm::asm_getxanim("animscripted2", var_9ac8d3c06231f652);
+    loop_xanim = scripts\asm\asm::asm_getxanim("animscripted2", var_9ac8d3c06231f652);
     self setplayerangles(var_b02a4b4bfc64aa4e.angles);
     if (dir == "up") {
         self forceteleport(var_b02a4b4bfc64aa4e.origin + anglestoleft(var_b02a4b4bfc64aa4e.angles) * -4 + anglestoforward(var_b02a4b4bfc64aa4e.angles) * 10, var_b02a4b4bfc64aa4e.angles);
@@ -72,9 +72,9 @@ function ai_ascender_doanims(var_478bfac22ea8f9e, var_a2aa0d90b41a955f, var_16ee
     }
     ai_ascender_giveascender(animnode);
     thread ascender_deathwatcher();
-    ai_ascender_animin(var_cfb273d832b1732e, animnode, var_d242fefc078b21d9, var_b02a4b4bfc64aa4e, var_244b47a473bc2cf8);
-    ai_ascender_animloop(var_fd4a95f23ebcc23d, var_b02a4b4bfc64aa4e);
-    ai_ascender_animout(var_5d4eba776abdcecf, var_bc638c476608c29e, var_abdcc31f53aaeb21);
+    ai_ascender_animin(var_cfb273d832b1732e, animnode, var_d242fefc078b21d9, var_b02a4b4bfc64aa4e, in_xanim);
+    ai_ascender_animloop(loop_xanim, var_b02a4b4bfc64aa4e);
+    ai_ascender_animout(var_5d4eba776abdcecf, var_bc638c476608c29e, out_xanim);
     ai_ascender_takeascender();
     toggle_ai_settings(0);
     self notify("ascended");
@@ -84,26 +84,26 @@ function ai_ascender_doanims(var_478bfac22ea8f9e, var_a2aa0d90b41a955f, var_16ee
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x541
 // Size: 0x9b
-function ai_ascender_animin(var_cfb273d832b1732e, struct, var_d242fefc078b21d9, animnode, var_244b47a473bc2cf8) {
+function ai_ascender_animin(var_cfb273d832b1732e, struct, var_d242fefc078b21d9, animnode, in_xanim) {
     self.ascender scriptmodelplayanimdeltamotionfrompos(var_cfb273d832b1732e, struct.origin, struct.angles);
     self animmode("noclip");
     self aisetanim("animscripted2", var_d242fefc078b21d9);
     self orientmode("face angle", animnode.angles[1]);
     waitframe();
     self.ascender show();
-    wait getanimlength(var_244b47a473bc2cf8);
+    wait getanimlength(in_xanim);
 }
 
 // Namespace namespace_65193b393806247d / scripts\cp\utility\auto_ascender_ai
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0xbd
-function ai_ascender_animloop(var_fd4a95f23ebcc23d, animnode) {
+function ai_ascender_animloop(loop_xanim, animnode) {
     self.anchor = spawn("script_origin", self.origin);
     self.anchor.angles = self.angles;
     self linkto(self.anchor);
     self.ascender linkto(self.anchor);
-    var_675510f88d731497 = getanimlength(var_fd4a95f23ebcc23d);
+    var_675510f88d731497 = getanimlength(loop_xanim);
     self.anchor moveto(animnode.end_node.origin, var_675510f88d731497 * 3);
     self.anchor waittill("movedone");
 }
@@ -112,12 +112,12 @@ function ai_ascender_animloop(var_fd4a95f23ebcc23d, animnode) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a9
 // Size: 0x99
-function ai_ascender_animout(var_5d4eba776abdcecf, var_bc638c476608c29e, var_abdcc31f53aaeb21) {
+function ai_ascender_animout(var_5d4eba776abdcecf, var_bc638c476608c29e, out_xanim) {
     self unlink();
     self.ascender scriptmodelclearanim();
     self.ascender scriptmodelplayanimdeltamotionfrompos(var_5d4eba776abdcecf, self.ascender.origin, self.ascender.angles);
     self aisetanim("animscripted2", var_bc638c476608c29e);
-    wait getanimlength(var_abdcc31f53aaeb21);
+    wait getanimlength(out_xanim);
     self.anchor delete();
     self.ascender delete();
 }

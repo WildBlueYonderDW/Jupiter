@@ -1,9 +1,9 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\common\vehicle_aianim.gsc;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\vehicle_aianim;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace namespace_93635c21ec57253a;
 
@@ -132,15 +132,15 @@ function function_957cf1aa5f6b9c5f() {
     level endon("uw_audio_cleanup");
     wait randomfloatrange(5, 10);
     while (true) {
-        var_d185125610e413e2 = randomfloatrange(-500, 500);
-        var_d185135610e41615 = randomfloatrange(-500, 500);
-        var_d185105610e40f7c = randomfloatrange(20, 500);
-        position = level.player.origin + (var_d185125610e413e2, var_d185135610e41615, var_d185105610e40f7c);
+        dist_x = randomfloatrange(-500, 500);
+        dist_y = randomfloatrange(-500, 500);
+        dist_z = randomfloatrange(20, 500);
+        position = level.player.origin + (dist_x, dist_y, dist_z);
         play_sound_in_space("tun_underwater_amb_ice_cracks_lrg", position);
         wait randomfloatrange(5, 10);
-        var_d185125610e413e2 = undefined;
-        var_d185135610e41615 = undefined;
-        var_d185105610e40f7c = undefined;
+        dist_x = undefined;
+        dist_y = undefined;
+        dist_z = undefined;
         position = undefined;
         waitframe();
     }
@@ -154,15 +154,15 @@ function function_fbc315aaaaa7c6a0() {
     level endon("uw_audio_cleanup");
     wait randomfloatrange(10, 15);
     while (true) {
-        var_d185125610e413e2 = randomfloatrange(-500, 500);
-        var_d185135610e41615 = randomfloatrange(-500, 500);
-        var_d185105610e40f7c = randomfloatrange(20, 500);
-        position = level.player.origin + (var_d185125610e413e2, var_d185135610e41615, var_d185105610e40f7c);
+        dist_x = randomfloatrange(-500, 500);
+        dist_y = randomfloatrange(-500, 500);
+        dist_z = randomfloatrange(20, 500);
+        position = level.player.origin + (dist_x, dist_y, dist_z);
         play_sound_in_space("tun_underwater_amb_ice_cracks_sml", position);
         wait randomfloatrange(5, 10);
-        var_d185125610e413e2 = undefined;
-        var_d185135610e41615 = undefined;
-        var_d185105610e40f7c = undefined;
+        dist_x = undefined;
+        dist_y = undefined;
+        dist_z = undefined;
         position = undefined;
         waitframe();
     }
@@ -184,7 +184,7 @@ function function_c2f083751f8230d6() {
     var_8772a98e63d42ff1 scene::function_8207074e79f22926(level.player, "note_start_breath", "player");
     var_8788a78e63ec5ebe = getstruct("scene_jup_tun_0140_scuba_vip_rescue", "targetname");
     var_8788a78e63ec5ebe scene::function_8207074e79f22926(level.player, "note_hold_breath", "Player 1");
-    thread function_f9bae16bb3f72dfd();
+    thread underwater_breathing();
     thread function_b1daf17b4376c583();
     flag_wait("flg_allies_veh_refs_created");
     thread function_426b5f7495da6b49();
@@ -192,7 +192,7 @@ function function_c2f083751f8230d6() {
         level.player waittill("note_hold_breath");
         level notify("stop_breathing");
         level.player waittill("note_start_breath");
-        thread function_f9bae16bb3f72dfd();
+        thread underwater_breathing();
         thread function_b1daf17b4376c583();
         thread function_426b5f7495da6b49();
         wait 1;
@@ -203,7 +203,7 @@ function function_c2f083751f8230d6() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf37
 // Size: 0x7f
-function function_f9bae16bb3f72dfd() {
+function underwater_breathing() {
     level.player endon("death");
     level endon("stop_breathing");
     level endon("uw_audio_cleanup");
@@ -317,27 +317,27 @@ function function_864a8e9188f7b036() {
 // Size: 0xf3
 function function_df167234b8c47354(bird) {
     level endon("flg_audio_bird_done");
-    var_3326200b9e0b7827 = undefined;
+    bird_audio = undefined;
     level.var_72d800ee048c7e49 = 0;
-    var_7d3404bc43ae8647 = 0;
+    play_delay = 0;
     while (true) {
         if (level.var_72d800ee048c7e49) {
-            var_7d3404bc43ae8647 = 0;
+            play_delay = 0;
             wait randomfloatrange(8, 15);
-        } else if (!isdefined(var_3326200b9e0b7827)) {
-            var_7d3404bc43ae8647 -= 0.05;
-            if (var_7d3404bc43ae8647 <= 0) {
-                var_d185125610e413e2 = randomfloatrange(-2500, 2500);
-                var_d185135610e41615 = randomfloatrange(-2500, 2500);
-                var_d185105610e40f7c = randomfloatrange(0, 200);
-                position = bird + (var_d185125610e413e2, var_d185135610e41615, var_d185105610e40f7c);
-                var_3326200b9e0b7827 = play_sound_in_space("amb_emt_ext_tun_forest_birds", position);
-                var_d185125610e413e2 = undefined;
-                var_d185135610e41615 = undefined;
-                var_d185105610e40f7c = undefined;
+        } else if (!isdefined(bird_audio)) {
+            play_delay -= 0.05;
+            if (play_delay <= 0) {
+                dist_x = randomfloatrange(-2500, 2500);
+                dist_y = randomfloatrange(-2500, 2500);
+                dist_z = randomfloatrange(0, 200);
+                position = bird + (dist_x, dist_y, dist_z);
+                bird_audio = play_sound_in_space("amb_emt_ext_tun_forest_birds", position);
+                dist_x = undefined;
+                dist_y = undefined;
+                dist_z = undefined;
                 position = undefined;
                 waitframe();
-                var_7d3404bc43ae8647 = randomfloatrange(4, 15);
+                play_delay = randomfloatrange(4, 15);
             }
         }
         waitframe();
@@ -362,9 +362,9 @@ function function_af1d28b3257969a7() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1516
 // Size: 0xe1
-function function_b0182ef9cde179b7() {
-    var_cba31e28e91485c0 = [(6458, -15241, 242), (5515, -13485, 229), (4507, -11710, 458), (3969, -10307, 606), (6086, -6670, 920), (-321, -1546, 1068), (-4632, -485, 1474)];
-    foreach (bird in var_cba31e28e91485c0) {
+function forest_birds() {
+    bird_array = [(6458, -15241, 242), (5515, -13485, 229), (4507, -11710, 458), (3969, -10307, 606), (6086, -6670, 920), (-321, -1546, 1068), (-4632, -485, 1474)];
+    foreach (bird in bird_array) {
         wait randomfloatrange(1, 4);
         thread function_df167234b8c47354(bird);
     }
@@ -486,16 +486,16 @@ function function_89261962aa444c35() {
 // Size: 0xb1
 function function_733b42fe33959ee() {
     self endon("death");
-    var_b9dbc37fe61a2685 = utility::spawn_script_origin(self.origin);
-    var_b9dbc37fe61a2685 linkto(self, "tag_origin", (0, 0, 0), (0, 0, 0));
+    engine_ent = utility::spawn_script_origin(self.origin);
+    engine_ent linkto(self, "tag_origin", (0, 0, 0), (0, 0, 0));
     self playloopsound("veh_jup_tun_finale_jltv_engine_lp");
     utility::waittill_any_ents(self, "vehicle_near_path_end", level, "flag_" + self.targetname + "_clear");
-    var_b9dbc37fe61a2685 playsound("veh_jup_tun_veh9_mil_lnd_jltv_engine_shutoff");
+    engine_ent playsound("veh_jup_tun_veh9_mil_lnd_jltv_engine_shutoff");
     self scalevolume(0, 0.5);
     wait 0.8;
     self stoploopsound("veh_jup_tun_finale_jltv_engine_lp");
     wait 5;
-    var_b9dbc37fe61a2685 delete();
+    engine_ent delete();
 }
 
 // Namespace namespace_93635c21ec57253a / namespace_f74ba02cf5fc717a
@@ -505,11 +505,11 @@ function function_733b42fe33959ee() {
 function function_a08690148d25a40e() {
     var_3a465e75b646f5d4 = getstruct("scene_jup_tun_1000_igc_outro", "targetname");
     var_3a465e75b646f5d4 thread scene::function_8207074e79f22926(level, "audio_notify_sh060_heli", "heli");
-    level.var_7e9c1ce4407659f1 playloopsound("evt_tun_1000_exfil_heli_idle");
+    level.nikolai_heli playloopsound("evt_tun_1000_exfil_heli_idle");
     level waittill("audio_notify_sh060_heli");
-    level.var_7e9c1ce4407659f1 scalevolume(0, 1);
+    level.nikolai_heli scalevolume(0, 1);
     wait 1;
-    level.var_7e9c1ce4407659f1 stoploopsound("evt_tun_1000_exfil_heli_idle");
+    level.nikolai_heli stoploopsound("evt_tun_1000_exfil_heli_idle");
 }
 
 // Namespace namespace_93635c21ec57253a / namespace_f74ba02cf5fc717a

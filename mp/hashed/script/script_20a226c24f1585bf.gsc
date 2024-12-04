@@ -1,12 +1,12 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\math.gsc;
 #using script_2304453c69e996e2;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
 
 #namespace namespace_adca7bd47b8c5e04;
 

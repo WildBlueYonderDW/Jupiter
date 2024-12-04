@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_2583ee5680cf4736;
-#using script_639bf783929acf9b;
-#using script_3a4480ba1c5664d0;
 #using script_16ea1b94f0f381b3;
-#using script_7e4d332e911e1b90;
-#using scripts\common\devgui.gsc;
+#using script_2583ee5680cf4736;
 #using script_398835140857d740;
+#using script_3a4480ba1c5664d0;
+#using script_639bf783929acf9b;
+#using script_7e4d332e911e1b90;
 #using script_860bfdfe82326e3;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\lui_game_event_aggregator;
 
 #namespace perk_machines;
 

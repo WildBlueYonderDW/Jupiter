@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_debug.gsc;
-#using script_be6cb102c46939e;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\cp_hostmigration.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_519bed5012f1c015;
+#using script_be6cb102c46939e;
+#using scripts\common\utility;
+#using scripts\cp\cp_debug;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\utility\entity;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace movement_trigger;
 
@@ -614,7 +614,7 @@ function function_2d13344310ed2a7b() {
 // Checksum 0x0, Offset: 0x17d7
 // Size: 0xc3
 function function_63660d5c7f87dcae() {
-    var_20533273f43dd4e2 = [];
+    updated_array = [];
     if (isdefined(level.var_9a1bdb96d46fbf5)) {
         foreach (trigger in level.var_9a1bdb96d46fbf5) {
             thread watchmovementTriggerTrigger(trigger);
@@ -637,7 +637,7 @@ function watchmovementTriggerTrigger(trigger) {
     trigger.entstouching = [];
     if (isdefined(trigger.target)) {
         trigger.var_3efe1b3a9ef1aba0 = getent(trigger.target, "targetname");
-        trigger.var_3efe1b3a9ef1aba0.var_281086936687228a = trigger;
+        trigger.var_3efe1b3a9ef1aba0.parent_trigger = trigger;
     }
     scripts\mp\flags::gameflagwait("prematch_done");
     thread watchmovementTriggerTriggerExit(trigger);

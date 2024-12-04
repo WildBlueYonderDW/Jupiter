@@ -1,4 +1,4 @@
-#using scripts\mp\gametypes\br_rewards.gsc;
+#using scripts\mp\gametypes\br_rewards;
 
 #namespace namespace_f12bb34d03822f82;
 

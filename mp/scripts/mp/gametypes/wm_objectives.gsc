@@ -1,51 +1,51 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using script_4d0e5ae730a29489;
-#using script_2c17aa19d1e937b2;
-#using scripts\mp\flags.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_2bc0b0102f9b7751;
-#using script_48814951e916af89;
-#using script_371b4c2ab5861e62;
-#using scripts\common\lighting.gsc;
-#using script_7406801b4c228018;
-#using script_3653c2969325f543;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\obj_zonecapture.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\equipment\tactical_cover.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using script_7b8639f512d4cfe4;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\gametypes\rescue.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\obj_bombzone.gsc;
-#using script_412f60226ac8bd5b;
-#using script_3fddda92c991755e;
-#using scripts\mp\gametypes\wm_utility.gsc;
 #using script_1cb7d67b71a3b4a0;
-#using scripts\mp\mp_agent.gsc;
+#using script_2bc0b0102f9b7751;
+#using script_2c17aa19d1e937b2;
+#using script_3653c2969325f543;
+#using script_371b4c2ab5861e62;
+#using script_3fddda92c991755e;
+#using script_412f60226ac8bd5b;
 #using script_47fc06d4bb326007;
-#using script_439fa02b5251fa5b;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
-#using scripts\mp\gametypes\wm_ui.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
+#using script_48814951e916af89;
+#using script_4d0e5ae730a29489;
 #using script_62384cde1a08c286;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\hud_message.gsc;
+#using script_7406801b4c228018;
+#using script_7b8639f512d4cfe4;
+#using scripts\common\damage_tuning;
+#using scripts\common\lighting;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\obj_bombzone;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\gametypes\obj_zonecapture;
+#using scripts\mp\gametypes\rescue;
+#using scripts\mp\gametypes\wm_ui;
+#using scripts\mp\gametypes\wm_utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\mp_agent;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\teams;
 
 #namespace wm_objectives;
 
@@ -1761,7 +1761,7 @@ function function_b707f54f7de4fd15(zone) {
     var_f414affbb2644d5a scripts\mp\gameobjects::setvisibleteam("any");
     objective_state(var_f414affbb2644d5a.objidnum, "done");
     var_f414affbb2644d5a.var_b2dfb3f0778c829a = %MP_INGAME_ONLY/OBJ_CAPTURING_CAPS;
-    zone.var_d731642d971f0c49 = var_f414affbb2644d5a;
+    zone.flag_capture_zone = var_f414affbb2644d5a;
     level.objectives[objectivekey] = var_f414affbb2644d5a;
     level.objectives[objectivekey].objectivetype = objective.objectivetype;
     zone.var_a41fe785a977666f = 0;
@@ -3165,7 +3165,7 @@ function function_e1c17d4c7c7e96a5(data) {
     delaythread(0.2, &function_58f7ac8cca982832);
     if (istrue(level.var_be6a42242be00b66)) {
         bundle = level.streakglobals.streakbundles["missile_turret"];
-        modifieddamage = namespace_87e70a4c0468fd81::getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
+        modifieddamage = scripts\common\damage_tuning::getmodifieddamageusingdamagetuning(attacker, objweapon, type, modifieddamage, self.maxhealth, bundle.var_e913079a5ffda56d);
     } else if (issharedfuncdefined("killstreak", "getModifiedAntiKillstreakDamage")) {
         modifieddamage = self [[ getsharedfunc("killstreak", "getModifiedAntiKillstreakDamage") ]](attacker, objweapon, type, modifieddamage, self.maxhealth, 2, 3, 4, 3, 400);
     }
@@ -3419,7 +3419,7 @@ function function_7d30ae61c44bd1a0(player) {
                 thread scripts\mp\utility\print::printandsoundoneveryone(game["attackers"], game["defenders"], undefined, undefined, "mp_dom_flag_captured", "mp_dom_flag_lost");
             }
         } else {
-            scripts\mp\utility\points::function_2a66e9acc30896c(game["attackers"], #"hash_f1b94bd47af6d947");
+            scripts\mp\utility\points::function_2a66e9acc30896c(game["attackers"], #"wm_capture_zone");
             thread scripts\mp\utility\print::printandsoundoneveryone(game["attackers"], game["defenders"], undefined, undefined, "mp_dom_flag_captured", "mp_dom_flag_lost");
         }
         return;

@@ -1,15 +1,15 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\values.gsc;
-#using scripts\sp\door_internal.gsc;
-#using scripts\sp\door.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\outline.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\door;
+#using scripts\sp\door_internal;
+#using scripts\sp\hud_util;
+#using scripts\sp\outline;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace door;
 
@@ -66,7 +66,7 @@ function _init_door_internal(reset) {
     }
     if (isdefined(var_ef82e2721f3c62b7) || isdefined(var_f851b6fab0cd01bf) || isdefined(self.lockpick)) {
         structs = get_linked_structs();
-        var_2a0a2b97a561fa43 = [];
+        c4_structs = [];
         foreach (struct in structs) {
             if (isdefined(struct.script_noteworthy)) {
                 struct.door = self;
@@ -88,13 +88,13 @@ function _init_door_internal(reset) {
                     if (!isdefined(struct.radius)) {
                         struct.radius = 2.5;
                     }
-                    var_2a0a2b97a561fa43[var_2a0a2b97a561fa43.size] = struct;
+                    c4_structs[c4_structs.size] = struct;
                     break;
                 }
             }
             thread door_event_wait();
         }
-        if (var_2a0a2b97a561fa43.size > 0) {
+        if (c4_structs.size > 0) {
             self.c4_struct = spawn_script_origin();
             self.c4_struct.origin = (0, 0, 0);
             self.c4_struct.radius = 0;
@@ -104,11 +104,11 @@ function _init_door_internal(reset) {
             } else {
                 self.c4_struct.angles = (0, 0, 0);
             }
-            foreach (struct in var_2a0a2b97a561fa43) {
-                self.c4_struct.origin += struct.origin * 1 / var_2a0a2b97a561fa43.size;
-                self.c4_struct.radius += struct.radius * 1 / var_2a0a2b97a561fa43.size;
+            foreach (struct in c4_structs) {
+                self.c4_struct.origin += struct.origin * 1 / c4_structs.size;
+                self.c4_struct.radius += struct.radius * 1 / c4_structs.size;
             }
-            self.c4_struct.breachpoints = var_2a0a2b97a561fa43;
+            self.c4_struct.breachpoints = c4_structs;
         }
         if (isdefined(self.lockpick) && istrue(self.locked)) {
             thread function_cedac69b27a389af();
@@ -156,7 +156,7 @@ function function_cedac69b27a389af() {
         return;
     }
     if (!istrue(self.isbashing)) {
-        self thread [[ self.lockpick.var_f8675961eea45288 ]]();
+        self thread [[ self.lockpick.enable_callback ]]();
     }
 }
 
@@ -168,7 +168,7 @@ function function_4930ecffc9409b56() {
     if (!isdefined(self.lockpick)) {
         return;
     }
-    self thread [[ self.lockpick.var_f63fee5883dc09ab ]]();
+    self thread [[ self.lockpick.disable_callback ]]();
 }
 
 // Namespace door / scripts\game\sp\door
@@ -292,19 +292,19 @@ function snake_cam_logic() {
         level.player.ignoreme = 1;
         flag_wait_or_timeout("exit_snakecam_immediately", 0.5);
         fwd = anglestoforward(self.angles);
-        var_4392b13e68922c81 = vectornormalize(self.origin - level.player getorigin());
-        dot = vectordot(fwd, var_4392b13e68922c81);
+        to_door = vectornormalize(self.origin - level.player getorigin());
+        dot = vectordot(fwd, to_door);
         tag = level.player spawn_tag_origin();
         tag.origin = self.origin;
         tag.angles = self.angles;
         if (isdefined(self.target)) {
-            var_a88537b73e05f02a = getstruct(self.target, "targetname");
-            if (!isdefined(var_a88537b73e05f02a)) {
-                var_a88537b73e05f02a = getent(self.target, "targetname");
+            offset_struct = getstruct(self.target, "targetname");
+            if (!isdefined(offset_struct)) {
+                offset_struct = getent(self.target, "targetname");
             }
-            if (isdefined(var_a88537b73e05f02a)) {
-                tag.origin = var_a88537b73e05f02a.origin;
-                tag.angles = var_a88537b73e05f02a.angles;
+            if (isdefined(offset_struct)) {
+                tag.origin = offset_struct.origin;
+                tag.angles = offset_struct.angles;
             }
         }
         if (dot < 0) {
@@ -328,11 +328,11 @@ function snake_cam_logic() {
         }
         flag_wait("snakecam_allow_exit");
         waittill_player_exits_cam();
-        var_1b9b8daf429dd199 = tag.origin + anglestoforward(tag.angles) * -20;
+        nudge_spot = tag.origin + anglestoforward(tag.angles) * -20;
         if (flag("exit_snakecam_immediately")) {
-            tag moveto(var_1b9b8daf429dd199, 0.05);
+            tag moveto(nudge_spot, 0.05);
         } else {
-            tag moveto(var_1b9b8daf429dd199, 0.5, 0.125);
+            tag moveto(nudge_spot, 0.5, 0.125);
         }
         flag_wait_or_timeout("exit_snakecam_immediately", 0.25);
         level.player notify("leave_cam");
@@ -408,7 +408,7 @@ function snake_cam_control(tempmovesoundent) {
     var_d296b0eaf4a6b00f = [0, 0];
     var_d5e6310914396ac3 = 0.2;
     var_848e35f763ce65b0 = 0.2;
-    var_91ab80bc6772504d = 0;
+    rumble_playing = 0;
     while (true) {
         currentangles = self.angles;
         var_b4f55166f66361e9 = level.player.cam_ent.angles;
@@ -460,21 +460,21 @@ function snake_cam_control(tempmovesoundent) {
             earthquake(var_4d8cd161a8eaadc2, 0.07, level.player.origin, 2000);
         }
         if (rumble > 0.0001) {
-            if (!var_91ab80bc6772504d) {
+            if (!rumble_playing) {
                 self.rumbleent playrumblelooponentity("steady_rumble");
-                var_91ab80bc6772504d = 1;
+                rumble_playing = 1;
             }
-        } else if (var_91ab80bc6772504d) {
+        } else if (rumble_playing) {
             self.rumbleent stoprumble("steady_rumble");
-            var_91ab80bc6772504d = 0;
+            rumble_playing = 0;
         }
         height = 1 - rumble;
         height *= 1000;
         self.rumbleent.origin = level.player geteye() + (0, 0, height);
         self.tempmovesoundent scalevolume(volume, 0.05);
         self.angles = var_6612315290576b0f;
-        var_1b9b8daf429dd199 = self.origin + anglestoforward(self.angles) * 12 + anglestoup(self.angles) * -55 + (0, 0, 3);
-        level.player.cam_ent.origin = var_1b9b8daf429dd199;
+        nudge_spot = self.origin + anglestoforward(self.angles) * 12 + anglestoup(self.angles) * -55 + (0, 0, 3);
+        level.player.cam_ent.origin = nudge_spot;
         level.player.cam_ent.angles = (self.angles[0], self.angles[1], self.angles[2]);
         wait 0.05;
     }
@@ -485,8 +485,8 @@ function snake_cam_control(tempmovesoundent) {
 // Checksum 0x0, Offset: 0x1b66
 // Size: 0x1c8
 function put_player_on_cam(tag) {
-    var_1b9b8daf429dd199 = tag.origin + anglestoforward(tag.angles) * 12 - (0, 0, 55);
-    level.player.cam_ent = spawn_tag_origin(var_1b9b8daf429dd199, tag.angles);
+    nudge_spot = tag.origin + anglestoforward(tag.angles) * 12 - (0, 0, 55);
+    level.player.cam_ent = spawn_tag_origin(nudge_spot, tag.angles);
     level.player val::set("snakeCam", "stand", 1);
     level.player val::set("snakeCam", "crouch", 0);
     level.player val::set("snakeCam", "prone", 0);
@@ -637,13 +637,13 @@ function snake_door_cam_hud() {
     overlay.aligny = "middle";
     overlay.font = "smallfixed";
     overlay.fontscale = 0.75;
-    var_83a337b15031dab = scripts\sp\hud_util::create_client_overlay("nightvision_overlay_goggles_grain", 1);
+    goggles = scripts\sp\hud_util::create_client_overlay("nightvision_overlay_goggles_grain", 1);
     visionsetfadetoblack(level.interactive_doors.snakecamvision, 0.05);
     setsaveddvar(@"hash_83bbe73116f488d6", 0.5);
     setsaveddvar(@"hash_ed28298c207316ae", 0.2);
     setsaveddvar(@"hash_979b5474be3b9b47", -0.75);
     setsaveddvar(@"hash_960ef00238357bbc", 0.011);
-    return [crosshair, var_83a337b15031dab, overlay];
+    return [crosshair, goggles, overlay];
 }
 
 // Namespace door / scripts\game\sp\door
@@ -669,13 +669,13 @@ function snake_door_cam_hud_blur_v2() {
     overlay.aligny = "middle";
     overlay.font = "smallfixed";
     overlay.fontscale = 0.75;
-    var_83a337b15031dab = scripts\sp\hud_util::create_client_overlay("nightvision_overlay_goggles_grain", 1);
+    goggles = scripts\sp\hud_util::create_client_overlay("nightvision_overlay_goggles_grain", 1);
     visionsetfadetoblack(level.interactive_doors.snakecamvision, 0.05);
     setsaveddvar(@"hash_83bbe73116f488d6", 0.5);
     setsaveddvar(@"hash_ed28298c207316ae", 0.2);
     setsaveddvar(@"hash_979b5474be3b9b47", -0.75);
     setsaveddvar(@"hash_960ef00238357bbc", 0.011);
-    return [crosshair, var_83a337b15031dab, overlay];
+    return [crosshair, goggles, overlay];
 }
 
 // Namespace door / scripts\game\sp\door

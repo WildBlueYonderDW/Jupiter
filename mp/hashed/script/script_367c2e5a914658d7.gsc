@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_4948cdf739393d2d;
-#using scripts\mp\flags.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using script_58f20490049af6ac;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_371b4c2ab5861e62;
-#using scripts\mp\ai_behavior.gsc;
+#using script_48814951e916af89;
+#using script_4948cdf739393d2d;
+#using script_58f20490049af6ac;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\player;
 
 #namespace namespace_6d558624bef88b8;
 
@@ -33,7 +33,7 @@ function function_c4b698ed8dd5c33d() {
     #/
     agents = function_7eb04ca16d045775("activeWarzone");
     foreach (agent in agents) {
-        if (isalive(agent) && !namespace_bbc79db4c3949a5c::function_ee854fdd1e77efc4(agent.origin)) {
+        if (isalive(agent) && !namespace_bbc79db4c3949a5c::isPointInMultiCircleDanger(agent.origin)) {
             logstring("ActiveWarzone Kill Active AI in gas at " + agent.origin);
             agent kill();
         }
@@ -52,7 +52,7 @@ function function_974a505e30d0049c() {
     agents = function_5508ddea3a84df39("activeWarzone");
     foreach (agent in agents) {
         infopackage = level.var_879053468f168806[agent];
-        if (!namespace_bbc79db4c3949a5c::function_ee854fdd1e77efc4(infopackage.origin)) {
+        if (!namespace_bbc79db4c3949a5c::isPointInMultiCircleDanger(infopackage.origin)) {
             logstring("ActiveWarzone Delete Dormant AI in gas at " + infopackage.origin);
             deletedormant(agent);
         }

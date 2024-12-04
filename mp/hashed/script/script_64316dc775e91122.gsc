@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\values.gsc;
-#using script_3a4480ba1c5664d0;
-#using script_639bf783929acf9b;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_638d701d263ee1ed;
-#using script_860bfdfe82326e3;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
 #using script_2583ee5680cf4736;
-#using scripts\mp\utility\perk.gsc;
-#using script_6bffae1b97f70547;
 #using script_2669878cf5a1b6bc;
+#using script_3a4480ba1c5664d0;
+#using script_638d701d263ee1ed;
+#using script_639bf783929acf9b;
+#using script_6bffae1b97f70547;
+#using script_860bfdfe82326e3;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\perk;
 
 #namespace pack_a_punch;
 

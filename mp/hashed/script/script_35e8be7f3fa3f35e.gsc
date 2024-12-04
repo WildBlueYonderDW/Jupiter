@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using script_58be75c518bf0d40;
 #using script_3e145703891d9d8d;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\equipment.gsc;
-#using scripts\mp\utility\script.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using script_58be75c518bf0d40;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\equipment;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace tracker_grenade;
 

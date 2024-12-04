@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
 #using script_35de402efc5acfb3;
+#using scripts\anim\utility_common;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace battlechatter_wrapper;
 

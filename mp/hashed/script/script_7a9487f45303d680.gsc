@@ -1,9 +1,9 @@
-#using script_d74ae0b4aa21186;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
 #using script_67bad8bd9685e057;
-#using scripts\mp\gameobjects.gsc;
 #using script_7bf46d34c10761a4;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
 
 #namespace capture_flag_gw;
 

@@ -1,7 +1,7 @@
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\game;
 
 #namespace br_events;
 

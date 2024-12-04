@@ -1,49 +1,49 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\teamrevive.gsc;
-#using script_58be75c518bf0d40;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using script_3ff084f114b7f6c9;
-#using script_451a1a9bd9613164;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_448ef4d9e70ce5e;
 #using script_1174abedbefe9ada;
-#using script_1b1a05843f74cfa9;
-#using scripts\mp\utility\lower_message.gsc;
-#using script_1f97a44d1761c919;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using script_396a814d39e7044f;
-#using scripts\mp\utility\points.gsc;
 #using script_188008b85f8b14d4;
-#using scripts\mp\gametypes\br_respawn.gsc;
+#using script_1b1a05843f74cfa9;
+#using script_1f97a44d1761c919;
+#using script_396a814d39e7044f;
+#using script_3ff084f114b7f6c9;
+#using script_448ef4d9e70ce5e;
+#using script_451a1a9bd9613164;
 #using script_5307834cd39b435c;
+#using script_58be75c518bf0d40;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_respawn;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\playerlogic;
+#using scripts\mp\teamrevive;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\trigger;
 
 #namespace namespace_aca170e0fe882d77;
 
@@ -578,7 +578,7 @@ function private function_7bbc24bc9f4693bb(instance, part, state, player, pleare
     instance.owner = plearequest.var_15ab90a8de6865aa;
     instance.owner.reviver = player;
     beingrevived = 0;
-    while ((player usebuttonpressed() || isbotplayer) && instance.curprogress < instance.usetime && scripts\mp\utility\player::function_ad443bbcdcf37b85(player) && !beingrevived) {
+    while ((player usebuttonpressed() || isbotplayer) && instance.curprogress < instance.usetime && scripts\mp\utility\player::isAliveAndNotInLastStand(player) && !beingrevived) {
         instance.curprogress += level.frameduration;
         if (instance.curprogress >= 250) {
             player scripts\mp\gameobjects::updateuiprogress(instance, 1);
@@ -592,7 +592,7 @@ function private function_7bbc24bc9f4693bb(instance, part, state, player, pleare
     var_7e41aed52f964714 = instance.curprogress >= instance.usetime;
     instance.curprogress = 0;
     player scripts\mp\gameobjects::updateuiprogress(instance, 0);
-    if (isdefined(plearequest) && scripts\mp\utility\player::function_ad443bbcdcf37b85(player) && !beingrevived && var_7e41aed52f964714) {
+    if (isdefined(plearequest) && scripts\mp\utility\player::isAliveAndNotInLastStand(player) && !beingrevived && var_7e41aed52f964714) {
         successuse = plearequest function_fec9399c00988060(player);
     }
     if (isdefined(instance)) {

@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
+#using script_16ea1b94f0f381b3;
+#using script_2583ee5680cf4736;
+#using script_2669878cf5a1b6bc;
+#using script_443d99fe707f1d9f;
 #using script_639bf783929acf9b;
 #using script_7b2517368c79e5bc;
-#using script_443d99fe707f1d9f;
 #using script_860bfdfe82326e3;
-#using script_2583ee5680cf4736;
-#using script_16ea1b94f0f381b3;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
 
 #namespace magicbox;
 
@@ -1030,7 +1030,7 @@ function function_e4f1c5e85e0d69a() {
     self.var_8a0892269455a613.var_c0c46c301fee5917 = self.var_c0c46c301fee5917;
     self.var_8a0892269455a613.var_570e68e41b8ff9d9 = self.var_570e68e41b8ff9d9;
     if (isdefined(self.var_8a0892269455a613.var_570e68e41b8ff9d9)) {
-        self.var_8a0892269455a613.var_190dff656871d0e0 = function_7fa5860a8e414317(self.var_8a0892269455a613.var_570e68e41b8ff9d9);
+        self.var_8a0892269455a613.n_attachments = function_7fa5860a8e414317(self.var_8a0892269455a613.var_570e68e41b8ff9d9);
     } else {
         self.var_8a0892269455a613.var_570e68e41b8ff9d9 = "ultra";
     }

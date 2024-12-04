@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\teams;
 
 #namespace print;
 

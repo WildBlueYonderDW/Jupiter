@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\cp_mp\parachute.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace br_convoy;
 

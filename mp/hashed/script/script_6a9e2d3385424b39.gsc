@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using script_46cf752d93dc17b;
+#using script_64acb6ce534155b7;
 #using script_65f58f3c394dcf9a;
 #using script_6c4e8cea70bf4b6d;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_64acb6ce534155b7;
-#using script_46cf752d93dc17b;
-#using scripts\mp\gametypes\br_lootcache.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_9271e2e508a17556;
 

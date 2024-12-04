@@ -1,27 +1,27 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using script_418c4d4a7180cdce;
-#using script_732dfde13310cf8b;
-#using scripts\mp\gamestaterestore.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_2583ee5680cf4736;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\matchrecording.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\dev.gsc;
-#using scripts\mp\mp_agent_damage.gsc;
+#using script_418c4d4a7180cdce;
 #using script_6489b5b0c90138d7;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\spawnlogic.gsc;
+#using script_732dfde13310cf8b;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\damage;
+#using scripts\mp\dev;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamestaterestore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_util;
+#using scripts\mp\matchrecording;
+#using scripts\mp\mp_agent_damage;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace globallogic;
 
@@ -41,7 +41,7 @@ function init() {
         scripts\mp\gamestaterestore::setupcallbacks();
     }
     level.leanthread = getdvarint(@"hash_715685dae50de688", 0) == 1;
-    level.script = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+    level.script = tolower(getdvar(@"g_mapname"));
     level.gametype = scripts\cp_mp\utility\game_utility::getgametype();
     level.systemlink = getdvarint(@"systemlink", 0) == 1;
     level.codcasterenabled = function_4e3caadf7e0c8a7a();
@@ -49,11 +49,11 @@ function init() {
     level.splitscreen = issplitscreen();
     level.onlinegame = getdvarint(@"onlinegame");
     level.forcerankxp = getdvarint(@"hash_9c2d59c1962cac50", 0) == 1;
-    level.rankedmatch = level.onlinegame && !getdvarint(@"hash_485ef1ed1d39d3a3") || level.forcerankxp;
-    level.matchmakingmatch = level.onlinegame && !getdvarint(@"hash_485ef1ed1d39d3a3");
-    level.playerxpenabled = level.matchmakingmatch || getdvarint(@"hash_37acf332efd205cc");
+    level.rankedmatch = level.onlinegame && !getdvarint(@"xblive_privatematch") || level.forcerankxp;
+    level.matchmakingmatch = level.onlinegame && !getdvarint(@"xblive_privatematch");
+    level.playerxpenabled = level.matchmakingmatch || getdvarint(@"force_challenges");
     level.weaponxpenabled = level.playerxpenabled;
-    level.challengesallowed = level.playerxpenabled || getdvarint(@"hash_37acf332efd205cc");
+    level.challengesallowed = level.playerxpenabled || getdvarint(@"force_challenges");
     level.enforceantiboosting = level.playerxpenabled || level.weaponxpenabled || level.challengesallowed;
     level.onlinestatsenabled = level.rankedmatch;
     level.var_ec2fb549b15ad827 = level.rankedmatch && getdvarint(@"hash_5dbec0fb7158c834");
@@ -87,7 +87,7 @@ function init() {
     if (issharedfuncdefined("seasonalevents", "init")) {
         level function_f3bb4f4911a1beb2("seasonalevents", "init");
     }
-    level thread namespace_1676ee684fdab294::function_3e341334c7d58acb();
+    level thread namespace_1676ee684fdab294::autotestCommandMonitor();
     level notify("global_logic_mp_init");
 }
 
@@ -156,10 +156,10 @@ function registerdvars() {
     case 0:
     case 2:
     case 3:
-        setdvar(@"hash_c00e244ea59d530e", 0);
+        setdvar(@"camera_thirdperson", 0);
         break;
     case 1:
-        setdvar(@"hash_c00e244ea59d530e", 1);
+        setdvar(@"camera_thirdperson", 1);
         break;
     }
     registerfalldamagedvars();

@@ -1,12 +1,12 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_6b2ef64807727fd7;
+#namespace cp_stinger;
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x35a
 // Size: 0x32
@@ -18,7 +18,7 @@ function initstingerusage() {
     thread resetstingerlockingondeath();
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x394
 // Size: 0x68
@@ -37,7 +37,7 @@ function resetstingerlocking() {
     initstingerusage();
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x404
 // Size: 0x2a
@@ -51,7 +51,7 @@ function resetstingerlockingondeath() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x436
 // Size: 0x85
@@ -72,7 +72,7 @@ function watchlauncherusage() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c3
 // Size: 0x61
@@ -90,7 +90,7 @@ function runlauncherlogic(weaponname) {
     self waittill("weapon_change");
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x52c
 // Size: 0xe9
@@ -110,7 +110,7 @@ function loopstingerlockingfeedback() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x61d
 // Size: 0xe9
@@ -130,13 +130,13 @@ function loopstingerlockedfeedback() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x70e
 // Size: 0x89
 function softsighttest(var_1fe8eeb95943f79f) {
     lost_sight_limit = 500;
-    if (istrue(level.var_a2ceb61b8d6f9a0b)) {
+    if (istrue(level.faster_lockon)) {
         lost_sight_limit = 1500;
     }
     if (var_1fe8eeb95943f79f stingtargstruct_isinlos()) {
@@ -154,7 +154,7 @@ function softsighttest(var_1fe8eeb95943f79f) {
     return true;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7a0
 // Size: 0x311
@@ -224,7 +224,7 @@ function stingerusage() {
             return;
         }
         timepassed = gettime() - self.stingerlockstarttime;
-        if (istrue(level.var_a2ceb61b8d6f9a0b)) {
+        if (istrue(level.faster_lockon)) {
             if (timepassed < 250) {
                 return;
             }
@@ -261,7 +261,7 @@ function stingerusage() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xab9
 // Size: 0x94d
@@ -396,17 +396,17 @@ function lockonlaunchers_gettargetarray(addcharacters) {
             }
         }
     }
-    var_1f94aefc3c500bf1 = [];
+    cleaned_array = [];
     foreach (guy in targets) {
         if (isdefined(guy)) {
-            var_1f94aefc3c500bf1[var_1f94aefc3c500bf1.size] = guy;
+            cleaned_array[cleaned_array.size] = guy;
         }
     }
-    targets = var_1f94aefc3c500bf1;
+    targets = cleaned_array;
     return targets;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x140f
 // Size: 0x38
@@ -424,7 +424,7 @@ function stingerusageloop() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x144f
 // Size: 0x73
@@ -439,7 +439,7 @@ function stinger_finalizelock(var_1fe8eeb95943f79f) {
     self weaponlockfinalize(self.stingertarget, offset);
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14ca
 // Size: 0x51
@@ -457,7 +457,7 @@ function addhudincoming_attacker(target) {
     var_5e48d2fe6f684a18 setclientomnvar("ui_killstreak_missile_warn", 1);
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1523
 // Size: 0x3e
@@ -472,7 +472,7 @@ function removehudincoming_attacker(target) {
     var_5e48d2fe6f684a18 setclientomnvar("ui_killstreak_missile_warn", 0);
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1569
 // Size: 0x8b
@@ -489,7 +489,7 @@ function stingtargstruct_create(player, target) {
     return struct;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15fd
 // Size: 0x27a
@@ -539,7 +539,7 @@ function stingtargstruct_getoffsets() {
     self.offsets[self.offsets.size] = (0, 0, 0);
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x187f
 // Size: 0x89
@@ -555,7 +555,7 @@ function isapache(ent) {
     return ischoppergunner || var_15cd55a03b5c886b;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1911
 // Size: 0x5e
@@ -570,7 +570,7 @@ function isclusterstrike(ent) {
     return var_30c3ced8e8637755;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1978
 // Size: 0x97
@@ -587,7 +587,7 @@ function isuav(ent) {
     return false;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a18
 // Size: 0x5e
@@ -602,7 +602,7 @@ function isac130(ent) {
     return var_ab8d41683a88cb;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a7f
 // Size: 0x7d
@@ -617,7 +617,7 @@ function isradardrone(ent) {
     return isradar;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b05
 // Size: 0x5e
@@ -632,7 +632,7 @@ function isscramblerdrone(ent) {
     return isscrambler;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b6c
 // Size: 0x5e
@@ -647,7 +647,7 @@ function isradarhelicopter(ent) {
     return isradar;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bd3
 // Size: 0x2c
@@ -655,7 +655,7 @@ function isturret(ent) {
     return isdefined(ent.classname) && ent.classname == "misc_turret";
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c08
 // Size: 0xca
@@ -671,7 +671,7 @@ function stingtargstruct_getorigins() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cda
 // Size: 0x1af
@@ -705,7 +705,7 @@ function stingtargstruct_getinreticle() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e91
 // Size: 0x20e
@@ -748,7 +748,7 @@ function stingtargstruct_getinlos() {
     }
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20a7
 // Size: 0xe
@@ -756,7 +756,7 @@ function stingtargstruct_isinreticle() {
     return self.inreticlesortedids.size > 0;
 }
 
-// Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+// Namespace cp_stinger / scripts\cp\equipment\cp_stinger
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20be
 // Size: 0xc
@@ -766,7 +766,7 @@ function stingtargstruct_isinlos() {
 
 /#
 
-    // Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+    // Namespace cp_stinger / scripts\cp\equipment\cp_stinger
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x20d3
     // Size: 0xe3
@@ -786,7 +786,7 @@ function stingtargstruct_isinlos() {
         setdevdvarifuninitialized(@"hash_9bb2d0feba0e1fde", 5);
     }
 
-    // Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+    // Namespace cp_stinger / scripts\cp\equipment\cp_stinger
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x21be
     // Size: 0x268
@@ -823,7 +823,7 @@ function stingtargstruct_isinlos() {
         }
     }
 
-    // Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+    // Namespace cp_stinger / scripts\cp\equipment\cp_stinger
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x242e
     // Size: 0xd6
@@ -843,7 +843,7 @@ function stingtargstruct_isinlos() {
         }
     }
 
-    // Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+    // Namespace cp_stinger / scripts\cp\equipment\cp_stinger
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x250c
     // Size: 0x99
@@ -860,7 +860,7 @@ function stingtargstruct_isinlos() {
         }
     }
 
-    // Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+    // Namespace cp_stinger / scripts\cp\equipment\cp_stinger
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x25ad
     // Size: 0xd6
@@ -880,7 +880,7 @@ function stingtargstruct_isinlos() {
         }
     }
 
-    // Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+    // Namespace cp_stinger / scripts\cp\equipment\cp_stinger
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x268b
     // Size: 0x72
@@ -899,7 +899,7 @@ function stingtargstruct_isinlos() {
         drawstar(org);
     }
 
-    // Namespace namespace_6b2ef64807727fd7 / scripts\cp\equipment\cp_stinger
+    // Namespace cp_stinger / scripts\cp\equipment\cp_stinger
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x2705
     // Size: 0x7a

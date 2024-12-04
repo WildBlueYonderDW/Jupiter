@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_4b87f2871b6b025c;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace namespace_da9f1409042cc7a2;
 

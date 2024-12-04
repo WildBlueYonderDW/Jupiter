@@ -1,12 +1,12 @@
-#using scripts\mp\utility\script.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\mp\gametypes\br_rewards.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\br_gametype_truckwar.gsc;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametype_truckwar;
+#using scripts\mp\gametypes\br_rewards;
+#using scripts\mp\hud_util;
+#using scripts\mp\outofbounds;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\script;
 
 #namespace advanced_supply_drop;
 

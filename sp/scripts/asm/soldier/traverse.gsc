@@ -1,14 +1,14 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\soldier\arrival.gsc;
-#using scripts\asm\soldier\move.gsc;
-#using scripts\anim\animselector.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\traverse.gsc;
 #using script_7e4d332e911e1b90;
-#using scripts\asm\soldier\cover.gsc;
+#using scripts\anim\animselector;
+#using scripts\asm\asm;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\arrival;
+#using scripts\asm\soldier\cover;
+#using scripts\asm\soldier\move;
+#using scripts\asm\traverse;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace traverse;
 

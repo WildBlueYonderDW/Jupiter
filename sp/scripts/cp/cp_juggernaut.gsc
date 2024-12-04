@@ -1,29 +1,29 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using script_6e09a830fab9468f;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_12e2fb553ec1605e;
-#using scripts\cp\utility.gsc;
-#using script_3bcaa2cbaf54abdd;
-#using script_7c40fa80892a721;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using scripts\cp\cp_loadout.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp\challenges_cp.gsc;
-#using scripts\cp\cp_accessories.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\execution.gsc;
 #using script_372301af73968cb;
+#using script_3bcaa2cbaf54abdd;
+#using script_6e09a830fab9468f;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
+#using script_7c40fa80892a721;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\challenges_cp;
+#using scripts\cp\cp_accessories;
+#using scripts\cp\cp_loadout;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_d0e14122d860dddb;
+#namespace cp_juggernaut;
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ac
 // Size: 0xcf
@@ -39,7 +39,7 @@ function init() {
     #/
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x883
 // Size: 0x759
@@ -99,7 +99,7 @@ function jugg_makejuggernaut(juggconfig, streakinfo) {
     }
     jugg_handlestancechange(juggconfig);
     if (isdefined(juggconfig.classstruct) && !istrue(streakinfo.var_ca56839b2e00edce)) {
-        function_f14f648c7f449690(juggcontext, juggconfig, 1);
+        give_minigun(juggcontext, juggconfig, 1);
     } else {
         juggconfig.allows["reload"] = 0;
         juggconfig.allows["weapon_pickup"] = 0;
@@ -111,7 +111,7 @@ function jugg_makejuggernaut(juggconfig, streakinfo) {
         juggconfig.allows["usability"] = 0;
         self setclientomnvar("ui_assault_suit_on", 1);
         self.var_ca56839b2e00edce = 1;
-        namespace_f8d3520d3483c1::function_ac7803d45979135c(self.maxarmorhealth);
+        namespace_f8d3520d3483c1::setArmorHealth(self.maxarmorhealth);
     }
     thread start_regen_early();
     jugg_toggleallows(juggconfig.allows, 0);
@@ -165,11 +165,11 @@ function jugg_makejuggernaut(juggconfig, streakinfo) {
     return true;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xfe5
 // Size: 0x98
-function function_f14f648c7f449690(juggcontext, juggconfig, var_b69f99a7a0012317) {
+function give_minigun(juggcontext, juggconfig, var_b69f99a7a0012317) {
     if (istrue(var_b69f99a7a0012317)) {
         jugg_strip_old_weapons(self, juggcontext);
         scripts\cp\cp_loadout::assign_loadout_weapons(self, juggconfig.classstruct);
@@ -180,7 +180,7 @@ function function_f14f648c7f449690(juggcontext, juggconfig, var_b69f99a7a0012317
     scripts\cp_mp\utility\inventory_utility::_switchtoweapon(self.starting_weapon);
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1085
 // Size: 0xbb
@@ -203,7 +203,7 @@ function function_8e6b2de818370baa(parts, state) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x1148
 // Size: 0x3f
@@ -218,7 +218,7 @@ function private function_5b7c34dbc50c3c4e() {
     #/
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x118f
 // Size: 0x16
@@ -226,7 +226,7 @@ function private function_1e84eeb2a6f4129d(index) {
     return level.var_13819795c6ee9ff8[index];
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x11ae
 // Size: 0x97
@@ -253,7 +253,7 @@ function private function_59469cc44ca7fa81() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x124d
 // Size: 0x16
@@ -261,7 +261,7 @@ function private function_354f191d8b1ec22d(index) {
     return level.var_ed61c38f5c8bb414[index];
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x126c
 // Size: 0x3f7
@@ -315,7 +315,7 @@ function private function_5e9c6b97e4c3c059() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x166b
 // Size: 0xb7
@@ -326,7 +326,7 @@ function private function_6afa1766e507e9d6() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x172a
 // Size: 0xb7
@@ -337,7 +337,7 @@ function private function_28bda29e7db3b4ea() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17e9
 // Size: 0x29
@@ -352,7 +352,7 @@ function jugg_modifyfalldamage() {
     return 0;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x181b
 // Size: 0x41
@@ -365,7 +365,7 @@ function carryobjects_onjuggernaut() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1864
 // Size: 0x2a
@@ -375,7 +375,7 @@ function jugg_strip_old_weapons(player, juggcontext) {
     player takeallweapons();
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1896
 // Size: 0x18e
@@ -421,7 +421,7 @@ function jugg_watchmusictoggle() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a2c
 // Size: 0x111
@@ -454,7 +454,7 @@ function function_c0aa811f7b45687c(shitloc, smeansofdeath, attacker) {
     return var_1f48003b8e69560c;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b46
 // Size: 0x6c
@@ -471,7 +471,7 @@ function function_4217f11ffb352425(damage, shitloc, smeansofdeath, attacker) {
     function_b47072bcd58c0c99(var_1f48003b8e69560c, damage);
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x1bba
 // Size: 0x139
@@ -497,7 +497,7 @@ function private function_b47072bcd58c0c99(part, damage) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cfb
 // Size: 0xa0
@@ -518,7 +518,7 @@ function jugg_watchherodrop() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1da3
 // Size: 0x54
@@ -532,7 +532,7 @@ function jugg_setherodropscriptable(juggconfig) {
     juggconfig.herodrop = 0;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dff
 // Size: 0x112
@@ -570,7 +570,7 @@ function function_12928f267a4a789c(juggconfig) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f19
 // Size: 0x48
@@ -596,7 +596,7 @@ function function_ba71f6475f1c75d9() {
     return false;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f6a
 // Size: 0x55
@@ -609,7 +609,7 @@ function jugg_watchforgameend() {
     jugg_disableoverlay(juggcontext);
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc7
 // Size: 0x52
@@ -623,7 +623,7 @@ function jugg_watchfordisconnect() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2021
 // Size: 0x2d
@@ -635,7 +635,7 @@ function jugg_watchforfire() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2056
 // Size: 0x49a
@@ -725,7 +725,7 @@ function jugg_removejuggernaut() {
     self notify("juggernaut_end");
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24f8
 // Size: 0x17
@@ -735,7 +735,7 @@ function start_regen_early() {
     namespace_54a2eae43eaa8bf5::function_19b9bb9cef6a2d3();
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2517
 // Size: 0xb1
@@ -761,7 +761,7 @@ function infiniteammothread(waittime, weapons) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x25d0
 // Size: 0xa
@@ -769,7 +769,7 @@ function stopinfiniteammothread() {
     self notify("stop_infinite_ammo_thread");
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x25e2
 // Size: 0x1c0
@@ -801,7 +801,7 @@ function jugg_createconfig(skipallows, additionalallows) {
     return config;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x27ab
 // Size: 0xed
@@ -826,7 +826,7 @@ function jugg_toggleallows(allows, allowed) {
     val::reset_all("juggernaut");
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28a0
 // Size: 0x47
@@ -838,7 +838,7 @@ function jugg_getdefaultclassstruct() {
     return classstruct;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28f0
 // Size: 0x27
@@ -850,7 +850,7 @@ function jugg_watchfordeath() {
     thread jugg_removejuggernaut();
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x291f
 // Size: 0x3b
@@ -865,7 +865,7 @@ function jugg_watchfordamage() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2962
 // Size: 0x52
@@ -883,7 +883,7 @@ function jugg_watchearlyexit() {
     thread jugg_removejuggernaut();
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x29bc
 // Size: 0x28
@@ -895,7 +895,7 @@ function jugg_watchfordoors() {
     scripts\cp\utility::watch_and_open_scriptable_doors_in_radius();
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x29ec
 // Size: 0x1af
@@ -939,7 +939,7 @@ function function_8e8605e7b6739834() {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ba3
 // Size: 0x2f
@@ -950,7 +950,7 @@ function function_91ed8c25c9b88686() {
     level.var_c0df98e7900066b7[level.var_c0df98e7900066b7.size] = self;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bda
 // Size: 0x2b
@@ -961,7 +961,7 @@ function function_84bae1e96a725ec5(delay) {
     level.var_c0df98e7900066b7 = array_remove(level.var_c0df98e7900066b7, self);
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c0d
 // Size: 0x36
@@ -973,7 +973,7 @@ function jugg_getjuggmodels() {
     return models;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c4c
 // Size: 0x53
@@ -985,13 +985,13 @@ function jugg_setmodel() {
     namespace_751288259782653c::setcharactermodels(bodymodelname, headmodelname, viewmodelname);
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ca7
 // Size: 0x121
 function jugg_restoremodel(juggcontext) {
     if (scripts\cp_mp\utility\player_utility::_isalive()) {
-        if (isdefined(self.var_dc196d396886fb97) && istrue(self.var_dc196d396886fb97.var_1ab89b1504822058)) {
+        if (isdefined(self.operator_struct) && istrue(self.operator_struct.skip_customization)) {
             namespace_751288259782653c::setcharactermodels(self.operatorcustomization.defaultbody, self.operatorcustomization.defaulthead, self.operatorcustomization.defaultvm);
             return;
         }
@@ -1003,7 +1003,7 @@ function jugg_restoremodel(juggcontext) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dd0
 // Size: 0xaa
@@ -1030,7 +1030,7 @@ function jugg_needtochangestance(juggconfig) {
     return var_8a867002df857d70;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e83
 // Size: 0xd
@@ -1038,7 +1038,7 @@ function jugg_canresolvestance(juggconfig) {
     return true;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e99
 // Size: 0x21
@@ -1048,7 +1048,7 @@ function jugg_handlestancechange(juggconfig) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ec2
 // Size: 0x81
@@ -1063,7 +1063,7 @@ function jugg_enableoverlay(juggcontext) {
     thread function_ae8c964eb2ef2486(juggcontext);
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f4b
 // Size: 0xf8
@@ -1093,7 +1093,7 @@ function function_ae8c964eb2ef2486(juggcontext) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x304b
 // Size: 0x1ae
@@ -1140,7 +1140,7 @@ function jugg_watchoverlaydamagestates(juggcontext) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3201
 // Size: 0xae
@@ -1169,7 +1169,7 @@ function jugg_watchforoverlayexecutiontoggle(juggcontext) {
     }
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32b7
 // Size: 0x60
@@ -1184,7 +1184,7 @@ function jugg_disableoverlay(juggcontext, var_c953ee526f4bb69f) {
     self.juggoverlaystate = undefined;
 }
 
-// Namespace namespace_d0e14122d860dddb / scripts\cp\cp_juggernaut
+// Namespace cp_juggernaut / scripts\cp\cp_juggernaut
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x331f
 // Size: 0x7

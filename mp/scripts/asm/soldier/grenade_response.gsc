@@ -1,5 +1,5 @@
-#using scripts\asm\asm.gsc;
 #using script_3433ee6b63c7e243;
+#using scripts\asm\asm;
 
 #namespace grenade_response;
 

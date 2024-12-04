@@ -35,21 +35,21 @@ function function_f7ee9448704d5a66() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e9
 // Size: 0xb0
-function function_62f93285d84dded3(var_83f2e7c3cd68feae) {
+function function_62f93285d84dded3(impact_origin) {
     allies = getaiarray("allies");
-    allies = sortbydistance(allies, var_83f2e7c3cd68feae);
+    allies = sortbydistance(allies, impact_origin);
     close_dist = 2000;
     med_dist = 8000;
     if (allies.size > 0) {
-        dist = distance(var_83f2e7c3cd68feae, allies[0].origin);
-        var_616b91a35e18f1fb = "weap_rpg_exp_radio_distant";
+        dist = distance(impact_origin, allies[0].origin);
+        impact_sound = "weap_rpg_exp_radio_distant";
         if (dist <= close_dist) {
-            var_616b91a35e18f1fb = "weap_rpg_exp_radio_close";
+            impact_sound = "weap_rpg_exp_radio_close";
         } else if (dist <= med_dist) {
-            var_616b91a35e18f1fb = "weap_rpg_exp_radio_med";
+            impact_sound = "weap_rpg_exp_radio_med";
         }
-        if (soundexists(var_616b91a35e18f1fb)) {
-            level.player playsound(var_616b91a35e18f1fb);
+        if (soundexists(impact_sound)) {
+            level.player playsound(impact_sound);
         }
     }
 }
@@ -58,21 +58,21 @@ function function_62f93285d84dded3(var_83f2e7c3cd68feae) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0xb0
-function function_f4edab1c90569f7c(var_83f2e7c3cd68feae) {
+function function_f4edab1c90569f7c(impact_origin) {
     allies = getaiarray("allies");
-    allies = sortbydistance(allies, var_83f2e7c3cd68feae);
+    allies = sortbydistance(allies, impact_origin);
     close_dist = 2000;
     med_dist = 8000;
     if (allies.size > 0) {
-        dist = distance(var_83f2e7c3cd68feae, allies[0].origin);
-        var_616b91a35e18f1fb = "weap_rpg_exp_radio_distant";
+        dist = distance(impact_origin, allies[0].origin);
+        impact_sound = "weap_rpg_exp_radio_distant";
         if (dist <= close_dist) {
-            var_616b91a35e18f1fb = "weap_rpg_exp_radio_close";
+            impact_sound = "weap_rpg_exp_radio_close";
         } else if (dist <= med_dist) {
-            var_616b91a35e18f1fb = "weap_rpg_exp_radio_med";
+            impact_sound = "weap_rpg_exp_radio_med";
         }
-        if (soundexists(var_616b91a35e18f1fb)) {
-            level.player playsound(var_616b91a35e18f1fb);
+        if (soundexists(impact_sound)) {
+            level.player playsound(impact_sound);
         }
     }
 }

@@ -1,9 +1,9 @@
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7b2517368c79e5bc;
 #using script_61afae50a53c3917;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_fd7c2a81219d0279;
 

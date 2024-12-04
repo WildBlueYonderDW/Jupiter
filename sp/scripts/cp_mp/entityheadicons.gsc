@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace entityheadicons;
 

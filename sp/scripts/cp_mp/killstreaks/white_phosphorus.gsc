@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\killstreaks\airstrike.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airstrike;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace white_phosphorus;
 
@@ -1456,26 +1456,26 @@ function startloopingcoughaudio(wpzone) {
                 }
                 if (self.team == zoneteam) {
                     if (isdefined(self.operatorcustomization.gender) && self.operatorcustomization.gender == "female") {
-                        var_bf9336bf707fa7ca = game["dialogue"]["allies_female_cough"].size;
-                        current_cough = randomint(var_bf9336bf707fa7ca);
+                        cough_amount = game["dialogue"]["allies_female_cough"].size;
+                        current_cough = randomint(cough_amount);
                         soundalias = game["dialogue"]["allies_female_cough"][current_cough];
                     } else {
-                        var_bf9336bf707fa7ca = game["dialogue"]["allies_male_cough"].size;
-                        current_cough = randomint(var_bf9336bf707fa7ca);
+                        cough_amount = game["dialogue"]["allies_male_cough"].size;
+                        current_cough = randomint(cough_amount);
                         soundalias = game["dialogue"]["allies_male_cough"][current_cough];
                     }
                 } else if (isdefined(self.operatorcustomization.gender) && self.operatorcustomization.gender == "female") {
-                    var_bf9336bf707fa7ca = game["dialogue"]["axis_female_cough"].size;
-                    current_cough = randomint(var_bf9336bf707fa7ca);
+                    cough_amount = game["dialogue"]["axis_female_cough"].size;
+                    current_cough = randomint(cough_amount);
                     soundalias = game["dialogue"]["axis_female_cough"][current_cough];
                 } else {
-                    var_bf9336bf707fa7ca = game["dialogue"]["axis_male_cough"].size;
-                    current_cough = randomint(var_bf9336bf707fa7ca);
+                    cough_amount = game["dialogue"]["axis_male_cough"].size;
+                    current_cough = randomint(cough_amount);
                     soundalias = game["dialogue"]["axis_male_cough"][current_cough];
                 }
             } else {
-                var_bf9336bf707fa7ca = game["dialogue"]["axis_male_cough"].size;
-                current_cough = randomint(var_bf9336bf707fa7ca);
+                cough_amount = game["dialogue"]["axis_male_cough"].size;
+                current_cough = randomint(cough_amount);
                 soundalias = game["dialogue"]["axis_male_cough"][current_cough];
             }
             if (!isai(self)) {

@@ -1,6 +1,6 @@
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\system;
+#using scripts\engine\utility;
 
 #namespace ww_setup;
 

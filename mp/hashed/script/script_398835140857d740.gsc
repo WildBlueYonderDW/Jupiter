@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_639bf783929acf9b;
 #using script_7e4d332e911e1b90;
-#using scripts\common\devgui.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\player.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace zombie_perks;
 

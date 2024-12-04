@@ -1,9 +1,9 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\flags.gsc;
-#using scripts\common\exploder.gsc;
-#using scripts\common\createfx.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
+#using scripts\common\anim;
+#using scripts\common\createfx;
+#using scripts\common\exploder;
+#using scripts\common\utility;
+#using scripts\engine\flags;
+#using scripts\engine\trace;
 
 #namespace utility;
 
@@ -3075,8 +3075,8 @@ function array_exclude(array, arrayexclude) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x78ef
 // Size: 0x5f
-function array_remove_array(ents, var_8f445b88c8c227a3) {
-    foreach (remover in var_8f445b88c8c227a3) {
+function array_remove_array(ents, remover_array) {
+    foreach (remover in remover_array) {
         ents = array_remove(ents, remover);
     }
     return ents;
@@ -3492,18 +3492,18 @@ function function_5a522719a7ec12b8(object) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x8740
 // Size: 0x100
-function create_deck(var_4e30b77c0ee2f8ac, autoshuffle, var_85dd38782ccc953e, prevent_redraw) {
-    if (!isdefined(var_4e30b77c0ee2f8ac)) {
-        var_4e30b77c0ee2f8ac = [];
-    } else if (!isarray(var_4e30b77c0ee2f8ac)) {
-        var_4e30b77c0ee2f8ac = [var_4e30b77c0ee2f8ac];
+function create_deck(item_array, autoshuffle, var_85dd38782ccc953e, prevent_redraw) {
+    if (!isdefined(item_array)) {
+        item_array = [];
+    } else if (!isarray(item_array)) {
+        item_array = [item_array];
     }
     deck = spawnstruct();
     deck.items = [];
     deck.index = 0;
     deck.autoshuffle = !isdefined(autoshuffle) || autoshuffle;
     deck.prevent_redraw = !isdefined(prevent_redraw) || prevent_redraw;
-    foreach (item in var_4e30b77c0ee2f8ac) {
+    foreach (item in item_array) {
         deck.items[deck.items.size] = item;
     }
     if (istrue(var_85dd38782ccc953e)) {
@@ -4107,8 +4107,8 @@ function draw_ent_bone_forever(bone_name, origin_color) {
     self endon("death");
     while (true) {
         bone_origin = self gettagorigin(bone_name);
-        var_4d6c1d9aee8512f4 = self gettagangles(bone_name);
-        draw_angles(var_4d6c1d9aee8512f4, bone_origin, origin_color);
+        bone_angles = self gettagangles(bone_name);
+        draw_angles(bone_angles, bone_origin, origin_color);
         waitframe();
     }
 }
@@ -4992,7 +4992,7 @@ function function_b4b04de87729a6f3(delay) {
     // Size: 0x41
     function error(msg) {
         println("<dev string:x114>", msg);
-        if (getdvar(@"hash_ddfc4cbd9432119a") != "<dev string:xdd>") {
+        if (getdvar(@"scr_debug") != "<dev string:xdd>") {
             assertmsg("<dev string:x122>" + msg);
         }
     }
@@ -8381,7 +8381,7 @@ function function_df633f460888a47(vector) {
     var_c00aea27b44954ad = function_5b83b054e7f1c193(vector);
     y = var_c00aea27b44954ad[1];
     x = var_c00aea27b44954ad[0];
-    var_1ce68048507d396 = [];
+    adjacent_arrays = [];
     for (x_offset = -1; x_offset <= 1; x_offset++) {
         x_test = x + x_offset;
         if (x_test < 0) {
@@ -8400,10 +8400,10 @@ function function_df633f460888a47(vector) {
             if (!isdefined(var_dd613b6808c13588)) {
                 continue;
             }
-            var_1ce68048507d396[var_1ce68048507d396.size] = var_dd613b6808c13588;
+            adjacent_arrays[adjacent_arrays.size] = var_dd613b6808c13588;
         }
     }
-    return var_1ce68048507d396;
+    return adjacent_arrays;
 }
 
 // Namespace utility / scripts\engine\utility
@@ -8868,9 +8868,9 @@ function function_28551e899093b138(string1, string2, string3, string4, string5, 
     if (isdefined(string8)) {
         childthread function_acb8d1f52b2223cb(string8, struct);
     }
-    struct waittill("returned", var_6107f68e13e0fc23);
+    struct waittill("returned", results_array);
     struct notify("struct_delete");
-    return var_6107f68e13e0fc23;
+    return results_array;
 }
 
 // Namespace utility / scripts\engine\utility
@@ -8914,9 +8914,9 @@ function function_b90de82e759099dc(timeout, string1, string2, string3, string4, 
     if (timeout > 0) {
         childthread function_cb4bda23f2687c64(struct, "returned", timeout);
     }
-    struct waittill("returned", var_6107f68e13e0fc23);
+    struct waittill("returned", results_array);
     struct notify("struct_delete");
-    return var_6107f68e13e0fc23;
+    return results_array;
 }
 
 // Namespace utility / scripts\engine\utility
@@ -8975,9 +8975,9 @@ function function_3c010dc06eabfe5f(ent1, string1, ent2, string2, ent3, string3, 
     if (isdefined(ent8) && isdefined(string8)) {
         ent8 childthread function_acb8d1f52b2223cb(string8, struct);
     }
-    struct waittill("returned", var_6107f68e13e0fc23);
+    struct waittill("returned", results_array);
     struct notify("struct_delete");
-    return var_6107f68e13e0fc23;
+    return results_array;
 }
 
 // Namespace utility / scripts\engine\utility
@@ -9045,9 +9045,9 @@ function function_ebad8f70ed282931(timeout, ent1, string1, ent2, string2, ent3, 
     if (timeout > 0) {
         level childthread function_cb4bda23f2687c64(struct, "returned", timeout);
     }
-    struct waittill("returned", var_6107f68e13e0fc23);
+    struct waittill("returned", results_array);
     struct notify("struct_delete");
-    return var_6107f68e13e0fc23;
+    return results_array;
 }
 
 // Namespace utility / scripts\engine\utility

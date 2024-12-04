@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_1f9ffc0b79384330;
 #using script_5d265b4fca61f070;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace dialogue_wheel;
 

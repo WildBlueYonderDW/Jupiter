@@ -1,9 +1,9 @@
-#using script_d74ae0b4aa21186;
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gameobjects.gsc;
 #using script_47366beb5ba9fa22;
-#using scripts\engine\trace.gsc;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
 
 #namespace capture_flag;
 

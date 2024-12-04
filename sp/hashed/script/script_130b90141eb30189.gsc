@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_3c6fdfb50657a625;
+#namespace bunkerbuster;
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cf
 // Size: 0x55
@@ -24,7 +24,7 @@ function function_3d78dd516c25ef77(grenade) {
     function_2d7c3d3cba3b7824(grenade, stuckto);
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32c
 // Size: 0x176
@@ -65,7 +65,7 @@ function function_2d7c3d3cba3b7824(grenade, var_a9f071baf842f12a) {
     function_9c1241b88a86e763(grenade);
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0x3d
@@ -82,7 +82,7 @@ function function_a7e67bcacd313b7d(stuckto) {
     thread function_a5a20b852c325190();
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ef
 // Size: 0x5e
@@ -96,7 +96,7 @@ function function_579620dc242d8f0(grenade, stuckto) {
     function_2c9ec2084ca01277(grenade, grenadestate);
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x555
 // Size: 0xba
@@ -111,7 +111,7 @@ function function_3355863915967bb(grenade) {
     }
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x617
 // Size: 0x47
@@ -123,7 +123,7 @@ function function_a9dfe926fabd3b25(grenade) {
     thread function_2c9ec2084ca01277(grenade);
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x666
 // Size: 0x23f
@@ -170,7 +170,7 @@ function function_9c1241b88a86e763(grenade) {
     function_2c9ec2084ca01277(grenade, grenadestate);
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x8ad
 // Size: 0x155
@@ -205,7 +205,7 @@ function function_c8fd05bf21971a04(grenade, digstate, spawnpoint, referencevec, 
     grenade.effectsent = effectsent;
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa0a
 // Size: 0x92
@@ -225,7 +225,7 @@ function function_2c9ec2084ca01277(grenade, grenadestate) {
     function_500b28a55f3ecc0e(grenade, grenadestate);
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xaa4
 // Size: 0x5e
@@ -239,7 +239,7 @@ function function_6e25a608eafbc362(grenade, vehicle) {
     function_2c9ec2084ca01277(grenade, grenadestate);
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0a
 // Size: 0x38
@@ -253,7 +253,7 @@ function function_b0492540ca02a187(vehicle) {
     }
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb4a
 // Size: 0xfb
@@ -282,7 +282,7 @@ function function_5a71826bec10f4f0(vehicle) {
     }
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc4d
 // Size: 0x159
@@ -302,7 +302,7 @@ function function_5f9b222ef93f265e(grenade, spawnpoint, surfacenormal) {
     #/
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdae
 // Size: 0x7c
@@ -313,7 +313,7 @@ function function_3a35103112044e22(grenade) {
     grenade.explodingent.weapon_object = makeweapon("bunkerbuster_burrowed_mp");
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe32
 // Size: 0x64
@@ -327,7 +327,7 @@ function function_8f7774e4e68d2a43(grenade, var_256392925c393bd0, surfacevec) {
     return 1;
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe9e
 // Size: 0x2f7
@@ -377,7 +377,7 @@ function function_500b28a55f3ecc0e(grenade, grenadestate) {
     grenade thread function_a5a20b852c325190(0, ter_op(grenadestate == "dig_success", 1, 0));
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x119d
 // Size: 0x5d
@@ -392,7 +392,7 @@ function function_1cdf454e2f856a7f(grenade) {
     }
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1202
 // Size: 0x20e
@@ -424,7 +424,7 @@ function function_e5be7a1f18a659fb(grenade, vehicle) {
     }
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1418
 // Size: 0x3e
@@ -434,7 +434,7 @@ function function_591b951a9d91ffe4(grenade, player) {
     }
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x145e
 // Size: 0x37
@@ -445,7 +445,7 @@ function function_be84a39b52576d18() {
     thread function_a5a20b852c325190();
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x149d
 // Size: 0x8c
@@ -468,7 +468,7 @@ function function_a5a20b852c325190(immediate, var_5996067fa75e09d4) {
     thread function_f0acd469ce8642b9();
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1531
 // Size: 0x18
@@ -478,7 +478,7 @@ function function_f0acd469ce8642b9() {
     self delete();
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1551
 // Size: 0x1f
@@ -489,7 +489,7 @@ function function_e241396812ed67b2() {
     function_7f69923dc06f01d7();
 }
 
-// Namespace namespace_3c6fdfb50657a625 / namespace_eaad1691b6207457
+// Namespace bunkerbuster / namespace_eaad1691b6207457
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1578
 // Size: 0x3a

@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace utility_common;
 
@@ -548,11 +548,11 @@ function gettruenodeangles(node) {
 function getyawtoorigin(org) {
     assert(!actor_is3d());
     if (isdefined(self.type) && isnode3d(self)) {
-        var_9cfe111ea9df5b56 = gettruenodeangles(self);
-        forward = anglestoforward(var_9cfe111ea9df5b56);
-        rotatedorg = rotatepointaroundvector(forward, org - self.origin, var_9cfe111ea9df5b56[2] * -1);
+        node_angles = gettruenodeangles(self);
+        forward = anglestoforward(node_angles);
+        rotatedorg = rotatepointaroundvector(forward, org - self.origin, node_angles[2] * -1);
         rotatedorg += self.origin;
-        yaw = getyaw(rotatedorg) - var_9cfe111ea9df5b56[1];
+        yaw = getyaw(rotatedorg) - node_angles[1];
         yaw = angleclamp180(yaw);
         return yaw;
     }

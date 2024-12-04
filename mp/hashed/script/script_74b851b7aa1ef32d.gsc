@@ -1,6 +1,6 @@
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\points.gsc;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\points;
 
 #namespace namespace_40cd4a4db2010f22;
 

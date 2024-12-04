@@ -1,7 +1,7 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace astar;
 
@@ -86,7 +86,7 @@ function astar_get_path(grid, start_pos, end_pos, exclude, dyn_node, grid_size, 
             if (!current_node.children[i].open && !current_node.children[i].closed) {
                 if (!node_cansee_child(current_node.children[i], current_node, exclude, collisioncontents)) {
                     /#
-                        if (getdvarint(@"hash_f9d938304e5a0a21", 0)) {
+                        if (getdvarint(@"astar_debug", 0)) {
                             line(current_node.origin, current_node.children[i].origin, (1, 0, 0), 1, 0, 20);
                         }
                     #/
@@ -187,7 +187,7 @@ function node_cansee_child(start_node, end_node, exclude, collisioncontents) {
         radius = level.var_71058efaa1d9efd3;
     }
     passed = scripts\engine\trace::sphere_trace_passed(startpos, endpos, radius, exclude, collisioncontents);
-    if (getdvarint(@"hash_f9d938304e5a0a21", 0)) {
+    if (getdvarint(@"astar_debug", 0)) {
         if (!passed) {
             debug_data = sphere_trace(startpos, endpos, radius, exclude, collisioncontents, 1);
         }
@@ -219,11 +219,11 @@ function node_is_valid(node, exclude, collisioncontents) {
     }
     passed = scripts\engine\trace::sphere_trace_passed(startpos, endpos, radius, exclude, collisioncontents);
     /#
-        if (getdvarint(@"hash_f9d938304e5a0a21", 0)) {
+        if (getdvarint(@"astar_debug", 0)) {
             if (!passed) {
-                var_a54d8b03b3f42b54 = (1, 0, 0);
+                clr = (1, 0, 0);
                 debug_data = sphere_trace(startpos, endpos, radius, exclude, collisioncontents, 1);
-                level thread scripts\cp\utility::drawsphere(endpos, 5, 20, var_a54d8b03b3f42b54);
+                level thread scripts\cp\utility::drawsphere(endpos, 5, 20, clr);
                 sphere(startpos, radius, (1, 0, 0), 0, 1000);
                 sphere(endpos, radius, (1, 0, 0), 0, 1000);
                 print3d(startpos, "<dev string:x1c>", (1, 0, 0), 1, 1, 1000, 1);

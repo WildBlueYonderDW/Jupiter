@@ -1,6 +1,6 @@
-#namespace namespace_b7a1ea79d04c93e6;
+#namespace civilian_london_female_heads_nohair;
 
-// Namespace namespace_b7a1ea79d04c93e6 / namespace_5aadc47b35438466
+// Namespace civilian_london_female_heads_nohair / namespace_5aadc47b35438466
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf5
 // Size: 0x3d

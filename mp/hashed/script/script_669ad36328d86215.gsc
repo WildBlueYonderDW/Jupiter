@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
-#namespace namespace_89521477a018e10a;
+#namespace legendary_contracts;
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x59d
 // Size: 0x20
@@ -26,7 +26,7 @@ function autoexec main() {
     thread function_566f849e77540164();
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x5c5
 // Size: 0x60
@@ -42,7 +42,7 @@ function private function_566f849e77540164() {
     scripts\cp_mp\utility\omnvar_utility::function_d3cf7ff1a257e2c3("ui_br_legendary_contract_game_data", 0, 1, level.var_dc6636f4b2728b7d.size > 0 ? 1 : 0);
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x62d
 // Size: 0x3fc
@@ -84,7 +84,7 @@ function private function_fef4bd40f684ecad() {
     function_4eafca4dace2790();
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xa31
 // Size: 0x64
@@ -93,7 +93,7 @@ function private function_a1265458782afed2() {
     level.var_6a82bbe1d7f1fde8.exclusionlist = strtok(getdvar(@"hash_d4b86b03fb1d1e8b", "vip"), " ");
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xa9d
 // Size: 0xc0
@@ -108,7 +108,7 @@ function private function_4eafca4dace2790() {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xb65
 // Size: 0x2a
@@ -116,7 +116,7 @@ function private function_df4cbc32c8f4b694() {
     scripts\cp_mp\utility\omnvar_utility::function_d3cf7ff1a257e2c3("ui_br_legendary_contract_game_data", 1, 8, int(level.var_6a82bbe1d7f1fde8.var_c0c47af988dff6ce));
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xb97
 // Size: 0x28
@@ -125,7 +125,7 @@ function private function_7c26f56cd299df9d() {
     game["dialog"]["legendary_contract_pickup"] = "blcs_grav_aaa19";
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xbc7
 // Size: 0xdf
@@ -145,7 +145,7 @@ function private function_1dab7d1c826262ac() {
     scripts\mp\gametypes\br_gametypes::registerbrgametypefunc("getContractSplashRefOverride", &function_31c343a0e4ad9300);
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xcae
 // Size: 0x44
@@ -155,7 +155,7 @@ function private function_6ccce6577fcd5e27() {
     level.var_6a82bbe1d7f1fde8.var_e12e030746e5588b = level.var_dc6636f4b2728b7d.size;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xcfa
 // Size: 0xc5
@@ -174,7 +174,7 @@ function private function_9ebbdb8a9d2f9ef5(quantity) {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xdc7
 // Size: 0x1ac
@@ -206,7 +206,7 @@ function private function_2db5dd0cda747ee(contract) {
     return true;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xf7c
 // Size: 0x79
@@ -219,7 +219,7 @@ function private function_7ae03d4e75a6e6ea(contract) {
     contract.var_fcd717aeda26cf4c = 1;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xffd
 // Size: 0x68
@@ -232,7 +232,7 @@ function function_b6b01c915e24dc93(player, contract) {
     player scripts\cp_mp\utility\omnvar_utility::function_63437fca39c681dc("ui_br_legendary_contract_client_data", 2, 8, int(modifier));
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x106d
 // Size: 0x86
@@ -247,7 +247,7 @@ function function_cf7b2f45657ac7e2(contract) {
     return modifier;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10fc
 // Size: 0x91
@@ -261,7 +261,7 @@ function function_cb3bbd9496078cc2(contract) {
     return level.var_6a82bbe1d7f1fde8.var_e28366f9ed2a43f1;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1195
 // Size: 0xa7
@@ -276,7 +276,7 @@ function function_b2687585d0a01882(team, contract) {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1244
 // Size: 0x17f
@@ -307,7 +307,7 @@ function function_9dde686b3c2dad5c() {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13cb
 // Size: 0x3b
@@ -318,7 +318,7 @@ function function_c6c43c079365df8d(contract) {
     level.var_dc6636f4b2728b7d = array_remove(level.var_dc6636f4b2728b7d, contract);
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x140e
 // Size: 0x5a
@@ -330,7 +330,7 @@ function function_7873864250068e11(team, contract) {
     scripts\mp\gametypes\br_public::brleaderdialog("legendary_contract_pickup", 1, players, 0, 6, undefined, "dx_br_brlc_");
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1470
 // Size: 0x35
@@ -341,7 +341,7 @@ function function_316611d82a794d9f(contract) {
     return level.var_6a82bbe1d7f1fde8.var_c0c47af988dff6ce;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14ae
 // Size: 0x38
@@ -352,7 +352,7 @@ function function_7f174cc0cde438dd(contract) {
     return 1 + level.var_6a82bbe1d7f1fde8.var_d4618ceb0666a783;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x14ef
 // Size: 0xfc
@@ -372,7 +372,7 @@ function function_301b8bb0f3666e59(team, contract, rewards) {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x15f3
 // Size: 0x4a
@@ -385,7 +385,7 @@ function function_b7a451b29899ba9(team, contract) {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1645
 // Size: 0x96
@@ -399,7 +399,7 @@ function function_b033457dc1ba1562(team, contract) {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x16e3
 // Size: 0x6f
@@ -416,7 +416,7 @@ function function_f0b97d400eaa80d8(contract, time) {
     return int(time);
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x175b
 // Size: 0x244
@@ -453,7 +453,7 @@ function function_e5019bc27a9e875f(contract, team) {
     }
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x19a7
 // Size: 0x15c
@@ -484,7 +484,7 @@ function function_373f9e44ad714223(crate, players, var_8850d9f771525016) {
     showsplashtoteam(var_8850d9f771525016.team, "br_legendary_contract_crate_inbound", undefined);
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b0b
 // Size: 0x120
@@ -504,7 +504,7 @@ function function_d4d8942eae92d253(player) {
     player dlog_recordplayerevent("dlog_event_br_legendary_contract_crate_opened", ["team", player.team]);
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c33
 // Size: 0x27
@@ -515,7 +515,7 @@ function function_a750847beab4180e(crate) {
     return undefined;
 }
 
-// Namespace namespace_89521477a018e10a / namespace_e0d8d479cc52b68f
+// Namespace legendary_contracts / namespace_e0d8d479cc52b68f
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c63
 // Size: 0x2c

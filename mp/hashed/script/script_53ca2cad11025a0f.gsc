@@ -1,10 +1,10 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\obj_dogtag.gsc;
-#using scripts\mp\gamescore.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\obj_dogtag;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace warrior_kc;
 

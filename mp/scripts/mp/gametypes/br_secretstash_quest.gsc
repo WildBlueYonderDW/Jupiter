@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace br_secretstash_quest;
 

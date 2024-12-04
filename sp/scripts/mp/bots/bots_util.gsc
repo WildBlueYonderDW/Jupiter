@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\rank.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\rank;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace bots_util;
 
@@ -1602,9 +1602,9 @@ function bot_get_zones_within_dist_recurs(var_78e4201c31443b38, max_dist) {
     var_499568c4da593e13 = getlinkednodes(var_78e4201c31443b38);
     foreach (node in var_499568c4da593e13) {
         if (!node.visited) {
-            var_fbd1a356311a2449 = distance(var_78e4201c31443b38.origin, node.origin);
-            if (var_fbd1a356311a2449 < max_dist) {
-                new_zones = bot_get_zones_within_dist_recurs(node, max_dist - var_fbd1a356311a2449);
+            distance_to_zone = distance(var_78e4201c31443b38.origin, node.origin);
+            if (distance_to_zone < max_dist) {
+                new_zones = bot_get_zones_within_dist_recurs(node, max_dist - distance_to_zone);
                 all_zones = array_combine(new_zones, all_zones);
             }
         }

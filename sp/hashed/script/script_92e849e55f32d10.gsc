@@ -1,4 +1,4 @@
-#using scripts\sp\equipment\offhands.gsc;
+#using scripts\sp\equipment\offhands;
 
 #namespace hb_sensor;
 

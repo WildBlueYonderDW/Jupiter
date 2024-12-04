@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_compass.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using script_686729055b66c6e4;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using script_4bb70b1c5860caaa;
 #using script_3e01f6b89a26a5d9;
+#using script_4bb70b1c5860caaa;
+#using script_686729055b66c6e4;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_compass;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_7c315ec0762657c0;
 
@@ -642,7 +642,7 @@ function private function_b4b82c7f431d1600(zombie, vehiclebundle) {
 // Size: 0x8d
 function private function_304ec2350fdfbab2(victim, shock_duration, damage) {
     if (isdefined(shock_duration) && isdefined(victim) && isdefined(damage) && isai(victim)) {
-        victim zombie_stun::function_2e4d3c67e63f83ac(shock_duration);
+        victim zombie_stun::stun_ai(shock_duration);
         victim setscriptablepartstate("shockStickVfx", "vfx_start", 0);
         victim dodamage(damage, victim.origin, victim, victim, "MOD_UNKNOWN", undefined, "none", undefined);
         wait shock_duration;

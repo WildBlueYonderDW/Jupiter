@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
-#using scripts\cp\vehicles\vehicle_oob_cp.gsc;
-#using scripts\cp\utility.gsc;
 #using script_476b6443e3798f5e;
 #using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\utility;
+#using scripts\cp\vehicles\vehicle_oob_cp;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace namespace_608a17f2f404a889;
 

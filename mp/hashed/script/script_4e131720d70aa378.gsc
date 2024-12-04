@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_7edf952f8921aa6b;
 #using script_5df4adf33e9f704;
-#using scripts\engine\trace.gsc;
+#using script_7edf952f8921aa6b;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_e9b11a352725c944;
 
@@ -187,10 +187,10 @@ function private function_13f829a62eb5d21a() {
         self.aimyawspeed = 10 + clamp(var_a7c8081f62161240, 0, 1) * 50;
         beam_length = self.zombieaisettings.var_e58a65b7a8f5973c.var_a9e8db47e0618b28;
         var_1fd01e8ed4e7ceb5 = self.var_d3b24d5f093d5e28[1];
-        var_cb520a17509e5da0 = self gettagangles(var_1fd01e8ed4e7ceb5);
-        var_cb520a17509e5da0 = (0, var_cb520a17509e5da0[1], 0);
+        head_angles = self gettagangles(var_1fd01e8ed4e7ceb5);
+        head_angles = (0, head_angles[1], 0);
         head_pos = self gettagorigin(var_1fd01e8ed4e7ceb5);
-        var_cdf2c3e51c96c434 = anglestoforward(var_cb520a17509e5da0);
+        var_cdf2c3e51c96c434 = anglestoforward(head_angles);
         var_d8e0d0e55a3fa02b = function_917da7c89d67b27b();
         var_259257f526d63b6d = [];
         for (priority_i = 1; priority_i < var_d8e0d0e55a3fa02b.size; priority_i++) {
@@ -229,12 +229,12 @@ function private function_13f829a62eb5d21a() {
             is_primary = head_index == var_86720ff875e123cb;
             if (is_primary || isdefined(secondary_targets[head_index])) {
                 target_ent = ter_op(is_primary, var_3aa70c7a997446b9, secondary_targets[head_index]);
-                var_5d5285fb1aa381ff = function_2aac335c6c6cea96(var_70ea1e27e5d67eaf[head_index], target_ent, head_index, is_primary, var_cb520a17509e5da0, head_pos, clamp_pitch, var_a1c42ad56045a94d);
+                var_5d5285fb1aa381ff = function_2aac335c6c6cea96(var_70ea1e27e5d67eaf[head_index], target_ent, head_index, is_primary, head_angles, head_pos, clamp_pitch, var_a1c42ad56045a94d);
             } else {
                 var_5d5285fb1aa381ff = var_70ea1e27e5d67eaf[var_86720ff875e123cb];
             }
             var_70ea1e27e5d67eaf[head_index] = function_9ad4af8fe5c34b1d(var_70ea1e27e5d67eaf[head_index], var_5d5285fb1aa381ff);
-            var_607dd22e123cc194[head_index] = function_cbd6bdebcfc8b014(var_70ea1e27e5d67eaf[head_index], var_cb520a17509e5da0, head_pos, beam_length);
+            var_607dd22e123cc194[head_index] = function_cbd6bdebcfc8b014(var_70ea1e27e5d67eaf[head_index], head_angles, head_pos, beam_length);
         }
         var_bf17a1557a2b2486 = [];
         var_7dd5b5b98f1f4795 = [];
@@ -379,7 +379,7 @@ function private function_917da7c89d67b27b() {
 // Params 8, eflags: 0x4
 // Checksum 0x0, Offset: 0x16ad
 // Size: 0x196
-function private function_2aac335c6c6cea96(var_f28f9901bee5219e, var_3aa70c7a997446b9, head_index, var_c786483f5e0eddbc, var_cb520a17509e5da0, head_pos, clamp_pitch, clamp_yaw) {
+function private function_2aac335c6c6cea96(var_f28f9901bee5219e, var_3aa70c7a997446b9, head_index, var_c786483f5e0eddbc, head_angles, head_pos, clamp_pitch, clamp_yaw) {
     if (isdefined(var_3aa70c7a997446b9)) {
         var_ecdc71b3afd2d7b6 = var_3aa70c7a997446b9 getcentroid();
         var_3b73b4bab4a9ee61 = (var_ecdc71b3afd2d7b6[2] - var_3aa70c7a997446b9.origin[2]) * 2;
@@ -395,8 +395,8 @@ function private function_2aac335c6c6cea96(var_f28f9901bee5219e, var_3aa70c7a997
             self.var_130b2c98c9d80a1a = target_pos;
         }
         var_26fd5f1bb657d099 = vectortoangles(target_pos - head_pos);
-        pitch_clamped = int(clamp(angleclamp180(var_26fd5f1bb657d099[0] - var_cb520a17509e5da0[0]), -1 * clamp_pitch, clamp_pitch));
-        var_bfb998964a6ca671 = int(clamp(angleclamp180(var_26fd5f1bb657d099[1] - var_cb520a17509e5da0[1]), -1 * clamp_yaw, clamp_yaw));
+        pitch_clamped = int(clamp(angleclamp180(var_26fd5f1bb657d099[0] - head_angles[0]), -1 * clamp_pitch, clamp_pitch));
+        var_bfb998964a6ca671 = int(clamp(angleclamp180(var_26fd5f1bb657d099[1] - head_angles[1]), -1 * clamp_yaw, clamp_yaw));
         var_fce15ec651f5ca51 = (pitch_clamped, var_bfb998964a6ca671, 0);
         return var_fce15ec651f5ca51;
     }
@@ -419,9 +419,9 @@ function private function_9ad4af8fe5c34b1d(var_f28f9901bee5219e, var_4ac8f68adb6
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x18e9
 // Size: 0x58
-function private function_cbd6bdebcfc8b014(var_f28f9901bee5219e, var_cb520a17509e5da0, head_pos, beam_length) {
-    var_a27756ab073e920b = angleclamp(var_cb520a17509e5da0 + var_f28f9901bee5219e);
-    beam_forward = anglestoforward(var_a27756ab073e920b);
+function private function_cbd6bdebcfc8b014(var_f28f9901bee5219e, head_angles, head_pos, beam_length) {
+    beam_angles = angleclamp(head_angles + var_f28f9901bee5219e);
+    beam_forward = anglestoforward(beam_angles);
     end_point = head_pos + beam_forward * beam_length;
     return end_point;
 }

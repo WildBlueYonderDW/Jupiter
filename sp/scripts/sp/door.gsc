@@ -1,15 +1,15 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\sp\door_internal.gsc;
-#using scripts\sp\door_scriptable.gsc;
-#using scripts\sp\door_ai.gsc;
-#using scripts\engine\scriptable_door.gsc;
-#using scripts\game\sp\door.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\door.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\scriptable_door;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\game\sp\door;
+#using scripts\sp\door;
+#using scripts\sp\door_ai;
+#using scripts\sp\door_internal;
+#using scripts\sp\door_scriptable;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace door;
 
@@ -25,7 +25,7 @@ function init() {
     level.interactive_doors.ents = [];
     level.interactive_doors.got_hint = 0;
     level.interactive_doors.close_prompt = 0;
-    level.interactive_doors.var_14d787a28fbf2062 = 0;
+    level.interactive_doors.process_damage = 0;
     level.interactive_doors.fndoorinit = &init_door_internal;
     level.interactive_doors.fnshoulddogesture = &should_do_gesture;
     level.interactive_doors.gesture_door = "ges_door_push_directional";
@@ -221,26 +221,26 @@ function should_open_left(angles, opener) {
 // Checksum 0x0, Offset: 0xdc3
 // Size: 0x152
 function create_open_interact_hint(custom_hint_text) {
-    var_6891bd136297dbc2 = custom_hint_text;
-    if (!isdefined(var_6891bd136297dbc2)) {
-        var_6891bd136297dbc2 = self.custom_hint_text;
-        if (!isdefined(var_6891bd136297dbc2)) {
+    hint_text = custom_hint_text;
+    if (!isdefined(hint_text)) {
+        hint_text = self.custom_hint_text;
+        if (!isdefined(hint_text)) {
             if (self.door door_bashable_by_player(1)) {
-                var_6891bd136297dbc2 = %SCRIPT/DOOR_HINT_USE;
+                hint_text = %SCRIPT/DOOR_HINT_USE;
             } else {
-                var_6891bd136297dbc2 = %SCRIPT/DOOR_HINT_USE_NO_BASH;
+                hint_text = %SCRIPT/DOOR_HINT_USE_NO_BASH;
             }
         }
     }
     if (!istrue(self.openinteract) || !isdefined(self.cursor_hint_ent)) {
         if (!istrue(self.no_open_interact)) {
-            scripts\sp\player\cursor_hint::create_cursor_hint(undefined, (0, 0, 0), var_6891bd136297dbc2, 45, 200 * level.interactive_doors.hint_dist_scale, 55 * level.interactive_doors.hint_dist_scale, 0);
+            scripts\sp\player\cursor_hint::create_cursor_hint(undefined, (0, 0, 0), hint_text, 45, 200 * level.interactive_doors.hint_dist_scale, 55 * level.interactive_doors.hint_dist_scale, 0);
             self.cursor_hint_ent setusewhenhandsoccupied(1);
             self.cursor_hint_ent.door = self.door;
             self.openinteract = 1;
         }
     } else if (!in_realism_mode()) {
-        self.cursor_hint_ent sethintstring(var_6891bd136297dbc2);
+        self.cursor_hint_ent sethintstring(hint_text);
     }
     if (isdefined(level.interactive_doors.var_416a1be63376e00c)) {
         [[ level.interactive_doors.var_416a1be63376e00c ]](self, custom_hint_text);
@@ -475,7 +475,7 @@ function remove_open_prompts() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1716
 // Size: 0xac
-function function_741259a03199b7f5(opener, yaw_angle, time) {
+function door_rotate(opener, yaw_angle, time) {
     if (istrue(self.open_complete)) {
         return;
     }
@@ -527,15 +527,15 @@ function door_open_completely(opener, time) {
         self.open_left = should_open_left();
     }
     set_pivot_point(self.open_left);
-    var_1caffbb3c5bc7bc1 = undefined;
+    max_yaw = undefined;
     if (self.open_left) {
-        var_1caffbb3c5bc7bc1 = self.true_start_angles[1] + self.max_yaw_left;
+        max_yaw = self.true_start_angles[1] + self.max_yaw_left;
     } else {
-        var_1caffbb3c5bc7bc1 = self.true_start_angles[1] - self.max_yaw_right;
+        max_yaw = self.true_start_angles[1] - self.max_yaw_right;
     }
     /#
         if (isdefined(self.opener) && isent(self.opener)) {
-            self.debug_activity = "<dev string:x53>" + self.opener getentitynumber() + "<dev string:x6d>" + var_1caffbb3c5bc7bc1;
+            self.debug_activity = "<dev string:x53>" + self.opener getentitynumber() + "<dev string:x6d>" + max_yaw;
         }
     #/
     var_7da6017ed0aee8e = get_door_audio_material();
@@ -546,7 +546,7 @@ function door_open_completely(opener, time) {
     self.pivoting = 1;
     time = default_to(time, 1.5);
     if (time < 0.05) {
-        self.pivot_ent.angles = (self.angles[0], var_1caffbb3c5bc7bc1, self.angles[2]);
+        self.pivot_ent.angles = (self.angles[0], max_yaw, self.angles[2]);
     } else {
         if (time > 0.05) {
             accel = time * 0.25;
@@ -558,7 +558,7 @@ function door_open_completely(opener, time) {
             accel = 0;
             decel = 0;
         }
-        self.pivot_ent rotateto((self.angles[0], var_1caffbb3c5bc7bc1, self.angles[2]), time, accel, decel);
+        self.pivot_ent rotateto((self.angles[0], max_yaw, self.angles[2]), time, accel, decel);
     }
     self notify("stop_door_creak");
     thread notify_delay("open", time);
@@ -880,9 +880,9 @@ function interact_door_dopusheffects() {
 function interact_door_isplayerfacing() {
     endpoint = interact_door_get_endpoint();
     closest_point = pointonsegmentnearesttopoint(endpoint, self.origin, level.player.origin);
-    var_77a717fb21082e1d = vectornormalize(closest_point - level.player.origin);
+    door_dir = vectornormalize(closest_point - level.player.origin);
     player_dir = anglestoforward(level.player.angles);
-    if (vectordot(var_77a717fb21082e1d, player_dir) > 0.7) {
+    if (vectordot(door_dir, player_dir) > 0.7) {
         return true;
     }
     return false;
@@ -914,13 +914,13 @@ function bash_door_isplayerclose() {
 // Size: 0x69
 function function_89be9fac0c81f3aa() {
     flag_wait("interactive_doors_ready_internal");
-    var_351596ae890d5ca6 = undefined;
+    other_door = undefined;
     if (!isdefined(self.doubledoorother)) {
-        var_351596ae890d5ca6 = get_closest_exclude(self.origin, level.interactive_doors.ents, [self]);
+        other_door = get_closest_exclude(self.origin, level.interactive_doors.ents, [self]);
     } else {
-        var_351596ae890d5ca6 = self.doubledoorother;
+        other_door = self.doubledoorother;
     }
-    thread scripts\sp\door::double_doors_init(self, var_351596ae890d5ca6);
+    thread scripts\sp\door::double_doors_init(self, other_door);
 }
 
 // Namespace door / scripts\sp\door
@@ -928,20 +928,20 @@ function function_89be9fac0c81f3aa() {
 // Checksum 0x0, Offset: 0x27ca
 // Size: 0x3d
 function double_doors_init_targetname(targetname) {
-    var_462d1d167186a54f = scripts\sp\door::get_interactive_door(targetname);
-    var_5c56f786a64d1294 = scripts\sp\door::get_interactive_door(targetname + "_right");
-    return double_doors_init(var_462d1d167186a54f, var_5c56f786a64d1294);
+    door_main = scripts\sp\door::get_interactive_door(targetname);
+    door_other = scripts\sp\door::get_interactive_door(targetname + "_right");
+    return double_doors_init(door_main, door_other);
 }
 
 // Namespace door / scripts\sp\door
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2810
 // Size: 0x35
-function double_doors_init(var_462d1d167186a54f, var_5c56f786a64d1294) {
+function double_doors_init(door_main, door_other) {
     doors = [];
-    doors[0] = var_462d1d167186a54f;
-    doors[1] = var_5c56f786a64d1294;
-    thread double_doors_init_thread(var_462d1d167186a54f, var_5c56f786a64d1294);
+    doors[0] = door_main;
+    doors[1] = door_other;
+    thread double_doors_init_thread(door_main, door_other);
     return doors;
 }
 
@@ -949,30 +949,30 @@ function double_doors_init(var_462d1d167186a54f, var_5c56f786a64d1294) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x284e
 // Size: 0xfd
-function double_doors_init_thread(var_462d1d167186a54f, var_5c56f786a64d1294) {
-    var_462d1d167186a54f notify("double_doors_init_thread");
-    var_5c56f786a64d1294 notify("double_doors_init_thread");
-    var_462d1d167186a54f endon("double_doors_init_thread");
-    var_5c56f786a64d1294 endon("double_doors_init_thread");
+function double_doors_init_thread(door_main, door_other) {
+    door_main notify("double_doors_init_thread");
+    door_other notify("double_doors_init_thread");
+    door_main endon("double_doors_init_thread");
+    door_other endon("double_doors_init_thread");
     waittillframeend();
-    doors[0] = var_462d1d167186a54f;
-    doors[1] = var_5c56f786a64d1294;
-    var_462d1d167186a54f.doubledoorother = var_5c56f786a64d1294;
-    var_462d1d167186a54f.doubledoors = doors;
-    var_462d1d167186a54f thread double_doors_waittill_interact();
-    var_462d1d167186a54f thread double_doors_waittill_bashed();
-    var_462d1d167186a54f thread double_doors_hint_pos(var_5c56f786a64d1294);
-    var_462d1d167186a54f thread double_doors_waittill_open_completely();
-    var_5c56f786a64d1294 scripts\sp\door::remove_open_prompts();
-    var_5c56f786a64d1294.doubledoorother = var_462d1d167186a54f;
-    var_5c56f786a64d1294.doubledoors = doors;
-    var_5c56f786a64d1294 thread double_doors_waittill_bashed();
-    var_5c56f786a64d1294 thread double_doors_waittill_open_completely();
-    if (var_5c56f786a64d1294.locked && isdefined(var_5c56f786a64d1294.unlock_volume)) {
-        var_5c56f786a64d1294 notify("unlock_volume_logic");
-        var_5c56f786a64d1294.unlock_volume thread unlock_volume_logic();
+    doors[0] = door_main;
+    doors[1] = door_other;
+    door_main.doubledoorother = door_other;
+    door_main.doubledoors = doors;
+    door_main thread double_doors_waittill_interact();
+    door_main thread double_doors_waittill_bashed();
+    door_main thread double_doors_hint_pos(door_other);
+    door_main thread double_doors_waittill_open_completely();
+    door_other scripts\sp\door::remove_open_prompts();
+    door_other.doubledoorother = door_main;
+    door_other.doubledoors = doors;
+    door_other thread double_doors_waittill_bashed();
+    door_other thread double_doors_waittill_open_completely();
+    if (door_other.locked && isdefined(door_other.unlock_volume)) {
+        door_other notify("unlock_volume_logic");
+        door_other.unlock_volume thread unlock_volume_logic();
     }
-    return var_462d1d167186a54f.doubledoors;
+    return door_main.doubledoors;
 }
 
 // Namespace door / scripts\sp\door

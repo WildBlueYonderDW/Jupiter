@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\common\notetrack.gsc;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\lui_game_event_aggregator;
 
 #namespace gestures_mp;
 

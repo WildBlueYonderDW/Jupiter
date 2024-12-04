@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_2707474774db34b;
 #using script_185660037b9236c1;
-#using script_413d0426f154bd91;
+#using script_2707474774db34b;
+#using scripts\common\data_tracker;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_cfbb837b74e21e93;
 
@@ -82,7 +82,7 @@ function function_5f6fd55a55ffbc6c(value, players) {
     activityinstance = self;
     assertex(namespace_68dc261109a9503f::function_1c67ae607a61c6bb(activityinstance));
     /#
-        var_3bc5bab0e50c10e3 = namespace_e82a1efb852543c9::function_6a26856f16c6a207("<dev string:x1c>");
+        var_3bc5bab0e50c10e3 = scripts\common\data_tracker::function_6a26856f16c6a207("<dev string:x1c>");
         if (istrue(var_3bc5bab0e50c10e3)) {
             var_5ce85f49892885d8 = namespace_68dc261109a9503f::function_297dc42ebf4f3b04(activityinstance, "<dev string:x1c>");
             var_5ce85f49892885d8 = tablelookuprownum("<dev string:x35>", 0, var_5ce85f49892885d8);
@@ -124,7 +124,7 @@ function function_c1c25690399031a3(timeinseconds, players) {
     activityinstance = self;
     assertex(namespace_68dc261109a9503f::function_1c67ae607a61c6bb(activityinstance));
     /#
-        var_3bc5bab0e50c10e3 = namespace_e82a1efb852543c9::function_6a26856f16c6a207("<dev string:x1c>");
+        var_3bc5bab0e50c10e3 = scripts\common\data_tracker::function_6a26856f16c6a207("<dev string:x1c>");
         if (istrue(var_3bc5bab0e50c10e3)) {
             var_5ce85f49892885d8 = namespace_68dc261109a9503f::function_297dc42ebf4f3b04(activityinstance, "<dev string:x1c>");
             var_5ce85f49892885d8 = tablelookuprownum("<dev string:x35>", 0, var_5ce85f49892885d8);

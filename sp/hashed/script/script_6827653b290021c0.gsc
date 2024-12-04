@@ -1,15 +1,15 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\cp_gameskill.gsc;
-#using scripts\cp\cp_analytics.gsc;
-#using script_6a5d3bf7a5b7064a;
 #using script_48324b060b129b7b;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\common\gameskill.gsc;
+#using script_6a5d3bf7a5b7064a;
+#using scripts\common\gameskill;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace player_death;
 
@@ -258,9 +258,9 @@ function get_animated_player_death(stance, running, cause, movingplatform, attac
     if (!level.players[0] isonground()) {
         return;
     }
-    var_f136bf8d18978572 = pick_death(stance, running, cause, attacker);
-    if (isdefined(var_f136bf8d18978572)) {
-        return var_f136bf8d18978572;
+    death_scene = pick_death(stance, running, cause, attacker);
+    if (isdefined(death_scene)) {
+        return death_scene;
     }
     return;
 }

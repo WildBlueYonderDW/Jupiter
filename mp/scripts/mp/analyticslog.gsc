@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\matchdata.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\matchdata;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
 
 #namespace analyticslog;
 
@@ -642,7 +642,7 @@ function logmatchtags() {
         logevent_tag("OnlineMatch");
         return;
     }
-    if (getdvarint(@"hash_485ef1ed1d39d3a3")) {
+    if (getdvarint(@"xblive_privatematch")) {
         logevent_tag("PrivateMatch");
         return;
     }
@@ -857,9 +857,9 @@ function analyticssend_spawntype(spawn_pos, team_name, life_index, spawnid) {
         var_a4a67e69520e047b = frontline_midpoint[1];
         var_a4a67f69520e06ae = frontline_midpoint[2];
     }
-    var_edfd8ebb152d7d02 = 0;
+    frontline_angle = 0;
     if (isdefined(frontlineinfo.teamdiffyaw)) {
-        var_edfd8ebb152d7d02 = frontlineinfo.teamdiffyaw;
+        frontline_angle = frontlineinfo.teamdiffyaw;
     }
     var_2cf02e998291f5ea = frontlineinfo.isactive[team_name];
     var_b3372bbd4ec17e38 = 0;
@@ -872,7 +872,7 @@ function analyticssend_spawntype(spawn_pos, team_name, life_index, spawnid) {
         buddyspawnid = level.spawnglobals.buddyplayerid;
         level.spawnglobals.buddyplayerid = 0;
     }
-    bbreportspawntypes(var_a4a67d69520e0248, var_a4a67e69520e047b, var_a4a67f69520e06ae, var_edfd8ebb152d7d02, spawnid, var_2cf02e998291f5ea, var_b3372bbd4ec17e38, life_index, var_86f685e81768ea92, buddyspawnid);
+    bbreportspawntypes(var_a4a67d69520e0248, var_a4a67e69520e047b, var_a4a67f69520e06ae, frontline_angle, spawnid, var_2cf02e998291f5ea, var_b3372bbd4ec17e38, life_index, var_86f685e81768ea92, buddyspawnid);
 }
 
 // Namespace analyticslog / scripts\mp\analyticslog

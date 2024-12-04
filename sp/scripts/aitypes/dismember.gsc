@@ -1,6 +1,6 @@
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\aitypes\dismember.gsc;
+#using scripts\aitypes\bt_util;
+#using scripts\aitypes\dismember;
+#using scripts\anim\utility_common;
 
 #namespace dismember;
 

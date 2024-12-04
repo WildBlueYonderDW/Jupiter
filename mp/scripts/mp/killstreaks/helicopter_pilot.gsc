@@ -1,21 +1,21 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\mp\killstreaks\helicopter.gsc;
-#using scripts\mp\killstreaks\flares.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\hostmigration.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\flares;
+#using scripts\mp\killstreaks\helicopter;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace helicopter_pilot;
 
@@ -186,7 +186,7 @@ function starthelipilot(heli) {
     level endon("game_ended");
     heli endon("death");
     setusingremote(heli.helipilottype);
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdperson")) {
         setthirdpersondof(0);
     }
     self.restoreangles = self.angles;
@@ -464,7 +464,7 @@ function helipilot_endride(heli) {
         if (isusingremote()) {
             clearusingremote();
         }
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdperson")) {
             setthirdpersondof(1);
         }
         self remotecontrolvehicleoff(heli);

@@ -1,9 +1,9 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\createfx.gsc;
+#using scripts\common\createfx;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace lights;
 
@@ -12,21 +12,21 @@
 // Checksum 0x0, Offset: 0x413
 // Size: 0x24b
 function init() {
-    var_4bc6eb9caf7f6f1a = getentarray("script_light", "targetname");
+    generic_lights = getentarray("script_light", "targetname");
     toggle_lights = getentarray("script_light_toggle", "targetname");
-    var_817f3bfe5e36ad2d = getentarray("script_light_destructable", "targetname");
+    destructable_lights = getentarray("script_light_destructable", "targetname");
     flicker_lights = getentarray("script_light_flicker", "targetname");
-    var_32cb74b7ab6a826e = getentarray("script_light_pulse", "targetname");
-    var_74ec32f58e0c8f14 = getentarray("generic_double_strobe", "targetname");
+    pulse_lights = getentarray("script_light_pulse", "targetname");
+    double_strobe = getentarray("generic_double_strobe", "targetname");
     burning_trash_fire = getentarray("burning_trash_fire", "targetname");
     cine_tank_fire = getentarray("cine_tank_fire", "targetname");
     var_855b623bf1b4fb59 = getentarray("generic_pulsing", "targetname");
-    array_thread(var_4bc6eb9caf7f6f1a, &init_light_generic_iw7);
+    array_thread(generic_lights, &init_light_generic_iw7);
     array_thread(toggle_lights, &init_light_generic_iw7);
-    array_thread(var_817f3bfe5e36ad2d, &init_light_destructable);
+    array_thread(destructable_lights, &init_light_destructable);
     array_thread(flicker_lights, &init_light_flicker);
-    array_thread(var_32cb74b7ab6a826e, &init_light_pulse_iw7);
-    array_thread(var_74ec32f58e0c8f14, &generic_double_strobe);
+    array_thread(pulse_lights, &init_light_pulse_iw7);
+    array_thread(double_strobe, &generic_double_strobe);
     array_thread(burning_trash_fire, &burning_trash_fire);
     array_thread(var_855b623bf1b4fb59, &generic_pulsing);
     array_thread(cine_tank_fire, &cine_tank_fire);
@@ -83,14 +83,14 @@ function init_strobe() {
 // Size: 0x179
 function light_think() {
     self endon("death");
-    var_d0937a8376e6d93b = self.script_intensity < self.script_intensity2;
-    var_1e6d224371be587c = var_d0937a8376e6d93b;
+    off_frac = self.script_intensity < self.script_intensity2;
+    start_frac = off_frac;
     if (isdefined(self.script_flag) && !flag(self.script_flag)) {
         if (isdefined(self.script_start_intensity)) {
             set_lights_internal(self.script_start_intensity);
         } else if (isdefined(self.script_start_state)) {
             if (self.script_start_state == "on") {
-                var_1e6d224371be587c = !var_d0937a8376e6d93b;
+                start_frac = !off_frac;
             }
         }
     }
@@ -102,12 +102,12 @@ function light_think() {
                     if (self.script_start_state == "off") {
                         set_lights_internal(0);
                     } else {
-                        set_light_values_by_frac(var_1e6d224371be587c);
+                        set_light_values_by_frac(start_frac);
                     }
                 } else if (isdefined(self.var_7e92c50bf639c26e)) {
                     set_lights_internal(self.var_7e92c50bf639c26e);
                 } else {
-                    set_light_values_by_frac(var_d0937a8376e6d93b);
+                    set_light_values_by_frac(off_frac);
                 }
                 flag_wait(self.script_flag);
             }
@@ -197,9 +197,9 @@ function light_lerp(time, invert) {
     steps = int(time * 20);
     intensity_inc = (self.script_intensity - self.script_intensity2) / steps;
     color = undefined;
-    var_a58217123877efa3 = undefined;
+    color_inc = undefined;
     if (has_script_color()) {
-        var_a58217123877efa3 = (self.script_color - self.script_color2) / steps;
+        color_inc = (self.script_color - self.script_color2) / steps;
     }
     for (i = 1; i < steps; i++) {
         if (invert) {
@@ -403,8 +403,8 @@ function trigger_light(light) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x133f
 // Size: 0x54
-function get_defined_value(var_1802f815df0fbec8) {
-    foreach (value in var_1802f815df0fbec8) {
+function get_defined_value(value_array) {
+    foreach (value in value_array) {
         if (isdefined(value)) {
             return value;
         }
@@ -595,7 +595,7 @@ function light_debug_print3d(msg) {
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x18a2
 // Size: 0x5b1
-function init_light_generic_iw7(intensity_01, color_01, intensity_02, color_02, notify_start, notify_stop, start_running, var_2ed5969c74ec5ace) {
+function init_light_generic_iw7(intensity_01, color_01, intensity_02, color_02, notify_start, notify_stop, start_running, only_init) {
     if (isdefined(self.script_type)) {
         return;
     }
@@ -650,22 +650,22 @@ function init_light_generic_iw7(intensity_01, color_01, intensity_02, color_02, 
     foreach (model in self.lit_models) {
         if (isdefined(model.script_fxid)) {
             model.effect = createoneshoteffect(model.script_fxid);
-            var_a175c1a2edcf2c02 = (0, 0, 0);
-            var_d6eeb4795094de80 = (0, 0, 0);
+            mod_origin = (0, 0, 0);
+            mod_angles = (0, 0, 0);
             if (isdefined(model.script_parameters)) {
                 tokens = strtok(model.script_parameters, ", ");
                 assertex(tokens.size >= 3, "lit_model script_parameters are expected to have three numbers for the offset");
-                var_a175c1a2edcf2c02 = (float(tokens[0]), float(tokens[1]), float(tokens[2]));
+                mod_origin = (float(tokens[0]), float(tokens[1]), float(tokens[2]));
                 if (tokens.size >= 6) {
-                    var_d6eeb4795094de80 = (float(tokens[3]), float(tokens[4]), float(tokens[5]));
+                    mod_angles = (float(tokens[3]), float(tokens[4]), float(tokens[5]));
                 }
             }
-            model.effect scripts\common\createfx::set_origin_and_angles(model.origin + var_a175c1a2edcf2c02, model.angles + var_d6eeb4795094de80);
+            model.effect scripts\common\createfx::set_origin_and_angles(model.origin + mod_origin, model.angles + mod_angles);
         }
     }
     self.init_complete = 1;
     self notify("script_light_init_complete");
-    if (isdefined(var_2ed5969c74ec5ace) && var_2ed5969c74ec5ace) {
+    if (isdefined(only_init) && only_init) {
         return;
     }
     if (isdefined(self.notify_start) || isdefined(self.notify_stop) || self.triggers.size > 0) {
@@ -751,7 +751,7 @@ function light_toggle_loop() {
 // Params 15, eflags: 0x0
 // Checksum 0x0, Offset: 0x20c3
 // Size: 0xdb
-function init_light_flicker(intensity_01, color_01, wait_01_min, wait_01_max, intensity_02, color_02, wait_02_min, wait_02_max, speed_scale, notify_start, notify_stop, start_running, light_type, on_off_time, var_2ed5969c74ec5ace) {
+function init_light_flicker(intensity_01, color_01, wait_01_min, wait_01_max, intensity_02, color_02, wait_02_min, wait_02_max, speed_scale, notify_start, notify_stop, start_running, light_type, on_off_time, only_init) {
     if (isdefined(self.script_type)) {
         return;
     }
@@ -760,7 +760,7 @@ function init_light_flicker(intensity_01, color_01, wait_01_min, wait_01_max, in
         return;
     }
     make_light_flicker(wait_01_min, wait_01_max, wait_02_min, wait_02_max, speed_scale, light_type, on_off_time);
-    if (isdefined(var_2ed5969c74ec5ace) && var_2ed5969c74ec5ace) {
+    if (isdefined(only_init) && only_init) {
         return;
     }
     thread start_light_flicker();
@@ -953,7 +953,7 @@ function light_flicker_on_off_loop() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x29e3
 // Size: 0x10f
-function light_flicker_proc(var_15a6d57c9a0a2dac, var_c4aeb5479d7d9620) {
+function light_flicker_proc(start_now, random_intensity) {
     self notify("stop_flicker");
     self endon("stop_flicker");
     if (isdefined(self.trig_notify_stop)) {
@@ -962,17 +962,17 @@ function light_flicker_proc(var_15a6d57c9a0a2dac, var_c4aeb5479d7d9620) {
     if (isdefined(self.notify_stop)) {
         level endon(self.notify_stop);
     }
-    if (!isdefined(var_15a6d57c9a0a2dac) && (isdefined(self.trig_notify_start) || isdefined(self.notify_start))) {
+    if (!isdefined(start_now) && (isdefined(self.trig_notify_start) || isdefined(self.notify_start))) {
         level waittill_any("FAKE_WAITTILL", self.trig_notify_start, self.notify_start);
     }
     while (true) {
-        light_turn_on(var_c4aeb5479d7d9620);
+        light_turn_on(random_intensity);
         if (isdefined(self.hi_wait)) {
             wait self.hi_wait;
         } else {
             wait randomfloatrange(self.wait_01_min, self.wait_01_max);
         }
-        light_turn_off(var_c4aeb5479d7d9620);
+        light_turn_off(random_intensity);
         if (isdefined(self.lo_wait)) {
             wait self.lo_wait;
             continue;
@@ -985,7 +985,7 @@ function light_flicker_proc(var_15a6d57c9a0a2dac, var_c4aeb5479d7d9620) {
 // Params 15, eflags: 0x0
 // Checksum 0x0, Offset: 0x2afa
 // Size: 0xdc
-function init_light_pulse_iw7(intensity_01, color_01, wait_01_min, wait_01_max, intensity_02, color_02, wait_02_min, wait_02_max, speed_scale, notify_start, notify_stop, start_running, light_type, on_off_time, var_2ed5969c74ec5ace) {
+function init_light_pulse_iw7(intensity_01, color_01, wait_01_min, wait_01_max, intensity_02, color_02, wait_02_min, wait_02_max, speed_scale, notify_start, notify_stop, start_running, light_type, on_off_time, only_init) {
     if (isdefined(self.script_type)) {
         return;
     }
@@ -994,7 +994,7 @@ function init_light_pulse_iw7(intensity_01, color_01, wait_01_min, wait_01_max, 
         return;
     }
     make_light_pulse(wait_01_min, wait_01_max, wait_02_min, wait_02_max, speed_scale, light_type, on_off_time, start_running);
-    if (isdefined(var_2ed5969c74ec5ace) && var_2ed5969c74ec5ace) {
+    if (isdefined(only_init) && only_init) {
         return;
     }
     thread start_light_pulse();
@@ -1170,7 +1170,7 @@ function light_pulse_on_off_loop() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x340c
 // Size: 0x10a
-function light_pulse_proc_iw7(var_15a6d57c9a0a2dac) {
+function light_pulse_proc_iw7(start_now) {
     self notify("stop_pulse");
     self endon("stop_pulse");
     if (isdefined(self.trig_notify_stop)) {
@@ -1179,7 +1179,7 @@ function light_pulse_proc_iw7(var_15a6d57c9a0a2dac) {
     if (isdefined(self.notify_stop)) {
         level endon(self.notify_stop);
     }
-    if (!isdefined(var_15a6d57c9a0a2dac) && (isdefined(self.trig_notify_start) || isdefined(self.notify_start))) {
+    if (!isdefined(start_now) && (isdefined(self.trig_notify_start) || isdefined(self.notify_start))) {
         level waittill_any("FAKE_WAITTILL", self.trig_notify_start, self.notify_start);
     }
     while (true) {
@@ -1220,9 +1220,9 @@ function init_light_trig(light) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x359d
 // Size: 0x176
-function light_turn_on(var_c4aeb5479d7d9620) {
+function light_turn_on(random_intensity) {
     ent_flag_set("light_on");
-    if (isdefined(var_c4aeb5479d7d9620) && var_c4aeb5479d7d9620 && self.intensity_01 > 0) {
+    if (isdefined(random_intensity) && random_intensity && self.intensity_01 > 0) {
         set_lights_values(randomfloatrange(self.intensity_01 * 0.25, self.intensity_01), self.color_01);
     } else {
         set_lights_values(self.intensity_01, self.color_01);
@@ -1246,11 +1246,11 @@ function light_turn_on(var_c4aeb5479d7d9620) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x371b
 // Size: 0x1a2
-function light_turn_off(var_c4aeb5479d7d9620, two_color) {
+function light_turn_off(random_intensity, two_color) {
     ent_flag_clear("light_on");
     if (isdefined(two_color) && two_color) {
         set_lights_values(0, (0, 0, 0));
-    } else if (isdefined(var_c4aeb5479d7d9620) && var_c4aeb5479d7d9620 && self.intensity_02 > 0) {
+    } else if (isdefined(random_intensity) && random_intensity && self.intensity_02 > 0) {
         set_lights_values(randomfloatrange(self.intensity_02 * 0.25, self.intensity_02), self.color_02);
     } else {
         set_lights_values(self.intensity_02, self.color_02);
@@ -1274,9 +1274,9 @@ function light_turn_off(var_c4aeb5479d7d9620, two_color) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38c5
 // Size: 0x108
-function light_pulse(var_816f2802fa9c1fde) {
+function light_pulse(pulse_time) {
     ent_flag_clear("light_on");
-    steps = int(var_816f2802fa9c1fde / 0.1);
+    steps = int(pulse_time / 0.1);
     for (i = 1; i <= steps; i++) {
         new_intensity = max(0, self.intensity_01 - self.intensity_inc * i);
         new_color = vectorlerp(self.color_01, self.color_02, self.step_inc * i);
@@ -1295,32 +1295,32 @@ function light_pulse(var_816f2802fa9c1fde) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x39d5
 // Size: 0x4d
-function lights_turn_on(name, key, intensity, color, var_48e6f4b3ef8464e5) {
+function lights_turn_on(name, key, intensity, color, kill_loops) {
     lights = getentarray(name, key);
-    array_thread(lights, &turn_on_proc, intensity, color, var_48e6f4b3ef8464e5);
+    array_thread(lights, &turn_on_proc, intensity, color, kill_loops);
 }
 
 // Namespace lights / scripts\sp\lights
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a2a
 // Size: 0x175
-function turn_on_proc(intensity, color, var_48e6f4b3ef8464e5) {
+function turn_on_proc(intensity, color, kill_loops) {
     if (!isdefined(self.init_complete)) {
         self waittill("script_light_init_complete");
     }
-    if (isdefined(var_48e6f4b3ef8464e5) && var_48e6f4b3ef8464e5) {
+    if (isdefined(kill_loops) && kill_loops) {
         self notify("stop_script_light_loop");
     }
-    var_18dfb209232c9d59 = self.intensity_01;
-    var_2acd9b15b7e0178f = self.color_01;
+    my_intensity = self.intensity_01;
+    my_color = self.color_01;
     if (isdefined(intensity)) {
-        var_18dfb209232c9d59 = intensity;
+        my_intensity = intensity;
     }
     if (isdefined(color)) {
-        var_2acd9b15b7e0178f = color;
+        my_color = color;
     }
     ent_flag_set("light_on");
-    set_lights_values(var_18dfb209232c9d59, var_2acd9b15b7e0178f);
+    set_lights_values(my_intensity, my_color);
     foreach (scriptable in self.scriptables) {
         scriptable setscriptablepartstate("onoff", "on");
     }
@@ -1337,32 +1337,32 @@ function turn_on_proc(intensity, color, var_48e6f4b3ef8464e5) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ba7
 // Size: 0x4d
-function lights_turn_off(name, key, intensity, color, var_48e6f4b3ef8464e5) {
+function lights_turn_off(name, key, intensity, color, kill_loops) {
     lights = getentarray(name, key);
-    array_thread(lights, &turn_off_proc, intensity, color, var_48e6f4b3ef8464e5);
+    array_thread(lights, &turn_off_proc, intensity, color, kill_loops);
 }
 
 // Namespace lights / scripts\sp\lights
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bfc
 // Size: 0x175
-function turn_off_proc(intensity, color, var_48e6f4b3ef8464e5) {
+function turn_off_proc(intensity, color, kill_loops) {
     if (!isdefined(self.init_complete)) {
         self waittill("script_light_init_complete");
     }
-    if (isdefined(var_48e6f4b3ef8464e5) && var_48e6f4b3ef8464e5) {
+    if (isdefined(kill_loops) && kill_loops) {
         self notify("stop_script_light_loop");
     }
-    var_18dfb209232c9d59 = self.intensity_02;
-    var_2acd9b15b7e0178f = self.color_02;
+    my_intensity = self.intensity_02;
+    my_color = self.color_02;
     if (isdefined(intensity)) {
-        var_18dfb209232c9d59 = intensity;
+        my_intensity = intensity;
     }
     if (isdefined(color)) {
-        var_2acd9b15b7e0178f = color;
+        my_color = color;
     }
     ent_flag_clear("light_on");
-    set_lights_values(var_18dfb209232c9d59, var_2acd9b15b7e0178f);
+    set_lights_values(my_intensity, my_color);
     foreach (scriptable in self.scriptables) {
         scriptable setscriptablepartstate("onoff", "off");
     }
@@ -1439,14 +1439,14 @@ function generic_pulsing() {
     on = self getlightintensity();
     off = 0.05;
     curr = on;
-    var_e609f893b93936d6 = 0.3;
-    var_21474ce058f96998 = 0.6;
-    var_7fd9ff45a41d3522 = (on - off) / var_e609f893b93936d6 / 0.05;
-    var_49c4da27ec62d5d4 = (on - off) / var_21474ce058f96998 / 0.05;
+    transition_on = 0.3;
+    transition_off = 0.6;
+    increment_on = (on - off) / transition_on / 0.05;
+    increment_off = (on - off) / transition_off / 0.05;
     for (;;) {
         time = 0;
-        while (time < var_21474ce058f96998) {
-            curr -= var_49c4da27ec62d5d4;
+        while (time < transition_off) {
+            curr -= increment_off;
             curr = clamp(curr, 0, 100);
             self setlightintensity(curr);
             time += 0.05;
@@ -1454,8 +1454,8 @@ function generic_pulsing() {
         }
         wait 1;
         time = 0;
-        while (time < var_e609f893b93936d6) {
-            curr += var_7fd9ff45a41d3522;
+        while (time < transition_on) {
+            curr += increment_on;
             curr = clamp(curr, 0, 100);
             self setlightintensity(curr);
             time += 0.05;
@@ -1479,8 +1479,8 @@ function generic_double_strobe() {
     }
     on = self getlightintensity();
     off = 0.05;
-    var_f9357bd3470fe9b7 = 0;
-    var_6cfe01cbc42fd83c = undefined;
+    linked_models = 0;
+    lit_model = undefined;
     var_776efbd89210c3b1 = undefined;
     linked_lights = 0;
     var_67c79fb91abcbe6e = [];
@@ -1492,34 +1492,34 @@ function generic_double_strobe() {
                 var_67c79fb91abcbe6e[var_67c79fb91abcbe6e.size] = var_b9d12db72e0592f0[i];
             }
             if (var_b9d12db72e0592f0[i].classname == "script_model") {
-                var_6cfe01cbc42fd83c = var_b9d12db72e0592f0[i];
-                var_776efbd89210c3b1 = getent(var_6cfe01cbc42fd83c.target, "targetname");
-                var_f9357bd3470fe9b7 = 1;
+                lit_model = var_b9d12db72e0592f0[i];
+                var_776efbd89210c3b1 = getent(lit_model.target, "targetname");
+                linked_models = 1;
             }
         }
     }
     for (;;) {
         self setlightintensity(off);
-        if (var_f9357bd3470fe9b7) {
-            var_6cfe01cbc42fd83c hide();
+        if (linked_models) {
+            lit_model hide();
             var_776efbd89210c3b1 show();
         }
         wait 0.8;
         self setlightintensity(on);
-        if (var_f9357bd3470fe9b7) {
-            var_6cfe01cbc42fd83c show();
+        if (linked_models) {
+            lit_model show();
             var_776efbd89210c3b1 hide();
         }
         wait 0.1;
         self setlightintensity(off);
-        if (var_f9357bd3470fe9b7) {
-            var_6cfe01cbc42fd83c hide();
+        if (linked_models) {
+            lit_model hide();
             var_776efbd89210c3b1 show();
         }
         wait 0.12;
         self setlightintensity(on);
-        if (var_f9357bd3470fe9b7) {
-            var_6cfe01cbc42fd83c show();
+        if (linked_models) {
+            lit_model show();
             var_776efbd89210c3b1 hide();
         }
         wait 0.1;
@@ -1590,7 +1590,7 @@ function cine_tank_fire() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x442f
 // Size: 0xa0
-function strobelight(var_6cedf2c7344e7ae2, var_6cedf3c7344e7d15, period, var_c32ada7be8e0120) {
+function strobelight(var_6cedf2c7344e7ae2, var_6cedf3c7344e7d15, period, kill_flag) {
     frequency = 360 / period;
     time = 0;
     while (true) {
@@ -1601,8 +1601,8 @@ function strobelight(var_6cedf2c7344e7ae2, var_6cedf3c7344e7d15, period, var_c32
         if (time > period) {
             time -= period;
         }
-        if (isdefined(var_c32ada7be8e0120)) {
-            if (flag(var_c32ada7be8e0120)) {
+        if (isdefined(kill_flag)) {
+            if (flag(kill_flag)) {
                 return;
             }
         }
@@ -1761,10 +1761,10 @@ function lerp_sunsamplesizenear_overtime(value, time) {
 function lerp_intensity(intensity, time) {
     steps = int(time * 20);
     curr = self getlightintensity();
-    var_fe747a03f612e963 = (intensity - curr) / steps;
+    inc = (intensity - curr) / steps;
     for (i = 0; i < steps; i++) {
         thread handle_linked_ents(intensity);
-        self setlightintensity(curr + i * var_fe747a03f612e963);
+        self setlightintensity(curr + i * inc);
         wait 0.05;
     }
     lights[0] = self;
@@ -1819,15 +1819,15 @@ function handle_linked_ents(intensity) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c75
 // Size: 0x74
-function function_a817e534000a682a(var_c1ec728a78781d65, var_d1061bc5839af0e8, var_b7b721442aee559a) {
+function light_fade(start_intensity, end_intensity, var_b7b721442aee559a) {
     var_64e4650c59745203 = gettime();
     t = 0;
     while (t <= var_b7b721442aee559a) {
         t += 0.05;
-        var_a1714a9ae7915519 = math::lerp(var_c1ec728a78781d65, var_d1061bc5839af0e8, t / var_b7b721442aee559a);
+        var_a1714a9ae7915519 = math::lerp(start_intensity, end_intensity, t / var_b7b721442aee559a);
         self setlightintensity(var_a1714a9ae7915519);
         waitframe();
     }
-    self setlightintensity(var_d1061bc5839af0e8);
+    self setlightintensity(end_intensity);
 }
 

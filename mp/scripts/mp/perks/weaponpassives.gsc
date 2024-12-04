@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\loot.gsc;
-#using scripts\mp\passives.gsc;
-#using scripts\mp\hud_message.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\loot;
+#using scripts\mp\passives;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace weaponpassives;
 

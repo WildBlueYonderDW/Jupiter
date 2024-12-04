@@ -1,4 +1,4 @@
-#using scripts\mp\hud_util.gsc;
+#using scripts\mp\hud_util;
 
 #namespace objpoints;
 

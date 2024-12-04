@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using script_371b4c2ab5861e62;
-#using script_60dd6e3992c1f29;
 #using script_22f1701e151b9d12;
 #using script_2669878cf5a1b6bc;
+#using script_371b4c2ab5861e62;
+#using script_60dd6e3992c1f29;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
 
 #namespace namespace_c4032dde62b27b45;
 
@@ -85,15 +85,15 @@ function function_385451540bf346eb(params) {
     level endon("game_ended");
     self notify("despawn_clean_props_singleton");
     self endon("despawn_clean_props_singleton");
-    var_86ca8e1c112dc232 = self.var_86ca8e1c112dc232;
+    prop_array = self.prop_array;
     self waittill("death", killer, meansofdeath);
     if (!isdefined(meansofdeath) || meansofdeath != "MOD_DESPAWN") {
         return;
     }
-    if (!isarray(var_86ca8e1c112dc232)) {
+    if (!isarray(prop_array)) {
         return;
     }
-    foreach (prop in var_86ca8e1c112dc232) {
+    foreach (prop in prop_array) {
         if (!isdefined(prop)) {
             continue;
         }

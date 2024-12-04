@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
-#using script_8d309061efd73b8;
-#using scripts\code\character.gsc;
 #using script_6385d36b67d7dadd;
+#using script_8d309061efd73b8;
+#using scripts\code\character;
+#using scripts\common\utility;
 
 #namespace namespace_225222435324057f;
 
@@ -36,12 +36,12 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "soldier";
-    self.voice = #"hash_5b83ef004494812e";
+    self.voice = #"alqatala";
     self.bhasthighholster = 1;
     self.animtree = "generic_human";
     self function_6b0082dec4510b24("bodies_iw9_enemy_aq_tier2_1", namespace_68ea2f962c7c8afc::main());
     scripts\code\character::attachhead("heads_iw9_enemy_aq_tier2_1", namespace_5250b934b89c6ddf::main());
-    self setclothtype(#"hash_1a818f5c875adf8b");
+    self setclothtype(#"flowing");
     self function_8abe5a968cc3c220(#"millghtgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {

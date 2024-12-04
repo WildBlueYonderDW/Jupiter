@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using scripts\mp\vehicles\damage.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_c6b936bb0fc5d54;
 

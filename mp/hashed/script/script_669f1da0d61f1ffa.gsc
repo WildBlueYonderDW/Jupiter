@@ -1,25 +1,25 @@
-#using script_7edf952f8921aa6b;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\damage_utility.gsc;
 #using script_19c169a442d5975a;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\stealth\enemy.gsc;
+#using script_371b4c2ab5861e62;
 #using script_405d05c89e998922;
 #using script_686729055b66c6e4;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\asm;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\engine\utility;
+#using scripts\stealth\enemy;
+#using scripts\vehicle\vehicle_common;
 
 #namespace namespace_773c12e74d6509f9;
 
@@ -175,20 +175,20 @@ function private function_f509ccd3c26bebee(is_upgraded) {
     self endon("death");
     self notify("stop_monitor_humangun_vfx_state");
     self endon("stop_monitor_humangun_vfx_state");
-    var_a627695ca60ccced = 0;
+    was_active = 0;
     if (!istrue(self.var_c2ffb89c2dc28d5e)) {
         wait 1.2;
         self.var_c2ffb89c2dc28d5e = 1;
     }
     while (true) {
         weapon_active = !istrue(self.var_f71a970f77310f07);
-        if (weapon_active != var_a627695ca60ccced) {
+        if (weapon_active != was_active) {
             if (weapon_active) {
                 utility::function_3677f2be30fdd581("human_gun_fx", is_upgraded ? "weapon_active_pap" : "weapon_active");
             } else {
                 utility::function_3677f2be30fdd581("human_gun_fx", "off");
             }
-            var_a627695ca60ccced = weapon_active;
+            was_active = weapon_active;
         }
         waitframe();
     }
@@ -328,12 +328,12 @@ function private function_b1b8bef6d07fab7b(ai, attacker, weapon) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x1331
 // Size: 0xe0
-function private function_2f8e6fe2d4ed8af8(var_cad65df1d1eb2c93) {
+function private function_2f8e6fe2d4ed8af8(new_agent) {
     self.var_f8acc27178c5ea5b = default_to(self.var_f8acc27178c5ea5b, []);
     var_c413d6aa7dc7aba0 = [];
     for (i = self.var_f8acc27178c5ea5b.size - 1; i >= 0; i--) {
         agent = self.var_f8acc27178c5ea5b[i];
-        if (!isalive(agent) || isai(agent) && agent doinglongdeath() || agent == var_cad65df1d1eb2c93) {
+        if (!isalive(agent) || isai(agent) && agent doinglongdeath() || agent == new_agent) {
             continue;
         }
         if (is_equal(agent.var_e365c08bc3b28fc0, 1)) {
@@ -347,7 +347,7 @@ function private function_2f8e6fe2d4ed8af8(var_cad65df1d1eb2c93) {
     if (var_c413d6aa7dc7aba0.size > 0) {
         var_c413d6aa7dc7aba0 = array_reverse(var_c413d6aa7dc7aba0);
     }
-    var_c413d6aa7dc7aba0[var_c413d6aa7dc7aba0.size] = var_cad65df1d1eb2c93;
+    var_c413d6aa7dc7aba0[var_c413d6aa7dc7aba0.size] = new_agent;
     self.var_f8acc27178c5ea5b = var_c413d6aa7dc7aba0;
 }
 
@@ -406,10 +406,10 @@ function private transform_into(new_type, attacker, health_override, is_upgraded
         return;
     }
     agent_gender = self function_617d6e7d0b7859cc() ? "female" : "male";
-    var_5245f9956e09e9b1 = self.agent_type;
+    agent_aitype = self.agent_type;
     var_e9ecac3bbe4fc333 = self.var_42e5c77b1d7fe6e7;
-    if (string_starts_with(var_5245f9956e09e9b1, "actor_")) {
-        var_5245f9956e09e9b1 = getsubstr(var_5245f9956e09e9b1, 6);
+    if (string_starts_with(agent_aitype, "actor_")) {
+        agent_aitype = getsubstr(agent_aitype, 6);
     }
     anim_node = spawnstruct();
     anim_node.origin = self.origin;
@@ -427,38 +427,38 @@ function private transform_into(new_type, attacker, health_override, is_upgraded
     if (isplayer(attacker) && isdefined(attacker.team)) {
         agent_team = attacker.team;
     }
-    var_cad65df1d1eb2c93 = spawnnewaitype_sharedfunc(new_type, anim_node.origin, anim_node.angles, agent_team, character_list, agent_gender);
-    if (isdefined(var_cad65df1d1eb2c93)) {
-        var_cad65df1d1eb2c93.var_e365c08bc3b28fc0 = 1;
-        var_cad65df1d1eb2c93.var_8e63ab141b9f85f9 = var_5245f9956e09e9b1;
-        var_cad65df1d1eb2c93.var_ca8cda392638c7db = var_e9ecac3bbe4fc333;
+    new_agent = spawnnewaitype_sharedfunc(new_type, anim_node.origin, anim_node.angles, agent_team, character_list, agent_gender);
+    if (isdefined(new_agent)) {
+        new_agent.var_e365c08bc3b28fc0 = 1;
+        new_agent.var_8e63ab141b9f85f9 = agent_aitype;
+        new_agent.var_ca8cda392638c7db = var_e9ecac3bbe4fc333;
         if (isdefined(health_override) && health_override > 0) {
-            var_cad65df1d1eb2c93.maxhealth = health_override;
+            new_agent.maxhealth = health_override;
         }
-        var_cad65df1d1eb2c93 function_ca27630def7b7aad(attacker);
-        var_cad65df1d1eb2c93.var_941802a0997e0c42 = attacker;
-        var_cad65df1d1eb2c93.var_93eb5ea81d2cc4d = 1;
-        var_cad65df1d1eb2c93.brainrot_kills = 0;
-        var_cad65df1d1eb2c93 val::set("humangun_transformed", "damage", 0);
-        var_cad65df1d1eb2c93 val::set("humangun_transformed", "ignoreme", 1);
-        var_cad65df1d1eb2c93.battlechatterallowed = 0;
-        var_cad65df1d1eb2c93 notify("removed from battleChatter");
-        var_cad65df1d1eb2c93 utility::function_3677f2be30fdd581("humangun_transformed", "transformed_fx_on");
-        if (!isdefined(var_cad65df1d1eb2c93.script_stealthgroup)) {
-            var_cad65df1d1eb2c93.script_stealthgroup = "humangun_transformed_stealth_group";
-            var_cad65df1d1eb2c93 thread scripts\stealth\enemy::main();
+        new_agent function_ca27630def7b7aad(attacker);
+        new_agent.var_941802a0997e0c42 = attacker;
+        new_agent.var_93eb5ea81d2cc4d = 1;
+        new_agent.brainrot_kills = 0;
+        new_agent val::set("humangun_transformed", "damage", 0);
+        new_agent val::set("humangun_transformed", "ignoreme", 1);
+        new_agent.battlechatterallowed = 0;
+        new_agent notify("removed from battleChatter");
+        new_agent utility::function_3677f2be30fdd581("humangun_transformed", "transformed_fx_on");
+        if (!isdefined(new_agent.script_stealthgroup)) {
+            new_agent.script_stealthgroup = "humangun_transformed_stealth_group";
+            new_agent thread scripts\stealth\enemy::main();
         }
         if (isplayer(attacker)) {
-            attacker function_2f8e6fe2d4ed8af8(var_cad65df1d1eb2c93);
+            attacker function_2f8e6fe2d4ed8af8(new_agent);
         }
-        var_cad65df1d1eb2c93 function_a8f0e10480b1f5b4("humangun_turn_from", anim_node);
-        if (isalive(var_cad65df1d1eb2c93)) {
-            var_cad65df1d1eb2c93 animscripted_clear();
-            var_cad65df1d1eb2c93 function_65cdab0fc78aba8f(var_cad65df1d1eb2c93.origin, 2000);
-            var_cad65df1d1eb2c93 val::reset("humangun_transformed", "ignoreme");
-            var_cad65df1d1eb2c93.aggressivemode = 1;
-            var_cad65df1d1eb2c93.usestrictreacquiresightshoot = 1;
-            var_cad65df1d1eb2c93 thread function_c5b688060b9a63ae(is_upgraded);
+        new_agent function_a8f0e10480b1f5b4("humangun_turn_from", anim_node);
+        if (isalive(new_agent)) {
+            new_agent animscripted_clear();
+            new_agent function_65cdab0fc78aba8f(new_agent.origin, 2000);
+            new_agent val::reset("humangun_transformed", "ignoreme");
+            new_agent.aggressivemode = 1;
+            new_agent.usestrictreacquiresightshoot = 1;
+            new_agent thread function_c5b688060b9a63ae(is_upgraded);
         }
     }
 }
@@ -479,7 +479,7 @@ function private function_e61ac5f093c0ad62() {
     agent_health = self.health;
     agent_maxhealth = self.maxhealth;
     agent_gender = self function_617d6e7d0b7859cc() ? "female" : "male";
-    var_f8126e87c176d7f9 = self.var_8e63ab141b9f85f9;
+    old_aitype = self.var_8e63ab141b9f85f9;
     var_c3f0a3ebfd4659db = is_equal(self.var_ca8cda392638c7db, "default") ? undefined : self.var_ca8cda392638c7db;
     var_941802a0997e0c42 = self.var_941802a0997e0c42;
     brainrot_kills = self.brainrot_kills;
@@ -488,21 +488,21 @@ function private function_e61ac5f093c0ad62() {
     }
     self.var_941802a0997e0c42 = undefined;
     despawnagent();
-    if (isdefined(var_f8126e87c176d7f9)) {
-        var_ae1c129be05bb93c = spawnnewaitype_sharedfunc(var_f8126e87c176d7f9, anim_node.origin, anim_node.angles, agent_team, var_c3f0a3ebfd4659db, agent_gender);
-        if (isdefined(var_ae1c129be05bb93c)) {
-            var_ae1c129be05bb93c.var_e365c08bc3b28fc0 = 2;
-            var_ae1c129be05bb93c function_ca27630def7b7aad();
-            var_ae1c129be05bb93c.var_941802a0997e0c42 = var_941802a0997e0c42;
-            var_ae1c129be05bb93c.var_93eb5ea81d2cc4d = 1;
-            var_ae1c129be05bb93c.brainrot_kills = brainrot_kills;
-            var_ae1c129be05bb93c val::set("humangun_transformed", "damage", 0);
-            var_ae1c129be05bb93c.maxhealth = agent_maxhealth;
-            var_ae1c129be05bb93c.health = agent_health;
-            var_ae1c129be05bb93c.do_immediate_ragdoll = 1;
-            var_ae1c129be05bb93c utility::function_3677f2be30fdd581("humangun_transformed", "transformed_fx_on");
-            var_ae1c129be05bb93c function_a8f0e10480b1f5b4("humangun_turned_death_outro", anim_node);
-            return var_ae1c129be05bb93c;
+    if (isdefined(old_aitype)) {
+        old_agent = spawnnewaitype_sharedfunc(old_aitype, anim_node.origin, anim_node.angles, agent_team, var_c3f0a3ebfd4659db, agent_gender);
+        if (isdefined(old_agent)) {
+            old_agent.var_e365c08bc3b28fc0 = 2;
+            old_agent function_ca27630def7b7aad();
+            old_agent.var_941802a0997e0c42 = var_941802a0997e0c42;
+            old_agent.var_93eb5ea81d2cc4d = 1;
+            old_agent.brainrot_kills = brainrot_kills;
+            old_agent val::set("humangun_transformed", "damage", 0);
+            old_agent.maxhealth = agent_maxhealth;
+            old_agent.health = agent_health;
+            old_agent.do_immediate_ragdoll = 1;
+            old_agent utility::function_3677f2be30fdd581("humangun_transformed", "transformed_fx_on");
+            old_agent function_a8f0e10480b1f5b4("humangun_turned_death_outro", anim_node);
+            return old_agent;
         }
     }
     return undefined;
@@ -624,7 +624,7 @@ function private function_3aac7fba9f5de153(agent, attacker, hit_streak, weapon) 
         if (var_d39b9b69b9c1a06a) {
             agent notify("flashbang", agent.origin, 1, 1, attacker, attacker.team, stun_duration);
         } else {
-            agent namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(stun_duration);
+            agent namespace_ed7c38f3847343dc::stun_ai(stun_duration);
         }
     case 1:
         agent dodamage(hit_damage, self.origin, attacker, self, "MOD_IMPACT", weapon);
@@ -666,7 +666,7 @@ function private function_54976578adb8d7f7(agent, attacker, hit_streak, weapon) 
         if (var_d39b9b69b9c1a06a) {
             agent notify("flashbang", agent.origin, 1, 1, attacker, attacker.team, stun_duration);
         } else {
-            agent namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(stun_duration);
+            agent namespace_ed7c38f3847343dc::stun_ai(stun_duration);
         }
     case 2:
         agent dodamage(hit_damage, self.origin, attacker, self, "MOD_IMPACT", weapon);
@@ -808,8 +808,8 @@ function private function_7ad0f0c81051396f(attacker) {
     while (true) {
         self waittill("projectile_impact_vehicle", vehicle);
         if (istrue(self.is_upgraded) && vehicle isvehicle() && !vehicle isvehiclehusk()) {
-            var_44329742b6e043c9 = vehicle.maxhealth * 0.25;
-            vehicle function_653b96ce8310763e(var_44329742b6e043c9);
+            repair_amount = vehicle.maxhealth * 0.25;
+            vehicle function_653b96ce8310763e(repair_amount);
             vehicle thread function_5fd2dcf6788ab3f2();
             if (isdefined(vehicle.fuel)) {
                 max_fuel = vehicle_interact_getleveldataforvehicle(vehicle.vehiclename).maxfuel;
@@ -859,21 +859,21 @@ function private function_5fd2dcf6788ab3f2() {
         enemies = getaispeciesarray("<dev string:x18e>", "<dev string:x196>");
         sorted_enemies = get_array_of_closest(player.origin, enemies);
         is_upgraded = int(params[0]) > 0;
-        var_6cc875025be834fe = undefined;
+        closest_agent = undefined;
         foreach (agent in sorted_enemies) {
             if (!isdefined(agent.var_e365c08bc3b28fc0)) {
-                var_6cc875025be834fe = agent;
+                closest_agent = agent;
                 break;
             }
         }
-        if (!isdefined(var_6cc875025be834fe)) {
+        if (!isdefined(closest_agent)) {
             return;
         }
-        transformation_info = level.var_e01baa6e6a9eef5c.var_2759d442fe0a4fc8[var_6cc875025be834fe.unittype + "<dev string:x19d>" + var_6cc875025be834fe.subclass];
+        transformation_info = level.var_e01baa6e6a9eef5c.var_2759d442fe0a4fc8[closest_agent.unittype + "<dev string:x19d>" + closest_agent.subclass];
         if (isdefined(transformation_info)) {
             var_6bbf8239a7a2d1f3 = function_dd53a55c27406672(transformation_info.var_64344bdf55255fd7);
             if (isdefined(var_6bbf8239a7a2d1f3)) {
-                var_6cc875025be834fe thread transform_into(var_6bbf8239a7a2d1f3, player, transformation_info.health_override, is_upgraded);
+                closest_agent thread transform_into(var_6bbf8239a7a2d1f3, player, transformation_info.health_override, is_upgraded);
             }
         }
     }

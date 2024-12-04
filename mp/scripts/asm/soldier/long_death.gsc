@@ -1,10 +1,10 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\soldier\death.gsc;
 #using script_159f253f9bd2314e;
-#using scripts\engine\trace.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\soldier\death;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace long_death;
 

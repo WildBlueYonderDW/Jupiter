@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
+#using script_19fd5b5d73d44c18;
 #using script_372301af73968cb;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using script_19fd5b5d73d44c18;
-#using scripts\mp\equipment\adrenaline.gsc;
-#using scripts\mp\supers\laststand_heal.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\damage;
+#using scripts\mp\equipment\adrenaline;
+#using scripts\mp\supers\laststand_heal;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
 
 #namespace playerhealth;
 

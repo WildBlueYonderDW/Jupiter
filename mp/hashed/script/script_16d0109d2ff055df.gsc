@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace van_infil;
 
@@ -29,14 +29,14 @@ function van_init(subtype) {
     var_453e4fc2c649fea4[0] = [0];
     var_453e4fc2c649fea4[1] = [1];
     var_453e4fc2c649fea4[2] = [2, 3, 4, 5];
-    thread infil_add("infil_van", subtype, 6, 4, var_453e4fc2c649fea4, &function_11ab2a30c47f0b5e, &function_91f416a3ece2ef9a, &function_f67856e4fbb899a0);
+    thread infil_add("infil_van", subtype, 6, 4, var_453e4fc2c649fea4, &van_spawn, &function_91f416a3ece2ef9a, &function_f67856e4fbb899a0);
 }
 
 // Namespace van_infil / namespace_a12a94a2415e07ff
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x980
 // Size: 0x8a
-function function_11ab2a30c47f0b5e(team, target, subtype, originalsubtype) {
+function van_spawn(team, target, subtype, originalsubtype) {
     scene_node = getstruct(target, "targetname");
     infil = spawn("script_origin", scene_node.origin);
     infil.angles = scene_node.angles;
@@ -350,17 +350,17 @@ function function_e85c746a9eaa79f3() {
 // Checksum 0x0, Offset: 0x1691
 // Size: 0xc4
 function function_e3e8566b27b746cb() {
-    var_86e566189d013726 = spawn("script_model", self.origin);
+    van_sfx = spawn("script_model", self.origin);
     var_2a4b36bf48cbb639 = spawn("script_model", self.origin);
     level waittill("infil_started");
     waitframe();
-    var_86e566189d013726 linkto(self, "tag_origin", (100, 0, 50), (0, 0, 0));
+    van_sfx linkto(self, "tag_origin", (100, 0, 50), (0, 0, 0));
     var_2a4b36bf48cbb639 linkto(self, "tag_origin", (-174, 0, 47), (0, 0, 0));
     waitframe();
-    var_86e566189d013726 playsoundonmovingent("scn_infil_van_driving_front");
+    van_sfx playsoundonmovingent("scn_infil_van_driving_front");
     var_2a4b36bf48cbb639 playsoundonmovingent("scn_infil_van_driving_rear");
     level waittill("prematch_over");
-    var_86e566189d013726 delete();
+    van_sfx delete();
     var_2a4b36bf48cbb639 delete();
 }
 
@@ -532,7 +532,7 @@ function van_close_sfx(guy) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x233d
 // Size: 0x94
-function function_68aab9f69431ce1(subtype) {
+function vehicles_anims(subtype) {
     switch (subtype) {
     case #"hash_6829ee5abc10c38b":
         level.scr_animtree["van"] = %mp_vehicles_always_loaded;

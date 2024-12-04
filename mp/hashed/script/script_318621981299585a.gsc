@@ -1,29 +1,29 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_6c4e8cea70bf4b6d;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using scripts\mp\equipment\flash_grenade.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using script_64acb6ce534155b7;
-#using script_744cad313ed0a87e;
 #using script_4948cdf739393d2d;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_lootcache.gsc;
+#using script_64acb6ce534155b7;
+#using script_6c4e8cea70bf4b6d;
+#using script_744cad313ed0a87e;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\flash_grenade;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_b797504d70db7f41;
 
@@ -503,7 +503,7 @@ function function_682e6a05a3109ea1(bombent) {
     bombent.gaswatch = 1;
     waitframe();
     waittillframeend();
-    while (namespace_bbc79db4c3949a5c::function_ee854fdd1e77efc4(origin) || namespace_bbc79db4c3949a5c::function_a465e3c1371d7dab(origin)) {
+    while (namespace_bbc79db4c3949a5c::isPointInMultiCircleDanger(origin) || namespace_bbc79db4c3949a5c::function_a465e3c1371d7dab(origin)) {
         wait 0.5;
     }
     task function_1991fd659fa220ba(bombent);

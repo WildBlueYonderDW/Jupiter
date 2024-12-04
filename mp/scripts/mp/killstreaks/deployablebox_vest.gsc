@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\killstreaks\deployablebox.gsc;
-#using scripts\mp\lightarmor.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\deployablebox;
+#using scripts\mp\lightarmor;
+#using scripts\mp\perks\perkfunctions;
 
 #namespace namespace_3f74497c7fa61c36;
 
@@ -78,10 +78,10 @@ function onusedeployable(boxent) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x44
-function get_adjusted_armor(var_f6415502bdc3ac54, rank) {
-    if (var_f6415502bdc3ac54 + level.deployablebox_vest_rank[rank] > level.deployablebox_vest_max) {
+function get_adjusted_armor(existing_armor, rank) {
+    if (existing_armor + level.deployablebox_vest_rank[rank] > level.deployablebox_vest_max) {
         return level.deployablebox_vest_max;
     }
-    return var_f6415502bdc3ac54 + level.deployablebox_vest_rank[rank];
+    return existing_armor + level.deployablebox_vest_rank[rank];
 }
 

@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
 #using script_67fb1233e876ed8;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\objidpoolmanager;
 
 #namespace puzzle_cache;
 

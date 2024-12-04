@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\script.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\script;
 
 #namespace br_gametypes;
 

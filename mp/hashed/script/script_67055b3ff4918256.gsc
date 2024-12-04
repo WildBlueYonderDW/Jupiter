@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_6df6604a74a7a9c7;
-#using scripts\common\values.gsc;
-#using script_5d8202968463a21d;
-#using scripts\common\callbacks.gsc;
-#using script_3455e18e022b7abc;
-#using script_71eca06c29041e9e;
 #using script_2583ee5680cf4736;
+#using script_3455e18e022b7abc;
+#using script_5d8202968463a21d;
 #using script_639bf783929acf9b;
+#using script_6df6604a74a7a9c7;
+#using script_71eca06c29041e9e;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace namespace_740a076c3d0a164d;
 
@@ -106,7 +106,7 @@ function function_a69dbc79d8e0c7c(var_d6bfa53c531546d6) {
             if (istrue(self.digits[idx].spawned)) {
                 continue;
             }
-            self.digits[idx] namespace_26e60c953dc40f2c::function_e8fc44296f4c9482(1, idx);
+            self.digits[idx] namespace_26e60c953dc40f2c::digit_activate(1, idx);
             wait 0.15;
         }
         return;
@@ -154,7 +154,7 @@ function private function_b62de3e2fa216219() {
     self.active = 0;
     self.door_object setscriptablepartstate("door", "disappear");
     for (idx = 0; idx < self.digits.size; idx++) {
-        self.digits[idx] namespace_26e60c953dc40f2c::function_e8fc44296f4c9482(0);
+        self.digits[idx] namespace_26e60c953dc40f2c::digit_activate(0);
         wait 0.1;
     }
     self.current_code = "";

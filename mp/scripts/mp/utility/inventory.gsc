@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\juggernaut.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\juggernaut;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\weapon;
 
 #namespace inventory;
 

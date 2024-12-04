@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_64acb6ce534155b7;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace br_timedrun_quest;
 

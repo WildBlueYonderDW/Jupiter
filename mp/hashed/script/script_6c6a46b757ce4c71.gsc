@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_54f6d121e91434f8;
-#using scripts\common\devgui.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_35de402efc5acfb3;
-#using script_2ad704f5066d8674;
-#using script_7c03ab87c5f9f420;
-#using scripts\common\callbacks.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\mp\damage.gsc;
+#using script_22f1701e151b9d12;
 #using script_24fbedba9a7a1ef4;
-#using scripts\mp\mp_agent_damage.gsc;
+#using script_2ad704f5066d8674;
+#using script_35de402efc5acfb3;
+#using script_371b4c2ab5861e62;
+#using script_54f6d121e91434f8;
+#using script_7c03ab87c5f9f420;
 #using script_c11d6400ba31ed7;
 #using script_f4e8d02d2f70888;
-#using scripts\mp\weapons.gsc;
-#using script_22f1701e151b9d12;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\mp_agent_damage;
+#using scripts\mp\weapons;
 
 #namespace ob_humans;
 
@@ -247,7 +247,7 @@ function private function_3043f74f8b90b7dd(agent) {
     agent.baseaccuracy = getdvarfloat(@"hash_a02664619d86b8c9", 0.85);
     agent.var_4268b42fc89d0be9 = 0.08;
     agent.var_8a783f4c73c2ae91 = 0.0003;
-    agent.var_e89cb8048a26c2c5 = 0.7;
+    agent.gameskillmisstimefrombehindoverride = 0.7;
 }
 
 // Namespace ob_humans / namespace_27209657e8dae5bb
@@ -262,7 +262,7 @@ function private function_65162bac204e8044(agent) {
     agent.var_526f1dcf41e8b261 = getdvarfloat(@"hash_1adf88fd35fbac70", 5.8);
     agent.var_4268b42fc89d0be9 = 0.04;
     agent.var_8a783f4c73c2ae91 = 0.0001;
-    agent.var_e89cb8048a26c2c5 = 0.4;
+    agent.gameskillmisstimefrombehindoverride = 0.4;
 }
 
 // Namespace ob_humans / namespace_27209657e8dae5bb
@@ -276,7 +276,7 @@ function private function_125032d40c0a1677(agent) {
     agent.var_526f1dcf41e8b261 = getdvarfloat(@"hash_d402fcc65515a733", 3);
     agent.var_4268b42fc89d0be9 = getdvarfloat(@"hash_8dfb6d4ecad5411b", 0.12);
     agent.var_8a783f4c73c2ae91 = 0.0006;
-    agent.var_e89cb8048a26c2c5 = 0.7;
+    agent.gameskillmisstimefrombehindoverride = 0.7;
     agent function_8bbcaeb23a1512ef("all", 1);
     agent function_859a90c664dba240(1);
     agent function_136adff8f817fad6(0);
@@ -310,7 +310,7 @@ function private function_125033d40c0a18aa(agent) {
     }
     agent.var_4268b42fc89d0be9 = getdvarfloat(@"hash_29c7e9e562be2374", 0.04);
     agent.var_8a783f4c73c2ae91 = 0.0001;
-    agent.var_e89cb8048a26c2c5 = 0.6;
+    agent.gameskillmisstimefrombehindoverride = 0.6;
     agent function_8bbcaeb23a1512ef("all", 1);
     agent function_859a90c664dba240(1);
     agent function_136adff8f817fad6(1);
@@ -340,7 +340,7 @@ function private function_125034d40c0a1add(agent) {
     agent.var_2a4784c6cc07ca59 = 0.05;
     agent.var_4268b42fc89d0be9 = getdvarfloat(@"hash_28d87a7d205c119", 0.02);
     agent.var_8a783f4c73c2ae91 = 8e-05;
-    agent.var_e89cb8048a26c2c5 = 0.4;
+    agent.gameskillmisstimefrombehindoverride = 0.4;
     agent.var_98add129a7ecb962 = 0;
     if (agent.subclass == "ob_tactician") {
         agent.disablelmgmount = 1;
@@ -580,14 +580,14 @@ function private function_235231abd6580e1e(fadeouttime, delaytime) {
             if (int(getunarchiveddebugdvar(@"hash_f9e17cb98b253864", "<dev string:x467>")) > 0 && var_4aedb83e4489153d) {
                 var_4aedb83e4489153d = 0;
                 setdvar(@"hash_f51f34be092e6691", 1);
-                setdvar(@"hash_c5b31ff1b47a0f69", 1);
+                setdvar(@"debug_stealth", 1);
                 setdvar(@"ai_showpaths", 1);
                 setdvar(@"hash_c7b59c90cd6d06bb", 1);
             }
             if (int(getunarchiveddebugdvar(@"hash_f9e17cb98b253864", "<dev string:x467>")) == 0 && !var_4aedb83e4489153d) {
                 var_4aedb83e4489153d = 1;
                 setdvar(@"hash_f51f34be092e6691", 0);
-                setdvar(@"hash_c5b31ff1b47a0f69", 0);
+                setdvar(@"debug_stealth", 0);
                 setdvar(@"ai_showpaths", 0);
                 setdvar(@"hash_c7b59c90cd6d06bb", 0);
             }

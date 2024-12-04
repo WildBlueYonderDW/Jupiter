@@ -1,10 +1,10 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\helicopter_globals.gsc;
-#using scripts\common\vehicle_code.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_code;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\helicopter_globals;
+#using scripts\sp\utility;
 
 #namespace attack_heli;
 
@@ -101,7 +101,7 @@ function start_attack_heli(var_c1b40b757ebd4bd4) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa15
 // Size: 0x321
-function begin_attack_heli_behavior(var_a8f80d776b64ec94, var_21c3a2d73ea410fd) {
+function begin_attack_heli_behavior(var_a8f80d776b64ec94, heli_points) {
     var_a8f80d776b64ec94 endon("death");
     var_a8f80d776b64ec94 endon("heli_players_dead");
     if (level.gameskill == 0 || level.gameskill == 1) {
@@ -131,7 +131,7 @@ function begin_attack_heli_behavior(var_a8f80d776b64ec94, var_21c3a2d73ea410fd) 
     var_a8f80d776b64ec94.heli_lastattacker = undefined;
     var_a8f80d776b64ec94 thread notify_disable();
     var_a8f80d776b64ec94 thread notify_enable();
-    thread kill_heli_logic(var_a8f80d776b64ec94, var_21c3a2d73ea410fd);
+    thread kill_heli_logic(var_a8f80d776b64ec94, heli_points);
     var_a8f80d776b64ec94.turrettype = undefined;
     var_a8f80d776b64ec94 heli_default_target_setup();
     var_a8f80d776b64ec94 thread detect_player_death();
@@ -270,11 +270,11 @@ function heli_default_target_cleanup(var_a8f80d776b64ec94) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1052
 // Size: 0xac
-function start_circling_heli(var_7f47c65917578b10, var_21c3a2d73ea410fd) {
-    if (!isdefined(var_7f47c65917578b10)) {
-        var_7f47c65917578b10 = "kill_heli";
+function start_circling_heli(heli_targetname, heli_points) {
+    if (!isdefined(heli_targetname)) {
+        heli_targetname = "kill_heli";
     }
-    heli = scripts\common\vehicle::spawn_vehicle_from_targetname_and_drive(var_7f47c65917578b10);
+    heli = scripts\common\vehicle::spawn_vehicle_from_targetname_and_drive(heli_targetname);
     heli.startingorigin = spawn("script_origin", heli.origin);
     heli thread delete_on_death(heli.startingorigin);
     heli.circling = 1;
@@ -282,7 +282,7 @@ function start_circling_heli(var_7f47c65917578b10, var_21c3a2d73ea410fd) {
     heli.firingmissiles = 0;
     heli thread notify_disable();
     heli thread notify_enable();
-    thread kill_heli_logic(heli, var_21c3a2d73ea410fd);
+    thread kill_heli_logic(heli, heli_points);
     return heli;
 }
 
@@ -290,7 +290,7 @@ function start_circling_heli(var_7f47c65917578b10, var_21c3a2d73ea410fd) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1107
 // Size: 0x302
-function kill_heli_logic(heli, var_21c3a2d73ea410fd) {
+function kill_heli_logic(heli, heli_points) {
     if (!isdefined(heli)) {
         heli = scripts\common\vehicle::spawn_vehicle_from_targetname_and_drive("kill_heli");
         assert(isdefined(heli));
@@ -368,7 +368,7 @@ function kill_heli_logic(heli, var_21c3a2d73ea410fd) {
     }
     heli thread heli_shoot_think();
     if (heli.circling) {
-        heli thread heli_circling_think(var_21c3a2d73ea410fd, basespeed);
+        heli thread heli_circling_think(heli_points, basespeed);
         return;
     }
     heli thread heli_goal_think(basespeed);
@@ -378,13 +378,13 @@ function kill_heli_logic(heli, var_21c3a2d73ea410fd) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1411
 // Size: 0x194
-function heli_circling_think(var_21c3a2d73ea410fd, basespeed) {
-    if (!isdefined(var_21c3a2d73ea410fd)) {
-        var_21c3a2d73ea410fd = "attack_heli_circle_node";
+function heli_circling_think(heli_points, basespeed) {
+    if (!isdefined(heli_points)) {
+        heli_points = "attack_heli_circle_node";
     }
-    points = getentarray(var_21c3a2d73ea410fd, "targetname");
+    points = getentarray(heli_points, "targetname");
     if (!isdefined(points) || points.size < 1) {
-        points = getstructarray(var_21c3a2d73ea410fd, "targetname");
+        points = getstructarray(heli_points, "targetname");
     }
     assert(isdefined(points));
     heli = self;
@@ -399,12 +399,12 @@ function heli_circling_think(var_21c3a2d73ea410fd, basespeed) {
         playerorigin = player.origin;
         heli setlookatent(player);
         player_location = getclosest(playerorigin, points);
-        var_5a72a428d40544fe = getentarray(player_location.target, "targetname");
-        if (!isdefined(var_5a72a428d40544fe) || var_5a72a428d40544fe.size < 1) {
-            var_5a72a428d40544fe = getstructarray(player_location.target, "targetname");
+        heli_locations = getentarray(player_location.target, "targetname");
+        if (!isdefined(heli_locations) || heli_locations.size < 1) {
+            heli_locations = getstructarray(player_location.target, "targetname");
         }
-        assert(isdefined(var_5a72a428d40544fe));
-        goal = var_5a72a428d40544fe[randomint(var_5a72a428d40544fe.size)];
+        assert(isdefined(heli_locations));
+        goal = heli_locations[randomint(heli_locations.size)];
         heli setvehgoalpos(goal.origin, 1);
         heli waittill("near_goal");
         if (!isdefined(player.is_controlling_uav)) {
@@ -471,14 +471,14 @@ function heli_goal_think(basespeed) {
                 linked = array_remove(linked, point);
             }
         }
-        var_c3ec5afb02199783 = getclosest(playerorigin, linked);
+        closest_neighbor = getclosest(playerorigin, linked);
         if (linked.size < 2) {
             goal = var_30ba4289875dd691;
-        } else if (var_c3ec5afb02199783 != player_location) {
-            goal = var_c3ec5afb02199783;
+        } else if (closest_neighbor != player_location) {
+            goal = closest_neighbor;
         } else {
             excluders = [];
-            excluders[0] = var_c3ec5afb02199783;
+            excluders[0] = closest_neighbor;
             linked = get_array_of_closest(playerorigin, linked, excluders, 2);
             irand = randomint(linked.size);
             if (randomint(100) > 50) {
@@ -596,8 +596,8 @@ function heli_can_see_target() {
         org = self.etarget geteye();
     }
     var_4b9a91106f629c2b = self gettagorigin("tag_flash");
-    var_9f39f74f8ca988f = sighttracepassed(var_4b9a91106f629c2b, org, 0, self);
-    return var_9f39f74f8ca988f;
+    can_sight = sighttracepassed(var_4b9a91106f629c2b, org, 0, self);
+    return can_sight;
 }
 
 // Namespace attack_heli / scripts\vehicle\attack_heli
@@ -1044,12 +1044,12 @@ function miss_player(player) {
     println("<dev string:x1c>");
     forward = anglestoforward(level.player.angles);
     forwardfar = forward * 400;
-    var_b1abead37471bd64 = forwardfar + randomvector(50);
+    miss_vec = forwardfar + randomvector(50);
     burstsize = randomintrange(10, 20);
     firetime = weaponfiretime("turret_attackheli");
     for (i = 0; i < burstsize; i++) {
-        var_b1abead37471bd64 = forwardfar + randomvector(50);
-        self setturrettargetent(player, var_b1abead37471bd64);
+        miss_vec = forwardfar + randomvector(50);
+        self setturrettargetent(player, miss_vec);
         if (self.allowshoot) {
             self fireweapon();
         }
@@ -1245,12 +1245,12 @@ function dialog_nags_heli(heli) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ea9
 // Size: 0x5d
-function commander_dialog(var_b86d3e96869d9e54) {
+function commander_dialog(dialog_line) {
     while (level.commander_speaking) {
         wait 1;
     }
     level.commander_speaking = 1;
-    level.player playsound(var_b86d3e96869d9e54, "sounddone");
+    level.player playsound(dialog_line, "sounddone");
     level.player waittill("sounddone");
     wait 0.5;
     level.commander_speaking = 0;
@@ -1294,12 +1294,12 @@ function heli_spotlight_cleanup(var_d0f012b1761fe4b6) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fcb
 // Size: 0x207
-function heli_spotlight_create_default_targets(var_f1e7828deb7bb7aa) {
+function heli_spotlight_create_default_targets(default_target) {
     self endon("death");
     self endon("heli_players_dead");
     original_ent = self.targetdefault;
-    if (isdefined(var_f1e7828deb7bb7aa)) {
-        original_ent = var_f1e7828deb7bb7aa;
+    if (isdefined(default_target)) {
+        original_ent = default_target;
     }
     original_ent.targetname = "original_ent";
     self.left_ent = spawn("script_origin", original_ent.origin);
@@ -1320,11 +1320,11 @@ function heli_spotlight_create_default_targets(var_f1e7828deb7bb7aa) {
     ent2.right = -250;
     ent2 translate_local();
     self.right_ent linkto(self);
-    var_5c52aae8a045de55 = [];
-    var_5c52aae8a045de55[0] = original_ent;
-    var_5c52aae8a045de55[1] = self.left_ent;
-    var_5c52aae8a045de55[2] = self.right_ent;
-    level.spotlight_aim_ents = var_5c52aae8a045de55;
+    aim_ents = [];
+    aim_ents[0] = original_ent;
+    aim_ents[1] = self.left_ent;
+    aim_ents[2] = self.right_ent;
+    level.spotlight_aim_ents = aim_ents;
     self.spottarget = original_ent;
 }
 
@@ -1334,9 +1334,9 @@ function heli_spotlight_create_default_targets(var_f1e7828deb7bb7aa) {
 // Size: 0x64
 function heli_spotlight_destroy_default_targets() {
     if (isdefined(level.spotlight_aim_ents)) {
-        foreach (var_a2c12cac1fd6524 in level.spotlight_aim_ents) {
-            if (isdefined(var_a2c12cac1fd6524)) {
-                var_a2c12cac1fd6524 delete();
+        foreach (aim_ent in level.spotlight_aim_ents) {
+            if (isdefined(aim_ent)) {
+                aim_ent delete();
             }
         }
     }
@@ -1652,9 +1652,9 @@ function heli_fire_missiles(etarget, ishots, delay, var_f5c2e7c08c50919f) {
 // Size: 0x46
 function boneyard_style_heli_missile_attack() {
     self waittill("trigger", vehicle);
-    var_5894ec5f9681977c = getstructarray(self.target, "targetname");
-    var_5894ec5f9681977c = array_index_by_script_index(var_5894ec5f9681977c);
-    boneyard_fire_at_targets(vehicle, var_5894ec5f9681977c);
+    struct_arr = getstructarray(self.target, "targetname");
+    struct_arr = array_index_by_script_index(struct_arr);
+    boneyard_fire_at_targets(vehicle, struct_arr);
 }
 
 // Namespace attack_heli / scripts\vehicle\attack_heli
@@ -1663,16 +1663,16 @@ function boneyard_style_heli_missile_attack() {
 // Size: 0x38
 function boneyard_style_heli_missile_attack_linked() {
     self waittill("trigger", vehicle);
-    var_5894ec5f9681977c = get_linked_structs();
-    var_5894ec5f9681977c = array_index_by_script_index(var_5894ec5f9681977c);
-    boneyard_fire_at_targets(vehicle, var_5894ec5f9681977c);
+    struct_arr = get_linked_structs();
+    struct_arr = array_index_by_script_index(struct_arr);
+    boneyard_fire_at_targets(vehicle, struct_arr);
 }
 
 // Namespace attack_heli / scripts\vehicle\attack_heli
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b5d
 // Size: 0x155
-function boneyard_fire_at_targets(vehicle, var_5894ec5f9681977c) {
+function boneyard_fire_at_targets(vehicle, struct_arr) {
     tags = [];
     tags[0] = "tag_missile_right";
     tags[1] = "tag_missile_left";
@@ -1681,9 +1681,9 @@ function boneyard_fire_at_targets(vehicle, var_5894ec5f9681977c) {
         tags[1] = "tag_store_R_1_a";
     }
     ents = [];
-    for (i = 0; i < var_5894ec5f9681977c.size; i++) {
-        assertex(isdefined(var_5894ec5f9681977c[i]), "boneyard_style_heli_missile_attack requires script_index key/value to start at 0 and not have any gaps.");
-        ents[i] = spawn("script_origin", var_5894ec5f9681977c[i].origin);
+    for (i = 0; i < struct_arr.size; i++) {
+        assertex(isdefined(struct_arr[i]), "boneyard_style_heli_missile_attack requires script_index key/value to start at 0 and not have any gaps.");
+        ents[i] = spawn("script_origin", struct_arr[i].origin);
         vehicle setvehweapon("littlebird_FFAR");
         vehicle setturrettargetent(ents[i]);
         missile = vehicle fireweapon(tags[i % tags.size], ents[i], (0, 0, 0));

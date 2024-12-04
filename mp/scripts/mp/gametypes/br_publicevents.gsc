@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
 #using script_294dda4a4b00ffe3;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\script.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\script;
 
 #namespace br_publicevents;
 
@@ -923,7 +923,7 @@ function publiceventinit(reference, eventinfo) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x21f4
 // Size: 0x110
-function function_542e227485e0fd62(var_7200945a720fadb5, var_41e131919f4114ca) {
+function function_542e227485e0fd62(bundlelist, var_41e131919f4114ca) {
     if (!isdefined(var_41e131919f4114ca)) {
         var_41e131919f4114ca = "";
     }
@@ -933,7 +933,7 @@ function function_542e227485e0fd62(var_7200945a720fadb5, var_41e131919f4114ca) {
     /#
         var_7cccf2ef95abbdd.var_41e131919f4114ca = var_41e131919f4114ca;
     #/
-    foreach (var_390ae3dd8694d9dc in var_7200945a720fadb5) {
+    foreach (var_390ae3dd8694d9dc in bundlelist) {
         if (!isdefined(var_390ae3dd8694d9dc.event)) {
             continue;
         }

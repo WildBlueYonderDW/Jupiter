@@ -1,4 +1,4 @@
-#using scripts\common\bcs_location_trigs.gsc;
+#using scripts\common\bcs_location_trigs;
 
 #namespace battlechatter_trigs;
 

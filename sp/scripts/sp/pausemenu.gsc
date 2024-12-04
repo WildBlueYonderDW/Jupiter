@@ -1,4 +1,4 @@
-#using scripts\sp\endmission.gsc;
+#using scripts\sp\endmission;
 
 #namespace namespace_8985292bb54cee16;
 

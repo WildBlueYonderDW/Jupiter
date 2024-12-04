@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace tracker_shared;
 

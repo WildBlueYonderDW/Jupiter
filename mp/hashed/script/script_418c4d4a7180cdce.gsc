@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\common\callbacks.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\game;
 
 #namespace smoke;
 
@@ -79,17 +79,17 @@ function autotestCommandMonitor() {
     level notify("autotestCommandMonitor");
     level endon("autotestCommandMonitor");
     while (true) {
-        var_80d3515e2ec40900 = getdvar(@"hash_202ccc98d6479637", "");
-        if (var_80d3515e2ec40900 != "") {
+        dvar_val = getdvar(@"hash_202ccc98d6479637", "");
+        if (dvar_val != "") {
             wait 0.5;
-            switch (var_80d3515e2ec40900) {
+            switch (dvar_val) {
             case #"hash_8ebad878ab002e3f":
                 playerteam = get_player().team;
                 function_a0a53a7922de9fb5(isdefined(playerteam) ? playerteam : "None");
                 break;
             case #"hash_b2a35bc466c32557":
                 if (!isdefined(level.mapname)) {
-                    level.mapname = getdvar(@"hash_687fb8f9b7a23245");
+                    level.mapname = getdvar(@"g_mapname");
                 }
                 function_a0a53a7922de9fb5(isdefined(level.mapname) ? level.mapname : "None");
                 break;

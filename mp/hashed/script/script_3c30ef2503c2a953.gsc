@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\engine\throttle.gsc;
 #using script_5a4a5d9ba343ff8f;
-#using scripts\common\values.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace zombie_health_bar;
 

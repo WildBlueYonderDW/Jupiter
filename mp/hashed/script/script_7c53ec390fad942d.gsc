@@ -1,7 +1,7 @@
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
 #using script_3d2770dc09c1243;
+#using script_59ff79d681bb860c;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_util;
 
 #namespace namespace_4095f42a23b0a059;
 

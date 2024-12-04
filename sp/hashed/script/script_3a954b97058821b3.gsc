@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_e0274e37aaa962ed;
 
@@ -32,7 +32,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "civilian_react";
-    self.voice = #"hash_dc89a318feb71e8d";
+    self.voice = #"fsa";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self setmodel("civ_amsterdam_male_3_1");

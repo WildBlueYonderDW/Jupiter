@@ -1,16 +1,16 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\anim_scene.gsc;
 #using script_18a73a64992dd07d;
-#using scripts\cp\cp_analytics.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\cp\cp_anim.gsc;
-#using scripts\cp\cp_objectives.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_anim;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\utility;
+#using scripts\cp_mp\anim_scene;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
 
 #namespace cp_kidnapper;
 
@@ -22,7 +22,7 @@
     // Size: 0x24
     function init_kidnapper_combat_loop() {
         thread createdevguientryforkidnapper();
-        level thread function_699304dd575765c9(@"hash_4b911ff6041153fb", &kidnapperdebug);
+        level thread debug_activation(@"hash_4b911ff6041153fb", &kidnapperdebug);
     }
 
 #/
@@ -38,9 +38,9 @@ function kidnapper_monitor() {
             wait 1;
             continue;
         }
-        var_6145a1c97df45eed = getvulnerableplayersinteam("allies");
-        if (isdefined(var_6145a1c97df45eed) && var_6145a1c97df45eed.size > 0) {
-            var_8850d9f771525016 = var_6145a1c97df45eed[randomint(var_6145a1c97df45eed.size)];
+        target_players = getvulnerableplayersinteam("allies");
+        if (isdefined(target_players) && target_players.size > 0) {
+            var_8850d9f771525016 = target_players[randomint(target_players.size)];
             level thread spawn_kidnapper_for_player(var_8850d9f771525016);
         }
         level waittill_notify_or_timeout("cp_kidnappers_reset", 40);
@@ -368,17 +368,17 @@ function sort_players_based_on_previous_kidnap_attempt_time() {
             player.previous_kidnap_attempt_time = 0;
         }
     }
-    var_1c11567dbf9c329c = level.players;
-    var_3852d4eb6b004d93 = var_1c11567dbf9c329c.size;
+    player_sorted = level.players;
+    var_3852d4eb6b004d93 = player_sorted.size;
     if (var_3852d4eb6b004d93 > 1) {
         while (true) {
             swapped = 0;
             for (i = 1; i <= var_3852d4eb6b004d93 - 1; i++) {
-                var_97d28dc646322d36 = var_1c11567dbf9c329c[i - 1];
-                var_a3b583db23b50298 = var_1c11567dbf9c329c[i];
+                var_97d28dc646322d36 = player_sorted[i - 1];
+                var_a3b583db23b50298 = player_sorted[i];
                 if (var_a3b583db23b50298.previous_kidnap_attempt_time < var_97d28dc646322d36.previous_kidnap_attempt_time) {
-                    var_1c11567dbf9c329c[i - 1] = var_a3b583db23b50298;
-                    var_1c11567dbf9c329c[i] = var_97d28dc646322d36;
+                    player_sorted[i - 1] = var_a3b583db23b50298;
+                    player_sorted[i] = var_97d28dc646322d36;
                     swapped = 1;
                 }
             }
@@ -387,7 +387,7 @@ function sort_players_based_on_previous_kidnap_attempt_time() {
             }
         }
     }
-    return var_1c11567dbf9c329c;
+    return player_sorted;
 }
 
 // Namespace cp_kidnapper / scripts\cp\cp_kidnapper

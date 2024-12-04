@@ -1,15 +1,15 @@
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\gametypes\br_killstreaks.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\engine\trace;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_killstreaks;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace br_alt_mode_inflation;
 
@@ -26,7 +26,7 @@ function init() {
     level.br_alt_mode_inflation.cost = getdvarint(@"hash_ec3657bee62b649e", 450);
     level.br_alt_mode_inflation.drop_percent = getdvarfloat(@"hash_4d6e3b73a7976700", 0.5);
     level.br_alt_mode_inflation.drop_max = getdvarint(@"hash_7fd93ee5262c8a9b", -1);
-    level.br_alt_mode_inflation.var_19d67b9be4147413 = getdvarint(@"hash_eebc33bdcbc28415", 5);
+    level.br_alt_mode_inflation.end_circle = getdvarint(@"hash_eebc33bdcbc28415", 5);
     level.br_alt_mode_inflation.respawn_delay = getdvarfloat(@"hash_82a04f5b65ed7d09", 10);
     scripts\mp\gametypes\br_gametypes::registerbrgametypefunc("onPrematchDone", &function_57b3ca6a58c2c42b);
     scripts\mp\gametypes\br_gametypes::registerbrgametypefunc("playerDropPlunderOnDeath", &playerdropplunderondeath);
@@ -119,7 +119,7 @@ function playerdropplunderondeath(dropstruct, attacker) {
 // Checksum 0x0, Offset: 0x6d2
 // Size: 0x1c
 function function_57b3ca6a58c2c42b() {
-    scripts\mp\gametypes\br_gulag::setupgulagtimer(level.br_alt_mode_inflation.var_19d67b9be4147413);
+    scripts\mp\gametypes\br_gulag::setupgulagtimer(level.br_alt_mode_inflation.end_circle);
 }
 
 // Namespace br_alt_mode_inflation / scripts\mp\gametypes\br_alt_mode_inflation
@@ -127,7 +127,7 @@ function function_57b3ca6a58c2c42b() {
 // Checksum 0x0, Offset: 0x6f6
 // Size: 0xf6
 function circletimer(circleindex) {
-    endcircle = level.br_alt_mode_inflation.var_19d67b9be4147413;
+    endcircle = level.br_alt_mode_inflation.end_circle;
     if (level.br_alt_mode_inflation.disabled || circleindex < endcircle) {
         return false;
     }

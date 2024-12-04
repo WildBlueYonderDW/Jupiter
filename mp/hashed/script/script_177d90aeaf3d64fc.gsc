@@ -1,7 +1,7 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_5b218477be05886c;
 

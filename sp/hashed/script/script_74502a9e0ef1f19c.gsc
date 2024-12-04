@@ -1,70 +1,70 @@
-#using scripts\cp\utility.gsc;
-#using script_354c862768cfe202;
-#using scripts\cp\powers\cp_tactical_cover.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using script_cbb0697de4c5728;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\cp\powers\coop_molotov.gsc;
-#using scripts\cp\cp_claymore.gsc;
-#using scripts\cp_mp\equipment\throwing_knife.gsc;
-#using script_6a858966978cd595;
-#using scripts\cp\equipment\cp_at_mine.gsc;
-#using scripts\cp\cp_accessories.gsc;
-#using script_7b6642e374dc6e4c;
-#using script_737f801e6beb18c7;
-#using scripts\cp\equipment\cp_stinger.gsc;
-#using scripts\cp\equipment\cp_javelin.gsc;
-#using script_293bc33bd79cabd1;
 #using script_12e2fb553ec1605e;
-#using script_6e09a830fab9468f;
-#using script_afb7e332aee4bf2;
-#using scripts\cp\equipment\cp_thermite.gsc;
-#using scripts\cp\equipment\cp_snapshot_grenade.gsc;
-#using scripts\cp\cp_c4.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp\equipment\cp_adrenaline.gsc;
-#using scripts\cp\cp_missilelauncher.gsc;
-#using scripts\cp_mp\crossbow.gsc;
-#using scripts\cp_mp\xmike109.gsc;
-#using scripts\cp\equipment\cp_gas_grenade.gsc;
-#using script_511e19d41c23e8aa;
-#using scripts\cp\equipment\cp_trophy_system.gsc;
-#using script_37257c344663c658;
-#using script_14e0aec82ef0352c;
 #using script_130b90141eb30189;
-#using scripts\cp\cp_hud_message.gsc;
-#using script_3b8ef7abd8107d82;
-#using scripts\cp\cp_player_battlechatter.gsc;
+#using script_14e0aec82ef0352c;
 #using script_189b67b2735b981d;
 #using script_1db8d0e02a99c5e2;
-#using scripts\cp\cp_agent_utils.gsc;
-#using scripts\engine\trace.gsc;
 #using script_25845aca699d038d;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_66122a002aff5d57;
-#using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp\cp_movers.gsc;
-#using scripts\cp\killstreaks\juggernaut_cp.gsc;
-#using scripts\cp\cp_checkpoint.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_293bc33bd79cabd1;
+#using script_354c862768cfe202;
+#using script_37257c344663c658;
+#using script_3b8ef7abd8107d82;
 #using script_3bcaa2cbaf54abdd;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp\cp_debug.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using script_511e19d41c23e8aa;
 #using script_600b944a95c3a7bf;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp\cp_loadout.gsc;
+#using script_66122a002aff5d57;
+#using script_6a858966978cd595;
+#using script_6e09a830fab9468f;
+#using script_737f801e6beb18c7;
+#using script_74502a9e0ef1f19c;
+#using script_7b6642e374dc6e4c;
+#using script_7ef95bba57dc4b82;
+#using script_afb7e332aee4bf2;
+#using script_cbb0697de4c5728;
+#using scripts\common\ae_utility;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\cp\cp_accessories;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_c4;
+#using scripts\cp\cp_checkpoint;
+#using scripts\cp\cp_claymore;
+#using scripts\cp\cp_debug;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_loadout;
+#using scripts\cp\cp_missilelauncher;
+#using scripts\cp\cp_movers;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\equipment\cp_adrenaline;
+#using scripts\cp\equipment\cp_at_mine;
+#using scripts\cp\equipment\cp_gas_grenade;
+#using scripts\cp\equipment\cp_javelin;
+#using scripts\cp\equipment\cp_snapshot_grenade;
+#using scripts\cp\equipment\cp_stinger;
+#using scripts\cp\equipment\cp_thermite;
+#using scripts\cp\equipment\cp_trophy_system;
+#using scripts\cp\killstreaks\juggernaut_cp;
+#using scripts\cp\powers\coop_molotov;
+#using scripts\cp\powers\cp_tactical_cover;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\crossbow;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\equipment\throwing_knife;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\cp_mp\xmike109;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace weapon;
 
@@ -98,9 +98,9 @@ function weaponsinit() {
         thread watchgunsmithdebugui();
     #/
     scripts\cp\cp_weapons::cp_weapons_init();
-    level.var_f9e0e2877b743202 = makeweapon("iw9_me_diveknife_mp");
+    level.swim_weapon = makeweapon("iw9_me_diveknife_mp");
     if (getdvarint(@"hash_e6afce2cf5cf7515", 0) == 0) {
-        level.var_a2df868742d5f192 = buildweapon("iw9_me_climbfists");
+        level.climb_fists = buildweapon("iw9_me_climbfists");
     }
     level.bot_smoke_sight_clip_large = getent("smoke_grenade_sight_clip_256", "targetname");
     if (!isdefined(level.bot_smoke_sight_clip_large)) {
@@ -139,7 +139,7 @@ function weaponsinit() {
 // Checksum 0x0, Offset: 0x3c7d
 // Size: 0x2da
 function hackexclusionlist() {
-    var_acd56378e87382db = [makeweapon(level.sentrysettings["sentry_turret"].weaponinfo), makeweapon("tur_gun_decho_cp"), makeweapon("iw9_mg_jltv_mp"), makeweapon("jup_mg_jltv_mp"), makeweapon("jup_mg_jltv_dungeons_cp"), makeweapon("iw8_gunless_infil"), makeweapon("deploy_manual_turret_mp"), makeweapon("manual_turret_mp"), makeweapon("deploy_tactical_cover_mp"), makeweapon("tac_cover_mp"), makeweapon("gunship_25mm_mp"), makeweapon("gunship_40mm_mp"), makeweapon("gunship_105mm_mp"), makeweapon("gunship_hellfire_mp"), makeweapon("iw8_ammo_marker_cp"), makeweapon("iw8_armor_marker_cp"), makeweapon("vip_carry_cp"), makeweapon("deploy_sentry_mp"), makeweapon("ks_generic_mp"), makeweapon("ks_remote_gauntlet_mp"), makeweapon("ks_remote_map_cp"), makeweapon("ks_remote_map_mp"), makeweapon("ks_remote_device_mp"), makeweapon("ks_remote_target_mp"), makeweapon("ks_gesture_generic_mp"), makeweapon("ks_gesture_phone_mp"), makeweapon("deploy_dronepackage_mp"), makeweapon("deploy_warden_mp"), makeweapon("deploy_box_marker_mp"), makeweapon("deploy_pac_sentry_mp"), makeweapon("iw8_nukecore_mp"), makeweapon("iw9_mg_light_tank_mp"), makeweapon("iw9_mg_mrap_mp"), makeweapon("iw9_tur_mrap_mp"), makeweapon("iw8_spotter_scope_mp"), makeweapon("iw9_la_mike32_mp"), makeweapon("iw8_green_beam_mp"), makeweapon("iw9_minigunksjugg_mp"), makeweapon("ks_remote_drone_mp"), makeweapon("ks_assault_drone_mp"), makeweapon("ks_assault_drone_cp"), level.var_f9e0e2877b743202, makeweapon("iw9_swimfists_mp"), makeweapon("iw8_gunless"), makeweapon("iw9_me_climbfists"), makeweapon("cluster_spike_mp"), makeweapon("iw9_pi_stimpistol_mp"), makeweapon("deploy_missileturret_jup_mp")];
+    var_acd56378e87382db = [makeweapon(level.sentrysettings["sentry_turret"].weaponinfo), makeweapon("tur_gun_decho_cp"), makeweapon("iw9_mg_jltv_mp"), makeweapon("jup_mg_jltv_mp"), makeweapon("jup_mg_jltv_dungeons_cp"), makeweapon("iw8_gunless_infil"), makeweapon("deploy_manual_turret_mp"), makeweapon("manual_turret_mp"), makeweapon("deploy_tactical_cover_mp"), makeweapon("tac_cover_mp"), makeweapon("gunship_25mm_mp"), makeweapon("gunship_40mm_mp"), makeweapon("gunship_105mm_mp"), makeweapon("gunship_hellfire_mp"), makeweapon("iw8_ammo_marker_cp"), makeweapon("iw8_armor_marker_cp"), makeweapon("vip_carry_cp"), makeweapon("deploy_sentry_mp"), makeweapon("ks_generic_mp"), makeweapon("ks_remote_gauntlet_mp"), makeweapon("ks_remote_map_cp"), makeweapon("ks_remote_map_mp"), makeweapon("ks_remote_device_mp"), makeweapon("ks_remote_target_mp"), makeweapon("ks_gesture_generic_mp"), makeweapon("ks_gesture_phone_mp"), makeweapon("deploy_dronepackage_mp"), makeweapon("deploy_warden_mp"), makeweapon("deploy_box_marker_mp"), makeweapon("deploy_pac_sentry_mp"), makeweapon("iw8_nukecore_mp"), makeweapon("iw9_mg_light_tank_mp"), makeweapon("iw9_mg_mrap_mp"), makeweapon("iw9_tur_mrap_mp"), makeweapon("iw8_spotter_scope_mp"), makeweapon("iw9_la_mike32_mp"), makeweapon("iw8_green_beam_mp"), makeweapon("iw9_minigunksjugg_mp"), makeweapon("ks_remote_drone_mp"), makeweapon("ks_assault_drone_mp"), makeweapon("ks_assault_drone_cp"), level.swim_weapon, makeweapon("iw9_swimfists_mp"), makeweapon("iw8_gunless"), makeweapon("iw9_me_climbfists"), makeweapon("cluster_spike_mp"), makeweapon("iw9_pi_stimpistol_mp"), makeweapon("deploy_missileturret_jup_mp")];
     level.additional_laststand_weapon_exclusion = scripts\engine\utility::array_combine(level.additional_laststand_weapon_exclusion, var_acd56378e87382db);
 }
 
@@ -630,11 +630,11 @@ function weaponperkmap(weaponroot) {
 // Size: 0x1b2
 function weaponattachmentperkupdate(currweaponobj, prevweaponobj) {
     var_503110dc18b08ab9 = undefined;
-    var_88c1658d6b22a174 = undefined;
+    oldattachments = undefined;
     if (!isundefinedweapon(prevweaponobj)) {
-        var_88c1658d6b22a174 = getweaponattachments(prevweaponobj);
-        if (isdefined(var_88c1658d6b22a174) && var_88c1658d6b22a174.size > 0) {
-            foreach (oldattach in var_88c1658d6b22a174) {
+        oldattachments = getweaponattachments(prevweaponobj);
+        if (isdefined(oldattachments) && oldattachments.size > 0) {
+            foreach (oldattach in oldattachments) {
                 perks = namespace_e0ee43ef2dddadaa::attachmentperkmap(prevweaponobj, oldattach);
                 if (!isdefined(perks)) {
                     continue;
@@ -1003,9 +1003,9 @@ function isexplosivemissile(weapon) {
 function listen_for_custom_proj_dvar() {
     self endon("disconnect");
     while (true) {
-        var_93d22093ddebd2ca = getdvar(@"hash_25d23f0aaaed8d2e", "none");
-        if (var_93d22093ddebd2ca != "none") {
-            self.gl_proj_override = var_93d22093ddebd2ca;
+        proj_string = getdvar(@"hash_25d23f0aaaed8d2e", "none");
+        if (proj_string != "none") {
+            self.gl_proj_override = proj_string;
         }
         wait 0.1;
     }
@@ -1016,11 +1016,11 @@ function listen_for_custom_proj_dvar() {
 // Checksum 0x0, Offset: 0x576e
 // Size: 0x49
 function launch_custom_gl_projectile(missile_owner) {
-    var_ae593c6c69ef7d27 = get_custom_gl_projectile(missile_owner);
-    if (isdefined(var_ae593c6c69ef7d27)) {
+    proj_type = get_custom_gl_projectile(missile_owner);
+    if (isdefined(proj_type)) {
         self delete();
-        if (isdefined(level.custom_proj_func[var_ae593c6c69ef7d27])) {
-            level thread [[ level.custom_proj_func[var_ae593c6c69ef7d27] ]](missile_owner);
+        if (isdefined(level.custom_proj_func[proj_type])) {
+            level thread [[ level.custom_proj_func[proj_type] ]](missile_owner);
         }
     }
 }
@@ -1765,13 +1765,13 @@ function watchforweaponchange() {
 function drop_minigun(player) {
     player notify("dropping_minigun");
     miniguns = ["iw9_minigunksjugg_mp", "iw9_lm_dblmg2_cp"];
-    var_1edb8d5c60b8182a = "iw9_lm_dblmg2_cp";
-    foreach (var_37ede289a37ef621 in miniguns) {
-        if (player hasweapon(var_37ede289a37ef621)) {
-            var_1edb8d5c60b8182a = var_37ede289a37ef621;
+    minigun_name = "iw9_lm_dblmg2_cp";
+    foreach (gun_name in miniguns) {
+        if (player hasweapon(gun_name)) {
+            minigun_name = gun_name;
         }
     }
-    currentweapon = makeweapon(var_1edb8d5c60b8182a);
+    currentweapon = makeweapon(minigun_name);
     droppedgun = player dropitem(currentweapon);
     droppedgun thread watchweaponpickup();
 }
@@ -1831,11 +1831,11 @@ function switch_weapon_from_minigun(player, objweapon) {
 // Size: 0x90
 function player_has_minigun(player) {
     miniguns = ["iw9_minigunksjugg_mp", "iw9_lm_dblmg2_cp"];
-    foreach (var_37ede289a37ef621 in miniguns) {
-        if (player hasweapon(var_37ede289a37ef621)) {
+    foreach (gun_name in miniguns) {
+        if (player hasweapon(gun_name)) {
             return true;
         }
-        if (player getcurrentweapon().basename == var_37ede289a37ef621) {
+        if (player getcurrentweapon().basename == gun_name) {
             return true;
         }
     }
@@ -4564,7 +4564,7 @@ function watchpickupcomplete(desiredweapon, previousweapon, clip, stockammo) {
         if (desiredweapon.basename == "iw9_lm_dblmg2_cp") {
             scripts\cp\killstreaks\juggernaut_cp::juggernautweaponpickedup(desiredweapon, previousweapon);
         }
-        checkpoint = scripts\cp\cp_checkpoint::function_9eed75023a958c18();
+        checkpoint = scripts\cp\cp_checkpoint::checkpoint_get();
         if (isdefined(checkpoint) && checkpoint != "" && isdefined(self.pers["last_checkpoint"]) && self.pers["last_checkpoint"] != checkpoint) {
             thread namespace_751288259782653c::function_7da7bd24b280d295();
         }
@@ -5865,18 +5865,18 @@ function watchplayergunsmithdebugui() {
 // Checksum 0x0, Offset: 0xfa6a
 // Size: 0xd9
 function create_weapon_pickups() {
-    var_e6191409b81f0bac = getstructarray("weapon_pickup", "targetname");
-    for (i = 0; i < var_e6191409b81f0bac.size; i++) {
-        toks = strtok(var_e6191409b81f0bac[i].script_noteworthy, "+");
+    pickup_structs = getstructarray("weapon_pickup", "targetname");
+    for (i = 0; i < pickup_structs.size; i++) {
+        toks = strtok(pickup_structs[i].script_noteworthy, "+");
         weapon = toks[0];
         attachments = [];
         if (toks.size > 1) {
-            var_c0a8e96ce567d71 = strtok(toks[1], " ");
-            for (j = 0; j < var_c0a8e96ce567d71.size; j++) {
-                attachments[attachments.size] = var_c0a8e96ce567d71[j];
+            attachments_toks = strtok(toks[1], " ");
+            for (j = 0; j < attachments_toks.size; j++) {
+                attachments[attachments.size] = attachments_toks[j];
             }
         }
-        weapon = spawn_script_weapon(weapon, attachments, var_e6191409b81f0bac[i].origin, var_e6191409b81f0bac[i].angles);
+        weapon = spawn_script_weapon(weapon, attachments, pickup_structs[i].origin, pickup_structs[i].angles);
     }
 }
 
@@ -6243,7 +6243,7 @@ function getweapon_aq(type, weaponname, weaponarray) {
 function make_weapon_special(weapon) {
     assertex(isdefined(weapon), "Must specify a string/weapon");
     var_21d502659c8814 = [];
-    var_3a5e71fc5a9c9ac0 = [];
+    weap_attach = [];
     var_d9706f4f3cf9777f = [];
     switch (weapon) {
     case #"hash_c1fc89a8ac555a73":
@@ -6288,7 +6288,7 @@ function make_weapon_special(weapon) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x10b34
 // Size: 0x2ac
-function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc1e2b3da) {
+function make_weapon(basename, attachments, reticle, camo, lootid, alt_mode) {
     if (!isdefined(level._weapons)) {
         level._weapons = spawnstruct();
     }
@@ -6307,7 +6307,7 @@ function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc
         }
         basename = getweaponbasename(basename);
     }
-    if (istrue(var_ccbab88fc1e2b3da)) {
+    if (istrue(alt_mode)) {
         var_8b5443598fc587bf = &makealtweapon;
     } else {
         var_8b5443598fc587bf = &makeweapon;
@@ -6320,12 +6320,12 @@ function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc
     defaults = utility::removeconflictingattachments(attachments, defaults, rootname);
     attachments = array_combine(attachments, defaults);
     var_c7bd95b10c89cff8 = weaponassetnamemap(rootname, lootid);
-    var_31792301aa1f7373 = [];
+    attachment_variants = [];
     foreach (attachment in attachments) {
         if (issubstr(attachment, "|")) {
             attachments = array_remove(attachments, attachment);
             attachments[attachments.size] = strtok(attachment, "|")[0];
-            var_31792301aa1f7373[var_31792301aa1f7373.size] = attachment;
+            attachment_variants[attachment_variants.size] = attachment;
         }
     }
     var_5b3be55212a58ff = function_29ba39c7e2adb57b(rootname, attachments, lootid);
@@ -6342,7 +6342,7 @@ function make_weapon(basename, attachments, reticle, camo, lootid, var_ccbab88fc
     } else {
         weapon = builtin [[ var_8b5443598fc587bf ]](var_c7bd95b10c89cff8);
     }
-    foreach (attachment in var_31792301aa1f7373) {
+    foreach (attachment in attachment_variants) {
         tok = strtok(attachment, "|");
         weapon = weapon withattachment(tok[0], int(tok[1]));
     }
@@ -6443,12 +6443,12 @@ function printweapon() {
                 #/
             }
             if (isdefined(self.weapon.attachments)) {
-                var_627fb8865600bd0a = start_height - 1.5;
+                attach_height = start_height - 1.5;
                 foreach (attachment in self.weapon.attachments) {
                     /#
-                        print3d(self.origin + (0, 0, var_627fb8865600bd0a), "<dev string:x1f5>" + attachment, (1, 1, 1), 1, 0.1, 1);
+                        print3d(self.origin + (0, 0, attach_height), "<dev string:x1f5>" + attachment, (1, 1, 1), 1, 0.1, 1);
                     #/
-                    var_627fb8865600bd0a -= 1.4;
+                    attach_height -= 1.4;
                 }
             }
         }
@@ -6734,11 +6734,11 @@ function function_2f4d1cda9bc48e6a(weaponobj) {
 // Checksum 0x0, Offset: 0x11b31
 // Size: 0xa4
 function add_attachment(attachment) {
-    var_c7dac5e40890251a = 0;
+    can_equip = 0;
     currentweapon = self;
     newweaponobj = undefined;
     if (self canuseattachment(attachment)) {
-        var_c7dac5e40890251a = 1;
+        can_equip = 1;
         for (i = 0; i < currentweapon.attachments.size; i++) {
             if (namespace_e0ee43ef2dddadaa::attachmentsconflict(currentweapon.attachments[i], attachment, self) != "") {
                 newweaponobj = self withoutattachment(currentweapon.attachments[i]);
@@ -6911,7 +6911,7 @@ function function_7544739099d55631() {
 // Checksum 0x0, Offset: 0x125dd
 // Size: 0xe7
 function function_41f42cde8798905f(weapon_string, weapon_class, var_22c173e9283d2e0d, var_7064974a67473784) {
-    var_51a91ceb6cc9ad2f = weapon_string;
+    starting_string = weapon_string;
     objweapon = scripts\cp_mp\utility\weapon_utility::function_eeaa22f0cd1ff845(weapon_string);
     if (!istrue(var_7064974a67473784)) {
         objweapon = objweapon namespace_a0628d6954815ef8::function_dcb52bcbbcb80b00("silencer");
@@ -6922,13 +6922,13 @@ function function_41f42cde8798905f(weapon_string, weapon_class, var_22c173e9283d
     if (weapon_class == "weapon_pistol") {
         weaponobj = objweapon namespace_a0628d6954815ef8::function_dcb52bcbbcb80b00("pgrip_tac");
     }
-    level.var_bcd25cd23011249[var_51a91ceb6cc9ad2f] = objweapon;
+    level.var_bcd25cd23011249[starting_string] = objweapon;
     if (istrue(var_22c173e9283d2e0d)) {
         return;
     }
-    thread function_8cffc9416e0ab766(var_51a91ceb6cc9ad2f, weapon_class);
-    path = weapon_class + "/" + var_51a91ceb6cc9ad2f + "/Default";
-    cmd = "devgui_cmd \"CP Debug:2 / Weapons /" + path + "\" \"set scr_debug debugGiveWeapon_+" + var_51a91ceb6cc9ad2f + "\" \n";
+    thread function_8cffc9416e0ab766(starting_string, weapon_class);
+    path = weapon_class + "/" + starting_string + "/Default";
+    cmd = "devgui_cmd \"CP Debug:2 / Weapons /" + path + "\" \"set scr_debug debugGiveWeapon_+" + starting_string + "\" \n";
     addentrytodevgui(cmd);
 }
 
@@ -6972,17 +6972,17 @@ function function_8cffc9416e0ab766(default_weapon, weapon_class) {
     weaponroot = getweaponrootname(default_weapon);
     index = 0;
     var_928c1cac31ea99e5 = weaponroot + "|" + index;
-    var_44482bf78727b6ea = [];
-    var_44482bf78727b6ea["iw9_lm_mkilo3"] = [2];
-    var_44482bf78727b6ea["iw9_ar_akilo"] = [2];
-    var_44482bf78727b6ea["iw9_pi_papa220"] = [2];
-    for (var_830c168ba5b1b399 = 1; var_830c168ba5b1b399; var_830c168ba5b1b399 = 0) {
+    exclude_list = [];
+    exclude_list["iw9_lm_mkilo3"] = [2];
+    exclude_list["iw9_ar_akilo"] = [2];
+    exclude_list["iw9_pi_papa220"] = [2];
+    for (variant_found = 1; variant_found; variant_found = 0) {
         waitframe();
         if (isdefined(level.weaponlootmapdata[var_928c1cac31ea99e5])) {
             var_6eeaeb3717f8724c = 0;
-            if (isdefined(var_44482bf78727b6ea[weaponroot])) {
-                for (i = 0; i < var_44482bf78727b6ea[weaponroot].size; i++) {
-                    if (var_44482bf78727b6ea[weaponroot][i] == index) {
+            if (isdefined(exclude_list[weaponroot])) {
+                for (i = 0; i < exclude_list[weaponroot].size; i++) {
+                    if (exclude_list[weaponroot][i] == index) {
                         var_6eeaeb3717f8724c = 1;
                         break;
                     }
@@ -7027,10 +7027,10 @@ function function_f123cc18b09056d1(weapon) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12a2d
 // Size: 0x62
-function function_b65ad646eb126204(var_f82a37450b9de94d) {
+function function_b65ad646eb126204(weapon_key) {
     level endon("game_ended");
     flag_wait("level_ready_for_script");
-    weapon_obj = level.var_bcd25cd23011249[var_f82a37450b9de94d];
+    weapon_obj = level.var_bcd25cd23011249[weapon_key];
     if (isdefined(weapon_obj)) {
         currentweapon = self getcurrentprimaryweapon();
         scripts\cp_mp\utility\inventory_utility::_takeweapon(currentweapon);
@@ -7043,8 +7043,8 @@ function function_b65ad646eb126204(var_f82a37450b9de94d) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12a97
 // Size: 0x2d
-function function_768c9a047aed19f4(var_f82a37450b9de94d) {
-    weapon_obj = level.var_bcd25cd23011249[var_f82a37450b9de94d];
+function function_768c9a047aed19f4(weapon_key) {
+    weapon_obj = level.var_bcd25cd23011249[weapon_key];
     if (isdefined(weapon_obj)) {
         return weapon_obj;
     }
@@ -7055,8 +7055,8 @@ function function_768c9a047aed19f4(var_f82a37450b9de94d) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12acc
 // Size: 0x32
-function function_9b46467a26f087ea(var_f82a37450b9de94d) {
-    weapon_obj = level.var_bcd25cd23011249[var_f82a37450b9de94d];
+function function_9b46467a26f087ea(weapon_key) {
+    weapon_obj = level.var_bcd25cd23011249[weapon_key];
     if (isdefined(weapon_obj)) {
         return getcompleteweaponname(weapon_obj);
     }

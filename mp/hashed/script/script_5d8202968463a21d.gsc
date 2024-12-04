@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
 
 #namespace namespace_4c2b495b8d79cc2e;
 
@@ -608,7 +608,7 @@ function private function_5d535ab79673ef9(var_91cdbcd8f3d0e448, var_c451b98c9b52
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1428
     // Size: 0x5
-    function function_6d3b68c342b16196() {
+    function ___zone() {
         
     }
 

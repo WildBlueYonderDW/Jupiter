@@ -1,11 +1,11 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_485622d93fa7e4cf;
 #using script_2583ee5680cf4736;
+#using script_485622d93fa7e4cf;
 #using script_5080d40cd904ba73;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_cc781f142d33c074;
 
@@ -134,7 +134,7 @@ function function_b67447cfa15eb9e6(player) {
     player function_2241b80779e319a0();
     player callback::callback("teleport_movie_complete");
     if (level.var_2e2204c429664d9b != 1) {
-        if (getdvarint(@"hash_7661484c77058395", 0)) {
+        if (getdvarint(@"ob_rift_run", 0)) {
             str_type = "rift_run";
         } else {
             str_type = "none";

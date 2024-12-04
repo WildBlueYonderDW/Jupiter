@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\dialog_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\dialog_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace missile_drone;
 
@@ -42,7 +42,7 @@ function init() {
         return;
     }
     /#
-        setdevdvarifuninitialized(@"hash_9408f57f293556f8", bundle.var_add70aea96644ae7);
+        setdevdvarifuninitialized(@"hash_9408f57f293556f8", bundle.missiledrone_lifetime);
         setdevdvarifuninitialized(@"hash_2af3c80dd9b7877c", 0);
         setdevdvarifuninitialized(@"hash_504246b3cc306ce3", 0);
         setdevdvarifuninitialized(@"hash_d07a2098671cd8a0", 0);
@@ -97,8 +97,8 @@ function function_1cd11c6f0c051cdd() {
 // Size: 0xd6
 function function_39b0f1f060c13982() {
     bundle = level.streakglobals.streakbundles["missile_drone"];
-    level.var_49c7b401bdf0c0af["move"] = 250;
-    level.var_49c7b401bdf0c0af["rotate"] = 120;
+    level.missiledrone_speed["move"] = 250;
+    level.missiledrone_speed["rotate"] = 120;
     level.var_7b7eec26880df4cc = makeweapon(bundle.deployweaponname);
     level.physicssphereradius[bundle.var_483b0b941a89a454] = 1000;
     level.physicssphereforce[bundle.var_483b0b941a89a454] = 6;
@@ -177,7 +177,7 @@ function function_3ad16832e078048f() {
     animindex = "outro_gunship_death";
     level.scr_anim["missile_drone"][animindex] = script_model%mp_acharlie130_death;
     foreach (animindex, scr_anim in level.scr_anim["missile_drone"]) {
-        level.var_539e9dc23256f26d["missile_drone"][animindex] = function_52351c3338da63f4("missile_drone", animindex);
+        level.scr_animlength["missile_drone"][animindex] = function_52351c3338da63f4("missile_drone", animindex);
     }
     bundle = level.streakglobals.streakbundles["missile_drone"];
     level.var_a0549a6c6ac1f437 = [];
@@ -194,7 +194,7 @@ function function_3ad16832e078048f() {
     level.var_a0549a6c6ac1f437["tablet"] = "offhand2h_tablet_static_v0";
     level.var_a0549a6c6ac1f437["binder"] = "misc_un_office_binder_open";
     level.var_a0549a6c6ac1f437["joystick"] = "misc_gunship_interior_joystick";
-    level.var_5b9861f19d4aa681 = getdvarint(@"hash_504246b3cc306ce3", 0);
+    level.missiledrone_animtype = getdvarint(@"hash_504246b3cc306ce3", 0);
 }
 
 // Namespace missile_drone / namespace_fda4252c4b9127f5
@@ -307,7 +307,7 @@ function function_db39a901a1eb2961(owner, streakinfo) {
         self thread [[ getsharedfunc("killstreak", "allowRideKillstreakPlayerExit") ]]();
     }
     self waittill("killstreakExit");
-    thread function_a524164379e50fcb(owner, streakinfo);
+    thread missiledrone_leave(owner, streakinfo);
 }
 
 // Namespace missile_drone / namespace_fda4252c4b9127f5
@@ -341,11 +341,11 @@ function function_8c158c00964032fb(player, streakinfo) {
     zoffset = 6000;
     foreach (map in bundle.var_dcc338e6e046f73b) {
         if (issubstr(level.mapname, map.name)) {
-            if (isdefined(map.var_7b9c0c070e919cad)) {
-                radiusoffset = map.var_7b9c0c070e919cad;
+            if (isdefined(map.missiledrone_radiusoffset)) {
+                radiusoffset = map.missiledrone_radiusoffset;
             }
-            if (isdefined(map.var_e3519eeae4ea6a0d)) {
-                zoffset += map.var_e3519eeae4ea6a0d;
+            if (isdefined(map.missiledrone_zoffset)) {
+                zoffset += map.missiledrone_zoffset;
             }
             break;
         }
@@ -378,7 +378,7 @@ function function_8c158c00964032fb(player, streakinfo) {
         level.var_ebed708841f09623 = 0;
         return false;
     }
-    missiledrone = function_81736201e5e2e11b(player, streakinfo, var_8945c22a67231e20, var_78ac3c5ef5263d4f, missileDroneIntro, var_5118005380cb1d91);
+    missiledrone = missiledrone_spawn(player, streakinfo, var_8945c22a67231e20, var_78ac3c5ef5263d4f, missileDroneIntro, var_5118005380cb1d91);
     if (issharedfuncdefined("emp", "setEMP_Applied_Callback")) {
         missiledrone [[ getsharedfunc("emp", "setEMP_Applied_Callback") ]](&function_a97a45c5bcdf7177);
     }
@@ -393,7 +393,7 @@ function function_8c158c00964032fb(player, streakinfo) {
     if (issharedfuncdefined("hud", "teamPlayerCardSplash")) {
         thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]]("used_missile_drone", player);
     }
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdperson")) {
         if (issharedfuncdefined("player", "setThirdPersonDOF")) {
             player [[ getsharedfunc("player", "setThirdPersonDOF") ]](0);
         }
@@ -407,7 +407,7 @@ function function_8c158c00964032fb(player, streakinfo) {
     missiledrone thread function_17184b70f0bb1fd0(player);
     missiledrone thread function_8f9ac2ebbb4f7815(player);
     missiledrone thread function_6f740ebda17653c2(player);
-    missiledrone thread function_abe9d1a8f9f94dd6(player);
+    missiledrone thread missiledrone_watchdamage(player);
     missiledrone thread function_cc8a7a4a6e6336a(player, streakinfo);
     missiledrone thread function_805dc4b378be50a2(player, streakinfo);
     missiledrone thread function_8aa94ec41c3e88cc(player);
@@ -420,7 +420,7 @@ function function_8c158c00964032fb(player, streakinfo) {
     missiledrone thread function_10f1246952e7502e(player);
     missiledrone thread function_9897e70f93923dcf();
     missiledrone thread function_db39a901a1eb2961(player, streakinfo);
-    missiledrone thread function_ff57916d5a301e2c(player);
+    missiledrone thread missiledrone_trackvelocity(player);
     missiledrone thread function_64a14223afd3adcb(player);
     missiledrone thread function_b9ab0154dac4fa55(player);
     /#
@@ -436,7 +436,7 @@ function function_8c158c00964032fb(player, streakinfo) {
     missiledrone playloopsound("kls_jup_missile_drone_lp_close");
     missiledrone setscriptablepartstate("camera_engine_lp", "on");
     if (istrue(player.ksempd)) {
-        missiledrone thread function_e5c3f1d81fd3f22f(player);
+        missiledrone thread missiledrone_crash(player);
     }
     return true;
 }
@@ -460,7 +460,7 @@ function function_30d9d17051520c48(owner, launchorigin) {
         var_894a1909efd041cb.angles = (0, 115, 0);
         var_894a1909efd041cb hide();
         level.var_be36c8da670087a8[level.var_be36c8da670087a8.size] = var_894a1909efd041cb;
-        var_894a1909efd041cb thread function_354ec367a597df9b();
+        var_894a1909efd041cb thread missiledrone_rotaterig();
         if (!islargemap()) {
             var_894a1909efd041cb thread function_a69bf71155feb4e();
         }
@@ -510,7 +510,7 @@ function function_6d7d875b0d6d2608(player, streakinfo, angle, anglevector, var_5
     missileDroneIntro = undefined;
     bundle = level.streakglobals.streakbundles["missile_drone"];
     /#
-        level.var_5b9861f19d4aa681 = getdvarint(@"hash_504246b3cc306ce3", 0);
+        level.missiledrone_animtype = getdvarint(@"hash_504246b3cc306ce3", 0);
     #/
     missileDroneIntro = spawnstruct();
     missileDroneIntro.owner = player;
@@ -722,7 +722,7 @@ function function_cf067ca1169bed53(player, crashing) {
         player waittill("missileDrone_fadeScreenComplete");
         player notify("returning_killstreak_player");
         player.var_2bd14eb14d3e8f41 = undefined;
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdperson")) {
             if (issharedfuncdefined("player", "setThirdPersonDOF")) {
                 player [[ getsharedfunc("player", "setThirdPersonDOF") ]](1);
             }
@@ -736,7 +736,7 @@ function function_cf067ca1169bed53(player, crashing) {
                 player _switchtoweaponimmediate(level.var_7b7eec26880df4cc);
             }
             player unlink();
-            if (istrue(crashing) && level.var_5b9861f19d4aa681 == 0) {
+            if (istrue(crashing) && level.missiledrone_animtype == 0) {
                 player killstreak_setMainVision("killstreak_static");
                 wait 1;
                 player cameraunlink();
@@ -795,7 +795,7 @@ function function_b9abd8c489937d57(streakinfo) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a9e
 // Size: 0x4ca
-function function_abe9d1a8f9f94dd6(gunner) {
+function missiledrone_watchdamage(gunner) {
     self endon("death");
     self endon("crashing");
     level endon("game_ended");
@@ -868,7 +868,7 @@ function function_abe9d1a8f9f94dd6(gunner) {
             if (scripts\engine\utility::issharedfuncdefined("damage", "onKillstreakKilled") && isdefined(attacker) && (isplayer(attacker) || isdefined(attacker.owner))) {
                 var_3737240cefe2c793 = self [[ scripts\engine\utility::getsharedfunc("damage", "onKillstreakKilled") ]](streakname, attacker, objweapon, damagetype, damage, scorepopupname, leaderdialog, cardsplash, skipdeathnotify);
             }
-            thread function_e5c3f1d81fd3f22f(gunner);
+            thread missiledrone_crash(gunner);
         }
     }
 }
@@ -937,7 +937,7 @@ function function_cc8a7a4a6e6336a(gunner, streakinfo) {
     self endon("crashing");
     level endon("game_ended");
     scripts\cp_mp\hostmigration::hostmigration_waitlongdurationwithpause(self.timeout);
-    thread function_a524164379e50fcb(gunner, streakinfo);
+    thread missiledrone_leave(gunner, streakinfo);
 }
 
 // Namespace missile_drone / namespace_fda4252c4b9127f5
@@ -949,14 +949,14 @@ function function_805dc4b378be50a2(gunner, streakinfo) {
     self endon("leaving");
     self endon("crashing");
     level waittill_any_2("start_game_ended", "game_ended");
-    thread function_a524164379e50fcb(gunner, streakinfo);
+    thread missiledrone_leave(gunner, streakinfo);
 }
 
 // Namespace missile_drone / namespace_fda4252c4b9127f5
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x41ef
 // Size: 0xfa
-function function_a524164379e50fcb(gunner, streakinfo) {
+function missiledrone_leave(gunner, streakinfo) {
     self endon("death");
     self endon("crashing");
     level endon("game_ended");
@@ -997,10 +997,10 @@ function function_f655625d476b6a88(gunner, var_304d14a0f176d5c3, streakinfo) {
     level endon("game_ended");
     gunner waittill(var_304d14a0f176d5c3);
     if (var_304d14a0f176d5c3 == "player_fatal_death") {
-        thread function_a524164379e50fcb(gunner, streakinfo);
+        thread missiledrone_leave(gunner, streakinfo);
         return;
     }
-    thread function_e5c3f1d81fd3f22f(gunner);
+    thread missiledrone_crash(gunner);
 }
 
 // Namespace missile_drone / namespace_fda4252c4b9127f5
@@ -1021,7 +1021,7 @@ function function_10f1246952e7502e(gunner) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x43e3
 // Size: 0x87
-function function_ff57916d5a301e2c(gunner) {
+function missiledrone_trackvelocity(gunner) {
     self endon("death");
     self endon("crashing");
     self endon("leaving");
@@ -1038,7 +1038,7 @@ function function_ff57916d5a301e2c(gunner) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x4472
 // Size: 0x373
-function function_81736201e5e2e11b(owner, streakinfo, angle, anglevector, missileDroneIntro, var_5118005380cb1d91) {
+function missiledrone_spawn(owner, streakinfo, angle, anglevector, missileDroneIntro, var_5118005380cb1d91) {
     bundle = level.streakglobals.streakbundles["missile_drone"];
     missiledrone = spawn("script_model", var_5118005380cb1d91.origin);
     missiledrone setmodel(bundle.var_26c20e191809651b);
@@ -1051,7 +1051,7 @@ function function_81736201e5e2e11b(owner, streakinfo, angle, anglevector, missil
     missiledrone.missileDroneIntro = missileDroneIntro;
     missiledrone.var_5118005380cb1d91 = var_5118005380cb1d91;
     missiledrone.ispiloted = 1;
-    missiledrone.timeout = bundle.var_add70aea96644ae7;
+    missiledrone.timeout = bundle.missiledrone_lifetime;
     if (issharedfuncdefined("gunship", "attachXRays")) {
         missiledrone = [[ getsharedfunc("gunship", "attachXRays") ]](missiledrone);
     }
@@ -1069,7 +1069,7 @@ function function_81736201e5e2e11b(owner, streakinfo, angle, anglevector, missil
     missiledrone function_cfc5e3633ef950fd(2, bundle.var_9eb58f77ff18a79c, &function_5673c34db51b275f);
     missiledrone function_cfc5e3633ef950fd(3, bundle.var_dd995975f3fa81d, &function_203aef5b54babd0f);
     /#
-        timeoutoverride = getdvarint(@"hash_9408f57f293556f8", bundle.var_add70aea96644ae7);
+        timeoutoverride = getdvarint(@"hash_9408f57f293556f8", bundle.missiledrone_lifetime);
         var_2a98d1683cf44153 = getdvarint(@"hash_2c01d701bac5d9d3", 0);
         if (var_2a98d1683cf44153) {
             timeoutoverride = 9999;
@@ -1169,17 +1169,17 @@ function function_6d0704818ddf4f84(plane) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a32
 // Size: 0xbb
-function function_354ec367a597df9b() {
+function missiledrone_rotaterig() {
     self endon("death");
     var_25bb708a7d591131 = 10;
-    rotatetime = level.var_49c7b401bdf0c0af["rotate"] / 360 * var_25bb708a7d591131;
+    rotatetime = level.missiledrone_speed["rotate"] / 360 * var_25bb708a7d591131;
     self rotateyaw(self.angles[2] + var_25bb708a7d591131, rotatetime, rotatetime, 0);
-    degreespersecond = 360 / level.var_49c7b401bdf0c0af["rotate"];
+    degreespersecond = 360 / level.missiledrone_speed["rotate"];
     var_31fc5244269dae18 = degreespersecond * 0.0174533;
-    level.var_b6134f835a919c22 = var_31fc5244269dae18 * 9000;
+    level.missiledrone_magnitude = var_31fc5244269dae18 * 9000;
     while (true) {
-        self rotateyaw(360, level.var_49c7b401bdf0c0af["rotate"]);
-        wait level.var_49c7b401bdf0c0af["rotate"];
+        self rotateyaw(360, level.missiledrone_speed["rotate"]);
+        wait level.missiledrone_speed["rotate"];
     }
 }
 
@@ -1195,7 +1195,7 @@ function function_9606c15566d61486(gunner) {
     /#
         thirdpersoncam = getdvarint(@"hash_2af3c80dd9b7877c", 0);
         if (thirdpersoncam) {
-            if (level.var_5b9861f19d4aa681 == 1) {
+            if (level.missiledrone_animtype == 1) {
                 function_be60e349949d9e87(self.missileDroneIntro);
             } else {
                 gunner function_20836c46516ad037(self.missileDroneIntro);
@@ -1218,7 +1218,7 @@ function function_9606c15566d61486(gunner) {
     }
     waitframe();
     gunner cameraunlink();
-    if (level.var_5b9861f19d4aa681 == 1) {
+    if (level.missiledrone_animtype == 1) {
         function_be60e349949d9e87(self.missileDroneIntro);
     } else {
         gunner function_20836c46516ad037(self.missileDroneIntro);
@@ -1602,7 +1602,7 @@ function deleteaftertime(delay) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b57
 // Size: 0x2f
-function function_e5c3f1d81fd3f22f(gunner) {
+function missiledrone_crash(gunner) {
     self notify("crashing");
     self.crashed = 1;
     thread function_65e8d13e7627aa30(gunner);
@@ -1621,7 +1621,7 @@ function function_65e8d13e7627aa30(gunner) {
         self endon("death");
         gunner endon("disconnect");
         thread function_cf067ca1169bed53(gunner);
-        if (isdefined(self.missileDroneIntro) && level.var_5b9861f19d4aa681 == 0) {
+        if (isdefined(self.missileDroneIntro) && level.missiledrone_animtype == 0) {
             self playsoundtoplayer("kls_jup_missile_drone_damage_static_final", gunner);
         }
     }
@@ -2277,7 +2277,7 @@ function function_112adc3b48b77e0d() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x733c
 // Size: 0x4c
-function function_a4f2e5aac86b9ee(weaponname) {
+function missiledrone_iskillstreakweapon(weaponname) {
     bundle = level.streakglobals.streakbundles["missile_drone"];
     return ter_op(isdefined(weaponname) && weaponname == bundle.var_483b0b941a89a454, 1, 0);
 }
@@ -2473,7 +2473,7 @@ function function_b16043b8aa64aa83(missiledrone, gunner, weaponbasename) {
 // Size: 0x20
 function function_a97a45c5bcdf7177(data) {
     if (isdefined(self)) {
-        function_e5c3f1d81fd3f22f(self.owner);
+        missiledrone_crash(self.owner);
     }
 }
 

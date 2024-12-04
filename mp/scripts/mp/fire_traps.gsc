@@ -1,8 +1,8 @@
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\poi;
 
 #namespace fire_traps;
 

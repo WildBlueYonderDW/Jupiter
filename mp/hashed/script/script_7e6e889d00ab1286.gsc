@@ -1,6 +1,6 @@
 #using script_371b4c2ab5861e62;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\mp_agent.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_729ad542a73c44b6;
 
@@ -87,8 +87,8 @@
                 level.var_818b7d434b3f9bb1 destroy();
             }
             if (var_a19ab69b16e26496) {
-                foreach (var_d1867665db02be89 in level.var_a71afe8486fdb70) {
-                    var_d1867665db02be89.enemy namespace_14d36171baccf528::despawnagent();
+                foreach (enemy_struct in level.var_a71afe8486fdb70) {
+                    enemy_struct.enemy namespace_14d36171baccf528::despawnagent();
                 }
                 level.var_a1219ac875a3d621 = 0;
             }
@@ -192,14 +192,14 @@
                 waitframe();
                 continue;
             }
-            foreach (var_d1867665db02be89 in level.var_a71afe8486fdb70) {
-                if (!istrue(var_d1867665db02be89.is_dead) && isdefined(var_d1867665db02be89.enemy)) {
-                    enemy = var_d1867665db02be89.enemy;
+            foreach (enemy_struct in level.var_a71afe8486fdb70) {
+                if (!istrue(enemy_struct.is_dead) && isdefined(enemy_struct.enemy)) {
+                    enemy = enemy_struct.enemy;
                     enemy_origin = enemy.origin;
                     var_3ac658a13ffcbfb5 = enemy physics_getcharactercollisioncapsule();
                     if (isdefined(var_3ac658a13ffcbfb5)) {
                         height = 0;
-                        switch (var_d1867665db02be89.stance) {
+                        switch (enemy_struct.stance) {
                         case #"hash_c6775c88e38f7803":
                             height = var_3ac658a13ffcbfb5["<dev string:x2b7>"] * 2;
                             break;
@@ -225,11 +225,11 @@
     // Checksum 0x0, Offset: 0x765
     // Size: 0x50
     function private function_11620457f2ffe126(var_b79a69e8af1ef560, stance) {
-        var_9ebb7222010ab578 = spawnstruct();
-        var_9ebb7222010ab578.enemy = var_b79a69e8af1ef560;
-        var_9ebb7222010ab578.stance = stance;
-        var_9ebb7222010ab578.is_dead = 0;
-        return var_9ebb7222010ab578;
+        enemy_data = spawnstruct();
+        enemy_data.enemy = var_b79a69e8af1ef560;
+        enemy_data.stance = stance;
+        enemy_data.is_dead = 0;
+        return enemy_data;
     }
 
     // Namespace namespace_729ad542a73c44b6 / namespace_6c0bcb025e487cb4
@@ -239,7 +239,7 @@
     function private function_d38cee3caded2a28(var_e8293b7b49b38cee) {
         var_e8293b7b49b38cee.enemy waittill("<dev string:x2ef>");
         var_e8293b7b49b38cee.is_dead = 1;
-        if (!istrue(var_e8293b7b49b38cee.var_8ced919d5c392388)) {
+        if (!istrue(var_e8293b7b49b38cee.from_despawn)) {
             function_de912783c00af35a(level.var_a1219ac875a3d621 - 1);
         }
     }
@@ -321,9 +321,9 @@
                 buttondown = 1;
             } else if (function_3c2ec2ddfe050648(player)) {
                 if (!buttondown) {
-                    foreach (var_d1867665db02be89 in level.var_a71afe8486fdb70) {
-                        if (!isdefined(var_d1867665db02be89) || !isdefined(var_d1867665db02be89.enemy) || var_d1867665db02be89.is_dead == 1) {
-                            level.var_a71afe8486fdb70 = scripts\engine\utility::array_remove(level.var_a71afe8486fdb70, var_d1867665db02be89);
+                    foreach (enemy_struct in level.var_a71afe8486fdb70) {
+                        if (!isdefined(enemy_struct) || !isdefined(enemy_struct.enemy) || enemy_struct.is_dead == 1) {
+                            level.var_a71afe8486fdb70 = scripts\engine\utility::array_remove(level.var_a71afe8486fdb70, enemy_struct);
                         }
                     }
                     function_c59d2b7790bd42c9(level.var_a71afe8486fdb70);
@@ -334,9 +334,9 @@
                 if (!buttondown) {
                     var_9bf444b4a5cbdc59 = function_4ec485ad16ca921d();
                     if (var_9bf444b4a5cbdc59.size > 0) {
-                        foreach (var_d1867665db02be89 in level.var_a71afe8486fdb70) {
-                            var_d1867665db02be89.var_8ced919d5c392388 = 1;
-                            var_d1867665db02be89.enemy namespace_14d36171baccf528::despawnagent();
+                        foreach (enemy_struct in level.var_a71afe8486fdb70) {
+                            enemy_struct.from_despawn = 1;
+                            enemy_struct.enemy namespace_14d36171baccf528::despawnagent();
                         }
                         level.var_a71afe8486fdb70 = [];
                         function_de912783c00af35a(0);
@@ -376,16 +376,16 @@
         if (fileid == -1) {
             return 0;
         }
-        foreach (var_d1867665db02be89 in enemyarray) {
-            assertex(isdefined(var_d1867665db02be89.enemy.origin), "<dev string:x47b>");
-            assertex(isdefined(var_d1867665db02be89.enemy.angles), "<dev string:x4ae>");
-            assertex(isdefined(var_d1867665db02be89.stance), "<dev string:x4e1>");
-            position = var_d1867665db02be89.enemy.origin;
-            angle = var_d1867665db02be89.enemy.angles;
-            stance = var_d1867665db02be89.stance;
-            var_bfc7ccc7c3363b0e = "<dev string:x514>" + position[0] + "<dev string:x51f>" + position[1] + "<dev string:x51f>" + position[2] + "<dev string:x524>";
-            var_90ce1725205e2874 = "<dev string:x529>" + angle[0] + "<dev string:x51f>" + angle[1] + "<dev string:x51f>" + angle[2] + "<dev string:x524>";
-            function_a10a2a3a8856b602(fileid, var_bfc7ccc7c3363b0e + var_90ce1725205e2874 + "<dev string:x534>" + stance + "<dev string:x524>");
+        foreach (enemy_struct in enemyarray) {
+            assertex(isdefined(enemy_struct.enemy.origin), "<dev string:x47b>");
+            assertex(isdefined(enemy_struct.enemy.angles), "<dev string:x4ae>");
+            assertex(isdefined(enemy_struct.stance), "<dev string:x4e1>");
+            position = enemy_struct.enemy.origin;
+            angle = enemy_struct.enemy.angles;
+            stance = enemy_struct.stance;
+            position_string = "<dev string:x514>" + position[0] + "<dev string:x51f>" + position[1] + "<dev string:x51f>" + position[2] + "<dev string:x524>";
+            angle_string = "<dev string:x529>" + angle[0] + "<dev string:x51f>" + angle[1] + "<dev string:x51f>" + angle[2] + "<dev string:x524>";
+            function_a10a2a3a8856b602(fileid, position_string + angle_string + "<dev string:x534>" + stance + "<dev string:x524>");
         }
         assertmsg("<dev string:x53f>");
         function_e988d000f717c5aa(fileid);

@@ -1,10 +1,10 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\teams;
 
 #namespace warrior_turrettime;
 

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
 #using script_5af9038262d22c96;
-#using scripts\stealth\player.gsc;
+#using scripts\engine\utility;
+#using scripts\stealth\player;
 
 #namespace stealth_music;
 

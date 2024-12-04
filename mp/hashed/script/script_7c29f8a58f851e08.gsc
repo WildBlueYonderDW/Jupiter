@@ -1,11 +1,11 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace warrior_bullettime;
 
@@ -31,7 +31,7 @@ function onplayerspawned() {
         var_260024495ccb1af0 = scripts\cp_mp\utility\weapon_utility::function_eeaa22f0cd1ff845("jup_cp24_pi_glima21_mp_bullettime");
         player giveweapon(var_260024495ccb1af0);
         player setspawnweapon(var_260024495ccb1af0);
-        player thread function_d1e0bcc259d5c719(var_260024495ccb1af0);
+        player thread waittill_reload(var_260024495ccb1af0);
     }
 }
 
@@ -39,7 +39,7 @@ function onplayerspawned() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cc
 // Size: 0x45
-function function_d1e0bcc259d5c719(var_260024495ccb1af0) {
+function waittill_reload(var_260024495ccb1af0) {
     level endon("game_ended");
     level endon("round_end_finished");
     ammostock = self getweaponammostock(var_260024495ccb1af0);

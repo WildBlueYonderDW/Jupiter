@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\supers.gsc;
 #using script_4a6760982b403bad;
-#using scripts\mp\utility\stats.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\hostmigration;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
 
 #namespace persistence;
 

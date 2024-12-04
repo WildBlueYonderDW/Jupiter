@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace thermal_phone;
 

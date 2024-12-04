@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\values.gsc;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
 
 #namespace dialogue_wheel;
 

@@ -1,5 +1,5 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
 
 #namespace custom;
 

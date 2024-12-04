@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_59ff79d681bb860c;
-#using script_40e63dd222434655;
 #using script_26ccbfe3954cacf4;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_40e63dd222434655;
+#using script_59ff79d681bb860c;
 #using script_d74ae0b4aa21186;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\utility\game;
 
 #namespace namespace_ccaa681806765e85;
 
@@ -142,7 +142,7 @@ function function_2734de2e57d0f37() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c0
 // Size: 0x70
-function function_f5cff6da44a3790(player, eliminated) {
+function onMarkPlayerAsEliminated(player, eliminated) {
     if (!isenabled()) {
         return;
     }

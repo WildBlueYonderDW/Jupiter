@@ -1,19 +1,19 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\devgui.gsc;
+#using scripts\common\anim;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\script;
 
 #namespace package_airdrop;
 

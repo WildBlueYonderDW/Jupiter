@@ -1,5 +1,5 @@
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\trigger.gsc;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\trigger;
 
 #namespace namespace_91faf49cc72f0b47;
 
@@ -62,19 +62,19 @@ function function_a67b8af5f3b9e6c8(var_45e51f698992d648, var_b55fd7d854233d03, v
     while (true) {
         var_45e51f698992d648 function_95e1d0440e05beae("deactivated");
         var_b55fd7d854233d03 function_95e1d0440e05beae("deactivated");
-        var_45e51f698992d648 thread function_6610d00055855f9f();
-        var_b55fd7d854233d03 thread function_6610d00055855f9f();
+        var_45e51f698992d648 thread monitor_activate();
+        var_b55fd7d854233d03 thread monitor_activate();
         level waittill("security_activated");
         var_45e51f698992d648 function_95e1d0440e05beae("rebooting");
         var_b55fd7d854233d03 function_95e1d0440e05beae("rebooting");
-        var_85f56e9a9c3b5c96 = spawn("script_model", var_45e51f698992d648.origin);
-        var_85f56e9a9c3b5c96 playloopsound("evt_pent_shutter_alarm_loop");
+        e_alarm = spawn("script_model", var_45e51f698992d648.origin);
+        e_alarm playloopsound("evt_pent_shutter_alarm_loop");
         function_b56c65359567813a(a_e_lights, 1);
         function_1c486f0bbda89a7c(var_6a4f1cc271876221);
         wait max(2, -1);
-        var_85f56e9a9c3b5c96 stopsounds();
+        e_alarm stopsounds();
         wait 0.1;
-        var_85f56e9a9c3b5c96 delete();
+        e_alarm delete();
         var_45e51f698992d648 function_95e1d0440e05beae("activated");
         var_45e51f698992d648 thread monitor_deactivate();
         var_b55fd7d854233d03 function_95e1d0440e05beae("activated");
@@ -109,7 +109,7 @@ function function_b56c65359567813a(a_e_lights, b_turn_on) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x62e
 // Size: 0x2e
-function function_6610d00055855f9f() {
+function monitor_activate() {
     level endon("security_activated");
     self waittill("trigger", e_player);
     if (isplayer(e_player)) {

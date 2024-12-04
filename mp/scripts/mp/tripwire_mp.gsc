@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\poi.gsc;
 #using script_6a8ec730b2bfa844;
-#using scripts\mp\utility\points.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\poi;
+#using scripts\mp\utility\points;
 
 #namespace tripwire_mp;
 

@@ -1,18 +1,18 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\sp\utility_code.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\dof.gsc;
-#using script_7e4d332e911e1b90;
-#using scripts\common\debug_reflection.gsc;
-#using scripts\common\debug_graycard.gsc;
 #using script_5c36b3719581f7cc;
-#using scripts\sp\debug_spawnai.gsc;
-#using scripts\sp\colors.gsc;
-#using scripts\sp\nvg\nvg_ai.gsc;
+#using script_7e4d332e911e1b90;
+#using scripts\common\ai;
+#using scripts\common\debug_graycard;
+#using scripts\common\debug_reflection;
+#using scripts\common\dof;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\sp\utility_code;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\colors;
+#using scripts\sp\debug_spawnai;
+#using scripts\sp\nvg\nvg_ai;
+#using scripts\sp\utility;
 
 #namespace debug;
 
@@ -23,7 +23,7 @@
     // Checksum 0x0, Offset: 0x551
     // Size: 0x12e
     function function_e066e339dfed70f3() {
-        setdvarifuninitialized(@"hash_ddfc4cbd9432119a", "<dev string:x1c>");
+        setdvarifuninitialized(@"scr_debug", "<dev string:x1c>");
         setdvarifuninitialized(@"hash_e88f0c15c278fb42", "<dev string:x1c>");
         setdvarifuninitialized(@"hash_8496c6305e4b772", "<dev string:x1e>");
         setdvarifuninitialized(@"hash_bdb86700db7d369e", "<dev string:x1c>");
@@ -54,7 +54,7 @@
     // Checksum 0x0, Offset: 0x687
     // Size: 0xd
     function function_af795827294b88b9() {
-        thread function_70c9af186e601b78();
+        thread debug_magic();
     }
 
     // Namespace debug / scripts\sp\debug
@@ -132,23 +132,23 @@
         array = function_aa98966edb7904e8();
         println("<dev string:x89>");
         println("<dev string:x9b>");
-        var_7456c131382d7be4 = [];
+        filtered_array = [];
         foreach (ent in array) {
             if (isdefined(ent.debugstring)) {
-                if (!isdefined(var_7456c131382d7be4[ent.debugstring])) {
-                    var_7456c131382d7be4[ent.debugstring] = 1;
+                if (!isdefined(filtered_array[ent.debugstring])) {
+                    filtered_array[ent.debugstring] = 1;
                 } else {
-                    var_7456c131382d7be4[ent.debugstring]++;
+                    filtered_array[ent.debugstring]++;
                 }
                 continue;
             }
-            if (!isdefined(var_7456c131382d7be4["<dev string:xc1>"])) {
-                var_7456c131382d7be4["<dev string:xc1>"] = 1;
+            if (!isdefined(filtered_array["<dev string:xc1>"])) {
+                filtered_array["<dev string:xc1>"] = 1;
                 continue;
             }
-            var_7456c131382d7be4["<dev string:xc1>"]++;
+            filtered_array["<dev string:xc1>"]++;
         }
-        foreach (count in var_7456c131382d7be4) {
+        foreach (count in filtered_array) {
             println(key + "<dev string:xc9>" + count);
         }
         println("<dev string:xcc>" + array.size);
@@ -348,9 +348,9 @@
             self.color = (0, 0.8, 0);
             return;
         }
-        var_d6acece62014cce = (1, 1, 1) - self.color;
-        if (length(var_d6acece62014cce) > 0.346) {
-            self.color += var_d6acece62014cce * 0.05;
+        color_diff = (1, 1, 1) - self.color;
+        if (length(color_diff) > 0.346) {
+            self.color += color_diff * 0.05;
             return;
         }
         self.color = (1, 1, 1);
@@ -578,7 +578,7 @@ function debug_enemyposproc() {
             if (ai[i] getentnum() != num) {
                 continue;
             }
-            ai[i] thread dragtaguntildeath(getdvar(@"hash_e8f35bd9a11eaa"));
+            ai[i] thread dragtaguntildeath(getdvar(@"debug_tag"));
         }
         setdvar(@"hash_b41009d51346ca25", "<dev string:x165>");
     }
@@ -937,12 +937,12 @@ function add_debugdvar_func(dvar, func, isthreaded, unarchived) {
         setdvarifuninitialized(@"hash_693e9933a3c8a920", "<dev string:x172>");
         setdvarifuninitialized(@"debug_stopenemypos", "<dev string:x172>");
         setdvarifuninitialized(@"hash_1ff4a87138925423", "<dev string:x172>");
-        setdvarifuninitialized(@"hash_e8f35bd9a11eaa", "<dev string:x165>");
+        setdvarifuninitialized(@"debug_tag", "<dev string:x165>");
         setdvarifuninitialized(@"hash_59086e72bc73e827", "<dev string:x165>");
         setdvarifuninitialized(@"hash_d92402191be9da6e", "<dev string:x165>");
         setdvarifuninitialized(@"hash_10b43cfca1168946", 0);
         setdvarifuninitialized(@"hash_34dab4f8f3a04f4a", "<dev string:x2d>");
-        setdvarifuninitialized(@"hash_37c094f96932e688", "<dev string:x31>");
+        setdvarifuninitialized(@"debug_hatmodel", "<dev string:x31>");
         setdvarifuninitialized(@"debug_trace", "<dev string:x2d>");
         setdvarifuninitialized(@"hash_4c2f239edafa91c9", 0);
         level.var_eccaa394f663ffab = 0;
@@ -952,8 +952,8 @@ function add_debugdvar_func(dvar, func, isthreaded, unarchived) {
         setdvarifuninitialized(@"debug_nuke", "<dev string:x2d>");
         setdvarifuninitialized(@"hash_144cc37890335117", -1);
         setdvarifuninitialized(@"hash_a8688268fec64d72", "<dev string:x2d>");
-        setdvarifuninitialized(@"hash_7b4516ad7af964ca", "<dev string:x165>");
-        setdvarifuninitialized(@"hash_3d78b4d3f4cef0a7", "<dev string:x165>");
+        setdvarifuninitialized(@"debug_jump", "<dev string:x165>");
+        setdvarifuninitialized(@"debug_hurt", "<dev string:x165>");
         setdvarifuninitialized(@"hash_6fe9ed215f6efcba", "<dev string:x2d>");
         setdvarifuninitialized(@"tag", "<dev string:x165>");
         setdvarifuninitialized(@"hash_4589562a903db3e0", 1);
@@ -961,22 +961,22 @@ function add_debugdvar_func(dvar, func, isthreaded, unarchived) {
             setdvarifuninitialized(hashcat(@"tag", i), "<dev string:x165>");
         }
         setdvarifuninitialized(@"hash_e9355959302204a", "<dev string:x165>");
-        setdvarifuninitialized(@"hash_efbe60582471bfcb", "<dev string:x165>");
+        setdvarifuninitialized(@"debug_depth", "<dev string:x165>");
         setdvarifuninitialized(@"debug_colornodes", 0);
         setdvarifuninitialized(@"debug_fxlighting", "<dev string:x1c>");
         scripts\common\debug_reflection::init_reflection_probe();
         scripts\common\debug_graycard::init_graycard();
         level.last_threat_debug = -23430;
-        setdvarifuninitialized(@"hash_a4a33e979c055af6", "<dev string:x172>");
+        setdvarifuninitialized(@"debug_threat", "<dev string:x172>");
         level._effect["<dev string:x175>"] = loadfx("<dev string:x187>");
-        setdvarifuninitialized(@"hash_1494fa4395c31a69", "<dev string:x2d>");
+        setdvarifuninitialized(@"debug_battlechatter", "<dev string:x2d>");
         add_debugdvar_func(@"hash_c6a78f9ed07155ad", &measure, 1, 1);
         add_debugdvar_func(@"hash_e3cff398a5a53a72", &display_ai_group_info, 0, 1);
         add_debugdvar_func(@"hash_90c35ec29eb76f0", &function_870394ae4c5e2029, 1);
         add_debugdvar_func(@"hash_9948014b33a0e323", &function_6519fa80e1e5411e, 1);
         add_debugdvar_func(@"hash_c5fc60671c328201", &function_eafac20b89f548a2, 1);
         add_debugdvar_func(@"hash_965c4785698b6c50", &function_77863cf5d430f859, 1);
-        add_debugdvar_func(@"hash_1ce2eb225cc3a6da", &gui_giveweapon, 1);
+        add_debugdvar_func(@"scr_giveweapon", &gui_giveweapon, 1);
         add_debugdvar_func(@"hash_c87017f600b49447", &gui_giveattachment, 1);
         add_debugdvar_func(@"hash_3336a486aff69f38", &devlistinventory, 1);
         add_debugdvar_func(@"hash_985a6eb7146ff86e", &function_c8ce49adbbdfe59b, 0);
@@ -1019,14 +1019,14 @@ function add_debugdvar_func(dvar, func, isthreaded, unarchived) {
                 }
             }
             update_battlechatter_hud();
-            if (getdvar(@"hash_7b4516ad7af964ca") != "<dev string:x165>") {
-                debugjump(getdvarint(@"hash_7b4516ad7af964ca"));
+            if (getdvar(@"debug_jump") != "<dev string:x165>") {
+                debugjump(getdvarint(@"debug_jump"));
             }
             if (getdvarint(@"chasecam")) {
                 chasecam(getdvarint(@"chasecam"));
             }
-            if (getdvar(@"hash_e8f35bd9a11eaa") != "<dev string:x165>") {
-                thread viewtag("<dev string:x1b4>", getdvar(@"hash_e8f35bd9a11eaa"));
+            if (getdvar(@"debug_tag") != "<dev string:x165>") {
+                thread viewtag("<dev string:x1b4>", getdvar(@"debug_tag"));
                 if (getdvarint(@"hash_b41009d51346ca25") > 0) {
                     thread drawenttag(getdvarint(@"hash_b41009d51346ca25"));
                 }
@@ -1053,26 +1053,26 @@ function add_debugdvar_func(dvar, func, isthreaded, unarchived) {
                 thread function_cbf037982d8b467c(var_8322d82cc7703576);
                 setdvar(@"hash_144cc37890335117", -1);
             }
-            if (getdvar(@"hash_a5a1f35d513dd71b") == "<dev string:x31>") {
-                setdvar(@"hash_a5a1f35d513dd71b", "<dev string:x1b7>");
+            if (getdvar(@"debug_misstime") == "<dev string:x31>") {
+                setdvar(@"debug_misstime", "<dev string:x1b7>");
                 array_thread(getaiarray(), &debugmisstime);
-            } else if (getdvar(@"hash_a5a1f35d513dd71b") == "<dev string:x2d>") {
-                setdvar(@"hash_a5a1f35d513dd71b", "<dev string:x1b7>");
+            } else if (getdvar(@"debug_misstime") == "<dev string:x2d>") {
+                setdvar(@"debug_misstime", "<dev string:x1b7>");
                 array_thread(getaiarray(), &debugmisstimeoff);
             }
             if (getdvar(@"hash_a8688268fec64d72") == "<dev string:x31>") {
                 thread deathspawnerpreview();
             }
-            if (getdvar(@"hash_3d78b4d3f4cef0a7") == "<dev string:x31>") {
-                setdvar(@"hash_3d78b4d3f4cef0a7", "<dev string:x2d>");
+            if (getdvar(@"debug_hurt") == "<dev string:x31>") {
+                setdvar(@"debug_hurt", "<dev string:x2d>");
                 level.player do_damage(50, (324234, 3.42342e+06, 2323));
             }
-            if (getdvar(@"hash_3d78b4d3f4cef0a7") == "<dev string:x31>") {
-                setdvar(@"hash_3d78b4d3f4cef0a7", "<dev string:x2d>");
+            if (getdvar(@"debug_hurt") == "<dev string:x31>") {
+                setdvar(@"debug_hurt", "<dev string:x2d>");
                 level.player do_damage(50, (324234, 3.42342e+06, 2323));
             }
             if (getdvarint(@"vehicle_info")) {
-                var_83e420760a3178b4 = randomint(34234) + "<dev string:x1bd>" + randomint(23423);
+                random_noteworthy = randomint(34234) + "<dev string:x1bd>" + randomint(23423);
                 setdvar(@"vehicle_info", 0);
                 vehicles = getentarray("<dev string:x1bf>", "<dev string:x1ce>");
                 foreach (vehicle in vehicles) {
@@ -1082,10 +1082,10 @@ function add_debugdvar_func(dvar, func, isthreaded, unarchived) {
                     if (isspawner(vehicle)) {
                         continue;
                     }
-                    vehicle print_vehicle_info(var_83e420760a3178b4);
+                    vehicle print_vehicle_info(random_noteworthy);
                 }
             }
-            if (getdvar(@"hash_a4a33e979c055af6") != "<dev string:x172>") {
+            if (getdvar(@"debug_threat") != "<dev string:x172>") {
                 debugthreat();
             }
             level.var_eccaa394f663ffab = getdvar(@"hash_79ec75481425d436") == "<dev string:x31>";
@@ -1413,12 +1413,12 @@ function debug_character_count() {
         }
         var_e738087a63b8e076 = getentarray("drone", "targetname").size;
         drones setvalue(var_e738087a63b8e076);
-        var_7289804ae7f3cbcf = getaiarray("allies").size;
-        allies setvalue(var_7289804ae7f3cbcf);
-        var_7ae1dab833dffd24 = getaiarray("bad_guys").size;
-        axis setvalue(var_7ae1dab833dffd24);
+        count_allies = getaiarray("allies").size;
+        allies setvalue(count_allies);
+        count_axis = getaiarray("bad_guys").size;
+        axis setvalue(count_axis);
         vehicles setvalue(getentarray("script_vehicle", "classname").size);
-        total setvalue(var_e738087a63b8e076 + var_7289804ae7f3cbcf + var_7ae1dab833dffd24);
+        total setvalue(var_e738087a63b8e076 + count_allies + count_axis);
         wait 0.25;
     }
 }
@@ -2003,7 +2003,7 @@ function debugthreat() {
 function debugthreatcalc() {
     /#
         ai = getaiarray();
-        entnum = getdvarint(@"hash_a4a33e979c055af6");
+        entnum = getdvarint(@"debug_threat");
         entity = undefined;
         if (entnum == 0) {
             entity = level.player;
@@ -2456,16 +2456,16 @@ function draw_dot_for_guy() {
         thread debug_cursor();
         setdvar(dvar, 2);
         points = [];
-        var_283926f07fb6e5a8 = 0;
+        next_press = 0;
         while (getdvarint(dvar)) {
-            if (level.player usebuttonpressed() && gettime() > var_283926f07fb6e5a8) {
+            if (level.player usebuttonpressed() && gettime() > next_press) {
                 if (points.size == 2) {
                     points = [];
                 } else {
                     point = level.debug.cursor_pos;
                     points[points.size] = point;
                 }
-                var_283926f07fb6e5a8 = gettime() + 500;
+                next_press = gettime() + 500;
             }
             foreach (i, point in points) {
                 draw_debug_cross(point);
@@ -2485,13 +2485,13 @@ function draw_dot_for_guy() {
                 if (points[1][2] > sorted[0][2]) {
                     sorted = [points[1], points[0]];
                 }
-                var_ef51947aa5ac420a = sorted[0];
-                lower = (var_ef51947aa5ac420a[0], var_ef51947aa5ac420a[1], sorted[1][2]);
-                dist = distance(var_ef51947aa5ac420a, lower);
-                forward = vectornormalize(lower - var_ef51947aa5ac420a);
-                var_191599aed14aafe6 = var_ef51947aa5ac420a + forward * dist * 0.6;
+                higher = sorted[0];
+                lower = (higher[0], higher[1], sorted[1][2]);
+                dist = distance(higher, lower);
+                forward = vectornormalize(lower - higher);
+                var_191599aed14aafe6 = higher + forward * dist * 0.6;
                 print3d(var_191599aed14aafe6, dist, color, 1, 0.5);
-                line(var_ef51947aa5ac420a, lower, color);
+                line(higher, lower, color);
             }
             waitframe();
         }
@@ -2505,8 +2505,8 @@ function draw_dot_for_guy() {
     function function_c972a6e1ce180be4(number) {
         nodes = getallnodes();
         foreach (current_node in nodes) {
-            var_a5db725ded10009b = current_node getnodenumber();
-            if (var_a5db725ded10009b == number) {
+            this_number = current_node getnodenumber();
+            if (this_number == number) {
                 return current_node;
             }
         }
@@ -2523,7 +2523,7 @@ function draw_dot_for_guy() {
                 node = function_c972a6e1ce180be4(getdvarint(@"hash_42baf942957e2497", 0));
                 setdvar(@"hash_42baf942957e2497", -1);
                 if (isdefined(node)) {
-                    function_de5cfb5e7094ce2d(node);
+                    debug_traversal(node);
                 }
             }
             wait 0.5;
@@ -2534,7 +2534,7 @@ function draw_dot_for_guy() {
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x6c04
     // Size: 0x23f
-    function function_de5cfb5e7094ce2d(var_3b91fb3b91a8b95f) {
+    function debug_traversal(begin_node) {
         spawners = getspawnerarray();
         assert(spawners.size > 0);
         var_163f9f2932cc92bc = undefined;
@@ -2544,7 +2544,7 @@ function draw_dot_for_guy() {
                 break;
             }
         }
-        var_b41968a309ed014e = var_163f9f2932cc92bc.count;
+        old_count = var_163f9f2932cc92bc.count;
         var_163f9f2932cc92bc.count = 1;
         var_131fe1014e98b009 = var_163f9f2932cc92bc.script_stealthgroup;
         var_163f9f2932cc92bc.script_stealthgroup = undefined;
@@ -2552,14 +2552,14 @@ function draw_dot_for_guy() {
         var_163f9f2932cc92bc.spawn_functions = [];
         ai = var_163f9f2932cc92bc spawn_ai(1);
         ai.ignoreall = 1;
-        var_163f9f2932cc92bc.count = var_b41968a309ed014e;
+        var_163f9f2932cc92bc.count = old_count;
         var_163f9f2932cc92bc.script_stealthgroup = var_131fe1014e98b009;
         var_163f9f2932cc92bc.spawn_functions = var_7c9bdd8f6f6cf722;
-        forward = anglestoforward(var_3b91fb3b91a8b95f.angles);
-        trace_results = navtrace(var_3b91fb3b91a8b95f.origin, var_3b91fb3b91a8b95f.origin + forward * -128, ai, 1);
+        forward = anglestoforward(begin_node.angles);
+        trace_results = navtrace(begin_node.origin, begin_node.origin + forward * -128, ai, 1);
         startpos = trace_results["<dev string:x356>"];
         ai forceteleport(startpos);
-        end_node = getnode(var_3b91fb3b91a8b95f.target, "<dev string:x4c7>");
+        end_node = getnode(begin_node.target, "<dev string:x4c7>");
         ai.goalradius = 32;
         ai.goalheight = 50;
         trace_results = navtrace(end_node.origin, end_node.origin + forward * 128, ai, 1);
@@ -2788,7 +2788,7 @@ function debug_cursor(var_20247fb9f3babb74) {
     // Checksum 0x0, Offset: 0x7706
     // Size: 0xd1
     function gui_giveweapon() {
-        weapnew = getdvar(@"hash_1ce2eb225cc3a6da");
+        weapnew = getdvar(@"scr_giveweapon");
         if (isdefined(weapnew)) {
             var_92d3a4ede037943f = getweaponbasename(weapnew);
             transient_load("<dev string:x4d7>" + var_92d3a4ede037943f + "<dev string:x4df>");
@@ -2799,7 +2799,7 @@ function debug_cursor(var_20247fb9f3babb74) {
             level.player setweaponammostock(weapnew, weaponmaxammo(weapnew));
             level.player switchtoweaponimmediate(weapnew);
         }
-        setdevdvar(@"hash_1ce2eb225cc3a6da", "<dev string:x165>");
+        setdevdvar(@"scr_giveweapon", "<dev string:x165>");
     }
 
     // Namespace debug / scripts\sp\debug
@@ -3052,7 +3052,7 @@ function debug_cursor(var_20247fb9f3babb74) {
         weapons = array_removeundefined(level.placedweapons);
         foreach (weapon in weapons) {
             line(level.player.origin, weapon.origin, (0, 1, 0), 1, 0);
-            weapon thread function_1fbade76d7eb1ffb("<dev string:x749>", weapon, undefined, 2, (0, 1, 0));
+            weapon thread debug_printweaponname("<dev string:x749>", weapon, undefined, 2, (0, 1, 0));
         }
     }
 
@@ -3069,10 +3069,10 @@ function debug_cursor(var_20247fb9f3babb74) {
         ais = array_removedead_or_dying(ais, 1);
         foreach (ai in ais) {
             if (istrue(ai.usescriptedweapon)) {
-                ai thread function_1fbade76d7eb1ffb("<dev string:x752>" + ai.weapon getentnum(), ai.weapon, undefined, 68, (1, 0, 0));
+                ai thread debug_printweaponname("<dev string:x752>" + ai.weapon getentnum(), ai.weapon, undefined, 68, (1, 0, 0));
                 continue;
             }
-            ai thread function_1fbade76d7eb1ffb("<dev string:x75a>" + ai.weapon getentnum(), ai.weapon, undefined, 68, (1, 0, 0));
+            ai thread debug_printweaponname("<dev string:x75a>" + ai.weapon getentnum(), ai.weapon, undefined, 68, (1, 0, 0));
         }
     }
 
@@ -3087,7 +3087,7 @@ function debug_cursor(var_20247fb9f3babb74) {
         weapons = getweaponarray();
         foreach (weapon in weapons) {
             line(level.player.origin, weapon.origin, (0.25, 0.25, 1), 1, 0);
-            weapon thread function_1fbade76d7eb1ffb("<dev string:x75d>", weapon, undefined, 2, (0.25, 0.25, 1));
+            weapon thread debug_printweaponname("<dev string:x75d>", weapon, undefined, 2, (0.25, 0.25, 1));
         }
     }
 
@@ -3102,7 +3102,7 @@ function debug_cursor(var_20247fb9f3babb74) {
         weapons = level.player getweaponslistall();
         x_offset = 120;
         foreach (weapon in weapons) {
-            level.player thread function_1fbade76d7eb1ffb("<dev string:x165>", weapon, x_offset, 120, (0, 1, 1));
+            level.player thread debug_printweaponname("<dev string:x165>", weapon, x_offset, 120, (0, 1, 1));
             x_offset += 300;
         }
     }
@@ -3111,7 +3111,7 @@ function debug_cursor(var_20247fb9f3babb74) {
     // Params 5, eflags: 0x0
     // Checksum 0x0, Offset: 0x852c
     // Size: 0x28c
-    function function_1fbade76d7eb1ffb(prefix, weapon, x_offset, z_offset, color) {
+    function debug_printweaponname(prefix, weapon, x_offset, z_offset, color) {
         anchor = undefined;
         if (isdefined(self) && level != self) {
             anchor = self.origin;
@@ -3122,37 +3122,37 @@ function debug_cursor(var_20247fb9f3babb74) {
             anchor = weapon.origin;
         }
         if (isweapon(weapon)) {
-            var_e70bf477b23e5368 = getcompleteweaponname(weapon);
+            complete_name = getcompleteweaponname(weapon);
         } else {
-            var_e70bf477b23e5368 = weapon.classname;
+            complete_name = weapon.classname;
         }
-        toks = strtok(var_e70bf477b23e5368, "<dev string:x5e1>");
-        var_627fb8865600bd0a = z_offset;
+        toks = strtok(complete_name, "<dev string:x5e1>");
+        attach_height = z_offset;
         if (isdefined(toks[0])) {
             if (isplayer(self)) {
-                printtoscreen2d(x_offset, var_627fb8865600bd0a, toks[0], color, 1.5);
+                printtoscreen2d(x_offset, attach_height, toks[0], color, 1.5);
             }
             if (toks.size > 1) {
                 for (i = toks.size - 1; i > 0; i--) {
                     if (isplayer(self)) {
-                        var_627fb8865600bd0a += 20;
-                        printtoscreen2d(x_offset, var_627fb8865600bd0a, "<dev string:x739>" + toks[i], (1, 1, 1), 1.5);
+                        attach_height += 20;
+                        printtoscreen2d(x_offset, attach_height, "<dev string:x739>" + toks[i], (1, 1, 1), 1.5);
                         continue;
                     }
-                    print3d(anchor + (0, 0, var_627fb8865600bd0a), "<dev string:x739>" + toks[i], (1, 1, 1), 1, 0.1, 1);
-                    var_627fb8865600bd0a += 1.4;
+                    print3d(anchor + (0, 0, attach_height), "<dev string:x739>" + toks[i], (1, 1, 1), 1, 0.1, 1);
+                    attach_height += 1.4;
                 }
             }
             if (isplayer(self)) {
                 return;
             }
             if (!isai(self)) {
-                print3d(anchor + (0, 0, var_627fb8865600bd0a + 0.1), "<dev string:x767>" + weapon.origin, (1, 1, 1), 1, 0.125, 1);
-                print3d(anchor + (0, 0, var_627fb8865600bd0a + 1.9), prefix + "<dev string:x770>" + weapon getentnum() + "<dev string:x73c>" + toks[0], color, 1, 0.15, 1);
+                print3d(anchor + (0, 0, attach_height + 0.1), "<dev string:x767>" + weapon.origin, (1, 1, 1), 1, 0.125, 1);
+                print3d(anchor + (0, 0, attach_height + 1.9), prefix + "<dev string:x770>" + weapon getentnum() + "<dev string:x73c>" + toks[0], color, 1, 0.15, 1);
                 return;
             }
-            print3d(anchor + (0, 0, var_627fb8865600bd0a + 0.1), prefix + "<dev string:x73c>" + toks[0], color, 1, 0.15, 1);
-            print3d(anchor + (0, 0, var_627fb8865600bd0a + 1.9), "<dev string:x773>" + self getentnum(), color, 1, 0.15, 1);
+            print3d(anchor + (0, 0, attach_height + 0.1), prefix + "<dev string:x73c>" + toks[0], color, 1, 0.15, 1);
+            print3d(anchor + (0, 0, attach_height + 1.9), "<dev string:x773>" + self getentnum(), color, 1, 0.15, 1);
         }
     }
 
@@ -3242,10 +3242,10 @@ function display_ai_group_info() {
         }
         steps = 3 * scale * 20;
         alpha = 1;
-        var_85bca1424e521f21 = 1 / steps;
+        alpha_lerp = 1 / steps;
         for (i = 0; i < steps; i++) {
             wait 0.05;
-            alpha -= var_85bca1424e521f21;
+            alpha -= alpha_lerp;
             alpha = min(alpha, 1);
             print3d(self.origin + offset, msg, color, alpha, scale);
             offset += (0, 0, 1);
@@ -3266,11 +3266,11 @@ function display_ai_group_info() {
             } else {
                 ai_array = getaiarray();
                 if (getdvarint(@"hash_8beca11d7b55550e")) {
-                    var_27c1a387e7b386f0["<dev string:x78e>"] = (0, 1, 0);
-                    var_27c1a387e7b386f0["<dev string:x37e>"] = (1, 0, 0);
-                    var_27c1a387e7b386f0["<dev string:x7bb>"] = (0, 1, 1);
+                    line_colors["<dev string:x78e>"] = (0, 1, 0);
+                    line_colors["<dev string:x37e>"] = (1, 0, 0);
+                    line_colors["<dev string:x7bb>"] = (0, 1, 1);
                     foreach (guy in ai_array) {
-                        line_color = default_to(var_27c1a387e7b386f0[guy.team], var_27c1a387e7b386f0["<dev string:x7bb>"]);
+                        line_color = default_to(line_colors[guy.team], line_colors["<dev string:x7bb>"]);
                         line(guy.origin, level.player.origin, line_color, 1, 0, 1);
                     }
                 }
@@ -3314,15 +3314,15 @@ function function_a08c7d9bf42ca575(count, green_count, yellow_count) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e5f
 // Size: 0x579
-function function_70c9af186e601b78() {
-    dvar_name = @"hash_44924a148e94bea9";
+function debug_magic() {
+    dvar_name = @"debug_magic";
     var_756353f0fc25fcd2 = @"hash_1fc275563e007fbb";
     setdvarifuninitialized(dvar_name, "0");
     setdvarifuninitialized(var_756353f0fc25fcd2, "0");
     thread function_ac2275eb6e8444f0();
     foreach (spawner in getspawnerarray()) {
-        spawner.var_b8c9ee08c9db35f6 = spawner.targetname;
-        spawner.var_741128cfa6d2c110 = spawner.count;
+        spawner.spawner_targetname = spawner.targetname;
+        spawner.orig_count = spawner.count;
         spawner add_spawn_function(&function_b64f3d4029e87e07);
     }
     var_2052c03f81dcd487 = 0;
@@ -3334,8 +3334,8 @@ function function_70c9af186e601b78() {
                 if (isdefined(ally.script_noteworthy)) {
                     str += "nw: " + ally.script_noteworthy + "\n";
                 }
-                if (isdefined(ally.var_b8c9ee08c9db35f6)) {
-                    str += "stn: " + ally.var_b8c9ee08c9db35f6 + "\n";
+                if (isdefined(ally.spawner_targetname)) {
+                    str += "stn: " + ally.spawner_targetname + "\n";
                 }
                 color = (1, 1, 1);
                 if (isdefined(ally.script_forcecolor)) {
@@ -3344,8 +3344,8 @@ function function_70c9af186e601b78() {
                 if (isdefined(ally.magic_bullet_shield)) {
                     str += "magic\n";
                 }
-                if (isdefined(ally.var_1c12c7a661085303) && isdefined(ally.var_741128cfa6d2c110) && isdefined(ally.spawn_number) && ally.var_741128cfa6d2c110 > 1) {
-                    str += ally.spawn_number + " of " + ally.var_741128cfa6d2c110;
+                if (isdefined(ally.var_1c12c7a661085303) && isdefined(ally.orig_count) && isdefined(ally.spawn_number) && ally.orig_count > 1) {
+                    str += ally.spawn_number + " of " + ally.orig_count;
                 }
                 if (isdefined(ally.script_parameters)) {
                     str += "params: " + ally.script_parameters + "\n";
@@ -3404,9 +3404,9 @@ function function_70c9af186e601b78() {
                 lines = strtok(str, "\n");
                 line_height = 5;
                 offset = 80 + line_height * lines.size;
-                foreach (var_c32570777a2e3a04 in lines) {
+                foreach (threat_line in lines) {
                     /#
-                        print3d(ally.origin + (0, 0, offset), var_c32570777a2e3a04, color, 1, 0.25);
+                        print3d(ally.origin + (0, 0, offset), threat_line, color, 1, 0.25);
                         offset -= line_height;
                     #/
                 }
@@ -3423,8 +3423,8 @@ function function_70c9af186e601b78() {
 // Checksum 0x0, Offset: 0x93e0
 // Size: 0x6f
 function function_b64f3d4029e87e07() {
-    if (isdefined(self.spawner) && isdefined(self.spawner.count) && isdefined(self.spawner.var_741128cfa6d2c110)) {
-        self.spawn_number = self.spawner.var_741128cfa6d2c110 - self.spawner.count;
+    if (isdefined(self.spawner) && isdefined(self.spawner.count) && isdefined(self.spawner.orig_count)) {
+        self.spawn_number = self.spawner.orig_count - self.spawner.count;
     }
 }
 
@@ -3434,48 +3434,48 @@ function function_b64f3d4029e87e07() {
 // Size: 0x1e2
 function function_ac2275eb6e8444f0() {
     level.player endon("death");
-    dvar_name = @"hash_44924a148e94bea9";
+    dvar_name = @"debug_magic";
     var_756353f0fc25fcd2 = @"hash_1fc275563e007fbb";
     var_f84a18555d8a014a = 25;
     var_f84a19555d8a037d = 50;
-    var_ffef10127bfdcdd6 = (1, 0, 0);
-    var_e60bc2747013ef1c = (0, 1, 0);
+    color_off = (1, 0, 0);
+    color_on = (0, 1, 0);
     dt = 0.1;
-    var_eaeab4fb7d11be08 = int(dt * 20);
+    dt_frames = int(dt * 20);
     while (true) {
         if (getdvar(dvar_name) != "0" || getdvar(var_756353f0fc25fcd2) != "0") {
             if (level.player.ignoreme) {
                 text = "Player Ignore Me : ON";
-                color = var_e60bc2747013ef1c;
+                color = color_on;
             } else {
                 text = "Player Ignore Me : OFF";
-                color = var_ffef10127bfdcdd6;
+                color = color_off;
             }
             /#
                 printtoscreen2d(var_f84a18555d8a014a, var_f84a19555d8a037d, text, color, 2);
             #/
             if (level.player.notarget) {
                 text = "Player No Target : ON";
-                color = var_e60bc2747013ef1c;
+                color = color_on;
             } else {
                 text = "Player No Target : OFF";
-                color = var_ffef10127bfdcdd6;
+                color = color_off;
             }
             /#
                 printtoscreen2d(var_f84a18555d8a014a, var_f84a19555d8a037d + 25, text, color, 2);
             #/
             if (level.player isinvulnerable() || isgodmode(level.player)) {
                 text = "God Mode : ON";
-                color = var_e60bc2747013ef1c;
+                color = color_on;
             } else {
                 text = "God Mode : OFF";
-                color = var_ffef10127bfdcdd6;
+                color = color_off;
             }
             /#
                 printtoscreen2d(var_f84a18555d8a014a, var_f84a19555d8a037d + 50, text, color, 2);
             #/
             text = "Health : " + level.player.health;
-            color = var_e60bc2747013ef1c;
+            color = color_on;
             /#
                 printtoscreen2d(var_f84a18555d8a014a, var_f84a19555d8a037d + 75, text, color, 2);
             #/

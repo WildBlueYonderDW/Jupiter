@@ -1,6 +1,6 @@
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_595a577ac71de143;
 #using script_2816a042b9f7996;
+#using script_595a577ac71de143;
+#using scripts\cp_mp\utility\game_utility;
 
 #namespace ob_map;
 

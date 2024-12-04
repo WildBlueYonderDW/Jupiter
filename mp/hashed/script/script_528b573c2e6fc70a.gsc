@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\equipment.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\perk.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\equipment\claymore.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
 #using script_736dec95a49487a6;
-#using scripts\common\elevators.gsc;
-#using scripts\mp\equipment_interact.gsc;
+#using scripts\common\elevators;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\claymore;
+#using scripts\mp\equipment_interact;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\equipment;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\weapons;
 
 #namespace agent_claymore;
 

@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
 #using script_509a782dd5b89cf1;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\killstreak;
 
 #namespace namespace_4661781de8850ae4;
 

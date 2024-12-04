@@ -1,6 +1,6 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace movement;
 
@@ -16,8 +16,8 @@ function function_36d589dc5c4191f6(override, delay) {
         if (isdefined(override) && isstring(override)) {
             self [[ level.var_b11db2283dbd7ed3 ]](override);
         } else {
-            var_227c8676d5e5b0c4 = getdvarint(@"hash_a6dc81e1fdde75ff", 0);
-            switch (var_227c8676d5e5b0c4) {
+            movement_dvar = getdvarint(@"hash_a6dc81e1fdde75ff", 0);
+            switch (movement_dvar) {
             case 1:
                 self [[ level.var_b11db2283dbd7ed3 ]]("cqb");
                 break;

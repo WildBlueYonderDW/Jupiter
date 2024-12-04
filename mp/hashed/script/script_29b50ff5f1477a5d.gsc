@@ -1,43 +1,43 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
-#using script_22f1701e151b9d12;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_2583ee5680cf4736;
-#using script_43971bbeefd98f05;
-#using script_2669878cf5a1b6bc;
-#using script_7edf952f8921aa6b;
-#using script_6df6604a74a7a9c7;
+#using script_16ea1b94f0f381b3;
+#using script_185660037b9236c1;
+#using script_1f97a44d1761c919;
 #using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
+#using script_2590b7a7de3dfc79;
+#using script_2669878cf5a1b6bc;
+#using script_371b4c2ab5861e62;
 #using script_3ab210ea917601e7;
 #using script_41387eecc35b88bf;
-#using script_7956d56c4922bd1;
-#using script_64351208cb856df9;
-#using script_638d701d263ee1ed;
-#using script_185660037b9236c1;
-#using scripts\common\create_script_utility.gsc;
-#using script_5753ba9c28794a65;
-#using scripts\engine\scriptable.gsc;
-#using script_5d8202968463a21d;
-#using scripts\common\vehicle.gsc;
-#using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using script_54be039c89fddc12;
-#using script_7c40fa80892a721;
-#using scripts\mp\mp_agent_damage.gsc;
-#using script_5762ac2f22202ba2;
-#using script_2590b7a7de3dfc79;
-#using script_58be75c518bf0d40;
-#using script_77be8cd2b6610d5;
-#using script_7b2517368c79e5bc;
-#using script_1f97a44d1761c919;
-#using script_d60e0219a7419e0;
-#using scripts\common\powerups.gsc;
+#using script_43971bbeefd98f05;
 #using script_4a6760982b403bad;
+#using script_54be039c89fddc12;
+#using script_5753ba9c28794a65;
+#using script_5762ac2f22202ba2;
+#using script_58be75c518bf0d40;
+#using script_5d8202968463a21d;
+#using script_638d701d263ee1ed;
+#using script_64351208cb856df9;
+#using script_6df6604a74a7a9c7;
+#using script_77be8cd2b6610d5;
+#using script_7956d56c4922bd1;
+#using script_7b2517368c79e5bc;
+#using script_7c40fa80892a721;
+#using script_7edf952f8921aa6b;
+#using script_d60e0219a7419e0;
+#using scripts\common\callbacks;
+#using scripts\common\create_script_utility;
+#using scripts\common\powerups;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\mp_agent_damage;
 
 #namespace namespace_b2b546ada8578eda;
 
@@ -322,12 +322,12 @@ function function_c2f1ea19349c995e() {
         self.root_struct = getclosest(self.s_center.origin, root_structs, 1000);
         if (isdefined(self.root_struct)) {
             radius = float(default_to(self.s_center.script_noteworthy, 600));
-            self.var_86ca8e1c112dc232 = getentitylessscriptablearray(self.root_struct.target, "targetname", self.s_center.origin, radius);
-            self.var_dcbec0adc5c68ae8 = [];
-            foreach (prop in self.var_86ca8e1c112dc232) {
+            self.prop_array = getentitylessscriptablearray(self.root_struct.target, "targetname", self.s_center.origin, radius);
+            self.gas_array = [];
+            foreach (prop in self.prop_array) {
                 prop setscriptablepartstate("state", "visible");
                 if (issubstr(prop.classname, "gas")) {
-                    self.var_dcbec0adc5c68ae8[self.var_dcbec0adc5c68ae8.size] = prop;
+                    self.gas_array[self.gas_array.size] = prop;
                 }
             }
         }
@@ -1185,8 +1185,8 @@ function function_5c710295d42036e9() {
             function_2f109c081d5fd179(vfx);
         }
     }
-    if (isdefined(self.var_dcbec0adc5c68ae8)) {
-        foreach (gas in self.var_dcbec0adc5c68ae8) {
+    if (isdefined(self.gas_array)) {
+        foreach (gas in self.gas_array) {
             gas setscriptablepartstate("state", "hidden");
         }
     }
@@ -1220,8 +1220,8 @@ function function_38736a058eca7b23() {
             function_2f109c081d5fd179(prop);
         }
     }
-    if (isdefined(self.var_86ca8e1c112dc232)) {
-        foreach (prop in self.var_86ca8e1c112dc232) {
+    if (isdefined(self.prop_array)) {
+        foreach (prop in self.prop_array) {
             prop setscriptablepartstate("state", "hidden");
         }
     }
@@ -1238,7 +1238,7 @@ function function_4dc9c5a8aa3eecd3(soundevent, array_players) {
     foreach (player in array_players) {
         if (isplayer(player)) {
             player playsoundevent(soundevent);
-            namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_operator_vo", {#target:undefined, #speaker:player, #sound_event:soundevent, #sound_type:undefined, #var_30e54bfe55d8adb9:"ob::playSoundEventOnPlayers"});
+            namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_operator_vo", {#target:undefined, #speaker:player, #sound_event:soundevent, #sound_type:undefined, #script_func_name:"ob::playSoundEventOnPlayers"});
         }
     }
 }

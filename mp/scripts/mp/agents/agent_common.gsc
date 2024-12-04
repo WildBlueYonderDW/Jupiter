@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\notetracks_mp.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\anim\notetracks_mp;
+#using scripts\asm\asm;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace agent_common;
 

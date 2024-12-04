@@ -1,7 +1,7 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7e018ed120c71de8;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_ab78858d3444062c;
 

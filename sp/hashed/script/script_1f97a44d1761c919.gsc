@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\mp\flags.gsc;
 #using script_1f97a44d1761c919;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace overlord;
 
@@ -422,9 +422,9 @@ function function_b0c21eabffce3fd4() {
     proximitydistancesq = getdvarint(@"hash_57797986a6d60476", 4096);
     proximitydistancesq *= proximitydistancesq;
     ignoretime = getdvarfloat(@"hash_32244d6acf101808", 60);
-    var_a93508890d2545d1 = [];
+    trackedTeams = [];
     foreach (team in level.teamnamelist) {
-        var_a93508890d2545d1[team] = [];
+        trackedTeams[team] = [];
     }
     while (true) {
         validplayers = [];
@@ -446,7 +446,7 @@ function function_b0c21eabffce3fd4() {
                     if (player.team == testplayer.team || distancesquared(player.origin, testplayer.origin) > proximitydistancesq) {
                         continue;
                     }
-                    var_ba24b605d8b9c100 = function_f240c299b9341e8f(player, testplayer, var_a93508890d2545d1, ignoretime);
+                    var_ba24b605d8b9c100 = function_f240c299b9341e8f(player, testplayer, trackedTeams, ignoretime);
                     if (var_ba24b605d8b9c100) {
                         testplayers = namespace_2b1145f62aa835b8::function_9563f2d4e690856d(testplayer.team, "players");
                         eventplayers = namespace_2b1145f62aa835b8::function_9563f2d4e690856d(player.team, "players");
@@ -458,7 +458,7 @@ function function_b0c21eabffce3fd4() {
                             var_571aeaf27dbb7e22[var_571aeaf27dbb7e22.size] = player;
                         }
                         playevent(ter_op(testplayers.size > level.overlord.var_f122d73bb796754c, "nearby_big_team", "player_enemy_player_nearby"), var_571aeaf27dbb7e22);
-                        var_a93508890d2545d1[player.team][testplayer.team] = gettime();
+                        trackedTeams[player.team][testplayer.team] = gettime();
                     }
                 }
             }
@@ -481,9 +481,9 @@ function function_aea00c3815b226da(player) {
     proximitydistancesq = getdvarint(@"hash_57797986a6d60476", 4096);
     proximitydistancesq *= proximitydistancesq;
     ignoretime = getdvarfloat(@"hash_32244d6acf101808", 60);
-    var_a93508890d2545d1 = [];
+    trackedTeams = [];
     foreach (team in level.teamnamelist) {
-        var_a93508890d2545d1[team] = [];
+        trackedTeams[team] = [];
     }
     while (true) {
         validplayers = [];
@@ -501,11 +501,11 @@ function function_aea00c3815b226da(player) {
                 if (player.team == testplayer.team || distancesquared(player.origin, testplayer.origin) > proximitydistancesq) {
                     continue;
                 }
-                var_ba24b605d8b9c100 = !isdefined(var_a93508890d2545d1[player.team][testplayer.team]) || (gettime() - var_a93508890d2545d1[player.team][testplayer.team]) / 1000 > ignoretime;
+                var_ba24b605d8b9c100 = !isdefined(trackedTeams[player.team][testplayer.team]) || (gettime() - trackedTeams[player.team][testplayer.team]) / 1000 > ignoretime;
                 if (var_ba24b605d8b9c100) {
                     testplayers = namespace_53fc9ddbb516e6e1::function_9563f2d4e690856d(testplayer.team, "players");
                     playevent(ter_op(testplayers.size > level.overlord.var_f122d73bb796754c, "nearby_big_team", "player_enemy_player_nearby"), [player]);
-                    var_a93508890d2545d1[player.team][testplayer.team] = gettime();
+                    trackedTeams[player.team][testplayer.team] = gettime();
                 }
             }
         }
@@ -545,8 +545,8 @@ function function_70979c1eabf04180(players, tag) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dbf
 // Size: 0xc2
-function function_f240c299b9341e8f(player, testplayer, var_a93508890d2545d1, ignoretime) {
-    var_ba24b605d8b9c100 = !isdefined(var_a93508890d2545d1[player.team][testplayer.team]) || (gettime() - var_a93508890d2545d1[player.team][testplayer.team]) / 1000 > ignoretime;
+function function_f240c299b9341e8f(player, testplayer, trackedTeams, ignoretime) {
+    var_ba24b605d8b9c100 = !isdefined(trackedTeams[player.team][testplayer.team]) || (gettime() - trackedTeams[player.team][testplayer.team]) / 1000 > ignoretime;
     if (getdvarint(@"hash_c53afaea3f55391a", 0)) {
         testplayers = namespace_2b1145f62aa835b8::function_9563f2d4e690856d(testplayer.team, "players");
         return (var_ba24b605d8b9c100 && testplayers.size > level.overlord.var_f122d73bb796754c);

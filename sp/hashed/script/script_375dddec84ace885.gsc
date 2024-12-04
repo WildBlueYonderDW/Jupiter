@@ -1,5 +1,5 @@
 #using script_130b90141eb30189;
-#using scripts\cp_mp\entityheadicons.gsc;
+#using scripts\cp_mp\entityheadicons;
 
 #namespace namespace_afda4b8e83f2f71f;
 

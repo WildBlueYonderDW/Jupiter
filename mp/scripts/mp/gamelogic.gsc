@@ -1,166 +1,166 @@
-#using scripts\mp\flags.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
+#using script_1070be3357c9454c;
+#using script_15de7dc4d21f1da3;
+#using script_15eddb0fac236a22;
+#using script_180407b61054c278;
+#using script_189b67b2735b981d;
+#using script_1f97a44d1761c919;
 #using script_23a295a7d3a949db;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_1070be3357c9454c;
-#using scripts\mp\gametypes\wm_ending.gsc;
-#using scripts\mp\potg.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using script_6981400abfcd765c;
-#using scripts\mp\codcasterclientmatchdata.gsc;
+#using script_2b264b25c7da0b12;
+#using script_404f1aef8aea990;
+#using script_4192352a88553d67;
+#using script_436add9de781cdfb;
+#using script_44b8991c2b01716a;
+#using script_451a1a9bd9613164;
+#using script_45f403e1732217d3;
+#using script_4a6760982b403bad;
+#using script_4bac13d511590220;
+#using script_4cdabcd91a92977;
+#using script_509d466932bca53e;
 #using script_548072087c9fd504;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using script_5762ac2f22202ba2;
+#using script_600b944a95c3a7bf;
 #using script_629a97c763e17711;
 #using script_697b7ae06ba9b28c;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_6ad351ebd5a33280;
-#using script_4cdabcd91a92977;
-#using scripts\mp\class.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\load.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\teamrevive.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using script_451a1a9bd9613164;
-#using scripts\mp\utility\player_frame_update_aggregator.gsc;
-#using script_436add9de781cdfb;
-#using script_15de7dc4d21f1da3;
-#using scripts\cp_mp\ent_manager.gsc;
-#using script_509d466932bca53e;
-#using scripts\cp_mp\utility\team_utility.gsc;
-#using script_76cc264b397db9cb;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_6853191397ec0259;
-#using scripts\mp\playerhealth.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\killcam.gsc;
-#using scripts\mp\final_killcam.gsc;
-#using script_cbb0697de4c5728;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\playercards.gsc;
-#using scripts\mp\menus.gsc;
-#using scripts\mp\hud.gsc;
-#using scripts\mp\serversettings.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\outline.gsc;
-#using scripts\mp\shellshock.gsc;
-#using scripts\mp\deathicons.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\lightarmor.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\brmatchdata.gsc;
-#using scripts\mp\brclientmatchdata.gsc;
-#using scripts\mp\matchdata.gsc;
-#using scripts\mp\clientmatchdata.gsc;
-#using scripts\mp\awards.gsc;
-#using scripts\mp\passives.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_4bac13d511590220;
-#using scripts\cp_mp\killstreaks\init.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\mp\archetypes\archcommon.gsc;
-#using scripts\mp\online_event.gsc;
-#using scripts\mp\whizby.gsc;
-#using script_4192352a88553d67;
-#using scripts\mp\analyticslog.gsc;
-#using script_45f403e1732217d3;
-#using script_180407b61054c278;
-#using script_404f1aef8aea990;
-#using script_7c40fa80892a721;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\loot.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\callouts.gsc;
-#using scripts\mp\bounty.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\mp\gestures_mp.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\arbitrary_up.gsc;
+#using script_6981400abfcd765c;
 #using script_6a522b6159eb03da;
-#using scripts\mp\turret.gsc;
-#using script_2b264b25c7da0b12;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\matchstats.gsc;
-#using scripts\mp\playerstats.gsc;
-#using scripts\mp\focus.gsc;
-#using scripts\cp_mp\auto_ascender.gsc;
-#using scripts\cp_mp\auto_ascender_solo.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\spawnselection.gsc;
-#using scripts\mp\spawncamera.gsc;
-#using scripts\mp\juggernaut.gsc;
-#using scripts\mp\door.gsc;
-#using scripts\mp\flashpoint.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\common\elevators.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\hud_popup.gsc;
-#using scripts\mp\accolades.gsc;
-#using scripts\mp\ammorestock.gsc;
-#using scripts\mp\meatshield.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using script_1f97a44d1761c919;
-#using scripts\mp\bots\bots_loadout.gsc;
-#using script_44b8991c2b01716a;
-#using scripts\mp\gamestaterestore.gsc;
-#using scripts\mp\gametypes\war.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\common\dof.gsc;
-#using script_4a6760982b403bad;
+#using script_6ad351ebd5a33280;
+#using script_76cc264b397db9cb;
 #using script_7ab5b649fa408138;
-#using scripts\mp\gametypes\control.gsc;
-#using script_15eddb0fac236a22;
-#using script_189b67b2735b981d;
-#using scripts\cp_mp\pet_watch.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\ui.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\mp\scoreboard.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\print.gsc;
+#using script_7c40fa80892a721;
+#using script_cbb0697de4c5728;
+#using scripts\common\callbacks;
+#using scripts\common\dof;
+#using scripts\common\elevators;
+#using scripts\common\shellshock_utility;
+#using scripts\common\ui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\auto_ascender;
+#using scripts\cp_mp\auto_ascender_solo;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\killstreaks\init;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\team_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\accolades;
+#using scripts\mp\ammorestock;
+#using scripts\mp\analyticslog;
+#using scripts\mp\arbitrary_up;
+#using scripts\mp\archetypes\archcommon;
+#using scripts\mp\awards;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\bots\bots;
+#using scripts\mp\bots\bots_loadout;
+#using scripts\mp\bounty;
+#using scripts\mp\brclientmatchdata;
+#using scripts\mp\brmatchdata;
+#using scripts\mp\callouts;
+#using scripts\mp\class;
+#using scripts\mp\clientmatchdata;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\damage;
+#using scripts\mp\deathicons;
+#using scripts\mp\door;
+#using scripts\mp\equipment;
+#using scripts\mp\events;
+#using scripts\mp\final_killcam;
+#using scripts\mp\flags;
+#using scripts\mp\flashpoint;
+#using scripts\mp\focus;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gamestaterestore;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\control;
+#using scripts\mp\gametypes\war;
+#using scripts\mp\gametypes\wm_ending;
+#using scripts\mp\gestures_mp;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_popup;
+#using scripts\mp\hud_util;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\juggernaut;
+#using scripts\mp\killcam;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\laststand;
+#using scripts\mp\lightarmor;
+#using scripts\mp\load;
+#using scripts\mp\loot;
+#using scripts\mp\matchdata;
+#using scripts\mp\matchstats;
+#using scripts\mp\meatshield;
+#using scripts\mp\menus;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\online_event;
+#using scripts\mp\outline;
+#using scripts\mp\outofbounds;
+#using scripts\mp\passives;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\perks\perks;
+#using scripts\mp\persistence;
+#using scripts\mp\playercards;
+#using scripts\mp\playerhealth;
+#using scripts\mp\playerlogic;
+#using scripts\mp\playerstats;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\potg;
+#using scripts\mp\rank;
+#using scripts\mp\scoreboard;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\serversettings;
+#using scripts\mp\shellshock;
+#using scripts\mp\spawncamera;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnselection;
+#using scripts\mp\spectating;
+#using scripts\mp\supers;
+#using scripts\mp\teamrevive;
+#using scripts\mp\teams;
+#using scripts\mp\turret;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\player_frame_update_aggregator;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\trigger;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weaponrank;
+#using scripts\mp\weapons;
+#using scripts\mp\whizby;
 
 #namespace gamelogic;
 
@@ -1098,7 +1098,7 @@ function prematchperiod() {
         }
     } else if (!istrue(level.skipprematch)) {
         if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && getsubgametype() != "dmz" && getsubgametype() != "exgm") {
-            minplayers = getdvarint(@"hash_faf1db5754891b2d");
+            minplayers = getdvarint(@"br_minplayers");
             if (minplayers != 0) {
                 level thread watchforlowpopmatchstart();
                 level thread brwatchforminplayersmatchstart();
@@ -3430,7 +3430,7 @@ function callback_startgametype() {
     if (!isdefined(game["status"])) {
         game["status"] = "normal";
     }
-    setdvar(@"hash_caa6faec79f2c4c2", inovertime());
+    setdvar(@"ui_overtime", inovertime());
     if (!isdefined(game["timePassed"])) {
         game["timePassed"] = 0;
     }
@@ -3486,7 +3486,7 @@ function callback_startgametype() {
     } else if (scripts\cp_mp\utility\game_utility::function_21322da268e71c19()) {
         logstring("game modifier: hardcore mode");
     }
-    level.thirdpersonmode = getdvarint(@"hash_66c38b5b61297ac1");
+    level.thirdpersonmode = getdvarint(@"scr_thirdperson");
     level.diehardmode = getdvarint(@"hash_4a2b3d01a81655a6");
     level.casualscorestreaks = getdvarint(@"hash_a69e3d30bf0c5ff6");
     level.wrapkillstreaks = getdvarint(@"hash_614165a37ac2db61");
@@ -3600,8 +3600,8 @@ function callback_startgametype() {
         println("<dev string:xb2b>" + scripts\cp_mp\utility\game_utility::function_21322da268e71c19());
         println("<dev string:xb45>" + scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924());
         println("<dev string:xb5f>" + level.diehardmode);
-        println("<dev string:xb74>" + getdvarint(@"hash_66c38b5b61297ac1"));
-        println("<dev string:xb89>" + getdvarint(@"hash_c00e244ea59d530e"));
+        println("<dev string:xb74>" + getdvarint(@"scr_thirdperson"));
+        println("<dev string:xb89>" + getdvarint(@"camera_thirdperson"));
         println("<dev string:xba3>" + game["<dev string:x8a0>"]);
         println("<dev string:xbb8>" + getgametype() + "<dev string:xbc2>" + getdvar(hashcat(@"scr_", getgametype(), "<dev string:xbd2>")));
         println("<dev string:xbb8>" + getgametype() + "<dev string:xbe1>" + getdvar(hashcat(@"scr_", getgametype(), "<dev string:xbf1>")));
@@ -3633,7 +3633,7 @@ function callback_startgametype() {
     namespace_9bb409deb69fb31d::init();
     scripts\cp_mp\utility\player_utility::initdismembermentlist();
     scripts\cp_mp\utility\game_utility::values_init();
-    thread namespace_1ce798d596a27341::init();
+    thread scripts\common\shellshock_utility::init();
     thread scripts\cp_mp\utility\game_utility::game_utility_init();
     thread scripts\mp\playerhealth::init();
     thread scripts\cp_mp\challenges::init();
@@ -3881,7 +3881,7 @@ function callback_startgametype() {
     if (isdefined(level.matchrecording_init)) {
         level thread [[ level.matchrecording_init ]]();
     }
-    if (getdvarint(@"hash_8dd1d0af528859be", 0) == 0 || function_1e098780c33853f2() && !function_f24e99a2f548d0b8() && !function_8cc09267ba72c7f7() && !scripts\mp\gametypes\war::function_2898a9c3d425a919() || function_a305f5d1be837817()) {
+    if (getdvarint(@"hash_8dd1d0af528859be", 0) == 0 || function_1e098780c33853f2() && !function_f24e99a2f548d0b8() && !isMutationGameMode() && !scripts\mp\gametypes\war::function_2898a9c3d425a919() || isJuggerMoshGameMode()) {
         setomnvar("ui_only_default_loadouts", 1);
     }
     scripts\mp\gametypes\common::commononstartgametype();
@@ -3948,7 +3948,7 @@ function updatewavespawndelay(newwavedelay, var_ab1e2d0bc30658b0) {
         setdynamicdvar(hashcat(@"scr_", getgametype(), "_waverespawndelay_alt"), var_ab1e2d0bc30658b0);
     }
     wavedelay = getdvarint(hashcat(@"scr_", getgametype(), "_waverespawndelay"));
-    var_4a995b19cb008113 = getdvarint(hashcat(@"scr_", getgametype(), "_waverespawndelay_alt"));
+    wavedelay_alt = getdvarint(hashcat(@"scr_", getgametype(), "_waverespawndelay_alt"));
     var_26eec74e639ec81d = isdefined(level.respawndelaytype) && level.respawndelaytype == 1;
     if (wavedelay || var_26eec74e639ec81d) {
         if (!var_26eec74e639ec81d) {
@@ -3980,7 +3980,7 @@ function verifydedicatedconfiguration() {
         if (level.rankedmatch) {
             exitlevel(0);
         }
-        if (!getdvarint(@"hash_485ef1ed1d39d3a3")) {
+        if (!getdvarint(@"xblive_privatematch")) {
             exitlevel(0);
         }
         if (getdvar(@"dedicated") != "dedicated LAN server" && getdvar(@"dedicated") != "dedicated internet server") {
@@ -4677,7 +4677,7 @@ function freezeallplayers(delay, var_8c7ca5de1b4ed9a8, var_7e99ec33d27a716e, slo
         player thread freezeplayerforroundend(delay);
         player thread roundenddof(4);
         player freegameplayhudelems();
-        player setclientdvars(@"hash_cc2997fd2acb23e0", 1, @"cg_drawspectatormessages", 0);
+        player setclientdvars(@"cg_everyonehearseveryone", 1, @"cg_drawspectatormessages", 0);
         if (isdefined(var_8c7ca5de1b4ed9a8) && isdefined(var_7e99ec33d27a716e)) {
             if (var_8c7ca5de1b4ed9a8 == @"hash_682a9bc40f96ca4a" && player issplitscreenplayer()) {
                 player setclientdvars(var_8c7ca5de1b4ed9a8, 0.75);
@@ -4800,7 +4800,7 @@ function endgame(winner, endreasontext, endreasontextloss, nukedetonated, var_8e
             return;
         }
     }
-    if (function_8cc09267ba72c7f7() && game["roundsPlayed"] < 1) {
+    if (isMutationGameMode() && game["roundsPlayed"] < 1) {
         winner = "halftime";
     }
     level notify("start_game_ended");
@@ -5867,7 +5867,7 @@ function function_7d6052ee2ccb8d2(winner, endreasontext, endreasontextloss, nuke
             player.pers["match_outcome"] = "tie";
         }
         if (player onlinestatsenabled()) {
-            player setplayerdata(level.var_5d69837cf4db0407, "playerStats", "comparisonSeason", getdvarint(@"hash_71ef9b867531fea1"));
+            player setplayerdata(level.var_5d69837cf4db0407, "playerStats", "comparisonSeason", getdvarint(@"current_season"));
             elapsedtime = int(getsecondspassed());
             foreach (scope in ["lifetimeStats", "seasonalStats"]) {
                 oldval = 0;
@@ -6109,7 +6109,7 @@ function endgame_endgame(winner, endreasontext, endreasontextloss, nukedetonated
             player.pers["match_outcome"] = "tie";
         }
         if (player onlinestatsenabled()) {
-            player setplayerdata(level.var_5d69837cf4db0407, "playerStats", "comparisonSeason", getdvarint(@"hash_71ef9b867531fea1"));
+            player setplayerdata(level.var_5d69837cf4db0407, "playerStats", "comparisonSeason", getdvarint(@"current_season"));
             elapsedtime = int(getsecondspassed());
             foreach (scope in ["lifetimeStats", "seasonalStats"]) {
                 oldval = 0;
@@ -7554,7 +7554,7 @@ function watchforminplayersmatchstart() {
 // Size: 0x40
 function brwatchforminplayersmatchstart() {
     level endon("start_prematch");
-    while (level.players.size < getdvarint(@"hash_faf1db5754891b2d") || istrue(level.devoverridematchstart)) {
+    while (level.players.size < getdvarint(@"br_minplayers") || istrue(level.devoverridematchstart)) {
         waitframe();
     }
     waitframe();
@@ -7683,7 +7683,7 @@ function dev_forcelivelobbystart() {
     foreach (team in level.teamnamelist) {
         scripts\mp\utility\print::teamhudtutorialmessage("MP_INGAME_ONLY/GAME_FORCE_STARTED", team, 10);
     }
-    setdvar(@"hash_faf1db5754891b2d", 1);
+    setdvar(@"br_minplayers", 1);
     setdvar(@"hash_cb2d56d085e5a9b9", 1);
     level notify("start_prematch");
     foreach (button in level.startbuttons) {
@@ -8029,7 +8029,7 @@ function function_af5ab021b625cdf8(inplayer) {
     if (!game["timePassed"]) {
         return;
     }
-    if (!(matchmakinggame() || getdvarint(@"hash_37acf332efd205cc"))) {
+    if (!(matchmakinggame() || getdvarint(@"force_challenges"))) {
         return;
     }
     if (isdefined(level.startofxptime)) {

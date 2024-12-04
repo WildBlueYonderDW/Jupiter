@@ -1,11 +1,11 @@
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_3a246920c9288c4;
-#using scripts\common\utility.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp\cp_outline_utility.gsc;
 #using script_24fbedba9a7a1ef4;
-#using scripts\cp\utility.gsc;
+#using script_371b4c2ab5861e62;
+#using script_3a246920c9288c4;
+#using scripts\common\utility;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_83d0a99a6cf98286;
 
@@ -30,7 +30,7 @@ function pyro_register() {
     /#
         level thread function_e1252da83d53b11d();
     #/
-    level.var_2a75e2a44da2072 = 1;
+    level.pyro_registered = 1;
 }
 
 // Namespace namespace_83d0a99a6cf98286 / namespace_93c3eb17bb66abd3
@@ -89,7 +89,7 @@ function function_b9af1a95f5d7a50b() {
 // Checksum 0x0, Offset: 0x5d2
 // Size: 0x10f
 function function_4108074415abc816() {
-    if (!istrue(level.var_2a75e2a44da2072)) {
+    if (!istrue(level.pyro_registered)) {
         function_b9af1a95f5d7a50b();
     }
     aitype = "enemy_cp_boss_pyro";
@@ -104,7 +104,7 @@ function function_4108074415abc816() {
         boss scripts\common\utility::initweapon(boss.weapon);
     }
     boss.a.weaponpos["right"] = boss.weapon;
-    boss.callbackdamaged = &function_153057a89f66a0f9;
+    boss.callbackdamaged = &pyro_damaged;
     loc = spawnstruct();
     loc.origin = boss.origin;
     loc.angles = (0, 0, 0);
@@ -233,7 +233,7 @@ function function_f040efe2f90b41fb() {
 // Params 13, eflags: 0x0
 // Checksum 0x0, Offset: 0xb24
 // Size: 0x1b1
-function function_153057a89f66a0f9(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
+function pyro_damaged(einflictor, eattacker, idamage, idflags, smeansofdeath, sweapon, vpoint, vdir, shitloc, timeoffset, modelindex, partname, objweapon) {
     if (!istrue(self.var_e6af4ba7cf5cc852) && isdefined(shitloc) && shitloc == "shield") {
         time = gettime();
         if (!isdefined(self.var_e494707422b1cfe6)) {
@@ -297,7 +297,7 @@ function function_96323c515c3294bf() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe63
 // Size: 0x41
-function function_8168a2fff2fee79(icon) {
+function pyro_track(icon) {
     self endon("death");
     while (true) {
         waitframe();
@@ -311,14 +311,14 @@ function function_8168a2fff2fee79(icon) {
 // Checksum 0x0, Offset: 0xeac
 // Size: 0x71
 function function_e63eef21b7acd619() {
-    var_b50d9e77221817c0 = self;
-    if (!isdefined(var_b50d9e77221817c0.var_276ac5e84835ea87)) {
+    pyroBoss = self;
+    if (!isdefined(pyroBoss.fortress)) {
         return;
     }
-    var_b50d9e77221817c0 endon("death");
+    pyroBoss endon("death");
     level endon("game_ended");
     level.var_6acf5c6209798cbf.var_9559116321e7fd23 = 0;
-    var_b50d9e77221817c0.var_276ac5e84835ea87 waittill("barrelExploded");
+    pyroBoss.fortress waittill("barrelExploded");
     level.var_6acf5c6209798cbf.barrelExploded = 1;
     level notify("pyro_interruptLine");
 }

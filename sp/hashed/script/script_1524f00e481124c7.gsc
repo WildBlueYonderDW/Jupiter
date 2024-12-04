@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
 #using script_1e319c7e86c1fd56;
-#using scripts\code\character.gsc;
 #using script_4afd40cb0a6a71ff;
+#using scripts\code\character;
+#using scripts\common\utility;
 
 #namespace namespace_1f60831f63fa2689;
 
@@ -36,7 +36,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "civilian_react";
-    self.voice = #"hash_56d2a75e94b008ce";
+    self.voice = #"unitednationsfemale";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self function_6b0082dec4510b24("bodies_civilian_uk_girl_surge_1", namespace_20d32edfec248f16::main());

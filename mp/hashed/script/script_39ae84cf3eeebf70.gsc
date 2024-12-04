@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_3ed005fe9b78b9da;
-#using scripts\mp\hud_util.gsc;
 #using script_5e2dcb7fb9811781;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace namespace_f46cce884171ed03;
 
@@ -132,8 +132,8 @@ function function_77bab0532bc12f0e() {
             return true;
         }
     }
-    if (scripts\mp\utility\game::function_8cc09267ba72c7f7()) {
-        if (!isdefined(zombie) || !zombie scripts\mp\utility\game::function_6c88a48a9e942c3d()) {
+    if (scripts\mp\utility\game::isMutationGameMode()) {
+        if (!isdefined(zombie) || !zombie scripts\mp\utility\game::isMutationGameModeZombie()) {
             return true;
         }
     }
@@ -304,7 +304,7 @@ function function_58a7c3eb64d82c49() {
             continue;
         }
         data = packdamagedata(self, player, 1, objweapon, "MOD_EXPLOSIVE", self, position);
-        thread function_42a2e5c40023cdb(data, 4);
+        thread empPulse_apply_player(data, 4);
     }
 }
 
@@ -387,23 +387,23 @@ function playerapplyjumpvelocity(angledir, maxjumpvelocity, fraction, startoffse
         yawangles = (0, player_angles[1], 0);
         right = anglestoright(yawangles);
         fwd = vectorcross(ground_normal, right);
-        var_829ceac2f5ec057b = vectortoangles(fwd);
-        ground_pitch = angleclamp180(var_829ceac2f5ec057b[0]);
+        fwd_angles = vectortoangles(fwd);
+        ground_pitch = angleclamp180(fwd_angles[0]);
         min_pitch = -85;
         max_pitch = ground_pitch;
-        var_5a112b1311cf05e5 = player_angles[0];
-        if (var_5a112b1311cf05e5 > ground_pitch) {
-            var_5a112b1311cf05e5 = ground_pitch;
+        player_pitch = player_angles[0];
+        if (player_pitch > ground_pitch) {
+            player_pitch = ground_pitch;
         }
         var_e6bc250926c6d64d = getdvarfloat(@"hash_9ec479015407c245", -45);
         var_e6980f09269e2b33 = getdvarfloat(@"hash_9ee78301542e1ffb", 0);
-        frac = (var_5a112b1311cf05e5 - min_pitch) / (max_pitch - min_pitch);
+        frac = (player_pitch - min_pitch) / (max_pitch - min_pitch);
         var_aee49e405bf58492 = var_e6980f09269e2b33 + frac * (var_e6bc250926c6d64d - var_e6980f09269e2b33);
-        player_angles = (var_5a112b1311cf05e5 + var_aee49e405bf58492, player_angles[1], player_angles[2]);
+        player_angles = (player_pitch + var_aee49e405bf58492, player_angles[1], player_angles[2]);
     }
-    var_179db9acb8f30e85 = getdvarfloat(@"hash_cf56037c34ea141f", 0);
-    if (var_179db9acb8f30e85 != 0) {
-        player_angles = (player_angles[0] + var_179db9acb8f30e85, player_angles[1], player_angles[2]);
+    pitch_add = getdvarfloat(@"hash_cf56037c34ea141f", 0);
+    if (pitch_add != 0) {
+        player_angles = (player_angles[0] + pitch_add, player_angles[1], player_angles[2]);
     }
     dir = anglestoforward(player_angles);
     velocity = dir * fraction * maxjumpvelocity;
@@ -412,8 +412,8 @@ function playerapplyjumpvelocity(angledir, maxjumpvelocity, fraction, startoffse
     var_b9afb0cd7767d692 = getdvarint(@"hash_439104b2c59c3927", 350);
     var_3bd94d9437370541 = getdvarint(@"hash_601ddb2b970335e6", 1.3);
     if (var_53f40d8cc4675af8) {
-        var_5a112b1311cf05e5 = self getplayerangles()[0];
-        if (var_5a112b1311cf05e5 > 5) {
+        player_pitch = self getplayerangles()[0];
+        if (player_pitch > 5) {
             velocity = (velocity[0] * var_3bd94d9437370541, velocity[1] * var_3bd94d9437370541, var_b9afb0cd7767d692);
         }
     }

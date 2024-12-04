@@ -1,7 +1,7 @@
-#using scripts\stealth\manager.gsc;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using scripts\stealth\player.gsc;
+#using scripts\stealth\manager;
+#using scripts\stealth\player;
+#using scripts\stealth\threat_sight;
+#using scripts\stealth\utility;
 
 #namespace init;
 

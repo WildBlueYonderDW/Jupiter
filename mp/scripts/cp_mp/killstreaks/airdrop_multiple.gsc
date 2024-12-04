@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace airdrop_multiple;
 

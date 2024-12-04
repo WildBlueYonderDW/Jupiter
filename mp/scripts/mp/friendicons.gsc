@@ -1,7 +1,7 @@
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\dvars.gsc;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\teams;
 
 #namespace friendicons;
 

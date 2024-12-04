@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_13865ca76df87ea;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
 #using script_189b67b2735b981d;
+#using script_2669878cf5a1b6bc;
 #using script_cbb0697de4c5728;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace juggernaut;
 
@@ -167,8 +167,8 @@ function function_d5974b5f58f14716(bundle, var_89c3fff29839bf2a, blueprintindex)
     var_e426ac0fd477f647 = function_b9ff4b6230995332(var_9b32d1936831f5aa, #"secondaryweapon");
     lethalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_91c3c100f6d2b185");
     tacticalequipmentname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_c2b55f5a6e182854");
-    var_514cd4a1f1acc710 = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_9f0aa6a1f007d51c");
-    var_35d418426dcae761 = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_5cc290cec89c815");
+    lethalEquipmentBlueprintIndex = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_9f0aa6a1f007d51c");
+    tacticalEquipmentBlueprintIndex = function_29e16a88682086b2(var_9b32d1936831f5aa, #"string", #"hash_5cc290cec89c815");
     suitname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"suit", #"suit");
     executionname = function_29e16a88682086b2(var_9b32d1936831f5aa, #"execution", #"execution");
     bodymodel = function_29e16a88682086b2(var_9b32d1936831f5aa, #"xmodel", #"bodymodel");
@@ -195,12 +195,12 @@ function function_d5974b5f58f14716(bundle, var_89c3fff29839bf2a, blueprintindex)
         config.classstruct.loadoutequipmentsecondary = tacticalequipmentname;
     }
     config.classstruct.var_b68e3a0a9c628d23 = 0;
-    if (isdefined(var_514cd4a1f1acc710)) {
-        config.classstruct.var_b68e3a0a9c628d23 = int(var_514cd4a1f1acc710);
+    if (isdefined(lethalEquipmentBlueprintIndex)) {
+        config.classstruct.var_b68e3a0a9c628d23 = int(lethalEquipmentBlueprintIndex);
     }
     config.classstruct.var_a1dfc5ce15795a3 = 0;
-    if (isdefined(var_35d418426dcae761)) {
-        config.classstruct.var_a1dfc5ce15795a3 = int(var_35d418426dcae761);
+    if (isdefined(tacticalEquipmentBlueprintIndex)) {
+        config.classstruct.var_a1dfc5ce15795a3 = int(tacticalEquipmentBlueprintIndex);
     }
     config.execution = executionname;
     config.suit = suitname;

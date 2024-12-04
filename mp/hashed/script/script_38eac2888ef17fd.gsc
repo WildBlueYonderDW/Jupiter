@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
 #using script_3a9930dfe832ae05;
-#using scripts\common\powerups.gsc;
-#using scripts\common\callbacks.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace nuke;
 
@@ -79,9 +79,9 @@ function grab_nuke(str_powerup, ent_powerup, var_e3f071c0be79ecce, var_1c0c48911
     params.player = self;
     callback::callback("on_powerup_nuke_pickup", params);
     if (!isdefined(ai_override)) {
-        function_8b529500146929b8(v_origin, var_97ab608af336843f, str_powerup, var_8d1aa1efbf8b3c6e);
+        nuke_ais(v_origin, var_97ab608af336843f, str_powerup, var_8d1aa1efbf8b3c6e);
     } else {
-        function_8b529500146929b8(v_origin, ai_override, str_powerup, var_8d1aa1efbf8b3c6e);
+        nuke_ais(v_origin, ai_override, str_powerup, var_8d1aa1efbf8b3c6e);
     }
     ent_powerup notify("picked_up");
     level notify("nuke_complete");
@@ -96,7 +96,7 @@ function grab_nuke(str_powerup, ent_powerup, var_e3f071c0be79ecce, var_1c0c48911
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x5fb
 // Size: 0x4e4
-function private function_8b529500146929b8(v_location, a_ais, str_powerup, var_8d1aa1efbf8b3c6e) {
+function private nuke_ais(v_location, a_ais, str_powerup, var_8d1aa1efbf8b3c6e) {
     foreach (ai in a_ais) {
         if (isalive(ai) && !istrue(ai.var_9469c4af69070d96)) {
             ai function_b9fd0ad5dff0ced6(1.5);
@@ -264,9 +264,9 @@ function private function_eb311aca5b70cd9c() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xda2
 // Size: 0x35
-function private function_66f6f1eccfecf8b2(var_806601cbadcdd456) {
+function private function_66f6f1eccfecf8b2(screen_alpha) {
     if (isdefined(self.var_ad173ac833a970d4)) {
-        self.var_ad173ac833a970d4.alpha = clamp(var_806601cbadcdd456, 0, 1);
+        self.var_ad173ac833a970d4.alpha = clamp(screen_alpha, 0, 1);
     }
 }
 

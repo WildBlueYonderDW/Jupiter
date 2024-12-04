@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_a2349c70effd15b3;
 
@@ -32,14 +32,14 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "farah";
-    self.voice = #"hash_29890644b3ac02c1";
+    self.voice = #"fsafemale";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self setmodel("body_c_jup_sp_hero_farah_tundra");
     self attach("c_jup_head_hero_farah_tundra_no_hair", "", 1);
     self.headmodel = "c_jup_head_hero_farah_tundra_no_hair";
     self setclothtype(#"vestlight");
-    self function_8abe5a968cc3c220(#"hash_1a99d5cce68abcfb");
+    self function_8abe5a968cc3c220(#"strapsgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

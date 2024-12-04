@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using script_7ef95bba57dc4b82;
-#using scripts\common\ai.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_371b4c2ab5861e62;
 #using script_7edf952f8921aa6b;
-#using scripts\mp\weapons.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\player.gsc;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\weapons;
 
 #namespace aether_blade;
 
@@ -338,8 +338,8 @@ function private function_22b8784cdb8fd331(params) {
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0xf1f
 // Size: 0xc6
-function private function_d01f4c5bbf6a97ed(var_5387089db3000023, var_4e83f2f535a21158, player_team, last_target) {
-    player_targets = getplayersinradius(var_5387089db3000023.origin, 300, 1000);
+function private function_d01f4c5bbf6a97ed(blade_model, var_4e83f2f535a21158, player_team, last_target) {
+    player_targets = getplayersinradius(blade_model.origin, 300, 1000);
     foreach (target in player_targets) {
         if (is_equal(target.team, player_team) || !scripts\mp\utility\player::isreallyalive(target)) {
             continue;

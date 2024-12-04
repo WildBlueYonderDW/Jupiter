@@ -1,13 +1,13 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\debug_menu.gsc;
-#using scripts\engine\sp\utility_code.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\sp\debug.gsc;
-#using scripts\sp\spawner.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\sp\utility_code;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\debug;
+#using scripts\sp\debug_menu;
+#using scripts\sp\spawner;
+#using scripts\sp\utility;
 
 #namespace namespace_580fff6771a233f2;
 
@@ -19,7 +19,7 @@
     // Size: 0x1f2
     function spawn_ai_mode() {
         dvar = @"hash_5d83147342337f0b";
-        var_a2e41d5c9a7f9258 = @"hash_f6ac786807a5e9cb";
+        dvar_running = @"hash_f6ac786807a5e9cb";
         setdvar(@"hash_bb1a296df27c0f74", 0);
         spawners = getspawnerarray();
         if (spawners.size == 0) {
@@ -41,7 +41,7 @@
         level.debug.spawnaimode = spawnaimode;
         init_spawners();
         thread scripts\sp\debug::debug_cursor(1);
-        setdvar(var_a2e41d5c9a7f9258, 1);
+        setdvar(dvar_running, 1);
         init_menus();
         menu_default();
         while (getdvarint(dvar)) {
@@ -50,12 +50,12 @@
         }
         scripts\sp\debug::give_weapons_back(spawnaimode.storedweapons);
         level.debug.spawnaimode = undefined;
-        var_ca90af847db39b05 = ["<dev string:x5e>"];
-        foreach (menuname in var_ca90af847db39b05) {
+        possible_menus = ["<dev string:x5e>"];
+        foreach (menuname in possible_menus) {
             disable_menu("<dev string:x6b>");
             destroy_menu(menuname);
         }
-        setdvar(var_a2e41d5c9a7f9258, 0);
+        setdvar(dvar_running, 0);
         level notify("<dev string:x78>");
     }
 
@@ -490,11 +490,11 @@ function pick_aitype() {
     hud = menu_get_selected_optionsvalue();
     spawnaimode = level.debug.spawnaimode;
     if (spawnaimode.selectedaitype == "undefined") {
-        var_b8e34feb74a21467 = 12 * (spawnaimode.selectedaitype.size + 1);
+        x_add = 12 * (spawnaimode.selectedaitype.size + 1);
     } else {
-        var_b8e34feb74a21467 = 12 * (spawnaimode.selectedaitype.size - 7);
+        x_add = 12 * (spawnaimode.selectedaitype.size - 7);
     }
-    num = list_menu(spawnaimode.listaitypes, hud.x + var_b8e34feb74a21467, hud.y);
+    num = list_menu(spawnaimode.listaitypes, hud.x + x_add, hud.y);
     if (!isdefined(num)) {
         return undefined;
     }

@@ -1,11 +1,11 @@
-#using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots_gametype_br.gsc;
 #using script_40e63dd222434655;
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_58f20490049af6ac;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace revive_teammate;
 

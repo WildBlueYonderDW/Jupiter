@@ -1,12 +1,12 @@
-#using script_d74ae0b4aa21186;
-#using script_59ff79d681bb860c;
-#using script_40e63dd222434655;
-#using scripts\engine\utility.gsc;
 #using script_37d9a569491ff1e0;
-#using scripts\mp\gamelogic.gsc;
+#using script_40e63dd222434655;
 #using script_4c9bd9a3bf3f8cf7;
 #using script_54a9e44119886147;
-#using scripts\mp\utility\teams.gsc;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\teams;
 
 #namespace combat;
 
@@ -24,7 +24,7 @@ function function_eda57308516bfc5f() {
 // Size: 0x4c8
 function evaluatescore(bot) {
     /#
-        if (getdvar(@"hash_e39c6d129db1722") == "<dev string:x1c>") {
+        if (getdvar(@"bot_notarget") == "<dev string:x1c>") {
             return 0;
         }
     #/
@@ -41,7 +41,7 @@ function evaluatescore(bot) {
     }
     foreach (player in nearbyevent.result) {
         /#
-            if (!isai(player) && getdvar(@"hash_e39c6d129db1722") == "<dev string:x23>") {
+            if (!isai(player) && getdvar(@"bot_notarget") == "<dev string:x23>") {
                 continue;
             }
         #/

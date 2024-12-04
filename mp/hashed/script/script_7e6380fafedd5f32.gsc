@@ -1,27 +1,27 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\gametypes\br_ending.gsc;
-#using script_40f4c8f2b94c5cd9;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_1fc2350d8aebb68e;
-#using script_f4678c9c2a5b24e;
+#using script_40f4c8f2b94c5cd9;
 #using script_4803cd619738232c;
-#using script_72d25fb2b703b6d5;
-#using scripts\mp\dev.gsc;
 #using script_6775ad452d13858;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\gamelogic.gsc;
 #using script_6ad351ebd5a33280;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\outofbounds.gsc;
+#using script_72d25fb2b703b6d5;
+#using script_f4678c9c2a5b24e;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\dev;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_ending;
+#using scripts\mp\outofbounds;
+#using scripts\mp\teams;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_bc2bdb06de29485d;
 
@@ -308,7 +308,7 @@ function private function_2845c7aff5b6d7b6(type) {
             if (self fragbuttonpressed()) {
                 if (isdefined(level.var_59d3ce664628caf4.var_9709609a00e4c585)) {
                     origin = level.var_59d3ce664628caf4.var_9709609a00e4c585.origin;
-                    angles = level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34;
+                    angles = level.var_59d3ce664628caf4.cursor_ang;
                     function_83f63b509c56f86c();
                     function_ce2d34095221c720();
                     level.var_59d3ce664628caf4.var_9709609a00e4c585.origin = origin;
@@ -597,7 +597,7 @@ function private function_2845c7aff5b6d7b6(type) {
         } else {
             animstruct = spawnstruct();
             animstruct.origin = level.var_59d3ce664628caf4.cursor_pos;
-            animstruct.angles = level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34;
+            animstruct.angles = level.var_59d3ce664628caf4.cursor_ang;
         }
         animstruct.pack = spawnstruct();
         animstruct.pack.models = [];
@@ -796,7 +796,7 @@ function private function_2845c7aff5b6d7b6(type) {
         level.var_59d3ce664628caf4.var_563a1ce3c161c5db = 0;
         level.var_59d3ce664628caf4.var_15042a5b64d3849c = 0;
         level.var_59d3ce664628caf4.cursor_pos = self.origin;
-        level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34 = self.angles;
+        level.var_59d3ce664628caf4.cursor_ang = self.angles;
         level.var_59d3ce664628caf4.cursor_highlight = undefined;
         var_c5409ca7522182b3 = 500000;
         var_5adc3ff44d7a1b85 = var_c5409ca7522182b3 * 0.8;
@@ -809,7 +809,7 @@ function private function_2845c7aff5b6d7b6(type) {
             waitframe();
             update_cursor();
             level.var_59d3ce664628caf4.cursor_pos += (0, 0, level.var_59d3ce664628caf4.var_15042a5b64d3849c);
-            level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34 = angleclamp180(self.angles + (0, level.var_59d3ce664628caf4.var_563a1ce3c161c5db, 0));
+            level.var_59d3ce664628caf4.cursor_ang = angleclamp180(self.angles + (0, level.var_59d3ce664628caf4.var_563a1ce3c161c5db, 0));
             level.var_59d3ce664628caf4.cursor_highlight = undefined;
             foreach (index, struct in level.var_59d3ce664628caf4.var_1c589f8f06d81b70) {
                 distsqrd = distance2dsquared(level.players[0].origin, struct.origin);
@@ -817,7 +817,7 @@ function private function_2845c7aff5b6d7b6(type) {
                     if (!isdefined(level.var_59d3ce664628caf4.cursor_highlight) && distance2dsquared(struct.origin, level.var_59d3ce664628caf4.cursor_pos) < 40000) {
                         level.var_59d3ce664628caf4.cursor_highlight = struct;
                         level.var_59d3ce664628caf4.cursor_pos = struct.origin;
-                        level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34 = struct.angles;
+                        level.var_59d3ce664628caf4.cursor_ang = struct.angles;
                         continue;
                     }
                     alpha = 1;
@@ -839,7 +839,7 @@ function private function_2845c7aff5b6d7b6(type) {
             }
             if (isdefined(level.var_59d3ce664628caf4.var_9709609a00e4c585)) {
                 draw_node(level.var_59d3ce664628caf4.var_9709609a00e4c585.origin, level.var_59d3ce664628caf4.var_9709609a00e4c585.angles, (1, 1, 0), 16, 0.8);
-                draw_node(level.var_59d3ce664628caf4.var_9709609a00e4c585.origin, level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34, (0.1, 0.9, 0.1), 16, 0.97);
+                draw_node(level.var_59d3ce664628caf4.var_9709609a00e4c585.origin, level.var_59d3ce664628caf4.cursor_ang, (0.1, 0.9, 0.1), 16, 0.97);
                 continue;
             }
             function_c1296c6ad87a8500();
@@ -881,7 +881,7 @@ function private function_2845c7aff5b6d7b6(type) {
     // Size: 0x25f
     function function_75f7d0af300ea72a() {
         if (!isdefined(level.var_59d3ce664628caf4.collision_tests)) {
-            draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34, (1, 1, 0), 16);
+            draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.cursor_ang, (1, 1, 0), 16);
             return;
         }
         color = (1, 1, 0);
@@ -889,8 +889,8 @@ function private function_2845c7aff5b6d7b6(type) {
             if (isdefined(test.argstruct.numsegments)) {
                 continue;
             }
-            origin = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.origin, level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34);
-            angles = combineangles(level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34, test.angles);
+            origin = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.origin, level.var_59d3ce664628caf4.cursor_ang);
+            angles = combineangles(level.var_59d3ce664628caf4.cursor_ang, test.angles);
             if (isdefined(test.argstruct.originoffset)) {
                 origin += test.argstruct.originoffset;
             }
@@ -905,7 +905,7 @@ function private function_2845c7aff5b6d7b6(type) {
                 sphere(origin, sphereradius, color);
             }
         }
-        draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34, color, 16);
+        draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.cursor_ang, color, 16);
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
@@ -914,7 +914,7 @@ function private function_2845c7aff5b6d7b6(type) {
     // Size: 0x466
     function function_c1296c6ad87a8500() {
         if (!isdefined(level.var_59d3ce664628caf4.collision_tests)) {
-            draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34, (0.8, 0.8, 0.8), 16);
+            draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.cursor_ang, (0.8, 0.8, 0.8), 16);
             return;
         }
         okcolor = (0.8, 0.8, 0.8);
@@ -926,16 +926,16 @@ function private function_2845c7aff5b6d7b6(type) {
         angles = undefined;
         foreach (test in level.var_59d3ce664628caf4.collision_tests) {
             if (!isdefined(test.argstruct.numsegments)) {
-                origin = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.origin, level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34);
-                angles = combineangles(level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34, test.angles);
+                origin = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.origin, level.var_59d3ce664628caf4.cursor_ang);
+                angles = combineangles(level.var_59d3ce664628caf4.cursor_ang, test.angles);
                 if (isdefined(test.argstruct.originoffset)) {
                     origin += test.argstruct.originoffset;
                 }
             }
             if (isdefined(test.argstruct.numsegments)) {
                 for (i = 0; i < test.path.size - 1; i++) {
-                    origin = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.path[i], level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34);
-                    origin2 = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.path[i + 1], level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34);
+                    origin = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.path[i], level.var_59d3ce664628caf4.cursor_ang);
+                    origin2 = level.var_59d3ce664628caf4.cursor_pos + rotatevector(test.path[i + 1], level.var_59d3ce664628caf4.cursor_ang);
                     line(origin, origin2, (1, 1, 1), 1, 1);
                 }
                 continue;
@@ -963,7 +963,7 @@ function private function_2845c7aff5b6d7b6(type) {
                 sphere(origin, sphereradius, badcolor);
             }
         }
-        draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.var_6ef3ac9a0c3d9f34, (0.8, 0.8, 0.8), 16);
+        draw_node(level.var_59d3ce664628caf4.cursor_pos, level.var_59d3ce664628caf4.cursor_ang, (0.8, 0.8, 0.8), 16);
     }
 
     // Namespace namespace_bc2bdb06de29485d / namespace_db13b5d5ab9bfe9c
@@ -1012,10 +1012,10 @@ function private function_2845c7aff5b6d7b6(type) {
             }
             waitframe();
         }
-        setdvarifuninitialized(@"hash_803d18a7732cb24b", points.size / 4);
+        setdvarifuninitialized(@"print3d_throttle", points.size / 4);
         setdvarifuninitialized(@"hash_ef8fb66dfac2f050", 5);
         while (true) {
-            var_327957576570ece5 = getdvarint(@"hash_803d18a7732cb24b");
+            var_327957576570ece5 = getdvarint(@"print3d_throttle");
             drawcount = 0;
             foreach (point in points) {
                 inrange = 0;

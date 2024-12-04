@@ -1,8 +1,8 @@
-#using script_d74ae0b4aa21186;
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
 #using script_47366beb5ba9fa22;
-#using scripts\mp\bots\bots_gametype_common.gsc;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
 
 #namespace capture_hardpoint;
 

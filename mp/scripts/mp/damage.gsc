@@ -1,128 +1,128 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\riotshield.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\mp\perks\weaponpassives.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
+#using script_10ad6174c8938599;
+#using script_14d3930854cb398c;
+#using script_15eddb0fac236a22;
+#using script_189b67b2735b981d;
+#using script_19fd5b5d73d44c18;
+#using script_1f97a44d1761c919;
 #using script_2669878cf5a1b6bc;
+#using script_32c2f4a699e57e1e;
+#using script_3583ff375ab3a91e;
+#using script_372301af73968cb;
+#using script_3ef6c4fbba18bfa4;
+#using script_46fdf7b12c5f5620;
+#using script_4a6760982b403bad;
+#using script_52d91cb28006a5bd;
+#using script_548072087c9fd504;
+#using script_556b8aeaa691317f;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\dragonsbreath.gsc;
+#using script_5bc60484d17fa95c;
+#using script_600b944a95c3a7bf;
+#using script_63634d9fa080435a;
+#using script_67015c88c47ec4f8;
+#using script_6a5d3bf7a5b7064a;
+#using script_6cb0280f7aa7d3cd;
+#using script_6d68cfdf0836123c;
+#using script_6e2bb9330396afcb;
+#using script_74b851b7aa1ef32d;
 #using script_7c40fa80892a721;
 #using script_b0385bb45379222;
-#using script_46fdf7b12c5f5620;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\meatshield.gsc;
-#using script_556b8aeaa691317f;
-#using scripts\mp\cranked.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\cp_mp\crossbow.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using script_52d91cb28006a5bd;
-#using scripts\cp_mp\equipment\throwing_knife.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\potg_events.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using script_19fd5b5d73d44c18;
-#using scripts\mp\shellshock.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\perks\perk_mark_targets.gsc;
-#using script_5bc60484d17fa95c;
-#using scripts\mp\class.gsc;
-#using scripts\mp\gametypes\br_jugg_common.gsc;
-#using scripts\mp\perks\headgear.gsc;
-#using scripts\mp\equipment\trophy_system.gsc;
-#using scripts\mp\heavyarmor.gsc;
-#using scripts\mp\lightarmor.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\juggernaut.gsc;
-#using script_6a5d3bf7a5b7064a;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\mp\equipment\claymore.gsc;
-#using scripts\mp\equipment\at_mine.gsc;
-#using script_10ad6174c8938599;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\events.gsc;
-#using script_15eddb0fac236a22;
-#using script_4a6760982b403bad;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\outline.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\equipment\throwing_knife_mp.gsc;
-#using scripts\cp_mp\pet_watch.gsc;
-#using scripts\mp\equipment\nvg.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\equipment\wristrocket.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\teamrevive.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\bounty.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\outofbounds.gsc;
 #using script_cbb0697de4c5728;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\mp\deathicons.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using script_3583ff375ab3a91e;
-#using scripts\mp\killcam.gsc;
-#using scripts\mp\final_killcam.gsc;
-#using scripts\mp\spawncamera.gsc;
-#using scripts\mp\teams.gsc;
-#using script_548072087c9fd504;
-#using scripts\mp\weaponrank.gsc;
-#using scripts\mp\equipment\binoculars.gsc;
-#using script_1f97a44d1761c919;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using script_74b851b7aa1ef32d;
-#using scripts\cp_mp\gestures.gsc;
-#using script_600b944a95c3a7bf;
-#using script_32c2f4a699e57e1e;
-#using script_67015c88c47ec4f8;
-#using script_372301af73968cb;
-#using script_6cb0280f7aa7d3cd;
-#using script_6e2bb9330396afcb;
-#using script_3ef6c4fbba18bfa4;
-#using script_63634d9fa080435a;
-#using scripts\mp\damage.gsc;
-#using script_14d3930854cb398c;
-#using script_189b67b2735b981d;
-#using scripts\mp\gametypes\war.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using script_6d68cfdf0836123c;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\crossbow;
+#using scripts\cp_mp\dragonsbreath;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\equipment\throwing_knife;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\bounty;
+#using scripts\mp\class;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\cranked;
+#using scripts\mp\damage;
+#using scripts\mp\deathicons;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\at_mine;
+#using scripts\mp\equipment\binoculars;
+#using scripts\mp\equipment\claymore;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\equipment\nvg;
+#using scripts\mp\equipment\throwing_knife_mp;
+#using scripts\mp\equipment\trophy_system;
+#using scripts\mp\equipment\wristrocket;
+#using scripts\mp\events;
+#using scripts\mp\final_killcam;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_jugg_common;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\war;
+#using scripts\mp\heavyarmor;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\juggernaut;
+#using scripts\mp\killcam;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\laststand;
+#using scripts\mp\lightarmor;
+#using scripts\mp\meatshield;
+#using scripts\mp\outline;
+#using scripts\mp\outofbounds;
+#using scripts\mp\perks\headgear;
+#using scripts\mp\perks\perk_mark_targets;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\perks\perks;
+#using scripts\mp\perks\weaponpassives;
+#using scripts\mp\persistence;
+#using scripts\mp\playerlogic;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\potg_events;
+#using scripts\mp\rank;
+#using scripts\mp\riotshield;
+#using scripts\mp\shellshock;
+#using scripts\mp\spawncamera;
+#using scripts\mp\supers;
+#using scripts\mp\teamrevive;
+#using scripts\mp\teams;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weaponrank;
+#using scripts\mp\weapons;
 
 #namespace damage;
 
@@ -680,7 +680,7 @@ function postplayerdamaged(einflictor, eattacker, victim, idamage, idflags, smea
             var_a5269902cd18ca05 = isdefined(objweapon) && objweapon.basename == "safe_c4_mp";
             isgas = isdefined(objweapon) && objweapon.basename == "gas_mp";
             if (!isdefined(objweapon) || !isgas && !var_a5269902cd18ca05) {
-                level thread battlechatter_mp::trysaylocalsound(victim, #"hash_cafa7ad7442c35d5", undefined, 0.5);
+                level thread battlechatter_mp::trysaylocalsound(victim, #"bc_flavor_player_surprise", undefined, 0.5);
             }
         }
     }
@@ -1765,7 +1765,7 @@ function handlefriendlyfiredamage(einflictor, eattacker, victim, idamage, idflag
     }
     if (isdefined(objweapon)) {
         if (utility::isbulletdamage(smeansofdeath) && (weapon::iscacprimaryweapon(objweapon.basename) || weapon::iscacsecondaryweapon(objweapon.basename)) && !super_stimpistol::function_76ca0b3d8b2555ca(objweapon)) {
-            level thread battlechatter_mp::trysaylocalsound(victim, #"hash_2a23c8694884293e", undefined, 0.25);
+            level thread battlechatter_mp::trysaylocalsound(victim, #"bc_combat_inform_check_fire_ally", undefined, 0.25);
         }
         if (super_stimpistol::function_76ca0b3d8b2555ca(objweapon)) {
             return 0;
@@ -1978,7 +1978,7 @@ function modifyfalldamage(victim, idamage, idflags, smeansofdeath) {
             modifieddamage = 0;
         } else if (idflags & 32768 && modifieddamage >= victim.health) {
             modifieddamage = victim.health - 1;
-        } else if (victim function_6c88a48a9e942c3d()) {
+        } else if (victim isMutationGameModeZombie()) {
             if (victim function_f3bb4f4911a1beb2("game", "hasMutationModePerk02")) {
                 victim function_f3bb4f4911a1beb2("game", "activateMutationModePerk02");
             }
@@ -2158,11 +2158,11 @@ function function_49f3d4de0e352093(inflictor, attacker, victim, objweapon, smean
         modifieddamage = claymore::claymore_modifieddamage(victim, objweapon, inflictor, smeansofdeath, modifieddamage);
         modifieddamage = at_mine::at_mine_modified_damage(victim, inflictor, objweapon, smeansofdeath, modifieddamage);
         modifieddamage = cluster_spike::function_723aa6329b751bc7(victim, inflictor, objweapon, smeansofdeath, modifieddamage);
-        if (function_8cc09267ba72c7f7() && attacker function_f3bb4f4911a1beb2("game", "hasMutationModePerk02") && isdefined(objweapon) && isdefined(objweapon.basename) && objweapon.basename == "jup_mutant_leap_emp_impact_mp" && istrue(objweapon.var_f08578daebccf4a2)) {
+        if (isMutationGameMode() && attacker function_f3bb4f4911a1beb2("game", "hasMutationModePerk02") && isdefined(objweapon) && isdefined(objweapon.basename) && objweapon.basename == "jup_mutant_leap_emp_impact_mp" && istrue(objweapon.var_f08578daebccf4a2)) {
             modifieddamage *= getdvarfloat(@"hash_2c41f83a90ac7dcf", 1);
         }
-        if (issharedfuncdefined(#"hash_3e1f3a354ee4ffcb", #"modifydamage", 1)) {
-            modifieddamage = [[ getsharedfunc(#"hash_3e1f3a354ee4ffcb", #"modifydamage") ]](victim, inflictor, objweapon, smeansofdeath, modifieddamage);
+        if (issharedfuncdefined(#"super_landmine", #"modifydamage", 1)) {
+            modifieddamage = [[ getsharedfunc(#"super_landmine", #"modifydamage") ]](victim, inflictor, objweapon, smeansofdeath, modifieddamage);
         }
         if (isdefined(objweapon) && isdefined(objweapon.basename)) {
             switch (objweapon.basename) {
@@ -2364,15 +2364,15 @@ function modifydamagegeneral(einflictor, eattacker, victim, idamage, idflags, sm
             idamage = 150;
         }
     }
-    if (isdefined(eattacker) && eattacker function_6c88a48a9e942c3d() && isdefined(objweapon) && isdefined(objweapon.basename) && objweapon.basename == "jup_mutant_leap_impact_mp" && istrue(eattacker.var_f56a71aaddbdd434) && !istrue(objweapon.var_f08578daebccf4a2)) {
+    if (isdefined(eattacker) && eattacker isMutationGameModeZombie() && isdefined(objweapon) && isdefined(objweapon.basename) && objweapon.basename == "jup_mutant_leap_impact_mp" && istrue(eattacker.var_f56a71aaddbdd434) && !istrue(objweapon.var_f08578daebccf4a2)) {
         var_67e9622d1fd32306 = getdvarint(@"hash_37ef7e0a0085a948", 100);
         idamage = int(clamp(idamage, 0, var_67e9622d1fd32306));
     }
     var_1686068dab6149a3 = objweapon.basename == "jup_jp23_me_spear_mp" && !eattacker isalternatemode("jup_jp23_me_spear_mp", 0, 0);
     if ((objweapon.basename == "throwingknife_mp" || var_1686068dab6149a3) && isbrstylegametype()) {
-        var_c00a2c6249962d83 = scripts\mp\equipment\throwing_knife_mp::function_4d6d6bc790611975(eattacker, einflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, unmodifieddamage, partname, var_1da1a66b5c6a06a7);
-        var_1da1a66b5c6a06a7 = var_c00a2c6249962d83[1];
-        idamage = var_c00a2c6249962d83[0];
+        __a10 = scripts\mp\equipment\throwing_knife_mp::function_4d6d6bc790611975(eattacker, einflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, unmodifieddamage, partname, var_1da1a66b5c6a06a7);
+        var_1da1a66b5c6a06a7 = __a10[1];
+        idamage = __a10[0];
     }
     if (utility::issharedfuncdefined("helmet", "modifyHelmetDamage")) {
         var_c00a2b6249962b50 = utility::function_f3bb4f4911a1beb2("helmet", "modifyHelmetDamage", eattacker, victim, idamage, var_1da1a66b5c6a06a7, objweapon, shitloc, partname, smeansofdeath);
@@ -3342,7 +3342,7 @@ function playerkilled_sharedlogic_early(deathdata) {
     }
     if (meansofdeath == "MOD_EXECUTION") {
         attacker stats::incpersstat("executionKills", 1);
-        level thread battlechatter_mp::trysaylocalsound(attacker, #"hash_197b54b4d0e467b7", undefined, 1);
+        level thread battlechatter_mp::trysaylocalsound(attacker, #"bc_combat_action_execution", undefined, 1);
     }
     if (victim scripts\mp\damage::playerkilled_washitbyvehicle(meansofdeath, inflictor)) {
         inflictor notify("vehicle_killed_player");
@@ -4280,7 +4280,7 @@ function playerkilled_spawn(deathdata) {
     }
     victim.wantsafespawn = 0;
     if (getdvarint(@"hash_4753586a2ac8718f", 0) == 1) {
-        victim function_81494b12b25864c4(1);
+        victim adjustVoxelHead(1);
     }
     if (game["state"] != "playing") {
         if (!level.showingfinalkillcam) {
@@ -4904,7 +4904,7 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
         if (wassniper) {
             level thread battlechatter_mp::trysaylocalsound(attacker, #"hash_2ee580bbe139941a", undefined, 0.75);
         } else {
-            level thread battlechatter_mp::trysaylocalsound(attacker, #"hash_29c83d721f765ab4", undefined, 0.75);
+            level thread battlechatter_mp::trysaylocalsound(attacker, #"bc_combat_killfirm_infantry", undefined, 0.75);
         }
     }
     vocallout = undefined;
@@ -5133,7 +5133,7 @@ function handlenormaldeath(lifeid, attacker, einflictor, objweapon, smeansofdeat
         }
     }
     if (getdvarint(@"hash_4753586a2ac8718f", 0) == 1) {
-        attacker function_81494b12b25864c4();
+        attacker adjustVoxelHead();
     }
 }
 
@@ -5157,7 +5157,7 @@ function private function_72a7592cd2fc0b9a(var_6c4d477832b37636) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13d68
 // Size: 0x195
-function function_81494b12b25864c4(var_a9351fa416d5d33f) {
+function adjustVoxelHead(var_a9351fa416d5d33f) {
     var_6c4d477832b37636 = 0;
     head = self.operatorcustomization.head;
     if (istrue(var_a9351fa416d5d33f)) {
@@ -5170,8 +5170,8 @@ function function_81494b12b25864c4(var_a9351fa416d5d33f) {
             head = getsubstr(head, 0, head.size - 1) + "b";
             var_6c4d477832b37636 = 2;
             self playsoundtoplayer("mp_jup_voxel_medium_head", self);
-            var_f9d66139430f5bb9 = getsubstr(head, 0, head.size - 1) + "c";
-            self loadcustomization(self.operatorcustomization.body, var_f9d66139430f5bb9);
+            head_c = getsubstr(head, 0, head.size - 1) + "c";
+            self loadcustomization(self.operatorcustomization.body, head_c);
         } else if (lastcharacter == "b") {
             head = getsubstr(head, 0, head.size - 1) + "c";
             var_6c4d477832b37636 = 3;
@@ -5725,7 +5725,7 @@ function finishplayerdamagewrapper(einflictor, eattacker, idamage, idflags, smea
             if (!isdefined(self.var_9691e7d8cde294f2)) {
                 self.var_9691e7d8cde294f2 = gettime();
             }
-            if (game_utility::isteamreviveenabled() && !function_6c88a48a9e942c3d() && istrue(level.liveRagdollRevive) && idamage >= self.health && !laststand::function_27d0ea02ed3cc35f(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, 500) && (!istrue(level.var_46c429e667d32f63) || istrue(teams::getteamdata(self.team, "noRespawns")))) {
+            if (game_utility::isteamreviveenabled() && !isMutationGameModeZombie() && istrue(level.liveRagdollRevive) && idamage >= self.health && !laststand::function_27d0ea02ed3cc35f(einflictor, eattacker, idamage, smeansofdeath, objweapon, vdir, shitloc, psoffsettime, 500) && (!istrue(level.var_46c429e667d32f63) || istrue(teams::getteamdata(self.team, "noRespawns")))) {
                 if (istrue(self.inlaststand)) {
                     self laststandrevive();
                 }
@@ -6203,9 +6203,9 @@ function gamemodemodifyplayerdamage(einflictor, victim, eattacker, idamage, smea
                         if (!isplayer(eattacker) || !isplayer(victim)) {
                             return 0;
                         }
-                        var_cb116ac8aa94ce55 = victim getplayerangles();
-                        var_524b19d2034e1406 = eattacker getplayerangles();
-                        anglediff = angleclamp180(var_cb116ac8aa94ce55[1] - var_524b19d2034e1406[1]);
+                        victimangles = victim getplayerangles();
+                        attackerangles = eattacker getplayerangles();
+                        anglediff = angleclamp180(victimangles[1] - attackerangles[1]);
                         if (abs(anglediff) < var_e87fbcd39de22d1b) {
                             idamage *= 0.3;
                         }

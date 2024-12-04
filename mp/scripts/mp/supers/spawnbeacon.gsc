@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\damage.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\weapons.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\engine\utility;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace spawnbeacon;
 

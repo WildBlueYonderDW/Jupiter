@@ -1,9 +1,9 @@
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_compass.gsc;
+#using scripts\cp\cp_compass;
+#using scripts\cp_mp\utility\game_utility;
 
-#namespace namespace_e82651f6ba846c65;
+#namespace cp_compass;
 
-// Namespace namespace_e82651f6ba846c65 / scripts\cp\cp_compass
+// Namespace cp_compass / scripts\cp\cp_compass
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x887
@@ -163,31 +163,31 @@ function setupminimap(material, var_3b70dd7d0d5b9a8, force) {
     setminimap(material, northwest[0], northwest[1], southeast[0], southeast[1], var_3b70dd7d0d5b9a8);
 }
 
-// Namespace namespace_e82651f6ba846c65 / scripts\cp\cp_compass
+// Namespace cp_compass / scripts\cp\cp_compass
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa83
 // Size: 0xde
 function function_ca4665b0582ee426(var_cd27fd453a6003ce) {
-    var_9bc34fdad3807c9a = var_cd27fd453a6003ce[0].var_85080a73a3121271;
-    var_a889592cddffaf10 = var_cd27fd453a6003ce[0].var_85080a73a3121271;
-    foreach (var_86b47b6dee322bda in var_cd27fd453a6003ce) {
-        floor = var_86b47b6dee322bda.var_85080a73a3121271;
-        if (floor < var_9bc34fdad3807c9a) {
-            var_9bc34fdad3807c9a = floor;
+    min_floor = var_cd27fd453a6003ce[0].var_85080a73a3121271;
+    max_floor = var_cd27fd453a6003ce[0].var_85080a73a3121271;
+    foreach (floor_trigger in var_cd27fd453a6003ce) {
+        floor = floor_trigger.var_85080a73a3121271;
+        if (floor < min_floor) {
+            min_floor = floor;
             continue;
         }
-        if (floor > var_a889592cddffaf10) {
-            var_a889592cddffaf10 = floor;
+        if (floor > max_floor) {
+            max_floor = floor;
         }
     }
     self.var_109a3bfd035f27be = 0;
     self.var_7f574731fa72c7af = 0;
-    self setclientomnvar("ui_minimap_min_floor", var_9bc34fdad3807c9a);
-    self setclientomnvar("ui_minimap_max_floor", var_a889592cddffaf10);
+    self setclientomnvar("ui_minimap_min_floor", min_floor);
+    self setclientomnvar("ui_minimap_max_floor", max_floor);
     thread function_50e3344114aedeee();
 }
 
-// Namespace namespace_e82651f6ba846c65 / scripts\cp\cp_compass
+// Namespace cp_compass / scripts\cp\cp_compass
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb69
 // Size: 0x62
@@ -199,7 +199,7 @@ function function_fb7bad834ce4b28c(floornumber) {
     scripts\cp\cp_compass::setupminimap(minimap_image);
 }
 
-// Namespace namespace_e82651f6ba846c65 / scripts\cp\cp_compass
+// Namespace cp_compass / scripts\cp\cp_compass
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbd3
 // Size: 0x99
@@ -222,7 +222,7 @@ function function_50e3344114aedeee() {
     }
 }
 
-// Namespace namespace_e82651f6ba846c65 / scripts\cp\cp_compass
+// Namespace cp_compass / scripts\cp\cp_compass
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc74
 // Size: 0x211
@@ -266,7 +266,7 @@ function setupminimapmaze(material, corners, requiredmapaspectratio) {
     setminimapcpraidmaze(material, northwest[0], northwest[1], southeast[0], southeast[1]);
 }
 
-// Namespace namespace_e82651f6ba846c65 / scripts\cp\cp_compass
+// Namespace cp_compass / scripts\cp\cp_compass
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe8d
 // Size: 0x25
@@ -274,7 +274,7 @@ function vecscale(vec, scalar) {
     return (vec[0] * scalar, vec[1] * scalar, vec[2] * scalar);
 }
 
-// Namespace namespace_e82651f6ba846c65 / scripts\cp\cp_compass
+// Namespace cp_compass / scripts\cp\cp_compass
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xebb
 // Size: 0x110

@@ -1,6 +1,6 @@
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\utility\game;
 
 #namespace namespace_438781effce634d4;
 

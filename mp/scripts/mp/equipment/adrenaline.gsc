@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using script_189b67b2735b981d;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_1174abedbefe9ada;
+#using script_189b67b2735b981d;
 #using script_74b851b7aa1ef32d;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\supers\super_deadsilence.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gamelogic;
+#using scripts\mp\supers\super_deadsilence;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\weapons;
 
 #namespace adrenaline;
 

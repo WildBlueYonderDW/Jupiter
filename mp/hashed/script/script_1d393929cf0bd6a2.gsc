@@ -1,25 +1,25 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\loot.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using script_48614492ef09b23;
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\gametypes\br.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_2d9d24f7c63ac143;
-#using script_6fc415ff6a905dc1;
+#using script_48614492ef09b23;
 #using script_600b944a95c3a7bf;
 #using script_6a8ec730b2bfa844;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_6fc415ff6a905dc1;
 #using script_74b851b7aa1ef32d;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\hud_message;
+#using scripts\mp\loot;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
 
 #namespace balloon_extract;
 
@@ -305,7 +305,7 @@ function function_cbca59c109ae17af(itemtype, itemindex) {
         lootid = namespace_e0ee43ef2dddadaa::function_79d6e6c22245687a(rootname, variantid);
         return [lootid, 1, var_ec22a950f210e39];
     case 10:
-        lootid = namespace_aead94004cf4c147::function_6196d9ea9a30e609(itemindex);
+        lootid = namespace_aead94004cf4c147::getLootIDAtBackpackIndex(itemindex);
         quantity = 1;
         if (scripts\mp\gametypes\br_pickups::function_d345eec68e01361f(lootid)) {
             quantity = namespace_aead94004cf4c147::function_897b29adb37f06a7(itemindex);
@@ -394,10 +394,10 @@ function function_6de1128240216723(itemtype, lootid) {
 // Checksum 0x0, Offset: 0x1464
 // Size: 0x9e
 function function_f71f8470e2fb527c(player) {
-    var_ccc0df5641a7616b = namespace_aead94004cf4c147::function_b13e35608b336d65(player);
+    var_ccc0df5641a7616b = namespace_aead94004cf4c147::getPlayerBackpackSize(player);
     var_bb778d2be7708cfc = 0;
     for (i = 0; i < var_ccc0df5641a7616b; i++) {
-        slotlootid = player namespace_aead94004cf4c147::function_6196d9ea9a30e609(i);
+        slotlootid = player namespace_aead94004cf4c147::getLootIDAtBackpackIndex(i);
         if (!isdefined(slotlootid)) {
             continue;
         }

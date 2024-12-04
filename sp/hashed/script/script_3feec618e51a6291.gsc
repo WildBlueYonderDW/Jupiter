@@ -1,9 +1,9 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\cp_checkpoint.gsc;
 #using script_467f0fdfdd155a45;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_checkpoint;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace starts;
 
@@ -39,11 +39,11 @@ function do_starts() {
 // Checksum 0x0, Offset: 0x2e7
 // Size: 0x92
 function add_no_game_starts() {
-    var_66ab67677b93dd3d = getentarray("script_origin_start_nogame", "classname");
-    if (!var_66ab67677b93dd3d.size) {
+    start_spots = getentarray("script_origin_start_nogame", "classname");
+    if (!start_spots.size) {
         return;
     }
-    foreach (spot in var_66ab67677b93dd3d) {
+    foreach (spot in start_spots) {
         if (!isdefined(spot.script_startname)) {
             continue;
         }
@@ -123,8 +123,8 @@ function display_starts() {
     strings = [];
     for (i = 0; i < dvars.size; i++) {
         dvar = dvars[i];
-        var_16ee78be2c1e34b5 = "[" + dvars[i] + "]";
-        strings[strings.size] = var_16ee78be2c1e34b5;
+        start_string = "[" + dvars[i] + "]";
+        strings[strings.size] = start_string;
     }
     selected = dvars.size - 1;
     up_pressed = 0;
@@ -326,24 +326,24 @@ function handle_starts() {
     while (!isdefined(level.player)) {
         waitframe();
     }
-    if (scripts\cp\cp_checkpoint::function_c506f6b5c63e776c() && is_default_start()) {
+    if (scripts\cp\cp_checkpoint::checkpoint_isset() && is_default_start()) {
         /#
             announcement("<dev string:x1c>");
         #/
         return;
     }
-    var_d1c6381e96d14169 = level.start_arrays[level.start_point];
+    start_array = level.start_arrays[level.start_point];
     if (level.start_point == "default") {
         if (isdefined(level.default_start)) {
             level thread [[ level.default_start ]]();
         }
     } else {
-        var_d1c6381e96d14169 = level.start_arrays[level.start_point];
+        start_array = level.start_arrays[level.start_point];
         /#
             thread indicate_start(level.start_point);
         #/
-        if (isdefined(var_d1c6381e96d14169["start_func"])) {
-            thread [[ var_d1c6381e96d14169["start_func"] ]]();
+        if (isdefined(start_array["start_func"])) {
+            thread [[ start_array["start_func"] ]]();
         }
     }
     if (is_default_start()) {
@@ -359,14 +359,14 @@ function handle_starts() {
     if (!is_default_start() && level.start_point != "no_game") {
         time = gettime();
         for (i = 0; i < level.start_functions.size; i++) {
-            var_d1c6381e96d14169 = level.start_functions[i];
-            if (var_d1c6381e96d14169["name"] == level.start_point) {
+            start_array = level.start_functions[i];
+            if (start_array["name"] == level.start_point) {
                 break;
             }
-            if (!isdefined(var_d1c6381e96d14169["catchup_function"])) {
+            if (!isdefined(start_array["catchup_function"])) {
                 continue;
             }
-            [[ var_d1c6381e96d14169["catchup_function"] ]]();
+            [[ start_array["catchup_function"] ]]();
         }
         assertex(time == gettime(), "time should not pass in the catchup functions.");
     }
@@ -376,21 +376,21 @@ function handle_starts() {
         }
     #/
     for (i = start_index; i < level.start_functions.size; i++) {
-        var_d1c6381e96d14169 = level.start_functions[i];
-        if (!isdefined(var_d1c6381e96d14169["logic_func"])) {
+        start_array = level.start_functions[i];
+        if (!isdefined(start_array["logic_func"])) {
             continue;
         }
-        if (already_ran_function(var_d1c6381e96d14169["logic_func"], var_8751813f2dae82ee)) {
+        if (already_ran_function(start_array["logic_func"], var_8751813f2dae82ee)) {
             continue;
         }
         if (getdvarint(@"fpstool_run") || getdvarint(@"prof_gameplaygfx")) {
-            setdvar(@"hash_46467383874e22fd", var_d1c6381e96d14169["name"]);
+            setdvar(@"hash_46467383874e22fd", start_array["name"]);
         }
-        level.start_struct [[ var_d1c6381e96d14169["logic_func"] ]]();
+        level.start_struct [[ start_array["logic_func"] ]]();
         if (getdvarint(@"hash_47b7445b595408f7", 0) > 0) {
             return;
         }
-        var_8751813f2dae82ee[var_8751813f2dae82ee.size] = var_d1c6381e96d14169["logic_func"];
+        var_8751813f2dae82ee[var_8751813f2dae82ee.size] = start_array["logic_func"];
     }
 }
 
@@ -399,8 +399,8 @@ function handle_starts() {
 // Checksum 0x0, Offset: 0x1024
 // Size: 0x5e
 function already_ran_function(func, var_8751813f2dae82ee) {
-    foreach (var_fb707540ffb0fbda in var_8751813f2dae82ee) {
-        if (var_fb707540ffb0fbda == func) {
+    foreach (logic_function in var_8751813f2dae82ee) {
+        if (logic_function == func) {
             return true;
         }
     }
@@ -528,11 +528,11 @@ function is_after_start(name) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x13db
 // Size: 0x54
-function add_start_construct(msg, func, var_8a65799b42bd1960, catchup_function) {
+function add_start_construct(msg, func, optional_func, catchup_function) {
     array = [];
     array["name"] = msg;
     array["start_func"] = func;
-    array["logic_func"] = var_8a65799b42bd1960;
+    array["logic_func"] = optional_func;
     array["catchup_function"] = catchup_function;
     return array;
 }

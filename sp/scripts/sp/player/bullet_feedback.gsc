@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
 #using script_44a4ad8c0d35f203;
+#using scripts\engine\utility;
 
-#namespace namespace_869a7c49072b24cd;
+#namespace bullet_feedback;
 
-// Namespace namespace_869a7c49072b24cd / scripts\sp\player\bullet_feedback
+// Namespace bullet_feedback / scripts\sp\player\bullet_feedback
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9d
 // Size: 0x3f
@@ -14,7 +14,7 @@ function bullet_feedback_init() {
     level.player namespace_d55725aa5dd0745b::initplayer();
 }
 
-// Namespace namespace_869a7c49072b24cd / scripts\sp\player\bullet_feedback
+// Namespace bullet_feedback / scripts\sp\player\bullet_feedback
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe4
 // Size: 0x5c
@@ -29,7 +29,7 @@ function bulletwhizby_monitor() {
     }
 }
 
-// Namespace namespace_869a7c49072b24cd / scripts\sp\player\bullet_feedback
+// Namespace bullet_feedback / scripts\sp\player\bullet_feedback
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x148
 // Size: 0x14

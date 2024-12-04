@@ -1,5 +1,5 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\engine\utility;
 
 #namespace zombie_stun;
 
@@ -8,7 +8,7 @@
 // Checksum 0x0, Offset: 0xce
 // Size: 0x2e
 function private autoexec init() {
-    registersharedfunc("zombie", "stunZombie", &function_2e4d3c67e63f83ac);
+    registersharedfunc("zombie", "stunZombie", &stun_ai);
     registersharedfunc("zombie", "clearStunZombie", &clear_stun);
 }
 
@@ -28,7 +28,7 @@ function processstun(taskid, params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x143
 // Size: 0xe0
-function function_2e4d3c67e63f83ac(duration) {
+function stun_ai(duration) {
     if (isdefined(self.aisettings) && !istrue(self.aisettings.var_836834377fb9b633)) {
         return;
     }

@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\create_script_utility.gsc;
+#using scripts\common\create_script_utility;
+#using scripts\engine\utility;
 
 #namespace mp_jup_st_g_ob_activities_zombie_stronghold_cs;
 

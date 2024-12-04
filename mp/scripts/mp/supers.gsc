@@ -1,72 +1,72 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_1ed1214969b5eba7;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_407c3adf846b725b;
-#using scripts\mp\equipment\tactical_cover.gsc;
-#using scripts\mp\equipment\support_box.gsc;
-#using scripts\mp\supers\super_stoppingpower.gsc;
 #using script_1311c5c284dd1537;
-#using script_51f5154861435b1e;
-#using script_34e2c429f1463c06;
-#using script_5e2dcb7fb9811781;
-#using script_30cd25db3c981d4f;
+#using script_19818a4d668d8841;
+#using script_19fd5b5d73d44c18;
+#using script_1b4114093cd44368;
+#using script_1cf2ed809496bf4e;
+#using script_1d393929cf0bd6a2;
+#using script_1ed1214969b5eba7;
+#using script_22115fec83741670;
+#using script_268c558ddb2267aa;
 #using script_28b451b2ea6dae46;
+#using script_2d9d24f7c63ac143;
+#using script_30cd25db3c981d4f;
+#using script_34e2c429f1463c06;
+#using script_407c3adf846b725b;
+#using script_41297c155fdee34;
 #using script_45c10ca5cb8409bf;
 #using script_4bef961309209288;
-#using script_19818a4d668d8841;
-#using script_1d393929cf0bd6a2;
-#using script_41297c155fdee34;
-#using script_22115fec83741670;
-#using script_556b8aeaa691317f;
-#using script_1b4114093cd44368;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
+#using script_51f5154861435b1e;
 #using script_548072087c9fd504;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\arbitrary_up.gsc;
-#using script_b7a9ce0a2282b79;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\supers\super_deadsilence.gsc;
-#using script_19fd5b5d73d44c18;
-#using script_601a3d850e6b66eb;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\mp\equipment\trophy_system.gsc;
-#using scripts\mp\equipment\tac_insert.gsc;
-#using script_1cf2ed809496bf4e;
-#using script_6d68cfdf0836123c;
-#using scripts\cp_mp\killstreaks\emp_drone_targeted.gsc;
-#using scripts\mp\supers\laststand_heal.gsc;
-#using scripts\mp\equipment\weapon_drop.gsc;
-#using script_7ec79670452ec186;
-#using script_63634d9fa080435a;
-#using script_a698cf430108fb7;
-#using script_268c558ddb2267aa;
-#using script_676f8221e501bed1;
-#using scripts\mp\outofbounds.gsc;
+#using script_556b8aeaa691317f;
+#using script_5e2dcb7fb9811781;
 #using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br.gsc;
-#using script_2d9d24f7c63ac143;
+#using script_601a3d850e6b66eb;
+#using script_63634d9fa080435a;
+#using script_676f8221e501bed1;
+#using script_6d68cfdf0836123c;
+#using script_7ec79670452ec186;
+#using script_a698cf430108fb7;
+#using script_b7a9ce0a2282b79;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\emp_drone_targeted;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\arbitrary_up;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\equipment\support_box;
+#using scripts\mp\equipment\tac_insert;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\equipment\trophy_system;
+#using scripts\mp\equipment\weapon_drop;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\hud_message;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\outofbounds;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\persistence;
+#using scripts\mp\supers;
+#using scripts\mp\supers\laststand_heal;
+#using scripts\mp\supers\super_deadsilence;
+#using scripts\mp\supers\super_stoppingpower;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace supers;
 
@@ -664,7 +664,7 @@ function clearsuper(var_6c70bf5ad211f464, var_d220971ffe40c601, playerkilled) {
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && !var_fa91721e4a69c230) {
         self.var_1066fbd86c88a6df = 0;
     }
-    thread function_bdcbe42d37001209(0);
+    thread handleSuperUIStateChange(0);
     thread function_93b5448ea8f6277b(0);
     self setclientomnvar("ui_super_second_progress", 0);
     self setclientomnvar("ui_super_ref", "none");
@@ -971,7 +971,7 @@ function updatesuperuiprogress() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x36f8
 // Size: 0x3d
-function function_bdcbe42d37001209(state) {
+function handleSuperUIStateChange(state) {
     self endon("disconnect");
     self endon("remove_super");
     level endon("game_ended");
@@ -1025,7 +1025,7 @@ function updatesuperuistate() {
         if (state == 1) {
             self notify("super_use_charging");
         }
-        thread function_bdcbe42d37001209(state);
+        thread handleSuperUIStateChange(state);
     }
     superinfo.state = state;
 }
@@ -2074,7 +2074,7 @@ function superusefinished(var_3179afaa208defa2, fromdeath, var_e68637fb8c1c346b,
             } else if (isdefined(superinfo.staticdata.brsingleuse) || function_f95bcca44e8cba53(superinfo.staticdata.ref)) {
                 scripts\mp\supers::clearsuper();
                 thread function_93b5448ea8f6277b(0);
-                thread function_bdcbe42d37001209(0);
+                thread handleSuperUIStateChange(0);
             }
         }
         if (isdefined(superinfo.blueprintindex) && superinfo.blueprintindex > 0 && isdefined(superinfo.staticdata.bundle.var_d96d3e6ceed581fd.blueprints) && isdefined(superinfo.staticdata.bundle.var_d96d3e6ceed581fd.blueprints[superinfo.blueprintindex - 1])) {
@@ -3570,7 +3570,7 @@ function suppressunset() {
 // Checksum 0x0, Offset: 0x8239
 // Size: 0x8
 function function_66c2b6fb2734cbae() {
-    return namespace_ed60dc1153ae1c06::function_55aae48e013652fa();
+    return namespace_ed60dc1153ae1c06::suppressionRounds_beginUse();
 }
 
 // Namespace supers / scripts\mp\supers
@@ -4421,13 +4421,13 @@ function function_ea7187bdba6dff15(superref) {
     lootid = namespace_38b993c4618e76cd::function_fae5e1d3de32d3f7(scriptablename);
     var_ec3be9f70c7f5ae9 = player namespace_aead94004cf4c147::function_5915bdbc5f6302b6([lootid]);
     if (var_ec3be9f70c7f5ae9.size > 0) {
-        player scripts\mp\gametypes\br_pickups::function_cab3366841d709aa(var_ec3be9f70c7f5ae9[0]);
+        player scripts\mp\gametypes\br_pickups::equipBackpackItem(var_ec3be9f70c7f5ae9[0]);
         return;
     }
     if (array_contains(level.br_pickups.br_superreference, superref)) {
         var_3d0262df72b9d0cc = player namespace_aead94004cf4c147::function_69f1f154cb91d491();
         if (var_3d0262df72b9d0cc.size > 0) {
-            player scripts\mp\gametypes\br_pickups::function_cab3366841d709aa(var_3d0262df72b9d0cc[0]);
+            player scripts\mp\gametypes\br_pickups::equipBackpackItem(var_3d0262df72b9d0cc[0]);
         }
     }
 }

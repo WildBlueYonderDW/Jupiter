@@ -1,22 +1,22 @@
 #using script_4b87f2871b6b025c;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\starts.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\sp\player_death.gsc;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\manager.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_death;
+#using scripts\sp\starts;
+#using scripts\sp\utility;
+#using scripts\stealth\manager;
+#using scripts\stealth\utility;
 
-#namespace namespace_1a415b76ac2ee769;
+#namespace swim_sp;
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x249
 // Size: 0x45
@@ -24,7 +24,7 @@ function main() {
     function_e05aeec06b7b52aa(&function_4da231b2893604c, &function_de1545c98ed439f8, &function_a62d0f50f690359, &enterfunc, &exitfunc, &surfaceFunc, &descendfunc, &playsoundfunc, &visionsetfunc, &drownfunc, &function_6fed0ef13f84a258, &function_673ece83b6eb66c4);
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x296
 // Size: 0x3b
@@ -34,7 +34,7 @@ function function_9ac5625caf26591e() {
     self giveweapon(swimweapon);
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d9
 // Size: 0x36
@@ -45,7 +45,7 @@ function function_4da231b2893604c() {
     return self.gs.var_ebe1038e44cd6b22;
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x317
 // Size: 0x36
@@ -56,7 +56,7 @@ function function_de1545c98ed439f8() {
     return self.gs.var_a49d3d68b41c6e2e;
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x355
 // Size: 0x15
@@ -64,7 +64,7 @@ function function_a62d0f50f690359() {
     return self.gs.var_44aa592fd4d93eb;
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x373
 // Size: 0x31
@@ -77,7 +77,7 @@ function surfaceFunc() {
     }
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x31
@@ -90,7 +90,7 @@ function descendfunc() {
     }
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e5
 // Size: 0x1c
@@ -100,7 +100,7 @@ function enterfunc() {
     }
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x409
 // Size: 0x1c
@@ -110,7 +110,7 @@ function exitfunc() {
     }
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x42d
 // Size: 0x2c
@@ -120,7 +120,7 @@ function playsoundfunc(var_78264a131b0e70ac, var_1ddc31dc2f8faa49, soundsource) 
     }
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x461
 // Size: 0x37
@@ -131,7 +131,7 @@ function visionsetfunc(visionset, transitiontime) {
     }
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a0
 // Size: 0xc
@@ -139,7 +139,7 @@ function drownfunc() {
     scripts\sp\player_death::set_custom_death_quote(306);
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b4
 // Size: 0x21
@@ -150,7 +150,7 @@ function function_6fed0ef13f84a258() {
     return self function_7ee20cf3c0390e21();
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x1a1
@@ -190,7 +190,7 @@ function function_8cebf40421c587da() {
     scripts\stealth\utility::function_f3883fe06a11269(var_fac370d058479827, var_fb574b7959625bf0);
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x687
 // Size: 0x261
@@ -241,7 +241,7 @@ function function_a11b6adce495c6ef() {
     scripts\stealth\manager::set_custom_distances(event_distances);
 }
 
-// Namespace namespace_1a415b76ac2ee769 / namespace_377de7677773280e
+// Namespace swim_sp / namespace_377de7677773280e
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x8f0
 // Size: 0xe7

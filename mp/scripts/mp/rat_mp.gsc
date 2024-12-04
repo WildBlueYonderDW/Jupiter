@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\rat.gsc;
 #using script_7ef95bba57dc4b82;
+#using scripts\common\rat;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\teams;
 
 #namespace rat_mp;
 

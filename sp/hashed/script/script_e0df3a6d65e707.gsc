@@ -1,6 +1,6 @@
-#using script_71332a5b74214116;
 #using script_531cb1be084314f7;
-#using scripts\cp\loot_system.gsc;
+#using script_71332a5b74214116;
+#using scripts\cp\loot_system;
 
 #namespace namespace_caa7fcde280d1fbe;
 
@@ -38,9 +38,9 @@ function function_b3c237b9f09304f6(interaction, player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17d
 // Size: 0x37
-function function_4d53102050b02de5(var_16037153c1704c7e) {
-    for (i = 0; i < var_16037153c1704c7e.size; i++) {
-        var_16037153c1704c7e[i].armor_satchel = "armor_satchel";
+function function_4d53102050b02de5(interaction_structs) {
+    for (i = 0; i < interaction_structs.size; i++) {
+        interaction_structs[i].armor_satchel = "armor_satchel";
     }
 }
 

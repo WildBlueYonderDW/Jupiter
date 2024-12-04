@@ -1,17 +1,17 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\utility\trigger.gsc;
 #using script_347008fff8d477e;
-#using script_699beeb185d284d2;
-#using scripts\mp\utility\points.gsc;
-#using script_60db63277bd86169;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_4e5018973422744d;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_60db63277bd86169;
+#using script_699beeb185d284d2;
+#using scripts\common\callbacks;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\trigger;
 
 #namespace namespace_f977cebc2f455a0d;
 

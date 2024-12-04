@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\create_script_utility.gsc;
+#using scripts\common\create_script_utility;
+#using scripts\engine\utility;
 
 #namespace mp_jup_sira_ob_contracts_sabotage_cs;
 

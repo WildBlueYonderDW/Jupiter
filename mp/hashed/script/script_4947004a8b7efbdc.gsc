@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
 #using script_16ea1b94f0f381b3;
 #using script_4c543f01345a2c04;
-#using scripts\mp\utility\debug.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\debug;
 
 #namespace namespace_6693a0c04250d04c;
 
@@ -220,13 +220,13 @@ function private function_741a839378a9a54c(index) {
         if (isdefined(predictedposition)) {
             if (var_b33910d3fd7718b1.var_15c62e2a3e84a52 == "Standard") {
                 target_yaw = utility::getyawtospot(var_6bd99ac91b3d29d);
-                var_2c36b2f75a07cb5d = self.var_a3d0ad660af72d52.var_ca191c145576c838 getpitchtospot3d(var_6bd99ac91b3d29d);
+                target_pitch = self.var_a3d0ad660af72d52.var_ca191c145576c838 getpitchtospot3d(var_6bd99ac91b3d29d);
                 self function_a490fd20800374d8(target_yaw);
                 self.var_a3d0ad660af72d52.var_5cbba012d5f74041.origin = predictedposition;
             } else {
                 if (index == self.var_a3d0ad660af72d52.targetindex) {
                     target_yaw = utility::getyawtospot(var_6bd99ac91b3d29d);
-                    var_2c36b2f75a07cb5d = self.var_a3d0ad660af72d52.var_ca191c145576c838 getpitchtospot3d(var_6bd99ac91b3d29d);
+                    target_pitch = self.var_a3d0ad660af72d52.var_ca191c145576c838 getpitchtospot3d(var_6bd99ac91b3d29d);
                     self function_a490fd20800374d8(target_yaw);
                 }
                 self.var_a3d0ad660af72d52.var_e7e13b6c8ec22df6[index].origin = predictedposition;
@@ -556,7 +556,7 @@ function private function_680e907027d24e86() {
     self notify("beam_end");
     var_b33910d3fd7718b1 = function_349fad68f5235a62();
     self.entitydata.var_37e9fcfa2a8f6a31 = gettime() + var_b33910d3fd7718b1.cooldown;
-    self.entitydata.var_1205963be798c1e3 = gettime();
+    self.entitydata.attack_lastattacktime = gettime();
     if (isdefined(self.var_a3d0ad660af72d52.targetents)) {
         for (i = 0; i < self.var_a3d0ad660af72d52.targetents.size; i++) {
             if (isdefined(self.var_a3d0ad660af72d52.targetents[i])) {

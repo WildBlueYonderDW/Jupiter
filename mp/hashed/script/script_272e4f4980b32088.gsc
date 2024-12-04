@@ -1,11 +1,11 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_7caebc5d4875185;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\enemy.gsc;
 #using script_638d701d263ee1ed;
-#using scripts\stealth\player.gsc;
+#using script_7caebc5d4875185;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\stealth\enemy;
+#using scripts\stealth\player;
+#using scripts\stealth\utility;
 
 #namespace ob_stealth;
 

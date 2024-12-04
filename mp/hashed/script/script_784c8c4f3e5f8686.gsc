@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\common\scene.gsc;
 #using script_308091d56071a91c;
-#using scripts\common\values.gsc;
 #using script_6bfe39bd5c12f84a;
 #using script_7d535542e36d66f9;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\scene;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace scene;
 
@@ -367,7 +367,7 @@ function private function_e6197350552df14b(shotnames, var_94f8931d2dd061eb) {
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x1b5c
 // Size: 0x15d
-function private scene_coordinated_reach(sceneplay, shotindex, var_4bc185af207d5706, var_64b5ab50f22a4efc) {
+function private scene_coordinated_reach(sceneplay, shotindex, var_4bc185af207d5706, guy_anim) {
     sceneroot = self;
     scenedata = sceneroot.scenedata;
     sceneplay notify("scene_coordinated_reach");
@@ -380,11 +380,11 @@ function private scene_coordinated_reach(sceneplay, shotindex, var_4bc185af207d5
     if (!isdefined(sceneplay.var_6909d1a5df21c351)) {
         sceneplay.var_6909d1a5df21c351 = [];
     }
-    sceneplay.var_6909d1a5df21c351[sceneplay.var_6909d1a5df21c351.size] = var_64b5ab50f22a4efc;
+    sceneplay.var_6909d1a5df21c351[sceneplay.var_6909d1a5df21c351.size] = guy_anim;
     waittillframeend();
     sceneroot function_dca1a3a29d2ee467(sceneplay.var_6909d1a5df21c351, sceneplay.var_56ebabfb3c6985b8);
-    foreach (var_64b5ab50f22a4efc in sceneplay.var_6909d1a5df21c351) {
-        guy = var_64b5ab50f22a4efc[0];
+    foreach (guy_anim in sceneplay.var_6909d1a5df21c351) {
+        guy = guy_anim[0];
         if (isdefined(guy)) {
             guy notify("scene_coordinated_reach");
         }

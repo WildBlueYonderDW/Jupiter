@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\anim_scene.gsc;
-#using scripts\engine\scriptable.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\anim_scene;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace namespace_a6891c3d100a6a05;
 

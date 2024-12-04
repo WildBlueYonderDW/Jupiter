@@ -1,9 +1,9 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_6bfe39bd5c12f84a;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_8a7fbc5545f75867;
 

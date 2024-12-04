@@ -1,10 +1,10 @@
+#using character\character_hero_price_urban;
 #using script_5c36b3719581f7cc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\ai.gsc;
-#using character\character_hero_price_urban.gsc;
-#using scripts\aitypes\assets.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\ai;
 
 #namespace namespace_d02bc340297d6756;
 

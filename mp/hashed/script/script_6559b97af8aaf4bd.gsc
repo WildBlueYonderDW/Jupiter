@@ -1,9 +1,9 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using script_7d535542e36d66f9;
-#using script_53651341190c5aab;
-#using scripts\common\cap.gsc;
 #using script_5262c59c62fa4892;
+#using script_53651341190c5aab;
+#using script_7d535542e36d66f9;
+#using scripts\asm\asm;
+#using scripts\common\cap;
+#using scripts\engine\utility;
 
 #namespace ai_revival;
 

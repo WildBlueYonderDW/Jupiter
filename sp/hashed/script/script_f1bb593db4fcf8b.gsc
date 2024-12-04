@@ -1,11 +1,11 @@
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
 #using script_6c8afb0283068cc6;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
 #namespace jup_ally_hero_ghost_cp;
 

@@ -1,60 +1,60 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\devgui.gsc;
-#using script_396a814d39e7044f;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using script_58be75c518bf0d40;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\juggernaut.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using script_6a5d3bf7a5b7064a;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using script_7e4d332e911e1b90;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\rank.gsc;
-#using script_556b8aeaa691317f;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_2b264b25c7da0b12;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\damage.gsc;
+#using script_396a814d39e7044f;
 #using script_448ef4d9e70ce5e;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\teamrevive.gsc;
+#using script_556b8aeaa691317f;
+#using script_5762ac2f22202ba2;
+#using script_58be75c518bf0d40;
+#using script_6a5d3bf7a5b7064a;
+#using script_7e4d332e911e1b90;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\events;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\juggernaut;
+#using scripts\mp\laststand;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rank;
+#using scripts\mp\supers;
+#using scripts\mp\teamrevive;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
 
 #namespace laststand;
 
@@ -201,7 +201,7 @@ function onenter() {
     self notify("last_stand_start");
     self setclientomnvar("ui_is_laststand", 1);
     if (issharedfuncdefined("sound", "trySayLocalSound")) {
-        level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](self, #"hash_1c1a3ebe5f3a23af", undefined, 0.25);
+        level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](self, #"bc_status_player_last_stand", undefined, 0.25);
     }
     healthvalue = level.laststandhealth;
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
@@ -874,7 +874,7 @@ function onexitcommon(revived) {
     if (isdefined(level.modeonexitlaststandfunc)) {
         self [[ level.modeonexitlaststandfunc ]](revived);
     }
-    scripts\mp\laststand::function_fe7140f94b459b5c();
+    scripts\mp\laststand::cleanInterrogationOnExit();
     waittillframeend();
     self.inlaststand = 0;
     if (isalive(self)) {
@@ -1074,7 +1074,7 @@ function revivesetup(owner) {
 // Size: 0x156
 function function_6b9549a69dc6a346(reviveent) {
     assert(isdefined(reviveent));
-    if (isdefined(reviveent.owner) && getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+    if (isdefined(reviveent.owner) && getdvarint(@"mgl", 0)) {
         reviveent setcursorhint("HINT_BUTTON");
         reviveent sethinticon("hud_icon_cyber_revive");
         reviveent sethintdisplayrange(96);
@@ -1115,7 +1115,7 @@ function interrogationsetup(owner) {
     interrogationent.trigger.id = "laststand_interrogation";
     interrogationent.trigger.targetname = "interrogation_trigger";
     interrogationent makeusable();
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+    if (getdvarint(@"mgl", 0)) {
         interrogationent setcursorhint("HINT_BUTTON");
         interrogationent sethinticon("hud_icon_cyber_revive");
         interrogationent sethintdisplayrange(192);
@@ -1404,7 +1404,7 @@ function function_56e47961499ca06c(team) {
         }
         thread decayreviveprogress();
         self makeusable();
-        if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+        if (getdvarint(@"mgl", 0)) {
             self setcursorhint("HINT_BUTTON");
             self sethinticon("hud_icon_cyber_revive");
             self sethintdisplayrange(192);
@@ -1827,7 +1827,7 @@ function useholdthink(reviver, usetime, interrogation) {
     }
     if (!istrue(interrogation)) {
         if (issharedfuncdefined("sound", "trySayLocalSound")) {
-            level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](reviver, #"hash_572347275dfb41ab");
+            level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](reviver, #"bc_status_action_reviving");
         }
     }
     thread useholdthinkcleanup(reviver, revivespot, interrogation);

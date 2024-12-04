@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\dialog_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
 #using script_16ea1b94f0f381b3;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\common\elevator.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using script_3db04fd1b466bdba;
+#using scripts\common\elevator;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\dialog_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace killstreak_utility;
 
@@ -390,7 +390,7 @@ function private function_79e77793fa726dd8() {
             utility::scriptbundlewarning("<dev string:xaf>", "<dev string:xbe>");
         #/
         return "killstreaklist:killstreak_list_t10_mp";
-    } else if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) > 0) {
+    } else if (getdvarint(@"mgl", 0) > 0) {
         /#
             utility::scriptbundlewarning("<dev string:xaf>", "<dev string:xe4>");
         #/

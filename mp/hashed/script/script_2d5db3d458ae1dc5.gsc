@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\spawnlogic.gsc;
 #using script_116b16251a6ff950;
 #using script_3bfcbbd02540ce3e;
 #using script_66843f0d9500dac4;
-#using scripts\mp\load.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\compass.gsc;
-#using scripts\mp\animation_suite.gsc;
-#using scripts\mp\utility\game.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\animation_suite;
+#using scripts\mp\compass;
+#using scripts\mp\load;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\game;
 
 #namespace namespace_17ed80be85fb5e02;
 

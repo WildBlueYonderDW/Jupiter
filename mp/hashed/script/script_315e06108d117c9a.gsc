@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_3ed005fe9b78b9da;
-#using scripts\mp\teams.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\teams;
+#using scripts\mp\utility\player;
 
 #namespace namespace_53e6020c2a0a0ef5;
 

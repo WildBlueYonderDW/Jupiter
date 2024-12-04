@@ -1,21 +1,21 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\utility\script.gsc;
 #using script_2f382e6c1908fbd4;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\hud_message.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\flags;
+#using scripts\mp\gamescore;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\perks\perks;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
 
 #namespace hud_message;
 
@@ -927,10 +927,10 @@ function eventsplashesthink() {
         if (var_19323a94e0c59dfb) {
             wait 2;
         }
-        if (scripts\cp_mp\utility\game_utility::function_e3ef0908b595e8e1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_4562364e09176965") == 2 || self isps4player() && getdvarfloat(@"hash_10f733902fb6e20") == 2) {
+        if (scripts\cp_mp\utility\game_utility::function_e3ef0908b595e8e1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"online_mp_party_xpscale") == 2 || self isps4player() && getdvarfloat(@"hash_10f733902fb6e20") == 2) {
             showsplash("event_double_xp", undefined, self);
         }
-        if (scripts\cp_mp\utility\game_utility::function_7d04fc91bee2ccd1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"hash_2bdc03077e6414dc") == 2) {
+        if (scripts\cp_mp\utility\game_utility::function_7d04fc91bee2ccd1() == 2 || var_9bfbc8300ed86a03 && getdvarint(@"online_mp_party_weapon_xpscale") == 2) {
             showsplash("event_double_weapon_xp", undefined, self);
         }
         if (scripts\cp_mp\utility\game_utility::function_6d29dcaf4fd78604() == 2) {

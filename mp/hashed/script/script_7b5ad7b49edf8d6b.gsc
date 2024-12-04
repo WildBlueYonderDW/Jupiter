@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using script_5bc60484d17fa95c;
 #using script_3aa8e63a56e3416;
+#using script_5bc60484d17fa95c;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_5224c1e851beffac;
 

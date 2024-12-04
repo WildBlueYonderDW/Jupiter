@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hud_util;
+#using scripts\mp\laststand;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_ef7dd1046a7b0ee;
 

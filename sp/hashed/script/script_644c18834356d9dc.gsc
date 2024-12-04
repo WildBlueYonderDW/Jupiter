@@ -1,53 +1,53 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using script_14609b809484646e;
-#using script_435c3f85a3d06576;
-#using scripts\cp\cp_analytics.gsc;
-#using scripts\cp\loot_system.gsc;
-#using script_531cb1be084314f7;
-#using scripts\cp\cp_outofbounds.gsc;
-#using script_afb7e332aee4bf2;
-#using scripts\cp\equipment\nvg.gsc;
-#using script_12e2fb553ec1605e;
-#using script_116171939929af39;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\cp\cp_checkpoint.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp\cp_objectives.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\killstreaks\chopper_gunner.gsc;
-#using scripts\cp_mp\killstreaks\gunship.gsc;
-#using scripts\cp_mp\killstreaks\airstrike.gsc;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
-#using scripts\cp_mp\killstreaks\cruise_predator.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using script_189b67b2735b981d;
-#using scripts\cp_mp\killstreaks\manual_turret.gsc;
-#using scripts\cp_mp\killstreaks\sentry_gun.gsc;
-#using script_4d0e5ae730a29489;
-#using scripts\cp_mp\killstreaks\uav.gsc;
 #using script_10ad6174c8938599;
-#using script_b6e69ac53e6ee66;
-#using scripts\cp_mp\killstreaks\toma_strike.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using script_1eddec53abf6e24c;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using script_249f45d992af1114;
-#using script_6d68cfdf0836123c;
-#using script_596570bd8d025881;
-#using script_31f8511d0913ca09;
+#using script_116171939929af39;
+#using script_12e2fb553ec1605e;
+#using script_14609b809484646e;
+#using script_189b67b2735b981d;
 #using script_1b9d6b0232dbfb87;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using script_1eddec53abf6e24c;
+#using script_249f45d992af1114;
+#using script_2669878cf5a1b6bc;
+#using script_31f8511d0913ca09;
+#using script_3db04fd1b466bdba;
+#using script_435c3f85a3d06576;
+#using script_4d0e5ae730a29489;
+#using script_531cb1be084314f7;
 #using script_56ef8d52fe1b48a1;
+#using script_596570bd8d025881;
 #using script_644c18834356d9dc;
-#using scripts\cp\powers\cp_tactical_cover.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using script_6d68cfdf0836123c;
+#using script_74502a9e0ef1f19c;
+#using script_afb7e332aee4bf2;
+#using script_b6e69ac53e6ee66;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_checkpoint;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\equipment\nvg;
+#using scripts\cp\loot_system;
+#using scripts\cp\powers\cp_tactical_cover;
+#using scripts\cp\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\airstrike;
+#using scripts\cp_mp\killstreaks\chopper_gunner;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\killstreaks\cruise_predator;
+#using scripts\cp_mp\killstreaks\gunship;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\killstreaks\manual_turret;
+#using scripts\cp_mp\killstreaks\sentry_gun;
+#using scripts\cp_mp\killstreaks\toma_strike;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
 
 #namespace munitions;
 
@@ -213,7 +213,7 @@ function read_munition_table() {
 // Size: 0x5c
 function function_77084f05581a035() {
     self.dpad_selection_index = 0;
-    var_b00605b9047d7f4b = level.var_3a7f3e66e1a1d8f5;
+    max_slots = level.var_3a7f3e66e1a1d8f5;
     total_slots = level.var_3a7f3e66e1a1d8f5;
     if (istrue(level.unlimitedmunitions)) {
         total_slots = 1;
@@ -286,7 +286,7 @@ function function_b64f3836c1d7a06(notification, val) {
                                 }
                                 if (level.var_50c7b4b50d222c0 >= 0) {
                                     index = namespace_bc7b29dcc022d887::function_821bfba97b1251ac(level.var_e85fcf89f70a718a[level.var_50c7b4b50d222c0]);
-                                    namespace_bc7b29dcc022d887::function_cab3366841d709aa(index);
+                                    namespace_bc7b29dcc022d887::equipBackpackItem(index);
                                 }
                             }
                         } else {
@@ -668,22 +668,22 @@ function mun_test_monitor() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x257b
 // Size: 0x18
-function update_lua_inventory_slot(var_b8e029c9896f52b6) {
-    self setclientomnvar("cp_munition_sel_slot_idx", var_b8e029c9896f52b6);
+function update_lua_inventory_slot(selection_index) {
+    self setclientomnvar("cp_munition_sel_slot_idx", selection_index);
 }
 
 // Namespace munitions / namespace_94359011b63230a6
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x259b
 // Size: 0x2c
-function get_selection_index_loop_around(var_c3dd56819f77263b, min_value, max_value) {
-    if (var_c3dd56819f77263b > max_value) {
+function get_selection_index_loop_around(desired_value, min_value, max_value) {
+    if (desired_value > max_value) {
         return min_value;
     }
-    if (var_c3dd56819f77263b < min_value) {
+    if (desired_value < min_value) {
         return max_value;
     }
-    return var_c3dd56819f77263b;
+    return desired_value;
 }
 
 // Namespace munitions / namespace_94359011b63230a6
@@ -798,11 +798,11 @@ function reset_munitions(player, total_slots) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c34
 // Size: 0x24
-function function_af07aad35b55fd73(var_e0190c3433d5b099) {
-    if (!isdefined(var_e0190c3433d5b099)) {
+function function_af07aad35b55fd73(pickup_name) {
+    if (!isdefined(pickup_name)) {
         return false;
     }
-    if (issubstr(var_e0190c3433d5b099, "brloot_munition")) {
+    if (issubstr(pickup_name, "brloot_munition")) {
         return true;
     }
     return false;
@@ -846,15 +846,15 @@ function get_role_munition(var_a52c671acca08378) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d3a
 // Size: 0x334
-function cooldown_munition(var_f00b93a05196f767, var_a64c51188d789c25, player, munition, cooldown_time, slot, var_1207e043696ebaf9) {
+function cooldown_munition(activation_notify, var_a64c51188d789c25, player, munition, cooldown_time, slot, start_full) {
     level endon("game_ended");
     player endon("disconnect");
     player endon("reset_munitions");
-    player notify(var_f00b93a05196f767 + "_reset");
-    player endon(var_f00b93a05196f767 + "_reset");
+    player notify(activation_notify + "_reset");
+    player endon(activation_notify + "_reset");
     var_395fc479a3ccd472 = cooldown_time;
-    var_713b970f6576a5c9 = getdvarfloat(@"hash_c2da12edf7170dd7", 1);
-    cooldown_time = var_395fc479a3ccd472 * var_713b970f6576a5c9;
+    cooldown_scalar = getdvarfloat(@"hash_c2da12edf7170dd7", 1);
+    cooldown_time = var_395fc479a3ccd472 * cooldown_scalar;
     splash_shown = undefined;
     while (true) {
         paused = 0;
@@ -869,19 +869,19 @@ function cooldown_munition(var_f00b93a05196f767, var_a64c51188d789c25, player, m
             player.munition_slots[slot].cooldown_progress = 0;
             player setclientomnvar(var_a64c51188d789c25, 0);
         }
-        if (istrue(var_1207e043696ebaf9)) {
+        if (istrue(start_full)) {
             player.munition_slots[slot].cooldown_progress = cooldown_time;
             player setclientomnvar(var_a64c51188d789c25, 1);
-            var_1207e043696ebaf9 = undefined;
+            start_full = undefined;
         }
         if (player.munition_slots[slot].cooldown_progress < cooldown_time) {
             player.munition_slots[slot].can_use = 0;
         }
         while (player.munition_slots[slot].cooldown_progress <= cooldown_time) {
             var_6e96934d67c36a7c = getdvarfloat(@"hash_c2da12edf7170dd7", 1);
-            if (var_6e96934d67c36a7c != var_713b970f6576a5c9) {
-                var_713b970f6576a5c9 = var_6e96934d67c36a7c;
-                cooldown_time = var_395fc479a3ccd472 * var_713b970f6576a5c9;
+            if (var_6e96934d67c36a7c != cooldown_scalar) {
+                cooldown_scalar = var_6e96934d67c36a7c;
+                cooldown_time = var_395fc479a3ccd472 * cooldown_scalar;
             }
             if (istrue(player.has_inv_cooldown)) {
                 player.munition_slots[slot].cooldown_progress = cooldown_time + 1;
@@ -893,8 +893,8 @@ function cooldown_munition(var_f00b93a05196f767, var_a64c51188d789c25, player, m
             }
             player setclientomnvar(var_a64c51188d789c25, progress_ratio);
             if (progress_ratio < 1) {
-                var_28d1299402599124 = 0.05;
-                player.munition_slots[slot].cooldown_progress = player.munition_slots[slot].cooldown_progress + var_28d1299402599124;
+                progress_increment = 0.05;
+                player.munition_slots[slot].cooldown_progress = player.munition_slots[slot].cooldown_progress + progress_increment;
             } else {
                 break;
             }
@@ -906,7 +906,7 @@ function cooldown_munition(var_f00b93a05196f767, var_a64c51188d789c25, player, m
             player thread scripts\cp\cp_hud_message::showsplash(splashref, undefined, self);
         }
         splash_shown = 1;
-        player waittill(var_f00b93a05196f767);
+        player waittill(activation_notify);
         player.munition_slots[slot].cooldown_progress = undefined;
         player.munition_slots[slot].can_use = 0;
         player.munition_slots[slot].source = undefined;
@@ -1004,7 +1004,7 @@ function remove_munition(slot, munition) {
     self setclientomnvar(var_a64c51188d789c25, 0);
     check_for_empty_munitions();
     assign_highest_full_slot_to_active();
-    checkpoint = scripts\cp\cp_checkpoint::function_9eed75023a958c18();
+    checkpoint = scripts\cp\cp_checkpoint::checkpoint_get();
     if (isdefined(checkpoint) && checkpoint != "" && isdefined(self.pers["last_checkpoint"]) && self.pers["last_checkpoint"] != checkpoint) {
         thread namespace_751288259782653c::function_7da7bd24b280d295();
     }
@@ -1099,7 +1099,7 @@ function has_munition(var_5940a3ac5c0c822c) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3623
 // Size: 0x4f6
-function give_munition_to_slot(munition, slot, source, var_e2c50da23374b895) {
+function give_munition_to_slot(munition, slot, source, show_nag) {
     if (function_240f7f4e57340e8f()) {
         assertex(slot == 0, "Slot must be " + 0);
     }
@@ -1108,8 +1108,8 @@ function give_munition_to_slot(munition, slot, source, var_e2c50da23374b895) {
     if (!isdefined(slot)) {
         slot = total_slots - 1;
     }
-    if (!isdefined(var_e2c50da23374b895)) {
-        var_e2c50da23374b895 = 1;
+    if (!isdefined(show_nag)) {
+        show_nag = 1;
     }
     if (!isdefined(self.munition_slots) || !isdefined(self.munition_slots[slot])) {
         self.munition_slots[slot] = spawnstruct();
@@ -1168,7 +1168,7 @@ function give_munition_to_slot(munition, slot, source, var_e2c50da23374b895) {
     if (isdefined(omnvar) && isdefined(index)) {
         player setclientomnvar(omnvar, index);
     }
-    if (istrue(var_e2c50da23374b895) && getdvarint(@"hash_210d16e93f2436f5", 0) == 0) {
+    if (istrue(show_nag) && getdvarint(@"hash_210d16e93f2436f5", 0) == 0) {
         player thread nag_munitions();
     }
     if (isdefined(player.munition_slots_full) && player.munition_slots_full == 0) {
@@ -1282,18 +1282,18 @@ function check_for_gl_proj_override(munition) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d04
 // Size: 0x1bb
-function remove_munitions_in_radius(org, radius, var_7c64e39970c639fa) {
+function remove_munitions_in_radius(org, radius, throttle_override) {
     radius_sq = radius * radius;
     throttle = 20;
-    if (isdefined(var_7c64e39970c639fa)) {
-        throttle = var_7c64e39970c639fa;
+    if (isdefined(throttle_override)) {
+        throttle = throttle_override;
     }
     var_7507f409fee2b657 = ["brloot_munition", "brloot_munition_airdrop", "brloot_munition_ammo", "brloot_munition_armor", "brloot_munition_c4_launcher", "brloot_munition_cluster_strike", "brloot_munition_cruise_missile", "brloot_munition_cruise_predator", "brloot_munition_deployable_cover", "brloot_munition_grenade_crate", "brloot_munition_grenade_launcher", "brloot_munition_juggernaut", "brloot_munition_precision_airstrike", "brloot_munition_thermite_launcher", "brloot_munition_trophysystem", "brloot_munition_turret", "brloot_munition_uav", "brloot_munition_white_phos"];
     foreach (name in var_7507f409fee2b657) {
         var_792740c4c87cf9fa = getentitylessscriptablearray(undefined, undefined, org, radius, name);
         count = 0;
-        foreach (var_31f869647e8740b4 in var_792740c4c87cf9fa) {
-            var_31f869647e8740b4 setscriptablepartstate(name, "hidden");
+        foreach (br_loot in var_792740c4c87cf9fa) {
+            br_loot setscriptablepartstate(name, "hidden");
             count++;
             if (count % throttle) {
                 wait 0.1;
@@ -1313,9 +1313,9 @@ function remove_munitions_globally(var_1d88cbbb14926330) {
         var_7507f409fee2b657 = var_1d88cbbb14926330;
     }
     foreach (name in var_7507f409fee2b657) {
-        var_53db3afb46ea6459 = getentitylessscriptablearray(undefined, undefined, undefined, undefined, name);
-        foreach (var_31f869647e8740b4 in var_53db3afb46ea6459) {
-            var_31f869647e8740b4 setscriptablepartstate(name, "hidden");
+        loot_array = getentitylessscriptablearray(undefined, undefined, undefined, undefined, name);
+        foreach (br_loot in loot_array) {
+            br_loot setscriptablepartstate(name, "hidden");
         }
         wait 0.1;
     }
@@ -1328,16 +1328,16 @@ function remove_munitions_globally(var_1d88cbbb14926330) {
 function givegrenadelauncher() {
     self.last_weapon = self getcurrentweapon();
     if (istrue(self.has_gl)) {
-        var_c4adb5b8c25725b6 = self.equippedweapons;
-        foreach (gun in var_c4adb5b8c25725b6) {
+        gun_list = self.equippedweapons;
+        foreach (gun in gun_list) {
             if (gun.basename == "iw9_la_mike32_mp") {
                 clip_size = weaponclipsize(gun);
                 self setweaponammoclip(gun, clip_size);
             }
         }
     } else {
-        var_37ede289a37ef621 = "iw9_la_mike32_mp";
-        gun = namespace_e0ee43ef2dddadaa::buildweapon(var_37ede289a37ef621);
+        gun_name = "iw9_la_mike32_mp";
+        gun = namespace_e0ee43ef2dddadaa::buildweapon(gun_name);
         self giveweapon(gun);
         clip_size = weaponclipsize(gun);
         self setweaponammoclip(gun, clip_size);
@@ -1382,8 +1382,8 @@ function remove_at_ammo_count(weapon_name, ammo_count) {
     }
     if (isdefined(weapon)) {
         while (true) {
-            var_337043bba3301b3c = self getammocount(weapon);
-            if (var_337043bba3301b3c <= ammo_count) {
+            cur_ammo = self getammocount(weapon);
+            if (cur_ammo <= ammo_count) {
                 break;
             }
             if (!isdefined(self.has_gl)) {
@@ -1699,7 +1699,7 @@ function giveitembasedoncraftingstruct(crafteditem) {
         self notify("munitions_used", "airdrop");
         break;
     }
-    checkpoint = scripts\cp\cp_checkpoint::function_9eed75023a958c18();
+    checkpoint = scripts\cp\cp_checkpoint::checkpoint_get();
     if (isdefined(checkpoint) && checkpoint != "" && isdefined(self.pers["last_checkpoint"]) && self.pers["last_checkpoint"] != checkpoint) {
         thread namespace_751288259782653c::function_7da7bd24b280d295();
     }
@@ -1756,19 +1756,19 @@ function function_d4d986dbfa3f3ab1() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4caf
 // Size: 0x14d
-function give_deployable_crate(var_e91c88de8cb8afb9) {
+function give_deployable_crate(crate_type) {
     level endon("game_ended");
     self endon("disconnect");
     self endon("death");
     self endon("last_stand");
-    objweapon = makeweapon(var_e91c88de8cb8afb9);
+    objweapon = makeweapon(crate_type);
     if (!istrue(scripts\cp_mp\utility\weapon_utility::giveandfireoffhandreliable(objweapon))) {
         self.super_activated = 0;
         namespace_44edfb3e2b433c17::function_c5ea07dac9d83685();
         clientnum = self getentitynumber();
         setomnvar("ui_class_power_reloading", clientnum);
-        var_89656f67c2ea228d = 0.2;
-        thread function_8f741e1e8e870100(var_89656f67c2ea228d, 975);
+        delay_amount = 0.2;
+        thread function_8f741e1e8e870100(delay_amount, 975);
         namespace_44edfb3e2b433c17::superusefinished();
         namespace_44edfb3e2b433c17::setsuperisinuse(0);
         return undefined;
@@ -1779,8 +1779,8 @@ function give_deployable_crate(var_e91c88de8cb8afb9) {
     clientnum = self getentitynumber();
     setomnvar("ui_class_power_reloading", clientnum);
     if (msg == "offhand_pullback" || msg == "weapon_change" || msg == "weapon_gesture_failed") {
-        var_89656f67c2ea228d = 0.2;
-        thread function_8f741e1e8e870100(var_89656f67c2ea228d, 975);
+        delay_amount = 0.2;
+        thread function_8f741e1e8e870100(delay_amount, 975);
         namespace_44edfb3e2b433c17::superusefinished();
         namespace_44edfb3e2b433c17::setsuperisinuse(0);
         return undefined;
@@ -1794,9 +1794,9 @@ function give_deployable_crate(var_e91c88de8cb8afb9) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e05
 // Size: 0x1d
-function function_8f741e1e8e870100(var_89656f67c2ea228d, var_4eedbc067a81f686) {
-    wait var_89656f67c2ea228d;
-    namespace_44edfb3e2b433c17::increase_super_progress(var_4eedbc067a81f686);
+function function_8f741e1e8e870100(delay_amount, increase_amount) {
+    wait delay_amount;
+    namespace_44edfb3e2b433c17::increase_super_progress(increase_amount);
 }
 
 // Namespace munitions / namespace_94359011b63230a6
@@ -1821,7 +1821,7 @@ function giveriotshield() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4eaf
 // Size: 0x11a
-function remove_at_shield_death(weapon_name, var_946a167e53da62ed) {
+function remove_at_shield_death(weapon_name, health_value) {
     level endon("game_ended");
     self endon("disconnect");
     weapon = undefined;
@@ -1833,7 +1833,7 @@ function remove_at_shield_death(weapon_name, var_946a167e53da62ed) {
         }
     }
     if (isdefined(weapon)) {
-        while (self.riot_shield_damage > var_946a167e53da62ed) {
+        while (self.riot_shield_damage > health_value) {
             waitframe();
         }
         self.riot_shield_broken = 1;
@@ -1858,7 +1858,7 @@ function givemunitionfromluinotify() {
     self endon("disconnect");
     level endon("game_ended");
     self.dpad_selection_index = 0;
-    var_b00605b9047d7f4b = level.var_3a7f3e66e1a1d8f5;
+    max_slots = level.var_3a7f3e66e1a1d8f5;
     total_slots = level.var_3a7f3e66e1a1d8f5;
     if (istrue(level.unlimitedmunitions)) {
         total_slots = 1;

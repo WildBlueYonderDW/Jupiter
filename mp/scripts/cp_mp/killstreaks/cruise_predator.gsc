@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
 
 #namespace cruise_predator;
 
@@ -189,14 +189,14 @@ function runcruisepredator(streakname, streakinfo, thirdperson) {
     allenemies = [];
     sumvectors = (0, 0, 0);
     forwardvector = undefined;
-    var_72b9f31491f124aa = level.players;
+    character_array = level.players;
     if (utility::iscp()) {
-        var_72b9f31491f124aa = level.characters;
+        character_array = level.characters;
         if (issharedfuncdefined("player", "disable_backpack_inventory")) {
             self [[ getsharedfunc("player", "disable_backpack_inventory") ]](1);
         }
     }
-    foreach (player in var_72b9f31491f124aa) {
+    foreach (player in character_array) {
         if (player == self) {
             continue;
         }
@@ -736,7 +736,7 @@ function cruisepredator_watchmissileexplosion(missile, rider, killcament, thirdp
                 foreach (player in players) {
                     if (player _isalive() && playersareenemies(player, rider)) {
                         if (issharedfuncdefined("sound", "trySayLocalSound")) {
-                            level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](player, #"hash_2f4fcdb5f53af5ca", undefined, 1);
+                            level thread [[ getsharedfunc("sound", "trySayLocalSound") ]](player, #"bc_flavor_player_closecall", undefined, 1);
                         }
                     }
                 }

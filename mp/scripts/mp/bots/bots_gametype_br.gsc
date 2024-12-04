@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
 #using script_3d2770dc09c1243;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_40e63dd222434655;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\game;
 
 #namespace bots_gametype_br;
 

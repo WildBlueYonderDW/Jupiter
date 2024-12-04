@@ -1,29 +1,29 @@
-#using scripts\cp\cp_hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\utility\game_utility_cp.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\utility\entity.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using script_6b18c507926dd700;
-#using scripts\cp\killstreaks\juggernaut_cp.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\cp_hostmigration.gsc;
-#using scripts\cp\cp_movers.gsc;
 #using script_4a6760982b403bad;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_56ef8d52fe1b48a1;
+#using script_6b18c507926dd700;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\cp_movers;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\killstreaks\juggernaut_cp;
+#using scripts\cp\utility;
+#using scripts\cp\utility\entity;
+#using scripts\cp\utility\game_utility_cp;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace gameobjects;
 
@@ -2233,8 +2233,8 @@ function stompenemyteamprogress(team) {
     }
     delta = level.frameduration * self.userate;
     if (istrue(self.var_823c5a7bf6a0e64a) && self.ownerteam != "neutral" && team != self.ownerteam) {
-        if (isdefined(self.var_d701bf01c81a10b3) && self.var_d701bf01c81a10b3 > 0) {
-            delta *= self.var_d701bf01c81a10b3;
+        if (isdefined(self.reinforcementStompScalar) && self.reinforcementStompScalar > 0) {
+            delta *= self.reinforcementStompScalar;
         }
     }
     numtouching = getnumtouchingforteam(self.claimteam);
@@ -2398,7 +2398,7 @@ function canclaim(player) {
         numtouching = getnumtouchingforteam(player.pers["team"]);
         numother = getnumtouchingexceptteam(player.pers["team"]);
         if (numtouching && !numother || numtouching && numother && numtouching != numother) {
-            if (numother && istrue(level.var_5d1135235e7db3b3)) {
+            if (numother && istrue(level.disableMajorityCapProgress)) {
                 self.stalemate = 1;
                 self.majoritycapprogress = 0;
                 self.wasmajoritycapprogress = 1;
@@ -2454,12 +2454,12 @@ function proxtriggerthink() {
             occupants = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getalloccupants(ent);
             foreach (occupant in occupants) {
                 if (function_42430bcb47389f23(occupant, 1)) {
-                    function_16b7efba471cbe36(occupant, entitynumber);
+                    processTouchEnt(occupant, entitynumber);
                 }
             }
         }
         if (function_42430bcb47389f23(ent)) {
-            function_16b7efba471cbe36(ent, entitynumber);
+            processTouchEnt(ent, entitynumber);
         }
     }
 }
@@ -2509,7 +2509,7 @@ function function_42430bcb47389f23(player, var_372a5049b4c8b20a) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x84b6
 // Size: 0x42b
-function function_16b7efba471cbe36(player, entitynumber) {
+function processTouchEnt(player, entitynumber) {
     if (isreallyalive(player) && !isdefined(player.touchtriggers[entitynumber])) {
         team = player.pers["team"];
         self.numtouching[team]++;
@@ -2854,7 +2854,7 @@ function getnumtouchingexceptteam(ignoreteam) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9510
 // Size: 0x159d
-function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
+function updateuiprogress(object, securing, progressobject) {
     if (!isdefined(level.hostmigrationtimer)) {
         var_e44d265baccd0e6c = ter_op(isdefined(object.var_14d7b0ecc80353b), object.var_14d7b0ecc80353b, %MP_INGAME_ONLY/OBJ_CONTESTED_CAPS);
         var_fe62d726a93f1f9b = ter_op(isdefined(object.var_956f480af849a6ca), object.var_956f480af849a6ca, %MP/GRABBING_FLAG);
@@ -2896,7 +2896,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
             }
         }
         if ((scripts\cp\utility::getgametype() == "ctf" || scripts\cp\utility::getgametype() == "tdef" || scripts\cp\utility::getgametype() == "blitz") && !isdefined(object.id)) {
-            if (var_9828f1535acbc937 && istrue(object.stalemate)) {
+            if (securing && istrue(object.stalemate)) {
                 if (!isdefined(self.ui_ctf_stalemate)) {
                     if (!isdefined(self.ui_ctf_securing)) {
                         self.ui_ctf_securing = 1;
@@ -2905,24 +2905,24 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                     self.ui_ctf_stalemate = 1;
                 }
                 progress = 0.01;
-            } else if (var_9828f1535acbc937 && isdefined(self.ui_ctf_securing) && isdefined(object.stalemate) && !object.stalemate && object.ownerteam != self.team) {
+            } else if (securing && isdefined(self.ui_ctf_securing) && isdefined(object.stalemate) && !object.stalemate && object.ownerteam != self.team) {
                 function_160f522b63c32d76(2, var_fe62d726a93f1f9b, 1);
                 self.ui_ctf_securing = 1;
                 self.ui_ctf_stalemate = undefined;
-            } else if (var_9828f1535acbc937 && isdefined(self.ui_ctf_securing) && isdefined(object.stalemate) && !object.stalemate && object.ownerteam == self.team) {
+            } else if (securing && isdefined(self.ui_ctf_securing) && isdefined(object.stalemate) && !object.stalemate && object.ownerteam == self.team) {
                 function_160f522b63c32d76(2, var_ce9728bac543fa33, 2);
                 self.ui_ctf_securing = 1;
                 self.ui_ctf_stalemate = undefined;
             } else {
-                if (!var_9828f1535acbc937 && isdefined(self.ui_ctf_stalemate)) {
+                if (!securing && isdefined(self.ui_ctf_stalemate)) {
                     function_160f522b63c32d76(0, undefined, 0);
                     self.ui_ctf_securing = undefined;
                 }
-                if (var_9828f1535acbc937 && !isdefined(self.ui_ctf_stalemate) && object.ownerteam == self.team) {
+                if (securing && !isdefined(self.ui_ctf_stalemate) && object.ownerteam == self.team) {
                     function_160f522b63c32d76(0, undefined, 0);
                     self.ui_ctf_securing = undefined;
                 }
-                if (var_9828f1535acbc937 && !isdefined(self.ui_ctf_securing)) {
+                if (securing && !isdefined(self.ui_ctf_securing)) {
                     if (object.ownerteam != self.team) {
                         function_160f522b63c32d76(2, var_fe62d726a93f1f9b, 1);
                         self.ui_ctf_securing = 1;
@@ -2933,7 +2933,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                 }
                 self.ui_ctf_stalemate = undefined;
             }
-            if (!var_9828f1535acbc937) {
+            if (!securing) {
                 progress = 0.01;
                 function_160f522b63c32d76(0, undefined, 0);
                 self.ui_ctf_securing = undefined;
@@ -2945,9 +2945,9 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
             }
         }
         if (hasdomflags() && isdefined(object.id) && (object.id == "domFlag" || object.id == "hardpoint" || object.id == "bomb_site" || object.id == "rugby_jugg")) {
-            if (var_9828f1535acbc937 && isdefined(object.stalemate) && object.stalemate && !istrue(object.majoritycapprogress)) {
+            if (securing && isdefined(object.stalemate) && object.stalemate && !istrue(object.majoritycapprogress)) {
                 function_160f522b63c32d76(2, var_e44d265baccd0e6c, 3);
-            } else if (var_9828f1535acbc937 && isdefined(object.stalemate) && !object.stalemate && !istrue(object.majoritycapprogress) && object.ownerteam != self.team) {
+            } else if (securing && isdefined(object.stalemate) && !object.stalemate && !istrue(object.majoritycapprogress) && object.ownerteam != self.team) {
                 if (scripts\cp\utility::getgametype() == "hq") {
                     if (object.ownerteam == "neutral") {
                         function_160f522b63c32d76(2, var_1cbde9e31bd172cb, 1);
@@ -2960,7 +2960,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                     function_160f522b63c32d76(2, var_1cbde9e31bd172cb, 1);
                 }
             } else {
-                if (!var_9828f1535acbc937) {
+                if (!securing) {
                     if (isdefined(object.overrideprogressteam)) {
                         objective_set_progress_team(objid, object.overrideprogressteam);
                     } else if (isdefined(object.lastprogressteam) && object.lastprogressteam != object.claimteam && (object.lastprogressteam != object.ownerteam || istrue(object.var_823c5a7bf6a0e64a))) {
@@ -2969,7 +2969,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                         objective_set_progress_team(objid, object.claimteam);
                     }
                     function_160f522b63c32d76(0, undefined, 0);
-                } else if (var_9828f1535acbc937 && istrue(object.majoritycapprogress) && isdefined(object.lastprogressteam) && object.lastprogressteam == object.claimteam) {
+                } else if (securing && istrue(object.majoritycapprogress) && isdefined(object.lastprogressteam) && object.lastprogressteam == object.claimteam) {
                     if (isdefined(object.overrideprogressteam)) {
                         objective_set_progress_team(objid, object.overrideprogressteam);
                     } else if (object.ownerteam != "neutral" && object.claimteam == object.ownerteam) {
@@ -3017,7 +3017,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                         object setclaimteam(self.pers["team"]);
                         object setownerteam(self.pers["team"]);
                     }
-                    if (var_9828f1535acbc937) {
+                    if (securing) {
                         if (object.claimteam != "none") {
                             function_160f522b63c32d76(2, var_1cbde9e31bd172cb, 1);
                             objective_set_progress_team(objid, object.claimteam);
@@ -3028,11 +3028,11 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                         object.claimteam = "none";
                     }
                 }
-                if (var_9828f1535acbc937 && object.ownerteam == self.team) {
+                if (securing && object.ownerteam == self.team) {
                 }
             }
             if (scripts\cp\utility::getgametype() != "rush") {
-                if (!var_9828f1535acbc937 || !object caninteractwith(self.team, self) && (!isdefined(object.stalemate) || isdefined(object.stalemate) && !object.stalemate)) {
+                if (!securing || !object caninteractwith(self.team, self) && (!isdefined(object.stalemate) || isdefined(object.stalemate) && !object.stalemate)) {
                     if (progressobject.curprogress == 0) {
                         objective_show_progress(objid, 0);
                     }
@@ -3044,7 +3044,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                 } else {
                     objective_show_progress(objid, 1);
                 }
-                if (level.teambased && isdefined(object.teamprogress) && isdefined(object.claimteam) && var_9828f1535acbc937) {
+                if (level.teambased && isdefined(object.teamprogress) && isdefined(object.claimteam) && securing) {
                     if (!object.stalemate) {
                         if (isdefined(object.overrideprogressteam)) {
                             objective_set_progress_team(object.objidnum, object.overrideprogressteam);
@@ -3143,7 +3143,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
         }
         if (isbombmode() && isdefined(object.id) && (object.id == "bomb_zone" || object.id == "defuse_object")) {
             if (isdefined(self)) {
-                if (var_9828f1535acbc937 && isdefined(self)) {
+                if (securing && isdefined(self)) {
                     if (!isdefined(self.ui_bomb_planting_defusing)) {
                         idx = 0;
                         if (object.id == "bomb_zone") {
@@ -3235,7 +3235,7 @@ function updateuiprogress(object, var_9828f1535acbc937, progressobject) {
                 idx = 25;
                 break;
             }
-            updateuisecuring(progress, var_9828f1535acbc937, idx, object, progressobject.usetime, progressobject);
+            updateuisecuring(progress, securing, idx, object, progressobject.usetime, progressobject);
         }
     }
 }
@@ -3297,12 +3297,12 @@ function hasdomflags() {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0xac33
 // Size: 0x3d1
-function updateuisecuring(progress, var_9828f1535acbc937, idx, object, usetime, progressobject) {
+function updateuisecuring(progress, securing, idx, object, usetime, progressobject) {
     objid = undefined;
     if (!isdefined(progressobject)) {
         progressobject = object;
     }
-    if (var_9828f1535acbc937) {
+    if (securing) {
         if (!isdefined(object.usedby)) {
             object.usedby = [];
         }

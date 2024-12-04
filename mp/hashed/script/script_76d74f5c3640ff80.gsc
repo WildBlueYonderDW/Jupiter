@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\callbacks.gsc;
 #using script_3054293078dbc58c;
-#using script_77be8cd2b6610d5;
 #using script_4c543f01345a2c04;
-#using scripts\mp\mp_agent_damage.gsc;
+#using script_77be8cd2b6610d5;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent_damage;
 
 #namespace namespace_7bed1bd22c5ef2;
 
@@ -40,11 +40,11 @@ function private function_bbd671e5b69771c(params) {
     if (ent_flag("hit_character")) {
         return;
     }
-    var_5f0b087ff51dcb92 = 1;
+    orb_damage = 1;
     if (isdefined(self.parent.var_2810bd3ceddee8da)) {
-        var_5f0b087ff51dcb92 = self.parent.var_2810bd3ceddee8da.orbdamage;
+        orb_damage = self.parent.var_2810bd3ceddee8da.orbdamage;
     }
-    hit_ent dodamage(var_5f0b087ff51dcb92, self.origin, self, self, "MOD_IMPACT");
+    hit_ent dodamage(orb_damage, self.origin, self, self, "MOD_IMPACT");
     ent_flag_set("hit_character");
     thread ent_flag_clear_delayed("hit_character", 2);
     if (isplayer(hit_ent)) {
@@ -85,7 +85,7 @@ function private function_c1828c0b3ba38f2e() {
     spawncount = 0;
     for (i = 0; i < self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f; i++) {
         orb = self.var_2810bd3ceddee8da.ents[i];
-        if (istrue(orb.var_c1e234ca08d8ce84)) {
+        if (istrue(orb.attack_active)) {
             continue;
         }
         currentvelocity = function_a4438c777cf89315(var_e28815bc0a60248f, i, var_b3a1cc75ab3d962d);
@@ -134,7 +134,7 @@ function private function_35e962b66b1f3e0c(orb, velocity, airdrag, spawnpos, tar
     orb.var_c1ae8e663059a05c = gettime();
     orb.maxhealth = 10000;
     orb.health = orb.maxhealth;
-    orb.var_c1e234ca08d8ce84 = 1;
+    orb.attack_active = 1;
     self.var_2810bd3ceddee8da.alivecount++;
     orb thread function_d59e5308c8840e22();
     orb thread function_1e6f737ee4a06ebd();
@@ -159,7 +159,7 @@ function private function_d59e5308c8840e22() {
         self.scripthealth -= damage;
         killing_blow = 0;
         if (self.scripthealth <= 0) {
-            function_c754c550f06e7a83();
+            kill_orb();
             killing_blow = 1;
         }
         if (isplayer(attacker)) {
@@ -190,7 +190,7 @@ function private function_1e6f737ee4a06ebd() {
             continue;
         }
         if (function_f95e59f2b54f3763() < 1) {
-            function_c754c550f06e7a83();
+            kill_orb();
         }
     }
 }
@@ -199,13 +199,13 @@ function private function_1e6f737ee4a06ebd() {
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x992
 // Size: 0x77
-function private function_c754c550f06e7a83() {
+function private kill_orb() {
     utility::function_3ab9164ef76940fd("spittle", "spittle_impact");
     namespace_4e684dc307dd4bdd::set_invisible(self);
     self setcandamage(0);
     self notsolid();
     self.scripthealth = 0;
-    self.var_c1e234ca08d8ce84 = 0;
+    self.attack_active = 0;
     if (isdefined(self.var_2810bd3ceddee8da) && isdefined(self.var_2810bd3ceddee8da.alivecount)) {
         self.var_2810bd3ceddee8da.alivecount--;
     }
@@ -236,7 +236,7 @@ function private function_19ca5b0f8bb3d056() {
     var_9ee6d8bf092e9f5f = self.var_2810bd3ceddee8da.var_9ee6d8bf092e9f5f;
     self waittill("death");
     for (i = 0; i < var_9ee6d8bf092e9f5f; i++) {
-        orbs[i] function_c754c550f06e7a83();
+        orbs[i] kill_orb();
     }
     wait 2;
     for (i = 0; i < var_9ee6d8bf092e9f5f; i++) {
@@ -256,7 +256,7 @@ function private function_4ef64f09f447eed7() {
             if (isdefined(orb.scripthealth) && orb.scripthealth > 0) {
                 time_alive = gettime() - orb.var_c1ae8e663059a05c;
                 if (time_alive > self.var_2810bd3ceddee8da.var_9a854c78447931a6 * 1000) {
-                    orb function_c754c550f06e7a83();
+                    orb kill_orb();
                 }
             }
             waitframe();

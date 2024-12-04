@@ -1,10 +1,10 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\values.gsc;
-#using scripts\sp\player_rig.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\player_rig;
+#using scripts\sp\utility;
 
 #namespace player_rig;
 
@@ -85,23 +85,23 @@ function private function_e92e6ad1059c8eec() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d9
 // Size: 0xfc
-function get_player_rig(var_3e3e6fc934c518cb, var_a871c06af7cb87c6) {
+function get_player_rig(reset_origin, var_a871c06af7cb87c6) {
     if (!isdefined(level.player_rig)) {
         level.player_rig = spawn_anim_model("player_rig");
         level.player_rig dontcastshadows();
         level.player_rig.noragdoll = 1;
-        var_3e3e6fc934c518cb = 1;
+        reset_origin = 1;
         if (default_to(var_a871c06af7cb87c6, 0)) {
             level.player_rig hide();
         }
     }
     level.player_rig function_e92e6ad1059c8eec();
-    if (istrue(var_3e3e6fc934c518cb)) {
+    if (istrue(reset_origin)) {
         level.player_rig.origin = level.player.origin;
         level.player_rig.angles = level.player.angles;
     }
     /#
-        level.player_rig thread function_8bb6a2e80cd8890d("<dev string:x1c>");
+        level.player_rig thread debug_monitor("<dev string:x1c>");
     #/
     return level.player_rig;
 }
@@ -110,19 +110,19 @@ function get_player_rig(var_3e3e6fc934c518cb, var_a871c06af7cb87c6) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6de
 // Size: 0xd3
-function get_player_legs(var_3e3e6fc934c518cb, var_a871c06af7cb87c6) {
+function get_player_legs(reset_origin, var_a871c06af7cb87c6) {
     if (!isdefined(level.player_legs)) {
         level.player_legs = spawn_anim_model("player_legs");
         level.player_legs.noragdoll = 1;
-        var_3e3e6fc934c518cb = 1;
+        reset_origin = 1;
     }
     level.player_legs function_e92e6ad1059c8eec();
-    if (istrue(var_3e3e6fc934c518cb)) {
+    if (istrue(reset_origin)) {
         level.player_legs.origin = level.player.origin;
         level.player_legs.angles = level.player.angles;
     }
     /#
-        level.player_rig thread function_8bb6a2e80cd8890d("<dev string:x27>");
+        level.player_rig thread debug_monitor("<dev string:x27>");
     #/
     return level.player_legs;
 }
@@ -131,19 +131,19 @@ function get_player_legs(var_3e3e6fc934c518cb, var_a871c06af7cb87c6) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ba
 // Size: 0xd3
-function get_player_body(var_3e3e6fc934c518cb, var_a871c06af7cb87c6) {
+function get_player_body(reset_origin, var_a871c06af7cb87c6) {
     if (!isdefined(level.player_body)) {
         level.player_body = spawn_anim_model("player_body");
         level.player_body.noragdoll = 1;
-        var_3e3e6fc934c518cb = 1;
+        reset_origin = 1;
     }
     level.player_body function_e92e6ad1059c8eec();
-    if (istrue(var_3e3e6fc934c518cb)) {
+    if (istrue(reset_origin)) {
         level.player_body.origin = level.player.origin;
         level.player_body.angles = level.player.angles;
     }
     /#
-        level.player_rig thread function_8bb6a2e80cd8890d("<dev string:x33>");
+        level.player_rig thread debug_monitor("<dev string:x33>");
     #/
     return level.player_body;
 }
@@ -152,10 +152,10 @@ function get_player_body(var_3e3e6fc934c518cb, var_a871c06af7cb87c6) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x896
 // Size: 0xdc
-function function_8ded956fcab6f73a(var_3e3e6fc934c518cb, var_a871c06af7cb87c6, var_c9de2828f59f19e5) {
+function function_8ded956fcab6f73a(reset_origin, var_a871c06af7cb87c6, var_c9de2828f59f19e5) {
     result = [];
     if (isdefined(level.scr_model["player_rig"])) {
-        result["player_rig"] = get_player_rig(var_3e3e6fc934c518cb, var_a871c06af7cb87c6);
+        result["player_rig"] = get_player_rig(reset_origin, var_a871c06af7cb87c6);
     }
     if (isdefined(level.scr_model["player_legs"])) {
         result["player_legs"] = get_player_legs();
@@ -243,13 +243,13 @@ function function_73341653f76b4e43(allows) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb1
 // Size: 0x135
-function function_3a20b806b3b70617(stance, var_1c5d1595dab3ef39, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570) {
+function function_3a20b806b3b70617(stance, var_1c5d1595dab3ef39, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
     rig = self;
     if (istrue(var_1c5d1595dab3ef39)) {
         stance = default_to(stance, "stand");
         curstance = level.player getstance();
         var_c9da1b495d3ed8f = 0;
-        if (istrue(var_e123fee5ae019570) || istrue(var_ec165a067af34f8f) || istrue(var_8831fc7320076829)) {
+        if (istrue(Simultaneous) || istrue(var_ec165a067af34f8f) || istrue(var_8831fc7320076829)) {
             var_c9da1b495d3ed8f = level.blendinfo["weaponDropTime"];
         }
         if (curstance != stance) {
@@ -291,7 +291,7 @@ function function_6feda95d063a745e(anime, var_b85605ef08d6e4c2, rightarc, leftar
 // Params 19, eflags: 0x0
 // Checksum 0x0, Offset: 0xd6c
 // Size: 0x795
-function link_player_to_rig(anime, stance, var_e773bead7741b3b3, blendtime, var_b85605ef08d6e4c2, rightarc, leftarc, toparc, bottomarc, var_562ff78798cbfcc8, var_984ba707a4ae718e, var_26967d556f885965, smart, var_1c5d1595dab3ef39, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570, linktag, var_765a3c961826133b) {
+function link_player_to_rig(anime, stance, var_e773bead7741b3b3, blendtime, var_b85605ef08d6e4c2, rightarc, leftarc, toparc, bottomarc, var_562ff78798cbfcc8, var_984ba707a4ae718e, var_26967d556f885965, smart, var_1c5d1595dab3ef39, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous, linktag, var_765a3c961826133b) {
     linktag = default_to(linktag, "tag_player");
     rig = scripts\sp\player_rig::get_player_rig(1);
     rig endon("unlink_player");
@@ -324,7 +324,7 @@ function link_player_to_rig(anime, stance, var_e773bead7741b3b3, blendtime, var_
         thread scripts\common\anim::anim_first_frame_solo(rig, anime);
     }
     if (isdefined(anime) && (istrue(smart) || istrue(var_1c5d1595dab3ef39))) {
-        function_dba8ec1939d3f1a(anime, rig.animname, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570);
+        function_dba8ec1939d3f1a(anime, rig.animname, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous);
         blendtime = level.blendinfo["blendTime"];
         if (istrue(level.blendinfo["weaponDropQuick"])) {
             level.player enablequickweaponswitch(1);
@@ -407,7 +407,7 @@ function link_player_to_rig(anime, stance, var_e773bead7741b3b3, blendtime, var_
         }
     }
     foreach (var_6291cdac6d67ebb6 in var_99d6396b75b98227) {
-        var_6291cdac6d67ebb6 thread function_3a20b806b3b70617(stance, var_1c5d1595dab3ef39, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570);
+        var_6291cdac6d67ebb6 thread function_3a20b806b3b70617(stance, var_1c5d1595dab3ef39, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous);
     }
     level.player delaythread(blendtime, &val::reset_all, "link_player_to_rig_blend");
     nvidiaansel_scriptdisable(1);
@@ -475,7 +475,7 @@ function unlink_player_from_rig(var_1b2bf4bf5e71b6a4, var_5296297044db37d9, var_
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1758
 // Size: 0x100
-function anim_lerp_from_player_pos(anime, move_time, rotate_time, var_d286adff9af13a98, var_2bbc0f0a7e8daaac) {
+function anim_lerp_from_player_pos(anime, move_time, rotate_time, accel_percentage, anim_delay) {
     assert(isdefined(level.player_rig), "level.player_rig must be defined for anim_lerp_from_player_pos() to work. Try calling link_player_to_rig() before using this function.");
     rig = level.player_rig;
     if (function_f1e7ee8ddeece062(anime)) {
@@ -483,8 +483,8 @@ function anim_lerp_from_player_pos(anime, move_time, rotate_time, var_d286adff9a
     } else {
         animation = level.scr_anim[rig.animname][anime];
     }
-    function_de21a1093ee0487f(animation, move_time, rotate_time, var_d286adff9af13a98, var_2bbc0f0a7e8daaac);
-    level.var_46355d1369785029 thread scripts\common\anim::anim_single_solo(rig, anime);
+    function_de21a1093ee0487f(animation, move_time, rotate_time, accel_percentage, anim_delay);
+    level.lerp_node thread scripts\common\anim::anim_single_solo(rig, anime);
     rig thread waittillmatch_notify("single anim", "end", "anim_end");
     rig waittill_any("anim_end", "unlink_player");
     animation_lerp_from_player_pos_end();
@@ -494,42 +494,42 @@ function anim_lerp_from_player_pos(anime, move_time, rotate_time, var_d286adff9a
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1860
 // Size: 0x256
-function function_de21a1093ee0487f(animation, move_time, rotate_time, var_d286adff9af13a98, var_2bbc0f0a7e8daaac) {
+function function_de21a1093ee0487f(animation, move_time, rotate_time, accel_percentage, anim_delay) {
     assert(isdefined(level.player_rig), "level.player_rig must be defined for anim_lerp_from_player_pos() to work. Try calling link_player_to_rig() before using this function.");
     animation_lerp_from_player_pos_end();
     rig = level.player_rig;
     anim_origin = getstartorigin(self.origin, self.angles, animation);
-    var_4f78ec6eaad4e275 = getstartangles(self.origin, self.angles, animation);
-    rotation = level.player.angles - var_4f78ec6eaad4e275;
+    anim_angles = getstartangles(self.origin, self.angles, animation);
+    rotation = level.player.angles - anim_angles;
     node_origin = level.player.origin + rotatevector(self.origin - anim_origin, rotation);
-    var_9cfe111ea9df5b56 = level.player.angles + self.angles - var_4f78ec6eaad4e275;
-    level.var_46355d1369785029 = spawn_script_origin(node_origin, var_9cfe111ea9df5b56);
-    level.var_46355d1369785029 endon("animation_lerp_from_player_pos_end");
+    node_angles = level.player.angles + self.angles - anim_angles;
+    level.lerp_node = spawn_script_origin(node_origin, node_angles);
+    level.lerp_node endon("animation_lerp_from_player_pos_end");
     /#
-        level.var_46355d1369785029.playerstartpos = level.player.origin;
+        level.lerp_node.playerstartpos = level.player.origin;
     #/
     anim_length = getanimlength(animation);
-    if (!isdefined(var_d286adff9af13a98)) {
-        var_d286adff9af13a98 = 0.5;
+    if (!isdefined(accel_percentage)) {
+        accel_percentage = 0.5;
     }
-    if (!isdefined(var_2bbc0f0a7e8daaac)) {
-        var_2bbc0f0a7e8daaac = 0;
+    if (!isdefined(anim_delay)) {
+        anim_delay = 0;
     }
     if (!isdefined(move_time)) {
         move_time = anim_length;
     }
-    assert(move_time <= anim_length + var_2bbc0f0a7e8daaac, "Parameter move_time must be less than or equal to total anim length");
-    level.var_46355d1369785029 moveto(self.origin, move_time, move_time * var_d286adff9af13a98, move_time * (1 - var_d286adff9af13a98));
+    assert(move_time <= anim_length + anim_delay, "Parameter move_time must be less than or equal to total anim length");
+    level.lerp_node moveto(self.origin, move_time, move_time * accel_percentage, move_time * (1 - accel_percentage));
     if (!isdefined(rotate_time)) {
         rotate_time = anim_length;
     }
-    assert(rotate_time <= anim_length + var_2bbc0f0a7e8daaac, "Parameter rotate_time must be less than or equal to total anim length");
-    level.var_46355d1369785029 rotateto(self.angles, rotate_time, rotate_time * var_d286adff9af13a98, rotate_time * (1 - var_d286adff9af13a98));
-    if (var_2bbc0f0a7e8daaac > 0) {
+    assert(rotate_time <= anim_length + anim_delay, "Parameter rotate_time must be less than or equal to total anim length");
+    level.lerp_node rotateto(self.angles, rotate_time, rotate_time * accel_percentage, rotate_time * (1 - accel_percentage));
+    if (anim_delay > 0) {
         rig.origin = level.player.origin;
     }
-    rig linkto(level.var_46355d1369785029);
-    wait var_2bbc0f0a7e8daaac;
+    rig linkto(level.lerp_node);
+    wait anim_delay;
 }
 
 // Namespace player_rig / scripts\sp\player_rig
@@ -537,16 +537,16 @@ function function_de21a1093ee0487f(animation, move_time, rotate_time, var_d286ad
 // Checksum 0x0, Offset: 0x1abe
 // Size: 0x125
 function animation_lerp_from_player_pos_end() {
-    if (isdefined(level.var_46355d1369785029)) {
-        level.var_46355d1369785029 notify("animation_lerp_from_player_pos_end");
+    if (isdefined(level.lerp_node)) {
+        level.lerp_node notify("animation_lerp_from_player_pos_end");
         /#
-            if (getdvarint(@"hash_398da46238160a6", 0) && level.var_46355d1369785029.playerstartpos != level.player.origin) {
-                draw_arrow_time(level.var_46355d1369785029.playerstartpos, level.player.origin, (1, 1, 1), 20);
-                print3d(level.var_46355d1369785029.playerstartpos + (0, 0, -2), "<dev string:x3f>" + distance2d(level.var_46355d1369785029.playerstartpos, level.player.origin), (1, 1, 1), 1, 0.1, 400, 1);
+            if (getdvarint(@"hash_398da46238160a6", 0) && level.lerp_node.playerstartpos != level.player.origin) {
+                draw_arrow_time(level.lerp_node.playerstartpos, level.player.origin, (1, 1, 1), 20);
+                print3d(level.lerp_node.playerstartpos + (0, 0, -2), "<dev string:x3f>" + distance2d(level.lerp_node.playerstartpos, level.player.origin), (1, 1, 1), 1, 0.1, 400, 1);
             }
         #/
-        level.var_46355d1369785029 delete();
-        level.var_46355d1369785029 = undefined;
+        level.lerp_node delete();
+        level.lerp_node = undefined;
     }
 }
 
@@ -574,7 +574,7 @@ function player_rig_allow_internal(rig, allow_name) {
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c9f
 // Size: 0x3aa
-function function_98fabc06359d4d0c(anime, stance, var_435a21fd34cf3104, var_e2140d070bb088bd, linkedents, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570, var_26967d556f885965) {
+function function_98fabc06359d4d0c(anime, stance, arcs, var_e2140d070bb088bd, linkedents, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous, var_26967d556f885965) {
     if (!isdefined(level.player_rig)) {
         get_player_rig();
     }
@@ -582,8 +582,8 @@ function function_98fabc06359d4d0c(anime, stance, var_435a21fd34cf3104, var_e214
         stance = "stand";
     }
     var_b85605ef08d6e4c2 = 1;
-    if (!isdefined(var_435a21fd34cf3104)) {
-        var_435a21fd34cf3104 = [undefined, undefined, undefined, undefined];
+    if (!isdefined(arcs)) {
+        arcs = [undefined, undefined, undefined, undefined];
     } else {
         var_b85605ef08d6e4c2 = 0;
     }
@@ -601,14 +601,14 @@ function function_98fabc06359d4d0c(anime, stance, var_435a21fd34cf3104, var_e214
     }
     var_ec165a067af34f8f = ter_op(isdefined(var_ec165a067af34f8f), var_ec165a067af34f8f, 1);
     var_8831fc7320076829 = ter_op(isdefined(var_8831fc7320076829), var_8831fc7320076829, 0);
-    var_e123fee5ae019570 = ter_op(isdefined(var_e123fee5ae019570), var_e123fee5ae019570, 0);
+    Simultaneous = ter_op(isdefined(Simultaneous), Simultaneous, 0);
     var_4f51ef0bd97a4707 = anime;
     if (function_f1e7ee8ddeece062(anime)) {
         animation = function_c099f6fd9c19f5a6(anime, self.origin, self.angles, "player_rig");
         var_4f51ef0bd97a4707 = function_56bd620e57a834af(anime, "player_rig", animation);
     }
     anim_first_frame_solo(level.player_rig, var_4f51ef0bd97a4707);
-    link_player_to_rig(var_4f51ef0bd97a4707, stance, 0, 0, var_b85605ef08d6e4c2, var_435a21fd34cf3104[0], var_435a21fd34cf3104[1], var_435a21fd34cf3104[2], var_435a21fd34cf3104[3], 1, undefined, var_26967d556f885965, undefined, 1, var_ec165a067af34f8f, var_8831fc7320076829, var_e123fee5ae019570);
+    link_player_to_rig(var_4f51ef0bd97a4707, stance, 0, 0, var_b85605ef08d6e4c2, arcs[0], arcs[1], arcs[2], arcs[3], 1, undefined, var_26967d556f885965, undefined, 1, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous);
     thread anim_lerp_from_player_pos(var_4f51ef0bd97a4707, level.blendinfo["blendTime"], level.blendinfo["blendTime"], 0.8, level.blendinfo["weaponDropTime"]);
     if (isdefined(var_e2140d070bb088bd)) {
         foreach (model in var_e2140d070bb088bd) {
@@ -623,13 +623,13 @@ function function_98fabc06359d4d0c(anime, stance, var_435a21fd34cf3104, var_e214
                 linkedents = array_remove(linkedents, model);
                 continue;
             }
-            model linkto(level.var_46355d1369785029);
+            model linkto(level.lerp_node);
         }
     }
     anim_first_frame(var_e2140d070bb088bd, anime);
     delaythread(level.blendinfo["weaponDropTime"], &anim_single, var_e2140d070bb088bd, anime);
-    level.var_46355d1369785029 anim_first_frame(linkedents, anime);
-    level.var_46355d1369785029 delaythread(level.blendinfo["weaponDropTime"], &anim_single, linkedents, anime);
+    level.lerp_node anim_first_frame(linkedents, anime);
+    level.lerp_node delaythread(level.blendinfo["weaponDropTime"], &anim_single, linkedents, anime);
     wait level.blendinfo["weaponDropTime"];
     level.player_rig notify("link_blend_weapon_dropped");
     if (istrue(var_ec165a067af34f8f) && isdefined(level.blendinfo["blendOutTime"])) {
@@ -647,7 +647,7 @@ function function_98fabc06359d4d0c(anime, stance, var_435a21fd34cf3104, var_e214
     // Params 1, eflags: 0x4
     // Checksum 0x0, Offset: 0x2051
     // Size: 0xc0
-    function private function_8bb6a2e80cd8890d(display) {
+    function private debug_monitor(display) {
         self notify("<dev string:x52>");
         self endon("<dev string:x52>");
         self endon("<dev string:x60>");

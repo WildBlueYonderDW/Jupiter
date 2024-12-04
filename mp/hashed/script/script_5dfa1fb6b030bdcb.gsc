@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_cf4ab64c2f83d096;
 

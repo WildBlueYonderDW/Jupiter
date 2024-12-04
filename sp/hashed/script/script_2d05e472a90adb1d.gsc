@@ -1,18 +1,18 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using scripts\common\vehicle_code.gsc;
 #using script_2d05e472a90adb1d;
+#using script_371b4c2ab5861e62;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace namespace_d595138a91ee4a1d;
 

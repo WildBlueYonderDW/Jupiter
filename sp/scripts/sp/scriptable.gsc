@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\sp\door_scriptable.gsc;
-#using scripts\sp\interactables\dynolight.gsc;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\sp\door_scriptable;
+#using scripts\sp\interactables\dynolight;
 
 #namespace scriptable;
 

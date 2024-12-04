@@ -1,19 +1,19 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\starts.gsc;
-#using scripts\sp\door.gsc;
-#using scripts\sp\door_scriptable.gsc;
-#using scripts\sp\debug.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\sp\door_internal.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\debug;
+#using scripts\sp\door;
+#using scripts\sp\door_internal;
+#using scripts\sp\door_scriptable;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\starts;
+#using scripts\sp\utility;
 
-#namespace namespace_a4f72158bddc3e1b;
+#namespace door_internal;
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ec
 // Size: 0x11
@@ -22,7 +22,7 @@ function door_post_load() {
     thread trace_completion_thread();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa05
 // Size: 0x4a8
@@ -97,7 +97,7 @@ function init_window() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xeb5
 // Size: 0x48
@@ -110,7 +110,7 @@ function waittill_window_event() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf05
 // Size: 0x21
@@ -123,7 +123,7 @@ function waittill_melee_or_interact() {
     return true;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf2f
 // Size: 0x7d
@@ -137,7 +137,7 @@ function window_melee_valid(var_d32d18dd175f9e43) {
     return true;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfb5
 // Size: 0x55
@@ -152,7 +152,7 @@ function init_doors() {
     #/
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1012
 // Size: 0x7a
@@ -171,7 +171,7 @@ function global_door_threads() {
     add_global_spawn_function("team3", &scripts\sp\door::ai_monitor_doors);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1094
 // Size: 0x8bb
@@ -342,7 +342,7 @@ function init_door_internal(reset) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1957
 // Size: 0x1f
@@ -350,7 +350,7 @@ function is_clip_nosight() {
     return isdefined(self.script_noteworthy) && self.script_noteworthy == "clip_nosight";
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x197f
 // Size: 0x1de
@@ -375,8 +375,8 @@ function cursor_hint_thread(var_3443efedc8b77120) {
                 adjust_cursor_hint_side(self.open_struct);
             }
             if (isdefined(self.cam_structs)) {
-                foreach (var_693ec2852a7de810 in self.cam_structs) {
-                    adjust_cursor_hint_side(var_693ec2852a7de810);
+                foreach (cam_struct in self.cam_structs) {
+                    adjust_cursor_hint_side(cam_struct);
                 }
             }
             if (isdefined(self.c4_struct)) {
@@ -394,7 +394,7 @@ function cursor_hint_thread(var_3443efedc8b77120) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b65
 // Size: 0x29
@@ -406,7 +406,7 @@ function cursor_refresh(struct) {
     return false;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b97
 // Size: 0x7f
@@ -426,7 +426,7 @@ function has_cursor_hint(struct) {
     return false;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c1f
 // Size: 0x110
@@ -435,19 +435,19 @@ function adjust_cursor_hint_side(struct) {
         return;
     }
     pos = struct.origin;
-    var_584c82b60d83b68a = scripts\sp\door::get_door_angles() - self.true_start_angles;
-    if (abs(var_584c82b60d83b68a[1]) > 0.01 && isdefined(self.pivot_ent)) {
-        var_71adf63eacefccf5 = pos - self.pivot_ent.origin;
-        var_71adf63eacefccf5 = rotatevectorinverted(var_71adf63eacefccf5, self.true_start_angles);
-        var_71adf63eacefccf5 = rotatevector(var_71adf63eacefccf5, self.pivot_ent.angles);
-        pos = var_71adf63eacefccf5 + self.pivot_ent.origin;
+    door_angles = scripts\sp\door::get_door_angles() - self.true_start_angles;
+    if (abs(door_angles[1]) > 0.01 && isdefined(self.pivot_ent)) {
+        pos_local = pos - self.pivot_ent.origin;
+        pos_local = rotatevectorinverted(pos_local, self.true_start_angles);
+        pos_local = rotatevector(pos_local, self.pivot_ent.angles);
+        pos = pos_local + self.pivot_ent.origin;
     }
     pos += self.cursorhintdir * struct.radius;
     struct.cursor_hint_ent dontinterpolate();
     struct.cursor_hint_ent.origin = pos;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d37
 // Size: 0xb2
@@ -465,7 +465,7 @@ function function_d6f79a2aa10afcb1() {
     return [0, right * -1];
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1df1
 // Size: 0x3e
@@ -476,7 +476,7 @@ function set_player_side() {
     self.cursorhintdir = var_6cd0321e55f60f8f[1];
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e37
 // Size: 0xd8
@@ -502,7 +502,7 @@ function trace_completion_thread() {
     flag_set("interactive_doors_ready");
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f17
 // Size: 0x39
@@ -515,7 +515,7 @@ function get_hint_dist(defaultval) {
 
 /#
 
-    // Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+    // Namespace door_internal / scripts\sp\door_internal
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1f59
     // Size: 0x3cd
@@ -574,7 +574,7 @@ function get_hint_dist(defaultval) {
 
 #/
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x232e
 // Size: 0x159
@@ -604,7 +604,7 @@ function unlock_volume_logic() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x248f
 // Size: 0xd
@@ -612,7 +612,7 @@ function refresh_open_struct() {
     self.refresh = 1;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24a4
 // Size: 0x76
@@ -636,14 +636,14 @@ function door_open_think() {
     scripts\sp\door::remove_open_ability();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2522
 // Size: 0xc1
 function get_max_yaw(left) {
     var_341549370db541dd = 70;
-    var_a587f10ec210b7f8 = 30;
-    var_1a46b093ca0d8a84 = 5;
+    major_increment = 30;
+    minor_increment = 5;
     if (left) {
         if (isdefined(self.script_max_left_angle)) {
             self.max_yaw_left = self.script_max_left_angle;
@@ -653,9 +653,9 @@ function get_max_yaw(left) {
         self.max_yaw_right = self.script_max_right_angle;
         return;
     }
-    var_3b95c8b5e7f3b716 = get_max_yaw_internal(var_341549370db541dd, var_a587f10ec210b7f8, left);
-    var_3b95c8b5e7f3b716 += var_1a46b093ca0d8a84;
-    var_775065760c0fb3ba = get_max_yaw_internal(var_3b95c8b5e7f3b716, var_1a46b093ca0d8a84, left);
+    var_3b95c8b5e7f3b716 = get_max_yaw_internal(var_341549370db541dd, major_increment, left);
+    var_3b95c8b5e7f3b716 += minor_increment;
+    var_775065760c0fb3ba = get_max_yaw_internal(var_3b95c8b5e7f3b716, minor_increment, left);
     if (left) {
         self.max_yaw_left = var_775065760c0fb3ba;
         return;
@@ -663,7 +663,7 @@ function get_max_yaw(left) {
     self.max_yaw_right = var_775065760c0fb3ba;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x25eb
 // Size: 0xa1
@@ -692,11 +692,11 @@ function get_max_yaw_internal(test_yaw, increment, left) {
     return test_yaw;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2695
 // Size: 0x332
-function yaw_collision_check(yaw, left, var_67da46a87eefce53) {
+function yaw_collision_check(yaw, left, content_override) {
     multiplier = 100;
     if (left) {
         multiplier *= -1;
@@ -711,7 +711,7 @@ function yaw_collision_check(yaw, left, var_67da46a87eefce53) {
     }
     start = basestart + anglestoforward(trace_angles) * self.length * 0.2;
     end = start + anglestoright(trace_angles) * multiplier;
-    trace = scripts\engine\trace::capsule_trace(start, end, 6, 80, trace_angles, [self, self.clip], var_67da46a87eefce53, 0);
+    trace = scripts\engine\trace::capsule_trace(start, end, 6, 80, trace_angles, [self, self.clip], content_override, 0);
     dist = distance2d(start, trace["position"]);
     /#
         if (getdvarint(@"hash_6985e82f27803483")) {
@@ -736,7 +736,7 @@ function yaw_collision_check(yaw, left, var_67da46a87eefce53) {
     #/
     if (dist > 3) {
         start = basestart + anglestoforward(trace_angles) * self.length * 0.9;
-        trace = scripts\engine\trace::capsule_trace(start, end, 6, 80, trace_angles, [self, self.clip], var_67da46a87eefce53, 0);
+        trace = scripts\engine\trace::capsule_trace(start, end, 6, 80, trace_angles, [self, self.clip], content_override, 0);
         /#
             if (getdvarint(@"hash_6985e82f27803483")) {
                 self.traces++;
@@ -760,7 +760,7 @@ function yaw_collision_check(yaw, left, var_67da46a87eefce53) {
 
 /#
 
-    // Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+    // Namespace door_internal / scripts\sp\door_internal
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x29d0
     // Size: 0xc9
@@ -780,7 +780,7 @@ function yaw_collision_check(yaw, left, var_67da46a87eefce53) {
 
 #/
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2aa1
 // Size: 0xc9
@@ -802,7 +802,7 @@ function try_door_hint() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b72
 // Size: 0x3a
@@ -819,7 +819,7 @@ function first_hint_func() {
     return false;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bb5
 // Size: 0x7b
@@ -836,7 +836,7 @@ function display_hint_dist_check() {
     flag_set("door_exceed_hint_dist");
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c38
 // Size: 0x27
@@ -848,7 +848,7 @@ function waittill_first_interact_or_bash() {
     thread scripts\sp\door::door_ajar();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c67
 // Size: 0x73
@@ -864,7 +864,7 @@ function waittill_second_interact_or_bash() {
     thread scripts\sp\door::door_open_completely();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ce2
 // Size: 0x4c
@@ -875,7 +875,7 @@ function can_pivot_change() {
     return true;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d37
 // Size: 0x15e
@@ -889,14 +889,14 @@ function set_pivot_point(left) {
         return;
     }
     if (left) {
-        var_ad485ab13fbe5ade = "open_left";
+        new_pivot = "open_left";
     } else {
-        var_ad485ab13fbe5ade = "open_right";
+        new_pivot = "open_right";
     }
-    self.hinge_side = var_ad485ab13fbe5ade;
-    if (!isdefined(self.current_pivot_struct) || self.current_pivot_struct != self.pivots[var_ad485ab13fbe5ade]) {
-        println("<dev string:x13b>" + var_ad485ab13fbe5ade);
-        self.current_pivot_struct = self.pivots[var_ad485ab13fbe5ade];
+    self.hinge_side = new_pivot;
+    if (!isdefined(self.current_pivot_struct) || self.current_pivot_struct != self.pivots[new_pivot]) {
+        println("<dev string:x13b>" + new_pivot);
+        self.current_pivot_struct = self.pivots[new_pivot];
         if (self islinked()) {
             self unlink();
         }
@@ -911,7 +911,7 @@ function set_pivot_point(left) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e9d
 // Size: 0xaf
@@ -934,7 +934,7 @@ function monitor_open_completely() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f54
 // Size: 0xda
@@ -957,7 +957,7 @@ function pushents_clear() {
     return true;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3037
 // Size: 0x41
@@ -970,18 +970,18 @@ function setup_open_struct(struct) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3080
 // Size: 0x3b1
-function open_struct_logic(var_cdd584c942093e14) {
+function open_struct_logic(display_locked) {
     assertex(isstruct(self), "Call this on the door.open_struct");
     self.door endon("stop_open_ability");
     self.door endon("stop_open_interact");
     if (!isdefined(self.openinteract)) {
         self.openinteract = 0;
     }
-    if ((istrue(var_cdd584c942093e14) || isdefined(self.door.lockpick)) && istrue(self.door.locked) && !istrue(self.door.nohint)) {
+    if ((istrue(display_locked) || isdefined(self.door.lockpick)) && istrue(self.door.locked) && !istrue(self.door.nohint)) {
         if (isdefined(self.door.lockpick)) {
             self.door.lockpick.hint_string = undefined;
             self.door.lockpick.hint_icon = undefined;
@@ -1040,7 +1040,7 @@ function open_struct_logic(var_cdd584c942093e14) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3439
 // Size: 0xfd
@@ -1069,7 +1069,7 @@ function function_a320f9f9dda13f8f() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x353e
 // Size: 0x17
@@ -1077,7 +1077,7 @@ function function_2998da25f4d455b1(door) {
     return isdefined(door.script_side);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x355e
 // Size: 0x7a
@@ -1098,7 +1098,7 @@ function function_e0b0300fbf1b645b(door) {
     return false;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x35e1
 // Size: 0x16
@@ -1106,7 +1106,7 @@ function should_do_gesture() {
     return !isnullweapon(level.player getcurrentweapon());
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3600
 // Size: 0xc8
@@ -1128,13 +1128,13 @@ function player_door_gesture(var_846cd8d00b0ce200) {
     target delete();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x36d0
 // Size: 0xde
 function pushplayertodoor() {
     decay = 0.04;
-    var_39c7cb1b3e7be92 = 0.2;
+    growth = 0.2;
     timefactor = 0;
     level.player thread blend_movespeedscale(0.1, 0.3, "doorOpen");
     while (timefactor < 0.99) {
@@ -1142,7 +1142,7 @@ function pushplayertodoor() {
             break;
         }
         pushlogic(timefactor);
-        timefactor += var_39c7cb1b3e7be92;
+        timefactor += growth;
         wait 0.05;
     }
     timefactor = 1;
@@ -1158,7 +1158,7 @@ function pushplayertodoor() {
     level.player pushplayervector((0, 0, 0));
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37b6
 // Size: 0x9d
@@ -1172,7 +1172,7 @@ function pushlogic(timefactor) {
     level.player pushplayervector(dir * force);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x385b
 // Size: 0x81
@@ -1188,7 +1188,7 @@ function player_window_gesture(duration) {
     level.player stopgestureviewmodel(gesture, 2);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38e4
 // Size: 0x82
@@ -1211,7 +1211,7 @@ function door_bashable_by_player(var_e6934380371d7dd3) {
     return false;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x396f
 // Size: 0x231
@@ -1261,7 +1261,7 @@ function function_4812cda9829d627a() {
     return false;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ba9
 // Size: 0x13b
@@ -1301,7 +1301,7 @@ function should_bash_open() {
     return false;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ced
 // Size: 0x21f
@@ -1324,7 +1324,7 @@ function bash_debug(duration) {
     #/
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f14
 // Size: 0xdd
@@ -1344,7 +1344,7 @@ function stealth_broadcast(event, originator, radius) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ff9
 // Size: 0x9f
@@ -1359,25 +1359,25 @@ function combat_getinfoinradius(radius) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x40a0
 // Size: 0x1b8
 function get_bash_yaw(scale) {
     if (self.open_left) {
-        var_766ad0d13d1bba2c = self.max_yaw_left;
+        yaw_left = self.max_yaw_left;
         if (scale < 1) {
-            var_766ad0d13d1bba2c = math::factor_value(55, 170, scale);
-            var_766ad0d13d1bba2c = min(var_766ad0d13d1bba2c, self.max_yaw_left);
+            yaw_left = math::factor_value(55, 170, scale);
+            yaw_left = min(yaw_left, self.max_yaw_left);
         }
-        bash_yaw = self.true_start_angles[1] + var_766ad0d13d1bba2c;
+        bash_yaw = self.true_start_angles[1] + yaw_left;
     } else {
-        var_fe1f39249917df19 = self.max_yaw_right;
+        yaw_right = self.max_yaw_right;
         if (scale < 1) {
-            var_fe1f39249917df19 = math::factor_value(55, 170, scale);
-            var_fe1f39249917df19 = min(var_fe1f39249917df19, self.max_yaw_right);
+            yaw_right = math::factor_value(55, 170, scale);
+            yaw_right = min(yaw_right, self.max_yaw_right);
         }
-        bash_yaw = self.true_start_angles[1] - var_fe1f39249917df19;
+        bash_yaw = self.true_start_angles[1] - yaw_right;
     }
     if (isdefined(self.pushents)) {
         pushents = self.pushents;
@@ -1399,7 +1399,7 @@ function get_bash_yaw(scale) {
     return bash_yaw;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4261
 // Size: 0xdb
@@ -1424,7 +1424,7 @@ function bashed_locked_door(velocity) {
     self.isbashing = undefined;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4344
 // Size: 0x91
@@ -1442,7 +1442,7 @@ function bashed_locked_door_sfx() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x43dd
 // Size: 0x5d
@@ -1452,7 +1452,7 @@ function door_bash_presentation() {
     earthquake(0.6, 0.75, level.player.origin, 200);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4442
 // Size: 0x160
@@ -1499,18 +1499,18 @@ function close_prompt(delay) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x45aa
 // Size: 0xba
 function close_check() {
     contents = scripts\engine\trace::create_character_contents();
-    var_d6fa59fc42d17b53 = scripts\sp\door::get_door_angles()[1];
-    var_3e0a8967ae116926 = self.true_start_angles[1];
-    trace_count = ceil(abs(var_3e0a8967ae116926 - var_d6fa59fc42d17b53) / 15);
+    yaw_start = scripts\sp\door::get_door_angles()[1];
+    yaw_end = self.true_start_angles[1];
+    trace_count = ceil(abs(yaw_end - yaw_start) / 15);
     left = self.current_pivot_struct == self.pivots["open_left"];
     for (trace = 0; trace < trace_count; trace++) {
-        angle = var_d6fa59fc42d17b53 + (var_3e0a8967ae116926 - var_d6fa59fc42d17b53) * trace / trace_count;
+        angle = yaw_start + (yaw_end - yaw_start) * trace / trace_count;
         if (!yaw_collision_check(angle, left, contents)) {
             return false;
         }
@@ -1518,7 +1518,7 @@ function close_check() {
     return true;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x466d
 // Size: 0xd3
@@ -1550,7 +1550,7 @@ function monitor_door_push(delay) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4748
 // Size: 0x66
@@ -1569,7 +1569,7 @@ function door_ease_in_open_input() {
     self.masterdoorratescale = 1;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x47b6
 // Size: 0x53
@@ -1583,7 +1583,7 @@ function get_pushent() {
     return pushents[0];
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4812
 // Size: 0x40f
@@ -1603,15 +1603,15 @@ function push_door() {
     percent = math::normalize_value(min_dist, max_dist, dist);
     amount = max_push * (1 - percent);
     amount *= self.masterdoorratescale;
-    var_fe79a915d99a0e77 = scripts\sp\door::should_open_left(self.pivot_ent.angles, pushent);
+    push_left = scripts\sp\door::should_open_left(self.pivot_ent.angles, pushent);
     if (abs(amount) < 0.001) {
         return;
     }
     self.open_struct scripts\sp\door::remove_open_interact_hint();
     currentyaw = scripts\sp\door::get_door_angles()[1];
-    var_4b77bc67b7834c10 = ter_op(var_fe79a915d99a0e77 == 1, 1, -1);
-    target_yaw = currentyaw + amount * var_4b77bc67b7834c10;
-    if (var_fe79a915d99a0e77) {
+    yaw_dir = ter_op(push_left == 1, 1, -1);
+    target_yaw = currentyaw + amount * yaw_dir;
+    if (push_left) {
         if (self.hinge_side == "open_left") {
             angle_diff = scripts\sp\door::angle_diff(target_yaw, self.true_start_angles[1]);
             if (angle_diff > self.max_yaw_left) {
@@ -1674,7 +1674,7 @@ function push_door() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c29
 // Size: 0xc3
@@ -1699,12 +1699,12 @@ function function_9f4e269e748b55d0() {
     return var_8dd59109b3cb5e34;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cf5
 // Size: 0x5d1
 function push_door_player_effects() {
-    var_fe79a915d99a0e77 = scripts\sp\door::should_open_left(self.pivot_ent.angles, level.player);
+    push_left = scripts\sp\door::should_open_left(self.pivot_ent.angles, level.player);
     hinges = self.pivot_ent;
     channel = "doorPush" + self.doorid;
     if (!isdefined(self.dooroffset)) {
@@ -1736,21 +1736,21 @@ function push_door_player_effects() {
             var_5ba1a48ce1cfc9ad = (0, 2, 0);
         }
         if (dot > 0) {
-            if (var_fe79a915d99a0e77) {
-                var_e094d5d8146b9589 = (4, -1.5, 0);
-                var_81878c0e3b7a387f = (-6, 5, 1.5);
+            if (push_left) {
+                fb_offset = (4, -1.5, 0);
+                fb_rot = (-6, 5, 1.5);
             } else {
-                var_e094d5d8146b9589 = (4, -1.5, 0);
-                var_81878c0e3b7a387f = (-6, -3, -1.5);
+                fb_offset = (4, -1.5, 0);
+                fb_rot = (-6, -3, -1.5);
             }
         } else {
-            var_e094d5d8146b9589 = (-3, 0, 0);
-            var_81878c0e3b7a387f = (0, 0, 0);
+            fb_offset = (-3, 0, 0);
+            fb_rot = (0, 0, 0);
         }
         var_67a920a30da099a0 = math::normalize_value(0.6, 1, abs(dot));
         var_67a920a30da099a0 = math::normalized_float_smooth_in(var_67a920a30da099a0);
-        offset = math::factor_value(var_31fa3cf311e619d3, var_e094d5d8146b9589, var_67a920a30da099a0);
-        rot = math::factor_value(var_5ba1a48ce1cfc9ad, var_81878c0e3b7a387f, var_67a920a30da099a0);
+        offset = math::factor_value(var_31fa3cf311e619d3, fb_offset, var_67a920a30da099a0);
+        rot = math::factor_value(var_5ba1a48ce1cfc9ad, fb_rot, var_67a920a30da099a0);
         var_e36d7712ecd4be90 = math::normalize_value(0, 1, var_e24f397a5fb91df);
         var_f84a6367da0e58c8 = math::normalize_value(0, 0.5, var_a870f5975b6135e7);
         var_7646a46abc647f06 = 1 - math::normalize_value(20, 50, var_271c6b91e677e543);
@@ -1805,7 +1805,7 @@ function push_door_player_effects() {
     level.player blend_movespeedscale(1, 0, channel);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x52ce
 // Size: 0x8e
@@ -1818,7 +1818,7 @@ function door_get_pushspot() {
     return var_d7fb0ea745804aa9;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5365
 // Size: 0x1b2
@@ -1853,7 +1853,7 @@ function initlinkednodes() {
     self.linkednodes_knob = undefined;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x551f
 // Size: 0x17a
@@ -1891,7 +1891,7 @@ function updatenodelookpeek() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x56a1
 // Size: 0xaf
@@ -1910,7 +1910,7 @@ function createinitialnavmodifier(var_ffa56999eca9e0ba) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5758
 // Size: 0xc1
@@ -1928,7 +1928,7 @@ function suspicious_door_stealth_check(var_b69422d8466298e6) {
     level.stealth.suspicious_door.doors = array_remove(level.stealth.suspicious_door.doors, self);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5821
 // Size: 0x38
@@ -1942,7 +1942,7 @@ function try_push_sound() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5861
 // Size: 0x66
@@ -1958,7 +1958,7 @@ function door_creak_sound() {
     thread door_creak_sound_stop();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x58cf
 // Size: 0x23
@@ -1969,7 +1969,7 @@ function door_creak_sound_stop() {
     self stoploopsound();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x58fa
 // Size: 0x1f
@@ -1977,7 +1977,7 @@ function interact_door_get_endpoint() {
     return self.origin + self.forward * self.length;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5922
 // Size: 0x7e
@@ -1992,7 +1992,7 @@ function door_is_at_max_yaw(either) {
     return angle_diff <= -1 * self.max_yaw_right;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x59a8
 // Size: 0x55
@@ -2004,7 +2004,7 @@ function door_is_half_open() {
     return angle_diff <= self.max_yaw_right / -2;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a05
 // Size: 0x39
@@ -2013,7 +2013,7 @@ function door_is_open_at_least(checkangle) {
     return abs(angle_diff) >= checkangle;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a47
 // Size: 0x56
@@ -2023,7 +2023,7 @@ function get_door_center() {
     return self.doorcenter;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5aa6
 // Size: 0x47
@@ -2033,7 +2033,7 @@ function get_door_bottom_center() {
     return self.doorbottomcenter;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5af6
 // Size: 0x3f
@@ -2043,7 +2043,7 @@ function get_door_bottom_handle() {
     return self.doorbottomhandle;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b3e
 // Size: 0x1d
@@ -2052,7 +2052,7 @@ function get_door_bottom_origin() {
     return self.doorbottomorigin;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b64
 // Size: 0xfc
@@ -2078,7 +2078,7 @@ function isnavpointaccesiblefrombehinddoor(targetpos, door) {
 
 /#
 
-    // Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+    // Namespace door_internal / scripts\sp\door_internal
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x5c69
     // Size: 0xc7
@@ -2095,7 +2095,7 @@ function isnavpointaccesiblefrombehinddoor(targetpos, door) {
 
 #/
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d38
 // Size: 0x7d
@@ -2111,7 +2111,7 @@ function print3d_on_me(txt, duration) {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5dbd
 // Size: 0x31
@@ -2124,7 +2124,7 @@ function get_door_audio_material() {
     return var_702d68f1ec16e21c;
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5df7
 // Size: 0x120
@@ -2147,7 +2147,7 @@ function double_doors_init_auto() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f1f
 // Size: 0x37
@@ -2160,7 +2160,7 @@ function double_doors_waittill_interact() {
     self.doubledoorother notify("first_interact");
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f5e
 // Size: 0x59
@@ -2178,7 +2178,7 @@ function double_doors_waittill_bashed() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fbf
 // Size: 0x62
@@ -2193,14 +2193,14 @@ function double_doors_waittill_open_completely() {
     self.doubledoorother thread scripts\sp\door::door_open_completely(opener);
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6029
 // Size: 0xd3
-function double_doors_hint_pos(var_5c56f786a64d1294) {
+function double_doors_hint_pos(door_other) {
     flag_wait("interactive_doors_ready_internal");
     struct = spawnstruct();
-    struct.origin = math::get_mid_point(self.open_struct.origin, var_5c56f786a64d1294.open_struct.origin);
+    struct.origin = math::get_mid_point(self.open_struct.origin, door_other.open_struct.origin);
     scripts\sp\door::remove_open_prompts();
     struct.door = self;
     if (isdefined(self.open_struct) && isdefined(self.open_struct.radius)) {
@@ -2211,7 +2211,7 @@ function double_doors_hint_pos(var_5c56f786a64d1294) {
     thread cursor_hint_thread();
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6104
 // Size: 0x275
@@ -2255,7 +2255,7 @@ function door_watch_unresolved_collision() {
     }
 }
 
-// Namespace namespace_a4f72158bddc3e1b / scripts\sp\door_internal
+// Namespace door_internal / scripts\sp\door_internal
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6381
 // Size: 0x7f

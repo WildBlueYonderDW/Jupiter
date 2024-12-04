@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using script_468934889d71b78;
 #using script_38a8681fd881232e;
+#using script_468934889d71b78;
 #using script_5247c3a9848fc6f4;
-#using scripts\mp\load.gsc;
-#using scripts\mp\compass.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\compass;
+#using scripts\mp\load;
 
 #namespace mp_shoothouse2;
 

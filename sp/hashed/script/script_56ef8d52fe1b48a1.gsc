@@ -1,30 +1,30 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
+#using script_14e0aec82ef0352c;
+#using script_189b67b2735b981d;
+#using script_18c9036dc9a4081;
 #using script_1ed1214969b5eba7;
-#using script_74502a9e0ef1f19c;
+#using script_476b6443e3798f5e;
 #using script_56ef8d52fe1b48a1;
-#using scripts\cp\cp_analytics.gsc;
 #using script_5e5507d57bbbb709;
-#using script_6e09a830fab9468f;
-#using scripts\cp\cp_hud_message.gsc;
 #using script_644c18834356d9dc;
 #using script_6d68cfdf0836123c;
-#using script_476b6443e3798f5e;
+#using script_6e09a830fab9468f;
+#using script_74502a9e0ef1f19c;
 #using script_afb7e332aee4bf2;
-#using script_18c9036dc9a4081;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_14e0aec82ef0352c;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_189b67b2735b981d;
-#using scripts\cp_mp\killstreaks\emp_drone.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\loot_system.gsc;
-#using scripts\cp\cp_relics.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_relics;
+#using scripts\cp\loot_system;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\killstreaks\emp_drone;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace super;
 
@@ -99,16 +99,16 @@ function registersupers() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xdaa
 // Size: 0x126
-function give_player_super(var_5dfdd9eee27dc736, var_2cbc4002b1724081) {
-    if (!isdefined(var_5dfdd9eee27dc736)) {
-        var_5dfdd9eee27dc736 = "role_tank";
+function give_player_super(super_choice, var_2cbc4002b1724081) {
+    if (!isdefined(super_choice)) {
+        super_choice = "role_tank";
     }
-    if (isdefined(self.super) && isdefined(self.super.supername) && var_5dfdd9eee27dc736 == self.super.supername && !istrue(var_2cbc4002b1724081)) {
+    if (isdefined(self.super) && isdefined(self.super.supername) && super_choice == self.super.supername && !istrue(var_2cbc4002b1724081)) {
         return;
     }
     clear_player_class_and_super();
-    function_1f8539b231e93107(var_5dfdd9eee27dc736);
-    thread update_super_icon(var_5dfdd9eee27dc736);
+    function_1f8539b231e93107(super_choice);
+    thread update_super_icon(super_choice);
     switch (self.super.supername) {
     case #"hash_508fbdd5b269310c":
         thread give_team_auto_revive();
@@ -295,9 +295,9 @@ function fire_super(super) {
     self setclientomnvar("cp_super_ready", 0);
     self setclientomnvar("ui_super_state", 3);
     setsuperisinuse(1);
-    var_fa603d3b6be45842 = namespace_44edfb3e2b433c17::getcurrentsuperref();
-    if (isdefined(var_fa603d3b6be45842)) {
-        scripts\cp\cp_analytics::logevent_superused(self, var_fa603d3b6be45842);
+    super_ref = namespace_44edfb3e2b433c17::getcurrentsuperref();
+    if (isdefined(super_ref)) {
+        scripts\cp\cp_analytics::logevent_superused(self, super_ref);
     }
     thread display_super_fired_splash();
     run_super_loop(super);
@@ -459,10 +459,10 @@ function recharge_super(super) {
     level endon("game_ended");
     self endon("end_super_watcher");
     self setclientomnvar("ui_super_state", 1);
-    var_1d940aad29a009b2 = function_32d75c33471450d3();
-    var_21fb8a21b88a9a93 = getdvarint(@"hash_b0c572ab1605350a", 0);
-    if (var_21fb8a21b88a9a93) {
-        var_1d940aad29a009b2 = var_21fb8a21b88a9a93;
+    meter_time = function_32d75c33471450d3();
+    dvar_check = getdvarint(@"hash_b0c572ab1605350a", 0);
+    if (dvar_check) {
+        meter_time = dvar_check;
     }
     if (istrue(self.role_edit)) {
         if (!isdefined(self.super_progress)) {
@@ -477,11 +477,11 @@ function recharge_super(super) {
     starttime = gettime();
     lasttime = starttime;
     while (true) {
-        var_21fb8a21b88a9a93 = getdvarint(@"hash_b0c572ab1605350a", 0);
-        if (var_21fb8a21b88a9a93) {
-            var_1d940aad29a009b2 = var_21fb8a21b88a9a93;
+        dvar_check = getdvarint(@"hash_b0c572ab1605350a", 0);
+        if (dvar_check) {
+            meter_time = dvar_check;
         } else {
-            var_1d940aad29a009b2 = function_32d75c33471450d3();
+            meter_time = function_32d75c33471450d3();
         }
         paused = 0;
         curtime = gettime();
@@ -503,8 +503,8 @@ function recharge_super(super) {
             continue;
         }
         timediff = curtime - lasttime;
-        if (isdefined(var_1d940aad29a009b2)) {
-            amount = timediff / var_1d940aad29a009b2 * 1000 * 1000;
+        if (isdefined(meter_time)) {
+            amount = timediff / meter_time * 1000 * 1000;
             amount *= namespace_c4cab616edf9b2b9::get_perk("super_fill_scalar");
             increase_super_progress(amount);
         }
@@ -540,7 +540,7 @@ function display_super_ready_splash() {
     }
     if (self usinggamepad()) {
         splash = "super_revive";
-        switch (self.var_698900c6211cc03c.kit) {
+        switch (self.kit_data.kit) {
         case #"hash_f7803221ec64d903":
             splash = "cp_super_revive";
             break;
@@ -553,7 +553,7 @@ function display_super_ready_splash() {
         }
     } else {
         splash = "cp_super_revive_kbm";
-        switch (self.var_698900c6211cc03c.kit) {
+        switch (self.kit_data.kit) {
         case #"hash_f7803221ec64d903":
             splash = "cp_super_revive_kbm";
             break;
@@ -635,9 +635,9 @@ function drain_super_meter(time) {
             break;
         }
     }
-    var_e05e59b00ce25f0f = namespace_1f50a6a7107e9381::function_cab56589fd214c7e();
+    kit_name = namespace_1f50a6a7107e9381::function_cab56589fd214c7e();
     function_c5ea07dac9d83685();
-    switch (var_e05e59b00ce25f0f) {
+    switch (kit_name) {
     case #"hash_2b0e6b98c99852f2":
     case #"hash_36cdfbfaeba9a21a":
     case #"hash_f7803221ec64d903":
@@ -1060,16 +1060,16 @@ function activate_team_armor_buff() {
 // Checksum 0x0, Offset: 0x2756
 // Size: 0x106
 function turn_on_team_armor_buff() {
-    var_c791ead1f39669f4 = 100;
-    var_971f0b9a323941b8 = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
-    if (var_971f0b9a323941b8) {
-        var_c791ead1f39669f4 = var_971f0b9a323941b8;
+    full_armor = 100;
+    armor_dvar = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
+    if (armor_dvar) {
+        full_armor = armor_dvar;
     }
     splash = "cp_super_armor_used";
     foreach (player in level.players) {
         if (on_the_same_team(self, player) && isalive(player)) {
             player.has_team_armor = 1;
-            namespace_6eb2bf1007397723::givearmor(player, var_c791ead1f39669f4, 1);
+            namespace_6eb2bf1007397723::givearmor(player, full_armor, 1);
             player.old_armor_scalar = player namespace_c4cab616edf9b2b9::get_perk("enemy_damage_to_player_armor_scalar");
             player namespace_c4cab616edf9b2b9::set_perk("enemy_damage_to_player_armor_scalar", player.old_armor_scalar * 1.5);
             player scripts\cp\cp_hud_message::showsplash(splash, undefined, self);
@@ -1082,9 +1082,9 @@ function turn_on_team_armor_buff() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2864
 // Size: 0x50
-function on_the_same_team(var_35892088904eb273, var_b147b9882ebdbd7d) {
-    if (isdefined(var_35892088904eb273.team_number) && isdefined(var_b147b9882ebdbd7d.team_number)) {
-        return (var_35892088904eb273.team_number == var_b147b9882ebdbd7d.team_number);
+function on_the_same_team(player_one, player_two) {
+    if (isdefined(player_one.team_number) && isdefined(player_two.team_number)) {
+        return (player_one.team_number == player_two.team_number);
     }
     return 1;
 }
@@ -1590,8 +1590,8 @@ function function_832d0277ebcade25() {
         namespace_44edfb3e2b433c17::function_c5ea07dac9d83685();
         clientnum = self getentitynumber();
         setomnvar("ui_class_power_reloading", clientnum);
-        var_89656f67c2ea228d = 0.2;
-        thread namespace_94359011b63230a6::function_8f741e1e8e870100(var_89656f67c2ea228d, 915);
+        delay_amount = 0.2;
+        thread namespace_94359011b63230a6::function_8f741e1e8e870100(delay_amount, 915);
         namespace_44edfb3e2b433c17::superusefinished();
         namespace_44edfb3e2b433c17::setsuperisinuse(0);
         return undefined;
@@ -1602,8 +1602,8 @@ function function_832d0277ebcade25() {
     clientnum = self getentitynumber();
     setomnvar("ui_class_power_reloading", clientnum);
     if (msg == "offhand_pullback" || msg == "weapon_change") {
-        var_89656f67c2ea228d = 0.2;
-        thread namespace_94359011b63230a6::function_8f741e1e8e870100(var_89656f67c2ea228d, 915);
+        delay_amount = 0.2;
+        thread namespace_94359011b63230a6::function_8f741e1e8e870100(delay_amount, 915);
         superusefinished();
         return undefined;
     }
@@ -1788,13 +1788,13 @@ function check_for_vehicle_in_front() {
         fwd = anglestoforward(self.angles);
         fwd = vectornormalize(fwd);
         offset_left = rotatevector((0, 30, 0), self.angles);
-        var_f4e944d612636975 = start + offset_left;
+        start_left = start + offset_left;
         offset_right = rotatevector((0, -30, 0), self.angles);
-        var_79736304e483b1ce = start + offset_right;
+        start_right = start + offset_right;
         vehicles = get_axis_vehicles();
         check_for_vehicle_trace(start, start + fwd * dist, vehicles, "fwd");
-        check_for_vehicle_trace(var_f4e944d612636975, var_f4e944d612636975 + fwd * dist, vehicles, "left");
-        check_for_vehicle_trace(var_79736304e483b1ce, var_79736304e483b1ce + fwd * dist, vehicles, "right");
+        check_for_vehicle_trace(start_left, start_left + fwd * dist, vehicles, "left");
+        check_for_vehicle_trace(start_right, start_right + fwd * dist, vehicles, "right");
         waitframe();
     }
 }
@@ -1926,8 +1926,8 @@ function function_6b384ba557a25934() {
         if (namespace_d4aab8c9cb8ecb14::player_in_laststand(self) || !scripts\cp_mp\utility\player_utility::_isalive()) {
             continue;
         }
-        var_c64b92d56ec838b3 = scripts\cp\loot_system::get_empty_munition_slot(self);
-        if (!isdefined(var_c64b92d56ec838b3)) {
+        empty_slot = scripts\cp\loot_system::get_empty_munition_slot(self);
+        if (!isdefined(empty_slot)) {
             continue;
         }
         scripts\cp\loot_system::give_munition("brloot_munition_grenade_launcher", self);

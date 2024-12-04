@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_354c862768cfe202;
 #using script_24e4405cf93f20ed;
-#using script_e80538ef14d00e1;
+#using script_354c862768cfe202;
 #using script_afb7e332aee4bf2;
+#using script_e80538ef14d00e1;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_2a181c7ed170fc79;
 
@@ -12,7 +12,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x23a
 // Size: 0x26
-function function_2713fd656d03d0ce() {
+function armored_vehicle() {
     self.var_9acfc0bd86b2e2c1 = &fn_damagefeedback;
     self.fn_death = &function_6a0b2a08499a9842;
     function_66b0113fe0bf4a88(self);
@@ -86,17 +86,17 @@ function function_f4d3d0edd18649cb() {
         if (isdefined(self.vehicle_spawner) && isdefined(self.vehicle_spawner.speed)) {
             veh_speed = self.vehicle_spawner.speed;
         }
-        var_6d707ebc7d10ded8 = [];
+        player_vehicles = [];
         var_bffb55e2f8be21ef = undefined;
         closest_player = undefined;
         foreach (player in level.players) {
             if (!isdefined(player.vehicle)) {
                 continue;
             }
-            var_6d707ebc7d10ded8[var_6d707ebc7d10ded8.size] = player.vehicle;
+            player_vehicles[player_vehicles.size] = player.vehicle;
         }
-        if (var_6d707ebc7d10ded8.size) {
-            var_bffb55e2f8be21ef = getclosest(self.origin, var_6d707ebc7d10ded8);
+        if (player_vehicles.size) {
+            var_bffb55e2f8be21ef = getclosest(self.origin, player_vehicles);
         }
         final_dest = undefined;
         if (isdefined(var_bffb55e2f8be21ef) && function_f32c4025f3271080(var_bffb55e2f8be21ef)) {
@@ -107,11 +107,11 @@ function function_f4d3d0edd18649cb() {
             waittillframeend();
             dest = var_bffb55e2f8be21ef function_d866a6b5497200c5(self);
             final_dest = dest.origin;
-            var_de18307eb53aa688 = 100;
-            if (isdefined(self.var_38b9cf7e81e89e8)) {
-                var_de18307eb53aa688 = self.var_38b9cf7e81e89e8;
+            lead_amount = 100;
+            if (isdefined(self.leading_magnitude)) {
+                lead_amount = self.leading_magnitude;
             }
-            var_fb957ab80e292860 = final_dest + anglestoforward(var_bffb55e2f8be21ef.angles) * var_de18307eb53aa688;
+            var_fb957ab80e292860 = final_dest + anglestoforward(var_bffb55e2f8be21ef.angles) * lead_amount;
             var_5b7feb61dd19201b = isnavmeshloaded("vehicle_med") ? "vehicle_med" : "tank_med";
             var_fb957ab80e292860 = getclosestpointonnavmesh(var_fb957ab80e292860, var_5b7feb61dd19201b);
         } else {
@@ -259,16 +259,16 @@ function function_2bf62999798d0b53() {
     while (true) {
         fwd = anglestoforward((0, self.angles[1], 0));
         var_cbac2203146ae84a = anglestoright((0, self.angles[1], 0));
-        var_5445f9076b5621fa = 250;
+        fwd_mag = 250;
         var_6d5e7baf4106d1dd = -250;
         if (isdefined(self.var_c72f42ebc770215f)) {
-            var_5445f9076b5621fa = self.var_c72f42ebc770215f;
+            fwd_mag = self.var_c72f42ebc770215f;
         }
         if (isdefined(self.var_b9428297abb94a7e)) {
             var_6d5e7baf4106d1dd = self.var_b9428297abb94a7e;
         }
-        self.var_3749eb0f11873d37.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * 190 + fwd * var_5445f9076b5621fa, var_5b7feb61dd19201b);
-        self.var_5da685db7d347340.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * -190 + fwd * var_5445f9076b5621fa, var_5b7feb61dd19201b);
+        self.var_3749eb0f11873d37.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * 190 + fwd * fwd_mag, var_5b7feb61dd19201b);
+        self.var_5da685db7d347340.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * -190 + fwd * fwd_mag, var_5b7feb61dd19201b);
         self.var_4a35ce0251802293.origin = getclosestpointonnavmesh(self.origin + fwd * -500, var_5b7feb61dd19201b);
         wait 0.05;
     }
@@ -287,16 +287,16 @@ function function_f0a7e47a3ffdefb6() {
     while (true) {
         fwd = anglestoforward((0, self.angles[1], 0));
         var_cbac2203146ae84a = anglestoright((0, self.angles[1], 0));
-        var_5445f9076b5621fa = 250;
+        fwd_mag = 250;
         var_6d5e7baf4106d1dd = -250;
         if (isdefined(self.var_c72f42ebc770215f)) {
-            var_5445f9076b5621fa = self.var_c72f42ebc770215f;
+            fwd_mag = self.var_c72f42ebc770215f;
         }
         if (isdefined(self.var_b9428297abb94a7e)) {
             var_6d5e7baf4106d1dd = self.var_b9428297abb94a7e;
         }
-        self.var_3749eb0f11873d37.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * 190 + fwd * var_5445f9076b5621fa, var_5b7feb61dd19201b);
-        self.var_5da685db7d347340.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * -190 + fwd * var_5445f9076b5621fa, var_5b7feb61dd19201b);
+        self.var_3749eb0f11873d37.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * 190 + fwd * fwd_mag, var_5b7feb61dd19201b);
+        self.var_5da685db7d347340.origin = getclosestpointonnavmesh(self.origin + var_cbac2203146ae84a * -190 + fwd * fwd_mag, var_5b7feb61dd19201b);
         self.var_4a35ce0251802293.origin = getclosestpointonnavmesh(self.origin, var_5b7feb61dd19201b);
         wait 1;
     }
@@ -387,7 +387,7 @@ function function_9804c82501de981b(newpath, speed) {
     self notify("path_updated");
     self endon("path_updated");
     self.var_b7d9b54851a59550 = 1;
-    var_ea53be4b354d1294 = speed;
+    orig_speed = speed;
     foreach (index, point in newpath) {
         while (istrue(self.pausing)) {
             wait 0.05;
@@ -398,24 +398,24 @@ function function_9804c82501de981b(newpath, speed) {
         self function_77320e794d35465a("p2p", "goalPoint", point);
         if (isdefined(speed)) {
             if (istrue(self.var_b7d9b54851a59550)) {
-                speed = var_ea53be4b354d1294;
-                var_aa5f785752578765 = index + 2;
-                var_99f0a13b14f28c53 = cos(20);
+                speed = orig_speed;
+                future_index = index + 2;
+                cos_ang = cos(20);
                 cur_node = point;
                 ang = self.angles;
                 var_d91c820e8d146557 = 0;
                 if (isdefined(newpath[index + 1])) {
                     next_node = newpath[index + 1];
-                    var_a3c032d45260dd10 = within_fov(cur_node, ang, next_node, var_99f0a13b14f28c53);
-                    if (!var_a3c032d45260dd10) {
+                    no_turn = within_fov(cur_node, ang, next_node, cos_ang);
+                    if (!no_turn) {
                         speed *= 0.25;
                         var_d91c820e8d146557 = 1;
                     }
                     ang = vectortoangles(next_node - cur_node);
                     if (!var_d91c820e8d146557 && isdefined(newpath[index + 2])) {
                         var_4f306fb3c32f2d49 = newpath[index + 2];
-                        var_a3c032d45260dd10 = within_fov(next_node, ang, var_4f306fb3c32f2d49, var_99f0a13b14f28c53);
-                        if (!var_a3c032d45260dd10) {
+                        no_turn = within_fov(next_node, ang, var_4f306fb3c32f2d49, cos_ang);
+                        if (!no_turn) {
                             speed *= 0.5;
                         }
                         ang = vectortoangles(var_4f306fb3c32f2d49 - next_node);
@@ -433,11 +433,11 @@ function function_9804c82501de981b(newpath, speed) {
                 self function_77320e794d35465a("p2p", "targetTime", 0.2);
             }
         }
-        var_69bc8c927c6c970f = 200;
-        if (isdefined(self.var_69bc8c927c6c970f)) {
-            var_69bc8c927c6c970f = self.var_69bc8c927c6c970f;
+        goal_dist = 200;
+        if (isdefined(self.goal_dist)) {
+            goal_dist = self.goal_dist;
         }
-        while (distancesquared(self.origin, point) > squared(var_69bc8c927c6c970f)) {
+        while (distancesquared(self.origin, point) > squared(goal_dist)) {
             waitframe();
         }
     }
@@ -705,9 +705,9 @@ function function_f32c4025f3271080(vehicle) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d17
 // Size: 0x16
-function function_de56a2b6b7fa16b0(var_ab1e83ddd1e40db7) {
+function function_de56a2b6b7fa16b0(file_str) {
     wait 1;
-    self function_e4fe23e19f4bf900(var_ab1e83ddd1e40db7);
+    self function_e4fe23e19f4bf900(file_str);
 }
 
 // Namespace namespace_2a181c7ed170fc79 / namespace_4ed427f42d64d93c

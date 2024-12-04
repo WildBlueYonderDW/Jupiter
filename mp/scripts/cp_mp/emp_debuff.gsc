@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace emp_debuff;
 
@@ -731,7 +731,7 @@ function private function_3839fb2d04a8d30e(data, disablehud, var_88cc62362fd687a
         val::set("emp", "killstreaks", 0);
         val::set("emp", "supers", 0);
     }
-    thread function_8f356fd498d7a733();
+    thread watch_checkForLauncherWeapons();
 }
 
 // Namespace emp_debuff / scripts\cp_mp\emp_debuff
@@ -770,7 +770,7 @@ function private function_879c1eec976b6d33() {
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x19ba
 // Size: 0x55
-function private function_8f356fd498d7a733() {
+function private watch_checkForLauncherWeapons() {
     self endon("death_or_disconnect");
     self endon("stopLauncherCheck");
     level endon("game_ended");

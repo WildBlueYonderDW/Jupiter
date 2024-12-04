@@ -1,10 +1,10 @@
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
 #using script_3d2770dc09c1243;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\parachute.gsc;
+#using script_59ff79d681bb860c;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\outofbounds;
 
 #namespace namespace_503ce3a6b9903b4d;
 

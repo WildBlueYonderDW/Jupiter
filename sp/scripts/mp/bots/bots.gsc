@@ -1,40 +1,40 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_killstreaks.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\flags.gsc;
-#using script_3f8889c16399185c;
 #using script_3bdadfff7554ceba;
-#using scripts\mp\bots\bots_gametype_war.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\menus.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\dev.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\door.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\trace.gsc;
+#using script_3f8889c16399185c;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_war;
+#using scripts\mp\bots\bots_killstreaks;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\class;
+#using scripts\mp\dev;
+#using scripts\mp\door;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_util;
+#using scripts\mp\menus;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\playerlogic;
+#using scripts\mp\supers;
+#using scripts\mp\teams;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace bots;
 
@@ -1642,7 +1642,7 @@ function forcebotpos(bot, botteam) {
         bot botsetflag("<dev string:x3ec>", 1);
         bot.personality_update_function = &function_6a932d3bcaaa7623;
         setdvar(@"hash_91a24c408f08888b", 1);
-        setdvar(@"hash_e39c6d129db1722", 1);
+        setdvar(@"bot_notarget", 1);
     }
 
 #/
@@ -3510,22 +3510,22 @@ function smoke_grenade_late_death() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x90a5
 // Size: 0x136
-function bot_add_scavenger_bag(var_600fe02c99aefbae) {
+function bot_add_scavenger_bag(dropbag) {
     added = 0;
-    var_600fe02c99aefbae.boxtype = "scavenger_bag";
-    var_600fe02c99aefbae.boxtouchonly = 1;
+    dropbag.boxtype = "scavenger_bag";
+    dropbag.boxtouchonly = 1;
     if (!isdefined(level.bot_scavenger_bags)) {
         level.bot_scavenger_bags = [];
     }
     foreach (existingbag in level.bot_scavenger_bags) {
         if (!isdefined(existingbag)) {
             added = 1;
-            level.bot_scavenger_bags[index] = var_600fe02c99aefbae;
+            level.bot_scavenger_bags[index] = dropbag;
             break;
         }
     }
     if (!added) {
-        level.bot_scavenger_bags[level.bot_scavenger_bags.size] = var_600fe02c99aefbae;
+        level.bot_scavenger_bags[level.bot_scavenger_bags.size] = dropbag;
     }
     foreach (participant in level.participants) {
         if (isai(participant) && participant _hasperk("specialty_scavenger")) {

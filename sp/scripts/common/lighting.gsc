@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\exploder.gsc;
-#using scripts\common\utility.gsc;
-#using script_663ff1906e9fe70;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\exploder;
+#using scripts\common\hud_util;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace lighting;
 
@@ -289,8 +289,8 @@ function blink_light(on_time, off_time, lerp_amount, blink_num, pause, intensity
 // Checksum 0x0, Offset: 0xdfe
 // Size: 0x32
 function light_init() {
-    if (!isdefined(level.var_b211257d224802ce)) {
-        level.var_b211257d224802ce = spawnstruct();
+    if (!isdefined(level._light)) {
+        level._light = spawnstruct();
         function_b46bbb8e3437e8de();
         function_3e8e3c226faefbe3();
         function_a7bb69ffe1fbf84e();
@@ -319,8 +319,8 @@ function function_3e8e3c226faefbe3() {
 // Checksum 0x0, Offset: 0x1036
 // Size: 0xde
 function function_dbec921ed499ee34(name, color0, color1, intensity, mindelay, maxdelay, maxmove) {
-    if (!isdefined(level.var_b211257d224802ce.var_6e360c0317c4e51d)) {
-        level.var_b211257d224802ce.var_6e360c0317c4e51d = [];
+    if (!isdefined(level._light.var_6e360c0317c4e51d)) {
+        level._light.var_6e360c0317c4e51d = [];
     }
     new_preset = spawnstruct();
     new_preset.color0 = color0;
@@ -329,7 +329,7 @@ function function_dbec921ed499ee34(name, color0, color1, intensity, mindelay, ma
     new_preset.mindelay = mindelay;
     new_preset.maxdelay = maxdelay;
     new_preset.maxmove = maxmove;
-    level.var_b211257d224802ce.var_6e360c0317c4e51d[name] = new_preset;
+    level._light.var_6e360c0317c4e51d[name] = new_preset;
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -337,8 +337,8 @@ function function_dbec921ed499ee34(name, color0, color1, intensity, mindelay, ma
 // Checksum 0x0, Offset: 0x111c
 // Size: 0x53
 function function_8826927b5fe822eb(name) {
-    if (isdefined(level.var_b211257d224802ce.var_6e360c0317c4e51d) && isdefined(level.var_b211257d224802ce.var_6e360c0317c4e51d[name])) {
-        return level.var_b211257d224802ce.var_6e360c0317c4e51d[name];
+    if (isdefined(level._light.var_6e360c0317c4e51d) && isdefined(level._light.var_6e360c0317c4e51d[name])) {
+        return level._light.var_6e360c0317c4e51d[name];
     }
     return undefined;
 }
@@ -594,8 +594,8 @@ function function_e986d74a7d49f65f(light_object, off_color, off_intensity, on_co
 // Checksum 0x0, Offset: 0x1bec
 // Size: 0x10a
 function function_bf134e4c6c36436(name, minintensity, maxintensity, mindelay, maxdelay, minflicker, maxflicker, minpause, maxpause) {
-    if (!isdefined(level.var_b211257d224802ce.var_7946c098158094a8)) {
-        level.var_b211257d224802ce.var_7946c098158094a8 = [];
+    if (!isdefined(level._light.var_7946c098158094a8)) {
+        level._light.var_7946c098158094a8 = [];
     }
     new_preset = spawnstruct();
     new_preset.minintensity = minintensity;
@@ -606,7 +606,7 @@ function function_bf134e4c6c36436(name, minintensity, maxintensity, mindelay, ma
     new_preset.maxflicker = maxflicker;
     new_preset.minpause = minpause;
     new_preset.maxpause = maxpause;
-    level.var_b211257d224802ce.var_7946c098158094a8[name] = new_preset;
+    level._light.var_7946c098158094a8[name] = new_preset;
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -614,8 +614,8 @@ function function_bf134e4c6c36436(name, minintensity, maxintensity, mindelay, ma
 // Checksum 0x0, Offset: 0x1cfe
 // Size: 0x53
 function function_ec6b3b3a4ca37980(name) {
-    if (isdefined(level.var_b211257d224802ce.var_7946c098158094a8) && isdefined(level.var_b211257d224802ce.var_7946c098158094a8[name])) {
-        return level.var_b211257d224802ce.var_7946c098158094a8[name];
+    if (isdefined(level._light.var_7946c098158094a8) && isdefined(level._light.var_7946c098158094a8[name])) {
+        return level._light.var_7946c098158094a8[name];
     }
     return undefined;
 }
@@ -1115,8 +1115,8 @@ function function_86db5c6ec8a91629(ent, ent2, var_595f214a0c836320, min_intensit
 // Checksum 0x0, Offset: 0x30c9
 // Size: 0x2a
 function function_a7bb69ffe1fbf84e() {
-    assert(isdefined(level.var_b211257d224802ce));
-    level.var_b211257d224802ce.messages = [];
+    assert(isdefined(level._light));
+    level._light.messages = [];
 }
 
 /#
@@ -1136,9 +1136,9 @@ function function_a7bb69ffe1fbf84e() {
 // Checksum 0x0, Offset: 0x3118
 // Size: 0x63
 function function_278d40887314db6d(message, callback) {
-    assertex(isdefined(level.var_b211257d224802ce), "Need to call light_message_init() before calling this function.");
-    assert(isarray(level.var_b211257d224802ce.messages));
-    level.var_b211257d224802ce.messages[message] = callback;
+    assertex(isdefined(level._light), "Need to call light_message_init() before calling this function.");
+    assert(isarray(level._light.messages));
+    level._light.messages[message] = callback;
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -1146,17 +1146,17 @@ function function_278d40887314db6d(message, callback) {
 // Checksum 0x0, Offset: 0x3183
 // Size: 0xfa
 function light_message(message, arg1, arg2, arg3) {
-    assertex(isdefined(level.var_b211257d224802ce), "Need to call light_message_init() before calling this function.");
-    assert(isarray(level.var_b211257d224802ce.messages));
-    if (isdefined(level.var_b211257d224802ce.messages[message])) {
+    assertex(isdefined(level._light), "Need to call light_message_init() before calling this function.");
+    assert(isarray(level._light.messages));
+    if (isdefined(level._light.messages[message])) {
         if (isdefined(arg3)) {
-            thread [[ level.var_b211257d224802ce.messages[message] ]](arg1, arg2, arg3);
+            thread [[ level._light.messages[message] ]](arg1, arg2, arg3);
         } else if (isdefined(arg2)) {
-            thread [[ level.var_b211257d224802ce.messages[message] ]](arg1, arg2);
+            thread [[ level._light.messages[message] ]](arg1, arg2);
         } else if (isdefined(arg1)) {
-            thread [[ level.var_b211257d224802ce.messages[message] ]](arg1);
+            thread [[ level._light.messages[message] ]](arg1);
         } else {
-            thread [[ level.var_b211257d224802ce.messages[message] ]]();
+            thread [[ level._light.messages[message] ]]();
         }
     }
     /#
@@ -1699,8 +1699,8 @@ function function_b46bbb8e3437e8de() {
 // Checksum 0x0, Offset: 0x471c
 // Size: 0xd4
 function function_f7daaf8937034883(name, nstart, nend, nblur, fstart, fend, fblur, fbias) {
-    if (!isdefined(level.var_b211257d224802ce.dof_presets)) {
-        level.var_b211257d224802ce.dof_presets = [];
+    if (!isdefined(level._light.dof_presets)) {
+        level._light.dof_presets = [];
     }
     new_dof = [];
     new_dof["nearStart"] = nstart;
@@ -1710,7 +1710,7 @@ function function_f7daaf8937034883(name, nstart, nend, nblur, fstart, fend, fblu
     new_dof["farEnd"] = fend;
     new_dof["farBlur"] = fblur;
     new_dof["bias"] = fbias;
-    level.var_b211257d224802ce.dof_presets[name] = new_dof;
+    level._light.dof_presets[name] = new_dof;
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -1718,8 +1718,8 @@ function function_f7daaf8937034883(name, nstart, nend, nblur, fstart, fend, fblu
 // Checksum 0x0, Offset: 0x47f8
 // Size: 0x68
 function function_5eae701181e1340c(name) {
-    if (isdefined(level.var_b211257d224802ce.dof_presets) && isdefined(level.var_b211257d224802ce.dof_presets[name])) {
-        return level.var_b211257d224802ce.dof_presets[name];
+    if (isdefined(level._light.dof_presets) && isdefined(level._light.dof_presets[name])) {
+        return level._light.dof_presets[name];
     }
     println("<dev string:x490>" + name + "<dev string:x4bd>");
 }
@@ -1732,7 +1732,7 @@ function function_3e26806946a389b1(preset1, preset2, time) {
     assert(isdefined(preset1));
     assert(isdefined(preset2));
     assert(isdefined(time) && time >= 0);
-    if (isdefined(level.var_b211257d224802ce.dof_presets)) {
+    if (isdefined(level._light.dof_presets)) {
         dof1 = function_5eae701181e1340c(preset1);
         dof2 = function_5eae701181e1340c(preset2);
         if (isdefined(dof1) && isdefined(dof2)) {
@@ -1755,14 +1755,14 @@ function function_1b05e078eb7808c7() {
 // Checksum 0x0, Offset: 0x4936
 // Size: 0xaf
 function function_3036060d639e67e8(name, start, end) {
-    if (!isdefined(level.var_b211257d224802ce.var_20dbacc20a295204)) {
-        level.var_b211257d224802ce.var_20dbacc20a295204 = [];
+    if (!isdefined(level._light.var_20dbacc20a295204)) {
+        level._light.var_20dbacc20a295204 = [];
     }
     var_28e91b4b7dcbfd6e["start"] = start;
     var_28e91b4b7dcbfd6e["end"] = end;
     level.player.var_b8415cdcacc8a58 = var_28e91b4b7dcbfd6e["start"];
     level.player.var_979356b6076cc0a9 = var_28e91b4b7dcbfd6e["end"];
-    level.var_b211257d224802ce.var_20dbacc20a295204[name] = var_28e91b4b7dcbfd6e;
+    level._light.var_20dbacc20a295204[name] = var_28e91b4b7dcbfd6e;
 }
 
 // Namespace lighting / scripts\common\lighting
@@ -1770,8 +1770,8 @@ function function_3036060d639e67e8(name, start, end) {
 // Checksum 0x0, Offset: 0x49ed
 // Size: 0x68
 function function_d27c01c01b7af003(name) {
-    if (isdefined(level.var_b211257d224802ce.var_20dbacc20a295204) && isdefined(level.var_b211257d224802ce.var_20dbacc20a295204[name])) {
-        return level.var_b211257d224802ce.var_20dbacc20a295204[name];
+    if (isdefined(level._light.var_20dbacc20a295204) && isdefined(level._light.var_20dbacc20a295204[name])) {
+        return level._light.var_20dbacc20a295204[name];
     }
     println("<dev string:x490>" + name + "<dev string:x4bd>");
 }
@@ -1784,7 +1784,7 @@ function function_728e6d70bfd337c(preset1, preset2, time) {
     assert(isdefined(preset1));
     assert(isdefined(preset2));
     assert(isdefined(time) && time >= 0);
-    if (isdefined(level.var_b211257d224802ce.var_20dbacc20a295204)) {
+    if (isdefined(level._light.var_20dbacc20a295204)) {
         start_viewmodel = function_d27c01c01b7af003(preset1);
         end_viewmodel = function_d27c01c01b7af003(preset2);
         if (isdefined(start_viewmodel) && isdefined(end_viewmodel)) {
@@ -1961,11 +1961,11 @@ function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4e
         step_time = 0.05;
         if (fadein > 0) {
             current_alpha = 0;
-            var_bf49f656e04717f9 = max_alpha / fadein / step_time;
-            assertex(var_bf49f656e04717f9 > 0, "alpha not increasing; infinite loop");
+            increment_alpha = max_alpha / fadein / step_time;
+            assertex(increment_alpha > 0, "alpha not increasing; infinite loop");
             while (current_alpha < max_alpha) {
                 overlay.alpha = current_alpha;
-                current_alpha += var_bf49f656e04717f9;
+                current_alpha += increment_alpha;
                 wait step_time;
             }
         }
@@ -1974,11 +1974,11 @@ function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4e
         if (fadeout > 0) {
             if (isdefined(overlay)) {
                 current_alpha = max_alpha;
-                var_11dde1254b91d215 = max_alpha / fadeout / step_time;
-                assertex(var_11dde1254b91d215 > 0, "alpha not decreasing; infinite loop");
+                decrement_alpha = max_alpha / fadeout / step_time;
+                assertex(decrement_alpha > 0, "alpha not decreasing; infinite loop");
                 while (current_alpha > 0) {
                     overlay.alpha = current_alpha;
-                    current_alpha -= var_11dde1254b91d215;
+                    current_alpha -= decrement_alpha;
                     wait step_time;
                 }
             }

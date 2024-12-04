@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm_bb;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace ai;
 
@@ -181,9 +181,9 @@ function spawner_fields(spawner) {
         self.noloot = self.script_noloot;
         self.script_noloot = spawner;
     }
-    if (isdefined(spawner.var_8cd7555e90fd46c3)) {
-        self.armored = spawner.var_8cd7555e90fd46c3;
-        self.var_8cd7555e90fd46c3 = undefined;
+    if (isdefined(spawner.script_armored)) {
+        self.armored = spawner.script_armored;
+        self.script_armored = undefined;
     }
     if (isdefined(spawner.script_demeanor)) {
         utility::demeanor_override(spawner.script_demeanor);

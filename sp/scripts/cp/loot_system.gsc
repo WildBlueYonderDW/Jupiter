@@ -1,25 +1,25 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 #using script_2669878cf5a1b6bc;
 #using script_531cb1be084314f7;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using script_7c40fa80892a721;
-#using scripts\cp\cp_hud_message.gsc;
-#using script_66122a002aff5d57;
 #using script_600b944a95c3a7bf;
-#using script_7ef95bba57dc4b82;
 #using script_644c18834356d9dc;
+#using script_66122a002aff5d57;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using script_7c40fa80892a721;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
-#namespace namespace_b2d5c8e9c6d86c1d;
+#namespace loot_system;
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc2a
 // Size: 0x104
@@ -36,7 +36,7 @@ function init_loot() {
     function_f3a7a75259866102();
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd36
 // Size: 0x1f
@@ -46,7 +46,7 @@ function init_loot_scriptables() {
     thread function_136bf6bcbf6c4cad();
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd5d
 // Size: 0x169
@@ -54,20 +54,20 @@ function function_136bf6bcbf6c4cad() {
     flag_wait("level_ready_for_script");
     flag_wait("player_spawned_with_loadout");
     var_264f37205942494f = getentarray("armor_restock", "targetname");
-    foreach (var_7bf7066821cc959a in var_264f37205942494f) {
-        var_1f393b917af5abee = getstructarray(var_7bf7066821cc959a.target, "targetname");
-        var_7bf7066821cc959a.outline = scripts\cp\cp_outline_utility::outlineenableforall(var_7bf7066821cc959a, "shimmer_default", "level_script");
-        var_7bf7066821cc959a.var_539eab42d5d1d18d = [];
-        foreach (struct in var_1f393b917af5abee) {
+    foreach (refill_station in var_264f37205942494f) {
+        plate_structs = getstructarray(refill_station.target, "targetname");
+        refill_station.outline = scripts\cp\cp_outline_utility::outlineenableforall(refill_station, "shimmer_default", "level_script");
+        refill_station.var_539eab42d5d1d18d = [];
+        foreach (struct in plate_structs) {
             var_f892df7411a89d4c = spawnscriptable("brloot_armor_plate", struct.origin, struct.angles);
             var_f892df7411a89d4c setscriptablepartstate("brloot_armor_plate", "visible_no_use");
             var_f892df7411a89d4c disablescriptableplayeruse(level.player);
-            var_7bf7066821cc959a.var_539eab42d5d1d18d[var_7bf7066821cc959a.var_539eab42d5d1d18d.size] = var_f892df7411a89d4c;
+            refill_station.var_539eab42d5d1d18d[refill_station.var_539eab42d5d1d18d.size] = var_f892df7411a89d4c;
         }
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0xece
 // Size: 0x4cf
@@ -133,15 +133,15 @@ function loot_pickup(instance, part, state, player, var_a5b2c541413aa895, usestr
         result = give_loot_based_on_pickup(part, player);
         if (istrue(result)) {
             level thread loot_on_pickup_success(instance, part, state, player);
-            if (isdefined(instance.var_946234ce1b1416ff)) {
-                if (isdefined(level.var_ccdd82907b113c40[instance.var_946234ce1b1416ff].var_a86f5d2ba9afbf9)) {
-                    var_f2377ccda34275e6 = level.var_ccdd82907b113c40[instance.var_946234ce1b1416ff].var_a86f5d2ba9afbf9;
-                    var_1bff94731f4cf31d = level.var_ccdd82907b113c40[instance.var_946234ce1b1416ff].var_a86f5d2ba9afbf9.var_9226858a27afaced;
+            if (isdefined(instance.crate_num)) {
+                if (isdefined(level.var_ccdd82907b113c40[instance.crate_num].var_a86f5d2ba9afbf9)) {
+                    crate_ent = level.var_ccdd82907b113c40[instance.crate_num].var_a86f5d2ba9afbf9;
+                    var_1bff94731f4cf31d = level.var_ccdd82907b113c40[instance.crate_num].var_a86f5d2ba9afbf9.unused_pickups;
                     if (isdefined(var_1bff94731f4cf31d)) {
-                        level.var_ccdd82907b113c40[instance.var_946234ce1b1416ff].var_a86f5d2ba9afbf9.var_9226858a27afaced = level.var_ccdd82907b113c40[instance.var_946234ce1b1416ff].var_a86f5d2ba9afbf9.var_9226858a27afaced - 1;
-                        if (level.var_ccdd82907b113c40[instance.var_946234ce1b1416ff].var_a86f5d2ba9afbf9.var_9226858a27afaced <= 0) {
-                            var_f2377ccda34275e6 notify("crate_usable");
-                            level.var_ccdd82907b113c40[instance.var_946234ce1b1416ff].var_a86f5d2ba9afbf9.var_9226858a27afaced = 0;
+                        level.var_ccdd82907b113c40[instance.crate_num].var_a86f5d2ba9afbf9.unused_pickups = level.var_ccdd82907b113c40[instance.crate_num].var_a86f5d2ba9afbf9.unused_pickups - 1;
+                        if (level.var_ccdd82907b113c40[instance.crate_num].var_a86f5d2ba9afbf9.unused_pickups <= 0) {
+                            crate_ent notify("crate_usable");
+                            level.var_ccdd82907b113c40[instance.crate_num].var_a86f5d2ba9afbf9.unused_pickups = 0;
                         }
                     }
                 }
@@ -150,7 +150,7 @@ function loot_pickup(instance, part, state, player, var_a5b2c541413aa895, usestr
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x13a5
 // Size: 0x57
@@ -168,7 +168,7 @@ function private function_df1c9968b5cbf288(player, wait_time) {
     self enablescriptableplayeruse(player);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1404
 // Size: 0x146
@@ -196,7 +196,7 @@ function loot_on_pickup_success(instance, part, state, player) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1552
 // Size: 0x35e
@@ -296,13 +296,13 @@ function give_loot_based_on_pickup(part, player) {
     return result;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x18b9
 // Size: 0x327
 function give_munition(part, player) {
     var_47674c5fdaa404e4 = strtok(part, "_");
-    var_3d4263ca1ab2cc7a = "";
+    name_string = "";
     if (isdefined(var_47674c5fdaa404e4[2]) && var_47674c5fdaa404e4[2] == "jup") {
         start = 3;
     } else {
@@ -310,11 +310,11 @@ function give_munition(part, player) {
     }
     for (i = start; i < var_47674c5fdaa404e4.size; i++) {
         if (isdefined(var_47674c5fdaa404e4[i])) {
-            if (var_3d4263ca1ab2cc7a == "") {
-                var_3d4263ca1ab2cc7a += var_47674c5fdaa404e4[i];
+            if (name_string == "") {
+                name_string += var_47674c5fdaa404e4[i];
                 continue;
             }
-            var_3d4263ca1ab2cc7a = var_3d4263ca1ab2cc7a + "_" + var_47674c5fdaa404e4[i];
+            name_string = name_string + "_" + var_47674c5fdaa404e4[i];
         }
     }
     var_6e1ec6f2c0ee6b2c = undefined;
@@ -324,23 +324,23 @@ function give_munition(part, player) {
     } else {
         var_6e1ec6f2c0ee6b2c = player.dpad_selection_index - 1;
     }
-    var_c64b92d56ec838b3 = get_empty_munition_slot(player);
-    if (isdefined(var_c64b92d56ec838b3)) {
-        var_6e1ec6f2c0ee6b2c = var_c64b92d56ec838b3;
+    empty_slot = get_empty_munition_slot(player);
+    if (isdefined(empty_slot)) {
+        var_6e1ec6f2c0ee6b2c = empty_slot;
     } else {
         player hint_prompt("munition_slots_full", 1, 2);
         return 0;
     }
-    switch (var_3d4263ca1ab2cc7a) {
+    switch (name_string) {
     case #"hash_65872b6ad36f2e8a":
         player namespace_94359011b63230a6::give_munition_to_slot("grenade_launcher", var_6e1ec6f2c0ee6b2c);
         return 1;
     case #"hash_ee5a421e18a58c0f":
-        return player try_give_munition_to_slot(var_3d4263ca1ab2cc7a, var_6e1ec6f2c0ee6b2c, "ammo_crate", "pickup");
+        return player try_give_munition_to_slot(name_string, var_6e1ec6f2c0ee6b2c, "ammo_crate", "pickup");
     case #"hash_d95dd5d6012a0de1":
-        return player try_give_munition_to_slot(var_3d4263ca1ab2cc7a, var_6e1ec6f2c0ee6b2c, "munitions_crate", "pickup");
+        return player try_give_munition_to_slot(name_string, var_6e1ec6f2c0ee6b2c, "munitions_crate", "pickup");
     case #"hash_d4850e4dfbc48417":
-        return player try_give_munition_to_slot(var_3d4263ca1ab2cc7a, var_6e1ec6f2c0ee6b2c, "manual_turret", "pickup");
+        return player try_give_munition_to_slot(name_string, var_6e1ec6f2c0ee6b2c, "manual_turret", "pickup");
     case #"hash_2f437058d5eef2ac":
         return player try_give_munition_to_slot("toma_strike", var_6e1ec6f2c0ee6b2c, undefined, "pickup");
     case #"hash_a9f638b560f8481f":
@@ -367,7 +367,7 @@ function give_munition(part, player) {
     case #"hash_dc674fc0f75e4925":
     case #"hash_e65b15f734e5ab84":
     case #"hash_eca3b9673d38fd59":
-        return player try_give_munition_to_slot(var_3d4263ca1ab2cc7a, var_6e1ec6f2c0ee6b2c, undefined, "pickup");
+        return player try_give_munition_to_slot(name_string, var_6e1ec6f2c0ee6b2c, undefined, "pickup");
     default:
         break;
     }
@@ -375,12 +375,12 @@ function give_munition(part, player) {
     return 0;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1be9
 // Size: 0x43
-function try_give_munition_to_slot(var_3d4263ca1ab2cc7a, var_6e1ec6f2c0ee6b2c, var_1be1c31f65120104, source) {
-    var_4c8e00ecddfac46b = var_3d4263ca1ab2cc7a;
+function try_give_munition_to_slot(name_string, var_6e1ec6f2c0ee6b2c, var_1be1c31f65120104, source) {
+    var_4c8e00ecddfac46b = name_string;
     if (isdefined(var_1be1c31f65120104)) {
         var_4c8e00ecddfac46b = var_1be1c31f65120104;
     }
@@ -388,17 +388,17 @@ function try_give_munition_to_slot(var_3d4263ca1ab2cc7a, var_6e1ec6f2c0ee6b2c, v
     return true;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c35
 // Size: 0x24
-function force_hint_prompt_timer(var_1cbe522f3d06682, timer) {
-    self forceusehinton(var_1cbe522f3d06682);
+function force_hint_prompt_timer(string_name, timer) {
+    self forceusehinton(string_name);
     wait timer;
     self forceusehintoff();
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c61
 // Size: 0x3b
@@ -410,7 +410,7 @@ function get_empty_munition_slot(player) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ca4
 // Size: 0xc4
@@ -428,7 +428,7 @@ function is_empty_or_none(i) {
     return false;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d71
 // Size: 0x15c
@@ -457,7 +457,7 @@ function give_ammo_from_scavenged_weapon(part, player) {
     return 0;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ed5
 // Size: 0x1a
@@ -465,7 +465,7 @@ function give_ammo(part, player) {
     return player give_ammo_clip();
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ef8
 // Size: 0x1ad
@@ -508,7 +508,7 @@ function give_ammo_clip() {
     return true;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x20ae
 // Size: 0x138
@@ -516,8 +516,8 @@ function give_equipment(part, player) {
     result = 0;
     switch (part) {
     case #"hash_9bb0b5639d19444a":
-        if (!istrue(player.var_5968f8f2c70696e9)) {
-            player.var_5968f8f2c70696e9 = 1;
+        if (!istrue(player.has_gasmask)) {
+            player.has_gasmask = 1;
             player thread namespace_6250b14b3f614101::player_play_pickup_anim();
             player scripts\cp_mp\gasmask::init();
             result = 1;
@@ -536,7 +536,7 @@ function give_equipment(part, player) {
             player.var_8acc46a1366e9a86 = 1;
             player thread namespace_6250b14b3f614101::player_play_pickup_anim();
             if (function_240f7f4e57340e8f()) {
-                player namespace_6250b14b3f614101::function_9d094fac5ae6454e("dmz_nvg", "consumable", 1);
+                player namespace_6250b14b3f614101::addItemToBackpackByRef("dmz_nvg", "consumable", 1);
             } else {
                 player namespace_94359011b63230a6::give_munition_to_slot("nvg", 3);
             }
@@ -549,7 +549,7 @@ function give_equipment(part, player) {
     return result;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x21ef
 // Size: 0x7e
@@ -562,7 +562,7 @@ function refill_grenades(player) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2275
 // Size: 0x120
@@ -575,16 +575,16 @@ function function_308763512997d07f() {
     if (getdvarint(@"hash_f1d31d1dd564fc9e", 0)) {
         return;
     }
-    var_980321a7aed74f29 = getstructarray("armor_pickup", "targetname");
-    foreach (var_30f8e43b68e4a540 in var_980321a7aed74f29) {
-        var_30f8e43b68e4a540.origin += anglestoforward(var_30f8e43b68e4a540.angles) * -10;
-        var_30f8e43b68e4a540.angles += (90, 0, 0);
-        dropinfo = namespace_6250b14b3f614101::getitemdropinfo(var_30f8e43b68e4a540.origin, var_30f8e43b68e4a540.angles);
+    armor_structs = getstructarray("armor_pickup", "targetname");
+    foreach (armor_struct in armor_structs) {
+        armor_struct.origin += anglestoforward(armor_struct.angles) * -10;
+        armor_struct.angles += (90, 0, 0);
+        dropinfo = namespace_6250b14b3f614101::getitemdropinfo(armor_struct.origin, armor_struct.angles);
         var_29bed75fb4428cd5 = namespace_6250b14b3f614101::spawnpickup("brloot_plate_pouch", dropinfo);
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x239d
 // Size: 0x179
@@ -608,7 +608,7 @@ function function_bcf02ee8cb581fcd(model) {
     model.interact thread function_9c1cc325eacd48c1(model);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x251e
 // Size: 0x64
@@ -626,7 +626,7 @@ function function_9c1cc325eacd48c1(model) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x258a
 // Size: 0xea
@@ -643,16 +643,16 @@ function function_46a2b7d2ad2bdc13(interaction, player) {
     player namespace_f8d3520d3483c1::function_9c6e9a6643b6c9a6(int(var_a81adeb0e1f89320 - var_364d691b501cd27f));
     if (istrue(level.var_b17f3dc7c65b1860)) {
         if (isdefined(interaction.target)) {
-            var_a58fd1f4020dc65c = getentarray(interaction.target, "targetname");
-            for (i = 0; i < var_a58fd1f4020dc65c.size; i++) {
-                var_a58fd1f4020dc65c[i] delete();
+            satchel_models = getentarray(interaction.target, "targetname");
+            for (i = 0; i < satchel_models.size; i++) {
+                satchel_models[i] delete();
             }
         }
     }
     return true;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x267d
 // Size: 0x59
@@ -664,7 +664,7 @@ function function_f3a7a75259866102() {
     level.var_87960b9ce7021569 = getdvarfloat(@"hash_ed1ea4ac182c02cf", 0.8);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x26de
 // Size: 0x66
@@ -675,7 +675,7 @@ function getweaponassetfromrootweapon(rootweaponname, variantid) {
     return weaponasset;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x274d
 // Size: 0x66
@@ -686,7 +686,7 @@ function lookupvariantref(rootweaponname, variantid) {
     return variantref;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x27bc
 // Size: 0x18
@@ -694,7 +694,7 @@ function isweaponitem(lootItemID) {
     return namespace_38b993c4618e76cd::function_282cf83c9eeda744(lootItemID) == "weapon";
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x27dd
 // Size: 0x4e
@@ -707,7 +707,7 @@ function getweaponqualitybyid(weapon, variantid) {
     return quality;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2834
 // Size: 0x16
@@ -715,7 +715,7 @@ function getlootweaponref(lootItemID) {
     return level.lootweaponrefs[lootItemID];
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2853
 // Size: 0x331
@@ -774,7 +774,7 @@ function function_30f5ea60517f9e06(opener, container) {
     container thread function_47b931d76ffd028f(container, opener);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b8c
 // Size: 0x141
@@ -799,7 +799,7 @@ function function_438749eb7a7b738(items, opener, container) {
     return [validitems, lastindex];
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cd6
 // Size: 0x40
@@ -809,7 +809,7 @@ function function_c7294f5b9b5006d5(player, index) {
     player setclientomnvar("loot_container_type_" + index, 0);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d1e
 // Size: 0x48
@@ -818,10 +818,10 @@ function function_47b931d76ffd028f(container, opener) {
     level endon("game_ended");
     container endon("closed");
     opener waittill_any_3("close_container", "flashbang", "concussed");
-    function_68085c72d7b628ec(container, opener);
+    closeLootableContainer(container, opener);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d6e
 // Size: 0xf4
@@ -833,10 +833,10 @@ function function_71a59f067d5fe986(container, opener) {
     while (scripts\cp_mp\utility\player_utility::isreallyalive(opener) && !istrue(opener.isdisconnecting) && isdefined(opener.origin) && (!isdefined(container.linkedparent) && distancesquared(opener.var_f2aa9ae949179907, opener.origin) <= level.var_de221bfb117f1fd1 || isdefined(container.linkedparent) && distancesquared(opener.var_f2aa9ae949179907, opener.origin - container.linkedparent.origin) <= level.var_de221bfb117f1fd1)) {
         wait 0.05;
     }
-    function_68085c72d7b628ec(container, opener);
+    closeLootableContainer(container, opener);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e6a
 // Size: 0x36
@@ -848,11 +848,11 @@ function function_d3e618521013c7eb() {
     self setscriptablepartstate(partname, "open_usable");
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ea8
 // Size: 0xd0
-function function_68085c72d7b628ec(container, opener) {
+function closeLootableContainer(container, opener) {
     opener setclientomnvar("loot_container_open", 0);
     container notify("closed");
     partname = container function_ec5f4851431f3382();
@@ -874,15 +874,15 @@ function function_68085c72d7b628ec(container, opener) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f80
 // Size: 0x18
-function function_6f45e7311f77eac4(player) {
+function isContainerOpen(player) {
     return player getclientomnvar("loot_container_open") > 0;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fa1
 // Size: 0xb2
@@ -902,16 +902,16 @@ function function_446c7ad7bcc70992(player, index, lootid, quantity) {
     println("<dev string:x6b>" + lootid + "<dev string:x69>");
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x305b
 // Size: 0x2c
-function function_f478ca9d3c44018c(player, index) {
+function getLootIDAtContainerIndex(player, index) {
     var_5c9ddcf56d36f133 = player getclientomnvar("loot_container_item_" + index);
     return var_5c9ddcf56d36f133;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3090
 // Size: 0x20
@@ -919,11 +919,11 @@ function function_8e5978971b5dcd16(player, index) {
     return player getclientomnvar("loot_container_quantity_" + index);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x30b9
 // Size: 0xb1
-function function_23a3bb1172216c05(container) {
+function isContainerEmpty(container) {
     if (!isdefined(container.contents)) {
         return true;
     }
@@ -941,7 +941,7 @@ function function_23a3bb1172216c05(container) {
     return true;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3173
 // Size: 0xe4
@@ -967,7 +967,7 @@ function function_1791c1e8974e9bd7(player, lootid, quantity) {
     return success;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3260
 // Size: 0x143
@@ -998,12 +998,12 @@ function function_a335aa664caa37c9(player) {
     player.var_2fa5b49969def47.weaponslotobj = undefined;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x33ab
 // Size: 0x116
 function function_2f00ca0526f3edc6(player, index, quantity) {
-    lootid = function_f478ca9d3c44018c(player, index);
+    lootid = getLootIDAtContainerIndex(player, index);
     itemquantity = function_8e5978971b5dcd16(player, index);
     if (!isdefined(quantity)) {
         quantity = itemquantity;
@@ -1030,7 +1030,7 @@ function function_2f00ca0526f3edc6(player, index, quantity) {
     return success;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x34ca
 // Size: 0x1b7
@@ -1071,12 +1071,12 @@ function function_a92926d5b02cf6ed(player) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3689
 // Size: 0x111
 function function_3ae3712fe76d0c6a(player, index) {
-    lootid = function_f478ca9d3c44018c(player, index);
+    lootid = getLootIDAtContainerIndex(player, index);
     quantity = function_8e5978971b5dcd16(player, index);
     if (lootid == 0 || quantity == 0) {
         return;
@@ -1098,7 +1098,7 @@ function function_3ae3712fe76d0c6a(player, index) {
     function_446c7ad7bcc70992(player, index, 0, 0);
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x37a2
 // Size: 0x1b5
@@ -1130,15 +1130,15 @@ function function_e146f016a8a7244f(notification, slotindex) {
             break;
         case #"hash_fb84b605789df05e":
             if (isdefined(self.var_2fa5b49969def47)) {
-                function_68085c72d7b628ec(self.var_2fa5b49969def47, self);
+                closeLootableContainer(self.var_2fa5b49969def47, self);
             }
             break;
         default:
             return;
         }
     }
-    if (isdefined(self.var_2fa5b49969def47) && function_23a3bb1172216c05(self.var_2fa5b49969def47)) {
-        function_68085c72d7b628ec(self.var_2fa5b49969def47, self);
+    if (isdefined(self.var_2fa5b49969def47) && isContainerEmpty(self.var_2fa5b49969def47)) {
+        closeLootableContainer(self.var_2fa5b49969def47, self);
         if (!istrue(self.var_2fa5b49969def47.var_1498604de9cf5016)) {
             self.var_2fa5b49969def47 notify("death");
             self.var_2fa5b49969def47 freescriptable();
@@ -1153,12 +1153,12 @@ function function_e146f016a8a7244f(notification, slotindex) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x395f
 // Size: 0xcf
 function function_9d924aea120c2693(player, slotindex) {
-    lootid = function_f478ca9d3c44018c(player, slotindex);
+    lootid = getLootIDAtContainerIndex(player, slotindex);
     itemquantity = function_8e5978971b5dcd16(player, slotindex);
     if (lootid == 0 || itemquantity == 0) {
         return;
@@ -1168,7 +1168,7 @@ function function_9d924aea120c2693(player, slotindex) {
     }
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a36
 // Size: 0x15
@@ -1176,7 +1176,7 @@ function function_55b384ecb923003e() {
     return getdvarint(@"hash_f86a28f69e6ccc38", 1) == 1;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a54
 // Size: 0x14
@@ -1184,7 +1184,7 @@ function function_4749c1a092e650bd() {
     return getdvarint(@"hash_1b2e1ef116b3de36", 0) == 1;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a71
 // Size: 0x15
@@ -1192,7 +1192,7 @@ function function_8306d72ea2e8889c() {
     return getdvarint(@"hash_b692410c5b56ffb5", 1) == 1;
 }
 
-// Namespace namespace_b2d5c8e9c6d86c1d / scripts\cp\loot_system
+// Namespace loot_system / scripts\cp\loot_system
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a8f
 // Size: 0x1c

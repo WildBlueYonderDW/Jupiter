@@ -1,12 +1,12 @@
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\loot.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
 #using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_weapons.gsc;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\loot;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_3f742ff4cbe345af;
 
@@ -107,9 +107,9 @@ function calloutMarkerPing_watchItemTakenFromContainer(player, container, lootid
             continue;
         }
         if (!isdefined(containerindex) && issharedfuncdefined("container", "getIndexForLootIDInContainer")) {
-            var_57accdc40b2f50e = [[ getsharedfunc("container", "getIndexForLootIDInContainer") ]](container, lootid);
-            loadoutcontents = var_57accdc40b2f50e[1];
-            containerindex = var_57accdc40b2f50e[0];
+            __a0 = [[ getsharedfunc("container", "getIndexForLootIDInContainer") ]](container, lootid);
+            loadoutcontents = __a0[1];
+            containerindex = __a0[0];
         }
         if (!isdefined(containerindex) || !isdefined(loadoutcontents)) {
             return;

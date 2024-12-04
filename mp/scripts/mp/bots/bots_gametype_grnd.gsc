@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
 
 #namespace bots_gametype_grnd;
 

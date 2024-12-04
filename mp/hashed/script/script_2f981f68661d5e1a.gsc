@@ -1,4 +1,4 @@
-#using scripts\engine\math.gsc;
+#using scripts\engine\math;
 
 #namespace namespace_8f7beb0570b92f2f;
 
@@ -142,13 +142,13 @@ function function_105bd25b72f6ea55(anglediff) {
     assert(!isbot(self));
     self endon("disconnect");
     self.var_c3661355a5b3083d = 0;
-    var_db1111b1b4c72b10 = anglestoforward(self getplayerangles(0));
-    var_db1111b1b4c72b10 = vectornormalize(var_db1111b1b4c72b10);
+    init_angles = anglestoforward(self getplayerangles(0));
+    init_angles = vectornormalize(init_angles);
     while (true) {
         current_angles = anglestoforward(self getplayerangles(0));
         current_angles = vectornormalize(current_angles);
-        var_da41dd6f879889d2 = anglebetweenvectors(current_angles, var_db1111b1b4c72b10);
-        if (isdefined(var_da41dd6f879889d2) && var_da41dd6f879889d2 >= anglediff) {
+        dist_angles = anglebetweenvectors(current_angles, init_angles);
+        if (isdefined(dist_angles) && dist_angles >= anglediff) {
             self.var_c3661355a5b3083d = 1;
             break;
         }
@@ -178,13 +178,13 @@ function function_a67db5cf006fc19e(targetdistance, anglediff) {
     self endon("currentContextualTipAborted");
     self.var_e36371bc08c4f3e7 = 0;
     init_pos = self.origin;
-    var_db1111b1b4c72b10 = anglestoforward(self getplayerangles(0));
+    init_angles = anglestoforward(self getplayerangles(0));
     while (true) {
         dist_pos = distance(self.origin, init_pos);
         current_angles = anglestoforward(self getplayerangles(0));
-        if (current_angles != var_db1111b1b4c72b10) {
-            var_da41dd6f879889d2 = anglebetweenvectorsunit(current_angles, var_db1111b1b4c72b10);
-            if (isdefined(var_da41dd6f879889d2) && isdefined(dist_pos) && var_da41dd6f879889d2 >= anglediff && dist_pos > targetdistance) {
+        if (current_angles != init_angles) {
+            dist_angles = anglebetweenvectorsunit(current_angles, init_angles);
+            if (isdefined(dist_angles) && isdefined(dist_pos) && dist_angles >= anglediff && dist_pos > targetdistance) {
                 self.var_e36371bc08c4f3e7 = 1;
                 break;
             }

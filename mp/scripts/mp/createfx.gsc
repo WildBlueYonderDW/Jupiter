@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\createfxmenu.gsc;
-#using scripts\common\createfx.gsc;
-#using scripts\common\fx.gsc;
-#using scripts\mp\utility\player.gsc;
+#using scripts\common\createfx;
+#using scripts\common\createfxmenu;
+#using scripts\common\fx;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
 
 #namespace createfx;
 

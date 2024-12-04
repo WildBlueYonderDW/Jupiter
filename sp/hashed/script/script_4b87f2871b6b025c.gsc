@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\heartbeat.gsc;
+#using scripts\common\heartbeat;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace swim_common;
 

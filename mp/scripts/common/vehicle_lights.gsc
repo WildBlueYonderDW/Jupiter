@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\utility;
 
 #namespace vehicle_lights;
 

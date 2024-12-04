@@ -1,19 +1,19 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\callback_group.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\cp_agent_utils.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
 #using script_66122a002aff5d57;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\utility;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\utility\callback_group;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
-#namespace namespace_9504331f37a1e8cc;
+#namespace cp_weapons;
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x60c
 // Size: 0x2e
@@ -23,7 +23,7 @@ function cp_weapons_init() {
     level.onweapondroppickedup = scripts\cp_mp\utility\callback_group::callback_create();
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x642
 // Size: 0x11
@@ -31,7 +31,7 @@ function getactiveequipmentarray() {
     return array_remove_duplicates(level.mines);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 12, eflags: 0x0
 // Checksum 0x0, Offset: 0x65c
 // Size: 0xbd
@@ -47,7 +47,7 @@ function special_weapon_logic(einflictor, eattacker, idamage, idflags, smeansofd
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x721
 // Size: 0x24
@@ -59,20 +59,20 @@ function kill_me_after_timeout(timer, notify_string) {
     self suicide();
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x74d
 // Size: 0x45
 function should_take_players_current_weapon(player) {
-    var_c6e7cd8d7aa127b3 = 3;
+    max_weap = 3;
     if (player has_zombie_perk("perk_machine_more")) {
-        var_c6e7cd8d7aa127b3 = 4;
+        max_weap = 4;
     }
     weaponlist = player getweaponslist("primary");
-    return weaponlist.size >= var_c6e7cd8d7aa127b3;
+    return weaponlist.size >= max_weap;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x79b
 // Size: 0x46
@@ -84,7 +84,7 @@ function showonscreenbloodeffects() {
     self setscriptablepartstate("on_screen_blood", "neutral");
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7e9
 // Size: 0x155
@@ -117,7 +117,7 @@ function weapon_watch_hint() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x946
 // Size: 0x75
@@ -142,7 +142,7 @@ function updatecamoscripts(newweapon, oldweapon) {
     runcamoscripts(newweapon, var_aa801320e2615f71);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c3
 // Size: 0xd0
@@ -172,7 +172,7 @@ function runcamoscripts(newweapon, camo) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa9b
 // Size: 0x90
@@ -196,7 +196,7 @@ function clearcamoscripts(oldweapon, camo) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb33
 // Size: 0xad
@@ -207,10 +207,10 @@ function blood_camo_84() {
     if (!isdefined(self.bloodcamokillcount)) {
         self.bloodcamokillcount = 0;
     }
-    for (var_cbf3d141b1313379 = 1; true; var_cbf3d141b1313379++) {
+    for (kill_threshold = 1; true; kill_threshold++) {
         self waittill("zombie_killed");
         self.bloodcamokillcount += 1;
-        if (self.bloodcamokillcount / 5 == var_cbf3d141b1313379) {
+        if (self.bloodcamokillcount / 5 == kill_threshold) {
             statenum = int(self.bloodcamokillcount / 5);
             if (statenum > 14) {
                 break;
@@ -220,7 +220,7 @@ function blood_camo_84() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbe8
 // Size: 0xb1
@@ -230,10 +230,10 @@ function blood_camo_222() {
     self endon("blood_camo_222");
     self.katanacamokillcount = 0;
     self setscriptablepartstate("camo_222", "null_state");
-    for (var_cbf3d141b1313379 = 1; true; var_cbf3d141b1313379++) {
+    for (kill_threshold = 1; true; kill_threshold++) {
         self waittill("zombie_killed");
         self.katanacamokillcount += 1;
-        if (self.katanacamokillcount / 5 == var_cbf3d141b1313379) {
+        if (self.katanacamokillcount / 5 == kill_threshold) {
             statenum = int(self.katanacamokillcount / 5);
             if (statenum > 10) {
                 break;
@@ -243,7 +243,7 @@ function blood_camo_222() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xca1
 // Size: 0x138
@@ -268,7 +268,7 @@ function axe_damage_cone() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xde1
 // Size: 0x33
@@ -278,7 +278,7 @@ function setaxeidlescriptablestate(player) {
     player setscriptablepartstate("axe - idle", "level 1");
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe1c
 // Size: 0x56
@@ -292,7 +292,7 @@ function setaxescriptablestate(player) {
     player setscriptablepartstate("axe", "neutral");
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe7a
 // Size: 0x58
@@ -310,7 +310,7 @@ function get_melee_weapon_fov(weapon_ref, lvl) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xeda
 // Size: 0x58
@@ -328,7 +328,7 @@ function get_melee_weapon_hit_distance(weapon_ref, lvl) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xf3a
 // Size: 0x58
@@ -346,7 +346,7 @@ function get_melee_weapon_max_enemies(weapon_ref, lvl) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xf9a
 // Size: 0x5c
@@ -364,42 +364,42 @@ function get_melee_weapon_melee_damage(weapon_ref, lvl) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xffe
 // Size: 0x18e
-function checkenemiesinfov(var_954c389c60768848, max_distance, var_32a547ddfda21187) {
+function checkenemiesinfov(fov_angle, max_distance, var_32a547ddfda21187) {
     if (!isdefined(var_32a547ddfda21187)) {
         var_32a547ddfda21187 = 6;
     }
-    cosine = cos(var_954c389c60768848);
+    cosine = cos(fov_angle);
     var_e729ea802a70223b = [];
     enemies = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
     enemies_sorted = get_array_of_closest(self.origin, enemies, undefined, 24, max_distance, 1);
     foreach (guy in enemies_sorted) {
         forward = anglestoforward(self.angles);
         behind = vectornormalize(forward) * -25;
-        var_510c7c0c18f333c2 = 0;
-        var_21b9b119b66981d3 = guy.origin;
-        var_45ebbfa2529bf213 = within_fov(self geteye() + behind, self.angles, var_21b9b119b66981d3 + (0, 0, 30), cosine);
+        enemy_near = 0;
+        enemy_position = guy.origin;
+        var_45ebbfa2529bf213 = within_fov(self geteye() + behind, self.angles, enemy_position + (0, 0, 30), cosine);
         if (var_45ebbfa2529bf213) {
             if (isdefined(max_distance)) {
-                enemy_distance = distance2d(self.origin, var_21b9b119b66981d3);
+                enemy_distance = distance2d(self.origin, enemy_position);
                 if (enemy_distance < max_distance) {
-                    var_510c7c0c18f333c2 = 1;
+                    enemy_near = 1;
                 }
             } else {
-                var_510c7c0c18f333c2 = 1;
+                enemy_near = 1;
             }
         }
-        if (var_510c7c0c18f333c2 && var_e729ea802a70223b.size < var_32a547ddfda21187) {
+        if (enemy_near && var_e729ea802a70223b.size < var_32a547ddfda21187) {
             var_e729ea802a70223b[var_e729ea802a70223b.size] = guy;
         }
     }
     return var_e729ea802a70223b;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x1195
 // Size: 0x81
@@ -413,7 +413,7 @@ function axe_damage(victim, attacker, var_a372de98ce9eae5e, enemyorigin, var_d1e
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x121e
 // Size: 0x13
@@ -421,7 +421,7 @@ function _takeweapon(weapon) {
     scripts\cp_mp\utility\inventory_utility::_takeweapon(weapon);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1239
 // Size: 0x26
@@ -434,7 +434,7 @@ function getcurrentreliableweaponswitchweapon() {
     return var_d93faf2b91e9b072;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1268
 // Size: 0x9
@@ -442,7 +442,7 @@ function isanyreliableweaponswitchinprogress() {
     return isdefined(getcurrentreliableweaponswitchweapon());
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x127a
 // Size: 0x30
@@ -451,7 +451,7 @@ function isreliablyswitchingtoweapon(weapon) {
     return isdefined(currentswitchweapon) && currentswitchweapon == weapon && !scripts\cp_mp\utility\inventory_utility::iscurrentweapon(weapon);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12b3
 // Size: 0xde
@@ -487,7 +487,7 @@ function canswitchtoweaponreliably(weapon) {
     return true;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x139a
 // Size: 0x26
@@ -498,7 +498,7 @@ function abortreliableweaponswitch(weapon) {
     _takeweapon(weapon);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x13c9
 // Size: 0xd5
@@ -534,7 +534,7 @@ function switchtoweaponreliable(weapon, switchimmediate) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14a6
 // Size: 0x45
@@ -550,7 +550,7 @@ function switchtolastweapon() {
     scripts\cp_mp\utility\inventory_utility::_switchtoweapon("none");
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f3
 // Size: 0x44
@@ -565,7 +565,7 @@ function watchformanualweaponend(weapon) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x153f
 // Size: 0x98
@@ -584,7 +584,7 @@ function startfadetransition(timedelay) {
     self visionsetfadetoblackforplayer("", 0.05);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15df
 // Size: 0x20
@@ -595,7 +595,7 @@ function unfreezeonroundend() {
     _freezecontrols(0);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1607
 // Size: 0x4f
@@ -609,7 +609,7 @@ function checkgesturethread() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x165e
 // Size: 0x58
@@ -626,7 +626,7 @@ function enableburnfx(skip_sound, var_958fee904065d5d3) {
     self.burnfxenabled++;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16be
 // Size: 0x97
@@ -646,7 +646,7 @@ function enableburnsfx() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x175d
 // Size: 0x2b
@@ -658,7 +658,7 @@ function enableburnfxfortime(duration) {
     thread disableburnfx();
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1790
 // Size: 0x60
@@ -673,7 +673,7 @@ function disableburnfx(skip_sound) {
     self.burnfxenabled--;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17f8
 // Size: 0x97
@@ -696,7 +696,7 @@ function disable_burnsfx() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1897
 // Size: 0x64
@@ -712,7 +712,7 @@ function supressburnfx(bool) {
     self.burnfxsuppressed--;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1903
 // Size: 0x28
@@ -723,7 +723,7 @@ function clearburnfx() {
     self.burnfxplaying = undefined;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1933
 // Size: 0xbc
@@ -748,7 +748,7 @@ function startburnfx(var_958fee904065d5d3) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19f7
 // Size: 0x32
@@ -760,7 +760,7 @@ function stopburnfx() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a31
 // Size: 0x1d
@@ -768,7 +768,7 @@ function burnfxcorpstablefunc(corpsetable) {
     corpsetable setscriptablepartstate("burning", "flareUp", 0);
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a56
 // Size: 0x74
@@ -782,7 +782,7 @@ function islauncherdirectimpactdamage(objweapon, meansofdeath, var_68d17572ef704
     return meansofdeath == "MOD_IMPACT" || meansofdeath == "MOD_PROJECTILE" || meansofdeath == "MOD_GRENADE";
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ad3
 // Size: 0x55
@@ -802,7 +802,7 @@ function isthrowingknife(weapon) {
     return issubstr(weapname, "throwingknife");
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b31
 // Size: 0x1c5
@@ -867,7 +867,7 @@ function drop_weapon_scripted(timeout, time) {
     return item;
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cff
 // Size: 0xaa
@@ -885,7 +885,7 @@ function function_503f1a3d9902b1af() {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1db1
 // Size: 0x6e
@@ -902,7 +902,7 @@ function function_f83672d17826e4a9(objweapon, stockammo) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e27
 // Size: 0x6e
@@ -919,7 +919,7 @@ function function_7987d9595236215f(objweapon, stockammo) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e9d
 // Size: 0x21
@@ -932,7 +932,7 @@ function delete_dropped_weapon(time) {
     self delete();
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ec6
 // Size: 0x158
@@ -973,7 +973,7 @@ function takeriotshield(player) {
     }
 }
 
-// Namespace namespace_9504331f37a1e8cc / scripts\cp\cp_weapons
+// Namespace cp_weapons / scripts\cp\cp_weapons
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2026
 // Size: 0x6b

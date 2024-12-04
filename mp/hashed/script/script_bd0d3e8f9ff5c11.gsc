@@ -1,11 +1,11 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
-#using script_52f2d330c7a21cb6;
 #using script_200c1cd00f9ab885;
+#using script_3badb8914eb5ac16;
+#using script_52f2d330c7a21cb6;
+#using script_7edf952f8921aa6b;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 
@@ -22,7 +22,7 @@ function function_1fa609d0d2a30cf9(params) {
     level.var_e8b533c647a37168 = function_f159c10d5cf8f0b4("deathworm_exclude_unburrow", "script_noteworthy");
     level.var_b3a50e9cc45c0150 = function_f159c10d5cf8f0b4("deathworm_exclude_melee", "script_noteworthy");
     /#
-        level thread function_b168f2d659feab3f();
+        level thread draw_arena();
     #/
 }
 
@@ -30,7 +30,7 @@ function function_1fa609d0d2a30cf9(params) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e4
 // Size: 0xa4
-function function_14b3d69b9f175aef() {
+function init_arena() {
     arena_struct = function_93d1ef5f66691f8b(self.origin);
     if (!isdefined(arena_struct)) {
         level.var_53335c6347493500++;
@@ -205,7 +205,7 @@ function function_23655a044ca75962(arena_struct) {
     // Params 0, eflags: 0x4
     // Checksum 0x0, Offset: 0x78e
     // Size: 0x17
-    function private function_ffdbb04c41a0ac04() {
+    function private debug_arena() {
         return getdvarint(@"hash_c48f64bb1ff42277", 0) > 0;
     }
 
@@ -222,7 +222,7 @@ function function_23655a044ca75962(arena_struct) {
     // Checksum 0x0, Offset: 0x7cf
     // Size: 0x5a
     function private arena_print(text, pos) {
-        if (function_ffdbb04c41a0ac04()) {
+        if (debug_arena()) {
             pos = default_to(pos, self.origin + (0, 0, 70));
             print3d(pos, "<dev string:x77>" + text, (1, 0, 0));
         }
@@ -232,10 +232,10 @@ function function_23655a044ca75962(arena_struct) {
     // Params 0, eflags: 0x4
     // Checksum 0x0, Offset: 0x831
     // Size: 0x2f3
-    function private function_b168f2d659feab3f() {
+    function private draw_arena() {
         level endon("<dev string:x8c>");
         while (true) {
-            if (!function_ffdbb04c41a0ac04()) {
+            if (!debug_arena()) {
                 waitframe();
                 continue;
             }

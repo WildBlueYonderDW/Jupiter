@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
 #using script_1b4114093cd44368;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\cp_gameskill.gsc;
-#using scripts\cp\tripwire_cp.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\tripwire_cp;
+#using scripts\cp\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_d87ee12eb6625371;
 
@@ -43,16 +43,16 @@ function function_67939c281eb5c262() {
 // Size: 0xca
 function function_18dfea62f135def6(origin, angles, var_fc1437797f3adf22) {
     droppos = drop_to_ground(origin, 25, -50) + (0, 0, 6);
-    var_f9760660b9b4b1a7 = spawn("script_model", droppos);
-    var_f9760660b9b4b1a7.angles = angles;
-    var_f9760660b9b4b1a7 setmodel("misc_wm_oxygen_tank_v0");
-    var_f9760660b9b4b1a7.targetname = "oxygenmask_usable";
+    model_usable = spawn("script_model", droppos);
+    model_usable.angles = angles;
+    model_usable setmodel("misc_wm_oxygen_tank_v0");
+    model_usable.targetname = "oxygenmask_usable";
     if (istrue(var_fc1437797f3adf22)) {
         icon = "hud_icon_equipment_oxygen";
-        var_f9760660b9b4b1a7.var_461d51a679e3530d = var_f9760660b9b4b1a7 scripts\cp_mp\entityheadicons::setheadicon_singleimage(level.players, icon, 16, 0, 512, 100, 0, 0, 1, undefined, 1);
+        model_usable.pickup_headicon = model_usable scripts\cp_mp\entityheadicons::setheadicon_singleimage(level.players, icon, 16, 0, 512, 100, 0, 0, 1, undefined, 1);
     }
-    var_f9760660b9b4b1a7 thread function_dc08efac4aa8bc95();
-    return var_f9760660b9b4b1a7;
+    model_usable thread function_dc08efac4aa8bc95();
+    return model_usable;
 }
 
 // Namespace namespace_d87ee12eb6625371 / namespace_4bb5eda89afac572
@@ -89,7 +89,7 @@ function private function_dc08efac4aa8bc95(owner) {
         self function_dfb78b3e724ad620(1);
     }
     self.hintstring = %LUA_MENU_CP/SUPER_OXYGENMASK;
-    self.var_3c8f4cdad0503a27 = %LUA_MENU_CP/SUPER_OXYGENMASK_IN_USE;
+    self.hintstring_used = %LUA_MENU_CP/SUPER_OXYGENMASK_IN_USE;
     self setcursorhint("HINT_BUTTON");
     self sethintdisplayfov(200);
     self setuserange(150);
@@ -122,7 +122,7 @@ function private function_dc08efac4aa8bc95(owner) {
             if (istrue(player.super_activated)) {
                 continue;
             }
-            if (istrue(self.var_2ef06340d91524cc)) {
+            if (istrue(self.disable_pickup)) {
                 continue;
             }
             if (!istrue(function_b42b8567448e204a(player geteye(), self.origin, self))) {
@@ -142,9 +142,9 @@ function private function_dc08efac4aa8bc95(owner) {
             self function_dfb78b3e724ad620(1);
             player playlocalsound("cp_generic_pickup_small");
             level notify("player_given_oxygenmask", player);
-            if (isdefined(self.var_461d51a679e3530d)) {
-                scripts\cp_mp\entityheadicons::setheadicon_deleteicon(self.var_461d51a679e3530d);
-                self.var_461d51a679e3530d = undefined;
+            if (isdefined(self.pickup_headicon)) {
+                scripts\cp_mp\entityheadicons::setheadicon_deleteicon(self.pickup_headicon);
+                self.pickup_headicon = undefined;
             }
             player namespace_86d0d418da518a0e::give_oxygenmask();
             if (isdefined(owner)) {
@@ -160,14 +160,14 @@ function private function_dc08efac4aa8bc95(owner) {
 // Checksum 0x0, Offset: 0x999
 // Size: 0x9a
 function private function_33fce193be4821aa() {
-    var_f9760660b9b4b1a7 = spawn("script_model", self.origin);
-    var_f9760660b9b4b1a7.angles = self.angles;
-    var_f9760660b9b4b1a7 setmodel("tag_origin");
-    var_f9760660b9b4b1a7.targetname = "oxygenmask_usable_player";
-    var_f9760660b9b4b1a7 linkto(self, "j_spine4", (0, 0, 0), (0, 0, 0));
-    self.var_72f72f6558f6a22a = var_f9760660b9b4b1a7;
-    var_f9760660b9b4b1a7.owner = self;
-    var_f9760660b9b4b1a7 thread function_dc08efac4aa8bc95(self);
+    model_usable = spawn("script_model", self.origin);
+    model_usable.angles = self.angles;
+    model_usable setmodel("tag_origin");
+    model_usable.targetname = "oxygenmask_usable_player";
+    model_usable linkto(self, "j_spine4", (0, 0, 0), (0, 0, 0));
+    self.var_72f72f6558f6a22a = model_usable;
+    model_usable.owner = self;
+    model_usable thread function_dc08efac4aa8bc95(self);
 }
 
 // Namespace namespace_d87ee12eb6625371 / namespace_4bb5eda89afac572
@@ -180,14 +180,14 @@ function private function_18dd74772ee0d1fd(toggle) {
             var_12b8b74410667a1a = self.var_72f72f6558f6a22a;
             var_12b8b74410667a1a sethintstring(var_12b8b74410667a1a.hintstring);
             var_12b8b74410667a1a setuseholdduration("duration_short");
-            var_12b8b74410667a1a.var_2ef06340d91524cc = undefined;
+            var_12b8b74410667a1a.disable_pickup = undefined;
             var_12b8b74410667a1a function_dfb78b3e724ad620(1);
             return;
         }
         var_12b8b74410667a1a = self.var_72f72f6558f6a22a;
-        var_12b8b74410667a1a sethintstring(var_12b8b74410667a1a.var_3c8f4cdad0503a27);
+        var_12b8b74410667a1a sethintstring(var_12b8b74410667a1a.hintstring_used);
         var_12b8b74410667a1a setuseholdduration("duration_none");
-        var_12b8b74410667a1a.var_2ef06340d91524cc = 1;
+        var_12b8b74410667a1a.disable_pickup = 1;
         var_12b8b74410667a1a function_dfb78b3e724ad620(1);
     }
 }

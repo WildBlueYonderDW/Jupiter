@@ -1,11 +1,11 @@
+#using character\character_civilian_me_female;
+#using character\character_civilian_me_male;
 #using script_5c36b3719581f7cc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\ai.gsc;
-#using character\character_civilian_me_male.gsc;
-#using character\character_civilian_me_female.gsc;
-#using scripts\aitypes\assets.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\ai;
 
 #namespace namespace_d28942cb46a3fc;
 

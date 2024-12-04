@@ -1,20 +1,20 @@
-#using scripts\engine\math.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_2bc0b0102f9b7751;
 #using script_48814951e916af89;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\common\vehicle.gsc;
-#using script_699beeb185d284d2;
-#using scripts\mp\utility\points.gsc;
-#using script_833994e2fca894a;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\mp\mp_agent.gsc;
 #using script_4e5018973422744d;
+#using script_699beeb185d284d2;
+#using script_7edf952f8921aa6b;
+#using script_833994e2fca894a;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\mp_agent;
+#using scripts\mp\poi;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_68bcf4aa28f13909;
 

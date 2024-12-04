@@ -1,10 +1,10 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\aitypes\stealth.gsc;
-#using scripts\asm\soldier\patrol.gsc;
+#using scripts\aitypes\stealth;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\patrol;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace patrol;
 

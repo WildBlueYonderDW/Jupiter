@@ -1,9 +1,9 @@
-#using script_d74ae0b4aa21186;
+#using script_37d9a569491ff1e0;
 #using script_40e63dd222434655;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using script_37d9a569491ff1e0;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
 
 #namespace killstreak_airstrike;
 

@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_22b5518d4dea99e0;
 #using script_3ed005fe9b78b9da;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_d1863444259d49fa;
 
@@ -179,8 +179,8 @@ function function_2d4d1e5adf4110f5(var_6bfc753f335a482d, var_6bfc723f335a4194, v
     self endon("disconnect");
     team = scripts\mp\utility\game::getotherteam(self.pers["team"])[0];
     while (isdefined(var_6bfc753f335a482d) || isdefined(var_6bfc723f335a4194) || isdefined(var_6bfc733f335a43c7)) {
-        var_ccc9f9c05abcfde9 = scripts\mp\utility\teams::getteamdata(team, "alivePlayers");
-        foreach (enemy in var_ccc9f9c05abcfde9) {
+        alive_enemies = scripts\mp\utility\teams::getteamdata(team, "alivePlayers");
+        foreach (enemy in alive_enemies) {
             origin = enemy geteye();
             if (isdefined(var_6bfc753f335a482d) && distance(var_6bfc753f335a482d.origin, origin) < 30) {
                 var_6bfc753f335a482d notify("detonated");

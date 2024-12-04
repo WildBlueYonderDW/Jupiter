@@ -1,18 +1,18 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\engine\utility.gsc;
-#using script_429c2a03090c1ea1;
-#using scripts\common\values.gsc;
-#using script_16ea1b94f0f381b3;
 #using script_159f253f9bd2314e;
-#using script_7edf952f8921aa6b;
-#using script_686729055b66c6e4;
-#using script_595089f78ef8e11b;
+#using script_16ea1b94f0f381b3;
 #using script_2ece06910a5c572;
 #using script_38c251115537f16e;
+#using script_429c2a03090c1ea1;
+#using script_595089f78ef8e11b;
+#using script_686729055b66c6e4;
+#using script_7edf952f8921aa6b;
 #using script_a12e958c96b6c57;
-#using scripts\aitypes\stealth.gsc;
-#using scripts\common\ai.gsc;
+#using scripts\aitypes\stealth;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\values;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace zombie_init;
 
@@ -309,7 +309,7 @@ function private function_c4e2f024dbf10aad(params) {
     if (istrue(params.firstshock) || istrue(params.var_4e1c44370f1101bb)) {
         stun_delay = randomfloat(0.4);
         wait stun_delay;
-        function_2e4d3c67e63f83ac(5);
+        stun_ai(5);
     }
 }
 

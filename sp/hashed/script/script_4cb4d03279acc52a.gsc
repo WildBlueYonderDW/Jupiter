@@ -1,19 +1,19 @@
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
-#using script_2a75efcd3da99f86;
-#using script_585020cc144da263;
 #using script_110368d614fc4337;
-#using script_1470a8e739bebb8a;
-#using script_7fe81083032e13e1;
-#using script_296ecd7e84a52368;
 #using script_124c0460ed84305f;
-#using script_76b1008b255c1686;
+#using script_1470a8e739bebb8a;
+#using script_296ecd7e84a52368;
+#using script_2a75efcd3da99f86;
 #using script_403097a9b8da5e0b;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using script_585020cc144da263;
+#using script_76b1008b255c1686;
+#using script_7fe81083032e13e1;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
 #namespace jup_enemy_cp_pistol_tier3_rus_pmc;
 

@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_2aabac61f2ae422;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gametypes\br.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
 
 #namespace weapon;
 
@@ -592,7 +592,7 @@ function ispickedupweapon(weapon) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x24c7
 // Size: 0x140
-function function_c67da3567cae3337(objweapon) {
+function isLoadoutWeapon(objweapon) {
     loadoutnames = ["custom1", "custom2", "custom3", "custom4", "custom5", "custom6", "custom7", "custom8", "custom9", "custom10", "custom11", "custom12"];
     loadoutchoice = self getplayerdata(level.loadoutsgroup, "customizationFavorites", "favoriteLoadoutIndex");
     if (isdefined(loadoutchoice)) {
@@ -1782,7 +1782,7 @@ function infiniteammothread(waittime, weapons, refreshweaponlist, var_65fff3ee49
         waittime = level.framedurationseconds;
     }
     while (true) {
-        if (isdefined(self.var_8d8b94a6e6491928) && !self.var_8d8b94a6e6491928) {
+        if (isdefined(self.arcade_unlimited_ammo) && !self.arcade_unlimited_ammo) {
             return;
         }
         if (!isdefined(weapons) || istrue(refreshweaponlist)) {
@@ -1822,7 +1822,7 @@ function function_1f1487da79807a91(waittime, refreshweaponlist, var_65fff3ee4995
         weapons = self.equippedweapons;
     }
     while (true) {
-        if (isdefined(self.var_8d8b94a6e6491928) && !self.var_8d8b94a6e6491928) {
+        if (isdefined(self.arcade_unlimited_ammo) && !self.arcade_unlimited_ammo) {
             return;
         }
         foreach (w in weapons) {

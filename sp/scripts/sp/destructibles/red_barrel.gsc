@@ -1,12 +1,12 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\sp\destructibles\barrel_common.gsc;
-#using scripts\sp\equipment\molotov.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\loot.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\destructibles\barrel_common;
+#using scripts\sp\equipment\molotov;
+#using scripts\sp\loot;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace red_barrel;
 

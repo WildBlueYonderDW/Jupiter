@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
 #using script_653970bffe964e7e;
-#using scripts\code\character.gsc;
 #using script_6ab80473ddb4f43c;
+#using scripts\code\character;
+#using scripts\common\utility;
 
 #namespace namespace_dc7a2e4444a71aef;
 

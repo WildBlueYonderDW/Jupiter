@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using script_6775ad452d13858;
-#using scripts\mp\teams.gsc;
 #using script_2669878cf5a1b6bc;
+#using script_6775ad452d13858;
+#using scripts\engine\utility;
+#using scripts\mp\teams;
+#using scripts\mp\utility\infilexfil;
 
 #namespace namespace_c5853ef8c38ba76e;
 

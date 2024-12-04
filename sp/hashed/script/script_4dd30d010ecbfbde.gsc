@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_sp.gsc;
 #using script_308091d56071a91c;
 #using script_784c8c4f3e5f8686;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\player_rig.gsc;
-#using scripts\sp\fakeactor.gsc;
-#using scripts\sp\spawner.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\asm_sp;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\fakeactor;
+#using scripts\sp\player_rig;
+#using scripts\sp\spawner;
 
 #namespace scene;
 
@@ -43,24 +43,24 @@ function private autoexec function_5f517f216d006d36() {
     function_7855ec4caf5901f9("Types_Player", "shotObjectPlayAnim", &function_a57d915bb947515);
     function_7855ec4caf5901f9("Types_Player", "shotObjectStopAnim", &function_e477b4837d3fc6a7);
     function_7855ec4caf5901f9("Types_Player", "shotObjectAnimEnd", &function_3efb11b3bc18a9c6);
-    function_7855ec4caf5901f9("Types_Player", "objectCleanup", &function_a308fee174c4cbef);
+    function_7855ec4caf5901f9("Types_Player", "objectCleanup", &player_cleanup);
     function_7855ec4caf5901f9("Types_Player", "objectDelete", &player_delete);
     function_7855ec4caf5901f9("Types_Player", "objectSetAnimRate", &function_c655258c05f2383c);
     function_7855ec4caf5901f9("Types_Player", "objectSetAnimTime", &function_3e11215cec07f917);
-    function_7855ec4caf5901f9("Types_Actor", "objectSpawn", &function_8659067f9a753916);
-    function_7855ec4caf5901f9("Types_Actor", "objectSetup", &function_93077082bb2dfff4);
+    function_7855ec4caf5901f9("Types_Actor", "objectSpawn", &actor_spawn);
+    function_7855ec4caf5901f9("Types_Actor", "objectSetup", &actor_setup);
     function_7855ec4caf5901f9("Types_Actor", "shotObjectPrepare", &function_9e7b86e7070de40f);
     function_7855ec4caf5901f9("Types_Actor", "shotObjectSetup", &function_451712661ab10691);
     function_7855ec4caf5901f9("Types_Actor", "shotObjectLinkSetup", &function_9acdf50d8ceba89e);
     function_7855ec4caf5901f9("Types_Actor", "objectMatchEntity", &function_62d306b8ddab4726);
-    function_7855ec4caf5901f9("Types_Actor", "objectTeleport", &function_98f1777ab38d2bac);
+    function_7855ec4caf5901f9("Types_Actor", "objectTeleport", &actor_teleport);
     function_7855ec4caf5901f9("Types_Actor", "shotObjectFirstFrame", &function_f05b1eb6b24263b5);
     function_7855ec4caf5901f9("Types_Actor", "objectSetAnimRate", &function_9b5a56bdfebe61d6);
     function_7855ec4caf5901f9("Types_Actor", "objectSetAnimTime", &actor_set_anim_time);
     function_7855ec4caf5901f9("Types_Actor", "objectSetAnimLerp", &function_d3d0a7ea23cbe6d);
     function_7855ec4caf5901f9("Types_Actor", "objectSetAnimPlaying", &actor_set_anim_playing);
     function_7855ec4caf5901f9("Types_Actor", "shotObjectCleanup", &function_4a2b39e903062a08);
-    function_7855ec4caf5901f9("Types_Actor", "objectCleanup", &function_345b126b71891225);
+    function_7855ec4caf5901f9("Types_Actor", "objectCleanup", &actor_cleanup);
     function_7855ec4caf5901f9("Types_Actor", "objectKill", &actor_kill);
     function_7855ec4caf5901f9("Types_Actor", "objectCanAnimate", &function_dd4e63bb65c5102d);
     function_7855ec4caf5901f9("Types_FakeActor", "objectSpawn", &function_fb3ea231a7df2bf2);
@@ -498,7 +498,7 @@ function private function_3efb11b3bc18a9c6() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x1b2b
 // Size: 0x1ee
-function private function_a308fee174c4cbef(var_fa1af9d2277fd747) {
+function private player_cleanup(var_fa1af9d2277fd747) {
     var_214d924f4e137244 = self;
     var_214d924f4e137244 function_2f2327d535ed0bb();
     if (var_214d924f4e137244.var_2149ca9fd12d790b.size > 0) {
@@ -746,7 +746,7 @@ function private function_e2bb6af4c53815a0() {
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x2306
 // Size: 0x167
-function private function_8659067f9a753916(spawnorigin, spawnangles) {
+function private actor_spawn(spawnorigin, spawnangles) {
     var_214d924f4e137244 = self;
     var_373a2c3b02b1d81c = var_214d924f4e137244.sceneobject function_992de34e05c5cea7();
     var_6fc4d2978cf27bef = var_214d924f4e137244.sceneobject function_12eb9fd56334261c();
@@ -778,7 +778,7 @@ function private function_8659067f9a753916(spawnorigin, spawnangles) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x2476
 // Size: 0xa1
-function private function_93077082bb2dfff4(sceneplay) {
+function private actor_setup(sceneplay) {
     var_214d924f4e137244 = self;
     if (isdefined(var_214d924f4e137244.entity)) {
         actor = var_214d924f4e137244.entity;
@@ -809,7 +809,7 @@ function private function_62d306b8ddab4726(entity) {
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x254f
 // Size: 0x32
-function private function_98f1777ab38d2bac(origin, angles) {
+function private actor_teleport(origin, angles) {
     var_214d924f4e137244 = self;
     var_214d924f4e137244.entity forceteleport(origin, angles);
 }
@@ -990,7 +990,7 @@ function private actor_kill() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x2bc9
 // Size: 0x17
-function private function_345b126b71891225(var_fa1af9d2277fd747) {
+function private actor_cleanup(var_fa1af9d2277fd747) {
     var_214d924f4e137244 = self;
 }
 

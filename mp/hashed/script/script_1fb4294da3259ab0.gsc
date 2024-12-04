@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\common\devgui.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_21bdef0c2290d3e2;
-#using script_793f5fa29ca62c00;
 #using script_638d701d263ee1ed;
-#using scripts\common\ai.gsc;
+#using script_793f5fa29ca62c00;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace ob_dog_whistle;
 
@@ -48,7 +48,7 @@ function spawn_hellhound_pet() {
     spawn_struct.origin = pos;
     hound = namespace_f82e883a38a92b9a::function_93c37ea2b2745734(self, spawn_struct, 1);
     if (isdefined(hound)) {
-        self.var_9ef678fddf58d09a = 1;
+        self.companion_type = 1;
         self.var_c5668dcaf32afbc3 = hound;
         hound thread function_577d8abff6067c23("spawn", "spawn_end", undefined, undefined, "spawn_animating");
         hound callback::add("on_zombie_ai_killed", &function_1ccfcd11184fd840);
@@ -101,7 +101,7 @@ function private function_1ccfcd11184fd840(params) {
         self.var_66c1831357048c02.var_c5668dcaf32afbc3 = undefined;
         self.var_66c1831357048c02.var_209d25b535dfbcf = 0;
         if (!istrue(self.var_66c1831357048c02.var_ded04cdd264a7e00)) {
-            self.var_66c1831357048c02.var_9ef678fddf58d09a = 0;
+            self.var_66c1831357048c02.companion_type = 0;
         }
     }
 }

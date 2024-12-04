@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using script_d74ae0b4aa21186;
-#using script_59ff79d681bb860c;
 #using script_37d9a569491ff1e0;
 #using script_54a9e44119886147;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
 
 #namespace combat;
 
@@ -20,7 +20,7 @@ function function_eda57308516bfc5f() {
 // Size: 0x212
 function evaluatescore(bot) {
     /#
-        if (getdvar(@"hash_e39c6d129db1722") == "<dev string:x1c>") {
+        if (getdvar(@"bot_notarget") == "<dev string:x1c>") {
             return 0;
         }
     #/
@@ -31,7 +31,7 @@ function evaluatescore(bot) {
     nearbyevent namespace_5524884c16a95af2::indistance(self.constants.nearbyenemydistance);
     foreach (player in nearbyevent.result) {
         /#
-            if (!isai(player) && getdvar(@"hash_e39c6d129db1722") == "<dev string:x23>") {
+            if (!isai(player) && getdvar(@"bot_notarget") == "<dev string:x23>") {
                 continue;
             }
         #/

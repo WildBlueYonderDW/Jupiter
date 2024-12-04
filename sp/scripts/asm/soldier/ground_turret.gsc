@@ -1,8 +1,8 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\soldier\death.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\asm\soldier\pain.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\soldier\death;
+#using scripts\asm\soldier\pain;
+#using scripts\common\ai;
+#using scripts\engine\utility;
 
 #namespace ground_turret;
 

@@ -1,35 +1,35 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_3b78d23dad7ec5be;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using script_7956d56c4922bd1;
-#using script_4ef01fe6151dde4d;
-#using script_4fdefae8b7bcdf73;
-#using script_5753ba9c28794a65;
-#using script_3ab210ea917601e7;
-#using script_3e31016b9c11a616;
-#using script_64351208cb856df9;
-#using script_41387eecc35b88bf;
 #using script_185660037b9236c1;
 #using script_220d0eb95a8fab7d;
-#using scripts\common\callbacks.gsc;
-#using script_46c7c73b1a7e4773;
-#using scripts\engine\scriptable.gsc;
-#using script_5d8202968463a21d;
-#using script_7534b1d3ac3ea47a;
 #using script_22f1701e151b9d12;
-#using script_7cfaa6fd841fb4dd;
-#using script_638d701d263ee1ed;
+#using script_3ab210ea917601e7;
+#using script_3b78d23dad7ec5be;
+#using script_3e31016b9c11a616;
+#using script_41387eecc35b88bf;
+#using script_46c7c73b1a7e4773;
 #using script_4e6e58ab5d96c2b0;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_4ef01fe6151dde4d;
 #using script_4fa7e9e11630166c;
-#using scripts\mp\utility\player.gsc;
-#using script_347e655acacdace;
+#using script_4fdefae8b7bcdf73;
+#using script_5753ba9c28794a65;
+#using script_5d8202968463a21d;
+#using script_638d701d263ee1ed;
+#using script_64351208cb856df9;
+#using script_7534b1d3ac3ea47a;
+#using script_7956d56c4922bd1;
+#using script_7cfaa6fd841fb4dd;
+#using scripts\common\callbacks;
+#using scripts\common\progress_tracker;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace namespace_b03ac398e745b619;
 
@@ -92,9 +92,9 @@ function function_142dd8b75b609524() {
     function_5b9ffa6991e4d730(request_id, &function_8e5eba83ac0e12e5, [self, self.var_9046be937751609b, radii[0].radius]);
     function_3c85fe57dbc02e4e(request_id, &function_ea2e54093d2e1c1b, self);
     self.var_dcb639dfa56e091b = request_id;
-    self.var_71f394c5ee325c8b = spawn("script_model", (0, 0, 0));
-    self.var_71f394c5ee325c8b setmodel("tag_origin");
-    self.var_71f394c5ee325c8b.team = "civilian";
+    self.dummy_attacker = spawn("script_model", (0, 0, 0));
+    self.dummy_attacker setmodel("tag_origin");
+    self.dummy_attacker.team = "civilian";
     msg = waittill_any_return_2("all_disabled", "countdown_finished");
     if (istrue(self.on_mission)) {
         cannister_collected = 0;
@@ -166,9 +166,9 @@ function function_ff106919e26008fe() {
             }
         }
     }
-    if (isdefined(self.var_71f394c5ee325c8b)) {
-        self.var_71f394c5ee325c8b delete();
-        self.var_71f394c5ee325c8b = undefined;
+    if (isdefined(self.dummy_attacker)) {
+        self.dummy_attacker delete();
+        self.dummy_attacker = undefined;
     }
 }
 
@@ -252,9 +252,9 @@ function function_2a71141af11128b7() {
         }
         namespace_64135de19550f047::function_486b0f579d5b6dae(s_root.active_cover);
     }
-    if (isdefined(self.var_71f394c5ee325c8b)) {
-        self.var_71f394c5ee325c8b delete();
-        self.var_71f394c5ee325c8b = undefined;
+    if (isdefined(self.dummy_attacker)) {
+        self.dummy_attacker delete();
+        self.dummy_attacker = undefined;
     }
 }
 
@@ -463,11 +463,11 @@ function private function_fb460cc13d5fa06b(s_root) {
 function private function_f4be15aae7f918c9() {
     landing_pos = self.origin;
     starting_pos = landing_pos + (0, 0, 3500);
-    var_22d82c0c49753d1 = self.angles;
+    landing_angles = self.angles;
     landing_ae = spawn("script_model", starting_pos);
     landing_ae.active_ae = self;
     landing_ae setmodel("jup_zm_aether_extractor_rocket_scriptable", landing_pos + (0, 0, 3500));
-    landing_ae.angles = var_22d82c0c49753d1;
+    landing_ae.angles = landing_angles;
     while (!isdefined(landing_ae)) {
         waitframe();
     }
@@ -657,8 +657,8 @@ function function_9f48ea02d7ddacf4() {
 // Size: 0x185
 function function_3f0019081ff6b7e1(explosion_source) {
     radius = 350;
-    if (isdefined(self.var_71f394c5ee325c8b)) {
-        radiusdamage(explosion_source.origin, radius, 100, 50, self.var_71f394c5ee325c8b, undefined, undefined, 0, 0);
+    if (isdefined(self.dummy_attacker)) {
+        radiusdamage(explosion_source.origin, radius, 100, 50, self.dummy_attacker, undefined, undefined, 0, 0);
     }
     foreach (ent in function_143526130b12b2b6(explosion_source.origin, radius)) {
         if (isplayer(ent)) {
@@ -666,12 +666,12 @@ function function_3f0019081ff6b7e1(explosion_source) {
             continue;
         }
         if (ent.team == "team_two_hundred") {
-            ent function_e96aac065abbec4e(explosion_source.origin);
+            ent knockdown_ai(explosion_source.origin);
             if (istrue(ent.disallow_knockdown) || !ent asmhasstate(ent.asmname, "knockdown_in")) {
-                ent dodamage(self.var_839a43fcca67a8ed * 10, explosion_source.origin, self.var_71f394c5ee325c8b);
+                ent dodamage(self.var_839a43fcca67a8ed * 10, explosion_source.origin, self.dummy_attacker);
                 continue;
             }
-            ent dodamage(self.var_839a43fcca67a8ed, explosion_source.origin, self.var_71f394c5ee325c8b);
+            ent dodamage(self.var_839a43fcca67a8ed, explosion_source.origin, self.dummy_attacker);
         }
     }
 }
@@ -724,7 +724,7 @@ function function_ed899763b14cd13c(progress_tracker) {
             }
         }
     }
-    if (progress_tracker namespace_96552c234e66ebee::iscomplete()) {
+    if (progress_tracker scripts\common\progress_tracker::iscomplete()) {
         if (self.var_236d14e22e619c4 >= self.var_e41aed3a07053b4f) {
             return;
         }

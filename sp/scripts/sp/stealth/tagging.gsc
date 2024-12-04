@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\stealth\utility.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
+#using scripts\stealth\utility;
 
 #namespace tagging;
 
@@ -122,11 +122,11 @@ function tag_entity(player, var_47eb02bf85de33e5) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x744
 // Size: 0x1b8
-function tag_flash_entity(player, var_9e76fe13c19da9a3) {
-    if (isdefined(self.tag_flashing) && self.tag_flashing == var_9e76fe13c19da9a3) {
+function tag_flash_entity(player, flashing) {
+    if (isdefined(self.tag_flashing) && self.tag_flashing == flashing) {
         return;
     }
-    self.tag_flashing = var_9e76fe13c19da9a3;
+    self.tag_flashing = flashing;
     self notify("tag_flash_entity");
     self endon("tag_flash_entity");
     self endon("death");
@@ -149,7 +149,7 @@ function tag_flash_entity(player, var_9e76fe13c19da9a3) {
     }
     var_870df669effdb2b1 = isdefined(self.tagged) && istrue(self.tagged[playerentnum]);
     flash = 1;
-    while (var_9e76fe13c19da9a3 && getdvarint(@"ai_threatsight", 1)) {
+    while (flashing && getdvarint(@"ai_threatsight", 1)) {
         self.tagged_flickered = 1;
         if (flash) {
             tag_outline_entity(1, "dead");

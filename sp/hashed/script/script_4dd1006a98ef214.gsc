@@ -1,6 +1,6 @@
-#namespace namespace_c30e6e122d7c22f0;
+#namespace heads_civilian_asm_male_1;
 
-// Namespace namespace_c30e6e122d7c22f0 / namespace_538e7e85a32c0f70
+// Namespace heads_civilian_asm_male_1 / namespace_538e7e85a32c0f70
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17b
 // Size: 0x79

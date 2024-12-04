@@ -1,4 +1,4 @@
-#using scripts\mp\gametypes\br.gsc;
+#using scripts\mp\gametypes\br;
 
 #namespace ftue_inventory;
 

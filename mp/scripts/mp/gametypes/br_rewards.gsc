@@ -1,25 +1,25 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\equipment.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_rewards.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_rewards;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\equipment;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace br_rewards;
 
@@ -492,7 +492,7 @@ function function_26a4c7cf6da4e2c0(var_819edacdacb810e4, dangercircleradius, thr
         if (!isdefined(crate)) {
             continue;
         }
-        var_e4e4ae4481958d2e = !namespace_bbc79db4c3949a5c::function_ee854fdd1e77efc4(crate.origin, level.var_53c0fa66001cff52);
+        var_e4e4ae4481958d2e = !namespace_bbc79db4c3949a5c::isPointInMultiCircleDanger(crate.origin, level.var_53c0fa66001cff52);
         var_8724c89e365130a7 = namespace_bbc79db4c3949a5c::function_a465e3c1371d7dab(crate.origin);
         if (var_e4e4ae4481958d2e && !var_8724c89e365130a7) {
             crate thread scripts\cp_mp\killstreaks\airdrop::destroycrate();

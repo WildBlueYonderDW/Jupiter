@@ -1,12 +1,12 @@
-#using script_53f4e6352b0b2425;
-#using script_1db908936531314b;
-#using script_6bf6c8e2e1fdccaa;
 #using script_19163c4e4e504a5e;
-#using scripts\sp\anim.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\anim.gsc;
+#using script_1db908936531314b;
+#using script_53f4e6352b0b2425;
+#using script_6bf6c8e2e1fdccaa;
+#using scripts\common\anim;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
 #namespace namespace_9557c6e91ec6eb3f;
 

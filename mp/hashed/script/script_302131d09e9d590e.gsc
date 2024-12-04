@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace jltv_infil;
 
@@ -231,7 +231,7 @@ function vehiclethink(team, scene_node, scene_name, extra_crew) {
 // Size: 0x309
 function initanims(subtype) {
     script_model_anims(subtype);
-    function_68aab9f69431ce1(subtype);
+    vehicles_anims(subtype);
     addnotetrack_customfunction("slot_0", "fov_63_2", &player_fov_default_2);
     addnotetrack_customfunction("slot_1", "fov_63_2", &player_fov_default_2);
     addnotetrack_customfunction("slot_2", "fov_63_2", &player_fov_default_2);
@@ -320,7 +320,7 @@ function script_model_anims(subtype) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16a7
 // Size: 0xbf
-function function_68aab9f69431ce1(subtype) {
+function vehicles_anims(subtype) {
     switch (subtype) {
     case #"hash_1cc79b02710cab23":
     case #"hash_6829ee5abc10c38b":

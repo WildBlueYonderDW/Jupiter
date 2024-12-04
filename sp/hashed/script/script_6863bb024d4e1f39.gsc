@@ -1,10 +1,10 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\cap.gsc;
-#using scripts\asm\shared\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\cap;
+#using scripts\asm\shared\utility;
 
-#namespace namespace_5f74e95f4bfd6763;
+#namespace cap_green_beam;
 
-// Namespace namespace_5f74e95f4bfd6763 / namespace_1b5b06ec6f076597
+// Namespace cap_green_beam / namespace_1b5b06ec6f076597
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xfc
 // Size: 0x8d
@@ -19,7 +19,7 @@ function function_b3363cc14cbca5f3(asmname, statename, params) {
     }
 }
 
-// Namespace namespace_5f74e95f4bfd6763 / namespace_1b5b06ec6f076597
+// Namespace cap_green_beam / namespace_1b5b06ec6f076597
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x191
 // Size: 0x2c
@@ -30,7 +30,7 @@ function function_13989fec47c1786f(asmname, statename, params) {
     return true;
 }
 
-// Namespace namespace_5f74e95f4bfd6763 / namespace_1b5b06ec6f076597
+// Namespace cap_green_beam / namespace_1b5b06ec6f076597
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c6
 // Size: 0xa2
@@ -44,7 +44,7 @@ function function_eb6dc231debf349c(note) {
         } else {
             self.laser setmoverlaserweapon("iw8_laser_painter_ac130_lasso_short");
         }
-        if (istrue(self.var_18c1cb7b0f0e91ee)) {
+        if (istrue(self.no_laser)) {
             return;
         }
         self.laser laserforceon();
@@ -55,7 +55,7 @@ function function_eb6dc231debf349c(note) {
     }
 }
 
-// Namespace namespace_5f74e95f4bfd6763 / namespace_1b5b06ec6f076597
+// Namespace cap_green_beam / namespace_1b5b06ec6f076597
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x270
 // Size: 0x55

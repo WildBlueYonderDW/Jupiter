@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_6a8ec730b2bfa844;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_396a814d39e7044f;
-#using scripts\mp\music_and_dialog.gsc;
 #using script_5307834cd39b435c;
+#using script_6a8ec730b2bfa844;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\poi;
+#using scripts\mp\utility\teams;
 
 #namespace map_to_map;
 

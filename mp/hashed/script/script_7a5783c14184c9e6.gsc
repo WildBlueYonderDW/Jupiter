@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_48814951e916af89;
 #using script_371b4c2ab5861e62;
-#using scripts\common\ai.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\trace.gsc;
+#using script_48814951e916af89;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_562c09f7cd8fb4f5;
 

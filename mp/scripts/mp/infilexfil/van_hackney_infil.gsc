@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\music_and_dialog.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace namespace_cd0bb4a28bf6a47b;
 
@@ -353,20 +353,20 @@ function spawnpersistentvehicle(type, subtype) {
 // Checksum 0x0, Offset: 0x1b68
 // Size: 0xda
 function van_interior_sfx(scene_name) {
-    var_88e114fbe86ce809 = spawn("script_model", self.linktoent.origin);
-    var_88e114fbe86ce809 linkto(self.linktoent, "tag_door_back_left");
-    var_281505cdda221800 = spawn("script_model", self.linktoent.origin);
-    var_281505cdda221800 linkto(self.linktoent, "tag_hood");
+    door_sfx = spawn("script_model", self.linktoent.origin);
+    door_sfx linkto(self.linktoent, "tag_door_back_left");
+    front_sfx = spawn("script_model", self.linktoent.origin);
+    front_sfx linkto(self.linktoent, "tag_hood");
     wait 0.1;
-    var_88e114fbe86ce809 playsoundonmovingent("scn_infil_hackney_van_int_rear");
-    var_281505cdda221800 playsoundonmovingent("scn_infil_hackney_van_int_front");
+    door_sfx playsoundonmovingent("scn_infil_hackney_van_int_rear");
+    front_sfx playsoundonmovingent("scn_infil_hackney_van_int_front");
     wait 7.75;
-    var_88e114fbe86ce809 playsoundonmovingent("scn_infil_hackney_van_door_open");
+    door_sfx playsoundonmovingent("scn_infil_hackney_van_door_open");
     wait 8;
-    var_88e114fbe86ce809 playsoundonmovingent("scn_infil_hackney_van_door_close");
+    door_sfx playsoundonmovingent("scn_infil_hackney_van_door_close");
     level waittill("prematch_over");
-    var_281505cdda221800 delete();
-    var_88e114fbe86ce809 delete();
+    front_sfx delete();
+    door_sfx delete();
 }
 
 // Namespace namespace_cd0bb4a28bf6a47b / scripts\mp\infilexfil\van_hackney_infil
@@ -569,7 +569,7 @@ function script_model_alpha_anims() {
     level.scr_anim["commander"]["van_hackney_infil_alpha"] = script_model%infil_opforce_van_chief;
     addnotetrack_customfunction("commander", "sfx_infil_hackney_van_commander", &van_infil_sfx_chief);
     level.scr_animtree["van"] = %script_model;
-    switch (getdvar(@"hash_687fb8f9b7a23245")) {
+    switch (getdvar(@"g_mapname")) {
     case #"hash_d83171ba75f8b8fe":
         level.scr_anim["van"]["van_hackney_infil_alpha_intro"] = script_model%mp_infil_van_veh_intro_spear;
         break;

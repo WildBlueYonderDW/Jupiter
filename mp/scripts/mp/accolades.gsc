@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
 #using script_3d2770dc09c1243;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gameobjects;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
 
 #namespace accolades;
 

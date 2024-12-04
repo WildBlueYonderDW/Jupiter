@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_3f8889c16399185c;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace scoreboard;
 

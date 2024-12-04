@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\entity.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\equipment\nvg.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using script_cbb0697de4c5728;
 #using script_39ebe40c5c0566e7;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\gametypes\bigctf.gsc;
+#using script_cbb0697de4c5728;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\nvg;
+#using scripts\mp\gametypes\bigctf;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
 
 #namespace player;
 
@@ -1055,12 +1055,12 @@ function setdof_dynamic() {
     dofsettings["geo"].nearblur = getdvarfloat(@"hash_ae45baa306e4ae81", 3.9);
     dofsettings["geo"].farblur = getdvarfloat(@"hash_8bc87003c9fc085e", 2.25);
     dofsettings["interest"] = spawnstruct();
-    dofsettings["interest"].nearstartfactor = getdvarfloat(@"hash_a021d23278c7d20a", 0.01);
-    dofsettings["interest"].nearendfactor = getdvarfloat(@"hash_cdbd913c101a27bf", 0.95);
-    dofsettings["interest"].farstartfactor = getdvarfloat(@"hash_6a3b9b7e711c8173", 1.5);
-    dofsettings["interest"].farendfactor = getdvarfloat(@"hash_5e226882a6c7a446", 2.5);
-    dofsettings["interest"].nearblur = getdvarfloat(@"hash_725177713eaa11f3", 7);
-    dofsettings["interest"].farblur = getdvarfloat(@"hash_d9ee3b42f6373034", 3.5);
+    dofsettings["interest"].nearstartfactor = getdvarfloat(@"dof_nearstart", 0.01);
+    dofsettings["interest"].nearendfactor = getdvarfloat(@"dof_nearend", 0.95);
+    dofsettings["interest"].farstartfactor = getdvarfloat(@"dof_farstart", 1.5);
+    dofsettings["interest"].farendfactor = getdvarfloat(@"dof_farend", 2.5);
+    dofsettings["interest"].nearblur = getdvarfloat(@"dof_nearblur", 7);
+    dofsettings["interest"].farblur = getdvarfloat(@"dof_farblur", 3.5);
     while (true) {
         waitframe();
         usesetting = "geo";

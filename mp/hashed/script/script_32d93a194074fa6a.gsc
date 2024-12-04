@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using script_6981400abfcd765c;
 #using script_4a6760982b403bad;
+#using script_6981400abfcd765c;
+#using scripts\engine\utility;
 
 #namespace ftue_tip;
 

@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\common\createfxmenu.gsc;
-#using scripts\common\createfx.gsc;
-#using scripts\common\fx.gsc;
+#using scripts\common\createfx;
+#using scripts\common\createfxmenu;
+#using scripts\common\fx;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_81d4a3b393f328d7;
+#namespace coop_createfx;
 
-// Namespace namespace_81d4a3b393f328d7 / scripts\cp\coop_createfx
+// Namespace coop_createfx / scripts\cp\coop_createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd1
 // Size: 0x14a
@@ -39,7 +39,7 @@ function createfx() {
     level waittill("eternity");
 }
 
-// Namespace namespace_81d4a3b393f328d7 / scripts\cp\coop_createfx
+// Namespace coop_createfx / scripts\cp\coop_createfx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x223
 // Size: 0x1e
@@ -47,7 +47,7 @@ function func_position_player_get(lastplayerorigin) {
     return level.player.origin;
 }
 
-// Namespace namespace_81d4a3b393f328d7 / scripts\cp\coop_createfx
+// Namespace coop_createfx / scripts\cp\coop_createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0xa0
@@ -66,7 +66,7 @@ function callback_playerconnect() {
     kick(self getentitynumber());
 }
 
-// Namespace namespace_81d4a3b393f328d7 / scripts\cp\coop_createfx
+// Namespace coop_createfx / scripts\cp\coop_createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f2
 // Size: 0x33

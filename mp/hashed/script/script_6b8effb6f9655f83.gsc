@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_443d99fe707f1d9f;
 #using script_639bf783929acf9b;
 #using script_7b2517368c79e5bc;
-#using script_443d99fe707f1d9f;
-#using script_2669878cf5a1b6bc;
-#using scripts\engine\throttle.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace loot_drop;
 

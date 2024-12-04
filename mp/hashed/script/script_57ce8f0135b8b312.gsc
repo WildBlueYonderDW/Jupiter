@@ -1,34 +1,34 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\system.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_610f57bddd265be2;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\utility\points.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using script_247745a526421ba7;
+#using script_610f57bddd265be2;
+#using scripts\common\ae_utility;
+#using scripts\common\debug;
+#using scripts\common\system;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\supers;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
 
 #namespace namespace_97366e61f00cc219;
 
@@ -189,8 +189,8 @@ function function_590979ef771686a8(player, location, fromevent) {
     drone.team = ownerteam;
     drone.type = "portable_buy_drone";
     if (level.deployablekiosks.var_8bf814f9559f53) {
-        drone scripts\cp_mp\emp_debuff::set_apply_emp_callback(&function_8f7b7f22b8ce2cac);
-        drone.var_3545410459b16762 = &function_8f7b7f22b8ce2cac;
+        drone scripts\cp_mp\emp_debuff::set_apply_emp_callback(&drone_emp);
+        drone.var_3545410459b16762 = &drone_emp;
     }
     if (isdefined(player) || level.deployablekiosks.var_8bf814f9559f53) {
         drone setcandamage(1);
@@ -306,7 +306,7 @@ function function_b8214cb8c9e75675(player, location) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bfa
 // Size: 0x1d
-function function_8f7b7f22b8ce2cac(data) {
+function drone_emp(data) {
     function_aa19007a48fca6c0(data.attacker);
 }
 
@@ -1282,7 +1282,7 @@ function function_ff4bbeb786042d78(grenade) {
         }
         return;
     }
-    scripts\cp_mp\challenges::function_d997435895422ecc("equip_deployable_kiosk_drop_jup", namespace_649c2fab0fd72b8b::function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
+    scripts\cp_mp\challenges::function_d997435895422ecc("equip_deployable_kiosk_drop_jup", scripts\common\ae_utility::function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
     function_590979ef771686a8(player, position);
     if (isdefined(player.super)) {
         player scripts\mp\supers::superusefinished(undefined, undefined, undefined, 1);

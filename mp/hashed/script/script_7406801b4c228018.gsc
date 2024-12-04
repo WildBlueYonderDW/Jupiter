@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_f3e2bfae6c100ef7;
 
@@ -124,7 +124,7 @@ function function_59da849245283fc8(zone) {
 // Size: 0x49
 function function_c59f8281fad3515b(zone) {
     if (zone.currentphase == "capture_zone") {
-        if (zone.var_d731642d971f0c49.touchlist[game["attackers"]].size > 0) {
+        if (zone.flag_capture_zone.touchlist[game["attackers"]].size > 0) {
             return false;
         }
         return true;

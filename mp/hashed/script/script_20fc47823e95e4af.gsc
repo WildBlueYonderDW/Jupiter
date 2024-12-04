@@ -1,33 +1,33 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_65f58f3c394dcf9a;
-#using script_6c4e8cea70bf4b6d;
-#using script_2fdeb8023287be67;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\weapons.gsc;
-#using script_784aa75d4a32fa24;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
 #using script_1f97a44d1761c919;
-#using scripts\mp\utility\points.gsc;
+#using script_2fdeb8023287be67;
 #using script_46cf752d93dc17b;
 #using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
+#using script_65f58f3c394dcf9a;
+#using script_6c4e8cea70bf4b6d;
+#using script_784aa75d4a32fa24;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\poi;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\vehicles\damage;
+#using scripts\mp\weapons;
 
 #namespace dmz_bosses_chopper;
 
@@ -43,11 +43,11 @@ function autoexec init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x8c
-function function_c96f19c0bebdc014() {
+function chopper_register() {
     bossdetails = spawnstruct();
     bossdetails.spawnlocs = [];
     bossdetails.name = "chopper";
-    bossdetails.initfunc = &function_a98b4087642d8e07;
+    bossdetails.initfunc = &chopper_init;
     bossdetails.spawnfunc = &function_369a1dfb674d9262;
     bossdetails.var_e68429b39c75b6ee = &function_369a1dfb674d9262;
     bossdetails.var_7232c52496c3a94a = &function_463307a73b2cd8df;
@@ -59,7 +59,7 @@ function function_c96f19c0bebdc014() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x71c
 // Size: 0x364
-function function_a98b4087642d8e07(bossdetails) {
+function chopper_init(bossdetails) {
     level.var_cb36bea0db8a829f = getdvarint(@"hash_41a5f023a6b9d7b6", 100);
     level.var_d44040648e9624f = getdvarint(@"hash_2e1a1ee4432ba896", 4000);
     level.var_426503bd899fe79d = getdvarint(@"hash_f8cfa0a3e3979732", 6000);
@@ -144,7 +144,7 @@ function function_289402be40270fb7(var_a862ef8246b0e151) {
     scripts\mp\flags::gameflagwait("prematch_done");
     waittime = ter_op(level.var_af333105a68edcaf, randomintrange(level.var_72f4ae7b6cc41376, level.var_7317a07b6cea3c64), level.var_8b0166c08f79ba6f);
     wait waittime;
-    instance function_3ead0708199ba214();
+    instance chopper_spawn();
     instance notify("boss_spawned");
 }
 
@@ -218,7 +218,7 @@ function function_6c1462b3f7b01684(chopper) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xef1
 // Size: 0x1a7
-function function_3ead0708199ba214() {
+function chopper_spawn() {
     poiname = self.var_91403901a31fa2f8;
     if (!isdefined(level.poi_origins) || !array_contains_key(level.poi_origins, poiname)) {
         assertmsg("<dev string:x35>" + poiname + "<dev string:x62>");
@@ -264,7 +264,7 @@ function function_978010e5ff5d52bc(pos) {
     chopper.var_e0bf649e3b37455d = 0;
     chopper.var_c6c4017b9f56bff4 = &function_c23bf5e680c0b0fc;
     chopper.var_f09811d8bb92df96 = &function_80eb9ba6d517fefe;
-    chopper.attackfunc = &function_a5298692f21a8421;
+    chopper.attackfunc = &chopper_attack;
     chopper.funcs["strafe"] = &function_c1feeb5592d1018;
     chopper.var_580ba3be57af233e = 0;
     chopper.missileweapon = makeweapon("chopper_gunner_proj_dmz");
@@ -274,7 +274,7 @@ function function_978010e5ff5d52bc(pos) {
     namespace_ebd0a1ae72bca61b::function_8002b09b8348902c(pos, "ui_map_icon_boss_chopper");
     scripts\mp\objidpoolmanager::update_objective_onentity(self.objidnum, chopper);
     scripts\mp\vehicles\damage::set_death_callback(self.chopper.vehiclename, &function_31529a6224103b1a);
-    thread function_37985716c0079c86();
+    thread chopper_ondeath();
     if (isdefined(level.var_d8d4808549090419)) {
         [[ level.var_d8d4808549090419 ]](self);
     }
@@ -285,7 +285,7 @@ function function_978010e5ff5d52bc(pos) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12c4
 // Size: 0x25
-function function_37985716c0079c86() {
+function chopper_ondeath() {
     self.chopper waittill("death");
     scripts\mp\gameobjects::releaseid();
     namespace_ebd0a1ae72bca61b::function_3e409004edf37731("chopper");
@@ -523,7 +523,7 @@ function function_4ad380a5e1b9c51a() {
         crate.physicsactivated = 1;
         crate.usetime = 10;
         crate setscriptablepartstate("dmz_supply_drop", "usable");
-        crate.var_5cc8ac2ed7a3d9fa = &function_e018ddec11a442b;
+        crate.onOpenFunc = &function_e018ddec11a442b;
     }
 }
 
@@ -542,7 +542,7 @@ function function_e018ddec11a442b(instance, player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d02
 // Size: 0x1ee
-function function_a5298692f21a8421(target) {
+function chopper_attack(target) {
     self endon("death");
     self endon("crashing");
     self endon("state_change");

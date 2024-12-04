@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
 #using script_46307eda1984556f;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
 
 #namespace namespace_b7f38141c807bd27;
 

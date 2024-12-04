@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\usability.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\mp\equipment\ammo_box.gsc;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\ammo_box;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\usability;
 
 #namespace weapon_drop;
 

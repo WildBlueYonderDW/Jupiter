@@ -1,9 +1,9 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace art;
 
@@ -31,7 +31,7 @@ function main() {
         thread tweakart();
     #/
     if (!isdefined(level.script)) {
-        level.script = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+        level.script = tolower(getdvar(@"g_mapname"));
     }
 }
 
@@ -155,7 +155,7 @@ function main() {
         if (getdvar(@"scr_art_dump") == "<dev string:x20>") {
             return;
         }
-        var_8c7568850c091a01 = getdvar(@"scr_art_dump") != "<dev string:x20>";
+        dump_art = getdvar(@"scr_art_dump") != "<dev string:x20>";
         setdvar(@"scr_art_dump", "<dev string:x20>");
         fileprint_launcher_start_file();
         fileprint_launcher("<dev string:x74>");
@@ -439,14 +439,14 @@ function dof_disable_ads() {
 // Checksum 0x0, Offset: 0x1bd4
 // Size: 0x231
 function dof_apply_to_results(var_8fcc5b15c5245591) {
-    var_192cf85a020975ab = level.dof[var_8fcc5b15c5245591]["current"]["weight"];
-    var_6eef778106fef168 = 1 - var_192cf85a020975ab;
-    level.dof["results"]["current"]["nearStart"] = level.dof["results"]["current"]["nearStart"] * var_6eef778106fef168 + level.dof[var_8fcc5b15c5245591]["current"]["nearStart"] * var_192cf85a020975ab;
-    level.dof["results"]["current"]["nearEnd"] = level.dof["results"]["current"]["nearEnd"] * var_6eef778106fef168 + level.dof[var_8fcc5b15c5245591]["current"]["nearEnd"] * var_192cf85a020975ab;
-    level.dof["results"]["current"]["nearBlur"] = level.dof["results"]["current"]["nearBlur"] * var_6eef778106fef168 + level.dof[var_8fcc5b15c5245591]["current"]["nearBlur"] * var_192cf85a020975ab;
-    level.dof["results"]["current"]["farStart"] = level.dof["results"]["current"]["farStart"] * var_6eef778106fef168 + level.dof[var_8fcc5b15c5245591]["current"]["farStart"] * var_192cf85a020975ab;
-    level.dof["results"]["current"]["farEnd"] = level.dof["results"]["current"]["farEnd"] * var_6eef778106fef168 + level.dof[var_8fcc5b15c5245591]["current"]["farEnd"] * var_192cf85a020975ab;
-    level.dof["results"]["current"]["farBlur"] = level.dof["results"]["current"]["farBlur"] * var_6eef778106fef168 + level.dof[var_8fcc5b15c5245591]["current"]["farBlur"] * var_192cf85a020975ab;
+    layer_weight = level.dof[var_8fcc5b15c5245591]["current"]["weight"];
+    inverse_weight = 1 - layer_weight;
+    level.dof["results"]["current"]["nearStart"] = level.dof["results"]["current"]["nearStart"] * inverse_weight + level.dof[var_8fcc5b15c5245591]["current"]["nearStart"] * layer_weight;
+    level.dof["results"]["current"]["nearEnd"] = level.dof["results"]["current"]["nearEnd"] * inverse_weight + level.dof[var_8fcc5b15c5245591]["current"]["nearEnd"] * layer_weight;
+    level.dof["results"]["current"]["nearBlur"] = level.dof["results"]["current"]["nearBlur"] * inverse_weight + level.dof[var_8fcc5b15c5245591]["current"]["nearBlur"] * layer_weight;
+    level.dof["results"]["current"]["farStart"] = level.dof["results"]["current"]["farStart"] * inverse_weight + level.dof[var_8fcc5b15c5245591]["current"]["farStart"] * layer_weight;
+    level.dof["results"]["current"]["farEnd"] = level.dof["results"]["current"]["farEnd"] * inverse_weight + level.dof[var_8fcc5b15c5245591]["current"]["farEnd"] * layer_weight;
+    level.dof["results"]["current"]["farBlur"] = level.dof["results"]["current"]["farBlur"] * inverse_weight + level.dof[var_8fcc5b15c5245591]["current"]["farBlur"] * layer_weight;
 }
 
 // Namespace art / scripts\sp\art
@@ -721,7 +721,7 @@ function javelin_dof(trace, enemies, playereye, playerforward, var_394d322d5d9f3
 function dof_update() {
     assert(isplayer(self));
     /#
-        thread function_86d9bfcc292d5086();
+        thread dof_debug();
     #/
     while (true) {
         waitframe();
@@ -762,7 +762,7 @@ function dof_update() {
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x2b63
     // Size: 0x90
-    function function_86d9bfcc292d5086() {
+    function dof_debug() {
         assert(isplayer(self));
         setdvarifuninitialized(@"hash_3c32490464e4a898", "<dev string:x20>");
         while (true) {
@@ -825,7 +825,7 @@ function dof_update() {
             farend = "<dev string:x242>";
             farblur = "<dev string:x245>";
             weight = "<dev string:x248>";
-            var_55eb546ec9f5a7c = 0;
+            actual_weight = 0;
         } else {
             nearstart = math::round_float(level.dof[var_8fcc5b15c5245591]["<dev string:x27>"]["<dev string:x2f>"], 2);
             nearend = math::round_float(level.dof[var_8fcc5b15c5245591]["<dev string:x27>"]["<dev string:x39>"], 2);
@@ -834,43 +834,43 @@ function dof_update() {
             farend = math::round_float(level.dof[var_8fcc5b15c5245591]["<dev string:x27>"]["<dev string:x4a>"], 2);
             farblur = math::round_float(level.dof[var_8fcc5b15c5245591]["<dev string:x27>"]["<dev string:x5a>"], 2);
             weight = math::round_float(level.dof[var_8fcc5b15c5245591]["<dev string:x27>"]["<dev string:x24a>"], 2);
-            var_55eb546ec9f5a7c = level.dof[var_8fcc5b15c5245591]["<dev string:x27>"]["<dev string:x24a>"];
+            actual_weight = level.dof[var_8fcc5b15c5245591]["<dev string:x27>"]["<dev string:x24a>"];
         }
-        var_6e478dd2aa728de1 = 10;
-        var_bdc3bc2c45ec4e85 = 8;
+        layer_width = 10;
+        value_width = 8;
         text = var_8fcc5b15c5245591;
-        for (i = 0; i < var_6e478dd2aa728de1 - var_8fcc5b15c5245591.size; i++) {
+        for (i = 0; i < layer_width - var_8fcc5b15c5245591.size; i++) {
             text += "<dev string:x251>";
         }
         text += nearstart;
-        for (i = 0; i < var_bdc3bc2c45ec4e85 - string(nearstart).size; i++) {
+        for (i = 0; i < value_width - string(nearstart).size; i++) {
             text += "<dev string:x251>";
         }
         text += nearend;
-        for (i = 0; i < var_bdc3bc2c45ec4e85 - string(nearend).size; i++) {
+        for (i = 0; i < value_width - string(nearend).size; i++) {
             text += "<dev string:x251>";
         }
         text += nearblur;
-        for (i = 0; i < var_bdc3bc2c45ec4e85 - string(nearblur).size; i++) {
+        for (i = 0; i < value_width - string(nearblur).size; i++) {
             text += "<dev string:x251>";
         }
         text += farstart;
-        for (i = 0; i < var_bdc3bc2c45ec4e85 - string(farstart).size; i++) {
+        for (i = 0; i < value_width - string(farstart).size; i++) {
             text += "<dev string:x251>";
         }
         text += farend;
-        for (i = 0; i < var_bdc3bc2c45ec4e85 - string(farend).size; i++) {
+        for (i = 0; i < value_width - string(farend).size; i++) {
             text += "<dev string:x251>";
         }
         text += farblur;
-        for (i = 0; i < var_bdc3bc2c45ec4e85 - string(farblur).size; i++) {
+        for (i = 0; i < value_width - string(farblur).size; i++) {
             text += "<dev string:x251>";
         }
         text += weight;
         elem settext(text);
-        var_61c14b99c7d3e745 = 100;
+        bar_width = 100;
         bar = elem.bar;
-        bar setshader("<dev string:x228>", int(var_61c14b99c7d3e745 * var_55eb546ec9f5a7c), 8);
+        bar setshader("<dev string:x228>", int(bar_width * actual_weight), 8);
     }
 
     // Namespace art / scripts\sp\art

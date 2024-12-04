@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\game.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\sound;
 
 #namespace audio;
 
@@ -25,7 +25,7 @@ function init_audio() {
 // Size: 0x3e
 function onplayerconnectaudioinit() {
     apply_reverb("default");
-    if (getdvarint(@"hash_66c38b5b61297ac1") == 1) {
+    if (getdvarint(@"scr_thirdperson") == 1) {
         setglobalsoundcontext("thirdpersonmode", "on");
     }
     self setsoundsubmix("hit_indicator_hipfire");

@@ -1,7 +1,7 @@
-#using scripts\common\callbacks.gsc;
-#using script_439fa02b5251fa5b;
 #using script_4a6760982b403bad;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\damage_tuning;
+#using scripts\common\vehicle;
 
 #namespace callbacksetup;
 

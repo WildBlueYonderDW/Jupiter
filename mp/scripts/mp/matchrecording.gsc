@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\matchdata.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\matchdata;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace matchrecording;
 

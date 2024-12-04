@@ -1,26 +1,26 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
 #using script_2d9d24f7c63ac143;
 #using script_367c2e5a914658d7;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_58f20490049af6ac;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weaponrank;
 
 #namespace br_multi_circle;
 
@@ -39,7 +39,7 @@ function init() {
     game["dialog"]["circle_split"] = "gmst_wzan_crsp";
     game["dialog"]["circle_merge"] = "gmst_wzan_crmr";
     game["dialog"]["circle_victory"] = "gmst_wzan_crsv";
-    function_ccacfdcc7aa6b6d7();
+    initLevelData();
     function_21ffe8d91278bbaa();
     function_2a8bc5e4468a86dc();
     if (getdvarint(@"hash_f4a50b0871efa9e9", 1) != 0) {
@@ -52,7 +52,7 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9d3
 // Size: 0x275
-function function_ccacfdcc7aa6b6d7() {
+function initLevelData() {
     level.br_circle.var_bf394857229861a5 = &function_1b21de2360beaff;
     level.var_2df69b8e552238b6 = 1;
     level.br_multi_circle = spawnstruct();
@@ -775,7 +775,7 @@ function function_d835881b2d4842d3() {
                         continue;
                     }
                     var_acfa1a113ba7d7c7 = 0;
-                    if (!function_ee854fdd1e77efc4(player.origin) || function_d30c8f0e5abea93b(player.origin, 1)) {
+                    if (!isPointInMultiCircleDanger(player.origin) || function_d30c8f0e5abea93b(player.origin, 1)) {
                         if (player cancircledamageplayer(player)) {
                             var_acfa1a113ba7d7c7 = 1;
                             player function_f8d9c5f59fc6c187();

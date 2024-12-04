@@ -1,19 +1,19 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gametypes\br_c130airdrop.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_jugg_common.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\mp\gametypes\br_gametypes.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_c130airdrop;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_jugg_common;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
 
 #namespace br_jugg_common;
 

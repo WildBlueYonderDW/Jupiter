@@ -1,6 +1,6 @@
-#namespace namespace_9c373d777bd6224;
+#namespace c_jup_civ_russian_male_body_1;
 
-// Namespace namespace_9c373d777bd6224 / namespace_35df1334ed4356a4
+// Namespace c_jup_civ_russian_male_body_1 / namespace_35df1334ed4356a4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d7
 // Size: 0x79

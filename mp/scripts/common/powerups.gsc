@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_72ef6b9f0cf1f55a;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\throttle.gsc;
 #using script_4a6760982b403bad;
+#using script_72ef6b9f0cf1f55a;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace powerups;
 
@@ -173,7 +173,7 @@ function function_854b2d27ee860e0e(str_powerup, func_grab_powerup, func_should_d
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd69
 // Size: 0x52
-function function_57c783cba2592db1(str_powerup, ent_powerup) {
+function powerup_activate(str_powerup, ent_powerup) {
     assert(isplayer(self));
     player = self;
     var_2fa928445372d72 = function_519d44e54a9b8ae5(str_powerup);
@@ -550,7 +550,7 @@ function powerup_wait_for_pickup() {
         foreach (player_sound in var_269d8af30921f43d) {
             sound_event = "sndevent_powerup_" + self.str_powerup;
             player_sound playsoundevent(sound_event, player_sound);
-            namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_operator_vo", {#target:undefined, #speaker:player_sound, #sound_event:sound_event, #sound_type:undefined, #var_30e54bfe55d8adb9:"powerup_wait_for_pickup"});
+            namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_operator_vo", {#target:undefined, #speaker:player_sound, #sound_event:sound_event, #sound_type:undefined, #script_func_name:"powerup_wait_for_pickup"});
         }
         if (isdefined(var_2fa928445372d72.var_c5a9d2297ea16382)) {
             a_players = player function_a56a8b17eae57b09(self.str_powerup, self.origin);
@@ -566,7 +566,7 @@ function powerup_wait_for_pickup() {
             }
         #/
         level callback::callback(#"player_powerup", {#player:player, #powerup:self});
-        player function_57c783cba2592db1(self.str_powerup, self);
+        player powerup_activate(self.str_powerup, self);
         player namespace_53fc9ddbb516e6e1::function_990cf49669e49965();
         self notify("powerup_grabbed", player);
         thread function_98041907892dbd80(1);

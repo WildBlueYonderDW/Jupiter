@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\values.gsc;
-#using scripts\stealth\utility.gsc;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\stealth\utility;
 
 #namespace namespace_e893cfa0f958c981;
 
@@ -16,14 +16,14 @@ function function_bbe32b4b9157ffd(var_62a0d160f7e4dbe6) {
     bundle = getscriptbundle(bundlename);
     if (isdefined(bundle)) {
         self.var_c0578325b5b24a5b = spawnstruct();
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f = [];
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["idle"] = bundle.var_398e8318dc77f236;
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["investigate"] = bundle.var_9fc97536d296595d;
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["investigate_to_idle"] = bundle.var_9b8298d7cb7f882e;
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["hunt"] = bundle.var_c958377c5a4a7f65;
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["hunt_to_idle"] = bundle.var_3784481c6c21da06;
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["combat_1"] = bundle.var_4e523c36234b18f0;
-        self.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["combat_2"] = bundle.var_df13241b720b6c6a;
+        self.var_c0578325b5b24a5b.music_aliases = [];
+        self.var_c0578325b5b24a5b.music_aliases["idle"] = bundle.var_398e8318dc77f236;
+        self.var_c0578325b5b24a5b.music_aliases["investigate"] = bundle.var_9fc97536d296595d;
+        self.var_c0578325b5b24a5b.music_aliases["investigate_to_idle"] = bundle.var_9b8298d7cb7f882e;
+        self.var_c0578325b5b24a5b.music_aliases["hunt"] = bundle.var_c958377c5a4a7f65;
+        self.var_c0578325b5b24a5b.music_aliases["hunt_to_idle"] = bundle.var_3784481c6c21da06;
+        self.var_c0578325b5b24a5b.music_aliases["combat_1"] = bundle.var_4e523c36234b18f0;
+        self.var_c0578325b5b24a5b.music_aliases["combat_2"] = bundle.var_df13241b720b6c6a;
         self.var_c0578325b5b24a5b.grace_periods = [];
         self.var_c0578325b5b24a5b.grace_periods["idle"] = bundle.var_3a88892f0baddaab;
         self.var_c0578325b5b24a5b.grace_periods["investigate"] = bundle.var_402340fdc5a42df0;
@@ -114,9 +114,9 @@ function function_d4dd82f70477e0e() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d7
 // Size: 0x1c
-function function_75d8d5ad2dfaa11a(var_4e81b67b18703077) {
-    level.var_f579a2baf358aa24 = var_4e81b67b18703077;
-    setmusicstate(var_4e81b67b18703077);
+function function_75d8d5ad2dfaa11a(music_alias) {
+    level.var_f579a2baf358aa24 = music_alias;
+    setmusicstate(music_alias);
 }
 
 // Namespace namespace_e893cfa0f958c981 / namespace_b96fa4d8ce10f926
@@ -127,7 +127,7 @@ function function_195260d94ed11e68() {
     self endon("death");
     self endon("disconnect");
     self endon("dungeons_stealth_ai_music_stop");
-    var_8be12c262cb81e53 = level.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["idle"];
+    music_idle = level.var_c0578325b5b24a5b.music_aliases["idle"];
     assert(isplayer(self));
     while (true) {
         while (!function_a48e0ce94e6264d9() || !flag("flag_dungeon_stealth_ai_idle_ready")) {
@@ -140,7 +140,7 @@ function function_195260d94ed11e68() {
         /#
             level.var_3b5a6b2ae3ab823e = "<dev string:x22>";
         #/
-        function_75d8d5ad2dfaa11a(var_8be12c262cb81e53);
+        function_75d8d5ad2dfaa11a(music_idle);
         while (function_a48e0ce94e6264d9()) {
             waitframe();
         }
@@ -155,8 +155,8 @@ function function_8e0c5e09b16cc301() {
     self endon("death");
     self endon("disconnect");
     self endon("dungeons_stealth_ai_music_stop");
-    var_c735ff198998554 = level.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["investigate"];
-    var_c8e3755bc4b1ee65 = level.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["investigate_to_idle"];
+    music_investigate = level.var_c0578325b5b24a5b.music_aliases["investigate"];
+    var_c8e3755bc4b1ee65 = level.var_c0578325b5b24a5b.music_aliases["investigate_to_idle"];
     assert(isplayer(self));
     while (true) {
         while (!function_d4dd82f70477e0e()) {
@@ -170,7 +170,7 @@ function function_8e0c5e09b16cc301() {
         /#
             level.var_3b5a6b2ae3ab823e = "<dev string:x27>";
         #/
-        function_75d8d5ad2dfaa11a(var_c735ff198998554);
+        function_75d8d5ad2dfaa11a(music_investigate);
         while (function_d4dd82f70477e0e()) {
             waitframe();
         }
@@ -190,10 +190,10 @@ function function_8e0c5e09b16cc301() {
 // Checksum 0x0, Offset: 0x9bf
 // Size: 0x53
 function function_9fa335917d15b6c6() {
-    if (!isdefined(level.var_11253856c7fac15f) || level.var_11253856c7fac15f["offense"].size == 0) {
+    if (!isdefined(level.drone_roles) || level.drone_roles["offense"].size == 0) {
         return (function_18c3ac39f4e482c1() >= level.var_c0578325b5b24a5b.var_868389572674fa47);
     }
-    return level.var_11253856c7fac15f["offense"].size >= 1;
+    return level.drone_roles["offense"].size >= 1;
 }
 
 // Namespace namespace_e893cfa0f958c981 / namespace_b96fa4d8ce10f926
@@ -201,10 +201,10 @@ function function_9fa335917d15b6c6() {
 // Checksum 0x0, Offset: 0xa1b
 // Size: 0x3b
 function function_f26d6483461ffcc1() {
-    if (!isdefined(level.var_11253856c7fac15f) || level.var_11253856c7fac15f["offense"].size == 0) {
+    if (!isdefined(level.drone_roles) || level.drone_roles["offense"].size == 0) {
         return false;
     }
-    return level.var_11253856c7fac15f["offense"].size >= 1;
+    return level.drone_roles["offense"].size >= 1;
 }
 
 // Namespace namespace_e893cfa0f958c981 / namespace_b96fa4d8ce10f926
@@ -223,9 +223,9 @@ function function_3ffb5b94e9e0f76e() {
     self endon("death");
     self endon("disconnect");
     self endon("dungeons_stealth_ai_music_stop");
-    var_1143761f85e37ced = level.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["combat_1"];
-    var_fdf0156458b2b3f8 = level.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["combat_2"];
-    level.var_19af88b332cae335 = var_1143761f85e37ced;
+    var_1143761f85e37ced = level.var_c0578325b5b24a5b.music_aliases["combat_1"];
+    var_fdf0156458b2b3f8 = level.var_c0578325b5b24a5b.music_aliases["combat_2"];
+    level.combat_music = var_1143761f85e37ced;
     assert(isplayer(self));
     while (true) {
         while (!function_9fa335917d15b6c6()) {
@@ -240,22 +240,22 @@ function function_3ffb5b94e9e0f76e() {
         #/
         function_75d8d5ad2dfaa11a(var_1143761f85e37ced);
         while (function_9fa335917d15b6c6()) {
-            if (function_152615a02ccdcd7d() && level.var_19af88b332cae335 != var_fdf0156458b2b3f8) {
+            if (function_152615a02ccdcd7d() && level.combat_music != var_fdf0156458b2b3f8) {
                 /#
                     level.var_3b5a6b2ae3ab823e = "<dev string:x4e>";
                 #/
                 function_75d8d5ad2dfaa11a(var_fdf0156458b2b3f8);
-                level.var_19af88b332cae335 = var_fdf0156458b2b3f8;
-            } else if (!function_152615a02ccdcd7d() && level.var_19af88b332cae335 == var_fdf0156458b2b3f8) {
+                level.combat_music = var_fdf0156458b2b3f8;
+            } else if (!function_152615a02ccdcd7d() && level.combat_music == var_fdf0156458b2b3f8) {
                 /#
                     level.var_3b5a6b2ae3ab823e = "<dev string:x47>";
                 #/
                 function_75d8d5ad2dfaa11a(var_1143761f85e37ced);
-                level.var_19af88b332cae335 = var_1143761f85e37ced;
+                level.combat_music = var_1143761f85e37ced;
             }
             waitframe();
         }
-        level.var_19af88b332cae335 = var_1143761f85e37ced;
+        level.combat_music = var_1143761f85e37ced;
     }
 }
 
@@ -278,8 +278,8 @@ function function_c3689d8d2de72567() {
     self endon("death");
     self endon("disconnect");
     self endon("dungeons_stealth_ai_music_stop");
-    var_2d7a844d6621424 = level.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["hunt"];
-    var_c8e3755bc4b1ee65 = level.var_c0578325b5b24a5b.var_4eacfce5726f6c9f["hunt_to_idle"];
+    music_hunt = level.var_c0578325b5b24a5b.music_aliases["hunt"];
+    var_c8e3755bc4b1ee65 = level.var_c0578325b5b24a5b.music_aliases["hunt_to_idle"];
     assert(isplayer(self));
     while (true) {
         while (!function_6e7eeaf3dc05e54e() || function_43686a66968a63ce()) {
@@ -293,7 +293,7 @@ function function_c3689d8d2de72567() {
         /#
             level.var_3b5a6b2ae3ab823e = "<dev string:x58>";
         #/
-        function_75d8d5ad2dfaa11a(var_2d7a844d6621424);
+        function_75d8d5ad2dfaa11a(music_hunt);
         while (function_6e7eeaf3dc05e54e() && !function_43686a66968a63ce()) {
             waitframe();
         }
@@ -327,8 +327,8 @@ function function_8ff63d221aacd6f2() {
             continue;
         }
         level.var_7713ae2bf0fb4533 = 0;
-        var_e521ef7b296b23b7 = getaiarray("axis");
-        foreach (guy in var_e521ef7b296b23b7) {
+        enemy_ais = getaiarray("axis");
+        foreach (guy in enemy_ais) {
             if (!isdefined(guy) || !isalive(guy) || guy.health <= 0 || !isai(guy)) {
                 continue;
             }
@@ -400,8 +400,8 @@ function function_6ae6331457ff833d() {
 function function_ebd9a9c9789d200f() {
     clearmusicstate();
     level.player notify("dungeons_stealth_ai_music_stop");
-    var_e521ef7b296b23b7 = getaiarray("axis");
-    foreach (guy in var_e521ef7b296b23b7) {
+    enemy_ais = getaiarray("axis");
+    foreach (guy in enemy_ais) {
         if (!isdefined(guy) || !isalive(guy) || guy.health <= 0 || !isai(guy)) {
             continue;
         }
@@ -444,7 +444,7 @@ function function_96815072b333a92b(state) {
             var_1c646566fb012aa5 = function_6e7eeaf3dc05e54e();
             var_cda02ddadc6bbf43 = function_8f63b34b24e150de();
             y += var_26f37fdbb80dc467;
-            var_f1475fc4d1ceb0a1 = isdefined(level.var_11253856c7fac15f) ? level.var_11253856c7fac15f["<dev string:xb7>"].size : 0;
+            var_f1475fc4d1ceb0a1 = isdefined(level.drone_roles) ? level.drone_roles["<dev string:xb7>"].size : 0;
             msg = "<dev string:xbf>" + var_f1475fc4d1ceb0a1;
             printtoscreen2d(x, y, msg, (1, 1, 1), scale);
             if (!istrue(level.var_3b1ccf105481b5e6)) {
@@ -478,16 +478,16 @@ function function_96815072b333a92b(state) {
             y += var_26f37fdbb80dc467;
             msg = "<dev string:x1c1>" + level.var_85c67f587c0d4f5c;
             printtoscreen2d(x, y, msg, (1, 1, 1), scale);
-            var_cf24c09b6f305a34 = getaiarray();
-            foreach (guy in var_cf24c09b6f305a34) {
+            all_ais = getaiarray();
+            foreach (guy in all_ais) {
                 if (!isdefined(guy) || !isalive(guy) || guy.health <= 0 || !isai(guy)) {
                     continue;
                 }
                 if (!isdefined(guy.stealth) || !isdefined(guy.var_fe5ebefa740c7106)) {
                     y += var_26f37fdbb80dc467;
                     var_458c7a875747dcad = guy getentitynumber();
-                    var_a77658803495bc50 = ter_op(isdefined(guy.classname), guy.classname, "<dev string:x21>");
-                    msg = "<dev string:x1d0>" + var_458c7a875747dcad + "<dev string:x1d5>" + var_a77658803495bc50 + "<dev string:x1e6>";
+                    guy_classname = ter_op(isdefined(guy.classname), guy.classname, "<dev string:x21>");
+                    msg = "<dev string:x1d0>" + var_458c7a875747dcad + "<dev string:x1d5>" + guy_classname + "<dev string:x1e6>";
                     printtoscreen2d(x, y, msg, (1, 0, 0), scale);
                 }
             }
@@ -508,8 +508,8 @@ function function_96815072b333a92b(state) {
     // Size: 0xdf
     function function_3e00b40f72895078() {
         var_facfcfd6b22cf447 = 0;
-        var_e521ef7b296b23b7 = getaiarray("<dev string:x1fc>");
-        foreach (guy in var_e521ef7b296b23b7) {
+        enemy_ais = getaiarray("<dev string:x1fc>");
+        foreach (guy in enemy_ais) {
             if (!isdefined(guy) || !isalive(guy) || guy.health <= 0 || !isai(guy)) {
                 continue;
             }

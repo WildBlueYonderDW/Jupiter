@@ -1,4 +1,4 @@
-#using scripts\cp\utility.gsc;
+#using scripts\cp\utility;
 
 #namespace namespace_5d586b5c0318efbd;
 

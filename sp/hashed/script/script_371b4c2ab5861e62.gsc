@@ -1,14 +1,14 @@
-#using scripts\common\values.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using script_2669878cf5a1b6bc;
 #using script_24fbedba9a7a1ef4;
-#using script_7c40fa80892a721;
+#using script_2669878cf5a1b6bc;
 #using script_371b4c2ab5861e62;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\common\ai.gsc;
+#using script_7c40fa80892a721;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace agent_utils;
 
@@ -192,11 +192,11 @@ function function_1828f1e20e52b418(agent, var_84ecaeab58167d39) {
             return;
         }
     }
-    var_57accdc40b2f50e = function_5ca105062ad7729(agent.agent_type, var_84ecaeab58167d39);
-    geartype = var_57accdc40b2f50e[3];
-    clothtype = var_57accdc40b2f50e[2];
-    head = var_57accdc40b2f50e[1];
-    body = var_57accdc40b2f50e[0];
+    __a0 = function_5ca105062ad7729(agent.agent_type, var_84ecaeab58167d39);
+    geartype = __a0[3];
+    clothtype = __a0[2];
+    head = __a0[1];
+    body = __a0[0];
     armor = undefined;
     switch (var_84ecaeab58167d39) {
     case 3:
@@ -516,7 +516,7 @@ function function_b535fe740f1cf507() {
             var_4ef15edd83080359 = getdvarint(@"hash_a69c6853620fc61f", 200);
         }
         newhealth = min(self.armorhealth + var_4ef15edd83080359, self.maxarmorhealth);
-        namespace_f8d3520d3483c1::function_ac7803d45979135c(newhealth);
+        namespace_f8d3520d3483c1::setArmorHealth(newhealth);
         self.var_7cea08b66b2ad878 -= 1;
         self.var_27266ececc1bdbe5 = gettime();
     }
@@ -1607,7 +1607,7 @@ function function_6f88796d2f078da4(aigroup, aileaders, squadleaderfunc) {
         level thread [[ squadleaderfunc ]](squadleader);
     }
     /#
-        if (getdvarint(@"hash_4fa5a6d9e7fb5284", 0) > 0) {
+        if (getdvarint(@"squad_debug", 0) > 0) {
             squadleader hudoutlineenable("<dev string:x6f>");
         }
     #/
@@ -1635,7 +1635,7 @@ function function_6f88796d2f078da4(aigroup, aileaders, squadleaderfunc) {
                 }
                 if (!isdefined(ai.goalent) || ai.goalent != squadleader) {
                     /#
-                        if (getdvar(@"hash_4fa5a6d9e7fb5284") != "<dev string:x85>") {
+                        if (getdvar(@"squad_debug") != "<dev string:x85>") {
                             ai hudoutlineenable("<dev string:x86>");
                         }
                     #/
@@ -1687,7 +1687,7 @@ function function_6f88796d2f078da4(aigroup, aileaders, squadleaderfunc) {
                 }
             }
             /#
-                if (getdvar(@"hash_4fa5a6d9e7fb5284") != "<dev string:x85>") {
+                if (getdvar(@"squad_debug") != "<dev string:x85>") {
                     squadleader hudoutlineenable("<dev string:x6f>");
                 }
             #/

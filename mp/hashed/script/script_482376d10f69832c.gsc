@@ -1,29 +1,29 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\powerups.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_43971bbeefd98f05;
-#using script_7b2517368c79e5bc;
-#using script_41387eecc35b88bf;
 #using script_185660037b9236c1;
-#using script_7956d56c4922bd1;
+#using script_2590b7a7de3dfc79;
+#using script_39d11000e476a42a;
+#using script_3d3d1ef33cecfb62;
+#using script_41387eecc35b88bf;
+#using script_43971bbeefd98f05;
+#using script_482376d10f69832c;
 #using script_5815a7cb4d944542;
 #using script_5f71ed065b9cea1e;
-#using script_6b684505b9959a08;
-#using script_3d3d1ef33cecfb62;
-#using script_64351208cb856df9;
-#using script_6a8ec730b2bfa844;
-#using script_2590b7a7de3dfc79;
-#using scripts\mp\utility\perk.gsc;
-#using script_686729055b66c6e4;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\trace.gsc;
 #using script_638d701d263ee1ed;
-#using scripts\common\devgui.gsc;
-#using script_39d11000e476a42a;
-#using script_482376d10f69832c;
+#using script_64351208cb856df9;
+#using script_686729055b66c6e4;
+#using script_6a8ec730b2bfa844;
+#using script_6b684505b9959a08;
+#using script_7956d56c4922bd1;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_24722a171904c83b;
 
@@ -284,7 +284,7 @@ function function_5a2c160d3a406b94(v_location, a_ais, var_8d1aa1efbf8b3c6e) {
 // Size: 0x57
 function private function_5c38bc01727d2c5c(var_8c28aac0b76c1e2e) {
     playfxontag(getfx("rift_marked_zombie"), self, "j_spine4");
-    namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(var_8c28aac0b76c1e2e);
+    namespace_ed7c38f3847343dc::stun_ai(var_8c28aac0b76c1e2e);
     params = spawnstruct();
     params.attacker = undefined;
     params.var_51357609845cf128 = gettime();

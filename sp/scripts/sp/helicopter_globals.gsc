@@ -1,14 +1,14 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\helicopter_globals.gsc;
-#using scripts\vehicle\attack_heli.gsc;
-#using scripts\sp\helicopter_ai.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\helicopter_ai;
+#using scripts\sp\helicopter_globals;
+#using scripts\sp\utility;
+#using scripts\vehicle\attack_heli;
 
-#namespace namespace_cb288ffd26863c8b;
+#namespace helicopter_globals;
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x621
 // Size: 0x2c
@@ -18,7 +18,7 @@ function init_helicopters() {
     level.chopperturretofffunc = &chopper_turret_off;
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x655
 // Size: 0xa
@@ -26,7 +26,7 @@ function chopper_turret_off() {
     self notify("mg_off");
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x667
 // Size: 0x5d
@@ -43,7 +43,7 @@ function chopper_turret_on() {
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6cc
 // Size: 0x27d
@@ -54,11 +54,11 @@ function heli_firelink(nextpoint) {
         target = getstruct(nextpoint.script_linkto, "script_linkname");
         assertex(isdefined(target), "No target for script_firelink");
     }
-    var_57dd3c07ddc98c1c = nextpoint.script_firelink;
+    fire_burst = nextpoint.script_firelink;
     if (var_243154aac115bc0a) {
         target = target spawn_tag_origin();
     }
-    switch (var_57dd3c07ddc98c1c) {
+    switch (fire_burst) {
     case #"hash_2c6245580ea45116":
         wait 1;
         scripts\sp\helicopter_globals::fire_missile("hind_zippy", 1, target);
@@ -100,7 +100,7 @@ function heli_firelink(nextpoint) {
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x951
 // Size: 0x10c
@@ -132,7 +132,7 @@ function globalthink() {
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa65
 // Size: 0xc2
@@ -159,7 +159,7 @@ function flares_think(vehicle) {
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xb2f
 // Size: 0xed
@@ -184,7 +184,7 @@ function flares_fire_burst(vehicle, fxcount, flarecount, var_8e99a11a6eafd1a) {
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc24
 // Size: 0x4b
@@ -197,7 +197,7 @@ function flares_fire(vehicle) {
     flares_fire_burst(vehicle, 8, 1, var_8e99a11a6eafd1a);
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc77
 // Size: 0x59
@@ -210,7 +210,7 @@ function create_missileattractor_on_player_chopper() {
     self.missileattractor = missile_createattractorent(self.centeraimpoint, 10000, 10000);
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd8
 // Size: 0x1a0
@@ -255,7 +255,7 @@ function flares_redirect_missiles(vehicle, var_8e99a11a6eafd1a) {
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe80
 // Size: 0x43
@@ -266,20 +266,20 @@ function flares_get_vehicle_velocity(vehicle) {
     return vec * 20;
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xecc
 // Size: 0x50
-function missile_deathwait(emissile, var_458ea64f6f9a5014) {
-    var_458ea64f6f9a5014 endon("death");
+function missile_deathwait(emissile, emissile_target) {
+    emissile_target endon("death");
     emissile waittill("death");
-    if (!isdefined(var_458ea64f6f9a5014.incomming_missiles)) {
+    if (!isdefined(emissile_target.incomming_missiles)) {
         return;
     }
-    var_458ea64f6f9a5014.incomming_missiles = array_remove(var_458ea64f6f9a5014.incomming_missiles, emissile);
+    emissile_target.incomming_missiles = array_remove(emissile_target.incomming_missiles, emissile);
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0xf24
 // Size: 0x370
@@ -377,7 +377,7 @@ function getenemytarget(fradius, var_803fde08d46aef72, var_70183020b339e69, dosi
     return var_a8f8e9a95733bd9;
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x129d
 // Size: 0x1b8
@@ -418,7 +418,7 @@ function shootenemytarget_bullets(etarget) {
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x145d
 // Size: 0xf6
@@ -451,7 +451,7 @@ function shootenemytarget_bullets_debugline(var_55a77f95f61c8b65, var_1f0507f318
     #/
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x155b
 // Size: 0xce
@@ -476,11 +476,11 @@ function attachmissiles(weapon1, weapon2, var_a7756cbfed84307a, var_a77567bfed84
     }
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1631
 // Size: 0x64a
-function fire_missile(smissiletype, ishots, etarget, fdelay, var_f3ff83980fae80e1) {
+function fire_missile(smissiletype, ishots, etarget, fdelay, target_los) {
     if (!isdefined(ishots)) {
         ishots = 1;
     }
@@ -640,10 +640,10 @@ function fire_missile(smissiletype, ishots, etarget, fdelay, var_f3ff83980fae80e
                 case #"hash_443e386e3f9045ae":
                 case #"hash_4c67bcd319c7e278":
                 case #"hash_5cee564ad78444a6":
-                    if (!isdefined(var_f3ff83980fae80e1)) {
+                    if (!isdefined(target_los)) {
                         emissile thread missilelosetarget(0.6);
                     } else {
-                        emissile thread missilelosetarget(var_f3ff83980fae80e1);
+                        emissile thread missilelosetarget(target_los);
                     }
                     break;
                 default:
@@ -665,7 +665,7 @@ function fire_missile(smissiletype, ishots, etarget, fdelay, var_f3ff83980fae80e
     self setvehweapon(defaultweapon);
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c83
 // Size: 0x37
@@ -674,7 +674,7 @@ function delayed_earthquake(fdelay, scale, duration, source, fradius) {
     earthquake(scale, duration, source, fradius);
 }
 
-// Namespace namespace_cb288ffd26863c8b / scripts\sp\helicopter_globals
+// Namespace helicopter_globals / scripts\sp\helicopter_globals
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cc2
 // Size: 0x20

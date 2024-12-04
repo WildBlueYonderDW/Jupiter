@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_53651341190c5aab;
-#using scripts\common\cap.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
+#using scripts\common\cap;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace door_check;
 

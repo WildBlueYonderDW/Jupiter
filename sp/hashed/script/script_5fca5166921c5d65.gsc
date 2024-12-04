@@ -1,9 +1,9 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
 #using script_a7e2df121c70d22;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
 #namespace namespace_829b29c5553db8bb;
 

@@ -1,11 +1,11 @@
-#using script_7b2517368c79e5bc;
 #using script_3e2f8cc477d57433;
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
+#using script_7b2517368c79e5bc;
+#using scripts\common\devgui;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\player;
 
 #namespace namespace_6236231ba2ba2d74;
 

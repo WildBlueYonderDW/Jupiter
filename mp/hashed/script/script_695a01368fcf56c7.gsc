@@ -1,15 +1,15 @@
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
+#using script_38f587124ef1391b;
 #using script_3a04e306d4542880;
 #using script_3bdbe71b03befb19;
-#using script_55c39c0d8018522a;
-#using script_38f587124ef1391b;
 #using script_42f3a02f95670934;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\mp\class.gsc;
+#using script_55c39c0d8018522a;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp_mp\agents\agent_init;
+#using scripts\mp\class;
 
 #namespace namespace_9ff01e2c8ed095e;
 

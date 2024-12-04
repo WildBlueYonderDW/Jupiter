@@ -1,7 +1,7 @@
 #using script_7ff3a914e6c698c5;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\callbacks;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_b17ec7b025ea4a4c;
 

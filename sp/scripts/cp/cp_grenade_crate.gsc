@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
 #using script_1db8d0e02a99c5e2;
 #using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_d58a78410169a9f3;
 
@@ -92,8 +92,8 @@ function healthbox_grenadelaunchfunc(boxent) {
 // Size: 0x16d
 function healthbox_onusedeployable(showhint) {
     self endon("disconnect");
-    var_3bda1622a11cf39b = 1;
-    var_c351b07cfbe3c36e = 1;
+    grenade_full = 1;
+    projectile_full = 1;
     primary_weapons = self getweaponslistprimaries();
     foreach (weapon in primary_weapons) {
         if (weapontype(weapon) == "projectile") {
@@ -103,14 +103,14 @@ function healthbox_onusedeployable(showhint) {
                 }
             }
             if (!max_projectile_check(weapon)) {
-                var_c351b07cfbe3c36e = 0;
+                projectile_full = 0;
                 self setweaponammoclip(weapon, weaponclipsize(weapon));
                 self givemaxammo(weapon);
             }
         }
         if (weapon.inventorytype == "altmode" && isdefined(weapon.underbarrel) && weapon.underbarrel == "ubshtgn") {
             if (!max_projectile_check(weapon)) {
-                var_c351b07cfbe3c36e = 0;
+                projectile_full = 0;
                 self setweaponammoclip(weapon, weaponclipsize(weapon));
                 self setweaponammostock(weapon, 0);
             }
@@ -131,11 +131,11 @@ function healthbox_onusedeployable(showhint) {
 // Checksum 0x0, Offset: 0x7d6
 // Size: 0x62
 function max_projectile_check(weapon) {
-    var_bc09cbb9b158bfe5 = self getweaponammoclip(weapon);
-    var_f07e8473f97da13f = self getweaponammostock(weapon);
-    var_c56bbe615f626cc8 = weaponclipsize(weapon);
-    var_a862b844906a7c8 = weaponmaxammo(weapon);
-    if (var_f07e8473f97da13f < var_a862b844906a7c8 || var_bc09cbb9b158bfe5 < var_c56bbe615f626cc8) {
+    current_clip = self getweaponammoclip(weapon);
+    current_stock = self getweaponammostock(weapon);
+    max_clip = weaponclipsize(weapon);
+    max_stock = weaponmaxammo(weapon);
+    if (current_stock < max_stock || current_clip < max_clip) {
         return false;
     }
     return true;

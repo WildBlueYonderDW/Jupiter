@@ -1,37 +1,37 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\equipment\gas_grenade.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using scripts\mp\gameobjects.gsc;
+#using script_189b67b2735b981d;
 #using script_6a5d3bf7a5b7064a;
 #using script_74b851b7aa1ef32d;
-#using script_189b67b2735b981d;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\script.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\class;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\gameobjects;
+#using scripts\mp\hud_message;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\supers;
+#using scripts\mp\teams;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace juggernaut;
 
@@ -121,7 +121,7 @@ function jugg_makejuggernaut(juggconfig, streakinfo, bundle) {
     if (isdefined(level.clearbrinventory) && !istrue(self.gulag)) {
         self [[ level.clearbrinventory ]]();
     }
-    if (isdefined(juggconfig.classstruct) && !scripts\mp\utility\game::function_a305f5d1be837817()) {
+    if (isdefined(juggconfig.classstruct) && !scripts\mp\utility\game::isJuggerMoshGameMode()) {
         respawnitems = scripts\mp\class::respawnitems_saveplayeritemstostruct();
         if (isdefined(level.var_dc475334f61b89d)) {
             [[ level.var_dc475334f61b89d ]](respawnitems);
@@ -242,7 +242,7 @@ function jugg_makejuggernaut(juggconfig, streakinfo, bundle) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1647
 // Size: 0x2f8
-function jugg_removejuggernaut(var_61c16214a3ae8868) {
+function jugg_removejuggernaut(is_death) {
     if (!isdefined(self)) {
         return;
     }
@@ -279,7 +279,7 @@ function jugg_removejuggernaut(var_61c16214a3ae8868) {
     jugg_restoremodel(juggcontext);
     self.playerstreakspeedscale = juggcontext.prevspeedscale;
     scripts\mp\weapons::updatemovespeedscale();
-    if (istrue(var_61c16214a3ae8868)) {
+    if (istrue(is_death)) {
         self endon("disconnect");
         waitframe();
     }
@@ -423,7 +423,7 @@ function jugg_watchmusictoggle(streakname) {
     } else {
         self setscriptablepartstate("juggernaut", "music", 0);
     }
-    if (scripts\mp\utility\game::function_a305f5d1be837817()) {
+    if (scripts\mp\utility\game::isJuggerMoshGameMode()) {
         self setscriptablepartstate("juggernaut", "neutral", 0);
     }
     if (scripts\cp_mp\utility\game_utility::function_ba5574c7f287c587()) {
@@ -431,7 +431,7 @@ function jugg_watchmusictoggle(streakname) {
     }
     while (true) {
         self waittill("toggle_music");
-        if (scripts\mp\utility\game::function_a305f5d1be837817()) {
+        if (scripts\mp\utility\game::isJuggerMoshGameMode()) {
             continue;
         }
         if (self isonladder() || self ismantling()) {
@@ -642,7 +642,7 @@ function jugg_watchoverlaydamagestates(juggcontext) {
     self endon("juggernaut_end");
     self endon("death or disconnect");
     level endon("game_ended");
-    if (scripts\mp\utility\game::function_a305f5d1be837817() || scripts\mp\utility\game::getgametype() == "warrior") {
+    if (scripts\mp\utility\game::isJuggerMoshGameMode() || scripts\mp\utility\game::getgametype() == "warrior") {
         return;
     }
     startinghealth = self.health;
@@ -809,7 +809,7 @@ function private function_eb351ef41167c059(bundle) {
 // Checksum 0x0, Offset: 0x29f9
 // Size: 0xad
 function private jugg_enableoverlay(juggcontext, forcereset) {
-    if (scripts\mp\utility\game::function_a305f5d1be837817() || scripts\mp\utility\game::getgametype() == "warrior") {
+    if (scripts\mp\utility\game::isJuggerMoshGameMode() || scripts\mp\utility\game::getgametype() == "warrior") {
         return;
     }
     self notify("jugg_mask_on");

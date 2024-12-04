@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace namespace_2b1145f62aa835b8;
 
@@ -769,8 +769,8 @@ function function_2d5a30d6fe54567b(skipsplash) {
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x2429
 // Size: 0x5d
-function updatehitmarker_sharedfunc(markertype, killingblow, headshot, nonplayer, icontype, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d) {
-    return utility::function_f3bb4f4911a1beb2("hitmarker", "updateHitMarker_SharedFunc", markertype, killingblow, headshot, nonplayer, icontype, targetentnum, var_f7ea2887b1e3535b, var_203066c6662e1f2d);
+function updatehitmarker_sharedfunc(markertype, killingblow, headshot, nonplayer, icontype, targetentnum, armorPlateCount, var_203066c6662e1f2d) {
+    return utility::function_f3bb4f4911a1beb2("hitmarker", "updateHitMarker_SharedFunc", markertype, killingblow, headshot, nonplayer, icontype, targetentnum, armorPlateCount, var_203066c6662e1f2d);
 }
 
 // Namespace namespace_2b1145f62aa835b8 / namespace_53fc9ddbb516e6e1

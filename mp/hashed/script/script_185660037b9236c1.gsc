@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_413d0426f154bd91;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_3e31016b9c11a616;
-#using script_5d8202968463a21d;
-#using script_6617e2f2bb62b52b;
-#using script_41387eecc35b88bf;
-#using script_79deab1955343d5d;
-#using script_6cf3c7c08335321b;
-#using script_2707474774db34b;
 #using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
+#using script_24f248b33b79e48d;
+#using script_2707474774db34b;
+#using script_3ab210ea917601e7;
+#using script_3ac7886f9e4eceef;
+#using script_3e31016b9c11a616;
+#using script_41387eecc35b88bf;
+#using script_4d39bd4c621e7680;
 #using script_4ef01fe6151dde4d;
 #using script_4fdefae8b7bcdf73;
 #using script_5753ba9c28794a65;
-#using script_3ab210ea917601e7;
-#using script_24f248b33b79e48d;
 #using script_5815a7cb4d944542;
-#using script_3ac7886f9e4eceef;
-#using script_4d39bd4c621e7680;
+#using script_5d8202968463a21d;
+#using script_6617e2f2bb62b52b;
+#using script_6cf3c7c08335321b;
+#using script_7956d56c4922bd1;
+#using script_79deab1955343d5d;
+#using scripts\common\data_tracker;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_4fda5d7358015a06;
 
@@ -573,8 +573,8 @@ function private function_6cf69755ac283f1e(varianttag, activitytype, category, v
     var_c4f9b0bf67170f6f.var_14a8920a25d8a7a1 = [];
     var_c4f9b0bf67170f6f.var_9767f7738e477df8 = undefined;
     function_99a59990b4652967(var_c4f9b0bf67170f6f);
-    namespace_e82a1efb852543c9::function_4d1de11b1a5630ec(var_c4f9b0bf67170f6f);
-    var_c4f9b0bf67170f6f namespace_e82a1efb852543c9::addcallback(&function_6fe8aa8dfb9111eb);
+    scripts\common\data_tracker::function_4d1de11b1a5630ec(var_c4f9b0bf67170f6f);
+    var_c4f9b0bf67170f6f scripts\common\data_tracker::addcallback(&function_6fe8aa8dfb9111eb);
     return var_c4f9b0bf67170f6f;
 }
 

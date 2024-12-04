@@ -1,6 +1,6 @@
-#namespace namespace_81e951d901dbde1d;
+#namespace civilian_me_female_bodies;
 
-// Namespace namespace_81e951d901dbde1d / xmodelalias\civilian_me_female_bodies
+// Namespace civilian_me_female_bodies / xmodelalias\civilian_me_female_bodies
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x158
 // Size: 0x5b

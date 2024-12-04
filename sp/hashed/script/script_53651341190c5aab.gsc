@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\cap.gsc;
-#using scripts\common\cap.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\cap;
+#using scripts\common\cap;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace interaction_common;
 
@@ -111,7 +111,7 @@ function startcap(statename, params) {
         interaction.origin = getstartorigin(originalorigin, originalangles, animation);
         interaction.angles = getstartangles(originalorigin, originalangles, animation);
     }
-    self.var_a70672e669ca7f00 = interaction.angles;
+    self.interaction_angles = interaction.angles;
     self.interaction_origin = getgroundposition(interaction.origin, 1);
     scripts\common\cap::cap_reach_and_arrive(interaction, capname, animset, var_bcf3c74b1d8b4883);
 }
@@ -147,11 +147,11 @@ function function_b76d8b8ad8e2c823(statename, params) {
         interaction.origin = getstartorigin(originalorigin, originalangles, animation);
         interaction.angles = getstartangles(originalorigin, originalangles, animation);
     }
-    self.var_a70672e669ca7f00 = interaction.angles;
+    self.interaction_angles = interaction.angles;
     self.interaction_origin = interaction.origin;
     scripts\common\cap::cap_start(capname, animset, 0);
     scripts\asm\asm::asm_fireephemeralevent("move", "end");
-    self forceteleport(self.interaction_origin, self.var_a70672e669ca7f00, 2048);
+    self forceteleport(self.interaction_origin, self.interaction_angles, 2048);
 }
 
 // Namespace interaction_common / namespace_f901a4f9d899be59

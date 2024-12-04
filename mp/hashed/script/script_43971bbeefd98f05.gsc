@@ -1,17 +1,17 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_7b2517368c79e5bc;
-#using script_443d99fe707f1d9f;
-#using script_3e2f8cc477d57433;
-#using script_600b944a95c3a7bf;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
+#using script_3e2f8cc477d57433;
 #using script_43971bbeefd98f05;
+#using script_443d99fe707f1d9f;
+#using script_600b944a95c3a7bf;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace common_cache;
 
@@ -211,7 +211,7 @@ function function_6830225d0b087bec(opener, container) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd60
 // Size: 0x1eb
-function function_68085c72d7b628ec(container, opener) {
+function closeLootableContainer(container, opener) {
     if (!isdefined(container) || !isdefined(opener)) {
         assertmsg("<dev string:x18f>");
         return;
@@ -283,7 +283,7 @@ function function_71a59f067d5fe986(opener) {
         }
         waitframe();
     }
-    function_68085c72d7b628ec(self, opener);
+    closeLootableContainer(self, opener);
 }
 
 // Namespace common_cache / namespace_3883e3399f2870b5
@@ -295,7 +295,7 @@ function function_47b931d76ffd028f(opener) {
     level endon("game_ended");
     self endon("closed");
     opener scripts\engine\utility::waittill_any_4("close_container", "flashbang", "concussed", "weapon_fired");
-    function_68085c72d7b628ec(self, opener);
+    closeLootableContainer(self, opener);
 }
 
 // Namespace common_cache / namespace_3883e3399f2870b5
@@ -358,7 +358,7 @@ function function_7f6dc80424e55d7b(opener) {
     }
     if (opener isContainerEmpty(self) && self.containertype != 15 && self.containertype != 18 && self.containertype != 19) {
         container = self;
-        function_68085c72d7b628ec(self, opener);
+        closeLootableContainer(self, opener);
         if (isdefined(container.var_1498604de9cf5016) && !istrue(container.var_1498604de9cf5016)) {
             container notify("death");
             container freescriptable();
@@ -545,7 +545,7 @@ function function_f87690347a82844d(notification, slotindex) {
             }
             break;
         case #"hash_fb84b605789df05e":
-            function_68085c72d7b628ec(cache, self);
+            closeLootableContainer(cache, self);
             return;
         case #"hash_10217053947e341b":
             cacheindex = slotindex >> 8;
@@ -568,7 +568,7 @@ function function_f87690347a82844d(notification, slotindex) {
             if (istrue(cache.var_978407de904a5fd1)) {
                 function_cc518f9c6e1d9543(cache);
             } else if (isContainerEmpty(cache)) {
-                function_68085c72d7b628ec(cache, self);
+                closeLootableContainer(cache, self);
             }
             break;
         default:
@@ -580,7 +580,7 @@ function function_f87690347a82844d(notification, slotindex) {
     }
     if (istrue(result) && isdefined(self.var_2fa5b49969def47) && isContainerEmpty(self.var_2fa5b49969def47) && self.var_2fa5b49969def47.containertype != 15 && self.var_2fa5b49969def47.containertype != 18 && self.var_2fa5b49969def47.containertype != 19) {
         container = self.var_2fa5b49969def47;
-        function_68085c72d7b628ec(self.var_2fa5b49969def47, self);
+        closeLootableContainer(self.var_2fa5b49969def47, self);
         if (isdefined(container.var_1498604de9cf5016) && !istrue(container.var_1498604de9cf5016)) {
             container notify("death");
             container freescriptable();
@@ -1061,7 +1061,7 @@ function private function_217ab517f98c6fab(var_8db5472153ea4811) {
     function function_803e6cfa13174264() {
         foreach (player in level.players) {
             if (isdefined(player function_d6041f45fee8083d())) {
-                function_68085c72d7b628ec(level.var_61e6e1b83a8f3486.var_9549d82a3fba4746, player);
+                closeLootableContainer(level.var_61e6e1b83a8f3486.var_9549d82a3fba4746, player);
             }
             level.var_61e6e1b83a8f3486.var_9549d82a3fba4746.origin = player geteye() + 32 * vectornormalize(anglestoforward(player getplayerangles()));
             utility::delaythread(0.1, &function_30f5ea60517f9e06, level.var_61e6e1b83a8f3486.var_9549d82a3fba4746, player);

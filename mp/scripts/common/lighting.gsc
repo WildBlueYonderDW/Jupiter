@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\exploder.gsc;
-#using scripts\common\utility.gsc;
-#using script_663ff1906e9fe70;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\exploder;
+#using scripts\common\hud_util;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace lighting;
 
@@ -1961,11 +1961,11 @@ function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4e
         step_time = 0.05;
         if (fadein > 0) {
             current_alpha = 0;
-            var_bf49f656e04717f9 = max_alpha / fadein / step_time;
-            assertex(var_bf49f656e04717f9 > 0, "<dev string:x65e>");
+            increment_alpha = max_alpha / fadein / step_time;
+            assertex(increment_alpha > 0, "<dev string:x65e>");
             while (current_alpha < max_alpha) {
                 overlay.alpha = current_alpha;
-                current_alpha += var_bf49f656e04717f9;
+                current_alpha += increment_alpha;
                 wait step_time;
             }
         }
@@ -1974,11 +1974,11 @@ function function_c4c9f41e618cb8a1(time, materials, fadein_, fadeout_, var_f9d4e
         if (fadeout > 0) {
             if (isdefined(overlay)) {
                 current_alpha = max_alpha;
-                var_11dde1254b91d215 = max_alpha / fadeout / step_time;
-                assertex(var_11dde1254b91d215 > 0, "<dev string:x685>");
+                decrement_alpha = max_alpha / fadeout / step_time;
+                assertex(decrement_alpha > 0, "<dev string:x685>");
                 while (current_alpha > 0) {
                     overlay.alpha = current_alpha;
-                    current_alpha -= var_11dde1254b91d215;
+                    current_alpha -= decrement_alpha;
                     wait step_time;
                 }
             }

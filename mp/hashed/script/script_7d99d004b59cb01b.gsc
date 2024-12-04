@@ -1,49 +1,49 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_2c17aa19d1e937b2;
-#using scripts\engine\math.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_5099ea00e7cc18f2;
-#using script_48814951e916af89;
-#using script_371b4c2ab5861e62;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\cp_mp\killstreaks\airstrike.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\mp\gametypes\wm_objectives.gsc;
 #using script_18cbc2523c2bfb9d;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\wm_utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\obj_bombzone.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\engine\trace.gsc;
-#using script_7e4d332e911e1b90;
+#using script_2c17aa19d1e937b2;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_5099ea00e7cc18f2;
 #using script_7b8639f512d4cfe4;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\anim_scene.gsc;
+#using script_7e4d332e911e1b90;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\anim_scene;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airstrike;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\anim;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\damage;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\obj_bombzone;
+#using scripts\mp\gametypes\wm_objectives;
+#using scripts\mp\gametypes\wm_utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_cd1eecc073e237cd;
 
@@ -1136,8 +1136,8 @@ function function_7951c17b5988d67c() {
 // Size: 0x227
 function function_5413c7d723606928(tank) {
     level endon("game_ended");
-    var_6e2a75b6dc48a3e1 = spawn("script_model", (0, 0, 0));
-    var_6e2a75b6dc48a3e1 linkto(tank, "tag_origin", (-85, 0, 45), (0, 0, 0));
+    tank_sfx = spawn("script_model", (0, 0, 0));
+    tank_sfx linkto(tank, "tag_origin", (-85, 0, 45), (0, 0, 0));
     if (getdvarint(@"hash_84dcf3cb7db8cb68", 0) == 1) {
         return;
     }
@@ -1158,7 +1158,7 @@ function function_5413c7d723606928(tank) {
     tank.var_6decdc73003db8d0 = 0;
     tank.overridespeed = 12;
     wait 1.1;
-    var_6e2a75b6dc48a3e1 playsoundonmovingent("jup_mode_wm_tank_intro_crush_wall");
+    tank_sfx playsoundonmovingent("jup_mode_wm_tank_intro_crush_wall");
     playfxontag(level._effect["tank_body_smk"], tank, "tag_origin");
     playfxontag(level._effect["tank_track_dust"], tank, "tag_reactive_armor_right_fx");
     playfxontag(level._effect["tank_track_dust"], tank, "tag_reactive_armor_left_fx");
@@ -1172,7 +1172,7 @@ function function_5413c7d723606928(tank) {
     }
     wait 1;
     tank.overridespeed = undefined;
-    var_6e2a75b6dc48a3e1 delete();
+    tank_sfx delete();
 }
 
 // Namespace namespace_cd1eecc073e237cd / namespace_35c98dfcc5046aa3
@@ -1505,9 +1505,9 @@ function function_2ee1875b4cc4d668() {
         foreach (player in level.players) {
             bombzone.trigger disableplayeruse(player);
         }
-        bombzone.onbeginuse = &function_56766539b33c65c7;
-        bombzone.onenduse = &function_63a49c9d64f1597b;
-        bombzone.onuse = &function_f004ef74d3f4c10c;
+        bombzone.onbeginuse = &ied_onbeginuse;
+        bombzone.onenduse = &ied_onenduse;
+        bombzone.onuse = &ied_onuseplantobject;
         bombzone.bombplanted = 0;
         bombzone.bombexploded = undefined;
         bombzone.resetprogress = 1;
@@ -1674,7 +1674,7 @@ function bombsitewatcher() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x701f
 // Size: 0x9a
-function function_56766539b33c65c7(player) {
+function ied_onbeginuse(player) {
     player playlocalsound("mp_bomb_raise_noise");
     player scripts\mp\bots\bots_util::notify_enemy_bots_bomb_used("plant");
     player notify("super_obj_drain");
@@ -1690,7 +1690,7 @@ function function_56766539b33c65c7(player) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x70c1
 // Size: 0x57
-function function_63a49c9d64f1597b(team, player, result) {
+function ied_onenduse(team, player, result) {
     scripts\mp\gametypes\obj_bombzone::bombzone_onenduse(team, player, result);
     scripts\mp\gameobjects::setobjectivestatusicons("waypoint_Veh_ToPlant", "waypoint_Veh_ToPlant");
     scripts\mp\objidpoolmanager::objective_playermask_hidefromall(self.objidnum);
@@ -1701,7 +1701,7 @@ function function_63a49c9d64f1597b(team, player, result) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7120
 // Size: 0x19a
-function function_f004ef74d3f4c10c(player) {
+function ied_onuseplantobject(player) {
     foreach (visual in self.visuals) {
         visual setscriptablepartstate("model", "show", 1);
     }
@@ -2486,16 +2486,16 @@ function function_a82dda36038fb064() {
 // Size: 0x6c
 function function_a3a5173c39cc676(soundwait, animlength) {
     level endon("game_ended");
-    var_b90469fd1a3755cf = spawn("script_model", self.origin);
-    var_b90469fd1a3755cf linkto(self, "tag_origin");
+    missile_sfx = spawn("script_model", self.origin);
+    missile_sfx linkto(self, "tag_origin");
     soundwait -= 1;
     if (soundwait < 0) {
         soundwait = 0;
     }
     wait soundwait;
-    var_b90469fd1a3755cf playsoundonmovingent("jup_icbm_launch_fire");
+    missile_sfx playsoundonmovingent("jup_icbm_launch_fire");
     wait animlength;
-    var_b90469fd1a3755cf delete();
+    missile_sfx delete();
 }
 
 // Namespace namespace_cd1eecc073e237cd / namespace_35c98dfcc5046aa3
@@ -2696,19 +2696,19 @@ function function_bb5fe40cb68c5d9a() {
     foreach (trigger in var_f878c4955c12458c) {
         visuals = getentarray(trigger.target, "targetname");
         if (isdefined(visuals[0])) {
-            var_e927bab71d719bb5 = getentitylessscriptablearray(visuals[0].target, "targetname");
+            zone3_wall = getentitylessscriptablearray(visuals[0].target, "targetname");
             trigger setuseholdduration("duration_none");
-            var_b33d5349ff647dbb = scripts\mp\gameobjects::createuseobject(game["attackers"], trigger, visuals, var_e62df0718b7dcbca, 0, 1);
-            var_b33d5349ff647dbb scripts\mp\gameobjects::requestid(0, 0);
-            var_b33d5349ff647dbb.origin = visuals[0].origin;
-            var_b33d5349ff647dbb.angles = visuals[0].angles;
-            var_b33d5349ff647dbb.wall = var_e927bab71d719bb5[0];
-            var_b33d5349ff647dbb.var_6b5c5def5715d409 = var_f878c4955c12458c;
-            var_b33d5349ff647dbb scripts\mp\gameobjects::allowuse("friendly");
-            var_b33d5349ff647dbb scripts\mp\gameobjects::setusehinttext(%CP_MISSION_ESC/PLANT_CHARGE);
-            var_b33d5349ff647dbb.onbeginuse = &function_4b57f9478a34a03e;
-            var_b33d5349ff647dbb.onenduse = &function_2b31f73315396a96;
-            var_b33d5349ff647dbb.onuse = &function_a56fa8b6404c0125;
+            destructible_wall_zone = scripts\mp\gameobjects::createuseobject(game["attackers"], trigger, visuals, var_e62df0718b7dcbca, 0, 1);
+            destructible_wall_zone scripts\mp\gameobjects::requestid(0, 0);
+            destructible_wall_zone.origin = visuals[0].origin;
+            destructible_wall_zone.angles = visuals[0].angles;
+            destructible_wall_zone.wall = zone3_wall[0];
+            destructible_wall_zone.var_6b5c5def5715d409 = var_f878c4955c12458c;
+            destructible_wall_zone scripts\mp\gameobjects::allowuse("friendly");
+            destructible_wall_zone scripts\mp\gameobjects::setusehinttext(%CP_MISSION_ESC/PLANT_CHARGE);
+            destructible_wall_zone.onbeginuse = &function_4b57f9478a34a03e;
+            destructible_wall_zone.onenduse = &function_2b31f73315396a96;
+            destructible_wall_zone.onuse = &function_a56fa8b6404c0125;
         }
     }
 }

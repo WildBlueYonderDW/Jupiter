@@ -1,46 +1,46 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\engine\math.gsc;
-#using script_5fd79768b8941cfb;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_collision.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using script_6a8ec730b2bfa844;
-#using scripts\mp\equipment\trophy_system.gsc;
-#using scripts\mp\equipment\claymore.gsc;
-#using scripts\mp\equipment\at_mine.gsc;
-#using scripts\mp\equipment\tac_insert.gsc;
 #using script_1cf2ed809496bf4e;
-#using script_669760f0500e4358;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\engine\flags.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_3aacf02225ca0da5;
-#using script_662cbac61c1ae7e2;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\mp\poi.gsc;
-#using script_48814951e916af89;
-#using script_2bc0b0102f9b7751;
-#using scripts\engine\trace.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_7ab5b649fa408138;
-#using script_65f58f3c394dcf9a;
 #using script_2573174416494cb1;
+#using script_2bc0b0102f9b7751;
 #using script_371b4c2ab5861e62;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_3aacf02225ca0da5;
+#using script_48814951e916af89;
+#using script_5fd79768b8941cfb;
+#using script_65f58f3c394dcf9a;
+#using script_662cbac61c1ae7e2;
+#using script_669760f0500e4358;
+#using script_6a8ec730b2bfa844;
+#using script_7ab5b649fa408138;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_collision;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\engine\flags;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\at_mine;
+#using scripts\mp\equipment\claymore;
+#using scripts\mp\equipment\tac_insert;
+#using scripts\mp\equipment\trophy_system;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\poi;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
 
 #namespace br_movingtrain;
 
@@ -994,9 +994,9 @@ function function_6b27e38d8a44794d(train_array, spawn_type) {
             var_48c792c1662791fe = getstructarray("train_jup_model_13_safe", "script_noteworthy");
         }
         if (noteworthy == "train_car_14") {
-            var_e2d874ab09c5165a = getstructarray("train_car_14", "script_noteworthy");
-            if (var_e2d874ab09c5165a.size > 0) {
-                var_48c792c1662791fe = var_e2d874ab09c5165a;
+            hack_array = getstructarray("train_car_14", "script_noteworthy");
+            if (hack_array.size > 0) {
+                var_48c792c1662791fe = hack_array;
             }
         }
         if (var_48c792c1662791fe.size > 0) {
@@ -1271,7 +1271,7 @@ function private function_68b05555719c93ed(train_name) {
     if (!isdefined(controls)) {
         return;
     }
-    var_15777982c0909b37 = level.wztrain_info.trains[train_name];
+    car_array = level.wztrain_info.trains[train_name];
     currentspeed = abs(level.wztrain_info.animrate[train_name]);
     is_moving = currentspeed > 0;
     speed_state = "stopped";
@@ -1281,13 +1281,13 @@ function private function_68b05555719c93ed(train_name) {
     if (currentspeed > 0.5) {
         speed_state = "fast";
     }
-    foreach (traincar in var_15777982c0909b37) {
+    foreach (traincar in car_array) {
         if (traincar.linked_model isscriptable() && traincar.linked_model getscriptablehaspart("train_speed_vfx")) {
             traincar.linked_model setscriptablepartstate("train_speed_vfx", speed_state);
         }
     }
-    for (i = 0; i < var_15777982c0909b37.size; i += 2) {
-        traincar = var_15777982c0909b37[i];
+    for (i = 0; i < car_array.size; i += 2) {
+        traincar = car_array[i];
         if (traincar.linked_model isscriptable() && traincar.linked_model getscriptablehaspart("train_speed_vfx")) {
             traincar.linked_model setscriptablepartstate("train_speed_vfx", speed_state);
         }
@@ -1297,7 +1297,7 @@ function private function_68b05555719c93ed(train_name) {
     } else {
         function_838743a143d39b3c(train_name);
     }
-    var_74b04be09bf7704a = var_15777982c0909b37[var_15777982c0909b37.size - 1];
+    var_74b04be09bf7704a = car_array[car_array.size - 1];
     if (var_74b04be09bf7704a.linked_model isscriptable() && var_74b04be09bf7704a.linked_model getscriptablehaspart("train_rear_sfx")) {
         var_74b04be09bf7704a.linked_model setscriptablepartstate("train_rear_sfx", ter_op(is_moving, "moving", "default"), 1);
     }
@@ -1359,8 +1359,8 @@ function function_52f0e88e892f960a(train_name) {
 // Checksum 0x0, Offset: 0x5607
 // Size: 0x14a
 function function_383124ed9c938589(train_name, loop_state) {
-    var_15777982c0909b37 = level.wztrain_info.trains[train_name];
-    assertex(isarray(var_15777982c0909b37), "<dev string:x7e>");
+    car_array = level.wztrain_info.trains[train_name];
+    assertex(isarray(car_array), "<dev string:x7e>");
     if (!isarray(level.wztrain_info.var_639a013e56247a03)) {
         level.wztrain_info.var_639a013e56247a03 = [];
     }
@@ -1370,7 +1370,7 @@ function function_383124ed9c938589(train_name, loop_state) {
     } else {
         level.wztrain_info.var_639a013e56247a03[train_name] = loop_state;
     }
-    foreach (traincar in var_15777982c0909b37) {
+    foreach (traincar in car_array) {
         if (traincar.linked_model isscriptable() && traincar.linked_model getscriptablehaspart("train_control_loop_sfx")) {
             traincar.linked_model setscriptablepartstate("train_control_loop_sfx", loop_state);
         }

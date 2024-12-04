@@ -1,22 +1,22 @@
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
+#using script_7ab5b649fa408138;
+#using scripts\common\ae_utility;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\supers;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\player;
 
 #namespace namespace_698aafe80211e888;
 
@@ -45,7 +45,7 @@ function function_566f849e77540164() {
 function init() {
     scripts\mp\supers::function_53110a12409d01da("super_personal_redeploy_drone", undefined, undefined, &function_1798be0772912ae0, undefined, undefined);
     function_f1aed36ab4598ea("eqp_personal_redeploy_drone");
-    function_618a1163576c3819();
+    init_variables();
     function_30afc24cc88c8d3();
 }
 
@@ -93,7 +93,7 @@ function initanims() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x988
 // Size: 0x35d
-function function_618a1163576c3819() {
+function init_variables() {
     level.var_354cdd3be21c3816 = spawnstruct();
     level.var_354cdd3be21c3816.maxhealth = getdvarint(@"hash_1a3f3e5d7d85d66", 200);
     level.var_354cdd3be21c3816.heightcheck = getdvarint(@"hash_6e8ed4dba5669324", 1000);
@@ -152,7 +152,7 @@ function function_7283ccb271e018bf() {
     self allowfire(0);
     self disableoffhandprimaryweapons();
     vehicle_allowplayeruse(self, 0);
-    self.var_f9779e44bd572312 = self.operatorcustomization.suit;
+    self.original_suit = self.operatorcustomization.suit;
     var_e2f2bd414cf8e911 = makeweapon("personal_redeploy_drone_mp_br");
     function_90faf31a7d15329b(1, "hud_icon_minimap_fieldupgrade_personal_redeploy_ally");
     function_90faf31a7d15329b(0, "hud_icon_minimap_fieldupgrade_personal_redeploy_enemy");
@@ -663,7 +663,7 @@ function function_a97e8b060f3de437(player) {
 function function_9f5e1de6c65ab230(player, waittime) {
     wait waittime;
     if (isdefined(player) && isplayer(player)) {
-        player scripts\mp\utility\player::_setsuit(player.var_f9779e44bd572312);
+        player scripts\mp\utility\player::_setsuit(player.original_suit);
         player function_a9643e918bdb8032(0);
     }
 }

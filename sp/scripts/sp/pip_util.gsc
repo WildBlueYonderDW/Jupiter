@@ -1,14 +1,14 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\pip_util.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\pip_util;
+#using scripts\sp\utility;
 
-#namespace namespace_e15f612d50b5891b;
+#namespace pip_util;
 
 /#
 
-    // Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+    // Namespace pip_util / scripts\sp\pip_util
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1a2
     // Size: 0x10
@@ -18,11 +18,11 @@
 
 #/
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bb
 // Size: 0x266
-function pip_on_ent(ent, tag, fov, origin_offset, angles_offset, var_7e23e82a6250d2f0) {
+function pip_on_ent(ent, tag, fov, origin_offset, angles_offset, no_hud) {
     if (getdvarint(@"e3")) {
         return;
     }
@@ -67,13 +67,13 @@ function pip_on_ent(ent, tag, fov, origin_offset, angles_offset, var_7e23e82a625
     setomnvar("ui_pip_message_text_top", "script_pip_default_top");
     setomnvar("ui_pip_message_text_bottom", "script_pip_default_bottom");
     setomnvar("ui_pip_message_type", 1);
-    if (!isdefined(var_7e23e82a6250d2f0)) {
+    if (!isdefined(no_hud)) {
         setomnvar("ui_show_pip", 1);
         setomnvar("ui_jackal_hide_follow_pip", 0);
     }
 }
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x429
 // Size: 0x116
@@ -103,7 +103,7 @@ function bink_pip(var_22cd6ae7dcae5e3f) {
     setsaveddvar(@"hash_b9ff37d084074df3", "1");
 }
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x547
 // Size: 0x52
@@ -113,7 +113,7 @@ function pip_visionset(vision) {
     level.pip.visionsetnaked = vision;
 }
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a1
 // Size: 0x58
@@ -130,7 +130,7 @@ function pip_close() {
     level notify("pip_closed");
 }
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x601
 // Size: 0x3b
@@ -138,36 +138,36 @@ function pip_is_active() {
     return isdefined(level.pip) && isdefined(level.pip.enable) && level.pip.enable;
 }
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x645
 // Size: 0x21
-function pip_dialogue(var_eb2f5a048fa8470f) {
+function pip_dialogue(the_line) {
     face_pip();
-    smart_dialogue_generic(var_eb2f5a048fa8470f);
+    smart_dialogue_generic(the_line);
     scripts\sp\pip_util::pip_close();
 }
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x66e
 // Size: 0xe2
-function face_pip(var_7e23e82a6250d2f0) {
+function face_pip(no_hud) {
     switch (tolower(self.unittype)) {
     case #"hash_198d036c171c0b3f":
-        scripts\sp\pip_util::pip_on_ent(self, "tag_eye", 29, (18, 7, 1), (0, 200, 3), var_7e23e82a6250d2f0);
+        scripts\sp\pip_util::pip_on_ent(self, "tag_eye", 29, (18, 7, 1), (0, 200, 3), no_hud);
         break;
     case #"hash_8b0d967838e55b97":
-        scripts\sp\pip_util::pip_on_ent(self, "tag_barrel", 13, (150, 0, 20), (8.5, 180, 0), var_7e23e82a6250d2f0);
+        scripts\sp\pip_util::pip_on_ent(self, "tag_barrel", 13, (150, 0, 20), (8.5, 180, 0), no_hud);
         break;
     default:
-        scripts\sp\pip_util::pip_on_ent(self, "tag_eye", 29, (18, 7, -1), (0, 200, 3), var_7e23e82a6250d2f0);
+        scripts\sp\pip_util::pip_on_ent(self, "tag_eye", 29, (18, 7, -1), (0, 200, 3), no_hud);
         level.pip.nearz = 17;
         break;
     }
 }
 
-// Namespace namespace_e15f612d50b5891b / scripts\sp\pip_util
+// Namespace pip_util / scripts\sp\pip_util
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x758
 // Size: 0x18

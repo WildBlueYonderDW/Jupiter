@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\common\system.gsc;
 #using script_7b2517368c79e5bc;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\perk;
 
 #namespace ob_grenade_bandolier;
 

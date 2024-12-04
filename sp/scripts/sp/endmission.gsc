@@ -1,9 +1,9 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_575fda2758b0a36e;
-#using scripts\sp\analytics.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\analytics;
+#using scripts\sp\utility;
 
 #namespace namespace_ba235658cd692ae8;
 
@@ -256,19 +256,19 @@ function nextmission_internal() {
     setlevelcompleted(var_3012abbf8b098d0f);
     collateraldamageassessment(level.script);
     println("<dev string:xb5>");
-    var_e1f111891b10722c = updatesppercent();
+    completion_percentage = updatesppercent();
     /#
         if (getdvarint(@"hash_bc76f1b9a1f7ba07") != 0) {
             highestmission_ifnotcheating_set(getdvarint(@"hash_b50de240594f8df4"));
             level.missionsettings setlevelcompleted(max(0, getdvarint(@"hash_b50de240594f8df4") - 1));
             setdvar(@"hash_bc76f1b9a1f7ba07", "<dev string:xe3>");
         }
-        if (var_e1f111891b10722c < level.player getplayerprogression("<dev string:xe4>")) {
-            println("<dev string:xf6>" + var_e1f111891b10722c + "<dev string:x118>" + level.player getplayerprogression("<dev string:xe4>") + "<dev string:x121>");
+        if (completion_percentage < level.player getplayerprogression("<dev string:xe4>")) {
+            println("<dev string:xf6>" + completion_percentage + "<dev string:x118>" + level.player getplayerprogression("<dev string:xe4>") + "<dev string:x121>");
         }
         println("<dev string:x126>" + getdvarint(@"hash_bc76f1b9a1f7ba07") + "<dev string:x143>" + getdvarint(@"hash_1adbe88f794c0245") + "<dev string:x14e>");
         println("<dev string:x151>" + function_65085d2b5d1f245c() + "<dev string:x16d>");
-        println("<dev string:x16f>" + var_e1f111891b10722c / 100 + "<dev string:x18e>");
+        println("<dev string:x16f>" + completion_percentage / 100 + "<dev string:x18e>");
         println("<dev string:x191>" + var_3012abbf8b098d0f + "<dev string:x16d>");
         println("<dev string:x1a8>" + level.script + "<dev string:x16d>");
         println("<dev string:x1bf>" + level.missionsettings.levels.size + "<dev string:x16d>");
@@ -379,12 +379,12 @@ function getcollateraldamagegrade() {
 // Checksum 0x0, Offset: 0x102d
 // Size: 0x66
 function updatesppercent() {
-    var_e1f111891b10722c = int(gettotalpercentcompletesp() * 100);
+    completion_percentage = int(gettotalpercentcompletesp() * 100);
     if (getdvarint(@"hash_b8b8e25bb75b206d") == 0) {
-        assertex(var_e1f111891b10722c >= 0 && var_e1f111891b10722c <= 10000, "SP's Completion percentage [ " + var_e1f111891b10722c + "% ] is outside of 0 to 100 range!");
-        level.player setplayerprogression("percentCompleteSP", var_e1f111891b10722c);
+        assertex(completion_percentage >= 0 && completion_percentage <= 10000, "SP's Completion percentage [ " + completion_percentage + "% ] is outside of 0 to 100 range!");
+        level.player setplayerprogression("percentCompleteSP", completion_percentage);
     }
-    return var_e1f111891b10722c;
+    return completion_percentage;
 }
 
 // Namespace namespace_ba235658cd692ae8 / scripts\sp\endmission
@@ -554,21 +554,21 @@ function gettotalpercentcompletesp() {
     var_44a90f29ee2b00ff = getstat_progression(3);
     var_be0978ec6507b6f3 = 0.25;
     println("<dev string:x289>" + var_44a90f29ee2b00ff + "<dev string:x282>" + "<dev string:x284>" + var_be0978ec6507b6f3 * 100 + "<dev string:x286>");
-    var_7bcbe5e3d1151d8b = getstat_progression(4);
+    stat_veteran = getstat_progression(4);
     var_286fdc6f7b7f3ef7 = 0.1;
-    println("<dev string:x29f>" + var_7bcbe5e3d1151d8b + "<dev string:x282>" + "<dev string:x284>" + var_286fdc6f7b7f3ef7 * 100 + "<dev string:x286>");
-    var_40b251f18dfa02cc = getstat_intel();
+    println("<dev string:x29f>" + stat_veteran + "<dev string:x282>" + "<dev string:x284>" + var_286fdc6f7b7f3ef7 * 100 + "<dev string:x286>");
+    stat_intel = getstat_intel();
     var_64951e461b04a4c0 = 0.15;
-    println("<dev string:x2b4>" + var_40b251f18dfa02cc + "<dev string:x282>" + "<dev string:x284>" + var_64951e461b04a4c0 * 100 + "<dev string:x286>");
+    println("<dev string:x2b4>" + stat_intel + "<dev string:x282>" + "<dev string:x284>" + var_64951e461b04a4c0 * 100 + "<dev string:x286>");
     assertex(var_870ca0c572d3b097 + var_be0978ec6507b6f3 + var_286fdc6f7b7f3ef7 + var_64951e461b04a4c0 <= 1, "Total sum of SP progress breakdown contributes to more than 100%!");
-    var_d40a0853f6656185 = 0;
-    var_d40a0853f6656185 += var_870ca0c572d3b097 * var_a5da2519a559b16b;
-    var_d40a0853f6656185 += var_be0978ec6507b6f3 * var_44a90f29ee2b00ff;
-    var_d40a0853f6656185 += var_286fdc6f7b7f3ef7 * var_7bcbe5e3d1151d8b;
-    var_d40a0853f6656185 += var_64951e461b04a4c0 * var_40b251f18dfa02cc;
-    assertex(var_d40a0853f6656185 <= 100, "Total Percentage calculation is out of bound, larger then 100%");
-    println("<dev string:x2c7>" + var_d40a0853f6656185 + "<dev string:x282>");
-    return var_d40a0853f6656185;
+    total_progress = 0;
+    total_progress += var_870ca0c572d3b097 * var_a5da2519a559b16b;
+    total_progress += var_be0978ec6507b6f3 * var_44a90f29ee2b00ff;
+    total_progress += var_286fdc6f7b7f3ef7 * stat_veteran;
+    total_progress += var_64951e461b04a4c0 * stat_intel;
+    assertex(total_progress <= 100, "Total Percentage calculation is out of bound, larger then 100%");
+    println("<dev string:x2c7>" + total_progress + "<dev string:x282>");
+    return total_progress;
 }
 
 // Namespace namespace_ba235658cd692ae8 / scripts\sp\endmission
@@ -578,13 +578,13 @@ function gettotalpercentcompletesp() {
 function getstat_progression(difficulty) {
     assert(isdefined(level.missionsettings));
     assert(isdefined(level.script));
-    var_315582283fa4e062 = level.player function_ff103db8e0d75209();
+    difficulty_array = level.player function_ff103db8e0d75209();
     levels = 0;
     var_c51133d2565044c9 = [];
     skipped = 0;
-    missioncount = min(var_315582283fa4e062.size, level.missionsettings.levels.size - 1);
+    missioncount = min(difficulty_array.size, level.missionsettings.levels.size - 1);
     for (i = 0; i < missioncount; i++) {
-        if (var_315582283fa4e062[i] >= difficulty) {
+        if (difficulty_array[i] >= difficulty) {
             levels++;
         }
     }

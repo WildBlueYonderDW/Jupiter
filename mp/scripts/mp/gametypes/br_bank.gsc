@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\trigger.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\trigger;
 
 #namespace br_bank;
 

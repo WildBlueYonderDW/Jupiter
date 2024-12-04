@@ -1,24 +1,24 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\system.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using script_7b2517368c79e5bc;
-#using script_749ff6f56673a813;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_41387eecc35b88bf;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\teamrevive.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\gametypes\ob.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\hud_message.gsc;
 #using script_1f97a44d1761c919;
-#using script_40b5006483288fd3;
-#using script_62a4f7a62643fe8;
 #using script_2583ee5680cf4736;
+#using script_40b5006483288fd3;
+#using script_41387eecc35b88bf;
+#using script_62a4f7a62643fe8;
+#using script_749ff6f56673a813;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\ob;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\teamrevive;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_910f1c9e49a229ca;
 
@@ -406,8 +406,8 @@ function private function_4f67cc94e9d23825(var_751df20fceaee5) {
     if (!is_equal(var_751df20fceaee5.var_d182b8d3f3aaa93b.type, "cp_mp_recon_points_exfil_site_entityless")) {
         return;
     }
-    if (isdefined(var_751df20fceaee5.var_985e82f034f67960)) {
-        function_10972832881180ee(var_751df20fceaee5, is_equal(self.team, var_751df20fceaee5.var_985e82f034f67960.team));
+    if (isdefined(var_751df20fceaee5.player_activator)) {
+        function_10972832881180ee(var_751df20fceaee5, is_equal(self.team, var_751df20fceaee5.player_activator.team));
         return;
     }
     scripts\mp\objidpoolmanager::objective_playermask_hidefromall(var_751df20fceaee5.objectiveidprimary);
@@ -666,7 +666,7 @@ function private function_4bc55e63d13224ef() {
 // Size: 0xda
 function private function_d2f63cdbcf2830e8() {
     self.var_1c13f1737dccef9a = 0;
-    self.var_985e82f034f67960 = undefined;
+    self.player_activator = undefined;
     level.var_27aad97b556a4fcf = array_remove(level.var_27aad97b556a4fcf, self);
     var_30706430d8caaeb7 = function_8e6454dd6d0cedd3();
     if (array_contains(var_30706430d8caaeb7, self)) {

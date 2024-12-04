@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_1eca03131f47ef0e;
 
@@ -404,16 +404,16 @@ function translate_position_with_offset_data(cs_file, struct, var_5f0a2cdf1e857b
         if (!isdefined(var_82b752b102f67a72)) {
             var_82b752b102f67a72 = (0, 0, 0);
         }
-        var_8dd49492e28fcabb = (0, 0, 0);
+        obj_angles = (0, 0, 0);
         if (isdefined(struct.angles)) {
-            var_8dd49492e28fcabb = struct.angles;
+            obj_angles = struct.angles;
         }
         obj_origin = struct.origin;
         struct.origin = var_5f0a2cdf1e857bac + rotatevector(obj_origin, var_82b752b102f67a72);
         if (isdefined(struct.script_origin_other)) {
             struct.script_origin_other = var_5f0a2cdf1e857bac + rotatevector(struct.script_origin_other, var_82b752b102f67a72);
         }
-        var_d241032d837036a4 = combineangles(var_82b752b102f67a72, var_8dd49492e28fcabb);
+        var_d241032d837036a4 = combineangles(var_82b752b102f67a72, obj_angles);
         struct.angles = var_d241032d837036a4;
     }
 }
@@ -426,16 +426,16 @@ function translate_and_rotate_from_level_overrides(cs_file, struct) {
     if (isdefined(cs_file) && isdefined(level.cs_origin_offset) && isdefined(level.cs_angle_offset[cs_file])) {
         var_82b752b102f67a72 = level.cs_angle_offset[cs_file];
         var_5f0a2cdf1e857bac = level.cs_origin_offset[cs_file];
-        var_8dd49492e28fcabb = (0, 0, 0);
+        obj_angles = (0, 0, 0);
         if (isdefined(struct.angles)) {
-            var_8dd49492e28fcabb = struct.angles;
+            obj_angles = struct.angles;
         }
         obj_origin = struct.origin;
         struct.origin = var_5f0a2cdf1e857bac + rotatevector(obj_origin, var_82b752b102f67a72);
         if (isdefined(struct.script_origin_other)) {
             struct.script_origin_other = var_5f0a2cdf1e857bac + rotatevector(struct.script_origin_other, var_82b752b102f67a72);
         }
-        var_d241032d837036a4 = combineangles(var_82b752b102f67a72, var_8dd49492e28fcabb);
+        var_d241032d837036a4 = combineangles(var_82b752b102f67a72, obj_angles);
         struct.angles = var_d241032d837036a4;
     }
 }

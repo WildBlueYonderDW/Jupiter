@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_50d581b454b6d41d;
 #using script_3b9af437ca74921e;
-#using script_7273c20b83d8ff3b;
+#using script_50d581b454b6d41d;
 #using script_538f66fce659a889;
 #using script_5815e81b17277d5f;
+#using script_7273c20b83d8ff3b;
 #using script_74661dc598ae1a43;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\points;
 
 #namespace br_champion_task;
 

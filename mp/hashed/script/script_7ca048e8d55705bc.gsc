@@ -31,7 +31,7 @@ function function_2a57309bc51d8f95() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x257
 // Size: 0x104
-function function_42c043cc7fa69f50(train, var_7f853c287b0b8af8) {
+function train_audio(train, var_7f853c287b0b8af8) {
     var_145ca77a53feef24 = (-500, 100, 210);
     headoffset = (50, 100, 210);
     offset = (0, 0, 0);
@@ -60,7 +60,7 @@ function function_42c043cc7fa69f50(train, var_7f853c287b0b8af8) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x363
 // Size: 0x17
-function function_3befcbe893e66878(bus) {
+function bus_audio(bus) {
     bus playsoundonmovingent("amb_bus_passby_engine");
 }
 
@@ -68,7 +68,7 @@ function function_3befcbe893e66878(bus) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x382
 // Size: 0x17
-function function_aef01500296afdf7(van) {
+function van_audio(van) {
     van playsoundonmovingent("amb_van_passby_engine");
 }
 
@@ -76,7 +76,7 @@ function function_aef01500296afdf7(van) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x17
-function function_2b4aaee7bdcaf838(car) {
+function car_audio(car) {
     car playsoundonmovingent("amb_car_passby_engine");
 }
 

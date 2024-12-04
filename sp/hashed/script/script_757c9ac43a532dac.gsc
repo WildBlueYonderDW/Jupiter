@@ -1,19 +1,19 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_5762ac2f22202ba2;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp\utility.gsc;
 #using script_3fd3c5a2e270592e;
-#using script_644c18834356d9dc;
-#using scripts\cp\cp_analytics.gsc;
-#using scripts\cp\loot_system.gsc;
-#using script_66122a002aff5d57;
-#using scripts\cp\challenges_cp.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using script_721ee99d7a8f9168;
-#using scripts\cp\cp_agent_utils.gsc;
+#using script_5762ac2f22202ba2;
 #using script_5cb623572b271c34;
-#using scripts\cp\cp_hud_message.gsc;
+#using script_644c18834356d9dc;
+#using script_66122a002aff5d57;
+#using scripts\common\utility;
+#using scripts\cp\challenges_cp;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\loot_system;
+#using scripts\cp\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\vehicles\vehicle_airdrop;
+#using scripts\engine\utility;
 
 #namespace namespace_d39aa0b38a4b57b0;
 
@@ -21,7 +21,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x53a
 // Size: 0x3d
-function function_19f98938b071a88f() {
+function kiosk_init() {
     setdvar(@"hash_ed6e4ffa933af621", 1);
     level.var_5771fc79979ccc58 = &function_5771fc79979ccc58;
     level.var_8a3d726e5cf04cc0 = &function_8a3d726e5cf04cc0;
@@ -231,7 +231,7 @@ function function_8a3d726e5cf04cc0(itemdata, var_7dddac09987d559e, var_452130d9d
                 purchasesuccess = 0;
                 break;
             }
-            var_7b147bfa44b8941d = thread function_498d00efdf8e6af3();
+            jltv = thread function_498d00efdf8e6af3();
             break;
         }
     }
@@ -292,24 +292,24 @@ function function_2ad8917b23c8c1d2(cost, itemdata) {
 // Checksum 0x0, Offset: 0xe42
 // Size: 0x16c
 function function_498d00efdf8e6af3() {
-    var_fe4b92977ce13af0 = getdvarint(@"hash_b0ff99704a332f6f") > 0;
-    var_346f237f388c0946 = function_9d9ac764c359a4a4();
+    debug_drop = getdvarint(@"hash_b0ff99704a332f6f") > 0;
+    drop_location = function_9d9ac764c359a4a4();
     level.var_473cdd03b063c62a.var_64a7d687bfe1b47d++;
     if (level.var_473cdd03b063c62a.var_64a7d687bfe1b47d == 3) {
         level.var_473cdd03b063c62a.var_64a7d687bfe1b47d = 0;
     }
     level.var_473cdd03b063c62a.num_vehicles++;
-    if (var_fe4b92977ce13af0) {
-        thread drawsphere(var_346f237f388c0946.origin, 20, 10, (1, 0, 0));
+    if (debug_drop) {
+        thread drawsphere(drop_location.origin, 20, 10, (1, 0, 0));
     }
     spawndata = spawnstruct();
-    spawndata.origin = var_346f237f388c0946.origin;
-    spawndata.angles = var_346f237f388c0946.angles;
-    var_17160569dab45fd6 = namespace_801fa17f47560d76::function_66c684fea143fbfd("veh9_jltv_mg", spawndata);
+    spawndata.origin = drop_location.origin;
+    spawndata.angles = drop_location.angles;
+    var_17160569dab45fd6 = scripts\cp_mp\vehicles\vehicle_airdrop::vehicle_airdrop("veh9_jltv_mg", spawndata);
     var_17160569dab45fd6 thread function_74ac9140ddcce4dd();
-    var_17160569dab45fd6 thread function_1b38e55682dfcb61(var_346f237f388c0946);
-    if (var_fe4b92977ce13af0) {
-        var_17160569dab45fd6 thread function_38830a31e89c2e73(var_346f237f388c0946);
+    var_17160569dab45fd6 thread function_1b38e55682dfcb61(drop_location);
+    if (debug_drop) {
+        var_17160569dab45fd6 thread function_38830a31e89c2e73(drop_location);
     }
     if (!isdefined(var_17160569dab45fd6)) {
         level.var_473cdd03b063c62a.num_vehicles--;
@@ -323,27 +323,27 @@ function function_498d00efdf8e6af3() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfb7
 // Size: 0x15d
-function function_1b38e55682dfcb61(var_346f237f388c0946) {
-    kill_trigger = getent(var_346f237f388c0946.target, "targetname");
+function function_1b38e55682dfcb61(drop_location) {
+    kill_trigger = getent(drop_location.target, "targetname");
     var_e1284ca18beb2ec4 = squared(20);
     while (true) {
-        var_d148813ad40029c9 = lengthsquared(var_346f237f388c0946.origin - self.origin);
-        if (var_d148813ad40029c9 < var_e1284ca18beb2ec4) {
+        drop_dist = lengthsquared(drop_location.origin - self.origin);
+        if (drop_dist < var_e1284ca18beb2ec4) {
             axis_team = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
-            var_96cd52c92501b815 = scripts\cp\cp_agent_utils::getaliveagentsofteam("allies");
-            var_da44429a60525ce8 = array_combine(level.players, var_96cd52c92501b815, axis_team);
-            var_5bceae19dec279bf = kill_trigger getistouchingentities(var_da44429a60525ce8);
-            foreach (ent in var_5bceae19dec279bf) {
+            ally_team = scripts\cp\cp_agent_utils::getaliveagentsofteam("allies");
+            var_da44429a60525ce8 = array_combine(level.players, ally_team, axis_team);
+            touching_ents = kill_trigger getistouchingentities(var_da44429a60525ce8);
+            foreach (ent in touching_ents) {
                 if (isplayer(ent)) {
                     ent thread function_ba7469b0e511af83();
                 } else {
-                    ent kill(var_346f237f388c0946.origin, self, self, "MOD_PROJECTILE");
+                    ent kill(drop_location.origin, self, self, "MOD_PROJECTILE");
                 }
                 ent playsound("prty_elevator_shaft_player_crush");
             }
             break;
         }
-        if (var_d148813ad40029c9 < squared(12)) {
+        if (drop_dist < squared(12)) {
             break;
         }
         waitframe();
@@ -378,17 +378,17 @@ function function_74ac9140ddcce4dd() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x11f3
 // Size: 0xd8
-function function_38830a31e89c2e73(var_346f237f388c0946) {
+function function_38830a31e89c2e73(drop_location) {
     self endon("death");
-    kill_trigger = getent(var_346f237f388c0946.target, "targetname");
+    kill_trigger = getent(drop_location.target, "targetname");
     while (true) {
-        var_d148813ad40029c9 = length(var_346f237f388c0946.origin - self.origin);
-        if (var_d148813ad40029c9 < 11) {
+        drop_dist = length(drop_location.origin - self.origin);
+        if (drop_dist < 11) {
             break;
         }
-        thread draw_line_for_time(self.origin, var_346f237f388c0946.origin, 0, 0, 1, 0.05);
+        thread draw_line_for_time(self.origin, drop_location.origin, 0, 0, 1, 0.05);
         /#
-            print3d(var_346f237f388c0946.origin, "<dev string:x1c>" + var_d148813ad40029c9, (1, 1, 1), 1, 1, 1);
+            print3d(drop_location.origin, "<dev string:x1c>" + drop_dist, (1, 1, 1), 1, 1, 1);
         #/
         /#
             drawentitybounds(kill_trigger, (1, 1, 1), 1, 1);
@@ -451,16 +451,16 @@ function function_dbf72a7c50f79f16(itemdata) {
 // Checksum 0x0, Offset: 0x1433
 // Size: 0xbc
 function function_118948fbeae841b3(itemdata) {
-    var_30c5dcd8b800b7c5 = namespace_8784b0174836bc50::function_110f112431c654dc();
+    total_soldiers = namespace_8784b0174836bc50::total_allies();
     if (isdefined(level.var_410dcb9cda2b067) && level.var_410dcb9cda2b067.size >= 3) {
         thread scripts\cp\cp_hud_message::tutorialprint(level.var_9c3aa643b7642fb1);
         return 0;
     }
-    if (var_30c5dcd8b800b7c5 >= namespace_8784b0174836bc50::function_87ac668a043af5dd()) {
+    if (total_soldiers >= namespace_8784b0174836bc50::function_87ac668a043af5dd()) {
         thread scripts\cp\cp_hud_message::tutorialprint(level.var_9c3aa643b7642fb1);
         return 0;
     }
-    if (!isdefined(level.var_f78fb7634e3797c4)) {
+    if (!isdefined(level.soldier_allies)) {
         thread scripts\cp\cp_hud_message::tutorialprint(level.var_9c3aa643b7642fb1, 2);
         return 0;
     }

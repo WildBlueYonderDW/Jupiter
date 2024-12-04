@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\common\elevators.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using scripts\common\anim;
+#using scripts\common\elevators;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
 
 #namespace elevators;
 

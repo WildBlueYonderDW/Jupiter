@@ -1,8 +1,8 @@
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_debug.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_debug;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_c735d60735eda5f;
 
@@ -391,11 +391,11 @@ function function_7df3c090beee2450(trigger, ent) {
 // Size: 0x8b
 function function_5aa17b8039e280d(trigger, ent) {
     entnum = ent getentitynumber();
-    foreach (var_8df8a9ed72c2bdaa in level.var_f2e48424baec7c2e) {
-        if (var_8df8a9ed72c2bdaa == trigger) {
+    foreach (other_trigger in level.var_f2e48424baec7c2e) {
+        if (other_trigger == trigger) {
             continue;
         }
-        if (isdefined(var_8df8a9ed72c2bdaa.entstouching[entnum])) {
+        if (isdefined(other_trigger.entstouching[entnum])) {
             return true;
         }
     }

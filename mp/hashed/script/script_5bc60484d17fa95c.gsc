@@ -1,9 +1,9 @@
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_46fdf7b12c5f5620;
 #using script_36f129f8cf15a219;
-#using script_b0385bb45379222;
 #using script_3aa8e63a56e3416;
-#using scripts\mp\utility\script.gsc;
+#using script_46fdf7b12c5f5620;
+#using script_b0385bb45379222;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\utility\script;
 
 #namespace namespace_d36e6800233f4f97;
 

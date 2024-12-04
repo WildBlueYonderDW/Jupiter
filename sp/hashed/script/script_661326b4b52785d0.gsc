@@ -1,11 +1,11 @@
 #using script_5c36b3719581f7cc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\ai.gsc;
 #using script_b49ff19f4446b7;
 #using script_bf343c09ba1f164;
-#using scripts\aitypes\assets.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\ai;
 
 #namespace namespace_a4980829ac59fb89;
 

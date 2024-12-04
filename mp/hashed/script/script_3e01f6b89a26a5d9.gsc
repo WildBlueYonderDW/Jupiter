@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\supers.gsc;
 #using script_38db8bccc9eb301f;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\trace.gsc;
 #using script_686729055b66c6e4;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\supers;
+#using scripts\mp\utility\player;
 
 #namespace namespace_5908209abe7c5e93;
 
@@ -374,7 +374,7 @@ function function_2bc9a9876c907913(player_source) {
             ent_flag_set("tesla_storm_stunned");
             function_f632348cbb773537(level.var_7bfa3c5f73da5baf, self);
             if (var_a60b455c583001b6) {
-                namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(var_56a913a32aa54cf5);
+                namespace_ed7c38f3847343dc::stun_ai(var_56a913a32aa54cf5);
             }
         }
         var_c06695a5e6f3cd3b = is_equal(self.unittype, "soldier");

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
+#using script_24946c036cb2f7b2;
 #using script_3ab210ea917601e7;
-#using scripts\common\callbacks.gsc;
 #using script_46c7c73b1a7e4773;
 #using script_58be75c518bf0d40;
-#using script_24946c036cb2f7b2;
 #using script_5d265b4fca61f070;
-#using scripts\common\debug.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\engine\utility;
 
 #namespace namespace_cc63b8cc61c0499b;
 
@@ -120,11 +120,11 @@ function function_53bd256d9112a4e3() {
     level endon("game_ended");
     self endon("activity_ended");
     self endon("instance_destroyed");
-    if (!isdefined(self.var_4b7032d8632723e0)) {
+    if (!isdefined(self.warlord_agent)) {
         self waittill("warlord_spawned");
     }
-    assert(isdefined(self.var_4b7032d8632723e0));
-    self.var_4b7032d8632723e0 ent_flag_set("warlord_start_combat_chatter");
+    assert(isdefined(self.warlord_agent));
+    self.warlord_agent ent_flag_set("warlord_start_combat_chatter");
 }
 
 // Namespace namespace_cc63b8cc61c0499b / namespace_dc53a27a8db8e6bf

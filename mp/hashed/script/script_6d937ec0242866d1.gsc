@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_639bf783929acf9b;
-#using scripts\common\devgui.gsc;
-#using script_7edf952f8921aa6b;
-#using script_398835140857d740;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using script_6bffae1b97f70547;
 #using script_2669878cf5a1b6bc;
+#using script_398835140857d740;
+#using script_639bf783929acf9b;
+#using script_6bffae1b97f70547;
+#using script_7edf952f8921aa6b;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\weapon;
 
 #namespace perk_elemental_pop;
 
@@ -84,18 +84,18 @@ function function_d7e4ceb7a0efa76d(params) {
                 }
                 str_choice = array_random(a_aat);
                 attacker.var_73a10012ece4e6f5 = 1;
-                var_1c0f0548e64af397 = namespace_e0ee43ef2dddadaa::buildweapon(level.laststandweapon);
-                attacker namespace_dc2e59577d3a271f::function_6c40f58b29a952a9(var_1c0f0548e64af397, str_choice, 0);
+                w_aat = namespace_e0ee43ef2dddadaa::buildweapon(level.laststandweapon);
+                attacker namespace_dc2e59577d3a271f::function_6c40f58b29a952a9(w_aat, str_choice, 0);
                 meansofdeath = "MOD_PISTOL_BULLET";
                 attacker callback::callback("zm_perk_elemental_pop_proc");
                 if (is_equal(self.aicategory, "normal") || is_equal(self.aicategory, "special")) {
-                    if (namespace_dc2e59577d3a271f::function_5a96f5a116c2b46e(b_death, params.inflictor, params.eattacker, damage, params.idflags, params.smeansofdeath, var_1c0f0548e64af397, params.vpoint, params.vdir, params.shitloc, params.timeoffset, params.modelindex, params.partname, params.objweapon)) {
+                    if (namespace_dc2e59577d3a271f::function_5a96f5a116c2b46e(b_death, params.inflictor, params.eattacker, damage, params.idflags, params.smeansofdeath, w_aat, params.vpoint, params.vdir, params.shitloc, params.timeoffset, params.modelindex, params.partname, params.objweapon)) {
                         attacker setscriptablepartstate("elemental_pop_fx", "perk_fx_on", 0);
                         attacker.var_ae13f9cff6491601 = gettime();
                     }
                 }
-                attacker namespace_dc2e59577d3a271f::function_b4da81e43557ada1(var_1c0f0548e64af397, 0);
-                attacker thread unset_aat_override(var_1c0f0548e64af397);
+                attacker namespace_dc2e59577d3a271f::function_b4da81e43557ada1(w_aat, 0);
+                attacker thread unset_aat_override(w_aat);
             }
         }
     }
@@ -106,7 +106,7 @@ function function_d7e4ceb7a0efa76d(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c6
 // Size: 0x3f
-function unset_aat_override(var_1c0f0548e64af397) {
+function unset_aat_override(w_aat) {
     self endon("death");
     self notify("unset_aat_override");
     self endon("unset_aat_override");

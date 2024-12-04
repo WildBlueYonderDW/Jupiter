@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_br.gsc;
 #using script_40e63dd222434655;
 #using script_59ff79d681bb860c;
-#using scripts\engine\math.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
 
 #namespace gulag;
 

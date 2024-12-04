@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\gameobjects.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gameobjects;
 
 #namespace bots_gametype_hq;
 
@@ -141,8 +141,8 @@ function bot_hq_think() {
             continue;
         }
         enemy_team = get_enemy_team(self.team);
-        var_5c16102fdff3e853 = level.zone.touchlist[enemy_team].size > 0;
-        if (var_5c16102fdff3e853) {
+        enemies_inside_zone = level.zone.touchlist[enemy_team].size > 0;
+        if (enemies_inside_zone) {
             if (!bot_is_capturing_hq_zone(current_radio)) {
                 bot_capture_hq_zone(current_radio);
             }

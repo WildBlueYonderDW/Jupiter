@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using script_6e65833db7358163;
 #using script_1feb0785278dafea;
-#using script_77cef444e824c23;
-#using script_4bb70b1c5860caaa;
 #using script_2f988b639fd733;
 #using script_3e01f6b89a26a5d9;
-#using scripts\mp\supers.gsc;
+#using script_4bb70b1c5860caaa;
+#using script_6e65833db7358163;
+#using script_77cef444e824c23;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\supers;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace field_upgrades;
 

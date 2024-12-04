@@ -1,4 +1,4 @@
-#using scripts\unittest\util.gsc;
+#using scripts\unittest\util;
 
 #namespace patch_new;
 

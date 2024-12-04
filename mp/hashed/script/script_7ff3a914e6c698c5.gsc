@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
+#using scripts\engine\utility;
 
-#namespace namespace_7e9bc8894737a37a;
+#namespace variant_asm;
 
-// Namespace namespace_7e9bc8894737a37a / namespace_79c5c0f72946b96f
+// Namespace variant_asm / namespace_79c5c0f72946b96f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe3
 // Size: 0x144
@@ -19,7 +19,7 @@ function function_406984e213848212(anim_id, selector_fn, var_ebc45f79e4f8b88b) {
     level.var_21cce249b717fda9[self.animsetname][anim_id] = var_ebc45f79e4f8b88b;
 }
 
-// Namespace namespace_7e9bc8894737a37a / namespace_79c5c0f72946b96f
+// Namespace variant_asm / namespace_79c5c0f72946b96f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x22f
 // Size: 0xb2
@@ -31,7 +31,7 @@ function function_3f5173a731bdfe2f(anim_id, base_struct, num_variants) {
     level.var_448d3472e546de8e[self.animsetname][anim_id][index] = base_struct;
 }
 
-// Namespace namespace_7e9bc8894737a37a / namespace_79c5c0f72946b96f
+// Namespace variant_asm / namespace_79c5c0f72946b96f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e9
 // Size: 0x18
@@ -39,7 +39,7 @@ function function_a5390330ee29d0eb(anim_id) {
     self.variant_cache[anim_id] = [];
 }
 
-// Namespace namespace_7e9bc8894737a37a / namespace_79c5c0f72946b96f
+// Namespace variant_asm / namespace_79c5c0f72946b96f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x309
 // Size: 0x215
@@ -71,7 +71,7 @@ function function_8626c13b5be18c1b(anim_id) {
     return "failed_anim_variant";
 }
 
-// Namespace namespace_7e9bc8894737a37a / namespace_79c5c0f72946b96f
+// Namespace variant_asm / namespace_79c5c0f72946b96f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x527
 // Size: 0x7c
@@ -83,7 +83,7 @@ function function_70705ab80bbaca39(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, self.variant_cache[anim_id]["alias"]);
 }
 
-// Namespace namespace_7e9bc8894737a37a / namespace_79c5c0f72946b96f
+// Namespace variant_asm / namespace_79c5c0f72946b96f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x5b
@@ -93,7 +93,7 @@ function function_5ab423119778dda3(asmname, statename, params) {
     return asm_lookupanimfromalias(statename, self.variant_cache[anim_id]["alias"]);
 }
 
-// Namespace namespace_7e9bc8894737a37a / namespace_79c5c0f72946b96f
+// Namespace variant_asm / namespace_79c5c0f72946b96f
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x610
 // Size: 0x7e

@@ -1,6 +1,6 @@
 #using script_d74ae0b4aa21186;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gameobjects.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
 
 #namespace namespace_4b022bbde284cec1;
 

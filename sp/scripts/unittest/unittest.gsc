@@ -1,14 +1,14 @@
-#using scripts\unittest\util.gsc;
-#using scripts\unittest\ops.gsc;
-#using scripts\unittest\call.gsc;
-#using scripts\unittest\variables.gsc;
-#using scripts\unittest\cond.gsc;
-#using scripts\unittest\loop.gsc;
-#using scripts\unittest\switch.gsc;
-#using scripts\unittest\threads.gsc;
-#using scripts\unittest\patch.gsc;
-#using scripts\unittest\private.gsc;
-#using scripts\unittest\error.gsc;
+#using scripts\unittest\call;
+#using scripts\unittest\cond;
+#using scripts\unittest\error;
+#using scripts\unittest\loop;
+#using scripts\unittest\ops;
+#using scripts\unittest\patch;
+#using scripts\unittest\private;
+#using scripts\unittest\switch;
+#using scripts\unittest\threads;
+#using scripts\unittest\util;
+#using scripts\unittest\variables;
 
 #namespace unittest;
 

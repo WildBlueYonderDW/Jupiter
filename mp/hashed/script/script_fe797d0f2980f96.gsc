@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
 #using script_3e34d236a84cfd96;
 #using script_638d701d263ee1ed;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_1cb5f1cc1f98b618;
 

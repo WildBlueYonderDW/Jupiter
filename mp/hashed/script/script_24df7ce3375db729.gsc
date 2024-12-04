@@ -1,39 +1,39 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_9880b9dc28bc25e;
-#using script_7edf952f8921aa6b;
-#using script_5753ba9c28794a65;
-#using script_4ef01fe6151dde4d;
-#using script_79deab1955343d5d;
-#using script_41387eecc35b88bf;
 #using script_185660037b9236c1;
-#using script_4fdefae8b7bcdf73;
 #using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
-#using script_64351208cb856df9;
-#using scripts\asm\shared\mp\utility.gsc;
+#using script_22f1701e151b9d12;
+#using script_2590b7a7de3dfc79;
+#using script_39d11000e476a42a;
+#using script_3ab210ea917601e7;
 #using script_3e31016b9c11a616;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_7b2517368c79e5bc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_41387eecc35b88bf;
 #using script_43971bbeefd98f05;
 #using script_46c7c73b1a7e4773;
-#using scripts\mp\mp_agent_damage.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\utility\player.gsc;
-#using script_2590b7a7de3dfc79;
-#using script_22f1701e151b9d12;
-#using script_5d8202968463a21d;
-#using scripts\common\devgui.gsc;
-#using script_39d11000e476a42a;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using script_3ab210ea917601e7;
+#using script_4ef01fe6151dde4d;
 #using script_4fa7e9e11630166c;
-#using scripts\common\vehicle.gsc;
+#using script_4fdefae8b7bcdf73;
+#using script_5753ba9c28794a65;
+#using script_5762ac2f22202ba2;
+#using script_5d8202968463a21d;
+#using script_64351208cb856df9;
+#using script_7956d56c4922bd1;
+#using script_79deab1955343d5d;
+#using script_7b2517368c79e5bc;
+#using script_7edf952f8921aa6b;
+#using script_9880b9dc28bc25e;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent_damage;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
 
 #namespace namespace_9009ac93da54a15e;
 
@@ -1195,15 +1195,15 @@ function function_b5a2024b4e4f9e97(requestid, userdata) {
 // Checksum 0x0, Offset: 0x4910
 // Size: 0x119
 function function_a1080ca0704d2c39() {
-    var_31109020393ed11b = "base_zombie";
+    str_aitype = "base_zombie";
     if (utility::percent_chance(20) && isdefined(self.var_e245ba1b36b148a3["zombie_hellhound"]) && self.var_e245ba1b36b148a3["zombie_hellhound"] < function_58bc8439fdf4e1b("zombie_hellhound")) {
-        var_31109020393ed11b = "hellhound";
+        str_aitype = "hellhound";
     } else if (utility::percent_chance(35) && isdefined(self.var_e245ba1b36b148a3["zombie_base_armored_light"]) && self.var_e245ba1b36b148a3["zombie_base_armored_light"] < function_58bc8439fdf4e1b("zombie_base_armored_light") && utility::is_equal(self.difficulty_region, "difficulty_normal")) {
-        var_31109020393ed11b = "light_armored_zombie";
+        str_aitype = "light_armored_zombie";
     } else if (utility::percent_chance(35) && isdefined(self.var_e245ba1b36b148a3["zombie_base_armored_heavy"]) && self.var_e245ba1b36b148a3["zombie_base_armored_heavy"] < function_58bc8439fdf4e1b("zombie_base_armored_heavy") && function_8fbf2d2648c5c8c5(self.difficulty_region, "difficulty_hard")) {
-        var_31109020393ed11b = "heavy_armored_zombie";
+        str_aitype = "heavy_armored_zombie";
     }
-    return var_31109020393ed11b;
+    return str_aitype;
 }
 
 // Namespace namespace_9009ac93da54a15e / namespace_73b1231d3d62b0eb
@@ -1357,7 +1357,7 @@ function function_b584f143ed0ec5d0(struct_origin, num_spots, n_outer_radius, n_i
         check_pt = struct_origin + (x1, y1, 0);
         pos_on_navmesh = getclosestpointonnavmesh(check_pt);
         if (isdefined(pos_on_navmesh)) {
-            bsight = sighttracepassed(struct_origin + var_5ac1024b00cecc71, pos_on_navmesh + var_5ac1024b00cecc71, 0, self.var_985e82f034f67960);
+            bsight = sighttracepassed(struct_origin + var_5ac1024b00cecc71, pos_on_navmesh + var_5ac1024b00cecc71, 0, self.player_activator);
             if (istrue(bsight)) {
                 valid_points[valid_points.size] = pos_on_navmesh;
             }
@@ -1650,8 +1650,8 @@ function function_4a203813b7418588(speed_multiplier) {
         yaw_sign *= -1;
         x_sign *= -1;
         yaw = original_angles[1] + yaw * yaw_sign;
-        var_71b42d6ad6c3ef5c = original_angles[0] + randomfloat(10) * x_sign;
-        new_angles = (var_71b42d6ad6c3ef5c, yaw, 0);
+        x_angles = original_angles[0] + randomfloat(10) * x_sign;
+        new_angles = (x_angles, yaw, 0);
         self rotateto(new_angles, waittime, waittime * 0.5, waittime * 0.5);
         wait randomfloat(waittime - 0.1);
     }

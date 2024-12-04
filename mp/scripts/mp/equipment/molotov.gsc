@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\equipment.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\common\elevators.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\debug.gsc;
+#using scripts\common\elevators;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\equipment;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\equipment;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\weapons;
 
 #namespace molotov;
 

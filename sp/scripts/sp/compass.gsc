@@ -4,16 +4,16 @@
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0x353
-function setupminimap(material, var_ed5c785b8d6d4f3f, var_3b70dd7d0d5b9a8) {
+function setupminimap(material, corner_targetname, var_3b70dd7d0d5b9a8) {
     if (!isdefined(material)) {
         material = "";
     }
     level.minimap_image = material;
-    if (!isdefined(var_ed5c785b8d6d4f3f)) {
-        var_ed5c785b8d6d4f3f = "minimap_corner";
+    if (!isdefined(corner_targetname)) {
+        corner_targetname = "minimap_corner";
     }
     requiredmapaspectratio = getdvarfloat(@"scr_requiredmapaspectratio", 1);
-    corners = getentarray(var_ed5c785b8d6d4f3f, "targetname");
+    corners = getentarray(corner_targetname, "targetname");
     if (corners.size != 2) {
         println("<dev string:x1c>");
         return;

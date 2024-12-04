@@ -1,14 +1,14 @@
-#using scripts\engine\math.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\common\vehicle_build.gsc;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\vehicle_build;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_b78d657d6d9b410d;
 
@@ -103,7 +103,7 @@ function function_61eee992c191dbd0() {
     chopper thread function_a4f67639da6c8a7d();
     scripts\mp\vehicles\damage::set_post_mod_damage_callback(chopper.vehiclename, &function_c23bf5e680c0b0fc);
     scripts\mp\vehicles\damage::set_death_callback(chopper.vehiclename, &function_31529a6224103b1a);
-    chopper thread function_37985716c0079c86();
+    chopper thread chopper_ondeath();
     chopper thread function_382f6d5ccce841f0(pos);
     if (!isdefined(chopper)) {
         return;
@@ -238,7 +238,7 @@ function function_aa4375c53e07b7ec(team) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbfd
 // Size: 0xa
-function function_37985716c0079c86() {
+function chopper_ondeath() {
     self waittill("death");
 }
 

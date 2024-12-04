@@ -1,8 +1,8 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\asm\soldier\script_funcs.gsc;
-#using scripts\aitypes\bt_util.gsc;
 #using script_3433ee6b63c7e243;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\soldier\script_funcs;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace riotshield;
 

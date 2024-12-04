@@ -1,13 +1,13 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_8a2f724fe9ba8ace;
+#namespace cp_spawning;
 
 /#
 
-    // Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+    // Namespace cp_spawning / scripts\cp\cp_spawning
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0xcf
     // Size: 0x17
@@ -18,7 +18,7 @@
 
 #/
 
-// Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+// Namespace cp_spawning / scripts\cp\cp_spawning
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xee
 // Size: 0x73
@@ -28,19 +28,19 @@ function killremainingagents() {
     }
 }
 
-// Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+// Namespace cp_spawning / scripts\cp\cp_spawning
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x169
 // Size: 0xbf
 function getvolumebasenamefromlinkname(volume) {
     assert(isdefined(volume.script_linkname), "Volume at: " + volume.origin + "does not have a .script_linkname defined.");
-    var_9d68a5fd6a22178c = strtok(volume.script_linkname, "_");
-    if (var_9d68a5fd6a22178c.size < 2) {
-        basename = var_9d68a5fd6a22178c[0];
-    } else if (string_starts_with(var_9d68a5fd6a22178c[0], "pf")) {
-        basename = var_9d68a5fd6a22178c[1];
-        for (i = 2; i < var_9d68a5fd6a22178c.size; i++) {
-            basename = basename + "_" + var_9d68a5fd6a22178c[i];
+    name_array = strtok(volume.script_linkname, "_");
+    if (name_array.size < 2) {
+        basename = name_array[0];
+    } else if (string_starts_with(name_array[0], "pf")) {
+        basename = name_array[1];
+        for (i = 2; i < name_array.size; i++) {
+            basename = basename + "_" + name_array[i];
         }
     } else {
         basename = volume.script_linkname;
@@ -48,7 +48,7 @@ function getvolumebasenamefromlinkname(volume) {
     return basename;
 }
 
-// Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+// Namespace cp_spawning / scripts\cp\cp_spawning
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x231
 // Size: 0x5d
@@ -60,7 +60,7 @@ function moveagenttospawnerpos(spawner) {
     self.ignoreall = 0;
 }
 
-// Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+// Namespace cp_spawning / scripts\cp\cp_spawning
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x296
 // Size: 0x13b
@@ -91,7 +91,7 @@ function generatenearbyspawner(var_1ecf3cfc40d95539, var_6283413f177b37ce) {
 
 /#
 
-    // Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+    // Namespace cp_spawning / scripts\cp\cp_spawning
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x3da
     // Size: 0x510
@@ -163,11 +163,11 @@ function generatenearbyspawner(var_1ecf3cfc40d95539, var_6283413f177b37ce) {
         var_fb118fca74cbae8d.y = 50;
         var_fb118fca74cbae8d setvalue(level.reserved_spawn_slots);
         level.var_878cfe1d9afda4ca[level.var_878cfe1d9afda4ca.size] = var_fb118fca74cbae8d;
-        var_f08c5daff898ad34 = 0;
+        update_running = 0;
         while (true) {
             if (getdvar(@"hash_276de4ae3c6b8b59") != "<dev string:x72>") {
-                if (!var_f08c5daff898ad34) {
-                    var_f08c5daff898ad34 = 1;
+                if (!update_running) {
+                    update_running = 1;
                     level thread function_f7093fb955a64b81();
                     hud.alpha = 1;
                     var_fb118bca74cba5c1.alpha = 1;
@@ -176,7 +176,7 @@ function generatenearbyspawner(var_1ecf3cfc40d95539, var_6283413f177b37ce) {
                     var_fb118eca74cbac5a.alpha = 1;
                     var_fb118fca74cbae8d.alpha = 1;
                 } else {
-                    var_f08c5daff898ad34 = 0;
+                    update_running = 0;
                     level notify("<dev string:x73>");
                     hud.alpha = 0;
                     var_fb118bca74cba5c1.alpha = 0;
@@ -191,7 +191,7 @@ function generatenearbyspawner(var_1ecf3cfc40d95539, var_6283413f177b37ce) {
         }
     }
 
-    // Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+    // Namespace cp_spawning / scripts\cp\cp_spawning
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x8f2
     // Size: 0xae
@@ -208,7 +208,7 @@ function generatenearbyspawner(var_1ecf3cfc40d95539, var_6283413f177b37ce) {
         }
     }
 
-    // Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+    // Namespace cp_spawning / scripts\cp\cp_spawning
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x9a8
     // Size: 0x1d
@@ -217,7 +217,7 @@ function generatenearbyspawner(var_1ecf3cfc40d95539, var_6283413f177b37ce) {
         self setvalue(var_1aa77c8aab75be79);
     }
 
-    // Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+    // Namespace cp_spawning / scripts\cp\cp_spawning
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x9cd
     // Size: 0x1d
@@ -226,7 +226,7 @@ function generatenearbyspawner(var_1ecf3cfc40d95539, var_6283413f177b37ce) {
         self setdevtext(var_63d13c469b621075);
     }
 
-    // Namespace namespace_8a2f724fe9ba8ace / scripts\cp\cp_spawning
+    // Namespace cp_spawning / scripts\cp\cp_spawning
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x9f2
     // Size: 0x64

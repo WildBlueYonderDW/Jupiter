@@ -1,33 +1,33 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\entity.gsc;
 #using script_548072087c9fd504;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\obj_bombzone.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\mgl_mp.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\music_and_dialog.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\mgl_mp;
+#using scripts\mp\gametypes\obj_bombzone;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\persistence;
+#using scripts\mp\rank;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spectating;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace sd;
 
@@ -36,7 +36,7 @@
 // Checksum 0x0, Offset: 0xfb8
 // Size: 0x81a
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -54,17 +54,17 @@ function main() {
         allowed[0] = "sd";
         if (!isdefined(game["defusePreviouslyActiveBombsite"])) {
             if (cointoss()) {
-                level.var_91cb5264104db35f = "_a";
+                level.active_bombsite = "_a";
                 game["defusePreviouslyActiveBombsite"] = "_a";
             } else {
-                level.var_91cb5264104db35f = "_b";
+                level.active_bombsite = "_b";
                 game["defusePreviouslyActiveBombsite"] = "_b";
             }
         } else if (game["defusePreviouslyActiveBombsite"] == "_a") {
-            level.var_91cb5264104db35f = "_b";
+            level.active_bombsite = "_b";
             game["defusePreviouslyActiveBombsite"] = "_b";
         } else if (game["defusePreviouslyActiveBombsite"] == "_b") {
-            level.var_91cb5264104db35f = "_a";
+            level.active_bombsite = "_a";
             game["defusePreviouslyActiveBombsite"] = "_a";
         }
         if (isdefined(level.mapname)) {
@@ -422,7 +422,7 @@ function function_b9835ca0700d6618() {
 // Size: 0x87
 function function_274ea96f8c5f0f2() {
     foreach (bombzone in level.bombzones) {
-        if (bombzone.script_label == level.var_91cb5264104db35f) {
+        if (bombzone.script_label == level.active_bombsite) {
             var_16b19939564a1d94 = scripts\mp\gametypes\obj_bombzone::function_5faaf80e767da9ce(bombzone, 40);
             return (bombzone.origin + var_16b19939564a1d94);
         }
@@ -736,7 +736,7 @@ function bombs() {
     }
     foreach (count, trigger in triggers) {
         if (getgametype() == "defuse" || getgametype() == "hc_defuse") {
-            if (trigger.script_label != level.var_91cb5264104db35f) {
+            if (trigger.script_label != level.active_bombsite) {
                 continue;
             }
         }

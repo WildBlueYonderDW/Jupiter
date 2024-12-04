@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\sp\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace objectives;
 
@@ -14,10 +14,10 @@ function objective_add(objectivename, objstate, var_1cc0d51c86bc4411, var_2215ee
     _objective_initindexforname(objectivename);
     objective_update(objectivename, objstate, var_1cc0d51c86bc4411, var_2215eeb563f7a3b8, var_f34635b53accbcac, var_c6caf52c65d084b8, var_14847a630d9835af, var_780b9710a4c60f44, var_d54b9310847f6bf4, var_2431ebabbcc67a2c);
     var_2f87f92eb31189cc = default_to(var_2f87f92eb31189cc, 1);
-    if (istrue(var_2f87f92eb31189cc) && isdefined(var_2215eeb563f7a3b8) && isdefined(level.var_b9eee5bad6ec9bcd) && isdefined(level.var_b9eee5bad6ec9bcd.callback)) {
+    if (istrue(var_2f87f92eb31189cc) && isdefined(var_2215eeb563f7a3b8) && isdefined(level.objectives_splash) && isdefined(level.objectives_splash.callback)) {
         var_ccdb2090b09c435d = 0;
         var_71bb4595bfba1caf = 0;
-        level.player [[ level.var_b9eee5bad6ec9bcd.callback ]](objectivename, var_2215eeb563f7a3b8, var_ccdb2090b09c435d, var_71bb4595bfba1caf, var_d85ab98698be6559);
+        level.player [[ level.objectives_splash.callback ]](objectivename, var_2215eeb563f7a3b8, var_ccdb2090b09c435d, var_71bb4595bfba1caf, var_d85ab98698be6559);
     }
     var_c13020776c269a42 = default_to(var_c13020776c269a42, 0);
     if (istrue(var_c13020776c269a42)) {
@@ -30,9 +30,9 @@ function objective_add(objectivename, objstate, var_1cc0d51c86bc4411, var_2215ee
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x62f
 // Size: 0x33
-function function_1a7f32a7c56ad4e0(var_6a210f4755586405) {
-    assert(isdefined(level.var_b9eee5bad6ec9bcd));
-    level.var_b9eee5bad6ec9bcd.callback = var_6a210f4755586405;
+function function_1a7f32a7c56ad4e0(callback_func) {
+    assert(isdefined(level.objectives_splash));
+    level.objectives_splash.callback = callback_func;
 }
 
 // Namespace objectives / scripts\engine\sp\objectives
@@ -115,10 +115,10 @@ function objective_complete(objectivename, var_2f87f92eb31189cc, var_2215eeb563f
     assertex(objective_exists(objectivename), "Objective with name " + objectivename + " doesn't exist!");
     objective_set_state(objectivename, "done");
     var_2f87f92eb31189cc = default_to(var_2f87f92eb31189cc, 0);
-    if (istrue(var_2f87f92eb31189cc) && isdefined(level.var_b9eee5bad6ec9bcd) && isdefined(level.var_b9eee5bad6ec9bcd.callback)) {
+    if (istrue(var_2f87f92eb31189cc) && isdefined(level.objectives_splash) && isdefined(level.objectives_splash.callback)) {
         var_ccdb2090b09c435d = 1;
         var_71bb4595bfba1caf = 0;
-        level.player [[ level.var_b9eee5bad6ec9bcd.callback ]](objectivename, var_2215eeb563f7a3b8, var_ccdb2090b09c435d, var_71bb4595bfba1caf);
+        level.player [[ level.objectives_splash.callback ]](objectivename, var_2215eeb563f7a3b8, var_ccdb2090b09c435d, var_71bb4595bfba1caf);
     }
     objectiveindex = _objective_getindexforname(objectivename);
 }
@@ -129,9 +129,9 @@ function objective_complete(objectivename, var_2f87f92eb31189cc, var_2215eeb563f
 // Size: 0xa7
 function objective_show_progress(objectivename, var_2215eeb563f7a3b8, var_71bb4595bfba1caf, var_d85ab98698be6559) {
     assertex(objective_exists(objectivename), "Objective with name " + objectivename + " doesn't exist!");
-    if (isdefined(level.var_b9eee5bad6ec9bcd) && isdefined(level.var_b9eee5bad6ec9bcd.callback)) {
+    if (isdefined(level.objectives_splash) && isdefined(level.objectives_splash.callback)) {
         var_ccdb2090b09c435d = 0;
-        level.player [[ level.var_b9eee5bad6ec9bcd.callback ]](objectivename, var_2215eeb563f7a3b8, var_ccdb2090b09c435d, var_71bb4595bfba1caf, var_d85ab98698be6559);
+        level.player [[ level.objectives_splash.callback ]](objectivename, var_2215eeb563f7a3b8, var_ccdb2090b09c435d, var_71bb4595bfba1caf, var_d85ab98698be6559);
     }
     objectiveindex = _objective_getindexforname(objectivename);
 }
@@ -531,7 +531,7 @@ function function_51fa6750df4678ca(delay_time) {
     if (isdefined(delay_time) && delay_time > 0) {
         level.var_58d876adc5a3a383.delay_time = delay_time;
     }
-    level.var_58d876adc5a3a383.var_8bfc0c10bb289d10 = gettime() + level.var_58d876adc5a3a383.delay_time;
+    level.var_58d876adc5a3a383.next_time = gettime() + level.var_58d876adc5a3a383.delay_time;
 }
 
 // Namespace objectives / scripts\engine\sp\objectives
@@ -580,7 +580,7 @@ function function_f420c7fbd15a416b() {
         cur_time = gettime();
         if (function_d0acca3f41921ad2()) {
             function_51fa6750df4678ca();
-        } else if (level.var_58d876adc5a3a383.var_8bfc0c10bb289d10 <= cur_time || istrue(level.var_58d876adc5a3a383.forced)) {
+        } else if (level.var_58d876adc5a3a383.next_time <= cur_time || istrue(level.var_58d876adc5a3a383.forced)) {
             if (istrue(level.var_58d876adc5a3a383.enabled)) {
                 thread function_78a5f36ae600540();
                 self waittill("objective_reminder_end");
@@ -729,14 +729,14 @@ function function_b338aa1e9ec37fbd() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c37
 // Size: 0xb5
-function function_b26ad6615e6cf8ce(start_flag, var_9f0d03d1b41551c5) {
+function function_b26ad6615e6cf8ce(start_flag, end_flag) {
     level endon("game_ended");
     if (isdefined(start_flag)) {
         flag_wait(start_flag);
     }
     level.player setclientomnvar("ui_show_objectives", 1);
-    if (isdefined(var_9f0d03d1b41551c5)) {
-        flag_wait(var_9f0d03d1b41551c5);
+    if (isdefined(end_flag)) {
+        flag_wait(end_flag);
     } else {
         while (true) {
             result = level function_28551e899093b138("objectives_updated_state", "objectives_updated");

@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\utility\game.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
 
 #namespace namespace_cf78b6cd5dc7768c;
 
@@ -45,7 +45,7 @@ function initcontractor(contractor) {
         level.var_16ef52214ac3a63f = spawnstruct();
     }
     contractor.validatefunc = &function_6150c8f67e691807;
-    contractor.activatefunc = &function_5d935db1c627d80;
+    contractor.activatefunc = &contractor_activatefunc;
     contractor.waitfunc = &contractor_waitfunc;
     contractor.postinitfunc = &function_3c14f9df7efc9951;
     contractor.timertype = 11;
@@ -222,7 +222,7 @@ function contractor_waitfunc() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa39
 // Size: 0x28
-function function_5d935db1c627d80() {
+function contractor_activatefunc() {
     level endon("game_ended");
     function_ca6e399c0a8a91b6(level.br_pe_data[%"contractor"], "contractor");
 }
@@ -255,7 +255,7 @@ function heat_waitfunc() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa87
 // Size: 0x2
-function function_23bcdfa42a7b068b() {
+function heat_activatefunc() {
     
 }
 

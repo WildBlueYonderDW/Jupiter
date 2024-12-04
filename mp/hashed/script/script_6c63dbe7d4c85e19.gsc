@@ -1,14 +1,14 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\values.gsc;
+#using script_200c1cd00f9ab885;
+#using script_3badb8914eb5ac16;
 #using script_4d09faa32d8aa068;
 #using script_52f2d330c7a21cb6;
+#using script_7edf952f8921aa6b;
 #using script_bd0d3e8f9ff5c11;
-#using script_200c1cd00f9ab885;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 
@@ -45,7 +45,7 @@ function function_5a38039db1b92712(taskid) {
     assert(isdefined(self.zombieaisettings.var_e58a65b7a8f5973c));
     callback::add("on_first_ai_init", &function_b0fc1ad0235df745);
     function_fe9929b42e5a99e4();
-    function_14b3d69b9f175aef();
+    init_arena();
     function_b5e57408c7878df7(&function_9978cd595b421511);
     self.var_c3554a26521188a8 = &function_a8c9248308033e4e;
     self.allowfriendlyfire = 1;

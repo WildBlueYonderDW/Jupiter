@@ -1,7 +1,7 @@
 #using script_372d8c5f69b0ae2e;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_73353db38b27e9b2;
 

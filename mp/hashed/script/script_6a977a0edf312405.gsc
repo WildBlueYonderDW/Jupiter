@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace fogofwar;
 
@@ -32,23 +32,23 @@ function init() {
 // Size: 0x1d5
 function private setupdvars() {
     assert(isdefined(level.var_ed1cfb3c9d4fe39f));
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
-    var_872213138b14970c.var_e57875ee12569cf0 = getdvarint(@"hash_ba99b30c43797bf2", 1);
-    var_872213138b14970c.var_996d31737882fa92 = getdvarint(@"hash_4cb4ea83e8060b82", 1);
-    var_872213138b14970c.var_f35745c691c4a45a = getdvarint(@"hash_d79899fb31780dea", 1);
-    var_872213138b14970c.var_e361b1130ac53e8a = getdvarint(@"hash_5ea4ad60f090ee37", 1);
-    var_872213138b14970c.var_138acb972c08b806 = getdvarint(@"hash_ba74fc72d7d594e6", 1);
-    var_872213138b14970c.var_659e30ad0d164ebb = getdvarint(@"hash_98c4a3109144121b", 2500);
-    var_872213138b14970c.var_29ef3a442cfac6da = getdvarint(@"hash_4079e628d612e7fc", 1);
-    var_872213138b14970c.var_9b44ac8c8106444f = getdvarint(@"hash_528d3a63b8e9ad35", 7500);
-    var_872213138b14970c.var_879459b524bd7e79 = getdvarint(@"hash_23238b7a801bc4e", 1);
-    var_872213138b14970c.var_5c3bf42eb00140fe = getdvarint(@"hash_3242683c6dc0c163", 7500);
-    var_872213138b14970c.var_d5fca9f4aaa6c917 = getdvarint(@"hash_d84a5db8eef27031", 1);
-    var_872213138b14970c.var_4560f74197eb4198 = getdvarint(@"hash_128e08907c53a30a", 7500);
-    var_872213138b14970c.var_6c00dbd376a2e823 = getdvarint(@"hash_2bd61a5869101c82", 5000);
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData.var_e57875ee12569cf0 = getdvarint(@"hash_ba99b30c43797bf2", 1);
+    fogOfWarData.var_996d31737882fa92 = getdvarint(@"hash_4cb4ea83e8060b82", 1);
+    fogOfWarData.var_f35745c691c4a45a = getdvarint(@"hash_d79899fb31780dea", 1);
+    fogOfWarData.var_e361b1130ac53e8a = getdvarint(@"hash_5ea4ad60f090ee37", 1);
+    fogOfWarData.var_138acb972c08b806 = getdvarint(@"hash_ba74fc72d7d594e6", 1);
+    fogOfWarData.var_659e30ad0d164ebb = getdvarint(@"hash_98c4a3109144121b", 2500);
+    fogOfWarData.var_29ef3a442cfac6da = getdvarint(@"hash_4079e628d612e7fc", 1);
+    fogOfWarData.var_9b44ac8c8106444f = getdvarint(@"hash_528d3a63b8e9ad35", 7500);
+    fogOfWarData.var_879459b524bd7e79 = getdvarint(@"hash_23238b7a801bc4e", 1);
+    fogOfWarData.var_5c3bf42eb00140fe = getdvarint(@"hash_3242683c6dc0c163", 7500);
+    fogOfWarData.var_d5fca9f4aaa6c917 = getdvarint(@"hash_d84a5db8eef27031", 1);
+    fogOfWarData.var_4560f74197eb4198 = getdvarint(@"hash_128e08907c53a30a", 7500);
+    fogOfWarData.var_6c00dbd376a2e823 = getdvarint(@"hash_2bd61a5869101c82", 5000);
     /#
-        var_872213138b14970c.debugenabled = getdvarint(@"hash_197051aa098b3b90", 0);
-        var_872213138b14970c.debugupdateinterval = getdvarint(@"hash_818b3acd4899a919", 10);
+        fogOfWarData.debugenabled = getdvarint(@"hash_197051aa098b3b90", 0);
+        fogOfWarData.debugupdateinterval = getdvarint(@"hash_818b3acd4899a919", 10);
     #/
 }
 
@@ -58,10 +58,10 @@ function private setupdvars() {
 // Size: 0x69
 function private function_1b2f8fdde4aac847() {
     assert(isdefined(level.var_ed1cfb3c9d4fe39f));
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
-    var_872213138b14970c.versions = spawnstruct();
-    var_872213138b14970c.versions.regions = [];
-    var_872213138b14970c.versions.pois = [];
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData.versions = spawnstruct();
+    fogOfWarData.versions.regions = [];
+    fogOfWarData.versions.pois = [];
 }
 
 // Namespace fogofwar / namespace_896381a08e76178f
@@ -70,23 +70,23 @@ function private function_1b2f8fdde4aac847() {
 // Size: 0x1ef
 function private setupforplayer() {
     player = self;
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
     clientnum = player getentitynumber();
     function_afd245da4ac767de(clientnum);
     mapname = level.mapname;
     var_c8b88cabbc197d04 = 0;
-    if (isdefined(var_872213138b14970c.versions.regions[mapname])) {
-        var_c8b88cabbc197d04 = var_872213138b14970c.versions.regions[mapname].size;
-        assert(var_c8b88cabbc197d04 == var_872213138b14970c.versions.pois[mapname].size);
+    if (isdefined(fogOfWarData.versions.regions[mapname])) {
+        var_c8b88cabbc197d04 = fogOfWarData.versions.regions[mapname].size;
+        assert(var_c8b88cabbc197d04 == fogOfWarData.versions.pois[mapname].size);
     }
     var_40c4d898fb1eb8 = function_baa9be37f326e25e(clientnum);
     assert(var_40c4d898fb1eb8 >= 1);
     if (var_c8b88cabbc197d04 >= var_40c4d898fb1eb8) {
-        for (versionidx = var_40c4d898fb1eb8 - 1; versionidx < var_872213138b14970c.versions.regions[mapname].size; versionidx++) {
-            foreach (region in var_872213138b14970c.versions.regions[mapname][versionidx]) {
+        for (versionidx = var_40c4d898fb1eb8 - 1; versionidx < fogOfWarData.versions.regions[mapname].size; versionidx++) {
+            foreach (region in fogOfWarData.versions.regions[mapname][versionidx]) {
                 function_ec5f5e757fecb88c(clientnum, region, -1, 2);
             }
-            foreach (poi in var_872213138b14970c.versions.pois[mapname][versionidx]) {
+            foreach (poi in fogOfWarData.versions.pois[mapname][versionidx]) {
                 function_ec5f5e757fecb88c(clientnum, -1, poi, 2);
             }
         }
@@ -109,11 +109,11 @@ function private function_6b1db739c7687d3d() {
 // Checksum 0x0, Offset: 0x6ff
 // Size: 0xd2
 function private setupthreads() {
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
     /#
         thread debug_think();
     #/
-    if (var_872213138b14970c.var_e57875ee12569cf0) {
+    if (fogOfWarData.var_e57875ee12569cf0) {
         thread think();
         level waittill_any_2("prematch_done", "prematch_over");
     } else {
@@ -134,7 +134,7 @@ function private setupthreads() {
 // Size: 0x237
 function private think() {
     level endon("game_ended");
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
     var_1622a9dac549ec70 = gettime();
     while (true) {
         foreach (player in level.players) {
@@ -153,10 +153,10 @@ function private think() {
                     }
                 }
             }
-            onground = !var_872213138b14970c.var_996d31737882fa92 || player isonground();
+            onground = !fogOfWarData.var_996d31737882fa92 || player isonground();
             playerisswimming = player isswimming();
-            invalidvehicle = player scripts\cp_mp\utility\player_utility::isinvehicle() && (!var_872213138b14970c.var_996d31737882fa92 || !player.vehicle scripts\common\vehicle::ishelicopter());
-            var_cb95887ce6c02555 = !var_872213138b14970c.var_f35745c691c4a45a || !level.ignorescoring;
+            invalidvehicle = player scripts\cp_mp\utility\player_utility::isinvehicle() && (!fogOfWarData.var_996d31737882fa92 || !player.vehicle scripts\common\vehicle::ishelicopter());
+            var_cb95887ce6c02555 = !fogOfWarData.var_f35745c691c4a45a || !level.ignorescoring;
             isalive = scripts\cp_mp\utility\player_utility::isreallyalive(player);
             if (issharedfuncdefined("fogofwar", "isPlayerInGulag")) {
                 ingulag = player [[ getsharedfunc("fogofwar", "isPlayerInGulag") ]]();
@@ -167,7 +167,7 @@ function private think() {
                 regionscompleted = function_eed3fe1b82961c75(clientnum);
                 if (gettime() > var_1622a9dac549ec70) {
                     function_55a450010056dc64(clientnum);
-                    var_1622a9dac549ec70 = gettime() + var_872213138b14970c.var_6c00dbd376a2e823;
+                    var_1622a9dac549ec70 = gettime() + fogOfWarData.var_6c00dbd376a2e823;
                 }
                 player function_471b438f401fa0c(regionscompleted);
             }
@@ -182,14 +182,14 @@ function private think() {
 // Size: 0xf2
 function private uav_think() {
     level endon("game_ended");
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
     while (true) {
         level waittill("uav_started", uavowner, uavtype);
-        if (var_872213138b14970c.var_29ef3a442cfac6da && (uavtype == "uav" || uavtype == "directional_uav")) {
+        if (fogOfWarData.var_29ef3a442cfac6da && (uavtype == "uav" || uavtype == "directional_uav")) {
             team = level.teamdata[uavowner.team];
             if (isdefined(team)) {
                 foreach (player in team["players"]) {
-                    player function_b0a5ea61029a806b(uavowner.origin, var_872213138b14970c.var_9b44ac8c8106444f, 1);
+                    player function_b0a5ea61029a806b(uavowner.origin, fogOfWarData.var_9b44ac8c8106444f, 1);
                 }
             }
         }
@@ -202,14 +202,14 @@ function private uav_think() {
 // Size: 0xd2
 function private function_bc0290b7a8f6ea2e() {
     level endon("game_ended");
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
     while (true) {
         level waittill("uav_tower_activated", tower);
-        if (var_872213138b14970c.var_879459b524bd7e79) {
+        if (fogOfWarData.var_879459b524bd7e79) {
             team = level.teamdata[tower.activeteam];
             if (isdefined(team)) {
                 foreach (player in team["players"]) {
-                    player function_b0a5ea61029a806b(tower.origin, var_872213138b14970c.var_5c3bf42eb00140fe, 1);
+                    player function_b0a5ea61029a806b(tower.origin, fogOfWarData.var_5c3bf42eb00140fe, 1);
                 }
             }
         }
@@ -222,14 +222,14 @@ function private function_bc0290b7a8f6ea2e() {
 // Size: 0x11e
 function private function_7dae73fa4dfd3567() {
     level endon("game_ended");
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
     while (true) {
         level waittill("helper_drone_started", var_2d1828e3f6df9c24, helperdronetype);
-        if (var_872213138b14970c.var_138acb972c08b806 && helperdronetype == "scrambler_drone_guard") {
+        if (fogOfWarData.var_138acb972c08b806 && helperdronetype == "scrambler_drone_guard") {
             foreach (teamname, teamdata in level.teamdata) {
                 if (teamname != var_2d1828e3f6df9c24.team) {
                     foreach (player in teamdata["players"]) {
-                        player function_b0a5ea61029a806b(var_2d1828e3f6df9c24.origin, var_872213138b14970c.var_659e30ad0d164ebb, 2);
+                        player function_b0a5ea61029a806b(var_2d1828e3f6df9c24.origin, fogOfWarData.var_659e30ad0d164ebb, 2);
                     }
                 }
             }
@@ -245,11 +245,11 @@ function private function_96d64f2defea50d() {
     player = self;
     level endon("game_ended");
     player endon("disconnect");
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
     while (true) {
         player waittill("poi_first_visit");
-        if (var_872213138b14970c.var_d5fca9f4aaa6c917) {
-            player function_b0a5ea61029a806b(player.origin, var_872213138b14970c.var_4560f74197eb4198, 1);
+        if (fogOfWarData.var_d5fca9f4aaa6c917) {
+            player function_b0a5ea61029a806b(player.origin, fogOfWarData.var_4560f74197eb4198, 1);
         }
     }
 }
@@ -274,8 +274,8 @@ function private function_b0a5ea61029a806b(origin, radius, tilestate) {
 // Size: 0x85
 function private function_471b438f401fa0c(regionscompleted) {
     player = self;
-    var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
-    if (regionscompleted && var_872213138b14970c.var_e361b1130ac53e8a) {
+    fogOfWarData = level.var_ed1cfb3c9d4fe39f;
+    if (regionscompleted && fogOfWarData.var_e361b1130ac53e8a) {
         for (regioncomplete = 0; regioncomplete < regionscompleted; regioncomplete++) {
             if (issharedfuncdefined("fogofwar", "giveXPWithText")) {
                 player [[ getsharedfunc("fogofwar", "giveXPWithText") ]](#"hash_6f0d3f2e6cf9cfa2");
@@ -292,13 +292,13 @@ function private function_471b438f401fa0c(regionscompleted) {
     // Size: 0x66
     function private debug_think() {
         level endon("<dev string:x1c>");
-        var_872213138b14970c = level.var_ed1cfb3c9d4fe39f;
+        fogOfWarData = level.var_ed1cfb3c9d4fe39f;
         while (true) {
             setupdvars();
-            if (var_872213138b14970c.debugenabled) {
+            if (fogOfWarData.debugenabled) {
                 function_db5d832dd959272f();
             }
-            for (deferredframe = 0; deferredframe < var_872213138b14970c.debugupdateinterval; deferredframe++) {
+            for (deferredframe = 0; deferredframe < fogOfWarData.debugupdateinterval; deferredframe++) {
                 waitframe();
             }
         }

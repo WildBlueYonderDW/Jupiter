@@ -1,9 +1,9 @@
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_bosses.gsc;
-#using script_48814951e916af89;
-#using script_371b4c2ab5861e62;
-#using scripts\mp\juggernaut.gsc;
 #using script_24fbedba9a7a1ef4;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\mp\gametypes\br_bosses;
+#using scripts\mp\juggernaut;
 
 #namespace namespace_66419bf0e1470e9d;
 

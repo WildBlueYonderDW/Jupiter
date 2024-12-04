@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\common\ai.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_bb51033c9ae7d498;
 

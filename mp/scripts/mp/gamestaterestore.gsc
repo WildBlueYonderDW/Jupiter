@@ -1,15 +1,15 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
 #using script_548072087c9fd504;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace gameStateRestore;
 

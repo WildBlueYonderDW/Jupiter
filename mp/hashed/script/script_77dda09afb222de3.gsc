@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using script_48814951e916af89;
 #using script_41ba451876d0900c;
+#using script_48814951e916af89;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\poi;
 
 #namespace namespace_729da2159f5f554c;
 

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace structspawnconfig;
 
@@ -471,9 +471,9 @@ function private function_9657eb0ab7380011(var_3bdadc2ea30c31ba) {
 // Size: 0xd6
 function private function_be1e8d04a1c66652(poirule, var_3bdadc2ea30c31ba) {
     spawns = self;
-    var_c00a2c6249962d83 = spawns function_7d53ab524b68f69b(function_3e38027e10bb939c(poirule.poi_name), 1);
-    var_c41693c82143133e = var_c00a2c6249962d83[1];
-    spawns = var_c00a2c6249962d83[0];
+    __a10 = spawns function_7d53ab524b68f69b(function_3e38027e10bb939c(poirule.poi_name), 1);
+    var_c41693c82143133e = __a10[1];
+    spawns = __a10[0];
     if (var_c41693c82143133e.size == 0) {
         function_8de891d666db43b1("Struct " + var_3bdadc2ea30c31ba.script_struct + " has 0 spawns in " + poirule.poi_name);
         return spawns;

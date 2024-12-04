@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\potg.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\cp_mp\pet_watch.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\potg;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace potg_events;
 

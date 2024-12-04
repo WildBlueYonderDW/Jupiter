@@ -51,9 +51,9 @@ function show_hud_listener() {
     self notifyonplayercommand("melee_pressed", "+melee_zoom");
     self notifyonplayercommand("melee_pressed", "+melee_sprint");
     self notifyonplayercommand("actionslot_weapon_pressed", "+actionslot 1");
-    var_997a68d0145b4469 = ["weapon_fired", "aim", "reload_pressed", "weapon_change", "weapon_swap", "hide_hud_omnvar_changed", "frag_pressed", "smoke_pressed", "offhand_ammo", "offhand_fired", "item_ammo", "item_loot", "show_hud_button_pressed", "show_hud_near_objective", "damage", "night_vision_on", "night_vision_off"];
+    event_notifies = ["weapon_fired", "aim", "reload_pressed", "weapon_change", "weapon_swap", "hide_hud_omnvar_changed", "frag_pressed", "smoke_pressed", "offhand_ammo", "offhand_fired", "item_ammo", "item_loot", "show_hud_button_pressed", "show_hud_near_objective", "damage", "night_vision_on", "night_vision_off"];
     while (true) {
-        waittill_hud_event_notify(var_997a68d0145b4469);
+        waittill_hud_event_notify(event_notifies);
         show_hud_listener_logic();
     }
 }
@@ -62,8 +62,8 @@ function show_hud_listener() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4de
 // Size: 0x57
-function waittill_hud_event_notify(var_997a68d0145b4469) {
-    foreach (note in var_997a68d0145b4469) {
+function waittill_hud_event_notify(event_notifies) {
+    foreach (note in event_notifies) {
         self endon(note);
     }
     self waittill("forever");

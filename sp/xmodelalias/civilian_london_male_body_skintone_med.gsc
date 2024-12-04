@@ -1,6 +1,6 @@
-#namespace namespace_7f6d2ab50dfff3bf;
+#namespace civilian_london_male_body_skintone_med;
 
-// Namespace namespace_7f6d2ab50dfff3bf / xmodelalias\civilian_london_male_body_skintone_med
+// Namespace civilian_london_male_body_skintone_med / xmodelalias\civilian_london_male_body_skintone_med
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x163
 // Size: 0x6f

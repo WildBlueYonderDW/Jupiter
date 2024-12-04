@@ -1,27 +1,27 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_104e3370b024f998;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\temp_v;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_util;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\supers;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace super_laser_charge;
 
@@ -235,7 +235,7 @@ function private function_d962bef837cc0b26(laserweapon, impactent, killstreakbun
     if (scripts\cp_mp\utility\game_utility::isbrstylegametype()) {
         self setclientomnvar("ui_br_inventory_disabled", 0);
     }
-    namespace_416e533f6ed17708::function_269b97f3d86eb172(shouldfinish, 0, undefined, isdefined(killstreakbundle));
+    scripts\mp\equipment\temp_v::function_269b97f3d86eb172(shouldfinish, 0, undefined, isdefined(killstreakbundle));
     if (istrue(shouldrefund)) {
         function_76ac6722cb845c98(killstreakbundle);
         return;

@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_639bf783929acf9b;
-#using scripts\common\devgui.gsc;
 #using script_398835140857d740;
-#using scripts\mp\utility\dvars.gsc;
+#using script_639bf783929acf9b;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\dvars;
 
 #namespace perk_speedcola;
 

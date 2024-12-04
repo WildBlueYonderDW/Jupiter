@@ -1,15 +1,15 @@
-#using scripts\code\character.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
-#using script_aa331f79d40ccbe;
-#using script_fe0a0dfacd2d27b;
 #using script_3ac517c7b6440ff5;
 #using script_566d67e33c4b08cc;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using script_aa331f79d40ccbe;
+#using script_fe0a0dfacd2d27b;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\code\character;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
 #namespace jup_enemy_cp_sniper_tier1_rus_pmc;
 

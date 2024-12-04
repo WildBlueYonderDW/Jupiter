@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\class.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\utility\script.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_5c80e17482acb972;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\loot.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using script_600b944a95c3a7bf;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\equipment;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\loot;
+#using scripts\mp\perks\perks;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\weapon;
 
 #namespace validation;
 

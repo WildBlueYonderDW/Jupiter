@@ -1,27 +1,27 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\gametypes\mgl_mp.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using script_104e3370b024f998;
-#using scripts\mp\utility\points.gsc;
 #using script_39ebe40c5c0566e7;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\equipment\temp_v;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\mgl_mp;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
 
 #namespace conf;
 
@@ -30,7 +30,7 @@
 // Checksum 0x0, Offset: 0x758
 // Size: 0x285
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -328,7 +328,7 @@ function dogtagenemyonusecb(player) {
 // Checksum 0x0, Offset: 0x125a
 // Size: 0x9
 function givesuper() {
-    namespace_416e533f6ed17708::function_11e36f0effe3e0a7();
+    scripts\mp\equipment\temp_v::function_11e36f0effe3e0a7();
 }
 
 // Namespace conf / scripts\mp\gametypes\conf

@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\cp\inventory\cp_target_marker.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\killstreaks\sentry_gun.gsc;
-#using scripts\cp_mp\killstreaks\manual_turret.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\cp_objectives.gsc;
 #using script_25845aca699d038d;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\inventory\cp_target_marker;
+#using scripts\cp\utility;
+#using scripts\cp_mp\killstreaks\manual_turret;
+#using scripts\cp_mp\killstreaks\sentry_gun;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_78eac0fe80c5560b;
 
@@ -93,13 +93,13 @@ function function_dad8d4cd587ec141(vehicle) {
 // Checksum 0x0, Offset: 0x919
 // Size: 0x4d8
 function sentryturret_initsentrysettings() {
-    var_3d7610cd3e0a75e6 = 120;
+    timeout_seconds = 120;
     if (getdvarint(@"hash_dd4f9aae14a06a39", 9999) > 0) {
-        var_3d7610cd3e0a75e6 = getdvarint(@"hash_dd4f9aae14a06a39", 9999);
+        timeout_seconds = getdvarint(@"hash_dd4f9aae14a06a39", 9999);
     }
-    var_ca6267f941b2e4b8 = 250;
+    ammo_amount = 250;
     if (getdvarint(@"hash_203e0ca521e512ae", 250) != 250) {
-        var_ca6267f941b2e4b8 = getdvarint(@"hash_203e0ca521e512ae", 250);
+        ammo_amount = getdvarint(@"hash_203e0ca521e512ae", 250);
     }
     level.sentrysettings["sentry_turret"] = spawnstruct();
     level.sentrysettings["sentry_turret"].health = 999999;
@@ -111,8 +111,8 @@ function sentryturret_initsentrysettings() {
     level.sentrysettings["sentry_turret"].lockstrength = 2;
     level.sentrysettings["sentry_turret"].sentrymodeon = "sentry";
     level.sentrysettings["sentry_turret"].sentrymodeoff = "sentry_offline";
-    level.sentrysettings["sentry_turret"].ammo = var_ca6267f941b2e4b8;
-    level.sentrysettings["sentry_turret"].timeout = var_3d7610cd3e0a75e6;
+    level.sentrysettings["sentry_turret"].ammo = ammo_amount;
+    level.sentrysettings["sentry_turret"].timeout = timeout_seconds;
     level.sentrysettings["sentry_turret"].spinuptime = 0.65;
     level.sentrysettings["sentry_turret"].overheattime = 8;
     level.sentrysettings["sentry_turret"].cooldowntime = 0.1;

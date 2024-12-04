@@ -1,8 +1,8 @@
-#using script_7b2517368c79e5bc;
-#using scripts\mp\supers.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_3e2f8cc477d57433;
-#using scripts\mp\perks\perkpackage.gsc;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\supers;
 
 #namespace namespace_fe6cb1145ab372e6;
 

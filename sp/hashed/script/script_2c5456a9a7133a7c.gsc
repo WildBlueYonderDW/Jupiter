@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_build.gsc;
 #using script_1031976741eb6674;
-#using script_f8531dcf975a7a7;
-#using scripts\sp\spawner.gsc;
 #using script_60add030ce1a42b6;
 #using script_7295d46a1f0881ad;
+#using script_f8531dcf975a7a7;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_build;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\spawner;
 
 #namespace namespace_aa241837d428d6e2;
 
@@ -27,7 +27,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x52d
 // Size: 0x6c
-function function_b77c096e1d953c76() {
+function cliff_start() {
     function_4c28f0141619d61a();
     set_start_location("s_start_cliff", [level.player]);
     set_start_location("s_start_cliff", level.tundra_allies);
@@ -41,7 +41,7 @@ function function_b77c096e1d953c76() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a1
 // Size: 0xb6
-function function_53f02424578f97df() {
+function cliff_main() {
     level notify("stop_tundra_pre_exfil_nags");
     level utility::flag_set("flag_lumbermill_obj_trigger_end");
     level thread namespace_191bb1c1589b3acb::function_e11990259b9f9756();
@@ -163,8 +163,8 @@ function function_d0bbf1af2ba163b0() {
     var_7c760871476912f0 = getstructarray("s_cliff_frag_pickup", "targetname");
     var_4c23139ab28e649a = [];
     foreach (struct in var_7c760871476912f0) {
-        var_34f7c3d8345bed2e = struct function_527133d02bd11634();
-        var_4c23139ab28e649a = array_add(var_4c23139ab28e649a, var_34f7c3d8345bed2e);
+        frag_pickup = struct function_527133d02bd11634();
+        var_4c23139ab28e649a = array_add(var_4c23139ab28e649a, frag_pickup);
     }
 }
 
@@ -216,10 +216,10 @@ function function_71928bf8f19a9c63() {
 // Size: 0x1ca
 function function_d56a13347ecadd55() {
     level.player endon("death");
-    var_64fa86f9a63466d8 = spawn_tag_origin(level.player geteye(), level.player.angles);
-    var_64fa86f9a63466d8.origin = level.player geteye();
-    var_64fa86f9a63466d8 linkto(level.player);
-    var_d2c76ccdac8d1a40 = playfxontag(getfx("vfx_snowdrift_screen"), var_64fa86f9a63466d8, "tag_origin");
+    screen_origin = spawn_tag_origin(level.player geteye(), level.player.angles);
+    screen_origin.origin = level.player geteye();
+    screen_origin linkto(level.player);
+    screen_fx = playfxontag(getfx("vfx_snowdrift_screen"), screen_origin, "tag_origin");
     level.player thread utility::blend_movespeedscale(0.6, 0.5);
     level.player allowsprint(0);
     level.player thread utility::player_gesture_force("ges_frag_block");
@@ -231,9 +231,9 @@ function function_d56a13347ecadd55() {
     level.player allowsprint(1);
     level.player thread utility::blend_movespeedscale(0.9, 2);
     wait 1;
-    stopfxontag(getfx("vfx_snowdrift_screen"), var_64fa86f9a63466d8, "tag_origin");
+    stopfxontag(getfx("vfx_snowdrift_screen"), screen_origin, "tag_origin");
     wait 3;
-    var_64fa86f9a63466d8 delete();
+    screen_origin delete();
     flag_wait("flag_end_cliff");
     level.player thread utility::blend_movespeedscale_default(1);
 }
@@ -259,20 +259,20 @@ function function_348704bb23158ea5(intensity) {
     switch (intensity) {
     case #"hash_5750d6ce52be2eda":
         lerp_saveddvar(@"hash_402173c7dbee15d9", 15, 2);
-        var_39f0921a20399c1e = "30";
+        str_intensity = "30";
         break;
     case #"hash_c71b112fe04823d6":
         lerp_saveddvar(@"hash_402173c7dbee15d9", 3, 3);
-        var_39f0921a20399c1e = "15";
+        str_intensity = "15";
         break;
     case #"hash_a1b0ba7432c84029":
     default:
         lerp_saveddvar(@"hash_402173c7dbee15d9", 1, 5);
-        var_39f0921a20399c1e = "5";
+        str_intensity = "5";
         break;
     }
     foreach (ally in level.tundra_allies) {
-        ally thread namespace_8339f6377b6ba60e::function_590b3a1b2bdf1c57(1, var_39f0921a20399c1e);
+        ally thread namespace_8339f6377b6ba60e::function_590b3a1b2bdf1c57(1, str_intensity);
     }
     wires = getentarray("jup_shipyard_wires", "targetname");
     foreach (wire in wires) {

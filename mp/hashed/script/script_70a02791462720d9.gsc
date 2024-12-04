@@ -1,13 +1,13 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gamescore.gsc;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace warrior_tag;
 

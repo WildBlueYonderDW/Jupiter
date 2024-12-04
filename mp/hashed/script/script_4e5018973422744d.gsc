@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
 #using script_511dbb84a7b7553e;
 #using script_699beeb185d284d2;
+#using scripts\engine\utility;
 
 #namespace namespace_1ce334f4612dc1ae;
 

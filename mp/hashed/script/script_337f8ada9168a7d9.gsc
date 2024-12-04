@@ -1,21 +1,21 @@
-#using scripts\common\devgui.gsc;
-#using script_247745a526421ba7;
-#using scripts\engine\utility.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\mp\utility\script.gsc;
 #using script_5bab271917698dc4;
+#using script_64acb6ce534155b7;
+#using script_7ab5b649fa408138;
+#using scripts\common\ae_utility;
+#using scripts\common\devgui;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\supers;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
 
 #namespace reinforcement_flare;
 
@@ -166,7 +166,7 @@ function function_1d40065a3c6120da() {
 // Checksum 0x0, Offset: 0x742
 // Size: 0x6a
 function function_be3f53a872e6984(var_afe6989e38932fd3, var_1604d9f4d5cc32d7) {
-    if (!scripts\mp\utility\player::function_ad443bbcdcf37b85(self)) {
+    if (!scripts\mp\utility\player::isAliveAndNotInLastStand(self)) {
         return 0;
     }
     if (istrue(var_1604d9f4d5cc32d7)) {

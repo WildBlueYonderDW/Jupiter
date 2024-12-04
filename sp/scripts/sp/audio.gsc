@@ -1,10 +1,10 @@
-#using scripts\engine\sp\utility_code.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\audio.gsc;
 #using script_575fda2758b0a36e;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\sp\utility_code;
+#using scripts\engine\utility;
+#using scripts\sp\audio;
+#using scripts\sp\utility;
 
 #namespace audio;
 
@@ -21,7 +21,7 @@ function init_audio() {
     level.audio.initialized = 1;
     setdvarifuninitialized(@"debug_audio", "0");
     setdvarifuninitialized(@"hash_eddb7f3f1ec02ce7", "-1");
-    setdvarifuninitialized(@"hash_fd7540f7a11d2a51", "1");
+    setdvarifuninitialized(@"music_enable", "1");
     setsaveddvar(@"hash_687f6fe472201df1", 1);
     setsaveddvar(@"hash_4e5b353bf84974a9", 1);
     setdvarifuninitialized(@"hash_f133094f3b5288b6", 1);
@@ -182,7 +182,7 @@ function set_audio_level_fade_time(time) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0xb7d
 // Size: 0x18f
-function audio_bink_transition_ambient(var_10d27b439af13a2a, var_ab1e0cd677c42fc4, fadeout, var_d860c2364979e1f, fadein, musicstate, var_b2da75e16d8fed9c) {
+function audio_bink_transition_ambient(var_10d27b439af13a2a, ambient_out, fadeout, ambient_in, fadein, musicstate, var_b2da75e16d8fed9c) {
     if (!isdefined(var_10d27b439af13a2a)) {
         assertmsg("tried to fade audio for bink playback without specifying bink length");
         return;
@@ -201,8 +201,8 @@ function audio_bink_transition_ambient(var_10d27b439af13a2a, var_ab1e0cd677c42fc
     }
     var_5bb8c690c809c86e = fadein + 0.05;
     var_bf03ca5bceb3c0e9 = 1;
-    if (isdefined(var_ab1e0cd677c42fc4)) {
-        level.player setclienttriggeraudiozone(var_ab1e0cd677c42fc4);
+    if (isdefined(ambient_out)) {
+        level.player setclienttriggeraudiozone(ambient_out);
     }
     while (!iscinematicplaying()) {
         wait 0.05;
@@ -218,8 +218,8 @@ function audio_bink_transition_ambient(var_10d27b439af13a2a, var_ab1e0cd677c42fc
         wait 0.05;
     }
     if (var_bf03ca5bceb3c0e9 == 0) {
-        if (isdefined(var_d860c2364979e1f)) {
-            level.player setclienttriggeraudiozone(var_d860c2364979e1f, fadein);
+        if (isdefined(ambient_in)) {
+            level.player setclienttriggeraudiozone(ambient_in, fadein);
             wait 2;
             level.player clearclienttriggeraudiozone(2);
         } else {
@@ -259,12 +259,12 @@ function bink_transition_music(var_10d27b439af13a2a, musicstate, var_b2da75e16d8
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xdba
 // Size: 0x57
-function audio_bink_fadeout_ambient(var_ab1e0cd677c42fc4, fadeout) {
+function audio_bink_fadeout_ambient(ambient_out, fadeout) {
     if (!isdefined(fadeout)) {
         fadeout = 2;
     }
-    if (isdefined(var_ab1e0cd677c42fc4)) {
-        level.player setclienttriggeraudiozone(var_ab1e0cd677c42fc4);
+    if (isdefined(ambient_out)) {
+        level.player setclienttriggeraudiozone(ambient_out);
     }
     while (!iscinematicplaying()) {
         wait 0.05;
@@ -276,7 +276,7 @@ function audio_bink_fadeout_ambient(var_ab1e0cd677c42fc4, fadeout) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xe19
 // Size: 0x134
-function audio_bink_fadein_ambient(var_10d27b439af13a2a, var_d860c2364979e1f, fadein, musicstate, var_b2da75e16d8fed9c) {
+function audio_bink_fadein_ambient(var_10d27b439af13a2a, ambient_in, fadein, musicstate, var_b2da75e16d8fed9c) {
     if (!isdefined(var_10d27b439af13a2a)) {
         assertmsg("tried to fade audio for bink playback without specifying bink length");
         return;
@@ -305,8 +305,8 @@ function audio_bink_fadein_ambient(var_10d27b439af13a2a, var_d860c2364979e1f, fa
         wait 0.05;
     }
     if (var_bf03ca5bceb3c0e9 == 0) {
-        if (isdefined(var_d860c2364979e1f)) {
-            level.player setclienttriggeraudiozone(var_d860c2364979e1f, fadein);
+        if (isdefined(ambient_in)) {
+            level.player setclienttriggeraudiozone(ambient_in, fadein);
             wait 2;
             level.player clearclienttriggeraudiozone(2);
         } else {
@@ -476,15 +476,15 @@ function function_651db72b2f52cf76(func) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x15cc
 // Size: 0xee
-function audio_helmet_transition_helmet_on_visor_down_w_lma(var_3abcf05da9d2dfed, var_6b79e55e60f9e0c9, var_1d2611c44ece2ef0) {
+function audio_helmet_transition_helmet_on_visor_down_w_lma(var_3abcf05da9d2dfed, var_6b79e55e60f9e0c9, filter_setting) {
     if (!isdefined(var_3abcf05da9d2dfed)) {
         var_3abcf05da9d2dfed = 2.5;
     }
     if (!isdefined(var_6b79e55e60f9e0c9)) {
         var_6b79e55e60f9e0c9 = "normal";
     }
-    if (!isdefined(var_1d2611c44ece2ef0)) {
-        var_1d2611c44ece2ef0 = "clear_all";
+    if (!isdefined(filter_setting)) {
+        filter_setting = "clear_all";
     }
     level.player playsound("plr_helmet_on_visor_down_lr");
     if (var_3abcf05da9d2dfed != 0) {
@@ -494,11 +494,11 @@ function audio_helmet_transition_helmet_on_visor_down_w_lma(var_3abcf05da9d2dfed
         } else {
             level.player delaycall(0.1, &playsound, "plr_helmet_boot_up_fast_lr");
         }
-        if (var_1d2611c44ece2ef0 == "clear_all") {
+        if (filter_setting == "clear_all") {
             level.player delaycall(0.45, &clearclienttriggeraudiozone, 0.2);
             return;
         }
-        level.player delaycall(0.45, &setclienttriggeraudiozone, var_1d2611c44ece2ef0, 0.2);
+        level.player delaycall(0.45, &setclienttriggeraudiozone, filter_setting, 0.2);
     }
 }
 
@@ -514,15 +514,15 @@ function audio_helmet_transition_helmet_on_visor_up_no_lma() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x16cc
 // Size: 0xe4
-function audio_helmet_transition_visor_down_w_lma(var_3abcf05da9d2dfed, var_6b79e55e60f9e0c9, var_1d2611c44ece2ef0) {
+function audio_helmet_transition_visor_down_w_lma(var_3abcf05da9d2dfed, var_6b79e55e60f9e0c9, filter_setting) {
     if (!isdefined(var_3abcf05da9d2dfed)) {
         var_3abcf05da9d2dfed = 2.5;
     }
     if (!isdefined(var_6b79e55e60f9e0c9)) {
         var_6b79e55e60f9e0c9 = "normal";
     }
-    if (!isdefined(var_1d2611c44ece2ef0)) {
-        var_1d2611c44ece2ef0 = "clear_all";
+    if (!isdefined(filter_setting)) {
+        filter_setting = "clear_all";
     }
     level.player playsound("plr_helmet_visor_pull_down_w_air_lr");
     wait var_3abcf05da9d2dfed;
@@ -531,11 +531,11 @@ function audio_helmet_transition_visor_down_w_lma(var_3abcf05da9d2dfed, var_6b79
     } else {
         level.player delaycall(0.1, &playsound, "plr_helmet_boot_up_fast_lr");
     }
-    if (var_1d2611c44ece2ef0 == "clear_all") {
+    if (filter_setting == "clear_all") {
         level.player delaycall(0.45, &clearclienttriggeraudiozone, 0.2);
         return;
     }
-    level.player delaycall(0.45, &setclienttriggeraudiozone, var_1d2611c44ece2ef0, 0.2);
+    level.player delaycall(0.45, &setclienttriggeraudiozone, filter_setting, 0.2);
 }
 
 // Namespace audio / scripts\sp\audio
@@ -586,9 +586,9 @@ function set_timescale(name) {
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x18b5
     // Size: 0x39
-    function debug_println(msg, var_db112a5f2bdbcfbf) {
-        if (!isdefined(var_db112a5f2bdbcfbf)) {
-            var_db112a5f2bdbcfbf = 1;
+    function debug_println(msg, dvar_num) {
+        if (!isdefined(dvar_num)) {
+            dvar_num = 1;
         }
         if (debug_enabled() < 1) {
             return;

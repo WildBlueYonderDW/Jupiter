@@ -1,5 +1,5 @@
 #using script_d74ae0b4aa21186;
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace namespace_f0be73a95f76c7ed;
 

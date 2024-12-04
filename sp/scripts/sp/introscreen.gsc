@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\hud_util.gsc;
 #using script_575fda2758b0a36e;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\utility;
 
 #namespace introscreen;
 
@@ -62,17 +62,17 @@ function level_has_chyron() {
 // Checksum 0x0, Offset: 0x23c
 // Size: 0x42
 function quick_fadeup() {
-    level.var_1eb2a64ead0ad6f5 = create_client_overlay("black", 1);
+    level.introscreen_bg = create_client_overlay("black", 1);
     wait 0.2;
-    level.var_1eb2a64ead0ad6f5.alpha = 0;
-    level.var_1eb2a64ead0ad6f5 destroy();
+    level.introscreen_bg.alpha = 0;
+    level.introscreen_bg destroy();
 }
 
 // Namespace introscreen / scripts\sp\introscreen
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x286
 // Size: 0xa0
-function introscreen(var_de42e9cd2606a1d4, var_b27cad3410976f5e) {
+function introscreen(no_bg, bg_time) {
     if (flag_exist("introscreen_start_wait")) {
         flag_wait("introscreen_start_wait");
     }

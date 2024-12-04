@@ -7,6 +7,6 @@
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
 function main() {
-    thread namespace_61fc244810dffc67::function_8eabdc149e284b8d("alpha");
+    thread namespace_61fc244810dffc67::defender_init("alpha");
 }
 

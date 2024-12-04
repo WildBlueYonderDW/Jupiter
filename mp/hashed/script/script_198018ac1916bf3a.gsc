@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
 
 #namespace cache;
 

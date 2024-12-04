@@ -1,13 +1,13 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\points;
 
 #namespace honeypot;
 

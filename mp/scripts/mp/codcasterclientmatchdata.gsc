@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_969918091e5d9483;
 

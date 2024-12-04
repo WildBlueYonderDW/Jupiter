@@ -1,12 +1,12 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7c40fa80892a721;
-#using scripts\cp\cp_hud_message.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_ac3a5419c8f1e57f;
+#namespace cp_hints;
 
-// Namespace namespace_ac3a5419c8f1e57f / namespace_3d45447eff81cd1e
+// Namespace cp_hints / namespace_3d45447eff81cd1e
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x187
 // Size: 0x2a
@@ -18,7 +18,7 @@ function function_53d7dda215345e9a(struct, func) {
     struct thread [[ func ]]();
 }
 
-// Namespace namespace_ac3a5419c8f1e57f / namespace_3d45447eff81cd1e
+// Namespace cp_hints / namespace_3d45447eff81cd1e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b9
 // Size: 0xfb
@@ -45,7 +45,7 @@ function function_5d7a5d368329104b() {
     }
 }
 
-// Namespace namespace_ac3a5419c8f1e57f / namespace_3d45447eff81cd1e
+// Namespace cp_hints / namespace_3d45447eff81cd1e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bc
 // Size: 0x8e
@@ -67,7 +67,7 @@ function show_third_person_hint() {
     self.var_4a92fa61d642bc3c = 1;
 }
 
-// Namespace namespace_ac3a5419c8f1e57f / namespace_3d45447eff81cd1e
+// Namespace cp_hints / namespace_3d45447eff81cd1e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x352
 // Size: 0x8e
@@ -89,7 +89,7 @@ function show_nvg_hint() {
     self.var_2825b40bc5d1ee90 = 1;
 }
 
-// Namespace namespace_ac3a5419c8f1e57f / namespace_3d45447eff81cd1e
+// Namespace cp_hints / namespace_3d45447eff81cd1e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e8
 // Size: 0x82
@@ -116,7 +116,7 @@ function function_5f69c771abbec7b8() {
     }
 }
 
-// Namespace namespace_ac3a5419c8f1e57f / namespace_3d45447eff81cd1e
+// Namespace cp_hints / namespace_3d45447eff81cd1e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x472
 // Size: 0x83
@@ -140,7 +140,7 @@ function nag_useArmor_handler() {
     }
 }
 
-// Namespace namespace_ac3a5419c8f1e57f / namespace_3d45447eff81cd1e
+// Namespace cp_hints / namespace_3d45447eff81cd1e
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x72

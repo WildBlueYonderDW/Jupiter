@@ -1,4 +1,4 @@
-#using scripts\common\dev.gsc;
+#using scripts\common\dev;
 
 #namespace dev;
 

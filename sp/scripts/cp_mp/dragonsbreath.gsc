@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\dragonsbreath.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\dragonsbreath;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\weapons;
 
 #namespace dragonsbreath;
 

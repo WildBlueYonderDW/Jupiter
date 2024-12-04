@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using scripts\mp\playerlogic.gsc;
 #using script_548072087c9fd504;
-#using scripts\mp\tweakables.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\playerlogic;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace spectating;
 
@@ -48,7 +48,7 @@ function setlevelmlgcam(index, csvfile) {
     if (tableindex >= 4) {
         tableindex -= 4;
     }
-    mapname = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+    mapname = tolower(getdvar(@"g_mapname"));
     var_d9733d3b5b9c44ce = tablelookup(csvfile, 0, mapname, tableindex * 2 + 1);
     if (var_d9733d3b5b9c44ce != "") {
         var_dd0f1974b9c2c56a = index + 1;

@@ -1,32 +1,32 @@
-#using scripts\cp\cp_hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using script_41ae4f5ca24216cb;
-#using scripts\cp\utility\script.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_14609b809484646e;
 #using script_187a04151c40fb72;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using scripts\cp\utility\player_frame_update_aggregator.gsc;
 #using script_18a73a64992dd07d;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\cp\cp_player_battlechatter.gsc;
-#using script_74502a9e0ef1f19c;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp\utility\player.gsc;
-#using script_7c40fa80892a721;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_afb7e332aee4bf2;
-#using script_56ef8d52fe1b48a1;
-#using scripts\cp\cp_matchdata.gsc;
+#using script_41ae4f5ca24216cb;
 #using script_4a6760982b403bad;
-#using scripts\cp\cp_challenge.gsc;
+#using script_56ef8d52fe1b48a1;
+#using script_74502a9e0ef1f19c;
+#using script_7c40fa80892a721;
+#using script_afb7e332aee4bf2;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp\cp_challenge;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\cp_matchdata;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\player_frame_update_aggregator;
+#using scripts\cp\utility\script;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace events;
 
@@ -36,7 +36,7 @@
 // Size: 0x4e7
 function init() {
     scripts\cp_mp\utility\game_utility::initchallengeandeventglobals();
-    namespace_9c383b14c4908e46::function_8ece37593311858a(&function_9c6dfcaf923f186b);
+    namespace_9c383b14c4908e46::function_8ece37593311858a(&onplayerconnect_events);
     level.var_27dcaf9644646944 = #"display_xp";
     /#
         if (getdvarint(@"hash_e6afce2cf5cf7515", 0)) {
@@ -94,7 +94,7 @@ function init() {
             function_51e853369bc3f0bf(entry);
         }
     }
-    namespace_5aac85eab99c40a::registerscoreinfo(#"hash_bb5be601232dc24d", #"value", 500);
+    namespace_5aac85eab99c40a::registerscoreinfo(#"persistent_xp", #"value", 500);
     level thread monitorhealed();
     scripts\cp\utility\spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawn);
     scripts\cp\utility\player_frame_update_aggregator::registerplayerframeupdatecallback(&monitoradstime);
@@ -254,7 +254,7 @@ function onplayerspawn() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b90
 // Size: 0xd3
-function function_9c6dfcaf923f186b() {
+function onplayerconnect_events() {
     self.killedplayers = [];
     self.killedby = [];
     self.lastkilledby = undefined;
@@ -382,8 +382,8 @@ function killedenemy(killid, victim, objweapon, meansofdeath, inflictor, psoffse
     self.lastkillvictimpos = victim.origin;
     if (isplayer(self)) {
         if (self.deaths > 0) {
-            var_1c8ad3040c864084 = self.kills / self.deaths;
-            if (var_1c8ad3040c864084 > 3) {
+            kdr = self.kills / self.deaths;
+            if (kdr > 3) {
                 level thread scripts\cp\cp_player_battlechatter::saytoself(self, "plr_kd_high", undefined, 0.75);
             }
         } else if (self.kills > 5) {
@@ -667,7 +667,7 @@ function killedenemy(killid, victim, objweapon, meansofdeath, inflictor, psoffse
             }
             if (namespace_f8d3520d3483c1::hasarmor()) {
                 self.modifiers["weearingarmor"] = 1;
-                self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"hash_4687e1d052d29979"));
+                self.modifiers["mask"] = scripts\cp_mp\challenges::function_6d40f12a09494350(self.modifiers["mask"], function_e2ff8f4b4e94f723(#"hash_7f94e81c1787ff7a", #"wearingarmor"));
             }
             if (namespace_f8d3520d3483c1::function_9bca5c1d23a3e0b3()) {
                 self.modifiers["fullarmor"] = 1;
@@ -687,7 +687,7 @@ function killedenemy(killid, victim, objweapon, meansofdeath, inflictor, psoffse
         if (isplayer(victim) || isagent(victim)) {
             if (!victim isonground() && !victim iswallrunning() && !self isonground() && !self iswallrunning()) {
                 if (attackerisinflictor) {
-                    thread doScoreEvent(#"hash_585359fb294f2c3");
+                    thread doScoreEvent(#"air_to_air_kill");
                 }
             } else {
                 if (attackerisinflictor) {
@@ -1151,9 +1151,9 @@ function isbackkill(attacker, victim, meansofdeath) {
     if (meansofdeath != "MOD_RIFLE_BULLET" && meansofdeath != "MOD_PISTOL_BULLET" && meansofdeath != "MOD_MELEE" && meansofdeath != "MOD_HEAD_SHOT") {
         return false;
     }
-    var_cb116ac8aa94ce55 = victim getplayerangles();
-    var_524b19d2034e1406 = attacker getplayerangles();
-    anglediff = angleclamp180(var_cb116ac8aa94ce55[1] - var_524b19d2034e1406[1]);
+    victimangles = victim getplayerangles();
+    attackerangles = attacker getplayerangles();
+    anglediff = angleclamp180(victimangles[1] - attackerangles[1]);
     if (abs(anglediff) < 80) {
         return true;
     }

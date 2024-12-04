@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\engine\utility;
 
 #namespace gasmask;
 
@@ -54,7 +54,7 @@ function init(gasmaskhealth, gasmasktype, gasmaskmaxhealth) {
 // Checksum 0x0, Offset: 0x566
 // Size: 0x7f
 function ai_init() {
-    self.var_5968f8f2c70696e9 = 1;
+    self.has_gasmask = 1;
     self.gasmaskhealth = 180;
     mask_model = spawn("script_model", (0, 0, 0));
     mask_model setmodel("hat_gasmask");
@@ -198,7 +198,7 @@ function function_4262ecea32819701(damage) {
         if (isdefined(self.gasmask)) {
             self.gasmask unlink();
             self.gasmask hide();
-            self.var_5968f8f2c70696e9 = 0;
+            self.has_gasmask = 0;
         }
     }
 }

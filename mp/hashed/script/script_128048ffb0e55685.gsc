@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_39476b974d936141;
-#using script_2e378a72bb22c5e;
-#using script_50961bbda895acfe;
-#using script_4ab79785ddba1484;
-#using scripts\mp\load.gsc;
 #using script_1311c5c284dd1537;
-#using scripts\mp\compass.gsc;
-#using scripts\mp\equipment\tactical_cover.gsc;
+#using script_2e378a72bb22c5e;
+#using script_39476b974d936141;
+#using script_4ab79785ddba1484;
+#using script_50961bbda895acfe;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\anim;
+#using scripts\mp\compass;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\flags;
+#using scripts\mp\load;
+#using scripts\mp\utility\game;
 
 #namespace namespace_614c3061e572eaa4;
 

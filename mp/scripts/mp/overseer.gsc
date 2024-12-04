@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\poi.gsc;
 #using script_35de402efc5acfb3;
+#using script_48814951e916af89;
 #using script_5d265b4fca61f070;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\points.gsc;
 #using script_6a8ec730b2bfa844;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\poi;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace overseer;
 

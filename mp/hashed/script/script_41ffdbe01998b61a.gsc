@@ -1,62 +1,62 @@
-#using scripts\common\callbacks.gsc;
-#using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_7d3e27aa82b5d70b;
-#using script_3e2f8cc477d57433;
-#using script_7ab5b649fa408138;
-#using script_22f1701e151b9d12;
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using script_43971bbeefd98f05;
-#using script_41387eecc35b88bf;
-#using scripts\mp\mp_agent_damage.gsc;
-#using script_220d0eb95a8fab7d;
-#using script_185660037b9236c1;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using script_46c7c73b1a7e4773;
-#using script_7cfaa6fd841fb4dd;
-#using script_57bdd8aff28a4717;
-#using script_7edf952f8921aa6b;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\common\powerups.gsc;
-#using script_2669878cf5a1b6bc;
-#using script_58682e6578ce0515;
-#using script_29cc982fdb174b47;
 #using script_100adcc1cc11d2fa;
-#using scripts\mp\gametypes\ob.gsc;
-#using script_3f9c618c4c35ed2;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using script_41ffdbe01998b61a;
+#using script_140b2a257b323303;
+#using script_16ea1b94f0f381b3;
+#using script_185660037b9236c1;
 #using script_1d43c78ad6bb95e2;
 #using script_1f97a44d1761c919;
-#using script_7b2517368c79e5bc;
-#using scripts\mp\utility\points.gsc;
-#using script_4e6e58ab5d96c2b0;
-#using script_2583ee5680cf4736;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using script_5762ac2f22202ba2;
-#using script_3b78d23dad7ec5be;
-#using script_58be75c518bf0d40;
-#using scripts\mp\mp_agent.gsc;
-#using script_39d11000e476a42a;
-#using script_482376d10f69832c;
-#using script_7e41e37180e554f;
-#using script_793f5fa29ca62c00;
-#using script_ff16f9da6be790a;
+#using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
 #using script_249b0a9054ceb230;
-#using script_6848353b07a74e84;
-#using script_c6b9e8fb3a7de37;
-#using script_523e733991571416;
-#using script_5d02d8723d456015;
-#using script_514a13029018133;
-#using script_528320cb3630530d;
+#using script_2583ee5680cf4736;
+#using script_2669878cf5a1b6bc;
 #using script_2cfe49cdd9a5a89a;
-#using script_140b2a257b323303;
+#using script_39d11000e476a42a;
+#using script_3b78d23dad7ec5be;
+#using script_3e2f8cc477d57433;
+#using script_3f9c618c4c35ed2;
+#using script_41387eecc35b88bf;
+#using script_41ffdbe01998b61a;
+#using script_43971bbeefd98f05;
+#using script_46c7c73b1a7e4773;
+#using script_482376d10f69832c;
+#using script_4e6e58ab5d96c2b0;
+#using script_514a13029018133;
+#using script_523e733991571416;
+#using script_528320cb3630530d;
+#using script_5762ac2f22202ba2;
+#using script_57bdd8aff28a4717;
+#using script_58682e6578ce0515;
+#using script_58be75c518bf0d40;
+#using script_5d02d8723d456015;
+#using script_6848353b07a74e84;
+#using script_793f5fa29ca62c00;
+#using script_7ab5b649fa408138;
+#using script_7b2517368c79e5bc;
+#using script_7cfaa6fd841fb4dd;
+#using script_7d3e27aa82b5d70b;
+#using script_7e41e37180e554f;
+#using script_7edf952f8921aa6b;
+#using script_c6b9e8fb3a7de37;
+#using script_ff16f9da6be790a;
+#using scripts\common\callbacks;
+#using scripts\common\powerups;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\ob;
+#using scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob;
+#using scripts\mp\mp_agent;
+#using scripts\mp\mp_agent_damage;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\points;
+#using scripts\mp\weapons;
 
 #namespace namespace_6faadab2b3f756a1;
 
@@ -73,7 +73,7 @@ function function_2dcca6d862cc31d5(params) {
     }
     self dlog_recordplayerevent("dlog_event_ob_player_rift_run", ["started", 1, "difficulty", difficulty]);
     if (getdvarint(@"hash_8e03c888469910b0", 0)) {
-        namespace_7b853fc16496a9b1::function_b60de1b748c7230f();
+        scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_ob::function_b60de1b748c7230f();
     }
     if (getdvarint(@"ob_s3_rift_run", 0)) {
         thread function_b2082fcbe629a6f();
@@ -106,13 +106,13 @@ function private function_4dd5d69d550c0999() {
 // Checksum 0x0, Offset: 0x199f
 // Size: 0x92
 function private function_dc80e43dced96932() {
-    var_a284af43d8329f61 = getstructarray("minimap_corner", "targetname");
+    a_corners = getstructarray("minimap_corner", "targetname");
     v_loc = (0, 0, 0);
-    if (var_a284af43d8329f61.size) {
-        foreach (corner in var_a284af43d8329f61) {
+    if (a_corners.size) {
+        foreach (corner in a_corners) {
             v_loc += corner.origin;
         }
-        v_loc /= var_a284af43d8329f61.size;
+        v_loc /= a_corners.size;
     }
     return v_loc;
 }
@@ -122,9 +122,9 @@ function private function_dc80e43dced96932() {
 // Checksum 0x0, Offset: 0x1a3a
 // Size: 0x4d
 function private function_868dda939525d6dd() {
-    var_a284af43d8329f61 = getstructarray("minimap_corner", "targetname");
-    if (var_a284af43d8329f61.size > 1) {
-        return (distance2d(var_a284af43d8329f61[0].origin, var_a284af43d8329f61[1].origin) / 1.9);
+    a_corners = getstructarray("minimap_corner", "targetname");
+    if (a_corners.size > 1) {
+        return (distance2d(a_corners[0].origin, a_corners[1].origin) / 1.9);
     }
 }
 
@@ -158,15 +158,15 @@ function function_7e3b3e54fd85da26() {
     }
     level.var_e75e7ca73e94d4f7 = getdvarint(@"hash_4c396a81425f649b", 0);
     thread namespace_b000de497fab9bf4::function_ccde446fe7425514(level.var_e75e7ca73e94d4f7);
-    thread function_35b9ded36a8bcce1();
+    thread infil_music();
     level flag_wait("ai_spawn_director_initialized");
     namespace_22b8ba12655bf3f2::function_d589c49c4b9b50a0(&scripts\mp\gametypes\ob::function_91d032246bb24684);
-    thread function_8d61e53700cfa26d();
+    thread intro_vo();
     thread namespace_88d9f8b28d831818::function_ecd079f7925cc275();
     thread function_3d203d1752c3714c();
     namespace_b000de497fab9bf4::function_a13799ae222a8b48("exit_portal");
     thread function_d58ad4f904032ed0();
-    thread function_87c128cff95b5d57();
+    thread weakpoint_setup();
     thread function_4bb2f4017b25f5d3();
     function_b5e57408c7878df7(&function_f7d395f2f09077dd);
     scripts\engine\scriptable::scriptable_addusedcallback(&function_6af4c434f6564f56);
@@ -239,7 +239,7 @@ function function_6af4c434f6564f56(instance, part, state, player, var_a5b2c54141
             if (obelisk.activityinstance.type == instance.activity_instance.type) {
                 item = [[ level.var_190c066f1b962111[obelisk.base.var_49833d40d310dcb8].var_50b449d2553ac489 ]](instance.origin, obelisk.base.var_49833d40d310dcb8);
                 item = function_10097590634ee94b(item);
-                thread function_c5c782caa574255f(item);
+                thread item_liftoff(item);
                 player namespace_2abc885019e1956::function_576728d3d4486bd6(item, 0, 0, 0);
                 player thread scripts\mp\utility\points::doScoreEvent(#"hash_816ee095be9d88bf");
                 switch (obelisk.base.var_49833d40d310dcb8) {
@@ -303,7 +303,7 @@ function function_b6697d395d77e302(var_6f8af5eb76deac21) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x21a2
 // Size: 0x2e
-function function_8d61e53700cfa26d() {
+function intro_vo() {
     level endon("game_ended");
     level utility::flag_wait("ob_infil_completed");
     thread namespace_446fc987a980892f::playevent("s3_rr_arrive", level.players, 7);
@@ -313,7 +313,7 @@ function function_8d61e53700cfa26d() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x21d8
 // Size: 0x26
-function function_35b9ded36a8bcce1() {
+function infil_music() {
     level waittill_any_2("match_start_real_countdown", "match_start_timer_skip");
     level thread namespace_b3f32c8cb80b8124::function_aadc1c81b3fd1dd2(level.players);
 }
@@ -342,14 +342,14 @@ function function_1457677100139213() {
 function function_d58ad4f904032ed0() {
     level.Obelisks = [];
     level.var_833c19ce35f0fdc0 = 0;
-    var_3c0264cdf25b5bdb = getstructarray("obeliskspawn", "targetname");
+    obelisk_structs = getstructarray("obeliskspawn", "targetname");
     beams = getscriptablearray("obeliskbeam", "targetname");
-    foreach (var_7bd2768769ec27ca in var_3c0264cdf25b5bdb) {
-        var_a01dfb6cde8f348e = var_7bd2768769ec27ca.script_noteworthy;
+    foreach (obelisk_struct in obelisk_structs) {
+        var_a01dfb6cde8f348e = obelisk_struct.script_noteworthy;
         level.Obelisks[var_a01dfb6cde8f348e] = spawnstruct();
-        level.Obelisks[var_a01dfb6cde8f348e].base = spawnscriptable("jup_zm_rift_altar", var_7bd2768769ec27ca.origin, var_7bd2768769ec27ca.angles);
+        level.Obelisks[var_a01dfb6cde8f348e].base = spawnscriptable("jup_zm_rift_altar", obelisk_struct.origin, obelisk_struct.angles);
         level.Obelisks[var_a01dfb6cde8f348e].base.var_49833d40d310dcb8 = var_a01dfb6cde8f348e;
-        level.Obelisks[var_a01dfb6cde8f348e].top = spawnscriptable("jup_zm_rift_altar_top", var_7bd2768769ec27ca.origin + (0, 0, 40), var_7bd2768769ec27ca.angles);
+        level.Obelisks[var_a01dfb6cde8f348e].top = spawnscriptable("jup_zm_rift_altar_top", obelisk_struct.origin + (0, 0, 40), obelisk_struct.angles);
         level.Obelisks[var_a01dfb6cde8f348e].completed = 0;
         level.Obelisks[var_a01dfb6cde8f348e].activityinstance = [];
         level.Obelisks[var_a01dfb6cde8f348e].base setscriptablepartstate("body", "default");
@@ -361,7 +361,7 @@ function function_d58ad4f904032ed0() {
                 beam setscriptablepartstate("beam", "on");
             }
         }
-        namespace_5775ad2badedbcaa::function_32645103f7520635(level.Obelisks[var_a01dfb6cde8f348e].base, &function_c0b488aa76c77316, undefined, &function_3940ad0af0562d02);
+        namespace_5775ad2badedbcaa::function_32645103f7520635(level.Obelisks[var_a01dfb6cde8f348e].base, &activate_obelisk, undefined, &obelisk_gesture);
         level.Obelisks[var_a01dfb6cde8f348e].base namespace_5775ad2badedbcaa::function_e6c63f16f2258b80(&function_dda97bcf0f20e53f);
         function_3dd6cf4f550e9f9d(var_a01dfb6cde8f348e);
     }
@@ -373,7 +373,7 @@ function function_d58ad4f904032ed0() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2556
 // Size: 0x107
-function function_c0b488aa76c77316(player) {
+function activate_obelisk(player) {
     level.var_747eee71c41ccadc = self.var_49833d40d310dcb8;
     level thread namespace_b3f32c8cb80b8124::function_115bd456be8e071d(level.players, "ob_contract_action_loop");
     self setscriptablepartstate("body", "default");
@@ -383,7 +383,7 @@ function function_c0b488aa76c77316(player) {
     level.Obelisks[level.var_747eee71c41ccadc].activityinstance notify("activate_activity_starter");
     item = level.Obelisks[level.var_747eee71c41ccadc].activityinstance.var_17a2361aa0beabb2[0];
     item = function_10097590634ee94b(item);
-    thread function_c5c782caa574255f(item);
+    thread item_liftoff(item);
 }
 
 // Namespace namespace_6faadab2b3f756a1 / namespace_72d85a5f3cb24eec
@@ -410,7 +410,7 @@ function obelisk_completed(var_747eee71c41ccadc) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2778
 // Size: 0x26
-function function_3940ad0af0562d02(player) {
+function obelisk_gesture(player) {
     wait 1.15;
     if (player usebuttonpressed()) {
         player forceplaygestureviewmodel("jup_ges_open_portal");
@@ -435,7 +435,7 @@ function function_dda97bcf0f20e53f(interact, player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2822
 // Size: 0xb6
-function function_c5c782caa574255f(item) {
+function item_liftoff(item) {
     item endon("contract_started");
     item endon("destroyed");
     var_a4bddd55aee55e46 = 3;
@@ -1249,11 +1249,11 @@ function function_eb6c4f407b06d7d7(var_6ccb60434f6c1c28) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x48a6
 // Size: 0x2d5
-function function_87c128cff95b5d57() {
-    var_790f35dd57e633e4 = getstructarray("arteryspawn", "targetname");
+function weakpoint_setup() {
+    weakpoint_structs = getstructarray("arteryspawn", "targetname");
     level.var_85a85964b56787d8 = [];
-    level.var_4e288ca6b67852 = 0;
-    foreach (struct in var_790f35dd57e633e4) {
+    level.weakpoints_destroyed = 0;
+    foreach (struct in weakpoint_structs) {
         navmesh_pos = getclosestpointonnavmesh(struct.origin);
         ground_pos = getgroundposition(navmesh_pos, 1);
         rayinfo = trace::ray_trace(ground_pos + (0, 0, 12), ground_pos - (0, 0, 999));
@@ -1289,7 +1289,7 @@ function function_dd1de37a34de7820(e_shield) {
     while (isalive(e_shield)) {
         e_shield waittill("damage", damage, attacker, direction_vec, point, smeansofdeath, modelname, tagname, partname, idflags, weapon, sorigin, angles, normal, einflictor, eventid);
         e_shield.health = 100;
-        thread function_6246344836fa47f7(einflictor, attacker, self, damage, idflags, smeansofdeath, weapon, normal, point);
+        thread weakpoint_damage(einflictor, attacker, self, damage, idflags, smeansofdeath, weapon, normal, point);
     }
 }
 
@@ -1326,7 +1326,7 @@ function function_14a1d8fbf92cd97(params) {
 // Params 11, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f0e
 // Size: 0x478
-function function_6246344836fa47f7(einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname) {
+function weakpoint_damage(einflictor, eattacker, instance, idamage, idflags, smeansofdeath, objweapon, vdir, shitloc, modelindex, partname) {
     level endon("game_ended");
     instance endon("death");
     if (!utility::is_equal(instance.type, "jup_zm_rift_weakpoint") || istrue(instance.destroyed)) {
@@ -1340,7 +1340,7 @@ function function_6246344836fa47f7(einflictor, eattacker, instance, idamage, idf
         instance setscriptablepartstate("spore_damage", "impact_nodamage");
     }
     if (!function_80f3ebd3a5b5b432() && is_equal(instance.type, "jup_zm_rift_weakpoint")) {
-        function_51b521e60a5390ca(eattacker, instance, smeansofdeath, objweapon);
+        immune_feedback(eattacker, instance, smeansofdeath, objweapon);
         return;
     }
     if (isdefined(objweapon) && weapon::iswonderweapon(objweapon)) {
@@ -1357,7 +1357,7 @@ function function_6246344836fa47f7(einflictor, eattacker, instance, idamage, idf
                 instance scripts\common\callbacks::callback("shield_damaged", params);
                 return;
             }
-            function_51b521e60a5390ca(eattacker, instance, smeansofdeath, objweapon);
+            immune_feedback(eattacker, instance, smeansofdeath, objweapon);
             return;
         }
         instance.health -= idamage;
@@ -1369,20 +1369,20 @@ function function_6246344836fa47f7(einflictor, eattacker, instance, idamage, idf
             instance setscriptablepartstate("ground_vfx", "disabled");
             instance scripts\cp_mp\calloutmarkerping::function_6bc4f6b579285f79();
             instance.shield notsolid();
-            level.var_4e288ca6b67852++;
+            level.weakpoints_destroyed++;
             wait 0.1;
             var_29b6154315f4469 = 500;
             var_a4bdc2718d388075 = instance.origin;
             radiusdamage(var_a4bdc2718d388075, var_29b6154315f4469, 200, 100);
             var_e724d95f4de4fdb5 = getaiarrayinradius(var_a4bdc2718d388075, var_29b6154315f4469, "team_two_hundred");
             foreach (ai in var_e724d95f4de4fdb5) {
-                ai namespace_db1ce2c035564e2c::function_e96aac065abbec4e(var_a4bdc2718d388075);
+                ai namespace_db1ce2c035564e2c::knockdown_ai(var_a4bdc2718d388075);
             }
-            if (level.var_4e288ca6b67852 >= level.var_85a85964b56787d8.size) {
+            if (level.weakpoints_destroyed >= level.var_85a85964b56787d8.size) {
                 level notify("weakpoints_completed");
                 level.var_5ab941ab8b7ca1bd function_f9d964480130473f();
             } else {
-                level.var_5ab941ab8b7ca1bd.shield setscriptablepartstate("damage_states", "damage_state_" + level.var_4e288ca6b67852 + 1);
+                level.var_5ab941ab8b7ca1bd.shield setscriptablepartstate("damage_states", "damage_state_" + level.weakpoints_destroyed + 1);
             }
         }
         instance.shield.fake_health = instance.health;
@@ -1463,8 +1463,8 @@ function private function_80f3ebd3a5b5b432() {
 // Checksum 0x0, Offset: 0x55b2
 // Size: 0x279
 function function_4bb2f4017b25f5d3() {
-    var_703b5f448b03e81 = getstruct("heartspawn", "targetname");
-    navmesh_pos = getclosestpointonnavmesh(var_703b5f448b03e81.origin);
+    heart_struct = getstruct("heartspawn", "targetname");
+    navmesh_pos = getclosestpointonnavmesh(heart_struct.origin);
     ground_pos = getgroundposition(navmesh_pos, 1);
     rayinfo = trace::ray_trace(ground_pos + (0, 0, 12), ground_pos - (0, 0, 999));
     raynormal = rayinfo["normal"];
@@ -1567,7 +1567,7 @@ function function_5afb26d090949fc3(einflictor, eattacker, instance, idamage, idf
         instance setscriptablepartstate("spore_damage", "impact_nodamage");
     }
     if (!function_86305a10c0580c9() && is_equal(instance.type, "jup_zm_rift_heart")) {
-        function_51b521e60a5390ca(eattacker, instance, smeansofdeath, objweapon);
+        immune_feedback(eattacker, instance, smeansofdeath, objweapon);
         return;
     }
     if (isdefined(objweapon) && weapon::iswonderweapon(objweapon)) {
@@ -1598,7 +1598,7 @@ function function_5afb26d090949fc3(einflictor, eattacker, instance, idamage, idf
             radiusdamage(var_6c50b9f4f4172857, var_47a1c3b9ba11cdeb, 400, 200);
             var_227c6710f39c1f7 = getaiarrayinradius(var_6c50b9f4f4172857, var_47a1c3b9ba11cdeb, "team_two_hundred");
             foreach (ai in var_227c6710f39c1f7) {
-                ai namespace_db1ce2c035564e2c::function_e96aac065abbec4e(var_6c50b9f4f4172857);
+                ai namespace_db1ce2c035564e2c::knockdown_ai(var_6c50b9f4f4172857);
             }
         }
         instance.shield.fake_health = instance.health;
@@ -1681,7 +1681,7 @@ function function_d62cb671e89b8e98() {
 // Checksum 0x0, Offset: 0x629b
 // Size: 0x21
 function private function_86305a10c0580c9() {
-    if (level.var_4e288ca6b67852 >= level.var_85a85964b56787d8.size) {
+    if (level.weakpoints_destroyed >= level.var_85a85964b56787d8.size) {
         return 1;
     }
     return 0;
@@ -1691,7 +1691,7 @@ function private function_86305a10c0580c9() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x62c4
 // Size: 0xa0
-function function_51b521e60a5390ca(eattacker, instance, smeansofdeath, objweapon) {
+function immune_feedback(eattacker, instance, smeansofdeath, objweapon) {
     if (isplayer(eattacker)) {
         if (mp_agent_damage::function_73075c88c97d2d50() && mp_agent_damage::function_87c3b43d00319847()) {
             mp_agent_damage::function_c54b2cc2e762c201(eattacker, instance.shield, "none", smeansofdeath, objweapon, int(0), undefined, 1, undefined, 0, 0);
@@ -1757,7 +1757,7 @@ function function_157eba852e9f6ccc(data, isdebug) {
         self thread [[ level.var_104dfa63c8e33c5a ]]();
     }
     var_8232fe13bffb624 = istrue(isdebug) ? level.players[0].origin : level.var_5ab941ab8b7ca1bd.origin;
-    var_f064b76727edb83a = namespace_71ca15b739deab72::function_3ae7f99339b96499(var_8232fe13bffb624);
+    reward_placement = namespace_71ca15b739deab72::function_3ae7f99339b96499(var_8232fe13bffb624);
     a_players = level.players[0] namespace_ca7b90256548aa40::getsquadmembers();
     var_3c99a2a84c4b850f = spawnstruct();
     reward_groups = [];
@@ -1768,7 +1768,7 @@ function function_157eba852e9f6ccc(data, isdebug) {
             player namespace_838b439602b3acc7::function_9db4c37d4f1415f("rift_run_hard_contract_completed", 3);
         }
     }
-    namespace_e8853d3344e33cf6::function_863be9e39e19fe2f(reward_groups, var_f064b76727edb83a, &function_e01530991969a465, undefined, var_3c99a2a84c4b850f);
+    namespace_e8853d3344e33cf6::function_863be9e39e19fe2f(reward_groups, reward_placement, &function_e01530991969a465, undefined, var_3c99a2a84c4b850f);
     if (!istrue(isdebug)) {
         var_3c99a2a84c4b850f waittill("managed_reward_cache_spawn_done", var_e10194ca6271ac0a);
         var_e10194ca6271ac0a waittill("managed_reward_cache_despawned");
@@ -1901,12 +1901,12 @@ function function_25ec394f5469ed5b() {
         wait 8.2;
     }
     while (true) {
-        var_bde0a0fd36314443 = randomfloatrange(50, 150);
+        n_move = randomfloatrange(50, 150);
         n_time = randomfloatrange(8, 11);
-        self movez(var_bde0a0fd36314443, n_time, 3, 3);
+        self movez(n_move, n_time, 3, 3);
         wait n_time + 0.2;
         n_time = randomfloatrange(8, 11);
-        self movez(var_bde0a0fd36314443 * -1, n_time, 3, 3);
+        self movez(n_move * -1, n_time, 3, 3);
         wait n_time + 0.2;
     }
 }
@@ -1943,10 +1943,10 @@ function function_8814bf1a3819a8de() {
     level flag_wait("drop_powerups");
     var_f6e2fa7c17f84498 = getstructarray("ob_floater_powerup", "targetname");
     offset = scripts\common\powerups::function_edeba0070ca0709e("drop_height_offset");
-    foreach (var_b2ef8a26b8e2267f in var_f6e2fa7c17f84498) {
-        if (isdefined(var_b2ef8a26b8e2267f.script_noteworthy)) {
-            var_7c5f128ad799ba66 = anglestoup(var_b2ef8a26b8e2267f.angles) * offset;
-            level scripts\common\powerups::function_d4be622286a198(var_b2ef8a26b8e2267f.script_noteworthy, var_b2ef8a26b8e2267f.origin + var_7c5f128ad799ba66, var_b2ef8a26b8e2267f.angles);
+    foreach (powerup_spawn in var_f6e2fa7c17f84498) {
+        if (isdefined(powerup_spawn.script_noteworthy)) {
+            var_7c5f128ad799ba66 = anglestoup(powerup_spawn.angles) * offset;
+            level scripts\common\powerups::function_d4be622286a198(powerup_spawn.script_noteworthy, powerup_spawn.origin + var_7c5f128ad799ba66, powerup_spawn.angles);
             waitframe();
         }
     }
@@ -1965,9 +1965,9 @@ function ob_ambient_zombie_waves_setup(difficulty) {
     level flag_wait("ob_infil_completed");
     level flag_wait("ai_spawn_director_ambient_setup_done");
     level flag_wait("ob_ambient_spawn_zombie_waves");
-    var_5e64675a5f0ce8cb = getstruct("ob_circle_start", "targetname");
-    if (isdefined(var_5e64675a5f0ce8cb) && !isdefined(level.var_c9f71ccc98610c37)) {
-        level.var_c9f71ccc98610c37 = namespace_614554f86e52695c::spawn_request("ai_encounter:enc_ob_s3_hydro_rift_run_ambient_zombie_waves", var_5e64675a5f0ce8cb.origin, var_5e64675a5f0ce8cb.radius, 1, 0, 0);
+    circle_struct = getstruct("ob_circle_start", "targetname");
+    if (isdefined(circle_struct) && !isdefined(level.var_c9f71ccc98610c37)) {
+        level.var_c9f71ccc98610c37 = namespace_614554f86e52695c::spawn_request("ai_encounter:enc_ob_s3_hydro_rift_run_ambient_zombie_waves", circle_struct.origin, circle_struct.radius, 1, 0, 0);
         namespace_614554f86e52695c::function_e4a67fe4ddca7ed5(level.var_c9f71ccc98610c37, &function_b6ac8ea8edc4fd12);
         namespace_614554f86e52695c::function_f0cc0f2e6e1d085e(level.var_c9f71ccc98610c37, &function_5b07f0df3762790f);
         namespace_614554f86e52695c::function_f81b7c3f18ef98be(level.var_c9f71ccc98610c37, &function_8894dff666d97dd4);
@@ -2033,9 +2033,9 @@ function function_9a38b0d80b42e271() {
 // Checksum 0x0, Offset: 0x6f91
 // Size: 0x87
 function function_b6ac8ea8edc4fd12(requestid, instance, agent, ai_data) {
-    var_5e64675a5f0ce8cb = getstruct("ob_circle_start", "targetname");
-    if (isdefined(var_5e64675a5f0ce8cb)) {
-        agent function_65cdab0fc78aba8f(var_5e64675a5f0ce8cb.origin, var_5e64675a5f0ce8cb.radius);
+    circle_struct = getstruct("ob_circle_start", "targetname");
+    if (isdefined(circle_struct)) {
+        agent function_65cdab0fc78aba8f(circle_struct.origin, circle_struct.radius);
         return;
     }
     agent function_65cdab0fc78aba8f(agent.origin, getdvarint(@"hash_436fc10ebca82d41", 2048));
@@ -2204,7 +2204,7 @@ function function_b2082fcbe629a6f() {
         params.itembundlename = "<dev string:x3fc>";
         level.players[0] on_item_pickup(params);
         foreach (obelisk in level.Obelisks) {
-            obelisk.base function_c0b488aa76c77316(level.players[0]);
+            obelisk.base activate_obelisk(level.players[0]);
             wait 0.5;
         }
     }
@@ -2225,7 +2225,7 @@ function function_b2082fcbe629a6f() {
             weakpoint.destroyed = 1;
             weakpoint setscriptablepartstate("<dev string:x47a>", "<dev string:x45f>");
             weakpoint setscriptablepartstate("<dev string:x482>", "<dev string:x2be>");
-            level.var_4e288ca6b67852++;
+            level.weakpoints_destroyed++;
             level notify("<dev string:x490>");
         }
     }

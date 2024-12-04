@@ -1,10 +1,10 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\cap.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\sp\spawner.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\cap;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\spawner;
 
 #namespace namespace_5bf3bd82da62657f;
 
@@ -19,14 +19,14 @@ function function_f5102a91e43f54c() {
         setdvarifuninitialized(@"hash_a9dc1d3a6b52a4e", 0);
         setdvarifuninitialized(@"hash_5da9c798d17a834", 0);
     #/
-    function_79a41c436fac1a57();
+    init_animations();
 }
 
 // Namespace namespace_5bf3bd82da62657f / namespace_2d87f81135fa1a67
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x20a1
 // Size: 0xd8b
-function private function_79a41c436fac1a57() {
+function private init_animations() {
     level.var_b3f1be0e22c453e6 = [2, 3, 6, 9, 8, 7, 4, 1, 2];
     level.var_a9326f5eacbd188b = gettime() + 20000 + randomfloatrange(60000, 120000);
     level.var_1b77801913f2dcab = randomfloatrange(60000, 120000);
@@ -424,7 +424,7 @@ function function_f09bb1449dcf19e2() {
         self teleport(origin, angles);
     }
     self.pushable = 0;
-    var_6e2597877d503152 = 0.2;
+    clear_time = 0.2;
     blend_time = 0.2;
     self clearanim(scripts\asm\asm::asm_getroot(), 0.2);
     facialknob = scripts\asm\asm::asm_getfacialknob();
@@ -602,7 +602,7 @@ function private function_3ddcab276130bdff() {
     // Params 0, eflags: 0x4
     // Checksum 0x0, Offset: 0x42e0
     // Size: 0x6c
-    function private function_d5129dab6d889852() {
+    function private debug_goal() {
         self endon("<dev string:xfe>");
         while (true) {
             if (isdefined(self.goalpos)) {
@@ -648,11 +648,11 @@ function private function_f7f0674ea54e72d5(var_ea69e390541ce33e) {
         self.var_71f409a8b7fb35af = undefined;
         return;
     }
-    if (isdefined(self.var_f3e7389b53b13f4d)) {
+    if (isdefined(self.goalnode_gunship)) {
         if (!var_ea69e390541ce33e) {
             wait 2;
         }
-        self setgoalnode(self.var_f3e7389b53b13f4d);
+        self setgoalnode(self.goalnode_gunship);
         return;
     }
     if (isdefined(self.var_5ccff9c1ae9cb737)) {

@@ -1,8 +1,8 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_575fda2758b0a36e;
 #using script_1096bc9315122e88;
+#using script_575fda2758b0a36e;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_9d3605fe2ce73dd9;
 
@@ -102,51 +102,51 @@ function function_d1a8270c167e8a4f(taskname, state, var_c7514edef40976a2) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x31c
 // Size: 0x56
-function function_1c2bbc8867668ba3(var_aff14c3fbfe6b653) {
+function function_1c2bbc8867668ba3(first_task) {
     if (!function_8f7452209f2fa982()) {
         return;
     }
-    assertex(isstring(var_aff14c3fbfe6b653), "Need a id for the first task to start!");
+    assertex(isstring(first_task), "Need a id for the first task to start!");
     /#
         if (getdvarint(@"hash_f270b4040fc5585b")) {
-            iprintln("<dev string:x59>" + var_aff14c3fbfe6b653);
+            iprintln("<dev string:x59>" + first_task);
         }
     #/
-    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(var_aff14c3fbfe6b653, "start");
+    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(first_task, "start");
 }
 
 // Namespace namespace_9d3605fe2ce73dd9 / namespace_6d3783f7267c4bca
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x37a
 // Size: 0x82
-function function_e001fad729f058b0(var_5f3bf73ffa4f3e33, var_1837aa1066686d58) {
+function function_e001fad729f058b0(last_task, next_task) {
     if (!function_8f7452209f2fa982()) {
         return;
     }
-    assertex(isstring(var_5f3bf73ffa4f3e33) && isstring(var_1837aa1066686d58), "Please provide an id for the task to close and the new task to begin.");
+    assertex(isstring(last_task) && isstring(next_task), "Please provide an id for the task to close and the new task to begin.");
     /#
         if (getdvarint(@"hash_f270b4040fc5585b")) {
-            iprintln("<dev string:x8e>" + var_5f3bf73ffa4f3e33 + "<dev string:xba>" + var_1837aa1066686d58);
+            iprintln("<dev string:x8e>" + last_task + "<dev string:xba>" + next_task);
         }
     #/
-    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(var_5f3bf73ffa4f3e33, "stop", "completed");
-    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(var_1837aa1066686d58, "start");
+    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(last_task, "stop", "completed");
+    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(next_task, "start");
 }
 
 // Namespace namespace_9d3605fe2ce73dd9 / namespace_6d3783f7267c4bca
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x404
 // Size: 0x61
-function function_849e707497dfdd92(var_5f3bf73ffa4f3e33) {
+function function_849e707497dfdd92(last_task) {
     if (!function_8f7452209f2fa982()) {
         return;
     }
-    assertex(isstring(var_5f3bf73ffa4f3e33), "Need an id for the last task for the currently active activity.");
+    assertex(isstring(last_task), "Need an id for the last task for the currently active activity.");
     /#
         if (getdvarint(@"hash_f270b4040fc5585b")) {
-            iprintln("<dev string:xbf>" + var_5f3bf73ffa4f3e33 + "<dev string:xf2>");
+            iprintln("<dev string:xbf>" + last_task + "<dev string:xf2>");
         }
     #/
-    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(var_5f3bf73ffa4f3e33, "stop", "completed");
+    namespace_6d3783f7267c4bca::function_d1a8270c167e8a4f(last_task, "stop", "completed");
 }
 

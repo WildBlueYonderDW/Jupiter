@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_429c2a03090c1ea1;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_d7599bf3652c29ff;
 

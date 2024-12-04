@@ -1,38 +1,38 @@
-#using scripts\engine\utility.gsc;
-#using script_43971bbeefd98f05;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_2ff6eb4f5b8663fb;
-#using script_6df6604a74a7a9c7;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\vehicle.gsc;
-#using script_9880b9dc28bc25e;
-#using script_2d400da2610fe542;
 #using script_22f1701e151b9d12;
-#using script_58be75c518bf0d40;
-#using script_7cfaa6fd841fb4dd;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using script_7534b1d3ac3ea47a;
+#using script_2d400da2610fe542;
+#using script_2ff6eb4f5b8663fb;
+#using script_43971bbeefd98f05;
 #using script_443d99fe707f1d9f;
-#using script_7b2517368c79e5bc;
 #using script_4f7c27d4fef4bc09;
-#using scripts\engine\math.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using script_58be75c518bf0d40;
+#using script_6df6604a74a7a9c7;
+#using script_7534b1d3ac3ea47a;
+#using script_7b2517368c79e5bc;
+#using script_7cfaa6fd841fb4dd;
+#using script_9880b9dc28bc25e;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\mp_agent;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_945da193e84ea7bb;
 
@@ -490,7 +490,7 @@ function private function_1dbb97673ec1e0c7(encounterdata, origin, vehicle) {
 // Size: 0xe1
 function private function_bed20391ba8dcfce(requestid, instance, agent, data) {
     if (agent.agent_type == "actor_jup_ob_enemy_specialist_knight") {
-        instance.var_9359753a6347dd67 = agent;
+        instance.knight_ai = agent;
         agent.var_7e4b076a06c6df27 = 1;
         agent.var_534e788bc498be9f.displayname = %JUP_OB_OBJECTIVES/THE_KNIGHT;
         agent waittill("death", attacker);
@@ -506,10 +506,10 @@ function private function_bed20391ba8dcfce(requestid, instance, agent, data) {
 // Checksum 0x0, Offset: 0x2055
 // Size: 0x65
 function function_b5fc6db21a3000c8() {
-    while (!isdefined(self.driver) || !isdefined(self.var_9359753a6347dd67)) {
+    while (!isdefined(self.driver) || !isdefined(self.knight_ai)) {
         waitframe();
     }
-    msg = waittill_any_ents_return(self.driver, "death", self, "damage_heavy", self.var_9359753a6347dd67, "death");
+    msg = waittill_any_ents_return(self.driver, "death", self, "damage_heavy", self.knight_ai, "death");
     self notify("leavepath_unload");
     function_9ca6ea0ca85c0fbf();
 }
@@ -611,11 +611,11 @@ function private function_c87978976b1e2686(cooldowntype, cooldowntime) {
 // Checksum 0x0, Offset: 0x2358
 // Size: 0x73
 function function_a2f48e85dd453198(players) {
-    if (isdefined(self.var_9359753a6347dd67)) {
-        closestplayer = sortbydistance(players, self.var_9359753a6347dd67.origin)[0];
-        self.var_9359753a6347dd67 getenemyinfo(closestplayer);
-        self.var_9359753a6347dd67.favoriteenemy = closestplayer;
-        self.var_9359753a6347dd67 forcethreatupdate();
+    if (isdefined(self.knight_ai)) {
+        closestplayer = sortbydistance(players, self.knight_ai.origin)[0];
+        self.knight_ai getenemyinfo(closestplayer);
+        self.knight_ai.favoriteenemy = closestplayer;
+        self.knight_ai forcethreatupdate();
     }
 }
 

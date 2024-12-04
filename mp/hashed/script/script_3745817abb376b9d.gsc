@@ -1,10 +1,10 @@
-#using script_d74ae0b4aa21186;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
 #using script_7845ba34dcf9b77b;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_circle;
 
 #namespace control_fob;
 

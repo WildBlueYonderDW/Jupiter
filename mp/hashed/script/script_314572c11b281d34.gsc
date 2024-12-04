@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
 #using script_3aacf02225ca0da5;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\poi.gsc;
 #using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_lootcache.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\poi;
 
 #namespace namespace_bcb933b4628a0583;
 

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace matchstats;
 

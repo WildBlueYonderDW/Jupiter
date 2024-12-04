@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\common\values.gsc;
 #using script_64acb6ce534155b7;
-#using script_6ad4f9e2f4c6105;
 #using script_662cbac61c1ae7e2;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using script_6ad4f9e2f4c6105;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
 
 #namespace br_train_quest;
 

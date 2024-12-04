@@ -1,9 +1,9 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_3a8f9ace195c9da9;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\engine\scriptable.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace namespace_4256b08ee38a2255;
 
@@ -19,13 +19,13 @@ function function_ed68c9be9d1ddd23() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x166
 // Size: 0x34
-function function_f3a21136dd87a83f() {
-    level.var_26b473d17788f791 = 0;
+function splash_monitor() {
+    level.splash_active = 0;
     while (true) {
         level waittill("new_splash");
-        level.var_26b473d17788f791 = 1;
+        level.splash_active = 1;
         wait 4;
-        level.var_26b473d17788f791 = 0;
+        level.splash_active = 0;
     }
 }
 
@@ -35,7 +35,7 @@ function function_f3a21136dd87a83f() {
 // Size: 0x1d
 function function_7f6ae2b525a3e12a() {
     function_dc6d1b40589ca236();
-    thread function_f3a21136dd87a83f();
+    thread splash_monitor();
     scripts\engine\scriptable::scriptable_addusedcallback(&function_de1149fa62dbfe47);
 }
 
@@ -109,14 +109,14 @@ function function_de1149fa62dbfe47(instance, part, state, player, var_a5b2c54141
         if (issubstr(part, "brloot_super")) {
             var_aa14ab078fd0313d = function_c607ddea71489857();
             if (var_aa14ab078fd0313d < 5) {
-                while (level.var_26b473d17788f791) {
+                while (level.splash_active) {
                     wait 0.1;
                 }
-                var_3be22efdcdd70e99 = player getclientomnvar("ui_tutorial_message_state");
-                if (var_3be22efdcdd70e99 == 1) {
+                tutorial_state = player getclientomnvar("ui_tutorial_message_state");
+                if (tutorial_state == 1) {
                     wait 4;
-                    var_3be22efdcdd70e99 = player getclientomnvar("ui_tutorial_message_state");
-                    if (var_3be22efdcdd70e99 == 1) {
+                    tutorial_state = player getclientomnvar("ui_tutorial_message_state");
+                    if (tutorial_state == 1) {
                         return;
                     }
                 }

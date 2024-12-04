@@ -1,12 +1,12 @@
-#using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots_gametype_br.gsc;
-#using script_40e63dd222434655;
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_7c79573f6d201a19;
 #using script_26ccbfe3954cacf4;
+#using script_40e63dd222434655;
 #using script_58be75c518bf0d40;
+#using script_59ff79d681bb860c;
+#using script_7c79573f6d201a19;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\utility\game;
 
 #namespace wander;
 

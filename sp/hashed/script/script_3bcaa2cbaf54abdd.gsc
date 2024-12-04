@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\perks\cp_perk_utility.gsc;
-#using script_3f8889c16399185c;
-#using script_66122a002aff5d57;
 #using script_187a04151c40fb72;
+#using script_3f8889c16399185c;
 #using script_41ae4f5ca24216cb;
 #using script_467f0fdfdd155a45;
-#using scripts\cp\cp_merits.gsc;
-#using scripts\cp\cp_analytics.gsc;
+#using script_66122a002aff5d57;
+#using scripts\common\utility;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_merits;
+#using scripts\cp\perks\cp_perk_utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace persistence;
 
@@ -86,9 +86,9 @@ function set_player_munition_currency(amount) {
 // Checksum 0x0, Offset: 0x5fb
 // Size: 0x3d
 function function_5d7c28c83d8da818(var_6b05369a767e9dbc) {
-    var_8334742fe1363a27 = get_player_currency();
-    var_98afd1ce36f4905a = int(max(0, var_8334742fe1363a27 + var_6b05369a767e9dbc));
-    set_player_currency(var_98afd1ce36f4905a);
+    current_amount = get_player_currency();
+    new_amount = int(max(0, current_amount + var_6b05369a767e9dbc));
+    set_player_currency(new_amount);
 }
 
 // Namespace persistence / namespace_6c67e93a4c487d83
@@ -119,32 +119,32 @@ function give_player_currency(amount, font_size, shitloc, var_4a46dc3f73a35cb, g
     if (isdefined(level.currency_scale_func)) {
         amount = [[ level.currency_scale_func ]](self, amount);
     }
-    var_8334742fe1363a27 = get_player_currency();
-    var_b4187ec006e2d1e2 = get_player_max_currency();
-    var_98afd1ce36f4905a = var_8334742fe1363a27 + amount;
-    if (!isdefined(var_b4187ec006e2d1e2)) {
+    current_amount = get_player_currency();
+    max_amount = get_player_max_currency();
+    new_amount = current_amount + amount;
+    if (!isdefined(max_amount)) {
         assertmsg("give_player_currency is trying to give currency but player(" + self getentitynumber() + ").maxCurrency is undefined");
-        var_b4187ec006e2d1e2 = 0;
+        max_amount = 0;
     }
-    var_98afd1ce36f4905a = min(var_98afd1ce36f4905a, var_b4187ec006e2d1e2);
+    new_amount = min(new_amount, max_amount);
     if (!isdefined(self.total_currency_earned)) {
         self.total_currency_earned = amount;
     }
     if (is_valid_give_type(give_type)) {
-        self.total_currency_earned += var_98afd1ce36f4905a - var_8334742fe1363a27;
+        self.total_currency_earned += new_amount - current_amount;
         self notify("consumable_charge", amount * 0.5);
     }
     level notify("currency_changed");
     eog_player_update_stat("currencytotal", int(self.total_currency_earned), 1);
     if (function_f993f83a21fc44b2() && getdvarint(@"hash_d4ed36d1f90ca352", 0) && (!isdefined(give_type) || give_type == "debug")) {
-        set_player_currency(var_98afd1ce36f4905a);
+        set_player_currency(new_amount);
         thread namespace_5aac85eab99c40a::scorepointspopup(amount, 1);
     } else if (function_f993f83a21fc44b2() && getdvarint(@"hash_d4ed36d1f90ca352", 0) && isdefined(give_type) && give_type == "bounty") {
-        set_player_currency(var_98afd1ce36f4905a);
+        set_player_currency(new_amount);
         thread namespace_6099285b4066f63b::doScoreEvent(#"bounty", undefined, amount);
     } else if (is_wave_gametype() || isdefined(give_type) && give_type == "cash_pickup") {
         if (!istrue(level.var_8fde5731bb1ba3bb) || isdefined(give_type) && give_type == "cash_pickup") {
-            set_player_currency(var_98afd1ce36f4905a);
+            set_player_currency(new_amount);
         }
         thread namespace_5aac85eab99c40a::scorepointspopup(amount, 1);
     } else {
@@ -154,7 +154,7 @@ function give_player_currency(amount, font_size, shitloc, var_4a46dc3f73a35cb, g
         [[ level.update_money_performance ]](self, amount);
     }
     current_time = gettime();
-    if (var_98afd1ce36f4905a >= var_b4187ec006e2d1e2) {
+    if (new_amount >= max_amount) {
         if (!isdefined(self.next_maxmoney_hint_time)) {
             self.next_maxmoney_hint_time = current_time + 30000;
         } else if (current_time < self.next_maxmoney_hint_time) {
@@ -188,10 +188,10 @@ function is_valid_give_type(give_type) {
 // Size: 0x71
 function take_player_currency(amount, var_268300d5f447c80c, var_e42f7eb456b932f2, weapon_ref) {
     assert(amount >= 0);
-    var_8334742fe1363a27 = get_player_currency();
-    var_98afd1ce36f4905a = max(0, var_8334742fe1363a27 - amount);
-    var_d5cea5c370608022 = int(var_8334742fe1363a27 - var_98afd1ce36f4905a);
-    set_player_currency(var_98afd1ce36f4905a);
+    current_amount = get_player_currency();
+    new_amount = max(0, current_amount - amount);
+    amount_spent = int(current_amount - new_amount);
+    set_player_currency(new_amount);
 }
 
 // Namespace persistence / namespace_6c67e93a4c487d83
@@ -315,8 +315,8 @@ function eog_player_tracking_init() {
     }
     var_f8335a1c04fb409f = [0, 0, 0, 0];
     foreach (p in level.players) {
-        var_35162790aacfaf47 = p getentitynumber();
-        var_f8335a1c04fb409f[int(var_35162790aacfaf47)] = 1;
+        p_entnum = p getentitynumber();
+        var_f8335a1c04fb409f[int(p_entnum)] = 1;
         if (p == self) {
             continue;
         }
@@ -414,17 +414,17 @@ function eog_update_on_player_disconnect(var_2421296ba8ccb5ee) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1288
 // Size: 0x9f
-function eog_player_update_stat(var_6bd45b7708ce4099, amount, var_9e3067e82ad0cae3) {
+function eog_player_update_stat(stat_ref, amount, override_value) {
     entity_num = self getentitynumber();
-    var_98afd1ce36f4905a = amount;
-    if (!isdefined(var_9e3067e82ad0cae3) || !var_9e3067e82ad0cae3) {
-        var_cec495acc42b7073 = self getplayerdata("cp", "EoGPlayer", entity_num, var_6bd45b7708ce4099);
-        var_98afd1ce36f4905a = int(var_cec495acc42b7073) + int(amount);
+    new_amount = amount;
+    if (!isdefined(override_value) || !override_value) {
+        old_amount = self getplayerdata("cp", "EoGPlayer", entity_num, stat_ref);
+        new_amount = int(old_amount) + int(amount);
     }
-    try_update_lb_playerdata(var_6bd45b7708ce4099, var_98afd1ce36f4905a, 1);
-    setcoopplayerdata_for_everyone("EoGPlayer", entity_num, var_6bd45b7708ce4099, var_98afd1ce36f4905a);
+    try_update_lb_playerdata(stat_ref, new_amount, 1);
+    setcoopplayerdata_for_everyone("EoGPlayer", entity_num, stat_ref, new_amount);
     if (isdefined(level.eogscoringtable)) {
-        update_eog_totals_for_stat_ref(var_6bd45b7708ce4099, var_98afd1ce36f4905a);
+        update_eog_totals_for_stat_ref(stat_ref, new_amount);
     }
 }
 
@@ -432,9 +432,9 @@ function eog_player_update_stat(var_6bd45b7708ce4099, amount, var_9e3067e82ad0ca
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x132f
 // Size: 0x3a
-function function_c0480dc3a45ef6(var_6bd45b7708ce4099) {
+function function_c0480dc3a45ef6(stat_ref) {
     entity_num = self getentitynumber();
-    return_value = self getplayerdata("cp", "EoGPlayer", entity_num, var_6bd45b7708ce4099);
+    return_value = self getplayerdata("cp", "EoGPlayer", entity_num, stat_ref);
     return return_value;
 }
 
@@ -442,9 +442,9 @@ function function_c0480dc3a45ef6(var_6bd45b7708ce4099) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1372
 // Size: 0x65
-function update_eog_totals_for_stat_ref(var_6bd45b7708ce4099, amount) {
+function update_eog_totals_for_stat_ref(stat_ref, amount) {
     for (i = 0; i < level.eogscoringtable.size; i++) {
-        if (level.eogscoringtable[i].ref == var_6bd45b7708ce4099) {
+        if (level.eogscoringtable[i].ref == stat_ref) {
             level.eogscoringtable[i].curamount = amount;
         }
     }
@@ -454,12 +454,12 @@ function update_eog_totals_for_stat_ref(var_6bd45b7708ce4099, amount) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x13df
 // Size: 0x3d
-function try_update_lb_playerdata(var_7b71a32fa025f6e0, var_98afd1ce36f4905a, var_9e3067e82ad0cae3) {
-    var_d5755432fbfacdbd = get_mapped_lb_ref_from_eog_ref(var_7b71a32fa025f6e0);
-    if (!isdefined(var_d5755432fbfacdbd)) {
+function try_update_lb_playerdata(var_7b71a32fa025f6e0, new_amount, override_value) {
+    lb_ref = get_mapped_lb_ref_from_eog_ref(var_7b71a32fa025f6e0);
+    if (!isdefined(lb_ref)) {
         return;
     }
-    lb_player_update_stat(var_d5755432fbfacdbd, var_98afd1ce36f4905a, var_9e3067e82ad0cae3);
+    lb_player_update_stat(lb_ref, new_amount, override_value);
 }
 
 // Namespace persistence / namespace_6c67e93a4c487d83
@@ -494,8 +494,8 @@ function increment_player_career_total_score(player) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x14c1
 // Size: 0x63
-function lb_player_update_stat(var_218835b4b69dbd26, amount, var_9e3067e82ad0cae3) {
-    if (istrue(var_9e3067e82ad0cae3)) {
+function lb_player_update_stat(var_218835b4b69dbd26, amount, override_value) {
+    if (istrue(override_value)) {
         new_value = amount;
     } else {
         old_value = self getplayerdata("cp", "alienSession", var_218835b4b69dbd26);
@@ -705,37 +705,37 @@ function give_player_xp(xp, display) {
     }
     thread give_player_session_xp(xp);
     var_8d8b9714bd8cf0e0 = 0;
-    var_f5c2afa38c91f575 = get_player_rank();
-    var_510e99bb3be09f77 = get_player_xp();
-    var_9fa0365ab7bbe59e = var_510e99bb3be09f77 + xp;
+    old_rank = get_player_rank();
+    old_xp = get_player_xp();
+    new_xp = old_xp + xp;
     /#
         if (getdvarint(@"hash_3f0687e1f394289") == 1) {
-            iprintln("<dev string:x83>" + xp + "<dev string:x85>" + var_9fa0365ab7bbe59e + "<dev string:x8a>");
+            iprintln("<dev string:x83>" + xp + "<dev string:x85>" + new_xp + "<dev string:x8a>");
         }
     #/
-    set_player_xp(var_9fa0365ab7bbe59e);
+    set_player_xp(new_xp);
     if (istrue(display) && xp > 0 && !is_wave_gametype()) {
         self setclientomnvar("zom_xp_reward", xp);
         self setclientomnvar("zom_xp_notify", gettime());
     }
-    var_491e3024dc27dde0 = get_rank_by_xp(var_9fa0365ab7bbe59e);
-    if (var_491e3024dc27dde0 > var_f5c2afa38c91f575) {
-        if (var_491e3024dc27dde0 == level.zombie_max_rank + 1) {
+    new_rank = get_rank_by_xp(new_xp);
+    if (new_rank > old_rank) {
+        if (new_rank == level.zombie_max_rank + 1) {
             var_8d8b9714bd8cf0e0 = 1;
         }
-        set_player_rank(var_491e3024dc27dde0);
+        set_player_rank(new_rank);
         if (var_8d8b9714bd8cf0e0 == 0) {
-            var_eca9164292a71214 = var_491e3024dc27dde0 + 1;
-            splashref = get_splash_by_id(var_491e3024dc27dde0);
-            self notify("ranked_up", var_491e3024dc27dde0);
+            display_rank = new_rank + 1;
+            splashref = get_splash_by_id(new_rank);
+            self notify("ranked_up", new_rank);
             update_player_session_rankup();
             /#
                 if (getdvarint(@"hash_3f0687e1f394289") == 1) {
-                    iprintlnbold("<dev string:x8c>" + var_491e3024dc27dde0 + "<dev string:x9b>" + var_9fa0365ab7bbe59e + "<dev string:x8a>");
+                    iprintlnbold("<dev string:x8c>" + new_rank + "<dev string:x9b>" + new_xp + "<dev string:x8a>");
                 }
             #/
         }
-        process_rank_merits(var_491e3024dc27dde0);
+        process_rank_merits(new_rank);
     }
 }
 
@@ -908,23 +908,23 @@ function update_player_career_highest_wave(player, var_5675a729bbd6aa36, var_de7
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2128
 // Size: 0x66
-function increment_zombiecareerstats(player, var_bb14a323e2bd7ce, var_4e71bbae7e003263) {
-    if (!isdefined(var_4e71bbae7e003263)) {
-        var_4e71bbae7e003263 = 1;
+function increment_zombiecareerstats(player, stats_name, increment_amount) {
+    if (!isdefined(increment_amount)) {
+        increment_amount = 1;
     }
-    old_value = player getplayerdata("cp", "coopCareerStats", var_bb14a323e2bd7ce);
-    new_value = old_value + var_4e71bbae7e003263;
-    player setplayerdata("cp", "coopCareerStats", var_bb14a323e2bd7ce, int(new_value));
+    old_value = player getplayerdata("cp", "coopCareerStats", stats_name);
+    new_value = old_value + increment_amount;
+    player setplayerdata("cp", "coopCareerStats", stats_name, int(new_value));
 }
 
 // Namespace persistence / namespace_6c67e93a4c487d83
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2196
 // Size: 0x50
-function updateifgreaterthan_zombiecareerstats(player, var_bb14a323e2bd7ce, new_value) {
-    old_value = player getplayerdata("cp", "coopCareerStats", var_bb14a323e2bd7ce);
+function updateifgreaterthan_zombiecareerstats(player, stats_name, new_value) {
+    old_value = player getplayerdata("cp", "coopCareerStats", stats_name);
     if (new_value > old_value) {
-        player setplayerdata("cp", "coopCareerStats", var_bb14a323e2bd7ce, new_value);
+        player setplayerdata("cp", "coopCareerStats", stats_name, new_value);
     }
 }
 
@@ -932,17 +932,17 @@ function updateifgreaterthan_zombiecareerstats(player, var_bb14a323e2bd7ce, new_
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x21ee
 // Size: 0xaa
-function check_and_update_best_stats(player, new_value, var_bb14a323e2bd7ce, map_name, var_de7821bc51ab43a0, reverse) {
+function check_and_update_best_stats(player, new_value, stats_name, map_name, var_de7821bc51ab43a0, reverse) {
     if (should_update_leaderboard_stats()) {
-        old_value = player getplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, var_bb14a323e2bd7ce);
+        old_value = player getplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, stats_name);
         if (!istrue(reverse)) {
             if (new_value > old_value) {
-                player setplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, var_bb14a323e2bd7ce, new_value);
+                player setplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, stats_name, new_value);
             }
             return;
         }
         if (new_value < old_value) {
-            player setplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, var_bb14a323e2bd7ce, new_value);
+            player setplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, stats_name, new_value);
         }
     }
 }
@@ -951,15 +951,15 @@ function check_and_update_best_stats(player, new_value, var_bb14a323e2bd7ce, map
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x22a0
 // Size: 0x8f
-function updateleaderboardstats(player, var_bb14a323e2bd7ce, new_value, map_name, var_de7821bc51ab43a0, var_4e71bbae7e003263) {
+function updateleaderboardstats(player, stats_name, new_value, map_name, var_de7821bc51ab43a0, increment_amount) {
     if (should_update_leaderboard_stats()) {
-        if (!isdefined(var_4e71bbae7e003263)) {
-            var_4e71bbae7e003263 = 1;
+        if (!isdefined(increment_amount)) {
+            increment_amount = 1;
         }
-        old_value = player getplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, var_bb14a323e2bd7ce);
-        new_value = old_value + var_4e71bbae7e003263;
+        old_value = player getplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, stats_name);
+        new_value = old_value + increment_amount;
         if (new_value > old_value) {
-            player setplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, var_bb14a323e2bd7ce, new_value);
+            player setplayerdata("cp", "leaderboarddata", map_name, "leaderboardDataPerMap", var_de7821bc51ab43a0, stats_name, new_value);
         }
     }
 }

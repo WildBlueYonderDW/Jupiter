@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\anim\face.gsc;
-#using script_6fba7df440c493c4;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
 #using script_371b4c2ab5861e62;
+#using scripts\anim\face;
+#using scripts\asm\asm_mp;
+#using scripts\asm\shared\mp\utility;
+#using scripts\cp_mp\vehicles\vehicle_anim;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace agent_init;
 
@@ -29,7 +29,7 @@ function agent_init() {
     function_5fa77e68e934eda2();
     initstealthfuncsmp();
     scripts\anim\face::initlevelface();
-    namespace_68d1bc1bac7da538::vehicleaniminit();
+    scripts\cp_mp\vehicles\vehicle_anim::vehicleaniminit();
 }
 
 // Namespace agent_init / scripts\cp_mp\agents\agent_init

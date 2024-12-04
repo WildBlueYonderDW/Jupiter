@@ -1,36 +1,36 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
 #using script_548072087c9fd504;
-#using scripts\mp\globallogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\bradley_spawner.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\gametypes\hq.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\persistence.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\damage;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\bradley_spawner;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\hq;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\persistence;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace control;
 
@@ -39,7 +39,7 @@
 // Checksum 0x0, Offset: 0x1377
 // Size: 0x27a
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -250,7 +250,7 @@ function control_onstartgametype() {
         game["dialog"]["defense_obj"] = "boost_groundwar";
     }
     thread function_212d9bd663252af4();
-    thread function_24d4600219715eac();
+    thread setup_control_zones();
 }
 
 // Namespace control / scripts\mp\gametypes\control
@@ -351,7 +351,7 @@ function control_getspawnpoint() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2337
 // Size: 0x3a6
-function function_24d4600219715eac() {
+function setup_control_zones() {
     primaryzones = [];
     if (isdefined(scripts\cp_mp\utility\game_utility::getlocaleid())) {
         var_e4748ddc114e50b9 = getentarray("control_zone", "targetname");

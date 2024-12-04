@@ -1,12 +1,12 @@
 #using script_3433ee6b63c7e243;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\gameskill.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\gameskill;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace track;
 
@@ -767,10 +767,10 @@ function trackloop_setanimweightslmg(pitchdelta, yawdelta) {
     aim_7 = self.asm.track.lmg_aim_7;
     aim_8 = self.asm.track.lmg_aim_8;
     aim_9 = self.asm.track.lmg_aim_9;
-    var_70662f647f89d5f7 = [aim_6, aim_9, aim_8, aim_7, aim_4, aim_1, aim_2, aim_3, aim_6];
+    aim_anims = [aim_6, aim_9, aim_8, aim_7, aim_4, aim_1, aim_2, aim_3, aim_6];
     degrees = [-180, -135, -90, -45, 0, 45, 90, 135, 180];
     aim_vecs = [(-1, 0, 0), (-0.707, -0.707, 0), (0, -1, 0), (0.707, -0.707, 0), (1, 0, 0), (0.707, 0.707, 0), (0, 1, 0), (-0.707, 0.707, 0), (-1, 0, 0)];
-    var_cd2b912c7b5ec142 = [80, 91.787, 45, 91.787, 80, 91.787, 45, 91.787, 80];
+    max_angles = [80, 91.787, 45, 91.787, 80, 91.787, 45, 91.787, 80];
     desired_vec = (yawdelta, pitchdelta, 0);
     desired_length = length2d(desired_vec);
     var_effbd89ceed72f4f = vectornormalize(desired_vec);
@@ -781,14 +781,14 @@ function trackloop_setanimweightslmg(pitchdelta, yawdelta) {
     if (first_index == 0) {
         first_index = 1;
     }
-    assertex(first_index < var_70662f647f89d5f7.size && first_index > 0, "Bad index : " + first_index + ", Desired Yaw: " + desired_yaw);
+    assertex(first_index < aim_anims.size && first_index > 0, "Bad index : " + first_index + ", Desired Yaw: " + desired_yaw);
     statename = self.asm.track.lmg_aim_state;
-    for (index = 0; index < var_70662f647f89d5f7.size; index++) {
+    for (index = 0; index < aim_anims.size; index++) {
         if (index == first_index || index == first_index - 1) {
-            anim_time = clamp(desired_length / var_cd2b912c7b5ec142[index], 0, 1);
+            anim_time = clamp(desired_length / max_angles[index], 0, 1);
             angle_diff = acos(vectordot(aim_vecs[index], var_effbd89ceed72f4f));
-            anim_weight = clamp(1 - angle_diff / var_cd2b912c7b5ec142[index], 0, 1);
-            aimxanim = asm_getxanim(statename, var_70662f647f89d5f7[index]);
+            anim_weight = clamp(1 - angle_diff / max_angles[index], 0, 1);
+            aimxanim = asm_getxanim(statename, aim_anims[index]);
             prev_time = self aigetanimtime(aimxanim);
             if (prev_time > 0) {
                 anim_length = getanimlength(aimxanim);
@@ -800,8 +800,8 @@ function trackloop_setanimweightslmg(pitchdelta, yawdelta) {
             }
             continue;
         }
-        if (var_70662f647f89d5f7[index] != var_70662f647f89d5f7[first_index] && var_70662f647f89d5f7[index] != var_70662f647f89d5f7[first_index - 1]) {
-            self aiclearanim(asm_getxanim(statename, var_70662f647f89d5f7[index]), 0.05);
+        if (aim_anims[index] != aim_anims[first_index] && aim_anims[index] != aim_anims[first_index - 1]) {
+            self aiclearanim(asm_getxanim(statename, aim_anims[index]), 0.05);
         }
     }
 }

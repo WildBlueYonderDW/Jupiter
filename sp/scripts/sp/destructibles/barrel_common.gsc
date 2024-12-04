@@ -1,17 +1,17 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\sp\player\gestures.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\player\gestures;
+#using scripts\sp\utility;
 
-#namespace namespace_5cc04bea2bab73e7;
+#namespace barrel_common;
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x14b
 // Size: 0xe0
-function barrel_setup(subtype, barrel_health, var_9a4c98958a819874, var_c15f10425692fc0d, var_cccd919d92c1c40, min_range_max_amp, var_3f07f189631aa7b6) {
+function barrel_setup(subtype, barrel_health, barrel_radius, amp_normal, amp_max, min_range_max_amp, var_3f07f189631aa7b6) {
     if (!isdefined(level.phys_barrels)) {
         level.phys_barrels = [];
     }
@@ -21,16 +21,16 @@ function barrel_setup(subtype, barrel_health, var_9a4c98958a819874, var_c15f1042
     self.isbarrel = 1;
     self setcandamage(1);
     self.barrel_health = barrel_health;
-    self.phys_barrel_radius = var_9a4c98958a819874;
-    self.phys_amp_normal = var_c15f10425692fc0d;
-    self.phys_amp_max = var_cccd919d92c1c40;
+    self.phys_barrel_radius = barrel_radius;
+    self.phys_amp_normal = amp_normal;
+    self.phys_amp_max = amp_max;
     self.min_range_max_amp = min_range_max_amp;
     self.spewtags = [];
     thread barrel_cleanup();
     thread barrel_nav_obstruction();
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x233
 // Size: 0xb9
@@ -51,7 +51,7 @@ function barrel_nav_obstruction() {
     destroynavobstacle(var_373f8b6fb3bd6fbc);
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f4
 // Size: 0x1a
@@ -59,7 +59,7 @@ function is_self_detonating(subtype) {
     return self.subtype == "red";
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x317
 // Size: 0x2c
@@ -68,7 +68,7 @@ function barrel_cleanup() {
     level.phys_barrels = array_remove(level.phys_barrels, self);
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x34b
 // Size: 0x9e
@@ -85,7 +85,7 @@ function get_barrels(subtype) {
     return barrels;
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x3c
@@ -100,7 +100,7 @@ function barrel_fusetimer(timer) {
     self notify("barrel_death");
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x435
 // Size: 0x10b
@@ -124,7 +124,7 @@ function barrel_block_gesture(max_dist, spot) {
     level.player thread barrel_reaction_gesture(spot);
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x548
 // Size: 0xb4
@@ -132,13 +132,13 @@ function barrel_reaction_gesture(spot) {
     self endon("death");
     tagorigin = spawn_tag_origin(spot, (0, 0, 0));
     thread delete_on_death(tagorigin);
-    var_b03cfac5ee568943 = "ges_frag_block";
-    var_447611fd38474e73 = self playgestureviewmodel(var_b03cfac5ee568943, tagorigin, 1, 0.1);
+    gesturename = "ges_frag_block";
+    var_447611fd38474e73 = self playgestureviewmodel(gesturename, tagorigin, 1, 0.1);
     if (var_447611fd38474e73) {
-        childthread scripts\sp\player\gestures::player_gestures_input_disable(var_b03cfac5ee568943, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1.4, "barrelReactionGesture");
+        childthread scripts\sp\player\gestures::player_gestures_input_disable(gesturename, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1.4, "barrelReactionGesture");
         while (true) {
-            self waittill("gesture_stopped", var_b03cfac5ee568943);
-            if (var_b03cfac5ee568943 == "ges_frag_block") {
+            self waittill("gesture_stopped", gesturename);
+            if (gesturename == "ges_frag_block") {
                 break;
             }
         }
@@ -148,7 +148,7 @@ function barrel_reaction_gesture(spot) {
     }
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x604
 // Size: 0x46
@@ -159,7 +159,7 @@ function isplayersniperhit(attacker, objweapon) {
     return false;
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x653
 // Size: 0x1f
@@ -170,7 +170,7 @@ function isdirectunderbarrelhit(type) {
     return false;
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x67b
 // Size: 0x69
@@ -191,7 +191,7 @@ function isgrenadeinrange(point, type, range) {
     return 1;
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ed
 // Size: 0x49
@@ -208,7 +208,7 @@ function isvalidbarreldamage(attacker, type) {
     return true;
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x73f
 // Size: 0xb7
@@ -229,7 +229,7 @@ function barrel_launch(var_f3b898b4c1762e04, var_d062fa74a20c4a2, timer) {
     self physicslaunchserver(self.origin, var_edcb1eeb9e6136bf * var_7e47bfbb162bf7fe);
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7fe
 // Size: 0x14
@@ -240,7 +240,7 @@ function barrel_one_hit_kill() {
     self notify("barrel_death");
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x81a
 // Size: 0xa2
@@ -257,7 +257,7 @@ function barrel_player() {
     }
 }
 
-// Namespace namespace_5cc04bea2bab73e7 / scripts\sp\destructibles\barrel_common
+// Namespace barrel_common / scripts\sp\destructibles\barrel_common
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c4
 // Size: 0x9e

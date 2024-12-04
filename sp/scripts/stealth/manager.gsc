@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\common\values.gsc;
-#using scripts\stealth\corpse.gsc;
-#using scripts\stealth\event.gsc;
-#using scripts\smartobjects\utility.gsc;
 #using script_2af9b954e1db92d0;
 #using script_3433999dc639c4c5;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\enemy.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using scripts\stealth\group.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\smartobjects\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\corpse;
+#using scripts\stealth\debug;
+#using scripts\stealth\enemy;
+#using scripts\stealth\event;
+#using scripts\stealth\group;
+#using scripts\stealth\threat_sight;
+#using scripts\stealth\utility;
 
 #namespace manager;
 
@@ -317,9 +317,9 @@ function init_event_distances() {
 // Checksum 0x0, Offset: 0x154e
 // Size: 0xd1
 function set_event_distances(array) {
-    foreach (state, var_aecf66bdcfdcc264 in array) {
+    foreach (state, state_array in array) {
         assertex(state == "hidden" || state == "spotted", "set_event_distances expects the first array key to be hidden or spotted.");
-        foreach (event, value in var_aecf66bdcfdcc264) {
+        foreach (event, value in state_array) {
             function_20d5809a5332448f(state, event, value);
             if (function_eac0cd99c9c6d8ee() == state) {
                 function_7afb89fc511bf315(event, value);
@@ -503,9 +503,9 @@ function teams_thread() {
 function event_change(name) {
     function_ab26892d96278702(name);
     ai_event = function_373416b9ec7dd155();
-    foreach (var_aecf66bdcfdcc264 in ai_event) {
+    foreach (state_array in ai_event) {
         if (state == name) {
-            foreach (key, event in var_aecf66bdcfdcc264) {
+            foreach (key, event in state_array) {
                 function_7afb89fc511bf315(key, event);
                 function_1a3dd0fbfe26893f(key, event);
             }

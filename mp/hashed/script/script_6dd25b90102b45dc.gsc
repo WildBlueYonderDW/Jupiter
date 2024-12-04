@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_6bffae1b97f70547;
-#using scripts\engine\throttle.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\common\devgui.gsc;
 #using script_58682e6578ce0515;
+#using script_6bffae1b97f70547;
+#using script_7edf952f8921aa6b;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace cryofreeze;
 

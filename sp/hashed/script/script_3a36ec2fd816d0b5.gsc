@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
 #using script_1b755c51be1d471e;
-#using scripts\code\character.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
 
 #namespace namespace_2e95a4b6544e01a9;
 
@@ -35,7 +35,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "civilian_react_loco";
-    self.voice = #"hash_56d2a75e94b008ce";
+    self.voice = #"unitednationsfemale";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self function_6b0082dec4510b24("bodies_civilian_asm_female_5", namespace_d85305d988e4fe98::main());

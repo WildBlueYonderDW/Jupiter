@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\ai_behavior.gsc;
-#using script_2bc0b0102f9b7751;
-#using script_53da3333b83b3527;
-#using script_371b4c2ab5861e62;
-#using scripts\stealth\enemy.gsc;
-#using script_640cf1641c03e2a0;
 #using script_268c4da1ef6a20a8;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\common.gsc;
+#using script_2bc0b0102f9b7751;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_53da3333b83b3527;
+#using script_640cf1641c03e2a0;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\utility\teams;
+#using scripts\stealth\enemy;
 
 #namespace namespace_eb6ac52b0efdfdcf;
 

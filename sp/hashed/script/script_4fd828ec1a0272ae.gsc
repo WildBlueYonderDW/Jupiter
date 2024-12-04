@@ -1,4 +1,4 @@
-#using scripts\asm\asm_sp.gsc;
+#using scripts\asm\asm_sp;
 
 #namespace pain;
 

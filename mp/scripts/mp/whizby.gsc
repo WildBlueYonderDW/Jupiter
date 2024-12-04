@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using script_44a4ad8c0d35f203;
-#using scripts\mp\battlechatter_mp.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\gamescore.gsc;
+#using script_44a4ad8c0d35f203;
+#using script_5762ac2f22202ba2;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\gamescore;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace whizby;
 
@@ -17,7 +17,7 @@
 // Checksum 0x0, Offset: 0x155
 // Size: 0x25
 function init() {
-    setdvarifuninitialized(@"hash_9789797e3340f37a", 0);
+    setdvarifuninitialized(@"scr_suppression", 0);
     scripts\mp\utility\spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
     namespace_d55725aa5dd0745b::init();
 }
@@ -57,7 +57,7 @@ function dowhizby(attacker, distance, position, forward, effecttime) {
     }
     weapon = attacker getcurrentweapon();
     if (isdefined(weapon) && weaponclass(weapon) == "sniper") {
-        thread scripts\mp\battlechatter_mp::trysaylocalsound(self, #"hash_cafa7ad7442c35d5", undefined, 0.2);
+        thread scripts\mp\battlechatter_mp::trysaylocalsound(self, #"bc_flavor_player_surprise", undefined, 0.2);
     }
     thread scripts\mp\battlechatter_mp::addrecentattacker(attacker);
     return effecttime;
@@ -68,7 +68,7 @@ function dowhizby(attacker, distance, position, forward, effecttime) {
 // Checksum 0x0, Offset: 0x2b0
 // Size: 0x7c
 function dosuppression(attacker) {
-    if (getdvarint(@"hash_9789797e3340f37a", 1) == 1) {
+    if (getdvarint(@"scr_suppression", 1) == 1) {
         weapon = attacker getcurrentweapon();
         if (weapon hasattachment("linearbrake") && !namespace_e0ee43ef2dddadaa::iskillstreakweapon(weapon) && !scripts\mp\utility\perk::_hasperk("specialty_blastshield")) {
             attacker hudicontype("suppression");

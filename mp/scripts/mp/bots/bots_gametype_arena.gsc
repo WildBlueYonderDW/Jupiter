@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\gametypes\arena.gsc;
-#using scripts\mp\bots\bots_gametype_dom.gsc;
-#using scripts\mp\bots\bots_gametype_gun.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\gametypes\dom.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_gametype_dom;
+#using scripts\mp\bots\bots_gametype_gun;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\equipment;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\arena;
+#using scripts\mp\gametypes\dom;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\weapon;
 
 #namespace bots_gametype_arena;
 

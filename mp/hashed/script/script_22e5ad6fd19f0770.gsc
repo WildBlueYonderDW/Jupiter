@@ -1,9 +1,9 @@
 #using script_3b78d23dad7ec5be;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\engine\utility.gsc;
 #using script_405d05c89e998922;
+#using script_7edf952f8921aa6b;
+#using scripts\common\callbacks;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace namespace_4a108cfc226ec7d6;
 
@@ -32,7 +32,7 @@ function private on_damaged(params) {
     if (isexplosivedamagemod(params.smeansofdeath) && (!isdefined(params.einflictor) || !istrue(params.einflictor.prevent_knockdown)) && !function_aa75c57142022473(params.sweapon)) {
         if (params.idamage > self.knockdowndamagethreshold) {
             if (!function_e67a89537ae7d4b7()) {
-                function_e96aac065abbec4e(params.vpoint);
+                knockdown_ai(params.vpoint);
             }
         }
     }

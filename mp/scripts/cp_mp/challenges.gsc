@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_58be75c518bf0d40;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
 #using script_293ba44c408fef1;
 #using script_4b87f2871b6b025c;
+#using script_58be75c518bf0d40;
+#using script_600b944a95c3a7bf;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace challenges;
 
@@ -61,7 +61,7 @@ function init() {
             if (!getdvarint(@"hash_48ae63d778571691", 0)) {
                 continue;
             }
-            setdvar(@"hash_37acf332efd205cc", 1);
+            setdvar(@"force_challenges", 1);
             setdvar(@"hash_5a8c71e376f35349", 1);
             return;
         }
@@ -914,7 +914,7 @@ function function_57f4ba1fd9ececba(player) {
     if (isdefined(player.gulaguses) && player.gulaguses > 0) {
         var_ea6974f3b567cbaa = function_6d40f12a09494350(var_ea6974f3b567cbaa, ae_utility::function_e2ff8f4b4e94f723(#"hash_b4508a899f18c65", #"hash_16c4738561824b4b"));
     }
-    aeeventname = #"hash_5d527754abc853f2";
+    aeeventname = #"match_placement";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"placement"), placement, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_b4508a899f18c65"), var_ea6974f3b567cbaa];
     player reportChallengeUserSerializedEventWrapper(aeeventid, params);
@@ -1006,7 +1006,7 @@ function function_b5929663421247fa(player, result, winner) {
     var_bb38571cca0414f = function_c1945f26d99b0ed9(player);
     aeeventname = #"end_match";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"match_result"), result, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_8dd9828579063e7"), var_8142a29197569218, ae_utility::function_d6f771aedba70ce7(aeeventname, #"placement"), placement, ae_utility::function_d6f771aedba70ce7(aeeventname, #"playlist_id"), playlistid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"team_size"), teamsize, ae_utility::function_d6f771aedba70ce7(aeeventname, #"lobby_id"), lobbyid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287b83e723dcd4"), var_bb38571cca0414f[0], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287c83e723de87"), var_bb38571cca0414f[1], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287d83e723e03a"), var_bb38571cca0414f[2], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287e83e723e1ed"), var_bb38571cca0414f[3], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287783e723d608"), var_bb38571cca0414f[4], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"match_id"), function_94c7ae7049488358(), ae_utility::function_d6f771aedba70ce7(aeeventname, #"objective_time"), objtime, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_c4c49edac6cd17e5"), player.var_1949291e417ccc24, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), player.kills, ae_utility::function_d6f771aedba70ce7(aeeventname, #"party_size"), partysize];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"match_result"), result, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_8dd9828579063e7"), var_8142a29197569218, ae_utility::function_d6f771aedba70ce7(aeeventname, #"placement"), placement, ae_utility::function_d6f771aedba70ce7(aeeventname, #"playlist_id"), playlistid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"team_size"), teamsize, ae_utility::function_d6f771aedba70ce7(aeeventname, #"lobby_id"), lobbyid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287b83e723dcd4"), var_bb38571cca0414f[0], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287c83e723de87"), var_bb38571cca0414f[1], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287d83e723e03a"), var_bb38571cca0414f[2], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287e83e723e1ed"), var_bb38571cca0414f[3], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287783e723d608"), var_bb38571cca0414f[4], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"match_id"), function_94c7ae7049488358(), ae_utility::function_d6f771aedba70ce7(aeeventname, #"objective_time"), objtime, ae_utility::function_d6f771aedba70ce7(aeeventname, #"reload_amount"), player.var_1949291e417ccc24, ae_utility::function_d6f771aedba70ce7(aeeventname, #"kill_amount"), player.kills, ae_utility::function_d6f771aedba70ce7(aeeventname, #"party_size"), partysize];
     /#
         function_7d97a2a745e514c4(aeeventid, params);
     #/
@@ -1100,7 +1100,7 @@ function function_1ba256da09a9878a(player, lootid, lootref, loottype, quantity, 
     var_7d9803744a905b95 = function_68ffb11dc4c6b979(var_7d9803744a905b95, aeeventname);
     var_48c0c20123a7896a = function_68ffb11dc4c6b979(var_48c0c20123a7896a, aeeventname);
     var_f6eb539d20b3ab44 = function_68ffb11dc4c6b979(var_f6eb539d20b3ab44, aeeventname);
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"string_ref"), var_99bd169488e48ac1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"value"), quantity, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"loot_id"), lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d7806c74c1d4a500"), typeid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"cash_value"), cashvalue, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_80f9b45ba3e6882e"), var_e7d05247043893ad, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"zm_rarity"), itemrarity, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_e6b742f2dbcdaa7a"), var_7d9803744a905b95, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_c1df2daa62247afe"), var_48c0c20123a7896a, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_54e349112fcb5cd8"), var_f6eb539d20b3ab44];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"string_ref"), var_99bd169488e48ac1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"value"), quantity, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"loot_id"), lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d7806c74c1d4a500"), typeid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"cash_value"), cashvalue, ae_utility::function_d6f771aedba70ce7(aeeventname, #"buy_action"), var_e7d05247043893ad, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"zm_rarity"), itemrarity, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_e6b742f2dbcdaa7a"), var_7d9803744a905b95, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_c1df2daa62247afe"), var_48c0c20123a7896a, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_54e349112fcb5cd8"), var_f6eb539d20b3ab44];
     function_8e81148472fb520a(player, aeeventname, params);
 }
 
@@ -1308,7 +1308,7 @@ function function_d312ec9b34f1dfa(player) {
     }
     gamemode = getchallengegamemode(player);
     gametype = function_17c5d7feb226e256();
-    aeeventname = #"hash_a5f40934b63acf12";
+    aeeventname = #"on_hit";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     playlistid = getplaylistid();
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"playlist_id"), playlistid];
@@ -1576,7 +1576,7 @@ function function_597bc208d923a465(ref, totalkills) {
     var_5c27042ad7a17e62 = function_68ffb11dc4c6b979(var_5c27042ad7a17e62, aeeventname);
     var_5c27032ad7a17c2f = function_68ffb11dc4c6b979(var_5c27032ad7a17c2f, aeeventname);
     bitfield = function_68ffb11dc4c6b979(bitfield, aeeventname);
-    function_8e81148472fb520a(self, aeeventname, [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), total_kills, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_834ae5ef756e04aa"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_797a1495585997f4"), bitfield, ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), killstreak_lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_bd518e95df4103fe"), var_5c27042ad7a17e62, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_bd518d95df41024b"), var_5c27032ad7a17c2f]);
+    function_8e81148472fb520a(self, aeeventname, [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"kill_amount"), total_kills, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_834ae5ef756e04aa"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_797a1495585997f4"), bitfield, ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), killstreak_lootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_bd518e95df4103fe"), var_5c27042ad7a17e62, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_bd518d95df41024b"), var_5c27032ad7a17c2f]);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -1940,7 +1940,7 @@ function oncontractend(contractid, completed, var_1229758a8a60ba86, startingpoi,
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"value"), contractid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"operator_id"), operatorlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_92939ab8dccb3d82"), location, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_dc0d981f2d59d210"), location2, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_bf1744b6c07743aa"), var_98ffdd148b962576, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287b83e723dcd4"), var_bb38571cca0414f[0], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287c83e723de87"), var_bb38571cca0414f[1], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287d83e723e03a"), var_bb38571cca0414f[2], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287e83e723e1ed"), var_bb38571cca0414f[3], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_f3287783e723d608"), var_bb38571cca0414f[4], ae_utility::function_d6f771aedba70ce7(aeeventname, #"circle_index"), circleindex];
     if (isdefined(typeid)) {
-        params[params.size] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_4c796b3078f0101c");
+        params[params.size] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"contract_type");
         params[params.size] = typeid;
     }
     /#
@@ -2067,8 +2067,8 @@ function function_da9003df08944b01(instance) {
 // Checksum 0x0, Offset: 0x92f7
 // Size: 0x6f
 function onkioskpurchaseitem(itemtyperef, itemref, lootid, quantity, cashvalue, var_827283fbf3803e56) {
-    var_707bc435f8518b62 = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"buy"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62, undefined, var_827283fbf3803e56);
+    buy_action = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"buy"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action, undefined, var_827283fbf3803e56);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -2076,8 +2076,8 @@ function onkioskpurchaseitem(itemtyperef, itemref, lootid, quantity, cashvalue, 
 // Checksum 0x0, Offset: 0x936e
 // Size: 0x6e
 function function_ea50038423fc4cfc(itemtyperef, itemref, lootid, quantity, cashvalue, var_f237807396377232) {
-    var_707bc435f8518b62 = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"sell"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62, var_f237807396377232);
+    buy_action = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"sell"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action, var_f237807396377232);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -2085,8 +2085,8 @@ function function_ea50038423fc4cfc(itemtyperef, itemref, lootid, quantity, cashv
 // Checksum 0x0, Offset: 0x93e4
 // Size: 0x9b
 function function_7ba17fb69c312e2c(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"trade"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"trade"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
     loot_method = function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_2af1f13aa6ae3b5f", #"loot"));
     function_d24138b32084fc3e(self, lootid, itemtyperef, loot_method, quantity);
 }
@@ -2096,8 +2096,8 @@ function function_7ba17fb69c312e2c(itemtyperef, itemref, lootid, quantity, cashv
 // Checksum 0x0, Offset: 0x9487
 // Size: 0x64
 function function_c2c80007aff49924(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"hash_8007c41db906acd9"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"hash_8007c41db906acd9"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -2105,8 +2105,8 @@ function function_c2c80007aff49924(itemtyperef, itemref, lootid, quantity, cashv
 // Checksum 0x0, Offset: 0x94f3
 // Size: 0x64
 function function_3d8a8b0878f9f129(itemtyperef, itemref, lootid, quantity, cashvalue) {
-    var_707bc435f8518b62 = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"hash_80f9b45ba3e6882e", #"hash_23f44b864cfb53cd"));
-    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, var_707bc435f8518b62);
+    buy_action = scripts\cp_mp\challenges::function_6d40f12a09494350(0, ae_utility::function_e2ff8f4b4e94f723(#"buy_action", #"hash_23f44b864cfb53cd"));
+    function_1ba256da09a9878a(self, lootid, itemref, itemtyperef, quantity, cashvalue, buy_action);
 }
 
 // Namespace challenges / scripts\cp_mp\challenges
@@ -2146,7 +2146,7 @@ function onPickupWeapon(objweapon) {
     if (!isdefined(weaponlootid)) {
         weaponlootid = 0;
     }
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), weaponlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd8c514ea5582"), var_349e390338192305[0], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd7c514ea53cf"), var_349e390338192305[1], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd6c514ea521c"), var_349e390338192305[2], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd5c514ea5069"), var_349e390338192305[3], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd4c514ea4eb6"), var_349e390338192305[4], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd3c514ea4d03"), var_349e390338192305[5], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd2c514ea4b50"), var_349e390338192305[6], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce1c514ea64cd"), var_349e390338192305[7], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce0c514ea631a"), var_349e390338192305[8], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_1b7a08e28a2f9d76"), var_349e390338192305[9], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_855d0248a4162b18"), isLoadoutWeapon];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), weaponlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment1"), var_349e390338192305[0], ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment2"), var_349e390338192305[1], ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment3"), var_349e390338192305[2], ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment4"), var_349e390338192305[3], ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment5"), var_349e390338192305[4], ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment6"), var_349e390338192305[5], ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment7"), var_349e390338192305[6], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce1c514ea64cd"), var_349e390338192305[7], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce0c514ea631a"), var_349e390338192305[8], ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_1b7a08e28a2f9d76"), var_349e390338192305[9], ae_utility::function_d6f771aedba70ce7(aeeventname, #"loadout_weapon"), isLoadoutWeapon];
     reportChallengeUserSerializedEventWrapper(aeeventid, params);
 }
 
@@ -2271,7 +2271,7 @@ function function_8c51020c52153152() {
     }
     gamemode = getchallengegamemode(self);
     gametype = function_17c5d7feb226e256();
-    aeeventname = #"hash_8e95685b91087d05";
+    aeeventname = #"interrogate";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype];
     reportChallengeUserSerializedEventWrapper(aeeventid, params);
@@ -2689,7 +2689,7 @@ function function_d6973792fd45b035() {
         level.var_e4f4a057080c0ed5["specialty_tac_resist"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"hash_228c132d78456c6");
         level.var_e4f4a057080c0ed5["specialty_surveillance"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"hash_b3aa7c0a8c7ed3ac");
         level.var_e4f4a057080c0ed5["specialty_quick_fix"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"hash_b7589c37d759ad90");
-        level.var_e4f4a057080c0ed5["specialty_null"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"hash_208442e5e74e8368");
+        level.var_e4f4a057080c0ed5["specialty_null"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"speciality_null");
         level.var_e4f4a057080c0ed5["specialty_tac_mask"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"specialty_tac_mask");
         level.var_e4f4a057080c0ed5["specialty_hijacked_iff_strobe"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"specialty_hijacked_iff_strobe");
         level.var_e4f4a057080c0ed5["specialty_high_gain_antenna"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"specialty_high_gain_antenna");
@@ -2741,8 +2741,8 @@ function function_d6973792fd45b035() {
         level.var_e4f4a057080c0ed5["specialty_compression_carrier_vest"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"specialty_compression_carrier_vest");
         level.var_e4f4a057080c0ed5["specialty_compression_plate"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"specialty_compression_plate");
         level.var_e4f4a057080c0ed5["specialty_rhino_rig"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"specialty_rhino_rig");
-        level.var_e4f4a057080c0ed5["none"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"hash_208442e5e74e8368");
-        level.var_e4f4a057080c0ed5[""] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"hash_208442e5e74e8368");
+        level.var_e4f4a057080c0ed5["none"] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"speciality_null");
+        level.var_e4f4a057080c0ed5[""] = function_e2ff8f4b4e94f723(#"hash_bd518e95df4103fe", #"speciality_null");
     }
     return level.var_e4f4a057080c0ed5;
 }
@@ -2754,8 +2754,8 @@ function function_d6973792fd45b035() {
 function function_343f3f4300421f65() {
     if (!isdefined(level.var_920b8666b284c605)) {
         level.var_920b8666b284c605 = [];
-        level.var_e4f4a057080c0ed5["none"] = function_e2ff8f4b4e94f723(#"hash_bd518d95df41024b", #"hash_208442e5e74e8368");
-        level.var_e4f4a057080c0ed5[""] = function_e2ff8f4b4e94f723(#"hash_bd518d95df41024b", #"hash_208442e5e74e8368");
+        level.var_e4f4a057080c0ed5["none"] = function_e2ff8f4b4e94f723(#"hash_bd518d95df41024b", #"speciality_null");
+        level.var_e4f4a057080c0ed5[""] = function_e2ff8f4b4e94f723(#"hash_bd518d95df41024b", #"speciality_null");
         level.var_920b8666b284c605["specialty_combined_arms_vest"] = function_e2ff8f4b4e94f723(#"hash_bd518d95df41024b", #"specialty_combined_arms_vest");
     }
     return level.var_920b8666b284c605;
@@ -3520,13 +3520,13 @@ function reportKillChallengeEvent(attacker, victimstruct, modifiers1, modifiers2
         level.var_a3dfc554743efd89[#"weapon_loot_id"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id");
         level.var_a3dfc554743efd89[#"gametype"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype");
         level.var_a3dfc554743efd89[#"version"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"version");
-        level.var_a3dfc554743efd89[#"hash_af7cd8c514ea5582"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd8c514ea5582");
-        level.var_a3dfc554743efd89[#"hash_af7cd7c514ea53cf"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd7c514ea53cf");
-        level.var_a3dfc554743efd89[#"hash_af7cd6c514ea521c"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd6c514ea521c");
-        level.var_a3dfc554743efd89[#"hash_af7cd5c514ea5069"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd5c514ea5069");
-        level.var_a3dfc554743efd89[#"hash_af7cd4c514ea4eb6"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd4c514ea4eb6");
-        level.var_a3dfc554743efd89[#"hash_af7cd3c514ea4d03"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd3c514ea4d03");
-        level.var_a3dfc554743efd89[#"hash_af7cd2c514ea4b50"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7cd2c514ea4b50");
+        level.var_a3dfc554743efd89[#"weapon_attachment1"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment1");
+        level.var_a3dfc554743efd89[#"weapon_attachment2"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment2");
+        level.var_a3dfc554743efd89[#"weapon_attachment3"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment3");
+        level.var_a3dfc554743efd89[#"weapon_attachment4"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment4");
+        level.var_a3dfc554743efd89[#"weapon_attachment5"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment5");
+        level.var_a3dfc554743efd89[#"weapon_attachment6"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment6");
+        level.var_a3dfc554743efd89[#"weapon_attachment7"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_attachment7");
         level.var_a3dfc554743efd89[#"hash_af7ce1c514ea64cd"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce1c514ea64cd");
         level.var_a3dfc554743efd89[#"hash_af7ce0c514ea631a"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_af7ce0c514ea631a");
         level.var_a3dfc554743efd89[#"hash_1b7a08e28a2f9d76"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_1b7a08e28a2f9d76");
@@ -3560,7 +3560,7 @@ function reportKillChallengeEvent(attacker, victimstruct, modifiers1, modifiers2
         level.var_a7f8fb431b350d82[#"reportKillChallengeEvent"] = 1;
     }
     paramcache = level.var_a3dfc554743efd89;
-    eventparams = [paramcache[#"gamemode"], gamemode, paramcache[#"hash_834ae5ef756e04aa"], operatorlootid, paramcache[#"weapon_loot_id"], weaponlootid, paramcache[#"gametype"], gametype, paramcache[#"version"], 1, paramcache[#"hash_af7cd8c514ea5582"], var_349e390338192305[0], paramcache[#"hash_af7cd7c514ea53cf"], var_349e390338192305[1], paramcache[#"hash_af7cd6c514ea521c"], var_349e390338192305[2], paramcache[#"hash_af7cd5c514ea5069"], var_349e390338192305[3], paramcache[#"hash_af7cd4c514ea4eb6"], var_349e390338192305[4], paramcache[#"hash_af7cd3c514ea4d03"], var_349e390338192305[5], paramcache[#"hash_af7cd2c514ea4b50"], var_349e390338192305[6], paramcache[#"hash_af7ce1c514ea64cd"], var_349e390338192305[7], paramcache[#"hash_af7ce0c514ea631a"], var_349e390338192305[8], paramcache[#"hash_1b7a08e28a2f9d76"], var_349e390338192305[9], paramcache[#"hash_a0dd9c7405f2d85e"], var_b28608820870666, paramcache[#"hash_7f94e81c1787ff7a"], modifiers1, paramcache[#"hash_7f94e71c1787fdc7"], modifiers2, paramcache[#"hash_e2f5c601b57b3960"], enemytype, paramcache[#"hash_92939ab8dccb3d82"], location, paramcache[#"hash_dc0d981f2d59d210"], location2, paramcache[#"hash_bd518e95df4103fe"], var_4adb82c833e8d5ab, paramcache[#"hash_bd518d95df41024b"], var_4adb83c833e8d7de, paramcache[#"loot_id"], var_c0d251f100091822, paramcache[#"hash_194a05cc530d4e0d"], blueprintlootid, paramcache[#"distance"], v_distance, paramcache[#"hash_1ce058287dc8c73b"], attachmentflags, paramcache[#"weapon_camo"], weaponcamo, paramcache[#"hit_loc"], hitloc, paramcache[#"team_size"], teamsize, paramcache[#"hash_ab2e7c9b727a3d6c"], var_3fff36caeace1b84, paramcache[#"hash_2f109e5ad9e45eff"], criticalstreak, paramcache[#"hash_7e912c64fa5c6cde"], var_79a1a1fe9f3bf357, paramcache[#"hash_16db99d7417ef29d"], var_a0595326ca4cf35d, paramcache[#"hash_22d8c6e760626656"], var_7b718ef6c64f049f, paramcache[#"hash_7f94e61c1787fc14"], modifiers3, paramcache[#"playlist_id"], playlistid, paramcache[#"victim_on_zipline"], victim_on_zipline];
+    eventparams = [paramcache[#"gamemode"], gamemode, paramcache[#"hash_834ae5ef756e04aa"], operatorlootid, paramcache[#"weapon_loot_id"], weaponlootid, paramcache[#"gametype"], gametype, paramcache[#"version"], 1, paramcache[#"weapon_attachment1"], var_349e390338192305[0], paramcache[#"weapon_attachment2"], var_349e390338192305[1], paramcache[#"weapon_attachment3"], var_349e390338192305[2], paramcache[#"weapon_attachment4"], var_349e390338192305[3], paramcache[#"weapon_attachment5"], var_349e390338192305[4], paramcache[#"weapon_attachment6"], var_349e390338192305[5], paramcache[#"weapon_attachment7"], var_349e390338192305[6], paramcache[#"hash_af7ce1c514ea64cd"], var_349e390338192305[7], paramcache[#"hash_af7ce0c514ea631a"], var_349e390338192305[8], paramcache[#"hash_1b7a08e28a2f9d76"], var_349e390338192305[9], paramcache[#"hash_a0dd9c7405f2d85e"], var_b28608820870666, paramcache[#"hash_7f94e81c1787ff7a"], modifiers1, paramcache[#"hash_7f94e71c1787fdc7"], modifiers2, paramcache[#"hash_e2f5c601b57b3960"], enemytype, paramcache[#"hash_92939ab8dccb3d82"], location, paramcache[#"hash_dc0d981f2d59d210"], location2, paramcache[#"hash_bd518e95df4103fe"], var_4adb82c833e8d5ab, paramcache[#"hash_bd518d95df41024b"], var_4adb83c833e8d7de, paramcache[#"loot_id"], var_c0d251f100091822, paramcache[#"hash_194a05cc530d4e0d"], blueprintlootid, paramcache[#"distance"], v_distance, paramcache[#"hash_1ce058287dc8c73b"], attachmentflags, paramcache[#"weapon_camo"], weaponcamo, paramcache[#"hit_loc"], hitloc, paramcache[#"team_size"], teamsize, paramcache[#"hash_ab2e7c9b727a3d6c"], var_3fff36caeace1b84, paramcache[#"hash_2f109e5ad9e45eff"], criticalstreak, paramcache[#"hash_7e912c64fa5c6cde"], var_79a1a1fe9f3bf357, paramcache[#"hash_16db99d7417ef29d"], var_a0595326ca4cf35d, paramcache[#"hash_22d8c6e760626656"], var_7b718ef6c64f049f, paramcache[#"hash_7f94e61c1787fc14"], modifiers3, paramcache[#"playlist_id"], playlistid, paramcache[#"victim_on_zipline"], victim_on_zipline];
     if (isdefined(var_1d68c79557cc54ea)) {
         if (isdefined(var_1d68c79557cc54ea[0])) {
             eventparams[eventparams.size] = paramcache[#"hash_648b2ad7f16589f0"];
@@ -3634,7 +3634,7 @@ function function_e6ba0866eca5b87b(attacker, iskillstreak) {
             }
         }
     }
-    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_d404f427903135e"), var_9b8336914d1339a9, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), weaponlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"is_killstreak"), iskillstreak];
+    params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"kill_amount"), var_9b8336914d1339a9, ae_utility::function_d6f771aedba70ce7(aeeventname, #"weapon_loot_id"), weaponlootid, ae_utility::function_d6f771aedba70ce7(aeeventname, #"is_killstreak"), iskillstreak];
     attacker reportChallengeUserSerializedEventWrapper(aeeventid, params);
 }
 
@@ -3869,7 +3869,7 @@ function private reportstat(statname, amount) {
     }
     reportstats = 0;
     damage_amount = 0;
-    var_cfb8ab0eb8945dbe = 0;
+    score_amount = 0;
     time_driving = 0;
     var_6eae97b1c039638c = 0;
     var_8dbdb5edd5a730f9 = 0;
@@ -3879,7 +3879,7 @@ function private reportstat(statname, amount) {
         reportstats = 1;
         break;
     case #"hash_2c58990905f03e75":
-        var_cfb8ab0eb8945dbe = amount;
+        score_amount = amount;
         reportstats = 1;
         break;
     case #"hash_32e41af5a3ef1340":
@@ -3933,7 +3933,7 @@ function private reportstat(statname, amount) {
             level.var_d44156bac78184ca[#"hash_6ee3cf6540c5bcac"] = ae_utility::function_d6f771aedba70ce7(aeeventname, #"hash_6ee3cf6540c5bcac");
         }
         paramcache = level.var_d44156bac78184ca;
-        eventparams = [paramcache[#"version"], 1, paramcache[#"gamemode"], var_6ddcf3c092eaf383.gamemode, paramcache[#"gametype"], var_6ddcf3c092eaf383.gametype, paramcache[#"damage"], damage_amount, paramcache[#"score"], var_cfb8ab0eb8945dbe, paramcache[#"team_size"], var_6ddcf3c092eaf383.teamsize, paramcache[#"time_driving"], time_driving, paramcache[#"value"], var_6eae97b1c039638c, paramcache[#"hash_6ee3cf6540c5bcac"], var_8dbdb5edd5a730f9];
+        eventparams = [paramcache[#"version"], 1, paramcache[#"gamemode"], var_6ddcf3c092eaf383.gamemode, paramcache[#"gametype"], var_6ddcf3c092eaf383.gametype, paramcache[#"damage"], damage_amount, paramcache[#"score"], score_amount, paramcache[#"team_size"], var_6ddcf3c092eaf383.teamsize, paramcache[#"time_driving"], time_driving, paramcache[#"value"], var_6eae97b1c039638c, paramcache[#"hash_6ee3cf6540c5bcac"], var_8dbdb5edd5a730f9];
         if (!isdefined(level.var_6de4f66f58ecd7b1)) {
             level.var_6de4f66f58ecd7b1 = [];
         }
@@ -4392,7 +4392,7 @@ function function_e9dc49603ac403d(enemytype, var_7b718ef6c64f049f, victim) {
             category = [[ var_3b341f9dc3b7ffb4 ]](victim, "category");
             subcategory = [[ var_3b341f9dc3b7ffb4 ]](victim, "subcategory");
             if (issubstr(victim.agent_type, "aq")) {
-                enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"aq"));
+                enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"AQ"));
             } else if (var_86df29145c484d9c) {
                 enemytype = function_6d40f12a09494350(enemytype, ae_utility::function_e2ff8f4b4e94f723(#"hash_e2f5c601b57b3960", #"hash_4ece742ef2d8f981"));
             } else if (function_c7496288999ac847(victim.agent_type, subcategory)) {
@@ -4518,7 +4518,7 @@ function function_ca0ab723ebcf6d79() {
     }
     self.var_d405f79d63134727 += 1;
     awardflag = 0;
-    awardflag = function_6d40f12a09494350(awardflag, ae_utility::function_e2ff8f4b4e94f723(#"hash_ecf2f40148801ac5", #"hash_972a0e505ecce104"));
+    awardflag = function_6d40f12a09494350(awardflag, ae_utility::function_e2ff8f4b4e94f723(#"hash_ecf2f40148801ac5", #"token_award"));
     function_742decc7f891bb0e(awardflag);
 }
 
@@ -5062,7 +5062,7 @@ function function_183b2d4a1ccd46b3(player) {
     gamemode = getchallengegamemode(player);
     gametype = function_17c5d7feb226e256();
     playlistid = getplaylistid();
-    aeeventname = #"hash_6b8fa32e5aad5318";
+    aeeventname = #"in_obj";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"playlist_id"), playlistid];
     /#
@@ -5102,7 +5102,7 @@ function function_4cb78ed013587e76(player, increment) {
     gamemode = getchallengegamemode(player);
     gametype = function_17c5d7feb226e256();
     playlistid = getplaylistid();
-    aeeventname = #"hash_bed999c3924f3e2b";
+    aeeventname = #"denied_kill";
     aeeventid = ae_utility::function_6e2deb013c9ca85e(aeeventname);
     params = [ae_utility::function_d6f771aedba70ce7(aeeventname, #"version"), 1, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gamemode"), gamemode, ae_utility::function_d6f771aedba70ce7(aeeventname, #"gametype"), gametype, ae_utility::function_d6f771aedba70ce7(aeeventname, #"playlist_id"), playlistid];
     /#

@@ -1,38 +1,38 @@
-#using scripts\engine\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\obj_zonecapture.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\vehicles\vehicle_collision.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\equipment\tactical_cover.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\spawnfactor.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\gametypes\wm_buildable.gsc;
 #using script_62384cde1a08c286;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\vehicles\vehicle_collision;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\obj_zonecapture;
+#using scripts\mp\gametypes\wm_buildable;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\persistence;
+#using scripts\mp\rank;
+#using scripts\mp\spawnfactor;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace escort;
 
@@ -41,7 +41,7 @@
 // Checksum 0x0, Offset: 0x19e1
 // Size: 0x2ac
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -234,17 +234,17 @@ function function_64ea0c4f3f0f33a8() {
     level.var_bccbe1ff8f6ea962.capture_zones = [];
     var_a9240f92b0769a9d = [];
     var_83ced3c593a28a8a = [];
-    var_4dd545fc4f717289 = 0;
+    use_structs = 0;
     currnode = getvehiclenode("escort_tank_path", "targetname");
     if (!isdefined(currnode)) {
         currnode = getstruct("escort_tank_path", "targetname");
-        var_4dd545fc4f717289 = 1;
+        use_structs = 1;
     }
     level.escortroute["escort_tank_path"] = currnode;
     var_a9240f92b0769a9d[0] = currnode.origin;
     var_83ced3c593a28a8a["escort_tank_path"] = 0;
     while (isdefined(currnode.target)) {
-        if (var_4dd545fc4f717289) {
+        if (use_structs) {
             currnode = getstruct(currnode.target, "targetname");
         } else {
             currnode = getvehiclenode(currnode.target, "targetname");
@@ -469,7 +469,7 @@ function spawnescortvehicle(startnode) {
     vehicle.speedmultiplier = 1;
     vehicle.var_20eb6b3f6aa4f46f = 0.5;
     vehicle.currnodeindex = startnode;
-    vehicle.var_abeceaa25490ff4a = 0;
+    vehicle.useP2P = 0;
     level thread function_3129b5cf1b77c634(vehicle);
     thread scripts\cp_mp\vehicles\vehicle_collision::vehicle_collision_updateinstance(vehicle);
     return vehicle;
@@ -495,7 +495,7 @@ function function_7706e4552129710c(startnode) {
         vehicle thread function_7318c4542deb6762(level.var_bccbe1ff8f6ea962);
     }
     if (istrue(level.var_b5b193ddb90ac26)) {
-        vehicle.var_6028c8ac807409c0 = 1;
+        vehicle.canStopByDefenders = 1;
     }
     if (istrue(level.var_d64a2d9f18e2a1b6)) {
         vehicle.demigodmode = 1;
@@ -518,7 +518,7 @@ function function_7706e4552129710c(startnode) {
     endnode = pathnodes[pathnodes.size - 1];
     vehicle.pathnodes = pathnodes;
     if (istrue(level.var_9c7ce92ca0bfa182) || isstruct(startnode)) {
-        vehicle.var_abeceaa25490ff4a = 1;
+        vehicle.useP2P = 1;
         vehicle addcomponent("p2p");
         vehicle thread function_c1bc249b0499979e();
     } else {
@@ -652,7 +652,7 @@ function function_367f87c96dccaf2() {
             var_8fb02da86884df3f = 0;
         }
         if (var_8fb02da86884df3f >= 2) {
-            if (!istrue(self.var_abeceaa25490ff4a) && isdefined(self.pathnodes[self.var_6bb0ab1fe092bd5d - 1])) {
+            if (!istrue(self.useP2P) && isdefined(self.pathnodes[self.var_6bb0ab1fe092bd5d - 1])) {
                 self startpath(self.pathnodes[self.var_6bb0ab1fe092bd5d - 1]);
                 var_8fb02da86884df3f = 0;
             }
@@ -712,7 +712,7 @@ function function_7d5057db2f8ddb6f(tank, objidnum) {
             player.var_3a9ae1fe9210a5b7 = array_contains(nearbydefenders, player);
         }
         tank.contested = 0;
-        if (istrue(tank.var_6028c8ac807409c0)) {
+        if (istrue(tank.canStopByDefenders)) {
             if (shouldmove && nearbydefenders.size > 0) {
                 tank.contested = 1;
                 shouldmove = 0;
@@ -816,7 +816,7 @@ function function_221a50fb1dadfc46(speed) {
     } else {
         setomnvar("ui_wm_escort_dir", ter_op(self.veh_pathdir == "forward", 1, -1));
     }
-    if (self.var_abeceaa25490ff4a) {
+    if (self.useP2P) {
         if (speed == 0) {
             self function_a7fac0397762d7a6("p2p", "pause", 1);
         } else {
@@ -833,7 +833,7 @@ function function_221a50fb1dadfc46(speed) {
 // Checksum 0x0, Offset: 0x3f0f
 // Size: 0x2f
 function function_796a1097d8a12f6a() {
-    if (self.var_abeceaa25490ff4a) {
+    if (self.useP2P) {
         return ips_to_mph(self function_210ad508dfc813a2("p2p", "manualSpeed"));
     }
     return self vehicle_getspeed();
@@ -1132,7 +1132,7 @@ function function_b63c307e88f55d86(vehicle, objidnum) {
     var_b8d9c602e284684e = 900;
     while (vehicle.progress != 1) {
         waitframe();
-        if (!istrue(vehicle.var_abeceaa25490ff4a)) {
+        if (!istrue(vehicle.useP2P)) {
             if (!isdefined(vehicle.var_6bb0ab1fe092bd5d)) {
                 vehicle.var_6bb0ab1fe092bd5d = 1;
             }

@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
 #using script_19623334c167e314;
-#using scripts\code\character.gsc;
 #using script_3c0e93d367106178;
+#using scripts\code\character;
+#using scripts\common\utility;
 
 #namespace civ_london_male_1;
 

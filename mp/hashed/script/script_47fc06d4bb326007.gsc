@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\damage_utility.gsc;
 #using script_24fbedba9a7a1ef4;
+#using script_371b4c2ab5861e62;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\engine\utility;
 
 #namespace agent_juggernaut;
 

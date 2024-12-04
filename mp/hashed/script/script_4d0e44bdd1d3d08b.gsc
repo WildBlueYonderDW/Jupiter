@@ -1,6 +1,6 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
 #using script_16ea1b94f0f381b3;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace zombielegs;
 

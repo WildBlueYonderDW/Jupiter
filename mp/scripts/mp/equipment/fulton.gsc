@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\equipment.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\equipment;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\supers;
+#using scripts\mp\utility\teams;
 
 #namespace fulton;
 
@@ -44,9 +44,9 @@ function fulton_init() {
 // Size: 0x83
 function fulton_initanims() {
     level.scr_animtree["fulton"] = %script_model;
-    level.scr_anim["fulton"]["fulton_open"] = level.var_1a209bd995a7fa83["wm_skyhook_ground_open"];
-    level.scr_anim["fulton"]["fulton_open_idle"] = level.var_1a209bd995a7fa83["wm_skyhook_ground_idle_open"];
-    level.scr_anim["fulton"]["fulton_takeoff"] = level.var_1a209bd995a7fa83["wm_skyhook_ground_takeoff"];
+    level.scr_anim["fulton"]["fulton_open"] = level.br_anim["wm_skyhook_ground_open"];
+    level.scr_anim["fulton"]["fulton_open_idle"] = level.br_anim["wm_skyhook_ground_idle_open"];
+    level.scr_anim["fulton"]["fulton_takeoff"] = level.br_anim["wm_skyhook_ground_takeoff"];
 }
 
 // Namespace fulton / scripts\mp\equipment\fulton

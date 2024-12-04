@@ -1,37 +1,37 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\gun.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\cranked.gsc;
-#using script_7ef95bba57dc4b82;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\equipment\snapshot_grenade.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\utility\dialog_utility.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using script_5762ac2f22202ba2;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\dialog_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\cranked;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\snapshot_grenade;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\gun;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace havoc;
 
@@ -40,7 +40,7 @@
 // Checksum 0x0, Offset: 0xa67
 // Size: 0x1f0
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     level.var_46e88d936db0725c = [];
@@ -1479,7 +1479,7 @@ function initspawns() {
     level.spawnmaxs = (0, 0, 0);
     if (function_bff229a11ecd1e34()) {
         scripts\mp\spawnlogic::setactivespawnlogic(#"default");
-    } else if (getdvarint(@"hash_a464cb031c16ee87", 0) > 0) {
+    } else if (getdvarint(@"t10", 0) > 0) {
         scripts\mp\spawnlogic::setactivespawnlogic("Default", "Crit_Default");
     } else if (isdefined(scripts\cp_mp\utility\game_utility::getlocaleid())) {
         scripts\mp\spawnlogic::setactivespawnlogic("BigTDM", "Crit_Frontline");

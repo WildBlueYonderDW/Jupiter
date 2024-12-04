@@ -1,5 +1,5 @@
 #using script_784aa75d4a32fa24;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using scripts\cp_mp\utility\weapon_utility;
 
 #namespace namespace_43fa28e17601014d;
 

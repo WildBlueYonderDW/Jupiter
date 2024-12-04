@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
 #using script_7c110e744404ee81;
+#using scripts\engine\utility;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace namespace_17ca84825c926284;
 

@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\gestures.gsc;
 #using script_519bed5012f1c015;
-#using scripts\cp\utility\lui_game_event_aggregator.gsc;
-#using scripts\common\notetrack.gsc;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility\lui_game_event_aggregator;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
 
-#namespace namespace_e90fa63cb71e2639;
+#namespace gestures_cp;
 
-// Namespace namespace_e90fa63cb71e2639 / scripts\cp\gestures_cp
+// Namespace gestures_cp / scripts\cp\gestures_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x155
 // Size: 0x15
@@ -18,11 +18,11 @@ function init_cp() {
     scripts\common\notetrack::function_11f8c6d6f5ba948();
 }
 
-// Namespace namespace_e90fa63cb71e2639 / scripts\cp\gestures_cp
+// Namespace gestures_cp / scripts\cp\gestures_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x172
 // Size: 0xad
-function player_gesture_force(var_b03cfac5ee568943, lookatent) {
+function player_gesture_force(gesturename, lookatent) {
     self endon("death");
     var_447611fd38474e73 = 0;
     blendtime = undefined;
@@ -32,21 +32,21 @@ function player_gesture_force(var_b03cfac5ee568943, lookatent) {
         var_689635fc115b1160 = 1;
     }
     if (isdefined(lookatent) && isent(lookatent)) {
-        var_447611fd38474e73 = self forceplaygestureviewmodel(var_b03cfac5ee568943, lookatent, blendtime, undefined, undefined);
+        var_447611fd38474e73 = self forceplaygestureviewmodel(gesturename, lookatent, blendtime, undefined, undefined);
     } else {
-        var_447611fd38474e73 = self forceplaygestureviewmodel(var_b03cfac5ee568943, undefined, blendtime, undefined, undefined);
+        var_447611fd38474e73 = self forceplaygestureviewmodel(gesturename, undefined, blendtime, undefined, undefined);
     }
     if (var_447611fd38474e73) {
-        thread player_gestures_input_disable(var_b03cfac5ee568943, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, undefined, "gesture");
+        thread player_gestures_input_disable(gesturename, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, undefined, "gesture");
     }
     return var_447611fd38474e73;
 }
 
-// Namespace namespace_e90fa63cb71e2639 / scripts\cp\gestures_cp
+// Namespace gestures_cp / scripts\cp\gestures_cp
 // Params 14, eflags: 0x0
 // Checksum 0x0, Offset: 0x228
 // Size: 0x587
-function player_gestures_input_disable(var_b03cfac5ee568943, var_6c960bc6468bb7e4, mantle, sprint, fire, reload, weaponswitch, ads, wallrun, doublejump, meleeattack, var_8dad292b46b837c8, disabletime, tag) {
+function player_gestures_input_disable(gesturename, var_6c960bc6468bb7e4, mantle, sprint, fire, reload, weaponswitch, ads, wallrun, doublejump, meleeattack, var_8dad292b46b837c8, disabletime, tag) {
     self endon("death");
     if (!isdefined(tag)) {
         tag = "gesture";
@@ -57,7 +57,7 @@ function player_gestures_input_disable(var_b03cfac5ee568943, var_6c960bc6468bb7e
     if (isdefined(var_6c960bc6468bb7e4) && var_6c960bc6468bb7e4 == 1) {
         if (self getstance() == "prone") {
             val::set(tag + "_prone", "allow_movement", 0);
-            thread player_gestures_prone_getup_think(var_b03cfac5ee568943, tag);
+            thread player_gestures_prone_getup_think(gesturename, tag);
             if (!isdefined(self.gestures.restrictingpronespeed)) {
                 self.gestures.restrictingpronespeed = 0;
             }
@@ -145,20 +145,20 @@ function player_gestures_input_disable(var_b03cfac5ee568943, var_6c960bc6468bb7e
         wait disabletime;
     } else {
         self waittill("gesture_stopped", var_8f353b054812a006);
-        if (var_8f353b054812a006 != var_b03cfac5ee568943) {
+        if (var_8f353b054812a006 != gesturename) {
             while (true) {
-                if (!self isgestureplaying(var_b03cfac5ee568943)) {
+                if (!self isgestureplaying(gesturename)) {
                     break;
                 }
                 wait 0.05;
             }
         }
     }
-    self notify(var_b03cfac5ee568943 + "gesture_stopped_internal");
+    self notify(gesturename + "gesture_stopped_internal");
     player_gestures_input_enable(var_6c960bc6468bb7e4, mantle, sprint, fire, reload, weaponswitch, ads, wallrun, doublejump, meleeattack, var_8dad292b46b837c8, tag);
 }
 
-// Namespace namespace_e90fa63cb71e2639 / scripts\cp\gestures_cp
+// Namespace gestures_cp / scripts\cp\gestures_cp
 // Params 12, eflags: 0x0
 // Checksum 0x0, Offset: 0x7b7
 // Size: 0x231
@@ -210,13 +210,13 @@ function player_gestures_input_enable(var_6c960bc6468bb7e4, mantle, sprint, fire
     }
 }
 
-// Namespace namespace_e90fa63cb71e2639 / scripts\cp\gestures_cp
+// Namespace gestures_cp / scripts\cp\gestures_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f0
 // Size: 0xdf
-function player_gestures_prone_getup_think(var_b03cfac5ee568943, tag) {
+function player_gestures_prone_getup_think(gesturename, tag) {
     self endon("death");
-    self endon(var_b03cfac5ee568943 + "gesture_stopped_internal");
+    self endon(gesturename + "gesture_stopped_internal");
     var_90d39fd3f5a9895d = 1;
     while (var_90d39fd3f5a9895d) {
         if (self getstance() != "prone") {
@@ -236,7 +236,7 @@ function player_gestures_prone_getup_think(var_b03cfac5ee568943, tag) {
     }
 }
 
-// Namespace namespace_e90fa63cb71e2639 / scripts\cp\gestures_cp
+// Namespace gestures_cp / scripts\cp\gestures_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xad7
 // Size: 0x8

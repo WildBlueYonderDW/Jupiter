@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_41387eecc35b88bf;
 #using script_185660037b9236c1;
 #using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
 #using script_24f248b33b79e48d;
 #using script_3ab210ea917601e7;
+#using script_41387eecc35b88bf;
 #using script_638d701d263ee1ed;
-#using scripts\mp\utility\player.gsc;
+#using script_7956d56c4922bd1;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace namespace_94e3188e9c550ef8;
 
@@ -135,7 +135,7 @@ function function_e232a099eb1f3824(string, player) {
     width = int(clamp(string.size * var_b54520c420443a7c, 350, 630));
     string_array = wrap_text(string, int(630 / var_b54520c420443a7c));
     height = lineheight * string_array.size + var_7794fdd4649e6d7f * 2;
-    var_9a77f8c6fc5ac4a4 = [];
+    text_array = [];
     foreach (i, string in string_array) {
         text = newclienthudelem(player);
         text.alpha = 0;
@@ -144,7 +144,7 @@ function function_e232a099eb1f3824(string, player) {
         #/
         text.fontscale = 1;
         text.row = i;
-        var_9a77f8c6fc5ac4a4[var_9a77f8c6fc5ac4a4.size] = text;
+        text_array[text_array.size] = text;
     }
     bg = newclienthudelem(player);
     bg.alpha = 0;
@@ -159,7 +159,7 @@ function function_e232a099eb1f3824(string, player) {
     } else {
         player.dialoguehud = [];
     }
-    array = array_add(var_9a77f8c6fc5ac4a4, bg);
+    array = array_add(text_array, bg);
     array[0] endon("ob_dialogue_print_clear");
     player.dialoguehud[player.dialoguehud.size] = array;
     foreach (hud in array) {

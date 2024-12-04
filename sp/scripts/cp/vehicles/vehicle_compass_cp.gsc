@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_compass.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle_compass;
+#using scripts\engine\utility;
 
 #namespace namespace_5ec62f19506aa1da;
 

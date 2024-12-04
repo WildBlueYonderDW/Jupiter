@@ -1,11 +1,11 @@
 #using script_53651341190c5aab;
-#using scripts\common\string.gsc;
-#using scripts\common\cap.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
+#using scripts\common\cap;
+#using scripts\common\string;
 
-#namespace namespace_20be3b30a522aacd;
+#namespace civ_group;
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x122
 // Size: 0x87
@@ -27,7 +27,7 @@ function getfunction(funcid) {
     return namespace_f901a4f9d899be59::function_efcea5d26798e5b6(funcid);
 }
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2
 // Size: 0x99
@@ -46,7 +46,7 @@ function function_3dbd361f74b442f9(interactionid) {
     self notify("interaction_end");
 }
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x253
 // Size: 0x91
@@ -64,19 +64,19 @@ function function_a157fbbc31d9eb1a(interactionid) {
     }
 }
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ec
 // Size: 0xee
 function function_8b8d3607291002b8(statename, params) {
-    var_410109811fb521aa = ["Guy1", "Guy2", "Guy3", "Guy4", "Guy5", "Guy6"];
+    roles = ["Guy1", "Guy2", "Guy3", "Guy4", "Guy5", "Guy6"];
     interactionid = self function_92435c7a6ae85c3c();
     sid = scripts\common\string::to_string(interactionid);
     roleindex = level.var_80275ca89b572683[sid].var_d7f62a13ffe9ac84;
-    self.var_702e8eac921eb9ab = var_410109811fb521aa[roleindex];
+    self.var_702e8eac921eb9ab = roles[roleindex];
     capinfo = undefined;
-    if (isdefined(var_410109811fb521aa[roleindex + 1])) {
-        capinfo = function_a0cccf0b4c466b2c(self, var_410109811fb521aa[roleindex + 1]);
+    if (isdefined(roles[roleindex + 1])) {
+        capinfo = function_a0cccf0b4c466b2c(self, roles[roleindex + 1]);
     }
     if (!isdefined(capinfo)) {
         self.var_3fd5a9c144781fb9 = 1;
@@ -84,7 +84,7 @@ function function_8b8d3607291002b8(statename, params) {
     level.var_80275ca89b572683[sid].var_d7f62a13ffe9ac84++;
 }
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e2
 // Size: 0xab
@@ -106,7 +106,7 @@ function function_2cd30a67aedce945(statename, shouldteleport) {
     startcap(statename, role);
 }
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x495
 // Size: 0x15
@@ -114,7 +114,7 @@ function function_554a1f4495cb227(param) {
     return istrue(self.var_3fd5a9c144781fb9);
 }
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x2d
@@ -122,7 +122,7 @@ function function_51877ad33d5c3c07(asmname, statename, tostatename, params) {
     return istrue(self.var_51877ad33d5c3c07);
 }
 
-// Namespace namespace_20be3b30a522aacd / namespace_6dfc85bbd850d6d
+// Namespace civ_group / namespace_6dfc85bbd850d6d
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e9
 // Size: 0x2

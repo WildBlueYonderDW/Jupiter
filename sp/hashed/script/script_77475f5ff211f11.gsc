@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\ai.gsc;
+#using scripts\common\ai;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\utility;
 
 #namespace acid_grenade;
 

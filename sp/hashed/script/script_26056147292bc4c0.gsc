@@ -1,8 +1,8 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
 #using script_66122a002aff5d57;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace attachment_pickup;
 
@@ -49,22 +49,22 @@ function function_aba2da3a3ea77c90() {
     }
     type_array = strtok(var_77460031ae8e47a4, ",");
     if (type_array.size == 1) {
-        var_d75739e39bc74e9 = type_array[0];
+        attachment_type = type_array[0];
     } else {
-        var_d75739e39bc74e9 = function_17c409fd49d47c84(type_array);
+        attachment_type = function_17c409fd49d47c84(type_array);
     }
-    if (var_d75739e39bc74e9 == "cash") {
+    if (attachment_type == "cash") {
         function_8d01902b9d93b4c6();
         self delete();
         return;
     }
-    var_8058e47866d8ac53 = function_d8e20b4db8aa13df(var_d75739e39bc74e9);
-    if (isdefined(var_8058e47866d8ac53)) {
-        self setmodel(var_8058e47866d8ac53);
+    new_model = function_d8e20b4db8aa13df(attachment_type);
+    if (isdefined(new_model)) {
+        self setmodel(new_model);
     }
-    self.base_type = function_de6f178182ba85a(var_d75739e39bc74e9);
-    self.var_d75739e39bc74e9 = var_d75739e39bc74e9;
-    hint_string = function_4b8d9fcb8af000f9(var_d75739e39bc74e9);
+    self.base_type = function_de6f178182ba85a(attachment_type);
+    self.attachment_type = attachment_type;
+    hint_string = function_4b8d9fcb8af000f9(attachment_type);
     self makeusable();
     self sethintstring(hint_string);
     self sethintdisplayrange(512);
@@ -72,31 +72,31 @@ function function_aba2da3a3ea77c90() {
     self setuserange(75);
     while (true) {
         self waittill("trigger", player);
-        var_674582f0e7ce1160 = function_9e4552c702a237c5(player, var_d75739e39bc74e9);
+        var_674582f0e7ce1160 = function_9e4552c702a237c5(player, attachment_type);
         if (!isdefined(var_674582f0e7ce1160.attachment)) {
             break;
         } else if (var_674582f0e7ce1160.attachment == "failed") {
         } else if (issubstr(var_674582f0e7ce1160.attachment, "iron")) {
             break;
         } else {
-            var_d75739e39bc74e9 = var_674582f0e7ce1160.attachment;
-            var_8058e47866d8ac53 = function_d8e20b4db8aa13df(var_d75739e39bc74e9);
-            if (isdefined(var_8058e47866d8ac53)) {
-                self setmodel(var_8058e47866d8ac53);
+            attachment_type = var_674582f0e7ce1160.attachment;
+            new_model = function_d8e20b4db8aa13df(attachment_type);
+            if (isdefined(new_model)) {
+                self setmodel(new_model);
             }
             type_array = function_5fbcc7fc1266b377(self.base_type);
             foreach (attachment in type_array) {
-                if (issubstr(var_d75739e39bc74e9, attachment)) {
-                    var_d75739e39bc74e9 = attachment;
+                if (issubstr(attachment_type, attachment)) {
+                    attachment_type = attachment;
                     break;
                 }
             }
-            hint_string = function_4b8d9fcb8af000f9(var_d75739e39bc74e9);
+            hint_string = function_4b8d9fcb8af000f9(attachment_type);
             self sethintstring(hint_string);
-            self.var_d75739e39bc74e9 = var_d75739e39bc74e9;
+            self.attachment_type = attachment_type;
             if (isdefined(var_674582f0e7ce1160.var_42006c656a8f39fb)) {
-                self.var_87fd41ffd79d9072 = var_674582f0e7ce1160.var_42006c656a8f39fb;
-                self.var_e2d00b1889eb04a = var_674582f0e7ce1160.var_f24c44ff50730d8b;
+                self.ammo_clip = var_674582f0e7ce1160.var_42006c656a8f39fb;
+                self.ammo_stock = var_674582f0e7ce1160.var_f24c44ff50730d8b;
             }
         }
         wait 0.25;
@@ -119,15 +119,15 @@ function function_17c409fd49d47c84(list) {
         }
     }
     rand_num = randomint(total_weight);
-    var_eb7ef060bafc3e3 = total_weight;
+    cur_smallest = total_weight;
     foreach (key, value in array) {
         if (key > rand_num) {
-            if (key < var_eb7ef060bafc3e3) {
-                var_eb7ef060bafc3e3 = key;
+            if (key < cur_smallest) {
+                cur_smallest = key;
             }
         }
     }
-    return array[var_eb7ef060bafc3e3];
+    return array[cur_smallest];
 }
 
 // Namespace attachment_pickup / namespace_d6a8a70d90243b1e
@@ -198,22 +198,22 @@ function function_d8e20b4db8aa13df(var_8c3c8ce6accb8243) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc07
 // Size: 0x1bf
-function function_9e4552c702a237c5(player, var_d75739e39bc74e9) {
+function function_9e4552c702a237c5(player, attachment_type) {
     var_674582f0e7ce1160 = spawnstruct();
-    base_type = function_de6f178182ba85a(var_d75739e39bc74e9);
+    base_type = function_de6f178182ba85a(attachment_type);
     if (!isdefined(base_type)) {
-        iprintlnbold("Cannot use this " + var_d75739e39bc74e9 + " attachment");
+        iprintlnbold("Cannot use this " + attachment_type + " attachment");
         var_674582f0e7ce1160.attachment = "failed";
         return var_674582f0e7ce1160;
     }
     var_8c3c8ce6accb8243 = undefined;
-    if (!function_bd75d13c13984bd0(var_d75739e39bc74e9)) {
-        var_8c3c8ce6accb8243 = [var_d75739e39bc74e9];
+    if (!function_bd75d13c13984bd0(attachment_type)) {
+        var_8c3c8ce6accb8243 = [attachment_type];
     }
     curweapon = player getcurrentweapon();
     player.var_8ebba13cc4b90346 = player function_fb5497098da5db2a(curweapon, base_type);
     if (!isdefined(player.var_8ebba13cc4b90346) || player.var_8ebba13cc4b90346.size == 0) {
-        iprintlnbold("Cannot use this " + var_d75739e39bc74e9 + " attachment");
+        iprintlnbold("Cannot use this " + attachment_type + " attachment");
         var_674582f0e7ce1160.attachment = "failed";
         return var_674582f0e7ce1160;
     }
@@ -222,16 +222,16 @@ function function_9e4552c702a237c5(player, var_d75739e39bc74e9) {
         displaystring = tablelookupistring("mp/attachmenttable.csv", 4, var_effb4ae1788a8b10, 3);
         iprintlnbold(var_effb4ae1788a8b10 + " / " + var_effb4ae1788a8b10);
         iprintln(displaystring);
-        var_87fd41ffd79d9072 = undefined;
-        var_e2d00b1889eb04a = undefined;
-        if (isdefined(self.var_87fd41ffd79d9072)) {
-            var_87fd41ffd79d9072 = self.var_87fd41ffd79d9072;
-            var_e2d00b1889eb04a = self.var_e2d00b1889eb04a;
+        ammo_clip = undefined;
+        ammo_stock = undefined;
+        if (isdefined(self.ammo_clip)) {
+            ammo_clip = self.ammo_clip;
+            ammo_stock = self.ammo_stock;
         }
-        var_674582f0e7ce1160 = player function_60fdadc426db6334(curweapon, var_effb4ae1788a8b10, var_87fd41ffd79d9072, var_e2d00b1889eb04a);
+        var_674582f0e7ce1160 = player function_60fdadc426db6334(curweapon, var_effb4ae1788a8b10, ammo_clip, ammo_stock);
         return var_674582f0e7ce1160;
     }
-    iprintlnbold("Cannot use this " + var_d75739e39bc74e9 + " attachment");
+    iprintlnbold("Cannot use this " + attachment_type + " attachment");
     var_674582f0e7ce1160.attachment = "failed";
     return var_674582f0e7ce1160;
 }
@@ -240,8 +240,8 @@ function function_9e4552c702a237c5(player, var_d75739e39bc74e9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdcf
 // Size: 0x90
-function function_bd75d13c13984bd0(var_d75739e39bc74e9) {
-    switch (var_d75739e39bc74e9) {
+function function_bd75d13c13984bd0(attachment_type) {
+    switch (attachment_type) {
     case #"hash_c9e63a9bddd371e":
     case #"hash_2630d03d6f5fc192":
     case #"hash_3c53eb274322e803":
@@ -261,8 +261,8 @@ function function_bd75d13c13984bd0(var_d75739e39bc74e9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe68
 // Size: 0x189
-function function_de6f178182ba85a(var_d75739e39bc74e9) {
-    switch (var_d75739e39bc74e9) {
+function function_de6f178182ba85a(attachment_type) {
+    switch (attachment_type) {
     case #"hash_c9e63a9bddd371e":
     case #"hash_2c52850905eba1cb":
     case #"hash_562af81e4f0e0363":
@@ -330,8 +330,8 @@ function function_5fbcc7fc1266b377(base_type) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x112e
 // Size: 0x21d
-function function_4b8d9fcb8af000f9(var_d75739e39bc74e9) {
-    switch (var_d75739e39bc74e9) {
+function function_4b8d9fcb8af000f9(attachment_type) {
+    switch (attachment_type) {
     case #"hash_c9e63a9bddd371e":
         return %CP_WEAPON_BUY/ATTACHMENT_OPTIC;
     case #"hash_bd4d2e05f809e09f":
@@ -445,16 +445,16 @@ function function_bea1ef4192c7c497(weapon, attachments, var_8c3c8ce6accb8243) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1537
 // Size: 0x4b8
-function function_60fdadc426db6334(weapon, attachment, var_87fd41ffd79d9072, var_e2d00b1889eb04a) {
+function function_60fdadc426db6334(weapon, attachment, ammo_clip, ammo_stock) {
     attachments = getweaponattachments(weapon);
-    var_4f63ac1a66a909c3 = attachments;
+    old_attachments = attachments;
     var_3cec9a92a775752e = 0;
     if (array_contains(attachments, attachment)) {
         var_3cec9a92a775752e = 1;
     }
     attachments = array_add(attachments, attachment);
     attachments = array_remove_duplicates(attachments);
-    var_7312a46fa51227e3 = attachment;
+    new_attachment = attachment;
     root_name = getweaponrootname(weapon);
     var_74fff52b1e2c1bfb = 0;
     if (weapon.inventorytype == "altmode") {
@@ -466,21 +466,21 @@ function function_60fdadc426db6334(weapon, attachment, var_87fd41ffd79d9072, var
     var_3ef7a96abde76230 = undefined;
     var_7589f78d5d7ba855 = undefined;
     primary_weapons = self getweaponslistprimaries();
-    foreach (var_b71257aaac24c36a in primary_weapons) {
-        if (var_b71257aaac24c36a.basename == weapon.basename) {
-            if (var_b71257aaac24c36a.inventorytype == "altmode") {
-                var_58a72877a2d03f1a = self getweaponammoclip(var_b71257aaac24c36a);
-                var_3ef7a96abde76230 = self getweaponammostock(var_b71257aaac24c36a);
+    foreach (cur_weapon in primary_weapons) {
+        if (cur_weapon.basename == weapon.basename) {
+            if (cur_weapon.inventorytype == "altmode") {
+                var_58a72877a2d03f1a = self getweaponammoclip(cur_weapon);
+                var_3ef7a96abde76230 = self getweaponammostock(cur_weapon);
                 continue;
             }
-            clip_ammo = self getweaponammoclip(var_b71257aaac24c36a);
-            stock_ammo = self getweaponammostock(var_b71257aaac24c36a);
+            clip_ammo = self getweaponammoclip(cur_weapon);
+            stock_ammo = self getweaponammostock(cur_weapon);
         }
     }
     newweapon = namespace_e0ee43ef2dddadaa::buildweapon(getweaponrootname(weapon), attachments);
     var_9009bfbc354a4c09 = getweaponattachments(newweapon);
-    var_4e5fdcb7f54380f7 = undefined;
-    foreach (attachment in var_4f63ac1a66a909c3) {
+    replaced_attachment = undefined;
+    foreach (attachment in old_attachments) {
         found = 0;
         foreach (obj in var_9009bfbc354a4c09) {
             if (attachment == obj) {
@@ -488,20 +488,20 @@ function function_60fdadc426db6334(weapon, attachment, var_87fd41ffd79d9072, var
             }
         }
         if (!found) {
-            var_4e5fdcb7f54380f7 = attachment;
+            replaced_attachment = attachment;
         }
     }
-    var_2c9e4ac6987f5630 = newweapon.basename;
+    new_basename = newweapon.basename;
     var_42006c656a8f39fb = undefined;
     var_f24c44ff50730d8b = undefined;
-    if (isdefined(var_4e5fdcb7f54380f7)) {
-        if (issubstr(var_4e5fdcb7f54380f7, "gl") || issubstr(var_4e5fdcb7f54380f7, "ubsh")) {
+    if (isdefined(replaced_attachment)) {
+        if (issubstr(replaced_attachment, "gl") || issubstr(replaced_attachment, "ubsh")) {
             var_42006c656a8f39fb = var_58a72877a2d03f1a;
             var_f24c44ff50730d8b = var_3ef7a96abde76230;
         } else {
             var_7589f78d5d7ba855 = 1;
         }
-    } else if (issubstr(var_7312a46fa51227e3, "gl") || issubstr(var_7312a46fa51227e3, "ubsh")) {
+    } else if (issubstr(new_attachment, "gl") || issubstr(new_attachment, "ubsh")) {
         if (var_3cec9a92a775752e) {
             var_42006c656a8f39fb = var_58a72877a2d03f1a;
             var_f24c44ff50730d8b = var_3ef7a96abde76230;
@@ -514,22 +514,22 @@ function function_60fdadc426db6334(weapon, attachment, var_87fd41ffd79d9072, var
     self switchtoweapon(newweapon);
     primary_weapons = self getweaponslistprimaries();
     foreach (weapon in primary_weapons) {
-        if (weapon.basename == var_2c9e4ac6987f5630) {
+        if (weapon.basename == new_basename) {
             if (weapon.inventorytype == "altmode") {
                 if (isdefined(weapon.underbarrel)) {
                     if (istrue(var_7589f78d5d7ba855)) {
                         self setweaponammoclip(weapon, var_58a72877a2d03f1a);
                         self setweaponammostock(weapon, var_3ef7a96abde76230);
                     } else {
-                        if (isdefined(var_87fd41ffd79d9072)) {
-                            self setweaponammoclip(weapon, var_87fd41ffd79d9072);
+                        if (isdefined(ammo_clip)) {
+                            self setweaponammoclip(weapon, ammo_clip);
                         } else {
                             self setweaponammoclip(weapon, weaponclipsize(weapon));
                         }
                         if (weapon.underbarrel == "ubshtgn") {
                             self setweaponammostock(weapon, 0);
-                        } else if (isdefined(var_e2d00b1889eb04a)) {
-                            self setweaponammostock(weapon, var_e2d00b1889eb04a);
+                        } else if (isdefined(ammo_stock)) {
+                            self setweaponammostock(weapon, ammo_stock);
                         } else {
                             self setweaponammostock(weapon, scripts\cp\utility::function_ed18a118c6fa5c4f(weapon));
                         }
@@ -545,7 +545,7 @@ function function_60fdadc426db6334(weapon, attachment, var_87fd41ffd79d9072, var
         }
     }
     var_674582f0e7ce1160 = spawnstruct();
-    var_674582f0e7ce1160.attachment = var_4e5fdcb7f54380f7;
+    var_674582f0e7ce1160.attachment = replaced_attachment;
     if (isdefined(var_42006c656a8f39fb)) {
         var_674582f0e7ce1160.var_42006c656a8f39fb = int(float(var_42006c656a8f39fb));
         var_674582f0e7ce1160.var_f24c44ff50730d8b = int(float(var_f24c44ff50730d8b));

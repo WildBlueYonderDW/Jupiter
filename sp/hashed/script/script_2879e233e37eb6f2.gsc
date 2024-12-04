@@ -1,6 +1,6 @@
-#namespace namespace_dfa8d13eca9bfb86;
+#namespace bodies_civilian_uk_female_surge_3;
 
-// Namespace namespace_dfa8d13eca9bfb86 / namespace_1e4c17d1b8ec7806
+// Namespace bodies_civilian_uk_female_surge_3 / namespace_1e4c17d1b8ec7806
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xda
 // Size: 0x33

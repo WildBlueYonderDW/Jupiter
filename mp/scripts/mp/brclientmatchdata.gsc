@@ -1,7 +1,7 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\clientmatchdata.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\clientmatchdata;
+#using scripts\mp\hud_util;
 
 #namespace namespace_85863a3ec7bf1c63;
 

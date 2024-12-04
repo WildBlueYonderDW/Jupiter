@@ -1,26 +1,26 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\vehicles\vehicle_mp.gsc;
-#using script_7c03ab87c5f9f420;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\weapon.gsc;
 #using script_2d9d24f7c63ac143;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using script_7c03ab87c5f9f420;
 #using script_b7a9ce0a2282b79;
-#using scripts\mp\class.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\vehicles\vehicle_mp;
+#using scripts\mp\weapons;
 
 #namespace namespace_60c72bf2f4474547;
 
@@ -318,7 +318,7 @@ function vehicle_occupancy_mp_giveriotshield(player, fromdeath, fromlaststand) {
                 fakepickup.countlefthand = 0;
                 fakepickup.origin = player.origin;
                 fakepickup.angles = player.angles;
-                fakepickup.var_4a08890fd43d6bc7 = namespace_aead94004cf4c147::isbackpackinventoryenabled() && namespace_aead94004cf4c147::function_b13e35608b336d65(player) > 5 && !player hasweapon("iw9_me_fists_mp");
+                fakepickup.var_4a08890fd43d6bc7 = namespace_aead94004cf4c147::isbackpackinventoryenabled() && namespace_aead94004cf4c147::getPlayerBackpackSize(player) > 5 && !player hasweapon("iw9_me_fists_mp");
                 if (fakepickup.var_4a08890fd43d6bc7) {
                     fakepickup.var_f51bbb191526dfa4 = 1;
                 }

@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_6c8a837ec98fe0b8;
 

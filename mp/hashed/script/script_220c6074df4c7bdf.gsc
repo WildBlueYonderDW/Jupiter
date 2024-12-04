@@ -1,11 +1,11 @@
-#using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots_gametype_br.gsc;
-#using script_40e63dd222434655;
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
 #using script_25b55d37e1b51db1;
 #using script_26ccbfe3954cacf4;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using script_40e63dd222434655;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\gametypes\br_circle;
 
 #namespace search_threat_plus;
 
@@ -23,7 +23,7 @@ function function_eda57308516bfc5f() {
 // Size: 0x4a5
 function evaluatescore(bot) {
     /#
-        if (getdvar(@"hash_e39c6d129db1722") == "<dev string:x1c>") {
+        if (getdvar(@"bot_notarget") == "<dev string:x1c>") {
             return 0;
         }
     #/
@@ -35,7 +35,7 @@ function evaluatescore(bot) {
             continue;
         }
         /#
-            if (!isai(event.owner) && getdvar(@"hash_e39c6d129db1722") == "<dev string:x23>") {
+            if (!isai(event.owner) && getdvar(@"bot_notarget") == "<dev string:x23>") {
                 continue;
             }
         #/

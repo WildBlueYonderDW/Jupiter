@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\stealth\debug.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\poi;
+#using scripts\mp\utility\points;
+#using scripts\stealth\debug;
 
 #namespace ai_sentry_turret;
 
@@ -646,7 +646,7 @@ function function_e3217606f8218ae() {
                         leftarc = level.sentrysettings["<dev string:x72>"].leftarc;
                         rightarc = level.sentrysettings["<dev string:x72>"].rightarc;
                         startpoint = loc.origin + (0, 0, 60);
-                        scripts\stealth\debug::function_ab68b8f1b9191d70(startpoint, 0 - rightarc, leftarc, loc.angles, 100, 1, 5, color);
+                        scripts\stealth\debug::draw_arc(startpoint, 0 - rightarc, leftarc, loc.angles, 100, 1, 5, color);
                     }
                     /#
                         sphere(loc.origin, 64, color);

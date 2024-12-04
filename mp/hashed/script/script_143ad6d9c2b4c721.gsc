@@ -1,33 +1,33 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_22f1701e151b9d12;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_2583ee5680cf4736;
-#using scripts\engine\throttle.gsc;
-#using script_4ef01fe6151dde4d;
-#using script_4fdefae8b7bcdf73;
+#using script_185660037b9236c1;
+#using script_1f97a44d1761c919;
 #using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
+#using script_371b4c2ab5861e62;
 #using script_3ab210ea917601e7;
 #using script_41387eecc35b88bf;
-#using script_7956d56c4922bd1;
-#using script_64351208cb856df9;
-#using script_638d701d263ee1ed;
-#using script_185660037b9236c1;
-#using script_7b2517368c79e5bc;
-#using scripts\common\create_script_utility.gsc;
+#using script_4ef01fe6151dde4d;
+#using script_4fdefae8b7bcdf73;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_7ef95bba57dc4b82;
-#using script_77be8cd2b6610d5;
-#using scripts\cp_mp\calloutmarkerping.gsc;
 #using script_58be75c518bf0d40;
-#using scripts\engine\trace.gsc;
-#using script_1f97a44d1761c919;
+#using script_638d701d263ee1ed;
+#using script_64351208cb856df9;
 #using script_686729055b66c6e4;
-#using script_a35012b9b75a996;
+#using script_77be8cd2b6610d5;
+#using script_7956d56c4922bd1;
+#using script_7b2517368c79e5bc;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\callbacks;
+#using scripts\common\create_script_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\equipment\shock_stick;
 
 #namespace namespace_9f95c864e06366ee;
 
@@ -278,7 +278,7 @@ function function_6fb66f1f4b4a14d9(orb, invisible_model) {
                         einflictor detonate();
                     }
                     if (var_918773f13fe4b799) {
-                        thread function_abcb3c50cd4997f1(orb, sorigin);
+                        thread equipment_absorb(orb, sorigin);
                     }
                 }
                 orb.linkedparent playsoundevent("sndevent_harvester_orb_hit");
@@ -552,7 +552,7 @@ function function_462dd9a0222b675(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x26c1
 // Size: 0x45
-function function_abcb3c50cd4997f1(orb, sorigin) {
+function equipment_absorb(orb, sorigin) {
     var_3b366c7dbfad156 = spawnscriptable("jup_zm_harvester_orb_vfx", sorigin);
     var_3b366c7dbfad156 setscriptablepartstate("orb_electrocution", "on");
     wait 2;
@@ -824,7 +824,7 @@ function function_31f4489d7f9865e2(victim) {
 // Size: 0x7d
 function function_e199f62146443082(victim) {
     victim endon("death");
-    victim namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(self.orb.electrocutiontime);
+    victim namespace_ed7c38f3847343dc::stun_ai(self.orb.electrocutiontime);
     victim setscriptablepartstate("shockStickVfx", "vfx_start", 0);
     wait self.orb.electrocutiontime;
     if (isalive(victim) && victim getscriptablehaspart("shockStickVfx")) {
@@ -841,7 +841,7 @@ function function_747de98d3fc3ca35(victim) {
     if (!level flag("ob_infil_completed")) {
         return;
     }
-    victim namespace_742e7eca5294ecdc::function_a9a57668997e3c85(1);
+    victim scripts\mp\equipment\shock_stick::function_a9a57668997e3c85(1);
     if (istrue(victim.revivingteammate)) {
         victim.var_4a2f2f50a9020e2e = 1;
     }
@@ -865,16 +865,16 @@ function function_747de98d3fc3ca35(victim) {
         }
     }
     victim startforcedfire();
-    victim namespace_742e7eca5294ecdc::function_600c7c4c73c6a773(1);
+    victim scripts\mp\equipment\shock_stick::function_600c7c4c73c6a773(1);
     victim setmovespeedscale(0.8);
     victim setempjammed(1);
     wait self.orb.electrocutiontime;
-    victim namespace_742e7eca5294ecdc::function_a9a57668997e3c85(0);
+    victim scripts\mp\equipment\shock_stick::function_a9a57668997e3c85(0);
     victim stopgestureviewmodel(gestureref);
     victim stopforcedfire();
     victim setscriptablepartstate("shockStickVfx", "off", 0);
     victim setscriptablepartstate("harvesterOrbSfx", "sfx_done", 0);
-    victim namespace_742e7eca5294ecdc::function_600c7c4c73c6a773(0);
+    victim scripts\mp\equipment\shock_stick::function_600c7c4c73c6a773(0);
     victim setmovespeedscale(1);
     victim setempjammed(0);
 }

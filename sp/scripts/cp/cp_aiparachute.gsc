@@ -1,8 +1,8 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_18a73a64992dd07d;
-#using scripts\cp\cp_outline.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_outline;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_6b4061c64a7e9118;
 
@@ -187,7 +187,7 @@ function parachute_get_path(var_4f200828059689db) {
     if (!isdefined(self.spawnpoint.parachute_land_origin)) {
         self.spawnpoint.parachute_land_origin = self.spawnpoint.origin;
     }
-    var_242913363d4bca42 = default_to(self.spawnpoint.var_bdaef5a9b7c28e6, 1500);
+    parachute_height = default_to(self.spawnpoint.var_bdaef5a9b7c28e6, 1500);
     startorigin = self.spawnpoint.parachute_land_origin + (randomfloatrange(var_4f200828059689db * -1, var_4f200828059689db), randomfloatrange(var_4f200828059689db * -1, var_4f200828059689db), 0);
     self.landing_spot = undefined;
     var_c1fb2d429477b8d8 = getgroundposition(startorigin, 64, 15000, 15000);
@@ -198,7 +198,7 @@ function parachute_get_path(var_4f200828059689db) {
         self.landing_spot = getclosestpointonnavmesh(self.spawnpoint.origin);
     }
     offset = (0, 0, 0);
-    var_c01f3501868a8135 = self.landing_spot + (0, 0, var_242913363d4bca42);
+    var_c01f3501868a8135 = self.landing_spot + (0, 0, parachute_height);
     if (istrue(self.spawnpoint.allow_momentum)) {
         if (function_240f7f4e57340e8f()) {
             fwd = vectornormalize(self.origin - var_c01f3501868a8135);
@@ -327,8 +327,8 @@ function parachute_move() {
     if (istrue(self.spawnpoint.allow_momentum)) {
         move_time = 9;
     }
-    if (isdefined(self.spawnpoint.var_e0f7a814ed44a93e)) {
-        var_69c13c485eca0c7c = self.spawnpoint.var_e0f7a814ed44a93e;
+    if (isdefined(self.spawnpoint.chute_time)) {
+        var_69c13c485eca0c7c = self.spawnpoint.chute_time;
     }
     decel_time = 1.5;
     self.anchor moveto(self.landing_spot, move_time, 0.1, 1.5);
@@ -415,7 +415,7 @@ function unlink_on_ai_death(ai) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1284
 // Size: 0x670
-function function_512ce2eff75c0873(var_8299a70a0562ea4c, groupname, var_6a152b39e0aacb48) {
+function function_512ce2eff75c0873(var_8299a70a0562ea4c, groupname, ai_spawnpoints) {
     flag_wait("level_ready_for_script");
     if (!isdefined(var_8299a70a0562ea4c) || !isdefined(groupname) && !isdefined(var_8299a70a0562ea4c.groupname)) {
         return;
@@ -426,25 +426,25 @@ function function_512ce2eff75c0873(var_8299a70a0562ea4c, groupname, var_6a152b39
     if (isdefined(groupname) && isdefined(var_8299a70a0562ea4c.groupname)) {
         var_8299a70a0562ea4c.groupname = groupname;
     }
-    if (isdefined(var_6a152b39e0aacb48)) {
-        var_8299a70a0562ea4c.var_6a152b39e0aacb48 = var_6a152b39e0aacb48;
+    if (isdefined(ai_spawnpoints)) {
+        var_8299a70a0562ea4c.ai_spawnpoints = ai_spawnpoints;
     } else {
-        var_8299a70a0562ea4c.var_6a152b39e0aacb48 = getstructarray(var_8299a70a0562ea4c.groupname, "targetname");
+        var_8299a70a0562ea4c.ai_spawnpoints = getstructarray(var_8299a70a0562ea4c.groupname, "targetname");
     }
-    if (var_8299a70a0562ea4c.var_6a152b39e0aacb48.size == 0) {
+    if (var_8299a70a0562ea4c.ai_spawnpoints.size == 0) {
         assertmsg("cp_aiparachute - No AI Spawners provided or found!");
         return;
     }
     if (!(isdefined(level.ambientgroups) && isdefined(level.ambientgroups[var_8299a70a0562ea4c.groupname]))) {
-        namespace_5729d24318b60bcd::registerambientgroup(var_8299a70a0562ea4c.groupname, var_8299a70a0562ea4c.var_6a152b39e0aacb48.size, var_8299a70a0562ea4c.var_6a152b39e0aacb48.size, var_8299a70a0562ea4c.var_6a152b39e0aacb48.size, undefined, undefined, var_8299a70a0562ea4c.var_6a152b39e0aacb48);
+        namespace_5729d24318b60bcd::registerambientgroup(var_8299a70a0562ea4c.groupname, var_8299a70a0562ea4c.ai_spawnpoints.size, var_8299a70a0562ea4c.ai_spawnpoints.size, var_8299a70a0562ea4c.ai_spawnpoints.size, undefined, undefined, var_8299a70a0562ea4c.ai_spawnpoints);
     }
     namespace_5729d24318b60bcd::set_spawn_scoring_params_for_group(var_8299a70a0562ea4c.groupname, 0, 999999);
     var_8299a70a0562ea4c.allow_momentum = int(isdefined(var_8299a70a0562ea4c.allow_momentum) ? var_8299a70a0562ea4c.allow_momentum : 1);
     var_8299a70a0562ea4c.var_bdaef5a9b7c28e6 = float(isdefined(var_8299a70a0562ea4c.var_bdaef5a9b7c28e6) ? var_8299a70a0562ea4c.var_bdaef5a9b7c28e6 : 1000);
-    if (!isdefined(var_8299a70a0562ea4c.var_e0f7a814ed44a93e)) {
-        var_8299a70a0562ea4c.var_e0f7a814ed44a93e = istrue(var_8299a70a0562ea4c.allow_momentum) ? 8 : 6;
+    if (!isdefined(var_8299a70a0562ea4c.chute_time)) {
+        var_8299a70a0562ea4c.chute_time = istrue(var_8299a70a0562ea4c.allow_momentum) ? 8 : 6;
     }
-    var_8299a70a0562ea4c.var_e0f7a814ed44a93e = float(var_8299a70a0562ea4c.var_e0f7a814ed44a93e);
+    var_8299a70a0562ea4c.chute_time = float(var_8299a70a0562ea4c.chute_time);
     var_8299a70a0562ea4c.var_e1dc57d80a5bd29e = float(isdefined(var_8299a70a0562ea4c.var_e1dc57d80a5bd29e) ? var_8299a70a0562ea4c.var_e1dc57d80a5bd29e : 5);
     if (!isdefined(level.spawnfunc_registered)) {
         level.spawnfunc_registered = [];
@@ -453,42 +453,42 @@ function function_512ce2eff75c0873(var_8299a70a0562ea4c, groupname, var_6a152b39
         namespace_5729d24318b60bcd::register_module_ai_spawn_func(var_8299a70a0562ea4c.groupname, &paratrooper_spawnfunc);
         level.spawnfunc_registered[var_8299a70a0562ea4c.groupname] = 1;
     }
-    foreach (spawner in var_8299a70a0562ea4c.var_6a152b39e0aacb48) {
+    foreach (spawner in var_8299a70a0562ea4c.ai_spawnpoints) {
         spawner namespace_5729d24318b60bcd::enable_spawner();
         if (!isdefined(spawner.parachute_land_origin)) {
             spawner.parachute_land_origin = spawner.origin;
         }
         spawner.allow_momentum = var_8299a70a0562ea4c.allow_momentum;
         spawner.skydive_time = 0;
-        spawner.var_e0f7a814ed44a93e = var_8299a70a0562ea4c.var_e0f7a814ed44a93e;
+        spawner.chute_time = var_8299a70a0562ea4c.chute_time;
         spawner.var_bdaef5a9b7c28e6 = var_8299a70a0562ea4c.var_bdaef5a9b7c28e6;
         spawner.var_e1dc57d80a5bd29e = var_8299a70a0562ea4c.var_e1dc57d80a5bd29e;
         if (isdefined(var_8299a70a0562ea4c.var_cba615c821ed60f6)) {
             spawner.var_cba615c821ed60f6 = var_8299a70a0562ea4c.var_cba615c821ed60f6;
         }
     }
-    var_695710be9aa10b90 = isdefined(var_8299a70a0562ea4c.var_ea9cb5e9fa0958a5) ? var_8299a70a0562ea4c.var_ea9cb5e9fa0958a5 : var_8299a70a0562ea4c.var_6a152b39e0aacb48[0];
-    if (!isdefined(var_8299a70a0562ea4c.var_36116b0f40578b0d)) {
-        var_8299a70a0562ea4c.var_36116b0f40578b0d = 12000;
-    } else if (var_8299a70a0562ea4c.var_36116b0f40578b0d < 0) {
-        var_36116b0f40578b0d = var_8299a70a0562ea4c.origin[2] - var_695710be9aa10b90.origin[2];
-        var_8299a70a0562ea4c.var_36116b0f40578b0d = var_36116b0f40578b0d;
+    var_695710be9aa10b90 = isdefined(var_8299a70a0562ea4c.var_ea9cb5e9fa0958a5) ? var_8299a70a0562ea4c.var_ea9cb5e9fa0958a5 : var_8299a70a0562ea4c.ai_spawnpoints[0];
+    if (!isdefined(var_8299a70a0562ea4c.dropoff_height)) {
+        var_8299a70a0562ea4c.dropoff_height = 12000;
+    } else if (var_8299a70a0562ea4c.dropoff_height < 0) {
+        dropoff_height = var_8299a70a0562ea4c.origin[2] - var_695710be9aa10b90.origin[2];
+        var_8299a70a0562ea4c.dropoff_height = dropoff_height;
     }
-    var_8299a70a0562ea4c.var_36116b0f40578b0d = float(var_8299a70a0562ea4c.var_36116b0f40578b0d);
-    var_8299a70a0562ea4c.var_e879b2fb4850f3be = float(isdefined(var_8299a70a0562ea4c.var_e879b2fb4850f3be) ? var_8299a70a0562ea4c.var_e879b2fb4850f3be : 20000);
+    var_8299a70a0562ea4c.dropoff_height = float(var_8299a70a0562ea4c.dropoff_height);
+    var_8299a70a0562ea4c.exit_dist = float(isdefined(var_8299a70a0562ea4c.exit_dist) ? var_8299a70a0562ea4c.exit_dist : 20000);
     var_8299a70a0562ea4c.var_d1d978d765de25b9 = -1 * float(isdefined(var_8299a70a0562ea4c.var_d1d978d765de25b9) ? var_8299a70a0562ea4c.var_d1d978d765de25b9 : 3500);
     if (isdefined(var_8299a70a0562ea4c.target)) {
-        var_8299a70a0562ea4c.var_93617aa27cd16c57 = getstruct(var_8299a70a0562ea4c.target, "targetname").origin;
+        var_8299a70a0562ea4c.deploy_point = getstruct(var_8299a70a0562ea4c.target, "targetname").origin;
     } else {
-        var_8299a70a0562ea4c.var_93617aa27cd16c57 = var_695710be9aa10b90.parachute_land_origin + (0, 0, var_8299a70a0562ea4c.var_36116b0f40578b0d);
+        var_8299a70a0562ea4c.deploy_point = var_695710be9aa10b90.parachute_land_origin + (0, 0, var_8299a70a0562ea4c.dropoff_height);
     }
-    var_c9187c0632a61f21 = vectortoangles(var_8299a70a0562ea4c.var_93617aa27cd16c57 - var_8299a70a0562ea4c.origin);
+    flight_direction = vectortoangles(var_8299a70a0562ea4c.deploy_point - var_8299a70a0562ea4c.origin);
     if (isdefined(var_8299a70a0562ea4c.target)) {
-        var_8299a70a0562ea4c.var_df6f4ed45de77141 = var_8299a70a0562ea4c.var_93617aa27cd16c57;
+        var_8299a70a0562ea4c.var_df6f4ed45de77141 = var_8299a70a0562ea4c.deploy_point;
     } else {
-        var_8299a70a0562ea4c.var_df6f4ed45de77141 = var_8299a70a0562ea4c.var_93617aa27cd16c57 + anglestoforward(var_c9187c0632a61f21) * var_8299a70a0562ea4c.var_d1d978d765de25b9;
+        var_8299a70a0562ea4c.var_df6f4ed45de77141 = var_8299a70a0562ea4c.deploy_point + anglestoforward(flight_direction) * var_8299a70a0562ea4c.var_d1d978d765de25b9;
     }
-    var_8299a70a0562ea4c.exit_point = var_8299a70a0562ea4c.var_df6f4ed45de77141 + anglestoforward(var_c9187c0632a61f21) * var_8299a70a0562ea4c.var_e879b2fb4850f3be;
+    var_8299a70a0562ea4c.exit_point = var_8299a70a0562ea4c.var_df6f4ed45de77141 + anglestoforward(flight_direction) * var_8299a70a0562ea4c.exit_dist;
     var_c8b1d95ac26d2547 = distance2d(var_8299a70a0562ea4c.origin, var_8299a70a0562ea4c.var_df6f4ed45de77141);
     var_df0b3d261760c9c5 = distance2d(var_8299a70a0562ea4c.origin, var_8299a70a0562ea4c.exit_point);
     plane_speed = 161;
@@ -505,7 +505,7 @@ function function_512ce2eff75c0873(var_8299a70a0562ea4c, groupname, var_6a152b39
 // Checksum 0x0, Offset: 0x18fd
 // Size: 0x19c
 function function_fd00e772c1cf3d49(var_8299a70a0562ea4c) {
-    var_1e4bce6c927436e0 = var_8299a70a0562ea4c.var_93617aa27cd16c57;
+    var_1e4bce6c927436e0 = var_8299a70a0562ea4c.deploy_point;
     ac130 = spawn("script_model", var_8299a70a0562ea4c.origin);
     ac130 setmodel("veh9_mil_air_cargo_plane_wm");
     ac130.angles = vectortoangles(var_1e4bce6c927436e0 - ac130.origin);
@@ -517,7 +517,7 @@ function function_fd00e772c1cf3d49(var_8299a70a0562ea4c) {
     ac130.spawngroup = var_8299a70a0562ea4c.groupname;
     ac130 moveto(var_8299a70a0562ea4c.exit_point, var_8299a70a0562ea4c.var_40d08fccd5b3a342, 0.05, 0.05);
     wait var_8299a70a0562ea4c.var_9697b6eddcb3a889;
-    spawners = var_8299a70a0562ea4c.var_6a152b39e0aacb48;
+    spawners = var_8299a70a0562ea4c.ai_spawnpoints;
     foreach (spawner in spawners) {
         spawner.origin = ac130.origin;
     }

@@ -1,75 +1,75 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_64acb6ce534155b7;
-#using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2d9d24f7c63ac143;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\equipment\gas_grenade.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\engine\scriptable.gsc;
 #using script_3ff084f114b7f6c9;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using script_4cdabcd91a92977;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using script_58f20490049af6ac;
-#using script_57d3850a12cf1d8f;
-#using script_4948cdf739393d2d;
-#using scripts\mp\gametypes\br_bunker_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using script_46cf752d93dc17b;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using script_72d25fb2b703b6d5;
 #using script_40f4c8f2b94c5cd9;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\nuke.gsc;
-#using scripts\mp\gametypes\br_ending.gsc;
-#using script_62c595d55b88b26;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
-#using script_744cad313ed0a87e;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\weapons.gsc;
+#using script_46cf752d93dc17b;
+#using script_4948cdf739393d2d;
 #using script_4b87f2871b6b025c;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using script_a35012b9b75a996;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\common\vehicle.gsc;
+#using script_4cdabcd91a92977;
+#using script_57d3850a12cf1d8f;
+#using script_58f20490049af6ac;
+#using script_600b944a95c3a7bf;
+#using script_62c595d55b88b26;
+#using script_64acb6ce534155b7;
 #using script_728ffcee8cbf30ee;
-#using scripts\common\devgui.gsc;
+#using script_72d25fb2b703b6d5;
+#using script_744cad313ed0a87e;
+#using script_7ab5b649fa408138;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\killstreaks\nuke;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\equipment\shock_stick;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_bunker_utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_ending;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\trigger;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace namespace_2d7f47b19ccdb41d;
 
@@ -10385,7 +10385,7 @@ function function_ecaac672655c907a(player) {
     if (!istrue(player.ishaywire)) {
         shockdata = spawnstruct();
         shockdata.victim = player;
-        neptunium namespace_742e7eca5294ecdc::function_c927fd013fc6e502(shockdata, neptunium.bundle);
+        neptunium scripts\mp\equipment\shock_stick::function_c927fd013fc6e502(shockdata, neptunium.bundle);
         player playsound("evt_br_elite_arrow_neptunium_shock_in");
         player playloopsound("evt_br_elite_arrow_neptunium_shock_lp");
         player waittill_any_timeout_5(1, "haywire_cleared", "shockstick_interrupt", "killed_player", "last_stand_start");
@@ -10407,7 +10407,7 @@ function function_7519bb8dabab4252(player) {
     if (istrue(player.ishaywire)) {
         player.ishaywire = undefined;
         fromdeath = !scripts\mp\utility\player::isreallyalive(player);
-        player namespace_742e7eca5294ecdc::function_6c0a9d95ebb14f2a(fromdeath, neptunium.bundle);
+        player scripts\mp\equipment\shock_stick::function_6c0a9d95ebb14f2a(fromdeath, neptunium.bundle);
         player notify("haywire_cleared");
     }
 }
@@ -10804,7 +10804,7 @@ function function_42b1b43a7af97c1b(ref) {
     function devgui_init() {
         scripts\common\devgui::function_6e7290c8ee4f558b("<dev string:x5e8>");
         scripts\common\devgui::function_a9a864379a098ad6("<dev string:x619>", "<dev string:x638>", &function_fb26b10df93db1e5);
-        scripts\common\devgui::function_a9a864379a098ad6("<dev string:x657>", "<dev string:x668>", &function_9887497a62275340);
+        scripts\common\devgui::function_a9a864379a098ad6("<dev string:x657>", "<dev string:x668>", &force_timeout);
         scripts\common\devgui::function_fe953f000498048f();
     }
 
@@ -10836,7 +10836,7 @@ function function_42b1b43a7af97c1b(ref) {
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1dfbf
     // Size: 0x88
-    function function_9887497a62275340() {
+    function force_timeout() {
         foreach (teaminfo in level.arrow.teaminfo) {
             if (teaminfo.state == 6 || teaminfo.state == 0) {
                 continue;

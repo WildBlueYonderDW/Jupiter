@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
 #using script_261e315c49e5e4ef;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_util;
 
 #namespace namespace_37c7dafba349785b;
 

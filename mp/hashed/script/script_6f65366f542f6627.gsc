@@ -1,55 +1,55 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\points.gsc;
-#using script_41387eecc35b88bf;
-#using script_6bffae1b97f70547;
-#using script_485622d93fa7e4cf;
-#using script_3e2f8cc477d57433;
-#using script_7b2517368c79e5bc;
-#using script_443d99fe707f1d9f;
-#using script_64316dc775e91122;
-#using script_600b944a95c3a7bf;
+#using script_220d0eb95a8fab7d;
 #using script_2669878cf5a1b6bc;
-#using script_398835140857d740;
-#using script_7edf952f8921aa6b;
-#using script_639bf783929acf9b;
-#using script_7c40fa80892a721;
-#using script_62a4f7a62643fe8;
+#using script_2707474774db34b;
+#using script_2b264b25c7da0b12;
 #using script_2f11ea014b8bb8eb;
-#using scripts\mp\globallogic.gsc;
-#using script_749ff6f56673a813;
+#using script_398835140857d740;
+#using script_3e2f8cc477d57433;
+#using script_41387eecc35b88bf;
+#using script_443d99fe707f1d9f;
+#using script_485622d93fa7e4cf;
+#using script_4a6760982b403bad;
+#using script_4e6e58ab5d96c2b0;
 #using script_55221d469e7b320e;
 #using script_58be75c518bf0d40;
-#using script_220d0eb95a8fab7d;
-#using scripts\mp\hud_message.gsc;
-#using script_2707474774db34b;
+#using script_600b944a95c3a7bf;
+#using script_62a4f7a62643fe8;
 #using script_638d701d263ee1ed;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using script_2b264b25c7da0b12;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_4e6e58ab5d96c2b0;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\scoreboard.gsc;
-#using script_7c875a4a27280806;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using scripts\mp\gametypes\ob.gsc;
-#using script_76cc264b397db9cb;
+#using script_639bf783929acf9b;
+#using script_64316dc775e91122;
+#using script_6bffae1b97f70547;
 #using script_6fc415ff6a905dc1;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using script_4a6760982b403bad;
-#using scripts\mp\utility\perk.gsc;
+#using script_749ff6f56673a813;
+#using script_76cc264b397db9cb;
+#using script_7b2517368c79e5bc;
+#using script_7c40fa80892a721;
+#using script_7c875a4a27280806;
+#using script_7edf952f8921aa6b;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\gametypes\ob;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\outofbounds;
+#using scripts\mp\perks\perks;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rank;
+#using scripts\mp\scoreboard;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace ob_exfil;
 
@@ -129,14 +129,14 @@ function function_57d6dd6c67840c1f() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1187
 // Size: 0x1aa
-function function_c33400a035a1225d(var_751df20fceaee5, var_985e82f034f67960) {
-    var_c9b69aecc5c631ed = var_985e82f034f67960 namespace_ca7b90256548aa40::getsquadmembers(undefined, 1);
-    var_751df20fceaee5.var_953c0bb9dec80174 = [var_985e82f034f67960];
+function function_c33400a035a1225d(var_751df20fceaee5, player_activator) {
+    var_c9b69aecc5c631ed = player_activator namespace_ca7b90256548aa40::getsquadmembers(undefined, 1);
+    var_751df20fceaee5.var_953c0bb9dec80174 = [player_activator];
     foreach (squad_member in var_c9b69aecc5c631ed) {
         if (isdefined(squad_member.var_751df20fceaee5) && isdefined(squad_member.var_751df20fceaee5.var_18da16a5ee3e8314)) {
-            if (squad_member == var_985e82f034f67960) {
-                var_985e82f034f67960 namespace_9f6a961447bab709::function_f246f550360cbdbb();
-                var_751df20fceaee5.var_953c0bb9dec80174 = function_6d6af8144a5131f1(var_751df20fceaee5.var_953c0bb9dec80174, var_985e82f034f67960);
+            if (squad_member == player_activator) {
+                player_activator namespace_9f6a961447bab709::function_f246f550360cbdbb();
+                var_751df20fceaee5.var_953c0bb9dec80174 = function_6d6af8144a5131f1(var_751df20fceaee5.var_953c0bb9dec80174, player_activator);
             }
             continue;
         }
@@ -1099,8 +1099,8 @@ function containment_init() {
     self.var_4b8e8742f0763613.var_11879f765be021e1 = function_cbab630c2a3acda0(self);
     var_76723deda1f19107 = self getplayerdata(level.var_5d69837cf4db0407, "currentStreakCount");
     if (isdefined(level.gametypebundle) && isdefined(level) && isdefined(level.gametypebundle.var_e61e7212585decdd)) {
-        foreach (index, var_6b641d52983333cb in level.gametypebundle.var_e61e7212585decdd) {
-            if (var_76723deda1f19107 >= var_6b641d52983333cb.var_7401bd57f180cbb1) {
+        foreach (index, s_tier in level.gametypebundle.var_e61e7212585decdd) {
+            if (var_76723deda1f19107 >= s_tier.var_7401bd57f180cbb1) {
                 self.var_4b8e8742f0763613.var_6c51bc050c56493a = index + 1;
             }
         }
@@ -1155,8 +1155,8 @@ function function_b13047a59d730787() {
             if (var_45b3d22c6cca7734 <= 1) {
                 var_b8fd9cbd6ac969b7 = 0;
             } else {
-                var_c347faa43b3c5393 = getdvarint(@"hash_2f1c0c275e3ef7e2", 1) + 1;
-                var_b8fd9cbd6ac969b7 = level.gametypebundle.var_e61e7212585decdd[var_45b3d22c6cca7734 - var_c347faa43b3c5393].var_7401bd57f180cbb1;
+                tier_reduction = getdvarint(@"hash_2f1c0c275e3ef7e2", 1) + 1;
+                var_b8fd9cbd6ac969b7 = level.gametypebundle.var_e61e7212585decdd[var_45b3d22c6cca7734 - tier_reduction].var_7401bd57f180cbb1;
                 self setplayerdata(level.var_5d69837cf4db0407, "currentStreakCount", var_b8fd9cbd6ac969b7);
                 var_b0557c2682a12788 = self.var_4b8e8742f0763613.var_ae06e623319b2568 - var_b8fd9cbd6ac969b7;
                 self setplayerdata(level.var_5d69837cf4db0407, "currentSessionStreakCount", var_b0557c2682a12788);

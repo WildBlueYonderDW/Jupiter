@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
 #using script_1db8d0e02a99c5e2;
-#using scripts\cp_mp\vehicles\vehicle_mines.gsc;
-#using scripts\cp\cp_player_battlechatter.gsc;
-#using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\utility\player.gsc;
 #using script_354c862768cfe202;
+#using script_74502a9e0ef1f19c;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_mines;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_56cceecd6f498a6c;
 
@@ -76,13 +76,13 @@ function at_mine_plant(grenade) {
     } else {
         level thread add_to_mine_list(grenade);
     }
-    var_997b28e32a97c75 = spawnstruct();
-    var_997b28e32a97c75.scriptablename = "brloot_offhand_atmine";
-    var_997b28e32a97c75.equipname = level.br_pickups.br_equipname[var_997b28e32a97c75.scriptablename];
-    var_997b28e32a97c75.maxcount = grenade.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(var_997b28e32a97c75.equipname);
-    var_997b28e32a97c75.count = 1;
-    var_997b28e32a97c75.origin = grenade.origin;
-    grenade thread makeexplosiveusabletag("tag_use", 1, undefined, var_997b28e32a97c75);
+    pickup_str = spawnstruct();
+    pickup_str.scriptablename = "brloot_offhand_atmine";
+    pickup_str.equipname = level.br_pickups.br_equipname[pickup_str.scriptablename];
+    pickup_str.maxcount = grenade.owner namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(pickup_str.equipname);
+    pickup_str.count = 1;
+    pickup_str.origin = grenade.origin;
+    grenade thread makeexplosiveusabletag("tag_use", 1, undefined, pickup_str);
     grenade thread minedamagemonitor();
     grenade thread at_mine_watch_detonate();
     grenade thread at_mine_watch_emp();
@@ -339,19 +339,19 @@ function at_mine_watch_vehicle_trigger() {
         }
         remotetanks = level.assaultdrones;
         if (isdefined(remotetanks)) {
-            foreach (var_f5e7c5e12051b3eb in remotetanks) {
-                if (!isdefined(var_f5e7c5e12051b3eb)) {
+            foreach (remoteTank in remotetanks) {
+                if (!isdefined(remoteTank)) {
                     continue;
                 }
-                if (!isdefined(var_f5e7c5e12051b3eb.streakname) || var_f5e7c5e12051b3eb.streakname != "pac_sentry") {
+                if (!isdefined(remoteTank.streakname) || remoteTank.streakname != "pac_sentry") {
                     continue;
                 }
-                if (isdefined(var_f5e7c5e12051b3eb.owner) && !istrue(scripts\cp_mp\utility\player_utility::playersareenemies(var_f5e7c5e12051b3eb.owner, self.owner))) {
+                if (isdefined(remoteTank.owner) && !istrue(scripts\cp_mp\utility\player_utility::playersareenemies(remoteTank.owner, self.owner))) {
                     continue;
                 }
-                axes = anglestoaxis(var_f5e7c5e12051b3eb.angles);
+                axes = anglestoaxis(remoteTank.angles);
                 foreach (offset in var_c4cf8191f6bab561) {
-                    var_43c0a159a5f31309 = var_f5e7c5e12051b3eb.origin;
+                    var_43c0a159a5f31309 = remoteTank.origin;
                     var_43c0a159a5f31309 += axes["right"] * offset[0];
                     var_43c0a159a5f31309 += axes["forward"] * offset[1];
                     var_43c0a159a5f31309 += axes["up"] * offset[2];
@@ -364,7 +364,7 @@ function at_mine_watch_vehicle_trigger() {
                     if (lengthsquared(var_6602b5e32bb277d4) > var_687d10fcba24910d) {
                         continue;
                     }
-                    level thread at_mine_vehicle_trigger(var_f5e7c5e12051b3eb, self);
+                    level thread at_mine_vehicle_trigger(remoteTank, self);
                     return;
                 }
             }

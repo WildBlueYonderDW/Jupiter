@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_dlog.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using script_721ee99d7a8f9168;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_airdrop;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_dlog;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
 
 #namespace namespace_a204188ec750e835;
 
@@ -416,7 +416,7 @@ function private light_tank_airdrop(position, angles, groundposition, groundnorm
             objent = light_tank_createobjective(groundposition, groundnormal, spawndata);
         }
     }
-    vehicle = namespace_801fa17f47560d76::function_66c684fea143fbfd("light_tank", spawndata, faildata);
+    vehicle = scripts\cp_mp\vehicles\vehicle_airdrop::vehicle_airdrop("light_tank", spawndata, faildata);
     vehicle.objent = objent;
     vehicle thread function_9e0c2cd85fa8c581();
     return vehicle;

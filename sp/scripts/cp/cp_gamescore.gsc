@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_41ae4f5ca24216cb;
-#using scripts\cp\utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp\utility\script.gsc;
 #using script_187a04151c40fb72;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\cp_matchdata.gsc;
-#using scripts\cp\cp_challenge.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_41ae4f5ca24216cb;
+#using scripts\common\utility;
+#using scripts\cp\cp_challenge;
+#using scripts\cp\cp_matchdata;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\script;
+#using scripts\engine\utility;
 
 #namespace namespace_47908dddf85b62d;
 
@@ -35,32 +35,32 @@ function register_scoring_mode() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x291
 // Size: 0x54
-function register_eog_score_component(var_d5e812dc0c8de8a0, lua_string_index) {
+function register_eog_score_component(name_ref, lua_string_index) {
     if (!isdefined(level.eog_score_components)) {
         level.eog_score_components = [];
     }
-    var_e5975ec44088f591 = spawnstruct();
-    var_e5975ec44088f591.lua_string_index = lua_string_index;
-    level.eog_score_components[var_d5e812dc0c8de8a0] = var_e5975ec44088f591;
+    score_component = spawnstruct();
+    score_component.lua_string_index = lua_string_index;
+    level.eog_score_components[name_ref] = score_component;
 }
 
 // Namespace namespace_47908dddf85b62d / scripts\cp\cp_gamescore
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ed
 // Size: 0xd9
-function register_encounter_score_component(var_d5e812dc0c8de8a0, init_func, reset_team_performance_func, reset_player_performance_func, calculate_func, lua_string_index, end_game_score_component_ref, player_init_func) {
+function register_encounter_score_component(name_ref, init_func, reset_team_performance_func, reset_player_performance_func, calculate_func, lua_string_index, end_game_score_component_ref, player_init_func) {
     assertex(has_eog_score_component(end_game_score_component_ref), "'" + end_game_score_component_ref + "' eog game component has not been registered.");
-    var_e5975ec44088f591 = spawnstruct();
-    var_e5975ec44088f591 = [[ init_func ]](var_e5975ec44088f591);
-    var_e5975ec44088f591.reset_team_performance_func = reset_team_performance_func;
-    var_e5975ec44088f591.reset_player_performance_func = reset_player_performance_func;
-    var_e5975ec44088f591.calculate_func = calculate_func;
-    var_e5975ec44088f591.lua_string_index = lua_string_index;
-    var_e5975ec44088f591.end_game_score_component_ref = end_game_score_component_ref;
+    score_component = spawnstruct();
+    score_component = [[ init_func ]](score_component);
+    score_component.reset_team_performance_func = reset_team_performance_func;
+    score_component.reset_player_performance_func = reset_player_performance_func;
+    score_component.calculate_func = calculate_func;
+    score_component.lua_string_index = lua_string_index;
+    score_component.end_game_score_component_ref = end_game_score_component_ref;
     if (isdefined(player_init_func)) {
-        var_e5975ec44088f591.player_init_func = player_init_func;
+        score_component.player_init_func = player_init_func;
     }
-    level.encounter_score_components[var_d5e812dc0c8de8a0] = var_e5975ec44088f591;
+    level.encounter_score_components[name_ref] = score_component;
 }
 
 // Namespace namespace_47908dddf85b62d / scripts\cp\cp_gamescore
@@ -116,9 +116,9 @@ function init_player_score() {
 // Checksum 0x0, Offset: 0x488
 // Size: 0x72
 function component_specific_init(player) {
-    foreach (var_e5975ec44088f591 in level.encounter_score_components) {
-        if (isdefined(var_e5975ec44088f591.player_init_func)) {
-            [[ var_e5975ec44088f591.player_init_func ]](player);
+    foreach (score_component in level.encounter_score_components) {
+        if (isdefined(score_component.player_init_func)) {
+            [[ score_component.player_init_func ]](player);
         }
     }
 }
@@ -128,9 +128,9 @@ function component_specific_init(player) {
 // Checksum 0x0, Offset: 0x502
 // Size: 0x72
 function reset_player_encounter_performance(player) {
-    foreach (var_e5975ec44088f591 in level.encounter_score_components) {
-        if (isdefined(var_e5975ec44088f591.reset_player_performance_func)) {
-            [[ var_e5975ec44088f591.reset_player_performance_func ]](player);
+    foreach (score_component in level.encounter_score_components) {
+        if (isdefined(score_component.reset_player_performance_func)) {
+            [[ score_component.reset_player_performance_func ]](player);
         }
     }
 }
@@ -140,7 +140,7 @@ function reset_player_encounter_performance(player) {
 // Checksum 0x0, Offset: 0x57c
 // Size: 0x58
 function reset_end_game_score() {
-    foreach (var_e5975ec44088f591 in level.eog_score_components) {
+    foreach (score_component in level.eog_score_components) {
         self.end_game_score[var_e16956c20a49272c] = 0;
     }
 }
@@ -150,9 +150,9 @@ function reset_end_game_score() {
 // Checksum 0x0, Offset: 0x5dc
 // Size: 0x70
 function reset_encounter_performance() {
-    foreach (var_e5975ec44088f591 in level.encounter_score_components) {
-        if (isdefined(var_e5975ec44088f591.reset_team_performance_func)) {
-            [[ var_e5975ec44088f591.reset_team_performance_func ]](var_e5975ec44088f591);
+    foreach (score_component in level.encounter_score_components) {
+        if (isdefined(score_component.reset_team_performance_func)) {
+            [[ score_component.reset_team_performance_func ]](score_component);
         }
     }
     reset_players_encounter_performance_and_lua();
@@ -190,11 +190,11 @@ function calculate_players_total_end_game_score(override) {
 // Checksum 0x0, Offset: 0x73f
 // Size: 0x8d
 function calculate_total_end_game_score(player) {
-    var_5732eff28b14af01 = 1;
+    row_number = 1;
     var_5599a35b585b0733 = 0;
     foreach (var_5784e2e019b558b5 in level.eog_score_components) {
         var_42829e2108c7c16d = player.end_game_score[var_10ea2af8f615d10f];
-        var_5732eff28b14af01++;
+        row_number++;
         var_5599a35b585b0733 += var_42829e2108c7c16d;
     }
 }
@@ -203,8 +203,8 @@ function calculate_total_end_game_score(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x7d4
 // Size: 0x23
-function calculate_and_show_encounter_scores(var_ecddb34473dd4732, var_df48775871133666) {
-    calculate_encounter_scores(var_ecddb34473dd4732, var_df48775871133666);
+function calculate_and_show_encounter_scores(players_list, var_df48775871133666) {
+    calculate_encounter_scores(players_list, var_df48775871133666);
     show_encounter_scores();
 }
 
@@ -212,8 +212,8 @@ function calculate_and_show_encounter_scores(var_ecddb34473dd4732, var_df4877587
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ff
 // Size: 0x66
-function calculate_encounter_scores(var_ecddb34473dd4732, var_df48775871133666, override) {
-    foreach (player in var_ecddb34473dd4732) {
+function calculate_encounter_scores(players_list, var_df48775871133666, override) {
+    foreach (player in players_list) {
         calculate_player_encounter_scores(player, var_df48775871133666, override);
     }
 }
@@ -226,29 +226,29 @@ function calculate_player_encounter_scores(player, var_df48775871133666, overrid
     /#
         function_e93a7f76c425af37(player);
     #/
-    var_5732eff28b14af01 = 1;
+    row_number = 1;
     total_score = 0;
     foreach (var_5654c767628c0591 in var_df48775871133666) {
         assertex(isdefined(level.encounter_score_components[var_5654c767628c0591]), "'" + var_5654c767628c0591 + "' is not a initialized score component");
         var_41a9c90605002d6f = level.encounter_score_components[var_5654c767628c0591];
-        var_54b36399d6815ca7 = [[ var_41a9c90605002d6f.calculate_func ]](player, var_41a9c90605002d6f);
-        var_54b36399d6815ca7 *= level.cycle_score_scalar;
-        var_54b36399d6815ca7 = int(var_54b36399d6815ca7);
-        player.end_game_score[var_41a9c90605002d6f.end_game_score_component_ref] = player.end_game_score[var_41a9c90605002d6f.end_game_score_component_ref] + var_54b36399d6815ca7;
-        set_lua_encounter_score_row(player, var_5732eff28b14af01, var_41a9c90605002d6f.lua_string_index, var_54b36399d6815ca7);
-        total_score += var_54b36399d6815ca7;
-        var_5732eff28b14af01++;
+        encounter_score = [[ var_41a9c90605002d6f.calculate_func ]](player, var_41a9c90605002d6f);
+        encounter_score *= level.cycle_score_scalar;
+        encounter_score = int(encounter_score);
+        player.end_game_score[var_41a9c90605002d6f.end_game_score_component_ref] = player.end_game_score[var_41a9c90605002d6f.end_game_score_component_ref] + encounter_score;
+        set_lua_encounter_score_row(player, row_number, var_41a9c90605002d6f.lua_string_index, encounter_score);
+        total_score += encounter_score;
+        row_number++;
     }
     if (isdefined(level.bonusscorefunc)) {
-        var_2ad6c5502cbbd27d = [[ level.bonusscorefunc ]](player, total_score);
-        total_score += var_2ad6c5502cbbd27d.amount;
-        set_lua_encounter_score_row(player, var_5732eff28b14af01, var_2ad6c5502cbbd27d.ui_string_index, var_2ad6c5502cbbd27d.amount);
-        var_5732eff28b14af01++;
+        bonus_score = [[ level.bonusscorefunc ]](player, total_score);
+        total_score += bonus_score.amount;
+        set_lua_encounter_score_row(player, row_number, bonus_score.ui_string_index, bonus_score.amount);
+        row_number++;
     }
-    set_lua_encounter_score_row(player, var_5732eff28b14af01, 6, total_score);
-    var_5732eff28b14af01++;
+    set_lua_encounter_score_row(player, row_number, 6, total_score);
+    row_number++;
     if (isdefined(level.postencounterscorefunc)) {
-        [[ level.postencounterscorefunc ]](player, total_score, var_5732eff28b14af01);
+        [[ level.postencounterscorefunc ]](player, total_score, row_number);
     }
 }
 
@@ -257,9 +257,9 @@ function calculate_player_encounter_scores(player, var_df48775871133666, overrid
 // Checksum 0x0, Offset: 0xa3c
 // Size: 0x31
 function round_up_to_nearest(cash_amount, base) {
-    var_75b10a88ad0d8395 = cash_amount / base;
-    var_75b10a88ad0d8395 = ceil(var_75b10a88ad0d8395);
-    return int(var_75b10a88ad0d8395 * base);
+    temp_value = cash_amount / base;
+    temp_value = ceil(temp_value);
+    return int(temp_value * base);
 }
 
 // Namespace namespace_47908dddf85b62d / scripts\cp\cp_gamescore
@@ -328,9 +328,9 @@ function get_player_encounter_performance(player, var_4bfb21eef0d73c62) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xc10
 // Size: 0x3a
-function calculate_under_max_score(performance, var_af5c9161064bfd0d, var_9d3207145b5e514c) {
-    var_251e7690721c4668 = clamp(var_af5c9161064bfd0d - performance, 0, var_af5c9161064bfd0d);
-    return int(var_251e7690721c4668 / var_af5c9161064bfd0d * var_9d3207145b5e514c);
+function calculate_under_max_score(performance, max_limit, max_score) {
+    var_251e7690721c4668 = clamp(max_limit - performance, 0, max_limit);
+    return int(var_251e7690721c4668 / max_limit * max_score);
 }
 
 // Namespace namespace_47908dddf85b62d / scripts\cp\cp_gamescore
@@ -369,9 +369,9 @@ function get_team_score_component_name() {
 // Size: 0x67
 function reset_player_encounter_lua_omnvars(player) {
     var_389cf859982e0a0a = 8;
-    for (var_5732eff28b14af01 = 1; var_5732eff28b14af01 <= var_389cf859982e0a0a; var_5732eff28b14af01++) {
-        var_80a7169cdffb7afd = "ui_alien_encounter_title_row_" + var_5732eff28b14af01;
-        var_fe5cd0bf7f32e381 = "ui_alien_encounter_score_row_" + var_5732eff28b14af01;
+    for (row_number = 1; row_number <= var_389cf859982e0a0a; row_number++) {
+        var_80a7169cdffb7afd = "ui_alien_encounter_title_row_" + row_number;
+        var_fe5cd0bf7f32e381 = "ui_alien_encounter_score_row_" + row_number;
         player setclientomnvar(var_80a7169cdffb7afd, 0);
         player setclientomnvar(var_fe5cd0bf7f32e381, 0);
     }
@@ -381,11 +381,11 @@ function reset_player_encounter_lua_omnvars(player) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xd68
 // Size: 0x59
-function set_lua_eog_score_row(player, var_5732eff28b14af01, var_c9de11c82e860046, var_633e0f5f80136222) {
-    var_97c477c244a6d4cb = "zm_ui_eog_title_row_" + var_5732eff28b14af01;
-    var_aedd7ceac3e6136f = "zm_ui_eog_title_row_" + var_5732eff28b14af01;
-    player setclientomnvar(var_97c477c244a6d4cb, var_c9de11c82e860046);
-    player setclientomnvar(var_aedd7ceac3e6136f, var_633e0f5f80136222);
+function set_lua_eog_score_row(player, row_number, row_title, row_score) {
+    var_97c477c244a6d4cb = "zm_ui_eog_title_row_" + row_number;
+    var_aedd7ceac3e6136f = "zm_ui_eog_title_row_" + row_number;
+    player setclientomnvar(var_97c477c244a6d4cb, row_title);
+    player setclientomnvar(var_aedd7ceac3e6136f, row_score);
 }
 
 // Namespace namespace_47908dddf85b62d / scripts\cp\cp_gamescore
@@ -403,9 +403,9 @@ function show_encounter_scores() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xdf9
 // Size: 0x47
-function set_lua_encounter_score_row(player, var_5732eff28b14af01, var_c9de11c82e860046, var_633e0f5f80136222) {
-    var_97c477c244a6d4cb = "ui_alien_encounter_title_row_" + var_5732eff28b14af01;
-    var_aedd7ceac3e6136f = "ui_alien_encounter_score_row_" + var_5732eff28b14af01;
+function set_lua_encounter_score_row(player, row_number, row_title, row_score) {
+    var_97c477c244a6d4cb = "ui_alien_encounter_title_row_" + row_number;
+    var_aedd7ceac3e6136f = "ui_alien_encounter_score_row_" + row_number;
 }
 
 // Namespace namespace_47908dddf85b62d / scripts\cp\cp_gamescore
@@ -457,7 +457,7 @@ function processassist_regularcp(killedplayer, objweapon, bonusmagnitude) {
         pointsoverride = points + points * bonusmagnitude;
         thread namespace_6099285b4066f63b::doScoreEvent(#"assist_ffa", objweapon, pointsoverride);
     } else if (isdefined(markedbyboomperk) && array_contains_key(markedbyboomperk, getuniqueid())) {
-        thread givestreakpointswithtext(#"hash_8c8aac25bcc4ee97", objweapon, undefined);
+        thread givestreakpointswithtext(#"assist_ping", objweapon, undefined);
     } else {
         pointsoverride = points + points * bonusmagnitude;
         thread namespace_6099285b4066f63b::doScoreEvent(#"assist", objweapon, pointsoverride);
@@ -504,9 +504,9 @@ function processassist_regularcp(killedplayer, objweapon, bonusmagnitude) {
         println("<dev string:x1c>");
         println("<dev string:x5f>" + player getentitynumber() + "<dev string:x8c>");
         println("<dev string:x98>");
-        foreach (key, var_e5975ec44088f591 in level.encounter_score_components) {
-            if (isdefined(var_e5975ec44088f591.team_encounter_performance)) {
-                foreach (value in var_e5975ec44088f591.team_encounter_performance) {
+        foreach (key, score_component in level.encounter_score_components) {
+            if (isdefined(score_component.team_encounter_performance)) {
+                foreach (value in score_component.team_encounter_performance) {
                     println(var_8db70ce09c8bf0c9 + "<dev string:xac>" + value);
                 }
             }

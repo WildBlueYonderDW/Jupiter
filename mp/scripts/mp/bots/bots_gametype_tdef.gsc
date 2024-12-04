@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\script.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\script;
 
 #namespace bots_gametype_tdef;
 
@@ -240,20 +240,20 @@ function bot_flag_ai_director_update() {
             attackers = get_allied_attackers_for_team(team);
             defenders = get_allied_defenders_for_team(team);
             if (attackers.size > attacker_limit) {
-                var_3e2f5d10887aeb24 = [];
-                var_76912c7979e5a46b = 0;
+                ai_attackers = [];
+                removed_attacker = 0;
                 foreach (attacker in attackers) {
                     if (isai(attacker)) {
                         if (level.bot_personality_type[attacker.personality] == "stationary") {
                             attacker flag_set_role("defender");
-                            var_76912c7979e5a46b = 1;
+                            removed_attacker = 1;
                             break;
                         }
-                        var_3e2f5d10887aeb24 = array_add(var_3e2f5d10887aeb24, attacker);
+                        ai_attackers = array_add(ai_attackers, attacker);
                     }
                 }
-                if (!var_76912c7979e5a46b && var_3e2f5d10887aeb24.size > 0) {
-                    random(var_3e2f5d10887aeb24) flag_set_role("defender");
+                if (!removed_attacker && ai_attackers.size > 0) {
+                    random(ai_attackers) flag_set_role("defender");
                 }
             }
             if (defenders.size > defender_limit) {

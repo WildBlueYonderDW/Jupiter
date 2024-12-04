@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\damage.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\killstreak;
 
 #namespace namespace_36d70b271b5b0361;
 

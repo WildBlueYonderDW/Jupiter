@@ -1,14 +1,14 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_371b4c2ab5861e62;
-#using script_7edf952f8921aa6b;
 #using script_2669878cf5a1b6bc;
-#using scripts\common\ai.gsc;
-#using script_7d3e27aa82b5d70b;
+#using script_371b4c2ab5861e62;
 #using script_638d701d263ee1ed;
-#using scripts\mp\hud_message.gsc;
+#using script_7d3e27aa82b5d70b;
+#using script_7edf952f8921aa6b;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
 
 #namespace namespace_f721fc7d0d2d0f47;
 
@@ -184,18 +184,18 @@ function function_d590d31d431a15c1(region_name, region_difficulty) {
         }
         difficulty_struct = level.var_f721fc7d0d2d0f47.difficulties[region_difficulty];
         difficulty_struct.regions[difficulty_struct.regions.size] = region;
-        var_6db488afd323abf4 = function_73c48491fd2e880e(region);
+        region_aabb = get_aabb(region);
         if (!isdefined(difficulty_struct.aabb)) {
             difficulty_struct.aabb = [];
-            difficulty_struct.aabb["min"] = var_6db488afd323abf4["min"];
-            difficulty_struct.aabb["max"] = var_6db488afd323abf4["max"];
+            difficulty_struct.aabb["min"] = region_aabb["min"];
+            difficulty_struct.aabb["max"] = region_aabb["max"];
             continue;
         }
         aabb_min = [];
         aabb_max = [];
         for (i = 0; i < 3; i++) {
-            aabb_min[i] = min(difficulty_struct.aabb["min"][i], var_6db488afd323abf4["min"][i]);
-            aabb_max[i] = max(difficulty_struct.aabb["max"][i], var_6db488afd323abf4["max"][i]);
+            aabb_min[i] = min(difficulty_struct.aabb["min"][i], region_aabb["min"][i]);
+            aabb_max[i] = max(difficulty_struct.aabb["max"][i], region_aabb["max"][i]);
         }
         difficulty_struct.aabb["min"] = (aabb_min[0], aabb_min[1], aabb_min[2]);
         difficulty_struct.aabb["max"] = (aabb_max[0], aabb_max[1], aabb_max[2]);
@@ -206,7 +206,7 @@ function function_d590d31d431a15c1(region_name, region_difficulty) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xc17
 // Size: 0xfc
-function private function_73c48491fd2e880e(region) {
+function private get_aabb(region) {
     aabb = [];
     aabb["min"] = [];
     aabb["max"] = [];

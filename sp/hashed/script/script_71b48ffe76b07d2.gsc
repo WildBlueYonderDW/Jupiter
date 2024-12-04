@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_ccad715273481961;
 
@@ -21,7 +21,7 @@ function function_c8af4a1cdc0f6e21() {
     self endon("death");
     self endon("player_at_elevator_bottom");
     var_7e14dcff999c318f = "start";
-    var_f47e745166e2e3b4 = "none";
+    current_location = "none";
     var_abc809082007dec2 = "scn_jup_flash_siren_main_stadium";
     var_46dbfa58e1e7954c = 3;
     var_5c29ab75fcfab98d = (28745, 2259, 74);
@@ -30,19 +30,19 @@ function function_c8af4a1cdc0f6e21() {
         wait 3;
         switch (var_7e14dcff999c318f) {
         case #"hash_92c0d94622b80b72":
-            var_f47e745166e2e3b4 = var_5c29ab75fcfab98d;
+            current_location = var_5c29ab75fcfab98d;
             break;
         case #"hash_d003e5340ecd499e":
-            var_f47e745166e2e3b4 = var_5c29ab75fcfab98d;
+            current_location = var_5c29ab75fcfab98d;
             break;
         case #"hash_dee22eb8954420e4":
-            var_f47e745166e2e3b4 = var_5c29ab75fcfab98d;
+            current_location = var_5c29ab75fcfab98d;
             break;
         case #"hash_3428c9058b880a27":
-            var_f47e745166e2e3b4 = var_5c29ab75fcfab98d;
+            current_location = var_5c29ab75fcfab98d;
             break;
         default:
-            var_f47e745166e2e3b4 = var_5c29ab75fcfab98d;
+            current_location = var_5c29ab75fcfab98d;
             break;
         }
         var_46dbfa58e1e7954c++;
@@ -60,7 +60,7 @@ function function_c8af4a1cdc0f6e21() {
         default:
             break;
         }
-        function_2f4acc45a7bd9d7b(var_f47e745166e2e3b4, var_abc809082007dec2);
+        function_2f4acc45a7bd9d7b(current_location, var_abc809082007dec2);
     }
 }
 
@@ -117,9 +117,9 @@ function function_b1e3c22d0bf5b7b6() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x50
-function function_68562e15bb2bd6f0(var_69743af45d6867ee, var_69fb56e8a15a857, var_89ba1a66dafec1a7, var_b29e8c6c67bd3421, var_8a0d7ae937b8eb86) {
-    level.player setsoundsubmix(var_69743af45d6867ee, var_69fb56e8a15a857, var_89ba1a66dafec1a7);
-    wait var_b29e8c6c67bd3421;
+function function_68562e15bb2bd6f0(var_69743af45d6867ee, var_69fb56e8a15a857, scale_depth, hold_length, var_8a0d7ae937b8eb86) {
+    level.player setsoundsubmix(var_69743af45d6867ee, var_69fb56e8a15a857, scale_depth);
+    wait hold_length;
     level.player clearsoundsubmix(var_69743af45d6867ee, var_8a0d7ae937b8eb86);
 }
 

@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace battle_tracks;
 

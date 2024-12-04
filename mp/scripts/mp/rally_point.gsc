@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\teamrevive.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\spawnselection.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\gameobjects.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gameobjects;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\spawnselection;
+#using scripts\mp\teamrevive;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\player;
 
 #namespace rally_point;
 

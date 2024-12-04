@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_c624dc89f0bd5141;
 
@@ -39,7 +39,7 @@ function main() {
     self attach("c_jup_head_hero_price_tundra_frost", "", 1);
     self.headmodel = "c_jup_head_hero_price_tundra_frost";
     self setclothtype(#"vestlight");
-    self function_8abe5a968cc3c220(#"hash_466ad932e56afc50");
+    self function_8abe5a968cc3c220(#"milmedgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

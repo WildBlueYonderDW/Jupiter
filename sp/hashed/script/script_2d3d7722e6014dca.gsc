@@ -1,6 +1,6 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\sp\spawner.gsc;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\spawner;
 
 #namespace ai;
 
@@ -8,11 +8,11 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37e
 // Size: 0x40
-function function_b1e9f30ceb841994(var_89514ad8a764d9b4) {
-    assertex(isdefined(var_89514ad8a764d9b4), "get_group_touching_volume: aigroup_name is undefined to get group");
-    guys = get_ai_group_ai(var_89514ad8a764d9b4);
-    var_e79103f230b3329f = function_359a5497e23b8f79(guys);
-    return var_e79103f230b3329f;
+function function_b1e9f30ceb841994(aigroup_name) {
+    assertex(isdefined(aigroup_name), "get_group_touching_volume: aigroup_name is undefined to get group");
+    guys = get_ai_group_ai(aigroup_name);
+    guys_touching = function_359a5497e23b8f79(guys);
+    return guys_touching;
 }
 
 // Namespace ai / namespace_eb38a630f7c5a462
@@ -20,14 +20,14 @@ function function_b1e9f30ceb841994(var_89514ad8a764d9b4) {
 // Checksum 0x0, Offset: 0x3c7
 // Size: 0x87
 function function_359a5497e23b8f79(array) {
-    var_e79103f230b3329f = [];
+    guys_touching = [];
     assertex(isarray(array), "array_touching_volume: array is undefined or not an array");
     foreach (guy in array) {
         if (isalive(guy) && self istouching(guy)) {
-            var_e79103f230b3329f[var_e79103f230b3329f.size] = guy;
+            guys_touching[guys_touching.size] = guy;
         }
     }
-    return var_e79103f230b3329f;
+    return guys_touching;
 }
 
 // Namespace ai / namespace_eb38a630f7c5a462
@@ -104,10 +104,10 @@ function function_f2222194b84d7787(team, species, targetname, var_ba3a10cac7a316
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x6cf
 // Size: 0x74
-function function_105b3c0f7ba8cd09(var_89514ad8a764d9b4, targetname, var_ba3a10cac7a316fa, flagname, timeout, randomdelay) {
-    assertex(isdefined(var_89514ad8a764d9b4), "group_ai_set_goal: aigroup_name for group_ai is undefined");
+function function_105b3c0f7ba8cd09(aigroup_name, targetname, var_ba3a10cac7a316fa, flagname, timeout, randomdelay) {
+    assertex(isdefined(aigroup_name), "group_ai_set_goal: aigroup_name for group_ai is undefined");
     assertex(isdefined(targetname), "group_ai_set_goal: targetname is undefined");
-    guys = get_ai_group_ai(var_89514ad8a764d9b4);
+    guys = get_ai_group_ai(aigroup_name);
     function_12c55fcbaa7c5346(guys, targetname, var_ba3a10cac7a316fa, flagname, timeout, randomdelay);
 }
 

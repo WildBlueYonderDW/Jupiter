@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace namespace_22e6e91865862939;
 
@@ -25,13 +25,13 @@
             assertex(isdefined(var_2cdb8d023f645452.script_string), "<dev string:x43>");
             var_2cdb8d023f645452.s_bundle = getscriptbundle("<dev string:x8c>" + var_2cdb8d023f645452.script_string);
             var_2cdb8d023f645452.var_a4a4166618e64bb3 = 0;
-            foreach (var_74589075cb125a1d in var_2cdb8d023f645452.s_bundle.assetlist) {
-                if (var_74589075cb125a1d.assettype == "<dev string:x9e>") {
-                    if (isdefined(var_74589075cb125a1d.model)) {
-                        precachemodel(var_74589075cb125a1d.model);
+            foreach (s_asset in var_2cdb8d023f645452.s_bundle.assetlist) {
+                if (s_asset.assettype == "<dev string:x9e>") {
+                    if (isdefined(s_asset.model)) {
+                        precachemodel(s_asset.model);
                     }
-                    if (isarray(var_74589075cb125a1d.var_44d1e76fc7ab685a) && var_74589075cb125a1d.var_44d1e76fc7ab685a.size) {
-                        foreach (var_e1b31cbc0d6ea8f7 in var_74589075cb125a1d.var_44d1e76fc7ab685a) {
+                    if (isarray(s_asset.var_44d1e76fc7ab685a) && s_asset.var_44d1e76fc7ab685a.size) {
+                        foreach (var_e1b31cbc0d6ea8f7 in s_asset.var_44d1e76fc7ab685a) {
                             if (isdefined(var_e1b31cbc0d6ea8f7.modelvariant)) {
                                 precachemodel(var_e1b31cbc0d6ea8f7.modelvariant);
                             }
@@ -39,7 +39,7 @@
                     }
                 }
             }
-            thread function_4348a2ccce2bb217(var_2cdb8d023f645452);
+            thread spawn_asset(var_2cdb8d023f645452);
         }
         a_s_temp = [];
         foreach (s_instance in level.var_7eb4320d65486c37) {
@@ -489,7 +489,7 @@
                     s_instance.var_a4a4166618e64bb3 = 0;
                 }
             }
-            function_4348a2ccce2bb217(s_instance);
+            spawn_asset(s_instance);
         }
     }
 
@@ -499,8 +499,8 @@
     // Size: 0x52
     function function_2860654ba01d34d8(s_instance) {
         var_7c79a44be41c38cc = s_instance.var_a4a4166618e64bb3;
-        var_6c3bdc51d2826cf7 = s_instance.s_bundle.assetlist[var_7c79a44be41c38cc].model;
-        return var_6c3bdc51d2826cf7;
+        str_asset = s_instance.s_bundle.assetlist[var_7c79a44be41c38cc].model;
+        return str_asset;
     }
 
     // Namespace namespace_22e6e91865862939 / namespace_d4b0db6f425eeb40
@@ -578,7 +578,7 @@
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x1eaa
     // Size: 0x4b9
-    function function_4348a2ccce2bb217(s_instance) {
+    function spawn_asset(s_instance) {
         while (!isdefined(level.player)) {
             waitframe();
         }

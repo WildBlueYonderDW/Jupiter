@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\bots\bots_util.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\weapon;
 
 #namespace bots_gametype_gun;
 

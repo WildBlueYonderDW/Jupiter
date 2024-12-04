@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace namespace_3070a48574204bdc;
 
@@ -39,35 +39,35 @@ function getweapon(weaponname, weapontype) {
         weaponarray = weaponname;
         weaponname = weaponname[randomint(weaponname.size)];
     }
-    var_ff41803b6d5f1b45 = tolower(self.classname);
-    if (!issubstr(var_ff41803b6d5f1b45, "_iw9_") && !issubstr(var_ff41803b6d5f1b45, "_jup_")) {
+    low_classname = tolower(self.classname);
+    if (!issubstr(low_classname, "_iw9_") && !issubstr(low_classname, "_jup_")) {
         /#
             function_3067ab4eb4ea11bc();
         #/
         return make_weapon(weaponname);
     }
-    if (issubstr(var_ff41803b6d5f1b45, "_jup_")) {
-        if (issubstr(var_ff41803b6d5f1b45, "_hero_") || issubstr(var_ff41803b6d5f1b45, "_villain_")) {
+    if (issubstr(low_classname, "_jup_")) {
+        if (issubstr(low_classname, "_hero_") || issubstr(low_classname, "_villain_")) {
             return function_8235813c1c9d2f08(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_rus_pmc_") || issubstr(var_ff41803b6d5f1b45, "_security")) {
+        } else if (issubstr(low_classname, "_rus_pmc_") || issubstr(low_classname, "_security")) {
             return function_2fafb44aac177345(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_rus_kas")) {
+        } else if (issubstr(low_classname, "_rus_kas")) {
             return function_212de1183c53e8(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_swat_")) {
+        } else if (issubstr(low_classname, "_swat_")) {
             return function_ae38ecc687e7c901(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_uk_police_")) {
+        } else if (issubstr(low_classname, "_uk_police_")) {
             return function_4ce97548a610e1bf(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_police_")) {
+        } else if (issubstr(low_classname, "_police_")) {
             return function_4441fee08ec94cdd(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_paramedic_")) {
+        } else if (issubstr(low_classname, "_paramedic_")) {
             return function_ef52cc59c1b2e548(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_gulag_guard_") || issubstr(var_ff41803b6d5f1b45, "_prisoner_")) {
+        } else if (issubstr(low_classname, "_gulag_guard_") || issubstr(low_classname, "_prisoner_")) {
             return function_951704f451830a80(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_reb_")) {
+        } else if (issubstr(low_classname, "_reb_")) {
             return function_ec3afdeda11b4349(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_sas_urban_")) {
+        } else if (issubstr(low_classname, "_sas_urban_")) {
             return function_1ad896c57dd5eac6(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "sas_bravo_")) {
+        } else if (issubstr(low_classname, "sas_bravo_")) {
             return function_dc545d7e8b75abc2(weapontype, weaponname, weaponarray);
         } else {
             /#
@@ -75,30 +75,30 @@ function getweapon(weaponname, weapontype) {
             #/
             return make_weapon(weaponname);
         }
-    } else if (issubstr(var_ff41803b6d5f1b45, "_iw9_")) {
-        if (issubstr(var_ff41803b6d5f1b45, "_hero_") || issubstr(var_ff41803b6d5f1b45, "_villain_")) {
+    } else if (issubstr(low_classname, "_iw9_")) {
+        if (issubstr(low_classname, "_hero_") || issubstr(low_classname, "_villain_")) {
             return function_58b6f3799af2dbbc(weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_mex_sf_")) {
+        } else if (issubstr(low_classname, "_mex_sf_")) {
             return function_599b2370665f8002(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_mex_police_")) {
+        } else if (issubstr(low_classname, "_mex_police_")) {
             return function_599b2370665f8002(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_mex_")) {
+        } else if (issubstr(low_classname, "_mex_")) {
             return function_53e5f63c1e2a01ee(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_reb_")) {
+        } else if (issubstr(low_classname, "_reb_")) {
             return function_f6839b3d503efa3d(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_usmc_")) {
+        } else if (issubstr(low_classname, "_usmc_")) {
             return function_4b7d1f618622e1c4(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_cartel_guard_")) {
+        } else if (issubstr(low_classname, "_cartel_guard_")) {
             return function_4088385bffccb0a1(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_cartel_")) {
+        } else if (issubstr(low_classname, "_cartel_")) {
             return function_58d868a0b0dac3bb(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_rus_pmc_")) {
+        } else if (issubstr(low_classname, "_rus_pmc_")) {
             return function_d2e456774b5818b9(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_pmc_")) {
+        } else if (issubstr(low_classname, "_pmc_")) {
             return function_dccb603d3e9a2268(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_frogman_")) {
+        } else if (issubstr(low_classname, "_frogman_")) {
             return function_a6330cf7bdaa288e(weapontype, weaponname, weaponarray);
-        } else if (issubstr(var_ff41803b6d5f1b45, "_aq_")) {
+        } else if (issubstr(low_classname, "_aq_")) {
             return function_5f405a21c1883ed2(weapontype, weaponname, weaponarray);
         } else {
             /#
@@ -159,7 +159,7 @@ function function_8235813c1c9d2f08(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x32c1
 // Size: 0x1181
 function function_2fafb44aac177345(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("rus_pmc");
+    camos = getweapon_camos("rus_pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -306,7 +306,7 @@ function function_2fafb44aac177345(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x444b
 // Size: 0x8c4
 function function_212de1183c53e8(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -384,7 +384,7 @@ function function_212de1183c53e8(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x4d18
 // Size: 0xba2
 function function_4441fee08ec94cdd(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -485,7 +485,7 @@ function function_4441fee08ec94cdd(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x58c3
 // Size: 0xb9f
 function function_ae38ecc687e7c901(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -585,7 +585,7 @@ function function_ae38ecc687e7c901(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x646b
 // Size: 0xba2
 function function_ef52cc59c1b2e548(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -686,7 +686,7 @@ function function_ef52cc59c1b2e548(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x7016
 // Size: 0x98
 function function_ec3afdeda11b4349(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("reb");
+    camos = getweapon_camos("reb");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -706,7 +706,7 @@ function function_ec3afdeda11b4349(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x70b7
 // Size: 0xa82
 function function_4ce97548a610e1bf(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -810,7 +810,7 @@ function function_4ce97548a610e1bf(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x7b42
 // Size: 0x8e2
 function function_dc545d7e8b75abc2(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -885,7 +885,7 @@ function function_dc545d7e8b75abc2(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x842d
 // Size: 0xc57
 function function_1ad896c57dd5eac6(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("sas_urban");
+    camos = getweapon_camos("sas_urban");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -997,7 +997,7 @@ function function_1ad896c57dd5eac6(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x908d
 // Size: 0xab5
 function function_951704f451830a80(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -1155,7 +1155,7 @@ function function_58b6f3799af2dbbc(weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x9e2b
 // Size: 0x14cf
 function function_f6839b3d503efa3d(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("reb");
+    camos = getweapon_camos("reb");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -1326,7 +1326,7 @@ function function_f6839b3d503efa3d(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0xb303
 // Size: 0x10bf
 function function_53e5f63c1e2a01ee(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("mex_sf");
+    camos = getweapon_camos("mex_sf");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -1439,7 +1439,7 @@ function function_53e5f63c1e2a01ee(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0xc3cb
 // Size: 0x882
 function function_599b2370665f8002(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("mex_sf");
+    camos = getweapon_camos("mex_sf");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -1510,7 +1510,7 @@ function function_599b2370665f8002(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0xcc56
 // Size: 0xf15
 function function_4b7d1f618622e1c4(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("usmc");
+    camos = getweapon_camos("usmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -1658,7 +1658,7 @@ function function_4088385bffccb0a1(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0xdc6f
 // Size: 0x1b70
 function function_58d868a0b0dac3bb(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("cartel");
+    camos = getweapon_camos("cartel");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -1858,7 +1858,7 @@ function function_58d868a0b0dac3bb(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0xf7e8
 // Size: 0x882
 function function_a6330cf7bdaa288e(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("usmc");
+    camos = getweapon_camos("usmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -2044,7 +2044,7 @@ function function_d2e456774b5818b9(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x10ddf
 // Size: 0xd10
 function function_dccb603d3e9a2268(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("pmc");
+    camos = getweapon_camos("pmc");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -2160,7 +2160,7 @@ function function_dccb603d3e9a2268(type, weaponname, weaponarray) {
 // Checksum 0x0, Offset: 0x11af8
 // Size: 0x15f4
 function function_5f405a21c1883ed2(type, weaponname, weaponarray) {
-    camos = function_c82cdeeb884ddd65("aq");
+    camos = getweapon_camos("aq");
     var_e052c0161d3ef54 = [];
     var_c8f4fe738c61245a = [];
     switch (type) {
@@ -2314,7 +2314,7 @@ function function_5f405a21c1883ed2(type, weaponname, weaponarray) {
         weaponname = utility::get_weapon_weighted(weaponarray, var_f2d4826375b8590);
         switch (weaponname) {
         case #"hash_3fd5bba485c2aea6":
-            if (getdvar(@"hash_687fb8f9b7a23245") == "shipaf") {
+            if (getdvar(@"g_mapname") == "shipaf") {
                 var_e052c0161d3ef54["barrels"] = [50, "bar_sn_p02"];
                 var_e052c0161d3ef54["stocks"] = [50, "stock_sn_p02", "stock_lm_p02", "stock_ar_tactical_p02", "stock_ar_assault_p02_pgolf1", "stock_sm_p02", "stock_ar_p02"];
                 var_e052c0161d3ef54["mags"] = [50, "mag_sn_p02", "mag_sn_large_p02"];
@@ -2354,7 +2354,7 @@ function function_5f405a21c1883ed2(type, weaponname, weaponarray) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1311e
 // Size: 0x1e8
-function function_c82cdeeb884ddd65(type) {
+function getweapon_camos(type) {
     /#
         if (getdvarint(@"hash_f9de3dfe4b6a8b1d") == 1) {
             return undefined;

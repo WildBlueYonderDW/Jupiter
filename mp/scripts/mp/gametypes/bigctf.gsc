@@ -1,64 +1,64 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\gametypes\arm_vehicles.gsc;
 #using script_1d4b01c1ec829364;
 #using script_2f4866552f0ba818;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using scripts\mp\gametypes\dom.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\common\vehicle.gsc;
-#using scripts\mp\rally_point.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\mp\equipment\tac_insert.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_548072087c9fd504;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\persistence.gsc;
-#using script_4a6760982b403bad;
-#using scripts\mp\class.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\spawnselection.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\spawncamera.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\killstreaks\nuke.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\spawnscoring.gsc;
 #using script_3f1b6713ca4c9c7;
+#using script_4a6760982b403bad;
+#using script_548072087c9fd504;
+#using script_600b944a95c3a7bf;
 #using script_76cc264b397db9cb;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\utility\game_utility_mp.gsc;
+#using script_7ab5b649fa408138;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\nuke;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\equipment\tac_insert;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\arm_vehicles;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\dom;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\globallogic;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\persistence;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rally_point;
+#using scripts\mp\rank;
+#using scripts\mp\spawncamera;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\spawnselection;
+#using scripts\mp\spectating;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\game_utility_mp;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace bigctf;
 
@@ -67,7 +67,7 @@
 // Checksum 0x0, Offset: 0x1bcc
 // Size: 0xa77
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -3033,15 +3033,15 @@ function createhintobject(org, type, icon, hintstring, priority, duration, onobs
     function function_e3a2a0c2e544728e(var_a4ab3e1ca5d220c4) {
         if (var_a4ab3e1ca5d220c4 <= 5) {
             key = "<dev string:x1cf>" + var_a4ab3e1ca5d220c4;
-            var_8a33e220c4aaa38b = level.spawnselectionlocations[key]["<dev string:x3e>"].spawnpoints;
-            var_4c00998026fee890 = level.spawnselectionlocations[key]["<dev string:x34>"].spawnpoints;
-            foreach (spawnpos in var_8a33e220c4aaa38b) {
+            spawns_axis = level.spawnselectionlocations[key]["<dev string:x3e>"].spawnpoints;
+            spawns_allies = level.spawnselectionlocations[key]["<dev string:x34>"].spawnpoints;
+            foreach (spawnpos in spawns_axis) {
                 thread drawsphere(spawnpos.origin, 30, 60, (1, 0, 0));
                 vect = anglestoforward(spawnpos.angles) * 30 + spawnpos.origin;
                 thread drawline(spawnpos.origin, vect, 60, (0, 1, 0));
                 thread drawline(spawnpos.origin, spawnpos.origin + (0, 0, 1000), 60, (1, 0, 0));
             }
-            foreach (spawnpos in var_4c00998026fee890) {
+            foreach (spawnpos in spawns_allies) {
                 thread drawsphere(spawnpos.origin, 30, 60, (0, 0, 1));
                 vect = anglestoforward(spawnpos.angles) * 30 + spawnpos.origin;
                 thread drawline(spawnpos.origin, vect, 60, (0, 1, 0));
@@ -3057,10 +3057,10 @@ function createhintobject(org, type, icon, hintstring, priority, duration, onobs
                 var_fd81d96696f0490a = level.spawnselectionlocations[safekey]["<dev string:x34>"].spawnpoints;
             }
             if (!isdefined(var_eb7299174b67818d)) {
-                var_eb7299174b67818d = var_8a33e220c4aaa38b;
+                var_eb7299174b67818d = spawns_axis;
             }
             if (!isdefined(var_fd81d96696f0490a)) {
-                var_fd81d96696f0490a = var_4c00998026fee890;
+                var_fd81d96696f0490a = spawns_allies;
             }
             foreach (spawnpos in var_eb7299174b67818d) {
                 thread drawsphere(spawnpos.origin, 15, 60, (0.5, 0, 0));

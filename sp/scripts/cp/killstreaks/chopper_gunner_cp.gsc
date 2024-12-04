@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\vehicles\damage_cp.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
-#using scripts\cp\cp_agent_utils.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\cp\helicopter\cp_helicopter.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\helicopter\cp_helicopter;
+#using scripts\cp\utility;
+#using scripts\cp\vehicles\damage_cp;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_652311358f396c38;
 

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2583ee5680cf4736;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace trigger;
 

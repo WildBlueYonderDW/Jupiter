@@ -1,20 +1,20 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\debug.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\killstreaks\airstrike.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\killstreaks\toma_strike.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\devgui.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\airstrike;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\killstreaks\toma_strike;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace bunker_buster;
 
@@ -62,7 +62,7 @@ function private init_vars() {
     level.bunker_buster.explosion_radius = getdvarint(@"hash_e9222aff0b6e25e4", bundle.var_f2c3bbfb75adbeee);
     level.bunker_buster.var_daf4bed8de8f6195 = getdvarint(@"hash_3dd9eddc725440b6", bundle.var_f650a0ecedab0825);
     level.bunker_buster.var_fc268ff83cc63313 = getdvarint(@"hash_c84afea8311a2900", bundle.var_1029beb459a7eeb3);
-    level.bunker_buster.var_d11e5db66c099464 = getdvarint(@"hash_183522347c70eb09", bundle.var_c9e04fc7188592a5);
+    level.bunker_buster.drop_time = getdvarint(@"hash_183522347c70eb09", bundle.var_c9e04fc7188592a5);
     level.bunker_buster.projectile_weapon = bundle.projectileweapon;
 }
 
@@ -277,7 +277,7 @@ function strike_fire(streakinfo) {
     namespace_2b1145f62aa835b8::function_940b2080e171a9d3(self, self.team, 1024, "bunker_buster", marker_pos);
     notify_players = function_153d5add7253b500(self, self.team, 1024, marker_pos);
     utility::function_f3bb4f4911a1beb2("bunker_buster", "dialog_warning", notify_players[0], notify_players[1]);
-    namespace_2b1145f62aa835b8::function_2284137aa92dbd16(level.bunker_buster.var_d11e5db66c099464);
+    namespace_2b1145f62aa835b8::function_2284137aa92dbd16(level.bunker_buster.drop_time);
     strike_logic(marker_pos, streakinfo);
     wait level.bunker_buster.cooldown;
     strike_end(streakinfo);
@@ -512,8 +512,8 @@ function function_f71fc273e43f587b(player, travel_time) {
     if (travel_time >= level.framedurationseconds) {
         wait travel_time;
     }
-    var_78098af3a02ebf0c = distance2d(player.origin, self.origin);
-    damage = int(mapfloat(0, level.bunker_buster.explosion_radius, level.bunker_buster.var_fc268ff83cc63313, level.bunker_buster.var_daf4bed8de8f6195, var_78098af3a02ebf0c));
+    h_dist = distance2d(player.origin, self.origin);
+    damage = int(mapfloat(0, level.bunker_buster.explosion_radius, level.bunker_buster.var_fc268ff83cc63313, level.bunker_buster.var_daf4bed8de8f6195, h_dist));
     player dodamage(damage, self.origin, self.owner, self, "MOD_EXPLOSIVE", level.bunker_buster.projectile_weapon, "none", undefined, 1);
 }
 
@@ -570,11 +570,11 @@ function function_aad1a178bf665f2a() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1efc
 // Size: 0x66
-function function_9d0257c1da72ca5d(var_1c9946c37879dc15) {
-    if (!isdefined(var_1c9946c37879dc15)) {
-        var_1c9946c37879dc15 = 0;
+function function_9d0257c1da72ca5d(obj_only) {
+    if (!isdefined(obj_only)) {
+        obj_only = 0;
     }
-    if (!var_1c9946c37879dc15) {
+    if (!obj_only) {
         self setmissileminimapvisible(0);
     }
     if (isdefined(self.minimapid)) {

@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using script_41387eecc35b88bf;
-#using script_220d0eb95a8fab7d;
 #using script_185660037b9236c1;
-#using scripts\mp\flags.gsc;
-#using script_22f1701e151b9d12;
-#using script_c6b9e8fb3a7de37;
 #using script_18b61963cd1351ff;
 #using script_1f97a44d1761c919;
+#using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
+#using script_3ab210ea917601e7;
+#using script_41387eecc35b88bf;
+#using script_46c7c73b1a7e4773;
 #using script_5753ba9c28794a65;
 #using script_711820027508efbb;
-#using scripts\engine\trace.gsc;
-#using script_46c7c73b1a7e4773;
-#using script_3ab210ea917601e7;
-#using scripts\common\callbacks.gsc;
 #using script_7534b1d3ac3ea47a;
+#using script_c6b9e8fb3a7de37;
+#using scripts\common\callbacks;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace namespace_d77ab1c376d32e80;
 
@@ -101,7 +101,7 @@ function function_cf50cdab18d075b0() {
         if (isdefined(activityinstance.analysis_progress)) {
             var_9ff6c0226128aee5 = activityinstance.analysis_progress / var_162a9e291756bf56 * 100;
             if (var_9ff6c0226128aee5 < 25 && var_d6a662ec5bbb9222 == 0) {
-                namespace_e82bfd865c02eb4b::function_e08162326217b5c3();
+                namespace_e82bfd865c02eb4b::goto_stage();
                 level.var_59a5ab1b4256bb79.vo_ent playsoundonmovingent("dx_ob_st25_stry_rvnv_sty25stmjockrockchgstrt1");
                 wait 0.5;
                 namespace_446fc987a980892f::playevent("s2_charging_rock_start", level.players);
@@ -161,7 +161,7 @@ function function_3d552e74ee7e3dee(activityinstance) {
     activityinstance namespace_34bf641998024ddb::function_b2d0fc97b77a18ab();
     endactivity(activityinstance, 0);
     waitframe();
-    level thread namespace_68270f885c7fd3ef::function_63ff16d8780772f7();
+    level thread namespace_68270f885c7fd3ef::spawn_portal();
     wait 3;
     level thread namespace_e82bfd865c02eb4b::function_8ca3825e113a2579();
 }
@@ -294,7 +294,7 @@ function function_318b48abdb777ed0() {
     self.var_a897d5b8c6afdc34 = spawnscriptable("jup_ob_outlast_pnd_s2_5_mission", var_a1edc937cb84ab35.origin, var_a1edc937cb84ab35.angles);
     self.var_a897d5b8c6afdc34 setscriptablepartstate("body", "off");
     self.var_a897d5b8c6afdc34.instance = self;
-    namespace_29b5250e9959ea::function_3cec1b2981075936("jup_hacking_device_ob", self.var_a897d5b8c6afdc34, &namespace_edd624734aa27359::function_a62affb2262fbd05);
+    namespace_29b5250e9959ea::function_3cec1b2981075936("jup_hacking_device_ob", self.var_a897d5b8c6afdc34, &namespace_edd624734aa27359::pnd_activated);
 }
 
 /#

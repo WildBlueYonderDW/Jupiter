@@ -1,18 +1,18 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using script_7c40fa80892a721;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_publicevents.gsc;
 #using script_294dda4a4b00ffe3;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_58f20490049af6ac;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_9096cac48c2eafc0;
 
@@ -34,7 +34,7 @@ function init(eventinfo) {
     }
     eventinfo.validatefunc = &event_validate;
     eventinfo.waitfunc = &event_wait;
-    eventinfo.activatefunc = &function_dce158cd5558c35d;
+    eventinfo.activatefunc = &event_activate;
     eventinfo.postinitfunc = &function_de40a46baab733f5;
     eventinfo.deactivatefunc = &event_deactivate;
     initdialog();
@@ -85,7 +85,7 @@ function event_wait() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x499
 // Size: 0x16b
-function function_dce158cd5558c35d() {
+function event_activate() {
     level.var_f9b94491f3b9951.timestarted = gettime();
     scripts\mp\gametypes\br_publicevents::showsplashtoall("br_pe_heavyarmor_start", "splash_list_br_pe_heavyarmor");
     if (level.var_f9b94491f3b9951.activationdelay > 0) {

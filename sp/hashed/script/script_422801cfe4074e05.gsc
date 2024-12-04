@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_66e927a1c37cda66;
 #using script_6ef052b7d38465d9;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace analytics;
 

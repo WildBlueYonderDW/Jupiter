@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\supers.gsc;
-#using script_38db8bccc9eb301f;
-#using scripts\mp\utility\player.gsc;
 #using script_2b264b25c7da0b12;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_6a5d3bf7a5b7064a;
+#using script_38db8bccc9eb301f;
 #using script_3b78d23dad7ec5be;
+#using script_6a5d3bf7a5b7064a;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\supers;
+#using scripts\mp\utility\player;
 
 #namespace namespace_80be1a420d9464c2;
 
@@ -315,7 +315,7 @@ function function_182ed32c1dbe94ed() {
             if (!isalive(zombie)) {
                 continue;
             }
-            zombie namespace_db1ce2c035564e2c::function_e96aac065abbec4e(player.origin);
+            zombie namespace_db1ce2c035564e2c::knockdown_ai(player.origin);
         }
         waitframe();
     }

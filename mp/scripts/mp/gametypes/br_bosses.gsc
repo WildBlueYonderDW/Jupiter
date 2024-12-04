@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
 #using script_48814951e916af89;
-#using scripts\mp\poi.gsc;
-#using script_744cad313ed0a87e;
 #using script_6172179f6bd0769e;
+#using script_744cad313ed0a87e;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\poi;
 
 #namespace br_bosses;
 

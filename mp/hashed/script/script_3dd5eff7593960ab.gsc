@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\create_script_utility.gsc;
+#using scripts\common\create_script_utility;
+#using scripts\engine\utility;
 
 #namespace mp_jup_tower_ob_s5_rift_run_ee_cs;
 
@@ -122,7 +122,7 @@ function createstructs(fe, us, cf) {
     fe [[ f ]](s, us, cf, (20820.7, 21041, 322.99), (0.52, 249.94, -62.97), "ee_thermal_arrow", "cspf_0_auto3803660186481121388");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_tower_ob_s5_rift_run_ee_cs";
-    s.var_96a076bb9ceb055e = "1";
+    s.ee_active = "1";
     s.name = "ee_thermal_arrow";
     fe [[ f ]](s, us, cf, (19563, 21468.9, 450.39), (0, 179.69, -87.2), "ee_thermal_arrow");
     s = s();
@@ -165,7 +165,7 @@ function createstructs(fe, us, cf) {
     fe [[ f ]](s, us, cf, (20095.8, 20460.2, 569.83), (0, 168.37, 0), "cspf_0_auto14982124655135234184", "cspf_0_auto3803660186481121388", "ee_path_trigger");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_tower_ob_s5_rift_run_ee_cs";
-    s.var_96a076bb9ceb055e = "1";
+    s.ee_active = "1";
     s.name = "ee_thermal_arrow";
     fe [[ f ]](s, us, cf, (15867.9, 22025, 468.68), (0, 90.55, 135.2), "ee_thermal_arrow");
     s = s();
@@ -174,7 +174,7 @@ function createstructs(fe, us, cf) {
     fe [[ f ]](s, us, cf, (19166.3, 19735.5, 263.59), (0, 180, 0), "loot_gold_skull");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_tower_ob_s5_rift_run_ee_cs";
-    s.var_96a076bb9ceb055e = "1";
+    s.ee_active = "1";
     s.name = "ee_thermal_arrow";
     fe [[ f ]](s, us, cf, (18331, 21818.6, 406.05), (0, 179.7, 147.1), "ee_thermal_arrow");
     s = s();
@@ -244,12 +244,12 @@ function createstructs(fe, us, cf) {
     fe [[ f ]](s, us, cf, (15245.4, 25196.5, 845.23), (0, 0, 0), "loot_usb_key");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_tower_ob_s5_rift_run_ee_cs";
-    s.var_96a076bb9ceb055e = "1";
+    s.ee_active = "1";
     s.name = "ee_thermal_arrow";
     fe [[ f ]](s, us, cf, (19562.1, 21311, 448.03), (0, 179.69, -159.28), "ee_thermal_arrow");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_tower_ob_s5_rift_run_ee_cs";
-    s.var_96a076bb9ceb055e = "1";
+    s.ee_active = "1";
     s.name = "ee_thermal_arrow";
     fe [[ f ]](s, us, cf, (19562.7, 21425.2, 443.55), (0, 179.69, -111.83), "ee_thermal_arrow");
     s = s();
@@ -266,12 +266,12 @@ function createstructs(fe, us, cf) {
     fe [[ f ]](s, us, cf, (7625.94, 17271.3, 14865.5), (0, 20.4, 0), "cspf_0_auto3239730351140327035", undefined, "storeroom_tear_destination");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_tower_ob_s5_rift_run_ee_cs";
-    s.var_96a076bb9ceb055e = "1";
+    s.ee_active = "1";
     s.name = "ee_thermal_arrow";
     fe [[ f ]](s, us, cf, (19562.4, 21367.6, 456.95), (0, 179.69, -141.66), "ee_thermal_arrow");
     s = s();
     s.var_ca7eef470d1b0ef2 = "mp_jup_tower_ob_s5_rift_run_ee_cs";
-    s.var_96a076bb9ceb055e = "1";
+    s.ee_active = "1";
     s.name = "ee_thermal_arrow";
     fe [[ f ]](s, us, cf, (19614.2, 21377.2, 263.55), (270, 182.2, 14.75), "ee_thermal_arrow");
     s = s();

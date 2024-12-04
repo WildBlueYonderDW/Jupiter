@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\shellshock.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\shellshock;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace wristrocket;
 

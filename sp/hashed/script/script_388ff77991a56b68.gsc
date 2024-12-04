@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_26eb0a90d15b9b1a;
 
@@ -32,7 +32,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "soldier";
-    self.voice = #"hash_928ba19f6f7fdeba";
+    self.voice = #"konni";
     self.bhasthighholster = 1;
     self.animtree = "generic_human";
     self setmodel("body_c_jup_sp_villain_nolan_urban");

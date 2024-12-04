@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_3a9930dfe832ae05;
-#using scripts\common\powerups.gsc;
-#using script_7edf952f8921aa6b;
 #using script_16ea1b94f0f381b3;
+#using script_3a9930dfe832ae05;
+#using script_7edf952f8921aa6b;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace insta_kill;
 

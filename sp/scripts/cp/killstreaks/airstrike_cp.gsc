@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp\cp_mapselect.gsc;
-#using scripts\cp\cp_hud_message.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_mapselect;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_efa880bf67d82451;
+#namespace airstrike_cp;
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x236
 // Size: 0x7
@@ -15,7 +15,7 @@ function getmapselectweapon() {
     return "ks_remote_map_cp";
 }
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x246
 // Size: 0x86
@@ -28,7 +28,7 @@ function init() {
     scripts\engine\utility::registersharedfunc("airstrike", "munitionUsed", &airstrike_munitionused);
 }
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d4
 // Size: 0x262
@@ -63,7 +63,7 @@ function init_airstrike_params() {
     }
 }
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x53e
 // Size: 0x24
@@ -71,7 +71,7 @@ function airstrike_getmapselectpoint(streakinfo, selectnum, directionalselection
     return scripts\cp\cp_mapselect::getselectmappoint(streakinfo, selectnum, directionalselection);
 }
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x56b
 // Size: 0xb
@@ -79,7 +79,7 @@ function airstrike_showerrormessage(string_ref) {
     
 }
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x57e
 // Size: 0x2d
@@ -87,7 +87,7 @@ function airstrike_startmapselectsequence(navmesh, directionalselection, directi
     scripts\cp\cp_mapselect::startmapselectsequence(navmesh, directionalselection, directionaltype);
 }
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b3
 // Size: 0x4b
@@ -95,7 +95,7 @@ function airstrike_addspawndangerzone(pos, radius, height, friendlyteam, lifetim
     
 }
 
-// Namespace namespace_efa880bf67d82451 / scripts\cp\killstreaks\airstrike_cp
+// Namespace airstrike_cp / scripts\cp\killstreaks\airstrike_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x606
 // Size: 0x83

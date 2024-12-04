@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
+#using script_36998bb481626140;
 #using script_3aeb1602bef2523b;
 #using script_4a624801fb3628f2;
-#using script_36998bb481626140;
 #using script_54a1efdab4e7909e;
-#using scripts\mp\load.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\compass.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\anim;
+#using scripts\mp\compass;
+#using scripts\mp\flags;
+#using scripts\mp\load;
+#using scripts\mp\utility\game;
 
-#namespace namespace_dd3eaf91a019008b;
+#namespace mp_observatory;
 
-// Namespace namespace_dd3eaf91a019008b / namespace_acedac41ac7002ef
+// Namespace mp_observatory / namespace_acedac41ac7002ef
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x253
 // Size: 0xc8
@@ -39,7 +39,7 @@ function main() {
     level thread function_57be8efc25591b9c();
 }
 
-// Namespace namespace_dd3eaf91a019008b / namespace_acedac41ac7002ef
+// Namespace mp_observatory / namespace_acedac41ac7002ef
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x323
 // Size: 0x47
@@ -52,7 +52,7 @@ function function_1682cf22619a5e55() {
     }
 }
 
-// Namespace namespace_dd3eaf91a019008b / namespace_acedac41ac7002ef
+// Namespace mp_observatory / namespace_acedac41ac7002ef
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x372
 // Size: 0x13a
@@ -75,7 +75,7 @@ function function_b82d39658afa02e9() {
     }
 }
 
-// Namespace namespace_dd3eaf91a019008b / namespace_acedac41ac7002ef
+// Namespace mp_observatory / namespace_acedac41ac7002ef
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b4
 // Size: 0x44

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_575fda2758b0a36e;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_a1058f5dc635b735;
 
@@ -56,8 +56,8 @@ function startsavedprogression(levelname) {
             if (!getdvarint(@"hash_f004b2ccc04fdc8d", 0)) {
                 scripts\engine\utility::function_f3bb4f4911a1beb2("checkpoint", "reset");
             }
-            var_dc3d301d02608d2 = level.player scripts\engine\utility::function_f3bb4f4911a1beb2("checkpoint", "get_checkpoint_map");
-            if (isdefined(var_dc3d301d02608d2) && isstring(var_dc3d301d02608d2) && var_dc3d301d02608d2 != levelname) {
+            checkpoint_map = level.player scripts\engine\utility::function_f3bb4f4911a1beb2("checkpoint", "get_checkpoint_map");
+            if (isdefined(checkpoint_map) && isstring(checkpoint_map) && checkpoint_map != levelname) {
                 scripts\engine\utility::function_f3bb4f4911a1beb2("checkpoint", "reset");
             }
         }
@@ -165,8 +165,8 @@ function getlevelindex(levelname) {
     if (!isdefined(level.missionsettings) || !isdefined(level.missionsettings.levels)) {
         return undefined;
     }
-    foreach (var_df2c1e9fc9eebc02 in level.missionsettings.levels) {
-        if (var_df2c1e9fc9eebc02.name == levelname) {
+    foreach (so_level in level.missionsettings.levels) {
+        if (so_level.name == levelname) {
             return var_3012abbf8b098d0f;
         }
     }

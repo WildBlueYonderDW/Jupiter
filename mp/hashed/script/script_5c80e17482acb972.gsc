@@ -1,6 +1,6 @@
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\utility\game.gsc;
+#using scripts\mp\class;
+#using scripts\mp\utility\game;
 
 #namespace namespace_cbc0dc8b9328d67d;
 

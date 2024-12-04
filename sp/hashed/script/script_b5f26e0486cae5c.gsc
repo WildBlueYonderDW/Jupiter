@@ -1,13 +1,13 @@
-#using scripts\cp\utility.gsc;
 #using script_3a8f9ace195c9da9;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\gestures_cp.gsc;
-#using script_66122a002aff5d57;
-#using scripts\cp\cp_hud_message.gsc;
-#using script_7ef95bba57dc4b82;
 #using script_600b944a95c3a7bf;
+#using script_66122a002aff5d57;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\gestures_cp;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace offhand_box;
 
@@ -95,8 +95,8 @@ function private function_250357933f00dc3(player) {
         result = waittill_offhand_box_accessed(player);
         if (isdefined(result)) {
             if (result == "offhand_box_update") {
-                foreach (var_81901e47ba7d056c in self.item_models) {
-                    var_81901e47ba7d056c delete();
+                foreach (item_model in self.item_models) {
+                    item_model delete();
                 }
                 waitframe();
                 self notify("update_models");
@@ -106,9 +106,9 @@ function private function_250357933f00dc3(player) {
                 if (self.item_type == "ammo") {
                     var_57ac4dc40b2e376 = namespace_6250b14b3f614101::giveammo(player);
                     var_d6a57b95fc473441 = var_57ac4dc40b2e376[1];
-                    var_bf00bd1d7da56c26 = var_57ac4dc40b2e376[0];
+                    gaveammo = var_57ac4dc40b2e376[0];
                     var_6e10774fa3fb048e = namespace_6250b14b3f614101::function_a95732425992ae46(player);
-                    if ((var_bf00bd1d7da56c26 || var_6e10774fa3fb048e) && !istrue(self.infinite)) {
+                    if ((gaveammo || var_6e10774fa3fb048e) && !istrue(self.infinite)) {
                         self.item_count = 0;
                         self.scriptable setscriptablepartstate("cp_offhand_box", "visible_no_outline");
                     } else {
@@ -148,9 +148,9 @@ function private function_250357933f00dc3(player) {
                 }
                 waitframe();
                 if (isdefined(self.item_models)) {
-                    foreach (var_81901e47ba7d056c in self.item_models) {
-                        if (isdefined(var_81901e47ba7d056c)) {
-                            var_81901e47ba7d056c delete();
+                    foreach (item_model in self.item_models) {
+                        if (isdefined(item_model)) {
+                            item_model delete();
                         }
                     }
                 }
@@ -222,15 +222,15 @@ function private refillequipment(player, equipname) {
 // Checksum 0x0, Offset: 0xdce
 // Size: 0xc3
 function private function_a459d0f605bf523f(player, equipname) {
-    var_2fe1b5d970061237 = player namespace_4fb9dddfb8c1a67a::getequipmentammo(equipname);
+    equip_count = player namespace_4fb9dddfb8c1a67a::getequipmentammo(equipname);
     var_2f3d47425b9a0f5a = player namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(equipname);
-    if (var_2fe1b5d970061237 != var_2f3d47425b9a0f5a) {
+    if (equip_count != var_2f3d47425b9a0f5a) {
         var_5400e215ebf1b67a = 0;
-        if (self.item_count + var_2fe1b5d970061237 < var_2f3d47425b9a0f5a) {
-            var_5400e215ebf1b67a = self.item_count + var_2fe1b5d970061237;
+        if (self.item_count + equip_count < var_2f3d47425b9a0f5a) {
+            var_5400e215ebf1b67a = self.item_count + equip_count;
             self.item_count = 0;
         } else {
-            self.item_count -= var_2f3d47425b9a0f5a - var_2fe1b5d970061237;
+            self.item_count -= var_2f3d47425b9a0f5a - equip_count;
             var_5400e215ebf1b67a = var_2f3d47425b9a0f5a;
         }
         player namespace_4fb9dddfb8c1a67a::setequipmentammo(equipname, var_5400e215ebf1b67a);
@@ -291,30 +291,30 @@ function function_a4482d0d3055db9a() {
 function waittill_offhand_box_accessed(player) {
     result = undefined;
     if (function_a4482d0d3055db9a()) {
-        var_3f09b9a4149cc197 = 1;
+        do_interact = 1;
     } else {
-        var_3f09b9a4149cc197 = 0;
+        do_interact = 0;
         if (issharedfuncdefined("offhandBox", "_allowUse", 0)) {
-            var_3f09b9a4149cc197 = player [[ getsharedfunc("offhandBox", "_allowUse") ]](self);
+            do_interact = player [[ getsharedfunc("offhandBox", "_allowUse") ]](self);
         }
     }
-    if (var_3f09b9a4149cc197) {
-        var_9c85d90245c105ba = 256;
+    if (do_interact) {
+        visible_dist = 256;
         if (isdefined(self.radius)) {
-            var_9c85d90245c105ba = int(self.radius);
+            visible_dist = int(self.radius);
         }
-        var_b4f2e5026eb0a11f = get_offhand_item_pickup_hint(player, self.item_type == "ammo" || isgrenade(self.item_type));
-        var_828f4d4b39d42b57 = (0, 0, 10);
+        pickup_hint = get_offhand_item_pickup_hint(player, self.item_type == "ammo" || isgrenade(self.item_type));
+        cursor_offset = (0, 0, 10);
         if (self.item_type == "ammo") {
-            var_828f4d4b39d42b57 = (0, 0, 12);
+            cursor_offset = (0, 0, 12);
         }
         if (isdefined(self.model)) {
             if (self.model == "un_military_backpack_open_01") {
-                var_828f4d4b39d42b57 = (10, 7, 10);
+                cursor_offset = (10, 7, 10);
             } else if (self.model == "un_military_storage_container_small_open_01") {
-                var_828f4d4b39d42b57 = (12, 7, 17);
+                cursor_offset = (12, 7, 17);
             } else if (self.model == "un_military_storage_container_02_open") {
-                var_828f4d4b39d42b57 = (14, 8, 25);
+                cursor_offset = (14, 8, 25);
             }
         }
         if (self.item_type == "armorplate") {
@@ -333,7 +333,7 @@ function waittill_offhand_box_accessed(player) {
         var_3ddfbf3264817453 = player usinggamepad() && (player getcurrentusereloadconfig() == 0 || player getcurrentusereloadconfig() == 3);
         var_2e3e86610aa87c44 = !player usinggamepad() && istrue(player getuseholdkbmprofile());
         var_ad8472207b13c639 = ter_op(var_3ddfbf3264817453 || var_2e3e86610aa87c44, "duration_short", "duration_none");
-        self.interact create_cursor_hint(undefined, var_828f4d4b39d42b57, var_b4f2e5026eb0a11f, 360, var_9c85d90245c105ba, 90, 0, undefined, undefined, self.icon, var_ad8472207b13c639, undefined, undefined, 45);
+        self.interact create_cursor_hint(undefined, cursor_offset, pickup_hint, 360, visible_dist, 90, 0, undefined, undefined, self.icon, var_ad8472207b13c639, undefined, undefined, 45);
         result = player waittill_any_ents_return(self.interact, "trigger", self.interact, "offhand_box_update", player);
     }
     level notify("offhand_box_used", self);
@@ -361,9 +361,9 @@ function update_offhand_box_item_models(player) {
                 var_8acc266afda40d29.item = scriptable;
                 self.item_models[self.item_models.size] = scriptable;
             } else if (isdefined(self.item_models[0])) {
-                foreach (var_d7b44cb498fdacdb in self.item_pos_array) {
-                    if (isdefined(var_d7b44cb498fdacdb.item) && var_d7b44cb498fdacdb.item == self.item_models[0]) {
-                        var_d7b44cb498fdacdb.item = undefined;
+                foreach (pos_struct in self.item_pos_array) {
+                    if (isdefined(pos_struct.item) && pos_struct.item == self.item_models[0]) {
+                        pos_struct.item = undefined;
                     }
                 }
                 self.item_models[0] freescriptable();
@@ -379,9 +379,9 @@ function update_offhand_box_item_models(player) {
 // Checksum 0x0, Offset: 0x1480
 // Size: 0x63
 function get_offhand_box_item_slot_struct() {
-    foreach (var_d7b44cb498fdacdb in self.item_pos_array) {
-        if (isdefined(var_d7b44cb498fdacdb) && !isdefined(var_d7b44cb498fdacdb.item)) {
-            return var_d7b44cb498fdacdb;
+    foreach (pos_struct in self.item_pos_array) {
+        if (isdefined(pos_struct) && !isdefined(pos_struct.item)) {
+            return pos_struct;
         }
     }
     return undefined;
@@ -391,31 +391,31 @@ function get_offhand_box_item_slot_struct() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x14ec
 // Size: 0xff
-function get_offhand_item_pickup_hint(player, var_7d101a473fc7e1f4) {
-    var_b4f2e5026eb0a11f = %;
+function get_offhand_item_pickup_hint(player, already_has) {
+    pickup_hint = %;
     if (self.item_type == "ammo") {
-        var_b4f2e5026eb0a11f = %EQUIPMENT_HINTS/OFFHAND_AMMO_BOX_USE;
+        pickup_hint = %EQUIPMENT_HINTS/OFFHAND_AMMO_BOX_USE;
     } else if (self.item_type == "armorplate") {
-        var_b4f2e5026eb0a11f = %EQUIPMENT_HINTS/ARMOR_BOX_USE;
+        pickup_hint = %EQUIPMENT_HINTS/ARMOR_BOX_USE;
     } else if (isgrenade(self.item_type)) {
         if (self.item_type == "c4") {
-            var_b4f2e5026eb0a11f = %EQUIPMENT_HINTS/REFILL_C4;
+            pickup_hint = %EQUIPMENT_HINTS/REFILL_C4;
         } else if (self.item_type == "flash") {
-            var_b4f2e5026eb0a11f = %EQUIPMENT_HINTS/REFILL_FLASH;
+            pickup_hint = %EQUIPMENT_HINTS/REFILL_FLASH;
         } else if (self.item_type == "semtex") {
-            var_b4f2e5026eb0a11f = %EQUIPMENT_HINTS/REFILL_SEMTEX;
+            pickup_hint = %EQUIPMENT_HINTS/REFILL_SEMTEX;
         } else if (self.item_type == "frag") {
-            var_b4f2e5026eb0a11f = %EQUIPMENT_HINTS/REFILL_FRAG;
+            pickup_hint = %EQUIPMENT_HINTS/REFILL_FRAG;
         }
     }
     self.icon = undefined;
-    if (!isdefined(var_7d101a473fc7e1f4)) {
-        var_7d101a473fc7e1f4 = 0;
+    if (!isdefined(already_has)) {
+        already_has = 0;
     }
-    if (!var_7d101a473fc7e1f4) {
-        var_7d101a473fc7e1f4 = player getoffhandprimaryclass() == "none";
+    if (!already_has) {
+        already_has = player getoffhandprimaryclass() == "none";
     }
-    return var_b4f2e5026eb0a11f;
+    return pickup_hint;
 }
 
 // Namespace offhand_box / namespace_50ac30ec16b231ac

@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp\cp_anim.gsc;
-#using scripts\cp\infilexfil\infilexfil.gsc;
-#using scripts\cp\cp_infilexfil.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
 #using script_116171939929af39;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\cp\cp_anim;
+#using scripts\cp\cp_infilexfil;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\infilexfil\infilexfil;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\infilexfil;
 
-#namespace namespace_60861b9bb455666a;
+#namespace lbravo_infil_cp;
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x994
 // Size: 0x8d
@@ -33,7 +33,7 @@ function lbravo_init(subtype) {
     infil_add("infil_lbravo", subtype, 6, 4, var_453e4fc2c649fea4, &lbravo_spawn, &lbravo_get_length, &player_lbravo_infil_think);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xa29
 // Size: 0x130
@@ -58,7 +58,7 @@ function lbravo_spawn(team, target, subtype) {
     return infil;
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb62
 // Size: 0xe1
@@ -74,7 +74,7 @@ function lbravo_get_length(subtype) {
     return animlength;
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc4b
 // Size: 0x46a
@@ -94,9 +94,9 @@ function player_lbravo_infil_think(infil, spot_index) {
     }
     thread player_infil_end(infil);
     if (istrue(infil.allow_fire)) {
-        var_9ac797b3576e56ba = level.scr_anim[infil.linktoent.animname]["lbravo_infil" + "_" + infil.subtype];
-        var_4a5e5c0f661ee5e2 = getstartorigin(infil.linktoent.origin, infil.linktoent.angles, var_9ac797b3576e56ba);
-        var_70a3110ec679bbc8 = getstartangles(infil.linktoent.origin, infil.linktoent.angles, var_9ac797b3576e56ba);
+        player_xanim = level.scr_anim[infil.linktoent.animname]["lbravo_infil" + "_" + infil.subtype];
+        var_4a5e5c0f661ee5e2 = getstartorigin(infil.linktoent.origin, infil.linktoent.angles, player_xanim);
+        var_70a3110ec679bbc8 = getstartangles(infil.linktoent.origin, infil.linktoent.angles, player_xanim);
         var_4a5e5c0f661ee5e2 -= infil.linktoent.origin;
         var_d95a174b2292916d = (0, 0, 0);
         var_a2259b9f41f55197 = (0, 0, 0);
@@ -155,7 +155,7 @@ function player_lbravo_infil_think(infil, spot_index) {
     namespace_162cff1cf88b9bbf::function_db31ae430d191461(1);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x10bd
 // Size: 0x221
@@ -213,7 +213,7 @@ function playerthinkpath(infil, spot_index) {
     flag_set("infil_over");
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12e6
 // Size: 0xa5
@@ -235,7 +235,7 @@ function rideloop(infil) {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1393
 // Size: 0x1fd
@@ -272,7 +272,7 @@ function playerthinkanim(infil, spot_index) {
     self clearcinematicmotionoverride();
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1598
 // Size: 0xb
@@ -281,7 +281,7 @@ function scriptswitchweaponhack() {
     self notify("complete_late_infil_allows");
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15ab
 // Size: 0xe
@@ -290,7 +290,7 @@ function clear_infil_ambient_zone() {
     self clearclienttriggeraudiozone(2);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15c1
 // Size: 0x48
@@ -303,7 +303,7 @@ function player_infil_end(infil) {
     scripts\cp\utility\player::setdof_default();
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1611
 // Size: 0x66
@@ -320,7 +320,7 @@ function player_van_disconnect() {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x167f
 // Size: 0x127
@@ -345,7 +345,7 @@ function infilthink(team, scene_name) {
     self delete();
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x17ae
 // Size: 0x64
@@ -359,7 +359,7 @@ function vehiclethink(team, scene_node, scene_name, extra_crew) {
     thread vehiclethinkanim(team, scene_node, scene_name, extra_crew);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x181a
 // Size: 0xc7
@@ -373,7 +373,7 @@ function vehiclethinkanim(team, scene_node, scene_name, extra_crew) {
     self.linktoent = undefined;
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x18e9
 // Size: 0x172
@@ -406,7 +406,7 @@ function spawninfilvehicle(scene_node, team, scene_name) {
     return vehicle;
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a64
 // Size: 0x15d
@@ -430,7 +430,7 @@ function actorthink(team, scene_node, scene_name, extra_crew) {
     actorthinkanim(team, scene_node, scene_name, extra_crew);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bc9
 // Size: 0x4a
@@ -442,7 +442,7 @@ function actorthinkpath(team, scene_node, scene_name, extra_crew) {
     actorthinkpath_default(self);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c1b
 // Size: 0x38
@@ -451,7 +451,7 @@ function actorthinkpath_default(infil) {
     infil thread actorloopthink(infil.actors[1]);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c5b
 // Size: 0x54
@@ -460,7 +460,7 @@ function actorloopthink(actor) {
     self.linktoent.var_1592c4b325ffff4 anim_single_solo(actor, "lbravo_infil" + "_" + self.subtype + "_loop_exit", actor.var_1fef77784cb19c0b);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cb7
 // Size: 0x69
@@ -472,7 +472,7 @@ function actorloop(actor) {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d28
 // Size: 0xd8
@@ -486,7 +486,7 @@ function actorthinkanim(team, scene_node, scene_name, extra_crew) {
     self.actors = undefined;
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e08
 // Size: 0x1f8
@@ -506,7 +506,7 @@ function spawnactors(team, scene_name, extra_crew) {
     return actors;
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2009
 // Size: 0x187
@@ -537,7 +537,7 @@ function spawn_anim_model(animname, linkto_ent, body, head, weapon) {
     return guy;
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2199
 // Size: 0x4ef
@@ -594,7 +594,7 @@ function initanims(subtype) {
     addnotetrack_customfunction("slot_5", "shake_off", &cam_shake_off, "lbravo_infil_bravo_exit");
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2690
 // Size: 0xd2a
@@ -707,7 +707,7 @@ function script_model_alpha_anims(subtype) {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x33c2
 // Size: 0xf9
@@ -719,7 +719,7 @@ function vehicles_alpha_anims(subtype) {
         break;
     case #"hash_1cc79b02710cab23":
         level.scr_animtree["lbravo"] = %mp_vehicles_always_loaded;
-        switch (getdvar(@"hash_687fb8f9b7a23245")) {
+        switch (getdvar(@"g_mapname")) {
         case #"hash_688334408379d4fb":
             level.scr_anim["lbravo"]["lbravo_infil" + "_bravo"] = mp_vehicles_always_loaded%mp_infil_lbravo_b_heli_runner;
             break;
@@ -731,7 +731,7 @@ function vehicles_alpha_anims(subtype) {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x34c3
 // Size: 0x77
@@ -741,7 +741,7 @@ function commander_play_sound_func(alias, notification, var_9a0afe8ff3d2508f) {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3542
 // Size: 0x202
@@ -774,7 +774,7 @@ function vehiclethinkpath(team, scene_node, scene_name, extra_crew) {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x374c
 // Size: 0x83
@@ -789,7 +789,7 @@ function function_ab9df6c53fe81fd9() {
     }
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37d7
 // Size: 0x51
@@ -800,7 +800,7 @@ function function_eb5aae60eb60077d(origin) {
     destroynavobstacle(var_65c0c475c179ea29);
 }
 
-// Namespace namespace_60861b9bb455666a / scripts\cp\infilexfil\lbravo_infil_cp
+// Namespace lbravo_infil_cp / scripts\cp\infilexfil\lbravo_infil_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3830
 // Size: 0x13c

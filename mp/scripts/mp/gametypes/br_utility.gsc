@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using script_72af5a878a9d3397;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_40e63dd222434655;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_3ff084f114b7f6c9;
+#using script_40e63dd222434655;
+#using script_64acb6ce534155b7;
+#using script_72af5a878a9d3397;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\teams;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\teams;
 
 #namespace br_utility;
 

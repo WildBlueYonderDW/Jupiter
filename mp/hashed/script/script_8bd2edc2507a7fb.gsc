@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_6bffae1b97f70547;
-#using scripts\engine\throttle.gsc;
 #using script_429c2a03090c1ea1;
-#using scripts\common\devgui.gsc;
+#using script_6bffae1b97f70547;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace shatterblast;
 

@@ -1,9 +1,9 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace warrior_serpentine;
 

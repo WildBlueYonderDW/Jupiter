@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_41387eecc35b88bf;
-#using script_fe797d0f2980f96;
 #using script_1284b3cfbb3c5dff;
+#using script_41387eecc35b88bf;
 #using script_60166ec58f894b68;
 #using script_638d701d263ee1ed;
-#using scripts\common\create_script_utility.gsc;
+#using script_fe797d0f2980f96;
+#using scripts\common\create_script_utility;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_cbce72e68c388ef8;
 
@@ -56,7 +56,7 @@ function function_6a64df48ad4ce4f9() {
 // Checksum 0x0, Offset: 0x331
 // Size: 0x14
 function function_fd8734d232315c9d() {
-    return getdvarint(@"hash_f3ceab12b6c6ae82", 1) != 0;
+    return getdvarint(@"am_enabled", 1) != 0;
 }
 
 // Namespace namespace_cbce72e68c388ef8 / namespace_af57321bdeb06a78
@@ -121,7 +121,7 @@ function function_a055325e4e4436fe(point, fastcheck) {
 // Size: 0x2a
 function function_d0ac7479e6ae2265(enabled) {
     assert(isint(enabled));
-    setdvar(@"hash_f3ceab12b6c6ae82", enabled);
+    setdvar(@"am_enabled", enabled);
 }
 
 // Namespace namespace_cbce72e68c388ef8 / namespace_af57321bdeb06a78
@@ -1810,7 +1810,7 @@ function private function_52281d8c5a3708e7(activityclass) {
 function private function_c32b2819d846538a(activityclass) {
     level endon("game_ended");
     while (true) {
-        wait function_2a4dbeaf064ede7d(@"hash_5aed7df20914813b", activityclass, 10);
+        wait function_2a4dbeaf064ede7d(@"am_rate", activityclass, 10);
         if (!function_fd8734d232315c9d()) {
             continue;
         }

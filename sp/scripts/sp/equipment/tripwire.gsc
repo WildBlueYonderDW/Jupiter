@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
 #using script_e429028f9c1c965;
-#using scripts\sp\player_death.gsc;
-#using scripts\sp\loot.gsc;
-#using scripts\sp\equipment\offhands.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\loot;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_death;
+#using scripts\sp\utility;
 
 #namespace tripwire;
 
@@ -85,7 +85,7 @@ function init() {
     if (!isdefined(level.tripwires)) {
         return;
     }
-    setdvarifuninitialized(@"hash_7c66efa464d04274", 0);
+    setdvarifuninitialized(@"debug_tripwire", 0);
     var_7992e35c1abecadd = getstructarray("tripwire_start", "script_noteworthy");
     foreach (startstruct in var_7992e35c1abecadd) {
         if (!isdefined(startstruct.target)) {
@@ -334,7 +334,7 @@ function tripwirethink() {
     while (true) {
         self.trigger waittill("trigger", who);
         /#
-            if (getdvarint(@"hash_7c66efa464d04274")) {
+            if (getdvarint(@"debug_tripwire")) {
                 line(self.origin, self.origin + anglestoforward(self.angles) * self.length, (1, 0, 0), 1, 0, 1);
             }
         #/
@@ -851,7 +851,7 @@ function function_ff147402c60ccd89(who) {
 // Checksum 0x0, Offset: 0x29d7
 // Size: 0x101
 function function_69edfcd6ffcd5561(who) {
-    thread function_8186812ce74a2a3b();
+    thread overkill_manager();
     magicbullet(self.weaponobject, self.var_e84ad86715d85cc, self.var_6a862672391c9895);
     if (!isdefined(level.stealth)) {
         return;
@@ -874,7 +874,7 @@ function function_69edfcd6ffcd5561(who) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ae0
 // Size: 0x4b
-function function_8186812ce74a2a3b() {
+function overkill_manager() {
     level.player val::set("trap", "shotgun_overkill", 1);
     waitframe();
     if (isalive(level.player)) {
@@ -944,16 +944,16 @@ function candamagetrap(attacker, type, damage) {
 // Size: 0x105
 function trapachievementboom() {
     tok = strtok(level.player getplayerprogression("achievementBoom"), ",");
-    var_c3e4ad662947b0db = "" + self.origin[0] + self.origin[1];
+    string_origin = "" + self.origin[0] + self.origin[1];
     if (level.player getplayerprogression("achievementBoom") == "") {
-        level.player setplayerprogression("achievementBoom", var_c3e4ad662947b0db);
+        level.player setplayerprogression("achievementBoom", string_origin);
         return;
     }
-    if (tok.size == 1 && tok[0] != var_c3e4ad662947b0db) {
-        level.player setplayerprogression("achievementBoom", tok[0] + "," + var_c3e4ad662947b0db);
+    if (tok.size == 1 && tok[0] != string_origin) {
+        level.player setplayerprogression("achievementBoom", tok[0] + "," + string_origin);
         return;
     }
-    if (tok.size == 2 && !isstartstr(tok[0], var_c3e4ad662947b0db) && !isstartstr(tok[1], var_c3e4ad662947b0db)) {
+    if (tok.size == 2 && !isstartstr(tok[0], string_origin) && !isstartstr(tok[1], string_origin)) {
         level.player setplayerprogression("achievementBoom", "true");
         level thread scripts\sp\utility::giveachievement_wrapper("boom");
     }
@@ -1054,10 +1054,10 @@ function function_7b932c4705fd44b5(who) {
         return;
     }
     if (who player_has_weapon(self.weaponobject)) {
-        var_41fe346fd14b2567 = self.script_ammo_clip;
-        var_9eabbd13591b6dfb = who getweaponammostock(getweaponbasename(self.weaponobject)) + var_41fe346fd14b2567;
+        ammoamount = self.script_ammo_clip;
+        var_9eabbd13591b6dfb = who getweaponammostock(getweaponbasename(self.weaponobject)) + ammoamount;
         who setweaponammostock(self.weaponobject, var_9eabbd13591b6dfb);
-        who notify("ammo_pickup", var_41fe346fd14b2567, getweaponammopoolname(self.weaponobject));
+        who notify("ammo_pickup", ammoamount, getweaponammopoolname(self.weaponobject));
         return;
     }
     primaryweapons = who.primaryweapons;

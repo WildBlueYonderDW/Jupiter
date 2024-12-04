@@ -1,9 +1,9 @@
 #using script_7e4d332e911e1b90;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace shared;
 
@@ -171,7 +171,7 @@ function donothingfunc() {
     // Params 4, eflags: 0x0
     // Checksum 0x0, Offset: 0x65e
     // Size: 0x31
-    function dog_jump_down(frames, rate, var_d0527d58bb610197, var_5a11f5d9304a0c83) {
+    function dog_jump_down(frames, rate, traversal_anim, var_5a11f5d9304a0c83) {
         assertmsg("<dev string:x73>");
     }
 

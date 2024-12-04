@@ -1,54 +1,54 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\engine\trace.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\equipment\fulton.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_b7a9ce0a2282b79;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\script.gsc;
 #using script_15eddb0fac236a22;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\cp_mp\pet_watch.gsc;
 #using script_3f1b6713ca4c9c7;
+#using script_5762ac2f22202ba2;
 #using script_58f20490049af6ac;
 #using script_67fb1233e876ed8;
-#using scripts\mp\flags.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\common\interactive.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using script_7ab5b649fa408138;
+#using script_b7a9ce0a2282b79;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\interactive;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\equipment\fulton;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace br_plunder;
 
@@ -2569,14 +2569,14 @@ function helidestroyvehiclestouchtrace() {
     middle = 25;
     back = -100;
     while (true) {
-        vehicles = getentarrayinradius("script_vehicle", "classname", self.origin, getdvarfloat(@"hash_d8d9dc5f1a9e75a9", 400));
+        vehicles = getentarrayinradius("script_vehicle", "classname", self.origin, getdvarfloat(@"test_radius", 400));
         if (vehicles.size <= 1) {
             wait 0.5;
             continue;
         }
         vehiclecontents = create_vehicle_contents();
         dir = anglestoforward(self.angles);
-        origin = self.origin + dir * getdvarfloat(@"hash_c99873a79b22a9f7", forward) + (0, 0, getdvarfloat(@"hash_c99875a79b22ae5d", offsetdown));
+        origin = self.origin + dir * getdvarfloat(@"test_f", forward) + (0, 0, getdvarfloat(@"test_d", offsetdown));
         trace = sphere_trace(origin, origin + (0, 0, 1), radius, self, vehiclecontents);
         ent = trace["entity"];
         if (isdefined(ent) && ent entisalivevehicle()) {
@@ -2584,7 +2584,7 @@ function helidestroyvehiclestouchtrace() {
             waitframe();
             continue;
         }
-        origin = self.origin + dir * getdvarfloat(@"hash_c9986ca79b229a92", middle) + (0, 0, getdvarfloat(@"hash_c99875a79b22ae5d", offsetdown));
+        origin = self.origin + dir * getdvarfloat(@"test_m", middle) + (0, 0, getdvarfloat(@"test_d", offsetdown));
         trace = sphere_trace(origin, origin + (0, 0, 1), radius, self, vehiclecontents);
         ent = trace["entity"];
         if (isdefined(ent) && ent entisalivevehicle()) {
@@ -2592,7 +2592,7 @@ function helidestroyvehiclestouchtrace() {
             waitframe();
             continue;
         }
-        origin = self.origin + dir * getdvarfloat(@"hash_c9986fa79b22a12b", back) + (0, 0, getdvarfloat(@"hash_c99875a79b22ae5d", offsetdown));
+        origin = self.origin + dir * getdvarfloat(@"test_b", back) + (0, 0, getdvarfloat(@"test_d", offsetdown));
         trace = sphere_trace(origin, origin + (0, 0, 1), radius, self, vehiclecontents);
         ent = trace["entity"];
         if (isdefined(ent) && ent entisalivevehicle()) {

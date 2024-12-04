@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_afecda1d484428f7;
 
@@ -14,7 +14,7 @@ function create_cover_node_init() {
     initialize_path_node_placement();
     flag_init("file_opened");
     /#
-        level thread function_699304dd575765c9(@"hash_6ffb4feaa0d03519", &function_b42e2fefe22d9e82);
+        level thread debug_activation(@"hash_6ffb4feaa0d03519", &function_b42e2fefe22d9e82);
         cmd = "<dev string:x1c>";
         addentrytodevgui(cmd);
         cmd = "<dev string:x8d>";
@@ -592,8 +592,8 @@ function clean_up_nodes() {
             }
             table_origin = strtok(tablelookupbyrow(table, row, 2), " ");
             node_origin = (float(table_origin[0]), float(table_origin[1]), float(table_origin[2]));
-            var_9e1a87f6de056c9c = strtok(tablelookupbyrow(table, row, 3), " ");
-            var_9cfe111ea9df5b56 = (float(var_9e1a87f6de056c9c[0]), float(var_9e1a87f6de056c9c[1]), float(var_9e1a87f6de056c9c[2]));
+            table_angles = strtok(tablelookupbyrow(table, row, 3), " ");
+            node_angles = (float(table_angles[0]), float(table_angles[1]), float(table_angles[2]));
             dist = 16;
             dist_override = getdvarint(@"hash_c1200bc122dd1ee0");
             if (dist_override != 0) {
@@ -601,7 +601,7 @@ function clean_up_nodes() {
             }
             dist_sq = dist * dist;
             data.origin = node_origin;
-            data.angles = var_9cfe111ea9df5b56;
+            data.angles = node_angles;
             origin_offset = strtok(tablelookupbyrow(table, row, 4), " ");
             origin_offset = (float(origin_offset[0]), float(origin_offset[1]), float(origin_offset[2]));
             angles_offset = strtok(tablelookupbyrow(table, row, 5), " ");
@@ -612,7 +612,7 @@ function clean_up_nodes() {
             if (isdefined(classname)) {
                 if (node_passes_nav_and_geo_validation()) {
                     data.origin = node_origin;
-                    data.angles = var_9cfe111ea9df5b56;
+                    data.angles = node_angles;
                     data.node_type = classname;
                     write_struct_to_map();
                 }
@@ -683,12 +683,12 @@ function translate_position_with_offset_data(var_a1306ee53c20150f, var_e3c2f7a7f
         var_82b752b102f67a72 = (0, 0, 0);
     }
     if (isdefined(self.angles)) {
-        var_8dd49492e28fcabb = self.angles;
+        obj_angles = self.angles;
     } else {
-        var_8dd49492e28fcabb = (0, 0, 0);
+        obj_angles = (0, 0, 0);
     }
     obj_origin = self.origin;
-    obj_forward = anglestoforward(var_8dd49492e28fcabb);
+    obj_forward = anglestoforward(obj_angles);
     self.origin = var_a1306ee53c20150f + rotatevector(obj_origin, var_82b752b102f67a72);
     var_d241032d837036a4 = vectortoangles(rotatevector(obj_forward, var_82b752b102f67a72));
     self.angles = var_d241032d837036a4;
@@ -1526,7 +1526,7 @@ function reposition_cover_node() {
     forward = anglestoforward(angles);
     backward = -1 * anglestoforward(angles);
     up = anglestoup(angles);
-    var_aed353bf3e91ae8e = [left, right];
+    dir_array = [left, right];
     var_7a196a18db422fe4 = undefined;
     var_c2f92d971762713 = undefined;
     var_f3633612b199e548 = undefined;
@@ -1545,14 +1545,14 @@ function reposition_cover_node() {
     }
     forward_trace = data.valid_forward_dist;
     for (i = 0; i < 4; i++) {
-        if (var_aed353bf3e91ae8e.size < 1) {
+        if (dir_array.size < 1) {
             break;
         }
-        for (z = 0; z < var_aed353bf3e91ae8e.size; z++) {
-            dir = var_aed353bf3e91ae8e[z];
+        for (z = 0; z < dir_array.size; z++) {
+            dir = dir_array[z];
             new_pos = starting_pos + dir * i * 32;
             if (!can_spawn_capsule_trace(new_pos)) {
-                var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                dir_array = array_remove(dir_array, dir);
                 continue;
             }
             first_result = create_node_trace(new_pos, new_pos + forward * forward_trace, (0, 1, 1));
@@ -1561,7 +1561,7 @@ function reposition_cover_node() {
                 for (j = 1; j < 32; j++) {
                     valid_pos = new_pos + -1 * dir * j;
                     if (!can_spawn_capsule_trace(valid_pos)) {
-                        var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                        dir_array = array_remove(dir_array, dir);
                         continue;
                     }
                     result = create_node_trace(valid_pos, valid_pos + forward * 24, (0, 1, 1));
@@ -1569,7 +1569,7 @@ function reposition_cover_node() {
                         data.found_valid_node_pos = 1;
                         data.should_create_exposed_node = 0;
                         if (position_near_other_nodes(result["position"])) {
-                            var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                            dir_array = array_remove(dir_array, dir);
                             break;
                         }
                         if (dir == left) {
@@ -1577,10 +1577,10 @@ function reposition_cover_node() {
                                 if (edge_point_valid(valid_pos, dir, forward)) {
                                     data.found_left_edge = 1;
                                     var_7a196a18db422fe4 = drop_to_ground(result["position"], 12, -300);
-                                    var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                                    dir_array = array_remove(dir_array, dir);
                                     break;
                                 } else {
-                                    var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                                    dir_array = array_remove(dir_array, dir);
                                     break;
                                 }
                             }
@@ -1590,10 +1590,10 @@ function reposition_cover_node() {
                             if (edge_point_valid(valid_pos, dir, forward)) {
                                 data.found_right_edge = 1;
                                 var_c2f92d971762713 = drop_to_ground(result["position"], 12, -300);
-                                var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                                dir_array = array_remove(dir_array, dir);
                                 continue;
                             }
-                            var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                            dir_array = array_remove(dir_array, dir);
                             break;
                         }
                     }
@@ -1666,9 +1666,9 @@ function simple_reposition_node() {
     backward = -1 * anglestoforward(angles);
     up = anglestoup(angles);
     if (is_equal(data.node_type, "node_cover_left")) {
-        var_aed353bf3e91ae8e = [left];
+        dir_array = [left];
     } else {
-        var_aed353bf3e91ae8e = [right];
+        dir_array = [right];
     }
     var_7a196a18db422fe4 = undefined;
     var_c2f92d971762713 = undefined;
@@ -1683,14 +1683,14 @@ function simple_reposition_node() {
     data.temp_trace_data_colors = [];
     forward_trace = data.valid_forward_dist;
     for (i = 0; i < 4; i++) {
-        if (var_aed353bf3e91ae8e.size < 1) {
+        if (dir_array.size < 1) {
             break;
         }
-        for (z = 0; z < var_aed353bf3e91ae8e.size; z++) {
-            dir = var_aed353bf3e91ae8e[z];
+        for (z = 0; z < dir_array.size; z++) {
+            dir = dir_array[z];
             new_pos = starting_pos + dir * i * 32;
             if (!can_spawn_capsule_trace(new_pos)) {
-                var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                dir_array = array_remove(dir_array, dir);
                 continue;
             }
             first_result = create_node_trace(new_pos, new_pos + forward * forward_trace, (0, 1, 1));
@@ -1699,7 +1699,7 @@ function simple_reposition_node() {
                 for (j = 1; j < 32; j++) {
                     valid_pos = new_pos + -1 * dir * j;
                     if (!can_spawn_capsule_trace(valid_pos)) {
-                        var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                        dir_array = array_remove(dir_array, dir);
                         continue;
                     }
                     result = create_node_trace(valid_pos, valid_pos + forward * 24, (0, 1, 1));
@@ -1711,10 +1711,10 @@ function simple_reposition_node() {
                                 if (edge_point_valid(valid_pos, dir, forward)) {
                                     data.found_left_edge = 1;
                                     var_7a196a18db422fe4 = drop_to_ground(result["position"], 12, -300);
-                                    var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                                    dir_array = array_remove(dir_array, dir);
                                     break;
                                 } else {
-                                    var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                                    dir_array = array_remove(dir_array, dir);
                                     break;
                                 }
                             }
@@ -1724,10 +1724,10 @@ function simple_reposition_node() {
                             if (edge_point_valid(valid_pos, dir, forward)) {
                                 data.found_right_edge = 1;
                                 var_c2f92d971762713 = drop_to_ground(result["position"], 12, -300);
-                                var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                                dir_array = array_remove(dir_array, dir);
                                 continue;
                             }
-                            var_aed353bf3e91ae8e = array_remove(var_aed353bf3e91ae8e, dir);
+                            dir_array = array_remove(dir_array, dir);
                             break;
                         }
                     }
@@ -2141,7 +2141,7 @@ function can_spawn_capsule_trace(pos) {
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x5e49
     // Size: 0x6d
-    function function_699304dd575765c9(dvar, action_func) {
+    function debug_activation(dvar, action_func) {
         level endon("<dev string:x7f6>");
         setdevdvarifuninitialized(dvar, "<dev string:x7e8>");
         while (true) {

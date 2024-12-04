@@ -1,6 +1,6 @@
-#namespace namespace_6ec0c1573d9ede72;
+#namespace c_jup_civilian_russian_female_body;
 
-// Namespace namespace_6ec0c1573d9ede72 / namespace_8051767958a0abf2
+// Namespace c_jup_civilian_russian_female_body / namespace_8051767958a0abf2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x133
 // Size: 0x47

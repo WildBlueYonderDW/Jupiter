@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_debug.gsc;
 #using script_476b6443e3798f5e;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\cp_hostmigration.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_objectives.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_debug;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\utility\entity;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace objective_trigger;
 
@@ -636,7 +636,7 @@ function function_eadc517453265031() {
 // Checksum 0x0, Offset: 0x189b
 // Size: 0xc3
 function function_d76603ec2ccec43c() {
-    var_20533273f43dd4e2 = [];
+    updated_array = [];
     if (isdefined(level.var_b4782a67e2e204d5)) {
         foreach (trigger in level.var_b4782a67e2e204d5) {
             thread watchobjectiveTriggerTrigger(trigger);
@@ -659,7 +659,7 @@ function watchobjectiveTriggerTrigger(trigger) {
     trigger.entstouching = [];
     if (isdefined(trigger.target)) {
         trigger.var_3efe1b3a9ef1aba0 = getent(trigger.target, "targetname");
-        trigger.var_3efe1b3a9ef1aba0.var_281086936687228a = trigger;
+        trigger.var_3efe1b3a9ef1aba0.parent_trigger = trigger;
     }
     scripts\mp\flags::gameflagwait("prematch_done");
     thread watchobjectiveTriggerTriggerExit(trigger);
@@ -1059,8 +1059,8 @@ function globalObjectiveChangeRequests(var_cad5e66c0a5dc607) {
         level waittill("global_objective_request", objective_trigger, var_3948981ff1dd7af6, var_bbba777adf94982f);
         if (istrue(var_cad5e66c0a5dc607)) {
             if (isdefined(objective_trigger)) {
-                var_b46496ba73dc641b = objective_trigger.script_noteworthy;
-                level thread [[ level.var_6b67b924a327783 ]](var_b46496ba73dc641b);
+                requested_objective = objective_trigger.script_noteworthy;
+                level thread [[ level.var_6b67b924a327783 ]](requested_objective);
             }
             continue;
         }
@@ -1080,25 +1080,25 @@ function globalObjectiveChangeRequests(var_cad5e66c0a5dc607) {
                 continue;
             }
         }
-        var_b46496ba73dc641b = objective_trigger.script_noteworthy;
-        if (array_contains(level.var_92accdcd4283f715, var_b46496ba73dc641b)) {
+        requested_objective = objective_trigger.script_noteworthy;
+        if (array_contains(level.var_92accdcd4283f715, requested_objective)) {
             /#
                 if (namespace_c058342275db1f64::function_df7e197c7e058e4b()) {
-                    iprintln("<dev string:xa8>" + var_b46496ba73dc641b + "<dev string:xc1>");
+                    iprintln("<dev string:xa8>" + requested_objective + "<dev string:xc1>");
                 }
             #/
             continue;
         }
         if (istrue(var_3948981ff1dd7af6)) {
-            function_da21af5d15c8dc18(var_b46496ba73dc641b);
+            function_da21af5d15c8dc18(requested_objective);
         }
-        level.var_92accdcd4283f715 = array_add(level.var_92accdcd4283f715, var_b46496ba73dc641b);
+        level.var_92accdcd4283f715 = array_add(level.var_92accdcd4283f715, requested_objective);
         /#
             if (namespace_c058342275db1f64::function_df7e197c7e058e4b()) {
-                iprintln("<dev string:x7c>" + var_b46496ba73dc641b);
+                iprintln("<dev string:x7c>" + requested_objective);
             }
         #/
-        thread scripts\cp\cp_objectives::run_objective(var_b46496ba73dc641b, "primary");
+        thread scripts\cp\cp_objectives::run_objective(requested_objective, "primary");
     }
 }
 
@@ -1106,10 +1106,10 @@ function globalObjectiveChangeRequests(var_cad5e66c0a5dc607) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2643
 // Size: 0xa7
-function function_da21af5d15c8dc18(var_b46496ba73dc641b) {
+function function_da21af5d15c8dc18(requested_objective) {
     foreach (struct in level.activequests) {
         name = struct.objname;
-        if (name == var_b46496ba73dc641b) {
+        if (name == requested_objective) {
             continue;
         }
         objectivestruct = scripts\cp\cp_objectives::getobjectivestructfromref(name);

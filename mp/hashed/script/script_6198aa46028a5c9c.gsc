@@ -1,35 +1,35 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_41387eecc35b88bf;
-#using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
+#using script_1174abedbefe9ada;
 #using script_185660037b9236c1;
+#using script_220d0eb95a8fab7d;
+#using script_2f2628d802eb2807;
+#using script_3ab210ea917601e7;
+#using script_41387eecc35b88bf;
+#using script_440a6f7f2d90cc3c;
+#using script_46c7c73b1a7e4773;
+#using script_4e6e58ab5d96c2b0;
 #using script_4fdefae8b7bcdf73;
 #using script_5753ba9c28794a65;
-#using script_3ab210ea917601e7;
-#using script_6617e2f2bb62b52b;
-#using script_46c7c73b1a7e4773;
-#using script_9880b9dc28bc25e;
-#using scripts\engine\scriptable.gsc;
-#using script_440a6f7f2d90cc3c;
-#using script_7edf952f8921aa6b;
-#using script_1174abedbefe9ada;
 #using script_638d701d263ee1ed;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_a62705cb078ec0a;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\utility\scriptable_door_utility.gsc;
-#using script_2f2628d802eb2807;
-#using script_772861646614d63a;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using script_4e6e58ab5d96c2b0;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_6617e2f2bb62b52b;
 #using script_6c4e8cea70bf4b6d;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
+#using script_772861646614d63a;
+#using script_7956d56c4922bd1;
+#using script_7edf952f8921aa6b;
+#using script_9880b9dc28bc25e;
+#using script_a62705cb078ec0a;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\scriptable_door_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_7b4c61760c2a90db;
 
@@ -126,7 +126,7 @@ function function_ea1f3e8ff1234996() {
     var_726f847c1c7b1101 = getstructarray("door_contract_lock", "targetname");
     locked_struct = getclosest(self.start.origin, var_726f847c1c7b1101);
     self.garagedoors = garagedoors;
-    self.var_1e561c2a5961a32b = blockers;
+    self.blocker_array = blockers;
     self.locked_struct = locked_struct;
     self.difficulty_region = namespace_4df2ab39b0e96ec7::function_4d8bb2d866771a10(self.start.origin);
     if (self.difficulty_region == "difficulty_undefined") {
@@ -231,7 +231,7 @@ function function_ea1f3e8ff1234996() {
         closestkeypad = get_array_of_closest(self.horde_spawn.origin, self.keypads)[0];
         self.mainkeypad = closestkeypad;
         blockerradius = 1000;
-        foreach (blocker in self.var_1e561c2a5961a32b) {
+        foreach (blocker in self.blocker_array) {
             blocker setscriptablepartstate("state", "visible");
         }
         doors = scripts\cp_mp\utility\scriptable_door_utility::scriptable_door_get_in_radius(self.locked_struct.origin, 75, 75);
@@ -402,8 +402,8 @@ function function_6211630e2529bb45() {
             keypad delete();
         }
     }
-    if (isdefined(self.var_1e561c2a5961a32b)) {
-        foreach (blocker in self.var_1e561c2a5961a32b) {
+    if (isdefined(self.blocker_array)) {
+        foreach (blocker in self.blocker_array) {
             blocker setscriptablepartstate("state", "hidden");
         }
     }

@@ -1,6 +1,6 @@
-#namespace namespace_8571a73fdf1a4689;
+#namespace civilian_syrkistan_female_head;
 
-// Namespace namespace_8571a73fdf1a4689 / xmodelalias\civilian_syrkistan_female_head
+// Namespace civilian_syrkistan_female_head / xmodelalias\civilian_syrkistan_female_head
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc1
 // Size: 0x33

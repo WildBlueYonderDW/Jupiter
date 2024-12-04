@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\civilian_syrkistan_female_head.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\civilian_syrkistan_female_head;
 
 #namespace namespace_da52c91eb04dd047;
 

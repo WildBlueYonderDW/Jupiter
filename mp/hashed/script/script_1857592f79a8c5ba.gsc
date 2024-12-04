@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\cap.gsc;
+#using scripts\asm\asm_bb;
+#using scripts\asm\cap;
+#using scripts\engine\utility;
 
 #namespace cap_use_armor_plate_solo;
 

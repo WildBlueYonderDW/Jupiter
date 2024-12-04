@@ -1,9 +1,9 @@
-#using scripts\asm\asm.gsc;
-#using scripts\anim\utility_common.gsc;
 #using script_7e4d332e911e1b90;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace script_funcs;
 

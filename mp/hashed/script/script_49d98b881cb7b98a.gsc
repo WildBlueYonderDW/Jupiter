@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using script_44b8991c2b01716a;
-#using scripts\mp\equipment\support_box.gsc;
+#using script_7ab5b649fa408138;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\support_box;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace namespace_25c6225632fa6610;
 

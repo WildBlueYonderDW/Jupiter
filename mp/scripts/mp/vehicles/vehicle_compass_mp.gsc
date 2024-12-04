@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_compass.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_compass;
+#using scripts\engine\utility;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace namespace_5eac2b19504e7004;
 

@@ -1,12 +1,12 @@
-#using scripts\common\vehicle.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\common\vehicle_build.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_build;
+#using scripts\engine\utility;
 
-#namespace namespace_89ecc733aa811182;
+#namespace veh9_mil_air_heli_hind;
 
-// Namespace namespace_89ecc733aa811182 / namespace_a276e4fb70eacc16
+// Namespace veh9_mil_air_heli_hind / namespace_a276e4fb70eacc16
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bc
 // Size: 0x135
@@ -29,7 +29,7 @@ function main(model, type, classname) {
     build_is_helicopter();
 }
 
-// Namespace namespace_89ecc733aa811182 / namespace_a276e4fb70eacc16
+// Namespace veh9_mil_air_heli_hind / namespace_a276e4fb70eacc16
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f9
 // Size: 0x67
@@ -45,7 +45,7 @@ function init_local() {
     thread handle_scriptable_vfx();
 }
 
-// Namespace namespace_89ecc733aa811182 / namespace_a276e4fb70eacc16
+// Namespace veh9_mil_air_heli_hind / namespace_a276e4fb70eacc16
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x368
 // Size: 0x4a
@@ -58,7 +58,7 @@ function handle_scriptable_vfx() {
     }
 }
 
-// Namespace namespace_89ecc733aa811182 / namespace_a276e4fb70eacc16
+// Namespace veh9_mil_air_heli_hind / namespace_a276e4fb70eacc16
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ba
 // Size: 0x31
@@ -70,7 +70,7 @@ function setanims() {
     return positions;
 }
 
-// Namespace namespace_89ecc733aa811182 / namespace_a276e4fb70eacc16
+// Namespace veh9_mil_air_heli_hind / namespace_a276e4fb70eacc16
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f4
 // Size: 0xb
@@ -78,7 +78,7 @@ function set_vehicle_anims(positions) {
     
 }
 
-// Namespace namespace_89ecc733aa811182 / namespace_a276e4fb70eacc16
+// Namespace veh9_mil_air_heli_hind / namespace_a276e4fb70eacc16
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x407
 // Size: 0xf

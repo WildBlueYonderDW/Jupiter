@@ -1,12 +1,12 @@
-#using scripts\cp\cp_hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using script_41ae4f5ca24216cb;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
 #using script_187a04151c40fb72;
-#using scripts\cp\utility\script.gsc;
-#using scripts\cp\utility.gsc;
+#using script_41ae4f5ca24216cb;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\script;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\engine\utility;
 
 #namespace namespace_e1db05e1cbb8d8d5;
 
@@ -289,7 +289,7 @@ function createnvidiavideo(ref) {
         var_7861cc7f1384834e = 6;
     } else if (ref == #"hash_8368a43e439d8a67") {
         var_7861cc7f1384834e = 7;
-    } else if (ref == #"hash_29065087e352eb71") {
+    } else if (ref == #"item_impact") {
         var_7861cc7f1384834e = 8;
     }
     if (isdefined(var_7861cc7f1384834e)) {
@@ -430,15 +430,15 @@ function saveaarawards() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1408
 // Size: 0xe3
-function give_operator_based_on_task(var_d81bcc09a687a6e2) {
+function give_operator_based_on_task(task_reference) {
     flag_wait("cp_operator_unlock_ids_initted");
-    assertex(isdefined(var_d81bcc09a687a6e2), "operation_reference value is undefined. Recheck scripts");
-    assertex(isstring(var_d81bcc09a687a6e2), "operation_reference value is NOT a string. Recheck scripts");
-    if (!isdefined(var_d81bcc09a687a6e2) || !isstring(var_d81bcc09a687a6e2)) {
+    assertex(isdefined(task_reference), "operation_reference value is undefined. Recheck scripts");
+    assertex(isstring(task_reference), "operation_reference value is NOT a string. Recheck scripts");
+    if (!isdefined(task_reference) || !isstring(task_reference)) {
         return;
     }
-    id = int(get_id_based_on_task(var_d81bcc09a687a6e2));
-    switch (var_d81bcc09a687a6e2) {
+    id = int(get_id_based_on_task(task_reference));
+    switch (task_reference) {
     case #"hash_22ab6874bab6b34a":
     case #"hash_3b643889fbf635ad":
     case #"hash_4070ccd227c6f53c":
@@ -449,7 +449,7 @@ function give_operator_based_on_task(var_d81bcc09a687a6e2) {
         break;
     default:
         /#
-            iprintln("<dev string:x4e>" + var_d81bcc09a687a6e2);
+            iprintln("<dev string:x4e>" + task_reference);
         #/
         break;
     }
@@ -459,15 +459,15 @@ function give_operator_based_on_task(var_d81bcc09a687a6e2) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f3
 // Size: 0x1a3
-function give_reward_based_on_task(var_d81bcc09a687a6e2) {
+function give_reward_based_on_task(task_reference) {
     flag_wait("cp_operator_unlock_ids_initted");
-    assertex(isdefined(var_d81bcc09a687a6e2), "reward_reference value is undefined. Recheck scripts");
-    assertex(isstring(var_d81bcc09a687a6e2), "reward_reference value is NOT a string. Recheck scripts");
-    if (!isdefined(var_d81bcc09a687a6e2) || !isstring(var_d81bcc09a687a6e2)) {
+    assertex(isdefined(task_reference), "reward_reference value is undefined. Recheck scripts");
+    assertex(isstring(task_reference), "reward_reference value is NOT a string. Recheck scripts");
+    if (!isdefined(task_reference) || !isstring(task_reference)) {
         return;
     }
-    id = int(get_id_based_on_task(var_d81bcc09a687a6e2));
-    switch (var_d81bcc09a687a6e2) {
+    id = int(get_id_based_on_task(task_reference));
+    switch (task_reference) {
     case #"hash_1188473b152561ca":
     case #"hash_1759d8bd3e44beca":
     case #"hash_1f2f1d015fb3374a":
@@ -494,7 +494,7 @@ function give_reward_based_on_task(var_d81bcc09a687a6e2) {
         break;
     default:
         /#
-            iprintln("<dev string:x4e>" + var_d81bcc09a687a6e2);
+            iprintln("<dev string:x4e>" + task_reference);
         #/
         break;
     }
@@ -504,8 +504,8 @@ function give_reward_based_on_task(var_d81bcc09a687a6e2) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x169e
 // Size: 0x3c
-function get_id_based_on_task(var_d81bcc09a687a6e2) {
-    id = level.operator_unlock_ids[var_d81bcc09a687a6e2].id;
+function get_id_based_on_task(task_reference) {
+    id = level.operator_unlock_ids[task_reference].id;
     assertex(isdefined(id), " Value of ID was undefined. Recheck table ^1 cp_reward_ids.csv");
     return id;
 }

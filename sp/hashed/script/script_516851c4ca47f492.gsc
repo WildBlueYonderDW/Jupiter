@@ -1,12 +1,12 @@
-#using scripts\common\vehicle.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\common\vehicle_build.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_build;
+#using scripts\engine\utility;
 
-#namespace namespace_4a6b042b5c36bdc;
+#namespace veh9_mil_air_heli_medium;
 
-// Namespace namespace_4a6b042b5c36bdc / namespace_c21c4ef46d69c648
+// Namespace veh9_mil_air_heli_medium / namespace_c21c4ef46d69c648
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x253
@@ -15,7 +15,7 @@ function main(model, type, classname) {
     build_localinit(&init_local);
     build_deathmodel("veh9_mil_air_heli_medium_vehphys_sp");
     build_radiusdamage((0, 0, 0), 500, 120, 20);
-    mapname = getdvar(@"hash_687fb8f9b7a23245");
+    mapname = getdvar(@"g_mapname");
     switch (mapname) {
     case #"hash_bbef2fceaac6b576":
         build_treadfx(classname, "default", "vfx/iw9/level/prison/heli_prison_default_ch.vfx", 1);
@@ -47,7 +47,7 @@ function main(model, type, classname) {
     build_drive(vehicles%lbravo_rotors, undefined, 0, 3);
 }
 
-// Namespace namespace_4a6b042b5c36bdc / namespace_c21c4ef46d69c648
+// Namespace veh9_mil_air_heli_medium / namespace_c21c4ef46d69c648
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fc
 // Size: 0x5b
@@ -62,7 +62,7 @@ function init_local() {
     thread handle_scriptable_vfx();
 }
 
-// Namespace namespace_4a6b042b5c36bdc / namespace_c21c4ef46d69c648
+// Namespace veh9_mil_air_heli_medium / namespace_c21c4ef46d69c648
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x65f
 // Size: 0x5b
@@ -76,7 +76,7 @@ function handle_scriptable_vfx() {
     }
 }
 
-// Namespace namespace_4a6b042b5c36bdc / namespace_c21c4ef46d69c648
+// Namespace veh9_mil_air_heli_medium / namespace_c21c4ef46d69c648
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c2
 // Size: 0x242
@@ -118,7 +118,7 @@ function setanims() {
     return positions;
 }
 
-// Namespace namespace_4a6b042b5c36bdc / namespace_c21c4ef46d69c648
+// Namespace veh9_mil_air_heli_medium / namespace_c21c4ef46d69c648
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x90d
 // Size: 0xb
@@ -126,7 +126,7 @@ function set_vehicle_anims(positions) {
     
 }
 
-// Namespace namespace_4a6b042b5c36bdc / namespace_c21c4ef46d69c648
+// Namespace veh9_mil_air_heli_medium / namespace_c21c4ef46d69c648
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x920
 // Size: 0xd4

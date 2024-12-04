@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\lower_message;
 
 #namespace auto_ascender;
 

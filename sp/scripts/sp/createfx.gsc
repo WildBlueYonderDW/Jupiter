@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\createfxmenu.gsc;
-#using scripts\common\createfx.gsc;
-#using scripts\common\fx.gsc;
-#using scripts\sp\trigger.gsc;
+#using scripts\common\createfx;
+#using scripts\common\createfxmenu;
+#using scripts\common\fx;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\trigger;
+#using scripts\sp\utility;
 
 #namespace createfx;
 

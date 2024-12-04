@@ -1,6 +1,6 @@
-#namespace namespace_6ec387325d458e7d;
+#namespace heads_sas_urban;
 
-// Namespace namespace_6ec387325d458e7d / xmodelalias\heads_sas_urban
+// Namespace heads_sas_urban / xmodelalias\heads_sas_urban
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbc
 // Size: 0x33

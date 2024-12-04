@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
 #using script_2f86bfcf149ec57e;
-#using scripts\code\character.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
 
 #namespace namespace_145b00466708292d;
 

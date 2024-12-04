@@ -1,10 +1,10 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\spawner.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\spawner;
+#using scripts\sp\utility;
 
 #namespace stayahead;
 
@@ -24,7 +24,7 @@ function stayahead_thread(followent) {
     thread stayahead_watch_end();
     childthread pause_flag_monitor();
     dir = anglestoforward(self.angles);
-    var_b0e4b46b0830aad8 = anglestoforward(self.angles);
+    dir_prev = anglestoforward(self.angles);
     lastpos = "";
     prevpos = "";
     goalpos = get_goalpos();
@@ -605,12 +605,12 @@ function get_wait_node(dir) {
         nodes = array_combine(nodes, get_goto_nodes(nodes));
         nodes = sortbydistance(nodes, self.origin);
     }
-    var_1df8c3f02e584e8f = 0.75;
+    allowed_dot = 0.75;
     foreach (i, node in nodes) {
         nodedot = vectordot(vectornormalize(node.origin - self.origin), self.stayahead.dir);
         var_87014a763dbee513 = ter_op(isdefined(self.goalnode) && node == self.goalnode, 0, 1);
         var_8f05af16d81fa32d = ter_op(isdefined(self.goalpos) && node.origin == self.goalpos, 0, 1);
-        if (!isdefined(node.stayahead_wait_used) && !isdefined(node.script_dontremove) && nodedot >= var_1df8c3f02e584e8f && var_87014a763dbee513 && var_8f05af16d81fa32d) {
+        if (!isdefined(node.stayahead_wait_used) && !isdefined(node.script_dontremove) && nodedot >= allowed_dot && var_87014a763dbee513 && var_8f05af16d81fa32d) {
             if (isdefined(self.script_forcecolor) && isdefined(node.script_color_allies) && issubstr(node.script_color_allies, self.script_forcecolor)) {
                 line_debug(self.origin, node.origin, (0, 1, 0), 1, 0, 1);
                 node thread node_display_debug(node.origin, node.script_color_allies, (0, 1, 0), 1, 0.2, 1000, 1);
@@ -632,7 +632,7 @@ function get_wait_node(dir) {
                 node thread node_display_debug(node.origin, "invalid: used", (1, 0, 1), 1, 0.2, 1000, 1);
             } else if (nodedot < 0) {
                 node thread node_display_debug(node.origin, "removed: behind", (0, 0, 1), 1, 0.2, 1000, 1);
-            } else if (nodedot < var_1df8c3f02e584e8f) {
+            } else if (nodedot < allowed_dot) {
                 node thread node_display_debug(node.origin, "removed: bad angle: " + nodedot, (1, 0, 0), 1, 0.2, 1000, 1);
             } else if (!var_87014a763dbee513) {
                 node thread node_display_debug(node.origin, "removed: IS goalNode", (1, 0, 0), 1, 0.2, 1000, 1);
@@ -1001,10 +1001,10 @@ function stayahead_team_debug() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bf9
 // Size: 0x57
-function lerp_plane_vector(var_b0e4b46b0830aad8, var_947ed2246787def9) {
+function lerp_plane_vector(dir_prev, dir_new) {
     adjustment = 0.03;
-    var_18103624c85733be = (var_947ed2246787def9 - var_b0e4b46b0830aad8) * adjustment;
-    dir = var_b0e4b46b0830aad8 + var_18103624c85733be;
+    dir_adj = (dir_new - dir_prev) * adjustment;
+    dir = dir_prev + dir_adj;
     self.stayahead.dir = dir;
     return dir;
 }
@@ -1168,8 +1168,8 @@ function sphere_debug(origin, radius, color, depthtest, duration) {
 // Params 8, eflags: 0x0
 // Checksum 0x0, Offset: 0x515d
 // Size: 0xca
-function node_display_debug(origin, text, color, alpha, scale, duration, centered, var_e2be8eff78f97351) {
-    if (isstruct(self) || isnode(self) && isdefined(self.targetname) && !isdefined(var_e2be8eff78f97351)) {
+function node_display_debug(origin, text, color, alpha, scale, duration, centered, no_endon) {
+    if (isstruct(self) || isnode(self) && isdefined(self.targetname) && !isdefined(no_endon)) {
         level notify(self.targetname);
         level endon(self.targetname);
     }
@@ -1185,14 +1185,14 @@ function node_display_debug(origin, text, color, alpha, scale, duration, centere
 // Checksum 0x0, Offset: 0x522f
 // Size: 0x198
 function display_goto_path(color) {
-    var_eb99fbea3747c2df = color;
+    og_color = color;
     if (getdvarint(@"hash_3d6aec1e7192648b")) {
         if (isdefined(self.using_goto_node) && isdefined(self.patharray)) {
             foreach (i, node in self.patharray) {
                 if (isdefined(self.patharrayindex) && i < self.patharrayindex) {
                     color = (1, 0, 0);
                 } else {
-                    color = var_eb99fbea3747c2df;
+                    color = og_color;
                 }
                 node thread node_display_debug(node.origin, "goto: " + i, color, 1, 0.2, 100, 1);
                 if (isdefined(node.target)) {

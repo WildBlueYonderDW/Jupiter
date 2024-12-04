@@ -1,8 +1,8 @@
-#using scripts\asm\asm.gsc;
-#using scripts\common\anim.gsc;
-#using script_7e4d332e911e1b90;
-#using scripts\engine\utility.gsc;
 #using script_3433ee6b63c7e243;
+#using script_7e4d332e911e1b90;
+#using scripts\asm\asm;
+#using scripts\common\anim;
+#using scripts\engine\utility;
 
 #namespace namespace_15a6b98dc3353454;
 
@@ -313,7 +313,7 @@ function function_41377dafffee3185(asmname, statename, params) {
 function playmeleeanim_synced(asmname, statename, params) {
     assert(self.in_melee);
     assert(isdefined(self.meleetarget));
-    self.var_dfff4c701bb9523c = 1;
+    self.bmeleestarted = 1;
     target = self.meleetarget;
     meleeanim = asm_getanim(asmname, statename);
     meleexanim = asm_getxanim(statename, meleeanim);
@@ -406,7 +406,7 @@ function playmeleeanim_synced_cleanup(asmname, statename, params) {
 function playmeleeanim_synced_victim(asmname, statename, params) {
     self endon(statename + "_finished");
     assert(self.in_melee);
-    self.var_dfff4c701bb9523c = 1;
+    self.bmeleestarted = 1;
     self animmode("nogravity");
     if (isdefined(self.var_290be0985580a7a0)) {
         self orientmode("face angle", self.var_290be0985580a7a0);
@@ -511,7 +511,7 @@ function playmeleeanim_synced_waitforpartnerexit(asmname, statename) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x179c
 // Size: 0x1da
-function function_4f145058cbb5099e(var_d59fc6b752df85f0, append_code) {
+function function_4f145058cbb5099e(final_alias, append_code) {
     append = "";
     switch (append_code) {
     case #"hash_a13dd2b8b51545eb":
@@ -556,9 +556,9 @@ function function_4f145058cbb5099e(var_d59fc6b752df85f0, append_code) {
         }
         break;
     }
-    var_d59fc6b752df85f0 += append;
-    if (soundexists(var_d59fc6b752df85f0)) {
-        self playsound(var_d59fc6b752df85f0);
+    final_alias += append;
+    if (soundexists(final_alias)) {
+        self playsound(final_alias);
     }
 }
 

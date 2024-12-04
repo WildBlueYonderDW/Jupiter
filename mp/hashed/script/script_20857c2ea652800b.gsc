@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\asm\shared\mp\utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_30fbbeb9a6251e9a;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using script_21bdef0c2290d3e2;
-#using script_7c03ab87c5f9f420;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\ai.gsc;
-#using script_638d701d263ee1ed;
-#using script_371b4c2ab5861e62;
-#using scripts\common\cap.gsc;
 #using script_1feb0785278dafea;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using script_21bdef0c2290d3e2;
+#using script_2669878cf5a1b6bc;
+#using script_30fbbeb9a6251e9a;
+#using script_371b4c2ab5861e62;
 #using script_54be039c89fddc12;
-#using script_7b2517368c79e5bc;
+#using script_638d701d263ee1ed;
 #using script_6bffae1b97f70547;
+#using script_7b2517368c79e5bc;
+#using script_7c03ab87c5f9f420;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\cap;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\flags;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_aec225c929af7985;
 
@@ -105,7 +105,7 @@ function function_df47984aec8fdb53() {
     var_66ae3e250803bed1 = self.origin - (30, 30, 0);
     buddy = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(var_f191982a537bd94, var_66ae3e250803bed1, self.angles, self.team);
     if (isalive(buddy)) {
-        self.var_9ef678fddf58d09a = 2;
+        self.companion_type = 2;
         buddy.var_66c1831357048c02 = self;
         self.var_c5668dcaf32afbc3 = buddy;
         buddy scripts\common\ai::function_dd21d67ede8ba22(getdvarint(@"hash_eb6294a63fe5308a", 24000));
@@ -123,7 +123,7 @@ function function_df47984aec8fdb53() {
         buddy.baseaccuracy = getdvarfloat(@"hash_4348131663bf2724", 1.8);
         buddy.var_4268b42fc89d0be9 = 0.001;
         buddy.var_8a783f4c73c2ae91 = 4e-06;
-        buddy.var_e89cb8048a26c2c5 = 0.02;
+        buddy.gameskillmisstimefrombehindoverride = 0.02;
         buddy.disablereload = 1;
         buddy.grenadeammo = 200;
         buddy.var_66c8cd2e51badc67 = 1;
@@ -164,7 +164,7 @@ function private function_1092bdd0a92a350c() {
     if (isdefined(playerowner) && isplayer(playerowner) && (!isdefined(playerowner.var_c5668dcaf32afbc3) || playerowner.var_c5668dcaf32afbc3 == self)) {
         playerowner.var_c5668dcaf32afbc3 = undefined;
         if (!istrue(playerowner.var_ded04cdd264a7e00)) {
-            playerowner.var_9ef678fddf58d09a = 0;
+            playerowner.companion_type = 0;
             playerowner.var_a0c81984c27cf26e = undefined;
         }
     }

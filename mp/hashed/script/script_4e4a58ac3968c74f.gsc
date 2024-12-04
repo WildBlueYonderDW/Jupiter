@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
 #using script_3a9930dfe832ae05;
-#using scripts\common\powerups.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\engine\utility;
+#using scripts\mp\supers;
+#using scripts\mp\utility\perk;
 
 #namespace full_power;
 

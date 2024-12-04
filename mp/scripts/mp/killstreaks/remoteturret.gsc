@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
 
 #namespace remoteturret;
 

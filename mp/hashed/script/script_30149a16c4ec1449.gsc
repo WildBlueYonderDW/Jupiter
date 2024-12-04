@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using script_642c5544c38837a2;
 #using script_32d93a194074fa6a;
-#using script_47a7dd805c87b33f;
 #using script_35ee5e2cef30eea2;
+#using script_47a7dd805c87b33f;
+#using script_642c5544c38837a2;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_52e7ef6f147270cd;
 
@@ -25,7 +25,7 @@ function autoexec main() {
     if (getdvarint(@"hash_838f5d1f7ca6ae7b", 0) == 0) {
         return;
     }
-    function_ccacfdcc7aa6b6d7();
+    initLevelData();
     initdialog();
     thread function_2b009da164c0e825();
     /#
@@ -39,7 +39,7 @@ function autoexec main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x555
 // Size: 0x221
-function function_ccacfdcc7aa6b6d7() {
+function initLevelData() {
     level.var_52e7ef6f147270cd = spawnstruct();
     level.var_52e7ef6f147270cd.var_933df417910f0e90 = getdvarint(@"hash_251f06799fe57bc0", 750);
     level.var_52e7ef6f147270cd.var_ad28616282c423e2 = getdvarint(@"hash_c0830c59f22ac373", 20);
@@ -551,7 +551,7 @@ function function_9db35e8d23bb631e() {
     self endon("currentContextualTipAborted");
     self endon("currentContextualTipAbortEnded");
     if (istrue(level.var_52e7ef6f147270cd.var_5fa95b718bb83f53)) {
-        namespace_b1d233abf1e31488::function_9e0151baa208fe9e(#"hash_48d380887a3407fc");
+        namespace_b1d233abf1e31488::function_9e0151baa208fe9e(#"jump_master");
     } else {
         namespace_b1d233abf1e31488::function_9e0151baa208fe9e(#"hash_a5eadaee7c3bdfab");
     }

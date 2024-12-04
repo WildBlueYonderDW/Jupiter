@@ -1,24 +1,24 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_9880b9dc28bc25e;
-#using script_261f1b574c15eab1;
-#using script_3a535b44f9ecc6df;
-#using script_2d3fead1b9e1d7e5;
-#using script_69a61780e1cc21a9;
-#using script_49314540c657d352;
-#using script_57f43a9386f138c1;
-#using script_36967ce8ee2ea745;
-#using script_66e0e331f9783820;
-#using script_7abaa04d5f9fc22e;
 #using script_1d1428a3b7b402b0;
 #using script_248ec5040062d3ce;
+#using script_261f1b574c15eab1;
+#using script_2d3fead1b9e1d7e5;
 #using script_2d4b9c58ed0e3d91;
+#using script_36967ce8ee2ea745;
+#using script_3a535b44f9ecc6df;
+#using script_49314540c657d352;
+#using script_57f43a9386f138c1;
 #using script_637cf6d1d76cf43b;
+#using script_66e0e331f9783820;
+#using script_69a61780e1cc21a9;
+#using script_7abaa04d5f9fc22e;
+#using script_9880b9dc28bc25e;
 #using script_f6c4fc63efe1cdd;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
 
 #namespace namespace_b238231af8cd48f9;
 
@@ -182,7 +182,7 @@ function function_63c6d4fbc0bc4d94(var_fcd28e3502bd7a3f) {
             if (var_1e021a30b73c352[0].refname == "atv") {
                 for (i = 1; i < var_1e021a30b73c352.size - 1; i++) {
                     if (var_1e021a30b73c352[i].refname == "atv") {
-                        var_2ae2d0a6743a8331 = scripts\cp_mp\vehicles\vehicle::vehicle_spawn(var_1e021a30b73c352[i].refname, var_1e021a30b73c352[i]);
+                        vh_atv = scripts\cp_mp\vehicles\vehicle::vehicle_spawn(var_1e021a30b73c352[i].refname, var_1e021a30b73c352[i]);
                     }
                 }
             }

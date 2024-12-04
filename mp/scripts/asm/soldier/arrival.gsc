@@ -1,11 +1,11 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\soldier\script_funcs.gsc;
-#using scripts\asm\soldier\cover.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\cover;
+#using scripts\asm\soldier\script_funcs;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace arrival;
 
@@ -560,9 +560,9 @@ function getstopanims(asmname, statename, approachtype, var_5217df91f13c7c48, op
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x19ae
     // Size: 0x7b
-    function function_51eac561da90b300(goal_origin, var_2f464ef8d2b3735b) {
+    function function_51eac561da90b300(goal_origin, arrival_angles) {
         if (scripts\asm\asm::function_3271c00e44d9636b()) {
-            forward = anglestoforward(var_2f464ef8d2b3735b);
+            forward = anglestoforward(arrival_angles);
             line(goal_origin, goal_origin + forward * 16, (1, 0.4, 0), 1, 0, 1);
             line(goal_origin, goal_origin + (0, 0, 64), (1, 0.4, 0), 1, 0, 1);
         }

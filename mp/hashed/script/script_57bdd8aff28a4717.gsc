@@ -1,12 +1,12 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_43971bbeefd98f05;
-#using script_7b2517368c79e5bc;
-#using script_58be75c518bf0d40;
-#using scripts\mp\utility\teams.gsc;
 #using script_39d11000e476a42a;
+#using script_43971bbeefd98f05;
 #using script_482376d10f69832c;
+#using script_58be75c518bf0d40;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_fb1904a08b59a21d;
 
@@ -28,10 +28,10 @@ function function_65e52fad2bce952c(var_b8b25f4d3c3dab1d, var_18f698ac43092a07, v
             player.var_f0de17708687532e = function_6d6af8144a5131f1(player.var_f0de17708687532e, var_18f698ac43092a07);
         }
     }
-    var_f064b76727edb83a = namespace_71ca15b739deab72::function_3ae7f99339b96499(var_e779ac7e9e65683d);
+    reward_placement = namespace_71ca15b739deab72::function_3ae7f99339b96499(var_e779ac7e9e65683d);
     var_ed118e6dd8c246 = spawnstruct();
     var_ed118e6dd8c246.var_18f698ac43092a07 = var_18f698ac43092a07;
-    namespace_e8853d3344e33cf6::function_863be9e39e19fe2f(reward_groups, var_f064b76727edb83a, &function_de032cb8f1df5adc, var_ed118e6dd8c246);
+    namespace_e8853d3344e33cf6::function_863be9e39e19fe2f(reward_groups, reward_placement, &function_de032cb8f1df5adc, var_ed118e6dd8c246);
 }
 
 // Namespace namespace_fb1904a08b59a21d / namespace_fc89f9b99b72df11

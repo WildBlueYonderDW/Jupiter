@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility\player.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
-#namespace namespace_c71daea9de43cc5;
+#namespace coop_molotov;
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ec
 // Size: 0x14b
@@ -33,7 +33,7 @@ function molotov_init() {
     registersharedfunc("molotov", "molotov_simulate_impact", &molotov_simulate_impact);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x73f
 // Size: 0x22d
@@ -81,7 +81,7 @@ function molotov_init_cast_data() {
     castdata.firstforwarddistwall[id] = 44;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x974
 // Size: 0x151
@@ -114,7 +114,7 @@ function molotov_init_pool_data() {
     molotov_init_pool_mask();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xacd
 // Size: 0x18f
@@ -146,7 +146,7 @@ function molotov_init_pool_mask() {
     var_dcf9401f976e906f.scriptablestates = scriptablestates;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc64
 // Size: 0x1b
@@ -154,7 +154,7 @@ function molotov_on_give(equipmentref, slot) {
     thread molotov_watch_fx();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc87
 // Size: 0x1b
@@ -162,7 +162,7 @@ function molotov_on_take(equipmentref, slot) {
     self notify("molotov_taken");
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcaa
 // Size: 0x145
@@ -191,7 +191,7 @@ function molotov_used(grenade) {
     thread molotov_stuck(grenade, stuckto, var_6951cf1f43bc8ebe, impactvelocity);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xdf7
 // Size: 0x13a
@@ -214,7 +214,7 @@ function ai_molotov_used(guy, grenade) {
     level thread molotov_stuck(grenade, stuckto, var_6951cf1f43bc8ebe, impactvelocity);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xf39
 // Size: 0x6d
@@ -226,7 +226,7 @@ function getlaunchangles(startorigin, startangles, origin) {
     return var_6951cf1f43bc8ebe;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfaf
 // Size: 0x8
@@ -234,7 +234,7 @@ function generate_achievementid() {
     return scripts\cp\utility\player::getuniqueid();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfc0
 // Size: 0x97
@@ -261,7 +261,7 @@ function watch_for_ashes_achievement(achievement_id) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x105f
 // Size: 0x102
@@ -285,7 +285,7 @@ function molotov_stuck(grenade, stuckto, var_6951cf1f43bc8ebe, impactvelocity, s
     molotov_simulate_impact(grenade, grenade.origin, angles, stuckto, impactvelocity, gettime());
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1169
 // Size: 0x26c
@@ -331,7 +331,7 @@ function molotov_stuck_player(grenade, stuckto, var_6951cf1f43bc8ebe, impactvelo
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13dd
 // Size: 0x37
@@ -340,7 +340,7 @@ function molotovbadplace(impactorigin) {
     return badplace;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x141d
 // Size: 0x5fb
@@ -454,7 +454,7 @@ function molotov_simulate_impact(grenade, impactorigin, var_4b65413211af7033, im
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a20
 // Size: 0xba
@@ -481,7 +481,7 @@ function molotov_cleanup() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ae2
 // Size: 0x110
@@ -502,7 +502,7 @@ function molotov_create_shared_data(owner, impacttime, burnsource, burnid) {
     return shareddata;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bfb
 // Size: 0x51
@@ -514,7 +514,7 @@ function molotov_register_cast(shareddata) {
     leveldata.caststhisframe++;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c54
 // Size: 0x79
@@ -528,7 +528,7 @@ function molotov_register_scriptable(shareddata) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cd5
 // Size: 0x55
@@ -540,7 +540,7 @@ function molotov_register_trigger(trigger) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d32
 // Size: 0x82
@@ -555,7 +555,7 @@ function molotov_delete_scriptable() {
     self freescriptable();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dbc
 // Size: 0x7a
@@ -569,7 +569,7 @@ function molotov_delete_trigger() {
     self delete();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e3e
 // Size: 0xae
@@ -589,7 +589,7 @@ function molotov_delete_oldest_scriptable(immediate) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ef4
 // Size: 0xae
@@ -609,7 +609,7 @@ function molotov_delete_oldest_trigger(immediate) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1faa
 // Size: 0xb7
@@ -632,7 +632,7 @@ function molotov_delete_pool_by_id(id, immediate) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2069
 // Size: 0xb1
@@ -655,7 +655,7 @@ function molotov_can_cast_this_frame(shareddata) {
     return true;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2123
 // Size: 0xf6
@@ -687,7 +687,7 @@ function molotov_shared_data_is_complete(var_af8745e2185687a8) {
     return iscomplete;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2222
 // Size: 0xf5
@@ -708,7 +708,7 @@ function molotov_store_branch_ents() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x231f
 // Size: 0x12b
@@ -732,7 +732,7 @@ function molotov_create_branch(shareddata, castdata, pooldata, parent, startingo
     return branch;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2453
 // Size: 0x78e
@@ -885,7 +885,7 @@ function molotov_start_branch() {
     self.shareddata molotov_shared_data_is_complete(1);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2be9
 // Size: 0x273
@@ -942,7 +942,7 @@ function molotov_branch_is_complete(var_af8745e2185687a8, var_f7d3f0b0605b5824) 
     return iscomplete;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e65
 // Size: 0x179
@@ -997,7 +997,7 @@ function molotov_branch_register_cast(casttype, var_8e87ebe279cdfcfb, hitpositio
     #/
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fe6
 // Size: 0x137
@@ -1019,7 +1019,7 @@ function molotov_create_pool(origin, angles, stuckto, owner, burnsource, burnid,
     return scriptable;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3126
 // Size: 0x15b
@@ -1043,7 +1043,7 @@ function molotov_branch_create_pool(origin, angles, stuckto) {
     return scriptable;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x328a
 // Size: 0x58
@@ -1062,7 +1062,7 @@ function molotov_pool_start() {
     thread molotov_pool_end();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x32ea
 // Size: 0xc4
@@ -1080,7 +1080,7 @@ function molotov_watch_pool() {
     wait var_8fc4600d9c0cbb6;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x33b6
 // Size: 0x8b
@@ -1102,7 +1102,7 @@ function molotov_pool_end() {
     thread molotov_delete_scriptable();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3449
 // Size: 0x18
@@ -1112,7 +1112,7 @@ function molotov_watch_cleanup_pool() {
     thread molotov_delete_scriptable();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3469
 // Size: 0x44
@@ -1125,7 +1125,7 @@ function molotov_watch_cleanup_pool_internal() {
     self waittill("forever");
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x34b5
 // Size: 0x166
@@ -1155,7 +1155,7 @@ function molotov_create_pool_trigger(triggerradius, triggerheight, triggeroffset
     return trigger;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3624
 // Size: 0x88
@@ -1171,7 +1171,7 @@ function molotov_trigger_timeout() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x36b4
 // Size: 0x13d
@@ -1203,7 +1203,7 @@ function molotov_watch_pool_trigger_enter() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x37f9
 // Size: 0xa9
@@ -1227,7 +1227,7 @@ function molotov_watch_pool_trigger_exit() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x38aa
 // Size: 0x86
@@ -1243,7 +1243,7 @@ function molotov_cleanup_pool_trigger() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3938
 // Size: 0x38
@@ -1256,7 +1256,7 @@ function molotov_cleanup_pool_trigger_end_early() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3978
 // Size: 0x41
@@ -1266,7 +1266,7 @@ function molotov_pool_update_scriptable() {
     self setscriptablepartstate("effects", state, 0);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x39c1
 // Size: 0x1d0
@@ -1310,7 +1310,7 @@ function molotov_branch_create_sub_branch(id, starttime, firstforwarddist, first
     return branch;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b9a
 // Size: 0x29
@@ -1318,7 +1318,7 @@ function molotov_branch_create_forward_tendril_cone() {
     branch = molotov_branch_create_sub_branch(16, self.preventstarttime, 35, 8, undefined, 44, undefined, undefined, 1);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bcb
 // Size: 0x2d
@@ -1326,7 +1326,7 @@ function molotov_branch_create_left_tendril_cone() {
     branch = molotov_branch_create_sub_branch(16, self.preventstarttime, 35, 8, &molotov_left_tendril_mod_angles, 44, undefined, undefined, 1);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c00
 // Size: 0x2d
@@ -1334,7 +1334,7 @@ function molotov_branch_create_right_tendril_cone() {
     branch = molotov_branch_create_sub_branch(16, self.preventstarttime, 35, 8, &molotov_right_tendril_mod_angles, 44, undefined, undefined, 1);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c35
 // Size: 0x2f
@@ -1342,7 +1342,7 @@ function molotov_branch_create_tendril_radial() {
     branch = molotov_branch_create_sub_branch(16, self.preventstarttime, 35, 8, &molotov_tendril_mod_angles_radial, 44, 6, 1, 1);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c6c
 // Size: 0x6a
@@ -1356,7 +1356,7 @@ function molotov_rotate_angles_about_up(angles, amount) {
     return axistoangles(forward, right, up);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cdf
 // Size: 0x27
@@ -1365,7 +1365,7 @@ function molotov_left_tendril_mod_angles(angles) {
     return molotov_rotate_angles_about_up(angles, amount);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d0f
 // Size: 0x2a
@@ -1374,7 +1374,7 @@ function molotov_right_tendril_mod_angles(angles) {
     return molotov_rotate_angles_about_up(angles, amount);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d42
 // Size: 0x27
@@ -1383,7 +1383,7 @@ function molotov_tendril_mod_angles_radial(angles) {
     return molotov_rotate_angles_about_up(angles, amount);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d72
 // Size: 0x13
@@ -1393,7 +1393,7 @@ function molotov_cleanup_burn_source() {
     self delete();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d8d
 // Size: 0x2a
@@ -1403,7 +1403,7 @@ function molotov_cleanup_grenade(grenade) {
     grenade delete();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3dbf
 // Size: 0x23
@@ -1412,7 +1412,7 @@ function molotov_get_level_data() {
     return level.molotov;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3deb
 // Size: 0x3a
@@ -1423,7 +1423,7 @@ function molotov_get_pool_level_data() {
     return var_dcf9401f976e906f;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e2e
 // Size: 0x3a
@@ -1434,7 +1434,7 @@ function molotov_get_cast_level_data() {
     return var_ab59026cfe871548;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e71
 // Size: 0x54
@@ -1446,7 +1446,7 @@ function molotov_get_unique_pool_id() {
     return uniquepoolid;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ece
 // Size: 0x162
@@ -1471,7 +1471,7 @@ function molotov_get_cast_data(castid) {
     return castdata;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4039
 // Size: 0x9e
@@ -1486,7 +1486,7 @@ function molotov_get_pool_data(typeid) {
     return pooldata;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x40e0
 // Size: 0x59
@@ -1502,7 +1502,7 @@ function molotov_get_cast_dir(angles, casttype) {
     return undefined;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4142
 // Size: 0xae
@@ -1524,7 +1524,7 @@ function molotov_get_cast_dist(casttype, castdata, iswallcast) {
     return undefined;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x41f9
 // Size: 0x35
@@ -1532,7 +1532,7 @@ function molotov_get_cast_contents() {
     return physics_createcontents(["physicscontents_missileclip", "physicscontents_glass", "physicscontents_water", "physicscontents_item", "physicscontents_vehicle"]);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4237
 // Size: 0x3b
@@ -1542,7 +1542,7 @@ function molotov_rebuild_angles_up_right(up, right) {
     return axistoangles(forward, right, up);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x427b
 // Size: 0x3b
@@ -1552,7 +1552,7 @@ function molotov_rebuild_angles_up_forward(up, forward) {
     return axistoangles(forward, right, up);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x42bf
 // Size: 0xaa
@@ -1575,7 +1575,7 @@ function molotov_start_burning(attacker, inflictor, killcament, id) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4371
 // Size: 0x87
@@ -1599,7 +1599,7 @@ function molotov_stop_burning(id) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4400
 // Size: 0x57
@@ -1612,7 +1612,7 @@ function molotov_burn_for_time(time, attacker, inflictor, killcament) {
     molotov_stop_burning(id);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x445f
 // Size: 0x1d
@@ -1621,7 +1621,7 @@ function molotov_clear_burning(immediate) {
     self.burninginfo = undefined;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4484
 // Size: 0x488
@@ -1725,7 +1725,7 @@ function molotov_update_burning() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4914
 // Size: 0x2e
@@ -1736,7 +1736,7 @@ function molotovrecentlyused() {
     return 0;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x494a
 // Size: 0x27
@@ -1745,7 +1745,7 @@ function molotov_is_burning() {
     return isdefined(info) && info.sources.size > 0;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x497a
 // Size: 0x9c
@@ -1765,7 +1765,7 @@ function molotov_get_burning_info(create) {
     return info;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a1f
 // Size: 0xc9
@@ -1787,7 +1787,7 @@ function molotov_get_burning_source(attacker, inflictor, killcament, info, id, s
     return source;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4af1
 // Size: 0xbf
@@ -1813,7 +1813,7 @@ function molotov_burning_source_is_valid() {
     return true;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bb9
 // Size: 0x52
@@ -1827,7 +1827,7 @@ function molotov_get_next_burning_id() {
     return id;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c14
 // Size: 0x21
@@ -1838,7 +1838,7 @@ function molotov_cleanup_burning() {
     childthread molotov_cleanup_burning_on_game_end();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c3d
 // Size: 0x29
@@ -1850,7 +1850,7 @@ function molotov_cleanup_burning_on_death() {
     thread molotov_clear_burning(1);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c6e
 // Size: 0x20
@@ -1861,7 +1861,7 @@ function molotov_cleanup_burning_on_game_end() {
     thread molotov_clear_burning();
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c96
 // Size: 0x3c
@@ -1873,7 +1873,7 @@ function molotov_on_player_damaged(data) {
     return true;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cdb
 // Size: 0x8d
@@ -1897,7 +1897,7 @@ function molotov_watch_fx() {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d70
 // Size: 0x63
@@ -1912,7 +1912,7 @@ function molotov_begin_fx() {
     self setscriptablepartstate("equipMtovFXWorld", "active", 0);
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ddb
 // Size: 0x45
@@ -1925,7 +1925,7 @@ function molotov_end_fx() {
     self.playingmolotovwickfx = undefined;
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e28
 // Size: 0x7b
@@ -1940,7 +1940,7 @@ function molotov_cleanup_branch(branch) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4eab
 // Size: 0x10c
@@ -1961,7 +1961,7 @@ function molotov_cleanup_pool(grenade) {
     }
 }
 
-// Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+// Namespace coop_molotov / scripts\cp\powers\coop_molotov
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fbf
 // Size: 0x12
@@ -1972,7 +1972,7 @@ function molotov_clear_fx() {
 
 /#
 
-    // Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+    // Namespace coop_molotov / scripts\cp\powers\coop_molotov
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x4fd9
     // Size: 0x15e
@@ -2004,7 +2004,7 @@ function molotov_clear_fx() {
         }
     }
 
-    // Namespace namespace_c71daea9de43cc5 / scripts\cp\powers\coop_molotov
+    // Namespace coop_molotov / scripts\cp\powers\coop_molotov
     // Params 3, eflags: 0x0
     // Checksum 0x0, Offset: 0x513f
     // Size: 0xb8

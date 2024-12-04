@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_35de402efc5acfb3;
 #using script_f4e8d02d2f70888;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_580b86481c9ec6cd;
 
@@ -84,9 +84,9 @@ function playervehiclewaiter() {
 // Checksum 0x0, Offset: 0x201
 // Size: 0xae
 function playeranimnameswitch() {
-    var_6447507436d93eaa = getentarray("player", "classname")[0];
+    human_player = getentarray("player", "classname")[0];
     player_update_allowed_callouts();
-    anim.player = var_6447507436d93eaa;
+    anim.player = human_player;
     if (!isdefined(anim.player.team)) {
         anim.player.team = "allies";
     }
@@ -130,15 +130,15 @@ function player_battlechatter_cooldown_control() {
 function player_battlechatter_generic_event_check() {
     anim.player endon("death");
     level endon("player_battlechatter_off");
-    var_55857d064315af9a = "none";
-    var_4c77014045a2a7e4 = ["pc_ammocrate_pickup", "pc_equipcrate_pickup", "pc_weapon_scanned", "pc_armory_door", "pc_clear_last_event"];
+    last_event = "none";
+    event_list = ["pc_ammocrate_pickup", "pc_equipcrate_pickup", "pc_weapon_scanned", "pc_armory_door", "pc_clear_last_event"];
     while (true) {
-        event = waittill_any_in_array_return(var_4c77014045a2a7e4);
-        if (event != var_55857d064315af9a && event != "pc_clear_last_event") {
-            var_55857d064315af9a = event;
+        event = waittill_any_in_array_return(event_list);
+        if (event != last_event && event != "pc_clear_last_event") {
+            last_event = event;
             thread player_battlechatter_event_clear();
         } else if (event == "pc_clear_last_event") {
-            var_55857d064315af9a = "none";
+            last_event = "none";
         }
         wait 1;
     }

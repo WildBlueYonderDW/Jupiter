@@ -1,17 +1,17 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_5323b44ee395058;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
 #using script_1eddec53abf6e24c;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
+#using script_5323b44ee395058;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_1e1e8fdc0b6e3977;
 

@@ -1,12 +1,12 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\debug_utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\parachute.gsc;
+#using script_7ab5b649fa408138;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace parachute;
 

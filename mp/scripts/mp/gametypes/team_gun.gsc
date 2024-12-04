@@ -1,4 +1,4 @@
-#using scripts\mp\utility\stats.gsc;
+#using scripts\mp\utility\stats;
 
 #namespace team_gun;
 

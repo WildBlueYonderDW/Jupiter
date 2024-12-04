@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\rank.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\rank;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace lbravo_infil;
 
@@ -307,7 +307,7 @@ function playerthinkanim(infil, spot_index) {
     self endon("player_free_spot");
     self endon("joined_team");
     scene_name = infil.subtype;
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_downtown_gw") {
+    if (getdvar(@"g_mapname") == "mp_downtown_gw") {
         if (self.team == "allies" && (infil.originalsubtype == "alpha1" || infil.originalsubtype == "alpha2")) {
             scene_name = "bravo";
         }
@@ -467,7 +467,7 @@ function vehiclethink(team, scene_node, scene_name, extra_crew) {
 // Checksum 0x0, Offset: 0x2a20
 // Size: 0x169
 function vehiclethinkanim(team, scene_node, scene_name, extra_crew) {
-    if (self.originalsubtype != self.subtype && getdvar(@"hash_687fb8f9b7a23245") == "mp_downtown_gw") {
+    if (self.originalsubtype != self.subtype && getdvar(@"g_mapname") == "mp_downtown_gw") {
         scene_name = self.originalsubtype;
     }
     if (team == "allies" && (self.originalsubtype == "alpha" || self.originalsubtype == "alpha2") && getdvar(@"mapname") == "mp_boneyard_gw") {
@@ -915,7 +915,7 @@ function script_model_alpha_anims(subtype) {
 // Size: 0xcda
 function vehicles_alpha_anims(subtype, team, originalsubtype) {
     level.scr_anim["lbravo"]["lbravo_infil"] = mp_vehicles_always_loaded%iw9_mp_infil_lbravo_heli;
-    if (isdefined(originalsubtype) && subtype != originalsubtype && getdvar(@"hash_687fb8f9b7a23245") == "mp_downtown_gw") {
+    if (isdefined(originalsubtype) && subtype != originalsubtype && getdvar(@"g_mapname") == "mp_downtown_gw") {
         switch (originalsubtype) {
         case #"hash_ac5f2d60e641dce":
             if (team == "axis") {
@@ -951,7 +951,7 @@ function vehicles_alpha_anims(subtype, team, originalsubtype) {
     switch (subtype) {
     case #"hash_6829ee5abc10c38b":
         level.scr_animtree["lbravo"] = %mp_vehicles_always_loaded;
-        switch (getdvar(@"hash_687fb8f9b7a23245")) {
+        switch (getdvar(@"g_mapname")) {
         case #"hash_50de71be6e7469ff":
             if (team == "axis") {
                 level.scr_anim["lbravo"]["lbravo_infil" + "_alpha_" + team] = mp_vehicles_always_loaded%mp_infil_lbravo_a_heli_farm_gw_east;
@@ -1053,7 +1053,7 @@ function vehicles_alpha_anims(subtype, team, originalsubtype) {
         break;
     case #"hash_1cc79b02710cab23":
         level.scr_animtree["lbravo"] = %mp_vehicles_always_loaded;
-        switch (getdvar(@"hash_687fb8f9b7a23245")) {
+        switch (getdvar(@"g_mapname")) {
         case #"hash_50de71be6e7469ff":
             if (team == "axis") {
                 level.scr_anim["lbravo"]["lbravo_infil" + "_bravo_" + team] = mp_vehicles_always_loaded%mp_infil_lbravo_b_heli_farm_gw_east;
@@ -1305,8 +1305,8 @@ function targetdamagethink(team) {
         if (damage >= self.health) {
             outlinedisable(outlineid, self);
             if (istrue(self.isbonus)) {
-                attacker thread scripts\mp\rank::giverankxp(#"hash_5b683ec651fddd19", 1000);
-                attacker thread scripts\mp\rank::scoreeventpopup(#"hash_5b683ec651fddd19");
+                attacker thread scripts\mp\rank::giverankxp(#"infil_bonus", 1000);
+                attacker thread scripts\mp\rank::scoreeventpopup(#"infil_bonus");
             }
             break;
         }

@@ -1,30 +1,30 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_6d68cfdf0836123c;
 #using script_249f45d992af1114;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\common\elevators.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
+#using script_3db04fd1b466bdba;
+#using script_6d68cfdf0836123c;
+#using scripts\common\callbacks;
+#using scripts\common\elevators;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace helper_drone;
 
@@ -3297,7 +3297,7 @@ function deliverydrone_delivertopoint(targetpos, ondelivercallback) {
 // Checksum 0x0, Offset: 0x9a08
 // Size: 0x11
 function scramblerdrone_counteruavmodeon() {
-    scripts\cp_mp\killstreaks\uav::function_24d8b56676d4d3d1();
+    scripts\cp_mp\killstreaks\uav::uav_addactivecounteruav();
     level notify("uav_update");
 }
 

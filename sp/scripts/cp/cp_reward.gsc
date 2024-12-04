@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_agent_utils.gsc;
 #using script_3bcaa2cbaf54abdd;
+#using scripts\common\utility;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_dcfc2f5abb4fec90;
+#namespace cp_reward;
 
-// Namespace namespace_dcfc2f5abb4fec90 / scripts\cp\cp_reward
+// Namespace cp_reward / scripts\cp\cp_reward
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xef
 // Size: 0x36b
@@ -18,9 +18,9 @@ function give_attacker_kill_rewards(attacker, shitloc) {
         return;
     }
     if (scripts\cp\cp_agent_utils::get_agent_type(self) == "elite" || scripts\cp\cp_agent_utils::get_agent_type(self) == "mammoth") {
-        var_4ad66e8a50624bdb = get_reward_point_for_kill();
+        reward_point = get_reward_point_for_kill();
         foreach (player in level.players) {
-            givekillreward(player, var_4ad66e8a50624bdb, "large");
+            givekillreward(player, reward_point, "large");
         }
         return;
     }
@@ -39,15 +39,15 @@ function give_attacker_kill_rewards(attacker, shitloc) {
             var_a9a6e8c32b90ca45 = 0.1;
             var_8bb17efd6eb74e3d = self.maxhealth * var_a9a6e8c32b90ca45;
             var_c514d611c295eb = getassistbonusamount();
-            foreach (var_9ae6be01e200a866 in self.attacker_damage) {
-                if (var_9ae6be01e200a866.player == attacker || isdefined(attacker.owner) && var_9ae6be01e200a866.player == attacker.owner) {
+            foreach (attacker_struct in self.attacker_damage) {
+                if (attacker_struct.player == attacker || isdefined(attacker.owner) && attacker_struct.player == attacker.owner) {
                     continue;
                 }
-                if (var_9ae6be01e200a866.damage >= var_8bb17efd6eb74e3d) {
-                    if (isdefined(var_9ae6be01e200a866.player) && var_9ae6be01e200a866.player != attacker) {
-                        assertex(isplayer(var_9ae6be01e200a866.player), "Tried to give non-player rewards");
-                        var_9ae6be01e200a866.player namespace_6c67e93a4c487d83::eog_player_update_stat("assists", 1);
-                        givekillreward(var_9ae6be01e200a866.player, var_c514d611c295eb);
+                if (attacker_struct.damage >= var_8bb17efd6eb74e3d) {
+                    if (isdefined(attacker_struct.player) && attacker_struct.player != attacker) {
+                        assertex(isplayer(attacker_struct.player), "Tried to give non-player rewards");
+                        attacker_struct.player namespace_6c67e93a4c487d83::eog_player_update_stat("assists", 1);
+                        givekillreward(attacker_struct.player, var_c514d611c295eb);
                     }
                 }
             }
@@ -64,14 +64,14 @@ function give_attacker_kill_rewards(attacker, shitloc) {
         attacker = attacker.owner;
         var_33242ca76a448f6b = 1;
     }
-    var_4ad66e8a50624bdb = get_reward_point_for_kill();
+    reward_point = get_reward_point_for_kill();
     if (isdefined(shitloc) && shitloc == "soft" && !var_33242ca76a448f6b) {
-        var_4ad66e8a50624bdb = int(var_4ad66e8a50624bdb * 1.5);
+        reward_point = int(reward_point * 1.5);
     }
-    givekillreward(attacker, var_4ad66e8a50624bdb, "large", shitloc);
+    givekillreward(attacker, reward_point, "large", shitloc);
 }
 
-// Namespace namespace_dcfc2f5abb4fec90 / scripts\cp\cp_reward
+// Namespace cp_reward / scripts\cp\cp_reward
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x462
 // Size: 0x1f
@@ -79,7 +79,7 @@ function getassistbonusamount() {
     return level.agent_definition[scripts\cp\cp_agent_utils::get_agent_type(self)]["reward"] * 0.5;
 }
 
-// Namespace namespace_dcfc2f5abb4fec90 / scripts\cp\cp_reward
+// Namespace cp_reward / scripts\cp\cp_reward
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x48a
 // Size: 0x19
@@ -87,15 +87,15 @@ function get_reward_point_for_kill() {
     return level.agent_definition[scripts\cp\cp_agent_utils::get_agent_type(self)]["reward"];
 }
 
-// Namespace namespace_dcfc2f5abb4fec90 / scripts\cp\cp_reward
+// Namespace cp_reward / scripts\cp\cp_reward
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ac
 // Size: 0x8c
 function givekillreward(attacker, amount, size, shitloc) {
-    var_4024268b4fd10e68 = amount;
-    attacker namespace_6c67e93a4c487d83::give_player_currency(var_4024268b4fd10e68, size, shitloc);
+    currency_reward = amount;
+    attacker namespace_6c67e93a4c487d83::give_player_currency(currency_reward, size, shitloc);
     if (isdefined(level.zombie_xp)) {
-        attacker namespace_6c67e93a4c487d83::give_player_xp(int(var_4024268b4fd10e68));
+        attacker namespace_6c67e93a4c487d83::give_player_xp(int(currency_reward));
     }
     if (scripts\engine\utility::flag_exist("cortex_started") && scripts\engine\utility::flag("cortex_started")) {
         if (isdefined(level.add_cortex_charge_func)) {

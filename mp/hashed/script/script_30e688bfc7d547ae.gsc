@@ -1,9 +1,9 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\gamescore.gsc;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\utility\game;
 
 #namespace warrior_tdm;
 

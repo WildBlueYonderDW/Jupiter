@@ -1,10 +1,10 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\asm_mp;
+#using scripts\asm\shared\mp\utility;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace utility;
 
@@ -570,10 +570,10 @@ function function_8efc1cbdaa97f95e(anime) {
 // Checksum 0x0, Offset: 0x1231
 // Size: 0x7e
 function ai_anim_first_frame(animation, animname) {
-    var_1ed6bbc02282dd5 = "agent_scripted_" + getdvar(@"hash_687fb8f9b7a23245");
+    level_archetype = "agent_scripted_" + getdvar(@"g_mapname");
     aliasname = getanimname(animation);
-    if (archetypeassetloaded(var_1ed6bbc02282dd5)) {
-        thread scripts\asm\shared\mp\utility::animscriptmp(var_1ed6bbc02282dd5, "animscripted", aliasname, undefined, 0);
+    if (archetypeassetloaded(level_archetype)) {
+        thread scripts\asm\shared\mp\utility::animscriptmp(level_archetype, "animscripted", aliasname, undefined, 0);
         return;
     }
     statename = "animscripted";

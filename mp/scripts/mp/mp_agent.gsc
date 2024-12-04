@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\anim\animselector.gsc;
 #using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
 #using script_cbb0697de4c5728;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\common\vehicle_code.gsc;
+#using scripts\anim\animselector;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle_code;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace mp_agent;
 

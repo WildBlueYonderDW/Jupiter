@@ -1,26 +1,26 @@
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_7b2517368c79e5bc;
-#using script_43971bbeefd98f05;
-#using script_22f1701e151b9d12;
-#using script_7153ce70c6d8ab9b;
-#using script_3d3d1ef33cecfb62;
-#using scripts\common\system.gsc;
 #using script_19c169a442d5975a;
-#using script_57bdd8aff28a4717;
-#using script_345253ecdfc854;
-#using script_58be75c518bf0d40;
-#using script_3e2f8cc477d57433;
-#using script_2583ee5680cf4736;
 #using script_1f97a44d1761c919;
-#using script_4e6e58ab5d96c2b0;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
 #using script_2590b7a7de3dfc79;
-#using scripts\mp\mp_agent.gsc;
-#using script_638d701d263ee1ed;
+#using script_345253ecdfc854;
+#using script_3d3d1ef33cecfb62;
+#using script_3e2f8cc477d57433;
+#using script_43971bbeefd98f05;
 #using script_482376d10f69832c;
+#using script_4e6e58ab5d96c2b0;
+#using script_57bdd8aff28a4717;
+#using script_58be75c518bf0d40;
+#using script_638d701d263ee1ed;
+#using script_7153ce70c6d8ab9b;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_dc0140c0d20a7e8f;
 
@@ -36,9 +36,9 @@ function private autoexec __init__system__() {
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0xb29
 // Size: 0x3fd
-function function_d99864f8b4032562(element, base_struct, var_5f8bb464b19d1f53, var_e59e6534e5fee18a, var_fc394e11bae17823, var_f5acf56d7a0a1404, var_7eb73407060d7cb6, var_42679ba6cdba9ee1, alignment) {
-    var_7bd2768769ec27ca = base_struct;
-    obelisk = spawnscriptable("jup_zm_activity_spatial_pedestal_top_scriptable", var_7bd2768769ec27ca.origin + (0, 0, 40), var_7bd2768769ec27ca.angles);
+function function_d99864f8b4032562(element, base_struct, var_5f8bb464b19d1f53, orb_struct, var_fc394e11bae17823, var_f5acf56d7a0a1404, var_7eb73407060d7cb6, var_42679ba6cdba9ee1, alignment) {
+    obelisk_struct = base_struct;
+    obelisk = spawnscriptable("jup_zm_activity_spatial_pedestal_top_scriptable", obelisk_struct.origin + (0, 0, 40), obelisk_struct.angles);
     obelisk setscriptablepartstate("fx", "off");
     obelisk setscriptablepartstate("body", "end");
     obelisk setscriptablepartstate("sfx", "off");
@@ -47,11 +47,11 @@ function function_d99864f8b4032562(element, base_struct, var_5f8bb464b19d1f53, v
     obelisk.playerdeaths = 0;
     obelisk.element = element;
     obelisk.completed = 0;
-    obelisk.unique_name = var_7bd2768769ec27ca.targetname;
+    obelisk.unique_name = obelisk_struct.targetname;
     obelisk.players = undefined;
     obelisk.var_e00ac5b70d752deb = undefined;
     obelisk.var_fa9e06a77032916e = 0;
-    obelisk.var_7bcdf31ed38b3a6f = 0;
+    obelisk.puzzle_state = 0;
     obelisk.var_fc394e11bae17823 = var_fc394e11bae17823;
     obelisk.var_f5acf56d7a0a1404 = var_f5acf56d7a0a1404;
     obelisk.season = 3;
@@ -59,19 +59,19 @@ function function_d99864f8b4032562(element, base_struct, var_5f8bb464b19d1f53, v
         assert(isfunction(var_7eb73407060d7cb6));
         obelisk.var_7eb73407060d7cb6 = var_7eb73407060d7cb6;
     }
-    var_5f455dd46c21dbee = spawnscriptable("jup_zm_activity_spatial_pedestal_base_scriptable", var_7bd2768769ec27ca.origin, var_7bd2768769ec27ca.angles);
-    var_5f455dd46c21dbee setscriptablepartstate("body", "end");
-    var_5f455dd46c21dbee setscriptablepartstate("interact", "off");
+    obelisk_base = spawnscriptable("jup_zm_activity_spatial_pedestal_base_scriptable", obelisk_struct.origin, obelisk_struct.angles);
+    obelisk_base setscriptablepartstate("body", "end");
+    obelisk_base setscriptablepartstate("interact", "off");
     var_5f8bb464b19d1f53 = array_randomize(var_5f8bb464b19d1f53);
-    obelisk.var_f63a6dcface15ba1 = namespace_26050772d3578b37::function_b7c2ddf5f84c1f61(array_slice(var_5f8bb464b19d1f53, 0, 3), obelisk.unique_name);
-    obelisk.base = var_5f455dd46c21dbee;
-    var_5f455dd46c21dbee.obelisk = obelisk;
-    if (!isdefined(var_e59e6534e5fee18a)) {
-        obelisk.var_e59e6534e5fee18a = spawnstruct();
-        obelisk.var_e59e6534e5fee18a.origin = var_5f455dd46c21dbee.origin + (0, 0, 40);
-        obelisk.var_e59e6534e5fee18a.angles = var_5f455dd46c21dbee.angles;
+    obelisk.rune_manager = namespace_26050772d3578b37::function_b7c2ddf5f84c1f61(array_slice(var_5f8bb464b19d1f53, 0, 3), obelisk.unique_name);
+    obelisk.base = obelisk_base;
+    obelisk_base.obelisk = obelisk;
+    if (!isdefined(orb_struct)) {
+        obelisk.orb_struct = spawnstruct();
+        obelisk.orb_struct.origin = obelisk_base.origin + (0, 0, 40);
+        obelisk.orb_struct.angles = obelisk_base.angles;
     } else {
-        obelisk.var_e59e6534e5fee18a = var_e59e6534e5fee18a;
+        obelisk.orb_struct = orb_struct;
     }
     if (isdefined(var_42679ba6cdba9ee1)) {
         obelisk.var_42679ba6cdba9ee1 = var_42679ba6cdba9ee1;
@@ -91,10 +91,10 @@ function function_d99864f8b4032562(element, base_struct, var_5f8bb464b19d1f53, v
         obelisk.var_d6f622d1668f0b04 = 880;
         obelisk.var_db65e387ed5c1ef5 = 880;
     }
-    var_9dc936b99badc73 = namespace_9866a3bced571d62::function_54b2c5a00ed87d60(obelisk.element);
-    itembundle = getscriptbundle("itemspawnentry:" + "ob_jup_item_key_rift_gate_season3_" + var_9dc936b99badc73);
+    s3_name = namespace_9866a3bced571d62::function_54b2c5a00ed87d60(obelisk.element);
+    itembundle = getscriptbundle("itemspawnentry:" + "ob_jup_item_key_rift_gate_season3_" + s3_name);
     lootid = namespace_2abc885019e1956::function_6d15e119c2779a93(itembundle);
-    obelisk.var_18375599dbd96dd2 = lootid;
+    obelisk.relic_lootid = lootid;
     level thread function_6abd388d691cb822(obelisk);
     return obelisk;
 }
@@ -147,16 +147,16 @@ function function_5a3e2f3da27cb304() {
     obelisk endon("spatial_puzzle_completed");
     obelisk endon("spatial_puzzle_reset");
     level endon("game_ended");
-    var_e01fa63c6df4dad7 = obelisk.base.origin;
+    alignment_point = obelisk.base.origin;
     if (isdefined(obelisk.alignment)) {
-        var_e01fa63c6df4dad7 = obelisk.alignment;
+        alignment_point = obelisk.alignment;
     }
     if (obelisk.element == "air") {
-        obelisk.var_ff38c4cac94dd8da = spawn("noent_volume_trigger_radius", var_e01fa63c6df4dad7, 0, 400, 400);
+        obelisk.activation_trigger = spawn("noent_volume_trigger_radius", alignment_point, 0, 400, 400);
     } else if (obelisk.element == "land") {
-        obelisk.var_ff38c4cac94dd8da = spawn("noent_volume_trigger_radius", var_e01fa63c6df4dad7, 0, 15, 100);
+        obelisk.activation_trigger = spawn("noent_volume_trigger_radius", alignment_point, 0, 15, 100);
     } else {
-        obelisk.var_ff38c4cac94dd8da = spawn("noent_volume_trigger_radius", var_e01fa63c6df4dad7, 0, 60, 100);
+        obelisk.activation_trigger = spawn("noent_volume_trigger_radius", alignment_point, 0, 60, 100);
     }
     while (true) {
         if (istrue(obelisk.var_e00ac5b70d752deb)) {
@@ -164,7 +164,7 @@ function function_5a3e2f3da27cb304() {
             function_1831b668cb43b6c9(obelisk, 1);
         } else if (!istrue(obelisk.var_713f07f1f3d7b5f7)) {
             obelisk.potential_players = [];
-            players_in_range = getplayersinradius(obelisk.var_ff38c4cac94dd8da.origin, 60);
+            players_in_range = getplayersinradius(obelisk.activation_trigger.origin, 60);
             foreach (player in players_in_range) {
                 if (!isdefined(player)) {
                     continue;
@@ -173,20 +173,20 @@ function function_5a3e2f3da27cb304() {
                 if (obelisk.potential_players.size != 0 && array_contains_key(obelisk.potential_players, player)) {
                     continue;
                 }
-                var_2c687310d2f87d67 = player namespace_ca7b90256548aa40::getsquadmembers();
-                foreach (var_c71c4fde114ce2f7 in var_2c687310d2f87d67) {
-                    backpackindex = var_c71c4fde114ce2f7 namespace_feea61bc660e9e0f::function_4776284a348ebb6a(obelisk.var_18375599dbd96dd2);
+                squad_array = player namespace_ca7b90256548aa40::getsquadmembers();
+                foreach (player_member in squad_array) {
+                    backpackindex = player_member namespace_feea61bc660e9e0f::function_4776284a348ebb6a(obelisk.relic_lootid);
                     if (backpackindex > -1 || getdvarint(@"hash_90ad914fd463e008", 0)) {
                         if (!istrue(obelisk.var_ff9089bede742254)) {
                             obelisk.base setscriptablepartstate("interact", "on");
                             obelisk.var_ff9089bede742254 = 1;
                         }
                         if (!istrue(obelisk.var_e1d182b0ee52d43e)) {
-                            namespace_5775ad2badedbcaa::function_32645103f7520635(obelisk.base, &function_c0b488aa76c77316, undefined, undefined);
+                            namespace_5775ad2badedbcaa::function_32645103f7520635(obelisk.base, &activate_obelisk, undefined, undefined);
                             obelisk.var_e1d182b0ee52d43e = 1;
                             obelisk.base namespace_5775ad2badedbcaa::function_e6c63f16f2258b80(&function_a8e7372d3c4366e);
                         }
-                        obelisk.potential_players = array_combine(obelisk.potential_players, var_2c687310d2f87d67);
+                        obelisk.potential_players = array_combine(obelisk.potential_players, squad_array);
                         break;
                     }
                 }
@@ -206,7 +206,7 @@ function function_5a3e2f3da27cb304() {
 function function_1831b668cb43b6c9(obelisk, should_notify) {
     obelisk.players = function_fdc9d5557c53078e(obelisk.players);
     foreach (player in obelisk.players) {
-        if (player istouching(obelisk.var_ff38c4cac94dd8da)) {
+        if (player istouching(obelisk.activation_trigger)) {
             if (!istrue(player.var_338560ff664aecb3)) {
                 if (!istrue(obelisk.var_67a552129d9ade80)) {
                     var_b77ce47890ca655f = undefined;
@@ -270,9 +270,9 @@ function function_6abd388d691cb822(obelisk) {
         /#
             iprintlnbold("<dev string:xa2>");
         #/
-        obelisk.var_7bcdf31ed38b3a6f = 1;
+        obelisk.puzzle_state = 1;
         if (isdefined(obelisk.var_7eb73407060d7cb6)) {
-            obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.var_7bcdf31ed38b3a6f);
+            obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.puzzle_state);
         }
         obelisk.var_e00ac5b70d752deb = 1;
         obelisk.players = eattacker namespace_ca7b90256548aa40::getsquadmembers();
@@ -287,7 +287,7 @@ function function_6abd388d691cb822(obelisk) {
             thread namespace_446fc987a980892f::playevent("STY_S3_5_SPEEQ_Activate", obelisk.players);
         }
         obelisk waittill("player_at_spatial_activation");
-        obelisk.base function_c0b488aa76c77316();
+        obelisk.base activate_obelisk();
     }
 }
 
@@ -295,19 +295,19 @@ function function_6abd388d691cb822(obelisk) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x17ce
 // Size: 0x181
-function function_a8e7372d3c4366e(var_5f455dd46c21dbee, player) {
-    if (isdefined(var_5f455dd46c21dbee.obelisk.players)) {
-        if (!array_contains(var_5f455dd46c21dbee.obelisk.players, player)) {
+function function_a8e7372d3c4366e(obelisk_base, player) {
+    if (isdefined(obelisk_base.obelisk.players)) {
+        if (!array_contains(obelisk_base.obelisk.players, player)) {
             return {#string:%JUP_OB_S1/SEAL_ALREADY_ACTIVE, #type:"HINT_NOBUTTON"};
         } else {
             return {#string:%JUP_OB_S3/CALL_THE_NEGOTIATOR, #type:"HINT_BUTTON"};
         }
         return;
     }
-    if (!isdefined(var_5f455dd46c21dbee.obelisk.potential_players) || !array_contains(var_5f455dd46c21dbee.obelisk.potential_players, player)) {
+    if (!isdefined(obelisk_base.obelisk.potential_players) || !array_contains(obelisk_base.obelisk.potential_players, player)) {
         return {#string:%, #type:"HINT_NOBUTTON"};
     }
-    if (isdefined(var_5f455dd46c21dbee.obelisk.var_42679ba6cdba9ee1) && !within_fov(player.origin, player.angles, var_5f455dd46c21dbee.obelisk.var_42679ba6cdba9ee1.origin, 0.766)) {
+    if (isdefined(obelisk_base.obelisk.var_42679ba6cdba9ee1) && !within_fov(player.origin, player.angles, obelisk_base.obelisk.var_42679ba6cdba9ee1.origin, 0.766)) {
         return {#string:%, #type:"HINT_NOBUTTON"};
     }
     return {#string:%JUP_OB_S3/CALL_THE_NEGOTIATOR, #type:"HINT_BUTTON"};
@@ -317,21 +317,21 @@ function function_a8e7372d3c4366e(var_5f455dd46c21dbee, player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1957
 // Size: 0x67f
-function function_c0b488aa76c77316(player) {
+function activate_obelisk(player) {
     obelisk = self.obelisk;
     if (!istrue(obelisk.var_713f07f1f3d7b5f7)) {
         if (isdefined(obelisk.players)) {
-            foreach (var_ef17f7d006ab32f0 in obelisk.players) {
-                backpackindex = var_ef17f7d006ab32f0 namespace_feea61bc660e9e0f::function_4776284a348ebb6a(obelisk.var_18375599dbd96dd2);
+            foreach (player_iteration in obelisk.players) {
+                backpackindex = player_iteration namespace_feea61bc660e9e0f::function_4776284a348ebb6a(obelisk.relic_lootid);
                 if (backpackindex > -1 || getdvarint(@"hash_90ad914fd463e008", 0)) {
-                    var_2c687310d2f87d67 = var_ef17f7d006ab32f0 namespace_ca7b90256548aa40::getsquadmembers();
-                    obelisk.potential_players = var_2c687310d2f87d67;
+                    squad_array = player_iteration namespace_ca7b90256548aa40::getsquadmembers();
+                    obelisk.potential_players = squad_array;
                     if (!istrue(obelisk.var_ff9089bede742254)) {
                         obelisk.base setscriptablepartstate("interact", "on");
                         obelisk.var_ff9089bede742254 = 1;
                     }
                     if (!istrue(obelisk.var_e1d182b0ee52d43e)) {
-                        namespace_5775ad2badedbcaa::function_32645103f7520635(obelisk.base, &function_c0b488aa76c77316, undefined, undefined);
+                        namespace_5775ad2badedbcaa::function_32645103f7520635(obelisk.base, &activate_obelisk, undefined, undefined);
                         obelisk.var_e1d182b0ee52d43e = 1;
                         obelisk.base namespace_5775ad2badedbcaa::function_e6c63f16f2258b80(&function_a8e7372d3c4366e);
                     }
@@ -339,22 +339,22 @@ function function_c0b488aa76c77316(player) {
                 }
             }
         }
-        if (!istrue(obelisk.var_e00ac5b70d752deb) || obelisk.var_7bcdf31ed38b3a6f == 2 || obelisk.var_7bcdf31ed38b3a6f == 3) {
+        if (!istrue(obelisk.var_e00ac5b70d752deb) || obelisk.puzzle_state == 2 || obelisk.puzzle_state == 3) {
             obelisk.var_e00ac5b70d752deb = 0;
-            obelisk.var_f63a6dcface15ba1 function_a63a2112c7b585e5();
+            obelisk.rune_manager function_a63a2112c7b585e5();
             obelisk.players = player namespace_ca7b90256548aa40::getsquadmembers();
             obelisk.players = function_fdc9d5557c53078e(obelisk.players);
             foreach (player in obelisk.players) {
                 player.var_fdbbf03042084910 = 1;
             }
             obelisk.var_152662fdff5f3b47 = [];
-            foreach (var_ef17f7d006ab32f0 in obelisk.players) {
-                if (var_ef17f7d006ab32f0 namespace_feea61bc660e9e0f::function_181a584e4a68d5d6(obelisk.var_18375599dbd96dd2)) {
-                    obelisk.var_152662fdff5f3b47 = array_add(obelisk.var_152662fdff5f3b47, var_ef17f7d006ab32f0);
+            foreach (player_iteration in obelisk.players) {
+                if (player_iteration namespace_feea61bc660e9e0f::function_181a584e4a68d5d6(obelisk.relic_lootid)) {
+                    obelisk.var_152662fdff5f3b47 = array_add(obelisk.var_152662fdff5f3b47, player_iteration);
                 }
             }
             obelisk.base setscriptablepartstate("interact", "off");
-            if (obelisk.var_7bcdf31ed38b3a6f == 2) {
+            if (obelisk.puzzle_state == 2) {
                 return;
             }
         }
@@ -368,10 +368,10 @@ function function_c0b488aa76c77316(player) {
     }
     obelisk.base setscriptablepartstate("body", "active_" + "electric");
     obelisk setscriptablepartstate("sfx", "activated");
-    obelisk.var_68d7534b8c965ed9 = spawnscriptable("jup_zm_rift_pedestal_orb_scriptable", obelisk.var_e59e6534e5fee18a.origin, obelisk.var_e59e6534e5fee18a.angles);
-    obelisk.var_7bcdf31ed38b3a6f = 2;
+    obelisk.var_68d7534b8c965ed9 = spawnscriptable("jup_zm_rift_pedestal_orb_scriptable", obelisk.orb_struct.origin, obelisk.orb_struct.angles);
+    obelisk.puzzle_state = 2;
     if (isdefined(obelisk.var_7eb73407060d7cb6)) {
-        obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.var_7bcdf31ed38b3a6f);
+        obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.puzzle_state);
     }
     /#
         iprintlnbold("<dev string:xe8>");
@@ -462,7 +462,7 @@ function function_658b421b37fd7662() {
     level endon("game_ended");
     self endon("spatial_puzzle_reset");
     var_43049aa480097901 = ter_op(self.element == "air", 4000, 2500);
-    while (self.var_7bcdf31ed38b3a6f == 2) {
+    while (self.puzzle_state == 2) {
         var_f911aed45eb961a3 = getaiarrayinradius(self.origin, var_43049aa480097901);
         foreach (zombie in var_f911aed45eb961a3) {
             if (isdefined(zombie.var_66c1831357048c02)) {
@@ -495,7 +495,7 @@ function function_658b421b37fd7662() {
 // Size: 0x10c
 function function_35682bc06e3a7d3a(params) {
     foreach (obelisk in level.var_4ff113324b51bedd) {
-        if (obelisk.var_7bcdf31ed38b3a6f == 2 && obelisk.var_6d298bb3b2c8bf0 == 0) {
+        if (obelisk.puzzle_state == 2 && obelisk.var_6d298bb3b2c8bf0 == 0) {
             if (distance2dsquared(self.origin, obelisk.origin) < obelisk.var_d6f622d1668f0b04 * obelisk.var_d6f622d1668f0b04) {
                 if (obelisk.playerdeaths < level.var_f607826b73b56d1c.size) {
                     obelisk.var_6d298bb3b2c8bf0 = level.var_f607826b73b56d1c[obelisk.playerdeaths];
@@ -513,7 +513,7 @@ function function_35682bc06e3a7d3a(params) {
 // Checksum 0x0, Offset: 0x2414
 // Size: 0x107
 function function_b07493f60764eed4(requestid, obelisk) {
-    if (obelisk.var_7bcdf31ed38b3a6f != 2) {
+    if (obelisk.puzzle_state != 2) {
         return 0;
     }
     squadsize = obelisk.players.size;
@@ -527,7 +527,7 @@ function function_b07493f60764eed4(requestid, obelisk) {
         iprintln("<dev string:x117>" + var_b4a0bb985e832edf + "<dev string:x129>" + obelisk.killcount + "<dev string:x130>" + obelisk.var_3144cc2ba8121676);
     #/
     wait waveinterval + obelisk.var_6d298bb3b2c8bf0;
-    if (obelisk.var_7bcdf31ed38b3a6f == 2) {
+    if (obelisk.puzzle_state == 2) {
         return 1;
     }
     return 0;
@@ -538,7 +538,7 @@ function function_b07493f60764eed4(requestid, obelisk) {
 // Checksum 0x0, Offset: 0x2523
 // Size: 0x2c
 function function_64f4df7704af6dc2(requestid, obelisk) {
-    if (obelisk.var_7bcdf31ed38b3a6f == 2) {
+    if (obelisk.puzzle_state == 2) {
         return 0;
     }
     return 1;
@@ -565,7 +565,7 @@ function function_6e42339d9503b6b7(params) {
             playfx(getfx("zombie_death"), self.origin);
             if (obelisk.killcount < obelisk.var_3144cc2ba8121676 && istrue(obelisk.var_21dcf44eef6e9fa2)) {
                 obelisk.killcount++;
-                function_2b6783f1c69393ff(self.origin + (0, 0, 40), obelisk.var_e59e6534e5fee18a.origin, 0.25, obelisk);
+                function_2b6783f1c69393ff(self.origin + (0, 0, 40), obelisk.orb_struct.origin, 0.25, obelisk);
                 if (obelisk.killcount == obelisk.var_3144cc2ba8121676 / 2) {
                     if (istrue(obelisk.var_e00ac5b70d752deb)) {
                         if (obelisk.season == 5) {
@@ -588,26 +588,26 @@ function function_6e42339d9503b6b7(params) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2782
 // Size: 0x82
-function function_2b6783f1c69393ff(spawn_origin, goal_position, var_6feb1183955c97a0, obelisk) {
-    var_6feb1183955c97a0 = utility::default_to(var_6feb1183955c97a0, 0);
+function function_2b6783f1c69393ff(spawn_origin, goal_position, move_delay, obelisk) {
+    move_delay = utility::default_to(move_delay, 0);
     trail = utility::spawn_model("tag_origin", spawn_origin);
     trail.goal_position = goal_position + (0, 0, 170);
     playfxontag(getfx("zombie_soul"), trail, "tag_origin");
-    trail thread function_57961c5b765c270(var_6feb1183955c97a0, obelisk);
+    trail thread function_57961c5b765c270(move_delay, obelisk);
 }
 
 // Namespace namespace_dc0140c0d20a7e8f / namespace_1ebb55028b525060
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x280c
 // Size: 0xbe
-function function_57961c5b765c270(var_6feb1183955c97a0, obelisk) {
+function function_57961c5b765c270(move_delay, obelisk) {
     level endon("game_ended");
     obelisk endon("spatial_puzzle_reset");
     self endon("death");
     self playsound("evt_ob_rr_obelisk_soul_spawn");
     self playloopsound("evt_ob_rr_obelisk_soul_lp");
-    if (var_6feb1183955c97a0 > 0) {
-        wait var_6feb1183955c97a0;
+    if (move_delay > 0) {
+        wait move_delay;
     }
     self moveto(self.goal_position, 0.8, 0.2);
     self waittill("movedone");
@@ -637,7 +637,7 @@ function function_4234407e34a559f9(obelisk) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2946
 // Size: 0x1ea
-function function_8a3426e6c80d8b35(obelisk) {
+function shutdown_obelisk(obelisk) {
     if (!istrue(obelisk.var_713f07f1f3d7b5f7)) {
         obelisk setscriptablepartstate("fx", obelisk.element + "_done");
     }
@@ -669,12 +669,12 @@ function function_8a3426e6c80d8b35(obelisk) {
 // Checksum 0x0, Offset: 0x2b38
 // Size: 0x118
 function obelisk_completed(obelisk) {
-    obelisk.var_7bcdf31ed38b3a6f = 3;
+    obelisk.puzzle_state = 3;
     if (isdefined(obelisk.var_7eb73407060d7cb6)) {
-        obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.var_7bcdf31ed38b3a6f);
+        obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.puzzle_state);
     }
     thread timeout_watcher(obelisk, 300, 3);
-    function_8a3426e6c80d8b35(obelisk);
+    shutdown_obelisk(obelisk);
     level thread namespace_b3f32c8cb80b8124::function_115bd456be8e071d(obelisk.players, "ob_contract_win");
     obelisk.players = function_fdc9d5557c53078e(obelisk.players);
     foreach (player in obelisk.players) {
@@ -693,7 +693,7 @@ function obelisk_completed(obelisk) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c58
 // Size: 0xe7
-function function_8001cd21bb9c2165() {
+function range_watcher() {
     obelisk = self;
     while (true) {
         var_f27c366795e1174c = 0;
@@ -719,20 +719,20 @@ function function_8001cd21bb9c2165() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d47
 // Size: 0x87
-function timeout_watcher(obelisk, time, var_d7bbb055fc183403) {
+function timeout_watcher(obelisk, time, starting_state) {
     level endon("game_ended");
     obelisk notify("timeout_watcher");
     obelisk endon("timeout_watcher");
     obelisk endon("spatial_puzzle_reset");
-    if (obelisk.var_7bcdf31ed38b3a6f > 1) {
-        obelisk childthread function_8001cd21bb9c2165();
+    if (obelisk.puzzle_state > 1) {
+        obelisk childthread range_watcher();
     }
     function_cf308f348d516c65(time, obelisk, "players_out_of_range");
-    if (var_d7bbb055fc183403 == obelisk.var_7bcdf31ed38b3a6f) {
+    if (starting_state == obelisk.puzzle_state) {
         /#
             iprintlnbold("<dev string:x135>");
         #/
-        thread function_d321e9c93f097199(obelisk);
+        thread reset_puzzle(obelisk);
     }
 }
 
@@ -740,16 +740,16 @@ function timeout_watcher(obelisk, time, var_d7bbb055fc183403) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dd6
 // Size: 0x2c9
-function function_d321e9c93f097199(obelisk) {
+function reset_puzzle(obelisk) {
     /#
         iprintlnbold("<dev string:x151>");
     #/
-    assert(obelisk.var_7bcdf31ed38b3a6f != 0);
-    if (obelisk.var_7bcdf31ed38b3a6f == 1) {
+    assert(obelisk.puzzle_state != 0);
+    if (obelisk.puzzle_state == 1) {
         obelisk.base setscriptablepartstate("interact", "off");
-    } else if (obelisk.var_7bcdf31ed38b3a6f == 2) {
-        function_8a3426e6c80d8b35(obelisk);
-    } else if (obelisk.var_7bcdf31ed38b3a6f == 3) {
+    } else if (obelisk.puzzle_state == 2) {
+        shutdown_obelisk(obelisk);
+    } else if (obelisk.puzzle_state == 3) {
         if (isdefined(obelisk.var_db918367a232870d)) {
             obelisk.var_db918367a232870d callback::remove("on_zombie_ai_killed", &function_7c0957e4e8184593);
             obelisk.var_db918367a232870d kill();
@@ -761,7 +761,7 @@ function function_d321e9c93f097199(obelisk) {
         }
     }
     if (!istrue(obelisk.var_fa9e06a77032916e) || getdvarint(@"hash_5a8ca99f137d0a44", 0)) {
-        obelisk.var_f63a6dcface15ba1 function_24e03be2bc20e57b();
+        obelisk.rune_manager function_24e03be2bc20e57b();
     }
     obelisk notify("spatial_puzzle_reset");
     waitframe();
@@ -772,12 +772,12 @@ function function_d321e9c93f097199(obelisk) {
             player vision_utility::function_9a92ae402e209ecc("jup_ob_spatial_puzzle");
         }
     }
-    if (isdefined(obelisk.var_ff38c4cac94dd8da)) {
-        obelisk.var_ff38c4cac94dd8da delete();
+    if (isdefined(obelisk.activation_trigger)) {
+        obelisk.activation_trigger delete();
     }
-    obelisk.var_7bcdf31ed38b3a6f = 0;
+    obelisk.puzzle_state = 0;
     if (isdefined(obelisk.var_7eb73407060d7cb6)) {
-        obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.var_7bcdf31ed38b3a6f);
+        obelisk thread [[ obelisk.var_7eb73407060d7cb6 ]](obelisk.puzzle_state);
     }
     obelisk.var_e00ac5b70d752deb = undefined;
     foreach (player in obelisk.players) {
@@ -867,8 +867,8 @@ function function_510aa363d2583f0(params) {
 // Size: 0x74
 function function_ae2ad994e01b239e(var_ed118e6dd8c246) {
     cache = spawnstruct();
-    var_9dc936b99badc73 = namespace_9866a3bced571d62::function_54b2c5a00ed87d60(var_ed118e6dd8c246.obelisk.element);
-    items = function_bc2f4857c90f5344("ob_jup_hydro_obelisk_reward_" + var_9dc936b99badc73 + "_attuned_s3", 1);
+    s3_name = namespace_9866a3bced571d62::function_54b2c5a00ed87d60(var_ed118e6dd8c246.obelisk.element);
+    items = function_bc2f4857c90f5344("ob_jup_hydro_obelisk_reward_" + s3_name + "_attuned_s3", 1);
     common_cache::function_fd95ef820bb2b980(items, cache);
     return cache.contents;
 }
@@ -941,8 +941,8 @@ function spawn_reward(obelisk) {
     obelisk.rewardrift = rewardrift;
     rewardrift waittill("managed_reward_cache_despawned");
     obelisk.rewardrift = undefined;
-    if (obelisk.var_7bcdf31ed38b3a6f != 2) {
-        thread function_d321e9c93f097199(obelisk);
+    if (obelisk.puzzle_state != 2) {
+        thread reset_puzzle(obelisk);
     }
 }
 

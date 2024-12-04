@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\flags.gsc;
 #using script_342e51952b63e594;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\stationary_notes.gsc;
-#using script_6a8ec730b2bfa844;
 #using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using script_6a8ec730b2bfa844;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\poi;
+#using scripts\mp\stationary_notes;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\player;
 
 #namespace namespace_bf5795f2ab4f8798;
 

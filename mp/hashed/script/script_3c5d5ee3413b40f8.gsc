@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace elevator_infil;
 
@@ -34,14 +34,14 @@ function elevator_init(subtype) {
     var_453e4fc2c649fea4[3] = [3];
     var_453e4fc2c649fea4[4] = [2];
     var_453e4fc2c649fea4[5] = [5];
-    thread infil_add("infil_elevator", subtype, 6, 4, var_453e4fc2c649fea4, &function_70ffebcdf4dccfbb, &function_84f93b207a7228ed, &function_950c2d7fd506dfe9);
+    thread infil_add("infil_elevator", subtype, 6, 4, var_453e4fc2c649fea4, &elevator_spawn, &function_84f93b207a7228ed, &function_950c2d7fd506dfe9);
 }
 
 // Namespace elevator_infil / namespace_3194e7560630dae2
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xb5e
 // Size: 0xb2
-function function_70ffebcdf4dccfbb(team, target, subtype, originalsubtype) {
+function elevator_spawn(team, target, subtype, originalsubtype) {
     scene_node = getstruct(target, "targetname");
     infil = spawn("script_origin", scene_node.origin);
     if (!isdefined(scene_node.angles)) {
@@ -262,7 +262,7 @@ function actorthink(team, scene_node, scene_name, extra_crew) {
 // Size: 0x2a3
 function initanims(subtype) {
     script_model_anims(subtype);
-    function_68aab9f69431ce1(subtype);
+    vehicles_anims(subtype);
     addnotetrack_customfunction("slot_0", "free_look", &player_free_look, "elevator_infil");
     addnotetrack_customfunction("slot_1", "free_look", &player_free_look, "elevator_infil");
     addnotetrack_customfunction("slot_2", "free_look", &player_free_look, "elevator_infil");
@@ -361,7 +361,7 @@ function script_model_anims(subtype) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c62
 // Size: 0x91
-function function_68aab9f69431ce1(subtype) {
+function vehicles_anims(subtype) {
     switch (subtype) {
     case #"hash_1cc79b02710cab23":
     case #"hash_6829ee5abc10c38b":
@@ -386,8 +386,8 @@ function function_8c5763245370329b(scene_node, team, scene_name, anim_name) {
     }
     vehicle = spawn("script_model", scene_node.origin);
     vehicle setmodel("building_saba_elevator_set");
-    var_75c577a2ccb7c734 = vehicle gettagangles("tag_origin");
-    var_16133b8532c6abbd = vehicle gettagangles("tag_origin_animate");
+    origin_angles = vehicle gettagangles("tag_origin");
+    animate_angles = vehicle gettagangles("tag_origin_animate");
     vehicle.animname = anim_name;
     self.linktoent = vehicle;
     vehicle.infil = self;
@@ -398,8 +398,8 @@ function function_8c5763245370329b(scene_node, team, scene_name, anim_name) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e04
 // Size: 0x7b
-function spawnactor(var_850c2b49aa0be5c1, team, scene_node, var_d006ac472f253163, var_3468a2b34119eee1, animname) {
-    actor = self.linktoent spawn_anim_model(animname, scene_node, var_d006ac472f253163, var_3468a2b34119eee1);
+function spawnactor(var_850c2b49aa0be5c1, team, scene_node, model_body, model_head, animname) {
+    actor = self.linktoent spawn_anim_model(animname, scene_node, model_body, model_head);
     actor.infil = self;
     level waittill("infil_started");
     anim_single_solo(actor, "elevator_infil");

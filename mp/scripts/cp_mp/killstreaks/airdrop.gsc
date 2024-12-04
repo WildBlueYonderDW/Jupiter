@@ -1,34 +1,34 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_439fa02b5251fa5b;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_5f09cc6e22a3f571;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_282eb9d7fde0753e;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
 #using script_6bfe39bd5c12f84a;
-#using scripts\mp\utility\join_team_aggregator.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\damage_tuning;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\cp_mp\vehicles\vehicle_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
 
 #namespace airdrop;
 
@@ -2355,7 +2355,7 @@ function monitorimpactinternal(delay) {
                         }
                     } else if (getdvarint(@"hash_35d73d70c6843ce8", 1)) {
                         var_62ccfb7ea15a4520 = ent scripts\cp_mp\vehicles\vehicle::function_62ccfb7ea15a4520();
-                        var_bbdfa26a1db6eb7b = ent namespace_7c5d7b789e91a667::function_bbdfa26a1db6eb7b();
+                        var_bbdfa26a1db6eb7b = ent scripts\cp_mp\vehicles\vehicle_utility::function_bbdfa26a1db6eb7b();
                         if (!var_62ccfb7ea15a4520 && !var_bbdfa26a1db6eb7b && !istrue(ent.exfilhelicopter)) {
                             ent.var_a8f4bb03b366aa80 = 1;
                             ent scripts\cp_mp\vehicles\vehicle::vehicle_explode();
@@ -3452,7 +3452,7 @@ function killstreakcratecapturecallback(player) {
             } else {
                 player scripts\cp_mp\killstreaks\juggernaut::tryusejuggernaut(useimmediate);
             }
-            player thread scripts\cp_mp\challenges::usedkillstreak(streakname, namespace_649c2fab0fd72b8b::function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
+            player thread scripts\cp_mp\challenges::usedkillstreak(streakname, scripts\common\ae_utility::function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
         }
         break;
     }

@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\points;
 
 #namespace bounty;
 

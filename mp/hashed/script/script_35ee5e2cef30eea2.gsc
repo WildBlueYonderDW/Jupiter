@@ -1,9 +1,9 @@
-#using scripts\mp\utility\player.gsc;
 #using script_32d93a194074fa6a;
 #using script_3f8889c16399185c;
-#using scripts\mp\flags.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_public.gsc;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\player;
 
 #namespace ftue_player;
 
@@ -454,7 +454,7 @@ function function_632855e1721d2685(var_a7bc06075641900e, anglediffgoal, var_8cdf
     assert(isdefined(var_8cdf4ff04b7775ec));
     var_d49294f78a5bd8b0 = 0;
     init_pos = self.origin;
-    var_db1111b1b4c72b10 = self getplayerangles();
+    init_angles = self getplayerangles();
     while (!self function_3c6bb30ae7106b7a()) {
         waitframe();
     }
@@ -463,8 +463,8 @@ function function_632855e1721d2685(var_a7bc06075641900e, anglediffgoal, var_8cdf
     }
     while (self isparachuting()) {
         diff_pos = distance((self.origin[0], self.origin[1], 0), (init_pos[0], init_pos[1], 0));
-        var_98bf6d2e08a18443 = distance(self getplayerangles(), var_db1111b1b4c72b10);
-        if (var_98bf6d2e08a18443 >= anglediffgoal && diff_pos * 10 > var_a7bc06075641900e) {
+        diff_angles = distance(self getplayerangles(), init_angles);
+        if (diff_angles >= anglediffgoal && diff_pos * 10 > var_a7bc06075641900e) {
             var_d49294f78a5bd8b0 = 1;
             break;
         }

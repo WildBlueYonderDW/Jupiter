@@ -1,21 +1,21 @@
-#using scripts\asm\shared\utility.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\track.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\soldier\patrol.gsc;
-#using scripts\aitypes\combat.gsc;
-#using scripts\sp\nvg\nvg_ai.gsc;
-#using scripts\sp\stealth\utility.gsc;
-#using scripts\sp\spawner.gsc;
-#using scripts\anim\face.gsc;
-#using scripts\asm\soldier\death.gsc;
+#using scripts\aitypes\bt_util;
+#using scripts\aitypes\combat;
+#using scripts\anim\face;
+#using scripts\anim\utility_common;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\death;
+#using scripts\asm\soldier\patrol;
+#using scripts\asm\track;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\sp\nvg\nvg_ai;
+#using scripts\sp\spawner;
+#using scripts\sp\stealth\utility;
 
-#namespace namespace_8fab733834954b35;
+#namespace combat_sp;
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bb
 // Size: 0x8d
@@ -33,7 +33,7 @@ function initcombatfunctions(taskid) {
     return anim.success;
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x251
 // Size: 0x48
@@ -45,7 +45,7 @@ function initstealthfunctionssp() {
     self.fnstealthgotonode = &scripts\sp\spawner::go_to_node;
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a1
 // Size: 0x45
@@ -58,7 +58,7 @@ function soldier_init(taskid) {
     return anim.success;
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ef
 // Size: 0x9
@@ -66,7 +66,7 @@ function turnonlaser() {
     self laserforceon();
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x300
 // Size: 0x9
@@ -74,7 +74,7 @@ function turnofflaser() {
     self laserforceoff();
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x311
 // Size: 0x13
@@ -82,7 +82,7 @@ function callsetlaserflag(flag) {
     self setlaserflag(flag);
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x32c
 // Size: 0x13
@@ -90,7 +90,7 @@ function saygenericdialogue(typestring) {
     scripts\anim\face::saygenericdialogue(typestring);
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x347
 // Size: 0x11
@@ -98,7 +98,7 @@ function getturretaimanglessp(turret) {
     return turret turretgetaim();
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x361
 // Size: 0x8
@@ -106,7 +106,7 @@ function getusedturret() {
     return self getturret();
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x372
 // Size: 0x23c
@@ -116,14 +116,14 @@ function updatefrantic() {
     }
     curtime = gettime();
     if (!isdefined(self._blackboard.franticcooldowntime) || self._blackboard.franticcooldowntime > curtime) {
-        var_a4a7cbaacb7cc0cd = getaiarray(scripts\engine\utility::get_enemy_team(self.team));
+        enemy_array = getaiarray(scripts\engine\utility::get_enemy_team(self.team));
         var_775b9dd7cee9529 = 0;
         timeout = 10000;
         var_8bbc3c1a2867361f = 4194304;
         var_ae15e053b9483e7c = 5;
         self._blackboard.franticcooldowntime = curtime + 10000;
         self._blackboard.franticstate = "combat";
-        foreach (enemy in var_a4a7cbaacb7cc0cd) {
+        foreach (enemy in enemy_array) {
             dist_sqr = distancesquared(self lastknownpos(enemy), self.origin);
             if (dist_sqr > var_8bbc3c1a2867361f) {
                 continue;
@@ -151,7 +151,7 @@ function updatefrantic() {
     return anim.success;
 }
 
-// Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+// Namespace combat_sp / scripts\aitypes\combat_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b7
 // Size: 0x84
@@ -171,7 +171,7 @@ function soldier_damagesubparthandler(partdata) {
 
 /#
 
-    // Namespace namespace_8fab733834954b35 / scripts\aitypes\combat_sp
+    // Namespace combat_sp / scripts\aitypes\combat_sp
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x643
     // Size: 0x7d

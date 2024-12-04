@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_6159d9fd44490f13;
-#using scripts\cp_mp\equipment\throwing_knife.gsc;
-#using script_52d91cb28006a5bd;
-#using script_ec0f9ad939b29e0;
 #using script_479e458f6f530f0d;
+#using script_52d91cb28006a5bd;
+#using script_6159d9fd44490f13;
 #using script_7c40fa80892a721;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\emp_drone_targeted.gsc;
-#using scripts\cp_mp\killstreaks\emp_drone.gsc;
+#using script_ec0f9ad939b29e0;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\equipment\throwing_knife;
+#using scripts\cp_mp\killstreaks\emp_drone;
+#using scripts\cp_mp\killstreaks\emp_drone_targeted;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace equipment;
 
@@ -33,7 +33,7 @@ function init() {
         /#
             utility::scriptbundlewarning("<dev string:x1c>", level.equipmenttable);
         #/
-    } else if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) > 0) {
+    } else if (getdvarint(@"mgl", 0) > 0) {
         level.equipmenttable = "equipmentlist:equipment_list_mgl_mp";
         /#
             utility::scriptbundlewarning("<dev string:x1c>", level.equipmenttable);
@@ -1055,8 +1055,8 @@ function function_22bf78eca6578d7d(slot, class) {
         return;
     }
     if (slot == "health") {
-        if (isdefined(self.pers["telemetry"].var_d5e1e009ed9eb9a8)) {
-            self.pers["telemetry"].var_d5e1e009ed9eb9a8++;
+        if (isdefined(self.pers["telemetry"].armor_collected)) {
+            self.pers["telemetry"].armor_collected++;
         }
         self setclientomnvar("ui_equipment_id_health_numCharges", ammo, maxammo);
     }
@@ -1351,12 +1351,12 @@ function hackequipment(hacker) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b4c
 // Size: 0x3d
-function function_24fce6c89fd2bee3(var_e0d7784e906d506) {
-    if (isdefined(var_e0d7784e906d506)) {
+function function_24fce6c89fd2bee3(CaptureBot) {
+    if (isdefined(CaptureBot)) {
         if (!isdefined(self.var_134d6db4538498ee)) {
             self.var_134d6db4538498ee = [];
         }
-        self.var_134d6db4538498ee[self.var_134d6db4538498ee.size] = var_e0d7784e906d506;
+        self.var_134d6db4538498ee[self.var_134d6db4538498ee.size] = CaptureBot;
     }
 }
 

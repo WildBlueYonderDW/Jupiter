@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
 #using script_187a04151c40fb72;
 #using script_293bc33bd79cabd1;
-#using scripts\cp\cp_awards.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_74502a9e0ef1f19c;
 #using script_3bcaa2cbaf54abdd;
-#using scripts\cp\cp_gamescore.gsc;
 #using script_467f0fdfdd155a45;
-#using scripts\cp\cp_weaponrank.gsc;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\cp\cp_awards;
+#using scripts\cp\cp_gamescore;
+#using scripts\cp\cp_weaponrank;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace points;
 
@@ -185,7 +185,7 @@ function giveunifiedpoints(event, objweapon, pointsoverride, xpoverride, victim,
 // Checksum 0x0, Offset: 0x8e4
 // Size: 0xc8
 function give_munition_currency(amount) {
-    var_8334742fe1363a27 = namespace_6c67e93a4c487d83::get_player_munition_currency();
+    current_amount = namespace_6c67e93a4c487d83::get_player_munition_currency();
     amount = scripts\cp\cp_gamescore::round_up_to_nearest(amount, 5);
     if (isdefined(self.totalmuncurrencyearned) && isdefined(self.maxmuncurrencycap)) {
         if (self.totalmuncurrencyearned > self.maxmuncurrencycap) {
@@ -199,10 +199,10 @@ function give_munition_currency(amount) {
             self.totalmuncurrencyearned += amount;
         }
     }
-    var_b4187ec006e2d1e2 = namespace_6c67e93a4c487d83::get_player_max_currency();
-    var_98afd1ce36f4905a = var_8334742fe1363a27 + amount;
-    var_98afd1ce36f4905a = min(var_98afd1ce36f4905a, var_b4187ec006e2d1e2);
-    namespace_6c67e93a4c487d83::set_player_munition_currency(var_98afd1ce36f4905a);
+    max_amount = namespace_6c67e93a4c487d83::get_player_max_currency();
+    new_amount = current_amount + amount;
+    new_amount = min(new_amount, max_amount);
+    namespace_6c67e93a4c487d83::set_player_munition_currency(new_amount);
 }
 
 // Namespace points / namespace_6099285b4066f63b
@@ -213,13 +213,13 @@ function modifyunifiedpoints(event, points, objweapon) {
     if (event == #"damage") {
         return 0;
     }
-    var_a485d3a2171216fe = 0;
+    bonuspool = 0;
     if (isdefined(objweapon)) {
         if (event == "kill" && objweapon hasattachment("gunperk_xp")) {
-            var_a485d3a2171216fe += 20;
+            bonuspool += 20;
         }
     }
-    points += var_a485d3a2171216fe;
+    points += bonuspool;
     if (isdefined(level.modifyunifiedpointscallback)) {
         points = [[ level.modifyunifiedpointscallback ]](points, event, self, objweapon);
     }

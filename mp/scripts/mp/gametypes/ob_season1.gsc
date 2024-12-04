@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_371b4c2ab5861e62;
-#using script_4f77311cb9cdbcd8;
 #using script_4ee9ddbac96043d;
+#using script_4f77311cb9cdbcd8;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace ob_season1;
 
@@ -94,9 +94,9 @@ function private function_b7c9f9d63797a2c8() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x3a0
 // Size: 0xe3
-function private function_d415276dab42fc0(var_4e2d0a39c455ea73) {
+function private function_d415276dab42fc0(check_aitypes) {
     var_f66479931405b0b2 = 0;
-    if (istrue(var_4e2d0a39c455ea73)) {
+    if (istrue(check_aitypes)) {
         aitypes = function_3290e192ac188e2d("zombie_mimic");
         foreach (aitype in aitypes) {
             if (issubstr(aitype, "xmas")) {
@@ -106,7 +106,7 @@ function private function_d415276dab42fc0(var_4e2d0a39c455ea73) {
     }
     var_edff4b1061421db2 = getdvarint(@"hash_7019141b37b54155", -1) != 0 && getdvarint(@"hash_2ae6c0317f5baf93", 0);
     if (var_edff4b1061421db2 != -1) {
-        if (var_edff4b1061421db2 > 0 && var_4e2d0a39c455ea73) {
+        if (var_edff4b1061421db2 > 0 && check_aitypes) {
             assertex(var_f66479931405b0b2, "<dev string:x1c>");
             if (!var_f66479931405b0b2) {
                 return 0;
@@ -122,11 +122,11 @@ function private function_d415276dab42fc0(var_4e2d0a39c455ea73) {
 // Checksum 0x0, Offset: 0x48c
 // Size: 0x58
 function private function_172e297dffe1a7bf(aitype) {
-    var_48e66b9f9278ec0c = aitype;
+    new_aitype = aitype;
     if (issubstr(aitype, "zombie") && getsubstr(aitype, aitype.size - 4, aitype.size) != "xmas") {
-        var_48e66b9f9278ec0c = aitype + "_xmas";
-        if (isdefined(level.agent_definition[var_48e66b9f9278ec0c])) {
-            return var_48e66b9f9278ec0c;
+        new_aitype = aitype + "_xmas";
+        if (isdefined(level.agent_definition[new_aitype])) {
+            return new_aitype;
         }
     }
     return aitype;

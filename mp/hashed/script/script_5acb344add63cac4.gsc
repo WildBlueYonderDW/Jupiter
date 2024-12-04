@@ -1,11 +1,11 @@
-#using scripts\common\ai.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm_bb;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace lightning_chain;
 

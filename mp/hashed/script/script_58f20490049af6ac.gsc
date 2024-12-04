@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_multi_circle.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_multi_circle;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\script;
 
 #namespace namespace_553788426d0f4133;
 

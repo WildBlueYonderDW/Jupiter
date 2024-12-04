@@ -1,6 +1,6 @@
 #using script_5251854c54e1b3c2;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_gametypes;
 
 #namespace namespace_e367146fa7344941;
 

@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\civilian_london_female_heads_skintone_light_nohair.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\civilian_london_female_heads_skintone_light_nohair;
 
 #namespace namespace_5e657191f39aeb84;
 

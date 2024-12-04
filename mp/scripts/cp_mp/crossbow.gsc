@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\common\ai.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace crossbow;
 
@@ -600,7 +600,7 @@ function stununderwater(bolt) {
 function spawncrossbowbolt(impactpos, bulletdir, ammotype, weapon) {
     model = getboltmodel(ammotype);
     if (!isdefined(level.mapname)) {
-        level.mapname = getdvar(@"hash_687fb8f9b7a23245");
+        level.mapname = getdvar(@"g_mapname");
     }
     if (issubstr(level.mapname, "frontend")) {
         model += "_fe";

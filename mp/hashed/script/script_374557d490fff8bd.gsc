@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using script_6cb121f049b87187;
-#using script_374557d490fff8bd;
-#using scripts\cp_mp\challenges.gsc;
-#using script_44b8991c2b01716a;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_7c40fa80892a721;
 #using script_2669878cf5a1b6bc;
 #using script_293ba44c408fef1;
+#using script_374557d490fff8bd;
+#using script_44b8991c2b01716a;
+#using script_6cb121f049b87187;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
 
 #namespace namespace_594170df844c259e;
 
@@ -27,10 +27,10 @@ function init() {
     level.var_78a0087bea386662 = spawnstruct();
     level.var_78a0087bea386662.var_d04b4a9729479cad = &function_d04b4a9729479cad;
     level.var_78a0087bea386662.var_c80fb54710c9e5aa = &function_c80fb54710c9e5aa;
-    level.var_78a0087bea386662.var_e807776b16dce7d4 = &function_52ecb2291cfdb603;
+    level.var_78a0087bea386662.var_e807776b16dce7d4 = &get_reward;
     level.var_78a0087bea386662.var_d70ec56158c8530b = &function_fba8eb934ad3b08b;
-    level.var_78a0087bea386662.onuse = &function_f1e11c45881efcf0;
-    level.var_78a0087bea386662.var_35ad50d0a725c013 = &function_ee22089593019c42;
+    level.var_78a0087bea386662.onuse = &on_use;
+    level.var_78a0087bea386662.var_35ad50d0a725c013 = &get_payload;
     utility::registersharedfunc("game", "trickrtreatAchievementStateFetched", &function_695f31c017a09ce5);
     level callback::add("player_connect", &onplayerconnect);
     level callback::add("player_disconnect", &onplayerdisconnect);
@@ -79,7 +79,7 @@ function function_d04b4a9729479cad() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x61c
 // Size: 0x12d
-function function_52ecb2291cfdb603() {
+function get_reward() {
     values = [1, 2, 3];
     var_5994a3fa21cf8136 = namespace_2a31d8e10c8938e7::function_9d900983f9f0809b();
     switch (var_5994a3fa21cf8136) {
@@ -159,7 +159,7 @@ function function_fba8eb934ad3b08b(reward) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x950
 // Size: 0x430
-function function_f1e11c45881efcf0(player) {
+function on_use(player) {
     if (getdvarint(@"hash_a929e525622180dc") == 1) {
         if (player != self.attacker) {
             return;
@@ -271,7 +271,7 @@ function function_c80fb54710c9e5aa(reward) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdfe
 // Size: 0x30
-function function_ee22089593019c42(player) {
+function get_payload(player) {
     payload = [#"teamselect", player getentitynumber()];
     return payload;
 }

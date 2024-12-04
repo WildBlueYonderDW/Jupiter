@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\player_rig.gsc;
-#using scripts\sp\colors.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\colors;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_rig;
+#using scripts\sp\utility;
 
-#namespace namespace_4ce9c0ed0d628c6a;
+#namespace vehicle_interact;
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e3
 // Size: 0xef
@@ -29,7 +29,7 @@ function init_vehicle_interact() {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6da
 // Size: 0x3a1
@@ -83,7 +83,7 @@ function main_vehicle_interact(structs) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa83
 // Size: 0x5a9
@@ -141,10 +141,10 @@ function interact_door_setup(door) {
     }
     var_e88c9fd4344fc3e0 = undefined;
     if (isdefined(door.script_linkto)) {
-        var_c987aeb8c98c5177 = getstruct(door.script_linkto, "script_linkname");
-        assertex(isdefined(var_c987aeb8c98c5177.script_namenumber), "No getin hint for " + door.script_namenumber);
-        var_e88c9fd4344fc3e0 = strtok(var_c987aeb8c98c5177.script_namenumber, "_")[1];
-        self.getin_hints[var_e88c9fd4344fc3e0] = var_c987aeb8c98c5177;
+        inside_hint = getstruct(door.script_linkto, "script_linkname");
+        assertex(isdefined(inside_hint.script_namenumber), "No getin hint for " + door.script_namenumber);
+        var_e88c9fd4344fc3e0 = strtok(inside_hint.script_namenumber, "_")[1];
+        self.getin_hints[var_e88c9fd4344fc3e0] = inside_hint;
         self.door_open[var_e88c9fd4344fc3e0] = 0;
         door_col = getent(door.script_linkto, "script_linkname");
         if (isdefined(door_col)) {
@@ -198,27 +198,27 @@ function interact_door_setup(door) {
     hint_ent delete();
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1034
 // Size: 0xba
-function interact_interior_door_open(var_c7d1b7aa659d4fe3) {
+function interact_interior_door_open(which_door) {
     hint_ent = undefined;
-    switch (var_c7d1b7aa659d4fe3) {
+    switch (which_door) {
     case #"hash_fa27ccf6bd62c1db":
         block_for_mantle(self.getin_hints["lr"]);
         thread interact_vehicle_animate_door("lr");
-        self.getin_hints[var_c7d1b7aa659d4fe3].hint_ent delete();
+        self.getin_hints[which_door].hint_ent delete();
         break;
     case #"hash_fa53c4f6bd854785":
         block_for_mantle(self.getin_hints["rr"]);
         thread interact_vehicle_animate_door("rr");
-        self.getin_hints[var_c7d1b7aa659d4fe3].hint_ent delete();
+        self.getin_hints[which_door].hint_ent delete();
         break;
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10f6
 // Size: 0x3c
@@ -230,7 +230,7 @@ function interact_interior_door_open_remove(hint_ent) {
     hint_ent delete();
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x113a
 // Size: 0x50a
@@ -247,9 +247,9 @@ function interact_vehicle_inside(door) {
     }
     pathend = get_next_struct(pathstart);
     block_for_mantle(self.getin_hints[var_9b255abfdc4df054]);
-    foreach (var_4546f22b5cdbddb3 in self.doors) {
-        if (var_4546f22b5cdbddb3 != door) {
-            var_4546f22b5cdbddb3 notify("stop_logic");
+    foreach (door_struct in self.doors) {
+        if (door_struct != door) {
+            door_struct notify("stop_logic");
         }
     }
     level.player notify("interacted_vehicle");
@@ -278,37 +278,37 @@ function interact_vehicle_inside(door) {
         interact_entry_anim();
     }
     viewheight = level.player getplayerviewheight() + -4;
-    var_8540f0ddf16d59a2 = spawn_tag_origin(pathstart.origin, level.player.angles);
-    p_mover = spawn_tag_origin(pathstart.origin + (0, 0, viewheight * -1), var_8540f0ddf16d59a2.angles);
+    cam_mover = spawn_tag_origin(pathstart.origin, level.player.angles);
+    p_mover = spawn_tag_origin(pathstart.origin + (0, 0, viewheight * -1), cam_mover.angles);
     level.interact_vehicle.p_mover = p_mover;
-    p_mover linkto(var_8540f0ddf16d59a2);
+    p_mover linkto(cam_mover);
     time = 0.4;
     level.player playerlinktoblend(p_mover, "tag_player", time, 0, 0.2);
     thread interact_give_control_back(time, p_mover);
-    var_8540f0ddf16d59a2 moveto(pathstart.origin, 0.5, 0.1, 0.1);
-    var_8540f0ddf16d59a2 waittill("movedone");
-    var_8540f0ddf16d59a2.angles = pathstart.angles;
-    var_fe16e33d66144fa0 = var_8540f0ddf16d59a2 interact_vehicle_movement(self, door, pathstart, pathend);
+    cam_mover moveto(pathstart.origin, 0.5, 0.1, 0.1);
+    cam_mover waittill("movedone");
+    cam_mover.angles = pathstart.angles;
+    var_fe16e33d66144fa0 = cam_mover interact_vehicle_movement(self, door, pathstart, pathend);
     if (isdefined(level.player.ground_ref_ent)) {
         level interact_vehicle_delete_ground_ref_ent();
     }
-    var_5938ea7d5977bd0f = undefined;
+    exit_struct = undefined;
     if (var_fe16e33d66144fa0 == pathstart) {
-        var_5938ea7d5977bd0f = door;
+        exit_struct = door;
     } else if (door.script_namenumber == "outside_lr" || door.script_namenumber == "outside_rr") {
-        var_5938ea7d5977bd0f = get_opposite_door(door.script_namenumber);
+        exit_struct = get_opposite_door(door.script_namenumber);
     }
-    if (!isdefined(var_5938ea7d5977bd0f)) {
-        var_5938ea7d5977bd0f = door;
+    if (!isdefined(exit_struct)) {
+        exit_struct = door;
     }
-    var_8540f0ddf16d59a2 moveto(var_5938ea7d5977bd0f.origin, 0.5, 0.1, 0.1);
-    var_8540f0ddf16d59a2 waittill("movedone");
+    cam_mover moveto(exit_struct.origin, 0.5, 0.1, 0.1);
+    cam_mover waittill("movedone");
     if (getdvar(var_20c83fef065d76f8) != "") {
         setsaveddvar(var_20c83fef065d76f8, var_cc57468a5ac4277c);
     }
     level.player val::reset_all("interact_vehicle_inside");
     level.player unlink();
-    var_8540f0ddf16d59a2 delete();
+    cam_mover delete();
     p_mover delete();
     level.interact_vehicle.g_inuse = 0;
     flag_clear("player_interacting_vehicle");
@@ -320,7 +320,7 @@ function interact_vehicle_inside(door) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x164c
 // Size: 0x150
@@ -364,7 +364,7 @@ function block_for_mantle(locator) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x17a4
 // Size: 0xe8
@@ -392,7 +392,7 @@ function wait_for_mantle_inside(locator) {
     return 0;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1894
 // Size: 0x136
@@ -415,7 +415,7 @@ function create_mantle_hint() {
     level.interact_vehicle_mantle_hint setshader("hud_icon_mantle", 24, 24);
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x19d2
 // Size: 0x12c
@@ -449,7 +449,7 @@ function block_for_push(var_9b255abfdc4df054, duration) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b06
 // Size: 0x118
@@ -477,7 +477,7 @@ function interact_entry_anim() {
     level.player enableweapons();
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c26
 // Size: 0x4e
@@ -487,7 +487,7 @@ function interact_vehicle_delete_ground_ref_ent() {
     ent rotateto((0, 0, 0), 0.3, 0.1, 0.1);
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c7c
 // Size: 0x36
@@ -498,7 +498,7 @@ function get_next_struct(struct) {
     return undefined;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cba
 // Size: 0x36
@@ -509,7 +509,7 @@ function get_prev_struct(struct) {
     return undefined;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cf8
 // Size: 0xcc
@@ -529,7 +529,7 @@ function get_opposite_door(var_2d90be230c1d4de0) {
     assertmsg("sent a bad namenumber!");
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dcc
 // Size: 0x4c3
@@ -626,14 +626,14 @@ function interact_vehicle_movement(struct, door, pathstart, pathend) {
             z += 3;
         }
         z = clamp(z, -16, 0);
-        var_7e3efd5a296cb7f3 = nextpos + (0, 0, z);
-        self.origin = var_7e3efd5a296cb7f3;
+        nextpos_z = nextpos + (0, 0, z);
+        self.origin = nextpos_z;
         wait 0.05;
     }
     return pathend;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2298
 // Size: 0x72
@@ -650,7 +650,7 @@ function get_end_door_state(door) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2312
 // Size: 0x7e
@@ -665,7 +665,7 @@ function interact_vehicle_duck_toggle() {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2398
 // Size: 0x2ce
@@ -711,19 +711,19 @@ function set_moverate_along_dir() {
     self.velocity *= var_84ec4b2873f0fac2 + self.velocity_bump;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x266e
 // Size: 0x61
 function get_scoot_velocity(x) {
     pi = 3.14159;
     temp = 2 * pow(x, 1.5) * pi + pi;
-    var_e6666f4d33922585 = temp * 180 / pi;
-    y = (cos(var_e6666f4d33922585) + 1) / 2;
+    x_degrees = temp * 180 / pi;
+    y = (cos(x_degrees) + 1) / 2;
     return y;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x26d8
 // Size: 0x31
@@ -736,7 +736,7 @@ function get_scoot_velocity_bump(x) {
     return bump;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2712
 // Size: 0x22
@@ -744,7 +744,7 @@ function qlerp(from, to, frac) {
     return from + (to - from) * frac;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x273d
 // Size: 0x44f
@@ -817,7 +817,7 @@ function set_viewangles() {
     groundent.angles = anglelerpquatfrac(groundent.angles, desiredangles, 0.5);
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b94
 // Size: 0x5f
@@ -828,7 +828,7 @@ function is_pos_in_front(relativepos, var_51141f4bd8e66534, dir) {
     return var_3c6560027930bc25 > 0;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bfc
 // Size: 0x33
@@ -837,7 +837,7 @@ function interact_give_control_back(time, ent) {
     level.player playerlinktodelta(ent, "tag_player", 0, 110, 110, 20, 30);
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c37
 // Size: 0x2b
@@ -847,7 +847,7 @@ function hide_interact_vehicle(noteworthy) {
     return vehicle;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c6b
 // Size: 0x2b
@@ -857,7 +857,7 @@ function show_interact_vehicle(noteworthy) {
     return vehicle;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c9f
 // Size: 0x96
@@ -870,7 +870,7 @@ function get_interact_vehicle(noteworthy) {
     assertmsg("No vehicle with noteworthy, " + noteworthy + "\nWrong noteworthy or you need to wait a frame because of scriptables.");
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d3d
 // Size: 0x95
@@ -884,7 +884,7 @@ function get_interact_vehicle_array(noteworthy) {
     return vehicles;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ddb
 // Size: 0x102
@@ -912,7 +912,7 @@ function interact_vehicle_doors_state(doors, state) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ee5
 // Size: 0xd2
@@ -934,13 +934,13 @@ function interact_vehicle_doors_inactive(doors) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fbf
 // Size: 0x14e
-function interact_interior_door_hack(var_c7d1b7aa659d4fe3) {
+function interact_interior_door_hack(which_door) {
     hint_ent = undefined;
-    switch (var_c7d1b7aa659d4fe3) {
+    switch (which_door) {
     case #"hash_fa27ccf6bd62c1db":
         hint_ent = spawn_tag_origin(self.vehicle gettagorigin(self.hint_bones["inside_lr"]));
         hint_ent create_cursor_hint("tag_origin", undefined, undefined, 270, 250, 55, 0);
@@ -962,7 +962,7 @@ function interact_interior_door_hack(var_c7d1b7aa659d4fe3) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3115
 // Size: 0x59
@@ -973,7 +973,7 @@ function interact_getanim(anime) {
     return level.scr_anim["interact_vehicle"][anime];
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3176
 // Size: 0x256
@@ -984,44 +984,44 @@ function interact_vehicle_animate_door(door) {
         noself_delaycall(getanimlength(door_anim), &createnavobstaclebyent, self.door_col[door], "axis", "allies");
     }
     self.vehicle setanim(door_anim, 1, 0.2, 2);
-    var_c101ec8e66101871 = undefined;
-    var_694636de2a4fba55 = undefined;
+    node_back = undefined;
+    node_front = undefined;
     door_check = undefined;
     switch (door) {
     case #"hash_fa27c0f6bd62aef7":
         door_check = "lr";
-        var_c101ec8e66101871 = "Conceal Crouch";
-        var_694636de2a4fba55 = "Conceal Crouch";
+        node_back = "Conceal Crouch";
+        node_front = "Conceal Crouch";
         break;
     case #"hash_fa27ccf6bd62c1db":
         door_check = "lf";
-        var_c101ec8e66101871 = "Conceal Crouch";
-        var_694636de2a4fba55 = "Conceal Crouch";
+        node_back = "Conceal Crouch";
+        node_front = "Conceal Crouch";
         break;
     case #"hash_fa53d0f6bd855a69":
         door_check = "rr";
-        var_c101ec8e66101871 = "Conceal Crouch";
-        var_694636de2a4fba55 = "Conceal Crouch";
+        node_back = "Conceal Crouch";
+        node_front = "Conceal Crouch";
         break;
     case #"hash_fa53c4f6bd854785":
         door_check = "rf";
-        var_c101ec8e66101871 = "Conceal Crouch";
-        var_694636de2a4fba55 = "Conceal Crouch";
+        node_back = "Conceal Crouch";
+        node_front = "Conceal Crouch";
         break;
     }
     if (is_van() && (door == "rf" || door == "lr" || door == "rr")) {
         return;
     }
-    if (isdefined(var_c101ec8e66101871)) {
-        self.cover_nodes[door] = interact_vehicle_spawn_cover_node(self, door, var_c101ec8e66101871, "door_back");
+    if (isdefined(node_back)) {
+        self.cover_nodes[door] = interact_vehicle_spawn_cover_node(self, door, node_back, "door_back");
         if (door == "lr" || door == "rr") {
             if (!istrue(self.door_open[door_check])) {
-                self.cover_nodes[door + "_front"] = interact_vehicle_spawn_cover_node(self, door, var_c101ec8e66101871, "door_front");
+                self.cover_nodes[door + "_front"] = interact_vehicle_spawn_cover_node(self, door, node_back, "door_front");
             }
             return;
         }
         if (door == "lf" || door == "rf") {
-            self.cover_nodes[door + "_front"] = interact_vehicle_spawn_cover_node(self, door, var_c101ec8e66101871, "door_front");
+            self.cover_nodes[door + "_front"] = interact_vehicle_spawn_cover_node(self, door, node_back, "door_front");
             if (istrue(self.door_open[door_check]) && isdefined(self.cover_nodes[door_check + "_front"])) {
                 despawncovernode(self.cover_nodes[door_check + "_front"]);
             }
@@ -1029,21 +1029,21 @@ function interact_vehicle_animate_door(door) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x33d4
 // Size: 0x1a6
-function interact_vehicle_spawn_cover_node(parent, door, var_2a046a0527c89c61, type) {
+function interact_vehicle_spawn_cover_node(parent, door, cover_type, type) {
     cover_node = undefined;
     switch (type) {
     case #"hash_1a9598765e0d7d01":
-        cover_node = spawncovernode(parent.doors[door].origin + anglestoup(parent.doors[door].angles) * -50, parent.doors[door].angles, var_2a046a0527c89c61);
+        cover_node = spawncovernode(parent.doors[door].origin + anglestoup(parent.doors[door].angles) * -50, parent.doors[door].angles, cover_type);
         break;
     case #"hash_b27cf591987f665":
-        cover_node = spawncovernode(parent.doors[door].origin + anglestoup(parent.doors[door].angles) * -50 + anglestoforward(parent.doors[door].angles) * 48, parent.doors[door].angles + (0, 180, 0), var_2a046a0527c89c61);
+        cover_node = spawncovernode(parent.doors[door].origin + anglestoup(parent.doors[door].angles) * -50 + anglestoforward(parent.doors[door].angles) * 48, parent.doors[door].angles + (0, 180, 0), cover_type);
         break;
     default:
-        cover_node = spawncovernode(door.origin + anglestoup(door.angles) * -50, door.angles, var_2a046a0527c89c61);
+        cover_node = spawncovernode(door.origin + anglestoup(door.angles) * -50, door.angles, cover_type);
         break;
     }
     if (isdefined(parent.script_color_allies) && isdefined(cover_node)) {
@@ -1053,7 +1053,7 @@ function interact_vehicle_spawn_cover_node(parent, door, var_2a046a0527c89c61, t
     return cover_node;
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3583
 // Size: 0x59
@@ -1066,13 +1066,13 @@ function update_color_nodes(node) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x35e4
 // Size: 0x109
-function add_node_to_global_arrays(var_15b3a3397a62e5f3, team) {
+function add_node_to_global_arrays(colorcode_string, team) {
     self.color_user = undefined;
-    colorcodes = strtok(var_15b3a3397a62e5f3, " ");
+    colorcodes = strtok(colorcode_string, " ");
     colorcodes = scripts\sp\colors::array_remove_dupes(colorcodes);
     foreach (colorcode in colorcodes) {
         if (isdefined(level.arrays_of_colorcoded_nodes[team]) && isdefined(level.arrays_of_colorcoded_nodes[team][colorcode])) {
@@ -1087,7 +1087,7 @@ function add_node_to_global_arrays(var_15b3a3397a62e5f3, team) {
     }
 }
 
-// Namespace namespace_4ce9c0ed0d628c6a / scripts\sp\vehicle_interact
+// Namespace vehicle_interact / scripts\sp\vehicle_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x36f5
 // Size: 0x26

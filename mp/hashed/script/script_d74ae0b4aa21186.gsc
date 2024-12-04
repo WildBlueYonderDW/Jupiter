@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
 #using script_4a941421347ff7df;
+#using scripts\engine\utility;
 
 #namespace mind;
 

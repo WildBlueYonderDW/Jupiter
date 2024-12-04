@@ -1,11 +1,11 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\gesture\script_funcs.gsc;
-#using scripts\anim\utility_common.gsc;
 #using script_7e4d332e911e1b90;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\notetrack.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\gesture\script_funcs;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_6bc879d2947c65d2;
 
@@ -13,7 +13,7 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x659
 // Size: 0x4d0
-function ai_gesture_stop(var_480e0d93b559931c) {
+function ai_gesture_stop(blendout_time) {
     self notify("new_gesture_stop_begin");
     self notify("gesture_stop");
     self endon("death");
@@ -26,8 +26,8 @@ function ai_gesture_stop(var_480e0d93b559931c) {
     if (isdefined(self.anim_getrootfunc) && !isdefined(self.old_root)) {
         self.anim_getrootfunc = undefined;
     }
-    if (isdefined(var_480e0d93b559931c)) {
-        blend_time = var_480e0d93b559931c;
+    if (isdefined(blendout_time)) {
+        blend_time = blendout_time;
     } else {
         blend_time = 0.25;
     }
@@ -45,19 +45,19 @@ function ai_gesture_stop(var_480e0d93b559931c) {
     var_7261fa6f5015c297 = self getanimweight(generic_human%lookat_head_base_partial);
     var_bff9b1c691b8b590 = self getanimweight(generic_human%head_gesture_look_partial);
     var_f7a05d8d154d1fca = self getanimweight(generic_human%lookat_head_adds);
-    while (gettime() / 1000 - start_time < var_480e0d93b559931c) {
-        var_79dec2965739392b = (gettime() / 1000 - start_time) / var_480e0d93b559931c;
-        var_79dec2965739392b = smoothstep(0, 1, var_79dec2965739392b);
-        var_8eda33d84e23a48e = lerp_float(var_cc7d64b564852548, 1, var_79dec2965739392b);
-        var_75a6f0398c7ce571 = lerp_float(var_920f5e7265d0d6d3, 0, var_79dec2965739392b);
-        var_a36adbca83488924 = lerp_float(var_ea4fd9d5698bb0de, 0, var_79dec2965739392b);
-        var_3b07618ff6abc8c9 = lerp_float(var_8a36695ea482743, 0, var_79dec2965739392b);
-        var_ac8aa45eb885e4f2 = lerp_float(var_d94ccc571e35ad74, 0, var_79dec2965739392b);
-        var_f68167872853c4c7 = lerp_float(var_f67c766809ec9eb1, 0, var_79dec2965739392b);
-        var_6f9061194bec6ea3 = lerp_float(var_ff2b0adc7f8ab11, 0, var_79dec2965739392b);
-        var_accf346b44a25cfd = lerp_float(var_7261fa6f5015c297, 0, var_79dec2965739392b);
-        var_cdaf7985c83b0386 = lerp_float(var_bff9b1c691b8b590, 0, var_79dec2965739392b);
-        var_5948b4c152818c80 = lerp_float(var_f7a05d8d154d1fca, 0, var_79dec2965739392b);
+    while (gettime() / 1000 - start_time < blendout_time) {
+        norm_val = (gettime() / 1000 - start_time) / blendout_time;
+        norm_val = smoothstep(0, 1, norm_val);
+        var_8eda33d84e23a48e = lerp_float(var_cc7d64b564852548, 1, norm_val);
+        var_75a6f0398c7ce571 = lerp_float(var_920f5e7265d0d6d3, 0, norm_val);
+        var_a36adbca83488924 = lerp_float(var_ea4fd9d5698bb0de, 0, norm_val);
+        var_3b07618ff6abc8c9 = lerp_float(var_8a36695ea482743, 0, norm_val);
+        var_ac8aa45eb885e4f2 = lerp_float(var_d94ccc571e35ad74, 0, norm_val);
+        var_f68167872853c4c7 = lerp_float(var_f67c766809ec9eb1, 0, norm_val);
+        var_6f9061194bec6ea3 = lerp_float(var_ff2b0adc7f8ab11, 0, norm_val);
+        var_accf346b44a25cfd = lerp_float(var_7261fa6f5015c297, 0, norm_val);
+        var_cdaf7985c83b0386 = lerp_float(var_bff9b1c691b8b590, 0, norm_val);
+        var_5948b4c152818c80 = lerp_float(var_f7a05d8d154d1fca, 0, norm_val);
         self setanimlimited(self.head_center_anim, var_8eda33d84e23a48e, 0.05);
         self setanimlimited(self.head_right_anim, var_75a6f0398c7ce571, 0.05);
         self setanimlimited(self.head_left_anim, var_a36adbca83488924, 0.05);
@@ -89,12 +89,12 @@ function ai_gesture_stop(var_480e0d93b559931c) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb31
 // Size: 0xbd
-function ai_gesture_eyes_stop(var_480e0d93b559931c) {
+function ai_gesture_eyes_stop(blendout_time) {
     self endon("death");
     self endon("entitydeleted");
     self notify("eye_gesture_stop");
-    if (isdefined(var_480e0d93b559931c)) {
-        blend_time = var_480e0d93b559931c;
+    if (isdefined(blendout_time)) {
+        blend_time = blendout_time;
     } else {
         blend_time = 0.25;
     }
@@ -121,7 +121,7 @@ function ai_gesture_lookat_weight_down(blend_time) {
     if (isdefined(self.blend_down_in_progress)) {
         return;
     }
-    var_480e0d93b559931c = blend_time;
+    blendout_time = blend_time;
     self.blend_down_in_progress = 1;
     self.blend_up_in_progress = undefined;
     start_time = gettime() / 1000;
@@ -130,14 +130,14 @@ function ai_gesture_lookat_weight_down(blend_time) {
     var_7261fa6f5015c297 = self getanimweight(generic_human%lookat_head_base_partial);
     var_bff9b1c691b8b590 = self getanimweight(generic_human%head_gesture_look_partial);
     var_f7a05d8d154d1fca = self getanimweight(generic_human%lookat_head_adds);
-    while (gettime() / 1000 - start_time < var_480e0d93b559931c) {
-        var_79dec2965739392b = (gettime() / 1000 - start_time) / var_480e0d93b559931c;
-        var_79dec2965739392b = smoothstep(0, 1, var_79dec2965739392b);
-        var_f68167872853c4c7 = lerp_float(var_f67c766809ec9eb1, 0, var_79dec2965739392b);
-        var_6f9061194bec6ea3 = lerp_float(var_ff2b0adc7f8ab11, 0, var_79dec2965739392b);
-        var_accf346b44a25cfd = lerp_float(var_7261fa6f5015c297, 0, var_79dec2965739392b);
-        var_cdaf7985c83b0386 = lerp_float(var_bff9b1c691b8b590, 0, var_79dec2965739392b);
-        var_5948b4c152818c80 = lerp_float(var_f7a05d8d154d1fca, 0, var_79dec2965739392b);
+    while (gettime() / 1000 - start_time < blendout_time) {
+        norm_val = (gettime() / 1000 - start_time) / blendout_time;
+        norm_val = smoothstep(0, 1, norm_val);
+        var_f68167872853c4c7 = lerp_float(var_f67c766809ec9eb1, 0, norm_val);
+        var_6f9061194bec6ea3 = lerp_float(var_ff2b0adc7f8ab11, 0, norm_val);
+        var_accf346b44a25cfd = lerp_float(var_7261fa6f5015c297, 0, norm_val);
+        var_cdaf7985c83b0386 = lerp_float(var_bff9b1c691b8b590, 0, norm_val);
+        var_5948b4c152818c80 = lerp_float(var_f7a05d8d154d1fca, 0, norm_val);
         self setanimlimited(generic_human%lookat_left_right, var_f68167872853c4c7, 0.05);
         self setanimlimited(generic_human%lookat_up_down, var_6f9061194bec6ea3, 0.05);
         self setanimlimited(generic_human%lookat_head_base_partial, var_accf346b44a25cfd, 0.05);
@@ -166,7 +166,7 @@ function ai_gesture_lookat_weight_up(blend_time) {
     if (isdefined(self.blend_up_in_progress)) {
         return;
     }
-    var_480e0d93b559931c = blend_time;
+    blendout_time = blend_time;
     self.blend_up_in_progress = 1;
     self.blend_down_in_progress = undefined;
     start_time = gettime() / 1000;
@@ -175,14 +175,14 @@ function ai_gesture_lookat_weight_up(blend_time) {
     var_7261fa6f5015c297 = self getanimweight(generic_human%lookat_head_base_partial);
     var_bff9b1c691b8b590 = self getanimweight(generic_human%head_gesture_look_partial);
     var_f7a05d8d154d1fca = self getanimweight(generic_human%lookat_head_adds);
-    while (gettime() / 1000 - start_time < var_480e0d93b559931c) {
-        var_79dec2965739392b = (gettime() / 1000 - start_time) / var_480e0d93b559931c;
-        var_79dec2965739392b = smoothstep(0, 1, var_79dec2965739392b);
-        var_f68167872853c4c7 = lerp_float(var_f67c766809ec9eb1, 1, var_79dec2965739392b);
-        var_6f9061194bec6ea3 = lerp_float(var_ff2b0adc7f8ab11, 1, var_79dec2965739392b);
-        var_accf346b44a25cfd = lerp_float(var_7261fa6f5015c297, 10, var_79dec2965739392b);
-        var_cdaf7985c83b0386 = lerp_float(var_bff9b1c691b8b590, 10, var_79dec2965739392b);
-        var_5948b4c152818c80 = lerp_float(var_f7a05d8d154d1fca, 0, var_79dec2965739392b);
+    while (gettime() / 1000 - start_time < blendout_time) {
+        norm_val = (gettime() / 1000 - start_time) / blendout_time;
+        norm_val = smoothstep(0, 1, norm_val);
+        var_f68167872853c4c7 = lerp_float(var_f67c766809ec9eb1, 1, norm_val);
+        var_6f9061194bec6ea3 = lerp_float(var_ff2b0adc7f8ab11, 1, norm_val);
+        var_accf346b44a25cfd = lerp_float(var_7261fa6f5015c297, 10, norm_val);
+        var_cdaf7985c83b0386 = lerp_float(var_bff9b1c691b8b590, 10, norm_val);
+        var_5948b4c152818c80 = lerp_float(var_f7a05d8d154d1fca, 0, norm_val);
         self setanimlimited(generic_human%lookat_left_right, var_f68167872853c4c7, 0.05);
         self setanimlimited(generic_human%lookat_up_down, var_6f9061194bec6ea3, 0.05);
         self setanimlimited(generic_human%lookat_head_base_partial, var_accf346b44a25cfd, 0.05);
@@ -202,7 +202,7 @@ function ai_gesture_lookat_weight_up(blend_time) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1119
 // Size: 0x28d
-function ai_gesture_torso_stop(var_480e0d93b559931c) {
+function ai_gesture_torso_stop(blendout_time) {
     self endon("death");
     self endon("start_gesture_torso_lookat");
     self endon("entitydeleted");
@@ -210,8 +210,8 @@ function ai_gesture_torso_stop(var_480e0d93b559931c) {
     if (!isdefined(self.is_torso_tracking)) {
         return;
     }
-    if (isdefined(var_480e0d93b559931c)) {
-        blend_time = var_480e0d93b559931c;
+    if (isdefined(blendout_time)) {
+        blend_time = blendout_time;
     } else {
         blend_time = 0.25;
     }
@@ -221,14 +221,14 @@ function ai_gesture_torso_stop(var_480e0d93b559931c) {
     var_ea4fd9d5698bb0de = self getanimweight(self.torso_left_anim);
     var_8a36695ea482743 = self getanimweight(self.torso_rightback_anim);
     var_d94ccc571e35ad74 = self getanimweight(self.torso_leftback_anim);
-    while (gettime() / 1000 - start_time < var_480e0d93b559931c) {
-        var_79dec2965739392b = (gettime() / 1000 - start_time) / var_480e0d93b559931c;
-        var_79dec2965739392b = smoothstep(0, 1, var_79dec2965739392b);
-        var_8eda33d84e23a48e = lerp_float(var_cc7d64b564852548, 1, var_79dec2965739392b);
-        var_75a6f0398c7ce571 = lerp_float(var_920f5e7265d0d6d3, 0, var_79dec2965739392b);
-        var_a36adbca83488924 = lerp_float(var_ea4fd9d5698bb0de, 0, var_79dec2965739392b);
-        var_3b07618ff6abc8c9 = lerp_float(var_8a36695ea482743, 0, var_79dec2965739392b);
-        var_ac8aa45eb885e4f2 = lerp_float(var_d94ccc571e35ad74, 0, var_79dec2965739392b);
+    while (gettime() / 1000 - start_time < blendout_time) {
+        norm_val = (gettime() / 1000 - start_time) / blendout_time;
+        norm_val = smoothstep(0, 1, norm_val);
+        var_8eda33d84e23a48e = lerp_float(var_cc7d64b564852548, 1, norm_val);
+        var_75a6f0398c7ce571 = lerp_float(var_920f5e7265d0d6d3, 0, norm_val);
+        var_a36adbca83488924 = lerp_float(var_ea4fd9d5698bb0de, 0, norm_val);
+        var_3b07618ff6abc8c9 = lerp_float(var_8a36695ea482743, 0, norm_val);
+        var_ac8aa45eb885e4f2 = lerp_float(var_d94ccc571e35ad74, 0, norm_val);
         self setanimlimited(self.torso_center_anim, var_8eda33d84e23a48e, 0.05);
         self setanimlimited(self.torso_right_anim, var_75a6f0398c7ce571, 0.05);
         self setanimlimited(self.torso_left_anim, var_a36adbca83488924, 0.05);
@@ -241,7 +241,7 @@ function ai_gesture_torso_stop(var_480e0d93b559931c) {
     self setanimlimited(self.torso_left_anim, 0, 0.05);
     self setanimlimited(self.torso_rightback_anim, 0, 0.05);
     self setanimlimited(self.torso_leftback_anim, 0, 0.05);
-    self clearanim(generic_human%torso_tracking_anims, var_480e0d93b559931c);
+    self clearanim(generic_human%torso_tracking_anims, blendout_time);
     self.is_torso_tracking = undefined;
 }
 
@@ -249,7 +249,7 @@ function ai_gesture_torso_stop(var_480e0d93b559931c) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x13ae
 // Size: 0x1c5
-function ai_gesture_lookat(var_968583169a58b079, var_ebc28d027b66fd81, blend_in_time) {
+function ai_gesture_lookat(lookat_target, var_ebc28d027b66fd81, blend_in_time) {
     self endon("entitydeleted");
     if (!isdefined(self)) {
         return;
@@ -292,7 +292,7 @@ function ai_gesture_lookat(var_968583169a58b079, var_ebc28d027b66fd81, blend_in_
     self.head_left_anim = generic_human%gesture_head_left;
     self.head_rightback_anim = generic_human%gesture_head_rightback;
     self.head_leftback_anim = generic_human%gesture_head_leftback;
-    self.gesture_lookat = var_968583169a58b079;
+    self.gesture_lookat = lookat_target;
     thread ai_gesture_head_leftright();
     thread ai_gesture_head_updown();
     self.is_head_tracking = 1;
@@ -302,7 +302,7 @@ function ai_gesture_lookat(var_968583169a58b079, var_ebc28d027b66fd81, blend_in_
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x157b
 // Size: 0x12d
-function ai_gesture_eyes_lookat(var_968583169a58b079, var_ebc28d027b66fd81, blend_in_time) {
+function ai_gesture_eyes_lookat(lookat_target, var_ebc28d027b66fd81, blend_in_time) {
     self endon("death");
     self endon("entitydeleted");
     if (isdefined(self.is_eye_tracking)) {
@@ -330,7 +330,7 @@ function ai_gesture_eyes_lookat(var_968583169a58b079, var_ebc28d027b66fd81, blen
     }
     self.eyes_leftright_anim = generic_human%facial_gesture_look_rightleft;
     self.eyes_updown_anim = generic_human%facial_gesture_look_updwn;
-    self.eyes_lookat = var_968583169a58b079;
+    self.eyes_lookat = lookat_target;
     thread ai_gesture_eyes_leftright();
     thread ai_gesture_eyes_updown();
     self.is_eye_tracking = 1;
@@ -340,7 +340,7 @@ function ai_gesture_eyes_lookat(var_968583169a58b079, var_ebc28d027b66fd81, blen
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x16b0
 // Size: 0x122
-function ai_gesture_lookat_torso(var_968583169a58b079, blend_in_time) {
+function ai_gesture_lookat_torso(lookat_target, blend_in_time) {
     self endon("death");
     self endon("entitydeleted");
     self notify("start_gesture_torso_lookat");
@@ -368,7 +368,7 @@ function ai_gesture_lookat_torso(var_968583169a58b079, blend_in_time) {
     self.torso_leftback_anim = generic_human%hm_grnd_grn_casual_stand_leftback_idle;
     self.torso_right_anim = generic_human%hm_grnd_grn_casual_stand_right_idle;
     self.torso_rightback_anim = generic_human%hm_grnd_grn_casual_stand_rightback_idle;
-    self.gesture_lookat = var_968583169a58b079;
+    self.gesture_lookat = lookat_target;
     thread ai_gesture_torso_leftright();
     self.is_torso_tracking = 1;
 }
@@ -401,10 +401,10 @@ function reset_root() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1826
 // Size: 0x68
-function ai_gesture_update_lookat(var_3e53e7e020018fc0, var_809d5bbb11b6031c) {
+function ai_gesture_update_lookat(new_lookat, var_809d5bbb11b6031c) {
     self endon("death");
     self endon("entitydeleted");
-    self.gesture_lookat = var_3e53e7e020018fc0;
+    self.gesture_lookat = new_lookat;
     self.is_head_tracking = 1;
     if (isdefined(var_809d5bbb11b6031c)) {
         var_37015ada8160570c = self.gesture_catchup_speed;
@@ -418,7 +418,7 @@ function ai_gesture_update_lookat(var_3e53e7e020018fc0, var_809d5bbb11b6031c) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1896
 // Size: 0x130
-function ai_gesture_lookat_natural(var_968583169a58b079, var_ebc28d027b66fd81, blend_in_time, var_1134633b00730d29) {
+function ai_gesture_lookat_natural(lookat_target, var_ebc28d027b66fd81, blend_in_time, check_range) {
     self endon("gesture_natural_stop");
     self endon("gesture_stop");
     self endon("death");
@@ -426,14 +426,14 @@ function ai_gesture_lookat_natural(var_968583169a58b079, var_ebc28d027b66fd81, b
     while (!ai_can_lookat()) {
         wait 0.05;
     }
-    while (distance2d(self.origin, var_968583169a58b079.origin) > var_1134633b00730d29) {
+    while (distance2d(self.origin, lookat_target.origin) > check_range) {
         wait 0.05;
     }
-    thread ai_gesture_lookat(var_968583169a58b079, var_ebc28d027b66fd81, blend_in_time);
+    thread ai_gesture_lookat(lookat_target, var_ebc28d027b66fd81, blend_in_time);
     wait blend_in_time;
     while (true) {
         wait randomfloatrange(4, 5);
-        if (distance2d(self.origin, var_968583169a58b079.origin) <= var_1134633b00730d29) {
+        if (distance2d(self.origin, lookat_target.origin) <= check_range) {
             thread ai_gesture_lookat_weight_down(1);
             thread ai_gesture_eyes_stop();
         }
@@ -441,9 +441,9 @@ function ai_gesture_lookat_natural(var_968583169a58b079, var_ebc28d027b66fd81, b
         while (!ai_can_lookat()) {
             wait 0.05;
         }
-        if (distance2d(self.origin, var_968583169a58b079.origin) <= var_1134633b00730d29) {
+        if (distance2d(self.origin, lookat_target.origin) <= check_range) {
             thread ai_gesture_lookat_weight_up(0.5);
-            thread ai_gesture_eyes_lookat(var_968583169a58b079, 1, 0.2);
+            thread ai_gesture_eyes_lookat(lookat_target, 1, 0.2);
         }
     }
 }
@@ -452,10 +452,10 @@ function ai_gesture_lookat_natural(var_968583169a58b079, var_ebc28d027b66fd81, b
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x19ce
 // Size: 0x68
-function ai_gesture_update_eyes_lookat(var_3e53e7e020018fc0, var_809d5bbb11b6031c) {
+function ai_gesture_update_eyes_lookat(new_lookat, var_809d5bbb11b6031c) {
     self endon("death");
     self endon("entitydeleted");
-    self.eyes_lookat = var_3e53e7e020018fc0;
+    self.eyes_lookat = new_lookat;
     self.is_eye_tracking = 1;
     if (isdefined(var_809d5bbb11b6031c)) {
         var_37015ada8160570c = self.eye_catchup_speed;
@@ -473,22 +473,22 @@ function ai_gesture_head_leftright() {
     self endon("gesture_stop");
     self endon("death");
     self endon("entitydeleted");
-    var_480e0d93b559931c = self.blend_in_time;
+    blendout_time = self.blend_in_time;
     start_time = gettime() / 1000;
     var_837c12743ab916fe = undefined;
-    var_4bd24adaf2ac4e79 = generic_human%lookat_left_right;
+    anim_parent = generic_human%lookat_left_right;
     fwd_anim = self.head_center_anim;
     right_anim = self.head_right_anim;
     left_anim = self.head_left_anim;
-    var_be663f999979eacd = self.head_rightback_anim;
-    var_3db053c7d0933ef6 = self.head_leftback_anim;
+    back_right_anim = self.head_rightback_anim;
+    back_left_anim = self.head_leftback_anim;
     thread _ai_head_weight_blend_in();
     var_837c12743ab916fe = vectortoangles(level.player.origin - self.origin);
     self setanimlimited(fwd_anim, 1, self.blend_in_time);
     self setanimlimited(right_anim, 0.005, self.blend_in_time);
     self setanimlimited(left_anim, 0.005, self.blend_in_time);
-    self setanimlimited(var_be663f999979eacd, 0.005, self.blend_in_time);
-    self setanimlimited(var_3db053c7d0933ef6, 0.005, self.blend_in_time);
+    self setanimlimited(back_right_anim, 0.005, self.blend_in_time);
+    self setanimlimited(back_left_anim, 0.005, self.blend_in_time);
     var_9e41f6b2a5fdfa6c = 0;
     var_3a58e25d07fa8963 = 0;
     while (true) {
@@ -513,29 +513,29 @@ function ai_gesture_head_leftright() {
         vec_to_player = vectornormalize(lookat - var_7ac7a365a6aee172);
         forward_vec = anglestoright(var_f8018ede9bc535ee);
         right_vec = anglestoup(var_f8018ede9bc535ee);
-        var_8fc912a946a93a31 = anglestoup(var_f8018ede9bc535ee) * -1;
-        var_e0e29f268e2b6297 = anglestoright(var_f8018ede9bc535ee) * -1;
+        left_vec = anglestoup(var_f8018ede9bc535ee) * -1;
+        back_vec = anglestoright(var_f8018ede9bc535ee) * -1;
         up_vec = anglestoforward(var_f8018ede9bc535ee);
-        var_e32c0e4a71d1793e = clamp(vectordot(vec_to_player, forward_vec), 0.005, 1);
+        dot_fwd = clamp(vectordot(vec_to_player, forward_vec), 0.005, 1);
         dot_right = clamp(vectordot(vec_to_player, right_vec), 0.005, 1);
-        var_ec8d74cda15d5374 = clamp(vectordot(vec_to_player, var_8fc912a946a93a31), 0.005, 1);
-        var_b0b9a45f796b1296 = clamp(vectordot(vec_to_player, var_e0e29f268e2b6297), 0.005, 1);
-        var_d7199cf973e1af07 = 1;
+        dot_left = clamp(vectordot(vec_to_player, left_vec), 0.005, 1);
+        dot_back = clamp(vectordot(vec_to_player, back_vec), 0.005, 1);
+        back_test = 1;
         if (anglebetweenvectorssigned(forward_vec, vec_to_player, up_vec) > 0) {
-            var_d7199cf973e1af07 = 0;
+            back_test = 0;
         }
         self setanimlimited(right_anim, dot_right, self.gesture_catchup_speed);
-        self setanimlimited(left_anim, var_ec8d74cda15d5374, self.gesture_catchup_speed);
-        self setanimlimited(fwd_anim, var_e32c0e4a71d1793e + 0.005, self.gesture_catchup_speed);
-        if (var_d7199cf973e1af07) {
-            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, var_b0b9a45f796b1296, 0.1);
+        self setanimlimited(left_anim, dot_left, self.gesture_catchup_speed);
+        self setanimlimited(fwd_anim, dot_fwd + 0.005, self.gesture_catchup_speed);
+        if (back_test) {
+            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, dot_back, 0.1);
             var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, 0.005, 0.1);
         } else {
             var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, 0.005, 0.1);
-            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, var_b0b9a45f796b1296, 0.1);
+            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, dot_back, 0.1);
         }
-        self setanimlimited(var_be663f999979eacd, var_9e41f6b2a5fdfa6c, self.gesture_catchup_speed);
-        self setanimlimited(var_3db053c7d0933ef6, var_3a58e25d07fa8963, self.gesture_catchup_speed);
+        self setanimlimited(back_right_anim, var_9e41f6b2a5fdfa6c, self.gesture_catchup_speed);
+        self setanimlimited(back_left_anim, var_3a58e25d07fa8963, self.gesture_catchup_speed);
         waitframe();
     }
 }
@@ -551,15 +551,15 @@ function _ai_head_weight_blend_in() {
     start_time = gettime() / 1000;
     self.blend_up_in_progress = 1;
     while (gettime() / 1000 - start_time < self.blend_in_time * 2) {
-        var_79dec2965739392b = (gettime() / 1000 - start_time) / self.blend_in_time * 2;
-        var_2d2b457aa37db993 = smoothstep(0, 1, var_79dec2965739392b);
-        var_1253d54849fc8641 = smoothstep(0, 10, var_79dec2965739392b);
+        norm_val = (gettime() / 1000 - start_time) / self.blend_in_time * 2;
+        var_2d2b457aa37db993 = smoothstep(0, 1, norm_val);
+        var_1253d54849fc8641 = smoothstep(0, 10, norm_val);
         weight = lerp_float(0, 1, var_2d2b457aa37db993);
-        var_9145e17c603344a9 = lerp_float(0, 10, var_2d2b457aa37db993);
+        part_weight = lerp_float(0, 10, var_2d2b457aa37db993);
         self setanimlimited(generic_human%lookat_left_right, weight, 0.2);
         self setanimlimited(generic_human%lookat_up_down, weight, 0.2);
-        self setanimlimited(generic_human%lookat_head_base_partial, var_9145e17c603344a9, 0.2);
-        self setanimlimited(generic_human%head_gesture_look_partial, var_9145e17c603344a9, 0.2);
+        self setanimlimited(generic_human%lookat_head_base_partial, part_weight, 0.2);
+        self setanimlimited(generic_human%head_gesture_look_partial, part_weight, 0.2);
         wait 0.05;
     }
     self setanimlimited(generic_human%lookat_left_right, 1, 0.2);
@@ -601,13 +601,13 @@ function ai_gesture_head_updown() {
         }
         var_f8018ede9bc535ee = self gettagangles("J_Spine4") + (0, 0, 0);
         var_7ac7a365a6aee172 = self gettagorigin("J_Spine4");
-        var_e5d33df33698a4f5 = undefined;
+        guy_pos = undefined;
         if (isai(self)) {
-            var_e5d33df33698a4f5 = self geteye();
+            guy_pos = self geteye();
         } else {
-            var_e5d33df33698a4f5 = self gettagorigin("J_Head");
+            guy_pos = self gettagorigin("J_Head");
         }
-        vec_to_player = vectornormalize(lookat - var_e5d33df33698a4f5);
+        vec_to_player = vectornormalize(lookat - guy_pos);
         var_295ec4aa62f17342 = anglestoforward(var_f8018ede9bc535ee);
         var_bdbf163e071652f8 = vectordot(var_295ec4aa62f17342, vec_to_player);
         var_e7e7df501885a8b7 = float_remap(var_bdbf163e071652f8, 1, -1, 0, 1);
@@ -660,8 +660,8 @@ function ai_gesture_eyes_leftright() {
         var_818e7dcbfe8c45c9 = scripts\engine\utility::flatten_vector(var_73ffcab9352f4558);
         var_f750bc72c7dca1a0 = vectordot(var_818e7dcbfe8c45c9, var_8a2a8dfdef9c641d);
         var_e7e7df501885a8b7 = float_remap(var_f750bc72c7dca1a0, 1, -1, 0, 1);
-        var_a5148760d51eb926 = clamp(var_e7e7df501885a8b7, 0, 1);
-        self setanimtime(self.eyes_leftright_anim, var_a5148760d51eb926);
+        follow_percent = clamp(var_e7e7df501885a8b7, 0, 1);
+        self setanimtime(self.eyes_leftright_anim, follow_percent);
         waitframe();
     }
 }
@@ -699,8 +699,8 @@ function ai_gesture_eyes_updown() {
         vec_to_player = vectornormalize(lookat - var_e630138e877b75b0);
         dot_vec = vectordot(var_96685d578c819929, vec_to_player);
         var_e7e7df501885a8b7 = float_remap(dot_vec, 1, -1, 0.3, 0.7);
-        var_a5148760d51eb926 = clamp(var_e7e7df501885a8b7, 0, 1);
-        var_8bc1a6a78e77c5d1 += (var_a5148760d51eb926 - var_8bc1a6a78e77c5d1) * self.eye_catchup_speed * 0.3;
+        follow_percent = clamp(var_e7e7df501885a8b7, 0, 1);
+        var_8bc1a6a78e77c5d1 += (follow_percent - var_8bc1a6a78e77c5d1) * self.eye_catchup_speed * 0.3;
         var_8bc1a6a78e77c5d1 = clamp(var_8bc1a6a78e77c5d1, 0.1, 0.9);
         set_time_via_rate(self.eyes_updown_anim, var_8bc1a6a78e77c5d1);
         waitframe();
@@ -716,19 +716,19 @@ function ai_gesture_torso_leftright() {
     self endon("death");
     self endon("entitydeleted");
     var_837c12743ab916fe = undefined;
-    var_4bd24adaf2ac4e79 = generic_human%torso_tracking_anims;
+    anim_parent = generic_human%torso_tracking_anims;
     fwd_anim = self.torso_center_anim;
     right_anim = self.torso_right_anim;
     left_anim = self.torso_left_anim;
-    var_be663f999979eacd = self.torso_rightback_anim;
-    var_3db053c7d0933ef6 = self.torso_leftback_anim;
+    back_right_anim = self.torso_rightback_anim;
+    back_left_anim = self.torso_leftback_anim;
     childthread _ai_torso_weight_blend_in();
     var_837c12743ab916fe = vectortoangles(level.player.origin - self.origin);
     self setanimlimited(fwd_anim, 1, 0.05);
     self setanimlimited(right_anim, 0, 0.05);
     self setanimlimited(left_anim, 0, 0.05);
-    self setanimlimited(var_be663f999979eacd, 0, 0.05);
-    self setanimlimited(var_3db053c7d0933ef6, 0, 0.05);
+    self setanimlimited(back_right_anim, 0, 0.05);
+    self setanimlimited(back_left_anim, 0, 0.05);
     var_9e41f6b2a5fdfa6c = 0;
     var_3a58e25d07fa8963 = 0;
     while (true) {
@@ -747,29 +747,29 @@ function ai_gesture_torso_leftright() {
         vec_to_player = vectornormalize(lookat - self.origin);
         forward_vec = anglestoforward(self.angles);
         right_vec = anglestoright(self.angles);
-        var_8fc912a946a93a31 = anglestoright(self.angles) * -1;
-        var_e0e29f268e2b6297 = anglestoforward(self.angles) * -1;
+        left_vec = anglestoright(self.angles) * -1;
+        back_vec = anglestoforward(self.angles) * -1;
         up_vec = anglestoup(self.angles);
-        var_e32c0e4a71d1793e = clamp(vectordot(vec_to_player, forward_vec), 0, 1);
+        dot_fwd = clamp(vectordot(vec_to_player, forward_vec), 0, 1);
         dot_right = clamp(vectordot(vec_to_player, right_vec), 0, 1);
-        var_ec8d74cda15d5374 = clamp(vectordot(vec_to_player, var_8fc912a946a93a31), 0, 1);
-        var_b0b9a45f796b1296 = clamp(vectordot(vec_to_player, var_e0e29f268e2b6297), 0, 1);
-        var_d7199cf973e1af07 = 1;
+        dot_left = clamp(vectordot(vec_to_player, left_vec), 0, 1);
+        dot_back = clamp(vectordot(vec_to_player, back_vec), 0, 1);
+        back_test = 1;
         if (anglebetweenvectorssigned(forward_vec, vec_to_player, up_vec) > 0) {
-            var_d7199cf973e1af07 = 0;
+            back_test = 0;
         }
         self setanimlimited(right_anim, dot_right, 0.2);
-        self setanimlimited(left_anim, var_ec8d74cda15d5374, 0.2);
-        self setanimlimited(fwd_anim, var_e32c0e4a71d1793e + 0.005, 0.2);
-        if (var_d7199cf973e1af07) {
-            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, var_b0b9a45f796b1296, 0.1);
+        self setanimlimited(left_anim, dot_left, 0.2);
+        self setanimlimited(fwd_anim, dot_fwd + 0.005, 0.2);
+        if (back_test) {
+            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, dot_back, 0.1);
             var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, 0, 0.1);
         } else {
             var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, 0, 0.1);
-            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, var_b0b9a45f796b1296, 0.1);
+            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, dot_back, 0.1);
         }
-        self setanimlimited(var_be663f999979eacd, var_9e41f6b2a5fdfa6c, 0.2);
-        self setanimlimited(var_3db053c7d0933ef6, var_3a58e25d07fa8963, 0.2);
+        self setanimlimited(back_right_anim, var_9e41f6b2a5fdfa6c, 0.2);
+        self setanimlimited(back_left_anim, var_3a58e25d07fa8963, 0.2);
         waitframe();
     }
 }
@@ -781,9 +781,9 @@ function ai_gesture_torso_leftright() {
 function _ai_torso_weight_blend_in() {
     start_time = gettime() / 1000;
     while (gettime() / 1000 - start_time < self.blend_in_time) {
-        var_79dec2965739392b = (gettime() / 1000 - start_time) / self.blend_in_time;
-        var_79dec2965739392b = smoothstep(0, 1, var_79dec2965739392b);
-        weight = lerp_float(0, 1, var_79dec2965739392b);
+        norm_val = (gettime() / 1000 - start_time) / self.blend_in_time;
+        norm_val = smoothstep(0, 1, norm_val);
+        weight = lerp_float(0, 1, norm_val);
         self setanimlimited(generic_human%torso_tracking_anims, weight, 0.05);
         wait 0.05;
         waittillframeend();
@@ -795,13 +795,13 @@ function _ai_torso_weight_blend_in() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b43
 // Size: 0x70
-function ai_gesture_blink_loop(var_25362a792b0e1353) {
+function ai_gesture_blink_loop(blink_interval) {
     self endon("gesture_stop");
     self endon("death");
     self endon("entitydeleted");
     ai_gesture_single_blink();
     while (true) {
-        wait randomfloatrange(var_25362a792b0e1353 * 0.5, var_25362a792b0e1353);
+        wait randomfloatrange(blink_interval * 0.5, blink_interval);
         self clearanim(generic_human%facial_gesture_blink_1, 0);
         wait 0.05;
         self setanimlimited(generic_human%facial_gesture_blink_1, 1, 0);
@@ -875,11 +875,11 @@ function ai_gesture_point(var_4a32ecbaa6c22f70) {
     } else {
         lookat = var_4a32ecbaa6c22f70.origin;
     }
-    var_148c7412fde9224d = self gettagangles("J_Spine4") + (0, 90, 0);
-    var_b65a151051532493 = self gettagorigin("J_Spine4");
-    var_84debf527911a15d = anglestoright(var_148c7412fde9224d);
-    var_4bd579fa63eb0ed2 = anglestoup(var_148c7412fde9224d);
-    var_53b34aadf7b8e731 = vectornormalize(lookat - var_b65a151051532493);
+    character_angles = self gettagangles("J_Spine4") + (0, 90, 0);
+    character_origin = self gettagorigin("J_Spine4");
+    var_84debf527911a15d = anglestoright(character_angles);
+    var_4bd579fa63eb0ed2 = anglestoup(character_angles);
+    var_53b34aadf7b8e731 = vectornormalize(lookat - character_origin);
     var_b4291343f067bb1d = scripts\engine\utility::flatten_vector(var_84debf527911a15d);
     var_ebf67e00f0184992 = scripts\engine\utility::flatten_vector(var_4bd579fa63eb0ed2);
     var_af48fc7d3df203f1 = scripts\engine\utility::flatten_vector(var_53b34aadf7b8e731);
@@ -889,7 +889,7 @@ function ai_gesture_point(var_4a32ecbaa6c22f70) {
     var_824c03276d8cdcec = clamp(float_remap(var_8e8c89b2cbb6bc04, 0.2, 1, 0, 1), 0, 1);
     var_9088cba4a109b331 = self gettagorigin("J_Spine4");
     var_20f493dca3c1483f = vectornormalize(lookat - var_9088cba4a109b331);
-    var_ca399d17885e392 = anglestoforward(var_148c7412fde9224d);
+    var_ca399d17885e392 = anglestoforward(character_angles);
     var_2cb0644208843c51 = vectordot(var_20f493dca3c1483f, var_ca399d17885e392);
     var_2e436ef195c55994 = var_2cb0644208843c51 * -1;
     var_f25cc6d803539f37 = vectordot(var_4bd579fa63eb0ed2, var_20f493dca3c1483f);
@@ -1121,25 +1121,25 @@ function ai_gesture_simple(var_7ca8d1ce367054f8) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3edb
 // Size: 0x7f
-function blend_partial_in(var_10c67b12be486d55, animation, blend_time, notetrack) {
+function blend_partial_in(gesture_parent, animation, blend_time, notetrack) {
     blend = blend_time * 0.5;
-    self setanimlimited(var_10c67b12be486d55, 1, blend);
+    self setanimlimited(gesture_parent, 1, blend);
     self setanimlimited(animation, 1, blend, 0.75);
     wait blend_time * 0.5;
     self setanimlimited(animation, 10, blend, 0.75);
-    self setanimlimited(var_10c67b12be486d55, 10, blend);
+    self setanimlimited(gesture_parent, 10, blend);
 }
 
 // Namespace namespace_6bc879d2947c65d2 / namespace_3123a12d1da4993
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f62
 // Size: 0x5d
-function blend_partial_out(var_10c67b12be486d55, animation, var_6e2597877d503152) {
-    clear = var_6e2597877d503152 * 0.5;
-    self setanimlimited(var_10c67b12be486d55, 1, clear);
+function blend_partial_out(gesture_parent, animation, clear_time) {
+    clear = clear_time * 0.5;
+    self setanimlimited(gesture_parent, 1, clear);
     self setanimlimited(animation, 1, clear);
     wait clear;
-    self clearanim(var_10c67b12be486d55, clear);
+    self clearanim(gesture_parent, clear);
     self clearanim(animation, clear);
 }
 
@@ -1189,7 +1189,7 @@ function set_time_via_rate(anime, time, weight, blend_time) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4101
 // Size: 0x477
-function ai_gesture_directional_custom(target, anim_array, var_4e9e76b78d716037) {
+function ai_gesture_directional_custom(target, anim_array, partial_bool) {
     self endon("gesture_stop");
     self endon("death");
     self endon("entitydeleted");
@@ -1202,12 +1202,12 @@ function ai_gesture_directional_custom(target, anim_array, var_4e9e76b78d716037)
     var_8bc1a08153e71af8 = 0;
     gesture_body_knob = undefined;
     self.no_point_defined = 0;
-    var_10c67b12be486d55 = undefined;
-    if (isdefined(var_4e9e76b78d716037)) {
+    gesture_parent = undefined;
+    if (isdefined(partial_bool)) {
         gesture_body_knob = asm_getbodyknob();
-        var_10c67b12be486d55 = generic_human%gesture_partials;
+        gesture_parent = generic_human%gesture_partials;
     } else {
-        var_10c67b12be486d55 = generic_human%add_gesture;
+        gesture_parent = generic_human%add_gesture;
     }
     if (!isdefined(self)) {
         return;
@@ -1224,11 +1224,11 @@ function ai_gesture_directional_custom(target, anim_array, var_4e9e76b78d716037)
     } else {
         lookat = target.origin;
     }
-    var_148c7412fde9224d = self gettagangles("tag_origin");
-    var_b65a151051532493 = self gettagorigin("tag_origin");
-    var_84debf527911a15d = anglestoright(var_148c7412fde9224d);
-    var_4bd579fa63eb0ed2 = anglestoforward(var_148c7412fde9224d);
-    var_53b34aadf7b8e731 = vectornormalize(lookat - var_b65a151051532493);
+    character_angles = self gettagangles("tag_origin");
+    character_origin = self gettagorigin("tag_origin");
+    var_84debf527911a15d = anglestoright(character_angles);
+    var_4bd579fa63eb0ed2 = anglestoforward(character_angles);
+    var_53b34aadf7b8e731 = vectornormalize(lookat - character_origin);
     var_b4291343f067bb1d = scripts\engine\utility::flatten_vector(var_84debf527911a15d);
     var_ebf67e00f0184992 = scripts\engine\utility::flatten_vector(var_4bd579fa63eb0ed2);
     var_af48fc7d3df203f1 = scripts\engine\utility::flatten_vector(var_53b34aadf7b8e731);
@@ -1238,7 +1238,7 @@ function ai_gesture_directional_custom(target, anim_array, var_4e9e76b78d716037)
     var_824c03276d8cdcec = clamp(float_remap(var_8e8c89b2cbb6bc04, 0.2, 1, 0, 1), 0, 1);
     var_9088cba4a109b331 = self gettagorigin("J_Spine4");
     var_20f493dca3c1483f = vectornormalize(lookat - var_9088cba4a109b331);
-    var_ca399d17885e392 = anglestoup(var_148c7412fde9224d);
+    var_ca399d17885e392 = anglestoup(character_angles);
     var_2cb0644208843c51 = vectordot(var_20f493dca3c1483f, var_ca399d17885e392);
     var_2e436ef195c55994 = var_2cb0644208843c51 * -1;
     var_f25cc6d803539f37 = vectordot(var_ebf67e00f0184992, var_20f493dca3c1483f);
@@ -1246,10 +1246,10 @@ function ai_gesture_directional_custom(target, anim_array, var_4e9e76b78d716037)
     var_bed61d13bd0fe46f = clamp(float_remap(var_2cb0644208843c51, 0.2, 1, 0, 1), 0, 1);
     var_bd630759847e7b0c = clamp(float_remap(var_2e436ef195c55994, 0.2, 1, 0, 1), 0, 1);
     if (!self.no_point_defined) {
-        if (isdefined(var_4e9e76b78d716037)) {
-            self setanimlimited(var_10c67b12be486d55, 10, 0.25);
+        if (isdefined(partial_bool)) {
+            self setanimlimited(gesture_parent, 10, 0.25);
         } else {
-            self setanimlimited(var_10c67b12be486d55, 1, 0.25);
+            self setanimlimited(gesture_parent, 1, 0.25);
         }
         if (var_7ba291bb89a5d6dd < 0.3) {
             self setanimlimited(var_5286de9bce84f2c4, 0, 0, 1);
@@ -1265,15 +1265,15 @@ function ai_gesture_directional_custom(target, anim_array, var_4e9e76b78d716037)
         self setanimlimited(var_18e5b6b83a6361c0, var_824c03276d8cdcec, 0.25, 1);
         self setanimlimited(var_b849486170a283ff, var_2208a80dc5f47661, 0.25, 1);
     } else {
-        if (isdefined(var_4e9e76b78d716037)) {
+        if (isdefined(partial_bool)) {
             self setanimlimited(gesture_body_knob, 0.001, 0.1);
         }
-        self setanimlimited(var_10c67b12be486d55, 1, 0.25);
+        self setanimlimited(gesture_parent, 1, 0.25);
         self setanimlimited(var_5286de9bce84f2c4, 1, 0.25);
     }
     wait_time = getanimlength(var_5286de9bce84f2c4);
     wait wait_time;
-    self clearanim(var_10c67b12be486d55, 0.25);
+    self clearanim(gesture_parent, 0.25);
     self setanimlimited(gesture_body_knob, 1, 0.25);
 }
 
@@ -1281,31 +1281,31 @@ function ai_gesture_directional_custom(target, anim_array, var_4e9e76b78d716037)
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4580
 // Size: 0x107
-function ai_custom_gesture(gesture_anim, var_4e9e76b78d716037) {
+function ai_custom_gesture(gesture_anim, partial_bool) {
     self endon("death");
     self endon("gesture_stop");
     self endon("entitydeleted");
-    var_feaa792b9588834d = generic_human%add_gesture;
-    var_e97ec92eaf750b95 = 0;
+    gesture_root = generic_human%add_gesture;
+    using_partial = 0;
     notification = "single anim";
     thread scripts\common\notetrack::start_notetrack_wait(self, notification, undefined, undefined, gesture_anim);
-    if (isdefined(var_4e9e76b78d716037) && var_4e9e76b78d716037) {
-        var_feaa792b9588834d = generic_human%gesture_partials;
-        var_e97ec92eaf750b95 = 1;
+    if (isdefined(partial_bool) && partial_bool) {
+        gesture_root = generic_human%gesture_partials;
+        using_partial = 1;
     }
-    if (var_e97ec92eaf750b95) {
-        thread blend_partial_in(var_feaa792b9588834d, gesture_anim, 0.2);
+    if (using_partial) {
+        thread blend_partial_in(gesture_root, gesture_anim, 0.2);
     } else {
-        self setanimlimited(var_feaa792b9588834d, 1, 0.1);
+        self setanimlimited(gesture_root, 1, 0.1);
         self setanimlimited(gesture_anim, 1, 0.1);
     }
     wait_time = getanimlength(gesture_anim) * 0.75 - 0.2;
     wait wait_time;
-    if (var_e97ec92eaf750b95) {
-        thread blend_partial_out(var_feaa792b9588834d, gesture_anim, 0.2);
+    if (using_partial) {
+        thread blend_partial_out(gesture_root, gesture_anim, 0.2);
         return;
     }
-    self clearanim(var_feaa792b9588834d, 0.2);
+    self clearanim(gesture_root, 0.2);
     self clearanim(gesture_anim, 0.2);
 }
 
@@ -1395,30 +1395,30 @@ function blended_loop_anim() {
         vec_to_player = flatten_vector(vectornormalize(lookat - var_7ac7a365a6aee172));
         forward_vec = anglestoforward(var_f8018ede9bc535ee);
         right_vec = anglestoright(var_f8018ede9bc535ee);
-        var_8fc912a946a93a31 = anglestoright(var_f8018ede9bc535ee) * -1;
-        var_e0e29f268e2b6297 = anglestoforward(var_f8018ede9bc535ee) * -1;
+        left_vec = anglestoright(var_f8018ede9bc535ee) * -1;
+        back_vec = anglestoforward(var_f8018ede9bc535ee) * -1;
         up_vec = anglestoup(var_f8018ede9bc535ee);
-        var_e32c0e4a71d1793e = clamp(vectordot(vec_to_player, forward_vec), 0, 1);
+        dot_fwd = clamp(vectordot(vec_to_player, forward_vec), 0, 1);
         dot_right = clamp(vectordot(vec_to_player, right_vec), 0, 1);
-        var_ec8d74cda15d5374 = clamp(vectordot(vec_to_player, var_8fc912a946a93a31), 0, 1);
-        var_b0b9a45f796b1296 = clamp(vectordot(vec_to_player, var_e0e29f268e2b6297), 0, 1);
-        var_d7199cf973e1af07 = 1;
+        dot_left = clamp(vectordot(vec_to_player, left_vec), 0, 1);
+        dot_back = clamp(vectordot(vec_to_player, back_vec), 0, 1);
+        back_test = 1;
         if (anglebetweenvectorssigned(forward_vec, vec_to_player, up_vec) > 0) {
-            var_d7199cf973e1af07 = 0;
+            back_test = 0;
         }
         if (isdefined(guy.right_anim)) {
             guy setanimlimited(guy.right_anim, dot_right, 0.2);
         }
         if (isdefined(guy.left_anim)) {
-            guy setanimlimited(guy.left_anim, var_ec8d74cda15d5374, 0.2);
+            guy setanimlimited(guy.left_anim, dot_left, 0.2);
         }
-        guy setanimlimited(guy.fwd_anim, var_e32c0e4a71d1793e + 0.005, 0.2);
-        if (var_d7199cf973e1af07) {
-            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, var_b0b9a45f796b1296, 0.1);
+        guy setanimlimited(guy.fwd_anim, dot_fwd + 0.005, 0.2);
+        if (back_test) {
+            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, dot_back, 0.1);
             var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, 0, 0.1);
         } else {
             var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, 0, 0.1);
-            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, var_b0b9a45f796b1296, 0.1);
+            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, dot_back, 0.1);
         }
         if (isdefined(guy.rightback_anim)) {
             guy setanimlimited(guy.rightback_anim, var_9e41f6b2a5fdfa6c + 0.005, 0.2);
@@ -1550,30 +1550,30 @@ function blended_anim() {
         vec_to_player = flatten_vector(vectornormalize(lookat - var_7ac7a365a6aee172));
         forward_vec = anglestoforward(var_f8018ede9bc535ee);
         right_vec = anglestoright(var_f8018ede9bc535ee);
-        var_8fc912a946a93a31 = anglestoright(var_f8018ede9bc535ee) * -1;
-        var_e0e29f268e2b6297 = anglestoforward(var_f8018ede9bc535ee) * -1;
+        left_vec = anglestoright(var_f8018ede9bc535ee) * -1;
+        back_vec = anglestoforward(var_f8018ede9bc535ee) * -1;
         up_vec = anglestoup(var_f8018ede9bc535ee);
-        var_e32c0e4a71d1793e = clamp(vectordot(vec_to_player, forward_vec), 0, 1);
+        dot_fwd = clamp(vectordot(vec_to_player, forward_vec), 0, 1);
         dot_right = clamp(vectordot(vec_to_player, right_vec), 0, 1);
-        var_ec8d74cda15d5374 = clamp(vectordot(vec_to_player, var_8fc912a946a93a31), 0, 1);
-        var_b0b9a45f796b1296 = clamp(vectordot(vec_to_player, var_e0e29f268e2b6297), 0, 1);
-        var_d7199cf973e1af07 = 1;
+        dot_left = clamp(vectordot(vec_to_player, left_vec), 0, 1);
+        dot_back = clamp(vectordot(vec_to_player, back_vec), 0, 1);
+        back_test = 1;
         if (anglebetweenvectorssigned(forward_vec, vec_to_player, up_vec) > 0) {
-            var_d7199cf973e1af07 = 0;
+            back_test = 0;
         }
         if (isdefined(guy.right_anim)) {
             guy setanimlimited(guy.right_anim, dot_right, 0.2);
         }
         if (isdefined(guy.left_anim)) {
-            guy setanimlimited(guy.left_anim, var_ec8d74cda15d5374, 0.2);
+            guy setanimlimited(guy.left_anim, dot_left, 0.2);
         }
-        guy setanimlimited(guy.fwd_anim, var_e32c0e4a71d1793e + 0.005, 0.2);
-        if (var_d7199cf973e1af07) {
-            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, var_b0b9a45f796b1296, 0.1);
+        guy setanimlimited(guy.fwd_anim, dot_fwd + 0.005, 0.2);
+        if (back_test) {
+            var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, dot_back, 0.1);
             var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, 0, 0.1);
         } else {
             var_9e41f6b2a5fdfa6c = math::lerp(var_9e41f6b2a5fdfa6c, 0, 0.1);
-            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, var_b0b9a45f796b1296, 0.1);
+            var_3a58e25d07fa8963 = math::lerp(var_3a58e25d07fa8963, dot_back, 0.1);
         }
         if (isdefined(guy.rightback_anim)) {
             guy setanimlimited(guy.rightback_anim, var_9e41f6b2a5fdfa6c + 0.005, 0.2);

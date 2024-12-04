@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp\utility\player.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_6f1e07ce9ff97d5f;
-#using script_41ae4f5ca24216cb;
 #using script_293bc33bd79cabd1;
+#using script_41ae4f5ca24216cb;
+#using script_6f1e07ce9ff97d5f;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace decoy_grenade;
 

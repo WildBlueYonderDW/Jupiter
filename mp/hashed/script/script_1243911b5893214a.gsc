@@ -1,5 +1,5 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\engine\utility;
 
 #namespace namespace_cd4551f405e67268;
 

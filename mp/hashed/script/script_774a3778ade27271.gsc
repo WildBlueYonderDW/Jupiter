@@ -1,27 +1,27 @@
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
+#using script_135f13d8aa1c1f19;
+#using script_14183df6f9af8737;
+#using script_261e315c49e5e4ef;
+#using script_46cf752d93dc17b;
 #using script_64acb6ce534155b7;
 #using script_728ffcee8cbf30ee;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_46cf752d93dc17b;
-#using script_261e315c49e5e4ef;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using script_14183df6f9af8737;
-#using script_135f13d8aa1c1f19;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\dev.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\dev;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_5b571ef9950b8a9e;
 
@@ -172,7 +172,7 @@ function function_3719308fbf3bd1db() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xadf
 // Size: 0x13c
-function function_f41c6714ec0d4ea3(timerpaused) {
+function quest_settimer(timerpaused) {
     newvalue = self.var_8b96f28b4b926851 + 1;
     if (istrue(timerpaused) && !istrue(self.var_7f9b5c8a7bb44c10)) {
         newvalue += 4194304;
@@ -237,7 +237,7 @@ function function_89e3fc49199d2019() {
     }
     self.var_8b96f28b4b926851 = time;
     function_10af3c34cb23710f();
-    function_f41c6714ec0d4ea3();
+    quest_settimer();
     thread function_aee8d19f56916dd7();
 }
 
@@ -396,7 +396,7 @@ function function_aee8d19f56916dd7() {
                 self.var_8b96f28b4b926851 -= 1;
             }
         }
-        function_f41c6714ec0d4ea3(timerpaused);
+        quest_settimer(timerpaused);
     }
     function_aa9b266dda4f7272();
 }

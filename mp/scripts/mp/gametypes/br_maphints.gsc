@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\teams;
 
 #namespace br_maphints;
 

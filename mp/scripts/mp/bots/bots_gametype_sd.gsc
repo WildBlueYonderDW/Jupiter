@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_27fdece778e999d8;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\spawnlogic.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\entity;
 
 #namespace bots_gametype_sd;
 
@@ -537,8 +537,8 @@ function investigate_someone_using_bomb_update() {
     if (bot_is_defending()) {
         bot_defend_stop();
     }
-    var_d49d443d41cdc71c = find_closest_bombzone_to_player(self);
-    self botsetscriptgoalnode(random(var_d49d443d41cdc71c.bottargets), "critical");
+    closest_bomb_zone = find_closest_bombzone_to_player(self);
+    self botsetscriptgoalnode(random(closest_bomb_zone.bottargets), "critical");
     result = bot_waittill_goal_or_fail();
     if (result == "goal") {
         wait 2;
@@ -820,8 +820,8 @@ function bomber_wait_for_death() {
     if (isdefined(self)) {
         self.role = undefined;
     }
-    var_3e2f5d10887aeb24 = get_living_players_on_team(game["attackers"], 1);
-    force_all_players_to_role(var_3e2f5d10887aeb24, undefined);
+    ai_attackers = get_living_players_on_team(game["attackers"], 1);
+    force_all_players_to_role(ai_attackers, undefined);
 }
 
 // Namespace bots_gametype_sd / scripts\mp\bots\bots_gametype_sd
@@ -1051,8 +1051,8 @@ function bot_sd_ai_director_update() {
         }
         var_d3e8b7250c920e3b = 0;
         if (!level.bombplanted) {
-            var_b36fc67c36d08d33 = get_living_players_on_team(game["attackers"]);
-            foreach (player in var_b36fc67c36d08d33) {
+            living_attackers = get_living_players_on_team(game["attackers"]);
+            foreach (player in living_attackers) {
                 if (player.isbombcarrier) {
                     level.can_pickup_bomb_time = gettime();
                     if (!isdefined(level.atk_bomber) || player != level.atk_bomber) {

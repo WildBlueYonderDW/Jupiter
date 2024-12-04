@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility\entity.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\targetmarkergroups.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility\entity;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_286c296fed71ce9e;
+#namespace cp_javelin;
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x255
 // Size: 0x93
@@ -32,7 +32,7 @@ function javelinusageloop() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f0
 // Size: 0x2a8
@@ -62,7 +62,7 @@ function javelin_init() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a0
 // Size: 0x11a
@@ -86,7 +86,7 @@ function javelin_reset() {
     self.javelin.queuedstate = undefined;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c2
 // Size: 0xbd
@@ -104,7 +104,7 @@ function javelin_offstateenter(fromstate) {
     javelin_setuistate(0);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x787
 // Size: 0x1d
@@ -114,7 +114,7 @@ function javelin_offstateupdate() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ac
 // Size: 0xb
@@ -122,7 +122,7 @@ function javelin_offstateexit() {
     javelin_hidenormalhud(1);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7bf
 // Size: 0x21
@@ -133,7 +133,7 @@ function javelin_deathwatcher() {
     javelin_setuistate(0);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7e8
 // Size: 0x30
@@ -142,7 +142,7 @@ function javelin_scanningstateenter(fromstate) {
     self.javelin.adsraisedelaytimer = gettime() + 100;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x820
 // Size: 0x4c7
@@ -227,7 +227,7 @@ function javelin_scanningstateupdate() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcef
 // Size: 0x6e
@@ -239,7 +239,7 @@ function javelin_holdstateenter(fromstate) {
     thread javelin_looplocalseeksound("javelin_clu_acquiring_lock", 0.5);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd65
 // Size: 0x1e4
@@ -283,7 +283,7 @@ function javelin_holdstateupdate() {
     javelin_queuestate("fire");
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf51
 // Size: 0x16
@@ -292,7 +292,7 @@ function javelin_holdstateexit() {
     self stoplocalsound("javelin_clu_acquiring_lock");
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf6f
 // Size: 0x107
@@ -312,7 +312,7 @@ function javelin_firestateenter(fromstate) {
     thread javelin_looplocalseeksound("javelin_clu_lock", 1.6);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x107e
 // Size: 0xc8
@@ -332,7 +332,7 @@ function javelin_firestateupdate() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x114e
 // Size: 0x92
@@ -349,7 +349,7 @@ function javelin_firestateexit() {
     self stoplocalsound("javelin_clu_lock");
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x11e8
 // Size: 0x14
@@ -357,7 +357,7 @@ function javelin_tooclosestateenter(fromstate) {
     javelin_setuistate(4);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1204
 // Size: 0x75
@@ -377,7 +377,7 @@ function javelin_tooclosestateupdate() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1281
 // Size: 0x51
@@ -389,7 +389,7 @@ function javelin_preupdate() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12da
 // Size: 0x83
@@ -412,7 +412,7 @@ function javelin_checktargetstillheld(targetent) {
     return true;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1366
 // Size: 0xe3
@@ -439,7 +439,7 @@ function javelin_eyetraceforward() {
     return results;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1452
 // Size: 0x44
@@ -455,7 +455,7 @@ function javelin_targetpointtooclose(targetpoint) {
     return false;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x149f
 // Size: 0x2e
@@ -468,7 +468,7 @@ function javelin_looplocalseeksound(alias, interval) {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14d5
 // Size: 0x20
@@ -476,7 +476,7 @@ function javelin_queuestate(statename) {
     self.javelin.queuedstate = statename;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14fd
 // Size: 0x15
@@ -484,7 +484,7 @@ function javelin_getqueuedstate() {
     return self.javelin.queuedstate;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x151b
 // Size: 0x117
@@ -504,7 +504,7 @@ function javelin_enterstate(statename) {
     self.javelin.queuedstate = undefined;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x163a
 // Size: 0x9
@@ -512,7 +512,7 @@ function javelin_shouldjavelinthink() {
     return !scripts\cp_mp\emp_debuff::is_empd();
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x164c
 // Size: 0xf6
@@ -544,7 +544,7 @@ function javelin_think() {
     }
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x174a
 // Size: 0x117
@@ -573,7 +573,7 @@ function javelin_scanforvehicletarget() {
     return undefined;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x186a
 // Size: 0xc2
@@ -606,7 +606,7 @@ function javelin_vehiclelocksighttest(target) {
     return false;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1935
 // Size: 0xec
@@ -633,7 +633,7 @@ function javelin_getvehicleoffset(vehicletarget) {
     return offset;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a2a
 // Size: 0x8e
@@ -652,7 +652,7 @@ function javelin_softsighttest(targetent) {
     return true;
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ac1
 // Size: 0x54
@@ -669,7 +669,7 @@ function javelin_hidenormalhud(enable) {
     self setclientomnvar("ui_javelin_view", 0);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b1d
 // Size: 0x97
@@ -700,7 +700,7 @@ function javelin_setuistate(state) {
     #/
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bbc
 // Size: 0x56
@@ -713,7 +713,7 @@ function marklocation(markpos) {
     thread watchtargetmarkerentstatus(markpos, var_f27c7690b259ec3a, 1);
 }
 
-// Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+// Namespace cp_javelin / scripts\cp\equipment\cp_javelin
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c1a
 // Size: 0x71
@@ -730,7 +730,7 @@ function watchtargetmarkerentstatus(var_d99ed5531d1fdc1f, targetmarkergroup, ist
 
 /#
 
-    // Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+    // Namespace cp_javelin / scripts\cp\equipment\cp_javelin
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x1c93
     // Size: 0x2c
@@ -740,7 +740,7 @@ function watchtargetmarkerentstatus(var_d99ed5531d1fdc1f, targetmarkergroup, ist
         }
     }
 
-    // Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+    // Namespace cp_javelin / scripts\cp\equipment\cp_javelin
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x1cc7
     // Size: 0x85
@@ -750,7 +750,7 @@ function watchtargetmarkerentstatus(var_d99ed5531d1fdc1f, targetmarkergroup, ist
         line(point + (0, 0, 10), point - (0, 0, 10), color);
     }
 
-    // Namespace namespace_286c296fed71ce9e / scripts\cp\equipment\cp_javelin
+    // Namespace cp_javelin / scripts\cp\equipment\cp_javelin
     // Params 3, eflags: 0x0
     // Checksum 0x0, Offset: 0x1d54
     // Size: 0x87

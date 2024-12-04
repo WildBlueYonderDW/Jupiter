@@ -1,25 +1,25 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\weapon;
 
 #namespace mbravo_infil;
 
@@ -203,7 +203,7 @@ function playerthinkanim(infil, spot_index) {
     self endon("player_free_spot");
     self endon("joined_team");
     scene_name = infil.subtype;
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_downtown_gw") {
+    if (getdvar(@"g_mapname") == "mp_downtown_gw") {
         if (self.team == "allies" && (infil.originalsubtype == "alpha1" || infil.originalsubtype == "alpha2")) {
             scene_name = "bravo";
         }
@@ -434,7 +434,7 @@ function vehiclethink(team, scene_node, scene_name, extra_crew) {
 // Checksum 0x0, Offset: 0x1a0c
 // Size: 0x28a
 function vehiclethinkanim(team, scene_node, scene_name, extra_crew) {
-    if (self.originalsubtype != self.subtype && getdvar(@"hash_687fb8f9b7a23245") == "mp_downtown_gw") {
+    if (self.originalsubtype != self.subtype && getdvar(@"g_mapname") == "mp_downtown_gw") {
         scene_name = self.originalsubtype;
     }
     if (team == "allies" && (self.originalsubtype == "alpha" || self.originalsubtype == "alpha2") && getdvar(@"mapname") == "mp_boneyard_gw") {

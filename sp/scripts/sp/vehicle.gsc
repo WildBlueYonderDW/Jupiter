@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\vehicle_treads.gsc;
-#using scripts\sp\drone_base.gsc;
-#using scripts\sp\fakeactor.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\sp\spawner.gsc;
 #using script_7e4d332e911e1b90;
-#using scripts\anim\notetracks.gsc;
-#using scripts\sp\player_stats.gsc;
-#using scripts\sp\mgturret.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\anim\notetracks;
+#using scripts\asm\asm_sp;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\drone_base;
+#using scripts\sp\fakeactor;
+#using scripts\sp\mgturret;
+#using scripts\sp\player_stats;
+#using scripts\sp\spawner;
+#using scripts\sp\vehicle_treads;
 
 #namespace vehicle;
 
@@ -67,7 +67,7 @@ function reservevehicle(count) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x60f
 // Size: 0xfa
-function function_744f5f381328f1a2(spawndata, faildata) {
+function spawnvehicle_sp(spawndata, faildata) {
     vehicle = undefined;
     if (isdefined(spawndata.initialvelocity)) {
         vehicle = spawnvehicle(spawndata.modelname, spawndata.targetname, spawndata.vehicletype, spawndata.origin, spawndata.angles, spawndata.owner, spawndata.initialvelocity, spawndata.var_131ea86b569e731);
@@ -166,7 +166,7 @@ function function_fbef61d68f733524(veh) {
     veh function_f3ae3ea0abca3cfb(animtag);
     veh.ownerid = self getentitynumber();
     veh.originalowner = self;
-    veh.var_49d83f0c42962d83 = veh.team;
+    veh.team_og = veh.team;
     veh.driver = level.player;
     if (isdefined(self.team)) {
         veh.team = self.team;
@@ -222,8 +222,8 @@ function function_e5f869d16eb9abea(veh) {
     veh.ownerid = 0;
     veh.originalowner = undefined;
     veh.driver = undefined;
-    if (isdefined(veh.var_49d83f0c42962d83)) {
-        veh.team = veh.var_49d83f0c42962d83;
+    if (isdefined(veh.team_og)) {
+        veh.team = veh.team_og;
     }
     if (isdefined(veh.exitfunc)) {
         exitpos = [[ veh.exitfunc ]]();

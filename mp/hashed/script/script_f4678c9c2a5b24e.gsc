@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_40f4c8f2b94c5cd9;
-#using scripts\mp\gametypes\br_public.gsc;
+#using scripts\common\anim;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\player;
 
 #namespace br_ending_chopper;
 
@@ -70,100 +70,100 @@ function chopperexfil_pack(var_cbfc3ba10cefc8ce) {
     n = 0;
     self.packs[n] = create_animpack("scene1");
     self.packs[n] add_pack_startfunc([], &chopperexfil_sh010_start);
-    self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh010"]);
-    self.packs[n] add_pack_modelanim(ropeguy, level.var_1a209bd995a7fa83["br_exfil_co_sh010"]);
-    self.packs[n] add_pack_modelanim(rope, level.var_1a209bd995a7fa83["br_exfil_rope_sh010"]);
-    self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh010"]);
+    self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh010"]);
+    self.packs[n] add_pack_modelanim(ropeguy, level.br_anim["br_exfil_co_sh010"]);
+    self.packs[n] add_pack_modelanim(rope, level.br_anim["br_exfil_rope_sh010"]);
+    self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh010"]);
     self.packs[n] add_pack_fx("chopperExfil_gas", self.origin, self.angles);
     n++;
     self.packs[n] = create_animpack("scene2");
     self.packs[n] add_pack_startfunc(self.winners, &chopperexfil_sh020_start);
-    self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh020"]);
+    self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh020"]);
     if (!isdefined(level.scr_notetrack["veh8_mil_air_blima_scriptmodel"]) || !isdefined(level.scr_notetrack["veh8_mil_air_blima_scriptmodel"]["any"]["guy0_aboard"])) {
         addnotetrack_customfunction("veh8_mil_air_blima_scriptmodel", "guy0_aboard", &chopperexfil_skip_ascend0);
         addnotetrack_customfunction("veh8_mil_air_blima_scriptmodel", "guy1_aboard", &chopperexfil_skip_ascend1);
         addnotetrack_customfunction("veh8_mil_air_blima_scriptmodel", "guy2_aboard", &chopperexfil_skip_ascend2);
         addnotetrack_customfunction("veh8_mil_air_blima_scriptmodel", "slamtoblack", &chopperexfil_slamtoblack);
     }
-    self.packs[n] add_pack_modelanim(ropeguy, level.var_1a209bd995a7fa83["br_exfil_pilot_sh020"]);
-    self.packs[n] add_pack_modelanim(rope, level.var_1a209bd995a7fa83["br_exfil_rope_sh020"]);
-    self.packs[n] add_pack_modelanim(ascenders[0], level.var_1a209bd995a7fa83["br_exfil_ascender0_sh020"]);
+    self.packs[n] add_pack_modelanim(ropeguy, level.br_anim["br_exfil_pilot_sh020"]);
+    self.packs[n] add_pack_modelanim(rope, level.br_anim["br_exfil_rope_sh020"]);
+    self.packs[n] add_pack_modelanim(ascenders[0], level.br_anim["br_exfil_ascender0_sh020"]);
     if (self.winners.size > 1) {
-        self.packs[n] add_pack_modelanim(ascenders[1], level.var_1a209bd995a7fa83["br_exfil_ascender1_sh020"]);
+        self.packs[n] add_pack_modelanim(ascenders[1], level.br_anim["br_exfil_ascender1_sh020"]);
     }
     if (self.winners.size > 2) {
-        self.packs[n] add_pack_modelanim(ascenders[2], level.var_1a209bd995a7fa83["br_exfil_ascender2_sh020"]);
+        self.packs[n] add_pack_modelanim(ascenders[2], level.br_anim["br_exfil_ascender2_sh020"]);
     }
     if (self.winners.size > 3) {
-        self.packs[n] add_pack_modelanim(ascenders[3], level.var_1a209bd995a7fa83["br_exfil_ascender3_sh020"]);
+        self.packs[n] add_pack_modelanim(ascenders[3], level.br_anim["br_exfil_ascender3_sh020"]);
     }
-    self.packs[n] add_pack_playeranim(self.winners[0], level.var_1a209bd995a7fa83["br_exfil_guy0_sh020"], level.var_1a209bd995a7fa83["br_exfil_guy0_sh020_fem"]);
-    self.packs[n] add_pack_playeranim(self.winners[1], level.var_1a209bd995a7fa83["br_exfil_guy1_sh020"], level.var_1a209bd995a7fa83["br_exfil_guy1_sh020_fem"]);
-    self.packs[n] add_pack_playeranim(self.winners[2], level.var_1a209bd995a7fa83["br_exfil_guy2_sh020"], level.var_1a209bd995a7fa83["br_exfil_guy2_sh020_fem"]);
-    self.packs[n] add_pack_playeranim(self.winners[3], level.var_1a209bd995a7fa83["br_exfil_guy3_sh020"], level.var_1a209bd995a7fa83["br_exfil_guy3_sh020_fem"]);
-    self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh020"]);
+    self.packs[n] add_pack_playeranim(self.winners[0], level.br_anim["br_exfil_guy0_sh020"], level.br_anim["br_exfil_guy0_sh020_fem"]);
+    self.packs[n] add_pack_playeranim(self.winners[1], level.br_anim["br_exfil_guy1_sh020"], level.br_anim["br_exfil_guy1_sh020_fem"]);
+    self.packs[n] add_pack_playeranim(self.winners[2], level.br_anim["br_exfil_guy2_sh020"], level.br_anim["br_exfil_guy2_sh020_fem"]);
+    self.packs[n] add_pack_playeranim(self.winners[3], level.br_anim["br_exfil_guy3_sh020"], level.br_anim["br_exfil_guy3_sh020_fem"]);
+    self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh020"]);
     n++;
     self.packs[n] = create_animpack("scene2.5");
     self.packs[n] add_pack_startfunc(self.winners, &chopperexfil_sh025_start);
-    self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh025"]);
-    self.packs[n] add_pack_modelanim(ropeguy, level.var_1a209bd995a7fa83["br_exfil_pilot_sh025"]);
-    self.packs[n] add_pack_playeranim(self.winners[0], level.var_1a209bd995a7fa83["br_exfil_guy0_sh025"]);
-    self.packs[n] add_pack_playeranim(self.winners[1], level.var_1a209bd995a7fa83["br_exfil_guy1_sh025"]);
-    self.packs[n] add_pack_playeranim(self.winners[2], level.var_1a209bd995a7fa83["br_exfil_guy2_sh025"]);
-    self.packs[n] add_pack_playeranim(self.winners[3], level.var_1a209bd995a7fa83["br_exfil_guy3_sh025"]);
-    self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh025"]);
+    self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh025"]);
+    self.packs[n] add_pack_modelanim(ropeguy, level.br_anim["br_exfil_pilot_sh025"]);
+    self.packs[n] add_pack_playeranim(self.winners[0], level.br_anim["br_exfil_guy0_sh025"]);
+    self.packs[n] add_pack_playeranim(self.winners[1], level.br_anim["br_exfil_guy1_sh025"]);
+    self.packs[n] add_pack_playeranim(self.winners[2], level.br_anim["br_exfil_guy2_sh025"]);
+    self.packs[n] add_pack_playeranim(self.winners[3], level.br_anim["br_exfil_guy3_sh025"]);
+    self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh025"]);
     n++;
     self.packs[n] = create_animpack("scene3");
     self.packs[n] add_pack_startfunc(self.winners, &chopperexfil_sh030_start);
-    self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh030"]);
-    self.packs[n] add_pack_modelanim(ropeguy, level.var_1a209bd995a7fa83["br_exfil_pilot_sh030"]);
-    self.packs[n] add_pack_playeranim(self.winners[0], level.var_1a209bd995a7fa83["br_exfil_guy0_sh030"], level.var_1a209bd995a7fa83["br_exfil_guy0_sh030_fem"]);
-    self.packs[n] add_pack_playeranim(self.winners[1], level.var_1a209bd995a7fa83["br_exfil_guy1_sh030"], level.var_1a209bd995a7fa83["br_exfil_guy1_sh030_fem"]);
-    self.packs[n] add_pack_playeranim(self.winners[2], level.var_1a209bd995a7fa83["br_exfil_guy2_sh030"], level.var_1a209bd995a7fa83["br_exfil_guy2_sh030_fem"]);
-    self.packs[n] add_pack_playeranim(self.winners[3], level.var_1a209bd995a7fa83["br_exfil_guy3_sh030"], level.var_1a209bd995a7fa83["br_exfil_guy3_sh030_fem"]);
-    self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh030"]);
+    self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh030"]);
+    self.packs[n] add_pack_modelanim(ropeguy, level.br_anim["br_exfil_pilot_sh030"]);
+    self.packs[n] add_pack_playeranim(self.winners[0], level.br_anim["br_exfil_guy0_sh030"], level.br_anim["br_exfil_guy0_sh030_fem"]);
+    self.packs[n] add_pack_playeranim(self.winners[1], level.br_anim["br_exfil_guy1_sh030"], level.br_anim["br_exfil_guy1_sh030_fem"]);
+    self.packs[n] add_pack_playeranim(self.winners[2], level.br_anim["br_exfil_guy2_sh030"], level.br_anim["br_exfil_guy2_sh030_fem"]);
+    self.packs[n] add_pack_playeranim(self.winners[3], level.br_anim["br_exfil_guy3_sh030"], level.br_anim["br_exfil_guy3_sh030_fem"]);
+    self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh030"]);
     if (self.winners.size >= 2) {
         n++;
         self.packs[n] = create_animpack("scene4");
         self.packs[n] add_pack_startfunc([ropeguy], &chopperexfil_sh040_start);
-        self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh040"]);
-        self.packs[n] add_pack_playeranim(self.winners[0], level.var_1a209bd995a7fa83["br_exfil_guy0_sh040"], level.var_1a209bd995a7fa83["br_exfil_guy0_sh040_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[1], level.var_1a209bd995a7fa83["br_exfil_guy1_sh040"], level.var_1a209bd995a7fa83["br_exfil_guy1_sh040_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[2], level.var_1a209bd995a7fa83["br_exfil_guy2_sh040"], level.var_1a209bd995a7fa83["br_exfil_guy2_sh040_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[3], level.var_1a209bd995a7fa83["br_exfil_guy3_sh040"], level.var_1a209bd995a7fa83["br_exfil_guy3_sh040_fem"]);
-        self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh040"]);
+        self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh040"]);
+        self.packs[n] add_pack_playeranim(self.winners[0], level.br_anim["br_exfil_guy0_sh040"], level.br_anim["br_exfil_guy0_sh040_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[1], level.br_anim["br_exfil_guy1_sh040"], level.br_anim["br_exfil_guy1_sh040_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[2], level.br_anim["br_exfil_guy2_sh040"], level.br_anim["br_exfil_guy2_sh040_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[3], level.br_anim["br_exfil_guy3_sh040"], level.br_anim["br_exfil_guy3_sh040_fem"]);
+        self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh040"]);
     }
     if (self.winners.size >= 3) {
         n++;
         self.packs[n] = create_animpack("scene5");
         self.packs[n] add_pack_startfunc([], &chopperexfil_sh050_start);
-        self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh050"]);
-        self.packs[n] add_pack_playeranim(self.winners[0], level.var_1a209bd995a7fa83["br_exfil_guy0_sh050"], level.var_1a209bd995a7fa83["br_exfil_guy0_sh050_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[1], level.var_1a209bd995a7fa83["br_exfil_guy1_sh050"], level.var_1a209bd995a7fa83["br_exfil_guy1_sh050_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[2], level.var_1a209bd995a7fa83["br_exfil_guy2_sh050"], level.var_1a209bd995a7fa83["br_exfil_guy2_sh050_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[3], level.var_1a209bd995a7fa83["br_exfil_guy3_sh050"], level.var_1a209bd995a7fa83["br_exfil_guy3_sh050_fem"]);
-        self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh050"]);
+        self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh050"]);
+        self.packs[n] add_pack_playeranim(self.winners[0], level.br_anim["br_exfil_guy0_sh050"], level.br_anim["br_exfil_guy0_sh050_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[1], level.br_anim["br_exfil_guy1_sh050"], level.br_anim["br_exfil_guy1_sh050_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[2], level.br_anim["br_exfil_guy2_sh050"], level.br_anim["br_exfil_guy2_sh050_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[3], level.br_anim["br_exfil_guy3_sh050"], level.br_anim["br_exfil_guy3_sh050_fem"]);
+        self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh050"]);
     }
     if (self.winners.size == 4) {
         n++;
         self.packs[n] = create_animpack("scene6");
         self.packs[n] add_pack_startfunc([], &chopperexfil_sh060_start);
-        self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh060"]);
-        self.packs[n] add_pack_playeranim(self.winners[0], level.var_1a209bd995a7fa83["br_exfil_guy0_sh060"], level.var_1a209bd995a7fa83["br_exfil_guy0_sh060_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[1], level.var_1a209bd995a7fa83["br_exfil_guy1_sh060"], level.var_1a209bd995a7fa83["br_exfil_guy1_sh060_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[2], level.var_1a209bd995a7fa83["br_exfil_guy2_sh060"], level.var_1a209bd995a7fa83["br_exfil_guy2_sh060_fem"]);
-        self.packs[n] add_pack_playeranim(self.winners[3], level.var_1a209bd995a7fa83["br_exfil_guy3_sh060"], level.var_1a209bd995a7fa83["br_exfil_guy3_sh060_fem"]);
-        self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh060"]);
+        self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh060"]);
+        self.packs[n] add_pack_playeranim(self.winners[0], level.br_anim["br_exfil_guy0_sh060"], level.br_anim["br_exfil_guy0_sh060_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[1], level.br_anim["br_exfil_guy1_sh060"], level.br_anim["br_exfil_guy1_sh060_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[2], level.br_anim["br_exfil_guy2_sh060"], level.br_anim["br_exfil_guy2_sh060_fem"]);
+        self.packs[n] add_pack_playeranim(self.winners[3], level.br_anim["br_exfil_guy3_sh060"], level.br_anim["br_exfil_guy3_sh060_fem"]);
+        self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh060"]);
     }
     n++;
     self.packs[n] = create_animpack("scene7");
     self.packs[n] add_pack_startfunc([], &chopperexfil_sh070_start);
-    self.packs[n] add_pack_modelanim(chopper, level.var_1a209bd995a7fa83["br_exfil_blima_sh070"]);
-    self.packs[n] add_pack_playeranim(self.winners[0], level.var_1a209bd995a7fa83["br_exfil_guy0_sh070"]);
-    self.packs[n] add_pack_playeranim(self.winners[1], level.var_1a209bd995a7fa83["br_exfil_guy1_sh070"]);
-    self.packs[n] add_pack_playeranim(self.winners[2], level.var_1a209bd995a7fa83["br_exfil_guy2_sh070"]);
-    self.packs[n] add_pack_playeranim(self.winners[3], level.var_1a209bd995a7fa83["br_exfil_guy3_sh070"]);
-    self.packs[n] add_pack_camanim(level.var_1a209bd995a7fa83["br_exfil_cam_sh070"]);
+    self.packs[n] add_pack_modelanim(chopper, level.br_anim["br_exfil_blima_sh070"]);
+    self.packs[n] add_pack_playeranim(self.winners[0], level.br_anim["br_exfil_guy0_sh070"]);
+    self.packs[n] add_pack_playeranim(self.winners[1], level.br_anim["br_exfil_guy1_sh070"]);
+    self.packs[n] add_pack_playeranim(self.winners[2], level.br_anim["br_exfil_guy2_sh070"]);
+    self.packs[n] add_pack_playeranim(self.winners[3], level.br_anim["br_exfil_guy3_sh070"]);
+    self.packs[n] add_pack_camanim(level.br_anim["br_exfil_cam_sh070"]);
 }
 
 // Namespace br_ending_chopper / namespace_d0436b1a1618abfc
@@ -174,30 +174,30 @@ function function_a5538b1593309bb0() {
     var_79a78f73d2d4925d = [];
     guyradius = 30;
     guyheight = 68;
-    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.var_1a209bd995a7fa83["br_exfil_guy0_sh020"], 0, undefined, guyradius, guyheight);
-    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.var_1a209bd995a7fa83["br_exfil_guy1_sh020"], 0, undefined, guyradius, guyheight);
-    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.var_1a209bd995a7fa83["br_exfil_guy2_sh020"], 0, undefined, guyradius, guyheight);
-    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.var_1a209bd995a7fa83["br_exfil_guy3_sh020"], 0, undefined, guyradius, guyheight);
+    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.br_anim["br_exfil_guy0_sh020"], 0, undefined, guyradius, guyheight);
+    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.br_anim["br_exfil_guy1_sh020"], 0, undefined, guyradius, guyheight);
+    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.br_anim["br_exfil_guy2_sh020"], 0, undefined, guyradius, guyheight);
+    var_79a78f73d2d4925d = function_3f005b301ec7f15b(var_79a78f73d2d4925d, level.br_anim["br_exfil_guy3_sh020"], 0, undefined, guyradius, guyheight);
     choppermodel = "veh8_mil_air_blima_scriptmodel";
     chopperoriginoffset = (0, 0, -70);
     chopperradius = 350;
     choppersegments = 10;
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh020"], 0, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh025"], 0, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh030"], 0, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh040"], 0, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh050"], 0, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh060"], 0, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh070"], 0, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh070"], 0.99, chopperoriginoffset, chopperradius);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh010"], chopperoriginoffset, chopperradius, choppersegments);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh020"], chopperoriginoffset, chopperradius, choppersegments);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh025"], chopperoriginoffset, chopperradius, choppersegments);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh030"], chopperoriginoffset, chopperradius, choppersegments);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh040"], chopperoriginoffset, chopperradius, choppersegments);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh050"], chopperoriginoffset, chopperradius, choppersegments);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh060"], chopperoriginoffset, chopperradius, choppersegments);
-    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.var_1a209bd995a7fa83["br_exfil_blima_sh070"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh020"], 0, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh025"], 0, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh030"], 0, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh040"], 0, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh050"], 0, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh060"], 0, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh070"], 0, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_f317a6f0ae25e3d4(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh070"], 0.99, chopperoriginoffset, chopperradius);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh010"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh020"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh025"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh030"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh040"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh050"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh060"], chopperoriginoffset, chopperradius, choppersegments);
+    var_79a78f73d2d4925d = function_19ae50e23fe0625a(var_79a78f73d2d4925d, choppermodel, level.br_anim["br_exfil_blima_sh070"], chopperoriginoffset, chopperradius, choppersegments);
     return var_79a78f73d2d4925d;
 }
 

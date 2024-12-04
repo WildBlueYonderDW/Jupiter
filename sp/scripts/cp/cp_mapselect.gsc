@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_f1d41f3b033d04b7;
 

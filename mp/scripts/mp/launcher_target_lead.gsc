@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\weapons.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\engine\utility;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace namespace_56362014e0153c0e;
 

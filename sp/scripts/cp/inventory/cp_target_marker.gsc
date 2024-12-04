@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_2d13875e907ea63d;
 

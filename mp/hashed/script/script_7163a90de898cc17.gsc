@@ -1,13 +1,13 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\flags.gsc;
-#using script_a35012b9b75a996;
 #using script_7ef95bba57dc4b82;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\mp\equipment\shock_stick;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace warrior_shocking;
 
@@ -48,13 +48,13 @@ function function_a84504e876b9bfdd() {
     var_91beb5c3a5ab6910.victim = self;
     var_91beb5c3a5ab6910.objweapon = self getcurrentweapon();
     if (isagent(self)) {
-        thread namespace_742e7eca5294ecdc::function_9b443e9c3e29f880(var_91beb5c3a5ab6910);
+        thread scripts\mp\equipment\shock_stick::shockStick_haywireAgent(var_91beb5c3a5ab6910);
         return;
     }
     if (isplayer(self)) {
         tableinfo = namespace_4fb9dddfb8c1a67a::getequipmenttableinfo("equip_shockstick");
         tableinfo.bundle.gestureref = "vm_ges_shockstick_react_looping";
-        thread namespace_742e7eca5294ecdc::function_c927fd013fc6e502(var_91beb5c3a5ab6910, tableinfo.bundle);
+        thread scripts\mp\equipment\shock_stick::function_c927fd013fc6e502(var_91beb5c3a5ab6910, tableinfo.bundle);
     }
 }
 

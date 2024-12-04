@@ -1,25 +1,25 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_6775ad452d13858;
-#using scripts\cp\cp_accessories.gsc;
-#using script_74502a9e0ef1f19c;
-#using script_56ef8d52fe1b48a1;
-#using scripts\cp\cp_loadout.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\cp\calloutmarkerping_cp.gsc;
-#using script_644c18834356d9dc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp\survival\survival_loadout.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_12e2fb553ec1605e;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_56ef8d52fe1b48a1;
+#using script_644c18834356d9dc;
+#using script_6775ad452d13858;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\cp\calloutmarkerping_cp;
+#using scripts\cp\cp_accessories;
+#using scripts\cp\cp_loadout;
+#using scripts\cp\survival\survival_loadout;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
 
-#namespace namespace_416fca08cfcca0a4;
+#namespace survival_loadout;
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb1a
 // Size: 0x63
@@ -35,7 +35,7 @@ function init() {
     initnightvisionheadoverrides();
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb85
 // Size: 0x19d
@@ -67,7 +67,7 @@ function initnightvisionheadoverrides() {
     level.nvgheadoverrides["head_mp_eastern_fireteam_east_nvg_1"]["up"] = "none";
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xd2a
 // Size: 0x5d4
@@ -92,11 +92,11 @@ function givedefaultloadout(var_86db2022c4f0f4bf, var_185ea69b2fe37360, var_7cb3
         if (isdefined(player.headmodel)) {
             player.headmodel = undefined;
         }
-        var_17bd52f2b320f1ca = get_player_character_num();
+        char_num = get_player_character_num();
         if (isdefined(var_185ea69b2fe37360)) {
-            var_17bd52f2b320f1ca = var_185ea69b2fe37360;
+            char_num = var_185ea69b2fe37360;
         }
-        player thread setmodelfromcustomization(var_17bd52f2b320f1ca);
+        player thread setmodelfromcustomization(char_num);
         skinref = player lookupcurrentoperatorskin(player.team);
         var_e89fd4c2e2e797b9 = player getplayerfoleytype(skinref);
         if (var_e89fd4c2e2e797b9 == "") {
@@ -186,7 +186,7 @@ function givedefaultloadout(var_86db2022c4f0f4bf, var_185ea69b2fe37360, var_7cb3
     player thread notify_when_loadout_given();
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1306
 // Size: 0xa1
@@ -209,7 +209,7 @@ function notify_when_loadout_given() {
     thread namespace_94359011b63230a6::clear_legacy_pickup_munitions();
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x13af
 // Size: 0x43
@@ -221,7 +221,7 @@ function giveloadoutafterinfil(var_86db2022c4f0f4bf, var_185ea69b2fe37360, var_7
     givedefaultloadout(var_86db2022c4f0f4bf, var_185ea69b2fe37360, var_7cb3ce39e2414126);
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13fa
 // Size: 0x27
@@ -232,7 +232,7 @@ function allow_super(player) {
     return 1;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x142a
 // Size: 0x2a
@@ -242,7 +242,7 @@ function return_wbk_version_of_weapon(player, var_ea6befbe838b7be0, objweapon) {
     return objweapon;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x145d
 // Size: 0xf9
@@ -264,18 +264,18 @@ function delayreturningperks(player) {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x155e
 // Size: 0x56
 function release_character_number(player) {
-    var_74e9c58ef0aced0c = player.player_character_num;
-    if (!array_contains(level.available_player_characters, var_74e9c58ef0aced0c) && var_74e9c58ef0aced0c != 5) {
-        level.available_player_characters = array_add(level.available_player_characters, var_74e9c58ef0aced0c);
+    character_number = player.player_character_num;
+    if (!array_contains(level.available_player_characters, character_number) && character_number != 5) {
+        level.available_player_characters = array_add(level.available_player_characters, character_number);
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x15bc
 // Size: 0x42
@@ -286,11 +286,11 @@ function get_baseweapon_pap_level(player, baseweapon) {
     return 1;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1606
 // Size: 0x39c
-function setmodelfromcustomization(var_17bd52f2b320f1ca) {
+function setmodelfromcustomization(char_num) {
     level endon("game_ended");
     assert(isdefined(self));
     assert(isplayer(self));
@@ -368,7 +368,7 @@ function setmodelfromcustomization(var_17bd52f2b320f1ca) {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19aa
 // Size: 0x16
@@ -377,7 +377,7 @@ function getplayerbodymodel() {
     return customization[0];
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19c9
 // Size: 0x36
@@ -389,7 +389,7 @@ function getplayerviewmodelfrombody(bodyref) {
     return viewmodel;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a08
 // Size: 0x5bd
@@ -508,7 +508,7 @@ function lookupcurrentoperator(team) {
     return operatorref;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fce
 // Size: 0x22a
@@ -553,7 +553,7 @@ function lookupcurrentoperatorskin(team) {
     return skinref;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2201
 // Size: 0x9c
@@ -571,7 +571,7 @@ function botpickskinid(operatorref) {
     self.botskinid = var_32d984c24ea6f4be;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22a5
 // Size: 0x116
@@ -594,7 +594,7 @@ function initheadlessoperatorcustomization() {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x23c3
 // Size: 0x109
@@ -619,7 +619,7 @@ function lookupotheroperator(team) {
     return operatorref;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24d5
 // Size: 0x1bd
@@ -659,7 +659,7 @@ function initoperatorcustomization() {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x269a
 // Size: 0x9f
@@ -674,7 +674,7 @@ function getoperatorteambyref(operatorref) {
     return undefined;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2742
 // Size: 0xd5
@@ -709,7 +709,7 @@ function pickdefaultoperatorskin(team) {
     return selectedindex;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2820
 // Size: 0x284
@@ -756,7 +756,7 @@ function getoperatorcustomization() {
     return customization;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2aad
 // Size: 0x30b
@@ -783,7 +783,7 @@ function initdefaultoperatorskins() {
     level.defaultoperatorskins["axis"]["suit"] = ["iw9_suit_generic_west_mp", "iw9_suit_generic_west_mp", "iw9_suit_generic_west_mp", "iw9_suit_generic_west_mp", "iw9_suit_generic_west_mp"];
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dc0
 // Size: 0x24
@@ -792,7 +792,7 @@ function getoperatorexecution(operatorref) {
     return self.loadoutexecution;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ded
 // Size: 0x24
@@ -801,7 +801,7 @@ function getoperatorexecutionquip(operatorref) {
     return self.loadoutexecutionquip;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e1a
 // Size: 0x23
@@ -810,7 +810,7 @@ function getoperatorsuperfaction(operatorref) {
     return int(faction);
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e46
 // Size: 0x56
@@ -825,7 +825,7 @@ function getoperatorvoice(operatorref, operatorskin) {
     return voice;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ea5
 // Size: 0x1e
@@ -834,7 +834,7 @@ function getoperatorclothtype(skinref) {
     return clothtype;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ecc
 // Size: 0x1e
@@ -843,7 +843,7 @@ function getoperatorgender(operatorref) {
     return gender;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ef3
 // Size: 0x6f
@@ -863,7 +863,7 @@ function get_player_character_num() {
     return choice;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f6b
 // Size: 0x7a
@@ -882,7 +882,7 @@ function setplayerhudphoto(player, character_index) {
     wait 5;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fed
 // Size: 0x27
@@ -890,20 +890,20 @@ function set_player_photo_status(player, status) {
     set_player_photo_option(player, "zm_player_status", get_status_bit_value(status));
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x301c
 // Size: 0xad
-function set_player_photo_option(player, omnvar, var_72a171e8a486a66) {
+function set_player_photo_option(player, omnvar, bit_value) {
     if (isdefined(player.bit_position)) {
-        setomnvarbit(omnvar, player.bit_position.bit_3, var_72a171e8a486a66.bit_3);
-        setomnvarbit(omnvar, player.bit_position.bit_2, var_72a171e8a486a66.bit_2);
-        setomnvarbit(omnvar, player.bit_position.bit_1, var_72a171e8a486a66.bit_1);
+        setomnvarbit(omnvar, player.bit_position.bit_3, bit_value.bit_3);
+        setomnvarbit(omnvar, player.bit_position.bit_2, bit_value.bit_2);
+        setomnvarbit(omnvar, player.bit_position.bit_1, bit_value.bit_1);
         player.photosetup = 1;
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x30d1
 // Size: 0x108
@@ -934,74 +934,74 @@ function get_bit_position(entity_number) {
     return bit_position;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x31e2
 // Size: 0x138
 function get_character_bit_value(photo_index) {
-    var_72a171e8a486a66 = spawnstruct();
+    bit_value = spawnstruct();
     switch (photo_index) {
     case 0:
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 0;
-        var_72a171e8a486a66.bit_1 = 0;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 0;
+        bit_value.bit_1 = 0;
         break;
     case 1:
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 0;
-        var_72a171e8a486a66.bit_1 = 1;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 0;
+        bit_value.bit_1 = 1;
         break;
     case 2:
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 1;
-        var_72a171e8a486a66.bit_1 = 0;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 1;
+        bit_value.bit_1 = 0;
         break;
     case 3:
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 1;
-        var_72a171e8a486a66.bit_1 = 1;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 1;
+        bit_value.bit_1 = 1;
         break;
     case 4:
-        var_72a171e8a486a66.bit_3 = 1;
-        var_72a171e8a486a66.bit_2 = 0;
-        var_72a171e8a486a66.bit_1 = 0;
+        bit_value.bit_3 = 1;
+        bit_value.bit_2 = 0;
+        bit_value.bit_1 = 0;
         break;
     }
-    return var_72a171e8a486a66;
+    return bit_value;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3323
 // Size: 0x101
 function get_status_bit_value(status) {
-    var_72a171e8a486a66 = spawnstruct();
+    bit_value = spawnstruct();
     switch (status) {
     case #"hash_f6a928810bf81022":
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 0;
-        var_72a171e8a486a66.bit_1 = 0;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 0;
+        bit_value.bit_1 = 0;
         break;
     case #"hash_58a5071e5fca9a8c":
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 0;
-        var_72a171e8a486a66.bit_1 = 1;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 0;
+        bit_value.bit_1 = 1;
         break;
     case #"hash_df6b3b2585101bc7":
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 1;
-        var_72a171e8a486a66.bit_1 = 0;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 1;
+        bit_value.bit_1 = 0;
         break;
     case #"hash_fdabb2d8523f47eb":
-        var_72a171e8a486a66.bit_3 = 0;
-        var_72a171e8a486a66.bit_2 = 1;
-        var_72a171e8a486a66.bit_1 = 1;
+        bit_value.bit_3 = 0;
+        bit_value.bit_2 = 1;
+        bit_value.bit_1 = 1;
         break;
     }
-    return var_72a171e8a486a66;
+    return bit_value;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x342d
 // Size: 0x7d
@@ -1017,7 +1017,7 @@ function setcharactermodels(bodymodelname, headmodelname, viewmodelname, hairmod
     self.viewmodel = viewmodelname;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x34b2
 // Size: 0x3
@@ -1025,7 +1025,7 @@ function getplayermodelindex() {
     return false;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x34be
 // Size: 0x12
@@ -1033,7 +1033,7 @@ function getplayerfoleytype(skinref) {
     return namespace_751288259782653c::getplayerfoleytype(skinref);
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x34d9
 // Size: 0x1b4
@@ -1081,7 +1081,7 @@ function updatemovespeedscale() {
     self setmovespeedscale(speedperc * self.movespeedscaler * self.combatspeedscalar);
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3695
 // Size: 0x12b
@@ -1122,7 +1122,7 @@ function getplayerspeedbyweapon(player) {
     return weaponspeed;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37c9
 // Size: 0x50
@@ -1133,7 +1133,7 @@ function getweaponspeed(weapon) {
     return weaponspeed;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3822
 // Size: 0xca
@@ -1162,7 +1162,7 @@ function getweaponspeedslowest() {
     return var_6155ff1652d3374f;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38f5
 // Size: 0x3d
@@ -1171,7 +1171,7 @@ function clampweaponspeed(value) {
     return clamp(value, 0, 1);
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x393b
 // Size: 0x11c
@@ -1203,7 +1203,7 @@ function getweaponheaviestvalue() {
     return var_8a6f4e6a2246d381;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a60
 // Size: 0x73
@@ -1219,7 +1219,7 @@ function getweaponweight(weapon) {
     return weaponspeed;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3adc
 // Size: 0x1b
@@ -1227,7 +1227,7 @@ function clampweaponweightvalue(value) {
     return clamp(value, 0, 11);
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b00
 // Size: 0x56
@@ -1244,7 +1244,7 @@ function wait_and_force_weapon_switch(starting_weapon) {
     self setspawnweapon(starting_weapon);
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b5e
 // Size: 0x75
@@ -1256,7 +1256,7 @@ function add_ammo_if_needed(weapon_list) {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3bdb
 // Size: 0xe0
@@ -1279,7 +1279,7 @@ function init_core_mp_perks() {
     level.perkunsetfuncs["specialty_falldamage"] = &unsetfreefall;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cc3
 // Size: 0xa
@@ -1287,7 +1287,7 @@ function setmomentum() {
     thread runmomentum();
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cd5
 // Size: 0x47
@@ -1305,7 +1305,7 @@ function runmomentum() {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d24
 // Size: 0x9f
@@ -1327,7 +1327,7 @@ function graduallyincreasespeed() {
     self waittill("momentum_reset");
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3dcb
 // Size: 0x1d
@@ -1337,7 +1337,7 @@ function momentum_endaftermax() {
     self playlocalsound("ftl_phase_out");
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3df0
 // Size: 0x81
@@ -1357,7 +1357,7 @@ function momentum_monitormovement() {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e79
 // Size: 0x20
@@ -1368,7 +1368,7 @@ function momentum_monitordamage() {
     self notify("momentum_reset");
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ea1
 // Size: 0xa
@@ -1376,7 +1376,7 @@ function unsetmomentum() {
     self notify("momentum_unset");
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3eb3
 // Size: 0x2
@@ -1384,7 +1384,7 @@ function setfreefall() {
     
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ebd
 // Size: 0x2
@@ -1392,7 +1392,7 @@ function unsetfreefall() {
     
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ec7
 // Size: 0xd7
@@ -1424,28 +1424,28 @@ function set_player_perks() {
     self notify("set_player_perks");
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 17, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fa6
 // Size: 0x1b9
 function registerplayercharacter(character_index, var_80d695139e2ad462, body_model, view_model, head_model, hair_model, vo_prefix, vo_suffix, pap_gesture, revive_gesture, photo_index, fate_card_weapon, intro_music, intro_gesture, melee_weapon, post_setup_func, starting_weapon) {
-    var_e060043ac076039 = spawnstruct();
-    var_e060043ac076039.body_model = body_model;
-    var_e060043ac076039.view_model = view_model;
-    var_e060043ac076039.head_model = head_model;
-    var_e060043ac076039.hair_model = hair_model;
-    var_e060043ac076039.vo_prefix = vo_prefix;
-    var_e060043ac076039.vo_suffix = vo_suffix;
-    var_e060043ac076039.pap_gesture = pap_gesture;
-    var_e060043ac076039.revive_gesture = revive_gesture;
-    var_e060043ac076039.photo_index = photo_index;
-    var_e060043ac076039.fate_card_weapon = fate_card_weapon;
-    var_e060043ac076039.intro_music = intro_music;
-    var_e060043ac076039.intro_gesture = intro_gesture;
-    var_e060043ac076039.melee_weapon = makeweaponfromstring(melee_weapon);
-    var_e060043ac076039.starting_weapon = makeweaponfromstring(starting_weapon);
-    var_e060043ac076039.post_setup_func = post_setup_func;
-    level.player_character_info[character_index] = var_e060043ac076039;
+    character_info = spawnstruct();
+    character_info.body_model = body_model;
+    character_info.view_model = view_model;
+    character_info.head_model = head_model;
+    character_info.hair_model = hair_model;
+    character_info.vo_prefix = vo_prefix;
+    character_info.vo_suffix = vo_suffix;
+    character_info.pap_gesture = pap_gesture;
+    character_info.revive_gesture = revive_gesture;
+    character_info.photo_index = photo_index;
+    character_info.fate_card_weapon = fate_card_weapon;
+    character_info.intro_music = intro_music;
+    character_info.intro_gesture = intro_gesture;
+    character_info.melee_weapon = makeweaponfromstring(melee_weapon);
+    character_info.starting_weapon = makeweaponfromstring(starting_weapon);
+    character_info.post_setup_func = post_setup_func;
+    level.player_character_info[character_index] = character_info;
     if (!isdefined(level.available_player_characters)) {
         level.available_player_characters = [];
     }
@@ -1454,7 +1454,7 @@ function registerplayercharacter(character_index, var_80d695139e2ad462, body_mod
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4167
 // Size: 0x15
@@ -1462,7 +1462,7 @@ function respawnitems_assignrespawnitems(respawnitems) {
     self.respawnitems = respawnitems;
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4184
 // Size: 0x38
@@ -1477,7 +1477,7 @@ function testclient_run_funcs() {
     thread testclient_dev_laststand();
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x41c4
 // Size: 0xda
@@ -1513,7 +1513,7 @@ function testclient_dev_laststand() {
     }
 }
 
-// Namespace namespace_416fca08cfcca0a4 / scripts\cp\survival\survival_loadout
+// Namespace survival_loadout / scripts\cp\survival\survival_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x42a6
 // Size: 0x7d

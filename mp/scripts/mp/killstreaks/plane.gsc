@@ -1,11 +1,11 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
 
 #namespace plane;
 

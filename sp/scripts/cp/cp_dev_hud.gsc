@@ -1,7 +1,7 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_3342d1008f574a0;
 
@@ -143,10 +143,10 @@ function show_selection_menu(slot, array) {
     end = clamp(array.size, 0, level.slot_cap);
     array_size = array.size - 1;
     slot_index = math::wrap(0, array_size, slot);
-    var_6c8d6baddac11ccc = array[slot_index];
+    main_string = array[slot_index];
     cap = min(level.slot_cap, array.size);
-    var_71117b214db6d5a2 = int(cap / 2);
-    current_index = slot - var_71117b214db6d5a2;
+    starting_index = int(cap / 2);
+    current_index = slot - starting_index;
     current_index = math::wrap(0, array_size, current_index);
     for (i = 0; i < cap; i++) {
         if (!isdefined(array[current_index])) {
@@ -157,15 +157,15 @@ function show_selection_menu(slot, array) {
         current_index = math::wrap(0, array_size, current_index);
     }
     for (i = 0; i < temp_array.size; i++) {
-        var_88dfa55bd16575e = temp_array[i];
-        if (i == var_71117b214db6d5a2) {
-            level.menu_current_selection = var_88dfa55bd16575e;
-            var_88dfa55bd16575e = "->" + var_88dfa55bd16575e;
+        menu_string = temp_array[i];
+        if (i == starting_index) {
+            level.menu_current_selection = menu_string;
+            menu_string = "->" + menu_string;
             color = (1, 1, 0);
         } else {
             color = (1, 1, 1);
         }
-        set_hud_element(var_88dfa55bd16575e, color);
+        set_hud_element(menu_string, color);
     }
 }
 

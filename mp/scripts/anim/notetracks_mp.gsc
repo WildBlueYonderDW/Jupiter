@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\anim\notetracks.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\anim\notetracks;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm_bb;
+#using scripts\common\debug;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace notetracks_mp;
 

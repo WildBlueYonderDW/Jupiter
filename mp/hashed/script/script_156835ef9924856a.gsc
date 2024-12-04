@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\callback_group.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2d9d24f7c63ac143;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\gametypes\br_jugg_common.gsc;
-#using scripts\cp_mp\gasmask.gsc;
+#using script_600b944a95c3a7bf;
 #using script_7c40fa80892a721;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\utility\callback_group;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_jugg_common;
+#using scripts\mp\utility\killstreak;
 
 #namespace iodine_pills;
 

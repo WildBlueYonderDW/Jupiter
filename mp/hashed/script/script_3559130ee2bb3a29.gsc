@@ -1,27 +1,27 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_860bfdfe82326e3;
-#using script_2583ee5680cf4736;
-#using script_46c7c73b1a7e4773;
-#using script_58be75c518bf0d40;
-#using script_7b2517368c79e5bc;
-#using script_3e2f8cc477d57433;
-#using script_485622d93fa7e4cf;
-#using script_5640d32580c6bc7d;
-#using script_7f9409b703dad400;
-#using script_600b944a95c3a7bf;
 #using script_16ea1b94f0f381b3;
-#using script_220d0eb95a8fab7d;
 #using script_185660037b9236c1;
-#using script_41387eecc35b88bf;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_220d0eb95a8fab7d;
+#using script_2583ee5680cf4736;
 #using script_3390b73ac3318fe;
-#using script_5605739161b1abe1;
 #using script_3559130ee2bb3a29;
+#using script_3e2f8cc477d57433;
+#using script_41387eecc35b88bf;
+#using script_46c7c73b1a7e4773;
+#using script_485622d93fa7e4cf;
+#using script_5605739161b1abe1;
+#using script_5640d32580c6bc7d;
+#using script_58be75c518bf0d40;
+#using script_600b944a95c3a7bf;
 #using script_76cc264b397db9cb;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using script_7b2517368c79e5bc;
+#using script_7f9409b703dad400;
+#using script_860bfdfe82326e3;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_26f804e2951e85f2;
 
@@ -641,10 +641,10 @@ function private function_5121e154aabb5b05(player, oldteam, newteam, oldsquadid,
                 }
             }
             if (istrue(var_90a66d5b0d63b307) && function_f0ae0bcc1d1be67c(player, var_419535d231262698)) {
-                var_582c7221d51c3778 = var_2edc190ae1e05188.players;
-                if (isdefined(var_582c7221d51c3778) && isarray(var_582c7221d51c3778) && var_582c7221d51c3778.size > 0) {
+                a_newteam = var_2edc190ae1e05188.players;
+                if (isdefined(a_newteam) && isarray(a_newteam) && a_newteam.size > 0) {
                     var_b5ad4e3fbf0fb403 = 0;
-                    foreach (var_15e48d55c29a0ac4 in var_582c7221d51c3778) {
+                    foreach (var_15e48d55c29a0ac4 in a_newteam) {
                         if (function_f0ae0bcc1d1be67c(player, var_419535d231262698) && !function_d71a760b0589b81d(var_15e48d55c29a0ac4.team, var_15e48d55c29a0ac4.sessionsquadid, var_419535d231262698)) {
                             var_b5ad4e3fbf0fb403 = 1;
                             break;

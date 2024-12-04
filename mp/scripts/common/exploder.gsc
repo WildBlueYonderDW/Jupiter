@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\createfx.gsc;
+#using scripts\common\createfx;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace exploder;
 

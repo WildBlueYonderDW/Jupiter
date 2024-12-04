@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_28b5f185a9f45899;
-#using script_497512e9383077fc;
-#using script_4071f60cff3c93b6;
-#using script_4beb45978e7f481c;
-#using scripts\mp\load.gsc;
 #using script_1311c5c284dd1537;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\compass.gsc;
-#using scripts\mp\equipment\tactical_cover.gsc;
-#using scripts\cp_mp\utility\scriptable_door_utility.gsc;
+#using script_28b5f185a9f45899;
+#using script_4071f60cff3c93b6;
+#using script_497512e9383077fc;
+#using script_4beb45978e7f481c;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\scriptable_door_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\anim;
+#using scripts\mp\compass;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\flags;
+#using scripts\mp\load;
+#using scripts\mp\utility\game;
 
 #namespace mp_swap_meet;
 

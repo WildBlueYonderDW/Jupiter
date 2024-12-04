@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
 #using script_5a4a5d9ba343ff8f;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace namespace_dfe20d80cfb5220c;
 
@@ -47,7 +47,7 @@ function function_9d6df53b2bb22d73() {
     self._blackboard.var_75b2c9ba4bfca43d = 0;
     self.var_3e84854a738e628d = &dismember_head;
     self.var_7fb81e56992abf97 = &function_ef549c6c35e41708;
-    self.var_7050024e5f8ca246 = &function_8b2d889a2541d28f;
+    self.var_7050024e5f8ca246 = &dismember_annihilate;
 }
 
 // Namespace namespace_dfe20d80cfb5220c / namespace_9e6ef02d993a7eba
@@ -110,7 +110,7 @@ function dismember_legs() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x67d
 // Size: 0x12
-function function_8b2d889a2541d28f() {
+function dismember_annihilate() {
     dismember(19 | 12, 1, 1);
 }
 
@@ -158,7 +158,7 @@ function private function_e2c1f2a81d46d73d(params) {
                 }
             }
         }
-        if (function_5c4d80762e50bd12(params.eattacker, params.shitloc, params.sweapon, params.idamage, params.smeansofdeath)) {
+        if (should_annihilate(params.eattacker, params.shitloc, params.sweapon, params.idamage, params.smeansofdeath)) {
             dismember(19 | 12, var_65de9a18ad444853, 1);
             return;
         }
@@ -377,9 +377,9 @@ function annihilate() {
         effect_id = level._effect["zombie_base_annihilate"];
     }
     effect_pos = self gettagorigin("j_spine4");
-    var_8f8922f650e9a081 = self gettagangles("j_spine4");
-    if (isdefined(effect_pos) && isdefined(var_8f8922f650e9a081)) {
-        playfx(effect_id, effect_pos, anglestoforward(var_8f8922f650e9a081), anglestoup(var_8f8922f650e9a081));
+    effect_angles = self gettagangles("j_spine4");
+    if (isdefined(effect_pos) && isdefined(effect_angles)) {
+        playfx(effect_id, effect_pos, anglestoforward(effect_angles), anglestoup(effect_angles));
     }
 }
 
@@ -413,7 +413,7 @@ function private function_c4f73d6490f607f7() {
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x10d2
 // Size: 0xd0
-function private function_5c4d80762e50bd12(eattacker, str_hit_loc, weapon, n_damage, str_damage_type) {
+function private should_annihilate(eattacker, str_hit_loc, weapon, n_damage, str_damage_type) {
     if (istrue(self.var_c216c30f467f0ce) || function_95ce7ff0b2df8f26(weapon)) {
         return false;
     }

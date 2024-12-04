@@ -1,28 +1,28 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\mp_agent_damage.gsc;
+#using script_5762ac2f22202ba2;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent_damage;
 
-#namespace namespace_d47a505897d5097;
+#namespace br_damage;
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0x3de
 // Size: 0x19
 function private autoexec __init__system__() {
-    system::register(#"hash_d733ce17d270caab", undefined, undefined, &init);
+    system::register(#"br_damage", undefined, undefined, &init);
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x3ff
 // Size: 0x66
@@ -34,7 +34,7 @@ function private init() {
     callback::function_e7fddda1f0b46b5e("zombie") callback::add("on_zombie_ai_damaged", &on_zombie_ai_damaged);
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x67
@@ -48,7 +48,7 @@ function private function_edf4c2f3f7732c67(params) {
     agent callback::add("on_soldier_ai_damaged", &on_soldier_ai_damaged);
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x4dc
 // Size: 0x19
@@ -56,7 +56,7 @@ function private function_6078f3e8c682a36(params) {
     self.var_970170ffd4b081ac = &function_d88acf085f34a24f;
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 13, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x698
@@ -152,7 +152,7 @@ function function_d88acf085f34a24f(einflictor, eattacker, idamage, idflags, smea
     return idamagenew;
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xb9e
 // Size: 0x164
@@ -173,7 +173,7 @@ function private on_zombie_ai_damaged(dmg_struct) {
     }
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0a
 // Size: 0xa3
@@ -192,7 +192,7 @@ function function_743e37eebd6ba8e2(n_damage) {
     self.var_7fff3293eab0f7b8 = undefined;
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0xdb5
 // Size: 0x49
@@ -203,7 +203,7 @@ function private function_3c80d46239ce0a0e(dmg_struct, shitloc, var_29a8ba8c9dd4
     return dmg_struct.idamage;
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 13, eflags: 0x0
 // Checksum 0x0, Offset: 0xe07
 // Size: 0x42f
@@ -274,7 +274,7 @@ function soldier_damage(einflictor, eattacker, idamage, idflags, smeansofdeath, 
     return int(final_damage);
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x123f
 // Size: 0x13c
@@ -293,7 +293,7 @@ function private on_soldier_ai_damaged(dmg_struct) {
     }
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x1383
 // Size: 0x7b
@@ -307,7 +307,7 @@ function private on_zombie_ai_killed(params) {
     }
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x1406
 // Size: 0x12
@@ -315,7 +315,7 @@ function private function_e5ea18b76842725f(params) {
     scripts\cp_mp\utility\game_utility::removefromcharactersarray();
 }
 
-// Namespace namespace_d47a505897d5097 / namespace_68973652cca2f4b4
+// Namespace br_damage / namespace_68973652cca2f4b4
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1420
 // Size: 0xef

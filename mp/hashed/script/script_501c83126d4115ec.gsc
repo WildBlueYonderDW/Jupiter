@@ -1,12 +1,12 @@
-#using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots_gametype_br.gsc;
 #using script_40e63dd222434655;
-#using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\flags.gsc;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_circle;
 
 #namespace escape_gas;
 

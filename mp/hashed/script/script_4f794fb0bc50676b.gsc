@@ -1,14 +1,14 @@
+#using script_16ea1b94f0f381b3;
 #using script_686729055b66c6e4;
 #using script_7edf952f8921aa6b;
-#using scripts\common\callbacks.gsc;
-#using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_f50b7a445cd149bc;
 
@@ -323,8 +323,8 @@ function private function_3f54cae9f655ea24(var_3032a1d2003305a6, charge_time, ob
         var_da49a6c35dc8e259 = int(charge_time / var_d389b0c90dbea55d * 5);
     }
     var_da49a6c35dc8e259 = max(var_da49a6c35dc8e259, 1);
-    var_de8a9ead75a0581 = self getweaponammoclip(obj_weapon);
-    var_da49a6c35dc8e259 = int(min(var_da49a6c35dc8e259, var_de8a9ead75a0581 + 1));
+    current_ammo = self getweaponammoclip(obj_weapon);
+    var_da49a6c35dc8e259 = int(min(var_da49a6c35dc8e259, current_ammo + 1));
     return var_da49a6c35dc8e259;
 }
 
@@ -596,11 +596,11 @@ function private function_3a1fea67117b5878(var_a6a33e69f0bceb0c) {
     clip_size = weaponclipsize(var_a6a33e69f0bceb0c);
     while (true) {
         wait 0.6;
-        var_de8a9ead75a0581 = self getweaponammoclip(var_a6a33e69f0bceb0c);
-        if (var_de8a9ead75a0581 >= clip_size) {
+        current_ammo = self getweaponammoclip(var_a6a33e69f0bceb0c);
+        if (current_ammo >= clip_size) {
             break;
         }
-        self setweaponammoclip(var_a6a33e69f0bceb0c, var_de8a9ead75a0581 + 1);
+        self setweaponammoclip(var_a6a33e69f0bceb0c, current_ammo + 1);
     }
 }
 
@@ -609,8 +609,8 @@ function private function_3a1fea67117b5878(var_a6a33e69f0bceb0c) {
 // Checksum 0x0, Offset: 0x1d0a
 // Size: 0x4a
 function private function_a88ee6bfa7bbbf2d(var_a6a33e69f0bceb0c, charge_level) {
-    var_de8a9ead75a0581 = self getweaponammoclip(var_a6a33e69f0bceb0c);
-    new_ammo = int(max(0, var_de8a9ead75a0581 - charge_level + 1));
+    current_ammo = self getweaponammoclip(var_a6a33e69f0bceb0c);
+    new_ammo = int(max(0, current_ammo - charge_level + 1));
     self setweaponammoclip(var_a6a33e69f0bceb0c, new_ammo);
 }
 

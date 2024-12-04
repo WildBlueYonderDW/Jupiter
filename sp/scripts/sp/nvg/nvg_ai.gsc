@@ -1,11 +1,11 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\stealth\debug.gsc;
 #using script_3433ee6b63c7e243;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
+#using scripts\stealth\debug;
 
 #namespace nvg_ai;
 
@@ -44,7 +44,7 @@ function nvg_ai() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fc
 // Size: 0xb
-function do_flir_footsteps(var_d5aa0379e8c758cc) {
+function do_flir_footsteps(vfx_override) {
     
 }
 
@@ -169,50 +169,50 @@ function updatelightmeter() {
     var_be525e555b949810 = 998001;
     var_3fc1a93b7207133e = var_9d7eb6e3cbc851a6.size;
     for (var_18ea2a1964ea249c = 0; var_18ea2a1964ea249c < var_3fc1a93b7207133e; var_18ea2a1964ea249c++) {
-        var_94715b1541bc0e7b = var_9d7eb6e3cbc851a6[var_18ea2a1964ea249c];
-        dist_sq = distancesquared(var_eb66ebed687542e2, var_94715b1541bc0e7b.origin);
+        dynolight = var_9d7eb6e3cbc851a6[var_18ea2a1964ea249c];
+        dist_sq = distancesquared(var_eb66ebed687542e2, dynolight.origin);
         if (dist_sq > var_be525e555b949810) {
             break;
         }
-        if (!var_ffa6a55a441d9138 && var_94715b1541bc0e7b.timeoflaststatechange >= self.lightmeter_lastchecktime) {
+        if (!var_ffa6a55a441d9138 && dynolight.timeoflaststatechange >= self.lightmeter_lastchecktime) {
             var_ffa6a55a441d9138 = 1;
         }
-        if (!var_94715b1541bc0e7b.alive) {
+        if (!dynolight.alive) {
             continue;
         }
-        if (var_94715b1541bc0e7b getscriptablepartstate("onoff") == "off") {
+        if (dynolight getscriptablepartstate("onoff") == "off") {
             continue;
         }
         var_397eb484dfddd2da = 650;
-        if (isdefined(var_94715b1541bc0e7b.data)) {
-            if (istrue(var_94715b1541bc0e7b.data.script_ignoreme)) {
+        if (isdefined(dynolight.data)) {
+            if (istrue(dynolight.data.script_ignoreme)) {
                 continue;
             }
-            if (istrue(var_94715b1541bc0e7b.data.script_radius)) {
-                var_397eb484dfddd2da = var_94715b1541bc0e7b.data.script_radius;
+            if (istrue(dynolight.data.script_radius)) {
+                var_397eb484dfddd2da = dynolight.data.script_radius;
                 if (dist_sq > var_397eb484dfddd2da * var_397eb484dfddd2da) {
                     continue;
                 }
             }
-            if (is_equal(var_94715b1541bc0e7b.data.script_type, "light_spot")) {
+            if (is_equal(dynolight.data.script_type, "light_spot")) {
                 /#
                     if (getdvarint(@"hash_4249b712406badc9")) {
-                        var_94715b1541bc0e7b draw_spotlight_fov();
+                        dynolight draw_spotlight_fov();
                     }
                 #/
-                fov = var_94715b1541bc0e7b.data.script_fov_inner;
-                angles = var_94715b1541bc0e7b.data.angles;
-                start = var_94715b1541bc0e7b.lightpos;
+                fov = dynolight.data.script_fov_inner;
+                angles = dynolight.data.angles;
+                start = dynolight.lightpos;
                 if (!within_fov(start, angles, var_eb66ebed687542e2, cos(fov))) {
                     continue;
                 }
             }
         }
-        if (!var_94715b1541bc0e7b istouching(self.in_dynolight_trigger)) {
+        if (!dynolight istouching(self.in_dynolight_trigger)) {
             continue;
         }
         var_4d1fb8faeda31cd6 = var_4f65efcf21f5b553.size;
-        var_4f65efcf21f5b553[var_4d1fb8faeda31cd6] = var_94715b1541bc0e7b;
+        var_4f65efcf21f5b553[var_4d1fb8faeda31cd6] = dynolight;
         var_56d3f8333adbcbf1[var_4d1fb8faeda31cd6] = var_397eb484dfddd2da;
         var_4388be32bf8e8320[var_4d1fb8faeda31cd6] = dist_sq;
     }
@@ -233,23 +233,23 @@ function updatelightmeter() {
         }
         var_3fc1a93b7207133e = var_4f65efcf21f5b553.size;
         for (var_18ea2a1964ea249c = 0; var_18ea2a1964ea249c < var_3fc1a93b7207133e; var_18ea2a1964ea249c++) {
-            var_94715b1541bc0e7b = var_4f65efcf21f5b553[var_18ea2a1964ea249c];
+            dynolight = var_4f65efcf21f5b553[var_18ea2a1964ea249c];
             dist = sqrt(var_4388be32bf8e8320[var_18ea2a1964ea249c]);
             var_397eb484dfddd2da = var_56d3f8333adbcbf1[var_18ea2a1964ea249c];
             var_d1fbc09d2898a776 = 0;
-            if (isdefined(var_94715b1541bc0e7b.data) && isdefined(var_94715b1541bc0e7b.data.script_percent)) {
-                var_d1fbc09d2898a776 = var_94715b1541bc0e7b.data.script_percent;
+            if (isdefined(dynolight.data) && isdefined(dynolight.data.script_percent)) {
+                var_d1fbc09d2898a776 = dynolight.data.script_percent;
             } else if (isdefined(level.dynolight_falloff_dist)) {
                 var_d1fbc09d2898a776 = level.dynolight_falloff_dist;
             }
-            var_f22120fbffb96467 = (1 - math::normalize_value(var_397eb484dfddd2da * var_d1fbc09d2898a776, var_397eb484dfddd2da, dist)) * var_94715b1541bc0e7b.intensity;
-            if (!dynolight_trace_passed(var_94715b1541bc0e7b, tracedata)) {
+            light_factor = (1 - math::normalize_value(var_397eb484dfddd2da * var_d1fbc09d2898a776, var_397eb484dfddd2da, dist)) * dynolight.intensity;
+            if (!dynolight_trace_passed(dynolight, tracedata)) {
                 continue;
             }
-            var_c544587b4f919b5c += var_f22120fbffb96467;
+            var_c544587b4f919b5c += light_factor;
             /#
                 if (getdvarint(@"hash_4249b712406badc9")) {
-                    line(var_94715b1541bc0e7b.lightpos, self.origin, (var_f22120fbffb96467, var_f22120fbffb96467, var_f22120fbffb96467), 1, 0, 10);
+                    line(dynolight.lightpos, self.origin, (light_factor, light_factor, light_factor), 1, 0, 10);
                 }
             #/
             if (var_c544587b4f919b5c > 0.5) {
@@ -266,21 +266,21 @@ function updatelightmeter() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa7e
 // Size: 0x14e
-function dynolight_trace_passed(var_94715b1541bc0e7b, tracedata) {
+function dynolight_trace_passed(dynolight, tracedata) {
     var_2fc7b90001702e5c = [level.player];
-    if (isdefined(var_94715b1541bc0e7b.linked_ents)) {
-        var_2fc7b90001702e5c = array_combine(var_2fc7b90001702e5c, var_94715b1541bc0e7b.linked_ents);
+    if (isdefined(dynolight.linked_ents)) {
+        var_2fc7b90001702e5c = array_combine(var_2fc7b90001702e5c, dynolight.linked_ents);
     }
     if (istrue(tracedata.bmoving)) {
-        var_2fc7b90001702e5c = array_combine(var_2fc7b90001702e5c, [var_94715b1541bc0e7b, self]);
+        var_2fc7b90001702e5c = array_combine(var_2fc7b90001702e5c, [dynolight, self]);
         assert(isdefined(tracedata.pointsonpath));
         var_e47e37dbc6d59dfe = tracedata.pointsonpath.size;
         for (i = 0; i < var_e47e37dbc6d59dfe; i++) {
             pathpos = tracedata.pointsonpath[i];
-            if (ray_trace_passed(var_94715b1541bc0e7b.lightpos, pathpos, var_2fc7b90001702e5c, level.dynolight_trace_contents)) {
+            if (ray_trace_passed(dynolight.lightpos, pathpos, var_2fc7b90001702e5c, level.dynolight_trace_contents)) {
                 /#
                     if (getdvarint(@"hash_4249b712406badc9") && i != 0) {
-                        line(var_94715b1541bc0e7b.lightpos, pathpos, (0, 1, 0.5), 1, 0, 20);
+                        line(dynolight.lightpos, pathpos, (0, 1, 0.5), 1, 0, 20);
                     }
                 #/
                 return 1;
@@ -288,7 +288,7 @@ function dynolight_trace_passed(var_94715b1541bc0e7b, tracedata) {
         }
         return 0;
     }
-    return var_94715b1541bc0e7b can_trace_to_ai(var_94715b1541bc0e7b.lightpos, self, var_2fc7b90001702e5c, level.dynolight_trace_contents);
+    return dynolight can_trace_to_ai(dynolight.lightpos, self, var_2fc7b90001702e5c, level.dynolight_trace_contents);
 }
 
 // Namespace nvg_ai / scripts\sp\nvg\nvg_ai
@@ -319,7 +319,7 @@ function draw_spotlight_fov() {
             thread draw_circle(start, viewdist, (1, 0, 0), 1, 0, 4);
             return;
         }
-        scripts\stealth\debug::function_ab68b8f1b9191d70(start, -1 * fov_yaw, fov_yaw, (pitch, eye_yaw, 0), viewdist, 1, var_8b4c94ee530f045e, color);
+        scripts\stealth\debug::draw_arc(start, -1 * fov_yaw, fov_yaw, (pitch, eye_yaw, 0), viewdist, 1, var_8b4c94ee530f045e, color);
     #/
 }
 
@@ -336,7 +336,7 @@ function draw_flashlight_fov() {
     start = self gettagorigin("tag_flash");
     var_8b4c94ee530f045e = 10;
     /#
-        scripts\stealth\debug::function_ab68b8f1b9191d70(start, -1 * fov_yaw, fov_yaw, self gettagangles("<dev string:x1c>"), viewdist, 1, var_8b4c94ee530f045e, color);
+        scripts\stealth\debug::draw_arc(start, -1 * fov_yaw, fov_yaw, self gettagangles("<dev string:x1c>"), viewdist, 1, var_8b4c94ee530f045e, color);
     #/
 }
 
@@ -364,17 +364,17 @@ function disable_ai_dynolight_behavior() {
     // Checksum 0x0, Offset: 0xe4b
     // Size: 0x247
     function function_94e2c55578304a2() {
-        var_f69e39e78fa16603 = "<dev string:x26>";
+        answer = "<dev string:x26>";
         while (true) {
             foreach (guy in getaiarray()) {
                 if (isdefined(guy.lightmeter) && guy ent_flag_exist("<dev string:x27>")) {
                     num = guy getentitynumber();
-                    var_f69e39e78fa16603 = ter_op(guy.lightmeter < 0.5, "<dev string:x3b>", "<dev string:x3f>");
+                    answer = ter_op(guy.lightmeter < 0.5, "<dev string:x3b>", "<dev string:x3f>");
                     if (getdvarint(@"hash_4249b712406badc9")) {
                         print3d(guy.origin + (0, 0, 85), "<dev string:x42>" + num + "<dev string:x47>" + distance2d(guy.origin, level.player.origin), (1, 1, 1), 1, 0.6, 1);
                         print3d(guy.origin + (0, 0, 78), "<dev string:x42>" + num + "<dev string:x59>" + sqrt(guy.maxsightdistsqrd), (1, 1, 1), 1, 0.6, 1);
                         print3d(guy.origin + (0, 0, 71), "<dev string:x42>" + num + "<dev string:x69>" + guy.lightmeter, (guy.lightmeter, guy.lightmeter, guy.lightmeter), 1, 0.6, 1);
-                        print3d(guy.origin + (0, 0, 64), "<dev string:x78>" + var_f69e39e78fa16603, (1, 1, 1), 1, 0.6, 1);
+                        print3d(guy.origin + (0, 0, 64), "<dev string:x78>" + answer, (1, 1, 1), 1, 0.6, 1);
                         if (istrue(guy.flashlight) && guy is_gun_raised()) {
                             guy thread draw_flashlight_fov();
                         }
@@ -425,13 +425,13 @@ function flashlight_on(var_b5214d24f3968b4c) {
 // Checksum 0x0, Offset: 0x1118
 // Size: 0x125
 function function_d73f1b97acba6597() {
-    var_c7d735e3522da00a = ["flashlight_box01", "flashlight_cyl01", "flashlight_pstl01"];
+    attachments_names = ["flashlight_box01", "flashlight_cyl01", "flashlight_pstl01"];
     currweapon = self.weapon;
     newweapon = undefined;
-    foreach (var_93e3b716dc7e83da in var_c7d735e3522da00a) {
-        if (currweapon canuseattachment(var_93e3b716dc7e83da)) {
-            newweapon = currweapon withattachment(var_93e3b716dc7e83da);
-            self.var_e0675e48962c6d55 = var_93e3b716dc7e83da;
+    foreach (attachment_name in attachments_names) {
+        if (currweapon canuseattachment(attachment_name)) {
+            newweapon = currweapon withattachment(attachment_name);
+            self.var_e0675e48962c6d55 = attachment_name;
             break;
         }
     }

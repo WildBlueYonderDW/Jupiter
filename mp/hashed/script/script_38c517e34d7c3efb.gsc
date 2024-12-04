@@ -1,18 +1,18 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\values.gsc;
-#using scripts\asm\shared\utility.gsc;
 #using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
-#using script_4fa22bc28608e9bd;
 #using script_3e4f26df9dc4b465;
 #using script_4d5690421d14cda9;
-#using script_ac32c5a74321662;
+#using script_4fa22bc28608e9bd;
 #using script_5a4a5d9ba343ff8f;
+#using script_7edf952f8921aa6b;
+#using script_ac32c5a74321662;
+#using scripts\asm\shared\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace zombie_disciple;
 
@@ -244,15 +244,15 @@ function function_dea7107232630efc(taskid, params) {
 function function_2fde990d57867cd() {
     target_ent = self.enemy;
     if (istrue(self.var_4a574e473630f0eb)) {
-        var_310236dbf257fbb5 = [];
+        nearby_ai = [];
         if (!istrue(self.var_c124ffbc8c1883e7)) {
-            var_310236dbf257fbb5 = getaiarrayinradius(self.origin, self.var_19ae2683f843e4f7, self.team);
+            nearby_ai = getaiarrayinradius(self.origin, self.var_19ae2683f843e4f7, self.team);
         } else {
-            var_310236dbf257fbb5 = getaiarrayinradius(self.origin, self.var_19ae2683f843e4f7, "team_two_hundred");
+            nearby_ai = getaiarrayinradius(self.origin, self.var_19ae2683f843e4f7, "team_two_hundred");
         }
         var_4afe22ba200fcd1b = undefined;
-        if (var_310236dbf257fbb5.size > 0) {
-            foreach (zombie in var_310236dbf257fbb5) {
+        if (nearby_ai.size > 0) {
+            foreach (zombie in nearby_ai) {
                 if (isdefined(zombie.aicategory) && (zombie.aicategory == "special" || zombie.aicategory == "elite" || zombie.aicategory == "boss")) {
                     continue;
                 }
@@ -903,8 +903,8 @@ function function_f9ed622e24431d52() {
             circle_range += 50;
         }
         foreach (angle in angle_offsets) {
-            var_e4baef9749309aec = angleclamp180(var_cb512fe1100a614a + angle);
-            target_vec = anglestoforward((0, var_e4baef9749309aec, 0));
+            target_angle = angleclamp180(var_cb512fe1100a614a + angle);
+            target_vec = anglestoforward((0, target_angle, 0));
             target_pos = self.enemy.origin + target_vec * circle_range;
             var_4d665e1c4dd6e8c2 = getclosestpointonnavmesh(target_pos);
             if (isdefined(var_4d665e1c4dd6e8c2)) {

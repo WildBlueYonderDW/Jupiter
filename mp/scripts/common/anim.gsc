@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\values.gsc;
 #using script_6bfe39bd5c12f84a;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\engine\utility;
 
 #namespace animation;
 
@@ -280,13 +280,13 @@ function anim_single_internal(guys, anime, tag, var_9e8a16d47a03007a, animname_o
             }
         #/
         if (DoAnimation) {
-            var_43e50904d011917e = undefined;
+            scripted_node_ent = undefined;
             if (function_6bc36c81fc28a22e()) {
-                var_43e50904d011917e = self;
+                scripted_node_ent = self;
             }
             assertex(isdefined(guy.model) && guy.model != "<dev string:xd0>", "<dev string:xd4>" + function_a2eaafb222316a2(guy) + "<dev string:xf8>" + animname + "<dev string:x10c>" + anime + "<dev string:x129>");
             guy namespace_c5f7e08ad7ea4280::function_d5f76e611c78509a();
-            animtime = guy [[ anim.callbacks["DoAnimation"] ]](org, angles, animname, anime, anim_string, undefined, var_43e50904d011917e);
+            animtime = guy [[ anim.callbacks["DoAnimation"] ]](org, angles, animname, anime, anim_string, undefined, scripted_node_ent);
             if (animtime < var_2afd32f7cad8af86) {
                 var_2afd32f7cad8af86 = animtime;
                 var_c89cf41205d8055d = i;
@@ -495,16 +495,16 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
     #/
     anim_string = "looping anim";
     base_anime = anime;
-    var_f9909a84715a4ddf = undefined;
+    base_animname = undefined;
     if (isdefined(animname_override)) {
-        var_f9909a84715a4ddf = animname_override;
+        base_animname = animname_override;
     } else {
-        var_f9909a84715a4ddf = baseguy.animname;
+        base_animname = baseguy.animname;
     }
     idleanim = 0;
     lastidleanim = 0;
     naginterval = 0;
-    var_6beb6c37769023f8 = isdefined(level.scr_anim[var_f9909a84715a4ddf][anime + "_nags"]);
+    var_6beb6c37769023f8 = isdefined(level.scr_anim[base_animname][anime + "_nags"]);
     if (var_6beb6c37769023f8 && utility::issp()) {
         ai = 0;
         foreach (i, var_f2811089f0eb595c in var_3d308e5cd595225d) {
@@ -513,8 +513,8 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
             }
         }
         assertex(ai == 1, "<dev string:x263>");
-        if (isdefined(level.scr_anim[var_f9909a84715a4ddf][anime + "_nags_timer"])) {
-            naginterval = level.scr_anim[var_f9909a84715a4ddf][anime + "_nags_timer"];
+        if (isdefined(level.scr_anim[base_animname][anime + "_nags_timer"])) {
+            naginterval = level.scr_anim[base_animname][anime + "_nags_timer"];
         } else {
             naginterval = 15;
         }
@@ -526,14 +526,14 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
         setdvarifuninitialized(@"hash_e35578a601bcd680", 0);
         nagdata = spawnstruct();
         nagdata.last_nag_time = gettime();
-        nagdata.nag_anims = level.scr_anim[var_f9909a84715a4ddf][anime + "_nags"];
+        nagdata.nag_anims = level.scr_anim[base_animname][anime + "_nags"];
         nagdata.currentnagindex = 0;
         childthread nag_timer(naginterval, baseguy);
     }
     while (true) {
         if (!donag && !isagent(baseguy)) {
             anime = base_anime;
-            for (idleanim = anim_weight(var_f9909a84715a4ddf, anime); idleanim == lastidleanim && idleanim != 0; idleanim = anim_weight(var_f9909a84715a4ddf, anime)) {
+            for (idleanim = anim_weight(base_animname, anime); idleanim == lastidleanim && idleanim != 0; idleanim = anim_weight(base_animname, anime)) {
             }
         } else if (!isagent(baseguy)) {
             idleanim = pick_nag_anim(nagdata);
@@ -1316,8 +1316,8 @@ function initanim() {
     if (!isdefined(level.scr_anim)) {
         level.scr_anim[0][0] = 0;
     }
-    if (!isdefined(level.var_539e9dc23256f26d)) {
-        level.var_539e9dc23256f26d[0][0] = 0;
+    if (!isdefined(level.scr_animlength)) {
+        level.scr_animlength[0][0] = 0;
     }
     if (!isdefined(level.scr_radio)) {
         level.scr_radio = [];
@@ -1426,8 +1426,8 @@ function init_animsounds_for_animname(animname) {
 // Size: 0x138
 function init_notetracks_for_animname(animname) {
     foreach (anime, var_72e7f473bbab5d91 in level.scr_notetrack[animname]) {
-        foreach (notetrack, var_39b955b6ea2a96e in var_72e7f473bbab5d91) {
-            foreach (scr_notetrack in var_39b955b6ea2a96e) {
+        foreach (notetrack, notetrack_array in var_72e7f473bbab5d91) {
+            foreach (scr_notetrack in notetrack_array) {
                 soundalias = scr_notetrack["sound"];
                 if (!isdefined(soundalias)) {
                     continue;
@@ -1869,7 +1869,7 @@ function function_96b3d74019cd30a(anime, org, angles, animname) {
     if (isdefined(level.var_ac0205cb091a126e) && istrue(level.var_99364109f9f9b3f4) && level.var_99364109f9f9b3f4 == gettime()) {
         return level.scr_anim[animname][anime][level.var_ac0205cb091a126e];
     }
-    var_48c468c35e48fd78 = 0;
+    closest_anim = 0;
     closest_dist = undefined;
     level.var_ac0205cb091a126e = undefined;
     foreach (i, animation in level.scr_anim[animname][anime]) {
@@ -1887,18 +1887,18 @@ function function_96b3d74019cd30a(anime, org, angles, animname) {
         }
         dist = distancesquared(level.player.origin, neworg);
         if (dist < closest_dist) {
-            var_48c468c35e48fd78 = i;
+            closest_anim = i;
             closest_dist = dist;
         }
     }
-    animation = level.scr_anim[animname][anime][var_48c468c35e48fd78];
+    animation = level.scr_anim[animname][anime][closest_anim];
     /#
         if (getdvarint(@"hash_4140c00f3efa94c6", 0)) {
             iprintln("<dev string:x729>" + animation);
         }
     #/
     level.var_99364109f9f9b3f4 = gettime();
-    level.var_ac0205cb091a126e = var_48c468c35e48fd78;
+    level.var_ac0205cb091a126e = closest_anim;
     return animation;
 }
 
@@ -2223,8 +2223,8 @@ function function_e42b762e098c8f9e() {
 function function_52351c3338da63f4(animcategory, animindex) {
     assertex(isdefined(animcategory) && isdefined(animindex), "<dev string:x8a6>");
     animlength = 0;
-    if (isdefined(level.var_539e9dc23256f26d) && isdefined(level.var_539e9dc23256f26d[animcategory]) && isdefined(level.var_539e9dc23256f26d[animcategory][animindex])) {
-        animlength = level.var_539e9dc23256f26d[animcategory][animindex];
+    if (isdefined(level.scr_animlength) && isdefined(level.scr_animlength[animcategory]) && isdefined(level.scr_animlength[animcategory][animindex])) {
+        animlength = level.scr_animlength[animcategory][animindex];
     } else if (isdefined(level.scr_anim) && isdefined(level.scr_anim[animcategory]) && isdefined(level.scr_anim[animcategory][animindex])) {
         animlength = getanimlength(level.scr_anim[animcategory][animindex]);
     } else {
@@ -2320,11 +2320,11 @@ function function_9dbe1a78b03782f2(var_54e516bef4218c8f, start_func, end_func, a
     #/
     threads = 0;
     guys = [];
-    foreach (var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-        guy = var_64b5ab50f22a4efc[0];
-        animation = var_64b5ab50f22a4efc[1];
-        alignment = var_64b5ab50f22a4efc[2];
-        var_93e32c180cab35b3 = var_64b5ab50f22a4efc[3];
+    foreach (guy_anim in var_54e516bef4218c8f) {
+        guy = guy_anim[0];
+        animation = guy_anim[1];
+        alignment = guy_anim[2];
+        var_93e32c180cab35b3 = guy_anim[3];
         startorg = self.origin;
         startangles = self.angles;
         if (isdefined(alignment)) {
@@ -2369,8 +2369,8 @@ function function_9dbe1a78b03782f2(var_54e516bef4218c8f, start_func, end_func, a
             level notify("<dev string:x979>" + "<dev string:x97e>");
         }
     #/
-    foreach (var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-        guy = var_64b5ab50f22a4efc[0];
+    foreach (guy_anim in var_54e516bef4218c8f) {
+        guy = guy_anim[0];
         if (!isalive(guy)) {
             continue;
         }
@@ -2431,9 +2431,9 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
     waittillframeend();
     var_4bc185af207d5706 = default_to(var_4bc185af207d5706, 140);
     var_ad86b98c8c9def3d = default_to(var_ad86b98c8c9def3d, 4);
-    foreach (index, var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-        guy = var_64b5ab50f22a4efc[0];
-        var_93e32c180cab35b3 = var_64b5ab50f22a4efc[3];
+    foreach (index, guy_anim in var_54e516bef4218c8f) {
+        guy = guy_anim[0];
+        var_93e32c180cab35b3 = guy_anim[3];
         moving_destination = isdefined(var_93e32c180cab35b3) && var_93e32c180cab35b3 == "Exposed Moving";
         track_speed = moving_destination;
         /#
@@ -2450,8 +2450,8 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
         dist = [];
         dist_normal = [];
         remove = [];
-        foreach (index, var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-            guy = var_64b5ab50f22a4efc[0];
+        foreach (index, guy_anim in var_54e516bef4218c8f) {
+            guy = guy_anim[0];
             if (!isalive(guy)) {
                 remove[remove.size] = index;
                 continue;
@@ -2486,9 +2486,9 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
         if (var_54e516bef4218c8f.size == 0) {
             break;
         }
-        foreach (index, var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-            guy = var_64b5ab50f22a4efc[0];
-            var_93e32c180cab35b3 = var_64b5ab50f22a4efc[3];
+        foreach (index, guy_anim in var_54e516bef4218c8f) {
+            guy = guy_anim[0];
+            var_93e32c180cab35b3 = guy_anim[3];
             moving_destination = isdefined(var_93e32c180cab35b3) && var_93e32c180cab35b3 == "Exposed Moving";
             if (dist[index] < 96) {
                 guy enableavoidance(0, 0);
@@ -2497,7 +2497,7 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
             speedscale = 1;
             if (furthestguy != guy) {
                 if (moving_destination && dist[index] <= 16) {
-                    speedscale = min(1, guy.reachspeed.var_e2b417b32dbed0f7 + 0.05);
+                    speedscale = min(1, guy.reachspeed.speed_avg + 0.05);
                 } else {
                     speedscale = max(dist_normal[index], 0.4);
                 }
@@ -2512,7 +2512,7 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
                     print3d(guy.origin, "<dev string:xd0>" + int(var_4bc185af207d5706), (0, 1, 0), 1, 0.3, 1, 1);
                     print3d(guy.origin + (0, 0, 10), "<dev string:xd0>" + int(desiredspeed), (1, 1, 1), 1, 0.3, 1, 1);
                     if (isdefined(guy.reachspeed)) {
-                        print3d(guy.origin + (0, 0, 20), "<dev string:xd0>" + int(guy.reachspeed.var_e2b417b32dbed0f7), (0, 1, 1), 1, 0.3, 1, 1);
+                        print3d(guy.origin + (0, 0, 20), "<dev string:xd0>" + int(guy.reachspeed.speed_avg), (0, 1, 1), 1, 0.3, 1, 1);
                     }
                     print3d(guy.origin + (0, 0, 80), "<dev string:xd0>" + speedscale, (0, 0, 1), 1, 0.3, 1, 1);
                     print3d(guy.goalpos + (0, 0, 12), "<dev string:xd0>" + int(dist[index]), (0, 0, 1), 1, 1, 1, 1);
@@ -2545,7 +2545,7 @@ function anim_reach_speed_control_avg(var_ad86b98c8c9def3d, var_4bc185af207d5706
     self endon("anim_reach_speed_control_avg");
     self.reachspeed = spawnstruct();
     reachspeed = self.reachspeed;
-    reachspeed.var_e2b417b32dbed0f7 = var_4bc185af207d5706;
+    reachspeed.speed_avg = var_4bc185af207d5706;
     reachspeed.speed_samples = [];
     reachspeed.speed_total = 0;
     curr = 0;
@@ -2557,7 +2557,7 @@ function anim_reach_speed_control_avg(var_ad86b98c8c9def3d, var_4bc185af207d5706
         }
         reachspeed.speed_samples[index] = length(self.velocity);
         reachspeed.speed_total += reachspeed.speed_samples[index];
-        reachspeed.var_e2b417b32dbed0f7 = reachspeed.speed_total / reachspeed.speed_samples.size;
+        reachspeed.speed_avg = reachspeed.speed_total / reachspeed.speed_samples.size;
         waitframe();
     }
 }

@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_ai_encounters.gsc;
-#using scripts\mp\gametypes\br_maphints.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_4a0d1f5f6be0f8c7;
 #using script_4ff6c6ed304e05bb;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_ai_encounters;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_maphints;
+#using scripts\mp\utility\game;
 
 #namespace namespace_79e590f683734378;
 

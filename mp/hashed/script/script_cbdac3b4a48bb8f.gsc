@@ -1,8 +1,8 @@
-#using script_7ef95bba57dc4b82;
-#using script_7b2517368c79e5bc;
 #using script_600b944a95c3a7bf;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\equipment.gsc;
+#using script_7b2517368c79e5bc;
+#using script_7ef95bba57dc4b82;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
 
 #namespace namespace_f808ba0ae0debcf5;
 
@@ -167,9 +167,9 @@ function remove_current(equipmenttype, quantity) {
 // Checksum 0x0, Offset: 0x576
 // Size: 0x69
 function function_6aaed72439e0a22a(quantity) {
-    var_57accdc40b2f50e = function_39b9fdb77f6046ba();
-    currentquantity = var_57accdc40b2f50e[1];
-    var_2814cca693e6ef2d = var_57accdc40b2f50e[0];
+    __a0 = function_39b9fdb77f6046ba();
+    currentquantity = __a0[1];
+    var_2814cca693e6ef2d = __a0[0];
     dropquantity = currentquantity;
     if (isdefined(quantity) && quantity < currentquantity) {
         dropquantity = quantity;

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\gameobjects.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gameobjects;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\script;
 
 #namespace bots_gametype_ctf;
 

@@ -1,26 +1,26 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_7e41e37180e554f;
 #using script_2047cdbf5176ba0;
-#using script_41387eecc35b88bf;
-#using scripts\mp\utility\script.gsc;
-#using script_ec2a55b85051e9b;
 #using script_208955cb4d2c8fb3;
-#using scripts\common\callbacks.gsc;
-#using script_edb8e725d068ac9;
-#using script_6995888daf1a86e;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\engine\math.gsc;
-#using script_371b4c2ab5861e62;
 #using script_24fbedba9a7a1ef4;
-#using scripts\common\debug.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\gasmask.gsc;
+#using script_371b4c2ab5861e62;
+#using script_41387eecc35b88bf;
 #using script_42adcce5878f583;
+#using script_6995888daf1a86e;
+#using script_7e41e37180e554f;
+#using script_ec2a55b85051e9b;
+#using script_edb8e725d068ac9;
+#using scripts\asm\asm;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\utility\script;
 
 #namespace namespace_9f019848a4f1b0f2;
 
@@ -487,7 +487,7 @@ function private function_3464e87269ef5eb5(aabb, var_debb750de57351e, var_48f698
 // Checksum 0x0, Offset: 0x1a00
 // Size: 0x218
 function private function_1d9a6d4f970f532(var_584d88622912b443) {
-    aabb = function_73c48491fd2e880e(self.Chemist.goalvolume);
+    aabb = get_aabb(self.Chemist.goalvolume);
     var_22b98cdb5c88d103 = [];
     var_6e8d5a28c0c33cf5 = [];
     if (!isdefined(aabb)) {
@@ -621,7 +621,7 @@ function private function_c2108f8c1f9625b8() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x20f0
 // Size: 0x102
-function private function_73c48491fd2e880e(volume) {
+function private get_aabb(volume) {
     if (isdefined(volume)) {
         aabb = [];
         aabb["min"] = [];
@@ -691,7 +691,7 @@ function private array_compare(array1, array2) {
                 line(self.origin, self.goalpos, (0, 1, 1));
                 draw_circle(self.goalpos, self.goalradius, (0, 1, 1), 1, 0, 1);
                 if (isdefined(self.Chemist.goalvolume)) {
-                    aabb = function_73c48491fd2e880e(self.Chemist.goalvolume);
+                    aabb = get_aabb(self.Chemist.goalvolume);
                     topleftfront = (aabb["<dev string:x394>"][0], aabb["<dev string:x394>"][1], aabb["<dev string:x39b>"][2]);
                     toprightfront = (aabb["<dev string:x39b>"][0], aabb["<dev string:x394>"][1], aabb["<dev string:x39b>"][2]);
                     topleftback = (aabb["<dev string:x39b>"][0], aabb["<dev string:x394>"][1], aabb["<dev string:x39b>"][2]);
@@ -893,11 +893,11 @@ function function_48feb105f930a9ee(instance) {
                 } else {
                     self dodamage(instance.arenadamage, self.origin, self, undefined, "MOD_TRIGGER_HURT", "<explicitweaponnone>", "body");
                 }
-                if (isdefined(instance) && isdefined(instance.var_4b7032d8632723e0)) {
+                if (isdefined(instance) && isdefined(instance.warlord_agent)) {
                     if (istrue(var_11e954ae279ee245)) {
-                        instance.var_4b7032d8632723e0 thread namespace_dc53a27a8db8e6bf::function_7f0a446fa91ff206(self);
+                        instance.warlord_agent thread namespace_dc53a27a8db8e6bf::function_7f0a446fa91ff206(self);
                     } else {
-                        instance.var_4b7032d8632723e0 thread namespace_dc53a27a8db8e6bf::function_4e8e1867968e84a5(self);
+                        instance.warlord_agent thread namespace_dc53a27a8db8e6bf::function_4e8e1867968e84a5(self);
                     }
                 }
             }

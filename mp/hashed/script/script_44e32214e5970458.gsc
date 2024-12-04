@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\utility\points.gsc;
 #using script_6a977a0edf312405;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\points;
 
 #namespace namespace_ed1cfb3c9d4fe39f;
 

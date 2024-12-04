@@ -1,8 +1,8 @@
-#using scripts\aitypes\stealth.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\stealth\event.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\aitypes\melee.gsc;
+#using scripts\aitypes\melee;
+#using scripts\aitypes\stealth;
+#using scripts\engine\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\event;
 
 #namespace combat;
 

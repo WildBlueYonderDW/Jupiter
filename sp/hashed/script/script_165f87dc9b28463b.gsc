@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using script_6775ad452d13858;
 #using script_12e2fb553ec1605e;
-#using scripts\cp\utility\player.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_6775ad452d13858;
+#using scripts\common\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_f0ed5d732ece344b;
 
@@ -23,10 +23,10 @@ function function_1f763dfecfc35564() {
 // Checksum 0x0, Offset: 0x137
 // Size: 0x5a
 function function_bf63fad4c7dc4e9f() {
-    level.var_21f3c3f7eadf3c57 = [];
-    level.var_21f3c3f7eadf3c57[level.var_21f3c3f7eadf3c57.size] = "price_western_a";
-    level.var_21f3c3f7eadf3c57[level.var_21f3c3f7eadf3c57.size] = "t10_usa_mogadishu_a";
-    level.var_21f3c3f7eadf3c57[level.var_21f3c3f7eadf3c57.size] = "bravos_sas_d_western_basic";
+    level.operator_indices = [];
+    level.operator_indices[level.operator_indices.size] = "price_western_a";
+    level.operator_indices[level.operator_indices.size] = "t10_usa_mogadishu_a";
+    level.operator_indices[level.operator_indices.size] = "bravos_sas_d_western_basic";
 }
 
 // Namespace namespace_f0ed5d732ece344b / namespace_8806fd8068aa0a0b
@@ -36,8 +36,8 @@ function function_bf63fad4c7dc4e9f() {
 function function_c682e1f5eb7f451e() {
     if (isdefined(self.operatorcustomization) && isdefined(self.operatorcustomization.execution)) {
         scripts\cp_mp\execution::_giveexecution(self.operatorcustomization.execution);
-        random_index = random(level.var_21f3c3f7eadf3c57);
-        level.var_21f3c3f7eadf3c57 = array_remove(level.var_21f3c3f7eadf3c57, random_index);
+        random_index = random(level.operator_indices);
+        level.operator_indices = array_remove(level.operator_indices, random_index);
         function_51cef08d1c77da29(self, random_index);
     }
 }

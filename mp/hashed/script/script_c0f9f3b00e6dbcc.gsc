@@ -1,16 +1,16 @@
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
 #using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\equipment_interact.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\equipment_interact;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
 
 #namespace proximity_alarm;
 

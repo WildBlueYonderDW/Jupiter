@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_64acb6ce534155b7;
 #using script_3ff084f114b7f6c9;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_728ffcee8cbf30ee;
-#using scripts\mp\hud_message.gsc;
+#using script_64acb6ce534155b7;
 #using script_6c4e8cea70bf4b6d;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
+#using script_728ffcee8cbf30ee;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hud_message;
+#using scripts\mp\rank;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_46a48466a348d5e2;
 

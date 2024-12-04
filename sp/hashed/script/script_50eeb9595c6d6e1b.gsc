@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using script_35de402efc5acfb3;
-#using script_f4e8d02d2f70888;
-#using script_433d8f78f7e5fb;
 #using script_3212cc02a2700260;
+#using script_35de402efc5acfb3;
+#using script_433d8f78f7e5fb;
 #using script_5d265b4fca61f070;
-#using scripts\common\debug.gsc;
-#using scripts\engine\math.gsc;
+#using script_f4e8d02d2f70888;
+#using scripts\anim\utility_common;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace battlechatter_events;
 
@@ -270,8 +270,8 @@ function function_8d862c3d37cb8ebd(enemy) {
     if (!enemy seerecently(self, 5)) {
         return false;
     }
-    var_9d683edc4be7acce = enemy getclosestfriendlyspeaker();
-    var_92efd1e1e657aee9 = isalive(var_9d683edc4be7acce) && var_9d683edc4be7acce isnear(enemy, level.var_798aa343368f724e);
+    enemy_ally = enemy getclosestfriendlyspeaker();
+    var_92efd1e1e657aee9 = isalive(enemy_ally) && enemy_ally isnear(enemy, level.var_798aa343368f724e);
     if (!var_92efd1e1e657aee9) {
         return false;
     }
@@ -529,15 +529,15 @@ function useevent(type, var_7cf0530cd57b14) {
         return;
     }
     var_58686d35610dc65 = isai(self);
-    var_cd10f4029aaf6c37 = function_e12a23f3c8aa65bb(type);
+    use_alias = function_e12a23f3c8aa65bb(type);
     if (var_58686d35610dc65 && chatterallowed(self)) {
-        if (isdefined(var_cd10f4029aaf6c37)) {
-            sequence = [self, var_cd10f4029aaf6c37];
+        if (isdefined(use_alias)) {
+            sequence = [self, use_alias];
             if (istrue(var_7cf0530cd57b14)) {
                 var_776811fd7338978c = function_7846ced6c23280a9(type);
                 ally_speaker = function_d8c3c539bc71c7af(self.team);
                 if (isdefined(ally_speaker) && isdefined(var_776811fd7338978c)) {
-                    sequence = [ally_speaker, var_776811fd7338978c, self, var_cd10f4029aaf6c37];
+                    sequence = [ally_speaker, var_776811fd7338978c, self, use_alias];
                 } else {
                     /#
                         if (getdvarint(@"hash_864d3ab12f741516")) {
@@ -998,8 +998,8 @@ function function_f649c4ef3acdec1d(team) {
 function friendlyfireevent() {
     self endon("death");
     wait 0.15;
-    if (isdefined(self.var_261aaf24a09d231d)) {
-        foreach (vo_data in self.var_261aaf24a09d231d) {
+    if (isdefined(self.vo_active)) {
+        foreach (vo_data in self.vo_active) {
             if (!istrue(vo_data.ischatter)) {
                 return;
             }

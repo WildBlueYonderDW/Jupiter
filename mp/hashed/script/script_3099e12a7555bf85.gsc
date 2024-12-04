@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
 #using script_451a1a9bd9613164;
 #using script_4cdabcd91a92977;
-#using scripts\mp\utility\script.gsc;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
+#using scripts\mp\utility\script;
 
 #namespace namespace_11161030531bb10d;
 
@@ -11,14 +11,14 @@
 // Checksum 0x0, Offset: 0x210
 // Size: 0xa
 function autoexec main() {
-    thread function_f5edd804b04d1b23();
+    thread _main();
 }
 
 // Namespace namespace_11161030531bb10d / namespace_781727f0de488c93
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x222
 // Size: 0x86
-function function_f5edd804b04d1b23() {
+function _main() {
     if (getdvarint(@"hash_4059e9a29bbb06e7", 1) == 1) {
         if (isbr()) {
             moodset = getdvar(@"hash_814a58e4f810f2d8", "");

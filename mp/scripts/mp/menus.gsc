@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_3f8889c16399185c;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\common\ui.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\teams.gsc;
 #using script_76cc264b397db9cb;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\bounty.gsc;
-#using scripts\cp_mp\pet_watch.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
+#using scripts\common\ui;
+#using scripts\common\utility;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bounty;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\hud_message;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spectating;
+#using scripts\mp\teams;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
 
 #namespace menus;
 
@@ -709,7 +709,7 @@ function waitforclassselect() {
             waitframe();
             continue;
         }
-        if ((isJuggerMoshGameMode() || function_6c88a48a9e942c3d()) && !isbot(self) && !isloadoutindexdefault(newclass)) {
+        if ((isJuggerMoshGameMode() || isMutationGameModeZombie()) && !isbot(self) && !isloadoutindexdefault(newclass)) {
             newclass = 100;
         }
         if ("" + newclass != "callback") {

@@ -1,13 +1,13 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_5a3c73c4ef07ecec;
-#using script_40d9a279bd1a1bf9;
 #using script_2d20a34a5e04704d;
+#using script_40d9a279bd1a1bf9;
+#using script_57d78f3552757ec4;
+#using script_5a3c73c4ef07ecec;
 #using script_6e768becf8a66251;
 #using script_b32b21ec1783af5;
-#using script_57d78f3552757ec4;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_bca03e8d41cf9507;
 
@@ -75,8 +75,8 @@ function private function_866ec2626b84937a(mapname) {
         function_139b4b175d67e8ed("land");
         break;
     }
-    foreach (var_e316720fc8606632 in level.var_46f34dd309687113) {
-        var_e316720fc8606632 setscriptablepartstate("glyph_part", "idle");
+    foreach (visual_scr in level.var_46f34dd309687113) {
+        visual_scr setscriptablepartstate("glyph_part", "idle");
     }
 }
 

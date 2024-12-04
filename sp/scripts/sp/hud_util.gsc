@@ -1,10 +1,10 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using script_7e4d332e911e1b90;
 #using script_72ef6b9f0cf1f55a;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ui.gsc;
+#using script_7e4d332e911e1b90;
+#using scripts\common\ui;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace hud_util;
 
@@ -472,12 +472,12 @@ function setflashfrac(flashfrac) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1611
 // Size: 0x4f
-function fade_over_time(var_6b214c71049955e7, fade_time) {
-    assertex(isdefined(var_6b214c71049955e7), "fade_over_time must be passed a target_alpha.");
+function fade_over_time(target_alpha, fade_time) {
+    assertex(isdefined(target_alpha), "fade_over_time must be passed a target_alpha.");
     if (isdefined(fade_time) && fade_time > 0) {
         self fadeovertime(fade_time);
     }
-    self.alpha = var_6b214c71049955e7;
+    self.alpha = target_alpha;
     if (isdefined(fade_time) && fade_time > 0) {
         wait fade_time;
     }
@@ -743,13 +743,13 @@ function create_client_overlay(shader_name, start_alpha, player) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ed9
 // Size: 0xd5
-function function_9478a061111af71f(var_e7136cec1d20f89d, var_a1d797ec9d2d9038, var_ef461f271eef23b7) {
+function function_9478a061111af71f(fade_state, var_a1d797ec9d2d9038, callback_function) {
     self endon("death_or_disconnect");
     assertex(function_a0ae4b54aa48ade2("scripted_widget_hud_fade_overlay"), "Attempting to use scripted_widget_hud_fade_overlay when it doesnt exist. Please make sure your level contains a scripted_widget_hud_fade_overlay asset reference inside of APE.");
-    if (!isdefined(var_e7136cec1d20f89d)) {
-        var_e7136cec1d20f89d = default_to(var_e7136cec1d20f89d, "fade_in_normal");
+    if (!isdefined(fade_state)) {
+        fade_state = default_to(fade_state, "fade_in_normal");
     }
-    assertex(isdefined(function_daff24f3e11825ae("scripted_widget_hud_fade_overlay", var_e7136cec1d20f89d)), "fade_state is an invalid state. Please double check that fade_state is one of the valid states defined in hud_fade_overlay.gsh.");
+    assertex(isdefined(function_daff24f3e11825ae("scripted_widget_hud_fade_overlay", fade_state)), "fade_state is an invalid state. Please double check that fade_state is one of the valid states defined in hud_fade_overlay.gsh.");
     if (!isdefined(var_a1d797ec9d2d9038)) {
         var_a1d797ec9d2d9038 = 1;
     }
@@ -758,8 +758,8 @@ function function_9478a061111af71f(var_e7136cec1d20f89d, var_a1d797ec9d2d9038, v
         function_90de31b2cbef19f9("hud_fade_overlay", "scripted_widget_hud_fade_overlay");
         function_f4c37324750dc183("hud_fade_overlay", 0, 0, 3, 3);
     }
-    function_d28fa5295a04d555("hud_fade_overlay", var_e7136cec1d20f89d);
-    self.var_c77404ded14e0abf = var_ef461f271eef23b7;
+    function_d28fa5295a04d555("hud_fade_overlay", fade_state);
+    self.var_c77404ded14e0abf = callback_function;
     self.var_fff0a33228a51498 = var_a1d797ec9d2d9038;
 }
 

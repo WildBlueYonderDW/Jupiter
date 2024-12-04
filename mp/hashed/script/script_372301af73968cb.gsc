@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\values.gsc;
-#using script_6a5d3bf7a5b7064a;
 #using script_2fc9d8a91b9fce8f;
-#using scripts\cp_mp\challenges.gsc;
+#using script_6a5d3bf7a5b7064a;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace playerhealth;
 

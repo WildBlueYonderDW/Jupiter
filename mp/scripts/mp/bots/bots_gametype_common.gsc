@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace bots_gametype_common;
 
@@ -86,12 +86,12 @@ function bot_cache_entrances_to_gametype_array(array, label_prefix, ignore_paths
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x668
 // Size: 0x438
-function bot_cache_entrances(var_24b68ccccd2558a9, var_6221a2f77b043913, ignore_paths, var_59d7820e096a5ff9) {
-    assert(isdefined(var_24b68ccccd2558a9));
-    assert(isdefined(var_6221a2f77b043913));
-    assert(var_24b68ccccd2558a9.size > 0);
-    assert(var_6221a2f77b043913.size > 0);
-    assert(var_24b68ccccd2558a9.size == var_6221a2f77b043913.size);
+function bot_cache_entrances(origin_array, label_array, ignore_paths, var_59d7820e096a5ff9) {
+    assert(isdefined(origin_array));
+    assert(isdefined(label_array));
+    assert(origin_array.size > 0);
+    assert(label_array.size > 0);
+    assert(origin_array.size == label_array.size);
     calculate_paths = !isdefined(ignore_paths) || !ignore_paths;
     var_129f7bac538976fc = isdefined(var_59d7820e096a5ff9) && var_59d7820e096a5ff9;
     wait 0.1;
@@ -102,9 +102,9 @@ function bot_cache_entrances(var_24b68ccccd2558a9, var_6221a2f77b043913, ignore_
         }
     }
     entrance_points = [];
-    for (i = 0; i < var_24b68ccccd2558a9.size; i++) {
-        index = var_6221a2f77b043913[i];
-        entrance_points[index] = findentrances(var_24b68ccccd2558a9[i]);
+    for (i = 0; i < origin_array.size; i++) {
+        index = label_array[i];
+        entrance_points[index] = findentrances(origin_array[i]);
         wait 0.05;
         var_e20df846c8700ef = 0;
         var_9b944e0aa5fad8cb = 1;
@@ -114,13 +114,13 @@ function bot_cache_entrances(var_24b68ccccd2558a9, var_6221a2f77b043913, ignore_
         for (j = 0; j < entrance_points[index].size; j++) {
             entrance = entrance_points[index][j];
             entrance.is_precalculated_entrance = 1;
-            entrance.prone_visible_from[index] = entrance_visible_from(entrance.origin, var_24b68ccccd2558a9[i], "prone");
+            entrance.prone_visible_from[index] = entrance_visible_from(entrance.origin, origin_array[i], "prone");
             var_e20df846c8700ef++;
             if (var_e20df846c8700ef >= var_9b944e0aa5fad8cb) {
                 var_e20df846c8700ef = 0;
                 wait 0.05;
             }
-            entrance.crouch_visible_from[index] = entrance_visible_from(entrance.origin, var_24b68ccccd2558a9[i], "crouch");
+            entrance.crouch_visible_from[index] = entrance_visible_from(entrance.origin, origin_array[i], "crouch");
             var_e20df846c8700ef++;
             if (var_e20df846c8700ef >= var_9b944e0aa5fad8cb) {
                 var_e20df846c8700ef = 0;
@@ -130,21 +130,21 @@ function bot_cache_entrances(var_24b68ccccd2558a9, var_6221a2f77b043913, ignore_
     }
     precalculated_paths = [];
     if (calculate_paths) {
-        for (i = 0; i < var_24b68ccccd2558a9.size; i++) {
-            for (j = i + 1; j < var_24b68ccccd2558a9.size; j++) {
-                path = get_extended_path(var_24b68ccccd2558a9[i], var_24b68ccccd2558a9[j]);
-                assertex(isdefined(path), "<dev string:x1bd>" + var_6221a2f77b043913[i] + "<dev string:x1dd>" + var_24b68ccccd2558a9[i] + "<dev string:x1e2>" + var_6221a2f77b043913[j] + "<dev string:x1dd>" + var_24b68ccccd2558a9[j] + "<dev string:x1ea>");
+        for (i = 0; i < origin_array.size; i++) {
+            for (j = i + 1; j < origin_array.size; j++) {
+                path = get_extended_path(origin_array[i], origin_array[j]);
+                assertex(isdefined(path), "<dev string:x1bd>" + label_array[i] + "<dev string:x1dd>" + origin_array[i] + "<dev string:x1e2>" + label_array[j] + "<dev string:x1dd>" + origin_array[j] + "<dev string:x1ea>");
                 /#
                     if (!isdefined(path)) {
                         continue;
                     }
                 #/
                 /#
-                    precalculated_paths[var_6221a2f77b043913[i]][var_6221a2f77b043913[j]] = path;
-                    precalculated_paths[var_6221a2f77b043913[j]][var_6221a2f77b043913[i]] = path;
+                    precalculated_paths[label_array[i]][label_array[j]] = path;
+                    precalculated_paths[label_array[j]][label_array[i]] = path;
                 #/
                 foreach (node in path) {
-                    node.on_path_from[var_6221a2f77b043913[i]][var_6221a2f77b043913[j]] = 1;
+                    node.on_path_from[label_array[i]][label_array[j]] = 1;
                 }
             }
         }
@@ -175,12 +175,12 @@ function bot_cache_entrances(var_24b68ccccd2558a9, var_6221a2f77b043913, ignore_
         }
     #/
     if (var_129f7bac538976fc) {
-        level.entrance_origin_points = var_24b68ccccd2558a9;
-        level.entrance_indices = var_6221a2f77b043913;
+        level.entrance_origin_points = origin_array;
+        level.entrance_indices = label_array;
         level.entrance_points = entrance_points;
     } else {
-        level.entrance_origin_points = array_combine(level.entrance_origin_points, var_24b68ccccd2558a9);
-        level.entrance_indices = array_combine(level.entrance_indices, var_6221a2f77b043913);
+        level.entrance_origin_points = array_combine(level.entrance_origin_points, origin_array);
+        level.entrance_indices = array_combine(level.entrance_indices, label_array);
         level.entrance_points = array_combine_non_integer_indices(level.entrance_points, entrance_points);
     }
     level.entrance_points_finished_caching = 1;
@@ -437,20 +437,20 @@ function bot_gametype_attacker_defender_ai_director_update() {
                 attacker_limit = [[ level.bot_gametype_attacker_limit_for_team ]](team);
                 defender_limit = [[ level.bot_gametype_defender_limit_for_team ]](team);
                 if (attackers.size > attacker_limit) {
-                    var_3e2f5d10887aeb24 = [];
-                    var_76912c7979e5a46b = 0;
+                    ai_attackers = [];
+                    removed_attacker = 0;
                     foreach (attacker in attackers) {
                         if (isai(attacker) && attacker bot_can_switch_to_defender()) {
                             if (level.bot_personality_type[attacker.personality] == "stationary") {
                                 attacker bot_gametype_set_role("defender");
-                                var_76912c7979e5a46b = 1;
+                                removed_attacker = 1;
                                 break;
                             }
-                            var_3e2f5d10887aeb24 = array_add(var_3e2f5d10887aeb24, attacker);
+                            ai_attackers = array_add(ai_attackers, attacker);
                         }
                     }
-                    if (!var_76912c7979e5a46b && var_3e2f5d10887aeb24.size > 0) {
-                        random(var_3e2f5d10887aeb24) bot_gametype_set_role("defender");
+                    if (!removed_attacker && ai_attackers.size > 0) {
+                        random(ai_attackers) bot_gametype_set_role("defender");
                     }
                 }
                 if (defenders.size > defender_limit) {
@@ -869,8 +869,8 @@ function get_ai_hearing_bomb_plant_sound(type) {
         while (true) {
             if (getdvarint(@"hash_9cac85d6351e1df") == 1) {
                 zones = level.objectives;
-                if (isdefined(level.var_baa82a528ee084da)) {
-                    zones = array_combine(zones, level.var_baa82a528ee084da);
+                if (isdefined(level.extra_bomb_zones)) {
+                    zones = array_combine(zones, level.extra_bomb_zones);
                 }
                 foreach (bombzone in zones) {
                     foreach (node in bombzone.bottargets) {

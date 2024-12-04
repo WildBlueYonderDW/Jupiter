@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_3ed005fe9b78b9da;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\weapon.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_f093628c456dc33;
 
@@ -46,7 +46,7 @@ function function_7f013d8a91788fdf(powerstruct, powerref) {
 // Size: 0x67
 function function_72e633a2cadc2f8f() {
     zombie = self;
-    if (!isdefined(zombie) || !zombie function_6c88a48a9e942c3d() && !function_7586e7f1e96dc16d()) {
+    if (!isdefined(zombie) || !zombie isMutationGameModeZombie() && !function_7586e7f1e96dc16d()) {
         return false;
     }
     if (zombie isswimunderwater()) {
@@ -120,7 +120,7 @@ function function_74b142ac51e57492() {
     zombie endon("zombie_unset");
     zombie endon("zombie_shout_finished");
     level endon("game_ended");
-    if (!isdefined(zombie) || !zombie function_6c88a48a9e942c3d()) {
+    if (!isdefined(zombie) || !zombie isMutationGameModeZombie()) {
         return;
     }
     zombie function_9354c4c50c43abc0(level.var_ec4da42b3bbf344c.var_2d23e5b9abed638c);
@@ -139,7 +139,7 @@ function function_74b142ac51e57492() {
 // Size: 0x5d
 function function_9af8aa334971aeb0() {
     zombie = self;
-    if (!isdefined(zombie) || !zombie function_6c88a48a9e942c3d()) {
+    if (!isdefined(zombie) || !zombie isMutationGameModeZombie()) {
         return undefined;
     }
     if (zombie isswimming()) {

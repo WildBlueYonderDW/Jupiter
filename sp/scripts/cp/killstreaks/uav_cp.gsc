@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using scripts\cp\utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
 
-#namespace namespace_7d3dc3ead1d66aef;
+#namespace uav_cp;
 
-// Namespace namespace_7d3dc3ead1d66aef / scripts\cp\killstreaks\uav_cp
+// Namespace uav_cp / scripts\cp\killstreaks\uav_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x227
 // Size: 0x423
@@ -32,7 +32,7 @@ function init_uav_cp() {
     level.uavsettings["uav"].teamsplash = "used_uav";
     level.uavsettings["uav"].votimeout = "uav_timeout";
     level.uavsettings["uav"].calloutdestroyed = "callout_destroyed_uav";
-    level.uavsettings["uav"].addfunc = &function_a4d3120487c90203;
+    level.uavsettings["uav"].addfunc = &uav_addactiveuav;
     level.uavsettings["uav"].removefunc = &uav_removeactiveuav;
     level.uavsettings["directional_uav"] = spawnstruct();
     level.uavsettings["directional_uav"].timeout = level.advradarviewtime;
@@ -48,14 +48,14 @@ function init_uav_cp() {
     level.uavsettings["directional_uav"].votimeout = "directional_uav_timeout";
     level.uavsettings["directional_uav"].teamsplash = "used_directional_uav";
     level.uavsettings["directional_uav"].calloutdestroyed = "callout_destroyed_directional_uav";
-    level.uavsettings["directional_uav"].addfunc = &function_a4d3120487c90203;
+    level.uavsettings["directional_uav"].addfunc = &uav_addactiveuav;
     level.uavsettings["directional_uav"].removefunc = &uav_removeactiveuav;
     scripts\cp\utility\spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
     scripts\cp\utility\spawn_event_aggregator::registeronplayerspawncallback(&hide_minimap_on_spawn);
     scripts\engine\utility::registersharedfunc("uav", "remoteUAV_processTaggedAssist", &remoteuav_processtaggedassist);
 }
 
-// Namespace namespace_7d3dc3ead1d66aef / scripts\cp\killstreaks\uav_cp
+// Namespace uav_cp / scripts\cp\killstreaks\uav_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x652
 // Size: 0x95
@@ -69,7 +69,7 @@ function give_radar_to_team() {
     setteamradar("allies", 1);
 }
 
-// Namespace namespace_7d3dc3ead1d66aef / scripts\cp\killstreaks\uav_cp
+// Namespace uav_cp / scripts\cp\killstreaks\uav_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ef
 // Size: 0x2e
@@ -80,7 +80,7 @@ function hide_minimap_on_spawn() {
     }
 }
 
-// Namespace namespace_7d3dc3ead1d66aef / scripts\cp\killstreaks\uav_cp
+// Namespace uav_cp / scripts\cp\killstreaks\uav_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x725
 // Size: 0x10
@@ -88,7 +88,7 @@ function setradarparamsonlatejoiner() {
     self.radarmode = "normal_radar";
 }
 
-// Namespace namespace_7d3dc3ead1d66aef / scripts\cp\killstreaks\uav_cp
+// Namespace uav_cp / scripts\cp\killstreaks\uav_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x73d
 // Size: 0xb

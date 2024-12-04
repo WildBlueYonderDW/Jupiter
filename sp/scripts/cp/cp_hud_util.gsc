@@ -1,7 +1,7 @@
-#using scripts\cp\utility.gsc;
 #using script_afb7e332aee4bf2;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\game_utility;
 
 #namespace namespace_d2d25ee15dd5f89d;
 
@@ -73,7 +73,7 @@ function zom_player_health_overlay_watcher() {
     level endon("game_ended");
     self endon("death");
     low_health = 0;
-    var_c1163af12016e3a0 = 1;
+    health_changed = 1;
     while (true) {
         if (self.health <= 45 && low_health == 0) {
             if (!self issplitscreenplayer()) {
@@ -83,17 +83,17 @@ function zom_player_health_overlay_watcher() {
             }
             low_health = 1;
         }
-        if (low_health && var_c1163af12016e3a0) {
+        if (low_health && health_changed) {
             if (namespace_d4aab8c9cb8ecb14::player_in_laststand(self)) {
             }
-            var_c1163af12016e3a0 = 0;
+            health_changed = 0;
         }
         if (low_health && self.health > 45) {
             self clearclienttriggeraudiozone(0.3);
             self playlocalsound("deaths_door_out");
             self stoplocalsound("deaths_door_in");
             low_health = 0;
-            var_c1163af12016e3a0 = 1;
+            health_changed = 1;
         }
         wait 0.05;
     }
@@ -145,12 +145,12 @@ function add_hint_string(name, string, var_4c4ab07dfd5327ff) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x61d
 // Size: 0x4f
-function fade_over_time(var_6b214c71049955e7, fade_time) {
-    assertex(isdefined(var_6b214c71049955e7), "fade_over_time must be passed a target_alpha.");
+function fade_over_time(target_alpha, fade_time) {
+    assertex(isdefined(target_alpha), "fade_over_time must be passed a target_alpha.");
     if (isdefined(fade_time) && fade_time > 0) {
         self fadeovertime(fade_time);
     }
-    self.alpha = var_6b214c71049955e7;
+    self.alpha = target_alpha;
     if (isdefined(fade_time) && fade_time > 0) {
         wait fade_time;
     }

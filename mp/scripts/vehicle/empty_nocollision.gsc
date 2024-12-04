@@ -1,4 +1,4 @@
-#using scripts\common\vehicle_build.gsc;
+#using scripts\common\vehicle_build;
 
 #namespace namespace_51245272d927355c;
 

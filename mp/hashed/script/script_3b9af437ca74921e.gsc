@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_5bc86a57086a4774;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
 
 #namespace namespace_2711c9ad461eb709;
 

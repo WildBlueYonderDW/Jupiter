@@ -1,8 +1,8 @@
-#using scripts\smartobjects\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\stealth\group.gsc;
-#using scripts\asm\gesture.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\gesture;
+#using scripts\engine\utility;
+#using scripts\smartobjects\utility;
+#using scripts\stealth\group;
 
 #namespace hunt_checkin;
 

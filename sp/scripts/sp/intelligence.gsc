@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\hud_util.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\utility;
 
-#namespace namespace_3c21c55350cb346;
+#namespace intelligence;
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a5
 // Size: 0xcb
@@ -29,7 +29,7 @@ function main() {
     intel_think();
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x378
 // Size: 0x62
@@ -41,7 +41,7 @@ function remove_all_intel() {
     }
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e2
 // Size: 0x74
@@ -56,7 +56,7 @@ function remove_intel_item() {
     self notify("end_trigger_thread");
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x45e
 // Size: 0x74
@@ -67,7 +67,7 @@ function initialize_intel() {
     }
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4da
 // Size: 0x72
@@ -82,7 +82,7 @@ function intel_think() {
     }
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x554
 // Size: 0x3b
@@ -101,7 +101,7 @@ function poll_for_found() {
     remove_intel_item();
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x597
 // Size: 0x61
@@ -114,28 +114,28 @@ function check_item_found() {
     return true;
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x601
 // Size: 0x80
 function create_array_of_intel_items() {
-    var_464187c644b1053d = getentarray("intelligence_item", "targetname");
-    for (i = 0; i < var_464187c644b1053d.size; i++) {
-        println(var_464187c644b1053d[i].origin);
-        var_464187c644b1053d[i].item = getent(var_464187c644b1053d[i].target, "targetname");
-        var_464187c644b1053d[i].found = 0;
+    intelligence_items = getentarray("intelligence_item", "targetname");
+    for (i = 0; i < intelligence_items.size; i++) {
+        println(intelligence_items[i].origin);
+        intelligence_items[i].item = getent(intelligence_items[i].target, "targetname");
+        intelligence_items[i].found = 0;
     }
-    return var_464187c644b1053d;
+    return intelligence_items;
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x68a
 // Size: 0xbe
 function create_array_of_origins_from_table() {
-    var_b9f8504d39e0fbb5 = 20;
+    table_size = 20;
     origins = [];
-    for (num = 1; num <= var_b9f8504d39e0fbb5; num++) {
+    for (num = 1; num <= table_size; num++) {
         location = tablelookup("sp/intel_items.csv", 0, num, 4);
         if (isdefined(location) && location != "undefined") {
             var_47a3a239c6b7196a = strtok(location, ",");
@@ -151,7 +151,7 @@ function create_array_of_origins_from_table() {
     return origins;
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x751
 // Size: 0x17
@@ -162,7 +162,7 @@ function award_intel() {
     remove_intel_item();
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x770
 // Size: 0x6a
@@ -182,7 +182,7 @@ function wait_for_pickup() {
     award_intel();
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7e2
 // Size: 0xec
@@ -204,7 +204,7 @@ function upload_hold() {
     setdvar(@"ui_securing", "");
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8d6
 // Size: 0xeb
@@ -227,39 +227,39 @@ function hold_count_check() {
     }
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c9
 // Size: 0x5e
 function progress_bar() {
     self endon("stopped_pressing");
-    var_e10d2077ef53fe8a = 30;
-    var_b326ac4d10d79c52 = 8;
-    for (i = 0; i < var_e10d2077ef53fe8a; i++) {
-        setdvar(@"ui_securing_progress", getdvarfloat(@"ui_securing_progress") + 1 / var_e10d2077ef53fe8a);
+    num_ticks = 30;
+    move_offset = 8;
+    for (i = 0; i < num_ticks; i++) {
+        setdvar(@"ui_securing_progress", getdvarfloat(@"ui_securing_progress") + 1 / num_ticks);
         waitframe();
     }
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa2f
 // Size: 0xd5
 function intel_upload_text(text, text2) {
     self endon("stopped_pressing");
-    var_e10d2077ef53fe8a = 30;
-    var_f014d1434e653347 = 10;
+    num_ticks = 30;
+    cycle_time = 10;
     current_time = 0;
-    for (i = 0; i < var_e10d2077ef53fe8a; i++) {
-        if (current_time > var_f014d1434e653347) {
+    for (i = 0; i < num_ticks; i++) {
+        if (current_time > cycle_time) {
             current_time = 0;
         }
-        if (current_time < var_f014d1434e653347 / 2) {
+        if (current_time < cycle_time / 2) {
             text settext(%SCRIPT/INTELLIGENCE_UPLOADING);
         } else {
             text settext("");
         }
-        text2.label = int(i / var_e10d2077ef53fe8a * 100);
+        text2.label = int(i / num_ticks * 100);
         text2 settext(%SCRIPT/INTELLIGENCE_PERCENT);
         current_time++;
         waitframe();
@@ -269,7 +269,7 @@ function intel_upload_text(text, text2) {
     text2 settext(%SCRIPT/INTELLIGENCE_PERCENT);
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0c
 // Size: 0xa3
@@ -285,7 +285,7 @@ function save_intel_for_all_players() {
     println("<dev string:x60>");
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb7
 // Size: 0x28
@@ -294,7 +294,7 @@ function give_point() {
     self setplayerprogression("cheatPoints", curvalue + 1);
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbe7
 // Size: 0x1cb
@@ -304,34 +304,34 @@ function intel_feedback(var_80d5e26dc21fb13b) {
     playsoundatpos(self.item.origin, "intelligence_pickup");
     display_time = 3000;
     fade_time = 700;
-    var_adf0b02efe0bfe92 = display_time + fade_time / 1000;
+    delete_time = display_time + fade_time / 1000;
     foreach (player in level.players) {
         if (var_80d5e26dc21fb13b != player && player getplayerintelisfound(self.num)) {
             continue;
         }
-        var_988b782eabfded57 = player createclientfontstring("objective", 1.5);
-        var_988b782eabfded57.glowcolor = (0.7, 0.7, 0.3);
-        var_988b782eabfded57.glowalpha = 1;
-        var_988b782eabfded57 setup_hud_elem();
-        var_988b782eabfded57.y = -50;
-        var_988b782eabfded57 setpulsefx(60, display_time, fade_time);
-        var_324a6e68a953d960 = 0;
+        remaining_print = player createclientfontstring("objective", 1.5);
+        remaining_print.glowcolor = (0.7, 0.7, 0.3);
+        remaining_print.glowalpha = 1;
+        remaining_print setup_hud_elem();
+        remaining_print.y = -50;
+        remaining_print setpulsefx(60, display_time, fade_time);
+        intel_found = 0;
         if (var_80d5e26dc21fb13b == player && player getplayerintelisfound(self.num)) {
-            var_988b782eabfded57.label = %SCRIPT/RORKEFILE_PREV_FOUND;
+            remaining_print.label = %SCRIPT/RORKEFILE_PREV_FOUND;
         } else {
-            var_988b782eabfded57.label = %SCRIPT/INTELLIGENCE_OF_EIGHTEEN;
+            remaining_print.label = %SCRIPT/INTELLIGENCE_OF_EIGHTEEN;
             player give_point();
-            var_324a6e68a953d960 = player getplayerprogression("cheatPoints");
-            var_988b782eabfded57 setvalue(var_324a6e68a953d960);
+            intel_found = player getplayerprogression("cheatPoints");
+            remaining_print setvalue(intel_found);
         }
-        if (var_324a6e68a953d960 == 18) {
+        if (intel_found == 18) {
             player scripts\sp\utility::player_giveachievement_wrapper("EXT_1");
         }
-        var_988b782eabfded57 delaycall(var_adf0b02efe0bfe92, &destroy);
+        remaining_print delaycall(delete_time, &destroy);
     }
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdba
 // Size: 0x70
@@ -346,7 +346,7 @@ function setup_hud_elem() {
     self.foreground = 1;
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe32
 // Size: 0x109
@@ -384,7 +384,7 @@ function assert_if_identical_origins() {
     }
 }
 
-// Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+// Namespace intelligence / scripts\sp\intelligence
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf43
 // Size: 0x76
@@ -402,7 +402,7 @@ function get_nums_from_origins(origin) {
 
 /#
 
-    // Namespace namespace_3c21c55350cb346 / scripts\sp\intelligence
+    // Namespace intelligence / scripts\sp\intelligence
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0xfc1
     // Size: 0x34

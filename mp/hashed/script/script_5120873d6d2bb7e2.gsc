@@ -1,7 +1,7 @@
-#using script_d74ae0b4aa21186;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_b9f8f8dc9fce21f5;
 

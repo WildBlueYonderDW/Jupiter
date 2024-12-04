@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\anim\animselector.gsc;
+#using scripts\anim\animselector;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace asm;
 
@@ -57,11 +57,11 @@ function asm_settransitionorientmode(orient_mode) {
     case #"hash_96a6a25bd7beed30":
         var_8e1451b5845405b1 = 1024;
         if (actor_is3d()) {
-            var_5e1cf0a9046f6f99 = self.angles;
+            orient_angles = self.angles;
             if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < var_8e1451b5845405b1) {
-                var_5e1cf0a9046f6f99 = self function_f134f30c17faeaf(self.node);
+                orient_angles = self function_f134f30c17faeaf(self.node);
             }
-            self orientmode("face angle 3d", var_5e1cf0a9046f6f99);
+            self orientmode("face angle 3d", orient_angles);
         } else {
             yaw = self.angles[1];
             if (isdefined(self.node) && distancesquared(self.origin, self.node.origin) < var_8e1451b5845405b1) {
@@ -1352,7 +1352,7 @@ function yawdiffto2468(diff) {
     // Checksum 0x0, Offset: 0x310d
     // Size: 0x4c
     function function_3271c00e44d9636b() {
-        dvar = getdvar(@"hash_9f9979f32e427f14");
+        dvar = getdvar(@"debug_arrivals");
         if (dvar == "<dev string:x9a>") {
             return 0;
         }
@@ -1369,7 +1369,7 @@ function yawdiffto2468(diff) {
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x3161
     // Size: 0x1f
-    function function_57bc598a3c0d7a1e(msg) {
+    function debug_arrival(msg) {
         if (!function_3271c00e44d9636b()) {
             return;
         }

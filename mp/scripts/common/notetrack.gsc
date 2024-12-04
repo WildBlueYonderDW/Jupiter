@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\face.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\anim\face;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace notetrack;
 
@@ -74,8 +74,8 @@ function notetrack_wait(guy, msg, tag_entity, anime, animname_override, animatio
         }
     }
     foreach (var_2c62c57192ed45cb, _ in scripted_notetracks) {
-        foreach (var_39b955b6ea2a96e in level.scr_notetrack[animname][var_2c62c57192ed45cb]) {
-            foreach (scr_notetrack in var_39b955b6ea2a96e) {
+        foreach (notetrack_array in level.scr_notetrack[animname][var_2c62c57192ed45cb]) {
+            foreach (scr_notetrack in notetrack_array) {
                 if (isdefined(scr_notetrack["dialog"])) {
                     var_966821fc90c3ca9d.dialog[scr_notetrack["dialog"]] = 1;
                 }

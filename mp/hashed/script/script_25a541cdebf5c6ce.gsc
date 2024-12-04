@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\math.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\trace.gsc;
-#using script_6853191397ec0259;
 #using script_3b78d23dad7ec5be;
+#using script_7edf952f8921aa6b;
+#using scripts\common\devgui;
+#using scripts\common\shellshock_utility;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
 
 #namespace namespace_ae11c87b7bfa2daa;
 
@@ -284,8 +284,8 @@ function private function_3fbc85b13c2e3772() {
                         player knockback_flat(player.origin - damage_point, 1200);
                         player earthquakeforplayer(0.8, 0.8, damage_point, max(damage_radius, 300));
                         player playrumbleonentity("heavy_1s");
-                        player thread namespace_1ce798d596a27341::bloodmeleeeffect();
-                        player namespace_1ce798d596a27341::_shellshock("bomb_stun_mp", "stun", 2);
+                        player thread scripts\common\shellshock_utility::bloodmeleeeffect();
+                        player scripts\common\shellshock_utility::_shellshock("bomb_stun_mp", "stun", 2);
                         player_damage = 50;
                         round_number = function_2201d3f3d7ab07a7();
                         var_9ed33f942da168b8 = clamp(math::remap(round_number, 20, 50, 0, 50), 0, 50);
@@ -320,7 +320,7 @@ function private function_3fbc85b13c2e3772() {
             }
             if (ai.type == "zombie") {
                 if (!istrue(ai._blackboard.var_3a5dd6684caabe58)) {
-                    ai namespace_db1ce2c035564e2c::function_e96aac065abbec4e(damage_point);
+                    ai namespace_db1ce2c035564e2c::knockdown_ai(damage_point);
                 }
                 /#
                     if (function_34e269129d109e9d()) {

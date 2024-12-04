@@ -1,27 +1,27 @@
-#using script_64acb6ce534155b7;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using script_64acb6ce534155b7;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
+#using scripts\mp\vehicles\damage;
+#using scripts\mp\weapons;
 
 #namespace namespace_334ec991babd91b6;
 
@@ -38,10 +38,10 @@ function autoexec main() {
 // Checksum 0x0, Offset: 0x619
 // Size: 0x637
 function get_contract_data(data) {
-    data.funcs["onInit"] = &function_b5e4ce4265fcc787;
+    data.funcs["onInit"] = &on_init;
     data.funcs["onTeamAssigned"] = &function_af6a5c04fc885a4d;
     data.funcs["onTimerExpired"] = &function_5863139a72088b70;
-    data.funcs["onCancel"] = &function_78cba972093d8bd7;
+    data.funcs["onCancel"] = &on_cancel;
     data.funcs["onPlayerDisconnect"] = &on_player_disconnect;
     data.funcs["onPlayerKilled"] = &on_player_killed;
     data.funcs["onMarkPlayerAsEliminated"] = &function_6dc61b7571555571;
@@ -98,7 +98,7 @@ function get_contract_data(data) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc59
 // Size: 0x4
-function function_b5e4ce4265fcc787() {
+function on_init() {
     return true;
 }
 
@@ -263,7 +263,7 @@ function function_f16989f55836eb5f(drone) {
     if (var_7087d9795dffce4d) {
         self.var_9b08ab39d372b35d = 0;
     }
-    thread function_e392671f268b070f(killer);
+    thread award_xp(killer);
     items = [];
     if (self.var_f1ca51112a318561 > 0) {
         var_8b26223da6a3ae38 = int(min(self.var_f1ca51112a318561, randomint(level.var_dc53645ad882c8f2.var_5941676f3b051afb) + 1));
@@ -346,7 +346,7 @@ function on_end(var_7087d9795dffce4d, var_d05d337940662e04, var_13dc3b5519c135bd
     }
     self.var_50b1df2d20db660c = undefined;
     namespace_1eb3c4e0e28fac71::endcontract(ter_op(endstate == "success", self.teams[0], undefined), undefined, undefined, endstate);
-    thread function_882fb2a3a30df83();
+    thread delete_circle();
     self notify("task_ended");
 }
 
@@ -391,7 +391,7 @@ function function_6061d3e3727b4a0f(player) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x189e
 // Size: 0x1d
-function function_882fb2a3a30df83() {
+function delete_circle() {
     if (!scripts\mp\flags::levelflag("game_over")) {
         wait 1;
     }
@@ -420,9 +420,9 @@ function spawn_drones() {
         var_b74b293847d7c6e1 = radius * sin(var_84726d127497c82d) + var_391c13efd58f5e76[1];
         spawnpoint = (var_b74b283847d7c4ae, var_b74b293847d7c6e1, var_b74b263847d7c048);
         spawnangles = vectortoangles(spawnpoint - var_391c13efd58f5e76);
-        drone = function_c76f07969ba57e0d(spawnpoint, spawnangles);
+        drone = spawn_drone(spawnpoint, spawnangles);
         if (isdefined(drone)) {
-            thread function_e81ae43e8240dbf3(drone, level.var_dc53645ad882c8f2.var_370ad2e4039d00b9, groundposition[2]);
+            thread drone_drop(drone, level.var_dc53645ad882c8f2.var_370ad2e4039d00b9, groundposition[2]);
             thread function_f16989f55836eb5f(drone);
             thread function_b4456927b2084de8(drone);
             drone.var_84726d127497c82d = var_84726d127497c82d;
@@ -610,7 +610,7 @@ function function_e6f301e018da281f() {
     self.var_50b1df2d20db660c = undefined;
     foreach (drone in self.drones) {
         if (isdefined(drone) && isdefined(drone.destination)) {
-            thread function_6c46b69ae32c2c59(drone, drone.destination);
+            thread move_drone(drone, drone.destination);
         }
     }
 }
@@ -619,7 +619,7 @@ function function_e6f301e018da281f() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x23cf
 // Size: 0x250
-function function_c76f07969ba57e0d(spawnpoint, spawnangles) {
+function spawn_drone(spawnpoint, spawnangles) {
     spawndata = spawnstruct();
     spawndata.origin = spawnpoint;
     spawndata.angles = spawnangles;
@@ -714,7 +714,7 @@ function function_87e92a820b75042a(drone) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x27c6
 // Size: 0x70
-function function_6c46b69ae32c2c59(drone, destination) {
+function move_drone(drone, destination) {
     level endon("game_ended");
     drone endon("entitydeleted");
     self endon("flee");
@@ -730,9 +730,9 @@ function function_6c46b69ae32c2c59(drone, destination) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x283e
 // Size: 0x50
-function function_e81ae43e8240dbf3(drone, var_dab9892c6da62c0d, var_911ec5f317af0665) {
+function drone_drop(drone, var_dab9892c6da62c0d, var_911ec5f317af0665) {
     destination = (drone.origin[0], drone.origin[1], var_911ec5f317af0665 + var_dab9892c6da62c0d);
-    thread function_6c46b69ae32c2c59(drone, destination);
+    thread move_drone(drone, destination);
 }
 
 // Namespace namespace_334ec991babd91b6 / namespace_97c4a3fbd372837b
@@ -753,7 +753,7 @@ function function_489eaaeafa77dbde(var_128285595fc52486) {
             if (waittime > 0) {
                 delay = randomfloatrange(var_f60b7ee9b2dc160f, var_f5e86ce9b2b5a6c1);
             }
-            drone thread function_c7540cfe4135385b(delay);
+            drone thread drone_scan(delay);
         }
     }
 }
@@ -762,7 +762,7 @@ function function_489eaaeafa77dbde(var_128285595fc52486) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2983
 // Size: 0x43
-function function_c7540cfe4135385b(delay) {
+function drone_scan(delay) {
     level endon("game_ended");
     self endon("entitydeleted");
     wait delay;
@@ -823,7 +823,7 @@ function function_293c5f2996b20987() {
             drone notify("stop_scan");
             destination = (drone.origin[0], drone.origin[1], level.var_dc53645ad882c8f2.var_427f06854232670f + drone.origin[2]);
             drone vehicle_setspeed(level.var_dc53645ad882c8f2.var_5416ef1fdf377938, level.var_dc53645ad882c8f2.var_5b48dcda7b72fc1b);
-            thread function_6c46b69ae32c2c59(drone, destination);
+            thread move_drone(drone, destination);
         }
     }
 }
@@ -861,7 +861,7 @@ function drop_items(items) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d2f
 // Size: 0xfd
-function function_e392671f268b070f(player) {
+function award_xp(player) {
     level endon("game_ended");
     player endon("death_or_disconnect");
     player notify("stop_spy_drone_timer");
@@ -977,7 +977,7 @@ function function_4a9600443da06ce() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3184
 // Size: 0x14
-function function_78cba972093d8bd7(team) {
+function on_cancel(team) {
     function_5863139a72088b70(1);
 }
 

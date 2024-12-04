@@ -1,19 +1,19 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\killstreaks\toma_strike.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using script_5aff2dfd3f05edbf;
 #using script_3db04fd1b466bdba;
-#using scripts\mp\equipment\gas_grenade.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_5aff2dfd3f05edbf;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\killstreaks\toma_strike;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\weapons;
 
 #namespace namespace_f3a6ced925f97d70;
 

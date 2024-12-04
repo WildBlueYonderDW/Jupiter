@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\supers;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace perkpackage;
 

@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\hud_util.gsc;
-#using script_104e3370b024f998;
-#using scripts\common\values.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
 #using script_63634d9fa080435a;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\temp_v;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\player;
 
 #namespace namespace_fdd19a154a441b5c;
 
@@ -59,7 +59,7 @@ function function_e0a9daa14c0b948b() {
     self.powerstruct = undefined;
     function_bd0e084afb0d192f(0);
     self notify("superJump_end");
-    thread namespace_416e533f6ed17708::function_269b97f3d86eb172(undefined, undefined, "super_use_finished");
+    thread scripts\mp\equipment\temp_v::function_269b97f3d86eb172(undefined, undefined, "super_use_finished");
 }
 
 // Namespace namespace_fdd19a154a441b5c / namespace_1f2efdb89e5f3a6e
@@ -440,8 +440,8 @@ function playerapplyjumpvelocity(angledir, maxjumpvelocity, fraction) {
         yawangles = (0, player_angles[1], 0);
         right = anglestoright(yawangles);
         fwd = vectorcross(ground_normal, right);
-        var_19ae114150bfc887 = vectortoangles(fwd);
-        ground_pitch = var_19ae114150bfc887[0];
+        ground_angles = vectortoangles(fwd);
+        ground_pitch = ground_angles[0];
         min_pitch = -85;
         max_pitch = ground_pitch;
         player_pitch = player_angles[0];
@@ -457,9 +457,9 @@ function playerapplyjumpvelocity(angledir, maxjumpvelocity, fraction) {
         var_aee49e405bf58492 = var_e6980f09269e2b33 + frac * (var_e6bc250926c6d64d - var_e6980f09269e2b33);
         player_angles = (player_pitch + var_aee49e405bf58492, player_angles[1], player_angles[2]);
     }
-    var_179db9acb8f30e85 = getdvarfloat(@"hash_cf56037c34ea141f", 0);
-    if (var_179db9acb8f30e85 != 0) {
-        player_angles = (player_angles[0] + var_179db9acb8f30e85, player_angles[1], player_angles[2]);
+    pitch_add = getdvarfloat(@"hash_cf56037c34ea141f", 0);
+    if (pitch_add != 0) {
+        player_angles = (player_angles[0] + pitch_add, player_angles[1], player_angles[2]);
     }
     dir = anglestoforward(player_angles);
     velocity = dir * fraction * maxjumpvelocity;

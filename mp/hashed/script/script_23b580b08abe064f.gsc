@@ -1,13 +1,13 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using script_9880b9dc28bc25e;
+#using script_16ea1b94f0f381b3;
+#using script_2583ee5680cf4736;
 #using script_4a8c20678bd6a83e;
 #using script_7edf952f8921aa6b;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using script_16ea1b94f0f381b3;
-#using scripts\asm\asm_bb.gsc;
-#using script_2583ee5680cf4736;
+#using script_9880b9dc28bc25e;
+#using scripts\asm\asm_bb;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_504823b673542849;
 
@@ -107,8 +107,8 @@ function private function_e5201af67a21f629() {
         var_576f57af0204c38c = player.var_cac91eb6521df629;
         if (isdefined(var_576f57af0204c38c)) {
             forward_angles = anglestoforward(var_576f57af0204c38c.angles);
-            var_fddd053c4a7fdd39 = invertangles(forward_angles);
-            teleport_origin = var_fddd053c4a7fdd39 * 1200 + var_576f57af0204c38c.origin;
+            backward_angles = invertangles(forward_angles);
+            teleport_origin = backward_angles * 1200 + var_576f57af0204c38c.origin;
             function_69e98977aca657e7(teleport_origin, 1);
             function_a55b3d6929d24cf7(self.origin, 2);
             thread function_c4f0666404a900a5();
@@ -276,7 +276,7 @@ function private function_a702b5b69e54f6cf(player) {
 // Checksum 0x0, Offset: 0xc5f
 // Size: 0x46
 function private function_bcf99cead7fd579a() {
-    self._blackboard.var_251120dcdbc22230 = !isalive(self.enemy) && !isdefined(self.var_ab04e643f38307e7);
+    self._blackboard.var_251120dcdbc22230 = !isalive(self.enemy) && !isdefined(self.target_attractor);
     return self._blackboard.var_251120dcdbc22230;
 }
 

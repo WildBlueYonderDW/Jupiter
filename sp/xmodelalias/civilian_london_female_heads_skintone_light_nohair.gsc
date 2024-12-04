@@ -1,6 +1,6 @@
-#namespace namespace_2b190a52a24dd9f3;
+#namespace civilian_london_female_heads_skintone_light_nohair;
 
-// Namespace namespace_2b190a52a24dd9f3 / xmodelalias\civilian_london_female_heads_skintone_light_nohair
+// Namespace civilian_london_female_heads_skintone_light_nohair / xmodelalias\civilian_london_female_heads_skintone_light_nohair
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3
 // Size: 0x1f

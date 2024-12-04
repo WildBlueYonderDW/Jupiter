@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_3ff084f114b7f6c9;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\teams;
 
 #namespace bounty_system;
 

@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
 #using script_67fb1233e876ed8;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace br_breakable_loot_cache;
 
@@ -94,7 +94,7 @@ function function_13ace45be109698e(cachestruct) {
     if (!isdefined(level.var_8ccc53d3eec3626f)) {
         level.var_8ccc53d3eec3626f = [];
     }
-    cache = function_84a9a18653459d3(cachestruct.origin, cachestruct.angles);
+    cache = spawnCacheSingleBase(cachestruct.origin, cachestruct.angles);
     level.var_8ccc53d3eec3626f[level.var_8ccc53d3eec3626f.size] = cache;
     return cache;
 }
@@ -103,7 +103,7 @@ function function_13ace45be109698e(cachestruct) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x45f
 // Size: 0x3d
-function function_84a9a18653459d3(origin, angles) {
+function spawnCacheSingleBase(origin, angles) {
     cache = spawnscriptable("br_breakable_loot_cache", origin, angles);
     cache setscriptablepartstate("base", "visible");
     return cache;

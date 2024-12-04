@@ -1,25 +1,25 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using script_3f8889c16399185c;
-#using scripts\cp\cp_hud_util.gsc;
-#using scripts\cp\utility\player.gsc;
-#using script_41ae4f5ca24216cb;
 #using script_187a04151c40fb72;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_weaponrank.gsc;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_matchdata.gsc;
-#using scripts\cp\utility\script.gsc;
-#using script_74502a9e0ef1f19c;
 #using script_2669878cf5a1b6bc;
+#using script_3f8889c16399185c;
+#using script_41ae4f5ca24216cb;
 #using script_4a6760982b403bad;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp\cp_analytics.gsc;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\cp_matchdata;
+#using scripts\cp\cp_weaponrank;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\script;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace rank;
 
@@ -69,7 +69,7 @@ function earnperiodicxp() {
     self endon("earnPeriodicXP");
     self endon("disconnect");
     level endon("game_ended");
-    event = #"hash_bb5be601232dc24d";
+    event = #"persistent_xp";
     while (!scripts\cp_mp\utility\player_utility::_isalive()) {
         waitframe();
     }
@@ -285,7 +285,7 @@ function onplayerconnect() {
         player.scorepointsqueue = 0;
         player.scoreeventqueue = [];
         player.postgamepromotion = 0;
-        player setclientdvar(@"hash_803bee4022a48b56", 0);
+        player setclientdvar(@"ui_promotion", 0);
         if (!isdefined(player.pers["summary"])) {
             player.pers["summary"] = [];
             player.pers["summary"]["xp"] = 0;
@@ -1038,11 +1038,11 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
             operatorid = int(tablelookup("loot/operator_ids.csv", 1, self.operatorcustomization.operatorref, 0));
         }
         assertex(operatorid != 0, "Trying to add operatorXP to an invalid operator");
-        function_ec8877db4e73e4e8(xpeventparams, eventname, #"hash_57b727261b39ff7e", operatorxp);
+        function_ec8877db4e73e4e8(xpeventparams, eventname, #"operator_xp", operatorxp);
         function_ec8877db4e73e4e8(xpeventparams, eventname, #"hash_8fba2fc976d0515e", operatorid);
     }
     if (clanXP > 0) {
-        function_ec8877db4e73e4e8(xpeventparams, eventname, #"hash_7e48a5c15342bb5e", clanXP);
+        function_ec8877db4e73e4e8(xpeventparams, eventname, #"clan_xp", clanXP);
     }
     function_ec8877db4e73e4e8(xpeventparams, eventname, #"version", 1);
     self function_db073176839d77fb(eventid, xpeventparams);

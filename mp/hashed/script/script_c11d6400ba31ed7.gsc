@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
 #using script_f4e8d02d2f70888;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace squadmanager;
 

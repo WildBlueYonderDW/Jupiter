@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\sound.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_48814951e916af89;
-#using script_6c4e8cea70bf4b6d;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using scripts\mp\flags.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_4bac13d511590220;
-#using scripts\mp\poi.gsc;
 #using script_1c47017ba325709a;
 #using script_2b736eb3fdd9b328;
+#using script_48814951e916af89;
+#using script_4bac13d511590220;
+#using script_64acb6ce534155b7;
+#using script_6c4e8cea70bf4b6d;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\poi;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\sound;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_38f7228a0bb0b8a8;
 

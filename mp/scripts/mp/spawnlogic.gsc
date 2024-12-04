@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\spawnfactor.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\dev.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\matchrecording.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\dev;
+#using scripts\mp\flags;
+#using scripts\mp\matchrecording;
+#using scripts\mp\spawnfactor;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\trigger;
 
 #namespace spawnlogic;
 

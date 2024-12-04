@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\archetypes\archassault.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\archetypes\archassault;
+#using scripts\mp\utility\perk;
 
 #namespace archcommon;
 

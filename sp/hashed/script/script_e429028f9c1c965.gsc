@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
 
 #namespace bottle;
 
@@ -12,7 +12,7 @@ function precache(offhand) {
     level.offhands.bottle = spawnstruct();
     level.offhands.bottle.var_9c36b02032770c02 = undefined;
     /#
-        setdvarifuninitialized(@"hash_600f7a3322505cf2", 0);
+        setdvarifuninitialized(@"debug_bottle", 0);
     #/
     registeroffhandfirefunc(offhand, &function_4b06c81b27875a14);
 }
@@ -69,7 +69,7 @@ function function_a32bb7bb61372225(ai, position, hitpart, hitvelocity) {
     // Checksum 0x0, Offset: 0x365
     // Size: 0x14
     function function_402e63d965a03b3c() {
-        return getdvarint(@"hash_600f7a3322505cf2");
+        return getdvarint(@"debug_bottle");
     }
 
 #/

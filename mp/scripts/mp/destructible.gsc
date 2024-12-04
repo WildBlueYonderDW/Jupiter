@@ -1,16 +1,16 @@
-#using scripts\common\anim.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\common\rockable_vehicles.gsc;
+#using scripts\common\anim;
+#using scripts\common\rockable_vehicles;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\gameobjects;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace destructible;
 

@@ -1,185 +1,185 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\dev.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\carriable.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_70f8c085c6bde77e;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\calloutmarkerping_mp.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using script_5762ac2f22202ba2;
-#using scripts\cp_mp\challenges.gsc;
-#using script_3e5a8aa5923bd393;
-#using script_530f3ea26428deba;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\globallogic.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using script_2342b8aad723994e;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using scripts\mp\gametypes\br_respawn.gsc;
-#using script_930a1e7bd882c1d;
-#using script_5bab271917698dc4;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\gametypes\br_vehicles.gsc;
-#using script_75377e59f5becac8;
-#using script_7933519955f32c4e;
-#using scripts\mp\gametypes\br_ending.gsc;
-#using scripts\mp\gametypes\br_killstreaks.gsc;
-#using scripts\mp\gametypes\br_skydive_protection.gsc;
-#using script_669760f0500e4358;
-#using script_744cad313ed0a87e;
-#using script_21c19cfc7139d773;
-#using script_15038e9b270f1b31;
-#using scripts\mp\gametypes\br_alt_mode_inflation.gsc;
-#using script_5bc60484d17fa95c;
-#using script_3583ff375ab3a91e;
-#using script_7eafd8f2b77a1870;
-#using scripts\mp\gametypes\br_c130airdrop.gsc;
-#using scripts\mp\gametypes\br_jugg_common.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using script_48814951e916af89;
-#using script_2391409ef7b431e1;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using script_47deb71f27d46832;
-#using script_72af5a878a9d3397;
-#using script_55e418c5cc946593;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\stealth\manager.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using script_7c40fa80892a721;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\tweakables.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_functional_poi.gsc;
-#using scripts\mp\gametypes\br_callouts.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\gametypes\br_events.gsc;
-#using scripts\mp\gametypes\br_attractions.gsc;
-#using scripts\mp\gametypes\br_challenges.gsc;
-#using script_261e315c49e5e4ef;
-#using script_600b944a95c3a7bf;
-#using script_342e51952b63e594;
-#using script_e43e8e28e88639e;
-#using script_3ff084f114b7f6c9;
-#using script_14d3930854cb398c;
-#using scripts\cp_mp\tripwire.gsc;
-#using script_60e3273df6b5f7d1;
-#using scripts\mp\fire_traps.gsc;
-#using script_439d01e25d19543b;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\loot.gsc;
-#using script_6a8ec730b2bfa844;
-#using scripts\mp\gametypes\br_rewards.gsc;
-#using script_44e32214e5970458;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\javelin.gsc;
-#using scripts\mp\scoreboard.gsc;
-#using scripts\mp\callouts.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using script_b0385bb45379222;
-#using scripts\mp\equipment\tac_insert.gsc;
-#using scripts\mp\validation.gsc;
-#using script_548072087c9fd504;
-#using script_53da3333b83b3527;
-#using scripts\stealth\player.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using script_40e63dd222434655;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\pet_watch.gsc;
-#using scripts\mp\hud_message.gsc;
-#using script_728ffcee8cbf30ee;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using script_ef36a50d9b4627d;
-#using scripts\mp\utility\script.gsc;
-#using script_58be75c518bf0d40;
-#using script_76cc264b397db9cb;
-#using scripts\mp\rank.gsc;
-#using script_697b7ae06ba9b28c;
-#using script_4cdabcd91a92977;
-#using script_6ad351ebd5a33280;
-#using script_15eddb0fac236a22;
-#using script_1f97a44d1761c919;
-#using scripts\mp\utility\lower_message.gsc;
-#using script_3aacf02225ca0da5;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using script_4a6760982b403bad;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\potg.gsc;
-#using scripts\mp\final_killcam.gsc;
-#using scripts\mp\laststand.gsc;
-#using script_6a5d3bf7a5b7064a;
-#using script_40f4c8f2b94c5cd9;
-#using scripts\mp\killcam.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_48614492ef09b23;
-#using scripts\mp\equipment.gsc;
 #using script_11a95cb71d0cda4;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\menus.gsc;
-#using scripts\mp\gametypes\br_extract_quest.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\mp\equipment\support_box.gsc;
-#using script_7ef95bba57dc4b82;
-#using scripts\mp\equipment\fulton.gsc;
-#using script_1d393929cf0bd6a2;
-#using scripts\mp\bots\bots_gametype_br.gsc;
-#using script_556b8aeaa691317f;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using script_26ccbfe3954cacf4;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using script_371b4c2ab5861e62;
+#using script_14d3930854cb398c;
+#using script_15038e9b270f1b31;
+#using script_15eddb0fac236a22;
 #using script_16ddd685a448c6d2;
-#using scripts\mp\ammorestock.gsc;
+#using script_1d393929cf0bd6a2;
+#using script_1f97a44d1761c919;
+#using script_21c19cfc7139d773;
+#using script_2342b8aad723994e;
+#using script_2391409ef7b431e1;
+#using script_261e315c49e5e4ef;
+#using script_2669878cf5a1b6bc;
+#using script_26ccbfe3954cacf4;
+#using script_2d9d24f7c63ac143;
+#using script_342e51952b63e594;
+#using script_3583ff375ab3a91e;
+#using script_371b4c2ab5861e62;
+#using script_3aacf02225ca0da5;
+#using script_3e5a8aa5923bd393;
+#using script_3ff084f114b7f6c9;
+#using script_40e63dd222434655;
+#using script_40f4c8f2b94c5cd9;
+#using script_439d01e25d19543b;
+#using script_44e32214e5970458;
+#using script_47deb71f27d46832;
+#using script_48614492ef09b23;
+#using script_48814951e916af89;
+#using script_4a6760982b403bad;
+#using script_4cdabcd91a92977;
+#using script_530f3ea26428deba;
+#using script_53da3333b83b3527;
+#using script_548072087c9fd504;
+#using script_556b8aeaa691317f;
+#using script_55e418c5cc946593;
+#using script_5762ac2f22202ba2;
+#using script_58be75c518bf0d40;
 #using script_58f20490049af6ac;
+#using script_5bab271917698dc4;
+#using script_5bc60484d17fa95c;
+#using script_600b944a95c3a7bf;
+#using script_60e3273df6b5f7d1;
+#using script_64acb6ce534155b7;
+#using script_669760f0500e4358;
+#using script_697b7ae06ba9b28c;
+#using script_6a5d3bf7a5b7064a;
+#using script_6a8ec730b2bfa844;
+#using script_6ad351ebd5a33280;
+#using script_70f8c085c6bde77e;
+#using script_728ffcee8cbf30ee;
+#using script_72af5a878a9d3397;
+#using script_744cad313ed0a87e;
+#using script_75377e59f5becac8;
+#using script_76cc264b397db9cb;
+#using script_7933519955f32c4e;
+#using script_7ab5b649fa408138;
+#using script_7c40fa80892a721;
+#using script_7eafd8f2b77a1870;
+#using script_7ef95bba57dc4b82;
+#using script_930a1e7bd882c1d;
+#using script_b0385bb45379222;
+#using script_e43e8e28e88639e;
+#using script_ef36a50d9b4627d;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\tripwire;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\dev;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\ammorestock;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\calloutmarkerping_mp;
+#using scripts\mp\callouts;
+#using scripts\mp\carriable;
+#using scripts\mp\class;
+#using scripts\mp\damage;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\fulton;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\equipment\support_box;
+#using scripts\mp\equipment\tac_insert;
+#using scripts\mp\events;
+#using scripts\mp\final_killcam;
+#using scripts\mp\fire_traps;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_alt_mode_inflation;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_attractions;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_c130airdrop;
+#using scripts\mp\gametypes\br_callouts;
+#using scripts\mp\gametypes\br_challenges;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_ending;
+#using scripts\mp\gametypes\br_events;
+#using scripts\mp\gametypes\br_extract_quest;
+#using scripts\mp\gametypes\br_functional_poi;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_jugg_common;
+#using scripts\mp\gametypes\br_killstreaks;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\gametypes\br_respawn;
+#using scripts\mp\gametypes\br_rewards;
+#using scripts\mp\gametypes\br_skydive_protection;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\gametypes\br_vehicles;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\javelin;
+#using scripts\mp\killcam;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\laststand;
+#using scripts\mp\loot;
+#using scripts\mp\menus;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\playerlogic;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\potg;
+#using scripts\mp\rank;
+#using scripts\mp\scoreboard;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spectating;
+#using scripts\mp\supers;
+#using scripts\mp\teams;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\validation;
+#using scripts\mp\weaponrank;
+#using scripts\mp\weapons;
+#using scripts\stealth\manager;
+#using scripts\stealth\player;
 
 #namespace br;
 
@@ -275,7 +275,7 @@ function main() {
     scripts\cp_mp\parachute::initparachutedvars();
     table = "classtable:classtable_br_prematch";
     level.var_3dc5c06b446489 = 10;
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+    if (getdvarint(@"mgl", 0)) {
         table = "classtable:classtable_br_default_mgl";
     }
     if (scripts\mp\gametypes\br_gametypes::isfeatureenabled("prematchBlueprints")) {
@@ -494,8 +494,8 @@ function main() {
     level.var_a9cc50f70b867cde = getdvarint(@"hash_171034830e297d9d", 6);
     level.var_318de67b5265b4c6 = getdvarint(@"hash_6132d06d6475b2e0", 1) == 1;
     level.var_2f60d02380cd603d = &function_ad8c1e6228a10058;
-    level.var_b13e35608b336d65 = &namespace_aead94004cf4c147::function_b13e35608b336d65;
-    level.var_6196d9ea9a30e609 = &namespace_aead94004cf4c147::function_6196d9ea9a30e609;
+    level.getPlayerBackpackSize = &namespace_aead94004cf4c147::getPlayerBackpackSize;
+    level.getLootIDAtBackpackIndex = &namespace_aead94004cf4c147::getLootIDAtBackpackIndex;
     level.var_afa6afa7165491d8 = &namespace_aead94004cf4c147::function_897b29adb37f06a7;
     level.var_85cda66c74550adc = &function_85cda66c74550adc;
     level.var_dc52a11d1ee2690e = getdvarint(@"hash_4f15f2aa925e8391", 14000);
@@ -836,7 +836,7 @@ function nakeddrop() {
     if (!var_e97c69489cc1637a && istrue(level.br_prematchstarted) && !istrue(self.gulag)) {
         if (getdvarint(@"hash_4799897b190d65", 1)) {
             if (issharedfuncdefined("backpack", "isBackpackInventoryEnabled") && [[ getsharedfunc("backpack", "isBackpackInventoryEnabled") ]]()) {
-                for (packitemindex = 0; packitemindex < namespace_aead94004cf4c147::function_b13e35608b336d65(self); packitemindex++) {
+                for (packitemindex = 0; packitemindex < namespace_aead94004cf4c147::getPlayerBackpackSize(self); packitemindex++) {
                     namespace_aead94004cf4c147::function_db1dd76061352e5b(packitemindex);
                 }
             }
@@ -3072,7 +3072,7 @@ function brmodifyplayerdamage(einflictor, victim, eattacker, idamage, smeansofde
         if (istrue(victim.insertingarmorplate) && (!victim scripts\cp_mp\utility\damage_utility::function_cb9ba92488b23c5(objweapon) || !victim _hasperk("specialty_outlander") || istrue(getdvarint(@"hash_22aa9e2b2bd6a191", 0)))) {
             victim notify("try_armor_cancel", "damage_received");
         }
-        if (scripts\mp\loot::function_6f45e7311f77eac4(victim) && !scripts\cp_mp\utility\damage_utility::function_cb9ba92488b23c5(objweapon) && !scripts\mp\loot::function_73d8c72e055e8640(victim)) {
+        if (scripts\mp\loot::isContainerOpen(victim) && !scripts\cp_mp\utility\damage_utility::function_cb9ba92488b23c5(objweapon) && !scripts\mp\loot::function_73d8c72e055e8640(victim)) {
             victim notify("close_container");
         }
         var_49e6ef3edadd524e = getweaponrootname(objweapon);
@@ -3712,8 +3712,8 @@ function function_ad8c1e6228a10058() {
     if (!level.var_318de67b5265b4c6) {
         return;
     }
-    for (i = 0; i < namespace_aead94004cf4c147::function_b13e35608b336d65(player); i++) {
-        currentlootid = player namespace_aead94004cf4c147::function_6196d9ea9a30e609(i);
+    for (i = 0; i < namespace_aead94004cf4c147::getPlayerBackpackSize(player); i++) {
+        currentlootid = player namespace_aead94004cf4c147::getLootIDAtBackpackIndex(i);
         currentquantity = player namespace_aead94004cf4c147::function_897b29adb37f06a7(i);
         player setplayerdata(level.var_5d69837cf4db0407, level.backpackdata, i, "lootID", 1);
         player setplayerdata(level.var_5d69837cf4db0407, level.backpackdata, i, "quantity", 1);
@@ -4783,7 +4783,7 @@ function givebrbonusxp(brbonusxp, objweapon, reason, var_b01aca3236595958) {
     if (!game["timePassed"]) {
         return;
     }
-    if (!(matchmakinggame() || getdvarint(@"hash_37acf332efd205cc"))) {
+    if (!(matchmakinggame() || getdvarint(@"force_challenges"))) {
         return;
     }
     subgametype = getsubgametype();
@@ -5618,7 +5618,7 @@ function function_db908ecaccbe933c(notification, var_421750c958bd3064) {
                 }
                 namespace_aead94004cf4c147::function_f5a1a13f0181bb66(self, undefined, 1);
             } else {
-                thread scripts\mp\gametypes\br_pickups::function_cab3366841d709aa(itemindex);
+                thread scripts\mp\gametypes\br_pickups::equipBackpackItem(itemindex);
             }
             break;
         case #"hash_57241c1e1ceb332d":
@@ -5801,7 +5801,7 @@ function function_db908ecaccbe933c(notification, var_421750c958bd3064) {
             if (!function_420ec7054801a5bd(itemtype, itemindex)) {
                 break;
             }
-            if (scripts\mp\loot::function_6f45e7311f77eac4(self)) {
+            if (scripts\mp\loot::isContainerOpen(self)) {
                 break;
             }
             loadoutdata = namespace_aead94004cf4c147::function_cf1bef64e94f2d1a(itemtype, itemindex);
@@ -5933,7 +5933,7 @@ function function_db908ecaccbe933c(notification, var_421750c958bd3064) {
 // Checksum 0x0, Offset: 0x13a3a
 // Size: 0x1d9
 function function_420ec7054801a5bd(itemtype, itemindex, equip) {
-    if (!function_ad443bbcdcf37b85(self)) {
+    if (!isAliveAndNotInLastStand(self)) {
         return false;
     }
     if (istrue(self.insertingarmorplate) && itemtype == 2 && "health" == scripts\mp\equipment::function_4967838290cb31b9(itemindex)) {
@@ -5985,7 +5985,7 @@ function function_420ec7054801a5bd(itemtype, itemindex, equip) {
 // Checksum 0x0, Offset: 0x13c1c
 // Size: 0xc1
 function function_1c7f3f4e23f94f86(scriptablename) {
-    if (!function_ad443bbcdcf37b85(self)) {
+    if (!isAliveAndNotInLastStand(self)) {
         return 0;
     }
     if (!isdefined(scriptablename)) {
@@ -9366,7 +9366,7 @@ function tnbrMonitorLauncherAmmoRestock() {
     while (true) {
         var_1f2c0996928e3110 = getdvarfloat(@"hash_2c016fd52c45f297", 5);
         wait var_1f2c0996928e3110;
-        if (!function_ad443bbcdcf37b85(self)) {
+        if (!isAliveAndNotInLastStand(self)) {
             continue;
         }
         if (isplayerinorgoingtogulag()) {
@@ -10111,8 +10111,8 @@ function private function_ae3e9266021180fb(params) {
 // Size: 0x68
 function function_af6a6066a0a69f0f(lootid, lootname, quantity, maxcount) {
     if (namespace_708f627020de59d3::function_8a2768bc7f7c63ec(lootid)) {
-        for (i = 0; i < function_b13e35608b336d65(self); i++) {
-            currentlootid = namespace_aead94004cf4c147::function_6196d9ea9a30e609(i);
+        for (i = 0; i < getPlayerBackpackSize(self); i++) {
+            currentlootid = namespace_aead94004cf4c147::getLootIDAtBackpackIndex(i);
             if (currentlootid == 0) {
                 return 1;
             }
@@ -10158,7 +10158,7 @@ function function_f9708b9015e87ffa() {
     }
     var_e5ceb61e77e932a = [];
     foreach (loc in level.ammorestocklocs) {
-        if (!istrue(loc.disabled) && !namespace_bbc79db4c3949a5c::function_ee854fdd1e77efc4(loc.origin, level.var_53c0fa66001cff52)) {
+        if (!istrue(loc.disabled) && !namespace_bbc79db4c3949a5c::isPointInMultiCircleDanger(loc.origin, level.var_53c0fa66001cff52)) {
             var_e5ceb61e77e932a[var_e5ceb61e77e932a.size] = loc;
             scripts\mp\ammorestock::function_9cabc01b47357528(loc);
         }

@@ -1,20 +1,20 @@
-#using scripts\common\ai.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\sp\starts.gsc;
-#using scripts\sp\utility.gsc;
-#using script_60add030ce1a42b6;
-#using script_1a88b3bca3265954;
-#using script_59fdf86567fa3da2;
 #using script_1031976741eb6674;
-#using script_4fd531b693fc2ff3;
-#using scripts\sp\player_rig.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\player_death.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\hud_util.gsc;
+#using script_4fd531b693fc2ff3;
+#using script_60add030ce1a42b6;
+#using scripts\common\ai;
+#using scripts\common\scene;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_fx;
+#using scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_death;
+#using scripts\sp\player_rig;
+#using scripts\sp\starts;
+#using scripts\sp\utility;
 
 #namespace namespace_a35eea5f35ca76c1;
 
@@ -73,7 +73,7 @@ function function_193a23b49e477ce8() {
 // Size: 0x19
 function function_4530fb7445646b43() {
     level waittill("swap_mask");
-    level.var_5c0cc4271abe5488 show();
+    level.scuba_mask show();
 }
 
 // Namespace namespace_a35eea5f35ca76c1 / namespace_394bf2aebe5c3101
@@ -111,26 +111,26 @@ function private function_bfd82aa59ed89de1() {
 // Checksum 0x0, Offset: 0x1058
 // Size: 0x201
 function function_b7b1d8d64bd66324(var_ca9b9b3e50107c9a) {
-    level.var_5c0cc4271abe5488 unlinkfromplayerview(level.player);
+    level.scuba_mask unlinkfromplayerview(level.player);
     endpos = (81600.2, 548.823, 178.181);
     endangles = (350.23, 279.95, 3.04);
-    var_829ceac2f5ec057b = anglestoforward(endangles);
-    startingpos = endpos - var_829ceac2f5ec057b * 10;
+    fwd_angles = anglestoforward(endangles);
+    startingpos = endpos - fwd_angles * 10;
     lerptime = 6.96;
     intervaltime = 0.5;
     interval = lerptime / intervaltime;
-    level.var_5c0cc4271abe5488.origin = startingpos;
-    level.var_5c0cc4271abe5488.angles = endangles;
-    level.var_5c0cc4271abe5488 delaycall(5, &show);
+    level.scuba_mask.origin = startingpos;
+    level.scuba_mask.angles = endangles;
+    level.scuba_mask delaycall(5, &show);
     while (interval > 0) {
         movevector = endpos - startingpos;
         lerpvector = movevector / interval;
         lerppos = startingpos + lerpvector;
         var_dd4bad131228ea4 = endangles;
-        level.var_5c0cc4271abe5488 moveto(lerppos, intervaltime);
-        level.var_5c0cc4271abe5488 rotateto(var_dd4bad131228ea4, intervaltime - 0.02);
+        level.scuba_mask moveto(lerppos, intervaltime);
+        level.scuba_mask rotateto(var_dd4bad131228ea4, intervaltime - 0.02);
         wait intervaltime;
-        startingpos = level.var_5c0cc4271abe5488.origin;
+        startingpos = level.scuba_mask.origin;
         interval -= 1;
         endangles = var_ca9b9b3e50107c9a.angles;
         dist = distance_2d_squared(endpos, var_ca9b9b3e50107c9a.origin);
@@ -141,7 +141,7 @@ function function_b7b1d8d64bd66324(var_ca9b9b3e50107c9a) {
         endpos = var_ca9b9b3e50107c9a.origin;
     }
     var_ca9b9b3e50107c9a unlinkfromplayerview(level.player);
-    level.var_5c0cc4271abe5488 linktoplayerview(level.player, "tag_origin", (0, 0, 0));
+    level.scuba_mask linktoplayerview(level.player, "tag_origin", (0, 0, 0));
 }
 
 /#
@@ -180,21 +180,21 @@ function function_b6da8bf3044d28d5() {
     exploder("vfx_vehicle_drive_shadows");
     level.ally01 waittill("ally01_fist");
     var_fc60b65586ce400 = getent("water_explosion_center", "targetname");
-    var_5c5e47da5c8551eb = getstruct("s_detonator_prompt", "targetname");
-    var_5c5e47da5c8551eb.origin = var_fc60b65586ce400.origin;
-    var_5c5e47da5c8551eb scripts\sp\player\cursor_hint::create_cursor_hint(undefined, (170, 0, -270), %SP_JUP_TUNDRA/LAKE_DETONATE_HINT, undefined, 10000, 10000, 1);
+    detonate_hint = getstruct("s_detonator_prompt", "targetname");
+    detonate_hint.origin = var_fc60b65586ce400.origin;
+    detonate_hint scripts\sp\player\cursor_hint::create_cursor_hint(undefined, (170, 0, -270), %SP_JUP_TUNDRA/LAKE_DETONATE_HINT, undefined, 10000, 10000, 1);
     level thread function_319c2f097ede51e0("scene_jup_tun_0100_scuba_crash", level.var_e2013fb183920c7a, "drive");
-    level thread namespace_879db98d886b02c4::function_76d126b1903cb419();
-    var_bce2025f3101a6e2 = var_5c5e47da5c8551eb waittill_any_timeout(3.5, "trigger");
+    level thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_76d126b1903cb419();
+    player_response = detonate_hint waittill_any_timeout(3.5, "trigger");
     knifeweapon = make_weapon("jup_knife_diver_sp");
     level.player give_weapon(knifeweapon);
     level.player switchtoweapon(knifeweapon);
     flag_set("dof_after_explosion");
-    if (var_bce2025f3101a6e2 == "timeout") {
+    if (player_response == "timeout") {
         level notify("detonation_fail");
         flag_set("detonation_fail");
-        if (isdefined(var_5c5e47da5c8551eb)) {
-            var_5c5e47da5c8551eb scripts\sp\player\cursor_hint::remove_cursor_hint();
+        if (isdefined(detonate_hint)) {
+            detonate_hint scripts\sp\player\cursor_hint::remove_cursor_hint();
         }
         wait 3;
         var_bc5bee2de6e45d22 thread scene::function_bc521bee52fde214(0.05);
@@ -263,12 +263,12 @@ function function_d17322afcc5c21a2() {
 // Size: 0x40
 function function_4b9be0750ff5f45c() {
     waitframe();
-    var_2fe8859771d5f36 = getent("uw_floating_tire_clip", "targetname");
-    if (!isdefined(var_2fe8859771d5f36)) {
+    tire_clip = getent("uw_floating_tire_clip", "targetname");
+    if (!isdefined(tire_clip)) {
         return;
     }
-    var_2fe8859771d5f36.origin = self.origin;
-    var_2fe8859771d5f36 linkto(self);
+    tire_clip.origin = self.origin;
+    tire_clip linkto(self);
 }
 
 // Namespace namespace_a35eea5f35ca76c1 / namespace_394bf2aebe5c3101
@@ -360,15 +360,15 @@ function function_55072791234e5e42() {
 function function_c423fae71a746dff() {
     animnode = getstruct("scene_jup_tun_0111_scuba_car01_takedown", "targetname");
     animnode scene::function_8207074e79f22926(level.ally02, "end", "ally02");
-    var_6881ff512184b4f7 = [level.ally02, level.var_e2013fb183920c7a[0]];
+    anim_ents = [level.ally02, level.var_e2013fb183920c7a[0]];
     level.ally02 namespace_223959d3e5206cfb::dropallaiweapons();
     if (isdefined(level.var_534e69ffec2d477d)) {
-        var_6881ff512184b4f7 = array_add(var_6881ff512184b4f7, level.var_534e69ffec2d477d);
+        anim_ents = array_add(anim_ents, level.var_534e69ffec2d477d);
         level.var_534e69ffec2d477d function_b19b8734383e8d3a();
     } else {
         animnode scene::add_spawn_function(&function_b19b8734383e8d3a, "ally02_takedown_enemy");
     }
-    animnode thread scene::play(var_6881ff512184b4f7, "ally_takedown");
+    animnode thread scene::play(anim_ents, "ally_takedown");
     ally02_knife = animnode scene::get_entity("ally02_knife");
     level.ally02 waittill("end");
     flag_set("flg_lake_soap_takedown_complete");
@@ -407,11 +407,11 @@ function function_3df285723c8fc440() {
         level thread function_2e27831383e65419();
         animnode thread scene::play(animents, shotname);
         animnode scene::function_8207074e79f22926(level.player, "end", "player");
-        var_7864a45fb54dd1be = animnode scene::get_entity("knife");
+        player_knife = animnode scene::get_entity("knife");
         level.player waittill("end");
         level.player val::set("underwater_takedown", "melee", 1);
-        if (isdefined(var_7864a45fb54dd1be)) {
-            var_7864a45fb54dd1be delete();
+        if (isdefined(player_knife)) {
+            player_knife delete();
         }
     } else {
         level.player val::set("underwater_takedown", "melee", 1);
@@ -610,12 +610,12 @@ function function_34533c1e8d674a0f() {
     var_c84f770b76dc58cf hide();
     animnode scene::function_8207074e79f22926(level.player, "end", "player");
     level.player waittill("player_mask_off");
-    level.var_5c0cc4271abe5488 hide();
+    level.scuba_mask hide();
     var_c84f770b76dc58cf show();
     level.player waittill("player_mask_on");
     wait 2.39;
     var_c84f770b76dc58cf hide();
-    level.var_5c0cc4271abe5488 show();
+    level.scuba_mask show();
     level.player waittill("end");
     level.player val::set("underwater_takedown", "melee", 1);
     level.player unlink();
@@ -695,7 +695,7 @@ function function_5a35d55449e984db() {
     if (isdefined(level.var_965c9291556bec55)) {
         level.var_965c9291556bec55 delete();
     }
-    thread namespace_879db98d886b02c4::function_f2d397de671c4106();
+    thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_f2d397de671c4106();
     thread namespace_f74ba02cf5fc717a::function_26c637b4a0e68843();
     level.ally01 stopanimscripted();
     level.ally02 stopanimscripted();
@@ -714,9 +714,9 @@ function function_5a35d55449e984db() {
     level.player waittill("transition_from_lake");
     scripts\engine\sp\utility::autosave_by_name("tundra_lake_rescue_save");
     scripts\engine\sp\utility::transient_load_array(["sp_jup_tundra_lake_campfire_tr", "sp_jup_tundra_forest_walk_tr"]);
-    function_8db9633b6f2f5539();
-    level.var_5c0cc4271abe5488 unlinkfromplayerview(level.player);
-    level.var_5c0cc4271abe5488 delete();
+    transition_overlay();
+    level.scuba_mask unlinkfromplayerview(level.player);
+    level.scuba_mask delete();
     flag_set("lake_rescue_complete");
     var_155f4569780b0f7e scene::stop();
     var_a09680276e0156aa = var_155f4569780b0f7e scene::get_entities();
@@ -830,10 +830,10 @@ function function_d632c8ec5db9c014(fadeintime, var_8fdcc47e02a1d9d3) {
 // Checksum 0x0, Offset: 0x2dec
 // Size: 0xcc
 function function_f903ac629abc4bc3() {
-    var_f2052b41294f107b = level.var_f903ac629abc4bc3;
-    foreach (ent in var_f2052b41294f107b) {
+    a_cleanup = level.var_f903ac629abc4bc3;
+    foreach (ent in a_cleanup) {
         if (is_equal(ent, level.player) || is_equal(ent, level.ally01) || is_equal(ent, level.ally02) || is_equal(ent, level.var_e2013fb183920c7a[3])) {
-            var_f2052b41294f107b = array_remove(var_f2052b41294f107b, ent);
+            a_cleanup = array_remove(a_cleanup, ent);
             continue;
         }
         if (isdefined(ent)) {
@@ -891,10 +891,10 @@ function function_3083187af57a47d4() {
 // Checksum 0x0, Offset: 0x2f80
 // Size: 0x99
 function function_25e8fba7f624dc1() {
-    var_1ca6d09f3d185b40 = getentarray("uw_ally_clip_player", "targetname");
+    a_clips = getentarray("uw_ally_clip_player", "targetname");
     var_df78b42d9680fb9b = getentarray("uw_ally_hand_clip_player", "targetname");
-    var_1ca6d09f3d185b40[0] linkto(level.ally01, "j_mainroot", (-1, -6.5, 0), (90, 0, 0));
-    var_1ca6d09f3d185b40[1] linkto(level.ally02, "j_mainroot", (-1, -6.5, 0), (90, 0, 0));
+    a_clips[0] linkto(level.ally01, "j_mainroot", (-1, -6.5, 0), (90, 0, 0));
+    a_clips[1] linkto(level.ally02, "j_mainroot", (-1, -6.5, 0), (90, 0, 0));
 }
 
 // Namespace namespace_a35eea5f35ca76c1 / namespace_394bf2aebe5c3101
@@ -960,9 +960,9 @@ function function_e6c8b7c32ff9e04b(b_loop) {
                 break;
             }
             wait waittime;
-            var_829ceac2f5ec057b = anglestoforward(self.angles);
+            fwd_angles = anglestoforward(self.angles);
             draw_circle(self.origin, 20, color, undefined, undefined, 100);
-            draw_arrow_time(self.origin, self.origin + var_829ceac2f5ec057b * 100, color, waittime);
+            draw_arrow_time(self.origin, self.origin + fwd_angles * 100, color, waittime);
         }
     }
 

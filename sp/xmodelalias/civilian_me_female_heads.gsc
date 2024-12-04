@@ -1,6 +1,6 @@
-#namespace namespace_c721654d0a52eb24;
+#namespace civilian_me_female_heads;
 
-// Namespace namespace_c721654d0a52eb24 / xmodelalias\civilian_me_female_heads
+// Namespace civilian_me_female_heads / xmodelalias\civilian_me_female_heads
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc1
 // Size: 0x33

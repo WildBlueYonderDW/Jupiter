@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_35ee5e2cef30eea2;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\mp\teams.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\outline.gsc;
-#using script_40e63dd222434655;
-#using scripts\cp_mp\execution.gsc;
 #using script_27af1dac0930f28e;
+#using script_35ee5e2cef30eea2;
+#using script_40e63dd222434655;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\outline;
+#using scripts\mp\teams;
 
 #namespace namespace_cf6ea30b1312e834;
 

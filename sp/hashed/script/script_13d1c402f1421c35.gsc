@@ -1,9 +1,9 @@
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace combat_utility;
 
@@ -181,10 +181,10 @@ function monitorflash() {
     while (true) {
         amount_distance = undefined;
         origin = undefined;
-        var_dda6d54c623139bd = undefined;
+        amount_angle = undefined;
         attacker = undefined;
         attackerteam = undefined;
-        self waittill("flashbang", origin, amount_distance, var_dda6d54c623139bd, attacker, attackerteam, duration);
+        self waittill("flashbang", origin, amount_distance, amount_angle, attacker, attackerteam, duration);
         if (isdefined(self.flashbangimmunity) && self.flashbangimmunity) {
             continue;
         }
@@ -281,9 +281,9 @@ function fasteranimspeed() {
                 continue;
             }
             if (!isdefined(huds)) {
-                var_57accdc40b2f50e = function_96de23075e92ba2();
-                playerhuds = var_57accdc40b2f50e[1];
-                huds = var_57accdc40b2f50e[0];
+                __a0 = function_96de23075e92ba2();
+                playerhuds = __a0[1];
+                huds = __a0[0];
             }
             foreach (key, hud in huds) {
                 hud.value = anim.meleechargetimers[key] - gettime();

@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\anim\face.gsc;
+#using scripts\anim\face;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace gas_trap;
 

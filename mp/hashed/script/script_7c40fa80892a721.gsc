@@ -1,26 +1,26 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_189b67b2735b981d;
-#using script_76cc264b397db9cb;
-#using script_4a6760982b403bad;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_7c40fa80892a721;
-#using script_372301af73968cb;
-#using script_2669878cf5a1b6bc;
-#using script_249f45d992af1114;
-#using script_52d91cb28006a5bd;
 #using script_16ea1b94f0f381b3;
+#using script_189b67b2735b981d;
+#using script_249f45d992af1114;
+#using script_2669878cf5a1b6bc;
+#using script_372301af73968cb;
+#using script_4a6760982b403bad;
+#using script_52d91cb28006a5bd;
 #using script_600b944a95c3a7bf;
+#using script_76cc264b397db9cb;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace armor;
 
@@ -122,8 +122,8 @@ function initarmor(var_b5c8bc15f7117b19) {
             var_2e1d1af8afe39ba8 = 3;
         } else if (istrue(level.var_fb2b3c3db6061df5)) {
             if (isdefined(level.var_3c8e175d92be01ea)) {
-                var_57accdc40b2f50e = [[ level.var_3c8e175d92be01ea ]]();
-                self.spawnarmor = var_57accdc40b2f50e[0];
+                __a0 = [[ level.var_3c8e175d92be01ea ]]();
+                self.spawnarmor = __a0[0];
                 var_2e1d1af8afe39ba8 = int(self.spawnarmor / 135);
             } else {
                 var_2e1d1af8afe39ba8 = getmatchrulesdata("commonOption", "plateCarrierStartLevel");
@@ -1445,7 +1445,7 @@ function hashelmet() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4558
 // Size: 0x1b
-function function_47ad39003b16cf4c() {
+function hashelmet_agent() {
     return isdefined(self.helmethealth) && self.helmethealth > 0;
 }
 
@@ -1929,7 +1929,7 @@ function function_22b15671bbf7a54e(attacker, victim, idflags, scaleddamage, actu
 function modifyHelmetDamage(attacker, inflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, skipclamp) {
     modifieddamage = idamage;
     helmetdamage = 0;
-    hashelmet = victim namespace_f8d3520d3483c1::function_47ad39003b16cf4c();
+    hashelmet = victim namespace_f8d3520d3483c1::hashelmet_agent();
     if (hashelmet) {
         var_94974807c7dc3acf = function_343613187bdf786f(objweapon, smeansofdeath);
         hitshield = shitloc == "shield" && smeansofdeath != "MOD_GRENADE_SPLASH";

@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
 #using script_7c40fa80892a721;
-#using scripts\cp\challenges_cp.gsc;
+#using scripts\common\utility;
+#using scripts\cp\challenges_cp;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_ab76dee3803b9b12;
 
@@ -203,11 +203,11 @@ function supportbox_waittill_notify(msg, ent) {
 // Size: 0x6e
 function cangive_ammo() {
     currentweapon = getvalidtakeweapon();
-    var_de8a9ead75a0581 = self getweaponammoclip(currentweapon);
-    var_c56bbe615f626cc8 = weaponclipsize(currentweapon);
-    var_a862b844906a7c8 = weaponmaxammo(currentweapon);
-    var_82068ca6d5b3c991 = self getweaponammostock(currentweapon);
-    if (var_82068ca6d5b3c991 < var_a862b844906a7c8 || var_de8a9ead75a0581 < var_c56bbe615f626cc8) {
+    current_ammo = self getweaponammoclip(currentweapon);
+    max_clip = weaponclipsize(currentweapon);
+    max_stock = weaponmaxammo(currentweapon);
+    player_stock = self getweaponammostock(currentweapon);
+    if (player_stock < max_stock || current_ammo < max_clip) {
         return 1;
     }
     return 0;
@@ -245,7 +245,7 @@ function test_ammo_crate(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xafc
 // Size: 0x3b
-function give_crafted_ammo_crate(var_df071553d0996ff9, player) {
+function give_crafted_ammo_crate(interaction_struct, player) {
     player thread watch_dpad();
     player notify("new_power", "crafted_autosentry");
     set_crafted_inventory_item("crafted_autosentry", &give_crafted_ammo_crate, player);

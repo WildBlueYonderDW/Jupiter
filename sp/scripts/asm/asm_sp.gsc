@@ -1,22 +1,22 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using script_55b3046625fb79b6;
 #using script_3433ee6b63c7e243;
-#using scripts\asm\shared\sp\utility.gsc;
+#using script_55b3046625fb79b6;
 #using script_7e4d332e911e1b90;
-#using scripts\asm\track.gsc;
-#using scripts\sp\door.gsc;
-#using scripts\sp\door_internal.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\sp\utility;
+#using scripts\asm\shared\utility;
+#using scripts\asm\track;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\door;
+#using scripts\sp\door_internal;
+#using scripts\sp\utility;
 
-#namespace namespace_db416d290e04858a;
+#namespace asm_sp;
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f8
 // Size: 0x23f
@@ -73,7 +73,7 @@ function asm_init(var_b5da6777bfe1ace8, archetypename) {
     function_c051a94f99bd65f1(self.asmname);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x63f
 // Size: 0x2c
@@ -83,7 +83,7 @@ function function_a2b8f8b0891ee7fe() {
     level.fnanimatedprop_setanim = &animatedprop_setanim;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x673
 // Size: 0x117
@@ -110,7 +110,7 @@ function updatepainvars(damagedsubpart) {
     self.damagedsubpart = undefined;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x792
 // Size: 0x22
@@ -121,7 +121,7 @@ function shouldplaypainanim() {
     return shouldplaypainanimdefault();
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7bd
 // Size: 0x45
@@ -136,7 +136,7 @@ function shouldplaypainanimdefault() {
     return true;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x80b
 // Size: 0xb6
@@ -165,7 +165,7 @@ function paininternal() {
     self waittill("Hellfreezesover");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c9
 // Size: 0x1e
@@ -175,18 +175,18 @@ function subparthandler() {
     assertmsg("Dismemberment handlers not setup for code ASM. Bug an AI coder.");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8ef
 // Size: 0x21
-function asm_animhasfacialoverride(var_63db3c9e26531938) {
-    if (!animisleaf(var_63db3c9e26531938)) {
+function asm_animhasfacialoverride(a_anim) {
+    if (!animisleaf(a_anim)) {
         return 0;
     }
-    return animhasnotetrack(var_63db3c9e26531938, "facial_override");
+    return animhasnotetrack(a_anim, "facial_override");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x919
 // Size: 0x6c
@@ -203,11 +203,11 @@ function asm_playfacialanim_sp(asmname, statename, animname) {
     self.asm.facial_state = "";
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x98d
 // Size: 0xeb
-function asm_playfacialaniminternal(var_63db3c9e26531938, a_state) {
+function asm_playfacialaniminternal(a_anim, a_state) {
     /#
         if (getdvar(@"hash_688ea70593f4db5e", "<dev string:x6b>") == "<dev string:x6d>") {
             asm_clearfacialanim();
@@ -217,7 +217,7 @@ function asm_playfacialaniminternal(var_63db3c9e26531938, a_state) {
     if (!isfacialstateallowed("asm")) {
         return;
     }
-    if (isdefined(var_63db3c9e26531938) && asm_animhasfacialoverride(var_63db3c9e26531938)) {
+    if (isdefined(a_anim) && asm_animhasfacialoverride(a_anim)) {
         return;
     }
     headknob = asm_lookupanimfromaliasifexists("knobs", "head");
@@ -239,7 +239,7 @@ function asm_playfacialaniminternal(var_63db3c9e26531938, a_state) {
     setfacialindexfornonai(a_state);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa80
 // Size: 0x87
@@ -262,7 +262,7 @@ function asm_playfacialanimfromnotetrack(facial_state) {
     }
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0f
 // Size: 0x2f
@@ -274,7 +274,7 @@ function asm_playfacialanimsingleframedeath(guy) {
     setfacialindexfornonai("death");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb46
 // Size: 0x184
@@ -330,7 +330,7 @@ function asm_initfingerposes() {
     }
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd2
 // Size: 0x1a
@@ -339,7 +339,7 @@ function asm_clearfingerposes() {
     asm_clearikfingeranim("right");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcf4
 // Size: 0x40
@@ -352,7 +352,7 @@ function asm_ikfingeranim(side) {
     asm_playikfingeranim(side);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd3c
 // Size: 0x20d
@@ -369,8 +369,8 @@ function asm_playikfingeranim(side) {
         var_6bae40552fced7c0 = "ik_fingers_l";
         weaponattachments = getweaponattachments(currentweapon);
         if (isdefined(weaponattachments)) {
-            foreach (var_5d237afd4686552f in weaponattachments) {
-                var_487d8bdc76ed420c = getsubstr(var_5d237afd4686552f, 0, 7);
+            foreach (atch in weaponattachments) {
+                var_487d8bdc76ed420c = getsubstr(atch, 0, 7);
                 if (var_487d8bdc76ed420c == "ub_mike") {
                     var_f996e26b279379c4 = "iw9_ub_mike";
                 }
@@ -403,7 +403,7 @@ function asm_playikfingeranim(side) {
     self setanim(var_7e50b5de752e42dd, 1, 0.3, 1);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf51
 // Size: 0x90
@@ -420,7 +420,7 @@ function asm_clearikfingeranim(side) {
     self clearanim(var_b34ade57980d6c64, 0.3, 1);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfe9
 // Size: 0xd2
@@ -449,7 +449,7 @@ function asm_playvisorraise(suffix) {
     }
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10c3
 // Size: 0x152
@@ -486,7 +486,7 @@ function asm_trynvgmodelswap() {
     }
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x121d
 // Size: 0x79
@@ -507,7 +507,7 @@ function asm_clearvisoranim() {
     }
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x129e
 // Size: 0x39
@@ -519,7 +519,7 @@ function asm_hasstatesp(archetype, statename) {
     return 0;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x12df
 // Size: 0xdf
@@ -545,7 +545,7 @@ function asm_playadditiveanimloopstate_sp(asmname, statename, params) {
     }
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x13c6
 // Size: 0x6a
@@ -562,7 +562,7 @@ function asm_playadditiveanimloopstate_helper(statename, var_a16ea1d3288ba534, v
     }
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1438
 // Size: 0x10b
@@ -599,7 +599,7 @@ function asm_setaimlimits(limits) {
     self.downaimlimit = 45;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x154b
 // Size: 0x4c
@@ -613,7 +613,7 @@ function asm_getaimlimitset(asmname, statename) {
     return level.aimlimitstatemappings[asmname][statename];
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x15a0
 // Size: 0x10f
@@ -642,7 +642,7 @@ function asm_setstateaimlimits(asmname, statename) {
     asm_setaimlimits([]);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x16b7
 // Size: 0x38f
@@ -706,7 +706,7 @@ function asm_setupaim_sp(asmname, statename, blendtime, use_5) {
     scripts\asm\track::trackloop_restoreaim();
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a4e
 // Size: 0x37
@@ -717,7 +717,7 @@ function asm_cleanupaimknobswithdelay(statename, delaytime) {
     asm_cleanupaimknobs();
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a8d
 // Size: 0x2a
@@ -728,7 +728,7 @@ function asm_cleanupaimknobsonterminate(statename) {
     asm_cleanupaimknobs();
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1abf
 // Size: 0xab
@@ -743,7 +743,7 @@ function asm_cleanupaimknobs() {
     self.asm.track.aim_5 = undefined;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b72
 // Size: 0x5c
@@ -752,7 +752,7 @@ function asm_animscripted(notifyname, startpos, startangles, anime, vignettemode
     self asmsetstate(asmname, "animscripted");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bd6
 // Size: 0x9
@@ -760,20 +760,20 @@ function asm_stopanimscripted() {
     self stopanimscripted();
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1be7
 // Size: 0x64
-function asm_animcustom(var_c81cfdfd8d7bf631, var_dc2856b91ff86109) {
+function asm_animcustom(run_animscript, end_animscript) {
     self leaveinteraction();
     scripts\asm\asm_bb::bb_setanimscripted();
-    self.asm.animcustomender = var_dc2856b91ff86109;
-    self animcustom(var_c81cfdfd8d7bf631, &asm_animcustom_endanimscript);
+    self.asm.animcustomender = end_animscript;
+    self animcustom(run_animscript, &asm_animcustom_endanimscript);
     asmname = self.asmname;
     self asmsetstate(asmname, "animscripted");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c53
 // Size: 0x4b
@@ -786,7 +786,7 @@ function asm_animcustom_endanimscript() {
     self.asm.animcustomender = undefined;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ca6
 // Size: 0xa
@@ -794,7 +794,7 @@ function asm_stopanimcustom() {
     self notify("killanimscript");
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cb8
 // Size: 0x2d
@@ -805,7 +805,7 @@ function open_door(door, t) {
     door scripts\sp\utility::door_force_open_fully(self, t);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ced
 // Size: 0xb6
@@ -824,7 +824,7 @@ function door_needs_to_close(door) {
     return vectordot(doornormal, doordir) * vectordot(doornormal, var_9dfa31b22e1f2822) > 0;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dac
 // Size: 0x2a
@@ -833,7 +833,7 @@ function close_door(door) {
     door scripts\sp\door::door_close(self, 0.5, 0.1, 0.4);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dde
 // Size: 0x12
@@ -841,7 +841,7 @@ function get_door_center(door) {
     return door scripts\sp\door_internal::get_door_bottom_center();
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1df9
 // Size: 0x2d
@@ -855,7 +855,7 @@ function is_door_already_open(door) {
     return false;
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e2f
 // Size: 0x61
@@ -865,7 +865,7 @@ function animatedprop_setup(propname, var, origin, angles) {
     self.animated_prop setanimrestart(var_5ffe798365b52207, 1, 0, 0);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e98
 // Size: 0x7a
@@ -877,7 +877,7 @@ function animatedprop_startanim(propname, params) {
     self.animated_prop setanimrate(propanim, 1);
 }
 
-// Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+// Namespace asm_sp / scripts\asm\asm_sp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f1a
 // Size: 0x62
@@ -890,7 +890,7 @@ function animatedprop_setanim(propname, params) {
 
 /#
 
-    // Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+    // Namespace asm_sp / scripts\asm\asm_sp
     // Params 3, eflags: 0x0
     // Checksum 0x0, Offset: 0x1f84
     // Size: 0x2b
@@ -898,7 +898,7 @@ function animatedprop_setanim(propname, params) {
         asm_animcustom(&function_716870ebd1589f87, undefined);
     }
 
-    // Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+    // Namespace asm_sp / scripts\asm\asm_sp
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1fb7
     // Size: 0x97
@@ -916,7 +916,7 @@ function animatedprop_setanim(propname, params) {
         }
     }
 
-    // Namespace namespace_db416d290e04858a / scripts\asm\asm_sp
+    // Namespace asm_sp / scripts\asm\asm_sp
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x2056
     // Size: 0x23d

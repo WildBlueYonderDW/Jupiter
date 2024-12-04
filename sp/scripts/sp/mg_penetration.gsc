@@ -1,13 +1,13 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\mgturret.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\mgturret;
+#using scripts\sp\utility;
 
-#namespace namespace_41b94b17a250d8db;
+#namespace mg_penetration;
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13a
 // Size: 0x16e
@@ -52,7 +52,7 @@ function gunner_think(turret) {
     }
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b0
 // Size: 0x23
@@ -61,7 +61,7 @@ function target_ent_cleanup(ent) {
     ent delete();
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2db
 // Size: 0x1d0
@@ -100,7 +100,7 @@ function shoot_enemy_until_he_hides_then_shoot_wall(ent) {
     stop_firing();
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0x53
@@ -116,7 +116,7 @@ function set_firing(val) {
     self.turret notify("stopfiring");
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x50e
 // Size: 0x1c
@@ -125,7 +125,7 @@ function stop_firing() {
     self.turret notify("stopfiring");
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x532
 // Size: 0x29
@@ -136,7 +136,7 @@ function start_firing() {
     }
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x563
 // Size: 0xcf
@@ -162,7 +162,7 @@ function create_mg_team() {
     }
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x63a
 // Size: 0x1b
@@ -171,7 +171,7 @@ function mg_gunner_death_notify(ent) {
     ent notify("gunner_died");
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x65d
 // Size: 0x4c
@@ -189,7 +189,7 @@ function solo_firing(var_4583761e006c72d8) {
     }
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b1
 // Size: 0x4a
@@ -203,7 +203,7 @@ function solo_fires() {
     }
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x703
 // Size: 0x98
@@ -227,7 +227,7 @@ function dual_firing(var_4583761e006c72d8) {
     }
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x7a3
 // Size: 0xe6
@@ -242,19 +242,19 @@ function get_suppress_point(origin, trace_start, trace_end) {
     var_151e2425c0a5f5c9 = trace_end - trace_start;
     var_151e2425c0a5f5c9 = (var_151e2425c0a5f5c9[0] / traces, var_151e2425c0a5f5c9[1] / traces, var_151e2425c0a5f5c9[2] / traces);
     offset = (0, 0, 0);
-    var_d067acf8720bed6b = undefined;
+    hit_pos = undefined;
     for (i = 0; i < traces + 2; i++) {
         trace = scripts\engine\trace::_bullet_trace(origin, trace_start + offset, 0, undefined);
         if (trace["fraction"] < 1) {
-            var_d067acf8720bed6b = trace["position"];
+            hit_pos = trace["position"];
             break;
         }
         offset += var_151e2425c0a5f5c9;
     }
-    return var_d067acf8720bed6b;
+    return hit_pos;
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x892
 // Size: 0x2a
@@ -268,7 +268,7 @@ function record_enemy_sightings() {
     }
 }
 
-// Namespace namespace_41b94b17a250d8db / scripts\sp\mg_penetration
+// Namespace mg_penetration / scripts\sp\mg_penetration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c4
 // Size: 0x89

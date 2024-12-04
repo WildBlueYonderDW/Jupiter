@@ -1,11 +1,11 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_2793747e1eb61426;
+#using script_57d78f3552757ec4;
 #using script_62d456d3f9853f1f;
 #using script_dcfb962c53fd451;
-#using script_57d78f3552757ec4;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_9d9cf08d2a584bbd;
 
@@ -48,8 +48,8 @@ function private function_866ec2626b84937a() {
     level.var_46f34dd309687113["toxic"] = getentitylessscriptablearray("ob_glyph_puzzle_01", "script_noteworthy")[0];
     level.var_46f34dd309687113["ice"] = getentitylessscriptablearray("ob_glyph_puzzle_02", "script_noteworthy")[0];
     level.var_46f34dd309687113["fire"] = getentitylessscriptablearray("ob_glyph_puzzle_03", "script_noteworthy")[0];
-    foreach (var_e316720fc8606632 in level.var_46f34dd309687113) {
-        var_e316720fc8606632 setscriptablepartstate("glyph_part", "idle");
+    foreach (visual_scr in level.var_46f34dd309687113) {
+        visual_scr setscriptablepartstate("glyph_part", "idle");
     }
     function_139b4b175d67e8ed("fire");
     function_139b4b175d67e8ed("toxic");

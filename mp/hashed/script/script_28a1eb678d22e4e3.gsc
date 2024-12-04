@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using script_4948cdf739393d2d;
+#using script_58f20490049af6ac;
 #using script_64acb6ce534155b7;
 #using script_744cad313ed0a87e;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_4948cdf739393d2d;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using script_58f20490049af6ac;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_9e6997f014dd0798;
 

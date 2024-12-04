@@ -1,10 +1,10 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_3a8f9ace195c9da9;
 #using script_7c40fa80892a721;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_9e68fcb064867fe8;
 
@@ -34,7 +34,7 @@ function function_ed62d4f89b19c4f7() {
 // Size: 0xad
 function function_1623793645979b39() {
     if (isdefined(level.var_1b908bf18691b097)) {
-        if (level.var_1b908bf18691b097.var_5feb596b2efa27b6 >= namespace_1170726b2799ea65::function_c9e9a9b526daf36a()) {
+        if (level.var_1b908bf18691b097.plate_level >= namespace_1170726b2799ea65::function_c9e9a9b526daf36a()) {
             function_5bb1ea396e15a905();
             return;
         }
@@ -56,13 +56,13 @@ function function_1623793645979b39() {
 // Size: 0x72
 function function_b4492a14e5453ff9() {
     if (self.var_bed158a6dfac230d >= function_6f16016c53d6cf63()) {
-        namespace_f8d3520d3483c1::function_ac7803d45979135c(self.maxarmorhealth);
+        namespace_f8d3520d3483c1::setArmorHealth(self.maxarmorhealth);
         return;
     }
     self.var_bed158a6dfac230d++;
     self.maxarmorhealth += level.var_4b78859bacc88808;
     var_584d2e9b2d0a8db5 = self.armorhealth + level.var_4b78859bacc88808;
-    namespace_f8d3520d3483c1::function_ac7803d45979135c(var_584d2e9b2d0a8db5);
+    namespace_f8d3520d3483c1::setArmorHealth(var_584d2e9b2d0a8db5);
 }
 
 // Namespace namespace_9e68fcb064867fe8 / namespace_ee632c9a776f5f85
@@ -133,7 +133,7 @@ function function_71e5374cd9767388() {
     armorplates = getdvarint(@"hash_d7b4016f72a67d64", -1);
     if (armorplates == -1) {
         if (isdefined(level.var_1b908bf18691b097)) {
-            armorplates = level.var_1b908bf18691b097.var_5feb596b2efa27b6;
+            armorplates = level.var_1b908bf18691b097.plate_level;
         } else {
             armorplates = level.spawnarmorplates;
         }
@@ -233,12 +233,12 @@ function private function_5e688876e26aad86(var_5a6d897e9cfe5f52) {
     // Checksum 0x0, Offset: 0x6fb
     // Size: 0xaa
     function function_9a925eab434edb31(params) {
-        var_5feb596b2efa27b6 = int(params[0]);
+        plate_level = int(params[0]);
         foreach (player in level.players) {
-            player namespace_1170726b2799ea65::function_58311dfacdcaf94c(var_5feb596b2efa27b6);
-            player.var_bed158a6dfac230d = var_5feb596b2efa27b6;
-            player.maxarmorhealth = var_5feb596b2efa27b6 * level.var_4b78859bacc88808;
-            player namespace_f8d3520d3483c1::function_ac7803d45979135c(var_5feb596b2efa27b6 * level.var_4b78859bacc88808);
+            player namespace_1170726b2799ea65::function_58311dfacdcaf94c(plate_level);
+            player.var_bed158a6dfac230d = plate_level;
+            player.maxarmorhealth = plate_level * level.var_4b78859bacc88808;
+            player namespace_f8d3520d3483c1::setArmorHealth(plate_level * level.var_4b78859bacc88808);
         }
     }
 

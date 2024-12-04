@@ -1,20 +1,20 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\killstreaks\manual_turret.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\killstreaks\target_marker.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\movers.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\manual_turret;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\equipment;
+#using scripts\mp\gameobjects;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\killstreaks\target_marker;
+#using scripts\mp\movers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\teams;
 
 #namespace manual_turret_mp;
 

@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace weapons_dev;
 

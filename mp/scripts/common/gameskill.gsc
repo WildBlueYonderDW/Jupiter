@@ -1,6 +1,6 @@
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\anim\utility_common;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace gameskill;
 

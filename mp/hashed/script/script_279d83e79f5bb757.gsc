@@ -1,4 +1,4 @@
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
+#using scripts\cp_mp\vehicles\vehicle_interact;
 
 #namespace namespace_7f5956e577370452;
 

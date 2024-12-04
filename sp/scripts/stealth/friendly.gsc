@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\stealth\manager.gsc;
-#using scripts\stealth\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\debug;
+#using scripts\stealth\manager;
+#using scripts\stealth\utility;
 
 #namespace friendly;
 

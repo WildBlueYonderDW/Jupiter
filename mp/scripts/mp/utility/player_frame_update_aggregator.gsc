@@ -1,4 +1,4 @@
-#using scripts\mp\flags.gsc;
+#using scripts\mp\flags;
 
 #namespace namespace_5340b948743deeca;
 

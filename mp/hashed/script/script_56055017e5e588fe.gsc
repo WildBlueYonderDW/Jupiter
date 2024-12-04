@@ -1,55 +1,55 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\common\values.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gamescore.gsc;
-#using script_56055017e5e588fe;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_lootchopper.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\gametypes\br_c130airdrop.gsc;
-#using script_5e7a036feaf4f8b7;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
 #using script_21c19cfc7139d773;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\cp_mp\killstreaks\nuke.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_64acb6ce534155b7;
+#using script_2d9d24f7c63ac143;
+#using script_56055017e5e588fe;
+#using script_5762ac2f22202ba2;
 #using script_5bab271917698dc4;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\killstreaks\flares.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\mp\rank.gsc;
+#using script_5e7a036feaf4f8b7;
+#using script_64acb6ce534155b7;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\killstreaks\nuke;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_c130airdrop;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_lootchopper;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\flares;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_4662b30263ed0da1;
 
@@ -2113,14 +2113,14 @@ function helidestroyvehiclestouchtrace() {
     middle = 25;
     back = -100;
     while (true) {
-        vehicles = getentarrayinradius("script_vehicle", "classname", self.origin, getdvarfloat(@"hash_d8d9dc5f1a9e75a9", 400));
+        vehicles = getentarrayinradius("script_vehicle", "classname", self.origin, getdvarfloat(@"test_radius", 400));
         if (vehicles.size <= 1) {
             wait 0.5;
             continue;
         }
         vehiclecontents = create_vehicle_contents();
         dir = anglestoforward(self.angles);
-        origin = self.origin + dir * getdvarfloat(@"hash_c99873a79b22a9f7", forward) + (0, 0, getdvarfloat(@"hash_c99875a79b22ae5d", offsetdown));
+        origin = self.origin + dir * getdvarfloat(@"test_f", forward) + (0, 0, getdvarfloat(@"test_d", offsetdown));
         trace = sphere_trace(origin, origin + (0, 0, 1), radius, self, vehiclecontents);
         ent = trace["entity"];
         if (isdefined(ent) && ent entisalivevehicle()) {
@@ -2128,7 +2128,7 @@ function helidestroyvehiclestouchtrace() {
             waitframe();
             continue;
         }
-        origin = self.origin + dir * getdvarfloat(@"hash_c9986ca79b229a92", middle) + (0, 0, getdvarfloat(@"hash_c99875a79b22ae5d", offsetdown));
+        origin = self.origin + dir * getdvarfloat(@"test_m", middle) + (0, 0, getdvarfloat(@"test_d", offsetdown));
         trace = sphere_trace(origin, origin + (0, 0, 1), radius, self, vehiclecontents);
         ent = trace["entity"];
         if (isdefined(ent) && ent entisalivevehicle()) {
@@ -2136,7 +2136,7 @@ function helidestroyvehiclestouchtrace() {
             waitframe();
             continue;
         }
-        origin = self.origin + dir * getdvarfloat(@"hash_c9986fa79b22a12b", back) + (0, 0, getdvarfloat(@"hash_c99875a79b22ae5d", offsetdown));
+        origin = self.origin + dir * getdvarfloat(@"test_b", back) + (0, 0, getdvarfloat(@"test_d", offsetdown));
         trace = sphere_trace(origin, origin + (0, 0, 1), radius, self, vehiclecontents);
         ent = trace["entity"];
         if (isdefined(ent) && ent entisalivevehicle()) {

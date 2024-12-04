@@ -1,12 +1,12 @@
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_59ff79d681bb860c;
-#using scripts\mp\bots\bots_util.gsc;
 #using script_d74ae0b4aa21186;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\utility\game;
 
 #namespace namespace_e8b353934f3548ee;
 

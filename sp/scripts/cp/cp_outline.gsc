@@ -1,15 +1,15 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_outline.gsc;
 #using script_3bcaa2cbaf54abdd;
-#using scripts\engine\trace.gsc;
 #using script_afb7e332aee4bf2;
-#using scripts\cp\cp_agent_utils.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_outline;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_a10547072d518793;
+#namespace cp_outline;
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x489
 // Size: 0x28
@@ -23,7 +23,7 @@ function outline_monitor_think() {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b9
 // Size: 0xc
@@ -31,7 +31,7 @@ function outline_init() {
     level.outline_weapon_watch_list = [];
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cd
 // Size: 0x117
@@ -44,10 +44,10 @@ function item_outline_weapon_monitor() {
         if (!isdefined(item.cost)) {
             continue;
         }
-        var_5bec50a12cb1d7f8 = 1;
+        weapon_flag = 1;
         var_48dce39bca6c36f3 = distancesquared(self.origin, item.origin) < 1000000;
         if (var_48dce39bca6c36f3 && !is_holding_deployable() && !has_special_weapon()) {
-            scripts\cp\cp_outline::enable_outline_for_player(item, self, get_hudoutline_item(item, var_5bec50a12cb1d7f8), "high");
+            scripts\cp\cp_outline::enable_outline_for_player(item, self, get_hudoutline_item(item, weapon_flag), "high");
         } else if (var_48dce39bca6c36f3 && (is_holding_deployable() || has_special_weapon())) {
             scripts\cp\cp_outline::enable_outline_for_player(item, self, "outline_depth_orange", "high");
         } else {
@@ -59,11 +59,11 @@ function item_outline_weapon_monitor() {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ec
 // Size: 0x10e
-function get_hudoutline_item(item, var_5bec50a12cb1d7f8) {
+function get_hudoutline_item(item, weapon_flag) {
     cost = item.cost;
     if (isdefined(level.has_weapon_variation)) {
         if (isdefined(item.struct.weapon) && self [[ level.has_weapon_variation ]](item.struct.weapon)) {
@@ -85,7 +85,7 @@ function get_hudoutline_item(item, var_5bec50a12cb1d7f8) {
     return "outline_depth_red";
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x702
 // Size: 0x94
@@ -106,7 +106,7 @@ function playeroutlinemonitor() {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x79e
 // Size: 0xa6
@@ -125,25 +125,25 @@ function should_put_player_outline_on(player) {
     return var_c3579bdec26ccb2d;
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x84d
 // Size: 0x6e
 function get_hudoutline_for_player_health(player) {
-    var_9e6ee1f61a6e0cbf = player.health / 100;
-    if (var_9e6ee1f61a6e0cbf <= 0.33 || namespace_d4aab8c9cb8ecb14::player_in_laststand(player)) {
+    health_ratio = player.health / 100;
+    if (health_ratio <= 0.33 || namespace_d4aab8c9cb8ecb14::player_in_laststand(player)) {
         return "outline_nodepth_red";
     }
-    if (var_9e6ee1f61a6e0cbf <= 0.66) {
+    if (health_ratio <= 0.66) {
         return "outline_nodepth_orange";
     }
-    if (var_9e6ee1f61a6e0cbf <= 1) {
+    if (health_ratio <= 1) {
         return "outline_nodepth_cyan";
     }
     return "outline_nodepth_white";
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c3
 // Size: 0x2c
@@ -151,7 +151,7 @@ function enable_outline_for_players(item, players, hudoutlineassetname, priority
     item hudoutlineenableforclients(players, hudoutlineassetname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x8f7
 // Size: 0x2c
@@ -159,7 +159,7 @@ function enable_outline_for_player(item, player, hudoutlineassetname, priority) 
     item hudoutlineenableforclient(player, hudoutlineassetname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x92b
 // Size: 0x1b
@@ -167,7 +167,7 @@ function disable_outline_for_players(item, players) {
     item hudoutlinedisableforclients(players);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x94e
 // Size: 0x1b
@@ -175,7 +175,7 @@ function disable_outline_for_player(item, player) {
     item hudoutlinedisableforclient(player);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x971
 // Size: 0x12
@@ -183,7 +183,7 @@ function disable_outline(item) {
     item hudoutlinedisable();
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x98b
 // Size: 0x1b
@@ -191,7 +191,7 @@ function enable_outline(item, hudoutlineassetname) {
     item hudoutlineenable(hudoutlineassetname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ae
 // Size: 0x12d
@@ -232,7 +232,7 @@ function set_outline(hudoutlineassetname) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xae3
 // Size: 0xbd
@@ -256,7 +256,7 @@ function unset_outline() {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xba8
 // Size: 0x12e
@@ -270,7 +270,7 @@ function save_outline_settings() {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcde
 // Size: 0x125
@@ -284,7 +284,7 @@ function restore_outline_settings() {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe0b
 // Size: 0x1c
@@ -292,7 +292,7 @@ function hudoutline_enable(hudoutlineassetname, channelname) {
     hudoutline_enable_internal(channelname, hudoutlineassetname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe2f
 // Size: 0x13
@@ -300,7 +300,7 @@ function hudoutline_disable(channelname) {
     hudoutline_disable_internal(channelname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe4a
 // Size: 0xa1
@@ -311,14 +311,14 @@ function hudoutline_channels_init() {
     level.hudoutlinechannels = [];
     hudoutline_add_channel_internal("default", 0, level.fnhudoutlinedefaultsettings);
     setsaveddvar(@"hash_5f5c12c95c44f093", 1);
-    var_2fbecf4cb1adff1a = [[ level.fnhudoutlinedefaultsettings ]]();
+    default_settings = [[ level.fnhudoutlinedefaultsettings ]]();
     for (i = 0; i < 8; i++) {
         dvarstr = hashcat(@"hash_1429c8e20321bbcd", i);
-        setsaveddvar(dvarstr, var_2fbecf4cb1adff1a[dvarstr]);
+        setsaveddvar(dvarstr, default_settings[dvarstr]);
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xef3
 // Size: 0x200
@@ -364,7 +364,7 @@ function hudoutline_enable_internal(channelname, hudoutlineassetname) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10fb
 // Size: 0x319
@@ -432,7 +432,7 @@ function hudoutline_disable_internal(channelname) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x141c
 // Size: 0x22f
@@ -482,7 +482,7 @@ function hudoutline_activate_best_channel() {
     level.hudoutlinecurchannel = undefined;
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1653
 // Size: 0x3e
@@ -493,7 +493,7 @@ function hudoutline_create_entinfo(ent, hudoutlineassetname) {
     return entinfo;
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x169a
 // Size: 0x8d
@@ -505,7 +505,7 @@ function hudoutline_update_entinfo(channelname, ent, hudoutlineassetname) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x172f
 // Size: 0xfc
@@ -523,7 +523,7 @@ function hudoutline_activate_channel(channelname) {
     _enable_hudoutline_on_channel_ents(channelname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1833
 // Size: 0xb6
@@ -537,7 +537,7 @@ function _enable_hudoutline_on_channel_ents(channelname) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x18f1
 // Size: 0x123
@@ -562,7 +562,7 @@ function _enable_hudoutline_on_ent(ent, hudoutlineassetname, var_f264487ee10b8af
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a1c
 // Size: 0x123
@@ -590,7 +590,7 @@ function _disable_hudoutline_on_ent(ent, var_f264487ee10b8afb) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b47
 // Size: 0x103
@@ -613,7 +613,7 @@ function hudoutline_set_channel_settings_delayed(channelname) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c52
 // Size: 0x7d
@@ -624,7 +624,7 @@ function hudoutline_deactivate_channel(channelname) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cd7
 // Size: 0xbb
@@ -644,7 +644,7 @@ function hudoutline_add_channel_internal(channelname, priority, settingsfunc) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d9a
 // Size: 0x142
@@ -665,7 +665,7 @@ function hudoutline_add_child_channel_internal(channelname, priority, var_f26448
     level.hudoutlinechannels[var_f264487ee10b8afb].childchannels[level.hudoutlinechannels[var_f264487ee10b8afb].childchannels.size] = channelname;
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ee4
 // Size: 0x4f
@@ -676,7 +676,7 @@ function hudoutline_override_channel_settingsfunc(channelname, settingsfunc) {
     }
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f3b
 // Size: 0x7c
@@ -689,7 +689,7 @@ function hudoutline_is_ent_in_channel(channelname, ent) {
     return false;
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc0
 // Size: 0x10b
@@ -717,7 +717,7 @@ function hudoutline_force_channel_internal(channelname, var_c3f2838383281c9d) {
     hudoutline_activate_best_channel();
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x20d3
 // Size: 0x42
@@ -730,7 +730,7 @@ function hudoutline_disable_on_death(channelname, endonmsg) {
     thread hudoutline_disable_internal(channelname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x211d
 // Size: 0x59
@@ -745,7 +745,7 @@ function play_animation_on_channel(channelname, var_4706652761de8d03) {
     thread hudoutline_set_channel_settings_delayed(channelname);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x217e
 // Size: 0x51
@@ -757,16 +757,16 @@ function play_animation_on_channel_loop(channelname, var_4706652761de8d03) {
     play_animation_on_channel(channelname, var_4706652761de8d03);
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x21d7
 // Size: 0x189
 function hudoutline_default_settings() {
     hudoutlinesettings = [];
     if (isdefined(level.player.ar_callout_ent)) {
-        var_5b660a4c678bd6af = length2d(level.player.origin - level.player.ar_callout_ent.origin);
-        var_7803cce2b397156d = clamp(var_5b660a4c678bd6af / 1000, 1, 2);
-        hudoutlinesettings[@"hash_3bb847d049003050"] = var_7803cce2b397156d;
+        dist_value = length2d(level.player.origin - level.player.ar_callout_ent.origin);
+        norm_value = clamp(dist_value / 1000, 1, 2);
+        hudoutlinesettings[@"hash_3bb847d049003050"] = norm_value;
     } else {
         hudoutlinesettings[@"hash_3bb847d049003050"] = 1;
     }
@@ -787,7 +787,7 @@ function hudoutline_default_settings() {
     return hudoutlinesettings;
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2369
 // Size: 0x1a2
@@ -826,7 +826,7 @@ function _get_sorted_list_of_channel_plus_child_channels(channelname, var_3193fe
     return var_778d8e547335493f;
 }
 
-// Namespace namespace_a10547072d518793 / scripts\cp\cp_outline
+// Namespace cp_outline / scripts\cp\cp_outline
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2514
 // Size: 0x77

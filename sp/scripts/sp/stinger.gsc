@@ -1,10 +1,10 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace stinger;
 
@@ -199,39 +199,39 @@ function stingerirtloop() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x9bf
 // Size: 0x194
-function stinger_get_closest_to_player_view(array, player, var_c603e9ff12d40a5a, var_8461f3da37a8bf63) {
+function stinger_get_closest_to_player_view(array, player, use_eye, min_dot) {
     if (!array.size) {
         return;
     }
     if (!isdefined(player)) {
         player = level.player;
     }
-    if (!isdefined(var_8461f3da37a8bf63)) {
-        var_8461f3da37a8bf63 = -1;
+    if (!isdefined(min_dot)) {
+        min_dot = -1;
     }
     player_origin = player.origin;
-    if (isdefined(var_c603e9ff12d40a5a) && var_c603e9ff12d40a5a) {
+    if (isdefined(use_eye) && use_eye) {
         player_origin = player geteye();
     }
     ent = undefined;
     player_angles = player getplayerangles();
     player_forward = anglestoforward(player_angles);
     dot = -1;
-    foreach (var_2aa56193b94a18f8 in array) {
-        angles = vectortoangles(var_2aa56193b94a18f8.origin - player_origin);
+    foreach (array_item in array) {
+        angles = vectortoangles(array_item.origin - player_origin);
         forward = anglestoforward(angles);
         newdot = vectordot(player_forward, forward);
-        dist = distancesquared(player_origin, var_2aa56193b94a18f8.origin);
-        var_dfe1652810c9759c = 1 - math::normalize_value(squared(250), squared(5000), dist);
-        newdot *= var_dfe1652810c9759c;
+        dist = distancesquared(player_origin, array_item.origin);
+        dist_score = 1 - math::normalize_value(squared(250), squared(5000), dist);
+        newdot *= dist_score;
         if (newdot < dot) {
             continue;
         }
-        if (newdot < var_8461f3da37a8bf63) {
+        if (newdot < min_dot) {
             continue;
         }
         dot = newdot;
-        ent = var_2aa56193b94a18f8;
+        ent = array_item;
     }
     return ent;
 }

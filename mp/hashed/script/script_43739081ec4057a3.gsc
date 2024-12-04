@@ -1,26 +1,26 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\gameobjects.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\hud_message.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\hud_message;
+#using scripts\mp\laststand;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace slam;
 
@@ -29,11 +29,11 @@
 // Checksum 0x0, Offset: 0x867
 // Size: 0xb2
 function autoexec main() {
-    registersharedfunc("slam", "init", &function_99c2893e90fac8b);
+    registersharedfunc("slam", "init", &slam_init);
     registersharedfunc("slam", "setLastStandMessage", &function_c88bd46173b8ea14);
     registersharedfunc("slam", "onNormalDeath", &function_14712550e86f996f);
-    registersharedfunc("slam", "onSpawnPlayer", &function_6a7509749fd4d666);
-    registersharedfunc("slam", "onPlayerConnect", &function_57e9047c08ccd941);
+    registersharedfunc("slam", "onSpawnPlayer", &slam_onspawnplayer);
+    registersharedfunc("slam", "onPlayerConnect", &slam_onplayerconnect);
     registersharedfunc("slam", "initializeMatchRules", &function_b818eedef86c1a7b);
     registersharedfunc("slam", "isSlamAnnouncerLine", &function_5febe066472a9de5);
     registersharedfunc("slam", "getSoundName", &function_6abe4ad568596595);
@@ -43,7 +43,7 @@ function autoexec main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x921
 // Size: 0x100
-function function_99c2893e90fac8b() {
+function slam_init() {
     level.var_b57e01a4f8558a6b = &function_5f480f5e6055cc0b;
     level.var_a0fbb4b3fcdcc138 = &function_2ecd88252e67c89a;
     level.var_c53947782c7460f6 = 1;
@@ -76,7 +76,7 @@ function function_b818eedef86c1a7b() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa43
 // Size: 0x2d
-function function_57e9047c08ccd941() {
+function slam_onplayerconnect() {
     if (function_e7667a0205b50f63()) {
         self.var_1107969beb8b88b9 = 0;
     }
@@ -89,7 +89,7 @@ function function_57e9047c08ccd941() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa78
 // Size: 0x18
-function function_6a7509749fd4d666(revivespawn) {
+function slam_onspawnplayer(revivespawn) {
     if (istrue(revivespawn)) {
         return;
     }
@@ -184,7 +184,7 @@ function function_a5957986356a54cf(params) {
     if (isdefined(attacker)) {
         attacker scripts\mp\utility\stats::incpersstat("downs", 1);
         attacker setextrascore0(attacker.pers["downs"]);
-        attacker thread scripts\mp\utility\points::doScoreEvent(#"hash_645acd0ffdb61b01");
+        attacker thread scripts\mp\utility\points::doScoreEvent(#"slam_down");
     }
 }
 

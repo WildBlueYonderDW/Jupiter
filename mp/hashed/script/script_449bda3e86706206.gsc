@@ -1,13 +1,13 @@
-#using scripts\common\system.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gamelogic.gsc;
 #using script_135f13d8aa1c1f19;
-#using script_728ffcee8cbf30ee;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
 #using script_64acb6ce534155b7;
+#using script_728ffcee8cbf30ee;
+#using scripts\common\system;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_8559d2200e7e7e86;
 

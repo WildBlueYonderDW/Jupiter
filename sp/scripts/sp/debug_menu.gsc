@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace debug_menu;
 
@@ -43,15 +43,15 @@ function menu_exists(menu_name) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cb
 // Size: 0xfc
-function add_menuoptions(menu_name, var_c2884c14a260a4d6, func, var_25b53f3c4b509cf9, value) {
+function add_menuoptions(menu_name, option_text, func, back_func, value) {
     if (!isdefined(level.menu_sys[menu_name].options)) {
         level.menu_sys[menu_name].options = [];
         level.menu_sys[menu_name].optionsvalue = [];
     }
     num = level.menu_sys[menu_name].options.size;
-    level.menu_sys[menu_name].options[num] = var_c2884c14a260a4d6;
+    level.menu_sys[menu_name].options[num] = option_text;
     level.menu_sys[menu_name].function[num] = func;
-    level.menu_sys[menu_name].backfunction[num] = var_25b53f3c4b509cf9;
+    level.menu_sys[menu_name].backfunction[num] = back_func;
     if (isdefined(value)) {
         level.menu_sys[menu_name].optionsvalue[num] = value;
     }
@@ -69,11 +69,11 @@ function add_menuent(menu_name, ent) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x501
 // Size: 0x11d
-function add_menu_child(parent_menu, var_a0a956e4d3e6abdd, var_49af6558486460ec, var_3403dde8c1f8f138, func) {
-    if (!isdefined(level.menu_sys[var_a0a956e4d3e6abdd])) {
-        add_menu(var_a0a956e4d3e6abdd, var_49af6558486460ec);
+function add_menu_child(parent_menu, child_menu, child_title, var_3403dde8c1f8f138, func) {
+    if (!isdefined(level.menu_sys[child_menu])) {
+        add_menu(child_menu, child_title);
     }
-    level.menu_sys[var_a0a956e4d3e6abdd].parent_menu = parent_menu;
+    level.menu_sys[child_menu].parent_menu = parent_menu;
     if (!isdefined(level.menu_sys[parent_menu].children_menu)) {
         level.menu_sys[parent_menu].children_menu = [];
     }
@@ -82,7 +82,7 @@ function add_menu_child(parent_menu, var_a0a956e4d3e6abdd, var_49af6558486460ec,
     } else {
         size = var_3403dde8c1f8f138;
     }
-    level.menu_sys[parent_menu].children_menu[size] = var_a0a956e4d3e6abdd;
+    level.menu_sys[parent_menu].children_menu[size] = child_menu;
     if (isdefined(func)) {
         if (!isdefined(level.menu_sys[parent_menu].children_func)) {
             level.menu_sys[parent_menu].children_func = [];
@@ -130,11 +130,11 @@ function draw_menu_options(menu_name) {
     options = level.menu_sys[menu_name].options;
     page = level.menu_sys[menu_name].page;
     for (i = 0; i < 20 && i + page * 20 < options.size; i++) {
-        var_f74c5bf60242a508 = i + page * 20;
-        text = var_f74c5bf60242a508 + 1 + ". " + options[var_f74c5bf60242a508];
+        actual_index = i + page * 20;
+        text = actual_index + 1 + ". " + options[actual_index];
         level.menu_sys["current_menu"].options[i] = set_menu_hudelem(text, "options", int(25) * i);
-        if (isdefined(level.menu_sys[menu_name].optionsvalue[var_f74c5bf60242a508])) {
-            val = level.menu_sys[menu_name].optionsvalue[var_f74c5bf60242a508];
+        if (isdefined(level.menu_sys[menu_name].optionsvalue[actual_index])) {
+            val = level.menu_sys[menu_name].optionsvalue[actual_index];
             hud = set_menu_hudelem(val, "value", int(25) * i);
             if (utility::iscp()) {
                 hud.x += int(247.5);
@@ -427,9 +427,9 @@ function menu_input() {
             modifiers["shift"] = 1;
         }
         if (level.menu_sys[menu_name].can_exit) {
-            var_948956fc01cd486c = 2;
+            page_offset = 2;
         } else {
-            var_948956fc01cd486c = 1;
+            page_offset = 1;
         }
         if (key >= level.menu_sys["current_menu"].options.size) {
             continue;
@@ -437,7 +437,7 @@ function menu_input() {
             level notify("exit_menu");
             level.exitmenu = 1;
             continue;
-        } else if (level.menu_sys[menu_name].options.size > 20 && key == level.menu_sys["current_menu"].options.size - var_948956fc01cd486c) {
+        } else if (level.menu_sys[menu_name].options.size > 20 && key == level.menu_sys["current_menu"].options.size - page_offset) {
             var_a0a3f3907785be0e = 0;
             if (modifiers["shift"] && level.menu_sys[menu_name].page > 0) {
                 level.menu_sys[menu_name].page--;
@@ -447,17 +447,17 @@ function menu_input() {
                 var_a0a3f3907785be0e = 1;
             }
             if (var_a0a3f3907785be0e) {
-                var_b423a98e91e3e06e = level.menu_sys["current_menu"].options.size;
+                old_size = level.menu_sys["current_menu"].options.size;
                 clear_menu_options("current_menu");
                 draw_menu_options(menu_name);
-                if (level.menu_sys["current_menu"].options.size != var_b423a98e91e3e06e) {
-                    level.menu_cursor.y = 300 + (level.menu_sys["current_menu"].options.size - var_948956fc01cd486c + 1) * int(25);
-                    level.menu_cursor.current_pos = level.menu_sys["current_menu"].options.size - var_948956fc01cd486c;
+                if (level.menu_sys["current_menu"].options.size != old_size) {
+                    level.menu_cursor.y = 300 + (level.menu_sys["current_menu"].options.size - page_offset + 1) * int(25);
+                    level.menu_cursor.current_pos = level.menu_sys["current_menu"].options.size - page_offset;
                 }
             }
             continue;
         } else {
-            var_ab005bb685548f22 = key;
+            menu_key = key;
             key += level.menu_sys[menu_name].page * 20;
         }
         if (isdefined(level.menu_sys[menu_name].parent_menu) && key == level.menu_sys[menu_name].options.size) {
@@ -477,16 +477,16 @@ function menu_input() {
                 }
                 msg = ent [[ func ]]();
                 if (isdefined(msg)) {
-                    level.menu_sys["current_menu"].optionsvalue[var_ab005bb685548f22].text = msg;
-                    if (isdefined(level.menu_sys["current_menu"].optionsvalue[var_ab005bb685548f22].isscripted)) {
-                        level.menu_sys["current_menu"].optionsvalue[var_ab005bb685548f22].text = msg;
+                    level.menu_sys["current_menu"].optionsvalue[menu_key].text = msg;
+                    if (isdefined(level.menu_sys["current_menu"].optionsvalue[menu_key].isscripted)) {
+                        level.menu_sys["current_menu"].optionsvalue[menu_key].text = msg;
                     } else if (isnumber(msg)) {
-                        level.menu_sys["current_menu"].optionsvalue[var_ab005bb685548f22] setvalue(msg);
+                        level.menu_sys["current_menu"].optionsvalue[menu_key] setvalue(msg);
                     } else {
                         /#
-                            level.menu_sys["<dev string:x57>"].optionsvalue[var_ab005bb685548f22] setdevtext(msg);
+                            level.menu_sys["<dev string:x57>"].optionsvalue[menu_key] setdevtext(msg);
                         #/
-                        level.menu_sys["current_menu"].optionsvalue[var_ab005bb685548f22] clearalltextafterhudelem();
+                        level.menu_sys["current_menu"].optionsvalue[menu_key] clearalltextafterhudelem();
                     }
                 }
             }
@@ -504,7 +504,7 @@ function menu_input() {
             func = level.menu_sys[menu_name].children_func[key];
             error_msg = [[ func ]]();
             if (isdefined(error_msg)) {
-                level thread selection_error(error_msg, level.menu_sys["current_menu"].options[var_ab005bb685548f22].x, level.menu_sys["current_menu"].options[var_ab005bb685548f22].y);
+                level thread selection_error(error_msg, level.menu_sys["current_menu"].options[menu_key].x, level.menu_sys["current_menu"].options[menu_key].y);
                 continue;
             }
         }
@@ -621,22 +621,22 @@ function selection_error(msg, x, y) {
     hud.color = (0.5, 0, 0);
     hud.alpha = 0.7;
     if (utility::iscp()) {
-        var_9919866b3ad7d923 = set_hudelem(msg, x + int(247.5), y, 1);
+        error_hud = set_hudelem(msg, x + int(247.5), y, 1);
     } else {
-        var_9919866b3ad7d923 = set_hudelem(msg, x + int(207.5), y, 1);
+        error_hud = set_hudelem(msg, x + int(207.5), y, 1);
     }
-    var_9919866b3ad7d923.color = (1, 0, 0);
+    error_hud.color = (1, 0, 0);
     if (!isdefined(hud.debug_hudelem)) {
         hud fadeovertime(3);
     }
     hud.alpha = 0;
-    if (!isdefined(var_9919866b3ad7d923.debug_hudelem)) {
-        var_9919866b3ad7d923 fadeovertime(3);
+    if (!isdefined(error_hud.debug_hudelem)) {
+        error_hud fadeovertime(3);
     }
-    var_9919866b3ad7d923.alpha = 0;
+    error_hud.alpha = 0;
     wait 3.1;
     hud destroy();
-    var_9919866b3ad7d923 destroy();
+    error_hud destroy();
 }
 
 // Namespace debug_menu / scripts\sp\debug_menu
@@ -673,14 +673,14 @@ function add_extrahuds(hud) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x21e1
 // Size: 0x477
-function list_menu(list, x, y, func, sort, var_1619cb7c9a894084) {
+function list_menu(list, x, y, func, sort, start_num) {
     level endon("stop_all_menus");
     menu = menu_get_selected();
     if (!isdefined(list) || list.size == 0) {
         return -1;
     }
     hud_array = [];
-    var_c05ed239ae3d7a88 = 25;
+    space_apart = 25;
     arrow = set_scripthud("->", x - 20, y, 1.25, 1);
     arrow.color = (0.8, 0.1, 0.1);
     menu add_extrahuds(arrow);
@@ -703,21 +703,21 @@ function list_menu(list, x, y, func, sort, var_1619cb7c9a894084) {
         } else {
             alpha = 0.1;
         }
-        hud = set_scripthud(list[i], x, y + (i - y_offset) * var_c05ed239ae3d7a88, 1.25, alpha);
+        hud = set_scripthud(list[i], x, y + (i - y_offset) * space_apart, 1.25, alpha);
         menu add_extrahuds(hud);
         hud_array = array_add(hud_array, hud);
     }
-    if (isdefined(var_1619cb7c9a894084)) {
-        move_list_menu(hud_array, list, var_1619cb7c9a894084, y_offset);
+    if (isdefined(start_num)) {
+        move_list_menu(hud_array, list, start_num, y_offset);
     } else {
         move_list_menu(hud_array, list, 0, y_offset);
     }
-    var_ffc23add66803811 = 0;
-    var_b4e1aac5196b4ea5 = 0;
+    current_num = 0;
+    old_num = 0;
     selected = 0;
     level.menu_list_selected = 0;
     if (isdefined(func)) {
-        [[ func ]](list[var_ffc23add66803811]);
+        [[ func ]](list[current_num]);
     }
     while (true) {
         level waittill("menu_button_pressed", key);
@@ -729,41 +729,41 @@ function list_menu(list, x, y, func, sort, var_1619cb7c9a894084) {
         if (any_button_hit(key, "numbers")) {
             break;
         } else if (key == "downarrow" || key == "dpad_down") {
-            if (var_ffc23add66803811 >= list.size - 1) {
-                var_ffc23add66803811 = 0;
-                move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            if (current_num >= list.size - 1) {
+                current_num = 0;
+                move_list_menu(hud_array, list, current_num, y_offset);
                 continue;
             }
-            var_ffc23add66803811++;
-            move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            current_num++;
+            move_list_menu(hud_array, list, current_num, y_offset);
         } else if (key == "uparrow" || key == "dpad_up") {
-            if (var_ffc23add66803811 <= 0) {
-                var_ffc23add66803811 = list.size - 1;
-                move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            if (current_num <= 0) {
+                current_num = list.size - 1;
+                move_list_menu(hud_array, list, current_num, y_offset);
                 continue;
             }
-            var_ffc23add66803811--;
-            move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            current_num--;
+            move_list_menu(hud_array, list, current_num, y_offset);
         } else if (key == "pgup") {
-            if (var_ffc23add66803811 <= 0) {
-                var_ffc23add66803811 = list.size - 1;
-                move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            if (current_num <= 0) {
+                current_num = list.size - 1;
+                move_list_menu(hud_array, list, current_num, y_offset);
                 continue;
             }
-            var_ffc23add66803811 -= 5;
-            var_ffc23add66803811 = clamp(var_ffc23add66803811, 0, list.size - 1);
-            var_ffc23add66803811 = int(var_ffc23add66803811);
-            move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            current_num -= 5;
+            current_num = clamp(current_num, 0, list.size - 1);
+            current_num = int(current_num);
+            move_list_menu(hud_array, list, current_num, y_offset);
         } else if (key == "pgdn") {
-            if (var_ffc23add66803811 >= list.size - 1) {
-                var_ffc23add66803811 = 0;
-                move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            if (current_num >= list.size - 1) {
+                current_num = 0;
+                move_list_menu(hud_array, list, current_num, y_offset);
                 continue;
             }
-            var_ffc23add66803811 += 5;
-            var_ffc23add66803811 = clamp(var_ffc23add66803811, 0, list.size - 1);
-            var_ffc23add66803811 = int(var_ffc23add66803811);
-            move_list_menu(hud_array, list, var_ffc23add66803811, y_offset);
+            current_num += 5;
+            current_num = clamp(current_num, 0, list.size - 1);
+            current_num = int(current_num);
+            move_list_menu(hud_array, list, current_num, y_offset);
         } else if (key == "enter" || key == "button_a" || key == "dpad_right" || key == "rightarrow") {
             selected = 1;
             break;
@@ -772,10 +772,10 @@ function list_menu(list, x, y, func, sort, var_1619cb7c9a894084) {
             break;
         }
         level notify("scroll_list");
-        if (var_ffc23add66803811 != var_b4e1aac5196b4ea5) {
-            var_b4e1aac5196b4ea5 = var_ffc23add66803811;
+        if (current_num != old_num) {
+            old_num = current_num;
             if (isdefined(func)) {
-                [[ func ]](list[var_ffc23add66803811]);
+                [[ func ]](list[current_num]);
             }
         }
         wait 0.1;
@@ -793,7 +793,7 @@ function list_menu(list, x, y, func, sort, var_1619cb7c9a894084) {
         hud_array[i] destroy();
     }
     if (selected) {
-        return var_ffc23add66803811;
+        return current_num;
     }
 }
 
@@ -842,12 +842,12 @@ function can_exit() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2770
 // Size: 0x5e
-function add_universal_button(var_ccbe539665d51e61, name) {
-    if (!isdefined(level.u_buttons[var_ccbe539665d51e61])) {
-        level.u_buttons[var_ccbe539665d51e61] = [];
+function add_universal_button(button_group, name) {
+    if (!isdefined(level.u_buttons[button_group])) {
+        level.u_buttons[button_group] = [];
     }
-    if (array_check_for_dupes(level.u_buttons[var_ccbe539665d51e61], name)) {
-        level.u_buttons[var_ccbe539665d51e61][level.u_buttons[var_ccbe539665d51e61].size] = name;
+    if (array_check_for_dupes(level.u_buttons[button_group], name)) {
+        level.u_buttons[button_group][level.u_buttons[button_group].size] = name;
     }
 }
 
@@ -868,38 +868,38 @@ function array_check_for_dupes(array, single) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2817
 // Size: 0x18
-function clear_universal_buttons(var_ccbe539665d51e61) {
-    level.u_buttons[var_ccbe539665d51e61] = [];
+function clear_universal_buttons(button_group) {
+    level.u_buttons[button_group] = [];
 }
 
 // Namespace debug_menu / scripts\sp\debug_menu
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2837
 // Size: 0x13c
-function universal_input_loop(var_ccbe539665d51e61, end_on, var_e8bc4850f59ab09, var_3a96021a0dbe9e74, var_b0b4000e275f51aa) {
+function universal_input_loop(button_group, end_on, use_attackbutton, mod_button, var_b0b4000e275f51aa) {
     while (!isdefined(level.player)) {
         waitframe();
     }
     level endon(end_on);
-    if (!isdefined(var_e8bc4850f59ab09)) {
-        var_e8bc4850f59ab09 = 0;
+    if (!isdefined(use_attackbutton)) {
+        use_attackbutton = 0;
     }
-    notify_name = var_ccbe539665d51e61 + "_button_pressed";
-    buttons = level.u_buttons[var_ccbe539665d51e61];
-    level.u_buttons_disable[var_ccbe539665d51e61] = 0;
+    notify_name = button_group + "_button_pressed";
+    buttons = level.u_buttons[button_group];
+    level.u_buttons_disable[button_group] = 0;
     while (true) {
-        if (level.u_buttons_disable[var_ccbe539665d51e61]) {
+        if (level.u_buttons_disable[button_group]) {
             waitframe();
             continue;
         }
-        if (isdefined(var_3a96021a0dbe9e74) && !level.player buttonpressed(var_3a96021a0dbe9e74)) {
+        if (isdefined(mod_button) && !level.player buttonpressed(mod_button)) {
             waitframe();
             continue;
         } else if (isdefined(var_b0b4000e275f51aa) && level.player buttonpressed(var_b0b4000e275f51aa)) {
             waitframe();
             continue;
         }
-        if (var_e8bc4850f59ab09 && level.player attackbuttonpressed()) {
+        if (use_attackbutton && level.player attackbuttonpressed()) {
             level notify(notify_name, "fire");
             wait 0.1;
             continue;
@@ -919,7 +919,7 @@ function universal_input_loop(var_ccbe539665d51e61, end_on, var_e8bc4850f59ab09,
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x297b
 // Size: 0xbf
-function any_button_hit(var_bea0182094e2feaf, type) {
+function any_button_hit(button_hit, type) {
     buttons = [];
     if (type == "numbers") {
         buttons[0] = "0";
@@ -936,7 +936,7 @@ function any_button_hit(var_bea0182094e2feaf, type) {
         buttons = level.buttons;
     }
     for (i = 0; i < buttons.size; i++) {
-        if (var_bea0182094e2feaf == buttons[i]) {
+        if (button_hit == buttons[i]) {
             return true;
         }
     }
@@ -1350,7 +1350,7 @@ function init_crosshair() {
 // Checksum 0x0, Offset: 0x3772
 // Size: 0x1ab
 function is_place_clear(org) {
-    var_7db9bd50ad5184d0 = getdvarint(@"hash_481721c873389ee4");
+    debug_lines = getdvarint(@"ai_place");
     steps = 6;
     chunks = 360 / steps;
     dist_check = squared(0.1);
@@ -1363,14 +1363,14 @@ function is_place_clear(org) {
         dist = distancesquared(pos, endpos);
         if (dist > dist_check) {
             /#
-                if (var_7db9bd50ad5184d0) {
+                if (debug_lines) {
                     line(org, endpos, (1, 0, 0));
                 }
             #/
             return false;
         }
         /#
-            if (var_7db9bd50ad5184d0) {
+            if (debug_lines) {
                 line(org, endpos, (0, 1, 0));
             }
         #/
@@ -1378,14 +1378,14 @@ function is_place_clear(org) {
         pos = trace["position"];
         if (dist > dist_check) {
             /#
-                if (var_7db9bd50ad5184d0) {
+                if (debug_lines) {
                     line(pos, endpos, (1, 0, 0));
                 }
             #/
             return false;
         }
         /#
-            if (var_7db9bd50ad5184d0) {
+            if (debug_lines) {
                 line(endpos + (0, 0, 42), endpos, (0, 1, 0));
             }
         #/

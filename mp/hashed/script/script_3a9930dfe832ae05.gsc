@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\powerups.gsc;
 #using script_72ef6b9f0cf1f55a;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\powerups;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
 
 #namespace powerups;
 

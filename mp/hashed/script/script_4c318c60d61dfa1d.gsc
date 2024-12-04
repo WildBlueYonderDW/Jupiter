@@ -1,10 +1,10 @@
-#using script_247745a526421ba7;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\rank.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\rank;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_5098b67bae4b5f57;
 

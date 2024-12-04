@@ -1,8 +1,8 @@
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_gametypes;
 
 #namespace namespace_2c3a8b16eb34bd6;
 

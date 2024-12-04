@@ -1,12 +1,12 @@
-#using scripts\mp\flags.gsc;
-#using scripts\mp\compass.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
 #using script_702128df02f507a;
-#using scripts\common\devgui.gsc;
+#using scripts\common\devgui;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\compass;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_public;
 
 #namespace namespace_cf51e0de98ebcb9e;
 

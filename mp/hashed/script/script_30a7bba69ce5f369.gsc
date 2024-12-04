@@ -1,25 +1,25 @@
-#using scripts\aitypes\bt_util.gsc;
-#using script_38c251115537f16e;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
 #using script_1bfe8e965532ee8a;
-#using scripts\anim\weaponlist.gsc;
-#using scripts\anim\utility_common.gsc;
-#using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
+#using script_21cf081b320a9938;
+#using script_38c251115537f16e;
 #using script_3b78d23dad7ec5be;
+#using script_3badb8914eb5ac16;
 #using script_40510196b9a59795;
 #using script_5133812eb5db429a;
-#using script_21cf081b320a9938;
-#using script_60dd6e3992c1f29;
 #using script_516de9f009ec5f26;
+#using script_60dd6e3992c1f29;
+#using script_7edf952f8921aa6b;
+#using scripts\aitypes\bt_util;
+#using scripts\anim\utility_common;
+#using scripts\anim\weaponlist;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace zombie_mimic;
 
@@ -266,7 +266,7 @@ function function_b5764abaf3c1c8de(params) {
 // Checksum 0x0, Offset: 0x10fb
 // Size: 0x47
 function function_f407dae1f3f118e8(taskid, params) {
-    if (!isdefined(self.var_86ca8e1c112dc232) || !self.var_86ca8e1c112dc232.size) {
+    if (!isdefined(self.prop_array) || !self.prop_array.size) {
         function_cfa8ac2b4b30b60(self);
     }
     function_7ada97e01329f789();
@@ -299,7 +299,7 @@ function function_972fb80508bb6bdb(taskid, params) {
 // Checksum 0x0, Offset: 0x11be
 // Size: 0x49
 function function_4582540b7ff726e1() {
-    if (istrue(level.var_46382c5eecf4baf3) && !istrue(self.never_hide) && (isdefined(self.var_86ca8e1c112dc232) || function_48b1349a9ec06480(1))) {
+    if (istrue(level.var_46382c5eecf4baf3) && !istrue(self.never_hide) && (isdefined(self.prop_array) || function_48b1349a9ec06480(1))) {
         self function_3e89eb3d8e3f1811("should_hide", 1);
         return true;
     }
@@ -312,10 +312,10 @@ function function_4582540b7ff726e1() {
 // Size: 0xf3
 function function_bdcc0a0ca6396e2a() {
     self function_3e89eb3d8e3f1811("should_hide", 0);
-    if (isdefined(self.var_86ca8e1c112dc232)) {
-        self.var_86ca8e1c112dc232 = array_removeundefined(self.var_86ca8e1c112dc232);
+    if (isdefined(self.prop_array)) {
+        self.prop_array = array_removeundefined(self.prop_array);
     }
-    props = self.var_86ca8e1c112dc232;
+    props = self.prop_array;
     trap_prop = self.trap_prop;
     var_20fe7f5e3d45448e = !isdefined(trap_prop);
     if (isdefined(trap_prop) && isdefined(trap_prop.lure_prop_type)) {
@@ -374,8 +374,8 @@ function private function_88950ad5e3ce8e13(params) {
     self function_3e89eb3d8e3f1811("hidden_in_prop", 0);
     val::reset("mimic", "ignoreme");
     self.b_ignore_cleanup = undefined;
-    var_f82e57baa028f676 = random(params.activators);
-    self.favoriteenemy = var_f82e57baa028f676;
+    random_activator = random(params.activators);
+    self.favoriteenemy = random_activator;
     prop = self.trap_prop;
     angles = default_to(prop.angles, self.angles);
     origin = default_to(prop.origin, self.origin);
@@ -638,7 +638,7 @@ function function_95c7e0ea826c97ea() {
         a_zombies = getaiarrayinradius(self.origin, 64);
         foreach (zombie in a_zombies) {
             if (isalive(zombie) && is_equal(zombie.aicategory, "normal") && !zombie function_e67a89537ae7d4b7()) {
-                zombie function_e96aac065abbec4e(self.origin);
+                zombie knockdown_ai(self.origin);
             }
         }
         if (self isonground()) {

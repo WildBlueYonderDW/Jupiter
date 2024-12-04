@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_8da7b4544e88075;
 
@@ -282,15 +282,15 @@ function gas_badplace(duration, scale) {
         return;
     }
     var_e786fa50656bc2ff = 0.66;
-    var_537d92090ed07c1e = duration * 0.15;
-    var_b98c5b49ed782fe5 = duration * 0.25;
-    assertex(var_537d92090ed07c1e + var_b98c5b49ed782fe5 <= duration, "Incorrect pre/post wait values");
-    wait var_537d92090ed07c1e;
+    pre_wait = duration * 0.15;
+    post_wait = duration * 0.25;
+    assertex(pre_wait + post_wait <= duration, "Incorrect pre/post wait values");
+    wait pre_wait;
     var_f369d822d2af09e5 = 256 * scale * var_e786fa50656bc2ff;
     var_dbdbad4a509c08e8 = 175 * scale * var_e786fa50656bc2ff;
     var_48e1c3e32a05c3bf = (0, 0, 0);
     navobstacle = createnavbadplacebyshape(self.origin, var_48e1c3e32a05c3bf, 8, var_f369d822d2af09e5, var_dbdbad4a509c08e8);
-    wait max(0.05, duration - var_537d92090ed07c1e - var_b98c5b49ed782fe5);
+    wait max(0.05, duration - pre_wait - post_wait);
     if (isdefined(navobstacle)) {
         destroynavobstacle(navobstacle);
     }

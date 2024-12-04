@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_19633385c373011d;
-#using scripts\mp\rank.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\rank;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_4982e25cac00f32a;
 

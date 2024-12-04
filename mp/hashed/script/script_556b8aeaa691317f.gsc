@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\teamrevive.gsc;
 #using script_556b8aeaa691317f;
-#using scripts\cp_mp\challenges.gsc;
-#using script_74b851b7aa1ef32d;
+#using script_5762ac2f22202ba2;
 #using script_6a8ec730b2bfa844;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_74b851b7aa1ef32d;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\laststand;
+#using scripts\mp\supers;
+#using scripts\mp\teamrevive;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace super_stimpistol;
 

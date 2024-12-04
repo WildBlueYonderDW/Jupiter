@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
+#using script_16ea1b94f0f381b3;
 #using script_2669878cf5a1b6bc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\equipment\trophy_system.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\trophy_system;
 
 #namespace scripted_trophy;
 

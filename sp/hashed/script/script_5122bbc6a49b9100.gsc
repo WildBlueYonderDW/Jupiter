@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
-#namespace namespace_79dd814cec8ea0d2;
+#namespace at_mine;
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x211
 // Size: 0x50
 function precache(offhand) {
-    level.offhands.var_cbf61c5c5c449f1f = spawnstruct();
-    level.offhands.var_cbf61c5c5c449f1f.var_83fc771306eded0f = [];
+    level.offhands.atMine = spawnstruct();
+    level.offhands.atMine.var_83fc771306eded0f = [];
     registeroffhandfirefunc(offhand, &function_6ff21d428c0f908a);
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x269
 // Size: 0x35
@@ -29,7 +29,7 @@ function function_6ff21d428c0f908a(grenade, weapon) {
     thread function_8ca9a700b45814e2(grenade, self, self.team, weapon);
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a6
 // Size: 0x1a2
@@ -39,7 +39,7 @@ function function_8ca9a700b45814e2(grenade, mineowner, team, var_750c0edec8558bf
     flag_wait("scriptables_ready");
     grenade setscriptablepartstate("visibility", "show", 0);
     grenade setscriptablepartstate("floats", "hide", 0);
-    level.offhands.var_cbf61c5c5c449f1f.var_83fc771306eded0f = array_add(level.offhands.var_cbf61c5c5c449f1f.var_83fc771306eded0f, grenade);
+    level.offhands.atMine.var_83fc771306eded0f = array_add(level.offhands.atMine.var_83fc771306eded0f, grenade);
     if (isdefined(mineowner)) {
         grenade.team = default_to(mineowner.team, team);
         grenade setentityowner(mineowner);
@@ -70,7 +70,7 @@ function function_8ca9a700b45814e2(grenade, mineowner, team, var_750c0edec8558bf
     }
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x450
 // Size: 0x23
@@ -78,7 +78,7 @@ function function_5d168aee5b11f8eb() {
     scripts\sp\player\cursor_hint::create_cursor_hint(undefined, (0, 0, 8), %EQUIPMENT/IMPROVISED_MINE_PICKUP, 55, 100, 70, 0);
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x47b
 // Size: 0x2e
@@ -89,7 +89,7 @@ function function_427845ab37c184cd() {
     self.in_water = 1;
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0x8b
@@ -103,7 +103,7 @@ function function_f926047e96a9a040() {
     }
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x544
 // Size: 0xaf
@@ -127,7 +127,7 @@ function function_22846f2eee7f6a8d(mineowner) {
     thread function_fb1870077181b550(default_to(mineowner, var_2087e4030aa793b));
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fb
 // Size: 0xaf
@@ -150,7 +150,7 @@ function function_285754702166e469(mineowner) {
     }
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b2
 // Size: 0x106
@@ -182,11 +182,11 @@ function function_fb1870077181b550(attacker) {
     }
 }
 
-// Namespace namespace_79dd814cec8ea0d2 / namespace_fcb25c7f5ae9ffb2
+// Namespace at_mine / namespace_fcb25c7f5ae9ffb2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7c0
 // Size: 0x44
 function function_c32ae958d66a887c() {
-    level.offhands.var_cbf61c5c5c449f1f.var_83fc771306eded0f = array_remove(level.offhands.var_cbf61c5c5c449f1f.var_83fc771306eded0f, self);
+    level.offhands.atMine.var_83fc771306eded0f = array_remove(level.offhands.atMine.var_83fc771306eded0f, self);
 }
 

@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\vehicles\vehicle_interact_mp.gsc;
-#using scripts\mp\vehicles\vehicle_occupancy_mp.gsc;
-#using scripts\mp\vehicles\vehicle_mines_mp.gsc;
-#using scripts\mp\vehicles\vehicle_spawn_mp.gsc;
-#using scripts\mp\vehicles\vehicle_compass_mp.gsc;
-#using scripts\mp\vehicles\vehicle_damage_mp.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\equipment\trophy_system.gsc;
-#using scripts\mp\vehicles\light_tank_mp.gsc;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\mp\vehicles\vehicle_oob_mp.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\trophy_system;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\outofbounds;
+#using scripts\mp\vehicles\damage;
+#using scripts\mp\vehicles\light_tank_mp;
+#using scripts\mp\vehicles\vehicle_compass_mp;
+#using scripts\mp\vehicles\vehicle_damage_mp;
+#using scripts\mp\vehicles\vehicle_interact_mp;
+#using scripts\mp\vehicles\vehicle_mines_mp;
+#using scripts\mp\vehicles\vehicle_occupancy_mp;
+#using scripts\mp\vehicles\vehicle_oob_mp;
+#using scripts\mp\vehicles\vehicle_spawn_mp;
 
 #namespace vehicle_mp;
 

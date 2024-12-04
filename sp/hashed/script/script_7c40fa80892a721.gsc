@@ -1,23 +1,23 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_189b67b2735b981d;
-#using script_4a6760982b403bad;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_7c40fa80892a721;
-#using script_372301af73968cb;
-#using script_2669878cf5a1b6bc;
-#using script_249f45d992af1114;
-#using script_52d91cb28006a5bd;
 #using script_16ea1b94f0f381b3;
+#using script_189b67b2735b981d;
+#using script_249f45d992af1114;
+#using script_2669878cf5a1b6bc;
+#using script_372301af73968cb;
+#using script_4a6760982b403bad;
+#using script_52d91cb28006a5bd;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace armor;
 
@@ -29,7 +29,7 @@ function init() {
     /#
         level function_a123482f01487930();
     #/
-    level.var_d73697030c5d4e05 = getdvarint(@"hash_a4d532f42d919827", 1) == 1;
+    level.allowArmor = getdvarint(@"hash_a4d532f42d919827", 1) == 1;
     level.var_1f9a4d8f7e4586bb = getdvarint(@"hash_cce2d04880fe5113", 0);
     level.var_4b78859bacc88808 = getdvarint(@"hash_ea4fd87f53ec4456", 50);
     if (!getdvarint(@"hash_cd66a9bfc03ac479", 0)) {
@@ -39,7 +39,7 @@ function init() {
     level.spawnarmorplates = getdvarint(@"hash_a6a3fd965485d4bc", 0);
     level.var_23500029f84b30d0 = getdvarint(@"hash_a729499d07bcd90a", 1) == 1;
     level.droparmorondeath = getdvarint(@"hash_8ad1ab9436bccca", 0);
-    level.var_2b27ff18b10ad519 = getdvarint(@"hash_28d450f7f28644b7", 0);
+    level.armorDropAmount = getdvarint(@"hash_28d450f7f28644b7", 0);
     level.var_611672c472b8c9a9 = getdvarint(@"hash_957847f02f2781a8", 0);
     level.var_6835a3d279520dc9 = getdvarint(@"hash_2bcfbe19dac56dd7", 3);
     level.var_699bb1fcae5b2eee = getdvarint(@"hash_be3a8d807c217559", 1);
@@ -47,7 +47,7 @@ function init() {
     level.var_1fe86bfc07eaa587 = getdvarint(@"hash_8b7eed58460969a6", 0);
     level.var_27720c0c325958c1 = getdvarint(@"hash_d2591f329d2ec7d4", 1) > 0;
     function_abfcdee8fda20a4();
-    if (!istrue(level.var_d73697030c5d4e05)) {
+    if (!istrue(level.allowArmor)) {
         return;
     }
     level.onhelmetsniped = &onhelmetsniped;
@@ -60,13 +60,13 @@ function init() {
 // Checksum 0x0, Offset: 0x1132
 // Size: 0xf7
 function function_a123482f01487930() {
-    var_d73697030c5d4e05 = getdvarint(@"hash_4c8ec2fff0818a37", -1);
+    allowArmor = getdvarint(@"hash_4c8ec2fff0818a37", -1);
     spawnarmorplates = getdvarint(@"hash_d7b4016f72a67d64", -1);
     spawnarmor = getdvarint(@"hash_29060eb62a4bfb99", -1);
     droparmorondeath = getdvarint(@"hash_839ead624493a662", -1);
-    var_2b27ff18b10ad519 = getdvarint(@"hash_b8b95d553dfaa5a7", -1);
-    if (var_d73697030c5d4e05 >= 0) {
-        setdvar(@"hash_a4d532f42d919827", var_d73697030c5d4e05);
+    armorDropAmount = getdvarint(@"hash_b8b95d553dfaa5a7", -1);
+    if (allowArmor >= 0) {
+        setdvar(@"hash_a4d532f42d919827", allowArmor);
     }
     if (spawnarmorplates >= 0) {
         setdvar(@"hash_a6a3fd965485d4bc", spawnarmorplates);
@@ -77,8 +77,8 @@ function function_a123482f01487930() {
     if (droparmorondeath >= 0) {
         setdvar(@"hash_8ad1ab9436bccca", droparmorondeath);
     }
-    if (var_2b27ff18b10ad519 >= 0) {
-        setdvar(@"hash_28d450f7f28644b7", var_2b27ff18b10ad519);
+    if (armorDropAmount >= 0) {
+        setdvar(@"hash_28d450f7f28644b7", armorDropAmount);
     }
 }
 
@@ -109,7 +109,7 @@ function function_13caa305c839a278(notification, slotindex) {
 // Checksum 0x0, Offset: 0x12ea
 // Size: 0x416
 function initarmor(var_b5c8bc15f7117b19) {
-    if (!istrue(level.var_d73697030c5d4e05) || istrue(self.armorinitialized)) {
+    if (!istrue(level.allowArmor) || istrue(self.armorinitialized)) {
         return;
     }
     self.armorinitialized = 1;
@@ -122,8 +122,8 @@ function initarmor(var_b5c8bc15f7117b19) {
             var_2e1d1af8afe39ba8 = 3;
         } else if (istrue(level.var_fb2b3c3db6061df5)) {
             if (isdefined(level.var_3c8e175d92be01ea)) {
-                var_57accdc40b2f50e = [[ level.var_3c8e175d92be01ea ]]();
-                self.spawnarmor = var_57accdc40b2f50e[0];
+                __a0 = [[ level.var_3c8e175d92be01ea ]]();
+                self.spawnarmor = __a0[0];
                 var_2e1d1af8afe39ba8 = int(self.spawnarmor / 135);
             } else {
                 var_2e1d1af8afe39ba8 = getmatchrulesdata("commonOption", "plateCarrierStartLevel");
@@ -145,7 +145,7 @@ function initarmor(var_b5c8bc15f7117b19) {
             return;
         }
         function_2be3084f26829eac(0);
-        function_ac7803d45979135c(0);
+        setArmorHealth(0);
         return;
     }
     if (istrue(level.var_fb2b3c3db6061df5)) {
@@ -182,7 +182,7 @@ function initarmor(var_b5c8bc15f7117b19) {
     }
     self.maxarmorhealth = getdvarint(@"hash_9c790ecb6ccef79a", defaultmaxarmor);
     function_2be3084f26829eac(0);
-    function_ac7803d45979135c(0, 1);
+    setArmorHealth(0, 1);
     if (isdefined(self.team)) {
         squadmates = level.teamdata[self.team]["players"];
         if (isdefined(level.squaddata) && isdefined(level.squaddata[self.team]) && isdefined(level.squaddata[self.team][self.sessionsquadid])) {
@@ -201,7 +201,7 @@ function initarmor(var_b5c8bc15f7117b19) {
 // Checksum 0x0, Offset: 0x1708
 // Size: 0x28d
 function givestartingarmor(armorvalue, var_10fd8ed3fed0e0ae, var_ac1d8e40765a422e) {
-    if (!istrue(level.var_d73697030c5d4e05)) {
+    if (!istrue(level.allowArmor)) {
         return;
     }
     if (getdvarint(@"hash_3b4a48911ecb759e", 0) == 1) {
@@ -227,7 +227,7 @@ function givestartingarmor(armorvalue, var_10fd8ed3fed0e0ae, var_ac1d8e40765a422
     if (!isdefined(armorvalue)) {
         armorvalue = level.spawnarmor;
     }
-    function_ac7803d45979135c(armorvalue, 1);
+    setArmorHealth(armorvalue, 1);
     if (istrue(self.var_57c207fde9b78089)) {
         self.var_57c207fde9b78089 = undefined;
     }
@@ -250,7 +250,7 @@ function givestartingarmor(armorvalue, var_10fd8ed3fed0e0ae, var_ac1d8e40765a422
                 var_10fd8ed3fed0e0ae = 0;
             }
         }
-        function_ac7803d45979135c(armorvalue);
+        setArmorHealth(armorvalue);
     }
     if (scripts\cp_mp\utility\game_utility::function_9cdaadfddeda4d7a()) {
         var_10fd8ed3fed0e0ae += self.pers["armor_buy_plates"];
@@ -325,7 +325,7 @@ function function_9bca5c1d23a3e0b3() {
 // Checksum 0x0, Offset: 0x1ab4
 // Size: 0x25
 function function_ac266fc218266d08() {
-    if (!istrue(level.var_d73697030c5d4e05)) {
+    if (!istrue(level.allowArmor)) {
         return 0;
     }
     if (hasarmor()) {
@@ -338,7 +338,7 @@ function function_ac266fc218266d08() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ae2
 // Size: 0x6a
-function function_ac7803d45979135c(value, var_5fb98290d356d5dd) {
+function setArmorHealth(value, var_5fb98290d356d5dd) {
     if (!isdefined(value)) {
         return;
     }
@@ -436,7 +436,7 @@ function damagearmor(damage, var_3773b3d5cce15dce, attacker, smeansofdeath, var_
     if (isdefined(level.var_49bf61396483bae7)) {
         var_787585d4e82e1e58 = self [[ level.var_49bf61396483bae7 ]](var_787585d4e82e1e58, attacker, smeansofdeath);
     }
-    function_ac7803d45979135c(self.armorhealth - var_787585d4e82e1e58, var_5fb98290d356d5dd);
+    setArmorHealth(self.armorhealth - var_787585d4e82e1e58, var_5fb98290d356d5dd);
     params = {#attacker:attacker, #var_787585d4e82e1e58:var_787585d4e82e1e58, #armormaxhealth:self.maxarmorhealth, #armorhealth:self.armorhealth};
     callback::callback("on_armor_damage", params);
     self notify("damage_armor", var_787585d4e82e1e58, attacker);
@@ -530,10 +530,10 @@ function setarmoromnvars(var_5fb98290d356d5dd) {
     }
     armorpercent = function_3f8a6f9da782d418();
     if (!istrue(var_5fb98290d356d5dd)) {
-        if (isdefined(self.pers) && isdefined(self.pers["telemetry"]) && isdefined(self.pers["telemetry"].var_5e444dba2b86c3ac)) {
+        if (isdefined(self.pers) && isdefined(self.pers["telemetry"]) && isdefined(self.pers["telemetry"].armor_destroyed)) {
             var_e9efe053d24b91d3 = function_55811fc89cf705b5();
             if (var_e9efe053d24b91d3 > 0) {
-                self.pers["telemetry"].var_5e444dba2b86c3ac = self.pers["telemetry"].var_5e444dba2b86c3ac + var_e9efe053d24b91d3;
+                self.pers["telemetry"].armor_destroyed = self.pers["telemetry"].armor_destroyed + var_e9efe053d24b91d3;
             }
         }
     }
@@ -741,7 +741,7 @@ function function_ef6d8b8c2ed89e8a(count) {
 // Checksum 0x0, Offset: 0x28e1
 // Size: 0x105
 function function_9f1608bd570dd94c(var_c84cdf4dbd2b7b98) {
-    if (!istrue(level.var_d73697030c5d4e05)) {
+    if (!istrue(level.allowArmor)) {
         return;
     }
     self endon("death_or_disconnect");
@@ -994,10 +994,10 @@ function private usearmorplate() {
         var_43167c86311c997e = max(1, function_85e373bb15921966());
         var_1c07ef7bc0e3723a = int(var_1c07ef7bc0e3723a / var_43167c86311c997e) * var_43167c86311c997e + var_43167c86311c997e;
     }
-    if (isdefined(self.pers["telemetry"]) && isdefined(self.pers["telemetry"].var_9bc5683c9fe914f0)) {
-        self.pers["telemetry"].var_9bc5683c9fe914f0++;
+    if (isdefined(self.pers["telemetry"]) && isdefined(self.pers["telemetry"].armor_equipped)) {
+        self.pers["telemetry"].armor_equipped++;
     }
-    function_ac7803d45979135c(var_1c07ef7bc0e3723a);
+    setArmorHealth(var_1c07ef7bc0e3723a);
     currentcount = self getammocount(function_46cd39650beb293f());
     newcount = int(max(0, currentcount - 1));
     function_7293fbe4c07e316f(newcount);
@@ -1377,7 +1377,7 @@ function hashelmet() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4073
 // Size: 0x1b
-function function_47ad39003b16cf4c() {
+function hashelmet_agent() {
     return isdefined(self.helmethealth) && self.helmethealth > 0;
 }
 
@@ -1596,7 +1596,7 @@ function function_4f88731347251184() {
         waitframe();
     }
     waitframe();
-    function_ac7803d45979135c(int(clamp(self.armorhealth + self.pers["armor_buy_plates_instant"] * level.var_4b78859bacc88808, 0, self.maxarmorhealth)));
+    setArmorHealth(int(clamp(self.armorhealth + self.pers["armor_buy_plates_instant"] * level.var_4b78859bacc88808, 0, self.maxarmorhealth)));
     self.pers["armor_buy_plates_instant"] = 0;
 }
 
@@ -1857,10 +1857,10 @@ function function_22b15671bbf7a54e(attacker, victim, idflags, scaleddamage, actu
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x51d3
 // Size: 0x15a
-function function_d8202c9300a4eef7(attacker, inflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, skipclamp) {
+function modifyHelmetDamage(attacker, inflictor, victim, idamage, objweapon, smeansofdeath, shitloc, idflags, var_be4285b26ed99ab1, skipclamp) {
     modifieddamage = idamage;
     helmetdamage = 0;
-    hashelmet = victim namespace_f8d3520d3483c1::function_47ad39003b16cf4c();
+    hashelmet = victim namespace_f8d3520d3483c1::hashelmet_agent();
     if (hashelmet) {
         var_94974807c7dc3acf = function_343613187bdf786f(objweapon, smeansofdeath);
         hitshield = shitloc == "shield" && smeansofdeath != "MOD_GRENADE_SPLASH";
@@ -2144,7 +2144,7 @@ function function_e47b13babb51a365() {
 // Size: 0x29
 function repair_armor(amountrepair) {
     var_1c07ef7bc0e3723a = self.armorhealth + amountrepair;
-    function_ac7803d45979135c(var_1c07ef7bc0e3723a);
+    setArmorHealth(var_1c07ef7bc0e3723a);
 }
 
 // Namespace armor / namespace_f8d3520d3483c1
@@ -2249,7 +2249,7 @@ function function_8820428e84e96143() {
         if (self.armorhealth >= self.maxarmorhealth) {
             self notify("armor_regen_complete");
         }
-        function_ac7803d45979135c(self.armorhealth + regenamount);
+        setArmorHealth(self.armorhealth + regenamount);
         wait regenrate;
     }
 }

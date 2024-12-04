@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\outofbounds.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
 #using script_1f97a44d1761c919;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_5307834cd39b435c;
-#using scripts\mp\utility\player.gsc;
 #using script_5c65d346ac65390c;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\outofbounds;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace namespace_39beb6d4ea2b65f4;
 

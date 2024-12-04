@@ -1,4 +1,4 @@
-#using scripts\mp\infilexfil\mi8_infil.gsc;
+#using scripts\mp\infilexfil\mi8_infil;
 
 #namespace namespace_c4551ea4eb37c1b1;
 

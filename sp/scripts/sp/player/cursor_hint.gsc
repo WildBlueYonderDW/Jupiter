@@ -1,9 +1,9 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace cursor_hint;
 
@@ -334,8 +334,8 @@ function private internal_hint_toggle_use_by_angles(var_52145fc3d0fab939, var_d9
     self endon("death");
     self endon("hint_destroyed");
     level.player endon("death");
-    var_c5f846c1088d726e = 1;
-    var_2fef5331164585f9 = cos(var_d9be5b54e8a3f098);
+    could_use = 1;
+    desired_dot = cos(var_d9be5b54e8a3f098);
     /#
         setdvarifuninitialized(@"hash_7925a1f90294e6e8", 0);
     #/
@@ -345,14 +345,14 @@ function private internal_hint_toggle_use_by_angles(var_52145fc3d0fab939, var_d9
         fwd = anglestoforward(angles);
         var_64ef820441895b24 = vectornormalize(level.player geteye() - origin);
         dot = vectordot(fwd, var_64ef820441895b24);
-        can_use = dot >= var_2fef5331164585f9;
-        if (can_use != var_c5f846c1088d726e) {
+        can_use = dot >= desired_dot;
+        if (can_use != could_use) {
             if (can_use) {
                 var_52145fc3d0fab939 setuserange(userange);
             } else {
                 var_52145fc3d0fab939 setuserange(1);
             }
-            var_c5f846c1088d726e = can_use;
+            could_use = can_use;
         }
         /#
             if (getdvarint(@"hash_7925a1f90294e6e8")) {

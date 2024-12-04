@@ -1,12 +1,12 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp\coop_stealth.gsc;
+#using script_18a73a64992dd07d;
 #using script_3a8f9ace195c9da9;
 #using script_50eeb9595c6d6e1b;
-#using script_18a73a64992dd07d;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp\coop_stealth;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_a02f888cb7357170;
 
@@ -170,7 +170,7 @@ function function_1373388f7385072e() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5fa
 // Size: 0x9
-function function_3333bc61e7d13bca() {
+function investigate_vo() {
     namespace_24b7b4457f51f1a3::function_842319303719440c();
 }
 
@@ -278,7 +278,7 @@ function function_b9cf8fee72096e4c(trigger, var_eaad182af1b91884, var_b1ddbc5ee0
                         ai namespace_5729d24318b60bcd::set_goal_pos(var_3ae17e43a32c5816.origin);
                         ai.target = var_32006c42de6c319a.pathnode;
                         ai.var_7bd1c0edbaafb6e0 = "alert";
-                        ai function_3333bc61e7d13bca();
+                        ai investigate_vo();
                         if (isdefined(level.var_cc777c2dfb838eaa)) {
                             function_bb69412748be1b0();
                         }
@@ -295,7 +295,7 @@ function function_b9cf8fee72096e4c(trigger, var_eaad182af1b91884, var_b1ddbc5ee0
                         if (!is_dead_or_dying(ai)) {
                             ai namespace_5729d24318b60bcd::start_patrol();
                             ai namespace_5729d24318b60bcd::set_goal_pos(var_32006c42de6c319a.origin);
-                            ai function_3333bc61e7d13bca();
+                            ai investigate_vo();
                             ai [[ ai.fnsetstealthstate ]]("investigate", event);
                         }
                         if (isdefined(level.var_cc777c2dfb838eaa)) {

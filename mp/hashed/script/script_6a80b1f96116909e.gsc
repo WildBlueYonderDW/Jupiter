@@ -1,10 +1,10 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\cap.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_6a80b1f96116909e;
 #using script_147448f3f080c636;
-#using scripts\engine\trace.gsc;
+#using script_6a80b1f96116909e;
+#using scripts\asm\asm;
+#using scripts\asm\cap;
+#using scripts\asm\shared\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace cap_civ_react;
 
@@ -260,7 +260,7 @@ function function_20efa2e633463448(asmname, statename, params) {
 // Size: 0x19e
 function function_14d651e2254bb00d(asmname, fromstate, tostate, params) {
     if (isdefined(params) && params == "return") {
-        angles = self.var_a70672e669ca7f00;
+        angles = self.interaction_angles;
         anglediff = angleclamp180(angles[1] - self.angles[1]);
         var_3ada4c6e49483364 = 22.5;
         return (abs(anglediff) > var_3ada4c6e49483364);

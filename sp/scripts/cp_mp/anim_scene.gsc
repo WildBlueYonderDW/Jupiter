@@ -1,9 +1,9 @@
-#using scripts\common\anim.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\anim\face.gsc;
+#using scripts\anim\face;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace anim_scene;
 

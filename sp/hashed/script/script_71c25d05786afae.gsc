@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using script_26a364feb5029ec7;
-#using scripts\sp\player_death.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\sp\player.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\maps\sp_jup_milbase\sp_jup_milbase;
+#using scripts\sp\player;
+#using scripts\sp\player_death;
+#using scripts\sp\utility;
 
 #namespace namespace_37621323a9f8771f;
 
@@ -14,7 +14,7 @@
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x180
 // Size: 0xc0
-function function_d2532ffacbc9530a(var_f3a1e6d911a12646, var_ce20b5d86bd1318b, level_endon) {
+function function_d2532ffacbc9530a(var_f3a1e6d911a12646, fadeout_shader, level_endon) {
     if (isstring(level_endon)) {
         level endon(level_endon);
     }
@@ -28,8 +28,8 @@ function function_d2532ffacbc9530a(var_f3a1e6d911a12646, var_ce20b5d86bd1318b, l
             quote = array_random(var_f3a1e6d911a12646);
             scripts\sp\player_death::set_custom_death_quote(quote);
         }
-        if (isdefined(var_ce20b5d86bd1318b)) {
-            scripts\sp\hud_util::fade_out(0, var_ce20b5d86bd1318b);
+        if (isdefined(fadeout_shader)) {
+            scripts\sp\hud_util::fade_out(0, fadeout_shader);
         }
         missionfailedwrapper();
         return;
@@ -220,15 +220,15 @@ function function_8bf385621c6c99ab(var_35bc92cc3c2fc0a8, mindamage) {
 // Size: 0x80
 function function_4c8825ce9cc1a7bf() {
     self endon("death");
-    var_e2432f914412caa7 = 0;
+    veh_moving = 0;
     while (true) {
         waitframe();
-        if (var_e2432f914412caa7 == 0 && self vehicle_getspeed() > 1) {
+        if (veh_moving == 0 && self vehicle_getspeed() > 1) {
             playfxontag(getfx("vfx_jup_milbase_tire_dust"), self, "tag_origin");
-            var_e2432f914412caa7 = 1;
-        } else if (var_e2432f914412caa7 == 1 && self vehicle_getspeed() <= 1) {
+            veh_moving = 1;
+        } else if (veh_moving == 1 && self vehicle_getspeed() <= 1) {
             stopfxontag(getfx("vfx_jup_milbase_tire_dust"), self, "tag_origin");
-            var_e2432f914412caa7 = 0;
+            veh_moving = 0;
         }
         wait 1;
     }
@@ -238,12 +238,12 @@ function function_4c8825ce9cc1a7bf() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f3
 // Size: 0xd4
-function function_28e3974653fdc037(var_7843d2ebea704934, var_5ece5031931fdda9, var_f7bf02ab54fdcd73) {
+function function_28e3974653fdc037(cinematic_name, skip_waittill, var_f7bf02ab54fdcd73) {
     setomnvar("ui_show_bink", 1);
     setsaveddvar(@"hash_d3ee5a6578fe61de", "1");
     setsaveddvar(@"hash_b9ff37d084074df3", "1");
     level.player cleardamageindicators();
-    cinematicingame(var_7843d2ebea704934);
+    cinematicingame(cinematic_name);
     level.player scripts\sp\player::remove_damage_effects_instantly();
     remove_equipment_immediately();
     registered = "skippable_cinematic";

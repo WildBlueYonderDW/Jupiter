@@ -1,16 +1,16 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using script_7e4d332e911e1b90;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\hud_util.gsc;
 #using script_13d1c402f1421c35;
-#using scripts\common\gameskill.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\sp\mgturret.gsc;
 #using script_4b87f2871b6b025c;
+#using script_7e4d332e911e1b90;
+#using scripts\anim\utility_common;
+#using scripts\common\gameskill;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\mgturret;
+#using scripts\sp\player;
+#using scripts\sp\utility;
 
 #namespace gameskill;
 
@@ -432,9 +432,9 @@ function apply_difficulty_settings(current_frac) {
     }
     self.threatbias = int(get_difficultysetting_frac("threatbias", current_frac));
     level.gameskillmisstimefrombehindoverride = get_difficultysetting("gameskillmisstimefrombehindoverride");
-    var_cd977be97bc0fc1e = getaiarray("axis");
+    enemy_ai = getaiarray("axis");
     post_load_precache(&function_e5c95805c0d22077);
-    foreach (ai in var_cd977be97bc0fc1e) {
+    foreach (ai in enemy_ai) {
         ai function_416820d41ec6fff8();
     }
     function_a7f19b92c7f7a6a8();

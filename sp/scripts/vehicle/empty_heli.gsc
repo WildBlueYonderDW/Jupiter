@@ -1,4 +1,4 @@
-#using scripts\common\vehicle_build.gsc;
+#using scripts\common\vehicle_build;
 
 #namespace empty_heli;
 

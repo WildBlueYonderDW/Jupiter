@@ -1,63 +1,63 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_7ef95bba57dc4b82;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\riotshield.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\mp\accessories.gsc;
-#using script_55e418c5cc946593;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\archetypes\archcommon.gsc;
-#using scripts\mp\perks\weaponpassives.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\mp\perks\perkpackage.gsc;
 #using script_15eddb0fac236a22;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\bots\bots_loadout.gsc;
-#using script_b7a9ce0a2282b79;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\validation.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\archetypes\archassault.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\menus.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\equipment\nvg.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using script_5e2dcb7fb9811781;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\playerlogic.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_4a6760982b403bad;
-#using scripts\mp\loot.gsc;
-#using scripts\mp\passives.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\equipment\flash_grenade.gsc;
-#using scripts\mp\equipment\gas_grenade.gsc;
+#using script_55e418c5cc946593;
+#using script_5e2dcb7fb9811781;
 #using script_6d68cfdf0836123c;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\killstreak.gsc;
 #using script_7c40fa80892a721;
+#using script_7ef95bba57dc4b82;
+#using script_b7a9ce0a2282b79;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\accessories;
+#using scripts\mp\archetypes\archassault;
+#using scripts\mp\archetypes\archcommon;
+#using scripts\mp\bots\bots_loadout;
+#using scripts\mp\class;
+#using scripts\mp\damage;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\flash_grenade;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\equipment\nvg;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\loot;
+#using scripts\mp\menus;
+#using scripts\mp\passives;
+#using scripts\mp\perks\perkpackage;
+#using scripts\mp\perks\perks;
+#using scripts\mp\perks\weaponpassives;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rank;
+#using scripts\mp\riotshield;
+#using scripts\mp\supers;
+#using scripts\mp\teams;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\validation;
+#using scripts\mp\weapons;
 
 #namespace class;
 
@@ -86,7 +86,7 @@ function init() {
         level.classmap["default" + i] = i - 1;
     }
     level.defaultclass = "CLASS_ASSAULT";
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) && (scripts\cp_mp\utility\game_utility::isbrstylegametype() || level.gametype == "brtdm" || level.gametype == "brtdm_mgl")) {
+    if (getdvarint(@"mgl", 0) && (scripts\cp_mp\utility\game_utility::isbrstylegametype() || level.gametype == "brtdm" || level.gametype == "brtdm_mgl")) {
         level.classtablename = "classtable:classtable_br_default_mgl";
     } else if (scripts\mp\utility\game::getsubgametype() == "dmz") {
         level.classtablename = "classtable:classtable_dmz_default";
@@ -131,7 +131,7 @@ function init() {
     }
     level.var_a0b81643aba2ec27 = getdvarint(@"hash_9e6360de60c38773", 0) == 1;
     assertex(isdefined(level.classtablename), "<dev string:x1c>");
-    killstreakoverrides = getdvar(@"hash_a746a84a9d4c8ee6", "");
+    killstreakoverrides = getdvar(@"killstreak_overrides", "");
     if (killstreakoverrides != "") {
         level.killstreakoverrides = strtok(killstreakoverrides, ",");
     }
@@ -4126,11 +4126,11 @@ function function_dcea859f45fd42e4() {
             continue;
         }
         if (self isjumping()) {
-            function_d4a512c33a86e3d1(0);
+            set_allowprone(0);
             while (self isjumping()) {
                 wait 0.1;
             }
-            function_d4a512c33a86e3d1(1);
+            set_allowprone(1);
         }
     }
 }

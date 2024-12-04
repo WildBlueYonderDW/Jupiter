@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\bots\bots.gsc;
+#using script_249b0a9054ceb230;
 #using script_3e34d236a84cfd96;
 #using script_7e41e37180e554f;
-#using script_249b0a9054ceb230;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
 
 #namespace namespace_925730df71cc5248;
 
@@ -386,8 +386,8 @@ function private function_9786d4a97caa645f(radius) {
         self notify("<dev string:x2e8>");
         self endon("<dev string:x2e8>");
         while (true) {
-            var_310236dbf257fbb5 = getaiarrayinradius(self.origin, radius);
-            foreach (ai in var_310236dbf257fbb5) {
+            nearby_ai = getaiarrayinradius(self.origin, radius);
+            foreach (ai in nearby_ai) {
                 ai kill(ai.origin);
             }
             wait 0.5;

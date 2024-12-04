@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\stealth\utility.gsc;
-#using scripts\smartobjects\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\smartobjects\utility;
+#using scripts\stealth\utility;
 
 #namespace debug;
 
@@ -12,7 +12,7 @@
     // Checksum 0x0, Offset: 0x88
     // Size: 0x148
     function debug_manager() {
-        setdvarifuninitialized(@"hash_c5b31ff1b47a0f69", "<dev string:x1c>");
+        setdvarifuninitialized(@"debug_stealth", "<dev string:x1c>");
         setdvarifuninitialized(@"hash_a3c8097b0584ad3c", "<dev string:x1c>");
         setdvarifuninitialized(@"hash_29199fda70b29985", "<dev string:x1c>");
         setdvarifuninitialized(@"hash_e24fb561372dfef1", -1);
@@ -130,7 +130,7 @@
     // Checksum 0x0, Offset: 0x4cb
     // Size: 0x2a
     function debug_enabled() {
-        dvar = getunarchiveddebugdvar(@"hash_c5b31ff1b47a0f69", "<dev string:x1c>");
+        dvar = getunarchiveddebugdvar(@"debug_stealth", "<dev string:x1c>");
         return int(dvar);
     }
 
@@ -332,7 +332,7 @@
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0xacd
     // Size: 0x124
-    function function_5ac11b46f9a0051d(type) {
+    function debug_alert(type) {
         if (!debug_enabled()) {
             return;
         }
@@ -509,8 +509,8 @@
                 count++;
             }
             var_ba4f0da211b259e6 = "<dev string:x1e>";
-            if (isdefined(self.var_ce4c4978f5a2a4a8) && isdefined(self.var_ce4c4978f5a2a4a8.spawnfilter)) {
-                var_ba4f0da211b259e6 += "<dev string:x1d5>" + self.var_ce4c4978f5a2a4a8.spawnfilter;
+            if (isdefined(self.ob) && isdefined(self.ob.spawnfilter)) {
+                var_ba4f0da211b259e6 += "<dev string:x1d5>" + self.ob.spawnfilter;
             }
             if (var_ba4f0da211b259e6.size > 0) {
                 print3d(self.origin - (0, 0, count * space), var_ba4f0da211b259e6, white, 1, size);
@@ -545,12 +545,12 @@
                 print3d(self.origin - (0, 0, count * space), loadout, white, 1, size);
                 count++;
             }
-            var_932e79601aac5a0 = "<dev string:x1e>";
+            str_accuracy = "<dev string:x1e>";
             if (isdefined(self.accuracy)) {
-                var_932e79601aac5a0 += "<dev string:x208>" + self.accuracy + "<dev string:x213>" + self.baseaccuracy;
+                str_accuracy += "<dev string:x208>" + self.accuracy + "<dev string:x213>" + self.baseaccuracy;
             }
-            if (var_932e79601aac5a0.size > 0) {
-                print3d(self.origin - (0, 0, count * space), var_932e79601aac5a0, white, 1, size);
+            if (str_accuracy.size > 0) {
+                print3d(self.origin - (0, 0, count * space), str_accuracy, white, 1, size);
                 count++;
             }
             var_47a2f514cd9c0063 = "<dev string:x1e>";
@@ -733,7 +733,7 @@
     // Params 8, eflags: 0x0
     // Checksum 0x0, Offset: 0x1de0
     // Size: 0xf1
-    function function_ab68b8f1b9191d70(origin, startangle, endangle, baseangles, len, angleidx, var_efe3f96afffe2036, color) {
+    function draw_arc(origin, startangle, endangle, baseangles, len, angleidx, var_efe3f96afffe2036, color) {
         assert(startangle < endangle);
         prevpt = origin + len * function_886940100cc17179(baseangles, startangle, angleidx);
         nextpt = prevpt;
@@ -771,12 +771,12 @@
             start = self gettagorigin("<dev string:x330>");
         }
         var_8b4c94ee530f045e = 10;
-        function_ab68b8f1b9191d70(start, -1 * fov_yaw, fov_yaw, (0, eye_yaw, 0), viewdist, 1, var_8b4c94ee530f045e, color);
+        draw_arc(start, -1 * fov_yaw, fov_yaw, (0, eye_yaw, 0), viewdist, 1, var_8b4c94ee530f045e, color);
         if (self.fovcosinez > dot) {
             color *= 0.5;
             fov_pitch = acos(self.fovcosinez);
             eye_pitch = 0;
-            function_ab68b8f1b9191d70(start, -1 * fov_pitch, fov_pitch, (eye_pitch, eye_yaw, 0), viewdist, 0, var_8b4c94ee530f045e, color);
+            draw_arc(start, -1 * fov_pitch, fov_pitch, (eye_pitch, eye_yaw, 0), viewdist, 0, var_8b4c94ee530f045e, color);
         }
     }
 
@@ -988,7 +988,7 @@
                     info = [[ objtype.fngetinfo ]]();
                     if (isdefined(info.radiussqrd)) {
                         r = sqrt(info.radiussqrd);
-                        function_ab68b8f1b9191d70(obj.origin, 0, 360, angles, r, 1, 8, colorgray);
+                        draw_arc(obj.origin, 0, 360, angles, r, 1, 8, colorgray);
                     }
                     if (isdefined(obj.claimer)) {
                         print3d(obj.origin - (0, 0, 18), "<dev string:x3b7>" + obj.claimer getentitynumber(), colorgray, 1, 0.3, 1);
@@ -1023,7 +1023,7 @@
                 }
                 if (isdefined(region.smart_objects)) {
                     foreach (smart_object in region.smart_objects) {
-                        function_ab68b8f1b9191d70(smart_object.origin, 0, 360, smart_object.angles, 10, 1, 3, (0.7, 0, 0));
+                        draw_arc(smart_object.origin, 0, 360, smart_object.angles, 10, 1, 3, (0.7, 0, 0));
                     }
                 }
                 if (isdefined(region.region_links)) {

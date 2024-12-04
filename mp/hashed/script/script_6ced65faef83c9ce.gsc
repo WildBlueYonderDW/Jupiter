@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\notetrack.gsc;
+#using scripts\common\notetrack;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
 
 #namespace namespace_ba19537f431c9855;
 
@@ -128,9 +128,9 @@ function private uses_xcam() {
 // Checksum 0x0, Offset: 0x43b
 // Size: 0xa7
 function private function_bda88f27a0337eaa(animstruct, player, var_e45f1cd8436c9aa9) {
-    var_57accdc40b2f50e = function_19ea8f6d547dc8bc(player);
-    cameratag = var_57accdc40b2f50e[1];
-    cameraent = var_57accdc40b2f50e[0];
+    __a0 = function_19ea8f6d547dc8bc(player);
+    cameratag = __a0[1];
+    cameraent = __a0[0];
     if (uses_xcam()) {
         if (!istrue(var_e45f1cd8436c9aa9)) {
             player cameraunlink();

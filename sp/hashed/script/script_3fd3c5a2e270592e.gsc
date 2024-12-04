@@ -1,31 +1,31 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp\cp_hud_util.gsc;
-#using script_5762ac2f22202ba2;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using script_5762ac2f22202ba2;
 #using script_600b944a95c3a7bf;
-#using scripts\engine\scriptable.gsc;
-#using script_757c9ac43a532dac;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_objectives.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using script_7ef95bba57dc4b82;
-#using script_7c40fa80892a721;
 #using script_66122a002aff5d57;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using script_721ee99d7a8f9168;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\cp_mp\parachute.gsc;
+#using script_757c9ac43a532dac;
+#using script_7c40fa80892a721;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\cp_objectives;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_airdrop;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
-#namespace namespace_9f78b8694cfa43bf;
+#namespace armory_kiosk;
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdb3
 // Size: 0x1b6
@@ -61,14 +61,14 @@ function init() {
         /#
             level thread function_54fdd9330a3bed3e();
         #/
-        namespace_2f242676eb49ca88::function_19f98938b071a88f();
+        namespace_2f242676eb49ca88::kiosk_init();
         if (isdefined(level.vehicle) && isdefined(level.vehicle.instances)) {
             scripts\cp_mp\vehicles\vehicle_tracking::function_5c8408cb68649308("veh9_jltv_mg", "KIOSK", 5);
         }
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf71
 // Size: 0xbc
@@ -86,7 +86,7 @@ function function_b38f5ffe645943c3(stationref) {
     level.var_6be7b375ec4a629c[level.var_6be7b375ec4a629c.size] = function_d84cdb7463425ba(stationref);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1035
 // Size: 0x66
@@ -98,7 +98,7 @@ function _initignoredtabspergamemode() {
     setdvar(@"hash_6d36f3e8fbc43781", "3,4,5");
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10a3
 // Size: 0x17b
@@ -123,7 +123,7 @@ function _initsalesdiscount() {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1226
 // Size: 0x56
@@ -137,7 +137,7 @@ function _applysalesdiscount(originalprice, discount) {
     return int(floor(originalprice * fraction + 0.5));
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1285
 // Size: 0x15b
@@ -169,7 +169,7 @@ function function_ac84b48bb39d674f(kiosk) {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x13e9
 // Size: 0x36
@@ -180,7 +180,7 @@ function function_6af40e269aae683e(kiosk, var_cf9d634ef87d898b) {
     return level.var_44235d71492fa1a5[kiosk.index][var_cf9d634ef87d898b];
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1428
 // Size: 0xb8
@@ -201,7 +201,7 @@ function function_b88d64cd67bbe60f(kiosk) {
     return var_89ffab3d9d3c9cdd;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x14e9
 // Size: 0x6b
@@ -215,7 +215,7 @@ function function_469cfcbc4a5185c1(kiosk, var_cf9d634ef87d898b) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x155c
 // Size: 0x1f7
@@ -262,7 +262,7 @@ function function_d84cdb7463425ba(var_9023cea8f03e72d2) {
     return var_eb7139726cc569b5;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x175c
 // Size: 0x1e
@@ -270,7 +270,7 @@ function function_fe176342ed52b44f(itemref) {
     return int(tablelookup("cp/buyStation/buyStationItems.csv", 1, itemref, 0));
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1783
 // Size: 0x1f
@@ -278,7 +278,7 @@ function function_517b8730ddec7f59(itemref) {
     return int(tablelookup("cp/buyStation/buyStationItems.csv", 1, itemref, 4));
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17ab
 // Size: 0x11
@@ -286,7 +286,7 @@ function function_7e0281196d6407c8() {
     return getdvarint(@"hash_1696df050ad70202", 0);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x17c5
 // Size: 0x161
@@ -321,7 +321,7 @@ function private function_4d81ae9cb22f4180(dvar, backupref) {
     return var_c95404cd83f761b6;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x192f
 // Size: 0x19c
@@ -352,7 +352,7 @@ function _parsepurchaseitemtables() {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x1ad3
 // Size: 0x9f
@@ -367,7 +367,7 @@ function private function_d1687e85988049bb(itemref, var_c95404cd83f761b6) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x1b7a
 // Size: 0x4d
@@ -379,7 +379,7 @@ function private function_d0e1afe1bd3614df(itemref) {
     return cost;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bd0
 // Size: 0x169
@@ -412,7 +412,7 @@ function _getactualcost(player, itemdata) {
     return finalcost;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d42
 // Size: 0x95
@@ -432,7 +432,7 @@ function function_59e987d44a301ef5(kiosk) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ddf
 // Size: 0xdb
@@ -460,7 +460,7 @@ function _watchforcircleclosure() {
 
 /#
 
-    // Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+    // Namespace armory_kiosk / namespace_1ad0622c44d22e1a
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1ec2
     // Size: 0xb2
@@ -477,7 +477,7 @@ function _watchforcircleclosure() {
 
 #/
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f7c
 // Size: 0xba
@@ -505,7 +505,7 @@ function showdiscountsplash(delayseconds) {
     player thread function_234f5394668ed388("br_sales_event_selective");
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x203e
 // Size: 0x4
@@ -513,7 +513,7 @@ function function_8807282a387bb5b4() {
     return true;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x204b
 // Size: 0x67
@@ -526,7 +526,7 @@ function function_f29b0d39f0da104d() {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20ba
 // Size: 0xe8
@@ -543,7 +543,7 @@ function function_ef7118f0ef2196b5(armorykiosk) {
     armorykiosk thread function_ac44ca4a1f1d7561();
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x21aa
 // Size: 0x68
@@ -562,7 +562,7 @@ function function_ac44ca4a1f1d7561() {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x221a
 // Size: 0x7b
@@ -574,7 +574,7 @@ function onprematchdone() {
     function_f29b0d39f0da104d();
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x229d
 // Size: 0xc7
@@ -590,7 +590,7 @@ function dangercircletick(var_819edacdacb810e4, dangercircleradius) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x236c
 // Size: 0xa4
@@ -608,7 +608,7 @@ function function_1a1709943670772a() {
     return hiddenkiosks;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2419
 // Size: 0x7b
@@ -623,7 +623,7 @@ function disableallarmorykiosks() {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x249c
 // Size: 0x47
@@ -636,7 +636,7 @@ function disablearmorykiosk(armorykiosk) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24eb
 // Size: 0x2a
@@ -648,7 +648,7 @@ function getallspawninstances() {
     return var_1eb07a39ff244cd5;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x251e
 // Size: 0x2f
@@ -657,7 +657,7 @@ function setspawninstances(instances) {
     level.br_armory_kiosk.scriptables = instances;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2555
 // Size: 0x94
@@ -684,7 +684,7 @@ function function_3058b3e95a1bf984(instance, player) {
     return true;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x25f2
 // Size: 0x142
@@ -733,7 +733,7 @@ function armorykioskused(instance, part, state, player, var_a5b2c541413aa895, us
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x273c
 // Size: 0x111
@@ -760,7 +760,7 @@ function kioskfixupproneplayers() {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2855
 // Size: 0x9a
@@ -776,7 +776,7 @@ function kiosksetupfiresaleforplayer(kiosk, player) {
     kiosk function_46f7ad16e39b4e0d(player);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28f7
 // Size: 0x11
@@ -787,7 +787,7 @@ function function_d7f25b3c73157f5c() {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2911
 // Size: 0x5f
@@ -804,7 +804,7 @@ function iskioskfiresaleactiveforplayer(kiosk, player) {
     return array_contains(kiosk.firesaleforplayers, player);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2979
 // Size: 0x60
@@ -819,7 +819,7 @@ function kioskfiresaledoneforplayer(kiosk, player) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x29e1
 // Size: 0x28
@@ -830,7 +830,7 @@ function function_1a8066ccdb91c1d1() {
     return 0;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a12
 // Size: 0x74
@@ -845,7 +845,7 @@ function getkioskyawoffsetoverride() {
     return 180 + randomfloatrange(-10, 10);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a8f
 // Size: 0x1cf
@@ -892,7 +892,7 @@ function _runpurchasemenu(kiosk) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c66
 // Size: 0x68
@@ -908,7 +908,7 @@ function function_28d837f720b03bfa(kiosk, player) {
     player thread function_ab62cd6135dfe6(kiosk);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cd6
 // Size: 0x3a
@@ -920,7 +920,7 @@ function function_5221f0c9bdea6589() {
     player.armorykioskpurchaseallowed = undefined;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d18
 // Size: 0x61
@@ -936,7 +936,7 @@ function function_ab62cd6135dfe6(kiosk) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d81
 // Size: 0xac
@@ -956,7 +956,7 @@ function _closepurchasemenuwithresponse(var_97aa74c2193a9dc6) {
     function_e667d74ecc894ceb(player, "menu_close", "reason: " + var_97aa74c2193a9dc6);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e35
 // Size: 0x1c
@@ -965,7 +965,7 @@ function _purchasemenuclosedbyclient(player) {
     player notify("_watchToAutoCloseMenu_end");
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e59
 // Size: 0x60
@@ -979,7 +979,7 @@ function _watchtoautoclosemenu(kiosk) {
     player _closepurchasemenuwithresponse(2);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ec1
 // Size: 0xaa
@@ -1001,7 +1001,7 @@ function _proximitywatcher(kiosk) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f73
 // Size: 0x4d
@@ -1015,7 +1015,7 @@ function _getequipmentammotomax(equipmentref) {
     return max(0, ammomax - ammo);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fc9
 // Size: 0x54
@@ -1031,7 +1031,7 @@ function _maxoutequipmentammo(equipmentref) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3025
 // Size: 0x2
@@ -1039,7 +1039,7 @@ function function_8c8f1e3f153a6fa3() {
     
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x302f
 // Size: 0x1f6
@@ -1079,7 +1079,7 @@ function _findgivearmoramountanddropleftovers(fromkiosk, var_2737cac9ee8f6098) {
     return var_bf203ce62dd1c99c;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x322e
 // Size: 0x7ec
@@ -1319,7 +1319,7 @@ function _validateitempurchase(itemdata, var_6dc0e605ecd21eee, var_7c3865dee4abe
     return 1;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a23
 // Size: 0x5b
@@ -1336,7 +1336,7 @@ function _killstreakneedslocationselection(killstreakref) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a86
 // Size: 0x29
@@ -1346,7 +1346,7 @@ function _locationselectioninterrupt() {
     player notify("cancel_location");
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ab7
 // Size: 0x1ea
@@ -1387,7 +1387,7 @@ function _handlekillstreakpurchase(itemdata, dropcurrent, droppurchased, var_db9
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ca9
 // Size: 0x14f
@@ -1410,7 +1410,7 @@ function function_90b0e9eb26e38443(itemdata, var_7dddac09987d559e, var_452130d9d
     function_a573b91325f9ea32(self, itemdata, "weapon");
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e00
 // Size: 0x6f
@@ -1422,7 +1422,7 @@ function _handlefieldupgradepurchase(itemdata, var_7dddac09987d559e, var_452130d
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e77
 // Size: 0x765
@@ -1602,7 +1602,7 @@ function _handlespecialpurchase(itemdata, var_7dddac09987d559e, var_452130d9d126
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x45e4
 // Size: 0x2aa
@@ -1636,8 +1636,8 @@ function _handlevehiclepurchase(itemdata, var_7dddac09987d559e) {
         return false;
     }
     spawndata.spawntype = "KIOSK";
-    if (namespace_801fa17f47560d76::function_ccdcf48542c8a5b7(itemdata.ref)) {
-        vehicle = namespace_801fa17f47560d76::function_66c684fea143fbfd(itemdata.ref, spawndata);
+    if (scripts\cp_mp\vehicles\vehicle_airdrop::function_ccdcf48542c8a5b7(itemdata.ref)) {
+        vehicle = scripts\cp_mp\vehicles\vehicle_airdrop::vehicle_airdrop(itemdata.ref, spawndata);
     } else {
         vehicle = scripts\cp_mp\vehicles\vehicle::vehicle_spawn(itemdata.ref, spawndata);
     }
@@ -1649,7 +1649,7 @@ function _handlevehiclepurchase(itemdata, var_7dddac09987d559e) {
     return true;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4897
 // Size: 0x49
@@ -1665,7 +1665,7 @@ function function_334bee7871c3ae0f() {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x48e9
 // Size: 0x6c
@@ -1682,7 +1682,7 @@ function function_a037837dc6c85636() {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x495e
 // Size: 0x46
@@ -1699,7 +1699,7 @@ function function_ff0081ca56b5a384(upgradetype) {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x49ad
 // Size: 0x14b
@@ -1726,7 +1726,7 @@ function _handlevehiclerepair(itemdata, var_7dddac09987d559e) {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b01
 // Size: 0x40
@@ -1740,7 +1740,7 @@ function function_9fc999a4450eacb2(upgradetype) {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b4a
 // Size: 0x50
@@ -1758,7 +1758,7 @@ function function_388aa30e37abbb0(upgradetype) {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ba3
 // Size: 0xef
@@ -1781,7 +1781,7 @@ function function_6e4f7e117d4651c3() {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c9b
 // Size: 0x2b
@@ -1792,7 +1792,7 @@ function function_d48c5142f8271c18() {
     return false;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ccf
 // Size: 0x52
@@ -1802,7 +1802,7 @@ function function_365e64606d4f3da8(itemdata, var_7dddac09987d559e, var_452130d9d
     armorykioskused(0, undefined, undefined, self);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d2a
 // Size: 0x83
@@ -1816,7 +1816,7 @@ function function_6c02b611541421d2(itemdata, var_7dddac09987d559e, var_452130d9d
     armorykioskused(0, undefined, undefined, self);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4db5
 // Size: 0x83
@@ -1830,7 +1830,7 @@ function function_f1d968fd69ab759a(itemdata, var_7dddac09987d559e, var_452130d9d
     armorykioskused(0, undefined, undefined, self);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e40
 // Size: 0x60
@@ -1841,7 +1841,7 @@ function function_157316f7321dd26b(itemdata, dropcurrent, droppurchased, var_db9
     armorykioskused(0, undefined, undefined, self);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ea9
 // Size: 0x71
@@ -1857,7 +1857,7 @@ function function_bc5f62f877be030f(func, itemdata, var_7dddac09987d559e, var_452
     self thread [[ func ]](itemdata, var_7dddac09987d559e, var_452130d9d126e506, var_db943473454f6ea6);
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f22
 // Size: 0x70
@@ -1869,7 +1869,7 @@ function function_601181692f53e4ed(itemref) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f9a
 // Size: 0x7a1
@@ -2026,7 +2026,7 @@ function onarmorykioskpurchase(channel, purchaseindex) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5743
 // Size: 0x178
@@ -2059,7 +2059,7 @@ function _makekioskpurchase(itemdata) {
     return cost;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x58c4
 // Size: 0xab
@@ -2080,7 +2080,7 @@ function function_a573b91325f9ea32(player, itemdata, itemtyperef, splashref, qua
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5977
 // Size: 0x3e
@@ -2093,7 +2093,7 @@ function playerlocationselectinterrupt() {
     player notify("cancel_location");
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x59bd
 // Size: 0x117
@@ -2124,7 +2124,7 @@ function playerhandlecirclepickitem() {
     return success;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5add
 // Size: 0x2a0
@@ -2181,7 +2181,7 @@ function restartcircleelimination(origin) {
     }
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d85
 // Size: 0xe5
@@ -2205,7 +2205,7 @@ function playerhandleredeploy() {
     return success;
 }
 
-// Namespace namespace_9f78b8694cfa43bf / namespace_1ad0622c44d22e1a
+// Namespace armory_kiosk / namespace_1ad0622c44d22e1a
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e73
 // Size: 0x273

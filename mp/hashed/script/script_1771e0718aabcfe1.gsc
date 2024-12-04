@@ -1,8 +1,8 @@
-#using scripts\common\string.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_6775ad452d13858;
+#using scripts\common\string;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace seasonalevents;
 

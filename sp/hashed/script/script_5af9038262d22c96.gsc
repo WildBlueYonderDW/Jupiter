@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\stealth\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\stealth\utility;
 
 #namespace utility;
 

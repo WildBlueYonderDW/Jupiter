@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
 #using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_4b9cac6b027c24b4;
 
@@ -176,7 +176,7 @@ function function_aed28a7f4b023169(type, bool) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c4
 // Size: 0x252
-function radiation_geiger_pulse(var_80bc91a54f223618, var_6a50cd93c4b9a496) {
+function radiation_geiger_pulse(var_80bc91a54f223618, rad_obj) {
     self notify("radiation_geiger_pulse");
     self endon("radiation_geiger_pulse");
     self endon("disconnect");
@@ -199,18 +199,18 @@ function radiation_geiger_pulse(var_80bc91a54f223618, var_6a50cd93c4b9a496) {
     }
     multiplier = 1;
     waittime = waittime_dist * multiplier;
-    var_8f1cce55c7cbc697 = vectortoangles(self.origin - var_6a50cd93c4b9a496.origin);
+    var_8f1cce55c7cbc697 = vectortoangles(self.origin - rad_obj.origin);
     angle = abs(angleclamp((var_8f1cce55c7cbc697 - self.angles)[1]) - 360);
-    var_a5148760d51eb926 = math::normalize_value(0, 360, angle);
+    follow_percent = math::normalize_value(0, 360, angle);
     player_forward = anglestoforward(self.angles);
-    var_4712089f9a28931d = vectornormalize(var_6a50cd93c4b9a496.origin - self.origin);
+    var_4712089f9a28931d = vectornormalize(rad_obj.origin - self.origin);
     dot_vec = vectordot(player_forward, var_4712089f9a28931d);
     var_e7e7df501885a8b7 = float_remap(dot_vec, 1, -1, 0.3, 0.7);
-    var_a5148760d51eb926 = clamp(var_e7e7df501885a8b7, 0, 1);
+    follow_percent = clamp(var_e7e7df501885a8b7, 0, 1);
     var_8bc1a6a78e77c5d1 = 0.5;
-    var_8bc1a6a78e77c5d1 += (var_a5148760d51eb926 - var_8bc1a6a78e77c5d1) * 2 * 0.3;
+    var_8bc1a6a78e77c5d1 += (follow_percent - var_8bc1a6a78e77c5d1) * 2 * 0.3;
     var_8bc1a6a78e77c5d1 = clamp(var_8bc1a6a78e77c5d1, 0.1, 0.9);
-    if (dot_vec < 0 || function_d4a08728bf86e790(var_6a50cd93c4b9a496)) {
+    if (dot_vec < 0 || function_d4a08728bf86e790(rad_obj)) {
         waittime = waittime_dist * 3;
     } else {
         waittime = waittime_dist;
@@ -295,7 +295,7 @@ function function_ed2a70219724da49(player) {
     wait 5;
     while (true) {
         if (isreallyalive(self)) {
-            wait_time = getdvarfloat(@"hash_f83295a72f673dc8", wait_time);
+            wait_time = getdvarfloat(@"rad_level", wait_time);
             self playlocalsound("iw9_mp_radiation_tick");
             val = randomfloatrange(0.1, 1);
             /#
@@ -361,24 +361,24 @@ function track_player_light_meter() {
     self endon("stop_tracking_dynolights");
     self.nvg.prevlightmeter = 1;
     self.nvg.lightmeter = 1;
-    var_67e5c1d8a5710f95 = 1;
-    var_d21883e6746eba1c = 0;
+    light_meter = 1;
+    player_invisible = 0;
     thread light_meter_hud();
-    var_f22120fbffb96467 = 0;
+    light_factor = 0;
     start = (0, 0, 0);
     var_cbbfb154c6f4fffb = 0.45;
     while (true) {
         var_cbbfb154c6f4fffb = 0.1;
-        var_67e5c1d8a5710f95 = self getplayerlightlevel();
-        lightmeter_lerp_lightmeter(var_67e5c1d8a5710f95, var_cbbfb154c6f4fffb);
-        if (self.nvg.lightmeter < 0.5 && !var_d21883e6746eba1c) {
+        light_meter = self getplayerlightlevel();
+        lightmeter_lerp_lightmeter(light_meter, var_cbbfb154c6f4fffb);
+        if (self.nvg.lightmeter < 0.5 && !player_invisible) {
             ent_flag_set("in_the_dark");
-            var_d21883e6746eba1c = 1;
+            player_invisible = 1;
             continue;
         }
-        if (self.nvg.lightmeter >= 0.5 && var_d21883e6746eba1c) {
+        if (self.nvg.lightmeter >= 0.5 && player_invisible) {
             ent_flag_clear("in_the_dark");
-            var_d21883e6746eba1c = 0;
+            player_invisible = 0;
         }
     }
 }
@@ -446,9 +446,9 @@ function needle_noise() {
         self.data["time"] = 0;
         self.data["target"] = randomfloatrange(self.mag * -1, self.mag);
     }
-    var_2e95586c3f064a36 = math::normalize_value(0, self.data["period"], self.data["time"]);
-    var_2e95586c3f064a36 = math::function_889bef0ad1600791(var_2e95586c3f064a36);
-    self.data["val"] = self.data["old"] * (1 - var_2e95586c3f064a36) + self.data["target"] * var_2e95586c3f064a36;
+    period_factor = math::normalize_value(0, self.data["period"], self.data["time"]);
+    period_factor = math::function_889bef0ad1600791(period_factor);
+    self.data["val"] = self.data["old"] * (1 - period_factor) + self.data["target"] * period_factor;
     self.data["time"] = self.data["time"] + 0.05;
 }
 

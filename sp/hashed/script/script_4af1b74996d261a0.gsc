@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\civilian_russian_female_head.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\civilian_russian_female_head;
 
 #namespace namespace_ddb56a39cb36529e;
 

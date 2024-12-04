@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
 #using script_35de402efc5acfb3;
-#using scripts\stealth\player.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
+#using scripts\stealth\debug;
+#using scripts\stealth\player;
 
 #namespace utility;
 
@@ -643,7 +643,7 @@ function stealth_music_transition_sp(aliasto) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e92
 // Size: 0x55
-function function_5d3533b9142557d7(bool) {
+function sixthsense_enable(bool) {
     if (!isdefined(bool)) {
         bool = 1;
     }

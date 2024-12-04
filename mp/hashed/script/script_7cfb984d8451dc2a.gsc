@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_930a1e7bd882c1d;
-#using script_7ab5b649fa408138;
-#using scripts\common\anim.gsc;
 #using script_75377e59f5becac8;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_7ab5b649fa408138;
+#using script_930a1e7bd882c1d;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\player;
 
 #namespace namespace_82162455806f6229;
 
@@ -85,25 +85,25 @@ function function_55f2480b4b819aea(movingc130) {
     animstruct.packs[n] = animstruct create_animpack("scene1");
     animstruct.packs[n] add_pack_startfunc([], &function_21ea09462d07ca25);
     animstruct.packs[n] function_e718ba63d511fcde([], &function_b33e50ed017d5ace);
-    animstruct.packs[n] add_pack_modelanim(animstruct.staticc130, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_ac130"]);
+    animstruct.packs[n] add_pack_modelanim(animstruct.staticc130, level.br_anim["sdr_mp_infil_ac130_redux_players_ac130"]);
     if (isdefined(animstruct.movingc130)) {
-        animstruct.packs[n] add_pack_modelanim(animstruct.movingc130, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_ac130"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.movingc130, level.br_anim["sdr_mp_infil_ac130_redux_players_ac130"]);
     }
-    animstruct.packs[n] add_pack_modelanim(animstruct.camera, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_cam"]);
+    animstruct.packs[n] add_pack_modelanim(animstruct.camera, level.br_anim["sdr_mp_infil_ac130_redux_players_cam"]);
     if (isdefined(animstruct.movingcam)) {
-        animstruct.packs[n] add_pack_modelanim(animstruct.movingcam, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_cam"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.movingcam, level.br_anim["sdr_mp_infil_ac130_redux_players_cam"]);
     }
-    animstruct.packs[n] add_pack_modelanim(animstruct.var_16cfd3cbf327feef, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_character_link"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player1"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player2"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player3"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player4"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player1"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player2"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player3"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player4"]);
-    animstruct.packs[n] add_pack_modelanim(animstruct.doorchief, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_doorchief"]);
-    animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.camera, ["j_prop_1", "j_prop_2", "j_prop_3", "j_prop_4"], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_players_ac130"]);
+    animstruct.packs[n] add_pack_modelanim(animstruct.var_16cfd3cbf327feef, level.br_anim["sdr_mp_infil_ac130_redux_character_link"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.br_anim["sdr_mp_infil_ac130_redux_player1"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.br_anim["sdr_mp_infil_ac130_redux_player2"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.br_anim["sdr_mp_infil_ac130_redux_player3"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.br_anim["sdr_mp_infil_ac130_redux_player4"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.br_anim["sdr_mp_infil_ac130_redux_player1"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.br_anim["sdr_mp_infil_ac130_redux_player2"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.br_anim["sdr_mp_infil_ac130_redux_player3"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.br_anim["sdr_mp_infil_ac130_redux_player4"]);
+    animstruct.packs[n] add_pack_modelanim(animstruct.doorchief, level.br_anim["sdr_mp_infil_ac130_redux_doorchief"]);
+    animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.camera, ["j_prop_1", "j_prop_2", "j_prop_3", "j_prop_4"], level.br_anim["sdr_mp_infil_ac130_redux_players_ac130"]);
     if (!isdefined(level.scr_notetrack["c130"]) || !isdefined(level.scr_notetrack["c130"]["any"]["gored"])) {
         scripts\common\anim::addnotetrack_customfunction("c130", "gored", &function_4e1db4886edfa5b2);
         scripts\common\anim::addnotetrack_customfunction("c130", "gogreen", &function_ecc93c094efc9af2);
@@ -116,19 +116,19 @@ function function_55f2480b4b819aea(movingc130) {
     animstruct.packs[n] add_pack_startfunc([], &function_f90e2db4b34d7f57);
     animstruct.packs[n] function_e718ba63d511fcde([], &function_60240beede5e1ab8);
     if (isdefined(animstruct.movingc130)) {
-        animstruct.packs[n] add_pack_modelanim(animstruct.movingc130, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop2_plane"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.movingc130.innards, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop2_plane"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.movingc130, level.br_anim["sdr_mp_infil_ac130_loop2_plane"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.movingc130.innards, level.br_anim["sdr_mp_infil_ac130_loop2_plane"]);
     }
-    animstruct.packs[n] add_pack_modelanim(animstruct.var_16cfd3cbf327feef, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_genpropx10"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl01"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl02"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl03"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl04"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl01"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl02"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl03"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_pl04"]);
-    animstruct.packs[n] add_pack_modelanim(animstruct.doorchief, level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_loop_doorchief"]);
+    animstruct.packs[n] add_pack_modelanim(animstruct.var_16cfd3cbf327feef, level.br_anim["sdr_mp_infil_ac130_loop_genpropx10"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.br_anim["sdr_mp_infil_ac130_loop_pl01"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.br_anim["sdr_mp_infil_ac130_loop_pl02"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.br_anim["sdr_mp_infil_ac130_loop_pl03"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.br_anim["sdr_mp_infil_ac130_loop_pl04"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.br_anim["sdr_mp_infil_ac130_loop_pl01"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.br_anim["sdr_mp_infil_ac130_loop_pl02"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.br_anim["sdr_mp_infil_ac130_loop_pl03"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.br_anim["sdr_mp_infil_ac130_loop_pl04"]);
+    animstruct.packs[n] add_pack_modelanim(animstruct.doorchief, level.br_anim["sdr_mp_infil_ac130_loop_doorchief"]);
     animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.camera, ["j_prop_1", "j_prop_2", "j_prop_3", "j_prop_4"]);
     return animstruct;
 }
@@ -495,18 +495,18 @@ function function_ad4a7a73c7d7d9e0() {
     var_8e3afd40d3c95b46 = "j_prop_" + self.infilanimindex + 2;
     cos45 = cos(45);
     if (dotforward < -1 * cos45) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10"], "sdr_mp_infil_ac130_jump", var_8e3afd40d3c95b46];
+        return ["sdr_mp_infil_ac130_jump_genpropx10", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10"], "sdr_mp_infil_ac130_jump", var_8e3afd40d3c95b46];
     }
     if (dotright > cos45) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10_90_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_l"], "sdr_mp_infil_ac130_jump_90_l", var_8e3afd40d3c95b46];
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_l", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_90_l"], "sdr_mp_infil_ac130_jump_90_l", var_8e3afd40d3c95b46];
     }
     if (dotright < -1 * cos45) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10_90_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_r"], "sdr_mp_infil_ac130_jump_90_r", var_8e3afd40d3c95b46];
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_r", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_90_r"], "sdr_mp_infil_ac130_jump_90_r", var_8e3afd40d3c95b46];
     }
     if (dotright > 0) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10_180_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_l"], "sdr_mp_infil_ac130_jump_180_l", var_8e3afd40d3c95b46];
+        return ["sdr_mp_infil_ac130_jump_genpropx10_180_l", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_180_l"], "sdr_mp_infil_ac130_jump_180_l", var_8e3afd40d3c95b46];
     }
-    return ["sdr_mp_infil_ac130_jump_genpropx10_180_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_r"], "sdr_mp_infil_ac130_jump_180_r", var_8e3afd40d3c95b46];
+    return ["sdr_mp_infil_ac130_jump_genpropx10_180_r", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_180_r"], "sdr_mp_infil_ac130_jump_180_r", var_8e3afd40d3c95b46];
 }
 
 // Namespace namespace_82162455806f6229 / namespace_6b61356959df5986

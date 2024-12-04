@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace crossing_suv_infil;
 
@@ -271,7 +271,7 @@ function actorthink(team, scene_node, scene_name, extra_crew) {
 // Size: 0x141
 function initanims(subtype) {
     script_model_anims(subtype);
-    function_68aab9f69431ce1(subtype);
+    vehicles_anims(subtype);
     addnotetrack_customfunction("slot_0", "free_look", &player_free_look, "crossing_suv_infil");
     addnotetrack_customfunction("slot_1", "free_look", &player_free_look, "crossing_suv_infil");
     addnotetrack_customfunction("slot_2", "free_look", &player_free_look, "crossing_suv_infil");
@@ -346,7 +346,7 @@ function script_model_anims(subtype) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x18a4
 // Size: 0x91
-function function_68aab9f69431ce1(subtype) {
+function vehicles_anims(subtype) {
     switch (subtype) {
     case #"hash_1cc79b02710cab23":
     case #"hash_6829ee5abc10c38b":
@@ -409,8 +409,8 @@ function spawn_anim_model(animname, linkto_ent, body, head, weapon) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b73
 // Size: 0xa6
-function spawnactor(scene_node, var_d006ac472f253163, var_3468a2b34119eee1, animname) {
-    actor = self.linktoent spawn_anim_model(animname, scene_node, var_d006ac472f253163, var_3468a2b34119eee1);
+function spawnactor(scene_node, model_body, model_head, animname) {
+    actor = self.linktoent spawn_anim_model(animname, scene_node, model_body, model_head);
     actor.infil = self;
     level waittill("infil_started");
     if (isdefined(actor.head)) {

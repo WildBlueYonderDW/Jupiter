@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\math.gsc;
 #using script_39ebe40c5c0566e7;
-#using scripts\cp_mp\crossbow.gsc;
+#using scripts\cp_mp\crossbow;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_e2785bb1da360f91;
 
@@ -146,7 +146,7 @@ function function_3b59b4d385a202e6() {
     level._effect["mahou_torso"] = loadfx("vfx/jup/weapon/_mtx/s6/death/echoendo_mahou/vfx_death_mtx_s6_mahou_exp_torso");
     level._effect["mahou_head"] = loadfx("vfx/jup/weapon/_mtx/s6/death/echoendo_mahou/vfx_death_mtx_s6_mahou_exp_head");
     level._effect["mahou_origin"] = loadfx("vfx/jup/weapon/_mtx/s6/death/echoendo_mahou/vfx_death_mtx_s6_mahou_exp_mesh");
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) != 0) {
+    if (getdvarint(@"mgl", 0) != 0) {
         level._effect["sbandit_fatal"] = loadfx("vfx/mgl/iw9/core/weapons/impacts/mtx/vfx_imp_flesh_ftl_bdt");
         level._effect["spider_fatal"] = loadfx("vfx/mgl/iw9/core/weapons/impacts/mtx/vfx_death_mtx_alpha50_spider");
         level._effect["sbandit_limb"] = loadfx("vfx/mgl/iw9/core/weapons/impacts/mtx/vfx_imp_mtx_sbandit_limb");
@@ -398,7 +398,7 @@ function function_144b37d5935ee55e(sname, var_ba46ec67c5caf4a2) {
 function function_a92b5d21a4b45b0() {
     level.var_40e77024dc6bae59 = [];
     if (!isdefined(level.mapname)) {
-        level.mapname = getdvar(@"hash_687fb8f9b7a23245");
+        level.mapname = getdvar(@"g_mapname");
     }
     if (issubstr(level.mapname, "frontend")) {
         level.var_40e77024dc6bae59["match_kill_thresholds_2stage"] = [2, 4];
@@ -4459,7 +4459,7 @@ function private function_1b411dfeddec6105(corpstable, hitloc) {
 // Checksum 0x0, Offset: 0xd921
 // Size: 0x11a
 function private function_88b034261873044() {
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) != 0) {
+    if (getdvarint(@"mgl", 0) != 0) {
         level._effect["vfx_mgl_sbandit_inspect_anim.vfx"] = loadfx("vfx/mgl/iw9/core/weapons/animations/inspect/vfx_mgl_sbandit_inspect_anim.vfx");
         level._effect["vfx_mgl_sbandit_inspect_anim_ch01"] = loadfx("vfx/mgl/iw9/core/weapons/animations/inspect/vfx_mgl_sbandit_inspect_anim_ch01.vfx");
         level._effect["vfx_mgl_sbandit_inspect_anim_02"] = loadfx("vfx/mgl/iw9/core/weapons/animations/inspect/vfx_mgl_sbandit_inspect_anim_02.vfx");

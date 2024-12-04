@@ -1,6 +1,6 @@
 #using script_3b78d23dad7ec5be;
-#using scripts\common\callbacks.gsc;
 #using script_7edf952f8921aa6b;
+#using scripts\common\callbacks;
 
 #namespace namespace_7062ba3752363b0;
 
@@ -21,7 +21,7 @@ function private on_damaged(params) {
     if (isexplosivedamagemod(params.smeansofdeath) && (!isdefined(params.einflictor) || !istrue(params.einflictor.prevent_knockdown))) {
         if (params.idamage > self.knockdowndamagethreshold) {
             if (!function_e67a89537ae7d4b7()) {
-                function_e96aac065abbec4e(params.vpoint);
+                knockdown_ai(params.vpoint);
             }
         }
     }

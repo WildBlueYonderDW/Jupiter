@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using script_3ab210ea917601e7;
-#using script_220d0eb95a8fab7d;
-#using script_5753ba9c28794a65;
-#using scripts\engine\scriptable.gsc;
-#using script_5d8202968463a21d;
-#using scripts\common\callbacks.gsc;
-#using script_7956d56c4922bd1;
 #using script_185660037b9236c1;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\mp\mp_agent.gsc;
+#using script_220d0eb95a8fab7d;
+#using script_3ab210ea917601e7;
+#using script_5753ba9c28794a65;
+#using script_5d8202968463a21d;
+#using script_7956d56c4922bd1;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace namespace_acac8960cc6d8d64;
 
@@ -239,8 +239,8 @@ function function_130f27dbf7b9d56b() {
         params.players = self.var_6c29f2fdb0054bbe;
         veh callback::callback("veh_on_convoy_ended", params);
     }
-    var_411b413335aa6535 = function_fdc9d5557c53078e(self.var_3fe5574cd4504d62);
-    if (isdefined(var_411b413335aa6535) && var_411b413335aa6535.size > 0) {
+    vh_array = function_fdc9d5557c53078e(self.var_3fe5574cd4504d62);
+    if (isdefined(vh_array) && vh_array.size > 0) {
         if (issharedfuncdefined("armored_convoy_activity", "PlayVehDestroyedVO")) {
             function_f3bb4f4911a1beb2("armored_convoy_activity", "PlayVehDestroyedVO", self, 1);
         } else {
@@ -394,11 +394,11 @@ function private function_73ebd648f533a034(activityinstance) {
 function private function_9cdfbab7600978aa(activityinstance) {
     crash_speed = self vehicle_getspeed();
     crash_dist = randomfloatrange(150, 225);
-    var_db10d04161fa51e4 = randomfloatrange(15, 30);
-    crash_yaw = ter_op(cointoss(), -1 * var_db10d04161fa51e4, var_db10d04161fa51e4);
+    crash_angle = randomfloatrange(15, 30);
+    crash_yaw = ter_op(cointoss(), -1 * crash_angle, crash_angle);
     crash_vector = (crash_dist, 0, 0);
-    var_c04b96ca79816f15 = self.angles + (0, crash_yaw, 0);
-    crash_point = self.origin + rotatevector(crash_vector, var_c04b96ca79816f15);
+    crash_angles = self.angles + (0, crash_yaw, 0);
+    crash_point = self.origin + rotatevector(crash_vector, crash_angles);
     crash_point = getgroundposition(crash_point, 128);
     self notify("path_updated");
     self stoppath();
@@ -569,7 +569,7 @@ function function_50c2476a67740c1e(activityinstance) {
     self endon("entitydeleted");
     self endon("leavepath_unload");
     self endon("engage");
-    var_6c932832156cd885 = [];
+    old_attackers = [];
     n_distance = 16000000;
     while (!istrue(activityinstance.var_de6f66d8d51587f1)) {
         if (istrue(self.isdestroyed)) {
@@ -665,11 +665,11 @@ function function_1e9c7b94e0a76915(activityinstance) {
     /#
         iprintln("<dev string:x13b>");
     #/
-    var_db10d04161fa51e4 = randomfloatrange(25, 35);
-    crash_yaw = ter_op(cointoss(), -1 * var_db10d04161fa51e4, var_db10d04161fa51e4);
+    crash_angle = randomfloatrange(25, 35);
+    crash_yaw = ter_op(cointoss(), -1 * crash_angle, crash_angle);
     crash_vector = (crash_dist, 0, 0);
-    var_c04b96ca79816f15 = self.angles + (0, crash_yaw, 0);
-    crash_point = self.origin + rotatevector(crash_vector, var_c04b96ca79816f15);
+    crash_angles = self.angles + (0, crash_yaw, 0);
+    crash_point = self.origin + rotatevector(crash_vector, crash_angles);
     crash_point = getgroundposition(crash_point, 128);
     self notify("path_updated");
     self stoppath();

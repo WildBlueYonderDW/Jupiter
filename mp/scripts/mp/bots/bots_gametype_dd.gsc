@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\game;
 
 #namespace bots_gametype_dd;
 
@@ -81,10 +81,10 @@ function setup_bot_dd() {
         bot_setup_bot_targets([tempstruct]);
         wait 1;
         if (!isdefined(trigger)) {
-            if (!isdefined(level.var_baa82a528ee084da)) {
-                level.var_baa82a528ee084da = [];
+            if (!isdefined(level.extra_bomb_zones)) {
+                level.extra_bomb_zones = [];
             }
-            level.var_baa82a528ee084da[level.var_baa82a528ee084da.size] = tempstruct;
+            level.extra_bomb_zones[level.extra_bomb_zones.size] = tempstruct;
             if (tempstruct.bottargets.size < 3) {
                 start_time = gettime();
                 bot_waittill_bots_enabled();
@@ -300,15 +300,15 @@ function investigate_someone_using_bomb() {
 // Checksum 0x0, Offset: 0xcd8
 // Size: 0xed
 function get_player_defusing_zone(zone) {
-    var_bfedea4ffe22cda9 = get_players_at_zone(zone, self.team);
-    foreach (player in var_bfedea4ffe22cda9) {
+    players_defending_zone = get_players_at_zone(zone, self.team);
+    foreach (player in players_defending_zone) {
         if (!isai(player)) {
             if (player.isdefusing) {
                 return player;
             }
         }
     }
-    foreach (player in var_bfedea4ffe22cda9) {
+    foreach (player in players_defending_zone) {
         if (isai(player)) {
             if (isdefined(player.role) && player.role == "defuser") {
                 return player;
@@ -323,15 +323,15 @@ function get_player_defusing_zone(zone) {
 // Checksum 0x0, Offset: 0xdce
 // Size: 0xed
 function get_player_planting_zone(zone) {
-    var_14b1d2efbef0f949 = get_players_at_zone(zone, self.team);
-    foreach (player in var_14b1d2efbef0f949) {
+    players_attacking_zone = get_players_at_zone(zone, self.team);
+    foreach (player in players_attacking_zone) {
         if (!isai(player)) {
             if (player.isplanting) {
                 return player;
             }
         }
     }
-    foreach (player in var_14b1d2efbef0f949) {
+    foreach (player in players_attacking_zone) {
         if (isai(player)) {
             if (isdefined(player.role) && player.role == "atk_bomber") {
                 return player;
@@ -393,12 +393,12 @@ function get_players_at_zone(zone, team) {
 // Size: 0x7d
 function bot_pick_dd_zone_with_fewer_defenders(zones, difference) {
     assert(zones.size == 2);
-    var_43a7ae1bfb0cdec0[0] = get_players_at_zone(zones[0], game["defenders"]).size;
-    var_43a7ae1bfb0cdec0[1] = get_players_at_zone(zones[1], game["defenders"]).size;
-    if (var_43a7ae1bfb0cdec0[0] > var_43a7ae1bfb0cdec0[1] + difference) {
+    num_at_zone[0] = get_players_at_zone(zones[0], game["defenders"]).size;
+    num_at_zone[1] = get_players_at_zone(zones[1], game["defenders"]).size;
+    if (num_at_zone[0] > num_at_zone[1] + difference) {
         return zones[1];
     }
-    if (var_43a7ae1bfb0cdec0[0] + difference < var_43a7ae1bfb0cdec0[1]) {
+    if (num_at_zone[0] + difference < num_at_zone[1]) {
         return zones[0];
     }
 }
@@ -430,8 +430,8 @@ function bot_choose_defend_zone() {
     if (active_bombzones.size == 1) {
         var_a622ba42eb483dab = active_bombzones[0];
     } else if (active_bombzones.size == 2) {
-        var_43a7ae1bfb0cdec0[0] = get_players_at_zone(active_bombzones[0], game["defenders"]).size;
-        var_43a7ae1bfb0cdec0[1] = get_players_at_zone(active_bombzones[1], game["defenders"]).size;
+        num_at_zone[0] = get_players_at_zone(active_bombzones[0], game["defenders"]).size;
+        num_at_zone[1] = get_players_at_zone(active_bombzones[1], game["defenders"]).size;
         var_64e23b30076e759a[0] = is_bomb_planted_on(active_bombzones[0]);
         var_64e23b30076e759a[1] = is_bomb_planted_on(active_bombzones[1]);
         if (var_64e23b30076e759a[0] && var_64e23b30076e759a[1] || !var_64e23b30076e759a[0] && !var_64e23b30076e759a[1]) {
@@ -446,14 +446,14 @@ function bot_choose_defend_zone() {
         } else if (var_64e23b30076e759a[0] || var_64e23b30076e759a[1]) {
             var_655df04bd2181345 = ter_op(var_64e23b30076e759a[0], 0, 1);
             var_49b95b5588ebf99b = ter_op(!var_64e23b30076e759a[0], 0, 1);
-            if (var_43a7ae1bfb0cdec0[var_655df04bd2181345] > var_43a7ae1bfb0cdec0[var_49b95b5588ebf99b] + 2) {
+            if (num_at_zone[var_655df04bd2181345] > num_at_zone[var_49b95b5588ebf99b] + 2) {
                 var_a622ba42eb483dab = active_bombzones[var_49b95b5588ebf99b];
-            } else if (var_43a7ae1bfb0cdec0[var_655df04bd2181345] <= var_43a7ae1bfb0cdec0[var_49b95b5588ebf99b]) {
+            } else if (num_at_zone[var_655df04bd2181345] <= num_at_zone[var_49b95b5588ebf99b]) {
                 var_a622ba42eb483dab = active_bombzones[var_655df04bd2181345];
             } else if (!isdefined(self.current_bombzone)) {
-                if (var_43a7ae1bfb0cdec0[var_655df04bd2181345] >= var_43a7ae1bfb0cdec0[var_49b95b5588ebf99b] + 2) {
+                if (num_at_zone[var_655df04bd2181345] >= num_at_zone[var_49b95b5588ebf99b] + 2) {
                     var_a622ba42eb483dab = active_bombzones[var_49b95b5588ebf99b];
-                } else if (var_43a7ae1bfb0cdec0[var_655df04bd2181345] < var_43a7ae1bfb0cdec0[var_49b95b5588ebf99b] + 2) {
+                } else if (num_at_zone[var_655df04bd2181345] < num_at_zone[var_49b95b5588ebf99b] + 2) {
                     var_a622ba42eb483dab = active_bombzones[var_655df04bd2181345];
                 }
             }

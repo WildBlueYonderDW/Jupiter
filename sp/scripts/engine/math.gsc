@@ -1,5 +1,5 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace math;
 
@@ -616,8 +616,8 @@ function function_1c46b3e291eff242(dir, forward_vec, up_vec) {
 function function_6c1e6433c5e5cf79(point, center, half_size, forward_angles) {
     var_9b91a9e577670535 = point - center;
     result = center;
-    var_161c18750f51fe9e = anglestoaxis(forward_angles);
-    axis_vecs = [var_161c18750f51fe9e["forward"], var_161c18750f51fe9e["right"], var_161c18750f51fe9e["up"]];
+    axis_array = anglestoaxis(forward_angles);
+    axis_vecs = [axis_array["forward"], axis_array["right"], axis_array["up"]];
     for (i = 0; i <= 2; i++) {
         dist = vectordot(axis_vecs[i], var_9b91a9e577670535);
         dist = clamp(dist, -1 * half_size[i], half_size[i]);
@@ -745,11 +745,11 @@ function function_c5b0d1646ebc8eb3(start_point, target_point, yaw_limit, start_y
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1863
 // Size: 0x59
-function function_804deea7a479c83b(start_angle, var_e4baef9749309aec, limit) {
-    diff = angleclamp180(var_e4baef9749309aec - start_angle);
+function function_804deea7a479c83b(start_angle, target_angle, limit) {
+    diff = angleclamp180(target_angle - start_angle);
     new_angle = undefined;
     if (abs(diff) < limit) {
-        new_angle = var_e4baef9749309aec;
+        new_angle = target_angle;
     } else {
         new_angle = start_angle + scripts\engine\utility::sign(diff) * limit;
     }

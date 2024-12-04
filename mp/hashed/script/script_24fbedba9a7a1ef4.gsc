@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\damage_utility.gsc;
 #using script_7c40fa80892a721;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_collision.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_collision;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_965527752cbd4cca;
 
@@ -140,9 +140,9 @@ function function_dffac413ed66bcd0(einflictor, eattacker, idamage, idflags, smea
         }
     }
     if (!headshot && isdefined(self.armorhealth) && self.armorhealth > 0 && smeansofdeath != "MOD_CRUSH" && (!isdefined(self.var_f8ecc64162438d76) || !(isdefined(einflictor) && array_contains(self.var_f8ecc64162438d76, einflictor)))) {
-        var_57accdc40b2f50e = namespace_f8d3520d3483c1::function_90ce8eb3ddaa4943(eattacker, einflictor, evictim, idamage, objweapon, smeansofdeath, shitloc, idflags, initial_damage, unmodifieddamage);
-        var_1da1a66b5c6a06a7 = var_57accdc40b2f50e[1];
-        idamage = var_57accdc40b2f50e[0];
+        __a0 = namespace_f8d3520d3483c1::function_90ce8eb3ddaa4943(eattacker, einflictor, evictim, idamage, objweapon, smeansofdeath, shitloc, idflags, initial_damage, unmodifieddamage);
+        var_1da1a66b5c6a06a7 = __a0[1];
+        idamage = __a0[0];
         armordelta = var_1da1a66b5c6a06a7;
         if (iscp() && damage_isexplosive(smeansofdeath) && idamage <= 0 && !istrue(self.var_c7b10080abf06d59)) {
             armordelta = self.armorhealth;

@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\flags.gsc;
-#using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
 #using script_16ea1b94f0f381b3;
+#using script_58f20490049af6ac;
+#using script_64acb6ce534155b7;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace br_assassination_quest;
 
@@ -177,9 +177,9 @@ function function_a7284c22710ed3dc() {
         if (!scripts\mp\gametypes\br_public::function_d6ae35e0ce14bbaf()) {
             level thread scripts\mp\gametypes\br_public::brleaderdialogteam("mission_master_ass_hunted", self.targetteam, 1, 2);
         }
-        var_57accdc40b2f50e = function_ad56d982450c9db2("br_master_assassination_quest_start_hunter_team", "br_master_assassination_quest_start_tablet_finder");
-        var_19400d1b86740a76 = var_57accdc40b2f50e[1];
-        var_765bece0781ff770 = var_57accdc40b2f50e[0];
+        __a0 = function_ad56d982450c9db2("br_master_assassination_quest_start_hunter_team", "br_master_assassination_quest_start_tablet_finder");
+        var_19400d1b86740a76 = __a0[1];
+        var_765bece0781ff770 = __a0[0];
         function_6a5270845ce88f1e(self.hunterteam, var_765bece0781ff770, params);
         if (!scripts\mp\gametypes\br_public::function_d6ae35e0ce14bbaf()) {
             level thread scripts\mp\gametypes\br_public::brleaderdialogplayer("mission_master_ass_accept_first_person", self.var_d154ac2657c5f44, 1, undefined, 2, undefined, "dx_br_jpbm_");

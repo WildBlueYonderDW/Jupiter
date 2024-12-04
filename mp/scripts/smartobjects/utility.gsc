@@ -1,4 +1,4 @@
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm_bb;
 
 #namespace utility;
 

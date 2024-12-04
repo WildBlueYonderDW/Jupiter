@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp\equipment\cp_adrenaline.gsc;
-#using script_7ef95bba57dc4b82;
-#using script_66122a002aff5d57;
-#using script_600b944a95c3a7bf;
 #using script_531cb1be084314f7;
+#using script_600b944a95c3a7bf;
+#using script_66122a002aff5d57;
+#using script_74502a9e0ef1f19c;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\equipment\cp_adrenaline;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace equipment;
 
@@ -420,8 +420,8 @@ function setexplosiveusablehintstring(weaponname) {
 // Checksum 0x0, Offset: 0x17ce
 // Size: 0xcb
 function function_d0e0b1a0dc489379() {
-    if (isdefined(level.var_c4ea99fa46d27c12)) {
-        foreach (claymore in level.var_c4ea99fa46d27c12) {
+    if (isdefined(level.claymores)) {
+        foreach (claymore in level.claymores) {
             if (isdefined(claymore.disablefunc)) {
                 claymore [[ claymore.disablefunc ]]();
             }
@@ -478,13 +478,13 @@ function setequipmentammo(ref, amount) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x193f
 // Size: 0x7b
-function function_9a74538158afcdf0(ref) {
+function autorefillequipmentammo(ref) {
     lootid = namespace_38b993c4618e76cd::getlootidfromref(ref);
-    var_4cbbe0c2ac1a4cd4 = -1;
-    while (namespace_4fb9dddfb8c1a67a::getequipmentammo(ref) < namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(ref) && isdefined(var_4cbbe0c2ac1a4cd4)) {
-        var_4cbbe0c2ac1a4cd4 = namespace_bc7b29dcc022d887::function_821bfba97b1251ac(lootid);
-        if (isdefined(var_4cbbe0c2ac1a4cd4)) {
-            namespace_bc7b29dcc022d887::function_db1dd76061352e5b(var_4cbbe0c2ac1a4cd4, 1);
+    backpack_slot = -1;
+    while (namespace_4fb9dddfb8c1a67a::getequipmentammo(ref) < namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(ref) && isdefined(backpack_slot)) {
+        backpack_slot = namespace_bc7b29dcc022d887::function_821bfba97b1251ac(lootid);
+        if (isdefined(backpack_slot)) {
+            namespace_bc7b29dcc022d887::function_db1dd76061352e5b(backpack_slot, 1);
             ammo = namespace_4fb9dddfb8c1a67a::getequipmentammo(ref) + 1;
             namespace_4fb9dddfb8c1a67a::setequipmentammo(ref, ammo);
         }
@@ -616,25 +616,25 @@ function _cancelputawayonuseend(streakinfo) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d0e
 // Size: 0xa4
-function function_7c70dc615da72c51() {
+function store_equipment() {
     if (!isdefined(self.equipment)) {
         return;
     }
-    var_3d6404612a600581 = [];
+    equipment_array = [];
     foreach (equipment in self.equipment) {
-        var_2eb625d9eaaa9671 = spawnstruct();
-        var_2eb625d9eaaa9671.equipment = equipment;
-        var_2eb625d9eaaa9671.count = namespace_4fb9dddfb8c1a67a::getequipmentammo(equipment);
-        var_3d6404612a600581[slot] = var_2eb625d9eaaa9671;
+        equip_struct = spawnstruct();
+        equip_struct.equipment = equipment;
+        equip_struct.count = namespace_4fb9dddfb8c1a67a::getequipmentammo(equipment);
+        equipment_array[slot] = equip_struct;
     }
-    self.var_911ca765f697742a = var_3d6404612a600581;
+    self.var_911ca765f697742a = equipment_array;
 }
 
 // Namespace equipment / namespace_47366e00aa4211f4
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dba
 // Size: 0x99
-function function_2dd3214261e60026() {
+function restore_equipment() {
     if (isdefined(self.var_911ca765f697742a)) {
         namespace_4fb9dddfb8c1a67a::clearallequipment();
         foreach (data in self.var_911ca765f697742a) {

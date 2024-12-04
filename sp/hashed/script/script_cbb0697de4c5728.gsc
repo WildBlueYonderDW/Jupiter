@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\crossbow.gsc;
+#using scripts\cp_mp\crossbow;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_e2785bb1da360f91;
 
@@ -117,7 +117,7 @@ function function_3b59b4d385a202e6() {
     level._effect["aluc_nogore_torso"] = loadfx("vfx/iw9/core/weapons/impacts/mtx/vfx_imp_mtx_aluc_nogore_torso");
     level._effect["aluc_nogore_head"] = loadfx("vfx/iw9/core/weapons/impacts/mtx/vfx_imp_mtx_aluc_nogore_head");
     level._effect["lilith"] = loadfx("vfx/iw9/core/weapons/impacts/mtx/vfx_imp_mtx_lilith_fatal");
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0) != 0) {
+    if (getdvarint(@"mgl", 0) != 0) {
         level._effect["sbandit_fatal"] = loadfx("vfx/mgl/iw9/core/weapons/impacts/mtx/vfx_imp_flesh_ftl_bdt");
         level._effect["spider_fatal"] = loadfx("vfx/mgl/iw9/core/weapons/impacts/mtx/vfx_death_mtx_alpha50_spider");
         level._effect["sbandit_limb"] = loadfx("vfx/mgl/iw9/core/weapons/impacts/mtx/vfx_imp_mtx_sbandit_limb");
@@ -306,7 +306,7 @@ function function_144b37d5935ee55e(sname, var_ba46ec67c5caf4a2) {
 function function_a92b5d21a4b45b0() {
     level.var_40e77024dc6bae59 = [];
     if (!isdefined(level.mapname)) {
-        level.mapname = getdvar(@"hash_687fb8f9b7a23245");
+        level.mapname = getdvar(@"g_mapname");
     }
     if (issubstr(level.mapname, "frontend")) {
         level.var_40e77024dc6bae59["match_kill_thresholds_2stage"] = [2, 4];

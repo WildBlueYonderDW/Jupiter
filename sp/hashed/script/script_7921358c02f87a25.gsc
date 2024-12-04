@@ -6,15 +6,15 @@
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb
 // Size: 0x6e
-function function_12c61598be4a16cb(timeout, var_61f0278fde0a9f65, var_8a84d7c249015c19) {
+function init_countdown(timeout, var_61f0278fde0a9f65, cancel_notify) {
     if (!isdefined(var_61f0278fde0a9f65)) {
         var_61f0278fde0a9f65 = "progressBar";
     }
     var_675b56b3f2d87528 = function_6cd0a8e23ff14e13("scripted_widget_countdown");
     function_90de31b2cbef19f9("coundown_display", var_675b56b3f2d87528);
     function_d28fa5295a04d555("coundown_display", var_61f0278fde0a9f65);
-    if (isdefined(var_8a84d7c249015c19)) {
-        thread function_6c96b4865151ccc7(var_8a84d7c249015c19);
+    if (isdefined(cancel_notify)) {
+        thread function_6c96b4865151ccc7(cancel_notify);
     }
     thread function_3e142abcacc03229(timeout);
 }
@@ -23,9 +23,9 @@ function function_12c61598be4a16cb(timeout, var_61f0278fde0a9f65, var_8a84d7c249
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x131
 // Size: 0x1d
-function private function_6c96b4865151ccc7(var_8a84d7c249015c19) {
+function private function_6c96b4865151ccc7(cancel_notify) {
     self endon("countdown_end");
-    self waittill(var_8a84d7c249015c19);
+    self waittill(cancel_notify);
     function_6a07800c221ecb09();
 }
 

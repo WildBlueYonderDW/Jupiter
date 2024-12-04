@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_public;
 
 #namespace br_skydive_protection;
 

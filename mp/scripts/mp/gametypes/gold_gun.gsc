@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\bots\bots_loadout.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_loadout;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\gameobjects;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace gold_gun;
 

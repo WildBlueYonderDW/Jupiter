@@ -1,7 +1,7 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace player_stats;
 
@@ -196,11 +196,11 @@ function register_new_weapon(weapon) {
 function set_stat_dvars() {
     playernum = 1;
     foreach (player in level.players) {
-        setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_kills_melee", player.stats["kills_melee"]));
-        setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_kills_juggernaut", player.stats["kills_juggernaut"]));
-        setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_kills_explosives", player.stats["kills_explosives"]));
-        setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_kills_vehicle", player.stats["kills_vehicle"]));
-        setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_kills_sentry", player.stats["kills_sentry"]));
+        setdvar(hashcat(@"stats_", playernum, "_kills_melee", player.stats["kills_melee"]));
+        setdvar(hashcat(@"stats_", playernum, "_kills_juggernaut", player.stats["kills_juggernaut"]));
+        setdvar(hashcat(@"stats_", playernum, "_kills_explosives", player.stats["kills_explosives"]));
+        setdvar(hashcat(@"stats_", playernum, "_kills_vehicle", player.stats["kills_vehicle"]));
+        setdvar(hashcat(@"stats_", playernum, "_kills_sentry", player.stats["kills_sentry"]));
         weapons = player get_best_weapons(5);
         foreach (weapon in weapons) {
             weapon.accuracy = 0;
@@ -209,19 +209,19 @@ function set_stat_dvars() {
             }
         }
         for (i = 1; i < 6; i++) {
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i, "_name"), " ");
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i, "_kills"), " ");
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i, "_shots"), " ");
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i, "_accuracy"), " ");
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i, "_name"), " ");
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i, "_kills"), " ");
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i, "_shots"), " ");
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i, "_accuracy"), " ");
         }
         for (i = 0; i < weapons.size; i++) {
             if (!isdefined(weapons[i])) {
                 break;
             }
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i + 1, "_name"), weapons[i].name);
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i + 1, "_kills"), weapons[i].kills);
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i + 1, "_shots"), weapons[i].shots_fired);
-            setdvar(hashcat(@"hash_6d4bac28bd2be3f2", playernum, "_weapon", i + 1, "_accuracy"), weapons[i].accuracy + "%");
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i + 1, "_name"), weapons[i].name);
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i + 1, "_kills"), weapons[i].kills);
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i + 1, "_shots"), weapons[i].shots_fired);
+            setdvar(hashcat(@"stats_", playernum, "_weapon", i + 1, "_accuracy"), weapons[i].accuracy + "%");
         }
         playernum++;
     }

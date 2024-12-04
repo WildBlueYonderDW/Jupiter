@@ -1,15 +1,15 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\sp\door_internal.gsc;
-#using scripts\sp\door.gsc;
-#using scripts\sp\debug.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\debug;
+#using scripts\sp\door;
+#using scripts\sp\door_internal;
+#using scripts\sp\utility;
 
-#namespace namespace_5eb24e25bb7e0884;
+#namespace door_ai;
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x137
 // Size: 0x56
@@ -24,7 +24,7 @@ function get_closed_door_closest_to_nav_modifier(pos) {
     }
 }
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x195
 // Size: 0x23e
@@ -73,7 +73,7 @@ function door_manage_openers() {
     }
 }
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3db
 // Size: 0x5c
@@ -92,7 +92,7 @@ function door_manager_try_ai_opener(opener) {
 
 /#
 
-    // Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+    // Namespace door_ai / scripts\sp\door_ai
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x43f
     // Size: 0x8f
@@ -107,7 +107,7 @@ function door_manager_try_ai_opener(opener) {
 
 #/
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0xea
@@ -135,7 +135,7 @@ function ai_open_try_animated(door) {
 
 /#
 
-    // Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+    // Namespace door_ai / scripts\sp\door_ai
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x5c9
     // Size: 0x78
@@ -150,7 +150,7 @@ function ai_open_try_animated(door) {
 
 #/
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x649
 // Size: 0x81
@@ -163,7 +163,7 @@ function door_add_opener(door) {
     thread door_speed_modifier_monitor();
 }
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d2
 // Size: 0x56
@@ -176,7 +176,7 @@ function remove_as_opener() {
     }
 }
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x730
 // Size: 0x8d
@@ -191,7 +191,7 @@ function add_door_speed_modifiers() {
     self.doavoidanceblocking = 0;
 }
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7c5
 // Size: 0x161
@@ -232,7 +232,7 @@ function door_speed_modifier_monitor() {
     remove_door_speed_modifiers();
 }
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x92e
 // Size: 0x52
@@ -247,7 +247,7 @@ function remove_door_speed_modifiers() {
     }
 }
 
-// Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+// Namespace door_ai / scripts\sp\door_ai
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x988
 // Size: 0x17
@@ -260,7 +260,7 @@ function stop_waiting_for_door() {
 
 /#
 
-    // Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+    // Namespace door_ai / scripts\sp\door_ai
     // Params 3, eflags: 0x0
     // Checksum 0x0, Offset: 0x9a7
     // Size: 0x6e
@@ -273,7 +273,7 @@ function stop_waiting_for_door() {
         }
     }
 
-    // Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+    // Namespace door_ai / scripts\sp\door_ai
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0xa1d
     // Size: 0x57
@@ -289,7 +289,7 @@ function stop_waiting_for_door() {
         }
     }
 
-    // Namespace namespace_5eb24e25bb7e0884 / scripts\sp\door_ai
+    // Namespace door_ai / scripts\sp\door_ai
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0xa7c
     // Size: 0xfd

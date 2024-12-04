@@ -1,7 +1,7 @@
-#using script_7b2517368c79e5bc;
 #using script_3e2f8cc477d57433;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
+#using script_7b2517368c79e5bc;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\mp\killstreaks\killstreaks;
 
 #namespace namespace_de169b8ad93c38b5;
 
@@ -27,9 +27,9 @@ function use_killstreak(itembundle, item) {
             self notify("potential_killstreak_deployment_finish", "weapon_change");
         }
         if (istrue(item.var_4ec444a18e7fc2c0)) {
-            var_57accdc40b2f50e = function_d6029511a9d0984();
-            quantity = var_57accdc40b2f50e[1];
-            var_2814cca693e6ef2d = var_57accdc40b2f50e[0];
+            __a0 = function_d6029511a9d0984();
+            quantity = __a0[1];
+            var_2814cca693e6ef2d = __a0[0];
             items_dropitem(var_2814cca693e6ef2d, quantity);
         }
         removekillstreak(1);

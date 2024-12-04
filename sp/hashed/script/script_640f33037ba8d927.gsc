@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace namespace_1d412d516148e9b4;
 

@@ -1,9 +1,9 @@
-#using scripts\asm\asm.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\shared\utility.gsc;
 #using script_405d05c89e998922;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_d3a2045314c6410;
 

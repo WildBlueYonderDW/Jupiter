@@ -1,20 +1,20 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_439fa02b5251fa5b;
-#using scripts\mp\killstreaks\killstreaks.gsc;
 #using script_1455d908ff492105;
-#using scripts\mp\killstreaks\manual_turret_mp.gsc;
-#using scripts\mp\killstreaks\target_marker.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\hud_message.gsc;
+#using scripts\common\damage_tuning;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\gameobjects;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\killstreaks\manual_turret_mp;
+#using scripts\mp\killstreaks\target_marker;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace remote_turret_mp;
 

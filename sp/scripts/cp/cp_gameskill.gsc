@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\common\gameskill.gsc;
-#using script_4f1f43b1ed3af8f9;
-#using script_3feec618e51a6291;
-#using script_afb7e332aee4bf2;
 #using script_18a73a64992dd07d;
 #using script_371b4c2ab5861e62;
-#using scripts\cp\cp_gameskill.gsc;
-#using scripts\cp\cp_hud_message.gsc;
+#using script_3feec618e51a6291;
+#using script_4f1f43b1ed3af8f9;
+#using script_afb7e332aee4bf2;
+#using scripts\common\gameskill;
+#using scripts\common\utility;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_8fe9ad1b5888debe;
 
@@ -138,7 +138,7 @@ function gameskill_change_monitor() {
             level.gameskill = level.player.gameskill;
             var_16e8d6cfc76e1f2a = level.gameskill;
             level.lowestgameskill = ter_op(var_16e8d6cfc76e1f2a < level.lowestgameskill, var_16e8d6cfc76e1f2a, level.lowestgameskill);
-            level.player function_2bd9c79b322a6eae("spData", "currentGameskill", var_16e8d6cfc76e1f2a + 1);
+            level.player setProgressionData("spData", "currentGameskill", var_16e8d6cfc76e1f2a + 1);
             level.player function_fd716ba463a7acc0();
             setglobaldifficulty();
             level.player set_difficulty_from_locked_settings();
@@ -151,8 +151,8 @@ function gameskill_change_monitor() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa26
 // Size: 0x1104
-function setskill(var_6c667fc52236587a) {
-    if (!istrue(var_6c667fc52236587a)) {
+function setskill(should_reset) {
+    if (!istrue(should_reset)) {
         if (isdefined(level.gameskill)) {
             return;
         }
@@ -443,8 +443,8 @@ function apply_difficulty_settings(current_frac) {
     self.damagemultiplier = self.gs.damagemultiplierhealth;
     self.threatbias = int(get_difficultysetting_frac("threatbias", current_frac));
     level.gameskillmisstimefrombehindoverride = get_difficultysetting("gameskillmisstimefrombehindoverride");
-    var_cd977be97bc0fc1e = getaiarray("axis");
-    foreach (ai in var_cd977be97bc0fc1e) {
+    enemy_ai = getaiarray("axis");
+    foreach (ai in enemy_ai) {
         ai.gameskillmisstimefrombehindoverride = level.gameskillmisstimefrombehindoverride;
     }
 }
@@ -523,7 +523,7 @@ function update_player_attacker_accuracy() {
 // Checksum 0x0, Offset: 0x2588
 // Size: 0x2b
 function get_player_gameskill() {
-    val = self function_f811dfc822b6f33a("spData", "currentGameskill");
+    val = self getProgressionData("spData", "currentGameskill");
     if (val == 0) {
         val = 2;
     }
@@ -750,7 +750,7 @@ function function_cbd65fa4a48cc872() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c26
 // Size: 0x14a
-function function_6c3415fc06b0db95(warning_message, var_5a67c9d0186c1589, timer_override) {
+function function_6c3415fc06b0db95(warning_message, gameover_message, timer_override) {
     level endon("game_ended");
     level endon("hardmode_stop_party_wipe_timer");
     level notify("single_party_wipe_timer");
@@ -768,8 +768,8 @@ function function_6c3415fc06b0db95(warning_message, var_5a67c9d0186c1589, timer_
     if (!isdefined(warning_message)) {
         warning_message = %COOP_GAME_PLAY/HARDMODE_WIPE_TIME_STARTED;
     }
-    if (!isdefined(var_5a67c9d0186c1589)) {
-        var_5a67c9d0186c1589 = %COOP_GAME_PLAY/HARDMODE_WIPE_INFO;
+    if (!isdefined(gameover_message)) {
+        gameover_message = %COOP_GAME_PLAY/HARDMODE_WIPE_INFO;
     }
     level.var_88fd0da9196867bd = getomnvar("cp_countdown_timer_alpha");
     level.var_a212c5b82814375a = getomnvar("cp_countdown_timer");
@@ -781,7 +781,7 @@ function function_6c3415fc06b0db95(warning_message, var_5a67c9d0186c1589, timer_
     while (gettime() < var_ea6ae587890f64dd) {
         wait 1;
     }
-    scripts\cp\cp_hud_message::teamhudtutorialmessage(var_5a67c9d0186c1589, "allies", 4);
+    scripts\cp\cp_hud_message::teamhudtutorialmessage(gameover_message, "allies", 4);
     wait 3;
     level notify("stop_party_wipe_monitor");
     level thread [[ level.endgame ]]("axis", level.end_game_string_index["kia"]);
@@ -858,12 +858,12 @@ function auto_adjust_init() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f1e
 // Size: 0x52
-function function_fd716ba463a7acc0(var_a9f319e816edc0a8) {
+function function_fd716ba463a7acc0(force_reset) {
     if (!function_67c8c7a52f39fcdc()) {
         return;
     }
     self.gs.var_3bc5f2b69266d1fc = -1;
-    if (!istrue(self.pers["restarted"]) || istrue(var_a9f319e816edc0a8)) {
+    if (!istrue(self.pers["restarted"]) || istrue(force_reset)) {
         auto_adjust_data_set("playerdeath_count", 0);
     }
 }

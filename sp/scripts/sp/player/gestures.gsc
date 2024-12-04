@@ -1,12 +1,12 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\player\gestures.gsc;
 #using script_35de402efc5acfb3;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\player\gestures;
+#using scripts\sp\utility;
 
 #namespace gestures;
 
@@ -154,7 +154,7 @@ function set_demeanor_code_think(demeanor, var_4134e028b4e08330) {
 // Params 14, eflags: 0x0
 // Checksum 0x0, Offset: 0x577
 // Size: 0x58d
-function player_gestures_input_disable(var_b03cfac5ee568943, var_6c960bc6468bb7e4, mantle, sprint, fire, reload, weaponswitch, ads, wallrun, doublejump, meleeattack, var_8dad292b46b837c8, disabletime, tag) {
+function player_gestures_input_disable(gesturename, var_6c960bc6468bb7e4, mantle, sprint, fire, reload, weaponswitch, ads, wallrun, doublejump, meleeattack, var_8dad292b46b837c8, disabletime, tag) {
     self endon("death");
     if (!isdefined(tag)) {
         tag = "gesture";
@@ -165,7 +165,7 @@ function player_gestures_input_disable(var_b03cfac5ee568943, var_6c960bc6468bb7e
     if (isdefined(var_6c960bc6468bb7e4) && var_6c960bc6468bb7e4 == 1) {
         if (level.player getstance() == "prone") {
             blend_movespeedscale(0, 0, "gesture");
-            thread scripts\sp\player\gestures::player_gestures_prone_getup_think(var_b03cfac5ee568943, tag);
+            thread scripts\sp\player\gestures::player_gestures_prone_getup_think(gesturename, tag);
             if (!isdefined(self.gestures.restrictingpronespeed)) {
                 self.gestures.restrictingpronespeed = 0;
             }
@@ -253,16 +253,16 @@ function player_gestures_input_disable(var_b03cfac5ee568943, var_6c960bc6468bb7e
         wait disabletime;
     } else {
         self waittill("gesture_stopped", var_8f353b054812a006);
-        if (var_8f353b054812a006 != var_b03cfac5ee568943) {
+        if (var_8f353b054812a006 != gesturename) {
             while (true) {
-                if (!self isgestureplaying(var_b03cfac5ee568943)) {
+                if (!self isgestureplaying(gesturename)) {
                     break;
                 }
                 wait 0.05;
             }
         }
     }
-    self notify(var_b03cfac5ee568943 + "gesture_stopped_internal");
+    self notify(gesturename + "gesture_stopped_internal");
     scripts\sp\player\gestures::player_gestures_input_enable(var_6c960bc6468bb7e4, mantle, sprint, fire, reload, weaponswitch, ads, wallrun, doublejump, meleeattack, var_8dad292b46b837c8, tag);
 }
 
@@ -324,9 +324,9 @@ function player_gestures_input_enable(var_6c960bc6468bb7e4, mantle, sprint, fire
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd76
 // Size: 0x110
-function player_gestures_prone_getup_think(var_b03cfac5ee568943, tag) {
+function player_gestures_prone_getup_think(gesturename, tag) {
     self endon("death");
-    self endon(var_b03cfac5ee568943 + "gesture_stopped_internal");
+    self endon(gesturename + "gesture_stopped_internal");
     var_90d39fd3f5a9895d = 1;
     while (var_90d39fd3f5a9895d) {
         if (self getstance() != "prone") {
@@ -415,17 +415,17 @@ function wait_combat_cooldown(var_8254592d885a289, timeout, radius) {
 // Checksum 0x0, Offset: 0x101c
 // Size: 0x22c
 function function_53f1cff70b5d2981(time, radius) {
-    var_cd61d27d5f87dcb0 = isdefined(level.player.var_a350546e224ce766) && !time_has_passed(level.player.var_a350546e224ce766, time);
+    fired_recently = isdefined(level.player.var_a350546e224ce766) && !time_has_passed(level.player.var_a350546e224ce766, time);
     var_95613ae52f97ad40 = isdefined(level.player.var_2216ecbcdd3468a4) && !time_has_passed(level.player.var_2216ecbcdd3468a4, time);
     var_d13b91a3e165b579 = isdefined(level.player.var_b4410f6c6f5b0f5) && !time_has_passed(level.player.var_b4410f6c6f5b0f5, time);
     damaged = level.player.health < level.player.maxhealth;
-    if (level.player isfiring() || var_cd61d27d5f87dcb0 || var_95613ae52f97ad40 || damaged) {
+    if (level.player isfiring() || fired_recently || var_95613ae52f97ad40 || damaged) {
         return true;
     }
     if (istrue(radius)) {
         radius_sq = radius * radius;
-        var_310236dbf257fbb5 = getaiarray();
-        foreach (ai in var_310236dbf257fbb5) {
+        nearby_ai = getaiarray();
+        foreach (ai in nearby_ai) {
             if (!isalive(ai) || !isdefined(ai.team) || ai.team == "dead" || ai.team == "neutral") {
                 continue;
             }
@@ -458,7 +458,7 @@ function function_160704ee50b41fa() {
             thread function_a71bc808f2d1aa2b("<dev string:x1c>");
         #/
         level.player.incombat = 0;
-        setsaveddvar(@"hash_632794ac5e880915", 0);
+        setsaveddvar(@"quickdraw_enabled", 0);
         while (!function_53f1cff70b5d2981(var_4ab685c88f4b57ba * 2, var_f678598e33cef6a5)) {
             wait var_4ab685c88f4b57ba;
         }
@@ -466,7 +466,7 @@ function function_160704ee50b41fa() {
             thread function_a71bc808f2d1aa2b("<dev string:x2a>");
         #/
         level.player.incombat = 1;
-        setsaveddvar(@"hash_632794ac5e880915", 1);
+        setsaveddvar(@"quickdraw_enabled", 1);
         while (function_53f1cff70b5d2981(var_4ab685c88f4b57ba * 2, var_f7fb28bc06e2a38e)) {
             wait var_4ab685c88f4b57ba;
         }
@@ -542,12 +542,12 @@ function function_e4c009184c8a30e6() {
 // Checksum 0x0, Offset: 0x15f8
 // Size: 0x93
 function function_b2385036531deb4d(ent, max_dist, player_eye, player_forward, var_b1edb654de127cc7) {
-    var_c9ace7e9afbc3263 = ent getapproxeyepos() - (0, 0, 15);
-    var_132a7e059d13e4da = vectordot(var_c9ace7e9afbc3263 - player_eye, player_forward) > 0;
-    var_5979848104c205bc = length(vectorfromlinetopoint(player_eye, player_eye + player_forward, var_c9ace7e9afbc3263));
+    ent_point = ent getapproxeyepos() - (0, 0, 15);
+    var_132a7e059d13e4da = vectordot(ent_point - player_eye, player_forward) > 0;
+    var_5979848104c205bc = length(vectorfromlinetopoint(player_eye, player_eye + player_forward, ent_point));
     if (!var_132a7e059d13e4da || var_5979848104c205bc > var_b1edb654de127cc7) {
         return 0;
     }
-    return scripts\engine\trace::ray_trace_passed(player_eye, var_c9ace7e9afbc3263, ent);
+    return scripts\engine\trace::ray_trace_passed(player_eye, ent_point, ent);
 }
 

@@ -1,32 +1,32 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_3f8889c16399185c;
-#using scripts\engine\throttle.gsc;
-#using script_4a6760982b403bad;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\teams.gsc;
-#using script_3aacf02225ca0da5;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using script_3e784a4247cea64b;
-#using scripts\mp\class.gsc;
 #using script_2892a7e13357d95b;
-#using scripts\common\debug.gsc;
+#using script_3aacf02225ca0da5;
+#using script_3e784a4247cea64b;
+#using script_3f8889c16399185c;
+#using script_4a6760982b403bad;
+#using script_600b944a95c3a7bf;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\equipment;
+#using scripts\mp\hud_util;
+#using scripts\mp\persistence;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\rank;
+#using scripts\mp\supers;
+#using scripts\mp\teams;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weaponrank;
+#using scripts\mp\weapons;
 
 #namespace namespace_3a38da80071a2614;
 
@@ -785,7 +785,7 @@ function on_player_death(data) {
         victim_was_in_attacker_fov = within_fov(attacker.origin, attacker.angles, victim.origin, 0.4226);
         attacker_mount_type = attacker namespace_de6e6777b0937bd7::function_50989a55805a440b();
         attacker_pos = attacker.origin;
-        var_522fed3f783c2e47 = attacker.angles;
+        attacker_angles = attacker.angles;
         if (isdefined(attacker scripts\mp\utility\stats::getpersstat("telemetry").life.life_index)) {
             attacker_life_index = attacker scripts\mp\utility\stats::getpersstat("telemetry").life.life_index;
         }
@@ -806,7 +806,7 @@ function on_player_death(data) {
             victim_was_in_attacker_fov = within_fov(attacker.origin, attacker.angles, victim.origin, 0.4226);
             attacker_mount_type = "MOUNT_NONE";
             attacker_pos = attacker.origin;
-            var_522fed3f783c2e47 = attacker.angles;
+            attacker_angles = attacker.angles;
         } else {
             attacker_weapon = "";
             attacker_weapon_picked_up = 0;
@@ -816,7 +816,7 @@ function on_player_death(data) {
             victim_was_in_attacker_fov = 0;
             attacker_mount_type = "MOUNT_NONE";
             attacker_pos = (0, 0, 0);
-            var_522fed3f783c2e47 = (0, 0, 0);
+            attacker_angles = (0, 0, 0);
         }
     }
     victim_death_modifiers = victim namespace_7349d2dcd492da87::function_1c355f42faf7f4bb();
@@ -912,7 +912,7 @@ function on_player_death(data) {
     if (isdefined(attacker) && isdefined(attacker.currentprimaryweapon)) {
         var_99ec0e0e7687c243 = attacker function_c603bed3b1c8d11(attacker.currentprimaryweapon, 0);
     }
-    victim dlog_recordplayerevent("dlog_event_mp_life", ["attacker", var_41fb323b39c88db5, "spawn_time_from_match_start_ms", spawn_time_from_match_start_ms, "life_index", life_index, "spawn_evaluation_id", spawn_evaluation_id, "spawn_pos_x", spawn_pos[0], "spawn_pos_y", spawn_pos[1], "spawn_pos_z", spawn_pos[2], "team", victim.team, "is_host", victim ishost(), "was_tactical_insertion", was_tactical_insertion, "death_time_from_match_start_ms", death_time_from_match_start_ms, "victim_weapon", victim_weapon, "victim_weapon_attachments", victim_weapon_attachments, "attacker_weapon", attacker_weapon, "attacker_weapon_attachments", attacker_weapon_attachments, "victim_death_modifiers", victim_death_modifiers, "attacker_death_modifiers", attacker_death_modifiers, "death_pos_x", victim.origin[0], "death_pos_y", victim.origin[1], "death_pos_z", victim.origin[2], "death_angle_x", victim.angles[0], "death_angle_y", victim.angles[1], "death_angle_z", victim.angles[2], "attacker_pos_x", attacker_pos[0], "attacker_pos_y", attacker_pos[1], "attacker_pos_z", attacker_pos[2], "attacker_angle_x", var_522fed3f783c2e47[0], "attacker_angle_y", var_522fed3f783c2e47[1], "attacker_angle_z", var_522fed3f783c2e47[2], "means_of_death", var_20e794ee21ccc0c3, "attacker_weapon_alt_mode", attacker_weapon_alt_mode, "attacker_weapon_picked_up", attacker_weapon_picked_up, "victim_weapon_alt_mode", victim_weapon_alt_mode, "victim_weapon_picked_up", victim_weapon_picked_up, "attacker_ads_value", attacker_ads_value, "victim_ads_value", victim_ads_value, "attacker_was_in_victim_fov", attacker_was_in_victim_fov, "victim_was_in_attacker_fov", victim_was_in_attacker_fov, "attacker_mount_type", attacker_mount_type, "victim_mount_type", victim_mount_type, "xp_earned", xp_earned, "score_earned", score_earned, "victim_loadout_index", victim_loadout_index, "attacker_life_index", attacker_life_index, "attacker_loadout_index", attacker_loadout_index, "victim_was_reloading", victim isreloading(), "victim_was_executing", victim isinexecutionattack(), "round", round, "is_hipfire", is_hipfire, "attacker_shooting_mode", attacker_shooting_mode, "victim_shooting_mode", victim_shooting_mode, "first_damage_delivered_time_ms", first_damage_delivered_time_ms, "first_damage_received_time_ms", first_damage_received_time_ms, "attacker_was_ai", attacker_was_ai, "lifetime_damage_dealt", float(var_51334e7082b98cbe), "lifetime_damage_received", float(incomingdamage), "ai_tier", ai_tier, "victim_in_tac_stance", var_b94cd1b61321122a, "attacker_in_tac_stance", var_99ec0e0e7687c243]);
+    victim dlog_recordplayerevent("dlog_event_mp_life", ["attacker", var_41fb323b39c88db5, "spawn_time_from_match_start_ms", spawn_time_from_match_start_ms, "life_index", life_index, "spawn_evaluation_id", spawn_evaluation_id, "spawn_pos_x", spawn_pos[0], "spawn_pos_y", spawn_pos[1], "spawn_pos_z", spawn_pos[2], "team", victim.team, "is_host", victim ishost(), "was_tactical_insertion", was_tactical_insertion, "death_time_from_match_start_ms", death_time_from_match_start_ms, "victim_weapon", victim_weapon, "victim_weapon_attachments", victim_weapon_attachments, "attacker_weapon", attacker_weapon, "attacker_weapon_attachments", attacker_weapon_attachments, "victim_death_modifiers", victim_death_modifiers, "attacker_death_modifiers", attacker_death_modifiers, "death_pos_x", victim.origin[0], "death_pos_y", victim.origin[1], "death_pos_z", victim.origin[2], "death_angle_x", victim.angles[0], "death_angle_y", victim.angles[1], "death_angle_z", victim.angles[2], "attacker_pos_x", attacker_pos[0], "attacker_pos_y", attacker_pos[1], "attacker_pos_z", attacker_pos[2], "attacker_angle_x", attacker_angles[0], "attacker_angle_y", attacker_angles[1], "attacker_angle_z", attacker_angles[2], "means_of_death", var_20e794ee21ccc0c3, "attacker_weapon_alt_mode", attacker_weapon_alt_mode, "attacker_weapon_picked_up", attacker_weapon_picked_up, "victim_weapon_alt_mode", victim_weapon_alt_mode, "victim_weapon_picked_up", victim_weapon_picked_up, "attacker_ads_value", attacker_ads_value, "victim_ads_value", victim_ads_value, "attacker_was_in_victim_fov", attacker_was_in_victim_fov, "victim_was_in_attacker_fov", victim_was_in_attacker_fov, "attacker_mount_type", attacker_mount_type, "victim_mount_type", victim_mount_type, "xp_earned", xp_earned, "score_earned", score_earned, "victim_loadout_index", victim_loadout_index, "attacker_life_index", attacker_life_index, "attacker_loadout_index", attacker_loadout_index, "victim_was_reloading", victim isreloading(), "victim_was_executing", victim isinexecutionattack(), "round", round, "is_hipfire", is_hipfire, "attacker_shooting_mode", attacker_shooting_mode, "victim_shooting_mode", victim_shooting_mode, "first_damage_delivered_time_ms", first_damage_delivered_time_ms, "first_damage_received_time_ms", first_damage_received_time_ms, "attacker_was_ai", attacker_was_ai, "lifetime_damage_dealt", float(var_51334e7082b98cbe), "lifetime_damage_received", float(incomingdamage), "ai_tier", ai_tier, "victim_in_tac_stance", var_b94cd1b61321122a, "attacker_in_tac_stance", var_99ec0e0e7687c243]);
     victim.pers["telemetry"].life.var_d8bae1f0e4d5e27e = life_index;
     if (namespace_de6e6777b0937bd7::function_892570944f6b6a2(attacker)) {
         logtournamentdeath(victim getxuid(), attacker getxuid(), weapon_string, means_of_death == "MOD_HEAD_SHOT");
@@ -1056,16 +1056,16 @@ function function_60912f12edbae676(data) {
     } else {
         ultimateperk = #"specialty_null";
     }
-    extra_loadout_perk_2 = #"hash_208442e5e74e8368";
+    extra_loadout_perk_2 = #"speciality_null";
     if (isdefined(classstruct.loadoutextraperks[0])) {
         extra_loadout_perk_1 = classstruct.loadoutextraperks[0];
     } else {
-        extra_loadout_perk_1 = #"hash_208442e5e74e8368";
+        extra_loadout_perk_1 = #"speciality_null";
     }
     if (isdefined(classstruct.loadoutextraperks[1])) {
         extra_loadout_perk_2 = classstruct.loadoutextraperks[1];
     } else {
-        extra_loadout_perk_2 = #"hash_208442e5e74e8368";
+        extra_loadout_perk_2 = #"speciality_null";
     }
     if (isdefined(data.player.loadoutfieldupgrade1)) {
         var_8ecf289c70dd61eb = data.player.loadoutfieldupgrade1;
@@ -2136,7 +2136,7 @@ function function_42db4e92349e1fee(data) {
 // Checksum 0x0, Offset: 0xd39d
 // Size: 0x297
 function function_ecf05f99fb2be7a2(data) {
-    if (getdvarint(@"hash_d1bdc17a2161c66a", 0)) {
+    if (getdvarint(@"scr_countdown", 0)) {
         foreach (player in level.players) {
             if (isdefined(player) && !isbot(player) && isdefined(player.team) && player.team != "spectator" && player.team != "codcaster") {
                 if (isdefined(player scripts\mp\utility\stats::getpersstat("telemetry")) && istrue(player scripts\mp\utility\stats::getpersstat("telemetry").var_f4c9967fb9b314f2)) {
@@ -2180,7 +2180,7 @@ function function_ecf05f99fb2be7a2(data) {
 // Checksum 0x0, Offset: 0xd63c
 // Size: 0x249
 function function_cf6a68bcdfd1f403(data) {
-    if (getdvarint(@"hash_d1bdc17a2161c66a", 0)) {
+    if (getdvarint(@"scr_countdown", 0)) {
         playlistid = -1;
         mode = "undefined";
         sub_mode = "undefined";
@@ -2514,24 +2514,24 @@ function private function_97114a0080982e86(param) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xe751
 // Size: 0xa2
-function function_b250bbe5574864ea(var_79350d510b31eecb, param0, param1, param2) {
+function function_b250bbe5574864ea(subevent, param0, param1, param2) {
     mp_header = function_968a17536a9b61d3();
     param0 = function_97114a0080982e86(param0);
     param1 = function_97114a0080982e86(param1);
     param2 = function_97114a0080982e86(param2);
-    dlog_recordevent("dlog_event_mp_notifications", ["mp_header", mp_header, "sub_event", var_79350d510b31eecb, "param0", param0, "param1", param1, "param2", param2]);
+    dlog_recordevent("dlog_event_mp_notifications", ["mp_header", mp_header, "sub_event", subevent, "param0", param0, "param1", param1, "param2", param2]);
 }
 
 // Namespace namespace_3a38da80071a2614 / namespace_e77194a0203f683
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xe7fb
 // Size: 0xa3
-function function_24a800e2ee3154e(var_79350d510b31eecb, param0, param1, param2) {
+function function_24a800e2ee3154e(subevent, param0, param1, param2) {
     mp_header = function_968a17536a9b61d3();
     param0 = function_97114a0080982e86(param0);
     param1 = function_97114a0080982e86(param1);
     param2 = function_97114a0080982e86(param2);
-    self dlog_recordplayerevent("dlog_event_mp_notifications_player", ["mp_header", mp_header, "sub_event", var_79350d510b31eecb, "param0", param0, "param1", param1, "param2", param2]);
+    self dlog_recordplayerevent("dlog_event_mp_notifications_player", ["mp_header", mp_header, "sub_event", subevent, "param0", param0, "param1", param1, "param2", param2]);
 }
 
 // Namespace namespace_3a38da80071a2614 / namespace_e77194a0203f683
@@ -2566,14 +2566,14 @@ function private function_234528691f62628b(data) {
     game_type = var_c00a346249963f1b[1];
     map_name = var_c00a346249963f1b[0];
     var_e04c0b7a3136ea2d = 0;
-    var_2b409da19fe9108d = [];
+    row_array = [];
     foreach (player in level.players) {
-        var_2b409da19fe9108d[var_2b409da19fe9108d.size] = ["player_name", default_to(player.name, player.classname), "health", player.health, "suit", default_to(player.suit, ""), "voice", default_to(player.operatorcustomization.voice, "")];
+        row_array[row_array.size] = ["player_name", default_to(player.name, player.classname), "health", player.health, "suit", default_to(player.suit, ""), "voice", default_to(player.operatorcustomization.voice, "")];
     }
-    if (var_2b409da19fe9108d.size > 100) {
-        var_e04c0b7a3136ea2d = var_2b409da19fe9108d.size - 100;
+    if (row_array.size > 100) {
+        var_e04c0b7a3136ea2d = row_array.size - 100;
     }
-    dlog_recordevent("dlog_event_example_with_array_of_rows", ["example_rows", var_2b409da19fe9108d, "map", map_name, "game_type", game_type, "sub_game_type", sub_game_type, "playlist_id", playlist_id, "playlist_name", playlist_name, "round_num", round_num, "num_entries_total", var_2b409da19fe9108d.size, "num_entries_unlogged", var_e04c0b7a3136ea2d, "my_xhash_string", default_to(data.my_xhash_string, ""), "my_int", default_to(data.my_int, 0), "my_string", default_to(data.my_string, "")]);
+    dlog_recordevent("dlog_event_example_with_array_of_rows", ["example_rows", row_array, "map", map_name, "game_type", game_type, "sub_game_type", sub_game_type, "playlist_id", playlist_id, "playlist_name", playlist_name, "round_num", round_num, "num_entries_total", row_array.size, "num_entries_unlogged", var_e04c0b7a3136ea2d, "my_xhash_string", default_to(data.my_xhash_string, ""), "my_int", default_to(data.my_int, 0), "my_string", default_to(data.my_string, "")]);
 }
 
 // Namespace namespace_3a38da80071a2614 / namespace_e77194a0203f683

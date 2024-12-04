@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\emp_debuff_mp.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\emp_debuff_mp;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\perk;
 
 #namespace emp_debuff_mp;
 

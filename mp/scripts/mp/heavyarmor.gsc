@@ -1,9 +1,9 @@
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\damage.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\weapon;
 
 #namespace heavyarmor;
 

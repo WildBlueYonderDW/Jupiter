@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_7a7fd6cf76cdf333;
 
@@ -32,7 +32,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "civilian_react";
-    self.voice = #"hash_56d2a75e94b008ce";
+    self.voice = #"unitednationsfemale";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self setmodel("c_jup_body_civ_embassy_ambassador_assistant");

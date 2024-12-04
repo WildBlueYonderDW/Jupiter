@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using script_3a9930dfe832ae05;
-#using scripts\common\powerups.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using script_7feaed3f883fe324;
 #using script_38eac2888ef17fd;
+#using script_3a9930dfe832ae05;
+#using script_7feaed3f883fe324;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_weapons;
 
 #namespace namespace_73d87acd9f4a87e2;
 
@@ -25,7 +25,7 @@ function autoexec main() {
 // Size: 0x51
 function init() {
     utility::registersharedfunc("powerup_nuke", "should_drop", &should_drop);
-    utility::registersharedfunc("powerup_nuke", "drop_nuke_powerup", &function_75967f67a36943bb);
+    utility::registersharedfunc("powerup_nuke", "drop_nuke_powerup", &drop_powerup);
     utility::registersharedfunc("powerup_nuke", "trigger_nuke", &trigger_nuke);
     level utility::flag_set("powerup_disable_nuke");
 }
@@ -42,9 +42,9 @@ function should_drop() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e2
 // Size: 0x3e
-function function_75967f67a36943bb(spawn_pos, var_34aaa11969c15df) {
+function drop_powerup(spawn_pos, lifetime_override) {
     if (utility::issharedfuncdefined("powerups", "dropPowerup")) {
-        return utility::function_f3bb4f4911a1beb2("powerups", "dropPowerup", "nuke", spawn_pos, var_34aaa11969c15df);
+        return utility::function_f3bb4f4911a1beb2("powerups", "dropPowerup", "nuke", spawn_pos, lifetime_override);
     }
 }
 
@@ -52,8 +52,8 @@ function function_75967f67a36943bb(spawn_pos, var_34aaa11969c15df) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x228
 // Size: 0x49
-function trigger_nuke(origin, var_5d48d7bb369890ab, var_16ae9c6156ab4fab) {
+function trigger_nuke(origin, skip_flash, var_16ae9c6156ab4fab) {
     dummy_struct = {#origin:origin};
-    namespace_46474fbe41dfa60d::grab_nuke("nuke", dummy_struct, 1, 1, 1, 1, var_5d48d7bb369890ab, var_16ae9c6156ab4fab);
+    namespace_46474fbe41dfa60d::grab_nuke("nuke", dummy_struct, 1, 1, 1, 1, skip_flash, var_16ae9c6156ab4fab);
 }
 

@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\killstreaks\mapselect.gsc;
-#using scripts\mp\supers.gsc;
-#using script_2aabac61f2ae422;
 #using script_1ed1214969b5eba7;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\common\anim.gsc;
+#using script_2aabac61f2ae422;
 #using script_736dec95a49487a6;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\bots\bots;
+#using scripts\mp\damage;
+#using scripts\mp\killstreaks\mapselect;
+#using scripts\mp\supers;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\points;
 
 #namespace smokeairdrop;
 
@@ -329,7 +329,7 @@ function function_1ebb9b9e63a4df54(point, smokeforward) {
     wait deploytime;
     self setscriptablepartstate("smokeDeploy", "settle", 0);
     if (getdvarint(@"hash_abe45e35ef030a56") == 1) {
-        if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+        if (getdvarint(@"mgl", 0)) {
             thread scripts\common\ai::function_f8903387ea945165(point, 3);
         } else {
             function_8a09c0e5fa78a48c(point, 18, 300, 250);

@@ -1,14 +1,14 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_vehicles.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_vehicles;
+#using scripts\mp\utility\game;
 
 #namespace namespace_1d412d516148e9b4;
 
@@ -86,8 +86,8 @@ function function_93c1540bbbb4de0b(ent) {
 function function_6e3c1a25a2bcf899() {
     waittillframeend();
     level.var_f4b5441cbb768e84 = getstruct("flying_shipment_start", "targetname");
-    path = function_a5f9d701bf1aac23();
-    level thread function_338f95c30204fc42();
+    path = get_path();
+    level thread debug_path();
     level thread function_102dcc15b70e211a();
     level thread function_2ac6faaebdc20e28();
     level.space_shipment_radius_home = getstruct("space_shipment_radius_home", "targetname");
@@ -112,7 +112,7 @@ function function_6e3c1a25a2bcf899() {
     if (!isdefined(level.limbo_flying_shipment_loot_ref.angles)) {
         level.limbo_flying_shipment_loot_ref.angles = (0, 0, 0);
     }
-    level.limbo_flying_shipment_loot_ref.var_2c401e531139590d = getstructarray(level.limbo_flying_shipment_loot_ref.target, "targetname");
+    level.limbo_flying_shipment_loot_ref.loot_spots = getstructarray(level.limbo_flying_shipment_loot_ref.target, "targetname");
     function_56940da4beb24898(path);
 }
 
@@ -120,7 +120,7 @@ function function_6e3c1a25a2bcf899() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c3
 // Size: 0x186
-function function_a5f9d701bf1aac23() {
+function get_path() {
     if (!isdefined(level.var_bd5d23b9d4c065b7)) {
         var_ff600e44d1fa41d = getdvarint(@"hash_dfca02d1fc7d4665", 5300);
         points = [];
@@ -180,8 +180,8 @@ function function_49cfeec2947a199c(params) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbd7
 // Size: 0x71
-function function_338f95c30204fc42() {
-    path = function_a5f9d701bf1aac23();
+function debug_path() {
+    path = get_path();
     while (true) {
         for (i = 0; i < path.points.size; i++) {
             /#
@@ -255,7 +255,7 @@ function function_56940da4beb24898(path) {
     struct.distsq = 640000;
     level.var_6fd795bdfd20074e = array_add(level.var_6fd795bdfd20074e, struct);
     vehicle thread function_a3ecc821dbd5e9ed(path);
-    vehicle thread function_b118477b9178fbfb();
+    vehicle thread spawn_loot();
     vehicle thread wander_map();
     vehicle thread watch_for_kickflip();
     vehicle.var_927a3bee873e1d8f = "tag_door_left_animate";
@@ -296,7 +296,7 @@ function watch_for_kickflip() {
             waitframe();
             continue;
         }
-        vehicle function_24fe70c15589ec89((0, 0, 0));
+        vehicle vehicle_setangularvelocity((0, 0, 0));
         waitframe();
     }
 }
@@ -457,11 +457,11 @@ function wander_map() {
     vehicle = self;
     vehicle notify("wander_map");
     vehicle endon("wander_map");
-    move_path = function_a5f9d701bf1aac23();
+    move_path = get_path();
     vehicle addcomponent("p2p");
     vehicle addcomponent("path");
     speed = getdvarint(@"hash_a4af2500a18d6e9f", 200);
-    var_ab4f8cb3061bbff4 = ips_to_mph(speed);
+    speed_mph = ips_to_mph(speed);
     /#
         vehicle thread function_10784bbdd1979fe6();
     #/
@@ -495,11 +495,11 @@ function scriptStablizeFlyingShipment() {
         y = self.angles[1];
         z = 0;
         var_bab97b1de1dc0b9d = (x, y, z);
-        var_ebd5e3c816aec136 = 1;
-        var_297c214a8c5873b3 = 1;
-        var_307076505b1b5f2 = 0.5;
+        stop_duration = 1;
+        stop_value = 1;
+        cur_weight = 0.5;
         var_1cc8d25d6f1a4145 = 0.5;
-        vehicle function_6d14d24a1888c646(var_bab97b1de1dc0b9d, var_ebd5e3c816aec136, var_297c214a8c5873b3, var_307076505b1b5f2, var_1cc8d25d6f1a4145);
+        vehicle function_6d14d24a1888c646(var_bab97b1de1dc0b9d, stop_duration, stop_value, cur_weight, var_1cc8d25d6f1a4145);
         wait timestep;
     }
 }
@@ -526,7 +526,7 @@ function scriptStablizeFlyingShipment() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1842
 // Size: 0x39c
-function function_b118477b9178fbfb() {
+function spawn_loot() {
     vehicle = self;
     vehicle endon("entitydeleted");
     while (!isdefined(level.br_pickups)) {
@@ -534,29 +534,29 @@ function function_b118477b9178fbfb() {
     }
     ref = level.limbo_flying_shipment_loot_ref;
     var_5f3c22cdb001de2c = anglestoforward(ref.angles);
-    foreach (var_157036bbf10677cc in level.limbo_flying_shipment_loot_ref.var_2c401e531139590d) {
-        var_157036bbf10677cc.var_264fc2e617ad4a3 = distance2d(var_157036bbf10677cc.origin, ref.origin);
-        var_157036bbf10677cc.var_d5f51aabafa981d4 = vectortoangles(ref.origin - var_157036bbf10677cc.origin);
-        var_157036bbf10677cc.var_d5f51aabafa981d4 = flat_angle(var_157036bbf10677cc.var_d5f51aabafa981d4);
-        var_157036bbf10677cc.rightoffset = var_157036bbf10677cc.var_264fc2e617ad4a3 * sin(var_157036bbf10677cc.var_d5f51aabafa981d4[1]);
-        var_157036bbf10677cc.forwardoffset = var_157036bbf10677cc.var_264fc2e617ad4a3 * cos(var_157036bbf10677cc.var_d5f51aabafa981d4[1]);
-        var_157036bbf10677cc.verticaloffset = var_157036bbf10677cc.origin - ref.origin;
-        var_157036bbf10677cc.verticaloffset = (0, 0, var_157036bbf10677cc.verticaloffset[2]);
-        var_157036bbf10677cc.anglesoffset = flat_angle(var_157036bbf10677cc.angles - ref.angles);
+    foreach (loot_spot in level.limbo_flying_shipment_loot_ref.loot_spots) {
+        loot_spot.var_264fc2e617ad4a3 = distance2d(loot_spot.origin, ref.origin);
+        loot_spot.var_d5f51aabafa981d4 = vectortoangles(ref.origin - loot_spot.origin);
+        loot_spot.var_d5f51aabafa981d4 = flat_angle(loot_spot.var_d5f51aabafa981d4);
+        loot_spot.rightoffset = loot_spot.var_264fc2e617ad4a3 * sin(loot_spot.var_d5f51aabafa981d4[1]);
+        loot_spot.forwardoffset = loot_spot.var_264fc2e617ad4a3 * cos(loot_spot.var_d5f51aabafa981d4[1]);
+        loot_spot.verticaloffset = loot_spot.origin - ref.origin;
+        loot_spot.verticaloffset = (0, 0, loot_spot.verticaloffset[2]);
+        loot_spot.anglesoffset = flat_angle(loot_spot.angles - ref.angles);
     }
-    foreach (var_157036bbf10677cc in level.limbo_flying_shipment_loot_ref.var_2c401e531139590d) {
+    foreach (loot_spot in level.limbo_flying_shipment_loot_ref.loot_spots) {
         scriptablename = "br_loot_cache_lege_novehiclecollision";
-        if (is_equal(var_157036bbf10677cc.script_noteworthy, "isBuyStation")) {
+        if (is_equal(loot_spot.script_noteworthy, "isBuyStation")) {
             if (!getdvarint(@"hash_341d65eb35599c77", 0)) {
                 continue;
             }
             scriptablename = "br_plunder_box";
         }
-        x = vectornormalize(anglestoright(vehicle.angles)) * var_157036bbf10677cc.rightoffset;
-        y = vectornormalize(anglestoforward(vehicle.angles)) * var_157036bbf10677cc.forwardoffset;
-        z = var_157036bbf10677cc.verticaloffset;
+        x = vectornormalize(anglestoright(vehicle.angles)) * loot_spot.rightoffset;
+        y = vectornormalize(anglestoforward(vehicle.angles)) * loot_spot.forwardoffset;
+        z = loot_spot.verticaloffset;
         origin = vehicle.origin + x - y + z;
-        angles = flat_angle(vehicle.angles + var_157036bbf10677cc.anglesoffset);
+        angles = flat_angle(vehicle.angles + loot_spot.anglesoffset);
         instance = spawnscriptable(scriptablename, origin, angles);
         scripts\mp\gametypes\br_pickups::registerscriptableinstance(instance);
         localorigin = rotatevectorinverted(origin - vehicle.origin, vehicle.angles);
@@ -661,8 +661,8 @@ function function_82fb10ddff2170e7(dropinfo) {
     if (!(isdefined(level.var_55f74552ec70e1.linkedchildren) && isdefined(level.var_55f74552ec70e1) && isdefined(dropinfo.groundentity)) || dropinfo.groundentity != level.var_55f74552ec70e1) {
         return;
     }
-    var_579c99028a65a287 = getdvarint(@"hash_db0cadfc5731965d", 50);
-    if (level.var_55f74552ec70e1.linkedchildren.size >= var_579c99028a65a287) {
+    maxloot = getdvarint(@"hash_db0cadfc5731965d", 50);
+    if (level.var_55f74552ec70e1.linkedchildren.size >= maxloot) {
         for (i = 0; i < level.var_55f74552ec70e1.linkedchildren.size; i++) {
             var_c3eb9eeb3172067a = level.var_55f74552ec70e1.linkedchildren[i];
             if (isdefined(var_c3eb9eeb3172067a) && var_c3eb9eeb3172067a getscriptableisloot()) {

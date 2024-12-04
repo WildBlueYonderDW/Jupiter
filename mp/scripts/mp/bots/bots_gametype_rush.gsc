@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\bots\bots.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\entity;
 
 #namespace bots_gametype_rush;
 
@@ -117,8 +117,8 @@ function bot_hardpoint_think() {
         wait 0.05;
     }
     self botsetflag("separation", 0);
-    var_b8c1e1e55c9691e4 = undefined;
-    for (var_bc9376a31c216786 = undefined; true; var_bc9376a31c216786 = level.currentobjective.trigger) {
+    current_patrol_zone = undefined;
+    for (current_defend_zone = undefined; true; current_defend_zone = level.currentobjective.trigger) {
         wait 0.05;
         if (!isdefined(level.currentobjective)) {
             continue;
@@ -130,16 +130,16 @@ function bot_hardpoint_think() {
             initialize_role();
         }
         if (!istrue(self.bot_defending)) {
-            var_b8c1e1e55c9691e4 = undefined;
-            var_bc9376a31c216786 = undefined;
+            current_patrol_zone = undefined;
+            current_defend_zone = undefined;
         }
         if (self.role == "attacker") {
             var_7d8b092bacf8a8d8 = 0;
-            var_bc9376a31c216786 = undefined;
-            if (!isdefined(var_b8c1e1e55c9691e4)) {
+            current_defend_zone = undefined;
+            if (!isdefined(current_patrol_zone)) {
                 var_7d8b092bacf8a8d8 = 1;
             } else if (isdefined(level.currentobjective.trigger)) {
-                if (var_b8c1e1e55c9691e4 != level.currentobjective.trigger) {
+                if (current_patrol_zone != level.currentobjective.trigger) {
                     var_7d8b092bacf8a8d8 = 1;
                 }
             }
@@ -148,17 +148,17 @@ function bot_hardpoint_think() {
                 optional_params["min_goal_time"] = 1;
                 optional_params["max_goal_time"] = 4;
                 bot_patrol_area(zoneorigin, level.patrol_radius, optional_params);
-                var_b8c1e1e55c9691e4 = level.currentobjective.trigger;
+                current_patrol_zone = level.currentobjective.trigger;
             }
             continue;
         }
         if (self.role == "defender") {
-            var_b8c1e1e55c9691e4 = undefined;
+            current_patrol_zone = undefined;
             var_d6180d62096f9cdc = 0;
-            if (!isdefined(var_bc9376a31c216786)) {
+            if (!isdefined(current_defend_zone)) {
                 var_d6180d62096f9cdc = 1;
             } else if (isdefined(level.currentobjective.trigger)) {
-                if (var_bc9376a31c216786 != level.currentobjective.trigger) {
+                if (current_defend_zone != level.currentobjective.trigger) {
                     var_d6180d62096f9cdc = 1;
                 }
             }
@@ -320,7 +320,7 @@ function bot_hardpoint_ai_director_update() {
             var_e0ce35063064fb94 = level.currentobjective scripts\mp\gameobjects::getownerteam();
         }
         foreach (team in teams) {
-            var_3e2f5d10887aeb24 = [];
+            ai_attackers = [];
             ai_defenders = [];
             if (team != var_e0ce35063064fb94) {
                 var_315ada03f3555768[team] = 0;
@@ -362,19 +362,19 @@ function bot_hardpoint_ai_director_update() {
             attackers = get_allied_attackers_for_team(team);
             defenders = get_allied_defenders_for_team(team);
             if (attackers.size > attacker_limit) {
-                var_76912c7979e5a46b = 0;
+                removed_attacker = 0;
                 foreach (attacker in attackers) {
                     if (isai(attacker)) {
                         if (level.bot_personality_type[attacker.personality] == "stationary") {
                             attacker bot_set_role("defender");
-                            var_76912c7979e5a46b = 1;
+                            removed_attacker = 1;
                             break;
                         }
-                        var_3e2f5d10887aeb24 = array_add(var_3e2f5d10887aeb24, attacker);
+                        ai_attackers = array_add(ai_attackers, attacker);
                     }
                 }
-                if (!var_76912c7979e5a46b && var_3e2f5d10887aeb24.size > 0) {
-                    random(var_3e2f5d10887aeb24) bot_set_role("defender");
+                if (!removed_attacker && ai_attackers.size > 0) {
+                    random(ai_attackers) bot_set_role("defender");
                 }
             }
             if (defenders.size > defender_limit) {

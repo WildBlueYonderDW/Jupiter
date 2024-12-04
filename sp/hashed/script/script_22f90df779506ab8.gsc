@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7d535542e36d66f9;
 #using script_26f456dbdf9aa216;
-#using scripts\common\cap.gsc;
 #using script_5d265b4fca61f070;
-#using scripts\asm\cap.gsc;
+#using script_7d535542e36d66f9;
+#using scripts\asm\cap;
+#using scripts\common\cap;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace coverfire;
 

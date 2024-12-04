@@ -1,16 +1,16 @@
-#using script_7e4d332e911e1b90;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\notetrack.gsc;
-#using script_3433ee6b63c7e243;
 #using script_13d1c402f1421c35;
-#using scripts\anim\weaponlist.gsc;
-#using scripts\common\gameskill.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using script_3433ee6b63c7e243;
 #using script_7d535542e36d66f9;
-#using scripts\anim\animselector.gsc;
+#using script_7e4d332e911e1b90;
+#using scripts\anim\animselector;
+#using scripts\anim\utility_common;
+#using scripts\anim\weaponlist;
+#using scripts\asm\asm_bb;
+#using scripts\common\ai;
+#using scripts\common\gameskill;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace shared;
 

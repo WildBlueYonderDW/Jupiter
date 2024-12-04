@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
 #using script_5d265b4fca61f070;
+#using scripts\engine\utility;
 
 #namespace namespace_e494424f3a96e848;
 
@@ -7,13 +7,13 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x442c
 // Size: 0x45
-function function_9eaa4caf3c05202d() {
+function vo_init() {
     if (isdefined(level.vo) == 0) {
         level.vo = spawnstruct();
         function_4edf904ca43031e();
         function_84904b9ff7b853();
         thread function_b793a5f9451957d5();
-        thread function_8e6cdcb38cba82c3();
+        thread vo_combat();
         thread function_b847acce90b82260();
     }
 }
@@ -23,8 +23,8 @@ function function_9eaa4caf3c05202d() {
 // Checksum 0x0, Offset: 0x4479
 // Size: 0x3c
 function private function_4edf904ca43031e() {
-    if (isdefined(level.Laswell) == 0) {
-        level.Laswell = level.player;
+    if (isdefined(level.laswell) == 0) {
+        level.laswell = level.player;
     }
     if (isdefined(level.Nik) == 0) {
         level.Nik = level;
@@ -162,7 +162,7 @@ function private function_1c11a2950dae76a7(duration, interval, var_ed86f55e48dbb
 // Checksum 0x0, Offset: 0x4e02
 // Size: 0x73
 function function_155fe87f0d1ac7b() {
-    level.Laswell say_team("dx_sp_jmlb_intr_lasw_watchertoyankeeeyeso", 1);
+    level.laswell say_team("dx_sp_jmlb_intr_lasw_watchertoyankeeeyeso", 1);
     wait 0.7;
     level.Nik say_team("dx_sp_jmlb_intr_niko_copywatchershitsabou", 1);
     thread function_1c11a2950dae76a7(0.5, 0.1);
@@ -184,13 +184,13 @@ function function_55f59c2fe542a1de() {
     if (isdefined(level.vo.var_f4dff2aed8809229) == 0) {
         level.vo.var_f4dff2aed8809229 = create_deck(["dx_sp_jmlb_intr_niko_smartsuppressorsaref", "dx_sp_jmlb_intr_niko_idoubtx12sarestandar", "dx_sp_jmlb_intr_niko_yourx12woulddrawthew", "dx_sp_jmlb_intr_niko_idoubtsuppressorsare", "dx_sp_jmlb_intr_niko_asuppressedweaponwou"], 1, 1);
     }
-    var_38fad3e748e5df90 = level.Laswell function_bce20c074033e937();
+    var_38fad3e748e5df90 = level.laswell function_bce20c074033e937();
     if (isdefined(var_38fad3e748e5df90) && var_38fad3e748e5df90 < 0.5) {
         wait 0.5 - var_38fad3e748e5df90;
     }
     thread function_1c11a2950dae76a7(0, 0.25);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team(level.vo.var_f4dfefaed8808b90 deck_draw(), 1);
+    level.laswell say_team(level.vo.var_f4dfefaed8808b90 deck_draw(), 1);
     timestamp = gettime();
     thread function_1c11a2950dae76a7(0.7, 0.25);
     flag_wait("vo_blocking_clear");
@@ -198,7 +198,7 @@ function function_55f59c2fe542a1de() {
         level.Nik say_team(level.vo.var_f4dff2aed8809229 deck_draw(), 1);
         thread function_1c11a2950dae76a7(0.7, 0.25);
         flag_wait("vo_blocking_clear");
-        level.Laswell say_team("dx_sp_jmlb_intr_lasw_roghardtowalkontoane", 1);
+        level.laswell say_team("dx_sp_jmlb_intr_lasw_roghardtowalkontoane", 1);
     }
     flag_set("vo_intro_complete");
 }
@@ -219,19 +219,19 @@ function function_cd1c141856757c32() {
     }
     thread function_1c11a2950dae76a7(0, 0.25);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_intr_lasw_yurishouldhavesentyo", 1);
+    level.laswell say_team("dx_sp_jmlb_intr_lasw_yurishouldhavesentyo", 1);
     thread function_1c11a2950dae76a7(0.5, 0.25);
     flag_wait("vo_blocking_clear");
     level.Nik say_team("dx_sp_jmlb_intr_niko_affirmativearklovadm", 1);
     thread function_1c11a2950dae76a7(0.5, 0.25);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_intr_lasw_copydishontheroof", 1);
+    level.laswell say_team("dx_sp_jmlb_intr_lasw_copydishontheroof", 1);
     thread function_1c11a2950dae76a7(0.5, 0.25);
     flag_wait("vo_blocking_clear");
     level.Nik say_team(level.vo.var_fa324e47a4f28751 deck_draw(), 1);
     thread function_1c11a2950dae76a7(0.5, 0.25);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team(level.vo.var_fa324d47a4f2851e deck_draw(), 1);
+    level.laswell say_team(level.vo.var_fa324d47a4f2851e deck_draw(), 1);
     thread function_1c11a2950dae76a7(0.5, 0.25);
     flag_wait("vo_blocking_clear");
     level.Nik say_team(level.vo.var_fa325047a4f28bb7 deck_draw(), 1);
@@ -250,7 +250,7 @@ function function_f2ffae8c74f88dde() {
     }
     thread function_1c11a2950dae76a7(0, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team(level.vo.var_e19567c63fcab477 deck_draw(), 1);
+    level.laswell say_team(level.vo.var_e19567c63fcab477 deck_draw(), 1);
     thread function_1c11a2950dae76a7(0.5, 0.15);
     flag_wait("vo_blocking_clear");
     level.Nik say_team(level.vo.var_eab13e7d7853ad1 deck_draw(), 1);
@@ -270,20 +270,20 @@ function function_5729a6df7fd10f13() {
     flag_set("vo_suppress_suspicion");
     thread function_1c11a2950dae76a7(0, 0.25);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_card_lasw_gotaproblemneedasecu", 1);
+    level.laswell say_team("dx_sp_jmlb_card_lasw_gotaproblemneedasecu", 1);
     thread function_1c11a2950dae76a7(0.5, 0.25);
     flag_wait("vo_blocking_clear");
     level.Nik say_team(level.vo.var_50b3c5ec7fae3234 deck_draw(), 1);
     thread function_1c11a2950dae76a7(1, 0.25);
     flag_wait("vo_blocking_clear");
     timestamp = gettime();
-    result = level.Laswell say_team(level.vo.var_a8fedfd250da3bc2 deck_draw(), 1);
+    result = level.laswell say_team(level.vo.var_a8fedfd250da3bc2 deck_draw(), 1);
     thread function_1c11a2950dae76a7(0.7, 0.25);
     flag_wait("vo_blocking_clear");
     if (istrue(result) == 0 || time_has_passed(timestamp, 6)) {
         return;
     }
-    level.Laswell say_team("dx_sp_jmlb_card_lasw_anyoneenteringorexit", 1);
+    level.laswell say_team("dx_sp_jmlb_card_lasw_anyoneenteringorexit", 1);
     thread function_1c11a2950dae76a7(0.6, 0.25);
     flag_wait("vo_blocking_clear");
     level.Nik say_team("dx_sp_jmlb_card_niko_goodcalllookforanoff", 1);
@@ -299,7 +299,7 @@ function function_39a46d271fddf188() {
     }
     thread function_1c11a2950dae76a7(0, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_card_lasw_iseeamajorleavingthe", 1);
+    level.laswell say_team("dx_sp_jmlb_card_lasw_iseeamajorleavingthe", 1);
     thread function_1c11a2950dae76a7(0.7, 0.15);
     flag_wait("vo_blocking_clear");
     level.Nik say_team(level.vo.var_a60ac0e297ae463b deck_draw(), 1);
@@ -321,19 +321,19 @@ function function_4f77d38ab53b78c0() {
 function function_2474b6ab7ddebaab() {
     thread function_1c11a2950dae76a7(0, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_card_lasw_targeteliminatedkeyc", 1, 1);
+    level.laswell say_team("dx_sp_jmlb_card_lasw_targeteliminatedkeyc", 1, 1);
     thread function_1c11a2950dae76a7(0.8, 0.15);
     flag_wait("vo_blocking_clear");
     level.Nik say_team("dx_sp_jmlb_card_niko_hetookonefortheteam", 1);
     thread function_1c11a2950dae76a7(0.6, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_card_lasw_hadtobedone", 0.9, 2);
+    level.laswell say_team("dx_sp_jmlb_card_lasw_hadtobedone", 0.9, 2);
     thread function_1c11a2950dae76a7(0.4, 0.15);
     flag_wait("vo_blocking_clear");
     level.Nik say_team("dx_sp_jmlb_card_niko_thatonesonmakarovnot", 1);
     thread function_1c11a2950dae76a7(0.8, 0.2);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_card_lasw_yuribettermakethiswo", 0.9, 2);
+    level.laswell say_team("dx_sp_jmlb_card_lasw_yuribettermakethiswo", 0.9, 2);
 }
 
 // Namespace namespace_e494424f3a96e848 / namespace_368694a19653433
@@ -344,14 +344,14 @@ function function_50e88508a1b3a727() {
     level.Nik say("dx_sp_jmlb_escp_niko_yankeetowatcherlaswe", 1, 1);
     thread function_1c11a2950dae76a7(0.8, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_escp_lasw_fornowmissileattackc", 1);
+    level.laswell say_team("dx_sp_jmlb_escp_lasw_fornowmissileattackc", 1);
     level.Nik say("dx_sp_jmlb_escp_niko_gettothehighgroundlo", 1, 1);
     if (flag("vo_gas_4")) {
         return;
     }
     thread function_1c11a2950dae76a7(0.6, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_escp_lasw_rogeronmyway", 1);
+    level.laswell say_team("dx_sp_jmlb_escp_lasw_rogeronmyway", 1);
 }
 
 // Namespace namespace_e494424f3a96e848 / namespace_368694a19653433
@@ -364,7 +364,7 @@ function function_ab947789152120e2() {
     }
     thread function_1c11a2950dae76a7(0, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team(level.vo.var_cfdb14c3784bc4c7 deck_draw(), 1);
+    level.laswell say_team(level.vo.var_cfdb14c3784bc4c7 deck_draw(), 1);
     level.Nik say("dx_sp_jmlb_escp_niko_circlingnowpeopleare", 1, 1);
 }
 
@@ -389,13 +389,13 @@ function function_5752c30310012c2f() {
 // Size: 0x172
 function function_29efd9f9273328c6() {
     if (isdefined(level.vo.var_74322a235813a483) == 0) {
-        level.vo.var_74322a235813a483 = create_deck([[level.Laswell, 0.6, "dx_sp_jmlb_escp_lasw_negativewewentsepara"], [level.Laswell, 0.7, "dx_sp_jmlb_escp_lasw_negativewesplitup"]], 1, 1);
+        level.vo.var_74322a235813a483 = create_deck([[level.laswell, 0.6, "dx_sp_jmlb_escp_lasw_negativewewentsepara"], [level.laswell, 0.7, "dx_sp_jmlb_escp_lasw_negativewesplitup"]], 1, 1);
     }
     if (isdefined(level.vo.var_5706c2778ea669d) == 0) {
         level.vo.var_5706c2778ea669d = create_deck([[level.Nik, 0.8, "dx_sp_jmlb_escp_niko_ihopehemakesit"], [level.Nik, 0.7, "dx_sp_jmlb_escp_niko_hesasurvivorlikeyou"]], 1, 1);
     }
-    var_95ca0e03d09df40c = [level.Nik, 0.5, "dx_sp_jmlb_escp_niko_isyuriwithyou", level.vo.var_74322a235813a483 deck_draw(), level.vo.var_5706c2778ea669d deck_draw()];
-    return level say_sequence(var_95ca0e03d09df40c, 1, 0);
+    escape_yuri = [level.Nik, 0.5, "dx_sp_jmlb_escp_niko_isyuriwithyou", level.vo.var_74322a235813a483 deck_draw(), level.vo.var_5706c2778ea669d deck_draw()];
+    return level say_sequence(escape_yuri, 1, 0);
 }
 
 // Namespace namespace_e494424f3a96e848 / namespace_368694a19653433
@@ -444,7 +444,7 @@ function function_c535089281bbdef1() {
         wait 0.1;
     }
     thread function_4b9f182f4435cad4();
-    level.Laswell say(level.vo.var_8be396006b1cdc6c deck_draw(), 1, 0.3);
+    level.laswell say(level.vo.var_8be396006b1cdc6c deck_draw(), 1, 0.3);
     wait 0.4;
     if (flag("vo_gas_8")) {
         return;
@@ -465,7 +465,7 @@ function function_c92fb4892b0d25eb() {
     }
     thread function_1c11a2950dae76a7(0, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team(level.vo.var_b8c70a04745d0f6 deck_draw(), 1);
+    level.laswell say_team(level.vo.var_b8c70a04745d0f6 deck_draw(), 1);
     wait 0.5;
     if (flag("vo_gas_10")) {
         return;
@@ -486,7 +486,7 @@ function function_67cc8ceb8dbc7061() {
 // Checksum 0x0, Offset: 0x5efd
 // Size: 0x58
 function function_36cd5a85f290c8ef() {
-    vo_officer_1_in = [[level.Laswell, "dx_sp_jmlb_card_lasw_majorsbreakingawayhe"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_couldbeagoodplacetoc"]];
+    vo_officer_1_in = [[level.laswell, "dx_sp_jmlb_card_lasw_majorsbreakingawayhe"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_couldbeagoodplacetoc"]];
     return level say_sequence(vo_officer_1_in, 1, 0);
 }
 
@@ -495,7 +495,7 @@ function function_36cd5a85f290c8ef() {
 // Checksum 0x0, Offset: 0x5f5e
 // Size: 0x58
 function function_6b8d9f94b222d874() {
-    vo_officer_1_out = [[level.Laswell, "dx_sp_jmlb_card_lasw_majorsheadingbackdow"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_adviseyouwaituntilhe"]];
+    vo_officer_1_out = [[level.laswell, "dx_sp_jmlb_card_lasw_majorsheadingbackdow"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_adviseyouwaituntilhe"]];
     return level say_sequence(vo_officer_1_out, 1, 0);
 }
 
@@ -504,7 +504,7 @@ function function_6b8d9f94b222d874() {
 // Checksum 0x0, Offset: 0x5fbf
 // Size: 0x58
 function function_7e4c38a3be37d1cc() {
-    vo_officer_2_in = [[level.Laswell, "dx_sp_jmlb_card_lasw_hesheadingtowardsane"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_ifitscleartakehimout"]];
+    vo_officer_2_in = [[level.laswell, "dx_sp_jmlb_card_lasw_hesheadingtowardsane"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_ifitscleartakehimout"]];
     return level say_sequence(vo_officer_2_in, 1, 0);
 }
 
@@ -513,7 +513,7 @@ function function_7e4c38a3be37d1cc() {
 // Checksum 0x0, Offset: 0x6020
 // Size: 0x58
 function function_a480481b1742edf9() {
-    vo_officer_2_out = [[level.Laswell, "dx_sp_jmlb_card_lasw_majorsleavingtheequi"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_keepyourdistancewait"]];
+    vo_officer_2_out = [[level.laswell, "dx_sp_jmlb_card_lasw_majorsleavingtheequi"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_keepyourdistancewait"]];
     return level say_sequence(vo_officer_2_out, 1, 0);
 }
 
@@ -522,7 +522,7 @@ function function_a480481b1742edf9() {
 // Checksum 0x0, Offset: 0x6081
 // Size: 0x58
 function function_e2a19ab98e3473a1() {
-    vo_officer_3_in = [[level.Laswell, "dx_sp_jmlb_card_lasw_majorsenteringthehan"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_takehimdownandgethis"]];
+    vo_officer_3_in = [[level.laswell, "dx_sp_jmlb_card_lasw_majorsenteringthehan"], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_takehimdownandgethis"]];
     return level say_sequence(vo_officer_3_in, 1, 0);
 }
 
@@ -534,7 +534,7 @@ function function_481f27137efdcb82() {
     if (isdefined(level.vo.officer_3_out) == 0) {
         level.vo.officer_3_out = create_deck(["dx_sp_jmlb_card_lasw_majorsexitingthehang", "dx_sp_jmlb_card_lasw_majorsleavingthegara"], 1, 1);
     }
-    vo_officer_3_out = [[level.Laswell, level.vo.officer_3_out deck_draw()], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_stayonhimlaswell"]];
+    vo_officer_3_out = [[level.laswell, level.vo.officer_3_out deck_draw()], [level.Nik, 0.5, "dx_sp_jmlb_card_niko_stayonhimlaswell"]];
     return level say_sequence(vo_officer_3_out, 1, 0);
 }
 
@@ -593,7 +593,7 @@ function private function_810716cd17f8dabb(entarray) {
 function function_9dfdd6a6e617ab0d() {
     var_5d14be1c9dbe6082 = istrue(level.vo.var_38c66843ef1f9b5c);
     sequence = ["dx_sp_jmlb_icdm_offc_statusupdateonthecom", "dx_sp_jmlb_icdm_rf01_upgradesarecurrently", "dx_sp_jmlb_icdm_offc_whenwillitbereadyfor", "dx_sp_jmlb_icdm_rf01_endofday"];
-    var_54ffae9aa0954e08 = ["dx_sp_jmlb_icdm_offc_fillmeinsoldier", "dx_sp_jmlb_icdm_rf02_inspectionscompletew", "dx_sp_jmlb_icdm_offc_goodkeepthemomentumg", "dx_sp_jmlb_icdm_rf02_yessir"];
+    sequence_alt = ["dx_sp_jmlb_icdm_offc_fillmeinsoldier", "dx_sp_jmlb_icdm_rf02_inspectionscompletew", "dx_sp_jmlb_icdm_offc_goodkeepthemomentumg", "dx_sp_jmlb_icdm_rf02_yessir"];
     soldier1 = getent("officer_meet_1", "script_noteworthy", 1);
     soldier1.var_36023fdce648d2ea = 1;
     soldier1 endon("death");
@@ -609,22 +609,22 @@ function function_9dfdd6a6e617ab0d() {
     if (function_442854a0e08362fa(soldier1, 1, 1) == 0) {
         return 0;
     }
-    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[0] : var_54ffae9aa0954e08[0]);
+    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[0] : sequence_alt[0]);
     wait 1.25;
     if (function_442854a0e08362fa(soldier1, 0, 1) == 0) {
         return 0;
     }
-    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[1] : var_54ffae9aa0954e08[1]);
+    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[1] : sequence_alt[1]);
     wait 1.2;
     if (function_442854a0e08362fa(soldier1, 1, 0) == 0) {
         return 0;
     }
-    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[2] : var_54ffae9aa0954e08[2]);
+    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[2] : sequence_alt[2]);
     wait 0.7;
     if (function_442854a0e08362fa(soldier1, 0, 1) == 0) {
         return 0;
     }
-    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[3] : var_54ffae9aa0954e08[3]);
+    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[3] : sequence_alt[3]);
     flag_clear("officer_conversation_1");
     soldier1 setlookatentity(level.player);
     level.officer setlookatentity(level.player);
@@ -642,7 +642,7 @@ function function_9dfdd6a6e617ab0d() {
 function function_9dfdd3a6e617a474() {
     var_5d14be1c9dbe6082 = istrue(level.vo.var_38c66843ef1f9b5c);
     sequence = ["dx_sp_jmlb_icdm_offc_isthesupplyshipmenta", "dx_sp_jmlb_icdm_ru01_affirmative", "dx_sp_jmlb_icdm_offc_eta", "dx_sp_jmlb_icdm_ru01_weshouldseethembysun"];
-    var_54ffae9aa0954e08 = ["dx_sp_jmlb_icdm_offc_thosedrillsneedtobep", "dx_sp_jmlb_icdm_ru01_yessir", "dx_sp_jmlb_icdm_offc_illneedafullreport", "dx_sp_jmlb_icdm_ru01_ofcourseitllbeonyour"];
+    sequence_alt = ["dx_sp_jmlb_icdm_offc_thosedrillsneedtobep", "dx_sp_jmlb_icdm_ru01_yessir", "dx_sp_jmlb_icdm_offc_illneedafullreport", "dx_sp_jmlb_icdm_ru01_ofcourseitllbeonyour"];
     soldier1 = getent("officer_meet_2", "script_noteworthy", 1);
     soldier1.var_36023fdce648d2ea = 1;
     soldier1 endon("death");
@@ -658,21 +658,21 @@ function function_9dfdd3a6e617a474() {
         return 0;
     }
     wait 1.25;
-    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[0] : var_54ffae9aa0954e08[0]);
+    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[0] : sequence_alt[0]);
     wait 0.6;
     if (function_442854a0e08362fa(soldier1, 0, 1) == 0) {
         return 0;
     }
-    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[1] : var_54ffae9aa0954e08[1]);
+    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[1] : sequence_alt[1]);
     wait 0.7;
     if (function_442854a0e08362fa(soldier1, 1, 0) == 0) {
         return 0;
     }
-    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[2] : var_54ffae9aa0954e08[2]);
+    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[2] : sequence_alt[2]);
     if (function_442854a0e08362fa(soldier1, 0, 1) == 0) {
         return 0;
     }
-    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[3] : var_54ffae9aa0954e08[3]);
+    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[3] : sequence_alt[3]);
     flag_clear("officer_conversation_2");
     soldier1 setlookatentity(level.player);
     level.officer setlookatentity(level.player);
@@ -690,7 +690,7 @@ function function_9dfdd3a6e617a474() {
 function function_9dfdd4a6e617a6a7() {
     var_5d14be1c9dbe6082 = istrue(level.vo.var_38c66843ef1f9b5c);
     sequence = ["dx_sp_jmlb_icdm_offc_iwantastatusupdate", "dx_sp_jmlb_icdm_ru01_finishingupsoon", "dx_sp_jmlb_icdm_offc_whenshouldiexpectit", "dx_sp_jmlb_icdm_ru01_1900atthelatest"];
-    var_54ffae9aa0954e08 = ["dx_sp_jmlb_icdm_offc_whatsthelatest", "dx_sp_jmlb_icdm_ru02_thegeneralgreenlitou", "dx_sp_jmlb_icdm_offc_goodkeeponschedule", "dx_sp_jmlb_icdm_ru02_copy"];
+    sequence_alt = ["dx_sp_jmlb_icdm_offc_whatsthelatest", "dx_sp_jmlb_icdm_ru02_thegeneralgreenlitou", "dx_sp_jmlb_icdm_offc_goodkeeponschedule", "dx_sp_jmlb_icdm_ru02_copy"];
     soldier1 = getent("officer_meet_3", "script_noteworthy", 1);
     soldier1.var_36023fdce648d2ea = 1;
     soldier1 endon("death");
@@ -709,22 +709,22 @@ function function_9dfdd4a6e617a6a7() {
     }
     soldier1 setlookatentity(level.officer);
     level.officer setlookatentity(soldier1);
-    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[0] : var_54ffae9aa0954e08[0]);
+    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[0] : sequence_alt[0]);
     wait 0.75;
     if (function_442854a0e08362fa(soldier1, 0, 1) == 0) {
         return 0;
     }
-    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[1] : var_54ffae9aa0954e08[1]);
+    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[1] : sequence_alt[1]);
     wait 1.25;
     if (function_442854a0e08362fa(soldier1, 1, 0) == 0) {
         return 0;
     }
-    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[2] : var_54ffae9aa0954e08[2]);
+    currentline = level.officer say(var_5d14be1c9dbe6082 == 0 ? sequence[2] : sequence_alt[2]);
     wait 0.75;
     if (function_442854a0e08362fa(soldier1, 0, 1) == 0) {
         return 0;
     }
-    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[3] : var_54ffae9aa0954e08[3]);
+    currentline = soldier1 say(var_5d14be1c9dbe6082 == 0 ? sequence[3] : sequence_alt[3]);
     flag_clear("officer_conversation_3");
     soldier1 setlookatentity(level.player);
     level.officer setlookatentity(level.player);
@@ -770,7 +770,7 @@ function function_346fa52676920c09() {
             }
             result = level.Nik function_fc0eb6b81c66c661(0.3, level.vo.var_46b934600d05c4be deck_draw(), 0, 2);
             if (istrue(result) && flag("officer_dead") == 0) {
-                level.Laswell function_fc0eb6b81c66c661(0.5, level.vo.var_6d50f530ac495744 deck_draw(), 0, 2);
+                level.laswell function_fc0eb6b81c66c661(0.5, level.vo.var_6d50f530ac495744 deck_draw(), 0, 2);
             }
         }
     }
@@ -839,7 +839,7 @@ function function_dd37afb56087641b() {
         if (flag("ready_for_yuri") == 1 || istrue(result) == 0) {
             return;
         }
-        level.Laswell say_team("dx_sp_jmlb_card_lasw_movingnow", 0);
+        level.laswell say_team("dx_sp_jmlb_card_lasw_movingnow", 0);
         waitfor(delay);
     }
 }
@@ -850,14 +850,14 @@ function function_dd37afb56087641b() {
 // Size: 0x1fd
 function function_f2b43508e695e9c8() {
     if (isdefined(level.vo.var_1dc7663d5658926a) == 0) {
-        level.vo.var_1dc7663d5658926a = create_deck([[level.Laswell, "dx_sp_jmlb_intr_lasw_standbysoldierspassi"], [level.Laswell, "dx_sp_jmlb_intr_lasw_gottroopspassingme"], [level.Laswell, "dx_sp_jmlb_intr_lasw_squadapproachingstan"]], 1, 1);
+        level.vo.var_1dc7663d5658926a = create_deck([[level.laswell, "dx_sp_jmlb_intr_lasw_standbysoldierspassi"], [level.laswell, "dx_sp_jmlb_intr_lasw_gottroopspassingme"], [level.laswell, "dx_sp_jmlb_intr_lasw_squadapproachingstan"]], 1, 1);
     }
     if (isdefined(level.vo.var_1dc7653d56589037) == 0) {
         level.vo.var_1dc7653d56589037 = create_deck([[level.Nik, 0.5, "dx_sp_jmlb_intr_niko_besttokeepyourdistan"], [level.Nik, 0.5, "dx_sp_jmlb_intr_niko_theyvenoreasontosusp"], [level.Nik, 0.5, "dx_sp_jmlb_intr_niko_actnaturallylaswell"]], 1, 1);
     }
-    aliases = [level.vo.var_1dc7663d5658926a deck_draw(), level.vo.var_1dc7653d56589037 deck_draw(), [level.Laswell, 0.5, "dx_sp_jmlb_intr_lasw_imaspynikthatshowiro"], [level.Nik, 0.5, "dx_sp_jmlb_intr_niko_ofcoursestillthisisc"], [level.Laswell, 0.5, "dx_sp_jmlb_intr_lasw_wereallalittlecrazyn"]];
+    aliases = [level.vo.var_1dc7663d5658926a deck_draw(), level.vo.var_1dc7653d56589037 deck_draw(), [level.laswell, 0.5, "dx_sp_jmlb_intr_lasw_imaspynikthatshowiro"], [level.Nik, 0.5, "dx_sp_jmlb_intr_niko_ofcoursestillthisisc"], [level.laswell, 0.5, "dx_sp_jmlb_intr_lasw_wereallalittlecrazyn"]];
     wait 1.25;
-    return level.Laswell say_sequence(aliases, 0.5, 0);
+    return level.laswell say_sequence(aliases, 0.5, 0);
 }
 
 // Namespace namespace_e494424f3a96e848 / namespace_368694a19653433
@@ -871,15 +871,15 @@ function function_c5425b5ce819b3d2() {
     if (flag("spawn_small_heli") == 1) {
         return;
     }
-    sequence = [level.Nik, 0, "dx_sp_jmlb_intr_niko_whereareyoulaswell", level.Laswell, 0.5, "dx_sp_jmlb_intr_lasw_lookingfortheadminbu", level.Nik, 0.5, "dx_sp_jmlb_intr_niko_twostoriessatellited", level.Nik, 0.8, "dx_sp_jmlb_intr_niko_nexttothehangerthere", level.Nik, 1.5, "dx_sp_jmlb_intr_niko_flagsovertheslidingg"];
+    sequence = [level.Nik, 0, "dx_sp_jmlb_intr_niko_whereareyoulaswell", level.laswell, 0.5, "dx_sp_jmlb_intr_lasw_lookingfortheadminbu", level.Nik, 0.5, "dx_sp_jmlb_intr_niko_twostoriessatellited", level.Nik, 0.8, "dx_sp_jmlb_intr_niko_nexttothehangerthere", level.Nik, 1.5, "dx_sp_jmlb_intr_niko_flagsovertheslidingg"];
     level say_sequence(sequence, 1, 1);
     options = ["dx_sp_jmlb_intr_lasw_checkrooftopsatellit", "dx_sp_jmlb_intr_lasw_copyglassdoorsflagsa"];
-    result = level.Laswell say_delayed(1, random(options), 0.5, 2);
+    result = level.laswell say_delayed(1, random(options), 0.5, 2);
     wait 2;
     var_28265f486074243d = flag("spawn_small_heli") == 0;
     if (istrue(result) && var_28265f486074243d) {
-        var_fc65b5749bf4cc45 = [level.Laswell, 0, "dx_sp_jmlb_intr_lasw_yurididntmakethiseas", level.Nik, 0.75, "dx_sp_jmlb_intr_niko_itsatest", level.Laswell, 1, "dx_sp_jmlb_intr_lasw_whatisnt"];
-        level say_sequence(var_fc65b5749bf4cc45, 1, 1);
+        sequence_extra = [level.laswell, 0, "dx_sp_jmlb_intr_lasw_yurididntmakethiseas", level.Nik, 0.75, "dx_sp_jmlb_intr_niko_itsatest", level.laswell, 1, "dx_sp_jmlb_intr_lasw_whatisnt"];
+        level say_sequence(sequence_extra, 1, 1);
     }
 }
 
@@ -897,7 +897,7 @@ function function_b02ccd95322149d7() {
     delay = growing_delay(30, 60, 3);
     wait 20;
     while (true) {
-        while (function_6c31b0b0edd184ed([level.Laswell, level.Nik], 4) == 1) {
+        while (function_6c31b0b0edd184ed([level.laswell, level.Nik], 4) == 1) {
             wait 1;
         }
         if (flag("intel_reached") == 1 || flag("obj_yuri_completed") == 1 || flag("escape_sequence_start") == 1) {
@@ -916,7 +916,7 @@ function function_b02ccd95322149d7() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x747c
 // Size: 0x104
-function function_8e6cdcb38cba82c3() {
+function vo_combat() {
     if (isdefined(level.vo.combat_started) == 0) {
         level.vo.combat_started = create_deck(["dx_sp_jmlb_glob_lasw_contact", "dx_sp_jmlb_glob_lasw_engaging", "dx_sp_jmlb_glob_lasw_goinhot", "dx_sp_jmlb_glob_lasw_firing"], 1, 1);
     }
@@ -931,7 +931,7 @@ function function_8e6cdcb38cba82c3() {
         if (flag("escape_sequence_start")) {
             return;
         }
-        level.Laswell say(level.vo.combat_started deck_draw(), 2, 1);
+        level.laswell say(level.vo.combat_started deck_draw(), 2, 1);
     }
 }
 
@@ -939,14 +939,14 @@ function function_8e6cdcb38cba82c3() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7588
 // Size: 0x151
-function function_2629e9da4877ee24() {
+function vo_spotted() {
     if (isdefined(level.vo.var_f51be24087ee9b71) == 0) {
         level.vo.var_f51be24087ee9b71 = create_deck(["dx_sp_jmlb_glob_lasw_shittheyreontome", "dx_sp_jmlb_glob_lasw_theyseeme", "dx_sp_jmlb_glob_lasw_havetoshaketheseguys", "dx_sp_jmlb_glob_lasw_imcompromised", "dx_sp_jmlb_glob_lasw_coversblown", "dx_sp_jmlb_glob_lasw_theyspottedmetakingf", "dx_sp_jmlb_glob_lasw_immade"], 1, 1);
     }
     if (isdefined(level.vo.var_9802d1e40164f68b) == 0) {
         level.vo.var_9802d1e40164f68b = create_deck(["dx_sp_jmlb_glob_niko_repositionandtrytolo", "dx_sp_jmlb_glob_niko_findcoverlaswell", "dx_sp_jmlb_glob_niko_getoutoftherewatcher", "dx_sp_jmlb_glob_niko_gettosafetylaswell", "dx_sp_jmlb_glob_niko_movelaswellbeforethe"], 1, 1);
     }
-    result = level.Laswell say(level.vo.var_f51be24087ee9b71 deck_draw(), 1, 1, 1);
+    result = level.laswell say(level.vo.var_f51be24087ee9b71 deck_draw(), 1, 1, 1);
     wait 0.5;
     if (istrue(result)) {
         level.Nik say(level.vo.var_9802d1e40164f68b deck_draw(), 1, 1, 1);
@@ -968,7 +968,7 @@ function function_4c9de23a4ed31bac() {
     if (isdefined(level.vo.var_30891b5f99ad2b2b) == 0) {
         level.vo.var_30891b5f99ad2b2b = create_deck(["dx_sp_jmlb_glob_niko_keepgoingdontgetcomp", "dx_sp_jmlb_glob_niko_dontgetmadelaswell", "dx_sp_jmlb_glob_niko_trytoreposition", "dx_sp_jmlb_glob_niko_dontmakeanysuddenmov", "dx_sp_jmlb_glob_niko_trytoresistdoinganyt", "dx_sp_jmlb_glob_niko_ifyougoloudtheyllkil", "dx_sp_jmlb_glob_niko_dontgoloudwatcherthe", "dx_sp_jmlb_glob_niko_onceyougoloudyoucant", "dx_sp_jmlb_glob_niko_ifyougoloudshitmayhi", "dx_sp_jmlb_glob_niko_ifyougohotitmaystayh", "dx_sp_jmlb_glob_niko_yourenothereforagunf", "dx_sp_jmlb_glob_niko_adviseyoustayunderth"], 1, 1);
     }
-    result = level.Laswell say(level.vo.var_269786c4b6bde411 deck_draw(), 1, 1);
+    result = level.laswell say(level.vo.var_269786c4b6bde411 deck_draw(), 1, 1);
     wait 0.5;
     if (istrue(result) && function_6c31b0b0edd184ed([level.Nik], 3) == 0) {
         level.Nik say(level.vo.var_30891b5f99ad2b2b deck_draw(), 0, 1);
@@ -997,7 +997,7 @@ function function_b793a5f9451957d5() {
         if (flag("escape_sequence_start")) {
             return;
         }
-        result = level.Laswell say_team(level.vo.enemy_killed deck_draw(), 0.5, 1, 1, 0.4);
+        result = level.laswell say_team(level.vo.enemy_killed deck_draw(), 0.5, 1, 1, 0.4);
         wait 5;
     }
 }
@@ -1017,14 +1017,14 @@ function function_40a70bdc1e21d8e6() {
         wait 0.5;
     }
     sequence = [level.vo.var_768fdc0d4efd6505 deck_draw(), level.Nik, 0.5, level.vo.var_c5fa8c929b97df3f deck_draw()];
-    level.Laswell say_sequence(sequence, 0, 1);
+    level.laswell say_sequence(sequence, 0, 1);
 }
 
 // Namespace namespace_e494424f3a96e848 / namespace_368694a19653433
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7bb6
 // Size: 0x4b
-function function_d3e99bb6a731a507() {
+function vo_death() {
     var_57a5ca219946e29f = create_deck(["dx_sp_jmlb_glob_niko_laswellareyouthere", "dx_sp_jmlb_glob_niko_laswellcomeinlaswell", "dx_sp_jmlb_glob_niko_laswellhowcopyareyou"], 1, 1);
     level say(var_57a5ca219946e29f deck_draw(), 2, 0.5, 1);
 }
@@ -1034,12 +1034,12 @@ function function_d3e99bb6a731a507() {
 // Checksum 0x0, Offset: 0x7c09
 // Size: 0xe3
 function function_1bbd596081a62ad5() {
-    level.Laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_adminparkinglotsonth");
-    level.Laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_seetheadminbuildingo");
-    level.Laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_seetheadminbuildingo_01");
-    level.Laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_eyesontheadminbuildi_01");
-    level.Laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_adminbuildingsrightb");
-    level.Laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_onthemainpathseethea");
+    level.laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_adminparkinglotsonth");
+    level.laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_seetheadminbuildingo");
+    level.laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_seetheadminbuildingo_01");
+    level.laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_eyesontheadminbuildi_01");
+    level.laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_adminbuildingsrightb");
+    level.laswell function_fc0eb6b81c66c661(0, "dx_sp_jmlb_glob_lasw_onthemainpathseethea");
     var_57a5ca219946e29f = create_deck(["dx_sp_jmlb_glob_niko_copy", "dx_sp_jmlb_glob_niko_soundsgoodgettherequ", "dx_sp_jmlb_glob_niko_enterquicklyyuriswai", "dx_sp_jmlb_glob_niko_copythat", "dx_sp_jmlb_glob_niko_makeyourwayin"], 1, 1);
     level.Nik say_team(var_57a5ca219946e29f deck_draw(), 0, 1);
 }
@@ -1054,7 +1054,7 @@ function vo_coughing() {
     }
     flag_set("vo_coughing");
     wait randomfloat(0.3) + 0.1;
-    level.Laswell say(level.vo.var_5ca5400a1455ebd3 deck_draw(), 0, 1);
+    level.laswell say(level.vo.var_5ca5400a1455ebd3 deck_draw(), 0, 1);
     flag_clear("vo_coughing");
 }
 
@@ -1063,11 +1063,11 @@ function vo_coughing() {
 // Checksum 0x0, Offset: 0x7db8
 // Size: 0xa0
 function function_26981e4b4ad3721a() {
-    if (isdefined(level.vo.var_ad212920141ce097) == 0) {
-        level.vo.var_ad212920141ce097 = create_deck(["dx_sp_jmlb_card_offc_whoareyouidentifyyou", "dx_sp_jmlb_card_offc_showmeyouridsoldier", "dx_sp_jmlb_card_offc_heyyoufollowingmemaa", "dx_sp_jmlb_card_offc_youwhatsyourbusiness", "dx_sp_jmlb_card_offc_showmeyouridentifica"], 1, 1);
+    if (isdefined(level.vo.major_aggro) == 0) {
+        level.vo.major_aggro = create_deck(["dx_sp_jmlb_card_offc_whoareyouidentifyyou", "dx_sp_jmlb_card_offc_showmeyouridsoldier", "dx_sp_jmlb_card_offc_heyyoufollowingmemaa", "dx_sp_jmlb_card_offc_youwhatsyourbusiness", "dx_sp_jmlb_card_offc_showmeyouridentifica"], 1, 1);
     }
     if (isdefined(level.officer)) {
-        level.officer say_team(level.vo.var_ad212920141ce097 deck_draw(), 0, 1);
+        level.officer say_team(level.vo.major_aggro deck_draw(), 0, 1);
     }
 }
 
@@ -1076,7 +1076,7 @@ function function_26981e4b4ad3721a() {
 // Checksum 0x0, Offset: 0x7e60
 // Size: 0x25
 function function_4f631b41706e6270() {
-    level.Laswell say_team("dx_sp_jmlb_glob_lasw_hesdown", 1, 0.5, 1, 0.4);
+    level.laswell say_team("dx_sp_jmlb_glob_lasw_hesdown", 1, 0.5, 1, 0.4);
 }
 
 // Namespace namespace_e494424f3a96e848 / namespace_368694a19653433
@@ -1089,16 +1089,16 @@ function function_4330f0ff1be9a2b() {
     }
     thread function_1c11a2950dae76a7(0, 0.15);
     flag_wait("vo_blocking_clear");
-    level.Laswell say_team("dx_sp_jmlb_entr_lasw_imin", 1);
+    level.laswell say_team("dx_sp_jmlb_entr_lasw_imin", 1);
     thread function_1c11a2950dae76a7(0.5, 0.15);
     flag_wait("vo_blocking_clear");
     level.Nik say_team(level.vo.var_c7784938489c22bb deck_draw(), 1);
-    var_7672d192033a606 = getstruct("obj_yuri_meet", "targetname");
+    yuri_struct = getstruct("obj_yuri_meet", "targetname");
     thread function_1c11a2950dae76a7(0.6, 0.15);
     flag_wait("vo_blocking_clear");
-    var_4bb70fcfe28df803 = distance_2d_squared(level.player.origin, var_7672d192033a606.origin);
+    var_4bb70fcfe28df803 = distance_2d_squared(level.player.origin, yuri_struct.origin);
     if (var_4bb70fcfe28df803 > 40000) {
-        level.Laswell say_team("dx_sp_jmlb_entr_lasw_downthehallrightofth", 1);
+        level.laswell say_team("dx_sp_jmlb_entr_lasw_downthehallrightofth", 1);
     }
 }
 
@@ -1112,13 +1112,13 @@ function function_3f9c9aafcd751ff1() {
     if (isdefined(level.vo.var_c79b353848c23e77) == 0) {
         level.vo.var_c79b353848c23e77 = create_deck(["dx_sp_jmlb_entr_niko_laswellyuriwaitingan", "dx_sp_jmlb_entr_niko_yurisaysheswaitingho", "dx_sp_jmlb_entr_niko_laswellwhatsyourstat"], 1, 1);
     }
-    var_7672d192033a606 = getstruct("obj_yuri_meet", "targetname");
+    yuri_struct = getstruct("obj_yuri_meet", "targetname");
     delay = growing_delay(10, 30, 3);
     wait 10;
     while (!flag("obj_yuri_completed")) {
         if (function_e9e38931019c791f() == 1) {
             wait 0.5;
-        } else if (isdefined(var_7672d192033a606) && distance_2d_squared(level.player.origin, var_7672d192033a606.origin) > 22500) {
+        } else if (isdefined(yuri_struct) && distance_2d_squared(level.player.origin, yuri_struct.origin) > 22500) {
             result = level.Nik say_team(level.vo.var_c79b353848c23e77 deck_draw(), 0, 0);
             if (istrue(result)) {
                 waitfor(delay);
@@ -1136,7 +1136,7 @@ function function_b8d0983186d43b3e() {
     if (isdefined(level.vo.var_210c5c962c98bd48) == 0) {
         level.vo.var_210c5c962c98bd48 = create_deck(["dx_sp_jmlb_entr_lasw_founditgoinin", "dx_sp_jmlb_entr_lasw_gotit", "dx_sp_jmlb_entr_lasw_makinentry", "dx_sp_jmlb_entr_lasw_imtherenikout"], 1, 1);
     }
-    level.Laswell say_team(level.vo.var_210c5c962c98bd48 deck_draw(), 1, 0);
+    level.laswell say_team(level.vo.var_210c5c962c98bd48 deck_draw(), 1, 0);
 }
 
 // Namespace namespace_e494424f3a96e848 / namespace_368694a19653433
@@ -1257,7 +1257,7 @@ function function_d02f2011fc113e3c(ent) {
     }
     level.vo.var_86838cbbb9e37b5c = gettime();
     if (function_bdd7b496380aa8e3(ent, 1) == 0) {
-        thread function_2629e9da4877ee24();
+        thread vo_spotted();
     }
     wait 5;
     if (time_has_passed(level.vo.var_86838cbbb9e37b5c, 4)) {
@@ -1314,7 +1314,7 @@ function private function_144ef2320016a2c6(ent) {
 // Checksum 0x0, Offset: 0x89dc
 // Size: 0x103
 function private function_3da7d0ca9612546a(ent1, ent2, distance) {
-    if (flag("flag_alarm") || ent1 getthreatsight(level.player) > 0.1 || ent2 getthreatsight(level.player) > 0.1 || level.player function_6c31b0b0edd184ed([level.Laswell, level.Nik], 1)) {
+    if (flag("flag_alarm") || ent1 getthreatsight(level.player) > 0.1 || ent2 getthreatsight(level.player) > 0.1 || level.player function_6c31b0b0edd184ed([level.laswell, level.Nik], 1)) {
         return false;
     }
     var_91df0db5f21b5479 = distance * distance;

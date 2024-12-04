@@ -1,19 +1,19 @@
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_56ef8d52fe1b48a1;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\stealth\event.gsc;
-#using scripts\cp\powers\coop_molotov.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\powers\coop_molotov;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\stealth\event;
 
 #namespace carriable;
 
@@ -984,7 +984,7 @@ function carriable_physics_launch_drop(force, droppingplayer, spawnorigin) {
 // Size: 0x18e
 function carriable_set_dropped(skip_physics) {
     var_cd8246fc3bc0c25e = 40;
-    var_a946a1ee1cae62fc = 11;
+    drop_height_offset = 11;
     var_c0bd1ff563abb64 = 7.1;
     if (!isdefined(skip_physics)) {
         skip_physics = 0;
@@ -1003,7 +1003,7 @@ function carriable_set_dropped(skip_physics) {
     }
     angles = (0, dropangles[1], 0);
     forward = anglestoforward(angles);
-    droporigin += (0, 0, var_a946a1ee1cae62fc) + var_c0bd1ff563abb64 * forward;
+    droporigin += (0, 0, drop_height_offset) + var_c0bd1ff563abb64 * forward;
     self.origin = droporigin;
     self.angles = dropangles;
     self show();

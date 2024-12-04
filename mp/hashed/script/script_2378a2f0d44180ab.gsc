@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_3ed005fe9b78b9da;
 #using script_39ae84cf3eeebf70;
-#using scripts\mp\hud_util.gsc;
+#using script_3ed005fe9b78b9da;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\player;
 
 #namespace namespace_453c1f3aa94ee884;
 
@@ -230,18 +230,18 @@ function moveforward(ent, velocity) {
     ent endon("entitydeleted");
     fwd = vectornormalize(velocity);
     speed = 512;
-    var_3e7338e65fc87a52 = 20;
+    steer_speed = 20;
     step = 0.1;
     speed *= step;
-    var_3e7338e65fc87a52 *= step;
+    steer_speed *= step;
     if (isdedicatedserver()) {
         speed *= 1.3;
-        var_3e7338e65fc87a52 *= 1.3;
+        steer_speed *= 1.3;
     }
     angle = self.angles;
     while (isdefined(ent)) {
         movementinput = self getnormalizedmovement();
-        angle = (angle[0], angle[1] + -1 * var_3e7338e65fc87a52 * movementinput[1], angle[2]);
+        angle = (angle[0], angle[1] + -1 * steer_speed * movementinput[1], angle[2]);
         fwd = vectornormalize(anglestoforward(angle));
         nextorigin = ent.origin + speed * fwd;
         z = getclosestpointonnavmesh(nextorigin)[2];
@@ -278,9 +278,9 @@ function function_78d3415066a09a6d(slidevelocity) {
         lerpfraction = timepassed / lerpduration;
         if (getdvarint(@"hash_448f23d737dbbc82", 0) == 1) {
             movementinput = self getnormalizedmovement();
-            var_c16bc67bd886698f = 100 * movementinput[1] * vectornormalize(anglestoright(self.var_ae387c36d115328f.angles));
+            velocity_right = 100 * movementinput[1] * vectornormalize(anglestoright(self.var_ae387c36d115328f.angles));
             self.var_ae387c36d115328f.slidevelocity = (slidevelocity[0] + movementinput[0], slidevelocity[1], self.var_ae387c36d115328f.slidevelocity[2]);
-            self.var_ae387c36d115328f.slidevelocity += var_c16bc67bd886698f;
+            self.var_ae387c36d115328f.slidevelocity += velocity_right;
         }
         /#
             sphere(self.var_ae387c36d115328f.origin, 16, (1, 1, 1), 0, 1);

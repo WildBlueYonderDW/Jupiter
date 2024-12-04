@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
 #using script_53651341190c5aab;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm_bb;
+#using scripts\engine\utility;
 
 #namespace namespace_3f720e0f50e8409f;
 

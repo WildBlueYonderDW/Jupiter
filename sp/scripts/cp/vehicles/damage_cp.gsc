@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
+#using script_293bc33bd79cabd1;
 #using script_354c862768cfe202;
 #using script_6f1e07ce9ff97d5f;
-#using script_293bc33bd79cabd1;
-#using scripts\cp\cp_challenge.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp\challenges_cp.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp\challenges_cp;
+#using scripts\cp\cp_challenge;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
-#namespace namespace_244c40b3fb8b581a;
+#namespace damage_cp;
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa48
 // Size: 0x3a
@@ -27,7 +27,7 @@ function init() {
     init_emp_damage_data();
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa8a
 // Size: 0x98
@@ -42,7 +42,7 @@ function init_damage_callback_data() {
     level.vehicles.damagecallbacks = data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb2a
 // Size: 0x64
@@ -52,7 +52,7 @@ function get_pre_mod_damage_callback(ref) {
     return level.vehicles.damagecallbacks.premoddamagecallbacks[ref];
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb97
 // Size: 0x64
@@ -62,7 +62,7 @@ function get_post_mod_damage_callback(ref) {
     return level.vehicles.damagecallbacks.postmoddamagecallbacks[ref];
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc04
 // Size: 0x64
@@ -72,7 +72,7 @@ function get_death_callback(ref) {
     return level.vehicles.damagecallbacks.deathcallbacks[ref];
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc71
 // Size: 0x6e
@@ -82,7 +82,7 @@ function set_pre_mod_damage_callback(ref, func) {
     level.vehicles.damagecallbacks.premoddamagecallbacks[ref] = func;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xce7
 // Size: 0x6e
@@ -92,7 +92,7 @@ function set_post_mod_damage_callback(ref, func) {
     level.vehicles.damagecallbacks.postmoddamagecallbacks[ref] = func;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd5d
 // Size: 0x6e
@@ -102,7 +102,7 @@ function set_death_callback(ref, func) {
     level.vehicles.damagecallbacks.deathcallbacks[ref] = func;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 14, eflags: 0x0
 // Checksum 0x0, Offset: 0xdd3
 // Size: 0x100
@@ -117,7 +117,7 @@ function callback_vehicledamage(inflictor, attacker, damage, dflags, meansofdeat
     callback_vehicledamage_internal(data);
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xedb
 // Size: 0xc46
@@ -289,7 +289,7 @@ function callback_vehicledamage_internal(data) {
     self vehicle_finishdamage(data.inflictor, data.attacker, int(data.damage), data.damageflags, data.meansofdeath, data.objweapon, data.point, data.direction_vec, data.hitloc, data.timeoffset, data.modelname, data.attachtagname, data.partname);
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b29
 // Size: 0x10c
@@ -314,7 +314,7 @@ function function_b08e7b7b01f8fb2b(data) {
     }
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c3d
 // Size: 0x9a
@@ -338,7 +338,7 @@ function callback_vehicledeath(data) {
     self notify("death");
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cdf
 // Size: 0x73
@@ -352,7 +352,7 @@ function init_mod_damage_data() {
     data.attachments = [];
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d5a
 // Size: 0x3a
@@ -361,7 +361,7 @@ function get_mod_damage(damage, vehicle, objweapon, attacker) {
     return damage * modifier;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d9d
 // Size: 0x2dc
@@ -429,7 +429,7 @@ function get_mod_damage_modifier(vehicle, objweapon, attacker) {
     return modifier + var_8ad585800c7b3bc6;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2082
 // Size: 0xbb
@@ -446,7 +446,7 @@ function get_vehicle_mod_damage_data(ref, create) {
     return data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2146
 // Size: 0x95
@@ -460,7 +460,7 @@ function get_weapon_class_mod_damage_data(ref, create) {
     return data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x21e4
 // Size: 0x95
@@ -474,7 +474,7 @@ function get_perk_mod_damage_data(ref, create) {
     return data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2282
 // Size: 0x95
@@ -488,7 +488,7 @@ function get_attachment_mod_damage_data(ref, create) {
     return data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2320
 // Size: 0x5e
@@ -501,7 +501,7 @@ function set_weapon_class_mod_damage_data(ref, mod, var_21e99fcec7e19345) {
     data.ismultiplicative = var_21e99fcec7e19345;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2386
 // Size: 0xa4
@@ -520,7 +520,7 @@ function set_weapon_class_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e1
     vehicledata.weaponclassdata[ref] = data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2432
 // Size: 0x5e
@@ -533,7 +533,7 @@ function set_perk_mod_damage_data(ref, mod, var_21e99fcec7e19345) {
     data.ismultiplicative = var_21e99fcec7e19345;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2498
 // Size: 0xa4
@@ -552,7 +552,7 @@ function set_perk_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e19345, ve
     vehicledata.perkdata[ref] = data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2544
 // Size: 0x5e
@@ -565,7 +565,7 @@ function set_attachment_mod_damage_data(ref, mod, var_21e99fcec7e19345) {
     data.ismultiplicative = var_21e99fcec7e19345;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x25aa
 // Size: 0xa4
@@ -584,7 +584,7 @@ function set_attachment_mod_damage_data_for_vehicle(ref, mod, var_21e99fcec7e193
     vehicledata.attachmentdata[ref] = data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2656
 // Size: 0x2d
@@ -595,7 +595,7 @@ function create_mod_damage_data_empty() {
     return data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x268c
 // Size: 0x59
@@ -607,7 +607,7 @@ function init_hit_damage_data() {
     data.weapons = [];
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x26ed
 // Size: 0x112
@@ -633,7 +633,7 @@ function get_hit_damage(damage, vehicle, objweapon) {
     return damage;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2808
 // Size: 0xbb
@@ -650,7 +650,7 @@ function get_vehicle_hit_damage_data(ref, create) {
     return data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x28cc
 // Size: 0xbb
@@ -667,7 +667,7 @@ function get_weapon_hit_damage_data(ref, create) {
     return data;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2990
 // Size: 0x45
@@ -677,7 +677,7 @@ function set_vehicle_hit_damage_data(ref, hitstokill) {
     data.hitstokill = hitstokill;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x29dd
 // Size: 0x63
@@ -688,7 +688,7 @@ function set_vehicle_hit_damage_data_for_weapon(ref, hitstokill, weaponref) {
     weapondata.vehiclehitstokill[ref] = hitstokill;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a48
 // Size: 0x45
@@ -698,7 +698,7 @@ function set_weapon_hit_damage_data(ref, hitsperattack) {
     data.hitsperattack = hitsperattack;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a95
 // Size: 0x63
@@ -709,7 +709,7 @@ function set_weapon_hit_damage_data_for_vehicle(ref, hitsperattack, vehicleref) 
     vehicledata.weaponhitsperattack[ref] = hitsperattack;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b00
 // Size: 0x7d
@@ -721,7 +721,7 @@ function function_d508766fa2962e37(weap_name) {
     level.vehicles.var_39e472cc91e9a780 = array_add(level.vehicles.var_39e472cc91e9a780, weap_name);
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b85
 // Size: 0x101
@@ -744,7 +744,7 @@ function function_19a177cd542e9316(data) {
     return false;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c8f
 // Size: 0x4c
@@ -755,7 +755,7 @@ function init_emp_damage_data() {
     data.callbacks = [];
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ce3
 // Size: 0x67
@@ -770,7 +770,7 @@ function emp_damage_callback(data) {
     }
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d52
 // Size: 0x71
@@ -785,7 +785,7 @@ function get_emp_damage_callback(ref) {
     return level.vehicles.empdamage.callbacks[ref];
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dcc
 // Size: 0x7b
@@ -800,7 +800,7 @@ function set_emp_damage_callback(ref, func) {
     level.vehicles.empdamage.callbacks[ref] = func;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e50
 // Size: 0x52
@@ -814,7 +814,7 @@ function _validateattacker(eattacker) {
     return eattacker;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2eab
 // Size: 0xc
@@ -822,7 +822,7 @@ function non_player_clear_attacker_data() {
     self.attackerdata = undefined;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ebf
 // Size: 0x133
@@ -856,7 +856,7 @@ function maxspreadshotsperframe(victim, eattacker, objweapon) {
     return result;
 }
 
-// Namespace namespace_244c40b3fb8b581a / scripts\cp\vehicles\damage_cp
+// Namespace damage_cp / scripts\cp\vehicles\damage_cp
 // Params 12, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ffb
 // Size: 0x170

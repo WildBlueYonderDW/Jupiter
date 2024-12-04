@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_509a782dd5b89cf1;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\engine\trace.gsc;
+#using script_509a782dd5b89cf1;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace uav;
 
@@ -1162,7 +1162,7 @@ function function_247294e52128e3e7(targetent, player) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x388a
 // Size: 0x1e6
-function function_a4d3120487c90203() {
+function uav_addactiveuav() {
     level.totalactiveuavs++;
     if (level.teambased) {
         level.activeuavs[self.team]++;
@@ -1196,7 +1196,7 @@ function function_a4d3120487c90203() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a78
 // Size: 0xb9
-function function_24d8b56676d4d3d1() {
+function uav_addactivecounteruav() {
     if (level.teambased) {
         if (!isdefined(level.activecounteruavs[self.team])) {
             level.activecounteruavs[self.team] = 0;

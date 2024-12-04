@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_64acb6ce534155b7;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using scripts\common\vehicle_code;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace br_challenges;
 

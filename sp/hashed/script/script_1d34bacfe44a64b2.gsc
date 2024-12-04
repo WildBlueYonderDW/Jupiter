@@ -1,20 +1,20 @@
+#using character\character_london_police_hivis;
 #using script_5c36b3719581f7cc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\ai.gsc;
 #using script_76ea83593360a4a6;
-#using character\character_london_police_hivis.gsc;
-#using scripts\aitypes\assets.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\ai;
 
-#namespace namespace_8214fe2d4c48c4db;
+#namespace jup_ally_uk_police;
 
-// Namespace namespace_8214fe2d4c48c4db / namespace_9334e7623a6023b2
+// Namespace jup_ally_uk_police / namespace_9334e7623a6023b2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x21c
 // Size: 0x188
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_157842b89e20fc64");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_ally_uk_police");
     self.grenadeweapon = makeweapon("frag");
     self.grenadeammo = 2;
     self.secondaryweapon = nullweapon();
@@ -37,7 +37,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_8214fe2d4c48c4db / namespace_9334e7623a6023b2
+// Namespace jup_ally_uk_police / namespace_9334e7623a6023b2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ac
 // Size: 0x56
@@ -50,7 +50,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_8214fe2d4c48c4db / namespace_9334e7623a6023b2
+// Namespace jup_ally_uk_police / namespace_9334e7623a6023b2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x40a
 // Size: 0x57
@@ -64,7 +64,7 @@ function function_9ac26a51c94ccf52() {
     }
 }
 
-// Namespace namespace_8214fe2d4c48c4db / namespace_9334e7623a6023b2
+// Namespace jup_ally_uk_police / namespace_9334e7623a6023b2
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x469
 // Size: 0xe
@@ -72,7 +72,7 @@ function spawner() {
     self setspawnerteam("allies");
 }
 
-// Namespace namespace_8214fe2d4c48c4db / namespace_9334e7623a6023b2
+// Namespace jup_ally_uk_police / namespace_9334e7623a6023b2
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x47f
 // Size: 0x48

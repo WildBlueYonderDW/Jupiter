@@ -1,28 +1,28 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using script_15ca41a3fbb0e379;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_4948cdf739393d2d;
+#using script_5307834cd39b435c;
+#using script_64acb6ce534155b7;
 #using script_65f58f3c394dcf9a;
 #using script_6c4e8cea70bf4b6d;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using script_4948cdf739393d2d;
-#using scripts\engine\scriptable.gsc;
-#using script_64acb6ce534155b7;
-#using script_15ca41a3fbb0e379;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_5307834cd39b435c;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\ai_behavior.gsc;
-#using script_371b4c2ab5861e62;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_1e6a813ec859b6b9;
 
@@ -189,7 +189,7 @@ function function_4071d82a4af35fc(instance, part, state, player, var_a5b2c541413
         instance.task.trigger trigger_on();
         instance.task function_5314298e777e5688("dmz_safe_defend");
         if (!var_58acad1090b81311) {
-            instance.task.activity function_3faa04ef514a5fc4(player.team, undefined, player);
+            instance.task.activity activity_assign(player.team, undefined, player);
         }
         foreach (team in instance.task.teams) {
             if (team == player.team) {

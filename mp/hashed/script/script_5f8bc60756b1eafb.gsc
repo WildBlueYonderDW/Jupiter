@@ -1,10 +1,10 @@
-#using script_372d8c5f69b0ae2e;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\sp\fakeactor.gsc;
+#using script_372d8c5f69b0ae2e;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\fakeactor;
 
 #namespace namespace_491e31b31cdf2a0a;
 

@@ -1,16 +1,16 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_43971bbeefd98f05;
-#using script_7b2517368c79e5bc;
-#using script_58be75c518bf0d40;
-#using script_3a13b8032b62a5e6;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_39d11000e476a42a;
+#using script_3a13b8032b62a5e6;
+#using script_43971bbeefd98f05;
 #using script_482376d10f69832c;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+#using script_58be75c518bf0d40;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_c493b0becc9ac9e3;
 
@@ -32,10 +32,10 @@ function function_65e52fad2bce952c(var_b8b25f4d3c3dab1d, var_18f698ac43092a07, v
             player.var_f0de17708687532e = function_6d6af8144a5131f1(player.var_f0de17708687532e, var_18f698ac43092a07);
         }
     }
-    var_f064b76727edb83a = namespace_71ca15b739deab72::function_3ae7f99339b96499(var_e779ac7e9e65683d);
+    reward_placement = namespace_71ca15b739deab72::function_3ae7f99339b96499(var_e779ac7e9e65683d);
     var_ed118e6dd8c246 = spawnstruct();
     var_ed118e6dd8c246.var_18f698ac43092a07 = var_18f698ac43092a07;
-    level namespace_e8853d3344e33cf6::function_863be9e39e19fe2f(reward_groups, var_f064b76727edb83a, &function_de032cb8f1df5adc, var_ed118e6dd8c246);
+    level namespace_e8853d3344e33cf6::function_863be9e39e19fe2f(reward_groups, reward_placement, &function_de032cb8f1df5adc, var_ed118e6dd8c246);
 }
 
 // Namespace namespace_c493b0becc9ac9e3 / namespace_c8baf39126f1ef99

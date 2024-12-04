@@ -1,10 +1,10 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_spawning_util.gsc;
 #using script_18a73a64992dd07d;
 #using script_47fc06d4bb326007;
-#using scripts\cp\powers\coop_molotov.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_spawning_util;
+#using scripts\cp\powers\coop_molotov;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace aitypes;
 
@@ -12,7 +12,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb7
 // Size: 0x3f
-function function_e364dbb1ad0a775b() {
+function aitypes_init() {
     level.aitypes = [];
     level.random_aitype_list = ["ar", "smg", "shotgun"];
     function_61c1b1e85a54c62b();
@@ -101,16 +101,16 @@ function register_aitype_setup(aitype, agent_type, combat_func, spawn_func, info
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1096
 // Size: 0x38
-function function_cb88733d2f7dbebd(var_f8e5e3aa5762a8e7, aitype) {
-    var_f8e5e3aa5762a8e7.aitype_override = [aitype];
-    var_f8e5e3aa5762a8e7.aitype_override_weights = [1];
+function function_cb88733d2f7dbebd(module_struct, aitype) {
+    module_struct.aitype_override = [aitype];
+    module_struct.aitype_override_weights = [1];
 }
 
 // Namespace aitypes / namespace_ed4bd8463c31b8c3
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10d6
 // Size: 0x214
-function set_juggernaut_flags(var_8f9112184288bb13) {
+function set_juggernaut_flags(disable_music) {
     self.disablegrenaderesponse = 1;
     self.meleechargedistvsplayer = getdvarint(@"hash_c4623ff30dde6ae9", self.meleechargedistvsplayer);
     self.meleechargedist = getdvarint(@"hash_f3b2daa7c30b46e3", self.meleechargedist);
@@ -125,7 +125,7 @@ function set_juggernaut_flags(var_8f9112184288bb13) {
     self.immune_to_melee_damage = 1;
     self.recent_player_attackers = [];
     self allowedstances("stand");
-    if (!istrue(var_8f9112184288bb13)) {
+    if (!istrue(disable_music)) {
         self setscriptablepartstate("loop_sounds", "music", 1);
     }
     self sethitlocdamagetable(%"hash_1521c47f88cbd2b8");
@@ -139,7 +139,7 @@ function set_juggernaut_flags(var_8f9112184288bb13) {
         }
     }
     thread pain_threshold_watcher();
-    if (!istrue(var_8f9112184288bb13)) {
+    if (!istrue(disable_music)) {
         thread jugg_music();
     }
 }
@@ -166,9 +166,9 @@ function pain_threshold_watcher() {
         if (isdefined(player) && player is_valid_player() && players > 0) {
             self.recent_player_attackers[player.name] = 1;
             thread remove_player_from_attacker_list(player);
-            var_595058a326945465 = getdvarint(@"hash_2df212783e0bf84f", 75);
+            attacker_mod = getdvarint(@"hash_2df212783e0bf84f", 75);
             var_1271e4a73de480b6 = self.recent_player_attackers.size;
-            new_value = int(max(1, var_7f4b5ac6b201321a * players / var_1271e4a73de480b6 - (var_1271e4a73de480b6 - 1) * var_595058a326945465));
+            new_value = int(max(1, var_7f4b5ac6b201321a * players / var_1271e4a73de480b6 - (var_1271e4a73de480b6 - 1) * attacker_mod));
             self.minpaindamage = new_value;
         }
     }

@@ -1,10 +1,10 @@
-#using script_7e4d332e911e1b90;
 #using script_13d1c402f1421c35;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\notetracks.gsc;
-#using scripts\anim\face.gsc;
+#using script_7e4d332e911e1b90;
+#using scripts\anim\face;
+#using scripts\anim\notetracks;
+#using scripts\anim\utility_common;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace flashed;
 

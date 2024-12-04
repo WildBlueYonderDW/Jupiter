@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 #using script_371b4c2ab5861e62;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
 #using script_4a6760982b403bad;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\common\devgui.gsc;
+#using script_600b944a95c3a7bf;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\script;
 
 #namespace calloutmarkerping;
 
@@ -847,7 +847,7 @@ function function_d1c8c0f877165808(lootid) {
     if (isdefined(weaponclasstoken)) {
         switch (weaponclasstoken) {
         case #"hash_fa18d2f6bd57925a":
-            return #"hash_6441432d931347cd";
+            return #"ping_inv_have_weapon_assaultrifle";
         case #"hash_fa50b9f6bd82f79d":
             return #"hash_11efaf925e9c7e43";
         case #"hash_fa27b9f6bd62a3f2":
@@ -855,9 +855,9 @@ function function_d1c8c0f877165808(lootid) {
         case #"hash_fa50b4f6bd82efbe":
             return #"hash_c2a31b765dc5eabc";
         case #"hash_fa50b6f6bd82f2e4":
-            return #"hash_226bf222dc8c769d";
+            return #"ping_inv_have_weapon_sniper";
         case #"hash_fa0ed9f6bd4f4e9a":
-            return #"hash_81eeb1929ddfc2a9";
+            return #"ping_inv_have_weapon_dmr";
         case #"hash_fa4dbdf6bd80bf52":
             return #"hash_156d3011ce7f63e5";
         case #"hash_fa27bdf6bd62aa3e":
@@ -910,12 +910,12 @@ function function_40a8426c1f049004(lootid) {
     switch (itemdeftype) {
     case #"hash_59b8e9d05b31ff9":
     case #"plunder":
-        return #"hash_ad67c90bd02e70b4";
+        return #"ping_inv_need_cash";
     default:
         scriptablename = default_to(namespace_38b993c4618e76cd::getScriptableFromLootID(lootid), "");
         switch (scriptablename) {
         case #"hash_1cd9ffa488237604":
-            return #"hash_dfbada2220a5a84a";
+            return #"ping_inv_need_smallcal";
         case #"hash_672892a4af1e94cc":
             return #"hash_a4a8c0a0a1357b15";
         case #"hash_f1734c15f85881ca":
@@ -923,7 +923,7 @@ function function_40a8426c1f049004(lootid) {
         case #"hash_57e5eda4a702c559":
             return #"hash_b876b92d2e364260";
         case #"hash_755a9bafcd63b343":
-            return #"hash_b2152edf398f29d7";
+            return #"ping_inv_need_launcher";
         default:
             break;
         }
@@ -973,7 +973,7 @@ function function_f4293e5a97e51d76(lootid) {
     case #"currency":
         return #"hash_7c03e32ab0a4310e";
     case #"killstreak":
-        return #"hash_5982a0b9bd7a5629";
+        return #"ping_inv_have_killstreak_generic";
     case #"super":
         return #"hash_4990dd9059fd943";
     case #"key":
@@ -1000,9 +1000,9 @@ function function_f4293e5a97e51d76(lootid) {
         case #"hash_f1734c15f85881ca":
             return #"hash_7655b388c76711c4";
         case #"hash_57e5eda4a702c559":
-            return #"hash_6bdad0211b2b864e";
+            return #"ping_inv_have_ammo_shotgun";
         case #"hash_755a9bafcd63b343":
-            return #"hash_6db132798ddbf954";
+            return #"ping_inv_have_ammo_launcher";
         case #"hash_1b71e2c3430cd301":
         case #"hash_2d1a1b811aed6b26":
         case #"hash_d01e387e6d238502":
@@ -1338,7 +1338,7 @@ function calloutmarkerpingvo_createcalloutbattlechatter(pingindex) {
             case 17:
             case 18:
                 if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && isdefined(player.br_infil_type)) {
-                    var_3ef0fdcee94cadff = #"hash_92ddd951ec0801d5";
+                    var_3ef0fdcee94cadff = #"ping_location_landing";
                 } else {
                     var_3ef0fdcee94cadff = #"hash_950a284047c4c938";
                 }
@@ -1419,11 +1419,11 @@ function calloutmarkerpingvo_getcalloutaliasstringentity(var_7a5b847ea66815f) {
     }
     isfriendly = is_equal(ent.team, var_27e49251bb3376ea.team);
     if (isplayer(ent) && isfriendly) {
-        return #"hash_ba35331e5424e961";
+        return #"ping_request_revive";
     } else if (isdefined(ent.juggcontext) || istrue(ent.isjuggernaut)) {
         if (!function_6641a5b759148e1b()) {
             if (isfriendly) {
-                return #"hash_f9d0187fee631069";
+                return #"ping_killstreak_juggernaut";
             } else {
                 return #"hash_8ef3df121eb09344";
             }
@@ -1626,15 +1626,15 @@ function calloutmarkerpingvo_getcalloutaliasstringentity(var_7a5b847ea66815f) {
         enemyweapon = ent getcurrentweapon();
         if (isplayer(ent)) {
             if (istrue(ent.inlaststand)) {
-                return #"hash_5063297c85d5385e";
+                return #"ping_enemy_downed";
             } else if (!isreallyalive(ent)) {
-                return #"hash_7f659e0d3ce8b202";
+                return #"ping_enemy_killed";
             }
         }
         if (scripts\cp_mp\utility\weapon_utility::isriotshield(enemyweapon)) {
             return #"hash_d55968f5896ed400";
         } else if (isweapon(enemyweapon) && !isnullweapon(enemyweapon) && weaponclass(enemyweapon) == "sniper") {
-            return #"hash_56fbaece3612bdf8";
+            return #"ping_enemy_sniper";
         } else if (isdefined(ent.basearchetype) && ent.basearchetype == "rusher") {
             return #"ping_rusher";
         }
@@ -1643,11 +1643,11 @@ function calloutmarkerpingvo_getcalloutaliasstringentity(var_7a5b847ea66815f) {
             elitestatus = namespace_14d36171baccf528::agentpers_getagentpersdata(ent, "elite");
             switch (tier) {
             case 1:
-                return ter_op(istrue(elitestatus), #"hash_766ad1c8b387e329", #"hash_6d3407b8a9e701d6");
+                return ter_op(istrue(elitestatus), #"hash_766ad1c8b387e329", #"ping_enemy_tier1");
             case 2:
                 return ter_op(istrue(elitestatus), #"hash_7667b1c8b38576f2", #"hash_6d3406b8a9e70023");
             case 3:
-                return ter_op(istrue(elitestatus), #"hash_7663cdc8b381bdaf", #"hash_6d3405b8a9e6fe70");
+                return ter_op(istrue(elitestatus), #"hash_7663cdc8b381bdaf", #"ping_enemy_tier3");
             default:
                 return #"hash_c280c66c7d0377be";
             }
@@ -1657,7 +1657,7 @@ function calloutmarkerpingvo_getcalloutaliasstringentity(var_7a5b847ea66815f) {
     } else if (issubstr(ent.model, "oxygen")) {
         return #"hash_43c6735ef7fe8279";
     } else if (issubstr(ent.model, "turret")) {
-        return #"hash_2fc2274289b135cf";
+        return #"ping_enemy_mountedturret";
     } else if (issubstr(ent.model, "gas_cutter")) {
         return #"hash_836741b5a9a3bad5";
     }
@@ -1697,7 +1697,7 @@ function function_f9aa0f44521459d7(pingindex, var_c1074ab6cac2169f) {
             var_3ef0fdcee94cadff = player calloutmarkerpingvo_getcalloutaliasstringloot(pingindex, var_db376ee90688810d);
         }
     } else if (isdoor && !var_8b819c2af4c98ead) {
-        var_3ef0fdcee94cadff = #"hash_395d52d740aee345";
+        var_3ef0fdcee94cadff = #"ping_location_looted";
     } else if (isdoor) {
         return undefined;
     } else if (isdefined(var_db376ee90688810d.customweaponname) && var_db376ee90688810d.customweaponname != "") {
@@ -1857,7 +1857,7 @@ function function_e57c4849c7935da(ent, player) {
         if (ent.team == player.team) {
             return #"hash_fc944993a946b947";
         } else {
-            return #"hash_6f281585cf73646e";
+            return #"ping_killstreak_choppergunner_hostile";
         }
     case #"hash_28d0236400e33fd0":
         if (ent.team == player.team) {
@@ -2438,7 +2438,7 @@ function calloutmarkerpingvo_getaffirmaliasstringloot(pingindex, var_39438252891
             return #"hash_11fa7946ddf751cd";
         }
         if (!istrue(level.var_a9350d89a2e4d752)) {
-            return #"hash_df30101ebcf2d491";
+            return #"ping_loot_confirm_generic";
         }
     }
     if (istrue(level.var_a9350d89a2e4d752)) {
@@ -2450,7 +2450,7 @@ function calloutmarkerpingvo_getaffirmaliasstringloot(pingindex, var_39438252891
         type = function_1823ff50bb28148d(tablelookupbyrow(level.brloottablename, row, 2));
     }
     if (type == #"weapon") {
-        return #"hash_1b67e457ede92dc0";
+        return #"ping_loot_confirm_weapon";
     }
     if (istrue(level.var_a9350d89a2e4d752)) {
         var_832ad168567520f7 = level.br_pickups.var_caf82339100de589[var_869d699197f920a2];
@@ -2461,7 +2461,7 @@ function calloutmarkerpingvo_getaffirmaliasstringloot(pingindex, var_39438252891
         if (!istrue(level.var_a9350d89a2e4d752)) {
             assertmsg("<dev string:x48>" + "<dev string:x3ff>" + var_869d699197f920a2 + "<dev string:x439>");
         }
-        return #"hash_df30101ebcf2d491";
+        return #"ping_loot_confirm_generic";
     }
     return var_832ad168567520f7;
 }
@@ -3078,7 +3078,7 @@ function calloutmarkerpingvo_play(voalias, pingtype, targetent) {
                 voowner playsoundevent(var_4f632c1568af9fc0);
             }
         }
-        namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_operator_vo", {#target:targetent, #speaker:voowner, #sound_event:var_4f632c1568af9fc0, #sound_type:voalias, #var_30e54bfe55d8adb9:"calloutMarkerPingVO_play"});
+        namespace_de6e6777b0937bd7::function_80820d6d364c1836("callback_operator_vo", {#target:targetent, #speaker:voowner, #sound_event:var_4f632c1568af9fc0, #sound_type:voalias, #script_func_name:"calloutMarkerPingVO_play"});
     }
 }
 
@@ -3177,7 +3177,7 @@ function calloutmarkerpingvo_playpredictivepingacknowledged(pingindex, var_dfb9f
             } else if (issubstr(ent.model, "oxygen")) {
                 voalias = #"hash_2dd233c754baffbc";
             } else if (issubstr(ent.model, "gas_cutter")) {
-                voalias = #"hash_3370e531d64ff8e2";
+                voalias = #"ping_loot_confirm_buzzsaw";
             } else if (istrue(ent.var_4a4265af0a6f92e9)) {
                 voalias = #"hash_28e8ccedd7fd880c";
             } else if (pingtype == 6) {
@@ -3195,7 +3195,7 @@ function calloutmarkerpingvo_playpredictivepingacknowledged(pingindex, var_dfb9f
         switch (pingtype) {
         case 2:
             if (scripts\cp_mp\utility\game_utility::isbrstylegametype() && isdefined(pingowner.br_infil_type)) {
-                voalias = #"hash_f26b98445fbb71ae";
+                voalias = #"ping_location_landing_confirm";
             } else {
                 voalias = #"hash_11fa7946ddf751cd";
             }
@@ -3207,7 +3207,7 @@ function calloutmarkerpingvo_playpredictivepingacknowledged(pingindex, var_dfb9f
             voalias = pingowner function_9bb1120b45cfa775(pingindex);
             break;
         case 5:
-            voalias = #"hash_df30101ebcf2d491";
+            voalias = #"ping_loot_confirm_generic";
             break;
         default:
             voalias = #"hash_11fa7946ddf751cd";

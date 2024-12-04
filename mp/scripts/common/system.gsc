@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace system;
 
@@ -191,7 +191,7 @@ function function_3f680182ad0b9ef7() {
 // Size: 0x4d
 function system_error(msg) {
     /#
-        if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"hash_add5b80d30e0737a") != 0) {
+        if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"g_connectpaths") != 0) {
             print("<dev string:x160>" + msg);
             return;
         }

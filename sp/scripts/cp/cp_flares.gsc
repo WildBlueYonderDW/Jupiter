@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_b8d5db203c54e3f2;
+#namespace cp_flares;
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x274
 // Size: 0x27
@@ -13,7 +13,7 @@ function flares_monitor(flarecount) {
     thread ks_laserguidedmissile_handleincoming();
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a3
 // Size: 0x89
@@ -31,7 +31,7 @@ function flares_playfx(fxoverride, fxtagoverride) {
     playfxontag(getfx("gunship_flares"), self, flarestag);
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x334
 // Size: 0x5b
@@ -43,7 +43,7 @@ function flares_deploy() {
     return flare;
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x398
 // Size: 0x71
@@ -60,7 +60,7 @@ function flares_deleteaftertime(delaydelete, var_66f0721fc5bc2eb5, vehicle) {
     self delete();
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x411
 // Size: 0x16
@@ -68,7 +68,7 @@ function flares_getnumleft(vehicle) {
     return vehicle.flaresreservecount;
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x430
 // Size: 0x32
@@ -77,7 +77,7 @@ function flares_areavailable(vehicle) {
     return vehicle.flaresreservecount > 0 || vehicle.flareslive.size > 0;
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x46b
 // Size: 0x4a
@@ -89,7 +89,7 @@ function flares_getflarereserve(vehicle) {
     return flare;
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4be
 // Size: 0x28
@@ -97,7 +97,7 @@ function flares_cleanflareslivearray(vehicle) {
     vehicle.flareslive = array_removeundefined(vehicle.flareslive);
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ee
 // Size: 0x4e
@@ -110,7 +110,7 @@ function flares_getflarelive(vehicle) {
     return flare;
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x545
 // Size: 0xdd
@@ -136,7 +136,7 @@ function ks_laserguidedmissile_handleincoming() {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x62a
 // Size: 0xba
@@ -162,7 +162,7 @@ function ks_laserguidedmissile_monitorproximity(missile, player, team, target) {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ec
 // Size: 0x9d
@@ -185,7 +185,7 @@ function flares_handleincomingsam(functionoverride) {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x791
 // Size: 0x120
@@ -220,7 +220,7 @@ function flares_watchsamproximity(player, missileteam, missiletarget, missilegro
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8b9
 // Size: 0xa5
@@ -243,7 +243,7 @@ function flares_handleincomingstinger(functionoverride, fxlocoverride) {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x966
 // Size: 0x161
@@ -288,7 +288,7 @@ function flares_watchstingerproximity(player, missileteam, missiletarget, fxtago
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xacf
 // Size: 0x16
@@ -298,7 +298,7 @@ function function_be1f5581f4e837b0() {
     self.var_2c72dd1407c28de0 = undefined;
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xaed
 // Size: 0x5b
@@ -309,7 +309,7 @@ function flares_reducereserves(flaresholder) {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xb50
 // Size: 0x72
@@ -323,7 +323,7 @@ function ks_setup_manual_flares(num_flares, button_action, var_b1b8f942e50d3620,
     thread ks_manualflares_handleincoming(var_1ec886f1b7540ead);
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xbca
 // Size: 0xe0
@@ -348,7 +348,7 @@ function ks_manualflares_watchuse(button_action, var_c10415b6394096cc) {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb2
 // Size: 0x175
@@ -386,7 +386,7 @@ function ks_manualflares_handleincoming(var_c10415b6394096cc) {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe2f
 // Size: 0xc0
@@ -413,7 +413,7 @@ function ks_manualflares_monitorproximity(missile) {
     }
 }
 
-// Namespace namespace_b8d5db203c54e3f2 / scripts\cp\cp_flares
+// Namespace cp_flares / scripts\cp\cp_flares
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xef7
 // Size: 0x2a

@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2391409ef7b431e1;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
+#using script_2d9d24f7c63ac143;
+#using script_600b944a95c3a7bf;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_96967e67f325d164;
 

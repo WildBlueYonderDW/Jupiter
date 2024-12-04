@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
-#using script_3ed005fe9b78b9da;
 #using script_315e06108d117c9a;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_3ed005fe9b78b9da;
+#using scripts\common\callbacks;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\teams;
 
 #namespace namespace_c28d5b1888f4e14;
 

@@ -1,6 +1,6 @@
-#using script_d74ae0b4aa21186;
-#using scripts\engine\utility.gsc;
 #using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
 
 #namespace wander;
 

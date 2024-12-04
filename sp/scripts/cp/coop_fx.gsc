@@ -1,6 +1,6 @@
-#namespace namespace_fb3289075dee0727;
+#namespace coop_fx;
 
-// Namespace namespace_fb3289075dee0727 / scripts\cp\coop_fx
+// Namespace coop_fx / scripts\cp\coop_fx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x45c
 // Size: 0x9
@@ -8,7 +8,7 @@ function main() {
     init_fx();
 }
 
-// Namespace namespace_fb3289075dee0727 / scripts\cp\coop_fx
+// Namespace coop_fx / scripts\cp\coop_fx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46d
 // Size: 0x188

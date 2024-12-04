@@ -1,9 +1,9 @@
-#using scripts\common\system.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
 #using script_64acb6ce534155b7;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\utility\teams;
 
 #namespace quest_chain;
 
@@ -36,7 +36,7 @@ function post_main() {
 function initinternal() {
     level endon("game_ended");
     scripts\engine\utility::flag_wait("StartGameTypeCallbackFinished");
-    function_ccacfdcc7aa6b6d7();
+    initLevelData();
     setupcallbacks();
     function_b92559336d4290b3();
 }
@@ -45,7 +45,7 @@ function initinternal() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0xb6
-function function_ccacfdcc7aa6b6d7() {
+function initLevelData() {
     assertex(!isdefined(level.var_81e77c935dfefd11), "<dev string:x1c>");
     level.var_81e77c935dfefd11 = spawnstruct();
     level.var_81e77c935dfefd11.var_c25435bfa70e9a13 = [];

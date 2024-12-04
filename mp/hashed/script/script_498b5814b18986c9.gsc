@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
 #using script_4b87f2871b6b025c;
+#using scripts\cp_mp\gasmask;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace namespace_119c80c54f2f80e1;
 

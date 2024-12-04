@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\perk.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\flags;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_707f4e559a586342;
 

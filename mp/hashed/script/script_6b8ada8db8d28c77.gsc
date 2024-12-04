@@ -1,13 +1,13 @@
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_57d3850a12cf1d8f;
-#using scripts\engine\scriptable_door.gsc;
 #using script_12668187dcf15b96;
-#using scripts\cp_mp\utility\scriptable_door_utility.gsc;
-#using script_d09ad38bcf5794b;
 #using script_3113b52a395cd586;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_57d3850a12cf1d8f;
+#using script_d09ad38bcf5794b;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\scriptable_door_utility;
+#using scripts\engine\scriptable_door;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
 
 #namespace namespace_2b6fc7c256cafc0;
 

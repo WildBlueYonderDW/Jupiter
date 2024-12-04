@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\asm\asm.gsc;
 #using script_429c2a03090c1ea1;
+#using scripts\asm\asm;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_463c541c6afd19ee;
 
@@ -68,15 +68,15 @@ function private function_7674186f5ca25b0c() {
 function private abom_spawn_crawler() {
     aitypes = get_aitype_by_subclass_sharedfunc(self.zombieaisettings.var_e58a65b7a8f5973c.var_a50ee2b67d1afeb9);
     assert(isdefined(aitypes) && aitypes.size > 0);
-    var_9f578d49d039394b = undefined;
+    base_aitype = undefined;
     foreach (aitype in aitypes) {
         strlen = aitype.size;
-        if (!isdefined(var_9f578d49d039394b) || var_9f578d49d039394b.size > strlen) {
-            var_9f578d49d039394b = aitype;
+        if (!isdefined(base_aitype) || base_aitype.size > strlen) {
+            base_aitype = aitype;
         }
     }
-    var_ea3e656b50d22272 = var_9f578d49d039394b;
-    crawler = spawnnewaitype_sharedfunc(var_ea3e656b50d22272, self.origin, self.angles, self.team);
+    crawler_aitype = base_aitype;
+    crawler = spawnnewaitype_sharedfunc(crawler_aitype, self.origin, self.angles, self.team);
     if (isdefined(crawler)) {
         crawler thread Animscripted_SharedFunc("spawn_abom_crawler", "spawn_end", undefined, undefined, "spawn_animating");
         crawler.var_c383683308e840a7 = self;

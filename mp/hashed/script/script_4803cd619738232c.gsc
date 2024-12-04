@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\anim.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\utility\player.gsc;
 #using script_40f4c8f2b94c5cd9;
-#using scripts\common\scene.gsc;
 #using script_62c595d55b88b26;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\br_ending.gsc;
+#using script_7ab5b649fa408138;
 #using script_930a1e7bd882c1d;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\common\ui.gsc;
+#using scripts\common\anim;
+#using scripts\common\scene;
+#using scripts\common\ui;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_ending;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\player;
 
 #namespace br_ending_chopper_to_hq;
 

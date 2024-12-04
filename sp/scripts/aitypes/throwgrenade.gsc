@@ -1,7 +1,7 @@
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\aitypes\bt_util;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 

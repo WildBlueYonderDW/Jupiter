@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\math.gsc;
 #using script_2669878cf5a1b6bc;
 #using script_44a4ad8c0d35f203;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using scripts\cp\cp_player_battlechatter.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\utility;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace whizby;
 

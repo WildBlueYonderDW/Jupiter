@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_lights.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\common\vehicle_aianim.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_lights;
+#using scripts\common\vehicle_paths;
+#using scripts\engine\utility;
 
 #namespace vehicle;
 
@@ -537,7 +537,7 @@ function function_3e3d0013d3b2b92a(veh) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x103e
 // Size: 0x1c9
-function function_4f182ad6b6d594db(dist, entercallback, exitcallback, interact_delay) {
+function vehicle_watch_for_driving(dist, entercallback, exitcallback, interact_delay) {
     self endon("death");
     self endon("stop_driveable");
     level.player endon("death");

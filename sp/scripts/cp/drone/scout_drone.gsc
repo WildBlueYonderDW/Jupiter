@@ -1,14 +1,14 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp\drone\utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_agent_utils.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\drone\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace scout_drone;
 
@@ -266,9 +266,9 @@ function scout_drone_mark_npcs() {
     self endon("leaving");
     self endon("explode");
     self endon("switch_modes");
-    var_fc9ac45209f959bb = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
+    all_enemies = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
     while (true) {
-        foreach (soldier in var_fc9ac45209f959bb) {
+        foreach (soldier in all_enemies) {
             if (istrue(self.markingtarget)) {
                 continue;
             }
@@ -707,14 +707,14 @@ function unmark(target) {
 // Size: 0x116
 function notify_nearby_enemies() {
     enemies = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
-    var_4cf33b57655a86c3 = get_array_of_closest(self.origin, enemies, undefined, undefined, 1000);
-    foreach (enemy in var_4cf33b57655a86c3) {
+    closest_enemies = get_array_of_closest(self.origin, enemies, undefined, undefined, 1000);
+    foreach (enemy in closest_enemies) {
         if (isdefined(enemy)) {
             enemy notify("bulletwhizby");
             enemy notify("icon_cancel_delete");
         }
     }
-    if (!isdefined(var_4cf33b57655a86c3) || var_4cf33b57655a86c3.size == 0) {
+    if (!isdefined(closest_enemies) || closest_enemies.size == 0) {
         enemies = getaiarrayinradius(self.origin, 1000);
         if (enemies.size > 0) {
             foreach (actor in enemies) {

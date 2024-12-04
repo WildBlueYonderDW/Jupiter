@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
 #using script_1f97a44d1761c919;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace overlord;
 

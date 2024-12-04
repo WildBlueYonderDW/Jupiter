@@ -1,17 +1,17 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\mp\movers.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\utility\dialog.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_util;
+#using scripts\mp\movers;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\weapons;
 
 #namespace placeable;
 

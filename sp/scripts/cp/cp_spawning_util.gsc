@@ -1,24 +1,24 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
 #using script_18a73a64992dd07d;
-#using scripts\cp\cp_objectives.gsc;
-#using scripts\code\character.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\engine\flags.gsc;
-#using scripts\cp\coop_stealth.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
 #using script_24e4405cf93f20ed;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_e80538ef14d00e1;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\asm\soldier\vehicle.gsc;
-#using scripts\cp\cp_spawning_util.gsc;
+#using scripts\asm\shared\mp\utility;
+#using scripts\asm\soldier\vehicle;
+#using scripts\code\character;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_paths;
+#using scripts\cp\coop_stealth;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\cp_spawning_util;
+#using scripts\cp\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\flags;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_b0a237c3afaf1907;
 
@@ -133,15 +133,15 @@ function register_grenade_settings_for_module(module_name, grenade_types, grenad
 // Checksum 0x0, Offset: 0x9d7
 // Size: 0x5b
 function get_spawncount_from_groupnames(var_42dca3c7abc17220) {
-    var_82e31bfbe50bbe23 = 0;
+    return_count = 0;
     if (!isarray(var_42dca3c7abc17220)) {
         var_42dca3c7abc17220 = [var_42dca3c7abc17220];
     }
     for (i = 0; i < var_42dca3c7abc17220.size; i++) {
         group_name = var_42dca3c7abc17220[i];
-        var_82e31bfbe50bbe23 += get_spawn_count_from_groupname(group_name);
+        return_count += get_spawn_count_from_groupname(group_name);
     }
-    return var_82e31bfbe50bbe23;
+    return return_count;
 }
 
 // Namespace namespace_b0a237c3afaf1907 / scripts\cp\cp_spawning_util
@@ -187,9 +187,9 @@ function remove_group_from_combined_module_counters(group) {
 // Checksum 0x0, Offset: 0xb3e
 // Size: 0x57
 function group_has_combined_counters(group_name) {
-    var_c43c439e2df8bd7c = get_module_structs_by_groupname(group_name);
-    for (i = 0; i < var_c43c439e2df8bd7c.size; i++) {
-        module = var_c43c439e2df8bd7c[i];
+    module_structs = get_module_structs_by_groupname(group_name);
+    for (i = 0; i < module_structs.size; i++) {
+        module = module_structs[i];
         if (isdefined(module.combined_alias)) {
             return true;
         }
@@ -264,28 +264,28 @@ function run_module_init_funcs_on_module_struct() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe54
 // Size: 0x1dc
-function register_module_pause_unpause_funcs(group_name, var_1086c97fecf7918c, var_ad862214224ffd6f) {
+function register_module_pause_unpause_funcs(group_name, pause_func, unpause_func) {
     if (isarray(level.ambientgroups[group_name])) {
         for (i = 0; i < level.ambientgroups[group_name].size; i++) {
             if (!isdefined(level.ambientgroups[group_name][i].module_pause_funcs)) {
                 level.ambientgroups[group_name][i].module_pause_funcs = [];
             }
-            level.ambientgroups[group_name][i].module_pause_funcs[level.ambientgroups[group_name][i].module_pause_funcs.size] = var_1086c97fecf7918c;
+            level.ambientgroups[group_name][i].module_pause_funcs[level.ambientgroups[group_name][i].module_pause_funcs.size] = pause_func;
             if (!isdefined(level.ambientgroups[group_name][i].module_unpause_funcs)) {
                 level.ambientgroups[group_name][i].module_unpause_funcs = [];
             }
-            level.ambientgroups[group_name][i].module_unpause_funcs[level.ambientgroups[group_name][i].module_unpause_funcs.size] = var_ad862214224ffd6f;
+            level.ambientgroups[group_name][i].module_unpause_funcs[level.ambientgroups[group_name][i].module_unpause_funcs.size] = unpause_func;
         }
         return;
     }
     if (!isdefined(level.ambientgroups[group_name].module_pause_funcs)) {
         level.ambientgroups[group_name].module_pause_funcs = [];
     }
-    level.ambientgroups[group_name].module_pause_funcs[level.ambientgroups[group_name].module_pause_funcs.size] = var_1086c97fecf7918c;
+    level.ambientgroups[group_name].module_pause_funcs[level.ambientgroups[group_name].module_pause_funcs.size] = pause_func;
     if (!isdefined(level.ambientgroups[group_name].module_unpause_funcs)) {
         level.ambientgroups[group_name].module_unpause_funcs = [];
     }
-    level.ambientgroups[group_name].module_unpause_funcs[level.ambientgroups[group_name].module_unpause_funcs.size] = var_ad862214224ffd6f;
+    level.ambientgroups[group_name].module_unpause_funcs[level.ambientgroups[group_name].module_unpause_funcs.size] = unpause_func;
 }
 
 // Namespace namespace_b0a237c3afaf1907 / scripts\cp\cp_spawning_util
@@ -368,21 +368,21 @@ function cp_is_point_on_right(point) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x128e
 // Size: 0x134
-function create_agent_definition(var_33310780e8a5996d) {
-    level.agent_definition[var_33310780e8a5996d] = [];
-    level.agent_definition[var_33310780e8a5996d]["animclass"] = "soldier";
-    level.agent_definition[var_33310780e8a5996d]["asm"] = "soldier";
-    level.agent_definition[var_33310780e8a5996d]["behaviorTree"] = "soldier_agent";
-    level.agent_definition[var_33310780e8a5996d]["health"] = 150;
-    level.agent_definition[var_33310780e8a5996d]["height"] = 70;
-    level.agent_definition[var_33310780e8a5996d]["radius"] = 15;
-    level.agent_definition[var_33310780e8a5996d]["reward"] = 100;
-    level.agent_definition[var_33310780e8a5996d]["setup_func"] = &new_agent_def_main;
-    level.agent_definition[var_33310780e8a5996d]["setup_model_func"] = &fake_agent_model_setup;
-    level.agent_definition[var_33310780e8a5996d]["species"] = "human";
-    level.agent_definition[var_33310780e8a5996d]["team"] = "axis";
-    level.agent_definition[var_33310780e8a5996d]["traversal_unit_type"] = "soldier";
-    level.agent_definition[var_33310780e8a5996d]["xp"] = 50;
+function create_agent_definition(new_def) {
+    level.agent_definition[new_def] = [];
+    level.agent_definition[new_def]["animclass"] = "soldier";
+    level.agent_definition[new_def]["asm"] = "soldier";
+    level.agent_definition[new_def]["behaviorTree"] = "soldier_agent";
+    level.agent_definition[new_def]["health"] = 150;
+    level.agent_definition[new_def]["height"] = 70;
+    level.agent_definition[new_def]["radius"] = 15;
+    level.agent_definition[new_def]["reward"] = 100;
+    level.agent_definition[new_def]["setup_func"] = &new_agent_def_main;
+    level.agent_definition[new_def]["setup_model_func"] = &fake_agent_model_setup;
+    level.agent_definition[new_def]["species"] = "human";
+    level.agent_definition[new_def]["team"] = "axis";
+    level.agent_definition[new_def]["traversal_unit_type"] = "soldier";
+    level.agent_definition[new_def]["xp"] = 50;
 }
 
 // Namespace namespace_b0a237c3afaf1907 / scripts\cp\cp_spawning_util
@@ -392,7 +392,7 @@ function create_agent_definition(var_33310780e8a5996d) {
 function new_agent_def_main() {
     self.additionalassets = "";
     self.subclass = "regular";
-    self.defaultcoverselector = %"hash_58a5eb84e1c3c6ef";
+    self.defaultcoverselector = %"cover_default";
     self.enemyselector = %"hash_5924daa85a22cdd9";
     self.unittype = "soldier";
     self setengagementmindist(256, 0);
@@ -433,10 +433,10 @@ function fake_agent_model_setup(agent_type) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1655
 // Size: 0x67
-function add_spawn_disable_struct(var_4f5f8bf103fb2a4a, var_30167c0aac0d44f6) {
+function add_spawn_disable_struct(disable_pos, disable_radius) {
     struct = spawnstruct();
-    struct.origin = var_4f5f8bf103fb2a4a;
-    struct.radius = var_30167c0aac0d44f6;
+    struct.origin = disable_pos;
+    struct.radius = disable_radius;
     struct scripts\engine\flags::assign_unique_id();
     level.spawner_poison_structs[struct.unique_id] = struct;
     return struct.unique_id;
@@ -477,7 +477,7 @@ function adjust_player_pos_memory_array_size(new_value) {
 // Checksum 0x0, Offset: 0x173e
 // Size: 0x2a
 function get_module_spawn_points() {
-    var_7bbda18a855c7111 = [];
+    return_array = [];
     spawners = process_module_var(self, self.spawn_points);
     return spawners;
 }
@@ -486,14 +486,14 @@ function get_module_spawn_points() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1771
 // Size: 0x7a
-function set_recent_spawn_time_threshold_override(var_f8e5e3aa5762a8e7, threshold) {
-    if (isarray(var_f8e5e3aa5762a8e7)) {
-        foreach (struct in var_f8e5e3aa5762a8e7) {
+function set_recent_spawn_time_threshold_override(module_struct, threshold) {
+    if (isarray(module_struct)) {
+        foreach (struct in module_struct) {
             struct.recent_spawn_threshold = threshold;
         }
         return;
     }
-    var_f8e5e3aa5762a8e7.recent_spawn_threshold = threshold;
+    module_struct.recent_spawn_threshold = threshold;
 }
 
 // Namespace namespace_b0a237c3afaf1907 / scripts\cp\cp_spawning_util
@@ -548,10 +548,10 @@ function function_b905b02b6c7aea3(group_name, max_size) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a1e
 // Size: 0x15e
-function function_9f1addb4e0ff0121(name, target, max_time, var_1ada3ea412535af3) {
+function function_9f1addb4e0ff0121(name, target, max_time, endon_name) {
     level endon("game_ended");
-    if (isdefined(var_1ada3ea412535af3)) {
-        level endon(var_1ada3ea412535af3);
+    if (isdefined(endon_name)) {
+        level endon(endon_name);
     }
     if (!isdefined(target)) {
         target = 1;
@@ -637,7 +637,7 @@ function trigger_spawn(endon_notify) {
     self endon("death");
     level endon("game_ended");
     trigger_wait();
-    function_81b8edc3cb076fda(self.spawners);
+    ai_spawngroup(self.spawners);
     wait 1;
     self delete();
 }
@@ -646,7 +646,7 @@ function trigger_spawn(endon_notify) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d72
 // Size: 0x251
-function function_81b8edc3cb076fda(spawners, var_9bd8d35e5cf10d81) {
+function ai_spawngroup(spawners, var_9bd8d35e5cf10d81) {
     spawnstructs = spawners;
     var_a9022dcddc38cfa = [];
     if (!isarray(spawners)) {
@@ -792,7 +792,7 @@ function vehicle_spawngroup(veh_spawner, AI_spawners) {
     }
     if (riders.size) {
         namespace_cbe993018617a21d::function_64d2d74ab85e00bb(riders);
-        if (isdefined(veh_spawner.var_b25ab59a11fc36da)) {
+        if (isdefined(veh_spawner.load_vehicle)) {
             scripts\cp_mp\vehicles\vehicle::function_f92faaaf5c5077c6(riders);
             scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_setteam(vehicle, var_65119e62f62616e1);
         } else {
@@ -915,8 +915,8 @@ function function_e7d3411db935e99b(pos) {
 function function_12c0de9ad36eb18b() {
     self endon("death");
     function_80dc2c3589695b44();
-    var_ce79428a89a56e31 = "dive_fwd";
-    var_f5f6ad5a2900f0e2 = "dive_fwd_getup";
+    dive_anim = "dive_fwd";
+    getup_anim = "dive_fwd_getup";
     while (true) {
         waitframe();
         validvehicles = function_8a178ee7bfa2ff5a();
@@ -924,22 +924,22 @@ function function_12c0de9ad36eb18b() {
             continue;
         }
         closest_vehicle = getclosest(self.origin, validvehicles);
-        var_fba905b4b44b0a91 = function_c0f7c5e411992612("default", closest_vehicle);
-        if (!isdefined(var_fba905b4b44b0a91) || var_fba905b4b44b0a91 == "default") {
+        dodge_type = function_c0f7c5e411992612("default", closest_vehicle);
+        if (!isdefined(dodge_type) || dodge_type == "default") {
             continue;
         }
         function_e7fc2021e96eb2f9();
-        switch (var_fba905b4b44b0a91) {
+        switch (dodge_type) {
         case #"hash_389bec9333a57449":
         case #"hash_4d58a3e12a216eea":
-            if (var_fba905b4b44b0a91 == "dive_left") {
+            if (dodge_type == "dive_left") {
                 self setgoalpos(getclosestpointonnavmesh(self.origin + anglestoleft(closest_vehicle.angles) * 200));
             } else {
                 self setgoalpos(getclosestpointonnavmesh(self.origin + anglestoright(closest_vehicle.angles) * 200));
             }
             wait 0.2;
-            scripts\asm\shared\mp\utility::animscripted_single(var_ce79428a89a56e31);
-            scripts\asm\shared\mp\utility::animscripted_single(var_f5f6ad5a2900f0e2);
+            scripts\asm\shared\mp\utility::animscripted_single(dive_anim);
+            scripts\asm\shared\mp\utility::animscripted_single(getup_anim);
             scripts\asm\shared\mp\utility::animscripted_clear();
             self setgoalpos(self.origin);
             break;
@@ -974,7 +974,7 @@ function function_80dc2c3589695b44() {
 // Size: 0x183
 function function_8a178ee7bfa2ff5a() {
     allvehicles = function_823f69bc9733f183();
-    var_942720d22d0d1ea4 = cos(10);
+    cos_10 = cos(10);
     valid_vehicles = [];
     foreach (vehicle in allvehicles) {
         dist = distancesquared(self.origin, vehicle.origin);
@@ -990,7 +990,7 @@ function function_8a178ee7bfa2ff5a() {
         }
         var_1d652fb2ebe872f4 = max(int(currspeed * 70), 2000);
         if (dist < squared(var_1d652fb2ebe872f4)) {
-            var_2e5bc4f60ff0a001 = within_fov(vehicle.origin, vehicle.angles, self.origin, var_942720d22d0d1ea4);
+            var_2e5bc4f60ff0a001 = within_fov(vehicle.origin, vehicle.angles, self.origin, cos_10);
             velocity = vehicle vehicle_getvelocity();
             fwd = anglestoforward(vehicle.angles);
             dot = vectordot(velocity, fwd);
@@ -1011,15 +1011,15 @@ function function_8a178ee7bfa2ff5a() {
 // Checksum 0x0, Offset: 0x2c0f
 // Size: 0xaa
 function function_823f69bc9733f183() {
-    var_6d707ebc7d10ded8 = [];
+    player_vehicles = [];
     closest_vehicle = undefined;
     foreach (player in level.players) {
         if (!isdefined(player.vehicle)) {
             continue;
         }
-        var_6d707ebc7d10ded8[var_6d707ebc7d10ded8.size] = player.vehicle;
+        player_vehicles[player_vehicles.size] = player.vehicle;
     }
-    allvehicles = array_combine(var_6d707ebc7d10ded8, level.var_6e5ff6cae14c4081);
+    allvehicles = array_combine(player_vehicles, level.var_6e5ff6cae14c4081);
     allvehicles = array_removeundefined(allvehicles);
     return allvehicles;
 }
@@ -1031,7 +1031,7 @@ function function_823f69bc9733f183() {
 function function_e7fc2021e96eb2f9() {
     self function_9f82c74eb1b7caf9(0);
     utility::demeanor_override("sprint");
-    self.var_5ede15b5b3c5ef1 = self.ignoreall;
+    self.og_ignoreall = self.ignoreall;
     self.og_radius = self.goalradius;
     self.ignoreall = 1;
     self allowedstances("stand");
@@ -1044,7 +1044,7 @@ function function_e7fc2021e96eb2f9() {
 // Size: 0x4c
 function function_c83e8b49e55a092() {
     utility::clear_demeanor_override();
-    self.ignoreall = self.var_5ede15b5b3c5ef1;
+    self.ignoreall = self.og_ignoreall;
     self.goalradius = self.og_radius;
     self allowedstances("stand", "crouch", "prone");
     self function_9f82c74eb1b7caf9(1);
@@ -1054,48 +1054,48 @@ function function_c83e8b49e55a092() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d7a
 // Size: 0x1f0
-function function_c0f7c5e411992612(var_fba905b4b44b0a91, closest_vehicle) {
+function function_c0f7c5e411992612(dodge_type, closest_vehicle) {
     currspeed = closest_vehicle vehicle_getspeed();
-    var_8da2769af8f94b0 = self.origin + (0, 0, 5) + anglestoleft(closest_vehicle.angles) * 200;
-    trace = scripts\engine\trace::ray_trace(self.origin + (0, 0, 60), var_8da2769af8f94b0, self);
+    spot_right = self.origin + (0, 0, 5) + anglestoleft(closest_vehicle.angles) * 200;
+    trace = scripts\engine\trace::ray_trace(self.origin + (0, 0, 60), spot_right, self);
     var_e06d1f8af320925 = trace["fraction"] == 1;
-    var_ef091dfa814caff = self.origin + (0, 0, 5) + anglestoright(closest_vehicle.angles) * 200;
-    trace = scripts\engine\trace::ray_trace(self.origin + (0, 0, 60), var_ef091dfa814caff, self);
+    spot_left = self.origin + (0, 0, 5) + anglestoright(closest_vehicle.angles) * 200;
+    trace = scripts\engine\trace::ray_trace(self.origin + (0, 0, 60), spot_left, self);
     var_5149d2dd057854d0 = trace["fraction"] == 1;
     if (!var_e06d1f8af320925 && !var_5149d2dd057854d0) {
-        return var_fba905b4b44b0a91;
+        return dodge_type;
     }
     if (var_e06d1f8af320925 && var_5149d2dd057854d0) {
         dir = vectornormalize((closest_vehicle.origin - self.origin) * (1, 1, 0));
         fwd = anglestoright(closest_vehicle.angles);
         dot = vectordot(dir, fwd);
         if (currspeed > 30) {
-            var_fba905b4b44b0a91 = "dive_left";
+            dodge_type = "dive_left";
         } else {
-            var_fba905b4b44b0a91 = "juke_left";
+            dodge_type = "juke_left";
         }
         if (dot < 0) {
             if (currspeed > 30) {
-                var_fba905b4b44b0a91 = "dive_right";
+                dodge_type = "dive_right";
             } else {
-                var_fba905b4b44b0a91 = "juke_right";
+                dodge_type = "juke_right";
             }
         }
     } else {
         if (currspeed > 30) {
-            var_fba905b4b44b0a91 = "dive_right";
+            dodge_type = "dive_right";
         } else {
-            var_fba905b4b44b0a91 = "juke_right";
+            dodge_type = "juke_right";
         }
         if (var_5149d2dd057854d0) {
             if (currspeed > 30) {
-                var_fba905b4b44b0a91 = "dive_left";
+                dodge_type = "dive_left";
             } else {
-                var_fba905b4b44b0a91 = "juke_left";
+                dodge_type = "juke_left";
             }
         }
     }
-    return var_fba905b4b44b0a91;
+    return dodge_type;
 }
 
 // Namespace namespace_b0a237c3afaf1907 / scripts\cp\cp_spawning_util
@@ -1194,7 +1194,7 @@ function function_bd89bc6288ef7f9b() {
     turret settargetentity(self.turret_pointer);
     thread delete_on_death(self.turret_pointer);
     level.technical_spotlight_targets = getstructarray("technical_spotlight_target", "targetname");
-    var_46d8e81088af53d5 = 1;
+    search_side = 1;
     foreach (player in level.players) {
         childthread turret_spotted_ent_think(player);
     }
@@ -1229,9 +1229,9 @@ function function_bd89bc6288ef7f9b() {
             }
             continue;
         }
-        success = turret_sweep(turret, var_46d8e81088af53d5, 5);
+        success = turret_sweep(turret, search_side, 5);
         if (istrue(success)) {
-            var_46d8e81088af53d5 *= -1;
+            search_side *= -1;
         }
     }
 }
@@ -1259,9 +1259,9 @@ function private turret_aim_think() {
     var_72bb599075a82534 = undefined;
     self.var_f9374a64ef9c64ec = undefined;
     var_2d1996a1afa79192 = 0;
-    var_c00939b2974db87c = (0, 0, 0);
-    var_72bd42692055cdd = [self.mgturret[0], self.gunner];
-    var_72bd42692055cdd = array_combine(var_72bd42692055cdd, level.players);
+    aim_offset = (0, 0, 0);
+    ignore_array = [self.mgturret[0], self.gunner];
+    ignore_array = array_combine(ignore_array, level.players);
     while (true) {
         waitframe();
         if (!isdefined(level.players) || level.players.size == 0) {
@@ -1283,21 +1283,21 @@ function private turret_aim_think() {
         var_72bb599075a82534 = self.gunner lastknownpos(self.mgturret[0].var_f9374a64ef9c64ec);
         if (gettime() > var_2d1996a1afa79192) {
             start_origin = self.mgturret[0] gettagorigin("tag_aim");
-            var_a89fb08b16e1d170 = self.mgturret[0].var_f9374a64ef9c64ec geteye() - self.mgturret[0].var_f9374a64ef9c64ec.origin - (0, 0, 10);
-            if (scripts\engine\trace::ray_trace_passed(start_origin, var_72bb599075a82534, var_72bd42692055cdd)) {
-                var_c00939b2974db87c = (0, 0, 0);
-            } else if (scripts\engine\trace::ray_trace_passed(start_origin, var_72bb599075a82534 + var_a89fb08b16e1d170, var_72bd42692055cdd)) {
-                var_c00939b2974db87c = var_a89fb08b16e1d170;
-            } else if (scripts\engine\trace::ray_trace_passed(start_origin, var_72bb599075a82534 + var_a89fb08b16e1d170 / 2, var_72bd42692055cdd)) {
-                var_c00939b2974db87c = var_a89fb08b16e1d170 / 2;
+            eye_offset = self.mgturret[0].var_f9374a64ef9c64ec geteye() - self.mgturret[0].var_f9374a64ef9c64ec.origin - (0, 0, 10);
+            if (scripts\engine\trace::ray_trace_passed(start_origin, var_72bb599075a82534, ignore_array)) {
+                aim_offset = (0, 0, 0);
+            } else if (scripts\engine\trace::ray_trace_passed(start_origin, var_72bb599075a82534 + eye_offset, ignore_array)) {
+                aim_offset = eye_offset;
+            } else if (scripts\engine\trace::ray_trace_passed(start_origin, var_72bb599075a82534 + eye_offset / 2, ignore_array)) {
+                aim_offset = eye_offset / 2;
             }
             var_2d1996a1afa79192 = gettime() + 1000;
         }
-        aim_pos = var_72bb599075a82534 + var_c00939b2974db87c;
+        aim_pos = var_72bb599075a82534 + aim_offset;
         if (distancesquared(aim_pos, self.origin) < 40000 && !self.mgturret[0] turretcantarget(aim_pos)) {
-            var_6b8bc7fab156ccd9 = self.origin;
-            var_f92bd9cab49d2d58 = flatten_vector(aim_pos - var_6b8bc7fab156ccd9);
-            aim_pos = var_6b8bc7fab156ccd9 + var_f92bd9cab49d2d58 * 500;
+            aim_origin = self.origin;
+            aim_fwd = flatten_vector(aim_pos - aim_origin);
+            aim_pos = aim_origin + aim_fwd * 500;
         }
         update_turret_pointer(aim_pos);
     }
@@ -1398,11 +1398,11 @@ function private turret_aimed_at_last_known(start_origin, start_angles, var_c74e
     if (within_fov(start_origin, start_angles, var_c74e2e565ee3fe18, 0.7)) {
         return true;
     }
-    var_a89fb08b16e1d170 = self.var_f9374a64ef9c64ec geteye() - self.var_f9374a64ef9c64ec.origin;
-    if (within_fov(start_origin, start_angles, var_c74e2e565ee3fe18 + var_a89fb08b16e1d170, 0.7)) {
+    eye_offset = self.var_f9374a64ef9c64ec geteye() - self.var_f9374a64ef9c64ec.origin;
+    if (within_fov(start_origin, start_angles, var_c74e2e565ee3fe18 + eye_offset, 0.7)) {
         return true;
     }
-    if (within_fov(start_origin, start_angles, var_c74e2e565ee3fe18 + var_a89fb08b16e1d170 / 2, 0.7)) {
+    if (within_fov(start_origin, start_angles, var_c74e2e565ee3fe18 + eye_offset / 2, 0.7)) {
         return true;
     }
     return false;
@@ -1415,14 +1415,14 @@ function private turret_aimed_at_last_known(start_origin, start_angles, var_c74e
 function private turret_spotted_ent_think(ent) {
     ent endon("stop_turret_spotted_ent_think");
     ent endon("disconnect");
-    var_f00d645c58143e63 = 0;
+    frames_seen = 0;
     while (true) {
         if (!isdefined(ent)) {
             return;
         }
         while (isalive(self.gunner) && turret_is_on_ent(ent, 10)) {
-            var_f00d645c58143e63++;
-            if (var_f00d645c58143e63 >= 3) {
+            frames_seen++;
+            if (frames_seen >= 3) {
                 if (isplayer(ent)) {
                     /#
                         if (getdvarint(@"hash_94c7e87afc7912c4")) {
@@ -1438,8 +1438,8 @@ function private turret_spotted_ent_think(ent) {
             }
             waitframe();
         }
-        if (var_f00d645c58143e63 > 0) {
-            var_f00d645c58143e63 = 0;
+        if (frames_seen > 0) {
+            frames_seen = 0;
         }
         waitframe();
     }
@@ -1494,29 +1494,29 @@ function private update_turret_investigate_pos(pos) {
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0x3e77
 // Size: 0x2b3
-function private turret_sweep(turret, var_46d8e81088af53d5, var_87cdbdfe21e2d499) {
+function private turret_sweep(turret, search_side, sweep_time) {
     self endon("death");
     self endon("turret_investigate_pos_updated");
     self.gunner endon("death");
     self.gunner endon("stealth_combat");
-    turret setconvergencetime(var_87cdbdfe21e2d499, "yaw");
-    turret setconvergencetime(var_87cdbdfe21e2d499, "pitch");
+    turret setconvergencetime(sweep_time, "yaw");
+    turret setconvergencetime(sweep_time, "pitch");
     turret setleftarc(180);
     turret setrightarc(180);
-    var_140149f4f2ed1009 = get_array_of_closest(self.origin, level.technical_spotlight_targets, undefined, undefined, 4000);
+    closest_targets = get_array_of_closest(self.origin, level.technical_spotlight_targets, undefined, undefined, 4000);
     valid_targets = [];
-    var_de40082e48ff7cc9 = anglestoright(self.angles);
+    right_dir = anglestoright(self.angles);
     var_a02118632c7f1621 = getstructarray("defender_hardpoint", "script_noteworthy");
     var_6b84f2ec187b1c4d = getclosest(self.origin, var_a02118632c7f1621, 1500);
     if (isdefined(var_6b84f2ec187b1c4d)) {
         dir = vectornormalize(var_6b84f2ec187b1c4d.origin - self.origin);
-        dot = vectordot(var_de40082e48ff7cc9, dir);
-        var_46d8e81088af53d5 = dot;
+        dot = vectordot(right_dir, dir);
+        search_side = dot;
     }
-    foreach (target in var_140149f4f2ed1009) {
+    foreach (target in closest_targets) {
         dir = vectornormalize(target.origin - self.origin);
-        dot = vectordot(var_de40082e48ff7cc9, dir);
-        if (dot * var_46d8e81088af53d5 <= 0) {
+        dot = vectordot(right_dir, dir);
+        if (dot * search_side <= 0) {
             continue;
         }
         if (!turret turretcantarget(target.origin)) {
@@ -1527,8 +1527,8 @@ function private turret_sweep(turret, var_46d8e81088af53d5, var_87cdbdfe21e2d499
     best_target = undefined;
     foreach (player in level.players) {
         dir = vectornormalize(player.origin - self.origin);
-        dot = vectordot(var_de40082e48ff7cc9, dir);
-        if (dot * var_46d8e81088af53d5 > 0) {
+        dot = vectordot(right_dir, dir);
+        if (dot * search_side > 0) {
             best_target = getclosest(player.origin, valid_targets);
             continue;
         }
@@ -1538,7 +1538,7 @@ function private turret_sweep(turret, var_46d8e81088af53d5, var_87cdbdfe21e2d499
         return false;
     }
     update_turret_pointer(best_target.origin);
-    waittill_technical_turns_or_timeout(var_87cdbdfe21e2d499 + 2);
+    waittill_technical_turns_or_timeout(sweep_time + 2);
     return true;
 }
 
@@ -1547,12 +1547,12 @@ function private turret_sweep(turret, var_46d8e81088af53d5, var_87cdbdfe21e2d499
 // Checksum 0x0, Offset: 0x4133
 // Size: 0x80
 function private waittill_technical_turns_or_timeout(timeout) {
-    var_f6e585610bafc635 = anglestoforward(self.angles);
+    og_forward = anglestoforward(self.angles);
     timeout_time = gettime() + timeout * 1000;
     while (gettime() < timeout_time) {
         waitframe();
         forward = anglestoforward(self.angles);
-        dot = vectordot(var_f6e585610bafc635, forward);
+        dot = vectordot(og_forward, forward);
         if (dot < 0.5) {
             break;
         }
@@ -1588,7 +1588,7 @@ function function_362f719b447aba3f(type, pos, ang, tier, var_cb1e30930c35f2e2) {
     struct = spawnstruct();
     struct.origin = pos;
     struct.angles = ang;
-    struct.var_87b421d7e94c6265 = aitype;
-    return scripts\cp\cp_spawning_util::function_81b8edc3cb076fda(struct, 1);
+    struct.script_aitype = aitype;
+    return scripts\cp\cp_spawning_util::ai_spawngroup(struct, 1);
 }
 

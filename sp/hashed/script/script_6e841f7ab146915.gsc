@@ -1,6 +1,6 @@
-#namespace namespace_7c9a9b4389818603;
+#namespace bodies_c_jup_sp_enemy_rusgeneral;
 
-// Namespace namespace_7c9a9b4389818603 / namespace_1b5379f7dcaf9783
+// Namespace bodies_c_jup_sp_enemy_rusgeneral / namespace_1b5379f7dcaf9783
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xac
 // Size: 0x1f

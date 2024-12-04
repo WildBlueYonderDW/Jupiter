@@ -1,5 +1,5 @@
 #using script_18cbc2523c2bfb9d;
-#using scripts\mp\infilexfil\van_hackney_infil.gsc;
+#using scripts\mp\infilexfil\van_hackney_infil;
 
 #namespace namespace_1d33f465eeaa6f45;
 

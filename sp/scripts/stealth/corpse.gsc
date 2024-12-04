@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\stealth\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\stealth\debug;
+#using scripts\stealth\utility;
 
 #namespace corpse;
 

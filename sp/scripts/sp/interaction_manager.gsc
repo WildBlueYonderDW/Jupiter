@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\interaction.gsc;
 #using script_4dac3680f88a01c3;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\interaction;
+#using scripts\sp\utility;
 
 #namespace interaction_manager;
 
@@ -104,8 +104,8 @@ function trigger_interaction_multiple(ai_array) {
 function trigger_interaction_common() {
     self endon("death");
     common = self.lookat_anims["common_name"];
-    var_8de2e21a05fe85a6 = level.interaction_manager.data["actors"];
-    foreach (actor in var_8de2e21a05fe85a6) {
+    interaction_actors = level.interaction_manager.data["actors"];
+    foreach (actor in interaction_actors) {
         if (isdefined(actor.lookat_anims["common_name"])) {
             if (actor.lookat_anims["common_name"] == common) {
                 actor.lookat_anims["interaction_trigger_override"] = 1;
@@ -152,12 +152,12 @@ function remove_actor_from_manager() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf3c
 // Size: 0x160
-function can_play_nearby_interaction(var_1134633b00730d29) {
+function can_play_nearby_interaction(check_range) {
     player_pos = level.player.origin;
-    if (isdefined(var_1134633b00730d29)) {
-        var_f46cecc47292a59 = var_1134633b00730d29;
+    if (isdefined(check_range)) {
+        active_range = check_range;
     } else {
-        var_f46cecc47292a59 = 140;
+        active_range = 140;
     }
     if (!isdefined(level.interaction_manager)) {
         /#
@@ -169,11 +169,11 @@ function can_play_nearby_interaction(var_1134633b00730d29) {
         return false;
     }
     reconstruct_actor_array();
-    foreach (var_3a1a848b879788a0 in level.interaction_manager.data["actors"]) {
-        if (isdefined(var_3a1a848b879788a0) && isdefined(self)) {
-            if (distance(self.origin, var_3a1a848b879788a0.origin) < var_f46cecc47292a59) {
-                if (hastag(var_3a1a848b879788a0.model, "j_spine4") && level.player math::point_in_fov(var_3a1a848b879788a0 gettagorigin("j_spine4"))) {
-                    if (isdefined(var_3a1a848b879788a0.is_playing_reaction) && var_3a1a848b879788a0.is_playing_reaction) {
+    foreach (nearby_actor in level.interaction_manager.data["actors"]) {
+        if (isdefined(nearby_actor) && isdefined(self)) {
+            if (distance(self.origin, nearby_actor.origin) < active_range) {
+                if (hastag(nearby_actor.model, "j_spine4") && level.player math::point_in_fov(nearby_actor gettagorigin("j_spine4"))) {
+                    if (isdefined(nearby_actor.is_playing_reaction) && nearby_actor.is_playing_reaction) {
                         return false;
                     }
                 }
@@ -187,12 +187,12 @@ function can_play_nearby_interaction(var_1134633b00730d29) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10a5
 // Size: 0x18e
-function can_play_nearby_gesture(var_1134633b00730d29) {
+function can_play_nearby_gesture(check_range) {
     player_pos = level.player.origin;
-    if (isdefined(var_1134633b00730d29)) {
-        var_f46cecc47292a59 = var_1134633b00730d29;
+    if (isdefined(check_range)) {
+        active_range = check_range;
     } else {
-        var_f46cecc47292a59 = 140;
+        active_range = 140;
     }
     if (!isdefined(level.interaction_manager)) {
         /#
@@ -201,15 +201,15 @@ function can_play_nearby_gesture(var_1134633b00730d29) {
         return true;
     }
     reconstruct_actor_array();
-    foreach (var_3a1a848b879788a0 in level.interaction_manager.data["actors"]) {
-        if (isdefined(var_3a1a848b879788a0) && isdefined(self)) {
-            if (self != var_3a1a848b879788a0) {
-                if (distance(self.origin, var_3a1a848b879788a0.origin) < var_f46cecc47292a59) {
-                    if (within_fov(level.player geteye(), level.player.angles, var_3a1a848b879788a0 gettagorigin("j_spine4"), cos(45))) {
-                        if (isdefined(var_3a1a848b879788a0.playing_gesture) && var_3a1a848b879788a0.playing_gesture || isdefined(var_3a1a848b879788a0.is_talking) && var_3a1a848b879788a0.is_talking) {
+    foreach (nearby_actor in level.interaction_manager.data["actors"]) {
+        if (isdefined(nearby_actor) && isdefined(self)) {
+            if (self != nearby_actor) {
+                if (distance(self.origin, nearby_actor.origin) < active_range) {
+                    if (within_fov(level.player geteye(), level.player.angles, nearby_actor gettagorigin("j_spine4"), cos(45))) {
+                        if (isdefined(nearby_actor.playing_gesture) && nearby_actor.playing_gesture || isdefined(nearby_actor.is_talking) && nearby_actor.is_talking) {
                             return false;
                         }
-                        if (isdefined(var_3a1a848b879788a0.allow_gesture_reactions) && !var_3a1a848b879788a0.allow_gesture_reactions) {
+                        if (isdefined(nearby_actor.allow_gesture_reactions) && !nearby_actor.allow_gesture_reactions) {
                             return false;
                         }
                     }
@@ -287,11 +287,11 @@ function interaction_reboot_timer() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f8
 // Size: 0x46
-function reminder_cooldown_timer(var_8babf0e57327d190) {
+function reminder_cooldown_timer(interval_time) {
     level endon("stop_reminders");
     level endon("reboot_timer");
     level.interaction_manager.can_remind = 0;
-    wait var_8babf0e57327d190;
+    wait interval_time;
     level.interaction_manager.can_remind = 1;
 }
 
@@ -299,14 +299,14 @@ function reminder_cooldown_timer(var_8babf0e57327d190) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1546
 // Size: 0x6a
-function queue_reminder(var_a7fe730c4b4ed74a, var_96c8b0fb4e9c029e, var_649e0f981c46d2ef) {
-    if (!isdefined(var_a7fe730c4b4ed74a) && isdefined(var_96c8b0fb4e9c029e)) {
-        var_a7fe730c4b4ed74a = "none";
+function queue_reminder(dialog_alias, var_96c8b0fb4e9c029e, var_649e0f981c46d2ef) {
+    if (!isdefined(dialog_alias) && isdefined(var_96c8b0fb4e9c029e)) {
+        dialog_alias = "none";
     }
     if (isdefined(var_96c8b0fb4e9c029e)) {
-        var_a7fe730c4b4ed74a = var_a7fe730c4b4ed74a + "+" + var_96c8b0fb4e9c029e;
+        dialog_alias = dialog_alias + "+" + var_96c8b0fb4e9c029e;
     }
-    level.interaction_manager.data["reminder_queue"][var_a7fe730c4b4ed74a] = self;
+    level.interaction_manager.data["reminder_queue"][dialog_alias] = self;
     if (isdefined(var_649e0f981c46d2ef)) {
         self.reminder_animnode = var_649e0f981c46d2ef;
     }
@@ -316,13 +316,13 @@ function queue_reminder(var_a7fe730c4b4ed74a, var_96c8b0fb4e9c029e, var_649e0f98
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x15b8
 // Size: 0x7f
-function queue_reminder_distance_anim(var_a7fe730c4b4ed74a, anime, var_649e0f981c46d2ef, return_anime) {
-    if (isdefined(var_a7fe730c4b4ed74a)) {
-        var_a7fe730c4b4ed74a = var_a7fe730c4b4ed74a + "+" + anime;
+function queue_reminder_distance_anim(dialog_alias, anime, var_649e0f981c46d2ef, return_anime) {
+    if (isdefined(dialog_alias)) {
+        dialog_alias = dialog_alias + "+" + anime;
     } else {
-        var_a7fe730c4b4ed74a = anime;
+        dialog_alias = anime;
     }
-    level.interaction_manager.data["reminder_queue"][var_a7fe730c4b4ed74a] = self;
+    level.interaction_manager.data["reminder_queue"][dialog_alias] = self;
     if (isdefined(var_649e0f981c46d2ef)) {
         self.reminder_animnode = var_649e0f981c46d2ef;
     }
@@ -336,8 +336,8 @@ function queue_reminder_distance_anim(var_a7fe730c4b4ed74a, anime, var_649e0f981
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x163f
 // Size: 0x54
-function queue_reminder_with_reaction(var_a7fe730c4b4ed74a, var_deb57c2beb8db767, registered_interaction, post_reaction_vo_array) {
-    queue_reminder(var_a7fe730c4b4ed74a);
+function queue_reminder_with_reaction(dialog_alias, var_deb57c2beb8db767, registered_interaction, post_reaction_vo_array) {
+    queue_reminder(dialog_alias);
     self.use_reminder_reaction = 1;
     self.registered_interaction = registered_interaction;
     self.post_reaction_vo_array = post_reaction_vo_array;
@@ -348,7 +348,7 @@ function queue_reminder_with_reaction(var_a7fe730c4b4ed74a, var_deb57c2beb8db767
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x169b
 // Size: 0x43d
-function run_reminders(var_8babf0e57327d190) {
+function run_reminders(interval_time) {
     level endon("stop_reminders");
     level thread reminder_queue_cleanup();
     keys = getarraykeys(level.interaction_manager.data["reminder_queue"]);
@@ -356,26 +356,26 @@ function run_reminders(var_8babf0e57327d190) {
         key = keys[i];
         actor = level.interaction_manager.data["reminder_queue"][key];
         if (isdefined(actor)) {
-            var_18be765a87978d5d = strtok(key, "+");
-            var_b86d3e96869d9e54 = var_18be765a87978d5d[0];
+            key_tok = strtok(key, "+");
+            dialog_line = key_tok[0];
             if (isdefined(actor.use_reminder_reaction) && actor.use_reminder_reaction) {
                 if (isdefined(actor.registered_interaction) && isdefined(actor.post_reaction_vo_array)) {
-                    actor thread scripts\sp\interaction::play_smart_interaction(actor.registered_interaction, var_b86d3e96869d9e54, actor.post_reaction_vo_array);
+                    actor thread scripts\sp\interaction::play_smart_interaction(actor.registered_interaction, dialog_line, actor.post_reaction_vo_array);
                 } else if (isdefined(self.post_reaction_func) && isdefined(self.post_reaction_vo)) {
                     self thread [[ self.post_reaction_func ]](undefined, undefined, self.post_reaction_vo);
                 } else {
-                    actor thread play_gesture_reaction(85, 50, var_b86d3e96869d9e54, 1, actor.reminder_reaction_pointat);
+                    actor thread play_gesture_reaction(85, 50, dialog_line, 1, actor.reminder_reaction_pointat);
                 }
                 continue;
             }
             if (isdefined(actor.use_reminder_anim) && actor.use_reminder_anim) {
                 anime = undefined;
                 vo_line = undefined;
-                if (var_18be765a87978d5d.size > 1) {
-                    anime = var_18be765a87978d5d[1];
-                    vo_line = var_b86d3e96869d9e54;
+                if (key_tok.size > 1) {
+                    anime = key_tok[1];
+                    vo_line = dialog_line;
                 } else {
-                    anime = var_18be765a87978d5d[0];
+                    anime = key_tok[0];
                 }
                 if (isdefined(actor.reminder_animnode)) {
                     actor.reminder_animnode thread play_reminder_anim_distance(actor, 85, 50, anime, undefined, 1);
@@ -385,7 +385,7 @@ function run_reminders(var_8babf0e57327d190) {
             }
         }
     }
-    wait var_8babf0e57327d190;
+    wait interval_time;
     while (level.interaction_manager.pause_remind) {
         waitframe();
     }
@@ -393,29 +393,29 @@ function run_reminders(var_8babf0e57327d190) {
         key = keys[i];
         actor = level.interaction_manager.data["reminder_queue"][key];
         if (isdefined(actor)) {
-            var_18be765a87978d5d = strtok(key, "+");
-            var_b86d3e96869d9e54 = var_18be765a87978d5d[0];
-            if (var_18be765a87978d5d.size > 1) {
+            key_tok = strtok(key, "+");
+            dialog_line = key_tok[0];
+            if (key_tok.size > 1) {
                 if (isdefined(actor.reminder_animnode)) {
                     actor.reminder_animnode notify("stop_loop");
-                    actor.reminder_animnode thread anim_single_solo(actor, var_18be765a87978d5d[1]);
-                    wait_time = getanimlength(actor getanim(var_18be765a87978d5d[1]));
+                    actor.reminder_animnode thread anim_single_solo(actor, key_tok[1]);
+                    wait_time = getanimlength(actor getanim(key_tok[1]));
                     actor thread notify_delay("reminder_anim_done", wait_time);
                     if (isdefined(actor.return_anime)) {
                         actor.reminder_animnode delaythread(wait_time, &anim_loop_solo, actor, actor.return_anime, "stop_loop");
                     }
                 } else {
                     actor notify("stop_loop");
-                    actor thread anim_single_solo(actor, var_18be765a87978d5d[1]);
-                    wait_time = getanimlength(actor getanim(var_18be765a87978d5d[1]));
+                    actor thread anim_single_solo(actor, key_tok[1]);
+                    wait_time = getanimlength(actor getanim(key_tok[1]));
                     actor thread notify_delay("reminder_anim_done", wait_time);
                     if (isdefined(actor.return_anime)) {
                         actor delaythread(wait_time, &anim_loop_solo, actor, actor.return_anime, "stop_loop");
                     }
                 }
-                if (var_b86d3e96869d9e54 != "none") {
-                    if (soundexists(var_b86d3e96869d9e54)) {
-                        actor smart_dialogue(var_b86d3e96869d9e54);
+                if (dialog_line != "none") {
+                    if (soundexists(dialog_line)) {
+                        actor smart_dialogue(dialog_line);
                     }
                 }
             } else if (!soundexists(key)) {
@@ -425,7 +425,7 @@ function run_reminders(var_8babf0e57327d190) {
             actor.reminder_animnode = undefined;
             level.interaction_manager.data["reminder_queue"][key] = undefined;
             level.interaction_manager.can_remind = 0;
-            wait var_8babf0e57327d190;
+            wait interval_time;
             level.interaction_manager.can_remind = 1;
         }
         while (level.interaction_manager.pause_remind) {
@@ -485,37 +485,37 @@ function continue_reminders() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c32
 // Size: 0x143
-function play_state_based_interaction(var_52c833b9b9eb5f50, optional_scripted_struct, var_d7bbb055fc183403, var_1ac1f24f36ef97c6) {
-    if (!isdefined(var_d7bbb055fc183403)) {
-        var_d7bbb055fc183403 = "casual";
+function play_state_based_interaction(reaction_name, optional_scripted_struct, starting_state, var_1ac1f24f36ef97c6) {
+    if (!isdefined(starting_state)) {
+        starting_state = "casual";
     }
     if (isdefined(self.gender) && issubstr(self.gender, "female")) {
-        var_d7bbb055fc183403 = "busy";
+        starting_state = "busy";
     }
-    var_cbe4cf073833d7a1 = var_52c833b9b9eb5f50 + "_" + "casual";
-    if (var_d7bbb055fc183403 == "casual" || var_d7bbb055fc183403 == "nag") {
-        var_cbe4cf073833d7a1 = var_52c833b9b9eb5f50 + "_" + var_d7bbb055fc183403;
+    starting_reaction = reaction_name + "_" + "casual";
+    if (starting_state == "casual" || starting_state == "nag") {
+        starting_reaction = reaction_name + "_" + starting_state;
     }
-    self.reaction_state_basename = var_52c833b9b9eb5f50;
-    self.reaction_state = var_d7bbb055fc183403;
-    if (var_d7bbb055fc183403 == "nag") {
-        thread scripts\sp\interaction::play_interaction_with_states(var_cbe4cf073833d7a1, optional_scripted_struct);
+    self.reaction_state_basename = reaction_name;
+    self.reaction_state = starting_state;
+    if (starting_state == "nag") {
+        thread scripts\sp\interaction::play_interaction_with_states(starting_reaction, optional_scripted_struct);
         self.allow_interactions = 0;
-        self.reaction_state = var_d7bbb055fc183403;
+        self.reaction_state = starting_state;
         thread gesture_stop(0.7);
         thread reaction_look_distance_based();
         thread reaction_state_busy_loop(var_1ac1f24f36ef97c6, 1);
         return;
-    } else if (var_d7bbb055fc183403 == "busy") {
-        thread scripts\sp\interaction::play_interaction_with_states(var_cbe4cf073833d7a1, optional_scripted_struct);
+    } else if (starting_state == "busy") {
+        thread scripts\sp\interaction::play_interaction_with_states(starting_reaction, optional_scripted_struct);
         self.allow_interactions = 0;
-        self.reaction_state = var_d7bbb055fc183403;
+        self.reaction_state = starting_state;
         thread gesture_stop(0.7);
         thread reaction_look_distance_based();
         thread reaction_state_busy_loop(var_1ac1f24f36ef97c6);
         return;
     }
-    thread scripts\sp\interaction::play_interaction_with_states(var_cbe4cf073833d7a1, optional_scripted_struct);
+    thread scripts\sp\interaction::play_interaction_with_states(starting_reaction, optional_scripted_struct);
 }
 
 // Namespace interaction_manager / scripts\sp\interaction_manager
@@ -614,52 +614,52 @@ function set_all_reaction_states(state, var_db1cfdabe22af09a) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x205b
 // Size: 0x1dc
-function reaction_look_distance_based(var_bdb82666c7eea3ef, var_1166aab82dbcce02, var_26db558b4dc61586, var_5cd6b577cb6e78a7) {
+function reaction_look_distance_based(check_distance, look_target, look_wait, var_5cd6b577cb6e78a7) {
     self endon("death");
     self notify("stop_reaction_look");
     self endon("stop_reaction_look");
     self endon("stop_smart_reaction");
-    var_ae39bb9175285a00 = 85;
-    if (isdefined(var_bdb82666c7eea3ef)) {
-        var_ae39bb9175285a00 = var_bdb82666c7eea3ef;
+    distance_value = 85;
+    if (isdefined(check_distance)) {
+        distance_value = check_distance;
     }
-    if (!isdefined(var_1166aab82dbcce02)) {
-        var_1166aab82dbcce02 = level.player;
+    if (!isdefined(look_target)) {
+        look_target = level.player;
     }
-    if (!isdefined(var_26db558b4dc61586)) {
-        var_26db558b4dc61586 = 0.7;
+    if (!isdefined(look_wait)) {
+        look_wait = 0.7;
     }
-    wait var_26db558b4dc61586;
+    wait look_wait;
     if (isdefined(self.reaction_state_basename)) {
         if (isdefined(level.state_interactions[self.interaction_name].scene["trigger_radius"])) {
-            var_ae39bb9175285a00 = level.state_interactions[self.interaction_name].scene["trigger_radius"] * 1.2;
+            distance_value = level.state_interactions[self.interaction_name].scene["trigger_radius"] * 1.2;
         }
     }
     waitframe();
     if (isdefined(var_5cd6b577cb6e78a7) && var_5cd6b577cb6e78a7) {
-        thread gesture_follow_lookat(var_1166aab82dbcce02, 0.5, 0.5);
+        thread gesture_follow_lookat(look_target, 0.5, 0.5);
     } else {
-        thread gesture_follow_lookat_natural(var_1166aab82dbcce02, 0.5, 0.5, var_ae39bb9175285a00);
+        thread gesture_follow_lookat_natural(look_target, 0.5, 0.5, distance_value);
     }
     while (!isdefined(self.is_head_tracking)) {
         wait 0.05;
     }
-    thread gesture_follow_eyes(var_1166aab82dbcce02);
+    thread gesture_follow_eyes(look_target);
     wait randomfloatrange(4, 6);
-    var_8f90fb5e2a349239 = 1;
-    var_f7bd3beb65d5ed2c = 1;
+    eyes_enabled = 1;
+    blend_up = 1;
     while (true) {
-        if (distance2d(self.origin, var_1166aab82dbcce02.origin) <= var_ae39bb9175285a00) {
-            if (!var_f7bd3beb65d5ed2c) {
+        if (distance2d(self.origin, look_target.origin) <= distance_value) {
+            if (!blend_up) {
                 thread namespace_3123a12d1da4993::ai_gesture_lookat_weight_up(0.5);
-                thread gesture_follow_eyes(var_1166aab82dbcce02);
-                var_f7bd3beb65d5ed2c = 1;
+                thread gesture_follow_eyes(look_target);
+                blend_up = 1;
             }
-        } else if (distance2d(self.origin, var_1166aab82dbcce02.origin) >= var_ae39bb9175285a00) {
-            if (var_f7bd3beb65d5ed2c) {
+        } else if (distance2d(self.origin, look_target.origin) >= distance_value) {
+            if (blend_up) {
                 thread namespace_3123a12d1da4993::ai_gesture_lookat_weight_down(1);
                 thread gesture_eyes_stop(0.7);
-                var_f7bd3beb65d5ed2c = 0;
+                blend_up = 0;
             }
         }
         waitframe();
@@ -675,13 +675,13 @@ function gesture_reaction_distance_based(var_1ac1f24f36ef97c6, var_aceeb014451bd
     self endon("stop_reaction");
     self endon("reaction_end");
     self endon("stop_reaction_look");
-    var_ae39bb9175285a00 = 50;
+    distance_value = 50;
     if (isdefined(self.reaction_state_basename)) {
         if (isdefined(level.state_interactions[self.interaction_name].scene["trigger_radius"])) {
-            var_ae39bb9175285a00 = level.state_interactions[self.interaction_name].scene["trigger_radius"];
+            distance_value = level.state_interactions[self.interaction_name].scene["trigger_radius"];
         }
     }
-    waittill_gestureconditionsmet(var_ae39bb9175285a00);
+    waittill_gestureconditionsmet(distance_value);
     thread gesture_simple("salute");
     var_765485f31a421aff = undefined;
     if (isdefined(var_aceeb014451bd535) && var_aceeb014451bd535) {
@@ -696,36 +696,36 @@ function gesture_reaction_distance_based(var_1ac1f24f36ef97c6, var_aceeb014451bd
         case #"hash_bd09950854d77c70":
         case #"hash_d6d8c4e1e1f333a7":
         case #"hash_e864ec163d1f06ab":
-            var_be48ac50eef17af1 = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender];
-            var_ad084b6eee8b803d = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6]["spent_" + self.gender];
-            if (var_be48ac50eef17af1.size < 1 && var_ad084b6eee8b803d.size > 0) {
-                level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender] = var_ad084b6eee8b803d;
+            line_array = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender];
+            spent_array = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6]["spent_" + self.gender];
+            if (line_array.size < 1 && spent_array.size > 0) {
+                level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender] = spent_array;
                 level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6]["spent_" + self.gender] = [];
-                var_be48ac50eef17af1 = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender];
-                var_ad084b6eee8b803d = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6]["spent_" + self.gender];
+                line_array = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender];
+                spent_array = level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6]["spent_" + self.gender];
             }
-            if (var_be48ac50eef17af1.size < 1 && var_ad084b6eee8b803d.size < 1) {
+            if (line_array.size < 1 && spent_array.size < 1) {
                 var_765485f31a421aff = undefined;
             } else {
-                var_765485f31a421aff = var_be48ac50eef17af1[randomint(var_be48ac50eef17af1.size)];
+                var_765485f31a421aff = line_array[randomint(line_array.size)];
                 level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6]["spent_" + self.gender] = array_add(level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6]["spent_" + self.gender], var_765485f31a421aff);
                 level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender] = array_remove(level.interaction_manager.data["reminder_vo"][var_1ac1f24f36ef97c6][self.gender], var_765485f31a421aff);
             }
             break;
         }
     } else {
-        var_be48ac50eef17af1 = level.interaction_manager.data["busy_vo"][self.gender];
-        var_ad084b6eee8b803d = level.interaction_manager.data["busy_vo"]["spent_" + self.gender];
-        if (var_be48ac50eef17af1.size < 1 && var_ad084b6eee8b803d.size > 0) {
-            level.interaction_manager.data["busy_vo"][self.gender] = var_ad084b6eee8b803d;
+        line_array = level.interaction_manager.data["busy_vo"][self.gender];
+        spent_array = level.interaction_manager.data["busy_vo"]["spent_" + self.gender];
+        if (line_array.size < 1 && spent_array.size > 0) {
+            level.interaction_manager.data["busy_vo"][self.gender] = spent_array;
             level.interaction_manager.data["busy_vo"]["spent_" + self.gender] = [];
-            var_be48ac50eef17af1 = level.interaction_manager.data["busy_vo"][self.gender];
-            var_ad084b6eee8b803d = level.interaction_manager.data["busy_vo"]["spent_" + self.gender];
+            line_array = level.interaction_manager.data["busy_vo"][self.gender];
+            spent_array = level.interaction_manager.data["busy_vo"]["spent_" + self.gender];
         }
-        if (var_be48ac50eef17af1.size < 1 && var_ad084b6eee8b803d.size < 1) {
+        if (line_array.size < 1 && spent_array.size < 1) {
             var_765485f31a421aff = undefined;
         } else {
-            var_765485f31a421aff = var_be48ac50eef17af1[randomint(var_be48ac50eef17af1.size)];
+            var_765485f31a421aff = line_array[randomint(line_array.size)];
             level.interaction_manager.data["busy_vo"]["spent_" + self.gender] = array_add(level.interaction_manager.data["busy_vo"]["spent_" + self.gender], var_765485f31a421aff);
             level.interaction_manager.data["busy_vo"][self.gender] = array_remove(level.interaction_manager.data["busy_vo"][self.gender], var_765485f31a421aff);
         }
@@ -780,7 +780,7 @@ function print_reaction_state() {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2958
 // Size: 0xe8
-function play_gesture_reaction(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4, var_f0dd62735e42c1e2, var_42b1f24d780b1894, var_d6026ecfc2884700) {
+function play_gesture_reaction(lookat_distance, reaction_distance, var_f0dd62735e42c1e2, var_42b1f24d780b1894, var_d6026ecfc2884700) {
     self endon("death");
     self endon("stop_reaction");
     self endon("reaction_end");
@@ -793,16 +793,16 @@ function play_gesture_reaction(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4, var_f
     if (!isdefined(var_42b1f24d780b1894)) {
         var_42b1f24d780b1894 = 0;
     }
-    if (!isdefined(var_6ea4bfdbc4ecb4ab)) {
-        var_6ea4bfdbc4ecb4ab = 150;
+    if (!isdefined(lookat_distance)) {
+        lookat_distance = 150;
     }
-    if (!isdefined(var_d0def05d989b3be4)) {
-        var_d0def05d989b3be4 = var_6ea4bfdbc4ecb4ab * 0.5;
+    if (!isdefined(reaction_distance)) {
+        reaction_distance = lookat_distance * 0.5;
     }
     if (!isdefined(self.is_head_tracking) || isdefined(self.is_head_tracking) && !self.is_head_tracking) {
-        thread reaction_look_distance_based(var_6ea4bfdbc4ecb4ab);
+        thread reaction_look_distance_based(lookat_distance);
     }
-    waittill_gestureconditionsmet(var_d0def05d989b3be4);
+    waittill_gestureconditionsmet(reaction_distance);
     play_gesture_reaction_anim(var_d6026ecfc2884700);
     play_interaction_vo(var_f0dd62735e42c1e2, var_42b1f24d780b1894);
 }
@@ -811,7 +811,7 @@ function play_gesture_reaction(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4, var_f
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a48
 // Size: 0xc9
-function waittill_gestureconditionsmet(var_d0def05d989b3be4) {
+function waittill_gestureconditionsmet(reaction_distance) {
     self endon("death");
     self endon("stop_reaction");
     self endon("reaction_end");
@@ -819,10 +819,10 @@ function waittill_gestureconditionsmet(var_d0def05d989b3be4) {
     self endon("stop_smart_reaction");
     var_162ea2f613e00777 = 1;
     while (true) {
-        if (isplayerfocus(var_d0def05d989b3be4) && canplaygesture(var_d0def05d989b3be4)) {
-            var_605bf278cf086152 = flatten_vector(anglestoright(self gettagangles("j_head")));
+        if (isplayerfocus(reaction_distance) && canplaygesture(reaction_distance)) {
+            head_vec = flatten_vector(anglestoright(self gettagangles("j_head")));
             vec_to_player = flatten_vector(vectornormalize(level.player geteye() - self gettagorigin("j_head")));
-            dot = vectordot(var_605bf278cf086152, vec_to_player);
+            dot = vectordot(head_vec, vec_to_player);
             if (dot >= 0.8) {
                 break;
             }
@@ -835,7 +835,7 @@ function waittill_gestureconditionsmet(var_d0def05d989b3be4) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b19
 // Size: 0xf4
-function isplayerfocus(var_ff7f67e1369b3c2d) {
+function isplayerfocus(required_dist) {
     self endon("death");
     if (isdefined(self.is_cheap)) {
         self_eye = self gettagorigin("j_head");
@@ -850,7 +850,7 @@ function isplayerfocus(var_ff7f67e1369b3c2d) {
     }
     var_efb844234ac72b75 = level.player geteye();
     var_42a02d3c4bcf914b = level.player getplayerangles();
-    if (distance2d(self.origin, level.player.origin) <= var_ff7f67e1369b3c2d) {
+    if (distance2d(self.origin, level.player.origin) <= required_dist) {
         if (within_fov(var_efb844234ac72b75, var_42a02d3c4bcf914b, self_eye, cos(25))) {
             return true;
         }
@@ -862,10 +862,10 @@ function isplayerfocus(var_ff7f67e1369b3c2d) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c16
 // Size: 0x4f
-function canplaygesture(var_1134633b00730d29) {
+function canplaygesture(check_range) {
     if (!isdefined(self.allow_gesture_reactions) || isdefined(self.allow_gesture_reactions) && self.allow_gesture_reactions) {
         if (!isdefined(self.gesture_reaction_queue)) {
-            if (can_play_nearby_gesture(var_1134633b00730d29)) {
+            if (can_play_nearby_gesture(check_range)) {
                 return true;
             }
         }
@@ -1017,24 +1017,24 @@ function clear_reminder(var_ff9be5f705175100) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x30bb
 // Size: 0x16a
-function play_group_gesture_reaction(var_5f7a2f6ef630c3e8, var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4, var_7551dea02427d9cd) {
-    foreach (actor in var_5f7a2f6ef630c3e8) {
+function play_group_gesture_reaction(actor_array, lookat_distance, reaction_distance, var_7551dea02427d9cd) {
+    foreach (actor in actor_array) {
         actor endon("death");
         actor endon("stop_reaction");
         actor endon("reaction_end");
         actor endon("stop_gesture_reaction");
         actor endon("stop_smart_reaction");
     }
-    foreach (actor in var_5f7a2f6ef630c3e8) {
+    foreach (actor in actor_array) {
         actor thread add_actor_to_manager();
     }
-    thread reaction_group_look_distance_based(var_5f7a2f6ef630c3e8, var_6ea4bfdbc4ecb4ab);
-    waittill_group_gestureconditionsmet(var_5f7a2f6ef630c3e8, var_d0def05d989b3be4);
-    play_group_gesture_performance(var_5f7a2f6ef630c3e8, var_7551dea02427d9cd, var_d0def05d989b3be4);
-    foreach (actor in var_5f7a2f6ef630c3e8) {
-        var_de831916ff6d10ea = randomfloatrange(0, 1);
-        var_de831816ff6d0eb7 = randomfloatrange(0.5, 1.5);
-        actor delaythread(var_de831916ff6d10ea, &gesture_stop, var_de831816ff6d0eb7);
+    thread reaction_group_look_distance_based(actor_array, lookat_distance);
+    waittill_group_gestureconditionsmet(actor_array, reaction_distance);
+    play_group_gesture_performance(actor_array, var_7551dea02427d9cd, reaction_distance);
+    foreach (actor in actor_array) {
+        random_f1 = randomfloatrange(0, 1);
+        random_f2 = randomfloatrange(0.5, 1.5);
+        actor delaythread(random_f1, &gesture_stop, random_f2);
     }
 }
 
@@ -1042,13 +1042,13 @@ function play_group_gesture_reaction(var_5f7a2f6ef630c3e8, var_6ea4bfdbc4ecb4ab,
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x322d
 // Size: 0x99
-function waittill_group_gestureconditionsmet(var_5f7a2f6ef630c3e8, var_be578dd3b5751faf) {
+function waittill_group_gestureconditionsmet(actor_array, minimum_distance) {
     var_162ea2f613e00777 = 1;
-    mid_point = create_middle_ent(var_5f7a2f6ef630c3e8);
-    var_5f7a2f6ef630c3e8 = array_add(var_5f7a2f6ef630c3e8, mid_point);
+    mid_point = create_middle_ent(actor_array);
+    actor_array = array_add(actor_array, mid_point);
     while (var_162ea2f613e00777) {
-        foreach (entry in var_5f7a2f6ef630c3e8) {
-            if (entry isplayerfocus(var_be578dd3b5751faf)) {
+        foreach (entry in actor_array) {
+            if (entry isplayerfocus(minimum_distance)) {
                 var_162ea2f613e00777 = 0;
                 break;
             }
@@ -1069,21 +1069,21 @@ function create_middle_ent(ent_array) {
         counter++;
     }
     midpoint = sum_vector / counter;
-    var_94bcad02f23de46e = spawn_tag_origin(midpoint, (0, 0, 0));
-    return var_94bcad02f23de46e;
+    middle_ent = spawn_tag_origin(midpoint, (0, 0, 0));
+    return middle_ent;
 }
 
 // Namespace interaction_manager / scripts\sp\interaction_manager
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3389
 // Size: 0x68
-function play_group_gesture_performance(var_5f7a2f6ef630c3e8, var_efe1c4b2620f108, var_be578dd3b5751faf) {
-    for (i = 0; i < var_5f7a2f6ef630c3e8.size; i++) {
-        if (isdefined(var_5f7a2f6ef630c3e8[i]) && isdefined(var_efe1c4b2620f108[i])) {
-            var_5f7a2f6ef630c3e8[i] play_gesture_reaction_anim();
-            var_5f7a2f6ef630c3e8[i] play_interaction_vo(var_efe1c4b2620f108[i]);
+function play_group_gesture_performance(actor_array, vo_array, minimum_distance) {
+    for (i = 0; i < actor_array.size; i++) {
+        if (isdefined(actor_array[i]) && isdefined(vo_array[i])) {
+            actor_array[i] play_gesture_reaction_anim();
+            actor_array[i] play_interaction_vo(vo_array[i]);
         }
-        if (!group_isplayerfocus(var_be578dd3b5751faf, var_5f7a2f6ef630c3e8)) {
+        if (!group_isplayerfocus(minimum_distance, actor_array)) {
             break;
         }
     }
@@ -1093,9 +1093,9 @@ function play_group_gesture_performance(var_5f7a2f6ef630c3e8, var_efe1c4b2620f10
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x33f9
 // Size: 0x63
-function group_isplayerfocus(var_be578dd3b5751faf, ent_array) {
+function group_isplayerfocus(minimum_distance, ent_array) {
     foreach (entry in ent_array) {
-        if (entry isplayerfocus(var_be578dd3b5751faf)) {
+        if (entry isplayerfocus(minimum_distance)) {
             return true;
         }
     }
@@ -1106,27 +1106,27 @@ function group_isplayerfocus(var_be578dd3b5751faf, ent_array) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3465
 // Size: 0xef
-function reaction_group_look_distance_based(var_5f7a2f6ef630c3e8, var_bdb82666c7eea3ef, var_1166aab82dbcce02) {
-    foreach (actor in var_5f7a2f6ef630c3e8) {
+function reaction_group_look_distance_based(actor_array, check_distance, look_target) {
+    foreach (actor in actor_array) {
         actor endon("death");
         actor endon("stop_reaction");
         actor endon("reaction_end");
         actor endon("stop_reaction_look");
         actor endon("stop_smart_reaction");
     }
-    var_ae39bb9175285a00 = 85;
-    if (isdefined(var_bdb82666c7eea3ef)) {
-        var_ae39bb9175285a00 = var_bdb82666c7eea3ef;
+    distance_value = 85;
+    if (isdefined(check_distance)) {
+        distance_value = check_distance;
     }
-    if (!isdefined(var_1166aab82dbcce02)) {
-        var_1166aab82dbcce02 = level.player;
+    if (!isdefined(look_target)) {
+        look_target = level.player;
     }
-    initialize_group_lookat(var_5f7a2f6ef630c3e8, var_1166aab82dbcce02);
-    var_d63b4694e0df67fa = create_middle_ent(var_5f7a2f6ef630c3e8);
+    initialize_group_lookat(actor_array, look_target);
+    look_source = create_middle_ent(actor_array);
     while (true) {
-        update_lookat_status(var_5f7a2f6ef630c3e8, var_d63b4694e0df67fa, var_1166aab82dbcce02, var_bdb82666c7eea3ef);
-        update_lookat_weights(var_5f7a2f6ef630c3e8);
-        update_lookat_delays(var_5f7a2f6ef630c3e8);
+        update_lookat_status(actor_array, look_source, look_target, check_distance);
+        update_lookat_weights(actor_array);
+        update_lookat_delays(actor_array);
         waitframe();
     }
 }
@@ -1135,15 +1135,15 @@ function reaction_group_look_distance_based(var_5f7a2f6ef630c3e8, var_bdb82666c7
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x355c
 // Size: 0xc6
-function initialize_group_lookat(var_5f7a2f6ef630c3e8, var_1166aab82dbcce02) {
-    foreach (actor in var_5f7a2f6ef630c3e8) {
-        actor gesture_follow_lookat(var_1166aab82dbcce02, 0.15, 0.7);
+function initialize_group_lookat(actor_array, look_target) {
+    foreach (actor in actor_array) {
+        actor gesture_follow_lookat(look_target, 0.15, 0.7);
         actor.lookat_enabled = 0;
         actor.lookat_delay = 0;
     }
     waitframe();
-    foreach (actor in var_5f7a2f6ef630c3e8) {
-        actor thread gesture_eye_dart_loop(var_1166aab82dbcce02);
+    foreach (actor in actor_array) {
+        actor thread gesture_eye_dart_loop(look_target);
     }
 }
 
@@ -1151,20 +1151,20 @@ function initialize_group_lookat(var_5f7a2f6ef630c3e8, var_1166aab82dbcce02) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x362a
 // Size: 0x56
-function update_lookat_status(var_5f7a2f6ef630c3e8, var_205208a2014184f5, var_968583169a58b079, dist) {
-    if (distance2d(var_205208a2014184f5.origin, var_968583169a58b079.origin) <= dist) {
-        enable_lookat(var_5f7a2f6ef630c3e8);
+function update_lookat_status(actor_array, lookat_source, lookat_target, dist) {
+    if (distance2d(lookat_source.origin, lookat_target.origin) <= dist) {
+        enable_lookat(actor_array);
         return;
     }
-    disable_lookat(var_5f7a2f6ef630c3e8);
+    disable_lookat(actor_array);
 }
 
 // Namespace interaction_manager / scripts\sp\interaction_manager
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3688
 // Size: 0x70
-function enable_lookat(var_5f7a2f6ef630c3e8) {
-    foreach (actor in var_5f7a2f6ef630c3e8) {
+function enable_lookat(actor_array) {
+    foreach (actor in actor_array) {
         if (!actor.lookat_enabled) {
             actor create_lookat_delay();
         }
@@ -1176,8 +1176,8 @@ function enable_lookat(var_5f7a2f6ef630c3e8) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3700
 // Size: 0x6f
-function disable_lookat(var_5f7a2f6ef630c3e8) {
-    foreach (actor in var_5f7a2f6ef630c3e8) {
+function disable_lookat(actor_array) {
+    foreach (actor in actor_array) {
         if (actor.lookat_enabled) {
             actor create_lookat_delay();
         }
@@ -1189,8 +1189,8 @@ function disable_lookat(var_5f7a2f6ef630c3e8) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3777
 // Size: 0x7d
-function update_lookat_weights(var_5f7a2f6ef630c3e8) {
-    foreach (actor in var_5f7a2f6ef630c3e8) {
+function update_lookat_weights(actor_array) {
+    foreach (actor in actor_array) {
         if (actor.lookat_delay <= 0) {
             if (actor.lookat_enabled) {
                 actor increase_lookat_weight();
@@ -1205,8 +1205,8 @@ function update_lookat_weights(var_5f7a2f6ef630c3e8) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x37fc
 // Size: 0x79
-function update_lookat_delays(var_5f7a2f6ef630c3e8) {
-    foreach (actor in var_5f7a2f6ef630c3e8) {
+function update_lookat_delays(actor_array) {
+    foreach (actor in actor_array) {
         if (actor.lookat_delay > 0) {
             actor.lookat_delay -= 0.05;
         }
@@ -1260,26 +1260,26 @@ function convertvar_toarray(var_e1fdb9e31a9005b0) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3902
 // Size: 0xd7
-function play_gesture_reaction_loop(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4, var_bf603f3708ea2d46, var_42b1f24d780b1894, var_d6026ecfc2884700) {
+function play_gesture_reaction_loop(lookat_distance, reaction_distance, var_bf603f3708ea2d46, var_42b1f24d780b1894, var_d6026ecfc2884700) {
     self endon("death");
     self endon("stop_reaction");
     self endon("reaction_end");
     var_3eb3d32007b7b5 = [];
-    for (var_efe1c4b2620f108 = var_bf603f3708ea2d46; true; var_efe1c4b2620f108 = array_remove(var_efe1c4b2620f108, var_a0dc29cff035e549)) {
-        if (var_efe1c4b2620f108.size <= 0) {
+    for (vo_array = var_bf603f3708ea2d46; true; vo_array = array_remove(vo_array, random_line)) {
+        if (vo_array.size <= 0) {
             var_3eb3d32007b7b5 = [];
-            var_efe1c4b2620f108 = var_bf603f3708ea2d46;
+            vo_array = var_bf603f3708ea2d46;
         }
-        var_a0dc29cff035e549 = var_efe1c4b2620f108[randomint(var_efe1c4b2620f108.size)];
-        play_gesture_reaction(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4, var_a0dc29cff035e549, var_42b1f24d780b1894, var_d6026ecfc2884700);
+        random_line = vo_array[randomint(vo_array.size)];
+        play_gesture_reaction(lookat_distance, reaction_distance, random_line, var_42b1f24d780b1894, var_d6026ecfc2884700);
         while (true) {
-            if (distance2d(self.origin, level.player.origin) >= var_6ea4bfdbc4ecb4ab) {
+            if (distance2d(self.origin, level.player.origin) >= lookat_distance) {
                 break;
             }
             waitframe();
         }
         waitframe();
-        var_3eb3d32007b7b5 = array_add(var_3eb3d32007b7b5, var_a0dc29cff035e549);
+        var_3eb3d32007b7b5 = array_add(var_3eb3d32007b7b5, random_line);
     }
 }
 
@@ -1308,22 +1308,22 @@ function stop_queued_reaction() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a33
 // Size: 0x49
-function queue_gesture_reaction(var_a7fe730c4b4ed74a) {
+function queue_gesture_reaction(dialog_alias) {
     if (!isdefined(self.gesture_reaction_queue)) {
         self.gesture_reaction_queue = [];
     }
-    var_6f47d4848047c403 = var_a7fe730c4b4ed74a;
-    if (isarray(var_a7fe730c4b4ed74a)) {
-        var_6f47d4848047c403 = var_a7fe730c4b4ed74a[0];
+    alias_key = dialog_alias;
+    if (isarray(dialog_alias)) {
+        alias_key = dialog_alias[0];
     }
-    self.gesture_reaction_queue[var_6f47d4848047c403] = var_a7fe730c4b4ed74a;
+    self.gesture_reaction_queue[alias_key] = dialog_alias;
 }
 
 // Namespace interaction_manager / scripts\sp\interaction_manager
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a84
 // Size: 0x2da
-function play_gesture_reaction_set(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4) {
+function play_gesture_reaction_set(lookat_distance, reaction_distance) {
     self endon("death");
     self endon("stop_reaction");
     self endon("reaction_end");
@@ -1332,17 +1332,17 @@ function play_gesture_reaction_set(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4) {
     gesture_stop(0.7);
     thread add_actor_to_manager();
     self.allow_gesture_reactions = 1;
-    if (!isdefined(var_6ea4bfdbc4ecb4ab)) {
-        var_6ea4bfdbc4ecb4ab = 150;
+    if (!isdefined(lookat_distance)) {
+        lookat_distance = 150;
     }
-    if (!isdefined(var_d0def05d989b3be4)) {
-        var_d0def05d989b3be4 = var_6ea4bfdbc4ecb4ab * 0.5;
+    if (!isdefined(reaction_distance)) {
+        reaction_distance = lookat_distance * 0.5;
     }
-    thread reaction_look_distance_based(var_6ea4bfdbc4ecb4ab);
+    thread reaction_look_distance_based(lookat_distance);
     keys = getarraykeys(self.gesture_reaction_queue);
     for (i = 0; i < keys.size; i++) {
         key = keys[i];
-        var_4a8875673ef7ce6 = self.gesture_reaction_queue[key];
+        dialog_set = self.gesture_reaction_queue[key];
         while (true) {
             if (!isdefined(self)) {
                 return;
@@ -1350,7 +1350,7 @@ function play_gesture_reaction_set(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4) {
             offset = length(level.player.origin - level.player geteye());
             lookat = self.origin + anglestoup(self.angles) * offset;
             if (level.player player_looking_at(lookat, 0.75, 1)) {
-                if (distance2d(self.origin, level.player.origin) <= var_d0def05d989b3be4 && can_play_nearby_gesture(var_d0def05d989b3be4)) {
+                if (distance2d(self.origin, level.player.origin) <= reaction_distance && can_play_nearby_gesture(reaction_distance)) {
                     break;
                 }
             }
@@ -1358,9 +1358,9 @@ function play_gesture_reaction_set(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4) {
         }
         thread gesture_simple("salute");
         self.allow_gesture_reactions = 0;
-        if (isarray(var_4a8875673ef7ce6)) {
-            for (index = 0; index < var_4a8875673ef7ce6.size; index++) {
-                action = var_4a8875673ef7ce6[index];
+        if (isarray(dialog_set)) {
+            for (index = 0; index < dialog_set.size; index++) {
+                action = dialog_set[index];
                 if (isstring(action)) {
                     define_face_anim_if_exists(action);
                     if (soundexists(action)) {
@@ -1381,13 +1381,13 @@ function play_gesture_reaction_set(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4) {
                     wait action;
                 }
             }
-        } else if (soundexists(var_4a8875673ef7ce6)) {
-            define_face_anim_if_exists(var_4a8875673ef7ce6);
-            var_409b07aab3875801 = main_cast_dialog_actor_check(var_4a8875673ef7ce6);
+        } else if (soundexists(dialog_set)) {
+            define_face_anim_if_exists(dialog_set);
+            var_409b07aab3875801 = main_cast_dialog_actor_check(dialog_set);
             if (isdefined(var_409b07aab3875801)) {
-                var_409b07aab3875801 smart_dialogue(var_4a8875673ef7ce6);
+                var_409b07aab3875801 smart_dialogue(dialog_set);
             } else {
-                smart_dialogue(var_4a8875673ef7ce6);
+                smart_dialogue(dialog_set);
             }
         }
         self.gesture_reaction_queue[key] = undefined;
@@ -1404,8 +1404,8 @@ function play_gesture_reaction_set(var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d66
 // Size: 0xfd
-function main_cast_dialog_actor_check(var_b86d3e96869d9e54) {
-    var_7d9f09842d048f33 = strtok(var_b86d3e96869d9e54, "_");
+function main_cast_dialog_actor_check(dialog_line) {
+    var_7d9f09842d048f33 = strtok(dialog_line, "_");
     if (array_contains(var_7d9f09842d048f33, "nav") || array_contains(var_7d9f09842d048f33, "gtr")) {
         return level.gator;
     } else if (array_contains(var_7d9f09842d048f33, "slt") || array_contains(var_7d9f09842d048f33, "xo")) {
@@ -1428,7 +1428,7 @@ function main_cast_dialog_actor_check(var_b86d3e96869d9e54) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e6c
 // Size: 0x498
-function play_reminder_anim_distance(actor, var_6ea4bfdbc4ecb4ab, var_d0def05d989b3be4, anime, var_f0dd62735e42c1e2, var_42b1f24d780b1894) {
+function play_reminder_anim_distance(actor, lookat_distance, reaction_distance, anime, var_f0dd62735e42c1e2, var_42b1f24d780b1894) {
     actor endon("death");
     if (isdefined(actor.pre_reaction_func)) {
         if (isdefined(actor.pre_reaction_params)) {
@@ -1447,16 +1447,16 @@ function play_reminder_anim_distance(actor, var_6ea4bfdbc4ecb4ab, var_d0def05d98
     if (!isdefined(var_42b1f24d780b1894)) {
         var_42b1f24d780b1894 = 0;
     }
-    if (!isdefined(var_6ea4bfdbc4ecb4ab)) {
-        var_6ea4bfdbc4ecb4ab = 150;
+    if (!isdefined(lookat_distance)) {
+        lookat_distance = 150;
     }
-    if (!isdefined(var_d0def05d989b3be4)) {
-        var_d0def05d989b3be4 = var_6ea4bfdbc4ecb4ab * 0.5;
+    if (!isdefined(reaction_distance)) {
+        reaction_distance = lookat_distance * 0.5;
     }
     if (!isdefined(actor.is_head_tracking) || isdefined(actor.is_head_tracking) && !actor.is_head_tracking) {
-        actor thread reaction_look_distance_based(var_6ea4bfdbc4ecb4ab);
+        actor thread reaction_look_distance_based(lookat_distance);
     }
-    while (distance2d(actor.origin, level.player.origin) <= var_6ea4bfdbc4ecb4ab + 25) {
+    while (distance2d(actor.origin, level.player.origin) <= lookat_distance + 25) {
         waitframe();
     }
     while (true) {
@@ -1466,7 +1466,7 @@ function play_reminder_anim_distance(actor, var_6ea4bfdbc4ecb4ab, var_d0def05d98
         offset = length(level.player.origin - level.player geteye());
         lookat = actor.origin + anglestoup(actor.angles) * offset;
         if (level.player player_looking_at(lookat, 0.75, 1)) {
-            if (distance2d(actor.origin, level.player.origin) <= var_d0def05d989b3be4) {
+            if (distance2d(actor.origin, level.player.origin) <= reaction_distance) {
                 break;
             }
         }

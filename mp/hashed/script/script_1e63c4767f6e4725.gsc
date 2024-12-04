@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
 #using script_5acb344add63cac4;
 #using script_7ef95bba57dc4b82;
-#using script_a35012b9b75a996;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\shock_stick;
 
 #namespace namespace_37751a84674f6b5c;
 
@@ -212,19 +212,19 @@ function private lc_do_tick_damage(params, duration) {
         self endon("lc_do_tick_damage");
     }
     params.var_8de885f6fab113ba = 1;
-    var_3573f0aa5ba77c64 = getdvarint(@"hash_59086b940de532cd", 5);
-    var_fa94f56fd2aa834 = duration / var_3573f0aa5ba77c64;
+    total_ticks = getdvarint(@"hash_59086b940de532cd", 5);
+    tick_time = duration / total_ticks;
     total_damage = 0;
     lc_damage = lc_damage_calculation(params);
     params.var_8de885f6fab113ba = 0;
-    var_885efccb799e30cc = int(ceil(lc_damage / var_3573f0aa5ba77c64));
-    for (tick = 0; tick < var_3573f0aa5ba77c64; tick++) {
-        if (tick + 1 == var_3573f0aa5ba77c64) {
+    var_885efccb799e30cc = int(ceil(lc_damage / total_ticks));
+    for (tick = 0; tick < total_ticks; tick++) {
+        if (tick + 1 == total_ticks) {
             var_885efccb799e30cc = lc_damage - total_damage;
         }
         total_damage += var_885efccb799e30cc;
         self dodamage(var_885efccb799e30cc, self.origin, params.player, params.player, "MOD_ELEMENTAL_ELEC", params.weapon, "torso_upper");
-        wait var_fa94f56fd2aa834;
+        wait tick_time;
     }
 }
 

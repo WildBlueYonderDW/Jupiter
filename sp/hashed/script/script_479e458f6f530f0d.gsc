@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace geiger_counter;
 
@@ -386,8 +386,8 @@ function _geigercounter_calculateGeigerCounterPulseRate(var_1e331291fa3bd60, obj
     if (issharedfuncdefined("radiation", "radiation_isInit") && issharedfuncdefined("radiation", "radiation_signedDistanceFromRadiationCircle")) {
         if ([[ scripts\engine\utility::getsharedfunc("radiation", "radiation_isInit") ]]()) {
             var_7541c0ea78d6cdaf = [[ scripts\engine\utility::getsharedfunc("radiation", "radiation_signedDistanceFromRadiationCircle") ]](self.origin);
-            var_50dc5744a73eaa32 = var_7541c0ea78d6cdaf <= 0;
-            if (var_50dc5744a73eaa32) {
+            in_radiation = var_7541c0ea78d6cdaf <= 0;
+            if (in_radiation) {
                 radiation_factor = 1;
             } else {
                 radiation_factor = clamp(-1 * var_7541c0ea78d6cdaf / level.var_bcb3e1f6f7cd3cb7.radiationmaxdist + 1, 0, 1);

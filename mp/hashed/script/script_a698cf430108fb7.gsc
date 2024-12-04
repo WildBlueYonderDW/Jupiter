@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\common\values.gsc;
-#using script_104e3370b024f998;
-#using scripts\engine\trace.gsc;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\temp_v;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace namespace_ba300dc864b9baf9;
 
@@ -81,7 +81,7 @@ function function_4b2fa585273dbb8c() {
     self.plotarmor = undefined;
     function_6caa4b447cb1ee5c(0);
     fadetoblackforplayer(self, 0, 0.25);
-    namespace_416e533f6ed17708::function_269b97f3d86eb172();
+    scripts\mp\equipment\temp_v::function_269b97f3d86eb172();
 }
 
 // Namespace namespace_ba300dc864b9baf9 / namespace_9f9a23de1f1dc7ff

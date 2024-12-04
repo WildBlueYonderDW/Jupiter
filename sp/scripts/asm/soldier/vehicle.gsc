@@ -1,18 +1,18 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\soldier\pain.gsc;
 #using script_159f253f9bd2314e;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\asm\soldier\death.gsc;
-#using scripts\asm\soldier\melee.gsc;
-#using scripts\asm\soldier\script_funcs.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\soldier\death;
+#using scripts\asm\soldier\melee;
+#using scripts\asm\soldier\pain;
+#using scripts\asm\soldier\script_funcs;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\vehicle\vehicle_common;
 
 #namespace vehicle;
 

@@ -1,19 +1,19 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
 #using script_44b8991c2b01716a;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
-#namespace namespace_af989994e05fbdcb;
+#namespace featurebans;
 
-// Namespace namespace_af989994e05fbdcb / namespace_923440a69c7ffdbe
+// Namespace featurebans / namespace_923440a69c7ffdbe
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c8
 // Size: 0x1f8
-function function_112e55565cbd70d9() {
+function featurebans_vehicleExplode() {
     if (!isdefined(level.vehicle)) {
         return;
     }
@@ -66,7 +66,7 @@ function function_112e55565cbd70d9() {
     }
 }
 
-// Namespace namespace_af989994e05fbdcb / namespace_923440a69c7ffdbe
+// Namespace featurebans / namespace_923440a69c7ffdbe
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x5c8
 // Size: 0x34
@@ -76,11 +76,11 @@ function private function_a20fb4fd7a73c944() {
     self dodamage(self.health, self.origin, undefined, undefined, "MOD_EXPLOSIVE");
 }
 
-// Namespace namespace_af989994e05fbdcb / namespace_923440a69c7ffdbe
+// Namespace featurebans / namespace_923440a69c7ffdbe
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x604
 // Size: 0x2c0
-function function_5dd9c0f6e90a13b0(instance) {
+function featurebans_jumpScare(instance) {
     level endon("game_ended");
     self endon("death");
     var_e4fd501f7b60e19f = getdvarint(@"hash_c1bc548080309d13", 1);

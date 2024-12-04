@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_22b5518d4dea99e0;
 #using script_3ed005fe9b78b9da;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\weapon.gsc;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_bc228b4ad7fb1a33;
 

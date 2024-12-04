@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace hitmarker;
 
@@ -6,7 +6,7 @@
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x161
 // Size: 0xa6
-function function_a47fae6ca49bc2b9(var_f182d284b07a828e, isdeath, iscivilian, var_942b8c491d5d7bd1) {
+function frontend_hitmarker(var_f182d284b07a828e, isdeath, iscivilian, var_942b8c491d5d7bd1) {
     if (!isdefined(isdeath)) {
         isdeath = 0;
     }

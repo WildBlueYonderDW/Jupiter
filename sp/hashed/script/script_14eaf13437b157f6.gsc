@@ -1,29 +1,29 @@
-#using scripts\code\character.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
-#using script_2a75efcd3da99f86;
-#using script_585020cc144da263;
 #using script_110368d614fc4337;
-#using script_1470a8e739bebb8a;
-#using script_7fe81083032e13e1;
-#using script_296ecd7e84a52368;
 #using script_124c0460ed84305f;
-#using script_76b1008b255c1686;
+#using script_1470a8e739bebb8a;
+#using script_296ecd7e84a52368;
+#using script_2a75efcd3da99f86;
 #using script_403097a9b8da5e0b;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using script_585020cc144da263;
+#using script_76b1008b255c1686;
+#using script_7fe81083032e13e1;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\code\character;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
-#namespace namespace_410f87ca69ec16ef;
+#namespace jup_enemy_cp_sniper_tier3_rus_pmc;
 
-// Namespace namespace_410f87ca69ec16ef / namespace_4e2b7ed189af803c
+// Namespace jup_enemy_cp_sniper_tier3_rus_pmc / namespace_4e2b7ed189af803c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e1
 // Size: 0x228
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_13daf0c554be09e2");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_enemy_cp_sniper_tier3_rus_pmc");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_d4c1580d6bc10b4");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 150;
@@ -62,7 +62,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_410f87ca69ec16ef / namespace_4e2b7ed189af803c
+// Namespace jup_enemy_cp_sniper_tier3_rus_pmc / namespace_4e2b7ed189af803c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x611
 // Size: 0x56
@@ -76,7 +76,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_410f87ca69ec16ef / namespace_4e2b7ed189af803c
+// Namespace jup_enemy_cp_sniper_tier3_rus_pmc / namespace_4e2b7ed189af803c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x66f
 // Size: 0xf1
@@ -104,7 +104,7 @@ function function_9ac26a51c94ccf52() {
     }
 }
 
-// Namespace namespace_410f87ca69ec16ef / namespace_4e2b7ed189af803c
+// Namespace jup_enemy_cp_sniper_tier3_rus_pmc / namespace_4e2b7ed189af803c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x768
 // Size: 0x106
@@ -135,7 +135,7 @@ function precache() {
     thread setup_weapons();
 }
 
-// Namespace namespace_410f87ca69ec16ef / namespace_4e2b7ed189af803c
+// Namespace jup_enemy_cp_sniper_tier3_rus_pmc / namespace_4e2b7ed189af803c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x876
 // Size: 0x18e

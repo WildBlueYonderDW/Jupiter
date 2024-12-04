@@ -1,138 +1,138 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
 #using script_13865ca76df87ea;
-#using scripts\cp_mp\utility\callback_group.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using script_cbb0697de4c5728;
-#using scripts\cp_mp\dragonsbreath.gsc;
-#using scripts\mp\equipment\trophy_system.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\perks\weaponpassives.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\usability.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\missilelauncher.gsc;
-#using scripts\mp\javelin.gsc;
-#using scripts\cp_mp\crossbow.gsc;
-#using script_202d9f0ea7db3a23;
-#using scripts\cp_mp\xmike109.gsc;
-#using script_4a6760982b403bad;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\movers.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using script_600b944a95c3a7bf;
-#using script_3b8ef7abd8107d82;
-#using scripts\mp\equipment\snapshot_grenade.gsc;
-#using scripts\mp\equipment\decoy_grenade.gsc;
-#using scripts\engine\throttle.gsc;
-#using script_32c2f4a699e57e1e;
+#using script_13f9dde7eecfbc71;
+#using script_156835ef9924856a;
 #using script_15eddb0fac236a22;
-#using scripts\mp\killstreaks\juggernaut_mp.gsc;
-#using scripts\mp\potg_events.gsc;
 #using script_189b67b2735b981d;
-#using script_6a8ec730b2bfa844;
-#using scripts\mp\shellshock.gsc;
-#using scripts\mp\equipment\wristrocket.gsc;
-#using scripts\mp\equipment\c4.gsc;
-#using script_4b6cdcd3c396abab;
-#using script_528b573c2e6fc70a;
-#using scripts\mp\equipment\claymore.gsc;
-#using scripts\mp\equipment\at_mine.gsc;
-#using script_2bada07de712df57;
-#using scripts\cp_mp\equipment\throwing_knife.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\equipment\thermite.gsc;
-#using scripts\mp\supers\spawnbeacon.gsc;
-#using scripts\mp\equipment\support_box.gsc;
-#using scripts\mp\equipment\gas_grenade.gsc;
-#using scripts\mp\equipment\binoculars.gsc;
-#using scripts\mp\equipment\tactical_cover.gsc;
-#using scripts\mp\equipment\tac_insert.gsc;
-#using scripts\mp\equipment\advanced_supply_drop.gsc;
-#using scripts\mp\equipment\weapon_drop.gsc;
-#using script_51f5154861435b1e;
+#using script_19818a4d668d8841;
+#using script_19fd5b5d73d44c18;
+#using script_1cf2ed809496bf4e;
+#using script_1eddec53abf6e24c;
+#using script_202d9f0ea7db3a23;
+#using script_22115fec83741670;
+#using script_2669878cf5a1b6bc;
 #using script_28b451b2ea6dae46;
-#using script_681c3db54537afa6;
+#using script_2bada07de712df57;
+#using script_2d9d24f7c63ac143;
+#using script_32c2f4a699e57e1e;
+#using script_35e8be7f3fa3f35e;
+#using script_3b8ef7abd8107d82;
+#using script_3ef6c4fbba18bfa4;
 #using script_45c10ca5cb8409bf;
 #using script_479e458f6f530f0d;
-#using script_1cf2ed809496bf4e;
-#using script_a35012b9b75a996;
-#using script_6e2bb9330396afcb;
-#using script_5876130c2d1591f9;
-#using script_c0f9f3b00e6dbcc;
-#using script_22115fec83741670;
-#using script_7ec79670452ec186;
-#using script_19818a4d668d8841;
-#using script_156835ef9924856a;
+#using script_4a6760982b403bad;
+#using script_4b6cdcd3c396abab;
+#using script_51f5154861435b1e;
+#using script_528b573c2e6fc70a;
 #using script_52d91cb28006a5bd;
-#using script_13f9dde7eecfbc71;
-#using script_69d4ade76a80c6fe;
-#using script_35e8be7f3fa3f35e;
-#using script_3ef6c4fbba18bfa4;
-#using script_19fd5b5d73d44c18;
+#using script_5762ac2f22202ba2;
+#using script_600b944a95c3a7bf;
 #using script_676f8221e501bed1;
-#using scripts\mp\equipment\concussion_grenade.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\mp\gametypes\war.gsc;
-#using scripts\mp\gametypes\infect.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\mp\killstreaks\remotetank.gsc;
+#using script_681c3db54537afa6;
+#using script_69d4ade76a80c6fe;
+#using script_6a8ec730b2bfa844;
+#using script_6e2bb9330396afcb;
 #using script_7e994e91383c7ba;
-#using script_1eddec53abf6e24c;
-#using scripts\cp_mp\killstreaks\chopper_gunner.gsc;
-#using scripts\cp_mp\killstreaks\gunship.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\weapons.gsc;
+#using script_7ec79670452ec186;
+#using script_c0f9f3b00e6dbcc;
+#using script_cbb0697de4c5728;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\crossbow;
+#using scripts\cp_mp\dragonsbreath;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\equipment\throwing_knife;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\killstreaks\chopper_gunner;
+#using scripts\cp_mp\killstreaks\gunship;
+#using scripts\cp_mp\utility\callback_group;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\cp_mp\xmike109;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\class;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\damage;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\advanced_supply_drop;
+#using scripts\mp\equipment\at_mine;
+#using scripts\mp\equipment\binoculars;
+#using scripts\mp\equipment\c4;
+#using scripts\mp\equipment\claymore;
+#using scripts\mp\equipment\concussion_grenade;
+#using scripts\mp\equipment\decoy_grenade;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\equipment\ied;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\equipment\shock_stick;
+#using scripts\mp\equipment\snapshot_grenade;
+#using scripts\mp\equipment\support_box;
+#using scripts\mp\equipment\tac_insert;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\equipment\thermite;
+#using scripts\mp\equipment\trophy_system;
+#using scripts\mp\equipment\weapon_drop;
+#using scripts\mp\equipment\wristrocket;
+#using scripts\mp\events;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\infect;
+#using scripts\mp\gametypes\war;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\javelin;
+#using scripts\mp\killstreaks\juggernaut_mp;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\killstreaks\remotetank;
+#using scripts\mp\missilelauncher;
+#using scripts\mp\movers;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\perks\perks;
+#using scripts\mp\perks\weaponpassives;
+#using scripts\mp\persistence;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\potg_events;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\shellshock;
+#using scripts\mp\supers;
+#using scripts\mp\supers\spawnbeacon;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\usability;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace weapons;
 
@@ -991,11 +991,11 @@ function weaponperkupdate(currweaponobj, prevweaponobj) {
 // Size: 0x1b6
 function weaponattachmentperkupdate(currweaponobj, prevweaponobj) {
     var_503110dc18b08ab9 = undefined;
-    var_88c1658d6b22a174 = undefined;
+    oldattachments = undefined;
     if (!isundefinedweapon(prevweaponobj)) {
-        var_88c1658d6b22a174 = getweaponattachments(prevweaponobj);
-        if (isdefined(var_88c1658d6b22a174) && var_88c1658d6b22a174.size > 0) {
-            foreach (oldattach in var_88c1658d6b22a174) {
+        oldattachments = getweaponattachments(prevweaponobj);
+        if (isdefined(oldattachments) && oldattachments.size > 0) {
+            foreach (oldattach in oldattachments) {
                 perks = weapon::attachmentperkmap(prevweaponobj, oldattach);
                 if (!isdefined(perks)) {
                     continue;
@@ -1873,7 +1873,7 @@ function function_71dc088dc384ef8d(weaponname, numattachments, var_a4d5e0f6b90df
 // Checksum 0x0, Offset: 0x74e9
 // Size: 0x23f
 function function_8df87e6b1d13c15a(weaponobj, numattachments, var_a4d5e0f6b90df7eb, excludeslots, minpriority) {
-    var_d7cb31ea2a8b6e87 = [];
+    random_attachments = [];
     var_738063f99716d177 = weapon::function_c471a035d22df5eb();
     var_738063f99716d177 = utility::array_randomize(var_738063f99716d177);
     if (isdefined(excludeslots)) {
@@ -1887,26 +1887,26 @@ function function_8df87e6b1d13c15a(weaponobj, numattachments, var_a4d5e0f6b90df7
         if (istrue(var_a4d5e0f6b90df7eb) && slotkey == "scope") {
             continue;
         }
-        var_39acc07a4f70f5ca = function_75b035199842693d(weaponobj, slotkey);
-        if (var_39acc07a4f70f5ca.size > 0 && var_d7cb31ea2a8b6e87.size < numattachments) {
+        attachment_array = function_75b035199842693d(weaponobj, slotkey);
+        if (attachment_array.size > 0 && random_attachments.size < numattachments) {
             if (isdefined(minpriority)) {
                 var_e4d2b96bef75b948 = getcompleteweaponname(weaponobj);
                 var_6121d10df35555a6 = [];
-                foreach (attachment in var_39acc07a4f70f5ca) {
+                foreach (attachment in attachment_array) {
                     attachpriority = function_1dd1f56bc3d72b7e(var_e4d2b96bef75b948, attachment);
                     if (attachpriority < minpriority) {
                         continue;
                     }
                     var_6121d10df35555a6[var_6121d10df35555a6.size] = attachment;
                 }
-                var_39acc07a4f70f5ca = var_6121d10df35555a6;
+                attachment_array = var_6121d10df35555a6;
             }
-            if (var_39acc07a4f70f5ca.size > 0) {
-                arrayindex = randomint(var_39acc07a4f70f5ca.size);
-                var_d7cb31ea2a8b6e87 = utility::array_add(var_d7cb31ea2a8b6e87, var_39acc07a4f70f5ca[arrayindex]);
+            if (attachment_array.size > 0) {
+                arrayindex = randomint(attachment_array.size);
+                random_attachments = utility::array_add(random_attachments, attachment_array[arrayindex]);
             }
         }
-        if (var_d7cb31ea2a8b6e87.size >= numattachments) {
+        if (random_attachments.size >= numattachments) {
             break;
         }
     }
@@ -1914,13 +1914,13 @@ function function_8df87e6b1d13c15a(weaponobj, numattachments, var_a4d5e0f6b90df7
         array_scope = function_75b035199842693d(weaponobj, "scope");
         if (array_scope.size > 0) {
             arrayindex = randomint(array_scope.size);
-            var_d7cb31ea2a8b6e87 = utility::array_add(var_d7cb31ea2a8b6e87, array_scope[arrayindex]);
-            if (var_d7cb31ea2a8b6e87.size > numattachments) {
-                var_d7cb31ea2a8b6e87 = utility::array_remove_index(var_d7cb31ea2a8b6e87, 0);
+            random_attachments = utility::array_add(random_attachments, array_scope[arrayindex]);
+            if (random_attachments.size > numattachments) {
+                random_attachments = utility::array_remove_index(random_attachments, 0);
             }
         }
     }
-    return var_d7cb31ea2a8b6e87;
+    return random_attachments;
 }
 
 // Namespace weapons / scripts\mp\weapons
@@ -3348,13 +3348,13 @@ function grenadeused(grenade) {
             thread namespace_861236fa8235a2ba::function_255bed505249bc85(grenade);
             break;
         case #"hash_11a03a12f93f62b2":
-            thread namespace_742e7eca5294ecdc::function_54655641d3957e3(grenade, 0);
+            thread scripts\mp\equipment\shock_stick::function_54655641d3957e3(grenade, 0);
             break;
         case #"hash_d9108a0595d7d0b9":
             thread namespace_14ec1bc880a07c3b::function_3d78dd516c25ef77(grenade);
             break;
         case #"hash_4714926c2f3e2d15":
-            thread namespace_80fd9fce6a4434f::ied_used(grenade);
+            thread scripts\mp\equipment\ied::ied_used(grenade);
             break;
         case #"hash_f7d2b3d20ecdcc2c":
             thread namespace_b93a97d16ff2ddc6::function_477d655fc0ede218(grenade);
@@ -3363,8 +3363,8 @@ function grenadeused(grenade) {
             grenade thread scripts\mp\shellshock::grenade_earthquake();
             break;
         case #"hash_15c765aa76e58c8a":
-            if (issharedfuncdefined(#"hash_3e1f3a354ee4ffcb", #"use", 1)) {
-                damage = [[ getsharedfunc(#"hash_3e1f3a354ee4ffcb", #"use") ]](grenade);
+            if (issharedfuncdefined(#"super_landmine", #"use", 1)) {
+                damage = [[ getsharedfunc(#"super_landmine", #"use") ]](grenade);
             }
             break;
         case #"hash_94584bc84d5262fb":
@@ -5471,27 +5471,27 @@ function grenadestuckto(grenade, stuckto, ignoresplash) {
         switch (grenade.weapon_name) {
         case #"hash_4b87af60037f526f":
             var_d658f0b6bc4fd513 = "semtex_stuck";
-            var_d5f11d86f917656 = #"hash_cafa7ad7442c35d5";
+            var_d5f11d86f917656 = #"bc_flavor_player_surprise";
             break;
         case #"hash_ab3485fa6834de47":
             var_d658f0b6bc4fd513 = "molotov_stuck";
-            var_d5f11d86f917656 = #"hash_cafa7ad7442c35d5";
+            var_d5f11d86f917656 = #"bc_flavor_player_surprise";
             break;
         case #"hash_4c7de5619284e175":
             var_d658f0b6bc4fd513 = "thermite_attacker_stuck";
-            var_d5f11d86f917656 = #"hash_cafa7ad7442c35d5";
+            var_d5f11d86f917656 = #"bc_flavor_player_surprise";
             break;
         case #"hash_4a85ee2b82965fe2":
             var_d658f0b6bc4fd513 = "sonar_pulse_stuck";
             break;
         case #"hash_954bb5f200a1b95a":
             var_d658f0b6bc4fd513 = "shock_stick_stuck";
-            var_d5f11d86f917656 = #"hash_cafa7ad7442c35d5";
+            var_d5f11d86f917656 = #"bc_flavor_player_surprise";
             break;
         case #"hash_c4b9b21ecac2ced4":
         case #"hash_d6565ec12efca627":
             var_d658f0b6bc4fd513 = "bunkerbuster_stuck";
-            var_d5f11d86f917656 = #"hash_cafa7ad7442c35d5";
+            var_d5f11d86f917656 = #"bc_flavor_player_surprise";
             break;
         }
     }
@@ -7668,7 +7668,7 @@ function function_aa3939ed0f60d04e(objweapon, missileent) {
                 if (isdefined(ent.helperdronetype) && ent.helperdronetype == "scrambler_drone_guard") {
                     ent dodamage(250, damageorigin, self, self, "MOD_EXPLOSIVE", var_6b89c719fde173c1);
                     continue;
-                } else if (isdefined(ent.var_9359753a6347dd67)) {
+                } else if (isdefined(ent.knight_ai)) {
                     ent dodamage(25, damageorigin, self, self, "MOD_EXPLOSIVE", var_6b89c719fde173c1);
                     ent thread function_4e9544f537fa99d6(self);
                     continue;

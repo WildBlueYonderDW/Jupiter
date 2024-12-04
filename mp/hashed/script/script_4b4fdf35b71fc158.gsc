@@ -1,7 +1,7 @@
-#using scripts\common\callbacks.gsc;
 #using script_639bf783929acf9b;
 #using script_7b2517368c79e5bc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
 
 #namespace namespace_c8f50c27f5dd5ed8;
 
@@ -174,9 +174,9 @@ function function_d62127a5f04bf35a(vehicle) {
         if (!isplayer(driver)) {
             continue;
         }
-        var_5067c2728e302fbe = vehicle physics_getentityaabb();
-        vehicle_midpoint = vectorlerp(var_5067c2728e302fbe["min"], var_5067c2728e302fbe["max"], 0.5);
-        var_8b0579be668e5c32 = length((var_5067c2728e302fbe["max"] - var_5067c2728e302fbe["min"]) * 0.5);
+        vehicle_aabb = vehicle physics_getentityaabb();
+        vehicle_midpoint = vectorlerp(vehicle_aabb["min"], vehicle_aabb["max"], 0.5);
+        var_8b0579be668e5c32 = length((vehicle_aabb["max"] - vehicle_aabb["min"]) * 0.5);
         var_a328c553ecb440e7 = anglestoaxis(vehicle.angles);
         var_8c26ad19a0970e6d = [var_a328c553ecb440e7["forward"], var_a328c553ecb440e7["right"], var_a328c553ecb440e7["up"]];
         scriptables = getlootscriptablearrayinradius(undefined, undefined, vehicle_midpoint, var_8b0579be668e5c32);

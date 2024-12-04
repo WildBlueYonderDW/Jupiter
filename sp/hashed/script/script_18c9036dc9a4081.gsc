@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp\utility.gsc;
 #using script_14609b809484646e;
 #using script_354c862768cfe202;
-#using script_7c40fa80892a721;
 #using script_3bcaa2cbaf54abdd;
 #using script_71332a5b74214116;
+#using script_7c40fa80892a721;
 #using script_afb7e332aee4bf2;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace armor;
 
@@ -21,7 +21,7 @@
 // Checksum 0x0, Offset: 0x4c5
 // Size: 0x1a
 function init() {
-    namespace_9c383b14c4908e46::function_8ece37593311858a(&function_fa0c918f6b87950d);
+    namespace_9c383b14c4908e46::function_8ece37593311858a(&onplayerconnect_armor);
     /#
         level thread function_6e9ee0df5ab3c202();
     #/
@@ -31,7 +31,7 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e7
 // Size: 0x21
-function function_fa0c918f6b87950d() {
+function onplayerconnect_armor() {
     self.armorqueued = 0;
     self.var_4cb4a6ebd0885ffd = 150;
     self.var_c99db8962a6b36bb = 0;
@@ -41,12 +41,12 @@ function function_fa0c918f6b87950d() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x510
 // Size: 0x3f
-function function_8ce284d6441202b8(var_15430b4bbd079285) {
-    if (var_15430b4bbd079285 == 0) {
+function function_8ce284d6441202b8(buff_level) {
+    if (buff_level == 0) {
         self.var_4cb4a6ebd0885ffd = 150;
         return;
     }
-    if (var_15430b4bbd079285 == 1) {
+    if (buff_level == 1) {
         self.var_4cb4a6ebd0885ffd = 200;
         return;
     }
@@ -68,10 +68,10 @@ function show_damage_direction(player, einflictor, attacker, damage_amount, idfl
 // Checksum 0x0, Offset: 0x612
 // Size: 0x4a
 function function_ca71eb8be30f9e15(var_7aebecfc2ee6cf02) {
-    var_c791ead1f39669f4 = self.var_4cb4a6ebd0885ffd;
-    var_971f0b9a323941b8 = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
-    if (var_971f0b9a323941b8) {
-        var_c791ead1f39669f4 = var_971f0b9a323941b8;
+    full_armor = self.var_4cb4a6ebd0885ffd;
+    armor_dvar = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
+    if (armor_dvar) {
+        full_armor = armor_dvar;
     }
     self.armor = var_7aebecfc2ee6cf02;
 }
@@ -88,16 +88,16 @@ function function_62957c4b8e469641(var_7aebecfc2ee6cf02) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x681
 // Size: 0x25
-function function_d249004b747bf5b4(var_893c26ea587cc273) {
-    return isdefined(self.perk_data) && isdefined(self.perk_data[var_893c26ea587cc273]);
+function function_d249004b747bf5b4(perk_string) {
+    return isdefined(self.perk_data) && isdefined(self.perk_data[perk_string]);
 }
 
 // Namespace armor / namespace_6eb2bf1007397723
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6af
 // Size: 0x16
-function function_d92d499c7600838(var_893c26ea587cc273) {
-    return self.perk_data[var_893c26ea587cc273];
+function function_d92d499c7600838(perk_string) {
+    return self.perk_data[perk_string];
 }
 
 // Namespace armor / namespace_6eb2bf1007397723
@@ -105,17 +105,17 @@ function function_d92d499c7600838(var_893c26ea587cc273) {
 // Checksum 0x0, Offset: 0x6ce
 // Size: 0x73
 function function_47a88c4e1d36189a(damage_amount, attacker) {
-    var_563abd1f0c73a53 = 1;
+    damage_min = 1;
     var_47ba9b9f5dfef300 = 0;
-    var_971f0b9a323941b8 = getdvarint(@"hash_4a9f73175b3308e4", 0);
-    if (var_971f0b9a323941b8) {
+    armor_dvar = getdvarint(@"hash_4a9f73175b3308e4", 0);
+    if (armor_dvar) {
         var_47ba9b9f5dfef300 = 25;
     }
     damage_amount -= var_47ba9b9f5dfef300;
     var_19e04e90d1acc0c = function_3c53263a1ec58c23();
     damage_amount /= var_19e04e90d1acc0c;
-    if (damage_amount < var_563abd1f0c73a53) {
-        damage_amount = var_563abd1f0c73a53;
+    if (damage_amount < damage_min) {
+        damage_amount = damage_min;
     }
     return damage_amount;
 }
@@ -126,17 +126,17 @@ function function_47a88c4e1d36189a(damage_amount, attacker) {
 // Size: 0x104
 function function_270c9d76e9075af8(damage_amount, attacker) {
     var_9d6d671926fb4e4a = function_47a88c4e1d36189a(damage_amount, attacker);
-    var_cdc6cc34b279f409 = function_8e297d719d663b78();
-    var_fb6f10d7080ed490 = min(var_cdc6cc34b279f409, var_9d6d671926fb4e4a);
+    armor_amount = function_8e297d719d663b78();
+    var_fb6f10d7080ed490 = min(armor_amount, var_9d6d671926fb4e4a);
     var_bab6dc781bcdf7e6 = int(var_9d6d671926fb4e4a - var_fb6f10d7080ed490);
-    var_7aebecfc2ee6cf02 = var_cdc6cc34b279f409 - var_fb6f10d7080ed490;
+    var_7aebecfc2ee6cf02 = armor_amount - var_fb6f10d7080ed490;
     var_7aebecfc2ee6cf02 = max(var_7aebecfc2ee6cf02, 0);
     if (isplayer(self)) {
         if (isdefined(attacker) && isplayer(attacker)) {
-            var_f53746730acad8a4 = max(var_bab6dc781bcdf7e6, 1);
-            attacker namespace_3d3d5211c3029f82::updatehitmarker("cp_hitmarker_armor", 0, var_f53746730acad8a4, 1, 0);
+            hitmarker_damage = max(var_bab6dc781bcdf7e6, 1);
+            attacker namespace_3d3d5211c3029f82::updatehitmarker("cp_hitmarker_armor", 0, hitmarker_damage, 1, 0);
         }
-        namespace_f8d3520d3483c1::function_ac7803d45979135c(var_7aebecfc2ee6cf02);
+        namespace_f8d3520d3483c1::setArmorHealth(var_7aebecfc2ee6cf02);
         broadcast_armor(var_7aebecfc2ee6cf02);
         play_armor_sfx(attacker, var_7aebecfc2ee6cf02);
         if (var_7aebecfc2ee6cf02 <= 0) {
@@ -144,7 +144,7 @@ function function_270c9d76e9075af8(damage_amount, attacker) {
         }
     } else {
         if (isdefined(attacker) && isplayer(attacker)) {
-            var_f53746730acad8a4 = max(var_bab6dc781bcdf7e6, 1);
+            hitmarker_damage = max(var_bab6dc781bcdf7e6, 1);
         }
         function_62957c4b8e469641(var_7aebecfc2ee6cf02);
     }
@@ -292,18 +292,18 @@ function setcharactermodels(bodymodelname, headmodelname, viewmodelname, hairmod
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xc03
 // Size: 0x77
-function pick_up_armor_vest(var_df071553d0996ff9, player) {
+function pick_up_armor_vest(interaction_struct, player) {
     if (player namespace_f8d3520d3483c1::function_79e0ab2aa0304a2c()) {
         return;
     }
-    var_df071553d0996ff9.model delete();
-    namespace_a3902e911697e714::remove_from_current_interaction_list(var_df071553d0996ff9);
-    var_c791ead1f39669f4 = player.var_4cb4a6ebd0885ffd;
-    var_971f0b9a323941b8 = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
-    if (var_971f0b9a323941b8) {
-        var_c791ead1f39669f4 = var_971f0b9a323941b8;
+    interaction_struct.model delete();
+    namespace_a3902e911697e714::remove_from_current_interaction_list(interaction_struct);
+    full_armor = player.var_4cb4a6ebd0885ffd;
+    armor_dvar = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
+    if (armor_dvar) {
+        full_armor = armor_dvar;
     }
-    givearmor(player, var_c791ead1f39669f4);
+    givearmor(player, full_armor);
 }
 
 // Namespace armor / namespace_6eb2bf1007397723
@@ -443,7 +443,7 @@ function function_1258f8d2084a2ce7(num) {
 // Size: 0x1b
 function function_6f49a313daf71b39() {
     self setclientomnvar("ui_br_has_plate_pouch", 1);
-    self.var_9c791a7a7fc6c7b5 = 1;
+    self.armor_satchel = 1;
 }
 
 // Namespace armor / namespace_6eb2bf1007397723
@@ -452,7 +452,7 @@ function function_6f49a313daf71b39() {
 // Size: 0x19
 function function_9a26bfc3788f86dc() {
     self setclientomnvar("ui_br_has_plate_pouch", 0);
-    self.var_9c791a7a7fc6c7b5 = 0;
+    self.armor_satchel = 0;
 }
 
 // Namespace armor / namespace_6eb2bf1007397723
@@ -510,10 +510,10 @@ function givearmor(player, armoramount, var_cf0a9d02644669ac) {
     if (player_have_full_armor(player)) {
         return;
     }
-    var_dd1fa94e89403ba2 = player namespace_f8d3520d3483c1::function_ac266fc218266d08();
+    current_armor = player namespace_f8d3520d3483c1::function_ac266fc218266d08();
     entity_num = player getentitynumber();
     setomnvar("ui_armor_gained", entity_num);
-    var_7aebecfc2ee6cf02 = min(var_dd1fa94e89403ba2 + armoramount, player.var_4cb4a6ebd0885ffd);
+    var_7aebecfc2ee6cf02 = min(current_armor + armoramount, player.var_4cb4a6ebd0885ffd);
     var_cf0a9d02644669ac = istrue(var_cf0a9d02644669ac);
     if (!var_cf0a9d02644669ac) {
         player val::set("armor", "ads", 0);
@@ -548,12 +548,12 @@ function player_have_armor(player) {
 // Checksum 0x0, Offset: 0x1324
 // Size: 0x4d
 function player_have_full_armor(player) {
-    var_c791ead1f39669f4 = self.var_4cb4a6ebd0885ffd;
-    var_971f0b9a323941b8 = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
-    if (var_971f0b9a323941b8) {
-        var_c791ead1f39669f4 = var_971f0b9a323941b8;
+    full_armor = self.var_4cb4a6ebd0885ffd;
+    armor_dvar = getdvarint(@"hash_e6924e7c0a5aad1f", 0);
+    if (armor_dvar) {
+        full_armor = armor_dvar;
     }
-    return player.armor == var_c791ead1f39669f4;
+    return player.armor == full_armor;
 }
 
 // Namespace armor / namespace_6eb2bf1007397723
@@ -573,7 +573,7 @@ function function_f9844e7b0cb6e736(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x13d2
 // Size: 0x2c
-function armor_vest_hint_func(var_df071553d0996ff9, player) {
+function armor_vest_hint_func(interaction_struct, player) {
     if (player_have_full_armor(player)) {
         return %COOP_CRAFTING/ARMOR_FULL;
     }

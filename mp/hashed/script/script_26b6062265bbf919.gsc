@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace defender_infil;
 
@@ -18,7 +18,7 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x798
 // Size: 0x9d
-function function_8eabdc149e284b8d(subtype) {
+function defender_init(subtype) {
     function_f1aed36ab4598ea("defender_infil");
     thread function_ede4acbf2fe2651b();
     /#
@@ -29,14 +29,14 @@ function function_8eabdc149e284b8d(subtype) {
     var_453e4fc2c649fea4[0] = [0];
     var_453e4fc2c649fea4[1] = [1];
     var_453e4fc2c649fea4[2] = [2, 3, 4, 5];
-    thread infil_add("infil_defender", subtype, 6, 4, var_453e4fc2c649fea4, &function_aef1ef5d40ba8216, &function_f17139f61f2df6f2, &function_5a3e8cbaff52f088);
+    thread infil_add("infil_defender", subtype, 6, 4, var_453e4fc2c649fea4, &defender_spawn, &function_f17139f61f2df6f2, &function_5a3e8cbaff52f088);
 }
 
 // Namespace defender_infil / namespace_61fc244810dffc67
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x83d
 // Size: 0x8a
-function function_aef1ef5d40ba8216(team, target, subtype, originalsubtype) {
+function defender_spawn(team, target, subtype, originalsubtype) {
     scene_node = getstruct(target, "targetname");
     infil = spawn("script_origin", scene_node.origin);
     infil.angles = scene_node.angles;

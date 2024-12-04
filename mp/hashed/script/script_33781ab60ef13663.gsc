@@ -1,6 +1,6 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
+#using scripts\asm\asm;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_ab4bb52668162033;
 

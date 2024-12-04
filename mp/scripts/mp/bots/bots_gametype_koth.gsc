@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\mgl_mp.gsc;
 #using script_27fdece778e999d8;
-#using scripts\mp\gameobjects.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\mgl_mp;
+#using scripts\mp\utility\entity;
 
 #namespace bots_gametype_koth;
 
@@ -123,7 +123,7 @@ function bot_koth_think() {
     self botsetflag("separation", 0);
     self botsetflag("grenade_objectives", 1);
     var_f89468cd9a401388 = undefined;
-    var_46aaec4ccf788dad = level.zone;
+    last_recorded_zone = level.zone;
     while (true) {
         /#
             if (getdvarint(@"hash_c2de8ca6dc8512c1")) {
@@ -143,9 +143,9 @@ function bot_koth_think() {
             self [[ self.personality_update_function ]]();
             continue;
         }
-        if (var_46aaec4ccf788dad != level.zone) {
+        if (last_recorded_zone != level.zone) {
             var_f89468cd9a401388 = undefined;
-            var_46aaec4ccf788dad = level.zone;
+            last_recorded_zone = level.zone;
         }
         if (!istrue(level.zone.trigger.trigger_off) && isdefined(level.zoneendtime) && !isdefined(var_f89468cd9a401388) && !level.zonerandomlocationorder && level.bot_hp_allow_predictive_capping) {
             var_7a8ae257730d6c26 = level.zoneendtime - gettime();
@@ -220,17 +220,17 @@ function bot_get_num_teammates_capturing_zone(zone) {
 // Checksum 0x0, Offset: 0x89e
 // Size: 0xb7
 function bot_get_teammates_capturing_zone(zone) {
-    var_25b7e3ea39cd9f57 = [];
+    teammates_capturing_zone = [];
     foreach (other_player in level.participants) {
         if (other_player != self && isteamparticipant(other_player) && isalliedsentient(self, other_player)) {
             if (other_player istouching(level.zone.trigger)) {
                 if (!isai(other_player) || other_player bot_is_capturing_zone(zone)) {
-                    var_25b7e3ea39cd9f57[var_25b7e3ea39cd9f57.size] = other_player;
+                    teammates_capturing_zone[teammates_capturing_zone.size] = other_player;
                 }
             }
         }
     }
-    return var_25b7e3ea39cd9f57;
+    return teammates_capturing_zone;
 }
 
 // Namespace bots_gametype_koth / scripts\mp\bots\bots_gametype_koth

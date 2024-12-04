@@ -1,14 +1,14 @@
-#using script_4c543f01345a2c04;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using script_7ff3a914e6c698c5;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
-#using scripts\asm\shared\utility.gsc;
 #using script_3054293078dbc58c;
+#using script_3badb8914eb5ac16;
+#using script_4c543f01345a2c04;
+#using script_7edf952f8921aa6b;
+#using script_7ff3a914e6c698c5;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_973ff0e125d70907;
 

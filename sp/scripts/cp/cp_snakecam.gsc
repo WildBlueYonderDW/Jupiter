@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_outline.gsc;
-#using script_2c075d80ec62e503;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp\cp_snakecam.gsc;
-#using scripts\cp\cp_puzzles_core.gsc;
-#using scripts\cp_mp\anim_scene.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_66122a002aff5d57;
-#using scripts\cp_mp\hostmigration.gsc;
-#using script_afb7e332aee4bf2;
-#using scripts\cp_mp\utility\scriptable_door_utility.gsc;
 #using script_1db8d0e02a99c5e2;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_anim.gsc;
-#using scripts\cp\utility\player.gsc;
+#using script_2c075d80ec62e503;
+#using script_66122a002aff5d57;
+#using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_anim;
+#using scripts\cp\cp_outline;
+#using scripts\cp\cp_puzzles_core;
+#using scripts\cp\cp_snakecam;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\anim_scene;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\scriptable_door_utility;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_27b9dc8b12dc2be4;
 
@@ -99,7 +99,7 @@ function function_216a48e2dbec763f(instance, part, state, player, var_a5b2c54141
                 instance.isinuse = 1;
                 function_19d3f246d4fed2fe(instance);
                 thread function_d25799279ec14c4c(instance);
-                snakecam_activate_func(instance.var_df071553d0996ff9, player);
+                snakecam_activate_func(instance.interaction_struct, player);
                 function_8ca93624ea5f3c01(instance);
             }
         }
@@ -143,7 +143,7 @@ function function_3ccf13603ac68e58(waittime) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xda8
 // Size: 0x18
-function snakecam_hint_func(var_df071553d0996ff9, player) {
+function snakecam_hint_func(interaction_struct, player) {
     return %SNAKECAM/USE;
 }
 
@@ -151,12 +151,12 @@ function snakecam_hint_func(var_df071553d0996ff9, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc9
 // Size: 0x5bf
-function snakecam_activate_func(var_df071553d0996ff9, player) {
-    if (!isplayer(player) || istrue(var_df071553d0996ff9.isinuse)) {
+function snakecam_activate_func(interaction_struct, player) {
+    if (!isplayer(player) || istrue(interaction_struct.isinuse)) {
         return;
     }
-    var_df071553d0996ff9.isinuse = 1;
-    if (istrue(var_df071553d0996ff9.disabled)) {
+    interaction_struct.isinuse = 1;
+    if (istrue(interaction_struct.disabled)) {
         return;
     }
     if (istrue(player.tablet_out)) {
@@ -164,17 +164,17 @@ function snakecam_activate_func(var_df071553d0996ff9, player) {
     }
     player endon("disconnect");
     player thread scripts\cp\cp_snakecam::function_7f4e0ffc4558b72f(3);
-    assertex(isdefined(var_df071553d0996ff9.target), "No snakecam target set");
-    var_df071553d0996ff9.target_obj = getstruct(var_df071553d0996ff9.target, "targetname");
-    if (!isdefined(var_df071553d0996ff9.target_obj.angles)) {
-        var_df071553d0996ff9.target_obj.angles = (0, 0, 0);
+    assertex(isdefined(interaction_struct.target), "No snakecam target set");
+    interaction_struct.target_obj = getstruct(interaction_struct.target, "targetname");
+    if (!isdefined(interaction_struct.target_obj.angles)) {
+        interaction_struct.target_obj.angles = (0, 0, 0);
     }
     isthirdperson = player GetCameraThirdPerson();
     playerstance = player getstance();
     tag = spawn("script_model", player.origin);
     tag setmodel("tag_player");
-    tag.origin = var_df071553d0996ff9.target_obj.origin;
-    tag.angles = var_df071553d0996ff9.target_obj.angles;
+    tag.origin = interaction_struct.target_obj.origin;
+    tag.angles = interaction_struct.target_obj.angles;
     animtag = spawn("script_model", tag.origin);
     var_6e155dc8c2fa9e2e = scripts\cp\utility::get_point_in_local_ent_space(tag, (-10, 0, 0));
     animtag.origin = drop_to_ground(var_6e155dc8c2fa9e2e, 64);
@@ -199,10 +199,10 @@ function snakecam_activate_func(var_df071553d0996ff9, player) {
     player.og_origin = player.origin;
     player.og_angles = player getplayerangles();
     player.og_stance = player getstance();
-    fwd = anglestoforward(var_df071553d0996ff9.target_obj.angles);
-    var_1f7736673cda8d6 = vectornormalize(var_df071553d0996ff9.target_obj.origin - player getorigin());
-    dot = vectordot(fwd, var_1f7736673cda8d6);
-    put_player_on_cam(tag, player, var_df071553d0996ff9);
+    fwd = anglestoforward(interaction_struct.target_obj.angles);
+    to_camera = vectornormalize(interaction_struct.target_obj.origin - player getorigin());
+    dot = vectordot(fwd, to_camera);
+    put_player_on_cam(tag, player, interaction_struct);
     level notify("snakecam_used", player);
     player playlocalsound("cp_ui_snakecam_in_plr");
     player thread snake_cam_control(tag);
@@ -210,20 +210,20 @@ function snakecam_activate_func(var_df071553d0996ff9, player) {
     if (isdefined(level.var_5e3f92c109670a2e)) {
         var_dc1abbab0bc304f5 = level.var_5e3f92c109670a2e;
     }
-    if (isdefined(var_df071553d0996ff9.script_parameters) && var_df071553d0996ff9.script_parameters != "default") {
-        var_dc1abbab0bc304f5 = var_df071553d0996ff9.script_parameters;
+    if (isdefined(interaction_struct.script_parameters) && interaction_struct.script_parameters != "default") {
+        var_dc1abbab0bc304f5 = interaction_struct.script_parameters;
     }
-    var_df071553d0996ff9.cam_hud = snake_door_cam_hud(player, var_dc1abbab0bc304f5);
+    interaction_struct.cam_hud = snake_door_cam_hud(player, var_dc1abbab0bc304f5);
     var_379b46b62fa2c9a3 = 0;
     timeout_time = 90;
-    var_df071553d0996ff9 thread waittill_player_exits_cam(player);
-    var_df071553d0996ff9 waittill_any_timeout_1(timeout_time, "player_left_cam");
-    var_1b9b8daf429dd199 = tag.origin + anglestoforward(tag.angles) * -20;
+    interaction_struct thread waittill_player_exits_cam(player);
+    interaction_struct waittill_any_timeout_1(timeout_time, "player_left_cam");
+    nudge_spot = tag.origin + anglestoforward(tag.angles) * -20;
     player.enteredcamera = undefined;
     player.disable_map_tablet = 0;
     wait 0.25;
     player notify("leave_cam");
-    foreach (thing in var_df071553d0996ff9.cam_hud) {
+    foreach (thing in interaction_struct.cam_hud) {
         thing destroy();
     }
     level thread scripts\cp\cp_puzzles_core::static_burst(0.55, player);
@@ -244,8 +244,8 @@ function snakecam_activate_func(var_df071553d0996ff9, player) {
     player thread takegunless();
     tag delete();
     animtag delete();
-    var_df071553d0996ff9.isinuse = 0;
-    var_df071553d0996ff9.scriptable.isinuse = 0;
+    interaction_struct.isinuse = 0;
+    interaction_struct.scriptable.isinuse = 0;
 }
 
 // Namespace namespace_27b9dc8b12dc2be4 / scripts\cp\cp_snakecam
@@ -539,15 +539,15 @@ function snakecam_delay_visionsetchange() {
 function function_5f077055eee53d8c() {
     precacheshader("nightvision_overlay_goggles_grain");
     precacherumble("cp_wheelson_rumble");
-    var_25eec91edef511dd = getstructarray("snakecam_interaction", "script_noteworthy");
-    foreach (var_df071553d0996ff9 in var_25eec91edef511dd) {
-        var_df071553d0996ff9.p_ent_skip_fov = 1;
-        var_aa8ac5c98f3a9029 = getstruct(var_df071553d0996ff9.target, "targetname");
-        var_aa8ac5c98f3a9029.script_noteworthy = var_df071553d0996ff9.script_noteworthy;
-        var_df071553d0996ff9.scriptable = spawnscriptable("snakecam_interaction", var_df071553d0996ff9.origin, var_df071553d0996ff9.angles);
-        var_df071553d0996ff9.scriptable.var_df071553d0996ff9 = var_df071553d0996ff9;
-        var_df071553d0996ff9.scriptable.var_aa8ac5c98f3a9029 = var_aa8ac5c98f3a9029;
-        var_df071553d0996ff9.scriptable.var_aa8ac5c98f3a9029 thread function_94d8d166d09b75a5();
+    interaction_array = getstructarray("snakecam_interaction", "script_noteworthy");
+    foreach (interaction_struct in interaction_array) {
+        interaction_struct.p_ent_skip_fov = 1;
+        var_aa8ac5c98f3a9029 = getstruct(interaction_struct.target, "targetname");
+        var_aa8ac5c98f3a9029.script_noteworthy = interaction_struct.script_noteworthy;
+        interaction_struct.scriptable = spawnscriptable("snakecam_interaction", interaction_struct.origin, interaction_struct.angles);
+        interaction_struct.scriptable.interaction_struct = interaction_struct;
+        interaction_struct.scriptable.var_aa8ac5c98f3a9029 = var_aa8ac5c98f3a9029;
+        interaction_struct.scriptable.var_aa8ac5c98f3a9029 thread function_94d8d166d09b75a5();
         var_aa8ac5c98f3a9029 thread function_62d9aee42ffdfcec();
     }
 }
@@ -556,18 +556,18 @@ function function_5f077055eee53d8c() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f4e
 // Size: 0x12f
-function snakecam_init_func(var_25eec91edef511dd) {
+function snakecam_init_func(interaction_array) {
     level endon("game_ended");
     precacheshader("nightvision_overlay_goggles_grain");
     precacherumble("cp_wheelson_rumble");
-    foreach (var_df071553d0996ff9 in var_25eec91edef511dd) {
-        var_df071553d0996ff9.p_ent_skip_fov = 1;
-        var_aa8ac5c98f3a9029 = getstruct(var_df071553d0996ff9.target, "targetname");
-        var_aa8ac5c98f3a9029.script_noteworthy = var_df071553d0996ff9.script_noteworthy;
-        var_df071553d0996ff9.scriptable = spawnscriptable("snakecam_interaction", var_df071553d0996ff9.origin, var_df071553d0996ff9.angles);
-        var_df071553d0996ff9.scriptable.var_df071553d0996ff9 = var_df071553d0996ff9;
-        var_df071553d0996ff9.scriptable.var_aa8ac5c98f3a9029 = var_aa8ac5c98f3a9029;
-        var_df071553d0996ff9.scriptable.var_aa8ac5c98f3a9029 thread function_94d8d166d09b75a5();
+    foreach (interaction_struct in interaction_array) {
+        interaction_struct.p_ent_skip_fov = 1;
+        var_aa8ac5c98f3a9029 = getstruct(interaction_struct.target, "targetname");
+        var_aa8ac5c98f3a9029.script_noteworthy = interaction_struct.script_noteworthy;
+        interaction_struct.scriptable = spawnscriptable("snakecam_interaction", interaction_struct.origin, interaction_struct.angles);
+        interaction_struct.scriptable.interaction_struct = interaction_struct;
+        interaction_struct.scriptable.var_aa8ac5c98f3a9029 = var_aa8ac5c98f3a9029;
+        interaction_struct.scriptable.var_aa8ac5c98f3a9029 thread function_94d8d166d09b75a5();
         var_aa8ac5c98f3a9029 thread function_62d9aee42ffdfcec();
     }
 }
@@ -661,7 +661,7 @@ function function_d522dbaebcb26e26(delay, player) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x238e
 // Size: 0x23
-function p_ent_snake_cam(ent, struct, var_851006497c31432d, player) {
+function p_ent_snake_cam(ent, struct, same_state, player) {
     
 }
 
@@ -680,12 +680,12 @@ function function_7f4e0ffc4558b72f(delaytime) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x23ec
 // Size: 0x184
-function put_player_on_cam(tag, player, var_df071553d0996ff9) {
-    var_1b9b8daf429dd199 = tag.origin + anglestoforward(tag.angles) * 12 - (0, 0, 55);
+function put_player_on_cam(tag, player, interaction_struct) {
+    nudge_spot = tag.origin + anglestoforward(tag.angles) * 12 - (0, 0, 55);
     player.cam_ent = tag;
     player.isusingcamera = 1;
-    player.currentcamera = var_df071553d0996ff9.target_obj;
-    player.cameratarget = var_df071553d0996ff9.target_obj.targetname;
+    player.currentcamera = interaction_struct.target_obj;
+    player.cameratarget = interaction_struct.target_obj.targetname;
     player notify("end_hints");
     player val::set("cam", "fire", 0);
     player cameraunlink();
@@ -722,7 +722,7 @@ function remove_player_from_cam(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x25fa
 // Size: 0x186
-function snake_door_cam_hud(player, var_728dcf36eeb7616) {
+function snake_door_cam_hud(player, vision_type) {
     crosshair = newclienthudelem(player);
     crosshair.archived = 0;
     crosshair.location = 0;
@@ -742,22 +742,22 @@ function snake_door_cam_hud(player, var_728dcf36eeb7616) {
     overlay.font = "hudsmall";
     overlay.fontscale = 0.75;
     overlay settext(%SNAKECAM/CONTROLS);
-    var_83a337b15031dab = create_client_overlay("nightvision_overlay_goggles_grain", 1, player);
-    if (!isdefined(var_728dcf36eeb7616)) {
+    goggles = create_client_overlay("nightvision_overlay_goggles_grain", 1, player);
+    if (!isdefined(vision_type)) {
         level notify("vision_set_change_request", "embassy_cctv_01", player, 0.05);
     } else {
-        level notify("vision_set_change_request", var_728dcf36eeb7616, player, 0.05);
+        level notify("vision_set_change_request", vision_type, player, 0.05);
     }
-    return [crosshair, var_83a337b15031dab, overlay];
+    return [crosshair, goggles, overlay];
 }
 
 // Namespace namespace_27b9dc8b12dc2be4 / scripts\cp\cp_snakecam
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2789
 // Size: 0x25a
-function snake_cam_control(var_693ec2852a7de810, var_f55fe461499f0e19) {
+function snake_cam_control(cam_struct, var_f55fe461499f0e19) {
     self endon("leave_cam");
-    og_angles = var_693ec2852a7de810.angles;
+    og_angles = cam_struct.angles;
     minpitch = -24;
     maxpitch = 0;
     var_cb6680317be1e374 = 55;
@@ -775,10 +775,10 @@ function snake_cam_control(var_693ec2852a7de810, var_f55fe461499f0e19) {
     var_d296b0eaf4a6b00f = [0, 0];
     var_d5e6310914396ac3 = 0.2;
     var_848e35f763ce65b0 = 0.2;
-    var_91ab80bc6772504d = 0;
+    rumble_playing = 0;
     currentangles = self.angles;
     while (istrue(self.isusingcamera)) {
-        var_b4f55166f66361e9 = var_693ec2852a7de810.angles + (0, -90, 0);
+        var_b4f55166f66361e9 = cam_struct.angles + (0, -90, 0);
         input = self getplayerangles();
         multiplier = 0;
         var_fed6e82d22bb75e = length(currentangles - input);
@@ -862,9 +862,9 @@ function player_is_trying_to_exit_camera(player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b78
 // Size: 0x2a
-function get_snakecam_interactions_by_target(var_cff90ad7fc089c91) {
-    if (isdefined(var_cff90ad7fc089c91)) {
-        targetstructs = getstructarray(var_cff90ad7fc089c91, "target");
+function get_snakecam_interactions_by_target(input_target) {
+    if (isdefined(input_target)) {
+        targetstructs = getstructarray(input_target, "target");
         return targetstructs;
     }
     return undefined;
@@ -874,8 +874,8 @@ function get_snakecam_interactions_by_target(var_cff90ad7fc089c91) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bab
 // Size: 0x9e
-function disable_snakecams_by_target(var_cff90ad7fc089c91) {
-    interactions = get_snakecam_interactions_by_target(var_cff90ad7fc089c91);
+function disable_snakecams_by_target(input_target) {
+    interactions = get_snakecam_interactions_by_target(input_target);
     foreach (interaction in interactions) {
         if (istrue(interaction.disabled)) {
             continue;
@@ -891,8 +891,8 @@ function disable_snakecams_by_target(var_cff90ad7fc089c91) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c51
 // Size: 0x6b
-function enable_snakecams_by_target(var_cff90ad7fc089c91) {
-    interactions = get_snakecam_interactions_by_target(var_cff90ad7fc089c91);
+function enable_snakecams_by_target(input_target) {
+    interactions = get_snakecam_interactions_by_target(input_target);
     foreach (interaction in interactions) {
         interaction.disabled = 0;
     }
@@ -902,13 +902,13 @@ function enable_snakecams_by_target(var_cff90ad7fc089c91) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cc4
 // Size: 0xa0
-function refresh_nearby_playerhints(var_2be051a42dd398eb) {
-    if (!isdefined(var_2be051a42dd398eb)) {
-        var_2be051a42dd398eb = 150;
+function refresh_nearby_playerhints(nearby_dist) {
+    if (!isdefined(nearby_dist)) {
+        nearby_dist = 150;
     }
-    var_2be051a42dd398eb *= var_2be051a42dd398eb;
+    nearby_dist *= nearby_dist;
     foreach (player in level.players) {
-        if (distance2dsquared(player.origin, self.origin) <= var_2be051a42dd398eb) {
+        if (distance2dsquared(player.origin, self.origin) <= nearby_dist) {
             if (isdefined(player.isusingcamera)) {
                 player.last_interaction_point = undefined;
             }
@@ -979,7 +979,7 @@ function snakecam_toggle_waittill() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f61
 // Size: 0x55
-function snakecam_toggle_enable_on_delay(var_bc73fd9d4818bde6, toggle) {
+function snakecam_toggle_enable_on_delay(in_delay, toggle) {
     if (istrue(self.disable_delay)) {
         return;
     }
@@ -989,7 +989,7 @@ function snakecam_toggle_enable_on_delay(var_bc73fd9d4818bde6, toggle) {
     } else {
         self.disabled = 1;
     }
-    wait var_bc73fd9d4818bde6;
+    wait in_delay;
     self.disable_delay = 0;
 }
 
@@ -1010,7 +1010,7 @@ function enable_snake_cams() {
 // Checksum 0x0, Offset: 0x3030
 // Size: 0xac
 function function_627b6c50a3e708a5() {
-    var_eaa7250aa6c397a2 = ["scriptable_door_metal_04_flat_painted_mp_tan", "scriptable_door_metal_panel_03_right_mp", "door_wooden_hollow_mp_01_rnd", "scriptable_door_wooden_panel_03_painted_mp", "scriptable_door_metal_panel_03_left_mp", "scriptable_door_wooden_panel_mp_01_white", "scriptable_construction_doors_metal_b_02_mp", "scriptable_door_wooden_office_01_mp", "scriptable_door_metal_single_b_02_grey", "scriptable_door_wooden_hollow_mp_01", "scriptable_door_wooden_panel_mp_01", "scriptable_door_wooden_panel_03_painted_mp_tint", "scriptable_door_wood_ornate_01_green_double_r", "scriptable_door_wood_ornate_01_green_double_l"];
+    door_names = ["scriptable_door_metal_04_flat_painted_mp_tan", "scriptable_door_metal_panel_03_right_mp", "door_wooden_hollow_mp_01_rnd", "scriptable_door_wooden_panel_03_painted_mp", "scriptable_door_metal_panel_03_left_mp", "scriptable_door_wooden_panel_mp_01_white", "scriptable_construction_doors_metal_b_02_mp", "scriptable_door_wooden_office_01_mp", "scriptable_door_metal_single_b_02_grey", "scriptable_door_wooden_hollow_mp_01", "scriptable_door_wooden_panel_mp_01", "scriptable_door_wooden_panel_03_painted_mp_tint", "scriptable_door_wood_ornate_01_green_double_r", "scriptable_door_wood_ornate_01_green_double_l"];
     var_8c73c4add30bb4b2 = [];
     var_8c73c4add30bb4b2 = scripts\cp_mp\utility\scriptable_door_utility::scriptable_door_get_in_radius(self.origin, 100);
     return var_8c73c4add30bb4b2;
@@ -1081,7 +1081,7 @@ function function_b7ba2558645c3bba() {
     }
     var_cb5d60a767db7015 = getentitylessscriptablearray("snakecam_interaction", undefined, self.origin, 128);
     foreach (snakecam in var_cb5d60a767db7015) {
-        snakecam.var_df071553d0996ff9.var_e05e65264655b8c0 = 1;
+        snakecam.interaction_struct.var_e05e65264655b8c0 = 1;
         function_9f2b37dde1eda465(snakecam);
     }
     thread function_896fbddf3c463b8b(self.var_8c73c4add30bb4b2);
@@ -1118,7 +1118,7 @@ function function_896fbddf3c463b8b(var_b8d92ae3e433b054) {
     }
     var_cb5d60a767db7015 = getentitylessscriptablearray("snakecam_interaction", undefined, self.origin, 128);
     foreach (snakecam in var_cb5d60a767db7015) {
-        snakecam.var_df071553d0996ff9.var_e05e65264655b8c0 = undefined;
+        snakecam.interaction_struct.var_e05e65264655b8c0 = undefined;
         function_8cbc97ce93bb87f8(snakecam);
     }
     thread function_b7ba2558645c3bba();

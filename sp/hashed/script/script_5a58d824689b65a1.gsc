@@ -1,15 +1,15 @@
-#using script_5c36b3719581f7cc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\ai.gsc;
 #using script_38d9ec25b87966eb;
-#using script_67ea661a92044ecb;
 #using script_4956c9a0c48908c6;
-#using script_6e08d36153359e5e;
 #using script_56fbf22650ac23cd;
+#using script_5c36b3719581f7cc;
+#using script_67ea661a92044ecb;
 #using script_6dc211c9b6675ac9;
-#using scripts\aitypes\assets.gsc;
+#using script_6e08d36153359e5e;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\ai;
 
 #namespace namespace_86462d70f29dcd30;
 

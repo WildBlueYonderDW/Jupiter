@@ -1,10 +1,10 @@
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\aitypes\combat.gsc;
+#using scripts\aitypes\bt_util;
+#using scripts\aitypes\combat;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace weapon;
 

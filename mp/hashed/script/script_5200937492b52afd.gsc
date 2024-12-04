@@ -1,18 +1,18 @@
-#using scripts\engine\throttle.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\flags.gsc;
 #using script_3433ee6b63c7e243;
 #using script_58682e6578ce0515;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\weapons;
 
 #namespace blackhole_bomb;
 
@@ -730,20 +730,20 @@ function function_c94f363ec8793bc2(origin, radius) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2001
 // Size: 0x62
-function function_e05a3fe61be76eed(var_517b7eb87dc64a20) {
+function function_e05a3fe61be76eed(bad_place) {
     if (!isdefined(level.var_1f6fbc4f20e9e60f)) {
         /#
             iprintln("<dev string:xcd>");
         #/
         return;
     }
-    if (!array_contains(level.var_1f6fbc4f20e9e60f, var_517b7eb87dc64a20)) {
+    if (!array_contains(level.var_1f6fbc4f20e9e60f, bad_place)) {
         /#
             iprintln("<dev string:xfd>");
         #/
         return;
     }
-    level.var_1f6fbc4f20e9e60f = array_remove(level.var_1f6fbc4f20e9e60f, var_517b7eb87dc64a20);
+    level.var_1f6fbc4f20e9e60f = array_remove(level.var_1f6fbc4f20e9e60f, bad_place);
 }
 
 // Namespace blackhole_bomb / namespace_ef96e7c723871c3d
@@ -754,8 +754,8 @@ function function_e15ef6f504e18e4c(exit_point) {
     if (!isdefined(level.var_1f6fbc4f20e9e60f)) {
         return false;
     }
-    foreach (var_517b7eb87dc64a20 in level.var_1f6fbc4f20e9e60f) {
-        if (ispointinsidecircle(exit_point, var_517b7eb87dc64a20.origin, var_517b7eb87dc64a20.radius)) {
+    foreach (bad_place in level.var_1f6fbc4f20e9e60f) {
+        if (ispointinsidecircle(exit_point, bad_place.origin, bad_place.radius)) {
             return true;
         }
     }

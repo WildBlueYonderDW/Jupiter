@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
 #using script_5a4a5d9ba343ff8f;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\engine\utility;
 
 #namespace effect_slow;
 

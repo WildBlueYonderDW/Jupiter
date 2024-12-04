@@ -1,7 +1,7 @@
-#using scripts\asm\asm.gsc;
-#using scripts\common\cap.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\cap.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\cap;
+#using scripts\common\cap;
 
 #namespace call_reinforcements;
 

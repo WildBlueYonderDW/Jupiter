@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\class.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace skerries_infil;
 
@@ -235,7 +235,7 @@ function function_cd31140f6d535f7a() {
 // Size: 0x1b
 function initanims(subtype) {
     script_model_anims(subtype);
-    function_68aab9f69431ce1(subtype);
+    vehicles_anims(subtype);
 }
 
 // Namespace skerries_infil / namespace_a171821d1ef65ac8
@@ -320,7 +320,7 @@ function script_model_anims(subtype) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14e2
 // Size: 0x94
-function function_68aab9f69431ce1(subtype) {
+function vehicles_anims(subtype) {
     switch (subtype) {
     case #"hash_6829ee5abc10c38b":
         level.scr_animtree["skerries_a"] = %mp_vehicles_always_loaded;

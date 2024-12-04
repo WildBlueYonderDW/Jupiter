@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_98c7b65bbafed54d;
 

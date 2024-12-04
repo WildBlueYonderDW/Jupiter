@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
 #using script_66122a002aff5d57;
+#using scripts\common\utility;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_4ec957c16ae4e075;
 
@@ -94,10 +94,10 @@ function supportbox_onusedeployable(showhint) {
     if (cangive_ammo()) {
         /#
         #/
-        var_57accdc40b2f50e = namespace_6250b14b3f614101::giveammo(self);
-        var_d6a57b95fc473441 = var_57accdc40b2f50e[1];
-        var_bf00bd1d7da56c26 = var_57accdc40b2f50e[0];
-        if (var_bf00bd1d7da56c26) {
+        __a0 = namespace_6250b14b3f614101::giveammo(self);
+        var_d6a57b95fc473441 = __a0[1];
+        gaveammo = __a0[0];
+        if (gaveammo) {
             self playlocalsound("weap_ammo_pickup");
         }
         return true;
@@ -260,16 +260,16 @@ function max_ammo_check(weapon) {
     if (weapon.basename == "iw9_me_fists_mp" || weapon.basename == "iw9_me_fists_mp_ls") {
         return true;
     }
-    var_de8a9ead75a0581 = self getweaponammoclip(weapon);
-    var_c56bbe615f626cc8 = weaponclipsize(weapon);
-    var_a862b844906a7c8 = weaponmaxammo(weapon);
+    current_ammo = self getweaponammoclip(weapon);
+    max_clip = weaponclipsize(weapon);
+    max_stock = weaponmaxammo(weapon);
     if (istrue(weapon.isalternate)) {
         if (isdefined(weapon.underbarrel) && weapon.underbarrel == "ubshtgn") {
-            var_a862b844906a7c8 = 0;
+            max_stock = 0;
         }
     }
-    var_82068ca6d5b3c991 = self getweaponammostock(weapon);
-    if (var_82068ca6d5b3c991 < var_a862b844906a7c8 || var_de8a9ead75a0581 < var_c56bbe615f626cc8) {
+    player_stock = self getweaponammostock(weapon);
+    if (player_stock < max_stock || current_ammo < max_clip) {
         return false;
     }
     return true;
@@ -323,7 +323,7 @@ function test_ammo_crate(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xdd7
 // Size: 0x3b
-function give_crafted_ammo_crate(var_df071553d0996ff9, player) {
+function give_crafted_ammo_crate(interaction_struct, player) {
     player thread watch_dpad();
     player notify("new_power", "crafted_autosentry");
     set_crafted_inventory_item("crafted_autosentry", &give_crafted_ammo_crate, player);

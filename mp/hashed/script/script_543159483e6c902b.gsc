@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\powerups.gsc;
-#using script_3a9930dfe832ae05;
 #using script_2590b7a7de3dfc79;
-#using scripts\mp\outofbounds.gsc;
+#using script_3a9930dfe832ae05;
 #using script_58be75c518bf0d40;
 #using script_638d701d263ee1ed;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\engine\utility;
+#using scripts\mp\outofbounds;
 
 #namespace ob_powerups;
 

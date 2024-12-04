@@ -1,5 +1,5 @@
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace arcwire;
 
@@ -18,7 +18,7 @@ function function_a81f1843c5401c15() {
         var_94001aae8f99137 = [];
         switch (scr_receiver.classname) {
         case #"hash_538c3ff6c317e4e8":
-            scr_receiver function_30ea5b1748470b7e(&function_aa91480ee9bb6d5e);
+            scr_receiver function_30ea5b1748470b7e(&drawbridge_activate);
             break;
         case #"hash_d8c09052a708a2f0":
             scr_receiver function_30ea5b1748470b7e(&function_e3330e3785c50653);
@@ -67,7 +67,7 @@ function private function_30ea5b1748470b7e(func_activate) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x432
 // Size: 0x9b
-function function_aa91480ee9bb6d5e(var_27fcc9ef03f34d03) {
+function drawbridge_activate(var_27fcc9ef03f34d03) {
     level endon("game_ended");
     self endon("death");
     var_1541eab03c636e6d = 4;

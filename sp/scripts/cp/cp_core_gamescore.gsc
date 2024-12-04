@@ -1,5 +1,5 @@
-#using scripts\cp\cp_gamescore.gsc;
-#using scripts\cp\utility.gsc;
+#using scripts\cp\cp_gamescore;
+#using scripts\cp\utility;
 
 #namespace namespace_cff95a06e1eb29ff;
 
@@ -35,8 +35,8 @@ function set_level_score_callback_func() {
 // Checksum 0x0, Offset: 0x1dc
 // Size: 0xeb
 function init_eog_score_components(var_bef62e0ad2260faf) {
-    foreach (var_a475d6daa5dd7242 in var_bef62e0ad2260faf) {
-        switch (var_a475d6daa5dd7242) {
+    foreach (component_name in var_bef62e0ad2260faf) {
+        switch (component_name) {
         case #"hash_1cc8a923a608c2a0":
             register_eog_score_component("damage", 29);
             break;
@@ -50,7 +50,7 @@ function init_eog_score_components(var_bef62e0ad2260faf) {
             register_eog_score_component("consumables_earned", 32);
             break;
         default:
-            assertmsg("'" + var_a475d6daa5dd7242 + "' is not a supported end-of-game score component.");
+            assertmsg("'" + component_name + "' is not a supported end-of-game score component.");
             break;
         }
     }
@@ -62,8 +62,8 @@ function init_eog_score_components(var_bef62e0ad2260faf) {
 // Size: 0xd9
 function init_encounter_score_components(var_bef62e0ad2260faf) {
     level.encounter_score_components = [];
-    foreach (var_a475d6daa5dd7242 in var_bef62e0ad2260faf) {
-        switch (var_a475d6daa5dd7242) {
+    foreach (component_name in var_bef62e0ad2260faf) {
+        switch (component_name) {
         case #"hash_1cc8a923a608c2a0":
             init_damage_score_component();
             break;
@@ -77,7 +77,7 @@ function init_encounter_score_components(var_bef62e0ad2260faf) {
             init_consumables_earned_score_component();
             break;
         default:
-            assertmsg("'" + var_a475d6daa5dd7242 + "' is not a supported round score component.");
+            assertmsg("'" + component_name + "' is not a supported round score component.");
             break;
         }
     }

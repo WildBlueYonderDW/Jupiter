@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\gametypes\br_publicevents.gsc;
-#using script_294dda4a4b00ffe3;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_f820c96419fe887;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
 #using script_1c7f9d74d59b2416;
+#using script_294dda4a4b00ffe3;
+#using script_7ab5b649fa408138;
+#using script_f820c96419fe887;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_6ef1a894a05e9ba5;
 

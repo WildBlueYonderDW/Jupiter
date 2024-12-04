@@ -1,31 +1,31 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\callbacks.gsc;
-#using script_3f8889c16399185c;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\weapon.gsc;
 #using script_2669878cf5a1b6bc;
+#using script_3f8889c16399185c;
 #using script_4a6760982b403bad;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\playerlogic.gsc;
 #using script_6775ad452d13858;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\analyticslog.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\math;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\flags;
+#using scripts\mp\hud_util;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rank;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weaponrank;
 
 #namespace rank;
 
@@ -304,7 +304,7 @@ function onplayerconnect() {
         player.scorepointsqueue = 0;
         player.scoreeventqueue = [];
         player.postgamepromotion = 0;
-        player setclientdvar(@"hash_803bee4022a48b56", 0);
+        player setclientdvar(@"ui_promotion", 0);
         if (!isdefined(player.pers["summary"])) {
             player.pers["summary"] = [];
             player.pers["summary"]["xp"] = 0;
@@ -1389,7 +1389,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         }
         assert(function_d03495fe6418377b(eventname));
         assert(function_d03495fe6418377b(#"value"));
-        var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"value");
+        var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"value");
         if (isdefined(var_cf27bc26b98940ab)) {
             xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
             xpeventparams[xpeventparams.size] = int(amount);
@@ -1408,7 +1408,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
             if (var_eae0bcbf8e33e5 != 0) {
                 assert(function_d03495fe6418377b(eventname));
                 assert(function_d03495fe6418377b(#"bonus_xp"));
-                var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"bonus_xp");
+                var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"bonus_xp");
                 if (isdefined(var_cf27bc26b98940ab)) {
                     xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                     xpeventparams[xpeventparams.size] = int(var_eae0bcbf8e33e5);
@@ -1417,7 +1417,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                 }
                 assert(function_d03495fe6418377b(eventname));
                 assert(function_d03495fe6418377b(#"hash_73824491bffbc66a"));
-                var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_73824491bffbc66a");
+                var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_73824491bffbc66a");
                 if (isdefined(var_cf27bc26b98940ab)) {
                     xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                     xpeventparams[xpeventparams.size] = int(2);
@@ -1430,7 +1430,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                 if (var_6cf32c59a6c7c2d9 != 0) {
                     assert(function_d03495fe6418377b(eventname));
                     assert(function_d03495fe6418377b(#"bonus_xp"));
-                    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"bonus_xp");
+                    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"bonus_xp");
                     if (isdefined(var_cf27bc26b98940ab)) {
                         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                         xpeventparams[xpeventparams.size] = int(var_6cf32c59a6c7c2d9);
@@ -1439,7 +1439,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                     }
                     assert(function_d03495fe6418377b(eventname));
                     assert(function_d03495fe6418377b(#"hash_73824491bffbc66a"));
-                    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_73824491bffbc66a");
+                    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_73824491bffbc66a");
                     if (isdefined(var_cf27bc26b98940ab)) {
                         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                         xpeventparams[xpeventparams.size] = int(1);
@@ -1461,7 +1461,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         }
         assert(function_d03495fe6418377b(eventname));
         assert(function_d03495fe6418377b(#"weapon_xp"));
-        var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"weapon_xp");
+        var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"weapon_xp");
         if (isdefined(var_cf27bc26b98940ab)) {
             xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
             xpeventparams[xpeventparams.size] = int(weapon_xp);
@@ -1470,7 +1470,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         }
         assert(function_d03495fe6418377b(eventname));
         assert(function_d03495fe6418377b(#"weapon_loot_id"));
-        var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"weapon_loot_id");
+        var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"weapon_loot_id");
         if (isdefined(var_cf27bc26b98940ab)) {
             xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
             xpeventparams[xpeventparams.size] = int(weaponlootid);
@@ -1489,7 +1489,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
             if (var_eae0bcbf8e33e5 != 0) {
                 assert(function_d03495fe6418377b(eventname));
                 assert(function_d03495fe6418377b(#"hash_48ad44d6a3d7d22a"));
-                var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_48ad44d6a3d7d22a");
+                var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_48ad44d6a3d7d22a");
                 if (isdefined(var_cf27bc26b98940ab)) {
                     xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                     xpeventparams[xpeventparams.size] = int(var_eae0bcbf8e33e5);
@@ -1498,7 +1498,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                 }
                 assert(function_d03495fe6418377b(eventname));
                 assert(function_d03495fe6418377b(#"hash_e16477c0e4e66937"));
-                var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_e16477c0e4e66937");
+                var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_e16477c0e4e66937");
                 if (isdefined(var_cf27bc26b98940ab)) {
                     xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                     xpeventparams[xpeventparams.size] = int(2);
@@ -1511,7 +1511,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                 if (var_6cf32c59a6c7c2d9 != 0) {
                     assert(function_d03495fe6418377b(eventname));
                     assert(function_d03495fe6418377b(#"hash_48ad44d6a3d7d22a"));
-                    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_48ad44d6a3d7d22a");
+                    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_48ad44d6a3d7d22a");
                     if (isdefined(var_cf27bc26b98940ab)) {
                         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                         xpeventparams[xpeventparams.size] = int(var_6cf32c59a6c7c2d9);
@@ -1520,7 +1520,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                     }
                     assert(function_d03495fe6418377b(eventname));
                     assert(function_d03495fe6418377b(#"hash_e16477c0e4e66937"));
-                    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_e16477c0e4e66937");
+                    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_e16477c0e4e66937");
                     if (isdefined(var_cf27bc26b98940ab)) {
                         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                         xpeventparams[xpeventparams.size] = int(1);
@@ -1538,7 +1538,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         }
         assert(function_d03495fe6418377b(eventname));
         assert(function_d03495fe6418377b(#"battlepass_xp"));
-        var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"battlepass_xp");
+        var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"battlepass_xp");
         if (isdefined(var_cf27bc26b98940ab)) {
             xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
             xpeventparams[xpeventparams.size] = int(var_158745de00c72d3e);
@@ -1557,7 +1557,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
             if (var_eae0bcbf8e33e5 != 0) {
                 assert(function_d03495fe6418377b(eventname));
                 assert(function_d03495fe6418377b(#"hash_f0b251f180942558"));
-                var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_f0b251f180942558");
+                var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_f0b251f180942558");
                 if (isdefined(var_cf27bc26b98940ab)) {
                     xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                     xpeventparams[xpeventparams.size] = int(var_eae0bcbf8e33e5);
@@ -1566,7 +1566,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                 }
                 assert(function_d03495fe6418377b(eventname));
                 assert(function_d03495fe6418377b(#"hash_1e26bad639898fed"));
-                var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_1e26bad639898fed");
+                var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_1e26bad639898fed");
                 if (isdefined(var_cf27bc26b98940ab)) {
                     xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                     xpeventparams[xpeventparams.size] = int(2);
@@ -1579,7 +1579,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                 if (var_6cf32c59a6c7c2d9 != 0) {
                     assert(function_d03495fe6418377b(eventname));
                     assert(function_d03495fe6418377b(#"hash_f0b251f180942558"));
-                    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_f0b251f180942558");
+                    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_f0b251f180942558");
                     if (isdefined(var_cf27bc26b98940ab)) {
                         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                         xpeventparams[xpeventparams.size] = int(var_6cf32c59a6c7c2d9);
@@ -1588,7 +1588,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
                     }
                     assert(function_d03495fe6418377b(eventname));
                     assert(function_d03495fe6418377b(#"hash_1e26bad639898fed"));
-                    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_1e26bad639898fed");
+                    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_1e26bad639898fed");
                     if (isdefined(var_cf27bc26b98940ab)) {
                         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
                         xpeventparams[xpeventparams.size] = int(1);
@@ -1605,7 +1605,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         assertex(operatorid != 0, "<dev string:x542>");
         assert(function_d03495fe6418377b(eventname));
         assert(function_d03495fe6418377b(#"operator_xp"));
-        var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"operator_xp");
+        var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"operator_xp");
         if (isdefined(var_cf27bc26b98940ab)) {
             xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
             xpeventparams[xpeventparams.size] = int(operatorxp);
@@ -1614,7 +1614,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
         }
         assert(function_d03495fe6418377b(eventname));
         assert(function_d03495fe6418377b(#"hash_8fba2fc976d0515e"));
-        var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_8fba2fc976d0515e");
+        var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_8fba2fc976d0515e");
         if (isdefined(var_cf27bc26b98940ab)) {
             xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
             xpeventparams[xpeventparams.size] = int(operatorid);
@@ -1625,7 +1625,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
     if (clanXP > 0) {
         assert(function_d03495fe6418377b(eventname));
         assert(function_d03495fe6418377b(#"clan_xp"));
-        var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"clan_xp");
+        var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"clan_xp");
         if (isdefined(var_cf27bc26b98940ab)) {
             xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
             xpeventparams[xpeventparams.size] = int(clanXP);
@@ -1635,7 +1635,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
     }
     assert(function_d03495fe6418377b(eventname));
     assert(function_d03495fe6418377b(#"version"));
-    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"version");
+    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"version");
     if (isdefined(var_cf27bc26b98940ab)) {
         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
         xpeventparams[xpeventparams.size] = int(1);
@@ -1644,7 +1644,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
     }
     assert(function_d03495fe6418377b(eventname));
     assert(function_d03495fe6418377b(#"hash_e1ad0562d81a9efa"));
-    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"hash_e1ad0562d81a9efa");
+    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"hash_e1ad0562d81a9efa");
     if (isdefined(var_cf27bc26b98940ab)) {
         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
         xpeventparams[xpeventparams.size] = int(var_22d9ebf9658572ca);
@@ -1654,7 +1654,7 @@ function incrankxp(amount, objweapon, weapon_xp, type, var_158745de00c72d3e, var
     gamemode = scripts\cp_mp\challenges::getchallengegamemode(self);
     assert(function_d03495fe6418377b(eventname));
     assert(function_d03495fe6418377b(#"gamemode"));
-    var_cf27bc26b98940ab = namespace_649c2fab0fd72b8b::function_d6f771aedba70ce7(eventname, #"gamemode");
+    var_cf27bc26b98940ab = scripts\common\ae_utility::function_d6f771aedba70ce7(eventname, #"gamemode");
     if (isdefined(var_cf27bc26b98940ab)) {
         xpeventparams[xpeventparams.size] = var_cf27bc26b98940ab;
         xpeventparams[xpeventparams.size] = int(gamemode);

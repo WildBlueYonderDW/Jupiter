@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ef95bba57dc4b82;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\weapon;
 
 #namespace spycam;
 

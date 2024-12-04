@@ -1,20 +1,20 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\trace.gsc;
 #using script_4ab4bd3ef85fb34c;
 #using script_53f4e6352b0b2425;
-#using scripts\common\ai.gsc;
-#using scripts\sp\door.gsc;
 #using script_55b3046625fb79b6;
-#using scripts\anim\notetracks.gsc;
-#using scripts\sp\analytics.gsc;
-#using script_5d5ed488e7b712ab;
-#using scripts\sp\hud_util.gsc;
 #using script_5d0aad069db3eeb8;
+#using script_5d5ed488e7b712ab;
+#using scripts\anim\notetracks;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\analytics;
+#using scripts\sp\anim;
+#using scripts\sp\door;
+#using scripts\sp\hud_util;
+#using scripts\sp\utility;
 
 #namespace namespace_813e4ba6b29c9ad8;
 
@@ -171,8 +171,8 @@ function generic_human() {
     level.scr_anim["concourse_civ02"]["concourse_execute"] = generic_human%lon_pic_035_subway_executions_civ02_execute;
     level.scr_anim["concourse_civ02"]["concourse_execute_idle"][0] = generic_human%lon_pic_035_subway_executions_civ02_idle;
     level.scr_anim["concourse_enemy"]["concourse_execute"] = generic_human%lon_pic_035_subway_executions_t01_execute;
-    addnotetrack_customfunction("concourse_civ01", "shot", &function_ff28c644646d7150, "concourse_execute");
-    addnotetrack_customfunction("concourse_civ02", "shot", &function_ff28c644646d7150, "concourse_execute");
+    addnotetrack_customfunction("concourse_civ01", "shot", &shot_civ, "concourse_execute");
+    addnotetrack_customfunction("concourse_civ02", "shot", &shot_civ, "concourse_execute");
     level.scr_anim["concourse_civ01"]["concourse_die"] = generic_human%sdr_com_exposed_crouch_death01_midbody_md_4;
     level.scr_anim["concourse_civ02"]["concourse_die"] = generic_human%sdr_com_exposed_crouch_death01_midbody_md_4;
     level.scr_anim["enemy01"]["concourse_restaurant_enter"] = generic_human%fbk_0240_concourse_restaurant_enter_enmy01;
@@ -1005,7 +1005,7 @@ function scriptables() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x107f7
 // Size: 0x70
-function function_ff28c644646d7150(guy) {
+function shot_civ(guy) {
     guy.shot = 1;
     squib_head(guy);
     wait 0.5;
@@ -1047,21 +1047,21 @@ function function_daebed379b22cca1(tag) {
 // Checksum 0x0, Offset: 0x10921
 // Size: 0xbc
 function function_1798a59ab1073008(who) {
-    var_84a0ba0f68eaa456 = undefined;
+    bullet_start = undefined;
     switch (self.animname) {
     case #"hash_743e42a7aaadb43e":
-        var_84a0ba0f68eaa456 = (30872, 3168, -628);
+        bullet_start = (30872, 3168, -628);
         break;
     case #"hash_743e3fa7aaadaf85":
-        var_84a0ba0f68eaa456 = (30360, 3160, -628);
+        bullet_start = (30360, 3160, -628);
         break;
     case #"hash_743e3ea7aaadadf2":
-        var_84a0ba0f68eaa456 = (30768, 3400, -628);
+        bullet_start = (30768, 3400, -628);
         break;
     }
-    assert(isdefined(var_84a0ba0f68eaa456));
-    var_b6f1b7d50b1a4853 = self gettagorigin("tag_eye");
-    magicbullet("iw9_ar_akilo_sp", var_84a0ba0f68eaa456, var_b6f1b7d50b1a4853);
+    assert(isdefined(bullet_start));
+    bullet_end = self gettagorigin("tag_eye");
+    magicbullet("iw9_ar_akilo_sp", bullet_start, bullet_end);
     function_daebed379b22cca1("tag_eye");
 }
 
@@ -1070,10 +1070,10 @@ function function_1798a59ab1073008(who) {
 // Checksum 0x0, Offset: 0x109e5
 // Size: 0x68
 function function_3fcbefaab3d31c1c(who) {
-    var_84a0ba0f68eaa456 = (30728, 3360, -624);
+    bullet_start = (30728, 3360, -624);
     offset = (randomintrange(250, 500), 0, randomintrange(20, 50));
-    var_b6f1b7d50b1a4853 = self gettagorigin("j_spine4") + offset;
-    magicbullet("iw9_ar_akilo_sp", var_84a0ba0f68eaa456, var_b6f1b7d50b1a4853);
+    bullet_end = self gettagorigin("j_spine4") + offset;
+    magicbullet("iw9_ar_akilo_sp", bullet_start, bullet_end);
 }
 
 // Namespace namespace_813e4ba6b29c9ad8 / namespace_7f81dff3bcaf7919
@@ -1081,30 +1081,30 @@ function function_3fcbefaab3d31c1c(who) {
 // Checksum 0x0, Offset: 0x10a55
 // Size: 0x16a
 function function_51bc46a7b756c17e(who) {
-    var_cbd0fd64452246e3 = ["j_spineupper", "j_spinelower", "j_clavicle_ri", "j_clavicle_le", "j_neck", "j_shoulder_ri", "j_shoulder_le", "j_spine4", "j_elbow_ri", "j_elbow_le"];
-    var_12a128a5a2d8e2 = var_cbd0fd64452246e3[randomint(var_cbd0fd64452246e3.size)];
-    var_84a0ba0f68eaa456 = undefined;
+    body_tags = ["j_spineupper", "j_spinelower", "j_clavicle_ri", "j_clavicle_le", "j_neck", "j_shoulder_ri", "j_shoulder_le", "j_spine4", "j_elbow_ri", "j_elbow_le"];
+    body_tag = body_tags[randomint(body_tags.size)];
+    bullet_start = undefined;
     switch (self.animname) {
     case #"hash_743e46a7aaadba8a":
-        var_84a0ba0f68eaa456 = (31072, 2992, -628);
+        bullet_start = (31072, 2992, -628);
         break;
     case #"hash_743e43a7aaadb5d1":
-        var_84a0ba0f68eaa456 = (31264, 3184, -628);
+        bullet_start = (31264, 3184, -628);
         break;
     case #"hash_743e41a7aaadb2ab":
-        var_84a0ba0f68eaa456 = (31248, 3056, -628);
+        bullet_start = (31248, 3056, -628);
         break;
     case #"hash_743e40a7aaadb118":
-        var_84a0ba0f68eaa456 = (31040, 3264, -628);
+        bullet_start = (31040, 3264, -628);
         break;
     case #"hash_743e3ea7aaadadf2":
-        var_84a0ba0f68eaa456 = (30768, 3400, -628);
+        bullet_start = (30768, 3400, -628);
         break;
     }
-    assert(isdefined(var_84a0ba0f68eaa456));
-    var_b6f1b7d50b1a4853 = self gettagorigin(var_12a128a5a2d8e2);
-    magicbullet("iw9_ar_akilo_sp", var_84a0ba0f68eaa456, var_b6f1b7d50b1a4853);
-    function_daebed379b22cca1(var_12a128a5a2d8e2);
+    assert(isdefined(bullet_start));
+    bullet_end = self gettagorigin(body_tag);
+    magicbullet("iw9_ar_akilo_sp", bullet_start, bullet_end);
+    function_daebed379b22cca1(body_tag);
 }
 
 // Namespace namespace_813e4ba6b29c9ad8 / namespace_7f81dff3bcaf7919
@@ -1143,7 +1143,7 @@ function grab_halligan(guy) {
     assertex(!istrue(guy.var_a23595d25a934e9), "Already holding hammer!!");
     if (guy.var_2bef2d79d7610fd3) {
         guy.var_2bef2d79d7610fd3 = 0;
-        guy detach(model, guy.var_a79283350c6b5674);
+        guy detach(model, guy.hammer_tag);
     }
     guy attach(model, "tag_accessory_right");
     guy.var_a23595d25a934e9 = 1;
@@ -1161,7 +1161,7 @@ function stow_halligan(guy) {
         guy.var_a23595d25a934e9 = undefined;
     }
     guy.var_2bef2d79d7610fd3 = 1;
-    guy attach(model, guy.var_a79283350c6b5674);
+    guy attach(model, guy.hammer_tag);
 }
 
 // Namespace namespace_813e4ba6b29c9ad8 / namespace_7f81dff3bcaf7919
@@ -1186,7 +1186,7 @@ function function_f327236a6f4e591c(guy) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10e50
 // Size: 0x26
-function function_e12c8372016edda2(actor) {
+function ar_drop(actor) {
     self [[ self.fnplaceweaponon ]](self.weapon, "left");
 }
 
@@ -1194,7 +1194,7 @@ function function_e12c8372016edda2(actor) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10e7e
 // Size: 0x17
-function function_ef7992d29eb0731(actor) {
+function ar_grab(actor) {
     namespace_acef762f74130ac8::notetrackgunhand("right");
 }
 
@@ -1226,7 +1226,7 @@ function function_2cb40d711570d702(actor) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10eeb
 // Size: 0x12
-function function_47e5409bbfed7a8c(who) {
+function fire_gun(who) {
     who shoot();
 }
 
@@ -1238,20 +1238,20 @@ function function_533ef0489fd0d893(actor) {
     gameskill = scripts\sp\analytics::get_gameskill_as_string();
     switch (gameskill) {
     case #"hash_2fc8332783e61561":
-        var_3393bb44dc2d7d5c = 2.4;
+        damage_modifier = 2.4;
         break;
     case #"hash_bbbbeacfa1d3f357":
-        var_3393bb44dc2d7d5c = 1.2;
+        damage_modifier = 1.2;
         break;
     case #"hash_ceb5b5ffdddbe1ce":
-        var_3393bb44dc2d7d5c = 0.8;
+        damage_modifier = 0.8;
         break;
     case #"hash_4d059e78f7f34154":
     case #"hash_c6fc7812335fee70":
-        var_3393bb44dc2d7d5c = 0.4;
+        damage_modifier = 0.4;
         break;
     }
-    damage = level.player.health * var_3393bb44dc2d7d5c;
+    damage = level.player.health * damage_modifier;
     level.player dodamage(damage, actor.origin, actor, actor, "MOD_IMPACT");
     level.var_7631474af43da9b4.enemy02 thread function_50ec43fc3a33af65();
 }
@@ -1263,10 +1263,10 @@ function function_533ef0489fd0d893(actor) {
 function function_50ec43fc3a33af65() {
     utility::place_weapon_on(self.weapon, "none");
     namespace_997789c5b521a997::function_7ba88b2ee15a39a1("iw9_pi_golf17_sp", "tag_weapon_right");
-    var_a50eed8877a7ea1e = vectornormalize(level.player geteye() - self.var_613b026f2e54e7d9.origin);
-    var_dc7e1e9fdb74defa = 600;
-    self.var_613b026f2e54e7d9 physicslaunchserver(self.var_613b026f2e54e7d9.origin, var_a50eed8877a7ea1e * (var_dc7e1e9fdb74defa, var_dc7e1e9fdb74defa, var_dc7e1e9fdb74defa));
-    rifle = self.var_613b026f2e54e7d9;
+    launch_dir = vectornormalize(level.player geteye() - self.fake_rifle.origin);
+    launch_speed = 600;
+    self.fake_rifle physicslaunchserver(self.fake_rifle.origin, launch_dir * (launch_speed, launch_speed, launch_speed));
+    rifle = self.fake_rifle;
     flag_wait("lure_ambush_weapons_raised");
     wait 1;
     if (flag("lure_ambush_player_had_pistol")) {
@@ -1459,8 +1459,8 @@ function function_8988d14729bb8d79(guy) {
 // Size: 0xad
 function function_3687ff6bc12c4c70(who) {
     var_61a0a0db7baf1603 = anglestoforward(level.infilVehicle gettagangles("tag_body"));
-    var_e7604a0c7d319edb = anglestoforward(level.player getplayerangles());
-    dot = vectordot(var_61a0a0db7baf1603, var_e7604a0c7d319edb);
+    plr_forward = anglestoforward(level.player getplayerangles());
+    dot = vectordot(var_61a0a0db7baf1603, plr_forward);
     angle = acos(dot);
     if (angle < 30) {
         return;

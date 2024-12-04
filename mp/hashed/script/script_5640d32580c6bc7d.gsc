@@ -1,14 +1,14 @@
-#using script_43971bbeefd98f05;
-#using script_7b2517368c79e5bc;
-#using script_3e2f8cc477d57433;
 #using script_1de396bd08617dd4;
-#using script_3282f33bea60a32;
-#using script_6f74c67411fcab41;
-#using script_443d99fe707f1d9f;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\equipment.gsc;
 #using script_2669878cf5a1b6bc;
+#using script_3282f33bea60a32;
+#using script_3e2f8cc477d57433;
+#using script_43971bbeefd98f05;
+#using script_443d99fe707f1d9f;
+#using script_6f74c67411fcab41;
+#using script_7b2517368c79e5bc;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\mp\equipment;
+#using scripts\mp\hud_message;
 
 #namespace namespace_e40ee8b394ce404;
 
@@ -34,9 +34,9 @@ function function_cf1b1f86951a9209(instance, part, state, player, var_a5b2c54141
 // Checksum 0x0, Offset: 0x34e
 // Size: 0x1db
 function function_8f75065bda6ee24a(opener, container) {
-    var_57accdc40b2f50e = function_438749eb7a7b738(container.contents, opener, container);
-    lastvalidindex = var_57accdc40b2f50e[1];
-    items = var_57accdc40b2f50e[0];
+    __a0 = function_438749eb7a7b738(container.contents, opener, container);
+    lastvalidindex = __a0[1];
+    items = __a0[0];
     container.contents = items;
     opener.var_2fa5b49969def47 = container;
     opener.var_f2aa9ae949179907 = opener.origin;
@@ -296,9 +296,9 @@ function function_daa9df3be019b879(lootid) {
 // Checksum 0x0, Offset: 0x1048
 // Size: 0x104
 function function_ce9b69fc041571d2(opener, container) {
-    var_c00a2c6249962d83 = function_438749eb7a7b738(container.contents, opener, container);
-    lastvalidindex = var_c00a2c6249962d83[1];
-    items = var_c00a2c6249962d83[0];
+    __a10 = function_438749eb7a7b738(container.contents, opener, container);
+    lastvalidindex = __a10[1];
+    items = __a10[0];
     container.contents = items;
     containersize = function_54d1e54b22f3f1f6(container.containertype);
     /#

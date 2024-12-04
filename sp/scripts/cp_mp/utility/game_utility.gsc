@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace game_utility;
 
@@ -13,7 +13,7 @@
 // Size: 0x2f
 function getmapname() {
     if (!isdefined(level.mapname)) {
-        level.mapname = getdvar(@"hash_687fb8f9b7a23245");
+        level.mapname = getdvar(@"g_mapname");
     }
     return level.mapname;
 }
@@ -101,7 +101,7 @@ function function_eb455c18ac9d8ac5() {
 // Checksum 0x0, Offset: 0xdd4
 // Size: 0x13
 function function_ba5574c7f287c587() {
-    return getdvarint(@"hash_39c3947a2e4f5f9e", 0) != 0;
+    return getdvarint(@"mgl", 0) != 0;
 }
 
 // Namespace game_utility / scripts\cp_mp\utility\game_utility
@@ -725,7 +725,7 @@ function getlocalestructarray(structname, var_8a8a9680c8ad47a2) {
 // Checksum 0x0, Offset: 0x1928
 // Size: 0xc
 function function_b2c4b42f9236924() {
-    return istrue(level.var_12226443217b5474);
+    return istrue(level.tier1ModeEnabled);
 }
 
 // Namespace game_utility / scripts\cp_mp\utility\game_utility

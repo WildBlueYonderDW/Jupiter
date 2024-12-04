@@ -1,6 +1,6 @@
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\mp\utility\game;
 
 #namespace compass;
 

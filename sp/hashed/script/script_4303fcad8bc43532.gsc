@@ -1,5 +1,5 @@
-#using scripts\common\scene.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\scene;
+#using scripts\engine\utility;
 
 #namespace scene_sequence;
 

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\values.gsc;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace whizby;
 

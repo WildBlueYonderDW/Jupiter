@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\ui.gsc;
+#using scripts\common\system;
+#using scripts\common\ui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_6917e6eed10cfc44;
 
@@ -267,7 +267,7 @@ function function_90de31b2cbef19f9(widget_ref, widget_type, widget_struct) {
                 function_7a82d07837107ae6(widget_ref, widget_struct.ent, widget_struct.anchor_type);
             }
             if (isdefined(widget_struct.position)) {
-                function_f4c37324750dc183(widget_ref, widget_struct.position.left, widget_struct.position.top, widget_struct.position.var_b8ce12ab15073e07, widget_struct.position.var_3f4f7e6d296ad6d9, widget_struct.position.var_5bf6089ef591d224);
+                function_f4c37324750dc183(widget_ref, widget_struct.position.left, widget_struct.position.top, widget_struct.position.horizontal_anchor, widget_struct.position.vertical_anchor, widget_struct.position.var_5bf6089ef591d224);
             }
         }
         self setclientomnvar("ui_scripted_widget_" + "type_" + index, data.widget_types[widget_type].index);
@@ -284,7 +284,7 @@ function function_6cd0a8e23ff14e13(widget_prefix) {
     assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
     assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
     assertex(isdefined(widget_prefix), "Tried to get a widget name without providing a prefix as defined in APE");
-    widget = function_6627dd3016f3d63f(widget_prefix, getdvar(@"hash_687fb8f9b7a23245"));
+    widget = function_6627dd3016f3d63f(widget_prefix, getdvar(@"g_mapname"));
     if (isdefined(widget)) {
         return widget;
     }
@@ -367,11 +367,11 @@ function function_a0ae4b54aa48ade2(widget_type) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2729
 // Size: 0x117
-function function_956ab5009d077253(var_779716333f062476, param_name, var_a66ee63570312822) {
+function function_956ab5009d077253(widget_asset, param_name, var_a66ee63570312822) {
     assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the params of a scripted widget before scripted_widgets_init was called.");
     assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the params of a scripted widget before scripted_widgets_init was called.");
-    widget_data = getscriptbundle("scriptedwidget:" + var_779716333f062476);
-    param_index = function_7be2b65191088c8a(var_779716333f062476, param_name);
+    widget_data = getscriptbundle("scriptedwidget:" + widget_asset);
+    param_index = function_7be2b65191088c8a(widget_asset, param_name);
     if (isdefined(param_index)) {
         var_a66ee63570312822 = tolower(var_a66ee63570312822);
         foreach (property in widget_data.parameters[param_index].properties) {
@@ -387,12 +387,12 @@ function function_956ab5009d077253(var_779716333f062476, param_name, var_a66ee63
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2849
 // Size: 0x88
-function function_7be2b65191088c8a(var_779716333f062476, param_name) {
+function function_7be2b65191088c8a(widget_asset, param_name) {
     assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
     assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the param index of a scripted widget before scripted_widgets_init was called.");
-    var_779716333f062476 = tolower(var_779716333f062476);
+    widget_asset = tolower(widget_asset);
     param_name = tolower(param_name);
-    return level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[var_779716333f062476].parameters[param_name];
+    return level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[widget_asset].parameters[param_name];
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
@@ -453,11 +453,11 @@ function function_b52897e8afbb0968(widget_ref, data_val, var_54a61fbefc52eb7f) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b84
 // Size: 0x80
-function function_daff24f3e11825ae(var_779716333f062476, state_name) {
+function function_daff24f3e11825ae(widget_asset, state_name) {
     assertex(isdefined(level.var_6917e6eed10cfc44), "Tried to get the state index of a scripted widget before scripted_widgets_init was called.");
     assertex(isdefined(level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d), "Tried to get the state index of a scripted widget before scripted_widgets_init was called.");
     state_name = tolower(state_name);
-    return level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[var_779716333f062476].states[state_name];
+    return level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.widget_types[widget_asset].states[state_name];
 }
 
 // Namespace namespace_6917e6eed10cfc44 / namespace_373fee410d5055ba
@@ -515,7 +515,7 @@ function function_7a82d07837107ae6(widget_ref, anchor_ent, anchor_type) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x2edf
 // Size: 0x2ea
-function function_f4c37324750dc183(widget_ref, x_pos, y_pos, var_b8ce12ab15073e07, var_3f4f7e6d296ad6d9, var_5bf6089ef591d224, var_54a61fbefc52eb7f) {
+function function_f4c37324750dc183(widget_ref, x_pos, y_pos, horizontal_anchor, vertical_anchor, var_5bf6089ef591d224, var_54a61fbefc52eb7f) {
     assertex(isplayer(self), "Must be called on a player.");
     data = function_95809d3a84b2020b(widget_ref, "position_", var_54a61fbefc52eb7f);
     if (!isdefined(data)) {
@@ -526,7 +526,7 @@ function function_f4c37324750dc183(widget_ref, x_pos, y_pos, var_b8ce12ab15073e0
     }
     x_pos = int(x_pos);
     y_pos = int(y_pos);
-    switch (var_b8ce12ab15073e07) {
+    switch (horizontal_anchor) {
     case 0:
         assertex(x_pos >= -63 && x_pos <= 1984, "<scripted_widget_set_position>, 'x_pos' parameter must be between " + -63 + " and " + 1984 + " for left alignment");
         x_pos -= -63;
@@ -541,7 +541,7 @@ function function_f4c37324750dc183(widget_ref, x_pos, y_pos, var_b8ce12ab15073e0
         x_pos += 1984;
         break;
     }
-    switch (var_3f4f7e6d296ad6d9) {
+    switch (vertical_anchor) {
     case 0:
         assertex(y_pos >= -483 && y_pos <= 1564, "<scripted_widget_set_position>, 'y_pos' parameter must be between " + -483 + " and " + 1564 + " for top alignment");
         y_pos -= -483;
@@ -557,8 +557,8 @@ function function_f4c37324750dc183(widget_ref, x_pos, y_pos, var_b8ce12ab15073e0
         break;
     }
     y_bits = y_pos << 11;
-    var_f7e258d3c20bfb80 = var_b8ce12ab15073e07 << 22;
-    var_91800f6a184e5dca = var_3f4f7e6d296ad6d9 << 22 + 2;
+    var_f7e258d3c20bfb80 = horizontal_anchor << 22;
+    var_91800f6a184e5dca = vertical_anchor << 22 + 2;
     var_b086c1951a364c8d = ter_op(var_5bf6089ef591d224, 1, 0) << 22 + 2 + 2;
     packed_position = x_pos + y_bits + var_f7e258d3c20bfb80 + var_91800f6a184e5dca + var_b086c1951a364c8d;
     self setclientomnvar(data.omnvar, packed_position);
@@ -617,9 +617,9 @@ function function_d2da2b563383891f(widget_ref, var_d66aa55144b09de9, var_54a61fb
     position_data = self getclientomnvar(data.omnvar);
     x_pos = (position_data & int(pow(2, 11) - 1)) >> 0;
     y_pos = (position_data & int(pow(2, 11) - 1)) >> 11;
-    var_3f4f7e6d296ad6d9 = (position_data & int(pow(2, 2) - 1)) >> 22;
-    var_b8ce12ab15073e07 = (position_data & int(pow(2, 2) - 1)) >> 22 + 2;
-    switch (var_b8ce12ab15073e07) {
+    vertical_anchor = (position_data & int(pow(2, 2) - 1)) >> 22;
+    horizontal_anchor = (position_data & int(pow(2, 2) - 1)) >> 22 + 2;
+    switch (horizontal_anchor) {
     case 0:
         x_pos += -63;
         break;
@@ -631,7 +631,7 @@ function function_d2da2b563383891f(widget_ref, var_d66aa55144b09de9, var_54a61fb
         x_pos -= 1984;
         break;
     }
-    switch (var_3f4f7e6d296ad6d9) {
+    switch (vertical_anchor) {
     case 0:
         y_pos += -483;
         break;
@@ -960,13 +960,13 @@ function function_5270193c147bd4f(list_ref, var_e9648468480b0e14, var_e964876848
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x426a
 // Size: 0x10b
-function function_52c3bc127d006d2a(list_ref, var_6251f6c82cd01420) {
+function function_52c3bc127d006d2a(list_ref, shift_amount) {
     assertex(isplayer(self), "Must be called on a player.");
     list_ref = tolower(list_ref);
     list_size = self.var_a14cb42739301f30[list_ref].list.size;
-    assertex(list_size >= abs(var_6251f6c82cd01420), "Attempting to shift list <" + list_ref + "> by " + var_6251f6c82cd01420 + "but, only " + list_size + " items exist in the list");
-    shift_index = var_6251f6c82cd01420;
-    if (var_6251f6c82cd01420 < 0) {
+    assertex(list_size >= abs(shift_amount), "Attempting to shift list <" + list_ref + "> by " + shift_amount + "but, only " + list_size + " items exist in the list");
+    shift_index = shift_amount;
+    if (shift_amount < 0) {
         shift_index += list_size;
     }
     var_50bd74501466d521 = array_slice(self.var_a14cb42739301f30[list_ref].list, 0, shift_index);
@@ -1409,14 +1409,14 @@ function private function_f58cb12303817e47(value, archetype, field) {
 // Size: 0x183
 function private function_e375e5ca24ea7bf4(widget_type, omnvar, field_values, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     assertex(isdefined(data.widget_types[widget_type]), "Widget type <" + widget_type + "> does not exist.");
     archetype = data.widget_types[widget_type].archetype;
     assertex(isdefined(archetype), "Widget type <" + widget_type + "> is not an archetype.");
     packed_value = 0;
     foreach (field, value in field_values) {
-        assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
-        value = clamp(value, 0, var_1c4f33d06f183332[archetype][field].max_value);
+        assertex(isdefined(widget_archetypes[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
+        value = clamp(value, 0, widget_archetypes[archetype][field].max_value);
         packed_value = function_b36e048ccaca2da4(value, archetype, field, packed_value);
     }
     self setclientomnvar(omnvar, packed_value);
@@ -1431,13 +1431,13 @@ function private function_e375e5ca24ea7bf4(widget_type, omnvar, field_values, va
 // Size: 0x136
 function private function_e6df6627eb26284f(widget_type, omnvar, field, value) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     assertex(isdefined(data.widget_types[widget_type]), "Widget type <" + widget_type + "> does not exist.");
     archetype = data.widget_types[widget_type].archetype;
     assertex(isdefined(archetype), "Widget type <" + widget_type + "> is not an archetype.");
     packed_value = self getclientomnvar(omnvar);
-    assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
-    value = clamp(value, 0, var_1c4f33d06f183332[archetype][field].max_value);
+    assertex(isdefined(widget_archetypes[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
+    value = clamp(value, 0, widget_archetypes[archetype][field].max_value);
     packed_value = function_b36e048ccaca2da4(value, archetype, field, packed_value, 1);
     self setclientomnvar(omnvar, packed_value);
 }
@@ -1448,7 +1448,7 @@ function private function_e6df6627eb26284f(widget_type, omnvar, field, value) {
 // Size: 0x1ae
 function private function_61dda643ffbb43a0(widget_type, omnvar, fields) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     assertex(isdefined(data.widget_types[widget_type]), "Widget type <" + widget_type + "> does not exist.");
     archetype = data.widget_types[widget_type].archetype;
     assertex(isdefined(archetype), "Widget type <" + widget_type + "> is not an archetype.");
@@ -1456,11 +1456,11 @@ function private function_61dda643ffbb43a0(widget_type, omnvar, fields) {
     ret_fields = [];
     if (isdefined(fields)) {
         foreach (field in fields) {
-            assertex(isdefined(var_1c4f33d06f183332[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
+            assertex(isdefined(widget_archetypes[archetype][field]), "Field <" + field + "> is not a valid field for archetype <" + archetype + ">.");
             ret_fields[field] = function_f58cb12303817e47(value, archetype, field);
         }
     } else {
-        foreach (field, unused in var_1c4f33d06f183332[archetype]) {
+        foreach (field, unused in widget_archetypes[archetype]) {
             ret_fields[field] = function_f58cb12303817e47(value, archetype, field);
         }
     }
@@ -1473,11 +1473,11 @@ function private function_61dda643ffbb43a0(widget_type, omnvar, fields) {
 // Size: 0x159
 function private function_ab8c8292f0d469c4(widget_type, omnvar, current_pct, target_pct, time, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_progress";
     assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
-    current_pct = clamp(current_pct, 0, var_1c4f33d06f183332[archetype]["current_pct"].max_value);
-    target_pct = clamp(target_pct, 0, var_1c4f33d06f183332[archetype]["target_pct"].max_value);
+    current_pct = clamp(current_pct, 0, widget_archetypes[archetype]["current_pct"].max_value);
+    target_pct = clamp(target_pct, 0, widget_archetypes[archetype]["target_pct"].max_value);
     packed_value = 0;
     packed_value = function_b36e048ccaca2da4(current_pct, archetype, "current_pct", packed_value);
     packed_value = function_b36e048ccaca2da4(target_pct, archetype, "target_pct", packed_value);
@@ -1492,10 +1492,10 @@ function private function_ab8c8292f0d469c4(widget_type, omnvar, current_pct, tar
 // Size: 0x11f
 function private function_42866bf1e84c1d21(widget_type, omnvar, current_pct, bool, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_progress_bool";
     assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
-    current_pct = clamp(current_pct, 0, var_1c4f33d06f183332[archetype]["current_pct"].max_value);
+    current_pct = clamp(current_pct, 0, widget_archetypes[archetype]["current_pct"].max_value);
     packed_value = 0;
     packed_value = function_b36e048ccaca2da4(current_pct, archetype, "current_pct", packed_value);
     packed_value = function_b36e048ccaca2da4(bool, archetype, "bool", packed_value);
@@ -1509,11 +1509,11 @@ function private function_42866bf1e84c1d21(widget_type, omnvar, current_pct, boo
 // Size: 0x13f
 function private function_7db1020b4d70e9e7(widget_type, omnvar, current_pct, current_alpha, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_progress_alpha";
     assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
-    current_pct = clamp(current_pct, 0, var_1c4f33d06f183332[archetype]["current_pct"].max_value);
-    current_alpha = clamp(current_alpha, 0, var_1c4f33d06f183332[archetype]["current_alpha"].max_value);
+    current_pct = clamp(current_pct, 0, widget_archetypes[archetype]["current_pct"].max_value);
+    current_alpha = clamp(current_alpha, 0, widget_archetypes[archetype]["current_alpha"].max_value);
     packed_value = 0;
     packed_value = function_b36e048ccaca2da4(current_pct, archetype, "current_pct", packed_value);
     packed_value = function_b36e048ccaca2da4(current_alpha, archetype, "current_alpha", packed_value);
@@ -1527,12 +1527,12 @@ function private function_7db1020b4d70e9e7(widget_type, omnvar, current_pct, cur
 // Size: 0x181
 function private function_99bfbb496e5ac12a(widget_type, omnvar, count, max_count, time, var_26595f30949d77ee) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_count";
     assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
-    count = clamp(count, 0, var_1c4f33d06f183332[archetype]["count"].max_value);
+    count = clamp(count, 0, widget_archetypes[archetype]["count"].max_value);
     if (isdefined(max_count)) {
-        max_count = clamp(max_count, 0, var_1c4f33d06f183332[archetype]["max_count"].max_value);
+        max_count = clamp(max_count, 0, widget_archetypes[archetype]["max_count"].max_value);
     } else {
         max_count = 0;
     }
@@ -1555,11 +1555,11 @@ function private function_99bfbb496e5ac12a(widget_type, omnvar, count, max_count
 // Size: 0x128
 function private function_36bba30ae80af891(widget_type, omnvar, horizontal_alignment, vertical_alignment) {
     data = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d;
-    var_1c4f33d06f183332 = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
+    widget_archetypes = level.var_6917e6eed10cfc44.var_44c1d0100b18dd6d.archetypes;
     archetype = "scripted_widget_archetype_list_item_alignment";
     assertex(data.widget_types[widget_type].archetype == archetype, "Widget type <" + widget_type + "> is not a <" + archetype + "> archetype widget");
-    horizontal_alignment = clamp(horizontal_alignment, 0, var_1c4f33d06f183332[archetype]["horizontal_alignment"].max_value);
-    vertical_alignment = clamp(vertical_alignment, 0, var_1c4f33d06f183332[archetype]["vertical_alignment"].max_value);
+    horizontal_alignment = clamp(horizontal_alignment, 0, widget_archetypes[archetype]["horizontal_alignment"].max_value);
+    vertical_alignment = clamp(vertical_alignment, 0, widget_archetypes[archetype]["vertical_alignment"].max_value);
     packed_value = 0;
     packed_value = function_b36e048ccaca2da4(horizontal_alignment, archetype, "horizontal_alignment", packed_value);
     packed_value = function_b36e048ccaca2da4(vertical_alignment, archetype, "vertical_alignment", packed_value);

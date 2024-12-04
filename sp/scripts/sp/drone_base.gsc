@@ -1,13 +1,13 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\names.gsc;
-#using scripts\sp\friendlyfire.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\friendlyfire;
+#using scripts\sp\names;
+#using scripts\sp\utility;
 
-#namespace namespace_13388e6e14bbfb33;
+#namespace drone_base;
 
-// Namespace namespace_13388e6e14bbfb33 / scripts\sp\drone_base
+// Namespace drone_base / scripts\sp\drone_base
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xce
 // Size: 0xb1
@@ -34,7 +34,7 @@ function drone_give_soul() {
     }
 }
 
-// Namespace namespace_13388e6e14bbfb33 / scripts\sp\drone_base
+// Namespace drone_base / scripts\sp\drone_base
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x187
 // Size: 0x87
@@ -58,7 +58,7 @@ function thermaldrawenabledrone() {
     }
 }
 
-// Namespace namespace_13388e6e14bbfb33 / scripts\sp\drone_base
+// Namespace drone_base / scripts\sp\drone_base
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x216
 // Size: 0x322
@@ -76,21 +76,21 @@ function drone_init_path() {
         return;
     }
     vectors = [];
-    var_ad7ee73eeaf14390 = [];
-    var_f1e6b7ef99e38943 = node;
+    completed_nodes = [];
+    original_node = node;
     for (;;) {
-        node = var_f1e6b7ef99e38943;
+        node = original_node;
         for (var_42b4575e536fb56f = 0; ; var_42b4575e536fb56f = 1) {
             if (!isdefined(node.target)) {
                 break;
             }
-            var_b45bd7c79fc01491 = getstructarray(node.target, "targetname");
-            if (var_b45bd7c79fc01491.size) {
+            nextnodes = getstructarray(node.target, "targetname");
+            if (nextnodes.size) {
                 break;
             }
             nextnode = undefined;
-            foreach (newnode in var_b45bd7c79fc01491) {
-                if (isdefined(var_ad7ee73eeaf14390[newnode.origin + ""])) {
+            foreach (newnode in nextnodes) {
+                if (isdefined(completed_nodes[newnode.origin + ""])) {
                     continue;
                 }
                 nextnode = newnode;
@@ -99,7 +99,7 @@ function drone_init_path() {
             if (!isdefined(nextnode)) {
                 break;
             }
-            var_ad7ee73eeaf14390[nextnode.origin + ""] = 1;
+            completed_nodes[nextnode.origin + ""] = 1;
             vectors[node.targetname] = nextnode.origin - node.origin;
             node.angles = vectortoangles(vectors[node.targetname]);
             node = nextnode;
@@ -111,9 +111,9 @@ function drone_init_path() {
     target = self.target;
     node = getstruct(target, "targetname");
     prevnode = node;
-    var_ad7ee73eeaf14390 = [];
+    completed_nodes = [];
     for (;;) {
-        node = var_f1e6b7ef99e38943;
+        node = original_node;
         var_42b4575e536fb56f = 0;
         for (;;) {
             if (!isdefined(node.target)) {
@@ -122,13 +122,13 @@ function drone_init_path() {
             if (!isdefined(vectors[node.targetname])) {
                 return;
             }
-            var_b45bd7c79fc01491 = getstructarray(node.target, "targetname");
-            if (var_b45bd7c79fc01491.size) {
+            nextnodes = getstructarray(node.target, "targetname");
+            if (nextnodes.size) {
                 break;
             }
             nextnode = undefined;
-            foreach (newnode in var_b45bd7c79fc01491) {
-                if (isdefined(var_ad7ee73eeaf14390[newnode.origin + ""])) {
+            foreach (newnode in nextnodes) {
+                if (isdefined(completed_nodes[newnode.origin + ""])) {
                     continue;
                 }
                 nextnode = newnode;
@@ -153,7 +153,7 @@ function drone_init_path() {
     }
 }
 
-// Namespace namespace_13388e6e14bbfb33 / scripts\sp\drone_base
+// Namespace drone_base / scripts\sp\drone_base
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x540
 // Size: 0x32
@@ -167,7 +167,7 @@ function assign_drone_tree() {
     }
 }
 
-// Namespace namespace_13388e6e14bbfb33 / scripts\sp\drone_base
+// Namespace drone_base / scripts\sp\drone_base
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x57a
 // Size: 0xb
@@ -175,7 +175,7 @@ function assign_generic_human_tree() {
     self useanimtree(%generic_human);
 }
 
-// Namespace namespace_13388e6e14bbfb33 / scripts\sp\drone_base
+// Namespace drone_base / scripts\sp\drone_base
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x58d
 // Size: 0xb

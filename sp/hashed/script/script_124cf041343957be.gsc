@@ -1,12 +1,12 @@
-#using script_53f4e6352b0b2425;
-#using script_1db908936531314b;
-#using script_6bf6c8e2e1fdccaa;
 #using script_19163c4e4e504a5e;
-#using scripts\sp\anim.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\anim.gsc;
+#using script_1db908936531314b;
+#using script_53f4e6352b0b2425;
+#using script_6bf6c8e2e1fdccaa;
+#using scripts\common\anim;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
 #namespace namespace_903e62fdf3033337;
 
@@ -112,7 +112,7 @@ function cargo_truck() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b3
 // Size: 0x1e
-function function_1efb979d1f23012f() {
+function cargo_truck2() {
     if (isdefined(level.var_bbcd9a2e01592bdf)) {
         level.var_bbcd9a2e01592bdf vehicle_turnengineoff();
     }
@@ -122,16 +122,16 @@ function function_1efb979d1f23012f() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d9
 // Size: 0x1c
-function function_9c57b7b223b3a9e0() {
+function heli1() {
     wait 3.5;
-    level.var_890c3bde4b1b2f97 playsoundonmovingent("jup_milbase_heli1_seek");
+    level.heli_hind playsoundonmovingent("jup_milbase_heli1_seek");
 }
 
 // Namespace namespace_903e62fdf3033337 / namespace_c8b8bddad47ea676
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6fd
 // Size: 0x2
-function function_9c57bab223b3b079() {
+function heli2() {
     
 }
 

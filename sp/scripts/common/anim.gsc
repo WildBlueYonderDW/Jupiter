@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\values.gsc;
 #using script_6bfe39bd5c12f84a;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\engine\utility;
 
 #namespace animation;
 
@@ -494,16 +494,16 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
     #/
     anim_string = "looping anim";
     base_anime = anime;
-    var_f9909a84715a4ddf = undefined;
+    base_animname = undefined;
     if (isdefined(animname_override)) {
-        var_f9909a84715a4ddf = animname_override;
+        base_animname = animname_override;
     } else {
-        var_f9909a84715a4ddf = baseguy.animname;
+        base_animname = baseguy.animname;
     }
     idleanim = 0;
     lastidleanim = 0;
     naginterval = 0;
-    var_6beb6c37769023f8 = isdefined(level.scr_anim[var_f9909a84715a4ddf][anime + "_nags"]);
+    var_6beb6c37769023f8 = isdefined(level.scr_anim[base_animname][anime + "_nags"]);
     if (var_6beb6c37769023f8 && utility::issp()) {
         ai = 0;
         foreach (i, var_f2811089f0eb595c in var_3d308e5cd595225d) {
@@ -512,8 +512,8 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
             }
         }
         assertex(ai == 1, "Loop anims with _nags should only be done with one AI");
-        if (isdefined(level.scr_anim[var_f9909a84715a4ddf][anime + "_nags_timer"])) {
-            naginterval = level.scr_anim[var_f9909a84715a4ddf][anime + "_nags_timer"];
+        if (isdefined(level.scr_anim[base_animname][anime + "_nags_timer"])) {
+            naginterval = level.scr_anim[base_animname][anime + "_nags_timer"];
         } else {
             naginterval = 15;
         }
@@ -525,14 +525,14 @@ function anim_loop_packet(var_3d308e5cd595225d, anime, ender, animname_override)
         setdvarifuninitialized(@"hash_e35578a601bcd680", 0);
         nagdata = spawnstruct();
         nagdata.last_nag_time = gettime();
-        nagdata.nag_anims = level.scr_anim[var_f9909a84715a4ddf][anime + "_nags"];
+        nagdata.nag_anims = level.scr_anim[base_animname][anime + "_nags"];
         nagdata.currentnagindex = 0;
         childthread nag_timer(naginterval, baseguy);
     }
     while (true) {
         if (!donag && !isagent(baseguy)) {
             anime = base_anime;
-            for (idleanim = anim_weight(var_f9909a84715a4ddf, anime); idleanim == lastidleanim && idleanim != 0; idleanim = anim_weight(var_f9909a84715a4ddf, anime)) {
+            for (idleanim = anim_weight(base_animname, anime); idleanim == lastidleanim && idleanim != 0; idleanim = anim_weight(base_animname, anime)) {
             }
         } else if (!isagent(baseguy)) {
             idleanim = pick_nag_anim(nagdata);
@@ -1314,8 +1314,8 @@ function initanim() {
     if (!isdefined(level.scr_anim)) {
         level.scr_anim[0][0] = 0;
     }
-    if (!isdefined(level.var_539e9dc23256f26d)) {
-        level.var_539e9dc23256f26d[0][0] = 0;
+    if (!isdefined(level.scr_animlength)) {
+        level.scr_animlength[0][0] = 0;
     }
     if (!isdefined(level.scr_radio)) {
         level.scr_radio = [];
@@ -1424,8 +1424,8 @@ function init_animsounds_for_animname(animname) {
 // Size: 0x134
 function init_notetracks_for_animname(animname) {
     foreach (anime, var_72e7f473bbab5d91 in level.scr_notetrack[animname]) {
-        foreach (notetrack, var_39b955b6ea2a96e in var_72e7f473bbab5d91) {
-            foreach (scr_notetrack in var_39b955b6ea2a96e) {
+        foreach (notetrack, notetrack_array in var_72e7f473bbab5d91) {
+            foreach (scr_notetrack in notetrack_array) {
                 soundalias = scr_notetrack["sound"];
                 if (!isdefined(soundalias)) {
                     continue;
@@ -1867,7 +1867,7 @@ function function_96b3d74019cd30a(anime, org, angles, animname) {
     if (isdefined(level.var_ac0205cb091a126e) && istrue(level.var_99364109f9f9b3f4) && level.var_99364109f9f9b3f4 == gettime()) {
         return level.scr_anim[animname][anime][level.var_ac0205cb091a126e];
     }
-    var_48c468c35e48fd78 = 0;
+    closest_anim = 0;
     closest_dist = undefined;
     level.var_ac0205cb091a126e = undefined;
     foreach (animation in level.scr_anim[animname][anime]) {
@@ -1885,18 +1885,18 @@ function function_96b3d74019cd30a(anime, org, angles, animname) {
         }
         dist = distancesquared(level.player.origin, neworg);
         if (dist < closest_dist) {
-            var_48c468c35e48fd78 = i;
+            closest_anim = i;
             closest_dist = dist;
         }
     }
-    animation = level.scr_anim[animname][anime][var_48c468c35e48fd78];
+    animation = level.scr_anim[animname][anime][closest_anim];
     /#
         if (getdvarint(@"hash_4140c00f3efa94c6", 0)) {
             iprintln("<dev string:x2c6>" + animation);
         }
     #/
     level.var_99364109f9f9b3f4 = gettime();
-    level.var_ac0205cb091a126e = var_48c468c35e48fd78;
+    level.var_ac0205cb091a126e = closest_anim;
     return animation;
 }
 
@@ -1997,10 +1997,10 @@ function function_48af09f152896047(animation) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x5518
 // Size: 0x205
-function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
+function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
     var_ec165a067af34f8f = ter_op(isdefined(var_ec165a067af34f8f), var_ec165a067af34f8f, 1);
     var_8831fc7320076829 = ter_op(isdefined(var_8831fc7320076829), var_8831fc7320076829, 0);
-    simultaneous = ter_op(isdefined(simultaneous), simultaneous, 0);
+    Simultaneous = ter_op(isdefined(Simultaneous), Simultaneous, 0);
     assertex(!(var_ec165a067af34f8f && var_8831fc7320076829), "dropWeaponWithGesture and dropWeaponWithAnim can not both be true.");
     if (istrue(var_ec165a067af34f8f)) {
         weaponDropTime = level.player getgestureanimlength("proto_vm_gesture_gun_drop");
@@ -2010,7 +2010,7 @@ function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendInt
         weaponDropTime = 0;
     }
     weaponDropQuick = 0;
-    if (istrue(simultaneous)) {
+    if (istrue(Simultaneous)) {
         weaponDropQuick = 1;
         weaponDropTime = 0;
     } else if (level.player getdemeanorviewmodel() == "relaxed") {
@@ -2055,10 +2055,10 @@ function function_d0fafbacba98a40f(playerpos, animstartpos, blendspeed, blendInt
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x5726
 // Size: 0x227
-function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
+function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
     var_ec165a067af34f8f = ter_op(isdefined(var_ec165a067af34f8f), var_ec165a067af34f8f, 1);
     var_8831fc7320076829 = ter_op(isdefined(var_8831fc7320076829), var_8831fc7320076829, 0);
-    simultaneous = ter_op(isdefined(simultaneous), simultaneous, 0);
+    Simultaneous = ter_op(isdefined(Simultaneous), Simultaneous, 0);
     if (!var_8831fc7320076829) {
         quickdroptime = 0;
         normaldroptime = 0;
@@ -2105,7 +2105,7 @@ function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendInt
         #/
         weaponDropTime = blendtime - blendIntoTime;
     }
-    if (istrue(simultaneous)) {
+    if (istrue(Simultaneous)) {
         weaponDropQuick = 1;
         weaponDropTime = 0;
     }
@@ -2118,26 +2118,26 @@ function function_309bb9de5db13227(playerpos, animstartpos, blendspeed, blendInt
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x5956
 // Size: 0x77
-function function_dba8ec1939d3f1a(anime, animname, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
+function function_dba8ec1939d3f1a(anime, animname, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
     if (function_f1e7ee8ddeece062(anime)) {
         animation = function_c099f6fd9c19f5a6(anime, self.origin, self.angles, animname);
     } else {
         animation = level.scr_anim[animname][anime];
     }
-    function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous);
+    function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous);
 }
 
 // Namespace animation / scripts\common\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x59d5
 // Size: 0x1b1
-function function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous) {
+function function_1d134c1e220fb6d7(animation, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous) {
     animpos = getstartorigin(self.origin, self.angles, animation);
     level.blendinfo = [];
     blendIntoTime = function_2c88f6e05af61090(animation);
     blendouttime = function_f92de130e8613662(animation);
     blendspeed = function_70b77e26541e095(animation);
-    blendtime = function_d0fafbacba98a40f(level.player.origin, animpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, simultaneous);
+    blendtime = function_d0fafbacba98a40f(level.player.origin, animpos, blendspeed, blendIntoTime, var_ec165a067af34f8f, var_8831fc7320076829, Simultaneous);
     stances = function_48af09f152896047(animation);
     level.blendinfo["blendIntoTime"] = blendIntoTime;
     level.blendinfo["blendOutTime"] = blendouttime;
@@ -2221,8 +2221,8 @@ function function_e42b762e098c8f9e() {
 function function_52351c3338da63f4(animcategory, animindex) {
     assertex(isdefined(animcategory) && isdefined(animindex), "<dev string:x3a5>");
     animlength = 0;
-    if (isdefined(level.var_539e9dc23256f26d) && isdefined(level.var_539e9dc23256f26d[animcategory]) && isdefined(level.var_539e9dc23256f26d[animcategory][animindex])) {
-        animlength = level.var_539e9dc23256f26d[animcategory][animindex];
+    if (isdefined(level.scr_animlength) && isdefined(level.scr_animlength[animcategory]) && isdefined(level.scr_animlength[animcategory][animindex])) {
+        animlength = level.scr_animlength[animcategory][animindex];
     } else if (isdefined(level.scr_anim) && isdefined(level.scr_anim[animcategory]) && isdefined(level.scr_anim[animcategory][animindex])) {
         animlength = getanimlength(level.scr_anim[animcategory][animindex]);
     } else {
@@ -2318,11 +2318,11 @@ function function_9dbe1a78b03782f2(var_54e516bef4218c8f, start_func, end_func, a
     #/
     threads = 0;
     guys = [];
-    foreach (var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-        guy = var_64b5ab50f22a4efc[0];
-        animation = var_64b5ab50f22a4efc[1];
-        alignment = var_64b5ab50f22a4efc[2];
-        var_93e32c180cab35b3 = var_64b5ab50f22a4efc[3];
+    foreach (guy_anim in var_54e516bef4218c8f) {
+        guy = guy_anim[0];
+        animation = guy_anim[1];
+        alignment = guy_anim[2];
+        var_93e32c180cab35b3 = guy_anim[3];
         startorg = self.origin;
         startangles = self.angles;
         if (isdefined(alignment)) {
@@ -2367,8 +2367,8 @@ function function_9dbe1a78b03782f2(var_54e516bef4218c8f, start_func, end_func, a
             level notify("<dev string:x46f>" + "<dev string:x471>");
         }
     #/
-    foreach (var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-        guy = var_64b5ab50f22a4efc[0];
+    foreach (guy_anim in var_54e516bef4218c8f) {
+        guy = guy_anim[0];
         if (!isalive(guy)) {
             continue;
         }
@@ -2429,9 +2429,9 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
     waittillframeend();
     var_4bc185af207d5706 = default_to(var_4bc185af207d5706, 140);
     var_ad86b98c8c9def3d = default_to(var_ad86b98c8c9def3d, 4);
-    foreach (index, var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-        guy = var_64b5ab50f22a4efc[0];
-        var_93e32c180cab35b3 = var_64b5ab50f22a4efc[3];
+    foreach (index, guy_anim in var_54e516bef4218c8f) {
+        guy = guy_anim[0];
+        var_93e32c180cab35b3 = guy_anim[3];
         moving_destination = isdefined(var_93e32c180cab35b3) && var_93e32c180cab35b3 == "Exposed Moving";
         track_speed = moving_destination;
         /#
@@ -2448,8 +2448,8 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
         dist = [];
         dist_normal = [];
         remove = [];
-        foreach (index, var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-            guy = var_64b5ab50f22a4efc[0];
+        foreach (index, guy_anim in var_54e516bef4218c8f) {
+            guy = guy_anim[0];
             if (!isalive(guy)) {
                 remove[remove.size] = index;
                 continue;
@@ -2484,9 +2484,9 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
         if (var_54e516bef4218c8f.size == 0) {
             break;
         }
-        foreach (index, var_64b5ab50f22a4efc in var_54e516bef4218c8f) {
-            guy = var_64b5ab50f22a4efc[0];
-            var_93e32c180cab35b3 = var_64b5ab50f22a4efc[3];
+        foreach (index, guy_anim in var_54e516bef4218c8f) {
+            guy = guy_anim[0];
+            var_93e32c180cab35b3 = guy_anim[3];
             moving_destination = isdefined(var_93e32c180cab35b3) && var_93e32c180cab35b3 == "Exposed Moving";
             if (dist[index] < 96) {
                 guy enableavoidance(0, 0);
@@ -2495,7 +2495,7 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
             speedscale = 1;
             if (furthestguy != guy) {
                 if (moving_destination && dist[index] <= 16) {
-                    speedscale = min(1, guy.reachspeed.var_e2b417b32dbed0f7 + 0.05);
+                    speedscale = min(1, guy.reachspeed.speed_avg + 0.05);
                 } else {
                     speedscale = max(dist_normal[index], 0.4);
                 }
@@ -2510,7 +2510,7 @@ function anim_reach_speed_control(var_54e516bef4218c8f, var_4bc185af207d5706, va
                     print3d(guy.origin, "<dev string:x1c>" + int(var_4bc185af207d5706), (0, 1, 0), 1, 0.3, 1, 1);
                     print3d(guy.origin + (0, 0, 10), "<dev string:x1c>" + int(desiredspeed), (1, 1, 1), 1, 0.3, 1, 1);
                     if (isdefined(guy.reachspeed)) {
-                        print3d(guy.origin + (0, 0, 20), "<dev string:x1c>" + int(guy.reachspeed.var_e2b417b32dbed0f7), (0, 1, 1), 1, 0.3, 1, 1);
+                        print3d(guy.origin + (0, 0, 20), "<dev string:x1c>" + int(guy.reachspeed.speed_avg), (0, 1, 1), 1, 0.3, 1, 1);
                     }
                     print3d(guy.origin + (0, 0, 80), "<dev string:x1c>" + speedscale, (0, 0, 1), 1, 0.3, 1, 1);
                     print3d(guy.goalpos + (0, 0, 12), "<dev string:x1c>" + int(dist[index]), (0, 0, 1), 1, 1, 1, 1);
@@ -2543,7 +2543,7 @@ function anim_reach_speed_control_avg(var_ad86b98c8c9def3d, var_4bc185af207d5706
     self endon("anim_reach_speed_control_avg");
     self.reachspeed = spawnstruct();
     reachspeed = self.reachspeed;
-    reachspeed.var_e2b417b32dbed0f7 = var_4bc185af207d5706;
+    reachspeed.speed_avg = var_4bc185af207d5706;
     reachspeed.speed_samples = [];
     reachspeed.speed_total = 0;
     curr = 0;
@@ -2555,7 +2555,7 @@ function anim_reach_speed_control_avg(var_ad86b98c8c9def3d, var_4bc185af207d5706
         }
         reachspeed.speed_samples[index] = length(self.velocity);
         reachspeed.speed_total += reachspeed.speed_samples[index];
-        reachspeed.var_e2b417b32dbed0f7 = reachspeed.speed_total / reachspeed.speed_samples.size;
+        reachspeed.speed_avg = reachspeed.speed_total / reachspeed.speed_samples.size;
         waitframe();
     }
 }

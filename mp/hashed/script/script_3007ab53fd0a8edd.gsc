@@ -1,13 +1,13 @@
-#using script_d74ae0b4aa21186;
+#using script_150fee7943687302;
+#using script_26ccbfe3954cacf4;
+#using script_3fcc27c3656c46dc;
 #using script_40e63dd222434655;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using script_3fcc27c3656c46dc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using script_26ccbfe3954cacf4;
-#using scripts\mp\utility\teams.gsc;
 #using script_9963540126262c0;
-#using script_150fee7943687302;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_9dad6814012e55d1;
 

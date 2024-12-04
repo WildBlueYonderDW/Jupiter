@@ -1,17 +1,17 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\stats.gsc;
 #using script_4a6760982b403bad;
-#using scripts\mp\matchdata.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\supers.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\matchdata;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_ecb54f1ef997b69f;
 
@@ -1020,21 +1020,21 @@ function function_6e10cfdfa388094c(esports_event, data) {
 function function_a9d9e4dd889a4258(data) {
     victim = data.victim;
     victim_origin = victim.lastdeathpos;
-    var_51e0b68e2cd1ede6 = victim.lastdeathangles;
+    victim_angles = victim.lastdeathangles;
     attacker = data.attacker;
     if (isplayer(attacker)) {
         attacker_origin = attacker.origin;
-        var_522fed3f783c2e47 = attacker getplayerangles();
+        attacker_angles = attacker getplayerangles();
         attacker_weapon = data.objweapon;
         attacker_modifiers = ter_op(isdefined(attacker.modifiers), attacker.modifiers, []);
         var_7ff0a085ae13029 = spawnstruct();
         var_7ff0a085ae13029.origin = attacker_origin;
-        var_7ff0a085ae13029.angles = var_522fed3f783c2e47;
+        var_7ff0a085ae13029.angles = attacker_angles;
         var_7ff0a085ae13029.weapon = attacker_weapon;
         attacker_info = attacker function_b433743dc5925931(var_7ff0a085ae13029);
         var_7633e290ec9d496c = attacker function_770a5e6a8a9e1289();
-        attacker_in_victim_fov = within_fov(victim_origin, var_51e0b68e2cd1ede6, attacker_origin, 0.4226);
-        victim_in_attacker_fov = within_fov(attacker_origin, var_522fed3f783c2e47, victim_origin, 0.4226);
+        attacker_in_victim_fov = within_fov(victim_origin, victim_angles, attacker_origin, 0.4226);
+        victim_in_attacker_fov = within_fov(attacker_origin, attacker_angles, victim_origin, 0.4226);
         is_dead_silence_kill = 0;
         var_7639389406e14c2e = attacker scripts\mp\supers::getcurrentsuper();
         if (isdefined(var_7639389406e14c2e) && attacker scripts\mp\supers::issuperinuse() && var_7639389406e14c2e.staticdata.ref == "super_deadsilence") {
@@ -1051,7 +1051,7 @@ function function_a9d9e4dd889a4258(data) {
     victim_weapon = victim.lastweaponused;
     var_54ac843c056a6336 = spawnstruct();
     var_54ac843c056a6336.origin = victim_origin;
-    var_54ac843c056a6336.angles = var_51e0b68e2cd1ede6;
+    var_54ac843c056a6336.angles = victim_angles;
     var_54ac843c056a6336.weapon = victim_weapon;
     victim_info = victim function_b433743dc5925931(var_54ac843c056a6336);
     var_43c8b33f18127c89 = victim function_770a5e6a8a9e1289();

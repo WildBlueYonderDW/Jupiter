@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
+#using script_28e46eeeec9480c0;
 #using script_58989565e9a3bde8;
 #using script_cab1c8ded8da82a;
-#using script_28e46eeeec9480c0;
-#using scripts\mp\load.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\compass.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\compass;
+#using scripts\mp\load;
 
 #namespace namespace_3766cdcd0c777702;
 
@@ -38,7 +38,7 @@ function main() {
 // Checksum 0x0, Offset: 0x2c7
 // Size: 0x3e
 function function_da7c9335e454c032(player) {
-    if (getdvarint(@"hash_c00e244ea59d530e") == 1 || istrue(level.thirdpersonmode)) {
+    if (getdvarint(@"camera_thirdperson") == 1 || istrue(level.thirdpersonmode)) {
         setdvar(@"hash_31f818870138cd26", 1);
     }
 }

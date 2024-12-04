@@ -1,10 +1,10 @@
-#using scripts\engine\math.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_90cf6fc2ac1b5b14;
 
@@ -23,8 +23,8 @@ function main() {
 // Size: 0xff
 function function_7cbec80c89bfbded() {
     waittillframeend();
-    var_303feb679a595a69 = getstructarray("limbo_mode_teleporter_loc", "targetname");
-    foreach (struct in var_303feb679a595a69) {
+    teleporter_locs = getstructarray("limbo_mode_teleporter_loc", "targetname");
+    foreach (struct in teleporter_locs) {
         teleporter = spawn("script_model", struct.origin);
         model = "limbo_mode_teleporter";
         if (isdefined(struct.script_noteworthy)) {
@@ -32,7 +32,7 @@ function function_7cbec80c89bfbded() {
         }
         teleporter setmodel(model);
         teleporter.destination = getstruct(struct.target, "targetname");
-        teleporter thread function_d8e7d8ac5c59879b();
+        teleporter thread run_teleporter();
         teleporter thread function_564b73bb9fd91ef6();
         /#
             teleporter thread function_e697fb04e5f75758();
@@ -74,7 +74,7 @@ function function_855d3cc5689d1cd4() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d9
 // Size: 0x123
-function function_d8e7d8ac5c59879b() {
+function run_teleporter() {
     tag = "j_teleporter";
     scripts\mp\flags::function_1240434f4201ac9d("prematch_done");
     if (!self tagexists(tag)) {

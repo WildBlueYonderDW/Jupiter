@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\math.gsc;
 #using script_6f1e07ce9ff97d5f;
-#using scripts\cp\cp_loadout.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp\loot_system.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp\coop_stealth.gsc;
-#using scripts\cp\cp_powers.gsc;
+#using scripts\common\utility;
+#using scripts\cp\coop_stealth;
+#using scripts\cp\cp_loadout;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_powers;
+#using scripts\cp\loot_system;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_a4b0997d65cc2d5c;
+#namespace cp_perks;
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1283
 // Size: 0x9
@@ -23,7 +23,7 @@ function initperks() {
     init_core_mp_perks();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1294
 // Size: 0x2b6
@@ -72,7 +72,7 @@ function init_each_perk() {
     init_class_changed_values();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1552
 // Size: 0x5d
@@ -89,27 +89,27 @@ function init_class_changed_values() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15b7
 // Size: 0x26
-function get_perk(var_ab4a6235827672a0) {
-    if (isdefined(self.perk_data[var_ab4a6235827672a0])) {
-        return self.perk_data[var_ab4a6235827672a0];
+function get_perk(string_key) {
+    if (isdefined(self.perk_data[string_key])) {
+        return self.perk_data[string_key];
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x15e5
 // Size: 0x2f
-function set_perk(var_ab4a6235827672a0, value) {
-    if (isdefined(self.perk_data[var_ab4a6235827672a0])) {
-        self.perk_data[var_ab4a6235827672a0] = value;
+function set_perk(string_key, value) {
+    if (isdefined(self.perk_data[string_key])) {
+        self.perk_data[string_key] = value;
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x161c
 // Size: 0x2
@@ -117,7 +117,7 @@ function blank() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1626
 // Size: 0x2d
@@ -127,7 +127,7 @@ function medic_speed_buff() {
     thread scripts\cp\cp_loadout::updatemovespeedscale();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x165b
 // Size: 0xd0
@@ -148,7 +148,7 @@ function medic_health_regen(dist_sqr) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1733
 // Size: 0x56
@@ -161,7 +161,7 @@ function medic_regenerate_health_once() {
     self.medic_regeneration = undefined;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1791
 // Size: 0xc9
@@ -188,7 +188,7 @@ function should_give_extra_charge(power) {
     return undefined;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1863
 // Size: 0x77
@@ -205,7 +205,7 @@ function reload_on_kill() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18e2
 // Size: 0x44
@@ -218,7 +218,7 @@ function reduce_recoil() {
     namespace_a0628d6954815ef8::updateviewkickscale();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x192e
 // Size: 0x5f
@@ -236,7 +236,7 @@ function remove_reduce_recoil() {
     namespace_a0628d6954815ef8::updateviewkickscale();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1995
 // Size: 0x1a
@@ -245,7 +245,7 @@ function reduce_bullet_spread() {
     self setaimspreadmovementscale(0.1);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19b7
 // Size: 0xaf
@@ -277,7 +277,7 @@ function run_deadeye_charge_watcher() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a6e
 // Size: 0x67f
@@ -359,7 +359,7 @@ function init_core_mp_perks() {
     registerscriptperk("specialty_hardmelee", &set_heavy_hitter, &unset_heavy_hitter);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x20f5
 // Size: 0x30
@@ -367,7 +367,7 @@ function registerscriptperk(perkname, setfunc, unsetfunc, extraperkmap) {
     registerperk(perkname, 1, setfunc, unsetfunc, extraperkmap);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x212d
 // Size: 0x2f
@@ -375,7 +375,7 @@ function registercodeperkinfo(perkname, setfunc, unsetfunc, extraperkmap) {
     registerperk(perkname, 0, setfunc, unsetfunc, extraperkmap);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2164
 // Size: 0xc9
@@ -399,7 +399,7 @@ function registerperk(perkname, var_9aa715f8120f5692, setfunc, unsetfunc, extrap
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2235
 // Size: 0x10
@@ -407,7 +407,7 @@ function setovercharge() {
     self setclientomnvar("ui_overcharge", 1);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x224d
 // Size: 0xf
@@ -415,7 +415,7 @@ function unsetovercharge() {
     self setclientomnvar("ui_overcharge", 0);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2264
 // Size: 0x2
@@ -423,7 +423,7 @@ function setfreefall() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x226e
 // Size: 0x2
@@ -431,7 +431,7 @@ function unsetfreefall() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2278
 // Size: 0x2
@@ -439,7 +439,7 @@ function setremotedefuse() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2282
 // Size: 0x2
@@ -447,7 +447,7 @@ function unsetremotedefuse() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x228c
 // Size: 0x10
@@ -455,7 +455,7 @@ function sethardshell() {
     self.shellshockreduction = 0.25;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22a4
 // Size: 0xc
@@ -463,7 +463,7 @@ function unsethardshell() {
     self.shellshockreduction = 0;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22b8
 // Size: 0xc
@@ -473,7 +473,7 @@ function setgasgrenaderesist() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22cc
 // Size: 0xc
@@ -483,7 +483,7 @@ function unsetgasgrenaderesist() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22e0
 // Size: 0x2
@@ -491,7 +491,7 @@ function setreduceregendelayonkills() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22ea
 // Size: 0x2
@@ -499,7 +499,7 @@ function unsetreduceregendelayonkills() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22f4
 // Size: 0x2
@@ -507,7 +507,7 @@ function setreduceregendelayonobjective() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22fe
 // Size: 0x2
@@ -515,7 +515,7 @@ function unsetreduceregendelayonobjective() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2308
 // Size: 0x33
@@ -529,7 +529,7 @@ function sethardline() {
     self.hardlineactive["assists"] = 0;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2343
 // Size: 0x14
@@ -538,7 +538,7 @@ function unsethardline() {
     self notify("perk_end_hardline");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x235f
 // Size: 0x50
@@ -555,7 +555,7 @@ function run_kill_watcher() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x23b7
 // Size: 0x4a
@@ -567,7 +567,7 @@ function give_random_munition() {
     wait 10;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2409
 // Size: 0x2
@@ -575,7 +575,7 @@ function setfastreloadlaunchers() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2413
 // Size: 0x2
@@ -583,7 +583,7 @@ function unsetfastreloadlaunchers() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x241d
 // Size: 0x2
@@ -591,7 +591,7 @@ function setoverkill() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2427
 // Size: 0x2
@@ -599,7 +599,7 @@ function unsetoverkill() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2431
 // Size: 0x2
@@ -607,7 +607,7 @@ function setkillstreaktoscorestreak() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x243b
 // Size: 0x2
@@ -615,7 +615,7 @@ function unsetkillstreaktoscorestreak() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2445
 // Size: 0x36e
@@ -717,7 +717,7 @@ function sixthsense_think_internal() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x27bb
 // Size: 0xc9
@@ -744,7 +744,7 @@ function is_enemy_dangerous(player) {
     return false;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x288d
 // Size: 0x1c
@@ -756,7 +756,7 @@ function sixthsense_think() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28b1
 // Size: 0x3c
@@ -768,7 +768,7 @@ function setsixthsense() {
     level.sixth_sense_players[playernum] = self;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28f5
 // Size: 0x4c
@@ -782,7 +782,7 @@ function unsetsixthsense() {
     level.sixth_sense_players[playernum] = undefined;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2949
 // Size: 0xb
@@ -790,7 +790,7 @@ function updatesixthsensevfx(sightmask) {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x295c
 // Size: 0x13d
@@ -817,7 +817,7 @@ function getsixthsensedirection(enemy) {
     return 16;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2aa1
 // Size: 0x17
@@ -825,7 +825,7 @@ function setghost() {
     self.perk_data["stealth_dist_scalar"] = 0.5;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ac0
 // Size: 0x14
@@ -833,7 +833,7 @@ function unsetghost() {
     self.perk_data["stealth_dist_scalar"] = 1;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2adc
 // Size: 0x3d
@@ -849,7 +849,7 @@ function setstunresistance(power) {
     self.stunscalar = power / 10;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b21
 // Size: 0xd
@@ -857,7 +857,7 @@ function unsetstunresistance() {
     self.stunscalar = 1;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b36
 // Size: 0x2
@@ -865,7 +865,7 @@ function setblindeye() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b40
 // Size: 0x2
@@ -873,7 +873,7 @@ function unsetblindeye() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b4a
 // Size: 0x2
@@ -881,7 +881,7 @@ function setnoscopeoutline() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b54
 // Size: 0x2
@@ -889,7 +889,7 @@ function unsetnoscopeoutline() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b5e
 // Size: 0xa
@@ -897,7 +897,7 @@ function setengineer() {
     thread engineer_enablemarksafterprematch();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b70
 // Size: 0x2d
@@ -908,7 +908,7 @@ function engineer_enablemarksafterprematch() {
     thread markedentities_think();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ba5
 // Size: 0x2d
@@ -920,7 +920,7 @@ function unsetengineer() {
     self notify("unsetEngineer");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bda
 // Size: 0x178
@@ -947,7 +947,7 @@ function allow_br_loot_to_br_marked() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d5a
 // Size: 0x179
@@ -956,8 +956,8 @@ function make_sure_loot_is_visible() {
     foreach (name in var_7507f409fee2b657) {
         var_792740c4c87cf9fa = getentitylessscriptablearray(undefined, undefined, undefined, undefined, name);
         count = 0;
-        foreach (var_31f869647e8740b4 in var_792740c4c87cf9fa) {
-            var_31f869647e8740b4 setscriptablepartstate(name, "visible");
+        foreach (br_loot in var_792740c4c87cf9fa) {
+            br_loot setscriptablepartstate(name, "visible");
             count++;
             if (count % 20) {
                 wait 0.1;
@@ -967,7 +967,7 @@ function make_sure_loot_is_visible() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2edb
 // Size: 0xb5
@@ -984,7 +984,7 @@ function make_outline_ents() {
     thread monitor_outline_ents();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f98
 // Size: 0x2c
@@ -998,7 +998,7 @@ function monitor_outline_ents() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fcc
 // Size: 0x339
@@ -1009,13 +1009,13 @@ function get_closest_munitions() {
     var_1d88cbbb14926330 = [];
     foreach (name in var_7507f409fee2b657) {
         var_792740c4c87cf9fa = getentitylessscriptablearray(undefined, undefined, self.origin, var_b69312781edc9ea6, name);
-        foreach (var_31f869647e8740b4 in var_792740c4c87cf9fa) {
-            var_1d88cbbb14926330[var_1d88cbbb14926330.size] = var_31f869647e8740b4;
+        foreach (br_loot in var_792740c4c87cf9fa) {
+            var_1d88cbbb14926330[var_1d88cbbb14926330.size] = br_loot;
         }
     }
     var_1d88cbbb14926330 = sortbydistance(var_1d88cbbb14926330, self.origin);
     var_93dff4684377d4c0 = level.outline_ents;
-    var_586b9984fdeb517b = [];
+    skip_list = [];
     new_list = [];
     for (i = 0; i < var_1d88cbbb14926330.size; i++) {
         if (!isdefined(level.outline_ent_index[var_1d88cbbb14926330[i].index])) {
@@ -1026,7 +1026,7 @@ function get_closest_munitions() {
         outline_ent_index = 0;
         for (i = 0; i < min(new_list.size, var_58a11d31a3c59e82); i++) {
             for (j = 0; j < level.outline_ents.size; j++) {
-                if (isdefined(var_586b9984fdeb517b[j])) {
+                if (isdefined(skip_list[j])) {
                     continue;
                 }
                 if (isdefined(level.outline_ents[j])) {
@@ -1038,14 +1038,14 @@ function get_closest_munitions() {
                 level.outline_ent_index[level.outline_ents[j].index] = undefined;
                 level.outline_ent_index[new_list[i].index] = level.outline_ents[j];
                 unmarkent(level.outline_ents[j]);
-                var_586b9984fdeb517b[j] = new_list[i];
+                skip_list[j] = new_list[i];
                 break;
             }
         }
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x330d
 // Size: 0x50
@@ -1055,7 +1055,7 @@ function unmarkent(markedent) {
     markedent notify("unmarkEnt_" + self getentitynumber());
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3365
 // Size: 0x11
@@ -1064,7 +1064,7 @@ function setmarkequipment() {
     thread markequipment_monitorlook();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x337e
 // Size: 0x88
@@ -1081,7 +1081,7 @@ function unsetmarkequipment() {
     self notify("mark_equip_ended");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x340e
 // Size: 0x124
@@ -1109,7 +1109,7 @@ function markequipment_monitorlook() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x353a
 // Size: 0x26
@@ -1119,7 +1119,7 @@ function set_mark_distances() {
     level.see_equipment_dist = 1000;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3568
 // Size: 0x3db
@@ -1186,7 +1186,7 @@ function markequipment_updatestate() {
     self.markequipmentstate.markingtime = 0;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x394b
 // Size: 0x50
@@ -1201,7 +1201,7 @@ function unmarkafterduration(markedent) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x39a3
 // Size: 0x3c
@@ -1215,7 +1215,7 @@ function unmarkonownershipchange(markedent) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x39e7
 // Size: 0x31
@@ -1227,7 +1227,7 @@ function outlinehelper_updateentityoutline(ent) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a20
 // Size: 0x32c
@@ -1305,7 +1305,7 @@ function outlinehelper_enableentityoutline(ent) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d54
 // Size: 0x33
@@ -1319,7 +1319,7 @@ function getchildoutlineents(ent) {
     return ent.childoutlineents;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d90
 // Size: 0xb6
@@ -1342,7 +1342,7 @@ function outlinehelper_verifydata(outlinedata) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e4e
 // Size: 0x1c
@@ -1350,7 +1350,7 @@ function outlinehelper_getallplayers(ent, outlinedata) {
     return level.players;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e73
 // Size: 0xd
@@ -1358,7 +1358,7 @@ function outlinehelper_validplayer(player) {
     return true;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e89
 // Size: 0x9e
@@ -1374,7 +1374,7 @@ function outlinehelper_disableentityoutline(entnum) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f2f
 // Size: 0xa
@@ -1382,7 +1382,7 @@ function setoutlinekillstreaks() {
     thread outlinekillstreaks_enablemarksafterprematch();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f41
 // Size: 0x36
@@ -1393,7 +1393,7 @@ function outlinekillstreaks_enablemarksafterprematch() {
     self.perkoutlinekillstreaksset = 1;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f7f
 // Size: 0x39
@@ -1406,7 +1406,7 @@ function unsetoutlinekillstreaks() {
     self notify("unsetOutlineKillstreak");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fc0
 // Size: 0x84
@@ -1421,7 +1421,7 @@ function markedentities_removeentsbyindex(entarray, var_223829bbefc81935) {
     return var_5877436cc451fa7d;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x404d
 // Size: 0x1cb
@@ -1455,7 +1455,7 @@ function markedentities_think() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4220
 // Size: 0x13
@@ -1463,7 +1463,7 @@ function setblastshield() {
     set_perk("enemy_explosive_damage_reduction", 0.5);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x423b
 // Size: 0x10
@@ -1471,7 +1471,7 @@ function unsetblastshield() {
     set_perk("enemy_explosive_damage_reduction", 1);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4253
 // Size: 0x12
@@ -1480,7 +1480,7 @@ function settracker() {
     thread run_track_enemy_patrollers();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x426d
 // Size: 0xa
@@ -1488,7 +1488,7 @@ function unsettracker() {
     self notify("tracker_removed");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x427f
 // Size: 0x4b
@@ -1509,14 +1509,14 @@ function runtrackkillstreakuse() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x42d2
 // Size: 0x222
 function run_track_enemy_patrollers() {
     self endon("death_or_disconnect");
     self endon("tracker_removed");
-    var_89640ca652887743 = cos(70);
+    tracker_fov = cos(70);
     var_820e590cb5620371 = 0;
     self.view_list = [];
     self.outlineids = [];
@@ -1544,7 +1544,7 @@ function run_track_enemy_patrollers() {
             }
             var_820e590cb5620371++;
             entnum = guy getentitynumber();
-            var_25ab57d46f5f99f9 = within_fov(self geteye(), self getplayerangles(), guy.origin, var_89640ca652887743);
+            var_25ab57d46f5f99f9 = within_fov(self geteye(), self getplayerangles(), guy.origin, tracker_fov);
             if (!var_25ab57d46f5f99f9) {
                 continue;
             }
@@ -1570,7 +1570,7 @@ function run_track_enemy_patrollers() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x44fc
 // Size: 0x44
@@ -1580,7 +1580,7 @@ function add_outline(entnum, player) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4548
 // Size: 0x36
@@ -1591,7 +1591,7 @@ function untrack_enemy(player, timer) {
     remove_outline(entnum, player);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4586
 // Size: 0x4e
@@ -1604,7 +1604,7 @@ function remove_outline(entnum, player) {
     self notify("track_enemy");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x45dc
 // Size: 0x41
@@ -1616,7 +1616,7 @@ function setviewkickoverride() {
     namespace_a0628d6954815ef8::updateviewkickscale();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4625
 // Size: 0x31
@@ -1628,7 +1628,7 @@ function unsetviewkickoverride() {
     namespace_a0628d6954815ef8::updateviewkickscale();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x465e
 // Size: 0x14
@@ -1636,7 +1636,7 @@ function set_heavy_hitter() {
     self.perk_data["melee_scalar"] = 2;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x467a
 // Size: 0x14
@@ -1644,7 +1644,7 @@ function unset_heavy_hitter() {
     self.perk_data["melee_scalar"] = 1;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4696
 // Size: 0x13
@@ -1652,7 +1652,7 @@ function give_tune_up() {
     set_perk("super_fill_scalar", 1.3);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46b1
 // Size: 0x10
@@ -1660,7 +1660,7 @@ function take_tune_up() {
     set_perk("super_fill_scalar", 1);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46c9
 // Size: 0xc
@@ -1668,7 +1668,7 @@ function give_restock() {
     thread recharge_lethals_over_time(60);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46dd
 // Size: 0xa
@@ -1676,7 +1676,7 @@ function take_restock() {
     self notify("take_restock");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x46ef
 // Size: 0xd0
@@ -1699,7 +1699,7 @@ function recharge_lethals_over_time(timer) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x47c7
 // Size: 0x4d
@@ -1713,7 +1713,7 @@ function reset_restock_flag() {
     self setclientomnvar("ui_tactical_recharge_progress", 0);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x481c
 // Size: 0x71
@@ -1730,7 +1730,7 @@ function reset_recharge_after_respawn() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4895
 // Size: 0xc2
@@ -1754,7 +1754,7 @@ function delay_give_lethal_grenade(player, timer) {
     player notify("restock_done");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x495f
 // Size: 0xc3
@@ -1778,7 +1778,7 @@ function delay_give_tactical_grenade(player, timer) {
     player notify("restock_done");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a2a
 // Size: 0xcd
@@ -1802,20 +1802,20 @@ function update_restock_ui(omnvar, timer, slot) {
     self setclientomnvar(omnvar, 0);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4aff
 // Size: 0x95
-function stop_restock_recharge(omnvar, var_4efdb87f020aae7d) {
+function stop_restock_recharge(omnvar, slot_name) {
     self endon("death");
     level endon("game_ended");
     self endon("take_restock");
     self endon("restock_done");
-    while (istrue(self.inlaststand) || get_power_charges_in_slot(self, var_4efdb87f020aae7d) < get_power_max_charge_in_slot(self, var_4efdb87f020aae7d)) {
+    while (istrue(self.inlaststand) || get_power_charges_in_slot(self, slot_name) < get_power_max_charge_in_slot(self, slot_name)) {
         waitframe();
     }
     self notify("stop_restock_recharge");
-    if (var_4efdb87f020aae7d == "primary") {
+    if (slot_name == "primary") {
         self.waiting_for_lethal_restock = 0;
     } else {
         self.waiting_for_tactical_restock = 0;
@@ -1824,7 +1824,7 @@ function stop_restock_recharge(omnvar, var_4efdb87f020aae7d) {
     self setclientomnvar(omnvar, 0);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b9c
 // Size: 0x7a
@@ -1836,7 +1836,7 @@ function get_weapon_in_power_slot(player, slot) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c1e
 // Size: 0x70
@@ -1848,7 +1848,7 @@ function get_power_name_in_slot(player, slot) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c96
 // Size: 0x7a
@@ -1860,7 +1860,7 @@ function get_power_charges_in_slot(player, slot) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d18
 // Size: 0x7a
@@ -1872,7 +1872,7 @@ function get_power_max_charge_in_slot(player, slot) {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d9a
 // Size: 0x32
@@ -1883,7 +1883,7 @@ function give_amped() {
     scripts\cp\utility::giveperk("specialty_fastsprintrecovery");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4dd4
 // Size: 0x2
@@ -1891,7 +1891,7 @@ function take_amped() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4dde
 // Size: 0x2
@@ -1899,7 +1899,7 @@ function give_shrapnel() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4de8
 // Size: 0x2
@@ -1907,7 +1907,7 @@ function take_shrapnel() {
     
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4df2
 // Size: 0xa
@@ -1915,7 +1915,7 @@ function setmomentum() {
     thread runmomentum();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e04
 // Size: 0x5a
@@ -1935,7 +1935,7 @@ function runmomentum() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e66
 // Size: 0xb2
@@ -1959,7 +1959,7 @@ function graduallyincreasespeed() {
     self waittill("momentum_reset");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f20
 // Size: 0x1d
@@ -1969,7 +1969,7 @@ function momentum_endaftermax() {
     self playlocalsound("ftl_phase_out");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f45
 // Size: 0x81
@@ -1989,7 +1989,7 @@ function momentum_monitormovement() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fce
 // Size: 0x20
@@ -2000,7 +2000,7 @@ function momentum_monitordamage() {
     self notify("momentum_reset");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ff6
 // Size: 0xa
@@ -2008,7 +2008,7 @@ function unsetmomentum() {
     self notify("momentum_unset");
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5008
 // Size: 0xf9
@@ -2038,7 +2038,7 @@ function watchcombatspeedscaler() {
     }
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5109
 // Size: 0x1e
@@ -2047,7 +2047,7 @@ function updatecombatspeedscalar() {
     self [[ level.move_speed_scale ]]();
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x512f
 // Size: 0x15
@@ -2055,7 +2055,7 @@ function getcombatspeedscalar() {
     return self.pistolcombatspeedscalar * self.aliensnarespeedscalar;
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x514d
 // Size: 0x55
@@ -2067,7 +2067,7 @@ function removeperk(perkname) {
     scripts\cp\utility::_unsetextraperks(perkname);
 }
 
-// Namespace namespace_a4b0997d65cc2d5c / scripts\cp\perks\cp_perks
+// Namespace cp_perks / scripts\cp\perks\cp_perks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x51aa
 // Size: 0x29

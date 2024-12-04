@@ -1,17 +1,17 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\sp\starts.gsc;
-#using scripts\sp\statemachine.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
 #using script_4b7698942d6f679a;
-#using scripts\sp\hud_util.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\hud_util;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\starts;
+#using scripts\sp\statemachine;
+#using scripts\sp\utility;
 
 #namespace namespace_5835e6bd7a65b960;
 
@@ -19,7 +19,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x689
 // Size: 0x22
-function function_e771b9919c1d5830() {
+function rappel_init() {
     setdvarifuninitialized(@"hash_b24b76a70747f097", 0);
     setdvarifuninitialized(@"hash_bd718329e2d1b5ca", 0);
 }
@@ -40,7 +40,7 @@ function function_7c7d840719489953(var_81efc2bbfbf0442) {
 // Checksum 0x0, Offset: 0x70b
 // Size: 0x34a
 function function_63baad3b21b11b84(var_81efc2bbfbf0442) {
-    statearray = [["walking", &function_518bcff7ba89e178, &function_2687917d9bf702b7, &function_e42d7c146fa89096], ["player_death", &function_217d0d2ba695a5ea], ["delete", &function_5da368165b60b285], ["breach", &function_45f560ad90c3224d]];
+    statearray = [["walking", &function_518bcff7ba89e178, &function_2687917d9bf702b7, &function_e42d7c146fa89096], ["player_death", &function_217d0d2ba695a5ea], ["delete", &rappel_delete], ["breach", &function_45f560ad90c3224d]];
     self.var_b1d2c4ac5adf1819 = getstructarray("rappel_anchor", "targetname");
     self.var_901f4ddf4c2dfb9f = undefined;
     self.playerforward = undefined;
@@ -65,9 +65,9 @@ function function_63baad3b21b11b84(var_81efc2bbfbf0442) {
     self.var_726a393889051432.font = "objective";
     self.var_726a393889051432 settext(%PLATFORM/MANTLE);
     self.var_b3a3db58f1578aa8 = getentarray("safe_detach_region", "script_noteworthy");
-    if (!isdefined(level.var_4189c00517636440)) {
+    if (!isdefined(level.rappel_contents)) {
         content = ["physicscontents_edge", "physicscontents_glass", "physicscontents_water", "physicscontents_missileclip", "physicscontents_item", "physicscontents_vehicleclip", "physicscontents_itemclip", "physicscontents_clipshot", "physicscontents_characterproxy", "physicscontents_playerclip", "physicscontents_vehicle"];
-        level.var_4189c00517636440 = physics_createcontents(content);
+        level.rappel_contents = physics_createcontents(content);
     }
     self.var_85567cc807666622 = 0;
     self.var_99cc2e08b2c8c37a = 0;
@@ -129,7 +129,7 @@ function function_3512d347bbdea2e9(anchor) {
     function_43351586bf34dfb2(anchor.angles);
     level.var_2d68df56a7dae25 function_246dab869b35e1b3();
     level.var_2d68df56a7dae25 function_e004a7ce3cc5cea3();
-    thread function_54b1a2dbcbcf5bfa();
+    thread input_init();
     self.var_a3a4a7a4b42be6ad = var_a3a4a7a4b42be6ad;
     self.var_4186fee053eb71cd = var_4186fee053eb71cd;
     self.var_561a423658fe1322 = var_561a423658fe1322;
@@ -196,7 +196,7 @@ function function_557cdb8e7b253cf8(anchor) {
     function_43351586bf34dfb2(anchor.angles);
     level.var_2d68df56a7dae25 function_246dab869b35e1b3();
     level.var_2d68df56a7dae25 function_e004a7ce3cc5cea3();
-    thread function_54b1a2dbcbcf5bfa();
+    thread input_init();
     self.var_a3a4a7a4b42be6ad = var_a3a4a7a4b42be6ad;
     self.var_4186fee053eb71cd = var_4186fee053eb71cd;
     self.var_561a423658fe1322 = var_561a423658fe1322;
@@ -239,10 +239,10 @@ function function_2687917d9bf702b7() {
         self.var_18dcf77d9bd2dc41 = 2000;
     }
     if (self.var_7b4782edb6cbc048) {
-        if (level.player.var_7d59633a5ebfd584["jump_pressed"]) {
-            function_62698e4db8a45f32();
+        if (level.player.button_pressed["jump_pressed"]) {
+            rappel_jump();
             return;
-        } else if (self.var_18dcf77d9bd2dc41 < gettime() && level.player.var_7d59633a5ebfd584["stance_pressed"]) {
+        } else if (self.var_18dcf77d9bd2dc41 < gettime() && level.player.button_pressed["stance_pressed"]) {
             function_1be052d58f788667();
             return;
         }
@@ -277,14 +277,14 @@ function function_2687917d9bf702b7() {
     }
     tracestart = desiredposition + self.wallnormal * 27;
     traceend = desiredposition + self.wallnormal * -39;
-    var_fcefe5641a2b160a = sphere_trace(tracestart, traceend, 15, level.player, level.var_4189c00517636440);
+    var_fcefe5641a2b160a = sphere_trace(tracestart, traceend, 15, level.player, level.rappel_contents);
     if (var_fcefe5641a2b160a["fraction"] == 0) {
         var_e3eddf6241953a23 = vectorcross(var_fcefe5641a2b160a["normal"], self.var_d93f1ea18c55b731["up"]);
         dist = vectordot(desiredposition - self.origin, var_e3eddf6241953a23);
         desiredposition = self.origin + var_e3eddf6241953a23 * dist;
         tracestart = desiredposition + self.wallnormal * 12;
         traceend = desiredposition + self.wallnormal * -24;
-        var_fcefe5641a2b160a = sphere_trace(tracestart, traceend, 15, level.player, level.var_4189c00517636440);
+        var_fcefe5641a2b160a = sphere_trace(tracestart, traceend, 15, level.player, level.rappel_contents);
         if (var_fcefe5641a2b160a["fraction"] == 0) {
             return;
         }
@@ -292,7 +292,7 @@ function function_2687917d9bf702b7() {
     } else {
         desiredposition = var_fcefe5641a2b160a["shape_position"];
     }
-    groundtrace = ray_trace(desiredposition, desiredposition + self.wallnormal * -15, level.player, level.var_4189c00517636440);
+    groundtrace = ray_trace(desiredposition, desiredposition + self.wallnormal * -15, level.player, level.rappel_contents);
     desiredposition = groundtrace["position"];
     function_16d1f1d0149bbc79(desiredposition);
     self.origin = desiredposition;
@@ -417,7 +417,7 @@ function function_c6941300903df2e7() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1af5
 // Size: 0x29f
-function function_62698e4db8a45f32() {
+function rappel_jump() {
     level.player endon("death");
     self endon("death");
     self.var_7b4782edb6cbc048 = 0;
@@ -442,11 +442,11 @@ function function_62698e4db8a45f32() {
         if (var_27b8ba22c234bea4 < 0) {
             start = self.origin + self.wallnormal * 16;
             end = self.origin + var_393455d40a089205;
-            var_fcefe5641a2b160a = sphere_trace(start, end, 15, level.player, level.var_4189c00517636440);
+            var_fcefe5641a2b160a = sphere_trace(start, end, 15, level.player, level.rappel_contents);
             if (var_fcefe5641a2b160a["fraction"] == 0) {
                 start = self.origin + self.wallnormal * 50;
                 end = self.origin + self.wallnormal * -100;
-                var_fcefe5641a2b160a = sphere_trace(start, end, 15, level.player, level.var_4189c00517636440);
+                var_fcefe5641a2b160a = sphere_trace(start, end, 15, level.player, level.rappel_contents);
                 pos = var_fcefe5641a2b160a["shape_position"];
                 break;
             }
@@ -492,10 +492,10 @@ function function_217d0d2ba695a5ea() {
     vel = level.var_2d68df56a7dae25.var_4186fee053eb71cd * 100 + level.var_2d68df56a7dae25.currentvelocity;
     tempent movegravity(vel, fall_time + 1);
     level.player forceplaygestureviewmodel("vm_death_fire_01", undefined, 0.15, undefined, 1, 1);
-    var_4e4a1f169ef226f9 = fall_time * 0.5;
-    wait var_4e4a1f169ef226f9;
-    thread scripts\sp\hud_util::fade_out(var_4e4a1f169ef226f9);
-    wait var_4e4a1f169ef226f9;
+    fall_halftime = fall_time * 0.5;
+    wait fall_halftime;
+    thread scripts\sp\hud_util::fade_out(fall_halftime);
+    wait fall_halftime;
     level notify("rappel_player_death_done");
 }
 
@@ -517,10 +517,10 @@ function function_217d0d2ba695a5ea() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f5c
 // Size: 0x94
-function function_54b1a2dbcbcf5bfa() {
-    level.player.var_7d59633a5ebfd584["stance_pressed"] = 0;
-    level.player.var_7d59633a5ebfd584["jump_pressed"] = 0;
-    foreach (_ in level.player.var_7d59633a5ebfd584) {
+function input_init() {
+    level.player.button_pressed["stance_pressed"] = 0;
+    level.player.button_pressed["jump_pressed"] = 0;
+    foreach (_ in level.player.button_pressed) {
         thread function_4839feba8501ea14(key);
     }
 }
@@ -535,10 +535,10 @@ function function_4839feba8501ea14(msg) {
     level.player endon("stop_rappel_button_pressed");
     while (true) {
         level.player waittill(msg);
-        level.player.var_7d59633a5ebfd584[msg] = 1;
+        level.player.button_pressed[msg] = 1;
         waitframe();
         waittillframeend();
-        level.player.var_7d59633a5ebfd584[msg] = 0;
+        level.player.button_pressed[msg] = 0;
     }
 }
 
@@ -546,9 +546,9 @@ function function_4839feba8501ea14(msg) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2075
 // Size: 0x25
-function function_58c89165b2efbfd4() {
+function input_cleanup() {
     level.player notify("stop_rappel_button_pressed");
-    level.player.var_7d59633a5ebfd584 = undefined;
+    level.player.button_pressed = undefined;
 }
 
 // Namespace namespace_5835e6bd7a65b960 / namespace_cd4e8a5c1de59ed1
@@ -563,7 +563,7 @@ function function_ecf63a220d11561f(state) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20bd
 // Size: 0xe0
-function function_5da368165b60b285() {
+function rappel_delete() {
     level.player.var_5d845f5108d98419 = undefined;
     if (isdefined(self.rope)) {
         self.rope delete();
@@ -1069,7 +1069,7 @@ function function_4aa4a54a278b4c08(var_90db8de11f53ccea, time) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3321
 // Size: 0x35
-function function_d6534ad8f41753(node) {
+function rappel_breach(node) {
     level.var_2d68df56a7dae25.var_e6a5c3c74728b8 = node;
     level.var_2d68df56a7dae25 function_ecf63a220d11561f("breach");
 }
@@ -1101,7 +1101,7 @@ function function_45f560ad90c3224d() {
     velocity = function_1eec3ee5febd09cb(origin, movetime, gravity, var_613b8a724cf6bdde);
     level.player.groundrefent rotatetolinked((10, 0, 0), 1);
     level.player lerpviewangleclamp(1, 0.25, 0.25, 30, 30, 20, 20);
-    function_bbe94a406afb7c3d(velocity, movetime, gravity, var_613b8a724cf6bdde);
+    scripted_movegravity(velocity, movetime, gravity, var_613b8a724cf6bdde);
     thread function_7d9d96a901c790b8();
     self.rig unlink();
     node anim_single_solo(self.rig, "breach_swing");
@@ -1178,7 +1178,7 @@ function function_1eec3ee5febd09cb(end, movetime, gravity, var_613b8a724cf6bdde)
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3861
 // Size: 0xbe
-function function_bbe94a406afb7c3d(velocity, movetime, gravity, var_613b8a724cf6bdde) {
+function scripted_movegravity(velocity, movetime, gravity, var_613b8a724cf6bdde) {
     trajectory = velocity;
     starttime = gettime();
     start = self.origin;

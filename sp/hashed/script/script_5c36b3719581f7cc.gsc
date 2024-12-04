@@ -1,26 +1,26 @@
-#using script_7e4d332e911e1b90;
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
 #using script_13d1c402f1421c35;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_sp.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\names.gsc;
-#using script_c11d6400ba31ed7;
-#using script_5c36b3719581f7cc;
 #using script_35de402efc5acfb3;
-#using scripts\sp\player\playerchatter.gsc;
-#using scripts\sp\load.gsc;
-#using scripts\common\ai.gsc;
 #using script_55b3046625fb79b6;
-#using scripts\anim\face.gsc;
+#using script_5c36b3719581f7cc;
 #using script_6fb5933380201a3a;
-#using scripts\smartobjects\utility.gsc;
+#using script_7e4d332e911e1b90;
+#using script_c11d6400ba31ed7;
+#using scripts\anim\face;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\asm\shared\utility;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\smartobjects\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\load;
+#using scripts\sp\names;
+#using scripts\sp\player\playerchatter;
+#using scripts\sp\utility;
 
 #namespace init;
 
@@ -193,8 +193,8 @@ function initdeveloperdvars() {
         if (getdvar(@"anim_debug") == "<dev string:x91>") {
             setdvar(@"anim_debug", "<dev string:x91>");
         }
-        if (getdvar(@"hash_a5a1f35d513dd71b") == "<dev string:x91>") {
-            setdvar(@"hash_a5a1f35d513dd71b", "<dev string:x91>");
+        if (getdvar(@"debug_misstime") == "<dev string:x91>") {
+            setdvar(@"debug_misstime", "<dev string:x91>");
         }
     #/
 }
@@ -311,7 +311,7 @@ function firstinit() {
     namespace_acef762f74130ac8::registernotetracksifnot();
     scripts\engine\sp\utility::setupglobalcallbackfunctions_sp();
     /#
-        setdvarifuninitialized(@"hash_45108357a895b6c4", "<dev string:x92>");
+        setdvarifuninitialized(@"debug_delta", "<dev string:x92>");
     #/
     level.painai = undefined;
     scripts\anim\face::initlevelface();

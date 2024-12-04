@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
 #using script_3db04fd1b466bdba;
-#using scripts\engine\trace.gsc;
-#using scripts\common\debug.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace toma_strike;
 

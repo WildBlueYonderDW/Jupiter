@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace killstreak_shared;
 

@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_4cdabcd91a92977;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\rank;
+#using scripts\mp\teams;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_e1e2759f008e3233;
 
@@ -339,7 +339,7 @@ function function_9502b0bb442142b6(string) {
         logstring("<dev string:x2b>" + string + "<dev string:x3c>");
         logstring("<dev string:x4b>");
         logstring("<dev string:x66>" + level.var_764459b234d5c391);
-        logstring("<dev string:x9d>" + getdvarint(@"hash_faf1db5754891b2d", 1));
+        logstring("<dev string:x9d>" + getdvarint(@"br_minplayers", 1));
         logstring("<dev string:xd4>" + getdvarint(@"hash_42b032b7e139b113", 1));
         logstring("<dev string:x10b>" + getdvarint(@"hash_520364dd384db9e7", 1));
         logstring("<dev string:x142>" + level.var_58bec65ec9494d11);
@@ -513,7 +513,7 @@ function function_562f080949959cfc() {
     if (getdvarint(@"hash_42b032b7e139b113", 1) == 0) {
         return;
     }
-    minplayers = getdvarint(@"hash_faf1db5754891b2d", 1);
+    minplayers = getdvarint(@"br_minplayers", 1);
     while (function_5a7cb04f2683c1df() >= minplayers) {
         wait 1;
     }

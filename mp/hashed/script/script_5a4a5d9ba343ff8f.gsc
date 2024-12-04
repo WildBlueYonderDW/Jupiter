@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace status_effects;
 

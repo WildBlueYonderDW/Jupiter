@@ -1,4 +1,4 @@
-#using scripts\unittest\util.gsc;
+#using scripts\unittest\util;
 
 #namespace namespace_106f587ebebd0cab;
 

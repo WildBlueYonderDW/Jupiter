@@ -1,6 +1,6 @@
-#namespace namespace_b6d939a03f87aa20;
+#namespace heads_jup_sp_enemy_pmc_surge_plain;
 
-// Namespace namespace_b6d939a03f87aa20 / namespace_c869eec25a8977a0
+// Namespace heads_jup_sp_enemy_pmc_surge_plain / namespace_c869eec25a8977a0
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc
 // Size: 0x33

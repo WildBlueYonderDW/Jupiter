@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\scriptable.gsc;
 #using script_7534b1d3ac3ea47a;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace ob_seismic_refractor;
 

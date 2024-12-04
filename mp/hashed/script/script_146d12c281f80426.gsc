@@ -1,10 +1,10 @@
-#using scripts\mp\utility\game.gsc;
-#using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\perk.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using script_38b3797023002a4a;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\teams;
 
 #namespace warrior_metagame;
 

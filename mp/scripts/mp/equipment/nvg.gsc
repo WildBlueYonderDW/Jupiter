@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\analyticslog.gsc;
 #using script_2d9d24f7c63ac143;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\flags;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
 
 #namespace nvg;
 

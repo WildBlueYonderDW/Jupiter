@@ -1,13 +1,13 @@
-#using scripts\common\debug.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using script_6a8ec730b2bfa844;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\flags;
+#using scripts\mp\poi;
 
 #namespace stationary_notes;
 

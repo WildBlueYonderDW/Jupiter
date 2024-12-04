@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using script_55b3046625fb79b6;
-#using scripts\engine\sp\utility.gsc;
 #using script_3798db193e76a866;
-#using script_588f0d30a20975f5;
-#using scripts\sp\player.gsc;
-#using scripts\sp\vehicle.gsc;
-#using scripts\sp\spawner.gsc;
-#using scripts\sp\hud_util.gsc;
+#using script_55b3046625fb79b6;
+#using scripts\asm\asm_sp;
+#using scripts\common\concussion_utility;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\hud_util;
+#using scripts\sp\player;
+#using scripts\sp\spawner;
+#using scripts\sp\vehicle;
 
 #namespace namespace_657dc7e018dcfce9;
 
@@ -128,7 +128,7 @@ function killstreak_init() {
 // Checksum 0x0, Offset: 0x7bf
 // Size: 0x18
 function equipment_init() {
-    scripts\engine\utility::registersharedfunc("shellshock", "concussionInterruptDelayFunc", &namespace_ed24ea3973f52fdd::calculateinterruptdelay);
+    scripts\engine\utility::registersharedfunc("shellshock", "concussionInterruptDelayFunc", &scripts\common\concussion_utility::calculateinterruptdelay);
 }
 
 // Namespace namespace_657dc7e018dcfce9 / namespace_8b9b2769a8e84272
@@ -178,7 +178,7 @@ function host_migration_init() {
 // Size: 0x70
 function vehicle_init() {
     registersharedfunc("vehicle", "reserveVehicle", &scripts\sp\vehicle::reservevehicle);
-    registersharedfunc("vehicle", "spawnVehicle", &scripts\sp\vehicle::function_744f5f381328f1a2);
+    registersharedfunc("vehicle", "spawnVehicle", &scripts\sp\vehicle::spawnvehicle_sp);
     registersharedfunc("vehicle", "deleteVehicle", &scripts\sp\vehicle::function_99d930044ab93cc);
     registersharedfunc("vehicle", "vehicle_damage_setCanDamage", &scripts\sp\vehicle::function_36dbb623c325c79);
     registersharedfunc("vehicle", "vehicle_driverShowViewModel", &scripts\sp\vehicle::function_9b59f5c375018695);
@@ -240,7 +240,7 @@ function damage_init() {
 // Checksum 0x0, Offset: 0xa0f
 // Size: 0x18
 function sound_init() {
-    registersharedfunc("sound", "playSoundToPlayer", &function_813a90cb0d612d94);
+    registersharedfunc("sound", "playSoundToPlayer", &playsoundtoplayer_sp);
 }
 
 // Namespace namespace_657dc7e018dcfce9 / namespace_8b9b2769a8e84272
@@ -431,7 +431,7 @@ function private function_3a8153b287c5ec7(delay) {
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0xbad
 // Size: 0x2c
-function private function_813a90cb0d612d94(aliasname, player, srcentity) {
+function private playsoundtoplayer_sp(aliasname, player, srcentity) {
     if (soundexists(aliasname)) {
         self playsound(aliasname);
     }

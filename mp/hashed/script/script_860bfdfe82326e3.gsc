@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\anim_scene.gsc;
 #using script_2583ee5680cf4736;
+#using scripts\cp_mp\anim_scene;
+#using scripts\engine\utility;
 
 #namespace content_manager;
 
@@ -19,11 +19,11 @@ function function_9218617331ba59ff(instance, string) {
 // Checksum 0x0, Offset: 0x1d5
 // Size: 0x41
 function function_223d2522d69e265d(instance, string) {
-    var_6b6313322ac6a7a0 = [];
+    content_array = [];
     if (isdefined(instance.contentgroups[string])) {
-        var_6b6313322ac6a7a0 = instance.contentgroups[string];
+        content_array = instance.contentgroups[string];
     }
-    return var_6b6313322ac6a7a0;
+    return content_array;
 }
 
 // Namespace content_manager / namespace_4164bc931714b00b
@@ -157,7 +157,7 @@ function setup_destinations() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x803
 // Size: 0xd4
-function function_b1ae4ace992f6a83(str_destination, var_29d15208128f7711) {
+function setup_adjacencies(str_destination, var_29d15208128f7711) {
     assert(isdefined(level.contentmanager.destinations[str_destination]), "<dev string:x54>" + str_destination);
     i = 0;
     foreach (var_bb24acdfc3f6728 in var_29d15208128f7711) {

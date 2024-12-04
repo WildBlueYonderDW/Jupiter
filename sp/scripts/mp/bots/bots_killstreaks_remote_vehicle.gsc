@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_killstreaks.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\killstreaks\helicopter_pilot.gsc;
-#using scripts\mp\killstreaks\flares.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\bots\bots_killstreaks;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\killstreaks\flares;
+#using scripts\mp\killstreaks\helicopter_pilot;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace namespace_cc7250329787f909;
 
@@ -367,13 +367,13 @@ function bot_control_switchblade_cluster() {
     while (self [[ level.bot_ks_funcs["isUsing"]["switchblade_cluster"] ]]() && isdefined(current_rocket)) {
         foreach (rocket in level.rockets) {
             if (isdefined(rocket) && rocket.owner == self && rocket.weapon_name == "switch_blade_child_mp") {
-                var_10e401a6f6d6cb7e = 1;
+                should_add = 1;
                 foreach (missile_struct in mini_missiles) {
                     if (missile_struct.rocket == rocket) {
-                        var_10e401a6f6d6cb7e = 0;
+                        should_add = 0;
                     }
                 }
-                if (var_10e401a6f6d6cb7e) {
+                if (should_add) {
                     var_4043b25178528dc6 = spawnstruct();
                     var_4043b25178528dc6.rocket = rocket;
                     var_4043b25178528dc6.target = var_2412210e2e3096bf;
@@ -457,7 +457,7 @@ function bot_control_switchblade_cluster() {
                 }
                 target_loc = getpredictedentityposition(best_target, var_e7d4a44eb0a17fa4);
             }
-            var_7770ff3a205c2b6 = missile_get_desired_angles_to_target(current_rocket, target_loc);
+            desired_angles = missile_get_desired_angles_to_target(current_rocket, target_loc);
             var_f7fac0901f2d27d8 = missile_get_distance_to_target(current_rocket, target_loc);
             if (var_f7fac0901f2d27d8 < 30) {
                 speed = 0;
@@ -474,7 +474,7 @@ function bot_control_switchblade_cluster() {
                 speed = min(speed * 3, 1);
             }
             if (speed > 0) {
-                self botsetscriptmove(var_7770ff3a205c2b6[1], 0.05, speed, 1, 1);
+                self botsetscriptmove(desired_angles[1], 0.05, speed, 1, 1);
             } else if (gettime() > var_170b960d75247aa1) {
                 if (var_794601ee02db5f4e < 2) {
                     self botpressbutton("attack");
@@ -504,8 +504,8 @@ function bot_control_switchblade_cluster() {
                 var_e90afab3a285b685 = random(level.outside_zones);
                 zone_origin = getzonenodeforindex(var_e90afab3a285b685).origin;
             }
-            var_7770ff3a205c2b6 = missile_get_desired_angles_to_target(current_rocket, zone_origin);
-            self botsetscriptmove(var_7770ff3a205c2b6[1], 0.05, 0.75, 1, 1);
+            desired_angles = missile_get_desired_angles_to_target(current_rocket, zone_origin);
+            self botsetscriptmove(desired_angles[1], 0.05, 0.75, 1, 1);
         }
         wait 0.05;
     }
@@ -796,7 +796,7 @@ function bot_control_vanguard() {
     function function_dd40097206fb80bc(vehicle) {
         vehicle waittill("<dev string:xcb>", reason);
         if (isdefined(reason)) {
-            assertex(reason != "<dev string:xd1>", "<dev string:xdd>" + getdvar(@"hash_687fb8f9b7a23245"));
+            assertex(reason != "<dev string:xd1>", "<dev string:xdd>" + getdvar(@"g_mapname"));
         }
     }
 
@@ -883,7 +883,7 @@ function vanguard_control_aiming() {
     while (self [[ level.bot_ks_funcs["isUsing"]["vanguard"] ]]()) {
         var_47eca5045634214a = undefined;
         eye_pos = self geteye();
-        var_c127d102dd2295c3 = self getplayerangles();
+        eye_angles = self getplayerangles();
         bot_fov = self botgetfovdot();
         if (isalive(self.enemy) && self botcanseeentity(self.enemy)) {
             var_776ba3f458aa7ee9 = 1;
@@ -901,7 +901,7 @@ function vanguard_control_aiming() {
                     continue;
                 }
                 if (!level.teambased || self.team != character.team) {
-                    if (within_fov(eye_pos, var_c127d102dd2295c3, character.origin, bot_fov)) {
+                    if (within_fov(eye_pos, eye_angles, character.origin, bot_fov)) {
                         var_46219a6a94dc3f7e += 0.05;
                         if (isdefined(var_47eca5045634214a)) {
                             var_95290e32a23b47f3 = distancesquared(self.vehicle_controlling.origin, var_47eca5045634214a.origin);
@@ -1462,8 +1462,8 @@ function bot_odin_get_high_priority_smoke_locations() {
             }
         }
     }
-    var_e63dcb8377800007 = bot_odin_get_visible_outside_players("ally", 0);
-    foreach (ally in var_e63dcb8377800007) {
+    outside_allies = bot_odin_get_visible_outside_players("ally", 0);
+    foreach (ally in outside_allies) {
         if (isai(ally) && ally bot_is_capturing()) {
             desired_locations = array_add(desired_locations, ally.origin);
         }
@@ -1831,12 +1831,12 @@ function find_closest_heli_node_2d(origin, type) {
 // Checksum 0x0, Offset: 0x4ca5
 // Size: 0xc8
 function bot_killstreak_get_zone_allies_outside(only_players) {
-    var_e63dcb8377800007 = bot_killstreak_get_all_outside_allies(only_players);
+    outside_allies = bot_killstreak_get_all_outside_allies(only_players);
     zone_allies = [];
     for (i = 0; i < level.zonecount; i++) {
         zone_allies[i] = [];
     }
-    foreach (ally in var_e63dcb8377800007) {
+    foreach (ally in outside_allies) {
         nearest_node = ally getnearestnode();
         zone = getnodezone(nearest_node);
         if (isdefined(zone)) {
@@ -2087,8 +2087,8 @@ function bot_control_heli_main_move_loop(type, var_c3edbf19a4808cd4) {
 function get_random_outside_target() {
     possible_zones = [];
     foreach (z in level.outside_zones) {
-        var_58eea57628b0811e = botzonegetcount(z, self.team, "enemy_predict");
-        if (var_58eea57628b0811e > 0) {
+        enemies_in_zone = botzonegetcount(z, self.team, "enemy_predict");
+        if (enemies_in_zone > 0) {
             possible_zones = array_add(possible_zones, z);
         }
     }

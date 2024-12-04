@@ -1,35 +1,35 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\gametypes\sd.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_extract_chopper.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\utility\points.gsc;
 #using script_4a6760982b403bad;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\agents\agent_common.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\usability.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_common;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_extract_chopper;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\gametypes\sd;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\persistence;
+#using scripts\mp\rank;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spectating;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\usability;
 
 #namespace vip;
 
@@ -38,7 +38,7 @@
 // Checksum 0x0, Offset: 0xb47
 // Size: 0x1bf
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();

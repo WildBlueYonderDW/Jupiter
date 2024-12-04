@@ -1,51 +1,51 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp\cp_agent_utils.gsc;
-#using scripts\cp\cp_outline.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\cp\utility\cp_controlled_callbacks.gsc;
-#using script_703fdbb02501d31e;
-#using script_18a73a64992dd07d;
-#using scripts\cp\equipment\cp_thermite.gsc;
-#using scripts\cp\cp_objectives.gsc;
-#using script_18c9036dc9a4081;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using script_371b4c2ab5861e62;
-#using script_afb7e332aee4bf2;
-#using script_644c18834356d9dc;
-#using script_6f1e07ce9ff97d5f;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\cp\powers\coop_molotov.gsc;
-#using scripts\cp\equipment\cp_gas_grenade.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\cp_relics.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_hostmigration.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_66122a002aff5d57;
 #using script_12e2fb553ec1605e;
-#using scripts\cp\killstreaks\gunship_cp.gsc;
-#using script_25845aca699d038d;
-#using scripts\cp\cp_grenade_crate.gsc;
-#using scripts\cp\utility\spawn_event_aggregator.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\cp\perks\cp_perks.gsc;
-#using script_354c862768cfe202;
-#using scripts\cp\cp_checkpoint.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\nuke.gsc;
 #using script_166b4f052da169a7;
-#using scripts\asm\asm.gsc;
+#using script_18a73a64992dd07d;
+#using script_18c9036dc9a4081;
+#using script_25845aca699d038d;
+#using script_2669878cf5a1b6bc;
 #using script_3433ee6b63c7e243;
+#using script_354c862768cfe202;
+#using script_371b4c2ab5861e62;
 #using script_3bcaa2cbaf54abdd;
+#using script_5762ac2f22202ba2;
+#using script_644c18834356d9dc;
+#using script_66122a002aff5d57;
+#using script_6f1e07ce9ff97d5f;
+#using script_703fdbb02501d31e;
+#using script_74502a9e0ef1f19c;
+#using script_afb7e332aee4bf2;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_checkpoint;
+#using scripts\cp\cp_grenade_crate;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\cp_outline;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_relics;
+#using scripts\cp\equipment\cp_gas_grenade;
+#using scripts\cp\equipment\cp_thermite;
+#using scripts\cp\killstreaks\gunship_cp;
+#using scripts\cp\perks\cp_perks;
+#using scripts\cp\powers\coop_molotov;
+#using scripts\cp\utility;
+#using scripts\cp\utility\cp_controlled_callbacks;
+#using scripts\cp\utility\player;
+#using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\killstreaks\nuke;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace cp_relics;
 
@@ -285,8 +285,8 @@ function load_relic_combos_from_table() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f75
 // Size: 0x24
-function table_look_up(table, index, var_c64da85ccb3c44b) {
-    return tablelookup(table, 0, index, var_c64da85ccb3c44b);
+function table_look_up(table, index, target_column) {
+    return tablelookup(table, 0, index, target_column);
 }
 
 // Namespace cp_relics / scripts\cp\cp_relics
@@ -2795,25 +2795,25 @@ function updatepersistentrelics(player) {
 // Checksum 0x0, Offset: 0x841b
 // Size: 0x108
 function updateondamagerelics(player, weapon, victim, smeansofdeath, shitloc, time) {
-    var_c6f09d77ac58260a = undefined;
+    relic_user = undefined;
     if (isplayer(victim)) {
-        var_c6f09d77ac58260a = victim;
+        relic_user = victim;
     } else if (isplayer(player)) {
-        var_c6f09d77ac58260a = player;
+        relic_user = player;
     }
-    if (!isdefined(var_c6f09d77ac58260a)) {
+    if (!isdefined(relic_user)) {
         return;
     }
-    if (!isdefined(var_c6f09d77ac58260a.ondamagerelics)) {
+    if (!isdefined(relic_user.ondamagerelics)) {
         return;
     }
     time = gettime();
-    keys = getarraykeys(var_c6f09d77ac58260a.ondamagerelics);
+    keys = getarraykeys(relic_user.ondamagerelics);
     if (!isdefined(keys)) {
         return;
     }
     foreach (key in keys) {
-        if (istrue(var_c6f09d77ac58260a.ondamagerelics[key])) {
+        if (istrue(relic_user.ondamagerelics[key])) {
             thread [[ level.ondamagerelics[key] ]](player, weapon, victim, smeansofdeath, shitloc, time);
         }
     }
@@ -2824,28 +2824,28 @@ function updateondamagerelics(player, weapon, victim, smeansofdeath, shitloc, ti
 // Checksum 0x0, Offset: 0x852b
 // Size: 0x159
 function updateondamagepredamagemodrelics(player, weapon, victim, smeansofdeath, shitloc, time) {
-    var_c6f09d77ac58260a = undefined;
+    relic_user = undefined;
     if (isplayer(victim)) {
-        var_c6f09d77ac58260a = victim;
+        relic_user = victim;
     } else if (isplayer(player)) {
-        var_c6f09d77ac58260a = player;
+        relic_user = player;
     } else if (isdefined(player.owner) && isplayer(player.owner)) {
-        var_c6f09d77ac58260a = player.owner;
+        relic_user = player.owner;
     }
-    if (!isdefined(var_c6f09d77ac58260a)) {
+    if (!isdefined(relic_user)) {
         return;
     }
-    if (!isdefined(var_c6f09d77ac58260a.ondamagerelics)) {
+    if (!isdefined(relic_user.ondamagerelics)) {
         return;
     }
     time = gettime();
-    keys = getarraykeys(var_c6f09d77ac58260a.ondamagerelics);
+    keys = getarraykeys(relic_user.ondamagerelics);
     if (!isdefined(keys)) {
         return;
     }
     foreach (key in keys) {
-        if (isdefined(var_c6f09d77ac58260a.ondamagepredamagemodrelics)) {
-            if (istrue(var_c6f09d77ac58260a.ondamagepredamagemodrelics[key])) {
+        if (isdefined(relic_user.ondamagepredamagemodrelics)) {
+            if (istrue(relic_user.ondamagepredamagemodrelics[key])) {
                 if (isdefined(level.ondamagepredamagemodrelics[key])) {
                     thread [[ level.ondamagepredamagemodrelics[key] ]](player, weapon, victim, smeansofdeath, shitloc, time);
                 }
@@ -2957,15 +2957,15 @@ function relics_monitor_on_player() {
     flag_wait("strike_init_done");
     player init_and_set_relics(player);
     while (true) {
-        player waittill("relic_update", var_b86fab7eccfe6b1e, bool);
+        player waittill("relic_update", relic_name, bool);
         assertex(isdefined(bool), " the relic_update notify must be passed with a true or false parameter. Recheck script calls");
-        assertex(isdefined(var_b86fab7eccfe6b1e), " the relic_update notify must be passed with a relic name. Recheck script calls");
+        assertex(isdefined(relic_name), " the relic_update notify must be passed with a relic name. Recheck script calls");
         if (isdefined(bool)) {
             if (!istrue(bool)) {
-                unset_relics(player, var_b86fab7eccfe6b1e);
+                unset_relics(player, relic_name);
                 continue;
             }
-            set_relics(player, var_b86fab7eccfe6b1e);
+            set_relics(player, relic_name);
         }
     }
 }
@@ -2982,10 +2982,10 @@ function load_relics_from_playlistdvars() {
         level thread load_relics_via_dvar();
         level thread unload_relics_via_dvar();
     #/
-    foreach (var_51b4fdba55e239f5 in var_ce22ef601c001a14) {
-        if (isdefined(var_51b4fdba55e239f5) && var_51b4fdba55e239f5 != "") {
-            level.set_relics[var_51b4fdba55e239f5] = 1;
-            level thread run_global_functions_for_relics(var_51b4fdba55e239f5);
+    foreach (new_relic in var_ce22ef601c001a14) {
+        if (isdefined(new_relic) && new_relic != "") {
+            level.set_relics[new_relic] = 1;
+            level thread run_global_functions_for_relics(new_relic);
         }
     }
 }
@@ -2994,9 +2994,9 @@ function load_relics_from_playlistdvars() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a9b
 // Size: 0x3e
-function run_global_functions_for_relics(var_b86fab7eccfe6b1e) {
-    if (isdefined(level.globalrelicsfunc[var_b86fab7eccfe6b1e]) && isfunction(level.globalrelicsfunc[var_b86fab7eccfe6b1e])) {
-        level thread [[ level.globalrelicsfunc[var_b86fab7eccfe6b1e] ]]();
+function run_global_functions_for_relics(relic_name) {
+    if (isdefined(level.globalrelicsfunc[relic_name]) && isfunction(level.globalrelicsfunc[relic_name])) {
+        level thread [[ level.globalrelicsfunc[relic_name] ]]();
     }
 }
 
@@ -3010,15 +3010,15 @@ function load_relics_via_dvar() {
     while (true) {
         var_934386cae08481b2 = getdvar(@"hash_3d6cc59e7f693916", "");
         var_ce22ef601c001a14 = strtok(var_934386cae08481b2, ",");
-        foreach (var_51b4fdba55e239f5 in var_ce22ef601c001a14) {
-            if (istrue(level.set_relics[var_51b4fdba55e239f5])) {
+        foreach (new_relic in var_ce22ef601c001a14) {
+            if (istrue(level.set_relics[new_relic])) {
                 waitframe();
                 continue;
             }
-            if (isdefined(var_51b4fdba55e239f5) && var_51b4fdba55e239f5 != "") {
-                level.set_relics[var_51b4fdba55e239f5] = 1;
+            if (isdefined(new_relic) && new_relic != "") {
+                level.set_relics[new_relic] = 1;
                 foreach (player in level.players) {
-                    player notify("relic_update", var_51b4fdba55e239f5, 1);
+                    player notify("relic_update", new_relic, 1);
                 }
             }
         }
@@ -3030,15 +3030,15 @@ function load_relics_via_dvar() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8c01
 // Size: 0xff
-function set_ui_omnvar_for_relics(var_b86fab7eccfe6b1e) {
+function set_ui_omnvar_for_relics(relic_name) {
     player = self;
     if (!isdefined(player.relic_count)) {
         player.relic_count = 1;
     } else {
         player.relic_count += 1;
     }
-    var_382474a05fa50063 = tablelookup("cp/cp_relic_table.csv", 1, var_b86fab7eccfe6b1e, 0);
-    idx = int(var_382474a05fa50063);
+    relic_index = tablelookup("cp/cp_relic_table.csv", 1, relic_name, 0);
+    idx = int(relic_index);
     omnvar = "cp_relic_1";
     switch (player.relic_count) {
     case 1:
@@ -3066,13 +3066,13 @@ function unload_relics_via_dvar() {
     while (true) {
         var_934386cae08481b2 = getdvar(@"hash_f5b4dcfa3901b441", "");
         var_ce22ef601c001a14 = strtok(var_934386cae08481b2, ",");
-        foreach (var_51b4fdba55e239f5 in var_ce22ef601c001a14) {
-            if (istrue(level.set_relics[var_51b4fdba55e239f5])) {
-                if (isdefined(var_51b4fdba55e239f5) && var_51b4fdba55e239f5 != "") {
+        foreach (new_relic in var_ce22ef601c001a14) {
+            if (istrue(level.set_relics[new_relic])) {
+                if (isdefined(new_relic) && new_relic != "") {
                     foreach (player in level.players) {
-                        player notify("relic_update", var_51b4fdba55e239f5, 0);
+                        player notify("relic_update", new_relic, 0);
                     }
-                    level.set_relics[var_51b4fdba55e239f5] = undefined;
+                    level.set_relics[new_relic] = undefined;
                 }
             }
         }
@@ -3084,10 +3084,10 @@ function unload_relics_via_dvar() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e16
 // Size: 0x4a
-function debug_set_relic(player, var_51b4fdba55e239f5) {
-    if (isdefined(var_51b4fdba55e239f5) && isdefined(level.cp_relics[var_51b4fdba55e239f5])) {
-        player.relics[var_51b4fdba55e239f5] = level.cp_relics[var_51b4fdba55e239f5];
-        set_relics(player, var_51b4fdba55e239f5);
+function debug_set_relic(player, new_relic) {
+    if (isdefined(new_relic) && isdefined(level.cp_relics[new_relic])) {
+        player.relics[new_relic] = level.cp_relics[new_relic];
+        set_relics(player, new_relic);
     }
 }
 
@@ -3095,10 +3095,10 @@ function debug_set_relic(player, var_51b4fdba55e239f5) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e68
 // Size: 0x4a
-function debug_unset_relic(player, var_51b4fdba55e239f5) {
-    if (isdefined(var_51b4fdba55e239f5) && isdefined(level.cp_relics[var_51b4fdba55e239f5])) {
-        player.relics[var_51b4fdba55e239f5] = level.cp_relics[var_51b4fdba55e239f5];
-        unset_relics(player, var_51b4fdba55e239f5);
+function debug_unset_relic(player, new_relic) {
+    if (isdefined(new_relic) && isdefined(level.cp_relics[new_relic])) {
+        player.relics[new_relic] = level.cp_relics[new_relic];
+        unset_relics(player, new_relic);
     }
 }
 
@@ -3107,10 +3107,10 @@ function debug_unset_relic(player, var_51b4fdba55e239f5) {
 // Checksum 0x0, Offset: 0x8eba
 // Size: 0x80
 function init_and_set_relics(player) {
-    foreach (var_b86fab7eccfe6b1e, bool in level.set_relics) {
-        var_cf69ad1c1a0c0498 = level.cp_relics[var_b86fab7eccfe6b1e];
-        var_b86fab7eccfe6b1e = var_cf69ad1c1a0c0498.name;
-        set_relics(player, var_b86fab7eccfe6b1e);
+    foreach (relic_name, bool in level.set_relics) {
+        relic_struct = level.cp_relics[relic_name];
+        relic_name = relic_struct.name;
+        set_relics(player, relic_name);
     }
 }
 
@@ -3118,19 +3118,19 @@ function init_and_set_relics(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8f42
 // Size: 0x9b
-function unset_relics(player, var_b86fab7eccfe6b1e) {
-    var_2004669327b0a7ed = level.cp_relics[var_b86fab7eccfe6b1e];
-    if (!isdefined(var_2004669327b0a7ed)) {
+function unset_relics(player, relic_name) {
+    relic_info = level.cp_relics[relic_name];
+    if (!isdefined(relic_info)) {
         return;
     }
-    if (isdefined(var_2004669327b0a7ed)) {
-        if (isdefined(var_2004669327b0a7ed) && isdefined(var_2004669327b0a7ed.unset_func)) {
-            [[ var_2004669327b0a7ed.unset_func ]](player);
+    if (isdefined(relic_info)) {
+        if (isdefined(relic_info) && isdefined(relic_info.unset_func)) {
+            [[ relic_info.unset_func ]](player);
         }
         /#
-            player iprintln("<dev string:x34>" + var_2004669327b0a7ed.name);
+            player iprintln("<dev string:x34>" + relic_info.name);
         #/
-        player.activated_relics = array_remove(player.activated_relics, var_2004669327b0a7ed.name);
+        player.activated_relics = array_remove(player.activated_relics, relic_info.name);
     }
 }
 
@@ -3138,40 +3138,40 @@ function unset_relics(player, var_b86fab7eccfe6b1e) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x8fe5
 // Size: 0xee
-function set_relics(player, var_b86fab7eccfe6b1e) {
-    var_2004669327b0a7ed = level.cp_relics[var_b86fab7eccfe6b1e];
-    if (!isdefined(var_2004669327b0a7ed)) {
+function set_relics(player, relic_name) {
+    relic_info = level.cp_relics[relic_name];
+    if (!isdefined(relic_info)) {
         return;
     }
-    if (isdefined(var_2004669327b0a7ed)) {
-        if (isdefined(var_2004669327b0a7ed) && isdefined(var_2004669327b0a7ed.init_func)) {
-            [[ var_2004669327b0a7ed.init_func ]](player);
+    if (isdefined(relic_info)) {
+        if (isdefined(relic_info) && isdefined(relic_info.init_func)) {
+            [[ relic_info.init_func ]](player);
         }
     }
     /#
-        player iprintln("<dev string:x48>" + var_2004669327b0a7ed.name);
+        player iprintln("<dev string:x48>" + relic_info.name);
     #/
-    if (isdefined(var_2004669327b0a7ed) && isdefined(var_2004669327b0a7ed.set_func)) {
-        [[ var_2004669327b0a7ed.set_func ]](player);
+    if (isdefined(relic_info) && isdefined(relic_info.set_func)) {
+        [[ relic_info.set_func ]](player);
     }
     if (isdefined(level.updatepersistentrelicsfunc)) {
         level thread [[ level.updatepersistentrelicsfunc ]](player);
     }
-    player.activated_relics = array_add(player.activated_relics, var_2004669327b0a7ed.name);
-    player set_ui_omnvar_for_relics(var_2004669327b0a7ed.name);
+    player.activated_relics = array_add(player.activated_relics, relic_info.name);
+    player set_ui_omnvar_for_relics(relic_info.name);
 }
 
 // Namespace cp_relics / scripts\cp\cp_relics
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x90db
 // Size: 0x74
-function register_relic(var_b86fab7eccfe6b1e, init_func, set_func, unset_func) {
-    var_2004669327b0a7ed = spawnstruct();
-    var_2004669327b0a7ed.init_func = init_func;
-    var_2004669327b0a7ed.set_func = set_func;
-    var_2004669327b0a7ed.unset_func = unset_func;
-    var_2004669327b0a7ed.name = var_b86fab7eccfe6b1e;
-    level.cp_relics[var_b86fab7eccfe6b1e] = var_2004669327b0a7ed;
+function register_relic(relic_name, init_func, set_func, unset_func) {
+    relic_info = spawnstruct();
+    relic_info.init_func = init_func;
+    relic_info.set_func = set_func;
+    relic_info.unset_func = unset_func;
+    relic_info.name = relic_name;
+    level.cp_relics[relic_name] = relic_info;
 }
 
 /#
@@ -3185,8 +3185,8 @@ function register_relic(var_b86fab7eccfe6b1e, init_func, set_func, unset_func) {
             println("<dev string:x5a>");
             println(player.name);
             println("<dev string:x8a>");
-            foreach (var_528dbf24c4b7bfcf in player.activated_relics) {
-                println(var_528dbf24c4b7bfcf);
+            foreach (active_relic in player.activated_relics) {
+                println(active_relic);
             }
             println("<dev string:x5a>");
         }
@@ -3263,19 +3263,19 @@ function updaterecentkills(victim, weapon) {
     self notify("updateRecentKills");
     self endon("updateRecentKills");
     self.recentkillcount++;
-    var_66b240bf0b2baff8 = getweaponbasename(weapon);
-    if (!isdefined(self.killsperweaponlog[var_66b240bf0b2baff8])) {
-        self.killsperweaponlog[var_66b240bf0b2baff8] = 1;
+    currentweapon_name = getweaponbasename(weapon);
+    if (!isdefined(self.killsperweaponlog[currentweapon_name])) {
+        self.killsperweaponlog[currentweapon_name] = 1;
     } else {
-        self.killsperweaponlog[var_66b240bf0b2baff8]++;
+        self.killsperweaponlog[currentweapon_name]++;
     }
     if (!isdefined(self.recentkillsperweapon)) {
         self.recentkillsperweapon = [];
     }
-    if (!isdefined(self.recentkillsperweapon[var_66b240bf0b2baff8])) {
-        self.recentkillsperweapon[var_66b240bf0b2baff8] = 1;
+    if (!isdefined(self.recentkillsperweapon[currentweapon_name])) {
+        self.recentkillsperweapon[currentweapon_name] = 1;
     } else {
-        self.recentkillsperweapon[var_66b240bf0b2baff8]++;
+        self.recentkillsperweapon[currentweapon_name]++;
     }
     wait 3.5;
     self.recentkillcount = 0;
@@ -3392,8 +3392,8 @@ function unset_relic_catch(player) {
 // Checksum 0x0, Offset: 0x9a97
 // Size: 0x26
 function function_d5153f326998f468() {
-    var_d49285246b443066 = array_randomize(level.var_a0d48f3f14b6015d)[0];
-    namespace_7335f9420e698c48::function_6fdbf71c8217cfc5(var_d49285246b443066);
+    drop_name = array_randomize(level.var_a0d48f3f14b6015d)[0];
+    namespace_7335f9420e698c48::function_6fdbf71c8217cfc5(drop_name);
 }
 
 // Namespace cp_relics / scripts\cp\cp_relics
@@ -3409,8 +3409,8 @@ function handlereliccatch(sweapon, player, victim, smeansofdeath, shitloc, time)
 // Checksum 0x0, Offset: 0x9b00
 // Size: 0xf1
 function should_drop_grenade(var_4d8d96d547df2e9f) {
-    var_94c7beb63ef70f85 = getdvarint(@"hash_796d3b42936baa1");
-    if (var_94c7beb63ef70f85) {
+    drop_test = getdvarint(@"hash_796d3b42936baa1");
+    if (drop_test) {
         return true;
     }
     if (!isdefined(level.grenade_drop_cooldown)) {
@@ -3535,9 +3535,9 @@ function is_relic_collat_dmg_active() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9e2d
 // Size: 0x3a
-function is_relic_active(var_f51f7e151e0ee2f0) {
-    if (isdefined(level.set_relics) && isdefined(level.set_relics[var_f51f7e151e0ee2f0])) {
-        return istrue(level.set_relics[var_f51f7e151e0ee2f0]);
+function is_relic_active(relic) {
+    if (isdefined(level.set_relics) && isdefined(level.set_relics[relic])) {
+        return istrue(level.set_relics[relic]);
     }
     return 0;
 }
@@ -5148,14 +5148,14 @@ function ondamagerelicfromabove(eattacker, sweapon, evictim, smeansofdeath, shit
 // Checksum 0x0, Offset: 0xd04e
 // Size: 0x60
 function get_health_stage(player) {
-    var_9e6ee1f61a6e0cbf = player.health / player.maxhealth;
-    if (var_9e6ee1f61a6e0cbf <= 0.33) {
+    health_ratio = player.health / player.maxhealth;
+    if (health_ratio <= 0.33) {
         return 1;
     }
-    if (var_9e6ee1f61a6e0cbf <= 0.66) {
+    if (health_ratio <= 0.66) {
         return 2;
     }
-    if (var_9e6ee1f61a6e0cbf <= 1) {
+    if (health_ratio <= 1) {
         return 3;
     }
     return 4;
@@ -5574,8 +5574,8 @@ function make_focus_fire_icon_anchor(ai) {
     var_29bc20a32f4c0e7b = (23, 8, 0);
     var_2e6eaff9143cc4f = "j_neck";
     assertex(ai tagexists("<dev string:x111>"), "<dev string:x118>" + ai.model);
-    var_441884bcc07443f1 = ai gettagorigin(var_2e6eaff9143cc4f);
-    var_f4ecc554daf3c4b8 = spawn("script_model", var_441884bcc07443f1 + var_3a70c1fc70465bda);
+    anchor_pos = ai gettagorigin(var_2e6eaff9143cc4f);
+    var_f4ecc554daf3c4b8 = spawn("script_model", anchor_pos + var_3a70c1fc70465bda);
     var_f4ecc554daf3c4b8 setmodel("tag_origin");
     var_f4ecc554daf3c4b8 linkto(ai, var_2e6eaff9143cc4f, var_29bc20a32f4c0e7b, (0, 0, 0));
     return var_f4ecc554daf3c4b8;
@@ -5641,8 +5641,8 @@ function has_focus_fire_headicon(ai) {
 // Checksum 0x0, Offset: 0xdbad
 // Size: 0x40
 function make_focus_fire_headicon(ai) {
-    var_fc21e35c84088f9e = get_focus_fire_icon_image(ai);
-    ai.focus_fire_headicon = ai scripts\cp_mp\entityheadicons::setheadicon_singleimage("allies", var_fc21e35c84088f9e, 10, 1, undefined, undefined, undefined, 0, 1);
+    icon_image = get_focus_fire_icon_image(ai);
+    ai.focus_fire_headicon = ai scripts\cp_mp\entityheadicons::setheadicon_singleimage("allies", icon_image, 10, 1, undefined, undefined, undefined, 0, 1);
 }
 
 // Namespace cp_relics / scripts\cp\cp_relics
@@ -5812,12 +5812,12 @@ function handlerelicmartyrdom_common(sweapon, player, victim, smeansofdeath, shi
         return;
     }
     var_30587d786639993c = 15;
-    var_574bd21b0cafdac9 = anglestoforward(victim.angles);
-    var_5d825b291eef6a58 = victim gettagorigin(var_1b7e6c4f6eeda5cc) + var_574bd21b0cafdac9 * var_30587d786639993c;
+    grenade_velocity = anglestoforward(victim.angles);
+    grenade_pos = victim gettagorigin(var_1b7e6c4f6eeda5cc) + grenade_velocity * var_30587d786639993c;
     grenade_types = [[ var_342004c21e418db6 ]]();
     grenade_owner = victim;
     grenade_type = scripts\engine\utility::random(grenade_types);
-    grenade = grenade_owner launchgrenade(grenade_type, var_5d825b291eef6a58, var_574bd21b0cafdac9 * get_grenade_force(grenade_type), get_grenade_fuse_time(grenade_type));
+    grenade = grenade_owner launchgrenade(grenade_type, grenade_pos, grenade_velocity * get_grenade_force(grenade_type), get_grenade_fuse_time(grenade_type));
     if (grenade_type == "concussion_grenade_mp") {
         grenade.owner = victim;
     } else {
@@ -5848,8 +5848,8 @@ function handlerelicmartyrdom_common(sweapon, player, victim, smeansofdeath, shi
 function do_manual_splash_damage_when_frag_explodes(grenade, player) {
     grenade endon("trigger");
     grenade waittill("explode", origin);
-    var_fc9ac45209f959bb = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
-    if (var_fc9ac45209f959bb.size > 0) {
+    all_enemies = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
+    if (all_enemies.size > 0) {
         radiusdamage(origin, 256, 140, 70, player, "MOD_GRENADE_SPLASH", makeweapon("frag_grenade_mp"));
         return;
     }
@@ -6624,8 +6624,8 @@ function function_30d732f612695ba8() {
     }
     var_934386cae08481b2 = getdvar(@"hash_3d6cc59e7f693916", "");
     var_ce22ef601c001a14 = strtok(var_934386cae08481b2, ",");
-    foreach (var_f51f7e151e0ee2f0 in var_ce22ef601c001a14) {
-        if (var_f51f7e151e0ee2f0 == "relic_gun_game") {
+    foreach (relic in var_ce22ef601c001a14) {
+        if (relic == "relic_gun_game") {
             return true;
         }
     }
@@ -6998,13 +6998,13 @@ function unset_relic_aggressive_melee_params() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x10fc3
 // Size: 0x74
-function aggressively_chase_down_target(var_cd977be97bc0fc1e) {
-    var_cd977be97bc0fc1e endon("death");
-    var_cd977be97bc0fc1e endon("stop_aggressively_chase_down_target");
+function aggressively_chase_down_target(enemy_ai) {
+    enemy_ai endon("death");
+    enemy_ai endon("stop_aggressively_chase_down_target");
     while (true) {
-        if (isdefined(var_cd977be97bc0fc1e.enemy) && isplayer(var_cd977be97bc0fc1e.enemy)) {
-            var_831198d90cf1bdf4 = getclosestpointonnavmesh(var_cd977be97bc0fc1e.enemy.origin);
-            var_cd977be97bc0fc1e setgoalpos(var_831198d90cf1bdf4);
+        if (isdefined(enemy_ai.enemy) && isplayer(enemy_ai.enemy)) {
+            var_831198d90cf1bdf4 = getclosestpointonnavmesh(enemy_ai.enemy.origin);
+            enemy_ai setgoalpos(var_831198d90cf1bdf4);
         }
         wait 1;
     }
@@ -7411,8 +7411,8 @@ function relic_bang_and_boom_wait_for_pickup() {
 // Checksum 0x0, Offset: 0x11b62
 // Size: 0x170
 function should_give_grenades() {
-    var_3bda1622a11cf39b = 1;
-    var_c351b07cfbe3c36e = 1;
+    grenade_full = 1;
+    projectile_full = 1;
     primary_weapons = self getweaponslistprimaries();
     foreach (weapon in primary_weapons) {
         if (weapontype(weapon) == "projectile") {
@@ -7422,21 +7422,21 @@ function should_give_grenades() {
                 }
             }
             if (!scripts\cp\cp_grenade_crate::max_projectile_check(weapon)) {
-                var_c351b07cfbe3c36e = 0;
+                projectile_full = 0;
             }
         }
         if (weapon.inventorytype == "altmode" && isdefined(weapon.underbarrel) && weapon.underbarrel == "ubshtgn") {
             if (!scripts\cp\cp_grenade_crate::max_projectile_check(weapon)) {
-                var_c351b07cfbe3c36e = 0;
+                projectile_full = 0;
             }
         }
     }
-    foreach (var_a025330c35d8d47e in self.powers) {
-        if (var_a025330c35d8d47e.charges < var_a025330c35d8d47e.maxcharges) {
-            var_3bda1622a11cf39b = 0;
+    foreach (pwr_struct in self.powers) {
+        if (pwr_struct.charges < pwr_struct.maxcharges) {
+            grenade_full = 0;
         }
     }
-    if (!var_3bda1622a11cf39b || !var_c351b07cfbe3c36e) {
+    if (!grenade_full || !projectile_full) {
         return true;
     }
     return false;
@@ -7595,11 +7595,11 @@ function handlerocketkillsgiverockets(weapon, player, victim, meansofdeath, shit
     if (!isdefined(weapon) || weapontype(weapon) != "projectile" || !player hasweapon(weapon)) {
         return;
     }
-    var_2cff6b48eea96941 = player getammocount(weapon);
-    var_c56bbe615f626cc8 = weaponclipsize(weapon);
-    player setweaponammoclip(weapon, var_c56bbe615f626cc8);
-    player setweaponammostock(weapon, var_2cff6b48eea96941 - var_c56bbe615f626cc8 + 1);
-    player scripts\cp\cp_relics::relic_bullet_reward_hud_display(var_c56bbe615f626cc8);
+    cur_count = player getammocount(weapon);
+    max_clip = weaponclipsize(weapon);
+    player setweaponammoclip(weapon, max_clip);
+    player setweaponammostock(weapon, cur_count - max_clip + 1);
+    player scripts\cp\cp_relics::relic_bullet_reward_hud_display(max_clip);
 }
 
 // Namespace cp_relics / scripts\cp\cp_relics
@@ -7646,10 +7646,10 @@ function handleheadshotkillrewardbullets(weapon, player, victim, meansofdeath, s
     while (player isreloading()) {
         wait 0.05;
     }
-    var_c56bbe615f626cc8 = weaponclipsize(weapon);
-    var_98c0435faaf14d2d = int(var_c56bbe615f626cc8 * 0.25);
-    var_98c0435faaf14d2d = int(clamp(var_98c0435faaf14d2d, 1, 10));
-    player thread relic_award_bullets(weapon, var_98c0435faaf14d2d);
+    max_clip = weaponclipsize(weapon);
+    ammo_award = int(max_clip * 0.25);
+    ammo_award = int(clamp(ammo_award, 1, 10));
+    player thread relic_award_bullets(weapon, ammo_award);
 }
 
 // Namespace cp_relics / scripts\cp\cp_relics
@@ -7711,7 +7711,7 @@ function function_dd919137e61b4dc9(einflictor, eattacker, idamage, idflags, smea
 // Size: 0x2c
 function function_78e009b52b565ff5(player) {
     player thread function_145297f3e93394e();
-    player function_4cbaed764c116a25(1);
+    player disable_backpack_inventory(1);
     player.var_fe05a02fc63eca30 = 1;
 }
 
@@ -7758,7 +7758,7 @@ function function_a18d22b26d61ca19() {
 // Size: 0x86
 function function_1bd55bd951802eda(player) {
     player.onkillrelics["relic_oneInTheChamber"] = 0;
-    player function_4cbaed764c116a25(0);
+    player disable_backpack_inventory(0);
     player val::set("OITC", "weapon_switch_clip", 1);
     player setperk("specialty_pistoldraw", 1);
     player notify("unset_one_in_the_chamber");
@@ -7897,17 +7897,17 @@ function handlemeleekillrewardbullets(weapon, player, victim, meansofdeath, shit
     while (player isreloading()) {
         wait 0.05;
     }
-    var_c56bbe615f626cc8 = weaponclipsize(weapon);
-    var_98c0435faaf14d2d = int(var_c56bbe615f626cc8 * 0.25);
-    var_98c0435faaf14d2d = int(clamp(var_98c0435faaf14d2d, 1, 10));
-    player thread relic_award_bullets(weapon, var_98c0435faaf14d2d);
+    max_clip = weaponclipsize(weapon);
+    ammo_award = int(max_clip * 0.25);
+    ammo_award = int(clamp(ammo_award, 1, 10));
+    player thread relic_award_bullets(weapon, ammo_award);
 }
 
 // Namespace cp_relics / scripts\cp\cp_relics
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x12aef
 // Size: 0x218
-function relic_award_bullets(weapon, var_98c0435faaf14d2d, var_356362f791136ab4) {
+function relic_award_bullets(weapon, ammo_award, var_356362f791136ab4) {
     level endon("game_ended");
     self endon("disconnect");
     player = self;
@@ -7918,46 +7918,46 @@ function relic_award_bullets(weapon, var_98c0435faaf14d2d, var_356362f791136ab4)
     if (!isdefined(var_356362f791136ab4)) {
         var_356362f791136ab4 = 1;
     }
-    var_b83e926dfdbc7aa2 = is_relic_active("relic_oneclip");
+    clip_only = is_relic_active("relic_oneclip");
     max_ammo = weaponclipsize(weapon);
     has_ammo = player getweaponammoclip(weapon);
-    if (!istrue(var_b83e926dfdbc7aa2)) {
+    if (!istrue(clip_only)) {
         max_ammo += weaponmaxammo(weapon);
         has_ammo += player getweaponammostock(weapon);
     }
-    var_98c0435faaf14d2d = int(min(max_ammo - has_ammo, var_98c0435faaf14d2d));
-    if (var_98c0435faaf14d2d == 0) {
+    ammo_award = int(min(max_ammo - has_ammo, ammo_award));
+    if (ammo_award == 0) {
         return;
     }
     var_471d039e2f07d3d8 = player getcurrentweapon() == weapon || player isinexecutionattack();
     if (var_471d039e2f07d3d8) {
-        player thread relic_bullet_reward_hud_display(var_98c0435faaf14d2d);
+        player thread relic_bullet_reward_hud_display(ammo_award);
     }
     if (var_471d039e2f07d3d8 && var_356362f791136ab4) {
-        while (var_98c0435faaf14d2d > 0) {
-            result = player thread relic_award_one_bullet(weapon, var_b83e926dfdbc7aa2);
+        while (ammo_award > 0) {
+            result = player thread relic_award_one_bullet(weapon, clip_only);
             if (istrue(result)) {
                 player notify("ammo_awarded");
             } else {
                 break;
             }
             wait 0.2;
-            var_98c0435faaf14d2d--;
+            ammo_award--;
         }
         return;
     }
-    var_c56bbe615f626cc8 = weaponclipsize(weapon);
-    var_a153d989920d03bc = player getweaponammoclip(weapon);
-    var_b565c7bcfd7b0438 = var_c56bbe615f626cc8 - var_a153d989920d03bc;
-    if (var_b565c7bcfd7b0438 >= var_98c0435faaf14d2d) {
-        player setweaponammoclip(weapon, var_a153d989920d03bc + var_98c0435faaf14d2d);
+    max_clip = weaponclipsize(weapon);
+    cur_clip = player getweaponammoclip(weapon);
+    delta_clip = max_clip - cur_clip;
+    if (delta_clip >= ammo_award) {
+        player setweaponammoclip(weapon, cur_clip + ammo_award);
     } else {
-        player setweaponammoclip(weapon, var_c56bbe615f626cc8);
-        if (!istrue(var_b83e926dfdbc7aa2)) {
-            var_a862b844906a7c8 = weaponmaxammo(weapon);
-            var_2422f12c129670c = player getweaponammostock(weapon);
-            var_98c0435faaf14d2d -= var_b565c7bcfd7b0438;
-            new_stock = int(min(var_a862b844906a7c8, var_2422f12c129670c + var_98c0435faaf14d2d));
+        player setweaponammoclip(weapon, max_clip);
+        if (!istrue(clip_only)) {
+            max_stock = weaponmaxammo(weapon);
+            cur_stock = player getweaponammostock(weapon);
+            ammo_award -= delta_clip;
+            new_stock = int(min(max_stock, cur_stock + ammo_award));
             player setweaponammostock(weapon, new_stock);
         }
     }
@@ -7968,20 +7968,20 @@ function relic_award_bullets(weapon, var_98c0435faaf14d2d, var_356362f791136ab4)
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x12d0f
 // Size: 0xbb
-function relic_award_one_bullet(weapon, var_b83e926dfdbc7aa2) {
+function relic_award_one_bullet(weapon, clip_only) {
     player = self;
     if (!isdefined(weapon) || weapontype(weapon) != "bullet" || !player hasweapon(weapon)) {
         return;
     }
-    var_a153d989920d03bc = player getweaponammoclip(weapon);
-    if (istrue(var_b83e926dfdbc7aa2) || var_a153d989920d03bc < weaponclipsize(weapon)) {
-        player setweaponammoclip(weapon, var_a153d989920d03bc + 1);
+    cur_clip = player getweaponammoclip(weapon);
+    if (istrue(clip_only) || cur_clip < weaponclipsize(weapon)) {
+        player setweaponammoclip(weapon, cur_clip + 1);
         player playlocalsound("weap_ammo_pickup");
         return 1;
     } else {
-        var_2422f12c129670c = player getweaponammostock(weapon);
-        if (var_2422f12c129670c < weaponmaxammo(weapon)) {
-            player setweaponammostock(weapon, var_2422f12c129670c + 1);
+        cur_stock = player getweaponammostock(weapon);
+        if (cur_stock < weaponmaxammo(weapon)) {
+            player setweaponammostock(weapon, cur_stock + 1);
             player playlocalsound("weap_ammo_pickup");
             return 1;
         }
@@ -7993,14 +7993,14 @@ function relic_award_one_bullet(weapon, var_b83e926dfdbc7aa2) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12dd3
 // Size: 0x5b
-function relic_bullet_reward_hud_display(var_98c0435faaf14d2d) {
+function relic_bullet_reward_hud_display(ammo_award) {
     self notify("relic_punchbullets_reward_hud_display");
     self endon("relic_punchbullets_reward_hud_display");
     self endon("disconnect");
     level endon("game_ended");
     self setclientomnvar("ui_cp_relic_ammo_reward", 0);
     wait 0.25;
-    self setclientomnvar("ui_cp_relic_ammo_reward", var_98c0435faaf14d2d);
+    self setclientomnvar("ui_cp_relic_ammo_reward", ammo_award);
     wait 1.75;
     self setclientomnvar("ui_cp_relic_ammo_reward", 0);
 }
@@ -8032,8 +8032,8 @@ function set_relic_steelballs(player) {
 // Size: 0x7a
 function set_relic_steelballs_perks(player) {
     flag_wait("player_spawned_with_loadout");
-    var_92814129f0f670 = player.origin;
-    while (player.origin == var_92814129f0f670) {
+    spawned_origin = player.origin;
+    while (player.origin == spawned_origin) {
         wait 0.25;
     }
     player scripts\cp\utility::giveperk("specialty_extendedMelee");
@@ -8154,11 +8154,11 @@ function relic_steelballs_slide() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1333c
 // Size: 0x98
-function relic_steelballs_dodamage(victim, player, var_aef81d3ea261589a, var_c3b50b04c7dca6a8) {
+function relic_steelballs_dodamage(victim, player, dmg_radius, dmg_amount) {
     victim.explosivemodoverride = 1;
     victim.shouldhelmetpop = 1;
     original_health = victim.health;
-    radiusdamage(victim.origin + (0, 0, 8), var_aef81d3ea261589a, var_c3b50b04c7dca6a8, var_c3b50b04c7dca6a8 - 1, player, "MOD_MELEE");
+    radiusdamage(victim.origin + (0, 0, 8), dmg_radius, dmg_amount, dmg_amount - 1, player, "MOD_MELEE");
     player.lasthitmarkertime = undefined;
     player namespace_3d3d5211c3029f82::updatedamagefeedback("hitcritical");
 }
@@ -8173,7 +8173,7 @@ function relic_steelballs_dash() {
     self endon("relic_steelballs_ender");
     while (true) {
         self waittill("melee_swipe_start");
-        var_b0cc4a040611c3a9 = 250;
+        dash_force = 250;
         player_vec = anglestoforward(self getplayerangles(1));
         enemies = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
         closestenemies = get_array_of_closest(self.origin, enemies, undefined, undefined, 128);
@@ -8184,10 +8184,10 @@ function relic_steelballs_dash() {
             var_a49fe39fe684c761 = sighttracepassed(victim geteye(), self geteye(), 0, victim);
             if (is_looking_at && var_a49fe39fe684c761) {
                 player_vec = flatten_vector(victim.origin - self.origin);
-                var_b0cc4a040611c3a9 = 350;
+                dash_force = 350;
             }
         }
-        self knockback(player_vec, var_b0cc4a040611c3a9);
+        self knockback(player_vec, dash_force);
         wait 0.5;
     }
 }
@@ -8202,7 +8202,7 @@ function relic_steelballs_stump() {
     self endon("relic_steelballs_ender");
     childthread relic_steelballs_stump_monitor();
     while (true) {
-        self waittill("stump_damage", var_2cf70aca23622fdd, max_height, var_d148813ad40029c9);
+        self waittill("stump_damage", air_time, max_height, drop_dist);
         radiusdamage(self.origin, 64, 150, 149, self, "MOD_MELEE");
         playfx(level._effect["stump_landing"], self.origin);
         self playrumbleonentity("artillery_rumble");
@@ -8220,7 +8220,7 @@ function relic_steelballs_stump_monitor() {
         while (self isonground()) {
             wait 0.05;
         }
-        var_1e54f25462d06de1 = gettime();
+        t_mark = gettime();
         max_height = self.origin[2];
         while (!self isonground()) {
             if (self.origin[2] > max_height) {
@@ -8228,12 +8228,12 @@ function relic_steelballs_stump_monitor() {
             }
             wait 0.05;
         }
-        var_d148813ad40029c9 = max(0, max_height - self.origin[2]);
-        if (var_d148813ad40029c9 < 128) {
+        drop_dist = max(0, max_height - self.origin[2]);
+        if (drop_dist < 128) {
             continue;
         }
-        var_2cf70aca23622fdd = (gettime() - var_1e54f25462d06de1) / 1000;
-        self notify("stump_damage", var_2cf70aca23622fdd, max_height, var_d148813ad40029c9);
+        air_time = (gettime() - t_mark) / 1000;
+        self notify("stump_damage", air_time, max_height, drop_dist);
     }
 }
 
@@ -8273,17 +8273,17 @@ function relic_oneclip_monitor() {
     wait 0.5;
     thread relic_oneclip_stock_adjustment_monitor();
     while (true) {
-        var_2622298f62890966 = self getweaponslistprimaries();
-        foreach (weapon in var_2622298f62890966) {
+        all_weapons = self getweaponslistprimaries();
+        foreach (weapon in all_weapons) {
             if (!isdefined(weapon) || weapontype(weapon) != "bullet") {
                 continue;
             }
             stock_ammo = self getweaponammostock(weapon);
             if (stock_ammo > 0) {
-                var_c56bbe615f626cc8 = weaponclipsize(weapon);
+                max_clip = weaponclipsize(weapon);
                 clip_ammo = self getweaponammoclip(weapon);
-                if (clip_ammo < var_c56bbe615f626cc8) {
-                    new_clip = int(min(var_c56bbe615f626cc8, clip_ammo + stock_ammo));
+                if (clip_ammo < max_clip) {
+                    new_clip = int(min(max_clip, clip_ammo + stock_ammo));
                     thread relic_award_bullets(weapon, new_clip - clip_ammo);
                 }
                 self setweaponammostock(weapon, 0);
@@ -8341,15 +8341,15 @@ function relic_grounded_reload_monitor() {
         if (!isdefined(weapon) || weapontype(weapon) != "bullet") {
             continue;
         }
-        var_a153d989920d03bc = self getweaponammoclip(weapon);
+        cur_clip = self getweaponammoclip(weapon);
         self setweaponammoclip(weapon, 0);
-        var_2422f12c129670c = self getweaponammostock(weapon);
-        while (var_2422f12c129670c == self getweaponammostock(weapon)) {
+        cur_stock = self getweaponammostock(weapon);
+        while (cur_stock == self getweaponammostock(weapon)) {
             if (!self hasweapon(weapon)) {
                 break;
             }
             if (!self isreloading() || self getcurrentweapon() != weapon) {
-                self setweaponammoclip(weapon, var_a153d989920d03bc);
+                self setweaponammoclip(weapon, cur_clip);
                 break;
             }
             wait 0.05;
@@ -8587,8 +8587,8 @@ function relic_ammo_drain_take_ammo() {
             if (isdefined(self.last_weapon) && self.last_weapon == weapon) {
                 if (weapon.inventorytype == "altmode") {
                     if (isdefined(weapon.underbarrel) && weapon.underbarrel == "ubshtgn") {
-                        var_337043bba3301b3c = self getweaponammoclip(weapon);
-                        new_ammo = int(max(0, var_337043bba3301b3c - 1));
+                        cur_ammo = self getweaponammoclip(weapon);
+                        new_ammo = int(max(0, cur_ammo - 1));
                         self setweaponammoclip(weapon, new_ammo);
                         self setweaponammostock(weapon, 0);
                         self notify("ammo_drained");
@@ -8612,8 +8612,8 @@ function relic_ammo_drain_take_ammo() {
                             self.last_akimbo_ammo_taken = "left";
                         }
                     } else {
-                        var_337043bba3301b3c = self getweaponammoclip(weapon);
-                        new_ammo = int(max(0, var_337043bba3301b3c - 1));
+                        cur_ammo = self getweaponammoclip(weapon);
+                        new_ammo = int(max(0, cur_ammo - 1));
                         self setweaponammoclip(weapon, new_ammo);
                     }
                     self notify("ammo_drained");
@@ -8781,7 +8781,7 @@ function relic_nuketimer_globalthread() {
         var_2f04724afc0dbc44 = "players_go_to_safehouse";
         var_d9d3000b553fa249 = 60;
         var_160f83e240eb105f = "player_entered_safehouse_vol";
-        checkpoint = scripts\cp\cp_checkpoint::function_9eed75023a958c18();
+        checkpoint = scripts\cp\cp_checkpoint::checkpoint_get();
         if (isdefined(checkpoint) && checkpoint == "tow_p1") {
             var_6c0983906bc06eaa = "smuggler_fire_early";
             level thread notify_delay(var_6c0983906bc06eaa, 5);
@@ -8795,14 +8795,14 @@ function relic_nuketimer_globalthread() {
     waitframe();
     level waittill("relic_nuke_explode");
     var_8552241a89a7d70a = level.relic_nuketimer.nuke_clockobject.origin;
-    var_5097873650010998 = spawn("script_model", var_8552241a89a7d70a);
-    var_5097873650010998 setmodel("tag_origin");
-    var_5097873650010998.team = "axis";
-    var_5097873650010998.pers = [];
-    var_5097873650010998.pers["team"] = "axis";
-    var_5097873650010998.owner = var_5097873650010998;
-    streakinfo = var_5097873650010998 scripts\cp_mp\utility\killstreak_utility::createstreakinfo("nuke", var_5097873650010998);
-    var_5097873650010998 thread scripts\cp_mp\killstreaks\nuke::nuke_start(streakinfo);
+    nuke_owner = spawn("script_model", var_8552241a89a7d70a);
+    nuke_owner setmodel("tag_origin");
+    nuke_owner.team = "axis";
+    nuke_owner.pers = [];
+    nuke_owner.pers["team"] = "axis";
+    nuke_owner.owner = nuke_owner;
+    streakinfo = nuke_owner scripts\cp_mp\utility\killstreak_utility::createstreakinfo("nuke", nuke_owner);
+    nuke_owner thread scripts\cp_mp\killstreaks\nuke::nuke_start(streakinfo);
     level waittill("nuke_detonated");
     wait 5;
     if (istrue(level.relic_nuketimer.failstringsetup)) {
@@ -8859,9 +8859,9 @@ function relic_nuketimer_timerloop() {
         if (level.relic_nuketimer.timeramount % 2 == 0 && soundexists("iw8_nuke_countdown")) {
             level.relic_nuketimer.nuke_clockobject playsound("iw8_nuke_countdown");
         }
-        var_18f2bb0dd309974c = getoverlordaliasfortimeleft(level.relic_nuketimer.timeramount - 1, 1);
-        if (isdefined(var_18f2bb0dd309974c)) {
-            level thread namespace_49f64a73fb8b35eb::try_to_play_vo_on_team(var_18f2bb0dd309974c, "allies");
+        vo_ref = getoverlordaliasfortimeleft(level.relic_nuketimer.timeramount - 1, 1);
+        if (isdefined(vo_ref)) {
+            level thread namespace_49f64a73fb8b35eb::try_to_play_vo_on_team(vo_ref, "allies");
         }
         level.relic_nuketimer.timeramount -= 1;
         wait 1;
@@ -8902,7 +8902,7 @@ function relic_nuketimer_waitforobjectives() {
     while (true) {
         level waittill("give_objective_xp_to_all_players", type);
         if (level.relic_nuketimer.timeramount > level.relic_nuketimer.point_of_no_return + 1) {
-            if (type == #"hash_b4b6f2ba2523025e") {
+            if (type == #"minor_objective") {
                 relic_nuketimer_addtotimer(15);
             } else {
                 relic_nuketimer_addtotimer(30);
@@ -8921,11 +8921,11 @@ function relic_nuketimer_waitforobjectives() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14a49
 // Size: 0x71
-function relic_nuketimer_addtotimer(var_811fa87b007b001c) {
+function relic_nuketimer_addtotimer(to_add) {
     if (level.gameskill < 3) {
-        var_811fa87b007b001c *= 2;
+        to_add *= 2;
     }
-    level.relic_nuketimer.timeramount += var_811fa87b007b001c;
+    level.relic_nuketimer.timeramount += to_add;
     setomnvar("ui_nuke_end_milliseconds", gettime() + level.relic_nuketimer.timeramount * 1000);
 }
 
@@ -8939,10 +8939,10 @@ function relic_nuketimer_gettimeformission() {
     switch (mapname) {
     case #"hash_354398f7f22b30a7":
         var_ee521ed5ddb09c37 = 80;
-        level delaythread(61, &scripts\cp\cp_objectives::give_objective_xp_to_all_players, #"hash_b4b6f2ba2523025e");
+        level delaythread(61, &scripts\cp\cp_objectives::give_objective_xp_to_all_players, #"minor_objective");
         break;
     case #"hash_7344128ff773082f":
-        checkpoint = scripts\cp\cp_checkpoint::function_9eed75023a958c18();
+        checkpoint = scripts\cp\cp_checkpoint::checkpoint_get();
         if (isdefined(checkpoint) && checkpoint == "tow_p1") {
             if (level.gameskill < 3) {
                 var_ee521ed5ddb09c37 = 300;
@@ -9098,9 +9098,9 @@ function set_relic_doubletap_params_internal() {
     wait 0.05;
     original_weapon = self.weapon;
     if (!isdefined(self.weapon) || !isweapon(self.weapon)) {
-        var_3a9e0157b54bc7 = self getweaponslistprimaries();
-        if (isdefined(var_3a9e0157b54bc7) && var_3a9e0157b54bc7.size > 0) {
-            original_weapon = var_3a9e0157b54bc7[0];
+        weapons_list = self getweaponslistprimaries();
+        if (isdefined(weapons_list) && weapons_list.size > 0) {
+            original_weapon = weapons_list[0];
         }
     }
     for (counter = 3; counter > 0; counter--) {
@@ -9141,9 +9141,9 @@ function set_relic_doubletap_params_internal() {
         self.doinglongdeath = 0;
         scripts\asm\asm::asm_setstate("exposed_prone_to_stand");
         if (!isdefined(original_weapon)) {
-            var_3a9e0157b54bc7 = self getweaponslistprimaries();
-            if (isdefined(var_3a9e0157b54bc7) && var_3a9e0157b54bc7.size > 0) {
-                original_weapon = var_3a9e0157b54bc7[0];
+            weapons_list = self getweaponslistprimaries();
+            if (isdefined(weapons_list) && weapons_list.size > 0) {
+                original_weapon = weapons_list[0];
             }
         }
         if (isdefined(original_weapon)) {

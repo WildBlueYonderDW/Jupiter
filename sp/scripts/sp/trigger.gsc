@@ -1,28 +1,28 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\sp\hud_util.gsc;
-#using script_72ef6b9f0cf1f55a;
-#using script_6c1b22ea36b176be;
-#using scripts\sp\lights.gsc;
-#using scripts\sp\starts.gsc;
-#using scripts\sp\autosave.gsc;
-#using scripts\sp\spawner.gsc;
-#using scripts\sp\fakeactor.gsc;
-#using scripts\sp\geo_mover.gsc;
-#using scripts\sp\colors.gsc;
-#using scripts\sp\audio.gsc;
-#using scripts\sp\mgturret.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\engine\trace.gsc;
 #using script_35de402efc5acfb3;
-#using scripts\sp\art.gsc;
-#using scripts\sp\compass.gsc;
-#using scripts\stealth\player.gsc;
-#using scripts\common\fx.gsc;
-#using scripts\sp\player_death.gsc;
+#using script_6c1b22ea36b176be;
+#using script_72ef6b9f0cf1f55a;
+#using scripts\common\fx;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_code;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\art;
+#using scripts\sp\audio;
+#using scripts\sp\autosave;
+#using scripts\sp\colors;
+#using scripts\sp\compass;
+#using scripts\sp\fakeactor;
+#using scripts\sp\geo_mover;
+#using scripts\sp\hud_util;
+#using scripts\sp\lights;
+#using scripts\sp\mgturret;
+#using scripts\sp\player_death;
+#using scripts\sp\spawner;
+#using scripts\sp\starts;
+#using scripts\sp\utility;
+#using scripts\stealth\player;
 
 #namespace trigger;
 
@@ -114,51 +114,51 @@ function trigger_multiple_fx_watersheeting(trigger) {
 // Checksum 0x0, Offset: 0x13ec
 // Size: 0x22d
 function get_load_trigger_funcs() {
-    var_6ae9f8df81efa2d7 = [];
-    var_6ae9f8df81efa2d7["friendly_mgTurret"] = &scripts\sp\spawner::friendly_mgturret;
+    trigger_funcs = [];
+    trigger_funcs["friendly_mgTurret"] = &scripts\sp\spawner::friendly_mgturret;
     if (!scripts\sp\starts::is_no_game_start()) {
-        var_6ae9f8df81efa2d7["camper_spawner"] = &scripts\sp\spawner::camper_trigger_think;
-        var_6ae9f8df81efa2d7["flood_spawner"] = &scripts\sp\spawner::flood_trigger_think;
-        var_6ae9f8df81efa2d7["trigger_spawner"] = &scripts\sp\spawner::trigger_spawner;
-        var_6ae9f8df81efa2d7["trigger_autosave"] = &scripts\sp\autosave::trigger_autosave;
-        var_6ae9f8df81efa2d7["trigger_spawngroup"] = &trigger_spawngroup;
-        var_6ae9f8df81efa2d7["trigger_vehicle_spline_spawn"] = &trigger_vehicle_spline_spawn;
-        var_6ae9f8df81efa2d7["trigger_vehicle_spawn"] = &scripts\sp\spawner::trigger_spawner;
-        var_6ae9f8df81efa2d7["random_spawn"] = &scripts\sp\spawner::random_spawn;
-        var_6ae9f8df81efa2d7["zone_spawn"] = &scripts\sp\spawner::trigger_zone_spawn;
+        trigger_funcs["camper_spawner"] = &scripts\sp\spawner::camper_trigger_think;
+        trigger_funcs["flood_spawner"] = &scripts\sp\spawner::flood_trigger_think;
+        trigger_funcs["trigger_spawner"] = &scripts\sp\spawner::trigger_spawner;
+        trigger_funcs["trigger_autosave"] = &scripts\sp\autosave::trigger_autosave;
+        trigger_funcs["trigger_spawngroup"] = &trigger_spawngroup;
+        trigger_funcs["trigger_vehicle_spline_spawn"] = &trigger_vehicle_spline_spawn;
+        trigger_funcs["trigger_vehicle_spawn"] = &scripts\sp\spawner::trigger_spawner;
+        trigger_funcs["random_spawn"] = &scripts\sp\spawner::random_spawn;
+        trigger_funcs["zone_spawn"] = &scripts\sp\spawner::trigger_zone_spawn;
     }
-    var_6ae9f8df81efa2d7["autosave_now"] = &scripts\sp\autosave::autosave_now_trigger;
-    var_6ae9f8df81efa2d7["trigger_autosave_tactical"] = &scripts\sp\autosave::trigger_autosave_tactical;
-    var_6ae9f8df81efa2d7["trigger_autosave_stealth"] = &scripts\sp\autosave::trigger_autosave_stealth;
-    var_6ae9f8df81efa2d7["trigger_unlock"] = &trigger_unlock;
-    var_6ae9f8df81efa2d7["trigger_lookat"] = &trigger_lookat;
-    var_6ae9f8df81efa2d7["trigger_looking"] = &trigger_looking;
-    var_6ae9f8df81efa2d7["trigger_cansee"] = &trigger_cansee;
-    var_6ae9f8df81efa2d7["flag_set"] = &trigger_flag_set;
-    var_6ae9f8df81efa2d7["flag_set_player"] = &trigger_flag_set_player;
-    var_6ae9f8df81efa2d7["flag_unset"] = &trigger_flag_clear;
-    var_6ae9f8df81efa2d7["flag_clear"] = &trigger_flag_clear;
-    var_6ae9f8df81efa2d7["friendly_respawn_trigger"] = &trigger_friendly_respawn;
-    var_6ae9f8df81efa2d7["radio_trigger"] = &trigger_radio;
-    var_6ae9f8df81efa2d7["trigger_ignore"] = &trigger_ignore;
-    var_6ae9f8df81efa2d7["trigger_pacifist"] = &trigger_pacifist;
-    var_6ae9f8df81efa2d7["trigger_delete"] = &trigger_turns_off;
-    var_6ae9f8df81efa2d7["trigger_delete_on_touch"] = &trigger_delete_on_touch;
-    var_6ae9f8df81efa2d7["trigger_off"] = &trigger_turns_off;
-    var_6ae9f8df81efa2d7["trigger_outdoor"] = &scripts\sp\spawner::outdoor_think;
-    var_6ae9f8df81efa2d7["trigger_indoor"] = &scripts\sp\spawner::indoor_think;
-    var_6ae9f8df81efa2d7["trigger_hint"] = &trigger_hint;
-    var_6ae9f8df81efa2d7["trigger_grenade_at_player"] = &trigger_throw_grenade_at_player;
-    var_6ae9f8df81efa2d7["flag_on_cleared"] = &trigger_flag_on_cleared;
-    var_6ae9f8df81efa2d7["flag_set_touching"] = &trigger_flag_set_touching;
-    var_6ae9f8df81efa2d7["delete_link_chain"] = &trigger_delete_link_chain;
-    var_6ae9f8df81efa2d7["trigger_slide"] = &trigger_slide;
-    var_6ae9f8df81efa2d7["trigger_dooropen"] = &trigger_dooropen;
-    var_6ae9f8df81efa2d7["geo_mover"] = &scripts\sp\geo_mover::trigger_moveto;
-    var_6ae9f8df81efa2d7["out_of_bounds"] = &trigger_outofbounds;
-    var_6ae9f8df81efa2d7["no_crouch_or_prone"] = &trigger_no_crouch_or_prone;
-    var_6ae9f8df81efa2d7["no_prone"] = &trigger_no_prone;
-    return var_6ae9f8df81efa2d7;
+    trigger_funcs["autosave_now"] = &scripts\sp\autosave::autosave_now_trigger;
+    trigger_funcs["trigger_autosave_tactical"] = &scripts\sp\autosave::trigger_autosave_tactical;
+    trigger_funcs["trigger_autosave_stealth"] = &scripts\sp\autosave::trigger_autosave_stealth;
+    trigger_funcs["trigger_unlock"] = &trigger_unlock;
+    trigger_funcs["trigger_lookat"] = &trigger_lookat;
+    trigger_funcs["trigger_looking"] = &trigger_looking;
+    trigger_funcs["trigger_cansee"] = &trigger_cansee;
+    trigger_funcs["flag_set"] = &trigger_flag_set;
+    trigger_funcs["flag_set_player"] = &trigger_flag_set_player;
+    trigger_funcs["flag_unset"] = &trigger_flag_clear;
+    trigger_funcs["flag_clear"] = &trigger_flag_clear;
+    trigger_funcs["friendly_respawn_trigger"] = &trigger_friendly_respawn;
+    trigger_funcs["radio_trigger"] = &trigger_radio;
+    trigger_funcs["trigger_ignore"] = &trigger_ignore;
+    trigger_funcs["trigger_pacifist"] = &trigger_pacifist;
+    trigger_funcs["trigger_delete"] = &trigger_turns_off;
+    trigger_funcs["trigger_delete_on_touch"] = &trigger_delete_on_touch;
+    trigger_funcs["trigger_off"] = &trigger_turns_off;
+    trigger_funcs["trigger_outdoor"] = &scripts\sp\spawner::outdoor_think;
+    trigger_funcs["trigger_indoor"] = &scripts\sp\spawner::indoor_think;
+    trigger_funcs["trigger_hint"] = &trigger_hint;
+    trigger_funcs["trigger_grenade_at_player"] = &trigger_throw_grenade_at_player;
+    trigger_funcs["flag_on_cleared"] = &trigger_flag_on_cleared;
+    trigger_funcs["flag_set_touching"] = &trigger_flag_set_touching;
+    trigger_funcs["delete_link_chain"] = &trigger_delete_link_chain;
+    trigger_funcs["trigger_slide"] = &trigger_slide;
+    trigger_funcs["trigger_dooropen"] = &trigger_dooropen;
+    trigger_funcs["geo_mover"] = &scripts\sp\geo_mover::trigger_moveto;
+    trigger_funcs["out_of_bounds"] = &trigger_outofbounds;
+    trigger_funcs["no_crouch_or_prone"] = &trigger_no_crouch_or_prone;
+    trigger_funcs["no_prone"] = &trigger_no_prone;
+    return trigger_funcs;
 }
 
 // Namespace trigger / scripts\sp\trigger
@@ -170,7 +170,7 @@ function init_script_triggers() {
     scripts\sp\audio::init_audio();
     array_delete(getentarray("trigger_multiple_softlanding", "classname"));
     var_b65f27b4ba84b114 = get_load_trigger_classes();
-    var_6ae9f8df81efa2d7 = get_load_trigger_funcs();
+    trigger_funcs = get_load_trigger_funcs();
     foreach (function in var_b65f27b4ba84b114) {
         triggers = getentarray(classname, "classname");
         array_levelthread(triggers, function);
@@ -234,8 +234,8 @@ function init_script_triggers() {
             }
             if (isdefined(trigger.targetname)) {
                 targetname = trigger.targetname;
-                if (isdefined(var_6ae9f8df81efa2d7[targetname])) {
-                    level thread [[ var_6ae9f8df81efa2d7[targetname] ]](trigger);
+                if (isdefined(trigger_funcs[targetname])) {
+                    level thread [[ trigger_funcs[targetname] ]](trigger);
                 }
             }
         }
@@ -274,18 +274,18 @@ function trigger_createart_transient(trigger) {
         while (!is_transient_createart_enabled()) {
             wait 1;
         }
-        var_aee9fb3bdd0f696f = "<dev string:x9a>";
-        var_b5ac87cfbe5dfa41 = [];
+        current_trans = "<dev string:x9a>";
+        all_trans = [];
         foreach (trigger in level.var_66f10e73bb798144) {
             array = strtok(trigger.script_transient, "<dev string:x9b>");
             foreach (var_c16e2df6644cd964 in array) {
                 exists = 0;
-                if (!array_contains(var_b5ac87cfbe5dfa41, var_c16e2df6644cd964)) {
-                    var_b5ac87cfbe5dfa41[var_b5ac87cfbe5dfa41.size] = var_c16e2df6644cd964;
+                if (!array_contains(all_trans, var_c16e2df6644cd964)) {
+                    all_trans[all_trans.size] = var_c16e2df6644cd964;
                 }
             }
         }
-        var_52c649ec5176fd8 = var_aee9fb3bdd0f696f;
+        new_trans = current_trans;
         while (true) {
             wait 1;
             if (!is_transient_createart_enabled()) {
@@ -293,31 +293,31 @@ function trigger_createart_transient(trigger) {
             }
             foreach (trigger in level.var_66f10e73bb798144) {
                 if (level.player istouching(trigger)) {
-                    var_52c649ec5176fd8 = trigger.script_transient;
+                    new_trans = trigger.script_transient;
                     break;
                 }
             }
-            if (var_aee9fb3bdd0f696f != var_52c649ec5176fd8) {
-                var_425f65a1f40a7a1f = [];
-                var_d5a1a3b72e4bf850 = [];
-                var_686fd3960ce92c66 = strtok(var_52c649ec5176fd8, "<dev string:x9b>");
-                foreach (str in var_b5ac87cfbe5dfa41) {
+            if (current_trans != new_trans) {
+                load_array = [];
+                unload_array = [];
+                var_686fd3960ce92c66 = strtok(new_trans, "<dev string:x9b>");
+                foreach (str in all_trans) {
                     if (array_contains(var_686fd3960ce92c66, str)) {
-                        var_425f65a1f40a7a1f[var_425f65a1f40a7a1f.size] = str;
+                        load_array[load_array.size] = str;
                         continue;
                     }
-                    var_d5a1a3b72e4bf850[var_d5a1a3b72e4bf850.size] = str;
+                    unload_array[unload_array.size] = str;
                 }
-                if (var_aee9fb3bdd0f696f == "<dev string:x9a>") {
+                if (current_trans == "<dev string:x9a>") {
                     unloadalltransients();
                 }
-                if (var_d5a1a3b72e4bf850.size > 0) {
-                    transient_unload_array(var_d5a1a3b72e4bf850);
+                if (unload_array.size > 0) {
+                    transient_unload_array(unload_array);
                 }
-                foreach (trans in var_425f65a1f40a7a1f) {
+                foreach (trans in load_array) {
                     transient_load(trans);
                 }
-                var_aee9fb3bdd0f696f = var_52c649ec5176fd8;
+                current_trans = new_trans;
             }
         }
     }
@@ -354,8 +354,8 @@ function trigger_multiple_transient(trigger) {
     #/
     var_948c52243a58121a = undefined;
     var_681b77da216575ef = undefined;
-    var_928edeeda9d326ce = undefined;
-    var_a4b124a0c6ee69e9 = 0;
+    load_set = undefined;
+    unload_set = 0;
     vis = undefined;
     invis = undefined;
     if (isdefined(trigger.script_transient)) {
@@ -365,10 +365,10 @@ function trigger_multiple_transient(trigger) {
         var_681b77da216575ef = strtok(trigger.script_transient_unload, " ");
     }
     if (isdefined(trigger.script_transient_set)) {
-        var_928edeeda9d326ce = trigger.script_transient_set;
+        load_set = trigger.script_transient_set;
     }
     if (isdefined(trigger.script_transient_unload_set)) {
-        var_a4b124a0c6ee69e9 = 1;
+        unload_set = 1;
     }
     if (isdefined(trigger.var_6803211c32618486)) {
         vis = strtok(trigger.var_6803211c32618486, " ");
@@ -401,10 +401,10 @@ function trigger_multiple_transient(trigger) {
         if (isdefined(invis)) {
             function_7dcc5e04ab79399b(invis);
         }
-        if (isdefined(var_928edeeda9d326ce)) {
-            switchtransientset(var_928edeeda9d326ce);
+        if (isdefined(load_set)) {
+            switchtransientset(load_set);
         }
-        if (istrue(var_a4b124a0c6ee69e9)) {
+        if (istrue(unload_set)) {
             switchtransientset("none");
         }
     }
@@ -683,8 +683,8 @@ function trigger_physics(trigger) {
     assertex(isdefined(trigger.target), "Trigger_physics at " + trigger.origin + " has no target for physics.");
     ents = [];
     structs = getstructarray(trigger.target, "targetname");
-    var_6c12b33f337303ba = getentarray(trigger.target, "targetname");
-    foreach (org in var_6c12b33f337303ba) {
+    orgs = getentarray(trigger.target, "targetname");
+    foreach (org in orgs) {
         struct = spawnstruct();
         struct.origin = org.origin;
         struct.script_parameters = org.script_parameters;
@@ -838,10 +838,10 @@ function get_trigger_targs() {
     target_origin = undefined;
     if (isdefined(self.target)) {
         targets = getentarray(self.target, "targetname");
-        var_6c12b33f337303ba = [];
+        orgs = [];
         foreach (target in targets) {
             if (target.classname == "script_origin" || target.classname == "script_origin_mini") {
-                var_6c12b33f337303ba[var_6c12b33f337303ba.size] = target;
+                orgs[orgs.size] = target;
             }
             if (issubstr(target.classname, "trigger")) {
                 triggers[triggers.size] = target;
@@ -849,11 +849,11 @@ function get_trigger_targs() {
         }
         targets = getstructarray(self.target, "targetname");
         foreach (target in targets) {
-            var_6c12b33f337303ba[var_6c12b33f337303ba.size] = target;
+            orgs[orgs.size] = target;
         }
-        assertex(var_6c12b33f337303ba.size < 2, "Trigger at " + self.origin + " targets multiple script origins");
-        if (var_6c12b33f337303ba.size == 1) {
-            org = var_6c12b33f337303ba[0];
+        assertex(orgs.size < 2, "Trigger at " + self.origin + " targets multiple script origins");
+        if (orgs.size == 1) {
+            org = orgs[0];
             target_origin = org.origin;
             if (isdefined(org.code_classname)) {
                 org delete();
@@ -894,17 +894,17 @@ function trigger_looking(trigger) {
 // Checksum 0x0, Offset: 0x2f5a
 // Size: 0x327
 function trigger_lookat_think(trigger, var_5e9c6d43ce0d5f51) {
-    var_6ed26b95a228bf7c = 0.78;
+    success_dot = 0.78;
     if (isdefined(trigger.script_dot)) {
-        var_6ed26b95a228bf7c = trigger.script_dot;
-        assertex(var_6ed26b95a228bf7c <= 1, "Script_dot should be between 0 and 1");
+        success_dot = trigger.script_dot;
+        assertex(success_dot <= 1, "Script_dot should be between 0 and 1");
     }
     array = trigger get_trigger_targs();
     triggers = array["triggers"];
     target_origin = array["target_origin"];
-    var_5d4f5564be97748a = isdefined(trigger.script_flag) || isdefined(trigger.script_noteworthy);
+    has_flag = isdefined(trigger.script_flag) || isdefined(trigger.script_noteworthy);
     flagname = undefined;
-    if (var_5d4f5564be97748a) {
+    if (has_flag) {
         flagname = trigger get_trigger_flag();
         if (!isdefined(level.flag[flagname])) {
             flag_init(flagname);
@@ -912,33 +912,33 @@ function trigger_lookat_think(trigger, var_5e9c6d43ce0d5f51) {
     } else if (!triggers.size) {
         assertex(isdefined(trigger.script_flag) || isdefined(trigger.script_noteworthy), "Trigger_lookat at " + trigger.origin + " has no script_flag! The script_flag is used as a flag that gets set when the trigger is activated.");
     }
-    if (var_5e9c6d43ce0d5f51 && var_5d4f5564be97748a) {
+    if (var_5e9c6d43ce0d5f51 && has_flag) {
         level endon(flagname);
     }
     trigger endon("death");
-    var_7761ed00c96773cb = 1;
+    do_sighttrace = 1;
     if (isdefined(trigger.script_nosight)) {
-        var_7761ed00c96773cb = trigger.script_nosight;
+        do_sighttrace = trigger.script_nosight;
     }
     duration = 0;
     if (isdefined(trigger.script_duration)) {
         duration = trigger.script_duration;
     }
     debounce = 0.05;
-    if (var_7761ed00c96773cb) {
+    if (do_sighttrace) {
         debounce = 0.5;
     }
     for (;;) {
-        if (var_5d4f5564be97748a) {
+        if (has_flag) {
             flag_clear(flagname);
         }
         trigger waittill("trigger", other);
         assertex(isplayer(other), "trigger_lookat currently only supports looking from the player");
-        var_2052eca56b4dbf27 = [];
+        touching_trigger = [];
         time_elapsed = 0;
         while (other istouching(trigger)) {
             player_eye = other geteye();
-            if (var_7761ed00c96773cb) {
+            if (do_sighttrace) {
                 var_3b986839d9525d92 = 0;
                 if (isdefined(level.var_76be4c1d6bd7dbd9)) {
                     var_3b986839d9525d92 = scripts\engine\trace::ray_trace_passed(player_eye, target_origin, level.player, level.var_76be4c1d6bd7dbd9);
@@ -947,7 +947,7 @@ function trigger_lookat_think(trigger, var_5e9c6d43ce0d5f51) {
                 }
                 if (!var_3b986839d9525d92) {
                     time_elapsed = 0;
-                    if (var_5d4f5564be97748a) {
+                    if (has_flag) {
                         flag_clear(flagname);
                     }
                     wait debounce;
@@ -958,11 +958,11 @@ function trigger_lookat_think(trigger, var_5e9c6d43ce0d5f51) {
             player_angles = other getplayerangles();
             player_forward = anglestoforward(player_angles);
             dot = vectordot(player_forward, normal);
-            if (dot >= var_6ed26b95a228bf7c) {
+            if (dot >= success_dot) {
                 time_elapsed += debounce;
                 if (time_elapsed >= duration) {
                     array_thread(triggers, &send_notify, "trigger");
-                    if (var_5d4f5564be97748a) {
+                    if (has_flag) {
                         flag_set(flagname, other);
                     }
                     if (var_5e9c6d43ce0d5f51) {
@@ -972,7 +972,7 @@ function trigger_lookat_think(trigger, var_5e9c6d43ce0d5f51) {
                 }
             } else {
                 time_elapsed = 0;
-                if (var_5d4f5564be97748a) {
+                if (has_flag) {
                     flag_clear(flagname);
                 }
             }
@@ -991,9 +991,9 @@ function trigger_cansee(trigger) {
     array = trigger get_trigger_targs();
     triggers = array["triggers"];
     target_origin = array["target_origin"];
-    var_5d4f5564be97748a = isdefined(trigger.script_flag) || isdefined(trigger.script_noteworthy);
+    has_flag = isdefined(trigger.script_flag) || isdefined(trigger.script_noteworthy);
     flagname = undefined;
-    if (var_5d4f5564be97748a) {
+    if (has_flag) {
         flagname = trigger get_trigger_flag();
         if (!isdefined(level.flag[flagname])) {
             flag_init(flagname);
@@ -1011,20 +1011,20 @@ function trigger_cansee(trigger) {
     offsets[offsets.size] = (0, range * -1, 0);
     offsets[offsets.size] = (0, 0, range);
     for (;;) {
-        if (var_5d4f5564be97748a) {
+        if (has_flag) {
             flag_clear(flagname);
         }
         trigger waittill("trigger", other);
         assertex(isplayer(other), "trigger_cansee currently only supports looking from the player");
         while (level.player istouching(trigger)) {
             if (!other cantraceto(target_origin, offsets)) {
-                if (var_5d4f5564be97748a) {
+                if (has_flag) {
                     flag_clear(flagname);
                 }
                 wait 0.1;
                 continue;
             }
-            if (var_5d4f5564be97748a) {
+            if (has_flag) {
                 flag_set(flagname);
             }
             array_thread(triggers, &send_notify, "trigger");
@@ -1055,14 +1055,14 @@ function trigger_unlock(trigger) {
     if (isdefined(trigger.script_noteworthy)) {
         noteworthy = trigger.script_noteworthy;
     }
-    var_5383307d8828d4fc = getentarray(trigger.target, "targetname");
+    target_triggers = getentarray(trigger.target, "targetname");
     trigger thread trigger_unlock_death(trigger.target);
     for (;;) {
-        array_thread(var_5383307d8828d4fc, &trigger_off);
+        array_thread(target_triggers, &trigger_off);
         trigger waittill("trigger");
-        array_thread(var_5383307d8828d4fc, &trigger_on);
-        wait_for_an_unlocked_trigger(var_5383307d8828d4fc, noteworthy);
-        array_notify(var_5383307d8828d4fc, "relock");
+        array_thread(target_triggers, &trigger_on);
+        wait_for_an_unlocked_trigger(target_triggers, noteworthy);
+        array_notify(target_triggers, "relock");
     }
 }
 
@@ -1072,8 +1072,8 @@ function trigger_unlock(trigger) {
 // Size: 0x36
 function trigger_unlock_death(target) {
     self waittill("death");
-    var_5383307d8828d4fc = getentarray(target, "targetname");
-    array_thread(var_5383307d8828d4fc, &trigger_off);
+    target_triggers = getentarray(target, "targetname");
+    array_thread(target_triggers, &trigger_off);
 }
 
 // Namespace trigger / scripts\sp\trigger
@@ -1646,7 +1646,7 @@ function trigger_multiple_kleenex(trigger) {
 // Size: 0xbb
 function trigger_stealth_shadow(trigger) {
     trigger endon("death");
-    var_aa4265eeb046cbbf = "stealth_in_shadow";
+    the_flag = "stealth_in_shadow";
     if (!isdefined(level.trigger_stealth_shadow)) {
         level.trigger_stealth_shadow = [];
     }
@@ -1654,14 +1654,14 @@ function trigger_stealth_shadow(trigger) {
     function_b0d778fb201fea8d(trigger);
     while (true) {
         trigger waittill("trigger", other);
-        if (!other ent_flag_exist(var_aa4265eeb046cbbf)) {
-            println("<dev string:x181>" + var_aa4265eeb046cbbf + "<dev string:x184>" + other getentnum() + "<dev string:x1a4>");
+        if (!other ent_flag_exist(the_flag)) {
+            println("<dev string:x181>" + the_flag + "<dev string:x184>" + other getentnum() + "<dev string:x1a4>");
             continue;
         }
-        if (other ent_flag(var_aa4265eeb046cbbf)) {
+        if (other ent_flag(the_flag)) {
             continue;
         }
-        other thread in_shadow_thread(trigger, var_aa4265eeb046cbbf);
+        other thread in_shadow_thread(trigger, the_flag);
     }
 }
 
@@ -1669,13 +1669,13 @@ function trigger_stealth_shadow(trigger) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4894
 // Size: 0x43
-function in_shadow_thread(volume, var_aa4265eeb046cbbf) {
+function in_shadow_thread(volume, the_flag) {
     self endon("death");
-    scripts\stealth\player::function_e403865f115834a8(var_aa4265eeb046cbbf);
+    scripts\stealth\player::function_e403865f115834a8(the_flag);
     while (isdefined(volume) && self istouching(volume)) {
         wait 0.05;
     }
-    scripts\stealth\player::function_3718fc282393305(var_aa4265eeb046cbbf);
+    scripts\stealth\player::function_3718fc282393305(the_flag);
 }
 
 // Namespace trigger / scripts\sp\trigger
@@ -1687,8 +1687,8 @@ function trigger_fire(trigger) {
     if (isdefined(trigger.trigger_fire_endon)) {
         trigger endon(trigger.trigger_fire_endon);
     }
-    var_d9dd8a25f0a92ba6 = 1;
-    var_a2aa212298820431 = 5;
+    default_damage = 1;
+    dam_multiplier = 5;
     final_damage = 0;
     if (!isdefined(trigger.script_delay_min) && !isdefined(trigger.script_delay_max)) {
         trigger.script_delay_min = 0.05;
@@ -1698,20 +1698,20 @@ function trigger_fire(trigger) {
         trigger.script_delay = trigger.script_delay_min;
     }
     if (isdefined(trigger.script_damage)) {
-        var_d9dd8a25f0a92ba6 = trigger.script_damage;
+        default_damage = trigger.script_damage;
     }
     while (true) {
         trigger waittill("trigger", victim);
         center_point = trigger.origin;
         if (isplayer(victim)) {
-            final_damage = var_d9dd8a25f0a92ba6;
+            final_damage = default_damage;
             if (trigger.classname == "trigger_radius_fire") {
                 if (isdefined(trigger.script_radius)) {
                     if (distance2dsquared(victim.origin, trigger.origin) <= squared(trigger.script_radius)) {
                         if (isdefined(trigger.script_multiplier) && isnumber(trigger.script_multiplier)) {
-                            var_a2aa212298820431 = trigger.script_multiplier;
+                            dam_multiplier = trigger.script_multiplier;
                         }
-                        final_damage *= var_a2aa212298820431;
+                        final_damage *= dam_multiplier;
                     }
                 }
             } else if (isdefined(trigger.target)) {
@@ -1720,9 +1720,9 @@ function trigger_fire(trigger) {
                 if (isdefined(struct.script_radius)) {
                     if (distance2dsquared(victim.origin, struct.origin) <= squared(struct.script_radius)) {
                         if (isdefined(trigger.script_multiplier) && isnumber(trigger.script_multiplier)) {
-                            var_a2aa212298820431 = trigger.script_multiplier;
+                            dam_multiplier = trigger.script_multiplier;
                         }
-                        final_damage *= var_a2aa212298820431;
+                        final_damage *= dam_multiplier;
                     }
                 }
             }

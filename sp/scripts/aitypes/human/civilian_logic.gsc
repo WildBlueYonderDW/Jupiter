@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\stealth.gsc;
+#using scripts\aitypes\bt_util;
+#using scripts\aitypes\stealth;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\engine\utility;
 
-#namespace namespace_75a3a4077ae1a1f5;
+#namespace civilian_logic;
 
-// Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
+// Namespace civilian_logic / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xf7
 // Size: 0x113
@@ -32,7 +32,7 @@ function initcivilian(taskid) {
     return anim.success;
 }
 
-// Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
+// Namespace civilian_logic / scripts\aitypes\human\civilian_logic
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x213
 // Size: 0x2c
@@ -43,7 +43,7 @@ function setstealthstate_neutral(statename, e) {
     return scripts\aitypes\stealth::function_20bf793de5175709(statename, e);
 }
 
-// Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
+// Namespace civilian_logic / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x248
 // Size: 0x23
@@ -53,7 +53,7 @@ function function_216b6a27f343c39b(taskid) {
     return anim.success;
 }
 
-// Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
+// Namespace civilian_logic / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x274
 // Size: 0x6d
@@ -71,7 +71,7 @@ function function_f10a50a61d990568(taskid) {
     }
 }
 
-// Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
+// Namespace civilian_logic / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e9
 // Size: 0x16
@@ -79,7 +79,7 @@ function function_6e84e4404795d5e9(taskid) {
     iprintlnbold("Terminating Interaction");
 }
 
-// Namespace namespace_75a3a4077ae1a1f5 / scripts\aitypes\human\civilian_logic
+// Namespace civilian_logic / scripts\aitypes\human\civilian_logic
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x307
 // Size: 0x1c

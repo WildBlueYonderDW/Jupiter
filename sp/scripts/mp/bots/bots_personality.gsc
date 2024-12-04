@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_loadout.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_loadout;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\utility\entity;
 
 #namespace bots_personality;
 
@@ -19,8 +19,8 @@ function setup_personalities() {
     level.bot_personality["active"][1] = "cqb";
     level.bot_personality["stationary"][0] = "camper";
     level.bot_personality_type = [];
-    foreach (var_cccf318246ae77dd in level.bot_personality) {
-        foreach (personality in var_cccf318246ae77dd) {
+    foreach (personality_array in level.bot_personality) {
+        foreach (personality in personality_array) {
             level.bot_personality_type[personality] = index;
             level.bot_personality_list[level.bot_personality_list.size] = personality;
         }
@@ -73,9 +73,9 @@ function bot_balance_personality() {
     var_55d47d98f8988a2d = getarraykeys(level.bot_personality_types_desired);
     perscounts = [];
     var_1560f7b587190cf0 = [];
-    foreach (personality_type, var_cccf318246ae77dd in level.bot_personality) {
+    foreach (personality_type, personality_array in level.bot_personality) {
         var_1560f7b587190cf0[personality_type] = 0;
-        foreach (personality in var_cccf318246ae77dd) {
+        foreach (personality in personality_array) {
             perscounts[personality] = 0;
         }
     }

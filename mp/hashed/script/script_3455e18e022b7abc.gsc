@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_6df6604a74a7a9c7;
 #using script_67055b3ff4918256;
+#using script_6df6604a74a7a9c7;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_9499d190be9a2ad3;
 
@@ -23,8 +23,8 @@ function init(door, index) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f4
 // Size: 0x2b
-function function_e8fc44296f4c9482(var_a264a70d347ae9f6, index) {
-    if (var_a264a70d347ae9f6) {
+function digit_activate(should_activate, index) {
+    if (should_activate) {
         thread digit_spawn(index);
         return;
     }
@@ -36,8 +36,8 @@ function function_e8fc44296f4c9482(var_a264a70d347ae9f6, index) {
 // Checksum 0x0, Offset: 0x227
 // Size: 0x109
 function digit_spawn(index) {
-    var_cf8d34375a2ddb0a = function_6ab8997a6d33d00d(index);
-    self.plate = spawn_model(function_c3e078f287496cf7(index), self.origin, self.angles + var_cf8d34375a2ddb0a);
+    angle_adjust = function_6ab8997a6d33d00d(index);
+    self.plate = spawn_model(function_c3e078f287496cf7(index), self.origin, self.angles + angle_adjust);
     self.plate.index = index;
     forward = anglestoup(self.angles) * -1;
     self.scriptable = spawnscriptable("ob_combo_lock_entry", self.origin + forward * 1, self.plate.angles * -1);

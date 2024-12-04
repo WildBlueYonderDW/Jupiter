@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
 #using script_429c2a03090c1ea1;
-#using script_73926eaf280b0b75;
 #using script_554830d27078277d;
 #using script_58682e6578ce0515;
-#using script_686729055b66c6e4;
 #using script_5a4a5d9ba343ff8f;
-#using scripts\cp_mp\dragonsbreath.gsc;
-#using scripts\common\vehicle.gsc;
+#using script_686729055b66c6e4;
+#using script_73926eaf280b0b75;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\dragonsbreath;
+#using scripts\engine\utility;
 
 #namespace zombie_damage;
 
@@ -120,7 +120,7 @@ function function_6a3d1a2884883a23(dmg_struct) {
         tick = function_32b17fc3eff81e0a(dmg_struct.objweapon);
         switch (statuseffecttype) {
         case #"hash_23f2c68a2fc41281":
-            function_2e4d3c67e63f83ac(duration);
+            stun_ai(duration);
             break;
         case #"hash_e8f0758a10ec7618":
             slow("weapon", tick, duration, dmg_struct.eattacker);
@@ -134,7 +134,7 @@ function function_6a3d1a2884883a23(dmg_struct) {
                 damage_percent = 0.2;
                 tick = getdvarint(@"hash_6236ca9688ad6f2a", 0);
                 if (isplayer(dmg_struct.eattacker)) {
-                    var_f10d0c4ca5eccac9 = 1;
+                    incendiary_rounds = 1;
                     rarity = dmg_struct.eattacker get_rarity(dmg_struct.objweapon);
                     var_3d400a1d02a80981 = function_d64f648b8a57d3d8(dmg_struct.objweapon, dmg_struct.smeansofdeath, rarity);
                     idamage = dmg_struct.idamage * var_3d400a1d02a80981;
@@ -142,7 +142,7 @@ function function_6a3d1a2884883a23(dmg_struct) {
                     idamage *= var_4361f85b93d6dfc3;
                 }
             }
-            burn(duration, damage_percent, tick, dmg_struct.eattacker, undefined, undefined, dmg_struct.einflictor, var_f10d0c4ca5eccac9, idamage);
+            burn(duration, damage_percent, tick, dmg_struct.eattacker, undefined, undefined, dmg_struct.einflictor, incendiary_rounds, idamage);
             break;
         }
     }

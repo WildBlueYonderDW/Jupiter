@@ -1,10 +1,10 @@
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_293ba44c408fef1;
-#using scripts\mp\killstreaks\killstreaks.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_e196770be001157d;
 
@@ -13,7 +13,7 @@
 // Checksum 0x0, Offset: 0x4c2
 // Size: 0x2d7
 function autoexec main() {
-    if (function_8cc09267ba72c7f7() && getdvarint(@"hash_e0c96c2e3d8efa29", 0) == 1) {
+    if (isMutationGameMode() && getdvarint(@"hash_e0c96c2e3d8efa29", 0) == 1) {
         function_4862ad097a85e6b8(1, 38187, 780);
         function_4862ad097a85e6b8(3, 38188, 1200);
         function_4862ad097a85e6b8(2, 38187, 6250);
@@ -114,7 +114,7 @@ function function_539593ba238cc26c() {
         progressdata = var_57ad1dc40b3000d[1];
         achievementid = var_57ad1dc40b3000d[0];
         player function_7fb91ca0ab6978c0(achievementid, progressdata);
-        if (function_6c88a48a9e942c3d()) {
+        if (isMutationGameModeZombie()) {
             mutationModeGiveEarnedPerks();
         }
     }
@@ -186,7 +186,7 @@ function packAndSendPerkInfoBits() {
 // Checksum 0x0, Offset: 0xcb3
 // Size: 0x77
 function mutationModeGiveEarnedPerks() {
-    if (isdefined(self.var_212091c46501637b) && function_6c88a48a9e942c3d()) {
+    if (isdefined(self.var_212091c46501637b) && isMutationGameModeZombie()) {
         foreach (perk in self.var_212091c46501637b) {
             if (!_hasperk(perk)) {
                 giveperk(perk);

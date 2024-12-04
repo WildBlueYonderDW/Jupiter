@@ -1,42 +1,42 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\gametypes\arena.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\parachute.gsc;
 #using script_3bdadfff7554ceba;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\gametypes\bradley_spawner.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\damage.gsc;
 #using script_6a8ec730b2bfa844;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\utility\debug.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\damage;
+#using scripts\mp\events;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\arena;
+#using scripts\mp\gametypes\bradley_spawner;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\spectating;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\teams;
 
 #namespace xfire;
 
@@ -45,7 +45,7 @@
 // Checksum 0x0, Offset: 0x10ff
 // Size: 0x3c9
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -85,7 +85,7 @@ function main() {
     game["dialog"]["gametype"] = "dx_mp_mcut_mode_t141_name";
     if (scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924()) {
         game["dialog"]["gametype"] = "hc_" + game["dialog"]["gametype"];
-    } else if (getdvarint(@"hash_c00e244ea59d530e")) {
+    } else if (getdvarint(@"camera_thirdperson")) {
         game["dialog"]["gametype"] = "thirdp_" + game["dialog"]["gametype"];
     }
     game["dialog"]["boost"] = "iw9_mtdm_mode_uktl_bost";

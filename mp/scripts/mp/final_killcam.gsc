@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\potg.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\killcam.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\utility\stats.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\flags;
+#using scripts\mp\killcam;
+#using scripts\mp\playerlogic;
+#using scripts\mp\potg;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
 
 #namespace final_killcam;
 

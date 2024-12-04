@@ -1,15 +1,15 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\anim_scene.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using script_18a73a64992dd07d;
 #using script_166b4f052da169a7;
+#using script_18a73a64992dd07d;
 #using script_2669878cf5a1b6bc;
+#using scripts\asm\asm;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\anim_scene;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace ai_flare;
 
@@ -38,7 +38,7 @@ function run_to_and_launch_flare(launcher, var_68ee057779a106c1) {
     launcher.fired = 0;
     thread handle_ai_launcher_death(launcher);
     self.going_to_object = launcher;
-    var_327190e5347a2645 = self.goalradius;
+    old_radius = self.goalradius;
     utility::demeanor_override("sprint");
     self.never_kill_off_old = self.never_kill_off;
     self.never_kill_off = 1;
@@ -48,7 +48,7 @@ function run_to_and_launch_flare(launcher, var_68ee057779a106c1) {
     enter_launcher(launcher);
     fire_launcher(launcher);
     exit_launcher(launcher);
-    self.goalradius = var_327190e5347a2645;
+    self.goalradius = old_radius;
     self.going_to_object = undefined;
     if (isdefined(var_68ee057779a106c1)) {
         self.goalradius = 128;
@@ -250,7 +250,7 @@ function launch_illumination_flare(start, end) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x10ce
 // Size: 0x292
-function launch_mortar(start, end, agent, var_c02451ac9545f97d) {
+function launch_mortar(start, end, agent, optional_height) {
     if (!isdefined(start)) {
         start = self gettagorigin("j_shaft_top");
     }
@@ -267,11 +267,11 @@ function launch_mortar(start, end, agent, var_c02451ac9545f97d) {
     mortar show();
     level.mortars = array_add(level.mortars, mortar);
     time = 5;
-    var_c67bc51788c0eb65 = 1200;
-    if (isdefined(var_c02451ac9545f97d)) {
-        var_c67bc51788c0eb65 = var_c02451ac9545f97d;
+    apex_height = 1200;
+    if (isdefined(optional_height)) {
+        apex_height = optional_height;
     }
-    thread movemortar(mortar, start, end, time, var_c67bc51788c0eb65);
+    thread movemortar(mortar, start, end, time, apex_height);
     wait_until_impact(mortar, time);
     if (isdefined(mortar)) {
         stopfxontag(getfx("vfx_mortar_trail"), mortar, "tag_origin");
@@ -337,19 +337,19 @@ function movemortar(model, start, end, time, height) {
     }
     framefrac = 1 / time / 0.05;
     frac = 0;
-    var_e1ec1ade6afdbb7a = undefined;
+    impact_point = undefined;
     while (frac < 1) {
-        if (isdefined(var_e1ec1ade6afdbb7a)) {
+        if (isdefined(impact_point)) {
             if (frac + framefrac < 1) {
-                model.origin = var_e1ec1ade6afdbb7a;
+                model.origin = impact_point;
                 model notify("early_impact");
                 return;
             }
         }
         model.origin = math::get_point_on_parabola(start, end, apex, frac);
-        var_630782b398951805 = frac + framefrac;
-        next_point = math::get_point_on_parabola(start, end, apex, var_630782b398951805);
-        var_e1ec1ade6afdbb7a = check_for_early_impact(model, next_point);
+        next_frac = frac + framefrac;
+        next_point = math::get_point_on_parabola(start, end, apex, next_frac);
+        impact_point = check_for_early_impact(model, next_point);
         model anglemortar();
         /#
             if (istrue(level.mortar_debug)) {
@@ -371,11 +371,11 @@ function movemortar(model, start, end, time, height) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1612
 // Size: 0x79
-function check_for_early_impact(mortar, var_4830b28d31d6219) {
+function check_for_early_impact(mortar, next_loc) {
     collisioncontents = physics_createcontents(["physicscontents_glass", "physicscontents_vehicleclip", "physicscontents_missileclip", "physicscontents_clipshot"]);
-    raytrace = scripts\engine\trace::ray_trace(mortar.origin, var_4830b28d31d6219, mortar, collisioncontents);
+    raytrace = scripts\engine\trace::ray_trace(mortar.origin, next_loc, mortar, collisioncontents);
     if (raytrace["hittype"] != "hittype_none") {
-        return var_4830b28d31d6219;
+        return next_loc;
     }
 }
 
@@ -411,7 +411,7 @@ function handle_ai_launcher_death(launcher) {
 // Size: 0xc7
 function run_to_and_set_alarm(var_deb561f66ca63d05) {
     self endon("death");
-    var_327190e5347a2645 = self.goalradius;
+    old_radius = self.goalradius;
     if (!isdefined(var_deb561f66ca63d05.angles)) {
         var_deb561f66ca63d05.angles = (0, 0, 0);
     }
@@ -422,7 +422,7 @@ function run_to_and_set_alarm(var_deb561f66ca63d05) {
     self.going_to_object = var_deb561f66ca63d05;
     goto_anim_pos(var_deb561f66ca63d05, 1);
     ai_turnon_alarm(alarm_box);
-    self.goalradius = var_327190e5347a2645;
+    self.goalradius = old_radius;
     self.going_to_object = undefined;
     self.script_radius = self.goalradius;
     clear_custom_anim();
@@ -509,9 +509,9 @@ function toggle_alarm(alarm_box) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x19e4
 // Size: 0x126
-function attract_agent_to_alarm(var_268a5232ca0d0c8f, alarm_box) {
-    var_268a5232ca0d0c8f endon("stop_attracting");
-    mortar = getclosest(var_268a5232ca0d0c8f.origin, getentarray("ai_flare", "targetname"), 512);
+function attract_agent_to_alarm(attract_pos, alarm_box) {
+    attract_pos endon("stop_attracting");
+    mortar = getclosest(attract_pos.origin, getentarray("ai_flare", "targetname"), 512);
     if (isdefined(mortar)) {
         mortar.attracting = 0;
         mortar.fired = 0;
@@ -530,9 +530,9 @@ function attract_agent_to_alarm(var_268a5232ca0d0c8f, alarm_box) {
                 mortar thread attract_agent_to_mortar(mortar);
                 mortar.attracting = 1;
             }
-            runner = attract_an_agent(var_268a5232ca0d0c8f, 2048);
+            runner = attract_an_agent(attract_pos, 2048);
             if (isdefined(runner)) {
-                runner run_to_and_set_alarm(var_268a5232ca0d0c8f);
+                runner run_to_and_set_alarm(attract_pos);
                 if (!alarm_box.alarm_on) {
                     wait 2;
                 } else {
@@ -548,7 +548,7 @@ function attract_agent_to_alarm(var_268a5232ca0d0c8f, alarm_box) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b12
 // Size: 0xfb
-function attract_agent_to_mortar(mortar, var_68ee057779a106c1, var_921b9d1ab6394420) {
+function attract_agent_to_mortar(mortar, var_68ee057779a106c1, radius_override) {
     mortar endon("stop_attracting");
     while (true) {
         runner = undefined;
@@ -561,8 +561,8 @@ function attract_agent_to_mortar(mortar, var_68ee057779a106c1, var_921b9d1ab6394
             }
             mortar.operator = undefined;
             rad = 1024;
-            if (isdefined(var_921b9d1ab6394420)) {
-                rad = var_921b9d1ab6394420;
+            if (isdefined(radius_override)) {
+                rad = radius_override;
             }
             runner = attract_an_agent(mortar, rad);
         }
@@ -600,42 +600,42 @@ function initialize_alarm_box(var_deb561f66ca63d05, toggle_fx) {
 // Checksum 0x0, Offset: 0x1c89
 // Size: 0x1f2
 function attract_an_agent(object, attract_radius) {
-    var_ccc9f9c05abcfde9 = scripts\mp\mp_agent::getaliveagentsofteam("axis");
-    var_7dd0d3d7980ce362 = !istrue(object.ignoreplayers) && any_player_nearby(object.origin, squared(384));
-    if (!var_ccc9f9c05abcfde9.size || var_7dd0d3d7980ce362) {
+    alive_enemies = scripts\mp\mp_agent::getaliveagentsofteam("axis");
+    players_close = !istrue(object.ignoreplayers) && any_player_nearby(object.origin, squared(384));
+    if (!alive_enemies.size || players_close) {
         return undefined;
     }
-    var_4cf33b57655a86c3 = get_array_of_closest(object.origin, var_ccc9f9c05abcfde9, undefined, 4, attract_radius);
-    for (i = 0; i < var_4cf33b57655a86c3.size; i++) {
-        if (isdefined(var_4cf33b57655a86c3[i].going_to_object)) {
+    closest_enemies = get_array_of_closest(object.origin, alive_enemies, undefined, 4, attract_radius);
+    for (i = 0; i < closest_enemies.size; i++) {
+        if (isdefined(closest_enemies[i].going_to_object)) {
             continue;
         }
-        if (isdefined(var_4cf33b57655a86c3[i].spawnpoint) && isdefined(var_4cf33b57655a86c3[i].spawnpoint.script_aigroup) && var_4cf33b57655a86c3[i].spawnpoint.script_aigroup == "nomortars") {
+        if (isdefined(closest_enemies[i].spawnpoint) && isdefined(closest_enemies[i].spawnpoint.script_aigroup) && closest_enemies[i].spawnpoint.script_aigroup == "nomortars") {
             continue;
         }
-        if (!istrue(var_4cf33b57655a86c3[i].entered_combat)) {
+        if (!istrue(closest_enemies[i].entered_combat)) {
             continue;
         }
-        if (var_4cf33b57655a86c3[i] isjuggernaut()) {
+        if (closest_enemies[i] isjuggernaut()) {
             continue;
         }
-        if (isdefined(var_4cf33b57655a86c3[i].unittype) && var_4cf33b57655a86c3[i].unittype == "suicidebomber") {
+        if (isdefined(closest_enemies[i].unittype) && closest_enemies[i].unittype == "suicidebomber") {
             continue;
         }
-        if (istrue(var_4cf33b57655a86c3[i].playing_skit)) {
+        if (istrue(closest_enemies[i].playing_skit)) {
             continue;
         }
-        if (var_4cf33b57655a86c3[i] namespace_5729d24318b60bcd::is_riding_vehicle()) {
+        if (closest_enemies[i] namespace_5729d24318b60bcd::is_riding_vehicle()) {
             continue;
         }
-        if (istrue(var_4cf33b57655a86c3[i].attempting_teleport)) {
+        if (istrue(closest_enemies[i].attempting_teleport)) {
             continue;
         }
         arcname = undefined;
-        if (isdefined(var_4cf33b57655a86c3[i].animationarchetype)) {
-            arcname = var_4cf33b57655a86c3[i].animationarchetype;
+        if (isdefined(closest_enemies[i].animationarchetype)) {
+            arcname = closest_enemies[i].animationarchetype;
         } else {
-            arcname = var_4cf33b57655a86c3[i].animsetname;
+            arcname = closest_enemies[i].animsetname;
         }
         if (!isdefined(arcname)) {
             continue;
@@ -643,7 +643,7 @@ function attract_an_agent(object, attract_radius) {
         if (arcname != "soldier" && arcname != "soldier_cp") {
             continue;
         }
-        return var_4cf33b57655a86c3[i];
+        return closest_enemies[i];
     }
     return undefined;
 }
@@ -701,15 +701,15 @@ function alarm_fx_on(alarm_box) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2048
 // Size: 0x77
-function run_to_and_plant_bomb(var_de1467ac3ed1d213) {
+function run_to_and_plant_bomb(bomb_ent) {
     self endon("death");
-    var_de1467ac3ed1d213.planted = 0;
-    self.going_to_object = var_de1467ac3ed1d213;
-    var_327190e5347a2645 = self.goalradius;
-    run_to_bomb_location(self, var_de1467ac3ed1d213);
-    plant_bomb(var_de1467ac3ed1d213);
-    var_de1467ac3ed1d213.planted = 1;
-    self.goalradius = var_327190e5347a2645;
+    bomb_ent.planted = 0;
+    self.going_to_object = bomb_ent;
+    old_radius = self.goalradius;
+    run_to_bomb_location(self, bomb_ent);
+    plant_bomb(bomb_ent);
+    bomb_ent.planted = 1;
+    self.goalradius = old_radius;
     self.going_to_object = undefined;
     clear_custom_anim();
 }
@@ -718,11 +718,11 @@ function run_to_and_plant_bomb(var_de1467ac3ed1d213) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x20c7
 // Size: 0xe0
-function run_to_bomb_location(agent, var_de1467ac3ed1d213) {
+function run_to_bomb_location(agent, bomb_ent) {
     animindex = agent scripts\asm\asm::asm_lookupanimfromalias("animscripted", "sdr_plant_bomb");
     xanim = agent scripts\asm\asm::asm_getxanim("animscripted", animindex);
-    org = var_de1467ac3ed1d213 gettagorigin("tag_origin");
-    ang = var_de1467ac3ed1d213 gettagangles("tag_origin");
+    org = bomb_ent gettagorigin("tag_origin");
+    ang = bomb_ent gettagangles("tag_origin");
     pos = spawnstruct();
     pos.origin = getstartorigin(org, ang, xanim);
     pos.angles = getstartangles(org, ang, xanim);
@@ -736,15 +736,15 @@ function run_to_bomb_location(agent, var_de1467ac3ed1d213) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x21af
 // Size: 0x8b
-function plant_bomb(var_de1467ac3ed1d213) {
+function plant_bomb(bomb_ent) {
     charge = spawn("script_model", self.origin);
     charge.angles = self.angles;
     charge setmodel("offhand_wm_c4");
     charge scriptmodelplayanimdeltamotion("wm_equip_c4_attach_c4");
-    var_de1467ac3ed1d213.charge = charge;
-    thread plant_bomb_cleanup_on_death(var_de1467ac3ed1d213, charge);
+    bomb_ent.charge = charge;
+    thread plant_bomb_cleanup_on_death(bomb_ent, charge);
     charge thread show_charge();
-    ai_anim_relative("sdr_plant_bomb", var_de1467ac3ed1d213);
+    ai_anim_relative("sdr_plant_bomb", bomb_ent);
     self notify("bomb_planted");
 }
 
@@ -763,7 +763,7 @@ function show_charge() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2267
 // Size: 0x2e
-function plant_bomb_cleanup_on_death(var_de1467ac3ed1d213, charge) {
+function plant_bomb_cleanup_on_death(bomb_ent, charge) {
     self endon("bomb_planted");
     self waittill("death");
     if (isdefined(charge)) {

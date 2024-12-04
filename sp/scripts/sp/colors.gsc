@@ -1,9 +1,9 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\sp\anim.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
 #namespace colors;
 
@@ -333,10 +333,10 @@ function trigger_issues_orders(color_team, team) {
 // Size: 0x171
 function trigger_delete_target_chain() {
     array = [];
-    var_b28e2d4e6a6557f8[0] = self;
-    while (var_b28e2d4e6a6557f8.size) {
+    current_array[0] = self;
+    while (current_array.size) {
         targeting = [];
-        foreach (current in var_b28e2d4e6a6557f8) {
+        foreach (current in current_array) {
             array[array.size] = current;
             if (!isdefined(current.targetname)) {
                 continue;
@@ -347,12 +347,12 @@ function trigger_delete_target_chain() {
             }
             temp_array = undefined;
         }
-        var_b28e2d4e6a6557f8 = [];
+        current_array = [];
         foreach (target in targeting) {
             if (!isdefined(target.script_color_allies) && !isdefined(target.script_color_axis)) {
                 continue;
             }
-            var_b28e2d4e6a6557f8[var_b28e2d4e6a6557f8.size] = target;
+            current_array[current_array.size] = target;
         }
     }
     array_delete(array);
@@ -401,13 +401,13 @@ function activate_color_code_internal(colorcodes, colors, team, colorcodesbycolo
         level.lastcolorforced[team][color] = level.currentcolorforced[team][color];
         level.currentcolorforced[team][color] = colorcodesbycolorindex[color];
         /#
-            var_a2068b2fde62677c = level.currentcolorforced[team][color];
-            var_536bb401c3e8d846 = isdefined(level.arrays_of_colorcoded_nodes[team][var_a2068b2fde62677c]) || isdefined(level.arrays_of_colorcoded_volumes[team][var_a2068b2fde62677c]);
-            assertex(var_536bb401c3e8d846, "<dev string:x28>" + color + "<dev string:x48>" + team + "<dev string:x65>");
+            color_forced = level.currentcolorforced[team][color];
+            color_defined = isdefined(level.arrays_of_colorcoded_nodes[team][color_forced]) || isdefined(level.arrays_of_colorcoded_volumes[team][color_forced]);
+            assertex(color_defined, "<dev string:x28>" + color + "<dev string:x48>" + team + "<dev string:x65>");
         #/
     }
     ai_array = [];
-    var_3ca16d8a31aa3006 = 0;
+    actually_triggered = 0;
     for (i = 0; i < colorcodes.size; i++) {
         if (same_color_code_as_last_time(team, colors[i])) {
             continue;
@@ -429,10 +429,10 @@ function activate_color_code_internal(colorcodes, colors, team, colorcodesbycolo
         if (!isdefined(level.arrays_of_colorcoded_ai[team][colorcode])) {
             continue;
         }
-        var_3ca16d8a31aa3006 = 1;
+        actually_triggered = 1;
         issue_color_order_to_ai(colorcode, colors[i], team, ai_array[colorcode]);
     }
-    if (var_3ca16d8a31aa3006) {
+    if (actually_triggered) {
         level notify("new_color_trigger", self);
     }
 }
@@ -914,10 +914,10 @@ function use_big_goal_until_goal_is_safe(node, volume) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x296f
 // Size: 0x5d
-function isknownenemyinradius_tmp(node_origin, var_daead71f4fe29e4f) {
+function isknownenemyinradius_tmp(node_origin, safe_radius) {
     ai = getaiarray("axis");
     for (i = 0; i < ai.size; i++) {
-        if (distance2d(ai[i].origin, node_origin) < var_daead71f4fe29e4f) {
+        if (distance2d(ai[i].origin, node_origin) < safe_radius) {
             return true;
         }
     }
@@ -1140,8 +1140,8 @@ function colorislegit(color) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x30ab
 // Size: 0xbf
-function add_volume_to_global_arrays(var_15b3a3397a62e5f3, team) {
-    colorcodes = strtok(var_15b3a3397a62e5f3, " ");
+function add_volume_to_global_arrays(colorcode_string, team) {
+    colorcodes = strtok(colorcode_string, " ");
     colorcodes = array_remove_dupes(colorcodes);
     foreach (colorcode in colorcodes) {
         assert(!isdefined(level.arrays_of_colorcoded_volumes[team][colorcode]), "Multiple info_volumes exist with color code " + colorcode);
@@ -1155,9 +1155,9 @@ function add_volume_to_global_arrays(var_15b3a3397a62e5f3, team) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3172
 // Size: 0xf2
-function add_node_to_global_arrays(var_15b3a3397a62e5f3, team) {
+function add_node_to_global_arrays(colorcode_string, team) {
     self.color_user = undefined;
-    colorcodes = strtok(var_15b3a3397a62e5f3, " ");
+    colorcodes = strtok(colorcode_string, " ");
     colorcodes = array_remove_dupes(colorcodes);
     foreach (colorcode in colorcodes) {
         if (isdefined(level.arrays_of_colorcoded_nodes[team]) && isdefined(level.arrays_of_colorcoded_nodes[team][colorcode])) {
@@ -1255,11 +1255,11 @@ function add_path_node(type) {
 function colornode_spawn_reinforcement(classname, fromcolor) {
     level endon("kill_color_replacements");
     level endon("kill_hidden_reinforcement_waiting");
-    var_bff0e26f729c5356 = spawn_hidden_reinforcement(classname, fromcolor);
+    reinforcement = spawn_hidden_reinforcement(classname, fromcolor);
     if (isdefined(level.friendly_startup_thread)) {
-        var_bff0e26f729c5356 thread [[ level.friendly_startup_thread ]]();
+        reinforcement thread [[ level.friendly_startup_thread ]]();
     }
-    var_bff0e26f729c5356 thread colornode_replace_on_death();
+    reinforcement thread colornode_replace_on_death();
 }
 
 // Namespace colors / scripts\sp\colors

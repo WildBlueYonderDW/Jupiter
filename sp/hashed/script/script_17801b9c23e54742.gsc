@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_a430ebc1c09e1c6;
 
@@ -39,7 +39,7 @@ function main() {
     self attach("head_sp_opforce_shadow_company_armored_sg_1_1", "", 1);
     self.headmodel = "head_sp_opforce_shadow_company_armored_sg_1_1";
     self setclothtype(#"nylon");
-    self function_8abe5a968cc3c220(#"hash_466ad932e56afc50");
+    self function_8abe5a968cc3c220(#"milmedgr");
     self function_1863f51c1339d80f(#"none");
     if (issentient(self)) {
         self sethitlocdamagetable(%"hash_635afa6edffbf00b");

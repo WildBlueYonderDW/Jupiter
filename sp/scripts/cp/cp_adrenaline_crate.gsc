@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_deployablebox.gsc;
-#using scripts\cp\cp_visionsets.gsc;
 #using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\cp\cp_deployablebox;
+#using scripts\cp\cp_visionsets;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_c790bdfd64b3dc5c;
 
@@ -239,7 +239,7 @@ function supportbox_waittill_notify(msg, ent) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xb62
 // Size: 0x3b
-function give_crafted_ammo_crate(var_df071553d0996ff9, player) {
+function give_crafted_ammo_crate(interaction_struct, player) {
     player thread watch_dpad();
     player notify("new_power", "crafted_autosentry");
     set_crafted_inventory_item("crafted_autosentry", &give_crafted_ammo_crate, player);

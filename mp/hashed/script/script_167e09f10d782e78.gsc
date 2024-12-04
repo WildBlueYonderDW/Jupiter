@@ -1,10 +1,10 @@
-#using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots_gametype_br.gsc;
+#using script_22594d942a4f2fa9;
 #using script_40e63dd222434655;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using script_22594d942a4f2fa9;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\bots\bots_util;
 
 #namespace search_threat;
 
@@ -32,7 +32,7 @@ function evaluatescore(bot) {
             continue;
         }
         /#
-            if (getdvar(@"hash_e39c6d129db1722") == "<dev string:x1c>") {
+            if (getdvar(@"bot_notarget") == "<dev string:x1c>") {
                 targetplayer = getentbynum(entnum);
                 if (function_40034c2faf09a87b(targetplayer)) {
                     continue;

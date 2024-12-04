@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\notetrack.gsc;
 #using script_308091d56071a91c;
 #using script_784c8c4f3e5f8686;
-#using scripts\common\values.gsc;
-#using script_663ff1906e9fe70;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\hud_util;
+#using scripts\common\notetrack;
+#using scripts\common\values;
+#using scripts\engine\utility;
 
 #namespace scene;
 

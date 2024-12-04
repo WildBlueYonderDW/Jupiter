@@ -1,7 +1,7 @@
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\utility.gsc;
 #using script_2b4b90647dc1d53d;
-#using scripts\mp\utility\trigger.gsc;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\utility\trigger;
 
 #namespace active_env;
 

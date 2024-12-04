@@ -1,28 +1,28 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\gametypes\wm_utility.gsc;
-#using scripts\common\scene.gsc;
-#using script_634deba174eb64f0;
-#using scripts\mp\flags.gsc;
-#using script_5e4cb718386bf9f7;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
 #using script_187e2c28364e465b;
-#using script_1bf7efeac8beb6f7;
-#using scripts\mp\utility\player.gsc;
 #using script_19c169a442d5975a;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\killstreaks\airstrike.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
+#using script_1bf7efeac8beb6f7;
 #using script_1eddec53abf6e24c;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
+#using script_634deba174eb64f0;
 #using script_7edf952f8921aa6b;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\anim;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airstrike;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\wm_utility;
+#using scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_c913f3ca0a6eff19;
 
@@ -165,8 +165,8 @@ function function_b5e7d60de059a277() {
     var_fb0e23b6defa23b8[0].moverdoesnotkill = 1;
     var_fb0e23b6defa23b8[0] function_7126c9ace48ce815(1);
     var_b6eedaf432feb7e0 moveto(var_b6eedaf432feb7e0.origin + (0, 0, -2000), 0.1);
-    foreach (var_7e24c67d2dafee9d in var_c1e6c16e6f5b263f) {
-        var_7e24c67d2dafee9d.var_c71aed356442f468 = 1;
+    foreach (ent_clip in var_c1e6c16e6f5b263f) {
+        ent_clip.var_c71aed356442f468 = 1;
     }
     scripts\mp\flags::function_1240434f4201ac9d("zone_1" + "_objective_end");
     c4struct = getstruct("zone1_explode", "targetname");
@@ -180,7 +180,7 @@ function function_b5e7d60de059a277() {
     c4 setscriptablepartstate("effects", "explode");
     playfx(getfx("explode_zone1"), c4struct.origin);
     c4 delete();
-    namespace_9f337f9234afd0d3::function_ccd8a337aae472de(var_fb0e23b6defa23b8[0].origin, 300);
+    scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving::function_ccd8a337aae472de(var_fb0e23b6defa23b8[0].origin, 300);
     playsoundatpos(c4struct.origin + (0, 0, 15), "jup_wm_bombsite_exp_trans");
     foreach (var_dea4aff71a1db7b6 in var_c1e6c16e6f5b263f) {
         var_dea4aff71a1db7b6 delete();
@@ -217,7 +217,7 @@ function function_b5e7d60de059a277() {
     scripts\mp\anim::function_3c8f0102ea5254f3(38);
     playfx(getfx("exploder_full_smoke"), (-11738, -24320, 3500));
     spawn_model("jup_military_heavy_lab_device_dmg", (-11738, -24320, 3420), (0, 103.599, 0));
-    namespace_9f337f9234afd0d3::function_ccd8a337aae472de(var_8b95afe6a5b96d2b.origin, 200);
+    scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving::function_ccd8a337aae472de(var_8b95afe6a5b96d2b.origin, 200);
     foreach (var_b68fc41d081120a6 in var_d18450a91f2cd9de) {
         var_b68fc41d081120a6 setscriptablepartstate("exploder", "explodered");
     }
@@ -424,8 +424,8 @@ function function_6ae5fdf1da1acaa9() {
                 wait 1;
                 continue;
             }
-            level thread namespace_d99736a82ac4e63b::function_1877f08d2099d93b();
-            level thread namespace_9f337f9234afd0d3::function_dce86aec5b302384();
+            level thread namespace_d99736a82ac4e63b::radiation_start();
+            level thread scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving::function_dce86aec5b302384();
             var_158ae1c93d9fcf79 = getstruct("<dev string:x44>", "<dev string:x5d>");
             var_f1997dcd52aed3b5 = var_158ae1c93d9fcf79;
             function_c7a87d3f663997c8();
@@ -1540,9 +1540,9 @@ function function_3a437a470ac2a95b() {
                 var_24e1eee4a6f213b7 = getentitylessscriptablearray("<dev string:x1ca>", "<dev string:x5d>");
                 var_633452f052c3d4ba = getscriptablearray("<dev string:x1dd>", "<dev string:x5d>");
                 if (active == 2) {
-                    namespace_9f337f9234afd0d3::function_c8a59331ffa83829(var_3481c88117495d50, var_797f676eac2f5f5d, var_24e1eee4a6f213b7, 1, var_633452f052c3d4ba);
+                    scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving::function_c8a59331ffa83829(var_3481c88117495d50, var_797f676eac2f5f5d, var_24e1eee4a6f213b7, 1, var_633452f052c3d4ba);
                 } else if (active == 1) {
-                    namespace_9f337f9234afd0d3::function_c8a59331ffa83829(var_3481c88117495d50, var_797f676eac2f5f5d, var_24e1eee4a6f213b7, 0.5, var_633452f052c3d4ba);
+                    scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving::function_c8a59331ffa83829(var_3481c88117495d50, var_797f676eac2f5f5d, var_24e1eee4a6f213b7, 0.5, var_633452f052c3d4ba);
                 }
             }
             wait 5;

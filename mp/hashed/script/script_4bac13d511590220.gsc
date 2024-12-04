@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
 #using script_24e4405cf93f20ed;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\common\vehicle_aianim;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\utility;
+#using scripts\vehicle\vehicle_common;
 
 #namespace namespace_a1044864694a4aae;
 

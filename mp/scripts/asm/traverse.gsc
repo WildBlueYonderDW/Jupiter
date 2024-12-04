@@ -1,11 +1,11 @@
-#using scripts\anim\animselector.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\anim\animselector;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace traverse;
 
@@ -512,11 +512,11 @@ function function_bff8ca6cd5006152(asmname, statename, tostatename, params) {
         start_pos = self.traversal_start_node.origin;
     }
     disttonode = distance2d(self.origin, start_pos);
-    var_ff55722c6b260d94 = 120;
+    look_ahead = 120;
     if (isdefined(params)) {
-        var_ff55722c6b260d94 = int(params);
+        look_ahead = int(params);
     }
-    if (disttonode > var_ff55722c6b260d94) {
+    if (disttonode > look_ahead) {
         return false;
     }
     return true;

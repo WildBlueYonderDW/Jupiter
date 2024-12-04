@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
 #using script_3d398e26f3b44ce4;
-#using scripts\code\character.gsc;
-#using xmodelalias\civilian_russian_female_head.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\civilian_russian_female_head;
 
 #namespace namespace_2c6d50e4a84f541a;
 

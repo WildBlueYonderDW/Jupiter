@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility\entity.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_cbb0697de4c5728;
 #using script_25845aca699d038d;
-#using scripts\common\lighting.gsc;
+#using script_cbb0697de4c5728;
+#using scripts\common\lighting;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\cp\utility\entity;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace player;
 
@@ -932,12 +932,12 @@ function setdof_dynamic() {
     dofsettings["geo"].nearblur = getdvarfloat(@"hash_ae45baa306e4ae81", 3.9);
     dofsettings["geo"].farblur = getdvarfloat(@"hash_8bc87003c9fc085e", 2.25);
     dofsettings["interest"] = spawnstruct();
-    dofsettings["interest"].nearstartfactor = getdvarfloat(@"hash_a021d23278c7d20a", 0.01);
-    dofsettings["interest"].nearendfactor = getdvarfloat(@"hash_cdbd913c101a27bf", 0.95);
-    dofsettings["interest"].farstartfactor = getdvarfloat(@"hash_6a3b9b7e711c8173", 1.5);
-    dofsettings["interest"].farendfactor = getdvarfloat(@"hash_5e226882a6c7a446", 2.5);
-    dofsettings["interest"].nearblur = getdvarfloat(@"hash_725177713eaa11f3", 7);
-    dofsettings["interest"].farblur = getdvarfloat(@"hash_d9ee3b42f6373034", 3.5);
+    dofsettings["interest"].nearstartfactor = getdvarfloat(@"dof_nearstart", 0.01);
+    dofsettings["interest"].nearendfactor = getdvarfloat(@"dof_nearend", 0.95);
+    dofsettings["interest"].farstartfactor = getdvarfloat(@"dof_farstart", 1.5);
+    dofsettings["interest"].farendfactor = getdvarfloat(@"dof_farend", 2.5);
+    dofsettings["interest"].nearblur = getdvarfloat(@"dof_nearblur", 7);
+    dofsettings["interest"].farblur = getdvarfloat(@"dof_farblur", 3.5);
     while (true) {
         waitframe();
         usesetting = "geo";
@@ -1473,11 +1473,11 @@ function function_1c0f3b6933eb1c87() {
     flag_wait("player_spawned_with_loadout");
     level.player endon("death");
     level.var_dd9b74bad48ff171 = scripts\engine\trace::function_416688b9ffe933c4();
-    var_b6bf496fb603c238 = array_merge(getentarray("shadow_vol", "targetname"), getentarray("tall_grass_vol", "targetname"));
+    shadow_vols = array_merge(getentarray("shadow_vol", "targetname"), getentarray("tall_grass_vol", "targetname"));
     level.var_1c0f3b6933eb1c87 = 1;
     while (true) {
         player_touching = 0;
-        foreach (vol in var_b6bf496fb603c238) {
+        foreach (vol in shadow_vols) {
             if (level.player istouching(vol)) {
                 player_touching += 1;
             }

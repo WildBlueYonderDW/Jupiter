@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_weapons.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
-#namespace namespace_8f706c13c379523d;
+#namespace cp_thermite;
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b3
 // Size: 0xd6
@@ -28,7 +28,7 @@ function thermite_used(grenade, isgl, var_d4fbc5be3b7d6578) {
     grenade thread thermite_watchstuck(isgl, var_d4fbc5be3b7d6578);
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x291
 // Size: 0x203
@@ -87,7 +87,7 @@ function thermite_watchstuck(isgl, var_d4fbc5be3b7d6578) {
     thread thermite_destroy();
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x49c
 // Size: 0xfc
@@ -116,7 +116,7 @@ function thermite_doradiusdamage(weaponobj) {
     }
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5a0
 // Size: 0x3f
@@ -132,7 +132,7 @@ function thermite_watchwater(grenade) {
     }
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e7
 // Size: 0x91
@@ -149,7 +149,7 @@ function thermite_damagemodifierignorefunc(inflictor, attacker, victim, damage, 
     return false;
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x681
 // Size: 0x9b
@@ -163,7 +163,7 @@ function thermite_watchglstuck() {
     return true;
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x725
 // Size: 0x5d
@@ -176,7 +176,7 @@ function thermite_watchstucktoterrain() {
     self.badplace = createnavbadplacebybounds(self.origin, (125, 125, 125), (0, 0, 0));
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x78a
 // Size: 0x93
@@ -203,7 +203,7 @@ function thermite_linktostuck(stuckto, stuckpart) {
     }
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x825
 // Size: 0x30
@@ -213,7 +213,7 @@ function thermite_watchdisowned() {
     thread thermite_destroy();
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x85d
 // Size: 0x77
@@ -232,7 +232,7 @@ function thermite_destroy(isimmediate) {
     self setscriptablepartstate("effects", "burnEnd", 0);
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8dc
 // Size: 0x56
@@ -248,7 +248,7 @@ function thermite_delete(var_cbf7be4f62a0ddb2) {
     self delete();
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x93a
 // Size: 0x3c
@@ -260,7 +260,7 @@ function thermite_onplayerdamaged(data) {
     return true;
 }
 
-// Namespace namespace_8f706c13c379523d / scripts\cp\equipment\cp_thermite
+// Namespace cp_thermite / scripts\cp\equipment\cp_thermite
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x97f
 // Size: 0x23

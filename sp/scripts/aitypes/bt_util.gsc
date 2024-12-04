@@ -1,4 +1,4 @@
-#using scripts\asm\asm.gsc;
+#using scripts\asm\asm;
 
 #namespace bt_util;
 

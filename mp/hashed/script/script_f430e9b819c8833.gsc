@@ -316,7 +316,7 @@ function bench_strings() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1193
 // Size: 0xf5
-function function_add278ceb4188914() {
+function bench_arrays() {
     println("<dev string:x153>");
     max_iterations = getdvarint(@"hash_939ffa702b7da068", 10000);
     function_63abc2408f9ef4ba("Arrays");
@@ -636,7 +636,7 @@ function benchmark() {
         wait 0.05;
     }
     if (shouldbench("A")) {
-        function_add278ceb4188914();
+        bench_arrays();
         wait 0.05;
     }
     if (shouldbench("B")) {

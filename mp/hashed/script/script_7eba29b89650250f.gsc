@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_72e23080a62e4487;
-#using script_42f4027537fab342;
-#using script_214d58c008016194;
-#using script_47b0fd77895a43e2;
-#using scripts\mp\load.gsc;
 #using script_1311c5c284dd1537;
-#using scripts\mp\compass.gsc;
-#using scripts\mp\animation_suite.gsc;
-#using scripts\mp\equipment\tactical_cover.gsc;
-#using scripts\mp\spawnlogic.gsc;
+#using script_214d58c008016194;
+#using script_42f4027537fab342;
+#using script_47b0fd77895a43e2;
+#using script_72e23080a62e4487;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\anim;
+#using scripts\mp\animation_suite;
+#using scripts\mp\compass;
+#using scripts\mp\equipment\tactical_cover;
+#using scripts\mp\flags;
+#using scripts\mp\load;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\game;
 
 #namespace namespace_6e92158b49896647;
 

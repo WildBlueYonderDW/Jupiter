@@ -1,14 +1,14 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_hacking.gsc;
-#using scripts\cp\cp_hud_message.gsc;
 #using script_41ae4f5ca24216cb;
+#using scripts\common\utility;
+#using scripts\cp\cp_hacking;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
-#namespace namespace_80ef95d242bdd536;
+#namespace cp_hacking;
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x264
 // Size: 0x9d
@@ -26,7 +26,7 @@ function hacking_init() {
     level.hacking_lua_notify_func = &hacking_lua_notify;
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x309
 // Size: 0x16a
@@ -36,7 +36,7 @@ function parsehackingtable(table) {
     }
     row = 0;
     total_time = 0;
-    var_2ddcf2a0afa6bdb = 0;
+    total_meter = 0;
     while (true) {
         index = tablelookupbyrow(table, row, 0);
         if (index == "") {
@@ -48,21 +48,21 @@ function parsehackingtable(table) {
         var_99eaf771a00a585.time = int(tablelookupbyrow(table, row, 1));
         var_99eaf771a00a585.hackingspeed = int(tablelookupbyrow(table, row, 2));
         var_99eaf771a00a585.total = var_99eaf771a00a585.time * var_99eaf771a00a585.hackingspeed;
-        var_2ddcf2a0afa6bdb += var_99eaf771a00a585.total;
+        total_meter += var_99eaf771a00a585.total;
         total_time += var_99eaf771a00a585.time;
-        var_99eaf771a00a585.totalmeter = var_2ddcf2a0afa6bdb;
+        var_99eaf771a00a585.totalmeter = total_meter;
         var_99eaf771a00a585.totaltime = total_time;
         level.hackingtabledata[var_99eaf771a00a585.ref] = var_99eaf771a00a585;
         row++;
     }
     level.hackingtotaltime = total_time;
-    level.hackingtotalmeter = var_2ddcf2a0afa6bdb;
+    level.hackingtotalmeter = total_meter;
     level.hackingtotalsteps = row;
     level.objective_test = 0;
     flag_set("hacking_table_parsed");
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x47b
 // Size: 0xe1
@@ -88,7 +88,7 @@ function hacking_lua_notify() {
     }
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x564
 // Size: 0x5b
@@ -107,7 +107,7 @@ function computer_search_action(value) {
     return omnvar;
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5c8
 // Size: 0x8b
@@ -130,20 +130,20 @@ function computer_result_omnvar(notification) {
     return var_7d20819e53d0eb3;
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x65c
 // Size: 0x3cf
 function hacking_objective_time() {
     level endon("game_ended");
     level notify("cpu_hacking_start");
-    var_1d940aad29a009b2 = level.hackingtotaltime;
+    meter_time = level.hackingtotaltime;
     if (isdefined(level.hack_duration)) {
-        var_1d940aad29a009b2 = level.hack_duration;
+        meter_time = level.hack_duration;
     }
     setomnvar("cpu_hacking_progress", 0);
     starttime = gettime();
-    var_4469e496e26f43ea = 0;
+    hacking_progress = 0;
     lasttime = starttime;
     var_7b5ac39513e1475e = starttime;
     var_bad213c38a81b916 = 0;
@@ -155,7 +155,7 @@ function hacking_objective_time() {
     if (isdefined(level.hackingtabledata[var_bad213c38a81b916].hackingspeed)) {
         hackingspeed = level.hackingtabledata[var_bad213c38a81b916].hackingspeed;
     }
-    displaytime = (var_1d940aad29a009b2 - get_table_time(var_bad213c38a81b916)) / level.hackingtabledata[var_bad213c38a81b916].hackingspeed * 10;
+    displaytime = (meter_time - get_table_time(var_bad213c38a81b916)) / level.hackingtabledata[var_bad213c38a81b916].hackingspeed * 10;
     setomnvar("cpu_hacking_time", int(displaytime));
     setomnvar("cpu_hacking_speed", hackingspeed);
     var_fdaa6e5b6e900b7f = get_section_time(var_bad213c38a81b916);
@@ -166,7 +166,7 @@ function hacking_objective_time() {
                 if (istrue(var_8b0efb5a41ef954d)) {
                     var_8b0efb5a41ef954d = undefined;
                     hackingspeed = level.hackingtabledata[var_bad213c38a81b916].hackingspeed;
-                    displaytime = (var_1d940aad29a009b2 - var_fdaa6e5b6e900b7f) / level.hackingtabledata[var_bad213c38a81b916].hackingspeed * 10;
+                    displaytime = (meter_time - var_fdaa6e5b6e900b7f) / level.hackingtabledata[var_bad213c38a81b916].hackingspeed * 10;
                     setomnvar("cpu_hacking_speed", hackingspeed);
                     setomnvar("cpu_hacking_time", int(displaytime));
                 }
@@ -174,7 +174,7 @@ function hacking_objective_time() {
                     var_bad213c38a81b916 += 1;
                     var_7b5ac39513e1475e = curtime;
                     hackingspeed = level.hackingtabledata[var_bad213c38a81b916].hackingspeed;
-                    displaytime = (var_1d940aad29a009b2 - var_fdaa6e5b6e900b7f) / level.hackingtabledata[var_bad213c38a81b916].hackingspeed * 10;
+                    displaytime = (meter_time - var_fdaa6e5b6e900b7f) / level.hackingtabledata[var_bad213c38a81b916].hackingspeed * 10;
                     var_fdaa6e5b6e900b7f += get_section_time(var_bad213c38a81b916);
                     setomnvar("cpu_hacking_speed", hackingspeed);
                     setomnvar("cpu_hacking_time", int(displaytime));
@@ -203,17 +203,17 @@ function hacking_objective_time() {
             if (isdefined(level.hack_multiplier)) {
                 modifier = level.hack_multiplier;
             }
-            var_4469e496e26f43ea += var_7d3ee4fc53ce2f49 * modifier;
-            if (var_4469e496e26f43ea > 1) {
-                var_4469e496e26f43ea = 1;
+            hacking_progress += var_7d3ee4fc53ce2f49 * modifier;
+            if (hacking_progress > 1) {
+                hacking_progress = 1;
             }
-            level.hack_progress = var_4469e496e26f43ea;
+            level.hack_progress = hacking_progress;
         }
-        setomnvar("cpu_hacking_progress", var_4469e496e26f43ea);
+        setomnvar("cpu_hacking_progress", hacking_progress);
         lasttime = curtime;
-        if (var_4469e496e26f43ea == 1) {
-            var_4469e496e26f43ea = 0;
-            var_4469e496e26f43ea = 1;
+        if (hacking_progress == 1) {
+            hacking_progress = 0;
+            hacking_progress = 1;
             level notify("cpu_hacking_done");
             level thread give_xp_to_all_players_hack();
             level.hack_progress = -1;
@@ -226,7 +226,7 @@ function hacking_objective_time() {
     }
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa33
 // Size: 0x5d
@@ -236,7 +236,7 @@ function give_xp_to_all_players_hack() {
     }
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa98
 // Size: 0x70
@@ -253,7 +253,7 @@ function get_section_time(var_bad213c38a81b916) {
     return var_83edcdda354ac909;
 }
 
-// Namespace namespace_80ef95d242bdd536 / scripts\cp\cp_hacking
+// Namespace cp_hacking / scripts\cp\cp_hacking
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb11
 // Size: 0x3b

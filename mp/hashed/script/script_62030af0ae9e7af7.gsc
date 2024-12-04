@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_41387eecc35b88bf;
-#using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
 #using script_185660037b9236c1;
-#using script_4fdefae8b7bcdf73;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
+#using script_220d0eb95a8fab7d;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\asm\asm.gsc;
+#using script_41387eecc35b88bf;
+#using script_4fdefae8b7bcdf73;
+#using script_7956d56c4922bd1;
+#using scripts\asm\asm;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_fdbfca209b31f6bc;
 
@@ -110,21 +110,21 @@ function private function_eebda6f2e2be18ff(mortar_launcher) {
     var_fefc8f2e6fdb990b = getdvarfloat(@"hash_b54b5f2e0734064f", 1);
     var_aec232bd9fb82e6a = getdvarint(@"hash_a292a66bed2b23bb", 1);
     var_11b5c041ab4ceeb8 = getdvarint(@"hash_59af251c7c9bdf35", 2);
-    mortar_launcher.var_86d9d1df4f53f02b = getdvarfloat(@"hash_c657f0e805ffc01", 400);
-    mortar_launcher.var_347d9d69ea5035cf = isdefined(self.radius) ? float(self.radius) : 1000;
-    mortar_launcher.var_79798f7074f15fdc = isdefined(self.var_79798f7074f15fdc) ? float(self.var_79798f7074f15fdc) : 60;
+    mortar_launcher.disable_distance = getdvarfloat(@"hash_c657f0e805ffc01", 400);
+    mortar_launcher.targeting_radius = isdefined(self.radius) ? float(self.radius) : 1000;
+    mortar_launcher.targeting_angle = isdefined(self.targeting_angle) ? float(self.targeting_angle) : 60;
     mortar_launcher.var_1115d9ebad86e77 = getdvarint(@"hash_28d9cfba843939d9", 3);
     mortar_launcher.var_1957e63417a88722 = getdvarint(@"hash_2b38f7c9167ce130", 0);
-    mortar_launcher.var_ae050c8fc0441f7a = 1;
+    mortar_launcher.current_wait = 1;
     level notify("on_mortar_setup", mortar_launcher);
     while (true) {
         var_a193984f2b0fff84 = getdvarfloat(@"hash_6b1fca9ec135556e");
         if (var_a193984f2b0fff84 > 0) {
-            mortar_launcher.var_79798f7074f15fdc = var_a193984f2b0fff84;
+            mortar_launcher.targeting_angle = var_a193984f2b0fff84;
         }
         var_23271a4be2eb8f2e = getdvarfloat(@"hash_5b711f3e70d1ac28");
         if (var_23271a4be2eb8f2e > 0) {
-            mortar_launcher.var_347d9d69ea5035cf = var_23271a4be2eb8f2e;
+            mortar_launcher.targeting_radius = var_23271a4be2eb8f2e;
         }
         if (!mortar_launcher function_a07d239817137b11()) {
             wait var_fefc8f2e6fdb990b;
@@ -136,11 +136,11 @@ function private function_eebda6f2e2be18ff(mortar_launcher) {
         }
         mortar_launcher function_1958787ecae41e95();
         if (isdefined(mortar_launcher.current_target)) {
-            mortar_launcher.var_ae050c8fc0441f7a = randomintrange(var_aec232bd9fb82e6a, var_11b5c041ab4ceeb8);
+            mortar_launcher.current_wait = randomintrange(var_aec232bd9fb82e6a, var_11b5c041ab4ceeb8);
             function_9724312ee56d42ad(mortar_launcher, 1);
             mortar_launcher.potentialtargets = undefined;
             mortar_launcher.current_target = undefined;
-            wait mortar_launcher.var_ae050c8fc0441f7a;
+            wait mortar_launcher.current_wait;
             continue;
         }
         if (isdefined(mortar_launcher.operator) && isanimscripted(mortar_launcher.operator)) {
@@ -167,20 +167,20 @@ function private function_1958787ecae41e95() {
     if (self.potentialtargets.size == 0) {
         /#
             if (getdvarint(@"hash_5596ff0bf7ea7af6", 0)) {
-                thread scripts\cp_mp\utility\debug_utility::drawangles(self.origin, self.angles, self.var_ae050c8fc0441f7a + 2);
+                thread scripts\cp_mp\utility\debug_utility::drawangles(self.origin, self.angles, self.current_wait + 2);
             }
         #/
         return;
     }
-    var_d26386496b793f40 = self.var_79798f7074f15fdc * 0.5;
+    var_d26386496b793f40 = self.targeting_angle * 0.5;
     /#
         if (getdvarint(@"hash_5596ff0bf7ea7af6", 0)) {
-            thread scripts\cp_mp\utility\debug_utility::drawangles(self.origin, self.angles, self.var_ae050c8fc0441f7a + 2);
+            thread scripts\cp_mp\utility\debug_utility::drawangles(self.origin, self.angles, self.current_wait + 2);
             var_4b9d53c8991cec02 = anglestoforward(self.angles);
             var_683d89a940c23157 = rotatevector(var_4b9d53c8991cec02, (0, var_d26386496b793f40 * -1, 0));
             rightside = rotatevector(var_4b9d53c8991cec02, (0, var_d26386496b793f40, 0));
-            thread draw_line_for_time(self.origin, self.origin + var_683d89a940c23157 * self.var_347d9d69ea5035cf, 1, 0, 0, self.var_ae050c8fc0441f7a + 2);
-            thread draw_line_for_time(self.origin, self.origin + rightside * self.var_347d9d69ea5035cf, 0, 0, 1, self.var_ae050c8fc0441f7a + 2);
+            thread draw_line_for_time(self.origin, self.origin + var_683d89a940c23157 * self.targeting_radius, 1, 0, 0, self.current_wait + 2);
+            thread draw_line_for_time(self.origin, self.origin + rightside * self.targeting_radius, 0, 0, 1, self.current_wait + 2);
         }
     #/
     if (istrue(self.var_1957e63417a88722)) {
@@ -192,7 +192,7 @@ function private function_1958787ecae41e95() {
         if (getdvarint(@"hash_5596ff0bf7ea7af6", 0)) {
             if (isdefined(self.current_target)) {
                 var_d3e70436ec53d0d1 = self.current_target.origin - self.origin;
-                thread draw_line_for_time(self.origin, self.origin + var_d3e70436ec53d0d1, 0, 1, 0, self.var_ae050c8fc0441f7a + 2);
+                thread draw_line_for_time(self.origin, self.origin + var_d3e70436ec53d0d1, 0, 1, 0, self.current_wait + 2);
             }
         }
     #/
@@ -224,13 +224,13 @@ function private function_643c81ad5e753613() {
 function private function_a07d239817137b11() {
     self.potentialtargets = [];
     self.var_566ba4e203174585 = [];
-    var_55ae3ebf9f352843 = function_8bdfc9247fd9402f(self.var_86d9d1df4f53f02b, []);
+    var_55ae3ebf9f352843 = function_8bdfc9247fd9402f(self.disable_distance, []);
     var_c4100aeeaedf6daa = 1;
     if (isdefined(var_55ae3ebf9f352843) && var_55ae3ebf9f352843.size > 0) {
         var_c4100aeeaedf6daa = 0;
     } else {
         self.var_566ba4e203174585 = function_643c81ad5e753613();
-        self.potentialtargets = function_8bdfc9247fd9402f(self.var_347d9d69ea5035cf, self.var_566ba4e203174585, 1);
+        self.potentialtargets = function_8bdfc9247fd9402f(self.targeting_radius, self.var_566ba4e203174585, 1);
         if (!isdefined(self.potentialtargets) || self.potentialtargets.size <= 0) {
             var_c4100aeeaedf6daa = 0;
         }
@@ -349,7 +349,7 @@ function function_8bdfc9247fd9402f(radius, excludelist, var_f1850a701d655011) {
 // Checksum 0x0, Offset: 0x1327
 // Size: 0x99
 function function_673a8676a69f557a(target) {
-    var_d26386496b793f40 = self.var_79798f7074f15fdc * 0.5;
+    var_d26386496b793f40 = self.targeting_angle * 0.5;
     var_21a4d4abf6d829bd = cos(var_d26386496b793f40);
     if (istrue(target.inlaststand) || istrue(target.notarget) || istrue(target.ignoreme) || istrue(target.disguised) || !isalive(target) || !scripts\engine\math::point_in_fov(target.origin, var_21a4d4abf6d829bd)) {
         return false;
@@ -467,7 +467,7 @@ function private function_b341b363d683c952(launcher, var_68ee057779a106c1) {
         wait 1;
     }
     self.going_to_object = launcher;
-    var_327190e5347a2645 = self.goalradius;
+    old_radius = self.goalradius;
     utility::demeanor_override("sprint");
     self.never_kill_off_old = self.never_kill_off;
     self.never_kill_off = 1;
@@ -477,7 +477,7 @@ function private function_b341b363d683c952(launcher, var_68ee057779a106c1) {
         enter_launcher(launcher);
         fire_launcher(launcher);
         exit_launcher(launcher);
-        self.goalradius = var_327190e5347a2645;
+        self.goalradius = old_radius;
         self.going_to_object = undefined;
         if (isdefined(var_68ee057779a106c1)) {
             self.goalradius = 128;
@@ -593,7 +593,7 @@ function private fire_launcher(launcher) {
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0x1b3f
 // Size: 0x308
-function private launch_mortar(start, end, agent, var_c02451ac9545f97d) {
+function private launch_mortar(start, end, agent, optional_height) {
     if (!isdefined(start)) {
         start = coordtransform((30, 0, 20), self.origin, self.angles);
     }
@@ -613,18 +613,18 @@ function private launch_mortar(start, end, agent, var_c02451ac9545f97d) {
     playsoundatpos(start, "weap_mortar_fire_dist");
     var_d86011592b884052 show();
     time = self.var_1115d9ebad86e77;
-    var_c67bc51788c0eb65 = 1200;
-    if (isdefined(var_c02451ac9545f97d)) {
-        var_c67bc51788c0eb65 = var_c02451ac9545f97d;
+    apex_height = 1200;
+    if (isdefined(optional_height)) {
+        apex_height = optional_height;
     }
     /#
         if (getdvarint(@"hash_5596ff0bf7ea7af6", 0)) {
-            level thread scripts\mp\utility\debug::drawsphere(start, 5, self.var_ae050c8fc0441f7a + 2, (1, 1, 0));
-            level thread scripts\mp\utility\debug::drawsphere(end, 5, self.var_ae050c8fc0441f7a + 2, (1, 0, 0));
+            level thread scripts\mp\utility\debug::drawsphere(start, 5, self.current_wait + 2, (1, 1, 0));
+            level thread scripts\mp\utility\debug::drawsphere(end, 5, self.current_wait + 2, (1, 0, 0));
         }
     #/
     self.fired = 1;
-    thread function_330f2cf2ca649a29(var_d86011592b884052, start, end, time, var_c67bc51788c0eb65);
+    thread function_330f2cf2ca649a29(var_d86011592b884052, start, end, time, apex_height);
     self.current_target = undefined;
     wait_until_impact(var_d86011592b884052, time);
     if (isdefined(var_d86011592b884052)) {
@@ -657,19 +657,19 @@ function private function_330f2cf2ca649a29(model, start, end, time, height) {
     }
     framefrac = 1 / time / 0.05;
     frac = 0;
-    var_e1ec1ade6afdbb7a = undefined;
+    impact_point = undefined;
     while (frac < 1) {
-        if (isdefined(var_e1ec1ade6afdbb7a)) {
+        if (isdefined(impact_point)) {
             if (frac + framefrac < 1) {
-                model.origin = var_e1ec1ade6afdbb7a;
+                model.origin = impact_point;
                 model notify("early_impact");
                 return;
             }
         }
         model.origin = scripts\engine\math::get_point_on_parabola(start, end, apex, frac);
-        var_630782b398951805 = frac + framefrac;
-        next_point = scripts\engine\math::get_point_on_parabola(start, end, apex, var_630782b398951805);
-        var_e1ec1ade6afdbb7a = check_for_early_impact(model, next_point);
+        next_frac = frac + framefrac;
+        next_point = scripts\engine\math::get_point_on_parabola(start, end, apex, next_frac);
+        impact_point = check_for_early_impact(model, next_point);
         model function_41f143bd962f9dfd();
         /#
             if (getdvarint(@"hash_5596ff0bf7ea7af6", 0)) {
@@ -682,7 +682,7 @@ function private function_330f2cf2ca649a29(model, start, end, time, height) {
     model.origin = end;
     /#
         if (getdvarint(@"hash_5596ff0bf7ea7af6", 0)) {
-            thread draw_line_for_time(model.origin, model.origin + (0, 0, 128), 1, 1, 1, self.var_ae050c8fc0441f7a + 2);
+            thread draw_line_for_time(model.origin, model.origin + (0, 0, 128), 1, 1, 1, self.current_wait + 2);
         }
     #/
 }
@@ -705,11 +705,11 @@ function private function_41f143bd962f9dfd() {
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x206b
 // Size: 0x79
-function private check_for_early_impact(mortar, var_4830b28d31d6219) {
+function private check_for_early_impact(mortar, next_loc) {
     collisioncontents = physics_createcontents(["physicscontents_glass", "physicscontents_vehicleclip", "physicscontents_missileclip", "physicscontents_clipshot"]);
-    raytrace = scripts\engine\trace::ray_trace(mortar.origin, var_4830b28d31d6219, mortar, collisioncontents);
+    raytrace = scripts\engine\trace::ray_trace(mortar.origin, next_loc, mortar, collisioncontents);
     if (raytrace["hittype"] != "hittype_none") {
-        return var_4830b28d31d6219;
+        return next_loc;
     }
 }
 

@@ -1,7 +1,7 @@
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
 
 #namespace green_beam_offhand;
 
@@ -13,9 +13,9 @@ function precache(offhand) {
     level.var_9927cfeb7c54bc37 = spawnstruct();
     level.var_9927cfeb7c54bc37.trace_contents = create_contents(1, 1, 1, 1, 1, 1, 0, 0, 1);
     level.var_9927cfeb7c54bc37.in_use = 0;
-    level.var_9927cfeb7c54bc37.var_a46d81ffa9ad3d38 = 0;
+    level.var_9927cfeb7c54bc37.used_once = 0;
     level.var_9927cfeb7c54bc37.last_beam_time = 0;
-    level.var_9927cfeb7c54bc37.var_2a2a8dc3be44b0d7 = loadfx("vfx/iw8/level/lab/vfx_green_laser.vfx");
+    level.var_9927cfeb7c54bc37.laser_vfx = loadfx("vfx/iw8/level/lab/vfx_green_laser.vfx");
     registeroffhandfirefunc(offhand, &function_50d81dbccc8973ba);
     playeroffhandthread(&function_c1ebe188ea4d6623);
     level.player thread function_77371b0fea36d1();
@@ -32,8 +32,8 @@ function precache(offhand) {
 // Size: 0x10f
 function function_50d81dbccc8973ba(grenade, weapon) {
     grenade delete();
-    if (!level.var_9927cfeb7c54bc37.var_a46d81ffa9ad3d38) {
-        level.var_9927cfeb7c54bc37.var_a46d81ffa9ad3d38 = 1;
+    if (!level.var_9927cfeb7c54bc37.used_once) {
+        level.var_9927cfeb7c54bc37.used_once = 1;
     }
     var_2fc7b90001702e5c = array_add(getaiarray("allies"), level.player);
     trace = ray_trace_detail(level.player geteye(), level.player geteye() + anglestoforward(level.player getplayerangles()) * 9999, var_2fc7b90001702e5c, level.var_9927cfeb7c54bc37.trace_contents, 1);
@@ -106,7 +106,7 @@ function function_bd000a9219ada719() {
 // Checksum 0x0, Offset: 0x707
 // Size: 0x15
 function function_245baf97b86c8c73() {
-    return level.var_9927cfeb7c54bc37.var_a46d81ffa9ad3d38;
+    return level.var_9927cfeb7c54bc37.used_once;
 }
 
 // Namespace green_beam_offhand / namespace_3df132ced70cd2b5

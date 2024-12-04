@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\asm.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace animselector;
 
@@ -32,7 +32,7 @@ function getanimselectorfilenames() {
 // Checksum 0x0, Offset: 0x92b
 // Size: 0x45d
 function init() {
-    if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"hash_add5b80d30e0737a") != 0) {
+    if (getdvarint(@"hash_e6afce2cf5cf7515") != 0 || getdvarint(@"g_connectpaths") != 0) {
         return;
     }
     anim.animselectorfeaturetable = [];
@@ -54,11 +54,11 @@ function init() {
             anim.animselector[statename][traverser].aliases = [];
             anim.animselector[statename][traverser].features = [];
             anim.animselector[statename][traverser].values = [];
-            var_ef6dae508d785188 = tablelookuprownum(filename[1], 0, "__END__");
-            assertex(isdefined(var_ef6dae508d785188) && var_ef6dae508d785188 != -1, "<dev string:x1c>" + filename[1] + "<dev string:x42>");
-            var_ef6dae508d785188 -= 1;
-            assertex(var_ef6dae508d785188 > 0, "<dev string:x6c>");
-            for (i = 0; i < var_ef6dae508d785188; i++) {
+            num_aliases = tablelookuprownum(filename[1], 0, "__END__");
+            assertex(isdefined(num_aliases) && num_aliases != -1, "<dev string:x1c>" + filename[1] + "<dev string:x42>");
+            num_aliases -= 1;
+            assertex(num_aliases > 0, "<dev string:x6c>");
+            for (i = 0; i < num_aliases; i++) {
                 alias = tablelookupbyrow(filename[1], i + 1, 0);
                 anim.animselector[statename][traverser].aliases[i] = alias;
             }
@@ -73,7 +73,7 @@ function init() {
             }
             assertex(isdefined(num_features), "<dev string:xb7>");
             assertex(num_features > 0, "<dev string:xff>");
-            for (i = 0; i < var_ef6dae508d785188; i++) {
+            for (i = 0; i < num_aliases; i++) {
                 for (j = 0; j < num_features; j++) {
                     alias = anim.animselector[statename][traverser].aliases[i];
                     feature = anim.animselector[statename][traverser].features[j];

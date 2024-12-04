@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\ai.gsc;
-#using script_3b78d23dad7ec5be;
-#using scripts\asm\asm.gsc;
-#using script_bd0d3e8f9ff5c11;
 #using script_193e3e231841082f;
+#using script_3b78d23dad7ec5be;
 #using script_6c63dbe7d4c85e19;
 #using script_7edf952f8921aa6b;
+#using script_bd0d3e8f9ff5c11;
+#using scripts\asm\asm;
+#using scripts\common\ai;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 
@@ -117,15 +117,15 @@ function private function_ee486eaddde6fd68() {
     self endon("snake_bite_about_to_hit");
     while (true) {
         head_pos = self gettagorigin("j_head");
-        var_cb520a17509e5da0 = self gettagangles("j_head");
-        head_forward = anglestoforward(var_cb520a17509e5da0);
-        head_up = anglestoup(var_cb520a17509e5da0);
-        var_f145d4e348818a77 = getdvarfloat(@"hash_7174d8c71ecb56dc", 450);
-        var_c0e04d727bc6589d = getdvarfloat(@"hash_d5be4cd033c8e19c", 150);
+        head_angles = self gettagangles("j_head");
+        head_forward = anglestoforward(head_angles);
+        head_up = anglestoup(head_angles);
+        forward_amount = getdvarfloat(@"hash_7174d8c71ecb56dc", 450);
+        up_amount = getdvarfloat(@"hash_d5be4cd033c8e19c", 150);
         var_da6f0c3db9954161 = create_playerclip_contents();
-        trace = ray_trace(head_pos + head_forward * var_f145d4e348818a77 * 0.5 + head_up * var_c0e04d727bc6589d, head_pos + head_forward * var_f145d4e348818a77 + head_up * var_c0e04d727bc6589d, self, var_da6f0c3db9954161);
-        trace2 = ray_trace(head_pos + head_forward * var_f145d4e348818a77 * 0.5 - head_up * var_c0e04d727bc6589d, head_pos + head_forward * var_f145d4e348818a77 - head_up * var_c0e04d727bc6589d, self, var_da6f0c3db9954161);
-        trace3 = ray_trace(head_pos + head_forward * var_f145d4e348818a77 * 0.5 - head_up * var_c0e04d727bc6589d, head_pos + head_forward * var_f145d4e348818a77 * 0.5 - head_up * var_c0e04d727bc6589d * 2, self, var_da6f0c3db9954161);
+        trace = ray_trace(head_pos + head_forward * forward_amount * 0.5 + head_up * up_amount, head_pos + head_forward * forward_amount + head_up * up_amount, self, var_da6f0c3db9954161);
+        trace2 = ray_trace(head_pos + head_forward * forward_amount * 0.5 - head_up * up_amount, head_pos + head_forward * forward_amount - head_up * up_amount, self, var_da6f0c3db9954161);
+        trace3 = ray_trace(head_pos + head_forward * forward_amount * 0.5 - head_up * up_amount, head_pos + head_forward * forward_amount * 0.5 - head_up * up_amount * 2, self, var_da6f0c3db9954161);
         /#
             if (function_2113bc484dd870c2()) {
                 draw_trace(trace, (1, 0, 0), 1);
@@ -271,7 +271,7 @@ function melee_impact(var_f238c840934e431e, damage_radius, max_damage) {
                     target dodamage(var_bb94b44258598dce, head_pos, self, self, "MOD_MELEE");
                 }
             } else if (isai(target)) {
-                target function_e96aac065abbec4e(head_pos);
+                target knockdown_ai(head_pos);
                 target dodamage(var_bb94b44258598dce, head_pos, self, self, "MOD_MELEE");
             } else if (isplayer(target)) {
                 target dodamage(var_bb94b44258598dce, head_pos, self, self, "MOD_MELEE");

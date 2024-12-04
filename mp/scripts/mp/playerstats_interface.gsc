@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\playerstats.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\playerstats;
 
 #namespace namespace_26e1361ab951ec6b;
 

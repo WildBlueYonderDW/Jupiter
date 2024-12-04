@@ -1,8 +1,8 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
 #namespace namespace_7a3aed3d9ea64352;
 
@@ -11,7 +11,7 @@
 // Checksum 0x0, Offset: 0x2b12
 // Size: 0x1e
 function main() {
-    function_ae19884fc16af6a8();
+    anim_precache();
     player();
     humans();
     script_models();
@@ -21,7 +21,7 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b38
 // Size: 0x44
-function function_ae19884fc16af6a8() {
+function anim_precache() {
     precachemodel("body_c_jup_sp_enemy_kastovsoldier_03");
     precachemodel("body_c_jup_sp_enemy_kastovsoldier_02");
     precachemodel("body_c_jup_sp_enemy_kastovsoldier_01");

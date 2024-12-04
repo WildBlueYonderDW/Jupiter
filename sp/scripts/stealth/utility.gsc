@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\stealth\manager.gsc;
-#using scripts\stealth\init.gsc;
-#using scripts\stealth\enemy.gsc;
-#using scripts\stealth\friendly.gsc;
-#using scripts\stealth\neutral.gsc;
-#using scripts\anim\utility_common.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\debug;
+#using scripts\stealth\enemy;
+#using scripts\stealth\friendly;
+#using scripts\stealth\init;
+#using scripts\stealth\manager;
+#using scripts\stealth\neutral;
+#using scripts\stealth\threat_sight;
 
 #namespace utility;
 

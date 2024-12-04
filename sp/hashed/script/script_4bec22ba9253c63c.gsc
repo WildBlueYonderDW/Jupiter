@@ -1,9 +1,9 @@
-#using scripts\common\vehicle_build.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle_build;
+#using scripts\common\vehicle_code;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace veh9_jltv;
 
@@ -29,7 +29,7 @@ function main(model, type, classname) {
     case #"hash_2f258c5eff1031c6":
     case #"hash_433bfdd62201f1e8":
     case #"hash_cdf4f197603a8c27":
-        function_f397a06934ed627b();
+        build_turrets();
         build_aianims(&function_864a367053eaf622, &set_vehicle_anims, "veh9_jltv_turret");
         build_unload_groups(&function_1b5bc97e17d1f72e);
         break;
@@ -116,24 +116,24 @@ function function_60a4b3c7e1de8cf7() {
     self.exiting = 1;
     veh = self getlinkedparent();
     bounds = veh getboundshalfsize();
-    var_d3f98fc142b03df7 = bounds[1];
-    var_d3f98fc142b03df7 += 40;
+    half_width = bounds[1];
+    half_width += 40;
     while (true) {
-        var_31cdf773b9c212f9 = veh.origin + anglestoleft(veh.angles) * var_d3f98fc142b03df7;
-        var_31cdf773b9c212f9 = scripts\engine\utility::drop_to_ground(var_31cdf773b9c212f9, 0, 0);
-        var_1f8cf6d541a2f062 = scripts\engine\trace::player_trace(var_31cdf773b9c212f9 + (0, 0, 70), var_31cdf773b9c212f9 + (0, 0, 5));
-        if (var_1f8cf6d541a2f062["fraction"] < 0.9) {
-            var_703df9e7e2c5a07a = veh.origin + anglestoright(veh.angles) * var_d3f98fc142b03df7;
-            var_703df9e7e2c5a07a = scripts\engine\utility::drop_to_ground(var_703df9e7e2c5a07a, 0, 0);
-            var_1f8cf6d541a2f062 = scripts\engine\trace::player_trace(var_703df9e7e2c5a07a + (0, 0, 70), var_703df9e7e2c5a07a + (0, 0, 5));
-            if (var_1f8cf6d541a2f062["fraction"] < 0.9) {
+        left_exit = veh.origin + anglestoleft(veh.angles) * half_width;
+        left_exit = scripts\engine\utility::drop_to_ground(left_exit, 0, 0);
+        in_solid = scripts\engine\trace::player_trace(left_exit + (0, 0, 70), left_exit + (0, 0, 5));
+        if (in_solid["fraction"] < 0.9) {
+            right_exit = veh.origin + anglestoright(veh.angles) * half_width;
+            right_exit = scripts\engine\utility::drop_to_ground(right_exit, 0, 0);
+            in_solid = scripts\engine\trace::player_trace(right_exit + (0, 0, 70), right_exit + (0, 0, 5));
+            if (in_solid["fraction"] < 0.9) {
                 waitframe();
                 continue;
             } else {
-                exitpos = var_703df9e7e2c5a07a;
+                exitpos = right_exit;
             }
         } else {
-            exitpos = var_31cdf773b9c212f9;
+            exitpos = left_exit;
         }
         if (isdefined(exitpos)) {
             break;
@@ -356,11 +356,11 @@ function function_1b5bc97e17d1f72e() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x184e
 // Size: 0xb2
-function function_f397a06934ed627b() {
+function build_turrets() {
     if (istrue(self.script_nomg)) {
         return;
     }
-    mapname = getdvar(@"hash_687fb8f9b7a23245");
+    mapname = getdvar(@"g_mapname");
     switch (mapname) {
     case #"hash_a53278cce220cfff":
         build_turret("iw9_mg_jltv_cp", "tag_turret", "veh9_mil_lnd_jltv_turret_gun", "auto_ai", 0, 0);

@@ -1,4 +1,4 @@
-#using scripts\engine\math.gsc;
+#using scripts\engine\math;
 
 #namespace namespace_d81cc0392628bc6d;
 

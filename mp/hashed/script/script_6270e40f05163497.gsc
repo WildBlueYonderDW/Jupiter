@@ -1,9 +1,9 @@
-#using script_4c543f01345a2c04;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
+#using script_4c543f01345a2c04;
 #using script_686729055b66c6e4;
-#using script_a35012b9b75a996;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\shock_stick;
 
 #namespace namespace_77480c5ad1d5553d;
 
@@ -151,7 +151,7 @@ function function_4627f093a696bf5f(var_cd49914bf215b4f3) {
         settings = function_6ed820130bc9b67f();
         self.entitydata.var_f17581d76b08d302 = gettime() + settings.cooldown;
     }
-    self.entitydata.var_1205963be798c1e3 = gettime();
+    self.entitydata.attack_lastattacktime = gettime();
     self function_3e89eb3d8e3f1811("in_lightning_strike", 0);
     self.entitydata.var_9adf21d0962a922b = 0;
 }
@@ -534,7 +534,7 @@ function private function_936e86655b174be5(zombie) {
 // Checksum 0x0, Offset: 0x1d33
 // Size: 0x51
 function private function_5654a6509f8875ea(duration) {
-    namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(duration);
+    namespace_ed7c38f3847343dc::stun_ai(duration);
     self setscriptablepartstate("shockStickVfx", "vfx_start", 0);
     wait duration;
     if (isalive(self) && self getscriptablehaspart("shockStickVfx")) {
@@ -593,7 +593,7 @@ function private function_cec29f052c3e36b3(duration) {
     if (!isplayer(self)) {
         return;
     }
-    namespace_742e7eca5294ecdc::function_a9a57668997e3c85(1);
+    scripts\mp\equipment\shock_stick::function_a9a57668997e3c85(1);
     if (istrue(self.revivingteammate)) {
         self.var_4a2f2f50a9020e2e = 1;
     }
@@ -615,16 +615,16 @@ function private function_cec29f052c3e36b3(duration) {
         }
     }
     self startforcedfire();
-    namespace_742e7eca5294ecdc::function_600c7c4c73c6a773(1);
+    scripts\mp\equipment\shock_stick::function_600c7c4c73c6a773(1);
     self setmovespeedscale(0.8);
     self setempjammed(1);
     wait duration;
-    namespace_742e7eca5294ecdc::function_a9a57668997e3c85(0);
+    scripts\mp\equipment\shock_stick::function_a9a57668997e3c85(0);
     self stopgestureviewmodel(gestureref);
     self stopforcedfire();
     self setscriptablepartstate("shockStickVfx", "off", 0);
     self setscriptablepartstate("harvesterOrbSfx", "sfx_done", 0);
-    namespace_742e7eca5294ecdc::function_600c7c4c73c6a773(0);
+    scripts\mp\equipment\shock_stick::function_600c7c4c73c6a773(0);
     self setmovespeedscale(1);
     self setempjammed(0);
 }
@@ -662,10 +662,10 @@ function private function_6ed820130bc9b67f() {
 // Checksum 0x0, Offset: 0x21c1
 // Size: 0x47
 function function_e72c887ec81b95a7() {
-    namespace_742e7eca5294ecdc::function_a9a57668997e3c85(0);
+    scripts\mp\equipment\shock_stick::function_a9a57668997e3c85(0);
     self setscriptablepartstate("shockStickVfx", "off", 0);
     self setscriptablepartstate("harvesterOrbSfx", "sfx_done", 0);
-    namespace_742e7eca5294ecdc::function_600c7c4c73c6a773(0);
+    scripts\mp\equipment\shock_stick::function_600c7c4c73c6a773(0);
     function_3ab9164ef76940fd("zombieEntityVFX", "off");
 }
 

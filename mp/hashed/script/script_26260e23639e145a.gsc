@@ -1,5 +1,5 @@
-#using scripts\common\values.gsc;
-#using scripts\mp\tweakables.gsc;
+#using scripts\common\values;
+#using scripts\mp\tweakables;
 
 #namespace headhunter;
 

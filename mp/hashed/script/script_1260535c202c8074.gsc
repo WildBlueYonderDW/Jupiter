@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\ai.gsc;
 #using script_36d7680b337b15b;
 #using script_7edf952f8921aa6b;
+#using scripts\common\ai;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 

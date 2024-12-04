@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\game.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace online_event;
 

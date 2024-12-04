@@ -1,5 +1,5 @@
-#using scripts\sp\outline.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
+#using scripts\sp\outline;
 
 #namespace outline;
 
@@ -14,10 +14,10 @@ function hudoutline_channels_init() {
     level.hudoutlinechannels = [];
     hudoutline_add_channel_internal("default", 0, level.fnhudoutlinedefaultsettings);
     setsaveddvar(@"hash_5f5c12c95c44f093", 1);
-    var_2fbecf4cb1adff1a = [[ level.fnhudoutlinedefaultsettings ]]();
+    default_settings = [[ level.fnhudoutlinedefaultsettings ]]();
     for (i = 0; i < 8; i++) {
         dvarstr = hashcat(@"hash_1429c8e20321bbcd", i);
-        setsaveddvar(dvarstr, var_2fbecf4cb1adff1a[dvarstr]);
+        setsaveddvar(dvarstr, default_settings[dvarstr]);
     }
 }
 
@@ -467,9 +467,9 @@ function play_animation_on_channel_loop(channelname, var_4706652761de8d03) {
 function hudoutline_default_settings() {
     hudoutlinesettings = [];
     if (isdefined(level.player.ar_callout_ent)) {
-        var_5b660a4c678bd6af = length2d(level.player.origin - level.player.ar_callout_ent.origin);
-        var_7803cce2b397156d = clamp(var_5b660a4c678bd6af / 1000, 1, 2);
-        hudoutlinesettings[@"hash_3bb847d049003050"] = var_7803cce2b397156d;
+        dist_value = length2d(level.player.origin - level.player.ar_callout_ent.origin);
+        norm_value = clamp(dist_value / 1000, 1, 2);
+        hudoutlinesettings[@"hash_3bb847d049003050"] = norm_value;
     } else {
         hudoutlinesettings[@"hash_3bb847d049003050"] = 1;
     }

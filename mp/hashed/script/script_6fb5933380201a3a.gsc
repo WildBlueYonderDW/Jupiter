@@ -1,8 +1,8 @@
-#using scripts\anim\utility_common.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\asm\track.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\track;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace cqb;
 

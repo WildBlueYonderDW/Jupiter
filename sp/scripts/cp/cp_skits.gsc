@@ -1,15 +1,15 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\asm\asm.gsc;
+#using script_18a73a64992dd07d;
 #using script_2669878cf5a1b6bc;
 #using script_3433ee6b63c7e243;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\cp\coop_stealth.gsc;
-#using script_18a73a64992dd07d;
-#using scripts\common\anim.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp\coop_stealth;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_ad492105b76fa6f9;
 
@@ -66,15 +66,15 @@ function add_spawn_skit(skit_name, skit_func) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc4
 // Size: 0x174
-function hostage_rescue_fight(var_70f53fdf121fd882, var_858c7ba2c134b169, var_f2c3dd8d0f893f69, var_f0ccebc82f37d9f8) {
-    attacker = scripts\mp\mp_agent::spawnnewagentaitype(var_f2c3dd8d0f893f69, var_70f53fdf121fd882.origin, var_70f53fdf121fd882.angles);
-    victim = scripts\mp\mp_agent::spawnnewagentaitype(var_f0ccebc82f37d9f8, var_858c7ba2c134b169.origin, var_858c7ba2c134b169.angles);
+function hostage_rescue_fight(attacker_spawn, victim_spawn, attacker_aitype, victim_aitype) {
+    attacker = scripts\mp\mp_agent::spawnnewagentaitype(attacker_aitype, attacker_spawn.origin, attacker_spawn.angles);
+    victim = scripts\mp\mp_agent::spawnnewagentaitype(victim_aitype, victim_spawn.origin, victim_spawn.angles);
     attacker setup_fight_guy();
     victim setup_fight_guy();
     var_47ec4e67ed48c949 = attacker scripts\asm\asm::asm_lookupanimfromalias("animscripted", "fight1_attacker");
-    var_582789da7dafc828 = attacker scripts\asm\asm::asm_getxanim("animscripted", var_47ec4e67ed48c949);
+    attacker_xanim = attacker scripts\asm\asm::asm_getxanim("animscripted", var_47ec4e67ed48c949);
     var_e7b925ec7c8d5ea8 = victim scripts\asm\asm::asm_lookupanimfromalias("animscripted", "fight1_victim");
-    var_40d02a94ee458a77 = victim scripts\asm\asm::asm_getxanim("animscripted", var_e7b925ec7c8d5ea8);
+    victim_xanim = victim scripts\asm\asm::asm_getxanim("animscripted", var_e7b925ec7c8d5ea8);
     attacker aisetanim("animscripted", var_47ec4e67ed48c949);
     victim aisetanim("animscripted", var_e7b925ec7c8d5ea8);
     victim.deathstate = "animscripted";
@@ -89,32 +89,32 @@ function hostage_rescue_fight(var_70f53fdf121fd882, var_858c7ba2c134b169, var_f2
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0xf40
 // Size: 0x29a
-function hostage_rescue_meatshield(var_70f53fdf121fd882, var_858c7ba2c134b169, var_f2c3dd8d0f893f69, var_f0ccebc82f37d9f8, attacker, victim, idletime) {
+function hostage_rescue_meatshield(attacker_spawn, victim_spawn, attacker_aitype, victim_aitype, attacker, victim, idletime) {
     if (!isdefined(attacker)) {
-        attacker = scripts\mp\mp_agent::spawnnewagentaitype(var_f2c3dd8d0f893f69, var_70f53fdf121fd882.origin, var_70f53fdf121fd882.angles);
+        attacker = scripts\mp\mp_agent::spawnnewagentaitype(attacker_aitype, attacker_spawn.origin, attacker_spawn.angles);
     }
     if (!isdefined(victim)) {
-        victim = scripts\mp\mp_agent::spawnnewagentaitype(var_f0ccebc82f37d9f8, var_858c7ba2c134b169.origin, var_858c7ba2c134b169.angles);
+        victim = scripts\mp\mp_agent::spawnnewagentaitype(victim_aitype, victim_spawn.origin, victim_spawn.angles);
     }
     attacker setup_fight_guy();
     victim setup_fight_guy();
-    var_b6b8860fdf2a975b = namespace_e0ee43ef2dddadaa::buildweapon("iw8_pi_golf21_mp", ["none", "none", "none", "none", "none", "none"], "none", "none");
-    attacker giveweapon(var_b6b8860fdf2a975b);
+    ai_pistol = namespace_e0ee43ef2dddadaa::buildweapon("iw8_pi_golf21_mp", ["none", "none", "none", "none", "none", "none"], "none", "none");
+    attacker giveweapon(ai_pistol);
     attacker.og_weapon = attacker.weapon;
-    attacker setspawnweapon(var_b6b8860fdf2a975b);
-    attacker utility::initweapon(var_b6b8860fdf2a975b);
-    attacker namespace_223959d3e5206cfb::placeweaponon(var_b6b8860fdf2a975b, "right");
+    attacker setspawnweapon(ai_pistol);
+    attacker utility::initweapon(ai_pistol);
+    attacker namespace_223959d3e5206cfb::placeweaponon(ai_pistol, "right");
     attacker namespace_223959d3e5206cfb::placeweaponon(attacker.weapon, "back");
-    attacker.sidearm = var_b6b8860fdf2a975b;
+    attacker.sidearm = ai_pistol;
     attacker.deathstate = "animscripted";
     attacker.deathalias = "fight3_attacker_death";
     var_47ec4e67ed48c949 = attacker scripts\asm\asm::asm_lookupanimfromalias("animscripted", "fight3_attacker");
-    var_582789da7dafc828 = attacker scripts\asm\asm::asm_getxanim("animscripted", var_47ec4e67ed48c949);
+    attacker_xanim = attacker scripts\asm\asm::asm_getxanim("animscripted", var_47ec4e67ed48c949);
     var_e7b925ec7c8d5ea8 = victim scripts\asm\asm::asm_lookupanimfromalias("animscripted", "fight3_victim");
-    var_40d02a94ee458a77 = victim scripts\asm\asm::asm_getxanim("animscripted", var_e7b925ec7c8d5ea8);
+    victim_xanim = victim scripts\asm\asm::asm_getxanim("animscripted", var_e7b925ec7c8d5ea8);
     attacker aisetanim("animscripted", var_47ec4e67ed48c949);
     victim aisetanim("animscripted", var_e7b925ec7c8d5ea8);
-    len = getanimlength(var_582789da7dafc828);
+    len = getanimlength(attacker_xanim);
     looptime = len * 5;
     if (isdefined(idletime)) {
         looptime = idletime;
@@ -250,11 +250,11 @@ function victim_killed_fight2() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x152b
 // Size: 0x82
-function waitfor_death(time, victim, var_de83f22326e4b833, var_9443c17d464b753e) {
+function waitfor_death(time, victim, timeout_func, var_9443c17d464b753e) {
     self endon("scene_interrupt");
     result = waittill_any_ents_or_timeout_return(time, self, "death", victim, "death");
     if (isdefined(result) && result == "timeout") {
-        self thread [[ var_de83f22326e4b833 ]](victim);
+        self thread [[ timeout_func ]](victim);
         return;
     }
     if (isalive(victim)) {
@@ -269,11 +269,11 @@ function waitfor_death(time, victim, var_de83f22326e4b833, var_9443c17d464b753e)
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x15b5
 // Size: 0x2c
-function waitfor_save(attacker, var_4f43716b1b2279db) {
+function waitfor_save(attacker, save_func) {
     self endon("death");
     self waittill("saved");
-    if (isdefined(var_4f43716b1b2279db)) {
-        self [[ var_4f43716b1b2279db ]]();
+    if (isdefined(save_func)) {
+        self [[ save_func ]]();
     }
 }
 
@@ -312,9 +312,9 @@ function stealth_sitting_laptop(chair) {
         return;
     }
     if (!have_props_spawned()) {
-        var_7d73d5424fdd4ba6 = spawn_chair(chair);
-        thread stealth_sit_react(var_7d73d5424fdd4ba6, "sitting_laptop_react", "reb_stl_idle_sit_laptop_react_chair");
-        thread stealth_sit_death(var_7d73d5424fdd4ba6, "reb_stl_idle_sit_laptop_death02_2_chair");
+        anim_chair = spawn_chair(chair);
+        thread stealth_sit_react(anim_chair, "sitting_laptop_react", "reb_stl_idle_sit_laptop_react_chair");
+        thread stealth_sit_death(anim_chair, "reb_stl_idle_sit_laptop_death02_2_chair");
         table = spawn_table();
         set_props_spawned();
     }
@@ -343,9 +343,9 @@ function stealth_sitting_pistol(chair) {
         return;
     }
     if (!have_props_spawned()) {
-        var_7d73d5424fdd4ba6 = spawn_chair(chair);
-        thread stealth_sit_react(var_7d73d5424fdd4ba6, "sitting_pistol_react", "reb_stl_idle_sit_gunmaintenance_react_chair");
-        thread stealth_sit_death(var_7d73d5424fdd4ba6, "reb_stl_idle_sit_gunmaintenance_death01_6_chair");
+        anim_chair = spawn_chair(chair);
+        thread stealth_sit_react(anim_chair, "sitting_pistol_react", "reb_stl_idle_sit_gunmaintenance_react_chair");
+        thread stealth_sit_death(anim_chair, "reb_stl_idle_sit_gunmaintenance_death01_6_chair");
         table = spawn_table();
         set_props_spawned();
     }
@@ -395,9 +395,9 @@ function stealth_sitting_cell_no_props(chair) {
         return;
     }
     if (!have_props_spawned()) {
-        var_7d73d5424fdd4ba6 = spawn_chair(chair);
-        thread stealth_sit_react(var_7d73d5424fdd4ba6, "sitting_cellphone_react", "reb_stl_idle_sit_phone01_react_chair");
-        thread stealth_sit_death(var_7d73d5424fdd4ba6, "reb_stl_idle_sit_phone01_death02_4_chair");
+        anim_chair = spawn_chair(chair);
+        thread stealth_sit_react(anim_chair, "sitting_cellphone_react", "reb_stl_idle_sit_phone01_react_chair");
+        thread stealth_sit_death(anim_chair, "reb_stl_idle_sit_phone01_death02_4_chair");
         set_props_spawned();
     }
     setup_anim_guy();
@@ -425,9 +425,9 @@ function stealth_sitting_cell(chair) {
         return;
     }
     if (!have_props_spawned()) {
-        var_7d73d5424fdd4ba6 = spawn_chair(chair);
-        thread stealth_sit_react(var_7d73d5424fdd4ba6, "sitting_cellphone_react", "reb_stl_idle_sit_phone01_react_chair");
-        thread stealth_sit_death(var_7d73d5424fdd4ba6, "reb_stl_idle_sit_phone01_death02_4_chair");
+        anim_chair = spawn_chair(chair);
+        thread stealth_sit_react(anim_chair, "sitting_cellphone_react", "reb_stl_idle_sit_phone01_react_chair");
+        thread stealth_sit_death(anim_chair, "reb_stl_idle_sit_phone01_death02_4_chair");
         table = spawn_table();
         set_props_spawned();
     }
@@ -453,9 +453,9 @@ function stealth_sitting_sleep(chair) {
         return;
     }
     if (!have_props_spawned()) {
-        var_7d73d5424fdd4ba6 = spawn_chair(chair);
-        thread stealth_sit_react(var_7d73d5424fdd4ba6, "sitting_sleeping_react", "reb_stl_idle_sit_sleeping_react_chair");
-        thread stealth_sit_death(var_7d73d5424fdd4ba6, "reb_stl_idle_sit_sleeping_death01_chair");
+        anim_chair = spawn_chair(chair);
+        thread stealth_sit_react(anim_chair, "sitting_sleeping_react", "reb_stl_idle_sit_sleeping_react_chair");
+        thread stealth_sit_death(anim_chair, "reb_stl_idle_sit_sleeping_death01_chair");
         set_props_spawned();
     }
     setup_anim_guy();
@@ -504,7 +504,7 @@ function stealth_sit_idle(animalias) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dc5
 // Size: 0xda
-function stealth_sit_react(chair, var_e25ca6f64fdb941f, var_ee76fa65682c4e3a) {
+function stealth_sit_react(chair, react_alias, chair_anim) {
     self endon("death");
     self waittill("alerted");
     namespace_5729d24318b60bcd::set_kill_off_time(20);
@@ -515,8 +515,8 @@ function stealth_sit_react(chair, var_e25ca6f64fdb941f, var_ee76fa65682c4e3a) {
         self.idle_prop physicslaunchserver(self.idle_prop.origin, (0, 0, -10));
         self.idle_prop = undefined;
     }
-    chair scriptmodelplayanimdeltamotion(var_ee76fa65682c4e3a);
-    scripts\asm\shared\mp\utility::animscripted_single(var_e25ca6f64fdb941f);
+    chair scriptmodelplayanimdeltamotion(chair_anim);
+    scripts\asm\shared\mp\utility::animscripted_single(react_alias);
     chair scriptmodelclearanim();
     chair physicslaunchserver(chair.origin, (0, 0, 15));
     reset_guy(self);
@@ -526,7 +526,7 @@ function stealth_sit_react(chair, var_e25ca6f64fdb941f, var_ee76fa65682c4e3a) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ea7
 // Size: 0xa2
-function stealth_sit_death(chair, var_ee76fa65682c4e3a) {
+function stealth_sit_death(chair, chair_anim) {
     self endon("alerted");
     idle_prop = undefined;
     if (isdefined(self.idle_prop)) {
@@ -537,7 +537,7 @@ function stealth_sit_death(chair, var_ee76fa65682c4e3a) {
         idle_prop unlink();
         idle_prop physicslaunchserver(idle_prop.origin, (0, 0, -10));
     }
-    chair scriptmodelplayanimdeltamotion(var_ee76fa65682c4e3a);
+    chair scriptmodelplayanimdeltamotion(chair_anim);
     wait 1;
     chair scriptmodelclearanim();
     chair physicslaunchserver(chair.origin, (0, 0, 15));
@@ -608,7 +608,7 @@ function smoking_idle_end(animalias) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20b8
 // Size: 0xd1
-function smoking_react(var_e25ca6f64fdb941f) {
+function smoking_react(react_alias) {
     self endon("death");
     self endon("cancel_loop");
     level add_wait(&waittill_msg, "weapons_free");
@@ -623,7 +623,7 @@ function smoking_react(var_e25ca6f64fdb941f) {
         self.idle_prop physicslaunchserver(self.idle_prop.origin, (0, 0, -10));
         self.idle_prop = undefined;
     }
-    scripts\asm\shared\mp\utility::animscripted_single(var_e25ca6f64fdb941f);
+    scripts\asm\shared\mp\utility::animscripted_single(react_alias);
     reset_guy(self);
 }
 
@@ -801,7 +801,7 @@ function ai_notehandler_cellphone(note) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2684
 // Size: 0xca
-function cellphone_react(var_e25ca6f64fdb941f) {
+function cellphone_react(react_alias) {
     self endon("death");
     level add_wait(&waittill_msg, "weapons_free");
     add_wait(&waittill_any_2, "alerted", "checking_friendly_corpse");
@@ -815,7 +815,7 @@ function cellphone_react(var_e25ca6f64fdb941f) {
         self.idle_prop physicslaunchserver(self.idle_prop.origin, (0, 0, -10));
         self.idle_prop = undefined;
     }
-    scripts\asm\shared\mp\utility::animscripted_single(var_e25ca6f64fdb941f);
+    scripts\asm\shared\mp\utility::animscripted_single(react_alias);
     reset_guy(self);
 }
 
@@ -1019,9 +1019,9 @@ function play_single_skit_anim(statename, var_75ecb34d5a496906, scene_node, unus
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f4d
 // Size: 0x92
-function spawn_skit_prop(var_3051146a717a14fb, startorg, startangles, var_514e5f7f4670b33e, var_889e8a0fc335aa9b) {
-    if (isdefined(var_3051146a717a14fb)) {
-        self waittill(var_3051146a717a14fb);
+function spawn_skit_prop(string_waittill, startorg, startangles, prop_model, should_disconnectpaths) {
+    if (isdefined(string_waittill)) {
+        self waittill(string_waittill);
     }
     if (isfunction(startorg)) {
         startorg = self [[ startorg ]]();
@@ -1031,8 +1031,8 @@ function spawn_skit_prop(var_3051146a717a14fb, startorg, startangles, var_514e5f
     }
     prop = spawn("script_model", startorg);
     prop.angles = self.angles;
-    prop setmodel(var_514e5f7f4670b33e);
-    if (istrue(var_889e8a0fc335aa9b)) {
+    prop setmodel(prop_model);
+    if (istrue(should_disconnectpaths)) {
         prop disconnectpaths();
     }
     return prop;

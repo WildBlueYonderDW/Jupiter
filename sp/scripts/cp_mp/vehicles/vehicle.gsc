@@ -1,38 +1,38 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_compass.gsc;
-#using script_279d83e79f5bb757;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\cp_mp\vehicles\vehicle_mines.gsc;
-#using scripts\cp_mp\vehicles\vehicle_dlog.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_collision.gsc;
-#using scripts\cp_mp\vehicles\customization\battle_tracks.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_build.gsc;
-#using script_736dec95a49487a6;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\engine\flags.gsc;
-#using script_371b4c2ab5861e62;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\asm\asm_bb.gsc;
 #using script_24e4405cf93f20ed;
-#using scripts\cp_mp\challenges.gsc;
+#using script_279d83e79f5bb757;
+#using script_371b4c2ab5861e62;
+#using script_736dec95a49487a6;
+#using scripts\asm\asm_bb;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_build;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\customization\battle_tracks;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_collision;
+#using scripts\cp_mp\vehicles\vehicle_compass;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_dlog;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_mines;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\flags;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\vehicle\vehicle_common;
 
 #namespace vehicle;
 
@@ -51,7 +51,7 @@ function vehicle_init() {
         level.vehicle = spawnstruct();
     }
     level.vehicle.vehicledata = [];
-    level.vehicle.OnVehicleSpawned = &OnVehicleSpawned;
+    level.vehicle.onVehicleSpawned = &onVehicleSpawned;
     /#
         scripts\engine\utility::issharedfuncdefined("<dev string:x1c>", "<dev string:x24>", 1);
     #/
@@ -158,7 +158,7 @@ function function_9697379150687859(vehicleref) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x11ab
 // Size: 0xf0
-function OnVehicleSpawned() {
+function onVehicleSpawned() {
     params = spawnstruct();
     params.vehicle = self;
     scripts\common\callbacks::callback("on_vehicle_spawned", params);
@@ -1751,7 +1751,7 @@ function vehicle_playershouldignorecollisiondamage(inflictor, victim, meansofdea
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e75
 // Size: 0x246
-function function_e4768bd722e98562(inflictor, victim, smeansofdeath) {
+function vehicle_isRubbingAgainstVehicle(inflictor, victim, smeansofdeath) {
     if (!isdefined(smeansofdeath) || smeansofdeath != "MOD_CRUSH") {
         return false;
     }

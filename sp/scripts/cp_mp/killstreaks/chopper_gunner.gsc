@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\trace.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\dialog_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\dialog_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace chopper_gunner;
 
@@ -1068,13 +1068,13 @@ function choppergunner_handledangerzone(thirdperson) {
     zoneradius = 750;
     zoneheight = 2000;
     zoneteam = self.team;
-    var_d5a970096fd175a0 = self.lifetime;
+    zoneLifetime = self.lifetime;
     zoneowner = self.owner;
     var_ddf8049486533578 = 1;
     zoneparentent = self;
     var_d3279a50b0437e88 = 1;
     if (issharedfuncdefined("spawn", "addSpawnDangerZone")) {
-        zone = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](zonepos, zoneradius, zoneheight, zoneteam, var_d5a970096fd175a0, zoneowner, var_ddf8049486533578, zoneparentent, var_d3279a50b0437e88);
+        zone = [[ getsharedfunc("spawn", "addSpawnDangerZone") ]](zonepos, zoneradius, zoneheight, zoneteam, zoneLifetime, zoneowner, var_ddf8049486533578, zoneparentent, var_d3279a50b0437e88);
     }
     if (isdefined(zone) && issharedfuncdefined("spawn", "getCodeHandleFromScriptHandle")) {
         codeid = [[ getsharedfunc("spawn", "getCodeHandleFromScriptHandle") ]](zone);

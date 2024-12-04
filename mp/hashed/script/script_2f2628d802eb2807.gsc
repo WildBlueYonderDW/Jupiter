@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\string.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\mp\vehicles\damage.gsc;
-#using script_79d4b1c751a51f03;
 #using script_48814951e916af89;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\cp_mp\killstreaks\chopper_gunner.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\common\vehicle_code.gsc;
+#using script_79d4b1c751a51f03;
+#using scripts\common\string;
+#using scripts\common\utility;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\cp_mp\killstreaks\chopper_gunner;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\vehicles\damage;
+#using scripts\mp\weapons;
+#using scripts\vehicle\vehicle_common;
 
 #namespace namespace_673092b35aa65d1c;
 
@@ -308,7 +308,7 @@ function function_f21d965808c268bb() {
         }
         teammates = getteamdata(self.task.teams[0], "players");
         foreach (player in teammates) {
-            if (scripts\mp\utility\player::function_ad443bbcdcf37b85(player)) {
+            if (scripts\mp\utility\player::isAliveAndNotInLastStand(player)) {
                 results = ray_trace(self.origin, player.origin, [self, self.turret, self.var_bdec9a74b3b2a503, self.var_2d5a32b6a40fda8c, self.guardvehicle]);
                 if (distance(results["position"], player.origin) < 100) {
                     if (function_4e9fce9d930cb20b(player.origin)) {
@@ -316,7 +316,7 @@ function function_f21d965808c268bb() {
                         accumulatedtime = 0;
                         totaltime = 0;
                         self.turret.targetent.origin = player.origin;
-                        while (shots < var_3180e2519441f60a && scripts\mp\utility\player::function_ad443bbcdcf37b85(player)) {
+                        while (shots < var_3180e2519441f60a && scripts\mp\utility\player::isAliveAndNotInLastStand(player)) {
                             if (totaltime > 5) {
                                 break;
                             }

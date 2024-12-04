@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
 
 #namespace namespace_bd2edea0a052c937;
 

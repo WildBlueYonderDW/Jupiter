@@ -1,28 +1,28 @@
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using script_42982ffd0134f28e;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_9880b9dc28bc25e;
-#using script_7edf952f8921aa6b;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_5640d32580c6bc7d;
-#using script_7b2517368c79e5bc;
-#using script_5753ba9c28794a65;
-#using script_4ef01fe6151dde4d;
-#using script_79deab1955343d5d;
-#using script_41387eecc35b88bf;
 #using script_185660037b9236c1;
-#using script_4fdefae8b7bcdf73;
 #using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
-#using script_64351208cb856df9;
-#using scripts\asm\shared\mp\utility.gsc;
 #using script_3e31016b9c11a616;
+#using script_41387eecc35b88bf;
+#using script_42982ffd0134f28e;
 #using script_43971bbeefd98f05;
+#using script_4ef01fe6151dde4d;
+#using script_4fdefae8b7bcdf73;
+#using script_5640d32580c6bc7d;
+#using script_5753ba9c28794a65;
+#using script_64351208cb856df9;
 #using script_6bffae1b97f70547;
-#using scripts\common\devgui.gsc;
+#using script_7956d56c4922bd1;
+#using script_79deab1955343d5d;
+#using script_7b2517368c79e5bc;
+#using script_7edf952f8921aa6b;
+#using script_9880b9dc28bc25e;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace namespace_a5c2977d842bbf87;
 
@@ -480,7 +480,7 @@ function function_5c651df8cfad0810(var_b381b0883bcd4847) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x18aa
 // Size: 0x1ad
-function function_936a5eebf22b23e1(instance_targetname, spawn_origin, spawn_angles, panel_origin, var_71f996a057e5ffe) {
+function function_936a5eebf22b23e1(instance_targetname, spawn_origin, spawn_angles, panel_origin, panel_angles) {
     if (!isdefined(level.var_cee1e495e30eb18a)) {
         level.var_cee1e495e30eb18a = [];
     }
@@ -497,10 +497,10 @@ function function_936a5eebf22b23e1(instance_targetname, spawn_origin, spawn_angl
         var_4ae8132ef88c6f62 = vectornormalize(anglestoforward(spawn_angles));
         offset = (var_4ae8132ef88c6f62[0] * 20, var_4ae8132ef88c6f62[1] * 20, 50);
         panel_origin = spawn_origin + offset;
-        var_71f996a057e5ffe = spawn_angles;
+        panel_angles = spawn_angles;
     }
     panel_struct.origin = default_to(panel_origin, (0, 0, 0));
-    panel_struct.angles = default_to(var_71f996a057e5ffe, (0, 0, 0));
+    panel_struct.angles = default_to(panel_angles, (0, 0, 0));
     var_c0c7c0983ff152bb.content_structs = [];
     var_c0c7c0983ff152bb.content_structs["turret_trap_spawn"] = [];
     var_c0c7c0983ff152bb.content_structs["turret_trap_panel"] = [];

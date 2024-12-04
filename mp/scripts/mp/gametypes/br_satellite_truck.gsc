@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\gametypes\br_functional_poi.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gametypes\br.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_functional_poi;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
 
 #namespace br_satellite_truck;
 

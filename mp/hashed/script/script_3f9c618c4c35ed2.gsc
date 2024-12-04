@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\common\devgui.gsc;
-#using script_3f9c618c4c35ed2;
 #using script_100adcc1cc11d2fa;
+#using script_2d9d24f7c63ac143;
+#using script_3f9c618c4c35ed2;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\gasmask;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace namespace_9bd27c58b8d3f098;
 
@@ -42,8 +42,8 @@ function function_ecd079f7925cc275() {
     n_start_time = gettime();
     setomnvar("ui_hardpoint_timer", n_start_time + int(var_47b39651bfda8f03 * 1000));
     setomnvar("ui_br_circle_state", 5);
-    var_ae4e969ba4f5fa85 = function_19cc82eefa6754b5();
-    function_46ddeeb7b7770fbc(var_ae4e969ba4f5fa85);
+    v_average = function_19cc82eefa6754b5();
+    function_46ddeeb7b7770fbc(v_average);
     var_925a0f95e92d6d2e = 10000 / var_47b39651bfda8f03 * 1;
     var_6a56e037cca388ab = 10000;
     b_alerted = 0;
@@ -86,8 +86,8 @@ function function_46ddeeb7b7770fbc(v_origin) {
 // Checksum 0x0, Offset: 0x3c4
 // Size: 0x36
 function function_5fb0cca95a3c07a0(var_1cee67764fdc54de) {
-    var_ae4e969ba4f5fa85 = function_19cc82eefa6754b5();
-    level.ob_circle brcirclemoveto(var_ae4e969ba4f5fa85[0], var_ae4e969ba4f5fa85[1], var_1cee67764fdc54de, 1);
+    v_average = function_19cc82eefa6754b5();
+    level.ob_circle brcirclemoveto(v_average[0], v_average[1], var_1cee67764fdc54de, 1);
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818
@@ -95,20 +95,20 @@ function function_5fb0cca95a3c07a0(var_1cee67764fdc54de) {
 // Checksum 0x0, Offset: 0x402
 // Size: 0xcb
 function function_19cc82eefa6754b5() {
-    var_ae4e969ba4f5fa85 = (0, 0, 0);
+    v_average = (0, 0, 0);
     a_players = [];
     foreach (player in level.players) {
         if (isalive(player) && !player function_e69d7896fa6e5d23()) {
-            var_ae4e969ba4f5fa85 += player.origin;
+            v_average += player.origin;
             a_players[a_players.size] = player;
         }
     }
     if (a_players.size > 0) {
-        var_ae4e969ba4f5fa85 /= a_players.size;
+        v_average /= a_players.size;
     } else if (isdefined(level.ob_circle)) {
-        var_ae4e969ba4f5fa85 = level.ob_circle.origin;
+        v_average = level.ob_circle.origin;
     }
-    return var_ae4e969ba4f5fa85;
+    return v_average;
 }
 
 // Namespace namespace_9bd27c58b8d3f098 / namespace_88d9f8b28d831818

@@ -1,7 +1,7 @@
-#using script_d74ae0b4aa21186;
 #using script_59ff79d681bb860c;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
 
 #namespace combat_action;
 

@@ -1,13 +1,13 @@
-#using scripts\cp\cp_hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\utility.gsc;
 #using script_187a04151c40fb72;
-#using scripts\cp\cp_weaponrank.gsc;
 #using script_4a6760982b403bad;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\cp_weaponrank;
+#using scripts\cp\utility;
+#using scripts\cp\utility\entity;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace cp_matchdata;
 
@@ -89,7 +89,7 @@ function logplayerdata(disconnectreason) {
 function endofgamesummarylogger() {
     level waittill("game_ended");
     if (level.gametype == "dungeons") {
-        current_map = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+        current_map = tolower(getdvar(@"g_mapname"));
         level.players[0] setplayerdata("common", "round", "gameMode", scripts\cp\utility::getgametype());
         level.players[0] setplayerdata("common", "round", "map", current_map);
         return;
@@ -112,7 +112,7 @@ function endofgamesummarylogger() {
             }
             player setplayerdata("common", "round", "challengesCompleted", i, "ch_none");
         }
-        current_map = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+        current_map = tolower(getdvar(@"g_mapname"));
         player setplayerdata("common", "round", "gameMode", scripts\cp\utility::getgametype());
         player setplayerdata("common", "round", "map", current_map);
         if (istrue(level.matchmakingmatch)) {

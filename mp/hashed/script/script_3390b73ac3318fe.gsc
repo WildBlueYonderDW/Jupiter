@@ -1,7 +1,7 @@
+#using script_3390b73ac3318fe;
 #using script_5605739161b1abe1;
 #using script_7f9409b703dad400;
-#using scripts\mp\utility\teams.gsc;
-#using script_3390b73ac3318fe;
+#using scripts\mp\utility\teams;
 
 #namespace ob_vote;
 
@@ -21,15 +21,15 @@ function function_93c8f90c3bd798c6(player, time_limit, success_callback) {
     }
     timer = namespace_26c5a699d7cb84a2::function_3eec8a169e8a0936(time_limit);
     player function_37a354eaca18f977();
-    var_1eb238caad736b47 = scripts\mp\utility\teams::getsquadmates(player.team, player.sessionsquadid, 1);
+    original_squad = scripts\mp\utility\teams::getsquadmates(player.team, player.sessionsquadid, 1);
     waitframe();
     vote_success = 0;
     var_3292a1fe7c25743d = 0;
     while (isdefined(player) && timer.progresscomplete != 1) {
         n_time_remaining = int(timer.var_621cb2c0d9b1cdae);
         var_26d5115774db834b = scripts\mp\utility\teams::getsquadmates(player.team, player.sessionsquadid, 1);
-        if (function_ce41f145ddc5cf35(var_1eb238caad736b47, var_26d5115774db834b)) {
-            namespace_6c57c664b4288f88::function_47f6a44a599fa91d(var_1eb238caad736b47);
+        if (function_ce41f145ddc5cf35(original_squad, var_26d5115774db834b)) {
+            namespace_6c57c664b4288f88::function_47f6a44a599fa91d(original_squad);
             var_3292a1fe7c25743d = 1;
             break;
         }
@@ -64,11 +64,11 @@ function function_93c8f90c3bd798c6(player, time_limit, success_callback) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32d
 // Size: 0x70
-function function_ce41f145ddc5cf35(var_1eb238caad736b47, var_26d5115774db834b) {
-    if (var_1eb238caad736b47.size != var_26d5115774db834b.size) {
+function function_ce41f145ddc5cf35(original_squad, var_26d5115774db834b) {
+    if (original_squad.size != var_26d5115774db834b.size) {
         return true;
     }
-    foreach (elem in var_1eb238caad736b47) {
+    foreach (elem in original_squad) {
         if (!arraycontains(var_26d5115774db834b, elem)) {
             return true;
         }

@@ -1,11 +1,11 @@
-#using script_3433ee6b63c7e243;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\aitypes\combat.gsc;
-#using script_5938b1c7e9cf6ddd;
-#using scripts\asm\soldier\patrol.gsc;
-#using scripts\asm\shared\utility.gsc;
 #using script_13d1c402f1421c35;
+#using script_3433ee6b63c7e243;
+#using scripts\aitypes\combat;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\patrol;
+#using scripts\common\dog_utility;
 
 #namespace setup;
 
@@ -31,7 +31,7 @@ function setupagent(taskid) {
     self.var_689bf433cb5c5322 = "melee_ai_mp";
     self.fnplaceweaponon = &namespace_223959d3e5206cfb::placeweaponon;
     self.fndropweapon = &namespace_223959d3e5206cfb::dropaiweapon;
-    self.fnstealthgotonode = &namespace_30928b2d56e819f::go_to_node;
+    self.fnstealthgotonode = &scripts\common\dog_utility::go_to_node;
     scripts\asm\soldier\patrol::function_3aba5f22b60d37f5();
     scripts\asm\shared\utility::setupsoldierdefaults();
     self.dropweapon = 0;

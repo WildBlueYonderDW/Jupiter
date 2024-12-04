@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_930a1e7bd882c1d;
-#using script_7ab5b649fa408138;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\cp_mp\equipment\throwing_knife.gsc;
 #using script_6a5d3bf7a5b7064a;
-#using scripts\mp\deathicons.gsc;
-#using scripts\mp\gametypes\br_vehicles.gsc;
-#using scripts\mp\gametypes\br_utility.gsc;
+#using script_7ab5b649fa408138;
+#using script_930a1e7bd882c1d;
+#using scripts\common\utility;
+#using scripts\cp_mp\equipment\throwing_knife;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\deathicons;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\gametypes\br_vehicles;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\playerlogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_147cc21b507a21ed;
 
@@ -314,7 +314,7 @@ function function_35be50043c0855ae() {
 // Checksum 0x0, Offset: 0x19ab
 // Size: 0x17c
 function playinfilplayeranims(animstruct, players) {
-    var_e4c30d4c191baae = getanimlength(level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_redux_player1"]);
+    var_e4c30d4c191baae = getanimlength(level.br_anim["sdr_mp_infil_ac130_redux_player1"]);
     if (function_35be50043c0855ae()) {
         var_e4c30d4c191baae = 0;
     }
@@ -468,18 +468,18 @@ function getanimsforplanefacing(animstruct) {
     dotright = vectordot(playerforward, planeright);
     cos45 = cos(45);
     if (dotforward < -1 * cos45) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10"], "sdr_mp_infil_ac130_jump"];
+        return ["sdr_mp_infil_ac130_jump_genpropx10", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10"], "sdr_mp_infil_ac130_jump"];
     }
     if (dotright > cos45) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10_90_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_l"], "sdr_mp_infil_ac130_jump_90_l"];
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_l", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_90_l"], "sdr_mp_infil_ac130_jump_90_l"];
     }
     if (dotright < -1 * cos45) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10_90_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_90_r"], "sdr_mp_infil_ac130_jump_90_r"];
+        return ["sdr_mp_infil_ac130_jump_genpropx10_90_r", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_90_r"], "sdr_mp_infil_ac130_jump_90_r"];
     }
     if (dotright > 0) {
-        return ["sdr_mp_infil_ac130_jump_genpropx10_180_l", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_l"], "sdr_mp_infil_ac130_jump_180_l"];
+        return ["sdr_mp_infil_ac130_jump_genpropx10_180_l", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_180_l"], "sdr_mp_infil_ac130_jump_180_l"];
     }
-    return ["sdr_mp_infil_ac130_jump_genpropx10_180_r", level.var_1a209bd995a7fa83["sdr_mp_infil_ac130_jump_genpropx10_180_r"], "sdr_mp_infil_ac130_jump_180_r"];
+    return ["sdr_mp_infil_ac130_jump_genpropx10_180_r", level.br_anim["sdr_mp_infil_ac130_jump_genpropx10_180_r"], "sdr_mp_infil_ac130_jump_180_r"];
 }
 
 // Namespace namespace_147cc21b507a21ed / namespace_973962356ce55fee

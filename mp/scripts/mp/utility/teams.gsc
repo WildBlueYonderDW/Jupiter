@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_18661c91de5b5195;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\player.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\playerlogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
 
 #namespace teams;
 

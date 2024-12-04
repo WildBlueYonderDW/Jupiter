@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\stealth\enemy.gsc;
-#using scripts\stealth\group.gsc;
-#using scripts\stealth\event.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\debug;
+#using scripts\stealth\enemy;
+#using scripts\stealth\event;
+#using scripts\stealth\group;
+#using scripts\stealth\threat_sight;
 
 #namespace neutral;
 

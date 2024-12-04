@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\flags.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\utility\game;
 
 #namespace playerstats;
 

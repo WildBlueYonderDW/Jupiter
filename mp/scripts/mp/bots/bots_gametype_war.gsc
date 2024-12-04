@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\mgl_mp.gsc;
 #using script_3d2770dc09c1243;
-#using scripts\mp\autopilot.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\autopilot;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\mgl_mp;
 
 #namespace bots_gametype_war;
 

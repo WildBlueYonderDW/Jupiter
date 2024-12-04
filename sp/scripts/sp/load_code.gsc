@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using script_6a04c207a6c69f43;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\system.gsc;
 #using script_23425a2c53de5769;
-#using scripts\sp\starts.gsc;
-#using script_6bfe39bd5c12f84a;
 #using script_3254d90a426b13a0;
-#using scripts\sp\scripted_weapon_assignment.gsc;
 #using script_45d238a595862e40;
-#using scripts\sp\nvg\nvg_player.gsc;
-#using scripts\sp\debug.gsc;
 #using script_575fda2758b0a36e;
+#using script_6a04c207a6c69f43;
+#using script_6bfe39bd5c12f84a;
+#using scripts\common\ai;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\debug;
+#using scripts\sp\nvg\nvg_player;
+#using scripts\sp\scripted_weapon_assignment;
+#using scripts\sp\starts;
+#using scripts\sp\utility;
 
-#namespace namespace_914e3327a82c4ceb;
+#namespace load_code;
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x5
 // Checksum 0x0, Offset: 0x65f
 // Size: 0x21
@@ -26,7 +26,7 @@ function private autoexec __init__system__() {
     system::register(#"hash_6999f162b67c3039", #"val", &pre_main, undefined);
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x688
 // Size: 0x9
@@ -34,7 +34,7 @@ function pre_main() {
     function_8dbb468af531b648();
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x699
 // Size: 0xdb
@@ -52,11 +52,11 @@ function function_8dbb468af531b648() {
     level.var_8dbb468af531b648 = 1;
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x77c
 // Size: 0x1e
-function function_43b9dfbfb2702b96() {
+function init_values() {
     if (isdefined(level.values)) {
         return;
     }
@@ -64,19 +64,19 @@ function function_43b9dfbfb2702b96() {
     function_8dbb468af531b648();
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7a2
 // Size: 0x6b
 function init_level() {
     assertex(!isdefined(level.script), "level.script defined before load::main()");
     scripts\sp\starts::init_starts();
-    level.script = tolower(getdvar(@"hash_687fb8f9b7a23245"));
+    level.script = tolower(getdvar(@"g_mapname"));
     println("<dev string:x1c>", level.script);
     level.framedurationseconds = level.frameduration / 1000;
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x815
 // Size: 0x197
@@ -101,7 +101,7 @@ function init_global_dvars() {
     setsaveddvar(@"hash_770dcc95c434a4a7", 1);
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9b4
 // Size: 0x12
@@ -109,7 +109,7 @@ function init_global_omnvars() {
     setomnvar("ui_gettocover_text", "game/get_to_cover");
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ce
 // Size: 0xde
@@ -136,7 +136,7 @@ function init_global_precache() {
     precacheshader("widg_gradient_top_to_bottom");
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xab4
 // Size: 0x2ae
@@ -191,7 +191,7 @@ function init_funcs() {
     }
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd6a
 // Size: 0x4f
@@ -208,7 +208,7 @@ function init_global_variables() {
     thread do_level_first_frame();
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc1
 // Size: 0x42
@@ -219,7 +219,7 @@ function init_objective_colors() {
     setsaveddvar(@"con_typewritercolorbase", my_textbrightness_default);
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xe0b
 // Size: 0x1c
@@ -230,7 +230,7 @@ function private function_c88206dcf93476a2(b_value) {
     childthread set_allow_crosshair_delayed(b_value);
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xe2f
 // Size: 0x2b
@@ -241,7 +241,7 @@ function private set_allow_crosshair_delayed(b_value) {
     setsaveddvar(@"cg_drawcrosshair", b_value);
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xe62
 // Size: 0x32
@@ -256,7 +256,7 @@ function private function_f372a21bcb8fc73b(b_value) {
     flag_set("weapon_scanning_off");
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xe9c
 // Size: 0x71
@@ -274,7 +274,7 @@ function private function_493c39f4df2e5b50(b_value) {
     level.player ent_flag_set("disable_antigrav_float");
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xf15
 // Size: 0x1c
@@ -285,7 +285,7 @@ function private function_9a83d95d2b6bd514(b_value) {
     self sethandsoccupied(!b_value);
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xf39
 // Size: 0x49
@@ -301,7 +301,7 @@ function private function_120c300530a9fb46(value) {
     thread scripts\sp\nvg\nvg_player::disable_nvg_proc(0);
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xf8a
 // Size: 0x2a
@@ -316,7 +316,7 @@ function private function_6172dea499dc136a(b_value) {
     self hidelegsandshadow();
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfbc
 // Size: 0x1e
@@ -326,7 +326,7 @@ function do_level_first_frame() {
     level.first_frame = -1;
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfe2
 // Size: 0x68
@@ -341,7 +341,7 @@ function post_load_functions() {
 
 /#
 
-    // Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+    // Namespace load_code / scripts\sp\load_code
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1052
     // Size: 0x2c
@@ -353,7 +353,7 @@ function post_load_functions() {
         namespace_ce37d6b0b65e8e6b::init();
     }
 
-    // Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+    // Namespace load_code / scripts\sp\load_code
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1086
     // Size: 0xc
@@ -363,7 +363,7 @@ function post_load_functions() {
 
 #/
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x109a
 // Size: 0x4d
@@ -379,7 +379,7 @@ function load_binks() {
     }
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x10ef
 // Size: 0x38
@@ -388,12 +388,12 @@ function delete_on_load() {
     delaythread(0.05, &array_delete, getentarray("delete_on_firstframeend", "targetname"));
 }
 
-// Namespace namespace_914e3327a82c4ceb / scripts\sp\load_code
+// Namespace load_code / scripts\sp\load_code
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x112f
 // Size: 0x23
 function post_cl_pregame() {
-    while (getdvarint(@"hash_fc7e51cf1d4cb29d")) {
+    while (getdvarint(@"cl_pregame")) {
         waitframe();
     }
     flag_set("post_cl_pregame");

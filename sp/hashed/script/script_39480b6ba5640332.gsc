@@ -1,5 +1,5 @@
-#using scripts\common\vehicle_build.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_build;
 
 #namespace namespace_d66b520c6124cbdc;
 

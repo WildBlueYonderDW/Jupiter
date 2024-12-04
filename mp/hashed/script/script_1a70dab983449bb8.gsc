@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_13865ca76df87ea;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using script_5762ac2f22202ba2;
 #using script_7556d6ff132b5aa;
 #using script_7ef95bba57dc4b82;
-#using script_5762ac2f22202ba2;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace thermobaric_grenade;
 

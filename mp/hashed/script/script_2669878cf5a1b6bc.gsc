@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2669878cf5a1b6bc;
+#using script_600b944a95c3a7bf;
 #using script_6d0c0f9491f682df;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
 
 #namespace weapon;
 
@@ -977,8 +977,8 @@ function buildweaponmap() {
         foreach (weaponname in weaponsscriptbundle) {
             weaponscriptbundle = namespace_e0ee43ef2dddadaa::function_8477d8595e0364a7(weaponname, [#"ref", #"group", #"displayorder", #"asset", #"name", #"perk", #"speedscale", #"hash_1469d2b702a6d5f8", #"lootid", #"botpersonality", #"hash_119f70b4890befd"]);
             weapon = weaponscriptbundle.ref;
-            var_7360aef3491dffc2 = weaponscriptbundle.asset;
-            if (weapon != "" && weaponexists(var_7360aef3491dffc2) && !isnullweapon(makeweaponfromstring(var_7360aef3491dffc2))) {
+            weapon_asset = weaponscriptbundle.asset;
+            if (weapon != "" && weaponexists(weapon_asset) && !isnullweapon(makeweaponfromstring(weapon_asset))) {
                 level.weaponmapdata[weapon] = spawnstruct();
                 group = weaponscriptbundle.group;
                 if (isdefined(group) && group != "") {

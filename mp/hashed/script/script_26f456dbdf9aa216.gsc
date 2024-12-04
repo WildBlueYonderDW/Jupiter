@@ -1,7 +1,7 @@
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\gesture.gsc;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\gesture;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_cbce62193111f79;
 

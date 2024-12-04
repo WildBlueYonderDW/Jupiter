@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
 #using script_72ef6b9f0cf1f55a;
-#using scripts\mp\flags.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace namespace_e06040b33bcef19;
 

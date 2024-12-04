@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
 #using script_2342b8aad723994e;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\outline.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\outline;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\join_team_aggregator;
 
 #namespace outline;
 

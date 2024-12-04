@@ -1,15 +1,15 @@
+#using script_239a365a92ee4476;
+#using script_32d93a194074fa6a;
+#using script_44102c05f33e9b1e;
+#using script_530f3ea26428deba;
+#using script_5693b37bfb748170;
 #using script_5a37c8d34c31ea89;
 #using script_5dfa1fb6b030bdcb;
 #using script_6981400abfcd765c;
-#using script_5693b37bfb748170;
-#using script_32d93a194074fa6a;
-#using script_530f3ea26428deba;
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\utility.gsc;
-#using script_239a365a92ee4476;
 #using script_782ed84671b152fb;
-#using script_44102c05f33e9b1e;
-#using scripts\mp\gametypes\br_dev.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\utility\game;
 
 #namespace ftue_br;
 

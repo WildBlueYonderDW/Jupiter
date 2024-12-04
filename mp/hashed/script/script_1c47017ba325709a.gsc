@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\poi.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\mp\ai_behavior.gsc;
-#using script_41ba451876d0900c;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_4bac13d511590220;
-#using scripts\common\vehicle.gsc;
-#using script_24e4405cf93f20ed;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
 #using script_1c47017ba325709a;
+#using script_24e4405cf93f20ed;
+#using script_41ba451876d0900c;
+#using script_48814951e916af89;
+#using script_4bac13d511590220;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_code;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\poi;
 
 #namespace namespace_3715b32331beba31;
 

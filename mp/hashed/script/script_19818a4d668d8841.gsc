@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\usability.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\usability;
 
 #namespace loadout_drop;
 

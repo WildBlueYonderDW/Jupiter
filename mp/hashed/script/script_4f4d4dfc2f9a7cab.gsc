@@ -1,18 +1,18 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\engine\utility.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using script_58be75c518bf0d40;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_19fd5b5d73d44c18;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using script_58be75c518bf0d40;
+#using script_7ab5b649fa408138;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\supers;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace squad_rage;
 
@@ -154,7 +154,7 @@ function private function_83a05073c0b69a18() {
 // Size: 0x78
 function private function_50755760e28c7650(targetplayer, sourceplayer) {
     var_50755760e28c7650 = 1;
-    if (!scripts\mp\utility\player::function_ad443bbcdcf37b85(targetplayer)) {
+    if (!scripts\mp\utility\player::isAliveAndNotInLastStand(targetplayer)) {
         var_50755760e28c7650 = 0;
     } else if (distance2dsquared(targetplayer.origin, sourceplayer.origin) > level.var_699a1785b1375779.var_dd96ee76756a81c0) {
         var_50755760e28c7650 = 0;

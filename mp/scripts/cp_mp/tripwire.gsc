@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace tripwire;
 
@@ -24,7 +24,7 @@ function init() {
     level.var_e9a6fc11b0aa7eb2 = &tripwire_enable;
     level.var_d9d80893720b39df = &tripwire_disable;
     level.var_f1bff73a86c35c52 = &function_391d956c772fb03f;
-    setdvarifuninitialized(@"hash_7c66efa464d04274", 0);
+    setdvarifuninitialized(@"debug_tripwire", 0);
     var_7992e35c1abecadd = getstructarray("tripwire_start", "script_noteworthy");
     foreach (startstruct in var_7992e35c1abecadd) {
         if (!isdefined(startstruct.target)) {
@@ -234,7 +234,7 @@ function spawntripwire(startstruct, endstruct) {
         tripwire.delay = math::factor_value(0.1, 0.35, tripwire getnormtripwirelength());
     }
     /#
-        if (getdvarint(@"hash_7c66efa464d04274", 0) != 0) {
+        if (getdvarint(@"debug_tripwire", 0) != 0) {
             thread scripts\cp_mp\utility\debug_utility::drawline(tripwire.origin, triggerorg, 99999, (1, 0, 0));
         }
     #/
@@ -920,10 +920,10 @@ function disarmfuncfrag(who) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2de9
 // Size: 0x5c
-function disarmgiveweapon(weapon, lootname, grenade_origin, var_40559a644f5cc3e6) {
+function disarmgiveweapon(weapon, lootname, grenade_origin, grenade_angles) {
     if (scripts\engine\utility::issharedfuncdefined("tripwire", "disarmGiveWeapon")) {
         var_ee6983a991436671 = scripts\engine\utility::getsharedfunc("tripwire", "disarmGiveWeapon");
-        thread [[ var_ee6983a991436671 ]](weapon, lootname, self, grenade_origin, var_40559a644f5cc3e6);
+        thread [[ var_ee6983a991436671 ]](weapon, lootname, self, grenade_origin, grenade_angles);
     }
 }
 
@@ -1067,7 +1067,7 @@ function function_e532c2521845ce4a(var_8eca5bdf48ccf8e6, targets) {
         var_248f2537e91d1766 = (var_35e885a65f4c35f + var_d3e09f5f7bbb6484, var_437c30771383edb0, var_dc33914a50fc9820);
     }
     /#
-        if (getdvarint(@"hash_7c66efa464d04274", 0) != 0) {
+        if (getdvarint(@"debug_tripwire", 0) != 0) {
             thread scripts\cp_mp\utility\debug_utility::drawsphere(var_4a2359165feb7717, 10, 600, (0, 1, 0));
         }
     #/

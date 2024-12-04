@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
 #using script_5d265b4fca61f070;
-#using scripts\sp\anim.gsc;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
 
 #namespace dialogue;
 
@@ -29,7 +29,7 @@ function function_168830b0663bc9f4(maxdist) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c5
 // Size: 0x345
-function function_7bd4fbf21584d46e(alias, tag, skip_face, var_ccb02b123dce520a) {
+function function_7bd4fbf21584d46e(alias, tag, skip_face, temp_emitter) {
     speaker = self;
     if (isstruct(self) && isdefined(self.vo_parent)) {
         speaker = self.vo_parent;
@@ -41,14 +41,14 @@ function function_7bd4fbf21584d46e(alias, tag, skip_face, var_ccb02b123dce520a) 
     } else {
         tag = default_to(tag, "j_head");
     }
-    var_ccb02b123dce520a = default_to(var_ccb02b123dce520a, 1);
+    temp_emitter = default_to(temp_emitter, 1);
     emitter = self;
     if (isdefined(self.vo_parent)) {
-        emitter = self.vo_parent function_f5eb5b4d0e6714aa(tag, (0, 0, 0), (0, 0, 0), var_ccb02b123dce520a);
+        emitter = self.vo_parent function_f5eb5b4d0e6714aa(tag, (0, 0, 0), (0, 0, 0), temp_emitter);
     } else if (isplayer(self) || isstruct(self) || isdefined(self.vo_emitter)) {
         emitter = function_f5eb5b4d0e6714aa();
     } else if (!istrue(self.var_cbc44e3ab4fe0707) && !istrue(self.var_b05aad42f8a13a4) && self tagexists(tag)) {
-        emitter = function_f5eb5b4d0e6714aa(tag, (-0.35, -3.5, 0), (0, 0, 0), var_ccb02b123dce520a);
+        emitter = function_f5eb5b4d0e6714aa(tag, (-0.35, -3.5, 0), (0, 0, 0), temp_emitter);
     }
     emitter stopsounds();
     if (isdefined(speaker) && isent(speaker)) {
@@ -64,8 +64,8 @@ function function_7bd4fbf21584d46e(alias, tag, skip_face, var_ccb02b123dce520a) 
             } else {
                 radio_dist = function_405ca75fc1a4ec12(alias) * 0.33;
             }
-            var_7f92a5190dffd8c1 = distancesquared(level.player.origin + (0, 0, 60), emitter.origin);
-            context = ter_op(var_7f92a5190dffd8c1 < squared(radio_dist), "dx_open_air", "dx_radio_2d");
+            player_distsq = distancesquared(level.player.origin + (0, 0, 60), emitter.origin);
+            context = ter_op(player_distsq < squared(radio_dist), "dx_open_air", "dx_radio_2d");
         }
         emitter playcontextsound(alias, "dx_type", context);
         if (!istrue(self.skip_face) && !istrue(skip_face) && (isai(self) || istrue(self.fakeactor_face_anim))) {

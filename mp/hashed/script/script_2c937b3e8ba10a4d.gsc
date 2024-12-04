@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
 #using script_7b2517368c79e5bc;
+#using scripts\engine\utility;
 
 #namespace namespace_6cc1c526f45bd479;
 
@@ -18,8 +18,8 @@ function function_628ac163573e544e() {
 function function_67d2e1159a24893(item_def, item, auto_pickup, var_d3c1dfe8dea4ec26) {
     foreach (primary_weapon in self.primaryweapons) {
         if (primary_weapon.inventorytype == "primary" && !istrue(primary_weapon.ismelee)) {
-            var_de8a9ead75a0581 = self getweaponammostock(primary_weapon);
-            if (var_de8a9ead75a0581 < primary_weapon.maxammo) {
+            current_ammo = self getweaponammostock(primary_weapon);
+            if (current_ammo < primary_weapon.maxammo) {
                 return true;
             }
         }
@@ -34,9 +34,9 @@ function function_67d2e1159a24893(item_def, item, auto_pickup, var_d3c1dfe8dea4e
 function use_ammo(item_def, item) {
     foreach (primary_weapon in self.primaryweapons) {
         if (primary_weapon.inventorytype == "primary" && !istrue(primary_weapon.ismelee)) {
-            var_41fe346fd14b2567 = default_to(item.count, 20);
+            ammoamount = default_to(item.count, 20);
             maxammo = primary_weapon.maxammo;
-            var_c1192c297bbf292f = maxammo * var_41fe346fd14b2567 / 100;
+            var_c1192c297bbf292f = maxammo * ammoamount / 100;
             currentammostock = self getweaponammostock(primary_weapon);
             var_c1192c297bbf292f = currentammostock + var_c1192c297bbf292f;
             var_c1192c297bbf292f = clamp(var_c1192c297bbf292f, 0, maxammo);

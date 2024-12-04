@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7ef95bba57dc4b82;
 #using script_354c862768cfe202;
-#using script_66122a002aff5d57;
 #using script_5762ac2f22202ba2;
+#using script_66122a002aff5d57;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_707dcb67ace81b4b;
 
@@ -46,7 +46,7 @@ function throwing_knife_cp_trytopickup(equipmentref) {
     if (namespace_4fb9dddfb8c1a67a::hasequipment(equipmentref) && namespace_4fb9dddfb8c1a67a::getequipmentammo(equipmentref) < namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(equipmentref)) {
         namespace_4fb9dddfb8c1a67a::incrementequipmentammo(equipmentref);
     } else if (namespace_6250b14b3f614101::isbackpackinventoryenabled() && namespace_6250b14b3f614101::function_8a160d9935d47f5e(equipmentref, "equipment", 1)) {
-        namespace_6250b14b3f614101::function_9d094fac5ae6454e(equipmentref, "equipment", 1);
+        namespace_6250b14b3f614101::addItemToBackpackByRef(equipmentref, "equipment", 1);
     } else {
         return false;
     }

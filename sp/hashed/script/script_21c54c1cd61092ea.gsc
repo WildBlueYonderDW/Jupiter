@@ -1,6 +1,6 @@
-#namespace namespace_4fc2b6aed9804f2e;
+#namespace bodies_civilian_me_male_1;
 
-// Namespace namespace_4fc2b6aed9804f2e / namespace_e042c7224f303bae
+// Namespace bodies_civilian_me_male_1 / namespace_e042c7224f303bae
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc4
 // Size: 0x33

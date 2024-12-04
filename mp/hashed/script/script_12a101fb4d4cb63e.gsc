@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using script_7b2517368c79e5bc;
 #using script_443d99fe707f1d9f;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\hud_message.gsc;
+#using script_7b2517368c79e5bc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
 
 #namespace namespace_fcd9a54e8b7f9724;
 

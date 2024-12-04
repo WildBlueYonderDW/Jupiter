@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp\vehicles\damage_cp.gsc;
+#using scripts\common\utility;
+#using scripts\cp\vehicles\damage_cp;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\engine\utility;
 
 #namespace namespace_7244be1b361ba035;
 

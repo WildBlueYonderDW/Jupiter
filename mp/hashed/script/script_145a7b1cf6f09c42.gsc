@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\hud_util.gsc;
 #using script_2583ee5680cf4736;
-#using scripts\mp\gamescore.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
 
 #namespace namespace_76b8c9d9aeef6321;
 

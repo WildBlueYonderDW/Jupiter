@@ -1,19 +1,19 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\system.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\equipment.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
 #using script_239a365a92ee4476;
-#using scripts\mp\utility\perk.gsc;
+#using script_2d9d24f7c63ac143;
 #using script_44102c05f33e9b1e;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\perks\perks;
+#using scripts\mp\supers;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_729830ae5e0ae98e;
 

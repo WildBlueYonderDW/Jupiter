@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_67fb1233e876ed8;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\stealth\event.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\stealth\event;
 
 #namespace vehicle_interact;
 
@@ -214,8 +214,8 @@ function function_356ea06606d08642(player) {
             continue;
         }
         var_6681408ac5fcc6cf = player.pers["telemetry"];
-        if (notification == "vehicle_cruise_control_on" && isdefined(var_6681408ac5fcc6cf.var_a04e1e3880a078a8)) {
-            var_6681408ac5fcc6cf.var_a04e1e3880a078a8++;
+        if (notification == "vehicle_cruise_control_on" && isdefined(var_6681408ac5fcc6cf.vehicle_autofwd_count)) {
+            var_6681408ac5fcc6cf.vehicle_autofwd_count++;
         }
     }
 }

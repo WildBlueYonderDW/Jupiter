@@ -1,36 +1,36 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_9880b9dc28bc25e;
-#using script_7edf952f8921aa6b;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_5753ba9c28794a65;
-#using script_4ef01fe6151dde4d;
-#using script_79deab1955343d5d;
-#using script_41387eecc35b88bf;
 #using script_185660037b9236c1;
-#using script_4fdefae8b7bcdf73;
+#using script_19c169a442d5975a;
 #using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
+#using script_22f1701e151b9d12;
 #using script_3ab210ea917601e7;
-#using script_64351208cb856df9;
-#using scripts\asm\shared\mp\utility.gsc;
 #using script_3e31016b9c11a616;
+#using script_41387eecc35b88bf;
 #using script_46c7c73b1a7e4773;
+#using script_4e6e58ab5d96c2b0;
+#using script_4ef01fe6151dde4d;
+#using script_4fa7e9e11630166c;
+#using script_4fdefae8b7bcdf73;
+#using script_5753ba9c28794a65;
+#using script_64351208cb856df9;
 #using script_645acc6422636f9f;
 #using script_7534b1d3ac3ea47a;
-#using script_4fa7e9e11630166c;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using script_19c169a442d5975a;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\common\vehicle.gsc;
-#using script_4e6e58ab5d96c2b0;
-#using script_22f1701e151b9d12;
+#using script_7956d56c4922bd1;
+#using script_79deab1955343d5d;
+#using script_7edf952f8921aa6b;
+#using script_9880b9dc28bc25e;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
 
 #namespace namespace_72155ae72c1c70a8;
 
@@ -1147,15 +1147,15 @@ function zombie_death_watcher() {
 // Checksum 0x0, Offset: 0x402f
 // Size: 0xfe
 function function_a1080ca0704d2c39() {
-    var_31109020393ed11b = "base_zombie";
+    str_aitype = "base_zombie";
     if (scripts\engine\utility::percent_chance(12) && isdefined(self.var_e245ba1b36b148a3["zombie_hellhound"]) && self.var_e245ba1b36b148a3["zombie_hellhound"] < 2) {
-        var_31109020393ed11b = "hellhound";
+        str_aitype = "hellhound";
     } else if (scripts\engine\utility::percent_chance(30) && isdefined(self.var_e245ba1b36b148a3["zombie_base_armored_light"]) && self.var_e245ba1b36b148a3["zombie_base_armored_light"] < 7 && is_equal(self.difficulty_region, "difficulty_normal")) {
-        var_31109020393ed11b = "light_armored_zombie";
+        str_aitype = "light_armored_zombie";
     } else if (scripts\engine\utility::percent_chance(30) && isdefined(self.var_e245ba1b36b148a3["zombie_base_armored_heavy"]) && self.var_e245ba1b36b148a3["zombie_base_armored_heavy"] < 7 && function_8fbf2d2648c5c8c5(self.difficulty_region, "difficulty_hard")) {
-        var_31109020393ed11b = "heavy_armored_zombie";
+        str_aitype = "heavy_armored_zombie";
     }
-    return var_31109020393ed11b;
+    return str_aitype;
 }
 
 // Namespace namespace_72155ae72c1c70a8 / namespace_edd624734aa27359
@@ -1163,11 +1163,11 @@ function function_a1080ca0704d2c39() {
 // Checksum 0x0, Offset: 0x4136
 // Size: 0x26
 function function_ec9e3c8ad5226305() {
-    var_31109020393ed11b = "mangler";
+    str_aitype = "mangler";
     if (scripts\engine\utility::percent_chance(50)) {
-        var_31109020393ed11b = "disciple";
+        str_aitype = "disciple";
     }
-    return var_31109020393ed11b;
+    return str_aitype;
 }
 
 // Namespace namespace_72155ae72c1c70a8 / namespace_edd624734aa27359

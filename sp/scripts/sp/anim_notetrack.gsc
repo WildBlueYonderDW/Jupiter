@@ -1,16 +1,16 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\anim\notetracks.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\sp\anim.gsc;
+#using scripts\anim\notetracks;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
+#using scripts\stealth\callbacks;
 
-#namespace namespace_979af0f200d960d8;
+#namespace anim_notetrack;
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f8
 // Size: 0x43
@@ -24,7 +24,7 @@ function entity_handle_notetrack(guy, notetrack) {
     general_notetrack_handler(guy, notetrack);
 }
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x343
 // Size: 0x1ed
@@ -82,7 +82,7 @@ function general_notetrack_handler(guy, notetrack) {
     }
 }
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x538
 // Size: 0x179
@@ -131,7 +131,7 @@ function sp_anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_
     }
 }
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6b9
 // Size: 0x3f
@@ -144,7 +144,7 @@ function gun_pickup_left() {
     namespace_223959d3e5206cfb::placeweaponon(self.weapon, "left");
 }
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x700
 // Size: 0x3f
@@ -157,7 +157,7 @@ function gun_pickup_right() {
     namespace_223959d3e5206cfb::placeweaponon(self.weapon, "right");
 }
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x747
 // Size: 0x48
@@ -172,7 +172,7 @@ function gun_leave_behind(scr_notetrack) {
     scripts\sp\anim::primaryweapon_leave_behind(scr_notetrack["tag"], suspend);
 }
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x797
 // Size: 0x69
@@ -185,7 +185,7 @@ function mayhem_start(animation, usehatmodel) {
     self setanim(animation, 1, 0, 1);
 }
 
-// Namespace namespace_979af0f200d960d8 / scripts\sp\anim_notetrack
+// Namespace anim_notetrack / scripts\sp\anim_notetrack
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x808
 // Size: 0x76

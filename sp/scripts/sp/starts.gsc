@@ -1,11 +1,11 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\audio.gsc;
-#using scripts\sp\trigger.gsc;
-#using scripts\sp\analytics.gsc;
-#using scripts\sp\hud_util.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\analytics;
+#using scripts\sp\audio;
+#using scripts\sp\hud_util;
+#using scripts\sp\trigger;
+#using scripts\sp\utility;
 
 #namespace starts;
 
@@ -34,11 +34,11 @@ function do_starts() {
 // Checksum 0x0, Offset: 0x45c
 // Size: 0x92
 function add_no_game_starts() {
-    var_66ab67677b93dd3d = getentarray("script_origin_start_nogame", "classname");
-    if (!var_66ab67677b93dd3d.size) {
+    start_spots = getentarray("script_origin_start_nogame", "classname");
+    if (!start_spots.size) {
         return;
     }
-    foreach (spot in var_66ab67677b93dd3d) {
+    foreach (spot in start_spots) {
         if (!isdefined(spot.script_startname)) {
             continue;
         }
@@ -70,18 +70,18 @@ function do_no_game_start() {
 // Checksum 0x0, Offset: 0x580
 // Size: 0x140
 function do_no_game_start_teleport() {
-    var_66ab67677b93dd3d = getentarray("script_origin_start_nogame", "classname");
-    if (!var_66ab67677b93dd3d.size) {
+    start_spots = getentarray("script_origin_start_nogame", "classname");
+    if (!start_spots.size) {
         return;
     }
-    var_66ab67677b93dd3d = sortbydistance(var_66ab67677b93dd3d, level.player.origin);
+    start_spots = sortbydistance(start_spots, level.player.origin);
     if (level.start_point == "no_game") {
-        level.player teleport_player(var_66ab67677b93dd3d[0]);
+        level.player teleport_player(start_spots[0]);
         return;
     }
     var_23cc4fb96f8e24cc = getsubstr(level.start_point, 8);
-    var_12b5978d746f0ca4 = 0;
-    foreach (point in var_66ab67677b93dd3d) {
+    found_spot = 0;
+    foreach (point in start_spots) {
         if (!isdefined(point.script_startname)) {
             continue;
         }
@@ -92,11 +92,11 @@ function do_no_game_start_teleport() {
             visionsetnaked(point.script_visionset, 0);
         }
         level.player teleport_player(point);
-        var_12b5978d746f0ca4 = 1;
+        found_spot = 1;
         break;
     }
-    if (!var_12b5978d746f0ca4) {
-        level.player teleport_player(var_66ab67677b93dd3d[0]);
+    if (!found_spot) {
+        level.player teleport_player(start_spots[0]);
     }
 }
 
@@ -172,8 +172,8 @@ function display_starts() {
     strings = [];
     for (i = 0; i < dvars.size; i++) {
         dvar = dvars[i];
-        var_16ee78be2c1e34b5 = "[" + dvars[i] + "]";
-        strings[strings.size] = var_16ee78be2c1e34b5;
+        start_string = "[" + dvars[i] + "]";
+        strings[strings.size] = start_string;
     }
     selected = dvars.size - 1;
     up_pressed = 0;
@@ -293,26 +293,26 @@ function start_load_transients() {
         var_37a46a86c391ce84 = getsavegametransients();
     } else {
         if (level.start_point != "default") {
-            var_d1c6381e96d14169 = level.start_arrays[level.start_point];
-            if (isdefined(var_d1c6381e96d14169["transient"])) {
-                var_f4322ce4ec225081 = var_d1c6381e96d14169["transient"];
+            start_array = level.start_arrays[level.start_point];
+            if (isdefined(start_array["transient"])) {
+                var_f4322ce4ec225081 = start_array["transient"];
                 if (isstring(var_f4322ce4ec225081)) {
                     if (var_f4322ce4ec225081 == "none") {
                         var_37a46a86c391ce84 = [];
                     } else {
-                        var_ccdd77193defd398 = gettransientsetnames();
-                        var_e53bfc2bd3ba06c9 = "none";
-                        foreach (name in var_ccdd77193defd398) {
+                        set_names = gettransientsetnames();
+                        set_match = "none";
+                        foreach (name in set_names) {
                             if (var_f4322ce4ec225081 == name) {
-                                var_e53bfc2bd3ba06c9 = var_f4322ce4ec225081;
+                                set_match = var_f4322ce4ec225081;
                                 level.var_d06c0df83859d1c3[var_f4322ce4ec225081] = 1;
                                 break;
                             }
                         }
-                        if (var_e53bfc2bd3ba06c9 == "none") {
+                        if (set_match == "none") {
                             var_37a46a86c391ce84 = [var_f4322ce4ec225081];
                         } else {
-                            var_37a46a86c391ce84 = gettransientsinset(var_e53bfc2bd3ba06c9);
+                            var_37a46a86c391ce84 = gettransientsinset(set_match);
                         }
                     }
                 } else if (isarray(var_f4322ce4ec225081)) {
@@ -368,10 +368,10 @@ function handle_starts() {
         }
     }
     if (isdefined(level.default_start_override_alt) && !isdefined(level.start_point)) {
-        var_c413e9ba7fab9c45 = level.player getplayerprogression("lastCompletedMission");
-        if (isdefined(var_c413e9ba7fab9c45)) {
-            tok = strtok(var_c413e9ba7fab9c45, "_");
-            if (isdefined(var_c413e9ba7fab9c45) && tok.size > 0) {
+        previous_mission = level.player getplayerprogression("lastCompletedMission");
+        if (isdefined(previous_mission)) {
+            tok = strtok(previous_mission, "_");
+            if (isdefined(previous_mission) && tok.size > 0) {
                 if (tok[0] == "sa" || tok[0] == "ja") {
                     foreach (index, dvar in dvars) {
                         if (level.default_start_override_alt == dvar) {
@@ -406,8 +406,8 @@ function handle_starts() {
     waittillframeend();
     flag_set("start_is_set");
     thread start_menu();
-    var_d1c6381e96d14169 = level.start_arrays[level.start_point];
-    if (isdefined(var_d1c6381e96d14169) && isdefined(var_d1c6381e96d14169["start_in_jackal"])) {
+    start_array = level.start_arrays[level.start_point];
+    if (isdefined(start_array) && isdefined(start_array["start_in_jackal"])) {
         setomnvar("ui_active_hud", "jackal");
         setsaveddvar(@"hash_e5e11740f51a39d5", 1);
     } else {
@@ -418,12 +418,12 @@ function handle_starts() {
             level thread [[ level.default_start ]]();
         }
     } else {
-        var_d1c6381e96d14169 = level.start_arrays[level.start_point];
+        start_array = level.start_arrays[level.start_point];
         /#
             thread indicate_start(level.start_point);
         #/
         function_d6004361b7a233e4();
-        thread [[ var_d1c6381e96d14169["start_func"] ]]();
+        thread [[ start_array["start_func"] ]]();
     }
     if (is_default_start() || getdvarint(@"fpstool_run")) {
         string = get_string_for_starts(dvars);
@@ -440,14 +440,14 @@ function handle_starts() {
     if (!is_default_start() && level.start_point != "no_game") {
         time = gettime();
         for (i = 0; i < level.start_functions.size; i++) {
-            var_d1c6381e96d14169 = level.start_functions[i];
-            if (var_d1c6381e96d14169["name"] == level.start_point) {
+            start_array = level.start_functions[i];
+            if (start_array["name"] == level.start_point) {
                 break;
             }
-            if (!isdefined(var_d1c6381e96d14169["catchup_function"])) {
+            if (!isdefined(start_array["catchup_function"])) {
                 continue;
             }
-            [[ var_d1c6381e96d14169["catchup_function"] ]]();
+            [[ start_array["catchup_function"] ]]();
         }
         assertex(time == gettime(), "time should not pass in the catchup functions.");
     }
@@ -457,24 +457,24 @@ function handle_starts() {
         }
     #/
     for (i = start_index; i < level.start_functions.size; i++) {
-        var_d1c6381e96d14169 = level.start_functions[i];
-        if (!isdefined(var_d1c6381e96d14169["logic_func"])) {
+        start_array = level.start_functions[i];
+        if (!isdefined(start_array["logic_func"])) {
             continue;
         }
-        if (already_ran_function(var_d1c6381e96d14169["logic_func"], var_8751813f2dae82ee)) {
+        if (already_ran_function(start_array["logic_func"], var_8751813f2dae82ee)) {
             continue;
         }
         if (getdvarint(@"feedback")) {
-            feedback_check_start(var_d1c6381e96d14169, i);
+            feedback_check_start(start_array, i);
         }
         if (getdvarint(@"fpstool_run") || getdvarint(@"prof_gameplaygfx")) {
-            setdvar(@"hash_46467383874e22fd", var_d1c6381e96d14169["name"]);
+            setdvar(@"hash_46467383874e22fd", start_array["name"]);
         }
         scripts\sp\analytics::start_point_setup();
-        level notify("start_logic", var_d1c6381e96d14169["name"]);
-        level.start_struct [[ var_d1c6381e96d14169["logic_func"] ]]();
-        scripts\sp\analytics::start_point_check(var_d1c6381e96d14169["name"]);
-        var_8751813f2dae82ee[var_8751813f2dae82ee.size] = var_d1c6381e96d14169["logic_func"];
+        level notify("start_logic", start_array["name"]);
+        level.start_struct [[ start_array["logic_func"] ]]();
+        scripts\sp\analytics::start_point_check(start_array["name"]);
+        var_8751813f2dae82ee[var_8751813f2dae82ee.size] = start_array["logic_func"];
         if (getdvarint(@"feedback")) {
             feedback_increase_index();
         }
@@ -486,8 +486,8 @@ function handle_starts() {
 // Checksum 0x0, Offset: 0x1593
 // Size: 0x5e
 function already_ran_function(func, var_8751813f2dae82ee) {
-    foreach (var_fb707540ffb0fbda in var_8751813f2dae82ee) {
-        if (var_fb707540ffb0fbda == func) {
+    foreach (logic_function in var_8751813f2dae82ee) {
+        if (logic_function == func) {
             return true;
         }
     }
@@ -623,10 +623,10 @@ function create_feedback_starts(sarray) {
         return;
     }
     flag_init("feedback_waiting_on_endFunc");
-    setdvarifuninitialized(@"hash_e4be6da1f4450ca2", 0);
+    setdvarifuninitialized(@"feedback_index", 0);
     setdvarifuninitialized(@"hash_b9725e2c8d3c3df7", 0);
     if (!getdvarint(@"hash_b9725e2c8d3c3df7")) {
-        setdvar(@"hash_e4be6da1f4450ca2", 0);
+        setdvar(@"feedback_index", 0);
     }
     setdvar(@"hash_b9725e2c8d3c3df7", 0);
     var_be775dd8cbb29af4 = [];
@@ -635,51 +635,51 @@ function create_feedback_starts(sarray) {
     }
     thread check_feedback_starts_existance(var_be775dd8cbb29af4);
     level.feedback_starts = var_be775dd8cbb29af4;
-    level.feedback_start_point = var_be775dd8cbb29af4[getdvarint(@"hash_e4be6da1f4450ca2")];
+    level.feedback_start_point = var_be775dd8cbb29af4[getdvarint(@"feedback_index")];
 }
 
 // Namespace starts / scripts\sp\starts
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a61
 // Size: 0x57
-function create_feedback_context(var_757398075bc0c10f, context) {
+function create_feedback_context(start_name, context) {
     if (!getdvarint(@"feedback")) {
         return;
     }
-    var_757398075bc0c10f = tolower(var_757398075bc0c10f);
+    start_name = tolower(start_name);
     if (!isdefined(level.feedback_context)) {
         level.feedback_context = [];
     }
-    level.feedback_context[var_757398075bc0c10f] = "^3" + context;
+    level.feedback_context[start_name] = "^3" + context;
 }
 
 // Namespace starts / scripts\sp\starts
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ac0
 // Size: 0x4e
-function create_feedback_endfunc(var_757398075bc0c10f, end_func, param) {
+function create_feedback_endfunc(start_name, end_func, param) {
     if (!getdvarint(@"feedback")) {
         return;
     }
-    var_757398075bc0c10f = tolower(var_757398075bc0c10f);
-    flag_init(var_757398075bc0c10f + "_endFunc");
-    thread create_feedback_endfunc_thread(var_757398075bc0c10f, end_func, param);
+    start_name = tolower(start_name);
+    flag_init(start_name + "_endFunc");
+    thread create_feedback_endfunc_thread(start_name, end_func, param);
 }
 
 // Namespace starts / scripts\sp\starts
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b16
 // Size: 0x3e
-function display_feedback_context(var_757398075bc0c10f) {
+function display_feedback_context(start_name) {
     if (!isdefined(level.feedback_context)) {
         return;
     }
-    if (!isdefined(level.feedback_context[var_757398075bc0c10f])) {
+    if (!isdefined(level.feedback_context[start_name])) {
         return;
     }
     waitframe();
     /#
-        iprintlnbold(level.feedback_context[var_757398075bc0c10f]);
+        iprintlnbold(level.feedback_context[start_name]);
     #/
 }
 
@@ -687,36 +687,36 @@ function display_feedback_context(var_757398075bc0c10f) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b5c
 // Size: 0x42
-function create_feedback_endfunc_thread(var_757398075bc0c10f, end_func, param) {
+function create_feedback_endfunc_thread(start_name, end_func, param) {
     level waittill("load_finished");
     if (isdefined(param)) {
         [[ end_func ]](param);
     } else {
         [[ end_func ]]();
     }
-    flag_set(var_757398075bc0c10f + "_endFunc");
+    flag_set(start_name + "_endFunc");
 }
 
 // Namespace starts / scripts\sp\starts
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ba6
 // Size: 0x67
-function feedback_check_start(var_d1c6381e96d14169, start_index) {
+function feedback_check_start(start_array, start_index) {
     if (!isdefined(level.feedback_starts)) {
         return;
     }
-    var_757398075bc0c10f = var_d1c6381e96d14169["name"];
-    index = getdvarint(@"hash_e4be6da1f4450ca2");
-    thread feedback_check_endfunc(var_757398075bc0c10f, index);
-    feedback_check_end(var_757398075bc0c10f, index);
-    display_feedback_context(var_757398075bc0c10f);
+    start_name = start_array["name"];
+    index = getdvarint(@"feedback_index");
+    thread feedback_check_endfunc(start_name, index);
+    feedback_check_end(start_name, index);
+    display_feedback_context(start_name);
 }
 
 // Namespace starts / scripts\sp\starts
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c15
 // Size: 0x7a
-function feedback_check_endfunc(var_757398075bc0c10f, index) {
+function feedback_check_endfunc(start_name, index) {
     if (!isdefined(level.feedback_starts[index])) {
         return;
     }
@@ -726,14 +726,14 @@ function feedback_check_endfunc(var_757398075bc0c10f, index) {
     flag_set("feedback_waiting_on_endFunc");
     flag_wait(level.feedback_starts[index] + "_endFunc");
     flag_clear("feedback_waiting_on_endFunc");
-    feedback_check_end(var_757398075bc0c10f, index + 1);
+    feedback_check_end(start_name, index + 1);
 }
 
 // Namespace starts / scripts\sp\starts
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c97
 // Size: 0xd3
-function feedback_check_end(var_757398075bc0c10f, index) {
+function feedback_check_end(start_name, index) {
     if (flag("feedback_waiting_on_endFunc")) {
         return;
     }
@@ -744,7 +744,7 @@ function feedback_check_end(var_757398075bc0c10f, index) {
         changelevel("", 0);
         level waittill("forever");
     }
-    if (level.feedback_starts[index] != var_757398075bc0c10f) {
+    if (level.feedback_starts[index] != start_name) {
         setdvar(@"start", level.feedback_starts[index]);
         blackoverlay = scripts\sp\hud_util::create_client_overlay("black", 0);
         blackoverlay fadeovertime(0.5);
@@ -761,9 +761,9 @@ function feedback_check_end(var_757398075bc0c10f, index) {
 // Checksum 0x0, Offset: 0x1d72
 // Size: 0x2e
 function feedback_increase_index() {
-    index = getdvarint(@"hash_e4be6da1f4450ca2");
+    index = getdvarint(@"feedback_index");
     index++;
-    setdvar(@"hash_e4be6da1f4450ca2", index);
+    setdvar(@"feedback_index", index);
 }
 
 // Namespace starts / scripts\sp\starts
@@ -785,11 +785,11 @@ function check_feedback_starts_existance(var_e534176e56c4ea7) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e86
 // Size: 0x65
-function add_start_construct(msg, func, var_8a65799b42bd1960, transient, catchup_function) {
+function add_start_construct(msg, func, optional_func, transient, catchup_function) {
     array = [];
     array["name"] = msg;
     array["start_func"] = func;
-    array["logic_func"] = var_8a65799b42bd1960;
+    array["logic_func"] = optional_func;
     array["transient"] = transient;
     array["catchup_function"] = catchup_function;
     return array;

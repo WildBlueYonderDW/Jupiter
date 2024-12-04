@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using scripts\cp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_debug.gsc;
-#using script_70de4b08084a8fe;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\cp_hostmigration.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_354c862768cfe202;
-#using scripts\cp_mp\emp_debuff.gsc;
+#using script_70de4b08084a8fe;
+#using scripts\common\utility;
+#using scripts\cp\cp_debug;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\utility\entity;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace radar_scrambler;
 
@@ -444,7 +444,7 @@ function playerentercallback(exitnotify, clearnotify, triggertype, trigger) {
     if (isdefined(triggertype) && triggertype == "restricted") {
         var_3a44172702973ab6 = 2;
     }
-    self.var_a67651c67e18c594 = trigger;
+    self.radar_trigger = trigger;
     /#
         self iprintln("<dev string:x81>");
     #/
@@ -461,7 +461,7 @@ function function_b2a14335ecf202f8(exitnotify, clearnotify, triggertype, trigger
         var_3a44172702973ab6 = 2;
     }
     function_86afcfb8eb7bf0d2(trigger);
-    self.var_a67651c67e18c594 = trigger;
+    self.radar_trigger = trigger;
 }
 
 // Namespace radar_scrambler / namespace_4f38e357ab5494ec
@@ -469,7 +469,7 @@ function function_b2a14335ecf202f8(exitnotify, clearnotify, triggertype, trigger
 // Checksum 0x0, Offset: 0x143f
 // Size: 0x3c
 function playerexitcallback(fromdeath, fromclear, clearnotify) {
-    self.var_a67651c67e18c594 = undefined;
+    self.radar_trigger = undefined;
     /#
         self iprintln("<dev string:xaa>");
     #/
@@ -481,7 +481,7 @@ function playerexitcallback(fromdeath, fromclear, clearnotify) {
 // Checksum 0x0, Offset: 0x1483
 // Size: 0x2c
 function function_d405dee230e91b4(fromdeath, fromclear, clearnotify) {
-    self.var_a67651c67e18c594 = undefined;
+    self.radar_trigger = undefined;
     function_d55ed59c0ce164d3();
 }
 
@@ -619,7 +619,7 @@ function function_831c13bfee564637() {
 // Checksum 0x0, Offset: 0x187b
 // Size: 0xcf
 function function_60ec8aa27cc049e6() {
-    var_20533273f43dd4e2 = [];
+    updated_array = [];
     if (isdefined(level.var_f676be7150162ca7)) {
         flag_set("radar_scramblers_initialized");
         foreach (trigger in level.var_f676be7150162ca7) {
@@ -643,7 +643,7 @@ function watchradarScramblerTrigger(trigger) {
     trigger.entstouching = [];
     if (isdefined(trigger.target)) {
         trigger.var_3efe1b3a9ef1aba0 = getent(trigger.target, "targetname");
-        trigger.var_3efe1b3a9ef1aba0.var_281086936687228a = trigger;
+        trigger.var_3efe1b3a9ef1aba0.parent_trigger = trigger;
         trigger.var_3efe1b3a9ef1aba0 thread namespace_4f38e357ab5494ec::function_e849523551c4f041();
     }
     scripts\mp\flags::gameflagwait("prematch_done");
@@ -1039,9 +1039,9 @@ function function_417718db737858b7() {
     level.overwatch_emp_high = 1.2;
     level.overwatch_emp_free = 5;
     level.var_3d1e30b1d4cdea65 = getentarray("emp_jammer", "targetname");
-    foreach (var_c9771233da58f66c in level.var_3d1e30b1d4cdea65) {
-        var_c9771233da58f66c hudoutlineenable("outline_nodepth_red");
-        var_c9771233da58f66c thread function_e849523551c4f041();
+    foreach (location_ent in level.var_3d1e30b1d4cdea65) {
+        location_ent hudoutlineenable("outline_nodepth_red");
+        location_ent thread function_e849523551c4f041();
     }
 }
 
@@ -1071,12 +1071,12 @@ function function_e849523551c4f041() {
         /#
             attacker iprintln("<dev string:xcf>");
         #/
-        if (isdefined(self.var_281086936687228a)) {
-            foreach (ent in self.var_281086936687228a.entstouching) {
-                function_45efa9bc7f471ef1(self.var_281086936687228a, ent);
+        if (isdefined(self.parent_trigger)) {
+            foreach (ent in self.parent_trigger.entstouching) {
+                function_45efa9bc7f471ef1(self.parent_trigger, ent);
             }
         }
-        self.var_281086936687228a delete();
+        self.parent_trigger delete();
         self delete();
     }
 }

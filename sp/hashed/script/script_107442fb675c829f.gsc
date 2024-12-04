@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_5762ac2f22202ba2;
 #using script_1ed1214969b5eba7;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using script_736dec95a49487a6;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_7ef95bba57dc4b82;
-#using script_608c50392df8c7d1;
-#using scripts\cp_mp\killstreaks\sentry_gun.gsc;
 #using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_247745a526421ba7;
+#using script_5762ac2f22202ba2;
+#using script_608c50392df8c7d1;
+#using script_736dec95a49487a6;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\killstreaks\sentry_gun;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace capture_bot;
 
@@ -58,9 +58,9 @@ function function_b2f29740cb52f391() {
 // Checksum 0x0, Offset: 0xa76
 // Size: 0x62
 function function_287c3582fae35289(player) {
-    foreach (var_e0d7784e906d506 in level.var_e0f77360ddb0ba30) {
-        if (isdefined(var_e0d7784e906d506)) {
-            var_e0d7784e906d506 function_136158ea18135f55(player);
+    foreach (CaptureBot in level.var_e0f77360ddb0ba30) {
+        if (isdefined(CaptureBot)) {
+            CaptureBot function_136158ea18135f55(player);
         }
     }
 }

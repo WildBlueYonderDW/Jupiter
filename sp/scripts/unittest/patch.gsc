@@ -1,5 +1,5 @@
-#using scripts\unittest\util.gsc;
-#using scripts\unittest\patch_far.gsc;
+#using scripts\unittest\patch_far;
+#using scripts\unittest\util;
 
 #namespace unittest_patch;
 

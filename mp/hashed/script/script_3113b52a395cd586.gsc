@@ -1,15 +1,15 @@
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\scriptable.gsc;
 #using script_11f4fc0fd23c7bed;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\gameobjects.gsc;
+#using script_12668187dcf15b96;
 #using script_2583ee5680cf4736;
 #using script_2d9d24f7c63ac143;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using script_12668187dcf15b96;
+#using script_600b944a95c3a7bf;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_lootcache;
 
 #namespace namespace_e192b53669adb26d;
 
@@ -653,7 +653,7 @@ function private function_bffd72a3766031d2(var_8fda2f947e5c9e14, var_6edcc4c0efa
         val::set_array("exgm_tool_interaction", controls, 0);
         return;
     }
-    val::function_38f73441260ce622("exgm_tool_interaction", controls);
+    val::reset_array("exgm_tool_interaction", controls);
 }
 
 // Namespace namespace_e192b53669adb26d / namespace_8a301a9e06bc923e
@@ -663,9 +663,9 @@ function private function_bffd72a3766031d2(var_8fda2f947e5c9e14, var_6edcc4c0efa
 function private function_d8106ff3211f102d(scriptable, toolsettings) {
     assert(isdefined(toolsettings) && isdefined(scriptable));
     scriptable endon("use_animation_finished");
-    var_c00a2c6249962d83 = function_8443dcfc48098ab6(scriptable, toolsettings);
-    playerangles = var_c00a2c6249962d83[1];
-    playerorigin = var_c00a2c6249962d83[0];
+    __a10 = function_8443dcfc48098ab6(scriptable, toolsettings);
+    playerangles = __a10[1];
+    playerorigin = __a10[0];
     if (distancesquared(playerorigin, self.origin) >= squared(0.1)) {
         playerorigindropped = player_drop_to_ground(playerorigin, 15, 60, -60);
         playerorigin = (playerorigin[0], playerorigin[1], playerorigindropped[2]);

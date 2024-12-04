@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace c17_infil;
 
@@ -321,9 +321,9 @@ function vehiclethink(team, start_node, scene_name, extra_crew) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1700
 // Size: 0x5e
-function function_479353a38aa88191(var_e46500ff77661ff8, time) {
+function function_479353a38aa88191(destination_node, time) {
     self scriptmodelclearanim();
-    destination = var_e46500ff77661ff8.origin;
+    destination = destination_node.origin;
     var_12e356abc031b02d = vectortoangles(destination - self.origin);
     self.angles = var_12e356abc031b02d;
     self moveto(destination, time);
@@ -406,7 +406,7 @@ function spawn_anim_model(slotindex, linkto_ent, body, headmodel) {
 // Size: 0x555
 function initanims(subtype, team, originalsubtype) {
     script_model_alpha_anims(subtype);
-    function_68aab9f69431ce1(subtype, team, originalsubtype);
+    vehicles_anims(subtype, team, originalsubtype);
     addnotetrack_customfunction("slot_0", "fov_63_2", &player_fov_default_2);
     addnotetrack_customfunction("slot_1", "fov_63_2", &player_fov_default_2);
     addnotetrack_customfunction("slot_2", "fov_63_2", &player_fov_default_2);
@@ -518,7 +518,7 @@ function script_model_alpha_anims(subtype) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x259d
 // Size: 0x8a
-function function_68aab9f69431ce1(subtype, team, originalsubtype) {
+function vehicles_anims(subtype, team, originalsubtype) {
     level.scr_anim["c_17"]["c17_infil" + "_1"] = mp_vehicles_always_loaded%jup_war_skydiving_attacker_infill_plan_shot010;
     level.scr_anim["c_17"]["c17_infil" + "_2"] = mp_vehicles_always_loaded%jup_war_skydiving_attacker_infill_plan_shot020;
     level.scr_anim["c_17"]["c17_infil" + "_3"] = mp_vehicles_always_loaded%jup_war_skydiving_attacker_infill_plan_shot030;

@@ -1,19 +1,19 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
 #using script_20a226c24f1585bf;
-#using scripts\mp\vehicles\damage.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\mp_agent_damage.gsc;
-#using scripts\cp_mp\killstreaks\chopper_support.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\killstreaks\chopper_support;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent_damage;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\player;
+#using scripts\mp\vehicles\damage;
 
 #namespace namespace_c908de38bcdbd93d;
 
@@ -218,14 +218,14 @@ function function_4c9ef1ed5aef03c7(vehicle) {
 // Size: 0x76
 function function_f307cefb91e4e283() {
     highest_dmg = 0;
-    var_c1781275b3976ecf = undefined;
+    highest_attacker = undefined;
     foreach (ent_num, damage in self.attackers) {
         if (damage > highest_dmg) {
             highest_dmg = damage;
-            var_c1781275b3976ecf = getentbynum(ent_num);
+            highest_attacker = getentbynum(ent_num);
         }
     }
-    return var_c1781275b3976ecf;
+    return highest_attacker;
 }
 
 // Namespace namespace_c908de38bcdbd93d / namespace_49e272e116f37d0
@@ -490,7 +490,7 @@ function function_c1d877c72f9161f7(player, missileteam, missiletarget, fxtagover
         curdist = distance(self.origin, center);
         if (curdist < 4000 && missiletarget.flaresreservecount > 0) {
             missiletarget.flaresreservecount--;
-            missiletarget thread function_69b05f16bcff8836(fxtagoverride);
+            missiletarget thread heli_playflarefx(fxtagoverride);
             newtarget = undefined;
             if (issharedfuncdefined("flares", "deploy")) {
                 newtarget = missiletarget [[ getsharedfunc("flares", "deploy") ]]();
@@ -509,7 +509,7 @@ function function_c1d877c72f9161f7(player, missileteam, missiletarget, fxtagover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14b4
 // Size: 0x49
-function function_69b05f16bcff8836(fxtagoverride) {
+function heli_playflarefx(fxtagoverride) {
     flarestag = "tag_origin";
     if (isdefined(fxtagoverride)) {
         flarestag = fxtagoverride;

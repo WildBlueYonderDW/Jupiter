@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\stealth\group.gsc;
-#using scripts\stealth\event.gsc;
 #using script_26265e158b27bdda;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\corpse.gsc;
-#using scripts\common\gameskill.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\gameskill;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\corpse;
+#using scripts\stealth\debug;
+#using scripts\stealth\event;
+#using scripts\stealth\group;
+#using scripts\stealth\threat_sight;
+#using scripts\stealth\utility;
 
 #namespace enemy;
 

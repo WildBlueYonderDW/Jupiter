@@ -1,17 +1,17 @@
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_1b1a05843f74cfa9;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\tweakables.gsc;
-#using script_25845aca699d038d;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using script_56ef8d52fe1b48a1;
 #using script_1ed1214969b5eba7;
-#using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
+#using script_25845aca699d038d;
+#using script_2669878cf5a1b6bc;
+#using script_56ef8d52fe1b48a1;
 #using script_74502a9e0ef1f19c;
+#using script_7ef95bba57dc4b82;
+#using scripts\cp\utility;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\tweakables;
 
 #namespace killcam;
 
@@ -63,8 +63,8 @@ function setupkillcamui(attacker, victim, objweapon, killcamtimes, var_53c65e436
     if (iskillstreakweapon(objweapon.basename)) {
         setkillcamkillstreaktypeomnvars(objweapon);
     }
-    forcerespawn = getdvarint(@"hash_5d64cd3b24cf883a");
-    if (var_53c65e436a20e8e4 && !level.gameended || isdefined(self) && !level.gameended || forcerespawn == 0 && !level.gameended) {
+    forceRespawn = getdvarint(@"hash_5d64cd3b24cf883a");
+    if (var_53c65e436a20e8e4 && !level.gameended || isdefined(self) && !level.gameended || forceRespawn == 0 && !level.gameended) {
         self setclientomnvar("ui_killcam_text", "skip");
     } else if (!level.gameended) {
         self setclientomnvar("ui_killcam_text", "respawn");

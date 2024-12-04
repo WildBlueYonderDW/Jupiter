@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\common\ai.gsc;
 #using script_4449008f177af837;
-#using scripts\anim\notetracks.gsc;
-#using scripts\anim\face.gsc;
-#using scripts\asm\soldier\death.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\anim\face;
+#using scripts\anim\notetracks;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\soldier\death;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace melee;
 
@@ -141,7 +141,7 @@ function function_e157c0ce32f71cbe(target, var_a7fa0e3c9034f2f4, meleedirection,
                     meleepower = 10;
                     earthquakepower = 0.7;
                     earthquakeduration = 0.5;
-                    setsaveddvar(@"hash_26b8cd38ee81f166", 0.05);
+                    setsaveddvar(@"player_meleeDamageMultiplier", 0.05);
                 }
                 if (isdefined(self.var_1a0d03789f333f98)) {
                     meleepower = self.var_1a0d03789f333f98;
@@ -186,7 +186,7 @@ function function_e157c0ce32f71cbe(target, var_a7fa0e3c9034f2f4, meleedirection,
                     self.lastfailedmeleechargetarget = target;
                 }
                 if (var_c747e3b33ad16ac6) {
-                    setsaveddvar(@"hash_26b8cd38ee81f166", level.playermeleedamagemultiplier_dvar);
+                    setsaveddvar(@"player_meleeDamageMultiplier", level.playermeleedamagemultiplier_dvar);
                 }
             } else if (istrue(var_a7fa0e3c9034f2f4)) {
                 self.nextmeleechecktime = gettime() + randomintrange(1500, 2500);

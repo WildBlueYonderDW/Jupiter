@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\script.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\utility\script;
 
 #namespace br_flyover;
 

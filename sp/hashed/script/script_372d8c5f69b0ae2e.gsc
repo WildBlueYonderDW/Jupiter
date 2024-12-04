@@ -1,12 +1,12 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\stealth\group.gsc;
-#using scripts\common\ai.gsc;
 #using script_3433ee6b63c7e243;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\stealth\group;
 
 #namespace scripted_melee;
 
@@ -391,7 +391,7 @@ function private function_77967a9ef882f668(victim) {
 function private function_4122323699a9de19() {
     level endon("scripted_melee_stop");
     while (true) {
-        self waittill("animscripted_predicted_entry", victim, victim_parent, victim_origin, var_51e0b68e2cd1ede6, origin_offset, angles_offset, animScene);
+        self waittill("animscripted_predicted_entry", victim, victim_parent, victim_origin, victim_angles, origin_offset, angles_offset, animScene);
         if (self isuseinprogress()) {
             continue;
         }
@@ -461,7 +461,7 @@ function private function_497214b31d3bc138(attacker, animScene) {
     anim_stopanimscripted();
     set_scripted_node_angles(attacker, anim_ent);
     anim_ent thread function_9bb1020c719e33b6();
-    anim_ent function_ebf301224750c8b8((0, 1, 1), 1000, 10);
+    anim_ent DEBUG_AXIS((0, 1, 1), 1000, 10);
     debug_print3d(self.origin, "victim melee pos: " + attacker.var_eab23f9eeb595c1e, (0, 1, 1), 1, 0.1, 1000);
     debug_line(attacker.origin, self.origin, (0, 1, 1), 1, 0, 1000);
     debug_circle(self.origin, 16, (0, 1, 1), 1, 1, 1000);
@@ -1209,7 +1209,7 @@ function private function_1c96db6d76c91865(victim, scripted_node, animScene, sta
     var_d58d17e0a32ce60b = getstartangles(scripted_node.origin, scripted_node.angles, victim getanim(animScene));
     debug_line(victim.origin, victim.origin + anglestoforward(victim.angles) * 36, (0, 1, 0), 1, 0, 1000);
     debug_line(victim.origin, victim.origin + anglestoforward(var_d58d17e0a32ce60b) * 36, (1, 0, 1), 1, 0, 1000);
-    thread function_ebf301224750c8b8((0, 1, 0), 1000, 10);
+    thread DEBUG_AXIS((0, 1, 0), 1000, 10);
     debug_print3d(self.origin, "pre melee pos: " + gettime(), (0, 1, 0), 1, 0.1, 1000);
     debug_line(self.origin, self.origin + anglestoforward(self getplayerangles(1)) * 100, (0, 1, 0), 1, 0, 1000);
     blend_time = 0.35;
@@ -1613,7 +1613,7 @@ function private debug_circle(center, radius, color, alpha, depthtest, duration)
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0x4d42
 // Size: 0x39
-function private function_ebf301224750c8b8(color, duration, size) {
+function private DEBUG_AXIS(color, duration, size) {
     /#
         if (getdvarint(@"hash_e9e247c60cd8800a")) {
             draw_ent_axis(color, duration, size);

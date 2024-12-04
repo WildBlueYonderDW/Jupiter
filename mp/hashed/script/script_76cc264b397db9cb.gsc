@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using script_58be75c518bf0d40;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\script.gsc;
 #using script_2342b8aad723994e;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using script_58be75c518bf0d40;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\script;
 
 #namespace squads;
 

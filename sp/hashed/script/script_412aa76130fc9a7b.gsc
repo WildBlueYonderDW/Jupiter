@@ -1,27 +1,27 @@
-#using scripts\common\ai.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\vehicle.gsc;
 #using script_1031976741eb6674;
-#using script_f8531dcf975a7a7;
 #using script_1cc61c7403dfc55f;
-#using script_60add030ce1a42b6;
-#using scripts\sp\player\ally_equipment.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\sp\player_death.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\trigger.gsc;
 #using script_3433ee6b63c7e243;
+#using script_60add030ce1a42b6;
+#using script_f8531dcf975a7a7;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\hud_util;
+#using scripts\sp\player;
+#using scripts\sp\player\ally_equipment;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_death;
+#using scripts\sp\trigger;
+#using scripts\sp\utility;
+#using scripts\sp\vehicle;
 
 #namespace scene;
 
@@ -320,7 +320,7 @@ function function_2ce2e5069f5e9b73() {
     level thread namespace_8339f6377b6ba60e::function_b3e858ac93d180e9(undefined, undefined, "flag_finale_exfil_stop_nags", "finale_exfil_player_progress");
     level thread namespace_f247b8d258f67b0b::function_b8d9607e1e2b1692();
     array_thread(level.tundra_allies, &function_8f6b18d7ae327223);
-    level thread function_bc4454696e6e4d1();
+    level thread scene_1000();
     level thread function_ad0ba46db9f0e798();
     trig_finale_player_near_heli = getent("trig_finale_player_near_heli", "targetname");
     trig_finale_player_near_heli utility::trigger_on();
@@ -374,10 +374,10 @@ function function_8f6b18d7ae327223() {
     self endon("death");
     level flag_wait("flag_finale_exfil_heli_land_end");
     wait randomfloatrange(0.5, 1.5);
-    var_d5f03d368db83a94 = function_bdc421f433af10c7("nd_finale_exfil_ally_heli");
+    nd_heli = function_bdc421f433af10c7("nd_finale_exfil_ally_heli");
     set_fixednode_true();
     set_goal_radius(32);
-    set_goal_node(var_d5f03d368db83a94);
+    set_goal_node(nd_heli);
 }
 
 // Namespace scene / namespace_3bfdb34b3dc5924b
@@ -454,9 +454,9 @@ function function_32df82f8ae6c2212(var_f95e1cad859cbd7a) {
     self endon("death");
     thread scripts\common\vehicle::vehicle_lights_on("headlights");
     self vehicle_turnengineon();
-    var_9f096263a302e2f1 = getent("vol_" + self.targetname + "_badplace", "targetname");
-    if (isdefined(var_9f096263a302e2f1)) {
-        thread function_b8055651d256a10a(var_9f096263a302e2f1);
+    vol_badplace = getent("vol_" + self.targetname + "_badplace", "targetname");
+    if (isdefined(vol_badplace)) {
+        thread function_b8055651d256a10a(vol_badplace);
     }
     thread function_6b4c0678eb3a553a(self.targetname + "_start", "script_noteworthy", var_f95e1cad859cbd7a);
     ent_flag_wait("flag_finale_veh_path_end");
@@ -467,11 +467,11 @@ function function_32df82f8ae6c2212(var_f95e1cad859cbd7a) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2596
 // Size: 0x53
-function function_b8055651d256a10a(var_9f096263a302e2f1) {
-    var_c5e0ed2147359afe = "flag_" + self.targetname + "_clear";
-    navobstacleid = function_5fe0e6caaa579d06(var_9f096263a302e2f1, var_c5e0ed2147359afe);
+function function_b8055651d256a10a(vol_badplace) {
+    str_clear = "flag_" + self.targetname + "_clear";
+    navobstacleid = function_5fe0e6caaa579d06(vol_badplace, str_clear);
     if (isdefined(navobstacleid)) {
-        level flag_wait(var_c5e0ed2147359afe);
+        level flag_wait(str_clear);
         destroynavobstacle(navobstacleid);
     }
 }
@@ -480,16 +480,16 @@ function function_b8055651d256a10a(var_9f096263a302e2f1) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x25f1
 // Size: 0x59
-function function_5fe0e6caaa579d06(var_9f096263a302e2f1, var_c5e0ed2147359afe) {
-    level endon(var_c5e0ed2147359afe);
-    if (flag(var_c5e0ed2147359afe)) {
+function function_5fe0e6caaa579d06(vol_badplace, str_clear) {
+    level endon(str_clear);
+    if (flag(str_clear)) {
         return;
     }
     if (!ent_flag_exist("flag_finale_veh_jltv_approaching")) {
         ent_flag_init("flag_finale_veh_jltv_approaching");
     }
     ent_flag_wait("flag_finale_veh_jltv_approaching");
-    navobstacleid = createnavbadplacebyent(var_9f096263a302e2f1);
+    navobstacleid = createnavbadplacebyent(vol_badplace);
     return navobstacleid;
 }
 
@@ -516,9 +516,9 @@ function function_19d8ef210f5769cd() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2712
 // Size: 0x1f
-function function_2499f3dd15248b32(var_5d60eba2d9c7cd25) {
+function function_2499f3dd15248b32(b_godon) {
     self.script_ai_invulnerable = 1;
-    vehicle::function_36dbb623c325c79(!var_5d60eba2d9c7cd25);
+    vehicle::function_36dbb623c325c79(!b_godon);
 }
 
 // Namespace scene / namespace_3bfdb34b3dc5924b
@@ -552,8 +552,8 @@ function function_6e7c8bbe80393aa6(guy) {
 function function_9804c98f600b9ce4(str_targetname, var_f90bfee2d96cb111) {
     var_f90bfee2d96cb111 = default_to(var_f90bfee2d96cb111, 0);
     vehicle = spawn_vehicle_from_targetname(str_targetname);
-    vehicle.var_85d14fa7217047a4 = getfx("vfx_veh_tread_kickups");
-    playfxontag(vehicle.var_85d14fa7217047a4, vehicle, "tag_origin");
+    vehicle.trail_vfx = getfx("vfx_veh_tread_kickups");
+    playfxontag(vehicle.trail_vfx, vehicle, "tag_origin");
     vehicle.animname = "finale_jltv";
     vehicle thread function_3f8aff4b8975850e();
     vehicle thread namespace_8339f6377b6ba60e::function_a766c8499d8da8c0(var_f90bfee2d96cb111);
@@ -586,20 +586,20 @@ function function_3f8aff4b8975850e() {
 // Checksum 0x0, Offset: 0x2871
 // Size: 0xc4
 function function_8d18d6cd0c7787bd() {
-    var_c5e0ed2147359afe = "flag_" + self.targetname + "_clear";
-    var_3bb815a9e1d7723 = "flag_" + self.targetname + "_dead";
+    str_clear = "flag_" + self.targetname + "_clear";
+    str_dead = "flag_" + self.targetname + "_dead";
     msg = waittill_any_return("death", "reached_path_end", "driver dead", "tire_blown", "flag_finale_veh_path_end");
     ent_flag_set("flag_finale_jltv_stopped");
-    level flag_set(var_c5e0ed2147359afe);
+    level flag_set(str_clear);
     if (msg == "death") {
-        level flag_set(var_3bb815a9e1d7723);
+        level flag_set(str_dead);
     }
     waitframe();
     if (isdefined(self)) {
         thread namespace_8339f6377b6ba60e::function_5717b4e7fcce1693(0, 0, "vfx_veh_tread_kickups");
         if (msg != "death") {
             self waittill("death");
-            level flag_set(var_3bb815a9e1d7723);
+            level flag_set(str_dead);
         }
     }
 }
@@ -675,7 +675,7 @@ function function_a0954ea965227e12() {
         return;
     }
     self notify("driver dead");
-    self.var_79609010789ad12a = 1;
+    self.driver_dead = 1;
     thread namespace_8339f6377b6ba60e::function_5717b4e7fcce1693(randomfloatrange(0.5, 1.5), 1, "vfx_veh_tread_kickups", 1);
 }
 
@@ -697,8 +697,8 @@ function function_a0954ea965227e12() {
 // Size: 0x269
 function function_c365d01fbb73c2d7(var_fc85769059551ba8, var_e6838d192024f561) {
     self endon("death");
-    if (!isdefined(self.var_9654b44e70f08af6)) {
-        self.var_9654b44e70f08af6 = [];
+    if (!isdefined(self.passenger_ai)) {
+        self.passenger_ai = [];
     }
     var_e6838d192024f561 = default_to(var_e6838d192024f561, 0);
     wait 1;
@@ -712,12 +712,12 @@ function function_c365d01fbb73c2d7(var_fc85769059551ba8, var_e6838d192024f561) {
     if (!ent_flag_exist("flag_finale_veh_gunner_stand")) {
         ent_flag_init("flag_finale_veh_gunner_stand");
     }
-    self.var_9654b44e70f08af6[self.var_9654b44e70f08af6.size] = guy;
+    self.passenger_ai[self.passenger_ai.size] = guy;
     guy.ignoreme = 1;
     guy.ignoreall = 1;
     guy.dontevershoot = 1;
-    self.var_919f0014c17f79b7 = guy;
-    guy.var_919f0014c17f79b7 = 1;
+    self.turret_guy = guy;
+    guy.turret_guy = 1;
     guy.var_cbd87a0bc497b778 = 1;
     guy.grenadeammo = 0;
     guy.cannotmelee = 1;
@@ -741,8 +741,8 @@ function function_c365d01fbb73c2d7(var_fc85769059551ba8, var_e6838d192024f561) {
     tag_name = "tag_seat_wm_4";
     point = self gettagorigin(tag_name) + anglestoright(self.angles) * var_1b3bdabcb782eb2a + (0, 0, z_offset);
     guy dontinterpolate();
-    var_af7f8f9e51dda84f = self.angles;
-    guy forceteleport(point, var_af7f8f9e51dda84f);
+    teleport_angles = self.angles;
+    guy forceteleport(point, teleport_angles);
     guy linkto(self, tag_name);
     thread function_3a16332940ba7c62(guy, var_e6838d192024f561);
     if (isdefined(var_fc85769059551ba8)) {
@@ -757,9 +757,9 @@ function function_c365d01fbb73c2d7(var_fc85769059551ba8, var_e6838d192024f561) {
 // Size: 0x166
 function function_c458adefdbcac6af(guy, var_fc85769059551ba8) {
     guy endon("death");
-    var_c5e0ed2147359afe = "flag_" + self.targetname + "_clear";
-    msg = flag_wait_any_return(var_fc85769059551ba8, var_c5e0ed2147359afe);
-    if (msg == var_c5e0ed2147359afe) {
+    str_clear = "flag_" + self.targetname + "_clear";
+    msg = flag_wait_any_return(var_fc85769059551ba8, str_clear);
+    if (msg == str_clear) {
         if (isdefined(guy.magic_bullet_shield) && istrue(guy.magic_bullet_shield)) {
             guy stop_magic_bullet_shield();
         }
@@ -897,10 +897,10 @@ function function_9282b11cff0b229c() {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x32f2
 // Size: 0x3b3
-function function_57dd478bb085268f(var_3469f286a5a240f9, var_d8c1f1d9760d465b, var_6c42bffef6c0a5df, var_8160b6a55ba981df, var_a114aa815e9dac0a, var_6288b3103e84c792) {
+function function_57dd478bb085268f(var_3469f286a5a240f9, ai_noteworthy, var_6c42bffef6c0a5df, var_8160b6a55ba981df, var_a114aa815e9dac0a, ai_backup) {
     if (isdefined(var_3469f286a5a240f9)) {
-        var_c5e0ed2147359afe = "flag_" + var_3469f286a5a240f9.targetname + "_clear";
-        level flag_wait(var_c5e0ed2147359afe);
+        str_clear = "flag_" + var_3469f286a5a240f9.targetname + "_clear";
+        level flag_wait(str_clear);
     }
     var_a2d5178999799316 = 1;
     var_387c1bcfb4cd98b4 = 2;
@@ -922,23 +922,23 @@ function function_57dd478bb085268f(var_3469f286a5a240f9, var_d8c1f1d9760d465b, v
         foreach (str_vol in var_8160b6a55ba981df) {
             a_vols[a_vols.size] = getent(str_vol, "targetname");
         }
-        var_b29e77021b5ad13 = a_vols;
+        vol_flank = a_vols;
     } else {
-        var_b29e77021b5ad13 = getent(var_8160b6a55ba981df, "targetname");
+        vol_flank = getent(var_8160b6a55ba981df, "targetname");
     }
-    var_94d08343de33ee25 = utility::get_living_ai_array(var_d8c1f1d9760d465b, "script_noteworthy");
+    var_94d08343de33ee25 = utility::get_living_ai_array(ai_noteworthy, "script_noteworthy");
     var_94d08343de33ee25 = utility::array_removedead_or_dying(var_94d08343de33ee25);
     if (var_94d08343de33ee25.size == 0) {
-        if (isdefined(var_6288b3103e84c792) && !utility::flag("flag_finale_holdout_wave_2_enemies_half_dead")) {
-            spawners = getspawnerarray(var_6288b3103e84c792);
+        if (isdefined(ai_backup) && !utility::flag("flag_finale_holdout_wave_2_enemies_half_dead")) {
+            spawners = getspawnerarray(ai_backup);
             if (spawners.size == 0) {
                 return;
             }
             /#
-                iprintln("<dev string:x88>" + var_6288b3103e84c792);
+                iprintln("<dev string:x88>" + ai_backup);
             #/
-            array_spawn_function_targetname(var_6288b3103e84c792, &function_1b957e2b7af09073);
-            var_94d08343de33ee25 = utility::array_spawn_targetname(var_6288b3103e84c792, 1);
+            array_spawn_function_targetname(ai_backup, &function_1b957e2b7af09073);
+            var_94d08343de33ee25 = utility::array_spawn_targetname(ai_backup, 1);
             level.var_d3a6cfca302d130c = array_combine(level.var_d3a6cfca302d130c, var_94d08343de33ee25);
         } else {
             return;
@@ -955,33 +955,33 @@ function function_57dd478bb085268f(var_3469f286a5a240f9, var_d8c1f1d9760d465b, v
         if (var_94d08343de33ee25.size == 0) {
             return;
         }
-        var_119bb841cc2fcb88 = random(var_94d08343de33ee25);
-        var_94d08343de33ee25 = utility::array_remove(var_94d08343de33ee25, var_119bb841cc2fcb88);
-        var_119bb841cc2fcb88 setgoalpos(var_119bb841cc2fcb88.origin);
+        ai_shift = random(var_94d08343de33ee25);
+        var_94d08343de33ee25 = utility::array_remove(var_94d08343de33ee25, ai_shift);
+        ai_shift setgoalpos(ai_shift.origin);
         var_ba7ece8e5eb7d12b = randomfloatrange(var_994feef463f139c, var_450c547dd2183cca);
         if (flag(var_a114aa815e9dac0a)) {
             var_ba7ece8e5eb7d12b = randomfloatrange(var_387c1bcfb4cd98b4, var_f702381a60199c14);
         }
         if (utility::percent_chance(var_2f4b3471f66b28f1)) {
-            if (isarray(var_b29e77021b5ad13)) {
-                var_119bb841cc2fcb88 setgoalvolumeauto(random(var_b29e77021b5ad13));
+            if (isarray(vol_flank)) {
+                ai_shift setgoalvolumeauto(random(vol_flank));
             } else {
-                var_119bb841cc2fcb88 setgoalvolumeauto(var_b29e77021b5ad13);
+                ai_shift setgoalvolumeauto(vol_flank);
             }
             var_2f4b3471f66b28f1 = 75;
         } else {
             if (isarray(var_cb5c10eb3a3a7443)) {
-                var_119bb841cc2fcb88 setgoalvolumeauto(random(var_cb5c10eb3a3a7443));
+                ai_shift setgoalvolumeauto(random(var_cb5c10eb3a3a7443));
             } else {
-                var_119bb841cc2fcb88 setgoalvolumeauto(var_cb5c10eb3a3a7443);
+                ai_shift setgoalvolumeauto(var_cb5c10eb3a3a7443);
             }
-            var_119bb841cc2fcb88 utility::delaythread(var_ba7ece8e5eb7d12b, &set_attackeraccuracy, 3);
+            ai_shift utility::delaythread(var_ba7ece8e5eb7d12b, &set_attackeraccuracy, 3);
             var_2f4b3471f66b28f1 = 25;
         }
         if (flag(var_a114aa815e9dac0a)) {
-            var_119bb841cc2fcb88 ai::function_dd21d67ede8ba22(int(var_119bb841cc2fcb88.health * 0.5) + 1);
+            ai_shift ai::function_dd21d67ede8ba22(int(ai_shift.health * 0.5) + 1);
         }
-        var_119bb841cc2fcb88 utility::waittill_notify_or_timeout_return("death", var_ba7ece8e5eb7d12b);
+        ai_shift utility::waittill_notify_or_timeout_return("death", var_ba7ece8e5eb7d12b);
     }
 }
 
@@ -1023,7 +1023,7 @@ function function_12c91b42fbb66d17(a_ai_enemies) {
     a_ai_enemies = array_reverse(a_ai_enemies);
     foreach (ai in a_ai_enemies) {
         if (isdefined(ai) && isalive(ai)) {
-            if (istrue(ai.var_919f0014c17f79b7)) {
+            if (istrue(ai.turret_guy)) {
                 waitframe();
                 continue;
             }
@@ -1164,14 +1164,14 @@ function function_1655b3f150ca205c() {
     level.player endon("death");
     level endon("flag_finale_exfil_complete");
     var_1e4c41a5dcdf5b1e = squared(192);
-    var_d7926542b2ef2643 = ["smoke", "throwingknife", "flash"];
+    excluded_grenades = ["smoke", "throwingknife", "flash"];
     while (true) {
         self waittill("damage", amount, attacker, direction_vec, damageloc, meansofdeath, modelname, attachtagname, partname, dflags, objweapon, origin, angles, normal, inflictor, time);
         if (isdefined(meansofdeath) && !isexplosivedamagemod(meansofdeath)) {
             waitframe();
             continue;
         }
-        if (isdefined(objweapon) && array_contains(var_d7926542b2ef2643, getweaponbasename(objweapon))) {
+        if (isdefined(objweapon) && array_contains(excluded_grenades, getweaponbasename(objweapon))) {
             waitframe();
             continue;
         }
@@ -1239,9 +1239,9 @@ function function_c888cc5f1a23fb91() {
     level endon("flag_finale_holdout_complete");
     level utility::flag_wait_or_timeout("flag_finale_holdout_02", 5);
     level utility::flag_set("flag_finale_holdout_allies_start_moving");
-    foreach (var_43ae47166002602a in level.tundra_allies) {
-        var_43ae47166002602a.script_fixednode = 0;
-        var_43ae47166002602a set_fixednode_false();
+    foreach (ai_ally in level.tundra_allies) {
+        ai_ally.script_fixednode = 0;
+        ai_ally set_fixednode_false();
     }
     namespace_8339f6377b6ba60e::function_26ec77b7dfe68c94();
     waitframe();
@@ -1319,20 +1319,20 @@ function function_2416da5a3acb594c() {
     switch (gameskill) {
     case 3:
     case 4:
-        var_eda750471b51a474 = 0.8;
+        n_attackeraccuracy = 0.8;
         break;
     case 1:
     case 2:
-        var_eda750471b51a474 = 0.6;
+        n_attackeraccuracy = 0.6;
         break;
     case 0:
     default:
-        var_eda750471b51a474 = 0.4;
+        n_attackeraccuracy = 0.4;
         break;
     }
     while (true) {
         utility::flag_wait("flag_finale_player_at_boat");
-        level.player set_attackeraccuracy(var_eda750471b51a474);
+        level.player set_attackeraccuracy(n_attackeraccuracy);
         wait 1;
         utility::flag_waitopen("flag_finale_player_at_boat");
         level.player set_attackeraccuracy(1);
@@ -1354,9 +1354,9 @@ function function_c2d873372754136f() {
         level.player waittill("missile_fire", missile, objweapon);
         if (isdefined(missile)) {
             missile waittill("explode", origin);
-            var_b45273cd7cae5547 = utility::getvehiclearray_in_radius(origin, 64);
-            if (var_b45273cd7cae5547.size > 0) {
-                foreach (vehicle in var_b45273cd7cae5547) {
+            vehicles_near = utility::getvehiclearray_in_radius(origin, 64);
+            if (vehicles_near.size > 0) {
+                foreach (vehicle in vehicles_near) {
                     if (istrue(vehicle.candamage)) {
                         vehicle dodamage(vehicle.health + 1000, origin, level.player, undefined, "MOD_EXPLOSIVE");
                     }
@@ -1374,7 +1374,7 @@ function function_c2d873372754136f() {
 function function_557c19418ae6de25() {
     var_7c760871476912f0 = utility::getstructarray("s_finale_frag_pickup", "targetname");
     foreach (struct in var_7c760871476912f0) {
-        var_34f7c3d8345bed2e = struct namespace_8339f6377b6ba60e::function_527133d02bd11634();
+        frag_pickup = struct namespace_8339f6377b6ba60e::function_527133d02bd11634();
     }
     var_7e4eacd4b564b40c = utility::getstructarray("s_finale_semtex_pickup", "targetname");
     foreach (struct in var_7e4eacd4b564b40c) {
@@ -1382,7 +1382,7 @@ function function_557c19418ae6de25() {
     }
     var_73cbc61960108ebd = utility::getstructarray("s_finale_smoke_pickup", "targetname");
     foreach (struct in var_73cbc61960108ebd) {
-        var_6e98b17966cae207 = struct namespace_8339f6377b6ba60e::function_527133d02bd11634("smoke");
+        smoke_pickup = struct namespace_8339f6377b6ba60e::function_527133d02bd11634("smoke");
     }
 }
 
@@ -1451,16 +1451,16 @@ function function_efddd276c907acfb() {
     level.player val::set(registered, "death", 0);
     level.player val::set(registered, "freezecontrols", 1);
     level.player val::set(registered, "ignoreme", 1);
-    var_235248757c4ec93c = newhudelem();
-    var_235248757c4ec93c.alignx = "center";
-    var_235248757c4ec93c.aligny = "bottom";
-    var_235248757c4ec93c.x = 320;
-    var_235248757c4ec93c.y = 500;
-    var_235248757c4ec93c.alpha = 1;
-    var_235248757c4ec93c setshader("black", 9999, 999);
+    bg_hud = newhudelem();
+    bg_hud.alignx = "center";
+    bg_hud.aligny = "bottom";
+    bg_hud.x = 320;
+    bg_hud.y = 500;
+    bg_hud.alpha = 1;
+    bg_hud setshader("black", 9999, 999);
     var_5c59fc44a8dd3434 = 3;
-    var_3d6838d70b4187d4 = ["- END MISSION -", "141 boards Nikolai's helo with their cargo, General Shepherd,", "then they head out to rendezvous with Laswell..."];
-    function_79a528c78c285c0(var_5c59fc44a8dd3434, var_3d6838d70b4187d4);
+    a_lines = ["- END MISSION -", "141 boards Nikolai's helo with their cargo, General Shepherd,", "then they head out to rendezvous with Laswell..."];
+    function_79a528c78c285c0(var_5c59fc44a8dd3434, a_lines);
     wait 5;
 }
 
@@ -1468,9 +1468,9 @@ function function_efddd276c907acfb() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x49ea
 // Size: 0x158
-function function_79a528c78c285c0(var_5c59fc44a8dd3434, var_3d6838d70b4187d4) {
+function function_79a528c78c285c0(var_5c59fc44a8dd3434, a_lines) {
     var_61a2500bbaf63219 = [];
-    foreach (l in var_3d6838d70b4187d4) {
+    foreach (l in a_lines) {
         hud = newhudelem();
         hud.alignx = "center";
         hud.aligny = "middle";

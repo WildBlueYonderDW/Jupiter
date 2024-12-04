@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\values.gsc;
 #using script_686729055b66c6e4;
-#using scripts\common\devgui.gsc;
 #using script_6bffae1b97f70547;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace deadwire;
 
@@ -76,7 +76,7 @@ function function_9f332972d199fdda(death, attacker, mod, sweapon, vpoint, shitlo
             callback::callback("shocked", params);
             val::set("deadwire_stunned", "ignoreme", 1);
             ent_flag_set("deadwire_stunned");
-            function_2e4d3c67e63f83ac(1000);
+            stun_ai(1000);
             thread deadwire_timer(death, attacker, mod, sweapon, vpoint, shitloc, modelindex);
         }
     }

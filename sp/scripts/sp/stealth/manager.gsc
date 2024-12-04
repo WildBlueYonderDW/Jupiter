@@ -1,12 +1,12 @@
-#using script_3212cc02a2700260;
-#using scripts\common\utility.gsc;
-#using scripts\stealth\manager.gsc;
 #using script_26265e158b27bdda;
-#using scripts\sp\utility.gsc;
+#using script_3212cc02a2700260;
 #using script_35de402efc5acfb3;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\stealth\player.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\stealth\player;
+#using scripts\sp\utility;
+#using scripts\stealth\manager;
 
 #namespace manager;
 
@@ -165,7 +165,7 @@ function threat_sight_player_sight_audio(anycansee, maxthreat, var_67e8151f4dfc6
                 var_cfaeeea72851152d = 1;
                 if (snd_ent.isplaying == 0) {
                     snd_ent scalevolume(0, 0);
-                    mapname = getdvar(@"hash_687fb8f9b7a23245");
+                    mapname = getdvar(@"g_mapname");
                     if (mapname != "marina") {
                         snd_ent scripts\engine\utility::delaycall(0.05, &playloopsound, alias);
                     }

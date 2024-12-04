@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\utility\entity;
 
 #namespace bots_strategy;
 
@@ -664,16 +664,16 @@ function should_start_cautious_approach_default(firstcheck) {
 // Checksum 0x0, Offset: 0x2061
 // Size: 0x8c
 function setup_investigate_location(node, optional_location) {
-    var_92045964a16006d = spawnstruct();
+    new_location = spawnstruct();
     if (isdefined(optional_location)) {
-        var_92045964a16006d.origin = optional_location;
+        new_location.origin = optional_location;
     } else {
-        var_92045964a16006d.origin = node.origin;
+        new_location.origin = node.origin;
     }
-    assertex(isdefined(node), "Bot Investigation Location " + var_92045964a16006d.origin + " has no node");
-    var_92045964a16006d.node = node;
-    var_92045964a16006d.frames_visible = 0;
-    return var_92045964a16006d;
+    assertex(isdefined(node), "Bot Investigation Location " + new_location.origin + " has no node");
+    new_location.node = node;
+    new_location.frames_visible = 0;
+    return new_location;
 }
 
 // Namespace bots_strategy / scripts\mp\bots\bots_strategy
@@ -752,24 +752,24 @@ function defense_cautious_approach() {
     var_f570f5d5d761c173 = int(min(var_8529e9f32cf6579c, var_b3464eeebef71679.size));
     var_b784196cf6d9c696 = self botnodepickmultiple(var_b3464eeebef71679, 15, var_f570f5d5d761c173, "node_protect", defend_valid_center(), "ignore_occupancy");
     for (i = 0; i < var_b784196cf6d9c696.size; i++) {
-        var_92045964a16006d = setup_investigate_location(var_b784196cf6d9c696[i]);
-        self.locations_to_investigate = array_add(self.locations_to_investigate, var_92045964a16006d);
+        new_location = setup_investigate_location(var_b784196cf6d9c696[i]);
+        self.locations_to_investigate = array_add(self.locations_to_investigate, new_location);
     }
     killer_locations = botgetmemoryevents(0, gettime() - 60000, 1, "death", 0, self);
     foreach (location in killer_locations) {
         if (distancesquared(location, self.bot_defending_center) < var_51ca426712b96df5) {
             var_ba8a43c132fa515a = getclosestnodeinsight(location);
             if (isdefined(var_ba8a43c132fa515a)) {
-                var_92045964a16006d = setup_investigate_location(var_ba8a43c132fa515a, location);
-                self.locations_to_investigate = array_add(self.locations_to_investigate, var_92045964a16006d);
+                new_location = setup_investigate_location(var_ba8a43c132fa515a, location);
+                self.locations_to_investigate = array_add(self.locations_to_investigate, new_location);
             }
         }
     }
     if (isdefined(self.defend_entrance_index)) {
         var_77eeca99c75956f8 = bot_get_entrances_for_stance_and_index("stand", self.defend_entrance_index);
         for (i = 0; i < var_77eeca99c75956f8.size; i++) {
-            var_92045964a16006d = setup_investigate_location(var_77eeca99c75956f8[i]);
-            self.locations_to_investigate = array_add(self.locations_to_investigate, var_92045964a16006d);
+            new_location = setup_investigate_location(var_77eeca99c75956f8[i]);
+            self.locations_to_investigate = array_add(self.locations_to_investigate, new_location);
         }
     }
     if (self.locations_to_investigate.size == 0) {

@@ -1,6 +1,6 @@
-#namespace namespace_2606b73e77f4a968;
+#namespace test_civ_picc_heads;
 
-// Namespace namespace_2606b73e77f4a968 / namespace_9209cd1694bf79e8
+// Namespace test_civ_picc_heads / namespace_9209cd1694bf79e8
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12f
 // Size: 0x51

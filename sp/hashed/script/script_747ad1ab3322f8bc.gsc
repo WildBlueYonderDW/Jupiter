@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_72f3711d95f0e465;
 
@@ -44,15 +44,15 @@ function function_16dfd690940ae271(exitorigin) {
         finaly = finalloc[1];
         startx = ac130.spawnorigin[0];
         starty = ac130.spawnorigin[1];
-        var_688f97559bf04d6a = var_a211bd3ffa8e8b6e[0];
+        endx = var_a211bd3ffa8e8b6e[0];
         endy = var_a211bd3ffa8e8b6e[1];
-        if (finalx > var_688f97559bf04d6a) {
+        if (finalx > endx) {
             if (finalx > startx) {
-                finalx = var_688f97559bf04d6a;
+                finalx = endx;
             }
-        } else if (finalx < var_688f97559bf04d6a) {
+        } else if (finalx < endx) {
             if (finalx < startx) {
-                finalx = var_688f97559bf04d6a;
+                finalx = endx;
             }
         }
         if (finaly > endy) {

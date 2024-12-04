@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\equipment\molotov.gsc;
-#using scripts\sp\nvg\nvg_ai.gsc;
-#using scripts\sp\trigger.gsc;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\molotov;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\nvg\nvg_ai;
+#using scripts\sp\trigger;
+#using scripts\sp\utility;
 
 #namespace molotov;
 
@@ -42,13 +42,13 @@ function molotovfiremain(grenade, weapon) {
     if (isplayer(self) || isai(self)) {
         owner = self;
     } else {
-        var_b52529c404718c5 = getaiarray("axis");
-        if (var_b52529c404718c5.size > 0) {
-            owner = sortandreturnowner(var_b52529c404718c5, grenade);
+        owner_options = getaiarray("axis");
+        if (owner_options.size > 0) {
+            owner = sortandreturnowner(owner_options, grenade);
         } else {
-            var_b52529c404718c5 = getaiarray("allies");
-            if (var_b52529c404718c5.size > 0) {
-                owner = sortandreturnowner(var_b52529c404718c5, grenade);
+            owner_options = getaiarray("allies");
+            if (owner_options.size > 0) {
+                owner = sortandreturnowner(owner_options, grenade);
             } else {
                 owner = level.player;
             }
@@ -168,8 +168,8 @@ function pool_damage_vehicles(origin, pool) {
 function molotovburnscriptablevehicle(pool) {
     self endon("death");
     wait 1;
-    var_9307bb132b2c0b9f = self getscriptablepartstate("body", 1);
-    if (!isdefined(var_9307bb132b2c0b9f)) {
+    cur_state = self getscriptablepartstate("body", 1);
+    if (!isdefined(cur_state)) {
         states = ["flareup", "onfire"];
         foreach (state in states) {
             if (self getscriptableparthasstate("body", state)) {

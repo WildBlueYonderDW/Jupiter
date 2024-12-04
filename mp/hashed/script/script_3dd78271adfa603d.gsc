@@ -1,46 +1,46 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using script_22f1701e151b9d12;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_2583ee5680cf4736;
-#using script_7edf952f8921aa6b;
-#using script_6df6604a74a7a9c7;
-#using script_220d0eb95a8fab7d;
-#using script_3ab210ea917601e7;
-#using script_41387eecc35b88bf;
-#using script_7956d56c4922bd1;
-#using script_64351208cb856df9;
-#using script_638d701d263ee1ed;
 #using script_185660037b9236c1;
-#using scripts\common\create_script_utility.gsc;
-#using script_5753ba9c28794a65;
-#using script_4fdefae8b7bcdf73;
-#using scripts\engine\scriptable.gsc;
-#using script_5d8202968463a21d;
-#using script_29b50ff5f1477a5d;
-#using scripts\mp\mp_agent_damage.gsc;
-#using script_5762ac2f22202ba2;
+#using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
 #using script_2590b7a7de3dfc79;
-#using script_7b2517368c79e5bc;
-#using script_60dd6e3992c1f29;
+#using script_29b50ff5f1477a5d;
 #using script_2d400da2610fe542;
-#using script_d60e0219a7419e0;
-#using scripts\common\powerups.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using script_43971bbeefd98f05;
-#using scripts\common\values.gsc;
-#using script_46c7c73b1a7e4773;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using script_58be75c518bf0d40;
-#using script_4e6e58ab5d96c2b0;
+#using script_371b4c2ab5861e62;
+#using script_3ab210ea917601e7;
 #using script_3e2f8cc477d57433;
+#using script_41387eecc35b88bf;
+#using script_43971bbeefd98f05;
+#using script_46c7c73b1a7e4773;
+#using script_4e6e58ab5d96c2b0;
+#using script_4fdefae8b7bcdf73;
+#using script_5753ba9c28794a65;
+#using script_5762ac2f22202ba2;
+#using script_58be75c518bf0d40;
+#using script_5d8202968463a21d;
+#using script_60dd6e3992c1f29;
+#using script_638d701d263ee1ed;
+#using script_64351208cb856df9;
+#using script_6df6604a74a7a9c7;
+#using script_7956d56c4922bd1;
+#using script_7b2517368c79e5bc;
+#using script_7edf952f8921aa6b;
+#using script_d60e0219a7419e0;
+#using scripts\common\callbacks;
+#using scripts\common\create_script_utility;
+#using scripts\common\powerups;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\mp_agent_damage;
 
 #namespace namespace_c63df5a8b7194592;
 
@@ -355,15 +355,15 @@ function function_c350f33277c1de1() {
     if (isdefined(self.s_center.var_aa6000e38ce89c1)) {
         prop_radius = int(self.s_center.var_aa6000e38ce89c1);
     }
-    self.var_86ca8e1c112dc232 = getentitylessscriptablearray(self.s_center.targetname, "target", self.s_center.origin, prop_radius);
-    if (self.var_86ca8e1c112dc232.size == 0 && isdefined(self.root_struct)) {
-        self.var_86ca8e1c112dc232 = getentitylessscriptablearray(self.root_struct.target, "targetname", self.s_center.origin, prop_radius);
+    self.prop_array = getentitylessscriptablearray(self.s_center.targetname, "target", self.s_center.origin, prop_radius);
+    if (self.prop_array.size == 0 && isdefined(self.root_struct)) {
+        self.prop_array = getentitylessscriptablearray(self.root_struct.target, "targetname", self.s_center.origin, prop_radius);
     }
-    self.var_dcbec0adc5c68ae8 = [];
-    foreach (prop in self.var_86ca8e1c112dc232) {
+    self.gas_array = [];
+    foreach (prop in self.prop_array) {
         prop setscriptablepartstate("state", "visible");
         if (issubstr(prop.classname, "gas")) {
-            self.var_dcbec0adc5c68ae8[self.var_dcbec0adc5c68ae8.size] = prop;
+            self.gas_array[self.gas_array.size] = prop;
         }
         if (issubstr(prop.classname, "flag") || issubstr(prop.classname, "banner")) {
             if (prop getscriptableparthasstate("state", "Visible_zm")) {
@@ -383,19 +383,19 @@ function function_afe71f4277675131() {
     foreach (cache in loot_caches) {
         cache setscriptablepartstate("body", "hidden", 1);
     }
-    var_59e866705eabf0bb = [];
-    var_59e866705eabf0bb = append_caches(var_59e866705eabf0bb, self.var_cd1f6a0cc4b9d2b6, #"hash_d8e996c37357f449");
-    var_59e866705eabf0bb = append_caches(var_59e866705eabf0bb, self.var_d76a378fe188ada0 - 1, #"hash_9f528a48605451");
-    var_59e866705eabf0bb = append_caches(var_59e866705eabf0bb, 1, #"hash_887c5b1de73dd2a4");
-    var_59e866705eabf0bb = append_caches(var_59e866705eabf0bb, self.var_91d007152e252433, #"hash_31848ee41c7d520d");
-    var_59e866705eabf0bb = append_caches(var_59e866705eabf0bb, self.var_34f38a376bb1343f, #"hash_c1d0ea6db3f38ac5");
-    var_59e866705eabf0bb = array_randomize(var_59e866705eabf0bb);
+    cache_array = [];
+    cache_array = append_caches(cache_array, self.var_cd1f6a0cc4b9d2b6, #"hash_d8e996c37357f449");
+    cache_array = append_caches(cache_array, self.var_d76a378fe188ada0 - 1, #"hash_9f528a48605451");
+    cache_array = append_caches(cache_array, 1, #"hash_887c5b1de73dd2a4");
+    cache_array = append_caches(cache_array, self.var_91d007152e252433, #"hash_31848ee41c7d520d");
+    cache_array = append_caches(cache_array, self.var_34f38a376bb1343f, #"hash_c1d0ea6db3f38ac5");
+    cache_array = array_randomize(cache_array);
     waitframe();
     self.lootcaches = [];
     self.mounds = [];
     counter = 0;
     foreach (struct in self.var_eb9f6bfe8a0d4839) {
-        cache = common_cache::cache_spawncache(var_59e866705eabf0bb[counter], struct.origin, struct.angles);
+        cache = common_cache::cache_spawncache(cache_array[counter], struct.origin, struct.angles);
         waitframe();
         self.lootcaches[self.lootcaches.size] = cache;
         mound = spawnscriptable("ob_aethernest_toggleable_cover", struct.origin, struct.angles);
@@ -427,11 +427,11 @@ function function_ea0d2f50c264d5ef(scriptable, player) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2018
 // Size: 0x3b
-function append_caches(var_59e866705eabf0bb, num_caches, var_91839babd32261f4) {
+function append_caches(cache_array, num_caches, var_91839babd32261f4) {
     for (i = 0; i < num_caches; i++) {
-        var_59e866705eabf0bb[var_59e866705eabf0bb.size] = var_91839babd32261f4;
+        cache_array[cache_array.size] = var_91839babd32261f4;
     }
-    return var_59e866705eabf0bb;
+    return cache_array;
 }
 
 // Namespace namespace_c63df5a8b7194592 / namespace_f8638ef0be82c4bd
@@ -1096,8 +1096,8 @@ function function_2a6a959fd054e401(activity_succeeded) {
     if (isdefined(self.scriptable)) {
         self.scriptable freescriptable();
     }
-    if (isdefined(self.var_dcbec0adc5c68ae8)) {
-        foreach (gas in self.var_dcbec0adc5c68ae8) {
+    if (isdefined(self.gas_array)) {
+        foreach (gas in self.gas_array) {
             gas setscriptablepartstate("state", "hidden");
         }
     }
@@ -1126,8 +1126,8 @@ function function_89bdb2d03896122b() {
             }
         }
     }
-    if (isdefined(self.var_86ca8e1c112dc232)) {
-        foreach (prop in self.var_86ca8e1c112dc232) {
+    if (isdefined(self.prop_array)) {
+        foreach (prop in self.prop_array) {
             prop setscriptablepartstate("state", "hidden");
         }
     }

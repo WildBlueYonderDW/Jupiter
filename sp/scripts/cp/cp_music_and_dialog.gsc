@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
 #using script_166b4f052da169a7;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_cc8f563756534739;
 
@@ -173,9 +173,9 @@ function getlengthofconversation(var_2463023b7a8fd31c) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x11f7
 // Size: 0x8e
-function getarrayofdialoguealiases(var_d35946b8550701a5, var_42547671df42d8db) {
-    temparray = [var_d35946b8550701a5];
-    var_7b429d357acf4247 = var_d35946b8550701a5;
+function getarrayofdialoguealiases(alias_string, var_42547671df42d8db) {
+    temparray = [alias_string];
+    var_7b429d357acf4247 = alias_string;
     while (true) {
         if (var_42547671df42d8db && isdefined(level.vo_alias_data[var_7b429d357acf4247].nextdialogue)) {
             temparray[temparray.size] = level.vo_alias_data[var_7b429d357acf4247].nextdialogue;
@@ -223,7 +223,7 @@ function onplayerspawned() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1375
 // Size: 0x50
-function playvofordowned(player, var_d35946b8550701a5) {
+function playvofordowned(player, alias_string) {
     if (isplayingsolo() || level.only_one_player) {
         return;
     }
@@ -235,7 +235,7 @@ function playvofordowned(player, var_d35946b8550701a5) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x13cd
 // Size: 0x39
-function playvoforrevived(player, var_d35946b8550701a5) {
+function playvoforrevived(player, alias_string) {
     line = player.vo_prefix + "reviving";
     player thread play_vo_on_player(line);
 }
@@ -287,9 +287,9 @@ function scriptable_vo_handler() {
 // Checksum 0x0, Offset: 0x153f
 // Size: 0x57
 function play_solo_vo(line, priority, timeout, interrupt, pause_time, only_local) {
-    var_b1b1ff3f53f08719 = line + "_solo";
-    if (soundexists(var_b1b1ff3f53f08719)) {
-        play_vo_on_player(var_b1b1ff3f53f08719);
+    solo_line = line + "_solo";
+    if (soundexists(solo_line)) {
+        play_vo_on_player(solo_line);
     }
 }
 
@@ -365,13 +365,13 @@ function isexcluded(entity, entitylist) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x1816
 // Size: 0x89
-function playeventvo(var_d35946b8550701a5, vo_type, priority, timeout, interrupt, pause_time, only_local) {
+function playeventvo(alias_string, vo_type, priority, timeout, interrupt, pause_time, only_local) {
     players = get_array_of_valid_players();
     if (players.size < 1) {
         return;
     }
     player = random(players);
-    alias = player.vo_prefix + var_d35946b8550701a5;
+    alias = player.vo_prefix + alias_string;
     player play_vo_on_player(alias);
 }
 
@@ -379,7 +379,7 @@ function playeventvo(var_d35946b8550701a5, vo_type, priority, timeout, interrupt
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x18a7
 // Size: 0x53
-function playvoforlaststand(player, var_d35946b8550701a5) {
+function playvoforlaststand(player, alias_string) {
     if (isplayingsolo() || level.only_one_player) {
         return;
     }
@@ -391,7 +391,7 @@ function playvoforlaststand(player, var_d35946b8550701a5) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x1902
 // Size: 0x9f
-function player_casualty_vo(var_d35946b8550701a5, vo_type, priority, timeout, interrupt, pause_time, only_local) {
+function player_casualty_vo(alias_string, vo_type, priority, timeout, interrupt, pause_time, only_local) {
     if (!isplayer(self)) {
         return;
     }
@@ -459,18 +459,18 @@ function add_to_ambient_sound_queue(alias, play_origin, min_delay, max_delay, ma
         level.ambient_sound_queue = [];
         level thread ambient_sound_queue();
     }
-    var_85790f5a5b2bcb95 = spawnstruct();
-    var_85790f5a5b2bcb95.alias = alias;
-    var_85790f5a5b2bcb95.play_origin = play_origin;
-    var_85790f5a5b2bcb95.min_delay = min_delay;
-    var_85790f5a5b2bcb95.max_delay = max_delay;
-    var_85790f5a5b2bcb95.next_play_time = 0;
-    var_85790f5a5b2bcb95.chance_to_play = chance_to_play;
-    var_85790f5a5b2bcb95.max_player_distance = max_player_distance;
+    new_sound = spawnstruct();
+    new_sound.alias = alias;
+    new_sound.play_origin = play_origin;
+    new_sound.min_delay = min_delay;
+    new_sound.max_delay = max_delay;
+    new_sound.next_play_time = 0;
+    new_sound.chance_to_play = chance_to_play;
+    new_sound.max_player_distance = max_player_distance;
     if (isdefined(predelay)) {
-        var_85790f5a5b2bcb95.next_play_time = gettime() + predelay * 1000;
+        new_sound.next_play_time = gettime() + predelay * 1000;
     }
-    level.ambient_sound_queue = array_add_safe(level.ambient_sound_queue, var_85790f5a5b2bcb95);
+    level.ambient_sound_queue = array_add_safe(level.ambient_sound_queue, new_sound);
 }
 
 // Namespace namespace_cc8f563756534739 / scripts\cp\cp_music_and_dialog
@@ -493,8 +493,8 @@ function ambient_sound_queue() {
                 wait 1;
                 continue;
             }
-            var_1e1d3c697a810903 = any_player_nearby(sound.play_origin, sound.max_player_distance);
-            if (!var_1e1d3c697a810903 || randomint(100) > chance_to_play) {
+            player_near = any_player_nearby(sound.play_origin, sound.max_player_distance);
+            if (!player_near || randomint(100) > chance_to_play) {
                 wait 1;
                 continue;
             }

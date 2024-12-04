@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\equipment.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\hud_message.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\playerlogic;
+#using scripts\mp\utility\equipment;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\weapon;
 
 #namespace br_respawn;
 

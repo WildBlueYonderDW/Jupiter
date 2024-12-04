@@ -1,35 +1,35 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_9880b9dc28bc25e;
-#using script_4ef01fe6151dde4d;
-#using script_79deab1955343d5d;
-#using script_41387eecc35b88bf;
-#using script_5753ba9c28794a65;
 #using script_185660037b9236c1;
 #using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
-#using script_4fdefae8b7bcdf73;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using script_3ac7886f9e4eceef;
-#using scripts\asm\shared\mp\utility.gsc;
-#using script_3e31016b9c11a616;
-#using script_64351208cb856df9;
-#using script_46c7c73b1a7e4773;
-#using script_3b78d23dad7ec5be;
-#using script_3ab210ea917601e7;
-#using script_4e6e58ab5d96c2b0;
-#using script_721ee99d7a8f9168;
 #using script_2583ee5680cf4736;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_paths.gsc;
+#using script_3ab210ea917601e7;
+#using script_3ac7886f9e4eceef;
+#using script_3b78d23dad7ec5be;
+#using script_3e31016b9c11a616;
+#using script_41387eecc35b88bf;
+#using script_46c7c73b1a7e4773;
+#using script_4e6e58ab5d96c2b0;
+#using script_4ef01fe6151dde4d;
 #using script_4fa7e9e11630166c;
-#using scripts\engine\trace.gsc;
+#using script_4fdefae8b7bcdf73;
+#using script_5753ba9c28794a65;
 #using script_5d8202968463a21d;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
 #using script_638d701d263ee1ed;
+#using script_64351208cb856df9;
+#using script_7956d56c4922bd1;
+#using script_79deab1955343d5d;
+#using script_9880b9dc28bc25e;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_airdrop;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_d197b40cdbf4a1ea;
 
@@ -263,7 +263,7 @@ function spawn_escort_vehicle() {
     spawndata.var_24993ee24f7c7c0 = 1;
     spawndata.nohitmarkers = 1;
     if (isdefined(self.script_noteworthy) && self.var_1be7d142b0b72909.script_noteworthy == self.script_noteworthy) {
-        vh_escort = namespace_801fa17f47560d76::function_66c684fea143fbfd("veh_jup_ob_tank_escort", spawndata);
+        vh_escort = scripts\cp_mp\vehicles\vehicle_airdrop::vehicle_airdrop("veh_jup_ob_tank_escort", spawndata);
         vh_escort.script_noteworthy = self.script_noteworthy;
         vh_escort function_65aa053c077c003a(1);
         vh_escort vehicleshowonminimap(0);
@@ -750,7 +750,7 @@ function private function_ec872f85aad96184() {
     radiusdamage(v_origin, f_radius, 200, 100, self.vh_escort);
     a_ai = getaiarrayinradius(v_origin, f_radius, "team_two_hundred");
     foreach (ai in a_ai) {
-        ai namespace_db1ce2c035564e2c::function_e96aac065abbec4e(v_origin);
+        ai namespace_db1ce2c035564e2c::knockdown_ai(v_origin);
     }
     self.vh_escort.crystal notify("destroyed");
 }
@@ -827,7 +827,7 @@ function private function_c1de7c2624911246(explosion_source) {
             continue;
         }
         if (isdefined(ent.team) && ent.team == "team_two_hundred") {
-            ent namespace_db1ce2c035564e2c::function_e96aac065abbec4e(explosion_source.origin);
+            ent namespace_db1ce2c035564e2c::knockdown_ai(explosion_source.origin);
         }
     }
 }
@@ -1317,7 +1317,7 @@ function private function_5969f20c2a27e510(vehicle) {
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x4115
 // Size: 0x128
-function private function_7122f1d1f05e191c(v_payload, var_dbf0bb72d60f10c4) {
+function private function_7122f1d1f05e191c(v_payload, vehicle_angles) {
     if (istrue(self.debris_spawned)) {
         return;
     }
@@ -1333,8 +1333,8 @@ function private function_7122f1d1f05e191c(v_payload, var_dbf0bb72d60f10c4) {
             v_nose = (0, -100, 10);
             v_thruster = (0, 100, 10);
         }
-        var_f04e4b9c85234d0f = function_3ef2924f5cc4e9af("veh_jup_zm_tank_escort_rocket_dst_debris", v_payload, v_nose, var_dbf0bb72d60f10c4);
-        payload_husk = function_3ef2924f5cc4e9af("veh_jup_zm_tank_escort_rocket_dst", v_payload, v_thruster, var_dbf0bb72d60f10c4);
+        var_f04e4b9c85234d0f = function_3ef2924f5cc4e9af("veh_jup_zm_tank_escort_rocket_dst_debris", v_payload, v_nose, vehicle_angles);
+        payload_husk = function_3ef2924f5cc4e9af("veh_jup_zm_tank_escort_rocket_dst", v_payload, v_thruster, vehicle_angles);
         f_time = 30;
         wait f_time;
         var_f04e4b9c85234d0f delete();
@@ -1352,7 +1352,7 @@ function private function_7122f1d1f05e191c(v_payload, var_dbf0bb72d60f10c4) {
 // Params 5, eflags: 0x4
 // Checksum 0x0, Offset: 0x4245
 // Size: 0x137
-function private function_3ef2924f5cc4e9af(xmodel, v_payload, v_offset, var_dbf0bb72d60f10c4, v_force) {
+function private function_3ef2924f5cc4e9af(xmodel, v_payload, v_offset, vehicle_angles, v_force) {
     if (!isdefined(v_offset)) {
         v_offset = (0, 0, 0);
     }
@@ -1362,9 +1362,9 @@ function private function_3ef2924f5cc4e9af(xmodel, v_payload, v_offset, var_dbf0
         force_z = randomintrange(8, 12);
         v_force = (force_x, force_y, force_z);
     }
-    v_forward = anglestoforward(var_dbf0bb72d60f10c4);
-    v_right = anglestoright(var_dbf0bb72d60f10c4);
-    v_up = anglestoup(var_dbf0bb72d60f10c4);
+    v_forward = anglestoforward(vehicle_angles);
+    v_right = anglestoright(vehicle_angles);
+    v_up = anglestoup(vehicle_angles);
     v_debris = v_payload + v_forward * v_offset[0] + v_right * v_offset[1] + v_up * v_offset[2];
     debris = spawn("script_model", v_debris);
     debris setmodel(xmodel);

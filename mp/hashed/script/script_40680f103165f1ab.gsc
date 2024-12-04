@@ -1,16 +1,16 @@
+#using script_239a365a92ee4476;
+#using script_30c3ef7ce3f2a3f3;
+#using script_32d93a194074fa6a;
+#using script_3d3a4f9a13038759;
+#using script_49933f4f48d029a1;
+#using script_530f3ea26428deba;
+#using script_5693b37bfb748170;
 #using script_5a37c8d34c31ea89;
 #using script_5dfa1fb6b030bdcb;
 #using script_6981400abfcd765c;
-#using script_5693b37bfb748170;
-#using script_32d93a194074fa6a;
-#using script_530f3ea26428deba;
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\utility.gsc;
-#using script_239a365a92ee4476;
-#using script_30c3ef7ce3f2a3f3;
-#using script_3d3a4f9a13038759;
-#using script_49933f4f48d029a1;
 #using script_8cd9c937ed5832c;
+#using scripts\engine\utility;
+#using scripts\mp\utility\game;
 
 #namespace ftue_mgl;
 

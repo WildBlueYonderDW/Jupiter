@@ -1,11 +1,11 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
-#namespace namespace_4afd0a26bc55887f;
+#namespace minigun_stand;
 
-// Namespace namespace_4afd0a26bc55887f / namespace_d6efad9aabd89baa
+// Namespace minigun_stand / namespace_d6efad9aabd89baa
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f
 // Size: 0x2
@@ -13,7 +13,7 @@ function main() {
     
 }
 
-// Namespace namespace_4afd0a26bc55887f / namespace_d6efad9aabd89baa
+// Namespace minigun_stand / namespace_d6efad9aabd89baa
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa9
 // Size: 0x2

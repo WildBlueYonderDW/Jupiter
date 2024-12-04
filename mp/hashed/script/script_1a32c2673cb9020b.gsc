@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_315e06108d117c9a;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using script_24fbedba9a7a1ef4;
-#using scripts\mp\mp_agent_damage.gsc;
-#using script_3ed005fe9b78b9da;
-#using scripts\mp\validation.gsc;
-#using scripts\mp\gametypes\gun.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\mp_agent.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\asm\shared\mp\utility.gsc;
+#using script_24fbedba9a7a1ef4;
 #using script_2669878cf5a1b6bc;
+#using script_315e06108d117c9a;
+#using script_3ed005fe9b78b9da;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\gun;
+#using scripts\mp\hud_message;
+#using scripts\mp\mp_agent;
+#using scripts\mp\mp_agent_damage;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\points;
+#using scripts\mp\validation;
 
 #namespace namespace_3edeb04dba90e80;
 
@@ -148,7 +148,7 @@ function initpostmain() {
 // Checksum 0x0, Offset: 0x9a6
 // Size: 0x21
 function function_8d9dca133b662b60(struct) {
-    if (function_6c88a48a9e942c3d()) {
+    if (isMutationGameModeZombie()) {
         return struct;
     }
     return scripts\mp\validation::validateloadout(struct);
@@ -218,7 +218,7 @@ function onjoinedteam(player) {
 // Size: 0x54
 function function_4f64cc518d710ee1(halftime) {
     player = self;
-    iszombie = player function_6c88a48a9e942c3d();
+    iszombie = player isMutationGameModeZombie();
     if (istrue(halftime)) {
         iszombie = !iszombie;
     }
@@ -235,7 +235,7 @@ function function_4f64cc518d710ee1(halftime) {
 // Size: 0x3a
 function onspawnplayer(params) {
     scripts\mp\hud_message::function_f004ef4606b9efdc("kill");
-    if (isbot(self) && function_6c88a48a9e942c3d()) {
+    if (isbot(self) && isMutationGameModeZombie()) {
         thread function_7042d138b3d8a4f4();
     }
     thread onspawnfinished();
@@ -304,7 +304,7 @@ function function_61c226745cc230bd(player) {
     if (!istrue(player.hasspawned)) {
         return false;
     }
-    if (!function_6c88a48a9e942c3d()) {
+    if (!isMutationGameModeZombie()) {
         return true;
     }
     return false;
@@ -319,7 +319,7 @@ function function_39a600444016629e(params) {
     if (!isdefined(playerattacker) || !isplayer(playerattacker)) {
         return;
     }
-    if (function_8cc09267ba72c7f7()) {
+    if (isMutationGameMode()) {
         playerattacker thread scripts\mp\utility\points::doScoreEvent(#"hash_30bae1a5dd41a4d1");
     }
 }
@@ -418,7 +418,7 @@ function allowclasschoicefunc() {
     if (isbot(self)) {
         return false;
     }
-    iszombie = function_6c88a48a9e942c3d();
+    iszombie = isMutationGameModeZombie();
     return !iszombie;
 }
 
@@ -441,8 +441,8 @@ function spawn_zombies() {
             waitframe();
             continue;
         }
-        var_ccc9f9c05abcfde9 = scripts\mp\mp_agent::getaliveagentsofteam(game["defenders"]);
-        if (var_ccc9f9c05abcfde9.size < var_b054c7cee5a37e24) {
+        alive_enemies = scripts\mp\mp_agent::getaliveagentsofteam(game["defenders"]);
+        if (alive_enemies.size < var_b054c7cee5a37e24) {
             spawnpoint = function_ca3bbb75a4e56ba2();
             if (!isdefined(spawnpoint)) {
                 spawnpoint = random(getspawnarray("mp_tdm_spawn")).origin;
@@ -484,7 +484,7 @@ function function_ca3bbb75a4e56ba2() {
 // Checksum 0x0, Offset: 0x1267
 // Size: 0x20
 function isDogZombie() {
-    return function_6c88a48a9e942c3d() && is_equal(self.class, "default4");
+    return isMutationGameModeZombie() && is_equal(self.class, "default4");
 }
 
 // Namespace namespace_3edeb04dba90e80 / namespace_61bcb863c55e8d6b
@@ -512,7 +512,7 @@ function iszombie() {
 function function_ca5d00ef2a435d1f(struct) {
     player = self;
     if (istrue(player.isjuggernaut)) {
-        if (player function_6c88a48a9e942c3d()) {
+        if (player isMutationGameModeZombie()) {
             struct.loadoutprimary = "jup_jp36_ar_anov94";
             struct.loadoutprimaryvariantid = 9;
             struct.loadoutprimaryattachments = [];
@@ -520,7 +520,7 @@ function function_ca5d00ef2a435d1f(struct) {
         }
         return;
     }
-    if (!player function_6c88a48a9e942c3d()) {
+    if (!player isMutationGameModeZombie()) {
         struct.loadoutkillstreak1 = "fuel_airstrike";
         struct.loadoutkillstreak2 = "remote_turret";
         struct.loadoutkillstreak3 = "juggernaut";

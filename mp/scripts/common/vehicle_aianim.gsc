@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\ai;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\vehicle\vehicle_common;
 
 #namespace vehicle_aianim;
 

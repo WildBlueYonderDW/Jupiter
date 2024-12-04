@@ -1,7 +1,7 @@
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_2669878cf5a1b6bc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace loot;
 

@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\common\devgui.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_21bdef0c2290d3e2;
 #using script_16ea1b94f0f381b3;
+#using script_21bdef0c2290d3e2;
 #using script_638d701d263ee1ed;
-#using scripts\common\ai.gsc;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace ob_disciple_bottle;
 
@@ -60,7 +60,7 @@ function spawn_disciple_pet() {
     disciple = namespace_53fc9ddbb516e6e1::spawnnewaitype_sharedfunc(aitype, spawn_struct.origin, spawn_struct.angles, player.team);
     if (isalive(disciple)) {
         player.var_209d25b535dfbcf = 1;
-        player.var_9ef678fddf58d09a = 3;
+        player.companion_type = 3;
         disciple.var_66c1831357048c02 = player;
         player.var_c5668dcaf32afbc3 = disciple;
         disciple.teleportcooldown = 2;
@@ -72,7 +72,7 @@ function spawn_disciple_pet() {
         disciple._blackboard.var_2ad5368672cc47ba = 300;
         disciple enable_pain();
         disciple thread function_577d8abff6067c23("spawn", "spawn_end", undefined, undefined, "spawn_animating");
-        disciple thread function_8c23a47babf0e1f4();
+        disciple thread behavior_watcher();
         disciple thread function_5b71b171ed50f326();
         disciple thread function_e8f6a314663565f(90000);
         disciple.headicon = createheadicon(disciple);
@@ -93,7 +93,7 @@ function private function_b29bb18f0ae7a8a5(params) {
     if (isdefined(self.var_66c1831357048c02) && isalive(self.var_66c1831357048c02)) {
         self.var_66c1831357048c02.var_c5668dcaf32afbc3 = undefined;
         if (!istrue(self.var_66c1831357048c02.var_ded04cdd264a7e00)) {
-            self.var_66c1831357048c02.var_9ef678fddf58d09a = 0;
+            self.var_66c1831357048c02.companion_type = 0;
         }
     }
 }
@@ -102,7 +102,7 @@ function private function_b29bb18f0ae7a8a5(params) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b4
 // Size: 0x12a
-function function_8c23a47babf0e1f4() {
+function behavior_watcher() {
     level endon("game_ended");
     self endon("death");
     wait 1;

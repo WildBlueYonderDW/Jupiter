@@ -1,11 +1,11 @@
-#using scripts\common\anim.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\face.gsc;
-#using scripts\anim\notetracks.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\anim\notetracks_mp.gsc;
+#using scripts\anim\face;
+#using scripts\anim\notetracks;
+#using scripts\anim\notetracks_mp;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace anim_mp;
 
@@ -107,7 +107,7 @@ function do_facial_anim(DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, a
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x5ac
 // Size: 0x20b
-function do_animation(org, angles, animname, anime, anim_string, idleanim, var_43e50904d011917e) {
+function do_animation(org, angles, animname, anime, anim_string, idleanim, scripted_node_ent) {
     var_173bdb8ba434651d = 0;
     animation = undefined;
     if (isdefined(idleanim) && !isagent(self)) {
@@ -132,15 +132,15 @@ function do_animation(org, angles, animname, anime, anim_string, idleanim, var_4
         }
         if (isagent(self)) {
             var_173bdb8ba434651d = 1;
-            var_1ed6bbc02282dd5 = "agent_scripted_" + getdvar(@"hash_687fb8f9b7a23245");
-            if (archetypeassetloaded(var_1ed6bbc02282dd5)) {
+            level_archetype = "agent_scripted_" + getdvar(@"g_mapname");
+            if (archetypeassetloaded(level_archetype)) {
                 scripted_node = spawnstruct();
                 if (isdefined(org)) {
                     scripted_node.origin = org;
                     scripted_node.angles = angles;
                 }
                 var_5a0a7dfb51da0682 = getanimname(animation);
-                thread scripts\asm\shared\mp\utility::animscriptmp(var_1ed6bbc02282dd5, "animscripted", var_5a0a7dfb51da0682, undefined, undefined, undefined, scripted_node);
+                thread scripts\asm\shared\mp\utility::animscriptmp(level_archetype, "animscripted", var_5a0a7dfb51da0682, undefined, undefined, undefined, scripted_node);
             } else {
                 thread scripts\asm\shared\mp\utility::function_577d8abff6067c23(anime, anim_string, org, angles);
             }

@@ -1,6 +1,6 @@
-#using scripts\common\utility.gsc;
-#using xmodelalias\bodies_spetsnaz_ar.gsc;
-#using scripts\code\character.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\bodies_spetsnaz_ar;
 
 #namespace namespace_1aef41ca12afd7b9;
 

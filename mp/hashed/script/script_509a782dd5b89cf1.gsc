@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
 #using script_509a782dd5b89cf1;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace uav_bigmap;
 

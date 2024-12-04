@@ -1,5 +1,5 @@
-#using scripts\mp\flags.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
 #namespace namespace_a6b205db43c63246;
 

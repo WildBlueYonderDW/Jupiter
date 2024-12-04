@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace equipment_utility;
 

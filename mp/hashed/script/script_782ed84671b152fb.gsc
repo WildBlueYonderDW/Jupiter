@@ -1,8 +1,8 @@
 #using script_254c2e2a2c8207f8;
-#using script_45e6947be98e16e3;
 #using script_44102c05f33e9b1e;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
+#using script_45e6947be98e16e3;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_b2de5662c522b9fa;
 
@@ -41,14 +41,14 @@ function function_9fcc9920ba3dbe3() {
     function_e15ac3a5829a9bcf();
     function_68c858c6e63409f3(#"JumpMaster");
     function_68c858c6e63409f3(#"hash_ad70e3e9fcd18b68");
-    function_68c858c6e63409f3(#"hash_c4248c397610045f");
-    function_68c858c6e63409f3(#"hash_5bb2faff54a876d5");
-    function_68c858c6e63409f3(#"hash_be105437211ef09c");
-    function_68c858c6e63409f3(#"hash_d202391d72e44c9a");
-    function_68c858c6e63409f3(#"hash_5596afc47874a8f9");
-    function_68c858c6e63409f3(#"hash_8641dbabb7b1af5d");
-    function_68c858c6e63409f3(#"hash_eb295ea745d1a736");
-    function_68c858c6e63409f3(#"hash_e056920d8e219f7a");
+    function_68c858c6e63409f3(#"MutationShadowSkin");
+    function_68c858c6e63409f3(#"MutationBubbleShield");
+    function_68c858c6e63409f3(#"MutationDensityDive");
+    function_68c858c6e63409f3(#"MutationFrogLeap");
+    function_68c858c6e63409f3(#"MutationMutantVision");
+    function_68c858c6e63409f3(#"MutationSludgeSling");
+    function_68c858c6e63409f3(#"MutationToxicCloud");
+    function_68c858c6e63409f3(#"MutationJuggernaut");
     return level.contextualtips;
 }
 

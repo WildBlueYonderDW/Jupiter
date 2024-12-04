@@ -1,11 +1,11 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\soldier\script_funcs.gsc;
-#using scripts\anim\notetracks.gsc;
+#using scripts\anim\notetracks;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\script_funcs;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace cover;
 

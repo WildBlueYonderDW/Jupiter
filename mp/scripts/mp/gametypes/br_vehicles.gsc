@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\flags.gsc;
-#using script_67fb1233e876ed8;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\poi.gsc;
-#using script_48814951e916af89;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
 #using script_439d01e25d19543b;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
+#using script_48814951e916af89;
 #using script_58f20490049af6ac;
+#using script_67fb1233e876ed8;
+#using scripts\common\utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\poi;
+#using scripts\mp\utility\game;
 
 #namespace br_vehicles;
 
@@ -1030,7 +1030,7 @@ function function_1a1709943670772a() {
             if (istrue(heli.var_651325c15c273cba)) {
                 continue;
             }
-            if (!namespace_bbc79db4c3949a5c::function_ee854fdd1e77efc4(heli.origin, blades_radius) && !namespace_bbc79db4c3949a5c::function_d30c8f0e5abea93b(heli.origin, 0)) {
+            if (!namespace_bbc79db4c3949a5c::isPointInMultiCircleDanger(heli.origin, blades_radius) && !namespace_bbc79db4c3949a5c::function_d30c8f0e5abea93b(heli.origin, 0)) {
                 damageamount = function_4e336cd994097306(heli, defaultdamage);
                 heli dodamage(damageamount, heli.origin, undefined, undefined, "MOD_TRIGGER_HURT", "danger_circle_br");
             }

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\system.gsc;
 #using script_4a6760982b403bad;
-#using scripts\asm\asm.gsc;
-#using scripts\common\string.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\asm\asm;
+#using scripts\common\ai;
+#using scripts\common\string;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\utility;
 
 #namespace val;
 
@@ -66,23 +66,23 @@ function pre_main() {
     register("show_hud", 1, 0, "$self", &function_688748c7477e93dc, "$value");
     register("show_weapon_hud", 1, 0, "$self", &function_8b2fc23241e6448b, "$value");
     register("show_dpad_hud", 1, 0, "$self", &function_147fe8bda5949cf2, "$value");
-    register("allow_jump", 1, 0, "$self", &function_c10182e05a99f789, "$value");
+    register("allow_jump", 1, 0, "$self", &set_allowjump, "$value");
     register("allow_double_jump", 1, 0, "$self", &function_5d8c973a5b6b05d8, "$value");
-    register("crouch", 1, 0, "$self", &function_4dd00f1be6c69677, "$value");
-    register("prone", 1, 0, "$self", &function_d4a512c33a86e3d1, "$value");
+    register("crouch", 1, 0, "$self", &set_allowcrouch, "$value");
+    register("prone", 1, 0, "$self", &set_allowprone, "$value");
     register("stance_change", 1, 0, "$self", &function_c8e47b79550e4319, "$value");
-    register("melee", 1, 0, "$self", &function_ebf228fbb0a74d57, "$value");
+    register("melee", 1, 0, "$self", &set_allowmelee, "$value");
     register("lean", 1, 0, "$self", &function_1e949110ce628e51, "$value");
     register("allow_melee_victim", 1, 0, "$self", &allow_melee_victim, "$value");
     register("mantle", 1, 0, "$self", &function_b3870b9ec763d70a, "$value");
     register("ledgehang", 1, 0, "$self", &function_97182ebc175cd93a, "$value");
     register("mount_top", 1, 0, "$self", &function_9b5befbb13ad7651, "$value");
     register("mount_side", 1, 0, "$self", &function_aac726af48296365, "$value");
-    register("sprint", 1, 0, "$self", &function_f7c69559dbf71a1, "$value");
+    register("sprint", 1, 0, "$self", &set_allowsprint, "$value");
     register("jog", 1, 0, "$self", &function_2a827539b0ee61b7, "$value");
-    register("ads", 1, 0, "$self", &function_888bc6393955267d, "$value");
-    register("stand", 1, 0, "$self", &function_503f80a21c85a0ff, "$value");
-    register("allow_movement", 1, 0, "$self", &function_1b400b9f81972824, "$value");
+    register("ads", 1, 0, "$self", &set_allowads, "$value");
+    register("stand", 1, 0, "$self", &set_allowstand, "$value");
+    register("allow_movement", 1, 0, "$self", &set_allowmovement, "$value");
     register("ladder", 1, 0, "$self", &function_f3b4bc17c87adba5, "$value");
     register("swimming_underwater", 1, 0, "$self", &function_880120db350a6425, "$value");
     register("dtp", 1, 0, "$self", &function_d13b7a396eab0463, "$value");
@@ -336,7 +336,7 @@ function set_array(str_id, var_d1450ef5ee023044, value) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f48
 // Size: 0x60
-function function_38f73441260ce622(str_id, var_d1450ef5ee023044) {
+function reset_array(str_id, var_d1450ef5ee023044) {
     foreach (str_name in var_d1450ef5ee023044) {
         reset(str_id, str_name);
     }
@@ -1202,7 +1202,7 @@ function private allow_melee_victim(b_value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x3317
 // Size: 0x1d
-function private function_c10182e05a99f789(b_value) {
+function private set_allowjump(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
@@ -1224,7 +1224,7 @@ function private function_5d8c973a5b6b05d8(b_value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x3361
 // Size: 0x1d
-function private function_4dd00f1be6c69677(b_value) {
+function private set_allowcrouch(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
@@ -1235,7 +1235,7 @@ function private function_4dd00f1be6c69677(b_value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x3386
 // Size: 0x27
-function private function_d4a512c33a86e3d1(b_value) {
+function private set_allowprone(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
@@ -1277,7 +1277,7 @@ function private function_c8e47b79550e4319(b_value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x34b7
 // Size: 0x1d
-function private function_ebf228fbb0a74d57(b_value) {
+function private set_allowmelee(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
@@ -1343,7 +1343,7 @@ function private function_aac726af48296365(b_value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x3592
 // Size: 0x1d
-function private function_f7c69559dbf71a1(b_value) {
+function private set_allowsprint(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
@@ -1365,7 +1365,7 @@ function private function_2a827539b0ee61b7(b_value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x35dc
 // Size: 0x1d
-function private function_503f80a21c85a0ff(b_value) {
+function private set_allowstand(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
@@ -1376,7 +1376,7 @@ function private function_503f80a21c85a0ff(b_value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x3601
 // Size: 0x1d
-function private function_1b400b9f81972824(b_value) {
+function private set_allowmovement(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }
@@ -2096,7 +2096,7 @@ function function_91558560b423d58e(str_id, value) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x451a
 // Size: 0x1d
-function private function_888bc6393955267d(b_value) {
+function private set_allowads(b_value) {
     if (!isdefined(b_value)) {
         b_value = 1;
     }

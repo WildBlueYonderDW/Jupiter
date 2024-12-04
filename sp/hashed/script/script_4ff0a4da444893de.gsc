@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using script_5762ac2f22202ba2;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_ec0f9ad939b29e0;
 #using script_2669878cf5a1b6bc;
+#using script_5762ac2f22202ba2;
+#using script_ec0f9ad939b29e0;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace hb_sensor;
 

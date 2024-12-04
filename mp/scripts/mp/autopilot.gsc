@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\bots\bots.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\bots\bots_personality;
 
 #namespace autopilot;
 

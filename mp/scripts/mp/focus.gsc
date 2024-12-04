@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
 #using script_2669878cf5a1b6bc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace focus;
 

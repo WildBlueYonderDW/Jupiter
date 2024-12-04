@@ -1,12 +1,12 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\coop_personal_ents.gsc;
-#using scripts\cp\perks\cp_prestige.gsc;
 #using script_3bcaa2cbaf54abdd;
 #using script_74502a9e0ef1f19c;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\coop_personal_ents;
+#using scripts\cp\perks\cp_prestige;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace interaction;
 
@@ -55,25 +55,25 @@ function init() {
     if (isdefined(level.init_personal_ent_zones)) {
         level [[ level.init_personal_ent_zones ]]();
     }
-    foreach (var_df071553d0996ff9 in level.current_interaction_structs) {
-        var_df071553d0996ff9.in_array = 1;
-        if (!isdefined(var_df071553d0996ff9.angles)) {
-            var_df071553d0996ff9.angles = (0, 0, 0);
+    foreach (interaction_struct in level.current_interaction_structs) {
+        interaction_struct.in_array = 1;
+        if (!isdefined(interaction_struct.angles)) {
+            interaction_struct.angles = (0, 0, 0);
         }
-        var_df071553d0996ff9.targetmodels = [];
-        if (!isdefined(var_df071553d0996ff9.script_parameters)) {
-            var_df071553d0996ff9.script_parameters = "default";
+        interaction_struct.targetmodels = [];
+        if (!isdefined(interaction_struct.script_parameters)) {
+            interaction_struct.script_parameters = "default";
         }
-        if (var_df071553d0996ff9.script_parameters == "requires_power") {
-            var_df071553d0996ff9.requires_power = 1;
-            var_df071553d0996ff9.powered_on = 0;
-            var_df071553d0996ff9.power_area = get_area_for_power(var_df071553d0996ff9);
+        if (interaction_struct.script_parameters == "requires_power") {
+            interaction_struct.requires_power = 1;
+            interaction_struct.powered_on = 0;
+            interaction_struct.power_area = get_area_for_power(interaction_struct);
         } else {
-            var_df071553d0996ff9.requires_power = 0;
-            var_df071553d0996ff9.powered_on = 0;
+            interaction_struct.requires_power = 0;
+            interaction_struct.powered_on = 0;
         }
-        if (isdefined(level.interactions[var_df071553d0996ff9.script_noteworthy]) && istrue(level.interactions[var_df071553d0996ff9.script_noteworthy].is_p_ent)) {
-            scripts\cp\coop_personal_ents::addtopersonalinteractionlist(var_df071553d0996ff9);
+        if (isdefined(level.interactions[interaction_struct.script_noteworthy]) && istrue(level.interactions[interaction_struct.script_noteworthy].is_p_ent)) {
+            scripts\cp\coop_personal_ents::addtopersonalinteractionlist(interaction_struct);
         }
     }
     if (getdvarint(@"hash_ca862f7c198bc459", 0) == 0) {
@@ -86,24 +86,24 @@ function init() {
             level thread [[ level.interactions[keys[i]].init_func ]](structarray);
         }
     }
-    foreach (var_df071553d0996ff9 in level.current_interaction_structs) {
-        if (isdefined(level.interactions[var_df071553d0996ff9.script_noteworthy]) && isdefined(level.interactions[var_df071553d0996ff9.script_noteworthy].useduration)) {
-            var_df071553d0996ff9.useduration = level.interactions[var_df071553d0996ff9.script_noteworthy].useduration;
+    foreach (interaction_struct in level.current_interaction_structs) {
+        if (isdefined(level.interactions[interaction_struct.script_noteworthy]) && isdefined(level.interactions[interaction_struct.script_noteworthy].useduration)) {
+            interaction_struct.useduration = level.interactions[interaction_struct.script_noteworthy].useduration;
         } else {
-            var_df071553d0996ff9.useduration = "duration_short";
+            interaction_struct.useduration = "duration_short";
         }
-        if (isdefined(var_df071553d0996ff9.script_modelname)) {
-            if (isdefined(var_df071553d0996ff9.target)) {
-                var_2632cf7dfde3c0a5 = getstructarray(var_df071553d0996ff9.target, "targetname");
+        if (isdefined(interaction_struct.script_modelname)) {
+            if (isdefined(interaction_struct.target)) {
+                var_2632cf7dfde3c0a5 = getstructarray(interaction_struct.target, "targetname");
                 foreach (target_struct in var_2632cf7dfde3c0a5) {
                     if (!isdefined(target_struct.script_noteworthy) || tolower(target_struct.script_noteworthy) != "scenenode" && tolower(target_struct.script_noteworthy) != "manual_script_model") {
-                        thread spawninteractionmodel(var_df071553d0996ff9, target_struct);
+                        thread spawninteractionmodel(interaction_struct, target_struct);
                     }
                 }
                 continue;
             }
-            if (isdefined(var_df071553d0996ff9.script_noteworthy) && tolower(var_df071553d0996ff9.script_noteworthy) != "scenenode") {
-                thread spawninteractionmodel(var_df071553d0996ff9, var_df071553d0996ff9);
+            if (isdefined(interaction_struct.script_noteworthy) && tolower(interaction_struct.script_noteworthy) != "scenenode") {
+                thread spawninteractionmodel(interaction_struct, interaction_struct);
             }
         }
     }
@@ -124,12 +124,12 @@ function init() {
 // Checksum 0x0, Offset: 0x15fe
 // Size: 0xad
 function drop_interaction_structs_to_ground() {
-    foreach (var_df071553d0996ff9 in level.current_interaction_structs) {
-        if (isdefined(var_df071553d0996ff9.groupname) && var_df071553d0996ff9.groupname == "locOverride") {
+    foreach (interaction_struct in level.current_interaction_structs) {
+        if (isdefined(interaction_struct.groupname) && interaction_struct.groupname == "locOverride") {
             continue;
         }
-        ground_pos = drop_to_ground(var_df071553d0996ff9.origin, 10, -200);
-        var_df071553d0996ff9.origin = ground_pos + (0, 0, 1);
+        ground_pos = drop_to_ground(interaction_struct.origin, 10, -200);
+        interaction_struct.origin = ground_pos + (0, 0, 1);
     }
 }
 
@@ -137,10 +137,10 @@ function drop_interaction_structs_to_ground() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x16b3
 // Size: 0x96
-function get_area_for_power(var_df071553d0996ff9) {
+function get_area_for_power(interaction_struct) {
     volumes = getentarray("spawn_volume", "targetname");
     foreach (volume in volumes) {
-        if (ispointinvolume(var_df071553d0996ff9.origin, volume)) {
+        if (ispointinvolume(interaction_struct.origin, volume)) {
             if (isdefined(volume.basename)) {
                 return volume.basename;
             }
@@ -156,8 +156,8 @@ function get_area_for_power(var_df071553d0996ff9) {
 function get_adjacent_volumes_from_volume() {
     if (isdefined(level.adjacent_volumes[self.basename])) {
         new_array = [];
-        foreach (var_34950a0ead955410 in level.adjacent_volumes[self.basename]) {
-            new_array[new_array.size] = level.spawn_volume_names[var_34950a0ead955410];
+        foreach (vol_name in level.adjacent_volumes[self.basename]) {
+            new_array[new_array.size] = level.spawn_volume_names[vol_name];
         }
         return new_array;
     }
@@ -247,22 +247,22 @@ function registerinteraction(script_noteworthy, hint_func, activation_func, init
     if (!isdefined(suseduration)) {
         suseduration = "duration_short";
     }
-    var_df071553d0996ff9 = spawnstruct();
-    var_df071553d0996ff9.script_noteworthy = script_noteworthy;
-    var_df071553d0996ff9.hint_func = hint_func;
-    var_df071553d0996ff9.spend_type = spend_type;
-    var_df071553d0996ff9.tutorial = tutorial;
-    var_df071553d0996ff9.activation_func = activation_func;
-    var_df071553d0996ff9.enabled = 1;
-    var_df071553d0996ff9.disabledguidedinteractions = 1;
-    var_df071553d0996ff9.cost = 0;
-    var_df071553d0996ff9.requires_power = requires_power;
-    var_df071553d0996ff9.init_func = init_func;
-    var_df071553d0996ff9.can_use_override_func = undefined;
-    var_df071553d0996ff9.noactivation = var_ad96ac0ec299e386;
-    var_df071553d0996ff9.useduration = suseduration;
-    var_df071553d0996ff9.is_p_ent = var_5a9d289a0e9ac2d8;
-    level.interactions[script_noteworthy] = var_df071553d0996ff9;
+    interaction_struct = spawnstruct();
+    interaction_struct.script_noteworthy = script_noteworthy;
+    interaction_struct.hint_func = hint_func;
+    interaction_struct.spend_type = spend_type;
+    interaction_struct.tutorial = tutorial;
+    interaction_struct.activation_func = activation_func;
+    interaction_struct.enabled = 1;
+    interaction_struct.disabledguidedinteractions = 1;
+    interaction_struct.cost = 0;
+    interaction_struct.requires_power = requires_power;
+    interaction_struct.init_func = init_func;
+    interaction_struct.can_use_override_func = undefined;
+    interaction_struct.noactivation = var_ad96ac0ec299e386;
+    interaction_struct.useduration = suseduration;
+    interaction_struct.is_p_ent = var_5a9d289a0e9ac2d8;
+    level.interactions[script_noteworthy] = interaction_struct;
     structarray = getstructarray(script_noteworthy, "script_noteworthy");
     for (i = 0; i < structarray.size; i++) {
         structarray[i].interaction_id = level.interaction_id;
@@ -273,8 +273,8 @@ function registerinteraction(script_noteworthy, hint_func, activation_func, init
         if (flag("interactions_initialized")) {
             level thread [[ init_func ]](structarray);
             if (istrue(var_5a9d289a0e9ac2d8)) {
-                foreach (var_df071553d0996ff9 in structarray) {
-                    scripts\cp\coop_personal_ents::addtopersonalinteractionlist(var_df071553d0996ff9);
+                foreach (interaction_struct in structarray) {
+                    scripts\cp\coop_personal_ents::addtopersonalinteractionlist(interaction_struct);
                 }
             }
         }
@@ -286,8 +286,8 @@ function registerinteraction(script_noteworthy, hint_func, activation_func, init
 // Checksum 0x0, Offset: 0x1be5
 // Size: 0x63
 function add_interaction_structs_to_interaction_arrays(structarray) {
-    foreach (var_df071553d0996ff9 in structarray) {
-        level.current_interaction_structs[var_df071553d0996ff9.interaction_id] = var_df071553d0996ff9;
+    foreach (interaction_struct in structarray) {
+        level.current_interaction_structs[interaction_struct.interaction_id] = interaction_struct;
     }
 }
 
@@ -295,15 +295,15 @@ function add_interaction_structs_to_interaction_arrays(structarray) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c50
 // Size: 0x2b
-function interactionhasactivation(var_df071553d0996ff9) {
-    return istrue(level.interactions[var_df071553d0996ff9.script_noteworthy].noactivation);
+function interactionhasactivation(interaction_struct) {
+    return istrue(level.interactions[interaction_struct.script_noteworthy].noactivation);
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 11, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c84
 // Size: 0x6b
-function register_interaction(script_noteworthy, spend_type, tutorial, hint_func, activation_func, var_ca8cdb622a3bcecb, requires_power, init_func, can_use_override_func, var_ad96ac0ec299e386, suseduration) {
+function register_interaction(script_noteworthy, spend_type, tutorial, hint_func, activation_func, activation_cost, requires_power, init_func, can_use_override_func, var_ad96ac0ec299e386, suseduration) {
     registerinteraction(script_noteworthy, hint_func, activation_func, init_func, var_ad96ac0ec299e386, suseduration);
 }
 
@@ -323,13 +323,13 @@ function reset_interaction_triggers() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d61
 // Size: 0x81
-function hide_interaction_trigger_from_others(var_59805ff5786c34ad) {
+function hide_interaction_trigger_from_others(allowed_player) {
     foreach (player in level.players) {
-        if (player == var_59805ff5786c34ad) {
-            var_59805ff5786c34ad.interaction_trigger enableplayeruse(var_59805ff5786c34ad);
+        if (player == allowed_player) {
+            allowed_player.interaction_trigger enableplayeruse(allowed_player);
             continue;
         }
-        var_59805ff5786c34ad.interaction_trigger disableplayeruse(player);
+        allowed_player.interaction_trigger disableplayeruse(player);
     }
 }
 
@@ -356,8 +356,8 @@ function no_previous_interaction_point() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e5a
 // Size: 0x16
-function interaction_point_has_changed(var_ac3dc6cf8564e576) {
-    return self.last_interaction_point != var_ac3dc6cf8564e576;
+function interaction_point_has_changed(interaction_point) {
+    return self.last_interaction_point != interaction_point;
 }
 
 // Namespace interaction / namespace_a3902e911697e714
@@ -401,7 +401,7 @@ function private function_61244c780cc5fd7() {
             }
         #/
         player_origin = self.origin;
-        var_ac3dc6cf8564e576 = undefined;
+        interaction_point = undefined;
         var_717fb99add9a6834 = sortbydistancecullbyradius(level.current_interaction_structs, player_origin, 512);
         for (i = 0; i < self.disabled_interactions.size; i++) {
             var_717fb99add9a6834 = array_remove(var_717fb99add9a6834, self.disabled_interactions[i]);
@@ -412,26 +412,26 @@ function private function_61244c780cc5fd7() {
         }
         var_4403360414478511 = var_717fb99add9a6834[0];
         var_581aed15f31bbe01 = distancesquared(var_4403360414478511.origin, player_origin);
-        if (!isdefined(var_ac3dc6cf8564e576) && var_581aed15f31bbe01 <= searchdistance) {
-            var_ac3dc6cf8564e576 = var_4403360414478511;
-        } else if (!isdefined(var_ac3dc6cf8564e576) && isdefined(level.should_allow_far_search_dist_func)) {
+        if (!isdefined(interaction_point) && var_581aed15f31bbe01 <= searchdistance) {
+            interaction_point = var_4403360414478511;
+        } else if (!isdefined(interaction_point) && isdefined(level.should_allow_far_search_dist_func)) {
             if (var_581aed15f31bbe01 <= var_925ab147f36bb977) {
-                var_ac3dc6cf8564e576 = var_4403360414478511;
+                interaction_point = var_4403360414478511;
             }
-            if (isdefined(var_ac3dc6cf8564e576) && ![[ level.should_allow_far_search_dist_func ]](var_ac3dc6cf8564e576)) {
-                var_ac3dc6cf8564e576 = undefined;
+            if (isdefined(interaction_point) && ![[ level.should_allow_far_search_dist_func ]](interaction_point)) {
+                interaction_point = undefined;
             }
-        } else if (!isdefined(var_ac3dc6cf8564e576) && isdefined(var_4403360414478511.custom_search_dist)) {
+        } else if (!isdefined(interaction_point) && isdefined(var_4403360414478511.custom_search_dist)) {
             if (var_581aed15f31bbe01 <= var_4403360414478511.custom_search_dist) {
-                var_ac3dc6cf8564e576 = var_4403360414478511;
+                interaction_point = var_4403360414478511;
             }
         }
-        if (!isdefined(var_ac3dc6cf8564e576) || !array_contains(level.current_interaction_structs, var_ac3dc6cf8564e576) || !can_use_interaction(var_ac3dc6cf8564e576)) {
+        if (!isdefined(interaction_point) || !array_contains(level.current_interaction_structs, interaction_point) || !can_use_interaction(interaction_point)) {
             reset_interaction();
             continue;
         }
-        if (!no_previous_interaction_point() || !interaction_point_has_changed(var_ac3dc6cf8564e576) && interaction_is_button_mash(var_ac3dc6cf8564e576) || interaction_point_has_changed(var_ac3dc6cf8564e576)) {
-            set_interaction_point(var_ac3dc6cf8564e576);
+        if (!no_previous_interaction_point() || !interaction_point_has_changed(interaction_point) && interaction_is_button_mash(interaction_point) || interaction_point_has_changed(interaction_point)) {
+            set_interaction_point(interaction_point);
         }
         waitframe();
     }
@@ -457,17 +457,17 @@ function flash_inventory() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x216a
 // Size: 0xf7
-function can_use_interaction(var_ac3dc6cf8564e576) {
-    if (!isdefined(var_ac3dc6cf8564e576)) {
+function can_use_interaction(interaction_point) {
+    if (!isdefined(interaction_point)) {
         return false;
     }
     if (istrue(self.iscarrying)) {
         return false;
     }
-    if (istrue(var_ac3dc6cf8564e576.disabled) || !areinteractionsenabled()) {
+    if (istrue(interaction_point.disabled) || !areinteractionsenabled()) {
         return false;
     }
-    if (istrue(var_ac3dc6cf8564e576.awaitingpent)) {
+    if (istrue(interaction_point.awaitingpent)) {
         return false;
     }
     if (self secondaryoffhandbuttonpressed() || self isthrowinggrenade() || self fragbuttonpressed()) {
@@ -476,12 +476,12 @@ function can_use_interaction(var_ac3dc6cf8564e576) {
     if (!self isonground()) {
         return false;
     }
-    if (!isdefined(var_ac3dc6cf8564e576.script_noteworthy)) {
-        thread debugremoveinteractionandsendmessage(var_ac3dc6cf8564e576, "interaction_struct Struct at: " + var_ac3dc6cf8564e576.origin + " does not have a .script_noteworthy defined.");
+    if (!isdefined(interaction_point.script_noteworthy)) {
+        thread debugremoveinteractionandsendmessage(interaction_point, "interaction_struct Struct at: " + interaction_point.origin + " does not have a .script_noteworthy defined.");
         return false;
     }
-    if (!isdefined(level.interactions[var_ac3dc6cf8564e576.script_noteworthy])) {
-        thread debugremoveinteractionandsendmessage(var_ac3dc6cf8564e576, "interaction_struct Struct at: " + var_ac3dc6cf8564e576.origin + " with .script_noteworthy: " + var_ac3dc6cf8564e576.script_noteworthy + " has not been registered as an interaction_struct");
+    if (!isdefined(level.interactions[interaction_point.script_noteworthy])) {
+        thread debugremoveinteractionandsendmessage(interaction_point, "interaction_struct Struct at: " + interaction_point.origin + " with .script_noteworthy: " + interaction_point.script_noteworthy + " has not been registered as an interaction_struct");
         return false;
     }
     return true;
@@ -491,7 +491,7 @@ function can_use_interaction(var_ac3dc6cf8564e576) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x226a
 // Size: 0x8d
-function debugremoveinteractionandsendmessage(var_df071553d0996ff9, message) {
+function debugremoveinteractionandsendmessage(interaction_struct, message) {
     /#
         if (getdvarint(@"hash_dc1fe944feca8658", 0)) {
             println("<dev string:x1c>");
@@ -502,7 +502,7 @@ function debugremoveinteractionandsendmessage(var_df071553d0996ff9, message) {
             println("<dev string:xeb>" + level.gametype);
             println("<dev string:x1c>");
         }
-        remove_from_current_interaction_list(var_df071553d0996ff9);
+        remove_from_current_interaction_list(interaction_struct);
     #/
 }
 
@@ -521,45 +521,45 @@ function reset_interaction() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2330
 // Size: 0x3b2
-function set_interaction_point(var_ac3dc6cf8564e576, var_9883d93111fd5ab9) {
+function set_interaction_point(interaction_point, var_9883d93111fd5ab9) {
     if (istrue(self.interaction_trigger.disableinteraction)) {
         return;
     }
     self notify("set_interaction_point");
     self.interaction_trigger dontinterpolate();
-    self.last_interaction_point = var_ac3dc6cf8564e576;
+    self.last_interaction_point = interaction_point;
     eye = self geteye();
-    if (istrue(var_ac3dc6cf8564e576.var_9d53c266d664e00a)) {
-        eye = var_ac3dc6cf8564e576.origin;
+    if (istrue(interaction_point.var_9d53c266d664e00a)) {
+        eye = interaction_point.origin;
     }
-    self.interaction_trigger.origin = (var_ac3dc6cf8564e576.origin[0], var_ac3dc6cf8564e576.origin[1], eye[2]);
-    if (interactionhasactivation(var_ac3dc6cf8564e576)) {
-        level thread [[ level.interactions[var_ac3dc6cf8564e576.script_noteworthy].activation_func ]](var_ac3dc6cf8564e576, self);
+    self.interaction_trigger.origin = (interaction_point.origin[0], interaction_point.origin[1], eye[2]);
+    if (interactionhasactivation(interaction_point)) {
+        level thread [[ level.interactions[interaction_point.script_noteworthy].activation_func ]](interaction_point, self);
         return;
     }
-    if (!isdefined(level.interactions[var_ac3dc6cf8564e576.script_noteworthy].spend_type)) {
-        level.interactions[var_ac3dc6cf8564e576.script_noteworthy].spend_type = "null";
+    if (!isdefined(level.interactions[interaction_point.script_noteworthy].spend_type)) {
+        level.interactions[interaction_point.script_noteworthy].spend_type = "null";
     }
-    spend_type = level.interactions[var_ac3dc6cf8564e576.script_noteworthy].spend_type;
+    spend_type = level.interactions[interaction_point.script_noteworthy].spend_type;
     var_8f8b25936fae5c37 = undefined;
-    if (function_fb316feab9934117(var_ac3dc6cf8564e576)) {
-        self.interaction_trigger.origin = var_ac3dc6cf8564e576.origin;
-    } else if (interaction_is_floor_is_lava_client(var_ac3dc6cf8564e576)) {
-        var_dc4f149f969d05af = strtok(var_ac3dc6cf8564e576.name, "_");
+    if (function_fb316feab9934117(interaction_point)) {
+        self.interaction_trigger.origin = interaction_point.origin;
+    } else if (interaction_is_floor_is_lava_client(interaction_point)) {
+        var_dc4f149f969d05af = strtok(interaction_point.name, "_");
         num = int(var_dc4f149f969d05af[1]);
         self.interaction_trigger sethintstringparams(num);
-    } else if (interaction_is_jugg_maze_button(var_ac3dc6cf8564e576)) {
-        a = getjuggmazebutton(var_ac3dc6cf8564e576.script_label);
-        switch (var_ac3dc6cf8564e576.script_noteworthy) {
+    } else if (interaction_is_jugg_maze_button(interaction_point)) {
+        a = getjuggmazebutton(interaction_point.script_label);
+        switch (interaction_point.script_noteworthy) {
         case #"hash_ee9888957c53cd6d":
             self.interaction_trigger sethintstringparams(a);
             break;
         }
-    } else if (interaction_is_chess_piece(var_ac3dc6cf8564e576)) {
+    } else if (interaction_is_chess_piece(interaction_point)) {
         a = getalphabetstring(level.currentalphanumericcode[0]);
         b = getalphabetstring(level.currentalphanumericcode[1]);
         c = getnumberstring(level.currentalphanumericcode[2]);
-        switch (var_ac3dc6cf8564e576.script_noteworthy) {
+        switch (interaction_point.script_noteworthy) {
         case #"hash_cea00219c45f45b":
             self.interaction_trigger sethintstringparams(a);
             break;
@@ -570,17 +570,17 @@ function set_interaction_point(var_ac3dc6cf8564e576, var_9883d93111fd5ab9) {
             self.interaction_trigger sethintstringparams(c);
             break;
         }
-    } else if (interaction_is_weapon_pickup(var_ac3dc6cf8564e576)) {
-        set_weapon_interaction_string(var_ac3dc6cf8564e576, self);
-    } else if (interaction_is_trap(var_ac3dc6cf8564e576)) {
-        self.interaction_trigger.origin = (var_ac3dc6cf8564e576.origin[0], var_ac3dc6cf8564e576.origin[1], eye[2] - 15);
+    } else if (interaction_is_weapon_pickup(interaction_point)) {
+        set_weapon_interaction_string(interaction_point, self);
+    } else if (interaction_is_trap(interaction_point)) {
+        self.interaction_trigger.origin = (interaction_point.origin[0], interaction_point.origin[1], eye[2] - 15);
     }
-    set_interaction_trigger_properties(self.interaction_trigger, var_ac3dc6cf8564e576);
-    if (!isdefined(var_ac3dc6cf8564e576.suseduration)) {
-        var_ac3dc6cf8564e576.suseduration = "duration_none";
+    set_interaction_trigger_properties(self.interaction_trigger, interaction_point);
+    if (!isdefined(interaction_point.suseduration)) {
+        interaction_point.suseduration = "duration_none";
     }
     if (!isdefined(var_9883d93111fd5ab9)) {
-        thread wait_for_interaction_triggered(var_ac3dc6cf8564e576);
+        thread wait_for_interaction_triggered(interaction_point);
     }
     self.interaction_trigger function_dfb78b3e724ad620(1);
 }
@@ -726,8 +726,8 @@ function getnumberstring(number) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b0e
 // Size: 0x35
-function set_weapon_interaction_string(var_ac3dc6cf8564e576, player) {
-    var_96f1780c385b8c4f = get_weapon_name_string(var_ac3dc6cf8564e576);
+function set_weapon_interaction_string(interaction_point, player) {
+    var_96f1780c385b8c4f = get_weapon_name_string(interaction_point);
     self.interaction_trigger sethintstringparams(var_96f1780c385b8c4f);
 }
 
@@ -735,7 +735,7 @@ function set_weapon_interaction_string(var_ac3dc6cf8564e576, player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b4b
 // Size: 0xb
-function get_weapon_name_string(var_ac3dc6cf8564e576) {
+function get_weapon_name_string(interaction_point) {
     
 }
 
@@ -769,19 +769,19 @@ function getweaponcostint(weaponname) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2be3
 // Size: 0xbe
-function set_interaction_trigger_properties(interaction_trigger, var_df071553d0996ff9) {
-    hintstring = get_interaction_hintstring(var_df071553d0996ff9, self);
+function set_interaction_trigger_properties(interaction_trigger, interaction_struct) {
+    hintstring = get_interaction_hintstring(interaction_struct, self);
     if (isdefined(hintstring)) {
         self.interaction_trigger sethintstring(hintstring);
     }
     self.interaction_trigger setusefov(160);
     self.interaction_trigger setusepriority(1);
-    if (isdefined(level.var_a30bd62e41e58a08) && isdefined(level.var_a30bd62e41e58a08[var_df071553d0996ff9.script_noteworthy])) {
-        [[ level.var_a30bd62e41e58a08[var_df071553d0996ff9.script_noteworthy] ]](interaction_trigger, var_df071553d0996ff9, hintstring);
+    if (isdefined(level.var_a30bd62e41e58a08) && isdefined(level.var_a30bd62e41e58a08[interaction_struct.script_noteworthy])) {
+        [[ level.var_a30bd62e41e58a08[interaction_struct.script_noteworthy] ]](interaction_trigger, interaction_struct, hintstring);
         return;
     }
     if (isdefined(level.interaction_trigger_properties_func)) {
-        [[ level.interaction_trigger_properties_func ]](interaction_trigger, var_df071553d0996ff9, hintstring);
+        [[ level.interaction_trigger_properties_func ]](interaction_trigger, interaction_struct, hintstring);
     }
 }
 
@@ -789,30 +789,30 @@ function set_interaction_trigger_properties(interaction_trigger, var_df071553d09
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ca9
 // Size: 0xe2
-function get_interaction_hintstring(var_df071553d0996ff9, player) {
-    if (isdefined(level.interactions[var_df071553d0996ff9.script_noteworthy].hint_func)) {
-        return [[ level.interactions[var_df071553d0996ff9.script_noteworthy].hint_func ]](var_df071553d0996ff9, player);
+function get_interaction_hintstring(interaction_struct, player) {
+    if (isdefined(level.interactions[interaction_struct.script_noteworthy].hint_func)) {
+        return [[ level.interactions[interaction_struct.script_noteworthy].hint_func ]](interaction_struct, player);
     }
-    if (isdefined(var_df071553d0996ff9.cooling_down)) {
+    if (isdefined(interaction_struct.cooling_down)) {
         return %COOP_INTERACTIONS/COOLDOWN;
     }
-    if (istrue(var_df071553d0996ff9.requires_power) && !istrue(var_df071553d0996ff9.powered_on)) {
+    if (istrue(interaction_struct.requires_power) && !istrue(interaction_struct.powered_on)) {
         return %COOP_INTERACTIONS/REQUIRES_POWER;
     }
-    if (!isdefined(level.interaction_hintstrings[var_df071553d0996ff9.script_noteworthy])) {
-        println("<dev string:xf6>" + var_df071553d0996ff9.script_noteworthy);
+    if (!isdefined(level.interaction_hintstrings[interaction_struct.script_noteworthy])) {
+        println("<dev string:xf6>" + interaction_struct.script_noteworthy);
         return "";
     }
-    return level.interaction_hintstrings[var_df071553d0996ff9.script_noteworthy];
+    return level.interaction_hintstrings[interaction_struct.script_noteworthy];
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d94
 // Size: 0x27
-function wait_for_interaction_triggered(var_df071553d0996ff9) {
+function wait_for_interaction_triggered(interaction_struct) {
     if (isdefined(level.wait_for_interaction_func)) {
-        self thread [[ level.wait_for_interaction_func ]](var_df071553d0996ff9);
+        self thread [[ level.wait_for_interaction_func ]](interaction_struct);
     }
 }
 
@@ -820,26 +820,26 @@ function wait_for_interaction_triggered(var_df071553d0996ff9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dc3
 // Size: 0x128
-function can_purchase_ammo(var_d4df17a1168ac8e2) {
+function can_purchase_ammo(wall_weapon) {
     weapons = self getweaponslistall();
-    var_c53c17f2d86bca58 = undefined;
+    ammo_weapon = undefined;
     var_9211cdaadb7bca55 = undefined;
-    var_fbc51cc04b895926 = getrawbaseweaponname(var_d4df17a1168ac8e2);
+    var_fbc51cc04b895926 = getrawbaseweaponname(wall_weapon);
     foreach (weapon in weapons) {
         var_9211cdaadb7bca55 = getrawbaseweaponname(weapon);
         if (var_9211cdaadb7bca55 == var_fbc51cc04b895926) {
-            var_c53c17f2d86bca58 = weapon;
+            ammo_weapon = weapon;
             break;
         }
     }
-    if (isdefined(var_c53c17f2d86bca58)) {
-        var_de8a9ead75a0581 = self getweaponammostock(var_c53c17f2d86bca58);
-        max_ammo = scripts\cp\utility::function_ed18a118c6fa5c4f(var_c53c17f2d86bca58);
+    if (isdefined(ammo_weapon)) {
+        current_ammo = self getweaponammostock(ammo_weapon);
+        max_ammo = scripts\cp\utility::function_ed18a118c6fa5c4f(ammo_weapon);
         var_629f6083f99f1d29 = scripts\cp\perks\cp_prestige::prestige_getminammo();
-        var_db6891ee5a14d7aa = int(var_629f6083f99f1d29 * max_ammo);
-        if (var_de8a9ead75a0581 < var_db6891ee5a14d7aa) {
+        scaled_ammo = int(var_629f6083f99f1d29 * max_ammo);
+        if (current_ammo < scaled_ammo) {
             return true;
-        } else if (max_ammo == weaponclipsize(var_c53c17f2d86bca58) && self getweaponammoclip(var_c53c17f2d86bca58) < weaponclipsize(var_c53c17f2d86bca58)) {
+        } else if (max_ammo == weaponclipsize(ammo_weapon) && self getweaponammoclip(ammo_weapon) < weaponclipsize(ammo_weapon)) {
             return true;
         } else {
             return false;
@@ -852,18 +852,18 @@ function can_purchase_ammo(var_d4df17a1168ac8e2) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ef4
 // Size: 0x62
-function interaction_post_activate_delay(var_df071553d0996ff9) {
+function interaction_post_activate_delay(interaction_struct) {
     self endon("disconnect");
-    if (interaction_is_button_mash(var_df071553d0996ff9)) {
+    if (interaction_is_button_mash(interaction_struct)) {
         return;
     }
-    if (interaction_is_door_buy(var_df071553d0996ff9)) {
+    if (interaction_is_door_buy(interaction_struct)) {
         return;
     }
-    if (interaction_is_atm(var_df071553d0996ff9)) {
+    if (interaction_is_atm(interaction_struct)) {
         return;
     }
-    if (interaction_is_chess_piece(var_df071553d0996ff9)) {
+    if (interaction_is_chess_piece(interaction_struct)) {
         return;
     }
     val::set("post_activate_delay", "interactions", 0);
@@ -886,8 +886,8 @@ function delayed_trigger_unset() {
 // Size: 0x6b
 function addtointeractionslistbynoteworthy(noteworthy) {
     var_a28cb3eb323db0ae = getstructarray(noteworthy, "script_noteworthy");
-    foreach (var_df071553d0996ff9 in var_a28cb3eb323db0ae) {
-        add_to_current_interaction_list(var_df071553d0996ff9);
+    foreach (interaction_struct in var_a28cb3eb323db0ae) {
+        add_to_current_interaction_list(interaction_struct);
     }
 }
 
@@ -897,8 +897,8 @@ function addtointeractionslistbynoteworthy(noteworthy) {
 // Size: 0x6b
 function removefrominteractionslistbynoteworthy(noteworthy) {
     var_a28cb3eb323db0ae = getstructarray(noteworthy, "script_noteworthy");
-    foreach (var_df071553d0996ff9 in var_a28cb3eb323db0ae) {
-        remove_from_current_interaction_list(var_df071553d0996ff9);
+    foreach (interaction_struct in var_a28cb3eb323db0ae) {
+        remove_from_current_interaction_list(interaction_struct);
     }
 }
 
@@ -906,11 +906,11 @@ function removefrominteractionslistbynoteworthy(noteworthy) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x305e
 // Size: 0x55
-function remove_from_current_interaction_list(var_df071553d0996ff9) {
-    var_df071553d0996ff9 notify("remove_from_current_interaction_list");
-    var_df071553d0996ff9.in_array = 0;
-    if (isdefined(level.current_interaction_structs[var_df071553d0996ff9.interaction_id])) {
-        level.current_interaction_structs[var_df071553d0996ff9.interaction_id] = undefined;
+function remove_from_current_interaction_list(interaction_struct) {
+    interaction_struct notify("remove_from_current_interaction_list");
+    interaction_struct.in_array = 0;
+    if (isdefined(level.current_interaction_structs[interaction_struct.interaction_id])) {
+        level.current_interaction_structs[interaction_struct.interaction_id] = undefined;
     }
     scripts\cp\coop_personal_ents::update_special_mode_for_all_players();
 }
@@ -919,10 +919,10 @@ function remove_from_current_interaction_list(var_df071553d0996ff9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x30bb
 // Size: 0x3f
-function add_to_current_interaction_list(var_df071553d0996ff9) {
-    var_df071553d0996ff9 notify("add_to_current_interaction_list");
-    var_df071553d0996ff9.in_array = 1;
-    level.current_interaction_structs[var_df071553d0996ff9.interaction_id] = var_df071553d0996ff9;
+function add_to_current_interaction_list(interaction_struct) {
+    interaction_struct notify("add_to_current_interaction_list");
+    interaction_struct.in_array = 1;
+    level.current_interaction_structs[interaction_struct.interaction_id] = interaction_struct;
     scripts\cp\coop_personal_ents::update_special_mode_for_all_players();
 }
 
@@ -930,9 +930,9 @@ function add_to_current_interaction_list(var_df071553d0996ff9) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3102
 // Size: 0x48
-function remove_from_current_interaction_list_for_player(var_df071553d0996ff9, player) {
-    var_df071553d0996ff9 notify("remove_from_current_interaction_list_for_player_" + player.name);
-    player.disabled_interactions[var_df071553d0996ff9.interaction_id] = var_df071553d0996ff9;
+function remove_from_current_interaction_list_for_player(interaction_struct, player) {
+    interaction_struct notify("remove_from_current_interaction_list_for_player_" + player.name);
+    player.disabled_interactions[interaction_struct.interaction_id] = interaction_struct;
     scripts\cp\coop_personal_ents::update_special_mode_for_player(player);
 }
 
@@ -940,9 +940,9 @@ function remove_from_current_interaction_list_for_player(var_df071553d0996ff9, p
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3152
 // Size: 0x46
-function add_to_current_interaction_list_for_player(var_df071553d0996ff9, player) {
-    var_df071553d0996ff9 notify("add_to_current_interaction_list_for_player_" + player.name);
-    player.disabled_interactions[var_df071553d0996ff9.interaction_id] = undefined;
+function add_to_current_interaction_list_for_player(interaction_struct, player) {
+    interaction_struct notify("add_to_current_interaction_list_for_player_" + player.name);
+    player.disabled_interactions[interaction_struct.interaction_id] = undefined;
     scripts\cp\coop_personal_ents::update_special_mode_for_player(player);
 }
 
@@ -950,8 +950,8 @@ function add_to_current_interaction_list_for_player(var_df071553d0996ff9, player
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x31a0
 // Size: 0x92
-function can_purchase_interaction(var_df071553d0996ff9, amount, spend_type, weapon) {
-    if (!isdefined(level.current_interaction_structs[var_df071553d0996ff9.interaction_id])) {
+function can_purchase_interaction(interaction_struct, amount, spend_type, weapon) {
+    if (!isdefined(level.current_interaction_structs[interaction_struct.interaction_id])) {
         return false;
     }
     if (istrue(level.var_fc3d8e513c281e49)) {
@@ -960,7 +960,7 @@ function can_purchase_interaction(var_df071553d0996ff9, amount, spend_type, weap
     if (isdefined(amount)) {
         cost = amount;
     } else {
-        cost = level.interactions[var_df071553d0996ff9.script_noteworthy].cost;
+        cost = level.interactions[interaction_struct.script_noteworthy].cost;
     }
     if (namespace_6c67e93a4c487d83::player_has_enough_currency(cost, spend_type)) {
         return true;
@@ -1009,26 +1009,26 @@ function should_interaction_fill_consumable_meter(var_e42f7eb456b932f2) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32f0
 // Size: 0x1da
-function getammopurchasestring(var_df071553d0996ff9, player) {
-    cost = level.interactions[var_df071553d0996ff9.script_noteworthy].cost;
-    base_weapon = getrawbaseweaponname(var_df071553d0996ff9.script_noteworthy);
+function getammopurchasestring(interaction_struct, player) {
+    cost = level.interactions[interaction_struct.script_noteworthy].cost;
+    base_weapon = getrawbaseweaponname(interaction_struct.script_noteworthy);
     currentweapon = player getcurrentweapon();
     max_ammo = scripts\cp\utility::function_ed18a118c6fa5c4f(currentweapon);
     var_629f6083f99f1d29 = player scripts\cp\perks\cp_prestige::prestige_getminammo();
-    var_db6891ee5a14d7aa = int(var_629f6083f99f1d29 * max_ammo);
-    var_de8a9ead75a0581 = player getweaponammostock(currentweapon);
+    scaled_ammo = int(var_629f6083f99f1d29 * max_ammo);
+    current_ammo = player getweaponammostock(currentweapon);
     weapons = self getweaponslistall();
     foreach (weapon in weapons) {
         var_9211cdaadb7bca55 = getrawbaseweaponname(weapon);
-        if (var_9211cdaadb7bca55 == getrawbaseweaponname(var_df071553d0996ff9.script_noteworthy)) {
+        if (var_9211cdaadb7bca55 == getrawbaseweaponname(interaction_struct.script_noteworthy)) {
             var_3626ccbdf1758532 = weapon;
-            var_de8a9ead75a0581 = self getweaponammostock(var_3626ccbdf1758532);
+            current_ammo = self getweaponammostock(var_3626ccbdf1758532);
             max_ammo = scripts\cp\utility::function_ed18a118c6fa5c4f(var_3626ccbdf1758532);
-            var_db6891ee5a14d7aa = int(var_629f6083f99f1d29 * max_ammo);
+            scaled_ammo = int(var_629f6083f99f1d29 * max_ammo);
         }
     }
-    if (var_df071553d0996ff9.script_parameters == "tickets") {
-        return level.interaction_hintstrings[var_df071553d0996ff9.script_noteworthy];
+    if (interaction_struct.script_parameters == "tickets") {
+        return level.interaction_hintstrings[interaction_struct.script_noteworthy];
     }
     switch (cost) {
     case 500:
@@ -1045,9 +1045,9 @@ function getammopurchasestring(var_df071553d0996ff9, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x34d2
 // Size: 0x32
-function default_weapon_hint_func(var_df071553d0996ff9, player) {
-    if (player namespace_a0628d6954815ef8::has_weapon_variation(var_df071553d0996ff9.script_noteworthy)) {
-        return getammopurchasestring(var_df071553d0996ff9, player);
+function default_weapon_hint_func(interaction_struct, player) {
+    if (player namespace_a0628d6954815ef8::has_weapon_variation(interaction_struct.script_noteworthy)) {
+        return getammopurchasestring(interaction_struct, player);
     }
     return undefined;
 }
@@ -1059,7 +1059,7 @@ function default_weapon_hint_func(var_df071553d0996ff9, player) {
 function interaction_sound_monitor() {
     level endon("game_ended");
     while (true) {
-        level waittill("interaction", interaction_type, var_df071553d0996ff9, player);
+        level waittill("interaction", interaction_type, interaction_struct, player);
         switch (interaction_type) {
         case #"hash_52dba21b7b0431e":
             if (isdefined(player.purchasing_ammo)) {
@@ -1071,7 +1071,7 @@ function interaction_sound_monitor() {
             }
             break;
         case #"hash_5f4247cbd74f75c2":
-            sound = get_interaction_sound(var_df071553d0996ff9, player);
+            sound = get_interaction_sound(interaction_struct, player);
             if (isdefined(sound) && soundexists(sound)) {
                 player playlocalsound_safe(sound);
             }
@@ -1087,72 +1087,72 @@ function interaction_sound_monitor() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3603
 // Size: 0x1fb
-function get_interaction_sound(var_df071553d0996ff9, player) {
-    var_f6f217ea2aa761f9 = [];
-    switch (var_df071553d0996ff9.script_noteworthy) {
+function get_interaction_sound(interaction_struct, player) {
+    alias_array = [];
+    switch (interaction_struct.script_noteworthy) {
     case #"hash_8ded6fdf599c8405":
         return undefined;
     case #"hash_c373b5c1c961382":
-        var_f6f217ea2aa761f9 = ["lost_and_found_purchase"];
+        alias_array = ["lost_and_found_purchase"];
         break;
     case #"hash_17705e021d413644":
     case #"hash_5176ea8ac5ebd6d2":
     case #"hash_79aacf81624606a1":
     case #"hash_ad9fd60c8d16f5c4":
     case #"hash_ee5629fbd73d7dec":
-        var_f6f217ea2aa761f9 = ["trap_control_panel_purchase"];
+        alias_array = ["trap_control_panel_purchase"];
         break;
     case #"hash_43c3b099403349e6":
     case #"hash_74d7342ec02bc5ba":
-        var_f6f217ea2aa761f9 = ["purchase_door"];
+        alias_array = ["purchase_door"];
         break;
     case #"hash_d33dd55dbc3e9e86":
-        var_f6f217ea2aa761f9 = ["purchase_door"];
+        alias_array = ["purchase_door"];
         break;
     case #"hash_338a7935f889f966":
-        var_f6f217ea2aa761f9 = ["atm_deposit"];
+        alias_array = ["atm_deposit"];
         break;
     case #"hash_7111b6336bce51b7":
-        var_f6f217ea2aa761f9 = ["atm_withdrawal"];
+        alias_array = ["atm_withdrawal"];
         break;
     case #"hash_540029e95443eff9":
     case #"hash_6b74d503b2df6dde":
     case #"hash_ecd90e4994d7d04c":
     case #"hash_f9208728ecc14a4d":
-        var_f6f217ea2aa761f9 = ["zmb_item_pickup"];
+        alias_array = ["zmb_item_pickup"];
         break;
     case #"hash_37ad8039ea91a8a5":
     case #"hash_a3d81e14ec5a5b24":
     case #"hash_c588128f7226d6cf":
     case #"hash_dc336228a1085866":
-        var_f6f217ea2aa761f9 = ["purchase_ticket"];
+        alias_array = ["purchase_ticket"];
         break;
     case #"hash_1e249caad9c87d9e":
-        var_f6f217ea2aa761f9 = ["ark_purchase"];
+        alias_array = ["ark_purchase"];
         break;
     case #"hash_e66a57d8aeebc251":
-        var_f6f217ea2aa761f9 = ["ark_turn_in"];
+        alias_array = ["ark_turn_in"];
         break;
     default:
-        var_f6f217ea2aa761f9 = ["ark_turn_in"];
+        alias_array = ["ark_turn_in"];
         break;
     }
-    if (!var_f6f217ea2aa761f9.size) {
+    if (!alias_array.size) {
         return undefined;
     }
-    return random(var_f6f217ea2aa761f9);
+    return random(alias_array);
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3807
 // Size: 0x39
-function interaction_post_activate_update(var_df071553d0996ff9) {
-    if (!isdefined(var_df071553d0996ff9.post_activate_update)) {
+function interaction_post_activate_update(interaction_struct) {
+    if (!isdefined(interaction_struct.post_activate_update)) {
         return;
     }
     if (isdefined(level.interaction_post_activate_update_func)) {
-        level thread [[ level.interaction_post_activate_update_func ]](var_df071553d0996ff9, self);
+        level thread [[ level.interaction_post_activate_update_func ]](interaction_struct, self);
         return;
     }
 }
@@ -1161,79 +1161,79 @@ function interaction_post_activate_update(var_df071553d0996ff9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3848
 // Size: 0x31
-function interaction_is_trap(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "trap_electric" || var_df071553d0996ff9.script_noteworthy == "trap_firebarrel";
+function interaction_is_trap(interaction_struct) {
+    return interaction_struct.script_noteworthy == "trap_electric" || interaction_struct.script_noteworthy == "trap_firebarrel";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3882
 // Size: 0x31
-function interaction_is_atm(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "atm_withdrawal" || var_df071553d0996ff9.script_noteworthy == "atm_deposit";
+function interaction_is_atm(interaction_struct) {
+    return interaction_struct.script_noteworthy == "atm_withdrawal" || interaction_struct.script_noteworthy == "atm_deposit";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38bc
 // Size: 0x31
-function interaction_is_grenade_wall_buy(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "power_bioSpike" || var_df071553d0996ff9.script_noteworthy == "power_c4";
+function interaction_is_grenade_wall_buy(interaction_struct) {
+    return interaction_struct.script_noteworthy == "power_bioSpike" || interaction_struct.script_noteworthy == "power_c4";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38f6
 // Size: 0x1c
-function interaction_is_weapon_pickup(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "weaponPickup";
+function interaction_is_weapon_pickup(interaction_struct) {
+    return interaction_struct.script_noteworthy == "weaponPickup";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x391b
 // Size: 0x1c
-function interaction_is_fortune_teller(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "jaroslav_machine";
+function interaction_is_fortune_teller(interaction_struct) {
+    return interaction_struct.script_noteworthy == "jaroslav_machine";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3940
 // Size: 0x26
-function interaction_waiting_on_power(var_df071553d0996ff9) {
-    return istrue(var_df071553d0996ff9.requires_power) && !var_df071553d0996ff9.powered_on;
+function interaction_waiting_on_power(interaction_struct) {
+    return istrue(interaction_struct.requires_power) && !interaction_struct.powered_on;
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x396f
 // Size: 0xd3
-function interaction_is_valid(var_df071553d0996ff9, player) {
-    if (isdefined(var_df071553d0996ff9.triggered)) {
+function interaction_is_valid(interaction_struct, player) {
+    if (isdefined(interaction_struct.triggered)) {
         return false;
     }
-    if (!isdefined(level.current_interaction_structs[var_df071553d0996ff9.interaction_id])) {
+    if (!isdefined(level.current_interaction_structs[interaction_struct.interaction_id])) {
         return false;
     }
-    if (istrue(var_df071553d0996ff9.out_of_order)) {
+    if (istrue(interaction_struct.out_of_order)) {
         level notify("player_accessed_interaction_on_cooldown", player);
         return false;
     }
-    if (interaction_waiting_on_power(var_df071553d0996ff9)) {
+    if (interaction_waiting_on_power(interaction_struct)) {
         level notify("player_accessed_nonpowered_interaction", player);
-        if (isdefined(var_df071553d0996ff9.perk_type) && soundexists("perk_machine_deny")) {
+        if (isdefined(interaction_struct.perk_type) && soundexists("perk_machine_deny")) {
             player playlocalsound("perk_machine_deny");
         } else {
             player playlocalsound("purchase_deny");
         }
         return false;
     }
-    if (isdefined(var_df071553d0996ff9.cooling_down)) {
+    if (isdefined(interaction_struct.cooling_down)) {
         level notify("player_accessed_interaction_on_cooldown", player);
         return false;
     }
-    if (!isdefined(var_df071553d0996ff9.interaction_id)) {
+    if (!isdefined(interaction_struct.interaction_id)) {
         return false;
     }
     return true;
@@ -1243,40 +1243,40 @@ function interaction_is_valid(var_df071553d0996ff9, player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a4b
 // Size: 0x1c
-function function_fb316feab9934117(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "hardpoint_airdrop";
+function function_fb316feab9934117(interaction_struct) {
+    return interaction_struct.script_noteworthy == "hardpoint_airdrop";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a70
 // Size: 0x1c
-function interaction_is_floor_is_lava_client(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "sequence_interaction";
+function interaction_is_floor_is_lava_client(interaction_struct) {
+    return interaction_struct.script_noteworthy == "sequence_interaction";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a95
 // Size: 0x1c
-function interaction_is_jugg_maze_button(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "seq_button";
+function interaction_is_jugg_maze_button(interaction_struct) {
+    return interaction_struct.script_noteworthy == "seq_button";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3aba
 // Size: 0x46
-function interaction_is_chess_piece(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "chess_piece_selection" || var_df071553d0996ff9.script_noteworthy == "chess_puzzle_alphabet" || var_df071553d0996ff9.script_noteworthy == "chess_puzzle_number";
+function interaction_is_chess_piece(interaction_struct) {
+    return interaction_struct.script_noteworthy == "chess_piece_selection" || interaction_struct.script_noteworthy == "chess_puzzle_alphabet" || interaction_struct.script_noteworthy == "chess_puzzle_number";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b09
 // Size: 0x1e
-function interaction_is_weapon_buy(var_df071553d0996ff9) {
-    if (isdefined(var_df071553d0996ff9.weapon)) {
+function interaction_is_weapon_buy(interaction_struct) {
+    if (isdefined(interaction_struct.weapon)) {
         return true;
     }
     return false;
@@ -1286,42 +1286,42 @@ function interaction_is_weapon_buy(var_df071553d0996ff9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b30
 // Size: 0x26
-function interaction_is_button_mash(var_df071553d0996ff9) {
-    return isdefined(var_df071553d0996ff9.isbuttonmash) && var_df071553d0996ff9.isbuttonmash;
+function interaction_is_button_mash(interaction_struct) {
+    return isdefined(interaction_struct.isbuttonmash) && interaction_struct.isbuttonmash;
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b5f
 // Size: 0xd9
-function interaction_is_door_buy(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "debris_350" || var_df071553d0996ff9.script_noteworthy == "debris_750" || var_df071553d0996ff9.script_noteworthy == "debris_1000" || var_df071553d0996ff9.script_noteworthy == "debris_1250" || var_df071553d0996ff9.script_noteworthy == "debris_1500" || var_df071553d0996ff9.script_noteworthy == "debris_2000" || var_df071553d0996ff9.script_noteworthy == "1v1_stairway_door" || var_df071553d0996ff9.script_noteworthy == "1v1_exit_door" || var_df071553d0996ff9.script_noteworthy == "team_door_switch" || var_df071553d0996ff9.script_noteworthy == "team_door";
+function interaction_is_door_buy(interaction_struct) {
+    return interaction_struct.script_noteworthy == "debris_350" || interaction_struct.script_noteworthy == "debris_750" || interaction_struct.script_noteworthy == "debris_1000" || interaction_struct.script_noteworthy == "debris_1250" || interaction_struct.script_noteworthy == "debris_1500" || interaction_struct.script_noteworthy == "debris_2000" || interaction_struct.script_noteworthy == "1v1_stairway_door" || interaction_struct.script_noteworthy == "1v1_exit_door" || interaction_struct.script_noteworthy == "team_door_switch" || interaction_struct.script_noteworthy == "team_door";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c41
 // Size: 0x46
-function interaction_is_chi_door(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "chi_0" || var_df071553d0996ff9.script_noteworthy == "chi_1" || var_df071553d0996ff9.script_noteworthy == "chi_2";
+function interaction_is_chi_door(interaction_struct) {
+    return interaction_struct.script_noteworthy == "chi_0" || interaction_struct.script_noteworthy == "chi_1" || interaction_struct.script_noteworthy == "chi_2";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c90
 // Size: 0xaf
-function interaction_is_ticket_buy(var_df071553d0996ff9) {
-    return var_df071553d0996ff9.script_noteworthy == "small_ticket_prize" || var_df071553d0996ff9.script_noteworthy == "medium_ticket_prize" || var_df071553d0996ff9.script_noteworthy == "arcade_counter_grenade" || var_df071553d0996ff9.script_noteworthy == "arcade_counter_ammo" || var_df071553d0996ff9.script_noteworthy == "large_ticket_prize" || var_df071553d0996ff9.script_noteworthy == "zfreeze_semtex_mp" || var_df071553d0996ff9.script_noteworthy == "iw7_forgefreeze_zm+forgefreezealtfire" || var_df071553d0996ff9.script_noteworthy == "gold_teeth";
+function interaction_is_ticket_buy(interaction_struct) {
+    return interaction_struct.script_noteworthy == "small_ticket_prize" || interaction_struct.script_noteworthy == "medium_ticket_prize" || interaction_struct.script_noteworthy == "arcade_counter_grenade" || interaction_struct.script_noteworthy == "arcade_counter_ammo" || interaction_struct.script_noteworthy == "large_ticket_prize" || interaction_struct.script_noteworthy == "zfreeze_semtex_mp" || interaction_struct.script_noteworthy == "iw7_forgefreeze_zm+forgefreezealtfire" || interaction_struct.script_noteworthy == "gold_teeth";
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d48
 // Size: 0x76
-function can_use_perk(var_df071553d0996ff9) {
-    if (has_zombie_perk(var_df071553d0996ff9.perk_type)) {
+function can_use_perk(interaction_struct) {
+    if (has_zombie_perk(interaction_struct.perk_type)) {
         return false;
-    } else if (self.self_revives_purchased >= self.max_self_revive_machine_use && var_df071553d0996ff9.perk_type == "perk_machine_revive") {
+    } else if (self.self_revives_purchased >= self.max_self_revive_machine_use && interaction_struct.perk_type == "perk_machine_revive") {
         return false;
     } else if (isdefined(self.zombies_perks) && self.zombies_perks.size > 4) {
         return false;
@@ -1333,32 +1333,32 @@ function can_use_perk(var_df071553d0996ff9) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3dc7
 // Size: 0x2f
-function interaction_show_fail_reason(var_df071553d0996ff9, stringname, var_edfe2fddcb8449a1, var_1e59f2dcd3b86d22) {
-    thread interaction_fail_internal(var_df071553d0996ff9, stringname, var_edfe2fddcb8449a1, var_1e59f2dcd3b86d22);
+function interaction_show_fail_reason(interaction_struct, stringname, check_condition, var_1e59f2dcd3b86d22) {
+    thread interaction_fail_internal(interaction_struct, stringname, check_condition, var_1e59f2dcd3b86d22);
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3dfe
 // Size: 0x86
-function interaction_fail_internal(var_df071553d0996ff9, stringname, var_edfe2fddcb8449a1, var_1e59f2dcd3b86d22) {
+function interaction_fail_internal(interaction_struct, stringname, check_condition, var_1e59f2dcd3b86d22) {
     self endon("disconnect");
-    level notify("interaction", "purchase_denied", level.interactions[var_df071553d0996ff9.script_noteworthy], self);
+    level notify("interaction", "purchase_denied", level.interactions[interaction_struct.script_noteworthy], self);
     self.delay_hint = 1;
     self.interaction_trigger sethintstring(stringname);
     wait 1;
     self.delay_hint = undefined;
-    set_interaction_trigger_properties(self.interaction_trigger, var_df071553d0996ff9);
+    set_interaction_trigger_properties(self.interaction_trigger, interaction_struct);
 }
 
 // Namespace interaction / namespace_a3902e911697e714
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e8c
 // Size: 0x1d9
-function interaction_cooldown(var_df071553d0996ff9, time) {
-    interactions = getstructarray(var_df071553d0996ff9.script_noteworthy, "script_noteworthy");
+function interaction_cooldown(interaction_struct, time) {
+    interactions = getstructarray(interaction_struct.script_noteworthy, "script_noteworthy");
     foreach (struct in interactions) {
-        if (struct.target == var_df071553d0996ff9.target) {
+        if (struct.target == interaction_struct.target) {
             struct.cooling_down = 1;
         }
     }
@@ -1368,7 +1368,7 @@ function interaction_cooldown(var_df071553d0996ff9, time) {
         level waittill_any_timeout_1(time, "override_cooldowns");
     }
     foreach (struct in interactions) {
-        if (struct.target == var_df071553d0996ff9.target) {
+        if (struct.target == interaction_struct.target) {
             struct.cooling_down = undefined;
         }
     }
@@ -1439,8 +1439,8 @@ function disable_wall_buy_interactions() {
         var_17f783daa20df724 = getstructarray(var_d7792c2745050aa0, var_602b797d1505f4be);
         level.var_375b54a9c54da547 = var_17f783daa20df724;
         while (true) {
-            foreach (var_df071553d0996ff9 in var_17f783daa20df724) {
-                thread draw_line_for_time(var_df071553d0996ff9.origin, var_df071553d0996ff9.origin + (0, 0, 256), 1, 0, 0, 1);
+            foreach (interaction_struct in var_17f783daa20df724) {
+                thread draw_line_for_time(interaction_struct.origin, interaction_struct.origin + (0, 0, 256), 1, 0, 0, 1);
             }
             wait 1;
         }
@@ -1452,20 +1452,20 @@ function disable_wall_buy_interactions() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x42e1
 // Size: 0xd5
-function spawninteractionmodel(var_df071553d0996ff9, target_struct) {
+function spawninteractionmodel(interaction_struct, target_struct) {
     level endon("game_ended");
     flag_wait("interactions_initialized");
-    if (isdefined(var_df071553d0996ff9.script_modelname)) {
+    if (isdefined(interaction_struct.script_modelname)) {
         model = spawn("script_model", target_struct.origin);
         if (isdefined(target_struct.angles)) {
             model.angles = target_struct.angles;
         }
-        model setmodel(var_df071553d0996ff9.script_modelname);
-        if (isdefined(var_df071553d0996ff9.targetmodels)) {
-            var_df071553d0996ff9.targetmodels[var_df071553d0996ff9.targetmodels.size] = model;
+        model setmodel(interaction_struct.script_modelname);
+        if (isdefined(interaction_struct.targetmodels)) {
+            interaction_struct.targetmodels[interaction_struct.targetmodels.size] = model;
         }
-        if (isdefined(var_df071553d0996ff9.var_c83a47c596b260bc)) {
-            model [[ var_df071553d0996ff9.var_c83a47c596b260bc ]](var_df071553d0996ff9);
+        if (isdefined(interaction_struct.var_c83a47c596b260bc)) {
+            model [[ interaction_struct.var_c83a47c596b260bc ]](interaction_struct);
         }
     }
 }
@@ -1720,21 +1720,21 @@ function get_spawn_volumes_player_is_in(var_62e2246e21a8b5ea, var_ce0a3f24a858d5
         return [[ level.get_spawn_volume_func ]]();
     }
     spawn_volume_array = [];
-    var_62cb1ab5dfed14c1 = level.spawn_volume_array;
-    foreach (volume in var_62cb1ab5dfed14c1) {
+    volume_array = level.spawn_volume_array;
+    foreach (volume in volume_array) {
         if (!volume.active) {
             continue;
         }
-        var_d836141a923f5093 = 0;
+        player_found = 0;
         if (isdefined(var_ce0a3f24a858d58b) && !player is_valid_player()) {
             continue;
         }
         if (player istouching(volume)) {
-            var_d836141a923f5093 = 1;
+            player_found = 1;
         } else if (istrue(var_62e2246e21a8b5ea) && player is_in_adjacent_volume(volume)) {
-            var_d836141a923f5093 = 1;
+            player_found = 1;
         }
-        if (var_d836141a923f5093) {
+        if (player_found) {
             spawn_volume_array[spawn_volume_array.size] = volume;
         }
     }
@@ -1745,14 +1745,14 @@ function get_spawn_volumes_player_is_in(var_62e2246e21a8b5ea, var_ce0a3f24a858d5
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fce
 // Size: 0x89
-function function_9a2e153e21f32208(var_df071553d0996ff9, player, cost) {
+function function_9a2e153e21f32208(interaction_struct, player, cost) {
     if (!isdefined(cost)) {
-        cost = var_df071553d0996ff9 interaction_get_cost();
+        cost = interaction_struct interaction_get_cost();
     }
-    level notify("interaction", "purchase", level.interactions[var_df071553d0996ff9.script_noteworthy], player);
-    var_e42f7eb456b932f2 = level.interactions[var_df071553d0996ff9.script_noteworthy].spend_type;
+    level notify("interaction", "purchase", level.interactions[interaction_struct.script_noteworthy], player);
+    var_e42f7eb456b932f2 = level.interactions[interaction_struct.script_noteworthy].spend_type;
     player thread take_player_money(cost, var_e42f7eb456b932f2);
-    interaction_post_activate_update(var_df071553d0996ff9);
+    interaction_post_activate_update(interaction_struct);
 }
 
 // Namespace interaction / namespace_a3902e911697e714

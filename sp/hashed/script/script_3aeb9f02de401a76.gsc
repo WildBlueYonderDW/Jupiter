@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_7e4d332e911e1b90;
-#using scripts\anim\utility_common.gsc;
 #using script_13d1c402f1421c35;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\trace.gsc;
+#using script_7e4d332e911e1b90;
+#using scripts\anim\utility_common;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace death;
 

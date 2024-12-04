@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\mp_agent.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_84c887a505a8f661;
 
@@ -45,13 +45,13 @@ function private function_42fe8c75207b05b3() {
         radius = getdvarint(@"hash_d01329968e8441bf");
         radius = int(clamp(radius, 100, 1000));
         setdvar(@"hash_d01329968e8441bf", radius);
-        var_b837203c7887f6d1 = [];
+        alive_ai = [];
         foreach (ai in ai_spawned) {
             if (isalive(ai)) {
-                var_b837203c7887f6d1 = array_add(var_b837203c7887f6d1, ai);
+                alive_ai = array_add(alive_ai, ai);
             }
         }
-        ai_spawned = var_b837203c7887f6d1;
+        ai_spawned = alive_ai;
         if (ai_spawned.size > var_c7cebf8a7deb73e3 && ai_spawned.size > 0) {
             for (ai_index = var_c7cebf8a7deb73e3; ai_index < ai_spawned.size; ai_index++) {
                 if (isalive(ai_spawned[ai_index])) {

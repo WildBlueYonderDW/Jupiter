@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_attraction_racetrack.gsc;
-#using scripts\mp\gametypes\br_attraction_kingofthehill.gsc;
-#using scripts\mp\gametypes\br_attraction_gulag.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using scripts\mp\gametypes\br_attractions.gsc;
-#using scripts\mp\hud_util.gsc;
+#using scripts\cp_mp\parachute;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_attraction_gulag;
+#using scripts\mp\gametypes\br_attraction_kingofthehill;
+#using scripts\mp\gametypes\br_attraction_racetrack;
+#using scripts\mp\gametypes\br_attractions;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\trigger;
 
 #namespace br_attractions;
 
@@ -333,11 +333,11 @@ function playersetattractiontime(timems) {
 // Size: 0x7c
 function playersetomnvarattraction(dataref, value) {
     assert(isplayer(self));
-    var_57accdc40b2f50e = getattractionomnvarbitpackinginfo(dataref, value);
-    value = var_57accdc40b2f50e[3];
-    var_8e90fa6d5789ad63 = var_57accdc40b2f50e[2];
-    bitwidth = var_57accdc40b2f50e[1];
-    bitoffset = var_57accdc40b2f50e[0];
+    __a0 = getattractionomnvarbitpackinginfo(dataref, value);
+    value = __a0[3];
+    var_8e90fa6d5789ad63 = __a0[2];
+    bitwidth = __a0[1];
+    bitoffset = __a0[0];
     if (var_8e90fa6d5789ad63 == "") {
         return;
     }

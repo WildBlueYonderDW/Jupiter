@@ -1,59 +1,59 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using script_6c4e8cea70bf4b6d;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using script_4948cdf739393d2d;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using script_3ff084f114b7f6c9;
-#using scripts\mp\gametypes\activity_manager.gsc;
-#using script_45f403e1732217d3;
-#using scripts\mp\teams.gsc;
-#using script_419eebc6f24e287;
-#using script_662cbac61c1ae7e2;
-#using script_c00335a7aeb2728;
-#using script_358978e883d9f6c2;
-#using script_46b3c7d0a4338d8;
-#using script_3665d737b10b78d9;
-#using script_6b7618d5ead05b66;
-#using script_7fba4131729fe74d;
-#using script_2e2e13d44d465832;
-#using script_58fe895fd0fbe620;
-#using script_241ff3c86d02a28d;
-#using script_495022338d50407e;
-#using script_3e32e216ce730ac2;
-#using script_a62705cb078ec0a;
-#using script_6a9e2d3385424b39;
-#using script_34f71bd59550adcb;
-#using script_1193c0b83fce13b;
-#using script_78fe9876bb090d6b;
-#using script_318621981299585a;
-#using script_ef36a50d9b4627d;
-#using script_4f9a55dee6aebc8f;
 #using script_1174abedbefe9ada;
+#using script_1193c0b83fce13b;
 #using script_15ca41a3fbb0e379;
-#using script_744cad313ed0a87e;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using script_1f97a44d1761c919;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_6a8ec730b2bfa844;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_189b67b2735b981d;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
+#using script_1f97a44d1761c919;
+#using script_241ff3c86d02a28d;
+#using script_2e2e13d44d465832;
+#using script_318621981299585a;
+#using script_34f71bd59550adcb;
+#using script_358978e883d9f6c2;
+#using script_3665d737b10b78d9;
+#using script_3e32e216ce730ac2;
+#using script_3ff084f114b7f6c9;
+#using script_419eebc6f24e287;
+#using script_45f403e1732217d3;
+#using script_46b3c7d0a4338d8;
+#using script_4948cdf739393d2d;
+#using script_495022338d50407e;
+#using script_4f9a55dee6aebc8f;
 #using script_57d3850a12cf1d8f;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
+#using script_58fe895fd0fbe620;
+#using script_662cbac61c1ae7e2;
+#using script_6a8ec730b2bfa844;
+#using script_6a9e2d3385424b39;
+#using script_6b7618d5ead05b66;
+#using script_6c4e8cea70bf4b6d;
+#using script_744cad313ed0a87e;
+#using script_78fe9876bb090d6b;
+#using script_7fba4131729fe74d;
+#using script_a62705cb078ec0a;
+#using script_c00335a7aeb2728;
+#using script_ef36a50d9b4627d;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\poi;
+#using scripts\mp\teams;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace activity_manager;
 
@@ -182,7 +182,7 @@ function onteameliminated(team) {
                                 }
                             }
                         }
-                        activity function_3faa04ef514a5fc4(team, undefined, level.players[0]);
+                        activity activity_assign(team, undefined, level.players[0]);
                     }
                 }
                 if (getdvarint(@"hash_ef7e3cb3eb287471", 0)) {
@@ -215,7 +215,7 @@ function onteameliminated(team) {
             }
             if (getdvarint(@"hash_38667c3d89e33b7b", 0) == 1) {
                 activity = function_ebe9b1e455d46450(level.players[0]);
-                activity function_3faa04ef514a5fc4(level.players[0].team);
+                activity activity_assign(level.players[0].team);
                 setdvar(@"hash_38667c3d89e33b7b", 0);
             }
             if (getdvarint(@"hash_d53193725af8249a")) {
@@ -772,7 +772,7 @@ function private function_234dfccd8495c7d1(teamname) {
                 if (isdefined(player)) {
                     activity = function_ebe9b1e455d46450(player);
                     if (isdefined(activity)) {
-                        activity function_3faa04ef514a5fc4(teamname);
+                        activity activity_assign(teamname);
                     }
                 }
             }
@@ -995,7 +995,7 @@ function function_c509b7faae587820(triggerowner) {
         return true;
     }
     player playlocalsound("mp_dmz_phone_pickup");
-    triggerowner.task.activity function_3faa04ef514a5fc4(player.team, undefined, player, 1);
+    triggerowner.task.activity activity_assign(player.team, undefined, player, 1);
     triggerowner.task.activity function_6e31cc7110b536fd(player.team);
     return true;
 }
@@ -1089,7 +1089,7 @@ function activity_ended(var_5e671fc71e72d5e8) {
                 if (isdefined(player)) {
                     activity = function_ebe9b1e455d46450(player);
                     if (isdefined(activity)) {
-                        activity function_3faa04ef514a5fc4(team);
+                        activity activity_assign(team);
                     }
                 }
             }
@@ -1203,7 +1203,7 @@ function function_513d7f67ab57c97(toremove, toadd) {
     toremove function_b2aef739a3653a70(player, player.team);
     wait 3;
     player playlocalsound("mp_dmz_phone_pickup");
-    toadd function_3faa04ef514a5fc4(player.team, undefined, player, 1);
+    toadd activity_assign(player.team, undefined, player, 1);
     toadd function_6e31cc7110b536fd(player.team);
     player.var_38f4f1b1c66513f1 = 0;
     return true;
@@ -1229,7 +1229,7 @@ function function_22e206cc7ae5dbfd(player, oldteam, newteam) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x4202
 // Size: 0x3bd
-function function_3faa04ef514a5fc4(team, taskindex, var_27e49251bb3376ea, var_21d04ce2f9146315) {
+function activity_assign(team, taskindex, var_27e49251bb3376ea, var_21d04ce2f9146315) {
     if (function_5ea5a722c499078f(team) && !istrue(var_21d04ce2f9146315)) {
         return;
     }
@@ -1854,7 +1854,7 @@ function function_57ac6111c7db410f(struct, player) {
     player playlocalsound("mp_dmz_phone_pickup");
     player function_9be29ad72a155ee1();
     if (isdefined(activity)) {
-        activity function_3faa04ef514a5fc4(player.team, undefined, player);
+        activity activity_assign(player.team, undefined, player);
     }
 }
 
@@ -1868,7 +1868,7 @@ function function_3ab4a84501caacde(container, player) {
     player function_9be29ad72a155ee1("intel_put_usb_in_tablet");
     activity = function_ebe9b1e455d46450(player);
     if (isdefined(activity)) {
-        activity function_3faa04ef514a5fc4(player.team, undefined, player);
+        activity activity_assign(player.team, undefined, player);
     }
 }
 

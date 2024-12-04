@@ -1,8 +1,8 @@
-#using scripts\sp\equipment\offhands.gsc;
+#using scripts\sp\equipment\offhands;
 
-#namespace namespace_556deba897046759;
+#namespace pipebomb;
 
-// Namespace namespace_556deba897046759 / scripts\sp\equipment\pipebomb
+// Namespace pipebomb / scripts\sp\equipment\pipebomb
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8b
 // Size: 0x18
@@ -10,7 +10,7 @@ function precache(offhand) {
     registeroffhandfirefunc(offhand, &pipebombfiremain);
 }
 
-// Namespace namespace_556deba897046759 / scripts\sp\equipment\pipebomb
+// Namespace pipebomb / scripts\sp\equipment\pipebomb
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xab
 // Size: 0x2b

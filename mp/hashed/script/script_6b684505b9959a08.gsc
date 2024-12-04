@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using script_3a13b8032b62a5e6;
 #using script_5f71ed065b9cea1e;
 #using script_6d16894933fe11bb;
 #using script_756e1a95e0937249;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_3a13b8032b62a5e6;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace reward_cache;
 

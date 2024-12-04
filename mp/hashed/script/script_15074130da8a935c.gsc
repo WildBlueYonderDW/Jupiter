@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\mp\gametypes\br_bunker_utility.gsc;
-#using scripts\mp\flags.gsc;
 #using script_67fb1233e876ed8;
-#using scripts\mp\utility\debug.gsc;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\gasmask;
+#using scripts\engine\math;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_bunker_utility;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\game;
 
 #namespace namespace_3f34405c51e49637;
 

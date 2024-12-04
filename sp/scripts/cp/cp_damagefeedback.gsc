@@ -1,8 +1,8 @@
 #using script_354c862768cfe202;
 
-#namespace namespace_f7149a0517ada42d;
+#namespace cp_damagefeedback;
 
-// Namespace namespace_f7149a0517ada42d / scripts\cp\cp_damagefeedback
+// Namespace cp_damagefeedback / scripts\cp\cp_damagefeedback
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x70
 // Size: 0x5e

@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_9880b9dc28bc25e;
 #using script_7ef95bba57dc4b82;
+#using script_9880b9dc28bc25e;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace monkey_bomb;
 

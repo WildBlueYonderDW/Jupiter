@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\poi.gsc;
 #using script_4a6760982b403bad;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\flags;
+#using scripts\mp\poi;
 
 #namespace namespace_90b6dcf8105329b;
 

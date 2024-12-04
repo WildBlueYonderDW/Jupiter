@@ -1,9 +1,9 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\coop_personal_ents.gsc;
 #using script_71332a5b74214116;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\cp\coop_personal_ents;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_2b7ee565af79b934;
 
@@ -137,8 +137,8 @@ function getpentparams(script_noteworthy) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x78d
 // Size: 0xa6
-function createpenthintobj(var_2d385bc9ad36a118, struct, useent) {
-    ent = createhintobject(struct.origin, var_2d385bc9ad36a118.type, var_2d385bc9ad36a118.icon, var_2d385bc9ad36a118.hintstring, var_2d385bc9ad36a118.priority, var_2d385bc9ad36a118.duration, var_2d385bc9ad36a118.onobstruction, var_2d385bc9ad36a118.hintdist, var_2d385bc9ad36a118.hintfov, var_2d385bc9ad36a118.usedist, var_2d385bc9ad36a118.usefov);
+function createpenthintobj(param_array, struct, useent) {
+    ent = createhintobject(struct.origin, param_array.type, param_array.icon, param_array.hintstring, param_array.priority, param_array.duration, param_array.onobstruction, param_array.hintdist, param_array.hintfov, param_array.usedist, param_array.usefov);
     return ent;
 }
 
@@ -146,22 +146,22 @@ function createpenthintobj(var_2d385bc9ad36a118, struct, useent) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x83c
 // Size: 0x154
-function addtopersonalinteractionlist(var_df071553d0996ff9) {
-    var_df071553d0996ff9 notify("addToPersonalInteractionList");
-    if (!array_contains(level.current_personal_interaction_structs, var_df071553d0996ff9)) {
-        level.current_personal_interaction_structs = array_add(level.current_personal_interaction_structs, var_df071553d0996ff9);
+function addtopersonalinteractionlist(interaction_struct) {
+    interaction_struct notify("addToPersonalInteractionList");
+    if (!array_contains(level.current_personal_interaction_structs, interaction_struct)) {
+        level.current_personal_interaction_structs = array_add(level.current_personal_interaction_structs, interaction_struct);
         if (flag_exist("personal_ent_zones_initialized") && flag("personal_ent_zones_initialized")) {
             if (isdefined(level.personal_ent_zones) && level.personal_ent_zones.size > 0) {
                 foreach (zone in level.personal_ent_zones) {
                     if (!isdefined(zone.attached_pents)) {
                         continue;
                     }
-                    if (!isdefined(var_df071553d0996ff9.p_ent_zones)) {
+                    if (!isdefined(interaction_struct.p_ent_zones)) {
                         continue;
                     }
-                    if (ispointinvolume(var_df071553d0996ff9.origin, zone)) {
-                        zone.attached_pents[zone.attached_pents.size] = var_df071553d0996ff9;
-                        var_df071553d0996ff9.p_ent_zones[var_df071553d0996ff9.p_ent_zones.size] = zone;
+                    if (ispointinvolume(interaction_struct.origin, zone)) {
+                        zone.attached_pents[zone.attached_pents.size] = interaction_struct;
+                        interaction_struct.p_ent_zones[interaction_struct.p_ent_zones.size] = zone;
                         zone.attached_pents = array_remove_duplicates(zone.attached_pents);
                     }
                 }
@@ -175,14 +175,14 @@ function addtopersonalinteractionlist(var_df071553d0996ff9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x998
 // Size: 0xfa
-function removefrompersonalinteractionlist(var_df071553d0996ff9) {
-    var_df071553d0996ff9 notify("removeFromPersonalInteractionList");
-    if (array_contains(level.current_personal_interaction_structs, var_df071553d0996ff9)) {
-        level.current_personal_interaction_structs = array_remove(level.current_personal_interaction_structs, var_df071553d0996ff9);
+function removefrompersonalinteractionlist(interaction_struct) {
+    interaction_struct notify("removeFromPersonalInteractionList");
+    if (array_contains(level.current_personal_interaction_structs, interaction_struct)) {
+        level.current_personal_interaction_structs = array_remove(level.current_personal_interaction_structs, interaction_struct);
         if (flag_exist("personal_ent_zones_initialized") && flag("personal_ent_zones_initialized")) {
-            if (isdefined(var_df071553d0996ff9.p_ent_zones)) {
-                foreach (zone in var_df071553d0996ff9.p_ent_zones) {
-                    zone.attached_pents = array_remove(zone.attached_pents, var_df071553d0996ff9);
+            if (isdefined(interaction_struct.p_ent_zones)) {
+                foreach (zone in interaction_struct.p_ent_zones) {
+                    zone.attached_pents = array_remove(zone.attached_pents, interaction_struct);
                     zone.attached_pents = array_remove_duplicates(zone.attached_pents);
                 }
             }
@@ -195,10 +195,10 @@ function removefrompersonalinteractionlist(var_df071553d0996ff9) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa9a
 // Size: 0x21
-function delayed_remove_peent_interaction(var_df071553d0996ff9) {
+function delayed_remove_peent_interaction(interaction_struct) {
     wait 0.25;
-    scripts\cp\coop_personal_ents::removefrompersonalinteractionlist(var_df071553d0996ff9);
-    namespace_a3902e911697e714::remove_from_current_interaction_list(var_df071553d0996ff9);
+    scripts\cp\coop_personal_ents::removefrompersonalinteractionlist(interaction_struct);
+    namespace_a3902e911697e714::remove_from_current_interaction_list(interaction_struct);
 }
 
 // Namespace namespace_2b7ee565af79b934 / scripts\cp\coop_personal_ents
@@ -241,7 +241,7 @@ function movepentstostructs(player) {
                 showlines = 1;
             }
         #/
-        var_afde38a5342a3576 = 0;
+        stateChanged = 0;
         if (isdefined(player.all_available_pents)) {
             structs = player.all_available_pents;
         } else {
@@ -425,12 +425,12 @@ function pentdelaysetmodel(player, ent, struct) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x13ab
 // Size: 0x69
-function update_special_mode_for_player(player, var_a9f319e816edc0a8) {
+function update_special_mode_for_player(player, force_reset) {
     level endon("game_ended");
     player endon("disconnect");
     player notify("update_special_mode_for_player");
     player endon("update_special_mode_for_player");
-    if (istrue(var_a9f319e816edc0a8)) {
+    if (istrue(force_reset)) {
     }
     if (player ent_flag_exist("personal_ents_updating") && player ent_flag("personal_ents_updating")) {
         player ent_flag_waitopen("personal_ents_updating");
@@ -442,10 +442,10 @@ function update_special_mode_for_player(player, var_a9f319e816edc0a8) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x141c
 // Size: 0x65
-function update_special_mode_for_all_players(var_a9f319e816edc0a8) {
+function update_special_mode_for_all_players(force_reset) {
     level endon("game_ended");
     foreach (player in level.players) {
-        thread update_special_mode_for_player(player, var_a9f319e816edc0a8);
+        thread update_special_mode_for_player(player, force_reset);
     }
 }
 
@@ -798,12 +798,12 @@ function watch_for_player_trigger(ent, struct, player, hintobj) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x237a
 // Size: 0x99
-function getpentinteractionusefunc(var_df071553d0996ff9) {
-    if (isdefined(level.pentparams[var_df071553d0996ff9.script_noteworthy].activation_func)) {
-        return level.pentparams[var_df071553d0996ff9.script_noteworthy].activation_func;
+function getpentinteractionusefunc(interaction_struct) {
+    if (isdefined(level.pentparams[interaction_struct.script_noteworthy].activation_func)) {
+        return level.pentparams[interaction_struct.script_noteworthy].activation_func;
     }
-    if (isdefined(level.interactions[var_df071553d0996ff9.script_noteworthy].activation_func)) {
-        return level.interactions[var_df071553d0996ff9.script_noteworthy].activation_func;
+    if (isdefined(level.interactions[interaction_struct.script_noteworthy].activation_func)) {
+        return level.interactions[interaction_struct.script_noteworthy].activation_func;
     }
     return undefined;
 }
@@ -812,9 +812,9 @@ function getpentinteractionusefunc(var_df071553d0996ff9) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x241b
 // Size: 0x29
-function update_pent_hintstring(var_df071553d0996ff9, hintstring) {
-    var_df071553d0996ff9.hintstring = hintstring;
-    var_df071553d0996ff9 notify("pent_update_hint", hintstring);
+function update_pent_hintstring(interaction_struct, hintstring) {
+    interaction_struct.hintstring = hintstring;
+    interaction_struct notify("pent_update_hint", hintstring);
 }
 
 // Namespace namespace_2b7ee565af79b934 / scripts\cp\coop_personal_ents

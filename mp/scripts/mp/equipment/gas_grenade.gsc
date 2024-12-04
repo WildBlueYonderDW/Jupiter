@@ -1,36 +1,36 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\perk.gsc;
 #using script_74b851b7aa1ef32d;
-#using scripts\common\ai.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\perks\perks.gsc;
 #using script_7c40fa80892a721;
+#using scripts\common\ae_utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\equipment;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\perks\perks;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\supers;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace gas_grenade;
 
@@ -166,7 +166,7 @@ function gas_createtrigger(position, owner, team, duration, scale, iscrossbow, c
     if (!isdefined(scale)) {
         scale = 1;
     }
-    if (getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+    if (getdvarint(@"mgl", 0)) {
         thread scripts\common\ai::function_f8903387ea945165(position, 0);
     }
     radius *= scale;

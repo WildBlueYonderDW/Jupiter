@@ -1,7 +1,7 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace dodge;
 

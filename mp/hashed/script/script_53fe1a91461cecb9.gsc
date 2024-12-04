@@ -1,10 +1,10 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_47a7dd805c87b33f;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_ending.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_ending;
 
 #namespace namespace_af9589a759e3ad0c;
 

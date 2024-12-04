@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using script_721ee99d7a8f9168;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_airdrop;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
 
 #namespace namespace_1f456ca67a596eec;
 
@@ -90,7 +90,7 @@ function private function_d2a84209a50b34d2(spawndata, faildata) {
 function private function_4c41d739b1eb8cd0(position, angles, spawndata, faildata) {
     spawndata.origin = position;
     spawndata.angles = angles;
-    vehicle = namespace_801fa17f47560d76::function_66c684fea143fbfd("veh_jup_jltv_mg", spawndata, faildata);
+    vehicle = scripts\cp_mp\vehicles\vehicle_airdrop::vehicle_airdrop("veh_jup_jltv_mg", spawndata, faildata);
     return vehicle;
 }
 
@@ -146,7 +146,7 @@ function private function_f2a24ca61d1563a() {
 // Checksum 0x0, Offset: 0x735
 // Size: 0x5a
 function private function_edcae4b27a6f7abe() {
-    mapname = getdvar(@"hash_687fb8f9b7a23245");
+    mapname = getdvar(@"g_mapname");
     if (utility::iscp()) {
         if (mapname == "cp_lone") {
             return "iw9_mg_jltv_cp";

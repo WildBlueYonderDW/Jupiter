@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\values.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_4e684dc307dd4bdd;
 
@@ -40,9 +40,9 @@ function function_a8c2757799695a5a(ent) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x4a
-function function_79bb217b25d90ffd(ball, base_speed, var_263af4e6f5cae741, max_speed) {
+function function_79bb217b25d90ffd(ball, base_speed, base_acceleration, max_speed) {
     ball.var_8a5887cc6471628 = base_speed;
-    ball.var_a00e75154ba3d095 = var_263af4e6f5cae741;
+    ball.var_a00e75154ba3d095 = base_acceleration;
     ball.var_6f338079af50d4fd = max_speed;
 }
 
@@ -232,11 +232,11 @@ function private function_f1cf0263bc538e(var_4c1e1071f143a794, target_pos) {
     current_angles = vectortoangles(self.momentum_dir);
     if (isdefined(target_pos)) {
         var_1c729d9d0f7eda98 = distance2d(self.origin, target_pos);
-        var_37b788b5f5e40bad = function_c33c9ec6d127eef2(target_pos, var_1c729d9d0f7eda98);
+        target_angles = function_c33c9ec6d127eef2(target_pos, var_1c729d9d0f7eda98);
         lerp_factor = function_da518249c3bd9b59(0, var_1c729d9d0f7eda98);
         var_b629d2bf1a7458cd = function_da518249c3bd9b59(1, var_1c729d9d0f7eda98);
-        var_f061d14f16b87a29 = (math::angle_lerp(current_angles[0], var_37b788b5f5e40bad[0], var_b629d2bf1a7458cd), math::angle_lerp(current_angles[1], var_37b788b5f5e40bad[1], lerp_factor), 0);
-        forward_dir = anglestoforward(var_f061d14f16b87a29);
+        move_angles = (math::angle_lerp(current_angles[0], target_angles[0], var_b629d2bf1a7458cd), math::angle_lerp(current_angles[1], target_angles[1], lerp_factor), 0);
+        forward_dir = anglestoforward(move_angles);
         if (self.state == 2) {
             ball_speed = length(self.ball_velocity);
             if (isdefined(self.air_drag) && ball_speed > 0) {
@@ -260,8 +260,8 @@ function private function_f1cf0263bc538e(var_4c1e1071f143a794, target_pos) {
         }
     }
     if (self.state == 4) {
-        var_f061d14f16b87a29 = current_angles + (current_angles[0] * -1, getdvarfloat(@"hash_c20b6c498e282903", 150) * var_4c1e1071f143a794, 0);
-        forward_dir = anglestoforward(var_f061d14f16b87a29);
+        move_angles = current_angles + (current_angles[0] * -1, getdvarfloat(@"hash_c20b6c498e282903", 150) * var_4c1e1071f143a794, 0);
+        forward_dir = anglestoforward(move_angles);
         current_speed = length(self.ball_velocity);
         var_b060602d728a3773 = max(current_speed - self.var_a00e75154ba3d095, self.var_8a5887cc6471628);
         self.ball_velocity = forward_dir * var_b060602d728a3773;
@@ -318,8 +318,8 @@ function private function_c33c9ec6d127eef2(var_12a34cc28b3fbf8c, var_1c729d9d0f7
             target_pos += (0, 0, var_87f9074b4e8aa0eb);
         }
     }
-    var_37b788b5f5e40bad = vectortoangles(target_pos - self.origin);
-    return var_37b788b5f5e40bad;
+    target_angles = vectortoangles(target_pos - self.origin);
+    return target_angles;
 }
 
 // Namespace namespace_4e684dc307dd4bdd / namespace_e28136bdc244349a

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\weapons.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\common\values.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\equipment\support_box.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\equipment\support_box;
+#using scripts\mp\weapons;
 
 #namespace armor_box_mp;
 

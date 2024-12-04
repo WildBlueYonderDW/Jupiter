@@ -1,6 +1,6 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\cap.gsc;
 #using script_53651341190c5aab;
+#using scripts\asm\asm;
+#using scripts\asm\cap;
 
 #namespace solo_interaction;
 

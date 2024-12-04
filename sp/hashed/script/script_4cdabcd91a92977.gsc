@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_293ba44c408fef1;
 #using script_4cdabcd91a92977;
+#using scripts\common\ae_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace namespace_bd89c4c41be78d43;
 
@@ -643,7 +643,7 @@ function function_13399aa20634edce(aeeventname, var_1e904d14a41d4385) {
 // Checksum 0x0, Offset: 0x1935
 // Size: 0x95
 function function_4f6df967144e2cb4(disconnectreason) {
-    if (disconnectreason == %"hash_3926064b6dc60064") {
+    if (disconnectreason == %"EXE/PLAYERKICKED_TEAMKILLS") {
         return 3;
     } else if (disconnectreason == %"exe/disconnected") {
         return 14;
@@ -655,7 +655,7 @@ function function_4f6df967144e2cb4(disconnectreason) {
         return 2;
     } else if (disconnectreason == %"exe/timedout") {
         return 6;
-    } else if (disconnectreason == %"hash_11f20e9e67c5528b") {
+    } else if (disconnectreason == %"EXE/PLAYERKICKED_INACTIVE") {
         return 7;
     }
     return 0;

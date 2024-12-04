@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
 #using script_109cf9cc19f3d346;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_f2b9ea9ad5a79be8;
 
@@ -21,17 +21,17 @@ function function_e342035d4be91696() {
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xaf
 function function_511a5e11aca48790() {
-    var_f57c69a240493994 = 0;
+    has_node = 0;
     while (true) {
         waitframe();
         if (!isdefined(level.var_1b2599094f1aa7a3.current_node)) {
-            var_f57c69a240493994 = 0;
+            has_node = 0;
             continue;
         }
-        if (!var_f57c69a240493994) {
+        if (!has_node) {
             level notify("dialogue_start");
         }
-        var_f57c69a240493994 = 1;
+        has_node = 1;
         next_node = function_a375ef915e817d5d();
         if (istrue(level.var_1b2599094f1aa7a3.aborted)) {
             level.var_1b2599094f1aa7a3.aborted = undefined;

@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\ai.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\engine\trace.gsc;
-#using script_429c2a03090c1ea1;
 #using script_16ea1b94f0f381b3;
+#using script_429c2a03090c1ea1;
+#using script_7edf952f8921aa6b;
+#using scripts\common\ai;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 

@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\mp\mp_agent.gsc;
 #using script_23ead74859674f83;
-#using scripts\mp\hud_util.gsc;
-#using script_7ab5b649fa408138;
 #using script_3433ee6b63c7e243;
 #using script_4e0a3b3f9bedd99d;
+#using script_7ab5b649fa408138;
+#using scripts\aitypes\bt_util;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm_bb;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
+#using scripts\mp\mp_agent;
 
-#namespace namespace_29f11f3e79072232;
+#namespace rusher_agent;
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ab
 // Size: 0x2
@@ -21,7 +21,7 @@ function function_5171170ac608ca01() {
     
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b5
 // Size: 0x1a0
@@ -56,7 +56,7 @@ function initrusher(taskid) {
     return anim.success;
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x35e
 // Size: 0x14
@@ -64,7 +64,7 @@ function initscriptable() {
     self setscriptablepartstate("notetrack_handler", "active", 0);
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x37a
 // Size: 0x28f
@@ -123,7 +123,7 @@ function setupagent() {
     thread function_3a6c3f63da7103bf();
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x611
 // Size: 0x2d
@@ -134,7 +134,7 @@ function function_3a6c3f63da7103bf() {
     self asmsetstate(self.asmname, "exposed_idle");
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x646
 // Size: 0xbe
@@ -161,7 +161,7 @@ function function_4222d0ecf1d363ba() {
     }
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x70c
 // Size: 0x2b
@@ -172,7 +172,7 @@ function checkscripted(taskid) {
     return anim.running;
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x740
 // Size: 0x11c
@@ -195,7 +195,7 @@ function function_16cf274ffc86e1e2(distenemysq) {
     }
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x864
 // Size: 0x6b
@@ -214,7 +214,7 @@ function function_5213d881f2e26966(defpos, defradius) {
     self.rusherdefending = 1;
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8d7
 // Size: 0xc
@@ -222,7 +222,7 @@ function stopdefending() {
     self.rusherdefending = 0;
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8eb
 // Size: 0x21
@@ -234,7 +234,7 @@ function rusher_ondeath() {
     return false;
 }
 
-// Namespace namespace_29f11f3e79072232 / namespace_c77c96f1aa8fcce1
+// Namespace rusher_agent / namespace_c77c96f1aa8fcce1
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x915
 // Size: 0xe4

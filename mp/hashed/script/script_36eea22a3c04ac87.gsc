@@ -1,18 +1,18 @@
-#using scripts\common\callbacks.gsc;
-#using script_1f97a44d1761c919;
-#using script_58be75c518bf0d40;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
 #using script_100adcc1cc11d2fa;
-#using script_76cc264b397db9cb;
-#using scripts\cp_mp\calloutmarkerping.gsc;
+#using script_1f97a44d1761c919;
 #using script_2583ee5680cf4736;
 #using script_3390b73ac3318fe;
-#using script_7f9409b703dad400;
-#using scripts\common\values.gsc;
+#using script_58be75c518bf0d40;
 #using script_6f65366f542f6627;
-#using scripts\common\devgui.gsc;
+#using script_76cc264b397db9cb;
+#using script_7f9409b703dad400;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\values;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_d392c741e67a9c64;
 
@@ -213,8 +213,8 @@ function function_e79724107132683e(var_bec531bec2de2460, var_4d1875416188467e, s
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd9d
 // Size: 0x1cd
-function function_315a51a2c55aa1f(var_56f4c09428e147f, squaddata) {
-    s_portal = function_d96703e7edd5c880(var_56f4c09428e147f);
+function function_315a51a2c55aa1f(last_obelisk, squaddata) {
+    s_portal = function_d96703e7edd5c880(last_obelisk);
     if (!(isdefined(squaddata) && isdefined(s_portal) && isdefined(squaddata.properties))) {
         return;
     }
@@ -301,8 +301,8 @@ function function_7c68612d9cd9a45(portal, var_f2880b91b6f59a) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1213
 // Size: 0x20d
-function function_de6cae07e4e01728(var_56f4c09428e147f, var_7c5e1244d0e9acfa) {
-    s_portal = function_d96703e7edd5c880(var_56f4c09428e147f);
+function function_de6cae07e4e01728(last_obelisk, var_7c5e1244d0e9acfa) {
+    s_portal = function_d96703e7edd5c880(last_obelisk);
     if (!isdefined(s_portal)) {
         return;
     }
@@ -358,11 +358,11 @@ function function_dca9bb8b801c62cf(a_valid_players, portal) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1520
 // Size: 0x56
-function function_d96703e7edd5c880(var_56f4c09428e147f) {
+function function_d96703e7edd5c880(last_obelisk) {
     if (level.var_a92054ea19f4dde6.size <= 0) {
         return undefined;
     }
-    level.var_a92054ea19f4dde6 = sortbydistance(level.var_a92054ea19f4dde6, var_56f4c09428e147f.origin);
+    level.var_a92054ea19f4dde6 = sortbydistance(level.var_a92054ea19f4dde6, last_obelisk.origin);
     s_portal = level.var_a92054ea19f4dde6[0];
     return s_portal;
 }
@@ -379,14 +379,14 @@ function function_64ffd734230070ac() {
     }
     thread overlord::playevent("unstable_rift_portal_close_timeout", level.players);
     self.timed_out = 1;
-    function_fe40b80b733d3128(self);
+    destroy_portal(self);
 }
 
 // Namespace namespace_d392c741e67a9c64 / namespace_5cbfe3d9044efce3
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x15d8
 // Size: 0xe0
-function private function_fe40b80b733d3128(portal) {
+function private destroy_portal(portal) {
     level endon("game_ended");
     if (!isdefined(portal)) {
         return;
@@ -417,21 +417,21 @@ function portal_used(player) {
     }
     var_9ca4ec4b55d55b88 = player.team;
     var_19cd1c635198bd2b = player.sessionsquadid;
-    var_5d38232b8838ff8b = function_4a9030bc9533c4a6(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 0);
+    var_5d38232b8838ff8b = getSquadMembersByID(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 0);
     foreach (var_3329887886bd6a4b in var_5d38232b8838ff8b) {
         var_3329887886bd6a4b setclientomnvar("ui_ob_unstable_rift_vote", 1);
         self disableplayeruse(var_3329887886bd6a4b);
     }
     self setscriptablepartstate("usable_state", "unusable");
     var_8e3e3673432e9a12 = namespace_6c57c664b4288f88::function_93c8f90c3bd798c6(player, 30, undefined);
-    var_5d38232b8838ff8b = function_4a9030bc9533c4a6(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 0);
+    var_5d38232b8838ff8b = getSquadMembersByID(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 0);
     foreach (var_3329887886bd6a4b in var_5d38232b8838ff8b) {
         var_3329887886bd6a4b setclientomnvar("ui_ob_unstable_rift_vote", 0);
     }
     if (!isdefined(self) || istrue(self.timed_out)) {
         return;
     }
-    var_5d38232b8838ff8b = function_4a9030bc9533c4a6(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 0);
+    var_5d38232b8838ff8b = getSquadMembersByID(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 0);
     foreach (var_3329887886bd6a4b in var_5d38232b8838ff8b) {
         self enableplayeruse(var_3329887886bd6a4b);
     }
@@ -452,12 +452,12 @@ function function_3dece423c8f443c9(portal, var_9ca4ec4b55d55b88, var_19cd1c63519
     portal notify("portal_used");
     portal setscriptablepartstate("usable_state", "unusable");
     wait 10;
-    var_b173aca835fd03c2 = function_4a9030bc9533c4a6(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 1);
-    if (var_b173aca835fd03c2.size > 0) {
-        var_fa976459b24e975f = utility::array_remove_array(level.players, var_b173aca835fd03c2);
+    entering_players = getSquadMembersByID(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 1);
+    if (entering_players.size > 0) {
+        var_fa976459b24e975f = utility::array_remove_array(level.players, entering_players);
         utility::delaythread(3, &overlord::playevent, "unstable_rift_portal_close_squad_entered", var_fa976459b24e975f);
     }
-    function_fe40b80b733d3128(portal);
+    destroy_portal(portal);
 }
 
 // Namespace namespace_d392c741e67a9c64 / namespace_5cbfe3d9044efce3
@@ -465,7 +465,7 @@ function function_3dece423c8f443c9(portal, var_9ca4ec4b55d55b88, var_19cd1c63519
 // Checksum 0x0, Offset: 0x194a
 // Size: 0x187
 function function_a629ae912e5ea368(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b) {
-    a_squad = function_4a9030bc9533c4a6(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 1);
+    a_squad = getSquadMembersByID(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 1);
     n_time_limit = 10;
     timer = namespace_26c5a699d7cb84a2::function_3eec8a169e8a0936(n_time_limit);
     waitframe();
@@ -477,7 +477,7 @@ function function_a629ae912e5ea368(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b) {
         }
         wait 0.5;
     }
-    a_squad = function_4a9030bc9533c4a6(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 1);
+    a_squad = getSquadMembersByID(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b, 1);
     foreach (player in a_squad) {
         player scripts\common\values::set("rift_gate_teleport", "ignoreme", 1);
         player scripts\common\values::set("rift_gate_teleport", "damage", 0);
@@ -503,10 +503,10 @@ function function_a629ae912e5ea368(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b) {
         scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:xfc>", "<dev string:x11a>", &function_9c5c4acc471ac380, 1);
         scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x13e>", "<dev string:x162>", &function_cea3d1d8853780c7, 1);
         scripts\common\devgui::function_a9a864379a098ad6("<dev string:x18c>", "<dev string:x1a5>", &function_a2b8e3e26381cbc5, 1);
-        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x1c3>", "<dev string:x1f0>", &function_9ecaf8b1fd98837e);
-        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x22d>", "<dev string:x259>", &function_9ecaf8b1fd98837e);
-        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x295>", "<dev string:x2c4>", &function_9ecaf8b1fd98837e);
-        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x303>", "<dev string:x32c>", &function_9ecaf8b1fd98837e);
+        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x1c3>", "<dev string:x1f0>", &debug_announcement);
+        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x22d>", "<dev string:x259>", &debug_announcement);
+        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x295>", "<dev string:x2c4>", &debug_announcement);
+        scripts\common\devgui::function_b23a59dfb4ca49a1("<dev string:x303>", "<dev string:x32c>", &debug_announcement);
         scripts\common\devgui::function_fe953f000498048f();
     }
 
@@ -554,7 +554,7 @@ function function_a629ae912e5ea368(var_9ca4ec4b55d55b88, var_19cd1c635198bd2b) {
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x1d3a
     // Size: 0xad
-    function function_9ecaf8b1fd98837e(params) {
+    function debug_announcement(params) {
         switch (params[0]) {
         case #"hash_884a3ea31b587282":
             thread overlord::playevent("<dev string:x38f>", level.players);

@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\engine\math.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace throwstar;
 
@@ -249,20 +249,20 @@ function function_ce1d250379db9655(victim) {
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0xb42
 // Size: 0x8e
-function function_f206558a684b471a(stuckto, stuckpart, var_5bf254e86be4a055, surfacetype, hitvelocity, position, hitnormal) {
+function function_f206558a684b471a(stuckto, stuckpart, grenadeangles, surfacetype, hitvelocity, position, hitnormal) {
     if (function_81814781949469b5(stuckto)) {
-        function_24b586e36bf90639(var_5bf254e86be4a055, position, hitnormal);
+        function_24b586e36bf90639(grenadeangles, position, hitnormal);
         return;
     }
     if (function_9453e7a6466c7e47(stuckto, stuckpart, surfacetype)) {
-        function_d621dbdc62927db7(var_5bf254e86be4a055, hitvelocity, position);
+        function_d621dbdc62927db7(grenadeangles, hitvelocity, position);
         return;
     }
     if (function_100e72ca4ff67c80(position)) {
-        function_54e5d17bda41f63a(position, var_5bf254e86be4a055);
+        function_54e5d17bda41f63a(position, grenadeangles);
         return;
     }
-    function_83388fba79e562c(var_5bf254e86be4a055, hitvelocity, position, hitnormal);
+    function_83388fba79e562c(grenadeangles, hitvelocity, position, hitnormal);
 }
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
@@ -320,33 +320,33 @@ function private function_100e72ca4ff67c80(position) {
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0xd0d
 // Size: 0x38
-function private function_24b586e36bf90639(var_5bf254e86be4a055, position, hitnormal) {
-    playfx(level._effect["thorwstar_impact_flesh"], position, hitnormal, anglestoup(var_5bf254e86be4a055));
+function private function_24b586e36bf90639(grenadeangles, position, hitnormal) {
+    playfx(level._effect["thorwstar_impact_flesh"], position, hitnormal, anglestoup(grenadeangles));
 }
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0xd4d
 // Size: 0x4a
-function private function_d621dbdc62927db7(var_5bf254e86be4a055, hitvelocity, position) {
+function private function_d621dbdc62927db7(grenadeangles, hitvelocity, position) {
     forward = vectornormalize(hitvelocity);
-    playfx(level._effect["thorwstar_impact_stick"], position, forward, anglestoup(var_5bf254e86be4a055));
+    playfx(level._effect["thorwstar_impact_stick"], position, forward, anglestoup(grenadeangles));
 }
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0xd9f
 // Size: 0x35
-function private function_54e5d17bda41f63a(position, var_5bf254e86be4a055) {
-    playfx(level._effect["thorwstar_impact_water"], position, anglestoforward(var_5bf254e86be4a055), anglestoup(var_5bf254e86be4a055));
+function private function_54e5d17bda41f63a(position, grenadeangles) {
+    playfx(level._effect["thorwstar_impact_water"], position, anglestoforward(grenadeangles), anglestoup(grenadeangles));
 }
 
 // Namespace throwstar / namespace_9cff5695f11e1c45
 // Params 4, eflags: 0x4
 // Checksum 0x0, Offset: 0xddc
 // Size: 0x54
-function private function_83388fba79e562c(var_5bf254e86be4a055, hitvelocity, position, hitnormal) {
+function private function_83388fba79e562c(grenadeangles, hitvelocity, position, hitnormal) {
     reflectvec = scripts\engine\math::vector_reflect(hitvelocity, hitnormal);
-    playfx(level._effect["thorwstar_impact_reflect"], position, reflectvec, anglestoup(var_5bf254e86be4a055));
+    playfx(level._effect["thorwstar_impact_reflect"], position, reflectvec, anglestoup(grenadeangles));
 }
 

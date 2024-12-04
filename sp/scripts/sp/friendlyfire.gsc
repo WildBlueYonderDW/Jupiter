@@ -1,9 +1,9 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\sp\player_death.gsc;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\player_death;
+#using scripts\sp\utility;
 
 #namespace friendlyfire;
 
@@ -192,8 +192,8 @@ function friendly_fire_think(entity) {
         if (!isdefined(entity.team)) {
             continue;
         }
-        var_dffcc22a2cae25b1 = entity isally();
-        if (!var_dffcc22a2cae25b1 && !var_24ca2ff5dcf9e62d) {
+        same_team = entity isally();
+        if (!same_team && !var_24ca2ff5dcf9e62d) {
             if (killed) {
                 level.player.participation += level.friendlyfire["enemy_kill_points"];
                 participation_point_cap();
@@ -540,7 +540,7 @@ function missionfail(var_24ca2ff5dcf9e62d) {
     if (getdvar(@"hash_55eae984217fc9b6") == "1") {
         return;
     }
-    if (getdvarint(@"hash_6b240d6250fc118c") > 0) {
+    if (getdvarint(@"exec_review") > 0) {
         return;
     }
     level.player endon("death");
@@ -551,7 +551,7 @@ function missionfail(var_24ca2ff5dcf9e62d) {
     level notify("mission failed");
     level notify("friendlyfire_mission_fail");
     waittillframeend();
-    setsaveddvar(@"hash_3234f1a923121f73", 1);
+    setsaveddvar(@"hud_missionfailed", 1);
     setomnvar("ui_hide_weapon_info", 1);
     setsaveddvar(@"hash_4e8225c28298a6ad", 0);
     setsaveddvar(@"hash_9d7a2fa032e463d5", 1);

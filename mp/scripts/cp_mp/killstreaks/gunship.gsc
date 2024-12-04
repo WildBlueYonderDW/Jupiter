@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\dialog_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\dialog_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\sentientpoolmanager;
 
 #namespace gunship;
 
@@ -171,7 +171,7 @@ function function_b0280ee1765554d1() {
     animindex = "outro_gunship_death";
     level.scr_anim["gunship"][animindex] = script_model%mp_acharlie130_death;
     foreach (animindex, scr_anim in level.scr_anim["gunship"]) {
-        level.var_539e9dc23256f26d["gunship"][animindex] = function_52351c3338da63f4("gunship", animindex);
+        level.scr_animlength["gunship"][animindex] = function_52351c3338da63f4("gunship", animindex);
     }
     bundle = level.streakglobals.streakbundles["gunship"];
     level.var_9c7d2f4c2fc66b1f = [];
@@ -188,7 +188,7 @@ function function_b0280ee1765554d1() {
     level.var_9c7d2f4c2fc66b1f["tablet"] = "offhand2h_tablet_static_v0";
     level.var_9c7d2f4c2fc66b1f["binder"] = "misc_un_office_binder_open";
     level.var_9c7d2f4c2fc66b1f["joystick"] = "misc_gunship_interior_joystick";
-    level.var_faf1aba229e3e2a9 = getdvarint(@"hash_a59a7da9fa17c00", 0);
+    level.gunship_animtype = getdvarint(@"hash_a59a7da9fa17c00", 0);
 }
 
 // Namespace gunship / scripts\cp_mp\killstreaks\gunship
@@ -390,7 +390,7 @@ function gunship_startuse(player, streakinfo) {
     if (issharedfuncdefined("hud", "teamPlayerCardSplash")) {
         thread [[ getsharedfunc("hud", "teamPlayerCardSplash") ]]("used_gunship", player);
     }
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdperson")) {
         if (issharedfuncdefined("player", "setThirdPersonDOF")) {
             player [[ getsharedfunc("player", "setThirdPersonDOF") ]](0);
         }
@@ -507,9 +507,9 @@ function gunship_playintro(player, streakinfo, angle, anglevector, var_2136b6378
     gunshipIntro = undefined;
     bundle = level.streakglobals.streakbundles["gunship"];
     /#
-        level.var_faf1aba229e3e2a9 = getdvarint(@"hash_a59a7da9fa17c00", 0);
+        level.gunship_animtype = getdvarint(@"hash_a59a7da9fa17c00", 0);
     #/
-    if (level.var_faf1aba229e3e2a9 == 1) {
+    if (level.gunship_animtype == 1) {
         var_e4739db3b860ef4 = "intro_gunship";
         var_258b660f7db9aba6 = function_52351c3338da63f4("gunship", var_e4739db3b860ef4);
         gunshipIntro = spawn("script_model", var_2136b63785ee0579.origin);
@@ -841,7 +841,7 @@ function gunship_returnplayer(player, crashing) {
         player val::reset("gunship_weap_swap_safety", "weapon_switch");
         player notify("returning_killstreak_player");
         player.usinggunship = undefined;
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdperson")) {
             if (issharedfuncdefined("player", "setThirdPersonDOF")) {
                 player [[ getsharedfunc("player", "setThirdPersonDOF") ]](1);
             }
@@ -855,7 +855,7 @@ function gunship_returnplayer(player, crashing) {
                 player _switchtoweaponimmediate(level.var_89d6f5464d64ebf4);
             }
             player unlink();
-            if (istrue(crashing) && level.var_faf1aba229e3e2a9 == 0) {
+            if (istrue(crashing) && level.gunship_animtype == 0) {
                 player waittill("finished_gunship_anim_outro");
                 player killstreak_setMainVision("killstreak_static");
                 wait 1;
@@ -1318,7 +1318,7 @@ function gunship_attachgunner(gunner) {
     /#
         thirdpersoncam = getdvarint(@"hash_f49f4fd233809e37", 0);
         if (thirdpersoncam) {
-            if (level.var_faf1aba229e3e2a9 == 1) {
+            if (level.gunship_animtype == 1) {
                 function_3856d3338b2c7ebf(self.gunshipIntro);
             } else {
                 gunner function_5efa20e5c624be8f(self.gunshipIntro);
@@ -1343,7 +1343,7 @@ function gunship_attachgunner(gunner) {
     }
     waitframe();
     gunner cameraunlink();
-    if (level.var_faf1aba229e3e2a9 == 1) {
+    if (level.gunship_animtype == 1) {
         function_3856d3338b2c7ebf(self.gunshipIntro);
     } else {
         gunner function_5efa20e5c624be8f(self.gunshipIntro);
@@ -2126,7 +2126,7 @@ function function_43c36396180ee798(gunner) {
         self endon("death");
         gunner endon("disconnect");
         thread gunship_returnplayer(gunner, 1);
-        if (isdefined(self.gunshipIntro) && level.var_faf1aba229e3e2a9 == 0) {
+        if (isdefined(self.gunshipIntro) && level.gunship_animtype == 0) {
             self.gunshipIntro function_7eb343dd6a3f639(gunner, "light_interior_outro", "on", "ks_gunship_interior_outro", 0.5);
             self playsoundtoplayer("iw9_gunship_plr_outro", gunner);
             gunner playkillstreakoperatordialog("gunship", "gunship" + "_crash", 1, undefined, "pilot");

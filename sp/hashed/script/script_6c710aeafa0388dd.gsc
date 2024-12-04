@@ -1,4 +1,4 @@
-#using scripts\cp_mp\vehicles\vehicle.gsc;
+#using scripts\cp_mp\vehicles\vehicle;
 
 #namespace namespace_5416028698cc19b4;
 

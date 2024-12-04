@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\mp\hostmigration.gsc;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\hostmigration;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\player;
 
 #namespace blindingturret;
 

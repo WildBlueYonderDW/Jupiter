@@ -1,12 +1,12 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_147448f3f080c636;
-#using scripts\anim\notetracks.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\cap.gsc;
-#using scripts\common\anim.gsc;
+#using scripts\anim\notetracks;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\anim;
+#using scripts\common\cap;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace cap;
 
@@ -762,7 +762,7 @@ function cap_init(asmname, fromstate, tostate, params) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2531
 // Size: 0x51
-function function_ebd0a826ac49da1e(asmname, fromstate, tostate, params) {
+function cap_attitude(asmname, fromstate, tostate, params) {
     assert(isdefined(params) && !isarray(params));
     return isdefined(self.attitude) && self.attitude == params;
 }

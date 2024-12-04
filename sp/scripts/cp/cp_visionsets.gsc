@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\common\anim.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_b2f153038354a096;
+#namespace cp_visionsets;
 
-// Namespace namespace_b2f153038354a096 / scripts\cp\cp_visionsets
+// Namespace cp_visionsets / scripts\cp\cp_visionsets
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b1
 // Size: 0x211
@@ -63,7 +63,7 @@ function vision_set_management() {
     }
 }
 
-// Namespace namespace_b2f153038354a096 / scripts\cp\cp_visionsets
+// Namespace cp_visionsets / scripts\cp\cp_visionsets
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ca
 // Size: 0x72
@@ -74,7 +74,7 @@ function create_visionset_stack(player) {
     player visionsetnakedforplayer(player.current_visionset, 0);
 }
 
-// Namespace namespace_b2f153038354a096 / scripts\cp\cp_visionsets
+// Namespace cp_visionsets / scripts\cp\cp_visionsets
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x444
 // Size: 0xc7
@@ -90,7 +90,7 @@ function add_visionset_to_stack(player, visionset, transition_time) {
     player visionsetnakedforplayer(player.current_visionset);
 }
 
-// Namespace namespace_b2f153038354a096 / scripts\cp\cp_visionsets
+// Namespace cp_visionsets / scripts\cp\cp_visionsets
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x513
 // Size: 0xcd
@@ -109,7 +109,7 @@ function remove_visionset_from_stack(player, transition_time) {
     player visionsetnakedforplayer(player.current_visionset);
 }
 
-// Namespace namespace_b2f153038354a096 / scripts\cp\cp_visionsets
+// Namespace cp_visionsets / scripts\cp\cp_visionsets
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e8
 // Size: 0xb4

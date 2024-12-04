@@ -1,57 +1,57 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_22f1701e151b9d12;
-#using script_59a48734035ff34d;
-#using script_3e2f8cc477d57433;
-#using scripts\cp_mp\tripwire.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using script_5753ba9c28794a65;
-#using script_41387eecc35b88bf;
-#using script_7956d56c4922bd1;
 #using script_185660037b9236c1;
-#using script_220d0eb95a8fab7d;
-#using script_2304453c69e996e2;
-#using script_20a226c24f1585bf;
-#using script_5d8202968463a21d;
-#using scripts\mp\utility\player.gsc;
-#using script_60e3273df6b5f7d1;
-#using script_6df6604a74a7a9c7;
-#using script_7cfaa6fd841fb4dd;
-#using script_2d400da2610fe542;
-#using script_5295a2c10229ffef;
+#using script_1a70dab983449bb8;
 #using script_208955cb4d2c8fb3;
+#using script_20a226c24f1585bf;
+#using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
+#using script_2304453c69e996e2;
+#using script_24946c036cb2f7b2;
+#using script_24fbedba9a7a1ef4;
+#using script_2b264b25c7da0b12;
+#using script_2d400da2610fe542;
+#using script_398835140857d740;
+#using script_3a246920c9288c4;
+#using script_3ab210ea917601e7;
+#using script_3e2f8cc477d57433;
+#using script_41387eecc35b88bf;
+#using script_42adcce5878f583;
 #using script_43971bbeefd98f05;
 #using script_46c7c73b1a7e4773;
-#using script_ec2a55b85051e9b;
-#using scripts\engine\scriptable.gsc;
-#using script_638d701d263ee1ed;
-#using script_24946c036cb2f7b2;
-#using scripts\mp\gametypes\ob.gsc;
-#using script_58be75c518bf0d40;
-#using script_3ab210ea917601e7;
-#using script_42adcce5878f583;
-#using scripts\mp\equipment\claymore.gsc;
-#using script_5200937492b52afd;
 #using script_4e6e58ab5d96c2b0;
-#using script_681c3db54537afa6;
-#using script_3a246920c9288c4;
-#using script_24fbedba9a7a1ef4;
-#using script_1a70dab983449bb8;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using script_7c40fa80892a721;
-#using script_2b264b25c7da0b12;
-#using script_7b2517368c79e5bc;
+#using script_5200937492b52afd;
+#using script_5295a2c10229ffef;
+#using script_5753ba9c28794a65;
+#using script_58be75c518bf0d40;
+#using script_59a48734035ff34d;
+#using script_5d8202968463a21d;
+#using script_600b944a95c3a7bf;
+#using script_60e3273df6b5f7d1;
+#using script_638d701d263ee1ed;
 #using script_64316dc775e91122;
+#using script_681c3db54537afa6;
 #using script_6bffae1b97f70547;
-#using script_398835140857d740;
+#using script_6df6604a74a7a9c7;
+#using script_7956d56c4922bd1;
+#using script_7b2517368c79e5bc;
+#using script_7c40fa80892a721;
+#using script_7cfaa6fd841fb4dd;
+#using script_ec2a55b85051e9b;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\tripwire;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\scriptable;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\claymore;
+#using scripts\mp\gametypes\ob;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\player;
 
 #namespace namespace_35b2e84a255ee2f6;
 
@@ -115,8 +115,8 @@ function function_2f2e68800d162bd0() {
     self.var_23b910077b8047db = [];
     self.var_ec082222d3b65a9a = [];
     self.var_b11fbfdeb09954c2 = [];
-    self.var_17dc2c33a3af4034 = [];
-    self.var_d420b9a31cb5c4fc = 1;
+    self.laser_tripwires = [];
+    self.b_airstrike = 1;
     function_71443626b27491ba();
     function_d4a7e3d1bed1606c();
     function_862ec3b2476d1b25();
@@ -289,7 +289,7 @@ function function_117718a13c7de6b0() {
     self.var_60b311ec76290e79 = [];
     self.var_51abd1adba5747ef = [];
     activity_participation::function_3e33031646de23b0(self);
-    if (istrue(self.var_d420b9a31cb5c4fc)) {
+    if (istrue(self.b_airstrike)) {
         kill_zone = namespace_4c2b495b8d79cc2e::function_5bbdc39a533d9d57(self, "Ambient_AI_Exclusion_Zone");
         namespace_64135de19550f047::function_daee52aa53ad6314(kill_zone[0].origin, kill_zone[0].radius);
     }
@@ -791,7 +791,7 @@ function private function_97a95cbf18a165f3(warlord) {
     foreach (claymore in self.var_b293aa98b3af028f) {
         claymore thread scripts\mp\equipment\claymore::claymore_trigger();
     }
-    foreach (lasertrap in self.var_17dc2c33a3af4034) {
+    foreach (lasertrap in self.laser_tripwires) {
         if (isdefined(lasertrap)) {
             namespace_c7c8e97cfcdfb1e1::function_de1ff0b717ef1a19(lasertrap);
         }
@@ -848,7 +848,7 @@ function private function_2cfc1a4b81b1a37e(requestid, activityinstance, agent, d
     iswarlord = 0;
     if (issubstr(agent.agent_type, "warlord")) {
         activityinstance thread function_97a95cbf18a165f3(agent);
-        activityinstance.var_4b7032d8632723e0 = agent;
+        activityinstance.warlord_agent = agent;
         iswarlord = 1;
         if (!isdefined(agent.ob)) {
             agent.ob = spawnstruct();
@@ -943,7 +943,7 @@ function private function_90598913578a8611(requestid, activityinstance, agent) {
 // Size: 0xb8
 function private function_9414e16098691766(requestid, activityinstance, agent) {
     function_9604283fa66d5066(activityinstance, agent, agent.origin);
-    warlord = activityinstance.var_4b7032d8632723e0;
+    warlord = activityinstance.warlord_agent;
     if (issubstr(agent.agent_type, "bodyguard") && isdefined(warlord.ob) && isdefined(warlord) && isdefined(warlord.ob.var_2189bfeed28cbb65) && warlord.isactive) {
         agent namespace_87d75ea764a6d2fd::function_b0f5bec38374c8cc(warlord.ob.var_2189bfeed28cbb65);
     }
@@ -1013,19 +1013,19 @@ function private function_b78baddc17cc2592(requestid, activityinstance, agent, d
         agent thread function_f6c1105658306786();
     }
     if (activityinstance.varianttag == "WARLORD_ALLFORONE") {
-        if (!isdefined(activityinstance.var_4b7032d8632723e0.var_cfe1965e9b3580f6)) {
-            activityinstance.var_4b7032d8632723e0.var_cfe1965e9b3580f6 = gettime();
+        if (!isdefined(activityinstance.warlord_agent.var_cfe1965e9b3580f6)) {
+            activityinstance.warlord_agent.var_cfe1965e9b3580f6 = gettime();
         }
-        if (activityinstance.var_4b7032d8632723e0.var_cfe1965e9b3580f6 + 1000 < gettime()) {
-            activityinstance.var_4b7032d8632723e0 thread namespace_dc53a27a8db8e6bf::function_ad4a51e0b0472ebd();
-            activityinstance.var_4b7032d8632723e0.var_cfe1965e9b3580f6 = gettime();
+        if (activityinstance.warlord_agent.var_cfe1965e9b3580f6 + 1000 < gettime()) {
+            activityinstance.warlord_agent thread namespace_dc53a27a8db8e6bf::function_ad4a51e0b0472ebd();
+            activityinstance.warlord_agent.var_cfe1965e9b3580f6 = gettime();
         }
         agent.aggressivemode = 1;
         agent.ignoresuppression = 1;
         agent.usestrictreacquiresightshoot = 1;
         agent.cautiousnavigation = 0;
         agent.balwayscoverexposed = 0;
-        function_f702262ac6bab5ed(agent, activityinstance.var_4b7032d8632723e0, 1000);
+        function_f702262ac6bab5ed(agent, activityinstance.warlord_agent, 1000);
     }
 }
 
@@ -1091,7 +1091,7 @@ function private function_d4a7e3d1bed1606c() {
                 self.var_ec082222d3b65a9a[self.var_ec082222d3b65a9a.size] = radiantobject;
                 break;
             case #"hash_6ba84a6b3654842a":
-                self.var_17dc2c33a3af4034[self.var_17dc2c33a3af4034.size] = radiantobject;
+                self.laser_tripwires[self.laser_tripwires.size] = radiantobject;
                 break;
             }
         }
@@ -1602,7 +1602,7 @@ function private function_142fcb9939ab6dff() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x4eb7
 // Size: 0x22f
-function private function_ad3c2d380193c0d6(var_f1914941bc87e409) {
+function private function_ad3c2d380193c0d6(initial_target) {
     var_d1c7613187e69022 = namespace_3485b020a23acaae::function_b9c4aa88ad97ee68(self);
     helipathstart = utility::getstruct(var_d1c7613187e69022.var_37031919bed79345, "targetname");
     var_8fcade05dee813af = getscriptbundle("helicoptersettings:" + var_d1c7613187e69022.helicoptersettings);
@@ -1625,10 +1625,10 @@ function private function_ad3c2d380193c0d6(var_f1914941bc87e409) {
     patrol_start = utility::getstruct(helipathstart.target, "targetname");
     var_7578bbf36df02c60 = getscriptbundle("magicturretsettings:hind_turret_settings_warmup_jup_ob");
     heli namespace_c908de38bcdbd93d::function_89891a51d22c497e(var_7578bbf36df02c60);
-    heli function_d6eba8149fb949e9(var_f1914941bc87e409.origin + (0, 0, 1000) + vectornormalize(heli.origin - var_f1914941bc87e409.origin) * 5000, 1, 0, 0, undefined, undefined, 70);
+    heli function_d6eba8149fb949e9(initial_target.origin + (0, 0, 1000) + vectornormalize(heli.origin - initial_target.origin) * 5000, 1, 0, 0, undefined, undefined, 70);
     var_4db1bca04bf972a1 = getscriptbundle("magicturretsettings:hind_turret_settings_jup_ob");
     heli namespace_c908de38bcdbd93d::function_89891a51d22c497e(var_4db1bca04bf972a1);
-    heli thread namespace_c908de38bcdbd93d::behavior_combat(var_f1914941bc87e409, &function_900c6f46dec4a691, 1);
+    heli thread namespace_c908de38bcdbd93d::behavior_combat(initial_target, &function_900c6f46dec4a691, 1);
     return heli;
 }
 
@@ -1853,14 +1853,14 @@ function private function_77cf7452f59f93df() {
     level endon("game_ended");
     self endon("activity_ended");
     self waittill("player_joined");
-    if (self.var_17dc2c33a3af4034.size == 0) {
+    if (self.laser_tripwires.size == 0) {
         var_7adcf39d92d1dae = self.centerstruct namespace_6c6964e55ab1bec8::function_954eb52ab4cdeb46("warlord_laser", "targetname");
         foreach (var_f9eaae33f2ebcf7c in var_7adcf39d92d1dae) {
-            self.var_17dc2c33a3af4034[self.var_17dc2c33a3af4034.size] = var_f9eaae33f2ebcf7c namespace_c7c8e97cfcdfb1e1::create_laser_trap();
+            self.laser_tripwires[self.laser_tripwires.size] = var_f9eaae33f2ebcf7c namespace_c7c8e97cfcdfb1e1::create_laser_trap();
         }
     }
-    if (self.var_17dc2c33a3af4034.size > 0) {
-        namespace_c7c8e97cfcdfb1e1::init(self.var_17dc2c33a3af4034, self);
+    if (self.laser_tripwires.size > 0) {
+        namespace_c7c8e97cfcdfb1e1::init(self.laser_tripwires, self);
     }
 }
 
@@ -1946,7 +1946,7 @@ function function_aed7a5e07b895fa(var_2d9552508615d396, tripwire) {
         if (tripwire.var_70587812595fd991 == "gas_grenade_exgm_chemist_tripwire") {
             var_d1c7613187e69022 = namespace_3485b020a23acaae::function_b9c4aa88ad97ee68(tripwire.activityinstance);
             if (isdefined(var_d1c7613187e69022) && isdefined(level.var_381f13069ba0b5d4)) {
-                [[ level.var_381f13069ba0b5d4 ]](var_2d9552508615d396.origin, tripwire.activityinstance.var_4b7032d8632723e0, "team_hundred_ninety", var_d1c7613187e69022.var_99bab916c06a776f, var_d1c7613187e69022.var_49b3f2d037b27309, 0, "scr_warlord_chemist_grenade_tripwire", var_d1c7613187e69022.var_d8f7e0d3f8827fca, 4);
+                [[ level.var_381f13069ba0b5d4 ]](var_2d9552508615d396.origin, tripwire.activityinstance.warlord_agent, "team_hundred_ninety", var_d1c7613187e69022.var_99bab916c06a776f, var_d1c7613187e69022.var_49b3f2d037b27309, 0, "scr_warlord_chemist_grenade_tripwire", var_d1c7613187e69022.var_d8f7e0d3f8827fca, 4);
             }
             return;
         } else if (tripwire.var_70587812595fd991 == "thermobaric_grenade_jup_mp") {
@@ -1963,7 +1963,7 @@ function function_aed7a5e07b895fa(var_2d9552508615d396, tripwire) {
                         data = spawnstruct();
                         data.meansofdeath = "MOD_FIRE";
                         data.victim = player;
-                        data.attacker = tripwire.activityinstance.var_4b7032d8632723e0;
+                        data.attacker = tripwire.activityinstance.warlord_agent;
                         data.objweapon = fakegrenade;
                         data.inflictor = tripwire;
                         data.point = tripwire.origin;

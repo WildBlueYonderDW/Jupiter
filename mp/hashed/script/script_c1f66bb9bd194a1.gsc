@@ -1,6 +1,6 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace astar;
 
@@ -76,7 +76,7 @@ function astar_get_path(grid, start_pos, end_pos, exclude, dyn_node, grid_size) 
             if (!current_node.children[i].open && !current_node.children[i].closed) {
                 if (!node_cansee_child(current_node.children[i], current_node, exclude, collisioncontents)) {
                     /#
-                        if (getdvar(@"hash_f9d938304e5a0a21") != "<dev string:x1c>") {
+                        if (getdvar(@"astar_debug") != "<dev string:x1c>") {
                             line(current_node.origin, current_node.children[i].origin, (1, 0, 0), 1, 0, 20);
                         }
                     #/
@@ -175,7 +175,7 @@ function node_cansee_child(start_node, end_node, exclude, collisioncontents) {
     }
     passed = scripts\engine\trace::sphere_trace_passed(startpos, endpos, radius, exclude, collisioncontents);
     /#
-        if (getdvar(@"hash_f9d938304e5a0a21") != "<dev string:x1c>") {
+        if (getdvar(@"astar_debug") != "<dev string:x1c>") {
             if (!passed) {
                 debug_data = sphere_trace(startpos, endpos, radius, exclude, collisioncontents, 1);
             }
@@ -208,7 +208,7 @@ function node_is_valid(node, exclude, collisioncontents) {
     }
     passed = scripts\engine\trace::sphere_trace_passed(startpos, endpos, radius, exclude, collisioncontents);
     /#
-        if (getdvar(@"hash_f9d938304e5a0a21") != "<dev string:x1c>") {
+        if (getdvar(@"astar_debug") != "<dev string:x1c>") {
             if (!passed) {
                 clr = (1, 0, 0);
                 debug_data = sphere_trace(startpos, endpos, radius, exclude, collisioncontents, 1);

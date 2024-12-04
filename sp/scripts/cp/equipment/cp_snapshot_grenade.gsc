@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp\utility.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_acaafde73dac695e;
 
@@ -146,7 +146,7 @@ function snapshot_grenade_detect() {
         if (isplayer(player)) {
             continue;
         }
-        if (isdefined(player.var_ec7f24b7685542b0)) {
+        if (isdefined(player.ally_index)) {
             continue;
         }
         if (istrue(player.var_bc1ca118ea17b3e6)) {

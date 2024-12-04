@@ -1,6 +1,6 @@
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_8c8677d2a078818d;
 

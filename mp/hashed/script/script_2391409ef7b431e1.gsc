@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_3ff084f114b7f6c9;
-#using script_2d9d24f7c63ac143;
-#using script_2391409ef7b431e1;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
 #using script_1f97a44d1761c919;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\utility\game.gsc;
+#using script_2391409ef7b431e1;
+#using script_2d9d24f7c63ac143;
+#using script_3ff084f114b7f6c9;
 #using script_b7a9ce0a2282b79;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_b5b2cbfd27ff2a4e;
 
@@ -67,8 +67,8 @@ function private onteamchange(player, oldteam, newteam) {
     }
     playerinfo.team = newteam;
     foreach (teammember in getteamdata(newteam, "players")) {
-        for (i = 0; i < namespace_aead94004cf4c147::function_b13e35608b336d65(teammember); i++) {
-            if (!function_3c17a26ce6a4668(teammember namespace_aead94004cf4c147::function_6196d9ea9a30e609(i))) {
+        for (i = 0; i < namespace_aead94004cf4c147::getPlayerBackpackSize(teammember); i++) {
+            if (!function_3c17a26ce6a4668(teammember namespace_aead94004cf4c147::getLootIDAtBackpackIndex(i))) {
                 continue;
             }
             quantity = teammember namespace_aead94004cf4c147::function_897b29adb37f06a7(i);

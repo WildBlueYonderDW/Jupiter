@@ -1,42 +1,42 @@
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using script_133ea27280b07bc2;
+#using script_146d12c281f80426;
+#using script_1691191ee7a81f1e;
+#using script_25f7a26c5200ba6d;
+#using script_294f6be0d87c3600;
+#using script_2f382e6c1908fbd4;
 #using script_30e688bfc7d547ae;
-#using script_737192aa82af4a27;
-#using script_7473976f0e6c2030;
+#using script_32e45a09983017e;
+#using script_3bdadfff7554ceba;
+#using script_42e17fdd8c77a57;
+#using script_4da53161e7ca9970;
 #using script_5331cbd5b243e8e7;
 #using script_53ca2cad11025a0f;
-#using script_924961495eb0ab1;
-#using script_32e45a09983017e;
-#using script_42e17fdd8c77a57;
-#using script_25f7a26c5200ba6d;
-#using script_70a02791462720d9;
 #using script_55af858a93ca2439;
-#using script_146d12c281f80426;
-#using script_133ea27280b07bc2;
-#using script_4da53161e7ca9970;
-#using script_7163a90de898cc17;
-#using script_2f382e6c1908fbd4;
 #using script_6231da148afb3247;
 #using script_66a3a1958fd958e7;
-#using script_294f6be0d87c3600;
+#using script_70a02791462720d9;
+#using script_7163a90de898cc17;
+#using script_737192aa82af4a27;
+#using script_7473976f0e6c2030;
 #using script_7c29f8a58f851e08;
-#using script_1691191ee7a81f1e;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using script_3bdadfff7554ceba;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\spectating.gsc;
-#using scripts\mp\class.gsc;
+#using script_924961495eb0ab1;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spectating;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
 
 #namespace warrior;
 
@@ -45,7 +45,7 @@
 // Checksum 0x0, Offset: 0x597
 // Size: 0x1d1
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();

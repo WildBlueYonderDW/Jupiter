@@ -1,6 +1,6 @@
-#namespace namespace_59b2b999ea6decc4;
+#namespace civ_london_male_1;
 
-// Namespace namespace_59b2b999ea6decc4 / namespace_57c985639faf4944
+// Namespace civ_london_male_1 / namespace_57c985639faf4944
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa4
 // Size: 0x29

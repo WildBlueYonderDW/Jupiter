@@ -1,5 +1,5 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_e422f53ac4bc98a4;
 

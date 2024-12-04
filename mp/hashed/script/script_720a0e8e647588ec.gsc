@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\weaponrank.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_3f8889c16399185c;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using script_3f8889c16399185c;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weaponrank;
 
 #namespace rankup;
 

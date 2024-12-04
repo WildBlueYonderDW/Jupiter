@@ -1,11 +1,11 @@
-#using scripts\cp\coop_stealth.gsc;
 #using script_18a73a64992dd07d;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\manager.gsc;
+#using scripts\cp\coop_stealth;
+#using scripts\stealth\manager;
+#using scripts\stealth\utility;
 
-#namespace namespace_cd9f90e97bc915fb;
+#namespace enemy_cp;
 
-// Namespace namespace_cd9f90e97bc915fb / namespace_f07a91c6c17492be
+// Namespace enemy_cp / namespace_f07a91c6c17492be
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdd
 // Size: 0x117
@@ -38,7 +38,7 @@ function init(aitype) {
     function_48ea06dbce62f5b3();
 }
 
-// Namespace namespace_cd9f90e97bc915fb / namespace_f07a91c6c17492be
+// Namespace enemy_cp / namespace_f07a91c6c17492be
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc
 // Size: 0x5a
@@ -55,7 +55,7 @@ function function_5eeb4be2b32a5c41() {
     }
 }
 
-// Namespace namespace_cd9f90e97bc915fb / namespace_f07a91c6c17492be
+// Namespace enemy_cp / namespace_f07a91c6c17492be
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x25e
 // Size: 0xf
@@ -66,7 +66,7 @@ function function_ccdad4e4232d8253() {
     return false;
 }
 
-// Namespace namespace_cd9f90e97bc915fb / namespace_f07a91c6c17492be
+// Namespace enemy_cp / namespace_f07a91c6c17492be
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x276
 // Size: 0x10e
@@ -104,7 +104,7 @@ function function_f2c466350f598ead() {
     return true;
 }
 
-// Namespace namespace_cd9f90e97bc915fb / namespace_f07a91c6c17492be
+// Namespace enemy_cp / namespace_f07a91c6c17492be
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x38d
 // Size: 0x57

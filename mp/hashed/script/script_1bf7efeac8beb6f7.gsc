@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\gametypes\br_jugg_common.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_jugg_common;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\player;
 
 #namespace namespace_e802a675d14dd923;
 
@@ -155,7 +155,7 @@ function private function_835a25422ae7c69f() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb12
 // Size: 0x6c
-function function_1877f08d2099d93b() {
+function radiation_start() {
     level endon("game_ended");
     if (!radiation_isInit()) {
         return;
@@ -652,7 +652,7 @@ function radiation_isInit() {
         while (getdvarint(@"hash_ebece5882c98c426", 0) == 0) {
             waitframe();
         }
-        level thread function_1877f08d2099d93b();
+        level thread radiation_start();
     }
 
     // Namespace namespace_e802a675d14dd923 / namespace_d99736a82ac4e63b

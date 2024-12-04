@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using script_48814951e916af89;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\poi.gsc;
-#using script_4948cdf739393d2d;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using script_24fbedba9a7a1ef4;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\scriptable_door_utility.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
 #using script_1f97a44d1761c919;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
+#using script_24fbedba9a7a1ef4;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_4948cdf739393d2d;
+#using scripts\asm\asm_bb;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\scriptable_door_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\mp_agent;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\poi;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_6deceacb2ad6159c;
 
@@ -295,13 +295,13 @@ function civ_sayDialogue() {
     if (isdefined(self.var_6542bcc8942334da) && gettime() < self.var_6542bcc8942334da) {
         return;
     }
-    var_8e399d0d86db13ed = 0;
+    normal_alias = 0;
     if (percent_chance(75) && self pathdisttogoal() > 512) {
         alias = level.var_e80e768c655a9bed deck_draw();
         thread function_50ac20187f26a0dc();
     } else {
         alias = level.var_fa6ef45d45ed4496 deck_draw();
-        var_8e399d0d86db13ed = 1;
+        normal_alias = 1;
     }
     self playsound(alias, undefined, self);
     sound_length = lookupsoundlength(alias, 1);
@@ -312,7 +312,7 @@ function civ_sayDialogue() {
             civ.var_6542bcc8942334da = self.var_6542bcc8942334da;
         }
     }
-    if (!var_8e399d0d86db13ed) {
+    if (!normal_alias) {
         return;
     }
     wait sound_length / 1000;

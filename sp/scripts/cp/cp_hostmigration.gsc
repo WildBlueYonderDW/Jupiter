@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
-#namespace namespace_aa209bbb04c90837;
+#namespace cp_hostmigration;
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x246
 // Size: 0x57
@@ -21,7 +21,7 @@ function hostmigrationwait() {
     level.ingraceperiod = 0;
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a5
 // Size: 0xc
@@ -30,7 +30,7 @@ function hostmigrationwaitforplayers() {
     wait 15;
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b9
 // Size: 0xd2
@@ -58,7 +58,7 @@ function hostmigrationname(ent) {
     return "unknown entity <" + entnum + ">";
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x394
 // Size: 0x86
@@ -75,7 +75,7 @@ function hostmigrationtimerthink_internal() {
     level waittill("host_migration_end");
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x422
 // Size: 0xa2
@@ -93,7 +93,7 @@ function hostmigrationtimerthink() {
     }
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4cc
 // Size: 0x30
@@ -106,7 +106,7 @@ function waittillhostmigrationdone() {
     return gettime() - starttime;
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x505
 // Size: 0x22
@@ -118,7 +118,7 @@ function waittillhostmigrationstarts(duration) {
     wait duration;
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x52f
 // Size: 0x94
@@ -138,7 +138,7 @@ function waitlongdurationwithhostmigrationpause(duration) {
     return gettime() - starttime;
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5cc
 // Size: 0x9f
@@ -159,7 +159,7 @@ function waittill_notify_or_timeout_hostmigration_pause(msg, duration) {
     return gettime() - starttime;
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x674
 // Size: 0xb6
@@ -186,7 +186,7 @@ function waitlongdurationwithgameendtimeupdate(duration) {
     return gettime() - starttime;
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x733
 // Size: 0x80
@@ -205,7 +205,7 @@ function matchstarttimer(type, duration) {
     visionsetnaked("", 1);
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x109
@@ -230,7 +230,7 @@ function matchstarttimer_internal(counttime) {
     }
 }
 
-// Namespace namespace_aa209bbb04c90837 / scripts\cp\cp_hostmigration
+// Namespace cp_hostmigration / scripts\cp\cp_hostmigration
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8cc
 // Size: 0x2d

@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_728ffcee8cbf30ee;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using script_58f20490049af6ac;
 #using script_46cf752d93dc17b;
-#using scripts\common\callbacks.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_vip_quest.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using script_58f20490049af6ac;
+#using script_728ffcee8cbf30ee;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_vip_quest;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_e84530fe9afbbd74;
 
@@ -480,7 +480,7 @@ function function_3241afdfec957cb9(player) {
     case #"hash_5057f4744606f16e":
         playerarray = scripts\mp\utility\teams::getteamdata(player.team, "players");
         if (isdefined(level.var_f385b864293e8777) && isdefined(level.var_f385b864293e8777.var_17e70eb167a5dfa6)) {
-            [[ level.var_f385b864293e8777.var_17e70eb167a5dfa6 ]](self.item_rewards, self.origin, self.angles, playerarray, 0, self.score_event, self.var_36685cc32931d3a, self.ammo_count, player);
+            [[ level.var_f385b864293e8777.var_17e70eb167a5dfa6 ]](self.item_rewards, self.origin, self.angles, playerarray, 0, self.score_event, self.include_ammo, self.ammo_count, player);
         }
         break;
     case #"hash_2b25ed45dea9b003":

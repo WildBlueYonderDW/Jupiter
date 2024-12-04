@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_7e4700be8ab64610;
 

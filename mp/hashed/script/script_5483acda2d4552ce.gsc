@@ -7,6 +7,6 @@
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
 function main() {
-    thread namespace_87aa8ad55dad1e84::function_626fb204e5a41e30("bravo");
+    thread namespace_87aa8ad55dad1e84::estate_init("bravo");
 }
 

@@ -1,16 +1,16 @@
-#using scripts\common\devgui.gsc;
-#using scripts\engine\utility.gsc;
-#using script_67fb1233e876ed8;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_600b944a95c3a7bf;
 #using script_2d9d24f7c63ac143;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
+#using script_600b944a95c3a7bf;
+#using script_67fb1233e876ed8;
+#using scripts\common\devgui;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\objidpoolmanager;
 
 #namespace drone_repair;
 

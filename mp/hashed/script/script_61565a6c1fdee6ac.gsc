@@ -1,4 +1,4 @@
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace namespace_27e634277336b001;
 

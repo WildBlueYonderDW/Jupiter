@@ -1,29 +1,29 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using script_2583ee5680cf4736;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using script_6981400abfcd765c;
-#using script_32d93a194074fa6a;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_publicevents.gsc;
 #using script_294dda4a4b00ffe3;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using script_32d93a194074fa6a;
+#using script_58f20490049af6ac;
+#using script_6981400abfcd765c;
+#using scripts\common\callbacks;
+#using scripts\common\debug;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_publicevents;
+#using scripts\mp\hud_message;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_752486b4ea44c4b0;
 
@@ -45,7 +45,7 @@ function init(event_info) {
     }
     event_info.validatefunc = &event_validate;
     event_info.waitfunc = &event_wait;
-    event_info.activatefunc = &function_dce158cd5558c35d;
+    event_info.activatefunc = &event_activate;
     event_info.postinitfunc = &function_de40a46baab733f5;
     event_info.deactivatefunc = &event_deactivate;
     if (!isdefined(level.var_7576c890644a91ad)) {
@@ -127,7 +127,7 @@ function event_wait() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xeff
 // Size: 0x171
-function function_dce158cd5558c35d() {
+function event_activate() {
     event = utility::array_random(level.var_7576c890644a91ad.eventtypes);
     if (isdefined(level.var_7576c890644a91ad.overrideeventtype) && level.var_7576c890644a91ad.overrideeventtype > 0) {
         event = level.var_7576c890644a91ad.overrideeventtype;
@@ -451,8 +451,8 @@ function function_930417b755e89419() {
     level endon("game_ended");
     self endon("entitydeleted");
     self endon("opened");
-    var_83cddf1270ea4efe = namespace_553788426d0f4133::gettimetilldangerforpoint(self.origin) + 15;
-    wait var_83cddf1270ea4efe;
+    danger_time = namespace_553788426d0f4133::gettimetilldangerforpoint(self.origin) + 15;
+    wait danger_time;
     self setscriptablepartstate("body", "fully_open_unusable");
     function_4917d9a7cbf80754();
     function_75033550b2c672be("gas");

@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\killstreaks\white_phosphorus.gsc;
 #using script_600b944a95c3a7bf;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\white_phosphorus;
+#using scripts\engine\utility;
 
 #namespace gasmask;
 
@@ -44,7 +44,7 @@ function init(gasmaskhealth, gasmasktype, gasmaskmaxhealth) {
     self.gasmaskhealth = maxhealth;
     self.gasmaskmaxhealth = maxhealth;
     self.gasmasktype = ter_op(isdefined(gasmasktype), gasmasktype, "brloot_equip_gasmask");
-    self.var_59e3d23f735df898 = "gas_mask";
+    self.headGearType = "gas_mask";
     if (istrue(self.var_5239162658be30d6)) {
         thread function_f3bb4f4911a1beb2("scubaGasMask", "monitorScubaGasMaskDamage");
     }

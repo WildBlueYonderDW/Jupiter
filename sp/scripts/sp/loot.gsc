@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\sp\script_items.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\analytics.gsc;
 #using script_72ef6b9f0cf1f55a;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\analytics;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\player;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\script_items;
+#using scripts\sp\utility;
 
 #namespace loot;
 
@@ -73,23 +73,23 @@ function function_af421e4ae48662c7(var_47ccbb601b4468ce) {
     level.loot.var_abb7ac9930101675 = [];
     level.loot.var_73dd4fee363c8438 = undefined;
     level.loot.var_2aa4852ad9e76ff5 = undefined;
-    var_7200945a720fadb5 = getscriptbundle("campaignlootlist:" + var_47ccbb601b4468ce);
-    if (isdefined(var_7200945a720fadb5)) {
-        level.player.armor.var_a81adeb0e1f89320 = default_to(var_7200945a720fadb5.var_a81adeb0e1f89320, 3);
-        level.loot.var_73dd4fee363c8438 = var_7200945a720fadb5.var_73dd4fee363c8438;
-        level.loot.var_4152cb04c4c34a6 = var_7200945a720fadb5.var_2685faaf733ff3b1;
-        if (isdefined(var_7200945a720fadb5.exceptions)) {
-            foreach (exception in var_7200945a720fadb5.exceptions) {
+    bundlelist = getscriptbundle("campaignlootlist:" + var_47ccbb601b4468ce);
+    if (isdefined(bundlelist)) {
+        level.player.armor.var_a81adeb0e1f89320 = default_to(bundlelist.var_a81adeb0e1f89320, 3);
+        level.loot.var_73dd4fee363c8438 = bundlelist.var_73dd4fee363c8438;
+        level.loot.var_4152cb04c4c34a6 = bundlelist.var_2685faaf733ff3b1;
+        if (isdefined(bundlelist.exceptions)) {
+            foreach (exception in bundlelist.exceptions) {
                 if (isdefined(exception.classname)) {
                     level.loot.var_abb7ac9930101675[exception.classname] = 1;
                 }
             }
         }
-        if (isdefined(var_7200945a720fadb5.lootlist)) {
-            level.loot.var_579c99028a65a287 = default_to(var_7200945a720fadb5.var_579c99028a65a287, 25);
-            level.loot.var_2180aa8aec9aae66 = default_to(var_7200945a720fadb5.var_2180aa8aec9aae66, 25);
-            level.loot.var_307d8c71918f2204 = default_to(var_7200945a720fadb5.var_307d8c71918f2204, 0);
-            foreach (var_1e9517e712c2c45c in var_7200945a720fadb5.lootlist) {
+        if (isdefined(bundlelist.lootlist)) {
+            level.loot.maxloot = default_to(bundlelist.maxloot, 25);
+            level.loot.var_2180aa8aec9aae66 = default_to(bundlelist.var_2180aa8aec9aae66, 25);
+            level.loot.var_307d8c71918f2204 = default_to(bundlelist.var_307d8c71918f2204, 0);
+            foreach (var_1e9517e712c2c45c in bundlelist.lootlist) {
                 loot = getscriptbundle("campaignloot:" + var_1e9517e712c2c45c.loot);
                 if (!isdefined(loot)) {
                     continue;
@@ -120,8 +120,8 @@ function function_af421e4ae48662c7(var_47ccbb601b4468ce) {
                 }
             }
         }
-        if (isdefined(var_7200945a720fadb5.var_933c1afba457906a)) {
-            var_3d94a6a56ca629d4 = getscriptbundle("equipmentradialmenuitemlist:" + var_7200945a720fadb5.var_933c1afba457906a);
+        if (isdefined(bundlelist.var_933c1afba457906a)) {
+            var_3d94a6a56ca629d4 = getscriptbundle("equipmentradialmenuitemlist:" + bundlelist.var_933c1afba457906a);
             if (isdefined(var_3d94a6a56ca629d4)) {
                 level.loot.var_2aa4852ad9e76ff5 = [];
                 foreach (item in var_3d94a6a56ca629d4.var_95e760736e295b10) {
@@ -223,7 +223,7 @@ function onspawnloot() {
 // Checksum 0x0, Offset: 0xe04
 // Size: 0x552
 function registerloot(loot, lootfunc, inactivefunc, probabilityfunc, onspawnfunc, isarmor) {
-    name = loot.var_22effb2b21af4462;
+    name = loot.name_id;
     if (!isstring(name) || name == "") {
         name = "loot" + level.loot.types.size + 1;
     }
@@ -443,7 +443,7 @@ function private function_863b0816a82a8a75(weaponent) {
 // Checksum 0x0, Offset: 0x19b2
 // Size: 0x4c
 function private function_fc99f2e66b255d12(itement) {
-    level.loot.droppeditems = function_197355327a7bd01a(level.loot.droppeditems, itement, level.loot.var_579c99028a65a287);
+    level.loot.droppeditems = function_197355327a7bd01a(level.loot.droppeditems, itement, level.loot.maxloot);
 }
 
 // Namespace loot / scripts\sp\loot
@@ -970,7 +970,7 @@ function function_46d8e80e44e75a63(name) {
 // Size: 0xdd
 function function_1693de8f478a2d4a(loot, lootfunc, inactivefunc, probabilityfunc, onspawnfunc, isarmor) {
     registerloot(loot, lootfunc, inactivefunc, probabilityfunc, onspawnfunc, isarmor);
-    resourcetype = level.loot.types[loot.var_22effb2b21af4462].ammoname;
+    resourcetype = level.loot.types[loot.name_id].ammoname;
     level.loot.var_d0d7b34e9765980a[resourcetype] = level.player getplayerprogression("resource", resourcetype);
     /#
         if (getdvarint(@"hash_7dfe19d75d304409", 0)) {
@@ -1549,8 +1549,8 @@ function has_weapon(weapon) {
     primaryoffhand = self getoffhandprimaryclass();
     secondaryoffhand = self getoffhandsecondaryclass();
     if (isstring(weapon)) {
-        var_2622298f62890966 = self getweaponslistall();
-        foreach (item in var_2622298f62890966) {
+        all_weapons = self getweaponslistall();
+        foreach (item in all_weapons) {
             if (isnullweapon(item)) {
                 continue;
             }

@@ -1,16 +1,16 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using script_72ef6b9f0cf1f55a;
-#using scripts\engine\math.gsc;
-#using script_3ef1b643f06851a8;
-#using scripts\sp\player.gsc;
-#using scripts\sp\equipment\offhands.gsc;
 #using script_2dcc22f11f14cb9;
-#using scripts\sp\hud_util.gsc;
+#using script_3ef1b643f06851a8;
+#using script_72ef6b9f0cf1f55a;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\hud_util;
+#using scripts\sp\player;
+#using scripts\sp\utility;
 
 #namespace namespace_86ac7d9988dd9ad8;
 
@@ -65,12 +65,12 @@ function function_8dc553bce7bf1b35() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x98b
 // Size: 0x247
-function function_ad8155e88c085aeb(var_c4ac1d963dccaf1c, var_c1978323e243becf, var_6305eb726235a0) {
+function function_ad8155e88c085aeb(var_c4ac1d963dccaf1c, var_c1978323e243becf, b_disable_zoom) {
     if (!isdefined(var_c1978323e243becf)) {
         var_c1978323e243becf = 1;
     }
-    if (!isdefined(var_6305eb726235a0)) {
-        var_6305eb726235a0 = 0;
+    if (!isdefined(b_disable_zoom)) {
+        b_disable_zoom = 0;
     }
     if (flag("cctv_end")) {
         flag_clear("cctv_end");
@@ -78,11 +78,11 @@ function function_ad8155e88c085aeb(var_c4ac1d963dccaf1c, var_c1978323e243becf, v
     if (flag("CCTV_zoom_disabled")) {
         flag_clear("CCTV_zoom_disabled");
     }
-    if (var_6305eb726235a0) {
+    if (b_disable_zoom) {
         flag_set("CCTV_zoom_disabled");
     }
-    if (!isdefined(level.var_e707707c76ba2063)) {
-        level.var_e707707c76ba2063 = 0;
+    if (!isdefined(level.start_cam)) {
+        level.start_cam = 0;
     }
     level.player.var_d5234a010d66e1a5 = level.player.origin;
     level.player.var_6de5fc8b2865186a = level.player.angles;
@@ -98,9 +98,9 @@ function function_ad8155e88c085aeb(var_c4ac1d963dccaf1c, var_c1978323e243becf, v
     level.player scripts\sp\player::disable_player_weapon_info();
     level.player setcinematicmotionoverride("disabled");
     if (isdefined(var_c4ac1d963dccaf1c)) {
-        if (level.cams[var_c4ac1d963dccaf1c] == level.var_438345dcdca4f81a) {
-            level.var_438345dcdca4f81a function_3bca028b81b9315(1);
-            level.var_438345dcdca4f81a thread function_df92850503fdbc8b();
+        if (level.cams[var_c4ac1d963dccaf1c] == level.current_cam) {
+            level.current_cam function_3bca028b81b9315(1);
+            level.current_cam thread function_df92850503fdbc8b();
             thread function_64196226b4e5c384();
         } else {
             level.cams[var_c4ac1d963dccaf1c] thread function_11671c2e250e9320();
@@ -213,14 +213,14 @@ function private function_3fc0e08182d8d965() {
         function_cb758d1bffa656a0();
         level.var_91eb6136661c6756 = [];
     }
-    if (!isdefined(level.var_438345dcdca4f81a)) {
-        level.var_438345dcdca4f81a = level.cams[0];
+    if (!isdefined(level.current_cam)) {
+        level.current_cam = level.cams[0];
     }
-    level.previous_cam = level.var_438345dcdca4f81a;
+    level.previous_cam = level.current_cam;
     level.previous_cam hide();
     setomnvar("ui_cctv_active", 1);
-    setomnvar("ui_cctv_camera_index", level.var_438345dcdca4f81a.var_efc49f91012daafc);
-    setomnvar("ui_cctv_zone_index", level.var_438345dcdca4f81a.var_bc43ef6976a95606);
+    setomnvar("ui_cctv_camera_index", level.current_cam.var_efc49f91012daafc);
+    setomnvar("ui_cctv_zone_index", level.current_cam.ui_cam_zone);
     motion_blur_disable();
     thread function_f4795bebba0ca2f2();
     /#
@@ -256,32 +256,32 @@ function private function_cb758d1bffa656a0() {
     foreach (cam in level.cams) {
         cam function_88752e4eabb4c658();
     }
-    if (isdefined(level.var_e707707c76ba2063) && level.var_e707707c76ba2063 == 0) {
-        level.var_438345dcdca4f81a = level.cams["s_street_cctv_1"];
+    if (isdefined(level.start_cam) && level.start_cam == 0) {
+        level.current_cam = level.cams["s_street_cctv_1"];
         return;
     }
-    if (isdefined(level.var_e707707c76ba2063) && level.var_e707707c76ba2063 == 1) {
-        level.var_438345dcdca4f81a = level.cams["s_street_cctv_2"];
+    if (isdefined(level.start_cam) && level.start_cam == 1) {
+        level.current_cam = level.cams["s_street_cctv_2"];
         return;
     }
-    if (isdefined(level.var_e707707c76ba2063) && level.var_e707707c76ba2063 == 2) {
-        level.var_438345dcdca4f81a = level.cams["s_street_cctv_3"];
+    if (isdefined(level.start_cam) && level.start_cam == 2) {
+        level.current_cam = level.cams["s_street_cctv_3"];
         return;
     }
-    if (isdefined(level.var_e707707c76ba2063) && level.var_e707707c76ba2063 == 3) {
-        level.var_438345dcdca4f81a = level.cams["s_street_cctv_4"];
+    if (isdefined(level.start_cam) && level.start_cam == 3) {
+        level.current_cam = level.cams["s_street_cctv_4"];
         return;
     }
-    if (isdefined(level.var_e707707c76ba2063) && level.var_e707707c76ba2063 == 4) {
-        level.var_438345dcdca4f81a = level.cams["s_street_cctv_5"];
+    if (isdefined(level.start_cam) && level.start_cam == 4) {
+        level.current_cam = level.cams["s_street_cctv_5"];
         return;
     }
-    if (isdefined(level.var_e707707c76ba2063) && level.var_e707707c76ba2063 == 5) {
-        level.var_438345dcdca4f81a = level.cams["s_street_cctv_6"];
+    if (isdefined(level.start_cam) && level.start_cam == 5) {
+        level.current_cam = level.cams["s_street_cctv_6"];
         return;
     }
-    if (isdefined(level.var_e707707c76ba2063) && level.var_e707707c76ba2063 == 6) {
-        level.var_438345dcdca4f81a = level.cams["s_street_cctv_7"];
+    if (isdefined(level.start_cam) && level.start_cam == 6) {
+        level.current_cam = level.cams["s_street_cctv_7"];
     }
 }
 
@@ -299,15 +299,15 @@ function private function_8866b8eb15dd9f70(cam_name, starting_zoom, view_arcs, p
     if (!isdefined(player_anchor_angle)) {
         player_anchor_angle = undefined;
     }
-    var_5ec17b810898b335 = [];
-    var_5ec17b810898b335["cam_name"] = cam_name;
-    var_5ec17b810898b335["starting_zoom"] = starting_zoom;
-    var_5ec17b810898b335["view_arcs"] = view_arcs;
-    var_5ec17b810898b335["player_anchor_origin"] = player_anchor_origin;
-    var_5ec17b810898b335["player_anchor_angle"] = player_anchor_angle;
-    level.cams[var_5ec17b810898b335["cam_name"]] = function_63c8b8d28f1cf55a(var_5ec17b810898b335);
+    new_cam = [];
+    new_cam["cam_name"] = cam_name;
+    new_cam["starting_zoom"] = starting_zoom;
+    new_cam["view_arcs"] = view_arcs;
+    new_cam["player_anchor_origin"] = player_anchor_origin;
+    new_cam["player_anchor_angle"] = player_anchor_angle;
+    level.cams[new_cam["cam_name"]] = function_63c8b8d28f1cf55a(new_cam);
     if (flag("cctv_init_done")) {
-        level.cams[var_5ec17b810898b335["cam_name"]] function_88752e4eabb4c658();
+        level.cams[new_cam["cam_name"]] function_88752e4eabb4c658();
     }
 }
 
@@ -322,19 +322,19 @@ function private function_63c8b8d28f1cf55a(var_20ffe62a3b87f07f) {
         return undefined;
     }
     cam.cam_name = var_20ffe62a3b87f07f["cam_name"];
-    cam.var_915db328fe8681b8 = spawnstruct();
+    cam.player_anchor = spawnstruct();
     cam hide();
     if (isdefined(var_20ffe62a3b87f07f["player_anchor_origin"])) {
-        cam.var_915db328fe8681b8.origin = var_20ffe62a3b87f07f["player_anchor_origin"];
+        cam.player_anchor.origin = var_20ffe62a3b87f07f["player_anchor_origin"];
     } else {
-        cam.var_915db328fe8681b8.origin = cam.origin;
+        cam.player_anchor.origin = cam.origin;
     }
     if (isdefined(var_20ffe62a3b87f07f["player_anchor_angle"])) {
-        cam.var_915db328fe8681b8.angles = var_20ffe62a3b87f07f["player_anchor_angle"];
+        cam.player_anchor.angles = var_20ffe62a3b87f07f["player_anchor_angle"];
     } else {
-        cam.var_915db328fe8681b8.angles = cam.angles;
+        cam.player_anchor.angles = cam.angles;
     }
-    cam.var_915db328fe8681b8 = spawn_tag_origin(cam.var_915db328fe8681b8.origin, cam.var_915db328fe8681b8.angles);
+    cam.player_anchor = spawn_tag_origin(cam.player_anchor.origin, cam.player_anchor.angles);
     cam.view_arcs = var_20ffe62a3b87f07f["view_arcs"];
     cam function_523231b88c6410e5();
     cam.fov = ter_op(isdefined(var_20ffe62a3b87f07f["starting_zoom"]), var_20ffe62a3b87f07f["starting_zoom"], 70);
@@ -417,37 +417,37 @@ function private function_523231b88c6410e5() {
     switch (self.script_noteworthy) {
     case #"hash_e4c7957ca86ffa89":
         self.var_efc49f91012daafc = 1;
-        self.var_bc43ef6976a95606 = 1;
+        self.ui_cam_zone = 1;
         break;
     case #"hash_e4c7927ca86ff5d0":
         self.var_efc49f91012daafc = 3;
-        self.var_bc43ef6976a95606 = 2;
+        self.ui_cam_zone = 2;
         break;
     case #"hash_e4c7937ca86ff763":
         self.var_efc49f91012daafc = 3;
-        self.var_bc43ef6976a95606 = 3;
+        self.ui_cam_zone = 3;
         break;
     case #"hash_e4c7987ca86fff42":
         self.var_efc49f91012daafc = 3;
-        self.var_bc43ef6976a95606 = 4;
+        self.ui_cam_zone = 4;
         break;
     case #"hash_e4c7997ca87000d5":
         self.var_efc49f91012daafc = 3;
-        self.var_bc43ef6976a95606 = 5;
+        self.ui_cam_zone = 5;
         break;
     case #"hash_e4c7967ca86ffc1c":
         self.var_efc49f91012daafc = 3;
-        self.var_bc43ef6976a95606 = 6;
+        self.ui_cam_zone = 6;
         break;
     case #"hash_e4c7977ca86ffdaf":
         self.var_efc49f91012daafc = 2;
-        self.var_bc43ef6976a95606 = 7;
+        self.ui_cam_zone = 7;
         break;
     default:
         if (isdefined(self.script_noteworthy)) {
             assertmsg("The Camera, " + self.script_noteworthy + " does not have a proper case setup.");
             self.var_efc49f91012daafc = 0;
-            self.var_bc43ef6976a95606 = 1;
+            self.ui_cam_zone = 1;
         } else {
             assertmsg("A camera is missing necessary identification. is your script_noteworthy correctly set?");
         }
@@ -525,7 +525,7 @@ function private function_2d0546014afd82b8() {
 // Size: 0x3d
 function private function_1ec32b1cdddb9146() {
     level.player function_2acd5041c3f3305e(self, "node", "scripted_widget_movement_node", "scripted_widget_anchor_camera_node");
-    self.var_935108e69b17d18a = "";
+    self.anim_state = "";
     function_46c43adbed209eaa(self, "DefaultSequence");
 }
 
@@ -775,16 +775,16 @@ function private function_c309de0bba0bbdd1(playereyepos) {
     if (!flag("cctv_enable_camera")) {
         return;
     }
-    if (!isdefined(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3)) {
+    if (!isdefined(level.current_cam.var_4f0d076b113c5ea3)) {
         return;
     }
-    foreach (cam in level.var_438345dcdca4f81a.var_4f0d076b113c5ea3) {
+    foreach (cam in level.current_cam.var_4f0d076b113c5ea3) {
         if (isstring(cam) && cam == "link_cam_override") {
             continue;
         }
         if (!getdvarint(@"hash_c96167e2d3de211", 1)) {
             campos = cam.origin;
-            if (player_looking_at(campos, var_2cc013fe3321739d, undefined, [level.var_438345dcdca4f81a, cam])) {
+            if (player_looking_at(campos, var_2cc013fe3321739d, undefined, [level.current_cam, cam])) {
                 angle = math::anglebetweenvectors(anglestoforward(level.player getplayerangles()), vectornormalize(campos - playereyepos));
                 if (angle < var_ed68dc64b00935cc) {
                     if (!isdefined(var_4f4757f97e2026b1)) {
@@ -807,8 +807,8 @@ function private function_c309de0bba0bbdd1(playereyepos) {
 // Checksum 0x0, Offset: 0x2527
 // Size: 0x63
 function private function_46c43adbed209eaa(node, state) {
-    if (isdefined(node) && isdefined(node.var_935108e69b17d18a) && node.var_935108e69b17d18a != state) {
-        node.var_935108e69b17d18a = state;
+    if (isdefined(node) && isdefined(node.anim_state) && node.anim_state != state) {
+        node.anim_state = state;
         level.player function_d28fa5295a04d555("node" + node getentitynumber(), state);
     }
 }
@@ -829,25 +829,25 @@ function private function_acc162836243f997(playereyepos) {
     var_a6aa99d338d44d29 = 0.766044;
     var_72a28ce10d17caf4 = 6;
     var_4f4757f97e2026b1 = undefined;
-    foreach (var_e6c33129792361ae in level.var_91eb6136661c6756) {
-        nodepos = var_e6c33129792361ae.origin;
-        if (isdefined(level.var_7d7f0b9f883c729c) && isdefined(var_e6c33129792361ae.var_393dd251907fc96a) && isdefined(var_e6c33129792361ae.var_4317a8168758d17d)) {
-            if (level.var_7d7f0b9f883c729c <= var_e6c33129792361ae.var_4317a8168758d17d && level.var_7d7f0b9f883c729c >= var_e6c33129792361ae.var_393dd251907fc96a) {
-                function_46c43adbed209eaa(var_e6c33129792361ae, "IconBomb");
+    foreach (scan_ent in level.var_91eb6136661c6756) {
+        nodepos = scan_ent.origin;
+        if (isdefined(level.var_7d7f0b9f883c729c) && isdefined(scan_ent.var_393dd251907fc96a) && isdefined(scan_ent.var_4317a8168758d17d)) {
+            if (level.var_7d7f0b9f883c729c <= scan_ent.var_4317a8168758d17d && level.var_7d7f0b9f883c729c >= scan_ent.var_393dd251907fc96a) {
+                function_46c43adbed209eaa(scan_ent, "IconBomb");
             } else {
-                function_46c43adbed209eaa(var_e6c33129792361ae, "DefaultSequence");
+                function_46c43adbed209eaa(scan_ent, "DefaultSequence");
                 flag_clear("cctv_look_at_scan_target");
                 continue;
             }
         }
-        if (player_looking_at(nodepos, var_a6aa99d338d44d29, undefined, level.var_438345dcdca4f81a)) {
+        if (player_looking_at(nodepos, var_a6aa99d338d44d29, undefined, level.current_cam)) {
             angle = anglebetweenvectors(anglestoforward(level.player getplayerangles()), vectornormalize(nodepos - playereyepos));
-            if (angle < var_72a28ce10d17caf4 && level.var_438345dcdca4f81a.fov <= 30) {
+            if (angle < var_72a28ce10d17caf4 && level.current_cam.fov <= 30) {
                 if (!isdefined(var_4f4757f97e2026b1)) {
                     var_4f4757f97e2026b1 = spawnstruct();
                 }
                 var_72a28ce10d17caf4 = angle;
-                var_4f4757f97e2026b1.var_c644bde36f592421 = var_e6c33129792361ae;
+                var_4f4757f97e2026b1.var_c644bde36f592421 = scan_ent;
                 var_4f4757f97e2026b1.minangle = angle;
                 var_4f4757f97e2026b1.var_35c8ba6530ffe9d1 = "Prompt";
                 flag_set("cctv_look_at_scan_target");
@@ -855,10 +855,10 @@ function private function_acc162836243f997(playereyepos) {
                 flag_clear("cctv_look_at_scan_target");
                 level notify("cctv_scan_target_lost");
             }
-            function_46c43adbed209eaa(var_e6c33129792361ae, "IconBomb");
+            function_46c43adbed209eaa(scan_ent, "IconBomb");
             continue;
         }
-        function_46c43adbed209eaa(var_e6c33129792361ae, "DefaultSequence");
+        function_46c43adbed209eaa(scan_ent, "DefaultSequence");
         flag_clear("cctv_look_at_scan_target");
     }
     return var_4f4757f97e2026b1;
@@ -881,9 +881,9 @@ function function_29a23ca2e3821f1e(var_94bbe94014394d5b, var_276ef4838c7c89d, va
     var_b0ef27a1b00a23b2 = spawn("script_origin", var_94bbe94014394d5b);
     var_b0ef27a1b00a23b2.hint_ent = spawn("script_model", var_b0ef27a1b00a23b2.origin);
     var_b0ef27a1b00a23b2.hint_ent setmodel("tag_origin");
-    var_b0ef27a1b00a23b2.hint_ent.var_3e9cfdb98ca388fb = var_b0ef27a1b00a23b2;
+    var_b0ef27a1b00a23b2.hint_ent.node_ref = var_b0ef27a1b00a23b2;
     level.player function_2acd5041c3f3305e(var_b0ef27a1b00a23b2.hint_ent, "node", "scripted_widget_cctv_interact", "scripted_widget_anchor_camera_node");
-    var_b0ef27a1b00a23b2.hint_ent.var_935108e69b17d18a = "";
+    var_b0ef27a1b00a23b2.hint_ent.anim_state = "";
     function_46c43adbed209eaa(var_b0ef27a1b00a23b2.hint_ent, "IconBomb");
     if (isdefined(var_393dd251907fc96a) && isdefined(var_4317a8168758d17d)) {
         var_b0ef27a1b00a23b2.hint_ent.var_393dd251907fc96a = var_393dd251907fc96a;
@@ -912,8 +912,8 @@ function function_29a23ca2e3821f1e(var_94bbe94014394d5b, var_276ef4838c7c89d, va
 // Checksum 0x0, Offset: 0x29e8
 // Size: 0x52
 function function_cd6ebb4e3724ac77() {
-    foreach (var_e6c33129792361ae in level.var_91eb6136661c6756) {
-        var_e6c33129792361ae delete();
+    foreach (scan_ent in level.var_91eb6136661c6756) {
+        scan_ent delete();
     }
 }
 
@@ -952,7 +952,7 @@ function function_9e2b10c4b3e77b13() {
 // Checksum 0x0, Offset: 0x2ae6
 // Size: 0x1ec
 function function_11671c2e250e9320() {
-    if (isdefined(level.var_438345dcdca4f81a) && level.var_438345dcdca4f81a == self || flag("cctv_end")) {
+    if (isdefined(level.current_cam) && level.current_cam == self || flag("cctv_end")) {
         return;
     }
     flag_set("switching_camera");
@@ -965,11 +965,11 @@ function function_11671c2e250e9320() {
     level.player setclientomnvar("ui_hide_hud", 1);
     function_64196226b4e5c384();
     setomnvar("ui_cctv_camera_index", self.var_efc49f91012daafc);
-    setomnvar("ui_cctv_zone_index", self.var_bc43ef6976a95606);
+    setomnvar("ui_cctv_zone_index", self.ui_cam_zone);
     level.previous_cam.last_angles = level.player getplayerangles();
-    level.previous_cam = level.var_438345dcdca4f81a;
+    level.previous_cam = level.current_cam;
     level.previous_cam show();
-    level.var_438345dcdca4f81a = self;
+    level.current_cam = self;
     self hide();
     foreach (cam in level.previous_cam.var_4f0d076b113c5ea3) {
         if (isstring(cam) && cam == "link_cam_override") {
@@ -985,7 +985,7 @@ function function_11671c2e250e9320() {
     wait 1.2;
     flag_clear("switching_camera");
     level notify("finished_cam_switch");
-    level notify("switched_to_" + level.var_438345dcdca4f81a.script_noteworthy);
+    level notify("switched_to_" + level.current_cam.script_noteworthy);
 }
 
 // Namespace namespace_86ac7d9988dd9ad8 / namespace_ced163a8b0e3e1ba
@@ -993,27 +993,27 @@ function function_11671c2e250e9320() {
 // Checksum 0x0, Offset: 0x2cda
 // Size: 0x2f6
 function private function_df92850503fdbc8b() {
-    if (!flag("switched_to_" + level.var_438345dcdca4f81a.script_noteworthy)) {
-        flag_set("switched_to_" + level.var_438345dcdca4f81a.script_noteworthy);
-        switch (level.var_438345dcdca4f81a.script_noteworthy) {
+    if (!flag("switched_to_" + level.current_cam.script_noteworthy)) {
+        flag_set("switched_to_" + level.current_cam.script_noteworthy);
+        switch (level.current_cam.script_noteworthy) {
         case #"hash_e4c7957ca86ffa89":
             setomnvar("ui_cctv_camera_index", 0);
             level.player playsound("surg_cctv_static_1sec");
             flag_set("flg_cctv_1_active_first");
             flag_set("CCTV_zoom_disabled");
-            array_thread(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3, &function_2d0546014afd82b8);
-            level.var_438345dcdca4f81a.var_4f0d076b113c5ea3 = [];
+            array_thread(level.current_cam.var_4f0d076b113c5ea3, &function_2d0546014afd82b8);
+            level.current_cam.var_4f0d076b113c5ea3 = [];
             wait 2;
             var_215c491624c432aa = level.player spawn_script_origin();
             var_215c491624c432aa playloopsound("surg_cctv_zoom_out");
-            var_1fd2de50fdf263a0 = 2;
+            change_amt = 2;
             var_97ccc1b76a109642 = 0.1;
             change_speed = 1;
             while (true) {
-                level.var_438345dcdca4f81a.fov = clamp(level.var_438345dcdca4f81a.fov + var_1fd2de50fdf263a0 * change_speed, 20, 70);
-                level.player modifybasefov(level.var_438345dcdca4f81a.fov, var_97ccc1b76a109642);
-                level.player setclientomnvar("ui_killstreak_zoom_fov", level.var_438345dcdca4f81a.fov);
-                if (level.var_438345dcdca4f81a.fov == 70) {
+                level.current_cam.fov = clamp(level.current_cam.fov + change_amt * change_speed, 20, 70);
+                level.player modifybasefov(level.current_cam.fov, var_97ccc1b76a109642);
+                level.player setclientomnvar("ui_killstreak_zoom_fov", level.current_cam.fov);
+                if (level.current_cam.fov == 70) {
                     var_215c491624c432aa stoploopsound("surg_cctv_zoom_out");
                     var_215c491624c432aa delete();
                     wait 1;
@@ -1023,7 +1023,7 @@ function private function_df92850503fdbc8b() {
                 waitframe();
             }
             flag_wait("flg_rewind_target_entered_bistro");
-            level.var_438345dcdca4f81a function_88752e4eabb4c658();
+            level.current_cam function_88752e4eabb4c658();
             setomnvar("ui_cctv_camera_index", 1);
             break;
         case #"hash_e4c7927ca86ff5d0":
@@ -1053,7 +1053,7 @@ function private function_df92850503fdbc8b() {
 // Checksum 0x0, Offset: 0x2fd8
 // Size: 0xff
 function private function_64196226b4e5c384() {
-    switch (level.var_438345dcdca4f81a.script_noteworthy) {
+    switch (level.current_cam.script_noteworthy) {
     case #"hash_e4c7957ca86ffa89":
         if (!flag("flg_cctv_1_active")) {
             thread function_81db82a19ca05bf(1);
@@ -1099,19 +1099,19 @@ function function_81db82a19ca05bf(var_ff1b0cfc5ebb5665) {
 function private function_3bca028b81b9315(var_b18cac93c61c669e) {
     level.player unlink();
     level.player dontinterpolate();
-    level.player setorigin(self.var_915db328fe8681b8.origin);
-    level.player playerlinktodelta(self.var_915db328fe8681b8, "tag_origin", 1, self.view_arcs[0], self.view_arcs[1], self.view_arcs[2], self.view_arcs[3], 0);
+    level.player setorigin(self.player_anchor.origin);
+    level.player playerlinktodelta(self.player_anchor, "tag_origin", 1, self.view_arcs[0], self.view_arcs[1], self.view_arcs[2], self.view_arcs[3], 0);
     if (isdefined(level.var_c900db68646b554e) && function_d291656cea83ed81(level.var_c900db68646b554e, level.player geteye(), [self], create_default_contents()) && distance(level.var_c900db68646b554e.origin, self.origin) <= 1800) {
         function_9992b2755a08da84(0.98, 0.99);
     } else {
-        level.player setplayerangles(self.var_915db328fe8681b8.angles);
+        level.player setplayerangles(self.player_anchor.angles);
     }
     if (istrue(var_b18cac93c61c669e)) {
-        level.player modifybasefov(level.var_438345dcdca4f81a.fov, 0.2);
-        level.player setclientomnvar("ui_killstreak_zoom_fov", level.var_438345dcdca4f81a.fov);
+        level.player modifybasefov(level.current_cam.fov, 0.2);
+        level.player setclientomnvar("ui_killstreak_zoom_fov", level.current_cam.fov);
     } else {
-        level.player modifybasefov(level.var_438345dcdca4f81a.fov);
-        level.player setclientomnvar("ui_killstreak_zoom_fov", level.var_438345dcdca4f81a.fov);
+        level.player modifybasefov(level.current_cam.fov);
+        level.player setclientomnvar("ui_killstreak_zoom_fov", level.current_cam.fov);
     }
     level.player thread cctv_camera_look_speed(1);
 }
@@ -1120,18 +1120,18 @@ function private function_3bca028b81b9315(var_b18cac93c61c669e) {
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x3300
 // Size: 0xc1
-function private function_9992b2755a08da84(var_6f631a059cc680f, var_6d31fa059a5f8c1) {
-    if (!isdefined(var_6f631a059cc680f)) {
-        var_6f631a059cc680f = 0;
+function private function_9992b2755a08da84(force_min, force_max) {
+    if (!isdefined(force_min)) {
+        force_min = 0;
     } else {
-        clamp(var_6f631a059cc680f, 0, 1);
+        clamp(force_min, 0, 1);
     }
-    if (!isdefined(var_6d31fa059a5f8c1)) {
-        var_6d31fa059a5f8c1 = 1;
+    if (!isdefined(force_max)) {
+        force_max = 1;
     } else {
-        clamp(var_6d31fa059a5f8c1, 0, 1);
+        clamp(force_max, 0, 1);
     }
-    force = randomfloatrange(var_6f631a059cc680f, var_6d31fa059a5f8c1);
+    force = randomfloatrange(force_min, force_max);
     var_934dca77580f34aa = self.angles[1];
     var_1085cf80ee34bfb6 = vectortoangles(level.var_c900db68646b554e gettagorigin("j_spine4") - self.origin);
     var_91324a24b0c8049d = var_1085cf80ee34bfb6[1] - var_934dca77580f34aa;
@@ -1142,16 +1142,16 @@ function private function_9992b2755a08da84(var_6f631a059cc680f, var_6d31fa059a5f
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x33c9
 // Size: 0x7c
-function private function_f2cd217859497020(var_4d560229089a1b10, previous_cam) {
+function private function_f2cd217859497020(next_cam, previous_cam) {
     level.player clearpredictedstreampos();
     level.player clearadditionalstreampos();
-    if (isdefined(var_4d560229089a1b10)) {
-        level.player function_bc667001f9dd3808(var_4d560229089a1b10.origin);
+    if (isdefined(next_cam)) {
+        level.player function_bc667001f9dd3808(next_cam.origin);
     }
     if (isdefined(previous_cam)) {
         level.player function_670863fc4008c3d8(previous_cam.origin);
     }
-    if (!isdefined(var_4d560229089a1b10) && !isdefined(previous_cam)) {
+    if (!isdefined(next_cam) && !isdefined(previous_cam)) {
         return;
     }
 }
@@ -1164,12 +1164,12 @@ function private function_59eff5033ed73dd0() {
     level endon("cctv_end");
     while (true) {
         level waittill("cam_switch");
-        if (isdefined(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[1]) && !isstring(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[1])) {
-            function_f2cd217859497020(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[1], level.previous_cam);
-        } else if (isdefined(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0]) && level.var_438345dcdca4f81a.var_4f0d076b113c5ea3.size == 1 && !isstring(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0])) {
-            function_f2cd217859497020(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0], level.previous_cam);
-        } else if (isdefined(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0]) && level.var_438345dcdca4f81a.var_4f0d076b113c5ea3.size != 1 && !isstring(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0])) {
-            function_f2cd217859497020(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0], level.previous_cam);
+        if (isdefined(level.current_cam.var_4f0d076b113c5ea3[1]) && !isstring(level.current_cam.var_4f0d076b113c5ea3[1])) {
+            function_f2cd217859497020(level.current_cam.var_4f0d076b113c5ea3[1], level.previous_cam);
+        } else if (isdefined(level.current_cam.var_4f0d076b113c5ea3[0]) && level.current_cam.var_4f0d076b113c5ea3.size == 1 && !isstring(level.current_cam.var_4f0d076b113c5ea3[0])) {
+            function_f2cd217859497020(level.current_cam.var_4f0d076b113c5ea3[0], level.previous_cam);
+        } else if (isdefined(level.current_cam.var_4f0d076b113c5ea3[0]) && level.current_cam.var_4f0d076b113c5ea3.size != 1 && !isstring(level.current_cam.var_4f0d076b113c5ea3[0])) {
+            function_f2cd217859497020(level.current_cam.var_4f0d076b113c5ea3[0], level.previous_cam);
         }
         waitframe();
     }
@@ -1189,15 +1189,15 @@ function function_9a8d0ad68ab8e7fc() {
 // Size: 0xf3
 function private function_f4795bebba0ca2f2() {
     level endon("cctv_end");
-    var_5882465622c8e3d8 = 3;
+    change_rate = 3;
     var_97ccc1b76a109642 = 0.1;
     level thread namespace_85a51fd192b9a590::function_ad005b37ad2132c0();
     while (true) {
-        var_9d3935492444d2c1 = level.player getleftsticky();
-        if (var_9d3935492444d2c1 != 0 && !flag("CCTV_rewind_active") && !flag("CCTV_zoom_disabled")) {
-            level.var_438345dcdca4f81a.fov = clamp(level.var_438345dcdca4f81a.fov - var_5882465622c8e3d8 * var_9d3935492444d2c1, 20, 70);
-            level.player modifybasefov(level.var_438345dcdca4f81a.fov, var_97ccc1b76a109642);
-            level.player setclientomnvar("ui_killstreak_zoom_fov", level.var_438345dcdca4f81a.fov);
+        current_input = level.player getleftsticky();
+        if (current_input != 0 && !flag("CCTV_rewind_active") && !flag("CCTV_zoom_disabled")) {
+            level.current_cam.fov = clamp(level.current_cam.fov - change_rate * current_input, 20, 70);
+            level.player modifybasefov(level.current_cam.fov, var_97ccc1b76a109642);
+            level.player setclientomnvar("ui_killstreak_zoom_fov", level.current_cam.fov);
         }
         waitframe();
     }
@@ -1220,7 +1220,7 @@ function private function_7a2e20471c45d91b() {
     level.player notifyonplayercommand("cycle_camera_forward", "+frag");
     level.player notifyonplayercommand("cycle_camera_back", "+smoke");
     while (!flag("cctv_end")) {
-        switch (level.var_438345dcdca4f81a.script_noteworthy) {
+        switch (level.current_cam.script_noteworthy) {
         case #"hash_e4c7957ca86ffa89":
             flag_clear("flg_cctv_2_active");
             flag_clear("flg_cctv_3_active");
@@ -1291,19 +1291,19 @@ function private function_7a2e20471c45d91b() {
                 waitframe();
                 continue;
             }
-            if (var_c53b510d02b534e0 == "cycle_camera_forward" && isdefined(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[1]) && !isstring(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[1])) {
-                function_f2cd217859497020(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[1], level.var_438345dcdca4f81a);
-                level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[1] thread function_11671c2e250e9320();
+            if (var_c53b510d02b534e0 == "cycle_camera_forward" && isdefined(level.current_cam.var_4f0d076b113c5ea3[1]) && !isstring(level.current_cam.var_4f0d076b113c5ea3[1])) {
+                function_f2cd217859497020(level.current_cam.var_4f0d076b113c5ea3[1], level.current_cam);
+                level.current_cam.var_4f0d076b113c5ea3[1] thread function_11671c2e250e9320();
                 continue;
             }
-            if (var_c53b510d02b534e0 == "cycle_camera_forward" && isdefined(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0]) && level.var_438345dcdca4f81a.var_4f0d076b113c5ea3.size == 1 && !isstring(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0])) {
-                function_f2cd217859497020(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0], level.var_438345dcdca4f81a);
-                level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0] thread function_11671c2e250e9320();
+            if (var_c53b510d02b534e0 == "cycle_camera_forward" && isdefined(level.current_cam.var_4f0d076b113c5ea3[0]) && level.current_cam.var_4f0d076b113c5ea3.size == 1 && !isstring(level.current_cam.var_4f0d076b113c5ea3[0])) {
+                function_f2cd217859497020(level.current_cam.var_4f0d076b113c5ea3[0], level.current_cam);
+                level.current_cam.var_4f0d076b113c5ea3[0] thread function_11671c2e250e9320();
                 continue;
             }
-            if (var_c53b510d02b534e0 == "cycle_camera_back" && isdefined(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0]) && level.var_438345dcdca4f81a.var_4f0d076b113c5ea3.size != 1 && !isstring(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0])) {
-                function_f2cd217859497020(level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0], level.var_438345dcdca4f81a);
-                level.var_438345dcdca4f81a.var_4f0d076b113c5ea3[0] thread function_11671c2e250e9320();
+            if (var_c53b510d02b534e0 == "cycle_camera_back" && isdefined(level.current_cam.var_4f0d076b113c5ea3[0]) && level.current_cam.var_4f0d076b113c5ea3.size != 1 && !isstring(level.current_cam.var_4f0d076b113c5ea3[0])) {
+                function_f2cd217859497020(level.current_cam.var_4f0d076b113c5ea3[0], level.current_cam);
+                level.current_cam.var_4f0d076b113c5ea3[0] thread function_11671c2e250e9320();
             }
         }
     }
@@ -1399,14 +1399,14 @@ function function_a9f48951eda527b2() {
         while (true) {
             if (getdvarfloat(@"hash_f8078e31e611f1e6") == 1) {
                 var_e955a13125a13269 = angleclamp(level.player getplayerangles(1)[1]);
-                reference = level.var_438345dcdca4f81a.angles[1];
+                reference = level.current_cam.angles[1];
                 printtoscreen2d(75, 225, "<dev string:x41>" + abs(abs(reference) - abs(var_e955a13125a13269)), (1, 1, 1), 3);
                 printtoscreen2d(75, 275, "<dev string:x52>" + getdvarfloat(@"cg_fov"), (1, 1, 1), 3);
-                printtoscreen2d(75, 325, "<dev string:x68>" + level.var_438345dcdca4f81a.fov, (1, 1, 1), 3);
-                printtoscreen2d(75, 375, level.var_438345dcdca4f81a.cam_name);
-                printtoscreen2d(75, 425, "<dev string:x7e>" + level.var_438345dcdca4f81a.angles, (1, 1, 1), 3);
-                printtoscreen2d(75, 475, "<dev string:x8b>" + level.var_438345dcdca4f81a.origin, (1, 1, 1), 3);
-                printtoscreen2d(75, 525, "<dev string:x95>" + level.var_438345dcdca4f81a.var_4f0d076b113c5ea3.size, (1, 1, 1), 3);
+                printtoscreen2d(75, 325, "<dev string:x68>" + level.current_cam.fov, (1, 1, 1), 3);
+                printtoscreen2d(75, 375, level.current_cam.cam_name);
+                printtoscreen2d(75, 425, "<dev string:x7e>" + level.current_cam.angles, (1, 1, 1), 3);
+                printtoscreen2d(75, 475, "<dev string:x8b>" + level.current_cam.origin, (1, 1, 1), 3);
+                printtoscreen2d(75, 525, "<dev string:x95>" + level.current_cam.var_4f0d076b113c5ea3.size, (1, 1, 1), 3);
             }
             waitframe();
         }
@@ -1419,12 +1419,12 @@ function function_a9f48951eda527b2() {
     function private function_5214acd431d3c8f2() {
         while (true) {
             if (getdvarfloat(@"hash_f8078e31e611f1e6") == 1) {
-                foreach (cam in level.var_438345dcdca4f81a.var_4f0d076b113c5ea3) {
+                foreach (cam in level.current_cam.var_4f0d076b113c5ea3) {
                     if (isstring(cam) && cam == "<dev string:xab>") {
                         continue;
                     }
                     color = (1, 0, 0);
-                    line(level.var_438345dcdca4f81a.origin, cam.origin, color, 1, 1);
+                    line(level.current_cam.origin, cam.origin, color, 1, 1);
                 }
             }
             waitframe();

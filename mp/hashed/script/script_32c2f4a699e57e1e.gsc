@@ -1,27 +1,27 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_32c2f4a699e57e1e;
 #using script_19fd5b5d73d44c18;
-#using scripts\mp\utility\perk.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\points.gsc;
+#using script_32c2f4a699e57e1e;
+#using script_7ab5b649fa408138;
 #using script_7ef95bba57dc4b82;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gameobjects;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace namespace_8fc65ee803ed7309;
 
@@ -97,7 +97,7 @@ function onplayerspawned() {
     }
     function_5ebff6f27060953c();
     function_c7b1bf955226c91a();
-    self.var_dcd1296ac46e871c = 0;
+    self.num_powerup = 0;
     self.falldamageprotection = 1;
     thread function_9623701142aa39aa();
 }
@@ -124,16 +124,16 @@ function function_9623701142aa39aa() {
         var_4d5656223026940d = sighttracepassed(self.origin, heightvector, 0, self);
         if (!dropping && !self jumpbuttonpressed() && !self isonground() && var_4d5656223026940d) {
             dropping = 1;
-            var_9c93e41b9457295b = 1;
+            accelScalar = 1;
             var_2d4845b74a252345 = gettime();
         }
         while (dropping) {
             if (!self isonground() || gettime() >= var_2d4845b74a252345 + 750) {
                 var_aa25fcdda098b881 = self getvelocity();
-                zvel = max(var_aa25fcdda098b881[2] - 50 * var_9c93e41b9457295b, -1800);
+                zvel = max(var_aa25fcdda098b881[2] - 50 * accelScalar, -1800);
                 newvel = (var_aa25fcdda098b881[0] * 0.98, var_aa25fcdda098b881[1] * 0.98, zvel);
                 self setvelocity(newvel);
-                var_9c93e41b9457295b += 0.1;
+                accelScalar += 0.1;
             } else {
                 dropping = 0;
             }
@@ -158,7 +158,7 @@ function function_5ebff6f27060953c() {
 // Checksum 0x0, Offset: 0x15b6
 // Size: 0x3e
 function function_4ab14e281240f204() {
-    self.var_dcd1296ac46e871c = 0;
+    self.num_powerup = 0;
     self.arcade_unlimited_ammo = 0;
     self.var_640464235432d2b6 = 0;
     self.herodrop = 0;
@@ -245,11 +245,11 @@ function function_6089f3a6495c3e4() {
 function function_598e165aac396689() {
     level waittill("prematch_started");
     var_7d8bce723d98d32f = namespace_e0ee43ef2dddadaa::buildweapon("jup_jp35_sn_moscar", ["jup_moscar_rec", "jup_jp35_sn_moscar_stock", "jup_jp35_sn_moscar_pgrip", "jup_moscar_bipod", "jup_ammo_rail_std", "jup_moscar_scope", "jup_jp35_sn_moscar_bar_explode", "jup_jp35_sn_moscar_bolt_hvy"], "jup_camo_17c", "none");
-    var_f64c04f938092228 = namespace_e0ee43ef2dddadaa::buildweapon("jup_cp01_sh_aromeo410", ["jup_ammo_410g_vortex", "jup_cp01_sh_aromeo410_pgrip_tac", "jup_reflex04"], "jup_camo_17c", "none");
-    var_f2147edf7eeaac47 = makeweapon("iw9_lm_dblmg_jup_mp", ["ammo_762n_vortex"], undefined, "jup_camo_17c", 0);
+    rocket_shotgun = namespace_e0ee43ef2dddadaa::buildweapon("jup_cp01_sh_aromeo410", ["jup_ammo_410g_vortex", "jup_cp01_sh_aromeo410_pgrip_tac", "jup_reflex04"], "jup_camo_17c", "none");
+    mini_gun = makeweapon("iw9_lm_dblmg_jup_mp", ["ammo_762n_vortex"], undefined, "jup_camo_17c", 0);
     akimbo_shotgun = namespace_e0ee43ef2dddadaa::buildweapon("jup_jp14_pi_rsierra12", ["jup_ammo_127_db_arcade", "jup_rsierra12_akimbo", "jup_jp14_pi_rsierra12_bar_hvylong"], "jup_camo_17c", "none");
     sledgehammer = makeweapon("jup_jp23_me_shotel_arcade_mp", ["jup_me_shotel"], undefined, "jup_camo_17c", 0);
-    weaponlist = [var_7d8bce723d98d32f, var_f64c04f938092228, var_f2147edf7eeaac47, akimbo_shotgun, sledgehammer];
+    weaponlist = [var_7d8bce723d98d32f, rocket_shotgun, mini_gun, akimbo_shotgun, sledgehammer];
     foreach (weapon in weaponlist) {
         level.var_5f07e2e462ad2fc[weapon.basename] = weapon;
     }
@@ -404,7 +404,7 @@ function function_44533f21c13295c6(item) {
         if (!scripts\mp\utility\player::isreallyalive(player)) {
             continue;
         }
-        player thread function_1471010076460554(item);
+        player thread apply_powerup(item);
         if (isdefined(self.var_2fe318403a6542f6)) {
             self.var_2fe318403a6542f6 delete();
         }
@@ -462,7 +462,7 @@ function function_815824a2e8c69c86() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x205b
 // Size: 0x10b
-function function_75c74522c71252d5(objweapon) {
+function giveweapon_vortex(objweapon) {
     assert(isweapon(objweapon));
     var_aaa00e27a60773a1 = objweapon getnoaltweapon();
     currentweapon = self getcurrentweapon();
@@ -490,8 +490,8 @@ function function_75c74522c71252d5(objweapon) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x216e
 // Size: 0x1ee
-function function_f67cc6b0134a0ce6(params, var_af155dafc6d7e997) {
-    if (var_af155dafc6d7e997) {
+function function_f67cc6b0134a0ce6(params, death_drop) {
+    if (death_drop) {
         loc = params.victim;
     } else {
         loc = params.origin;
@@ -570,8 +570,8 @@ function function_3e1c8628245deac0(loc, var_7c4244375acf3b9c) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x255d
 // Size: 0x23e
-function function_c8806b1647107ca3(params, var_af155dafc6d7e997) {
-    if (var_af155dafc6d7e997) {
+function function_c8806b1647107ca3(params, death_drop) {
+    if (death_drop) {
         loc = params.victim;
     } else {
         loc = params.origin;
@@ -585,8 +585,8 @@ function function_c8806b1647107ca3(params, var_af155dafc6d7e997) {
     var_485ed3db03228352 = loc.angles;
     var_a49f3378e7b03e7b = (0, -5, 0);
     item = spawn("script_model", targetposworld);
-    var_876630d96e253f98 = function_7ef0bb4ab06721b0();
-    switch (var_876630d96e253f98) {
+    powerup_type = function_7ef0bb4ab06721b0();
+    switch (powerup_type) {
     case #"hash_57ebf8ef67187ec7":
         item setmodel("jup_accessory_arcade_pickups_ammo_02");
         break;
@@ -615,7 +615,7 @@ function function_c8806b1647107ca3(params, var_af155dafc6d7e997) {
     playsoundatpos(targetposworld, "jup_arcade_powerup_drop");
     item.var_2fe318403a6542f6 = spawn("script_model", targetposworld);
     item.var_2fe318403a6542f6 playloopsound("jup_arcade_powerup_lp");
-    item thread function_44533f21c13295c6(var_876630d96e253f98);
+    item thread function_44533f21c13295c6(powerup_type);
 }
 
 // Namespace namespace_8fc65ee803ed7309 / namespace_dfe80adf32f5c14a
@@ -634,8 +634,8 @@ function function_7ef0bb4ab06721b0() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x27fa
 // Size: 0x1ac
-function function_1471010076460554(var_876630d96e253f98) {
-    switch (var_876630d96e253f98) {
+function apply_powerup(powerup_type) {
+    switch (powerup_type) {
     case #"hash_ac736f279bf91dc5":
         if (istrue(self.var_640464235432d2b6)) {
             function_fb2570ba1a04c8bb();
@@ -725,12 +725,12 @@ function spawn_fx(fx, var_937555ef05034cb9) {
 function function_86f5a789d29a8a07(fx, var_937555ef05034cb9) {
     level endon("game_ended");
     self endon("deleted");
-    var_fee6118d93e6ea8 = spawnfx(fx, self.origin + (0, 0, 23));
+    spawned_fx = spawnfx(fx, self.origin + (0, 0, 23));
     while (true) {
         waitframe();
-        triggerfx(var_fee6118d93e6ea8);
+        triggerfx(spawned_fx);
         self waittill(var_937555ef05034cb9);
-        var_fee6118d93e6ea8 hide();
+        spawned_fx hide();
         if (isdefined(self.var_2fe318403a6542f6)) {
             self.var_2fe318403a6542f6 stoploopsound();
             self.var_2fe318403a6542f6 playloopsound("jup_arcade_weapon_away_lp");
@@ -753,18 +753,18 @@ function function_8148efb2a1061864() {
     if (getdvarint(@"hash_859d55e52e5fac05", 0) == 1) {
         return;
     }
-    if (!isdefined(self.var_dcd1296ac46e871c)) {
-        self.var_dcd1296ac46e871c = 0;
+    if (!isdefined(self.num_powerup)) {
+        self.num_powerup = 0;
     }
     self.var_640464235432d2b6 = 1;
-    self.var_dcd1296ac46e871c += 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup += 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     self setclientomnvar("ui_arcade_unlimitedgrenade_active", 1);
-    var_8ed381c7df6db4e4 = undefined;
+    replace_equip = undefined;
     if (!namespace_4fb9dddfb8c1a67a::hasequipment("equip_frag")) {
         equipment_ref = namespace_4fb9dddfb8c1a67a::getcurrentequipment("primary");
         start_ammo = namespace_4fb9dddfb8c1a67a::getequipmentstartammo(equipment_ref);
-        var_8ed381c7df6db4e4 = 1;
+        replace_equip = 1;
         namespace_4fb9dddfb8c1a67a::giveequipment("equip_frag", "primary");
     }
     var_6925b4f069d7f95c = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5() == "limbo" ? 120 : 20;
@@ -775,21 +775,21 @@ function function_8148efb2a1061864() {
         if (!namespace_4fb9dddfb8c1a67a::hasequipment("equip_frag")) {
             equipment_ref = namespace_4fb9dddfb8c1a67a::getcurrentequipment("primary");
             start_ammo = namespace_4fb9dddfb8c1a67a::getequipmentstartammo(equipment_ref);
-            var_8ed381c7df6db4e4 = 1;
+            replace_equip = 1;
             namespace_4fb9dddfb8c1a67a::giveequipment("equip_frag", "primary");
         }
         self.var_5dd13a81fc4a3995 = function_c89ed1840c8d0f0f(gettime() - self.var_552a2c635b9400e);
         self setclientomnvar("ui_arcade_unlimitedgrenade_progress", self.var_5dd13a81fc4a3995);
         if (self.var_5dd13a81fc4a3995 >= var_6925b4f069d7f95c) {
             self playlocalsound("jup_arcade_powerup_expire");
-            if (isdefined(var_8ed381c7df6db4e4)) {
+            if (isdefined(replace_equip)) {
                 namespace_4fb9dddfb8c1a67a::giveequipment(equipment_ref, "primary");
                 namespace_4fb9dddfb8c1a67a::setequipmentammo(equipment_ref, start_ammo);
             }
             scripts\mp\equipment::decrementequipmentslotammo("primary");
             self.var_640464235432d2b6 = 0;
-            self.var_dcd1296ac46e871c -= 1;
-            self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+            self.num_powerup -= 1;
+            self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
             self setclientomnvar("ui_arcade_unlimitedgrenade_active", 0);
             return;
         }
@@ -834,11 +834,11 @@ function function_abcfd180845925a8() {
         return;
     }
     self.arcade_unlimited_ammo = 1;
-    if (!isdefined(self.var_dcd1296ac46e871c)) {
-        self.var_dcd1296ac46e871c = 0;
+    if (!isdefined(self.num_powerup)) {
+        self.num_powerup = 0;
     }
-    self.var_dcd1296ac46e871c += 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup += 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     self setclientomnvar("ui_arcade_unlimitedammo_active", 1);
     isakimbo = namespace_e0ee43ef2dddadaa::isakimbo(self.currentprimaryweapon);
     if (isakimbo) {
@@ -870,8 +870,8 @@ function function_abcfd180845925a8() {
     thread scripts\mp\utility\weapon::stopinfiniteammothread();
     self playlocalsound("jup_arcade_powerup_expire");
     self.arcade_unlimited_ammo = 0;
-    self.var_dcd1296ac46e871c -= 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup -= 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     self setclientomnvar("ui_arcade_unlimitedammo_active", 0);
 }
 
@@ -897,11 +897,11 @@ function function_d3cd68df003affbc() {
         return;
     }
     self.limbo_movement_mod = 1;
-    if (!isdefined(self.var_dcd1296ac46e871c)) {
-        self.var_dcd1296ac46e871c = 0;
+    if (!isdefined(self.num_powerup)) {
+        self.num_powerup = 0;
     }
-    self.var_dcd1296ac46e871c += 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup += 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     self setclientomnvar("ui_limbo_movement_mod_active", 1);
     giveperk("specialty_purgatory_movement_adjustment");
     var_d261770d3fb18645 = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5() == "limbo" ? 120 : 30;
@@ -919,8 +919,8 @@ function function_d3cd68df003affbc() {
     removeperk("specialty_purgatory_movement_adjustment");
     self playlocalsound("jup_arcade_powerup_expire");
     self.limbo_movement_mod = 0;
-    self.var_dcd1296ac46e871c -= 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup -= 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     self setclientomnvar("ui_limbo_movement_mod_active", 0);
 }
 
@@ -940,7 +940,7 @@ function function_834394412daf5049() {
 // Checksum 0x0, Offset: 0x32be
 // Size: 0xe3
 function function_c2c75133895ae5b0(einflictor, eattacker, victim, idamage, idflags, smeansofdeath, fdistance, objweapon, vpoint, vdir, shitloc, psoffsettime, modelindex, partname, var_b0fc59ff15058522, var_be4285b26ed99ab1) {
-    if (istrue(victim.var_1503345c374a488f)) {
+    if (istrue(victim.force_field)) {
         victim.var_63f51c740c492976 -= idamage;
         if (victim.var_63f51c740c492976 <= 150) {
             victim notify("force_field_damaged");
@@ -963,19 +963,19 @@ function function_8054d43148c452e7() {
     if (getdvarint(@"hash_fb37c5044f49385f", 0) == 1) {
         return;
     }
-    if (!isdefined(self.var_dcd1296ac46e871c)) {
-        self.var_dcd1296ac46e871c = 0;
+    if (!isdefined(self.num_powerup)) {
+        self.num_powerup = 0;
     }
     self.arcade_force_field = 1;
-    self.var_dcd1296ac46e871c += 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup += 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     callback::callback("force_field_deploy");
     self waittill("shield_deployed");
     self setclientomnvar("ui_arcade_forcefield_active", 1);
     self waittill("mutation_shield_broken");
     self.arcade_force_field = 0;
-    self.var_dcd1296ac46e871c -= 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup -= 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     self setclientomnvar("ui_arcade_forcefield_active", 0);
     self notify("mutation_shield_use_ended");
 }
@@ -1007,12 +1007,12 @@ function function_b32ac99fdccbb521() {
     if (getdvarint(@"hash_a608897998bad970", 0) == 1) {
         return;
     }
-    if (!isdefined(self.var_dcd1296ac46e871c)) {
-        self.var_dcd1296ac46e871c = 0;
+    if (!isdefined(self.num_powerup)) {
+        self.num_powerup = 0;
     }
     self.var_574a51d64266f7ef = 1;
-    self.var_dcd1296ac46e871c += 1;
-    self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+    self.num_powerup += 1;
+    self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
     self setclientomnvar("ui_arcade_aoe_active", 1);
     self.herodrop = 0;
     thread function_82fdd0fd50b928ef();
@@ -1058,8 +1058,8 @@ function function_398c001c0b4dcb6b(var_1fe32bf2f1360168) {
         self setclientomnvar("ui_arcade_aoe_progress", self.var_dc054294da71c2ee);
         if (self.var_dc054294da71c2ee >= var_ad6132d0229b49d2) {
             self.var_574a51d64266f7ef = 0;
-            self.var_dcd1296ac46e871c -= 1;
-            self setclientomnvar("ui_arcade_num_powerup", self.var_dcd1296ac46e871c);
+            self.num_powerup -= 1;
+            self setclientomnvar("ui_arcade_num_powerup", self.num_powerup);
             self setclientomnvar("ui_arcade_aoe_active", 0);
             self notify("aoe_drop_end");
             return;
@@ -1337,20 +1337,20 @@ function function_279d8fc211e373f5() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4064
 // Size: 0xff
-function function_8f9b90b445d7b2a9(location, var_cd0cb5986600ddb7) {
+function function_8f9b90b445d7b2a9(location, location_type) {
     pickup = spawnstruct();
     pickup.origin = location;
     pickup.angles = (0, 0, 0);
-    pickup.var_cd0cb5986600ddb7 = var_cd0cb5986600ddb7;
-    if (issubstr(var_cd0cb5986600ddb7, "CQB")) {
+    pickup.location_type = location_type;
+    if (issubstr(location_type, "CQB")) {
         pickup.weapon = "sledgehammer";
-    } else if (issubstr(var_cd0cb5986600ddb7, "mosh")) {
+    } else if (issubstr(location_type, "mosh")) {
         pickup.weapon = "mini";
-    } else if (issubstr(var_cd0cb5986600ddb7, "LLOS")) {
+    } else if (issubstr(location_type, "LLOS")) {
         pickup.weapon = "mors";
-    } else if (issubstr(var_cd0cb5986600ddb7, "MRC")) {
+    } else if (issubstr(location_type, "MRC")) {
         pickup.weapon = "rocket";
-    } else if (issubstr(var_cd0cb5986600ddb7, "CRC")) {
+    } else if (issubstr(location_type, "CRC")) {
         pickup.weapon = "akimbo_shotgun";
     }
     return pickup;

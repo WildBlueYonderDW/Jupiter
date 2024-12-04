@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\engine\scriptable.gsc;
 #using script_1f97a44d1761c919;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
 
 #namespace ob_intel;
 
@@ -22,7 +22,7 @@ function function_d84b63f3cd2befe() {
         level.ob.var_3c0bad034d227d02 = var_455fcf129b9a4773;
         level.var_d97f7ce3bb56f2a3["note_intel"] = getentitylessscriptablearray("note_intel", "targetname");
         thread function_bcd3ff1413e1f37a();
-        thread function_515b5fdac54df110();
+        thread handle_intel();
         scripts\engine\scriptable::scriptable_addusedcallback(&function_d49b531543df8201);
     }
 }
@@ -46,7 +46,7 @@ function private function_bcd3ff1413e1f37a() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x278
-function function_515b5fdac54df110() {
+function handle_intel() {
     foreach (intel in level.var_d97f7ce3bb56f2a3["deadbolt_audio_intel"]) {
         if (isdefined(intel.script_parameters) && int(intel.script_parameters) > getdvarint(@"hash_ddc349005b4d9cbb", 5)) {
             intel setscriptablepartstate("state", "hidden");
@@ -89,7 +89,7 @@ function function_515b5fdac54df110() {
     // Size: 0x50
     function function_6e50624e2c06832b() {
         while (true) {
-            if (getdvarint(@"hash_d2512962a2cc1632", 0)) {
+            if (getdvarint(@"debug_intel", 0)) {
                 print3d(self.origin + (0, 0, 10), self.script_noteworthy, undefined, undefined, 0.5, undefined, 1);
             }
             waitframe();
@@ -102,7 +102,7 @@ function function_515b5fdac54df110() {
     // Size: 0x50
     function function_b3212476aba49bc() {
         while (true) {
-            if (getdvarint(@"hash_d2512962a2cc1632", 0)) {
+            if (getdvarint(@"debug_intel", 0)) {
                 print3d(self.origin + (0, 0, 10), self.script_noteworthy, undefined, undefined, 0.5, undefined, 1);
             }
             waitframe();

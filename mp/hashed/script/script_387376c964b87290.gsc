@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_955644017be51149;
 
@@ -304,7 +304,7 @@ function function_d6355f012701ccd5() {
                 break;
             }
             forward = vectornormalize(anglestoforward(level.animatedobjs[0].angles));
-            level.var_7fc91d1d11cd14de.origin = forward * 100 + level.animatedobjs[0].origin;
+            level.xcam_anchor.origin = forward * 100 + level.animatedobjs[0].origin;
             level.animatedobjs[0] thread animsuite_rotation("continuous");
             break;
         default:

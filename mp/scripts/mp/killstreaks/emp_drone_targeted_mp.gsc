@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\killstreaks\mapselect.gsc;
-#using scripts\mp\damage.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\killstreaks\mapselect;
 
 #namespace namespace_e250c661763b430b;
 

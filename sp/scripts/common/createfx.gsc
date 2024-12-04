@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\fx.gsc;
-#using scripts\common\createfxmenu.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\createfxmenu;
+#using scripts\common\fx;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace createfx;
 
@@ -338,11 +338,11 @@ function createfxlogic() {
     if (!isdefined(level._effect)) {
         level._effect = [];
     }
-    if (getdvar(@"hash_85b2225f3f649d79") == "") {
+    if (getdvar(@"createfx_map") == "") {
         /#
-            setdevdvar(@"hash_85b2225f3f649d79", level.script);
+            setdevdvar(@"createfx_map", level.script);
         #/
-    } else if (getdvar(@"hash_85b2225f3f649d79") == level.script) {
+    } else if (getdvar(@"createfx_map") == level.script) {
         [[ level.func_position_player ]]();
     }
     init_crosshair();
@@ -357,7 +357,7 @@ function createfxlogic() {
         setdevdvar(@"fx", "<dev string:x1c>");
         setdevdvar(@"select_by_substring", "<dev string:x20>");
     #/
-    setdvarifuninitialized(@"hash_319e665538ddb37f", "");
+    setdvarifuninitialized(@"createfx_filter", "");
     setdvarifuninitialized(@"hash_8eac3f47ca6c0729", "0");
     /#
         if (getdvar(@"hash_1b7eec3c3206970b") == "<dev string:x20>") {
@@ -660,7 +660,7 @@ function manipulate_createfx_ents(highlightedent, var_24762ec425490dd4, leftheld
         if (!ent.drawn) {
             continue;
         }
-        if (is_ent_filtered_out(ent, getdvar(@"hash_319e665538ddb37f"))) {
+        if (is_ent_filtered_out(ent, getdvar(@"createfx_filter"))) {
             continue;
         }
         scale = getdvarfloat(@"hash_af4eccdbca5a551c");
@@ -708,22 +708,22 @@ function draw_origin(scale, colorindex) {
     view_origin = level.player getvieworigin();
     view_angles = level.player getplayerangles();
     color = level._createfx.colors[self.v["type"]][colorindex];
-    var_94d86565c4d2c660 = 0;
-    var_27ee0289d942057b = 1;
+    line_alpha = 0;
+    sprite_alpha = 1;
     angles_offset = (0, 0, 0);
     isclose = distancesquared(view_origin, self.v["origin"]) < 36864;
     if (isclose) {
         view_distance = distance(view_origin, self.v["origin"]);
         distance_delta = view_distance / 176;
-        var_94d86565c4d2c660 = 1 - clamp(distance_delta, 0, 1);
-        var_27ee0289d942057b = clamp(distance_delta, 0.333, 1);
+        line_alpha = 1 - clamp(distance_delta, 0, 1);
+        sprite_alpha = clamp(distance_delta, 0.333, 1);
         offset_right = anglestoright(view_angles) * -4;
         offset_up = anglestoup(view_angles) * -4.666;
         angles_offset = offset_right + offset_up;
     }
     /#
-        print3d(self.v["<dev string:x2b>"] + angles_offset, "<dev string:x32>", color, var_27ee0289d942057b, scale);
-        if (var_94d86565c4d2c660 > 0) {
+        print3d(self.v["<dev string:x2b>"] + angles_offset, "<dev string:x32>", color, sprite_alpha, scale);
+        if (line_alpha > 0) {
             iswithinfov = within_fov(view_origin, view_angles, self.v["<dev string:x2b>"], 0.422618);
             if (iswithinfov) {
                 ssize = 2;
@@ -735,9 +735,9 @@ function draw_origin(scale, colorindex) {
                 right *= lsize * scale;
                 up = anglestoup(self.v["<dev string:x34>"]);
                 up *= lsize * scale;
-                line(self.v["<dev string:x2b>"] - forward, self.v["<dev string:x2b>"] + forward, color, var_94d86565c4d2c660);
-                line(self.v["<dev string:x2b>"] - right, self.v["<dev string:x2b>"] + right, color, var_94d86565c4d2c660);
-                line(self.v["<dev string:x2b>"] - up, self.v["<dev string:x2b>"] + up, color, var_94d86565c4d2c660);
+                line(self.v["<dev string:x2b>"] - forward, self.v["<dev string:x2b>"] + forward, color, line_alpha);
+                line(self.v["<dev string:x2b>"] - right, self.v["<dev string:x2b>"] + right, color, line_alpha);
+                line(self.v["<dev string:x2b>"] - up, self.v["<dev string:x2b>"] + up, color, line_alpha);
             }
         }
     #/

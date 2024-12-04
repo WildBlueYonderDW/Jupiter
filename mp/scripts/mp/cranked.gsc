@@ -1,15 +1,15 @@
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\mp\hostmigration;
+#using scripts\mp\rank;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\weapons;
 
 #namespace cranked;
 

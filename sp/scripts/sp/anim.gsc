@@ -1,37 +1,37 @@
-#using scripts\common\anim.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_3433ee6b63c7e243;
-#using script_7e4d332e911e1b90;
-#using scripts\anim\face.gsc;
-#using scripts\sp\interaction.gsc;
-#using scripts\sp\anim_notetrack.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using script_55b3046625fb79b6;
-#using script_4fd828ec1a0272ae;
-#using script_3aeb9f02de401a76;
-#using scripts\anim\notetracks.gsc;
-#using scripts\asm\shared\sp\utility.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\sp\player.gsc;
-#using script_5b8e8bb3dc00ae30;
-#using scripts\asm\shared\utility.gsc;
-#using script_4dac3680f88a01c3;
-#using scripts\sp\fakeactor.gsc;
 #using script_3769cad2888de2ac;
-#using scripts\stealth\enemy.gsc;
-#using scripts\sp\spawner.gsc;
-#using scripts\sp\debug.gsc;
+#using script_3aeb9f02de401a76;
+#using script_4dac3680f88a01c3;
+#using script_4fd828ec1a0272ae;
+#using script_55b3046625fb79b6;
+#using script_5b8e8bb3dc00ae30;
+#using script_7e4d332e911e1b90;
+#using scripts\aitypes\bt_util;
+#using scripts\anim\face;
+#using scripts\anim\notetracks;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\asm\shared\sp\utility;
+#using scripts\asm\shared\utility;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim_notetrack;
+#using scripts\sp\debug;
+#using scripts\sp\fakeactor;
+#using scripts\sp\interaction;
+#using scripts\sp\player;
+#using scripts\sp\spawner;
+#using scripts\sp\utility;
+#using scripts\stealth\enemy;
 
-#namespace namespace_72b975aae422b41a;
+#namespace anim_sp;
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8fe
 // Size: 0x1f7
@@ -74,7 +74,7 @@ function init() {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xafd
 // Size: 0xf8
@@ -99,18 +99,18 @@ function function_3a81a3f984fc4a09(anime) {
     return var_eaf05d29b3fd082c;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xbfe
 // Size: 0x42
-function function_cf49d3451c08681c(var_4c9dd34f67ccafad) {
-    assert(soundexists(var_4c9dd34f67ccafad));
-    self waittillmatch("single anim", "vo_" + var_4c9dd34f67ccafad);
-    var_ce433278f5985365 = lookupsoundlength(var_4c9dd34f67ccafad);
-    wait var_ce433278f5985365 / 1000;
+function function_cf49d3451c08681c(vo_alias) {
+    assert(soundexists(vo_alias));
+    self waittillmatch("single anim", "vo_" + vo_alias);
+    ms = lookupsoundlength(vo_alias);
+    wait ms / 1000;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc48
 // Size: 0x56
@@ -125,7 +125,7 @@ function igc_camera(bool) {
     level.player scripts\common\utility::igc_camera(bool);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xca6
 // Size: 0x25
@@ -133,7 +133,7 @@ function letterbox_enable(bool, time) {
     level.player scripts\common\utility::letterbox_enable(bool, time);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd3
 // Size: 0x4b
@@ -144,11 +144,11 @@ function play_xcam(xcamasset, origin, angles) {
     wait getxcamlength(xcamasset);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xd26
 // Size: 0xec
-function function_e2ca6c74c16376cc(attacker, inflictor, meansofdeath, weaponobj) {
+function die_frozen(attacker, inflictor, meansofdeath, weaponobj) {
     assertex(isai(self), "called die_frozen() on a non-AI!");
     assertex(isalive(self), "AI is already dead!");
     self.allowdeath = 1;
@@ -167,7 +167,7 @@ function function_e2ca6c74c16376cc(attacker, inflictor, meansofdeath, weaponobj)
     self dodamage(self.health + 1, self.origin, attacker, inflictor, meansofdeath, undefined);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe1a
 // Size: 0x54
@@ -180,7 +180,7 @@ function anim_generic_gravity(guy, anime, tag) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe76
 // Size: 0x3b
@@ -190,7 +190,7 @@ function anim_generic_reach(guy, anime, tag) {
     anim_reach(guys, anime, tag, "generic");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xeb9
 // Size: 0x33
@@ -198,7 +198,7 @@ function anim_generic_reach_and_arrive(guy, anime, tag, arrival_type) {
     reach_and_arrive_internal(guy, anime, tag, arrival_type, "generic");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xef4
 // Size: 0x39
@@ -206,11 +206,11 @@ function anim_reach_and_arrive(guy, anime, tag, arrival_type) {
     reach_and_arrive_internal(guy, anime, tag, arrival_type, guy.animname);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xf35
 // Size: 0x1c4
-function reach_and_arrive_internal(guy, anime, tag, arrival_type, var_b0b2c762643058d2) {
+function reach_and_arrive_internal(guy, anime, tag, arrival_type, anim_location) {
     if (is_interact_struct(self) || is_state_interact_struct(self)) {
         if (isdefined(self.script_reaction)) {
             guy.asm.customdata.interaction = self.script_reaction;
@@ -226,16 +226,16 @@ function reach_and_arrive_internal(guy, anime, tag, arrival_type, var_b0b2c76264
             guy.asm.customdata.arrivalstate = guy get_arrivalstate_from_interaction(interaction);
         }
         if (isdefined(guy.asm.customdata.arrivalstate)) {
-            anim_reach_with_funcs([guy], anime, tag, var_b0b2c762643058d2, &reach_to_interact_begin, &reach_to_interact_end, arrival_type);
+            anim_reach_with_funcs([guy], anime, tag, anim_location, &reach_to_interact_begin, &reach_to_interact_end, arrival_type);
         } else {
-            anim_reach_with_funcs([guy], anime, tag, var_b0b2c762643058d2, &reach_with_arrivals_begin, &reach_with_standard_adjustments_end, arrival_type);
+            anim_reach_with_funcs([guy], anime, tag, anim_location, &reach_with_arrivals_begin, &reach_with_standard_adjustments_end, arrival_type);
         }
         return;
     }
-    anim_reach_with_funcs([guy], anime, tag, var_b0b2c762643058d2, &reach_with_arrivals_begin, &reach_with_standard_adjustments_end, arrival_type);
+    anim_reach_with_funcs([guy], anime, tag, anim_location, &reach_with_arrivals_begin, &reach_with_standard_adjustments_end, arrival_type);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1101
 // Size: 0x30
@@ -243,7 +243,7 @@ function anim_reach_and_plant(guys, anime, tag) {
     anim_reach_with_funcs(guys, anime, tag, undefined, &reach_with_planting, &reach_with_standard_adjustments_end);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1139
 // Size: 0x30
@@ -251,11 +251,11 @@ function anim_reach_and_plant_and_arrive(guys, anime, tag) {
     anim_reach_with_funcs(guys, anime, tag, undefined, &reach_with_planting_and_arrivals, &reach_with_standard_adjustments_end);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1171
 // Size: 0xff
-function anim_custom_animmode(guys, var_9481a070a25eb0bd, anime, tag) {
+function anim_custom_animmode(guys, custom_animmode, anime, tag) {
     array = get_anim_position(tag);
     org = array["origin"];
     angles = array["angles"];
@@ -263,30 +263,30 @@ function anim_custom_animmode(guys, var_9481a070a25eb0bd, anime, tag) {
     foreach (guy in guys) {
         var_729c6cfe1296e25b = guy;
         assertex(isdefined(guy.animname), "Guy wants to do animmode custom but has no animname");
-        thread anim_custom_animmode_on_guy(guy, var_9481a070a25eb0bd, anime, org, angles, guy.animname, 0);
+        thread anim_custom_animmode_on_guy(guy, custom_animmode, anime, org, angles, guy.animname, 0);
     }
     assertex(isdefined(var_729c6cfe1296e25b), "anim_custom_animmode called without a guy in the array");
     var_729c6cfe1296e25b wait_until_anim_finishes(anime);
     self notify(anime);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1278
 // Size: 0xdb
-function anim_custom_animmode_loop(guys, var_9481a070a25eb0bd, anime, tag) {
+function anim_custom_animmode_loop(guys, custom_animmode, anime, tag) {
     array = get_anim_position(tag);
     org = array["origin"];
     angles = array["angles"];
     foreach (guy in guys) {
-        thread anim_custom_animmode_on_guy(guy, var_9481a070a25eb0bd, anime, org, angles, guy.animname, 1);
+        thread anim_custom_animmode_on_guy(guy, custom_animmode, anime, org, angles, guy.animname, 1);
     }
     assertex(isdefined(guys[0]), "anim_custom_animmode called without a guy in the array");
     guys[0] wait_until_anim_finishes(anime);
     self notify(anime);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x135b
 // Size: 0x1c
@@ -295,57 +295,57 @@ function wait_until_anim_finishes(anime) {
     self waittill("death");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x137f
 // Size: 0x91
-function anim_generic_custom_animmode(guy, var_9481a070a25eb0bd, anime, tag, thread_func, var_212b748f7df888b0) {
+function anim_generic_custom_animmode(guy, custom_animmode, anime, tag, thread_func, var_212b748f7df888b0) {
     array = get_anim_position(tag);
     org = array["origin"];
     angles = array["angles"];
-    thread anim_custom_animmode_on_guy(guy, var_9481a070a25eb0bd, anime, org, angles, "generic", 0, thread_func, var_212b748f7df888b0);
+    thread anim_custom_animmode_on_guy(guy, custom_animmode, anime, org, angles, "generic", 0, thread_func, var_212b748f7df888b0);
     guy wait_until_anim_finishes(anime);
     self notify(anime);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1418
 // Size: 0x92
-function anim_generic_custom_animmode_loop(guy, var_9481a070a25eb0bd, anime, tag, thread_func, var_212b748f7df888b0) {
+function anim_generic_custom_animmode_loop(guy, custom_animmode, anime, tag, thread_func, var_212b748f7df888b0) {
     array = get_anim_position(tag);
     org = array["origin"];
     angles = array["angles"];
-    thread anim_custom_animmode_on_guy(guy, var_9481a070a25eb0bd, anime, org, angles, "generic", 1, thread_func, var_212b748f7df888b0);
+    thread anim_custom_animmode_on_guy(guy, custom_animmode, anime, org, angles, "generic", 1, thread_func, var_212b748f7df888b0);
     guy wait_until_anim_finishes(anime);
     self notify(anime);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x14b2
 // Size: 0x3f
-function anim_custom_animmode_solo(guy, var_9481a070a25eb0bd, anime, tag) {
+function anim_custom_animmode_solo(guy, custom_animmode, anime, tag) {
     guys = [];
     guys[0] = guy;
-    anim_custom_animmode(guys, var_9481a070a25eb0bd, anime, tag);
+    anim_custom_animmode(guys, custom_animmode, anime, tag);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f9
 // Size: 0x3f
-function anim_custom_animmode_loop_solo(guy, var_9481a070a25eb0bd, anime, tag) {
+function anim_custom_animmode_loop_solo(guy, custom_animmode, anime, tag) {
     guys = [];
     guys[0] = guy;
-    anim_custom_animmode_loop(guys, var_9481a070a25eb0bd, anime, tag);
+    anim_custom_animmode_loop(guys, custom_animmode, anime, tag);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x1540
 // Size: 0x136
-function anim_custom_animmode_on_guy(guy, var_9481a070a25eb0bd, anime, org, angles, animname_override, loop, thread_func, var_212b748f7df888b0) {
+function anim_custom_animmode_on_guy(guy, custom_animmode, anime, org, angles, animname_override, loop, thread_func, var_212b748f7df888b0) {
     if (isai(guy) && guy doinglongdeath()) {
         return;
     }
@@ -362,7 +362,7 @@ function anim_custom_animmode_on_guy(guy, var_9481a070a25eb0bd, anime, org, angl
     if (!isdefined(var_212b748f7df888b0) || !var_212b748f7df888b0) {
         guy set_start_pos(anime, org, angles, animname_override, loop);
     }
-    guy._animmode = var_9481a070a25eb0bd;
+    guy._animmode = custom_animmode;
     guy._custom_anim = anime;
     guy._tag_entity = self;
     guy._anime = anime;
@@ -372,7 +372,7 @@ function anim_custom_animmode_on_guy(guy, var_9481a070a25eb0bd, anime, org, angl
     guy asm_animcustom(&namespace_435a398e8d989a8::main, &asm_stopanimcustom);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x167e
 // Size: 0xc6
@@ -388,7 +388,7 @@ function anim_single_gravity(guys, anime, tag) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x174c
 // Size: 0x33
@@ -396,7 +396,7 @@ function anim_single_run(guys, anime, tag, animname_override) {
     anim_single_internal(guys, anime, tag, 0.25, animname_override);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1787
 // Size: 0xcd
@@ -416,7 +416,7 @@ function anim_reach_and_idle(guys, anime, var_e4201394bcceef66, ender, tag) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x185c
 // Size: 0x11
@@ -425,7 +425,7 @@ function wait_for_guy_to_die_or_get_in_position() {
     self waittill("anim_reach_complete");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1875
 // Size: 0x5b
@@ -438,7 +438,7 @@ function idle_on_reach(guy, var_e4201394bcceef66, ender, tag, ent) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x18d8
 // Size: 0x9c
@@ -447,11 +447,11 @@ function anim_reach_together(guys, anime, tag, animname_override) {
     foreach (guy in guys) {
         var_54e516bef4218c8f[var_54e516bef4218c8f.size] = [guy];
     }
-    thread function_75212273daeae48a(var_54e516bef4218c8f);
+    thread anim_reach_speed_control(var_54e516bef4218c8f);
     anim_reach_with_funcs(guys, anime, tag, animname_override, &reach_with_standard_adjustments_begin, &reach_with_standard_adjustments_end);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x197c
 // Size: 0x7c
@@ -468,7 +468,7 @@ function anim_reach_failsafe(var_420777c0f0775a09, time) {
     guy notify("goal");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a00
 // Size: 0x100
@@ -487,7 +487,7 @@ function anim_reach(guys, anime, tag, animname_override) {
     anim_reach_with_funcs(guys, anime, tag, animname_override, &function_8ab3eaeab1010bd4, &function_ac52eeb7b35a4600);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b08
 // Size: 0x75
@@ -505,7 +505,7 @@ function anim_reach_cleanup_solo(guy) {
     guy.stopanimdistsq = 0;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b85
 // Size: 0xdc
@@ -520,7 +520,7 @@ function anim_spawner_teleport(guys, anime, tag) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c69
 // Size: 0x1ba
@@ -556,7 +556,7 @@ function reach_to_interact_begin(startorg, startangles) {
     return startorg;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e2c
 // Size: 0x11d
@@ -585,7 +585,7 @@ function function_8ab3eaeab1010bd4(startorg, startangles) {
     return startorg;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f52
 // Size: 0x14d
@@ -611,7 +611,7 @@ function reach_to_interact_end() {
     self.var_a41edf45bb0ff97 = undefined;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20a7
 // Size: 0x9a
@@ -630,7 +630,7 @@ function function_ac52eeb7b35a4600() {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2149
 // Size: 0x38
@@ -642,7 +642,7 @@ function anim_changes_pushplayer(value) {
     self pushplayer(value);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2189
 // Size: 0x28
@@ -652,7 +652,7 @@ function reach_with_arrivals_begin(startorg, startangles) {
     return startorg;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x21ba
 // Size: 0x49
@@ -665,7 +665,7 @@ function reach_with_planting(startorg, startangles) {
     return startorg;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x220c
 // Size: 0x48
@@ -678,7 +678,7 @@ function reach_with_planting_and_arrivals(startorg, startangles) {
     return startorg;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x225d
 // Size: 0x4c
@@ -688,7 +688,7 @@ function anim_reach_and_idle_solo(guy, anime, var_e4201394bcceef66, ender, tag) 
     anim_reach_and_idle(newguy, anime, var_e4201394bcceef66, ender, tag);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x22b1
 // Size: 0x3a
@@ -698,7 +698,7 @@ function anim_reach_solo(guy, anime, tag) {
     anim_reach(newguy, anime, tag);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x22f3
 // Size: 0x43
@@ -708,11 +708,11 @@ function anim_reach_and_approach_solo(guy, anime, tag, arrival_type) {
     anim_reach_and_approach(newguy, anime, tag, arrival_type);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x233e
 // Size: 0x1c3
-function anim_reach_and_approach_node_solo(guy, anime, tag, node_type, var_318d1aa38f85dff) {
+function anim_reach_and_approach_node_solo(guy, anime, tag, node_type, arrival_stance) {
     self endon("death");
     newguy[0] = guy;
     array = get_anim_position(tag);
@@ -735,8 +735,8 @@ function anim_reach_and_approach_node_solo(guy, anime, tag, node_type, var_318d1
     } else {
         var_5bb322db0befe793.type = self.type;
     }
-    if (isdefined(var_318d1aa38f85dff)) {
-        var_5bb322db0befe793.arrivalstance = var_318d1aa38f85dff;
+    if (isdefined(arrival_stance)) {
+        var_5bb322db0befe793.arrivalstance = arrival_stance;
     } else {
         var_5bb322db0befe793.arrivalstance = self gethighestnodestance();
     }
@@ -749,7 +749,7 @@ function anim_reach_and_approach_node_solo(guy, anime, tag, node_type, var_318d1
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2509
 // Size: 0x115
@@ -772,7 +772,7 @@ function anim_reach_and_approach(guys, anime, tag, arrival_type) {
     anim_reach_with_funcs(guys, anime, tag, undefined, &reach_with_arrivals_begin, &reach_with_standard_adjustments_end, arrival_type);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2626
 // Size: 0xa3
@@ -793,7 +793,7 @@ function add_animation(animname, anime) {
     level.completedanims[animname][level.completedanims[animname].size] = anime;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x26d1
 // Size: 0x8b
@@ -811,7 +811,7 @@ function anim_single_queue(guy, anime, tag, var_9e8a16d47a03007a) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2764
 // Size: 0xbd
@@ -834,7 +834,7 @@ function anim_generic_queue(guy, anime, tag, var_9e8a16d47a03007a, timeout) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2829
 // Size: 0x54
@@ -844,7 +844,7 @@ function anim_dontpushplayer(guys) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2885
 // Size: 0x55
@@ -854,7 +854,7 @@ function anim_pushplayer(guys) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28e2
 // Size: 0x58
@@ -868,7 +868,7 @@ function function_ce450b9957138bd5() {
     return true;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2943
 // Size: 0xcb
@@ -890,7 +890,7 @@ function anim_facialanim(guy, anime, faceanim) {
     thread clearfaceanimonanimdone(guy, animflag, anime);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a16
 // Size: 0x115
@@ -923,7 +923,7 @@ function facial_notetrack_handler(guy, animflag, anime) {
 
 /#
 
-    // Namespace namespace_72b975aae422b41a / scripts\sp\anim
+    // Namespace anim_sp / scripts\sp\anim
     // Params 4, eflags: 0x0
     // Checksum 0x0, Offset: 0x2b33
     // Size: 0x89
@@ -948,7 +948,7 @@ function facial_notetrack_handler(guy, animflag, anime) {
 
 #/
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bc4
 // Size: 0x260
@@ -1011,7 +1011,7 @@ function anim_facialfiller(msg, looktarget, force, msg_ent, intensity) {
     scripts\asm\shared\utility::clearfacialstate("filler");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e2c
 // Size: 0x80
@@ -1027,7 +1027,7 @@ function talk_for_time(timer) {
     scripts\asm\shared\utility::disabledefaultfacialanims(0);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2eb4
 // Size: 0xa9
@@ -1043,7 +1043,7 @@ function anim_reach_idle(guys, anime, idle) {
     self notify("stopReachIdle");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f65
 // Size: 0x5e
@@ -1056,7 +1056,7 @@ function reachidle(guy, anime, idle, ent) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fcb
 // Size: 0x69
@@ -1070,7 +1070,7 @@ function clearfaceanimonanimdone(guy, animflag, anime) {
     scripts\asm\shared\utility::disabledefaultfacialanims(0);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x303c
 // Size: 0x26
@@ -1078,7 +1078,7 @@ function anim_set_rate_single(guy, anime, rate) {
     guy thread anim_set_rate_internal(anime, rate);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x306a
 // Size: 0x2a
@@ -1086,7 +1086,7 @@ function anim_set_rate(guys, anime, rate) {
     array_thread(guys, &anim_set_rate_internal, anime, rate);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x309c
 // Size: 0x55
@@ -1100,11 +1100,11 @@ function anim_set_rate_internal(anime, rate, animname_override) {
     self setflaggedanim("single anim", getanim_from_animname(anime, animname), 1, 0, rate);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x30f9
 // Size: 0xbb
-function create_anim_scene(animtree, anim_sequence, var_1a9f98127777f9f7, animname, model) {
+function create_anim_scene(animtree, anim_sequence, anim_asset, animname, model) {
     if (!isdefined(animname)) {
         animname = "generic";
     } else {
@@ -1116,15 +1116,15 @@ function create_anim_scene(animtree, anim_sequence, var_1a9f98127777f9f7, animna
     if (isdefined(model)) {
         level.scr_model[animname] = model;
     }
-    if (isdefined(var_1a9f98127777f9f7)) {
-        level.scr_anim[animname][anim_sequence] = var_1a9f98127777f9f7;
+    if (isdefined(anim_asset)) {
+        level.scr_anim[animname][anim_sequence] = anim_asset;
     }
     scene.animname = animname;
     scene.anim_sequence = anim_sequence;
     level.current_anim_data_scene = scene;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x31bc
 // Size: 0x69
@@ -1136,7 +1136,7 @@ function blended_loop_solo(guy, lookat, anim_array, ender) {
     guy asm_animcustom(&namespace_3123a12d1da4993::blended_loop_anim, &namespace_3123a12d1da4993::blended_loop_cleanup);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x322d
 // Size: 0x67
@@ -1150,7 +1150,7 @@ function blended_anim_solo(guy, lookat, anim_array) {
     guy asm_animcustom(&namespace_3123a12d1da4993::blended_anim);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x329c
 // Size: 0x67
@@ -1160,7 +1160,7 @@ function anim_block_in_single(guys, anime, lerp_speed) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x330b
 // Size: 0x26
@@ -1168,7 +1168,7 @@ function anim_block_in_solo(guy, anime, lerp_speed) {
     thread anim_block_in_internal(guy, anime, lerp_speed);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3339
 // Size: 0x3ee
@@ -1185,29 +1185,29 @@ function anim_block_in_internal(newguy, anime, lerp_speed) {
     if (!isdefined(lerp_speed)) {
         lerp_speed = 50;
     }
-    var_7b05333688fbcd77 = spawn("script_model", newguy.origin);
-    var_7b05333688fbcd77.angles = newguy.angles;
-    var_7b05333688fbcd77 setmodel("tag_origin");
-    var_5ede15b5b3c5ef1 = newguy.ignoreall;
-    var_dde60030d0ccf9a0 = newguy.ignoreme;
-    newguy thread anim_block_in_cleanup_internal(var_7b05333688fbcd77, var_5ede15b5b3c5ef1, var_dde60030d0ccf9a0);
+    mover_org = spawn("script_model", newguy.origin);
+    mover_org.angles = newguy.angles;
+    mover_org setmodel("tag_origin");
+    og_ignoreall = newguy.ignoreall;
+    og_ignoreme = newguy.ignoreme;
+    newguy thread anim_block_in_cleanup_internal(mover_org, og_ignoreall, og_ignoreme);
     dist = distance(newguy.origin, start.origin);
     var_d8c375423b38300c = dist / lerp_speed;
     if (isplayer(newguy)) {
-        newguy playerlinktoabsolute(var_7b05333688fbcd77);
+        newguy playerlinktoabsolute(mover_org);
     } else if (isai(newguy)) {
         newguy animcustom(&t_poser);
-        newguy linkto(var_7b05333688fbcd77, "tag_origin", (0, 0, 0), (0, 0, 0));
+        newguy linkto(mover_org, "tag_origin", (0, 0, 0), (0, 0, 0));
         newguy.ignoreall = 1;
     } else {
-        newguy linkto(var_7b05333688fbcd77, "tag_origin", (0, 0, 0), (0, 0, 0));
+        newguy linkto(mover_org, "tag_origin", (0, 0, 0), (0, 0, 0));
         newguy.ignoreall = 1;
     }
     newguy.ignoreme = 1;
     var_d8c375423b38300c = ter_op(var_d8c375423b38300c == 0, 0.05, var_d8c375423b38300c);
-    var_13764104713a2272 = 0.05;
-    var_7b05333688fbcd77 moveto(start.origin, var_13764104713a2272);
-    var_7b05333688fbcd77 rotateto(start.angles, var_13764104713a2272);
+    instant_lerp = 0.05;
+    mover_org moveto(start.origin, instant_lerp);
+    mover_org rotateto(start.angles, instant_lerp);
     if (isai(newguy)) {
         if (!isdefined(start.angles)) {
             newguy orientmode("face point", start.origin);
@@ -1215,7 +1215,7 @@ function anim_block_in_internal(newguy, anime, lerp_speed) {
             newguy orientmode("face angle", start.angles[1]);
         }
     }
-    var_7b05333688fbcd77 waittill("movedone");
+    mover_org waittill("movedone");
     start script_wait();
     while (isdefined(start.target)) {
         next = getstruct(start.target, "targetname");
@@ -1226,25 +1226,25 @@ function anim_block_in_internal(newguy, anime, lerp_speed) {
         start = next;
         dist = distance(newguy.origin, start.origin);
         var_d8c375423b38300c = dist / lerp_speed;
-        var_7b05333688fbcd77 moveto(start.origin, var_d8c375423b38300c);
+        mover_org moveto(start.origin, var_d8c375423b38300c);
         if (isdefined(start.angles)) {
-            var_7b05333688fbcd77 rotateto(start.angles, var_d8c375423b38300c);
+            mover_org rotateto(start.angles, var_d8c375423b38300c);
             if (isai(newguy)) {
                 newguy orientmode("face angle", start.angles[1]);
             }
         } else {
-            var_7b05333688fbcd77 rotateto(vectortoangles(next.origin - var_7b05333688fbcd77.origin), var_d8c375423b38300c);
+            mover_org rotateto(vectortoangles(next.origin - mover_org.origin), var_d8c375423b38300c);
             if (isai(newguy)) {
                 newguy orientmode("face point", next.origin);
             }
         }
-        var_7b05333688fbcd77 waittill("movedone");
+        mover_org waittill("movedone");
         start script_wait();
     }
     newguy notify("tposer done");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x372f
 // Size: 0x1f
@@ -1253,21 +1253,21 @@ function t_poser() {
     waittill_any("tposer done", "stop_blockin");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3756
 // Size: 0x5c
-function anim_block_in_cleanup_internal(var_7b05333688fbcd77, var_5ede15b5b3c5ef1, var_dde60030d0ccf9a0) {
+function anim_block_in_cleanup_internal(mover_org, og_ignoreall, og_ignoreme) {
     waittill_any("tposer done", "stop_blockin", "death");
     self unlink();
     if (isai(self)) {
-        self.ignoreall = var_5ede15b5b3c5ef1;
+        self.ignoreall = og_ignoreall;
     }
-    self.ignoreme = var_dde60030d0ccf9a0;
-    var_7b05333688fbcd77 delete();
+    self.ignoreme = og_ignoreme;
+    mover_org delete();
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x37ba
 // Size: 0x13
@@ -1275,7 +1275,7 @@ function should_do_anim() {
     return !isai(self) || !doinglongdeath();
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x37d6
 // Size: 0x7c
@@ -1297,7 +1297,7 @@ function teleport_entity(origin, angles) {
     self dontinterpolate();
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x385a
 // Size: 0xaa
@@ -1328,7 +1328,7 @@ function play_sound_at_viewheight(aliasname, notification_string, var_a68adbd3ee
     thread bcs_scripted_dialog_clear(aliasname, notification_string);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x390c
 // Size: 0x53
@@ -1344,7 +1344,7 @@ function bcs_scripted_dialog_clear(aliasname, notification_string) {
     self.scripteddialoguenonotify = undefined;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x3967
 // Size: 0xfc
@@ -1376,7 +1376,7 @@ function do_facial_anim(DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, a
     return false;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a6c
 // Size: 0x307
@@ -1435,7 +1435,7 @@ function do_animation(org, angles, animname, anime, anim_string, idleanim, scrip
     return getanimlength(animation);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d7c
 // Size: 0x51
@@ -1448,7 +1448,7 @@ function animscriptdonotetracksthread(guy, animstring, anime) {
     guy scripts\anim\notetracks::donotetracks(animstring);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3dd5
 // Size: 0x33
@@ -1458,7 +1458,7 @@ function ai_anim_first_frame(animation, animname) {
     asm_animcustom(&namespace_be305502d7dd8822::main);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e10
 // Size: 0x64
@@ -1473,7 +1473,7 @@ function anim_react_new(guys, node, anime) {
     return data;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e7d
 // Size: 0x59
@@ -1484,7 +1484,7 @@ function anim_react(guys, anime, var_eeed06d134835ea6, gotocombatonly) {
     anim_react_data(data);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ede
 // Size: 0x309
@@ -1533,7 +1533,7 @@ function anim_react_data(data) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x41ef
 // Size: 0x322
@@ -1561,14 +1561,14 @@ function anim_react_thread(data) {
         }
     }
     if (!var_718c9420062248c1) {
-        var_8017df2752812115 = get_react_type(type);
+        react_type = get_react_type(type);
         anime = data.anime;
         var_36cd2dbc4c68490 = undefined;
         if (isdefined(data.fnreactanime)) {
             var_36cd2dbc4c68490 = [[ data.fnreactanime ]](type);
         }
         /#
-            function_e661feea7049d008("<dev string:x200>" + var_8017df2752812115);
+            function_e661feea7049d008("<dev string:x200>" + react_type);
         #/
         if (type == "pain") {
             var_36cd2dbc4c68490 = anime + "_react_pain";
@@ -1585,7 +1585,7 @@ function anim_react_thread(data) {
         } else {
             level thread detach_linkedaniments(self);
             if (!isdefined(var_36cd2dbc4c68490)) {
-                var_36cd2dbc4c68490 = anime + "_react_" + var_8017df2752812115;
+                var_36cd2dbc4c68490 = anime + "_react_" + react_type;
             }
             if (!isdefined(level.scr_anim[self.animname][var_36cd2dbc4c68490])) {
                 var_36cd2dbc4c68490 = anime + "_react";
@@ -1624,7 +1624,7 @@ function anim_react_thread(data) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4519
 // Size: 0x38
@@ -1637,7 +1637,7 @@ function get_react_type(type) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4559
 // Size: 0x10c
@@ -1671,7 +1671,7 @@ function anim_react_wait_thread() {
     return type;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x466e
 // Size: 0xaa
@@ -1682,7 +1682,7 @@ function anim_react_damage() {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4720
 // Size: 0x24
@@ -1691,7 +1691,7 @@ function anim_react_waittill(msg) {
     self notify("anim_react_notify", msg, extra);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x474c
 // Size: 0xd8
@@ -1724,7 +1724,7 @@ function anim_react_radius() {
     self notify("too_close");
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x482c
 // Size: 0x18
@@ -1732,7 +1732,7 @@ function force_high_reaction() {
     self aieventlistenerevent("cover_blown", self, self.origin);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x484c
 // Size: 0x18
@@ -1740,7 +1740,7 @@ function force_low_reaction() {
     self aieventlistenerevent("investigate", self, self.origin);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x486c
 // Size: 0xa5
@@ -1769,7 +1769,7 @@ function anim_react_ai_events() {
 
 /#
 
-    // Namespace namespace_72b975aae422b41a / scripts\sp\anim
+    // Namespace anim_sp / scripts\sp\anim
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x4919
     // Size: 0xd9
@@ -1790,7 +1790,7 @@ function anim_react_ai_events() {
         }
     }
 
-    // Namespace namespace_72b975aae422b41a / scripts\sp\anim
+    // Namespace anim_sp / scripts\sp\anim
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x49fa
     // Size: 0x35
@@ -1802,7 +1802,7 @@ function anim_react_ai_events() {
 
 #/
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a37
 // Size: 0x12a
@@ -1827,7 +1827,7 @@ function anim_react_alertgroup_msg(suffix, type) {
     }
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b69
 // Size: 0x85
@@ -1845,7 +1845,7 @@ function anim_react_add_to_alertgroup(groupname) {
     self.alertgroupnames[self.alertgroupnames.size] = groupname;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bf6
 // Size: 0x103
@@ -1868,7 +1868,7 @@ function add_animents(array, anime) {
     return newarray;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d02
 // Size: 0x52
@@ -1880,7 +1880,7 @@ function anim_single_with_props(ents, anime, tag, var_9e8a16d47a03007a, animname
     anim_single(ents, anime, tag, var_9e8a16d47a03007a, animname_override);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d5c
 // Size: 0x5b
@@ -1892,7 +1892,7 @@ function anim_loop_with_props(ents, anime, ender, tag, var_656e3d548572faf6, ani
     anim_loop(ents, anime, ender, tag, var_656e3d548572faf6, animname_override);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4dbf
 // Size: 0xc6
@@ -1915,7 +1915,7 @@ function anim_react_death(node, guy, var_eeed06d134835ea6) {
     level thread detach_linkedaniments(guy);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e8d
 // Size: 0x54
@@ -1930,7 +1930,7 @@ function prop_deathanim(node) {
     node anim_single_solo(self, self.deathanime);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ee9
 // Size: 0x7b
@@ -1944,7 +1944,7 @@ function detach_linkedaniments(guy) {
     guy.linkedaniments = undefined;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f6c
 // Size: 0x1ce
@@ -1980,7 +1980,7 @@ function detach_linkedaniment(guy) {
     self physicslaunchclient(newpos, velocity);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x5142
 // Size: 0x41
@@ -1990,7 +1990,7 @@ function primaryweapon_leave_behind(tagname, suspend) {
     primaryweapon_leave_behind_internal(origin, angles, suspend);
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x518b
 // Size: 0x8d
@@ -2008,7 +2008,7 @@ function primaryweapon_leave_behind_internal(origin, angles, spawnflags) {
     self.dropweapon = 0;
 }
 
-// Namespace namespace_72b975aae422b41a / scripts\sp\anim
+// Namespace anim_sp / scripts\sp\anim
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5220
 // Size: 0x30

@@ -1,22 +1,22 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\common\devgui.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using script_610f57bddd265be2;
-#using scripts\mp\gametypes\br_bunker_utility.gsc;
 #using script_2d9d24f7c63ac143;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\common\utility.gsc;
 #using script_58f20490049af6ac;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using script_600b944a95c3a7bf;
+#using script_610f57bddd265be2;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_bunker_utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\trigger;
 
 #namespace namespace_db1a5a61b2f193c1;
 
@@ -302,7 +302,7 @@ function function_b67874af021d327f() {
             break;
         }
         var_8e99797ee3845048 = spawnscriptable(scriptablename, struct.origin, struct.angles);
-        var_8e99797ee3845048.var_7acff0291e4e0204 = struct.script_noteworthy;
+        var_8e99797ee3845048.ee_type = struct.script_noteworthy;
         var_8e99797ee3845048 setscriptablepartstate("bunker_document", "on");
     }
 }
@@ -823,7 +823,7 @@ function function_fc14fcc137d9fc2d(instance, part, state, player, var_a5b2c54141
     level endon("game_ended");
     player endon("disconnect");
     player endon("death");
-    switch (instance.var_7acff0291e4e0204) {
+    switch (instance.ee_type) {
     case #"hash_f2dfad9bf3d36039":
         player scripts\mp\utility\lower_message::setlowermessageomnvar("br_bunker_brief_message_01", undefined, 3);
         wait 3;
@@ -930,8 +930,8 @@ function devSetupBunkerDoor(origin, angles, doortype) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x340e
 // Size: 0x76
-function function_cc3c75e13749b1ea(origin, angles, var_872fff8a91852c9f, var_870c0d8a915cd0b1, targetname, script_noteworthy) {
-    triggervolume = spawn("noent_volume_trigger_box", origin, 0, var_872fff8a91852c9f, var_870c0d8a915cd0b1);
+function function_cc3c75e13749b1ea(origin, angles, size_min, size_max, targetname, script_noteworthy) {
+    triggervolume = spawn("noent_volume_trigger_box", origin, 0, size_min, size_max);
     triggervolume.script_noteworthy = script_noteworthy;
     triggervolume.targetname = targetname;
     triggervolume.angles = angles;
@@ -1001,16 +1001,16 @@ function function_cc3c75e13749b1ea(origin, angles, var_872fff8a91852c9f, var_870
             }
             switch (args[0]) {
             case #"hash_819aac6f5ae2fb78":
-                level.var_b5f05f99018b165 = spawnscriptable("<dev string:xd9>", spawnorigin);
+                level.bunker_monitor = spawnscriptable("<dev string:xd9>", spawnorigin);
                 break;
             case #"hash_fa2ad6f6bd651030":
-                if (isdefined(level.var_b5f05f99018b165)) {
-                    thread function_86e11b0e03845f1c(level.var_b5f05f99018b165, host);
+                if (isdefined(level.bunker_monitor)) {
+                    thread function_86e11b0e03845f1c(level.bunker_monitor, host);
                 }
                 break;
             case #"hash_3699ac6c262c25ea":
-                if (isdefined(level.var_b5f05f99018b165)) {
-                    level.var_b5f05f99018b165 setscriptablepartstate("<dev string:x107>", "<dev string:x100>");
+                if (isdefined(level.bunker_monitor)) {
+                    level.bunker_monitor setscriptablepartstate("<dev string:x107>", "<dev string:x100>");
                 }
                 break;
             default:
@@ -1018,7 +1018,7 @@ function function_cc3c75e13749b1ea(origin, angles, var_872fff8a91852c9f, var_870
             }
         case #"hash_98b2ab59713eb959":
             host = scripts\mp\gamelogic::gethostplayer();
-            level.var_ab224cd39fe26b2d = spawnscriptable("<dev string:x129>", spawnorigin);
+            level.bunker_map = spawnscriptable("<dev string:x129>", spawnorigin);
             break;
         case #"hash_ce6a5bc8660dc619":
             if (!isdefined(args[0])) {
@@ -1047,15 +1047,15 @@ function function_cc3c75e13749b1ea(origin, angles, var_872fff8a91852c9f, var_870
                 break;
             case #"hash_57a7bc028fc9b87f":
                 scriptable = spawnscriptable("<dev string:x1d4>", spawnorigin);
-                scriptable.var_7acff0291e4e0204 = "<dev string:x1f6>";
+                scriptable.ee_type = "<dev string:x1f6>";
                 break;
             case #"hash_5c10d9bd5595f96":
                 scriptable = spawnscriptable("<dev string:x217>", spawnorigin);
-                scriptable.var_7acff0291e4e0204 = "<dev string:x231>";
+                scriptable.ee_type = "<dev string:x231>";
                 break;
             case #"hash_dc82315419b37899":
                 scriptable = spawnscriptable("<dev string:x255>", spawnorigin);
-                scriptable.var_7acff0291e4e0204 = "<dev string:x271>";
+                scriptable.ee_type = "<dev string:x271>";
                 break;
             default:
                 break;

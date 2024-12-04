@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using script_7b2517368c79e5bc;
-#using script_43971bbeefd98f05;
-#using script_3d3d1ef33cecfb62;
-#using script_6b684505b9959a08;
-#using script_5f71ed065b9cea1e;
-#using script_33135cb7affb7992;
 #using script_17dc47fb18ded931;
-#using script_5815a7cb4d944542;
-#using script_41387eecc35b88bf;
 #using script_185660037b9236c1;
-#using script_6d16894933fe11bb;
-#using script_39d11000e476a42a;
-#using scripts\common\devgui.gsc;
 #using script_2707474774db34b;
+#using script_33135cb7affb7992;
+#using script_39d11000e476a42a;
+#using script_3d3d1ef33cecfb62;
+#using script_41387eecc35b88bf;
+#using script_43971bbeefd98f05;
 #using script_482376d10f69832c;
+#using script_5815a7cb4d944542;
+#using script_5f71ed065b9cea1e;
+#using script_6b684505b9959a08;
+#using script_6d16894933fe11bb;
+#using script_7b2517368c79e5bc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
 
 #namespace namespace_e190ad01ec038043;
 
@@ -685,7 +685,7 @@
     // Checksum 0x0, Offset: 0x18d4
     // Size: 0x16
     function function_fa399987cca698bf() {
-        setdvar(@"hash_ccd0e3741e4a99ce", 1);
+        setdvar(@"test_spawn", 1);
     }
 
     // Namespace namespace_e190ad01ec038043 / namespace_cdbd5ed319b707ee
@@ -732,7 +732,7 @@
     // Checksum 0x0, Offset: 0x19a8
     // Size: 0x26
     function function_93dd3a0e566cf68f(params) {
-        setdvar(@"hash_f8d289684c739744", function_8ba86866b46be578(params, 80));
+        setdvar(@"test_distance", function_8ba86866b46be578(params, 80));
     }
 
     // Namespace namespace_e190ad01ec038043 / namespace_cdbd5ed319b707ee
@@ -740,7 +740,7 @@
     // Checksum 0x0, Offset: 0x19d6
     // Size: 0x26
     function function_5d733649a75294ba(params) {
-        setdvar(@"hash_d8d9dc5f1a9e75a9", function_8ba86866b46be578(params, 120));
+        setdvar(@"test_radius", function_8ba86866b46be578(params, 120));
     }
 
     // Namespace namespace_e190ad01ec038043 / namespace_cdbd5ed319b707ee
@@ -748,7 +748,7 @@
     // Checksum 0x0, Offset: 0x1a04
     // Size: 0x29
     function function_85c67db3f5bb38ad(params) {
-        setdvar(@"hash_fea9941178b2235a", function_8ba86866b46be578(params, 0.5));
+        setdvar(@"test_fov", function_8ba86866b46be578(params, 0.5));
     }
 
     // Namespace namespace_e190ad01ec038043 / namespace_cdbd5ed319b707ee
@@ -811,15 +811,15 @@
             var_44abc2142cbaf028 = (0, 100, 100);
             var_eb66e42880eb990b = (0, 0, 255);
             var_7b08892f10fff3b4 = (0, 255, 0);
-            var_c36aacc7880bb472 = getdvarint(@"hash_f8d289684c739744", 80);
-            offset_radius = getdvarint(@"hash_d8d9dc5f1a9e75a9", 120);
+            var_c36aacc7880bb472 = getdvarint(@"test_distance", 80);
+            offset_radius = getdvarint(@"test_radius", 120);
             var_754a8d693fcd91fa = getdvarint(@"hash_a648b26bf386318b", 2);
             var_85507f88aefabcf8 = getdvarint(@"hash_88de563635d1c8f4", 22);
             var_bdddd54b5215d262 = getdvarint(@"hash_14a76d70faf5b5de", 36);
             var_6c100a7b08956c0 = getdvarint(@"hash_631bc888d0a9d40c", 0.5);
-            var_ff35512e43399552 = cos(getdvarint(@"hash_fea9941178b2235a", 60));
+            var_ff35512e43399552 = cos(getdvarint(@"test_fov", 60));
             var_53fa59172b1a5af3 = getdvarint(@"hash_115f84e0712dc11", 16);
-            var_6a92292682f42b7d = getdvarint(@"hash_ccd0e3741e4a99ce", 0);
+            var_6a92292682f42b7d = getdvarint(@"test_spawn", 0);
             var_6e6fc2a91d9973cf = getdvarint(@"hash_ed4e1c3ec7fb385d", 0);
             var_c4cf0e3e67a24f23 = getdvarint(@"hash_c64fb3f1e87bb1fd", 0);
             var_cb6bd5684b8d4a58 = var_6a92292682f42b7d ? 9999 : ceil(8 / var_754a8d693fcd91fa);
@@ -838,7 +838,7 @@
                 continue;
             }
             if (var_6a92292682f42b7d) {
-                setdvar(@"hash_ccd0e3741e4a99ce", 0);
+                setdvar(@"test_spawn", 0);
                 var_8413510412a61b93 = setdvar(@"hash_1ed3e490fb83235e", 2);
                 placement = namespace_bd7428f3122be80f::function_3ae7f99339b96499(selected_position, 0);
                 group = [level.player];

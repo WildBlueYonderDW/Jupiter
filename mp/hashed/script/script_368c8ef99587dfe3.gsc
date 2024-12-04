@@ -1,22 +1,22 @@
-#using script_451a1a9bd9613164;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_282eb9d7fde0753e;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using script_451a1a9bd9613164;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gameobjects;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\spawn_event_aggregator;
 
 #namespace namespace_6ea38b6e0f4f1418;
 
@@ -58,7 +58,7 @@ function function_3dc43012396a57c5() {
             firstspawn = 0;
             wait 15;
         }
-        sword = function_ed4dd2a1bb7cf6a(origin);
+        sword = spawn_sword(origin);
         objective_playermask_showtoall(level.var_7fb45e60b8b493cd);
         if (var_d738c88dd3c5e3c0) {
             scripts\mp\objidpoolmanager::update_objective_icon(level.var_7fb45e60b8b493cd, "jup_ui_map_icon_jugg_mosh_sword_active");
@@ -120,7 +120,7 @@ function function_17225b7d1fe74960(sword, var_d738c88dd3c5e3c0, time) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ef
 // Size: 0x71
-function function_ed4dd2a1bb7cf6a(origin) {
+function spawn_sword(origin) {
     spawnflags = 1;
     weaponfixed = utility::function_ec8a443fe8165fe4("jup_jp23_me_swhiskey_mp+bp_tune0+jup_jp23_me_swhiskey_rec|4+loot1", origin, [], (45, 45, 45), spawnflags);
     weaponfixed hudoutlineenable("outlinefill_depth_white");

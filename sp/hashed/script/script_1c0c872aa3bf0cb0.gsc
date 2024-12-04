@@ -1,11 +1,11 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_3433ee6b63c7e243;
-#using scripts\mp\mp_agent.gsc;
 #using script_1c0c872aa3bf0cb0;
+#using script_3433ee6b63c7e243;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace nvg_ai;
 
@@ -52,8 +52,8 @@ function flashlight_on(var_b5214d24f3968b4c, var_f1c7168882d3b44b) {
     if (!can_use_flashlight()) {
         return;
     }
-    var_655d5adc3b22be09 = function_d73f1b97acba6597();
-    if (!var_655d5adc3b22be09) {
+    found_attachment = function_d73f1b97acba6597();
+    if (!found_attachment) {
         play_flashlight_fx(var_b5214d24f3968b4c, var_f1c7168882d3b44b);
         if (isdefined(self.flashlightlaserweapon)) {
             flashlight_laser_on();
@@ -153,13 +153,13 @@ function function_d73f1b97acba6597() {
         self laserforceon();
         return 1;
     }
-    var_c7d735e3522da00a = ["flashlight_box01", "flashlight_cyl01", "flashlight_pstl01"];
+    attachments_names = ["flashlight_box01", "flashlight_cyl01", "flashlight_pstl01"];
     currweapon = self.weapon;
     newweapon = undefined;
-    foreach (var_93e3b716dc7e83da in var_c7d735e3522da00a) {
-        if (currweapon canuseattachment(var_93e3b716dc7e83da)) {
-            newweapon = currweapon withattachment(var_93e3b716dc7e83da);
-            self.var_e0675e48962c6d55 = var_93e3b716dc7e83da;
+    foreach (attachment_name in attachments_names) {
+        if (currweapon canuseattachment(attachment_name)) {
+            newweapon = currweapon withattachment(attachment_name);
+            self.var_e0675e48962c6d55 = attachment_name;
             break;
         }
     }
@@ -254,8 +254,8 @@ function nvg_death_cleanup() {
         if (isdefined(var_ea7a7bc86b924c06)) {
             wait var_ea7a7bc86b924c06;
         }
-        var_2948170a00c02cc = isdefined(self) ? self getcorpseentity() : undefined;
-        thread function_c0cbbd50d2a290f0(var_2948170a00c02cc, var_5275110113be1abc, var_c3c074f635452c74, var_dd43c1f2b37371c8, var_ffea00d321b63230);
+        my_corpse = isdefined(self) ? self getcorpseentity() : undefined;
+        thread function_c0cbbd50d2a290f0(my_corpse, var_5275110113be1abc, var_c3c074f635452c74, var_dd43c1f2b37371c8, var_ffea00d321b63230);
         return;
     }
     thread kill_flashlight_fx(1);
@@ -290,10 +290,10 @@ function function_567dd5104ab8d245(var_b5214d24f3968b4c) {
     if (!isdefined(var_b5214d24f3968b4c)) {
         var_b5214d24f3968b4c = 1;
     }
-    var_2948170a00c02cc = isdefined(self) ? self getcorpseentity() : undefined;
+    my_corpse = isdefined(self) ? self getcorpseentity() : undefined;
     if (isdefined(var_5275110113be1abc)) {
-        if (!isdefined(self) || isdefined(var_2948170a00c02cc)) {
-            function_c0cbbd50d2a290f0(var_2948170a00c02cc, var_5275110113be1abc, var_c3c074f635452c74, var_dd43c1f2b37371c8, var_ffea00d321b63230);
+        if (!isdefined(self) || isdefined(my_corpse)) {
+            function_c0cbbd50d2a290f0(my_corpse, var_5275110113be1abc, var_c3c074f635452c74, var_dd43c1f2b37371c8, var_ffea00d321b63230);
             return;
         }
         tag = "tag_flash";
@@ -318,14 +318,14 @@ function function_567dd5104ab8d245(var_b5214d24f3968b4c) {
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xaa5
 // Size: 0x68
-function function_c0cbbd50d2a290f0(var_2948170a00c02cc, var_5275110113be1abc, var_c3c074f635452c74, var_dd43c1f2b37371c8, var_ffea00d321b63230) {
+function function_c0cbbd50d2a290f0(my_corpse, var_5275110113be1abc, var_c3c074f635452c74, var_dd43c1f2b37371c8, var_ffea00d321b63230) {
     if (isdefined(var_ffea00d321b63230)) {
         function_11168df3524b02f2(var_ffea00d321b63230, var_5275110113be1abc);
         return;
     }
-    if (isdefined(var_2948170a00c02cc)) {
-        if (isdefined(var_c3c074f635452c74) && !istrue(var_dd43c1f2b37371c8) && var_2948170a00c02cc tagexists(var_c3c074f635452c74)) {
-            killfxontag(getfx(var_5275110113be1abc), var_2948170a00c02cc, var_c3c074f635452c74);
+    if (isdefined(my_corpse)) {
+        if (isdefined(var_c3c074f635452c74) && !istrue(var_dd43c1f2b37371c8) && my_corpse tagexists(var_c3c074f635452c74)) {
+            killfxontag(getfx(var_5275110113be1abc), my_corpse, var_c3c074f635452c74);
         }
         return;
     }
@@ -481,19 +481,19 @@ function update_vfx_shadow_limit() {
         flag_init("infil_complete");
     }
     flag_wait("infil_complete");
-    var_dfb0aefd1187603e = 2;
+    current_limit = 2;
     while (true) {
-        var_b4f1cf3fbe1a7e76 = getdvarint(@"hash_8667c0bb90c5bfc3");
+        cull_dist = getdvarint(@"hash_8667c0bb90c5bfc3");
         ai_array = getaiarray("axis");
         var_a2ea3d917e7026b7 = 0;
         foreach (player in level.players) {
             /#
                 if (getdvarint(@"hash_20617a1a32773be1")) {
-                    thread draw_circle(player.origin, var_b4f1cf3fbe1a7e76, (1, 1, 1), 1, 0, 1);
+                    thread draw_circle(player.origin, cull_dist, (1, 1, 1), 1, 0, 1);
                 }
             #/
             foreach (ai in sortbydistance(ai_array, player.origin)) {
-                if (distancesquared(ai.origin, player.origin) > var_b4f1cf3fbe1a7e76 * var_b4f1cf3fbe1a7e76) {
+                if (distancesquared(ai.origin, player.origin) > cull_dist * cull_dist) {
                     break;
                 }
                 if (istrue(ai.flashlight)) {
@@ -517,18 +517,18 @@ function update_vfx_shadow_limit() {
             }
         }
         var_a2ea3d917e7026b7 = clamp(var_a2ea3d917e7026b7, 2, 4);
-        if (var_a2ea3d917e7026b7 != var_dfb0aefd1187603e) {
-            var_dfb0aefd1187603e = var_a2ea3d917e7026b7;
-            setdvar(@"hash_e08232af8b8b695c", var_dfb0aefd1187603e);
+        if (var_a2ea3d917e7026b7 != current_limit) {
+            current_limit = var_a2ea3d917e7026b7;
+            setdvar(@"hash_e08232af8b8b695c", current_limit);
             /#
                 if (getdvarint(@"hash_20617a1a32773be1")) {
-                    iprintln("<dev string:x36>" + var_dfb0aefd1187603e);
+                    iprintln("<dev string:x36>" + current_limit);
                 }
             #/
         }
         waitframe();
     }
-    if (var_dfb0aefd1187603e != 2) {
+    if (current_limit != 2) {
         setdvar(@"hash_e08232af8b8b695c", 2);
     }
 }

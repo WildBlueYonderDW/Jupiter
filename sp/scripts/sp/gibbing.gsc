@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\sp\friendlyfire.gsc;
 #using script_3433ee6b63c7e243;
+#using scripts\common\ai;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\friendlyfire;
+#using scripts\sp\utility;
 
 #namespace namespace_3522c8d369c5510f;
 

@@ -1,8 +1,8 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\sp\utility.gsc;
 #using script_6bfe39bd5c12f84a;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_89fba8554565f939;
 
@@ -276,20 +276,20 @@ function private function_1f6b32e8c25bc863() {
             }
         }
     }
-    var_774d964a7ab43387 = getlootscriptablearrayinradius(undefined, undefined, self.origin, 150);
-    if (isdefined(var_774d964a7ab43387)) {
-        var_774d964a7ab43387 = sortbydistance(var_774d964a7ab43387, self.origin);
-        for (i = 0; i < var_774d964a7ab43387.size; i++) {
-            level thread function_61145e6fc9e0c9c5(var_774d964a7ab43387[i]);
+    all_loot = getlootscriptablearrayinradius(undefined, undefined, self.origin, 150);
+    if (isdefined(all_loot)) {
+        all_loot = sortbydistance(all_loot, self.origin);
+        for (i = 0; i < all_loot.size; i++) {
+            level thread function_61145e6fc9e0c9c5(all_loot[i]);
             wait 0.25;
         }
     }
-    var_6971bb6f3877378 = getweaponarrayinradius(self.origin, 150, 1);
-    if (isdefined(var_6971bb6f3877378)) {
-        var_6971bb6f3877378 = sortbydistance(var_6971bb6f3877378, self.origin);
-        for (i = 0; i < var_6971bb6f3877378.size; i++) {
-            var_ac6ff51dcdcad56c = var_6971bb6f3877378[i] function_feabbad27268cf50();
-            var_6971bb6f3877378[i] playsound(var_ac6ff51dcdcad56c);
+    nearby_weapons = getweaponarrayinradius(self.origin, 150, 1);
+    if (isdefined(nearby_weapons)) {
+        nearby_weapons = sortbydistance(nearby_weapons, self.origin);
+        for (i = 0; i < nearby_weapons.size; i++) {
+            var_ac6ff51dcdcad56c = nearby_weapons[i] function_feabbad27268cf50();
+            nearby_weapons[i] playsound(var_ac6ff51dcdcad56c);
             wait 0.25;
         }
     }

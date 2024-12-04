@@ -1,9 +1,9 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\sp\utility_code.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\sp\utility_code;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\utility;
 
 #namespace analytics;
 
@@ -299,7 +299,7 @@ function function_463ff5058321da86() {
     startpoint = "none";
     origin = (0, 0, 0);
     angles = (0, 0, 0);
-    name = getdvar(@"hash_687fb8f9b7a23245");
+    name = getdvar(@"g_mapname");
     if (isdefined(name)) {
         levelname = name;
     }
@@ -480,12 +480,12 @@ function function_f2a009b8402cd364(event, attacker, objweapon, damage, damagemod
             var_10ff3f7abb21e3bf = offhand.maxammo;
         }
     }
-    var_b93202f71a557edd = "none";
+    tact = "none";
     var_c65fecc3c51b2417 = 0;
     var_e8a16c7aa247b501 = 0;
     offhand = level.player getcurrentoffhand("secondaryoffhand");
     if (isdefined(offhand)) {
-        var_b93202f71a557edd = getweaponbasename(offhand);
+        tact = getweaponbasename(offhand);
         if (isdefined(offhand.clipsize)) {
             var_c65fecc3c51b2417 = offhand.clipsize;
         }
@@ -493,7 +493,7 @@ function function_f2a009b8402cd364(event, attacker, objweapon, damage, damagemod
             var_e8a16c7aa247b501 = offhand.maxammo;
         }
     }
-    level.player dlog_recordplayerevent(event, ["sp_header", var_b09c32bd24dd813b, "attackerid", var_df1147027a637035, "attackertype", var_e8fe51b1a4b27aa0, "attackerclassname", var_99df638941cf97c3, "attackerweapon", var_1b1c9550d2f0ac7c, "attackerx", var_42f91f741c071f22[0], "attackery", var_42f91f741c071f22[1], "attackerz", var_42f91f741c071f22[2], "attackeryaw", var_dc4dfc73d05c15c3, "attackercombatmode", var_e077197985b74af8, "attackerignoreme", var_f46dcbd654807880, "attackerignoreall", var_4a77de5c03d31b51, "attackerfovcos", var_db19d7d1f5905612, "attackermaxsightdistsqrd", var_d8b49b4111c2f083, "attackeranimname", var_b915a4ffe59e047e, "attackerlaststand", var_776d3b49cdbc2c38, "damage", dmg, "damagetype", dmgtype, "damagelocation", var_a8adcc551df6089f, "victimdied", victimdied, "current_gun", weapon, "current_gun_ammo_count", weaponammo, "current_gun_ammo_max", var_7bb815bb5aa0fd1, "current_backup", var_835c750a6ae79b63, "current_backup_ammo_count", var_be6bc1668b3a0231, "current_backup_ammo_max", var_42fedd22555f1b5b, "current_lethal", lethal, "current_lethal_ammo_count", var_be577e8725b5d5ed, "current_lethal_ammo_max", var_10ff3f7abb21e3bf, "current_tactical", var_b93202f71a557edd, "current_tactical_ammo_count", var_c65fecc3c51b2417, "current_tactical_ammo_max", var_e8a16c7aa247b501]);
+    level.player dlog_recordplayerevent(event, ["sp_header", var_b09c32bd24dd813b, "attackerid", var_df1147027a637035, "attackertype", var_e8fe51b1a4b27aa0, "attackerclassname", var_99df638941cf97c3, "attackerweapon", var_1b1c9550d2f0ac7c, "attackerx", var_42f91f741c071f22[0], "attackery", var_42f91f741c071f22[1], "attackerz", var_42f91f741c071f22[2], "attackeryaw", var_dc4dfc73d05c15c3, "attackercombatmode", var_e077197985b74af8, "attackerignoreme", var_f46dcbd654807880, "attackerignoreall", var_4a77de5c03d31b51, "attackerfovcos", var_db19d7d1f5905612, "attackermaxsightdistsqrd", var_d8b49b4111c2f083, "attackeranimname", var_b915a4ffe59e047e, "attackerlaststand", var_776d3b49cdbc2c38, "damage", dmg, "damagetype", dmgtype, "damagelocation", var_a8adcc551df6089f, "victimdied", victimdied, "current_gun", weapon, "current_gun_ammo_count", weaponammo, "current_gun_ammo_max", var_7bb815bb5aa0fd1, "current_backup", var_835c750a6ae79b63, "current_backup_ammo_count", var_be6bc1668b3a0231, "current_backup_ammo_max", var_42fedd22555f1b5b, "current_lethal", lethal, "current_lethal_ammo_count", var_be577e8725b5d5ed, "current_lethal_ammo_max", var_10ff3f7abb21e3bf, "current_tactical", tact, "current_tactical_ammo_count", var_c65fecc3c51b2417, "current_tactical_ammo_max", var_e8a16c7aa247b501]);
 }
 
 // Namespace analytics / scripts\sp\analytics
@@ -909,12 +909,12 @@ function function_3afc9084a564d28a(subevent) {
             var_10ff3f7abb21e3bf = offhand.maxammo;
         }
     }
-    var_b93202f71a557edd = "none";
+    tact = "none";
     var_c65fecc3c51b2417 = 0;
     var_e8a16c7aa247b501 = 0;
     offhand = level.player getcurrentoffhand("secondaryoffhand");
     if (isdefined(offhand)) {
-        var_b93202f71a557edd = getweaponbasename(offhand);
+        tact = getweaponbasename(offhand);
         if (isdefined(offhand.clipsize)) {
             var_c65fecc3c51b2417 = offhand.clipsize;
         }
@@ -930,7 +930,7 @@ function function_3afc9084a564d28a(subevent) {
     for (i = 0; i <= 2; i++) {
         var_887d7d54098dfe80[i] = function_4bc745ebda95abaf(i);
     }
-    level.player dlog_recordplayerevent("dlog_event_sp_startpoints", ["subevent", subevent, "kills", kills, "killsmelee", var_533d5465a072ad3b, "killsexplosive", var_35fc97ac207c2b4, "deaths", deaths, "headshots", headshots, "shotshit", shotshit, "shotsmissed", subevent, "current_inhand", weapon, "current_inhand_ammo_count", weaponammo, "current_inhand_ammo_max", var_7bb815bb5aa0fd1, "current_gun", weapon, "current_gun_ammo_count", weaponammo, "current_gun_ammo_max", var_7bb815bb5aa0fd1, "current_lethal", lethal, "current_lethal_ammo_count", var_be577e8725b5d5ed, "current_lethal_ammo_max", var_10ff3f7abb21e3bf, "current_tactical", var_b93202f71a557edd, "current_tactical_ammo_count", var_c65fecc3c51b2417, "current_tactical_ammo_max", var_e8a16c7aa247b501, "other_weapon0", weapons[0][0], "other_weapon_ammo_count0", weapons[0][1], "other_weapon_ammo_max0", weapons[0][2], "other_weapon1", weapons[1][0], "other_weapon_ammo_count1", weapons[1][1], "other_weapon_ammo_max1", weapons[1][2], "other_weapon2", weapons[2][0], "other_weapon_ammo_count2", weapons[2][1], "other_weapon_ammo_max2", weapons[2][2], "other_weapon3", weapons[3][0], "other_weapon_ammo_count3", weapons[3][1], "other_weapon_ammo_max3", weapons[3][2], "other_weapon4", weapons[4][0], "other_weapon_ammo_count4", weapons[4][1], "other_weapon_ammo_max4", weapons[4][2], "shotstats_weapon0", var_887d7d54098dfe80[0][0], "shotstats_weapon_shots_fired0", var_887d7d54098dfe80[0][1], "shotstats_weapon_shots_hit0", var_887d7d54098dfe80[0][2], "shotstats_weapon_kills0", var_887d7d54098dfe80[0][3], "shotstats_weapon1", var_887d7d54098dfe80[1][0], "shotstats_weapon_shots_fired1", var_887d7d54098dfe80[1][1], "shotstats_weapon_shots_hit1", var_887d7d54098dfe80[1][2], "shotstats_weapon_kills1", var_887d7d54098dfe80[1][3], "shotstats_weapon2", var_887d7d54098dfe80[2][0], "shotstats_weapon_shots_fired2", var_887d7d54098dfe80[2][1], "shotstats_weapon_shots_hit2", var_887d7d54098dfe80[2][2], "shotstats_weapon_kills2", var_887d7d54098dfe80[2][3]]);
+    level.player dlog_recordplayerevent("dlog_event_sp_startpoints", ["subevent", subevent, "kills", kills, "killsmelee", var_533d5465a072ad3b, "killsexplosive", var_35fc97ac207c2b4, "deaths", deaths, "headshots", headshots, "shotshit", shotshit, "shotsmissed", subevent, "current_inhand", weapon, "current_inhand_ammo_count", weaponammo, "current_inhand_ammo_max", var_7bb815bb5aa0fd1, "current_gun", weapon, "current_gun_ammo_count", weaponammo, "current_gun_ammo_max", var_7bb815bb5aa0fd1, "current_lethal", lethal, "current_lethal_ammo_count", var_be577e8725b5d5ed, "current_lethal_ammo_max", var_10ff3f7abb21e3bf, "current_tactical", tact, "current_tactical_ammo_count", var_c65fecc3c51b2417, "current_tactical_ammo_max", var_e8a16c7aa247b501, "other_weapon0", weapons[0][0], "other_weapon_ammo_count0", weapons[0][1], "other_weapon_ammo_max0", weapons[0][2], "other_weapon1", weapons[1][0], "other_weapon_ammo_count1", weapons[1][1], "other_weapon_ammo_max1", weapons[1][2], "other_weapon2", weapons[2][0], "other_weapon_ammo_count2", weapons[2][1], "other_weapon_ammo_max2", weapons[2][2], "other_weapon3", weapons[3][0], "other_weapon_ammo_count3", weapons[3][1], "other_weapon_ammo_max3", weapons[3][2], "other_weapon4", weapons[4][0], "other_weapon_ammo_count4", weapons[4][1], "other_weapon_ammo_max4", weapons[4][2], "shotstats_weapon0", var_887d7d54098dfe80[0][0], "shotstats_weapon_shots_fired0", var_887d7d54098dfe80[0][1], "shotstats_weapon_shots_hit0", var_887d7d54098dfe80[0][2], "shotstats_weapon_kills0", var_887d7d54098dfe80[0][3], "shotstats_weapon1", var_887d7d54098dfe80[1][0], "shotstats_weapon_shots_fired1", var_887d7d54098dfe80[1][1], "shotstats_weapon_shots_hit1", var_887d7d54098dfe80[1][2], "shotstats_weapon_kills1", var_887d7d54098dfe80[1][3], "shotstats_weapon2", var_887d7d54098dfe80[2][0], "shotstats_weapon_shots_fired2", var_887d7d54098dfe80[2][1], "shotstats_weapon_shots_hit2", var_887d7d54098dfe80[2][2], "shotstats_weapon_kills2", var_887d7d54098dfe80[2][3]]);
 }
 
 // Namespace analytics / scripts\sp\analytics
@@ -1040,12 +1040,12 @@ function function_568756429ff7407(subevent, objname) {
             var_10ff3f7abb21e3bf = offhand.maxammo;
         }
     }
-    var_b93202f71a557edd = "none";
+    tact = "none";
     var_c65fecc3c51b2417 = 0;
     var_e8a16c7aa247b501 = 0;
     offhand = level.player getcurrentoffhand("secondaryoffhand");
     if (isdefined(offhand)) {
-        var_b93202f71a557edd = getweaponbasename(offhand);
+        tact = getweaponbasename(offhand);
         if (isdefined(offhand.clipsize)) {
             var_c65fecc3c51b2417 = offhand.clipsize;
         }
@@ -1061,7 +1061,7 @@ function function_568756429ff7407(subevent, objname) {
     for (i = 0; i <= 2; i++) {
         var_887d7d54098dfe80[i] = function_4bc745ebda95abaf(i);
     }
-    level.player dlog_recordplayerevent("dlog_event_sp_objectives", ["subevent", subevent, "objectivename", objname, "kills", kills, "killsmelee", var_533d5465a072ad3b, "killsexplosive", var_35fc97ac207c2b4, "deaths", deaths, "headshots", headshots, "shotshit", shotshit, "shotsmissed", subevent, "current_inhand", weapon, "current_inhand_ammo_count", weaponammo, "current_inhand_ammo_max", var_7bb815bb5aa0fd1, "current_gun", weapon, "current_gun_ammo_count", weaponammo, "current_gun_ammo_max", var_7bb815bb5aa0fd1, "current_lethal", lethal, "current_lethal_ammo_count", var_be577e8725b5d5ed, "current_lethal_ammo_max", var_10ff3f7abb21e3bf, "current_tactical", var_b93202f71a557edd, "current_tactical_ammo_count", var_c65fecc3c51b2417, "current_tactical_ammo_max", var_e8a16c7aa247b501, "other_weapon0", weapons[0][0], "other_weapon_ammo_count0", weapons[0][1], "other_weapon_ammo_max0", weapons[0][2], "other_weapon1", weapons[1][0], "other_weapon_ammo_count1", weapons[1][1], "other_weapon_ammo_max1", weapons[1][2], "other_weapon2", weapons[2][0], "other_weapon_ammo_count2", weapons[2][1], "other_weapon_ammo_max2", weapons[2][2], "other_weapon3", weapons[3][0], "other_weapon_ammo_count3", weapons[3][1], "other_weapon_ammo_max3", weapons[3][2], "other_weapon4", weapons[4][0], "other_weapon_ammo_count4", weapons[4][1], "other_weapon_ammo_max4", weapons[4][2], "shotstats_weapon0", var_887d7d54098dfe80[0][0], "shotstats_weapon_shots_fired0", var_887d7d54098dfe80[0][1], "shotstats_weapon_shots_hit0", var_887d7d54098dfe80[0][2], "shotstats_weapon_kills0", var_887d7d54098dfe80[0][3], "shotstats_weapon1", var_887d7d54098dfe80[1][0], "shotstats_weapon_shots_fired1", var_887d7d54098dfe80[1][1], "shotstats_weapon_shots_hit1", var_887d7d54098dfe80[1][2], "shotstats_weapon_kills1", var_887d7d54098dfe80[1][3], "shotstats_weapon2", var_887d7d54098dfe80[2][0], "shotstats_weapon_shots_fired2", var_887d7d54098dfe80[2][1], "shotstats_weapon_shots_hit2", var_887d7d54098dfe80[2][2], "shotstats_weapon_kills2", var_887d7d54098dfe80[2][3]]);
+    level.player dlog_recordplayerevent("dlog_event_sp_objectives", ["subevent", subevent, "objectivename", objname, "kills", kills, "killsmelee", var_533d5465a072ad3b, "killsexplosive", var_35fc97ac207c2b4, "deaths", deaths, "headshots", headshots, "shotshit", shotshit, "shotsmissed", subevent, "current_inhand", weapon, "current_inhand_ammo_count", weaponammo, "current_inhand_ammo_max", var_7bb815bb5aa0fd1, "current_gun", weapon, "current_gun_ammo_count", weaponammo, "current_gun_ammo_max", var_7bb815bb5aa0fd1, "current_lethal", lethal, "current_lethal_ammo_count", var_be577e8725b5d5ed, "current_lethal_ammo_max", var_10ff3f7abb21e3bf, "current_tactical", tact, "current_tactical_ammo_count", var_c65fecc3c51b2417, "current_tactical_ammo_max", var_e8a16c7aa247b501, "other_weapon0", weapons[0][0], "other_weapon_ammo_count0", weapons[0][1], "other_weapon_ammo_max0", weapons[0][2], "other_weapon1", weapons[1][0], "other_weapon_ammo_count1", weapons[1][1], "other_weapon_ammo_max1", weapons[1][2], "other_weapon2", weapons[2][0], "other_weapon_ammo_count2", weapons[2][1], "other_weapon_ammo_max2", weapons[2][2], "other_weapon3", weapons[3][0], "other_weapon_ammo_count3", weapons[3][1], "other_weapon_ammo_max3", weapons[3][2], "other_weapon4", weapons[4][0], "other_weapon_ammo_count4", weapons[4][1], "other_weapon_ammo_max4", weapons[4][2], "shotstats_weapon0", var_887d7d54098dfe80[0][0], "shotstats_weapon_shots_fired0", var_887d7d54098dfe80[0][1], "shotstats_weapon_shots_hit0", var_887d7d54098dfe80[0][2], "shotstats_weapon_kills0", var_887d7d54098dfe80[0][3], "shotstats_weapon1", var_887d7d54098dfe80[1][0], "shotstats_weapon_shots_fired1", var_887d7d54098dfe80[1][1], "shotstats_weapon_shots_hit1", var_887d7d54098dfe80[1][2], "shotstats_weapon_kills1", var_887d7d54098dfe80[1][3], "shotstats_weapon2", var_887d7d54098dfe80[2][0], "shotstats_weapon_shots_fired2", var_887d7d54098dfe80[2][1], "shotstats_weapon_shots_hit2", var_887d7d54098dfe80[2][2], "shotstats_weapon_kills2", var_887d7d54098dfe80[2][3]]);
 }
 
 // Namespace analytics / scripts\sp\analytics

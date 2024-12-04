@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_3db04fd1b466bdba;
-#using scripts\sp\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_232f31def1450dbb;
+#using script_3db04fd1b466bdba;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace killstreaks;
 

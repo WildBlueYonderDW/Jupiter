@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\vehicle_omnvar_utility.gsc;
-#using script_721ee99d7a8f9168;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\vehicle_omnvar_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_airdrop;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace namespace_7d937d28dc1863ea;
 
@@ -223,7 +223,7 @@ function private function_6a0b988cd7cc2702(vehicle, var_9de41f2ee77c33ba, var_3f
 function private function_594881805cec9222(position, angles, groundposition, groundnormal, spawndata, faildata) {
     spawndata.origin = position;
     spawndata.angles = angles;
-    vehicle = namespace_801fa17f47560d76::function_66c684fea143fbfd("veh_jup_razorback", spawndata, faildata);
+    vehicle = scripts\cp_mp\vehicles\vehicle_airdrop::vehicle_airdrop("veh_jup_razorback", spawndata, faildata);
     return vehicle;
 }
 

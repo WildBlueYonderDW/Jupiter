@@ -1,5 +1,5 @@
-#using scripts\common\utility.gsc;
-#using scripts\common\vehicle_build.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle_build;
 
 #namespace veh9_suv_overland_2016;
 

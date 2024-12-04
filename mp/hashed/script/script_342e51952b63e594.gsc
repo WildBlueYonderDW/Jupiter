@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using script_2d9d24f7c63ac143;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using script_b7a9ce0a2282b79;
-#using script_600b944a95c3a7bf;
-#using script_57d3850a12cf1d8f;
 #using script_2391409ef7b431e1;
-#using scripts\cp_mp\challenges.gsc;
+#using script_2d9d24f7c63ac143;
+#using script_57d3850a12cf1d8f;
+#using script_600b944a95c3a7bf;
+#using script_b7a9ce0a2282b79;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\utility\player;
 
 #namespace namespace_88c3382d02472ceb;
 
@@ -276,10 +276,10 @@ function private function_2f1ef432df69a29b(player, recipe) {
             var_8f0a45a0f5b42b90 = namespace_38b993c4618e76cd::function_fae5e1d3de32d3f7(scriptablename);
         }
         var_99ca2650c284f5c3 = player function_93f02514431a1f5d(var_8f0a45a0f5b42b90);
-        var_c00a2c6249962d83 = function_90e06d23e15ccc43(player, var_8f0a45a0f5b42b90);
-        loadoutindex = var_c00a2c6249962d83[2];
-        loadouttype = var_c00a2c6249962d83[1];
-        var_b834cfed17d314a3 = var_c00a2c6249962d83[0];
+        __a10 = function_90e06d23e15ccc43(player, var_8f0a45a0f5b42b90);
+        loadoutindex = __a10[2];
+        loadouttype = __a10[1];
+        var_b834cfed17d314a3 = __a10[0];
         var_f53ae6184f353b7 = undefined;
         if (namespace_85cd45b4fe0d86fb::hasdogtag(player) && scripts\mp\gametypes\br_pickups::isdogtag(scriptablename)) {
             currentdogtag = namespace_85cd45b4fe0d86fb::function_59771b0cc100410a(player);

@@ -1,17 +1,17 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\values.gsc;
-#using script_7edf952f8921aa6b;
 #using script_2ece06910a5c572;
-#using script_38c251115537f16e;
-#using script_433375b6cbabfc47;
-#using script_3b78d23dad7ec5be;
-#using script_686729055b66c6e4;
 #using script_371b4c2ab5861e62;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\mp\mp_agent.gsc;
+#using script_38c251115537f16e;
+#using script_3b78d23dad7ec5be;
+#using script_433375b6cbabfc47;
+#using script_686729055b66c6e4;
+#using script_7edf952f8921aa6b;
+#using scripts\asm\asm;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_e5049f73842ac360;
 
@@ -207,7 +207,7 @@
         duration = float(params[0]);
         zombies = getaispeciesarray("<dev string:x82d>", "<dev string:x286>");
         foreach (zombie in zombies) {
-            zombie function_2e4d3c67e63f83ac(duration);
+            zombie stun_ai(duration);
         }
     }
 
@@ -219,7 +219,7 @@
         player = level.players[0];
         zombies = getaispeciesarray("<dev string:x82d>", "<dev string:x286>");
         closest_zombie = get_array_of_closest(player.origin, zombies)[0];
-        closest_zombie function_e96aac065abbec4e(player.origin);
+        closest_zombie knockdown_ai(player.origin);
     }
 
     // Namespace namespace_e5049f73842ac360 / namespace_85d29b89b454cb3b

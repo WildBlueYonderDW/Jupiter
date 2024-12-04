@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\cp_player_battlechatter.gsc;
-#using script_354c862768cfe202;
-#using script_afb7e332aee4bf2;
-#using scripts\engine\trace.gsc;
 #using script_189b67b2735b981d;
+#using script_354c862768cfe202;
 #using script_56ef8d52fe1b48a1;
 #using script_74502a9e0ef1f19c;
+#using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_4ffa252800297747;
 
@@ -162,7 +162,7 @@ function private function_ada94a4d4deecf34(revivetrigger, reviver) {
 // Checksum 0x0, Offset: 0x71b
 // Size: 0x1d
 function private function_5acb5dca46088661() {
-    return ter_op(isdefined(level.var_4b91c5db6b16c58), level.var_4b91c5db6b16c58, 5);
+    return ter_op(isdefined(level.teamReviveTime), level.teamReviveTime, 5);
 }
 
 // Namespace namespace_4ffa252800297747 / namespace_ce29426d87a9df99

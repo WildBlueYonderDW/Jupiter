@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\gametypes\br_keypad_util.gsc;
-#using scripts\engine\scriptable.gsc;
 #using script_3bf3f0172d4a2247;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_keypad_util;
+#using scripts\mp\utility\lower_message;
 
 #namespace vault_door;
 

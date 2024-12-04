@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br.gsc;
 #using script_7c40fa80892a721;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\engine\utility;
+#using scripts\mp\class;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\script;
 
 #namespace namespace_d59138129b936866;
 

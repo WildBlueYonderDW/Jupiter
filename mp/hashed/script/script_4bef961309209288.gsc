@@ -1,32 +1,32 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\callback_group.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\supers\super_stoppingpower.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using script_189b67b2735b981d;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\supers.gsc;
+#using script_2669878cf5a1b6bc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\callback_group;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\supers;
+#using scripts\mp\supers\super_stoppingpower;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace super_suppression_rounds;
 
@@ -43,7 +43,7 @@ function function_d0930f871341093c() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e8
 // Size: 0x176
-function function_55aae48e013652fa() {
+function suppressionRounds_beginUse() {
     playerweaponobj = self.lastnormalweaponobj;
     var_8de014639f689574 = nullweapon();
     if (scripts\mp\utility\weapon::ismeleeonly(playerweaponobj) || scripts\mp\utility\weapon::issuperweapon(playerweaponobj) || namespace_e0ee43ef2dddadaa::iskillstreakweapon(playerweaponobj) || scripts\mp\utility\weapon::isgamemodeweapon(playerweaponobj) || scripts\mp\utility\weapon::issinglehitweapon(playerweaponobj.basename) || namespace_e0ee43ef2dddadaa::isminigunweapon(playerweaponobj) || !function_a364b6e4dc3cc30a(playerweaponobj) || playerweaponobj.basename == "iw8_lm_dblmg_mp" || playerweaponobj.basename == "iw9_me_fists_mp" || playerweaponobj.basename == "jup_jp23_me_spear_mp") {

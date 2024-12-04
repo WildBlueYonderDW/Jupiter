@@ -1,23 +1,23 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\utility\perk.gsc;
 #using script_189b67b2735b981d;
-#using script_74b851b7aa1ef32d;
-#using scripts\mp\gamelogic.gsc;
-#using script_372301af73968cb;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\tweakables.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
 #using script_19fd5b5d73d44c18;
+#using script_2669878cf5a1b6bc;
+#using script_372301af73968cb;
+#using script_74b851b7aa1ef32d;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\supers;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
 
 #namespace battlerage;
 
@@ -348,7 +348,7 @@ function function_739a5f064c7debdf(var_fd778fc5467d97b2, var_67d84be6232392d2, v
     if (isdefined(self.var_59317c0cd98c577)) {
         scripts\cp_mp\challenges::function_d997435895422ecc("super_battlerage", function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"end"), int(round(self.var_59317c0cd98c577)));
     }
-    if (!istrue(var_84ad7d139c3431dc) && !istrue(level.gameended) && scripts\mp\utility\player::function_ad443bbcdcf37b85(self)) {
+    if (!istrue(var_84ad7d139c3431dc) && !istrue(level.gameended) && scripts\mp\utility\player::isAliveAndNotInLastStand(self)) {
         function_a47db0cce0bd80f4(var_26a8a7973ea6de8b, var_f40baf4e34be03b9);
     }
     function_c98b181b50b131b2();
@@ -391,7 +391,7 @@ function function_130f3c57dcc28043(var_84ad7d139c3431dc) {
     var_f40baf4e34be03b9 = getdvarint(@"hash_cf91c5d3c93671ad", 0);
     self.var_64190ac6a5aa31d5 = undefined;
     self.var_59317c0cd98c577 = undefined;
-    if (!istrue(var_84ad7d139c3431dc) && !istrue(level.gameended) && scripts\mp\utility\player::function_ad443bbcdcf37b85(self)) {
+    if (!istrue(var_84ad7d139c3431dc) && !istrue(level.gameended) && scripts\mp\utility\player::isAliveAndNotInLastStand(self)) {
         function_a47db0cce0bd80f4(var_26a8a7973ea6de8b, var_f40baf4e34be03b9);
     }
     function_c98b181b50b131b2();
@@ -813,7 +813,7 @@ function function_f53fab1c650c0081() {
         if (secondselapsed >= var_176d1bc49ea13a43) {
             break;
         }
-        if (!scripts\mp\utility\player::function_ad443bbcdcf37b85(self) && secondselapsed > 0) {
+        if (!scripts\mp\utility\player::isAliveAndNotInLastStand(self) && secondselapsed > 0) {
             break;
         }
         waitframe();

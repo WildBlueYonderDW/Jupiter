@@ -1,10 +1,10 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_14609b809484646e;
 #using script_998572ff3c96ee5;
-#using scripts\cp\cp_relics.gsc;
-#using scripts\cp\cp_gameskill.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\cp_relics;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace progression;
 
@@ -155,19 +155,19 @@ function function_79bd9667e0db0f6b(var_bd955de25b902a62) {
 // Checksum 0x0, Offset: 0xa99
 // Size: 0x40
 function function_9b50c58f20b295a0(var_30c2b3c99058169e) {
-    var_b77376dd31952275 = function_5801d9069ff58385();
-    assertex(isdefined(var_b77376dd31952275), "You cannot add bonus stars to an undefined kit");
+    current_kit = function_5801d9069ff58385();
+    assertex(isdefined(current_kit), "You cannot add bonus stars to an undefined kit");
     function_79bd9667e0db0f6b(var_30c2b3c99058169e);
-    function_13189a21870c2539(var_b77376dd31952275, var_30c2b3c99058169e, var_30c2b3c99058169e, 1);
+    function_13189a21870c2539(current_kit, var_30c2b3c99058169e, var_30c2b3c99058169e, 1);
 }
 
 // Namespace progression / namespace_6652f29dded2b69b
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xae1
 // Size: 0x7c
-function function_9f35ebf8db17e8d9(var_b77376dd31952275) {
-    assertex(isdefined(var_b77376dd31952275), "Cannot get stars for undefined kit");
-    switch (var_b77376dd31952275) {
+function function_9f35ebf8db17e8d9(current_kit) {
+    assertex(isdefined(current_kit), "Cannot get stars for undefined kit");
+    switch (current_kit) {
     case #"hash_f7803221ec64d903":
         return function_900cc31798521e59("medicStars");
     case #"hash_36cdfbfaeba9a21a":
@@ -175,7 +175,7 @@ function function_9f35ebf8db17e8d9(var_b77376dd31952275) {
     case #"hash_2b0e6b98c99852f2":
         return function_900cc31798521e59("reconStars");
     }
-    assertmsg("No kit found to get stars from. Kit = ", var_b77376dd31952275);
+    assertmsg("No kit found to get stars from. Kit = ", current_kit);
     return 0;
 }
 
@@ -183,16 +183,16 @@ function function_9f35ebf8db17e8d9(var_b77376dd31952275) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xb66
 // Size: 0x146
-function function_13189a21870c2539(var_b77376dd31952275, var_c8be13b6bd8f7e05, stars_earned, var_38e0188a424bc7a7) {
-    assertex(isdefined(var_b77376dd31952275), "Cannot add stars for undefined kit");
+function function_13189a21870c2539(current_kit, var_c8be13b6bd8f7e05, stars_earned, var_38e0188a424bc7a7) {
+    assertex(isdefined(current_kit), "Cannot add stars for undefined kit");
     if (!istrue(var_38e0188a424bc7a7)) {
         if (stars_earned <= function_e7af75648059f540()) {
             return function_e7af75648059f540();
         }
     }
-    var_ef0442bca1ad6307 = function_9f35ebf8db17e8d9(var_b77376dd31952275);
+    var_ef0442bca1ad6307 = function_9f35ebf8db17e8d9(current_kit);
     var_9126bdab27208dff = int(var_ef0442bca1ad6307 + clamp(stars_earned, 0, var_c8be13b6bd8f7e05));
-    switch (var_b77376dd31952275) {
+    switch (current_kit) {
     case #"hash_f7803221ec64d903":
         function_14bb942461a90723("medicStars", var_9126bdab27208dff);
         /#
@@ -212,7 +212,7 @@ function function_13189a21870c2539(var_b77376dd31952275, var_c8be13b6bd8f7e05, s
         #/
         return var_9126bdab27208dff;
     }
-    assertmsg("No kit found to add stars to. Kit = ", var_b77376dd31952275);
+    assertmsg("No kit found to add stars to. Kit = ", current_kit);
     return 0;
 }
 
@@ -220,14 +220,14 @@ function function_13189a21870c2539(var_b77376dd31952275, var_c8be13b6bd8f7e05, s
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcb5
 // Size: 0xab
-function function_1d9eeda30f722f43(stars_earned, var_96ed04d8c80c6220) {
+function function_1d9eeda30f722f43(stars_earned, game_length) {
     foreach (player in level.players) {
-        var_b77376dd31952275 = player function_5801d9069ff58385();
+        current_kit = player function_5801d9069ff58385();
         player function_79bd9667e0db0f6b(stars_earned);
         var_c8be13b6bd8f7e05 = player function_7b3e5617c1a872a4();
-        player function_13189a21870c2539(var_b77376dd31952275, var_c8be13b6bd8f7e05, stars_earned);
+        player function_13189a21870c2539(current_kit, var_c8be13b6bd8f7e05, stars_earned);
         player function_3180567d942c0eac(stars_earned);
-        player function_490eaaddb15805df(stars_earned, var_96ed04d8c80c6220);
+        player function_490eaaddb15805df(stars_earned, game_length);
     }
 }
 
@@ -235,19 +235,19 @@ function function_1d9eeda30f722f43(stars_earned, var_96ed04d8c80c6220) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xd68
 // Size: 0x158
-function function_490eaaddb15805df(stars_earned, var_96ed04d8c80c6220) {
-    var_7a34d05c87de4d53 = function_3e1f4ec9f2ea7f0a();
-    if (!isdefined(var_7a34d05c87de4d53) || var_7a34d05c87de4d53 == "") {
+function function_490eaaddb15805df(stars_earned, game_length) {
+    current_mission = function_3e1f4ec9f2ea7f0a();
+    if (!isdefined(current_mission) || current_mission == "") {
         return;
     }
     for (i = 0; i < level.players.size; i++) {
-        var_97acf04b1260e998 = level.players[i] getplayerdata("cp", "careerstarsdata", var_7a34d05c87de4d53, "careerStarsDataPerMission", "starsRewarded");
+        var_97acf04b1260e998 = level.players[i] getplayerdata("cp", "careerstarsdata", current_mission, "careerStarsDataPerMission", "starsRewarded");
         if (!isdefined(var_97acf04b1260e998) || stars_earned > var_97acf04b1260e998) {
-            level.players[i] setplayerdata("cp", "careerstarsdata", var_7a34d05c87de4d53, "careerStarsDataPerMission", "starsRewarded", stars_earned);
+            level.players[i] setplayerdata("cp", "careerstarsdata", current_mission, "careerStarsDataPerMission", "starsRewarded", stars_earned);
         }
-        best_time = level.players[i] getplayerdata("cp", "careerstarsdata", var_7a34d05c87de4d53, "careerStarsDataPerMission", "personalBestTime");
-        if (!isdefined(best_time) || best_time <= 0 || var_96ed04d8c80c6220 < best_time) {
-            level.players[i] setplayerdata("cp", "careerstarsdata", var_7a34d05c87de4d53, "careerStarsDataPerMission", "personalBestTime", var_96ed04d8c80c6220);
+        best_time = level.players[i] getplayerdata("cp", "careerstarsdata", current_mission, "careerStarsDataPerMission", "personalBestTime");
+        if (!isdefined(best_time) || best_time <= 0 || game_length < best_time) {
+            level.players[i] setplayerdata("cp", "careerstarsdata", current_mission, "careerStarsDataPerMission", "personalBestTime", game_length);
             level.players[i] setclientomnvar("ui_aar_is_personal_best", 1);
             continue;
         }
@@ -260,15 +260,15 @@ function function_490eaaddb15805df(stars_earned, var_96ed04d8c80c6220) {
 // Checksum 0x0, Offset: 0xec8
 // Size: 0x55
 function function_7b360ae0833008d6() {
-    var_7a34d05c87de4d53 = function_399ccfe790a8b2eb();
-    if (!isdefined(var_7a34d05c87de4d53) || var_7a34d05c87de4d53 == "") {
+    current_mission = function_399ccfe790a8b2eb();
+    if (!isdefined(current_mission) || current_mission == "") {
         return;
     }
-    self setplayerdata("cp", "weeklyProgression", "missionName", var_7a34d05c87de4d53);
+    self setplayerdata("cp", "weeklyProgression", "missionName", current_mission);
     /#
-        self.var_b77b2a2fff31d1e1.currentMission = var_7a34d05c87de4d53;
+        self.var_b77b2a2fff31d1e1.currentMission = current_mission;
     #/
-    return var_7a34d05c87de4d53;
+    return current_mission;
 }
 
 // Namespace progression / namespace_6652f29dded2b69b
@@ -286,8 +286,8 @@ function function_3e1f4ec9f2ea7f0a() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xf72
 // Size: 0x2f
-function function_14bb942461a90723(var_43175630d0b22405, var_bd2f9e41e3b6c052) {
-    return self setplayerdata("cp", "progression", "playerKit", "kitProgress", var_43175630d0b22405, var_bd2f9e41e3b6c052);
+function function_14bb942461a90723(var_43175630d0b22405, star_amount) {
+    return self setplayerdata("cp", "progression", "playerKit", "kitProgress", var_43175630d0b22405, star_amount);
 }
 
 // Namespace progression / namespace_6652f29dded2b69b
@@ -316,12 +316,12 @@ function function_900cc31798521e59(var_43175630d0b22405) {
 // Checksum 0x0, Offset: 0x109f
 // Size: 0x50
 function function_5801d9069ff58385() {
-    var_b77376dd31952275 = self getplayerdata("cp", "progression", "playerKit", "currentKit");
+    current_kit = self getplayerdata("cp", "progression", "playerKit", "currentKit");
     /#
-        self.var_b77b2a2fff31d1e1.currentKit = var_b77376dd31952275;
+        self.var_b77b2a2fff31d1e1.currentKit = current_kit;
     #/
-    assertex(isdefined(var_b77376dd31952275), "Player Data kit cannot be undefined.");
-    return var_b77376dd31952275;
+    assertex(isdefined(current_kit), "Player Data kit cannot be undefined.");
+    return current_kit;
 }
 
 // Namespace progression / namespace_6652f29dded2b69b
@@ -329,8 +329,8 @@ function function_5801d9069ff58385() {
 // Checksum 0x0, Offset: 0x10f8
 // Size: 0x327
 function function_3180567d942c0eac(var_9126bdab27208dff) {
-    var_7a34d05c87de4d53 = function_3e1f4ec9f2ea7f0a();
-    if (!isdefined(var_7a34d05c87de4d53) || var_7a34d05c87de4d53 == "") {
+    current_mission = function_3e1f4ec9f2ea7f0a();
+    if (!isdefined(current_mission) || current_mission == "") {
         return;
     }
     var_965d95bdc550c95b = 3;
@@ -339,7 +339,7 @@ function function_3180567d942c0eac(var_9126bdab27208dff) {
     var_1ae4b05aa2a8f73d = int(clamp(var_9126bdab27208dff, 0, var_ab92344a22e80d75));
     var_522ddeaec1a60937 = var_86ac4a7077d1d602 + var_1ae4b05aa2a8f73d;
     self setplayerdata("cp", "CPSession", "weeklyStarsEarnedLastMatch", var_1ae4b05aa2a8f73d);
-    switch (var_7a34d05c87de4d53) {
+    switch (current_mission) {
     case #"hash_669c74f156249b88":
         self setplayerdata("cp", "weeklyProgression", "weeklyMissionProgression", "weeklyBadSituationStars", var_522ddeaec1a60937);
         break;
@@ -394,11 +394,11 @@ function function_3180567d942c0eac(var_9126bdab27208dff) {
 // Checksum 0x0, Offset: 0x1428
 // Size: 0x27c
 function function_e7af75648059f540() {
-    var_7a34d05c87de4d53 = function_3e1f4ec9f2ea7f0a();
-    if (!isdefined(var_7a34d05c87de4d53) || var_7a34d05c87de4d53 == "") {
+    current_mission = function_3e1f4ec9f2ea7f0a();
+    if (!isdefined(current_mission) || current_mission == "") {
         return;
     }
-    switch (var_7a34d05c87de4d53) {
+    switch (current_mission) {
     case #"hash_669c74f156249b88":
         return self getplayerdata("cp", "weeklyProgression", "weeklyMissionProgression", "weeklyBadSituationStars");
     case #"hash_a2cea08b38879015":

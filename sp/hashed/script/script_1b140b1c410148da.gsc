@@ -1,6 +1,6 @@
-#namespace namespace_739062c453f11c08;
+#namespace civilian_russian_female_head_flashback;
 
-// Namespace namespace_739062c453f11c08 / namespace_4a886a0c8f298188
+// Namespace civilian_russian_female_head_flashback / namespace_4a886a0c8f298188
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x132
 // Size: 0x65

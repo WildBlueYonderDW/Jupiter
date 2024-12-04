@@ -1,17 +1,17 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_58be75c518bf0d40;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\math.gsc;
 #using script_1fa444cdc9dbf364;
-#using scripts\mp\equipment.gsc;
-#using script_48814951e916af89;
 #using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_58be75c518bf0d40;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\supers;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace agent_equipment;
 

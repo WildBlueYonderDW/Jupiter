@@ -1,8 +1,8 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_354c862768cfe202;
-#using scripts\engine\trace.gsc;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace utility;
 
@@ -372,13 +372,13 @@ function mark_detonate_targets(player, drone) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x11f8
 // Size: 0x69
-function show_bomb_to_drone(var_cc9b13f67ae12715, player) {
-    if (scripts\engine\utility::array_contains(player.targets_for_remote_detonation, var_cc9b13f67ae12715)) {
+function show_bomb_to_drone(identified_ied, player) {
+    if (scripts\engine\utility::array_contains(player.targets_for_remote_detonation, identified_ied)) {
         return;
     }
-    if (isdefined(var_cc9b13f67ae12715) && isdefined(var_cc9b13f67ae12715.origin)) {
-        player.targets_for_remote_detonation = scripts\engine\utility::array_add(player.targets_for_remote_detonation, var_cc9b13f67ae12715);
-        var_cc9b13f67ae12715 hudoutlineenableforclient(player, 1, 0, 1);
+    if (isdefined(identified_ied) && isdefined(identified_ied.origin)) {
+        player.targets_for_remote_detonation = scripts\engine\utility::array_add(player.targets_for_remote_detonation, identified_ied);
+        identified_ied hudoutlineenableforclient(player, 1, 0, 1);
     }
 }
 
@@ -386,10 +386,10 @@ function show_bomb_to_drone(var_cc9b13f67ae12715, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1269
 // Size: 0x4e
-function hide_bomb_from_drone(var_cc9b13f67ae12715, player) {
-    if (isdefined(var_cc9b13f67ae12715) && isdefined(var_cc9b13f67ae12715.origin)) {
-        player.targets_for_remote_detonation = scripts\engine\utility::array_remove(player.targets_for_remote_detonation, var_cc9b13f67ae12715);
-        var_cc9b13f67ae12715 hudoutlinedisableforclient(player);
+function hide_bomb_from_drone(identified_ied, player) {
+    if (isdefined(identified_ied) && isdefined(identified_ied.origin)) {
+        player.targets_for_remote_detonation = scripts\engine\utility::array_remove(player.targets_for_remote_detonation, identified_ied);
+        identified_ied hudoutlinedisableforclient(player);
     }
 }
 

@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\anim\notetracks_mp.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\cp_mp\vehicles\vehicle_damage.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\execution.gsc;
+#using script_371b4c2ab5861e62;
+#using scripts\anim\notetracks_mp;
+#using scripts\asm\asm_mp;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_damage;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\utility;
 
 #namespace namespace_657dc7e018dcfce9;
 

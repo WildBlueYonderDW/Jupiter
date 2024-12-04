@@ -1,31 +1,31 @@
-#using scripts\common\callbacks.gsc;
+#using script_100adcc1cc11d2fa;
 #using script_16ea1b94f0f381b3;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_2583ee5680cf4736;
-#using script_600b944a95c3a7bf;
-#using script_43971bbeefd98f05;
-#using script_4fdefae8b7bcdf73;
-#using scripts\mp\hud_message.gsc;
-#using script_7b2517368c79e5bc;
-#using script_7f5e7a3cb514aca5;
-#using scripts\common\devgui.gsc;
-#using script_26efcce8ae5b6a9e;
 #using script_1f97a44d1761c919;
-#using scripts\common\values.gsc;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
+#using script_26efcce8ae5b6a9e;
+#using script_3e2f8cc477d57433;
+#using script_43971bbeefd98f05;
+#using script_482376d10f69832c;
 #using script_485622d93fa7e4cf;
 #using script_4e6e58ab5d96c2b0;
-#using script_669760f0500e4358;
+#using script_4fdefae8b7bcdf73;
 #using script_58be75c518bf0d40;
+#using script_600b944a95c3a7bf;
 #using script_62a4f7a62643fe8;
-#using script_3e2f8cc477d57433;
-#using script_22f1701e151b9d12;
-#using scripts\mp\mp_agent.gsc;
 #using script_638d701d263ee1ed;
+#using script_669760f0500e4358;
+#using script_7b2517368c79e5bc;
+#using script_7f5e7a3cb514aca5;
 #using script_9880b9dc28bc25e;
-#using script_482376d10f69832c;
-#using script_100adcc1cc11d2fa;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_decffbd4da6d3d16;
 
@@ -241,7 +241,7 @@ function function_2252397bd811c3b1(player) {
     }
     thread function_bf7e8c05c1eb9c09(player);
     if (!player ent_flag("used_console_a")) {
-        function_74fa5abeabd57c27(player);
+        console_audio(player);
         squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_a");
@@ -275,7 +275,7 @@ function function_2252367bd811bd18(player) {
     }
     thread function_5eb2076c0952dd6a(player);
     if (!player ent_flag("used_console_b")) {
-        function_74fa5abeabd57c27(player);
+        console_audio(player);
         squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_b");
@@ -309,7 +309,7 @@ function function_2252377bd811bf4b(player) {
     }
     thread function_8eba9838d1d843f(player);
     if (!player ent_flag("used_console_c")) {
-        function_74fa5abeabd57c27(player);
+        console_audio(player);
         squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_c");
@@ -344,7 +344,7 @@ function function_22523c7bd811ca4a(player) {
     }
     thread function_66dee4959045fe18(player);
     if (!player ent_flag("used_console_d")) {
-        function_74fa5abeabd57c27(player);
+        console_audio(player);
         squad = player namespace_ca7b90256548aa40::getsquadmembers();
         foreach (player in squad) {
             player ent_flag_set("used_console_d");
@@ -1311,7 +1311,7 @@ function function_16b9f31835245160() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x585d
 // Size: 0x2b5
-function function_74fa5abeabd57c27(player) {
+function console_audio(player) {
     squad = player namespace_ca7b90256548aa40::getsquadmembers();
     if (player ent_flag("heard_saw_map_tile_vo") && !player ent_flag("heard_console_firstdata_mapfound") && !player ent_flag("heard_console_data_nomap")) {
         thread namespace_446fc987a980892f::playevent("activity_summon_firstdata_map", squad);

@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\engine\trace.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gameobjects.gsc;
 #using script_2f4866552f0ba818;
 #using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_600b944a95c3a7bf;
 #using script_64acb6ce534155b7;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\spawnselection.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
 #using script_7c40fa80892a721;
+#using scripts\cp_mp\parachute;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\flags;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\hostmigration;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spawnselection;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_1a51bfb381ca99d3;
 

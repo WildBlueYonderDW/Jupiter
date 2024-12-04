@@ -1,10 +1,10 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
 #using script_16ea1b94f0f381b3;
 #using script_4a8c20678bd6a83e;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\utility;
 
 #namespace zombie_utils;
 
@@ -45,7 +45,7 @@ function function_f1e5805da192a1ef(var_21a40aa35e41881a, id, priority) {
             break;
         }
     }
-    var_2cd048a768ae9710 = 0;
+    b_added = 0;
     if (isdefined(var_21a40aa35e41881a)) {
         for (i = 0; i < self.var_caeb5ca53668812c.size; i++) {
             current = self.var_caeb5ca53668812c[i];
@@ -55,15 +55,15 @@ function function_f1e5805da192a1ef(var_21a40aa35e41881a, id, priority) {
             if (current.priority == priority) {
                 assertmsg("<dev string:x78>" + current.id + "<dev string:xb1>" + id + "<dev string:xc3>");
                 self.var_caeb5ca53668812c = array_insert(self.var_caeb5ca53668812c, var_2d685d04940730d0, i + 1);
-                var_2cd048a768ae9710 = 1;
+                b_added = 1;
             } else if (current.priority > priority) {
                 self.var_caeb5ca53668812c = array_insert(self.var_caeb5ca53668812c, var_2d685d04940730d0, i);
-                var_2cd048a768ae9710 = 1;
+                b_added = 1;
             }
             break;
         }
-        if (!var_2cd048a768ae9710) {
-            var_2cd048a768ae9710 = 1;
+        if (!b_added) {
+            b_added = 1;
             self.var_caeb5ca53668812c = array_add(self.var_caeb5ca53668812c, var_2d685d04940730d0);
         }
     }
@@ -101,7 +101,7 @@ function function_a047f71d0256058b(target_ent, id, priority) {
             break;
         }
     }
-    var_2cd048a768ae9710 = 0;
+    b_added = 0;
     if (isdefined(target_ent)) {
         for (i = 0; i < self.var_a2f8ae60cc4dab38.size; i++) {
             current = self.var_a2f8ae60cc4dab38[i];
@@ -111,15 +111,15 @@ function function_a047f71d0256058b(target_ent, id, priority) {
             if (current.priority == priority) {
                 assertmsg("<dev string:xf9>" + current.id + "<dev string:xb1>" + id + "<dev string:xc3>");
                 self.var_a2f8ae60cc4dab38 = array_insert(self.var_a2f8ae60cc4dab38, target_struct, i + 1);
-                var_2cd048a768ae9710 = 1;
+                b_added = 1;
             } else if (current.priority > priority) {
                 self.var_a2f8ae60cc4dab38 = array_insert(self.var_a2f8ae60cc4dab38, target_struct, i);
-                var_2cd048a768ae9710 = 1;
+                b_added = 1;
             }
             break;
         }
-        if (!var_2cd048a768ae9710) {
-            var_2cd048a768ae9710 = 1;
+        if (!b_added) {
+            b_added = 1;
             self.var_a2f8ae60cc4dab38 = array_add(self.var_a2f8ae60cc4dab38, target_struct);
         }
     }

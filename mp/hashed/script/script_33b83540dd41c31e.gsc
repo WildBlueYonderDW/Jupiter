@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\utility\player.gsc;
 #using script_3ed005fe9b78b9da;
-#using scripts\mp\hud_util.gsc;
 #using script_5e2dcb7fb9811781;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\mp\equipment.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace namespace_e9bdd7488df43871;
 
@@ -175,7 +175,7 @@ function function_e38335c47f60d959(grenade) {
             continue;
         }
         data = packdamagedata(self, player, 1, objweapon, "MOD_EXPLOSIVE", grenade, position);
-        thread function_42a2e5c40023cdb(data, 4);
+        thread empPulse_apply_player(data, 4);
     }
 }
 
@@ -191,8 +191,8 @@ function function_658882aab2ec5fb2(params) {
         if (isdefined(grenade) && is_equal(grenade.weapon_name, "jup_mutant_emp_ball")) {
             team = scripts\mp\utility\game::getotherteam(player.pers["team"])[0];
             while (isdefined(grenade)) {
-                var_ccc9f9c05abcfde9 = scripts\mp\utility\teams::getteamdata(team, "alivePlayers");
-                foreach (enemy in var_ccc9f9c05abcfde9) {
+                alive_enemies = scripts\mp\utility\teams::getteamdata(team, "alivePlayers");
+                foreach (enemy in alive_enemies) {
                     origin = enemy geteye();
                     if (isdefined(grenade) && distance(grenade.origin, origin) < 56) {
                         grenade detonate(player);

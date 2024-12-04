@@ -1,20 +1,20 @@
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
 #using script_7825c54042a07f36;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
-#namespace namespace_bc4ac6eb246fe9b7;
+#namespace jup_enemy_cp_riotshield_tier3_rus_pmc;
 
-// Namespace namespace_bc4ac6eb246fe9b7 / namespace_f107b9aa0d259acc
+// Namespace jup_enemy_cp_riotshield_tier3_rus_pmc / namespace_f107b9aa0d259acc
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x283
 // Size: 0x1df
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_39e73e680c605602");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_enemy_cp_riotshield_tier3_rus_pmc");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_d4c1580d6bc10b4");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 150;
@@ -45,7 +45,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_bc4ac6eb246fe9b7 / namespace_f107b9aa0d259acc
+// Namespace jup_enemy_cp_riotshield_tier3_rus_pmc / namespace_f107b9aa0d259acc
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46a
 // Size: 0x56
@@ -59,7 +59,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_bc4ac6eb246fe9b7 / namespace_f107b9aa0d259acc
+// Namespace jup_enemy_cp_riotshield_tier3_rus_pmc / namespace_f107b9aa0d259acc
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c8
 // Size: 0x41
@@ -71,7 +71,7 @@ function function_9ac26a51c94ccf52() {
     }
 }
 
-// Namespace namespace_bc4ac6eb246fe9b7 / namespace_f107b9aa0d259acc
+// Namespace jup_enemy_cp_riotshield_tier3_rus_pmc / namespace_f107b9aa0d259acc
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x511
 // Size: 0xce
@@ -94,7 +94,7 @@ function precache() {
     thread setup_weapons();
 }
 
-// Namespace namespace_bc4ac6eb246fe9b7 / namespace_f107b9aa0d259acc
+// Namespace jup_enemy_cp_riotshield_tier3_rus_pmc / namespace_f107b9aa0d259acc
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e7
 // Size: 0x14d

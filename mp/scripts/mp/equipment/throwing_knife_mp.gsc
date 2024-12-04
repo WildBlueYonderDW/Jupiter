@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\weapons.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\equipment.gsc;
 #using script_2d9d24f7c63ac143;
+#using script_5762ac2f22202ba2;
 #using script_600b944a95c3a7bf;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\mp\utility\player.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace namespace_70a9c767ad1878e5;
 

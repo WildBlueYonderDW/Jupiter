@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\debug.gsc;
-#using scripts\anim\utility_common.gsc;
-#using script_f4e8d02d2f70888;
-#using script_433d8f78f7e5fb;
 #using script_3212cc02a2700260;
+#using script_433d8f78f7e5fb;
 #using script_50eeb9595c6d6e1b;
 #using script_5d265b4fca61f070;
-#using scripts\asm\asm.gsc;
+#using script_f4e8d02d2f70888;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\common\debug;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace battlechatter;
 
@@ -610,16 +610,16 @@ function function_f46983dffe232870() {
         thread bcs_initPlayer();
         self.bcs_init = 1;
     }
-    var_310236dbf257fbb5 = function_fd9e4cb348a5f283(self.origin, level.var_8893859de4351996);
-    var_310236dbf257fbb5 = sortbydistance(var_310236dbf257fbb5, self.origin);
-    count = min(var_310236dbf257fbb5.size, 10);
+    nearby_ai = function_fd9e4cb348a5f283(self.origin, level.var_8893859de4351996);
+    nearby_ai = sortbydistance(nearby_ai, self.origin);
+    count = min(nearby_ai.size, 10);
     for (i = 0; i < count; i++) {
         waitframe();
         count_ratio = (i + 1) / count;
         if (percent_chance((1 - count_ratio) * 15)) {
             continue;
         }
-        guy = var_310236dbf257fbb5[i];
+        guy = nearby_ai[i];
         if (!isalive(guy) || !isdefined(guy.battlechatter) || istrue(guy.battlechatter.var_91892eb738fd74cd)) {
             continue;
         }
@@ -1218,7 +1218,7 @@ function function_a9c351ded2cf6ce4() {
             #/
             return;
         }
-        if (!has_priority(self.scope_ents[self.scope].var_261aaf24a09d231d, 1)) {
+        if (!has_priority(self.scope_ents[self.scope].vo_active, 1)) {
             /#
                 if (getdvarint(@"hash_864d3ab12f741516")) {
                     function_51c8ea07cf76cbd7("<dev string:x20b>" + default_to(self.name, "<dev string:xb4>"));
@@ -1312,7 +1312,7 @@ function function_a9c351ded2cf6ce4() {
         level endon("<dev string:x2a4>");
         player = undefined;
         for (;;) {
-            if (!getdvarint(@"hash_864d3ab12f741516") || !isdefined(level.battlechatter) || !isdefined(level.var_261aaf24a09d231d)) {
+            if (!getdvarint(@"hash_864d3ab12f741516") || !isdefined(level.battlechatter) || !isdefined(level.vo_active)) {
             } else {
                 var_aaaa8a8df8f5c537 = getdvarint(@"hash_b7c9a158890bce5a", 1920);
                 var_ab5696f7e031e1ba = getdvarint(@"hash_9139b4ad2f235c95", 1080);
@@ -1325,11 +1325,11 @@ function function_a9c351ded2cf6ce4() {
                 base_y = getdvarint(@"hash_91d2bedbf8875136") * var_3f109f5aaf427a;
                 base_scale = getdvarfloat(@"hash_4fd3148b1459a83") * var_3f109f5aaf427a;
                 ln_height = 0;
-                for (k = 0; k < level.var_261aaf24a09d231d.size; k++) {
-                    if (!istrue(level.var_261aaf24a09d231d[k].ischatter)) {
+                for (k = 0; k < level.vo_active.size; k++) {
+                    if (!istrue(level.vo_active[k].ischatter)) {
                         continue;
                     }
-                    chatter = level.var_261aaf24a09d231d[k];
+                    chatter = level.vo_active[k];
                     sequence = chatter.sequence;
                     if (isdefined(chatter.name)) {
                         speaker = default_to(chatter.speaker.vo_parent, chatter.speaker);
@@ -1405,7 +1405,7 @@ function function_a9c351ded2cf6ce4() {
                             ln_height += space;
                         }
                     }
-                    if (k < level.var_261aaf24a09d231d.size - 1) {
+                    if (k < level.vo_active.size - 1) {
                         printtoscreen2d(base_x, base_y + ln_height, "<dev string:x32d>", (1, 1, 1), 1.5 * base_scale);
                         ln_height += 30 * base_scale;
                     }
@@ -3118,7 +3118,7 @@ function update_battlechatter_hud() {
             hud.color = (0.4, 0.55, 0.9);
             level.var_ce8915211d5a4041 = hud;
         }
-        if (getdvar(@"hash_1494fa4395c31a69") != "<dev string:x4b9>") {
+        if (getdvar(@"debug_battlechatter") != "<dev string:x4b9>") {
             level.var_ce8915211d5a4041 settext("<dev string:xc2>");
             return;
         }

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\values.gsc;
 #using script_6c1b22ea36b176be;
-#using scripts\stealth\player.gsc;
-#using scripts\cp\cp_compass.gsc;
+#using scripts\common\values;
+#using scripts\cp\cp_compass;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\stealth\player;
 
 #namespace namespace_fad6b63f0287902;
 
@@ -47,7 +47,7 @@ function get_load_trigger_classes() {
 // Size: 0xa6
 function trigger_stealth_shadow(trigger) {
     trigger endon("death");
-    var_aa4265eeb046cbbf = "stealth_in_shadow";
+    the_flag = "stealth_in_shadow";
     if (!isdefined(level.trigger_stealth_shadow)) {
         level.trigger_stealth_shadow = [];
     }
@@ -58,13 +58,13 @@ function trigger_stealth_shadow(trigger) {
         if (trigger function_5b4909bf3b589e4f(other)) {
             continue;
         }
-        if (!other ent_flag_exist(var_aa4265eeb046cbbf)) {
+        if (!other ent_flag_exist(the_flag)) {
             continue;
         }
-        if (other ent_flag(var_aa4265eeb046cbbf)) {
+        if (other ent_flag(the_flag)) {
             continue;
         }
-        other thread in_shadow_thread(trigger, var_aa4265eeb046cbbf);
+        other thread in_shadow_thread(trigger, the_flag);
     }
 }
 
@@ -72,13 +72,13 @@ function trigger_stealth_shadow(trigger) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x46a
 // Size: 0x43
-function in_shadow_thread(volume, var_aa4265eeb046cbbf) {
+function in_shadow_thread(volume, the_flag) {
     self endon("death");
-    scripts\stealth\player::function_e403865f115834a8(var_aa4265eeb046cbbf);
+    scripts\stealth\player::function_e403865f115834a8(the_flag);
     while (isdefined(volume) && self istouching(volume)) {
         wait 0.05;
     }
-    scripts\stealth\player::function_3718fc282393305(var_aa4265eeb046cbbf);
+    scripts\stealth\player::function_3718fc282393305(the_flag);
 }
 
 // Namespace namespace_fad6b63f0287902 / namespace_16d9c1530a364ee9
@@ -104,9 +104,9 @@ function trigger_flag_set_touching(trigger) {
     if (!isdefined(level.flag[flag])) {
         flag_init(flag);
     }
-    var_b56bdde7369c625b = default_to(trigger.var_8b723ed1346786b3, 0.25);
-    if (!isnumber(var_b56bdde7369c625b)) {
-        var_b56bdde7369c625b = 0.25;
+    poll_rate = default_to(trigger.var_8b723ed1346786b3, 0.25);
+    if (!isnumber(poll_rate)) {
+        poll_rate = 0.25;
     }
     for (;;) {
         trigger waittill("trigger", other);
@@ -123,7 +123,7 @@ function trigger_flag_set_touching(trigger) {
             flag_set(flag);
         }
         while (isalive(other) && isdefined(trigger) && other istouching(trigger)) {
-            wait var_b56bdde7369c625b;
+            wait poll_rate;
         }
         flag_clear(flag);
     }
@@ -198,8 +198,8 @@ function trigger_flag_clear(trigger) {
 // Checksum 0x0, Offset: 0x7be
 // Size: 0x92
 function function_1dd1344e1eaa3ff1(trigger) {
-    var_edf806839bfa5a05 = trigger.var_85080a73a3121271;
-    assertex(isdefined(var_edf806839bfa5a05), "trigger_multiple_set_minimap_floor has no floor number.");
+    minimap_floor = trigger.var_85080a73a3121271;
+    assertex(isdefined(minimap_floor), "trigger_multiple_set_minimap_floor has no floor number.");
     for (;;) {
         trigger waittill("trigger", player);
         if (!isdefined(player)) {
@@ -208,9 +208,9 @@ function function_1dd1344e1eaa3ff1(trigger) {
         if (!isplayer(player)) {
             continue;
         }
-        if (!isdefined(player.var_7f574731fa72c7af) || player.var_7f574731fa72c7af != var_edf806839bfa5a05) {
-            player scripts\cp\cp_compass::function_fb7bad834ce4b28c(var_edf806839bfa5a05);
-            player.var_7f574731fa72c7af = var_edf806839bfa5a05;
+        if (!isdefined(player.var_7f574731fa72c7af) || player.var_7f574731fa72c7af != minimap_floor) {
+            player scripts\cp\cp_compass::function_fb7bad834ce4b28c(minimap_floor);
+            player.var_7f574731fa72c7af = minimap_floor;
         }
     }
 }

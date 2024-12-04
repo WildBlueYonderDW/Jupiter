@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
-#using xmodelalias\bodies_sas_urban_ar.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\heads_sas_urban.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\bodies_sas_urban_ar;
+#using xmodelalias\heads_sas_urban;
 
 #namespace namespace_d14e2f9228a7ad15;
 

@@ -1,12 +1,12 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\gameobjects.gsc;
 #using script_2583ee5680cf4736;
-#using scripts\common\devgui.gsc;
 #using script_7534b1d3ac3ea47a;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gameobjects;
 
 #namespace namespace_166fd5d99fbeb429;
 

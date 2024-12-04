@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\callbacks.gsc;
-#using script_48814951e916af89;
-#using scripts\engine\scriptable.gsc;
 #using script_3ff084f114b7f6c9;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gamelogic.gsc;
+#using script_48814951e916af89;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_d09b27d6534a97c;
 

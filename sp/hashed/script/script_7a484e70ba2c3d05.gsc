@@ -1,9 +1,9 @@
 #using script_53651341190c5aab;
 #using script_59aa5051623a5341;
 
-#namespace namespace_d8762563700992c5;
+#namespace soldier_group;
 
-// Namespace namespace_d8762563700992c5 / namespace_4ee5a0e34019b6e5
+// Namespace soldier_group / namespace_4ee5a0e34019b6e5
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x78
 // Size: 0x12

@@ -1,59 +1,59 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_396a814d39e7044f;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using script_25845aca699d038d;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\utility\player.gsc;
-#using script_14609b809484646e;
-#using scripts\mp\tweakables.gsc;
 #using script_116171939929af39;
-#using script_3bcaa2cbaf54abdd;
-#using script_1db8d0e02a99c5e2;
-#using scripts\cp\cp_analytics.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using script_4a6760982b403bad;
-#using scripts\cp\cp_player_battlechatter.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using script_6a5d3bf7a5b7064a;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_66122a002aff5d57;
-#using script_372301af73968cb;
-#using script_6e09a830fab9468f;
-#using script_721af321ffade1d;
-#using scripts\cp\cp_gameskill.gsc;
-#using scripts\cp\cp_hud_message.gsc;
+#using script_14609b809484646e;
 #using script_187a04151c40fb72;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
 #using script_189b67b2735b981d;
-#using script_7ef95bba57dc4b82;
-#using script_7c40fa80892a721;
-#using script_41ae4f5ca24216cb;
-#using scripts\cp_mp\utility\team_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
-#using script_6b18c507926dd700;
-#using scripts\cp_mp\execution.gsc;
-#using scripts\cp\powers\coop_molotov.gsc;
-#using scripts\cp_mp\pet_watch.gsc;
+#using script_1db8d0e02a99c5e2;
+#using script_25845aca699d038d;
+#using script_2669878cf5a1b6bc;
 #using script_293bc33bd79cabd1;
-#using scripts\cp\equipment\nvg.gsc;
-#using script_afb7e332aee4bf2;
-#using scripts\cp\cp_objectives.gsc;
-#using scripts\cp\cp_merits.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
+#using script_372301af73968cb;
+#using script_396a814d39e7044f;
+#using script_3bcaa2cbaf54abdd;
+#using script_41ae4f5ca24216cb;
+#using script_4a6760982b403bad;
+#using script_66122a002aff5d57;
+#using script_6a5d3bf7a5b7064a;
+#using script_6b18c507926dd700;
+#using script_6e09a830fab9468f;
 #using script_703fdbb02501d31e;
-#using scripts\cp\cp_relics.gsc;
-#using scripts\cp\cp_gamescore.gsc;
+#using script_721af321ffade1d;
+#using script_7c40fa80892a721;
+#using script_7ef95bba57dc4b82;
+#using script_afb7e332aee4bf2;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_analytics;
+#using scripts\cp\cp_gamescore;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_merits;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\cp_relics;
+#using scripts\cp\equipment\nvg;
+#using scripts\cp\powers\coop_molotov;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\team_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\lower_message;
 
 #namespace laststand;
 
@@ -61,11 +61,11 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3aef
 // Size: 0x714
-function function_29cb39aa7064ed6() {
+function laststand_init() {
     if (getdvar(@"hash_e6afce2cf5cf7515") == "1" || level.createfx_enabled) {
         return;
     }
-    namespace_9c383b14c4908e46::function_8ece37593311858a(&function_a305799c00d57b2e);
+    namespace_9c383b14c4908e46::function_8ece37593311858a(&laststand_onplayerconnect);
     setdvarifuninitialized(@"hash_e5275954295ca7d4", 0);
     setdvarifuninitialized(@"hash_e17def891365b5e8", 1);
     setdvarifuninitialized(@"hash_d4a1513190c52ad0", 0);
@@ -145,7 +145,7 @@ function function_29cb39aa7064ed6() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x420b
 // Size: 0x53
-function function_a305799c00d57b2e() {
+function laststand_onplayerconnect() {
     foreach (player in level.players) {
         player function_9b04c8abb560ba40();
     }
@@ -230,7 +230,7 @@ function laststandthink(damage_data, dokillcam) {
     if (istrue(self.shouldskiplaststand)) {
         if (istrue(level.var_2dce4d6dcb6c3fb9)) {
             scripts\cp\utility::store_weapons_status(level.var_d5ab05b7947de15a, 1);
-            namespace_47366e00aa4211f4::function_7c70dc615da72c51();
+            namespace_47366e00aa4211f4::store_equipment();
         }
         result = "last_stand_bleedout";
         wait 0.5;
@@ -765,9 +765,9 @@ function selfrevivemonitorrevivebuttonpressed() {
             triggerent.userate = 0;
         }
         if (istrue(downedplayer.beingrevived)) {
-            if (isdefined(triggerent.var_5150a7bb3c2957da)) {
-                triggerent.id = triggerent.var_5150a7bb3c2957da;
-                triggerent.var_5150a7bb3c2957da = undefined;
+            if (isdefined(triggerent.old_id)) {
+                triggerent.id = triggerent.old_id;
+                triggerent.old_id = undefined;
             }
             downedplayer scripts\cp\utility::function_1dbc717085326045(6);
             break;
@@ -775,7 +775,7 @@ function selfrevivemonitorrevivebuttonpressed() {
         triggerent.curprogress += level.frameduration * triggerent.userate;
         triggerent.userate = 1;
         if (triggerent.id != "self_revive") {
-            triggerent.var_5150a7bb3c2957da = triggerent.id;
+            triggerent.old_id = triggerent.id;
         }
         triggerent.id = "self_revive";
         downedplayer scripts\cp\utility::updateuiprogress(triggerent, 1);
@@ -880,9 +880,9 @@ function selfrevivebuttonpresscleanup() {
     if (isdefined(self.laststandactionset)) {
         downedplayer val::group_set(downedplayer.laststandactionset, 0);
     }
-    if (isdefined(triggerent.var_5150a7bb3c2957da)) {
-        triggerent.id = triggerent.var_5150a7bb3c2957da;
-        triggerent.var_5150a7bb3c2957da = undefined;
+    if (isdefined(triggerent.old_id)) {
+        triggerent.id = triggerent.old_id;
+        triggerent.old_id = undefined;
     }
     if (!istrue(downedplayer.beingrevived)) {
         downedplayer scripts\cp\utility::updateuiprogress(triggerent, 0);
@@ -1576,7 +1576,7 @@ function function_7956d96af822a9a3(player) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x7341
 // Size: 0x123
-function function_656840b28eb4c279(team, var_35e1ba03a83aa40b, var_db3f492b756b2ce7) {
+function function_656840b28eb4c279(team, ignore_usebutton, var_db3f492b756b2ce7) {
     level endon("game_ended");
     if (isdefined(self.owner)) {
         var_b8b0a5e88fae74db = self.owner;
@@ -2332,8 +2332,8 @@ function makelaststandinvuln() {
     self endon("disconnect");
     self endon("clear_last_stand_invuln");
     scripts\cp_mp\utility\damage_utility::adddamagemodifier("last_stand_invuln", 0, 0, &laststandinvulnignorefunc);
-    var_da0dd27ae8515e57 = gettime() + 1000;
-    while (!self isonground() || gettime() > var_da0dd27ae8515e57) {
+    wait_endtime = gettime() + 1000;
+    while (!self isonground() || gettime() > wait_endtime) {
         waitframe();
     }
     scripts\engine\utility::waittill_notify_or_timeout("death", lastStandInvulnTimer);
@@ -3017,7 +3017,7 @@ function function_229647d24707ecea(deathdata) {
     }
     if (istrue(level.var_2dce4d6dcb6c3fb9)) {
         victim scripts\cp\utility::store_weapons_status(level.var_d5ab05b7947de15a, 1);
-        victim namespace_47366e00aa4211f4::function_7c70dc615da72c51();
+        victim namespace_47366e00aa4211f4::store_equipment();
     }
     victim scripts\cp\equipment\nvg::savenvgstate();
     if (!isfauxdeath) {
@@ -3268,8 +3268,8 @@ function function_2f75743c7fe59cfc(deathdata) {
 // Checksum 0x0, Offset: 0xb747
 // Size: 0x63
 function hide_all_revive_icons(player) {
-    foreach (var_7bbe82017efe5c94 in player.revive_icons) {
-        var_7bbe82017efe5c94.alpha = 0;
+    foreach (revive_icon in player.revive_icons) {
+        revive_icon.alpha = 0;
     }
 }
 
@@ -3336,8 +3336,8 @@ function give_fists_if_no_real_weapon(player) {
 // Checksum 0x0, Offset: 0xb8cc
 // Size: 0xc9
 function has_no_real_weapon(player) {
-    var_2622298f62890966 = player getweaponslistall();
-    foreach (weapon in var_2622298f62890966) {
+    all_weapons = player getweaponslistall();
+    foreach (weapon in all_weapons) {
         baseweaponname = weapon.basename;
         if (baseweaponname == "none") {
             continue;
@@ -3619,8 +3619,8 @@ function set_revive_icon_color(var_729984070498b386, color, var_56f0b746f85293f)
     }
     if (istrue(var_56f0b746f85293f) || isdefined(var_729984070498b386.owner.reviver) && !istrue(var_729984070498b386.owner.reviver.isreviving) || !isdefined(var_729984070498b386.owner.reviver)) {
         if (isdefined(var_729984070498b386.revive_icons)) {
-            foreach (var_7bbe82017efe5c94 in var_729984070498b386.revive_icons) {
-                var_7bbe82017efe5c94.color = color;
+            foreach (revive_icon in var_729984070498b386.revive_icons) {
+                revive_icon.color = color;
             }
         }
     }
@@ -4232,7 +4232,7 @@ function function_9d6ac1baf6c44970() {
     if (function_f1f7670d27b96e26()) {
         drop_info = namespace_6250b14b3f614101::getitemdroporiginandangles(namespace_7335f9420e698c48::function_b1c55038843de38b(), self.origin, self.angles);
         if (isdefined(self.plundercount) && self.plundercount > 0) {
-            namespace_6250b14b3f614101::function_34dc33af893513b2(self.plundercount, namespace_7335f9420e698c48::function_b1c55038843de38b());
+            namespace_6250b14b3f614101::drop_cash(self.plundercount, namespace_7335f9420e698c48::function_b1c55038843de38b());
             drop_info = namespace_6250b14b3f614101::getitemdroporiginandangles(namespace_7335f9420e698c48::function_b1c55038843de38b(), self.origin, self.angles);
             namespace_6c67e93a4c487d83::set_player_currency(0);
         }
@@ -4259,19 +4259,19 @@ function function_9d6ac1baf6c44970() {
         if (isdefined(self.pre_laststand_powers)) {
             powers = getarraykeys(self.pre_laststand_powers);
             for (i = 0; i < powers.size; i++) {
-                var_d49285246b443066 = namespace_6250b14b3f614101::function_63699875d9aca328(powers[i]);
+                drop_name = namespace_6250b14b3f614101::function_63699875d9aca328(powers[i]);
                 dropinfo = namespace_6250b14b3f614101::getitemdroporiginandangles(namespace_7335f9420e698c48::function_b1c55038843de38b(), self.origin, self.angles, self);
                 count = self.pre_laststand_powers[powers[i]].charges;
-                item = namespace_6250b14b3f614101::spawnpickup(var_d49285246b443066, dropinfo, count, 1, undefined, 0);
+                item = namespace_6250b14b3f614101::spawnpickup(drop_name, dropinfo, count, 1, undefined, 0);
             }
         } else if (isdefined(self.powers)) {
             powers = getarraykeys(self.powers);
             for (i = 0; i < powers.size; i++) {
-                var_d49285246b443066 = namespace_6250b14b3f614101::function_63699875d9aca328(powers[i]);
-                if (isdefined(var_d49285246b443066)) {
+                drop_name = namespace_6250b14b3f614101::function_63699875d9aca328(powers[i]);
+                if (isdefined(drop_name)) {
                     dropinfo = namespace_6250b14b3f614101::getitemdroporiginandangles(namespace_7335f9420e698c48::function_b1c55038843de38b(), self.origin, self.angles, self);
                     count = self.powers[powers[i]].charges;
-                    item = namespace_6250b14b3f614101::spawnpickup(var_d49285246b443066, dropinfo, count, 1, undefined, 0);
+                    item = namespace_6250b14b3f614101::spawnpickup(drop_name, dropinfo, count, 1, undefined, 0);
                 }
             }
         }
@@ -4316,14 +4316,14 @@ function wait_in_spectator(var_318ade4970c8f647, gameshouldend) {
         self.bleedoutspawnentityoverride = undefined;
     }
     if (is_killed_by_kill_trigger(var_318ade4970c8f647)) {
-        var_1a70694e2f9d6d5d = self;
+        drop_loc = self;
         if (isdefined(self.var_80f9d0aeaa47cc0c) && scripts\cp\cp_outofbounds::isoob(self, 0)) {
-            var_1a70694e2f9d6d5d = self.var_80f9d0aeaa47cc0c;
+            drop_loc = self.var_80f9d0aeaa47cc0c;
         } else if (isdefined(var_318ade4970c8f647)) {
-            var_1a70694e2f9d6d5d = var_318ade4970c8f647;
+            drop_loc = var_318ade4970c8f647;
         }
-        spawnloc = drop_to_ground(var_1a70694e2f9d6d5d.origin, 32, -64) + (0, 0, 5);
-        spawnangle = var_1a70694e2f9d6d5d.angles;
+        spawnloc = drop_to_ground(drop_loc.origin, 32, -64) + (0, 0, 5);
+        spawnangle = drop_loc.angles;
     } else {
         spawnloc = self.origin;
         spawnangle = self.angles;
@@ -4562,8 +4562,8 @@ function get_spectator_revive_time() {
 // Size: 0x66
 function show_all_revive_icons() {
     if (isdefined(self.revive_icons)) {
-        foreach (var_7bbe82017efe5c94 in self.revive_icons) {
-            var_7bbe82017efe5c94.alpha = 1;
+        foreach (revive_icon in self.revive_icons) {
+            revive_icon.alpha = 1;
         }
     }
 }
@@ -4662,9 +4662,9 @@ function setup_revive_icon_ent(var_729984070498b386) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xfca5
 // Size: 0x51
-function add_to_revive_icon_ent_icon_list(var_729984070498b386, var_7bbe82017efe5c94) {
-    assertex(!array_contains(var_729984070498b386.revive_icons, var_7bbe82017efe5c94), "<dev string:x34c>");
-    var_729984070498b386.revive_icons[var_729984070498b386.revive_icons.size] = var_7bbe82017efe5c94;
+function add_to_revive_icon_ent_icon_list(var_729984070498b386, revive_icon) {
+    assertex(!array_contains(var_729984070498b386.revive_icons, revive_icon), "<dev string:x34c>");
+    var_729984070498b386.revive_icons[var_729984070498b386.revive_icons.size] = revive_icon;
 }
 
 // Namespace laststand / namespace_d4aab8c9cb8ecb14
@@ -4717,9 +4717,9 @@ function get_revive_icon_initial_alpha(player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xfe29
 // Size: 0x51
-function add_to_player_revive_icon_list(player, var_7bbe82017efe5c94) {
-    assertex(!array_contains(player.revive_icons, var_7bbe82017efe5c94), "<dev string:x380>");
-    player.revive_icons[player.revive_icons.size] = var_7bbe82017efe5c94;
+function add_to_player_revive_icon_list(player, revive_icon) {
+    assertex(!array_contains(player.revive_icons, revive_icon), "<dev string:x380>");
+    player.revive_icons[player.revive_icons.size] = revive_icon;
 }
 
 // Namespace laststand / namespace_d4aab8c9cb8ecb14
@@ -4738,12 +4738,12 @@ function reviveiconcleanup(reviveiconent, owner) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xfec5
 // Size: 0x5a
-function remove_from_owner_revive_icon_list(var_7bbe82017efe5c94, owner) {
+function remove_from_owner_revive_icon_list(revive_icon, owner) {
     if (!isdefined(owner)) {
         return;
     }
-    assertex(array_contains(owner.revive_icons, var_7bbe82017efe5c94), "<dev string:x3b7>");
-    owner.revive_icons = array_remove(owner.revive_icons, var_7bbe82017efe5c94);
+    assertex(array_contains(owner.revive_icons, revive_icon), "<dev string:x3b7>");
+    owner.revive_icons = array_remove(owner.revive_icons, revive_icon);
 }
 
 // Namespace laststand / namespace_d4aab8c9cb8ecb14
@@ -4971,20 +4971,20 @@ function revive_use_hold_think(downed_player, reviver, use_ent, use_time) {
     reviver.validtakeweapon = reviver scripts\cp\utility::getvalidtakeweapon();
     thread wait_for_exit_revive_use_hold_think(downed_player, reviver, use_ent, reviver.validtakeweapon);
     downed_player.reviver = reviver;
-    var_14c1392e5d9436bc = 0;
+    current_progress = 0;
     result = 0;
     enable_on_world_progress_bar_for_other_players(downed_player, reviver);
     if (isplayer(reviver)) {
         downed_player notify("reviving");
     }
     while (should_revive_continue(reviver)) {
-        if (var_14c1392e5d9436bc >= use_time) {
+        if (current_progress >= use_time) {
             result = 1;
             break;
         }
-        progress_ratio = var_14c1392e5d9436bc / use_time;
+        progress_ratio = current_progress / use_time;
         update_players_revive_progress_bar(downed_player, reviver, progress_ratio);
-        var_14c1392e5d9436bc += 50;
+        current_progress += 50;
         waitframe();
     }
     disable_on_world_progress_bar_for_other_players(downed_player, reviver);
@@ -5168,8 +5168,8 @@ function force_remove_stim() {
 // Checksum 0x0, Offset: 0x10d6c
 // Size: 0x97
 function lock_player_stance(player) {
-    var_e7af06f7a4040877 = player getstance();
-    switch (var_e7af06f7a4040877) {
+    current_stance = player getstance();
+    switch (current_stance) {
     case #"hash_c6775c88e38f7803":
         player allowstand(1);
         player allowcrouch(0);
@@ -5335,15 +5335,15 @@ function enable_dogtag_revive(downedplayer) {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x11340
 // Size: 0x6a
-function function_449348b412e6b21(player, target_ent, var_c75370c3a04afa1, bleedouttime) {
+function function_449348b412e6b21(player, target_ent, starting_color, bleedouttime) {
     if (getdvarint(@"hash_155dcc14c52dacf8", 1)) {
         return;
     }
-    if (!isdefined(var_c75370c3a04afa1)) {
-        var_c75370c3a04afa1 = (0.929, 0.231, 0.141);
+    if (!isdefined(starting_color)) {
+        starting_color = (0.929, 0.231, 0.141);
     }
     reviveiconent = makereviveiconentity(player, target_ent);
-    makereviveicon(reviveiconent, player, var_c75370c3a04afa1, bleedouttime);
+    makereviveicon(reviveiconent, player, starting_color, bleedouttime);
     return reviveiconent;
 }
 
@@ -5372,11 +5372,11 @@ function function_5c02bca10d532c9b(downedplayer) {
 // Size: 0x170
 function function_153f83a298faf9c6(player_origin) {
     level endon("game_ended");
-    var_ba3322d31f0514ee = ["dx_bc_aqsc_firm_aqs1_gotone", "dx_bc_aqsc_firm_aqs2_gotone", "dx_bc_aqsc_firm_aqs3_gotone", "dx_bc_aqsc_firm_aqs4_gotone", "dx_bc_aqsc_firm_aqs5_gotone", "dx_bc_aqsc_firm_aqs1_ikilledone", "dx_bc_aqsc_firm_aqs2_ikilledone", "dx_bc_aqsc_firm_aqs3_ikilledone", "dx_bc_aqsc_firm_aqs4_ikilledone", "dx_bc_aqsc_firm_aqs5_ikilledone", "dx_bc_aqsc_firm_aqs1_ishotone", "dx_bc_aqsc_firm_aqs2_ishotone", "dx_bc_aqsc_firm_aqs3_ishotone", "dx_bc_aqsc_firm_aqs4_ishotone", "dx_bc_aqsc_firm_aqs5_ishotone", "dx_bc_aqsc_firm_aqs1_theyredead", "dx_bc_aqsc_firm_aqs2_theyredead", "dx_bc_aqsc_firm_aqs3_theyredead", "dx_bc_aqsc_firm_aqs4_theyredead", "dx_bc_aqsc_firm_aqs5_theyredead", "dx_bc_aqsc_firm_aqs1_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs2_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs3_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs4_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs5_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs1_ishotthatone", "dx_bc_aqsc_firm_aqs2_ishotthatone", "dx_bc_aqsc_firm_aqs3_ishotthatone", "dx_bc_aqsc_firm_aqs4_ishotthatone", "dx_bc_aqsc_firm_aqs5_ishotthatone"];
+    possible_lines = ["dx_bc_aqsc_firm_aqs1_gotone", "dx_bc_aqsc_firm_aqs2_gotone", "dx_bc_aqsc_firm_aqs3_gotone", "dx_bc_aqsc_firm_aqs4_gotone", "dx_bc_aqsc_firm_aqs5_gotone", "dx_bc_aqsc_firm_aqs1_ikilledone", "dx_bc_aqsc_firm_aqs2_ikilledone", "dx_bc_aqsc_firm_aqs3_ikilledone", "dx_bc_aqsc_firm_aqs4_ikilledone", "dx_bc_aqsc_firm_aqs5_ikilledone", "dx_bc_aqsc_firm_aqs1_ishotone", "dx_bc_aqsc_firm_aqs2_ishotone", "dx_bc_aqsc_firm_aqs3_ishotone", "dx_bc_aqsc_firm_aqs4_ishotone", "dx_bc_aqsc_firm_aqs5_ishotone", "dx_bc_aqsc_firm_aqs1_theyredead", "dx_bc_aqsc_firm_aqs2_theyredead", "dx_bc_aqsc_firm_aqs3_theyredead", "dx_bc_aqsc_firm_aqs4_theyredead", "dx_bc_aqsc_firm_aqs5_theyredead", "dx_bc_aqsc_firm_aqs1_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs2_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs3_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs4_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs5_ikilledthemthatpig", "dx_bc_aqsc_firm_aqs1_ishotthatone", "dx_bc_aqsc_firm_aqs2_ishotthatone", "dx_bc_aqsc_firm_aqs3_ishotthatone", "dx_bc_aqsc_firm_aqs4_ishotthatone", "dx_bc_aqsc_firm_aqs5_ishotthatone"];
     var_d067afd6db440176 = 512;
     closest_ai = getclosest(player_origin, getaiarray(), var_d067afd6db440176);
     if (isdefined(closest_ai) && function_6eeef4a78f8955e7(closest_ai)) {
-        closest_ai playsound(random(var_ba3322d31f0514ee));
+        closest_ai playsound(random(possible_lines));
     }
 }
 
@@ -5699,11 +5699,11 @@ function checkpoint_revive() {
     level endon("game_ended");
     for (checkpoint = 1; true; checkpoint++) {
         level waittill("checkpoint_revive");
-        var_9522874ab2bf9c33 = getstructarray("player_checkpoint_" + checkpoint, "targetname");
+        respawn_points = getstructarray("player_checkpoint_" + checkpoint, "targetname");
         foreach (i, player in level.players) {
             if (player_in_laststand(player)) {
-                player.respawn_forcespawnorigin = var_9522874ab2bf9c33[i].origin;
-                player.respawn_forcespawnangles = var_9522874ab2bf9c33[i].angles;
+                player.respawn_forcespawnorigin = respawn_points[i].origin;
+                player.respawn_forcespawnangles = respawn_points[i].angles;
                 player instant_revive(player);
                 if (isdefined(player.dogtag)) {
                     player.dogtag delete();

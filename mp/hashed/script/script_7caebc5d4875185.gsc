@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using script_5af9038262d22c96;
-#using scripts\smartobjects\utility.gsc;
-#using scripts\stealth\manager.gsc;
 #using script_35de402efc5acfb3;
-#using scripts\stealth\threat_sight.gsc;
-#using scripts\stealth\corpse.gsc;
-#using scripts\stealth\utility.gsc;
+#using script_5af9038262d22c96;
+#using scripts\engine\utility;
+#using scripts\smartobjects\utility;
+#using scripts\stealth\corpse;
+#using scripts\stealth\manager;
+#using scripts\stealth\threat_sight;
+#using scripts\stealth\utility;
 
 #namespace manager;
 

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\supers;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
 
 #namespace laststand_heal;
 
@@ -109,7 +109,7 @@ function laststandheal_think() {
     scripts\mp\supers::superusefinished(undefined, undefined, undefined, 1);
     self playlocalsound("laststand_heal_done");
     self notify("last_stand_heal_success");
-    level thread scripts\mp\battlechatter_mp::trysaylocalsound(self, #"hash_1f1f4fe800e03b33");
+    level thread scripts\mp\battlechatter_mp::trysaylocalsound(self, #"bc_status_player_revived");
 }
 
 // Namespace laststand_heal / scripts\mp\supers\laststand_heal

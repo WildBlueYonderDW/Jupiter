@@ -1,9 +1,9 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_3433ee6b63c7e243;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace lmg;
 

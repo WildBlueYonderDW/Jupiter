@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\archetypes\archcommon.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\archetypes\archassault.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\engine\utility;
+#using scripts\mp\archetypes\archassault;
+#using scripts\mp\archetypes\archcommon;
+#using scripts\mp\class;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\points;
 
 #namespace proxyagent;
 

@@ -1,6 +1,6 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\asm\asm_mp.gsc;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\engine\utility;
 
 #namespace namespace_7d1d1a833a0da9d8;
 
@@ -117,7 +117,7 @@ function function_9d343b075a77dcba() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6d1
 // Size: 0x9c
-function function_58a28552bd8a726() {
+function players_getcentroid() {
     centroid = undefined;
     temp = undefined;
     foreach (player in level.players) {
@@ -138,7 +138,7 @@ function function_58a28552bd8a726() {
 // Checksum 0x0, Offset: 0x776
 // Size: 0xe0
 function function_130b4014bf08795() {
-    centroid = function_58a28552bd8a726();
+    centroid = players_getcentroid();
     var_84573ab46f320c97 = undefined;
     var_52d384e6c8efa49d = undefined;
     closestdistance = 2147483647;
@@ -162,7 +162,7 @@ function function_130b4014bf08795() {
 // Checksum 0x0, Offset: 0x85f
 // Size: 0xdc
 function function_72cc2105f47c4128() {
-    centroid = function_58a28552bd8a726();
+    centroid = players_getcentroid();
     var_645bc4aca8a3225 = undefined;
     var_744881db1baa1db5 = 0;
     var_7c58c737150e428b = undefined;
@@ -269,7 +269,7 @@ function function_370e89cf65df0b01(var_b2d4c9b4db7ee54, var_490cf556fe18ff1) {
             if (!istrue(player isonground())) {
                 continue;
             }
-            if (isdefined(player.var_52a7a56d7c5a9dc6) && istrue(player.var_52a7a56d7c5a9dc6.var_95970a85747a82d9)) {
+            if (isdefined(player.fling_data) && istrue(player.fling_data.in_air)) {
                 continue;
             }
         }
@@ -303,7 +303,7 @@ function function_34f345873460798b(var_b2d4c9b4db7ee54, var_490cf556fe18ff1) {
             if (!istrue(player isonground())) {
                 continue;
             }
-            if (isdefined(player.var_52a7a56d7c5a9dc6) && istrue(player.var_52a7a56d7c5a9dc6.var_95970a85747a82d9)) {
+            if (isdefined(player.fling_data) && istrue(player.fling_data.in_air)) {
                 continue;
             }
         }
@@ -336,7 +336,7 @@ function function_f3a96ba65901316(var_b2d4c9b4db7ee54, var_490cf556fe18ff1) {
             if (!istrue(player isonground())) {
                 continue;
             }
-            if (isdefined(player.var_52a7a56d7c5a9dc6) && istrue(player.var_52a7a56d7c5a9dc6.var_95970a85747a82d9)) {
+            if (isdefined(player.fling_data) && istrue(player.fling_data.in_air)) {
                 continue;
             }
         }

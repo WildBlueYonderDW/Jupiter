@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_16ea1b94f0f381b3;
-#using scripts\asm\asm.gsc;
 #using script_35ccbf5e9962bcaa;
 #using script_429c2a03090c1ea1;
+#using scripts\asm\asm;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_c2855630a14184bf;
 

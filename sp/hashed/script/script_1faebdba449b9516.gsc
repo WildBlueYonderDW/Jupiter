@@ -1,24 +1,24 @@
-#using scripts\code\character.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
 #using script_51c07f029e24259d;
 #using script_646812ed7c0b3fad;
-#using script_d66b5c6e0660ddc;
 #using script_7378a5821cd99f07;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using script_d66b5c6e0660ddc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\code\character;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
-#namespace namespace_750be2ccc05d817;
+#namespace jup_enemy_cp_smg_tier1_rus_pmc;
 
-// Namespace namespace_750be2ccc05d817 / namespace_437a36988e846b22
+// Namespace jup_enemy_cp_smg_tier1_rus_pmc / namespace_437a36988e846b22
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x304
 // Size: 0x228
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_2a9417296f59f88c");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_enemy_cp_smg_tier1_rus_pmc");
     self.var_534e788bc498be9f = getscriptbundle(%"hash_d4c1780d6bc141a");
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 150;
@@ -57,7 +57,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_750be2ccc05d817 / namespace_437a36988e846b22
+// Namespace jup_enemy_cp_smg_tier1_rus_pmc / namespace_437a36988e846b22
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x534
 // Size: 0x56
@@ -71,7 +71,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_750be2ccc05d817 / namespace_437a36988e846b22
+// Namespace jup_enemy_cp_smg_tier1_rus_pmc / namespace_437a36988e846b22
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x592
 // Size: 0x83
@@ -89,7 +89,7 @@ function function_9ac26a51c94ccf52() {
     }
 }
 
-// Namespace namespace_750be2ccc05d817 / namespace_437a36988e846b22
+// Namespace jup_enemy_cp_smg_tier1_rus_pmc / namespace_437a36988e846b22
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x61d
 // Size: 0xe3
@@ -115,7 +115,7 @@ function precache() {
     thread setup_weapons();
 }
 
-// Namespace namespace_750be2ccc05d817 / namespace_437a36988e846b22
+// Namespace jup_enemy_cp_smg_tier1_rus_pmc / namespace_437a36988e846b22
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x708
 // Size: 0x1c4

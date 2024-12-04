@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\cp_mp\targetmarkergroups.gsc;
-#using scripts\mp\javelin.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\targetmarkergroups;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\javelin;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\weapon;
+#using scripts\mp\weapons;
 
 #namespace javelin;
 

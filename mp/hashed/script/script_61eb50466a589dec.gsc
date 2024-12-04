@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\heartbeat.gsc;
+#using scripts\common\heartbeat;
+#using scripts\engine\utility;
 
 #namespace namespace_f388b4b671470a7d;
 

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\gametypes\activity_manager.gsc;
 #using script_1174abedbefe9ada;
+#using script_7ab5b649fa408138;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\activity_manager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace dmz_audio;
 

@@ -1,9 +1,9 @@
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_bosses.gsc;
-#using script_48814951e916af89;
 #using script_371b4c2ab5861e62;
-#using scripts\mp\ai_behavior.gsc;
+#using script_48814951e916af89;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gametypes\br_bosses;
 
 #namespace namespace_de071cd40cea8c48;
 

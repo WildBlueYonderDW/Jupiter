@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\mp\teams.gsc;
 #using script_6775ad452d13858;
+#using scripts\common\utility;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\engine\utility;
+#using scripts\mp\teams;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
 
 #namespace accessories;
 

@@ -1,6 +1,6 @@
-#namespace namespace_32bbb4a81fbda5e;
+#namespace c_jup_civ_russian_male_body_flashback;
 
-// Namespace namespace_32bbb4a81fbda5e / namespace_962763c5dc935ede
+// Namespace c_jup_civ_russian_male_body_flashback / namespace_962763c5dc935ede
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x331
 // Size: 0xd3

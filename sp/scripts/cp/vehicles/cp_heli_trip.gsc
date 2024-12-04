@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_infilexfil.gsc;
-#using scripts\cp\cp_anim.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
-#using scripts\cp\infilexfil\infilexfil.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp\infilexfil\blima_exfil.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
 #using script_74502a9e0ef1f19c;
-#using scripts\cp\cp_pickup_hostage.gsc;
 #using script_afb7e332aee4bf2;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_paths;
+#using scripts\cp\cp_anim;
+#using scripts\cp\cp_infilexfil;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp\cp_pickup_hostage;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\infilexfil\blima_exfil;
+#using scripts\cp\infilexfil\infilexfil;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\utility\infilexfil;
 
 #namespace namespace_92a8bb6c976e417b;
 
@@ -23,10 +23,10 @@
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x6e2
 // Size: 0x150
-function start_heli_trip_sequence(var_ea5a0ca0515a7b2a, var_afe93dce3222d6c1, path_struct, var_85bdae40d5e5afed, var_cc7b5c3d58edaee5) {
+function start_heli_trip_sequence(heli_spawner, var_afe93dce3222d6c1, path_struct, var_85bdae40d5e5afed, var_cc7b5c3d58edaee5) {
     level endon("game_ended");
     initanims();
-    level.heli_trip_vehicle = spawn_chopper(var_ea5a0ca0515a7b2a, var_afe93dce3222d6c1);
+    level.heli_trip_vehicle = spawn_chopper(heli_spawner, var_afe93dce3222d6c1);
     level.heli_trip_vehicle scripts\cp\infilexfil\blima_exfil::go_to_exfil_location(level.heli_trip_vehicle.exfil_struct, 1);
     level.heli_trip_vehicle thread wait_for_passengers(var_85bdae40d5e5afed);
     level.heli_trip_vehicle waittill_any_2("all_players_on_board", "heli_trip_timed_out");
@@ -342,8 +342,8 @@ function wait_for_all_players_ready() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1109
 // Size: 0x1b2
-function spawn_chopper(var_96b1084652b648a8, exfil_struct) {
-    heli = scripts\common\vehicle::vehicle_spawn(var_96b1084652b648a8);
+function spawn_chopper(origin_spawner, exfil_struct) {
+    heli = scripts\common\vehicle::vehicle_spawn(origin_spawner);
     heli.vehicle_skipdeathmodel = 1;
     heli.script_disconnectpaths = 0;
     heli.death_fx_on_self = 1;
@@ -455,13 +455,13 @@ function toggleconnectpaths(toggle) {
 // Size: 0x12a
 function init_interactions(usefuncoverride) {
     fwd = anglestoforward(self.angles);
-    RT = anglestoright(self.angles);
+    rt = anglestoright(self.angles);
     lft = anglestoleft(self.angles);
     org = self.origin + (0, 0, -60);
     pos4 = org + fwd * 20 + lft * 45;
-    pos2 = org + fwd * 20 + RT * 45;
+    pos2 = org + fwd * 20 + rt * 45;
     pos3 = org + fwd * -20 + lft * 45;
-    pos1 = org + fwd * -20 + RT * 45;
+    pos1 = org + fwd * -20 + rt * 45;
     create_vehicle_interaction(pos1, %CP_VEHICLE_TRAVEL/ENTER, "seat4", self, usefuncoverride);
     create_vehicle_interaction(pos2, %CP_VEHICLE_TRAVEL/ENTER, "seat3", self, usefuncoverride);
     create_vehicle_interaction(pos3, %CP_VEHICLE_TRAVEL/ENTER, "seat2", self, usefuncoverride);
@@ -531,11 +531,11 @@ function watchforexfilallyturntoside() {
     self endon("death");
     self endon("load_hvt_started");
     fwd = anglestoforward(self.angles);
-    RT = anglestoright(self.angles);
+    rt = anglestoright(self.angles);
     lft = anglestoleft(self.angles);
     org = self.origin + (0, 0, -110);
     leftpos = org + fwd * 20 + lft * 45;
-    rightpos = org + fwd * 20 + RT * 45;
+    rightpos = org + fwd * 20 + rt * 45;
     var_a8ce42e766f71385 = self.wmexfilally;
     if (!isdefined(var_a8ce42e766f71385)) {
         return;

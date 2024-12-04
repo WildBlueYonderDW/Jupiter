@@ -1,7 +1,7 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\anim\face.gsc;
+#using scripts\anim\face;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\asm_sp;
 
 #namespace scripted;
 

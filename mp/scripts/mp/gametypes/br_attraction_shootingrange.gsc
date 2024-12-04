@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\engine\trace.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\gametypes\br_attraction_racetrack.gsc;
-#using scripts\mp\gametypes\br_attractions.gsc;
-#using scripts\mp\ammorestock.gsc;
-#using scripts\mp\agents\agents.gsc;
-#using scripts\mp\damage.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agents;
+#using scripts\mp\ammorestock;
+#using scripts\mp\damage;
+#using scripts\mp\gametypes\br_attraction_racetrack;
+#using scripts\mp\gametypes\br_attractions;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\weapon;
 
 #namespace br_attraction_shootingrange;
 
@@ -243,10 +243,10 @@ function target_show_damage_damage_watch(range, target, show_death) {
         target setcandamage(1);
     }
     health = 10000;
-    var_cb05dc87238ca21c = 150;
-    var_40b21467f572e707 = 100;
-    var_815f66fffb610612 = 0;
-    var_af794a323d5a8f4 = 0;
+    armor_ammount = 150;
+    health_ammount = 100;
+    had_armor = 0;
+    was_alive = 0;
     head = undefined;
     if (target.model == "military_action_target_01") {
         head_offset = (2, 0, 65);
@@ -255,19 +255,19 @@ function target_show_damage_damage_watch(range, target, show_death) {
         head.radius = 5;
     }
     while (true) {
-        if (!show_death || !var_af794a323d5a8f4) {
+        if (!show_death || !was_alive) {
             target.health = health;
-            var_815f66fffb610612 = 1;
-            var_af794a323d5a8f4 = 1;
+            had_armor = 1;
+            was_alive = 1;
         }
         target waittill("damage", damage, attacker, direction_vec, point, meansofdeath, modelname, tagname, partname, idflags, weapon);
         if (istrue(target.is_dead)) {
             continue;
         }
-        has_armor = target.health > health - var_cb05dc87238ca21c;
-        is_alive = target.health > health - var_cb05dc87238ca21c - var_40b21467f572e707;
-        armor_break = var_815f66fffb610612 && !has_armor;
-        killed = var_af794a323d5a8f4 && !is_alive;
+        has_armor = target.health > health - armor_ammount;
+        is_alive = target.health > health - armor_ammount - health_ammount;
+        armor_break = had_armor && !has_armor;
+        killed = was_alive && !is_alive;
         headshot = 0;
         if (isdefined(head)) {
             headshot = !scripts\mp\damage::isspreadweapon(weapon) && distance(point, head.origin) < head.radius;
@@ -317,8 +317,8 @@ function target_show_damage_damage_watch(range, target, show_death) {
             thread target_show_damage(range, target, attackerplayer, damage);
             thread target_show_dist(point, attackerplayer);
         }
-        var_815f66fffb610612 = has_armor;
-        var_af794a323d5a8f4 = is_alive;
+        had_armor = has_armor;
+        was_alive = is_alive;
     }
 }
 

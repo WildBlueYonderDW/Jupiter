@@ -1,49 +1,49 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using scripts\mp\gametypes\br_blueprint_extract_spawn.gsc;
 #using script_110fd2130c2ed1fe;
-#using script_404df4d3a3b8cd80;
 #using script_1c3dac686aa675cc;
-#using script_6388860e9e2a83bd;
-#using script_6ab78610e79a4aec;
-#using scripts\mp\gametypes\br_bunker_utility.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\gametypes\br_callouts.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_challenges.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_rewards.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gametypes\br_jugg_common.gsc;
-#using scripts\mp\utility\lower_message.gsc;
+#using script_404df4d3a3b8cd80;
 #using script_5238dee479bbf7fb;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\mp\gametypes\br_quest_util.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
+#using script_6388860e9e2a83bd;
+#using script_64acb6ce534155b7;
+#using script_6ab78610e79a4aec;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_blueprint_extract_spawn;
+#using scripts\mp\gametypes\br_bunker_utility;
+#using scripts\mp\gametypes\br_callouts;
+#using scripts\mp\gametypes\br_challenges;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_jugg_common;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\gametypes\br_rewards;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\perks\perks;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace br_quest_util;
 
@@ -505,7 +505,7 @@ function activatetablet(instance) {
 // Size: 0x41
 function getlootname(category) {
     lootname = "brloot_" + category + "_tablet";
-    if (getdvarint(@"hash_39c3947a2e4f5f9e") != 0) {
+    if (getdvarint(@"mgl") != 0) {
         lootname += "_mgl";
     }
     return lootname;
@@ -1280,8 +1280,8 @@ function _determinelocationarray(search_params) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x44d2
 // Size: 0x32e
-function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
-    var_2aab8569152edfac = array_randomize(var_2aab8569152edfac);
+function _findnewlocaleplacement(location_array, search_params) {
+    location_array = array_randomize(location_array);
     if (!isdefined(search_params.mintime)) {
         search_params.mintime = 0;
     }
@@ -1301,7 +1301,7 @@ function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
     #/
     bestlocindex = undefined;
     var_be0f4d48fa40793f = search_params.searchradiusmax;
-    foreach (i, loc in var_2aab8569152edfac) {
+    foreach (i, loc in location_array) {
         dist = distance2d(loc.origin, search_params.searchcircleorigin);
         /#
             debug.dist[i] = dist;
@@ -1363,14 +1363,14 @@ function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
         bestlocindex = i;
     }
     /#
-        thread function_f42fbf313ebaec27(var_2aab8569152edfac, bestlocindex, search_params, debug);
+        thread function_f42fbf313ebaec27(location_array, bestlocindex, search_params, debug);
     #/
     bestloc = undefined;
     if (isdefined(bestlocindex)) {
-        bestloc = var_2aab8569152edfac[bestlocindex];
+        bestloc = location_array[bestlocindex];
     } else {
         /#
-            thread function_3c30c102ba44ec57(var_2aab8569152edfac, bestlocindex, search_params, debug);
+            thread function_3c30c102ba44ec57(location_array, bestlocindex, search_params, debug);
         #/
     }
     return bestloc;
@@ -1382,20 +1382,20 @@ function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
     // Params 4, eflags: 0x0
     // Checksum 0x0, Offset: 0x4809
     // Size: 0x5e
-    function function_f42fbf313ebaec27(var_2aab8569152edfac, bestlocindex, search_params, debuginfo) {
+    function function_f42fbf313ebaec27(location_array, bestlocindex, search_params, debuginfo) {
         dvar = @"hash_b88af237972348e6";
         dvar_default = 0;
         if (!getdvarint(dvar, dvar_default)) {
             return;
         }
-        function_a3db3d7f49e8c9(dvar, dvar_default, var_2aab8569152edfac, bestlocindex, search_params, debuginfo);
+        function_a3db3d7f49e8c9(dvar, dvar_default, location_array, bestlocindex, search_params, debuginfo);
     }
 
     // Namespace br_quest_util / scripts\mp\gametypes\br_quest_util
     // Params 5, eflags: 0x0
     // Checksum 0x0, Offset: 0x486f
     // Size: 0x140
-    function function_3c30c102ba44ec57(var_2aab8569152edfac, bestlocindex, search_params, debuginfo, failindex) {
+    function function_3c30c102ba44ec57(location_array, bestlocindex, search_params, debuginfo, failindex) {
         dvar = @"hash_b4cb045fde16721f";
         dvar_default = -2;
         var_3df45bd0d60106a4 = -1;
@@ -1415,7 +1415,7 @@ function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
                 }
                 wait 0.2;
             }
-            function_a3db3d7f49e8c9(dvar, failindex, var_2aab8569152edfac, bestlocindex, search_params, debuginfo);
+            function_a3db3d7f49e8c9(dvar, failindex, location_array, bestlocindex, search_params, debuginfo);
         }
     }
 
@@ -1423,7 +1423,7 @@ function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
     // Params 6, eflags: 0x0
     // Checksum 0x0, Offset: 0x49b7
     // Size: 0x4a2
-    function function_a3db3d7f49e8c9(dvar, dvarvalue, var_2aab8569152edfac, bestlocindex, search_params, debuginfo) {
+    function function_a3db3d7f49e8c9(dvar, dvarvalue, location_array, bestlocindex, search_params, debuginfo) {
         if (!isdefined(debuginfo.dist)) {
             debuginfo.dist = [];
         }
@@ -1447,7 +1447,7 @@ function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
         print3doffset = (0, 0, 15);
         while (getdvarint(dvar) == dvarvalue) {
             sphere(search_params.searchcircleorigin, 10, yellow);
-            print3d(search_params.searchcircleorigin, "<dev string:x345>" + var_2aab8569152edfac.size + "<dev string:x350>" + debuginfo.centertime, white, 1, 1, 1, 1);
+            print3d(search_params.searchcircleorigin, "<dev string:x345>" + location_array.size + "<dev string:x350>" + debuginfo.centertime, white, 1, 1, 1, 1);
             if (!isdefined(bestlocindex)) {
                 print3d(search_params.searchcircleorigin + print3doffset, "<dev string:x35b>", red, 1, 1, 1, 1);
             }
@@ -1459,7 +1459,7 @@ function _findnewlocaleplacement(var_2aab8569152edfac, search_params) {
             if (isdefined(search_params.searchradiusidealmax)) {
                 scripts\engine\utility::draw_circle(search_params.searchcircleorigin, search_params.searchradiusidealmax, yellow, 1, 0, 0);
             }
-            foreach (i, loc in var_2aab8569152edfac) {
+            foreach (i, loc in location_array) {
                 checked = isdefined(debuginfo.dist[i]);
                 if (isdefined(bestlocindex) && i == bestlocindex) {
                     color = green;
@@ -1602,8 +1602,8 @@ function findquestplacement(category, search_params) {
     if (isdefined(search_params.reservedplacement)) {
         placement = search_params.reservedplacement;
     } else {
-        var_2aab8569152edfac = _determinelocationarray(search_params);
-        placement = _findnewlocaleplacement(var_2aab8569152edfac, search_params);
+        location_array = _determinelocationarray(search_params);
+        placement = _findnewlocaleplacement(location_array, search_params);
     }
     return placement;
 }

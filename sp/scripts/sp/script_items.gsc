@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
-#namespace namespace_3fc9349f6f00dde5;
+#namespace script_items;
 
-// Namespace namespace_3fc9349f6f00dde5 / scripts\sp\script_items
+// Namespace script_items / scripts\sp\script_items
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0xc0
 // Size: 0x6f
@@ -27,7 +27,7 @@ function scriptitem_buildspawnflags(var_a11236b2c6149a38, usephysics, var_5056a8
     return spawnflags;
 }
 
-// Namespace namespace_3fc9349f6f00dde5 / scripts\sp\script_items
+// Namespace script_items / scripts\sp\script_items
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x138
 // Size: 0xfe
@@ -51,7 +51,7 @@ function scriptitem_testspawn(position, angles, hintstring) {
 
 /#
 
-    // Namespace namespace_3fc9349f6f00dde5 / scripts\sp\script_items
+    // Namespace script_items / scripts\sp\script_items
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x23f
     // Size: 0x22
@@ -65,7 +65,7 @@ function scriptitem_testspawn(position, angles, hintstring) {
 
 #/
 
-// Namespace namespace_3fc9349f6f00dde5 / scripts\sp\script_items
+// Namespace script_items / scripts\sp\script_items
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x269
 // Size: 0x5b

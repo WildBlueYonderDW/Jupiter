@@ -1,42 +1,42 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_41387eecc35b88bf;
+#using script_16ea1b94f0f381b3;
 #using script_185660037b9236c1;
 #using script_220d0eb95a8fab7d;
-#using script_7956d56c4922bd1;
+#using script_22f1701e151b9d12;
+#using script_2304453c69e996e2;
+#using script_24946c036cb2f7b2;
 #using script_24f248b33b79e48d;
+#using script_2ff6eb4f5b8663fb;
 #using script_3ab210ea917601e7;
+#using script_41387eecc35b88bf;
+#using script_43971bbeefd98f05;
+#using script_46c7c73b1a7e4773;
 #using script_4ef01fe6151dde4d;
 #using script_4fdefae8b7bcdf73;
 #using script_5753ba9c28794a65;
-#using script_5d8202968463a21d;
-#using script_64351208cb856df9;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_16ea1b94f0f381b3;
-#using script_43971bbeefd98f05;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_22f1701e151b9d12;
-#using script_7cfaa6fd841fb4dd;
-#using script_2ff6eb4f5b8663fb;
-#using script_6df6604a74a7a9c7;
-#using script_46c7c73b1a7e4773;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_spawn.gsc;
-#using script_6c6a46b757ce4c71;
-#using script_638d701d263ee1ed;
-#using script_24946c036cb2f7b2;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using script_60e3273df6b5f7d1;
-#using script_d60e0219a7419e0;
-#using scripts\mp\ai_behavior.gsc;
-#using script_2304453c69e996e2;
 #using script_58be75c518bf0d40;
+#using script_5d8202968463a21d;
 #using script_600b944a95c3a7bf;
+#using script_60e3273df6b5f7d1;
+#using script_638d701d263ee1ed;
+#using script_64351208cb856df9;
+#using script_6c6a46b757ce4c71;
+#using script_6df6604a74a7a9c7;
+#using script_7956d56c4922bd1;
+#using script_7cfaa6fd841fb4dd;
+#using script_d60e0219a7419e0;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\cp_mp\vehicles\vehicle_spawn;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\hud_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
 
 #namespace namespace_200c114c5956154;
 
@@ -114,7 +114,7 @@ function function_c75af84dd6eab876() {
     self.n_radius = 512;
     self.var_a83cd45596a51205 = undefined;
     self.var_cb8cd16df7c04d16 = [];
-    self.var_d420b9a31cb5c4fc = 1;
+    self.b_airstrike = 1;
     level._effect["turret_muzflash"] = loadfx("vfx/core/muzflash/minigun_flash_cheap.vfx");
     thread function_fb8a05533bdeedf2();
     thread function_38dfcd58550b6616();
@@ -134,7 +134,7 @@ function function_c75af84dd6eab876() {
 // Size: 0x53
 function function_6a8707b4b593d6fe() {
     function_3e33031646de23b0(self);
-    if (istrue(self.var_d420b9a31cb5c4fc)) {
+    if (istrue(self.b_airstrike)) {
         namespace_64135de19550f047::function_daee52aa53ad6314(self.s_center.origin, 1500);
     }
     function_3fe9c2c70d8c34cc();

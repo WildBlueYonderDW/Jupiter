@@ -1,13 +1,13 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\common\vehicle.gsc;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\utility;
 
-#namespace namespace_3abd31f6ed2f4818;
+#namespace geo_mover;
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x126
 // Size: 0xc
@@ -15,7 +15,7 @@ function init_mover_candidates() {
     level.mover_candidates = undefined;
 }
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13a
 // Size: 0x85
@@ -28,17 +28,17 @@ function trigger_moveto(trigger) {
     array_thread(volumes, &moveto_volume_think, trigger);
 }
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c7
 // Size: 0x641
 function moveto_volume_think(trigger) {
     movers = [];
     var_e62dc69923720fa9 = spawn_tag_origin();
-    var_38be8443e2495529 = self;
+    touch_test = self;
     foreach (m in level.mover_candidates) {
         var_e62dc69923720fa9.origin = m.origin;
-        if (var_e62dc69923720fa9 istouching(var_38be8443e2495529)) {
+        if (var_e62dc69923720fa9 istouching(touch_test)) {
             level.mover_candidates = array_remove(level.mover_candidates, m);
             movers = array_add(movers, m);
         }
@@ -73,18 +73,18 @@ function moveto_volume_think(trigger) {
             m linkto(mover);
         }
     }
-    var_9d805af60e474e1e = get_target_ent();
-    if (var_9d805af60e474e1e isvehicle()) {
-        mover moveto_volume_vehiclespline(var_9d805af60e474e1e, trigger);
+    mover_target = get_target_ent();
+    if (mover_target isvehicle()) {
+        mover moveto_volume_vehiclespline(mover_target, trigger);
         self notify("done_moving");
         return;
     }
-    if (!isdefined(var_9d805af60e474e1e.angles)) {
-        var_9d805af60e474e1e.angles = (0, 0, 0);
+    if (!isdefined(mover_target.angles)) {
+        mover_target.angles = (0, 0, 0);
     }
     trigger.mover = mover;
-    mover.origin = var_9d805af60e474e1e.origin;
-    mover.angles = var_9d805af60e474e1e.angles;
+    mover.origin = mover_target.origin;
+    mover.angles = mover_target.angles;
     var_4d8cd161a8eaadc2 = undefined;
     exploder_name = undefined;
     duration = 5;
@@ -92,34 +92,34 @@ function moveto_volume_think(trigger) {
     decel = 0;
     var_69298ea86a787593 = undefined;
     var_e9aa975bb373e72f = undefined;
-    if (isdefined(var_9d805af60e474e1e.script_duration)) {
-        duration = var_9d805af60e474e1e.script_duration;
+    if (isdefined(mover_target.script_duration)) {
+        duration = mover_target.script_duration;
     }
-    if (isdefined(var_9d805af60e474e1e.script_accel)) {
-        accel = var_9d805af60e474e1e.script_accel;
+    if (isdefined(mover_target.script_accel)) {
+        accel = mover_target.script_accel;
     }
-    if (isdefined(var_9d805af60e474e1e.script_decel)) {
-        decel = var_9d805af60e474e1e.script_decel;
+    if (isdefined(mover_target.script_decel)) {
+        decel = mover_target.script_decel;
     }
-    if (isdefined(var_9d805af60e474e1e.script_earthquake)) {
-        var_4d8cd161a8eaadc2 = var_9d805af60e474e1e.script_earthquake;
+    if (isdefined(mover_target.script_earthquake)) {
+        var_4d8cd161a8eaadc2 = mover_target.script_earthquake;
     }
-    if (isdefined(var_9d805af60e474e1e.script_exploder)) {
-        exploder_name = var_9d805af60e474e1e.script_exploder;
+    if (isdefined(mover_target.script_exploder)) {
+        exploder_name = mover_target.script_exploder;
     }
-    if (isdefined(var_9d805af60e474e1e.script_flag_wait)) {
-        var_69298ea86a787593 = var_9d805af60e474e1e.script_flag_wait;
+    if (isdefined(mover_target.script_flag_wait)) {
+        var_69298ea86a787593 = mover_target.script_flag_wait;
     }
-    if (isdefined(var_9d805af60e474e1e.script_flag_waitopen)) {
-        var_e9aa975bb373e72f = var_9d805af60e474e1e.script_flag_waitopen;
+    if (isdefined(mover_target.script_flag_waitopen)) {
+        var_e9aa975bb373e72f = mover_target.script_flag_waitopen;
     }
     trigger waittill("trigger");
-    var_9d805af60e474e1e script_delay();
-    if (isdefined(var_9d805af60e474e1e.target)) {
-        var_9d805af60e474e1e = var_9d805af60e474e1e get_target_ent();
+    mover_target script_delay();
+    if (isdefined(mover_target.target)) {
+        mover_target = mover_target get_target_ent();
     } else {
     }
-    for (var_9d805af60e474e1e = undefined; isdefined(var_9d805af60e474e1e); var_9d805af60e474e1e = undefined) {
+    for (mover_target = undefined; isdefined(mover_target); mover_target = undefined) {
         if (isdefined(var_69298ea86a787593)) {
             flag_wait(var_69298ea86a787593);
         }
@@ -134,64 +134,64 @@ function moveto_volume_think(trigger) {
                 mover thread constant_quake(var_4d8cd161a8eaadc2);
             }
         }
-        if (!isdefined(var_9d805af60e474e1e.angles)) {
-            var_9d805af60e474e1e.angles = (0, 0, 0);
+        if (!isdefined(mover_target.angles)) {
+            mover_target.angles = (0, 0, 0);
         }
-        mover moveto_rotateto(var_9d805af60e474e1e, duration, accel, decel);
+        mover moveto_rotateto(mover_target, duration, accel, decel);
         mover notify("stop_constant_quake");
         duration = 5;
         accel = 0;
         decel = 0;
         var_4d8cd161a8eaadc2 = undefined;
-        var_9d805af60e474e1e script_delay();
-        if (isdefined(var_9d805af60e474e1e.script_duration)) {
-            duration = var_9d805af60e474e1e.script_duration;
+        mover_target script_delay();
+        if (isdefined(mover_target.script_duration)) {
+            duration = mover_target.script_duration;
         }
-        if (isdefined(var_9d805af60e474e1e.script_accel)) {
-            accel = var_9d805af60e474e1e.script_accel;
+        if (isdefined(mover_target.script_accel)) {
+            accel = mover_target.script_accel;
         }
-        if (isdefined(var_9d805af60e474e1e.script_decel)) {
-            decel = var_9d805af60e474e1e.script_decel;
+        if (isdefined(mover_target.script_decel)) {
+            decel = mover_target.script_decel;
         }
-        if (isdefined(var_9d805af60e474e1e.script_earthquake)) {
-            var_4d8cd161a8eaadc2 = var_9d805af60e474e1e.script_earthquake;
+        if (isdefined(mover_target.script_earthquake)) {
+            var_4d8cd161a8eaadc2 = mover_target.script_earthquake;
         }
-        if (isdefined(var_9d805af60e474e1e.script_exploder)) {
-            exploder_name = var_9d805af60e474e1e.script_exploder;
+        if (isdefined(mover_target.script_exploder)) {
+            exploder_name = mover_target.script_exploder;
         }
-        if (isdefined(var_9d805af60e474e1e.script_flag_wait)) {
-            var_69298ea86a787593 = var_9d805af60e474e1e.script_flag_wait;
+        if (isdefined(mover_target.script_flag_wait)) {
+            var_69298ea86a787593 = mover_target.script_flag_wait;
         }
-        if (isdefined(var_9d805af60e474e1e.script_flag_waitopen)) {
-            var_e9aa975bb373e72f = var_9d805af60e474e1e.script_flag_waitopen;
+        if (isdefined(mover_target.script_flag_waitopen)) {
+            var_e9aa975bb373e72f = mover_target.script_flag_waitopen;
         }
-        linked = var_9d805af60e474e1e get_linked_ents();
+        linked = mover_target get_linked_ents();
         if (linked.size > 0) {
             if (issubstr(linked[0].classname, "trigger")) {
                 linked[0] waittill("trigger");
             }
         }
-        if (isdefined(var_9d805af60e474e1e.target)) {
-            var_9d805af60e474e1e = var_9d805af60e474e1e get_target_ent();
+        if (isdefined(mover_target.target)) {
+            mover_target = mover_target get_target_ent();
             continue;
         }
     }
     self notify("done_moving");
 }
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x810
 // Size: 0xef
 function moveto_volume_vehiclespline(vehiclespawner, trigger) {
     mover = self;
-    var_9d805af60e474e1e = getvehiclenode(vehiclespawner.target, "targetname");
-    if (!isdefined(var_9d805af60e474e1e.angles)) {
-        var_9d805af60e474e1e.angles = (0, 0, 0);
+    mover_target = getvehiclenode(vehiclespawner.target, "targetname");
+    if (!isdefined(mover_target.angles)) {
+        mover_target.angles = (0, 0, 0);
     }
     trigger.mover = mover;
-    mover.origin = var_9d805af60e474e1e.origin;
-    mover.angles = var_9d805af60e474e1e.angles;
+    mover.origin = mover_target.origin;
+    mover.angles = mover_target.angles;
     trigger waittill("trigger");
     vehicle = vehiclespawner vehicle_dospawn();
     vehicle vehicle_turnengineoff();
@@ -199,11 +199,11 @@ function moveto_volume_vehiclespline(vehiclespawner, trigger) {
     vehicle godon();
     vehicle vehicle_turnengineoff();
     mover linkto(vehicle);
-    vehicle attachpath(var_9d805af60e474e1e);
+    vehicle attachpath(mover_target);
     vehicle startpath();
 }
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x907
 // Size: 0x3c
@@ -215,7 +215,7 @@ function constant_quake(var_4d8cd161a8eaadc2) {
     }
 }
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x94b
 // Size: 0xae
@@ -235,7 +235,7 @@ function moveto_rotateto_speed(node, rate, accel, decel) {
     self waittill("movedone");
 }
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xa01
 // Size: 0x55
@@ -245,13 +245,13 @@ function moveto_rotateto(node, time, accel, decel) {
     self waittill("movedone");
 }
 
-// Namespace namespace_3abd31f6ed2f4818 / scripts\sp\geo_mover
+// Namespace geo_mover / scripts\sp\geo_mover
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa5e
 // Size: 0xb9
 function set_start_positions(targetname) {
-    var_e2a562f66d0c069c = getstructarray(targetname, "targetname");
-    foreach (pos in var_e2a562f66d0c069c) {
+    start_positions = getstructarray(targetname, "targetname");
+    foreach (pos in start_positions) {
         switch (pos.script_noteworthy) {
         case #"hash_87d1443ef2805760":
             level.player setorigin(pos.origin);

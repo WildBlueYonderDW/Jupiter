@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_293ba44c408fef1;
-#using scripts\cp_mp\challenges.gsc;
 #using script_4cdabcd91a92977;
+#using scripts\common\ae_utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace namespace_bd89c4c41be78d43;
 

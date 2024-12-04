@@ -1,9 +1,9 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\cap.gsc;
-#using scripts\anim\utility_common.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\cap;
+#using scripts\engine\utility;
 
 #namespace script_funcs;
 
@@ -832,8 +832,8 @@ function function_28d7e9d4c9615969(asmname, statename, tostatename, params) {
     assert(!isdefined(params) || isarray(params) && params.size == 3);
     rate = 1;
     if (!isdefined(params) || params[2]) {
-        var_4a19093291d2c8cb = randomfloatrange(-0.2, 0.2);
-        rate += var_4a19093291d2c8cb;
+        rate_adjust = randomfloatrange(-0.2, 0.2);
+        rate += rate_adjust;
     }
     if (isai(self)) {
         self aisetanim(statename, turnanim, rate);
@@ -901,7 +901,7 @@ function function_44224a1150c6d2c9(turnxanim, statename) {
 function function_8582e56563261e62(asmname, statename, params) {
     target = function_75996a8dac6970f2(1024);
     if (isdefined(params) & isstring(params) && params == "return" && isdefined(self.interaction_origin)) {
-        target = self.interaction_origin + (0, 0, 55) + anglestoforward(self.var_a70672e669ca7f00) * 10;
+        target = self.interaction_origin + (0, 0, 55) + anglestoforward(self.interaction_angles) * 10;
     }
     var_935ce979bb3ef270 = vectortoyaw(target - self.origin);
     anglediff = angleclamp180(var_935ce979bb3ef270 - self.angles[1]);

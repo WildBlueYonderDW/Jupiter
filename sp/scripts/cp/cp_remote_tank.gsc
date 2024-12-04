@@ -1,15 +1,15 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_weapons.gsc;
-#using scripts\common\vehicle_build.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\cp_hostmigration.gsc;
-#using scripts\cp\cp_agent_utils.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_hud_message.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle_build;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_weapons;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_355e43ee3fb58686;
 
@@ -80,26 +80,26 @@ function spawn_remote_tank(spawn_node, name, var_353c9e261ac35aac) {
     if (!isdefined(spawn_angles)) {
         spawn_angles = (0, 0, 0);
     }
-    remotetank = spawnvehicle(var_a84cfd847dc1f677.modelbase, "veh_pac_sentry_mp_cp", var_a84cfd847dc1f677.vehicleinfo, spawn_pos, spawn_angles);
-    if (!isdefined(remotetank)) {
+    remoteTank = spawnvehicle(var_a84cfd847dc1f677.modelbase, "veh_pac_sentry_mp_cp", var_a84cfd847dc1f677.vehicleinfo, spawn_pos, spawn_angles);
+    if (!isdefined(remoteTank)) {
         return undefined;
     }
-    remotetank.team = "axis";
-    remotetank.tanktype = "remote_tank";
-    remotetank.streakname = "pac_sentry";
-    remotetank.config = var_a84cfd847dc1f677;
-    remotetank.maxhealth = var_a84cfd847dc1f677.maxhealth;
-    remotetank.health = remotetank.maxhealth;
-    remotetank.lifetime = var_a84cfd847dc1f677.lifetime;
-    entnumber = remotetank getentitynumber();
-    remotetank addtoassaultdronelist(entnumber);
-    remotetank thread removefromassaultdronelistondeath(entnumber);
-    var_6ec4c83e2ded9d38 = remotetank gettagorigin("tag_turret");
+    remoteTank.team = "axis";
+    remoteTank.tanktype = "remote_tank";
+    remoteTank.streakname = "pac_sentry";
+    remoteTank.config = var_a84cfd847dc1f677;
+    remoteTank.maxhealth = var_a84cfd847dc1f677.maxhealth;
+    remoteTank.health = remoteTank.maxhealth;
+    remoteTank.lifetime = var_a84cfd847dc1f677.lifetime;
+    entnumber = remoteTank getentitynumber();
+    remoteTank addtoassaultdronelist(entnumber);
+    remoteTank thread removefromassaultdronelistondeath(entnumber);
+    var_6ec4c83e2ded9d38 = remoteTank gettagorigin("tag_turret");
     mgturret = spawnturret("misc_turret", var_6ec4c83e2ded9d38, var_a84cfd847dc1f677.mgturretinfo, 0);
-    mgturret linkto(remotetank, "tag_turret", (0, 0, 0), (0, 0, 0));
+    mgturret linkto(remoteTank, "tag_turret", (0, 0, 0), (0, 0, 0));
     mgturret setmodel(level.tanksettings["remote_tank"].mgturretmodelbase);
-    mgturret.angles = remotetank.angles;
-    mgturret.tank = remotetank;
+    mgturret.angles = remoteTank.angles;
+    mgturret.tank = remoteTank;
     mgturret setmode("manual");
     mgturret setturretteam("axis");
     mgturret setdefaultdroppitch(0);
@@ -109,17 +109,17 @@ function spawn_remote_tank(spawn_node, name, var_353c9e261ac35aac) {
     mgturret setbottomarc(45);
     mgturret setconvergencetime(0.05, "yaw");
     mgturret setconvergencetime(0.05, "pitch");
-    remotetank.mgturret = mgturret;
-    remotetank.spawn_node = spawn_node;
-    remotetank.repulsor = createnavrepulsor("tank_repulsor", 0, remotetank, 128, 1);
+    remoteTank.mgturret = mgturret;
+    remoteTank.spawn_node = spawn_node;
+    remoteTank.repulsor = createnavrepulsor("tank_repulsor", 0, remoteTank, 128, 1);
     if (isdefined(name)) {
         if (!isdefined(level.remote_tanks)) {
             level.remote_tanks = [];
         }
-        level.remote_tanks[name] = remotetank;
+        level.remote_tanks[name] = remoteTank;
     }
-    remotetank thread remotetank_rumble();
-    return remotetank;
+    remoteTank thread remotetank_rumble();
+    return remoteTank;
 }
 
 // Namespace namespace_355e43ee3fb58686 / scripts\cp\cp_remote_tank
@@ -174,11 +174,11 @@ function tank_finishdropoffsequence(owner, tank) {
     var_5ed295ac87f32df1 = tank.angles;
     var_a930350f718ef15 = var_3ecc13deffde644f - anglestoforward(var_5ed295ac87f32df1) * 100;
     var_76f164f8c60c8101 = var_5ed295ac87f32df1;
-    var_e83eabf77c0c1d5a = "on";
+    on_state = "on";
     if (isdefined(self.config.turretlightsonstate)) {
-        var_e83eabf77c0c1d5a = self.config.turretlightsonstate;
+        on_state = self.config.turretlightsonstate;
     }
-    tank.mgturret setscriptablepartstate("lights", var_e83eabf77c0c1d5a);
+    tank.mgturret setscriptablepartstate("lights", on_state);
     tank.mgturret laseron();
     owner val::set("tank_camera_transition", "fire", 0);
     tank.owner = owner;
@@ -231,27 +231,27 @@ function tank_startfadetransition() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfa5
 // Size: 0x130
-function startusingtank(remotetank) {
+function startusingtank(remoteTank) {
     level endon("game_ended");
     self endon("disconnect");
     self.isusingremotetank = 1;
-    remotetank.mgturret setcandamage(1);
-    remotetank setcandamage(1);
+    remoteTank.mgturret setcandamage(1);
+    remoteTank setcandamage(1);
     data = spawnstruct();
     data.deathoverridecallback = &tank_override_moving_platform_death;
-    remotetank setotherent(self);
-    remotetank setentityowner(self);
-    remotetank.driver = self;
-    self controlslinkto(remotetank);
-    self remotecontrolturret(remotetank.mgturret);
+    remoteTank setotherent(self);
+    remoteTank setentityowner(self);
+    remoteTank.driver = self;
+    self controlslinkto(remoteTank);
+    self remotecontrolturret(remoteTank.mgturret);
     self painvisionoff();
     self setclientomnvar("ui_hide_hud", 1);
     self setclientomnvar("ui_pac_sentry_controls", 1);
     self setclientomnvar("ui_pac_sentry_speed", 0);
-    self setclientomnvar("ui_killstreak_countdown", gettime() + int(remotetank.lifetime * 1000));
-    self setclientomnvar("ui_killstreak_health", remotetank.health / remotetank.maxhealth);
-    remotetank thread tank_earthquake();
-    remotetank thread allowridekillstreakplayerexit("death");
+    self setclientomnvar("ui_killstreak_countdown", gettime() + int(remoteTank.lifetime * 1000));
+    self setclientomnvar("ui_killstreak_health", remoteTank.health / remoteTank.maxhealth);
+    remoteTank thread tank_earthquake();
+    remoteTank thread allowridekillstreakplayerexit("death");
     _freezecontrols(0);
 }
 
@@ -465,8 +465,8 @@ function tank_findclosestairbursttarget(var_ee356ed81b5cb7f4) {
     while (true) {
         closestdist = undefined;
         var_f777afd0b830d8f3 = undefined;
-        var_fc9ac45209f959bb = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
-        closestenemies = get_array_of_closest(var_ee356ed81b5cb7f4.origin, var_fc9ac45209f959bb, undefined, 10, 100);
+        all_enemies = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");
+        closestenemies = get_array_of_closest(var_ee356ed81b5cb7f4.origin, all_enemies, undefined, 10, 100);
         foreach (enemy in closestenemies) {
             if (!isdefined(enemy) || !should_be_affected_by_trap(enemy, 1)) {
                 continue;
@@ -534,23 +534,23 @@ function tank_empgrenaded() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x18a9
 // Size: 0xd1
-function tank_watchfiring(remotetank) {
+function tank_watchfiring(remoteTank) {
     self endon("disconnect");
     self endon("end_remote");
-    remotetank endon("death");
+    remoteTank endon("death");
     var_7c326413a1e419ae = 50;
     var_6c9f573716fd0f4c = var_7c326413a1e419ae;
-    firetime = weaponfiretime(level.tanksettings[remotetank.tanktype].mgturretinfo);
+    firetime = weaponfiretime(level.tanksettings[remoteTank.tanktype].mgturretinfo);
     while (true) {
-        if (remotetank.mgturret isfiringvehicleturret()) {
+        if (remoteTank.mgturret isfiringvehicleturret()) {
             var_6c9f573716fd0f4c--;
             if (var_6c9f573716fd0f4c <= 0) {
-                remotetank.mgturret turretfiredisable();
+                remoteTank.mgturret turretfiredisable();
                 wait 2.5;
-                remotetank playsound("talon_reload");
+                remoteTank playsound("talon_reload");
                 self playlocalsound("talon_reload_plr");
                 var_6c9f573716fd0f4c = var_7c326413a1e419ae;
-                remotetank.mgturret turretfireenable();
+                remoteTank.mgturret turretfireenable();
             }
         }
         wait firetime;
@@ -691,7 +691,7 @@ function fire_on_nearby_players(var_b026d19bc14d8ad0) {
     target_offset = (0, 0, 50);
     while (true) {
         while (!isdefined(self.owner)) {
-            var_d9e5028f8ed076f = undefined;
+            valid_player = undefined;
             foreach (player in level.players) {
                 if (distancesquared(self.mgturret.origin, player.origin) > self.max_detection_sq) {
                     continue;
@@ -703,17 +703,17 @@ function fire_on_nearby_players(var_b026d19bc14d8ad0) {
                         continue;
                     }
                 }
-                target_offset = get_offset_from_stance(var_d9e5028f8ed076f);
+                target_offset = get_offset_from_stance(valid_player);
                 if (!tank_canseetarget(player, target_offset)) {
                     continue;
                 }
                 if (!isdefined(self.last_target) || player != self.last_target) {
                     self.last_target = undefined;
                 }
-                var_d9e5028f8ed076f = player;
+                valid_player = player;
                 break;
             }
-            if (!isdefined(var_d9e5028f8ed076f)) {
+            if (!isdefined(valid_player)) {
                 wait 0.5;
                 self.mgturret cleartargetentity();
                 if (lights_on) {
@@ -728,10 +728,10 @@ function fire_on_nearby_players(var_b026d19bc14d8ad0) {
                     thread flicker_tank_lights();
                     lights_on = 1;
                 }
-                target_offset = get_offset_from_stance(var_d9e5028f8ed076f);
-                self.mgturret settargetentity(var_d9e5028f8ed076f, target_offset);
+                target_offset = get_offset_from_stance(valid_player);
+                self.mgturret settargetentity(valid_player, target_offset);
                 self.mgturret waittill_any_timeout_1(5, "turret_on_target");
-                if (!var_d9e5028f8ed076f is_valid_player() || !tank_canseetarget(var_d9e5028f8ed076f, target_offset)) {
+                if (!valid_player is_valid_player() || !tank_canseetarget(valid_player, target_offset)) {
                     wait 0.5;
                     if (lights_on) {
                         self.mgturret laseroff();
@@ -740,15 +740,15 @@ function fire_on_nearby_players(var_b026d19bc14d8ad0) {
                     self.last_target = undefined;
                     continue;
                 }
-                if (var_d9e5028f8ed076f is_valid_player()) {
+                if (valid_player is_valid_player()) {
                     if (!isdefined(self.last_target)) {
-                        self.last_target = var_d9e5028f8ed076f;
-                        var_d9e5028f8ed076f playlocalsound("canister_warning");
+                        self.last_target = valid_player;
+                        valid_player playlocalsound("canister_warning");
                     }
                 }
                 wait time_before_shoot;
-                target_offset = get_offset_from_stance(var_d9e5028f8ed076f);
-                if (!var_d9e5028f8ed076f is_valid_player() || !tank_canseetarget(var_d9e5028f8ed076f, target_offset) || distancesquared(self.mgturret.origin, var_d9e5028f8ed076f.origin) > self.max_detection_sq) {
+                target_offset = get_offset_from_stance(valid_player);
+                if (!valid_player is_valid_player() || !tank_canseetarget(valid_player, target_offset) || distancesquared(self.mgturret.origin, valid_player.origin) > self.max_detection_sq) {
                     if (lights_on) {
                         self.mgturret laseroff();
                         lights_on = 0;
@@ -756,12 +756,12 @@ function fire_on_nearby_players(var_b026d19bc14d8ad0) {
                     continue;
                 }
                 if (isdefined(self.config.turretoverridefunc)) {
-                    [[ self.config.turretoverridefunc ]](var_d9e5028f8ed076f);
+                    [[ self.config.turretoverridefunc ]](valid_player);
                 } else {
                     self.mgturret shootturret();
                 }
                 thread notify_nearby_enemies();
-                var_d9e5028f8ed076f thread damage_nearby_dynolights();
+                valid_player thread damage_nearby_dynolights();
                 wait time_after_shoot;
             }
             wait 0.5;
@@ -781,8 +781,8 @@ function notify_nearby_enemies() {
     if (isdefined(self.enemy_notify_range)) {
         enemy_notify_range = self.enemy_notify_range;
     }
-    var_4cf33b57655a86c3 = get_array_of_closest(self.origin, enemies, undefined, undefined, enemy_notify_range);
-    foreach (enemy in var_4cf33b57655a86c3) {
+    closest_enemies = get_array_of_closest(self.origin, enemies, undefined, undefined, enemy_notify_range);
+    foreach (enemy in closest_enemies) {
         enemy notify("bulletwhizby");
     }
 }
@@ -791,10 +791,10 @@ function notify_nearby_enemies() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x218f
 // Size: 0xa1
-function get_offset_from_stance(var_d9e5028f8ed076f) {
+function get_offset_from_stance(valid_player) {
     target_offset = (0, 0, 50);
-    if (isplayer(var_d9e5028f8ed076f)) {
-        stance = var_d9e5028f8ed076f getstance();
+    if (isplayer(valid_player)) {
+        stance = valid_player getstance();
         switch (stance) {
         case #"hash_3fed0cbd303639eb":
             target_offset = (0, 0, 25);
@@ -819,11 +819,11 @@ function damage_nearby_dynolights() {
         return;
     }
     var_88724d62de58751f = getentarray("office_light_destructible", "script_noteworthy");
-    var_e51d844cf1baf9a9 = get_array_of_closest(self.origin, var_88724d62de58751f, undefined, 2, 350);
-    if (var_e51d844cf1baf9a9.size == 0) {
+    near_lights = get_array_of_closest(self.origin, var_88724d62de58751f, undefined, 2, 350);
+    if (near_lights.size == 0) {
         return;
     }
-    foreach (light in var_e51d844cf1baf9a9) {
+    foreach (light in near_lights) {
         light notify("damage", 1000);
     }
 }
@@ -834,12 +834,12 @@ function damage_nearby_dynolights() {
 // Size: 0x79
 function flicker_tank_lights() {
     self endon("death");
-    var_e83eabf77c0c1d5a = "on";
+    on_state = "on";
     if (isdefined(self.config.turretlightsonstate)) {
-        var_e83eabf77c0c1d5a = self.config.turretlightsonstate;
+        on_state = self.config.turretlightsonstate;
     }
     self.mgturret setscriptablepartstate("lights", "off");
     wait 0.5;
-    self.mgturret setscriptablepartstate("lights", var_e83eabf77c0c1d5a);
+    self.mgturret setscriptablepartstate("lights", on_state);
 }
 

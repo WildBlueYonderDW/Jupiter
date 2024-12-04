@@ -1,6 +1,6 @@
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_744dd0bc318eb2c2;
 
@@ -168,7 +168,7 @@ function handle_escalation_on_death() {
         addentrytodevgui(cmd);
         cmd = "<dev string:x22e>";
         addentrytodevgui(cmd);
-        level thread function_699304dd575765c9(@"hash_d795289aa8918baa", &function_a80873169ee2bf94);
+        level thread debug_activation(@"hash_d795289aa8918baa", &function_a80873169ee2bf94);
     }
 
     // Namespace namespace_744dd0bc318eb2c2 / scripts\cp\cp_escalation

@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
 #using script_354c862768cfe202;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
 
 #namespace namespace_3ecbde0d8fbeff2;
 
@@ -184,13 +184,13 @@ function getactiveenemyagents(var_118c0e3106155c71) {
 // Checksum 0x0, Offset: 0x63c
 // Size: 0x49
 function get_alive_enemies() {
-    var_ccc9f9c05abcfde9 = getaliveagentsofteam("axis");
+    alive_enemies = getaliveagentsofteam("axis");
     var_2b2cfe014a9942d1 = [];
     if (isdefined(level.dlc_get_non_agent_enemies)) {
         var_2b2cfe014a9942d1 = [[ level.dlc_get_non_agent_enemies ]]();
     }
-    var_ccc9f9c05abcfde9 = array_combine(var_ccc9f9c05abcfde9, var_2b2cfe014a9942d1);
-    return var_ccc9f9c05abcfde9;
+    alive_enemies = array_combine(alive_enemies, var_2b2cfe014a9942d1);
+    return alive_enemies;
 }
 
 // Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
@@ -214,9 +214,9 @@ function store_attacker_info(attacker, damage) {
     if (!isdefined(self.attacker_damage)) {
         self.attacker_damage = [];
     }
-    foreach (var_9ae6be01e200a866 in self.attacker_damage) {
-        if (var_9ae6be01e200a866.player == attacker) {
-            var_9ae6be01e200a866.damage += damage;
+    foreach (attacker_struct in self.attacker_damage) {
+        if (attacker_struct.player == attacker) {
+            attacker_struct.damage += damage;
             return;
         }
     }

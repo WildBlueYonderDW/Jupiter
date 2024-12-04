@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_outofbounds.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_7c40fa80892a721;
+#using scripts\common\utility;
+#using scripts\cp\cp_outofbounds;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace namespace_a889449dac4d0816;
 
@@ -90,7 +90,7 @@ function vehicle_oob_cp_outoftimecallback(timeoutendnotify, clearnotify) {
     occupants = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getalloccupants(self);
     foreach (occupant in occupants) {
         occupant.shouldskiplaststand = 1;
-        occupant namespace_f8d3520d3483c1::function_ac7803d45979135c(0);
+        occupant namespace_f8d3520d3483c1::setArmorHealth(0);
     }
     self [[ callback ]]();
 }

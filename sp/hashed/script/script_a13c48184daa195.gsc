@@ -1,32 +1,32 @@
-#using scripts\cp\utility.gsc;
-#using script_187a04151c40fb72;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using script_3f8889c16399185c;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp\cp_debug.gsc;
-#using scripts\cp\cp_agent_utils.gsc;
-#using script_25845aca699d038d;
-#using script_afb7e332aee4bf2;
-#using script_5e5507d57bbbb709;
 #using script_116171939929af39;
+#using script_187a04151c40fb72;
+#using script_25845aca699d038d;
+#using script_2669878cf5a1b6bc;
 #using script_3adfc798ed499f31;
-#using script_66122a002aff5d57;
-#using scripts\common\create_script_utility.gsc;
-#using script_7ef95bba57dc4b82;
-#using scripts\cp\cp_outline.gsc;
 #using script_3bcaa2cbaf54abdd;
-#using scripts\cp\loot_system.gsc;
-#using script_644c18834356d9dc;
-#using scripts\cp_mp\killstreaks\juggernaut.gsc;
+#using script_3f8889c16399185c;
 #using script_56ef8d52fe1b48a1;
-#using scripts\cp_mp\killstreaks\nuke.gsc;
-#using scripts\cp_mp\gasmask.gsc;
+#using script_5e5507d57bbbb709;
+#using script_644c18834356d9dc;
+#using script_66122a002aff5d57;
 #using script_74502a9e0ef1f19c;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using scripts\asm\asm_bb.gsc;
+#using script_7ef95bba57dc4b82;
+#using script_afb7e332aee4bf2;
+#using scripts\asm\asm_bb;
+#using scripts\common\create_script_utility;
+#using scripts\common\utility;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\cp_debug;
+#using scripts\cp\cp_outline;
+#using scripts\cp\loot_system;
+#using scripts\cp\utility;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\killstreaks\juggernaut;
+#using scripts\cp_mp\killstreaks\nuke;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\mp_agent;
 
 #namespace namespace_748fe2e59aef2dea;
 
@@ -39,8 +39,8 @@
     function debuginit() {
         level.devgui_setup_func = &onplayerspawneddevguisetup;
         level thread function_aa8545c4caff39ef();
-        level thread function_699304dd575765c9(@"hash_1cee6e7b1ba9672d", &function_1559d3b069709441);
-        level thread function_699304dd575765c9(@"debug_nuke", &debug_nuke);
+        level thread debug_activation(@"hash_1cee6e7b1ba9672d", &function_1559d3b069709441);
+        level thread debug_activation(@"debug_nuke", &debug_nuke);
         level thread scripts\cp_mp\utility\debug_utility::function_bb5850f548a9d261();
         setdevdvarifuninitialized(@"hash_5f5c12c95c44f093", 0);
         setdevdvarifuninitialized(@"hash_9a43fe5e759216e2", 0);
@@ -176,8 +176,8 @@
         if (isdefined(level.hostmigrationtimer)) {
             return;
         }
-        var_fc9ac45209f959bb = scripts\cp\cp_agent_utils::getaliveagentsofteam("<dev string:x11f>");
-        foreach (soldier in var_fc9ac45209f959bb) {
+        all_enemies = scripts\cp\cp_agent_utils::getaliveagentsofteam("<dev string:x11f>");
+        foreach (soldier in all_enemies) {
             if (!istrue(soldier.var_976f32ce5275baaa)) {
                 soldier kill(level.players[0].origin, level.players[0]);
             }
@@ -271,7 +271,7 @@
                 if (isdefined(player)) {
                     currentKit = player namespace_1f50a6a7107e9381::function_cc1ccc9e93b22c24();
                     player namespace_1f50a6a7107e9381::function_c3cb4bdae301d5b4(currentKit, 1, undefined, 1);
-                    rank = player namespace_1f50a6a7107e9381::function_ca8c9ff1ff9db6e(undefined, 1);
+                    rank = player namespace_1f50a6a7107e9381::kit_getrank(undefined, 1);
                     announcement("<dev string:x1b3>" + rank);
                 }
             }
@@ -448,7 +448,7 @@
             var_e3fc3c4ab75476a4 = 0;
             foreach (player in level.players) {
                 player notify("<dev string:x380>");
-                player thread function_ddf400276902cc4c(gesture);
+                player thread gesture_dpad(gesture);
             }
             break;
         case #"hash_217d33e0bf6a240d":
@@ -500,7 +500,7 @@
                 if (scripts\cp\loot_system::is_empty_or_none(0)) {
                     player namespace_94359011b63230a6::give_munition_to_slot(munition, 0);
                 } else if (function_240f7f4e57340e8f()) {
-                    player thread namespace_1f50a6a7107e9381::function_4a1fd54affdaa367(munition, 1, 0, 0, 1);
+                    player thread namespace_1f50a6a7107e9381::kit_givekillstreak(munition, 1, 0, 0, 1);
                 } else {
                     player thread namespace_94359011b63230a6::give_munition_to_slot(munition, 1);
                 }
@@ -519,8 +519,8 @@
     // Params 3, eflags: 0x0
     // Checksum 0x0, Offset: 0x1601
     // Size: 0x2c
-    function function_b19fd14df486e090(var_2d385bc9ad36a118, index, value) {
-        return isdefined(var_2d385bc9ad36a118[index]) && var_2d385bc9ad36a118[index] == value;
+    function function_b19fd14df486e090(param_array, index, value) {
+        return isdefined(param_array[index]) && param_array[index] == value;
     }
 
     // Namespace namespace_748fe2e59aef2dea / namespace_c0269b8ac4e7a573
@@ -606,9 +606,9 @@
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x183a
     // Size: 0x3a
-    function function_7c47b94209827432(var_1d7355cdbac5b871) {
+    function function_7c47b94209827432(test_client) {
         while (true) {
-            sphere(var_1d7355cdbac5b871.origin, 100, (0, 1, 0), 0, 2);
+            sphere(test_client.origin, 100, (0, 1, 0), 0, 2);
             waitframe();
         }
     }
@@ -617,7 +617,7 @@
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x187c
     // Size: 0x72
-    function function_ddf400276902cc4c(gesture) {
+    function gesture_dpad(gesture) {
         level endon("<dev string:x407>");
         self endon("<dev string:x101>");
         self endon("<dev string:x380>");
@@ -845,16 +845,16 @@
         }
         starting_pos = (0, 0, 72);
         offset = (0, 0, -8);
-        var_6ab199e209d55ca0 = [];
+        asm_footprint = [];
         while (true) {
             if (isdefined(guy.var_25b46137084e8f4f)) {
                 counter = 0;
                 foreach (asmname, var_e84621d0fbb9408d in guy.var_25b46137084e8f4f) {
-                    if (!scripts\engine\utility::array_contains(var_6ab199e209d55ca0, guy.var_25b46137084e8f4f[asmname].var_293af010052e93ca)) {
+                    if (!scripts\engine\utility::array_contains(asm_footprint, guy.var_25b46137084e8f4f[asmname].var_293af010052e93ca)) {
                         println("<dev string:x687>");
                         println("<dev string:x6bd>" + guy.var_25b46137084e8f4f[asmname].var_293af010052e93ca);
                         println("<dev string:x687>");
-                        var_6ab199e209d55ca0[var_6ab199e209d55ca0.size] = guy.var_25b46137084e8f4f[asmname].var_293af010052e93ca;
+                        asm_footprint[asm_footprint.size] = guy.var_25b46137084e8f4f[asmname].var_293af010052e93ca;
                     }
                     pos = starting_pos + counter * offset;
                     print3d(guy.origin + pos, "<dev string:x6c7>" + asmname + "<dev string:x6cc>" + guy.var_25b46137084e8f4f[asmname].var_293af010052e93ca, (0.8, 0.3, 0), 1, 0.4, 1);

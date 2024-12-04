@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using script_294d813e5d00b68c;
 #using script_21873023c0473044;
+#using script_294d813e5d00b68c;
 #using script_56ef8d52fe1b48a1;
-#using script_afb7e332aee4bf2;
-#using scripts\cp\vehicles\damage_cp.gsc;
-#using scripts\cp\cp_agent_utils.gsc;
 #using script_6d68cfdf0836123c;
+#using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\cp\cp_agent_utils;
+#using scripts\cp\vehicles\damage_cp;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_c3d8c06bfc18b26a;
 
@@ -68,8 +68,8 @@ function get_mark_target_array() {
 // Checksum 0x0, Offset: 0x321
 // Size: 0xeb
 function get_outer_reticle_targets(config) {
-    var_2c04e0036a6164b9 = 3000;
-    var_b11567dd924e0a86 = var_2c04e0036a6164b9 * var_2c04e0036a6164b9;
+    outer_dist = 3000;
+    var_b11567dd924e0a86 = outer_dist * outer_dist;
     potential_targets = [];
     var_7c18d93982d63713 = cos(70);
     guys = scripts\cp\cp_agent_utils::getaliveagentsofteam("axis");

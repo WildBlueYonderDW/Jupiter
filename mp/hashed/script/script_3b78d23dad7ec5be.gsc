@@ -1,6 +1,6 @@
-#using scripts\asm\asm.gsc;
-#using scripts\engine\utility.gsc;
 #using script_4a8c20678bd6a83e;
+#using scripts\asm\asm;
+#using scripts\engine\utility;
 
 #namespace zombie_knockdown;
 
@@ -9,7 +9,7 @@
 // Checksum 0x0, Offset: 0xe3
 // Size: 0x2e
 function private autoexec init() {
-    registersharedfunc("zombie", "knockdownZombie", &function_e96aac065abbec4e);
+    registersharedfunc("zombie", "knockdownZombie", &knockdown_ai);
     registersharedfunc("zombie", "isZombieInKnockdown", &function_e67a89537ae7d4b7);
 }
 
@@ -17,7 +17,7 @@ function private autoexec init() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x119
 // Size: 0x78
-function function_e96aac065abbec4e(source_pos) {
+function knockdown_ai(source_pos) {
     if (istrue(self.disallow_knockdown)) {
         return;
     }

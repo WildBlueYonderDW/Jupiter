@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\stealth\utility.gsc;
 #using script_26265e158b27bdda;
-#using scripts\stealth\event.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\stealth\enemy.gsc;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\stealth\enemy;
+#using scripts\stealth\event;
+#using scripts\stealth\utility;
 
 #namespace door;
 

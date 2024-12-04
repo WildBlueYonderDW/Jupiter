@@ -1,37 +1,37 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using script_548072087c9fd504;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
 #using script_2b264b25c7da0b12;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using scripts\mp\gametypes\hq.gsc;
-#using scripts\mp\teamrevive.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\mp\dev.gsc;
+#using script_548072087c9fd504;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\damage;
+#using scripts\mp\dev;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\hq;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\playerlogic;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\teamrevive;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace elim;
 
@@ -40,7 +40,7 @@
 // Checksum 0x0, Offset: 0xb5d
 // Size: 0x2d9
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();

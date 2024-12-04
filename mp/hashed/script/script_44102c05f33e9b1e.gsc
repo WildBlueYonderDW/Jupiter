@@ -1,29 +1,29 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_600b944a95c3a7bf;
-#using script_c7a00602fb8e464;
-#using script_61565a6c1fdee6ac;
-#using script_3f3c7170aedfefd7;
-#using script_89c4e8e66e8a360;
-#using script_5961052449eb875f;
-#using script_b5c3028255f05a7;
-#using script_2f981f68661d5e1a;
-#using script_5dfa1fb6b030bdcb;
-#using script_35ee5e2cef30eea2;
-#using script_6981400abfcd765c;
-#using script_32d93a194074fa6a;
-#using script_4bcf78b337139620;
-#using script_458ce44388c14a5f;
-#using script_47a7dd805c87b33f;
-#using script_45e6947be98e16e3;
-#using script_64acb6ce534155b7;
 #using script_239a365a92ee4476;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using script_2f981f68661d5e1a;
+#using script_32d93a194074fa6a;
+#using script_35ee5e2cef30eea2;
+#using script_3f3c7170aedfefd7;
+#using script_458ce44388c14a5f;
+#using script_45e6947be98e16e3;
+#using script_47a7dd805c87b33f;
+#using script_4bcf78b337139620;
+#using script_5961052449eb875f;
+#using script_5dfa1fb6b030bdcb;
+#using script_600b944a95c3a7bf;
+#using script_61565a6c1fdee6ac;
+#using script_64acb6ce534155b7;
+#using script_6981400abfcd765c;
+#using script_89c4e8e66e8a360;
+#using script_b5c3028255f05a7;
+#using script_c7a00602fb8e464;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\outline;
 
 #namespace namespace_5026cc22a303fab7;
 
@@ -458,7 +458,7 @@ function function_1c786072fea7ca5a(params) {
 // Checksum 0x0, Offset: 0xcdd
 // Size: 0x12
 function function_555708e0d1167ada() {
-    function_607860ac17c15475(#"hash_28e5ba10e13cb57c");
+    function_607860ac17c15475(#"gas_avoid");
 }
 
 // Namespace namespace_5026cc22a303fab7 / namespace_d3289d7a0f087014

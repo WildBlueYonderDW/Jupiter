@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_bunker_utility.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\debug.gsc;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_bunker_utility;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\playerlogic;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\teams;
 
 #namespace br_stadium_puzzle;
 

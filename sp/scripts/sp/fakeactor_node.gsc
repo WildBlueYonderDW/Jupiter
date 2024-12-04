@@ -1,14 +1,14 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\debug.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\debug;
+#using scripts\sp\utility;
 
-#namespace namespace_6269ca54b5e5e596;
+#namespace fakeactor_node;
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x351
 // Size: 0x3de
@@ -71,8 +71,8 @@ function fakeactor_node_setup() {
         self.angles = new_angles;
         /#
             move_delta = getmovedelta(play_animation, 0, 1);
-            var_f811d70b56fbff80 = getangledelta3d(play_animation, 0, 1);
-            var_d0c16329c928493d = invertangles(var_f811d70b56fbff80);
+            angles_delta = getangledelta3d(play_animation, 0, 1);
+            var_d0c16329c928493d = invertangles(angles_delta);
             self.end_angles = combineangles(self.angles, var_d0c16329c928493d);
             self.end_origin = self.origin - rotatevector(move_delta, self.end_angles);
         #/
@@ -80,7 +80,7 @@ function fakeactor_node_setup() {
     }
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x737
 // Size: 0x7f
@@ -101,7 +101,7 @@ function fakeactor_node_init_type() {
     }
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7be
 // Size: 0xa9
@@ -109,16 +109,16 @@ function fakeactor_node_init_params() {
     if (!isdefined(self.script_parameters)) {
         return;
     }
-    var_5d1aa1521fa7a6a2 = strtok(self.script_parameters, " ");
-    foreach (var_f9c40d8c3212f0a5 in var_5d1aa1521fa7a6a2) {
-        if (!isdefined(level.fakeactor_node_group[var_f9c40d8c3212f0a5])) {
-            level.fakeactor_node_group[var_f9c40d8c3212f0a5] = [];
+    node_groups = strtok(self.script_parameters, " ");
+    foreach (node_group in node_groups) {
+        if (!isdefined(level.fakeactor_node_group[node_group])) {
+            level.fakeactor_node_group[node_group] = [];
         }
-        level.fakeactor_node_group[var_f9c40d8c3212f0a5] = array_add(level.fakeactor_node_group[var_f9c40d8c3212f0a5], self);
+        level.fakeactor_node_group[node_group] = array_add(level.fakeactor_node_group[node_group], self);
     }
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x86f
 // Size: 0x1a7
@@ -156,19 +156,19 @@ function fakeactor_node_init_flags() {
     self.node_claimed = [];
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa1e
 // Size: 0x6c
 function setup_fakeactor_nodes() {
     level.fakeactor_node_group = [];
     level.var_213ef198a84b4bba = &random;
-    foreach (var_6269ca54b5e5e596 in level.var_d5043478289af856) {
-        var_6269ca54b5e5e596 thread fakeactor_node_setup();
+    foreach (fakeactor_node in level.var_d5043478289af856) {
+        fakeactor_node thread fakeactor_node_setup();
     }
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa92
 // Size: 0xc
@@ -176,7 +176,7 @@ function is_fakeactor_node() {
     return isdefined(self.script_fakeactor_node);
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xaa7
 // Size: 0xc4
@@ -185,53 +185,53 @@ function fakeactor_node_update() {
         return;
     }
     self.origin = self.ground_ent localtoworldcoords(self.ground_ent_offset);
-    var_bb148694f891721d = spawn("script_origin", (0, 0, 0));
-    var_bb148694f891721d.angles = self.ground_ent.angles;
-    var_bb148694f891721d addpitch(self.ground_ent_angles_offset[0]);
-    var_bb148694f891721d addyaw(self.ground_ent_angles_offset[1]);
-    var_bb148694f891721d addroll(self.ground_ent_angles_offset[2]);
-    self.angles = var_bb148694f891721d.angles;
-    var_bb148694f891721d delete();
+    struct_angles = spawn("script_origin", (0, 0, 0));
+    struct_angles.angles = self.ground_ent.angles;
+    struct_angles addpitch(self.ground_ent_angles_offset[0]);
+    struct_angles addyaw(self.ground_ent_angles_offset[1]);
+    struct_angles addroll(self.ground_ent_angles_offset[2]);
+    self.angles = struct_angles.angles;
+    struct_angles delete();
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb73
 // Size: 0x11a
 function fakeactor_node_get_cover_list() {
-    var_20d6d8da6750e035 = [];
+    cover_list = [];
     spawnflags = 0;
     if (isdefined(self.spawnflags)) {
         spawnflags = self.spawnflags;
     }
     if (self.script_fakeactor_node == "cover_left") {
         if (!(spawnflags & 1)) {
-            var_20d6d8da6750e035 = array_add(var_20d6d8da6750e035, "cover_left");
+            cover_list = array_add(cover_list, "cover_left");
         }
         if (!(spawnflags & 2)) {
-            var_20d6d8da6750e035 = array_add(var_20d6d8da6750e035, "cover_left_crouch");
+            cover_list = array_add(cover_list, "cover_left_crouch");
         }
     } else if (self.script_fakeactor_node == "cover_right") {
         if (!(spawnflags & 1)) {
-            var_20d6d8da6750e035 = array_add(var_20d6d8da6750e035, "cover_right");
+            cover_list = array_add(cover_list, "cover_right");
         }
         if (!(spawnflags & 2)) {
-            var_20d6d8da6750e035 = array_add(var_20d6d8da6750e035, "cover_right_crouch");
+            cover_list = array_add(cover_list, "cover_right_crouch");
         }
     } else if (self.script_fakeactor_node == "cover_stand") {
-        var_20d6d8da6750e035 = array_add(var_20d6d8da6750e035, "cover_stand");
+        cover_list = array_add(cover_list, "cover_stand");
     } else if (self.script_fakeactor_node == "cover_crouch") {
-        var_20d6d8da6750e035 = array_add(var_20d6d8da6750e035, "cover_crouch");
+        cover_list = array_add(cover_list, "cover_crouch");
     } else {
-        var_20d6d8da6750e035 = array_add(var_20d6d8da6750e035, "exposed");
+        cover_list = array_add(cover_list, "exposed");
     }
-    if (var_20d6d8da6750e035.size == 0) {
+    if (cover_list.size == 0) {
         assertmsg("you created a fake actor node with no possible cover types. you cannot both DONT_STAND and DONT_CROUCH on the same struct!");
     }
-    return var_20d6d8da6750e035;
+    return cover_list;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc96
 // Size: 0x36
@@ -246,7 +246,7 @@ function fakeactor_node_get_next() {
     return undefined;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd5
 // Size: 0xa2
@@ -256,19 +256,19 @@ function fakeactor_node_get_all_valid() {
         return valid_nodes;
     }
     all_nodes = getstructarray(self.target, "targetname");
-    foreach (var_fc77a7f3b518c9a in all_nodes) {
-        if (!var_fc77a7f3b518c9a is_fakeactor_node()) {
+    foreach (this_node in all_nodes) {
+        if (!this_node is_fakeactor_node()) {
             continue;
         }
-        if (!var_fc77a7f3b518c9a fakeactor_node_is_valid()) {
+        if (!this_node fakeactor_node_is_valid()) {
             continue;
         }
-        valid_nodes = array_add(valid_nodes, var_fc77a7f3b518c9a);
+        valid_nodes = array_add(valid_nodes, this_node);
     }
     return valid_nodes;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd80
 // Size: 0x9b
@@ -278,11 +278,11 @@ function fakeactor_node_get_valid_count() {
     }
     all_nodes = getstructarray(self.target, "targetname");
     valid_count = 0;
-    foreach (var_fc77a7f3b518c9a in all_nodes) {
-        if (!var_fc77a7f3b518c9a is_fakeactor_node()) {
+    foreach (this_node in all_nodes) {
+        if (!this_node is_fakeactor_node()) {
             continue;
         }
-        if (!var_fc77a7f3b518c9a fakeactor_node_is_valid()) {
+        if (!this_node fakeactor_node_is_valid()) {
             continue;
         }
         valid_count++;
@@ -290,7 +290,7 @@ function fakeactor_node_get_valid_count() {
     return valid_count;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe24
 // Size: 0x106
@@ -298,27 +298,27 @@ function fakeactor_node_get_angles(frantic) {
     if (!isdefined(frantic)) {
         frantic = 0;
     }
-    var_bb148694f891721d = spawn("script_origin", (0, 0, 0));
+    struct_angles = spawn("script_origin", (0, 0, 0));
     if (isdefined(self.angles)) {
-        var_bb148694f891721d.angles = self.angles;
+        struct_angles.angles = self.angles;
     }
     if (isdefined(self.type)) {
         if (frantic && isdefined(anim.fa_franticnodeyaws)) {
             if (isdefined(anim.fa_franticnodeyaws[self.type])) {
-                var_bb148694f891721d addyaw(anim.fa_franticnodeyaws[self.type]);
+                struct_angles addyaw(anim.fa_franticnodeyaws[self.type]);
             }
         } else if (isdefined(anim.fa_nodeyaws)) {
             if (isdefined(anim.fa_nodeyaws[self.type])) {
-                var_bb148694f891721d addyaw(anim.fa_nodeyaws[self.type]);
+                struct_angles addyaw(anim.fa_nodeyaws[self.type]);
             }
         }
     }
-    angles = var_bb148694f891721d.angles;
-    var_bb148694f891721d delete();
+    angles = struct_angles.angles;
+    struct_angles delete();
     return angles;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xf33
 // Size: 0x40d
@@ -346,8 +346,8 @@ function fakeactor_node_get_path(first_node, start_pos, frantic, var_c3b2a9e2a96
         }
         looping_path = 0;
         if (index > 1) {
-            for (var_88b8d987c09fc6c6 = 1; var_88b8d987c09fc6c6 < node_path.size - 1; var_88b8d987c09fc6c6++) {
-                if (node_path[var_88b8d987c09fc6c6]["node"] == next_node) {
+            for (node_index = 1; node_index < node_path.size - 1; node_index++) {
+                if (node_path[node_index]["node"] == next_node) {
                     looping_path = 1;
                     break;
                 }
@@ -406,7 +406,7 @@ function fakeactor_node_get_path(first_node, start_pos, frantic, var_c3b2a9e2a96
     return node_path;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1349
 // Size: 0x13
@@ -417,7 +417,7 @@ function fakeactor_node_is_valid() {
     return true;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1365
 // Size: 0x69
@@ -443,7 +443,7 @@ function fakeactor_node_is_end_path(var_c3b2a9e2a964c828) {
     return true;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13d7
 // Size: 0x27
@@ -455,19 +455,19 @@ function fakeactor_node_set_disabled(disabled) {
     self.disabled = undefined;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1406
 // Size: 0x76
-function fakeactor_node_group_set_disabled(var_f9c40d8c3212f0a5, disabled) {
-    if (isdefined(level.fakeactor_node_group[var_f9c40d8c3212f0a5])) {
-        foreach (var_6269ca54b5e5e596 in level.fakeactor_node_group[var_f9c40d8c3212f0a5]) {
-            var_6269ca54b5e5e596 fakeactor_node_set_disabled(disabled);
+function fakeactor_node_group_set_disabled(node_group, disabled) {
+    if (isdefined(level.fakeactor_node_group[node_group])) {
+        foreach (fakeactor_node in level.fakeactor_node_group[node_group]) {
+            fakeactor_node fakeactor_node_set_disabled(disabled);
         }
     }
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1484
 // Size: 0x15
@@ -475,7 +475,7 @@ function fakeactor_node_set_path_claimed(ent) {
     self.path_claimed = ent;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14a1
 // Size: 0xc
@@ -483,7 +483,7 @@ function fakeactor_node_clear_path_claimed() {
     self.path_claimed = undefined;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14b5
 // Size: 0x21
@@ -491,37 +491,37 @@ function fakeactor_node_set_claimed(ent) {
     self.node_claimed[self.node_claimed.size] = ent;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14de
 // Size: 0x6f
-function fakeactor_node_is_claimed_by(var_de64f9209142cef4) {
+function fakeactor_node_is_claimed_by(checked_ent) {
     if (self.node_claimed.size <= 0) {
         return false;
     }
     foreach (ent in self.node_claimed) {
-        if (ent == var_de64f9209142cef4) {
+        if (ent == checked_ent) {
             return true;
         }
     }
     return false;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1556
 // Size: 0x76
-function fakeactor_node_remove_claimed(var_3ce07c0ffdf58cf5) {
+function fakeactor_node_remove_claimed(removed_ent) {
     new_array = [];
     foreach (ent in self.node_claimed) {
-        if (ent != var_3ce07c0ffdf58cf5) {
+        if (ent != removed_ent) {
             new_array[new_array.size] = ent;
         }
     }
     self.node_claimed = new_array;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15d4
 // Size: 0xc
@@ -529,7 +529,7 @@ function fakeactor_node_clear_claimed() {
     self.node_claimed = [];
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15e8
 // Size: 0xc
@@ -537,7 +537,7 @@ function fakeactor_node_set_wait() {
     self.wait_state = 0;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15fc
 // Size: 0xd
@@ -545,7 +545,7 @@ function fakeactor_node_set_locked() {
     self.wait_state = 1;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1611
 // Size: 0xd
@@ -553,7 +553,7 @@ function fakeactor_node_set_passthrough() {
     self.wait_state = 2;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1626
 // Size: 0xd
@@ -561,7 +561,7 @@ function fakeactor_node_is_wait() {
     return self.wait_state == 0;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x163c
 // Size: 0xe
@@ -569,7 +569,7 @@ function fakeactor_node_is_locked() {
     return self.wait_state == 1;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1653
 // Size: 0xe
@@ -577,7 +577,7 @@ function fakeactor_node_is_passthrough() {
     return self.wait_state == 2;
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x166a
 // Size: 0xc
@@ -585,7 +585,7 @@ function fakeactor_node_is_on_moving_platform() {
     return isdefined(self.ground_ent);
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x167f
 // Size: 0xc
@@ -593,7 +593,7 @@ function fakeactor_node_is_disabled() {
     return isdefined(self.disabled);
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1694
 // Size: 0x11
@@ -601,7 +601,7 @@ function fakeactor_node_is_turn() {
     return self.script_fakeactor_node == "turn";
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16ae
 // Size: 0x1f
@@ -609,7 +609,7 @@ function fakeactor_node_is_traverse() {
     return self.script_fakeactor_node == "traverse" && isdefined(self.traverse_animscript);
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16d6
 // Size: 0x11
@@ -617,7 +617,7 @@ function fakeactor_node_is_animation() {
     return self.script_fakeactor_node == "animation";
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16f0
 // Size: 0xf
@@ -625,7 +625,7 @@ function fakeactor_node_allow_exits() {
     return !(self.spawnflags & 128);
 }
 
-// Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+// Namespace fakeactor_node / scripts\sp\fakeactor_node
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1708
 // Size: 0x10
@@ -635,13 +635,13 @@ function fakeactor_node_allow_arrivals() {
 
 /#
 
-    // Namespace namespace_6269ca54b5e5e596 / scripts\sp\fakeactor_node
+    // Namespace fakeactor_node / scripts\sp\fakeactor_node
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x1721
     // Size: 0x6e7
     function fakeactor_node_debug() {
         setdvarifuninitialized(@"hash_4d695f34fb13688a", 0);
-        var_548ddd4c0898969f = level.var_d5043478289af856;
+        fakeactor_nodes = level.var_d5043478289af856;
         waitframe();
         text_scale = 0.5;
         new_line = 11 * text_scale;
@@ -666,56 +666,56 @@ function fakeactor_node_allow_arrivals() {
             if (getdvar(@"hash_4d695f34fb13688a") == "<dev string:xec>") {
                 cam_angles = level.player getplayerangles();
                 cam_up = anglestoup(cam_angles);
-                foreach (var_6269ca54b5e5e596 in var_548ddd4c0898969f) {
-                    if (distance(level.player.origin, var_6269ca54b5e5e596.origin) > 1024) {
+                foreach (fakeactor_node in fakeactor_nodes) {
+                    if (distance(level.player.origin, fakeactor_node.origin) > 1024) {
                         continue;
                     }
-                    text_pos = var_6269ca54b5e5e596.origin;
-                    draw_node(var_6269ca54b5e5e596.origin, var_6269ca54b5e5e596.angles, debug_info[var_6269ca54b5e5e596.script_fakeactor_node]["<dev string:x9f>"], debug_info[var_6269ca54b5e5e596.script_fakeactor_node]["<dev string:xa5>"]);
-                    if (var_6269ca54b5e5e596.script_fakeactor_node != "<dev string:xcf>") {
-                        print3d(text_pos, var_6269ca54b5e5e596.script_fakeactor_node, (1, 1, 1), 1, text_scale);
+                    text_pos = fakeactor_node.origin;
+                    draw_node(fakeactor_node.origin, fakeactor_node.angles, debug_info[fakeactor_node.script_fakeactor_node]["<dev string:x9f>"], debug_info[fakeactor_node.script_fakeactor_node]["<dev string:xa5>"]);
+                    if (fakeactor_node.script_fakeactor_node != "<dev string:xcf>") {
+                        print3d(text_pos, fakeactor_node.script_fakeactor_node, (1, 1, 1), 1, text_scale);
                     }
-                    if (isdefined(var_6269ca54b5e5e596.radius)) {
-                        draw_circle(var_6269ca54b5e5e596.origin, var_6269ca54b5e5e596.radius, (1, 0, 0), 1, 1, 1);
+                    if (isdefined(fakeactor_node.radius)) {
+                        draw_circle(fakeactor_node.origin, fakeactor_node.radius, (1, 0, 0), 1, 1, 1);
                     }
-                    if (var_6269ca54b5e5e596 fakeactor_node_is_disabled()) {
+                    if (fakeactor_node fakeactor_node_is_disabled()) {
                         print3d(text_pos - cam_up * new_line * -2, "<dev string:xee>", (1, 0, 0), 1, text_scale);
-                        draw_node(var_6269ca54b5e5e596.origin, var_6269ca54b5e5e596.angles, (1, 0, 0), debug_info[var_6269ca54b5e5e596.script_fakeactor_node]["<dev string:xa5>"] * 1.1);
+                        draw_node(fakeactor_node.origin, fakeactor_node.angles, (1, 0, 0), debug_info[fakeactor_node.script_fakeactor_node]["<dev string:xa5>"] * 1.1);
                     }
-                    if (isdefined(var_6269ca54b5e5e596.path_claimed)) {
+                    if (isdefined(fakeactor_node.path_claimed)) {
                         print3d(text_pos - cam_up * new_line * -1, "<dev string:xf7>", (0, 1, 1), 1, text_scale);
-                        line(var_6269ca54b5e5e596.origin, var_6269ca54b5e5e596.path_claimed.origin, (0.5, 0.5, 1), 1, 0, 1);
+                        line(fakeactor_node.origin, fakeactor_node.path_claimed.origin, (0.5, 0.5, 1), 1, 0, 1);
                     }
-                    if (isdefined(var_6269ca54b5e5e596.traverse_animscript)) {
-                        print3d(text_pos - cam_up * new_line * 1, "<dev string:x104>" + var_6269ca54b5e5e596.traverse_animscript, (1, 1, 1), 1, text_scale);
-                    } else if (isdefined(var_6269ca54b5e5e596.animation)) {
-                        print3d(text_pos - cam_up * new_line * 1, "<dev string:x10b>" + var_6269ca54b5e5e596.animation, (1, 1, 1), 1, text_scale);
+                    if (isdefined(fakeactor_node.traverse_animscript)) {
+                        print3d(text_pos - cam_up * new_line * 1, "<dev string:x104>" + fakeactor_node.traverse_animscript, (1, 1, 1), 1, text_scale);
+                    } else if (isdefined(fakeactor_node.animation)) {
+                        print3d(text_pos - cam_up * new_line * 1, "<dev string:x10b>" + fakeactor_node.animation, (1, 1, 1), 1, text_scale);
                     }
-                    if (isdefined(var_6269ca54b5e5e596.ground_ent)) {
-                        var_6269ca54b5e5e596 fakeactor_node_update();
+                    if (isdefined(fakeactor_node.ground_ent)) {
+                        fakeactor_node fakeactor_node_update();
                         print3d(text_pos - cam_up * new_line * 2, "<dev string:x112>", (1, 1, 0), 1, text_scale);
-                        line(var_6269ca54b5e5e596.origin, var_6269ca54b5e5e596.ground_ent.origin, (1, 1, 0), 0.5, 1, 1);
+                        line(fakeactor_node.origin, fakeactor_node.ground_ent.origin, (1, 1, 0), 0.5, 1, 1);
                     }
-                    if (isdefined(var_6269ca54b5e5e596.script_parameters)) {
-                        print3d(text_pos - cam_up * new_line * 3, "<dev string:x125>" + var_6269ca54b5e5e596.script_parameters, (1, 1, 1), 1, text_scale);
+                    if (isdefined(fakeactor_node.script_parameters)) {
+                        print3d(text_pos - cam_up * new_line * 3, "<dev string:x125>" + fakeactor_node.script_parameters, (1, 1, 1), 1, text_scale);
                     }
-                    if (isdefined(var_6269ca54b5e5e596.end_origin)) {
-                        line(var_6269ca54b5e5e596.origin, var_6269ca54b5e5e596.end_origin, (0.5, 1, 0.5), 0.5, 1, 1);
-                        draw_node(var_6269ca54b5e5e596.end_origin, var_6269ca54b5e5e596.end_angles, 0.5 * debug_info[var_6269ca54b5e5e596.script_fakeactor_node]["<dev string:x9f>"], debug_info[var_6269ca54b5e5e596.script_fakeactor_node]["<dev string:xa5>"] * 1.1);
+                    if (isdefined(fakeactor_node.end_origin)) {
+                        line(fakeactor_node.origin, fakeactor_node.end_origin, (0.5, 1, 0.5), 0.5, 1, 1);
+                        draw_node(fakeactor_node.end_origin, fakeactor_node.end_angles, 0.5 * debug_info[fakeactor_node.script_fakeactor_node]["<dev string:x9f>"], debug_info[fakeactor_node.script_fakeactor_node]["<dev string:xa5>"] * 1.1);
                     }
-                    if (isdefined(var_6269ca54b5e5e596.target)) {
-                        var_f0e3321cb9abfd66 = getstructarray(var_6269ca54b5e5e596.target, "<dev string:x12e>");
-                        if (var_f0e3321cb9abfd66.size) {
-                            foreach (var_fc77a7f3b518c9a in var_f0e3321cb9abfd66) {
-                                start_pos = var_6269ca54b5e5e596.origin;
-                                if (isdefined(var_6269ca54b5e5e596.end_origin)) {
-                                    start_pos = var_6269ca54b5e5e596.end_origin;
+                    if (isdefined(fakeactor_node.target)) {
+                        connected_nodes = getstructarray(fakeactor_node.target, "<dev string:x12e>");
+                        if (connected_nodes.size) {
+                            foreach (this_node in connected_nodes) {
+                                start_pos = fakeactor_node.origin;
+                                if (isdefined(fakeactor_node.end_origin)) {
+                                    start_pos = fakeactor_node.end_origin;
                                 }
-                                if (var_fc77a7f3b518c9a fakeactor_node_is_valid()) {
-                                    line(start_pos, var_fc77a7f3b518c9a.origin, (0, 1, 0), 1, 1, 1);
+                                if (this_node fakeactor_node_is_valid()) {
+                                    line(start_pos, this_node.origin, (0, 1, 0), 1, 1, 1);
                                     continue;
                                 }
-                                line(start_pos, var_fc77a7f3b518c9a.origin, (1, 0, 0), 1, 1, 1);
+                                line(start_pos, this_node.origin, (1, 0, 0), 1, 1, 1);
                             }
                         }
                     }

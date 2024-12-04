@@ -1,16 +1,16 @@
-#using scripts\common\anim.gsc;
-#using scripts\common\notetrack.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\face.gsc;
-#using scripts\anim\notetracks.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\anim\notetracks_mp.gsc;
+#using scripts\anim\face;
+#using scripts\anim\notetracks;
+#using scripts\anim\notetracks_mp;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
 
-#namespace namespace_d9c3c84fd2083d0e;
+#namespace cp_anim;
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x225
 // Size: 0x133
@@ -36,7 +36,7 @@ function init() {
     anim.callbacks["playXcam"] = &play_xcam;
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x360
 // Size: 0x25
@@ -44,7 +44,7 @@ function play_sound_at_viewheight(aliasname, notification_string, var_a68adbd3ee
     self playsound(aliasname, notification_string, var_a68adbd3eefe9282);
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x38d
 // Size: 0x4
@@ -52,7 +52,7 @@ function should_do_anim() {
     return true;
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x39a
 // Size: 0x6f
@@ -72,7 +72,7 @@ function teleport_entity(origin, angles) {
     self dontinterpolate();
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x411
 // Size: 0x34
@@ -80,11 +80,11 @@ function do_facial_anim(DoFacialAnim, var_9ac73a1996d2dae, DoAnimation, anime, a
     return false;
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 7, eflags: 0x0
 // Checksum 0x0, Offset: 0x44e
 // Size: 0x238
-function do_animation(org, angles, animname, anime, anim_string, idleanim, var_43e50904d011917e) {
+function do_animation(org, angles, animname, anime, anim_string, idleanim, scripted_node_ent) {
     var_173bdb8ba434651d = 0;
     animation = undefined;
     if (isdefined(idleanim) && !isagent(self)) {
@@ -112,15 +112,15 @@ function do_animation(org, angles, animname, anime, anim_string, idleanim, var_4
         var_8c94765ca587f86c = ter_op(isdefined(angles), angles, (0, 0, 0));
         if (isagent(self)) {
             var_173bdb8ba434651d = 1;
-            var_1ed6bbc02282dd5 = "agent_scripted_" + getdvar(@"hash_687fb8f9b7a23245");
-            if (archetypeassetloaded(var_1ed6bbc02282dd5)) {
+            level_archetype = "agent_scripted_" + getdvar(@"g_mapname");
+            if (archetypeassetloaded(level_archetype)) {
                 scripted_node = spawnstruct();
                 if (isdefined(org)) {
                     scripted_node.origin = org;
                     scripted_node.angles = angles;
                 }
                 var_5a0a7dfb51da0682 = getanimname(animation);
-                thread scripts\asm\shared\mp\utility::animscriptmp(var_1ed6bbc02282dd5, "animscripted", var_5a0a7dfb51da0682, undefined, undefined, undefined, scripted_node);
+                thread scripts\asm\shared\mp\utility::animscriptmp(level_archetype, "animscripted", var_5a0a7dfb51da0682, undefined, undefined, undefined, scripted_node);
             } else {
                 thread scripts\asm\shared\mp\utility::function_577d8abff6067c23(anime, anim_string, org, var_8c94765ca587f86c);
             }
@@ -132,7 +132,7 @@ function do_animation(org, angles, animname, anime, anim_string, idleanim, var_4
     return getanimlength(animation);
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x68f
 // Size: 0xb7
@@ -157,7 +157,7 @@ function mp_anim_handle_notetrack(scr_notetrack, guy, var_966821fc90c3ca9d, tag_
     }
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x74e
 // Size: 0x1f
@@ -167,7 +167,7 @@ function mp_entity_handle_notetrack(guy, notetrack) {
     }
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x775
 // Size: 0x6d
@@ -181,7 +181,7 @@ function anim_player_solo(player, player_rig, anime, tag, var_9e8a16d47a03007a, 
     anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override);
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x7ea
 // Size: 0x48
@@ -192,7 +192,7 @@ function anim_player(players, player_rigs, anime, tag, var_9e8a16d47a03007a, ani
     anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03007a, animname_override);
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x83a
 // Size: 0x13f
@@ -217,7 +217,7 @@ function anim_player_internal(players, player_rigs, anime, tag, var_9e8a16d47a03
     }
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x981
 // Size: 0x39
@@ -229,7 +229,7 @@ function play_snd_on_tag(alias, tag) {
     playsoundatpos(self.origin, alias);
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c2
 // Size: 0x4b
@@ -240,7 +240,7 @@ function play_xcam(xcamasset, origin, angles) {
     wait getxcamlength(xcamasset);
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa15
 // Size: 0x121
@@ -269,7 +269,7 @@ function function_f7abc6758c6fa304(startorg, startangles) {
     return startorg;
 }
 
-// Namespace namespace_d9c3c84fd2083d0e / scripts\cp\cp_anim
+// Namespace cp_anim / scripts\cp\cp_anim
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb3f
 // Size: 0xa4

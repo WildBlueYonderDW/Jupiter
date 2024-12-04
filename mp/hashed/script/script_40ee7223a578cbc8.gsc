@@ -1,8 +1,8 @@
-#using scripts\asm\asm.gsc;
 #using script_7ff3a914e6c698c5;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\asm\asm;
+#using scripts\common\callbacks;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_ce6c437f7a6dedb6;
 

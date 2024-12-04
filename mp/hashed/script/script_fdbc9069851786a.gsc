@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\equipment.gsc;
-#using script_7f36f22bad523244;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\common\system.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\trigger.gsc;
 #using script_66071dc73129d4e0;
+#using script_7f36f22bad523244;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\equipment;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\supers;
+#using scripts\mp\utility\trigger;
 
 #namespace mutation_shield;
 
@@ -33,7 +33,7 @@ function function_d010653789d638e0() {
     }
     rechargetime = getdvarint(@"hash_dd9f45b423a49aa6", 40);
     function_c5030224f9fb72f6("equip_mutation_shield", "equip_mutation_give_shield", rechargetime, &function_4b3a8e81d4a07ffc);
-    level.equipment.callbacks["equip_mutation_shield"]["onFired"] = &function_2bd59ecbe10c6ca7;
+    level.equipment.callbacks["equip_mutation_shield"]["onFired"] = &shield_onuse;
     level.equipment.callbacks["equip_mutation_shield"]["onGive"] = &function_cd9adddb8d4ff4b9;
     level.equipment.callbacks["equip_mutation_shield"]["onTake"] = &function_39fb6cfef5d3b47a;
     scripts\engine\scriptable::scriptable_adddamagedcallback(&function_774a2c15e69350e4);
@@ -105,7 +105,7 @@ function function_39fb6cfef5d3b47a(ref, slot, variantid) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x8f7
 // Size: 0x19f
-function function_2bd59ecbe10c6ca7(equipmentref, slot, objweapon) {
+function shield_onuse(equipmentref, slot, objweapon) {
     if (!isdefined(self.var_c0520e995eb8892b)) {
         function_308f48ed405d1347();
         thread function_4f33e107ea6d27e2();
@@ -318,10 +318,10 @@ function function_f9b43f1eb48e7fca(shouldblock) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x109e
 // Size: 0x2d
-function function_5c3aab6c7e7025c(var_2f3768b2dbf60030) {
+function function_5c3aab6c7e7025c(shield_anchor) {
     waittill_any_3("mutation_shield_broken", "death", "disconnected");
-    if (isdefined(var_2f3768b2dbf60030)) {
-        var_2f3768b2dbf60030 delete();
+    if (isdefined(shield_anchor)) {
+        shield_anchor delete();
     }
 }
 
@@ -355,12 +355,12 @@ function function_7fd5e025bde6cbe7() {
         self setsoundsubmix("jup_br_mutation_shield", 1);
     }
     if (!scripts\cp_mp\utility\game_utility::isbrstylegametype() && getdvarint(@"hash_4b664c074a868ac5", 0) == 1 || var_4494812816cb38ce) {
-        var_2f3768b2dbf60030 = spawn("script_model", self.origin);
-        var_2f3768b2dbf60030.angles = self.angles;
-        var_2f3768b2dbf60030 linkto(self);
-        localorigin = rotatevectorinverted(shield.origin - var_2f3768b2dbf60030.origin, var_2f3768b2dbf60030.angles);
-        shield utility::function_6e506f39f121ea8a(var_2f3768b2dbf60030, localorigin, shield.angles);
-        thread function_5c3aab6c7e7025c(var_2f3768b2dbf60030);
+        shield_anchor = spawn("script_model", self.origin);
+        shield_anchor.angles = self.angles;
+        shield_anchor linkto(self);
+        localorigin = rotatevectorinverted(shield.origin - shield_anchor.origin, shield_anchor.angles);
+        shield utility::function_6e506f39f121ea8a(shield_anchor, localorigin, shield.angles);
+        thread function_5c3aab6c7e7025c(shield_anchor);
         if (function_f3bb4f4911a1beb2("perk", "hasPerk", "specialty_tac_mask")) {
             data.var_186108bccdd855ac = 1;
         } else {

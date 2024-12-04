@@ -1,16 +1,16 @@
-#using scripts\common\debug.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_610f57bddd265be2;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\player.gsc;
+#using script_610f57bddd265be2;
+#using scripts\common\debug;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
 
 #namespace namespace_67f87913935bfc5c;
 
@@ -45,14 +45,14 @@ function init() {
     if (!getdvarint(@"hash_eb0811ead28c4f53", 0)) {
         namespace_2c2703f78fc59600::initvariables();
     }
-    function_963e59e07410b8ed();
+    drone_spawn();
 }
 
 // Namespace namespace_67f87913935bfc5c / namespace_7e5632fb8c75a1e1
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x52d
 // Size: 0xd3
-function function_963e59e07410b8ed() {
+function drone_spawn() {
     while (!isdefined(level.br_ac130)) {
         wait 0.05;
     }
@@ -65,7 +65,7 @@ function function_963e59e07410b8ed() {
     drone setcandamage(1);
     drone forcenetfieldhighlod(1);
     scripts\mp\weapons::function_e00b77a9cb4d8322(drone);
-    drone thread function_37a5377d8de43df();
+    drone thread drone_movement();
     drone thread function_f9e2637633ed4523();
 }
 
@@ -73,10 +73,10 @@ function function_963e59e07410b8ed() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x608
 // Size: 0x211
-function function_37a5377d8de43df() {
+function drone_movement() {
     level endon("game_ended");
     self endon("entitydeleted");
-    var_39ab2635fa36c1e7 = getdvarint(@"hash_d09e4b72069e9128", 12500);
+    i_altitude = getdvarint(@"hash_d09e4b72069e9128", 12500);
     /#
         if (getdvarint(@"hash_d7987b5db214b981", 0)) {
             debug::debug_sphere(self, 25, (1, 0, 0), undefined, "<dev string:x1c>", "<dev string:x47>");
@@ -84,19 +84,19 @@ function function_37a5377d8de43df() {
         }
     #/
     s_goto = spawnstruct();
-    var_58df80bc53f9bc28 = randomint(360);
+    i_angle = randomint(360);
     while (self.health > 0) {
         if (level.br_circle.circleindex == level.var_fc4bb27a820f54dd.var_73610df6cb8260e6) {
-            function_2b4d24a5508865bc();
+            drone_despawn();
             return;
         }
         while (true) {
-            v_anchor = (scripts\mp\gametypes\br_circle::getsafecircleorigin()[0], scripts\mp\gametypes\br_circle::getsafecircleorigin()[1], var_39ab2635fa36c1e7);
-            var_58df80bc53f9bc28 += randomintrange(90, 270);
-            if (var_58df80bc53f9bc28 > 360) {
-                var_58df80bc53f9bc28 -= 360;
+            v_anchor = (scripts\mp\gametypes\br_circle::getsafecircleorigin()[0], scripts\mp\gametypes\br_circle::getsafecircleorigin()[1], i_altitude);
+            i_angle += randomintrange(90, 270);
+            if (i_angle > 360) {
+                i_angle -= 360;
             }
-            s_goto.origin = v_anchor + anglestoforward((0, var_58df80bc53f9bc28, 0)) * randomintrange(2500, 7500);
+            s_goto.origin = v_anchor + anglestoforward((0, i_angle, 0)) * randomintrange(2500, 7500);
             s_goto.angles = vectortoangles(s_goto.origin - self.origin);
             s_goto.angles = (0, s_goto.angles[1], 0);
             if (distance2dsquared(s_goto.origin, self.origin) > squared(2500)) {
@@ -121,7 +121,7 @@ function function_37a5377d8de43df() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x821
 // Size: 0xf8
-function function_2b4d24a5508865bc() {
+function drone_despawn() {
     s_despawn = spawnstruct();
     var_9602b340166dcdd7 = scripts\mp\gametypes\br_circle::getsafecircleorigin();
     s_despawn.origin = self.origin + vectornormalize(self.origin - (var_9602b340166dcdd7[0], var_9602b340166dcdd7[1], self.origin[2])) * 20000;
@@ -207,7 +207,7 @@ function drone_destroyed(eattacker) {
     item thread function_9fe88329eea942f5();
     level thread function_5ad7013749e24080(self.origin + (0, 0, 10));
     level thread function_3cfcb01c0c46b6c1(eattacker, self.origin + (0, 0, 10));
-    level thread function_f3d493e76bc49486();
+    level thread drone_respawn();
     scripts\mp\weapons::function_1a33bd42949ccbda(self);
     self delete();
 }
@@ -241,8 +241,8 @@ function function_5ad7013749e24080(v_pos) {
 // Checksum 0x0, Offset: 0xe2e
 // Size: 0x1c9
 function function_3cfcb01c0c46b6c1(player, v_pos) {
-    var_239793e9aa66493e = getdvarint(@"hash_78afb5674fadd4e", 3);
-    for (i = 0; i < var_239793e9aa66493e; i++) {
+    i_yield = getdvarint(@"hash_78afb5674fadd4e", 3);
+    for (i = 0; i < i_yield; i++) {
         dropinfo = scripts\mp\gametypes\br_pickups::getitemdropinfo(scripts\mp\gametypes\br_public::droptogroundmultitrace(v_pos + anglestoforward((0, randomint(360), 0)) * (i + 1) * 30, 0, -500), (0, randomint(360), 0));
         if (scripts\engine\utility::cointoss()) {
             scripts\mp\gametypes\br_pickups::spawnpickup("brloot_armor_plate", dropinfo);
@@ -260,8 +260,8 @@ function function_3cfcb01c0c46b6c1(player, v_pos) {
             } else if (issubstr(weapon.basename, "_sn") || issubstr(weapon.basename, "_dm")) {
                 var_92d8a509637fb29b = "brloot_ammo_50cal";
             } else {
-                var_2c878e7206cb78ea = ["brloot_ammo_762", "brloot_ammo_919", "brloot_ammo_12g", "brloot_ammo_50cal"];
-                var_92d8a509637fb29b = var_2c878e7206cb78ea[randomint(var_2c878e7206cb78ea.size)];
+                a_random = ["brloot_ammo_762", "brloot_ammo_919", "brloot_ammo_12g", "brloot_ammo_50cal"];
+                var_92d8a509637fb29b = a_random[randomint(a_random.size)];
             }
         }
         scripts\mp\gametypes\br_pickups::spawnpickup(var_92d8a509637fb29b, dropinfo);
@@ -337,7 +337,7 @@ function function_9fe88329eea942f5() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1208
 // Size: 0xfc
-function function_f3d493e76bc49486() {
+function drone_respawn() {
     level endon("game_ended");
     wait getdvarint(@"hash_764f944633363973", 55);
     if (level.br_circle.circleindex < level.var_fc4bb27a820f54dd.var_73610df6cb8260e6) {
@@ -349,7 +349,7 @@ function function_f3d493e76bc49486() {
         drone setcandamage(1);
         drone forcenetfieldhighlod(1);
         scripts\mp\weapons::function_e00b77a9cb4d8322(drone);
-        drone thread function_37a5377d8de43df();
+        drone thread drone_movement();
         drone thread function_f9e2637633ed4523();
     }
 }

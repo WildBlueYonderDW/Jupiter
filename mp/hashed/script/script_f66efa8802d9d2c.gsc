@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
 #using script_3db04fd1b466bdba;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\juggernaut.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\hud_util;
+#using scripts\mp\juggernaut;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\weapons;
 
 #namespace namespace_445185c8d1d36c6b;
 
@@ -155,6 +155,6 @@ function function_22256c01d8eb752c(streakinfo) {
 // Checksum 0x0, Offset: 0x640
 // Size: 0x1e
 function function_44d1e060ec177f59(player) {
-    level thread scripts\mp\battlechatter_mp::trysaylocalsound(player, #"hash_2492241d17cecd6d");
+    level thread scripts\mp\battlechatter_mp::trysaylocalsound(player, #"bc_killstreak_action_juggernaut");
 }
 

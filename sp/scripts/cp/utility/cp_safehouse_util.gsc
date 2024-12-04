@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_18a73a64992dd07d;
-#using scripts\cp\cp_kidnapper.gsc;
-#using script_afb7e332aee4bf2;
-#using scripts\cp\cp_dialogue.gsc;
-#using scripts\cp\cp_objectives.gsc;
-#using scripts\cp_mp\killstreaks\chopper_gunner.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp\utility\cp_safehouse_util.gsc;
 #using script_166b4f052da169a7;
-#using scripts\cp\cp_player_battlechatter.gsc;
+#using script_18a73a64992dd07d;
+#using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\cp\cp_dialogue;
+#using scripts\cp\cp_kidnapper;
+#using scripts\cp\cp_objectives;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\utility;
+#using scripts\cp\utility\cp_safehouse_util;
+#using scripts\cp_mp\killstreaks\chopper_gunner;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace namespace_adafd08717508043;
 
@@ -68,12 +68,12 @@ function slamcamoverlay(var_ad4dd16f29e24b77, holdduration, var_dfab0807d83a77fe
 function kill_all_enemies() {
     namespace_5729d24318b60bcd::stop_all_groups();
     level.ambient_spawning_paused = 1;
-    foreach (var_c8c0e3cbce8f401a in level.agentarray) {
-        if (!istrue(var_c8c0e3cbce8f401a.isactive)) {
+    foreach (spawned_enemy in level.agentarray) {
+        if (!istrue(spawned_enemy.isactive)) {
             continue;
         }
-        var_c8c0e3cbce8f401a.nocorpse = 1;
-        var_c8c0e3cbce8f401a dodamage(var_c8c0e3cbce8f401a.health + 1000, var_c8c0e3cbce8f401a.origin, undefined, undefined, "MOD_EXPLOSIVE", "iw8_la_rpapa7_mp_friendly");
+        spawned_enemy.nocorpse = 1;
+        spawned_enemy dodamage(spawned_enemy.health + 1000, spawned_enemy.origin, undefined, undefined, "MOD_EXPLOSIVE", "iw8_la_rpapa7_mp_friendly");
     }
     level.ambient_spawning_paused = 0;
 }
@@ -82,7 +82,7 @@ function kill_all_enemies() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x6de
 // Size: 0x15c
-function regroup_blackscreen(player, var_ad170c2b0c7a7fb2, var_892708eff6520b44, var_ad170b2b0c7a7d7f) {
+function regroup_blackscreen(player, var_ad170c2b0c7a7fb2, obj_ref, var_ad170b2b0c7a7d7f) {
     if (!isdefined(player)) {
         player = self;
     }
@@ -102,7 +102,7 @@ function regroup_blackscreen(player, var_ad170c2b0c7a7fb2, var_892708eff6520b44,
     fullscreen_overlay.alpha = 1;
     fullscreen_overlay.foreground = 1;
     level waittill(var_ad170c2b0c7a7fb2);
-    player thread show_regroup_text(var_892708eff6520b44);
+    player thread show_regroup_text(obj_ref);
     level waittill(var_ad170b2b0c7a7d7f);
     player setclientomnvar("ui_chyron_on", 0);
     player setclientomnvar("ui_hide_hud", 0);
@@ -309,13 +309,13 @@ function run_mission(mission) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdd5
 // Size: 0x7a
-function safehouse_revive_and_move_players(var_feff3079e90ec019) {
+function safehouse_revive_and_move_players(safehouse_structs) {
     foreach (player in level.players) {
         inlaststand = 0;
         if (namespace_d4aab8c9cb8ecb14::player_in_laststand(player)) {
             inlaststand = 1;
         }
-        player thread player_move(var_feff3079e90ec019, index, inlaststand);
+        player thread player_move(safehouse_structs, index, inlaststand);
     }
 }
 
@@ -323,11 +323,11 @@ function safehouse_revive_and_move_players(var_feff3079e90ec019) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xe57
 // Size: 0x1d2
-function player_move(var_feff3079e90ec019, index, inlaststand) {
+function player_move(safehouse_structs, index, inlaststand) {
     self endon("disconnect");
-    var_feff3079e90ec019[index].angles = ter_op(isdefined(var_feff3079e90ec019[index].angles), var_feff3079e90ec019[index].angles, (0, 0, 0));
-    self.respawn_forcespawnorigin = var_feff3079e90ec019[index].origin;
-    self.respawn_forcespawnangles = var_feff3079e90ec019[index].angles;
+    safehouse_structs[index].angles = ter_op(isdefined(safehouse_structs[index].angles), safehouse_structs[index].angles, (0, 0, 0));
+    self.respawn_forcespawnorigin = safehouse_structs[index].origin;
+    self.respawn_forcespawnangles = safehouse_structs[index].angles;
     if (istrue(inlaststand)) {
         namespace_d4aab8c9cb8ecb14::instant_revive(self);
     }
@@ -351,8 +351,8 @@ function player_move(var_feff3079e90ec019, index, inlaststand) {
         seatid = scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_getoccupantseat(player_vehicle, self);
         scripts\cp_mp\vehicles\vehicle_occupancy::vehicle_occupancy_exit(player_vehicle, seatid, self, undefined, 1);
     }
-    self setorigin(var_feff3079e90ec019[index].origin);
-    self setplayerangles(var_feff3079e90ec019[index].angles);
+    self setorigin(safehouse_structs[index].origin);
+    self setplayerangles(safehouse_structs[index].angles);
 }
 
 // Namespace namespace_adafd08717508043 / scripts\cp\utility\cp_safehouse_util
@@ -375,30 +375,30 @@ function num_players_in_safehouse(volume) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x10ad
 // Size: 0x113
-function safehouse_regroup(var_d2a2486a309653ca, flagname) {
+function safehouse_regroup(safehouse_vol, flagname) {
     index = 0;
-    var_4accc3dbb1732233 = 0;
+    objective_active = 0;
     while (index < 31) {
-        num_players = scripts\cp\utility\cp_safehouse_util::num_players_in_safehouse(var_d2a2486a309653ca);
+        num_players = scripts\cp\utility\cp_safehouse_util::num_players_in_safehouse(safehouse_vol);
         var_926aa1e4673bb544 = get_respawning_players();
         if (num_players && var_926aa1e4673bb544.size == 0) {
             level notify("player_entered_safehouse_vol");
             if (num_players == level.players.size) {
-                if (!var_4accc3dbb1732233) {
+                if (!objective_active) {
                     thread objective_update("safehouse_return_timer", 6, undefined, undefined, 1, undefined, 1, 1);
-                    var_4accc3dbb1732233 = 1;
+                    objective_active = 1;
                     index = int(max(index, 25));
                 }
-            } else if (!var_4accc3dbb1732233) {
+            } else if (!objective_active) {
                 thread objective_update("safehouse_return_timer", 30, 20, 10, 1, undefined, 1, 1);
-                var_4accc3dbb1732233 = 1;
+                objective_active = 1;
             }
             index++;
         } else {
-            if (var_4accc3dbb1732233) {
+            if (objective_active) {
                 scripts\cp\cp_objectives::lua_objective_complete("safehouse_return_timer");
                 thread objective_update("safehouse_return");
-                var_4accc3dbb1732233 = 0;
+                objective_active = 0;
             }
             index = 0;
         }
@@ -428,8 +428,8 @@ function get_respawning_players() {
 // Checksum 0x0, Offset: 0x1270
 // Size: 0x55
 function safehouse_create_loot(loot_boxes) {
-    foreach (var_ffa1c8c5e081786d in loot_boxes) {
-        var_ffa1c8c5e081786d thread create_fake_loot();
+    foreach (loot_box in loot_boxes) {
+        loot_box thread create_fake_loot();
     }
 }
 
@@ -513,19 +513,19 @@ function play_overlord_howcopy_vo(var_b2bc8b6fd1d16561) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1549
 // Size: 0xd4
-function play_operator_reply_vo(var_de3cab686c13ba9, var_97a10adf707c9af) {
+function play_operator_reply_vo(player_override, input_vo) {
     all_players = getplayersinteam("allies");
-    var_932de1a48f2faed = [];
+    good_players = [];
     foreach (player in all_players) {
         if (player scripts\cp_mp\utility\player_utility::_isalive()) {
-            var_932de1a48f2faed[var_932de1a48f2faed.size] = player;
+            good_players[good_players.size] = player;
         }
     }
-    var_8850d9f771525016 = random(var_932de1a48f2faed);
-    if (isdefined(var_de3cab686c13ba9)) {
-        var_8850d9f771525016 = var_de3cab686c13ba9;
+    var_8850d9f771525016 = random(good_players);
+    if (isdefined(player_override)) {
+        var_8850d9f771525016 = player_override;
     }
-    waittime = level scripts\cp\cp_player_battlechatter::trysaylocalsound(var_8850d9f771525016, var_97a10adf707c9af);
+    waittime = level scripts\cp\cp_player_battlechatter::trysaylocalsound(var_8850d9f771525016, input_vo);
     if (isfloat(waittime)) {
         wait waittime;
     }
@@ -601,12 +601,12 @@ function post_loadout_spawn_func() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x181a
 // Size: 0x89
-function show_regroup_text(var_892708eff6520b44) {
+function show_regroup_text(obj_ref) {
     map_name = getdvar(@"ui_mapname");
-    var_a1f826c73e18485b = "cp/" + map_name + "_objectives.csv";
-    var_d31685c0a626ff37 = int(tablelookup(var_a1f826c73e18485b, 1, var_892708eff6520b44, 0));
+    objective_table = "cp/" + map_name + "_objectives.csv";
+    objective_index = int(tablelookup(objective_table, 1, obj_ref, 0));
     self setclientomnvar("ui_hide_hud", 0);
-    self setclientomnvar("ui_chyron_mission_index", var_d31685c0a626ff37);
+    self setclientomnvar("ui_chyron_mission_index", objective_index);
     self setclientomnvar("ui_chyron_on", 1);
     wait 5;
     level notify("regroup_text_done");

@@ -1,12 +1,12 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\mg_penetration.gsc;
-#using scripts\sp\spawner.gsc;
-#using scripts\sp\mgturret.gsc;
-#using scripts\engine\trace.gsc;
 #using script_3433ee6b63c7e243;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\mg_penetration;
+#using scripts\sp\mgturret;
+#using scripts\sp\spawner;
+#using scripts\sp\utility;
 
 #namespace mgturret;
 
@@ -80,10 +80,10 @@ function mgturret_enablelinkedturretangles() {
 // Checksum 0x0, Offset: 0xb34
 // Size: 0xe4
 function turretinits() {
-    var_9dfb2d4326b2cb1a = getentarray("misc_turret", "code_classname");
+    possible_turrets = getentarray("misc_turret", "code_classname");
     var_adafff1d14cac7cb = [];
-    foreach (var_9869bc1af26d720d in var_9dfb2d4326b2cb1a) {
-        var_adafff1d14cac7cb = array_add(var_adafff1d14cac7cb, var_9869bc1af26d720d);
+    foreach (possible_turret in possible_turrets) {
+        var_adafff1d14cac7cb = array_add(var_adafff1d14cac7cb, possible_turret);
     }
     foreach (turret in var_adafff1d14cac7cb) {
         if (isdefined(turret.targetname) && turret.targetname == "zulu23_turret") {
@@ -112,26 +112,26 @@ function portable_mg_behavior() {
     while (!isdefined(self.node)) {
         wait 0.05;
     }
-    var_643b764a9f01a3f0 = undefined;
+    turret_node = undefined;
     if (isdefined(self.target)) {
         node = getnode(self.target, "targetname");
-        var_643b764a9f01a3f0 = node;
+        turret_node = node;
     }
-    if (!isdefined(var_643b764a9f01a3f0)) {
-        var_643b764a9f01a3f0 = self.node;
+    if (!isdefined(turret_node)) {
+        turret_node = self.node;
     }
-    if (!isdefined(var_643b764a9f01a3f0)) {
+    if (!isdefined(turret_node)) {
         return;
     }
-    if (var_643b764a9f01a3f0.type != "Turret") {
+    if (turret_node.type != "Turret") {
         return;
     }
-    var_b64a2c06fa3074be = gettakennodes();
-    var_b64a2c06fa3074be[self.node.origin + ""] = undefined;
-    if (isdefined(var_b64a2c06fa3074be[var_643b764a9f01a3f0.origin + ""])) {
+    taken_nodes = gettakennodes();
+    taken_nodes[self.node.origin + ""] = undefined;
+    if (isdefined(taken_nodes[turret_node.origin + ""])) {
         return;
     }
-    turret = var_643b764a9f01a3f0.turret;
+    turret = turret_node.turret;
     if (isdefined(turret.reserved)) {
         assert(turret.reserved != self);
         return;
@@ -142,7 +142,7 @@ function portable_mg_behavior() {
     } else {
         run_to_new_spot_and_setup_gun(turret);
     }
-    scripts\sp\mg_penetration::gunner_think(var_643b764a9f01a3f0.turret);
+    scripts\sp\mg_penetration::gunner_think(turret_node.turret);
 }
 
 // Namespace mgturret / scripts\sp\mgturret
@@ -241,22 +241,22 @@ function burst_fire_unmanned() {
     self endon("death");
     self endon("stop_burst_fire_unmanned");
     if (isdefined(self.script_delay_min)) {
-        var_3f0fa03e0f609bbf = self.script_delay_min;
+        mg42_delay = self.script_delay_min;
     } else {
-        var_3f0fa03e0f609bbf = burst_fire_settings("delay");
+        mg42_delay = burst_fire_settings("delay");
     }
     if (isdefined(self.script_delay_max)) {
-        var_e7c2eca166ff3355 = self.script_delay_max - var_3f0fa03e0f609bbf;
+        var_e7c2eca166ff3355 = self.script_delay_max - mg42_delay;
     } else {
         var_e7c2eca166ff3355 = burst_fire_settings("delay_range");
     }
     if (isdefined(self.script_burst_min)) {
-        var_4ca5c9052a24e336 = self.script_burst_min;
+        mg42_burst = self.script_burst_min;
     } else {
-        var_4ca5c9052a24e336 = burst_fire_settings("burst");
+        mg42_burst = burst_fire_settings("burst");
     }
     if (isdefined(self.script_burst_max)) {
-        var_2b8f70c634712f60 = self.script_burst_max - var_4ca5c9052a24e336;
+        var_2b8f70c634712f60 = self.script_burst_max - mg42_burst;
     } else {
         var_2b8f70c634712f60 = burst_fire_settings("burst_range");
     }
@@ -277,10 +277,10 @@ function burst_fire_unmanned() {
                 turretstate = "fire";
                 thread doshoot(var_8651842fb899f562);
             }
-            duration = var_4ca5c9052a24e336 + randomfloat(var_2b8f70c634712f60);
+            duration = mg42_burst + randomfloat(var_2b8f70c634712f60);
             thread turrettimer(duration);
             self waittill("turretstatechange");
-            duration = var_3f0fa03e0f609bbf + randomfloat(var_e7c2eca166ff3355);
+            duration = mg42_delay + randomfloat(var_e7c2eca166ff3355);
             pauseuntiltime = gettime() + int(duration * 1000);
             continue;
         }
@@ -407,22 +407,22 @@ function burst_fire(mg42, manual_target) {
     mg42 endon("stopfiring");
     self endon("stop_using_built_in_burst_fire");
     if (isdefined(mg42.script_delay_min)) {
-        var_3f0fa03e0f609bbf = mg42.script_delay_min;
+        mg42_delay = mg42.script_delay_min;
     } else {
-        var_3f0fa03e0f609bbf = scripts\sp\mgturret::burst_fire_settings("delay");
+        mg42_delay = scripts\sp\mgturret::burst_fire_settings("delay");
     }
     if (isdefined(mg42.script_delay_max)) {
-        var_e7c2eca166ff3355 = mg42.script_delay_max - var_3f0fa03e0f609bbf;
+        var_e7c2eca166ff3355 = mg42.script_delay_max - mg42_delay;
     } else {
         var_e7c2eca166ff3355 = scripts\sp\mgturret::burst_fire_settings("delay_range");
     }
     if (isdefined(mg42.script_burst_min)) {
-        var_4ca5c9052a24e336 = mg42.script_burst_min;
+        mg42_burst = mg42.script_burst_min;
     } else {
-        var_4ca5c9052a24e336 = scripts\sp\mgturret::burst_fire_settings("burst");
+        mg42_burst = scripts\sp\mgturret::burst_fire_settings("burst");
     }
     if (isdefined(mg42.script_burst_max)) {
-        var_2b8f70c634712f60 = mg42.script_burst_max - var_4ca5c9052a24e336;
+        var_2b8f70c634712f60 = mg42.script_burst_max - mg42_burst;
     } else {
         var_2b8f70c634712f60 = scripts\sp\mgturret::burst_fire_settings("burst_range");
     }
@@ -431,9 +431,9 @@ function burst_fire(mg42, manual_target) {
         if (isdefined(manual_target)) {
             mg42 thread random_spread(manual_target);
         }
-        wait var_4ca5c9052a24e336 + randomfloat(var_2b8f70c634712f60);
+        wait mg42_burst + randomfloat(var_2b8f70c634712f60);
         mg42 stopfiring();
-        wait var_3f0fa03e0f609bbf + randomfloat(var_e7c2eca166ff3355);
+        wait mg42_delay + randomfloat(var_e7c2eca166ff3355);
     }
 }
 
@@ -459,10 +459,10 @@ function _spawner_mg42_think() {
         node.mg42_enabled = 1;
     }
     self.script_mg42 = node.script_mg42;
-    var_bd28412336460ca7 = 1;
+    first_run = 1;
     while (true) {
-        if (var_bd28412336460ca7) {
-            var_bd28412336460ca7 = 0;
+        if (first_run) {
+            first_run = 0;
             if (isdefined(node.targetname) || self.flagged_for_use) {
                 self waittill("get new user");
             }
@@ -529,14 +529,14 @@ function mg42_think() {
         if (self.count == 0) {
             return;
         }
-        var_a7f2a05a01110bfb = undefined;
-        while (!isdefined(var_a7f2a05a01110bfb)) {
-            var_a7f2a05a01110bfb = spawn_ai();
+        mg42_gunner = undefined;
+        while (!isdefined(mg42_gunner)) {
+            mg42_gunner = spawn_ai();
             wait 1;
         }
-        var_a7f2a05a01110bfb thread mg42_gunner_think(mg42, trigger, self.ai_mode);
-        var_a7f2a05a01110bfb thread mg42_firing(mg42);
-        var_a7f2a05a01110bfb waittill("death");
+        mg42_gunner thread mg42_gunner_think(mg42, trigger, self.ai_mode);
+        mg42_gunner thread mg42_firing(mg42);
+        mg42_gunner waittill("death");
         if (isdefined(self.script_delay)) {
             wait self.script_delay;
             continue;
@@ -635,80 +635,80 @@ function mg42_gunner_manual_think(mg42, trigger) {
     self.pacifist = 0;
     mg42 setmode("auto_ai");
     mg42 cleartargetentity();
-    var_68474726dfc6dd04 = spawn("script_origin", (0, 0, 0));
+    targ_org = spawn("script_origin", (0, 0, 0));
     tempmodel = spawn("script_model", (0, 0, 0));
     tempmodel.scale = 3;
     if (getdvar(@"mg42") != "off") {
         tempmodel setmodel("temp");
     }
-    tempmodel thread temp_think(mg42, var_68474726dfc6dd04);
-    level thread kill_objects(self, "death", var_68474726dfc6dd04, tempmodel);
-    level thread kill_objects(self, "auto_ai", var_68474726dfc6dd04, tempmodel);
+    tempmodel thread temp_think(mg42, targ_org);
+    level thread kill_objects(self, "death", targ_org, tempmodel);
+    level thread kill_objects(self, "auto_ai", targ_org, tempmodel);
     mg42.player_target = 0;
     var_77dd3af9c9b623c4 = 0;
     targets = getentarray("mg42_target", "targetname");
     if (targets.size > 0) {
-        var_83c9fee40517457f = 1;
-        var_f30507dd5dcfeebf = targets[randomint(targets.size)].origin;
+        script_targets = 1;
+        current_org = targets[randomint(targets.size)].origin;
         thread shoot_mg42_script_targets(targets);
         move_use_turret(mg42);
-        self.target_entity = var_68474726dfc6dd04;
+        self.target_entity = targ_org;
         mg42 setmode("manual_ai");
-        mg42 settargetentity(var_68474726dfc6dd04);
+        mg42 settargetentity(targ_org);
         mg42 notify("startfiring");
         mindist = 15;
         wait_time = 0.08;
         dif = 0.05;
-        var_68474726dfc6dd04.origin = targets[randomint(targets.size)].origin;
-        var_923214df11fa9d56 = 0;
+        targ_org.origin = targets[randomint(targets.size)].origin;
+        shoot_timer = 0;
         while (!isdefined(level.player_covertrigger)) {
-            var_f30507dd5dcfeebf = var_68474726dfc6dd04.origin;
-            if (distance(var_f30507dd5dcfeebf, targets[self.gun_targ].origin) > mindist) {
-                temp_vec = vectornormalize(targets[self.gun_targ].origin - var_f30507dd5dcfeebf);
+            current_org = targ_org.origin;
+            if (distance(current_org, targets[self.gun_targ].origin) > mindist) {
+                temp_vec = vectornormalize(targets[self.gun_targ].origin - current_org);
                 temp_vec *= mindist;
-                var_f30507dd5dcfeebf += temp_vec;
+                current_org += temp_vec;
             } else {
                 self notify("next_target");
             }
-            var_68474726dfc6dd04.origin = var_f30507dd5dcfeebf;
+            targ_org.origin = current_org;
             wait 0.1;
         }
         while (true) {
             for (i = 0; i < 1; i += dif) {
-                var_68474726dfc6dd04.origin = var_f30507dd5dcfeebf * (1 - i) + (level.player getorigin() + stance_num()) * i;
+                targ_org.origin = current_org * (1 - i) + (level.player getorigin() + stance_num()) * i;
                 if (player_safe()) {
                     i = 2;
                 }
                 wait wait_time;
             }
-            var_a80087c51092adcb = level.player getorigin();
+            old_org = level.player getorigin();
             while (!player_safe()) {
-                var_68474726dfc6dd04.origin = level.player getorigin();
-                var_97de56918657ce55 = var_68474726dfc6dd04.origin - var_a80087c51092adcb;
-                var_68474726dfc6dd04.origin = var_68474726dfc6dd04.origin + var_97de56918657ce55 + stance_num();
-                var_a80087c51092adcb = level.player getorigin();
+                targ_org.origin = level.player getorigin();
+                vec_dif = targ_org.origin - old_org;
+                targ_org.origin = targ_org.origin + vec_dif + stance_num();
+                old_org = level.player getorigin();
                 wait 0.1;
             }
             if (player_safe()) {
-                var_923214df11fa9d56 = gettime() + 1500 + randomfloat(4000);
-                while (player_safe() && isdefined(level.player_covertrigger.target) && gettime() < var_923214df11fa9d56) {
+                shoot_timer = gettime() + 1500 + randomfloat(4000);
+                while (player_safe() && isdefined(level.player_covertrigger.target) && gettime() < shoot_timer) {
                     target = getentarray(level.player_covertrigger.target, "targetname");
                     target = target[randomint(target.size)];
-                    var_68474726dfc6dd04.origin = target.origin + (randomfloat(30) - 15, randomfloat(30) - 15, randomfloat(40) - 60);
+                    targ_org.origin = target.origin + (randomfloat(30) - 15, randomfloat(30) - 15, randomfloat(40) - 60);
                     wait 0.1;
                 }
             }
             self notify("next_target");
             while (player_safe()) {
-                var_f30507dd5dcfeebf = var_68474726dfc6dd04.origin;
-                if (distance(var_f30507dd5dcfeebf, targets[self.gun_targ].origin) > mindist) {
-                    temp_vec = vectornormalize(targets[self.gun_targ].origin - var_f30507dd5dcfeebf);
+                current_org = targ_org.origin;
+                if (distance(current_org, targets[self.gun_targ].origin) > mindist) {
+                    temp_vec = vectornormalize(targets[self.gun_targ].origin - current_org);
                     temp_vec *= mindist;
-                    var_f30507dd5dcfeebf += temp_vec;
+                    current_org += temp_vec;
                 } else {
                     self notify("next_target");
                 }
-                var_68474726dfc6dd04.origin = var_f30507dd5dcfeebf;
+                targ_org.origin = current_org;
                 wait 0.1;
             }
         }
@@ -727,14 +727,14 @@ function mg42_gunner_manual_think(mg42, trigger) {
         mg42 setmode("manual_ai");
         move_use_turret(mg42);
         mg42 notify("startfiring");
-        var_923214df11fa9d56 = gettime() + 1500 + randomfloat(4000);
-        while (var_923214df11fa9d56 > gettime()) {
+        shoot_timer = gettime() + 1500 + randomfloat(4000);
+        while (shoot_timer > gettime()) {
             if (isdefined(level.player_covertrigger)) {
                 target = getentarray(level.player_covertrigger.target, "targetname");
                 target = target[randomint(target.size)];
-                var_68474726dfc6dd04.origin = target.origin + (randomfloat(30) - 15, randomfloat(30) - 15, randomfloat(40) - 60);
-                mg42 settargetentity(var_68474726dfc6dd04);
-                tempmodel.targent = var_68474726dfc6dd04;
+                targ_org.origin = target.origin + (randomfloat(30) - 15, randomfloat(30) - 15, randomfloat(40) - 60);
+                mg42 settargetentity(targ_org);
+                tempmodel.targent = targ_org;
                 wait randomfloat(1);
                 continue;
             }
@@ -763,20 +763,20 @@ function mg42_gunner_manual_think(mg42, trigger) {
 function shoot_mg42_script_targets(targets) {
     self endon("death");
     while (true) {
-        var_42f4822b2156ce1a = [];
+        targ_filled = [];
         for (i = 0; i < targets.size; i++) {
-            var_42f4822b2156ce1a[i] = 0;
+            targ_filled[i] = 0;
         }
         for (i = 0; i < targets.size; i++) {
             self.gun_targ = randomint(targets.size);
             self waittill("next_target");
-            while (var_42f4822b2156ce1a[self.gun_targ]) {
+            while (targ_filled[self.gun_targ]) {
                 self.gun_targ++;
                 if (self.gun_targ >= targets.size) {
                     self.gun_targ = 0;
                 }
             }
-            var_42f4822b2156ce1a[self.gun_targ] = 1;
+            targ_filled[self.gun_targ] = 1;
         }
     }
 }
@@ -1071,20 +1071,20 @@ function get_bestdrone(team, dotrange) {
 // Checksum 0x0, Offset: 0x2d4e
 // Size: 0x427
 function saw_mgturretlink() {
-    var_9dfb2d4326b2cb1a = getentarray("misc_turret", "code_classname");
+    possible_turrets = getentarray("misc_turret", "code_classname");
     turrets = [];
-    foreach (var_9869bc1af26d720d in var_9dfb2d4326b2cb1a) {
-        if (isdefined(var_9869bc1af26d720d.targetname)) {
+    foreach (possible_turret in possible_turrets) {
+        if (isdefined(possible_turret.targetname)) {
             continue;
         }
-        if (isdefined(var_9869bc1af26d720d.script_turret_autonomous) && var_9869bc1af26d720d.script_turret_autonomous) {
+        if (isdefined(possible_turret.script_turret_autonomous) && possible_turret.script_turret_autonomous) {
             continue;
         }
-        if (isdefined(var_9869bc1af26d720d.isvehicleattached)) {
-            assertex(var_9869bc1af26d720d.isvehicleattached != 0, "Setting must be either true or undefined");
+        if (isdefined(possible_turret.isvehicleattached)) {
+            assertex(possible_turret.isvehicleattached != 0, "Setting must be either true or undefined");
             continue;
         }
-        turrets[turrets.size] = var_9869bc1af26d720d;
+        turrets[turrets.size] = possible_turret;
     }
     if (!turrets.size) {
         return;
@@ -1142,17 +1142,17 @@ function saw_mgturretlink() {
 // Checksum 0x0, Offset: 0x317d
 // Size: 0x2f1
 function auto_mgturretlink() {
-    var_9dfb2d4326b2cb1a = getentarray("misc_turret", "code_classname");
+    possible_turrets = getentarray("misc_turret", "code_classname");
     turrets = [];
-    foreach (var_9869bc1af26d720d in var_9dfb2d4326b2cb1a) {
-        if (!isdefined(var_9869bc1af26d720d.targetname) || tolower(var_9869bc1af26d720d.targetname) != "auto_mgturret") {
+    foreach (possible_turret in possible_turrets) {
+        if (!isdefined(possible_turret.targetname) || tolower(possible_turret.targetname) != "auto_mgturret") {
             continue;
         }
-        if (!isdefined(var_9869bc1af26d720d.export)) {
+        if (!isdefined(possible_turret.export)) {
             continue;
         }
-        if (!isdefined(var_9869bc1af26d720d.script_dont_link_turret)) {
-            turrets[turrets.size] = var_9869bc1af26d720d;
+        if (!isdefined(possible_turret.script_dont_link_turret)) {
+            turrets[turrets.size] = possible_turret;
         }
     }
     if (!turrets.size) {
@@ -1324,15 +1324,15 @@ function update_enemy_target_pos_while_running(ent) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x37c0
 // Size: 0xe7
-function move_target_pos_to_new_turrets_visibility(ent, var_708a7a37920a2c36) {
+function move_target_pos_to_new_turrets_visibility(ent, new_spot) {
     self endon("death");
     self endon("end_mg_behavior");
     self endon("stop_updating_enemy_target_pos");
     var_aac5742af70fc90 = self.turret.origin + (0, 0, 16);
-    var_f39a2fe3e0a3bae8 = var_708a7a37920a2c36.origin + (0, 0, 16);
+    dest_pos = new_spot.origin + (0, 0, 16);
     for (;;) {
         wait 0.05;
-        if (sighttracepassed(ent.origin, var_f39a2fe3e0a3bae8, 0, undefined)) {
+        if (sighttracepassed(ent.origin, dest_pos, 0, undefined)) {
             continue;
         }
         angles = vectortoangles(var_aac5742af70fc90 - ent.origin);
@@ -1388,28 +1388,28 @@ function aim_turret_at_ambush_point_or_visible_enemy(turret, ent) {
 // Size: 0xc1
 function find_a_new_turret_spot(ent) {
     array = get_portable_mg_spot(ent);
-    var_708a7a37920a2c36 = array["spot"];
-    var_ae413e3d7d38e5c6 = array["type"];
-    if (!isdefined(var_708a7a37920a2c36)) {
+    new_spot = array["spot"];
+    connection_type = array["type"];
+    if (!isdefined(new_spot)) {
         return;
     }
-    reserve_turret(var_708a7a37920a2c36);
+    reserve_turret(new_spot);
     thread update_enemy_target_pos_while_running(ent);
-    thread move_target_pos_to_new_turrets_visibility(ent, var_708a7a37920a2c36);
-    if (var_ae413e3d7d38e5c6 == "ambush") {
+    thread move_target_pos_to_new_turrets_visibility(ent, new_spot);
+    if (connection_type == "ambush") {
         thread record_bread_crumbs_for_ambush(ent);
     }
-    if (var_708a7a37920a2c36.issetup) {
-        leave_gun_and_run_to_new_spot(var_708a7a37920a2c36);
+    if (new_spot.issetup) {
+        leave_gun_and_run_to_new_spot(new_spot);
     } else {
-        pickup_gun(var_708a7a37920a2c36);
-        run_to_new_spot_and_setup_gun(var_708a7a37920a2c36);
+        pickup_gun(new_spot);
+        run_to_new_spot_and_setup_gun(new_spot);
     }
     self notify("stop_updating_enemy_target_pos");
-    if (var_ae413e3d7d38e5c6 == "ambush") {
-        aim_turret_at_ambush_point_or_visible_enemy(var_708a7a37920a2c36, ent);
+    if (connection_type == "ambush") {
+        aim_turret_at_ambush_point_or_visible_enemy(new_spot, ent);
     }
-    var_708a7a37920a2c36 settargetentity(ent);
+    new_spot settargetentity(ent);
 }
 
 // Namespace mgturret / scripts\sp\mgturret
@@ -1430,8 +1430,8 @@ function leave_gun_and_run_to_new_spot(spot) {
     assert(spot.reserved == self);
     self stopuseturret();
     namespace_223959d3e5206cfb::placeweaponon(self.primaryweapon, "none");
-    var_d6ffd4aa576f23de = get_turret_setup_anim(spot);
-    org = getstartorigin(spot.origin, spot.angles, var_d6ffd4aa576f23de);
+    setup_anim = get_turret_setup_anim(spot);
+    org = getstartorigin(spot.origin, spot.angles, setup_anim);
     assertmsg("this turret functionality is no longer supported. query your local neighborhood ai programmer for details.");
     assertex(distance(org, self.goalpos) < self.goalradius, "Tried to set the run pos outside the goalradius");
     self waittill("runto_arrived");
@@ -1452,11 +1452,11 @@ function pickup_gun(spot) {
 // Checksum 0x0, Offset: 0x3c18
 // Size: 0x69
 function get_turret_setup_anim(turret) {
-    var_8a45ecc4ef510ba3 = [];
-    var_8a45ecc4ef510ba3["saw_bipod_stand"] = level.mg_animmg["bipod_stand_setup"];
-    var_8a45ecc4ef510ba3["saw_bipod_crouch"] = level.mg_animmg["bipod_crouch_setup"];
-    var_8a45ecc4ef510ba3["saw_bipod_prone"] = level.mg_animmg["bipod_prone_setup"];
-    return var_8a45ecc4ef510ba3[turret.weaponinfo];
+    spot_types = [];
+    spot_types["saw_bipod_stand"] = level.mg_animmg["bipod_stand_setup"];
+    spot_types["saw_bipod_crouch"] = level.mg_animmg["bipod_crouch_setup"];
+    spot_types["saw_bipod_prone"] = level.mg_animmg["bipod_prone_setup"];
+    return spot_types[turret.weaponinfo];
 }
 
 // Namespace mgturret / scripts\sp\mgturret
@@ -1470,7 +1470,7 @@ function run_to_new_spot_and_setup_gun(spot) {
     self.mg42 = spot;
     self endon("death");
     self endon("dropped_gun");
-    var_d6ffd4aa576f23de = get_turret_setup_anim(spot);
+    setup_anim = get_turret_setup_anim(spot);
     self.turretmodel = "weapon_mg42_carry";
     self notify("kill_get_gun_back_on_killanimscript_thread");
     namespace_223959d3e5206cfb::placeweaponon(self.weapon, "none");
@@ -1479,7 +1479,7 @@ function run_to_new_spot_and_setup_gun(spot) {
     }
     self attach(self.turretmodel, level.portable_mg_gun_tag);
     thread turretdeathdetacher();
-    org = getstartorigin(spot.origin, spot.angles, var_d6ffd4aa576f23de);
+    org = getstartorigin(spot.origin, spot.angles, setup_anim);
     assertmsg("this turret functionality is no longer supported. query your local neighborhood ai programmer for details.");
     assertex(distance(org, self.goalpos) < self.goalradius, "Tried to set the run pos outside the goalradius");
     wait 0.05;
@@ -1496,7 +1496,7 @@ function run_to_new_spot_and_setup_gun(spot) {
     if (soundexists("weapon_setup")) {
         playsoundatpos(self.origin, "weapon_setup");
     }
-    self animscripted("setup_done", spot.origin, spot.angles, var_d6ffd4aa576f23de);
+    self animscripted("setup_done", spot.origin, spot.angles, setup_anim);
     restoredefaults();
     self waittillmatch("setup_done", "end");
     spot notify("restore_default_drop_pitch");
@@ -1537,22 +1537,22 @@ function turret_user_moves() {
         return;
     }
     array = find_connected_turrets("connected");
-    var_8ab70d362c5f5bbf = array["spots"];
-    if (!var_8ab70d362c5f5bbf.size) {
+    new_spots = array["spots"];
+    if (!new_spots.size) {
         clear_exception("move");
         return;
     }
-    var_643b764a9f01a3f0 = self.node;
-    if (!isdefined(var_643b764a9f01a3f0) || !array_contains(var_8ab70d362c5f5bbf, var_643b764a9f01a3f0)) {
-        var_b64a2c06fa3074be = gettakennodes();
-        for (i = 0; i < var_8ab70d362c5f5bbf.size; i++) {
-            var_643b764a9f01a3f0 = random(var_8ab70d362c5f5bbf);
-            if (isdefined(var_b64a2c06fa3074be[var_643b764a9f01a3f0.origin + ""])) {
+    turret_node = self.node;
+    if (!isdefined(turret_node) || !array_contains(new_spots, turret_node)) {
+        taken_nodes = gettakennodes();
+        for (i = 0; i < new_spots.size; i++) {
+            turret_node = random(new_spots);
+            if (isdefined(taken_nodes[turret_node.origin + ""])) {
                 return;
             }
         }
     }
-    turret = var_643b764a9f01a3f0.turret;
+    turret = turret_node.turret;
     if (isdefined(turret.reserved)) {
         assert(turret.reserved != self);
         return;
@@ -1563,7 +1563,7 @@ function turret_user_moves() {
     } else {
         run_to_new_spot_and_setup_gun(turret);
     }
-    scripts\sp\mg_penetration::gunner_think(var_643b764a9f01a3f0.turret);
+    scripts\sp\mg_penetration::gunner_think(turret_node.turret);
 }
 
 // Namespace mgturret / scripts\sp\mgturret
@@ -1625,18 +1625,18 @@ function gettakennodes() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x41da
 // Size: 0x190
-function find_connected_turrets(var_ae413e3d7d38e5c6) {
+function find_connected_turrets(connection_type) {
     spots = level.shared_portable_turrets;
-    var_c62cf039ab4009cf = [];
+    usable_spots = [];
     var_223a6f5757803299 = getarraykeys(spots);
-    var_b64a2c06fa3074be = gettakennodes();
-    var_b64a2c06fa3074be[self.node.origin + ""] = undefined;
+    taken_nodes = gettakennodes();
+    taken_nodes[self.node.origin + ""] = undefined;
     for (i = 0; i < var_223a6f5757803299.size; i++) {
         export = var_223a6f5757803299[i];
         if (spots[export] == self.turret) {
             continue;
         }
-        keys = getarraykeys(self.turret.shared_turrets[var_ae413e3d7d38e5c6]);
+        keys = getarraykeys(self.turret.shared_turrets[connection_type]);
         for (p = 0; p < keys.size; p++) {
             if (spots[export].export + "" != keys[p]) {
                 continue;
@@ -1644,18 +1644,18 @@ function find_connected_turrets(var_ae413e3d7d38e5c6) {
             if (isdefined(spots[export].reserved)) {
                 continue;
             }
-            if (isdefined(var_b64a2c06fa3074be[spots[export].node.origin + ""])) {
+            if (isdefined(taken_nodes[spots[export].node.origin + ""])) {
                 continue;
             }
             if (distance(self.goalpos, spots[export].origin) > self.goalradius) {
                 continue;
             }
-            var_c62cf039ab4009cf[var_c62cf039ab4009cf.size] = spots[export];
+            usable_spots[usable_spots.size] = spots[export];
         }
     }
     array = [];
-    array["type"] = var_ae413e3d7d38e5c6;
-    array["spots"] = var_c62cf039ab4009cf;
+    array["type"] = connection_type;
+    array["spots"] = usable_spots;
     return array;
 }
 
@@ -1673,21 +1673,21 @@ function find_good_ambush_spot(ent) {
 // Size: 0xd9
 function find_different_way_to_attack_last_seen_position(ent) {
     array = find_connected_turrets("connected");
-    var_c62cf039ab4009cf = array["spots"];
-    if (!var_c62cf039ab4009cf.size) {
+    usable_spots = array["spots"];
+    if (!usable_spots.size) {
         return;
     }
-    var_65e20ed241369a89 = [];
-    for (i = 0; i < var_c62cf039ab4009cf.size; i++) {
-        if (!within_fov(var_c62cf039ab4009cf[i].origin, var_c62cf039ab4009cf[i].angles, ent.origin, 0.75)) {
+    good_spot = [];
+    for (i = 0; i < usable_spots.size; i++) {
+        if (!within_fov(usable_spots[i].origin, usable_spots[i].angles, ent.origin, 0.75)) {
             continue;
         }
-        if (!sighttracepassed(ent.origin, var_c62cf039ab4009cf[i].origin + (0, 0, 16), 0, undefined)) {
+        if (!sighttracepassed(ent.origin, usable_spots[i].origin + (0, 0, 16), 0, undefined)) {
             continue;
         }
-        var_65e20ed241369a89[var_65e20ed241369a89.size] = var_c62cf039ab4009cf[i];
+        good_spot[good_spot.size] = usable_spots[i];
     }
-    array["spots"] = var_65e20ed241369a89;
+    array["spots"] = good_spot;
     return array;
 }
 

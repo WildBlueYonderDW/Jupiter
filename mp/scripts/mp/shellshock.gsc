@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\mp\equipment\flash_grenade.gsc;
-#using script_588f0d30a20975f5;
-#using scripts\mp\equipment\gas_grenade.gsc;
-#using scripts\mp\laststand.gsc;
-#using script_6853191397ec0259;
+#using scripts\common\concussion_utility;
+#using scripts\common\shellshock_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\flash_grenade;
+#using scripts\mp\equipment\gas_grenade;
+#using scripts\mp\laststand;
+#using scripts\mp\utility\player;
 
 #namespace shellshock;
 
@@ -19,7 +19,7 @@ function init() {
     level._effect["hit_left"] = loadfx("vfx/core/screen/vfx_blood_hit_left");
     level._effect["hit_right"] = loadfx("vfx/core/screen/vfx_blood_hit_right");
     scripts\engine\utility::registersharedfunc("shellshock", "flashInterruptDelayFunc", &scripts\mp\equipment\flash_grenade::calculateinterruptdelay);
-    scripts\engine\utility::registersharedfunc("shellshock", "concussionInterruptDelayFunc", &namespace_ed24ea3973f52fdd::calculateinterruptdelay);
+    scripts\engine\utility::registersharedfunc("shellshock", "concussionInterruptDelayFunc", &scripts\common\concussion_utility::calculateinterruptdelay);
     scripts\engine\utility::registersharedfunc("shellshock", "gasInterruptDelayFunc", &scripts\mp\equipment\gas_grenade::gas_getblurinterruptdelayms);
     scripts\engine\utility::registersharedfunc("shellshock", "lastStandInterruptDelayFunc", &scripts\mp\laststand::getshellshockinterruptdelayms);
 }
@@ -101,7 +101,7 @@ function grenade_earthquakeatposition_internal(position, scale) {
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x13
 function bloodmeleeeffect(objweapon) {
-    namespace_1ce798d596a27341::bloodmeleeeffect(objweapon);
+    scripts\common\shellshock_utility::bloodmeleeeffect(objweapon);
 }
 
 // Namespace shellshock / scripts\mp\shellshock

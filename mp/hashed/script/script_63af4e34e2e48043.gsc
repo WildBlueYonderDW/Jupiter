@@ -1,17 +1,17 @@
-#using script_6c32b2aeb4eff172;
-#using scripts\code\character.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
-#using script_7d70015cd886923;
-#using script_6da421ee1618147e;
-#using script_72e290d625abcd3b;
 #using script_2905a5cd3941ffd4;
+#using script_6c32b2aeb4eff172;
+#using script_6da421ee1618147e;
 #using script_6f93362ac863721;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\mp\class.gsc;
+#using script_72e290d625abcd3b;
+#using script_7d70015cd886923;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\code\character;
+#using scripts\common\ai;
+#using scripts\cp_mp\agents\agent_init;
+#using scripts\mp\class;
 
 #namespace jup_ob_enemy_basic_soldier_short;
 

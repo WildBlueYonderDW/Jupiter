@@ -1,19 +1,19 @@
+#using character\test_character_dog;
 #using script_5c36b3719581f7cc;
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_sp.gsc;
-#using scripts\common\ai.gsc;
-#using character\test_character_dog.gsc;
-#using scripts\aitypes\assets.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_sp;
+#using scripts\common\ai;
 
-#namespace namespace_1062567b49053fca;
+#namespace enemy_dog;
 
-// Namespace namespace_1062567b49053fca / namespace_97f493236a958529
+// Namespace enemy_dog / namespace_97f493236a958529
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x155
 // Size: 0x178
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_3b12b4f049372c93");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"enemy_dog");
     self.grenadeweapon = nullweapon();
     self.grenadeammo = 0;
     self.secondaryweapon = nullweapon();
@@ -36,7 +36,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_1062567b49053fca / namespace_97f493236a958529
+// Namespace enemy_dog / namespace_97f493236a958529
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d5
 // Size: 0x56
@@ -49,7 +49,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_1062567b49053fca / namespace_97f493236a958529
+// Namespace enemy_dog / namespace_97f493236a958529
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x333
 // Size: 0x8
@@ -57,7 +57,7 @@ function function_9ac26a51c94ccf52() {
     return character\test_character_dog::main();
 }
 
-// Namespace namespace_1062567b49053fca / namespace_97f493236a958529
+// Namespace enemy_dog / namespace_97f493236a958529
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x344
 // Size: 0xe
@@ -65,7 +65,7 @@ function spawner() {
     self setspawnerteam("axis");
 }
 
-// Namespace namespace_1062567b49053fca / namespace_97f493236a958529
+// Namespace enemy_dog / namespace_97f493236a958529
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x35a
 // Size: 0x20

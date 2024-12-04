@@ -1,10 +1,10 @@
-#using script_74502a9e0ef1f19c;
-#using script_25845aca699d038d;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_18a73a64992dd07d;
+#using script_25845aca699d038d;
 #using script_5762ac2f22202ba2;
+#using script_74502a9e0ef1f19c;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace damagefeedback;
 
@@ -114,15 +114,15 @@ function process_damage_feedback(einflictor, eattacker, idamage, idflags, smeans
             if (istrue(headshot)) {
                 if (isdefined(self.helmethealth) && self.helmethealth > 0) {
                     typehit = "hithelmetheavy";
-                } else if (!istrue(self.var_bbcae8846942f0a4) && isplayer(damager)) {
+                } else if (!istrue(self.helmet_broken) && isplayer(damager)) {
                     typehit = "hithelmetheavybreak";
-                    self.var_bbcae8846942f0a4 = 1;
+                    self.helmet_broken = 1;
                 }
             } else if (isdefined(self.armorhealth) && self.armorhealth > 0) {
                 typehit = "hitarmorheavy";
-            } else if (!istrue(self.var_e6684ea936b29680) && isplayer(damager)) {
+            } else if (!istrue(self.armor_broken) && isplayer(damager)) {
                 typehit = "hitarmorheavybreak";
-                self.var_e6684ea936b29680 = 1;
+                self.armor_broken = 1;
             }
         } else if (victim _hasperk("specialty_pistoldeath") && istrue(victim.inlaststand) && !victim.hasshownlaststandicon) {
             victim.hasshownlaststandicon = 1;
@@ -188,7 +188,7 @@ function updatedamagefeedback(hitmarkertype, killingblow, damage, headshot, armo
         self.hitmarkeraudioevents++;
         self setclientomnvar("ui_hitmarker_audio_events", self.hitmarkeraudioevents % 16);
     }
-    if (getdvarint(@"hash_2a277c7ca3d095af", 1) != 0 && hitmarkertype != "hittrophysystem" && hitmarkertype != "hitveharmor" && hitmarkertype != "hitvehstandard" && hitmarkertype != "hitveharmorbreak" && hitmarkertype != "hitarmorheavy" && hitmarkertype != "hitarmorheavybreak" && hitmarkertype != "hitarmorlightbreak" && hitmarkertype != "hithelmetlightbreak" && hitmarkertype != "hithelmetheavybreak" && hitmarkertype != "hitvehcritical" && hitmarkertype != "hitnobulletdamage" && hitmarkertype != "hitlaststand_stimpistol" && hitmarkertype != "hitjuggernaut" && hitmarkertype != "hitjuggernautrecon") {
+    if (getdvarint(@"scr_nohitmarker", 1) != 0 && hitmarkertype != "hittrophysystem" && hitmarkertype != "hitveharmor" && hitmarkertype != "hitvehstandard" && hitmarkertype != "hitveharmorbreak" && hitmarkertype != "hitarmorheavy" && hitmarkertype != "hitarmorheavybreak" && hitmarkertype != "hitarmorlightbreak" && hitmarkertype != "hithelmetlightbreak" && hitmarkertype != "hithelmetheavybreak" && hitmarkertype != "hitvehcritical" && hitmarkertype != "hitnobulletdamage" && hitmarkertype != "hitlaststand_stimpistol" && hitmarkertype != "hitjuggernaut" && hitmarkertype != "hitjuggernautrecon") {
         return;
     }
     switch (hitmarkertype) {

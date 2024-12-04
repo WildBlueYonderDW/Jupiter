@@ -1,9 +1,9 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
 #using script_2b85a88a1d543a;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\utility\omnvar_utility.gsc;
+#using scripts\cp_mp\utility\omnvar_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
 
 #namespace namespace_b925592dfbd5676e;
 

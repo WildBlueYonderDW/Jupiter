@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_snakecam.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
 #using script_2c075d80ec62e503;
 #using script_71332a5b74214116;
-#using scripts\cp\coop_personal_ents.gsc;
+#using scripts\common\utility;
+#using scripts\cp\coop_personal_ents;
+#using scripts\cp\cp_snakecam;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_c9c9780506580f5a;
 
@@ -17,7 +17,7 @@
 function function_53ab5dd012d67963() {
     level.var_5f4060aac4473ec4 = getentarray("enemy_cam", "targetname");
     if (isdefined(level.var_5f4060aac4473ec4) && level.var_5f4060aac4473ec4.size > 0) {
-        array_thread_amortized(level.var_5f4060aac4473ec4, &function_35e7a47dcc0a0e1c, 0.1);
+        array_thread_amortized(level.var_5f4060aac4473ec4, &rotate_camera, 0.1);
         array_thread_amortized(level.var_5f4060aac4473ec4, &function_a159676f4a7d4782, 0.1);
         array_thread_amortized(level.var_5f4060aac4473ec4, &function_6a99e314e438fe9, 0.1);
         namespace_ae34222dcb9dda53::function_db25531fe9ac9980();
@@ -37,16 +37,16 @@ function function_db25531fe9ac9980() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x298
 // Size: 0xa7
-function function_3c538df6803129e2(var_25eec91edef511dd) {
+function function_3c538df6803129e2(interaction_array) {
     level endon("game_ended");
     precacheshader("nightvision_overlay_goggles_grain");
     precacherumble("cp_wheelson_rumble");
     level.pentskipfov["enemy_cam_disable"] = 1;
-    foreach (var_df071553d0996ff9 in var_25eec91edef511dd) {
-        var_df071553d0996ff9.p_ent_skip_fov = 1;
-        var_df071553d0996ff9.benabled = 1;
-        namespace_a3902e911697e714::remove_from_current_interaction_list(var_df071553d0996ff9);
-        scripts\cp\coop_personal_ents::addtopersonalinteractionlist(var_df071553d0996ff9);
+    foreach (interaction_struct in interaction_array) {
+        interaction_struct.p_ent_skip_fov = 1;
+        interaction_struct.benabled = 1;
+        namespace_a3902e911697e714::remove_from_current_interaction_list(interaction_struct);
+        scripts\cp\coop_personal_ents::addtopersonalinteractionlist(interaction_struct);
     }
 }
 
@@ -54,7 +54,7 @@ function function_3c538df6803129e2(var_25eec91edef511dd) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x347
 // Size: 0x18
-function function_4639b73e8f9a49d7(var_df071553d0996ff9, player) {
+function function_4639b73e8f9a49d7(interaction_struct, player) {
     return %SNAKECAM/USE;
 }
 
@@ -62,12 +62,12 @@ function function_4639b73e8f9a49d7(var_df071553d0996ff9, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x368
 // Size: 0x3d
-function function_cd9c16ff4b5a2d18(var_df071553d0996ff9, player) {
+function function_cd9c16ff4b5a2d18(interaction_struct, player) {
     player endon("disconnect");
-    if (!istrue(var_df071553d0996ff9.benabled)) {
+    if (!istrue(interaction_struct.benabled)) {
         return;
     }
-    var_df071553d0996ff9.benabled = undefined;
+    interaction_struct.benabled = undefined;
     level notify("trigger_cam_disable");
 }
 
@@ -122,7 +122,7 @@ function function_6a99e314e438fe9() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x514
 // Size: 0x4b6
-function function_35e7a47dcc0a0e1c() {
+function rotate_camera() {
     level endon("cameras_disabled");
     level endon("death");
     og_angles = self.angles;
@@ -144,7 +144,7 @@ function function_35e7a47dcc0a0e1c() {
     var_d296b0eaf4a6b00f = [0, 0];
     var_d5e6310914396ac3 = 0.2;
     var_848e35f763ce65b0 = 0.2;
-    var_91ab80bc6772504d = 0;
+    rumble_playing = 0;
     self hudoutlineenable("outlinefill_depth_cyan");
     while (true) {
         currentangles = og_angles;
@@ -196,7 +196,7 @@ function function_35e7a47dcc0a0e1c() {
         height = 1 - rumble;
         height *= 1000;
         self rotateto(var_6612315290576b0f, 2);
-        var_1b9b8daf429dd199 = self.origin + anglestoforward(self.angles) * 12 + anglestoup(self.angles) * -55 + (0, 0, 3);
+        nudge_spot = self.origin + anglestoforward(self.angles) * 12 + anglestoup(self.angles) * -55 + (0, 0, 3);
         wait 2;
     }
 }

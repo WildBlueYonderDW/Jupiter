@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
 #using script_2c95e57f38d319c3;
-#using scripts\code\character.gsc;
 #using script_6f3df325b671c918;
+#using scripts\code\character;
+#using scripts\common\utility;
 
 #namespace namespace_c6c98992b6d5b218;
 
@@ -36,7 +36,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "rebel";
-    self.voice = #"hash_5b83ef004494812e";
+    self.voice = #"alqatala";
     self.bhasthighholster = 1;
     self.animtree = "generic_human";
     self function_6b0082dec4510b24("bodies_iw9_enemy_aq_ar_1", namespace_2f49ad67cb242f51::main());

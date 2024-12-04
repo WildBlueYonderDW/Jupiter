@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\string.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\cp_mp\challenges.gsc;
 #using script_6775ad452d13858;
+#using scripts\common\ae_utility;
+#using scripts\common\string;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\events;
 
 #namespace game_utility;
 
@@ -39,7 +39,7 @@ function private autoexec init() {
 // Size: 0x2f
 function getmapname() {
     if (!isdefined(level.mapname)) {
-        level.mapname = getdvar(@"hash_687fb8f9b7a23245");
+        level.mapname = getdvar(@"g_mapname");
     }
     return level.mapname;
 }
@@ -194,7 +194,7 @@ function function_eb455c18ac9d8ac5() {
 // Checksum 0x0, Offset: 0xdf5
 // Size: 0x13
 function function_ba5574c7f287c587() {
-    return getdvarint(@"hash_39c3947a2e4f5f9e", 0) != 0;
+    return getdvarint(@"mgl", 0) != 0;
 }
 
 // Namespace game_utility / scripts\cp_mp\utility\game_utility

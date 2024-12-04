@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\utility\game;
 
 #namespace br_helicopters;
 
@@ -331,9 +331,9 @@ function exitandcleanup() {
     exitdir = vectornormalize(exitvec);
     exitendpoint = self.origin + exitdir * 10000 + (0, 0, 1) * spawnheight;
     exit_speed = 150;
-    var_d1ef5a7d6b232a76 = 50;
+    exit_accel = 50;
     var_62773ac99d83d437 = 350;
-    self vehicle_setspeed(exit_speed, var_d1ef5a7d6b232a76, var_d1ef5a7d6b232a76);
+    self vehicle_setspeed(exit_speed, exit_accel, exit_accel);
     self setvehgoalpos(exitendpoint, 0);
     self setneargoalnotifydist(var_62773ac99d83d437);
     self waittill("near_goal");

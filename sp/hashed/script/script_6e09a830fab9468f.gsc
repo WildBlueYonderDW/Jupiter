@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\math.gsc;
+#using script_12e2fb553ec1605e;
+#using script_189b67b2735b981d;
 #using script_5af9038262d22c96;
 #using script_6f1e07ce9ff97d5f;
-#using script_12e2fb553ec1605e;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_74502a9e0ef1f19c;
-#using script_189b67b2735b981d;
 #using script_7c40fa80892a721;
 #using script_7ef95bba57dc4b82;
-#using scripts\cp\loot_system.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp\perks\cp_perks.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\loot_system;
+#using scripts\cp\perks\cp_perks;
+#using scripts\cp\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace perks;
 
@@ -94,9 +94,9 @@ function init_class_changed_values() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1967
 // Size: 0x26
-function get_perk(var_ab4a6235827672a0) {
-    if (isdefined(self.perk_data[var_ab4a6235827672a0])) {
-        return self.perk_data[var_ab4a6235827672a0];
+function get_perk(string_key) {
+    if (isdefined(self.perk_data[string_key])) {
+        return self.perk_data[string_key];
     }
 }
 
@@ -104,9 +104,9 @@ function get_perk(var_ab4a6235827672a0) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1995
 // Size: 0x2f
-function set_perk(var_ab4a6235827672a0, value) {
-    if (isdefined(self.perk_data[var_ab4a6235827672a0])) {
-        self.perk_data[var_ab4a6235827672a0] = value;
+function set_perk(string_key, value) {
+    if (isdefined(self.perk_data[string_key])) {
+        self.perk_data[string_key] = value;
     }
 }
 
@@ -936,8 +936,8 @@ function make_sure_loot_is_visible() {
     foreach (name in var_7507f409fee2b657) {
         var_792740c4c87cf9fa = getentitylessscriptablearray(undefined, undefined, undefined, undefined, name);
         count = 0;
-        foreach (var_31f869647e8740b4 in var_792740c4c87cf9fa) {
-            var_31f869647e8740b4 setscriptablepartstate(name, "visible");
+        foreach (br_loot in var_792740c4c87cf9fa) {
+            br_loot setscriptablepartstate(name, "visible");
             count++;
             if (count % 20) {
                 wait 0.1;
@@ -989,13 +989,13 @@ function get_closest_munitions() {
     var_1d88cbbb14926330 = [];
     foreach (name in var_7507f409fee2b657) {
         var_792740c4c87cf9fa = getentitylessscriptablearray(undefined, undefined, self.origin, var_b69312781edc9ea6, name);
-        foreach (var_31f869647e8740b4 in var_792740c4c87cf9fa) {
-            var_1d88cbbb14926330[var_1d88cbbb14926330.size] = var_31f869647e8740b4;
+        foreach (br_loot in var_792740c4c87cf9fa) {
+            var_1d88cbbb14926330[var_1d88cbbb14926330.size] = br_loot;
         }
     }
     var_1d88cbbb14926330 = sortbydistance(var_1d88cbbb14926330, self.origin);
     var_93dff4684377d4c0 = level.outline_ents;
-    var_586b9984fdeb517b = [];
+    skip_list = [];
     new_list = [];
     for (i = 0; i < var_1d88cbbb14926330.size; i++) {
         if (!isdefined(level.outline_ent_index[var_1d88cbbb14926330[i].index])) {
@@ -1006,7 +1006,7 @@ function get_closest_munitions() {
         outline_ent_index = 0;
         for (i = 0; i < min(new_list.size, var_58a11d31a3c59e82); i++) {
             for (j = 0; j < level.outline_ents.size; j++) {
-                if (isdefined(var_586b9984fdeb517b[j])) {
+                if (isdefined(skip_list[j])) {
                     continue;
                 }
                 if (isdefined(level.outline_ents[j])) {
@@ -1018,7 +1018,7 @@ function get_closest_munitions() {
                 level.outline_ent_index[level.outline_ents[j].index] = undefined;
                 level.outline_ent_index[new_list[i].index] = level.outline_ents[j];
                 unmarkent(level.outline_ents[j]);
-                var_586b9984fdeb517b[j] = new_list[i];
+                skip_list[j] = new_list[i];
                 break;
             }
         }
@@ -1498,7 +1498,7 @@ function runtrackkillstreakuse() {
 function run_track_enemy_patrollers() {
     self endon("death_or_disconnect");
     self endon("tracker_removed");
-    var_89640ca652887743 = cos(70);
+    tracker_fov = cos(70);
     var_820e590cb5620371 = 0;
     self.view_list = [];
     self.outlineids = [];
@@ -1515,7 +1515,7 @@ function run_track_enemy_patrollers() {
             }
             var_820e590cb5620371++;
             entnum = guy getentitynumber();
-            var_25ab57d46f5f99f9 = within_fov(self geteye(), self getplayerangles(), guy.origin, var_89640ca652887743);
+            var_25ab57d46f5f99f9 = within_fov(self geteye(), self getplayerangles(), guy.origin, tracker_fov);
             if (!var_25ab57d46f5f99f9) {
                 continue;
             }
@@ -1549,7 +1549,7 @@ function function_d0eb3583cf0cdf66(var_b76712bde7c371e4) {
     self endon("death_or_disconnect");
     self notify("tracker_removed");
     self endon("tracker_removed");
-    var_89640ca652887743 = cos(70);
+    tracker_fov = cos(70);
     var_820e590cb5620371 = 0;
     self.view_list = [];
     self.outlineids = [];
@@ -1570,7 +1570,7 @@ function function_d0eb3583cf0cdf66(var_b76712bde7c371e4) {
             if (!isdefined(target)) {
                 target = guy.origin;
             }
-            var_25ab57d46f5f99f9 = within_fov(self geteye(), self getplayerangles(), target, var_89640ca652887743);
+            var_25ab57d46f5f99f9 = within_fov(self geteye(), self getplayerangles(), target, tracker_fov);
             if (!var_25ab57d46f5f99f9) {
                 continue;
             }
@@ -1604,7 +1604,7 @@ function add_outline(entnum, player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x48ce
 // Size: 0x20
-function function_bc0b60676ef3d606(perk_name) {
+function remove_perk(perk_name) {
     self [[ scripts\engine\utility::getsharedfunc("perk", "removePerk") ]](perk_name);
 }
 
@@ -1758,12 +1758,12 @@ function reset_recharge_after_respawn() {
     self endon("take_restock");
     timer = 60;
     self waittill("landed_after_respawn");
-    var_15dc79d0e74115b6 = namespace_4fb9dddfb8c1a67a::getcurrentequipment("primary");
-    if (isdefined(var_15dc79d0e74115b6) && namespace_4fb9dddfb8c1a67a::getequipmentammo(var_15dc79d0e74115b6) < namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(var_15dc79d0e74115b6)) {
+    primary_equipment = namespace_4fb9dddfb8c1a67a::getcurrentequipment("primary");
+    if (isdefined(primary_equipment) && namespace_4fb9dddfb8c1a67a::getequipmentammo(primary_equipment) < namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(primary_equipment)) {
         thread function_b705cd6e9764d5b5(timer, "primary");
     }
-    var_bbfd67040e7c52f6 = namespace_4fb9dddfb8c1a67a::getcurrentequipment("secondary");
-    if (namespace_4fb9dddfb8c1a67a::getequipmentammo(var_bbfd67040e7c52f6) < namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(var_bbfd67040e7c52f6)) {
+    secondary_equipment = namespace_4fb9dddfb8c1a67a::getcurrentequipment("secondary");
+    if (namespace_4fb9dddfb8c1a67a::getequipmentammo(secondary_equipment) < namespace_4fb9dddfb8c1a67a::getequipmentmaxammo(secondary_equipment)) {
         thread function_b705cd6e9764d5b5(timer, "secondary");
     }
 }

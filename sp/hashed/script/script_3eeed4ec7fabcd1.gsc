@@ -1,4 +1,4 @@
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
 
 #namespace namespace_1849294fcfdcd619;
 
@@ -32,7 +32,7 @@ function private autoexec init() {
 function main() {
     level.var_7d97144daa7995cd = undefined;
     self.animationarchetype = "farah";
-    self.voice = #"hash_29890644b3ac02c1";
+    self.voice = #"fsafemale";
     self.bhasthighholster = 0;
     self.animtree = "generic_human";
     self setmodel("body_c_jup_sp_hero_farah_urban");

@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
 
 #namespace exclusion_zones;
 
@@ -180,7 +180,7 @@ function private function_a4547a6f54ebab99(var_5f6228d3e1d47c7f, rate, linear) {
     // Checksum 0x0, Offset: 0x5ee
     // Size: 0x16
     function function_7176642fe2ed10cd(var_72759fb8bd38aa1e) {
-        function_a4c336601037a54c(var_72759fb8bd38aa1e);
+        in_exclusion_zone(var_72759fb8bd38aa1e);
     }
 
     // Namespace exclusion_zones / namespace_1ebea70fc689e6c
@@ -206,7 +206,7 @@ function private function_a4547a6f54ebab99(var_5f6228d3e1d47c7f, rate, linear) {
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x6da
     // Size: 0xda
-    function function_a4c336601037a54c(var_72759fb8bd38aa1e) {
+    function in_exclusion_zone(var_72759fb8bd38aa1e) {
         if (!isdefined(level.exclusionzones)) {
             iprintlnbold("<dev string:x12e>");
             return;
@@ -227,7 +227,7 @@ function private function_a4547a6f54ebab99(var_5f6228d3e1d47c7f, rate, linear) {
     // Params 0, eflags: 0x0
     // Checksum 0x0, Offset: 0x7bc
     // Size: 0x19a
-    function function_98810970acf573be() {
+    function lerp_exclusion_zone() {
         if (istrue(level.var_ec780726787e2557)) {
             position = (4000, 0, 3000);
             dimensions = (10000, 10000, 4000);

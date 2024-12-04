@@ -1,25 +1,25 @@
-#using scripts\aitypes\bt_util.gsc;
+#using script_16ea1b94f0f381b3;
+#using script_1e2b21a2f6c06fac;
+#using script_23b580b08abe064f;
+#using script_310397f2ad072bde;
 #using script_38c251115537f16e;
 #using script_3b78d23dad7ec5be;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\weaponlist.gsc;
-#using scripts\anim\utility_common.gsc;
 #using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
-#using script_1e2b21a2f6c06fac;
-#using script_310397f2ad072bde;
-#using script_16ea1b94f0f381b3;
 #using script_5a4a5d9ba343ff8f;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\engine\trace.gsc;
-#using script_23b580b08abe064f;
-#using scripts\mp\rank.gsc;
+#using script_7edf952f8921aa6b;
+#using scripts\aitypes\bt_util;
+#using scripts\anim\utility_common;
+#using scripts\anim\weaponlist;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\rank;
 
 #namespace zombie_hellhound;
 
@@ -344,7 +344,7 @@ function private explosion_knockdown(origin, radius, exploder) {
             continue;
         }
         if (!target function_e67a89537ae7d4b7()) {
-            target function_e96aac065abbec4e(origin);
+            target knockdown_ai(origin);
         }
     }
 }

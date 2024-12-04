@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_6ad4f9e2f4c6105;
 #using script_5fd79768b8941cfb;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
+#using script_6ad4f9e2f4c6105;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_dev;
 
 #namespace namespace_8d21700b75348f98;
 
@@ -74,7 +74,7 @@ function function_dd750d5096824adf() {
     controls.var_34b5b36b72aa61e2 = getdvarfloat(@"hash_f2e7d1767a506f1b", 0.6);
     controls.speeds = [0, 0.5];
     controls.speed_setting = 1;
-    controls.var_af88955a3db74e7b = getdvarint(@"hash_aafd86e488bc3ce5", 1);
+    controls.backwards_anim = getdvarint(@"hash_aafd86e488bc3ce5", 1);
     controls.brake_state = "free";
     controls.var_c10fe7f57dc50f60 = 0;
     return controls;
@@ -298,7 +298,7 @@ function train_control_speed(train) {
             targetrate = getdvarfloat(@"hash_d73a064cedac973c", -2);
             if (targetrate != -2) {
                 targetrate = clamp(targetrate, -1, 1);
-                if (!control.var_af88955a3db74e7b) {
+                if (!control.backwards_anim) {
                     targetrate = max(targetrate, 0);
                 }
                 level thread train_change_speed(train, control.accel_rate, targetrate);
@@ -328,9 +328,9 @@ function train_change_speed(train, accelerationrate, targetrate) {
     if (isarray(animref)) {
         animref = level.scr_anim[train][animtoplay][0];
     }
-    var_15777982c0909b37 = level.wztrain_info.trains[train];
+    car_array = level.wztrain_info.trains[train];
     if (currentrate != 0) {
-        foreach (traincar in var_15777982c0909b37) {
+        foreach (traincar in car_array) {
             temp = traincar.linked_model getlinkedscriptableinstance();
             if (traincar.linked_model getscriptablehaspart("train_speed_vfx")) {
                 traincar.linked_model setscriptablepartstate("train_speed_vfx", "slowing");
@@ -349,7 +349,7 @@ function train_change_speed(train, accelerationrate, targetrate) {
     if (currentrate != 0) {
         var_dfd7cd7e4ca1ca61 = "moving";
     }
-    foreach (traincar in var_15777982c0909b37) {
+    foreach (traincar in car_array) {
         if (traincar.linked_model getscriptablehaspart("train_speed_vfx")) {
             traincar.linked_model setscriptablepartstate("train_speed_vfx", var_dfd7cd7e4ca1ca61);
         }
@@ -481,7 +481,7 @@ function private function_21d9e76c22c14c60(train_name) {
     if (!isdefined(controls)) {
         return;
     }
-    var_15777982c0909b37 = level.wztrain_info.trains[train_name];
+    car_array = level.wztrain_info.trains[train_name];
     currentspeed = abs(level.wztrain_info.animrate[train_name]);
     is_moving = currentspeed > 0;
     switch (controls.brake_state) {
@@ -495,7 +495,7 @@ function private function_21d9e76c22c14c60(train_name) {
         brakes_state = ter_op(is_moving, "cut_moving", "cut_stopped");
         break;
     }
-    foreach (traincar in var_15777982c0909b37) {
+    foreach (traincar in car_array) {
         if (traincar.linked_model getscriptablehaspart("train_brakes_vfx") && controls.brake_state != "locked_gas") {
             traincar.linked_model setscriptablepartstate("train_brakes_vfx", brakes_state);
         }
@@ -507,8 +507,8 @@ function private function_21d9e76c22c14c60(train_name) {
 // Checksum 0x0, Offset: 0x1785
 // Size: 0x119
 function function_10cce231da3f017a(train_name, sfx_state) {
-    var_15777982c0909b37 = level.wztrain_info.trains[train_name];
-    assertex(isarray(var_15777982c0909b37), "<dev string:x71>");
+    car_array = level.wztrain_info.trains[train_name];
+    assertex(isarray(car_array), "<dev string:x71>");
     if (!isarray(level.wztrain_info.var_132b68e7763c2410)) {
         level.wztrain_info.var_132b68e7763c2410 = [];
     }
@@ -518,8 +518,8 @@ function function_10cce231da3f017a(train_name, sfx_state) {
     } else {
         level.wztrain_info.var_132b68e7763c2410[train_name] = sfx_state;
     }
-    for (i = 0; i < var_15777982c0909b37.size; i += 2) {
-        traincar = var_15777982c0909b37[i];
+    for (i = 0; i < car_array.size; i += 2) {
+        traincar = car_array[i];
         if (traincar.linked_model getscriptablehaspart("train_control_sfx")) {
             traincar.linked_model setscriptablepartstate("train_control_sfx", sfx_state);
         }

@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_addbcd7d5a4b8ac1;
+#namespace slide_volume;
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fb
 // Size: 0x1d3
@@ -74,7 +74,7 @@ function slidetriggerplayerthink(trig) {
     endsliding(trig.script_stance, trig.script_damage, trig.script_gesture, trig.script_noteworthy);
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0x165
@@ -84,7 +84,7 @@ function doslide(slidemodel, var_82ebfb9873bebd03, var_f8d869e874843e58) {
     player = self;
     last_pos = slidemodel.origin;
     current_pos = slidemodel.origin;
-    var_3fa79149e2d479d1 = undefined;
+    angle_vec = undefined;
     thread function_71d30054f4d134d();
     while (true) {
         movement = player getnormalizedmovement();
@@ -98,7 +98,7 @@ function doslide(slidemodel, var_82ebfb9873bebd03, var_f8d869e874843e58) {
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x643
 // Size: 0x1c
@@ -106,7 +106,7 @@ function function_a9ae329ed6dd3a61() {
     return ent_flag_exist("is_sliding") && ent_flag("is_sliding");
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x668
 // Size: 0x14b
@@ -129,7 +129,7 @@ function function_93aa9ae582355ff9() {
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7bb
 // Size: 0x59
@@ -142,7 +142,7 @@ function function_6009f043b924d50(var_9888fb7510cb36f4) {
     self.var_a084a815b06d6479 = 0;
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x81c
 // Size: 0xd1
@@ -170,7 +170,7 @@ function function_71d30054f4d134d() {
     self.var_a084a815b06d6479 = 1;
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x8f5
 // Size: 0x5e0
@@ -201,9 +201,9 @@ function beginsliding(velocity, var_82ebfb9873bebd03, var_f8d869e874843e58, gest
             trace = ray_trace(player geteye(), player geteye() - (0, 0, 100), player, trace_contents);
             normal = trace["normal"];
             if (isdefined(normal)) {
-                var_c22baca169342a86 = vectordot(normal, (0, 0, 1));
-                if (var_c22baca169342a86 <= 0.95) {
-                    angle = acos(var_c22baca169342a86);
+                dot_value = vectordot(normal, (0, 0, 1));
+                if (dot_value <= 0.95) {
+                    angle = acos(dot_value);
                     point = trace["position"];
                     break;
                 }
@@ -274,12 +274,12 @@ function beginsliding(velocity, var_82ebfb9873bebd03, var_f8d869e874843e58, gest
         player thread play_loop_sound_on_tag("foot_slide_plr_loop");
     }
     if (utility::issharedfuncdefined("player", "get_rumble_ent")) {
-        player.var_98ac01a65b073642 = utility::function_f3bb4f4911a1beb2("player", "get_rumble_ent");
-        player.var_98ac01a65b073642 thread utility::function_f3bb4f4911a1beb2("player", "rumble_ramp_to", 0.6, 3);
+        player.rumble_ent = utility::function_f3bb4f4911a1beb2("player", "get_rumble_ent");
+        player.rumble_ent thread utility::function_f3bb4f4911a1beb2("player", "rumble_ramp_to", 0.6, 3);
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xedd
 // Size: 0x231
@@ -291,8 +291,8 @@ function endsliding(var_15060420a136afe6, var_1363a88619936df7, gesture, surface
     if (gesture != "no_gesture" && player isgestureplaying(gesture)) {
         player stopgestureviewmodel(gesture);
     }
-    if (isdefined(player.var_98ac01a65b073642)) {
-        player.var_98ac01a65b073642 delete();
+    if (isdefined(player.rumble_ent)) {
+        player.rumble_ent delete();
     }
     if (isdefined(surfacetype) && getdvarint(@"hash_94150a895cddf69d", 0)) {
         player childthread function_215b249240166e44(surfacetype);
@@ -333,7 +333,7 @@ function endsliding(var_15060420a136afe6, var_1363a88619936df7, gesture, surface
     player notify("stop_sliding");
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1116
 // Size: 0x1b4
@@ -375,7 +375,7 @@ function beginslidinglegacy(velocity, var_82ebfb9873bebd03, var_f8d869e874843e58
     player thread doslide(slidemodel, var_82ebfb9873bebd03, var_f8d869e874843e58);
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12d2
 // Size: 0xae
@@ -395,7 +395,7 @@ function endslidinglegacy() {
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1388
 // Size: 0x89
@@ -417,7 +417,7 @@ function trigger_slide(trigger) {
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1419
 // Size: 0x11b
@@ -435,9 +435,9 @@ function function_4ded73402b984ff9(surfacetype) {
         return;
     }
     var_73b8384749fff985 = create_contents(0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1);
-    var_7fd3c1694ff5e9de = ray_trace(level.player geteye() + (0, 0, 200), level.player geteye() - (0, 0, 100), level.player, var_73b8384749fff985, 1);
-    if (isdefined(var_7fd3c1694ff5e9de)) {
-        surface = function_2e84a570d6af300a(var_7fd3c1694ff5e9de["surfacetype"], "surftype_");
+    surface_trace = ray_trace(level.player geteye() + (0, 0, 200), level.player geteye() - (0, 0, 100), level.player, var_73b8384749fff985, 1);
+    if (isdefined(surface_trace)) {
+        surface = function_2e84a570d6af300a(surface_trace["surfacetype"], "surftype_");
         if (isdefined(surface)) {
             level.var_710e62dd77639361 = surface;
         }
@@ -447,7 +447,7 @@ function function_4ded73402b984ff9(surfacetype) {
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x153c
 // Size: 0x78
@@ -469,7 +469,7 @@ function function_ddf979aedbe53699(surfacetype) {
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15bc
 // Size: 0xa8
@@ -496,13 +496,13 @@ function function_215b249240166e44(surfacetype) {
     }
 }
 
-// Namespace namespace_addbcd7d5a4b8ac1 / namespace_7b69f911b6d80230
+// Namespace slide_volume / namespace_7b69f911b6d80230
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x166c
 // Size: 0x12f
 function function_572b7fa13e251ec9() {
     last_pos = (0, 0, 0);
-    var_7ea79e4ad3f2f3f9 = "";
+    last_entnum = "";
     text = "";
     pos_array = [];
     while (true) {
@@ -511,11 +511,11 @@ function function_572b7fa13e251ec9() {
             last_pos = self.slidemodel.origin;
             pos_array[pos_array.size] = last_pos;
             /#
-                var_7ea79e4ad3f2f3f9 = "<dev string:x2c>" + self.slidemodel getentitynumber();
+                last_entnum = "<dev string:x2c>" + self.slidemodel getentitynumber();
             #/
-            text = var_7ea79e4ad3f2f3f9;
+            text = last_entnum;
         } else {
-            text = var_7ea79e4ad3f2f3f9 + " DELETED";
+            text = last_entnum + " DELETED";
         }
         /#
             debugstar(last_pos, (1, 1, 0), 1, text);

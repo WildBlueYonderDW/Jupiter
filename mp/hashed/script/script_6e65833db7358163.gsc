@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\supers.gsc;
-#using script_38db8bccc9eb301f;
 #using script_19c169a442d5975a;
+#using script_38db8bccc9eb301f;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\supers;
 
 #namespace namespace_24a6e4eec2adc745;
 

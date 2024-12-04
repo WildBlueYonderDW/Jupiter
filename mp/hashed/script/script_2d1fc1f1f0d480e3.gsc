@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_12668187dcf15b96;
-#using script_6fc415ff6a905dc1;
+#using script_1fefb5a9d58fa8bf;
+#using script_2d1fc1f1f0d480e3;
 #using script_2d9d24f7c63ac143;
 #using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_2d1fc1f1f0d480e3;
-#using script_1fefb5a9d58fa8bf;
+#using script_6fc415ff6a905dc1;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_83df3740e3ffc9d0;
 

@@ -1,13 +1,13 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_399e7658cc79090d;
-#using scripts\sp\nvg\nvg_ai.gsc;
-#using scripts\sp\player.gsc;
 #using script_55b3046625fb79b6;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\nvg\nvg_ai;
+#using scripts\sp\player;
+#using scripts\sp\utility;
 
 #namespace namespace_3206872568138436;
 
@@ -292,8 +292,8 @@ function get_nvg_bar_level() {
 // Size: 0x5a
 function function_2db6d8e00bcac9ec() {
     scripts\sp\nvg\nvg_ai::do_flir_footsteps();
-    foreach (var_a5745af8a4b6cd28 in anim.flirfootprints) {
-        var_a5745af8a4b6cd28 namespace_acef762f74130ac8::play_flir_footstep_fx();
+    foreach (footprint in anim.flirfootprints) {
+        footprint namespace_acef762f74130ac8::play_flir_footstep_fx();
     }
 }
 
@@ -303,8 +303,8 @@ function function_2db6d8e00bcac9ec() {
 // Size: 0x5a
 function function_c795b940a8014a() {
     scripts\sp\nvg\nvg_ai::dont_do_flir_footsteps();
-    foreach (var_a5745af8a4b6cd28 in anim.flirfootprints) {
-        var_a5745af8a4b6cd28 namespace_acef762f74130ac8::kill_flir_footstep_fx();
+    foreach (footprint in anim.flirfootprints) {
+        footprint namespace_acef762f74130ac8::kill_flir_footstep_fx();
     }
 }
 
@@ -319,24 +319,24 @@ function track_player_light_meter() {
     }
     self.nvg.prevlightmeter = 1;
     self.nvg.lightmeter = 1;
-    var_67e5c1d8a5710f95 = 1;
-    var_d21883e6746eba1c = 0;
+    light_meter = 1;
+    player_invisible = 0;
     thread light_meter_hud();
-    var_f22120fbffb96467 = 0;
+    light_factor = 0;
     start = (0, 0, 0);
     var_cbbfb154c6f4fffb = 0.45;
     while (true) {
         var_cbbfb154c6f4fffb = 0.1;
-        var_67e5c1d8a5710f95 = self getplayerlightlevel();
-        lightmeter_lerp_lightmeter(var_67e5c1d8a5710f95, var_cbbfb154c6f4fffb);
-        if (self.nvg.lightmeter < 0.5 && !var_d21883e6746eba1c) {
+        light_meter = self getplayerlightlevel();
+        lightmeter_lerp_lightmeter(light_meter, var_cbbfb154c6f4fffb);
+        if (self.nvg.lightmeter < 0.5 && !player_invisible) {
             ent_flag_set("in_the_dark");
-            var_d21883e6746eba1c = 1;
+            player_invisible = 1;
             continue;
         }
-        if (self.nvg.lightmeter >= 0.5 && var_d21883e6746eba1c) {
+        if (self.nvg.lightmeter >= 0.5 && player_invisible) {
             ent_flag_clear("in_the_dark");
-            var_d21883e6746eba1c = 0;
+            player_invisible = 0;
         }
     }
 }
@@ -352,8 +352,8 @@ function track_player_light_meter() {
             bool = ent_flag("<dev string:x1c>");
             if (getdvarint(@"hash_fbade9cee2d02d33")) {
                 printtoscreen2d(600, 50, "<dev string:x28>" + flag("<dev string:x42>"), (1, 1, 1), 1.5);
-                var_f69e39e78fa16603 = ter_op(bool, "<dev string:x62>", "<dev string:x66>");
-                printtoscreen2d(600, 70, "<dev string:x69>" + var_f69e39e78fa16603, (1, 1, 1), 1.5);
+                answer = ter_op(bool, "<dev string:x62>", "<dev string:x66>");
+                printtoscreen2d(600, 70, "<dev string:x69>" + answer, (1, 1, 1), 1.5);
                 if (isdefined(level.player.nvg) && isdefined(level.player.nvg.lightmeter)) {
                     printtoscreen2d(600, 90, "<dev string:x7e>" + level.player.nvg.lightmeter, (level.player.nvg.lightmeter, level.player.nvg.lightmeter, level.player.nvg.lightmeter), 1.5);
                 }
@@ -408,9 +408,9 @@ function needle_noise() {
         self.data["time"] = 0;
         self.data["target"] = randomfloatrange(self.mag * -1, self.mag);
     }
-    var_2e95586c3f064a36 = math::normalize_value(0, self.data["period"], self.data["time"]);
-    var_2e95586c3f064a36 = math::function_889bef0ad1600791(var_2e95586c3f064a36);
-    self.data["val"] = self.data["old"] * (1 - var_2e95586c3f064a36) + self.data["target"] * var_2e95586c3f064a36;
+    period_factor = math::normalize_value(0, self.data["period"], self.data["time"]);
+    period_factor = math::function_889bef0ad1600791(period_factor);
+    self.data["val"] = self.data["old"] * (1 - period_factor) + self.data["target"] * period_factor;
     self.data["time"] = self.data["time"] + 0.05;
 }
 

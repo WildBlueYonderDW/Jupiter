@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace names;
 
@@ -63,13 +63,13 @@ function setup_names() {
 // Checksum 0x0, Offset: 0x330
 // Size: 0x91
 function table_get_names(nationality, column) {
-    var_e159edf45c50dbe2 = tablelookuprownum("sp/names.csv", column, "__END__");
+    last_row = tablelookuprownum("sp/names.csv", column, "__END__");
     temp_array = [];
-    for (i = 0; i < var_e159edf45c50dbe2; i++) {
+    for (i = 0; i < last_row; i++) {
         temp_array[i] = i;
     }
     temp_array = array_randomize(temp_array);
-    limit = min(50, var_e159edf45c50dbe2);
+    limit = min(50, last_row);
     for (i = 0; i < limit; i++) {
         add_name_from_table(nationality, temp_array[i], column);
     }

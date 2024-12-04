@@ -1,16 +1,16 @@
-#using scripts\engine\throttle.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\devgui.gsc;
 #using script_16ea1b94f0f381b3;
-#using script_7edf952f8921aa6b;
-#using script_686729055b66c6e4;
-#using script_9880b9dc28bc25e;
 #using script_38c517e34d7c3efb;
 #using script_554830d27078277d;
 #using script_5a4a5d9ba343ff8f;
+#using script_686729055b66c6e4;
+#using script_7edf952f8921aa6b;
+#using script_9880b9dc28bc25e;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace namespace_4d4755f6eec0fa1b;
 
@@ -136,7 +136,7 @@ function function_6f68035ca50bc6ea() {
     var_c28d099db87d11de = 2000;
     var_c28d099db87d11de += max(0, self.binding_zombies.size - 1) * 2000;
     foreach (zombie in self.binding_zombies) {
-        zombie function_2e4d3c67e63f83ac(var_c28d099db87d11de / 1000 + 1);
+        zombie stun_ai(var_c28d099db87d11de / 1000 + 1);
         zombie ent_flag_set("disciple_binding");
     }
     var_8b660e984fb7ef71 = 2000;
@@ -290,7 +290,7 @@ function function_a1ea85d89b2fead4() {
 function zombie_bound_killed(params) {
     if (isalive(self.commander) && isdefined(self.commander.bound_zombies)) {
         self.commander.bound_zombies = array_remove(self.commander.bound_zombies, self);
-        if (self.commander.bound_zombies.size == 0 && istrue(self.commander.var_5d76955658d19832)) {
+        if (self.commander.bound_zombies.size == 0 && istrue(self.commander.summon_invulnerability)) {
             self.commander.var_7878d9a79c788c74 = 0;
             self.commander playsound("vox_ai_aether_disciple_vulnerable");
             if (isdefined(level.var_718ee74a7cdbfee5) && isdefined(level.players)) {
@@ -326,7 +326,7 @@ function function_c98c0afcd608b815(var_a4c14dc60d4dd398) {
                     zombie kill();
                     continue;
                 }
-                zombie function_2e4d3c67e63f83ac(0.5);
+                zombie stun_ai(0.5);
                 zombie delaythread(0.5, &function_a1ea85d89b2fead4);
             }
         }

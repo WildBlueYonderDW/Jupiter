@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_608c50392df8c7d1;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\mp\gamescore.gsc;
 #using script_74b851b7aa1ef32d;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
 #using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gamescore;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
 
 #namespace emp_grenade;
 

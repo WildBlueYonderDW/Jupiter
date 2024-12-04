@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_2583ee5680cf4736;
-#using script_58be75c518bf0d40;
-#using script_485622d93fa7e4cf;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_3559130ee2bb3a29;
 #using script_100adcc1cc11d2fa;
-#using script_6a8ec730b2bfa844;
 #using script_1f97a44d1761c919;
+#using script_2583ee5680cf4736;
 #using script_3390b73ac3318fe;
-#using script_7f9409b703dad400;
-#using scripts\common\values.gsc;
+#using script_3559130ee2bb3a29;
+#using script_485622d93fa7e4cf;
+#using script_58be75c518bf0d40;
+#using script_6a8ec730b2bfa844;
 #using script_6f65366f542f6627;
+#using script_7f9409b703dad400;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_7208ecf7be48a477;
 
@@ -24,7 +24,7 @@ function function_cee5bf8a986d86df() {
     load_vfx();
     level thread create_portal();
     level flag_wait("ob_infil_completed");
-    function_e7b170d8b549d076();
+    init_portal();
 }
 
 // Namespace namespace_7208ecf7be48a477 / namespace_34b6dd083314d3eb
@@ -82,7 +82,7 @@ function function_816b580f6517f4fa(interact, player) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x567
 // Size: 0xbd
-function function_e7b170d8b549d076() {
+function init_portal() {
     level.var_2400a3ac0894afbb setscriptablepartstate("aether_exit_body", "rift_mission_infil_s3");
     foreach (player in level.players) {
         if (player namespace_9571f642f38c8169::function_3bb8b73991355a1(17) || function_6502de8f1658ce59(player) || getdvarint(@"hash_955a037e6f3238d7", 0)) {
@@ -131,14 +131,14 @@ function function_eedd40fa46e83c7(player) {
     if (istrue(var_35d868a4ad30ee6e)) {
         return;
     }
-    var_c89e221b75ac840d = player getsquadmembers(undefined, 0);
-    foreach (var_3329887886bd6a4b in var_c89e221b75ac840d) {
+    player_squad = player getsquadmembers(undefined, 0);
+    foreach (var_3329887886bd6a4b in player_squad) {
         self disableplayeruse(var_3329887886bd6a4b);
     }
     namespace_af93597583d94051::function_fd5211de155982af(player.team, player.sessionsquadid, 1);
     namespace_6c57c664b4288f88::function_93c8f90c3bd798c6(player, 30, &function_d7cf952e6f352615);
     namespace_af93597583d94051::function_fd5211de155982af(player.team, player.sessionsquadid, 0);
-    foreach (var_3329887886bd6a4b in var_c89e221b75ac840d) {
+    foreach (var_3329887886bd6a4b in player_squad) {
         self enableplayeruse(var_3329887886bd6a4b);
     }
 }

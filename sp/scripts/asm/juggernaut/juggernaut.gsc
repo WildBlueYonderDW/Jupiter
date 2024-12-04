@@ -1,14 +1,14 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
+#using script_13d1c402f1421c35;
 #using script_3433ee6b63c7e243;
 #using script_7e4d332e911e1b90;
-#using scripts\anim\utility_common.gsc;
-#using script_13d1c402f1421c35;
-#using scripts\common\utility.gsc;
-#using scripts\asm\juggernaut\juggernaut.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\juggernaut\juggernaut;
+#using scripts\asm\shared\utility;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace juggernaut;
 

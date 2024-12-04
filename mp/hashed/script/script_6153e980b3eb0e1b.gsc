@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using script_5c118165d3e98a42;
-#using script_48814951e916af89;
-#using scripts\mp\ai_behavior.gsc;
 #using script_41ba451876d0900c;
-#using scripts\stealth\enemy.gsc;
-#using scripts\mp\utility\lower_message.gsc;
+#using script_48814951e916af89;
+#using script_5c118165d3e98a42;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\anim;
+#using scripts\mp\poi;
+#using scripts\mp\utility\lower_message;
+#using scripts\stealth\enemy;
 
 #namespace namespace_f44f6fccbcedc09c;
 

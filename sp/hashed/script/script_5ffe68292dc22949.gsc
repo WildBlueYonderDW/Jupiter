@@ -1,10 +1,10 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\utility.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace edgeHang;
 
@@ -210,10 +210,10 @@ function function_7ac67646087b2344() {
                 var_70110ff2a3a0a288 = self.var_3b4664a4415abaef.origin - level.player.origin;
                 dist = length(var_70110ff2a3a0a288);
                 if (dist < 70) {
-                    var_4d3b55a59107b642 = (self.var_3b4664a4415abaef.origin[0], self.var_3b4664a4415abaef.origin[1], 0) - (level.player.origin[0], level.player.origin[1], 0);
-                    var_4d3b55a59107b642 = vectornormalize(var_4d3b55a59107b642);
+                    flat_dir = (self.var_3b4664a4415abaef.origin[0], self.var_3b4664a4415abaef.origin[1], 0) - (level.player.origin[0], level.player.origin[1], 0);
+                    flat_dir = vectornormalize(flat_dir);
                     var_1a99cb9861a3d271 = anglestoforward(self.var_3b4664a4415abaef.angles);
-                    var_f7ee245b64475ff4 = vectordot(var_4d3b55a59107b642, var_1a99cb9861a3d271);
+                    var_f7ee245b64475ff4 = vectordot(flat_dir, var_1a99cb9861a3d271);
                     if (var_f7ee245b64475ff4 > 0.99) {
                         height = level.player.origin[2] - self.var_3b4664a4415abaef.origin[2] - -70;
                         dir = level.player getnormalizedmovement();
@@ -393,7 +393,7 @@ function function_fa05774957abaa95() {
     self endon("playerJumpOffEdge");
     level.player endon("death");
     self.var_260edb5bcc5fd9e7 = 0;
-    var_b20114b08e8b351e = (0, 0, 0);
+    movement_offset = (0, 0, 0);
     var_82ffb19734953ccb = (0, 0, 0);
     var_95f02e893ab1d0bd = 3;
     var_16609489980fd80e = 0.5;
@@ -957,14 +957,14 @@ function function_8b6ad68cf7c826fd() {
 // Size: 0x2ad
 function function_9dcf6376f1ca949c(var_5f5ff4b491359301) {
     level.player endon("edgeHang");
-    var_b48544c7e081d861 = 0.8;
+    lerp_decay = 0.8;
     while (length(var_5f5ff4b491359301) > 0.02) {
         level.player pushplayervector(var_5f5ff4b491359301, 1);
-        var_5f5ff4b491359301 *= var_b48544c7e081d861;
-        level.player.viewblender["weapPos"].channels["edgeHangShimmy"] = level.player.viewblender["weapPos"].channels["edgeHangShimmy"] * var_b48544c7e081d861;
-        level.player.viewblender["weapAng"].channels["edgeHangShimmy"] = level.player.viewblender["weapAng"].channels["edgeHangShimmy"] * var_b48544c7e081d861;
-        level.player.viewblender["viewPos"].channels["edgeHangShimmy"] = level.player.viewblender["viewPos"].channels["edgeHangShimmy"] * var_b48544c7e081d861;
-        level.player.viewblender["viewAng"].channels["edgeHangShimmy"] = level.player.viewblender["viewAng"].channels["edgeHangShimmy"] * var_b48544c7e081d861;
+        var_5f5ff4b491359301 *= lerp_decay;
+        level.player.viewblender["weapPos"].channels["edgeHangShimmy"] = level.player.viewblender["weapPos"].channels["edgeHangShimmy"] * lerp_decay;
+        level.player.viewblender["weapAng"].channels["edgeHangShimmy"] = level.player.viewblender["weapAng"].channels["edgeHangShimmy"] * lerp_decay;
+        level.player.viewblender["viewPos"].channels["edgeHangShimmy"] = level.player.viewblender["viewPos"].channels["edgeHangShimmy"] * lerp_decay;
+        level.player.viewblender["viewAng"].channels["edgeHangShimmy"] = level.player.viewblender["viewAng"].channels["edgeHangShimmy"] * lerp_decay;
         wait 0.05;
     }
     wait 0.3;

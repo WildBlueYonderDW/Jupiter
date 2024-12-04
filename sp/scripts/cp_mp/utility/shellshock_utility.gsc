@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_6853191397ec0259;
+#using scripts\common\shellshock_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
 
 #namespace shellshock_utility;
 
@@ -10,7 +10,7 @@
 // Checksum 0x0, Offset: 0xa6
 // Size: 0x37
 function _shellshock(name, category, duration, animationresponse, interruptdelayms) {
-    namespace_1ce798d596a27341::_shellshock(name, category, duration, animationresponse, interruptdelayms);
+    scripts\common\shellshock_utility::_shellshock(name, category, duration, animationresponse, interruptdelayms);
 }
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility
@@ -18,7 +18,7 @@ function _shellshock(name, category, duration, animationresponse, interruptdelay
 // Checksum 0x0, Offset: 0xe5
 // Size: 0x12
 function _stopshellshock(fromdeath) {
-    namespace_1ce798d596a27341::_stopshellshock();
+    scripts\common\shellshock_utility::_stopshellshock();
 }
 
 // Namespace shellshock_utility / scripts\cp_mp\utility\shellshock_utility

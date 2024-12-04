@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\devgui.gsc;
 #using script_3a9930dfe832ae05;
-#using scripts\common\powerups.gsc;
+#using scripts\common\devgui;
+#using scripts\common\powerups;
+#using scripts\engine\utility;
 
 #namespace bonus_points_team;
 

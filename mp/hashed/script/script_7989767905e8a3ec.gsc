@@ -1,6 +1,6 @@
-#using scripts\common\devgui.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\hud_message.gsc;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
 
 #namespace ob_splashes;
 

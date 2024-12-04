@@ -1,15 +1,15 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\smartobjects\utility.gsc;
-#using scripts\anim\notetracks.gsc;
-#using scripts\asm\soldier\move.gsc;
-#using scripts\asm\soldier\patrol.gsc;
-#using scripts\asm\soldier\pain.gsc;
-#using scripts\asm\soldier\death.gsc;
+#using scripts\anim\notetracks;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\death;
+#using scripts\asm\soldier\move;
+#using scripts\asm\soldier\pain;
+#using scripts\asm\soldier\patrol;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\smartobjects\utility;
 
 #namespace smartobject;
 

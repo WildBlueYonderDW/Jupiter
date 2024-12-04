@@ -1,4 +1,4 @@
-#using scripts\engine\utility.gsc;
+#using scripts\engine\utility;
 
 #namespace namespace_8385be0808a3216c;
 
@@ -42,20 +42,20 @@ function function_96f86549e383586(player, var_efa963805ba84047) {
 // Size: 0x169
 function function_5842ae542da36283(var_34ef5453effff2cf) {
     var_c0f4e5221bf034f0 = [];
-    foreach (var_3b89e65895756cd9 in var_34ef5453effff2cf) {
-        assertex(var_3b89e65895756cd9.size == 5, "<dev string:x53>");
-        assertex(isstring(var_3b89e65895756cd9[0]) && (var_3b89e65895756cd9[0] == "<dev string:xc2>" || var_3b89e65895756cd9[0] == "<dev string:xca>"), "<dev string:xd5>");
-        assertex(isstring(var_3b89e65895756cd9[1]), "<dev string:xf3>");
-        assertex(isvector(var_3b89e65895756cd9[2]) || var_3b89e65895756cd9[2] == 0, "<dev string:x118>");
-        assertex(isvector(var_3b89e65895756cd9[3]), "<dev string:x140>");
-        assertex(isnumber(var_3b89e65895756cd9[4]), "<dev string:x166>");
-        type = var_3b89e65895756cd9[0];
-        weaponname = var_3b89e65895756cd9[1];
+    foreach (vfx_array in var_34ef5453effff2cf) {
+        assertex(vfx_array.size == 5, "<dev string:x53>");
+        assertex(isstring(vfx_array[0]) && (vfx_array[0] == "<dev string:xc2>" || vfx_array[0] == "<dev string:xca>"), "<dev string:xd5>");
+        assertex(isstring(vfx_array[1]), "<dev string:xf3>");
+        assertex(isvector(vfx_array[2]) || vfx_array[2] == 0, "<dev string:x118>");
+        assertex(isvector(vfx_array[3]), "<dev string:x140>");
+        assertex(isnumber(vfx_array[4]), "<dev string:x166>");
+        type = vfx_array[0];
+        weaponname = vfx_array[1];
         startposition = undefined;
-        endposition = var_3b89e65895756cd9[3];
-        var_da3878c8f78d9c9c = var_3b89e65895756cd9[4];
-        if (var_3b89e65895756cd9[2] != 0) {
-            startposition = var_3b89e65895756cd9[2];
+        endposition = vfx_array[3];
+        var_da3878c8f78d9c9c = vfx_array[4];
+        if (vfx_array[2] != 0) {
+            startposition = vfx_array[2];
         }
         var_c0f4e5221bf034f0[var_c0f4e5221bf034f0.size] = function_8763c8d36e19655e(type, weaponname, startposition, endposition, var_da3878c8f78d9c9c);
     }
@@ -167,7 +167,7 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
             assertmsg("<dev string:x2b6>");
             return;
         }
-        var_e114b2b0f0890323 = 0;
+        force_index = 0;
         if (!isdefined(var_aa9604938f87117c) || !isdefined(level.var_4a94dc5bca439216[var_aa9604938f87117c])) {
             if (isdefined(var_aa9604938f87117c) && !isdefined(level.var_4a94dc5bca439216[var_aa9604938f87117c])) {
                 assertmsg("<dev string:x2d3>" + var_aa9604938f87117c + "<dev string:x2e5>");
@@ -175,10 +175,10 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
             }
             var_aa9604938f87117c = level.var_bb6e6442e6da34b;
         } else {
-            var_e114b2b0f0890323 = 1;
+            force_index = 1;
         }
         thread function_96f86549e383586(player, level.var_4a94dc5bca439216[var_aa9604938f87117c]);
-        if (!var_e114b2b0f0890323) {
+        if (!force_index) {
             level.var_bb6e6442e6da34b = (level.var_bb6e6442e6da34b + 1) % level.var_4a94dc5bca439216.size;
         }
     }
@@ -210,7 +210,7 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
         level endon("<dev string:x256>");
         level endon("<dev string:x337>");
         player endon("<dev string:x345>");
-        var_7c6cd4faa1b0a10d = 20;
+        default_x = 20;
         var_f3447b872570129d = 250;
         scale = 1.3;
         color = (0, 1, 0);
@@ -219,15 +219,15 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
             x = scripts\engine\utility::string(origin[0]);
             y = scripts\engine\utility::string(origin[1]);
             z = scripts\engine\utility::string(origin[2]);
-            printtoscreen2d(var_7c6cd4faa1b0a10d, var_f3447b872570129d, "<dev string:x35e>" + x + "<dev string:x374>" + y + "<dev string:x374>" + z + "<dev string:x37a>", color, scale, 1);
+            printtoscreen2d(default_x, var_f3447b872570129d, "<dev string:x35e>" + x + "<dev string:x374>" + y + "<dev string:x374>" + z + "<dev string:x37a>", color, scale, 1);
             angles = player.angles;
-            var_c13087e9054e5d1a = scripts\engine\utility::string(angles[0]);
-            var_c13088e9054e5f4d = scripts\engine\utility::string(angles[1]);
-            var_c13085e9054e58b4 = scripts\engine\utility::string(angles[2]);
-            printtoscreen2d(var_7c6cd4faa1b0a10d, var_f3447b872570129d + 30, "<dev string:x380>" + var_c13087e9054e5d1a + "<dev string:x374>" + var_c13088e9054e5f4d + "<dev string:x374>" + var_c13085e9054e58b4 + "<dev string:x37a>", color, scale, 1);
+            angles_x = scripts\engine\utility::string(angles[0]);
+            angles_y = scripts\engine\utility::string(angles[1]);
+            angles_z = scripts\engine\utility::string(angles[2]);
+            printtoscreen2d(default_x, var_f3447b872570129d + 30, "<dev string:x380>" + angles_x + "<dev string:x374>" + angles_y + "<dev string:x374>" + angles_z + "<dev string:x37a>", color, scale, 1);
             var_f7e58d89de45c95d = scripts\engine\utility::ter_op(level.var_4a94dc5bca439216.size == 0, 0, level.var_bb6e6442e6da34b + 1);
-            printtoscreen2d(var_7c6cd4faa1b0a10d, var_f3447b872570129d + 60, "<dev string:x396>" + scripts\engine\utility::string(var_f7e58d89de45c95d) + "<dev string:x3b0>" + level.var_4a94dc5bca439216.size + "<dev string:x3b7>" + "<dev string:x3be>" + "<dev string:x3c3>", color, scale, 1);
-            printtoscreen2d(var_7c6cd4faa1b0a10d, var_f3447b872570129d + 100, "<dev string:x3e4>" + toupper("<dev string:x3fe>") + "<dev string:x404>", color, scale, 1);
+            printtoscreen2d(default_x, var_f3447b872570129d + 60, "<dev string:x396>" + scripts\engine\utility::string(var_f7e58d89de45c95d) + "<dev string:x3b0>" + level.var_4a94dc5bca439216.size + "<dev string:x3b7>" + "<dev string:x3be>" + "<dev string:x3c3>", color, scale, 1);
+            printtoscreen2d(default_x, var_f3447b872570129d + 100, "<dev string:x3e4>" + toupper("<dev string:x3fe>") + "<dev string:x404>", color, scale, 1);
             waitframe();
         }
     }
@@ -247,8 +247,8 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
                 waitframe();
                 continue;
             }
-            foreach (var_3b89e65895756cd9 in level.var_4a94dc5bca439216) {
-                foreach (index, vfx in var_3b89e65895756cd9) {
+            foreach (vfx_array in level.var_4a94dc5bca439216) {
+                foreach (index, vfx in vfx_array) {
                     if (vfx.type == "<dev string:xca>") {
                         sphere(vfx.startlocation, sphere_radius, (0, 1, 0), 0, 1);
                         line(vfx.startlocation, vfx.var_7e44076d428e631d, (0, 1, 0), 1, 0, 1);
@@ -365,7 +365,7 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
             currentline += var_88f100313f3b096d[i];
         }
         var_cf780a38f1ac0432 = [];
-        var_a11d4ed0fbfe6652 = [];
+        vfx_structs = [];
         type = "<dev string:x438>";
         weapon_name = "<dev string:x438>";
         startposition = [];
@@ -375,9 +375,9 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
         var_432a7c3e01871183 = 0;
         for (i = 0; i < var_83dbc5b05ae7eaf9.size; i++) {
             for (j = 0; j < var_83dbc5b05ae7eaf9[i].size; j++) {
-                if (var_83dbc5b05ae7eaf9[i][j] == var_908fb7cd714520c9 && var_a11d4ed0fbfe6652.size != 0) {
-                    var_cf780a38f1ac0432[var_cf780a38f1ac0432.size] = arraycopy(var_a11d4ed0fbfe6652);
-                    var_a11d4ed0fbfe6652 = [];
+                if (var_83dbc5b05ae7eaf9[i][j] == var_908fb7cd714520c9 && vfx_structs.size != 0) {
+                    var_cf780a38f1ac0432[var_cf780a38f1ac0432.size] = arraycopy(vfx_structs);
+                    vfx_structs = [];
                     continue;
                 }
                 if (var_83dbc5b05ae7eaf9[i][j] == "<dev string:xcd5>") {
@@ -425,7 +425,7 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
                     var_432a7c3e01871183 = 0;
                 }
                 if (type != "<dev string:x438>" && weapon_name != "<dev string:x438>" && startposition.size == 3 && endposition.size == 3 && var_ec771b1feb322ffa != -1) {
-                    var_a11d4ed0fbfe6652[var_a11d4ed0fbfe6652.size] = function_8763c8d36e19655e(type, weapon_name, (startposition[0], startposition[1], startposition[2]), (endposition[0], endposition[1], endposition[2]), var_ec771b1feb322ffa);
+                    vfx_structs[vfx_structs.size] = function_8763c8d36e19655e(type, weapon_name, (startposition[0], startposition[1], startposition[2]), (endposition[0], endposition[1], endposition[2]), var_ec771b1feb322ffa);
                     type = "<dev string:x438>";
                     weapon_name = "<dev string:x438>";
                     startposition = [];
@@ -434,9 +434,9 @@ function private function_8763c8d36e19655e(type, weaponname, startlocation, var_
                 }
             }
         }
-        if (var_a11d4ed0fbfe6652.size != 0) {
-            var_cf780a38f1ac0432[var_cf780a38f1ac0432.size] = arraycopy(var_a11d4ed0fbfe6652);
-            var_a11d4ed0fbfe6652 = [];
+        if (vfx_structs.size != 0) {
+            var_cf780a38f1ac0432[var_cf780a38f1ac0432.size] = arraycopy(vfx_structs);
+            vfx_structs = [];
         }
         iprintlnbold("<dev string:xce4>" + "<dev string:x417>" + "<dev string:xcfd>");
         level.var_4775f352c850b592 = [];

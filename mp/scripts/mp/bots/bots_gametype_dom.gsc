@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_personality.gsc;
-#using scripts\mp\bots\bots_gametype_common.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\mgl_mp.gsc;
-#using scripts\mp\gametypes\dom.gsc;
-#using scripts\mp\gamescore.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_gametype_common;
+#using scripts\mp\bots\bots_personality;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\dom;
+#using scripts\mp\gametypes\mgl_mp;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\player;
 
 #namespace bots_gametype_dom;
 
@@ -160,15 +160,15 @@ function setup_bot_dom(var_c09effe906c04618, var_c9d880ac3d2f2d31) {
             wait 0.05;
         }
         assert(flags.size % 3 == 0);
-        var_80d5d34a941564e9 = [];
+        flags_in_zone = [];
         foreach (flag in flags) {
             assert(isdefined(flag.teleport_zone));
-            if (!isdefined(var_80d5d34a941564e9[flag.teleport_zone])) {
-                var_80d5d34a941564e9[flag.teleport_zone] = [];
+            if (!isdefined(flags_in_zone[flag.teleport_zone])) {
+                flags_in_zone[flag.teleport_zone] = [];
             }
-            var_80d5d34a941564e9[flag.teleport_zone] = array_add(var_80d5d34a941564e9[flag.teleport_zone], flag);
+            flags_in_zone[flag.teleport_zone] = array_add(flags_in_zone[flag.teleport_zone], flag);
         }
-        foreach (teleport_zone, var_efe554850e96b933 in var_80d5d34a941564e9) {
+        foreach (teleport_zone, var_efe554850e96b933 in flags_in_zone) {
             level.entrance_points_finished_caching = 0;
             bot_cache_flag_distances(var_efe554850e96b933);
             bot_cache_entrances_to_gametype_array(var_efe554850e96b933, teleport_zone + "_flag", level.bot_ignore_precalc_paths);

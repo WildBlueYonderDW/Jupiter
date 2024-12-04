@@ -1,11 +1,11 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
-#namespace namespace_32c26a9bdbe58290;
+#namespace destructible_vehicle;
 
-// Namespace namespace_32c26a9bdbe58290 / scripts\sp\destructibles\destructible_vehicle
+// Namespace destructible_vehicle / scripts\sp\destructibles\destructible_vehicle
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x140
 // Size: 0x15
@@ -14,7 +14,7 @@ function destructible_vehicle_init() {
     thread destructible_vehicle_main();
 }
 
-// Namespace namespace_32c26a9bdbe58290 / scripts\sp\destructibles\destructible_vehicle
+// Namespace destructible_vehicle / scripts\sp\destructibles\destructible_vehicle
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15d
 // Size: 0xb1
@@ -28,7 +28,7 @@ function destructible_vehicle_main() {
     }
 }
 
-// Namespace namespace_32c26a9bdbe58290 / scripts\sp\destructibles\destructible_vehicle
+// Namespace destructible_vehicle / scripts\sp\destructibles\destructible_vehicle
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x216
 // Size: 0xb5
@@ -54,7 +54,7 @@ function destructible_vehicle_thread() {
     }
 }
 
-// Namespace namespace_32c26a9bdbe58290 / scripts\sp\destructibles\destructible_vehicle
+// Namespace destructible_vehicle / scripts\sp\destructibles\destructible_vehicle
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x87

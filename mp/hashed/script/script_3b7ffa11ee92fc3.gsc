@@ -1,13 +1,13 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using script_60cc31ea91d0ad55;
-#using script_7ff3a914e6c698c5;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\math.gsc;
 #using script_3b78d23dad7ec5be;
-#using script_7edf952f8921aa6b;
+#using script_60cc31ea91d0ad55;
 #using script_65510d5365b66242;
+#using script_7edf952f8921aa6b;
+#using script_7ff3a914e6c698c5;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\callbacks;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace namespace_36031e382978bc8d;
 
@@ -235,7 +235,7 @@ function private function_25ddc7410cd116ca() {
             potential_targets = getaiarrayinradius(knockdown_pos, knockdowndata.radius);
             foreach (target in potential_targets) {
                 if (isalive(target) && target != self && (!isdefined(target.aicategory) || target.aicategory == "normal") && !target function_e67a89537ae7d4b7()) {
-                    target function_e96aac065abbec4e(knockdown_pos);
+                    target knockdown_ai(knockdown_pos);
                 }
             }
         }

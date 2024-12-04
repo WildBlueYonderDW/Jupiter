@@ -1,5 +1,5 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace bots_loadout;
 
@@ -129,7 +129,7 @@ function function_70d701f63acab018() {
     defaultLoadout.fieldupgrade1 = "none";
     defaultLoadout.var_7e39824ce66c0669 = "none";
     defaultLoadout.role = "role_hunter";
-    defaultLoadout.var_ca76bf5089783ef3 = 0;
+    defaultLoadout.overkill = 0;
     defaultLoadout.specialist = 1;
     return defaultLoadout;
 }

@@ -1,21 +1,21 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\callback_group.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\train_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\engine\trace.gsc;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\ent_manager.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\challenges_cp.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
 #using script_25845aca699d038d;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\cp\challenges_cp;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\ent_manager;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\callback_group;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\train_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace sonar_pulse;
 
@@ -34,18 +34,18 @@ function function_a09bd8d12b478568() {
 function function_12248061aabb5b60() {
     self endon("offhand_pullback");
     while (true) {
-        var_237727b2372dd267 = namespace_a0628d6954815ef8::waittill_grenade_fire();
-        if (!isdefined(var_237727b2372dd267)) {
+        grenade_weap = namespace_a0628d6954815ef8::waittill_grenade_fire();
+        if (!isdefined(grenade_weap)) {
             continue;
         }
-        if (!isdefined(var_237727b2372dd267.weapon_name)) {
+        if (!isdefined(grenade_weap.weapon_name)) {
             continue;
         }
-        if (var_237727b2372dd267.weapon_name != "sonar_pulse_mp") {
+        if (grenade_weap.weapon_name != "sonar_pulse_mp") {
             continue;
         }
-        self notify("portable_radar_thrown", var_237727b2372dd267);
-        return var_237727b2372dd267;
+        self notify("portable_radar_thrown", grenade_weap);
+        return grenade_weap;
     }
 }
 

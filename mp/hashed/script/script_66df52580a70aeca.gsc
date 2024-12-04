@@ -1,57 +1,57 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\common\system.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using script_2e445b403a12d74d;
-#using script_860bfdfe82326e3;
-#using script_2583ee5680cf4736;
-#using script_46c7c73b1a7e4773;
-#using script_58be75c518bf0d40;
-#using script_7b2517368c79e5bc;
-#using script_3e2f8cc477d57433;
-#using script_485622d93fa7e4cf;
-#using script_5640d32580c6bc7d;
-#using script_7f9409b703dad400;
-#using script_600b944a95c3a7bf;
-#using script_16ea1b94f0f381b3;
-#using script_22f1701e151b9d12;
-#using script_482376d10f69832c;
-#using script_3559130ee2bb3a29;
-#using script_61afae50a53c3917;
 #using script_100adcc1cc11d2fa;
-#using script_220d0eb95a8fab7d;
-#using script_185660037b9236c1;
-#using script_41387eecc35b88bf;
-#using scripts\mp\objidpoolmanager.gsc;
-#using script_2d81142fe75dc0c;
-#using script_503dc616192c6c7b;
-#using script_500cf9957a5c4ba7;
-#using script_21565d13199ed0b;
-#using script_5605739161b1abe1;
-#using script_775b7cd25194ce83;
-#using script_52e2837d89d8de06;
-#using script_2b421d13744fcb7e;
-#using script_40d9a279bd1a1bf9;
-#using script_1f97a44d1761c919;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\engine\scriptable.gsc;
-#using script_76cc264b397db9cb;
-#using script_43971bbeefd98f05;
-#using script_19c169a442d5975a;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\common\values.gsc;
-#using script_6f65366f542f6627;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\mp_agent.gsc;
-#using script_54be039c89fddc12;
-#using script_398835140857d740;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_118c3165d7948d8b;
+#using script_16ea1b94f0f381b3;
+#using script_185660037b9236c1;
+#using script_19c169a442d5975a;
+#using script_1f97a44d1761c919;
+#using script_21565d13199ed0b;
+#using script_220d0eb95a8fab7d;
+#using script_22f1701e151b9d12;
+#using script_2583ee5680cf4736;
 #using script_2590b7a7de3dfc79;
+#using script_2b421d13744fcb7e;
+#using script_2d81142fe75dc0c;
+#using script_2e445b403a12d74d;
+#using script_3559130ee2bb3a29;
+#using script_398835140857d740;
+#using script_3e2f8cc477d57433;
+#using script_40d9a279bd1a1bf9;
+#using script_41387eecc35b88bf;
+#using script_43971bbeefd98f05;
+#using script_46c7c73b1a7e4773;
+#using script_482376d10f69832c;
+#using script_485622d93fa7e4cf;
+#using script_500cf9957a5c4ba7;
+#using script_503dc616192c6c7b;
+#using script_52e2837d89d8de06;
+#using script_54be039c89fddc12;
+#using script_5605739161b1abe1;
+#using script_5640d32580c6bc7d;
+#using script_58be75c518bf0d40;
+#using script_600b944a95c3a7bf;
+#using script_61afae50a53c3917;
 #using script_6bffae1b97f70547;
-#using scripts\common\devgui.gsc;
+#using script_6f65366f542f6627;
+#using script_76cc264b397db9cb;
+#using script_775b7cd25194ce83;
+#using script_7b2517368c79e5bc;
+#using script_7f9409b703dad400;
+#using script_860bfdfe82326e3;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\hud_message;
+#using scripts\mp\mp_agent;
+#using scripts\mp\objidpoolmanager;
 
 #namespace namespace_c2522520955f08d1;
 
@@ -272,12 +272,12 @@ function function_46822b25a91c60bc(var_249fdd086dd5b361) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x247a
 // Size: 0x16d
-function function_e0586ac65c340a5(void, var_39046f743b7de43d, var_249fdd086dd5b361) {
+function function_e0586ac65c340a5(void, vo_trigger, var_249fdd086dd5b361) {
     level endon("game_ended");
-    assert(isdefined(var_39046f743b7de43d) && isdefined(void) && isdefined(var_249fdd086dd5b361));
+    assert(isdefined(vo_trigger) && isdefined(void) && isdefined(var_249fdd086dd5b361));
     var_b1ab6fc982a31d2e = var_249fdd086dd5b361;
     while (var_b1ab6fc982a31d2e.size > 0) {
-        var_39046f743b7de43d waittill("trigger", var_42376ed54d25120a);
+        vo_trigger waittill("trigger", var_42376ed54d25120a);
         if (isdefined(var_42376ed54d25120a)) {
             if (isplayer(var_42376ed54d25120a) && array_contains(var_b1ab6fc982a31d2e, var_42376ed54d25120a)) {
                 thread namespace_446fc987a980892f::playconversation(void, [var_42376ed54d25120a]);
@@ -1663,11 +1663,11 @@ function private function_fe78a5ed4951d415() {
     var_c1dff7f2395492f9 setscriptablepartstate("body_aethertear", "usable");
     var_c1dff7f2395492f9 setscriptablepartstate("entrance_vfx", "on");
     level.var_451ca4e0326e67ee["diary"].var_c1dff7f2395492f9 = var_c1dff7f2395492f9;
-    var_443b1cbb7eeb2213 = spawnstruct();
-    var_443b1cbb7eeb2213.origin = level.var_451ca4e0326e67ee["diary"].var_c1dff7f2395492f9.origin - (0, 0, 15);
-    var_443b1cbb7eeb2213.radius = 17;
-    var_443b1cbb7eeb2213.height = 25;
-    level.var_451ca4e0326e67ee["diary"].var_7e4a0d695ae49c1b = spawn("trigger_radius", var_443b1cbb7eeb2213.origin, 0, var_443b1cbb7eeb2213.radius, var_443b1cbb7eeb2213.height);
+    retry_struct = spawnstruct();
+    retry_struct.origin = level.var_451ca4e0326e67ee["diary"].var_c1dff7f2395492f9.origin - (0, 0, 15);
+    retry_struct.radius = 17;
+    retry_struct.height = 25;
+    level.var_451ca4e0326e67ee["diary"].var_7e4a0d695ae49c1b = spawn("trigger_radius", retry_struct.origin, 0, retry_struct.radius, retry_struct.height);
     level.var_451ca4e0326e67ee["diary"] thread function_8873296e64dd8ccd(level.var_451ca4e0326e67ee["diary"].var_7e4a0d695ae49c1b);
 }
 
@@ -2220,9 +2220,9 @@ function private function_ad06a810f0513757(player) {
     foreach (player in playersquad) {
         thread namespace_446fc987a980892f::playevent("RFT_S5_5_RGUQ_Relic_Attunement_Giraffe_Start", [player]);
     }
-    var_5e64675a5f0ce8cb = getstruct("s5_attunement_giraffe_encounter_spawn", "targetname");
-    if (isdefined(var_5e64675a5f0ce8cb) && !isdefined(level.var_451ca4e0326e67ee["giraffe"].encounterid)) {
-        level.var_451ca4e0326e67ee["giraffe"].encounterid = namespace_614554f86e52695c::spawn_request("ai_encounter:s5_relic_attunement_giraffe", var_5e64675a5f0ce8cb.origin, var_5e64675a5f0ce8cb.radius, 1, 0, 0);
+    circle_struct = getstruct("s5_attunement_giraffe_encounter_spawn", "targetname");
+    if (isdefined(circle_struct) && !isdefined(level.var_451ca4e0326e67ee["giraffe"].encounterid)) {
+        level.var_451ca4e0326e67ee["giraffe"].encounterid = namespace_614554f86e52695c::spawn_request("ai_encounter:s5_relic_attunement_giraffe", circle_struct.origin, circle_struct.radius, 1, 0, 0);
         namespace_614554f86e52695c::function_e4a67fe4ddca7ed5(level.var_451ca4e0326e67ee["giraffe"].encounterid, &function_2c7217780aa2bede);
         namespace_614554f86e52695c::function_f0cc0f2e6e1d085e(level.var_451ca4e0326e67ee["giraffe"].encounterid, &function_42371937e8b06de0);
         namespace_614554f86e52695c::function_7a2920be35f4386(level.var_451ca4e0326e67ee["giraffe"].encounterid, &function_a8d4e3c42b785b65, [self]);
@@ -2248,9 +2248,9 @@ function function_a8d4e3c42b785b65(requestid, userdata, wavenumber) {
 // Checksum 0x0, Offset: 0x84b9
 // Size: 0x21e
 function function_2c7217780aa2bede(requestid, instance, agent, ai_data) {
-    var_5e64675a5f0ce8cb = getstruct("s5_attunement_giraffe_encounter_spawn", "targetname");
-    if (isdefined(var_5e64675a5f0ce8cb)) {
-        agent function_65cdab0fc78aba8f(var_5e64675a5f0ce8cb.origin, var_5e64675a5f0ce8cb.radius);
+    circle_struct = getstruct("s5_attunement_giraffe_encounter_spawn", "targetname");
+    if (isdefined(circle_struct)) {
+        agent function_65cdab0fc78aba8f(circle_struct.origin, circle_struct.radius);
     } else {
         agent function_65cdab0fc78aba8f(agent.origin, getdvarint(@"hash_436fc10ebca82d41", 2048));
     }

@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using script_40e63dd222434655;
-#using script_59ff79d681bb860c;
 #using script_26ccbfe3954cacf4;
-#using scripts\mp\bots\bots_gametype_br.gsc;
+#using script_40e63dd222434655;
 #using script_44f4640b93ab1b47;
 #using script_4c9bd9a3bf3f8cf7;
+#using script_59ff79d681bb860c;
 #using script_72af5a878a9d3397;
 #using script_d74ae0b4aa21186;
-#using scripts\mp\bots\bots.gsc;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots;
+#using scripts\mp\bots\bots_gametype_br;
 
 #namespace dormant_bot;
 

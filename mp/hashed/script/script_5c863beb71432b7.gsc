@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
 #using script_7b2517368c79e5bc;
-#using scripts\engine\throttle.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\engine\throttle;
+#using scripts\engine\utility;
 
 #namespace ammopouch;
 
@@ -15,7 +15,7 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x22e
 // Size: 0x359
-function function_ef91a8aa458ff9fd() {
+function init_ammopouch() {
     if (isdefined(level.var_51a717822d1c33ec)) {
         return;
     }

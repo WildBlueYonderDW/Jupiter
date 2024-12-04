@@ -1,5 +1,5 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace screens;
 
@@ -8,7 +8,7 @@
 // Checksum 0x0, Offset: 0x378
 // Size: 0x160
 function init() {
-    setdvarifuninitialized(@"hash_9a6917debd75e407", 0);
+    setdvarifuninitialized(@"debug_screens", 0);
     waitframe();
     level.screens = spawnstruct();
     level.screens.screens = getstructarray("screens_system", "script_noteworthy");
@@ -537,7 +537,7 @@ function watch_scriptable() {
 // Checksum 0x0, Offset: 0x16cf
 // Size: 0x19
 function debug() {
-    if (getdvarint(@"hash_9a6917debd75e407") > 0) {
+    if (getdvarint(@"debug_screens") > 0) {
         return true;
     }
     return false;

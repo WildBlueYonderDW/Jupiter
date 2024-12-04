@@ -1,34 +1,34 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\wm.gsc;
-#using scripts\cp_mp\killstreaks\uav.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using script_6775ad452d13858;
-#using scripts\cp_mp\execution.gsc;
-#using script_600b944a95c3a7bf;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
 #using script_58be75c518bf0d40;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\menus.gsc;
+#using script_600b944a95c3a7bf;
+#using script_6775ad452d13858;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\killstreaks\uav;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\gametypes\wm;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\menus;
+#using scripts\mp\persistence;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace teams;
 
@@ -75,7 +75,7 @@ function init() {
         function_dd622cd64f483958(team);
     }
     level.teambased = activeteamcount > 1 || getdvarint(@"hash_6bfddbbc0765d353", 0) == 1;
-    setdvar(@"hash_afb03e72b1770af", level.teamnamelist.size);
+    setdvar(@"ui_numteams", level.teamnamelist.size);
     if (getdvarint(@"hash_f16ba8db72f34fc3", 0) != 0 && level.teambased) {
         level thread scripts\cp_mp\killstreaks\uav::function_c11936b9c6c3a076(undefined, 1);
     }
@@ -776,9 +776,9 @@ function createoperatorcustomization(operatorref, operatorskin) {
         var_1c309d4424389fba = getdvar(@"hash_803cefdbe23f6bfe");
         var_bc7876241a7de45c = getdvar(@"hash_17a1591e3fe7c036");
         if (isdefined(var_1c309d4424389fba) && var_1c309d4424389fba != "" || isdefined(var_bc7876241a7de45c) && var_bc7876241a7de45c != "") {
-            var_c00a2c6249962d83 = function_e7fe5b7d4b92813c();
-            operatorskin = var_c00a2c6249962d83[1];
-            operatorref = var_c00a2c6249962d83[0];
+            __a10 = function_e7fe5b7d4b92813c();
+            operatorskin = __a10[1];
+            operatorref = __a10[0];
         } else {
             operatorref = lookupcurrentoperator(self.team);
             operatorskin = function_ed273e317490cb02(operatorref);
@@ -1088,7 +1088,7 @@ function function_ed273e317490cb02(operatorref) {
         self.pers["operatorSkinRef"] = function_45bf24706ce6aeef();
     } else if (scripts\cp_mp\utility\game_utility::isinfectedgametype() && self.team == "allies" && getdvarint(@"hash_ce84811e8f772df7", 0) == 1) {
         self.pers["operatorSkinRef"] = function_51e69e2a2754278d();
-    } else if (function_6c88a48a9e942c3d()) {
+    } else if (isMutationGameModeZombie()) {
         self.pers["operatorSkinRef"] = function_45bf24706ce6aeef();
     } else if (isdefined(self.team) && self.team == "axis" && getdvarint(@"hash_4753586a2ac8718f", 0) == 1) {
         self.pers["operatorSkinRef"] = function_523d23443e43909c();
@@ -1217,9 +1217,9 @@ function private function_e3a9bccddf207ec6() {
 // Size: 0x54
 function private function_1842592e93b27ffd(operatorSkinRef) {
     body = namespace_465d40bb08a5337a::function_8eba78e65f4be793(operatorSkinRef);
-    var_f9d65f39430f5753 = namespace_465d40bb08a5337a::function_223061772e2a61b9(operatorSkinRef);
-    var_f9d66039430f5986 = getsubstr(var_f9d65f39430f5753, 0, var_f9d65f39430f5753.size - 1) + "b";
-    self loadcustomization(body, var_f9d66039430f5986);
+    head_a = namespace_465d40bb08a5337a::function_223061772e2a61b9(operatorSkinRef);
+    head_b = getsubstr(head_a, 0, head_a.size - 1) + "b";
+    self loadcustomization(body, head_b);
 }
 
 // Namespace teams / scripts\mp\teams
@@ -1228,8 +1228,8 @@ function private function_1842592e93b27ffd(operatorSkinRef) {
 // Size: 0x38
 function private function_5908c8ee9ec5ed78(operatorSkinRef) {
     body = namespace_465d40bb08a5337a::function_8eba78e65f4be793(operatorSkinRef);
-    var_f9d65f39430f5753 = namespace_465d40bb08a5337a::function_223061772e2a61b9(operatorSkinRef);
-    self loadcustomization(body, var_f9d65f39430f5753);
+    head_a = namespace_465d40bb08a5337a::function_223061772e2a61b9(operatorSkinRef);
+    self loadcustomization(body, head_a);
 }
 
 // Namespace teams / scripts\mp\teams

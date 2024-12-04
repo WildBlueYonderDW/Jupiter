@@ -1,16 +1,16 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\common\string.gsc;
-#using scripts\mp\gametypes\br_dev.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_lootcache.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_699beeb185d284d2;
 #using script_769dc3897af7ecc2;
+#using scripts\common\callbacks;
+#using scripts\common\string;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_dev;
+#using scripts\mp\gametypes\br_lootcache;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_74ce5173b6df2af7;
 

@@ -190,20 +190,20 @@ function initfacialanims() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x72f
 // Size: 0x16
-function animhasfacialoverride(var_63db3c9e26531938) {
-    return animhasnotetrack(var_63db3c9e26531938, "facial_override");
+function animhasfacialoverride(a_anim) {
+    return animhasnotetrack(a_anim, "facial_override");
 }
 
 // Namespace face / scripts\anim\face
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x74e
 // Size: 0xf5
-function playfacialanim(var_63db3c9e26531938, a_state, a_idx) {
+function playfacialanim(a_anim, a_state, a_idx) {
     if (isdefined(self.bdisabledefaultfacialanims) && self.bdisabledefaultfacialanims) {
         self aiclearanim(generic_human%head, 0.2);
         return;
     }
-    if (isdefined(var_63db3c9e26531938) && animhasfacialoverride(var_63db3c9e26531938)) {
+    if (isdefined(a_anim) && animhasfacialoverride(a_anim)) {
         self aiclearanim(generic_human%head, 0.2);
         return;
     }

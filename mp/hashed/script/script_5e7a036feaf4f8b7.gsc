@@ -1,10 +1,10 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\scriptable.gsc;
 #using script_67fb1233e876ed8;
-#using scripts\mp\gametypes\br_functional_poi.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using scripts\common\utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_functional_poi;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace namespace_bbd71179be099380;
 
@@ -25,7 +25,7 @@ function init() {
     level.var_ed20ae31a47f989f.var_5a8c5ca1df0ae11d = getdvarint(@"hash_f245a26cc1fc582", 0);
     level.var_ed20ae31a47f989f.var_d312de18b3bed3e7 = getdvarint(@"hash_36e4b28f99c3d64c", 0);
     level.var_ed20ae31a47f989f.spawn_percent = getdvarfloat(@"hash_423367c04ee7dd39", 1);
-    level.var_ed20ae31a47f989f.var_dd0b7f81bf42a5ea = getdvarint(@"hash_779153d042fa9de7", 360);
+    level.var_ed20ae31a47f989f.dispense_angle = getdvarint(@"hash_779153d042fa9de7", 360);
     level.var_ed20ae31a47f989f.var_70da8bb6903d62dc = &onprematchdone;
     /#
         level.var_ed20ae31a47f989f.debug_spawn = &function_790c4dd4cb830412;
@@ -153,7 +153,7 @@ function function_443d890d24291fd5(interval, limit) {
     }
     self setscriptablepartstate("broken_atm", "visible");
     startingyaw = self.angles[1];
-    var_ef17285813d8af9d = level.var_ed20ae31a47f989f.var_dd0b7f81bf42a5ea;
+    var_ef17285813d8af9d = level.var_ed20ae31a47f989f.dispense_angle;
     var_f638ffb0f773a822 = var_ef17285813d8af9d / limit;
     startingyaw -= var_ef17285813d8af9d / 2;
     level.var_ed20ae31a47f989f.var_84c8c837e7a7644d[self.var_2954ef0ba3ca0371] = [];

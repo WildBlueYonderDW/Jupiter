@@ -1,16 +1,16 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\infilexfil\infilexfil.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\infilexfil.gsc;
 #using script_7ab5b649fa408138;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\music_and_dialog.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\flags;
+#using scripts\mp\infilexfil\infilexfil;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\utility\infilexfil;
+#using scripts\mp\utility\player;
 
 #namespace mi8_infil;
 
@@ -327,7 +327,7 @@ function infilthink(team, scene_name) {
 // Size: 0x175
 function vehiclethink(team, scene_node, scene_name, extra_crew) {
     self.linktoent = spawninfilvehicle(scene_node, team, scene_name);
-    if (self.originalsubtype != self.subtype && (getdvar(@"hash_687fb8f9b7a23245") == "mp_downtown_gw" || getdvar(@"hash_687fb8f9b7a23245") == "mp_port2_gw")) {
+    if (self.originalsubtype != self.subtype && (getdvar(@"g_mapname") == "mp_downtown_gw" || getdvar(@"g_mapname") == "mp_port2_gw")) {
         scene_name = self.originalsubtype;
     }
     anim_first_frame_solo(self.linktoent, "mi8_infil_" + scene_name + "_" + team);
@@ -566,7 +566,7 @@ function script_model_alpha_anims(subtype) {
 // Checksum 0x0, Offset: 0x2795
 // Size: 0x50e
 function vehicles_alpha_anims(subtype, team, originalsubtype) {
-    mapname = getdvar(@"hash_687fb8f9b7a23245");
+    mapname = getdvar(@"g_mapname");
     if (isdefined(originalsubtype) && subtype != originalsubtype && (mapname == "mp_downtown_gw" || mapname == "mp_port2_gw")) {
         switch (originalsubtype) {
         case #"hash_ac5f2d60e641dce":
@@ -599,7 +599,7 @@ function vehicles_alpha_anims(subtype, team, originalsubtype) {
     switch (subtype) {
     case #"hash_6829ee5abc10c38b":
         level.scr_animtree["mi8"] = %mp_vehicles_always_loaded;
-        switch (getdvar(@"hash_687fb8f9b7a23245")) {
+        switch (getdvar(@"g_mapname")) {
         case #"hash_32eaa112f8caa7e4":
             if (team == "axis") {
                 level.scr_anim["mi8"]["mi8_infil_" + subtype + "_" + team] = mp_vehicles_always_loaded%mp_infil_mi8_a_heli_downtown_east;
@@ -629,7 +629,7 @@ function vehicles_alpha_anims(subtype, team, originalsubtype) {
         break;
     case #"hash_1cc79b02710cab23":
         level.scr_animtree["mi8"] = %mp_vehicles_always_loaded;
-        switch (getdvar(@"hash_687fb8f9b7a23245")) {
+        switch (getdvar(@"g_mapname")) {
         case #"hash_50de71be6e7469ff":
         case #"hash_7a28db3c5928c489":
             if (team == "axis") {

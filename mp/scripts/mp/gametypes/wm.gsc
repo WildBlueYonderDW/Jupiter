@@ -1,48 +1,48 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using script_7ab5b649fa408138;
-#using scripts\mp\gamelogic.gsc;
-#using script_57614a088fb41089;
-#using scripts\mp\gametypes\wm_objectives.gsc;
-#using script_7406801b4c228018;
-#using scripts\mp\gametypes\wm_ending.gsc;
-#using scripts\mp\gametypes\wm_ui.gsc;
-#using scripts\mp\spawnlogic.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\globallogic.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\parachute.gsc;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\gametypes\wm_utility.gsc;
-#using scripts\mp\gametypes\obj_dom.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\equipment\tac_insert.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\gametypes\common.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\menus.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\spawnscoring.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\outofbounds.gsc;
+#using script_57614a088fb41089;
+#using script_7406801b4c228018;
+#using script_7ab5b649fa408138;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\cp_mp\parachute;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\engine\utility;
+#using scripts\mp\equipment\tac_insert;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\common;
+#using scripts\mp\gametypes\obj_dom;
+#using scripts\mp\gametypes\wm_ending;
+#using scripts\mp\gametypes\wm_objectives;
+#using scripts\mp\gametypes\wm_ui;
+#using scripts\mp\gametypes\wm_utility;
+#using scripts\mp\globallogic;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\menus;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\outofbounds;
+#using scripts\mp\persistence;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rank;
+#using scripts\mp\spawnlogic;
+#using scripts\mp\spawnscoring;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\debug;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
 
 #namespace wm;
 
@@ -51,7 +51,7 @@
 // Checksum 0x0, Offset: 0x10d7
 // Size: 0x4c5
 function main() {
-    if (getdvar(@"hash_687fb8f9b7a23245") == "mp_background") {
+    if (getdvar(@"g_mapname") == "mp_background") {
         return;
     }
     scripts\mp\globallogic::init();
@@ -1485,7 +1485,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
         }
     } else if (level.zone.objective.objectivetype == 12) {
         ownerteam = game["defenders"];
-        capture_zone = level.zone.var_d731642d971f0c49;
+        capture_zone = level.zone.flag_capture_zone;
         if (isdefined(victim.carryingflag)) {
             victimtouching = 1;
         } else if (isdefined(attacker.carryingflag)) {
@@ -2022,11 +2022,11 @@ function function_6e066fa0b0311456(volume) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x65be
 // Size: 0x67
-function function_736005736220cad7(var_61d77bc6a16e68d1) {
+function function_736005736220cad7(oob_time) {
     if (!isdefined(self.owner) || !isplayer(self.owner) || istrue(self.owner.var_7fd12290e298a95b)) {
         return;
     }
-    self.owner scripts\mp\gametypes\wm_ui::function_557efb699f50447b(var_61d77bc6a16e68d1);
+    self.owner scripts\mp\gametypes\wm_ui::function_557efb699f50447b(oob_time);
     self.owner thread function_86f0acfd937bcc04(self);
 }
 

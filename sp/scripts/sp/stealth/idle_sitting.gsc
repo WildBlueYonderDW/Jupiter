@@ -1,6 +1,6 @@
-#namespace namespace_4e7dd5a18c8a2e38;
+#namespace idle_sitting;
 
-// Namespace namespace_4e7dd5a18c8a2e38 / scripts\sp\stealth\idle_sitting
+// Namespace idle_sitting / scripts\sp\stealth\idle_sitting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x27e
 // Size: 0x2b
@@ -11,7 +11,7 @@ function main() {
     script_model();
 }
 
-// Namespace namespace_4e7dd5a18c8a2e38 / scripts\sp\stealth\idle_sitting
+// Namespace idle_sitting / scripts\sp\stealth\idle_sitting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b1
 // Size: 0x121

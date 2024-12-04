@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\gametypes\br_keypad_util.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\anim;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gametypes\br_keypad_util;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\utility\lower_message;
 
 #namespace br_bunker_utility;
 

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\flags.gsc;
+#using scripts\common\utility;
+#using scripts\engine\flags;
+#using scripts\engine\utility;
 
 #namespace flags;
 

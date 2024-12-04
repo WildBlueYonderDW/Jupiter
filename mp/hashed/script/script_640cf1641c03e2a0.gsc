@@ -1,11 +1,11 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
 #using script_48814951e916af89;
-#using scripts\mp\poi.gsc;
-#using scripts\mp\ai_behavior.gsc;
 #using script_747ad1ab3322f8bc;
-#using scripts\mp\utility\debug.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\poi;
+#using scripts\mp\utility\debug;
 
 #namespace namespace_39878ad79a617fab;
 
@@ -182,7 +182,7 @@ function function_fa870422edefd17d() {
     self setscriptablepartstate("skydiveVfx", "default", 0);
     self playsound("mp_parachute_land_ally");
     self notify("para_landed");
-    level thread scripts\mp\ai_behavior::function_5d96b05a065564e(self);
+    level thread scripts\mp\ai_behavior::ai_watchForBadPath(self);
 }
 
 // Namespace namespace_39878ad79a617fab / namespace_885300a47c2b51e6
@@ -201,10 +201,10 @@ function function_984016d3b51024a2(numriders, origin, spawners, priority, catego
     if (!isdefined(spawners)) {
         spawners = [];
         newspawnpoints = [];
-        var_3c6bec636ac35df8 = [-150, -75, 0, 75, 150];
+        offset_array = [-150, -75, 0, 75, 150];
         for (i = 0; i < 5; i++) {
             for (j = 0; j < 5; j++) {
-                offset = (var_3c6bec636ac35df8[i], var_3c6bec636ac35df8[j], 0);
+                offset = (offset_array[i], offset_array[j], 0);
                 new_spawn = spawnstruct();
                 new_spawn.origin = origin + offset;
                 landing_spot = getgroundposition(new_spawn.origin, 64);

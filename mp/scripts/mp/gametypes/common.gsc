@@ -1,73 +1,73 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\hud_util.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\gametypes\team_gun.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using script_7c40fa80892a721;
-#using scripts\mp\calloutmarkerping_mp.gsc;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\lui_game_event_aggregator.gsc;
-#using scripts\mp\gametypes\obj_dogtag.gsc;
-#using script_29ec5691a72b84d4;
 #using script_198018ac1916bf3a;
-#using script_3008e3767a2a503c;
-#using script_6cb121f049b87187;
-#using script_3d3105ba2325c3d6;
-#using script_7a8d2a0cbf7d130d;
-#using script_374557d490fff8bd;
-#using script_3e09a5630d611fe;
 #using script_26260e23639e145a;
-#using scripts\mp\flashpoint.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\cranked.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\persistence.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\teamrevive.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\utility\lower_message.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_293ba44c408fef1;
+#using script_29ec5691a72b84d4;
 #using script_2d9d24f7c63ac143;
-#using scripts\mp\class.gsc;
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using script_53da3333b83b3527;
-#using scripts\stealth\player.gsc;
-#using scripts\mp\lightarmor.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\common\ui.gsc;
-#using scripts\engine\trace.gsc;
-#using script_600b944a95c3a7bf;
-#using script_3f1b6713ca4c9c7;
-#using scripts\mp\gametypes\br_plunder.gsc;
+#using script_3008e3767a2a503c;
 #using script_371b4c2ab5861e62;
-#using scripts\mp\utility\print.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\killstreaks\airdrop_multiple.gsc;
-#using scripts\cp_mp\vehicles\vehicle_tracking.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\damage.gsc;
-#using scripts\mp\spawnselection.gsc;
+#using script_374557d490fff8bd;
+#using script_3d3105ba2325c3d6;
+#using script_3e09a5630d611fe;
+#using script_3f1b6713ca4c9c7;
 #using script_451a1a9bd9613164;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\supers.gsc;
+#using script_48814951e916af89;
+#using script_53da3333b83b3527;
+#using script_600b944a95c3a7bf;
+#using script_6cb121f049b87187;
+#using script_7a8d2a0cbf7d130d;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\ui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\airdrop_multiple;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle_tracking;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\calloutmarkerping_mp;
+#using scripts\mp\class;
+#using scripts\mp\cranked;
+#using scripts\mp\damage;
+#using scripts\mp\flags;
+#using scripts\mp\flashpoint;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\obj_dogtag;
+#using scripts\mp\gametypes\team_gun;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\lightarmor;
+#using scripts\mp\persistence;
+#using scripts\mp\rank;
+#using scripts\mp\spawnselection;
+#using scripts\mp\supers;
+#using scripts\mp\teamrevive;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\lui_game_event_aggregator;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
+#using scripts\stealth\player;
 
 #namespace common;
 
@@ -152,12 +152,12 @@ function updatecommongametypedvars() {
     if (level.var_d11891ea093da336) {
         namespace_b09d1ea3e62b8710::init();
     }
-    level.var_642e0047d274650a = getdvarint(@"hash_1f0bef560ef722c7", 0);
+    level.var_642e0047d274650a = getdvarint(@"scr_cache", 0);
     if (level.var_642e0047d274650a) {
         namespace_d68faad943dc81c::init();
     }
     if (!istrue(level.var_ec2fb549b15ad827) && !privatematch()) {
-        level.var_998f1f31d478a7d5 = getdvarint(@"hash_d1bdc17a2161c66a");
+        level.var_998f1f31d478a7d5 = getdvarint(@"scr_countdown");
         if (level.var_998f1f31d478a7d5) {
             if (getgametype() == "ob" || getgametype() == "ob_rift_run") {
                 namespace_bc22b8386eb4de80::init();
@@ -726,7 +726,7 @@ function function_88b47710bece931f() {
         setdvar(@"hash_a4d532f42d919827", 1);
     #/
     setdvar(@"hash_e38e16d9fbf3fc43", "mp/loot/br/default/loot_item_defs.csv");
-    setdvar(@"hash_add02e4fff48882f", " mp/loot/core/risk/loot_table_zones.csv");
+    setdvar(@"loot_table_zones", " mp/loot/core/risk/loot_table_zones.csv");
     setdvar(@"hash_ce882ca282c2f85e", 1);
     scripts\mp\gametypes\br_armory_kiosk::function_b38f5ffe645943c3("core");
     if (level.var_1e17e3480b1d264d) {
@@ -1453,7 +1453,7 @@ function function_36532a1506f2c161() {
         }
     }
     level.var_c3a5ecc6db827a75 = 0;
-    matchmakingmatch = getdvarint(@"onlinegame") && !getdvarint(@"hash_485ef1ed1d39d3a3");
+    matchmakingmatch = getdvarint(@"onlinegame") && !getdvarint(@"xblive_privatematch");
     if (matchmakingmatch) {
         level.var_c3a5ecc6db827a75 = getdvarint(@"hash_750e151e9a3727e7", 0);
     }

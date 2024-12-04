@@ -1,16 +1,16 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using script_7ff3a914e6c698c5;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
-#using script_36d7680b337b15b;
 #using script_1260535c202c8074;
-#using script_3397bed1b741f042;
-#using script_193e3e231841082f;
-#using script_51003dec974513a9;
 #using script_15efdb5808058ab7;
+#using script_193e3e231841082f;
+#using script_3397bed1b741f042;
+#using script_36d7680b337b15b;
+#using script_3badb8914eb5ac16;
+#using script_51003dec974513a9;
+#using script_7edf952f8921aa6b;
+#using script_7ff3a914e6c698c5;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace zombie_deathworm;
 

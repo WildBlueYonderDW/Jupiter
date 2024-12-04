@@ -1,40 +1,40 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using script_66122a002aff5d57;
-#using script_7ef95bba57dc4b82;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\cp_mp\execution.gsc;
-#using script_2669878cf5a1b6bc;
 #using script_12e2fb553ec1605e;
-#using script_74502a9e0ef1f19c;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\equipment\nvg.gsc;
-#using script_7c40fa80892a721;
-#using scripts\cp\challenges_cp.gsc;
-#using scripts\cp\cp_relics.gsc;
-#using scripts\cp\cp_gameskill.gsc;
 #using script_18c9036dc9a4081;
-#using scripts\cp\cp_grenade_crate.gsc;
-#using scripts\cp\loot_system.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_467f0fdfdd155a45;
-#using scripts\cp_mp\killstreaks\airdrop_multiple.gsc;
-#using script_7e994e91383c7ba;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\cp\cp_movers.gsc;
-#using scripts\cp\cp_hud_message.gsc;
 #using script_5e5507d57bbbb709;
-#using scripts\cp\inventory\cp_target_marker.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
+#using script_66122a002aff5d57;
+#using script_74502a9e0ef1f19c;
+#using script_7c40fa80892a721;
+#using script_7e994e91383c7ba;
+#using script_7ef95bba57dc4b82;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\challenges_cp;
+#using scripts\cp\cp_gameskill;
+#using scripts\cp\cp_grenade_crate;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_movers;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_relics;
+#using scripts\cp\equipment\nvg;
+#using scripts\cp\inventory\cp_target_marker;
+#using scripts\cp\loot_system;
+#using scripts\cp\utility;
+#using scripts\cp_mp\execution;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\airdrop_multiple;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\objidpoolmanager;
 
-#namespace namespace_aa9e09828150e804;
+#namespace airdrop_cp;
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xadd
 // Size: 0x2a4
@@ -65,7 +65,7 @@ function init() {
     level thread function_20c12aa7546fcaa5();
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd89
 // Size: 0x7c
@@ -86,7 +86,7 @@ function loadout_clearweapons(var_bea1f8064eda3de9) {
     self.secondaryweaponobj = undefined;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe0d
 // Size: 0x72
@@ -106,7 +106,7 @@ function loadout_clearplayer(var_bea1f8064eda3de9, var_645209a780738479) {
     scripts\cp_mp\execution::_clearexecution();
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xe87
 // Size: 0x21
@@ -114,7 +114,7 @@ function loadout_updateplayeractionslots(struct, class) {
     self setactionslot(3, "altmode");
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xeb0
 // Size: 0x1a
@@ -125,7 +125,7 @@ function respawnitems_getrespawnitems() {
     return undefined;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xed3
 // Size: 0x1e
@@ -136,7 +136,7 @@ function private respawnitems_hasequipmentdata(respawnitems) {
     return isdefined(respawnitems.equipment);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xefa
 // Size: 0x289
@@ -161,7 +161,7 @@ function loadout_updateclassfinalweapons(struct) {
     return struct;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x118c
 // Size: 0x5e
@@ -172,7 +172,7 @@ function function_8227ba8be6102414(struct, class, setspawnweap, skipfirstraise) 
     namespace_751288259782653c::function_9743c56a4d2dc135(struct);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x11f2
 // Size: 0x1f6
@@ -215,7 +215,7 @@ function loadout_updateplayerweapons(struct, class, setspawnweap, skipfirstraise
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13f0
 // Size: 0xfd
@@ -246,7 +246,7 @@ function loadout_updateplayerequipment(struct) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x14f5
 // Size: 0x7a
@@ -259,11 +259,11 @@ function loadout_updateplayer(globalstruct, struct, class, setspawnweap, skipfir
     self.lastclass = self.class;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1577
 // Size: 0x106
-function giveloadout(team, class, var_386258bb01e2c08, var_bea1f8064eda3de9, skipfirstraise, var_645209a780738479) {
+function giveloadout(team, class, class_index, var_bea1f8064eda3de9, skipfirstraise, var_645209a780738479) {
     self notify("giveLoadout_start");
     self.gettingloadout = 1;
     var_364d691b501cd27f = namespace_f8d3520d3483c1::function_600f6cf462e983f();
@@ -272,10 +272,10 @@ function giveloadout(team, class, var_386258bb01e2c08, var_bea1f8064eda3de9, ski
     if (isdefined(self.preloadedclassstruct)) {
         struct = self.preloadedclassstruct;
         self.preloadedclassstruct = undefined;
-        self.class_num = var_386258bb01e2c08;
+        self.class_num = class_index;
     } else {
         struct = namespace_751288259782653c::loadout_getclassstruct();
-        if (function_d35dd7ced886e904(var_386258bb01e2c08)) {
+        if (function_d35dd7ced886e904(class_index)) {
             struct = namespace_751288259782653c::loadout_updateclassdefault(struct, class - 100);
         } else {
             struct = namespace_751288259782653c::loadout_updateclasscustom(struct, class);
@@ -291,18 +291,18 @@ function giveloadout(team, class, var_386258bb01e2c08, var_bea1f8064eda3de9, ski
     self notify("giveLoadout");
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1685
 // Size: 0x16
-function function_d35dd7ced886e904(var_386258bb01e2c08) {
-    if (var_386258bb01e2c08 >= 100) {
+function function_d35dd7ced886e904(class_index) {
+    if (class_index >= 100) {
         return true;
     }
     return false;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x16a4
 // Size: 0xa2
@@ -320,24 +320,24 @@ function swaploadout(newclass, var_645209a780738479) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x174e
 // Size: 0x86
-function onclasschoicecallback(var_386258bb01e2c08, var_f01f8e178ff54eda, var_645209a780738479) {
-    self notify("loadout_class_selected", var_386258bb01e2c08);
-    if (var_386258bb01e2c08 < 0) {
+function onclasschoicecallback(class_index, var_f01f8e178ff54eda, var_645209a780738479) {
+    self notify("loadout_class_selected", class_index);
+    if (class_index < 0) {
         return;
     }
-    if (!isdefined(self.pers["class"]) || var_386258bb01e2c08 != self.pers["class"]) {
-        self.pers["class"] = var_386258bb01e2c08;
-        self.class = var_386258bb01e2c08;
+    if (!isdefined(self.pers["class"]) || class_index != self.pers["class"]) {
+        self.pers["class"] = class_index;
+        self.class = class_index;
     }
     var_cd83a28652a3f837 = 1;
-    thread swaploadout(var_386258bb01e2c08, var_645209a780738479);
+    thread swaploadout(class_index, var_645209a780738479);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17dc
 // Size: 0x11b
@@ -351,21 +351,21 @@ function function_20c12aa7546fcaa5() {
     }
     initcploadoutcratedata();
     level.var_f3af0989226d9cf0 = [];
-    foreach (var_f1cfe92d52b604ae in var_540e67c54116d1a7) {
-        crate_origin = var_f1cfe92d52b604ae.origin;
-        var_7c79544c2c05c93d = var_f1cfe92d52b604ae.angles;
-        var_f1cfe92d52b604ae delete();
+    foreach (old_crate in var_540e67c54116d1a7) {
+        crate_origin = old_crate.origin;
+        crate_angles = old_crate.angles;
+        old_crate delete();
         if (scripts\cp\cp_relics::function_7915e88a08f28705() && !scripts\cp\cp_gameskill::function_f8448fd91abb54c8()) {
             continue;
         }
         if (getdvarint(@"hash_e8a826507d365217", 0)) {
             continue;
         }
-        level.var_f3af0989226d9cf0[level.var_f3af0989226d9cf0.size] = scripts\cp_mp\killstreaks\airdrop::createcrate(undefined, "allies", "loadout_drop_cp", crate_origin, var_7c79544c2c05c93d, undefined, 1, 0);
+        level.var_f3af0989226d9cf0[level.var_f3af0989226d9cf0.size] = scripts\cp_mp\killstreaks\airdrop::createcrate(undefined, "allies", "loadout_drop_cp", crate_origin, crate_angles, undefined, 1, 0);
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18ff
 // Size: 0x12
@@ -373,7 +373,7 @@ function airdrop_cannotUseLoadoutCrateHint() {
     scripts\cp\utility::hint_prompt("cant_use_loadout_crate_again", 1, 2);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1919
 // Size: 0x1a3
@@ -386,18 +386,18 @@ function function_3fbfee87ee058fe1(crate, var_645209a780738479) {
     thread function_91993094d8aade48("death");
     thread function_91993094d8aade48("last_stand_start");
     thread function_91993094d8aade48("luinotifyserver");
-    self waittill("exit_airdrop_loadout", result, var_386258bb01e2c08);
+    self waittill("exit_airdrop_loadout", result, class_index);
     if (isdefined(crate) && iscp() && isdefined(result) && !(result < 0)) {
         crate.disabled_use_for[self getentitynumber()] = 1;
     }
     self.instantclassswapallowed = 0;
     self freezecontrols(0);
     self setclientomnvar("ui_options_menu", 0);
-    if (isdefined(result) && !(result < 0) && isdefined(var_386258bb01e2c08) && var_386258bb01e2c08 >= 0) {
+    if (isdefined(result) && !(result < 0) && isdefined(class_index) && class_index >= 0) {
         if (isdefined(crate)) {
             crate scripts\cp_mp\killstreaks\airdrop::function_d854bf5a8cd7daf2(self);
         }
-        onclasschoicecallback(var_386258bb01e2c08, undefined, var_645209a780738479);
+        onclasschoicecallback(class_index, undefined, var_645209a780738479);
         return;
     }
     if (isdefined(crate) && getdvarint(@"hash_618b9c003b5b3883") == 0) {
@@ -413,7 +413,7 @@ function function_3fbfee87ee058fe1(crate, var_645209a780738479) {
     return;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ac4
 // Size: 0x7f
@@ -437,7 +437,7 @@ function function_91993094d8aade48(actionnotify) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b4b
 // Size: 0xa3
@@ -455,7 +455,7 @@ function initcpcratedata() {
     leveldata.capturecallback = &cpcratecapturecallback;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bf6
 // Size: 0x29
@@ -465,7 +465,7 @@ function getcpcratedatabytype(type) {
     return data;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c28
 // Size: 0x37
@@ -477,7 +477,7 @@ function cpcrateactivatecallback(isfirstactivation) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c67
 // Size: 0x50
@@ -491,7 +491,7 @@ function cpcratecapturecallback(player) {
     player [[ level.custom_giveloadout ]](0);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cbf
 // Size: 0xb0
@@ -511,7 +511,7 @@ function initcparmsraceemptycrate() {
     leveldata.onecaptureperplayer = 0;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d77
 // Size: 0xb5
@@ -530,7 +530,7 @@ function initcpammoarmorcrate() {
     leveldata.onecaptureperplayer = 1;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e34
 // Size: 0x24f
@@ -561,8 +561,8 @@ function cpcpammoarmorcratecapturecallback(player) {
             player scripts\cp\utility::function_ad3ce5e1679df13d(weapon);
         }
     }
-    foreach (var_a025330c35d8d47e in player.powers) {
-        if (var_a025330c35d8d47e.charges < var_a025330c35d8d47e.maxcharges) {
+    foreach (pwr_struct in player.powers) {
+        if (pwr_struct.charges < pwr_struct.maxcharges) {
             full = 0;
         }
     }
@@ -581,7 +581,7 @@ function cpcpammoarmorcratecapturecallback(player) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x208b
 // Size: 0xd1
@@ -602,7 +602,7 @@ function initoperationcratedata() {
     leveldata.heliheightoffset = 12000;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2164
 // Size: 0xbb
@@ -621,7 +621,7 @@ function initcprooftopcrate() {
     leveldata.onecaptureperplayer = 0;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2227
 // Size: 0x12b
@@ -647,7 +647,7 @@ function initcploadoutcratedata() {
     leveldata.onecaptureperplayer = 0;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x235a
 // Size: 0x62
@@ -663,7 +663,7 @@ function cpoperationcrateactivatecallback(isfirstactivation) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x23c4
 // Size: 0x18
@@ -671,7 +671,7 @@ function cprooftopcratecapturecallback(player) {
     [[ level.rooftop_crate_usefunc ]](player);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x23e4
 // Size: 0x39a
@@ -708,8 +708,8 @@ function cpoperationcratecapturecallback(player) {
             player scripts\cp\utility::function_ad3ce5e1679df13d(weapon);
         }
     }
-    foreach (var_a025330c35d8d47e in player.powers) {
-        if (var_a025330c35d8d47e.charges < var_a025330c35d8d47e.maxcharges) {
+    foreach (pwr_struct in player.powers) {
+        if (pwr_struct.charges < pwr_struct.maxcharges) {
             full = 0;
         }
     }
@@ -727,9 +727,9 @@ function cpoperationcratecapturecallback(player) {
     } else {
         var_6e1ec6f2c0ee6b2c = player.dpad_selection_index - 1;
     }
-    var_c64b92d56ec838b3 = scripts\cp\loot_system::get_empty_munition_slot(player);
-    if (isdefined(var_c64b92d56ec838b3)) {
-        var_6e1ec6f2c0ee6b2c = var_c64b92d56ec838b3;
+    empty_slot = scripts\cp\loot_system::get_empty_munition_slot(player);
+    if (isdefined(empty_slot)) {
+        var_6e1ec6f2c0ee6b2c = empty_slot;
     } else {
         player scripts\cp\utility::hint_prompt("munition_slots_full", 1, 2);
         return;
@@ -754,7 +754,7 @@ function cpoperationcratecapturecallback(player) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2786
 // Size: 0x9d
@@ -776,7 +776,7 @@ function cploadoutcrateactivatecallback(isfirstactivation) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x282b
 // Size: 0x7f
@@ -798,7 +798,7 @@ function function_fad514cdb3e05b87(headicon) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x28b2
 // Size: 0x152
@@ -835,7 +835,7 @@ function cploadoutcratecapturecallback(player) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a0c
 // Size: 0x9
@@ -843,7 +843,7 @@ function airdrop_airdropmultipleinit() {
     scripts\cp_mp\killstreaks\airdrop_multiple::airdrop_multiple_init();
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a1d
 // Size: 0x9
@@ -851,7 +851,7 @@ function function_563387bd27d5b942() {
     namespace_33ee5ceeb5f1d380::function_f383491974a17b9a();
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a2e
 // Size: 0x2
@@ -859,7 +859,7 @@ function airdrop_registerscoreinfo() {
     
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a38
 // Size: 0xc9
@@ -873,7 +873,7 @@ function airdrop_registeractionset() {
     val::group_register("crateUse", ["offhand_weapons", "weapon", "killstreaks", "supers"]);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b09
 // Size: 0x30
@@ -883,11 +883,11 @@ function airdrop_updateuiprogress(object, bool) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b41
 // Size: 0x238
-function updateuiprogress(object, var_9828f1535acbc937) {
+function updateuiprogress(object, securing) {
     if (!isdefined(level.hostmigrationtimer)) {
         if (isdefined(object.interactteam) && object.interactteam == "none") {
             self setclientomnvar("ui_objective_pinned_text_param", 0);
@@ -933,12 +933,12 @@ function updateuiprogress(object, var_9828f1535acbc937) {
                 idx = 8;
                 break;
             }
-            updateuisecuring(progress, var_9828f1535acbc937, idx, object, object.usetime);
+            updateuisecuring(progress, securing, idx, object, object.usetime);
         }
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d81
 // Size: 0x26
@@ -949,7 +949,7 @@ function isrevivetrigger() {
     return false;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2db0
 // Size: 0x65
@@ -964,13 +964,13 @@ function existinarray(ent, array) {
     return false;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e1e
 // Size: 0x2f2
-function updateuisecuring(progress, var_9828f1535acbc937, idx, object, usetime) {
+function updateuisecuring(progress, securing, idx, object, usetime) {
     objid = undefined;
-    if (var_9828f1535acbc937) {
+    if (securing) {
         if (!isdefined(object.usedby)) {
             object.usedby = [];
         }
@@ -1023,7 +1023,7 @@ function updateuisecuring(progress, var_9828f1535acbc937, idx, object, usetime) 
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3118
 // Size: 0x52
@@ -1038,7 +1038,7 @@ function migrationcapturereset(player) {
     self.migrationcapturereset = undefined;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3172
 // Size: 0x1c
@@ -1046,7 +1046,7 @@ function airdrop_allowactionset(name, allow) {
     val::group_set(name, allow);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3196
 // Size: 0x25
@@ -1054,7 +1054,7 @@ function airdrop_unresolvedcollisionnearestnode(player, var_4258fb168fb20ba6, mo
     childthread scripts\cp\cp_movers::unresolved_collision_nearest_node(player, var_4258fb168fb20ba6);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x31c3
 // Size: 0x13
@@ -1062,15 +1062,15 @@ function airdrop_showerrormessage(string_ref) {
     scripts\cp\cp_hud_message::showerrormessage(string_ref);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x31de
 // Size: 0x2b
 function airdrop_awardkillstreak(streakname, owner, crate) {
-    owner thread namespace_1f50a6a7107e9381::function_4a1fd54affdaa367(streakname, 1, 0, 0, 1);
+    owner thread namespace_1f50a6a7107e9381::kit_givekillstreak(streakname, 1, 0, 0, 1);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3211
 // Size: 0x25
@@ -1078,7 +1078,7 @@ function airdrop_showkillstreaksplash(splashref, streakval, fromcarepackage) {
     scripts\cp\cp_hud_message::showkillstreaksplash(splashref, streakval, fromcarepackage);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x323e
 // Size: 0x12
@@ -1086,7 +1086,7 @@ function airdrop_gettargetmarker(streakinfo) {
     return scripts\cp\inventory\cp_target_marker::gettargetmarker(streakinfo);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3259
 // Size: 0x39
@@ -1094,7 +1094,7 @@ function airdrop_airdropmultipledropcrates(owner, team, position, angles, destin
     scripts\cp_mp\killstreaks\airdrop_multiple::airdrop_multiple_dropcrates(owner, team, position, angles, destination, 1);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x329a
 // Size: 0xb
@@ -1102,7 +1102,7 @@ function airdrop_registercrateforcleanup(crate) {
     
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x32ad
 // Size: 0x2
@@ -1110,7 +1110,7 @@ function airdrop_makeweaponfromcrate() {
     
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x32b7
 // Size: 0x2
@@ -1118,7 +1118,7 @@ function airdrop_makeitemfromcrate() {
     
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32c1
 // Size: 0x1c
@@ -1126,7 +1126,7 @@ function airdrop_outlinedisable(id, var_420a996e67989dc4) {
     scripts\cp\cp_outline_utility::outlinedisable(id, var_420a996e67989dc4);
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x32e5
 // Size: 0x1b
@@ -1134,7 +1134,7 @@ function airdrop_br_forcegiveweapon(weaponname, player, completeweapon) {
     
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3308
 // Size: 0x2
@@ -1142,7 +1142,7 @@ function airdrop_capturelootcachecallback() {
     
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3312
 // Size: 0x4c
@@ -1159,7 +1159,7 @@ function airdrop_getgamemodespecificcratedata() {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3366
 // Size: 0x2d
@@ -1173,7 +1173,7 @@ function airdrop_specialcasecanusecrate() {
     return true;
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x339c
 // Size: 0x81
@@ -1190,7 +1190,7 @@ function makeitemsfromcrate(player) {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x3425
 // Size: 0x2b
@@ -1198,7 +1198,7 @@ function createdropweapon(completeweaponname, pos, ori, firstspawn, var_5b8a430b
     
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3458
 // Size: 0xce
@@ -1224,7 +1224,7 @@ function managedroppedents() {
     }
 }
 
-// Namespace namespace_aa9e09828150e804 / scripts\cp\killstreaks\airdrop_cp
+// Namespace airdrop_cp / scripts\cp\killstreaks\airdrop_cp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x352e
 // Size: 0x2a8

@@ -1,13 +1,13 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\utility\trigger.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_5bc60484d17fa95c;
 #using script_3aa8e63a56e3416;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_5bc60484d17fa95c;
+#using scripts\common\callbacks;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\utility\trigger;
 
 #namespace namespace_e05e905a3c01778f;
 

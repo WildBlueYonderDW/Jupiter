@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\bounty_system.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_6cb0280f7aa7d3cd;
-#using scripts\mp\utility\spawn_event_aggregator.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_188008b85f8b14d4;
-#using script_600b944a95c3a7bf;
-#using scripts\mp\gametypes\br_plunder.gsc;
 #using script_1f97a44d1761c919;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using script_419eebc6f24e287;
-#using scripts\mp\gamelogic.gsc;
 #using script_3ff084f114b7f6c9;
+#using script_419eebc6f24e287;
+#using script_600b944a95c3a7bf;
+#using script_6cb0280f7aa7d3cd;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bounty_system;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\spawn_event_aggregator;
+#using scripts\mp\utility\teams;
 
 #namespace dmz_bounty;
 

@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using script_5ffe68292dc22949;
-#using scripts\sp\player\gestures.gsc;
-#using script_5e36c9821b4d5091;
-#using scripts\sp\analytics.gsc;
-#using script_70ae34f0e2bef9c8;
 #using script_2db81c9f19d2f67e;
-#using scripts\engine\sp\objectives.gsc;
-#using scripts\sp\player_stats.gsc;
-#using scripts\sp\loot.gsc;
-#using scripts\sp\audio.gsc;
-#using scripts\sp\gameskill.gsc;
-#using scripts\sp\equipment\offhands.gsc;
 #using script_44a4ad8c0d35f203;
+#using script_5e36c9821b4d5091;
+#using script_5ffe68292dc22949;
+#using script_70ae34f0e2bef9c8;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\math;
+#using scripts\engine\sp\objectives;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\analytics;
+#using scripts\sp\audio;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\gameskill;
+#using scripts\sp\loot;
+#using scripts\sp\player\gestures;
+#using scripts\sp\player_stats;
+#using scripts\sp\utility;
 
 #namespace player;
 
@@ -104,7 +104,7 @@ function private onplayerdamaged(damage, attacker, inflictor, direction, point, 
     }
     player.dmgtoplayer = damage;
     player.dmgpoint = point;
-    player dispersedamage(player.damage.var_86bdfe2040a35d42, damage, attacker, direction, point, type, objweapon, inflictor);
+    player dispersedamage(player.damage.disperse, damage, attacker, direction, point, type, objweapon, inflictor);
     thread scripts\sp\analytics::function_9eb39cb364485a98(attacker, objweapon, damage, type, partname);
     function_d01b876144e4e278();
 }
@@ -341,14 +341,14 @@ function function_e99fd4373d05576b(var_b3c4a73244cc728d, var_339fa1f9302e57d7) {
     newnode = spawnstruct();
     newnode.func = var_b3c4a73244cc728d;
     newnode.var_11f23d2919cdd79d = var_339fa1f9302e57d7;
-    if (isdefined(self.damage.var_86bdfe2040a35d42)) {
-        self.damage.var_86bdfe2040a35d42.next = newnode;
+    if (isdefined(self.damage.disperse)) {
+        self.damage.disperse.next = newnode;
         if (!isdefined(newnode.var_11f23d2919cdd79d)) {
-            newnode.var_11f23d2919cdd79d = self.damage.var_86bdfe2040a35d42.var_11f23d2919cdd79d;
+            newnode.var_11f23d2919cdd79d = self.damage.disperse.var_11f23d2919cdd79d;
         }
-        newnode.prev = self.damage.var_86bdfe2040a35d42;
+        newnode.prev = self.damage.disperse;
     }
-    self.damage.var_86bdfe2040a35d42 = newnode;
+    self.damage.disperse = newnode;
     return newnode;
 }
 
@@ -365,14 +365,14 @@ function function_d7e93c427bd352a2(var_63ce86795fb3d94f) {
     if (isdefined(var_63ce86795fb3d94f.next)) {
         var_63ce86795fb3d94f.next.prev = var_63ce86795fb3d94f.prev;
     }
-    if (is_equal(self.damage.var_86bdfe2040a35d42, var_63ce86795fb3d94f)) {
-        self.damage.var_86bdfe2040a35d42 = var_63ce86795fb3d94f.prev;
+    if (is_equal(self.damage.disperse, var_63ce86795fb3d94f)) {
+        self.damage.disperse = var_63ce86795fb3d94f.prev;
     }
     var_63ce86795fb3d94f.func = undefined;
     var_63ce86795fb3d94f.next = undefined;
     var_63ce86795fb3d94f.prev = undefined;
     var_63ce86795fb3d94f.var_11f23d2919cdd79d = undefined;
-    assert(isdefined(self.damage.var_86bdfe2040a35d42));
+    assert(isdefined(self.damage.disperse));
 }
 
 // Namespace player / scripts\sp\player
@@ -657,7 +657,7 @@ function localizeammonamehack(ammoname) {
 // Checksum 0x0, Offset: 0x3518
 // Size: 0x42
 function attachmentammonamehack(ammoname) {
-    if (ammoname == %"hash_705639760eb6675f" || ammoname == %"hash_239bbb480ed2e266" || ammoname == %"hash_511997e94de2e757") {
+    if (ammoname == %"hash_705639760eb6675f" || ammoname == %"ub_flare" || ammoname == %"hash_511997e94de2e757") {
         return %"hash_71e5eeb8b03626c2";
     }
     return ammoname;
@@ -696,7 +696,7 @@ function attachmentammonamehack(ammoname) {
         self.var_8f835e0ab1dfb567 = spawnstruct();
         self.var_8f835e0ab1dfb567.var_946b001669de27fb = [];
         self.var_8f835e0ab1dfb567.active = 0;
-        self.var_8f835e0ab1dfb567.var_ca76bf5089783ef3 = 0;
+        self.var_8f835e0ab1dfb567.overkill = 0;
         while (!isdefined(self.damage.firedamage) && !isdefined(level.audio)) {
             waitframe();
         }
@@ -730,7 +730,7 @@ function attachmentammonamehack(ammoname) {
     // Size: 0x45b
     function function_cdac508141881a7c() {
         self endon("<dev string:x55>");
-        var_7a2ef8fe66f59b0 = -90;
+        x_start = -90;
         y = 400;
         fontscale = 1;
         function_6840973f983f0bae("<dev string:x6d>", "<dev string:x78>");
@@ -939,13 +939,13 @@ function goprohelmet() {
     self notify("new_Gopro");
     helmet = undefined;
     goprocamerasettings(1);
-    var_e67f0ee2f2905fe4 = (0, 0, 0);
-    var_fcf01b4ac5e877cf = (-3, -1, 5) + var_e67f0ee2f2905fe4;
-    var_17e4b67af685b8b6 = (10, 5, -10) + var_e67f0ee2f2905fe4;
+    global_offset = (0, 0, 0);
+    offset_gun = (-3, -1, 5) + global_offset;
+    offset_helmet = (10, 5, -10) + global_offset;
     if (isdefined(self.goprohelmet)) {
         helmet = spawn("script_model", self.origin);
         helmet setmodel(self.goprohelmet);
-        helmet linktoplayerview(self, "tag_origin", var_17e4b67af685b8b6, (-90, 90, 0), 1, "view_jostle");
+        helmet linktoplayerview(self, "tag_origin", offset_helmet, (-90, 90, 0), 1, "view_jostle");
     }
     self waittill("new_Gopro");
     if (isdefined(helmet)) {
@@ -1476,10 +1476,10 @@ function initfiresfxsmolder() {
 // Size: 0xef
 function function_a0988f4b4d0099f5(var_59325d95a0d5d0a7, var_a8d22612edc48539) {
     if (level.player.model == "") {
-        var_f4db9d1619709ba7 = level.player getlinkedparent();
-        if (isdefined(var_f4db9d1619709ba7)) {
-            if (var_f4db9d1619709ba7 tagexists("tag_origin")) {
-                self linkto(var_f4db9d1619709ba7, "tag_origin", (0, 0, 0), (0, 0, 0));
+        parent_ent = level.player getlinkedparent();
+        if (isdefined(parent_ent)) {
+            if (parent_ent tagexists("tag_origin")) {
+                self linkto(parent_ent, "tag_origin", (0, 0, 0), (0, 0, 0));
             }
         } else {
             println("<dev string:x1d1>");
@@ -1931,8 +1931,8 @@ function enabledeathsdoor() {
     self notify("startHeartbeatPulse");
     utility::setdamageflag(2, 1);
     thread scripts\sp\audio::set_deathsdoor();
-    var_71582f98fdaad45b = 0.5;
-    var_a29c5118c5608db6 = getdeathsshieldduration() + getdeathsdoorduration() + gethealthregentime() - var_71582f98fdaad45b;
+    early_fade = 0.5;
+    var_a29c5118c5608db6 = getdeathsshieldduration() + getdeathsdoorduration() + gethealthregentime() - early_fade;
     thread deathsdooroverlaypulse(var_a29c5118c5608db6);
     fadetime = 0.5;
     holdtime = var_a29c5118c5608db6 - fadetime;
@@ -2533,11 +2533,11 @@ function screeneffectcleanup(hud) {
 function updatedamageoverlay(origin, factor, type) {
     self endon("damageDefault");
     self endon("stopPainOverlays");
-    var_bdb6b8fa63ad8fee = armorbroke();
+    armor_broke = armorbroke();
     if (isdefined(self.damage.var_c981aad229547965)) {
         self.damage.overlay setshader(self.damage.var_c981aad229547965, 640, 480);
         multiplier = 0.6;
-    } else if (var_bdb6b8fa63ad8fee) {
+    } else if (armor_broke) {
         multiplier = 0;
         if (!isdefined(self.damage.var_944ad93199091cf4)) {
             self.damage.var_944ad93199091cf4 = spawn_tag_origin();
@@ -2554,7 +2554,7 @@ function updatedamageoverlay(origin, factor, type) {
     self.damage.overlay fadeovertime(0.05);
     self.damage.overlay.alpha = max(self.damage.overlay.alpha, multiplier);
     wait 0.05;
-    if (var_bdb6b8fa63ad8fee) {
+    if (armor_broke) {
         fadeouttime = 1;
     } else {
         fadeouttime = math::factor_value(0.2, 0.2, factor);
@@ -2884,7 +2884,7 @@ function private function_f2a4a5aed60e552d() {
     } else if (getdvarint(@"hash_d8e69627073e0766")) {
         iprintln("Give Armor Weapon Canceled!");
     }
-    function_e624f59b3bc29353();
+    armor_cleanup();
 }
 
 // Namespace player / scripts\sp\player
@@ -2900,8 +2900,8 @@ function function_c29986cfa0913dce() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8538
 // Size: 0x4e
-function function_e624f59b3bc29353() {
-    function_fe9dd3a82b1a547e();
+function armor_cleanup() {
+    restore_weapon();
     if (getdvarint(@"hash_d8e69627073e0766")) {
         iprintln("Restore values and cleanup - FINISHED!");
     }
@@ -2916,7 +2916,7 @@ function function_e624f59b3bc29353() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x858e
 // Size: 0xfd
-function function_fe9dd3a82b1a547e() {
+function restore_weapon() {
     if (getdvarint(@"hash_d8e69627073e0766")) {
         iprintln("take armor weapon");
     }
@@ -3192,7 +3192,7 @@ function initarmor() {
 // Checksum 0x0, Offset: 0x8d25
 // Size: 0x2d
 function function_12f67117d9715486() {
-    mapname = getdvar(@"hash_687fb8f9b7a23245");
+    mapname = getdvar(@"g_mapname");
     return mapname == "shadowbase" || mapname == "sp_jup_flashback";
 }
 
@@ -3562,9 +3562,9 @@ function hud_think() {
 // Size: 0xd7
 function show_hud_listener() {
     self endon("death");
-    var_997a68d0145b4469 = ["weapon_fired", "aim", "reload_pressed", "weapon_change", "weapon_swap", "hide_hud_omnvar_changed", "frag_pressed", "smoke_pressed", "equipment_change", "current_primary_ammo", "offhand_ammo", "item_ammo", "item_loot", "show_hud_button_pressed", "ammo_pickup", "damage", "armor_pickup", "update_models"];
+    event_notifies = ["weapon_fired", "aim", "reload_pressed", "weapon_change", "weapon_swap", "hide_hud_omnvar_changed", "frag_pressed", "smoke_pressed", "equipment_change", "current_primary_ammo", "offhand_ammo", "item_ammo", "item_loot", "show_hud_button_pressed", "ammo_pickup", "damage", "armor_pickup", "update_models"];
     while (true) {
-        waittill_hud_event_notify(var_997a68d0145b4469);
+        waittill_hud_event_notify(event_notifies);
         if (!in_realism_mode()) {
             show_hud_listener_logic();
         }
@@ -3590,8 +3590,8 @@ function function_be78dbc6c861438f() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9674
 // Size: 0x57
-function waittill_hud_event_notify(var_997a68d0145b4469) {
-    foreach (note in var_997a68d0145b4469) {
+function waittill_hud_event_notify(event_notifies) {
+    foreach (note in event_notifies) {
         self endon(note);
     }
     self waittill("forever");
@@ -3974,11 +3974,11 @@ function offhandremove(equipment) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xa183
 // Size: 0x305
-function offhandswap(equipment, var_1c7780cbd65c3c09, var_36a8844e4a3ba501) {
+function offhandswap(equipment, var_1c7780cbd65c3c09, additional_attachments) {
     weapon = undefined;
     attachments = [];
-    if (!isdefined(var_36a8844e4a3ba501)) {
-        var_36a8844e4a3ba501 = [];
+    if (!isdefined(additional_attachments)) {
+        additional_attachments = [];
     }
     if (isarray(equipment)) {
         foreach (item in equipment) {
@@ -4022,8 +4022,8 @@ function offhandswap(equipment, var_1c7780cbd65c3c09, var_36a8844e4a3ba501) {
             weapon = weapon withattachment(attachment);
         }
     }
-    if (istrue(var_36a8844e4a3ba501.size)) {
-        foreach (attachment in var_36a8844e4a3ba501) {
+    if (istrue(additional_attachments.size)) {
+        foreach (attachment in additional_attachments) {
             weapon = weapon withattachment(attachment);
         }
     }

@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_5bc86a57086a4774;
-#using scripts\mp\gametypes\br_pickups.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_pickups;
 
 #namespace namespace_90161fde3c96091c;
 

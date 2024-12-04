@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_371b4c2ab5861e62;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_aianim.gsc;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\utility;
 
 #namespace utility;
 

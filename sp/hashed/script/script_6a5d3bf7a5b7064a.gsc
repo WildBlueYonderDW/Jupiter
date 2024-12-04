@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_372301af73968cb;
-#using script_7c40fa80892a721;
 #using script_4b87f2871b6b025c;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace damage_effects;
 
@@ -136,7 +136,7 @@ function function_c0124edee3a13496() {
 // Checksum 0x0, Offset: 0xb9b
 // Size: 0x25
 function function_3d879029586de3(alphavalue) {
-    if (getdvarint(@"hash_4d7862eaa83b3b27")) {
+    if (getdvarint(@"touch_enabled")) {
         return (alphavalue * 0.6);
     }
     return alphavalue;

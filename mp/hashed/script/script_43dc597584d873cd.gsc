@@ -1,5 +1,5 @@
 #using script_7edf952f8921aa6b;
-#using scripts\common\callbacks.gsc;
+#using scripts\common\callbacks;
 
 #namespace namespace_4c529715eb90d593;
 

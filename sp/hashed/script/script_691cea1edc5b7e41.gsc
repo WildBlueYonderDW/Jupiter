@@ -1,20 +1,20 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using script_5d265b4fca61f070;
-#using scripts\common\ai.gsc;
-#using scripts\common\values.gsc;
-#using scripts\anim\utility_common.gsc;
-#using scripts\sp\spawner.gsc;
-#using script_4ab4bd3ef85fb34c;
 #using script_32876a523f324870;
-#using script_467d2a8b854911b6;
+#using script_4ab4bd3ef85fb34c;
+#using script_5d265b4fca61f070;
+#using scripts\anim\utility_common;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\maps\sp_jup_flashback\sp_jup_flashback_lighting;
+#using scripts\sp\spawner;
+#using scripts\sp\utility;
 
 #namespace namespace_5e9fb42dea43f1f0;
 
@@ -62,14 +62,14 @@ function function_57dc6f590951cdc0() {
     level.var_ab31e06e378b397 = [];
     level.var_93a0e9d2eca11bfc = 0;
     level.var_a0bba063030a3106 = 35;
-    var_229db5c15577ea16 = getdvarint(@"hash_d76985a5147bddf0") > 0;
-    if (istrue(var_229db5c15577ea16)) {
+    debug_mode = getdvarint(@"hash_d76985a5147bddf0") > 0;
+    if (istrue(debug_mode)) {
         setdvar(@"hash_985a6eb7146ff86e", 1);
         level.player thread namespace_fbd1c1b57d4f60c0::function_be2529906db91d65();
     }
-    var_e11f4ac06bdabd6b = spawnstruct();
-    var_e11f4ac06bdabd6b.targetname = "civ_safe_delete_node";
-    addstruct(var_e11f4ac06bdabd6b);
+    delete_node = spawnstruct();
+    delete_node.targetname = "civ_safe_delete_node";
+    addstruct(delete_node);
 }
 
 // Namespace namespace_5e9fb42dea43f1f0 / namespace_661533260aca932f
@@ -148,12 +148,12 @@ function private function_de4dd9cab4eb3871() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x8d9
 // Size: 0xe5
-function private function_f3d271989b63fc09(var_7b620c31d012c61b) {
-    assert(isdefined(var_7b620c31d012c61b));
+function private function_f3d271989b63fc09(civ_array) {
+    assert(isdefined(civ_array));
     var_b87318dac43504cb = getstruct("civ_safe_delete_node", "targetname");
     var_a38124612062a202 = within_fov(level.player geteye(), level.player getplayerangles(), var_b87318dac43504cb.origin, cos(getdvarint(@"cg_fov")));
-    if (var_7b620c31d012c61b.size && !var_a38124612062a202) {
-        foreach (civ in var_7b620c31d012c61b) {
+    if (civ_array.size && !var_a38124612062a202) {
+        foreach (civ in civ_array) {
             if (level.player function_4bcb166b7bd416a6(civ, 1700)) {
                 civ notify("marked_for_cull");
             }
@@ -179,21 +179,21 @@ function private function_4bcb166b7bd416a6(civ, max_distance) {
 // Size: 0x1be
 function private function_a0fb5ab1cb327c79() {
     level endon("stop_concourse_civ_logic");
-    var_e11f4ac06bdabd6b = getstruct("civ_safe_delete_node", "targetname");
-    var_e11f4ac06bdabd6b.origin = (31736, 2296, -672);
-    var_e11f4ac06bdabd6b.angles = (0, 285, 0);
+    delete_node = getstruct("civ_safe_delete_node", "targetname");
+    delete_node.origin = (31736, 2296, -672);
+    delete_node.angles = (0, 285, 0);
     thread intro_civs("civ_intro_concourse_a", undefined, (30552, 3856, -624));
     thread function_ac1e6390883a78d1("civ_looper_concourse_a", ["stop_looping_civs_concourse_a"], 1);
     thread intro_civs("civ_intro_concourse_a_outer");
     thread function_ac1e6390883a78d1("civ_looper_concourse_a_outer", ["stop_looping_civs_concourse_a"], 1, &function_953a944ddc04aebd);
     flag_wait("stop_looping_civs_concourse_a");
-    var_e11f4ac06bdabd6b.origin = (30592, 3808, -664);
+    delete_node.origin = (30592, 3808, -664);
     thread intro_civs("civ_intro_concourse_b", undefined, (29488, 4928, -624));
     thread function_ac1e6390883a78d1("civ_looper_concourse_b", ["stop_looping_civs_concourse_b"], 2);
     thread intro_civs("civ_intro_concourse_b_outer", &function_953a944ddc04aebd);
     thread function_ac1e6390883a78d1("civ_looper_concourse_b_outer", ["stop_looping_civs_concourse_b"], 2, &function_953a944ddc04aebd);
     flag_wait("stop_looping_civs_concourse_b");
-    var_e11f4ac06bdabd6b.origin = (29784, 4784, -664);
+    delete_node.origin = (29784, 4784, -664);
     thread intro_civs("civ_intro_concourse_d", undefined, (28664, 5360, -624));
     thread function_ac1e6390883a78d1("civ_looper_concourse_d", ["stop_looping_civs_concourse_d"], 3);
     flag_wait("stop_looping_civs_concourse_d");
@@ -229,8 +229,8 @@ function private intro_civs(var_b39aa4be423cd14, var_e5a66feed4c0ff83, var_f3df2
     if (isdefined(var_f3df27e27594eee4)) {
         thread play_sound_in_space("fb_crowd_panic", var_f3df27e27594eee4);
     }
-    var_229db5c15577ea16 = getdvarint(@"hash_d76985a5147bddf0") > 0;
-    if (var_229db5c15577ea16) {
+    debug_mode = getdvarint(@"hash_d76985a5147bddf0") > 0;
+    if (debug_mode) {
         /#
             iprintln("<dev string:x1c>" + var_b39aa4be423cd14);
         #/
@@ -305,16 +305,16 @@ function function_ac1e6390883a78d1(var_b39aa4be423cd14, var_608c7cd243900096, sp
     level endon("stop_concourse_civ_logic");
     assert(isstring(var_b39aa4be423cd14));
     assert(isnumber(spawn_delay));
-    var_229db5c15577ea16 = getdvarint(@"hash_d76985a5147bddf0") > 0;
+    debug_mode = getdvarint(@"hash_d76985a5147bddf0") > 0;
     foreach (ender in var_608c7cd243900096) {
-        if (var_229db5c15577ea16) {
+        if (debug_mode) {
             /#
                 level thread function_c10e218473f76c22(var_b39aa4be423cd14, ender);
             #/
         }
         level endon(ender);
     }
-    if (var_229db5c15577ea16) {
+    if (debug_mode) {
         /#
             iprintln("<dev string:x42>" + var_b39aa4be423cd14);
         #/

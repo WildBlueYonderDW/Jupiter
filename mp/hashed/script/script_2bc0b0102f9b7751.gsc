@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\poi.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using script_6fba7df440c493c4;
-#using script_6bc507afe7a93a3;
-#using script_69a61780e1cc21a9;
-#using scripts\mp\utility\debug.gsc;
 #using script_1174abedbefe9ada;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\cp_mp\vehicles\vehicle_interact.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
 #using script_2bc0b0102f9b7751;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_69a61780e1cc21a9;
+#using script_6bc507afe7a93a3;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_anim;
+#using scripts\cp_mp\vehicles\vehicle_interact;
+#using scripts\engine\math;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\poi;
+#using scripts\mp\utility\debug;
 
 #namespace ai_heli_reinforce;
 
@@ -58,7 +58,7 @@ function function_d0ffcd08e0870cf2() {
 // Size: 0x18
 function initvehicles() {
     waittillframeend();
-    namespace_68d1bc1bac7da538::init_vehicles();
+    scripts\cp_mp\vehicles\vehicle_anim::init_vehicles();
     namespace_ea79ad160580b4e7::main();
     namespace_d8c2d739478db8bb::main();
 }
@@ -1076,7 +1076,7 @@ function function_369da33099abb357(var_c2f1ca305ee16808) {
     if (!isdefined(self) || !isdefined(var_c2f1ca305ee16808)) {
         return;
     }
-    var_4116e8fd5da7b698 = 250;
+    health_amount = 250;
     while (true) {
         self waittill("damage", amount, attacker, unused, point);
         if (isdefined(attacker) && isplayer(attacker) && isdefined(amount) && amount > 0 && isdefined(point)) {
@@ -1093,8 +1093,8 @@ function function_369da33099abb357(var_c2f1ca305ee16808) {
             veh_dot = vectordot(vectornormalize(anglestoforward(self.angles)), vectornormalize(point - self.origin));
             seat_pos = var_c2f1ca305ee16808.origin + (0, 0, 18);
             if (hit_dot > 0.99975 && veh_dot > 0.73 && point[2] > seat_pos[2]) {
-                var_4116e8fd5da7b698 -= amount;
-                if (var_4116e8fd5da7b698 <= 0) {
+                health_amount -= amount;
+                if (health_amount <= 0) {
                     self notify("death", attacker);
                 }
             }

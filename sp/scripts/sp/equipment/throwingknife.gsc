@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\loot.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\loot;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
 #namespace throwingknife;
 

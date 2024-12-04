@@ -1,14 +1,14 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\values.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
+#using script_3433ee6b63c7e243;
 #using script_5d265b4fca61f070;
 #using script_73e89fcb51b31802;
-#using script_1a1eb360d6975346;
-#using script_3433ee6b63c7e243;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\maps\sp_jup_silo\sp_jup_silo_lighting;
+#using scripts\sp\utility;
 
 #namespace namespace_d7740e9dc284e25e;
 
@@ -242,7 +242,7 @@ function face() {
 // Checksum 0x0, Offset: 0x38cb
 // Size: 0x18
 function function_9e0f6e7984526925(guy) {
-    namespace_72b975aae422b41a::letterbox_enable(0, 1.5);
+    anim_sp::letterbox_enable(0, 1.5);
 }
 
 // Namespace namespace_d7740e9dc284e25e / namespace_6296f71367e91e31
@@ -254,7 +254,7 @@ function function_d5896074b59df36f(guy) {
     level.var_30a959d3248e68af.door moveto(level.var_30a959d3248e68af.origin, 1.2);
     level.var_30a959d3248e68af.door playsound("scn_jup_lower_base_security_door_close");
     thread namespace_318af18595992d06::function_7dff40c0e5cc9dbe();
-    thread namespace_abfa5427eac72f88::function_14a0501f982ee582();
+    thread scripts\sp\maps\sp_jup_silo\sp_jup_silo_lighting::function_14a0501f982ee582();
 }
 
 // Namespace namespace_d7740e9dc284e25e / namespace_6296f71367e91e31
@@ -347,20 +347,20 @@ function script_models() {
     level.scr_anim[tablet]["silo_idle_to_combat"] = script_model%jup_silo_defuse_idle_c_to_combat_tablet;
     level.scr_anim[tablet]["silo_combat_to_idle"] = script_model%jup_silo_defuse_combat_to_idle_d_tablet;
     level.scr_anim[tablet]["silo_post_combat_idle"][0] = script_model%jup_silo_defuse_idle_d_tablet;
-    var_95cdd45a8d6df7ad = "silo_hatch";
-    level.scr_animtree[var_95cdd45a8d6df7ad] = %script_model;
-    level.scr_anim[var_95cdd45a8d6df7ad]["hatch_open"] = script_model%jup_silo_hatch_open;
-    level.scr_anim[var_95cdd45a8d6df7ad]["hatch_close"] = script_model%jup_silo_hatch_close;
-    level.scr_anim[var_95cdd45a8d6df7ad]["outro_1"] = script_model%jup_silo_1000_igc_outro_sh010_hatch;
-    level.scr_anim[var_95cdd45a8d6df7ad]["outro_2"] = script_model%jup_silo_1000_igc_outro_sh012_hatch;
-    level.scr_anim[var_95cdd45a8d6df7ad]["outro_3"] = script_model%jup_silo_1000_igc_outro_sh015_hatch;
-    level.scr_anim[var_95cdd45a8d6df7ad]["outro_4"] = script_model%jup_silo_1000_igc_outro_sh017_hatch;
-    level.scr_anim[var_95cdd45a8d6df7ad]["outro_5"] = script_model%jup_silo_1000_igc_outro_sh020_hatch;
-    level.scr_goaltime[var_95cdd45a8d6df7ad]["outro_1"] = 0;
-    level.scr_goaltime[var_95cdd45a8d6df7ad]["outro_2"] = 0;
-    level.scr_goaltime[var_95cdd45a8d6df7ad]["outro_3"] = 0;
-    level.scr_goaltime[var_95cdd45a8d6df7ad]["outro_4"] = 0;
-    level.scr_goaltime[var_95cdd45a8d6df7ad]["outro_5"] = 0;
+    hatch = "silo_hatch";
+    level.scr_animtree[hatch] = %script_model;
+    level.scr_anim[hatch]["hatch_open"] = script_model%jup_silo_hatch_open;
+    level.scr_anim[hatch]["hatch_close"] = script_model%jup_silo_hatch_close;
+    level.scr_anim[hatch]["outro_1"] = script_model%jup_silo_1000_igc_outro_sh010_hatch;
+    level.scr_anim[hatch]["outro_2"] = script_model%jup_silo_1000_igc_outro_sh012_hatch;
+    level.scr_anim[hatch]["outro_3"] = script_model%jup_silo_1000_igc_outro_sh015_hatch;
+    level.scr_anim[hatch]["outro_4"] = script_model%jup_silo_1000_igc_outro_sh017_hatch;
+    level.scr_anim[hatch]["outro_5"] = script_model%jup_silo_1000_igc_outro_sh020_hatch;
+    level.scr_goaltime[hatch]["outro_1"] = 0;
+    level.scr_goaltime[hatch]["outro_2"] = 0;
+    level.scr_goaltime[hatch]["outro_3"] = 0;
+    level.scr_goaltime[hatch]["outro_4"] = 0;
+    level.scr_goaltime[hatch]["outro_5"] = 0;
     lever = "silo_lever";
     level.scr_animtree[lever] = %script_model;
     level.scr_anim[lever]["outro_1"] = script_model%jup_silo_1000_igc_outro_sh010_lever;

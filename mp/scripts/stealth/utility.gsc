@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\stealth\callbacks.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using scripts\stealth\debug.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\stealth\manager.gsc;
-#using scripts\stealth\init.gsc;
-#using scripts\stealth\enemy.gsc;
-#using scripts\stealth\friendly.gsc;
-#using scripts\stealth\neutral.gsc;
-#using scripts\anim\utility_common.gsc;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\stealth\callbacks;
+#using scripts\stealth\debug;
+#using scripts\stealth\enemy;
+#using scripts\stealth\friendly;
+#using scripts\stealth\init;
+#using scripts\stealth\manager;
+#using scripts\stealth\neutral;
+#using scripts\stealth\threat_sight;
 
 #namespace utility;
 
@@ -454,9 +454,9 @@ function addeventplaybcs(eventaction, eventtype, modifier, delay, eventstruct, f
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1042
 // Size: 0x74
-function animgenericcustomanimmode(guy, var_9481a070a25eb0bd, anime, tag, thread_func, var_212b748f7df888b0) {
+function animgenericcustomanimmode(guy, custom_animmode, anime, tag, thread_func, var_212b748f7df888b0) {
     if (isdefined(level.stealth) && isdefined(level.stealth.fnanimgenericcustomanimmode)) {
-        return [[ level.stealth.fnanimgenericcustomanimmode ]](guy, var_9481a070a25eb0bd, anime, tag, thread_func, var_212b748f7df888b0);
+        return [[ level.stealth.fnanimgenericcustomanimmode ]](guy, custom_animmode, anime, tag, thread_func, var_212b748f7df888b0);
     }
 }
 

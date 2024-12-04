@@ -1,26 +1,26 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\values.gsc;
-#using scripts\stealth\utility.gsc;
-#using scripts\stealth\threat_sight.gsc;
-#using script_5d265b4fca61f070;
-#using scripts\sp\anim.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\player.gsc;
-#using scripts\sp\player_rig.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\hud_util.gsc;
-#using scripts\sp\door.gsc;
 #using script_10bb9f045d0c567a;
-#using script_1a1eb360d6975346;
 #using script_53f4e6352b0b2425;
+#using script_5d265b4fca61f070;
 #using script_73e89fcb51b31802;
-#using scripts\common\vehicle_paths.gsc;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_paths;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\door;
+#using scripts\sp\hud_util;
+#using scripts\sp\maps\sp_jup_silo\sp_jup_silo_lighting;
+#using scripts\sp\player;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_rig;
+#using scripts\sp\utility;
+#using scripts\stealth\threat_sight;
+#using scripts\stealth\utility;
 
 #namespace namespace_1542dec1529315d1;
 
@@ -60,7 +60,7 @@ function function_63a5492602bdb505() {
     precachemodel("electrical_cell_door_button_green");
     precachemodel("electrical_cell_door_button_red");
     precachemodel("vb_c_jup_sp_hero_price_desert");
-    function_a8b613ecf8ad3b49();
+    precache_drone();
     level.var_a267818b73bf19f2 = utility::spawn_tag_origin((0, 0, 0), (0, 0, 0));
     level.var_a267818b73bf19f2.team = "allies";
     level.var_a267818b73bf19f2.name = "Farah";
@@ -88,7 +88,7 @@ function function_63a5492602bdb505() {
     level.var_9a051d6e6fe05708 = [];
     level.var_6ac31ccf4184eb5e = [];
     level.var_1b1490e6f931ecd6 = [];
-    level.var_bb1520190dcada5f = [];
+    level.reinforcements = [];
     level.var_51729ce379271e4 = [];
     level.var_937981019a8768f6 = [];
     level.var_bae0e0b3c3ce64a3 = 1;
@@ -135,7 +135,7 @@ function function_63a5492602bdb505() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a3d
 // Size: 0x204
-function function_174dacfd80716a10(bool, disablehud, var_e986b0b7b7717ea7) {
+function cinematic_mode(bool, disablehud, var_e986b0b7b7717ea7) {
     registered = "igc";
     if (bool) {
         level.player player::remove_damage_effects_instantly();
@@ -153,7 +153,7 @@ function function_174dacfd80716a10(bool, disablehud, var_e986b0b7b7717ea7) {
             level.player val::set(registered, "show_hud", 0);
         }
         level.player cleardamageindicators();
-        namespace_72b975aae422b41a::letterbox_enable(1, 0);
+        anim_sp::letterbox_enable(1, 0);
         level.player hideviewmodel();
         level.player setcinematicmotionoverride("disabled");
         level.player player::focusdisable();
@@ -165,7 +165,7 @@ function function_174dacfd80716a10(bool, disablehud, var_e986b0b7b7717ea7) {
     level.player notifyonplayercommand("actionslot4", "+actionslot 4");
     level.player val::reset_all(registered);
     if (!isdefined(var_e986b0b7b7717ea7)) {
-        namespace_72b975aae422b41a::letterbox_enable(0, 0);
+        anim_sp::letterbox_enable(0, 0);
     }
     level.player showviewmodel();
     level.player clearcinematicmotionoverride();
@@ -180,10 +180,10 @@ function function_26177122c2752196() {
     level hud_util::fade_out(0, "black");
     animnode = utility::getstruct("intro_animnode", "targetname");
     utility::flag_set("intro_playing");
-    thread function_174dacfd80716a10(1, 1);
+    thread cinematic_mode(1, 1);
     function_ba9124f49b35a414(animnode);
     function_470b94a83eee8821(animnode);
-    thread function_174dacfd80716a10(0);
+    thread cinematic_mode(0);
     utility::flag_clear("intro_playing");
     utility::flag_clear("intro_skipped");
 }
@@ -272,7 +272,7 @@ function function_172723a00a2e2cb0() {
     level.player stopsounds();
     level.var_a267818b73bf19f2 dialogue::stop_dialogue();
     level.var_a267818b73bf19f2 stopsounds();
-    snd::function_9185173ee7017a51(level.var_382f3cb167130d89, 0.1);
+    snd::snd_stop(level.var_382f3cb167130d89, 0.1);
 }
 
 // Namespace namespace_1542dec1529315d1 / namespace_b8e2161844250ce0
@@ -284,7 +284,7 @@ function function_b08b8b316854ad16() {
     level endon("new_key_vo");
     level endon("intro_skipped");
     wait 0.2;
-    thread function_90882c6400941ef5();
+    thread drone_music();
     level.player dialogue::say_team("dx_sp_jslo_indr_pric_allstationsbravo6ont");
     wait 0.3;
     level.var_a267818b73bf19f2 dialogue::say_team("dx_sp_jslo_indr_fara_kiloset");
@@ -296,7 +296,7 @@ function function_b08b8b316854ad16() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3034
 // Size: 0xd
-function function_90882c6400941ef5() {
+function drone_music() {
     setmusicstate("mx_silo_drone");
 }
 
@@ -479,10 +479,10 @@ function function_cba81cd7e4b0a947() {
     level hud_util::fade_out(0, "black");
     animnode = utility::getstruct("intro_animnode", "targetname");
     utility::flag_set("intro_playing");
-    thread function_174dacfd80716a10(1, 0);
+    thread cinematic_mode(1, 0);
     function_d089a943c47f472b(animnode);
     function_286ed947c5778970(animnode);
-    thread function_174dacfd80716a10(0);
+    thread cinematic_mode(0);
     utility::flag_clear("intro_playing");
     level.player clearsoundsubmix("iw8_remove_plr_weap_foley", 0);
 }
@@ -495,7 +495,7 @@ function function_d089a943c47f472b(animnode) {
     level endon("intro_skipped");
     fakeplayer = utility::spawn_targetname("fakePlayer");
     fakeplayer attach("offhand2h_tablet_static_v0_silo", "tag_accessory_left");
-    thread namespace_de0d8bd4a236222d::function_4dfe4cb7805442c3();
+    thread silo_lighting::function_4dfe4cb7805442c3();
     thread function_1109eeeeb66916ad();
     anime = "infil_2";
     animnode animation::anim_first_frame_solo(fakeplayer, anime);
@@ -607,12 +607,12 @@ function function_38c08175d7dae0ef(animnode, guys) {
         guy setanimtime(animation, 0.88);
     }
     level thread hud_util::fade_in(0.05, "black");
-    namespace_de0d8bd4a236222d::function_4b65276da49e2658();
+    silo_lighting::function_4b65276da49e2658();
     level.player dialogue::stop_dialogue();
     level.player stopsounds();
     level.var_a267818b73bf19f2 dialogue::stop_dialogue();
     level.var_a267818b73bf19f2 stopsounds();
-    namespace_72b975aae422b41a::letterbox_enable(0, 0);
+    anim_sp::letterbox_enable(0, 0);
 }
 
 // Namespace namespace_1542dec1529315d1 / namespace_b8e2161844250ce0
@@ -661,7 +661,7 @@ function function_b78f945ee84591f1(targetname, nodename) {
     truck endon("death");
     truck vehicle_turnengineoff();
     truck thread truck_setup();
-    truck thread function_38994bbe618abc1c();
+    truck thread driver_watcher();
     truck childthread function_c4949dfad5a6fc3e();
     truck function_b61f675503083701();
     truck function_32b8c2252d5ec952(node, 20, 1);
@@ -747,7 +747,7 @@ function truck_setup() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4146
 // Size: 0x9f
-function function_38994bbe618abc1c() {
+function driver_watcher() {
     level endon("truck_driver_unloaded");
     self endon("death");
     level waittill("truck_driver_stopped", reason);
@@ -791,7 +791,7 @@ function function_c4949dfad5a6fc3e() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x425f
 // Size: 0xa8
-function function_d556ef26b54e31ac(var_987218b37ddff50d, var_124cc74bf219b972) {
+function function_d556ef26b54e31ac(var_987218b37ddff50d, using_structs) {
     apathnodes = [];
     estartnode = var_987218b37ddff50d;
     if (!isdefined(var_987218b37ddff50d)) {
@@ -803,7 +803,7 @@ function function_d556ef26b54e31ac(var_987218b37ddff50d, var_124cc74bf219b972) {
         if (!isdefined(nextnode.target)) {
             break;
         }
-        if (istrue(var_124cc74bf219b972)) {
+        if (istrue(using_structs)) {
             nextnode = getent_or_struct(nextnode.target, "targetname");
         } else {
             nextnode = getvehiclenode(nextnode.target, "targetname");
@@ -848,9 +848,9 @@ function function_b61f675503083701() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4469
 // Size: 0xa0
-function function_32b8c2252d5ec952(node, mph, var_4d0ff69a3c8bdc55) {
-    var_4d0ff69a3c8bdc55 = default_to(var_4d0ff69a3c8bdc55, 1);
-    if (var_4d0ff69a3c8bdc55) {
+function function_32b8c2252d5ec952(node, mph, teleport_vehicle) {
+    teleport_vehicle = default_to(teleport_vehicle, 1);
+    if (teleport_vehicle) {
         self dontinterpolate();
         self vehicle_teleport(node.origin + (0, 0, 45), node.angles);
     }
@@ -1206,7 +1206,7 @@ function function_f2910a2af259ff04() {
                         waitframe();
                         if (gettime() >= endtime) {
                             if (ray_trace_passed(playereye, struct.origin, [level.player])) {
-                                if (function_d36f9832eaeb482b(struct, level.player, 0.15) && !function_5655f020afb49f1b()) {
+                                if (dot_check(struct, level.player, 0.15) && !function_5655f020afb49f1b()) {
                                     if (!utility::flag("start_story_beat")) {
                                         if (istrue(toofar)) {
                                             toofar = 0;
@@ -1258,7 +1258,7 @@ function function_5655f020afb49f1b() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x519f
 // Size: 0x99
-function function_d36f9832eaeb482b(ent1, ent2, fov) {
+function dot_check(ent1, ent2, fov) {
     angles = ent1.angles;
     if (!isdefined(angles)) {
         angles = (0, 0, 0);
@@ -1527,7 +1527,7 @@ function function_e89741f90abbed17() {
     level.var_a267818b73bf19f2 dialogue::stop_dialogue();
     level.player dialogue::say_team("dx_sp_jslo_xfil_pric_kiloascendingnow");
     wait 0.7;
-    thread function_99ec390861695858();
+    thread countdown_music();
     level.var_a267818b73bf19f2 dialogue::say_team("dx_sp_jslo_xfil_fara_copygotothetowergett");
     endtime = gettime() + 800;
     while (true) {
@@ -1572,7 +1572,7 @@ function function_19a44b1f37ab195d() {
     utility::array_spawn_noteworthy("final_fight_enemy_aggr");
     utility::flag_clear("stealth_enabled");
     utility::flag_wait("player_is_exiting_hatch");
-    namespace_de0d8bd4a236222d::function_e5d8995bd86eabe6();
+    silo_lighting::function_e5d8995bd86eabe6();
     trigger = getent("final_fight_trigger", "targetname");
     thread namespace_5643a6b7e3dcbf23::function_d5eb6ecac5c4d41f("tunnel_ladder", 75);
     utility::trigger_on("silo_hatch_kill_trigger", "script_noteworthy");
@@ -1599,7 +1599,7 @@ function function_19a44b1f37ab195d() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e0f
 // Size: 0xd
-function function_99ec390861695858() {
+function countdown_music() {
     setmusicstate("mx_silo_countdown");
 }
 
@@ -1747,7 +1747,7 @@ function function_941171e175abcc49() {
         display_hint_forced("full_enemies", 4);
         wait 1;
     }
-    thread namespace_5643a6b7e3dcbf23::function_31b4e8af8fe3564a();
+    thread namespace_5643a6b7e3dcbf23::despawn_enemies();
     utility::flag_set("final_button_pushed");
     thread function_1a54a962db7fcc38();
     if (isdefined(level.var_398625fd66048065)) {
@@ -1837,7 +1837,7 @@ function function_9836629a35251425(animnode) {
     level notify("new_key_vo");
     level.player dialogue::stop_dialogue();
     level.var_a267818b73bf19f2 delaythread(1.2, &dialogue::stop_dialogue);
-    childthread function_26df6bcd5824dcf5();
+    childthread finale_vfx();
     thread function_e0c2da746a6e1134();
     function_2989c8e922883a5b(animnode);
     function_2989c9e922883c8e(animnode);
@@ -1854,7 +1854,7 @@ function function_9836629a35251425(animnode) {
 function function_2989c8e922883a5b(animnode) {
     level.fakeplayer delaycall(0.4, &show);
     level.player delaycall(0.42, &hideviewmodel);
-    thread namespace_de0d8bd4a236222d::function_f3275439c2ea3a58("outro_0");
+    thread silo_lighting::function_f3275439c2ea3a58("outro_0");
     level.fakeplayer delaythread(0.2, &enable_procedural_bones);
     if (!isdefined(level.player_rig)) {
         level.player_rig = spawn_anim_model("player_rig", (0, 0, 0), (0, 0, 0));
@@ -1874,7 +1874,7 @@ function function_2989c8e922883a5b(animnode) {
 function function_82ebb1ca084fdd1b() {
     level.player_rig delaycall(0.2, &hide);
     level.fakeplayer delaythread(0.2, &enable_procedural_bones);
-    thread namespace_de0d8bd4a236222d::function_f3275439c2ea3a58("outro_1");
+    thread silo_lighting::function_f3275439c2ea3a58("outro_1");
     level.player function_bc667001f9dd3808(level.fakeplayer.origin);
     level.fakeplayer function_af96f7c8819ae854(level.player, 2000);
     wait 2;
@@ -1898,7 +1898,7 @@ function function_2989c9e922883c8e(animnode) {
 function function_a23dd89e1a4265e4() {
     level.player dof_disable();
     level notify("start_explosion_bink");
-    thread namespace_de0d8bd4a236222d::function_f3275439c2ea3a58("outro_2");
+    thread silo_lighting::function_f3275439c2ea3a58("outro_2");
 }
 
 // Namespace namespace_1542dec1529315d1 / namespace_b8e2161844250ce0
@@ -1915,7 +1915,7 @@ function function_2989cae922883ec1(animnode) {
 // Checksum 0x0, Offset: 0x68dd
 // Size: 0xf
 function function_2ec121a2a550b1() {
-    thread namespace_de0d8bd4a236222d::function_f3275439c2ea3a58("outro_3");
+    thread silo_lighting::function_f3275439c2ea3a58("outro_3");
 }
 
 // Namespace namespace_1542dec1529315d1 / namespace_b8e2161844250ce0
@@ -1932,7 +1932,7 @@ function function_2989cbe9228840f4(animnode) {
 // Checksum 0x0, Offset: 0x6944
 // Size: 0xf
 function function_ee0469280dfdb36a() {
-    thread namespace_de0d8bd4a236222d::function_f3275439c2ea3a58("outro_4");
+    thread silo_lighting::function_f3275439c2ea3a58("outro_4");
 }
 
 // Namespace namespace_1542dec1529315d1 / namespace_b8e2161844250ce0
@@ -1949,7 +1949,7 @@ function function_2989cce922884327(animnode) {
 // Checksum 0x0, Offset: 0x69ab
 // Size: 0xf
 function function_ec5069a1eba10f87() {
-    thread namespace_de0d8bd4a236222d::function_f3275439c2ea3a58("outro_5");
+    thread silo_lighting::function_f3275439c2ea3a58("outro_5");
 }
 
 // Namespace namespace_1542dec1529315d1 / namespace_b8e2161844250ce0
@@ -1972,7 +1972,7 @@ function function_e0c2da746a6e1134() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a13
 // Size: 0x5a
-function function_26df6bcd5824dcf5() {
+function finale_vfx() {
     exploder("finale_dust_haze");
     wait 8.75;
     exploder("finale_door_puff");
@@ -2058,7 +2058,7 @@ function function_1a3669811b969e32() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ca8
 // Size: 0x18
-function function_a8b613ecf8ad3b49() {
+function precache_drone() {
     precacheshader("icon_waypoint_ally_marker");
     precacheshader("icon_waypoint_enemy_marker");
 }
@@ -2086,7 +2086,7 @@ function drone_init() {
     level.drone.var_e3f4162b4edb1e8f = gettime();
     level.drone.animnode = spawnstruct();
     level.drone.crouch = 1;
-    level.drone.var_7e31f2efd995a45d = undefined;
+    level.drone.return_damage = undefined;
     function_74234aca13ccc5b7();
     level.player thread utility::actionslotoverride(4, "jup_hud_icon_killstreaks_switchblade_drone", undefined, &function_e02cc5b67169a004);
     thread function_8b17b54884eb4244(var_5663934ae1ec27e1);
@@ -2108,7 +2108,7 @@ function function_e02cc5b67169a004() {
         if (!utility::flag("drone_intro")) {
             function_255b970769c84a1e();
         }
-        function_f7ef068b39505d5b(1);
+        drone_notifies(1);
         thread namespace_318af18595992d06::function_fcdf5a0628a1911a("sp_jup_silo_topside_infil_scout_drone", 0.5, 0.5);
         level hud_util::fade_out(0, "black");
         function_e8c5cb1a1a032dfb();
@@ -2122,7 +2122,7 @@ function function_e02cc5b67169a004() {
         thread function_46bdc5e29bab9146();
         exploder("drone_pov");
     } else {
-        function_f7ef068b39505d5b(0);
+        drone_notifies(0);
         thread namespace_318af18595992d06::function_c7c5c2ca61454c41("sp_jup_silo_topside_infil_scout_drone", 0.5, 0.5);
         level hud_util::fade_out(0, "black");
         level.player function_bc667001f9dd3808(level.fakeplayer.origin);
@@ -2204,7 +2204,7 @@ function function_56ff3f4058660fd6() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7316
 // Size: 0x3a
-function function_f7ef068b39505d5b(bool) {
+function drone_notifies(bool) {
     if (bool) {
         utility::flag_set("drone_in_use");
         level notify("drone_enter");
@@ -2310,7 +2310,7 @@ function mark_location(slot) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7751
 // Size: 0x3f
-function function_bb385364a70775c(slot) {
+function clear_location(slot) {
     setomnvar("ui_gunship_target_marker_ent_" + slot, undefined);
     setomnvar("ui_gunship_target_marker_name_" + slot, "none");
     level.player playsound("ui_silo_drone_poi_out");
@@ -2683,7 +2683,7 @@ function function_b67c4f58da9fcced() {
     level endon("drone_exit");
     wait 0.1;
     self waittill("damage", damage, attacker, direction, damagelocation, meansofdeath, modelname, attachtagname, partname, dflags, objweapon, origin, angles, normal, inflictor, time);
-    level.drone.var_7e31f2efd995a45d = [damage, direction];
+    level.drone.return_damage = [damage, direction];
     thread function_e02cc5b67169a004();
 }
 
@@ -2765,11 +2765,11 @@ function function_8b2ac8521c16b9e1() {
         stance = "prone";
     }
     level.player setstance(stance, 1, 1, 1);
-    if (isdefined(level.drone.var_7e31f2efd995a45d) && level.drone.var_7e31f2efd995a45d.size > 0) {
-        if (!isdefined(level.drone.var_7e31f2efd995a45d[0])) {
+    if (isdefined(level.drone.return_damage) && level.drone.return_damage.size > 0) {
+        if (!isdefined(level.drone.return_damage[0])) {
             return;
         }
-        if (!isdefined(level.drone.var_7e31f2efd995a45d[1]) || !isvector(level.drone.var_7e31f2efd995a45d[1])) {
+        if (!isdefined(level.drone.return_damage[1]) || !isvector(level.drone.return_damage[1])) {
             return;
         }
         thread function_d8670e9ad7607e49();
@@ -2814,7 +2814,7 @@ function function_bf3d83d8a6c98f95() {
 // Size: 0x56
 function function_d8670e9ad7607e49() {
     wait 0.1;
-    level.player do_damage(level.drone.var_7e31f2efd995a45d[0], level.drone.var_7e31f2efd995a45d[1]);
-    level.drone.var_7e31f2efd995a45d = undefined;
+    level.player do_damage(level.drone.return_damage[0], level.drone.return_damage[1]);
+    level.drone.return_damage = undefined;
 }
 

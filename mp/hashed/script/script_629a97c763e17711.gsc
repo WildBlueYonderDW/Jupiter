@@ -1,14 +1,14 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\game.gsc;
 #using script_4cdabcd91a92977;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\teams.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gamescore.gsc;
+#using scripts\common\ae_utility;
+#using scripts\common\utility;
+#using scripts\cp_mp\challenges;
+#using scripts\engine\utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\teams;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\teams;
 
 #namespace leagueplay;
 

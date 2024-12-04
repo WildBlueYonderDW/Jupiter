@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\frontendutils.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\frontendutils;
+#using scripts\engine\utility;
 
 #namespace namespace_6861fb92a3e73892;
 

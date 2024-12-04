@@ -1,8 +1,8 @@
-#using script_4c543f01345a2c04;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
 #using script_14fb718749afd7cf;
+#using script_4c543f01345a2c04;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_276b0a333696b49b;
 

@@ -1,6 +1,6 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\gameskill.gsc;
+#using scripts\common\gameskill;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_3dfa6eb6c5741630;
 

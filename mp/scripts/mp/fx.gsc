@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\fx.gsc;
-#using scripts\common\createfx.gsc;
-#using scripts\mp\createfx.gsc;
+#using scripts\common\createfx;
+#using scripts\common\fx;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\createfx;
 
 #namespace fx;
 

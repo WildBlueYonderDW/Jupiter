@@ -1,9 +1,9 @@
-#using script_6981400abfcd765c;
-#using scripts\mp\rank.gsc;
-#using script_3f8889c16399185c;
-#using scripts\mp\gamelogic.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\mp\weaponrank.gsc;
+#using script_3f8889c16399185c;
+#using script_6981400abfcd765c;
+#using scripts\mp\gamelogic;
+#using scripts\mp\rank;
+#using scripts\mp\weaponrank;
 
 #namespace namespace_41183c2c6273d8f;
 

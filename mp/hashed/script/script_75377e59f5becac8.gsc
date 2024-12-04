@@ -1,43 +1,43 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using script_930a1e7bd882c1d;
-#using scripts\common\values.gsc;
-#using script_7933519955f32c4e;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using scripts\mp\deathicons.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\gametypes\br_vehicles.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using script_7c40fa80892a721;
-#using script_27afd7662bc38a81;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\equipment\thermite.gsc;
-#using script_a35012b9b75a996;
-#using scripts\cp_mp\equipment\throwing_knife.gsc;
-#using scripts\mp\music_and_dialog.gsc;
-#using scripts\common\notetrack.gsc;
 #using script_142b065a6cb7bf82;
-#using script_7cfb984d8451dc2a;
 #using script_1a2a18b8a4837a05;
+#using script_27afd7662bc38a81;
 #using script_289ea7ea13a4a6cc;
 #using script_4500eeb43be80324;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br_gulag.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\outofbounds.gsc;
+#using script_7933519955f32c4e;
+#using script_7c40fa80892a721;
+#using script_7cfb984d8451dc2a;
+#using script_930a1e7bd882c1d;
+#using scripts\common\anim;
+#using scripts\common\notetrack;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\equipment\throwing_knife;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\utility;
+#using scripts\mp\anim;
+#using scripts\mp\class;
+#using scripts\mp\deathicons;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\equipment\shock_stick;
+#using scripts\mp\equipment\thermite;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_gulag;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_utility;
+#using scripts\mp\gametypes\br_vehicles;
+#using scripts\mp\music_and_dialog;
+#using scripts\mp\outofbounds;
+#using scripts\mp\playerlogic;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_59982bac4da47c6f;
 
@@ -1070,7 +1070,7 @@ function private function_1696e6e3ac4a370a() {
                 continue;
             }
             if (isdefined(childent.equipmentref) && childent.equipmentref == "equip_shockstick") {
-                childent thread namespace_742e7eca5294ecdc::function_c44b639f5005afa(1);
+                childent thread scripts\mp\equipment\shock_stick::function_c44b639f5005afa(1);
             }
         }
     }

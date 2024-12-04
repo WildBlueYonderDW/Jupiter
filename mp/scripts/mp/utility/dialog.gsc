@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\dialog_utility.gsc;
 #using script_189b67b2735b981d;
-#using scripts\mp\utility\dialog.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\war.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\dialog_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\war;
+#using scripts\mp\utility\dialog;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\teams;
 
 #namespace dialog;
 

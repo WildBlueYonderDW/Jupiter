@@ -1,4 +1,4 @@
-#using scripts\sp\lights.gsc;
+#using scripts\sp\lights;
 
 #namespace namespace_4ba6e399ec22a6d9;
 

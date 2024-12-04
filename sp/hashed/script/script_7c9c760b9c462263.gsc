@@ -1,21 +1,21 @@
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\anim.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\sp\player_rig.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\engine\sp\objectives.gsc;
-#using script_5d265b4fca61f070;
-#using scripts\common\ai.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\sp\hud_util.gsc;
-#using script_53f4e6352b0b2425;
 #using script_4b7698942d6f679a;
-#using script_e2fc04a6cc6c766;
+#using script_53f4e6352b0b2425;
+#using script_5d265b4fca61f070;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\engine\sp\objectives;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\anim;
+#using scripts\sp\hud_util;
+#using scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\player_rig;
+#using scripts\sp\utility;
 
 #namespace namespace_6bfab3abd0e2748a;
 
@@ -145,9 +145,9 @@ function function_59a853479ab33a5c() {
     utility::flag_wait("flag_showers_riot_arrival");
     var_f30f427ddd429bca = utility::getstruct("showers_riot_arrival_sound_org", "targetname");
     var_5f9218dbc9f75cb5 = snd::snd_play("temp_env_siren_alarm_on_fade", level.player);
-    var_461d5af838773868 = utility::getstruct("jup_vip_riot_clash_3", "targetname");
+    riot_node = utility::getstruct("jup_vip_riot_clash_3", "targetname");
     waitframe();
-    var_461d5af838773868 thread scene::play(undefined, ["shot_010", "shot_020"]);
+    riot_node thread scene::play(undefined, ["shot_010", "shot_020"]);
 }
 
 // Namespace namespace_6bfab3abd0e2748a / namespace_ff39b296432b5ff
@@ -211,8 +211,8 @@ function function_11c04172a0891d4f() {
 // Checksum 0x0, Offset: 0xbe8
 // Size: 0x85
 function showers_riot_enemies() {
-    var_907b6a9bb931314 = utility::array_spawn_targetname("showers_riot_enemies");
-    foreach (guy in var_907b6a9bb931314) {
+    riot_enemies = utility::array_spawn_targetname("showers_riot_enemies");
+    foreach (guy in riot_enemies) {
         guy.accuracy = 0.5;
         guy.fixednode = 1;
         guy utility::demeanor_override("combat");
@@ -262,9 +262,9 @@ function function_e6da23f91b0abf29() {
     level thread function_cb1e0c0468a8e296();
     utility::flag_wait("flag_armory_enemies_dead");
     thread utility::autosave_by_name("armory_end");
-    var_759d5c205f326b3c = utility::getstruct("escape_lift_button", "targetname");
-    var_759d5c205f326b3c cursor_hint::create_cursor_hint(undefined, (0, 0, 0), %SP_JUP_VIP/INTERACT_ENTER_ELEVATOR);
-    var_759d5c205f326b3c waittill("trigger");
+    button_org = utility::getstruct("escape_lift_button", "targetname");
+    button_org cursor_hint::create_cursor_hint(undefined, (0, 0, 0), %SP_JUP_VIP/INTERACT_ENTER_ELEVATOR);
+    button_org waittill("trigger");
     var_d390ee98b67613e5 = getent("riot_elevator_door", "targetname");
     var_ccd48ea3af0d7026 = utility::getstruct("sm_elevator_cage_door_dest", "targetname");
     var_d390ee98b67613e5 moveto(var_ccd48ea3af0d7026.origin, 6);
@@ -272,7 +272,7 @@ function function_e6da23f91b0abf29() {
     /#
         iprintlnbold("<dev string:x1c>");
     #/
-    thread namespace_da16efa8eb97d1c0::function_9af6ecb59cc2bec9();
+    thread scripts\sp\maps\sp_jup_vip\sp_jup_vip_lighting::elevator_anim();
     flag_wait("cine_elevator_end");
     teleport_player(getstruct("elevator_tp_end", "targetname"));
 }
@@ -338,12 +338,12 @@ function function_dcea48232a4daf67() {
         guy.ignoreall = 1;
     }
     utility::flag_wait("flag_armory_retreat");
-    var_94580a350b8ede6b = getent("armory_retreat_goal", "targetname");
+    retreat_volume = getent("armory_retreat_goal", "targetname");
     foreach (guy in var_925b25e91e45d49e) {
         if (isalive(guy)) {
             guy.fixednode = 0;
             guy cleargoalentity();
-            guy setgoalvolumeauto(var_94580a350b8ede6b);
+            guy setgoalvolumeauto(retreat_volume);
         }
     }
 }
@@ -354,22 +354,22 @@ function function_dcea48232a4daf67() {
 // Size: 0x11a
 function function_e128e1cbe2761b84() {
     var_af0642fa4de0f643 = getspawnerarray("armory_guys_group_1");
-    var_748f25ecd60a4e9c = utility::array_spawn(var_af0642fa4de0f643, 1);
+    armory_guys = utility::array_spawn(var_af0642fa4de0f643, 1);
     waitframe();
-    foreach (guy in var_748f25ecd60a4e9c) {
+    foreach (guy in armory_guys) {
         guy.fixednode = 1;
     }
-    while (var_748f25ecd60a4e9c.size > 3) {
-        var_748f25ecd60a4e9c = utility::array_removedead_or_dying(var_748f25ecd60a4e9c);
+    while (armory_guys.size > 3) {
+        armory_guys = utility::array_removedead_or_dying(armory_guys);
         wait 1;
     }
     utility::flag_set("flag_armory_retreat");
-    var_94580a350b8ede6b = getent("armory_retreat_goal", "targetname");
-    foreach (guy in var_748f25ecd60a4e9c) {
+    retreat_volume = getent("armory_retreat_goal", "targetname");
+    foreach (guy in armory_guys) {
         if (isalive(guy)) {
             guy.fixednode = 0;
             guy cleargoalentity();
-            guy setgoalvolumeauto(var_94580a350b8ede6b);
+            guy setgoalvolumeauto(retreat_volume);
         }
     }
 }
@@ -387,12 +387,12 @@ function function_cb1e0c0468a8e296() {
         guy.accuracy = 0.5;
     }
     utility::flag_wait("flag_armory_retreat");
-    var_94580a350b8ede6b = getent("armory_retreat_goal", "targetname");
+    retreat_volume = getent("armory_retreat_goal", "targetname");
     foreach (guy in var_4d948b7f2686bd1e) {
         if (isalive(guy)) {
             guy.fixednode = 0;
             guy cleargoalentity();
-            guy setgoalvolumeauto(var_94580a350b8ede6b);
+            guy setgoalvolumeauto(retreat_volume);
         }
     }
 }

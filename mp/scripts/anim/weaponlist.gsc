@@ -1,4 +1,4 @@
-#using scripts\anim\utility_common.gsc;
+#using scripts\anim\utility_common;
 
 #namespace weaponlist;
 

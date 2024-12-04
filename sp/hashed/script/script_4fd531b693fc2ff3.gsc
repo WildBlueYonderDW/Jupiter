@@ -1,19 +1,19 @@
-#using scripts\common\ai.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\sp\starts.gsc;
-#using scripts\sp\utility.gsc;
-#using script_60add030ce1a42b6;
-#using script_1a88b3bca3265954;
-#using script_5d5405089d04628b;
 #using script_1031976741eb6674;
-#using script_f8531dcf975a7a7;
-#using script_59fdf86567fa3da2;
-#using scripts\sp\player.gsc;
 #using script_4b87f2871b6b025c;
+#using script_5d5405089d04628b;
+#using script_60add030ce1a42b6;
+#using script_f8531dcf975a7a7;
+#using scripts\common\ai;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_fx;
+#using scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting;
+#using scripts\sp\player;
+#using scripts\sp\starts;
+#using scripts\sp\utility;
 
 #namespace namespace_424a337b14b91d5f;
 
@@ -42,8 +42,8 @@ function function_e0ea9506f0e9d2b9() {
     setsaveddvar(@"hash_fa84e9dc55b9d406", 0);
     setdvar(@"hash_42deeb1fb385c72", 0);
     level.player setclientomnvar("swim_breath_meter_hide", 1);
-    level.var_5c0cc4271abe5488 = utility::spawn_model("parts_jup_headgear_m48_mod1_divemask_vm");
-    level.var_5c0cc4271abe5488 linktoplayerview(level.player, "tag_origin", (0, 0, 0));
+    level.scuba_mask = utility::spawn_model("parts_jup_headgear_m48_mod1_divemask_vm");
+    level.scuba_mask linktoplayerview(level.player, "tag_origin", (0, 0, 0));
     level.player lerpfovscalefactor(0, 0);
     exploder("vfx_detonator_charge_initial");
     level thread function_b029452f88f894b4();
@@ -66,9 +66,9 @@ function function_e0ea9506f0e9d2b9() {
     level.ally02 gun_remove();
     level.ally02 function_36d8c0ddc6500bb7(1);
     level thread function_25e8fba7f624dc1();
-    level.Laswell = spawn_tag_origin((0, 0, 0));
-    level.Laswell.team = level.player.team;
-    level.Laswell.name = "Laswell";
+    level.laswell = spawn_tag_origin((0, 0, 0));
+    level.laswell.team = level.player.team;
+    level.laswell.name = "Laswell";
     level.var_e2013fb183920c7a = getentarray("suv_convoy", "targetname");
     level.var_e2013fb183920c7a[0] setmodel("jup_veh9_overland_2016_crashed");
     level.var_e2013fb183920c7a[1] setmodel("jup_veh9_overland_2016_tundra_underwater_02");
@@ -184,7 +184,7 @@ function function_7e3a2aa7302c9df0() {
     precachemodel("body_c_jup_sp_hero_price_tundra_diver");
     thread namespace_f74ba02cf5fc717a::function_8fc9d6fd2773cfb3();
     function_e0ea9506f0e9d2b9();
-    level.var_5c0cc4271abe5488 hide();
+    level.scuba_mask hide();
 }
 
 // Namespace namespace_424a337b14b91d5f / namespace_4eea8ced69a1ec9f
@@ -194,9 +194,9 @@ function function_7e3a2aa7302c9df0() {
 function function_521c270fd86a5290() {
     function_490af68912c6c09d("detonate");
     function_e0ea9506f0e9d2b9();
-    namespace_879db98d886b02c4::function_b5c58f7313680759();
-    level.var_5c0cc4271abe5488 show();
-    level thread namespace_879db98d886b02c4::function_351a30b5a2b23f92();
+    scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_b5c58f7313680759();
+    level.scuba_mask show();
+    level thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_351a30b5a2b23f92();
     level thread namespace_f74ba02cf5fc717a::function_5b29597b2f23102e();
 }
 
@@ -207,8 +207,8 @@ function function_521c270fd86a5290() {
 function function_37cd27042f339151() {
     function_490af68912c6c09d("main");
     function_e0ea9506f0e9d2b9();
-    thread namespace_879db98d886b02c4::function_cee2f8effa73eb79();
-    level.var_5c0cc4271abe5488 show();
+    thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_cee2f8effa73eb79();
+    level.scuba_mask show();
     level function_12d3704463b4be73();
     level.player thread utility::dof_enable_autofocus(28, undefined, 6, 2);
 }
@@ -220,8 +220,8 @@ function function_37cd27042f339151() {
 function function_11e6f441784d86d() {
     function_490af68912c6c09d("rescue");
     function_e0ea9506f0e9d2b9();
-    thread namespace_879db98d886b02c4::function_cee2f8effa73eb79();
-    level.var_5c0cc4271abe5488 show();
+    thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_cee2f8effa73eb79();
+    level.scuba_mask show();
     time = 15;
     level thread function_eab7234ced8d0d21(time);
     level thread function_12d3704463b4be73();
@@ -296,9 +296,9 @@ function lake_rescue() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x105e
 // Size: 0xbe
-function function_490af68912c6c09d(var_13c4f61ad2c49f93) {
+function function_490af68912c6c09d(str_startpoint) {
     v_pos = getstruct("s_start_lake_detonate", "targetname");
-    switch (var_13c4f61ad2c49f93) {
+    switch (str_startpoint) {
     case #"hash_2b03afb9f1da2591":
         v_pos = getstruct("s_start_lake_detonate", "targetname");
         break;
@@ -351,7 +351,7 @@ function function_dffe8a3baa2618c6() {
 // Size: 0x27
 function function_bfea90384462b323() {
     flag_set("lake_detonate_complete");
-    thread namespace_879db98d886b02c4::function_cee2f8effa73eb79();
+    thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_cee2f8effa73eb79();
     setsaveddvar(@"hash_25fd1d18d38c336a", 24);
 }
 
@@ -361,7 +361,7 @@ function function_bfea90384462b323() {
 // Size: 0x28
 function function_746fe8fd9724cc8f() {
     flag_set("lake_struggle_complete");
-    thread namespace_879db98d886b02c4::function_cee2f8effa73eb79();
+    thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_cee2f8effa73eb79();
     level thread function_1f3d1d94f9d2a5a0(0);
     level notify("uw_audio_cleanup");
 }
@@ -394,7 +394,7 @@ function function_14e3c58e1e9f14e0() {
     delaythread(4, &function_5704dc016a96a16c);
     function_17175f6af83bafea(["sp_jup_tundra_lake_tr"]);
     setsaveddvar(@"hash_531180c075033638", 1);
-    level thread namespace_879db98d886b02c4::function_15c17e3a7339336e();
+    level thread scripts\sp\maps\sp_jup_tundra\sp_jup_tundra_lighting::function_15c17e3a7339336e();
     function_6ea5b8f6f2554f9f();
     flag_set("lake_intro_complete");
     level.player val::set("tundra_cinematic", "freezecontrols", 0);

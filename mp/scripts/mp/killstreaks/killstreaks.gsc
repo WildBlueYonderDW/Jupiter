@@ -1,58 +1,58 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using scripts\mp\playerstats_interface.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\weapon.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\script.gsc;
-#using scripts\mp\utility\entity.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\print.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using script_548072087c9fd504;
-#using script_3db04fd1b466bdba;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\utility\join_team_aggregator.gsc;
-#using scripts\engine\scriptable.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\perks\perks.gsc;
-#using scripts\cp_mp\killstreaks\killstreakdeploy.gsc;
-#using scripts\cp_mp\hostmigration.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gamelogic.gsc;
 #using script_189b67b2735b981d;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using script_247745a526421ba7;
-#using scripts\mp\matchdata.gsc;
-#using scripts\mp\analyticslog.gsc;
-#using scripts\cp_mp\pet_watch.gsc;
-#using script_b7a9ce0a2282b79;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
+#using script_2669878cf5a1b6bc;
+#using script_3db04fd1b466bdba;
+#using script_548072087c9fd504;
 #using script_608c50392df8c7d1;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\cp_mp\killstreaks\airdrop.gsc;
+#using script_b7a9ce0a2282b79;
+#using scripts\common\ae_utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\gestures;
+#using scripts\cp_mp\hostmigration;
+#using scripts\cp_mp\killstreaks\airdrop;
+#using scripts\cp_mp\killstreaks\killstreakdeploy;
+#using scripts\cp_mp\pet_watch;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\scriptable;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\events;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\matchdata;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\perks\perks;
+#using scripts\mp\playerstats_interface;
+#using scripts\mp\rank;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\entity;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\join_team_aggregator;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\print;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\utility\weapon;
 
 #namespace killstreaks;
 
@@ -858,7 +858,7 @@ function onsuccessfulstreakactivation(streakitem, slotnumber) {
             }
         #/
     }
-    thread scripts\cp_mp\challenges::usedkillstreak(streakname, namespace_649c2fab0fd72b8b::function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
+    thread scripts\cp_mp\challenges::usedkillstreak(streakname, scripts\common\ae_utility::function_e2ff8f4b4e94f723(#"hash_83a2d67994d7e295", #"use"));
     printgameaction("killstreak started - " + streakname, self);
     scripts\cp_mp\utility\killstreak_utility::playkillstreakusedialog(streakname);
     activatedtime = scripts\mp\matchdata::gettimefrommatchstart(gettime());
@@ -1952,7 +1952,7 @@ function givestreakpoints(type, killpoints, scorepoints) {
 // Size: 0x111
 function function_f1c3def91cf17909(event) {
     eventcounts = 0;
-    if (event == #"kill" || event == #"debug_100" || event == #"debug_500" || event == #"hash_2cf53744f496a844" || event == #"hash_121f2644e525aba3" || event == #"hash_80d36f563cec5aa6") {
+    if (event == #"kill" || event == #"debug_100" || event == #"debug_500" || event == #"debug_1000" || event == #"debug_1500" || event == #"debug_3000") {
         eventcounts = 1;
     } else if (isdefined(level.gametypebundle.var_a5002f2adf1c2f5a)) {
         foreach (eventstruct in level.gametypebundle.var_a5002f2adf1c2f5a) {

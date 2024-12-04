@@ -1,7 +1,7 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\sp\debug.gsc;
-#using scripts\sp\hud_util.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\sp\debug;
+#using scripts\sp\hud_util;
 
 #namespace damagefeedback;
 

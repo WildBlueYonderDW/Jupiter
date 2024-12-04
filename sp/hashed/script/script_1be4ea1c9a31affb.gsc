@@ -1,23 +1,23 @@
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
-#using script_617a12fe4e2213f0;
-#using script_65e7570ed0fea149;
+#using script_154c8e0f0c53a024;
 #using script_51850e194d55b71a;
 #using script_60697709c8bd04cb;
-#using script_154c8e0f0c53a024;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
+#using script_617a12fe4e2213f0;
+#using script_65e7570ed0fea149;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp_mp\agents\agent_init;
 
-#namespace namespace_cccc9535a38ae95a;
+#namespace jup_civilian_cp_male;
 
-// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Namespace jup_civilian_cp_male / namespace_59bae1febefc469b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c5
 // Size: 0x112
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_5da5f70b384e9e79");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_civilian_cp_male");
     self.health = 30;
     self.maxhealth = 30;
     self.behaviortreeasset = "civilian_livingworld";
@@ -38,7 +38,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Namespace jup_civilian_cp_male / namespace_59bae1febefc469b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2df
 // Size: 0x56
@@ -52,7 +52,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Namespace jup_civilian_cp_male / namespace_59bae1febefc469b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x33d
 // Size: 0x99
@@ -72,7 +72,7 @@ function function_9ac26a51c94ccf52() {
     }
 }
 
-// Namespace namespace_cccc9535a38ae95a / namespace_59bae1febefc469b
+// Namespace jup_civilian_cp_male / namespace_59bae1febefc469b
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3de
 // Size: 0xc2

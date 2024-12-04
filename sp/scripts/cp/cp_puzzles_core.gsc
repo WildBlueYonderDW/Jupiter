@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\cp\cp_outline.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\math.gsc;
 #using script_489bc5ff08558a82;
 #using script_71332a5b74214116;
 #using script_74502a9e0ef1f19c;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_outline;
+#using scripts\cp\utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace namespace_a1efa6e7f9d6a3ba;
 
@@ -103,53 +103,53 @@ function determineoperation() {
 // Checksum 0x0, Offset: 0xce8
 // Size: 0x155
 function performoperation(var_23593744eb26db24, var_23593a44eb26e1bd, operator) {
-    var_f69e39e78fa16603 = 666;
+    answer = 666;
     switch (operator) {
     case #"hash_c4e286c1095c786":
-        var_f69e39e78fa16603 = convertfrombinary(var_23593744eb26db24) & convertfrombinary(var_23593a44eb26e1bd);
-        if (var_f69e39e78fa16603 <= 0) {
-            var_f69e39e78fa16603 = 0;
+        answer = convertfrombinary(var_23593744eb26db24) & convertfrombinary(var_23593a44eb26e1bd);
+        if (answer <= 0) {
+            answer = 0;
         }
-        return var_f69e39e78fa16603;
+        return answer;
     case #"hash_fa2ad2f6bd6509e4":
-        var_f69e39e78fa16603 = convertfrombinary(var_23593744eb26db24) | convertfrombinary(var_23593a44eb26e1bd);
-        if (var_f69e39e78fa16603 <= 0) {
-            var_f69e39e78fa16603 = 0;
+        answer = convertfrombinary(var_23593744eb26db24) | convertfrombinary(var_23593a44eb26e1bd);
+        if (answer <= 0) {
+            answer = 0;
         }
-        return var_f69e39e78fa16603;
+        return answer;
     case #"hash_c3f1836c705d775e":
-        var_f69e39e78fa16603 = convertfrombinary(var_23593744eb26db24) ^ convertfrombinary(var_23593a44eb26e1bd);
-        if (var_f69e39e78fa16603 <= 0) {
-            var_f69e39e78fa16603 = 0;
+        answer = convertfrombinary(var_23593744eb26db24) ^ convertfrombinary(var_23593a44eb26e1bd);
+        if (answer <= 0) {
+            answer = 0;
         }
-        return var_f69e39e78fa16603;
+        return answer;
     case #"hash_c61546c10a51754":
-        var_f69e39e78fa16603 = convertfrombinary(var_23593744eb26db24) + convertfrombinary(var_23593a44eb26e1bd);
-        if (var_f69e39e78fa16603 >= 15) {
-            var_f69e39e78fa16603 = 15;
+        answer = convertfrombinary(var_23593744eb26db24) + convertfrombinary(var_23593a44eb26e1bd);
+        if (answer >= 15) {
+            answer = 15;
         }
-        if (var_f69e39e78fa16603 <= 0) {
-            var_f69e39e78fa16603 = 0;
+        if (answer <= 0) {
+            answer = 0;
         }
-        return var_f69e39e78fa16603;
+        return answer;
     case #"hash_9025ae6c553fd4f5":
-        var_f69e39e78fa16603 = convertfrombinary(var_23593744eb26db24) - convertfrombinary(var_23593a44eb26e1bd);
-        if (var_f69e39e78fa16603 <= 0) {
-            var_f69e39e78fa16603 = 0;
+        answer = convertfrombinary(var_23593744eb26db24) - convertfrombinary(var_23593a44eb26e1bd);
+        if (answer <= 0) {
+            answer = 0;
         }
-        return var_f69e39e78fa16603;
+        return answer;
     case #"hash_fa50baf6bd82f930":
-        var_f69e39e78fa16603 = convertfrombinary(var_23593744eb26db24) >> convertfrombinary(var_23593a44eb26e1bd);
-        if (var_f69e39e78fa16603 <= 0) {
-            var_f69e39e78fa16603 = 0;
+        answer = convertfrombinary(var_23593744eb26db24) >> convertfrombinary(var_23593a44eb26e1bd);
+        if (answer <= 0) {
+            answer = 0;
         }
-        return var_f69e39e78fa16603;
+        return answer;
     case #"hash_fa50b8f6bd82f60a":
-        var_f69e39e78fa16603 = convertfrombinary(var_23593744eb26db24) << convertfrombinary(var_23593a44eb26e1bd);
-        if (var_f69e39e78fa16603 <= 0) {
-            var_f69e39e78fa16603 = 0;
+        answer = convertfrombinary(var_23593744eb26db24) << convertfrombinary(var_23593a44eb26e1bd);
+        if (answer <= 0) {
+            answer = 0;
         }
-        return var_f69e39e78fa16603;
+        return answer;
     }
 }
 
@@ -267,8 +267,8 @@ function convertfrombinary(var_8affa1d52e6aa880) {
     two = int(var_becbdfa822fd69e[2]);
     four = int(var_becbdfa822fd69e[1]);
     eight = int(var_becbdfa822fd69e[0]);
-    var_e3c151091a692f60 = one * 1 + two * 2 + four * 4 + eight * 8;
-    return var_e3c151091a692f60;
+    decimal_sequence = one * 1 + two * 2 + four * 4 + eight * 8;
+    return decimal_sequence;
 }
 
 // Namespace namespace_a1efa6e7f9d6a3ba / scripts\cp\cp_puzzles_core
@@ -323,7 +323,7 @@ function viewoperationinit(structarray) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1360
 // Size: 0x18
-function viewoperationhint(var_df071553d0996ff9, player) {
+function viewoperationhint(interaction_struct, player) {
     return %CP_LAB/VIEW_OP_RESULT;
 }
 
@@ -331,7 +331,7 @@ function viewoperationhint(var_df071553d0996ff9, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1381
 // Size: 0x39
-function viewoperationactivation(var_df071553d0996ff9, player) {
+function viewoperationactivation(interaction_struct, player) {
     player iprintln("^5 CURRENT RESULT WITH THE ^1 " + level.sequence_operator + "^5 OPERATOR IS  - ^8 " + level.current_output);
 }
 
@@ -411,7 +411,7 @@ function orientblocksbasedonsequence(blocks_binary_sequence, var_eea1264dd9d5909
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x171b
 // Size: 0x2b
-function blockpuzzlehint(var_df071553d0996ff9, player) {
+function blockpuzzlehint(interaction_struct, player) {
     if (istrue(level.playeraccessinglaptops)) {
         return %CP_LAB/LOCKED;
     }
@@ -422,7 +422,7 @@ function blockpuzzlehint(var_df071553d0996ff9, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x174f
 // Size: 0xbc
-function blockpuzzleactivation(var_df071553d0996ff9, player) {
+function blockpuzzleactivation(interaction_struct, player) {
     decimal = convertfrombinary(level.current_blocks_sequence);
     if (decimal >= 15) {
         decimal = 0;
@@ -658,17 +658,17 @@ function printpermute(arr, size) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2175
 // Size: 0x7c
-function permute(arr, var_403c537cb8e90b93, var_4c84bd9af981db1a) {
+function permute(arr, start_idx, end_idx) {
     if (!isdefined(level.escapepathpermutations)) {
         level.escapepathpermutations = [];
     }
-    if (var_403c537cb8e90b93 == var_4c84bd9af981db1a) {
-        printpermute(arr, var_4c84bd9af981db1a);
+    if (start_idx == end_idx) {
+        printpermute(arr, end_idx);
     }
-    for (i = var_403c537cb8e90b93; i <= var_4c84bd9af981db1a; i++) {
-        arr = swapviaarraylocations(arr, var_403c537cb8e90b93, i);
-        permute(arr, var_403c537cb8e90b93 + 1, var_4c84bd9af981db1a);
-        arr = swapviaarraylocations(arr, var_403c537cb8e90b93, i);
+    for (i = start_idx; i <= end_idx; i++) {
+        arr = swapviaarraylocations(arr, start_idx, i);
+        permute(arr, start_idx + 1, end_idx);
+        arr = swapviaarraylocations(arr, start_idx, i);
     }
 }
 
@@ -756,14 +756,14 @@ function init_camera_interaction() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x24d0
 // Size: 0x74
-function camhint(var_df071553d0996ff9, player) {
+function camhint(interaction_struct, player) {
     if (istrue(level.door_unlocked)) {
         return "";
     }
-    if (var_df071553d0996ff9.camstr.bval != 1) {
+    if (interaction_struct.camstr.bval != 1) {
         return %CP_LAB/LOCKED;
     }
-    if (isdefined(var_df071553d0996ff9.hacker)) {
+    if (isdefined(interaction_struct.hacker)) {
         return %CP_LAB/LOCKED;
     }
     if (!istrue(level.sequence_locked)) {
@@ -776,9 +776,9 @@ function camhint(var_df071553d0996ff9, player) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x254d
 // Size: 0x3e7
-function camactivation(var_df071553d0996ff9, player) {
+function camactivation(interaction_struct, player) {
     player endon("disconnect");
-    if (var_df071553d0996ff9.camstr.bval != 1) {
+    if (interaction_struct.camstr.bval != 1) {
         return;
     }
     if (!istrue(level.sequence_locked)) {
@@ -788,29 +788,29 @@ function camactivation(var_df071553d0996ff9, player) {
         player iprintln(" ^7YOU'VE ALREADY FINISHED THIS PUZZLE");
         return;
     }
-    if (isdefined(var_df071553d0996ff9.hacker)) {
-        player iprintln("^7" + var_df071553d0996ff9.hacker + " ^3 IS ALREADY ACCESSING THE CAMERAS...Try again later");
+    if (isdefined(interaction_struct.hacker)) {
+        player iprintln("^7" + interaction_struct.hacker + " ^3 IS ALREADY ACCESSING THE CAMERAS...Try again later");
         return;
     }
-    if (!isdefined(var_df071553d0996ff9.camstr.angles)) {
-        var_df071553d0996ff9.camstr.angles = (0, 0, 0);
+    if (!isdefined(interaction_struct.camstr.angles)) {
+        interaction_struct.camstr.angles = (0, 0, 0);
     }
     player.enteredcamera = 1;
     outline_fade_alpha_for_index(6, 0, 0);
     player notify("enter_cam");
-    var_df071553d0996ff9.hacker = player;
+    interaction_struct.hacker = player;
     level.playeraccessinglaptops = 1;
     player.og_origin = player.origin;
     player.og_angles = player getplayerangles();
     player.og_stance = player getstance();
-    fwd = anglestoforward(var_df071553d0996ff9.camstr.angles);
-    var_1f7736673cda8d6 = vectornormalize(var_df071553d0996ff9.camstr.origin - player getorigin());
-    dot = vectordot(fwd, var_1f7736673cda8d6);
+    fwd = anglestoforward(interaction_struct.camstr.angles);
+    to_camera = vectornormalize(interaction_struct.camstr.origin - player getorigin());
+    dot = vectordot(fwd, to_camera);
     tag = spawn("script_model", player.origin);
     tag setmodel("tag_player");
-    tag.origin = var_df071553d0996ff9.camstr.origin;
-    tag.angles = var_df071553d0996ff9.camstr.angles;
-    put_player_on_cam(tag, player, var_df071553d0996ff9);
+    tag.origin = interaction_struct.camstr.origin;
+    tag.angles = interaction_struct.camstr.angles;
+    put_player_on_cam(tag, player, interaction_struct);
     level.cam_hud = snake_door_cam_hud(player);
     while (player usebuttonpressed()) {
         if (!istrue(player.enteredcamera)) {
@@ -819,12 +819,12 @@ function camactivation(var_df071553d0996ff9, player) {
         wait 0.05;
     }
     waittill_player_exits_cam(player);
-    var_1b9b8daf429dd199 = tag.origin + anglestoforward(tag.angles) * -20;
+    nudge_spot = tag.origin + anglestoforward(tag.angles) * -20;
     player.enteredcamera = undefined;
     if (!istrue(player.enteredcamera)) {
-        tag moveto(var_1b9b8daf429dd199, 0.05);
+        tag moveto(nudge_spot, 0.05);
     } else {
-        tag moveto(var_1b9b8daf429dd199, 0.5, 0.125);
+        tag moveto(nudge_spot, 0.5, 0.125);
     }
     wait 0.25;
     player notify("leave_cam");
@@ -842,7 +842,7 @@ function camactivation(var_df071553d0996ff9, player) {
     setsaveddvar(@"hash_960ef00238357bbc", 0);
     wait 0.1;
     remove_player_from_cam(player);
-    var_df071553d0996ff9.hacker = undefined;
+    interaction_struct.hacker = undefined;
     level.playeraccessinglaptops = undefined;
     outline_fade_alpha_for_index(6, 0, 6);
 }
@@ -907,7 +907,7 @@ function snake_cam_control(player) {
     var_d296b0eaf4a6b00f = [0, 0];
     var_d5e6310914396ac3 = 0.2;
     var_848e35f763ce65b0 = 0.2;
-    var_91ab80bc6772504d = 0;
+    rumble_playing = 0;
     while (true) {
         currentangles = self.angles;
         var_b4f55166f66361e9 = player.cam_ent.angles;
@@ -960,20 +960,20 @@ function snake_cam_control(player) {
             earthquake(var_4d8cd161a8eaadc2, 0.07, player.origin, 2000);
         }
         if (rumble > 0.0001) {
-            if (!var_91ab80bc6772504d) {
+            if (!rumble_playing) {
                 self.rumbleent playrumblelooponentity("steady_rumble");
-                var_91ab80bc6772504d = 1;
+                rumble_playing = 1;
             }
-        } else if (var_91ab80bc6772504d) {
+        } else if (rumble_playing) {
             self.rumbleent stoprumble("steady_rumble");
-            var_91ab80bc6772504d = 0;
+            rumble_playing = 0;
         }
         height = 1 - rumble;
         height *= 1000;
         self.rumbleent.origin = player geteye() + (0, 0, height);
         self.angles = var_6612315290576b0f;
-        var_1b9b8daf429dd199 = self.origin + anglestoforward(self.angles) * 12 + anglestoup(self.angles) * -55 + (0, 0, 3);
-        player.cam_ent.origin = var_1b9b8daf429dd199;
+        nudge_spot = self.origin + anglestoforward(self.angles) * 12 + anglestoup(self.angles) * -55 + (0, 0, 3);
+        player.cam_ent.origin = nudge_spot;
         player.cam_ent.angles = (self.angles[0], self.angles[1], self.angles[2]);
         wait 0.05;
     }
@@ -983,33 +983,33 @@ function snake_cam_control(player) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3058
 // Size: 0x116
-function put_player_on_cam(tag, player, var_df071553d0996ff9) {
-    var_1b9b8daf429dd199 = tag.origin + anglestoforward(tag.angles) * 12 - (0, 0, 55);
+function put_player_on_cam(tag, player, interaction_struct) {
+    nudge_spot = tag.origin + anglestoforward(tag.angles) * 12 - (0, 0, 55);
     player.cam_ent = tag;
     player.isusingcamera = 1;
-    player.currentcamera = var_df071553d0996ff9.camstr;
-    player.cameratarget = var_df071553d0996ff9.camstr.targetname;
+    player.currentcamera = interaction_struct.camstr;
+    player.cameratarget = interaction_struct.camstr.targetname;
     player val::set("player_on_cam", "fire", 0);
     player cameraunlink();
     player cameralinkto(player.cam_ent, "tag_player", 1);
     player playerlinkweaponviewtodelta(player.cam_ent, "tag_player", 1);
     player playerlinkedsetviewznear(0);
     player setplayerangles(tag.angles);
-    thread watchforcameralookatothercameras(player, var_df071553d0996ff9);
+    thread watchforcameralookatothercameras(player, interaction_struct);
 }
 
 // Namespace namespace_a1efa6e7f9d6a3ba / scripts\cp\cp_puzzles_core
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3176
 // Size: 0xa3
-function watchforcameralookatothercameras(player, var_df071553d0996ff9) {
+function watchforcameralookatothercameras(player, interaction_struct) {
     player endon("death");
     player endon("disconnect");
     player endon("leave_cam");
     player endon("switch_cams");
     foreach (camerastruct in level.hack_structs) {
         camerastruct.model thread watchforplayerlookat(player, camerastruct);
-        camerastruct.model thread watchforcameralaunch(player, camerastruct, var_df071553d0996ff9);
+        camerastruct.model thread watchforcameralaunch(player, camerastruct, interaction_struct);
     }
 }
 
@@ -1017,7 +1017,7 @@ function watchforcameralookatothercameras(player, var_df071553d0996ff9) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3221
 // Size: 0x71
-function watchforcameralaunch(player, camerastruct, var_df071553d0996ff9) {
+function watchforcameralaunch(player, camerastruct, interaction_struct) {
     player endon("death");
     player endon("disconnect");
     player endon("leave_cam");
@@ -1026,7 +1026,7 @@ function watchforcameralaunch(player, camerastruct, var_df071553d0996ff9) {
     while (true) {
         player waittill("enter_hack_cam");
         if (istrue(self.outlined)) {
-            player thread enter_hacked_cam_model(self, camerastruct, var_df071553d0996ff9);
+            player thread enter_hacked_cam_model(self, camerastruct, interaction_struct);
         }
     }
 }
@@ -1096,7 +1096,7 @@ function watchforplayerfirepress(player) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3467
 // Size: 0x120
-function enter_hacked_cam_model(var_609f3dae81876c41, camerastruct, var_df071553d0996ff9) {
+function enter_hacked_cam_model(var_609f3dae81876c41, camerastruct, interaction_struct) {
     var_609f3dae81876c41 hudoutlineenableforclient(self, "outlinefill_nodepth_orange");
     self notify("switch_cams");
     outline_fade_alpha_for_index(6, 0, 0);
@@ -1104,12 +1104,12 @@ function enter_hacked_cam_model(var_609f3dae81876c41, camerastruct, var_df071553
     self.cam_ent.origin = var_609f3dae81876c41.origin;
     self.cam_ent.angles = self.angles;
     self.currentcamera = var_609f3dae81876c41;
-    var_1430c2c17d46405f = var_df071553d0996ff9.camstr.sequencetype + camerastruct.sequencename;
-    if (var_1430c2c17d46405f == var_df071553d0996ff9.camstr.finalsequence) {
-        self iprintln("^4this is the correct Sequence for ^7" + var_df071553d0996ff9.camstr.name);
+    var_1430c2c17d46405f = interaction_struct.camstr.sequencetype + camerastruct.sequencename;
+    if (var_1430c2c17d46405f == interaction_struct.camstr.finalsequence) {
+        self iprintln("^4this is the correct Sequence for ^7" + interaction_struct.camstr.name);
     }
-    level notify("sequence_changed", var_1430c2c17d46405f, var_df071553d0996ff9.camstr.name);
-    thread watchforcameralookatothercameras(self, var_df071553d0996ff9);
+    level notify("sequence_changed", var_1430c2c17d46405f, interaction_struct.camstr.name);
+    thread watchforcameralookatothercameras(self, interaction_struct);
 }
 
 // Namespace namespace_a1efa6e7f9d6a3ba / scripts\cp\cp_puzzles_core
@@ -1263,13 +1263,13 @@ function snake_door_cam_hud(player) {
     overlay.font = "smallfixed";
     overlay.fontscale = 0.75;
     overlay settext(%CP_LAB/CAMERA_CONTROLS);
-    var_83a337b15031dab = create_client_overlay("nightvision_overlay_goggles_grain", 1, player);
+    goggles = create_client_overlay("nightvision_overlay_goggles_grain", 1, player);
     level notify("vision_set_change_request", "snake_cam", player);
     setsaveddvar(@"hash_83bbe73116f488d6", 0.5);
     setsaveddvar(@"hash_ed28298c207316ae", 0.2);
     setsaveddvar(@"hash_979b5474be3b9b47", -0.75);
     setsaveddvar(@"hash_960ef00238357bbc", 0.011);
-    return [crosshair, var_83a337b15031dab, overlay];
+    return [crosshair, goggles, overlay];
 }
 
 // Namespace namespace_a1efa6e7f9d6a3ba / scripts\cp\cp_puzzles_core

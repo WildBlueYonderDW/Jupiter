@@ -1,26 +1,26 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_5762ac2f22202ba2;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\killstreaks\killstreaks.gsc;
-#using scripts\mp\sentientpoolmanager.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\objidpoolmanager.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\hostmigration.gsc;
-#using scripts\mp\damage.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\damage;
+#using scripts\mp\gamescore;
+#using scripts\mp\hostmigration;
+#using scripts\mp\hud_util;
+#using scripts\mp\killstreaks\killstreaks;
+#using scripts\mp\objidpoolmanager;
+#using scripts\mp\rank;
+#using scripts\mp\sentientpoolmanager;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\teams;
 
 #namespace remoteuav;
 
@@ -491,7 +491,7 @@ function createremoteuav(lifeid, owner, streakname, origin, angles) {
 function remoteuav_ride(lifeid, remoteuav, streakname) {
     remoteuav.playerlinked = 1;
     self.restoreangles = self.angles;
-    if (getdvarint(@"hash_c00e244ea59d530e")) {
+    if (getdvarint(@"camera_thirdperson")) {
         setthirdpersondof(0);
     }
     self cameralinkto(remoteuav, "tag_origin");
@@ -529,7 +529,7 @@ function remoteuav_endride(remoteuav) {
         remoteuav.playerlinked = 0;
         remoteuav notify("end_remote");
         clearusingremote();
-        if (getdvarint(@"hash_c00e244ea59d530e")) {
+        if (getdvarint(@"camera_thirdperson")) {
             setthirdpersondof(1);
         }
         self cameraunlink(remoteuav);

@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\mp\music_and_dialog.gsc;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\music_and_dialog;
 
 #namespace zombie_music;
 

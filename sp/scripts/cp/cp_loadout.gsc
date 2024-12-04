@@ -1,24 +1,24 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\utility.gsc;
-#using script_2669878cf5a1b6bc;
-#using script_56ef8d52fe1b48a1;
-#using scripts\cp\survival\survival_loadout.gsc;
-#using scripts\cp\utility\player.gsc;
 #using script_12e2fb553ec1605e;
-#using scripts\cp_mp\gestures.gsc;
-#using scripts\cp\cp_accessories.gsc;
-#using scripts\cp\cp_loadout.gsc;
-#using script_644c18834356d9dc;
-#using scripts\cp\cp_powers.gsc;
-#using script_afb7e332aee4bf2;
-#using scripts\cp\cp_player_battlechatter.gsc;
+#using script_2669878cf5a1b6bc;
 #using script_3bcaa2cbaf54abdd;
+#using script_56ef8d52fe1b48a1;
+#using script_644c18834356d9dc;
 #using script_74502a9e0ef1f19c;
+#using script_afb7e332aee4bf2;
+#using scripts\common\utility;
+#using scripts\cp\cp_accessories;
+#using scripts\cp\cp_loadout;
+#using scripts\cp\cp_player_battlechatter;
+#using scripts\cp\cp_powers;
+#using scripts\cp\survival\survival_loadout;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\gestures;
+#using scripts\engine\utility;
 
-#namespace namespace_dc0b91fc0a856661;
+#namespace cp_loadout;
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7de
 // Size: 0x3de
@@ -91,7 +91,7 @@ function init() {
     level.classtablename = "classtable:classtable";
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbc4
 // Size: 0x16
@@ -100,7 +100,7 @@ function getplayerbodymodel() {
     return customization[0];
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xbe3
 // Size: 0x69
@@ -116,7 +116,7 @@ function return_wbk_version_of_weapon(player, var_ea6befbe838b7be0, objweapon) {
     return objweapon;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc54
 // Size: 0xf9
@@ -138,18 +138,18 @@ function delayreturningperks(player) {
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xd55
 // Size: 0x56
 function release_character_number(player) {
-    var_74e9c58ef0aced0c = player.player_character_num;
-    if (!array_contains(level.available_player_characters, var_74e9c58ef0aced0c) && var_74e9c58ef0aced0c != 5) {
-        level.available_player_characters = array_add(level.available_player_characters, var_74e9c58ef0aced0c);
+    character_number = player.player_character_num;
+    if (!array_contains(level.available_player_characters, character_number) && character_number != 5) {
+        level.available_player_characters = array_add(level.available_player_characters, character_number);
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdb3
 // Size: 0x6f
@@ -169,7 +169,7 @@ function get_player_character_num() {
     return choice;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe2b
 // Size: 0x199
@@ -215,7 +215,7 @@ function updatemovespeedscale() {
     self setmovespeedscale(speedperc * self.movespeedscaler * self.combatspeedscalar);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xfcc
 // Size: 0x12b
@@ -256,7 +256,7 @@ function getplayerspeedbyweapon(player) {
     return weaponspeed;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1100
 // Size: 0x50
@@ -267,7 +267,7 @@ function getweaponspeed(weapon) {
     return weaponspeed;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1159
 // Size: 0xca
@@ -296,7 +296,7 @@ function getweaponspeedslowest() {
     return var_6155ff1652d3374f;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x122c
 // Size: 0x3d
@@ -305,7 +305,7 @@ function clampweaponspeed(value) {
     return clamp(value, 0, 1);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1272
 // Size: 0x11c
@@ -337,7 +337,7 @@ function getweaponheaviestvalue() {
     return var_8a6f4e6a2246d381;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1397
 // Size: 0x73
@@ -353,7 +353,7 @@ function getweaponweight(weapon) {
     return weaponspeed;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1413
 // Size: 0x1b
@@ -361,7 +361,7 @@ function clampweaponweightvalue(value) {
     return clamp(value, 0, 11);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1437
 // Size: 0x42
@@ -376,7 +376,7 @@ function wait_and_force_weapon_switch(starting_weapon) {
     self setspawnweapon(starting_weapon);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1481
 // Size: 0xe0
@@ -399,7 +399,7 @@ function init_core_mp_perks() {
     level.perkunsetfuncs["specialty_falldamage"] = &unsetfreefall;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1569
 // Size: 0xa
@@ -407,7 +407,7 @@ function setmomentum() {
     thread runmomentum();
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x157b
 // Size: 0x47
@@ -425,7 +425,7 @@ function runmomentum() {
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15ca
 // Size: 0x9f
@@ -447,7 +447,7 @@ function graduallyincreasespeed() {
     self waittill("momentum_reset");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1671
 // Size: 0x1d
@@ -457,7 +457,7 @@ function momentum_endaftermax() {
     self playlocalsound("ftl_phase_out");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1696
 // Size: 0x81
@@ -477,7 +477,7 @@ function momentum_monitormovement() {
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x171f
 // Size: 0x20
@@ -488,7 +488,7 @@ function momentum_monitordamage() {
     self notify("momentum_reset");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1747
 // Size: 0xa
@@ -496,7 +496,7 @@ function unsetmomentum() {
     self notify("momentum_unset");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1759
 // Size: 0x2
@@ -504,7 +504,7 @@ function setfreefall() {
     
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1763
 // Size: 0x2
@@ -512,7 +512,7 @@ function unsetfreefall() {
     
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x176d
 // Size: 0x121
@@ -551,28 +551,28 @@ function set_player_perks() {
     self notify("set_player_perks");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 17, eflags: 0x0
 // Checksum 0x0, Offset: 0x1896
 // Size: 0x1b9
 function registerplayercharacter(character_index, var_80d695139e2ad462, body_model, view_model, head_model, hair_model, vo_prefix, vo_suffix, pap_gesture, revive_gesture, photo_index, fate_card_weapon, intro_music, intro_gesture, melee_weapon, post_setup_func, starting_weapon) {
-    var_e060043ac076039 = spawnstruct();
-    var_e060043ac076039.body_model = body_model;
-    var_e060043ac076039.view_model = view_model;
-    var_e060043ac076039.head_model = head_model;
-    var_e060043ac076039.hair_model = hair_model;
-    var_e060043ac076039.vo_prefix = vo_prefix;
-    var_e060043ac076039.vo_suffix = vo_suffix;
-    var_e060043ac076039.pap_gesture = pap_gesture;
-    var_e060043ac076039.revive_gesture = revive_gesture;
-    var_e060043ac076039.photo_index = photo_index;
-    var_e060043ac076039.fate_card_weapon = fate_card_weapon;
-    var_e060043ac076039.intro_music = intro_music;
-    var_e060043ac076039.intro_gesture = intro_gesture;
-    var_e060043ac076039.melee_weapon = makeweaponfromstring(melee_weapon);
-    var_e060043ac076039.starting_weapon = makeweaponfromstring(starting_weapon);
-    var_e060043ac076039.post_setup_func = post_setup_func;
-    level.player_character_info[character_index] = var_e060043ac076039;
+    character_info = spawnstruct();
+    character_info.body_model = body_model;
+    character_info.view_model = view_model;
+    character_info.head_model = head_model;
+    character_info.hair_model = hair_model;
+    character_info.vo_prefix = vo_prefix;
+    character_info.vo_suffix = vo_suffix;
+    character_info.pap_gesture = pap_gesture;
+    character_info.revive_gesture = revive_gesture;
+    character_info.photo_index = photo_index;
+    character_info.fate_card_weapon = fate_card_weapon;
+    character_info.intro_music = intro_music;
+    character_info.intro_gesture = intro_gesture;
+    character_info.melee_weapon = makeweaponfromstring(melee_weapon);
+    character_info.starting_weapon = makeweaponfromstring(starting_weapon);
+    character_info.post_setup_func = post_setup_func;
+    level.player_character_info[character_index] = character_info;
     if (!isdefined(level.available_player_characters)) {
         level.available_player_characters = [];
     }
@@ -581,7 +581,7 @@ function registerplayercharacter(character_index, var_80d695139e2ad462, body_mod
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a57
 // Size: 0x2b5
@@ -628,7 +628,7 @@ function loadout_updateclasscustom(struct, class) {
     return struct;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d15
 // Size: 0x2b
@@ -637,7 +637,7 @@ function getclassindex(classname) {
     return level.classmap[classname];
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d49
 // Size: 0x458
@@ -728,7 +728,7 @@ function validateloadout(loadout) {
     return loadout;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x21aa
 // Size: 0x3f
@@ -740,7 +740,7 @@ function isvalidattachmentunlock(var_49e6ef3edadd524e, attachmentbasename) {
     return 1;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x21f2
 // Size: 0x7d
@@ -754,7 +754,7 @@ function attachmentisselectablerootname(var_49e6ef3edadd524e, attachment) {
     return false;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2278
 // Size: 0x31
@@ -762,7 +762,7 @@ function isweaponuihidden(var_49e6ef3edadd524e) {
     return isdefined(level.weaponmapdata[var_49e6ef3edadd524e]) && istrue(level.weaponmapdata[var_49e6ef3edadd524e].uihidden);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x22b2
 // Size: 0x5c
@@ -774,7 +774,7 @@ function isweaponvariantlocked(var_49e6ef3edadd524e, variantid) {
     return isdefined(level.weaponlootmapdata[variantkey]) && istrue(level.weaponlootmapdata[variantkey].islocked);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2317
 // Size: 0x128
@@ -805,7 +805,7 @@ function isattachmentvariantlocked(var_49e6ef3edadd524e, attachment, var_1708b87
     return !attachmentisvalid;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2448
 // Size: 0x238
@@ -839,7 +839,7 @@ function loadout_updateclassdefault(struct, classindex) {
     return struct;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2689
 // Size: 0x8d
@@ -854,7 +854,7 @@ function cac_getgesture() {
     return scripts\cp_mp\gestures::getgesturedata(gestureid);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x271f
 // Size: 0x2d
@@ -863,7 +863,7 @@ function cac_getaccessoryweapon() {
     return scripts\cp\cp_accessories::getaccessoryweaponbyindex(accessoryindex);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2755
 // Size: 0x2d
@@ -872,7 +872,7 @@ function cac_getaccessorydata() {
     return scripts\cp\cp_accessories::getaccessorydatabyindex(accessoryindex);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x278b
 // Size: 0x2d
@@ -881,7 +881,7 @@ function cac_getaccessorylogic() {
     return scripts\cp\cp_accessories::getaccessorylogicbyindex(accessoryindex);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x27c1
 // Size: 0x7
@@ -889,7 +889,7 @@ function cac_getexecution() {
     return "neck_stab";
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x27d1
 // Size: 0x41
@@ -897,7 +897,7 @@ function cac_getweaponsticker(classindex, weaponindex, var_36d2abbdcbcb186c) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "sticker", var_36d2abbdcbcb186c);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x281b
 // Size: 0x19c
@@ -933,11 +933,11 @@ function give_weapons_from_loadout(player, var_7cb3ce39e2414126) {
     player thread scripts\cp\cp_powers::givepower(secondary_gren, "secondary", undefined, undefined, undefined, undefined, 1, var_dca226ee1d93a538);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x29bf
 // Size: 0xa1
-function get_num_of_charges_for_power(player, var_4efdb87f020aae7d) {
+function get_num_of_charges_for_power(player, slot_name) {
     if (isdefined(level.get_num_of_charges_for_power)) {
         return [[ level.get_num_of_charges_for_power ]](player);
     }
@@ -947,7 +947,7 @@ function get_num_of_charges_for_power(player, var_4efdb87f020aae7d) {
             giveperk("specialty_extra_deadly");
         }
     }
-    if (_hasperk("specialty_extra_deadly") && var_4efdb87f020aae7d == "primary") {
+    if (_hasperk("specialty_extra_deadly") && slot_name == "primary") {
         return 2;
     }
     if (isdefined(self.perk_data["offhand_count"])) {
@@ -956,7 +956,7 @@ function get_num_of_charges_for_power(player, var_4efdb87f020aae7d) {
     return 1;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a69
 // Size: 0x4
@@ -964,7 +964,7 @@ function get_default_num_equipment_charges() {
     return true;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a76
 // Size: 0x17a
@@ -1000,7 +1000,7 @@ function give_equipment_from_loadout(player, equipmentslot, var_7cb3ce39e2414126
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bf8
 // Size: 0xd5
@@ -1017,7 +1017,7 @@ function give_and_switch_to_primary_weapon(player) {
     player switchtoweapon(struct.loadoutprimaryobject);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2cd5
 // Size: 0xaf
@@ -1032,7 +1032,7 @@ function give_primary_attachments_only(player, clipammo, stockammo) {
     player switchtoweapon(struct.loadoutprimaryobject);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d8c
 // Size: 0xd4
@@ -1049,7 +1049,7 @@ function give_and_switch_to_secondary_weapon(player, struct) {
     player switchtoweaponimmediate(var_d0ef877013d341af.loadoutsecondaryobject);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e68
 // Size: 0xaf
@@ -1064,7 +1064,7 @@ function give_secondary_attachments_only(player, clipammo, stockammo) {
     player switchtoweapon(struct.loadoutsecondaryobject);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f1f
 // Size: 0x3e6
@@ -1192,7 +1192,7 @@ function change_loadout_watcher(player) {
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x330d
 // Size: 0x45
@@ -1205,7 +1205,7 @@ function display_relics_splash(player, time) {
     }
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x335a
 // Size: 0x10
@@ -1213,7 +1213,7 @@ function buy_menu_closed() {
     self clearsoundsubmix("cp_store_duck", 1);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3372
 // Size: 0x2e
@@ -1222,7 +1222,7 @@ function sync_currency() {
     namespace_6c67e93a4c487d83::set_player_currency(var_d7fe0f139d9ac266);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x33a8
 // Size: 0xc
@@ -1230,7 +1230,7 @@ function get_grenade_from_struct(equipment_name) {
     return equipment_name;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x33bd
 // Size: 0x1b
@@ -1238,7 +1238,7 @@ function cac_getloadoutselectedidx() {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "cpLoadoutSel");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x33e1
 // Size: 0x60
@@ -1249,7 +1249,7 @@ function cac_getloadoutperk(classindex, perkindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "loadoutPerks", perkindex);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3449
 // Size: 0x60
@@ -1260,7 +1260,7 @@ function cac_getloadoutextraperk(classindex, perkindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "extraPerks", perkindex);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x34b1
 // Size: 0x6a
@@ -1271,7 +1271,7 @@ function cac_getweapon(classindex, weaponindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "weapon");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3523
 // Size: 0xa8
@@ -1286,7 +1286,7 @@ function cac_getweaponattachment(classindex, weaponindex, attachmentindex) {
     namespace_e0ee43ef2dddadaa::function_6e7bc1b23afa0ea8(weapon, var_10dc579c373a93dd);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x35d3
 // Size: 0x46
@@ -1294,7 +1294,7 @@ function cac_getweaponattachmentid(classindex, weaponindex, attachmentindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "attachmentSetup", attachmentindex, "variantID");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3622
 // Size: 0x6a
@@ -1305,7 +1305,7 @@ function cac_getweaponlootitemid(classindex, weaponindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "lootItemID");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3694
 // Size: 0x6a
@@ -1316,7 +1316,7 @@ function cac_getweaponvariantid(classindex, weaponindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "variantID");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3706
 // Size: 0x6a
@@ -1327,7 +1327,7 @@ function cac_getweaponcamo(classindex, weaponindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "camo");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3778
 // Size: 0x6a
@@ -1338,7 +1338,7 @@ function cac_getweaponreticle(classindex, weaponindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "reticle");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x37ea
 // Size: 0x6a
@@ -1349,7 +1349,7 @@ function cac_getweaponcosmeticattachment(classindex, weaponindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "weaponSetups", weaponindex, "cosmeticAttachment");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x385c
 // Size: 0x58
@@ -1360,7 +1360,7 @@ function cac_checkoverkillperk(classindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "loadoutPerks", 0);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38bc
 // Size: 0x62
@@ -1371,7 +1371,7 @@ function cac_getequipmentprimary(classindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "equipmentSetups", 0, "equipment");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3926
 // Size: 0x62
@@ -1382,7 +1382,7 @@ function cac_getextraequipmentprimary(classindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "equipmentSetups", 0, "extraCharge");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3990
 // Size: 0x64
@@ -1393,7 +1393,7 @@ function cac_getequipmentsecondary(classindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "equipmentSetups", 1, "equipment");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x39fc
 // Size: 0x64
@@ -1404,7 +1404,7 @@ function cac_getextraequipmentsecondary(classindex) {
     return self getplayerdata(level.loadoutsgroup, "squadMembers", "loadouts", classindex, "equipmentSetups", 1, "extraCharge");
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a68
 // Size: 0x235
@@ -1431,7 +1431,7 @@ function assign_loadout_weapons(player, struct) {
     player.secondaryweaponobj = player.default_starting_pistol;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ca5
 // Size: 0x2f
@@ -1439,7 +1439,7 @@ function give_primary_weapon(player, struct) {
     return namespace_e0ee43ef2dddadaa::buildweapon(struct.loadoutprimary, struct.loadoutprimaryattachments);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3cdd
 // Size: 0x2f
@@ -1447,7 +1447,7 @@ function give_secondary_weapon(player, struct) {
     return namespace_e0ee43ef2dddadaa::buildweapon(struct.loadoutsecondary, struct.loadoutsecondaryattachments);
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d15
 // Size: 0x62
@@ -1462,7 +1462,7 @@ function give_weapon_alt_clip_ammo_hack(player, weaponobj) {
     return weaponobj;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d80
 // Size: 0xaa
@@ -1471,36 +1471,36 @@ function function_acad491093697c6c(tablename) {
         level.var_f64740277f13e29b = spawnstruct();
         level.var_f64740277f13e29b.id = tablename;
         level.var_f64740277f13e29b.classes = [];
-        level.var_f64740277f13e29b.var_9ddc180a1a5121d = getscriptbundle(tablename);
-        assert(isdefined(level.var_f64740277f13e29b.var_9ddc180a1a5121d));
+        level.var_f64740277f13e29b.classtable = getscriptbundle(tablename);
+        assert(isdefined(level.var_f64740277f13e29b.classtable));
     }
     return level.var_f64740277f13e29b;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e33
 // Size: 0x94
 function function_c7a0b640c398497(tablename, classindex) {
     var_f64740277f13e29b = function_acad491093697c6c(tablename);
     if (!isdefined(var_f64740277f13e29b.classes[classindex])) {
-        classtableentry = var_f64740277f13e29b.var_9ddc180a1a5121d.classlist[classindex];
+        classtableentry = var_f64740277f13e29b.classtable.classlist[classindex];
         assert(isdefined(classtableentry));
         var_f64740277f13e29b.classes[classindex] = getscriptbundle("classtableentry:" + classtableentry.entry);
     }
     return var_f64740277f13e29b.classes[classindex];
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ed0
 // Size: 0x33
 function function_df2933f96d726d71(tablename) {
     var_f64740277f13e29b = function_acad491093697c6c(tablename);
-    return var_f64740277f13e29b.var_9ddc180a1a5121d.classlist.size;
+    return var_f64740277f13e29b.classtable.classlist.size;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f0c
 // Size: 0x5e
@@ -1511,7 +1511,7 @@ function table_getweapon(tablename, classindex, weaponindex) {
     return function_c7a0b640c398497(tablename, classindex).secondaryweapon.weapon;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f72
 // Size: 0x210
@@ -1535,7 +1535,7 @@ function table_getweaponattachment(tablename, classindex, weaponindex, attachmen
     return tempname;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x418a
 // Size: 0x5e
@@ -1546,7 +1546,7 @@ function table_getweaponcamo(tablename, classindex, weaponindex) {
     return function_c7a0b640c398497(tablename, classindex).secondaryweapon.camo;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x41f0
 // Size: 0x5e
@@ -1557,7 +1557,7 @@ function table_getweaponreticle(tablename, classindex, weaponindex) {
     return function_c7a0b640c398497(tablename, classindex).secondaryweapon.reticle;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4256
 // Size: 0xaf
@@ -1570,7 +1570,7 @@ function table_getperk(tablename, classindex, perkindex) {
     return classstruct.perksarray[perkindex];
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x430e
 // Size: 0xaf
@@ -1583,7 +1583,7 @@ function table_getextraperk(tablename, classindex, perkindex) {
     return classstruct.var_9e0a050f0398edc3[perkindex];
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x43c6
 // Size: 0x2f
@@ -1591,7 +1591,7 @@ function table_getequipmentprimary(tablename, classindex) {
     return function_c7a0b640c398497(tablename, classindex).equipment.primary;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x43fe
 // Size: 0x47
@@ -1600,7 +1600,7 @@ function table_getextraequipmentprimary(tablename, classindex) {
     return isdefined(value) && value == "1";
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x444e
 // Size: 0x2f
@@ -1608,7 +1608,7 @@ function table_getequipmentsecondary(tablename, classindex) {
     return function_c7a0b640c398497(tablename, classindex).equipment.secondary;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4486
 // Size: 0x44
@@ -1617,7 +1617,7 @@ function table_getextraequipmentsecondary(tablename, classindex) {
     return isdefined(value) && value == 1;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x44d3
 // Size: 0x25
@@ -1625,7 +1625,7 @@ function table_getsuper(tablename, classindex) {
     return function_c7a0b640c398497(tablename, classindex).super;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4501
 // Size: 0x3a
@@ -1634,7 +1634,7 @@ function table_getspecialist(tablename, classindex) {
     return isdefined(value) && value == 1;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4544
 // Size: 0x25
@@ -1642,7 +1642,7 @@ function table_getgesture(tablename, classindex) {
     return function_c7a0b640c398497(tablename, classindex).gesture;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4572
 // Size: 0x25
@@ -1650,7 +1650,7 @@ function table_getexecution(tablename, classindex) {
     return function_c7a0b640c398497(tablename, classindex).execution;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x45a0
 // Size: 0x25
@@ -1658,7 +1658,7 @@ function table_getrole(tablename, classindex) {
     return function_c7a0b640c398497(tablename, classindex).role;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x45ce
 // Size: 0x46
@@ -1674,7 +1674,7 @@ function getclasschoice(menuindex) {
     return newclasschoice;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x461d
 // Size: 0x36
@@ -1688,7 +1688,7 @@ function is_player_carrying_special_item() {
     return 0;
 }
 
-// Namespace namespace_dc0b91fc0a856661 / scripts\cp\cp_loadout
+// Namespace cp_loadout / scripts\cp\cp_loadout
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x465b
 // Size: 0x14

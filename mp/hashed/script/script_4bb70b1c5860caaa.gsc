@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\throttle.gsc;
-#using scripts\mp\supers.gsc;
-#using script_38db8bccc9eb301f;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
 #using script_16ea1b94f0f381b3;
+#using script_38db8bccc9eb301f;
+#using script_429c2a03090c1ea1;
 #using script_63d03bd53d001217;
 #using script_686729055b66c6e4;
-#using script_429c2a03090c1ea1;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\throttle;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\supers;
 
 #namespace namespace_9a9b47877ca3f004;
 
@@ -400,7 +400,7 @@ function function_6d2f600ec6654e8(player, a_ai_targets, v_origin) {
             continue;
         }
         ai thread function_6fb86f0439bedb8b(stun_dur);
-        ai namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(stun_dur);
+        ai namespace_ed7c38f3847343dc::stun_ai(stun_dur);
         waitframe();
     }
 }

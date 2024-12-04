@@ -1,6 +1,6 @@
-#using scripts\mp\hud_util.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\hud_util;
 
 #namespace clientmatchdata;
 

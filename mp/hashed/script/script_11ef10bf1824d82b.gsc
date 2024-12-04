@@ -1,15 +1,15 @@
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\weaponlist.gsc;
-#using scripts\anim\utility_common.gsc;
-#using script_595089f78ef8e11b;
 #using script_405d05c89e998922;
+#using script_595089f78ef8e11b;
 #using script_686729055b66c6e4;
+#using scripts\aitypes\bt_util;
+#using scripts\anim\utility_common;
+#using scripts\anim\weaponlist;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace zombie_base_abom_crawler;
 
@@ -102,7 +102,7 @@ function private function_5b62af1eb5b04cc9(position, friendly_team) {
             }
             if (isai(potential_target)) {
                 if (potential_target.type == "zombie") {
-                    potential_target namespace_ed7c38f3847343dc::function_2e4d3c67e63f83ac(time_interval);
+                    potential_target namespace_ed7c38f3847343dc::stun_ai(time_interval);
                 }
             }
             damage = ter_op(time_counter == 0, initial_damage, damage_tick);

@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\engine\utility;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\teams;
 
 #namespace bots_killstreaks;
 
@@ -486,7 +486,7 @@ function bot_killstreak_choose_loc_enemies(killstreak_info, killstreaks_array, c
     zone_count = level.zonecount;
     best_zone = -1;
     var_406b87b58c6d47fe = 0;
-    var_402c0a04744b46ad = [];
+    possible_fallback_zones = [];
     var_a04286db27fdd0d4 = randomfloat(100) > 50;
     for (z = 0; z < zone_count; z++) {
         if (var_a04286db27fdd0d4) {
@@ -495,18 +495,18 @@ function bot_killstreak_choose_loc_enemies(killstreak_info, killstreaks_array, c
             zone = z;
         }
         if (zone != var_cf12256f80ff2408 && botzonegetindoorpercent(zone) < 0.25) {
-            var_58eea57628b0811e = botzonegetcount(zone, self.team, "enemy_predict");
-            if (var_58eea57628b0811e > var_406b87b58c6d47fe) {
+            enemies_in_zone = botzonegetcount(zone, self.team, "enemy_predict");
+            if (enemies_in_zone > var_406b87b58c6d47fe) {
                 best_zone = zone;
-                var_406b87b58c6d47fe = var_58eea57628b0811e;
+                var_406b87b58c6d47fe = enemies_in_zone;
             }
-            var_402c0a04744b46ad = array_add(var_402c0a04744b46ad, zone);
+            possible_fallback_zones = array_add(possible_fallback_zones, zone);
         }
     }
     if (best_zone >= 0) {
         zonecenter = getzoneorigin(best_zone);
-    } else if (var_402c0a04744b46ad.size > 0) {
-        zonecenter = getzoneorigin(random(var_402c0a04744b46ad));
+    } else if (possible_fallback_zones.size > 0) {
+        zonecenter = getzoneorigin(random(possible_fallback_zones));
     } else {
         zonecenter = getzoneorigin(randomint(level.zonecount));
     }

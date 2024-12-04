@@ -1,17 +1,17 @@
-#using scripts\mp\utility\game.gsc;
 #using script_38b3797023002a4a;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\mp\flags.gsc;
 #using script_7ef95bba57dc4b82;
-#using scripts\mp\hud_message.gsc;
-#using scripts\mp\gamescore.gsc;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gamescore;
+#using scripts\mp\hud_message;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\teams;
 
-#namespace namespace_16463cbf347a4837;
+#namespace warrior_hunt;
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x247
 // Size: 0x1f
@@ -21,7 +21,7 @@ function function_32ab7b20f72916ba() {
     function_93753111ae4c3c24();
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x26e
 // Size: 0x10
@@ -29,7 +29,7 @@ function function_a4018333bf6dabce() {
     level.onplayerkilled = &warrior::onplayerkilled;
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x286
 // Size: 0x61
@@ -46,7 +46,7 @@ function onplayerspawned() {
     }
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ef
 // Size: 0xcb
@@ -67,7 +67,7 @@ function function_93753111ae4c3c24() {
     level notify("warrior_hunt_teams_assigned");
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3c2
 // Size: 0x80
@@ -83,7 +83,7 @@ function function_e03e8cb5b6e2a744() {
     thread scripts\mp\hud_message::showsplash("warrior_hunt_runner");
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x44a
 // Size: 0x31
@@ -96,7 +96,7 @@ function waittill_grenade_fire() {
     }
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x483
 // Size: 0xf7
@@ -117,7 +117,7 @@ function function_317ba71811b1e7a6(winner, endreasontext, nukedetonated) {
     return setscore;
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 10, eflags: 0x0
 // Checksum 0x0, Offset: 0x583
 // Size: 0xb2
@@ -129,7 +129,7 @@ function onplayerkilled(einflictor, attacker, idamage, smeansofdeath, objweapon,
     }
 }
 
-// Namespace namespace_16463cbf347a4837 / namespace_a3d0d452337405e0
+// Namespace warrior_hunt / namespace_a3d0d452337405e0
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x63d
 // Size: 0x95

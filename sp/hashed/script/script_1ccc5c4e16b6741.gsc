@@ -1,7 +1,7 @@
-#using scripts\common\utility.gsc;
-#using xmodelalias\civilian_london_male_body_skintone_med.gsc;
-#using scripts\code\character.gsc;
-#using xmodelalias\civilian_uk_male_heads_skintone_med.gsc;
+#using scripts\code\character;
+#using scripts\common\utility;
+#using xmodelalias\civilian_london_male_body_skintone_med;
+#using xmodelalias\civilian_uk_male_heads_skintone_med;
 
 #namespace namespace_4b103e6c7f466347;
 

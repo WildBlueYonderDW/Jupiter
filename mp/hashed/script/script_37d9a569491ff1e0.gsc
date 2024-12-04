@@ -1,9 +1,9 @@
-#using script_d74ae0b4aa21186;
-#using script_59ff79d681bb860c;
-#using scripts\mp\utility\game.gsc;
-#using scripts\engine\utility.gsc;
 #using script_26ccbfe3954cacf4;
-#using scripts\mp\gametypes\br_public.gsc;
+#using script_59ff79d681bb860c;
+#using script_d74ae0b4aa21186;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\game;
 
 #namespace nearby_targets;
 

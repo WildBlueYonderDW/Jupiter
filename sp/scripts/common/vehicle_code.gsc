@@ -1,15 +1,15 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\vehicle.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\common\vehicle_paths.gsc;
-#using scripts\common\vehicle_lights.gsc;
-#using scripts\vehicle\vehicle_common.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\ai;
+#using scripts\common\anim;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\vehicle;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_lights;
+#using scripts\common\vehicle_paths;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\vehicle\vehicle_common;
 
 #namespace vehicle_code;
 
@@ -2838,9 +2838,9 @@ function vehicle_damagelogic() {
                 } else {
                     self.damage_data = undefined;
                 }
-                var_98afd1ce36f4905a = script_func("vehicle_damage_modifier", data);
-                if (isdefined(var_98afd1ce36f4905a)) {
-                    amount = var_98afd1ce36f4905a;
+                new_amount = script_func("vehicle_damage_modifier", data);
+                if (isdefined(new_amount)) {
+                    amount = new_amount;
                 }
             }
         }
@@ -4641,7 +4641,7 @@ function vehicle_headOnDeath(ent) {
     }
     self.headondeath = 1;
     self notify("vehicle_headOnDeath");
-    function_538ef15c254e4d34(ent);
+    vehicle_kill(ent);
 }
 
 // Namespace vehicle_code / scripts\common\vehicle_code

@@ -1,19 +1,19 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\agents\agent_utility.gsc;
-#using scripts\mp\poi.gsc;
-#using scripts\mp\equipment\molotov.gsc;
-#using scripts\mp\utility\debug.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\stealth\enemy.gsc;
-#using scripts\cp_mp\utility\debug_utility.gsc;
-#using scripts\mp\ai_behavior.gsc;
-#using scripts\stealth\group.gsc;
-#using script_48814951e916af89;
-#using scripts\asm\asm_bb.gsc;
 #using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
 #using script_4948cdf739393d2d;
-#using scripts\cp_mp\utility\game_utility.gsc;
+#using scripts\asm\asm_bb;
+#using scripts\common\utility;
+#using scripts\cp_mp\utility\debug_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\utility;
+#using scripts\mp\agents\agent_utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\equipment\molotov;
+#using scripts\mp\flags;
+#using scripts\mp\poi;
+#using scripts\mp\utility\debug;
+#using scripts\stealth\enemy;
+#using scripts\stealth\group;
 
 #namespace ai_behavior;
 
@@ -32,7 +32,7 @@ function function_2585b1944b7884c0() {
 function function_304da84d9a815c01(origin, goalradius, var_3a21f8213541aec5) {
     _setgoalpos(origin, goalradius);
     if (istrue(var_3a21f8213541aec5)) {
-        level thread function_5d96b05a065564e(self);
+        level thread ai_watchForBadPath(self);
     }
 }
 
@@ -780,7 +780,7 @@ function function_ba90928315aa754d(groupname) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x21b3
 // Size: 0x52
-function function_5d96b05a065564e(agent) {
+function ai_watchForBadPath(agent) {
     level endon("game_ended");
     agent endon("death");
     agent endon("endBadPathHandler");

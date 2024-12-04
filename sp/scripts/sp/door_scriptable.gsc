@@ -1,12 +1,12 @@
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\sp\door_internal.gsc;
-#using scripts\sp\door_ai.gsc;
-#using scripts\sp\door.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\door;
+#using scripts\sp\door_ai;
+#using scripts\sp\door_internal;
+#using scripts\sp\utility;
 
 #namespace namespace_34d66e006493af5;
 
@@ -810,8 +810,8 @@ function scriptable_update_map(partindex, dir, point) {
     if (!isdefined(self.parts_map[partindex])) {
         return;
     }
-    var_38fb4c2922d89da1 = self.parts_map[partindex];
-    foreach (index in var_38fb4c2922d89da1) {
+    part_map = self.parts_map[partindex];
+    foreach (index in part_map) {
         if (index == 0) {
             continue;
         }
@@ -862,14 +862,14 @@ function is_scriptable_heirarchy_good(part) {
     if (!isdefined(self.parts_map[part.partindex])) {
         return true;
     }
-    var_38fb4c2922d89da1 = self.parts_map[part.partindex];
-    foreach (index in var_38fb4c2922d89da1) {
+    part_map = self.parts_map[part.partindex];
+    foreach (index in part_map) {
         if (index == 0) {
             return true;
         }
-        var_76ff9965733ee123 = scriptable_get_part_by_index(index);
-        if (!isdefined(var_76ff9965733ee123.heirarchytest) && !var_76ff9965733ee123.destroyed) {
-            if (is_scriptable_heirarchy_good(var_76ff9965733ee123)) {
+        test_part = scriptable_get_part_by_index(index);
+        if (!isdefined(test_part.heirarchytest) && !test_part.destroyed) {
+            if (is_scriptable_heirarchy_good(test_part)) {
                 return true;
             }
         }
@@ -1000,8 +1000,8 @@ function get_prototype_scriptable_map() {
     function function_15896f1f2b2477e7(part) {
         origin = scriptable_get_part_origin(part);
         print3d(origin, "<dev string:xf3>", (0, 1, 1), 1, 0.05);
-        var_38fb4c2922d89da1 = self.parts_map[part.partindex];
-        foreach (index in var_38fb4c2922d89da1) {
+        part_map = self.parts_map[part.partindex];
+        foreach (index in part_map) {
             if (index == 0) {
                 line(origin, self.origin, (0, 1, 1), 0.75);
                 continue;

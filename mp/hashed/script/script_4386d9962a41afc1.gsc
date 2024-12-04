@@ -1,11 +1,11 @@
-#using scripts\common\devgui.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using script_41387eecc35b88bf;
-#using script_2707474774db34b;
 #using script_185660037b9236c1;
 #using script_220d0eb95a8fab7d;
-#using scripts\mp\utility\teams.gsc;
+#using script_2707474774db34b;
+#using script_41387eecc35b88bf;
+#using scripts\common\devgui;
+#using scripts\engine\utility;
+#using scripts\mp\gamelogic;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_9fe96b983bb4b476;
 

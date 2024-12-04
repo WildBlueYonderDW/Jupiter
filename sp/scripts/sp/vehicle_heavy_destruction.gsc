@@ -1,8 +1,8 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\common\utility;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace namespace_2414550664765b48;
 
@@ -21,14 +21,14 @@ function init_vehicle_heavy_destruction() {
 function reverse_impact_think() {
     self endon("stop_heavy_damage");
     self setcandamage(1);
-    var_c8ccb71543f85bd2 = 1;
+    back_checks = 1;
     var_10307d8953138b5a = 12;
     contents = scripts\engine\trace::create_all_contents();
     while (true) {
         self waittill("damage", amount, attacker, direction_vec, point, type, modelname, tagname, partname, dflags, objweapon);
         start_point = point;
         end_point = point;
-        for (i = 0; i < var_c8ccb71543f85bd2; i++) {
+        for (i = 0; i < back_checks; i++) {
             end_point = start_point + direction_vec * 0.5;
             start_point = end_point + direction_vec * var_10307d8953138b5a;
             color = (randomfloat(1), randomfloat(1), randomfloat(1));

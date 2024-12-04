@@ -1,15 +1,15 @@
-#using scripts\engine\math.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\system.gsc;
-#using script_7c40fa80892a721;
-#using scripts\cp_mp\emp_debuff.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
 #using script_19c169a442d5975a;
+#using script_7c40fa80892a721;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\system;
+#using scripts\cp_mp\emp_debuff;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace radiation;
 
@@ -60,7 +60,7 @@ function create(origin, radius, var_29e95cf0babf9c87, var_9ebad3637bcb64d, var_2
     instance.active = 1;
     instance.radius = radius;
     instance.radiussq = squared(radius);
-    instance.var_988c511564bee3ea = var_29e95cf0babf9c87;
+    instance.tickRate = var_29e95cf0babf9c87;
     instance.damagebase = 0;
     if (istrue(var_29de4b245273b366)) {
         instance.brcircle = spawnbrcircle(origin[0], origin[1], radius);
@@ -150,7 +150,7 @@ function function_58016c61f549ad52(var_4341066c8e46637c, var_5e09e1c88a4d2697, i
 // Size: 0x21
 function function_c7d1bf4975ea9e7c(tick_rate) {
     assert(tick_rate > 0);
-    self.var_988c511564bee3ea = tick_rate;
+    self.tickRate = tick_rate;
 }
 
 // Namespace radiation / namespace_6d781a0248843409
@@ -319,7 +319,7 @@ function private function_242555e5ab28a44c() {
     self.var_16b2e5a6752ec4e0 = [];
     self.var_8b468934c883d916 = [];
     while (self.active) {
-        wait self.var_988c511564bee3ea;
+        wait self.tickRate;
         foreach (player in level.players) {
             var_223ed137a7efba62 = player getentitynumber();
             var_c5fff5b131a6ec21 = function_1b4f63fa623de69a(player.origin);

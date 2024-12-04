@@ -1,11 +1,11 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using script_60cc31ea91d0ad55;
-#using script_7ff3a914e6c698c5;
-#using scripts\engine\utility.gsc;
-#using scripts\common\callbacks.gsc;
-#using script_7edf952f8921aa6b;
 #using script_405d05c89e998922;
+#using script_60cc31ea91d0ad55;
+#using script_7edf952f8921aa6b;
+#using script_7ff3a914e6c698c5;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\common\callbacks;
+#using scripts\engine\utility;
 
 #namespace namespace_85955b341e67f12f;
 

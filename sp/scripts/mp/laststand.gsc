@@ -1,80 +1,80 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using script_247745a526421ba7;
-#using scripts\common\callbacks.gsc;
-#using scripts\common\values.gsc;
-#using script_396a814d39e7044f;
-#using scripts\cp_mp\utility\inventory_utility.gsc;
-#using scripts\cp_mp\utility\shellshock_utility.gsc;
-#using scripts\cp_mp\utility\damage_utility.gsc;
-#using scripts\mp\codcasterclientmatchdata.gsc;
-#using scripts\mp\utility\game.gsc;
-#using scripts\mp\utility\inventory.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\utility\damage.gsc;
-#using scripts\mp\utility\points.gsc;
-#using scripts\mp\utility\perk.gsc;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\utility\lower_message.gsc;
-#using scripts\mp\utility\dvars.gsc;
-#using scripts\mp\hud_util.gsc;
-#using script_40e63dd222434655;
-#using scripts\mp\weapons.gsc;
-#using scripts\mp\utility\disconnect_event_aggregator.gsc;
-#using script_3ff084f114b7f6c9;
-#using scripts\mp\teamrevive.gsc;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\flags.gsc;
-#using scripts\mp\battlechatter_mp.gsc;
-#using script_556b8aeaa691317f;
-#using script_21c19cfc7139d773;
-#using scripts\mp\tweakables.gsc;
-#using scripts\cp_mp\utility\killstreak_utility.gsc;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using scripts\mp\hud_message.gsc;
-#using scripts\cp_mp\utility\weapon_utility.gsc;
-#using scripts\cp_mp\challenges.gsc;
-#using scripts\mp\perks\perkfunctions.gsc;
-#using scripts\mp\utility\outline.gsc;
-#using script_6a5d3bf7a5b7064a;
-#using script_2669878cf5a1b6bc;
-#using script_19fd5b5d73d44c18;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gameobjects.gsc;
-#using scripts\mp\gametypes\br_analytics.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using script_372301af73968cb;
-#using scripts\cp_mp\entityheadicons.gsc;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using scripts\mp\gamelogic.gsc;
 #using script_189b67b2735b981d;
-#using scripts\mp\rank.gsc;
-#using scripts\mp\laststand.gsc;
-#using scripts\engine\trace.gsc;
+#using script_19fd5b5d73d44c18;
+#using script_21c19cfc7139d773;
+#using script_2669878cf5a1b6bc;
 #using script_2b264b25c7da0b12;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\mp\events.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using script_5762ac2f22202ba2;
-#using scripts\mp\analyticslog.gsc;
-#using script_58be75c518bf0d40;
-#using script_6d68cfdf0836123c;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\mp\supers.gsc;
-#using scripts\mp\playerlogic.gsc;
-#using scripts\mp\damage.gsc;
+#using script_372301af73968cb;
+#using script_396a814d39e7044f;
+#using script_3ff084f114b7f6c9;
+#using script_40e63dd222434655;
 #using script_448ef4d9e70ce5e;
-#using scripts\mp\utility\killstreak.gsc;
-#using scripts\mp\gametypes\obj_dogtag.gsc;
-#using scripts\mp\gametypes\grind.gsc;
-#using scripts\mp\gamescore.gsc;
-#using scripts\mp\cranked.gsc;
-#using scripts\common\anim.gsc;
-#using scripts\mp\anim.gsc;
-#using scripts\mp\utility\script.gsc;
+#using script_556b8aeaa691317f;
+#using script_5762ac2f22202ba2;
+#using script_58be75c518bf0d40;
+#using script_6a5d3bf7a5b7064a;
+#using script_6d68cfdf0836123c;
+#using scripts\common\ae_utility;
+#using scripts\common\anim;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\challenges;
+#using scripts\cp_mp\entityheadicons;
+#using scripts\cp_mp\utility\damage_utility;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\cp_mp\utility\inventory_utility;
+#using scripts\cp_mp\utility\killstreak_utility;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\utility\shellshock_utility;
+#using scripts\cp_mp\utility\weapon_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\analyticslog;
+#using scripts\mp\anim;
+#using scripts\mp\battlechatter_mp;
+#using scripts\mp\codcasterclientmatchdata;
+#using scripts\mp\cranked;
+#using scripts\mp\damage;
+#using scripts\mp\events;
+#using scripts\mp\flags;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gameobjects;
+#using scripts\mp\gamescore;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_analytics;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\grind;
+#using scripts\mp\gametypes\obj_dogtag;
+#using scripts\mp\hud_message;
+#using scripts\mp\hud_util;
+#using scripts\mp\laststand;
+#using scripts\mp\perks\perkfunctions;
+#using scripts\mp\playerlogic;
+#using scripts\mp\rank;
+#using scripts\mp\supers;
+#using scripts\mp\teamrevive;
+#using scripts\mp\tweakables;
+#using scripts\mp\utility\damage;
+#using scripts\mp\utility\disconnect_event_aggregator;
+#using scripts\mp\utility\dvars;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\inventory;
+#using scripts\mp\utility\killstreak;
+#using scripts\mp\utility\lower_message;
+#using scripts\mp\utility\outline;
+#using scripts\mp\utility\perk;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\points;
+#using scripts\mp\utility\script;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
+#using scripts\mp\weapons;
 
 #namespace laststand;
 
@@ -1133,7 +1133,7 @@ function revivesetup(owner) {
 // Size: 0x156
 function function_6b9549a69dc6a346(reviveent) {
     assert(isdefined(reviveent));
-    if (isdefined(reviveent.owner) && getdvarint(@"hash_39c3947a2e4f5f9e", 0)) {
+    if (isdefined(reviveent.owner) && getdvarint(@"mgl", 0)) {
         reviveent setcursorhint("HINT_BUTTON");
         reviveent sethinticon("hud_icon_cyber_revive");
         reviveent sethintdisplayrange(96);
@@ -3426,13 +3426,13 @@ function getclassiclaststandpistol() {
 // Checksum 0x0, Offset: 0xa7ca
 // Size: 0x90
 function makelaststandinvuln() {
-    var_e59e0db049d16bd4 = level.laststandinvulntime;
+    lastStandInvulnTimer = level.laststandinvulntime;
     /#
         if (!isusingmatchrulesdata()) {
-            var_e59e0db049d16bd4 = getwatcheddvar("<dev string:x2f7>");
-            if (!isdefined(var_e59e0db049d16bd4)) {
+            lastStandInvulnTimer = getwatcheddvar("<dev string:x2f7>");
+            if (!isdefined(lastStandInvulnTimer)) {
                 dvarstring = scripts\mp\utility\dvars::function_3514ae5d09f47ed2("<dev string:x30b>");
-                var_e59e0db049d16bd4 = getdvarfloat(dvarstring, 1);
+                lastStandInvulnTimer = getdvarfloat(dvarstring, 1);
             }
         }
     #/
@@ -3440,7 +3440,7 @@ function makelaststandinvuln() {
     self endon("disconnect");
     self endon("clear_last_stand_invuln");
     scripts\cp_mp\utility\damage_utility::adddamagemodifier("last_stand_invuln", 0, 0, &laststandinvulnignorefunc);
-    scripts\engine\utility::waittill_notify_or_timeout("death", var_e59e0db049d16bd4);
+    scripts\engine\utility::waittill_notify_or_timeout("death", lastStandInvulnTimer);
     thread clearlaststandinvuln();
 }
 
@@ -4408,7 +4408,7 @@ function function_341c7024a3e54638(dir, defender, attacker) {
     var_c8da9727e974891d = (47.171, -66.087, 0);
     var_fcb771762f1ba156 = (42.768, 53.39, 0);
     attackeroffset = (0, 0, 0);
-    var_524b19d2034e1406 = (0, 0, 0);
+    attackerangles = (0, 0, 0);
     defenderoffset = (0, 0, 0);
     var_3e0d351e6e3a5cc2 = (0, 0, 0);
     var_18ba7ff327954c = var_fcb771762f1ba156;
@@ -4447,8 +4447,8 @@ function function_341c7024a3e54638(dir, defender, attacker) {
     attackeroffset = rotatepointaroundvector((0, 0, 1), offsetvalue, var_5019e02fc30e335);
     var_181640917809e880 = anglestoforward(var_18ba7ff327954c);
     var_4d034c998a162518 = rotatepointaroundvector((0, 0, 1), var_181640917809e880, var_5019e02fc30e335);
-    var_524b19d2034e1406 = scripts\mp\utility\script::vectortoanglessafe(vectornormalize(var_4d034c998a162518), (0, 0, 1));
-    return [attackeroffset, var_524b19d2034e1406, defenderoffset, var_3e0d351e6e3a5cc2];
+    attackerangles = scripts\mp\utility\script::vectortoanglessafe(vectornormalize(var_4d034c998a162518), (0, 0, 1));
+    return [attackeroffset, attackerangles, defenderoffset, var_3e0d351e6e3a5cc2];
 }
 
 // Namespace laststand / scripts\mp\laststand
@@ -4912,7 +4912,7 @@ function function_6945da38c80ec9cf(debounce) {
                 setdvar(@"hash_b81bebd8a028bd0a", 0);
                 localplayer = level.players[0];
                 foreach (bot in level.players) {
-                    if (bot != localplayer && isbot(bot) && function_ad443bbcdcf37b85(bot) && bot.team == localplayer.team) {
+                    if (bot != localplayer && isbot(bot) && isAliveAndNotInLastStand(bot) && bot.team == localplayer.team) {
                         if (!istrue(bot.hasselfrevivetoken)) {
                             bot scripts\mp\gametypes\br_pickups::addselfrevivetoken();
                         }

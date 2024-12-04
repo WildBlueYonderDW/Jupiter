@@ -1,8 +1,8 @@
-#using scripts\cp\utility.gsc;
 #using script_187a04151c40fb72;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\cp\cp_hud_util.gsc;
+#using scripts\common\utility;
+#using scripts\cp\cp_hud_util;
+#using scripts\cp\utility;
+#using scripts\engine\utility;
 
 #namespace namespace_66a9bc5079f40bb8;
 
@@ -48,10 +48,10 @@ function showkillstreaksplash(splashref, streakval, var_38ecfeb60187e7d3) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d0
 // Size: 0xa0
-function showchallengesplash(challengeref, var_737c25e5bcf0380d) {
+function showchallengesplash(challengeref, tieroverride) {
     var_3146d9bb98662047 = undefined;
-    if (isdefined(var_737c25e5bcf0380d)) {
-        var_3146d9bb98662047 = var_737c25e5bcf0380d;
+    if (isdefined(tieroverride)) {
+        var_3146d9bb98662047 = tieroverride;
     } else {
         var_3146d9bb98662047 = mt_getstate(challengeref) - 1;
     }

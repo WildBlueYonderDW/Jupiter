@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
 #using script_3f8889c16399185c;
-#using scripts\mp\gametypes\br_ending.gsc;
-#using scripts\mp\utility\stats.gsc;
-#using scripts\mp\utility\teams.gsc;
 #using script_6ad351ebd5a33280;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_ending;
+#using scripts\mp\utility\stats;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_8c2e78a6b4c1c6fd;
 

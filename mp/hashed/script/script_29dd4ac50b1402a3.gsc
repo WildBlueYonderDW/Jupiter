@@ -1,27 +1,27 @@
-#using scripts\common\callbacks.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\trace.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\ai.gsc;
-#using scripts\common\devgui.gsc;
-#using scripts\common\values.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using script_16ea1b94f0f381b3;
-#using script_3badb8914eb5ac16;
-#using script_7edf952f8921aa6b;
-#using script_77be8cd2b6610d5;
-#using scripts\asm\asm.gsc;
 #using script_14fb718749afd7cf;
+#using script_16ea1b94f0f381b3;
+#using script_1d0491e474c9553c;
+#using script_371b4c2ab5861e62;
+#using script_3badb8914eb5ac16;
+#using script_429c2a03090c1ea1;
+#using script_4947004a8b7efbdc;
 #using script_4c543f01345a2c04;
 #using script_6270e40f05163497;
-#using script_4947004a8b7efbdc;
-#using script_76d74f5c3640ff80;
-#using script_da0dce9d411d119;
 #using script_6de180c937bb3129;
-#using script_1d0491e474c9553c;
-#using script_429c2a03090c1ea1;
-#using script_371b4c2ab5861e62;
+#using script_76d74f5c3640ff80;
+#using script_77be8cd2b6610d5;
+#using script_7edf952f8921aa6b;
+#using script_da0dce9d411d119;
+#using scripts\asm\asm;
+#using scripts\asm\shared\mp\utility;
+#using scripts\asm\shared\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
 #namespace zombie_entity;
 
@@ -40,7 +40,7 @@ function precache(params) {
 // Size: 0x4b
 function private function_1372e36a6ad0a766(params) {
     callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("killed_body_cloned", &function_92c6fa76cc65548f);
-    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_zombie_ai_damaged", &function_f60d15fbd257ffc5);
+    callback::function_e7fddda1f0b46b5e(self.animsetname) callback::add("on_zombie_ai_damaged", &entity_ondamaged);
 }
 
 // Namespace zombie_entity / namespace_39c7d29122ccedd3
@@ -119,7 +119,7 @@ function private function_a449d4ca4b975db5() {
 // Size: 0x52
 function private function_ade203ffe7b42a00(params) {
     self.entitydata.var_7ea8679820315f67 = 0;
-    function_a57246fc382ab57a();
+    entity_reset();
     function_4f3f24a1ec972b0e();
     ent_flag_clear("entity_spawnanim_finished");
     ent_flag_clear("entity_activate");
@@ -146,7 +146,7 @@ function private function_92c6fa76cc65548f(params) {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xd4b
 // Size: 0x2a7
-function private function_f60d15fbd257ffc5(params) {
+function private entity_ondamaged(params) {
     if (istrue(self.entitydata.var_7ea8679820315f67)) {
         return;
     }
@@ -233,7 +233,7 @@ function private function_38215c6a48943458() {
     self notify("fake_death");
     function_7410aa3c82ab4773();
     utility::function_3ab9164ef76940fd("VFX_Ambient_Black_Body_Smoke", "off");
-    function_a57246fc382ab57a();
+    entity_reset();
     self.entitydata.var_7ea8679820315f67 = 1;
     self visiblenotsolid();
     deathalias = "death" + "_" + self.entitydata.phase;
@@ -317,8 +317,8 @@ function private function_424e5dab79ae37a6() {
     self endon("death");
     level endon("game_ended");
     ent_flag_wait("entity_activate");
-    function_b6851d5768e9130c(level.var_36e0429c9cc73b40);
-    function_ba2c543e29fc803b();
+    function_b6851d5768e9130c(level.boss_phase);
+    entity_sethealth();
     function_ae4bc364d68e0605();
     while (true) {
         if (self function_11e2d4051ea44b35("in_spawn") == 1) {
@@ -378,7 +378,7 @@ function private function_b6851d5768e9130c(index) {
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x1648
 // Size: 0x12e
-function private function_ba2c543e29fc803b() {
+function private entity_sethealth() {
     assert(isdefined(self.entitydata.phaseindex));
     healthscriptbundle = self.phasedata[self.entitydata.phaseindex].healthscriptbundle;
     if (isdefined(healthscriptbundle)) {
@@ -499,7 +499,7 @@ function private function_4781e74511be107() {
     if (isdefined(self.entitydata.var_8e3c8aea64b0ff9a) && self.entitydata.var_8e3c8aea64b0ff9a != 2) {
         return false;
     }
-    if (isdefined(self.entitydata.var_1205963be798c1e3) && currenttime - self.entitydata.var_1205963be798c1e3 <= 2000) {
+    if (isdefined(self.entitydata.attack_lastattacktime) && currenttime - self.entitydata.attack_lastattacktime <= 2000) {
         return false;
     }
     if (currenttime > self.entitydata.var_37e9fcfa2a8f6a31) {
@@ -574,7 +574,7 @@ function private function_43b5ce0cd4e8eec7() {
         return 0;
     }
     score = 0;
-    centroid = function_58a28552bd8a726();
+    centroid = players_getcentroid();
     if (!isdefined(centroid)) {
         return 0;
     }
@@ -621,7 +621,7 @@ function private function_f161073ebaf14fec() {
     if (distancesquared(closestplayer.origin, self.origin) <= squared(self.var_c3cf0abdb853a4f9.var_ea825821af5f56f1)) {
         score += 10;
     }
-    centroid = function_58a28552bd8a726();
+    centroid = players_getcentroid();
     if (!isdefined(centroid)) {
         return 0;
     }
@@ -654,7 +654,7 @@ function private function_76bf4ecde7d398cf() {
 function function_837df9b0b5a7b55c(taskid, params) {
     if (self.entitydata.var_4195498e9121e409 > self.entitydata.var_789ebd01f2585a11) {
         if (self.entitydata.var_9adf21d0962a922b != 0) {
-            function_a57246fc382ab57a();
+            entity_reset();
         }
         return anim.success;
     }
@@ -773,7 +773,7 @@ function private function_c1ed91aedcab4bf5() {
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x23ed
 // Size: 0x19
-function private function_a57246fc382ab57a() {
+function private entity_reset() {
     function_6b4f9e89f81383ea();
     function_4627f093a696bf5f(1);
     function_a497421f5acb0816();
@@ -793,7 +793,7 @@ function private function_1eb52fc1d7ca226a(params, var_c738c3b00598761c) {
 // Checksum 0x0, Offset: 0x2438
 // Size: 0x4e
 function private function_d8565ebf3d8932bc() {
-    function_a57246fc382ab57a();
+    entity_reset();
     function_d26fb1d7aab7d7d1();
     self.phasedata[self.entitydata.phaseindex].var_43e413695b603f76 = 0;
     self.var_e198ad98b4845f29.var_a478985793711972 = 0;

@@ -1,20 +1,20 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\callbacks.gsc;
 #using script_2669878cf5a1b6bc;
-#using scripts\asm\shared\mp\utility.gsc;
-#using scripts\common\vehicle_aianim.gsc;
-#using scripts\stealth\enemy.gsc;
-#using script_7caebc5d4875185;
-#using script_6fba7df440c493c4;
-#using scripts\common\ai.gsc;
-#using script_371b4c2ab5861e62;
-#using scripts\asm\asm.gsc;
-#using scripts\common\vehicle_code.gsc;
-#using scripts\common\vehicle_paths.gsc;
 #using script_2d05e472a90adb1d;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
 #using script_30fbbeb9a6251e9a;
+#using script_371b4c2ab5861e62;
+#using script_7caebc5d4875185;
+#using scripts\asm\asm;
+#using scripts\asm\shared\mp\utility;
+#using scripts\common\ai;
+#using scripts\common\callbacks;
+#using scripts\common\utility;
+#using scripts\common\vehicle_aianim;
+#using scripts\common\vehicle_code;
+#using scripts\common\vehicle_paths;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_anim;
+#using scripts\engine\utility;
+#using scripts\stealth\enemy;
 
 #namespace namespace_1c689dd3986a841c;
 
@@ -81,7 +81,7 @@ function private function_eea40a1b6180f90a(requestid, data) {
     }
     if (data.spawnspeed != 2) {
         var_7c62cb453a76a50d = ter_op(istrue(data.alert) || data.spawnspeed == 1, "spawn_fast", "spawn");
-        var_5bb577a0f2f9e0d3 = default_to(data.var_5ec625eecd27c095, var_7c62cb453a76a50d);
+        var_5bb577a0f2f9e0d3 = default_to(data.animscripted_alias, var_7c62cb453a76a50d);
         if (agent function_8fa69650e33c84ef(var_5bb577a0f2f9e0d3)) {
             if (istrue(data.var_324052602cf96b90)) {
                 animscripted_origin = data.origin;
@@ -1141,7 +1141,7 @@ function private function_c7864239c3106370() {
     thread function_eae524b041923b20();
     thread function_ed0e325da04fc842();
     function_fd97a081c69bff85();
-    namespace_68d1bc1bac7da538::init_vehicles();
+    scripts\cp_mp\vehicles\vehicle_anim::init_vehicles();
     /#
         if (getdvarint(@"hash_c86f4f2f2cea3cdc", 1) == 1) {
             level thread function_8f2b1c474a144a75();

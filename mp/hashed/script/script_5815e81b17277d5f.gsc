@@ -1,9 +1,9 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
 #using script_5bc86a57086a4774;
 #using script_7c40fa80892a721;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\cp_mp\gasmask.gsc;
+#using scripts\common\utility;
+#using scripts\cp_mp\gasmask;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_public;
 
 #namespace namespace_947f137e8c5c3d4;
 

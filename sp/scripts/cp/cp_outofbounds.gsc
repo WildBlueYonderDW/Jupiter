@@ -1,18 +1,18 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp_mp\vehicles\vehicle.gsc;
-#using scripts\cp_mp\vehicles\vehicle_occupancy.gsc;
-#using scripts\cp\vehicles\vehicle_oob_cp.gsc;
 #using script_afb7e332aee4bf2;
-#using scripts\engine\trace.gsc;
-#using scripts\cp\cp_hostmigration.gsc;
-#using scripts\cp_mp\killstreaks\helper_drone.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_hostmigration;
+#using scripts\cp\vehicles\vehicle_oob_cp;
+#using scripts\cp_mp\killstreaks\helper_drone;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\cp_mp\vehicles\vehicle;
+#using scripts\cp_mp\vehicles\vehicle_occupancy;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
 
-#namespace namespace_d5ba12e50c252acd;
+#namespace cp_outofbounds;
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x370
 // Size: 0x20
@@ -20,7 +20,7 @@ function registerentforoob(ent, ref) {
     ent.oobref = ref;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x398
 // Size: 0x16
@@ -28,7 +28,7 @@ function deregisterentforoob(ent) {
     ent.oobref = undefined;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b6
 // Size: 0x33
@@ -37,7 +37,7 @@ function registeroobentercallback(ref, callback) {
     struct.entercallbacks[ref] = callback;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x33
@@ -46,7 +46,7 @@ function registeroobexitcallback(ref, callback) {
     struct.exitcallbacks[ref] = callback;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x42c
 // Size: 0x33
@@ -55,7 +55,7 @@ function registerooboutoftimecallback(ref, callback) {
     struct.outoftimecallbacks[ref] = callback;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x467
 // Size: 0x33
@@ -64,7 +64,7 @@ function registeroobclearcallback(ref, callback) {
     struct.clearcallbacks[ref] = callback;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a2
 // Size: 0x4e
@@ -78,7 +78,7 @@ function isoob(ent, var_3e36f415f762070e) {
     return isdefined(ent.oob) && ent.oob > 0;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f9
 // Size: 0x6d
@@ -94,7 +94,7 @@ function enableoob(ent) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x56e
 // Size: 0x91
@@ -110,7 +110,7 @@ function disableoob(ent) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x607
 // Size: 0x28
@@ -118,7 +118,7 @@ function isoobimmune(ent) {
     return isdefined(ent.oobimmunity) && ent.oobimmunity > 0;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x638
 // Size: 0x6d
@@ -134,7 +134,7 @@ function enableoobimmunity(ent) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ad
 // Size: 0x8f
@@ -150,7 +150,7 @@ function disableoobimmunity(ent) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x744
 // Size: 0x1c5
@@ -189,7 +189,7 @@ function clearoob(ent, fromdeath) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x911
 // Size: 0xb1
@@ -205,7 +205,7 @@ function initoob() {
     thread watchoobtriggers();
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ca
 // Size: 0xb8
@@ -227,7 +227,7 @@ function ispointinoutofbounds(var_863c619037f3ac74, var_da8cec9bce12f9cb) {
     return var_e448b9771980dfd6;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa8b
 // Size: 0x47
@@ -240,7 +240,7 @@ function add_trigger_to_oob_system(trigger) {
     thread watchoobtrigger(trigger);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xada
 // Size: 0x1e5
@@ -281,7 +281,7 @@ function onenteroob(ent) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xcc7
 // Size: 0x81
@@ -298,7 +298,7 @@ function previouslytouchedtriggertype(var_7edface381884ca9, currenttriggertype) 
     return var_1b99bb6cc4aec0fe;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xd51
 // Size: 0x1a1
@@ -333,7 +333,7 @@ function onexitoob(ent, fromdeath, fromclear) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xefa
 // Size: 0xa6
@@ -352,7 +352,7 @@ function onooboutoftime(ent) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xfa8
 // Size: 0x4e
@@ -369,7 +369,7 @@ function watchooboutoftime(ent, timeleft) {
     thread onooboutoftime(ent);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xffe
 // Size: 0x5b
@@ -387,7 +387,7 @@ function watchoobcooldown(ent, timeleft) {
     ent.oobtriggertype = undefined;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1061
 // Size: 0x32
@@ -401,7 +401,7 @@ function function_c61001f433dfd696() {
     function_ea269c0ec2ba23cd();
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x109b
 // Size: 0x69
@@ -414,7 +414,7 @@ function playerentercallback(exitnotify, clearnotify, triggertype) {
     thread function_c61001f433dfd696();
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x110c
 // Size: 0x49
@@ -425,7 +425,7 @@ function playerexitcallback(fromdeath, fromclear, clearnotify) {
     self notify("oob_last_stand");
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x115d
 // Size: 0x56
@@ -439,7 +439,7 @@ function playeroutoftimecallback(timeoutendnotify, clearnotify) {
     function_ea269c0ec2ba23cd();
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x11bb
 // Size: 0x73
@@ -458,7 +458,7 @@ function function_ea269c0ec2ba23cd() {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1236
 // Size: 0x18
@@ -466,7 +466,7 @@ function playerclearcallback(clearnotify) {
     self setclientomnvar("ui_out_of_bounds_countdown", 0);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1256
 // Size: 0xe6
@@ -488,7 +488,7 @@ function playeroutoftimeminefield(timeoutendnotify, clearnotify) {
     mine delete();
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1344
 // Size: 0xa3
@@ -513,7 +513,7 @@ function playeroutoftimeminefieldinternal(mine, timeoutendnotify, clearnotify) {
     return true;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x13f0
 // Size: 0x3d
@@ -523,7 +523,7 @@ function killstreakentercallback(exitnotify, clearnotify) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x1435
 // Size: 0x3d
@@ -533,7 +533,7 @@ function killstreakexitcallback(fromdeath, fromclear, clearnotify) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x147a
 // Size: 0x63
@@ -543,7 +543,7 @@ function killstreakoutoftimecallback(timeoutendnotify, clearnotify) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14e5
 // Size: 0x24
@@ -553,7 +553,7 @@ function killstreakclearcallback() {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1511
 // Size: 0x46
@@ -564,7 +564,7 @@ function killstreakregisteroobcallbacks() {
     registeroobclearcallback("killstreak", &killstreakclearcallback);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x155f
 // Size: 0xa2
@@ -581,7 +581,7 @@ function watchoobtriggers() {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1609
 // Size: 0x2a
@@ -591,7 +591,7 @@ function watchoobtrigger(trigger) {
     thread watchoobtriggerenter(trigger);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x163b
 // Size: 0x1f3
@@ -650,11 +650,11 @@ function watchoobtriggerenter(trigger) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1836
 // Size: 0x16d
-function function_4ac27cf95f50d024(var_281086936687228a) {
+function function_4ac27cf95f50d024(parent_trigger) {
     self endon("death");
     self endon("stop_failthread");
     while (true) {
@@ -703,7 +703,7 @@ function function_4ac27cf95f50d024(var_281086936687228a) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19ab
 // Size: 0xa4
@@ -724,7 +724,7 @@ function watchoobtriggerexit(trigger) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a57
 // Size: 0xd9
@@ -745,7 +745,7 @@ function onenteroobtrigger(trigger, ent) {
     enableoob(ent);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b38
 // Size: 0x73
@@ -759,7 +759,7 @@ function onexitoobtrigger(trigger, ent) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bb3
 // Size: 0x2b
@@ -770,7 +770,7 @@ function watchoobsuppressiontrigger(trigger) {
     thread watchoobsupressiontriggerenter();
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1be6
 // Size: 0x43
@@ -785,7 +785,7 @@ function watchoobsupressiontriggerenter(trigger) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c31
 // Size: 0x96
@@ -804,7 +804,7 @@ function watchoobsuppressiontriggerexit(trigger) {
     }
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ccf
 // Size: 0x7d
@@ -821,7 +821,7 @@ function onenteroobsuppressiontrigger(trigger, ent) {
     enableoobimmunity(ent);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d54
 // Size: 0x67
@@ -835,7 +835,7 @@ function onexitoobsupressiontrigger(trigger, ent) {
     disableoobimmunity(ent);
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1dc3
 // Size: 0xdb
@@ -869,7 +869,7 @@ function interactswithoobtriggers(ent) {
     return false;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ea7
 // Size: 0x61
@@ -886,7 +886,7 @@ function getoobdata() {
     return struct;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f11
 // Size: 0x40
@@ -901,7 +901,7 @@ function iskillstreakaffectedbyobb(streakname) {
     return var_60f0eedde53bb451;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f5a
 // Size: 0x96
@@ -919,7 +919,7 @@ function gettriggertype(ent, trigger) {
     return triggertype;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ff9
 // Size: 0x40
@@ -933,7 +933,7 @@ function getcooldowntime(triggertype) {
     return undefined;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2042
 // Size: 0x4a
@@ -949,7 +949,7 @@ function getoutofboundstime(triggertype) {
     return undefined;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2095
 // Size: 0x29
@@ -960,7 +960,7 @@ function getlastoobtrigger(ent) {
     return undefined;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x20c7
 // Size: 0x84
@@ -981,7 +981,7 @@ function getmaxoutofboundstime() {
     return outofboundstime;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2154
 // Size: 0x58
@@ -997,7 +997,7 @@ function getmaxoutofboundscooldown() {
     return outofboundscooldown;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x21b5
 // Size: 0x58
@@ -1013,7 +1013,7 @@ function getmaxoutofboundsminefieldtime() {
     return outofboundstimeminefield;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2216
 // Size: 0x16
@@ -1021,7 +1021,7 @@ function function_34db328baed4337e(bool) {
     level.var_c3da524e90fa9fb4 = !bool;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2234
 // Size: 0x15
@@ -1029,7 +1029,7 @@ function function_4ff3dde013cb8715(seconds) {
     level.outofboundstime = seconds;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2251
 // Size: 0x15
@@ -1037,7 +1037,7 @@ function function_74fda8a1be219946(seconds) {
     level.outofboundstimeminefield = seconds;
 }
 
-// Namespace namespace_d5ba12e50c252acd / scripts\cp\cp_outofbounds
+// Namespace cp_outofbounds / scripts\cp\cp_outofbounds
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x226e
 // Size: 0x15

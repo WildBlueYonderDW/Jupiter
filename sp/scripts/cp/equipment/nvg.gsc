@@ -1,17 +1,17 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\math.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\cp\utility\player.gsc;
 #using script_399e7658cc79090d;
-#using scripts\cp\utility.gsc;
 #using script_3a8f9ace195c9da9;
-#using scripts\cp\equipment\nvg.gsc;
-#using scripts\cp\cp_hud_message.gsc;
-#using scripts\cp\cp_relics.gsc;
-#using scripts\cp_mp\utility\player_utility.gsc;
-#using scripts\cp\cp_outline_utility.gsc;
-#using scripts\cp\equipment\cp_snapshot_grenade.gsc;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp\cp_hud_message;
+#using scripts\cp\cp_outline_utility;
+#using scripts\cp\cp_relics;
+#using scripts\cp\equipment\cp_snapshot_grenade;
+#using scripts\cp\equipment\nvg;
+#using scripts\cp\utility;
+#using scripts\cp\utility\player;
+#using scripts\cp_mp\utility\player_utility;
+#using scripts\engine\math;
+#using scripts\engine\utility;
 
 #namespace nvg;
 
@@ -88,24 +88,24 @@ function track_player_light_meter() {
         self.nvg.prevlightmeter = 1;
         self.nvg.lightmeter = 1;
     }
-    var_67e5c1d8a5710f95 = 1;
-    var_d21883e6746eba1c = 0;
+    light_meter = 1;
+    player_invisible = 0;
     thread light_meter_hud();
-    var_f22120fbffb96467 = 0;
+    light_factor = 0;
     start = (0, 0, 0);
     var_cbbfb154c6f4fffb = 0.45;
     while (true) {
         var_cbbfb154c6f4fffb = 0.1;
-        var_67e5c1d8a5710f95 = self getplayerlightlevel();
-        lightmeter_lerp_lightmeter(var_67e5c1d8a5710f95, var_cbbfb154c6f4fffb);
-        if (self.nvg.lightmeter < 0.5 && !var_d21883e6746eba1c) {
+        light_meter = self getplayerlightlevel();
+        lightmeter_lerp_lightmeter(light_meter, var_cbbfb154c6f4fffb);
+        if (self.nvg.lightmeter < 0.5 && !player_invisible) {
             ent_flag_set("in_the_dark");
-            var_d21883e6746eba1c = 1;
+            player_invisible = 1;
             continue;
         }
-        if (self.nvg.lightmeter >= 0.5 && var_d21883e6746eba1c) {
+        if (self.nvg.lightmeter >= 0.5 && player_invisible) {
             ent_flag_clear("in_the_dark");
-            var_d21883e6746eba1c = 0;
+            player_invisible = 0;
         }
     }
 }
@@ -192,9 +192,9 @@ function needle_noise() {
         self.data["time"] = 0;
         self.data["target"] = randomfloatrange(self.mag * -1, self.mag);
     }
-    var_2e95586c3f064a36 = math::normalize_value(0, self.data["period"], self.data["time"]);
-    var_2e95586c3f064a36 = math::function_889bef0ad1600791(var_2e95586c3f064a36);
-    self.data["val"] = self.data["old"] * (1 - var_2e95586c3f064a36) + self.data["target"] * var_2e95586c3f064a36;
+    period_factor = math::normalize_value(0, self.data["period"], self.data["time"]);
+    period_factor = math::function_889bef0ad1600791(period_factor);
+    self.data["val"] = self.data["old"] * (1 - period_factor) + self.data["target"] * period_factor;
     self.data["time"] = self.data["time"] + 0.05;
 }
 
@@ -453,8 +453,8 @@ function nvg_runScanMechanic() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12a1
 // Size: 0x57
-function function_375575e87d552f1a(var_997a68d0145b4469) {
-    foreach (note in var_997a68d0145b4469) {
+function function_375575e87d552f1a(event_notifies) {
+    foreach (note in event_notifies) {
         self endon(note);
     }
     self waittill("forever");

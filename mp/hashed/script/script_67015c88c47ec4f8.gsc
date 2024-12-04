@@ -1,9 +1,9 @@
-#using script_7c03ab87c5f9f420;
-#using scripts\mp\utility\player.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\mp\gametypes\br_gametype_dmz.gsc;
 #using script_2d9d24f7c63ac143;
+#using script_7c03ab87c5f9f420;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_gametype_dmz;
+#using scripts\mp\utility\player;
 
 #namespace namespace_5011b59e71c1167f;
 

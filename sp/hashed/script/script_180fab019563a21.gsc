@@ -1,20 +1,20 @@
-#using scripts\asm\asm.gsc;
-#using scripts\aitypes\bt_util.gsc;
-#using scripts\asm\asm_mp.gsc;
-#using scripts\common\ai.gsc;
 #using script_42941e02f1e748c8;
-#using scripts\cp_mp\agents\agent_init.gsc;
-#using scripts\aitypes\assets.gsc;
-#using scripts\cp\cp_weapon.gsc;
+#using scripts\aitypes\assets;
+#using scripts\aitypes\bt_util;
+#using scripts\asm\asm;
+#using scripts\asm\asm_mp;
+#using scripts\common\ai;
+#using scripts\cp\cp_weapon;
+#using scripts\cp_mp\agents\agent_init;
 
-#namespace namespace_f0ce1a1bc1166458;
+#namespace jup_ally_hero_price_cp;
 
-// Namespace namespace_f0ce1a1bc1166458 / namespace_5e0b2afb82e1c0f5
+// Namespace jup_ally_hero_price_cp / namespace_5e0b2afb82e1c0f5
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d9
 // Size: 0x1ac
 function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_36461b3fd98ec41b");
+    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_ally_hero_price_cp");
     self.health = 150;
     self.maxhealth = 150;
     self.behaviortreeasset = "soldier_agent";
@@ -43,7 +43,7 @@ function main() {
     scripts\common\ai::ai_init();
 }
 
-// Namespace namespace_f0ce1a1bc1166458 / namespace_5e0b2afb82e1c0f5
+// Namespace jup_ally_hero_price_cp / namespace_5e0b2afb82e1c0f5
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x38d
 // Size: 0x56
@@ -57,7 +57,7 @@ function setup_model() {
     }
 }
 
-// Namespace namespace_f0ce1a1bc1166458 / namespace_5e0b2afb82e1c0f5
+// Namespace jup_ally_hero_price_cp / namespace_5e0b2afb82e1c0f5
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3eb
 // Size: 0x8
@@ -65,7 +65,7 @@ function function_9ac26a51c94ccf52() {
     return namespace_ba61074845cd44c8::main();
 }
 
-// Namespace namespace_f0ce1a1bc1166458 / namespace_5e0b2afb82e1c0f5
+// Namespace jup_ally_hero_price_cp / namespace_5e0b2afb82e1c0f5
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fc
 // Size: 0xae
@@ -87,7 +87,7 @@ function precache() {
     thread setup_weapons();
 }
 
-// Namespace namespace_f0ce1a1bc1166458 / namespace_5e0b2afb82e1c0f5
+// Namespace jup_ally_hero_price_cp / namespace_5e0b2afb82e1c0f5
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b2
 // Size: 0x14d

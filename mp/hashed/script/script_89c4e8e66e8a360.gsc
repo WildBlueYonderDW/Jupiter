@@ -1,4 +1,4 @@
-#using scripts\mp\utility\player.gsc;
+#using scripts\mp\utility\player;
 
 #namespace namespace_39a53563bf72cee5;
 

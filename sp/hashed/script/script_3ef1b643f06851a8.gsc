@@ -1,9 +1,9 @@
-#using scripts\common\utility.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\common\scene.gsc;
-#using scripts\engine\math.gsc;
+#using scripts\common\scene;
+#using scripts\common\utility;
+#using scripts\engine\math;
+#using scripts\engine\sp\utility;
+#using scripts\engine\utility;
+#using scripts\sp\utility;
 
 #namespace namespace_13c788fbb37cd80e;
 
@@ -143,39 +143,39 @@ function function_ad005b37ad2132c0() {
     level endon("death");
     var_215c491624c432aa = level.player spawn_script_origin();
     while (true) {
-        var_9d3935492444d2c1 = level.player getleftsticky();
-        var_69827f897cf8a221 = abs(var_9d3935492444d2c1);
+        current_input = level.player getleftsticky();
+        var_69827f897cf8a221 = abs(current_input);
         pitch = math::factor_value(1, 1.05, var_69827f897cf8a221);
-        if (var_9d3935492444d2c1 > 0 && !flag("CCTV_rewind_active") && level.var_438345dcdca4f81a.fov < 70) {
+        if (current_input > 0 && !flag("CCTV_rewind_active") && level.current_cam.fov < 70) {
             var_215c491624c432aa stoploopsound("surg_cctv_zoom_out");
             var_215c491624c432aa playloopsound("surg_cctv_zoom_in");
             var_215c491624c432aa scalepitch(pitch, 1);
             level flag_set("cctv_zoom_lp_playing");
-            if (level.var_438345dcdca4f81a.fov == 20) {
+            if (level.current_cam.fov == 20) {
                 var_215c491624c432aa stoploopsound("surg_cctv_zoom_in");
                 var_215c491624c432aa scalepitch(1, 0.1);
             } else {
                 waitframe();
             }
         }
-        if (var_9d3935492444d2c1 < 0 && !flag("CCTV_rewind_active") && level.var_438345dcdca4f81a.fov > 20) {
+        if (current_input < 0 && !flag("CCTV_rewind_active") && level.current_cam.fov > 20) {
             var_215c491624c432aa stoploopsound("surg_cctv_zoom_in");
             var_215c491624c432aa playloopsound("surg_cctv_zoom_out");
             var_215c491624c432aa scalepitch(pitch, 1);
             level flag_set("cctv_zoom_lp_playing");
-            if (level.var_438345dcdca4f81a.fov == 70) {
+            if (level.current_cam.fov == 70) {
                 var_215c491624c432aa stoploopsound("surg_cctv_zoom_out");
                 var_215c491624c432aa scalepitch(1, 0.1);
             } else {
                 waitframe();
             }
         }
-        if (var_9d3935492444d2c1 == 0 && !flag("CCTV_rewind_active") && flag("cctv_zoom_lp_playing")) {
+        if (current_input == 0 && !flag("CCTV_rewind_active") && flag("cctv_zoom_lp_playing")) {
             var_215c491624c432aa stoploopsound("surg_cctv_zoom_in");
             var_215c491624c432aa stoploopsound("surg_cctv_zoom_out");
             var_215c491624c432aa scalepitch(1, 0.1);
         }
-        if (var_9d3935492444d2c1 != 0 && !flag("CCTV_rewind_active") && flag("cctv_zoom_lp_playing")) {
+        if (current_input != 0 && !flag("CCTV_rewind_active") && flag("cctv_zoom_lp_playing")) {
             waitframe();
             continue;
         }
@@ -242,11 +242,11 @@ function function_366bf1ca89007283() {
 // Checksum 0x0, Offset: 0x147d
 // Size: 0x60
 function function_4fdee4e4c1a6ce64() {
-    if (!isdefined(self.var_4bad86647dfc2cd1)) {
-        self.var_4bad86647dfc2cd1 = spawn("script_origin", self.origin);
-        self.var_4bad86647dfc2cd1 linkto(self);
-        self.var_4bad86647dfc2cd1 playloopsound("evt_surg_streets_car_idle_lp");
-        self.var_4bad86647dfc2cd1 thread function_16e4f2f9c0211e95();
+    if (!isdefined(self.car_sfx)) {
+        self.car_sfx = spawn("script_origin", self.origin);
+        self.car_sfx linkto(self);
+        self.car_sfx playloopsound("evt_surg_streets_car_idle_lp");
+        self.car_sfx thread function_16e4f2f9c0211e95();
     }
 }
 
@@ -255,11 +255,11 @@ function function_4fdee4e4c1a6ce64() {
 // Checksum 0x0, Offset: 0x14e5
 // Size: 0x60
 function function_e45ac94927cc7a6d() {
-    if (!isdefined(self.var_b8ff67feecc9ae10)) {
-        self.var_b8ff67feecc9ae10 = spawn("script_origin", self.origin);
-        self.var_b8ff67feecc9ae10 linkto(self);
-        self.var_b8ff67feecc9ae10 playloopsound("evt_surg_streets_truck_idle_lp");
-        self.var_b8ff67feecc9ae10 thread function_16e4f2f9c0211e95();
+    if (!isdefined(self.truck_sfx)) {
+        self.truck_sfx = spawn("script_origin", self.origin);
+        self.truck_sfx linkto(self);
+        self.truck_sfx playloopsound("evt_surg_streets_truck_idle_lp");
+        self.truck_sfx thread function_16e4f2f9c0211e95();
     }
 }
 
@@ -268,11 +268,11 @@ function function_e45ac94927cc7a6d() {
 // Checksum 0x0, Offset: 0x154d
 // Size: 0x60
 function function_bf738267dd44f324() {
-    if (!isdefined(self.var_3bad71ed7f82111)) {
-        self.var_3bad71ed7f82111 = spawn("script_origin", self.origin);
-        self.var_3bad71ed7f82111 linkto(self);
-        self.var_3bad71ed7f82111 playloopsound("evt_surg_streets_bus_idle_lp");
-        self.var_3bad71ed7f82111 thread function_16e4f2f9c0211e95();
+    if (!isdefined(self.bus_sfx)) {
+        self.bus_sfx = spawn("script_origin", self.origin);
+        self.bus_sfx linkto(self);
+        self.bus_sfx playloopsound("evt_surg_streets_bus_idle_lp");
+        self.bus_sfx thread function_16e4f2f9c0211e95();
     }
 }
 

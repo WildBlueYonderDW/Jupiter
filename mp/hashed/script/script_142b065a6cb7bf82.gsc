@@ -1,12 +1,12 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\mp\utility\player.gsc;
-#using script_930a1e7bd882c1d;
-#using script_7ab5b649fa408138;
-#using scripts\common\anim.gsc;
 #using script_75377e59f5becac8;
-#using scripts\mp\gametypes\br_public.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
+#using script_7ab5b649fa408138;
+#using script_930a1e7bd882c1d;
+#using scripts\common\anim;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\utility\player;
 
 #namespace namespace_58c6a84f987ee8e1;
 
@@ -134,31 +134,31 @@ function function_55f2480b4b819aea(movingChopper) {
         animstruct.packs[n] = animstruct create_animpack("scene1");
         animstruct.packs[n] add_pack_startfunc([], &function_1d609f282b615eb7);
         animstruct.packs[n] function_e718ba63d511fcde([], &function_447159ec37003898);
-        animstruct.packs[n] add_pack_modelanim(animstruct.cameraentsolo, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_cam"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.cameraentsolo, level.br_anim["wz_infil_mindia8_solo_cam"]);
         if (isdefined(animstruct.var_7bbc3350e7793cc6)) {
-            animstruct.packs[n] add_pack_modelanim(animstruct.var_7bbc3350e7793cc6, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_cam"]);
+            animstruct.packs[n] add_pack_modelanim(animstruct.var_7bbc3350e7793cc6, level.br_anim["wz_infil_mindia8_solo_cam"]);
         }
-        animstruct.packs[n] add_pack_modelanim(animstruct.cameraentsquad, level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_cam"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.cameraentsquad, level.br_anim["wz_infil_mindia8_squad_cam"]);
         if (isdefined(animstruct.var_a9a5dab973b28fad)) {
-            animstruct.packs[n] add_pack_modelanim(animstruct.var_a9a5dab973b28fad, level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_cam"]);
+            animstruct.packs[n] add_pack_modelanim(animstruct.var_a9a5dab973b28fad, level.br_anim["wz_infil_mindia8_squad_cam"]);
         }
-        animstruct.packs[n] add_pack_modelanim(animstruct.playerpositionents["parent_solo"], level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_character_link"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.playerpositionents["parent_squad"], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_character_link"]);
-        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_player"]);
-        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player1"]);
-        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player2"]);
-        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player3"]);
-        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[4], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player4"]);
-        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_player"]);
-        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player1"]);
-        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player2"]);
-        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player3"]);
-        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[4], level.var_1a209bd995a7fa83["wz_infil_mindia8_squad_player4"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.aiPilot, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_pilot"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.aiPilotHead, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_pilot"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.aiCopilot, level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_copilot"]);
-        animstruct.packs[n] add_pack_modelanim(animstruct.armadaRig, level.var_1a209bd995a7fa83["wz_infil_mindia8_armada"]);
-        animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.cameraentsquad, "j_prop_1", level.var_1a209bd995a7fa83["wz_infil_mindia8_solo_player"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.playerpositionents["parent_solo"], level.br_anim["wz_infil_mindia8_solo_character_link"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.playerpositionents["parent_squad"], level.br_anim["wz_infil_mindia8_squad_character_link"]);
+        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.br_anim["wz_infil_mindia8_solo_player"]);
+        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.br_anim["wz_infil_mindia8_squad_player1"]);
+        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.br_anim["wz_infil_mindia8_squad_player2"]);
+        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.br_anim["wz_infil_mindia8_squad_player3"]);
+        animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[4], level.br_anim["wz_infil_mindia8_squad_player4"]);
+        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.br_anim["wz_infil_mindia8_solo_player"]);
+        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.br_anim["wz_infil_mindia8_squad_player1"]);
+        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.br_anim["wz_infil_mindia8_squad_player2"]);
+        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.br_anim["wz_infil_mindia8_squad_player3"]);
+        animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[4], level.br_anim["wz_infil_mindia8_squad_player4"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.aiPilot, level.br_anim["wz_infil_mindia8_solo_pilot"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.aiPilotHead, level.br_anim["wz_infil_mindia8_solo_pilot"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.aiCopilot, level.br_anim["wz_infil_mindia8_solo_copilot"]);
+        animstruct.packs[n] add_pack_modelanim(animstruct.armadaRig, level.br_anim["wz_infil_mindia8_armada"]);
+        animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.cameraentsquad, "j_prop_1", level.br_anim["wz_infil_mindia8_solo_player"]);
         if (!isdefined(level.scr_notetrack["camera"])) {
             scripts\common\anim::addnotetrack_customfunction("camera", "transition", &transitionfunc);
             scripts\common\anim::addnotetrack_customfunction("camera", "fadeinstart", &fadeinfunc);
@@ -173,16 +173,16 @@ function function_55f2480b4b819aea(movingChopper) {
     n++;
     animstruct.packs[n] = animstruct create_animpack("looping", 1);
     animstruct.packs[n] add_pack_startfunc([], &function_5ff576fc264728a6);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl01"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl01"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl02"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl03"]);
-    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[4], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl04"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl01"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl01"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl02"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl03"]);
-    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[4], level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_pl04"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[0], level.br_anim["wz_infil_mindia8_loop_pl01"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[1], level.br_anim["wz_infil_mindia8_loop_pl01"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[2], level.br_anim["wz_infil_mindia8_loop_pl02"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[3], level.br_anim["wz_infil_mindia8_loop_pl03"]);
+    animstruct.packs[n] function_ad0bcac98781e0ab(animstruct.playertags[4], level.br_anim["wz_infil_mindia8_loop_pl04"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[0], level.br_anim["wz_infil_mindia8_loop_pl01"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[1], level.br_anim["wz_infil_mindia8_loop_pl01"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[2], level.br_anim["wz_infil_mindia8_loop_pl02"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[3], level.br_anim["wz_infil_mindia8_loop_pl03"]);
+    animstruct.packs[n] function_f7fc8b110c478968(animstruct.playermodels[4], level.br_anim["wz_infil_mindia8_loop_pl04"]);
     animstruct.packs[n] function_d4561ab1ba4f5de9(animstruct.cameraentsquad, "j_prop_1");
     return animstruct;
 }
@@ -240,7 +240,7 @@ function function_1d609f282b615eb7(array) {
     thread infil_light_dvars();
     thread delaystreamtomovingplane();
     foreach (armadaChopper in self.armadachoppers) {
-        var_52d8b7e47fb268fc = getanimlength(level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_veh"]);
+        var_52d8b7e47fb268fc = getanimlength(level.br_anim["wz_infil_mindia8_loop_veh"]);
         var_23a79fd929b2ba3d = randomfloatrange(0.5, var_52d8b7e47fb268fc - 0.5);
         armadaChopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopper", var_23a79fd929b2ba3d);
         armadaChopper setscriptablepartstate("infil_fx_armada", "on");
@@ -307,7 +307,7 @@ function function_5ff576fc264728a6(array) {
             self.movingChopper setscriptablepartstate("infil_fx_mindia8", "moving");
         }
         foreach (armadaChopper in self.armadachoppers) {
-            var_52d8b7e47fb268fc = getanimlength(level.var_1a209bd995a7fa83["wz_infil_mindia8_loop_veh"]);
+            var_52d8b7e47fb268fc = getanimlength(level.br_anim["wz_infil_mindia8_loop_veh"]);
             var_23a79fd929b2ba3d = randomfloatrange(0.5, var_52d8b7e47fb268fc - 0.5);
             armadaChopper scriptmodelplayanim("wz_infil_mindia8_loop_veh", "armadaChopper", var_23a79fd929b2ba3d);
             armadaChopper setscriptablepartstate("infil_fx_armada", "on");
@@ -668,18 +668,18 @@ function function_ad4a7a73c7d7d9e0() {
     var_8e3afd40d3c95b46 = "j_prop_" + self.infilanimindex + 2;
     cos45 = cos(45);
     if (dotforward < -1 * cos45) {
-        return ["wz_infil_mindia8_jump_genpropx10", level.var_1a209bd995a7fa83["wz_infil_mindia8_jump_genpropx10"], "wz_infil_mindia8_jump01_pl01", var_8e3afd40d3c95b46];
+        return ["wz_infil_mindia8_jump_genpropx10", level.br_anim["wz_infil_mindia8_jump_genpropx10"], "wz_infil_mindia8_jump01_pl01", var_8e3afd40d3c95b46];
     }
     if (dotright > cos45) {
-        return ["wz_infil_mindia8_jump_genpropx10_90_l", level.var_1a209bd995a7fa83["wz_infil_mindia8_jump_genpropx10_90_l"], "wz_infil_mindia8_jump01_pl01_90_l", var_8e3afd40d3c95b46];
+        return ["wz_infil_mindia8_jump_genpropx10_90_l", level.br_anim["wz_infil_mindia8_jump_genpropx10_90_l"], "wz_infil_mindia8_jump01_pl01_90_l", var_8e3afd40d3c95b46];
     }
     if (dotright < -1 * cos45) {
-        return ["wz_infil_mindia8_jump_genpropx10_90_r", level.var_1a209bd995a7fa83["wz_infil_mindia8_jump_genpropx10_90_r"], "wz_infil_mindia8_jump01_pl01_90_r", var_8e3afd40d3c95b46];
+        return ["wz_infil_mindia8_jump_genpropx10_90_r", level.br_anim["wz_infil_mindia8_jump_genpropx10_90_r"], "wz_infil_mindia8_jump01_pl01_90_r", var_8e3afd40d3c95b46];
     }
     if (dotright > 0) {
-        return ["wz_infil_mindia8_jump_genpropx10_180_l", level.var_1a209bd995a7fa83["wz_infil_mindia8_jump_genpropx10_180_l"], "wz_infil_mindia8_jump01_pl01_180_l", var_8e3afd40d3c95b46];
+        return ["wz_infil_mindia8_jump_genpropx10_180_l", level.br_anim["wz_infil_mindia8_jump_genpropx10_180_l"], "wz_infil_mindia8_jump01_pl01_180_l", var_8e3afd40d3c95b46];
     }
-    return ["wz_infil_mindia8_jump_genpropx10_180_r", level.var_1a209bd995a7fa83["wz_infil_mindia8_jump_genpropx10_180_r"], "wz_infil_mindia8_jump01_pl01_180_r", var_8e3afd40d3c95b46];
+    return ["wz_infil_mindia8_jump_genpropx10_180_r", level.br_anim["wz_infil_mindia8_jump_genpropx10_180_r"], "wz_infil_mindia8_jump01_pl01_180_r", var_8e3afd40d3c95b46];
 }
 
 // Namespace namespace_58c6a84f987ee8e1 / namespace_5c75c180befb8e98

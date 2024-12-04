@@ -1,46 +1,46 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\mp\gamelogic.gsc;
-#using scripts\mp\bots\bots_util.gsc;
-#using scripts\mp\bots\bots_strategy.gsc;
-#using scripts\mp\bots\bots_gametype_br.gsc;
-#using script_59ff79d681bb860c;
-#using scripts\engine\math.gsc;
-#using script_d74ae0b4aa21186;
-#using scripts\mp\gametypes\br_gametypes.gsc;
-#using script_26ccbfe3954cacf4;
-#using scripts\mp\autopilot.gsc;
-#using scripts\mp\utility\game.gsc;
-#using script_4c9bd9a3bf3f8cf7;
-#using scripts\mp\gametypes\br_plunder.gsc;
-#using script_5120873d6d2bb7e2;
-#using script_4a6760982b403bad;
-#using scripts\mp\gametypes\br_public.gsc;
-#using script_3904cfff5ce7fdcb;
-#using script_58be75c518bf0d40;
-#using scripts\mp\utility\teams.gsc;
-#using scripts\mp\gametypes\br_c130.gsc;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using script_40e63dd222434655;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\utility\player.gsc;
-#using scripts\mp\class.gsc;
-#using scripts\mp\gametypes\br.gsc;
-#using script_72af5a878a9d3397;
-#using scripts\mp\gametypes\br_spectate.gsc;
-#using scripts\mp\gametypes\br_armory_kiosk.gsc;
-#using scripts\mp\gametypes\br_pickups.gsc;
 #using script_110fd2130c2ed1fe;
-#using script_6388860e9e2a83bd;
-#using scripts\mp\gametypes\br_assassination_quest.gsc;
-#using scripts\mp\gametypes\br_vip_quest.gsc;
-#using scripts\cp_mp\gasmask.gsc;
-#using script_64acb6ce534155b7;
-#using scripts\mp\equipment.gsc;
+#using script_26ccbfe3954cacf4;
+#using script_3904cfff5ce7fdcb;
+#using script_40e63dd222434655;
+#using script_4a6760982b403bad;
+#using script_4c9bd9a3bf3f8cf7;
+#using script_5120873d6d2bb7e2;
+#using script_58be75c518bf0d40;
 #using script_58f20490049af6ac;
-#using scripts\cp_mp\utility\game_utility.gsc;
-#using scripts\mp\gametypes\br_weapons.gsc;
+#using script_59ff79d681bb860c;
+#using script_6388860e9e2a83bd;
+#using script_64acb6ce534155b7;
+#using script_72af5a878a9d3397;
+#using script_d74ae0b4aa21186;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\cp_mp\gasmask;
+#using scripts\cp_mp\utility\game_utility;
+#using scripts\engine\math;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\autopilot;
+#using scripts\mp\bots\bots_gametype_br;
+#using scripts\mp\bots\bots_strategy;
+#using scripts\mp\bots\bots_util;
+#using scripts\mp\class;
+#using scripts\mp\equipment;
+#using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\br;
+#using scripts\mp\gametypes\br_armory_kiosk;
+#using scripts\mp\gametypes\br_assassination_quest;
+#using scripts\mp\gametypes\br_c130;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\gametypes\br_gametypes;
+#using scripts\mp\gametypes\br_pickups;
+#using scripts\mp\gametypes\br_plunder;
+#using scripts\mp\gametypes\br_public;
+#using scripts\mp\gametypes\br_spectate;
+#using scripts\mp\gametypes\br_vip_quest;
+#using scripts\mp\gametypes\br_weapons;
+#using scripts\mp\utility\game;
+#using scripts\mp\utility\player;
+#using scripts\mp\utility\teams;
 
 #namespace namespace_7823423e849112c7;
 
@@ -384,7 +384,7 @@ function function_6c4f073450168827() {
     var_60ca8d97eb9cab53 = [];
     previousmaxrange = -1;
     for (index = 1; index <= rowcount; index++) {
-        dvar = hashcat(@"hash_31f8565b191b4452", index);
+        dvar = hashcat(@"scr_skill_based_bot_difficulties_config_", index);
         rowstr = getdvar(dvar);
         if (rowstr == "") {
             return function_b5b189c89f00beb8("The config dvar 'scr_skill_based_bot_difficulties_config_" + index + "' is empty.");
@@ -2211,10 +2211,10 @@ function function_bbc2d6967287dc7(lootitemname, valuetable) {
         if (currentprimaryweaponclass == "pistol" || currentprimaryweaponclass == "melee") {
             playerweaponrarity = -1;
         } else {
-            playerweaponrarity = scripts\mp\gametypes\br_pickups::function_96b5a34cd1572d60(currentprimaryweapon);
+            playerweaponrarity = scripts\mp\gametypes\br_pickups::getWeaponPickupRarity(currentprimaryweapon);
         }
         pickweapon = level.br_lootiteminfo[lootitemname].fullweaponobj;
-        var_167e430a395b12ba = scripts\mp\gametypes\br_pickups::function_96b5a34cd1572d60(pickweapon);
+        var_167e430a395b12ba = scripts\mp\gametypes\br_pickups::getWeaponPickupRarity(pickweapon);
         var_c946bb8bd070cc8b = playerweaponrarity < var_167e430a395b12ba;
         return (!var_f8a42b1fc9705ecf && var_c946bb8bd070cc8b);
     case #"cache":
@@ -2317,7 +2317,7 @@ function function_bcb0778bb33e86de(point) {
     if (scripts\mp\gamelogic::inprematch()) {
         return 1;
     }
-    if (namespace_bbc79db4c3949a5c::function_ee854fdd1e77efc4(self.origin)) {
+    if (namespace_bbc79db4c3949a5c::isPointInMultiCircleDanger(self.origin)) {
         return namespace_bbc79db4c3949a5c::function_77cec84f05ca9418(self.origin, point);
     }
     circle = function_e5b4b5992cddb221();

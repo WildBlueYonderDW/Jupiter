@@ -1,7 +1,7 @@
-#using scripts\cp_mp\calloutmarkerping.gsc;
-#using scripts\cp\utility\disconnect_event_aggregator.gsc;
-#using scripts\cp\utility.gsc;
-#using scripts\engine\utility.gsc;
+#using scripts\cp\utility;
+#using scripts\cp\utility\disconnect_event_aggregator;
+#using scripts\cp_mp\calloutmarkerping;
+#using scripts\engine\utility;
 
 #namespace namespace_3f7d3bf4cbed7ec1;
 

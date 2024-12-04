@@ -1,6 +1,6 @@
-#namespace namespace_6422d2bc72ac9d0c;
+#namespace bodies_civilian_asm_male_2;
 
-// Namespace namespace_6422d2bc72ac9d0c / namespace_ddb380a84491ba8c
+// Namespace bodies_civilian_asm_male_2 / namespace_ddb380a84491ba8c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13a
 // Size: 0x65

@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using script_58f20490049af6ac;
-#using script_371b4c2ab5861e62;
-#using scripts\mp\gametypes\br_circle.gsc;
-#using script_48814951e916af89;
-#using scripts\mp\poi.gsc;
 #using script_2bc0b0102f9b7751;
+#using script_371b4c2ab5861e62;
+#using script_48814951e916af89;
+#using script_58f20490049af6ac;
 #using script_640cf1641c03e2a0;
-#using scripts\mp\ai_behavior.gsc;
+#using scripts\common\utility;
+#using scripts\engine\utility;
+#using scripts\mp\ai_behavior;
+#using scripts\mp\gametypes\br_circle;
+#using scripts\mp\poi;
 
 #namespace namespace_f3c963e429e76c8d;
 

@@ -1,15 +1,15 @@
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\common\values.gsc;
-#using scripts\common\devgui.gsc;
-#using script_7edf952f8921aa6b;
-#using scripts\mp\utility\perk.gsc;
-#using script_58682e6578ce0515;
-#using scripts\engine\trace.gsc;
-#using scripts\mp\supers.gsc;
-#using script_38db8bccc9eb301f;
 #using script_16ea1b94f0f381b3;
+#using script_38db8bccc9eb301f;
+#using script_58682e6578ce0515;
 #using script_63d03bd53d001217;
+#using script_7edf952f8921aa6b;
+#using scripts\common\devgui;
+#using scripts\common\utility;
+#using scripts\common\values;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\mp\supers;
+#using scripts\mp\utility\perk;
 
 #namespace namespace_25dc7c066230bd21;
 
@@ -192,7 +192,7 @@ function function_a09e395daeb68f70() {
             var_9f88f5c467218406 = area.var_44dbf7668c66e452[current_ai getentitynumber()];
             is_slowed = current_ai function_2fb9b4401941c475();
             if (!istrue(is_slowed) && !utility::is_equal(current_ai.type, "human")) {
-                current_ai thread function_16755d49f5cc3b3(self, area.remaining_durationms / 1000);
+                current_ai thread slow_ai(self, area.remaining_durationms / 1000);
                 waitframe();
             }
         }
@@ -289,7 +289,7 @@ function function_fea8b8d300f71280(attacker) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xf47
 // Size: 0xa5
-function function_16755d49f5cc3b3(attacker, duration) {
+function slow_ai(attacker, duration) {
     level endon("game_ended");
     self endon("death");
     if (duration <= 0.1) {

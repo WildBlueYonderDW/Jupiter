@@ -1,15 +1,15 @@
-#using scripts\asm\asm.gsc;
-#using scripts\asm\asm_bb.gsc;
-#using scripts\engine\utility.gsc;
-#using scripts\common\utility.gsc;
-#using scripts\asm\shared\utility.gsc;
-#using scripts\anim\utility_common.gsc;
-#using script_3433ee6b63c7e243;
-#using scripts\asm\soldier\death.gsc;
-#using scripts\asm\soldier\melee.gsc;
 #using script_13d1c402f1421c35;
-#using scripts\common\gameskill.gsc;
-#using scripts\anim\notetracks.gsc;
+#using script_3433ee6b63c7e243;
+#using scripts\anim\notetracks;
+#using scripts\anim\utility_common;
+#using scripts\asm\asm;
+#using scripts\asm\asm_bb;
+#using scripts\asm\shared\utility;
+#using scripts\asm\soldier\death;
+#using scripts\asm\soldier\melee;
+#using scripts\common\gameskill;
+#using scripts\common\utility;
+#using scripts\engine\utility;
 
 #namespace script_funcs;
 

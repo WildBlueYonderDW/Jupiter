@@ -43,8 +43,8 @@ function function_67d2e1159a24893(itembundle, item, autouse, allowswap) {
     foreach (primary_weapon in primary_weapons) {
         var_fe768d47e57d337a = function_207fcdc93a85aa07(primary_weapon);
         if (isdefined(var_fe768d47e57d337a) && var_fe768d47e57d337a == itembundle.ref) {
-            var_de8a9ead75a0581 = self getweaponammostock(primary_weapon);
-            if (var_de8a9ead75a0581 < primary_weapon.maxammo) {
+            current_ammo = self getweaponammostock(primary_weapon);
+            if (current_ammo < primary_weapon.maxammo) {
                 return true;
             }
         }
@@ -87,12 +87,12 @@ function private function_207fcdc93a85aa07(primary_weapon) {
 function function_dbeac47bbdfe2c89(primary_weapon, itembundle, ammoleft) {
     var_fe768d47e57d337a = function_207fcdc93a85aa07(primary_weapon);
     if (isdefined(var_fe768d47e57d337a) && var_fe768d47e57d337a == itembundle.ref) {
-        var_de8a9ead75a0581 = self getweaponammostock(primary_weapon);
-        if (var_de8a9ead75a0581 < primary_weapon.maxammo) {
-            var_ae99050519de73b2 = primary_weapon.maxammo - var_de8a9ead75a0581;
+        current_ammo = self getweaponammostock(primary_weapon);
+        if (current_ammo < primary_weapon.maxammo) {
+            var_ae99050519de73b2 = primary_weapon.maxammo - current_ammo;
             var_cb8b543e9d0c0d0d = int(min(ammoleft, var_ae99050519de73b2));
             ammoleft -= var_cb8b543e9d0c0d0d;
-            self setweaponammostock(primary_weapon, var_de8a9ead75a0581 + var_cb8b543e9d0c0d0d);
+            self setweaponammostock(primary_weapon, current_ammo + var_cb8b543e9d0c0d0d);
         }
     }
     return ammoleft;

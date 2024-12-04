@@ -1,13 +1,13 @@
-#using scripts\engine\utility.gsc;
-#using scripts\engine\sp\utility.gsc;
-#using scripts\sp\utility.gsc;
-#using scripts\sp\equipment\offhands.gsc;
-#using scripts\sp\player\cursor_hint.gsc;
-#using scripts\engine\trace.gsc;
+#using scripts\engine\sp\utility;
+#using scripts\engine\trace;
+#using scripts\engine\utility;
+#using scripts\sp\equipment\offhands;
+#using scripts\sp\player\cursor_hint;
+#using scripts\sp\utility;
 
-#namespace namespace_644c8b26caaac809;
+#namespace improvised_mine;
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x18f
 // Size: 0x50
@@ -17,7 +17,7 @@ function precache(offhand) {
     registeroffhandfirefunc(offhand, &function_8a9f51e377f0e1af);
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e7
 // Size: 0x35
@@ -29,7 +29,7 @@ function function_8a9f51e377f0e1af(grenade, weapon) {
     thread function_f5964c57cc8da167(grenade, self, self.team, weapon);
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x224
 // Size: 0xf4
@@ -50,7 +50,7 @@ function function_f5964c57cc8da167(grenade, mineowner, team, var_4fa68e590a2bcf6
     grenade thread function_57abe555dd7dd3b8(mineowner);
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x320
 // Size: 0x8b
@@ -64,7 +64,7 @@ function function_180c6f276018e945() {
     }
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b3
 // Size: 0xa5
@@ -89,7 +89,7 @@ function function_fc5ca7252f44256a(mineowner, var_ff882f75755f7367) {
     }
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x460
 // Size: 0xae
@@ -112,7 +112,7 @@ function function_d5b93c92c3f30a80(mineowner) {
     thread function_5a73691d0868ca47(mineowner);
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x516
 // Size: 0x9e
@@ -135,7 +135,7 @@ function function_57abe555dd7dd3b8(mineowner) {
     }
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x5bc
 // Size: 0x199
@@ -165,7 +165,7 @@ function function_5a73691d0868ca47(attacker) {
     function_1c1b9d33706c152d(attacker, "explosion");
 }
 
-// Namespace namespace_644c8b26caaac809 / namespace_7a9d05cd551e40e9
+// Namespace improvised_mine / namespace_7a9d05cd551e40e9
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x75d
 // Size: 0x44

@@ -4,9 +4,10 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8f
 // Size: 0x1f
-function main() {
-    a[0] = "head_sc_f_alicea_civ";
-    a[1] = "head_sc_f_lim_civ";
+function main()
+{
+    a[ 0 ] = "head_sc_f_alicea_civ";
+    a[ 1 ] = "head_sc_f_lim_civ";
     return a;
 }
 

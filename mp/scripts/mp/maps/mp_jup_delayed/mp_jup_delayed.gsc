@@ -1,5 +1,3 @@
-#using script_1b7a8b0794ef5f02;
-#using script_43ee407dd64b8586;
 #using scripts\common\anim;
 #using scripts\common\utility;
 #using scripts\engine\utility;
@@ -9,6 +7,8 @@
 #using scripts\mp\compass;
 #using scripts\mp\flags;
 #using scripts\mp\load;
+#using scripts\mp\maps\mp_jup_delayed\gen\mp_jup_delayed_art;
+#using scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_audio;
 #using scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_fx;
 #using scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_lighting;
 #using scripts\mp\utility\game;
@@ -19,22 +19,23 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x25d
 // Size: 0xce
-function main() {
-    namespace_8f1b04c619266ce2::main();
-    namespace_109a5b65e906dd7a::main();
+function main()
+{
+    scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_audio::main();
+    scripts\mp\maps\mp_jup_delayed\gen\mp_jup_delayed_art::main();
     scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_fx::main();
     scripts\mp\maps\mp_jup_delayed\mp_jup_delayed_lighting::main();
     scripts\mp\load::main();
-    level.outofboundstriggers = getentarray("OutOfBounds", "targetname");
-    level.kill_border_triggers = getentarray("kill_border_trigger", "targetname");
-    scripts\mp\compass::setupminimap("compass_map_mp_jup_delayed");
-    setdvar(@"hash_7686fcb92ccc5edb", 8);
-    setdvar(@"r_umbraaccurateocclusionthreshold", 1024);
-    game["attackers"] = "allies";
-    game["defenders"] = "axis";
-    game["allies_outfit"] = "urban";
-    game["axis_outfit"] = "woodland";
-    thread play_movie("pic_screens_delayed");
+    level.outofboundstriggers = getentarray( "OutOfBounds", "targetname" );
+    level.kill_border_triggers = getentarray( "kill_border_trigger", "targetname" );
+    scripts\mp\compass::setupminimap( "compass_map_mp_jup_delayed" );
+    setdvar( @"hash_7686fcb92ccc5edb", 8 );
+    setdvar( @"r_umbraaccurateocclusionthreshold", 1024 );
+    game[ "attackers" ] = "allies";
+    game[ "defenders" ] = "axis";
+    game[ "allies_outfit" ] = "urban";
+    game[ "axis_outfit" ] = "woodland";
+    thread play_movie( "pic_screens_delayed" );
     level thread function_2c1e7d6df0d51540();
 }
 
@@ -42,42 +43,55 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x333
 // Size: 0x170
-function function_2c1e7d6df0d51540() {
+function function_2c1e7d6df0d51540()
+{
     gametype = getbasegametype();
-    if (gametype == "war" || gametype == "cmd" || gametype == "ctf" || gametype == "cyber" || gametype == "tdm" || gametype == "dom" || gametype == "koth" || gametype == "conf") {
-        level waittill("infil_setup_complete");
-        if (!gameflag("infil_will_run")) {
-            var_590640ad61ade716 = (2920, -1128, 150);
-            var_6cfce437b59d8dcc = (0, 90, 0);
-            left_elevator = spawn_model("building_saba_elevator_set", var_590640ad61ade716, var_6cfce437b59d8dcc);
-            var_430ac5dbe368d1f = (2920, -548, 150);
-            var_ca3f58f0d52aa841 = (0, 270, 0);
-            right_elevator = spawn_model("building_saba_elevator_set", var_430ac5dbe368d1f, var_ca3f58f0d52aa841);
+    
+    if ( gametype == "war" || gametype == "cmd" || gametype == "ctf" || gametype == "cyber" || gametype == "tdm" || gametype == "dom" || gametype == "koth" || gametype == "conf" )
+    {
+        level waittill( "infil_setup_complete" );
+        
+        if ( !gameflag( "infil_will_run" ) )
+        {
+            var_590640ad61ade716 = ( 2920, -1128, 150 );
+            var_6cfce437b59d8dcc = ( 0, 90, 0 );
+            left_elevator = spawn_model( "building_saba_elevator_set", var_590640ad61ade716, var_6cfce437b59d8dcc );
+            var_430ac5dbe368d1f = ( 2920, -548, 150 );
+            var_ca3f58f0d52aa841 = ( 0, 270, 0 );
+            right_elevator = spawn_model( "building_saba_elevator_set", var_430ac5dbe368d1f, var_ca3f58f0d52aa841 );
         }
+        
         return;
     }
-    var_590640ad61ade716 = (2920, -1128, 150);
-    var_6cfce437b59d8dcc = (0, 90, 0);
-    left_elevator = spawn_model("building_saba_elevator_set", var_590640ad61ade716, var_6cfce437b59d8dcc);
-    var_430ac5dbe368d1f = (2920, -548, 150);
-    var_ca3f58f0d52aa841 = (0, 270, 0);
-    right_elevator = spawn_model("building_saba_elevator_set", var_430ac5dbe368d1f, var_ca3f58f0d52aa841);
+    
+    var_590640ad61ade716 = ( 2920, -1128, 150 );
+    var_6cfce437b59d8dcc = ( 0, 90, 0 );
+    left_elevator = spawn_model( "building_saba_elevator_set", var_590640ad61ade716, var_6cfce437b59d8dcc );
+    var_430ac5dbe368d1f = ( 2920, -548, 150 );
+    var_ca3f58f0d52aa841 = ( 0, 270, 0 );
+    right_elevator = spawn_model( "building_saba_elevator_set", var_430ac5dbe368d1f, var_ca3f58f0d52aa841 );
 }
 
 // Namespace mp_jup_delayed / scripts\mp\maps\mp_jup_delayed\mp_jup_delayed
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ab
 // Size: 0x57
-function play_movie(bink) {
-    if (getdvarint(@"hash_e6afce2cf5cf7515") == 1) {
+function play_movie( bink )
+{
+    if ( getdvarint( @"hash_e6afce2cf5cf7515" ) == 1 )
+    {
         return;
     }
-    while (true) {
-        if (flag("nuke_bink_done")) {
+    
+    while ( true )
+    {
+        if ( flag( "nuke_bink_done" ) )
+        {
             break;
         }
-        setdvar(@"hash_d3ee5a6578fe61de", "0");
-        playcinematicforalllooping(bink);
+        
+        setdvar( @"hash_d3ee5a6578fe61de", "0" );
+        playcinematicforalllooping( bink );
         wait 3;
     }
 }

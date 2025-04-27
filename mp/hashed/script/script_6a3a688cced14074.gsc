@@ -9,47 +9,58 @@
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xe9
+// Checksum 0x0, Offset: 0xe6
 // Size: 0x15
-function function_eda57308516bfc5f() {
-    return function_bffb5b682a4ef6a2(&evaluatescore, &createaction, 2000);
+function function_eda57308516bfc5f()
+{
+    return function_bffb5b682a4ef6a2( &evaluatescore, &createaction, 2000 );
 }
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x107
+// Checksum 0x0, Offset: 0x104
 // Size: 0xef
-function evaluatescore(bot) {
-    if (!bot iskillstreakavailable("uav_bigmap")) {
+function evaluatescore( bot )
+{
+    if ( !bot iskillstreakavailable( "uav_bigmap" ) )
+    {
         return 0;
     }
+    
     nearbyevent = bot namespace_5524884c16a95af2::getevent();
-    nearbyevent namespace_5524884c16a95af2::indistance(self.constants.var_df15d9eff00563be);
+    nearbyevent namespace_5524884c16a95af2::indistance( self.constants.var_df15d9eff00563be );
     var_b16f718206f54b7b = 0;
-    foreach (player in nearbyevent.result) {
-        if (function_40034c2faf09a87b(player)) {
+    
+    foreach ( player in nearbyevent.result )
+    {
+        if ( function_40034c2faf09a87b( player ) )
+        {
             var_b16f718206f54b7b++;
         }
     }
-    return self.constants.basescore + function_9d1ab012058221bb(var_b16f718206f54b7b, self.constants.var_e8b4534f27490bc4, self.constants.var_ffd2b6629c92a80d);
+    
+    return self.constants.basescore + function_9d1ab012058221bb( var_b16f718206f54b7b, self.constants.var_e8b4534f27490bc4, self.constants.var_ffd2b6629c92a80d );
 }
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ff
+// Checksum 0x0, Offset: 0x1fc
 // Size: 0x27
-function createaction(bot) {
-    return createactionbase("Killstreak UAV", undefined, "upper body", "", &actionprocess, self);
+function createaction( bot )
+{
+    return createactionbase( "Killstreak UAV", undefined, "upper body", "", &actionprocess, self );
 }
 
 // Namespace killstreak_uav / namespace_c8150390fc0bf61e
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x22f
+// Checksum 0x0, Offset: 0x22c
 // Size: 0x36
-function actionprocess(bot) {
-    bot scripts\mp\killstreaks\killstreaks::dokillstreakaction(undefined, 1);
+function actionprocess( bot )
+{
+    bot scripts\mp\killstreaks\killstreaks::dokillstreakaction( undefined, 1 );
+    
     /#
-        logstring("<dev string:x1c>" + bot.name + "<dev string:x2c>");
+        logstring( "<dev string:x1c>" + bot.name + "<dev string:x2c>" );
     #/
 }
 

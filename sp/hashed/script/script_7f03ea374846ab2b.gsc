@@ -1,7 +1,7 @@
-#using script_16008c3f0a2090c6;
-#using script_5c36b3719581f7cc;
+#using character\c_jup_sp_hero_soap_london_tactical;
 #using scripts\aitypes\assets;
 #using scripts\aitypes\bt_util;
+#using scripts\anim\init;
 #using scripts\asm\asm;
 #using scripts\asm\asm_sp;
 #using scripts\common\ai;
@@ -12,27 +12,28 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x192
 // Size: 0x188
-function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"hash_27534b9e0a600145");
-    self.grenadeweapon = makeweapon("frag");
+function main()
+{
+    self.aitypeid = function_2336488258354fbc( #"aitype", %"hash_27534b9e0a600145" );
+    self.grenadeweapon = makeweapon( "frag" );
     self.grenadeammo = 2;
     self.secondaryweapon = nullweapon();
-    self.sidearm = makeweapon("iw9_pi_golf17_sp");
+    self.sidearm = makeweapon( "iw9_pi_golf17_sp" );
     self.behaviortreeasset = "enemy_combatant";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "soldier";
     self.usescriptedweapon = 0;
     self.scriptedweaponclassprimary = "none";
-    self.weapon = makeweapon("iw9_dm_mike14_sp");
+    self.weapon = makeweapon( "iw9_dm_mike14_sp" );
     setup_model();
-    namespace_a8b91aa898baa76c::firstinit();
+    scripts\anim\init::firstinit();
     self.a = spawnstruct();
     scripts\asm\asm::asm_init_blackboard();
     scripts\aitypes\bt_util::bt_init();
-    assertex(isdefined(self.animationarchetype) && self.animationarchetype != "", "Aitype " + self.classname + " does not have the animation archetype defined on the asset.");
-    assertex(isdefined(self.asmasset) && self.asmasset != "", "Aitype " + self.classname + " does not have the animation state machine defined on the asset.");
-    self.var_a942dd31d55102c9 = self.asmasset;
-    scripts\asm\asm_sp::asm_init(self.asmasset, self.animationarchetype);
+    assertex( isdefined( self.animationarchetype ) && self.animationarchetype != "", "Aitype " + self.classname + " does not have the animation archetype defined on the asset." );
+    assertex( isdefined( self.asmasset ) && self.asmasset != "", "Aitype " + self.classname + " does not have the animation state machine defined on the asset." );
+    self.defaultasm = self.asmasset;
+    scripts\asm\asm_sp::asm_init( self.asmasset, self.animationarchetype );
     scripts\common\ai::ai_init();
 }
 
@@ -40,12 +41,15 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x322
 // Size: 0x56
-function setup_model() {
-    var_42e5c77b1d7fe6e7 = isdefined(self.var_42e5c77b1d7fe6e7) ? self.var_42e5c77b1d7fe6e7 : "default";
-    switch (var_42e5c77b1d7fe6e7) {
-    case #"hash_7038dec66d8275be":
-    default:
-        return function_9ac26a51c94ccf52();
+function setup_model()
+{
+    var_42e5c77b1d7fe6e7 = isdefined( self.var_42e5c77b1d7fe6e7 ) ? self.var_42e5c77b1d7fe6e7 : "default";
+    
+    switch ( var_42e5c77b1d7fe6e7 )
+    {
+        case #"hash_7038dec66d8275be":
+        default:
+            return function_9ac26a51c94ccf52();
     }
 }
 
@@ -53,27 +57,30 @@ function setup_model() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x380
 // Size: 0x8
-function function_9ac26a51c94ccf52() {
-    return namespace_e005437217f2ac88::main();
+function function_9ac26a51c94ccf52()
+{
+    return character\c_jup_sp_hero_soap_london_tactical::main();
 }
 
 // Namespace namespace_6db5048006c95faa / namespace_2511deaf593039ef
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x391
 // Size: 0xe
-function spawner() {
-    self setspawnerteam("allies");
+function spawner()
+{
+    self setspawnerteam( "allies" );
 }
 
 // Namespace namespace_6db5048006c95faa / namespace_2511deaf593039ef
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a7
 // Size: 0x41
-function precache(classname) {
-    namespace_e005437217f2ac88::precache_sp();
-    precacheitem("iw9_dm_mike14_sp");
-    precacheitem("iw9_pi_golf17_sp");
-    precacheitem("frag");
+function precache( classname )
+{
+    character\c_jup_sp_hero_soap_london_tactical::precache_sp();
+    precacheitem( "iw9_dm_mike14_sp" );
+    precacheitem( "iw9_pi_golf17_sp" );
+    precacheitem( "frag" );
     scripts\aitypes\bt_util::init();
     scripts\aitypes\assets::soldier();
 }

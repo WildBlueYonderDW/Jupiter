@@ -4,26 +4,28 @@
 #using scripts\engine\utility;
 #using scripts\mp\flags;
 
-#namespace namespace_744a21aacc598d0a;
+#namespace mp_jup_estate_lighting;
 
-// Namespace namespace_744a21aacc598d0a / scripts\mp\maps\mp_jup_estate\mp_jup_estate_lighting
+// Namespace mp_jup_estate_lighting / scripts\mp\maps\mp_jup_estate\mp_jup_estate_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12d
 // Size: 0xa
-function main() {
+function main()
+{
     thread function_15ac91b5e59a6c86();
 }
 
-// Namespace namespace_744a21aacc598d0a / scripts\mp\maps\mp_jup_estate\mp_jup_estate_lighting
+// Namespace mp_jup_estate_lighting / scripts\mp\maps\mp_jup_estate\mp_jup_estate_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x13f
 // Size: 0x7e
-function function_15ac91b5e59a6c86() {
+function function_15ac91b5e59a6c86()
+{
     wait 1;
-    gameflagwait("infil_started");
-    mover = getent("bravo", "targetname");
-    probe = getent("helicopter_reflection_probe", "targetname");
-    probe linkto(mover, "tag_light_interior_01", (120, 3, -50), (0, 0, 0));
-    mover setscriptablepartstate("infil_lights", "on_estate", 0);
+    gameflagwait( "infil_started" );
+    mover = getent( "bravo", "targetname" );
+    probe = getent( "helicopter_reflection_probe", "targetname" );
+    probe linkto( mover, "tag_light_interior_01", ( 120, 3, -50 ), ( 0, 0, 0 ) );
+    mover setscriptablepartstate( "infil_lights", "on_estate", 0 );
 }
 

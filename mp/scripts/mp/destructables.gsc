@@ -4,16 +4,21 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb9
 // Size: 0x73
-function init() {
-    ents = getentarray("destructable", "targetname");
-    if (getdvar(@"scr_destructables") == "0") {
+function init()
+{
+    ents = getentarray( "destructable", "targetname" );
+    
+    if ( getdvar( @"scr_destructables" ) == "0" )
+    {
         for (i = 0; i < ents.size; i++) {
-            ents[i] delete();
+            ents[ i ] delete();
         }
+        
         return;
     }
+    
     for (i = 0; i < ents.size; i++) {
-        ents[i] thread destructable_think();
+        ents[ i ] thread destructable_think();
     }
 }
 
@@ -21,31 +26,48 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x134
 // Size: 0x10e
-function destructable_think() {
+function destructable_think()
+{
     accumulate = 40;
     threshold = 0;
-    if (isdefined(self.script_accumulate)) {
+    
+    if ( isdefined( self.script_accumulate ) )
+    {
         accumulate = self.script_accumulate;
     }
-    if (isdefined(self.script_threshold)) {
+    
+    if ( isdefined( self.script_threshold ) )
+    {
         threshold = self.script_threshold;
     }
-    if (isdefined(self.script_destructable_area)) {
-        areas = strtok(self.script_destructable_area, " ");
+    
+    if ( isdefined( self.script_destructable_area ) )
+    {
+        areas = strtok( self.script_destructable_area, " " );
+        
         for (i = 0; i < areas.size; i++) {
-            blockarea(areas[i]);
+            blockarea( areas[ i ] );
         }
     }
-    if (isdefined(self.script_fxid)) {
-        self.fx = loadfx(self.script_fxid);
+    
+    if ( isdefined( self.script_fxid ) )
+    {
+        self.fx = loadfx( self.script_fxid );
     }
+    
     dmg = 0;
-    self setcandamage(1);
-    while (true) {
-        self waittill("damage", amount, other);
-        if (amount >= threshold) {
+    self setcandamage( 1 );
+    
+    while ( true )
+    {
+        self waittill( "damage", amount, other );
+        
+        if ( amount >= threshold )
+        {
             dmg += amount;
-            if (dmg >= accumulate) {
+            
+            if ( dmg >= accumulate )
+            {
                 thread destructable_destruct();
                 return;
             }
@@ -57,17 +79,24 @@ function destructable_think() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0x9b
-function destructable_destruct() {
+function destructable_destruct()
+{
     ent = self;
-    if (isdefined(self.script_destructable_area)) {
-        areas = strtok(self.script_destructable_area, " ");
+    
+    if ( isdefined( self.script_destructable_area ) )
+    {
+        areas = strtok( self.script_destructable_area, " " );
+        
         for (i = 0; i < areas.size; i++) {
-            unblockarea(areas[i]);
+            unblockarea( areas[ i ] );
         }
     }
-    if (isdefined(ent.fx)) {
-        playfx(ent.fx, ent.origin + (0, 0, 6));
+    
+    if ( isdefined( ent.fx ) )
+    {
+        playfx( ent.fx, ent.origin + ( 0, 0, 6 ) );
     }
+    
     ent delete();
 }
 
@@ -75,7 +104,8 @@ function destructable_destruct() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2ed
 // Size: 0xb
-function blockarea(area) {
+function blockarea( area )
+{
     
 }
 
@@ -83,7 +113,8 @@ function blockarea(area) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x300
 // Size: 0x13
-function blockentsinarea(ents, area) {
+function blockentsinarea( ents, area )
+{
     
 }
 
@@ -91,7 +122,8 @@ function blockentsinarea(ents, area) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x31b
 // Size: 0xb
-function unblockarea(area) {
+function unblockarea( area )
+{
     
 }
 
@@ -99,7 +131,8 @@ function unblockarea(area) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x32e
 // Size: 0x13
-function unblockentsinarea(ents, area) {
+function unblockentsinarea( ents, area )
+{
     
 }
 

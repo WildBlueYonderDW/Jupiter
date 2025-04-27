@@ -1,10 +1,11 @@
-#namespace namespace_d4331cec921563b1;
+#namespace mp_jup_das_haus_precache;
 
-// Namespace namespace_d4331cec921563b1 / scripts\mp\maps\mp_jup_das_haus\mp_jup_das_haus_precache
+// Namespace mp_jup_das_haus_precache / scripts\mp\maps\mp_jup_das_haus\mp_jup_das_haus_precache
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x88
 // Size: 0x2
-function main() {
+function main()
+{
     
 }
 

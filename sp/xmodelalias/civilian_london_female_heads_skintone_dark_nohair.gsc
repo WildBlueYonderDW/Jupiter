@@ -4,8 +4,9 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x83
 // Size: 0x15
-function main() {
-    a[0] = "head_sc_f_page_civ_no_hair";
+function main()
+{
+    a[ 0 ] = "head_sc_f_page_civ_no_hair";
     return a;
 }
 

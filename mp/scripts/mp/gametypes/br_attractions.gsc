@@ -15,12 +15,15 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fa
 // Size: 0x54
-function init() {
-    if (!scripts\mp\gametypes\br_gametypes::isfeatureenabled("attractions")) {
+function init()
+{
+    if ( !scripts\mp\gametypes\br_gametypes::isfeatureenabled( "attractions" ) )
+    {
         return;
     }
+    
     level.brattractions = [];
-    level.brgametype.useserverhud = getdvarint(@"hash_4452bc3660dc67fa", 1);
+    level.brgametype.useserverhud = getdvarint( @"hash_4452bc3660dc67fa", 1 );
     scripts\mp\gametypes\br_attraction_racetrack::init();
     scripts\mp\gametypes\br_attraction_kingofthehill::init();
     scripts\mp\gametypes\br_attraction_gulag::init();
@@ -29,18 +32,21 @@ function init() {
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x256
-// Size: 0x20
-function iskingofthehillactive() {
-    return isdefined(level.brattractions) && isdefined(level.brattractions["koth"]);
+// Size: 0x20, Type: bool
+function iskingofthehillactive()
+{
+    return isdefined( level.brattractions ) && isdefined( level.brattractions[ "koth" ] );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x27f
 // Size: 0x1c
-function onplayerdisconnect(player) {
-    if (iskingofthehillactive()) {
-        scripts\mp\gametypes\br_attraction_kingofthehill::onplayerdisconnect(player);
+function onplayerdisconnect( player )
+{
+    if ( iskingofthehillactive() )
+    {
+        scripts\mp\gametypes\br_attraction_kingofthehill::onplayerdisconnect( player );
     }
 }
 
@@ -48,27 +54,31 @@ function onplayerdisconnect(player) {
 // Params 9, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a3
 // Size: 0x15e
-function createattractionicontrigger(typeref, locindex, groundorigin, iconzoffset, iconshader, var_ba52080c594353fc, triggerenterfunc, triggerexitfunc, var_c9c301a888170672) {
-    scriptable = spawnscriptable(var_c9c301a888170672, groundorigin);
-    closeobjectiveiconid = scripts\mp\objidpoolmanager::requestobjectiveid(1);
-    if (closeobjectiveiconid != -1) {
-        objorigin = groundorigin + (0, 0, iconzoffset);
-        scripts\mp\objidpoolmanager::objective_add_objective(closeobjectiveiconid, "invisible", objorigin, iconshader);
-        scripts\mp\objidpoolmanager::update_objective_setbackground(closeobjectiveiconid, 1);
-        objective_removeallfrommask(closeobjectiveiconid);
-        objective_showtoplayersinmask(closeobjectiveiconid);
-        objective_setplayintro(closeobjectiveiconid, 0);
-        objective_sethideelevation(closeobjectiveiconid, 1);
+function createattractionicontrigger( typeref, locindex, groundorigin, iconzoffset, iconshader, var_ba52080c594353fc, triggerenterfunc, triggerexitfunc, var_c9c301a888170672 )
+{
+    scriptable = spawnscriptable( var_c9c301a888170672, groundorigin );
+    closeobjectiveiconid = scripts\mp\objidpoolmanager::requestobjectiveid( 1 );
+    
+    if ( closeobjectiveiconid != -1 )
+    {
+        objorigin = groundorigin + ( 0, 0, iconzoffset );
+        scripts\mp\objidpoolmanager::objective_add_objective( closeobjectiveiconid, "invisible", objorigin, iconshader );
+        scripts\mp\objidpoolmanager::update_objective_setbackground( closeobjectiveiconid, 1 );
+        objective_removeallfrommask( closeobjectiveiconid );
+        objective_showtoplayersinmask( closeobjectiveiconid );
+        objective_setplayintro( closeobjectiveiconid, 0 );
+        objective_sethideelevation( closeobjectiveiconid, 1 );
     }
-    trigheight = scripts\cp_mp\parachute::getc130height() - groundorigin[2];
-    icontrigger = spawn("trigger_radius", groundorigin, 0, var_ba52080c594353fc, trigheight);
+    
+    trigheight = scripts\cp_mp\parachute::getc130height() - groundorigin[ 2 ];
+    icontrigger = spawn( "trigger_radius", groundorigin, 0, var_ba52080c594353fc, trigheight );
     icontrigger.closeobjectiveiconid = closeobjectiveiconid;
     icontrigger.scriptable = scriptable;
     icontrigger.triggerenterfunc = triggerenterfunc;
     icontrigger.triggerexitfunc = triggerexitfunc;
     icontrigger.typeref = typeref;
     icontrigger.locindex = locindex;
-    scripts\mp\utility\trigger::makeenterexittrigger(icontrigger, &playericontriggerenter, &playericontriggerexit, undefined, undefined, &playericonfilter);
+    scripts\mp\utility\trigger::makeenterexittrigger( icontrigger, &playericontriggerenter, &playericontriggerexit, undefined, undefined, &playericonfilter );
     return icontrigger;
 }
 
@@ -76,17 +86,23 @@ function createattractionicontrigger(typeref, locindex, groundorigin, iconzoffse
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x40a
 // Size: 0x6b
-function shutdownattractionicontrigger(trigger) {
-    if (istrue(trigger.shuttingdown)) {
-        trigger waittill("death");
+function shutdownattractionicontrigger( trigger )
+{
+    if ( istrue( trigger.shuttingdown ) )
+    {
+        trigger waittill( "death" );
         return;
     }
+    
     trigger.shuttingdown = 1;
     waittillframeend();
-    scripts\mp\objidpoolmanager::returnobjectiveid(trigger.closeobjectiveiconid);
-    if (isdefined(trigger.scriptable)) {
+    scripts\mp\objidpoolmanager::returnobjectiveid( trigger.closeobjectiveiconid );
+    
+    if ( isdefined( trigger.scriptable ) )
+    {
         trigger.scriptable freescriptable();
     }
+    
     trigger delete();
 }
 
@@ -94,8 +110,10 @@ function shutdownattractionicontrigger(trigger) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x47d
 // Size: 0x2c
-function triggeraddobjectivetext(localizedstring) {
-    if (istrue(level.brgametype.useserverhud)) {
+function triggeraddobjectivetext( localizedstring )
+{
+    if ( istrue( level.brgametype.useserverhud ) )
+    {
         self.objectivetext = localizedstring;
     }
 }
@@ -104,7 +122,8 @@ function triggeraddobjectivetext(localizedstring) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b1
 // Size: 0xc
-function triggerremoveobjectivetext() {
+function triggerremoveobjectivetext()
+{
     self.objectivetext = undefined;
 }
 
@@ -112,7 +131,8 @@ function triggerremoveobjectivetext() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c5
 // Size: 0xd
-function triggersafearea() {
+function triggersafearea()
+{
     self.sandbox_safe_area = 1;
 }
 
@@ -120,18 +140,25 @@ function triggersafearea() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4da
 // Size: 0x98
-function playericontriggerenter(player, trigger) {
-    if (!isplayer(player)) {
+function playericontriggerenter( player, trigger )
+{
+    if ( !isplayer( player ) )
+    {
         return;
     }
-    player playersetattractiontype(trigger.typeref);
-    player playersetattractionlocationindex(trigger.locindex);
-    objective_addclienttomask(trigger.closeobjectiveiconid, player);
-    if (isdefined(trigger.objectivetext)) {
-        player playerhudattractionobj(trigger.objectivetext);
+    
+    player playersetattractiontype( trigger.typeref );
+    player playersetattractionlocationindex( trigger.locindex );
+    objective_addclienttomask( trigger.closeobjectiveiconid, player );
+    
+    if ( isdefined( trigger.objectivetext ) )
+    {
+        player playerhudattractionobj( trigger.objectivetext );
     }
-    if (isdefined(trigger.triggerenterfunc)) {
-        player thread [[ trigger.triggerenterfunc ]](player, trigger);
+    
+    if ( isdefined( trigger.triggerenterfunc ) )
+    {
+        player thread [[ trigger.triggerenterfunc ]]( player, trigger );
     }
 }
 
@@ -139,19 +166,28 @@ function playericontriggerenter(player, trigger) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x57a
 // Size: 0x7f
-function playericontriggerexit(player, trigger) {
-    if (!isplayer(player)) {
+function playericontriggerexit( player, trigger )
+{
+    if ( !isplayer( player ) )
+    {
         return;
     }
-    if (!istrue(player.ignoreattractions)) {
+    
+    if ( !istrue( player.ignoreattractions ) )
+    {
         player playersetattractionoff();
     }
-    objective_removeclientfrommask(trigger.closeobjectiveiconid, player);
-    if (isdefined(player.hudattractionobj)) {
+    
+    objective_removeclientfrommask( trigger.closeobjectiveiconid, player );
+    
+    if ( isdefined( player.hudattractionobj ) )
+    {
         player thread playerfadeobjdelete();
     }
-    if (isdefined(trigger.triggerexitfunc)) {
-        player thread [[ trigger.triggerexitfunc ]](player, trigger);
+    
+    if ( isdefined( trigger.triggerexitfunc ) )
+    {
+        player thread [[ trigger.triggerexitfunc ]]( player, trigger );
     }
 }
 
@@ -159,31 +195,39 @@ function playericontriggerexit(player, trigger) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x601
 // Size: 0x5a
-function playerhudattractionobj(objectivetext) {
-    if (!isdefined(self.hudattractionobj)) {
-        self.hudattractionobj = scripts\mp\gametypes\br_attractions::createhudstring(0, objectivetext);
+function playerhudattractionobj( objectivetext )
+{
+    if ( !isdefined( self.hudattractionobj ) )
+    {
+        self.hudattractionobj = scripts\mp\gametypes\br_attractions::createhudstring( 0, objectivetext );
         return;
     }
-    self notify("keepHudAttractionObj");
+    
+    self notify( "keepHudAttractionObj" );
     self.hudattractionobj.alpha = 1;
-    self.hudattractionobj settext(objectivetext);
+    self.hudattractionobj settext( objectivetext );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x663
 // Size: 0x5f
-function playerfadeobjdelete() {
-    self endon("keepHudAttractionObj");
+function playerfadeobjdelete()
+{
+    self endon( "keepHudAttractionObj" );
     var_b2d4b76e9bbd89ed = 1.5;
     obj = self.hudattractionobj;
-    obj fadeovertime(var_b2d4b76e9bbd89ed);
+    obj fadeovertime( var_b2d4b76e9bbd89ed );
     obj.alpha = 0;
     wait var_b2d4b76e9bbd89ed;
-    if (isdefined(obj)) {
+    
+    if ( isdefined( obj ) )
+    {
         obj destroy();
     }
-    if (isdefined(self)) {
+    
+    if ( isdefined( self ) )
+    {
         self.hudattractionobj = undefined;
     }
 }
@@ -192,31 +236,39 @@ function playerfadeobjdelete() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ca
 // Size: 0x3c
-function playersetignoreattractions(player, ignore) {
-    if (istrue(player.ignoreattractions) && !ignore) {
+function playersetignoreattractions( player, ignore )
+{
+    if ( istrue( player.ignoreattractions ) && !ignore )
+    {
         player playersetattractionoff();
     }
+    
     player.ignoreattractions = ignore;
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x70e
-// Size: 0x2f
-function playericonfilter(player, trigger) {
-    return istrue(trigger.shuttingdown) || istrue(player.ignoreattractions);
+// Size: 0x2f, Type: bool
+function playericonfilter( player, trigger )
+{
+    return istrue( trigger.shuttingdown ) || istrue( player.ignoreattractions );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x746
 // Size: 0x46
-function createhudstring(index, text) {
-    hudelem = scripts\mp\hud_util::createfontstring("objective", 1.5);
-    hudelem hudelementsetupandposition(index);
-    if (isdefined(text)) {
-        hudelem settext(text);
+function createhudstring( index, text )
+{
+    hudelem = scripts\mp\hud_util::createfontstring( "objective", 1.5 );
+    hudelem hudelementsetupandposition( index );
+    
+    if ( isdefined( text ) )
+    {
+        hudelem settext( text );
     }
+    
     return hudelem;
 }
 
@@ -224,9 +276,10 @@ function createhudstring(index, text) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x795
 // Size: 0x31
-function createhudtimer(index) {
-    hudelem = scripts\mp\hud_util::createtimer("objective", 1.5);
-    hudelem hudelementsetupandposition(index);
+function createhudtimer( index )
+{
+    hudelem = scripts\mp\hud_util::createtimer( "objective", 1.5 );
+    hudelem hudelementsetupandposition( index );
     return hudelem;
 }
 
@@ -234,7 +287,8 @@ function createhudtimer(index) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7cf
 // Size: 0xab
-function hudelementsetupandposition(index) {
+function hudelementsetupandposition( index )
+{
     var_fc60cba78ac17a0c = 15;
     var_9348226a53701bdb = 160;
     var_6012bdca89ff91e9 = 20;
@@ -254,65 +308,77 @@ function hudelementsetupandposition(index) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x882
 // Size: 0xb
-function playersetattractionoff() {
-    playersetomnvarattraction(0, 0);
+function playersetattractionoff()
+{
+    playersetomnvarattraction( 0, 0 );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x895
 // Size: 0x51
-function playersetattractiontype(typeref) {
-    typeindex = tablelookup("mp/brattractions.csv", 1, typeref, 0);
-    assertex(isdefined(typeindex) && typeindex != "<dev string:x1c>", "<dev string:x20>");
-    typeindex = int(typeindex);
-    playersetomnvarattraction(0, typeindex);
+function playersetattractiontype( typeref )
+{
+    typeindex = tablelookup( "mp/brattractions.csv", 1, typeref, 0 );
+    assertex( isdefined( typeindex ) && typeindex != "<dev string:x1c>", "<dev string:x20>" );
+    typeindex = int( typeindex );
+    playersetomnvarattraction( 0, typeindex );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8ee
 // Size: 0x15
-function playersetattractionlocationindex(locationindex) {
-    playersetomnvarattraction(1, locationindex);
+function playersetattractionlocationindex( locationindex )
+{
+    playersetomnvarattraction( 1, locationindex );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x90b
 // Size: 0x15
-function playersetattractionstateindex(stateindex) {
-    playersetomnvarattraction(2, stateindex);
+function playersetattractionstateindex( stateindex )
+{
+    playersetomnvarattraction( 2, stateindex );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x928
 // Size: 0x15
-function playersetattractionextradata(extradata) {
-    playersetomnvarattraction(3, extradata);
+function playersetattractionextradata( extradata )
+{
+    playersetomnvarattraction( 3, extradata );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x945
 // Size: 0x30
-function playersetattractionbestplayer(player) {
+function playersetattractionbestplayer( player )
+{
     entnum = -1;
-    if (isdefined(player)) {
+    
+    if ( isdefined( player ) )
+    {
         entnum = player getentitynumber();
     }
-    playersetomnvarattraction(4, entnum);
+    
+    playersetomnvarattraction( 4, entnum );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x97d
 // Size: 0x35
-function playersetattractionbesttime(timems) {
-    prev = self getclientomnvar("ui_br_attraction_best_time");
-    if (timems != prev) {
-        self setclientomnvar("ui_br_attraction_best_time", timems);
+function playersetattractionbesttime( timems )
+{
+    prev = self getclientomnvar( "ui_br_attraction_best_time" );
+    
+    if ( timems != prev )
+    {
+        self setclientomnvar( "ui_br_attraction_best_time", timems );
     }
 }
 
@@ -320,10 +386,13 @@ function playersetattractionbesttime(timems) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x9ba
 // Size: 0x35
-function playersetattractiontime(timems) {
-    prev = self getclientomnvar("ui_br_attraction_time");
-    if (timems != prev) {
-        self setclientomnvar("ui_br_attraction_time", timems);
+function playersetattractiontime( timems )
+{
+    prev = self getclientomnvar( "ui_br_attraction_time" );
+    
+    if ( timems != prev )
+    {
+        self setclientomnvar( "ui_br_attraction_time", timems );
     }
 }
 
@@ -331,78 +400,77 @@ function playersetattractiontime(timems) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f7
 // Size: 0x7c
-function playersetomnvarattraction(dataref, value) {
-    assert(isplayer(self));
-    __a0 = getattractionomnvarbitpackinginfo(dataref, value);
-    value = __a0[3];
-    var_8e90fa6d5789ad63 = __a0[2];
-    bitwidth = __a0[1];
-    bitoffset = __a0[0];
-    if (var_8e90fa6d5789ad63 == "") {
+function playersetomnvarattraction( dataref, value )
+{
+    assert( isplayer( self ) );
+    [ bitoffset, bitwidth, var_8e90fa6d5789ad63, value ] = getattractionomnvarbitpackinginfo( dataref, value );
+    
+    if ( var_8e90fa6d5789ad63 == "" )
+    {
         return;
     }
-    playerpackdataintoomnvar(var_8e90fa6d5789ad63, value, bitoffset, bitwidth);
+    
+    playerpackdataintoomnvar( var_8e90fa6d5789ad63, value, bitoffset, bitwidth );
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xa7b
 // Size: 0x184
-function getattractionomnvarbitpackinginfo(dataref, value) {
+function getattractionomnvarbitpackinginfo( dataref, value )
+{
     bitoffset = 0;
     bitwidth = 0;
     var_8e90fa6d5789ad63 = "";
-    switch (dataref) {
-    case 0:
-        bitoffset = 0;
-        bitwidth = 8;
-        var_8e90fa6d5789ad63 = "ui_br_attraction_data";
-        break;
-    case 1:
-        var_57acddc40b2f741 = [8, 8];
-        bitwidth = var_57acddc40b2f741[1];
-        bitoffset = var_57acddc40b2f741[0];
-        var_8e90fa6d5789ad63 = "ui_br_attraction_data";
-        break;
-    case 2:
-        var_57acadc40b2f0a8 = [16, 8];
-        bitwidth = var_57acadc40b2f0a8[1];
-        bitoffset = var_57acadc40b2f0a8[0];
-        var_8e90fa6d5789ad63 = "ui_br_attraction_data";
-        break;
-    case 3:
-        var_57acbdc40b2f2db = [24, 2];
-        bitwidth = var_57acbdc40b2f2db[1];
-        bitoffset = var_57acbdc40b2f2db[0];
-        var_8e90fa6d5789ad63 = "ui_br_attraction_data";
-        break;
-    case 4:
-        var_57ad0dc40b2fdda = [0, 8];
-        bitwidth = var_57ad0dc40b2fdda[1];
-        bitoffset = var_57ad0dc40b2fdda[0];
-        var_8e90fa6d5789ad63 = "ui_br_attraction_best_data";
-        value++;
-        break;
-    default:
-        assertmsg("<dev string:x41>" + dataref + "<dev string:x5a>");
-        break;
+    
+    switch ( dataref )
+    {
+        case 0:
+            bitoffset = 0;
+            bitwidth = 8;
+            var_8e90fa6d5789ad63 = "ui_br_attraction_data";
+            break;
+        case 1:
+            [ bitoffset, bitwidth ] = [ 8, 8 ];
+            var_8e90fa6d5789ad63 = "ui_br_attraction_data";
+            break;
+        case 2:
+            [ bitoffset, bitwidth ] = [ 16, 8 ];
+            var_8e90fa6d5789ad63 = "ui_br_attraction_data";
+            break;
+        case 3:
+            [ bitoffset, bitwidth ] = [ 24, 2 ];
+            var_8e90fa6d5789ad63 = "ui_br_attraction_data";
+            break;
+        case 4:
+            [ bitoffset, bitwidth ] = [ 0, 8 ];
+            var_8e90fa6d5789ad63 = "ui_br_attraction_best_data";
+            value++;
+            break;
+        default:
+            assertmsg( "<dev string:x41>" + dataref + "<dev string:x5a>" );
+            break;
     }
-    return [bitoffset, bitwidth, var_8e90fa6d5789ad63, value];
+    
+    return [ bitoffset, bitwidth, var_8e90fa6d5789ad63, value ];
 }
 
 // Namespace br_attractions / scripts\mp\gametypes\br_attractions
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xc08
 // Size: 0x9c
-function playerpackdataintoomnvar(var_8e90fa6d5789ad63, value, bitoffset, bitwidth) {
-    mask = int(pow(2, bitwidth)) - 1;
-    var_a463992091f1d483 = (value & mask) << bitoffset;
-    var_f8f977081d3da8b4 = ~(mask << bitoffset);
-    prevvalue = self getclientomnvar(var_8e90fa6d5789ad63);
+function playerpackdataintoomnvar( var_8e90fa6d5789ad63, value, bitoffset, bitwidth )
+{
+    mask = int( pow( 2, bitwidth ) ) - 1;
+    var_a463992091f1d483 = ( value & mask ) << bitoffset;
+    var_f8f977081d3da8b4 = ~( mask << bitoffset );
+    prevvalue = self getclientomnvar( var_8e90fa6d5789ad63 );
     cleanedbase = prevvalue & var_f8f977081d3da8b4;
     var_82a90e56e416fa55 = cleanedbase + var_a463992091f1d483;
-    if (var_82a90e56e416fa55 != prevvalue) {
-        self setclientomnvar(var_8e90fa6d5789ad63, var_82a90e56e416fa55);
+    
+    if ( var_82a90e56e416fa55 != prevvalue )
+    {
+        self setclientomnvar( var_8e90fa6d5789ad63, var_82a90e56e416fa55 );
     }
 }
 

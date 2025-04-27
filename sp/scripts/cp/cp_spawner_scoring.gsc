@@ -1,1327 +1,1862 @@
-#using script_18a73a64992dd07d;
-#using script_e80538ef14d00e1;
 #using scripts\common\utility;
 #using scripts\cp\cp_outline;
 #using scripts\cp\cp_spawn_factor;
 #using scripts\cp\cp_spawning_util;
+#using scripts\cp\spawning;
 #using scripts\cp\utility;
+#using scripts\cp\vehicles;
 #using scripts\engine\math;
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 
-#namespace namespace_ed0b685bcc83fe4f;
+#namespace cp_spawner_scoring;
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x434
 // Size: 0x1a7
-function spawner_scoring_init() {
-    flag_init("spawn_point_score_data_init_done");
+function spawner_scoring_init()
+{
+    flag_init( "spawn_point_score_data_init_done" );
     level.current_spawn_scoring_index = 0;
     level.spawn_scoring_array = [];
     level.total_cluster_spawn_score = 13;
     level.total_veh_spawn_score = 3;
     level.total_spawn_score = 18;
     level.spawner_scoring_funcs = [];
-    level.spawner_scoring_funcs["vehicle_spawner"] = &vehicle_spawnpoint_scoring;
-    level.spawner_scoring_funcs["cluster_spawner"] = &cluster_spawnpoint_scoring;
-    level.spawner_scoring_funcs["standard_spawner"] = &standard_spawnpoint_scoring;
-    level.spawner_scoring_allow_early_out["cluster_spawner"] = 0;
+    level.spawner_scoring_funcs[ "vehicle_spawner" ] = &vehicle_spawnpoint_scoring;
+    level.spawner_scoring_funcs[ "cluster_spawner" ] = &cluster_spawnpoint_scoring;
+    level.spawner_scoring_funcs[ "standard_spawner" ] = &standard_spawnpoint_scoring;
+    level.spawner_scoring_allow_early_out[ "cluster_spawner" ] = 0;
     level.spawner_scoring_critical_factors = [];
-    level.spawner_scoring_critical_factors["vehicle_spawner"] = &vehicle_spawnpoint_valid;
-    level.spawner_scoring_critical_factors["cluster_spawner"] = &cluster_spawnpoint_valid;
-    level.spawner_scoring_critical_factors["standard_spawner"] = &standard_spawnpoint_valid;
+    level.spawner_scoring_critical_factors[ "vehicle_spawner" ] = &vehicle_spawnpoint_valid;
+    level.spawner_scoring_critical_factors[ "cluster_spawner" ] = &cluster_spawnpoint_valid;
+    level.spawner_scoring_critical_factors[ "standard_spawner" ] = &standard_spawnpoint_valid;
     level.capsule_contents = scripts\engine\trace::create_solid_ai_contents();
+    
     /#
-        setdvarifuninitialized(@"hash_b050be7de75cd841", 0);
-        setdvarifuninitialized(@"hash_bf3eae56edffb7f", 0);
-        setdvarifuninitialized(@"hash_1a1d72de65f6faf8", 0);
-        setdvarifuninitialized(@"hash_df6e9696bdacd06b", 0);
-        setdvarifuninitialized(@"hash_97d7e5b326302869", 0);
+        setdvarifuninitialized( @"hash_b050be7de75cd841", 0 );
+        setdvarifuninitialized( @"hash_bf3eae56edffb7f", 0 );
+        setdvarifuninitialized( @"hash_1a1d72de65f6faf8", 0 );
+        setdvarifuninitialized( @"hash_df6e9696bdacd06b", 0 );
+        setdvarifuninitialized( @"hash_97d7e5b326302869", 0 );
         cmd = "<dev string:x1c>";
-        addentrytodevgui(cmd);
+        addentrytodevgui( cmd );
         cmd = "<dev string:x84>";
-        addentrytodevgui(cmd);
+        addentrytodevgui( cmd );
         cmd = "<dev string:x122>";
-        addentrytodevgui(cmd);
+        addentrytodevgui( cmd );
         cmd = "<dev string:x19a>";
-        addentrytodevgui(cmd);
+        addentrytodevgui( cmd );
         cmd = "<dev string:x1f4>";
-        addentrytodevgui(cmd);
-        createprintchannel("<dev string:x25b>");
+        addentrytodevgui( cmd );
+        createprintchannel( "<dev string:x25b>" );
     #/
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e3
 // Size: 0x3d
-function vehicle_spawnpoint_scoring(spawnpoint, debug, respawn_ent, spawnpoints) {
-    if (calculate_ai_veh_spawner_score(spawnpoint, level.current_spawn_scoring_index)) {
+function vehicle_spawnpoint_scoring( spawnpoint, debug, respawn_ent, spawnpoints )
+{
+    if ( calculate_ai_veh_spawner_score( spawnpoint, level.current_spawn_scoring_index ) )
+    {
         return spawnpoint;
     }
+    
     return undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x628
 // Size: 0xfb
-function vehicle_spawnpoint_valid(spawnpoint, respawn) {
-    if (istrue(respawn)) {
+function vehicle_spawnpoint_valid( spawnpoint, respawn )
+{
+    if ( istrue( respawn ) )
+    {
         return 0;
     }
-    if (flag_exist("disable_vehicle_spawning") && flag("disable_vehicle_spawning")) {
+    
+    if ( flag_exist( "disable_vehicle_spawning" ) && flag( "disable_vehicle_spawning" ) )
+    {
         return 0;
     }
-    if (isdefined(spawnpoint.vehicle) && isdefined(spawnpoint.vehicle.attachedguys) && isdefined(spawnpoint.vehicle.usedpositions)) {
+    
+    if ( isdefined( spawnpoint.vehicle ) && isdefined( spawnpoint.vehicle.attachedguys ) && isdefined( spawnpoint.vehicle.usedpositions ) )
+    {
         max_guys = spawnpoint.vehicle.usedpositions.size;
-        override = namespace_f02c28a5e2bd7edd::get_max_ai_from_infil_name(self, spawnpoint.vehicle.infil_name);
-        if (isdefined(override)) {
+        override = scripts\cp\vehicles::get_max_ai_from_infil_name( self, spawnpoint.vehicle.infil_name );
+        
+        if ( isdefined( override ) )
+        {
             max_guys = override;
         }
-        if (spawnpoint.vehicle.attachedguys.size >= max_guys) {
+        
+        if ( spawnpoint.vehicle.attachedguys.size >= max_guys )
+        {
             return 0;
-        } else {
+        }
+        else
+        {
             return 1;
         }
+        
         return;
     }
+    
     return 1;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x72b
 // Size: 0x101
-function cluster_child_spawnpoint_scoring(cluster_spawner, debug, respawn_ent) {
-    if (isdefined(cluster_spawner.child_spawners) && cluster_spawner.child_spawners.size > 0) {
+function cluster_child_spawnpoint_scoring( cluster_spawner, debug, respawn_ent )
+{
+    if ( isdefined( cluster_spawner.child_spawners ) && cluster_spawner.child_spawners.size > 0 )
+    {
         var_fad1d4e8291840ec = cluster_spawner.child_spawners;
-    } else {
-        var_fad1d4e8291840ec = getnodesinradiussorted(cluster_spawner.origin, 2048, 0, 256, "cover");
     }
+    else
+    {
+        var_fad1d4e8291840ec = getnodesinradiussorted( cluster_spawner.origin, 2048, 0, 256, "cover" );
+    }
+    
     normal_scoring = 1;
     spawnpoint = undefined;
+    
     /#
-        if (istrue(debug)) {
+        if ( istrue( debug ) )
+        {
             normal_scoring = 0;
-            spawnpoint = function_3e387272180982a5(var_fad1d4e8291840ec, 1, respawn_ent);
+            spawnpoint = function_3e387272180982a5( var_fad1d4e8291840ec, 1, respawn_ent );
             self.position_ref = undefined;
         }
     #/
-    if (normal_scoring) {
-        spawnpoint = score_ai_spawns(var_fad1d4e8291840ec, undefined, 1, respawn_ent, 1);
+    
+    if ( normal_scoring )
+    {
+        spawnpoint = score_ai_spawns( var_fad1d4e8291840ec, undefined, 1, respawn_ent, 1 );
         self.position_ref = undefined;
     }
-    cluster_spawner namespace_5729d24318b60bcd::function_ec648f2c89ea1c91();
+    
+    cluster_spawner scripts\cp\spawning::function_ec648f2c89ea1c91();
     cluster_spawner.totalscore = undefined;
     cluster_spawner.fnchildscorefunc = undefined;
-    if (isdefined(spawnpoint)) {
-        set_chosen_spawner_from_uid(cluster_spawner);
-        cluster_spawner thread namespace_5729d24318b60bcd::parent_spawner_disable_after_count(self, spawnpoint);
+    
+    if ( isdefined( spawnpoint ) )
+    {
+        set_chosen_spawner_from_uid( cluster_spawner );
+        cluster_spawner thread scripts\cp\spawning::parent_spawner_disable_after_count( self, spawnpoint );
     }
+    
     return spawnpoint;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x835
 // Size: 0x3d
-function cluster_spawnpoint_scoring(cluster_spawner, debug, respawn_ent, spawnpoints) {
-    if (calculate_ai_cluster_spawner_score(cluster_spawner, level.current_spawn_scoring_index)) {
+function cluster_spawnpoint_scoring( cluster_spawner, debug, respawn_ent, spawnpoints )
+{
+    if ( calculate_ai_cluster_spawner_score( cluster_spawner, level.current_spawn_scoring_index ) )
+    {
         return cluster_spawner;
     }
+    
     return undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x87a
 // Size: 0x20
-function cluster_spawnpoint_valid(spawnpoint, respawn) {
-    if (istrue(respawn)) {
+function cluster_spawnpoint_valid( spawnpoint, respawn )
+{
+    if ( istrue( respawn ) )
+    {
         return 0;
     }
+    
     return 1;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x8a2
 // Size: 0x3b
-function standard_spawnpoint_scoring(spawnpoint, debug, respawn_ent, spawnpoints) {
-    if (calculate_ai_spawner_score(spawnpoint, level.current_spawn_scoring_index, debug, spawnpoints)) {
+function standard_spawnpoint_scoring( spawnpoint, debug, respawn_ent, spawnpoints )
+{
+    if ( calculate_ai_spawner_score( spawnpoint, level.current_spawn_scoring_index, debug, spawnpoints ) )
+    {
         return spawnpoint;
     }
+    
     return undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8e6
 // Size: 0x2a
-function get_player_velo_array() {
-    if (isdefined(self.velo_forward_memory) && self.velo_forward_memory.size > 0) {
+function get_player_velo_array()
+{
+    if ( isdefined( self.velo_forward_memory ) && self.velo_forward_memory.size > 0 )
+    {
         return self.velo_forward_memory;
     }
+    
     return [];
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x919
-// Size: 0x44c
-function standard_spawnpoint_valid(spawnpoint, respawn) {
-    if (!spawnpoint namespace_5729d24318b60bcd::spawner_flags_check(32)) {
-        trace_pos = spawnpoint.origin + (0, 0, 6);
-        trace_results = scripts\engine\trace::capsule_trace_get_all_results(trace_pos, trace_pos + (0, 0, 1), 16, 32, undefined, undefined, level.capsule_contents);
-        spawnpoint namespace_5729d24318b60bcd::add_to_spawner_flags(32);
-        if (isdefined(trace_results) && isdefined(trace_results[0])) {
+// Size: 0x44c, Type: bool
+function standard_spawnpoint_valid( spawnpoint, respawn )
+{
+    if ( !spawnpoint scripts\cp\spawning::spawner_flags_check( 32 ) )
+    {
+        trace_pos = spawnpoint.origin + ( 0, 0, 6 );
+        trace_results = scripts\engine\trace::capsule_trace_get_all_results( trace_pos, trace_pos + ( 0, 0, 1 ), 16, 32, undefined, undefined, level.capsule_contents );
+        spawnpoint scripts\cp\spawning::add_to_spawner_flags( 32 );
+        
+        if ( isdefined( trace_results ) && isdefined( trace_results[ 0 ] ) )
+        {
             for (i = 0; i < trace_results.size; i++) {
-                if (isdefined(trace_results[i])) {
-                    trace = trace_results[i];
-                    if (is_equal(trace["hittype"], "hittype_world")) {
-                        spawnpoint namespace_5729d24318b60bcd::disable_spawner();
+                if ( isdefined( trace_results[ i ] ) )
+                {
+                    trace = trace_results[ i ];
+                    
+                    if ( is_equal( trace[ "hittype" ], "hittype_world" ) )
+                    {
+                        spawnpoint scripts\cp\spawning::disable_spawner();
                         return false;
                     }
                 }
             }
         }
     }
+    
     message = undefined;
     var_78babf35878bcd24 = undefined;
     failed_message = undefined;
     print_critical = 0;
+    
     /#
         var_78babf35878bcd24 = "<dev string:x269>" + spawnpoint get_spawn_scoring_type() + "<dev string:x26c>" + spawnpoint.origin;
         failed_message = "<dev string:x26f>" + var_78babf35878bcd24;
-        print_critical = getdvarint(@"hash_df6e9696bdacd06b", 0);
+        print_critical = getdvarint( @"hash_df6e9696bdacd06b", 0 );
     #/
-    if (isnode(spawnpoint) && !spawnpoint nodeisactivated()) {
-        add_to_score_message(failed_message, "^1CRITICAL^0: Node Spawner disconnected", undefined, undefined, 1, spawnpoint);
-        spawnpoint namespace_5729d24318b60bcd::disable_spawner();
+    
+    if ( isnode( spawnpoint ) && !spawnpoint nodeisactivated() )
+    {
+        add_to_score_message( failed_message, "^1CRITICAL^0: Node Spawner disconnected", undefined, undefined, 1, spawnpoint );
+        spawnpoint scripts\cp\spawning::disable_spawner();
         return false;
     }
-    spawnpoint namespace_5729d24318b60bcd::spawner_init();
-    if (!spawner_invalid_due_to_recently_used(spawnpoint)) {
+    
+    spawnpoint scripts\cp\spawning::spawner_init();
+    
+    if ( !spawner_invalid_due_to_recently_used( spawnpoint ) )
+    {
         /#
-            if (print_critical) {
-                if (spawnpoint namespace_5729d24318b60bcd::spawner_flags_check(64)) {
-                    add_to_score_message(failed_message, "<dev string:x27a>", undefined, undefined, 1, spawnpoint);
-                } else {
-                    add_to_score_message(failed_message, "<dev string:x290>", undefined, undefined, 1, spawnpoint);
+            if ( print_critical )
+            {
+                if ( spawnpoint scripts\cp\spawning::spawner_flags_check( 64 ) )
+                {
+                    add_to_score_message( failed_message, "<dev string:x27a>", undefined, undefined, 1, spawnpoint );
+                }
+                else
+                {
+                    add_to_score_message( failed_message, "<dev string:x290>", undefined, undefined, 1, spawnpoint );
                 }
             }
         #/
+        
         return false;
     }
-    if (critical_factor(&has_tac_vis, spawnpoint)) {
+    
+    if ( critical_factor( &has_tac_vis, spawnpoint ) )
+    {
         skip = 0;
+        
         /#
-            if (getdvarint(@"hash_97d7e5b326302869", 0)) {
+            if ( getdvarint( @"hash_97d7e5b326302869", 0 ) )
+            {
                 skip = 1;
             }
         #/
-        if (!skip) {
-            spawnpoint namespace_5729d24318b60bcd::add_to_spawner_flags(64);
+        
+        if ( !skip )
+        {
+            spawnpoint scripts\cp\spawning::add_to_spawner_flags( 64 );
             spawnpoint.lastspawntime = self.current_time + 10000;
         }
-    } else {
-        spawnpoint namespace_5729d24318b60bcd::remove_from_spawner_flags(64);
     }
-    if (getdvarint(@"hash_c2facf64f58f632b", 1) && !istrue(spawnpoint.script_forcespawn)) {
+    else
+    {
+        spawnpoint scripts\cp\spawning::remove_from_spawner_flags( 64 );
+    }
+    
+    if ( getdvarint( @"hash_c2facf64f58f632b", 1 ) && !istrue( spawnpoint.script_forcespawn ) )
+    {
         dist = get_close_distance_var();
-        if (!isdefined(spawnpoint.script_parent)) {
-            if (isdefined(spawnpoint.script_dist_only)) {
+        
+        if ( !isdefined( spawnpoint.script_parent ) )
+        {
+            if ( isdefined( spawnpoint.script_dist_only ) )
+            {
                 dist = spawnpoint.script_dist_only;
             }
         }
-        nearby_players = utility::playersincylinder(spawnpoint.origin, dist);
-        if (nearby_players.size > 0) {
-            if (isdefined(spawnpoint.script_dist_only)) {
-                spawnpoint thread namespace_5729d24318b60bcd::disable_spawn_point(spawnpoint, undefined, self);
-            } else {
+        
+        nearby_players = utility::playersincylinder( spawnpoint.origin, dist );
+        
+        if ( nearby_players.size > 0 )
+        {
+            if ( isdefined( spawnpoint.script_dist_only ) )
+            {
+                spawnpoint thread scripts\cp\spawning::disable_spawn_point( spawnpoint, undefined, self );
+            }
+            else
+            {
                 spawnpoint.lastspawntime = self.current_time;
             }
+            
             /#
-                if (print_critical) {
-                    add_to_score_message(failed_message, "<dev string:x2ac>", undefined, undefined, 1, spawnpoint);
+                if ( print_critical )
+                {
+                    add_to_score_message( failed_message, "<dev string:x2ac>", undefined, undefined, 1, spawnpoint );
                 }
             #/
+            
             return false;
         }
     }
-    if (isdefined(level.spawner_poison_structs) && level.spawner_poison_structs.size > 0) {
-        poison_structs = sortbydistancecullbyradius(level.spawner_poison_structs, spawnpoint.origin, 5000);
+    
+    if ( isdefined( level.spawner_poison_structs ) && level.spawner_poison_structs.size > 0 )
+    {
+        poison_structs = sortbydistancecullbyradius( level.spawner_poison_structs, spawnpoint.origin, 5000 );
+        
         for (i = 0; i < poison_structs.size; i++) {
-            if (distance2dsquared(spawnpoint.origin, poison_structs[i].origin) < squared(poison_structs[i].radius)) {
-                add_to_score_message(failed_message, "^1CRITICAL^0: Poisoned", undefined, undefined, 1, spawnpoint);
+            if ( distance2dsquared( spawnpoint.origin, poison_structs[ i ].origin ) < squared( poison_structs[ i ].radius ) )
+            {
+                add_to_score_message( failed_message, "^1CRITICAL^0: Poisoned", undefined, undefined, 1, spawnpoint );
                 return false;
             }
         }
     }
-    if (isdefined(self.position_ref)) {
-        var_e5970392fa9be29c = get_too_far_dist_sq(spawnpoint);
-        dist_sq = distancesquared(self.position_ref, spawnpoint.origin);
+    
+    if ( isdefined( self.position_ref ) )
+    {
+        var_e5970392fa9be29c = get_too_far_dist_sq( spawnpoint );
+        dist_sq = distancesquared( self.position_ref, spawnpoint.origin );
         dist = undefined;
+        
         /#
-            dist = sqrt(dist_sq);
+            dist = sqrt( dist_sq );
         #/
-        if (dist_sq >= var_e5970392fa9be29c) {
+        
+        if ( dist_sq >= var_e5970392fa9be29c )
+        {
             /#
                 spawnpoint.dist_sq_to_ref = dist_sq;
             #/
-            add_to_score_message(failed_message, "^1CRITICAL^0: Too Far", undefined, undefined, 1, spawnpoint);
+            
+            add_to_score_message( failed_message, "^1CRITICAL^0: Too Far", undefined, undefined, 1, spawnpoint );
             return false;
-        } else {
+        }
+        else
+        {
             spawnpoint.dist_sq_to_ref = dist_sq;
         }
     }
+    
     return true;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xd6e
 // Size: 0x26d
-function spawner_critical_factors(spawnpoint, respawn, respawn_ent) {
+function spawner_critical_factors( spawnpoint, respawn, respawn_ent )
+{
     message = undefined;
     var_78babf35878bcd24 = undefined;
     failed_message = undefined;
     print_critical = 0;
+    
     /#
         var_78babf35878bcd24 = "<dev string:x269>" + spawnpoint get_spawn_scoring_type() + "<dev string:x26c>" + spawnpoint.origin;
         failed_message = "<dev string:x26f>" + var_78babf35878bcd24;
-        print_critical = getdvarint(@"hash_df6e9696bdacd06b", 0);
+        print_critical = getdvarint( @"hash_df6e9696bdacd06b", 0 );
     #/
-    if (istrue(level.pause_spawner_scoring)) {
+    
+    if ( istrue( level.pause_spawner_scoring ) )
+    {
         /#
-            if (print_critical) {
-                add_to_score_message(failed_message, "<dev string:x2c4>", undefined, undefined, 1, spawnpoint);
+            if ( print_critical )
+            {
+                add_to_score_message( failed_message, "<dev string:x2c4>", undefined, undefined, 1, spawnpoint );
             }
         #/
-        return 0;
-    } else if (critical_factor(&is_spawner_disabled, spawnpoint)) {
-        /#
-            if (print_critical) {
-                add_to_score_message(failed_message, "<dev string:x2d9>", undefined, undefined, 1, spawnpoint);
-            }
-        #/
+        
         return 0;
     }
-    if (istrue(respawn)) {
-        if (critical_factor(&invalid_for_teleport, spawnpoint)) {
+    else if ( critical_factor( &is_spawner_disabled, spawnpoint ) )
+    {
+        /#
+            if ( print_critical )
+            {
+                add_to_score_message( failed_message, "<dev string:x2d9>", undefined, undefined, 1, spawnpoint );
+            }
+        #/
+        
+        return 0;
+    }
+    
+    if ( istrue( respawn ) )
+    {
+        if ( critical_factor( &invalid_for_teleport, spawnpoint ) )
+        {
             /#
-                if (print_critical) {
-                    add_to_score_message(failed_message, "<dev string:x2f0>", undefined, undefined, 1, spawnpoint);
+                if ( print_critical )
+                {
+                    add_to_score_message( failed_message, "<dev string:x2f0>", undefined, undefined, 1, spawnpoint );
                 }
             #/
+            
             return 0;
-        } else if (istrue(spawnpoint.is_on_platform) || isdefined(spawnpoint.noteleport)) {
-            if (istrue(spawnpoint.is_on_platform)) {
+        }
+        else if ( istrue( spawnpoint.is_on_platform ) || isdefined( spawnpoint.noteleport ) )
+        {
+            if ( istrue( spawnpoint.is_on_platform ) )
+            {
                 /#
-                    if (print_critical) {
-                        add_to_score_message(failed_message, "<dev string:x30f>", undefined, undefined, 1, spawnpoint);
-                    }
-                #/
-            } else if (isdefined(spawnpoint.noteleport)) {
-                /#
-                    if (print_critical) {
-                        add_to_score_message(failed_message, "<dev string:x329>", undefined, undefined, 1, spawnpoint);
+                    if ( print_critical )
+                    {
+                        add_to_score_message( failed_message, "<dev string:x30f>", undefined, undefined, 1, spawnpoint );
                     }
                 #/
             }
+            else if ( isdefined( spawnpoint.noteleport ) )
+            {
+                /#
+                    if ( print_critical )
+                    {
+                        add_to_score_message( failed_message, "<dev string:x329>", undefined, undefined, 1, spawnpoint );
+                    }
+                #/
+            }
+            
             return 0;
-        } else if (critical_factor(&is_valid_respawn_spawnpoint, spawnpoint)) {
+        }
+        else if ( critical_factor( &is_valid_respawn_spawnpoint, spawnpoint ) )
+        {
             /#
-                if (print_critical) {
-                    add_to_score_message(failed_message, "<dev string:x348>", undefined, undefined, 1, spawnpoint);
+                if ( print_critical )
+                {
+                    add_to_score_message( failed_message, "<dev string:x348>", undefined, undefined, 1, spawnpoint );
                 }
             #/
+            
             return 0;
         }
     }
-    if (critical_factor(&is_level_escalation_sufficient, spawnpoint)) {
+    
+    if ( critical_factor( &is_level_escalation_sufficient, spawnpoint ) )
+    {
         /#
-            if (print_critical) {
-                add_to_score_message(failed_message, "<dev string:x368>", undefined, undefined, 1, spawnpoint);
+            if ( print_critical )
+            {
+                add_to_score_message( failed_message, "<dev string:x368>", undefined, undefined, 1, spawnpoint );
             }
         #/
+        
         return 0;
     }
-    if (critical_factor(&are_weapons_free, spawnpoint)) {
+    
+    if ( critical_factor( &are_weapons_free, spawnpoint ) )
+    {
         /#
-            if (print_critical) {
-                add_to_score_message(failed_message, "<dev string:x381>", undefined, undefined, 1, spawnpoint);
+            if ( print_critical )
+            {
+                add_to_score_message( failed_message, "<dev string:x381>", undefined, undefined, 1, spawnpoint );
             }
         #/
+        
         return 0;
     }
-    if (!critical_factor(&avoidtelefrag, spawnpoint)) {
+    
+    if ( !critical_factor( &avoidtelefrag, spawnpoint ) )
+    {
         /#
-            if (print_critical) {
-                add_to_score_message(failed_message, "<dev string:x3a7>", undefined, undefined, 1, spawnpoint);
+            if ( print_critical )
+            {
+                add_to_score_message( failed_message, "<dev string:x3a7>", undefined, undefined, 1, spawnpoint );
             }
         #/
+        
         return 0;
     }
-    if (!critical_factor(level.spawner_scoring_critical_factors[spawnpoint get_spawn_scoring_type()], spawnpoint)) {
+    
+    if ( !critical_factor( level.spawner_scoring_critical_factors[ spawnpoint get_spawn_scoring_type() ], spawnpoint ) )
+    {
         return 0;
     }
+    
     return 1;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfe3
 // Size: 0x4e
-function get_spawn_scoring_type() {
-    if (isdefined(self.spawner_flags)) {
-        if (self.spawner_flags & 2) {
+function get_spawn_scoring_type()
+{
+    if ( isdefined( self.spawner_flags ) )
+    {
+        if ( self.spawner_flags & 2 )
+        {
             return "vehicle_spawner";
-        } else if (self.spawner_flags & 4) {
+        }
+        else if ( self.spawner_flags & 4 )
+        {
             return "cluster_spawner";
-        } else {
+        }
+        else
+        {
             return "standard_spawner";
         }
+        
         return;
     }
+    
     return "standard_spawner";
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1039
-// Size: 0x57
-function is_valid_respawn_spawnpoint(spawnpoint) {
+// Size: 0x57, Type: bool
+function is_valid_respawn_spawnpoint( spawnpoint )
+{
     spawner_type = spawnpoint get_spawn_scoring_type();
-    if (isdefined(spawner_type)) {
-        switch (spawner_type) {
-        case #"hash_89eb9062c8daa874":
-            return true;
-        case #"hash_abe4b0e0b6ed2786":
-            return false;
-        case #"hash_e92af8a8ba9ca0df":
-            return false;
+    
+    if ( isdefined( spawner_type ) )
+    {
+        switch ( spawner_type )
+        {
+            case #"hash_89eb9062c8daa874":
+                return true;
+            case #"hash_abe4b0e0b6ed2786":
+                return false;
+            case #"hash_e92af8a8ba9ca0df":
+                return false;
         }
     }
+    
     return false;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1099
 // Size: 0x9a
-function can_path_to_target(spawnpoint) {
-    if (isdefined(self.group) && isdefined(self.group.position_ref)) {
-        if (!self maymovefrompointtopoint(spawnpoint.origin, self.group.position_ref)) {
-            level thread draw_capsule(spawnpoint.origin, 16, 32, undefined, (1, 0, 0), undefined, 1000);
-            spawnpoint namespace_5729d24318b60bcd::add_to_spawner_flags(512);
+function can_path_to_target( spawnpoint )
+{
+    if ( isdefined( self.group ) && isdefined( self.group.position_ref ) )
+    {
+        if ( !self maymovefrompointtopoint( spawnpoint.origin, self.group.position_ref ) )
+        {
+            level thread draw_capsule( spawnpoint.origin, 16, 32, undefined, ( 1, 0, 0 ), undefined, 1000 );
+            spawnpoint scripts\cp\spawning::add_to_spawner_flags( 512 );
             return 0;
-        } else {
+        }
+        else
+        {
             return 1;
         }
+        
         return;
     }
+    
     return 1;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x113b
-// Size: 0x62
-function has_tac_vis(spawnpoint) {
-    if (!istrue(spawnpoint.script_forcespawn)) {
+// Size: 0x62, Type: bool
+function has_tac_vis( spawnpoint )
+{
+    if ( !istrue( spawnpoint.script_forcespawn ) )
+    {
         for (i = 0; i < level.players.size; i++) {
-            if (level.players[i] hastacvis(spawnpoint.origin, 0, 64, 1)) {
+            if ( level.players[ i ] hastacvis( spawnpoint.origin, 0, 64, 1 ) )
+            {
                 return true;
             }
         }
     }
+    
     return false;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x11a6
 // Size: 0x57
-function is_level_escalation_sufficient(spawnpoint) {
-    if (isdefined(spawnpoint.script_escalation_level) && isdefined(level.escalation_level)) {
-        if (int(spawnpoint.script_escalation_level) > int(level.escalation_level)) {
+function is_level_escalation_sufficient( spawnpoint )
+{
+    if ( isdefined( spawnpoint.script_escalation_level ) && isdefined( level.escalation_level ) )
+    {
+        if ( int( spawnpoint.script_escalation_level ) > int( level.escalation_level ) )
+        {
             return 1;
-        } else {
+        }
+        else
+        {
             return 0;
         }
+        
         return;
     }
+    
     return 0;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1205
-// Size: 0x3b
-function are_weapons_free(spawnpoint) {
-    if (ent_flag_exist("weapons_free") && ent_flag("weapons_free")) {
-        if (isdefined(spawnpoint.script_animation_type)) {
+// Size: 0x3b, Type: bool
+function are_weapons_free( spawnpoint )
+{
+    if ( ent_flag_exist( "weapons_free" ) && ent_flag( "weapons_free" ) )
+    {
+        if ( isdefined( spawnpoint.script_animation_type ) )
+        {
             return true;
         }
     }
+    
     return false;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1249
-// Size: 0x8d
-function invalid_for_teleport(spawnpoint) {
-    if (spawnpoint namespace_5729d24318b60bcd::spawner_flags_check(512)) {
+// Size: 0x8d, Type: bool
+function invalid_for_teleport( spawnpoint )
+{
+    if ( spawnpoint scripts\cp\spawning::spawner_flags_check( 512 ) )
+    {
         return true;
     }
-    if (istrue(spawnpoint.is_on_platform)) {
-        spawnpoint namespace_5729d24318b60bcd::add_to_spawner_flags(512);
+    
+    if ( istrue( spawnpoint.is_on_platform ) )
+    {
+        spawnpoint scripts\cp\spawning::add_to_spawner_flags( 512 );
         return true;
     }
+    
     pos_ref = self.position_ref;
-    if (!isvector(pos_ref)) {
+    
+    if ( !isvector( pos_ref ) )
+    {
         pos_ref = self.position_ref.origin;
     }
-    if (!navtrace(spawnpoint.origin, pos_ref)) {
-        spawnpoint namespace_5729d24318b60bcd::add_to_spawner_flags(512);
+    
+    if ( !navtrace( spawnpoint.origin, pos_ref ) )
+    {
+        spawnpoint scripts\cp\spawning::add_to_spawner_flags( 512 );
         return true;
     }
+    
     return false;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12df
 // Size: 0x20
-function is_spawner_disabled(spawnpoint) {
-    if (spawnpoint namespace_5729d24318b60bcd::spawner_flags_check(1024)) {
+function is_spawner_disabled( spawnpoint )
+{
+    if ( spawnpoint scripts\cp\spawning::spawner_flags_check( 1024 ) )
+    {
         return 1;
     }
+    
     return 0;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x1307
 // Size: 0x92
-function score_factor_ai(weight, var_e2cadc5bf4175e47, spawnpoint, var_394138cf0a48bdd1, var_394135cf0a48b738, max_score) {
-    if (isdefined(var_394135cf0a48b738)) {
-        scorefactor = [[ var_e2cadc5bf4175e47 ]](spawnpoint, var_394138cf0a48bdd1, var_394135cf0a48b738);
-    } else if (isdefined(var_394138cf0a48bdd1)) {
-        scorefactor = [[ var_e2cadc5bf4175e47 ]](spawnpoint, var_394138cf0a48bdd1);
-    } else {
-        scorefactor = [[ var_e2cadc5bf4175e47 ]](spawnpoint);
+function score_factor_ai( weight, var_e2cadc5bf4175e47, spawnpoint, var_394138cf0a48bdd1, var_394135cf0a48b738, max_score )
+{
+    if ( isdefined( var_394135cf0a48b738 ) )
+    {
+        scorefactor = [[ var_e2cadc5bf4175e47 ]]( spawnpoint, var_394138cf0a48bdd1, var_394135cf0a48b738 );
     }
-    if (!isdefined(scorefactor)) {
+    else if ( isdefined( var_394138cf0a48bdd1 ) )
+    {
+        scorefactor = [[ var_e2cadc5bf4175e47 ]]( spawnpoint, var_394138cf0a48bdd1 );
+    }
+    else
+    {
+        scorefactor = [[ var_e2cadc5bf4175e47 ]]( spawnpoint );
+    }
+    
+    if ( !isdefined( scorefactor ) )
+    {
         return undefined;
     }
-    if (!isdefined(max_score)) {
+    
+    if ( !isdefined( max_score ) )
+    {
         max_score = 1000;
     }
+    
     var_4ddb8606cd43d154 = max_score * weight;
-    scorefactor = clamp(scorefactor * weight, 0, var_4ddb8606cd43d154);
+    scorefactor = clamp( scorefactor * weight, 0, var_4ddb8606cd43d154 );
     return scorefactor;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x13a2
 // Size: 0x5f
-function get_best_scoring_target(var_bdf059129bdd23a3) {
+function get_best_scoring_target( var_bdf059129bdd23a3 )
+{
     scoring_array = get_spawn_scoring_array();
-    result = get_current_spawn_score_player_index(scoring_array, var_bdf059129bdd23a3);
+    result = get_current_spawn_score_player_index( scoring_array, var_bdf059129bdd23a3 );
     level.current_spawn_scoring_index = result;
-    if (isdefined(level.current_spawn_scoring_index)) {
-        return scoring_array[level.current_spawn_scoring_index];
+    
+    if ( isdefined( level.current_spawn_scoring_index ) )
+    {
+        return scoring_array[ level.current_spawn_scoring_index ];
     }
+    
     return level.current_spawn_scoring_index;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1409
 // Size: 0xd8
-function get_score_target_override(pos) {
-    if (isdefined(level.ignore_spawn_scoring_pois)) {
-        if (array_contains(level.ignore_spawn_scoring_pois, self.group_name)) {
+function get_score_target_override( pos )
+{
+    if ( isdefined( level.ignore_spawn_scoring_pois ) )
+    {
+        if ( array_contains( level.ignore_spawn_scoring_pois, self.group_name ) )
+        {
             return undefined;
         }
     }
-    if (isdefined(level.spawn_scoring_pois) && level.spawn_scoring_pois.size > 0) {
+    
+    if ( isdefined( level.spawn_scoring_pois ) && level.spawn_scoring_pois.size > 0 )
+    {
         poi = undefined;
-        if (level.spawn_scoring_pois.size > 1) {
-            var_a719fca40c4a6e2c = sortbydistance(level.spawn_scoring_pois, pos);
-        } else {
+        
+        if ( level.spawn_scoring_pois.size > 1 )
+        {
+            var_a719fca40c4a6e2c = sortbydistance( level.spawn_scoring_pois, pos );
+        }
+        else
+        {
             var_a719fca40c4a6e2c = level.spawn_scoring_pois;
         }
+        
         for (i = 0; i < var_a719fca40c4a6e2c.size; i++) {
-            if (distance2dsquared(pos, var_a719fca40c4a6e2c[i].origin) < var_a719fca40c4a6e2c[i].activation_radius_sq) {
-                return var_a719fca40c4a6e2c[i];
+            if ( distance2dsquared( pos, var_a719fca40c4a6e2c[ i ].origin ) < var_a719fca40c4a6e2c[ i ].activation_radius_sq )
+            {
+                return var_a719fca40c4a6e2c[ i ];
             }
         }
     }
+    
     return undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x14ea
 // Size: 0x86
-function get_score_target_pos(score_target) {
-    if (isplayer(score_target)) {
-        if (isdefined(score_target.velo_forward) && score_target should_use_velo_forward()) {
+function get_score_target_pos( score_target )
+{
+    if ( isplayer( score_target ) )
+    {
+        if ( isdefined( score_target.velo_forward ) && score_target should_use_velo_forward() )
+        {
             pos = score_target.velo_forward;
-        } else {
-            forward = anglestoforward(score_target.angles);
+        }
+        else
+        {
+            forward = anglestoforward( score_target.angles );
             pos = score_target.origin + forward * 1024;
         }
-    } else {
+    }
+    else
+    {
         pos = score_target.origin;
     }
+    
     return pos;
 }
 
 /#
 
-    // Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+    // Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
     // Params 3, eflags: 0x0
     // Checksum 0x0, Offset: 0x1579
-    // Size: 0x36b
-    function function_c0f307cf69beb25e(spawnpoints, validspawnpoints, respawn) {
-        self notify("<dev string:x3c3>");
-        self endon("<dev string:x3c3>");
-        self endon("<dev string:x3e5>");
-        level.players[0] endon("<dev string:x3eb>");
-        level.players[0] endon("<dev string:x3f6>");
-        level.players[0] notifyonplayercommand("<dev string:x3f6>", "<dev string:x3fa>");
-        level.players[0] notifyonplayercommand("<dev string:x3f6>", "<dev string:x405>");
-        if (!isdefined(level.spawner_model)) {
-            level.spawner_model = spawn("<dev string:x40f>", (0, 0, 0));
+    // Size: 0x36b, Type: dev
+    function function_c0f307cf69beb25e( spawnpoints, validspawnpoints, respawn )
+    {
+        self notify( "<dev string:x3c3>" );
+        self endon( "<dev string:x3c3>" );
+        self endon( "<dev string:x3e5>" );
+        level.players[ 0 ] endon( "<dev string:x3eb>" );
+        level.players[ 0 ] endon( "<dev string:x3f6>" );
+        level.players[ 0 ] notifyonplayercommand( "<dev string:x3f6>", "<dev string:x3fa>" );
+        level.players[ 0 ] notifyonplayercommand( "<dev string:x3f6>", "<dev string:x405>" );
+        
+        if ( !isdefined( level.spawner_model ) )
+        {
+            level.spawner_model = spawn( "<dev string:x40f>", ( 0, 0, 0 ) );
         }
+        
         last_spawner = undefined;
         new_spawner = 0;
         self.var_d2a78b73684031d9 = [];
-        while (true) {
+        
+        while ( true )
+        {
             validspawnpoints = [];
+            
             for (i = 0; i < spawnpoints.size; i++) {
-                if (level.players[0] within_fov(level.players[0] geteye(), level.players[0] getplayerangles(1), spawnpoints[i].origin, cos(55)) && spawner_critical_factors(spawnpoints[i], respawn)) {
-                    validspawnpoints[validspawnpoints.size] = spawnpoints[i];
+                if ( level.players[ 0 ] within_fov( level.players[ 0 ] geteye(), level.players[ 0 ] getplayerangles( 1 ), spawnpoints[ i ].origin, cos( 55 ) ) && spawner_critical_factors( spawnpoints[ i ], respawn ) )
+                {
+                    validspawnpoints[ validspawnpoints.size ] = spawnpoints[ i ];
                 }
             }
-            if (isdefined(validspawnpoints) && validspawnpoints.size > 0) {
-                validspawnpoints = sortbydistance(validspawnpoints, level.players[0].origin);
-                if (!isdefined(last_spawner)) {
+            
+            if ( isdefined( validspawnpoints ) && validspawnpoints.size > 0 )
+            {
+                validspawnpoints = sortbydistance( validspawnpoints, level.players[ 0 ].origin );
+                
+                if ( !isdefined( last_spawner ) )
+                {
                     new_spawner = 1;
-                    last_spawner = validspawnpoints[0];
-                } else if (!is_equal(validspawnpoints[0], last_spawner)) {
+                    last_spawner = validspawnpoints[ 0 ];
+                }
+                else if ( !is_equal( validspawnpoints[ 0 ], last_spawner ) )
+                {
                     new_spawner = 1;
-                    last_spawner = validspawnpoints[0];
-                } else {
+                    last_spawner = validspawnpoints[ 0 ];
+                }
+                else
+                {
                     new_spawner = 0;
                 }
-                if (new_spawner) {
+                
+                if ( new_spawner )
+                {
                     spawn_scoring_type = last_spawner get_spawn_scoring_type();
                     level.spawner_model dontinterpolate();
                     level.spawner_model.origin = last_spawner.origin;
-                    if (isdefined(last_spawner.angles)) {
+                    
+                    if ( isdefined( last_spawner.angles ) )
+                    {
                         level.spawner_model.angles = last_spawner.angles;
                     }
-                    switch (spawn_scoring_type) {
-                    case #"hash_89eb9062c8daa874":
-                        level.spawner_model setmodel("<dev string:x42c>");
-                        break;
-                    case #"hash_abe4b0e0b6ed2786":
-                        level.spawner_model setmodel("<dev string:x465>");
-                        break;
-                    default:
-                        level.spawner_model setmodel("<dev string:x474>");
-                        break;
+                    
+                    switch ( spawn_scoring_type )
+                    {
+                        case #"hash_89eb9062c8daa874":
+                            level.spawner_model setmodel( "<dev string:x42c>" );
+                            break;
+                        case #"hash_abe4b0e0b6ed2786":
+                            level.spawner_model setmodel( "<dev string:x465>" );
+                            break;
+                        default:
+                            level.spawner_model setmodel( "<dev string:x474>" );
+                            break;
                     }
-                    if (istrue(last_spawner.var_5c66d2472e564b8f)) {
-                        scripts\cp\cp_outline::enable_outline_for_players(level.spawner_model, level.players, "<dev string:x48b>");
-                    } else {
-                        scripts\cp\cp_outline::enable_outline_for_players(level.spawner_model, level.players, "<dev string:x49f>");
+                    
+                    if ( istrue( last_spawner.var_5c66d2472e564b8f ) )
+                    {
+                        scripts\cp\cp_outline::enable_outline_for_players( level.spawner_model, level.players, "<dev string:x48b>" );
+                    }
+                    else
+                    {
+                        scripts\cp\cp_outline::enable_outline_for_players( level.spawner_model, level.players, "<dev string:x49f>" );
                     }
                 }
-                self.var_d2a78b73684031d9 = [last_spawner];
-            } else {
-                scripts\cp\cp_outline::disable_outline_for_players(level.spawner_model, level.players);
+                
+                self.var_d2a78b73684031d9 = [ last_spawner ];
+            }
+            else
+            {
+                scripts\cp\cp_outline::disable_outline_for_players( level.spawner_model, level.players );
                 self.var_d2a78b73684031d9 = [];
                 last_spawner = undefined;
-                level.spawner_model setmodel("<dev string:x4b5>");
+                level.spawner_model setmodel( "<dev string:x4b5>" );
                 level.spawner_model dontinterpolate();
-                level.spawner_model.origin = (0, 0, 0);
+                level.spawner_model.origin = ( 0, 0, 0 );
             }
+            
             wait 0.1;
         }
     }
 
 #/
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x18ec
 // Size: 0x3b
-function get_closest_spawns(origin, spawnpoints, radius) {
-    if (!isarray(spawnpoints)) {
+function get_closest_spawns( origin, spawnpoints, radius )
+{
+    if ( !isarray( spawnpoints ) )
+    {
         return spawnpoints;
     }
-    if (isdefined(radius)) {
-        return sortbydistancecullbyradius(spawnpoints, origin, radius);
+    
+    if ( isdefined( radius ) )
+    {
+        return sortbydistancecullbyradius( spawnpoints, origin, radius );
     }
-    return sortbydistance(spawnpoints, origin);
+    
+    return sortbydistance( spawnpoints, origin );
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1930
 // Size: 0x17c
-function get_array_of_valid_spawnpoints(spawnpoints, respawn, debug, respawn_ent) {
+function get_array_of_valid_spawnpoints( spawnpoints, respawn, debug, respawn_ent )
+{
     validspawnpoints = [];
     var_9bc1f4eb3b98248d = 10;
+    
     /#
-        if (istrue(debug)) {
+        if ( istrue( debug ) )
+        {
         }
-        if (getdvarint(@"hash_97d7e5b326302869", 0)) {
-            if (isdefined(self.spawn_ref_point_override)) {
+        
+        if ( getdvarint( @"hash_97d7e5b326302869", 0 ) )
+        {
+            if ( isdefined( self.spawn_ref_point_override ) )
+            {
                 self.position_ref = self.spawn_ref_point_override;
-            } else {
+            }
+            else
+            {
                 self.position_ref = self.spawn_ref_point;
             }
+            
             for (i = 0; i < spawnpoints.size; i++) {
-                spawnpoints[i] namespace_5729d24318b60bcd::spawner_init();
+                spawnpoints[ i ] scripts\cp\spawning::spawner_init();
             }
-            validspawnpoints = function_c0f307cf69beb25e(spawnpoints, validspawnpoints, respawn);
+            
+            validspawnpoints = function_c0f307cf69beb25e( spawnpoints, validspawnpoints, respawn );
             validspawnpoints = self.var_d2a78b73684031d9;
             self.var_d2a78b73684031d9 = undefined;
             self.spawn_ref_point_override = undefined;
-            if (validspawnpoints.size > 0) {
-                validspawnpoints[0].var_5c66d2472e564b8f = 1;
-                return [validspawnpoints[0]];
-            } else {
+            
+            if ( validspawnpoints.size > 0 )
+            {
+                validspawnpoints[ 0 ].var_5c66d2472e564b8f = 1;
+                return [ validspawnpoints[ 0 ] ];
+            }
+            else
+            {
                 return [];
             }
         }
     #/
-    if (isarray(spawnpoints)) {
+    
+    if ( isarray( spawnpoints ) )
+    {
         self.position_ref = self.spawn_ref_point;
-        spawnpoints = get_closest_spawns(self.position_ref, spawnpoints);
+        spawnpoints = get_closest_spawns( self.position_ref, spawnpoints );
+        
         for (i = 0; i < spawnpoints.size; i++) {
-            spawnpoint = spawnpoints[i];
-            spawnpoint namespace_5729d24318b60bcd::spawner_init();
-            if (spawner_critical_factors(spawnpoint, respawn, respawn_ent)) {
-                validspawnpoints[validspawnpoints.size] = spawnpoint;
+            spawnpoint = spawnpoints[ i ];
+            spawnpoint scripts\cp\spawning::spawner_init();
+            
+            if ( spawner_critical_factors( spawnpoint, respawn, respawn_ent ) )
+            {
+                validspawnpoints[ validspawnpoints.size ] = spawnpoint;
             }
-            if (validspawnpoints.size >= var_9bc1f4eb3b98248d) {
+            
+            if ( validspawnpoints.size >= var_9bc1f4eb3b98248d )
+            {
                 break;
             }
         }
-    } else {
-        validspawnpoints[0] = spawnpoints;
     }
+    else
+    {
+        validspawnpoints[ 0 ] = spawnpoints;
+    }
+    
     return validspawnpoints;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ab5
 // Size: 0x143
-function get_current_spawn_score_player_index(scoring_array, var_bdf059129bdd23a3) {
-    if (!isdefined(scoring_array)) {
+function get_current_spawn_score_player_index( scoring_array, var_bdf059129bdd23a3 )
+{
+    if ( !isdefined( scoring_array ) )
+    {
         scoring_array = get_spawn_scoring_array();
     }
+    
     total_players = scoring_array.size;
-    if (total_players <= 1) {
+    
+    if ( total_players <= 1 )
+    {
         return 0;
     }
+    
     new_index = undefined;
-    var_6686ffcf922e1b7c = array_sort_with_func(scoring_array, &sort_by_ai_assigned);
+    var_6686ffcf922e1b7c = array_sort_with_func( scoring_array, &sort_by_ai_assigned );
+    
     for (i = 0; i < var_6686ffcf922e1b7c.size; i++) {
-        player = var_6686ffcf922e1b7c[i];
+        player = var_6686ffcf922e1b7c[ i ];
+        
         for (allow_invalid = 0; allow_invalid < 2; allow_invalid++) {
-            if (allow_invalid || istrue(player.spectating) && !istrue(player.inlaststand) && !istrue(player.ignoreme)) {
+            if ( allow_invalid || istrue( player.spectating ) && !istrue( player.inlaststand ) && !istrue( player.ignoreme ) )
+            {
                 for (k = 0; k < scoring_array.size; k++) {
-                    if (scoring_array[k] == player) {
+                    if ( scoring_array[ k ] == player )
+                    {
                         new_index = k;
-                        if (isplayer(player)) {
+                        
+                        if ( isplayer( player ) )
+                        {
                             self.assigned_ai_index = new_index;
-                        } else {
+                        }
+                        else
+                        {
                             self.assigned_ai_index = undefined;
                         }
+                        
                         break;
                     }
                 }
-                if (isdefined(new_index)) {
+                
+                if ( isdefined( new_index ) )
+                {
                     break;
                 }
             }
         }
-        if (isdefined(new_index)) {
+        
+        if ( isdefined( new_index ) )
+        {
             break;
         }
     }
-    if (!isdefined(new_index)) {
-        return randomint(level.players.size);
+    
+    if ( !isdefined( new_index ) )
+    {
+        return randomint( level.players.size );
     }
+    
     return new_index;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c00
 // Size: 0x7e
-function get_next_player_index(index, var_bdf059129bdd23a3) {
+function get_next_player_index( index, var_bdf059129bdd23a3 )
+{
     scoring_array = get_spawn_scoring_array();
     new_index = index;
-    if (!istrue(var_bdf059129bdd23a3)) {
+    
+    if ( !istrue( var_bdf059129bdd23a3 ) )
+    {
         new_index = index + 1;
     }
-    if (isdefined(scoring_array[new_index])) {
+    
+    if ( isdefined( scoring_array[ new_index ] ) )
+    {
         return new_index;
     }
+    
     new_index++;
+    
     for (num_checked = 0; num_checked < scoring_array.size; num_checked++) {
-        if (isdefined(scoring_array[new_index])) {
+        if ( isdefined( scoring_array[ new_index ] ) )
+        {
             return new_index;
         }
-        if (new_index >= scoring_array.size) {
+        
+        if ( new_index >= scoring_array.size )
+        {
             new_index = 0;
             continue;
         }
+        
         new_index++;
     }
+    
     return 0;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 5, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c86
 // Size: 0x1f0
-function score_ai_spawns(spawnpoints, respawn, var_c62b3b643f30bddf, respawn_ent, var_bdf059129bdd23a3) {
+function score_ai_spawns( spawnpoints, respawn, var_c62b3b643f30bddf, respawn_ent, var_bdf059129bdd23a3 )
+{
     bestspawn = undefined;
-    score_target = get_best_scoring_target(var_bdf059129bdd23a3);
+    score_target = get_best_scoring_target( var_bdf059129bdd23a3 );
     self.skip_forward_score_factor = undefined;
-    if (!isdefined(score_target)) {
+    
+    if ( !isdefined( score_target ) )
+    {
         return undefined;
     }
-    if (istrue(self.use_respawn_rules)) {
+    
+    if ( istrue( self.use_respawn_rules ) )
+    {
         respawn = 1;
     }
+    
     self.current_time = gettime();
-    var_9ed7cd9678338a4e = get_score_target_pos(score_target);
-    var_7e4f5e9726221eec = get_score_target_override(var_9ed7cd9678338a4e);
-    self.spawn_ref_point = var_9ed7cd9678338a4e;
-    self.spawn_ref_point_override = var_7e4f5e9726221eec;
-    valid_spawnpoints = get_array_of_valid_spawnpoints(spawnpoints, respawn, undefined, respawn_ent);
-    if (valid_spawnpoints.size < 1) {
+    score_target_pos = get_score_target_pos( score_target );
+    score_target_override = get_score_target_override( score_target_pos );
+    self.spawn_ref_point = score_target_pos;
+    self.spawn_ref_point_override = score_target_override;
+    valid_spawnpoints = get_array_of_valid_spawnpoints( spawnpoints, respawn, undefined, respawn_ent );
+    
+    if ( valid_spawnpoints.size < 1 )
+    {
         return undefined;
     }
+    
     self.current_time = gettime();
     var_6cb3b2286c446e9 = 1;
+    
     /#
-        if (getdvarint(@"hash_97d7e5b326302869", 0)) {
+        if ( getdvarint( @"hash_97d7e5b326302869", 0 ) )
+        {
             var_6cb3b2286c446e9 = 0;
         }
     #/
-    if (var_6cb3b2286c446e9) {
-        var_2d2ff52e5d86488d = score_valid_spawnpoints(valid_spawnpoints, var_c62b3b643f30bddf, respawn_ent, spawnpoints);
-    } else {
-        var_2d2ff52e5d86488d = [valid_spawnpoints[0]];
+    
+    if ( var_6cb3b2286c446e9 )
+    {
+        var_2d2ff52e5d86488d = score_valid_spawnpoints( valid_spawnpoints, var_c62b3b643f30bddf, respawn_ent, spawnpoints );
     }
-    if (var_2d2ff52e5d86488d.size < 1) {
+    else
+    {
+        var_2d2ff52e5d86488d = [ valid_spawnpoints[ 0 ] ];
+    }
+    
+    if ( var_2d2ff52e5d86488d.size < 1 )
+    {
         return undefined;
     }
+    
     random_num = undefined;
-    if (var_2d2ff52e5d86488d.size > 0) {
-        bestspawn = var_2d2ff52e5d86488d[randomint(var_2d2ff52e5d86488d.size)];
+    
+    if ( var_2d2ff52e5d86488d.size > 0 )
+    {
+        bestspawn = var_2d2ff52e5d86488d[ randomint( var_2d2ff52e5d86488d.size ) ];
     }
-    if (isdefined(bestspawn)) {
-        if (istrue(bestspawn.script_forcespawn) || bestspawn passes_forward_check(self) && bestspawn passes_final_capsule_check() && avoids_recently_cleared_area(bestspawn)) {
+    
+    if ( isdefined( bestspawn ) )
+    {
+        if ( istrue( bestspawn.script_forcespawn ) || bestspawn passes_forward_check( self ) && bestspawn passes_final_capsule_check() && avoids_recently_cleared_area( bestspawn ) )
+        {
             return bestspawn;
-        } else {
+        }
+        else
+        {
             added_time = 10000;
-            if (isdefined(level.seen_recently_spawner_time)) {
+            
+            if ( isdefined( level.seen_recently_spawner_time ) )
+            {
                 added_time = level.seen_recently_spawner_time;
             }
+            
             bestspawn.lastspawntime = self.current_time + added_time;
-            level notify("update_spawnpoint_debug_prints");
+            level notify( "update_spawnpoint_debug_prints" );
             return undefined;
         }
+        
         return;
     }
-    level notify("update_spawnpoint_debug_prints");
+    
+    level notify( "update_spawnpoint_debug_prints" );
     return undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e7e
 // Size: 0x27
-function passes_final_capsule_check() {
-    return capsuletracepassed(self.origin + (0, 0, 6), 16, 32, undefined, 1, 1);
+function passes_final_capsule_check()
+{
+    return capsuletracepassed( self.origin + ( 0, 0, 6 ), 16, 32, undefined, 1, 1 );
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1eae
-// Size: 0x109
-function avoids_recently_cleared_area(spawnpoint) {
-    if (istrue(level.skip_player_pos_memory)) {
+// Size: 0x109, Type: bool
+function avoids_recently_cleared_area( spawnpoint )
+{
+    if ( istrue( level.skip_player_pos_memory ) )
+    {
         return true;
     }
+    
     message = undefined;
     var_78babf35878bcd24 = undefined;
     failed_message = undefined;
+    
     /#
         var_78babf35878bcd24 = "<dev string:x269>" + spawnpoint get_spawn_scoring_type() + "<dev string:x26c>" + spawnpoint.origin;
         failed_message = "<dev string:x26f>" + var_78babf35878bcd24;
     #/
+    
     for (i = 0; i < level.players.size; i++) {
-        array = level.players[i] get_player_velo_array();
-        if (isdefined(array) && array.size > 0) {
+        array = level.players[ i ] get_player_velo_array();
+        
+        if ( isdefined( array ) && array.size > 0 )
+        {
             /#
             #/
+            
             for (j = 0; j < array.size; j++) {
                 /#
                 #/
-                if (distance2dsquared(array[j], spawnpoint.origin) <= 65536) {
-                    add_to_score_message(failed_message, "Player Cleared", undefined, undefined, 1, spawnpoint);
+                
+                if ( distance2dsquared( array[ j ], spawnpoint.origin ) <= 65536 )
+                {
+                    add_to_score_message( failed_message, "Player Cleared", undefined, undefined, 1, spawnpoint );
                     return false;
                 }
             }
         }
     }
+    
     return true;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fc0
 // Size: 0x1d
-function set_spawner_chosen_nearby() {
+function set_spawner_chosen_nearby()
+{
     self.spawner_chosen_nearby = 1;
     wait 2.5;
     self.spawner_chosen_nearby = undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fe5
 // Size: 0x340
-function score_valid_spawnpoints(valid_spawnpoints, var_c62b3b643f30bddf, respawn_ent, spawnpoints) {
+function score_valid_spawnpoints( valid_spawnpoints, var_c62b3b643f30bddf, respawn_ent, spawnpoints )
+{
     var_2d2ff52e5d86488d = [];
     bestspawn = undefined;
     bestspawn_score = 0;
     var_27e45d4285530c95 = [];
     var_e97bd95f1f9771e1 = 0;
     var_23ffd71550b6dc5f = 1;
+    
     for (i = 0; i < valid_spawnpoints.size; i++) {
-        spawn_scoring_type = valid_spawnpoints[i] get_spawn_scoring_type();
-        if (isdefined(level.spawner_scoring_allow_early_out[spawn_scoring_type]) && !level.spawner_scoring_allow_early_out[spawn_scoring_type]) {
+        spawn_scoring_type = valid_spawnpoints[ i ] get_spawn_scoring_type();
+        
+        if ( isdefined( level.spawner_scoring_allow_early_out[ spawn_scoring_type ] ) && !level.spawner_scoring_allow_early_out[ spawn_scoring_type ] )
+        {
             var_23ffd71550b6dc5f = 0;
             break;
         }
     }
+    
     for (i = 0; i < valid_spawnpoints.size; i++) {
-        spawn_scoring_type = valid_spawnpoints[i] get_spawn_scoring_type();
-        result = [[ level.spawner_scoring_funcs[spawn_scoring_type] ]](valid_spawnpoints[i], undefined, respawn_ent, spawnpoints);
-        if (isdefined(result)) {
-            if (!isdefined(bestspawn) || isdefined(bestspawn_score) && isdefined(result.totalscore) && result.totalscore > bestspawn_score) {
+        spawn_scoring_type = valid_spawnpoints[ i ] get_spawn_scoring_type();
+        result = [[ level.spawner_scoring_funcs[ spawn_scoring_type ] ]]( valid_spawnpoints[ i ], undefined, respawn_ent, spawnpoints );
+        
+        if ( isdefined( result ) )
+        {
+            if ( !isdefined( bestspawn ) || isdefined( bestspawn_score ) && isdefined( result.totalscore ) && result.totalscore > bestspawn_score )
+            {
                 bestspawn = result;
                 bestspawn_score = result.totalscore;
             }
-            var_e97bd95f1f9771e1 = isdefined(result.fnchildscorefunc);
-            if (var_e97bd95f1f9771e1) {
-                var_27e45d4285530c95[var_27e45d4285530c95.size] = result;
+            
+            var_e97bd95f1f9771e1 = isdefined( result.fnchildscorefunc );
+            
+            if ( var_e97bd95f1f9771e1 )
+            {
+                var_27e45d4285530c95[ var_27e45d4285530c95.size ] = result;
             }
-            if (var_23ffd71550b6dc5f && result.totalscore >= 950) {
-                if (!istrue(var_c62b3b643f30bddf)) {
+            
+            if ( var_23ffd71550b6dc5f && result.totalscore >= 950 )
+            {
+                if ( !istrue( var_c62b3b643f30bddf ) )
+                {
                     result.totalscore = undefined;
                 }
-                return [result];
+                
+                return [ result ];
             }
-            if (result.totalscore > 500) {
-                if (!var_e97bd95f1f9771e1) {
-                    var_2d2ff52e5d86488d[var_2d2ff52e5d86488d.size] = result;
+            
+            if ( result.totalscore > 500 )
+            {
+                if ( !var_e97bd95f1f9771e1 )
+                {
+                    var_2d2ff52e5d86488d[ var_2d2ff52e5d86488d.size ] = result;
                 }
-                if (var_23ffd71550b6dc5f) {
-                    if (istrue(var_c62b3b643f30bddf)) {
-                        if (var_2d2ff52e5d86488d.size >= 5) {
+                
+                if ( var_23ffd71550b6dc5f )
+                {
+                    if ( istrue( var_c62b3b643f30bddf ) )
+                    {
+                        if ( var_2d2ff52e5d86488d.size >= 5 )
+                        {
                             return var_2d2ff52e5d86488d;
                         }
+                        
                         continue;
                     }
+                    
                     result.totalscore = undefined;
                 }
             }
         }
     }
-    if (var_27e45d4285530c95.size > 0) {
+    
+    if ( var_27e45d4285530c95.size > 0 )
+    {
         var_dfdb346fd48d6faf = undefined;
         bestscore = -99999;
         var_35ea3cd053db31f = undefined;
+        
         for (i = 0; i < var_27e45d4285530c95.size; i++) {
-            var_70159d1f6cc7b7fd = var_27e45d4285530c95[i];
-            if (isdefined(var_70159d1f6cc7b7fd.totalscore) && var_70159d1f6cc7b7fd.totalscore > bestscore) {
+            var_70159d1f6cc7b7fd = var_27e45d4285530c95[ i ];
+            
+            if ( isdefined( var_70159d1f6cc7b7fd.totalscore ) && var_70159d1f6cc7b7fd.totalscore > bestscore )
+            {
                 bestscore = var_70159d1f6cc7b7fd.totalscore;
                 var_dfdb346fd48d6faf = var_70159d1f6cc7b7fd;
                 var_35ea3cd053db31f = var_70159d1f6cc7b7fd.fnchildscorefunc;
             }
-            if (!istrue(var_c62b3b643f30bddf)) {
+            
+            if ( !istrue( var_c62b3b643f30bddf ) )
+            {
                 var_70159d1f6cc7b7fd.totalscore = undefined;
                 var_70159d1f6cc7b7fd.fnchildscorefunc = undefined;
             }
         }
-        if (isdefined(var_dfdb346fd48d6faf)) {
-            var_168e835cf3a0dff0 = [[ var_35ea3cd053db31f ]](var_dfdb346fd48d6faf, undefined, respawn_ent);
-            if (isdefined(var_168e835cf3a0dff0)) {
-                if (isarray(var_168e835cf3a0dff0)) {
+        
+        if ( isdefined( var_dfdb346fd48d6faf ) )
+        {
+            var_168e835cf3a0dff0 = [[ var_35ea3cd053db31f ]]( var_dfdb346fd48d6faf, undefined, respawn_ent );
+            
+            if ( isdefined( var_168e835cf3a0dff0 ) )
+            {
+                if ( isarray( var_168e835cf3a0dff0 ) )
+                {
                     for (var_1d86078f33bafc19 = 0; var_1d86078f33bafc19 < var_168e835cf3a0dff0.size; var_1d86078f33bafc19++) {
-                        if (var_168e835cf3a0dff0[var_1d86078f33bafc19].totalscore > 500) {
-                            var_2d2ff52e5d86488d[var_2d2ff52e5d86488d.size] = var_168e835cf3a0dff0[var_1d86078f33bafc19];
+                        if ( var_168e835cf3a0dff0[ var_1d86078f33bafc19 ].totalscore > 500 )
+                        {
+                            var_2d2ff52e5d86488d[ var_2d2ff52e5d86488d.size ] = var_168e835cf3a0dff0[ var_1d86078f33bafc19 ];
                         }
                     }
-                } else if (var_168e835cf3a0dff0.totalscore > 500) {
-                    var_2d2ff52e5d86488d[var_2d2ff52e5d86488d.size] = var_168e835cf3a0dff0;
+                }
+                else if ( var_168e835cf3a0dff0.totalscore > 500 )
+                {
+                    var_2d2ff52e5d86488d[ var_2d2ff52e5d86488d.size ] = var_168e835cf3a0dff0;
                 }
             }
         }
     }
-    if (var_2d2ff52e5d86488d.size > 0) {
+    
+    if ( var_2d2ff52e5d86488d.size > 0 )
+    {
         return var_2d2ff52e5d86488d;
     }
-    if (isdefined(bestspawn)) {
+    
+    if ( isdefined( bestspawn ) )
+    {
         spawn_scoring_type = bestspawn get_spawn_scoring_type();
-        if (spawn_scoring_type == "cluster_spawner") {
+        
+        if ( spawn_scoring_type == "cluster_spawner" )
+        {
             return [];
-        } else {
-            return [bestspawn];
         }
+        else
+        {
+            return [ bestspawn ];
+        }
+        
         return;
     }
+    
     return [];
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x232d
 // Size: 0xdb
-function print_spawnpoint_debug(reason, color, waittill_notify) {
-    self notify("print_spawnpoint_debug");
-    self endon("print_spawnpoint_debug");
+function print_spawnpoint_debug( reason, color, waittill_notify )
+{
+    self notify( "print_spawnpoint_debug" );
+    self endon( "print_spawnpoint_debug" );
     radius = 16;
     height = 16;
     spawn_scoring_type = get_spawn_scoring_type();
-    if (spawn_scoring_type == "vehicle_spawner") {
+    
+    if ( spawn_scoring_type == "vehicle_spawner" )
+    {
         radius = 48;
         height = 48;
     }
-    if (istrue(level.spawnpoint_debug)) {
-        if (isdefined(waittill_notify)) {
-            level waittill(waittill_notify);
+    
+    if ( istrue( level.spawnpoint_debug ) )
+    {
+        if ( isdefined( waittill_notify ) )
+        {
+            level waittill( waittill_notify );
         }
-        level endon("update_spawnpoint_debug_prints");
-        level endon("end_spawnpoint_debug");
-        while (true) {
+        
+        level endon( "update_spawnpoint_debug_prints" );
+        level endon( "end_spawnpoint_debug" );
+        
+        while ( true )
+        {
             /#
-                print3d(self.origin, spawn_scoring_type + "<dev string:x4c0>" + reason, color, 1, 1, 1, 0);
+                print3d( self.origin, spawn_scoring_type + "<dev string:x4c0>" + reason, color, 1, 1, 1, 0 );
             #/
-            thread draw_capsule(self.origin, radius, height, (0, 0, 0), color, 0, 1);
+            
+            thread draw_capsule( self.origin, radius, height, ( 0, 0, 0 ), color, 0, 1 );
             waitframe();
         }
     }
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2410
-// Size: 0x158
-function passes_forward_check(group_struct) {
-    if (isdefined(self) && !isvector(self)) {
-        if (isdefined(self.script_dot)) {
-            compare = int(self.script_dot) == 1;
+// Size: 0x158, Type: bool
+function passes_forward_check( group_struct )
+{
+    if ( isdefined( self ) && !isvector( self ) )
+    {
+        if ( isdefined( self.script_dot ) )
+        {
+            compare = int( self.script_dot ) == 1;
+            
             for (j = 0; j < level.players.size; j++) {
-                if (scripts\cp\cp_spawning_util::cp_is_point_in_front(level.players[j].origin) == compare) {
-                    if (isdefined(self.script_dist_only)) {
-                        if (distancesquared(level.players[j].origin, self.origin) <= int(self.script_dist_only)) {
-                            thread namespace_5729d24318b60bcd::disable_spawn_point(self, undefined, group_struct);
+                if ( scripts\cp\cp_spawning_util::cp_is_point_in_front( level.players[ j ].origin ) == compare )
+                {
+                    if ( isdefined( self.script_dist_only ) )
+                    {
+                        if ( distancesquared( level.players[ j ].origin, self.origin ) <= int( self.script_dist_only ) )
+                        {
+                            thread scripts\cp\spawning::disable_spawn_point( self, undefined, group_struct );
                             return false;
                         }
+                        
                         continue;
                     }
-                    thread namespace_5729d24318b60bcd::disable_spawn_point(self, undefined, group_struct);
+                    
+                    thread scripts\cp\spawning::disable_spawn_point( self, undefined, group_struct );
                     return false;
                 }
             }
-        } else if (isdefined(self.script_dist_only)) {
+        }
+        else if ( isdefined( self.script_dist_only ) )
+        {
             for (p = 0; p < level.players.size; p++) {
-                if (distancesquared(level.players[p].origin, self.origin) <= int(self.script_dist_only)) {
-                    thread namespace_5729d24318b60bcd::disable_spawn_point(self, undefined, group_struct);
+                if ( distancesquared( level.players[ p ].origin, self.origin ) <= int( self.script_dist_only ) )
+                {
+                    thread scripts\cp\spawning::disable_spawn_point( self, undefined, group_struct );
                     return false;
                 }
             }
         }
     }
+    
     return true;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2571
-// Size: 0x1a3
-function calculate_ai_cluster_spawner_score(spawnpoint, player_index) {
+// Size: 0x1a3, Type: bool
+function calculate_ai_cluster_spawner_score( spawnpoint, player_index )
+{
     message = undefined;
     var_78babf35878bcd24 = undefined;
     failed_message = undefined;
+    
     /#
         var_78babf35878bcd24 = "<dev string:x269>" + spawnpoint get_spawn_scoring_type() + "<dev string:x26c>" + spawnpoint.origin;
         failed_message = "<dev string:x26f>" + var_78babf35878bcd24;
-        message = add_to_score_message(var_78babf35878bcd24, undefined, undefined, 0, 0, spawnpoint);
+        message = add_to_score_message( var_78babf35878bcd24, undefined, undefined, 0, 0, spawnpoint );
     #/
+    
     totalscore = level.total_cluster_spawn_score;
     finalscore = 0;
     weight = 8;
-    scorefactor = score_factor_ai(weight / totalscore, &is_cluster_spawner_ideal_distance, spawnpoint, player_index);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &is_cluster_spawner_ideal_distance, spawnpoint, player_index );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x4c4>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x4c4>", undefined, undefined, 1, spawnpoint );
         #/
+        
         return false;
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4cd>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4cd>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     var_2653f927df4a0bf4 = 5;
-    var_8766534be41302a9 = score_factor_ai(var_2653f927df4a0bf4 / totalscore, &is_spawner_towards_objective, spawnpoint, player_index);
-    if (!isdefined(var_8766534be41302a9)) {
+    var_8766534be41302a9 = score_factor_ai( var_2653f927df4a0bf4 / totalscore, &is_spawner_towards_objective, spawnpoint, player_index );
+    
+    if ( !isdefined( var_8766534be41302a9 ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x4d8>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x4d8>", undefined, undefined, 1, spawnpoint );
         #/
+        
         return false;
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4ea>", var_8766534be41302a9, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4ea>", var_8766534be41302a9, 0, 0, spawnpoint );
     #/
+    
     finalscore += var_8766534be41302a9;
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4fe>", "<dev string:x508>" + finalscore, 0, 1, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4fe>", "<dev string:x508>" + finalscore, 0, 1, spawnpoint );
     #/
-    spawnpoint.totalscore = int(finalscore);
+    
+    spawnpoint.totalscore = int( finalscore );
     spawnpoint.fnchildscorefunc = &cluster_child_spawnpoint_scoring;
     return true;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x271d
-// Size: 0x180
-function calculate_ai_veh_spawner_score(spawnpoint, player_index) {
+// Size: 0x180, Type: bool
+function calculate_ai_veh_spawner_score( spawnpoint, player_index )
+{
     message = undefined;
     var_78babf35878bcd24 = undefined;
     failed_message = undefined;
+    
     /#
         var_78babf35878bcd24 = "<dev string:x269>" + spawnpoint get_spawn_scoring_type() + "<dev string:x26c>" + spawnpoint.origin;
         failed_message = "<dev string:x26f>" + var_78babf35878bcd24;
-        message = add_to_score_message(var_78babf35878bcd24, undefined, undefined, 0, 0, spawnpoint);
+        message = add_to_score_message( var_78babf35878bcd24, undefined, undefined, 0, 0, spawnpoint );
     #/
+    
     totalscore = level.total_veh_spawn_score;
     finalscore = 0;
     weight = 2;
-    scorefactor = score_factor_ai(weight / totalscore, &is_vehicle_spawner_ideal_distance, spawnpoint, player_index, undefined, 1250);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &is_vehicle_spawner_ideal_distance, spawnpoint, player_index, undefined, 1250 );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x4c4>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x4c4>", undefined, undefined, 1, spawnpoint );
         #/
+        
         return false;
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4cd>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4cd>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     weight = 1;
-    scorefactor = score_factor_ai(weight / totalscore, &is_spawner_towards_objective, spawnpoint, player_index);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &is_spawner_towards_objective, spawnpoint, player_index );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x4d8>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x4d8>", undefined, undefined, 1, spawnpoint );
         #/
+        
         return false;
     }
+    
     finalscore += scorefactor;
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4ea>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4ea>", scorefactor, 0, 0, spawnpoint );
     #/
-    spawnpoint.totalscore = int(finalscore);
+    
+    spawnpoint.totalscore = int( finalscore );
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4fe>", "<dev string:x508>" + finalscore, 0, 1, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4fe>", "<dev string:x508>" + finalscore, 0, 1, spawnpoint );
     #/
+    
     return true;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x28a6
-// Size: 0x36e
-function calculate_ai_spawner_score(spawnpoint, player_index, debug, spawnpoints) {
+// Size: 0x36e, Type: bool
+function calculate_ai_spawner_score( spawnpoint, player_index, debug, spawnpoints )
+{
     message = undefined;
     var_78babf35878bcd24 = undefined;
     failed_message = undefined;
+    
     /#
         var_78babf35878bcd24 = "<dev string:x269>" + spawnpoint get_spawn_scoring_type() + "<dev string:x26c>" + spawnpoint.origin;
         failed_message = "<dev string:x26f>" + var_78babf35878bcd24;
-        message = add_to_score_message(var_78babf35878bcd24, undefined, undefined, 0, 0, spawnpoint);
+        message = add_to_score_message( var_78babf35878bcd24, undefined, undefined, 0, 0, spawnpoint );
     #/
+    
     totalscore = level.total_spawn_score;
     finalscore = 0;
     weight = 4;
-    scorefactor = score_factor_ai(weight / totalscore, &is_spawner_ideal_distance, spawnpoint, player_index);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &is_spawner_ideal_distance, spawnpoint, player_index );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x4c4>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x4c4>", undefined, undefined, 1, spawnpoint );
         #/
-        if (istrue(debug)) {
+        
+        if ( istrue( debug ) )
+        {
             scorefactor = -10000;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4cd>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4cd>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     weight = 4;
-    scorefactor = score_factor_ai(weight / totalscore, &avoid_recently_used_spawns, spawnpoint);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &avoid_recently_used_spawns, spawnpoint );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x50b>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x50b>", undefined, undefined, 1, spawnpoint );
         #/
-        if (istrue(debug)) {
+        
+        if ( istrue( debug ) )
+        {
             scorefactor = -10000;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x519>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x519>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     weight = 0;
-    scorefactor = score_factor_ai(weight / totalscore, &avoid_players_vision, spawnpoint);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &avoid_players_vision, spawnpoint );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x529>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x529>", undefined, undefined, 1, spawnpoint );
         #/
-        if (istrue(debug)) {
+        
+        if ( istrue( debug ) )
+        {
             scorefactor = -10000;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x530>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x530>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     weight = 5;
-    scorefactor = score_factor_ai(weight / totalscore, &is_spawner_towards_objective, spawnpoint, player_index);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &is_spawner_towards_objective, spawnpoint, player_index );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x4d8>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x4d8>", undefined, undefined, 1, spawnpoint );
         #/
-        if (istrue(debug)) {
+        
+        if ( istrue( debug ) )
+        {
             scorefactor = -10000;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x4ea>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x4ea>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     weight = 5;
-    scorefactor = score_factor_ai(weight / totalscore, &weight_spawners_closest_to_forward, spawnpoint);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &weight_spawners_closest_to_forward, spawnpoint );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x539>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x539>", undefined, undefined, 1, spawnpoint );
         #/
+        
         return false;
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x541>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x541>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     weight = 5;
-    scorefactor = score_factor_ai(weight / totalscore, &has_spawner_chosen_nearby_flag, spawnpoint);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &has_spawner_chosen_nearby_flag, spawnpoint );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x54b>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x54b>", undefined, undefined, 1, spawnpoint );
         #/
-        if (istrue(debug)) {
+        
+        if ( istrue( debug ) )
+        {
             scorefactor = -10000;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
+    
     /#
-        message = add_to_score_message(message, "<dev string:x552>", scorefactor, 0, 0, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x552>", scorefactor, 0, 0, spawnpoint );
     #/
+    
     finalscore += scorefactor;
     weight = 2;
-    scorefactor = score_factor_ai(weight / totalscore, &is_close_to_player_z, spawnpoint, player_index);
-    if (!isdefined(scorefactor)) {
+    scorefactor = score_factor_ai( weight / totalscore, &is_close_to_player_z, spawnpoint, player_index );
+    
+    if ( !isdefined( scorefactor ) )
+    {
         /#
-            message = add_to_score_message(failed_message, "<dev string:x562>", undefined, undefined, 1, spawnpoint);
+            message = add_to_score_message( failed_message, "<dev string:x562>", undefined, undefined, 1, spawnpoint );
         #/
-        if (istrue(debug)) {
+        
+        if ( istrue( debug ) )
+        {
             scorefactor = -10000;
-        } else {
+        }
+        else
+        {
             return false;
         }
     }
+    
     finalscore += scorefactor;
+    
     /#
-        message = add_to_score_message(message, "<dev string:x56a>", scorefactor, 0, 0, spawnpoint);
-        message = add_to_score_message(message, "<dev string:x4fe>", "<dev string:x508>" + finalscore, 0, 1, spawnpoint);
+        message = add_to_score_message( message, "<dev string:x56a>", scorefactor, 0, 0, spawnpoint );
+        message = add_to_score_message( message, "<dev string:x4fe>", "<dev string:x508>" + finalscore, 0, 1, spawnpoint );
     #/
-    spawnpoint.totalscore = int(finalscore);
+    
+    spawnpoint.totalscore = int( finalscore );
     return true;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c1d
 // Size: 0xe0
-function is_close_to_player_z(spawnpoint, player_index) {
-    player = level.players[player_index];
+function is_close_to_player_z( spawnpoint, player_index )
+{
+    player = level.players[ player_index ];
+    
     /#
-        if (isdefined(level.var_d9821974c80a684a)) {
-            player = random(level.var_d9821974c80a684a);
+        if ( isdefined( level.var_d9821974c80a684a ) )
+        {
+            player = random( level.var_d9821974c80a684a );
         }
     #/
-    if (isdefined(self.spawn_ref_point)) {
-        ref_point = self.spawn_ref_point[2];
-    } else {
-        ref_point = player.origin[2];
+    
+    if ( isdefined( self.spawn_ref_point ) )
+    {
+        ref_point = self.spawn_ref_point[ 2 ];
     }
-    if (isvector(spawnpoint)) {
-        z_diff = int(abs(spawnpoint[2] - ref_point));
-    } else {
-        z_diff = int(abs(spawnpoint.origin[2] - ref_point));
+    else
+    {
+        ref_point = player.origin[ 2 ];
     }
-    if (z_diff <= 128) {
+    
+    if ( isvector( spawnpoint ) )
+    {
+        z_diff = int( abs( spawnpoint[ 2 ] - ref_point ) );
+    }
+    else
+    {
+        z_diff = int( abs( spawnpoint.origin[ 2 ] - ref_point ) );
+    }
+    
+    if ( z_diff <= 128 )
+    {
         return 1000;
     }
-    return 1000 / int(z_diff / 32);
+    
+    return 1000 / int( z_diff / 32 );
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d05
 // Size: 0x168
-function score_spawner_relative_to_objective(var_9832dde9afb5565c, objpos, var_1f810c7df46ffb0e, var_a299bae2b12aa472) {
+function score_spawner_relative_to_objective( var_9832dde9afb5565c, objpos, var_1f810c7df46ffb0e, var_a299bae2b12aa472 )
+{
     bestscore = 1000;
     bestdot = 0.707;
     var_935ba925e6fc497c = -0.5;
@@ -1330,238 +1865,331 @@ function score_spawner_relative_to_objective(var_9832dde9afb5565c, objpos, var_1
     var_528c2ba90b381005 = 1024;
     var_88a5204c5dee932e = 262144;
     var_e1f1195815227fe0 = objpos - var_9832dde9afb5565c;
-    var_e1f1195815227fe0 = (var_e1f1195815227fe0[0], var_e1f1195815227fe0[1], 0);
-    var_f0fd166c750fac7c = length(var_e1f1195815227fe0);
-    if (var_f0fd166c750fac7c > 0) {
+    var_e1f1195815227fe0 = ( var_e1f1195815227fe0[ 0 ], var_e1f1195815227fe0[ 1 ], 0 );
+    var_f0fd166c750fac7c = length( var_e1f1195815227fe0 );
+    
+    if ( var_f0fd166c750fac7c > 0 )
+    {
         var_e1f1195815227fe0 /= var_f0fd166c750fac7c;
     }
-    dot = vectordot(var_1f810c7df46ffb0e, var_e1f1195815227fe0);
-    if (var_f0fd166c750fac7c > var_528c2ba90b381005) {
+    
+    dot = vectordot( var_1f810c7df46ffb0e, var_e1f1195815227fe0 );
+    
+    if ( var_f0fd166c750fac7c > var_528c2ba90b381005 )
+    {
         self.allow_forward_factor = 1;
-        if (dot < var_244a6693d35086e1) {
+        
+        if ( dot < var_244a6693d35086e1 )
+        {
             return 0;
-        } else if (dot * var_a299bae2b12aa472 > var_f0fd166c750fac7c) {
-            return 0;
-        } else if (dot < bestdot) {
-            f = 1 - (bestdot - dot) / (bestdot - var_244a6693d35086e1);
-            return (bestscore * f);
-        } else {
-            return bestscore;
         }
-    } else {
-        self.allow_forward_factor = 0;
-        if (dot > var_244a6693d35086e1) {
+        else if ( dot * var_a299bae2b12aa472 > var_f0fd166c750fac7c )
+        {
             return 0;
-        } else if (dot > var_935ba925e6fc497c) {
-            f = 1 - (var_935ba925e6fc497c - dot) / (var_935ba925e6fc497c - var_244a6693d35086e1);
-            return (bestscore * f);
-        } else {
+        }
+        else if ( dot < bestdot )
+        {
+            f = 1 - ( bestdot - dot ) / ( bestdot - var_244a6693d35086e1 );
+            return ( bestscore * f );
+        }
+        else
+        {
             return bestscore;
         }
     }
+    else
+    {
+        self.allow_forward_factor = 0;
+        
+        if ( dot > var_244a6693d35086e1 )
+        {
+            return 0;
+        }
+        else if ( dot > var_935ba925e6fc497c )
+        {
+            f = 1 - ( var_935ba925e6fc497c - dot ) / ( var_935ba925e6fc497c - var_244a6693d35086e1 );
+            return ( bestscore * f );
+        }
+        else
+        {
+            return bestscore;
+        }
+    }
+    
     return 0;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e76
 // Size: 0x1ec
-function is_spawner_towards_objective(spawnpoint, player_index) {
-    if (!isdefined(level.activequests) || level.activequests.size < 1) {
+function is_spawner_towards_objective( spawnpoint, player_index )
+{
+    if ( !isdefined( level.activequests ) || level.activequests.size < 1 )
+    {
         self.skip_forward_score_factor = undefined;
         return 1000;
-    } else {
-        player = level.players[player_index];
+    }
+    else
+    {
+        player = level.players[ player_index ];
+        
         /#
-            if (isdefined(level.var_d9821974c80a684a)) {
-                player = random(level.var_d9821974c80a684a);
+            if ( isdefined( level.var_d9821974c80a684a ) )
+            {
+                player = random( level.var_d9821974c80a684a );
             }
         #/
+        
         ref_point = player.origin;
         spawnpoint_pos = spawnpoint.origin;
         var_17756a44a05002de = spawnpoint_pos - ref_point;
-        var_17756a44a05002de = (var_17756a44a05002de[0], var_17756a44a05002de[1], 0);
-        var_311c45d876a94904 = length(var_17756a44a05002de);
-        if (var_311c45d876a94904 > 0) {
+        var_17756a44a05002de = ( var_17756a44a05002de[ 0 ], var_17756a44a05002de[ 1 ], 0 );
+        var_311c45d876a94904 = length( var_17756a44a05002de );
+        
+        if ( var_311c45d876a94904 > 0 )
+        {
             var_17756a44a05002de /= var_311c45d876a94904;
         }
+        
         bestscore = undefined;
+        
         for (i = 0; i < level.activequests.size; i++) {
-            quest = level.activequests[i];
-            if (isdefined(quest.objectivelocations) && quest.objectivelocations.size > 0) {
+            quest = level.activequests[ i ];
+            
+            if ( isdefined( quest.objectivelocations ) && quest.objectivelocations.size > 0 )
+            {
                 for (j = 0; j < quest.objectivelocations.size; j++) {
-                    var_3ed87ea90882333 = quest.objectivelocations[j];
-                    score = score_spawner_relative_to_objective(ref_point, var_3ed87ea90882333, var_17756a44a05002de, var_311c45d876a94904);
-                    if (!isdefined(bestscore) || score > bestscore) {
-                        if (istrue(self.allow_forward_factor)) {
+                    var_3ed87ea90882333 = quest.objectivelocations[ j ];
+                    score = score_spawner_relative_to_objective( ref_point, var_3ed87ea90882333, var_17756a44a05002de, var_311c45d876a94904 );
+                    
+                    if ( !isdefined( bestscore ) || score > bestscore )
+                    {
+                        if ( istrue( self.allow_forward_factor ) )
+                        {
                             self.skip_forward_score_factor = 1;
-                        } else {
+                        }
+                        else
+                        {
                             self.skip_forward_score_factor = undefined;
                         }
+                        
                         bestscore = score;
                     }
+                    
                     self.allow_forward_factor = undefined;
                 }
             }
         }
-        if (isdefined(bestscore)) {
+        
+        if ( isdefined( bestscore ) )
+        {
             return bestscore;
         }
     }
+    
     self.skip_forward_score_factor = undefined;
     return 1000;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x306b
 // Size: 0x23
-function has_spawner_chosen_nearby_flag(spawnpoint) {
-    if (istrue(spawnpoint.spawner_chosen_nearby)) {
+function has_spawner_chosen_nearby_flag( spawnpoint )
+{
+    if ( istrue( spawnpoint.spawner_chosen_nearby ) )
+    {
         return 1000;
     }
+    
     return 0;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3096
 // Size: 0xe1
-function avoid_players_vision(spawnpoint) {
+function avoid_players_vision( spawnpoint )
+{
     /#
     #/
-    if (isdefined(spawnpoint.script_parent) || istrue(spawnpoint.script_forcespawn) || istrue(spawnpoint namespace_f02c28a5e2bd7edd::is_vehicle_spawnpoint()) || !isdefined(level.players) || level.players.size < 1) {
+    
+    if ( isdefined( spawnpoint.script_parent ) || istrue( spawnpoint.script_forcespawn ) || istrue( spawnpoint scripts\cp\vehicles::is_vehicle_spawnpoint() ) || !isdefined( level.players ) || level.players.size < 1 )
+    {
         /#
         #/
+        
         return 1000;
     }
+    
     max_score = 1000 / level.players.size;
     var_4f86bf5be5e42647 = undefined;
     player_array = get_player_array();
-    if (run_func_on_each_player(&spawnpoint_is_within_sight, 1, spawnpoint)) {
+    
+    if ( run_func_on_each_player( &spawnpoint_is_within_sight, 1, spawnpoint ) )
+    {
         /#
             spawnpoint.var_52b39a5c627585de = 1;
         #/
+        
         spawnpoint.lastspawntime = self.current_time;
         return undefined;
     }
+    
     /#
         spawnpoint.var_52b39a5c627585de = undefined;
     #/
+    
     return max_score;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x317f
 // Size: 0x4a
-function should_use_velo_forward() {
+function should_use_velo_forward()
+{
     var_dd6fbb1ff2a513c9 = self.velo_forward - self.origin;
-    var_dd6fbb1ff2a513c9 = (var_dd6fbb1ff2a513c9[0], var_dd6fbb1ff2a513c9[1], 0);
-    var_13b97a8da9dfea88 = length(var_dd6fbb1ff2a513c9);
-    if (var_13b97a8da9dfea88 > 0) {
+    var_dd6fbb1ff2a513c9 = ( var_dd6fbb1ff2a513c9[ 0 ], var_dd6fbb1ff2a513c9[ 1 ], 0 );
+    var_13b97a8da9dfea88 = length( var_dd6fbb1ff2a513c9 );
+    
+    if ( var_13b97a8da9dfea88 > 0 )
+    {
         return 1;
     }
+    
     return 0;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x31d1
 // Size: 0x19a
-function weight_spawners_closest_to_forward(spawnpoint, spawnpoints) {
+function weight_spawners_closest_to_forward( spawnpoint, spawnpoints )
+{
     max_score = 1000;
-    if (isdefined(spawnpoint.script_parent) || istrue(spawnpoint.script_forcespawn) || istrue(spawnpoint namespace_f02c28a5e2bd7edd::is_vehicle_spawnpoint()) || !isdefined(level.players) || istrue(self.skip_forward_score_factor) || level.players.size < 1) {
+    
+    if ( isdefined( spawnpoint.script_parent ) || istrue( spawnpoint.script_forcespawn ) || istrue( spawnpoint scripts\cp\vehicles::is_vehicle_spawnpoint() ) || !isdefined( level.players ) || istrue( self.skip_forward_score_factor ) || level.players.size < 1 )
+    {
         return max_score;
     }
+    
     cumulative_dot = 0;
     average_dot = 0;
     dot_count = 0;
     player_array = get_player_array();
+    
     for (i = 0; i < player_array.size; i++) {
-        if (isplayer(player_array[i])) {
-            angles = player_array[i] getplayerangles();
-            if (isdefined(player_array[i].velo_forward) && player_array[i] should_use_velo_forward()) {
-                angles = vectortoangles(player_array[i].velo_forward - player_array[i].origin);
+        if ( isplayer( player_array[ i ] ) )
+        {
+            angles = player_array[ i ] getplayerangles();
+            
+            if ( isdefined( player_array[ i ].velo_forward ) && player_array[ i ] should_use_velo_forward() )
+            {
+                angles = vectortoangles( player_array[ i ].velo_forward - player_array[ i ].origin );
             }
-            cumulative_dot += math::get_dot(player_array[i].origin, angles, spawnpoint.origin);
-        } else {
-            angles = player_array[i].angles;
-            cumulative_dot += math::get_dot(player_array[i].origin, angles, spawnpoint.origin);
+            
+            cumulative_dot += math::get_dot( player_array[ i ].origin, angles, spawnpoint.origin );
         }
+        else
+        {
+            angles = player_array[ i ].angles;
+            cumulative_dot += math::get_dot( player_array[ i ].origin, angles, spawnpoint.origin );
+        }
+        
         dot_count++;
     }
-    if (dot_count == 0) {
+    
+    if ( dot_count == 0 )
+    {
         return max_score;
     }
+    
     average_dot = cumulative_dot / dot_count;
     return max_score * average_dot;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x3373
-// Size: 0x7a
-function run_func_on_each_player(func, return_bool, optional_param1, optional_param2) {
+// Size: 0x7a, Type: bool
+function run_func_on_each_player( func, return_bool, optional_param1, optional_param2 )
+{
     for (i = 0; i < level.players.size; i++) {
-        bool = level.players[i] [[ func ]](optional_param1, optional_param2);
-        if (isdefined(return_bool) && isdefined(bool) && is_equal(return_bool, bool)) {
+        bool = level.players[ i ] [[ func ]]( optional_param1, optional_param2 );
+        
+        if ( isdefined( return_bool ) && isdefined( bool ) && is_equal( return_bool, bool ) )
+        {
             return true;
         }
     }
+    
     return false;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x33f6
 // Size: 0x9b
-function spawnpoint_is_within_sight(spawnpoint, optional_param2) {
-    if (isplayer(self) && !is_valid_player(1)) {
+function spawnpoint_is_within_sight( spawnpoint, optional_param2 )
+{
+    if ( isplayer( self ) && !is_valid_player( 1 ) )
+    {
         return 0;
     }
+    
     angles = get_within_sight_angles();
     trace_start = self geteye();
-    var_c869f57096afa5ee = spawnpoint.origin + (0, 0, 56);
-    trace_results = within_fov(trace_start, angles, var_c869f57096afa5ee, cos(65)) && sighttracepassed(trace_start, var_c869f57096afa5ee, 0, undefined, 1);
+    var_c869f57096afa5ee = spawnpoint.origin + ( 0, 0, 56 );
+    trace_results = within_fov( trace_start, angles, var_c869f57096afa5ee, cos( 65 ) ) && sighttracepassed( trace_start, var_c869f57096afa5ee, 0, undefined, 1 );
     return trace_results;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x349a
 // Size: 0x43
-function reset_nearby_spawn_times(spawnpoint, spawnpoints, time) {
+function reset_nearby_spawn_times( spawnpoint, spawnpoints, time )
+{
     for (i = 0; i < spawnpoints.size; i++) {
-        spawnpoints[i].lastspawntime = time;
+        spawnpoints[ i ].lastspawntime = time;
     }
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x34e5
 // Size: 0x8
-function get_within_sight_angles() {
+function get_within_sight_angles()
+{
     return self getplayerangles();
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x34f6
 // Size: 0x1de
-function is_vehicle_spawner_ideal_distance(spawnpoint, player_index) {
+function is_vehicle_spawner_ideal_distance( spawnpoint, player_index )
+{
     player_array = level.players;
+    
     /#
-        if (isdefined(level.var_d9821974c80a684a)) {
+        if ( isdefined( level.var_d9821974c80a684a ) )
+        {
             player_array = level.var_d9821974c80a684a;
         }
     #/
-    player = level.players[player_index];
+    
+    player = level.players[ player_index ];
+    
     /#
-        if (isdefined(level.var_d9821974c80a684a)) {
-            player = random(level.var_d9821974c80a684a);
+        if ( isdefined( level.var_d9821974c80a684a ) )
+        {
+            player = random( level.var_d9821974c80a684a );
         }
     #/
+    
     ref_point = player.origin;
     min_score = 0;
     max_score = 1250;
@@ -1572,46 +2200,66 @@ function is_vehicle_spawner_ideal_distance(spawnpoint, player_index) {
     too_far_dist = 30000;
     too_far_dist_sq = 900000000;
     var_e20df67bc043c785 = 0.25;
-    if (isdefined(spawnpoint.script_maxdist)) {
-        too_far_dist = int(spawnpoint.script_maxdist);
-        too_far_dist_sq = squared(too_far_dist);
+    
+    if ( isdefined( spawnpoint.script_maxdist ) )
+    {
+        too_far_dist = int( spawnpoint.script_maxdist );
+        too_far_dist_sq = squared( too_far_dist );
     }
-    var_58e1b8850df3b5c4 = distancesquared(ref_point, spawnpoint.origin);
-    if (var_58e1b8850df3b5c4 >= too_far_dist_sq) {
+    
+    var_58e1b8850df3b5c4 = distancesquared( ref_point, spawnpoint.origin );
+    
+    if ( var_58e1b8850df3b5c4 >= too_far_dist_sq )
+    {
         return undefined;
     }
-    if (var_58e1b8850df3b5c4 <= close_dist_sq) {
+    
+    if ( var_58e1b8850df3b5c4 <= close_dist_sq )
+    {
         return max_score;
-    } else if (var_58e1b8850df3b5c4 <= far_dist_sq) {
-        dist_delta = far_dist - close_dist;
-        start_dist = sqrt(var_58e1b8850df3b5c4) - close_dist;
-        var_a61f687a770146f2 = 1 - start_dist / dist_delta;
-        return (max_score * var_a61f687a770146f2);
-    } else if (var_58e1b8850df3b5c4 >= far_dist_sq) {
-        dist_delta = too_far_dist - far_dist;
-        start_dist = sqrt(var_58e1b8850df3b5c4) - far_dist;
-        var_a61f687a770146f2 = 1 - start_dist / dist_delta;
-        return (max_score * var_a61f687a770146f2 * var_e20df67bc043c785);
     }
+    else if ( var_58e1b8850df3b5c4 <= far_dist_sq )
+    {
+        dist_delta = far_dist - close_dist;
+        start_dist = sqrt( var_58e1b8850df3b5c4 ) - close_dist;
+        var_a61f687a770146f2 = 1 - start_dist / dist_delta;
+        return ( max_score * var_a61f687a770146f2 );
+    }
+    else if ( var_58e1b8850df3b5c4 >= far_dist_sq )
+    {
+        dist_delta = too_far_dist - far_dist;
+        start_dist = sqrt( var_58e1b8850df3b5c4 ) - far_dist;
+        var_a61f687a770146f2 = 1 - start_dist / dist_delta;
+        return ( max_score * var_a61f687a770146f2 * var_e20df67bc043c785 );
+    }
+    
     return min_score;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x36dd
 // Size: 0x316
-function is_cluster_spawner_ideal_distance(spawnpoint, player_index) {
+function is_cluster_spawner_ideal_distance( spawnpoint, player_index )
+{
     player_array = level.players;
+    
     /#
-        if (isdefined(level.var_d9821974c80a684a)) {
+        if ( isdefined( level.var_d9821974c80a684a ) )
+        {
             player_array = level.var_d9821974c80a684a;
         }
     #/
-    if (isdefined(self.spawn_ref_point)) {
+    
+    if ( isdefined( self.spawn_ref_point ) )
+    {
         ref_point = self.spawn_ref_point;
-    } else {
-        ref_point = get_center_point_of_array(player_array);
     }
+    else
+    {
+        ref_point = get_center_point_of_array( player_array );
+    }
+    
     var_4f86bf5be5e42647 = undefined;
     close_dist = 1024;
     close_dist_sq = 1048576;
@@ -1622,72 +2270,102 @@ function is_cluster_spawner_ideal_distance(spawnpoint, player_index) {
     far_dist = 2048;
     too_far_dist = 4096;
     too_far_dist_sq = 16777216;
-    if (isdefined(level.spawn_scoring_overrides)) {
+    
+    if ( isdefined( level.spawn_scoring_overrides ) )
+    {
         data = level.spawn_scoring_overrides;
-        close_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist, close_dist);
-        close_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist_sq, close_dist_sq);
-        far_score = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_score, far_score);
-        far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist_sq, far_dist_sq);
-        far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist, far_dist);
-        too_far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist, too_far_dist);
-        too_far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist_sq, too_far_dist_sq);
+        close_dist = scripts\cp\spawning::define_var_if_undefined( data.close_dist, close_dist );
+        close_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.close_dist_sq, close_dist_sq );
+        far_score = scripts\cp\spawning::define_var_if_undefined( data.far_score, far_score );
+        far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.far_dist_sq, far_dist_sq );
+        far_dist = scripts\cp\spawning::define_var_if_undefined( data.far_dist, far_dist );
+        too_far_dist = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist, too_far_dist );
+        too_far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist_sq, too_far_dist_sq );
     }
-    if (isdefined(self.spawn_scoring_overrides)) {
+    
+    if ( isdefined( self.spawn_scoring_overrides ) )
+    {
         data = self.spawn_scoring_overrides;
-        close_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist, close_dist);
-        close_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist_sq, close_dist_sq);
-        far_score = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_score, far_score);
-        far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist_sq, far_dist_sq);
-        far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist, far_dist);
-        too_far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist, too_far_dist);
-        too_far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist_sq, too_far_dist_sq);
+        close_dist = scripts\cp\spawning::define_var_if_undefined( data.close_dist, close_dist );
+        close_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.close_dist_sq, close_dist_sq );
+        far_score = scripts\cp\spawning::define_var_if_undefined( data.far_score, far_score );
+        far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.far_dist_sq, far_dist_sq );
+        far_dist = scripts\cp\spawning::define_var_if_undefined( data.far_dist, far_dist );
+        too_far_dist = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist, too_far_dist );
+        too_far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist_sq, too_far_dist_sq );
     }
+    
     var_e20df67bc043c785 = 0.5;
-    if (isdefined(spawnpoint.script_maxdist)) {
-        too_far_dist = int(spawnpoint.script_maxdist);
-        too_far_dist_sq = squared(too_far_dist);
+    
+    if ( isdefined( spawnpoint.script_maxdist ) )
+    {
+        too_far_dist = int( spawnpoint.script_maxdist );
+        too_far_dist_sq = squared( too_far_dist );
     }
-    var_58e1b8850df3b5c4 = distance2dsquared(ref_point, spawnpoint.origin);
-    if (var_58e1b8850df3b5c4 >= too_far_dist_sq) {
+    
+    var_58e1b8850df3b5c4 = distance2dsquared( ref_point, spawnpoint.origin );
+    
+    if ( var_58e1b8850df3b5c4 >= too_far_dist_sq )
+    {
         return undefined;
-    } else if (var_58e1b8850df3b5c4 <= far_dist_sq && var_58e1b8850df3b5c4 >= close_dist_sq) {
+    }
+    else if ( var_58e1b8850df3b5c4 <= far_dist_sq && var_58e1b8850df3b5c4 >= close_dist_sq )
+    {
         var_4f86bf5be5e42647 = max_score;
-    } else if (var_58e1b8850df3b5c4 >= far_dist_sq) {
+    }
+    else if ( var_58e1b8850df3b5c4 >= far_dist_sq )
+    {
         multiplier = 1 + var_58e1b8850df3b5c4 / far_dist_sq;
         var_8586cacb3696dfe5 = far_score / multiplier;
         var_4f86bf5be5e42647 = var_8586cacb3696dfe5;
-    } else {
+    }
+    else
+    {
         var_8586cacb3696dfe5 = max_score * var_e20df67bc043c785;
         var_4f86bf5be5e42647 = var_8586cacb3696dfe5;
     }
+    
     return var_4f86bf5be5e42647;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x39fc
 // Size: 0x436
-function is_spawner_ideal_distance(spawnpoint, player_index) {
-    if (istrue(spawnpoint.script_forcespawn)) {
+function is_spawner_ideal_distance( spawnpoint, player_index )
+{
+    if ( istrue( spawnpoint.script_forcespawn ) )
+    {
         return 1000;
     }
+    
     player_array = level.players;
+    
     /#
-        if (isdefined(level.var_d9821974c80a684a)) {
+        if ( isdefined( level.var_d9821974c80a684a ) )
+        {
             player_array = level.var_d9821974c80a684a;
         }
     #/
-    if (isdefined(self.spawn_ref_point)) {
+    
+    if ( isdefined( self.spawn_ref_point ) )
+    {
         ref_point = self.spawn_ref_point;
-    } else {
-        ref_point = get_center_point_of_array(player_array);
     }
-    player = level.players[player_index];
+    else
+    {
+        ref_point = get_center_point_of_array( player_array );
+    }
+    
+    player = level.players[ player_index ];
+    
     /#
-        if (isdefined(level.var_d9821974c80a684a)) {
-            player = random(level.var_d9821974c80a684a);
+        if ( isdefined( level.var_d9821974c80a684a ) )
+        {
+            player = random( level.var_d9821974c80a684a );
         }
     #/
+    
     var_4f86bf5be5e42647 = undefined;
     close_dist = 1024;
     close_dist_sq = 1048576;
@@ -1698,549 +2376,783 @@ function is_spawner_ideal_distance(spawnpoint, player_index) {
     far_dist = 2048;
     too_far_dist = 4096;
     too_far_dist_sq = 16777216;
-    if (isdefined(level.spawn_scoring_overrides)) {
+    
+    if ( isdefined( level.spawn_scoring_overrides ) )
+    {
         data = level.spawn_scoring_overrides;
-        close_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist, close_dist);
-        close_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist_sq, close_dist_sq);
-        far_score = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_score, far_score);
-        far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist_sq, far_dist_sq);
-        far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist, far_dist);
-        too_far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist, too_far_dist);
-        too_far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist_sq, too_far_dist_sq);
+        close_dist = scripts\cp\spawning::define_var_if_undefined( data.close_dist, close_dist );
+        close_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.close_dist_sq, close_dist_sq );
+        far_score = scripts\cp\spawning::define_var_if_undefined( data.far_score, far_score );
+        far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.far_dist_sq, far_dist_sq );
+        far_dist = scripts\cp\spawning::define_var_if_undefined( data.far_dist, far_dist );
+        too_far_dist = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist, too_far_dist );
+        too_far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist_sq, too_far_dist_sq );
     }
-    if (isdefined(self.spawn_scoring_overrides)) {
+    
+    if ( isdefined( self.spawn_scoring_overrides ) )
+    {
         data = self.spawn_scoring_overrides;
-        close_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist, close_dist);
-        close_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.close_dist_sq, close_dist_sq);
-        far_score = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_score, far_score);
-        far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist_sq, far_dist_sq);
-        far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.far_dist, far_dist);
-        too_far_dist = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist, too_far_dist);
-        too_far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist_sq, too_far_dist_sq);
+        close_dist = scripts\cp\spawning::define_var_if_undefined( data.close_dist, close_dist );
+        close_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.close_dist_sq, close_dist_sq );
+        far_score = scripts\cp\spawning::define_var_if_undefined( data.far_score, far_score );
+        far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.far_dist_sq, far_dist_sq );
+        far_dist = scripts\cp\spawning::define_var_if_undefined( data.far_dist, far_dist );
+        too_far_dist = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist, too_far_dist );
+        too_far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist_sq, too_far_dist_sq );
     }
+    
     var_e20df67bc043c785 = 0.5;
-    if (isdefined(spawnpoint.script_maxdist)) {
-        too_far_dist = int(spawnpoint.script_maxdist);
-        too_far_dist_sq = squared(too_far_dist);
+    
+    if ( isdefined( spawnpoint.script_maxdist ) )
+    {
+        too_far_dist = int( spawnpoint.script_maxdist );
+        too_far_dist_sq = squared( too_far_dist );
     }
-    if (isdefined(too_far_dist) && isdefined(spawnpoint)) {
+    
+    if ( isdefined( too_far_dist ) && isdefined( spawnpoint ) )
+    {
         near_players = 0;
-        if (isvector(spawnpoint)) {
-            near_players = utility::playersnear(spawnpoint, too_far_dist);
-        } else {
-            near_players = utility::playersnear(spawnpoint.origin, too_far_dist);
+        
+        if ( isvector( spawnpoint ) )
+        {
+            near_players = utility::playersnear( spawnpoint, too_far_dist );
         }
-        if (near_players.size < 1) {
+        else
+        {
+            near_players = utility::playersnear( spawnpoint.origin, too_far_dist );
+        }
+        
+        if ( near_players.size < 1 )
+        {
             return undefined;
         }
     }
-    if (isdefined(spawnpoint.ideal_dist)) {
+    
+    if ( isdefined( spawnpoint.ideal_dist ) )
+    {
         p_dist = spawnpoint.ideal_dist;
-        var_aab0a592cd72d6f5 = spawnpoint.ideal_dist * spawnpoint.ideal_dist;
-    } else {
-        p_dist = (far_dist + close_dist) / 2;
-        var_aab0a592cd72d6f5 = p_dist * p_dist;
+        p_dist_sq = spawnpoint.ideal_dist * spawnpoint.ideal_dist;
     }
-    if (isdefined(spawnpoint.dist_sq_to_ref)) {
+    else
+    {
+        p_dist = ( far_dist + close_dist ) / 2;
+        p_dist_sq = p_dist * p_dist;
+    }
+    
+    if ( isdefined( spawnpoint.dist_sq_to_ref ) )
+    {
         var_58e1b8850df3b5c4 = spawnpoint.dist_sq_to_ref;
         spawnpoint.dist_sq_to_ref = undefined;
-    } else {
-        var_58e1b8850df3b5c4 = distancesquared(ref_point, spawnpoint.origin);
     }
-    if (var_58e1b8850df3b5c4 <= far_dist_sq && var_58e1b8850df3b5c4 >= close_dist_sq) {
+    else
+    {
+        var_58e1b8850df3b5c4 = distancesquared( ref_point, spawnpoint.origin );
+    }
+    
+    if ( var_58e1b8850df3b5c4 <= far_dist_sq && var_58e1b8850df3b5c4 >= close_dist_sq )
+    {
         /#
         #/
+        
         return max_score;
-    } else if (var_58e1b8850df3b5c4 >= far_dist_sq) {
+    }
+    else if ( var_58e1b8850df3b5c4 >= far_dist_sq )
+    {
         /#
         #/
+        
         multiplier = 1 + var_58e1b8850df3b5c4 / far_dist_sq;
         var_8586cacb3696dfe5 = far_score / multiplier;
         return var_8586cacb3696dfe5;
-    } else {
+    }
+    else
+    {
         /#
         #/
+        
         var_8586cacb3696dfe5 = max_score * var_e20df67bc043c785;
         return var_8586cacb3696dfe5;
     }
+    
     /#
     #/
+    
     return min_score;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3e3b
 // Size: 0x85
-function avoid_recently_used_spawns(spawnpoint) {
+function avoid_recently_used_spawns( spawnpoint )
+{
     /#
     #/
+    
     max_score = 1000;
-    if (isdefined(spawnpoint.lastspawntime)) {
+    
+    if ( isdefined( spawnpoint.lastspawntime ) )
+    {
         timepassed = self.current_time - spawnpoint.lastspawntime;
-        var_3d066ce4442701d0 = get_recent_spawn_time_threshold();
-        if (timepassed > var_3d066ce4442701d0) {
+        spawn_time_threshold = get_recent_spawn_time_threshold();
+        
+        if ( timepassed > spawn_time_threshold )
+        {
             /#
             #/
+            
             return max_score;
         }
-        var_4fee9fdc7bb80a41 = timepassed / var_3d066ce4442701d0;
+        
+        var_4fee9fdc7bb80a41 = timepassed / spawn_time_threshold;
+        
         /#
         #/
-        return int(var_4fee9fdc7bb80a41 * max_score);
+        
+        return int( var_4fee9fdc7bb80a41 * max_score );
     }
+    
     /#
     #/
+    
     return max_score;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ec9
 // Size: 0x82
-function spawner_invalid_due_to_recently_used(spawnpoint, timepassed) {
-    if (!isdefined(spawnpoint.lastspawntime)) {
+function spawner_invalid_due_to_recently_used( spawnpoint, timepassed )
+{
+    if ( !isdefined( spawnpoint.lastspawntime ) )
+    {
         spawnpoint.lastspawntime = self.current_time;
         return 1;
     }
+    
     timepassed = self.current_time - spawnpoint.lastspawntime;
-    var_3d066ce4442701d0 = get_recent_spawn_time_threshold();
-    var_4fee9fdc7bb80a41 = timepassed / var_3d066ce4442701d0;
-    if (var_4fee9fdc7bb80a41 <= 0.5) {
+    spawn_time_threshold = get_recent_spawn_time_threshold();
+    var_4fee9fdc7bb80a41 = timepassed / spawn_time_threshold;
+    
+    if ( var_4fee9fdc7bb80a41 <= 0.5 )
+    {
         return 0;
     }
+    
     return 1;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f53
 // Size: 0x20
-function get_recent_spawn_time_threshold() {
-    if (isdefined(self.recent_spawn_threshold)) {
+function get_recent_spawn_time_threshold()
+{
+    if ( isdefined( self.recent_spawn_threshold ) )
+    {
         return self.recent_spawn_threshold;
     }
+    
     return 20000;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f7b
 // Size: 0x4f
-function sort_by_ai_assigned(a, b) {
-    if (isdefined(a.assigned_ai) && isdefined(b.assigned_ai)) {
-        return (a.assigned_ai < b.assigned_ai);
+function sort_by_ai_assigned( a, b )
+{
+    if ( isdefined( a.assigned_ai ) && isdefined( b.assigned_ai ) )
+    {
+        return ( a.assigned_ai < b.assigned_ai );
     }
+    
     return 0;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3fd2
 // Size: 0x55
-function get_spawn_scoring_array() {
+function get_spawn_scoring_array()
+{
     /#
-        if (isdefined(level.spawn_scoring_array) && level.spawn_scoring_array.size > 0) {
+        if ( isdefined( level.spawn_scoring_array ) && level.spawn_scoring_array.size > 0 )
+        {
             return level.spawn_scoring_array;
         }
     #/
-    if (isdefined(level.players) && level.players.size > 0) {
+    
+    if ( isdefined( level.players ) && level.players.size > 0 )
+    {
         return scripts\cp\utility::get_array_of_valid_players();
     }
+    
     return [];
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x402f
 // Size: 0xf3
-function get_close_distance_var(return_sq) {
+function get_close_distance_var( return_sq )
+{
     close_dist = 1024;
     close_dist_sq = 1048576;
-    if (isdefined(self.spawn_scoring_overrides)) {
-        if (istrue(return_sq)) {
-            return namespace_5729d24318b60bcd::define_var_if_undefined(self.spawn_scoring_overrides.close_dist_sq, close_dist_sq);
-        } else {
-            return namespace_5729d24318b60bcd::define_var_if_undefined(self.spawn_scoring_overrides.close_dist, close_dist);
+    
+    if ( isdefined( self.spawn_scoring_overrides ) )
+    {
+        if ( istrue( return_sq ) )
+        {
+            return scripts\cp\spawning::define_var_if_undefined( self.spawn_scoring_overrides.close_dist_sq, close_dist_sq );
         }
+        else
+        {
+            return scripts\cp\spawning::define_var_if_undefined( self.spawn_scoring_overrides.close_dist, close_dist );
+        }
+        
         return;
     }
-    if (isdefined(level.spawn_scoring_overrides)) {
-        if (istrue(return_sq)) {
-            return namespace_5729d24318b60bcd::define_var_if_undefined(level.spawn_scoring_overrides.close_dist_sq, close_dist_sq);
-        } else {
-            return namespace_5729d24318b60bcd::define_var_if_undefined(level.spawn_scoring_overrides.close_dist, close_dist);
+    
+    if ( isdefined( level.spawn_scoring_overrides ) )
+    {
+        if ( istrue( return_sq ) )
+        {
+            return scripts\cp\spawning::define_var_if_undefined( level.spawn_scoring_overrides.close_dist_sq, close_dist_sq );
         }
+        else
+        {
+            return scripts\cp\spawning::define_var_if_undefined( level.spawn_scoring_overrides.close_dist, close_dist );
+        }
+        
         return;
     }
-    if (istrue(self.cqb_module)) {
-        if (istrue(return_sq)) {
+    
+    if ( istrue( self.cqb_module ) )
+    {
+        if ( istrue( return_sq ) )
+        {
             return 110889;
-        } else {
+        }
+        else
+        {
             return 333;
         }
+        
         return;
     }
-    if (istrue(return_sq)) {
+    
+    if ( istrue( return_sq ) )
+    {
         return close_dist_sq;
     }
+    
     return close_dist;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x412a
 // Size: 0x32
-function get_player_array() {
+function get_player_array()
+{
     player_array = level.players;
+    
     /#
-        if (isdefined(level.var_d9821974c80a684a)) {
+        if ( isdefined( level.var_d9821974c80a684a ) )
+        {
             player_array = level.var_d9821974c80a684a;
         }
     #/
+    
     return player_array;
 }
 
 /#
 
-    // Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+    // Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
     // Params 3, eflags: 0x0
     // Checksum 0x0, Offset: 0x4165
-    // Size: 0x151
-    function function_3e387272180982a5(spawnpoints, respawn, var_c62b3b643f30bddf) {
+    // Size: 0x151, Type: dev
+    function function_3e387272180982a5( spawnpoints, respawn, var_c62b3b643f30bddf )
+    {
         bestspawn = undefined;
         score_target = get_best_scoring_target();
-        if (!isdefined(score_target)) {
+        
+        if ( !isdefined( score_target ) )
+        {
             return undefined;
         }
+        
         self.current_time = gettime();
-        var_9ed7cd9678338a4e = get_score_target_pos(score_target);
-        var_7e4f5e9726221eec = get_score_target_override(var_9ed7cd9678338a4e);
-        self.spawn_ref_point = var_9ed7cd9678338a4e;
-        self.spawn_ref_point_override = var_7e4f5e9726221eec;
-        valid_spawnpoints = get_array_of_valid_spawnpoints(spawnpoints, respawn, 1);
-        if (valid_spawnpoints.size < 1) {
+        score_target_pos = get_score_target_pos( score_target );
+        score_target_override = get_score_target_override( score_target_pos );
+        self.spawn_ref_point = score_target_pos;
+        self.spawn_ref_point_override = score_target_override;
+        valid_spawnpoints = get_array_of_valid_spawnpoints( spawnpoints, respawn, 1 );
+        
+        if ( valid_spawnpoints.size < 1 )
+        {
             return undefined;
         }
+        
         self.current_time = gettime();
-        var_2d2ff52e5d86488d = function_b7d0a51460fc8fb3(valid_spawnpoints, var_c62b3b643f30bddf);
-        if (var_2d2ff52e5d86488d.size < 1) {
+        var_2d2ff52e5d86488d = function_b7d0a51460fc8fb3( valid_spawnpoints, var_c62b3b643f30bddf );
+        
+        if ( var_2d2ff52e5d86488d.size < 1 )
+        {
             return undefined;
         }
+        
         random_num = undefined;
-        if (var_2d2ff52e5d86488d.size > 0) {
-            bestspawn = var_2d2ff52e5d86488d[randomint(var_2d2ff52e5d86488d.size)];
+        
+        if ( var_2d2ff52e5d86488d.size > 0 )
+        {
+            bestspawn = var_2d2ff52e5d86488d[ randomint( var_2d2ff52e5d86488d.size ) ];
         }
-        if (isdefined(bestspawn)) {
-            if (bestspawn passes_forward_check(self)) {
+        
+        if ( isdefined( bestspawn ) )
+        {
+            if ( bestspawn passes_forward_check( self ) )
+            {
                 for (i = 0; i < valid_spawnpoints.size; i++) {
-                    if (bestspawn != valid_spawnpoints[i]) {
-                        valid_spawnpoints[i] thread set_spawner_chosen_nearby();
+                    if ( bestspawn != valid_spawnpoints[ i ] )
+                    {
+                        valid_spawnpoints[ i ] thread set_spawner_chosen_nearby();
                     }
                 }
+                
                 return bestspawn;
-            } else {
-                level notify("<dev string:x5bc>");
+            }
+            else
+            {
+                level notify( "<dev string:x5bc>" );
                 return undefined;
             }
+            
             return;
         }
-        level notify("<dev string:x5bc>");
+        
+        level notify( "<dev string:x5bc>" );
         return undefined;
     }
 
-    // Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+    // Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
     // Params 2, eflags: 0x0
     // Checksum 0x0, Offset: 0x42be
-    // Size: 0x22c
-    function function_b7d0a51460fc8fb3(valid_spawnpoints, var_c62b3b643f30bddf) {
+    // Size: 0x22c, Type: dev
+    function function_b7d0a51460fc8fb3( valid_spawnpoints, var_c62b3b643f30bddf )
+    {
         var_2d2ff52e5d86488d = [];
         bestspawn = undefined;
         bestspawn_score = 0;
+        
         for (i = 0; i < valid_spawnpoints.size; i++) {
-            spawn_scoring_type = valid_spawnpoints[i] get_spawn_scoring_type();
-            result = [[ level.spawner_scoring_funcs[spawn_scoring_type] ]](valid_spawnpoints[i], 1);
-            if (isdefined(result) && !isdefined(result.spawner_debug_model)) {
-                spawner_model = spawn("<dev string:x40f>", result.origin);
+            spawn_scoring_type = valid_spawnpoints[ i ] get_spawn_scoring_type();
+            result = [[ level.spawner_scoring_funcs[ spawn_scoring_type ] ]]( valid_spawnpoints[ i ], 1 );
+            
+            if ( isdefined( result ) && !isdefined( result.spawner_debug_model ) )
+            {
+                spawner_model = spawn( "<dev string:x40f>", result.origin );
                 spawn_scoring_type = result get_spawn_scoring_type();
-                switch (spawn_scoring_type) {
-                case #"hash_89eb9062c8daa874":
-                    spawner_model setmodel("<dev string:x42c>");
-                    break;
-                case #"hash_abe4b0e0b6ed2786":
-                    spawner_model setmodel("<dev string:x465>");
-                    break;
-                default:
-                    spawner_model setmodel("<dev string:x474>");
-                    break;
+                
+                switch ( spawn_scoring_type )
+                {
+                    case #"hash_89eb9062c8daa874":
+                        spawner_model setmodel( "<dev string:x42c>" );
+                        break;
+                    case #"hash_abe4b0e0b6ed2786":
+                        spawner_model setmodel( "<dev string:x465>" );
+                        break;
+                    default:
+                        spawner_model setmodel( "<dev string:x474>" );
+                        break;
                 }
-                if (isdefined(result.angles)) {
+                
+                if ( isdefined( result.angles ) )
+                {
                     spawner_model.angles = result.angles;
                 }
-                level.spawner_models[level.spawner_models.size] = spawner_model;
+                
+                level.spawner_models[ level.spawner_models.size ] = spawner_model;
                 result.spawner_debug_model = spawner_model;
                 spawner_model.spawnpoint = result;
             }
-            if (isdefined(result)) {
-                result thread function_a4b51254c3c4dcc("<dev string:x5db>" + level.var_2e35b31b262b1d57 + 1);
-                if (!isdefined(bestspawn) || isdefined(bestspawn_score) && isdefined(result.totalscore) && result.totalscore > bestspawn_score) {
+            
+            if ( isdefined( result ) )
+            {
+                result thread function_a4b51254c3c4dcc( "<dev string:x5db>" + level.var_2e35b31b262b1d57 + 1 );
+                
+                if ( !isdefined( bestspawn ) || isdefined( bestspawn_score ) && isdefined( result.totalscore ) && result.totalscore > bestspawn_score )
+                {
                     bestspawn = result;
                     bestspawn_score = result.totalscore;
                 }
-                if (result.totalscore >= 750) {
-                    var_2d2ff52e5d86488d[var_2d2ff52e5d86488d.size] = result;
+                
+                if ( result.totalscore >= 750 )
+                {
+                    var_2d2ff52e5d86488d[ var_2d2ff52e5d86488d.size ] = result;
                 }
             }
         }
-        if (istrue(var_c62b3b643f30bddf)) {
-            level notify("<dev string:x5db>" + level.var_2e35b31b262b1d57);
+        
+        if ( istrue( var_c62b3b643f30bddf ) )
+        {
+            level notify( "<dev string:x5db>" + level.var_2e35b31b262b1d57 );
             level.var_2e35b31b262b1d57++;
         }
-        if (var_2d2ff52e5d86488d.size > 0) {
+        
+        if ( var_2d2ff52e5d86488d.size > 0 )
+        {
             return var_2d2ff52e5d86488d;
         }
-        if (isdefined(bestspawn)) {
-            return [bestspawn];
+        
+        if ( isdefined( bestspawn ) )
+        {
+            return [ bestspawn ];
         }
+        
         return [];
     }
 
-    // Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+    // Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x44f2
-    // Size: 0x97
-    function function_a4b51254c3c4dcc(waittill_notify) {
-        self notify("<dev string:x5ef>");
-        self endon("<dev string:x5ef>");
-        level waittill_any_2(waittill_notify, "<dev string:x616>");
-        if (isdefined(self.spawner_debug_model)) {
-            if (array_contains(level.spawner_models, self.spawner_debug_model)) {
-                level.spawner_models = array_remove(level.spawner_models, self.spawner_debug_model);
+    // Size: 0x97, Type: dev
+    function function_a4b51254c3c4dcc( waittill_notify )
+    {
+        self notify( "<dev string:x5ef>" );
+        self endon( "<dev string:x5ef>" );
+        level waittill_any_2( waittill_notify, "<dev string:x616>" );
+        
+        if ( isdefined( self.spawner_debug_model ) )
+        {
+            if ( array_contains( level.spawner_models, self.spawner_debug_model ) )
+            {
+                level.spawner_models = array_remove( level.spawner_models, self.spawner_debug_model );
             }
+            
             self.spawner_debug_model delete();
             self.spawner_debug_model = undefined;
         }
+        
         self.totalscore = undefined;
     }
 
 #/
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4591
 // Size: 0x2bb
-function print_spawner_score_for_factor(spawnpoint) {
+function print_spawner_score_for_factor( spawnpoint )
+{
     /#
-        if (isdefined(self.spawner_debug_model)) {
+        if ( isdefined( self.spawner_debug_model ) )
+        {
             for (i = 0; i < self.spawner_debug_model.size; i++) {
-                if (isdefined(self.spawner_debug_model[i])) {
-                    self.spawner_debug_model[i] delete();
+                if ( isdefined( self.spawner_debug_model[ i ] ) )
+                {
+                    self.spawner_debug_model[ i ] delete();
                 }
             }
         }
-        if (getdvarint(@"hash_b050be7de75cd841", 0)) {
-            if (isdefined(self.score_message)) {
-                if (self.score_message.size > 1) {
-                    setprintchannel("<dev string:x25b>");
+        
+        if ( getdvarint( @"hash_b050be7de75cd841", 0 ) )
+        {
+            if ( isdefined( self.score_message ) )
+            {
+                if ( self.score_message.size > 1 )
+                {
+                    setprintchannel( "<dev string:x25b>" );
                     chosen = undefined;
-                    if (isdefined(spawnpoint)) {
-                        set_chosen_spawner_from_uid(spawnpoint);
-                        if (isdefined(spawnpoint.uid)) {
+                    
+                    if ( isdefined( spawnpoint ) )
+                    {
+                        set_chosen_spawner_from_uid( spawnpoint );
+                        
+                        if ( isdefined( spawnpoint.uid ) )
+                        {
                             chosen = spawnpoint.uid;
                         }
                     }
+                    
                     group_name = self.group_name;
-                    if (!isdefined(group_name)) {
+                    
+                    if ( !isdefined( group_name ) )
+                    {
                         group_name = "<dev string:x62b>";
                     }
+                    
                     msg = "<dev string:x62c>" + group_name + "<dev string:x650>";
-                    add_to_score_message(undefined, msg, undefined, undefined, 1);
-                    keys = getarraykeys(self.score_message);
-                    last = getlastarraykey(self.score_message);
+                    add_to_score_message( undefined, msg, undefined, undefined, 1 );
+                    keys = getarraykeys( self.score_message );
+                    last = getlastarraykey( self.score_message );
+                    
                     for (i = 0; i < keys.size; i++) {
-                        if (isdefined(last) && keys[i] == last) {
+                        if ( isdefined( last ) && keys[ i ] == last )
+                        {
                             stop_here = 1;
                         }
-                        if (isdefined(chosen)) {
-                            if (i >= keys.size - 1) {
-                                if (isdefined(self.score_message[chosen])) {
-                                    if (isdefined(self.score_message_spawners[chosen])) {
-                                        self.score_message_spawners[chosen] create_debug_model_for_spawnpoint(self, "<dev string:x49f>");
-                                        self.score_message_spawners[chosen].chosen = undefined;
+                        
+                        if ( isdefined( chosen ) )
+                        {
+                            if ( i >= keys.size - 1 )
+                            {
+                                if ( isdefined( self.score_message[ chosen ] ) )
+                                {
+                                    if ( isdefined( self.score_message_spawners[ chosen ] ) )
+                                    {
+                                        self.score_message_spawners[ chosen ] create_debug_model_for_spawnpoint( self, "<dev string:x49f>" );
+                                        self.score_message_spawners[ chosen ].chosen = undefined;
                                     }
-                                    print(self.score_message[chosen] + "<dev string:x672>");
+                                    
+                                    print( self.score_message[ chosen ] + "<dev string:x672>" );
                                     chosen = undefined;
                                 }
-                            } else if (is_equal(chosen, keys[i])) {
+                            }
+                            else if ( is_equal( chosen, keys[ i ] ) )
+                            {
                                 continue;
                             }
                         }
-                        if (isdefined(self.score_message[keys[i]])) {
-                            if (isdefined(self.score_message_spawners[keys[i]])) {
-                                if (istrue(self.score_message_spawners[keys[i]].chosen)) {
-                                    self.score_message_spawners[keys[i]] create_debug_model_for_spawnpoint(self, "<dev string:x674>");
-                                } else {
-                                    self.score_message_spawners[keys[i]] create_debug_model_for_spawnpoint(self, "<dev string:x689>");
+                        
+                        if ( isdefined( self.score_message[ keys[ i ] ] ) )
+                        {
+                            if ( isdefined( self.score_message_spawners[ keys[ i ] ] ) )
+                            {
+                                if ( istrue( self.score_message_spawners[ keys[ i ] ].chosen ) )
+                                {
+                                    self.score_message_spawners[ keys[ i ] ] create_debug_model_for_spawnpoint( self, "<dev string:x674>" );
                                 }
-                                self.score_message_spawners[keys[i]].chosen = undefined;
+                                else
+                                {
+                                    self.score_message_spawners[ keys[ i ] ] create_debug_model_for_spawnpoint( self, "<dev string:x689>" );
+                                }
+                                
+                                self.score_message_spawners[ keys[ i ] ].chosen = undefined;
                             }
-                            print(i + "<dev string:x69b>" + self.score_message[keys[i]] + "<dev string:x672>");
+                            
+                            print( i + "<dev string:x69b>" + self.score_message[ keys[ i ] ] + "<dev string:x672>" );
                         }
                     }
                 }
             }
         }
     #/
+    
     self.score_message = undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4854
 // Size: 0x107
-function create_debug_model_for_spawnpoint(group, color) {
-    if (getdvarint(@"hash_bf3eae56edffb7f")) {
+function create_debug_model_for_spawnpoint( group, color )
+{
+    if ( getdvarint( @"hash_bf3eae56edffb7f" ) )
+    {
         spawn_scoring_type = get_spawn_scoring_type();
-        if (spawn_scoring_type == "vehicle_spawner") {
+        
+        if ( spawn_scoring_type == "vehicle_spawner" )
+        {
             return;
         }
-        spawner_model = spawn("script_model", self.origin);
-        if (!isdefined(group.spawner_debug_model)) {
+        
+        spawner_model = spawn( "script_model", self.origin );
+        
+        if ( !isdefined( group.spawner_debug_model ) )
+        {
             group.spawner_debug_model = [];
         }
-        group.spawner_debug_model[group.spawner_debug_model.size] = spawner_model;
-        if (isdefined(self.angles)) {
+        
+        group.spawner_debug_model[ group.spawner_debug_model.size ] = spawner_model;
+        
+        if ( isdefined( self.angles ) )
+        {
             spawner_model.angles = self.angles;
         }
-        switch (spawn_scoring_type) {
-        case #"hash_abe4b0e0b6ed2786":
-            spawner_model setmodel("com_teddy_bear");
-            break;
-        default:
-            spawner_model setmodel("british_pilot_fullbody");
-            break;
+        
+        switch ( spawn_scoring_type )
+        {
+            case #"hash_abe4b0e0b6ed2786":
+                spawner_model setmodel( "com_teddy_bear" );
+                break;
+            default:
+                spawner_model setmodel( "british_pilot_fullbody" );
+                break;
         }
-        scripts\cp\cp_outline::enable_outline_for_players(spawner_model, level.players, color);
+        
+        scripts\cp\cp_outline::enable_outline_for_players( spawner_model, level.players, color );
     }
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x4963
 // Size: 0x10f
-function add_to_score_message(starting_message, message, scorefactor, override, should_add, spawnpoint) {
-    if (getdvarint(@"hash_b050be7de75cd841", 0)) {
-        if (isdefined(spawnpoint)) {
-            if (!isdefined(spawnpoint.uid)) {
-                get_available_unique_id(spawnpoint);
+function add_to_score_message( starting_message, message, scorefactor, override, should_add, spawnpoint )
+{
+    if ( getdvarint( @"hash_b050be7de75cd841", 0 ) )
+    {
+        if ( isdefined( spawnpoint ) )
+        {
+            if ( !isdefined( spawnpoint.uid ) )
+            {
+                get_available_unique_id( spawnpoint );
             }
+            
             uid = spawnpoint.uid;
-        } else {
+        }
+        else
+        {
             uid = get_available_unique_id();
         }
-        if (!isdefined(self.score_message)) {
+        
+        if ( !isdefined( self.score_message ) )
+        {
             create_score_message();
         }
-        self.score_message_spawners[uid] = spawnpoint;
-        if (istrue(override) || !isdefined(starting_message)) {
+        
+        self.score_message_spawners[ uid ] = spawnpoint;
+        
+        if ( istrue( override ) || !isdefined( starting_message ) )
+        {
             starting_message = "";
         }
-        if (!isdefined(scorefactor)) {
+        
+        if ( !isdefined( scorefactor ) )
+        {
             scorefactor = "";
         }
-        if (!isdefined(message)) {
+        
+        if ( !isdefined( message ) )
+        {
             message = "";
         }
-        if (starting_message.size > 0 || message.size > 0) {
+        
+        if ( starting_message.size > 0 || message.size > 0 )
+        {
             message = "|" + message;
         }
+        
         message = starting_message + "^0" + message + "^5" + scorefactor;
-        if (istrue(should_add)) {
-            self.score_message[uid] = message;
+        
+        if ( istrue( should_add ) )
+        {
+            self.score_message[ uid ] = message;
         }
+        
         return message;
     }
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4a7a
 // Size: 0x6d
-function create_score_message() {
-    if (getdvarint(@"hash_b050be7de75cd841", 0)) {
+function create_score_message()
+{
+    if ( getdvarint( @"hash_b050be7de75cd841", 0 ) )
+    {
         self.score_message = [];
         self.score_message_spawners = [];
         group_name = self.group_name;
-        if (!isdefined(group_name)) {
+        
+        if ( !isdefined( group_name ) )
+        {
             group_name = "";
         }
+        
         msg = "^7#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#^0" + group_name + "^7#*#*#*#*#*#*#*#*#*#*#*#*#*#*#*#";
-        add_to_score_message(undefined, msg, undefined, undefined, 1);
+        add_to_score_message( undefined, msg, undefined, undefined, 1 );
     }
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4aef
 // Size: 0x5b
-function get_available_unique_id(spawnpoint) {
-    if (!isdefined(self.current_uid)) {
+function get_available_unique_id( spawnpoint )
+{
+    if ( !isdefined( self.current_uid ) )
+    {
         self.current_uid = 0;
     }
-    if (isdefined(spawnpoint)) {
+    
+    if ( isdefined( spawnpoint ) )
+    {
         spawnpoint.uid = self.current_uid;
     }
+    
     return_id = self.current_uid;
     self.current_uid++;
     return return_id;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b53
 // Size: 0x1e
-function get_unique_id() {
-    if (isdefined(self.uid)) {
+function get_unique_id()
+{
+    if ( isdefined( self.uid ) )
+    {
         return self.uid;
     }
+    
     return undefined;
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b79
 // Size: 0x73
-function set_chosen_spawner_from_uid(spawnpoint) {
-    if (getdvarint(@"hash_b050be7de75cd841", 0)) {
+function set_chosen_spawner_from_uid( spawnpoint )
+{
+    if ( getdvarint( @"hash_b050be7de75cd841", 0 ) )
+    {
         uid = spawnpoint get_unique_id();
         spawnpoint.chosen = 1;
-        if (isdefined(uid)) {
-            msg = self.score_message[uid];
-            if (isdefined(msg)) {
+        
+        if ( isdefined( uid ) )
+        {
+            msg = self.score_message[ uid ];
+            
+            if ( isdefined( msg ) )
+            {
                 msg = "^5CHOSEN: " + msg;
-                self.score_message[uid] = msg;
+                self.score_message[ uid ] = msg;
             }
         }
     }
 }
 
-// Namespace namespace_ed0b685bcc83fe4f / scripts\cp\cp_spawner_scoring
+// Namespace cp_spawner_scoring / scripts\cp\cp_spawner_scoring
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4bf4
 // Size: 0xb2
-function get_too_far_dist_sq(spawnpoint) {
+function get_too_far_dist_sq( spawnpoint )
+{
     too_far_dist_sq = 16777216;
-    if (isdefined(level.spawn_scoring_overrides)) {
+    
+    if ( isdefined( level.spawn_scoring_overrides ) )
+    {
         data = level.spawn_scoring_overrides;
-        too_far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist_sq, too_far_dist_sq);
-    } else if (isdefined(self.spawn_scoring_overrides)) {
+        too_far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist_sq, too_far_dist_sq );
+    }
+    else if ( isdefined( self.spawn_scoring_overrides ) )
+    {
         data = self.spawn_scoring_overrides;
-        too_far_dist_sq = namespace_5729d24318b60bcd::define_var_if_undefined(data.too_far_dist_sq, too_far_dist_sq);
+        too_far_dist_sq = scripts\cp\spawning::define_var_if_undefined( data.too_far_dist_sq, too_far_dist_sq );
     }
-    if (isdefined(spawnpoint.script_maxdist)) {
-        too_far_dist = int(spawnpoint.script_maxdist);
-        too_far_dist_sq = squared(too_far_dist);
+    
+    if ( isdefined( spawnpoint.script_maxdist ) )
+    {
+        too_far_dist = int( spawnpoint.script_maxdist );
+        too_far_dist_sq = squared( too_far_dist );
     }
+    
     return too_far_dist_sq;
 }
 

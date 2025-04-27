@@ -1,7 +1,7 @@
 #using script_61afae50a53c3917;
-#using script_7b2517368c79e5bc;
 #using scripts\common\callbacks;
 #using scripts\common\utility;
+#using scripts\cp_mp\loot\common_item;
 #using scripts\engine\utility;
 #using scripts\mp\utility\teams;
 
@@ -11,7 +11,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb8
 // Size: 0x2
-function init() {
+function init()
+{
     
 }
 

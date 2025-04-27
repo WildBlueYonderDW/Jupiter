@@ -7,18 +7,25 @@
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1ef
 // Size: 0x6d
-function main(unused, us) {
-    if (flag_exist("mp_jup_hydro_ob_contracts_weapon_stash_cs")) {
+function main( unused, us )
+{
+    if ( flag_exist( "mp_jup_hydro_ob_contracts_weapon_stash_cs" ) )
+    {
         return;
     }
-    if (!isdefined(us)) {
+    
+    if ( !isdefined( us ) )
+    {
         us = function_b055d49370405173();
     }
-    flag_init("mp_jup_hydro_ob_contracts_weapon_stash_cs");
+    
+    flag_init( "mp_jup_hydro_ob_contracts_weapon_stash_cs" );
     s = spawnstruct();
-    level thread cs_return_and_wait_for_flag(us, s, "mp_jup_hydro_ob_contracts_weapon_stash_cs");
-    if (!cs_is_starttime()) {
-        endcreatescript(s);
+    level thread cs_return_and_wait_for_flag( us, s, "mp_jup_hydro_ob_contracts_weapon_stash_cs" );
+    
+    if ( !cs_is_starttime() )
+    {
+        endcreatescript( s );
     }
 }
 
@@ -26,26 +33,31 @@ function main(unused, us) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x264
 // Size: 0x67
-function cs_return_and_wait_for_flag(us, s, cf) {
-    level endon("game_ended");
-    wait_for_cs_flag(cf);
-    if (!isdefined(us)) {
+function cs_return_and_wait_for_flag( us, s, cf )
+{
+    level endon( "game_ended" );
+    wait_for_cs_flag( cf );
+    
+    if ( !isdefined( us ) )
+    {
         us = "pfx";
     }
-    s cs_setup_arrays(us, "mp_jup_hydro_ob_contracts_weapon_stash_cs");
-    cs_flags_init(s);
-    level thread createstructs(s, us, cf);
-    level thread wait_for_flags(s, "mp_jup_hydro_ob_contracts_weapon_stash_cs");
+    
+    s cs_setup_arrays( us, "mp_jup_hydro_ob_contracts_weapon_stash_cs" );
+    cs_flags_init( s );
+    level thread createstructs( s, us, cf );
+    level thread wait_for_flags( s, "mp_jup_hydro_ob_contracts_weapon_stash_cs" );
 }
 
 // Namespace mp_jup_hydro_ob_contracts_weapon_stash_cs / namespace_7898c307385adc4a
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d3
 // Size: 0x782
-function createstructs(fe, us, cf) {
+function createstructs( fe, us, cf )
+{
     f = &strike_additem;
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -53,9 +65,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1853.58, 8574.61, 546), (0, 104.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1853.58, 8574.61, 546 ), ( 0, 104.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -63,9 +75,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1854.53, 8245.96, 821.04), (0, 194.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1854.53, 8245.96, 821.04 ), ( 0, 194.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -73,9 +85,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1228.58, 8809.61, 844.55), (0, 104.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1228.58, 8809.61, 844.55 ), ( 0, 104.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -83,9 +95,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1039.58, 8693.61, 851.92), (0, 14.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1039.58, 8693.61, 851.92 ), ( 0, 14.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -93,9 +105,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1130.52, 8265.28, 848), (0, 284.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1130.52, 8265.28, 848 ), ( 0, 284.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -103,9 +115,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1371.37, 8021.81, 848), (0, 284.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1371.37, 8021.81, 848 ), ( 0, 284.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -113,9 +125,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1575.07, 7935.24, 848), (0, 284.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1575.07, 7935.24, 848 ), ( 0, 284.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -123,9 +135,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1430.58, 8252.61, 845.34), (0, 104.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1430.58, 8252.61, 845.34 ), ( 0, 104.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -133,9 +145,9 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1561.58, 8196.61, 848), (0, 104.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
+    fe [[ f ]]( s, us, cf, ( -1561.58, 8196.61, 848 ), ( 0, 104.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     s.ai_faction = "zombie";
     s.groupid = "spawnpoints";
     s.var_e5decd57d2e1579 = "3000";
@@ -143,8 +155,8 @@ function createstructs(fe, us, cf) {
     s.spawn_filter = "none";
     s.wave_indexes = "-1";
     s.var_90a30a42ca3830f1 = "none";
-    fe [[ f ]](s, us, cf, (-1353.58, 8571.61, 840.25), (0, 104.4, 0), undefined, undefined, "ai_encounter_spawnpoint");
-    fe ent_flag_set("cs_objects_created");
+    fe [[ f ]]( s, us, cf, ( -1353.58, 8571.61, 840.25 ), ( 0, 104.4, 0 ), undefined, undefined, "ai_encounter_spawnpoint" );
+    fe ent_flag_set( "cs_objects_created" );
     function_7af6d59eef91a7dd();
 }
 
@@ -152,7 +164,8 @@ function createstructs(fe, us, cf) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa5d
 // Size: 0x2
-function function_7af6d59eef91a7dd() {
+function function_7af6d59eef91a7dd()
+{
     
 }
 
@@ -160,15 +173,17 @@ function function_7af6d59eef91a7dd() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa67
 // Size: 0xe
-function cleanup() {
-    function_71a564b3bc009618("mp_jup_hydro_ob_contracts_weapon_stash_cs");
+function cleanup()
+{
+    function_71a564b3bc009618( "mp_jup_hydro_ob_contracts_weapon_stash_cs" );
 }
 
 // Namespace mp_jup_hydro_ob_contracts_weapon_stash_cs / namespace_7898c307385adc4a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa7d
 // Size: 0x69
-function function_fd69cf02ba4d90a2() {
+function function_fd69cf02ba4d90a2()
+{
     var_d13c18af4084bdfd = spawnstruct();
     var_d13c18af4084bdfd.name = "REV_OB_WEAPON_STASH";
     var_d13c18af4084bdfd.scriptbundle = "jup_ob_activitydefinition_weapon_stash";
@@ -182,14 +197,18 @@ function function_fd69cf02ba4d90a2() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0xaef
 // Size: 0x51
-function function_82613e20fba2deb9(instancename, fe, us, cf) {
-    if (!isdefined(cf)) {
+function function_82613e20fba2deb9( instancename, fe, us, cf )
+{
+    if ( !isdefined( cf ) )
+    {
         cf = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
     }
-    switch (instancename) {
-    case #"hash_d0fafeb5b1167a66":
-        function_509efc065f50587(fe, us, cf);
-        break;
+    
+    switch ( instancename )
+    {
+        case #"hash_d0fafeb5b1167a66":
+            function_509efc065f50587( fe, us, cf );
+            break;
     }
 }
 
@@ -197,50 +216,52 @@ function function_82613e20fba2deb9(instancename, fe, us, cf) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xb48
 // Size: 0x34e
-function function_509efc065f50587(fe, us, cf) {
+function function_509efc065f50587( fe, us, cf )
+{
     f = &strike_additem;
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-614.71, 7709.9, 912), (0, 0, 0), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0), 100);
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -614.71, 7709.9, 912 ), ( 0, 0, 0 ), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ), 100 );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-2608.15, 7312.56, 576.38), (0, 0, 0), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0), 100);
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -2608.15, 7312.56, 576.38 ), ( 0, 0, 0 ), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ), 100 );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-859.91, 6554.5, 723.61), (0, 0, 0), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0), 100);
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -859.91, 6554.5, 723.61 ), ( 0, 0, 0 ), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ), 100 );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-1050.11, 6149.23, 664.8), (0, 0, 0), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0), 100);
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -1050.11, 6149.23, 664.8 ), ( 0, 0, 0 ), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ), 100 );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-2144.73, 6175.58, 587.02), (0, 0, 0), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, (0, 0, 0), (0, 0, 0), 100);
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -2144.73, 6175.58, 587.02 ), ( 0, 0, 0 ), undefined, "WEAPON_STASH_HYDRO", "weaponstash_spawn", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ), 100 );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-1509.41, 6636.35, 752), (0, 121, 0), undefined, "WEAPON_STASH_HYDRO", "weaponstash_safe", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -1509.41, 6636.35, 752 ), ( 0, 121, 0 ), undefined, "WEAPON_STASH_HYDRO", "weaponstash_safe", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ) );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-1451.07, 6778.77, 752), (0, 0, 0), undefined, "WEAPON_STASH_HYDRO", "weaponstash_rift", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -1451.07, 6778.77, 752 ), ( 0, 0, 0 ), undefined, "WEAPON_STASH_HYDRO", "weaponstash_rift", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ) );
     s = s();
-    s.var_ca7eef470d1b0ef2 = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    fe [[ f ]](s, us, cf, (-3982.5, 6982.57, 984), (270, 0, 152.89), "activity_nexus_instance_joiner", undefined, "WEAPON_STASH_HYDRO", undefined, undefined, (0, 0, 0), (0, 0, 0));
+    s.cs_flag = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
+    fe [[ f ]]( s, us, cf, ( -3982.5, 6982.57, 984 ), ( 270, 0, 152.89 ), "activity_nexus_instance_joiner", undefined, "WEAPON_STASH_HYDRO", undefined, undefined, ( 0, 0, 0 ), ( 0, 0, 0 ) );
 }
 
 // Namespace mp_jup_hydro_ob_contracts_weapon_stash_cs / namespace_7898c307385adc4a
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe9e
 // Size: 0xe9
-function function_6da2952367672ac0() {
+function function_6da2952367672ac0()
+{
     activityinstances = [];
     instancestruct = spawnstruct();
     instancestruct.scriptbundle = "jup_ob_activitydefinition_weapon_stash";
     instancestruct.cf = "mp_jup_hydro_ob_contracts_weapon_stash_cs";
-    instancestruct.scriptstructorigin = (-1488.72, 6670.53, 752);
-    instancestruct.scriptstructoriginoffset = (0, 0, 0);
-    instancestruct.locationorigin = [(-1511.93, 6646.66, 752)];
-    instancestruct.locationoriginoffset = [(0, 0, 0)];
-    instancestruct.var_45283ef87b6e04b6 = [(0, 0, 0)];
-    instancestruct.locationradius = [200];
-    activityinstances["WEAPON_STASH_HYDRO"] = instancestruct;
+    instancestruct.scriptstructorigin = ( -1488.72, 6670.53, 752 );
+    instancestruct.scriptstructoriginoffset = ( 0, 0, 0 );
+    instancestruct.locationorigin = [ ( -1511.93, 6646.66, 752 ) ];
+    instancestruct.locationoriginoffset = [ ( 0, 0, 0 ) ];
+    instancestruct.var_45283ef87b6e04b6 = [ ( 0, 0, 0 ) ];
+    instancestruct.locationradius = [ 200 ];
+    activityinstances[ "WEAPON_STASH_HYDRO" ] = instancestruct;
     return activityinstances;
 }
 

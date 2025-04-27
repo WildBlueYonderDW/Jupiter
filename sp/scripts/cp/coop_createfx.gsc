@@ -11,7 +11,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd1
 // Size: 0x14a
-function createfx() {
+function createfx()
+{
     level.func_position_player = &void;
     level.func_position_player_get = &func_position_player_get;
     level.func_loopfxthread = &loopfxthread;
@@ -36,14 +37,15 @@ function createfx() {
     level.var_cda3af1f73639c7c = &void;
     thread func_get_level_fx();
     createfx_common();
-    level waittill("eternity");
+    level waittill( "eternity" );
 }
 
 // Namespace coop_createfx / scripts\cp\coop_createfx
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x223
 // Size: 0x1e
-function func_position_player_get(lastplayerorigin) {
+function func_position_player_get( lastplayerorigin )
+{
     return level.player.origin;
 }
 
@@ -51,27 +53,32 @@ function func_position_player_get(lastplayerorigin) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24a
 // Size: 0xa0
-function callback_playerconnect() {
-    self waittill("begin");
-    if (!isdefined(level.player)) {
-        spawnpoints = getentarray("mp_global_intermission", "classname");
-        self spawn(spawnpoints[0].origin, spawnpoints[0].angles);
-        updatesessionstate("playing", "");
+function callback_playerconnect()
+{
+    self waittill( "begin" );
+    
+    if ( !isdefined( level.player ) )
+    {
+        spawnpoints = getentarray( "mp_global_intermission", "classname" );
+        self spawn( spawnpoints[ 0 ].origin, spawnpoints[ 0 ].angles );
+        updatesessionstate( "playing", "" );
         self.maxhealth = 10000000;
         self.health = 10000000;
         level.player = self;
         thread createfxlogic();
         return;
     }
-    kick(self getentitynumber());
+    
+    kick( self getentitynumber() );
 }
 
 // Namespace coop_createfx / scripts\cp\coop_createfx
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f2
 // Size: 0x33
-function func_player_speed() {
+function func_player_speed()
+{
     scale = level._createfx.player_speed / 190;
-    level.player setmovespeedscale(scale);
+    level.player setmovespeedscale( scale );
 }
 

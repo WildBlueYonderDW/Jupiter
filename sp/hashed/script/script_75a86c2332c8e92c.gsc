@@ -7,17 +7,22 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0
 // Size: 0x5e
-function init() {
+function init()
+{
     /#
-        if (getdvarint(@"hash_e6afce2cf5cf7515") == 1) {
+        if ( getdvarint( @"hash_e6afce2cf5cf7515" ) == 1 )
+        {
             return;
         }
     #/
-    if (!isdefined(game["clientMatchDataDef"])) {
-        game["clientMatchDataDef"] = "ddl/mp/zombieclientmatchdata.ddl";
-        setclientmatchdatadef(game["clientMatchDataDef"]);
-        setclientmatchdata("map", level.script);
+    
+    if ( !isdefined( game[ "clientMatchDataDef" ] ) )
+    {
+        game[ "clientMatchDataDef" ] = "ddl/mp/zombieclientmatchdata.ddl";
+        setclientmatchdatadef( game[ "clientMatchDataDef" ] );
+        setclientmatchdata( "map", level.script );
     }
+    
     level.maxdeaths = 50;
 }
 

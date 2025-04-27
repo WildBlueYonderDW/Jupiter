@@ -15,42 +15,55 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0x13
-function init() {
-    scripts\mp\killstreaks\killstreaks::registerkillstreak("emp", &tryuseempfromstruct);
+function init()
+{
+    scripts\mp\killstreaks\killstreaks::registerkillstreak( "emp", &tryuseempfromstruct );
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e4
-// Size: 0x21
-function tryuseemp() {
-    streakinfo = createstreakinfo("emp", self);
-    return tryuseempfromstruct(streakinfo);
+// Size: 0x21, Type: bool
+function tryuseemp()
+{
+    streakinfo = createstreakinfo( "emp", self );
+    return tryuseempfromstruct( streakinfo );
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20e
-// Size: 0xa5
-function tryuseempfromstruct(streakinfo) {
-    level endon("game_ended");
-    self endon("disconnect");
-    if (isdefined(level.killstreaktriggeredfunc)) {
-        if (!level [[ level.killstreaktriggeredfunc ]](streakinfo)) {
+// Size: 0xa5, Type: bool
+function tryuseempfromstruct( streakinfo )
+{
+    level endon( "game_ended" );
+    self endon( "disconnect" );
+    
+    if ( isdefined( level.killstreaktriggeredfunc ) )
+    {
+        if ( !level [[ level.killstreaktriggeredfunc ]]( streakinfo ) )
+        {
             return false;
         }
     }
-    deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_dogesturedeploy(streakinfo, makeweapon("ks_gesture_generic_mp"));
-    if (!istrue(deployresult)) {
+    
+    deployresult = scripts\cp_mp\killstreaks\killstreakdeploy::streakdeploy_dogesturedeploy( streakinfo, makeweapon( "ks_gesture_generic_mp" ) );
+    
+    if ( !istrue( deployresult ) )
+    {
         return false;
     }
-    if (isdefined(level.killstreakbeginusefunc)) {
-        if (!level [[ level.killstreakbeginusefunc ]](streakinfo)) {
+    
+    if ( isdefined( level.killstreakbeginusefunc ) )
+    {
+        if ( !level [[ level.killstreakbeginusefunc ]]( streakinfo ) )
+        {
             return false;
         }
     }
+    
     thread startemp();
-    level callback::callback("killstreak_finish_use", {#streakinfo:self.streakinfo});
+    level callback::callback( "killstreak_finish_use", { #streakinfo:self.streakinfo } );
     return true;
 }
 
@@ -58,25 +71,36 @@ function tryuseempfromstruct(streakinfo) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2bc
 // Size: 0x158
-function startemp() {
-    level endon("game_ended");
+function startemp()
+{
+    level endon( "game_ended" );
     heightent = scripts\cp_mp\utility\killstreak_utility::getkillstreakairstrikeheightent();
     heightoffset = 3000;
-    if (isdefined(heightent)) {
-        heightoffset = heightent.origin[2] + 500;
+    
+    if ( isdefined( heightent ) )
+    {
+        heightoffset = heightent.origin[ 2 ] + 500;
     }
-    fxspawnpos = level.mapcenter * (1, 1, 0) + (0, 0, heightoffset);
-    playfx(getfx("emp_shockwave"), fxspawnpos);
-    self playsound("jammer_drone_shockwave");
-    foreach (player in level.players) {
-        if (!isreallyalive(player)) {
+    
+    fxspawnpos = level.mapcenter * ( 1, 1, 0 ) + ( 0, 0, heightoffset );
+    playfx( getfx( "emp_shockwave" ), fxspawnpos );
+    self playsound( "jammer_drone_shockwave" );
+    
+    foreach ( player in level.players )
+    {
+        if ( !isreallyalive( player ) )
+        {
             continue;
         }
+        
         player thread applyempshellshock();
     }
-    enemyteams = getenemyteams(self.owner.team);
-    foreach (entry in enemyteams) {
-        destroyactiveobjects(entry, self);
+    
+    enemyteams = getenemyteams( self.owner.team );
+    
+    foreach ( entry in enemyteams )
+    {
+        destroyactiveobjects( entry, self );
     }
 }
 
@@ -84,47 +108,60 @@ function startemp() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x41c
 // Size: 0x58
-function applyempshellshock() {
-    self setscriptablepartstate("emped", "active", 0);
-    self playloopsound("emp_nade_lp");
+function applyempshellshock()
+{
+    self setscriptablepartstate( "emped", "active", 0 );
+    self playloopsound( "emp_nade_lp" );
     thread applyempshellshockvisionset();
     wait 0.5;
-    self setscriptablepartstate("emped", "neutral", 0);
-    self playsound("emp_nade_lp_end");
-    self stoploopsound("emp_nade_lp");
+    self setscriptablepartstate( "emped", "neutral", 0 );
+    self playsound( "emp_nade_lp_end" );
+    self stoploopsound( "emp_nade_lp" );
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x47c
 // Size: 0x2f
-function applyempshellshockvisionset() {
-    visionsetnaked("coup_sunblind", 0.05);
+function applyempshellshockvisionset()
+{
+    visionsetnaked( "coup_sunblind", 0.05 );
     waitframe();
-    visionsetnaked("coup_sunblind", 0);
-    visionsetnaked("", 0.5);
+    visionsetnaked( "coup_sunblind", 0 );
+    visionsetnaked( "", 0.5 );
 }
 
 // Namespace emp / scripts\mp\killstreaks\emp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4b3
 // Size: 0xf1
-function destroyactiveobjects(team, owner) {
+function destroyactiveobjects( team, owner )
+{
     weapon = "nuke_mp";
     var_6c845d64be969ce8 = level.activekillstreaks;
     equipmentarray = [[ level.getactiveequipmentarray ]]();
     activeobjects = undefined;
-    if (isdefined(var_6c845d64be969ce8) && isdefined(equipmentarray)) {
-        activeobjects = array_combine_unique(var_6c845d64be969ce8, equipmentarray);
-    } else if (isdefined(var_6c845d64be969ce8)) {
+    
+    if ( isdefined( var_6c845d64be969ce8 ) && isdefined( equipmentarray ) )
+    {
+        activeobjects = array_combine_unique( var_6c845d64be969ce8, equipmentarray );
+    }
+    else if ( isdefined( var_6c845d64be969ce8 ) )
+    {
         activeobjects = var_6c845d64be969ce8;
-    } else if (isdefined(equipmentarray)) {
+    }
+    else if ( isdefined( equipmentarray ) )
+    {
         activeobjects = equipmentarray;
     }
-    if (isdefined(activeobjects)) {
-        foreach (object in activeobjects) {
-            if (isdefined(object)) {
-                object dodamagetokillstreak(10000, owner, owner, team, object.origin, "MOD_EXPLOSIVE", weapon);
+    
+    if ( isdefined( activeobjects ) )
+    {
+        foreach ( object in activeobjects )
+        {
+            if ( isdefined( object ) )
+            {
+                object dodamagetokillstreak( 10000, owner, owner, team, object.origin, "MOD_EXPLOSIVE", weapon );
             }
         }
     }

@@ -4,13 +4,14 @@
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 
-#namespace namespace_75cacbcff85696e3;
+#namespace mp_jup_skidrow_alt_lighting;
 
-// Namespace namespace_75cacbcff85696e3 / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
+// Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d1
 // Size: 0x74
-function main() {
+function main()
+{
     thread neon_hide();
     thread open_doors();
     level.gunshipvisionset = "mp_jup_skidrow_alt_killstreak_gunship";
@@ -22,36 +23,43 @@ function main() {
     level.var_49071332a2a99c1e = "mp_jup_skidrow_alt_killstreak_thermal";
 }
 
-// Namespace namespace_75cacbcff85696e3 / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
+// Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x24d
 // Size: 0x8
-function lighting_dvars() {
+function lighting_dvars()
+{
     wait 0.5;
 }
 
-// Namespace namespace_75cacbcff85696e3 / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
+// Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x25d
 // Size: 0x6c
-function neon_hide() {
+function neon_hide()
+{
     wait 0.05;
-    neon_hide = getentarray("neon_hide", "targetname");
-    foreach (object in neon_hide) {
+    neon_hide = getentarray( "neon_hide", "targetname" );
+    
+    foreach ( object in neon_hide )
+    {
         object hide();
     }
 }
 
-// Namespace namespace_75cacbcff85696e3 / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
+// Namespace mp_jup_skidrow_alt_lighting / scripts\mp\maps\mp_jup_skidrow_alt\mp_jup_skidrow_alt_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d1
 // Size: 0x74
-function open_doors() {
+function open_doors()
+{
     wait 10;
-    open_door_left = getentitylessscriptablearray("open_door_left", "script_noteworthy");
-    foreach (door in open_door_left) {
+    open_door_left = getentitylessscriptablearray( "open_door_left", "script_noteworthy" );
+    
+    foreach ( door in open_door_left )
+    {
         wait 0.1;
-        door scriptabledooropen("left");
+        door scriptabledooropen( "left" );
     }
 }
 

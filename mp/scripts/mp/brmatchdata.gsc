@@ -14,7 +14,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0
 // Size: 0x9
-function init() {
+function init()
+{
     scripts\mp\matchdata::init();
 }
 

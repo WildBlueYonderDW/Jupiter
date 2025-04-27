@@ -14,22 +14,24 @@
 #using scripts\mp\utility\weapon;
 #using scripts\mp\vehicles\damage;
 
-#namespace namespace_c6b936bb0fc5d54;
+#namespace chopper_support_mp;
 
-// Namespace namespace_c6b936bb0fc5d54 / scripts\mp\killstreaks\chopper_support_mp
+// Namespace chopper_support_mp / scripts\mp\killstreaks\chopper_support_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x132
 // Size: 0x29
-function init() {
-    scripts\mp\killstreaks\killstreaks::registerkillstreak("chopper_support", &scripts\cp_mp\killstreaks\chopper_support::tryusechoppersupportfromstruct);
-    scripts\engine\utility::registersharedfunc("chopper_support", "set_vehicle_hit_damage_data", &chopper_support_set_vehicle_hit_damage_data);
+function init()
+{
+    scripts\mp\killstreaks\killstreaks::registerkillstreak( "chopper_support", &scripts\cp_mp\killstreaks\chopper_support::tryusechoppersupportfromstruct );
+    scripts\engine\utility::registersharedfunc( "chopper_support", "set_vehicle_hit_damage_data", &chopper_support_set_vehicle_hit_damage_data );
 }
 
-// Namespace namespace_c6b936bb0fc5d54 / scripts\mp\killstreaks\chopper_support_mp
+// Namespace chopper_support_mp / scripts\mp\killstreaks\chopper_support_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x163
 // Size: 0x1c
-function chopper_support_set_vehicle_hit_damage_data(ref, hitstokill) {
-    scripts\mp\vehicles\damage::set_vehicle_hit_damage_data(ref, hitstokill);
+function chopper_support_set_vehicle_hit_damage_data( ref, hitstokill )
+{
+    scripts\mp\vehicles\damage::set_vehicle_hit_damage_data( ref, hitstokill );
 }
 

@@ -3,50 +3,59 @@
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 
-#namespace namespace_40a09967cec8a9c8;
+#namespace mp_jup_skydiving_lighting;
 
-// Namespace namespace_40a09967cec8a9c8 / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
+// Namespace mp_jup_skydiving_lighting / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa8
 // Size: 0x2e
-function main() {
+function main()
+{
     thread lighting_setup_dvars();
     thread function_9b9701887eb61641();
     level.var_1550eea978f3c08 = getmapsuncolorandintensity();
     level.var_6df7b39edec9ac5b = getmapsundirection();
 }
 
-// Namespace namespace_40a09967cec8a9c8 / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
+// Namespace mp_jup_skydiving_lighting / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xde
 // Size: 0x2
-function lighting_setup_dvars() {
+function lighting_setup_dvars()
+{
     
 }
 
-// Namespace namespace_40a09967cec8a9c8 / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
+// Namespace mp_jup_skydiving_lighting / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xe8
 // Size: 0xe
-function function_9b9701887eb61641() {
+function function_9b9701887eb61641()
+{
     resetsundirection();
     resetsunlight();
 }
 
-// Namespace namespace_40a09967cec8a9c8 / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
+// Namespace mp_jup_skydiving_lighting / scripts\mp\maps\mp_jup_skydiving\mp_jup_skydiving_lighting
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0xfe
 // Size: 0x68
-function function_83165e6c3fba43ff(var_1486d9950068fc3b, var_1eee77dc97d49765, intensity) {
-    if (!isdefined(intensity)) {
+function function_83165e6c3fba43ff( var_1486d9950068fc3b, var_1eee77dc97d49765, intensity )
+{
+    if ( !isdefined( intensity ) )
+    {
         intensity = undefined;
     }
-    var_e660de2f1c2dc655 = anglestoforward(var_1486d9950068fc3b);
-    setsundirection(var_e660de2f1c2dc655);
-    if (isdefined(intensity)) {
-        setsuncolorandintensity(var_1eee77dc97d49765[0], var_1eee77dc97d49765[1], var_1eee77dc97d49765[2], intensity);
+    
+    var_e660de2f1c2dc655 = anglestoforward( var_1486d9950068fc3b );
+    setsundirection( var_e660de2f1c2dc655 );
+    
+    if ( isdefined( intensity ) )
+    {
+        setsuncolorandintensity( var_1eee77dc97d49765[ 0 ], var_1eee77dc97d49765[ 1 ], var_1eee77dc97d49765[ 2 ], intensity );
         return;
     }
-    setsuncolorandintensity(var_1eee77dc97d49765[0], var_1eee77dc97d49765[1], var_1eee77dc97d49765[2]);
+    
+    setsuncolorandintensity( var_1eee77dc97d49765[ 0 ], var_1eee77dc97d49765[ 1 ], var_1eee77dc97d49765[ 2 ] );
 }
 

@@ -18,10 +18,11 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x310
 // Size: 0x3b
-function equipmentinteract_init() {
+function equipmentinteract_init()
+{
     level.useobjs = [];
-    scripts\engine\utility::registersharedfunc("equipment", "deployHackTablet", &deployHackTablet);
-    scripts\engine\scriptable::scriptable_addusedcallbackbypart("hack_usable", &equipmentscriptableused);
+    scripts\engine\utility::registersharedfunc( "equipment", "deployHackTablet", &deployhacktablet );
+    scripts\engine\scriptable::scriptable_addusedcallbackbypart( "hack_usable", &equipmentscriptableused );
     thread _updateuseobjs();
 }
 
@@ -29,24 +30,28 @@ function equipmentinteract_init() {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x353
 // Size: 0x56
-function equipmentscriptableused(instance, part, state, player, var_a5b2c541413aa895, usestring) {
-    assert(part == "<dev string:x1c>");
-    equipmentuse(instance.entity, player);
+function equipmentscriptableused( instance, part, state, player, var_a5b2c541413aa895, usestring )
+{
+    assert( part == "<dev string:x1c>" );
+    equipmentuse( instance.entity, player );
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b1
 // Size: 0x84
-function equipmentuse(instance, player) {
+function equipmentuse( instance, player )
+{
     equipment = instance;
     equipment.isbeingused = 1;
-    if (isdefined(player)) {
+    
+    if ( isdefined( player ) )
+    {
         player.iscapturingcrate = 0;
         player.ishacking = 1;
-        streakinfo = player scripts\cp_mp\utility\killstreak_utility::createstreakinfo("", player);
+        streakinfo = player scripts\cp_mp\utility\killstreak_utility::createstreakinfo( "", player );
         streakinfo.interactstate = 0;
-        player thread deployHackTablet(function_be0c3a067da1e72d(equipment), equipment, streakinfo);
+        player thread deployhacktablet( function_be0c3a067da1e72d( equipment ), equipment, streakinfo );
     }
 }
 
@@ -54,27 +59,41 @@ function equipmentuse(instance, player) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x43d
 // Size: 0x18c
-function _updateuseobjs() {
-    level endon("game_ended");
-    while (true) {
+function _updateuseobjs()
+{
+    level endon( "game_ended" );
+    
+    while ( true )
+    {
         wait 0.2;
-        foreach (useobj in level.useobjs) {
-            if (!isdefined(useobj)) {
+        
+        foreach ( useobj in level.useobjs )
+        {
+            if ( !isdefined( useobj ) )
+            {
                 continue;
             }
-            assertex(useobj isscriptable(), "<dev string:x2b>");
-            nearplayers = utility::playersnear(useobj.origin, 300);
-            foreach (player in nearplayers) {
-                areenemies = istrue(scripts\cp_mp\utility\player_utility::playersareenemies(player, useobj.owner));
-                if (areenemies && player != useobj.owner && !player scripts\mp\utility\perk::_hasperk("specialty_hack")) {
-                    useobj disablescriptableplayeruse(player);
+            
+            assertex( useobj isscriptable(), "<dev string:x2b>" );
+            nearplayers = utility::playersnear( useobj.origin, 300 );
+            
+            foreach ( player in nearplayers )
+            {
+                areenemies = istrue( scripts\cp_mp\utility\player_utility::playersareenemies( player, useobj.owner ) );
+                
+                if ( areenemies && player != useobj.owner && !player scripts\mp\utility\perk::_hasperk( "specialty_hack" ) )
+                {
+                    useobj disablescriptableplayeruse( player );
                     continue;
                 }
-                if (!areenemies || istrue(useobj.isbeingused) || !player scripts\mp\utility\perk::_hasperk("specialty_hack") || player scripts\cp_mp\emp_debuff::is_empd() || player namespace_53fc9ddbb516e6e1::function_c4d8558fc1592cd6() || level.gameended) {
-                    useobj disablescriptableplayeruse(player);
+                
+                if ( !areenemies || istrue( useobj.isbeingused ) || !player scripts\mp\utility\perk::_hasperk( "specialty_hack" ) || player scripts\cp_mp\emp_debuff::is_empd() || player namespace_53fc9ddbb516e6e1::function_c4d8558fc1592cd6() || level.gameended )
+                {
+                    useobj disablescriptableplayeruse( player );
                     continue;
                 }
-                useobj enablescriptableplayeruse(player);
+                
+                useobj enablescriptableplayeruse( player );
             }
         }
     }
@@ -84,9 +103,11 @@ function _updateuseobjs() {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d1
 // Size: 0x29
-function remoteinteractsetup(var_3012ab4936b3fdec, allowdefuse, allowhack) {
-    if (istrue(allowhack)) {
-        thread _hacksetup(var_3012ab4936b3fdec);
+function remoteinteractsetup( var_3012ab4936b3fdec, allowdefuse, allowhack )
+{
+    if ( istrue( allowhack ) )
+    {
+        thread _hacksetup( var_3012ab4936b3fdec );
     }
 }
 
@@ -94,35 +115,47 @@ function remoteinteractsetup(var_3012ab4936b3fdec, allowdefuse, allowhack) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x602
 // Size: 0x96
-function _hacksetup(remotedefusecallback) {
-    level.useobjs[self getentitynumber()] = self;
-    assertex(self isscriptable(), "<dev string:x74>");
-    self setscriptablepartstate("hack_usable", "on");
-    foreach (player in level.players) {
-        self disablescriptableplayeruse(player);
+function _hacksetup( remotedefusecallback )
+{
+    level.useobjs[ self getentitynumber() ] = self;
+    assertex( self isscriptable(), "<dev string:x74>" );
+    self setscriptablepartstate( "hack_usable", "on" );
+    
+    foreach ( player in level.players )
+    {
+        self disablescriptableplayeruse( player );
     }
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6a0
-// Size: 0x96
-function _processusethink(equipment) {
-    level endon("game_ended");
-    if (isdefined(equipment)) {
-        equipment endon("death");
-        equipment endon("mine_triggered");
+// Size: 0x96, Type: bool
+function _processusethink( equipment )
+{
+    level endon( "game_ended" );
+    
+    if ( isdefined( equipment ) )
+    {
+        equipment endon( "death" );
+        equipment endon( "mine_triggered" );
     }
-    self endon("death_or_disconnect");
-    self endon("emp_started");
-    interactduration = (getdvarfloat(@"hash_b22bb1a48299003b", 3) - getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5)) * 1000;
+    
+    self endon( "death_or_disconnect" );
+    self endon( "emp_started" );
+    interactduration = ( getdvarfloat( @"hash_b22bb1a48299003b", 3 ) - getdvarfloat( @"hash_f1b36a05bc8c07af", 0.5 ) ) * 1000;
     var_b8cf204dd62d457f = gettime() + interactduration;
-    while (var_b8cf204dd62d457f > gettime()) {
-        if (!self usebuttonpressed()) {
+    
+    while ( var_b8cf204dd62d457f > gettime() )
+    {
+        if ( !self usebuttonpressed() )
+        {
             return false;
         }
+        
         waitframe();
     }
+    
     return true;
 }
 
@@ -130,32 +163,48 @@ function _processusethink(equipment) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x73f
 // Size: 0xc9
-function _startusethink(equipment, streakinfo) {
-    if (isdefined(equipment)) {
+function _startusethink( equipment, streakinfo )
+{
+    if ( isdefined( equipment ) )
+    {
         equipment.isbeingused = 1;
     }
+    
     self.iscapturingcrate = 1;
     self.ishacking = 1;
     streakinfo.interactstate = 0;
-    self notify("interact_started");
-    result = istrue(_processusethink(equipment));
-    if (result) {
+    self notify( "interact_started" );
+    result = istrue( _processusethink( equipment ) );
+    
+    if ( result )
+    {
         streakinfo.interactstate = 2;
-    } else {
-        self notify("interact_cancelled");
     }
-    self notify("interact_finished");
-    if (isdefined(equipment)) {
+    else
+    {
+        self notify( "interact_cancelled" );
+    }
+    
+    self notify( "interact_finished" );
+    
+    if ( isdefined( equipment ) )
+    {
         equipment.isbeingused = 0;
     }
-    if (isdefined(self)) {
+    
+    if ( isdefined( self ) )
+    {
         self.iscapturingcrate = 0;
         self.ishacking = undefined;
-        if (!istrue(result)) {
+        
+        if ( !istrue( result ) )
+        {
             return;
         }
-        if (isdefined(equipment)) {
-            equipment scripts\mp\equipment::hackequipment(self);
+        
+        if ( isdefined( equipment ) )
+        {
+            equipment scripts\mp\equipment::hackequipment( self );
         }
     }
 }
@@ -164,17 +213,25 @@ function _startusethink(equipment, streakinfo) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x810
 // Size: 0x97
-function function_be0c3a067da1e72d(equipment) {
+function function_be0c3a067da1e72d( equipment )
+{
     index = -1;
-    if (isdefined(equipment.equipmentref)) {
-        equipmentinfo = scripts\mp\equipment::getequipmenttableinfo(equipment.equipmentref);
-        if (isdefined(equipmentinfo)) {
+    
+    if ( isdefined( equipment.equipmentref ) )
+    {
+        equipmentinfo = scripts\mp\equipment::getequipmenttableinfo( equipment.equipmentref );
+        
+        if ( isdefined( equipmentinfo ) )
+        {
             index = equipmentinfo.id;
         }
-    } else if (isdefined(equipment.streakinfo)) {
-        index = scripts\cp_mp\utility\killstreak_utility::getkillstreakindex(equipment.streakinfo.streakname);
     }
-    assert(index != -1, "<dev string:xba>");
+    else if ( isdefined( equipment.streakinfo ) )
+    {
+        index = scripts\cp_mp\utility\killstreak_utility::getkillstreakindex( equipment.streakinfo.streakname );
+    }
+    
+    assert( index != -1, "<dev string:xba>" );
     return index;
 }
 
@@ -182,20 +239,26 @@ function function_be0c3a067da1e72d(equipment) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x8b0
 // Size: 0xac
-function deployHackTablet(index, equipment, streakinfo) {
-    level endon("game_ended");
-    self endon("disconnect");
-    weaponobj = makeweapon("ks_remote_hack_mp");
-    childthread function_60fbd6e6fc195e7b(equipment);
-    thread function_c9ada01dc3eac7f3(index);
-    self playlocalsound("iw9_ks_tablet_foly_raise_plr");
-    switchresult = scripts\cp_mp\killstreaks\killstreakdeploy::switchtodeployweapon(weaponobj, streakinfo, &_waituntilinteractfinished, &_ontabletgiven, undefined, undefined, &_ontabletputaway);
-    if (istrue(switchresult)) {
-        thread _startusethink(equipment, streakinfo);
+function deployhacktablet( index, equipment, streakinfo )
+{
+    level endon( "game_ended" );
+    self endon( "disconnect" );
+    weaponobj = makeweapon( "ks_remote_hack_mp" );
+    childthread function_60fbd6e6fc195e7b( equipment );
+    thread function_c9ada01dc3eac7f3( index );
+    self playlocalsound( "iw9_ks_tablet_foly_raise_plr" );
+    switchresult = scripts\cp_mp\killstreaks\killstreakdeploy::switchtodeployweapon( weaponobj, streakinfo, &_waituntilinteractfinished, &_ontabletgiven, undefined, undefined, &_ontabletputaway );
+    
+    if ( istrue( switchresult ) )
+    {
+        thread _startusethink( equipment, streakinfo );
         return;
     }
-    self notify("interact_cancelled");
-    if (isdefined(equipment)) {
+    
+    self notify( "interact_cancelled" );
+    
+    if ( isdefined( equipment ) )
+    {
         equipment.isbeingused = 0;
     }
 }
@@ -204,49 +267,56 @@ function deployHackTablet(index, equipment, streakinfo) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x964
 // Size: 0x33
-function function_60fbd6e6fc195e7b(equipment) {
-    self endon("interact_cancelled");
-    self endon("interact_finished");
-    equipment scripts\engine\utility::waittill_any_2("death", "makeExplosiveUnusable");
-    self notify("cancel_all_killstreak_deployments");
+function function_60fbd6e6fc195e7b( equipment )
+{
+    self endon( "interact_cancelled" );
+    self endon( "interact_finished" );
+    equipment scripts\engine\utility::waittill_any_2( "death", "makeExplosiveUnusable" );
+    self notify( "cancel_all_killstreak_deployments" );
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x99f
 // Size: 0x65
-function function_c9ada01dc3eac7f3(hackindex) {
-    level endon("game_ended");
-    self endon("disconnect");
-    self setclientomnvar("ui_hack_index", hackindex);
-    self playlocalsound("iw9_spotter_perk_tablet_ui");
+function function_c9ada01dc3eac7f3( hackindex )
+{
+    level endon( "game_ended" );
+    self endon( "disconnect" );
+    self setclientomnvar( "ui_hack_index", hackindex );
+    self playlocalsound( "iw9_spotter_perk_tablet_ui" );
     _updatehackprogressomnvar();
-    self stoplocalsound("iw9_spotter_perk_tablet_ui");
-    self setclientomnvar("ui_hack_progress", 0);
+    self stoplocalsound( "iw9_spotter_perk_tablet_ui" );
+    self setclientomnvar( "ui_hack_progress", 0 );
     wait 0.1;
-    self setclientomnvar("ui_hack_index", 0);
+    self setclientomnvar( "ui_hack_index", 0 );
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa0c
 // Size: 0xef
-function _updatehackprogressomnvar() {
-    self endon("interact_cancelled");
-    self waittill("interact_started");
+function _updatehackprogressomnvar()
+{
+    self endon( "interact_cancelled" );
+    self waittill( "interact_started" );
     var_2646e75e629259a6 = 1000;
     var_137d951e4d233a68 = 500;
-    var_84fdeec8cd47b94c = getdvarfloat(@"hash_b22bb1a48299003b", 3) * 1000;
-    successduration = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5) * 1000;
+    var_84fdeec8cd47b94c = getdvarfloat( @"hash_b22bb1a48299003b", 3 ) * 1000;
+    successduration = getdvarfloat( @"hash_f1b36a05bc8c07af", 0.5 ) * 1000;
     barduration = var_84fdeec8cd47b94c - var_2646e75e629259a6 - successduration;
     var_b8cf204dd62d457f = gettime() + var_84fdeec8cd47b94c + var_137d951e4d233a68;
     var_b7eb0c292517d42d = gettime() + var_2646e75e629259a6;
-    while (true) {
-        barprogress = (gettime() - var_b7eb0c292517d42d) / barduration;
-        barprogress = clamp(barprogress, 0, 1);
-        self setclientomnvar("ui_hack_progress", barprogress);
+    
+    while ( true )
+    {
+        barprogress = ( gettime() - var_b7eb0c292517d42d ) / barduration;
+        barprogress = clamp( barprogress, 0, 1 );
+        self setclientomnvar( "ui_hack_progress", barprogress );
         wait 0.05;
-        if (gettime() > var_b8cf204dd62d457f) {
+        
+        if ( gettime() > var_b8cf204dd62d457f )
+        {
             break;
         }
     }
@@ -255,9 +325,10 @@ function _updatehackprogressomnvar() {
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0xb03
-// Size: 0x26
-function _ontabletgiven(streakinfo, switchresult) {
-    _toggletabletallows(1);
+// Size: 0x26, Type: bool
+function _ontabletgiven( streakinfo, switchresult )
+{
+    _toggletabletallows( 1 );
     thread _cleanuptabletallows();
     return true;
 }
@@ -266,41 +337,54 @@ function _ontabletgiven(streakinfo, switchresult) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb32
 // Size: 0x3d
-function _cancelputawayonuseend(streakinfo) {
-    level endon("game_ended");
-    self endon("death_or_disconnect");
-    streakinfo endon("deploy_weapon_switch_ended");
-    while (true) {
-        if (!self usebuttonpressed()) {
+function _cancelputawayonuseend( streakinfo )
+{
+    level endon( "game_ended" );
+    self endon( "death_or_disconnect" );
+    streakinfo endon( "deploy_weapon_switch_ended" );
+    
+    while ( true )
+    {
+        if ( !self usebuttonpressed() )
+        {
             break;
         }
+        
         waitframe();
     }
-    self notify("cancel_all_killstreak_deployments");
+    
+    self notify( "cancel_all_killstreak_deployments" );
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb77
 // Size: 0x13
-function _ontabletputaway(streakinfo) {
-    self notify("tabletPutAway");
+function _ontabletputaway( streakinfo )
+{
+    self notify( "tabletPutAway" );
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xb92
 // Size: 0x6b
-function _waituntilinteractfinished(streakinfo) {
-    level endon("game_ended");
-    self endon("death_or_disconnect");
-    self endon("interact_cancelled");
-    if (streakinfo.interactstate != 0) {
+function _waituntilinteractfinished( streakinfo )
+{
+    level endon( "game_ended" );
+    self endon( "death_or_disconnect" );
+    self endon( "interact_cancelled" );
+    
+    if ( streakinfo.interactstate != 0 )
+    {
         return;
     }
-    self waittill("interact_finished");
-    if (streakinfo.interactstate == 2) {
-        successtime = getdvarfloat(@"hash_f1b36a05bc8c07af", 0.5);
+    
+    self waittill( "interact_finished" );
+    
+    if ( streakinfo.interactstate == 2 )
+    {
+        successtime = getdvarfloat( @"hash_f1b36a05bc8c07af", 0.5 );
         wait successtime;
     }
 }
@@ -309,30 +393,36 @@ function _waituntilinteractfinished(streakinfo) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc05
 // Size: 0x2e
-function _cleanuptabletallows() {
-    level endon("game_ended");
-    self endon("disconnect");
-    waittill_any_3("death", "tabletPutAway", "interact_cancelled");
-    _toggletabletallows(0);
+function _cleanuptabletallows()
+{
+    level endon( "game_ended" );
+    self endon( "disconnect" );
+    waittill_any_3( "death", "tabletPutAway", "interact_cancelled" );
+    _toggletabletallows( 0 );
 }
 
 // Namespace equipment_interact / scripts\mp\equipment_interact
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc3b
 // Size: 0xa0
-function _toggletabletallows(var_da3010af8f6be463) {
-    force = ter_op(var_da3010af8f6be463, undefined, 1);
-    scripts\mp\utility\player::_freezelookcontrols(var_da3010af8f6be463, force);
-    if (isalive(self)) {
-        if (var_da3010af8f6be463) {
-            val::set("tablet", "allow_movement", 0);
-            val::set("tablet", "allow_jump", 0);
-            val::set("tablet", "usability", 0);
-            val::set("tablet", "melee", 0);
-            val::set("tablet", "offhand_weapons", 0);
+function _toggletabletallows( var_da3010af8f6be463 )
+{
+    force = ter_op( var_da3010af8f6be463, undefined, 1 );
+    scripts\mp\utility\player::_freezelookcontrols( var_da3010af8f6be463, force );
+    
+    if ( isalive( self ) )
+    {
+        if ( var_da3010af8f6be463 )
+        {
+            val::set( "tablet", "allow_movement", 0 );
+            val::set( "tablet", "allow_jump", 0 );
+            val::set( "tablet", "usability", 0 );
+            val::set( "tablet", "melee", 0 );
+            val::set( "tablet", "offhand_weapons", 0 );
             return;
         }
-        val::reset_all("tablet");
+        
+        val::reset_all( "tablet" );
     }
 }
 

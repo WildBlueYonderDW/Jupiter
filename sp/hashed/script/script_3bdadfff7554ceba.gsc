@@ -8,14 +8,18 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdd
 // Size: 0x45
-function init() {
-    if (getdvarint(@"hash_1a92c8ba1b57a968", 0) == 0) {
+function init()
+{
+    if ( getdvarint( @"hash_1a92c8ba1b57a968", 0 ) == 0 )
+    {
         return;
     }
+    
     /#
-        setdevdvar(@"hash_81644941d60ec323", 1);
-        setdevdvar(@"hash_ac6f58a6e20ed4c2", 1);
+        setdevdvar( @"hash_81644941d60ec323", 1 );
+        setdevdvar( @"hash_ac6f58a6e20ed4c2", 1 );
     #/
+    
     level thread function_2366683817cdb090();
 }
 
@@ -23,69 +27,111 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12a
 // Size: 0x29e
-function function_2366683817cdb090() {
-    if (game["roundsPlayed"] > 0) {
+function function_2366683817cdb090()
+{
+    if ( game[ "roundsPlayed" ] > 0 )
+    {
         return;
     }
-    if (level.teambased) {
-        while (!scripts\mp\utility\game::gamehasstarted()) {
+    
+    if ( level.teambased )
+    {
+        while ( !scripts\mp\utility\game::gamehasstarted() )
+        {
             wait 0.05;
         }
-    } else {
-        while (!istrue(level.prematchstarted)) {
+    }
+    else
+    {
+        while ( !istrue( level.prematchstarted ) )
+        {
             waitframe();
         }
     }
-    if (getdvarint(@"hash_1a92c8ba1b57a968", 0) == 0) {
+    
+    if ( getdvarint( @"hash_1a92c8ba1b57a968", 0 ) == 0 )
+    {
         return;
     }
-    while (!istrue(game["gamestarted"])) {
+    
+    while ( !istrue( game[ "gamestarted" ] ) )
+    {
         waitframe();
     }
-    if (isdefined(game["roundsPlayed"]) && game["roundsPlayed"] > 0) {
+    
+    if ( isdefined( game[ "roundsPlayed" ] ) && game[ "roundsPlayed" ] > 0 )
+    {
         return;
     }
-    if (!isdefined(level.var_69def5c06e03559)) {
+    
+    if ( !isdefined( level.var_69def5c06e03559 ) )
+    {
         level.var_69def5c06e03559 = level.teamnamelist;
     }
-    if (!isdefined(level.var_737572a27a1ca724)) {
-        if (istrue(level.teambased)) {
-            if (isdefined(level.maxteamsize) && level.maxteamsize != 0) {
+    
+    if ( !isdefined( level.var_737572a27a1ca724 ) )
+    {
+        if ( istrue( level.teambased ) )
+        {
+            if ( isdefined( level.maxteamsize ) && level.maxteamsize != 0 )
+            {
                 level.var_737572a27a1ca724 = level.maxteamsize;
-            } else {
+            }
+            else
+            {
                 level.var_737572a27a1ca724 = 6;
             }
-        } else {
-            level.var_737572a27a1ca724 = int(7) / 2;
+        }
+        else
+        {
+            level.var_737572a27a1ca724 = int( 7 ) / 2;
         }
     }
-    while (istrue(level.var_ce2396e9ae4bc1a0)) {
+    
+    while ( istrue( level.var_ce2396e9ae4bc1a0 ) )
+    {
         waitframe();
     }
+    
     /#
-        if (!level.onlinegame) {
-            while (!isdefined(level.player)) {
+        if ( !level.onlinegame )
+        {
+            while ( !isdefined( level.player ) )
+            {
                 waitframe();
             }
-            if (istrue(level.teambased)) {
-                level.var_69def5c06e03559 = scripts\engine\utility::array_remove(level.var_69def5c06e03559, level.player.pers["<dev string:x1c>"]);
-                level.var_69def5c06e03559 = scripts\engine\utility::array_combine([level.player.pers["<dev string:x1c>"]], level.var_69def5c06e03559);
-            } else {
-                level.var_69def5c06e03559 = ["<dev string:x21>", "<dev string:x28>"];
+            
+            if ( istrue( level.teambased ) )
+            {
+                level.var_69def5c06e03559 = scripts\engine\utility::array_remove( level.var_69def5c06e03559, level.player.pers[ "<dev string:x1c>" ] );
+                level.var_69def5c06e03559 = scripts\engine\utility::array_combine( [ level.player.pers[ "<dev string:x1c>" ] ], level.var_69def5c06e03559 );
+            }
+            else
+            {
+                level.var_69def5c06e03559 = [ "<dev string:x21>", "<dev string:x28>" ];
             }
         }
     #/
+    
     level thread outline_players();
-    foreach (entry in level.var_69def5c06e03559) {
-        if (isdefined(level.player) && scripts\engine\utility::is_equal(level.player.pers["team"], entry)) {
+    
+    foreach ( entry in level.var_69def5c06e03559 )
+    {
+        if ( isdefined( level.player ) && scripts\engine\utility::is_equal( level.player.pers[ "team" ], entry ) )
+        {
             num_to_spawn = level.var_737572a27a1ca724 - 1;
-            if (issplitscreen()) {
+            
+            if ( issplitscreen() )
+            {
                 num_to_spawn = level.var_737572a27a1ca724 - 1;
             }
-        } else {
+        }
+        else
+        {
             num_to_spawn = level.var_737572a27a1ca724;
         }
-        level thread scripts\mp\bots\bots::spawn_bots(num_to_spawn, entry, undefined, undefined, undefined, "recruit");
+        
+        level thread scripts\mp\bots\bots::spawn_bots( num_to_spawn, entry, undefined, undefined, undefined, "recruit" );
     }
 }
 
@@ -93,20 +139,29 @@ function function_2366683817cdb090() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3d0
 // Size: 0xd5
-function outline_players() {
-    if (!getdvarint(@"hash_e40a51d94d1570ea", 0)) {
+function outline_players()
+{
+    if ( !getdvarint( @"hash_e40a51d94d1570ea", 0 ) )
+    {
         return;
     }
-    while (true) {
-        if (isdefined(level.players)) {
-            foreach (player in level.players) {
-                if (isdefined(level.player) && scripts\engine\utility::is_equal(player.pers["team"], level.player.pers["team"])) {
-                    player hudoutlineenable("outline_nodepth_green");
+    
+    while ( true )
+    {
+        if ( isdefined( level.players ) )
+        {
+            foreach ( player in level.players )
+            {
+                if ( isdefined( level.player ) && scripts\engine\utility::is_equal( player.pers[ "team" ], level.player.pers[ "team" ] ) )
+                {
+                    player hudoutlineenable( "outline_nodepth_green" );
                     continue;
                 }
-                player hudoutlineenable("outline_nodepth_red");
+                
+                player hudoutlineenable( "outline_nodepth_red" );
             }
         }
+        
         wait 0.25;
     }
 }
@@ -115,7 +170,8 @@ function outline_players() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ad
 // Size: 0xd
-function pause() {
+function pause()
+{
     level.var_ce2396e9ae4bc1a0 = 1;
 }
 
@@ -123,7 +179,8 @@ function pause() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c2
 // Size: 0xc
-function run() {
+function run()
+{
     level.var_ce2396e9ae4bc1a0 = 0;
 }
 
@@ -131,7 +188,8 @@ function run() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d6
 // Size: 0x15
-function function_6cce72ce8bb6af87(teams) {
+function function_6cce72ce8bb6af87( teams )
+{
     level.var_69def5c06e03559 = teams;
 }
 
@@ -139,7 +197,8 @@ function function_6cce72ce8bb6af87(teams) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4f3
 // Size: 0x15
-function function_4a18dd73a966821e(count) {
+function function_4a18dd73a966821e( count )
+{
     level.var_737572a27a1ca724 = count;
 }
 
@@ -147,7 +206,8 @@ function function_4a18dd73a966821e(count) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x510
 // Size: 0x2a
-function modegetforceoperatorcustomization(player, operatorref, operatorSkinRef) {
-    return ["jup_mp_delta", 0];
+function modegetforceoperatorcustomization( player, operatorref, operatorskinref )
+{
+    return [ "jup_mp_delta", 0 ];
 }
 

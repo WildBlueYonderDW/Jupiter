@@ -8,21 +8,30 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x124
 // Size: 0x12b
-function init() {
-    level.softlandingtriggers = getentarray("trigger_multiple_softlanding", "classname");
-    destructibles = getentarray("destructible_vehicle", "targetname");
-    foreach (trigger in level.softlandingtriggers) {
-        if (trigger.script_type != "car") {
+function init()
+{
+    level.softlandingtriggers = getentarray( "trigger_multiple_softlanding", "classname" );
+    destructibles = getentarray( "destructible_vehicle", "targetname" );
+    
+    foreach ( trigger in level.softlandingtriggers )
+    {
+        if ( trigger.script_type != "car" )
+        {
             continue;
         }
-        foreach (destructible in destructibles) {
-            if (distance(trigger.origin, destructible.origin) > 64) {
+        
+        foreach ( destructible in destructibles )
+        {
+            if ( distance( trigger.origin, destructible.origin ) > 64 )
+            {
                 continue;
             }
-            assert(!isdefined(trigger.destructible));
+            
+            assert( !isdefined( trigger.destructible ) );
             trigger.destructible = destructible;
         }
     }
+    
     thread onplayerconnect();
 }
 
@@ -30,12 +39,16 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x257
 // Size: 0x37
-function onplayerconnect() {
-    if (scripts\mp\utility\game::runleanthreadmode()) {
+function onplayerconnect()
+{
+    if ( scripts\mp\utility\game::runleanthreadmode() )
+    {
         return;
     }
-    for (;;) {
-        level waittill("connected", player);
+    
+    for ( ;; )
+    {
+        level waittill( "connected", player );
         player.softlanding = undefined;
         player thread softlandingwaiter();
     }
@@ -45,7 +58,8 @@ function onplayerconnect() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x296
 // Size: 0x15
-function playerentersoftlanding(trigger) {
+function playerentersoftlanding( trigger )
+{
     self.softlanding = trigger;
 }
 
@@ -53,7 +67,8 @@ function playerentersoftlanding(trigger) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b3
 // Size: 0x15
-function playerleavesoftlanding(trigger) {
+function playerleavesoftlanding( trigger )
+{
     self.softlanding = undefined;
 }
 
@@ -61,11 +76,16 @@ function playerleavesoftlanding(trigger) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d0
 // Size: 0x3c
-function softlandingwaiter() {
-    self endon("disconnect");
-    for (;;) {
-        self waittill("soft_landing", trigger, damage);
-        if (!isdefined(trigger.destructible)) {
+function softlandingwaiter()
+{
+    self endon( "disconnect" );
+    
+    for ( ;; )
+    {
+        self waittill( "soft_landing", trigger, damage );
+        
+        if ( !isdefined( trigger.destructible ) )
+        {
         }
     }
 }

@@ -13,7 +13,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xba
 // Size: 0xb
-function recondrone_init() {
+function recondrone_init()
+{
     level thread function_344254816bb001eb();
 }
 
@@ -21,11 +22,12 @@ function recondrone_init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd
 // Size: 0x75
-function function_344254816bb001eb() {
+function function_344254816bb001eb()
+{
     waitframe();
-    level.helperdronesettings["radar_drone_recon"].maxhealth = 150;
-    level.helperdronesettings["radar_drone_recon"].repeatuse = 1;
-    level.helperdronesettings["radar_drone_recon"].var_cb2c3fe0819193eb = 36000000;
-    level.helperdronesettings["radar_drone_recon"].var_1947a47c2174d02c = 0;
+    level.helperdronesettings[ "radar_drone_recon" ].maxhealth = 150;
+    level.helperdronesettings[ "radar_drone_recon" ].repeatuse = 1;
+    level.helperdronesettings[ "radar_drone_recon" ].var_cb2c3fe0819193eb = 36000000;
+    level.helperdronesettings[ "radar_drone_recon" ].var_1947a47c2174d02c = 0;
 }
 

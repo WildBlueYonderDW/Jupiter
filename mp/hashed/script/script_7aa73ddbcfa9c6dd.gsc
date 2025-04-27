@@ -1,4 +1,4 @@
-#using script_26b6062265bbf919;
+#using scripts\mp\infilexfil\defender_infil;
 
 #namespace namespace_b6c63fcc47f3e8a4;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
-function main() {
-    thread namespace_61fc244810dffc67::defender_init("alpha");
+function main()
+{
+    thread scripts\mp\infilexfil\defender_infil::defender_init( "alpha" );
 }
 

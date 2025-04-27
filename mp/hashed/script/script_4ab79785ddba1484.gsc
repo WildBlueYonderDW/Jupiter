@@ -9,7 +9,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb9
 // Size: 0x10
-function main() {
+function main()
+{
     level.var_161b9dd94239b201 = "death_mp_luxury";
 }
 

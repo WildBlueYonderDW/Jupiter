@@ -104,7 +104,8 @@
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x664
 // Size: 0x10
-function autoexec init() {
+function autoexec init()
+{
     level.var_cd52e517ad96566d = &main;
 }
 
@@ -112,11 +113,12 @@ function autoexec init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x67c
 // Size: 0x367
-function main() {
+function main()
+{
     level thread cleanup_map();
-    level callback::add("register_activities", &function_d0ffb4e404349b30);
-    level callback::add("register_objectives", &function_83ecb01b31530309);
-    level callback::add("register_features", &function_c4ca7f1cd743b5d2);
+    level callback::add( "register_activities", &function_d0ffb4e404349b30 );
+    level callback::add( "register_objectives", &function_83ecb01b31530309 );
+    level callback::add( "register_features", &function_c4ca7f1cd743b5d2 );
     function_70ed29a8f9257bb3();
     namespace_d38a1af3e02dea2f::function_48e697a59457ec45();
     namespace_9300a7e57b81fb7a::main();
@@ -146,7 +148,7 @@ function main() {
     namespace_2ca3dad2d6898e0d::main();
     namespace_db64ae640647c5cd::main();
     namespace_f2713faa50431351::main();
-    scripts\engine\utility::flag_set("gas_station_create_script_initialized");
+    scripts\engine\utility::flag_set( "gas_station_create_script_initialized" );
     namespace_981841431137dfcc::main();
     namespace_e03919da9578d3dc::main();
     namespace_2fd4af9f8020b5a0::main();
@@ -157,41 +159,66 @@ function main() {
     namespace_bf8452379047a828::main();
     namespace_9e7d5c0658c6dddc::main();
     thread namespace_6776e8e74ed64842::init();
-    if (getdvar(@"hash_dffbbb2b70b78aee", "0") == "1") {
+    
+    if ( getdvar( @"hash_dffbbb2b70b78aee", "0" ) == "1" )
+    {
         function_3dfc24cbac6795be();
-    } else {
+    }
+    else
+    {
         thread function_a39aa470df6cd578();
     }
-    if (getdvar(@"hash_6e5464e5ee3bd77d", "1") == "1") {
+    
+    if ( getdvar( @"hash_6e5464e5ee3bd77d", "1" ) == "1" )
+    {
         function_9fb88526b60e2e45();
-    } else {
+    }
+    else
+    {
         thread function_6ad85f8d5c683ce4();
     }
-    if (getdvar(@"hash_6ffd9adb060c50c9", "0") == "1") {
+    
+    if ( getdvar( @"hash_6ffd9adb060c50c9", "0" ) == "1" )
+    {
         function_78795efa67a421b();
-    } else {
+    }
+    else
+    {
         thread function_67ce1aff066faf12();
     }
+    
     thread function_cc66dbf966dfae8a();
     thread function_ce4bae9d68c21731();
     level thread function_bc95ea3a25ee0024();
-    if (getdvarint(@"hash_f0651f120dc9412d", 0)) {
+    
+    if ( getdvarint( @"hash_f0651f120dc9412d", 0 ) )
+    {
         namespace_8f52b12ca3af49b1::main();
         namespace_609a42b1d504aad6::quest_init();
-    } else {
+    }
+    else
+    {
         namespace_609a42b1d504aad6::clip_handler();
     }
-    if (getdvarint(@"hash_f0651c120dc93a94", 0)) {
+    
+    if ( getdvarint( @"hash_f0651c120dc93a94", 0 ) )
+    {
         namespace_6d31e91c26415292::main();
         namespace_609a41b1d504a8a3::function_429e921f8ad411ff();
     }
-    if (getdvarint(@"hash_f0651d120dc93cc7", 0)) {
+    
+    if ( getdvarint( @"hash_f0651d120dc93cc7", 0 ) )
+    {
         namespace_25a0f0fe5a85d32b::main();
-        namespace_609a40b1d504a670::function_5d445c791ef3fc0a();
-    } else {
-        namespace_609a40b1d504a670::function_aa1b5db86c89322d(0);
+        namespace_609a40b1d504a670::quest_act3_init();
     }
-    if (getdvarint(@"hash_c5b7e4fbc3c4ae1a", 0) == 1) {
+    else
+    {
+        namespace_609a40b1d504a670::function_aa1b5db86c89322d( 0 );
+    }
+    
+    if ( getdvarint( @"hash_c5b7e4fbc3c4ae1a", 0 ) == 1 )
+    {
         namespace_c7a042a866083b3e::main();
         namespace_212266c75b256f0e::main();
         namespace_8f0ca3b07985e0b2::main();
@@ -203,56 +230,83 @@ function main() {
         namespace_9b600bf111be390e::main();
         thread namespace_fc8edd9c56ed42bb::main();
     }
-    createnavlink("red_zone_emergency_link_1", (6642, 30, 2099), (6720, 62, 2300));
-    createnavlink("red_zone_emergency_link_2", (6720, 62, 2300), (6642, 30, 2099));
-    createnavlink("tile_a_emergency_link_1", (-31176, 27956, 1434), (-31263, 28030, 1582));
-    createnavlink("tile_a_emergency_link_1", (-31993, 27646, 1434), (-32093, 27607, 1588));
+    
+    createnavlink( "red_zone_emergency_link_1", ( 6642, 30, 2099 ), ( 6720, 62, 2300 ) );
+    createnavlink( "red_zone_emergency_link_2", ( 6720, 62, 2300 ), ( 6642, 30, 2099 ) );
+    createnavlink( "tile_a_emergency_link_1", ( -31176, 27956, 1434 ), ( -31263, 28030, 1582 ) );
+    createnavlink( "tile_a_emergency_link_1", ( -31993, 27646, 1434 ), ( -32093, 27607, 1588 ) );
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0x9eb
 // Size: 0x1c3
-function private cleanup_map() {
+function private cleanup_map()
+{
     for (index = 1; index < 13; index++) {
         number = "";
-        if (index < 10) {
+        
+        if ( index < 10 )
+        {
             number += "0";
         }
+        
         number += index;
         train = "train_jup_" + number;
-        entity = getent(train, "script_noteworthy");
-        if (isdefined(entity)) {
+        entity = getent( train, "script_noteworthy" );
+        
+        if ( isdefined( entity ) )
+        {
             entity delete();
         }
-        entity = getent(train + "_train_front_hurt", "script_noteworthy");
-        if (isdefined(entity)) {
+        
+        entity = getent( train + "_train_front_hurt", "script_noteworthy" );
+        
+        if ( isdefined( entity ) )
+        {
             entity delete();
         }
-        entity = getent(train + "_train_rear_hurt", "script_noteworthy");
-        if (isdefined(entity)) {
+        
+        entity = getent( train + "_train_rear_hurt", "script_noteworthy" );
+        
+        if ( isdefined( entity ) )
+        {
             entity delete();
         }
-        entity = getent("train_jup_model_" + number, "script_noteworthy");
-        if (isdefined(entity)) {
+        
+        entity = getent( "train_jup_model_" + number, "script_noteworthy" );
+        
+        if ( isdefined( entity ) )
+        {
             entity delete();
         }
     }
+    
     waitframe();
-    entity = getent("train_jump_ramp", "script_noteworthy");
-    if (isdefined(entity)) {
+    entity = getent( "train_jump_ramp", "script_noteworthy" );
+    
+    if ( isdefined( entity ) )
+    {
         entity delete();
     }
+    
     mapname = getmapname();
-    if (isdefined(mapname)) {
-        if (mapname == "mp_jup_bigmap") {
-            entitynames = ["clip_zombie_container", "clip_zombie_container_opening", "clip_zombie_container_door", "clip_zombie_container_floor"];
-            foreach (entityname in entitynames) {
-                entities = getentarray(entityname, "targetname");
+    
+    if ( isdefined( mapname ) )
+    {
+        if ( mapname == "mp_jup_bigmap" )
+        {
+            entitynames = [ "clip_zombie_container", "clip_zombie_container_opening", "clip_zombie_container_door", "clip_zombie_container_floor" ];
+            
+            foreach ( entityname in entitynames )
+            {
+                entities = getentarray( entityname, "targetname" );
+                
                 for (index = 0; index < entities.size; index++) {
-                    entities[index] delete();
+                    entities[ index ] delete();
                 }
             }
+            
             waitframe();
         }
     }
@@ -262,12 +316,16 @@ function private cleanup_map() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb6
 // Size: 0x34
-function function_a39aa470df6cd578() {
-    while (true) {
-        if (getdvar(@"hash_dffbbb2b70b78aee", "0") == "1") {
+function function_a39aa470df6cd578()
+{
+    while ( true )
+    {
+        if ( getdvar( @"hash_dffbbb2b70b78aee", "0" ) == "1" )
+        {
             function_3dfc24cbac6795be();
             return;
         }
+        
         wait 2;
     }
 }
@@ -276,7 +334,8 @@ function function_a39aa470df6cd578() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbf2
 // Size: 0x49
-function function_3dfc24cbac6795be() {
+function function_3dfc24cbac6795be()
+{
     namespace_4597ddd9bb212a8d::main();
     namespace_41e286eb58854fdd::main();
     namespace_e24377ec41c40379::main();
@@ -293,12 +352,16 @@ function function_3dfc24cbac6795be() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc43
 // Size: 0x34
-function function_6ad85f8d5c683ce4() {
-    while (true) {
-        if (getdvar(@"hash_6e5464e5ee3bd77d", "0") == "1") {
+function function_6ad85f8d5c683ce4()
+{
+    while ( true )
+    {
+        if ( getdvar( @"hash_6e5464e5ee3bd77d", "0" ) == "1" )
+        {
             function_9fb88526b60e2e45();
             return;
         }
+        
         wait 2;
     }
 }
@@ -307,7 +370,8 @@ function function_6ad85f8d5c683ce4() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc7f
 // Size: 0x49
-function function_9fb88526b60e2e45() {
+function function_9fb88526b60e2e45()
+{
     namespace_7d12a25cf603c57b::main();
     namespace_76dff16242afc74b::main();
     namespace_1909e1088cfbc807::main();
@@ -324,12 +388,16 @@ function function_9fb88526b60e2e45() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd0
 // Size: 0x34
-function function_67ce1aff066faf12() {
-    while (true) {
-        if (getdvar(@"hash_6ffd9adb060c50c9", "0") == "1") {
+function function_67ce1aff066faf12()
+{
+    while ( true )
+    {
+        if ( getdvar( @"hash_6ffd9adb060c50c9", "0" ) == "1" )
+        {
             function_78795efa67a421b();
             return;
         }
+        
         wait 2;
     }
 }
@@ -338,7 +406,8 @@ function function_67ce1aff066faf12() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd0c
 // Size: 0x42
-function function_78795efa67a421b() {
+function function_78795efa67a421b()
+{
     namespace_63e54e5e8c51a163::main();
     namespace_6200cd97cd5820b3::main();
     namespace_e8816c886fe0a5f7::main();
@@ -354,43 +423,57 @@ function function_78795efa67a421b() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xd56
 // Size: 0x147
-function function_bc95ea3a25ee0024() {
-    if (!getdvarint(@"hash_53e8929882e78ac6", 1)) {
+function function_bc95ea3a25ee0024()
+{
+    if ( !getdvarint( @"hash_53e8929882e78ac6", 1 ) )
+    {
         return;
     }
-    if (getdvarint(@"hash_6dfc320987b819", 0)) {
-        var_dabe5dc8a76998e8 = ["vehicle_group_a", "vehicle_group_b", "vehicle_group_c", "vehicle_group_d", "vehicle_group_e", "vehicle_group_f", "vehicle_group_g", "vehicle_group_h", "vehicle_group_i"];
+    
+    if ( getdvarint( @"hash_6dfc320987b819", 0 ) )
+    {
+        var_dabe5dc8a76998e8 = [ "vehicle_group_a", "vehicle_group_b", "vehicle_group_c", "vehicle_group_d", "vehicle_group_e", "vehicle_group_f", "vehicle_group_g", "vehicle_group_h", "vehicle_group_i" ];
         a_s_spawns = [];
-        foreach (vehicle_group in var_dabe5dc8a76998e8) {
-            var_43392d5f952613b6 = getstructarray(vehicle_group, "script_noteworthy");
-            a_s_spawns = array_combine(a_s_spawns, namespace_f9b6a4254d2d8100::function_48f13f47907a7e67(var_43392d5f952613b6));
+        
+        foreach ( vehicle_group in var_dabe5dc8a76998e8 )
+        {
+            var_43392d5f952613b6 = getstructarray( vehicle_group, "script_noteworthy" );
+            a_s_spawns = array_combine( a_s_spawns, namespace_f9b6a4254d2d8100::function_48f13f47907a7e67( var_43392d5f952613b6 ) );
             waitframe();
         }
-    } else {
+    }
+    else
+    {
         a_s_spawns = namespace_f9b6a4254d2d8100::function_c7028a51e2858e73();
     }
+    
     level.var_eacc36c62b779c30 = a_s_spawns;
-    if (a_s_spawns.size > 0 && isdefined(level.var_c383b967aa7e551b)) {
-        [[ level.var_c383b967aa7e551b ]]("vehicle", a_s_spawns, &namespace_f9b6a4254d2d8100::spawn_vehicle);
+    
+    if ( a_s_spawns.size > 0 && isdefined( level.var_c383b967aa7e551b ) )
+    {
+        [[ level.var_c383b967aa7e551b ]]( "vehicle", a_s_spawns, &namespace_f9b6a4254d2d8100::spawn_vehicle );
     }
-    callback::callback("ob_vehicles_create_script_done");
+    
+    callback::callback( "ob_vehicles_create_script_done" );
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xea5
 // Size: 0x21
-function function_ce4bae9d68c21731() {
+function function_ce4bae9d68c21731()
+{
     waitframe();
-    function_9b8829ab4092a7d7("ob_zombie_ambient", 1);
-    setdvar(@"hash_f1d095735ac37f33", 1);
+    function_9b8829ab4092a7d7( "ob_zombie_ambient", 1 );
+    setdvar( @"hash_f1d095735ac37f33", 1 );
 }
 
 // Namespace mp_jup_bigmap_ob / scripts\mp\maps\mp_jup_bigmap\mp_jup_bigmap_ob
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xece
 // Size: 0x48
-function function_cc66dbf966dfae8a() {
+function function_cc66dbf966dfae8a()
+{
     namespace_38c12a9e6798f1cb::function_f2a6094e2bc9028();
     namespace_cd249032b49ee5a3::function_54df6f4695546973();
     namespace_dd1b81793708120f::function_23e93ef99a6c16e2();
@@ -400,6 +483,6 @@ function function_cc66dbf966dfae8a() {
     namespace_f14d97da70ba358f::function_95dc47abc9ef28ae();
     namespace_dd96b963491cdbaf::function_ff6d5421a485cc11();
     namespace_722ce752470892b::function_699dd374c113c360();
-    namespace_614554f86e52695c::function_b1fa4578ef08136f();
+    namespace_614554f86e52695c::process_create_script();
 }
 

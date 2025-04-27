@@ -7,22 +7,27 @@
 
 // Namespace namespace_5b79e0098b7edf4d / namespace_fffc43c197b763f7
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbe
+// Checksum 0x0, Offset: 0xbd
 // Size: 0x2a
-function init() {
-    assert(flag("<dev string:x1c>"));
-    callback::add("player_spawned", &on_player_spawn);
+function init()
+{
+    assert( flag( "<dev string:x1c>" ) );
+    callback::add( "player_spawned", &on_player_spawn );
 }
 
 // Namespace namespace_5b79e0098b7edf4d / namespace_fffc43c197b763f7
 // Params 1, eflags: 0x4
-// Checksum 0x0, Offset: 0xf0
+// Checksum 0x0, Offset: 0xef
 // Size: 0x37
-function private on_player_spawn(params) {
+function private on_player_spawn( params )
+{
     player = self;
-    if (!isdefined(player)) {
+    
+    if ( !isdefined( player ) )
+    {
         return;
     }
-    analytics::addevent("player_spawned", player getorigin(), 0, "", player);
+    
+    analytics::addevent( "player_spawned", player getorigin(), 0, "", player );
 }
 

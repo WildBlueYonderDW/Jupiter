@@ -6,62 +6,83 @@
 #using scripts\sp\equipment\molotov;
 #using scripts\sp\utility;
 
-#namespace namespace_8c5f5b6ade93c1ff;
+#namespace incendiarylauncher;
 
-// Namespace namespace_8c5f5b6ade93c1ff / scripts\sp\equipment\incendiarylauncher
+// Namespace incendiarylauncher / scripts\sp\equipment\incendiarylauncher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xed
 // Size: 0x13
-function init() {
+function init()
+{
     level.player thread firemanager();
 }
 
-// Namespace namespace_8c5f5b6ade93c1ff / scripts\sp\equipment\incendiarylauncher
+// Namespace incendiarylauncher / scripts\sp\equipment\incendiarylauncher
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x108
 // Size: 0x113
-function firemanager() {
+function firemanager()
+{
     self.offhands = spawnstruct();
     self.offhands.lastusedoffhandweapon = undefined;
     self.offhands.lastusedoffhandtime = 0;
-    while (true) {
+    
+    while ( true )
+    {
         has_gl = 0;
-        self waittill("missile_fire", missile, weapon);
-        attachmentnames = getweaponattachments(weapon);
-        if (isdefined(attachmentnames) && attachmentnames.size > 0) {
-            foreach (attachment in attachmentnames) {
-                if (issubstr(attachment, "gl")) {
+        self waittill( "missile_fire", missile, weapon );
+        attachmentnames = getweaponattachments( weapon );
+        
+        if ( isdefined( attachmentnames ) && attachmentnames.size > 0 )
+        {
+            foreach ( attachment in attachmentnames )
+            {
+                if ( issubstr( attachment, "gl" ) )
+                {
                     has_gl = 1;
                 }
             }
         }
-        if (weapon.basename == "iw8_la_mike32_incendiary") {
-            missile thread watchforimpact("explode");
+        
+        if ( weapon.basename == "iw8_la_mike32_incendiary" )
+        {
+            missile thread watchforimpact( "explode" );
             continue;
         }
-        if (has_gl) {
-            missile thread watchforimpact("missile_stuck");
+        
+        if ( has_gl )
+        {
+            missile thread watchforimpact( "missile_stuck" );
         }
     }
 }
 
-// Namespace namespace_8c5f5b6ade93c1ff / scripts\sp\equipment\incendiarylauncher
+// Namespace incendiarylauncher / scripts\sp\equipment\incendiarylauncher
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x223
 // Size: 0xcd
-function watchforimpact(msg) {
-    self endon("entitydeleted");
-    owner = getmissileowner(self);
-    if (msg == "missile_stuck") {
-        self waittill("missile_stuck", stuckto, hitentpart, surfacetype, velocity, origin, normal);
-        if (distance2d(owner.origin, origin) > 200) {
-            scripts\sp\equipment\molotov::molotovexplode(origin, normal, velocity, stuckto, owner);
-        } else {
+function watchforimpact( msg )
+{
+    self endon( "entitydeleted" );
+    owner = getmissileowner( self );
+    
+    if ( msg == "missile_stuck" )
+    {
+        self waittill( "missile_stuck", stuckto, hitentpart, surfacetype, velocity, origin, normal );
+        
+        if ( distance2d( owner.origin, origin ) > 200 )
+        {
+            scripts\sp\equipment\molotov::molotovexplode( origin, normal, velocity, stuckto, owner );
+        }
+        else
+        {
             self delete();
         }
+        
         return;
     }
-    self waittill(msg, origin, normal, velocity, entity);
-    scripts\sp\equipment\molotov::molotovexplode(origin, normal, velocity, entity, owner);
+    
+    self waittill( msg, origin, normal, velocity, entity );
+    scripts\sp\equipment\molotov::molotovexplode( origin, normal, velocity, entity, owner );
 }
 

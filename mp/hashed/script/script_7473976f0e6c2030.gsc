@@ -1,5 +1,5 @@
-#using script_38b3797023002a4a;
 #using scripts\mp\gamelogic;
+#using scripts\mp\gametypes\warrior;
 #using scripts\mp\utility\game;
 #using scripts\mp\utility\teams;
 
@@ -9,7 +9,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb7
 // Size: 0xf
-function function_22096e1dcb46edfa() {
-    thread function_492b4dec632917ec("warrior_lts");
+function function_22096e1dcb46edfa()
+{
+    thread function_492b4dec632917ec( "warrior_lts" );
 }
 

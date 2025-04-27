@@ -1,4 +1,4 @@
-#using script_56e306ee336a9c97;
+#using scripts\mp\infilexfil\c17_infil;
 
 #namespace namespace_3a38afe16817a9a2;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x98
 // Size: 0xf
-function main() {
-    thread namespace_490baaae4ec3af6f::function_2f340eb1a058fd55("alpha");
+function main()
+{
+    thread scripts\mp\infilexfil\c17_infil::function_2f340eb1a058fd55( "alpha" );
 }
 

@@ -1,4 +1,4 @@
-#using script_4fd828ec1a0272ae;
+#using scripts\anim\pain;
 
 #namespace civilian_pain;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x70
 // Size: 0x9
-function main() {
-    namespace_a0066f604127ee0a::main();
+function main()
+{
+    scripts\anim\pain::main();
 }
 

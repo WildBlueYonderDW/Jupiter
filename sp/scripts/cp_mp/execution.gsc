@@ -1,6 +1,6 @@
-#using script_6775ad452d13858;
 #using scripts\common\utility;
 #using scripts\common\values;
+#using scripts\cp_mp\operator;
 #using scripts\engine\utility;
 
 #namespace execution;
@@ -8,14 +8,19 @@
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28a
-// Size: 0x2f
-function function_1ea3e44fd8a18d1() {
-    if (isbot(self) && getdvarint(@"hash_eb038ca43332e718", 0) == 0) {
+// Size: 0x2f, Type: bool
+function function_1ea3e44fd8a18d1()
+{
+    if ( isbot( self ) && getdvarint( @"hash_eb038ca43332e718", 0 ) == 0 )
+    {
         return false;
     }
-    if (istestclient(self)) {
+    
+    if ( istestclient( self ) )
+    {
         return false;
     }
+    
     return true;
 }
 
@@ -23,35 +28,54 @@ function function_1ea3e44fd8a18d1() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c2
 // Size: 0x127
-function _giveexecution(ref, isfirstperson) {
-    if (!function_1ea3e44fd8a18d1()) {
+function _giveexecution( ref, isfirstperson )
+{
+    if ( !function_1ea3e44fd8a18d1() )
+    {
         return;
     }
+    
     thread execution_monitor();
-    if (function_3b6961b424a382f()) {
-        var_25a38dfaf37fc298 = tolower(getdvar(@"hash_88ba4ca6e5ff9d5a", ""));
-        if (isdefined(level.execution.table[var_25a38dfaf37fc298])) {
+    
+    if ( function_3b6961b424a382f() )
+    {
+        var_25a38dfaf37fc298 = tolower( getdvar( @"hash_88ba4ca6e5ff9d5a", "" ) );
+        
+        if ( isdefined( level.execution.table[ var_25a38dfaf37fc298 ] ) )
+        {
             ref = var_25a38dfaf37fc298;
         }
     }
-    _clearexecution(istrue(isfirstperson));
-    propweapon = execution_getpropweaponbyref(ref);
-    execution = execution_getexecutionbyref(ref);
-    assertex(isdefined(execution), "<dev string:x1c>" + ref);
-    if (!isdefined(execution)) {
+    
+    _clearexecution( istrue( isfirstperson ) );
+    propweapon = execution_getpropweaponbyref( ref );
+    execution = execution_getexecutionbyref( ref );
+    assertex( isdefined( execution ), "<dev string:x1c>" + ref );
+    
+    if ( !isdefined( execution ) )
+    {
         return;
     }
-    if (isdefined(propweapon)) {
-        self giveweapon(propweapon);
-        self giveexecution(execution, propweapon, istrue(isfirstperson));
-    } else {
-        self giveexecution(execution, undefined, istrue(isfirstperson));
+    
+    if ( isdefined( propweapon ) )
+    {
+        self giveweapon( propweapon );
+        self giveexecution( execution, propweapon, istrue( isfirstperson ) );
     }
-    if (istrue(function_700277400dcb7857(ref))) {
+    else
+    {
+        self giveexecution( execution, undefined, istrue( isfirstperson ) );
+    }
+    
+    if ( istrue( function_700277400dcb7857( ref ) ) )
+    {
         function_43a90e553f84c31c();
     }
+    
     self.executionref = ref;
-    if (issharedfuncdefined("game", "lpcFeatureGated") && ![[ getsharedfunc("game", "lpcFeatureGated") ]]()) {
+    
+    if ( issharedfuncdefined( "game", "lpcFeatureGated" ) && ![[ getsharedfunc( "game", "lpcFeatureGated" ) ]]() )
+    {
         thread watchinexecution();
     }
 }
@@ -60,13 +84,18 @@ function _giveexecution(ref, isfirstperson) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f1
 // Size: 0x5d
-function _clearexecution(isfirstperson) {
-    if (isdefined(self.executionref)) {
-        self clearexecution(istrue(isfirstperson));
-        propweapon = execution_getpropweaponbyref(self.executionref);
-        if (isdefined(propweapon) && self hasweapon(propweapon)) {
-            self takeweapon(propweapon);
+function _clearexecution( isfirstperson )
+{
+    if ( isdefined( self.executionref ) )
+    {
+        self clearexecution( istrue( isfirstperson ) );
+        propweapon = execution_getpropweaponbyref( self.executionref );
+        
+        if ( isdefined( propweapon ) && self hasweapon( propweapon ) )
+        {
+            self takeweapon( propweapon );
         }
+        
         self.executionref = undefined;
     }
 }
@@ -74,32 +103,44 @@ function _clearexecution(isfirstperson) {
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x456
-// Size: 0xc
-function hasexecution() {
-    return isdefined(self.executionref);
+// Size: 0xc, Type: bool
+function hasexecution()
+{
+    return isdefined( self.executionref );
 }
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x46b
 // Size: 0xc7
-function execution_monitor() {
-    self notify("exec_monitor_request");
-    self endon("exec_monitor_request");
-    while (true) {
-        self waittill("execution_begin", victiment);
-        if (isdefined(self.executionref) && isdefined(self.suit)) {
+function execution_monitor()
+{
+    self notify( "exec_monitor_request" );
+    self endon( "exec_monitor_request" );
+    
+    while ( true )
+    {
+        self waittill( "execution_begin", victiment );
+        
+        if ( isdefined( self.executionref ) && isdefined( self.suit ) )
+        {
             aliasstring = "mus_" + self.suit + "_" + self.executionref;
-            if (soundexists(aliasstring)) {
-                self playlocalsound(aliasstring);
-                victiment playlocalsound(aliasstring);
+            
+            if ( soundexists( aliasstring ) )
+            {
+                self playlocalsound( aliasstring );
+                victiment playlocalsound( aliasstring );
             }
         }
-        if (isdefined(victiment)) {
-            if (isdefined(victiment.basearchetype) && victiment.basearchetype == "zombie_base") {
-                victiment setentitysoundcontext("gender", "zombie");
+        
+        if ( isdefined( victiment ) )
+        {
+            if ( isdefined( victiment.basearchetype ) && victiment.basearchetype == "zombie_base" )
+            {
+                victiment setentitysoundcontext( "gender", "zombie" );
             }
         }
+        
         wait 2;
     }
 }
@@ -108,16 +149,19 @@ function execution_monitor() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x53a
 // Size: 0x8e
-function execution_init() {
-    assertex(!isdefined(level.execution), "execution_init was called more than once.");
+function execution_init()
+{
+    assertex( !isdefined( level.execution ), "execution_init was called more than once." );
     level.execution = spawnstruct();
     level.enableexecutionattackfunc = &enableexecutionattackwrapper;
     level.disableexecutionattackfunc = &disableexecutionattackwrapper;
     level.enableexecutionvictimfunc = &enableexecutionvictimwrapper;
     level.disableexecutionvictimfunc = &disableexecutionvictimwrapper;
     execution_loadtable();
-    if (issharedfuncdefined("execution", "init")) {
-        [[ getsharedfunc("execution", "init") ]]();
+    
+    if ( issharedfuncdefined( "execution", "init" ) )
+    {
+        [[ getsharedfunc( "execution", "init" ) ]]();
     }
 }
 
@@ -125,7 +169,8 @@ function execution_init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5d0
 // Size: 0x9
-function enableexecutionattackwrapper() {
+function enableexecutionattackwrapper()
+{
     self enableexecutionattack();
 }
 
@@ -133,7 +178,8 @@ function enableexecutionattackwrapper() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e1
 // Size: 0x9
-function disableexecutionattackwrapper() {
+function disableexecutionattackwrapper()
+{
     self disableexecutionattack();
 }
 
@@ -141,7 +187,8 @@ function disableexecutionattackwrapper() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f2
 // Size: 0x9
-function enableexecutionvictimwrapper() {
+function enableexecutionvictimwrapper()
+{
     self enableexecutionvictim();
 }
 
@@ -149,7 +196,8 @@ function enableexecutionvictimwrapper() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x603
 // Size: 0x9
-function disableexecutionvictimwrapper() {
+function disableexecutionvictimwrapper()
+{
     self disableexecutionvictim();
 }
 
@@ -157,28 +205,39 @@ function disableexecutionvictimwrapper() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x614
 // Size: 0x188
-function execution_loadtable() {
+function execution_loadtable()
+{
     level.execution.table = [];
-    foreach (executionref in namespace_465d40bb08a5337a::function_232a4826a2bd2bfd()) {
+    
+    foreach ( executionref in scripts\cp_mp\operator::function_232a4826a2bd2bfd() )
+    {
         struct = spawnstruct();
         struct.ref = executionref;
-        id = namespace_465d40bb08a5337a::function_3daf6bb451cf826e(executionref);
-        assertex(isdefined(id), "Executions error -  \"" + executionref + "\" has no id.");
-        struct.id = int(id);
-        execution = namespace_465d40bb08a5337a::function_75322d3c8f9c9ccb(executionref);
-        assertex(isdefined(execution) && execution != "", "Executions error -  \"" + executionref + "\" has no execution.");
-        if (execution != "none") {
+        id = scripts\cp_mp\operator::function_3daf6bb451cf826e( executionref );
+        assertex( isdefined( id ), "Executions error -  \"" + executionref + "\" has no id." );
+        struct.id = int( id );
+        execution = scripts\cp_mp\operator::function_75322d3c8f9c9ccb( executionref );
+        assertex( isdefined( execution ) && execution != "", "Executions error -  \"" + executionref + "\" has no execution." );
+        
+        if ( execution != "none" )
+        {
             struct.execution = execution;
         }
-        propweapon = namespace_465d40bb08a5337a::function_3bd82b573b8f64f3(executionref);
-        assertex(isdefined(propweapon) && propweapon != "", "Executions error -  \"" + executionref + "\" has no prop weapon.");
-        if (propweapon != "none") {
-            struct.propweapon = makeweapon(propweapon);
-            if (isnullweapon(struct.propweapon)) {
+        
+        propweapon = scripts\cp_mp\operator::function_3bd82b573b8f64f3( executionref );
+        assertex( isdefined( propweapon ) && propweapon != "", "Executions error -  \"" + executionref + "\" has no prop weapon." );
+        
+        if ( propweapon != "none" )
+        {
+            struct.propweapon = makeweapon( propweapon );
+            
+            if ( isnullweapon( struct.propweapon ) )
+            {
                 continue;
             }
         }
-        level.execution.table[executionref] = struct;
+        
+        level.execution.table[ executionref ] = struct;
     }
 }
 
@@ -186,12 +245,16 @@ function execution_loadtable() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x7a4
 // Size: 0x55
-function execution_getexecutionbyref(ref) {
-    assertex(isdefined(level.execution), "execution_getExecutionByRef called before execution_init.");
-    struct = level.execution.table[ref];
-    if (isdefined(struct)) {
+function execution_getexecutionbyref( ref )
+{
+    assertex( isdefined( level.execution ), "execution_getExecutionByRef called before execution_init." );
+    struct = level.execution.table[ ref ];
+    
+    if ( isdefined( struct ) )
+    {
         return struct.execution;
     }
+    
     return undefined;
 }
 
@@ -199,12 +262,16 @@ function execution_getexecutionbyref(ref) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x802
 // Size: 0x55
-function execution_getpropweaponbyref(ref) {
-    assertex(isdefined(level.execution), "execution_getPropWeaponByRef called before execution_init.");
-    struct = level.execution.table[ref];
-    if (isdefined(struct)) {
+function execution_getpropweaponbyref( ref )
+{
+    assertex( isdefined( level.execution ), "execution_getPropWeaponByRef called before execution_init." );
+    struct = level.execution.table[ ref ];
+    
+    if ( isdefined( struct ) )
+    {
         return struct.propweapon;
     }
+    
     return undefined;
 }
 
@@ -212,7 +279,8 @@ function execution_getpropweaponbyref(ref) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x860
 // Size: 0x16
-function execution_getrefbyplayer(player) {
+function execution_getrefbyplayer( player )
+{
     return player.executionref;
 }
 
@@ -220,10 +288,13 @@ function execution_getrefbyplayer(player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x87f
 // Size: 0x54
-function execution_getidbyref(ref) {
-    assertex(isdefined(level.execution), "execution_getIDByRef called before execution_init.");
-    struct = level.execution.table[ref];
-    if (isdefined(struct)) {
+function execution_getidbyref( ref )
+{
+    assertex( isdefined( level.execution ), "execution_getIDByRef called before execution_init." );
+    struct = level.execution.table[ ref ];
+    
+    if ( isdefined( struct ) )
+    {
         return struct.id;
     }
 }
@@ -232,10 +303,13 @@ function execution_getidbyref(ref) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x8db
 // Size: 0x54
-function function_700277400dcb7857(ref) {
-    assertex(isdefined(level.execution), "execution_getIDByRef called before execution_init.");
-    struct = level.execution.table[ref];
-    if (isdefined(struct)) {
+function function_700277400dcb7857( ref )
+{
+    assertex( isdefined( level.execution ), "execution_getIDByRef called before execution_init." );
+    struct = level.execution.table[ ref ];
+    
+    if ( isdefined( struct ) )
+    {
         return struct.petenabled;
     }
 }
@@ -244,25 +318,32 @@ function function_700277400dcb7857(ref) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x937
 // Size: 0x15
-function function_43a90e553f84c31c() {
-    scripts\common\values::set("pet_execution", "hide_operator_backpack", 1);
+function function_43a90e553f84c31c()
+{
+    scripts\common\values::set( "pet_execution", "hide_operator_backpack", 1 );
 }
 
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x954
 // Size: 0x6d
-function execution_blockladders() {
-    if (self isonladder()) {
-        if (!istrue(self.ladderexecutionblocked)) {
-            val::set("ladderExecution", "execution_attack", 0);
-            val::set("ladderExecution", "execution_victim", 0);
+function execution_blockladders()
+{
+    if ( self isonladder() )
+    {
+        if ( !istrue( self.ladderexecutionblocked ) )
+        {
+            val::set( "ladderExecution", "execution_attack", 0 );
+            val::set( "ladderExecution", "execution_victim", 0 );
             self.ladderexecutionblocked = 1;
         }
+        
         return;
     }
-    if (istrue(self.ladderexecutionblocked)) {
-        val::reset_all("ladderExecution");
+    
+    if ( istrue( self.ladderexecutionblocked ) )
+    {
+        val::reset_all( "ladderExecution" );
         self.ladderexecutionblocked = undefined;
     }
 }
@@ -271,21 +352,30 @@ function execution_blockladders() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9c9
 // Size: 0x82
-function watchinexecution() {
-    self endon("disconnect");
-    self notify("watchInExecution");
-    self endon("watchInExecution");
+function watchinexecution()
+{
+    self endon( "disconnect" );
+    self notify( "watchInExecution" );
+    self endon( "watchInExecution" );
     var_a9ee87cc06bd6b39 = 0;
-    while (true) {
+    
+    while ( true )
+    {
         inexecution = self isinexecutionattack() || self isinexecutionvictim();
-        if (inexecution != var_a9ee87cc06bd6b39 && !scripts\common\utility::isusingremote()) {
-            if (inexecution) {
+        
+        if ( inexecution != var_a9ee87cc06bd6b39 && !scripts\common\utility::isusingremote() )
+        {
+            if ( inexecution )
+            {
                 self enablephysicaldepthoffieldscripting();
-                self setphysicaldepthoffield(2.5, 60, 20, 20);
-            } else {
+                self setphysicaldepthoffield( 2.5, 60, 20, 20 );
+            }
+            else
+            {
                 self disablephysicaldepthoffieldscripting();
             }
         }
+        
         var_a9ee87cc06bd6b39 = inexecution;
         waitframe();
     }
@@ -294,8 +384,9 @@ function watchinexecution() {
 // Namespace execution / scripts\cp_mp\execution
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa53
-// Size: 0x12
-function is_in_takedown() {
+// Size: 0x12, Type: bool
+function is_in_takedown()
+{
     return self isinexecutionvictim() || self isinexecutionattack();
 }
 

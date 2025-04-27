@@ -9,7 +9,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa7
 // Size: 0x2
-function main() {
+function main()
+{
     
 }
 

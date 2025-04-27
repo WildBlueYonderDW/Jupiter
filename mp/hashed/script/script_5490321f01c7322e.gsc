@@ -7,8 +7,9 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xa3
 // Size: 0x24
-function function_6c5371915054a3f9(state_name) {
-    assert(isstring(state_name));
+function function_6c5371915054a3f9( state_name )
+{
+    assert( isstring( state_name ) );
     self.bite_state = state_name;
 }
 
@@ -16,11 +17,14 @@ function function_6c5371915054a3f9(state_name) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcf
 // Size: 0x36
-function function_3ce3c307b88d4237() {
-    if (istrue(self.var_4507177651176666)) {
+function function_3ce3c307b88d4237()
+{
+    if ( istrue( self.var_4507177651176666 ) )
+    {
         return;
     }
+    
     self.var_4507177651176666 = 1;
-    function_ac90fa5cc0a80298(default_to(self.bite_state, "bite_in"));
+    function_ac90fa5cc0a80298( default_to( self.bite_state, "bite_in" ) );
 }
 

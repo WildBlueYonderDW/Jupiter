@@ -18,7 +18,8 @@
 // Params 0, eflags: 0x1
 // Checksum 0x0, Offset: 0x220
 // Size: 0x10
-function autoexec init() {
+function autoexec init()
+{
     level.var_87cbaa272123525e = &main;
 }
 
@@ -26,26 +27,32 @@ function autoexec init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x238
 // Size: 0xda
-function main() {
-    function_eb7f544259415a09("mp_jup_bigmap_ob");
+function main()
+{
+    function_eb7f544259415a09( "mp_jup_bigmap_ob" );
     level thread function_939b7ddd9a2592b3();
     namespace_92f8a210c3f60bd9::main();
     namespace_c1984ad5d2c85b81::main();
-    scripts\engine\utility::flag_set("gas_station_create_script_initialized");
-    level callback::add("register_activities", &function_98dce743b7f273fd);
-    level callback::add("register_objectives", &function_ecac54e0ca8d7e2);
+    scripts\engine\utility::flag_set( "gas_station_create_script_initialized" );
+    level callback::add( "register_activities", &function_98dce743b7f273fd );
+    level callback::add( "register_objectives", &function_ecac54e0ca8d7e2 );
     function_3c461caaf1b29a48();
-    level callback::add("register_features", &function_78d857de4d17073);
+    level callback::add( "register_features", &function_78d857de4d17073 );
     namespace_981841431137dfcc::main();
     thread namespace_6776e8e74ed64842::init();
-    if (getdvar(@"hash_6ffd9adb060c50c9", "0") == "1") {
+    
+    if ( getdvar( @"hash_6ffd9adb060c50c9", "0" ) == "1" )
+    {
         namespace_63e54e5e8c51a163::main();
         thread namespace_d7e80b14e1130dc4::init();
     }
-    if (getdvar(@"hash_6e5464e5ee3bd77d", "0") == "1") {
+    
+    if ( getdvar( @"hash_6e5464e5ee3bd77d", "0" ) == "1" )
+    {
         namespace_7d12a25cf603c57b::main();
         thread namespace_d0c78bdaf71b04f6::init();
     }
+    
     thread function_5a5276bd989b7d96();
 }
 
@@ -53,18 +60,25 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x31a
 // Size: 0x129
-function function_939b7ddd9a2592b3() {
-    setdvar(@"hash_f1d095735ac37f33", 1);
+function function_939b7ddd9a2592b3()
+{
+    setdvar( @"hash_f1d095735ac37f33", 1 );
     waitframe();
-    function_9b8829ab4092a7d7("ob_zombie_ambient", 1);
-    a_pos = scripts\engine\utility::getstructarray("s_ob_infil_supress", "targetname");
-    foreach (pos in a_pos) {
-        function_606642b946a01237("infil_supress", pos.origin, pos.radius, 1);
+    function_9b8829ab4092a7d7( "ob_zombie_ambient", 1 );
+    a_pos = scripts\engine\utility::getstructarray( "s_ob_infil_supress", "targetname" );
+    
+    foreach ( pos in a_pos )
+    {
+        function_606642b946a01237( "infil_supress", pos.origin, pos.radius, 1 );
     }
-    var_102014ab68ac4b78 = scripts\engine\utility::getstructarray("s_ambient_blocker", "targetname");
-    foreach (pos in var_102014ab68ac4b78) {
-        if (isdefined(pos.radius)) {
-            function_606642b946a01237("ambient_blocker", pos.origin, pos.radius, 1);
+    
+    var_102014ab68ac4b78 = scripts\engine\utility::getstructarray( "s_ambient_blocker", "targetname" );
+    
+    foreach ( pos in var_102014ab68ac4b78 )
+    {
+        if ( isdefined( pos.radius ) )
+        {
+            function_606642b946a01237( "ambient_blocker", pos.origin, pos.radius, 1 );
         }
     }
 }
@@ -73,16 +87,18 @@ function function_939b7ddd9a2592b3() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x44b
 // Size: 0x10
-function function_5a5276bd989b7d96() {
+function function_5a5276bd989b7d96()
+{
     function_f2a6094e2bc9028();
-    namespace_614554f86e52695c::function_b1fa4578ef08136f();
+    namespace_614554f86e52695c::process_create_script();
 }
 
 // Namespace namespace_5fdb1128f67677aa / namespace_38c12a9e6798f1cb
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x463
 // Size: 0xe
-function function_f2a6094e2bc9028() {
-    flag_wait("mp_jup_st_a_ob_contracts_merc_defend_cs_completed");
+function function_f2a6094e2bc9028()
+{
+    flag_wait( "mp_jup_st_a_ob_contracts_merc_defend_cs_completed" );
 }
 

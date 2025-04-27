@@ -16,64 +16,76 @@
 #using scripts\mp\utility\weapon;
 #using scripts\mp\vehicles\damage;
 
-#namespace namespace_651a05358f2f3326;
+#namespace chopper_gunner_mp;
 
-// Namespace namespace_651a05358f2f3326 / scripts\mp\killstreaks\chopper_gunner_mp
+// Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d2
 // Size: 0x6b
-function init() {
-    scripts\mp\killstreaks\killstreaks::registerkillstreak("chopper_gunner", &scripts\cp_mp\killstreaks\chopper_gunner::tryusechoppergunnerfromstruct);
-    scripts\engine\utility::registersharedfunc("chopper_gunner", "set_vehicle_hit_damage_data", &chopper_gunner_set_vehicle_hit_damage_data);
-    scripts\engine\utility::registersharedfunc("chopper_gunner", "findTargetStruct", &chopper_gunner_findtargetstruct);
-    scripts\engine\utility::registersharedfunc("chopper_gunner", "assignTargetMarkers", &chopper_gunner_assigntargetmarkers);
-    scripts\engine\utility::registersharedfunc("chopper_gunner", "attachXRays", &function_dacd2cee9c44366f);
+function init()
+{
+    scripts\mp\killstreaks\killstreaks::registerkillstreak( "chopper_gunner", &scripts\cp_mp\killstreaks\chopper_gunner::tryusechoppergunnerfromstruct );
+    scripts\engine\utility::registersharedfunc( "chopper_gunner", "set_vehicle_hit_damage_data", &chopper_gunner_set_vehicle_hit_damage_data );
+    scripts\engine\utility::registersharedfunc( "chopper_gunner", "findTargetStruct", &chopper_gunner_findtargetstruct );
+    scripts\engine\utility::registersharedfunc( "chopper_gunner", "assignTargetMarkers", &chopper_gunner_assigntargetmarkers );
+    scripts\engine\utility::registersharedfunc( "chopper_gunner", "attachXRays", &function_dacd2cee9c44366f );
 }
 
-// Namespace namespace_651a05358f2f3326 / scripts\mp\killstreaks\chopper_gunner_mp
+// Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x245
 // Size: 0x1c
-function chopper_gunner_set_vehicle_hit_damage_data(ref, hitstokill) {
-    scripts\mp\vehicles\damage::set_vehicle_hit_damage_data(ref, hitstokill);
+function chopper_gunner_set_vehicle_hit_damage_data( ref, hitstokill )
+{
+    scripts\mp\vehicles\damage::set_vehicle_hit_damage_data( ref, hitstokill );
 }
 
-// Namespace namespace_651a05358f2f3326 / scripts\mp\killstreaks\chopper_gunner_mp
+// Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x269
 // Size: 0x1b
-function chopper_gunner_findtargetstruct(structlinkname, var_6e1e1e75fc237eb1) {
-    return scripts\cp_mp\killstreaks\chopper_support::choppersupport_findtargetstruct(structlinkname, var_6e1e1e75fc237eb1);
+function chopper_gunner_findtargetstruct( structlinkname, var_6e1e1e75fc237eb1 )
+{
+    return scripts\cp_mp\killstreaks\chopper_support::choppersupport_findtargetstruct( structlinkname, var_6e1e1e75fc237eb1 );
 }
 
-// Namespace namespace_651a05358f2f3326 / scripts\mp\killstreaks\chopper_gunner_mp
+// Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x11b
-function chopper_gunner_assigntargetmarkers() {
+function chopper_gunner_assigntargetmarkers()
+{
     var_2cd52bbc2a67b7cf = [];
     var_5408012d0aed529a = [];
     character_array = level.players;
-    foreach (player in character_array) {
-        if (level.teambased && player.team == self.team || player == self.owner) {
-            var_5408012d0aed529a[var_5408012d0aed529a.size] = player;
+    
+    foreach ( player in character_array )
+    {
+        if ( level.teambased && player.team == self.team || player == self.owner )
+        {
+            var_5408012d0aed529a[ var_5408012d0aed529a.size ] = player;
             continue;
         }
-        if (player scripts\mp\utility\perk::_hasperk("specialty_noscopeoutline")) {
+        
+        if ( player scripts\mp\utility\perk::_hasperk( "specialty_noscopeoutline" ) )
+        {
             continue;
         }
-        var_2cd52bbc2a67b7cf[var_2cd52bbc2a67b7cf.size] = player;
+        
+        var_2cd52bbc2a67b7cf[ var_2cd52bbc2a67b7cf.size ] = player;
     }
-    self.enemytargetmarkergroup = scripts\cp_mp\targetmarkergroups::targetmarkergroup_on("overlaytargetmarkerenemy", self.owner, var_2cd52bbc2a67b7cf, self.owner, 0, 1, 1);
-    self.friendlytargetmarkergroup = scripts\cp_mp\targetmarkergroups::targetmarkergroup_on("overlaytargetmarkerfriendly", self.owner, var_5408012d0aed529a, self.owner, 1, 1);
+    
+    self.enemytargetmarkergroup = scripts\cp_mp\targetmarkergroups::targetmarkergroup_on( "overlaytargetmarkerenemy", self.owner, var_2cd52bbc2a67b7cf, self.owner, 0, 1, 1 );
+    self.friendlytargetmarkergroup = scripts\cp_mp\targetmarkergroups::targetmarkergroup_on( "overlaytargetmarkerfriendly", self.owner, var_5408012d0aed529a, self.owner, 1, 1 );
 }
 
-// Namespace namespace_651a05358f2f3326 / scripts\mp\killstreaks\chopper_gunner_mp
+// Namespace chopper_gunner_mp / scripts\mp\killstreaks\chopper_gunner_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3b0
 // Size: 0x20
-function function_dacd2cee9c44366f(choppergunner) {
-    choppergunner function_5226227bce83ebe9(3, choppergunner.team);
+function function_dacd2cee9c44366f( choppergunner )
+{
+    choppergunner function_5226227bce83ebe9( 3, choppergunner.team );
     return choppergunner;
 }
 

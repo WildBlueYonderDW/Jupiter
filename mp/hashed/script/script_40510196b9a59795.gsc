@@ -1,5 +1,5 @@
-#using script_7ff3a914e6c698c5;
 #using scripts\asm\asm;
+#using scripts\asm\shared\variant_asm;
 #using scripts\common\callbacks;
 #using scripts\engine\math;
 #using scripts\engine\utility;
@@ -10,7 +10,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb
 // Size: 0xe
-function function_7ada97e01329f789() {
-    function_ac90fa5cc0a80298("hide_in");
+function function_7ada97e01329f789()
+{
+    function_ac90fa5cc0a80298( "hide_in" );
 }
 

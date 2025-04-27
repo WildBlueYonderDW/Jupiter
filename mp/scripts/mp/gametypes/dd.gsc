@@ -26,30 +26,38 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf2c
 // Size: 0x40f
-function main() {
-    if (getdvar(@"g_mapname") == "mp_background") {
+function main()
+{
+    if ( getdvar( @"g_mapname" ) == "mp_background" )
+    {
         return;
     }
+    
     scripts\mp\globallogic::init();
     scripts\mp\globallogic::setupcallbacks();
-    allowed[0] = getgametype();
-    allowed[1] = "dd_bombzone";
-    allowed[2] = "blocker";
-    scripts\mp\gameobjects::main(allowed);
-    if (isusingmatchrulesdata()) {
+    allowed[ 0 ] = getgametype();
+    allowed[ 1 ] = "dd_bombzone";
+    allowed[ 2 ] = "blocker";
+    scripts\mp\gameobjects::main( allowed );
+    
+    if ( isusingmatchrulesdata() )
+    {
         level.initializematchrules = &initializematchrules;
         [[ level.initializematchrules ]]();
         level thread reinitializematchrulesonmigration();
-    } else {
-        registerroundswitchdvar(getgametype(), 1, 0, 9);
-        registertimelimitdvar(getgametype(), 180);
-        registerscorelimitdvar(getgametype(), 0);
-        registerroundlimitdvar(getgametype(), 3);
-        registerwinlimitdvar(getgametype(), 2);
-        registernumlivesdvar(getgametype(), 0);
-        registerhalftimedvar(getgametype(), 0);
-        setovertimelimitdvar(180);
     }
+    else
+    {
+        registerroundswitchdvar( getgametype(), 1, 0, 9 );
+        registertimelimitdvar( getgametype(), 180 );
+        registerscorelimitdvar( getgametype(), 0 );
+        registerroundlimitdvar( getgametype(), 3 );
+        registerwinlimitdvar( getgametype(), 2 );
+        registernumlivesdvar( getgametype(), 0 );
+        registerhalftimedvar( getgametype(), 0 );
+        setovertimelimitdvar( 180 );
+    }
+    
     updategametypedvars();
     level.objectivebased = 1;
     level.teambased = 1;
@@ -68,118 +76,159 @@ function main() {
     level.aplanted = 0;
     level.bplanted = 0;
     scripts\mp\gametypes\obj_bombzone::setbombtimeromnvars();
-    if (scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924()) {
-        game["dialog"]["gametype"] = "iw9_mpdd_mode_uktl_ddt1";
-    } else {
-        game["dialog"]["gametype"] = "gametype_demo";
+    
+    if ( scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924() )
+    {
+        game[ "dialog" ][ "gametype" ] = "iw9_mpdd_mode_uktl_ddt1";
     }
-    game["dialog"]["gametype"] = "gametype_demo";
-    if (getdvarint(@"hash_4a2b3d01a81655a6")) {
-        game["dialog"]["gametype"] = "dh_" + game["dialog"]["gametype"];
-    } else if (getdvarint(hashcat(@"scr_", getgametype(), "_promode"))) {
-        game["dialog"]["gametype"] = game["dialog"]["gametype"] + "_pro";
+    else
+    {
+        game[ "dialog" ][ "gametype" ] = "gametype_demo";
     }
-    game["dialog"]["bomb_achieve"] = "dx_mp_sede_game_uktl_sdba";
-    game["dialog"]["bomb_taken"] = "dx_mp_sede_game_uktl_sdbt";
-    game["dialog"]["bomb_lost"] = "dx_mp_sede_game_uktl_sdbl";
-    game["dialog"]["bomb_defused"] = "dx_mp_sede_game_uktl_bmdf";
-    game["dialog"]["bomb_planted"] = "dx_mp_sede_game_uktl_bmbp";
-    game["dialog"]["enemy_bomb_a"] = "dx_mp_sede_game_uktl_bmea";
-    game["dialog"]["enemy_bomb_b"] = "dx_mp_sede_game_uktl_bmeb";
-    game["dialog"]["enemy_bomb_defused"] = "dx_mp_sede_game_uktl_bmde";
-    game["dialog"]["enemy_bomb_planted"] = "dx_mp_sede_game_uktl_bmpe";
-    game["dialog"]["bomb_planting"] = "dx_mp_sede_game_uktl_bmpl";
-    game["dialog"]["bomb_planting_a"] = "dx_mp_sede_game_uktl_bmpa";
-    game["dialog"]["bomb_planting_b"] = "dx_mp_sede_game_uktl_bmpb";
-    game["dialog"]["bomb_destroyed_en"] = "objective_destroyed";
-    if (!isdefined(game["roundsPlayed"])) {
+    
+    game[ "dialog" ][ "gametype" ] = "gametype_demo";
+    
+    if ( getdvarint( @"hash_4a2b3d01a81655a6" ) )
+    {
+        game[ "dialog" ][ "gametype" ] = "dh_" + game[ "dialog" ][ "gametype" ];
+    }
+    else if ( getdvarint( hashcat( @"scr_", getgametype(), "_promode" ) ) )
+    {
+        game[ "dialog" ][ "gametype" ] = game[ "dialog" ][ "gametype" ] + "_pro";
+    }
+    
+    game[ "dialog" ][ "bomb_achieve" ] = "dx_mp_sede_game_uktl_sdba";
+    game[ "dialog" ][ "bomb_taken" ] = "dx_mp_sede_game_uktl_sdbt";
+    game[ "dialog" ][ "bomb_lost" ] = "dx_mp_sede_game_uktl_sdbl";
+    game[ "dialog" ][ "bomb_defused" ] = "dx_mp_sede_game_uktl_bmdf";
+    game[ "dialog" ][ "bomb_planted" ] = "dx_mp_sede_game_uktl_bmbp";
+    game[ "dialog" ][ "enemy_bomb_a" ] = "dx_mp_sede_game_uktl_bmea";
+    game[ "dialog" ][ "enemy_bomb_b" ] = "dx_mp_sede_game_uktl_bmeb";
+    game[ "dialog" ][ "enemy_bomb_defused" ] = "dx_mp_sede_game_uktl_bmde";
+    game[ "dialog" ][ "enemy_bomb_planted" ] = "dx_mp_sede_game_uktl_bmpe";
+    game[ "dialog" ][ "bomb_planting" ] = "dx_mp_sede_game_uktl_bmpl";
+    game[ "dialog" ][ "bomb_planting_a" ] = "dx_mp_sede_game_uktl_bmpa";
+    game[ "dialog" ][ "bomb_planting_b" ] = "dx_mp_sede_game_uktl_bmpb";
+    game[ "dialog" ][ "bomb_destroyed_en" ] = "objective_destroyed";
+    
+    if ( !isdefined( game[ "roundsPlayed" ] ) )
+    {
         var_4edd1486c09dbedb = "boost_demoattack";
         var_576426d0d8b57b = "boost_demodefend";
-    } else if (game["roundsPlayed"] == 2) {
+    }
+    else if ( game[ "roundsPlayed" ] == 2 )
+    {
         var_4edd1486c09dbedb = "boost_demo_ot";
         var_576426d0d8b57b = "boost_demo_ot";
-    } else {
+    }
+    else
+    {
         var_4edd1486c09dbedb = "boost_demoattack_short";
         var_576426d0d8b57b = "boost_demodefend_short";
     }
-    game["dialog"]["offense_obj"] = var_4edd1486c09dbedb;
-    game["dialog"]["defense_obj"] = var_576426d0d8b57b;
-    return isdefined(game["status"]) && game["status"] == "overtime";
+    
+    game[ "dialog" ][ "offense_obj" ] = var_4edd1486c09dbedb;
+    game[ "dialog" ][ "defense_obj" ] = var_576426d0d8b57b;
+    return isdefined( game[ "status" ] ) && game[ "status" ] == "overtime";
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x139e
 // Size: 0xea
-function initializematchrules() {
+function initializematchrules()
+{
     setcommonrulesfrommatchrulesdata();
-    setdynamicdvar(@"hash_8851eccfcb6cbd95", getmatchrulesdata("bombData", "bombTimer"));
-    setdynamicdvar(@"hash_ba0a2161e1a0d920", getmatchrulesdata("bombData", "plantTime"));
-    setdynamicdvar(@"hash_5b309742f9cbd98b", getmatchrulesdata("bombData", "defuseTime"));
-    setdynamicdvar(@"hash_ba454753d970e1aa", getmatchrulesdata("bombData", "silentPlant"));
-    setdynamicdvar(@"hash_ad7b476595b0c3b3", getmatchrulesdata("demData", "extraTime"));
-    setdynamicdvar(@"hash_da793e325bd82aa", getmatchrulesdata("demData", "overtimeLimit"));
-    setdynamicdvar(@"hash_6d1378f0e89dc70c", 0);
-    registerhalftimedvar("dd", 0);
-    setdynamicdvar(@"hash_def21766b9ba47a8", 0);
+    setdynamicdvar( @"hash_8851eccfcb6cbd95", getmatchrulesdata( "bombData", "bombTimer" ) );
+    setdynamicdvar( @"hash_ba0a2161e1a0d920", getmatchrulesdata( "bombData", "plantTime" ) );
+    setdynamicdvar( @"hash_5b309742f9cbd98b", getmatchrulesdata( "bombData", "defuseTime" ) );
+    setdynamicdvar( @"hash_ba454753d970e1aa", getmatchrulesdata( "bombData", "silentPlant" ) );
+    setdynamicdvar( @"hash_ad7b476595b0c3b3", getmatchrulesdata( "demData", "extraTime" ) );
+    setdynamicdvar( @"hash_da793e325bd82aa", getmatchrulesdata( "demData", "overtimeLimit" ) );
+    setdynamicdvar( @"hash_6d1378f0e89dc70c", 0 );
+    registerhalftimedvar( "dd", 0 );
+    setdynamicdvar( @"hash_def21766b9ba47a8", 0 );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1490
 // Size: 0x1c
-function onprecachegametype() {
-    game["bomb_dropped_sound"] = "iw9_mp_ui_objective_lost";
-    game["bomb_recovered_sound"] = "iw9_mp_ui_objective_taken";
+function onprecachegametype()
+{
+    game[ "bomb_dropped_sound" ] = "iw9_mp_ui_objective_lost";
+    game[ "bomb_recovered_sound" ] = "iw9_mp_ui_objective_taken";
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x14b4
 // Size: 0x220
-function onstartgametype() {
-    setomnvar("ui_victory_condition_completed", 0);
-    if (game["roundsPlayed"] == 2) {
-        game["status"] = "overtime";
-        setdvar(@"ui_overtime", 1);
+function onstartgametype()
+{
+    setomnvar( "ui_victory_condition_completed", 0 );
+    
+    if ( game[ "roundsPlayed" ] == 2 )
+    {
+        game[ "status" ] = "overtime";
+        setdvar( @"ui_overtime", 1 );
     }
-    if (inovertime()) {
-        setomnvar("ui_round_hint_override_attackers", 1);
-        setomnvar("ui_round_hint_override_defenders", 1);
+    
+    if ( inovertime() )
+    {
+        setomnvar( "ui_round_hint_override_attackers", 1 );
+        setomnvar( "ui_round_hint_override_defenders", 1 );
     }
-    if (!isdefined(game["switchedsides"])) {
-        game["switchedsides"] = 0;
+    
+    if ( !isdefined( game[ "switchedsides" ] ) )
+    {
+        game[ "switchedsides" ] = 0;
     }
-    if (game["switchedsides"]) {
-        oldattackers = game["attackers"];
-        olddefenders = game["defenders"];
-        game["attackers"] = olddefenders;
-        game["defenders"] = oldattackers;
+    
+    if ( game[ "switchedsides" ] )
+    {
+        oldattackers = game[ "attackers" ];
+        olddefenders = game[ "defenders" ];
+        game[ "attackers" ] = olddefenders;
+        game[ "defenders" ] = oldattackers;
     }
+    
     level.usestartspawns = 1;
-    setclientnamemode("manual_change");
-    if (inovertime()) {
-        game["dialog"]["defense_obj"] = "obj_destroy";
+    setclientnamemode( "manual_change" );
+    
+    if ( inovertime() )
+    {
+        game[ "dialog" ][ "defense_obj" ] = "obj_destroy";
     }
-    level._effect["bomb_explosion"] = loadfx("vfx/iw9/dmz/bombsite/vfx_dmz_bombsite_expl.vfx");
-    level._effect["vehicle_explosion"] = loadfx("vfx/core/expl/small_vehicle_explosion_new.vfx");
-    level._effect["building_explosion"] = loadfx("vfx/iw7/_requests/mp/vfx_debug_warning.vfx");
-    setobjectivetext(game["attackers"], %OBJECTIVES/DD_ATTACKER);
-    setobjectivetext(game["defenders"], %OBJECTIVES/DD_DEFENDER);
-    if (level.splitscreen) {
-        setobjectivescoretext(game["attackers"], %OBJECTIVES/DD_ATTACKER);
-        setobjectivescoretext(game["defenders"], %OBJECTIVES/DD_DEFENDER);
-    } else {
-        setobjectivescoretext(game["attackers"], %OBJECTIVES/DD_ATTACKER_SCORE);
-        setobjectivescoretext(game["defenders"], %OBJECTIVES/DD_DEFENDER_SCORE);
+    
+    level._effect[ "bomb_explosion" ] = loadfx( "vfx/iw9/dmz/bombsite/vfx_dmz_bombsite_expl.vfx" );
+    level._effect[ "vehicle_explosion" ] = loadfx( "vfx/core/expl/small_vehicle_explosion_new.vfx" );
+    level._effect[ "building_explosion" ] = loadfx( "vfx/iw7/_requests/mp/vfx_debug_warning.vfx" );
+    setobjectivetext( game[ "attackers" ], %OBJECTIVES/DD_ATTACKER );
+    setobjectivetext( game[ "defenders" ], %OBJECTIVES/DD_DEFENDER );
+    
+    if ( level.splitscreen )
+    {
+        setobjectivescoretext( game[ "attackers" ], %OBJECTIVES/DD_ATTACKER );
+        setobjectivescoretext( game[ "defenders" ], %OBJECTIVES/DD_DEFENDER );
     }
-    if (inovertime()) {
-        setobjectivehinttext(game["attackers"], %OBJECTIVES/DD_OVERTIME_HINT);
-        setobjectivehinttext(game["defenders"], %OBJECTIVES/DD_OVERTIME_HINT);
-    } else {
-        setobjectivehinttext(game["attackers"], %OBJECTIVES/DD_ATTACKER_HINT);
-        setobjectivehinttext(game["defenders"], %OBJECTIVES/DD_DEFENDER_HINT);
+    else
+    {
+        setobjectivescoretext( game[ "attackers" ], %OBJECTIVES/DD_ATTACKER_SCORE );
+        setobjectivescoretext( game[ "defenders" ], %OBJECTIVES/DD_DEFENDER_SCORE );
     }
+    
+    if ( inovertime() )
+    {
+        setobjectivehinttext( game[ "attackers" ], %OBJECTIVES/DD_OVERTIME_HINT );
+        setobjectivehinttext( game[ "defenders" ], %OBJECTIVES/DD_OVERTIME_HINT );
+    }
+    else
+    {
+        setobjectivehinttext( game[ "attackers" ], %OBJECTIVES/DD_ATTACKER_HINT );
+        setobjectivehinttext( game[ "defenders" ], %OBJECTIVES/DD_DEFENDER_HINT );
+    }
+    
     thread waittoprocess();
     setupobjectiveicons();
     thread bombs();
@@ -189,74 +238,86 @@ function onstartgametype() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x16dc
 // Size: 0x44a
-function initspawns() {
-    if (spawnlogic::function_bff229a11ecd1e34()) {
-        spawnlogic::setactivespawnlogic(#"default");
-    } else {
-        scripts\mp\spawnlogic::setactivespawnlogic("Default", "Crit_Default");
+function initspawns()
+{
+    if ( spawnlogic::function_bff229a11ecd1e34() )
+    {
+        spawnlogic::setactivespawnlogic( #"default" );
     }
-    level.spawnmins = (2.14748e+09, 2.14748e+09, 2.14748e+09);
-    level.spawnmaxs = (-2147483647, -2147483647, -2147483647);
-    scripts\mp\spawnlogic::addstartspawnpoints("mp_dd_spawn_attacker_start");
-    scripts\mp\spawnlogic::addstartspawnpoints("mp_dd_spawn_defender_start");
-    scripts\mp\spawnlogic::addspawnpoints(game["attackers"], "mp_dd_spawn_attacker_start");
-    scripts\mp\spawnlogic::addspawnpoints(game["defenders"], "mp_dd_spawn_defender_start");
-    attackers = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_attacker_start");
-    defenders = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_defender_start");
-    scripts\mp\spawnlogic::registerspawnset("start_attackers", attackers);
-    scripts\mp\spawnlogic::registerspawnset("start_defenders", defenders);
-    scripts\mp\spawnlogic::addspawnpoints(game["defenders"], "mp_dd_spawn_defender");
-    scripts\mp\spawnlogic::addspawnpoints(game["defenders"], "mp_dd_spawn_defender_a", 1);
-    scripts\mp\spawnlogic::addspawnpoints(game["defenders"], "mp_dd_spawn_defender_b", 1);
-    scripts\mp\spawnlogic::addspawnpoints(game["attackers"], "mp_dd_spawn_attacker");
-    scripts\mp\spawnlogic::addspawnpoints(game["attackers"], "mp_dd_spawn_attacker_a", 1);
-    scripts\mp\spawnlogic::addspawnpoints(game["attackers"], "mp_dd_spawn_attacker_b", 1);
-    level.mapcenter = scripts\mp\spawnlogic::findboxcenter(level.spawnmins, level.spawnmaxs);
-    setmapcenter(level.mapcenter);
-    if (istrue(level.adjustshipmentspawns)) {
-        scripts\mp\spawnlogic::addspawnpoints("allies", "mp_tdm_spawn");
-        scripts\mp\spawnlogic::addspawnpoints("axis", "mp_tdm_spawn");
-        scripts\mp\spawnlogic::addspawnpoints("allies", "mp_tdm_spawn_secondary", 1, 1);
-        scripts\mp\spawnlogic::addspawnpoints("axis", "mp_tdm_spawn_secondary", 1, 1);
-        tdmspawns = scripts\mp\spawnlogic::getspawnpointarray("mp_tdm_spawn");
-        var_3d83bc62b320d11a = scripts\mp\spawnlogic::getspawnpointarray("mp_tdm_spawn_secondary");
-        scripts\mp\spawnlogic::registerspawnset("normal", tdmspawns);
-        scripts\mp\spawnlogic::registerspawnset("fallback", var_3d83bc62b320d11a);
+    else
+    {
+        scripts\mp\spawnlogic::setactivespawnlogic( "Default", "Crit_Default" );
+    }
+    
+    level.spawnmins = ( 2.14748e+09, 2.14748e+09, 2.14748e+09 );
+    level.spawnmaxs = ( -2147483647, -2147483647, -2147483647 );
+    scripts\mp\spawnlogic::addstartspawnpoints( "mp_dd_spawn_attacker_start" );
+    scripts\mp\spawnlogic::addstartspawnpoints( "mp_dd_spawn_defender_start" );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "attackers" ], "mp_dd_spawn_attacker_start" );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "defenders" ], "mp_dd_spawn_defender_start" );
+    attackers = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_attacker_start" );
+    defenders = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_defender_start" );
+    scripts\mp\spawnlogic::registerspawnset( "start_attackers", attackers );
+    scripts\mp\spawnlogic::registerspawnset( "start_defenders", defenders );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "defenders" ], "mp_dd_spawn_defender" );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "defenders" ], "mp_dd_spawn_defender_a", 1 );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "defenders" ], "mp_dd_spawn_defender_b", 1 );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "attackers" ], "mp_dd_spawn_attacker" );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "attackers" ], "mp_dd_spawn_attacker_a", 1 );
+    scripts\mp\spawnlogic::addspawnpoints( game[ "attackers" ], "mp_dd_spawn_attacker_b", 1 );
+    level.mapcenter = scripts\mp\spawnlogic::findboxcenter( level.spawnmins, level.spawnmaxs );
+    setmapcenter( level.mapcenter );
+    
+    if ( istrue( level.adjustshipmentspawns ) )
+    {
+        scripts\mp\spawnlogic::addspawnpoints( "allies", "mp_tdm_spawn" );
+        scripts\mp\spawnlogic::addspawnpoints( "axis", "mp_tdm_spawn" );
+        scripts\mp\spawnlogic::addspawnpoints( "allies", "mp_tdm_spawn_secondary", 1, 1 );
+        scripts\mp\spawnlogic::addspawnpoints( "axis", "mp_tdm_spawn_secondary", 1, 1 );
+        tdmspawns = scripts\mp\spawnlogic::getspawnpointarray( "mp_tdm_spawn" );
+        var_3d83bc62b320d11a = scripts\mp\spawnlogic::getspawnpointarray( "mp_tdm_spawn_secondary" );
+        scripts\mp\spawnlogic::registerspawnset( "normal", tdmspawns );
+        scripts\mp\spawnlogic::registerspawnset( "fallback", var_3d83bc62b320d11a );
         return;
     }
-    level.spawn_defenders = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_defender");
-    scripts\mp\spawnlogic::registerspawnset("dd_defenders", level.spawn_defenders);
-    level.spawn_defenders_a = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_defender_a");
-    level.spawn_defenders_a = array_combine(level.spawn_defenders, level.spawn_defenders_a);
-    scripts\mp\spawnlogic::registerspawnset("dd_defenders_a", level.spawn_defenders_a);
-    level.spawn_defenders_b = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_defender_b");
-    level.spawn_defenders_b = array_combine(level.spawn_defenders, level.spawn_defenders_b);
-    scripts\mp\spawnlogic::registerspawnset("dd_defenders_b", level.spawn_defenders_b);
-    level.spawn_defenders_fallback = array_combine(level.spawn_defenders, level.spawn_defenders_a, level.spawn_defenders_b);
-    scripts\mp\spawnlogic::registerspawnset("dd_defenders_fallback", level.spawn_defenders_fallback);
-    level.spawn_attackers = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_attacker");
-    scripts\mp\spawnlogic::registerspawnset("dd_attackers", level.spawn_attackers);
-    level.spawn_attackers_a = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_attacker_a");
-    level.spawn_attackers_a = array_combine(level.spawn_attackers, level.spawn_attackers_a);
-    scripts\mp\spawnlogic::registerspawnset("dd_attackers_a", level.spawn_attackers_a);
-    level.spawn_attackers_b = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_attacker_b");
-    level.spawn_attackers_b = array_combine(level.spawn_attackers, level.spawn_attackers_b);
-    scripts\mp\spawnlogic::registerspawnset("dd_attackers_b", level.spawn_attackers_b);
-    level.spawn_attackers_fallback = array_combine(level.spawn_attackers, level.spawn_attackers_a, level.spawn_attackers_b);
-    scripts\mp\spawnlogic::registerspawnset("dd_attackers_fallback", level.spawn_attackers_fallback);
-    level.spawn_defenders_start = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_defender_start");
-    level.spawn_attackers_start = scripts\mp\spawnlogic::getspawnpointarray("mp_dd_spawn_attacker_start");
+    
+    level.spawn_defenders = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_defender" );
+    scripts\mp\spawnlogic::registerspawnset( "dd_defenders", level.spawn_defenders );
+    level.spawn_defenders_a = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_defender_a" );
+    level.spawn_defenders_a = array_combine( level.spawn_defenders, level.spawn_defenders_a );
+    scripts\mp\spawnlogic::registerspawnset( "dd_defenders_a", level.spawn_defenders_a );
+    level.spawn_defenders_b = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_defender_b" );
+    level.spawn_defenders_b = array_combine( level.spawn_defenders, level.spawn_defenders_b );
+    scripts\mp\spawnlogic::registerspawnset( "dd_defenders_b", level.spawn_defenders_b );
+    level.spawn_defenders_fallback = array_combine( level.spawn_defenders, level.spawn_defenders_a, level.spawn_defenders_b );
+    scripts\mp\spawnlogic::registerspawnset( "dd_defenders_fallback", level.spawn_defenders_fallback );
+    level.spawn_attackers = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_attacker" );
+    scripts\mp\spawnlogic::registerspawnset( "dd_attackers", level.spawn_attackers );
+    level.spawn_attackers_a = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_attacker_a" );
+    level.spawn_attackers_a = array_combine( level.spawn_attackers, level.spawn_attackers_a );
+    scripts\mp\spawnlogic::registerspawnset( "dd_attackers_a", level.spawn_attackers_a );
+    level.spawn_attackers_b = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_attacker_b" );
+    level.spawn_attackers_b = array_combine( level.spawn_attackers, level.spawn_attackers_b );
+    scripts\mp\spawnlogic::registerspawnset( "dd_attackers_b", level.spawn_attackers_b );
+    level.spawn_attackers_fallback = array_combine( level.spawn_attackers, level.spawn_attackers_a, level.spawn_attackers_b );
+    scripts\mp\spawnlogic::registerspawnset( "dd_attackers_fallback", level.spawn_attackers_fallback );
+    level.spawn_defenders_start = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_defender_start" );
+    level.spawn_attackers_start = scripts\mp\spawnlogic::getspawnpointarray( "mp_dd_spawn_attacker_start" );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b2e
 // Size: 0x4d
-function getspawnpointdist(spawnpoint, goalpos) {
-    dist = getpathdist(spawnpoint.origin, goalpos, 16000);
-    if (dist < 0) {
-        dist = distance(spawnpoint.origin, goalpos);
+function getspawnpointdist( spawnpoint, goalpos )
+{
+    dist = getpathdist( spawnpoint.origin, goalpos, 16000 );
+    
+    if ( dist < 0 )
+    {
+        dist = distance( spawnpoint.origin, goalpos );
     }
+    
     return dist;
 }
 
@@ -264,14 +325,20 @@ function getspawnpointdist(spawnpoint, goalpos) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b84
 // Size: 0x28
-function waittoprocess() {
-    level endon("game_end");
-    for (;;) {
-        if (level.ingraceperiod == 0) {
+function waittoprocess()
+{
+    level endon( "game_end" );
+    
+    for ( ;; )
+    {
+        if ( level.ingraceperiod == 0 )
+        {
             break;
         }
+        
         waitframe();
     }
+    
     level.usestartspawns = 0;
 }
 
@@ -279,62 +346,104 @@ function waittoprocess() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1bb4
 // Size: 0x254
-function getspawnpoint() {
-    spawnteam = self.pers["team"];
-    if (istrue(level.adjustshipmentspawns)) {
-        if (scripts\mp\spawnlogic::shoulduseteamstartspawn()) {
-            if (spawnteam == game["attackers"]) {
-                scripts\mp\spawnlogic::activatespawnset("start_attackers", 1);
-                spawnpoint = scripts\mp\spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_attackers");
-            } else {
-                scripts\mp\spawnlogic::activatespawnset("start_defenders", 1);
-                spawnpoint = scripts\mp\spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_defenders");
+function getspawnpoint()
+{
+    spawnteam = self.pers[ "team" ];
+    
+    if ( istrue( level.adjustshipmentspawns ) )
+    {
+        if ( scripts\mp\spawnlogic::shoulduseteamstartspawn() )
+        {
+            if ( spawnteam == game[ "attackers" ] )
+            {
+                scripts\mp\spawnlogic::activatespawnset( "start_attackers", 1 );
+                spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, spawnteam, undefined, "start_attackers" );
             }
-        } else {
-            scripts\mp\spawnlogic::activatespawnset("normal", 1);
-            spawnpoint = scripts\mp\spawnlogic::getspawnpoint(self, spawnteam, undefined, "fallback");
+            else
+            {
+                scripts\mp\spawnlogic::activatespawnset( "start_defenders", 1 );
+                spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, spawnteam, undefined, "start_defenders" );
+            }
         }
-    } else if (scripts\mp\spawnlogic::shoulduseteamstartspawn()) {
-        if (spawnteam == game["attackers"]) {
-            scripts\mp\spawnlogic::activatespawnset("start_attackers", 1);
-            spawnpoint = scripts\mp\spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_attackers");
-        } else {
-            scripts\mp\spawnlogic::activatespawnset("start_defenders", 1);
-            spawnpoint = scripts\mp\spawnlogic::getspawnpoint(self, spawnteam, undefined, "start_defenders");
+        else
+        {
+            scripts\mp\spawnlogic::activatespawnset( "normal", 1 );
+            spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, spawnteam, undefined, "fallback" );
         }
-    } else {
+    }
+    else if ( scripts\mp\spawnlogic::shoulduseteamstartspawn() )
+    {
+        if ( spawnteam == game[ "attackers" ] )
+        {
+            scripts\mp\spawnlogic::activatespawnset( "start_attackers", 1 );
+            spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, spawnteam, undefined, "start_attackers" );
+        }
+        else
+        {
+            scripts\mp\spawnlogic::activatespawnset( "start_defenders", 1 );
+            spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, spawnteam, undefined, "start_defenders" );
+        }
+    }
+    else
+    {
         spawnset = undefined;
         fallbackspawnset = undefined;
-        if (spawnteam == game["attackers"]) {
-            if (inovertime()) {
+        
+        if ( spawnteam == game[ "attackers" ] )
+        {
+            if ( inovertime() )
+            {
                 spawnset = "dd_attackers";
-            } else if (!level.aplanted && !level.bplanted) {
+            }
+            else if ( !level.aplanted && !level.bplanted )
+            {
                 spawnset = "dd_attackers";
-            } else if (level.aplanted && !level.bplanted) {
+            }
+            else if ( level.aplanted && !level.bplanted )
+            {
                 spawnset = "dd_attackers_a";
-            } else if (level.bplanted && !level.aplanted) {
+            }
+            else if ( level.bplanted && !level.aplanted )
+            {
                 spawnset = "dd_attackers_b";
-            } else {
+            }
+            else
+            {
                 spawnset = "dd_attackers";
             }
+            
             fallbackspawnset = "dd_attackers_fallback";
-        } else {
-            if (inovertime()) {
-                spawnset = "dd_defenders";
-            } else if (!level.aplanted && !level.bplanted) {
-                spawnset = "dd_defenders";
-            } else if (level.aplanted && !level.bplanted) {
-                spawnset = "dd_defenders_a";
-            } else if (level.bplanted && !level.aplanted) {
-                spawnset = "dd_defenders_b";
-            } else {
+        }
+        else
+        {
+            if ( inovertime() )
+            {
                 spawnset = "dd_defenders";
             }
+            else if ( !level.aplanted && !level.bplanted )
+            {
+                spawnset = "dd_defenders";
+            }
+            else if ( level.aplanted && !level.bplanted )
+            {
+                spawnset = "dd_defenders_a";
+            }
+            else if ( level.bplanted && !level.aplanted )
+            {
+                spawnset = "dd_defenders_b";
+            }
+            else
+            {
+                spawnset = "dd_defenders";
+            }
+            
             fallbackspawnset = "dd_defenders_fallback";
         }
-        spawnpoint = scripts\mp\spawnlogic::getspawnpoint(self, spawnteam, spawnset, fallbackspawnset);
+        
+        spawnpoint = scripts\mp\spawnlogic::getspawnpoint( self, spawnteam, spawnset, fallbackspawnset );
     }
-    assert(isdefined(spawnpoint));
+    
+    assert( isdefined( spawnpoint ) );
     return spawnpoint;
 }
 
@@ -342,44 +451,65 @@ function getspawnpoint() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e11
 // Size: 0xf9
-function onspawnplayer(revivespawn) {
+function onspawnplayer( revivespawn )
+{
     bombteam = getbombteam();
-    if (inovertime() || self.pers["team"] == bombteam) {
-        self setclientomnvar("ui_carrying_bomb", 1);
+    
+    if ( inovertime() || self.pers[ "team" ] == bombteam )
+    {
+        self setclientomnvar( "ui_carrying_bomb", 1 );
         self.isplanting = 0;
         self.isdefusing = 0;
         self.isbombcarrier = 1;
-    } else {
+    }
+    else
+    {
         self.isplanting = 0;
         self.isdefusing = 0;
         self.isbombcarrier = 0;
     }
-    if (isdefined(self.pers["plants"])) {
-        setextrascore0(self.pers["plants"]);
-    } else {
-        setextrascore0(0);
+    
+    if ( isdefined( self.pers[ "plants" ] ) )
+    {
+        setextrascore0( self.pers[ "plants" ] );
     }
-    if (isdefined(self.pers["defuses"])) {
-        setextrascore1(self.pers["defuses"]);
-    } else {
-        setextrascore1(0);
+    else
+    {
+        setextrascore0( 0 );
     }
-    level notify("spawned_player");
+    
+    if ( isdefined( self.pers[ "defuses" ] ) )
+    {
+        setextrascore1( self.pers[ "defuses" ] );
+    }
+    else
+    {
+        setextrascore1( 0 );
+    }
+    
+    level notify( "spawned_player" );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f12
 // Size: 0x47
-function getbombteam() {
-    bombteam = game["attackers"];
-    if (level.mapname == "mp_euphrates") {
-        if (game["switchedsides"]) {
-            bombteam = game["attackers"];
-        } else {
-            bombteam = game["defenders"];
+function getbombteam()
+{
+    bombteam = game[ "attackers" ];
+    
+    if ( level.mapname == "mp_euphrates" )
+    {
+        if ( game[ "switchedsides" ] )
+        {
+            bombteam = game[ "attackers" ];
+        }
+        else
+        {
+            bombteam = game[ "defenders" ];
         }
     }
+    
     return bombteam;
 }
 
@@ -387,10 +517,13 @@ function getbombteam() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f62
 // Size: 0x33
-function hidecarryiconongameend() {
-    self endon("disconnect");
-    level waittill("game_ended");
-    if (isdefined(self.carryicon)) {
+function hidecarryiconongameend()
+{
+    self endon( "disconnect" );
+    level waittill( "game_ended" );
+    
+    if ( isdefined( self.carryicon ) )
+    {
         self.carryicon.alpha = 0;
     }
 }
@@ -399,36 +532,51 @@ function hidecarryiconongameend() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f9d
 // Size: 0x29
-function dd_endgame(winningteam, endreasontext) {
-    setomnvar("ui_bomb_interacting", 0);
-    thread scripts\mp\gamelogic::endgame(winningteam, endreasontext);
+function dd_endgame( winningteam, endreasontext )
+{
+    setomnvar( "ui_bomb_interacting", 0 );
+    thread scripts\mp\gamelogic::endgame( winningteam, endreasontext );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1fce
 // Size: 0x117
-function ondeadevent(team) {
-    if (level.bombexploded > 0 || level.bombdefused) {
+function ondeadevent( team )
+{
+    if ( level.bombexploded > 0 || level.bombdefused )
+    {
         return;
     }
-    if (team == "all") {
-        if (level.bombplanted) {
-            dd_endgame(game["attackers"], game["end_reason"][tolower(game[game["defenders"]]) + "_eliminated"]);
-        } else {
-            dd_endgame(game["defenders"], game["end_reason"][tolower(game[game["attackers"]]) + "_eliminated"]);
+    
+    if ( team == "all" )
+    {
+        if ( level.bombplanted )
+        {
+            dd_endgame( game[ "attackers" ], game[ "end_reason" ][ tolower( game[ game[ "defenders" ] ] ) + "_eliminated" ] );
         }
+        else
+        {
+            dd_endgame( game[ "defenders" ], game[ "end_reason" ][ tolower( game[ game[ "attackers" ] ] ) + "_eliminated" ] );
+        }
+        
         return;
     }
-    if (team == game["attackers"]) {
-        if (level.bombplanted) {
+    
+    if ( team == game[ "attackers" ] )
+    {
+        if ( level.bombplanted )
+        {
             return;
         }
-        level thread dd_endgame(game["defenders"], game["end_reason"][tolower(game[game["attackers"]]) + "_eliminated"]);
+        
+        level thread dd_endgame( game[ "defenders" ], game[ "end_reason" ][ tolower( game[ game[ "attackers" ] ] ) + "_eliminated" ] );
         return;
     }
-    if (team == game["defenders"]) {
-        level thread dd_endgame(game["attackers"], game["end_reason"][tolower(game[game["defenders"]]) + "_eliminated"]);
+    
+    if ( team == game[ "defenders" ] )
+    {
+        level thread dd_endgame( game[ "attackers" ], game[ "end_reason" ][ tolower( game[ game[ "defenders" ] ] ) + "_eliminated" ] );
     }
 }
 
@@ -436,84 +584,112 @@ function ondeadevent(team) {
 // Params 6, eflags: 0x0
 // Checksum 0x0, Offset: 0x20ed
 // Size: 0x113
-function onnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon) {
-    oncommonnormaldeath(victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon);
+function onnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon )
+{
+    oncommonnormaldeath( victim, attacker, lifeid, meansofdeath, objweapon, iskillstreakweapon );
     team = victim.team;
-    if (victim.isplanting) {
-        thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "planting");
-        attacker incpersstat("defends", 1);
-        attacker scripts\mp\persistence::statsetchild("round", "defends", attacker.pers["defends"]);
-    } else if (victim.isdefusing) {
-        thread utility::trycall(level.matchdata_logvictimkillevent, lifeid, "defusing");
-        attacker incpersstat("defends", 1);
-        attacker scripts\mp\persistence::statsetchild("round", "defends", attacker.pers["defends"]);
+    
+    if ( victim.isplanting )
+    {
+        thread utility::trycall( level.matchdata_logvictimkillevent, lifeid, "planting" );
+        attacker incpersstat( "defends", 1 );
+        attacker scripts\mp\persistence::statsetchild( "round", "defends", attacker.pers[ "defends" ] );
     }
-    scripts\mp\gametypes\obj_bombzone::bombzone_awardgenericbombzonemedals(attacker, victim);
+    else if ( victim.isdefusing )
+    {
+        thread utility::trycall( level.matchdata_logvictimkillevent, lifeid, "defusing" );
+        attacker incpersstat( "defends", 1 );
+        attacker scripts\mp\persistence::statsetchild( "round", "defends", attacker.pers[ "defends" ] );
+    }
+    
+    scripts\mp\gametypes\obj_bombzone::bombzone_awardgenericbombzonemedals( attacker, victim );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2208
 // Size: 0x42
-function ontimelimit() {
-    if (inovertime()) {
-        dd_endgame("tie", game["end_reason"]["time_limit_reached"]);
+function ontimelimit()
+{
+    if ( inovertime() )
+    {
+        dd_endgame( "tie", game[ "end_reason" ][ "time_limit_reached" ] );
         return;
     }
-    dd_endgame(game["defenders"], game["end_reason"]["time_limit_reached"]);
+    
+    dd_endgame( game[ "defenders" ], game[ "end_reason" ][ "time_limit_reached" ] );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2252
 // Size: 0xca
-function updategametypedvars() {
+function updategametypedvars()
+{
     updatecommongametypedvars();
-    level.planttime = dvarfloatvalue("planttime", 5, 0, 20);
-    level.defusetime = dvarfloatvalue("defusetime", 5, 0, 20);
-    level.bombtimer = dvarintvalue("bombtimer", 45, 1, 300);
-    level.ddtimetoadd = dvarfloatvalue("extraTime", 120, 0, 500);
-    level.overtime = dvarfloatvalue("overtimeLimit", 1, 0, 180);
-    level.resetprogress = dvarintvalue("resetProgress", 1, 0, 1);
-    setovertimelimitdvar(level.overtime);
-    level.silentplant = dvarintvalue("silentPlant", 0, 0, 1);
+    level.planttime = dvarfloatvalue( "planttime", 5, 0, 20 );
+    level.defusetime = dvarfloatvalue( "defusetime", 5, 0, 20 );
+    level.bombtimer = dvarintvalue( "bombtimer", 45, 1, 300 );
+    level.ddtimetoadd = dvarfloatvalue( "extraTime", 120, 0, 500 );
+    level.overtime = dvarfloatvalue( "overtimeLimit", 1, 0, 180 );
+    level.resetprogress = dvarintvalue( "resetProgress", 1, 0, 1 );
+    setovertimelimitdvar( level.overtime );
+    level.silentplant = dvarintvalue( "silentPlant", 0, 0, 1 );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2324
 // Size: 0x13e
-function verifybombzones(bombzones) {
+function verifybombzones( bombzones )
+{
     missing = "";
-    if (bombzones.size != 3) {
+    
+    if ( bombzones.size != 3 )
+    {
         founda = 0;
         foundb = 0;
         foundc = 0;
-        foreach (bombzone in bombzones) {
-            if (issubstr(tolower(bombzone.script_label), "a")) {
+        
+        foreach ( bombzone in bombzones )
+        {
+            if ( issubstr( tolower( bombzone.script_label ), "a" ) )
+            {
                 founda = 1;
                 continue;
             }
-            if (issubstr(tolower(bombzone.script_label), "b")) {
+            
+            if ( issubstr( tolower( bombzone.script_label ), "b" ) )
+            {
                 foundb = 1;
                 continue;
             }
-            if (issubstr(tolower(bombzone.script_label), "c")) {
+            
+            if ( issubstr( tolower( bombzone.script_label ), "c" ) )
+            {
                 foundc = 1;
             }
         }
-        if (!founda) {
+        
+        if ( !founda )
+        {
             missing += " A ";
         }
-        if (!foundb) {
+        
+        if ( !foundb )
+        {
             missing += " B ";
         }
-        if (!foundc) {
+        
+        if ( !foundc )
+        {
             missing += " C ";
         }
     }
-    if (missing != "") {
-        assertmsg("<dev string:x1c>" + missing + "<dev string:x2a>");
+    
+    if ( missing != "" )
+    {
+        assertmsg( "<dev string:x1c>" + missing + "<dev string:x2a>" );
     }
 }
 
@@ -521,41 +697,58 @@ function verifybombzones(bombzones) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x246a
 // Size: 0x1d6
-function bombs() {
+function bombs()
+{
     waittillframeend();
     level.bombplanted = 0;
     level.bombdefused = 0;
     level.bombexploded = 0;
     level.multibomb = 1;
-    triggers = getentarray("dd_bombzone", "targetname");
-    verifybombzones(triggers);
+    triggers = getentarray( "dd_bombzone", "targetname" );
+    verifybombzones( triggers );
     level.objectives = [];
-    foreach (trigger in triggers) {
+    
+    foreach ( trigger in triggers )
+    {
         /#
-            if (isdefined(level.var_904de0754f390c72)) {
-                level thread [[ level.var_904de0754f390c72 ]](trigger.script_label, trigger);
+            if ( isdefined( level.var_904de0754f390c72 ) )
+            {
+                level thread [[ level.var_904de0754f390c72 ]]( trigger.script_label, trigger );
             }
         #/
-        bombzone = scripts\mp\gametypes\obj_bombzone::setupobjective(trigger, 1);
-        if (isdefined(bombzone)) {
+        
+        bombzone = scripts\mp\gametypes\obj_bombzone::setupobjective( trigger, 1 );
+        
+        if ( isdefined( bombzone ) )
+        {
             bombzone.onbeginuse = &onbeginuse;
             bombzone.onenduse = &onenduse;
             bombzone.onuse = &onuseplantobject;
-            level.objectives[bombzone.objectivekey] = bombzone;
+            level.objectives[ bombzone.objectivekey ] = bombzone;
         }
     }
+    
     initspawns();
-    if (!scripts\mp\flags::gameflag("prematch_done")) {
-        level waittill_any_2("prematch_done", "start_mode_setup");
+    
+    if ( !scripts\mp\flags::gameflag( "prematch_done" ) )
+    {
+        level waittill_any_2( "prematch_done", "start_mode_setup" );
     }
-    foreach (bombzone in level.objectives) {
-        bombzone scripts\mp\gameobjects::requestid(1, 1);
-        if (inovertime()) {
-            bombzone scripts\mp\gameobjects::setobjectivestatusicons("waypoint_target_neutral");
-        } else {
-            bombzone scripts\mp\gameobjects::setobjectivestatusicons("waypoint_defend", "waypoint_target");
+    
+    foreach ( bombzone in level.objectives )
+    {
+        bombzone scripts\mp\gameobjects::requestid( 1, 1 );
+        
+        if ( inovertime() )
+        {
+            bombzone scripts\mp\gameobjects::setobjectivestatusicons( "waypoint_target_neutral" );
         }
-        bombzone scripts\mp\gameobjects::setvisibleteam("any");
+        else
+        {
+            bombzone scripts\mp\gameobjects::setobjectivestatusicons( "waypoint_defend", "waypoint_target" );
+        }
+        
+        bombzone scripts\mp\gameobjects::setvisibleteam( "any" );
     }
 }
 
@@ -563,29 +756,34 @@ function bombs() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2648
 // Size: 0x13
-function onbeginuse(player) {
-    scripts\mp\gametypes\obj_bombzone::bombzone_onbeginuse(player);
+function onbeginuse( player )
+{
+    scripts\mp\gametypes\obj_bombzone::bombzone_onbeginuse( player );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2663
 // Size: 0x25
-function onenduse(team, player, result) {
-    scripts\mp\gametypes\obj_bombzone::bombzone_onenduse(team, player, result);
+function onenduse( team, player, result )
+{
+    scripts\mp\gametypes\obj_bombzone::bombzone_onenduse( team, player, result );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2690
 // Size: 0x79
-function onuseplantobject(player) {
+function onuseplantobject( player )
+{
     skipplayers = [];
-    skipplayers[skipplayers.size] = player;
-    level thread scripts\mp\hud_message::notifyteam("emp_planted_dd", "emp_planted_enemy_dd", player.team, skipplayers);
-    player thread scripts\mp\hud_message::showsplash("emp_planted_dd", scripts\mp\rank::getscoreinfovalue(#"plant"));
-    scripts\mp\gametypes\obj_bombzone::bombzone_onuseplantobject(player);
-    if (level.bombexploded == 1) {
+    skipplayers[ skipplayers.size ] = player;
+    level thread scripts\mp\hud_message::notifyteam( "emp_planted_dd", "emp_planted_enemy_dd", player.team, skipplayers );
+    player thread scripts\mp\hud_message::showsplash( "emp_planted_dd", scripts\mp\rank::getscoreinfovalue( #"plant" ) );
+    scripts\mp\gametypes\obj_bombzone::bombzone_onuseplantobject( player );
+    
+    if ( level.bombexploded == 1 )
+    {
         thread scripts\mp\music_and_dialog::bombplanted_music();
     }
 }
@@ -594,19 +792,21 @@ function onuseplantobject(player) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2711
 // Size: 0x100
-function setupkillcament() {
-    temporg = spawn("script_origin", self.origin);
+function setupkillcament()
+{
+    temporg = spawn( "script_origin", self.origin );
     temporg.angles = self.angles;
-    temporg rotateyaw(-45, 0.05);
+    temporg rotateyaw( -45, 0.05 );
     waitframe();
-    bulletstart = self.origin + (0, 0, 5);
-    bulletend = self.origin + anglestoforward(temporg.angles) * 100 + (0, 0, 128);
-    result = scripts\engine\trace::ray_trace(bulletstart, bulletend, self, scripts\engine\trace::create_default_contents(1));
-    self.killcament = spawn("script_model", result["position"]);
-    self.killcament setscriptmoverkillcam("explosive");
+    bulletstart = self.origin + ( 0, 0, 5 );
+    bulletend = self.origin + anglestoforward( temporg.angles ) * 100 + ( 0, 0, 128 );
+    result = scripts\engine\trace::ray_trace( bulletstart, bulletend, self, scripts\engine\trace::create_default_contents( 1 ) );
+    self.killcament = spawn( "script_model", result[ "position" ] );
+    self.killcament setscriptmoverkillcam( "explosive" );
     temporg delete();
+    
     /#
-        self.killcament thread debugkillcament(self);
+        self.killcament thread debugkillcament( self );
     #/
 }
 
@@ -615,21 +815,26 @@ function setupkillcament() {
     // Namespace dd / scripts\mp\gametypes\dd
     // Params 1, eflags: 0x0
     // Checksum 0x0, Offset: 0x2819
-    // Size: 0x1d0
-    function debugkillcament(visual) {
-        self endon("<dev string:x36>");
-        level endon("<dev string:x3f>");
-        visual endon("<dev string:x36>");
-        while (true) {
-            if (getdvarint(@"hash_98151d926a0bebbf") > 0) {
-                line(self.origin, self.origin + anglestoforward(self.angles) * 10, (1, 0, 0));
-                line(self.origin, self.origin + anglestoright(self.angles) * 10, (0, 1, 0));
-                line(self.origin, self.origin + anglestoup(self.angles) * 10, (0, 0, 1));
-                line(visual.origin + (0, 0, 5), self.origin, (0, 0, 1));
-                line(visual.origin, visual.origin + anglestoforward(visual.angles) * 10, (1, 0, 0));
-                line(visual.origin, visual.origin + anglestoright(visual.angles) * 10, (0, 1, 0));
-                line(visual.origin, visual.origin + anglestoup(visual.angles) * 10, (0, 0, 1));
+    // Size: 0x1d0, Type: dev
+    function debugkillcament( visual )
+    {
+        self endon( "<dev string:x36>" );
+        level endon( "<dev string:x3f>" );
+        visual endon( "<dev string:x36>" );
+        
+        while ( true )
+        {
+            if ( getdvarint( @"hash_98151d926a0bebbf" ) > 0 )
+            {
+                line( self.origin, self.origin + anglestoforward( self.angles ) * 10, ( 1, 0, 0 ) );
+                line( self.origin, self.origin + anglestoright( self.angles ) * 10, ( 0, 1, 0 ) );
+                line( self.origin, self.origin + anglestoup( self.angles ) * 10, ( 0, 0, 1 ) );
+                line( visual.origin + ( 0, 0, 5 ), self.origin, ( 0, 0, 1 ) );
+                line( visual.origin, visual.origin + anglestoforward( visual.angles ) * 10, ( 1, 0, 0 ) );
+                line( visual.origin, visual.origin + anglestoright( visual.angles ) * 10, ( 0, 1, 0 ) );
+                line( visual.origin, visual.origin + anglestoup( visual.angles ) * 10, ( 0, 0, 1 ) );
             }
+            
             waitframe();
         }
     }
@@ -640,20 +845,25 @@ function setupkillcament() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x29f1
 // Size: 0xad
-function resetbombzone(player) {
-    if (inovertime()) {
-        scripts\mp\gameobjects::setownerteam("neutral");
-        scripts\mp\gameobjects::setobjectivestatusicons("waypoint_target");
-    } else {
-        scripts\mp\gameobjects::setownerteam(game["defenders"]);
-        scripts\mp\gameobjects::allowuse("enemy");
-        scripts\mp\gameobjects::setobjectivestatusicons("waypoint_defend", "waypoint_target");
+function resetbombzone( player )
+{
+    if ( inovertime() )
+    {
+        scripts\mp\gameobjects::setownerteam( "neutral" );
+        scripts\mp\gameobjects::setobjectivestatusicons( "waypoint_target" );
     }
-    scripts\mp\gameobjects::setusehinttext(%MP/HOLD_TO_PLANT_EXPLOSIVES);
+    else
+    {
+        scripts\mp\gameobjects::setownerteam( game[ "defenders" ] );
+        scripts\mp\gameobjects::allowuse( "enemy" );
+        scripts\mp\gameobjects::setobjectivestatusicons( "waypoint_defend", "waypoint_target" );
+    }
+    
+    scripts\mp\gameobjects::setusehinttext( %MP/HOLD_TO_PLANT_EXPLOSIVES );
     self.id = "bomb_zone";
-    scripts\mp\gameobjects::setusetime(level.planttime);
-    scripts\mp\gameobjects::setvisibleteam("any");
-    self.useweapon = makeweapon("briefcase_bomb_mp");
+    scripts\mp\gameobjects::setusetime( level.planttime );
+    scripts\mp\gameobjects::setvisibleteam( "any" );
+    self.useweapon = makeweapon( "briefcase_bomb_mp" );
     self.bombexploded = undefined;
 }
 
@@ -661,27 +871,30 @@ function resetbombzone(player) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2aa6
 // Size: 0x43
-function setupfordefusing() {
-    scripts\mp\gameobjects::allowuse("friendly");
-    scripts\mp\gameobjects::setusetime(level.defusetime);
-    scripts\mp\gameobjects::setkeyobject(undefined);
-    scripts\mp\gameobjects::setobjectivestatusicons("waypoint_defuse", "waypoint_defend");
-    scripts\mp\gameobjects::setvisibleteam("any");
+function setupfordefusing()
+{
+    scripts\mp\gameobjects::allowuse( "friendly" );
+    scripts\mp\gameobjects::setusetime( level.defusetime );
+    scripts\mp\gameobjects::setkeyobject( undefined );
+    scripts\mp\gameobjects::setobjectivestatusicons( "waypoint_defuse", "waypoint_defend" );
+    scripts\mp\gameobjects::setvisibleteam( "any" );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2af1
 // Size: 0x17
-function oncantuse(player) {
-    player iprintlnbold(%MP/BOMBSITE_IN_USE);
+function oncantuse( player )
+{
+    player iprintlnbold( %MP/BOMBSITE_IN_USE );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b10
 // Size: 0x2
-function onreset() {
+function onreset()
+{
     
 }
 
@@ -689,8 +902,9 @@ function onreset() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2b1a
 // Size: 0x15b
-function bombplanted(destroyedobj, player) {
-    destroyedobj endon("defused");
+function bombplanted( destroyedobj, player )
+{
+    destroyedobj endon( "defused" );
     playerteam = player.team;
     level.bombsplanted += 1;
     scripts\mp\gamelogic::pausetimer();
@@ -698,97 +912,137 @@ function bombplanted(destroyedobj, player) {
     level.timelimitoverride = 1;
     level.bombplanted = 1;
     level.destroyedobject = destroyedobj;
-    if (level.destroyedobject.objectivekey == "_a") {
+    
+    if ( level.destroyedobject.objectivekey == "_a" )
+    {
         level.aplanted = 1;
-    } else {
+    }
+    else
+    {
         level.bplanted = 1;
     }
+    
     level.destroyedobject.bombplanted = 1;
-    level.tickingobject = destroyedobj.visuals[0];
-    dropbombmodel(player, destroyedobj.objectivekey);
+    level.tickingobject = destroyedobj.visuals[ 0 ];
+    dropbombmodel( player, destroyedobj.objectivekey );
     destroyedobj.bombdefused = 0;
-    destroyedobj scripts\mp\gameobjects::allowuse("none");
-    destroyedobj scripts\mp\gameobjects::setvisibleteam("none");
-    if (inovertime()) {
-        destroyedobj scripts\mp\gameobjects::setownerteam(getotherteam(player.team)[0]);
+    destroyedobj scripts\mp\gameobjects::allowuse( "none" );
+    destroyedobj scripts\mp\gameobjects::setvisibleteam( "none" );
+    
+    if ( inovertime() )
+    {
+        destroyedobj scripts\mp\gameobjects::setownerteam( getotherteam( player.team )[ 0 ] );
     }
+    
     destroyedobj setupfordefusing();
-    destroyedobj bombtimerwait(destroyedobj);
-    destroyedobj thread bombhandler(player, "explode", playerteam);
+    destroyedobj bombtimerwait( destroyedobj );
+    destroyedobj thread bombhandler( player, "explode", playerteam );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c7d
 // Size: 0x1db
-function bombhandler(player, desttype, playerteam) {
+function bombhandler( player, desttype, playerteam )
+{
     level.bombsplanted -= 1;
-    if (self.objectivekey == "_a") {
+    
+    if ( self.objectivekey == "_a" )
+    {
         level.aplanted = 0;
-    } else {
+    }
+    else
+    {
         level.bplanted = 0;
     }
+    
     restarttimer();
     scripts\mp\gametypes\obj_bombzone::setbombtimeromnvars();
-    if (level.gameended) {
+    
+    if ( level.gameended )
+    {
         return;
     }
-    if (desttype == "explode") {
+    
+    if ( desttype == "explode" )
+    {
         self.bombexploded = 1;
-        timelimit = getwatcheddvar("timelimit");
-        if (timelimit != 0 && !inovertime() && level.bombexploded < 2 && level.ddtimetoadd > 0) {
+        timelimit = getwatcheddvar( "timelimit" );
+        
+        if ( timelimit != 0 && !inovertime() && level.bombexploded < 2 && level.ddtimetoadd > 0 )
+        {
             level.extratime = level.bombexploded * level.ddtimetoadd;
             timeleft = scripts\mp\gamelogic::gettimeremaining();
-            if (istrue(level.timerstoppedforgamemode)) {
+            
+            if ( istrue( level.timerstoppedforgamemode ) )
+            {
                 timeleft -= level.bombtimer * 1000;
             }
-            setgameendtime(gettime() + int(timeleft));
+            
+            setgameendtime( gettime() + int( timeleft ) );
         }
+        
         wait 2;
-        if (inovertime() || level.bombexploded > 1) {
-            if (istrue(level.nukeinfo.incoming)) {
+        
+        if ( inovertime() || level.bombexploded > 1 )
+        {
+            if ( istrue( level.nukeinfo.incoming ) )
+            {
                 return;
             }
-            dd_endgame(playerteam, game["end_reason"]["target_destroyed"]);
-        } else if (level.ddtimetoadd > 0) {
-            scripts\mp\utility\dialog::statusdialog("bomb_destroyed_en", game["defenders"]);
-            level thread scripts\mp\hud_message::notifyteam("callout_time_added_dd", "callout_time_added_dd", player.team);
+            
+            dd_endgame( playerteam, game[ "end_reason" ][ "target_destroyed" ] );
         }
+        else if ( level.ddtimetoadd > 0 )
+        {
+            scripts\mp\utility\dialog::statusdialog( "bomb_destroyed_en", game[ "defenders" ] );
+            level thread scripts\mp\hud_message::notifyteam( "callout_time_added_dd", "callout_time_added_dd", player.team );
+        }
+        
         return;
     }
-    player notify("bomb_defused" + self.objectivekey);
-    self notify("defused");
-    resetbombzone(player);
+    
+    player notify( "bomb_defused" + self.objectivekey );
+    self notify( "defused" );
+    resetbombzone( player );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x2e60
 // Size: 0x102
-function dropbombmodel(player, site) {
-    trace = scripts\engine\trace::ray_trace(player.origin + (0, 0, 20), player.origin - (0, 0, 2000), player, scripts\engine\trace::create_default_contents(1));
-    tempangle = randomfloat(360);
-    forward = (cos(tempangle), sin(tempangle), 0);
-    forward = vectornormalize(forward - trace["normal"] * vectordot(forward, trace["normal"]));
-    dropangles = vectortoangles(forward);
-    level.ddbombmodel[site] = spawn("script_model", trace["position"]);
-    level.ddbombmodel[site].angles = dropangles;
-    level.ddbombmodel[site] setmodel("prop_suitcase_bomb");
+function dropbombmodel( player, site )
+{
+    trace = scripts\engine\trace::ray_trace( player.origin + ( 0, 0, 20 ), player.origin - ( 0, 0, 2000 ), player, scripts\engine\trace::create_default_contents( 1 ) );
+    tempangle = randomfloat( 360 );
+    forward = ( cos( tempangle ), sin( tempangle ), 0 );
+    forward = vectornormalize( forward - trace[ "normal" ] * vectordot( forward, trace[ "normal" ] ) );
+    dropangles = vectortoangles( forward );
+    level.ddbombmodel[ site ] = spawn( "script_model", trace[ "position" ] );
+    level.ddbombmodel[ site ].angles = dropangles;
+    level.ddbombmodel[ site ] setmodel( "prop_suitcase_bomb" );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2f6a
 // Size: 0x65
-function restarttimer() {
-    if (inovertime()) {
-        if (level.bombexploded == 1) {
+function restarttimer()
+{
+    if ( inovertime() )
+    {
+        if ( level.bombexploded == 1 )
+        {
             return;
         }
-    } else if (level.bombexploded > 1) {
+    }
+    else if ( level.bombexploded > 1 )
+    {
         return;
     }
-    if (level.bombsplanted <= 0) {
+    
+    if ( level.bombsplanted <= 0 )
+    {
         scripts\mp\gamelogic::resumetimer();
         level.timepaused = gettime() - level.timepausestart;
         level.timelimitoverride = 0;
@@ -799,20 +1053,31 @@ function restarttimer() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2fd7
 // Size: 0x9e
-function bombtimerwait(siteloc) {
-    level endon("game_ended");
-    level endon("bomb_defused" + siteloc.objectivekey);
-    if (inovertime()) {
-        siteloc.waittime = level.bombtimer;
-    } else {
+function bombtimerwait( siteloc )
+{
+    level endon( "game_ended" );
+    level endon( "bomb_defused" + siteloc.objectivekey );
+    
+    if ( inovertime() )
+    {
         siteloc.waittime = level.bombtimer;
     }
-    level thread update_ui_timers(siteloc);
-    while (siteloc.waittime >= 0) {
+    else
+    {
+        siteloc.waittime = level.bombtimer;
+    }
+    
+    level thread update_ui_timers( siteloc );
+    
+    while ( siteloc.waittime >= 0 )
+    {
         siteloc.waittime--;
-        if (siteloc.waittime >= 0) {
+        
+        if ( siteloc.waittime >= 0 )
+        {
             wait 1;
         }
+        
         scripts\mp\hostmigration::waittillhostmigrationdone();
     }
 }
@@ -821,17 +1086,20 @@ function bombtimerwait(siteloc) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x307d
 // Size: 0xc0
-function update_ui_timers(siteloc) {
-    level endon("game_ended");
-    level endon("disconnect");
-    level endon("bomb_defused" + siteloc.objectivekey);
-    level endon("bomb_exploded" + siteloc.objectivekey);
+function update_ui_timers( siteloc )
+{
+    level endon( "game_ended" );
+    level endon( "disconnect" );
+    level endon( "bomb_defused" + siteloc.objectivekey );
+    level endon( "bomb_exploded" + siteloc.objectivekey );
     var_4dfaa92e2bce1194 = siteloc.waittime * 1000 + gettime();
-    setdvar(hashcat(@"ui_bombtimer", siteloc.objectivekey), var_4dfaa92e2bce1194);
-    level waittill("host_migration_begin");
+    setdvar( hashcat( @"ui_bombtimer", siteloc.objectivekey ), var_4dfaa92e2bce1194 );
+    level waittill( "host_migration_begin" );
     timepassed = scripts\mp\hostmigration::waittillhostmigrationdone();
-    if (timepassed > 0) {
-        setdvar(hashcat(@"ui_bombtimer", siteloc.objectivekey), var_4dfaa92e2bce1194 + timepassed);
+    
+    if ( timepassed > 0 )
+    {
+        setdvar( hashcat( @"ui_bombtimer", siteloc.objectivekey ), var_4dfaa92e2bce1194 + timepassed );
     }
 }
 
@@ -839,25 +1107,27 @@ function update_ui_timers(siteloc) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3145
 // Size: 0x3d
-function bombdefused(sitedefused) {
+function bombdefused( sitedefused )
+{
     level.tickingobject scripts\mp\gamelogic::stoptickingsound();
     sitedefused.bombdefused = 1;
-    level notify("bomb_defused" + sitedefused.objectivekey);
+    level notify( "bomb_defused" + sitedefused.objectivekey );
 }
 
 // Namespace dd / scripts\mp\gametypes\dd
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x318a
 // Size: 0x107
-function setupobjectiveicons() {
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_target_neutral_a", 0, "neutral", "MP_INGAME_ONLY/OBJ_TARGET_CAPS", "icon_waypoint_dom_a", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_defuse_a", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSE_CAPS", "icon_waypoint_dom_a", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_defuse_b", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSE_CAPS", "icon_waypoint_dom_b", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_bomb_defend_a", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_dom_a", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_bomb_defend_b", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_dom_b", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_defuse_nt_a", 0, "enemy", "", "icon_waypoint_dom_a", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_defuse_nt_b", 0, "enemy", "", "icon_waypoint_dom_b", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_bomb_defend_nt_a", 0, "friendly", "", "icon_waypoint_dom_a", 0);
-    scripts\mp\gamelogic::setwaypointiconinfo("waypoint_bomb_defend_nt_b", 0, "friendly", "", "icon_waypoint_dom_b", 0);
+function setupobjectiveicons()
+{
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_target_neutral_a", 0, "neutral", "MP_INGAME_ONLY/OBJ_TARGET_CAPS", "icon_waypoint_dom_a", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_defuse_a", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSE_CAPS", "icon_waypoint_dom_a", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_defuse_b", 0, "enemy", "MP_INGAME_ONLY/OBJ_DEFUSE_CAPS", "icon_waypoint_dom_b", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_bomb_defend_a", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_dom_a", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_bomb_defend_b", 0, "friendly", "MP_INGAME_ONLY/OBJ_DEFEND_CAPS", "icon_waypoint_dom_b", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_defuse_nt_a", 0, "enemy", "", "icon_waypoint_dom_a", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_defuse_nt_b", 0, "enemy", "", "icon_waypoint_dom_b", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_bomb_defend_nt_a", 0, "friendly", "", "icon_waypoint_dom_a", 0 );
+    scripts\mp\gamelogic::setwaypointiconinfo( "waypoint_bomb_defend_nt_b", 0, "friendly", "", "icon_waypoint_dom_b", 0 );
 }
 

@@ -7,7 +7,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x78
 // Size: 0x2
-function function_12d7ca3ff609caba() {
+function function_12d7ca3ff609caba()
+{
     
 }
 
@@ -15,7 +16,8 @@ function function_12d7ca3ff609caba() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x82
 // Size: 0x13
-function function_e7715ffb329c1b40(equipmentref, equipmentslot) {
+function function_e7715ffb329c1b40( equipmentref, equipmentslot )
+{
     
 }
 
@@ -23,7 +25,8 @@ function function_e7715ffb329c1b40(equipmentref, equipmentslot) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9d
 // Size: 0x13
-function function_92e126d1a5d3fb2(equipmentref, equipmentslot) {
+function function_92e126d1a5d3fb2( equipmentref, equipmentslot )
+{
     
 }
 

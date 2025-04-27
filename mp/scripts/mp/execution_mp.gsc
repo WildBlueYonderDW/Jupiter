@@ -10,9 +10,11 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0
 // Size: 0x17
-function execution_mp_init() {
-    if (!scripts\mp\utility\game::runleanthreadmode()) {
-        scripts\mp\utility\player_frame_update_aggregator::registerplayerframeupdatecallback(&execution_blockladders);
+function execution_mp_init()
+{
+    if ( !scripts\mp\utility\game::runleanthreadmode() )
+    {
+        scripts\mp\utility\player_frame_update_aggregator::registerplayerframeupdatecallback( &execution_blockladders );
     }
 }
 

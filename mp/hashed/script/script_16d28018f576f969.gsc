@@ -27,8 +27,9 @@
 // Namespace namespace_d02d9ea23a283808 / namespace_197ebe97e16266ab
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x152
-// Size: 0x3
-function function_b831ccf10a32a4b1() {
+// Size: 0x3, Type: bool
+function function_b831ccf10a32a4b1()
+{
     return false;
 }
 
@@ -36,7 +37,8 @@ function function_b831ccf10a32a4b1() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x15e
 // Size: 0x1b
-function function_b24a36667938b8d4() {
+function function_b24a36667938b8d4()
+{
     level.ftuedata.playerstartingweapon = "iw9_me_fists_mp";
 }
 

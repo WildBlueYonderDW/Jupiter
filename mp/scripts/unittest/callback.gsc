@@ -4,11 +4,14 @@
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x88
 // Size: 0x24
-function exec_callback(func, data) {
-    if (isdefined(data)) {
-        [[ func ]](data);
+function exec_callback( func, data )
+{
+    if ( isdefined( data ) )
+    {
+        [[ func ]]( data );
         return;
     }
+    
     [[ func ]]();
 }
 

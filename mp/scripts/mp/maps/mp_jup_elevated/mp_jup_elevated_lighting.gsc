@@ -3,13 +3,14 @@
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 
-#namespace namespace_c7e29bd4f895fa1c;
+#namespace mp_jup_elevated_lighting;
 
-// Namespace namespace_c7e29bd4f895fa1c / scripts\mp\maps\mp_jup_elevated\mp_jup_elevated_lighting
+// Namespace mp_jup_elevated_lighting / scripts\mp\maps\mp_jup_elevated\mp_jup_elevated_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x56
-function main() {
+function main()
+{
     level.gunshipvisionset = "mp_jup_elevated_killstreak";
     level.choppervisionset = "mp_jup_elevated_killstreak";
     level.var_6d129920246627ba = "mp_jup_elevated_killstreak";

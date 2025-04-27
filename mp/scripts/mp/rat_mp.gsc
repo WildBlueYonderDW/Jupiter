@@ -1,6 +1,6 @@
-#using script_7ef95bba57dc4b82;
 #using scripts\common\rat;
 #using scripts\common\utility;
+#using scripts\cp_mp\equipment;
 #using scripts\engine\utility;
 #using scripts\mp\utility\teams;
 
@@ -10,21 +10,23 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x140
 // Size: 0x5f
-function init() {
+function init()
+{
     level.var_6392befa93ae3cc6 = undefined;
     level.var_91ca776f27d516c0 = undefined;
     scripts\common\rat::init();
-    scripts\common\rat::function_7a2df9055cb22721("RatGetPlayerTeam", &RatGetPlayerTeam, "string");
-    scripts\common\rat::function_7a2df9055cb22721("RatGetTeamCount", &RatGetTeamCount, "int64_t");
-    scripts\common\rat::function_7a2df9055cb22721("RatGetPlayerEquipment", &RatGetPlayerEquipment, "string");
+    scripts\common\rat::function_7a2df9055cb22721( "RatGetPlayerTeam", &ratgetplayerteam, "string" );
+    scripts\common\rat::function_7a2df9055cb22721( "RatGetTeamCount", &ratgetteamcount, "int64_t" );
+    scripts\common\rat::function_7a2df9055cb22721( "RatGetPlayerEquipment", &ratgetplayerequipment, "string" );
 }
 
 // Namespace rat_mp / scripts\mp\rat_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a7
 // Size: 0x29
-function RatGetPlayerTeam(params) {
-    player = scripts\common\rat::getplayer(params);
+function ratgetplayerteam( params )
+{
+    player = scripts\common\rat::getplayer( params );
     return player.team;
 }
 
@@ -32,30 +34,40 @@ function RatGetPlayerTeam(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d9
 // Size: 0x7d
-function RatGetTeamCount(params) {
-    target_team = default_to(params.team, "player");
-    player_team = RatGetPlayerTeam(params);
-    if (target_team == "player") {
+function ratgetteamcount( params )
+{
+    target_team = default_to( params.team, "player" );
+    player_team = ratgetplayerteam( params );
+    
+    if ( target_team == "player" )
+    {
         target_team = player_team;
     }
-    if (target_team == "enemy") {
-        if (player_team == "axis") {
+    
+    if ( target_team == "enemy" )
+    {
+        if ( player_team == "axis" )
+        {
             target_team = "allies";
-        } else {
+        }
+        else
+        {
             target_team = "axis";
         }
     }
-    return getteamdata(target_team, "players").size;
+    
+    return getteamdata( target_team, "players" ).size;
 }
 
 // Namespace rat_mp / scripts\mp\rat_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x25f
 // Size: 0x51
-function RatGetPlayerEquipment(params) {
-    target_slot = default_to(params.slot, "primary");
-    player = scripts\common\rat::getplayer(params);
-    equip = player namespace_4fb9dddfb8c1a67a::getcurrentequipment(target_slot);
+function ratgetplayerequipment( params )
+{
+    target_slot = default_to( params.slot, "primary" );
+    player = scripts\common\rat::getplayer( params );
+    equip = player scripts\cp_mp\equipment::getcurrentequipment( target_slot );
     return equip;
 }
 

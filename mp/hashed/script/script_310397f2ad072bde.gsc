@@ -8,8 +8,9 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa0
 // Size: 0x26
-function init_knockdown() {
-    function_b5e57408c7878df7(&on_damaged);
+function init_knockdown()
+{
+    function_b5e57408c7878df7( &on_damaged );
     self.knockdowndamagethreshold = self.health * 0.01;
 }
 
@@ -17,14 +18,19 @@ function init_knockdown() {
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0xce
 // Size: 0x87
-function private on_damaged(params) {
-    if (isexplosivedamagemod(params.smeansofdeath) && (!isdefined(params.einflictor) || !istrue(params.einflictor.prevent_knockdown))) {
-        if (params.idamage > self.knockdowndamagethreshold) {
-            if (!function_e67a89537ae7d4b7()) {
-                knockdown_ai(params.vpoint);
+function private on_damaged( params )
+{
+    if ( isexplosivedamagemod( params.smeansofdeath ) && ( !isdefined( params.einflictor ) || !istrue( params.einflictor.prevent_knockdown ) ) )
+    {
+        if ( params.idamage > self.knockdowndamagethreshold )
+        {
+            if ( !function_e67a89537ae7d4b7() )
+            {
+                knockdown_ai( params.vpoint );
             }
         }
     }
+    
     return params.idamage;
 }
 

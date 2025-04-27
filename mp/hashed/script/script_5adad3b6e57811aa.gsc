@@ -10,53 +10,75 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb0
 // Size: 0xd
-function function_eda57308516bfc5f() {
-    return function_bffb5b682a4ef6a2(&evaluatescore);
+function function_eda57308516bfc5f()
+{
+    return function_bffb5b682a4ef6a2( &evaluatescore );
 }
 
 // Namespace combat / namespace_784dc078726182cc
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc6
 // Size: 0x212
-function evaluatescore(bot) {
+function evaluatescore( bot )
+{
     /#
-        if (getdvar(@"bot_notarget") == "<dev string:x1c>") {
+        if ( getdvar( @"bot_notarget" ) == "<dev string:x1c>" )
+        {
             return 0;
         }
     #/
+    
     finalscore = 0;
     target = undefined;
     nearbyevent = bot namespace_5524884c16a95af2::getevent();
-    nearbyevent namespace_5524884c16a95af2::keepenemies(bot);
-    nearbyevent namespace_5524884c16a95af2::indistance(self.constants.nearbyenemydistance);
-    foreach (player in nearbyevent.result) {
+    nearbyevent namespace_5524884c16a95af2::keepenemies( bot );
+    nearbyevent namespace_5524884c16a95af2::indistance( self.constants.nearbyenemydistance );
+    
+    foreach ( player in nearbyevent.result )
+    {
         /#
-            if (!isai(player) && getdvar(@"bot_notarget") == "<dev string:x23>") {
+            if ( !isai( player ) && getdvar( @"bot_notarget" ) == "<dev string:x23>" )
+            {
                 continue;
             }
         #/
-        distancetoplayer = distance(bot.origin, player.origin);
-        if (distancetoplayer <= 1) {
+        
+        distancetoplayer = distance( bot.origin, player.origin );
+        
+        if ( distancetoplayer <= 1 )
+        {
             continue;
         }
+        
         score = 0;
-        basescore = function_9d1ab012058221bb(distancetoplayer, self.constants.var_96af88c97db9ed21, self.constants.var_49e2976ca0c853ef);
-        if (bot function_3569a4bec8b9af17(player)) {
+        basescore = function_9d1ab012058221bb( distancetoplayer, self.constants.var_96af88c97db9ed21, self.constants.var_49e2976ca0c853ef );
+        
+        if ( bot function_3569a4bec8b9af17( player ) )
+        {
             score = basescore + self.constants.attackermodifier;
-        } else if (bot botcanseeentity(player)) {
+        }
+        else if ( bot botcanseeentity( player ) )
+        {
             score = basescore;
-        } else if (distancetoplayer < self.constants.var_5dcbc5ccec64f7de) {
-            var_c2c14ddfada133f3 = function_9d1ab012058221bb(distancetoplayer, self.constants.var_e3d1cf896f26ee33, self.constants.var_85a0650f30c0b0b9);
+        }
+        else if ( distancetoplayer < self.constants.var_5dcbc5ccec64f7de )
+        {
+            var_c2c14ddfada133f3 = function_9d1ab012058221bb( distancetoplayer, self.constants.var_e3d1cf896f26ee33, self.constants.var_85a0650f30c0b0b9 );
             score = basescore + var_c2c14ddfada133f3;
         }
-        if (score > finalscore) {
+        
+        if ( score > finalscore )
+        {
             finalscore = score;
             target = player;
         }
     }
-    if (isdefined(target)) {
-        self.var_df9d35d9b4bee654 = namespace_41cf72abc6042f25::createaction(target);
+    
+    if ( isdefined( target ) )
+    {
+        self.var_df9d35d9b4bee654 = namespace_41cf72abc6042f25::createaction( target );
     }
+    
     return finalscore;
 }
 

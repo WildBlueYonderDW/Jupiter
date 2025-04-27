@@ -1,33 +1,40 @@
-#using script_354c862768cfe202;
 #using scripts\common\utility;
 #using scripts\common\values;
+#using scripts\cp\damagefeedback;
 #using scripts\cp\utility;
 #using scripts\cp_mp\utility\game_utility;
 #using scripts\engine\utility;
 
-#namespace namespace_3ecbde0d8fbeff2;
+#namespace cp_agent_utils;
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdc
 // Size: 0x46
-function getfreeagent(agent_type) {
-    var_7818398cdd97fe84 = undefined;
-    if (isdefined(level.agentarray)) {
-        var_7818398cdd97fe84 = function_76b285b4bae7356c();
-        if (isdefined(var_7818398cdd97fe84)) {
-            var_7818398cdd97fe84.agent_type = agent_type;
-            var_7818398cdd97fe84 initagentscriptvariables();
+function getfreeagent( agent_type )
+{
+    freeagent = undefined;
+    
+    if ( isdefined( level.agentarray ) )
+    {
+        freeagent = function_76b285b4bae7356c();
+        
+        if ( isdefined( freeagent ) )
+        {
+            freeagent.agent_type = agent_type;
+            freeagent initagentscriptvariables();
         }
     }
-    return var_7818398cdd97fe84;
+    
+    return freeagent;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x12b
 // Size: 0x5b
-function initagentscriptvariables() {
+function initagentscriptvariables()
+{
     self.pers = [];
     self.hasdied = 0;
     self.isactive = 0;
@@ -39,11 +46,12 @@ function initagentscriptvariables() {
     initplayerscriptvariables();
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x18e
 // Size: 0x172
-function initplayerscriptvariables() {
+function initplayerscriptvariables()
+{
     self.class = undefined;
     self.movespeedscaler = undefined;
     self.avoidkillstreakonspawntimer = undefined;
@@ -55,10 +63,10 @@ function initplayerscriptvariables() {
     self.objectivescaler = undefined;
     self.sessionteam = undefined;
     self.sessionstate = undefined;
-    val::nuke("weapon");
-    val::nuke("weapon_switch");
-    val::nuke("offhand_weapons");
-    val::nuke("usability");
+    val::nuke( "weapon" );
+    val::nuke( "weapon_switch" );
+    val::nuke( "offhand_weapons" );
+    val::nuke( "usability" );
     self.nocorpse = undefined;
     self.ignoreme = 0;
     self.ignoreall = 0;
@@ -82,158 +90,209 @@ function initplayerscriptvariables() {
     self.is_coaster_zombie = undefined;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x308
 // Size: 0x52
-function set_agent_team(team, optional_owner) {
+function set_agent_team( team, optional_owner )
+{
     self.team = team;
     self.agentteam = team;
-    self.pers["team"] = team;
+    self.pers[ "team" ] = team;
     self.owner = optional_owner;
-    self setotherent(optional_owner);
-    self setentityowner(optional_owner);
+    self setotherent( optional_owner );
+    self setentityowner( optional_owner );
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x362
 // Size: 0x113
-function agentfunc(func_name) {
+function agentfunc( func_name )
+{
     /#
-        if (!isagent(self)) {
-            println("<dev string:x1c>");
+        if ( !isagent( self ) )
+        {
+            println( "<dev string:x1c>" );
             return;
         }
-        if (!isdefined(func_name)) {
-            println("<dev string:x42>");
+        
+        if ( !isdefined( func_name ) )
+        {
+            println( "<dev string:x42>" );
             return;
         }
-        if (!isdefined(self.agent_type)) {
-            println("<dev string:x6f>");
+        
+        if ( !isdefined( self.agent_type ) )
+        {
+            println( "<dev string:x6f>" );
             return;
         }
-        if (!isdefined(level.agent_funcs[self.agent_type])) {
-            println("<dev string:xa2>");
+        
+        if ( !isdefined( level.agent_funcs[ self.agent_type ] ) )
+        {
+            println( "<dev string:xa2>" );
             return;
         }
-        if (!isdefined(level.agent_funcs[self.agent_type][func_name])) {
-            println("<dev string:xde>" + self.agent_type + "<dev string:x10d>");
+        
+        if ( !isdefined( level.agent_funcs[ self.agent_type ][ func_name ] ) )
+        {
+            println( "<dev string:xde>" + self.agent_type + "<dev string:x10d>" );
             return;
         }
     #/
-    if (isdefined(self.unittype) && isdefined(level.agent_funcs[self.unittype]) && isdefined(level.agent_funcs[self.unittype][func_name])) {
-        return level.agent_funcs[self.unittype][func_name];
+    
+    if ( isdefined( self.unittype ) && isdefined( level.agent_funcs[ self.unittype ] ) && isdefined( level.agent_funcs[ self.unittype ][ func_name ] ) )
+    {
+        return level.agent_funcs[ self.unittype ][ func_name ];
     }
-    return level.agent_funcs[self.agent_type][func_name];
+    
+    return level.agent_funcs[ self.agent_type ][ func_name ];
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x47d
 // Size: 0x52
-function validateattacker(eattacker) {
-    if (isagent(eattacker) && (!isdefined(eattacker.isactive) || !eattacker.isactive)) {
+function validateattacker( eattacker )
+{
+    if ( isagent( eattacker ) && ( !isdefined( eattacker.isactive ) || !eattacker.isactive ) )
+    {
         return undefined;
     }
-    if (isagent(eattacker) && !isdefined(eattacker.classname)) {
+    
+    if ( isagent( eattacker ) && !isdefined( eattacker.classname ) )
+    {
         return undefined;
     }
+    
     return eattacker;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4d8
 // Size: 0x91
-function getaliveagentsofteam(team) {
+function getaliveagentsofteam( team )
+{
     var_c5c35cc6c0816de1 = [];
-    foreach (agent in level.agentarray) {
-        if (isalive(agent) && isdefined(agent.team) && agent.team == team) {
-            var_c5c35cc6c0816de1[var_c5c35cc6c0816de1.size] = agent;
+    
+    foreach ( agent in level.agentarray )
+    {
+        if ( isalive( agent ) && isdefined( agent.team ) && agent.team == team )
+        {
+            var_c5c35cc6c0816de1[ var_c5c35cc6c0816de1.size ] = agent;
         }
     }
+    
     return var_c5c35cc6c0816de1;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x572
 // Size: 0xc1
-function getactiveenemyagents(var_118c0e3106155c71) {
-    assert(isdefined(var_118c0e3106155c71));
+function getactiveenemyagents( var_118c0e3106155c71 )
+{
+    assert( isdefined( var_118c0e3106155c71 ) );
     agents = [];
-    if (!isdefined(level.agentarray)) {
+    
+    if ( !isdefined( level.agentarray ) )
+    {
         return agents;
     }
-    foreach (agent in level.agentarray) {
-        if (!isdefined(agent.team)) {
+    
+    foreach ( agent in level.agentarray )
+    {
+        if ( !isdefined( agent.team ) )
+        {
             continue;
         }
-        if (isdefined(agent.isactive) && agent.isactive) {
-            if (agent.team != var_118c0e3106155c71) {
-                agents[agents.size] = agent;
+        
+        if ( isdefined( agent.isactive ) && agent.isactive )
+        {
+            if ( agent.team != var_118c0e3106155c71 )
+            {
+                agents[ agents.size ] = agent;
             }
         }
     }
+    
     return agents;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x63c
 // Size: 0x49
-function get_alive_enemies() {
-    alive_enemies = getaliveagentsofteam("axis");
+function get_alive_enemies()
+{
+    alive_enemies = getaliveagentsofteam( "axis" );
     var_2b2cfe014a9942d1 = [];
-    if (isdefined(level.dlc_get_non_agent_enemies)) {
+    
+    if ( isdefined( level.dlc_get_non_agent_enemies ) )
+    {
         var_2b2cfe014a9942d1 = [[ level.dlc_get_non_agent_enemies ]]();
     }
-    alive_enemies = array_combine(alive_enemies, var_2b2cfe014a9942d1);
+    
+    alive_enemies = array_combine( alive_enemies, var_2b2cfe014a9942d1 );
     return alive_enemies;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x68e
 // Size: 0x33
-function get_agent_type(agent) {
-    assertex(isdefined(agent.agent_type), "<dev string:x128>");
+function get_agent_type( agent )
+{
+    assertex( isdefined( agent.agent_type ), "<dev string:x128>" );
     return agent.agent_type;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x6ca
 // Size: 0xec
-function store_attacker_info(attacker, damage) {
-    attacker = get_attacker_as_player(attacker);
-    if (!isdefined(attacker)) {
+function store_attacker_info( attacker, damage )
+{
+    attacker = get_attacker_as_player( attacker );
+    
+    if ( !isdefined( attacker ) )
+    {
         return;
     }
-    if (!isdefined(self.attacker_damage)) {
+    
+    if ( !isdefined( self.attacker_damage ) )
+    {
         self.attacker_damage = [];
     }
-    foreach (attacker_struct in self.attacker_damage) {
-        if (attacker_struct.player == attacker) {
+    
+    foreach ( attacker_struct in self.attacker_damage )
+    {
+        if ( attacker_struct.player == attacker )
+        {
             attacker_struct.damage += damage;
             return;
         }
     }
+    
     var_90a492b93432b5bb = spawnstruct();
     var_90a492b93432b5bb.player = attacker;
     var_90a492b93432b5bb.damage = damage;
-    self.attacker_damage[self.attacker_damage.size] = var_90a492b93432b5bb;
+    self.attacker_damage[ self.attacker_damage.size ] = var_90a492b93432b5bb;
 }
 
-// Namespace namespace_3ecbde0d8fbeff2 / scripts\cp\cp_agent_utils
+// Namespace cp_agent_utils / scripts\cp\cp_agent_utils
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7be
 // Size: 0x18c
-function deactivateagent() {
-    if (scripts\cp_mp\utility\game_utility::isgameparticipant(self)) {
+function deactivateagent()
+{
+    if ( scripts\cp_mp\utility\game_utility::isgameparticipant( self ) )
+    {
         scripts\cp_mp\utility\game_utility::removefromparticipantsarray();
     }
+    
     scripts\cp_mp\utility\game_utility::removefromcharactersarray();
     removefromspawnedgrouparray();
     self.isactive = 0;
@@ -251,18 +310,26 @@ function deactivateagent() {
     self.script_linkto = undefined;
     self.target = undefined;
     self.mutations = undefined;
-    foreach (character in level.characters) {
-        if (isdefined(character.attackers)) {
-            foreach (attacker in character.attackers) {
-                if (attacker == self) {
-                    character.attackers[index] = undefined;
+    
+    foreach ( character in level.characters )
+    {
+        if ( isdefined( character.attackers ) )
+        {
+            foreach ( attacker in character.attackers )
+            {
+                if ( attacker == self )
+                {
+                    character.attackers[ index ] = undefined;
                 }
             }
         }
     }
-    if (isdefined(self.headmodel)) {
+    
+    if ( isdefined( self.headmodel ) )
+    {
         self.headmodel = undefined;
     }
-    self notify("disconnect");
+    
+    self notify( "disconnect" );
 }
 

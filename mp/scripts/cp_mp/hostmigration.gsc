@@ -7,11 +7,14 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe6
 // Size: 0x37
-function hostmigration_waitlongdurationwithpause(duration) {
-    if (issharedfuncdefined("hostmigration", "waitLongDurationWithPause")) {
-        [[ getsharedfunc("hostmigration", "waitLongDurationWithPause") ]](duration);
+function hostmigration_waitlongdurationwithpause( duration )
+{
+    if ( issharedfuncdefined( "hostmigration", "waitLongDurationWithPause" ) )
+    {
+        [[ getsharedfunc( "hostmigration", "waitLongDurationWithPause" ) ]]( duration );
         return;
     }
+    
     wait duration;
 }
 
@@ -19,11 +22,14 @@ function hostmigration_waitlongdurationwithpause(duration) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x125
 // Size: 0x47
-function hostmigration_waittillnotifyortimeoutpause(msg, duration) {
-    if (issharedfuncdefined("hostmigration", "waittillNotifyOrTimeoutPause")) {
-        [[ getsharedfunc("hostmigration", "waittillNotifyOrTimeoutPause") ]](msg, duration);
+function hostmigration_waittillnotifyortimeoutpause( msg, duration )
+{
+    if ( issharedfuncdefined( "hostmigration", "waittillNotifyOrTimeoutPause" ) )
+    {
+        [[ getsharedfunc( "hostmigration", "waittillNotifyOrTimeoutPause" ) ]]( msg, duration );
         return;
     }
-    waittill_any_timeout_1(duration, msg);
+    
+    waittill_any_timeout_1( duration, msg );
 }
 

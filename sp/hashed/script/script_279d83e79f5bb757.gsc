@@ -6,9 +6,11 @@
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x80
 // Size: 0x25
-function function_82b422f2ec92a2b7(vehiclename, vehicle) {
-    if (function_4b8893bb155fc08b(vehiclename)) {
-        function_cf493e05d95647(vehicle);
+function function_82b422f2ec92a2b7( vehiclename, vehicle )
+{
+    if ( function_4b8893bb155fc08b( vehiclename ) )
+    {
+        function_cf493e05d95647( vehicle );
     }
 }
 
@@ -16,13 +18,17 @@ function function_82b422f2ec92a2b7(vehiclename, vehicle) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xad
 // Size: 0x72
-function function_4b8893bb155fc08b(vehname) {
-    dvarstring = hashcat(@"scr_", vehname);
-    if (getdvar(dvarstring, "") == "") {
-        setdvar(dvarstring, "enable");
+function function_4b8893bb155fc08b( vehname )
+{
+    dvarstring = hashcat( @"scr_", vehname );
+    
+    if ( getdvar( dvarstring, "" ) == "" )
+    {
+        setdvar( dvarstring, "enable" );
     }
-    println("<dev string:x1c>" + vehname);
-    dvarstatus = getdvar(dvarstring, "enable") == "disable";
+    
+    println( "<dev string:x1c>" + vehname );
+    dvarstatus = getdvar( dvarstring, "enable" ) == "disable";
     return dvarstatus;
 }
 
@@ -30,8 +36,9 @@ function function_4b8893bb155fc08b(vehname) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x128
 // Size: 0x22
-function function_cf493e05d95647(vehicle) {
-    println("<dev string:x2d>");
-    scripts\cp_mp\vehicles\vehicle_interact::vehicle_interact_allowvehicleuse(vehicle, 0);
+function function_cf493e05d95647( vehicle )
+{
+    println( "<dev string:x2d>" );
+    scripts\cp_mp\vehicles\vehicle_interact::vehicle_interact_allowvehicleuse( vehicle, 0 );
 }
 

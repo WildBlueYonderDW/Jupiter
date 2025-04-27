@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
-function main() {
-    thread scripts\mp\infilexfil\lbravo_infil::lbravo_init("bravo");
+function main()
+{
+    thread scripts\mp\infilexfil\lbravo_infil::lbravo_init( "bravo" );
 }
 

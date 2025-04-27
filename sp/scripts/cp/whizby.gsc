@@ -1,9 +1,9 @@
-#using script_2669878cf5a1b6bc;
-#using script_44a4ad8c0d35f203;
 #using scripts\common\utility;
+#using scripts\common\whizby;
 #using scripts\cp\cp_player_battlechatter;
 #using scripts\cp\utility;
 #using scripts\cp\utility\spawn_event_aggregator;
+#using scripts\cp_mp\weapon;
 #using scripts\engine\math;
 #using scripts\engine\utility;
 
@@ -13,16 +13,18 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xdb
 // Size: 0x15
-function init() {
-    namespace_d55725aa5dd0745b::init();
-    scripts\cp\utility\spawn_event_aggregator::registeronplayerspawncallback(&onplayerspawned);
+function init()
+{
+    scripts\common\whizby::init();
+    scripts\cp\utility\spawn_event_aggregator::registeronplayerspawncallback( &onplayerspawned );
 }
 
 // Namespace whizby / scripts\cp\whizby
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf8
 // Size: 0x14
-function onplayerspawned() {
+function onplayerspawned()
+{
     self._whizbyfxent = [];
     thread whizbythink();
 }
@@ -31,13 +33,16 @@ function onplayerspawned() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x114
 // Size: 0x59
-function whizbythink() {
-    self endon("death_or_disconnect");
-    level endon("game_ended");
-    namespace_d55725aa5dd0745b::initplayer();
-    for (;;) {
-        self waittill("bulletwhizby", attacker, distance, position, forward);
-        dowhizby(attacker, distance, position, forward);
+function whizbythink()
+{
+    self endon( "death_or_disconnect" );
+    level endon( "game_ended" );
+    scripts\common\whizby::initplayer();
+    
+    for ( ;; )
+    {
+        self waittill( "bulletwhizby", attacker, distance, position, forward );
+        dowhizby( attacker, distance, position, forward );
     }
 }
 
@@ -45,13 +50,19 @@ function whizbythink() {
 // Params 4, eflags: 0x0
 // Checksum 0x0, Offset: 0x175
 // Size: 0x61
-function dowhizby(attacker, distance, position, forward) {
-    if (!isusingremote()) {
-        thread namespace_d55725aa5dd0745b::function_a6e6611efb4164d5(attacker, distance, position, forward);
+function dowhizby( attacker, distance, position, forward )
+{
+    if ( !isusingremote() )
+    {
+        thread scripts\common\whizby::function_a6e6611efb4164d5( attacker, distance, position, forward );
     }
+    
     weapon = attacker getcurrentweapon();
-    if (weaponclass(weapon) == "sniper") {
+    
+    if ( weaponclass( weapon ) == "sniper" )
+    {
     }
-    thread scripts\cp\cp_player_battlechatter::addrecentattacker(attacker);
+    
+    thread scripts\cp\cp_player_battlechatter::addrecentattacker( attacker );
 }
 

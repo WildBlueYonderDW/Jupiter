@@ -6,14 +6,20 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x90
 // Size: 0x5a
-function function_64e819ba93c64ccc(taskid) {
+function function_64e819ba93c64ccc( taskid )
+{
     target = self.enemy;
-    if (!isalive(target)) {
+    
+    if ( !isalive( target ) )
+    {
         return anim.failure;
     }
-    if (function_e82696e7b59178f3(target.origin)) {
+    
+    if ( function_e82696e7b59178f3( target.origin ) )
+    {
         return anim.failure;
     }
+    
     return anim.success;
 }
 

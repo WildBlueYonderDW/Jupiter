@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x90
 // Size: 0x9
-function main() {
+function main()
+{
     namespace_b9bffce53e46004b::main();
 }
 

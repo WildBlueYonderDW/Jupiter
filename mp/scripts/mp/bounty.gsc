@@ -12,13 +12,16 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x148
 // Size: 0x4b
-function init() {
+function init()
+{
     level.bounty_index = [];
-    level._effect["vfx_mo_money_cash_exp"] = loadfx("vfx/iw7/_requests/mp/vfx_mo_money_cash_exp.vfx");
-    if (true) {
+    level._effect[ "vfx_mo_money_cash_exp" ] = loadfx( "vfx/iw7/_requests/mp/vfx_mo_money_cash_exp.vfx" );
+    
+    if ( true )
+    {
         thread onplayerconnect();
-        scripts\mp\utility\disconnect_event_aggregator::registerondisconnecteventcallback(&onplayerdisconnect);
-        scripts\mp\utility\join_team_aggregator::registeronplayerjointeamcallback(&onplayerjoinedteam);
+        scripts\mp\utility\disconnect_event_aggregator::registerondisconnecteventcallback( &onplayerdisconnect );
+        scripts\mp\utility\join_team_aggregator::registeronplayerjointeamcallback( &onplayerjoinedteam );
     }
 }
 
@@ -26,9 +29,11 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19b
 // Size: 0x26
-function onplayerconnect() {
-    while (true) {
-        level waittill("connected", player);
+function onplayerconnect()
+{
+    while ( true )
+    {
+        level waittill( "connected", player );
         player bountyinit();
     }
 }
@@ -37,8 +42,10 @@ function onplayerconnect() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c9
 // Size: 0x24
-function bountyinit() {
-    if (!isdefined(self.bountypoints)) {
+function bountyinit()
+{
+    if ( !isdefined( self.bountypoints ) )
+    {
         playerregisterbountyindex();
         playerresetbountypoints();
         playerresetbountystreak();
@@ -49,9 +56,11 @@ function bountyinit() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f5
 // Size: 0x2f
-function onplayerdisconnect(player) {
-    if (isdefined(player.bounty_index)) {
-        level.bounty_index[player.bounty_index] = undefined;
+function onplayerdisconnect( player )
+{
+    if ( isdefined( player.bounty_index ) )
+    {
+        level.bounty_index[ player.bounty_index ] = undefined;
     }
 }
 
@@ -59,9 +68,12 @@ function onplayerdisconnect(player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x22c
 // Size: 0x2f
-function onplayerjoinedspectators(player) {
-    if (true) {
-        if (isdefined(player.bounty_index)) {
+function onplayerjoinedspectators( player )
+{
+    if ( true )
+    {
+        if ( isdefined( player.bounty_index ) )
+        {
             player playerresetbountypoints();
             player playerresetbountystreak();
         }
@@ -72,9 +84,12 @@ function onplayerjoinedspectators(player) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x263
 // Size: 0x2f
-function onplayerjoinedteam(player) {
-    if (true) {
-        if (isdefined(player.bounty_index)) {
+function onplayerjoinedteam( player )
+{
+    if ( true )
+    {
+        if ( isdefined( player.bounty_index ) )
+        {
             player playerresetbountypoints();
             player playerresetbountystreak();
         }
@@ -85,10 +100,12 @@ function onplayerjoinedteam(player) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x29a
 // Size: 0x3b
-function playerregisterbountyindex() {
-    for (index = 0; isdefined(level.bounty_index[index]); index++) {
+function playerregisterbountyindex()
+{
+    for (index = 0; isdefined( level.bounty_index[ index ] ); index++) {
     }
-    level.bounty_index[index] = self;
+    
+    level.bounty_index[ index ] = self;
     self.bounty_index = index;
 }
 
@@ -96,8 +113,9 @@ function playerregisterbountyindex() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2dd
 // Size: 0x23
-function playergetbountypoints() {
-    assertex(isdefined(self.bountypoints), "<dev string:x1c>");
+function playergetbountypoints()
+{
+    assertex( isdefined( self.bountypoints ), "<dev string:x1c>" );
     return self.bountypoints;
 }
 
@@ -105,25 +123,32 @@ function playergetbountypoints() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x309
 // Size: 0x4f
-function playersetbountypoints(bountypoints) {
-    assertex(isdefined(self.bounty_index), "<dev string:x1c>");
+function playersetbountypoints( bountypoints )
+{
+    assertex( isdefined( self.bounty_index ), "<dev string:x1c>" );
     self.bountypoints = bountypoints;
-    level.bounty_index[self.bounty_index] setbountycount(self.bountypoints);
+    level.bounty_index[ self.bounty_index ] setbountycount( self.bountypoints );
 }
 
 // Namespace bounty / scripts\mp\bounty
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x360
 // Size: 0x24
-function playerresetbountypoints(wait_time) {
-    if (false) {
+function playerresetbountypoints( wait_time )
+{
+    if ( false )
+    {
         return;
     }
-    if (isdefined(wait_time)) {
+    
+    if ( isdefined( wait_time ) )
+    {
         wait wait_time;
     }
-    if (isdefined(self)) {
-        playersetbountypoints(0);
+    
+    if ( isdefined( self ) )
+    {
+        playersetbountypoints( 0 );
     }
 }
 
@@ -131,14 +156,20 @@ function playerresetbountypoints(wait_time) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x38c
 // Size: 0x26
-function playerresetbountystreak(wait_time) {
-    if (false) {
+function playerresetbountystreak( wait_time )
+{
+    if ( false )
+    {
         return;
     }
-    if (isdefined(wait_time)) {
+    
+    if ( isdefined( wait_time ) )
+    {
         wait wait_time;
     }
-    if (isdefined(self)) {
+    
+    if ( isdefined( self ) )
+    {
         self.bountystreak = 0;
     }
 }
@@ -147,13 +178,18 @@ function playerresetbountystreak(wait_time) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x3ba
 // Size: 0x34
-function bountyincreasestreak(amount) {
-    if (false) {
+function bountyincreasestreak( amount )
+{
+    if ( false )
+    {
         return;
     }
-    if (!isdefined(amount)) {
+    
+    if ( !isdefined( amount ) )
+    {
         amount = 1;
     }
+    
     self.bountystreak += amount;
     bountyconvert();
 }
@@ -162,14 +198,19 @@ function bountyincreasestreak(amount) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x3f6
 // Size: 0x4f
-function bountyconvert() {
-    if (false) {
+function bountyconvert()
+{
+    if ( false )
+    {
         return;
     }
+    
     old_bounty = playergetbountypoints();
-    new_bounty = int(floor(self.bountystreak / 3));
-    if (new_bounty > old_bounty && new_bounty <= 5) {
-        playersetbountypoints(new_bounty);
+    new_bounty = int( floor( self.bountystreak / 3 ) );
+    
+    if ( new_bounty > old_bounty && new_bounty <= 5 )
+    {
+        playersetbountypoints( new_bounty );
     }
 }
 
@@ -177,18 +218,24 @@ function bountyconvert() {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x44d
 // Size: 0x8b
-function bountycollect(victim_bounty, victim_pos) {
-    if (false) {
+function bountycollect( victim_bounty, victim_pos )
+{
+    if ( false )
+    {
         return;
     }
-    if (_hasperk("specialty_bounty")) {
-        if (victim_bounty > 0) {
+    
+    if ( _hasperk( "specialty_bounty" ) )
+    {
+        if ( victim_bounty > 0 )
+        {
             for (i = 0; i < victim_bounty; i++) {
-                thread doScoreEvent(#"bounty");
+                thread doscoreevent( #"bounty" );
                 bountyincreasestreak();
-                playfx(getfx("vfx_mo_money_cash_exp"), victim_pos + (0, 0, 45));
+                playfx( getfx( "vfx_mo_money_cash_exp" ), victim_pos + ( 0, 0, 45 ) );
             }
-            thread teamplayercardsplash("callout_bounty_collected", self);
+            
+            thread teamplayercardsplash( "callout_bounty_collected", self );
         }
     }
 }

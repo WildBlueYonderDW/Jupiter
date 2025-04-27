@@ -4,68 +4,82 @@
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 
-#namespace namespace_a239fc184bb2df62;
+#namespace mp_jup_hydro_lighting;
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x17b
 // Size: 0x19
-function main() {
+function main()
+{
     thread lighting_setup_dvars();
     function_448f852a8710b8ea();
     thread function_d6b7f69ea57299e9();
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x19c
 // Size: 0x2
-function lighting_setup_dvars() {
+function lighting_setup_dvars()
+{
     
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1a6
 // Size: 0x6e
-function function_448f852a8710b8ea() {
-    level.var_840b0efad7cd12bf = getentarray("light_crystal_obj", "targetname");
-    foreach (var_827c2f92b949936 in level.var_840b0efad7cd12bf) {
+function function_448f852a8710b8ea()
+{
+    level.var_840b0efad7cd12bf = getentarray( "light_crystal_obj", "targetname" );
+    
+    foreach ( var_827c2f92b949936 in level.var_840b0efad7cd12bf )
+    {
         var_827c2f92b949936 function_88cd754a904f2c0a();
     }
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x21c
 // Size: 0x87
-function function_bfd6485208f4b621(params) {
-    if (istrue(level.var_4553a0f3520aab66)) {
+function function_bfd6485208f4b621( params )
+{
+    if ( istrue( level.var_4553a0f3520aab66 ) )
+    {
         return;
     }
+    
     level.var_4553a0f3520aab66 = 1;
     fade_time = 3;
-    foreach (var_827c2f92b949936 in level.var_840b0efad7cd12bf) {
-        var_827c2f92b949936 thread function_e05a4e827e4d647a(fade_time, 0);
+    
+    foreach ( var_827c2f92b949936 in level.var_840b0efad7cd12bf )
+    {
+        var_827c2f92b949936 thread function_e05a4e827e4d647a( fade_time, 0 );
     }
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 2, eflags: 0x4
 // Checksum 0x0, Offset: 0x2ab
 // Size: 0x22
-function private function_e05a4e827e4d647a(time, endintensity) {
-    if (!isdefined(self)) {
+function private function_e05a4e827e4d647a( time, endintensity )
+{
+    if ( !isdefined( self ) )
+    {
         return;
     }
-    function_70a9f70afd49dead(time, endintensity);
+    
+    function_70a9f70afd49dead( time, endintensity );
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2d5
 // Size: 0x53
-function function_88cd754a904f2c0a() {
+function function_88cd754a904f2c0a()
+{
     self.og_intensity = self getlightintensity();
     self.og_color = self getlightcolor();
     self.og_radius = self getlightradius();
@@ -73,65 +87,74 @@ function function_88cd754a904f2c0a() {
     self.og_rotation = self.angles;
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x330
 // Size: 0x4d
-function function_d6b7f69ea57299e9() {
-    level waittill("lgt_entity_light_on");
-    thread function_bd42382b30bcf8f7();
+function function_d6b7f69ea57299e9()
+{
+    level waittill( "lgt_entity_light_on" );
+    thread entity_light_on();
     thread function_9ecba77e83630c1d();
-    earthquake(0.5, 1, level.var_2ada333c838a2316.origin, 3500);
-    level waittill("lgt_entity_light_off");
-    thread function_f57727fc2f70825b();
+    earthquake( 0.5, 1, level.var_2ada333c838a2316.origin, 3500 );
+    level waittill( "lgt_entity_light_off" );
+    thread entity_light_off();
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x385
 // Size: 0x12
-function function_7c9bfcfc1ca3ddaa() {
-    level waittill("lgt_entity_exposure_on");
+function function_7c9bfcfc1ca3ddaa()
+{
+    level waittill( "lgt_entity_exposure_on" );
     thread function_9ecba77e83630c1d();
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x39f
 // Size: 0x70
-function function_bd42382b30bcf8f7() {
-    entity_light = getscriptablearray("entity_light", "script_noteworthy");
-    foreach (light in entity_light) {
-        light setscriptablepartstate("fire_flicker", "fire_flicker_start");
+function entity_light_on()
+{
+    entity_light = getscriptablearray( "entity_light", "script_noteworthy" );
+    
+    foreach ( light in entity_light )
+    {
+        light setscriptablepartstate( "fire_flicker", "fire_flicker_start" );
     }
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x417
 // Size: 0x70
-function function_f57727fc2f70825b() {
-    entity_light = getscriptablearray("entity_light", "script_noteworthy");
-    foreach (light in entity_light) {
-        light setscriptablepartstate("fire_flicker", "fire_flicker_off");
+function entity_light_off()
+{
+    entity_light = getscriptablearray( "entity_light", "script_noteworthy" );
+    
+    foreach ( light in entity_light )
+    {
+        light setscriptablepartstate( "fire_flicker", "fire_flicker_off" );
     }
 }
 
-// Namespace namespace_a239fc184bb2df62 / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
+// Namespace mp_jup_hydro_lighting / scripts\mp\maps\mp_jup_hydro\mp_jup_hydro_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x48f
 // Size: 0x6a
-function function_9ecba77e83630c1d() {
-    function_126edb47d21b4d35(0, 2, 1);
+function function_9ecba77e83630c1d()
+{
+    function_126edb47d21b4d35( 0, 2, 1 );
     wait 1;
-    function_126edb47d21b4d35(0, 2, 0.75);
+    function_126edb47d21b4d35( 0, 2, 0.75 );
     wait 0.2;
-    function_126edb47d21b4d35(0, 2, 0.5);
+    function_126edb47d21b4d35( 0, 2, 0.5 );
     wait 0.2;
-    function_126edb47d21b4d35(0, 2, 0.25);
+    function_126edb47d21b4d35( 0, 2, 0.25 );
     wait 0.2;
-    function_126edb47d21b4d35(0, 2, 0.1);
+    function_126edb47d21b4d35( 0, 2, 0.1 );
     wait 0.1;
-    function_126edb47d21b4d35(0, 2, 0);
+    function_126edb47d21b4d35( 0, 2, 0 );
 }
 

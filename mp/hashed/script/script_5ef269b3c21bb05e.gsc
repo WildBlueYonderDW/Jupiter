@@ -1,4 +1,4 @@
-#using script_584b67e75ea99ef6;
+#using scripts\mp\infilexfil\palfa_infil;
 
 #namespace namespace_e6eb9b1a173d42ef;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
-function main() {
-    thread namespace_debf90849fd14e9a::function_3ef5f926204cbd9e("bravo");
+function main()
+{
+    thread scripts\mp\infilexfil\palfa_infil::function_3ef5f926204cbd9e( "bravo" );
 }
 

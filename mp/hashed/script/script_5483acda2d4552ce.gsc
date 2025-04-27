@@ -1,4 +1,4 @@
-#using script_a9ff503c643e71a;
+#using scripts\mp\infilexfil\estate_infil;
 
 #namespace namespace_663f50e054d832d7;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
-function main() {
-    thread namespace_87aa8ad55dad1e84::estate_init("bravo");
+function main()
+{
+    thread scripts\mp\infilexfil\estate_infil::estate_init( "bravo" );
 }
 

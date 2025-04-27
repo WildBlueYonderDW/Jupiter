@@ -3,13 +3,14 @@
 #using scripts\engine\trace;
 #using scripts\engine\utility;
 
-#namespace namespace_430b6a302f9fc176;
+#namespace mp_jup_terminal_alt_lighting;
 
-// Namespace namespace_430b6a302f9fc176 / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_lighting
+// Namespace mp_jup_terminal_alt_lighting / scripts\mp\maps\mp_jup_terminal_alt\mp_jup_terminal_alt_lighting
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x184
 // Size: 0x64
-function main() {
+function main()
+{
     level.gunshipvisionset = "mp_jup_terminal_alt_killstreak_gunship";
     level.choppervisionset = "mp_jup_terminal_alt_killstreak_gunship";
     level.var_6d129920246627ba = "mp_jup_terminal_alt_assault_drone_color_mp";

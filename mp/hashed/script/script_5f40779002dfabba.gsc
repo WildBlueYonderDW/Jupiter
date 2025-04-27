@@ -4,7 +4,8 @@
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x88
 // Size: 0x22
-function startidle(asmname, statename, params) {
+function startidle( asmname, statename, params )
+{
     self clearpath();
 }
 

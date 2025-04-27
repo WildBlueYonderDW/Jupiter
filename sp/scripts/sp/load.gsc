@@ -1,14 +1,8 @@
 #using script_1096bc9315122e88;
-#using script_1531b7f1cc7837fb;
-#using script_2db81c9f19d2f67e;
-#using script_32f99429f275a46f;
 #using script_3798db193e76a866;
-#using script_3bbf2d232543fcbe;
-#using script_53d2a081452b2162;
 #using script_56dcb79837d451ee;
 #using script_5f8bc60756b1eafb;
 #using script_70ab2c8920597578;
-#using script_70ae34f0e2bef9c8;
 #using scripts\asm\asm;
 #using scripts\code\ai;
 #using scripts\common\devgui;
@@ -18,6 +12,7 @@
 #using scripts\common\rockable_vehicles;
 #using scripts\common\shellshock_utility;
 #using scripts\common\utility;
+#using scripts\engine\easing;
 #using scripts\engine\sp\utility;
 #using scripts\engine\utility;
 #using scripts\smartobjects\utility;
@@ -30,9 +25,11 @@
 #using scripts\sp\createfx;
 #using scripts\sp\damagefeedback;
 #using scripts\sp\destructibles\destructible_vehicle;
+#using scripts\sp\destructibles\log_pile;
 #using scripts\sp\destructibles\oil_barrel;
 #using scripts\sp\destructibles\red_barrel;
 #using scripts\sp\destructibles\water_barrel;
+#using scripts\sp\dialogue;
 #using scripts\sp\door;
 #using scripts\sp\endmission;
 #using scripts\sp\equipment\offhands;
@@ -43,6 +40,7 @@
 #using scripts\sp\friendlyfire;
 #using scripts\sp\gameskill;
 #using scripts\sp\geo_mover;
+#using scripts\sp\heartbeat_sp;
 #using scripts\sp\hud;
 #using scripts\sp\intelligence;
 #using scripts\sp\interaction_manager;
@@ -63,6 +61,8 @@
 #using scripts\sp\slowmo_init;
 #using scripts\sp\spawner;
 #using scripts\sp\starts;
+#using scripts\sp\stealth\social;
+#using scripts\sp\swim_sp;
 #using scripts\sp\trigger;
 #using scripts\sp\utility;
 #using scripts\sp\vehicle;
@@ -76,13 +76,16 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x2a0
 // Size: 0x308
-function main() {
+function main()
+{
     function_39528e3544b58a6c();
     level.teambased = 0;
     starttime = gettime();
+    
     /#
         function_b265d5c7cc69cb92();
     #/
+    
     level namespace_8b9b2769a8e84272::init();
     delete_on_load();
     init_level();
@@ -97,18 +100,24 @@ function main() {
     scripts\common\fx::initfx();
     scripts\common\exploder::setupexploders();
     anim_earlyinit();
-    if (getdvarint(@"hash_742caa13b3c2e685", 0)) {
+    
+    if ( getdvarint( @"hash_742caa13b3c2e685", 0 ) )
+    {
         return;
     }
-    if (getdvarint(@"hash_e6afce2cf5cf7515", 0)) {
+    
+    if ( getdvarint( @"hash_e6afce2cf5cf7515", 0 ) )
+    {
         return;
     }
+    
     /#
         namespace_d4b0db6f425eeb40::function_684874396c3776b3();
         scripts\common\devgui::init_devgui();
     #/
+    
     scripts\code\ai::function_87dc2db63d1cfe13();
-    namespace_1291577eca690656::ease_init();
+    scripts\engine\easing::ease_init();
     scripts\sp\player::main();
     scripts\sp\introscreen::init_introscreen();
     scripts\sp\colors::init_colors();
@@ -139,7 +148,7 @@ function main() {
     scripts\sp\destructibles\red_barrel::red_barrel_init();
     scripts\sp\destructibles\water_barrel::water_barrel_init();
     scripts\sp\destructibles\oil_barrel::oil_barrel_init();
-    namespace_831319c7b03ee2b3::function_51b91752c24c4995();
+    scripts\sp\destructibles\log_pile::function_51b91752c24c4995();
     scripts\sp\destructibles\destructible_vehicle::destructible_vehicle_init();
     scripts\engine\sp\utility::init_manipulate_ent();
     scripts\sp\spawner::main();
@@ -153,7 +162,7 @@ function main() {
     scripts\sp\geo_mover::init_mover_candidates();
     scripts\sp\player\bullet_feedback::bullet_feedback_init();
     scripts\stealth\callbacks::init_callbacks();
-    namespace_35d4e4c5d417d54f::init();
+    scripts\sp\stealth\social::init();
     scripts\smartobjects\utility::validate();
     scripts\sp\equipment\offhands::init();
     scripts\sp\equipment\tripwire::init();
@@ -161,27 +170,36 @@ function main() {
     scripts\common\notetrack::function_11f8c6d6f5ba948();
     utility::fixplacedweapons();
     namespace_2032e3f42315b9b2::init();
+    
     /#
         thread scripts\sp\autosave::function_4574815d2a5a1376();
     #/
-    namespace_b824973b0ec64162::init();
-    setdvarifuninitialized(@"hash_fa7c16b886c722ed", 1);
-    if (getdvarint(@"hash_fa7c16b886c722ed", 0)) {
+    
+    scripts\sp\dialogue::init();
+    setdvarifuninitialized( @"hash_fa7c16b886c722ed", 1 );
+    
+    if ( getdvarint( @"hash_fa7c16b886c722ed", 0 ) )
+    {
         namespace_8938ef39370f4a55::init();
-    } else {
+    }
+    else
+    {
         scripts\sp\player\context_melee::main();
     }
-    setsaveddvar(@"mount_enable", default_to(level.gamemodebundle.var_9a88f7f646f9f945, 1));
+    
+    setsaveddvar( @"mount_enable", default_to( level.gamemodebundle.mountenable, 1 ) );
     anim.stowsidearmpositiondefault = undefined;
     scripts\common\shellshock_utility::init();
     namespace_6d3783f7267c4bca::init();
     load_binks();
     post_load_functions();
     thread post_cl_pregame();
+    
     /#
         function_165238c37df21055();
     #/
-    assertex(gettime() == starttime, "<dev string:x1c>");
+    
+    assertex( gettime() == starttime, "<dev string:x1c>" );
     utility::spawncorpsehider();
 }
 
@@ -189,7 +207,8 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5b0
 // Size: 0x3a
-function function_39528e3544b58a6c() {
+function function_39528e3544b58a6c()
+{
     level.projectbundle = function_811510b694ddd963();
     level.gamemodebundle = function_1e231fc15fdab31d();
     level.gametypebundle = function_90b5b6e99aef29d6();
@@ -200,16 +219,19 @@ function function_39528e3544b58a6c() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5f2
 // Size: 0x5d
-function anim_earlyinit() {
+function anim_earlyinit()
+{
     function_39528e3544b58a6c();
     scripts\sp\load_code::init_values();
     scripts\sp\flags::init_sp_flags();
     scripts\sp\slowmo_init::slowmo_system_init();
-    namespace_377de7677773280e::main();
-    namespace_40188fde8bf4018a::main();
+    scripts\sp\swim_sp::main();
+    scripts\sp\heartbeat_sp::main();
     scripts\sp\player::init();
     scripts\sp\gameskill::init_gameskill();
-    if (!isdefined(level.framedurationseconds)) {
+    
+    if ( !isdefined( level.framedurationseconds ) )
+    {
         level.framedurationseconds = level.frameduration / 1000;
     }
 }

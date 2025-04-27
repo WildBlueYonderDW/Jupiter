@@ -1,6 +1,4 @@
-#using script_3ff084f114b7f6c9;
 #using script_64acb6ce534155b7;
-#using script_6c4e8cea70bf4b6d;
 #using script_728ffcee8cbf30ee;
 #using scripts\common\utility;
 #using scripts\engine\utility;
@@ -10,8 +8,10 @@
 #using scripts\mp\gametypes\br_public;
 #using scripts\mp\gametypes\br_publicevents;
 #using scripts\mp\gametypes\br_quest_util;
+#using scripts\mp\gametypes\dmz_task_utils;
 #using scripts\mp\hud_message;
 #using scripts\mp\rank;
+#using scripts\mp\team_assimilation;
 #using scripts\mp\utility\disconnect_event_aggregator;
 #using scripts\mp\utility\points;
 #using scripts\mp\utility\teams;
@@ -20,243 +20,313 @@
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x1
-// Checksum 0x0, Offset: 0x7e1
+// Checksum 0x0, Offset: 0x7e0
 // Size: 0x18
-function autoexec main() {
-    utility::registersharedfunc("hacker_phone", "get_contract_data", &getcontractdata);
+function autoexec main()
+{
+    utility::registersharedfunc( "hacker_phone", "get_contract_data", &getcontractdata );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x801
+// Checksum 0x0, Offset: 0x800
 // Size: 0x187
-function getcontractdata(data) {
+function getcontractdata( data )
+{
     function_2fac9b58d42b2920();
-    data.funcs["onInit"] = &function_8c64a4f648288a95;
-    data.funcs["onTeamAssigned"] = &function_921a0be9ec330c6a;
-    data.funcs["onEnterGulag"] = &function_ca07a6ca5c3c8af5;
-    data.funcs["onPlayerRespawn"] = &function_f6755bd234f8e261;
-    data.funcs["onPlayerKilled"] = &quest_onplayerkilled;
-    data.funcs["onMarkPlayerAsEliminated"] = &function_4f702ea532a7ca6e;
-    data.funcs["onPlayerDisconnect"] = &quest_onplayerdisconnect;
-    data.funcs["onCancel"] = &quest_oncancel;
-    data.funcs["onPlayerTearDown"] = &function_83d3732a571f142a;
-    data.funcs["onPlayerAssimilated"] = &function_75b53ad947495f9c;
+    data.funcs[ "onInit" ] = &function_8c64a4f648288a95;
+    data.funcs[ "onTeamAssigned" ] = &function_921a0be9ec330c6a;
+    data.funcs[ "onEnterGulag" ] = &function_ca07a6ca5c3c8af5;
+    data.funcs[ "onPlayerRespawn" ] = &function_f6755bd234f8e261;
+    data.funcs[ "onPlayerKilled" ] = &quest_onplayerkilled;
+    data.funcs[ "onMarkPlayerAsEliminated" ] = &function_4f702ea532a7ca6e;
+    data.funcs[ "onPlayerDisconnect" ] = &quest_onplayerdisconnect;
+    data.funcs[ "onCancel" ] = &quest_oncancel;
+    data.funcs[ "onPlayerTearDown" ] = &function_83d3732a571f142a;
+    data.funcs[ "onPlayerAssimilated" ] = &function_75b53ad947495f9c;
     data.basetime = level.hackerphone.questmaxtime;
-    level.contractmanager.var_3c3c5b819ea01809 = function_6d6af8144a5131f1(level.contractmanager.var_3c3c5b819ea01809, &function_efad6fda2cf7cbf3);
-    level.contractmanager.var_5041655a5e1a439e = function_6d6af8144a5131f1(level.contractmanager.var_5041655a5e1a439e, &function_e0d5218265251e5d);
-    namespace_76a219af07c28c13::registerteamassimilatecallback(&function_3d221e16860007d5);
+    level.contractmanager.var_3c3c5b819ea01809 = function_6d6af8144a5131f1( level.contractmanager.var_3c3c5b819ea01809, &function_efad6fda2cf7cbf3 );
+    level.contractmanager.var_5041655a5e1a439e = function_6d6af8144a5131f1( level.contractmanager.var_5041655a5e1a439e, &function_e0d5218265251e5d );
+    scripts\mp\team_assimilation::registerteamassimilatecallback( &function_3d221e16860007d5 );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x990
+// Checksum 0x0, Offset: 0x98f
 // Size: 0x10
-function function_2fac9b58d42b2920() {
+function function_2fac9b58d42b2920()
+{
     function_adc3c411e839c811();
     function_89538dc128a24e58();
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x9a8
+// Checksum 0x0, Offset: 0x9a7
 // Size: 0x178
-function function_adc3c411e839c811() {
+function function_adc3c411e839c811()
+{
     level.hackerphone = spawnstruct();
-    level.hackerphone.enabled = getdvarint(@"hash_2665e66573a7705c", 1);
-    level.hackerphone.questmaxtime = getdvarint(@"hash_c7d4297bb4f79596", function_ea591c2a379e3424("hacker_phone"));
-    level.hackerphone.var_be8a6484aed40352 = getdvarint(@"hash_9eef987db450c17a", 2);
-    level.hackerphone.var_576a3b6b02998159 = getdvarint(@"hash_c4e08d2fdaab55f3", 75);
-    level.hackerphone.var_c669e317f1fd1293 = getdvarint(@"hash_23fab88c275bec9f", 20);
-    level.hackerphone.var_982966060d10f80a = getdvarint(@"hash_3cf195484e92a076", 200);
-    level.hackerphone.var_88f1bf50c2880f31 = getdvarint(@"hash_630e4b6f3cc13d1e", 0);
-    level.hackerphone.var_d6b7c0cb8162cd8e = int(level.hackerphone.var_982966060d10f80a / level.hackerphone.var_c669e317f1fd1293);
-    level.hackerphone.var_30f17800e8ec227d = getdvarint(@"hash_7152a29b5f75e34d", 1);
+    level.hackerphone.enabled = getdvarint( @"hash_2665e66573a7705c", 1 );
+    level.hackerphone.questmaxtime = getdvarint( @"hash_c7d4297bb4f79596", function_ea591c2a379e3424( "hacker_phone" ) );
+    level.hackerphone.var_be8a6484aed40352 = getdvarint( @"hash_9eef987db450c17a", 2 );
+    level.hackerphone.var_576a3b6b02998159 = getdvarint( @"hash_c4e08d2fdaab55f3", 75 );
+    level.hackerphone.var_c669e317f1fd1293 = getdvarint( @"hash_23fab88c275bec9f", 20 );
+    level.hackerphone.var_982966060d10f80a = getdvarint( @"hash_3cf195484e92a076", 200 );
+    level.hackerphone.var_88f1bf50c2880f31 = getdvarint( @"hash_630e4b6f3cc13d1e", 0 );
+    level.hackerphone.var_d6b7c0cb8162cd8e = int( level.hackerphone.var_982966060d10f80a / level.hackerphone.var_c669e317f1fd1293 );
+    level.hackerphone.var_30f17800e8ec227d = getdvarint( @"hash_7152a29b5f75e34d", 1 );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xb28
+// Checksum 0x0, Offset: 0xb27
 // Size: 0x74
-function function_89538dc128a24e58() {
-    game["dialog"]["hacker_phone_start"] = "hack_grav_msns_01";
-    game["dialog"]["hacker_phone_nag"] = "hack_grav_nag1";
-    game["dialog"]["hacker_phone_missing"] = "hack_wzan_mrkl";
-    game["dialog"]["hacker_phone_timer_expired"] = "hack_grav_tmxp_01";
-    game["dialog"]["hacker_phone_contract_hacked"] = "hack_wzan_cnhc";
-    game["dialog"]["hacker_phone_complete"] = "hack_grav_scmh";
+function function_89538dc128a24e58()
+{
+    game[ "dialog" ][ "hacker_phone_start" ] = "hack_grav_msns_01";
+    game[ "dialog" ][ "hacker_phone_nag" ] = "hack_grav_nag1";
+    game[ "dialog" ][ "hacker_phone_missing" ] = "hack_wzan_mrkl";
+    game[ "dialog" ][ "hacker_phone_timer_expired" ] = "hack_grav_tmxp_01";
+    game[ "dialog" ][ "hacker_phone_contract_hacked" ] = "hack_wzan_cnhc";
+    game[ "dialog" ][ "hacker_phone_complete" ] = "hack_grav_scmh";
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xba4
+// Checksum 0x0, Offset: 0xba3
 // Size: 0x1d
-function function_8c64a4f648288a95() {
+function function_8c64a4f648288a95()
+{
     thread function_1f14537e86653ca8();
     return level.hackerphone.enabled;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0xbca
+// Checksum 0x0, Offset: 0xbc9
 // Size: 0x211
-function function_921a0be9ec330c6a() {
+function function_921a0be9ec330c6a()
+{
     self.category = "hacker_phone";
-    teamname = self.teams[0];
+    teamname = self.teams[ 0 ];
     self.var_9f274e85b7bbd87f = 0;
     self.var_cc4cd023f0195d5f = level.hackerphone.var_be8a6484aed40352;
-    self.payoutValue = function_7fa77e2dbbd62db5(teamname);
+    self.payoutvalue = function_7fa77e2dbbd62db5( teamname );
     self.hackedinstances = [];
-    if (!function_5418fefa50b762a6()) {
-        function_cd0f560fad2e9cb6("br_hacker_phone_quest_failure", undefined, undefined, "Circle", 1);
+    
+    if ( !function_5418fefa50b762a6() )
+    {
+        function_cd0f560fad2e9cb6( "br_hacker_phone_quest_failure", undefined, undefined, "Circle", 1 );
         return;
     }
-    function_8280acd4058f343b(teamname);
-    playersonteam = scripts\mp\utility\teams::getteamdata(teamname, "players");
-    foreach (player in playersonteam) {
-        if (!isdefined(player)) {
+    
+    function_8280acd4058f343b( teamname );
+    playersonteam = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+    
+    foreach ( player in playersonteam )
+    {
+        if ( !isdefined( player ) )
+        {
             continue;
         }
+        
         player.canhackcontracts = 1;
-        player setclientomnvar("ui_br_hacker_phone_state", 2);
+        player setclientomnvar( "ui_br_hacker_phone_state", 2 );
     }
-    splashref = function_4bcd7c36b22b9bec("br_hacker_phone_quest_start_team");
-    displayteamsplash(teamname, splashref);
-    displaysquadmessagetoteam(teamname, self.var_d154ac2657c5f44, 6, getquestindex("hacker_phone"));
-    uiobjectiveshowtoteam("hacker_phone", teamname);
-    function_e2aa45e2c6b5dec1(self.var_9f274e85b7bbd87f, level.hackerphone.var_be8a6484aed40352);
-    time = function_9b6275085fbcb8f4(level.hackerphone.questmaxtime);
-    function_5a15174d34f0670c(time);
-    thread function_6410262eccc0ab66(time);
-    createquestobjicon("ui_map_icon_obj_hacker", "current", (0, 0, 0));
-    objective_removeallfrommask(self.objectiveiconid);
-    thread function_425f0abdafad5a76(self.objectiveiconid, teamname);
-    function_7155a66b3081eaca(teamname);
-    level thread scripts\mp\gametypes\br_public::brleaderdialogteam("hacker_phone_start", teamname, 1, 1, undefined);
+    
+    splashref = function_4bcd7c36b22b9bec( "br_hacker_phone_quest_start_team" );
+    displayteamsplash( teamname, splashref );
+    displaysquadmessagetoteam( teamname, self.var_d154ac2657c5f44, 6, getquestindex( "hacker_phone" ) );
+    uiobjectiveshowtoteam( "hacker_phone", teamname );
+    function_e2aa45e2c6b5dec1( self.var_9f274e85b7bbd87f, level.hackerphone.var_be8a6484aed40352 );
+    time = function_9b6275085fbcb8f4( level.hackerphone.questmaxtime );
+    function_5a15174d34f0670c( time );
+    thread function_6410262eccc0ab66( time );
+    createquestobjicon( "ui_map_icon_obj_hacker", "current", ( 0, 0, 0 ) );
+    objective_removeallfrommask( self.objectiveiconid );
+    thread function_425f0abdafad5a76( self.objectiveiconid, teamname );
+    function_7155a66b3081eaca( teamname );
+    level thread scripts\mp\gametypes\br_public::brleaderdialogteam( "hacker_phone_start", teamname, 1, 1, undefined );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xde3
+// Checksum 0x0, Offset: 0xde2
 // Size: 0xd3
-function function_8280acd4058f343b(teamname) {
-    if (!isdefined(level.teamdata[teamname]["hackerPhonePaymentCountActive"])) {
-        level.teamdata[teamname]["hackerPhonePaymentCountActive"] = 0;
+function function_8280acd4058f343b( teamname )
+{
+    if ( !isdefined( level.teamdata[ teamname ][ "hackerPhonePaymentCountActive" ] ) )
+    {
+        level.teamdata[ teamname ][ "hackerPhonePaymentCountActive" ] = 0;
     }
-    if (!isdefined(level.teamdata[teamname]["hackerPhoneIncreasedPaymentCountActive"])) {
-        level.teamdata[teamname]["hackerPhoneIncreasedPaymentCountActive"] = 0;
+    
+    if ( !isdefined( level.teamdata[ teamname ][ "hackerPhoneIncreasedPaymentCountActive" ] ) )
+    {
+        level.teamdata[ teamname ][ "hackerPhoneIncreasedPaymentCountActive" ] = 0;
     }
-    if (!isdefined(level.teamdata[teamname]["hackerPhonePaymentsRemaining"])) {
-        level.teamdata[teamname]["hackerPhonePaymentsRemaining"] = 0;
+    
+    if ( !isdefined( level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ] ) )
+    {
+        level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ] = 0;
     }
-    if (!isdefined(level.teamdata[teamname]["hackedContractsData1"])) {
-        level.teamdata[teamname]["hackedContractsData1"] = [];
+    
+    if ( !isdefined( level.teamdata[ teamname ][ "hackedContractsData1" ] ) )
+    {
+        level.teamdata[ teamname ][ "hackedContractsData1" ] = [];
     }
-    if (!isdefined(level.teamdata[teamname]["hackedContractsData2"])) {
-        level.teamdata[teamname]["hackedContractsData2"] = [];
+    
+    if ( !isdefined( level.teamdata[ teamname ][ "hackedContractsData2" ] ) )
+    {
+        level.teamdata[ teamname ][ "hackedContractsData2" ] = [];
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0xebe
+// Checksum 0x0, Offset: 0xebd
 // Size: 0xf7
-function function_7fa77e2dbbd62db5(teamname) {
+function function_7fa77e2dbbd62db5( teamname )
+{
     var_6cf4d7026c51235b = level.hackerphone.var_576a3b6b02998159;
-    if (istrue(level.hackerphone.var_88f1bf50c2880f31)) {
-        var_926316044e93f849 = getdvar(@"hash_779eac48f0f0fa66", "75 70 65 60");
-        var_21e6c4eb825d874d = strtok(var_926316044e93f849, " ");
-        teamcount = int(min(scripts\mp\utility\teams::getteamcount(teamname), var_21e6c4eb825d874d.size));
-        var_6cf4d7026c51235b = var_21e6c4eb825d874d[teamcount - 1];
+    
+    if ( istrue( level.hackerphone.var_88f1bf50c2880f31 ) )
+    {
+        var_926316044e93f849 = getdvar( @"hash_779eac48f0f0fa66", "75 70 65 60" );
+        var_21e6c4eb825d874d = strtok( var_926316044e93f849, " " );
+        teamcount = int( min( scripts\mp\utility\teams::getteamcount( teamname ), var_21e6c4eb825d874d.size ) );
+        var_6cf4d7026c51235b = var_21e6c4eb825d874d[ teamcount - 1 ];
     }
-    if (isdefined(self.tablet)) {
-        if (scripts\mp\gametypes\br_gametypes::isbrgametypefuncdefined("getContractPlunderBonus")) {
-            bonus = scripts\mp\gametypes\br_gametypes::runbrgametypefunc("getContractPlunderBonus", self);
-            if (isdefined(bonus) && bonus > 0) {
+    
+    if ( isdefined( self.tablet ) )
+    {
+        if ( scripts\mp\gametypes\br_gametypes::isbrgametypefuncdefined( "getContractPlunderBonus" ) )
+        {
+            bonus = scripts\mp\gametypes\br_gametypes::runbrgametypefunc( "getContractPlunderBonus", self );
+            
+            if ( isdefined( bonus ) && bonus > 0 )
+            {
                 bonus /= level.hackerphone.var_d6b7c0cb8162cd8e;
                 var_6cf4d7026c51235b += bonus;
             }
         }
     }
-    return int(var_6cf4d7026c51235b);
+    
+    return int( var_6cf4d7026c51235b );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0xfbe
+// Checksum 0x0, Offset: 0xfbd
 // Size: 0x4c
-function function_7155a66b3081eaca(teamname, useplayer) {
+function function_7155a66b3081eaca( teamname, useplayer )
+{
     var_7ca287a82f54e4f6 = self.var_7ca287a82f54e4f6;
-    if (isdefined(useplayer)) {
+    
+    if ( isdefined( useplayer ) )
+    {
         var_7ca287a82f54e4f6 = useplayer;
     }
-    closestcontract = function_6fc3c13ca7d3708(var_7ca287a82f54e4f6, teamname);
-    thread function_d9ba30c978790906(closestcontract, teamname);
+    
+    closestcontract = function_6fc3c13ca7d3708( var_7ca287a82f54e4f6, teamname );
+    thread function_d9ba30c978790906( closestcontract, teamname );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1012
+// Checksum 0x0, Offset: 0x1011
 // Size: 0x1f2
-function function_6fc3c13ca7d3708(var_7ca287a82f54e4f6, teamname) {
+function function_6fc3c13ca7d3708( var_7ca287a82f54e4f6, teamname )
+{
     sortfrompoint = self.tablet.origin;
-    if (isdefined(var_7ca287a82f54e4f6)) {
+    
+    if ( isdefined( var_7ca287a82f54e4f6 ) )
+    {
         sortfrompoint = var_7ca287a82f54e4f6.origin;
-    } else {
-        playersonteam = scripts\mp\utility\teams::getteamdata(teamname, "players");
-        foreach (player in playersonteam) {
-            if (!isdefined(player)) {
+    }
+    else
+    {
+        playersonteam = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+        
+        foreach ( player in playersonteam )
+        {
+            if ( !isdefined( player ) )
+            {
                 continue;
             }
+            
             sortfrompoint = player.origin;
             break;
         }
     }
+    
     var_facf33f7f7ae6bcd = [];
-    foreach (closephone in level.contractmanager.activetablets) {
-        if (!isdefined(closephone) || !isdefined(closephone.origin)) {
+    
+    foreach ( closephone in level.contractmanager.activetablets )
+    {
+        if ( !isdefined( closephone ) || !isdefined( closephone.origin ) )
+        {
             continue;
         }
-        if (isdefined(closephone.task) && isdefined(closephone.task.type) && isdefined(closephone.task.type.ref) && namespace_6c622b52017c6808::function_42b1b43a7af97c1b(closephone.task.type.ref)) {
+        
+        if ( isdefined( closephone.task ) && isdefined( closephone.task.type ) && isdefined( closephone.task.type.ref ) && namespace_6c622b52017c6808::function_42b1b43a7af97c1b( closephone.task.type.ref ) )
+        {
             continue;
         }
-        var_facf33f7f7ae6bcd[var_facf33f7f7ae6bcd.size] = closephone;
+        
+        var_facf33f7f7ae6bcd[ var_facf33f7f7ae6bcd.size ] = closephone;
     }
-    var_facf33f7f7ae6bcd = sortbydistance(var_facf33f7f7ae6bcd, sortfrompoint);
-    var_facf33f7f7ae6bcd = array_remove_array(var_facf33f7f7ae6bcd, self.hackedinstances);
-    if (isdefined(var_facf33f7f7ae6bcd) && var_facf33f7f7ae6bcd.size > 0) {
-        closestphone = var_facf33f7f7ae6bcd[0];
-        function_68c7ee907c012fad(closestphone);
+    
+    var_facf33f7f7ae6bcd = sortbydistance( var_facf33f7f7ae6bcd, sortfrompoint );
+    var_facf33f7f7ae6bcd = array_remove_array( var_facf33f7f7ae6bcd, self.hackedinstances );
+    
+    if ( isdefined( var_facf33f7f7ae6bcd ) && var_facf33f7f7ae6bcd.size > 0 )
+    {
+        closestphone = var_facf33f7f7ae6bcd[ 0 ];
+        function_68c7ee907c012fad( closestphone );
         return closestphone;
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x120c
+// Checksum 0x0, Offset: 0x120b
 // Size: 0xe5
-function function_d9ba30c978790906(var_4a84dd415b837de9, teamname) {
-    level endon("game_ended");
-    self endon("task_ended");
-    self endon("marked_contract_hacked");
-    if (!isdefined(var_4a84dd415b837de9)) {
+function function_d9ba30c978790906( var_4a84dd415b837de9, teamname )
+{
+    level endon( "game_ended" );
+    self endon( "task_ended" );
+    self endon( "marked_contract_hacked" );
+    
+    if ( !isdefined( var_4a84dd415b837de9 ) )
+    {
         return;
     }
+    
     self.var_552c9e74f497621f = 0;
-    while (!istrue(function_1c6066d91ae79a56())) {
+    
+    while ( !istrue( function_1c6066d91ae79a56() ) )
+    {
         var_62787ab10cd11954 = 0;
-        if (self.var_552c9e74f497621f >= 70) {
-            level thread scripts\mp\gametypes\br_public::brleaderdialogteam("hacker_phone_nag", teamname, 1, 0, undefined);
+        
+        if ( self.var_552c9e74f497621f >= 70 )
+        {
+            level thread scripts\mp\gametypes\br_public::brleaderdialogteam( "hacker_phone_nag", teamname, 1, 0, undefined );
             var_62787ab10cd11954 = 1;
             self.var_552c9e74f497621f = 0;
         }
-        if (!isdefined(var_4a84dd415b837de9) || !array_contains(level.contractmanager.activetablets, var_4a84dd415b837de9)) {
-            level thread scripts\mp\gametypes\br_public::brleaderdialogteam("hacker_phone_missing", teamname, 1, 0, undefined);
+        
+        if ( !isdefined( var_4a84dd415b837de9 ) || !array_contains( level.contractmanager.activetablets, var_4a84dd415b837de9 ) )
+        {
+            level thread scripts\mp\gametypes\br_public::brleaderdialogteam( "hacker_phone_missing", teamname, 1, 0, undefined );
             var_62787ab10cd11954 = 1;
         }
-        if (istrue(var_62787ab10cd11954)) {
-            var_4a84dd415b837de9 = function_6fc3c13ca7d3708(self.var_7ca287a82f54e4f6, teamname);
+        
+        if ( istrue( var_62787ab10cd11954 ) )
+        {
+            var_4a84dd415b837de9 = function_6fc3c13ca7d3708( self.var_7ca287a82f54e4f6, teamname );
         }
+        
         self.var_552c9e74f497621f++;
         wait 1;
     }
@@ -264,399 +334,511 @@ function function_d9ba30c978790906(var_4a84dd415b837de9, teamname) {
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x12f9
+// Checksum 0x0, Offset: 0x12f8
 // Size: 0x52
-function function_68c7ee907c012fad(var_db376ee90688810d) {
-    if (isdefined(self.var_9aa953016facacc) && self.var_9aa953016facacc == var_db376ee90688810d) {
+function function_68c7ee907c012fad( scriptableinstance )
+{
+    if ( isdefined( self.var_9aa953016facacc ) && self.var_9aa953016facacc == scriptableinstance )
+    {
         return;
     }
-    movequestobjicon(var_db376ee90688810d.origin + (0, 0, 25));
-    self.var_9aa953016facacc = var_db376ee90688810d;
+    
+    movequestobjicon( scriptableinstance.origin + ( 0, 0, 25 ) );
+    self.var_9aa953016facacc = scriptableinstance;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1353
+// Checksum 0x0, Offset: 0x1352
 // Size: 0x95
-function function_5d0b1fa9645f3c89(pickupent, useplayer) {
-    useplayer endon("death_or_disconnect");
-    task = namespace_1eb3c4e0e28fac71::function_22239d4cff05d0a1(useplayer.team);
-    if (istrue(function_2fdcb6899db87a0f(pickupent.instance, useplayer.team))) {
-        useplayer scripts\mp\hud_message::showerrormessage("MP_BR_INGAME/HACKER_PHONE_ALREADY_HACKED");
+function function_5d0b1fa9645f3c89( pickupent, useplayer )
+{
+    useplayer endon( "death_or_disconnect" );
+    task = namespace_1eb3c4e0e28fac71::function_22239d4cff05d0a1( useplayer.team );
+    
+    if ( istrue( function_2fdcb6899db87a0f( pickupent.instance, useplayer.team ) ) )
+    {
+        useplayer scripts\mp\hud_message::showerrormessage( "MP_BR_INGAME/HACKER_PHONE_ALREADY_HACKED" );
         return;
     }
-    if (istrue(level.hackerphone.var_30f17800e8ec227d)) {
-        useplayer namespace_f2c68794a1018c9d::function_9be29ad72a155ee1("intel_pickup_phone_alt", 11);
+    
+    if ( istrue( level.hackerphone.var_30f17800e8ec227d ) )
+    {
+        useplayer scripts\mp\gametypes\dmz_task_utils::function_9be29ad72a155ee1( "intel_pickup_phone_alt", 11 );
     }
-    task function_302cb8661b3c7afa(pickupent, useplayer);
+    
+    task function_302cb8661b3c7afa( pickupent, useplayer );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x13f0
-// Size: 0x3b
-function function_2fdcb6899db87a0f(var_db376ee90688810d, teamname) {
-    if (isdefined(var_db376ee90688810d.var_5e3cc2521bd27a30)) {
-        if (array_contains(var_db376ee90688810d.var_5e3cc2521bd27a30, teamname)) {
+// Checksum 0x0, Offset: 0x13ef
+// Size: 0x3b, Type: bool
+function function_2fdcb6899db87a0f( scriptableinstance, teamname )
+{
+    if ( isdefined( scriptableinstance.var_5e3cc2521bd27a30 ) )
+    {
+        if ( array_contains( scriptableinstance.var_5e3cc2521bd27a30, teamname ) )
+        {
             return true;
         }
     }
+    
     return false;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1434
+// Checksum 0x0, Offset: 0x1433
 // Size: 0x5c
-function function_247bb9f9abb4c268(var_db376ee90688810d, teamname) {
-    if (!isdefined(var_db376ee90688810d.var_5e3cc2521bd27a30)) {
-        var_db376ee90688810d.var_5e3cc2521bd27a30 = [];
+function function_247bb9f9abb4c268( scriptableinstance, teamname )
+{
+    if ( !isdefined( scriptableinstance.var_5e3cc2521bd27a30 ) )
+    {
+        scriptableinstance.var_5e3cc2521bd27a30 = [];
     }
-    var_db376ee90688810d.var_5e3cc2521bd27a30[var_db376ee90688810d.var_5e3cc2521bd27a30.size] = teamname;
-    function_34bc4caefcde3120(teamname, var_db376ee90688810d.index);
+    
+    scriptableinstance.var_5e3cc2521bd27a30[ scriptableinstance.var_5e3cc2521bd27a30.size ] = teamname;
+    function_34bc4caefcde3120( teamname, scriptableinstance.index );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1498
+// Checksum 0x0, Offset: 0x1497
 // Size: 0x69
-function function_b111c1d13e127b6d(var_db376ee90688810d, teamname) {
-    if (isdefined(var_db376ee90688810d.var_5e3cc2521bd27a30) && array_contains(var_db376ee90688810d.var_5e3cc2521bd27a30, teamname)) {
-        var_db376ee90688810d.var_5e3cc2521bd27a30 = array_remove(var_db376ee90688810d.var_5e3cc2521bd27a30, teamname);
-        function_5bbf368bf1a6b402(teamname, var_db376ee90688810d.index);
+function function_b111c1d13e127b6d( scriptableinstance, teamname )
+{
+    if ( isdefined( scriptableinstance.var_5e3cc2521bd27a30 ) && array_contains( scriptableinstance.var_5e3cc2521bd27a30, teamname ) )
+    {
+        scriptableinstance.var_5e3cc2521bd27a30 = array_remove( scriptableinstance.var_5e3cc2521bd27a30, teamname );
+        function_5bbf368bf1a6b402( teamname, scriptableinstance.index );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1509
+// Checksum 0x0, Offset: 0x1508
 // Size: 0x275
-function function_302cb8661b3c7afa(pickupent, useplayer) {
-    if (istrue(function_2fdcb6899db87a0f(pickupent.instance, useplayer.team))) {
-        useplayer scripts\mp\hud_message::showerrormessage("MP_BR_INGAME/HACKER_PHONE_ALREADY_HACKED");
+function function_302cb8661b3c7afa( pickupent, useplayer )
+{
+    if ( istrue( function_2fdcb6899db87a0f( pickupent.instance, useplayer.team ) ) )
+    {
+        useplayer scripts\mp\hud_message::showerrormessage( "MP_BR_INGAME/HACKER_PHONE_ALREADY_HACKED" );
         return;
     }
-    task = namespace_1eb3c4e0e28fac71::function_22239d4cff05d0a1(useplayer.team);
-    if (!isdefined(task)) {
+    
+    task = namespace_1eb3c4e0e28fac71::function_22239d4cff05d0a1( useplayer.team );
+    
+    if ( !isdefined( task ) )
+    {
         return;
     }
-    if (!isdefined(self)) {
+    
+    if ( !isdefined( self ) )
+    {
         return;
     }
-    if (task != self) {
+    
+    if ( task != self )
+    {
         return;
     }
-    task function_247bb9f9abb4c268(pickupent.instance, useplayer.team);
-    task.hackedinstances[task.hackedinstances.size] = pickupent.instance;
+    
+    task function_247bb9f9abb4c268( pickupent.instance, useplayer.team );
+    task.hackedinstances[ task.hackedinstances.size ] = pickupent.instance;
     task.var_9f274e85b7bbd87f++;
     task.var_cc4cd023f0195d5f = level.hackerphone.var_be8a6484aed40352 - task.var_9f274e85b7bbd87f;
-    task function_e2aa45e2c6b5dec1(task.var_9f274e85b7bbd87f, level.hackerphone.var_be8a6484aed40352);
-    function_4f6916c4e48cc55(pickupent.instance, useplayer);
-    if (task.var_9aa953016facacc == pickupent.instance) {
-        task notify("marked_contract_hacked");
-        task function_7155a66b3081eaca(useplayer.team, useplayer);
+    task function_e2aa45e2c6b5dec1( task.var_9f274e85b7bbd87f, level.hackerphone.var_be8a6484aed40352 );
+    function_4f6916c4e48cc55( pickupent.instance, useplayer );
+    
+    if ( task.var_9aa953016facacc == pickupent.instance )
+    {
+        task notify( "marked_contract_hacked" );
+        task function_7155a66b3081eaca( useplayer.team, useplayer );
     }
+    
     task.var_552c9e74f497621f = 0;
-    playersonteam = scripts\mp\utility\teams::getteamdata(useplayer.team, "players");
-    foreach (player in playersonteam) {
-        xp = scripts\mp\rank::getscoreinfoxp(#"hash_f085eaf302a7e140");
-        xpmultiplier = istrue(task.var_fcd717aeda26cf4c) ? 1 + level.var_6a82bbe1d7f1fde8.var_d4618ceb0666a783 : 1;
-        player thread scripts\mp\utility\points::doScoreEvent(#"hash_f085eaf302a7e140", undefined, undefined, xp * xpmultiplier);
+    playersonteam = scripts\mp\utility\teams::getteamdata( useplayer.team, "players" );
+    
+    foreach ( player in playersonteam )
+    {
+        xp = scripts\mp\rank::getscoreinfoxp( #"hash_f085eaf302a7e140" );
+        xpmultiplier = istrue( task.islegendarycontract ) ? 1 + level.var_6a82bbe1d7f1fde8.var_d4618ceb0666a783 : 1;
+        player thread scripts\mp\utility\points::doscoreevent( #"hash_f085eaf302a7e140", undefined, undefined, xp * xpmultiplier );
     }
-    if (istrue(task function_1c6066d91ae79a56())) {
-        task function_aa30a0b07502a038(1, "Win");
+    
+    if ( istrue( task function_1c6066d91ae79a56() ) )
+    {
+        task function_aa30a0b07502a038( 1, "Win" );
         return;
     }
-    level thread scripts\mp\gametypes\br_public::brleaderdialogteam("hacker_phone_contract_hacked", useplayer.team, 1, 0.5, undefined);
+    
+    level thread scripts\mp\gametypes\br_public::brleaderdialogteam( "hacker_phone_contract_hacked", useplayer.team, 1, 0.5, undefined );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1786
+// Checksum 0x0, Offset: 0x1785
 // Size: 0x3a
-function function_6410262eccc0ab66(time) {
-    self endon("task_ended");
-    level endon("game_ended");
+function function_6410262eccc0ab66( time )
+{
+    self endon( "task_ended" );
+    level endon( "game_ended" );
     thread function_fc63c9695ed174c();
     wait time;
-    function_cd0f560fad2e9cb6("br_hacker_phone_quest_timer_expired", "hacker_phone_timer_expired", undefined, "Time");
+    function_cd0f560fad2e9cb6( "br_hacker_phone_quest_timer_expired", "hacker_phone_timer_expired", undefined, "Time" );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x17c8
+// Checksum 0x0, Offset: 0x17c7
 // Size: 0x7e
-function function_fc63c9695ed174c() {
-    self endon("task_ended");
-    level endon("game_ended");
+function function_fc63c9695ed174c()
+{
+    self endon( "task_ended" );
+    level endon( "game_ended" );
     hackablecontracts = level.contractmanager.activetablets;
-    while (hackablecontracts.size >= self.var_cc4cd023f0195d5f) {
+    
+    while ( hackablecontracts.size >= self.var_cc4cd023f0195d5f )
+    {
         hackablecontracts = level.contractmanager.activetablets;
-        hackablecontracts = array_remove_array(hackablecontracts, self.hackedinstances);
+        hackablecontracts = array_remove_array( hackablecontracts, self.hackedinstances );
         wait 1;
     }
-    function_cd0f560fad2e9cb6("br_hacker_phone_quest_failure", undefined, undefined, "Circle");
+    
+    function_cd0f560fad2e9cb6( "br_hacker_phone_quest_failure", undefined, undefined, "Circle" );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x184e
+// Checksum 0x0, Offset: 0x184d
 // Size: 0x1d
-function function_ca07a6ca5c3c8af5(player) {
-    if (function_42a0806457ea8039(player)) {
-        hidequestobjiconfromplayer(player);
+function function_ca07a6ca5c3c8af5( player )
+{
+    if ( function_42a0806457ea8039( player ) )
+    {
+        hidequestobjiconfromplayer( player );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1873
+// Checksum 0x0, Offset: 0x1872
 // Size: 0x1d
-function function_f6755bd234f8e261(player) {
-    if (function_42a0806457ea8039(player)) {
-        showquestobjicontoplayer(player);
+function function_f6755bd234f8e261( player )
+{
+    if ( function_42a0806457ea8039( player ) )
+    {
+        showquestobjicontoplayer( player );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1898
+// Checksum 0x0, Offset: 0x1897
 // Size: 0x1b
-function quest_onplayerkilled(attacker, victim) {
-    function_f59b4b0550d4e1e9(victim);
+function quest_onplayerkilled( attacker, victim )
+{
+    function_f59b4b0550d4e1e9( victim );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18bb
+// Checksum 0x0, Offset: 0x18ba
 // Size: 0x13
-function function_4f702ea532a7ca6e(victim) {
-    function_f59b4b0550d4e1e9(victim);
+function function_4f702ea532a7ca6e( victim )
+{
+    function_f59b4b0550d4e1e9( victim );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18d6
+// Checksum 0x0, Offset: 0x18d5
 // Size: 0x13
-function quest_onplayerdisconnect(player) {
-    function_f59b4b0550d4e1e9(player);
+function quest_onplayerdisconnect( player )
+{
+    function_f59b4b0550d4e1e9( player );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x18f1
+// Checksum 0x0, Offset: 0x18f0
 // Size: 0x6f
-function function_f59b4b0550d4e1e9(player) {
-    if (player.team == self.teams[0]) {
-        filter = namespace_1eb3c4e0e28fac71::function_94a8dc26f5353759(player, level.contractmanager.defaultfilter);
-        if (!scripts\mp\gametypes\br_quest_util::isteamvalid(self.teams[0], filter)) {
-            function_cd0f560fad2e9cb6(undefined, undefined, undefined, "Killed");
+function function_f59b4b0550d4e1e9( player )
+{
+    if ( player.team == self.teams[ 0 ] )
+    {
+        filter = namespace_1eb3c4e0e28fac71::function_94a8dc26f5353759( player, level.contractmanager.defaultfilter );
+        
+        if ( !scripts\mp\gametypes\br_quest_util::isteamvalid( self.teams[ 0 ], filter ) )
+        {
+            function_cd0f560fad2e9cb6( undefined, undefined, undefined, "Killed" );
         }
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1968
+// Checksum 0x0, Offset: 0x1967
 // Size: 0x2b
-function quest_oncancel(team) {
-    if (istrue(self.teams[0] == team)) {
-        function_cd0f560fad2e9cb6(undefined, undefined, undefined, "Cancel");
+function quest_oncancel( team )
+{
+    if ( istrue( self.teams[ 0 ] == team ) )
+    {
+        function_cd0f560fad2e9cb6( undefined, undefined, undefined, "Cancel" );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 5, eflags: 0x0
-// Checksum 0x0, Offset: 0x199b
+// Checksum 0x0, Offset: 0x199a
 // Size: 0x85
-function function_cd0f560fad2e9cb6(splashref, voiceref, delayoverride, endstate, skipwait) {
-    if (isdefined(splashref)) {
-        displayteamsplash(self.teams[0], splashref);
+function function_cd0f560fad2e9cb6( splashref, voiceref, delayoverride, endstate, skipwait )
+{
+    if ( isdefined( splashref ) )
+    {
+        displayteamsplash( self.teams[ 0 ], splashref );
     }
+    
     delay = 0;
-    if (isdefined(delayoverride)) {
+    
+    if ( isdefined( delayoverride ) )
+    {
         delay = delayoverride;
     }
-    if (isdefined(voiceref)) {
-        level thread scripts\mp\gametypes\br_public::brleaderdialogteam(voiceref, self.teams[0], 1, delay, undefined);
+    
+    if ( isdefined( voiceref ) )
+    {
+        level thread scripts\mp\gametypes\br_public::brleaderdialogteam( voiceref, self.teams[ 0 ], 1, delay, undefined );
     }
-    thread function_aa30a0b07502a038(0, endstate, skipwait);
+    
+    thread function_aa30a0b07502a038( 0, endstate, skipwait );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a28
-// Size: 0x26
-function function_1c6066d91ae79a56() {
-    if (self.var_9f274e85b7bbd87f >= level.hackerphone.var_be8a6484aed40352) {
+// Checksum 0x0, Offset: 0x1a27
+// Size: 0x26, Type: bool
+function function_1c6066d91ae79a56()
+{
+    if ( self.var_9f274e85b7bbd87f >= level.hackerphone.var_be8a6484aed40352 )
+    {
         return true;
     }
+    
     return false;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x1a57
+// Checksum 0x0, Offset: 0x1a56
 // Size: 0x8a
-function function_aa30a0b07502a038(success, endstate, skipwait) {
-    level endon("game_ended");
-    self notify("task_ended");
-    contractor = self.var_7531d578f772b7a0;
-    if (!istrue(skipwait)) {
+function function_aa30a0b07502a038( success, endstate, skipwait )
+{
+    level endon( "game_ended" );
+    self notify( "task_ended" );
+    contractor = self.contractoractive;
+    
+    if ( !istrue( skipwait ) )
+    {
         wait 1;
     }
-    teamname = self.teams[0];
-    quest_cleanup(teamname);
-    endcontract(ter_op(istrue(success), teamname, undefined), undefined, undefined, endstate);
-    if (istrue(success)) {
-        thread function_4fee9a98dfed4a76(teamname, contractor);
+    
+    teamname = self.teams[ 0 ];
+    quest_cleanup( teamname );
+    endcontract( ter_op( istrue( success ), teamname, undefined ), undefined, undefined, endstate );
+    
+    if ( istrue( success ) )
+    {
+        thread function_4fee9a98dfed4a76( teamname, contractor );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1ae9
+// Checksum 0x0, Offset: 0x1ae8
 // Size: 0xe8
-function quest_cleanup(teamname) {
-    if (checkforactiveobjicon()) {
+function quest_cleanup( teamname )
+{
+    if ( checkforactiveobjicon() )
+    {
         deletequestobjicon();
     }
-    playersonteam = scripts\mp\utility\teams::getteamdata(teamname, "players");
-    foreach (player in playersonteam) {
-        if (isdefined(player)) {
+    
+    playersonteam = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+    
+    foreach ( player in playersonteam )
+    {
+        if ( isdefined( player ) )
+        {
             player.canhackcontracts = undefined;
-            player setclientomnvar("ui_br_hacker_phone_state", 0);
+            player setclientomnvar( "ui_br_hacker_phone_state", 0 );
         }
     }
-    foreach (taskinstance in self.hackedinstances) {
-        function_b111c1d13e127b6d(taskinstance, teamname);
+    
+    foreach ( taskinstance in self.hackedinstances )
+    {
+        function_b111c1d13e127b6d( taskinstance, teamname );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1bd9
+// Checksum 0x0, Offset: 0x1bd8
 // Size: 0x125
-function function_4fee9a98dfed4a76(teamname, contractor) {
-    level endon("game_ended");
+function function_4fee9a98dfed4a76( teamname, contractor )
+{
+    level endon( "game_ended" );
     params = spawnstruct();
     params.intvar = level.hackerphone.var_d6b7c0cb8162cd8e;
-    splashref = function_4bcd7c36b22b9bec("br_hacker_phone_quest_complete");
-    displayteamsplash(teamname, splashref, params);
-    level thread scripts\mp\gametypes\br_public::brleaderdialogteam("hacker_phone_complete", teamname, 1, 1.5, undefined);
-    function_196e12780ecc8e3b(teamname);
-    if (!function_aaa32ae55c133b06(teamname)) {
+    splashref = function_4bcd7c36b22b9bec( "br_hacker_phone_quest_complete" );
+    displayteamsplash( teamname, splashref, params );
+    level thread scripts\mp\gametypes\br_public::brleaderdialogteam( "hacker_phone_complete", teamname, 1, 1.5, undefined );
+    function_196e12780ecc8e3b( teamname );
+    
+    if ( !function_aaa32ae55c133b06( teamname ) )
+    {
         wait 4;
     }
-    playersonteam = scripts\mp\utility\teams::getteamdata(teamname, "players");
-    foreach (player in playersonteam) {
-        if (!isdefined(player)) {
+    
+    playersonteam = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+    
+    foreach ( player in playersonteam )
+    {
+        if ( !isdefined( player ) )
+        {
             continue;
         }
+        
         player.var_6c8912ea30b21003 = 1;
     }
-    if (istrue(contractor)) {
-        thread function_82f010d48e62de(teamname);
+    
+    if ( istrue( contractor ) )
+    {
+        thread function_82f010d48e62de( teamname );
         return;
     }
-    thread function_305219f2cd4252ce(teamname);
+    
+    thread function_305219f2cd4252ce( teamname );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d06
-// Size: 0x1e
-function function_aaa32ae55c133b06(teamname) {
-    return level.teamdata[teamname]["hackerPhonePaymentCountActive"] > 0;
+// Checksum 0x0, Offset: 0x1d05
+// Size: 0x1e, Type: bool
+function function_aaa32ae55c133b06( teamname )
+{
+    return level.teamdata[ teamname ][ "hackerPhonePaymentCountActive" ] > 0;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1d2d
+// Checksum 0x0, Offset: 0x1d2c
 // Size: 0x83
-function function_305219f2cd4252ce(teamname) {
-    lootid = level.br_pickups.var_7b2bff2d04ee1017["brloot_payment_hacker_phone"];
-    level.teamdata[teamname]["hackerPhonePaymentCountActive"]++;
-    level.teamdata[teamname]["hackerPhonePaymentsRemaining"] = level.hackerphone.var_d6b7c0cb8162cd8e;
-    function_bdcfa4ac81dc3472(teamname, lootid);
-    thread function_40f8341d00ee8be6(teamname, lootid);
-    thread function_d1fe6ac87f940bfb(teamname);
+function function_305219f2cd4252ce( teamname )
+{
+    lootid = level.br_pickups.var_7b2bff2d04ee1017[ "brloot_payment_hacker_phone" ];
+    level.teamdata[ teamname ][ "hackerPhonePaymentCountActive" ]++;
+    level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ] = level.hackerphone.var_d6b7c0cb8162cd8e;
+    function_bdcfa4ac81dc3472( teamname, lootid );
+    thread function_40f8341d00ee8be6( teamname, lootid );
+    thread function_d1fe6ac87f940bfb( teamname );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1db8
+// Checksum 0x0, Offset: 0x1db7
 // Size: 0x67
-function function_cef3152e1a4bfc3f(teamname) {
-    level endon("game_ended");
+function function_cef3152e1a4bfc3f( teamname )
+{
+    level endon( "game_ended" );
     wait 0.05;
-    for (var_327efeb48a68a152 = level.teamdata[teamname]["hackerPhonePaymentsRemaining"]; var_327efeb48a68a152 > 0; var_327efeb48a68a152--) {
+    
+    for (paymentsremaining = level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ]; paymentsremaining > 0; paymentsremaining--) {
         wait level.hackerphone.var_c669e317f1fd1293;
     }
-    level.teamdata[teamname]["hackerPhoneIncreasedPaymentCountActive"]--;
+    
+    level.teamdata[ teamname ][ "hackerPhoneIncreasedPaymentCountActive" ]--;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1e27
+// Checksum 0x0, Offset: 0x1e26
 // Size: 0x83
-function function_82f010d48e62de(teamname) {
-    lootid = level.br_pickups.var_7b2bff2d04ee1017["brloot_payment_hacker_phone"];
-    level.teamdata[teamname]["hackerPhoneIncreasedPaymentCountActive"]++;
-    level.teamdata[teamname]["hackerPhonePaymentsRemaining"] = level.hackerphone.var_d6b7c0cb8162cd8e;
-    function_bdcfa4ac81dc3472(teamname, lootid);
-    thread function_40f8341d00ee8be6(teamname, lootid);
-    thread function_cef3152e1a4bfc3f(teamname);
+function function_82f010d48e62de( teamname )
+{
+    lootid = level.br_pickups.var_7b2bff2d04ee1017[ "brloot_payment_hacker_phone" ];
+    level.teamdata[ teamname ][ "hackerPhoneIncreasedPaymentCountActive" ]++;
+    level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ] = level.hackerphone.var_d6b7c0cb8162cd8e;
+    function_bdcfa4ac81dc3472( teamname, lootid );
+    thread function_40f8341d00ee8be6( teamname, lootid );
+    thread function_cef3152e1a4bfc3f( teamname );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x1eb2
+// Checksum 0x0, Offset: 0x1eb1
 // Size: 0x67
-function function_d1fe6ac87f940bfb(teamname) {
-    level endon("game_ended");
+function function_d1fe6ac87f940bfb( teamname )
+{
+    level endon( "game_ended" );
     wait 0.05;
-    for (var_327efeb48a68a152 = level.teamdata[teamname]["hackerPhonePaymentsRemaining"]; var_327efeb48a68a152 > 0; var_327efeb48a68a152--) {
+    
+    for (paymentsremaining = level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ]; paymentsremaining > 0; paymentsremaining--) {
         wait level.hackerphone.var_c669e317f1fd1293;
     }
-    level.teamdata[teamname]["hackerPhonePaymentCountActive"]--;
+    
+    level.teamdata[ teamname ][ "hackerPhonePaymentCountActive" ]--;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f21
+// Checksum 0x0, Offset: 0x1f20
 // Size: 0x6c
-function function_40f8341d00ee8be6(teamname, lootid) {
-    level notify("monitor_payout_" + teamname);
-    level endon("monitor_payout_" + teamname);
-    level endon("game_ended");
-    thread function_ac7aaafed966dcff(teamname);
-    while (level.teamdata[teamname]["hackerPhonePaymentsRemaining"] > 0) {
+function function_40f8341d00ee8be6( teamname, lootid )
+{
+    level notify( "monitor_payout_" + teamname );
+    level endon( "monitor_payout_" + teamname );
+    level endon( "game_ended" );
+    thread function_ac7aaafed966dcff( teamname );
+    
+    while ( level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ] > 0 )
+    {
         wait level.hackerphone.var_c669e317f1fd1293;
-        function_bdcfa4ac81dc3472(teamname, lootid);
+        function_bdcfa4ac81dc3472( teamname, lootid );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x1f95
+// Checksum 0x0, Offset: 0x1f94
 // Size: 0x153
-function function_bdcfa4ac81dc3472(teamname, lootid) {
-    if (level.teamdata[teamname]["hackerPhonePaymentsRemaining"] > 0) {
-        level.teamdata[teamname]["hackerPhonePaymentsRemaining"]--;
+function function_bdcfa4ac81dc3472( teamname, lootid )
+{
+    if ( level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ] > 0 )
+    {
+        level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ]--;
     }
-    payoutValue = function_97ff781643ef7daf(teamname);
-    var_ec2736524e4a7410 = scripts\mp\utility\teams::getteamdata(teamname, "alivePlayers");
-    foreach (player in var_ec2736524e4a7410) {
-        if (isdefined(player) && payoutValue > 0 && istrue(player.var_6c8912ea30b21003) && !player scripts\mp\gametypes\br_public::isplayerinorgoingtogulag()) {
-            player scripts\mp\gametypes\br_plunder::playerplunderpickup(payoutValue);
-            if (isdefined(lootid)) {
+    
+    payoutvalue = function_97ff781643ef7daf( teamname );
+    var_ec2736524e4a7410 = scripts\mp\utility\teams::getteamdata( teamname, "alivePlayers" );
+    
+    foreach ( player in var_ec2736524e4a7410 )
+    {
+        if ( isdefined( player ) && payoutvalue > 0 && istrue( player.var_6c8912ea30b21003 ) && !player scripts\mp\gametypes\br_public::isplayerinorgoingtogulag() )
+        {
+            player scripts\mp\gametypes\br_plunder::playerplunderpickup( payoutvalue );
+            
+            if ( isdefined( lootid ) )
+            {
                 view_origin = player getvieworigin();
-                player setclientomnvar("ui_br_hacker_phone_remaining_payments", level.teamdata[teamname]["hackerPhonePaymentsRemaining"]);
-                player scripts\mp\gametypes\br_pickups::function_37be6e543436f3b3(lootid, view_origin, 1, payoutValue);
+                player setclientomnvar( "ui_br_hacker_phone_remaining_payments", level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ] );
+                player scripts\mp\gametypes\br_pickups::function_37be6e543436f3b3( lootid, view_origin, 1, payoutvalue );
             }
-            if (isdefined(player.var_a4dd02e65175e1e7)) {
-                player.var_a4dd02e65175e1e7["totalPayout"] = player.var_a4dd02e65175e1e7["totalPayout"] + payoutValue * 10;
+            
+            if ( isdefined( player.var_a4dd02e65175e1e7 ) )
+            {
+                player.var_a4dd02e65175e1e7[ "totalPayout" ] = player.var_a4dd02e65175e1e7[ "totalPayout" ] + payoutvalue * 10;
             }
         }
     }
@@ -664,31 +846,45 @@ function function_bdcfa4ac81dc3472(teamname, lootid) {
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x20f0
+// Checksum 0x0, Offset: 0x20ef
 // Size: 0x1a0
-function function_ac7aaafed966dcff(teamname) {
-    level endon("monitor_payout_" + teamname);
-    level endon("game_ended");
-    var_359f2cd3b12bb4cb = scripts\mp\utility\teams::getteamdata(teamname, "players");
-    for (var_327efeb48a68a152 = level.teamdata[teamname]["hackerPhonePaymentsRemaining"]; var_327efeb48a68a152 > 0; var_327efeb48a68a152--) {
-        if (var_327efeb48a68a152 == 3) {
-            foreach (player in var_359f2cd3b12bb4cb) {
-                if (isdefined(player) && player.team == teamname) {
-                    displayplayersplash(player, "br_hacker_phone_quest_payment_expiring");
+function function_ac7aaafed966dcff( teamname )
+{
+    level endon( "monitor_payout_" + teamname );
+    level endon( "game_ended" );
+    var_359f2cd3b12bb4cb = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+    
+    for (paymentsremaining = level.teamdata[ teamname ][ "hackerPhonePaymentsRemaining" ]; paymentsremaining > 0; paymentsremaining--) {
+        if ( paymentsremaining == 3 )
+        {
+            foreach ( player in var_359f2cd3b12bb4cb )
+            {
+                if ( isdefined( player ) && player.team == teamname )
+                {
+                    displayplayersplash( player, "br_hacker_phone_quest_payment_expiring" );
                 }
             }
         }
+        
         wait level.hackerphone.var_c669e317f1fd1293;
     }
-    function_19f022d240a597b9(teamname, 0);
-    foreach (player in var_359f2cd3b12bb4cb) {
-        if (isdefined(player) && player.team == teamname) {
-            displayplayersplash(player, "br_hacker_phone_quest_payment_expired");
+    
+    function_19f022d240a597b9( teamname, 0 );
+    
+    foreach ( player in var_359f2cd3b12bb4cb )
+    {
+        if ( isdefined( player ) && player.team == teamname )
+        {
+            displayplayersplash( player, "br_hacker_phone_quest_payment_expired" );
         }
     }
+    
     wait 0.05;
-    foreach (player in var_359f2cd3b12bb4cb) {
-        if (isdefined(player)) {
+    
+    foreach ( player in var_359f2cd3b12bb4cb )
+    {
+        if ( isdefined( player ) )
+        {
             player.var_6c8912ea30b21003 = undefined;
         }
     }
@@ -696,177 +892,223 @@ function function_ac7aaafed966dcff(teamname) {
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2298
+// Checksum 0x0, Offset: 0x2297
 // Size: 0x92
-function function_97ff781643ef7daf(teamname) {
-    var_3e73b041573b529d = level.teamdata[teamname]["hackerPhonePaymentCountActive"] * self.payoutValue;
+function function_97ff781643ef7daf( teamname )
+{
+    var_3e73b041573b529d = level.teamdata[ teamname ][ "hackerPhonePaymentCountActive" ] * self.payoutvalue;
     var_37b2a87ef115f1de = 0;
-    if (isdefined(level.br_pe_data[%"contractor"])) {
-        var_37b2a87ef115f1de = level.teamdata[teamname]["hackerPhoneIncreasedPaymentCountActive"] * self.payoutValue * level.br_pe_data[%"contractor"].var_46a451f9012bd1c;
+    
+    if ( isdefined( level.br_pe_data[ %"contractor" ] ) )
+    {
+        var_37b2a87ef115f1de = level.teamdata[ teamname ][ "hackerPhoneIncreasedPaymentCountActive" ] * self.payoutvalue * level.br_pe_data[ %"contractor" ].var_46a451f9012bd1c;
     }
+    
     return var_3e73b041573b529d + var_37b2a87ef115f1de;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2333
+// Checksum 0x0, Offset: 0x2332
 // Size: 0x112
-function function_34bc4caefcde3120(teamname, instanceindex) {
-    var_c568c261258fb4e0 = level.teamdata[teamname]["hackedContractsData1"].size + level.teamdata[teamname]["hackedContractsData2"].size;
-    assertex(var_c568c261258fb4e0 <= level.hackerphone.var_be8a6484aed40352, "<dev string:x1c>");
-    if (level.teamdata[teamname]["hackedContractsData1"].size < 2) {
-        level.teamdata[teamname]["hackedContractsData1"] = array_add(level.teamdata[teamname]["hackedContractsData1"], instanceindex);
-        function_fa76fc991ff22cdb(teamname, level.teamdata[teamname]["hackedContractsData1"], "ui_br_hacked_phones_data1");
+function function_34bc4caefcde3120( teamname, instanceindex )
+{
+    var_c568c261258fb4e0 = level.teamdata[ teamname ][ "hackedContractsData1" ].size + level.teamdata[ teamname ][ "hackedContractsData2" ].size;
+    assertex( var_c568c261258fb4e0 <= level.hackerphone.var_be8a6484aed40352, "<dev string:x1c>" );
+    
+    if ( level.teamdata[ teamname ][ "hackedContractsData1" ].size < 2 )
+    {
+        level.teamdata[ teamname ][ "hackedContractsData1" ] = array_add( level.teamdata[ teamname ][ "hackedContractsData1" ], instanceindex );
+        function_fa76fc991ff22cdb( teamname, level.teamdata[ teamname ][ "hackedContractsData1" ], "ui_br_hacked_phones_data1" );
         return;
     }
-    level.teamdata[teamname]["hackedContractsData2"] = array_add(level.teamdata[teamname]["hackedContractsData2"], instanceindex);
-    function_fa76fc991ff22cdb(teamname, level.teamdata[teamname]["hackedContractsData2"], "ui_br_hacked_phones_data2");
+    
+    level.teamdata[ teamname ][ "hackedContractsData2" ] = array_add( level.teamdata[ teamname ][ "hackedContractsData2" ], instanceindex );
+    function_fa76fc991ff22cdb( teamname, level.teamdata[ teamname ][ "hackedContractsData2" ], "ui_br_hacked_phones_data2" );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x244d
+// Checksum 0x0, Offset: 0x244c
 // Size: 0xdc
-function function_5bbf368bf1a6b402(teamname, instanceindex) {
-    if (array_contains(level.teamdata[teamname]["hackedContractsData1"], instanceindex)) {
-        level.teamdata[teamname]["hackedContractsData1"] = array_remove(level.teamdata[teamname]["hackedContractsData1"], instanceindex);
-        function_fa76fc991ff22cdb(teamname, level.teamdata[teamname]["hackedContractsData1"], "ui_br_hacked_phones_data1");
+function function_5bbf368bf1a6b402( teamname, instanceindex )
+{
+    if ( array_contains( level.teamdata[ teamname ][ "hackedContractsData1" ], instanceindex ) )
+    {
+        level.teamdata[ teamname ][ "hackedContractsData1" ] = array_remove( level.teamdata[ teamname ][ "hackedContractsData1" ], instanceindex );
+        function_fa76fc991ff22cdb( teamname, level.teamdata[ teamname ][ "hackedContractsData1" ], "ui_br_hacked_phones_data1" );
         return;
     }
-    if (array_contains(level.teamdata[teamname]["hackedContractsData2"], instanceindex)) {
-        level.teamdata[teamname]["hackedContractsData2"] = array_remove(level.teamdata[teamname]["hackedContractsData2"], instanceindex);
-        function_fa76fc991ff22cdb(teamname, level.teamdata[teamname]["hackedContractsData2"], "ui_br_hacked_phones_data2");
+    
+    if ( array_contains( level.teamdata[ teamname ][ "hackedContractsData2" ], instanceindex ) )
+    {
+        level.teamdata[ teamname ][ "hackedContractsData2" ] = array_remove( level.teamdata[ teamname ][ "hackedContractsData2" ], instanceindex );
+        function_fa76fc991ff22cdb( teamname, level.teamdata[ teamname ][ "hackedContractsData2" ], "ui_br_hacked_phones_data2" );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x2531
+// Checksum 0x0, Offset: 0x2530
 // Size: 0x93
-function function_a3fcfe7472f9c5db(player, teamname) {
-    if (isdefined(level.teamdata[teamname]["hackedContractsData1"])) {
-        packedvalue = function_4f0fae2ece09d000(level.teamdata[teamname]["hackedContractsData1"]);
-        player setclientomnvar("ui_br_hacked_phones_data1", packedvalue);
+function function_a3fcfe7472f9c5db( player, teamname )
+{
+    if ( isdefined( level.teamdata[ teamname ][ "hackedContractsData1" ] ) )
+    {
+        packedvalue = function_4f0fae2ece09d000( level.teamdata[ teamname ][ "hackedContractsData1" ] );
+        player setclientomnvar( "ui_br_hacked_phones_data1", packedvalue );
     }
-    if (isdefined(level.teamdata[teamname]["hackedContractsData2"])) {
-        packedvalue = function_4f0fae2ece09d000(level.teamdata[teamname]["hackedContractsData2"]);
-        player setclientomnvar("ui_br_hacked_phones_data2", packedvalue);
+    
+    if ( isdefined( level.teamdata[ teamname ][ "hackedContractsData2" ] ) )
+    {
+        packedvalue = function_4f0fae2ece09d000( level.teamdata[ teamname ][ "hackedContractsData2" ] );
+        player setclientomnvar( "ui_br_hacked_phones_data2", packedvalue );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x25cc
+// Checksum 0x0, Offset: 0x25cb
 // Size: 0xf8
-function function_196e12780ecc8e3b(teamname) {
+function function_196e12780ecc8e3b( teamname )
+{
     self.dlogdata = [];
-    playersonteam = scripts\mp\utility\teams::getteamdata(teamname, "players");
-    foreach (player in playersonteam) {
-        if (isdefined(player)) {
-            function_8cf0f4e99dcf177b(player, 0, 0, 1);
+    playersonteam = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+    
+    foreach ( player in playersonteam )
+    {
+        if ( isdefined( player ) )
+        {
+            function_8cf0f4e99dcf177b( player, 0, 0, 1 );
             player.var_a4dd02e65175e1e7 = [];
-            player.var_a4dd02e65175e1e7["tabletIndex"] = self.tablet.index;
-            player.var_a4dd02e65175e1e7["totalPayout"] = 0;
-            player.var_a4dd02e65175e1e7["payoutValue"] = self.payoutValue * 10;
-            scripts\mp\utility\disconnect_event_aggregator::registerondisconnecteventcallback(&function_a3a8454199eae9cb);
+            player.var_a4dd02e65175e1e7[ "tabletIndex" ] = self.tablet.index;
+            player.var_a4dd02e65175e1e7[ "totalPayout" ] = 0;
+            player.var_a4dd02e65175e1e7[ "payoutValue" ] = self.payoutvalue * 10;
+            scripts\mp\utility\disconnect_event_aggregator::registerondisconnecteventcallback( &function_a3a8454199eae9cb );
         }
     }
-    thread function_c5110ae0cad07145(teamname);
+    
+    thread function_c5110ae0cad07145( teamname );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x26cc
+// Checksum 0x0, Offset: 0x26cb
 // Size: 0x80
-function function_19f022d240a597b9(teamname, var_d1c192f65678cca7) {
-    playersonteam = scripts\mp\utility\teams::getteamdata(teamname, "players");
-    foreach (player in playersonteam) {
-        function_8cf0f4e99dcf177b(player, var_d1c192f65678cca7, 0, 0);
+function function_19f022d240a597b9( teamname, var_d1c192f65678cca7 )
+{
+    playersonteam = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+    
+    foreach ( player in playersonteam )
+    {
+        function_8cf0f4e99dcf177b( player, var_d1c192f65678cca7, 0, 0 );
     }
-    self notify("hackerPhoneDlogSent");
+    
+    self notify( "hackerPhoneDlogSent" );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 4, eflags: 0x0
-// Checksum 0x0, Offset: 0x2754
+// Checksum 0x0, Offset: 0x2753
 // Size: 0xd5
-function function_8cf0f4e99dcf177b(player, var_d1c192f65678cca7, var_f8b7fd6747ad8f77, payoutextended) {
-    if (isdefined(player) & isarray(player.var_a4dd02e65175e1e7)) {
-        player dlog_recordplayerevent("dlog_event_contract_hacker_phone_payment_phase_completion", ["tablet_index", player.var_a4dd02e65175e1e7["tabletIndex"], "total_payout_value", player.var_a4dd02e65175e1e7["totalPayout"], "cash_per_payout", player.var_a4dd02e65175e1e7["payoutValue"], "stopped_by_match_end", var_d1c192f65678cca7, "stopped_by_disconnect", var_f8b7fd6747ad8f77, "payout_extended", payoutextended]);
+function function_8cf0f4e99dcf177b( player, var_d1c192f65678cca7, var_f8b7fd6747ad8f77, payoutextended )
+{
+    if ( isdefined( player ) & isarray( player.var_a4dd02e65175e1e7 ) )
+    {
+        player dlog_recordplayerevent( "dlog_event_contract_hacker_phone_payment_phase_completion", [ "tablet_index", player.var_a4dd02e65175e1e7[ "tabletIndex" ], "total_payout_value", player.var_a4dd02e65175e1e7[ "totalPayout" ], "cash_per_payout", player.var_a4dd02e65175e1e7[ "payoutValue" ], "stopped_by_match_end", var_d1c192f65678cca7, "stopped_by_disconnect", var_f8b7fd6747ad8f77, "payout_extended", payoutextended ] );
         player.var_a4dd02e65175e1e7 = undefined;
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2831
+// Checksum 0x0, Offset: 0x2830
 // Size: 0x17
-function function_a3a8454199eae9cb(player) {
-    function_8cf0f4e99dcf177b(player, 0, 1, 0);
+function function_a3a8454199eae9cb( player )
+{
+    function_8cf0f4e99dcf177b( player, 0, 1, 0 );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2850
+// Checksum 0x0, Offset: 0x284f
 // Size: 0x24
-function function_c5110ae0cad07145(teamname) {
-    self endon("hackerPhoneDlogSent");
-    level waittill("game_ended");
-    function_19f022d240a597b9(teamname, 1);
+function function_c5110ae0cad07145( teamname )
+{
+    self endon( "hackerPhoneDlogSent" );
+    level waittill( "game_ended" );
+    function_19f022d240a597b9( teamname, 1 );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x287c
+// Checksum 0x0, Offset: 0x287b
 // Size: 0x91
-function function_fa76fc991ff22cdb(teamname, var_b4a6c7c6c1ec8a4d, var_939613b9f38207b0) {
-    playersonteam = scripts\mp\utility\teams::getteamdata(teamname, "players");
-    packedvalue = function_4f0fae2ece09d000(var_b4a6c7c6c1ec8a4d);
-    foreach (player in playersonteam) {
-        player setclientomnvar(var_939613b9f38207b0, packedvalue);
+function function_fa76fc991ff22cdb( teamname, var_b4a6c7c6c1ec8a4d, var_939613b9f38207b0 )
+{
+    playersonteam = scripts\mp\utility\teams::getteamdata( teamname, "players" );
+    packedvalue = function_4f0fae2ece09d000( var_b4a6c7c6c1ec8a4d );
+    
+    foreach ( player in playersonteam )
+    {
+        player setclientomnvar( var_939613b9f38207b0, packedvalue );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2915
+// Checksum 0x0, Offset: 0x2914
 // Size: 0x3d
-function function_4f0fae2ece09d000(var_b4a6c7c6c1ec8a4d) {
+function function_4f0fae2ece09d000( var_b4a6c7c6c1ec8a4d )
+{
     packedvalue = 0;
+    
     for (i = 0; i < var_b4a6c7c6c1ec8a4d.size; i++) {
-        packedvalue += var_b4a6c7c6c1ec8a4d[i] << i * 16;
+        packedvalue += var_b4a6c7c6c1ec8a4d[ i ] << i * 16;
     }
+    
     return packedvalue;
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 2, eflags: 0x0
-// Checksum 0x0, Offset: 0x295b
+// Checksum 0x0, Offset: 0x295a
 // Size: 0x8c
-function function_4f6916c4e48cc55(closestphone, player) {
-    if (function_2fdcb6899db87a0f(closestphone, player.team)) {
-        player setclientomnvar("ui_br_hacker_phone_state", 1);
+function function_4f6916c4e48cc55( closestphone, player )
+{
+    if ( function_2fdcb6899db87a0f( closestphone, player.team ) )
+    {
+        player setclientomnvar( "ui_br_hacker_phone_state", 1 );
         return;
     }
-    if (istrue(player.canhackcontracts)) {
-        player setclientomnvar("ui_br_hacker_phone_state", 2);
+    
+    if ( istrue( player.canhackcontracts ) )
+    {
+        player setclientomnvar( "ui_br_hacker_phone_state", 2 );
         return;
     }
-    player setclientomnvar("ui_br_hacker_phone_state", 0);
-    if (closestphone.tablettype.ref == "hacker_phone") {
+    
+    player setclientomnvar( "ui_br_hacker_phone_state", 0 );
+    
+    if ( closestphone.tablettype.ref == "hacker_phone" )
+    {
         player function_7a1a95a9782f2d03();
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x29ef
+// Checksum 0x0, Offset: 0x29ee
 // Size: 0x6a
-function function_1f14537e86653ca8() {
-    level endon("game_ended");
-    level waittill("prematch_fade_done");
-    foreach (player in level.players) {
-        if (isdefined(player)) {
+function function_1f14537e86653ca8()
+{
+    level endon( "game_ended" );
+    level waittill( "prematch_fade_done" );
+    
+    foreach ( player in level.players )
+    {
+        if ( isdefined( player ) )
+        {
             player function_7a1a95a9782f2d03();
         }
     }
@@ -874,12 +1116,16 @@ function function_1f14537e86653ca8() {
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2a61
+// Checksum 0x0, Offset: 0x2a60
 // Size: 0x62
-function function_efad6fda2cf7cbf3() {
-    level endon("game_ended");
-    foreach (player in level.players) {
-        if (isdefined(player)) {
+function function_efad6fda2cf7cbf3()
+{
+    level endon( "game_ended" );
+    
+    foreach ( player in level.players )
+    {
+        if ( isdefined( player ) )
+        {
             player function_7a1a95a9782f2d03();
         }
     }
@@ -887,13 +1133,17 @@ function function_efad6fda2cf7cbf3() {
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2acb
+// Checksum 0x0, Offset: 0x2aca
 // Size: 0x6a
-function function_e0d5218265251e5d() {
-    level endon("game_ended");
-    level waittill("public_event_contractor_end");
-    foreach (player in level.players) {
-        if (isdefined(player)) {
+function function_e0d5218265251e5d()
+{
+    level endon( "game_ended" );
+    level waittill( "public_event_contractor_end" );
+    
+    foreach ( player in level.players )
+    {
+        if ( isdefined( player ) )
+        {
             player function_7a1a95a9782f2d03();
         }
     }
@@ -901,79 +1151,96 @@ function function_e0d5218265251e5d() {
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2b3d
+// Checksum 0x0, Offset: 0x2b3c
 // Size: 0x90
-function function_7a1a95a9782f2d03() {
-    var_6cf4d7026c51235b = function_7fa77e2dbbd62db5(self.team);
+function function_7a1a95a9782f2d03()
+{
+    var_6cf4d7026c51235b = function_7fa77e2dbbd62db5( self.team );
     var_94fdf3291d472947 = var_6cf4d7026c51235b * level.hackerphone.var_d6b7c0cb8162cd8e;
-    if (scripts\mp\gametypes\br_publicevents::ispubliceventoftypeactive(%"contractor")) {
-        var_94fdf3291d472947 = var_6cf4d7026c51235b * level.hackerphone.var_d6b7c0cb8162cd8e * level.br_pe_data[%"contractor"].var_46a451f9012bd1c;
+    
+    if ( scripts\mp\gametypes\br_publicevents::ispubliceventoftypeactive( %"contractor" ) )
+    {
+        var_94fdf3291d472947 = var_6cf4d7026c51235b * level.hackerphone.var_d6b7c0cb8162cd8e * level.br_pe_data[ %"contractor" ].var_46a451f9012bd1c;
     }
-    self setclientomnvar("ui_br_hacker_phone_potential_cash_value", var_94fdf3291d472947);
+    
+    self setclientomnvar( "ui_br_hacker_phone_potential_cash_value", var_94fdf3291d472947 );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2bd5
+// Checksum 0x0, Offset: 0x2bd4
 // Size: 0x3e
-function function_3d221e16860007d5(playerassimilated, oldteam, newteam) {
-    if (istrue(playerassimilated.var_6c8912ea30b21003)) {
+function function_3d221e16860007d5( playerassimilated, oldteam, newteam )
+{
+    if ( istrue( playerassimilated.var_6c8912ea30b21003 ) )
+    {
         playerassimilated.var_6c8912ea30b21003 = undefined;
-        thread function_7481b64fddcb07ca(playerassimilated);
+        thread function_7481b64fddcb07ca( playerassimilated );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 1, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c1b
+// Checksum 0x0, Offset: 0x2c1a
 // Size: 0x29
-function function_7481b64fddcb07ca(player) {
-    level endon("game_ended");
-    player endon("death_or_disconnect");
+function function_7481b64fddcb07ca( player )
+{
+    level endon( "game_ended" );
+    player endon( "death_or_disconnect" );
     wait 1;
-    displayplayersplash(player, "br_hacker_phone_quest_payment_expired");
+    displayplayersplash( player, "br_hacker_phone_quest_payment_expired" );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2c4c
+// Checksum 0x0, Offset: 0x2c4b
 // Size: 0x6a
-function function_83d3732a571f142a(player, oldteam, newteam) {
+function function_83d3732a571f142a( player, oldteam, newteam )
+{
     player.canhackcontracts = undefined;
     player.var_6c8912ea30b21003 = undefined;
-    player setclientomnvar("ui_br_hacker_phone_state", 0);
-    if (function_42a0806457ea8039(player)) {
-        hidequestobjiconfromplayer(player);
+    player setclientomnvar( "ui_br_hacker_phone_state", 0 );
+    
+    if ( function_42a0806457ea8039( player ) )
+    {
+        hidequestobjiconfromplayer( player );
     }
-    player setclientomnvar("ui_br_hacked_phones_data1", 0);
-    player setclientomnvar("ui_br_hacked_phones_data2", 0);
+    
+    player setclientomnvar( "ui_br_hacked_phones_data1", 0 );
+    player setclientomnvar( "ui_br_hacked_phones_data2", 0 );
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 3, eflags: 0x0
-// Checksum 0x0, Offset: 0x2cbe
+// Checksum 0x0, Offset: 0x2cbd
 // Size: 0xa2
-function function_75b53ad947495f9c(player, oldteam, newteam) {
-    if (function_42a0806457ea8039(player)) {
+function function_75b53ad947495f9c( player, oldteam, newteam )
+{
+    if ( function_42a0806457ea8039( player ) )
+    {
         player.canhackcontracts = 1;
-        player uiobjectiveshow("hacker_phone");
-        player setclientomnvar("ui_br_objective_countdown_timer", self.missiontime);
-        player setclientomnvar("ui_br_hacker_phone_state", 2);
-        player namespace_1eb3c4e0e28fac71::uiobjectivesetparameter(self.var_9f274e85b7bbd87f, level.hackerphone.var_be8a6484aed40352);
-        showquestobjicontoplayer(player);
-        function_a3fcfe7472f9c5db(player, player.team);
+        player uiobjectiveshow( "hacker_phone" );
+        player setclientomnvar( "ui_br_objective_countdown_timer", self.missiontime );
+        player setclientomnvar( "ui_br_hacker_phone_state", 2 );
+        player namespace_1eb3c4e0e28fac71::uiobjectivesetparameter( self.var_9f274e85b7bbd87f, level.hackerphone.var_be8a6484aed40352 );
+        showquestobjicontoplayer( player );
+        function_a3fcfe7472f9c5db( player, player.team );
     }
 }
 
 // Namespace namespace_46a48466a348d5e2 / namespace_735f8af4d2aa34fb
 // Params 0, eflags: 0x0
-// Checksum 0x0, Offset: 0x2d68
-// Size: 0x34
-function function_5418fefa50b762a6() {
+// Checksum 0x0, Offset: 0x2d67
+// Size: 0x34, Type: bool
+function function_5418fefa50b762a6()
+{
     hackablecontracts = level.contractmanager.activetablets;
-    if (hackablecontracts.size < self.var_cc4cd023f0195d5f) {
+    
+    if ( hackablecontracts.size < self.var_cc4cd023f0195d5f )
+    {
         return false;
     }
+    
     return true;
 }
 

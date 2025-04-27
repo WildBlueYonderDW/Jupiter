@@ -5,13 +5,14 @@
 #using scripts\mp\lightarmor;
 #using scripts\mp\perks\perkfunctions;
 
-#namespace namespace_3f74497c7fa61c36;
+#namespace deployablebox_vest;
 
-// Namespace namespace_3f74497c7fa61c36 / scripts\mp\killstreaks\deployablebox_vest
+// Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x264
 // Size: 0x1fa
-function init() {
+function init()
+{
     var_86280fefb94b6b28 = spawnstruct();
     var_86280fefb94b6b28.id = "deployable_vest";
     var_86280fefb94b6b28.weaponinfo = "deployable_vest_marker_mp";
@@ -35,53 +36,62 @@ function init() {
     var_86280fefb94b6b28.usetime = 1000;
     var_86280fefb94b6b28.maxhealth = 220;
     var_86280fefb94b6b28.damagefeedback = "deployable_bag";
-    var_86280fefb94b6b28.deathvfx = loadfx("vfx/iw7/_requests/mp/vfx_generic_equipment_exp.vfx");
+    var_86280fefb94b6b28.deathvfx = loadfx( "vfx/iw7/_requests/mp/vfx_generic_equipment_exp.vfx" );
     var_86280fefb94b6b28.allowmeleedamage = 1;
     var_86280fefb94b6b28.allowgrenadedamage = 0;
     var_86280fefb94b6b28.maxuses = 4;
     var_86280fefb94b6b28.canuseotherboxes = 0;
-    level.boxsettings["deployable_vest"] = var_86280fefb94b6b28;
-    assertmsg("<dev string:x1c>");
-    level.deployable_box["deployable_vest"] = [];
+    level.boxsettings[ "deployable_vest" ] = var_86280fefb94b6b28;
+    assertmsg( "<dev string:x1c>" );
+    level.deployable_box[ "deployable_vest" ] = [];
 }
 
-// Namespace namespace_3f74497c7fa61c36 / scripts\mp\killstreaks\deployablebox_vest
+// Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x466
-// Size: 0x58
-function tryusedeployablevest(lifeid, streakname) {
-    result = scripts\mp\killstreaks\deployablebox::begindeployableviamarker(lifeid, "deployable_vest");
-    if (!isdefined(result) || !result) {
+// Size: 0x58, Type: bool
+function tryusedeployablevest( lifeid, streakname )
+{
+    result = scripts\mp\killstreaks\deployablebox::begindeployableviamarker( lifeid, "deployable_vest" );
+    
+    if ( !isdefined( result ) || !result )
+    {
         return false;
     }
-    utility::trycall(level.matchdata_logkillstreakevent, "deployable_vest", self.origin);
+    
+    utility::trycall( level.matchdata_logkillstreakevent, "deployable_vest", self.origin );
     return true;
 }
 
-// Namespace namespace_3f74497c7fa61c36 / scripts\mp\killstreaks\deployablebox_vest
+// Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4c7
-// Size: 0x13
-function canusedeployable(boxent) {
-    return !scripts\mp\lightarmor::haslightarmor(self);
+// Size: 0x13, Type: bool
+function canusedeployable( boxent )
+{
+    return !scripts\mp\lightarmor::haslightarmor( self );
 }
 
-// Namespace namespace_3f74497c7fa61c36 / scripts\mp\killstreaks\deployablebox_vest
+// Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x4e3
 // Size: 0x12
-function onusedeployable(boxent) {
+function onusedeployable( boxent )
+{
     scripts\mp\perks\perkfunctions::setlightarmor();
 }
 
-// Namespace namespace_3f74497c7fa61c36 / scripts\mp\killstreaks\deployablebox_vest
+// Namespace deployablebox_vest / scripts\mp\killstreaks\deployablebox_vest
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x4fd
 // Size: 0x44
-function get_adjusted_armor(existing_armor, rank) {
-    if (existing_armor + level.deployablebox_vest_rank[rank] > level.deployablebox_vest_max) {
+function get_adjusted_armor( existing_armor, rank )
+{
+    if ( existing_armor + level.deployablebox_vest_rank[ rank ] > level.deployablebox_vest_max )
+    {
         return level.deployablebox_vest_max;
     }
-    return existing_armor + level.deployablebox_vest_rank[rank];
+    
+    return existing_armor + level.deployablebox_vest_rank[ rank ];
 }
 

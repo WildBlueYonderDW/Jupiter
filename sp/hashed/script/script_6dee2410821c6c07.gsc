@@ -4,10 +4,13 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x8b
 // Size: 0x22
-function init() {
-    if (!isdefined(level.var_35a6c186c74a921b)) {
+function init()
+{
+    if ( !isdefined( level.var_35a6c186c74a921b ) )
+    {
         level.var_35a6c186c74a921b = [];
     }
+    
     level thread onplayerconnect();
 }
 
@@ -15,9 +18,11 @@ function init() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xb5
 // Size: 0x21
-function onplayerconnect() {
-    for (;;) {
-        level waittill("connected", player);
+function onplayerconnect()
+{
+    for ( ;; )
+    {
+        level waittill( "connected", player );
         player thread onplayerspawned();
     }
 }
@@ -26,7 +31,8 @@ function onplayerconnect() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xde
 // Size: 0xb
-function function_60d43f6a3c2b5f1b(callback) {
+function function_60d43f6a3c2b5f1b( callback )
+{
     
 }
 
@@ -34,11 +40,16 @@ function function_60d43f6a3c2b5f1b(callback) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xf1
 // Size: 0x62
-function onplayerspawned() {
-    self endon("disconnect");
-    for (;;) {
-        self waittill("weapon_change");
-        foreach (callback in level.var_35a6c186c74a921b) {
+function onplayerspawned()
+{
+    self endon( "disconnect" );
+    
+    for ( ;; )
+    {
+        self waittill( "weapon_change" );
+        
+        foreach ( callback in level.var_35a6c186c74a921b )
+        {
             self [[ callback ]]();
         }
     }

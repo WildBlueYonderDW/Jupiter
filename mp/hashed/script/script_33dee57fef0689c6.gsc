@@ -1,4 +1,4 @@
-#using script_302131d09e9d590e;
+#using scripts\mp\infilexfil\jltv_infil;
 
 #namespace namespace_5b37c06792254dcf;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
-function main() {
-    thread namespace_6eef4eee76658fc0::function_20d96b1495a37dbc("alpha");
+function main()
+{
+    thread scripts\mp\infilexfil\jltv_infil::function_20d96b1495a37dbc( "alpha" );
 }
 

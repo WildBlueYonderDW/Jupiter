@@ -4,7 +4,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x68
 // Size: 0xc
-function initstructs() {
+function initstructs()
+{
     level.struct = [];
 }
 
@@ -12,9 +13,10 @@ function initstructs() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7c
 // Size: 0x29
-function createstruct() {
+function createstruct()
+{
     struct = spawnstruct();
-    level.struct[level.struct.size] = struct;
+    level.struct[ level.struct.size ] = struct;
     return struct;
 }
 

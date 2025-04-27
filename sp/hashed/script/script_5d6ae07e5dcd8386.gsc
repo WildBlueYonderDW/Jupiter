@@ -1,4 +1,4 @@
-#using script_3aeb9f02de401a76;
+#using scripts\anim\death;
 
 #namespace civilian_death;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x70
 // Size: 0x9
-function main() {
-    namespace_d7b8d979dba24484::main();
+function main()
+{
+    scripts\anim\death::main();
 }
 

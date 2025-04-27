@@ -1,10 +1,11 @@
-#namespace namespace_afc4a13522e6b1b7;
+#namespace mp_jup_incline_precache;
 
-// Namespace namespace_afc4a13522e6b1b7 / scripts\mp\maps\mp_jup_incline\mp_jup_incline_precache
+// Namespace mp_jup_incline_precache / scripts\mp\maps\mp_jup_incline\mp_jup_incline_precache
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x88
 // Size: 0x2
-function main() {
+function main()
+{
     
 }
 

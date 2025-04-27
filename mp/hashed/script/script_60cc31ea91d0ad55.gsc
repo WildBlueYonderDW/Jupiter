@@ -10,7 +10,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xbb
 // Size: 0x2
-function init_move() {
+function init_move()
+{
     
 }
 
@@ -18,7 +19,8 @@ function init_move() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xc5
 // Size: 0xe
-function function_3bf2c1ee7854b63a() {
-    asm_setstate("move_in");
+function function_3bf2c1ee7854b63a()
+{
+    asm_setstate( "move_in" );
 }
 

@@ -13,25 +13,33 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x143
 // Size: 0x177
-function init() {
+function init()
+{
     level.blueprint_maxpermatch = undefined;
     level.blueprint_chancebase = undefined;
     level.blueprint_chancepercontract = undefined;
     brgametype = scripts\cp_mp\utility\game_utility::function_6c1fce6f6b8779d5();
-    if (brgametype == "plunder" || brgametype == "risk") {
-        level.blueprint_maxpermatch = getdvarfloat(@"hash_d8044c322f6b5042", 4);
-        level.blueprint_chancebase = getdvarfloat(@"hash_13b736c9ba95d40d", 0.02);
-        level.blueprint_chancepercontract = getdvarfloat(@"hash_8a876e2c4b13f819", 0);
-    } else {
-        level.blueprint_maxpermatch = getdvarfloat(@"hash_412e34085bcd2b1a", 4);
-        level.blueprint_chancebase = getdvarfloat(@"hash_aa3250e2ce395b55", 0.02);
-        level.blueprint_chancepercontract = getdvarfloat(@"hash_9c3219408286e11", 0);
+    
+    if ( brgametype == "plunder" || brgametype == "risk" )
+    {
+        level.blueprint_maxpermatch = getdvarfloat( @"hash_d8044c322f6b5042", 4 );
+        level.blueprint_chancebase = getdvarfloat( @"hash_13b736c9ba95d40d", 0.02 );
+        level.blueprint_chancepercontract = getdvarfloat( @"hash_8a876e2c4b13f819", 0 );
     }
+    else
+    {
+        level.blueprint_maxpermatch = getdvarfloat( @"hash_412e34085bcd2b1a", 4 );
+        level.blueprint_chancebase = getdvarfloat( @"hash_aa3250e2ce395b55", 0.02 );
+        level.blueprint_chancepercontract = getdvarfloat( @"hash_9c3219408286e11", 0 );
+    }
+    
     level.blueprintextractspawns = 0;
     level.blueprintextractchance = level.blueprint_chancebase;
     level.blueprintcreatingteam = undefined;
-    foreach (unlockabledata in level.questinfo.unlockables) {
-        registerpickupcreatedcallback("brloot_blueprintextract_tablet", &blueprintextract_onpickupcreated);
+    
+    foreach ( unlockabledata in level.questinfo.unlockables )
+    {
+        registerpickupcreatedcallback( "brloot_blueprintextract_tablet", &blueprintextract_onpickupcreated );
     }
 }
 
@@ -39,18 +47,26 @@ function init() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c2
 // Size: 0x8c
-function blueprintextract_trygetreward(rewardorigin) {
-    if (!blueprintextract_shouldgivereward(rewardorigin)) {
+function blueprintextract_trygetreward( rewardorigin )
+{
+    if ( !blueprintextract_shouldgivereward( rewardorigin ) )
+    {
         return undefined;
     }
-    if (level.blueprintextractspawns >= level.blueprint_maxpermatch) {
+    
+    if ( level.blueprintextractspawns >= level.blueprint_maxpermatch )
+    {
         return undefined;
     }
-    randomvalue = randomfloat(1);
-    if (randomvalue <= level.blueprintextractchance) {
+    
+    randomvalue = randomfloat( 1 );
+    
+    if ( randomvalue <= level.blueprintextractchance )
+    {
         level.blueprintextractspawns += 1;
         return "brloot_blueprintextract_tablet";
     }
+    
     level.blueprintextractchance += level.blueprint_chancepercontract;
     return undefined;
 }
@@ -58,27 +74,40 @@ function blueprintextract_trygetreward(rewardorigin) {
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x356
-// Size: 0xd4
-function blueprintextract_shouldgivereward(rewardorigin) {
-    if (scripts\mp\gametypes\br_public::isanytutorialorbotpracticematch()) {
+// Size: 0xd4, Type: bool
+function blueprintextract_shouldgivereward( rewardorigin )
+{
+    if ( scripts\mp\gametypes\br_public::isanytutorialorbotpracticematch() )
+    {
         return false;
     }
-    if (scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924()) {
+    
+    if ( scripts\cp_mp\utility\game_utility::function_b2c4b42f9236924() )
+    {
         return false;
     }
-    if (istrue(level.bmoovertime)) {
+    
+    if ( istrue( level.bmoovertime ) )
+    {
         return false;
     }
-    if (isdefined(level.br_circle) && isdefined(level.br_circle.circleindex) && isdefined(level.br_level) && isdefined(level.br_level.br_circleclosetimes)) {
+    
+    if ( isdefined( level.br_circle ) && isdefined( level.br_circle.circleindex ) && isdefined( level.br_level ) && isdefined( level.br_level.br_circleclosetimes ) )
+    {
         currentcircleindex = level.br_circle.circleindex;
         finalcircleindex = level.br_level.br_circleclosetimes.size - 1;
-        if (finalcircleindex - currentcircleindex < 4) {
+        
+        if ( finalcircleindex - currentcircleindex < 4 )
+        {
             return false;
         }
     }
-    if (!scripts\mp\gametypes\br_extract_quest::extractlocale_islocaleavailable(rewardorigin)) {
+    
+    if ( !scripts\mp\gametypes\br_extract_quest::extractlocale_islocaleavailable( rewardorigin ) )
+    {
         return false;
     }
+    
     return true;
 }
 
@@ -86,7 +115,8 @@ function blueprintextract_shouldgivereward(rewardorigin) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x433
 // Size: 0x15
-function blueprintextract_beforepickupspawned(team) {
+function blueprintextract_beforepickupspawned( team )
+{
     level.blueprintcreatingteam = team;
 }
 
@@ -94,9 +124,10 @@ function blueprintextract_beforepickupspawned(team) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x450
 // Size: 0x2c
-function blueprintextract_onpickupcreated() {
+function blueprintextract_onpickupcreated()
+{
     randomlootid = scripts\mp\gametypes\br_quest_util::getrandomextractunlockablelootid();
-    blueprintextract_setunlockablelootid(randomlootid);
+    blueprintextract_setunlockablelootid( randomlootid );
     thread blueprintextract_createtempobjective();
     thread blueprintextract_cleanupwhennoavailablelocales();
 }
@@ -105,8 +136,9 @@ function blueprintextract_onpickupcreated() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x484
 // Size: 0x1e
-function blueprintextract_setunlockablelootid(unlockablelootid) {
-    scripts\mp\gametypes\br_pickups::loot_setitemcount(self, unlockablelootid);
+function blueprintextract_setunlockablelootid( unlockablelootid )
+{
+    scripts\mp\gametypes\br_pickups::loot_setitemcount( self, unlockablelootid );
     self.extractunlockablelootid = unlockablelootid;
 }
 
@@ -114,43 +146,60 @@ function blueprintextract_setunlockablelootid(unlockablelootid) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x4aa
 // Size: 0x135
-function blueprintextract_createtempobjective() {
+function blueprintextract_createtempobjective()
+{
     creatingteam = level.blueprintcreatingteam;
     level.blueprintcreatingteam = undefined;
-    if (!isdefined(creatingteam)) {
+    
+    if ( !isdefined( creatingteam ) )
+    {
         return;
     }
-    objectiveiconid = scripts\mp\objidpoolmanager::requestobjectiveid(1);
-    if (objectiveiconid != -1) {
-        scripts\mp\objidpoolmanager::objective_add_objective(objectiveiconid, "invisible", (0, 0, 0), "ui_mp_br_mapmenu_icon_extraction_objective");
-        scripts\mp\objidpoolmanager::objective_set_play_intro(objectiveiconid, 1);
-        scripts\mp\objidpoolmanager::update_objective_setbackground(objectiveiconid, 1);
-        foreach (player in getteamdata(creatingteam, "players")) {
-            if (!player scripts\mp\gametypes\br_public::isplayeringulag()) {
-                objective_addclienttomask(objectiveiconid, player);
+    
+    objectiveiconid = scripts\mp\objidpoolmanager::requestobjectiveid( 1 );
+    
+    if ( objectiveiconid != -1 )
+    {
+        scripts\mp\objidpoolmanager::objective_add_objective( objectiveiconid, "invisible", ( 0, 0, 0 ), "ui_mp_br_mapmenu_icon_extraction_objective" );
+        scripts\mp\objidpoolmanager::objective_set_play_intro( objectiveiconid, 1 );
+        scripts\mp\objidpoolmanager::update_objective_setbackground( objectiveiconid, 1 );
+        
+        foreach ( player in getteamdata( creatingteam, "players" ) )
+        {
+            if ( !player scripts\mp\gametypes\br_public::isplayeringulag() )
+            {
+                objective_addclienttomask( objectiveiconid, player );
             }
         }
     }
+    
     starttime = gettime();
-    while (isdefined(self) && gettime() - starttime < 15000) {
-        newpos = self.origin + (0, 0, 10);
-        scripts\mp\objidpoolmanager::update_objective_position(objectiveiconid, newpos);
+    
+    while ( isdefined( self ) && gettime() - starttime < 15000 )
+    {
+        newpos = self.origin + ( 0, 0, 10 );
+        scripts\mp\objidpoolmanager::update_objective_position( objectiveiconid, newpos );
         waitframe();
     }
-    scripts\mp\objidpoolmanager::objective_playermask_hidefromall(objectiveiconid);
-    scripts\mp\objidpoolmanager::returnobjectiveid(objectiveiconid);
+    
+    scripts\mp\objidpoolmanager::objective_playermask_hidefromall( objectiveiconid );
+    scripts\mp\objidpoolmanager::returnobjectiveid( objectiveiconid );
 }
 
 // Namespace br_blueprint_extract_spawn / scripts\mp\gametypes\br_blueprint_extract_spawn
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e7
 // Size: 0x25
-function blueprintextract_cleanupwhennoavailablelocales() {
-    while (isdefined(self)) {
-        if (!scripts\mp\gametypes\br_extract_quest::extractlocale_islocaleavailable(self.origin)) {
+function blueprintextract_cleanupwhennoavailablelocales()
+{
+    while ( isdefined( self ) )
+    {
+        if ( !scripts\mp\gametypes\br_extract_quest::extractlocale_islocaleavailable( self.origin ) )
+        {
             deletescriptableinstance();
             return;
         }
+        
         waitframe();
     }
 }

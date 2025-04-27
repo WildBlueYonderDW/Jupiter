@@ -11,40 +11,48 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x125
 // Size: 0x5a
-function emp_debuff_init() {
-    registersharedfunc("emp", "getPlayerEMPImmune", &getplayerempimmune);
-    registersharedfunc("emp", "setPlayerEMPImmune", &setplayerempimmune);
-    registersharedfunc("emp", "onPlayerEMPed", &onplayeremped);
-    registersharedfunc("emp", "onVehicleEMPed", &onvehicleemped);
+function emp_debuff_init()
+{
+    registersharedfunc( "emp", "getPlayerEMPImmune", &getplayerempimmune );
+    registersharedfunc( "emp", "setPlayerEMPImmune", &setplayerempimmune );
+    registersharedfunc( "emp", "onPlayerEMPed", &onplayeremped );
+    registersharedfunc( "emp", "onVehicleEMPed", &onvehicleemped );
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x187
 // Size: 0xd
-function getplayerempimmune() {
-    return _hasperk("specialty_empimmune");
+function getplayerempimmune()
+{
+    return _hasperk( "specialty_empimmune" );
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19d
 // Size: 0x2a
-function setplayerempimmune(isimmune) {
-    if (isimmune) {
-        giveperk("specialty_empimmune");
+function setplayerempimmune( isimmune )
+{
+    if ( isimmune )
+    {
+        giveperk( "specialty_empimmune" );
         return;
     }
-    removeperk("specialty_empimmune");
+    
+    removeperk( "specialty_empimmune" );
 }
 
 // Namespace emp_debuff_mp / scripts\mp\emp_debuff_mp
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1cf
 // Size: 0x37
-function onplayeremped(data) {
+function onplayeremped( data )
+{
     attacker = data.attacker;
-    if (istrue(scripts\cp_mp\utility\player_utility::playersareenemies(self, attacker))) {
+    
+    if ( istrue( scripts\cp_mp\utility\player_utility::playersareenemies( self, attacker ) ) )
+    {
         attacker thread scripts\mp\killstreaks\killstreaks::givescoreforempedplayer();
     }
 }
@@ -53,16 +61,23 @@ function onplayeremped(data) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x20e
 // Size: 0x77
-function onvehicleemped(data) {
+function onvehicleemped( data )
+{
     attacker = data.attacker;
-    if (isdefined(self.turrets) && self.turrets.size > 0) {
-        scripts\mp\emp_debuff_mp::function_a3a4d32a799e95d5(data);
+    
+    if ( isdefined( self.turrets ) && self.turrets.size > 0 )
+    {
+        scripts\mp\emp_debuff_mp::function_a3a4d32a799e95d5( data );
     }
-    if (istrue(scripts\cp_mp\utility\player_utility::playersareenemies(self.owner, attacker))) {
+    
+    if ( istrue( scripts\cp_mp\utility\player_utility::playersareenemies( self.owner, attacker ) ) )
+    {
         attacker scripts\mp\killstreaks\killstreaks::givescoreforempedvehicle();
         return;
     }
-    if (scripts\cp_mp\vehicles\vehicle::function_62ccfb7ea15a4520()) {
+    
+    if ( scripts\cp_mp\vehicles\vehicle::isbossvehicle() )
+    {
         attacker scripts\mp\killstreaks\killstreaks::givescoreforempedvehicle();
     }
 }
@@ -71,9 +86,12 @@ function onvehicleemped(data) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x28d
 // Size: 0x3e
-function function_a3a4d32a799e95d5(data) {
+function function_a3a4d32a799e95d5( data )
+{
     attacker = data.attacker;
-    if (istrue(scripts\cp_mp\utility\player_utility::playersareenemies(self.owner, attacker))) {
+    
+    if ( istrue( scripts\cp_mp\utility\player_utility::playersareenemies( self.owner, attacker ) ) )
+    {
         attacker scripts\mp\killstreaks\killstreaks::function_7d84b8c1b826b7ea();
     }
 }

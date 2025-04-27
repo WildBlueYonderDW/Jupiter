@@ -6,10 +6,13 @@
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x9a
 // Size: 0x34
-function isinpain(taskid, params) {
-    if (!ent_flag("in_pain")) {
+function isinpain( taskid, params )
+{
+    if ( !ent_flag( "in_pain" ) )
+    {
         return anim.failure;
     }
+    
     return anim.success;
 }
 

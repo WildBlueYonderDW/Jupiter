@@ -16,7 +16,8 @@
 // Params 0, eflags: 0x4
 // Checksum 0x0, Offset: 0xe0
 // Size: 0xb
-function private init() {
+function private init()
+{
     level thread namespace_143053cbd5a5349c::init();
 }
 

@@ -6,17 +6,25 @@
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x90
 // Size: 0xb0
-function callback(event, params) {
-    if (!isdefined(params)) {
+function callback( event, params )
+{
+    if ( !isdefined( params ) )
+    {
         params = spawnstruct();
     }
-    assertex(isstruct(params), "<dev string:x1c>");
-    function_f3847410a67a3098(level, event, params);
-    if (self != level) {
-        function_f3847410a67a3098(self, event, params);
-        if (isdefined(self.var_8d44c0f367e8d9c0)) {
-            foreach (var_58ea2dd09081c395 in self.var_8d44c0f367e8d9c0) {
-                function_f3847410a67a3098(var_58ea2dd09081c395, event, params);
+    
+    assertex( isstruct( params ), "<dev string:x1c>" );
+    function_f3847410a67a3098( level, event, params );
+    
+    if ( self != level )
+    {
+        function_f3847410a67a3098( self, event, params );
+        
+        if ( isdefined( self.var_8d44c0f367e8d9c0 ) )
+        {
+            foreach ( var_58ea2dd09081c395 in self.var_8d44c0f367e8d9c0 )
+            {
+                function_f3847410a67a3098( var_58ea2dd09081c395, event, params );
             }
         }
     }
@@ -26,10 +34,13 @@ function callback(event, params) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x148
 // Size: 0x71
-function function_1ad95d714a56c8fa(event, params) {
+function function_1ad95d714a56c8fa( event, params )
+{
     ais = getaiarray();
-    foreach (ai in ais) {
-        ai function_f3847410a67a3098(ai, event, params);
+    
+    foreach ( ai in ais )
+    {
+        ai function_f3847410a67a3098( ai, event, params );
     }
 }
 
@@ -37,11 +48,14 @@ function function_1ad95d714a56c8fa(event, params) {
 // Params 2, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c1
 // Size: 0x80
-function function_ca1462b402444dd6(event, params) {
+function function_ca1462b402444dd6( event, params )
+{
     players = level.players;
-    foreach (player in players) {
-        player function_f3847410a67a3098(level, event, params);
-        player function_f3847410a67a3098(player, event, params);
+    
+    foreach ( player in players )
+    {
+        player function_f3847410a67a3098( level, event, params );
+        player function_f3847410a67a3098( player, event, params );
     }
 }
 
@@ -49,35 +63,53 @@ function function_ca1462b402444dd6(event, params) {
 // Params 3, eflags: 0x4
 // Checksum 0x0, Offset: 0x249
 // Size: 0x150
-function private function_f3847410a67a3098(ent, event, params) {
+function private function_f3847410a67a3098( ent, event, params )
+{
     callbacks = undefined;
-    if (isdefined(ent.callbacks)) {
-        callbacks = ent.callbacks[event];
+    
+    if ( isdefined( ent.callbacks ) )
+    {
+        callbacks = ent.callbacks[ event ];
     }
-    if (isdefined(callbacks)) {
+    
+    if ( isdefined( callbacks ) )
+    {
         for (i = 0; i < callbacks.size; i++) {
-            callback_fields = callbacks[i];
-            if (!isarray(callback_fields)) {
+            callback_fields = callbacks[ i ];
+            
+            if ( !isarray( callback_fields ) )
+            {
                 continue;
             }
-            callback = callback_fields[0];
-            assert(isfunction(callback));
-            if (!isfunction(callback)) {
+            
+            callback = callback_fields[ 0 ];
+            assert( isfunction( callback ) );
+            
+            if ( !isfunction( callback ) )
+            {
                 return;
             }
-            var_732ad454c46f92fd = callback_fields[1];
-            if (isdefined(var_732ad454c46f92fd)) {
-                self thread [[ callback ]](params, var_732ad454c46f92fd);
+            
+            var_732ad454c46f92fd = callback_fields[ 1 ];
+            
+            if ( isdefined( var_732ad454c46f92fd ) )
+            {
+                self thread [[ callback ]]( params, var_732ad454c46f92fd );
                 continue;
             }
-            self thread [[ callback ]](params);
+            
+            self thread [[ callback ]]( params );
         }
-        if (isdefined(ent.callbacks)) {
-            if (isdefined(ent.var_fab0247ea0a3a375) && isdefined(ent.var_fab0247ea0a3a375[event])) {
-                ent.callbacks[event] = function_816601f7d8ca5b92(ent.callbacks[event]);
-                ent.var_fab0247ea0a3a375[event] = undefined;
+        
+        if ( isdefined( ent.callbacks ) )
+        {
+            if ( isdefined( ent.var_fab0247ea0a3a375 ) && isdefined( ent.var_fab0247ea0a3a375[ event ] ) )
+            {
+                ent.callbacks[ event ] = function_816601f7d8ca5b92( ent.callbacks[ event ] );
+                ent.var_fab0247ea0a3a375[ event ] = undefined;
             }
-            assertex(function_c2791ffb5f62cc92(ent.callbacks[event]) == 0, "<dev string:x58>");
+            
+            assertex( function_c2791ffb5f62cc92( ent.callbacks[ event ] ) == 0, "<dev string:x58>" );
         }
     }
 }
@@ -86,59 +118,87 @@ function private function_f3847410a67a3098(ent, event, params) {
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x3a1
 // Size: 0x143
-function add(event, func, var_732ad454c46f92fd) {
-    assertex(isfunction(func), "<dev string:xa4>" + (function_d03495fe6418377b(event) ? function_3c8848a3a11b2553(event) : event) + "<dev string:xbd>");
-    if (!isfunction(func)) {
+function add( event, func, var_732ad454c46f92fd )
+{
+    assertex( isfunction( func ), "<dev string:xa4>" + ( isxhash( event ) ? function_3c8848a3a11b2553( event ) : event ) + "<dev string:xbd>" );
+    
+    if ( !isfunction( func ) )
+    {
         return;
     }
-    assertex(isdefined(event), "<dev string:xdd>");
-    if (!isdefined(self.callbacks) || !isdefined(self.callbacks[event])) {
-        self.callbacks[event] = [];
+    
+    assertex( isdefined( event ), "<dev string:xdd>" );
+    
+    if ( !isdefined( self.callbacks ) || !isdefined( self.callbacks[ event ] ) )
+    {
+        self.callbacks[ event ] = [];
     }
+    
     /#
-        foreach (callback in self.callbacks[event]) {
-            if (isarray(callback) && callback[0] == func) {
-                if (!isdefined(callback[1]) && !isdefined(var_732ad454c46f92fd) || is_equal(callback[1], var_732ad454c46f92fd)) {
-                    assertmsg("<dev string:x110>" + event);
+        foreach ( callback in self.callbacks[ event ] )
+        {
+            if ( isarray( callback ) && callback[ 0 ] == func )
+            {
+                if ( !isdefined( callback[ 1 ] ) && !isdefined( var_732ad454c46f92fd ) || is_equal( callback[ 1 ], var_732ad454c46f92fd ) )
+                {
+                    assertmsg( "<dev string:x110>" + event );
                 }
             }
         }
     #/
-    self.callbacks[event][self.callbacks[event].size] = [func, var_732ad454c46f92fd];
+    
+    self.callbacks[ event ][ self.callbacks[ event ].size ] = [ func, var_732ad454c46f92fd ];
 }
 
 // Namespace callback / scripts\common\callbacks
 // Params 3, eflags: 0x0
 // Checksum 0x0, Offset: 0x4ec
 // Size: 0x17a
-function remove(event, func, instant) {
-    if (!isdefined(self.callbacks)) {
+function remove( event, func, instant )
+{
+    if ( !isdefined( self.callbacks ) )
+    {
         return;
     }
-    assertex(isdefined(event), "<dev string:x141>");
-    if (isdefined(func) && function_d03495fe6418377b(func) && func == #"all") {
-        self.callbacks[event] = [];
-        if (isdefined(self.var_fab0247ea0a3a375)) {
-            self.var_fab0247ea0a3a375[event] = undefined;
+    
+    assertex( isdefined( event ), "<dev string:x141>" );
+    
+    if ( isdefined( func ) && isxhash( func ) && func == #"all" )
+    {
+        self.callbacks[ event ] = [];
+        
+        if ( isdefined( self.var_fab0247ea0a3a375 ) )
+        {
+            self.var_fab0247ea0a3a375[ event ] = undefined;
         }
+        
         return;
     }
-    if (!isdefined(self.callbacks[event])) {
+    
+    if ( !isdefined( self.callbacks[ event ] ) )
+    {
         return;
     }
-    foreach (index, func_group in self.callbacks[event]) {
-        if (isarray(func_group) && func_group[0] == func) {
-            self.callbacks[event][index] = 0;
-            self.var_fab0247ea0a3a375[event] = 1;
+    
+    foreach ( index, func_group in self.callbacks[ event ] )
+    {
+        if ( isarray( func_group ) && func_group[ 0 ] == func )
+        {
+            self.callbacks[ event ][ index ] = 0;
+            self.var_fab0247ea0a3a375[ event ] = 1;
             break;
         }
     }
-    if (istrue(instant)) {
-        if (isdefined(self.var_fab0247ea0a3a375) && isdefined(self.var_fab0247ea0a3a375[event])) {
-            self.callbacks[event] = function_816601f7d8ca5b92(self.callbacks[event]);
-            self.var_fab0247ea0a3a375[event] = undefined;
+    
+    if ( istrue( instant ) )
+    {
+        if ( isdefined( self.var_fab0247ea0a3a375 ) && isdefined( self.var_fab0247ea0a3a375[ event ] ) )
+        {
+            self.callbacks[ event ] = function_816601f7d8ca5b92( self.callbacks[ event ] );
+            self.var_fab0247ea0a3a375[ event ] = undefined;
         }
-        assertex(function_c2791ffb5f62cc92(self.callbacks[event]) == 0, "<dev string:x58>");
+        
+        assertex( function_c2791ffb5f62cc92( self.callbacks[ event ] ) == 0, "<dev string:x58>" );
     }
 }
 
@@ -146,62 +206,81 @@ function remove(event, func, instant) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x66e
 // Size: 0x4d
-function function_e7fddda1f0b46b5e(var_fdf147e36d51ad1b) {
-    if (!isdefined(level.var_cc6a7adcd61d2d2)) {
+function function_e7fddda1f0b46b5e( var_fdf147e36d51ad1b )
+{
+    if ( !isdefined( level.var_cc6a7adcd61d2d2 ) )
+    {
         level.var_cc6a7adcd61d2d2 = [];
     }
-    if (!isdefined(level.var_cc6a7adcd61d2d2[var_fdf147e36d51ad1b])) {
-        level.var_cc6a7adcd61d2d2[var_fdf147e36d51ad1b] = spawnstruct();
+    
+    if ( !isdefined( level.var_cc6a7adcd61d2d2[ var_fdf147e36d51ad1b ] ) )
+    {
+        level.var_cc6a7adcd61d2d2[ var_fdf147e36d51ad1b ] = spawnstruct();
     }
-    return level.var_cc6a7adcd61d2d2[var_fdf147e36d51ad1b];
+    
+    return level.var_cc6a7adcd61d2d2[ var_fdf147e36d51ad1b ];
 }
 
 // Namespace callback / scripts\common\callbacks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x6c4
 // Size: 0x5d
-function function_d4f1fdfa332469ec(var_fdf147e36d51ad1b) {
-    assertex(self != level, "<dev string:x177>");
-    var_78db940d2989f211 = function_e7fddda1f0b46b5e(var_fdf147e36d51ad1b);
-    if (!isdefined(self.var_8d44c0f367e8d9c0) || !isdefined(self.var_8d44c0f367e8d9c0[var_fdf147e36d51ad1b])) {
-        self.var_8d44c0f367e8d9c0[var_fdf147e36d51ad1b] = var_78db940d2989f211;
+function function_d4f1fdfa332469ec( var_fdf147e36d51ad1b )
+{
+    assertex( self != level, "<dev string:x177>" );
+    var_78db940d2989f211 = function_e7fddda1f0b46b5e( var_fdf147e36d51ad1b );
+    
+    if ( !isdefined( self.var_8d44c0f367e8d9c0 ) || !isdefined( self.var_8d44c0f367e8d9c0[ var_fdf147e36d51ad1b ] ) )
+    {
+        self.var_8d44c0f367e8d9c0[ var_fdf147e36d51ad1b ] = var_78db940d2989f211;
     }
 }
 
 // Namespace callback / scripts\common\callbacks
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x729
-// Size: 0x6b
-function function_75a459cce09d9f29(var_fdf147e36d51ad1b) {
-    return self != level && isdefined(var_fdf147e36d51ad1b) && isdefined(level.var_cc6a7adcd61d2d2) && isdefined(level.var_cc6a7adcd61d2d2[var_fdf147e36d51ad1b]) && isdefined(self.var_8d44c0f367e8d9c0) && isdefined(self.var_8d44c0f367e8d9c0[var_fdf147e36d51ad1b]) && self.var_8d44c0f367e8d9c0[var_fdf147e36d51ad1b] == level.var_cc6a7adcd61d2d2[var_fdf147e36d51ad1b];
+// Size: 0x6b, Type: bool
+function function_75a459cce09d9f29( var_fdf147e36d51ad1b )
+{
+    return self != level && isdefined( var_fdf147e36d51ad1b ) && isdefined( level.var_cc6a7adcd61d2d2 ) && isdefined( level.var_cc6a7adcd61d2d2[ var_fdf147e36d51ad1b ] ) && isdefined( self.var_8d44c0f367e8d9c0 ) && isdefined( self.var_8d44c0f367e8d9c0[ var_fdf147e36d51ad1b ] ) && self.var_8d44c0f367e8d9c0[ var_fdf147e36d51ad1b ] == level.var_cc6a7adcd61d2d2[ var_fdf147e36d51ad1b ];
 }
 
 // Namespace callback / scripts\common\callbacks
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x79d
 // Size: 0x87
-function private function_816601f7d8ca5b92(callbacks) {
+function private function_816601f7d8ca5b92( callbacks )
+{
     result = [];
-    foreach (cb in callbacks) {
-        if (isint(cb) && cb == 0) {
+    
+    foreach ( cb in callbacks )
+    {
+        if ( isint( cb ) && cb == 0 )
+        {
             continue;
         }
-        result[result.size] = cb;
+        
+        result[ result.size ] = cb;
     }
-    assertex(result.size < callbacks.size, "<dev string:x1b2>");
+    
+    assertex( result.size < callbacks.size, "<dev string:x1b2>" );
     return result;
 }
 
 // Namespace callback / scripts\common\callbacks
 // Params 1, eflags: 0x4
 // Checksum 0x0, Offset: 0x82d
-// Size: 0x63
-function private function_c2791ffb5f62cc92(callbacks) {
-    foreach (cb in callbacks) {
-        if (isint(cb) && cb == 0) {
+// Size: 0x63, Type: bool
+function private function_c2791ffb5f62cc92( callbacks )
+{
+    foreach ( cb in callbacks )
+    {
+        if ( isint( cb ) && cb == 0 )
+        {
             return true;
         }
     }
+    
     return false;
 }
 

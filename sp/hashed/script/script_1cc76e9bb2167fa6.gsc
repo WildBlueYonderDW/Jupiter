@@ -9,7 +9,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x9f
 // Size: 0x2
-function main() {
+function main()
+{
     
 }
 
@@ -17,7 +18,8 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa9
 // Size: 0x2
-function setup_turret_anims() {
+function setup_turret_anims()
+{
     
 }
 

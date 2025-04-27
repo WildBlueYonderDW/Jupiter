@@ -4,7 +4,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfb
 // Size: 0x1c1
-function init() {
+function init()
+{
     level.uiparent = spawnstruct();
     level.uiparent.horzalign = "left";
     level.uiparent.vertalign = "top";
@@ -16,8 +17,8 @@ function init() {
     level.uiparent.height = 0;
     level.uiparent.children = [];
     level.fontheight = 12;
-    level.hud["allies"] = spawnstruct();
-    level.hud["axis"] = spawnstruct();
+    level.hud[ "allies" ] = spawnstruct();
+    level.hud[ "axis" ] = spawnstruct();
     level.primaryprogressbary = -61;
     level.primaryprogressbarx = 0;
     level.primaryprogressbarheight = 9;
@@ -39,13 +40,19 @@ function init() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2c4
 // Size: 0x6e
-function fontpulseinit(maxfontscale) {
+function fontpulseinit( maxfontscale )
+{
     self.basefontscale = self.fontscale;
-    if (isdefined(maxfontscale)) {
-        self.maxfontscale = min(maxfontscale, 6.3);
-    } else {
-        self.maxfontscale = min(self.fontscale * 2, 6.3);
+    
+    if ( isdefined( maxfontscale ) )
+    {
+        self.maxfontscale = min( maxfontscale, 6.3 );
     }
+    else
+    {
+        self.maxfontscale = min( self.fontscale * 2, 6.3 );
+    }
+    
     self.inframes = 2;
     self.outframes = 4;
 }
@@ -54,17 +61,18 @@ function fontpulseinit(maxfontscale) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x33a
 // Size: 0x96
-function fontpulse(player) {
-    self notify("fontPulse");
-    self endon("fontPulse");
-    self endon("death");
-    player endon("disconnect");
-    player endon("joined_team");
-    player endon("joined_spectators");
-    self changefontscaleovertime(self.inframes * 0.05);
+function fontpulse( player )
+{
+    self notify( "fontPulse" );
+    self endon( "fontPulse" );
+    self endon( "death" );
+    player endon( "disconnect" );
+    player endon( "joined_team" );
+    player endon( "joined_spectators" );
+    self changefontscaleovertime( self.inframes * 0.05 );
     self.fontscale = self.maxfontscale;
     wait self.inframes * 0.05;
-    self changefontscaleovertime(self.outframes * 0.05);
+    self changefontscaleovertime( self.outframes * 0.05 );
     self.fontscale = self.basefontscale;
 }
 

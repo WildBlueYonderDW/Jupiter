@@ -9,7 +9,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xa7
 // Size: 0x13
-function main() {
-    setdvar(@"hash_2d74914ecc30bb62", 16);
+function main()
+{
+    setdvar( @"hash_2d74914ecc30bb62", 16 );
 }
 

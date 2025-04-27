@@ -7,28 +7,37 @@
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xe1
 // Size: 0x156
-function createevent(radius) {
+function createevent( radius )
+{
     event = function_c74368899713e7e6();
     event.radius = radius;
     event.radiussquared = radius * radius;
     event.result = [];
     eventstream = self.mind.eventstream;
     eventstream.var_61c0bf2e5d0b72d1 = event;
-    eventstream.events[eventstream.events.size] = event;
-    if (!isdefined(level.mind.events.var_cce0bdb14ad78af5)) {
+    eventstream.events[ eventstream.events.size ] = event;
+    
+    if ( !isdefined( level.mind.events.var_cce0bdb14ad78af5 ) )
+    {
         result = [];
+        
         for (i = 0; i < getlootspawnscriptableindexfirst(); i++) {
-            var_db376ee90688810d = getscriptableinstancefromindex(i);
-            if (!isdefined(var_db376ee90688810d)) {
+            scriptableinstance = getscriptableinstancefromindex( i );
+            
+            if ( !isdefined( scriptableinstance ) )
+            {
                 continue;
             }
-            if (var_db376ee90688810d.type == "military_ammo_restock") {
+            
+            if ( scriptableinstance.type == "military_ammo_restock" )
+            {
                 idx = result.size;
-                result[idx] = spawnstruct();
-                result[idx].entity = var_db376ee90688810d;
-                result[idx].type = "ammo_restock";
+                result[ idx ] = spawnstruct();
+                result[ idx ].entity = scriptableinstance;
+                result[ idx ].type = "ammo_restock";
             }
         }
+        
         level.mind.events.var_cce0bdb14ad78af5 = result;
     }
 }
@@ -37,22 +46,33 @@ function createevent(radius) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x23f
 // Size: 0x12c
-function getevent() {
+function getevent()
+{
     event = self.mind.eventstream.var_61c0bf2e5d0b72d1;
-    if (!event.evaluated) {
-        if (event.result.size > 0) {
+    
+    if ( !event.evaluated )
+    {
+        if ( event.result.size > 0 )
+        {
             event.result = [];
         }
-        foreach (ammorestock in level.mind.events.var_cce0bdb14ad78af5) {
-            if (istrue(ammorestock.var_2a6f82a735950253)) {
+        
+        foreach ( ammorestock in level.mind.events.var_cce0bdb14ad78af5 )
+        {
+            if ( istrue( ammorestock.var_2a6f82a735950253 ) )
+            {
                 continue;
             }
-            if (distancesquared(ammorestock.entity.origin, self.origin) < event.radiussquared) {
-                event.result[event.result.size] = ammorestock;
+            
+            if ( distancesquared( ammorestock.entity.origin, self.origin ) < event.radiussquared )
+            {
+                event.result[ event.result.size ] = ammorestock;
             }
         }
+        
         event.evaluated = 1;
     }
+    
     return event.result;
 }
 

@@ -225,7 +225,6 @@
 #using script_7e5f25ca594e617a;
 #using script_7f117e79f9f7578e;
 #using script_8459041e35cbec0;
-#using script_860bfdfe82326e3;
 #using script_8b8bb6bf1846772;
 #using script_92e23155f110d35;
 #using script_9879b843ce23541;
@@ -247,6 +246,7 @@
 #using script_fef9402f2a533e7;
 #using scripts\common\callbacks;
 #using scripts\common\utility;
+#using scripts\cp_mp\content_manager;
 #using scripts\engine\utility;
 
 #namespace namespace_342a62993989781c;
@@ -254,16 +254,18 @@
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xc9a
-// Size: 0x27
-function function_b4aab17620ddfba8(var_164d9f47cd7fa3ba) {
-    return !getdvarint(hashcat(@"hash_479a5af6053041cf", "#" + var_164d9f47cd7fa3ba), 0);
+// Size: 0x27, Type: bool
+function function_b4aab17620ddfba8( var_164d9f47cd7fa3ba )
+{
+    return !getdvarint( hashcat( @"hash_479a5af6053041cf", "#" + var_164d9f47cd7fa3ba ), 0 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xcca
 // Size: 0x2
-function function_b0ab0ca19d404dc7() {
+function function_b0ab0ca19d404dc7()
+{
     
 }
 
@@ -271,140 +273,201 @@ function function_b0ab0ca19d404dc7() {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xcd4
 // Size: 0xf2
-function function_d0ffb4e404349b30(params) {
-    if (function_b4aab17620ddfba8("a")) {
-        function_98dce743b7f273fd(params);
+function function_d0ffb4e404349b30( params )
+{
+    if ( function_b4aab17620ddfba8( "a" ) )
+    {
+        function_98dce743b7f273fd( params );
     }
-    if (function_b4aab17620ddfba8("b")) {
-        function_98dce443b7f26d64(params);
+    
+    if ( function_b4aab17620ddfba8( "b" ) )
+    {
+        function_98dce443b7f26d64( params );
     }
-    if (function_b4aab17620ddfba8("c")) {
-        function_98dce543b7f26f97(params);
+    
+    if ( function_b4aab17620ddfba8( "c" ) )
+    {
+        function_98dce543b7f26f97( params );
     }
-    if (function_b4aab17620ddfba8("d")) {
-        function_98dce243b7f268fe(params);
+    
+    if ( function_b4aab17620ddfba8( "d" ) )
+    {
+        function_98dce243b7f268fe( params );
     }
-    if (function_b4aab17620ddfba8("e")) {
-        function_98dce343b7f26b31(params);
+    
+    if ( function_b4aab17620ddfba8( "e" ) )
+    {
+        function_98dce343b7f26b31( params );
     }
-    if (function_b4aab17620ddfba8("f")) {
-        function_98dce043b7f26498(params);
+    
+    if ( function_b4aab17620ddfba8( "f" ) )
+    {
+        function_98dce043b7f26498( params );
     }
-    if (function_b4aab17620ddfba8("g")) {
-        function_98dce143b7f266cb(params);
+    
+    if ( function_b4aab17620ddfba8( "g" ) )
+    {
+        function_98dce143b7f266cb( params );
     }
-    if (function_b4aab17620ddfba8("h")) {
-        function_98dcde43b7f26032(params);
+    
+    if ( function_b4aab17620ddfba8( "h" ) )
+    {
+        function_98dcde43b7f26032( params );
     }
-    if (function_b4aab17620ddfba8("i")) {
-        function_98dcdf43b7f26265(params);
+    
+    if ( function_b4aab17620ddfba8( "i" ) )
+    {
+        function_98dcdf43b7f26265( params );
     }
+    
     function_116188f556b634f9();
-    level callback::callback("ob_register_activities", params);
-    utility::flag_set("ob_activities_registered");
+    level callback::callback( "ob_register_activities", params );
+    utility::flag_set( "ob_activities_registered" );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xdce
 // Size: 0xf2
-function function_83ecb01b31530309(params) {
-    if (function_b4aab17620ddfba8("a")) {
-        function_ecac54e0ca8d7e2(params);
+function function_83ecb01b31530309( params )
+{
+    if ( function_b4aab17620ddfba8( "a" ) )
+    {
+        function_ecac54e0ca8d7e2( params );
     }
-    if (function_b4aab17620ddfba8("b")) {
-        function_ecac44e0ca8d5af(params);
+    
+    if ( function_b4aab17620ddfba8( "b" ) )
+    {
+        function_ecac44e0ca8d5af( params );
     }
-    if (function_b4aab17620ddfba8("c")) {
-        function_ecac34e0ca8d37c(params);
+    
+    if ( function_b4aab17620ddfba8( "c" ) )
+    {
+        function_ecac34e0ca8d37c( params );
     }
-    if (function_b4aab17620ddfba8("d")) {
-        function_ecac24e0ca8d149(params);
+    
+    if ( function_b4aab17620ddfba8( "d" ) )
+    {
+        function_ecac24e0ca8d149( params );
     }
-    if (function_b4aab17620ddfba8("e")) {
-        function_ecac14e0ca8cf16(params);
+    
+    if ( function_b4aab17620ddfba8( "e" ) )
+    {
+        function_ecac14e0ca8cf16( params );
     }
-    if (function_b4aab17620ddfba8("f")) {
-        function_ecac04e0ca8cce3(params);
+    
+    if ( function_b4aab17620ddfba8( "f" ) )
+    {
+        function_ecac04e0ca8cce3( params );
     }
-    if (function_b4aab17620ddfba8("g")) {
-        function_ecabf4e0ca8cab0(params);
+    
+    if ( function_b4aab17620ddfba8( "g" ) )
+    {
+        function_ecabf4e0ca8cab0( params );
     }
-    if (function_b4aab17620ddfba8("h")) {
-        function_ecace4e0ca8ebad(params);
+    
+    if ( function_b4aab17620ddfba8( "h" ) )
+    {
+        function_ecace4e0ca8ebad( params );
     }
-    if (function_b4aab17620ddfba8("i")) {
-        function_ecacd4e0ca8e97a(params);
+    
+    if ( function_b4aab17620ddfba8( "i" ) )
+    {
+        function_ecacd4e0ca8e97a( params );
     }
+    
     function_f5ae5b335b922b9d();
-    level callback::callback("ob_register_objectives", params);
-    utility::flag_set("ob_objectives_registered");
+    level callback::callback( "ob_register_objectives", params );
+    utility::flag_set( "ob_objectives_registered" );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0xec8
 // Size: 0xeb
-function function_c4ca7f1cd743b5d2(params) {
-    if (function_b4aab17620ddfba8("a")) {
-        function_78d857de4d17073(params);
+function function_c4ca7f1cd743b5d2( params )
+{
+    if ( function_b4aab17620ddfba8( "a" ) )
+    {
+        function_78d857de4d17073( params );
     }
-    if (function_b4aab17620ddfba8("b")) {
-        function_78d867de4d172a6(params);
+    
+    if ( function_b4aab17620ddfba8( "b" ) )
+    {
+        function_78d867de4d172a6( params );
     }
-    if (function_b4aab17620ddfba8("c")) {
-        function_78d877de4d174d9(params);
+    
+    if ( function_b4aab17620ddfba8( "c" ) )
+    {
+        function_78d877de4d174d9( params );
     }
-    if (function_b4aab17620ddfba8("d")) {
-        function_78d887de4d1770c(params);
+    
+    if ( function_b4aab17620ddfba8( "d" ) )
+    {
+        function_78d887de4d1770c( params );
     }
-    if (function_b4aab17620ddfba8("e")) {
-        function_78d897de4d1793f(params);
+    
+    if ( function_b4aab17620ddfba8( "e" ) )
+    {
+        function_78d897de4d1793f( params );
     }
-    if (function_b4aab17620ddfba8("f")) {
-        function_78d8a7de4d17b72(params);
+    
+    if ( function_b4aab17620ddfba8( "f" ) )
+    {
+        function_78d8a7de4d17b72( params );
     }
-    if (function_b4aab17620ddfba8("g")) {
-        function_78d8b7de4d17da5(params);
+    
+    if ( function_b4aab17620ddfba8( "g" ) )
+    {
+        function_78d8b7de4d17da5( params );
     }
-    if (function_b4aab17620ddfba8("h")) {
-        function_78d8c7de4d17fd8(params);
+    
+    if ( function_b4aab17620ddfba8( "h" ) )
+    {
+        function_78d8c7de4d17fd8( params );
     }
-    if (function_b4aab17620ddfba8("i")) {
-        function_78d8d7de4d1820b(params);
+    
+    if ( function_b4aab17620ddfba8( "i" ) )
+    {
+        function_78d8d7de4d1820b( params );
     }
-    level callback::callback("ob_register_features", params);
-    utility::flag_set("ob_features_registered");
+    
+    level callback::callback( "ob_register_features", params );
+    utility::flag_set( "ob_features_registered" );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0xfbb
 // Size: 0x4e
-function function_116188f556b634f9() {
-    namespace_cbce72e68c388ef8::function_c5aad7bc83cfa234("activity", "REV_OB_MERC_CAMP", "startup", "REV_OB_MERC_STRONGHOLD", 2000);
-    namespace_cbce72e68c388ef8::function_c5aad7bc83cfa234("activity", "REV_OB_MERC_CAMP", "objective", "REV_OB_WARLORD", getdvarint(@"hash_20276f490ebb3f8c", 4800), 1);
+function function_116188f556b634f9()
+{
+    namespace_cbce72e68c388ef8::function_c5aad7bc83cfa234( "activity", "REV_OB_MERC_CAMP", "startup", "REV_OB_MERC_STRONGHOLD", 2000 );
+    namespace_cbce72e68c388ef8::function_c5aad7bc83cfa234( "activity", "REV_OB_MERC_CAMP", "objective", "REV_OB_WARLORD", getdvarint( @"hash_20276f490ebb3f8c", 4800 ), 1 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1011
 // Size: 0x155
-function function_98dce743b7f273fd(params) {
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_bdf6f22a57667e71::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_220922c5ff40f202::function_fd69cf02ba4d90a2);
-    scripts\engine\utility::function_f3bb4f4911a1beb2("warlords", "tile_a_warlord_registration");
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_8325b03cc9fa0472::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_c5c19ce11cea9c1b::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_1a7a63aac7737f90::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_f821add3864a3a64::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_a3cee9436b1bdf42::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_f7b48e29d7b7dd93::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_5a428c8eca08c680::function_fd69cf02ba4d90a2);
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dce743b7f273fd( params )
+{
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_bdf6f22a57667e71::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_220922c5ff40f202::function_fd69cf02ba4d90a2 );
+    scripts\engine\utility::function_f3bb4f4911a1beb2( "warlords", "tile_a_warlord_registration" );
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_8325b03cc9fa0472::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_c5c19ce11cea9c1b::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_1a7a63aac7737f90::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_f821add3864a3a64::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_a3cee9436b1bdf42::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_f7b48e29d7b7dd93::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_5a428c8eca08c680::function_fd69cf02ba4d90a2 );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "a";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -412,21 +475,24 @@ function function_98dce743b7f273fd(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x116e
 // Size: 0x169
-function function_98dce443b7f26d64(params) {
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_12edc63bc711f740::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_2259d18cfebbd842::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_57a41b7787d9a192::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_SAFECRACK", &namespace_4120027c8b7ee069::function_97386f131cccf1e6, &namespace_f8cdc54996ab9eb6::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_ec21045038c5cdd2::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_ad2316c62db96c41::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_b044ddb63d1fb590::function_fd69cf02ba4d90a2, ["ZOMBIE_STRONGHOLD_B_OFFICE_LG"]);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_d476655da92026b::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_9c9ed931dedcff4::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_700bf790f79e24a3::function_fd69cf02ba4d90a2);
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dce443b7f26d64( params )
+{
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_12edc63bc711f740::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_2259d18cfebbd842::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_57a41b7787d9a192::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_SAFECRACK", &namespace_4120027c8b7ee069::function_97386f131cccf1e6, &namespace_f8cdc54996ab9eb6::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_ec21045038c5cdd2::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_ad2316c62db96c41::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_b044ddb63d1fb590::function_fd69cf02ba4d90a2, [ "ZOMBIE_STRONGHOLD_B_OFFICE_LG" ] );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_d476655da92026b::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_9c9ed931dedcff4::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_700bf790f79e24a3::function_fd69cf02ba4d90a2 );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "b";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -434,23 +500,26 @@ function function_98dce443b7f26d64(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x12df
 // Size: 0x18e
-function function_98dce543b7f26f97(params) {
-    var_3c71cf9846aa6ea6 = ["AETHERNEST_MILBASE_CLASSROOM", "AETHERNEST_MILBASE_MULTILEVEL"];
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_d64fa5bb9385e18e::function_fd69cf02ba4d90a2, var_3c71cf9846aa6ea6);
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_79ba1524e1edcc86::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_d5cb85ad2c2b3c64::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_SAFECRACK", &namespace_4120027c8b7ee069::function_97386f131cccf1e6, &namespace_1c628592735d653a::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_1c49713e2bdc5506::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_2a2c37a8f78a333d::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_763b46ec169eb2bc::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_ccff918adfb660d8::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_5c50c4d3342bf7bf::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_8bdc94c286ca8f7::function_fd69cf02ba4d90a2);
-    scripts\engine\utility::function_f3bb4f4911a1beb2("warlords", "tile_c_warlord_registration");
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dce543b7f26f97( params )
+{
+    var_3c71cf9846aa6ea6 = [ "AETHERNEST_MILBASE_CLASSROOM", "AETHERNEST_MILBASE_MULTILEVEL" ];
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_d64fa5bb9385e18e::function_fd69cf02ba4d90a2, var_3c71cf9846aa6ea6 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_79ba1524e1edcc86::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_d5cb85ad2c2b3c64::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_SAFECRACK", &namespace_4120027c8b7ee069::function_97386f131cccf1e6, &namespace_1c628592735d653a::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_1c49713e2bdc5506::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_2a2c37a8f78a333d::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_763b46ec169eb2bc::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_ccff918adfb660d8::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_5c50c4d3342bf7bf::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_8bdc94c286ca8f7::function_fd69cf02ba4d90a2 );
+    scripts\engine\utility::function_f3bb4f4911a1beb2( "warlords", "tile_c_warlord_registration" );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "c";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -458,20 +527,23 @@ function function_98dce543b7f26f97(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1475
 // Size: 0x144
-function function_98dce243b7f268fe(params) {
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_2b66e8182cceb9d::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_412c8d9c4ebfd6e6::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_c6711278f20e126e::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_26f82a820ab0ccdf::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_5b86d295bea69584::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_cc725920b0d0aeb8::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_40aba0a58a4fa597::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_ac00199d6d32cb26::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_7de7165dd6dbddc::function_fd69cf02ba4d90a2);
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dce243b7f268fe( params )
+{
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_2b66e8182cceb9d::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_412c8d9c4ebfd6e6::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_c6711278f20e126e::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_26f82a820ab0ccdf::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_5b86d295bea69584::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_cc725920b0d0aeb8::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_40aba0a58a4fa597::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_ac00199d6d32cb26::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_7de7165dd6dbddc::function_fd69cf02ba4d90a2 );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "d";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -479,20 +551,23 @@ function function_98dce243b7f268fe(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x15c1
 // Size: 0x153
-function function_98dce343b7f26b31(params) {
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_de604a96ca328533::function_fd69cf02ba4d90a2, ["AETHERNEST_LOWTOWN_SHORELINEWATERTOWER"]);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_60db312ba22882e7::function_fd69cf02ba4d90a2);
-    function_1b2b8ed00ba454f6("activity", "REV_OB_HARVESTERORB", &namespace_1a9235f87b9d6ba4::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_8312a776b5ef4bd7::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_41a208942aa26600::function_fd69cf02ba4d90a2, ["ZOMBIE_STRONGHOLD_E_BATHHOUSE"]);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_6436c3b25b53b4e4::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_819b35efa0c3039b::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_2ef7431579e57113::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_2da37ecd5f9a8ec2::function_fd69cf02ba4d90a2);
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dce343b7f26b31( params )
+{
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_de604a96ca328533::function_fd69cf02ba4d90a2, [ "AETHERNEST_LOWTOWN_SHORELINEWATERTOWER" ] );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_60db312ba22882e7::function_fd69cf02ba4d90a2 );
+    function_1b2b8ed00ba454f6( "activity", "REV_OB_HARVESTERORB", &namespace_1a9235f87b9d6ba4::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_8312a776b5ef4bd7::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_41a208942aa26600::function_fd69cf02ba4d90a2, [ "ZOMBIE_STRONGHOLD_E_BATHHOUSE" ] );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_6436c3b25b53b4e4::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_819b35efa0c3039b::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_2ef7431579e57113::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_2da37ecd5f9a8ec2::function_fd69cf02ba4d90a2 );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "e";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -500,20 +575,23 @@ function function_98dce343b7f26b31(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x171c
 // Size: 0x14e
-function function_98dce043b7f26498(params) {
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_9edfa1de0a295852::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_a6a94fdf64850200::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_cc7ac595d2133a92::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_d0c8210bf0293401::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_e00b5d3aad23cd50::function_fd69cf02ba4d90a2, ["ZOMBIE_STRONGHOLD_F_RURAL_SHOP_MD"]);
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_10ed2efc548de902::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_f15045095e8f44b4::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_406c2f76088a332b::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_d9896d8302d70763::function_fd69cf02ba4d90a2);
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dce043b7f26498( params )
+{
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_9edfa1de0a295852::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_a6a94fdf64850200::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_cc7ac595d2133a92::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_d0c8210bf0293401::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_e00b5d3aad23cd50::function_fd69cf02ba4d90a2, [ "ZOMBIE_STRONGHOLD_F_RURAL_SHOP_MD" ] );
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_10ed2efc548de902::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_f15045095e8f44b4::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_406c2f76088a332b::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_d9896d8302d70763::function_fd69cf02ba4d90a2 );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "f";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -521,21 +599,24 @@ function function_98dce043b7f26498(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1872
 // Size: 0x155
-function function_98dce143b7f266cb(params) {
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_bd4d32827f7c189e::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_6b2ee003edbf821e::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_fdfc3bbf6a182785::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_12a433fe919eed86::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_3fd3f3e1f48d8c00::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_261b1f6baf03178c::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_2ecb8cfab178288f::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_c5077faf3ce66f44::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_6577ca27cb9f53b7::function_fd69cf02ba4d90a2);
-    scripts\engine\utility::function_f3bb4f4911a1beb2("warlords", "tile_g_warlord_registration");
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dce143b7f266cb( params )
+{
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_bd4d32827f7c189e::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_6b2ee003edbf821e::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_fdfc3bbf6a182785::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_12a433fe919eed86::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_3fd3f3e1f48d8c00::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_261b1f6baf03178c::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_2ecb8cfab178288f::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_c5077faf3ce66f44::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_6577ca27cb9f53b7::function_fd69cf02ba4d90a2 );
+    scripts\engine\utility::function_f3bb4f4911a1beb2( "warlords", "tile_g_warlord_registration" );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "g";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -543,19 +624,22 @@ function function_98dce143b7f266cb(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x19cf
 // Size: 0x129
-function function_98dcde43b7f26032(params) {
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_8af12f224e087be::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_38d086f48bfda9a5::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_a0c96b7e1a6af0a6::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_29e4eb7e6c8e106c::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_989dce7f12aa3ffe::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_81c7f46b7fe406ef::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_1a0a3c2bc2cea4a4::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_a48892d5e1feb697::function_fd69cf02ba4d90a2);
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dcde43b7f26032( params )
+{
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_8af12f224e087be::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_38d086f48bfda9a5::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_a0c96b7e1a6af0a6::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_29e4eb7e6c8e106c::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_989dce7f12aa3ffe::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_81c7f46b7fe406ef::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_1a0a3c2bc2cea4a4::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_a48892d5e1feb697::function_fd69cf02ba4d90a2 );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "h";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -563,19 +647,22 @@ function function_98dcde43b7f26032(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1b00
 // Size: 0x129
-function function_98dcdf43b7f26265(params) {
-    function_447c6ab4bea16b52("activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_d13208678a600140::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_b1296dcb6e5b8f92::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_dc0360d472e0c7d2::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_6636437b4d0dc641::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_b712dd21a3e5d06b::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_847be010ee7a4242::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_2e337dcf7c3e22a3::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_feffb31731136390::function_fd69cf02ba4d90a2);
-    if (istrue(getdvarint(@"hash_b338e81ddf2be38a", 0))) {
+function function_98dcdf43b7f26265( params )
+{
+    function_447c6ab4bea16b52( "activity", "REV_OB_ARMORED_CONVOY", &namespace_acf59d30b1f3eca5::function_729f6e368df801f4, &namespace_d13208678a600140::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_MERC_CAMP", &namespace_44d1880bad37a1bf::function_2a30840abb2a500c, &namespace_b1296dcb6e5b8f92::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_HARVESTERORB", &namespace_74c17ccb56a8563f::function_28cb7cb9dd6c20c2, &namespace_dc0360d472e0c7d2::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_DOGHOUSE", &namespace_f82e883a38a92b9a::function_58fb23fc08762d69, &namespace_6636437b4d0dc641::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_TURRET_TRAP", &namespace_47d96238dd467828::function_3d88cdeba8222b15, &namespace_b712dd21a3e5d06b::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "activity", "REV_OB_AETHERNEST", &namespace_b45a9c6ad5a91687::function_cf070c7d20b69e36, &namespace_847be010ee7a4242::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_MERC_STRONGHOLD", &namespace_5b16b088535e3da4::function_557cb9d43dd5e520, &namespace_2e337dcf7c3e22a3::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "startup", "REV_OB_ZOMBIE_STRONGHOLD", &namespace_f8638ef0be82c4bd::function_1cf627178cf6bee, &namespace_feffb31731136390::function_fd69cf02ba4d90a2 );
+    
+    if ( istrue( getdvarint( @"hash_b338e81ddf2be38a", 0 ) ) )
+    {
         s_params = spawnstruct();
         s_params.var_b20b51d6b62fdff5 = "i";
-        callback::callback(#"hash_7e2a860a57ef2c24", s_params);
+        callback::callback( #"hash_7e2a860a57ef2c24", s_params );
     }
 }
 
@@ -583,175 +670,186 @@ function function_98dcdf43b7f26265(params) {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c31
 // Size: 0x20
-function function_f5ae5b335b922b9d() {
-    namespace_cbce72e68c388ef8::function_c5aad7bc83cfa234("contract", "REV_OB_OUTLAST", "startup", "REV_OB_ZOMBIE_STRONGHOLD", 1000);
+function function_f5ae5b335b922b9d()
+{
+    namespace_cbce72e68c388ef8::function_c5aad7bc83cfa234( "contract", "REV_OB_OUTLAST", "startup", "REV_OB_ZOMBIE_STRONGHOLD", 1000 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1c59
 // Size: 0xfb
-function function_ecac54e0ca8d7e2(params) {
+function function_ecac54e0ca8d7e2( params )
+{
     namespace_147f2a0f5f3c19b5::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_b6790592cd703c71::function_fd69cf02ba4d90a2, ["ESCORT_ZOMBIES_B_EAST"]);
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_393a3d51a397d9a5::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_7379ae7eeeaa513::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_3f5403de6c8d6f15::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_795ed070f3e88990::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_2cb229309a7f5841::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_887a80b9f6347167::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_c53cc58959bd5ec4::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_b6790592cd703c71::function_fd69cf02ba4d90a2, [ "ESCORT_ZOMBIES_B_EAST" ] );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_393a3d51a397d9a5::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_7379ae7eeeaa513::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_3f5403de6c8d6f15::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_795ed070f3e88990::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_2cb229309a7f5841::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_887a80b9f6347167::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_c53cc58959bd5ec4::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1d5c
 // Size: 0xf8
-function function_ecac44e0ca8d5af(params) {
+function function_ecac44e0ca8d5af( params )
+{
     namespace_a7208969aa04a1b3::main();
     namespace_b5ff82fac15f948b::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_1f7c872252bd0d91::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_4a4adeffdfd80f41::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_e265d5109a300cd4::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_37a028e556671e85::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_d2d690dfdb9d3a63::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_8a00e9497f6d1155::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_8b113c3298e81a0::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_f6a6b867f6543d57::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_1f7c872252bd0d91::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_4a4adeffdfd80f41::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_e265d5109a300cd4::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_37a028e556671e85::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_d2d690dfdb9d3a63::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_8a00e9497f6d1155::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_8b113c3298e81a0::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_f6a6b867f6543d57::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1e5c
 // Size: 0xf1
-function function_ecac34e0ca8d37c(params) {
+function function_ecac34e0ca8d37c( params )
+{
     namespace_6c38880515e0b9fb::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_c2b4253bc0f296e5::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_bc17d1a0b2c19cc9::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_8cd2175db39922cd::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_78f598d5a0fb01e0::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_c3178a0112b364d7::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_914ff18f5b7d5bd1::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_6bf54ebad9bc411c::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_a61bdc5ec2da388b::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_c2b4253bc0f296e5::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_bc17d1a0b2c19cc9::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_8cd2175db39922cd::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_78f598d5a0fb01e0::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_c3178a0112b364d7::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_914ff18f5b7d5bd1::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_6bf54ebad9bc411c::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_a61bdc5ec2da388b::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x1f55
 // Size: 0xf1
-function function_ecac24e0ca8d149(params) {
+function function_ecac24e0ca8d149( params )
+{
     namespace_b2f2a1aea0c10d31::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_43a35dd459a8c6f7::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_49716eb683ec01f1::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_24e1fb26bfdb97c::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_f03f6d33241fa445::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_5a797a965e52ffdd::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_56dc031e5a88efa9::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_6bb032d154e3ddab::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_f26383f97b745280::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_43a35dd459a8c6f7::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_49716eb683ec01f1::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_24e1fb26bfdb97c::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_f03f6d33241fa445::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_5a797a965e52ffdd::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_56dc031e5a88efa9::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_6bb032d154e3ddab::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_f26383f97b745280::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x204e
 // Size: 0x115
-function function_ecac14e0ca8cf16(params) {
+function function_ecac14e0ca8cf16( params )
+{
     namespace_e28e7a93b7035a14::main();
     namespace_b0b0f1930af748fa::main();
     namespace_d3d7c78398640f47::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_f513d66027704125::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_ad38ff1268885a69::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_3151db682ec6d944::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_95dd421085c226c1::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_b26c396392084dcb::function_fd69cf02ba4d90a2);
-    function_1b2b8ed00ba454f6("contract", "REV_OB_BIGBOUNTY", &namespace_196facd6da41eafe::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_75ecc9e2ae59d1c2::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_cbea3850d0799295::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_de9c982ec3338ce7::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_f513d66027704125::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_ad38ff1268885a69::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_3151db682ec6d944::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_95dd421085c226c1::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_b26c396392084dcb::function_fd69cf02ba4d90a2 );
+    function_1b2b8ed00ba454f6( "contract", "REV_OB_BIGBOUNTY", &namespace_196facd6da41eafe::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_75ecc9e2ae59d1c2::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_cbea3850d0799295::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_de9c982ec3338ce7::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x216b
 // Size: 0xf1
-function function_ecac04e0ca8cce3(params) {
+function function_ecac04e0ca8cce3( params )
+{
     namespace_9388b57082e76cc5::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_7f1f62d616986645::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_dbb1a40d0175f386::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_6f77d7bb7797423::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_c243fc03a700b794::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_7b1dcc1cfe7bf651::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_1b58feac9087b815::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_3133879dcb101917::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_1ed604b341ed1060::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_7f1f62d616986645::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_dbb1a40d0175f386::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_6f77d7bb7797423::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_c243fc03a700b794::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_7b1dcc1cfe7bf651::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_1b58feac9087b815::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_3133879dcb101917::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_1ed604b341ed1060::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2264
 // Size: 0xfb
-function function_ecabf4e0ca8cab0(params) {
+function function_ecabf4e0ca8cab0( params )
+{
     namespace_ca345beede0be139::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_f8bf56f0214092b9::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_45414989879aa2f1::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_c3723b223da7ab9e::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_7b11b8096e067acd::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_620230abac4f91cf::function_fd69cf02ba4d90a2, ["DEFEND_MERCS_G_HIGHRISE_HOUSING"]);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_16c15db508f40305::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_a11e1d8f9cd31d03::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_df7ed01d7a55c98::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_f8bf56f0214092b9::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_45414989879aa2f1::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_c3723b223da7ab9e::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_7b11b8096e067acd::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_620230abac4f91cf::function_fd69cf02ba4d90a2, [ "DEFEND_MERCS_G_HIGHRISE_HOUSING" ] );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_16c15db508f40305::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_a11e1d8f9cd31d03::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_df7ed01d7a55c98::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2367
 // Size: 0x10c
-function function_ecace4e0ca8ebad(params) {
+function function_ecace4e0ca8ebad( params )
+{
     namespace_515293d19e3c4419::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_d768c9238ea9e86d::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_af59b089869acf99::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_d1a6ac6297c7b23e::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_3769f89d8acac72f::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_fd6afd6f37bf7a20::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_f39e0005827528a5::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_e625182b151dea91::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_193558b0d3a39d63::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_585c5b0ba5009e78::function_fd69cf02ba4d90a2);
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_d768c9238ea9e86d::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_af59b089869acf99::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_d1a6ac6297c7b23e::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_3769f89d8acac72f::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_fd6afd6f37bf7a20::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_f39e0005827528a5::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_e625182b151dea91::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_193558b0d3a39d63::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_585c5b0ba5009e78::function_fd69cf02ba4d90a2 );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x247b
 // Size: 0x11d
-function function_ecacd4e0ca8e97a(params) {
+function function_ecacd4e0ca8e97a( params )
+{
     namespace_151106a3ec6d4505::main();
-    namespace_4164bc931714b00b::function_25d8f4a67b2f6fa6();
-    function_447c6ab4bea16b52("contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_34f89f63cb5ba463::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_a5fc63a1e86b5c85::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_43dceaa919761d41::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_33cc601548c0df55::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_4cb0a141272e7122::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_99ba2c4c0955d791::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_f9ac4a175808c9f4::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_85f6a49036175b57::function_fd69cf02ba4d90a2);
-    function_447c6ab4bea16b52("contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_d2483194d44b06d4::function_fd69cf02ba4d90a2);
-    scripts\engine\utility::function_f3bb4f4911a1beb2("warlords", "tile_i_warlord_registration");
+    scripts\cp_mp\content_manager::function_25d8f4a67b2f6fa6();
+    function_447c6ab4bea16b52( "contract", "REV_OB_DEFEND_MERCS", &namespace_fa8ea3c0ebd01403::function_c23224cc410b370f, &namespace_34f89f63cb5ba463::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_SABOTAGE", &namespace_ea045e2c848ddf3c::function_923e85d3bf0ec24b, &namespace_a5fc63a1e86b5c85::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ESCORT_ZOMBIES", &namespace_d38a1af3e02dea2f::function_de62bc27675c1bfc, &namespace_43dceaa919761d41::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_ZOMBIE_CONTROL", &namespace_73b1231d3d62b0eb::function_7105d76c89d3fea3, &namespace_33cc601548c0df55::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_BIGBOUNTY", &namespace_1b69156531898c9d::function_d745018e64b6b902, &namespace_4cb0a141272e7122::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_OUTLAST", &namespace_edd624734aa27359::function_42696fef39309a29, &namespace_99ba2c4c0955d791::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "global", "REV_OB_AETHERTEAR", &namespace_5d8c3870222947b5::function_483ef1bf0c76bedc, &namespace_f9ac4a175808c9f4::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_WEAPON_STASH", &namespace_8cc61b17b84105a5::function_480a44aafd55f27e, &namespace_85f6a49036175b57::function_fd69cf02ba4d90a2 );
+    function_447c6ab4bea16b52( "contract", "REV_OB_VEHICLE_DRIVE", &namespace_32479521133923de::function_89a7a8b0101530ec, &namespace_d2483194d44b06d4::function_fd69cf02ba4d90a2 );
+    scripts\engine\utility::function_f3bb4f4911a1beb2( "warlords", "tile_i_warlord_registration" );
 }
 
 // Namespace namespace_342a62993989781c / namespace_ccf6a16e5cd71a9c
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x25a0
 // Size: 0x35
-function function_78d857de4d17073(params) {
+function function_78d857de4d17073( params )
+{
     namespace_d33caaf55c2af997::main();
     namespace_76a8704be68c429f::main();
     namespace_f6b516533871a807::main();
@@ -764,7 +862,8 @@ function function_78d857de4d17073(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x25dd
 // Size: 0x35
-function function_78d867de4d172a6(params) {
+function function_78d867de4d172a6( params )
+{
     namespace_af78be0a6a3ae287::main();
     namespace_a91075b4ed17580f::main();
     namespace_d32f15550c372af7::main();
@@ -777,7 +876,8 @@ function function_78d867de4d172a6(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x261a
 // Size: 0x35
-function function_78d877de4d174d9(params) {
+function function_78d877de4d174d9( params )
+{
     namespace_68bfd047f596141b::main();
     namespace_a8b13450d6af6733::main();
     namespace_8b45a101f607d5bb::main();
@@ -790,7 +890,8 @@ function function_78d877de4d174d9(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2657
 // Size: 0x35
-function function_78d887de4d1770c(params) {
+function function_78d887de4d1770c( params )
+{
     namespace_ffbeef5a9056e1bb::main();
     namespace_dfc7245f67d19553::main();
     namespace_e78b93f2437dd85b::main();
@@ -803,7 +904,8 @@ function function_78d887de4d1770c(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2694
 // Size: 0x3c
-function function_78d897de4d1793f(params) {
+function function_78d897de4d1793f( params )
+{
     namespace_5c747362b650ddec::main();
     namespace_b9b61ddb4ba5d417::main();
     namespace_ce9a9ff991baca1f::main();
@@ -817,7 +919,8 @@ function function_78d897de4d1793f(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x26d8
 // Size: 0x35
-function function_78d8a7de4d17b72(params) {
+function function_78d8a7de4d17b72( params )
+{
     namespace_21b8a06f41fd5c47::main();
     namespace_b4423be1b735edcf::main();
     namespace_cb31926db07436b7::main();
@@ -830,7 +933,8 @@ function function_78d8a7de4d17b72(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2715
 // Size: 0x35
-function function_78d8b7de4d17da5(params) {
+function function_78d8b7de4d17da5( params )
+{
     namespace_ca0a30d6d22ab6c3::main();
     namespace_d3cdad60be79885b::main();
     namespace_e3133db2e25257f3::main();
@@ -843,7 +947,8 @@ function function_78d8b7de4d17da5(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x2752
 // Size: 0x35
-function function_78d8c7de4d17fd8(params) {
+function function_78d8c7de4d17fd8( params )
+{
     namespace_a079c579312b4f23::main();
     namespace_bbeae3d03c0dcd3b::main();
     namespace_7364490eabcde8d3::main();
@@ -856,7 +961,8 @@ function function_78d8c7de4d17fd8(params) {
 // Params 1, eflags: 0x0
 // Checksum 0x0, Offset: 0x278f
 // Size: 0x35
-function function_78d8d7de4d1820b(params) {
+function function_78d8d7de4d1820b( params )
+{
     namespace_9c12c3ac22d75c87::main();
     namespace_9c44d85ded37a60f::main();
     namespace_796b07baaaff58f7::main();

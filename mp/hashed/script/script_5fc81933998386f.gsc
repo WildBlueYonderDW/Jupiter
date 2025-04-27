@@ -11,7 +11,6 @@
 #using script_660a74d7ea912c7d;
 #using script_68a5d7921b3adc43;
 #using script_691d7b45e4a09fbe;
-#using script_6c32b2aeb4eff172;
 #using script_6d7db6900a6781c1;
 #using script_6e5aea2df432a57b;
 #using script_77a99ae72773152d;
@@ -22,6 +21,7 @@
 #using scripts\asm\asm_mp;
 #using scripts\code\character;
 #using scripts\common\ai;
+#using scripts\common\ai_settings;
 #using scripts\cp_mp\agents\agent_init;
 #using scripts\mp\class;
 
@@ -31,45 +31,49 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x343
 // Size: 0x224
-function main() {
-    self.aitypeid = function_2336488258354fbc(#"aitype", %"jup_ob_enemy_basic_grunt_short");
-    self.var_534e788bc498be9f = getscriptbundle(%"hash_579d39f2f40c41bf");
+function main()
+{
+    self.aitypeid = function_2336488258354fbc( #"aitype", %"jup_ob_enemy_basic_grunt_short" );
+    self.var_534e788bc498be9f = getscriptbundle( %"hash_579d39f2f40c41bf" );
     self.subclass = self.var_534e788bc498be9f.name;
     self.health = 180;
     self.maxhealth = 180;
     self.behaviortreeasset = "soldier_jup_ob";
     self.var_6cb8f78a7c37e43b = "ai_shoot_styles_default";
     self.asmasset = "soldier";
-    namespace_2361523b5e4b2d68::function_7b25d1c42e7f75be("aisettings_soldier_base_ob");
-    switch (scripts\code\character::get_random_weapon(3)) {
-    case 0:
-        primaryweaponhash = "jup_cp01_sm_coscar635, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
-        break;
-    case 1:
-        primaryweaponhash = "iw9_sm_apapa, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
-        break;
-    case 2:
-        primaryweaponhash = "iw9_sh_mviktor, [ none, none, none, none, none, none ], none, none";
-        self.weapon = level.var_67b54180a55f70e1[primaryweaponhash];
-        break;
+    scripts\common\ai_settings::function_7b25d1c42e7f75be( "aisettings_soldier_base_ob" );
+    
+    switch ( scripts\code\character::get_random_weapon( 3 ) )
+    {
+        case 0:
+            primaryweaponhash = "jup_cp01_sm_coscar635, [ none, none, none, none, none, none ], none, none";
+            self.weapon = level.var_67b54180a55f70e1[ primaryweaponhash ];
+            break;
+        case 1:
+            primaryweaponhash = "iw9_sm_apapa, [ none, none, none, none, none, none ], none, none";
+            self.weapon = level.var_67b54180a55f70e1[ primaryweaponhash ];
+            break;
+        case 2:
+            primaryweaponhash = "iw9_sh_mviktor, [ none, none, none, none, none, none ], none, none";
+            self.weapon = level.var_67b54180a55f70e1[ primaryweaponhash ];
+            break;
     }
-    self giveweapon(self.weapon);
-    self setspawnweapon(self.weapon);
-    self.bulletsinclip = weaponclipsize(self.weapon);
+    
+    self giveweapon( self.weapon );
+    self setspawnweapon( self.weapon );
+    self.bulletsinclip = weaponclipsize( self.weapon );
     self.primaryweapon = self.weapon;
     self.grenadeweapon = nullweapon();
     self.grenadeammo = 0;
     setup_model();
-    assert(isscriptedagent(self));
-    assert(isdefined(self.behaviortreeasset));
-    assert(isdefined(self.asmasset));
-    self.var_a942dd31d55102c9 = self.asmasset;
+    assert( isscriptedagent( self ) );
+    assert( isdefined( self.behaviortreeasset ) );
+    assert( isdefined( self.asmasset ) );
+    self.defaultasm = self.asmasset;
     self.a = spawnstruct();
     scripts\asm\asm::asm_init_blackboard();
     scripts\aitypes\bt_util::bt_init();
-    scripts\asm\asm_mp::asm_init(self.asmasset, self.animationarchetype);
+    scripts\asm\asm_mp::asm_init( self.asmasset, self.animationarchetype );
     scripts\common\ai::ai_init();
 }
 
@@ -77,16 +81,19 @@ function main() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x56f
 // Size: 0x6d
-function setup_model() {
-    var_42e5c77b1d7fe6e7 = isdefined(self.var_42e5c77b1d7fe6e7) ? self.var_42e5c77b1d7fe6e7 : "default";
-    switch (var_42e5c77b1d7fe6e7) {
-    case #"hash_f19a3ecfe8b35af9":
-        function_efa2a2a09745fbd();
-        break;
-    case #"hash_7038dec66d8275be":
-    default:
-        function_9ac26a51c94ccf52();
-        break;
+function setup_model()
+{
+    var_42e5c77b1d7fe6e7 = isdefined( self.var_42e5c77b1d7fe6e7 ) ? self.var_42e5c77b1d7fe6e7 : "default";
+    
+    switch ( var_42e5c77b1d7fe6e7 )
+    {
+        case #"hash_f19a3ecfe8b35af9":
+            function_efa2a2a09745fbd();
+            break;
+        case #"hash_7038dec66d8275be":
+        default:
+            function_9ac26a51c94ccf52();
+            break;
     }
 }
 
@@ -94,35 +101,38 @@ function setup_model() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x5e4
 // Size: 0x149
-function function_9ac26a51c94ccf52() {
-    assertex(isdefined(self.var_e2682e6f1838391e), "<dev string:x1c>");
-    switch (self.var_e2682e6f1838391e) {
-    case 0:
-        return namespace_7d3b12eaf52e5063::main();
-    case 1:
-        return namespace_9c005241e2d2ce27::main();
-    case 2:
-        return namespace_9c005341e2d2d05a::main();
-    case 3:
-        return namespace_9c005441e2d2d28d::main();
-    case 4:
-        return namespace_489304c6fe3a495b::main();
-    case 5:
-        return namespace_489305c6fe3a4b8e::main();
-    case 6:
-        return namespace_5cfc4ed0ea7654ff::main();
-    case 7:
-        return namespace_5cfc4fd0ea765732::main();
-    case 8:
-        return namespace_ffc709ab88f6587f::main();
-    case 9:
-        return namespace_ffc70aab88f65ab2::main();
-    case 10:
-        return namespace_ffc70bab88f65ce5::main();
-    case 11:
-        return namespace_474abb8d4fd3a643::main();
-    case 12:
-        return namespace_474abc8d4fd3a876::main();
+function function_9ac26a51c94ccf52()
+{
+    assertex( isdefined( self.var_e2682e6f1838391e ), "<dev string:x1c>" );
+    
+    switch ( self.var_e2682e6f1838391e )
+    {
+        case 0:
+            return namespace_7d3b12eaf52e5063::main();
+        case 1:
+            return namespace_9c005241e2d2ce27::main();
+        case 2:
+            return namespace_9c005341e2d2d05a::main();
+        case 3:
+            return namespace_9c005441e2d2d28d::main();
+        case 4:
+            return namespace_489304c6fe3a495b::main();
+        case 5:
+            return namespace_489305c6fe3a4b8e::main();
+        case 6:
+            return namespace_5cfc4ed0ea7654ff::main();
+        case 7:
+            return namespace_5cfc4fd0ea765732::main();
+        case 8:
+            return namespace_ffc709ab88f6587f::main();
+        case 9:
+            return namespace_ffc70aab88f65ab2::main();
+        case 10:
+            return namespace_ffc70bab88f65ce5::main();
+        case 11:
+            return namespace_474abb8d4fd3a643::main();
+        case 12:
+            return namespace_474abc8d4fd3a876::main();
     }
 }
 
@@ -130,17 +140,20 @@ function function_9ac26a51c94ccf52() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x735
 // Size: 0x83
-function function_efa2a2a09745fbd() {
-    assertex(isdefined(self.var_e2682e6f1838391e), "<dev string:x1c>");
-    switch (self.var_e2682e6f1838391e) {
-    case 0:
-        return namespace_385f3646395c9f26::main();
-    case 1:
-        return namespace_385f3546395c9cf3::main();
-    case 2:
-        return namespace_385f3446395c9ac0::main();
-    case 3:
-        return namespace_385f3b46395caa25::main();
+function function_efa2a2a09745fbd()
+{
+    assertex( isdefined( self.var_e2682e6f1838391e ), "<dev string:x1c>" );
+    
+    switch ( self.var_e2682e6f1838391e )
+    {
+        case 0:
+            return namespace_385f3646395c9f26::main();
+        case 1:
+            return namespace_385f3546395c9cf3::main();
+        case 2:
+            return namespace_385f3446395c9ac0::main();
+        case 3:
+            return namespace_385f3b46395caa25::main();
     }
 }
 
@@ -148,35 +161,41 @@ function function_efa2a2a09745fbd() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x7c0
 // Size: 0x13f
-function precache() {
+function precache()
+{
     agent_type = "actor_jup_ob_enemy_basic_grunt_short";
-    if (!isdefined(level.agent_definition)) {
+    
+    if ( !isdefined( level.agent_definition ) )
+    {
         level.agent_definition = [];
     }
-    if (!isdefined(level.agent_definition[agent_type])) {
-        level.agent_definition[agent_type] = [];
-        level.agent_definition[agent_type]["team"] = "axis";
-        level.agent_definition[agent_type]["setup_func"] = &main;
-        level.agent_definition[agent_type]["setup_model_func"] = &setup_model;
-        level.agent_definition[agent_type]["subclass"] = getscriptbundle(%"hash_579d39f2f40c41bf");
-        namespace_7d3b12eaf52e5063::function_8168fbf6282d398b();
-        namespace_9c005241e2d2ce27::function_8168fbf6282d398b();
-        namespace_9c005341e2d2d05a::function_8168fbf6282d398b();
-        namespace_9c005441e2d2d28d::function_8168fbf6282d398b();
-        namespace_489304c6fe3a495b::function_8168fbf6282d398b();
-        namespace_489305c6fe3a4b8e::function_8168fbf6282d398b();
-        namespace_5cfc4ed0ea7654ff::function_8168fbf6282d398b();
-        namespace_5cfc4fd0ea765732::function_8168fbf6282d398b();
-        namespace_ffc709ab88f6587f::function_8168fbf6282d398b();
-        namespace_ffc70aab88f65ab2::function_8168fbf6282d398b();
-        namespace_ffc70bab88f65ce5::function_8168fbf6282d398b();
-        namespace_474abb8d4fd3a643::function_8168fbf6282d398b();
-        namespace_474abc8d4fd3a876::function_8168fbf6282d398b();
-        namespace_385f3646395c9f26::function_8168fbf6282d398b();
-        namespace_385f3546395c9cf3::function_8168fbf6282d398b();
-        namespace_385f3446395c9ac0::function_8168fbf6282d398b();
-        namespace_385f3b46395caa25::function_8168fbf6282d398b();
+    
+    if ( !isdefined( level.agent_definition[ agent_type ] ) )
+    {
+        level.agent_definition[ agent_type ] = [];
+        level.agent_definition[ agent_type ][ "team" ] = "axis";
+        level.agent_definition[ agent_type ][ "setup_func" ] = &main;
+        level.agent_definition[ agent_type ][ "setup_model_func" ] = &setup_model;
+        level.agent_definition[ agent_type ][ "subclass" ] = getscriptbundle( %"hash_579d39f2f40c41bf" );
+        namespace_7d3b12eaf52e5063::precache_cpmp();
+        namespace_9c005241e2d2ce27::precache_cpmp();
+        namespace_9c005341e2d2d05a::precache_cpmp();
+        namespace_9c005441e2d2d28d::precache_cpmp();
+        namespace_489304c6fe3a495b::precache_cpmp();
+        namespace_489305c6fe3a4b8e::precache_cpmp();
+        namespace_5cfc4ed0ea7654ff::precache_cpmp();
+        namespace_5cfc4fd0ea765732::precache_cpmp();
+        namespace_ffc709ab88f6587f::precache_cpmp();
+        namespace_ffc70aab88f65ab2::precache_cpmp();
+        namespace_ffc70bab88f65ce5::precache_cpmp();
+        namespace_474abb8d4fd3a643::precache_cpmp();
+        namespace_474abc8d4fd3a876::precache_cpmp();
+        namespace_385f3646395c9f26::precache_cpmp();
+        namespace_385f3546395c9cf3::precache_cpmp();
+        namespace_385f3446395c9ac0::precache_cpmp();
+        namespace_385f3b46395caa25::precache_cpmp();
     }
+    
     scripts\cp_mp\agents\agent_init::agent_init();
     scripts\aitypes\bt_util::init();
     scripts\aitypes\assets::soldier();
@@ -187,24 +206,37 @@ function precache() {
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x907
 // Size: 0x18e
-function setup_weapons() {
-    while (!isdefined(level.weaponmapdata)) {
+function setup_weapons()
+{
+    while ( !isdefined( level.weaponmapdata ) )
+    {
         waitframe();
     }
-    if (!isdefined(level.var_67b54180a55f70e1)) {
+    
+    if ( !isdefined( level.var_67b54180a55f70e1 ) )
+    {
         level.var_67b54180a55f70e1 = [];
     }
+    
     var_5576d3be590a9a64 = "jup_cp01_sm_coscar635, [ none, none, none, none, none, none ], none, none";
-    if (!isdefined(level.var_67b54180a55f70e1[var_5576d3be590a9a64])) {
-        level.var_67b54180a55f70e1[var_5576d3be590a9a64] = scripts\mp\class::function_e83615f8a92e4378("jup_cp01_sm_coscar635", ["none", "none", "none", "none", "none", "none"], "none", "none");
+    
+    if ( !isdefined( level.var_67b54180a55f70e1[ var_5576d3be590a9a64 ] ) )
+    {
+        level.var_67b54180a55f70e1[ var_5576d3be590a9a64 ] = scripts\mp\class::function_e83615f8a92e4378( "jup_cp01_sm_coscar635", [ "none", "none", "none", "none", "none", "none" ], "none", "none" );
     }
+    
     var_5576d6be590aa0fd = "iw9_sm_apapa, [ none, none, none, none, none, none ], none, none";
-    if (!isdefined(level.var_67b54180a55f70e1[var_5576d6be590aa0fd])) {
-        level.var_67b54180a55f70e1[var_5576d6be590aa0fd] = scripts\mp\class::function_e83615f8a92e4378("iw9_sm_apapa", ["none", "none", "none", "none", "none", "none"], "none", "none");
+    
+    if ( !isdefined( level.var_67b54180a55f70e1[ var_5576d6be590aa0fd ] ) )
+    {
+        level.var_67b54180a55f70e1[ var_5576d6be590aa0fd ] = scripts\mp\class::function_e83615f8a92e4378( "iw9_sm_apapa", [ "none", "none", "none", "none", "none", "none" ], "none", "none" );
     }
+    
     var_5576d5be590a9eca = "iw9_sh_mviktor, [ none, none, none, none, none, none ], none, none";
-    if (!isdefined(level.var_67b54180a55f70e1[var_5576d5be590a9eca])) {
-        level.var_67b54180a55f70e1[var_5576d5be590a9eca] = scripts\mp\class::function_e83615f8a92e4378("iw9_sh_mviktor", ["none", "none", "none", "none", "none", "none"], "none", "none");
+    
+    if ( !isdefined( level.var_67b54180a55f70e1[ var_5576d5be590a9eca ] ) )
+    {
+        level.var_67b54180a55f70e1[ var_5576d5be590a9eca ] = scripts\mp\class::function_e83615f8a92e4378( "iw9_sh_mviktor", [ "none", "none", "none", "none", "none", "none" ], "none", "none" );
     }
 }
 

@@ -1,4 +1,4 @@
-#using script_1c335d8ca5fae58e;
+#using scripts\mp\infilexfil\skerries_infil;
 
 #namespace namespace_e915233ea7536703;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
-function main() {
-    thread namespace_a171821d1ef65ac8::function_57334412d2328b04("bravo");
+function main()
+{
+    thread scripts\mp\infilexfil\skerries_infil::function_57334412d2328b04( "bravo" );
 }
 

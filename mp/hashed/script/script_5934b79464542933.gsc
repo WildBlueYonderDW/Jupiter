@@ -1,4 +1,4 @@
-#using script_16d0109d2ff055df;
+#using scripts\mp\infilexfil\van_infil;
 
 #namespace namespace_903bd75662653c4a;
 
@@ -6,7 +6,8 @@
 // Params 0, eflags: 0x0
 // Checksum 0x0, Offset: 0x99
 // Size: 0xf
-function main() {
-    thread namespace_a12a94a2415e07ff::van_init("bravo");
+function main()
+{
+    thread scripts\mp\infilexfil\van_infil::van_init( "bravo" );
 }
 
